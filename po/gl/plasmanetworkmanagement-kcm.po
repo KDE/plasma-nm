@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2019-01-15 20:21+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <kde-i18n-doc@kde.org>\n"
@@ -53,15 +53,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Escolla un tipo de conexión"
 
-#: qml/AddConnectionDialog.qml:159
+#: qml/AddConnectionDialog.qml:169
 msgid "Create"
 msgstr "Crear"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
+#: qml/AddConnectionDialog.qml:180 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: qml/AddConnectionDialog.qml:186 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:197 qml/main.qml:193
 msgid "Configuration"
 msgstr ""
 
@@ -96,8 +96,8 @@ msgstr ""
 msgid "Hotspot password:"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:101
-msgid "Ok"
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
 msgstr ""
 
 #: qml/ConnectionItem.qml:99

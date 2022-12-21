@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2021-06-17 16:26+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -55,15 +55,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Vyberte typ připojení"
 
-#: qml/AddConnectionDialog.qml:159
+#: qml/AddConnectionDialog.qml:169
 msgid "Create"
 msgstr "Vytvořit"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
+#: qml/AddConnectionDialog.qml:180 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: qml/AddConnectionDialog.qml:186 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:197 qml/main.qml:193
 msgid "Configuration"
 msgstr "Nastavení"
 
@@ -96,9 +96,9 @@ msgstr "Název hotspotu:"
 msgid "Hotspot password:"
 msgstr "Heslo hotspotu:"
 
-#: qml/ConfigurationDialog.qml:101
-msgid "Ok"
-msgstr "OK"
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
+msgstr ""
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"
@@ -144,3 +144,6 @@ msgstr "Odstranit spojení"
 #: qml/main.qml:222
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Opravdu si přejete smazat spojení '%1'?"
+
+#~ msgid "Ok"
+#~ msgstr "OK"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2022-12-14 08:10+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -54,15 +54,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "აირჩიეთ შეერთების ტიპი"
 
-#: qml/AddConnectionDialog.qml:159
+#: qml/AddConnectionDialog.qml:169
 msgid "Create"
 msgstr "შექმნა"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
+#: qml/AddConnectionDialog.qml:180 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "გაუქმება"
 
-#: qml/AddConnectionDialog.qml:186 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:197 qml/main.qml:193
 msgid "Configuration"
 msgstr "გამართვა"
 
@@ -95,9 +95,9 @@ msgstr "ჰოტსპოტის სახელი:"
 msgid "Hotspot password:"
 msgstr "ჰოტსპოტის პაროლი:"
 
-#: qml/ConfigurationDialog.qml:101
-msgid "Ok"
-msgstr "დიახ"
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
+msgstr ""
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"
@@ -143,3 +143,6 @@ msgstr "შეერთების წაშლა"
 #: qml/main.qml:222
 msgid "Do you want to remove the connection '%1'?"
 msgstr "გნებავთ შეერთების წაშლა? (%1)"
+
+#~ msgid "Ok"
+#~ msgstr "დიახ"

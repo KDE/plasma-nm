@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2021-05-31 23:17+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -54,15 +54,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "연결 종류 선택"
 
-#: qml/AddConnectionDialog.qml:159
+#: qml/AddConnectionDialog.qml:169
 msgid "Create"
 msgstr "만들기"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
+#: qml/AddConnectionDialog.qml:180 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "취소"
 
-#: qml/AddConnectionDialog.qml:186 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:197 qml/main.qml:193
 msgid "Configuration"
 msgstr "설정"
 
@@ -95,9 +95,9 @@ msgstr "핫스팟 이름:"
 msgid "Hotspot password:"
 msgstr "핫스팟 암호:"
 
-#: qml/ConfigurationDialog.qml:101
-msgid "Ok"
-msgstr "확인"
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
+msgstr ""
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"
@@ -143,6 +143,9 @@ msgstr "연결 삭제"
 #: qml/main.qml:222
 msgid "Do you want to remove the connection '%1'?"
 msgstr "연결 '%1'을(를) 삭제하시겠습니까?"
+
+#~ msgid "Ok"
+#~ msgstr "확인"
 
 #~ msgid "Search…"
 #~ msgstr "검색…"

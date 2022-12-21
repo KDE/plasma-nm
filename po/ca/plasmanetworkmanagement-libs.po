@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-20 00:48+0000\n"
-"PO-Revision-Date: 2022-12-13 14:16+0100\n"
+"PO-Revision-Date: 2022-12-20 09:13+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -3338,19 +3338,15 @@ msgstr ""
 "informeu-ho a la vostra distribució."
 
 #: handler.cpp:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
-"Manca la implementació del NetworkManager per a les connexions VPN «%1». Si "
-"us plau, useu el gestor de paquets per a instal·lar-ho."
+"Manca la implementació del NetworkManager per a les connexions VPN «%1»."
 
 #: handler.cpp:128
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Instal·la"
 
 #: handler.cpp:776
 #, kde-format

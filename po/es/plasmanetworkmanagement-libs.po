@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-20 00:48+0000\n"
-"PO-Revision-Date: 2022-12-13 19:39+0100\n"
+"PO-Revision-Date: 2022-12-21 00:24+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -3335,19 +3335,14 @@ msgstr ""
 "problema a su distribución. "
 
 #: handler.cpp:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
-"NetworkManager carece de soporte lógico para conexiones VPN «%1». Use el "
-"gestor de paquetes para instalarlo."
+msgstr "NetworkManager carece de soporte lógico para conexiones VPN «%1»."
 
 #: handler.cpp:128
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Instalar"
 
 #: handler.cpp:776
 #, kde-format

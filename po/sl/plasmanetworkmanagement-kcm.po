@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2022-12-14 09:02+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -56,15 +56,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Izberite vrsto povezave"
 
-#: qml/AddConnectionDialog.qml:159
+#: qml/AddConnectionDialog.qml:169
 msgid "Create"
 msgstr "Ustvari"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
+#: qml/AddConnectionDialog.qml:180 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: qml/AddConnectionDialog.qml:186 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:197 qml/main.qml:193
 msgid "Configuration"
 msgstr "Nastavitev"
 
@@ -97,9 +97,9 @@ msgstr "Ime vroče točke:"
 msgid "Hotspot password:"
 msgstr "Geslo vroče točke:"
 
-#: qml/ConfigurationDialog.qml:101
-msgid "Ok"
-msgstr "Ok"
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
+msgstr ""
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"
@@ -145,6 +145,9 @@ msgstr "Odstrani povezavo"
 #: qml/main.qml:222
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Ali želite odstraniti povezavo '%1'?"
+
+#~ msgid "Ok"
+#~ msgstr "Ok"
 
 #~ msgid "Search…"
 #~ msgstr "Poišči…"

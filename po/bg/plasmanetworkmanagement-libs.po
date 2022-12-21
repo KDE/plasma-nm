@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-20 00:48+0000\n"
-"PO-Revision-Date: 2022-12-14 20:20+0100\n"
+"PO-Revision-Date: 2022-12-20 19:24+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -3213,8 +3213,8 @@ msgid ""
 "Frequency: %4 Mhz"
 msgstr ""
 "%1 (%2%) \n"
-"Защита:%3 \n"
-"Честота:%4 Mhz"
+"Защита: %3 \n"
+"Честота: %4 Mhz"
 
 #: editor/widgets/ssidcombobox.cpp:139
 #, kde-format
@@ -3225,7 +3225,7 @@ msgid ""
 msgstr ""
 "%1 (%2%) \n"
 "Сигурност: Несигурен \n"
-"Честота:%3 Mhz"
+"Честота: %3 Mhz"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/widgets/ui/advancedpermissionswidget.ui:33
@@ -3331,19 +3331,14 @@ msgstr ""
 "дистрибуция."
 
 #: handler.cpp:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
-"NetworkManager няма поддръжка за \"%1\" VPN връзки. Инсталирайте пакета от "
-"вашата дистрибуция."
+msgstr "NetworkManager няма поддръжка за \"%1\" VPN връзки. "
 
 #: handler.cpp:128
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Инсталиране"
 
 #: handler.cpp:776
 #, kde-format

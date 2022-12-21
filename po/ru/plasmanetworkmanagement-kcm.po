@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2021-06-07 21:34+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -58,15 +58,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Выбор типа соединения"
 
-#: qml/AddConnectionDialog.qml:159
+#: qml/AddConnectionDialog.qml:169
 msgid "Create"
 msgstr "Создать"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
+#: qml/AddConnectionDialog.qml:180 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "Отмена"
 
-#: qml/AddConnectionDialog.qml:186 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:197 qml/main.qml:193
 msgid "Configuration"
 msgstr "Настроить"
 
@@ -99,9 +99,9 @@ msgstr "Имя точки доступа:"
 msgid "Hotspot password:"
 msgstr "Пароль точки доступа"
 
-#: qml/ConfigurationDialog.qml:101
-msgid "Ok"
-msgstr "ОК"
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
+msgstr ""
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"
@@ -147,6 +147,9 @@ msgstr "Удаление соединения"
 #: qml/main.qml:222
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Удалить соединение «%1»?"
+
+#~ msgid "Ok"
+#~ msgstr "ОК"
 
 #~ msgid "Search…"
 #~ msgstr "Поиск..."

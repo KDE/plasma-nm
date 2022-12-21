@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-20 00:48+0000\n"
-"PO-Revision-Date: 2022-12-13 14:49+0200\n"
-"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
+"PO-Revision-Date: 2022-12-20 11:16+0200\n"
+"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -3342,20 +3342,14 @@ msgstr ""
 "авторів вашого дистрибутива."
 
 #: handler.cpp:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
-"У NetworkManager немає підтримки з'єднань VPN «%1». Будь ласка, "
-"скористайтеся програмою для керування пакунками, щоб встановити відповідні "
-"пакунки."
+msgstr "У NetworkManager немає підтримки з'єднань VPN «%1»."
 
 #: handler.cpp:128
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Встановити"
 
 #: handler.cpp:776
 #, kde-format

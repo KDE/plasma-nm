@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2020-01-16 14:27+0800\n"
 "Last-Translator: pan93412 <pan93412@gmail.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
@@ -55,15 +55,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "選擇連線型態"
 
-#: qml/AddConnectionDialog.qml:159
+#: qml/AddConnectionDialog.qml:169
 msgid "Create"
 msgstr "建立"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
+#: qml/AddConnectionDialog.qml:180 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "取消"
 
-#: qml/AddConnectionDialog.qml:186 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:197 qml/main.qml:193
 msgid "Configuration"
 msgstr "設定"
 
@@ -96,9 +96,9 @@ msgstr "熱點名稱："
 msgid "Hotspot password:"
 msgstr "熱點密碼："
 
-#: qml/ConfigurationDialog.qml:101
-msgid "Ok"
-msgstr "確定"
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
+msgstr ""
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"
@@ -144,6 +144,9 @@ msgstr "移除連線"
 #: qml/main.qml:222
 msgid "Do you want to remove the connection '%1'?"
 msgstr "您確定要移除連線「%1」嗎？"
+
+#~ msgid "Ok"
+#~ msgstr "確定"
 
 #, fuzzy
 #~| msgid "Search..."

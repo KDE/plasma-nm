@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2022-12-21 00:48+0000\n"
 "PO-Revision-Date: 2022-12-17 09:43+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque\n"
@@ -56,15 +56,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Hautatu konexio mota bat"
 
-#: qml/AddConnectionDialog.qml:159
+#: qml/AddConnectionDialog.qml:169
 msgid "Create"
 msgstr "Sortu"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
+#: qml/AddConnectionDialog.qml:180 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "Utzi"
 
-#: qml/AddConnectionDialog.qml:186 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:197 qml/main.qml:193
 msgid "Configuration"
 msgstr "Konfigurazioa"
 
@@ -97,9 +97,9 @@ msgstr "Berogunearen izena:"
 msgid "Hotspot password:"
 msgstr "Berogunearen pasahitza:"
 
-#: qml/ConfigurationDialog.qml:101
-msgid "Ok"
-msgstr "Ados"
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
+msgstr ""
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"
@@ -145,6 +145,9 @@ msgstr "Kendu konexioa"
 #: qml/main.qml:222
 msgid "Do you want to remove the connection '%1'?"
 msgstr "'%1' konexioa kendu nahi duzu?"
+
+#~ msgid "Ok"
+#~ msgstr "Ados"
 
 #~ msgid "Search…"
 #~ msgstr "Bilatu..."

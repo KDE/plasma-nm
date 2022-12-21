@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-20 00:48+0000\n"
-"PO-Revision-Date: 2022-12-13 19:33+0530\n"
+"PO-Revision-Date: 2022-12-20 19:38+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -1534,7 +1534,7 @@ msgstr ""
 #: editor/settings/ui/wificonnectionwidget.ui:240
 #, kde-format
 msgid "Random…"
-msgstr ""
+msgstr "ஏதாவதொன்று…"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -1548,7 +1548,7 @@ msgstr ""
 #: editor/settings/ui/wificonnectionwidget.ui:290
 #, kde-format
 msgid "Visibility:"
-msgstr ""
+msgstr "கட்புலப்பாடு:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:306
@@ -1621,7 +1621,7 @@ msgstr "பாதுகாப்பு:"
 #: editor/settings/ui/wifisecurity.ui:97
 #, kde-format
 msgid "Key:"
-msgstr ""
+msgstr "சாவி:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/wifisecurity.ui:117
@@ -1687,7 +1687,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:80
 #, kde-format
 msgid "Random"
-msgstr ""
+msgstr "ஏதாவதொன்று"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
 #: editor/settings/ui/wiredconnectionwidget.ui:106
@@ -1702,7 +1702,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:125
 #, kde-format
 msgid "Speed:"
-msgstr ""
+msgstr "வேகம்:"
 
 #. i18n: ectx: property (text), widget (QLabel, duplexLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:132
@@ -1722,13 +1722,13 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:158
 #, kde-format
 msgid "Half"
-msgstr ""
+msgstr "பாதி"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:163
 #, kde-format
 msgid "Full"
-msgstr ""
+msgstr "முழு"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174

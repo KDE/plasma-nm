@@ -12,7 +12,6 @@
 #include <QScreen>
 
 #include <KLocalizedString>
-#include <KWindowSystem>
 
 #include <ModemManagerQt/Manager>
 
@@ -130,7 +129,7 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     ui->pin->setCursorPosition(0);
     ui->pin2->setCursorPosition(0);
 
-    KWindowSystem::setState(winId(), NET::KeepAbove);
+    setWindowFlag(Qt::WindowStaysOnTopHint);
 
     move((desktop.width() - width()) / 2, (desktop.height() - height()) / 2);
     connect(ui->chkShowPass, &QCheckBox::toggled, this, &PinDialog::chkShowPassToggled);

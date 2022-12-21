@@ -39,7 +39,6 @@
 #include <KProcess>
 #include <KUser>
 #include <KWallet>
-#include <KWindowSystem>
 
 #define AGENT_SERVICE "org.kde.kded5"
 #define AGENT_PATH "/modules/networkmanagement"
@@ -289,8 +288,8 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
 
         QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(settings);
         editor->setAttribute(Qt::WA_DeleteOnClose);
+        editor->setWindowFlag(Qt::WindowStaysOnTopHint);
         editor->show();
-        KWindowSystem::setState(editor->winId(), NET::KeepAbove);
         connect(editor.data(), &ConnectionEditorDialog::accepted, [editor, device, specificObject, this]() { //
             addAndActivateConnectionDBus(editor->setting(), device, specificObject);
         });

@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:48+0000\n"
-"PO-Revision-Date: 2022-12-13 14:16+0100\n"
+"POT-Creation-Date: 2022-12-22 00:49+0000\n"
+"PO-Revision-Date: 2022-12-20 09:13+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -106,7 +106,7 @@ msgstr "Connectat a %1"
 #: declarative/networkstatus.cpp:237
 #, kde-format
 msgid "NetworkManager not running"
-msgstr "El NetworkManager no s'està executant"
+msgstr "NetworkManager no s'està executant"
 
 #: declarative/networkstatus.cpp:242
 #, kde-format
@@ -979,8 +979,8 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"El NetworkManager indica a les aplicacions si la connexió té un ús mesurat, "
-"i per tant,\n"
+"NetworkManager indica a les aplicacions si la connexió té un ús mesurat, i "
+"per tant,\n"
 "cal restringir l'ús de les dades."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
@@ -3327,7 +3327,7 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Elimina"
 
-#: handler.cpp:108
+#: handler.cpp:107
 #, kde-format
 msgid ""
 "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3336,67 +3336,63 @@ msgstr ""
 "Falta la implementació de Plasma per a les connexions VPN «%1». Informeu-ho "
 "a la vostra distribució."
 
-#: handler.cpp:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#: handler.cpp:125
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
-"Falta la implementació del NetworkManager per a les connexions VPN «%1». "
-"Utilitzeu el gestor de paquets per a instal·lar-ho."
+"Falta la implementació de NetworkManager per a les connexions VPN «%1»."
 
-#: handler.cpp:128
+#: handler.cpp:127
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Instal·la"
 
-#: handler.cpp:776
+#: handler.cpp:775
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "No s'ha pogut activar %1"
 
-#: handler.cpp:780
+#: handler.cpp:779
 #, kde-format
 msgid "Failed to add %1"
 msgstr "No s'ha pogut afegir %1"
 
-#: handler.cpp:784
+#: handler.cpp:783
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "No s'ha pogut afegir la connexió %1"
 
-#: handler.cpp:788
+#: handler.cpp:787
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "No s'ha pogut desactivar %1"
 
-#: handler.cpp:792
+#: handler.cpp:791
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "No s'ha pogut eliminar %1"
 
-#: handler.cpp:796
+#: handler.cpp:795
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "No s'ha pogut actualitzar la connexió %1"
 
-#: handler.cpp:807
+#: handler.cpp:806
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "No s'ha pogut crear el punt d'accés %1"
 
-#: handler.cpp:826
+#: handler.cpp:825
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "S'ha afegit la connexió %1"
 
-#: handler.cpp:830
+#: handler.cpp:829
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "S'ha eliminat la connexió %1"
 
-#: handler.cpp:834
+#: handler.cpp:833
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "S'ha actualitzat la connexió %1"

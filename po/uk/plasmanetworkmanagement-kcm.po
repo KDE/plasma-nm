@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 00:48+0000\n"
-"PO-Revision-Date: 2022-12-13 14:49+0200\n"
+"PO-Revision-Date: 2022-12-21 08:03+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -99,7 +99,7 @@ msgstr "Пароль до хот-споту:"
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "Гаразд"
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"

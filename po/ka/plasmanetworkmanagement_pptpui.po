@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2022-10-15 06:26+0200\n"
+"PO-Revision-Date: 2022-12-21 08:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.1.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
 #: pptpadvanced.ui:17
@@ -92,7 +92,7 @@ msgstr "კრიპტო:"
 #: pptpadvanced.ui:128
 #, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr ""
+msgstr "MPPE-ის გამოყენების მოთხოვნა, 40/128-ბიტიანი დაშიფვრით, ან ყველა."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: pptpadvanced.ui:132
@@ -181,7 +181,7 @@ msgstr "ექო"
 #: pptpadvanced.ui:227
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
-msgstr ""
+msgstr "პარტნიორის სიცოცხლის დასადგენად LCP echo-request-ის გამოყენება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_sendEcho)
 #: pptpadvanced.ui:230

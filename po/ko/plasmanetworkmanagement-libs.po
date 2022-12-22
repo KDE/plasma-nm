@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:48+0000\n"
+"POT-Creation-Date: 2022-12-22 00:49+0000\n"
 "PO-Revision-Date: 2022-05-15 22:46+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3295,7 +3295,7 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "삭제(&E)"
 
-#: handler.cpp:108
+#: handler.cpp:107
 #, kde-format
 msgid ""
 "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3304,7 +3304,7 @@ msgstr ""
 "Plasma에서 '%1' VPN 연결을 지원하지 않습니다. 배포판에 문제를 보고해 주십시"
 "오."
 
-#: handler.cpp:126
+#: handler.cpp:125
 #, fuzzy, kde-format
 #| msgid ""
 #| "NetworkManager is missing support for '%1' VPN connections. Please use "
@@ -3314,57 +3314,57 @@ msgstr ""
 "NetworkManager에서 '%1' VPN 연결을 지원하지 않습니다. 패키지 관리자에서 지원 "
 "패키지를 설치하십시오."
 
-#: handler.cpp:128
+#: handler.cpp:127
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:776
+#: handler.cpp:775
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "%1을(를) 활성화할 수 없음"
 
-#: handler.cpp:780
+#: handler.cpp:779
 #, kde-format
 msgid "Failed to add %1"
 msgstr "%1을(를) 추가할 수 없음"
 
-#: handler.cpp:784
+#: handler.cpp:783
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "연결 %1을(를) 추가할 수 없음"
 
-#: handler.cpp:788
+#: handler.cpp:787
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "연결 %1을(를) 비활성화할 수 없음"
 
-#: handler.cpp:792
+#: handler.cpp:791
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "연결 %1을(를) 삭제할 수 없음"
 
-#: handler.cpp:796
+#: handler.cpp:795
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "연결 %1을(를) 업데이트할 수 없음"
 
-#: handler.cpp:807
+#: handler.cpp:806
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "핫스팟 %1을(를) 만들 수 없음"
 
-#: handler.cpp:826
+#: handler.cpp:825
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "연결 %1이(가) 추가됨"
 
-#: handler.cpp:830
+#: handler.cpp:829
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "연결 %1이(가) 삭제됨"
 
-#: handler.cpp:834
+#: handler.cpp:833
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "연결 %1이(가) 업데이트됨"

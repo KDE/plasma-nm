@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-08 00:48+0000\n"
+"POT-Creation-Date: 2022-12-22 00:49+0000\n"
 "PO-Revision-Date: 2022-10-08 18:36+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -598,52 +598,52 @@ msgstr "Diálogo de contraseña"
 msgid "Password:"
 msgstr "Contraseña:"
 
-#: pindialog.cpp:66
+#: pindialog.cpp:65
 #, kde-format
 msgid "SIM PUK"
 msgstr "PUK SIM"
 
-#: pindialog.cpp:68
+#: pindialog.cpp:67
 #, kde-format
 msgid "SIM PUK2"
 msgstr "PUK2 SIM"
 
-#: pindialog.cpp:70
+#: pindialog.cpp:69
 #, kde-format
 msgid "Service provider PUK"
 msgstr "PUK del proveedor de servicio"
 
-#: pindialog.cpp:72
+#: pindialog.cpp:71
 #, kde-format
 msgid "Network PUK"
 msgstr "PUK de la red"
 
-#: pindialog.cpp:74
+#: pindialog.cpp:73
 #, kde-format
 msgid "Corporate PUK"
 msgstr "PUK corporativo"
 
-#: pindialog.cpp:76
+#: pindialog.cpp:75
 #, kde-format
 msgid "PH-FSIM PUK"
 msgstr "PUK PH-FSIM"
 
-#: pindialog.cpp:78
+#: pindialog.cpp:77
 #, kde-format
 msgid "Network Subset PUK"
 msgstr "PUK del subconjunto de red"
 
-#: pindialog.cpp:81 pindialog.cpp:113
+#: pindialog.cpp:80 pindialog.cpp:112
 #, kde-format
 msgid "%1 unlock required"
 msgstr "Se necesita desbloquear %1"
 
-#: pindialog.cpp:82 pindialog.cpp:114
+#: pindialog.cpp:81 pindialog.cpp:113
 #, kde-format
 msgid "%1 Unlock Required"
 msgstr "Se necesita desbloquear %1"
 
-#: pindialog.cpp:83 pindialog.cpp:115
+#: pindialog.cpp:82 pindialog.cpp:114
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
@@ -651,89 +651,89 @@ msgstr ""
 "El dispositivo de banda ancha móvil «%1» solicita un código %2 antes de "
 "poderse utilizar."
 
-#: pindialog.cpp:84 pindialog.cpp:116
+#: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
 msgid "%1 code:"
 msgstr "Código %1:"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:85 pinwidget.ui:153
+#: pindialog.cpp:84 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "Nuevo código PIN:"
 
-#: pindialog.cpp:86
+#: pindialog.cpp:85
 #, kde-format
 msgid "Re-enter new PIN code:"
 msgstr "Vuelva a introducir el nuevo código PIN:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:87 pinwidget.ui:193
+#: pindialog.cpp:86 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "Mostrar el código PIN/PUK"
 
-#: pindialog.cpp:97
+#: pindialog.cpp:96
 #, kde-format
 msgid "SIM PIN"
 msgstr "PIN SIM"
 
-#: pindialog.cpp:99
+#: pindialog.cpp:98
 #, kde-format
 msgid "SIM PIN2"
 msgstr "PIN2 SIM"
 
-#: pindialog.cpp:101
+#: pindialog.cpp:100
 #, kde-format
 msgid "Service provider PIN"
 msgstr "PIN del proveedor de servicio"
 
-#: pindialog.cpp:103
+#: pindialog.cpp:102
 #, kde-format
 msgid "Network PIN"
 msgstr "PIN de la red"
 
-#: pindialog.cpp:105
+#: pindialog.cpp:104
 #, kde-format
 msgid "PIN"
 msgstr "PIN"
 
-#: pindialog.cpp:107
+#: pindialog.cpp:106
 #, kde-format
 msgid "Corporate PIN"
 msgstr "PIN corporativo"
 
-#: pindialog.cpp:109
+#: pindialog.cpp:108
 #, kde-format
 msgid "PH-FSIM PIN"
 msgstr "PIN PH-FSIM"
 
-#: pindialog.cpp:111
+#: pindialog.cpp:110
 #, kde-format
 msgid "Network Subset PIN"
 msgstr "PIN del subconjunto de red"
 
-#: pindialog.cpp:117
+#: pindialog.cpp:116
 #, kde-format
 msgid "Show PIN code"
 msgstr "Mostrar el código PIN"
 
-#: pindialog.cpp:199
+#: pindialog.cpp:198
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "Código PIN demasiado corto. Debe tener al menos 4 dígitos."
 
-#: pindialog.cpp:204
+#: pindialog.cpp:203
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "Los dos códigos PIN no coinciden"
 
-#: pindialog.cpp:209
+#: pindialog.cpp:208
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "Código PUK demasiado corto. Debe tener 8 dígitos."
 
-#: pindialog.cpp:214
+#: pindialog.cpp:213
 #, kde-format
 msgid "Unknown Error"
 msgstr "Error desconocido"
@@ -767,7 +767,7 @@ msgstr "Código PUK:"
 msgid "Re-enter PIN code:"
 msgstr "Vuelva a introducir el código PIN:"
 
-#: secretagent.cpp:406
+#: secretagent.cpp:405
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "La autenticación en %1 ha fallado. ¿Es incorrecta la contraseña?"

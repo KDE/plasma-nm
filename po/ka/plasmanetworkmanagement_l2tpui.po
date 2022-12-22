@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2022-12-14 07:56+0100\n"
+"PO-Revision-Date: 2022-12-21 08:29+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -100,6 +100,8 @@ msgid ""
 "<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
 "host name for</p><p>authentication purposes.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>ავთენტიკაციისთვის </p><p>მიაწერეთ თქვენი დომენის "
+"სახელი &lt;domain&gt; ლოკალურ ჰოსტის სახელს</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -116,6 +118,8 @@ msgid ""
 "<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
 "cer or .p12 formats.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>სერტიფიკატის გამომცემლის (CA) ფაილი .pem, .der, .crt, ."
+"cer ან .p12 ფორმატში.</p></body></html>"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCert)
@@ -290,6 +294,8 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>არასავალდებულო. შეთავაზებების სია ESP-სთვის - სწრაფი "
+"რეჟიმი. ფორმატია “enc-integ,enc-integ, …”.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:255
@@ -298,6 +304,8 @@ msgid ""
 "<html><head/><body><p>How long the keying channel of a connection should "
 "last before being renegotiated.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>რამდენ ხანს გაძლებს შეერთების ბრელოკის არხი, სანამ "
+"თავიდან დაიწყება.</p></body></html>"
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
@@ -319,6 +327,9 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>არასავალდებულო. შეთავაზებების სია IKE - მთავარი "
+"რეჟიმისთვის. ფორმატია is “enc-integ-group,enc-integ-group, …”.</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:279
@@ -501,6 +512,8 @@ msgid ""
 "Allow protocol field compression negotiation in both the receive and the\n"
 " transmit directions."
 msgstr ""
+"პროტოკოლის ველის შეკუმშვის მოლაპარაკების ორივე, მიმღების და \n"
+"გამგზავნის მიმართულებით დაშვება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbCompressionNegotiation)
 #: l2tpppp.ui:151
@@ -532,7 +545,7 @@ msgstr "ექო"
 #: l2tpppp.ui:189
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
-msgstr ""
+msgstr "პარტნიორის სიცოცხლის დასადგენად LCP echo-request-ის გამოყენება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbsendEcho)
 #: l2tpppp.ui:192
@@ -584,7 +597,7 @@ msgstr "კრიპტო:"
 #: l2tpppp.ui:297
 #, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr ""
+msgstr "MPPE-ის გამოყენების მოთხოვნა, 40/128-ბიტიანი დაშიფვრით, ან ყველა."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
 #: l2tpppp.ui:301

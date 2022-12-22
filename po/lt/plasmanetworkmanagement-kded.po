@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-08 00:48+0000\n"
+"POT-Creation-Date: 2022-12-22 00:49+0000\n"
 "PO-Revision-Date: 2022-11-16 21:41+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -595,52 +595,52 @@ msgstr "Slaptažodžio dialogas"
 msgid "Password:"
 msgstr "Slaptažodis:"
 
-#: pindialog.cpp:66
+#: pindialog.cpp:65
 #, kde-format
 msgid "SIM PUK"
 msgstr "SIM PUK"
 
-#: pindialog.cpp:68
+#: pindialog.cpp:67
 #, kde-format
 msgid "SIM PUK2"
 msgstr "SIM PUK2"
 
-#: pindialog.cpp:70
+#: pindialog.cpp:69
 #, kde-format
 msgid "Service provider PUK"
 msgstr "Paslaugų tiekėjo PUK"
 
-#: pindialog.cpp:72
+#: pindialog.cpp:71
 #, kde-format
 msgid "Network PUK"
 msgstr "Tinklo PUK"
 
-#: pindialog.cpp:74
+#: pindialog.cpp:73
 #, kde-format
 msgid "Corporate PUK"
 msgstr "Korporacijos PUK"
 
-#: pindialog.cpp:76
+#: pindialog.cpp:75
 #, kde-format
 msgid "PH-FSIM PUK"
 msgstr "PH-FSIM PUK"
 
-#: pindialog.cpp:78
+#: pindialog.cpp:77
 #, kde-format
 msgid "Network Subset PUK"
 msgstr "Tinklo poaibio PUK"
 
-#: pindialog.cpp:81 pindialog.cpp:113
+#: pindialog.cpp:80 pindialog.cpp:112
 #, kde-format
 msgid "%1 unlock required"
 msgstr "Reikalingas %1 atrakinimas"
 
-#: pindialog.cpp:82 pindialog.cpp:114
+#: pindialog.cpp:81 pindialog.cpp:113
 #, kde-format
 msgid "%1 Unlock Required"
 msgstr "Reikalingas %1 atrakinimas"
 
-#: pindialog.cpp:83 pindialog.cpp:115
+#: pindialog.cpp:82 pindialog.cpp:114
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
@@ -648,89 +648,89 @@ msgstr ""
 "Mobiliojo plačiajuosčio tinklo įrenginiui „%1“ reikia %2 kodo, kad būtų "
 "galima jį naudoti."
 
-#: pindialog.cpp:84 pindialog.cpp:116
+#: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
 msgid "%1 code:"
 msgstr "%1 kodas:"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:85 pinwidget.ui:153
+#: pindialog.cpp:84 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "Naujas PIN kodas:"
 
-#: pindialog.cpp:86
+#: pindialog.cpp:85
 #, kde-format
 msgid "Re-enter new PIN code:"
 msgstr "Dar kartą įveskite naują PIN kodą:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:87 pinwidget.ui:193
+#: pindialog.cpp:86 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "Rodyti PIN/PUK kodą"
 
-#: pindialog.cpp:97
+#: pindialog.cpp:96
 #, kde-format
 msgid "SIM PIN"
 msgstr "SIM PIN"
 
-#: pindialog.cpp:99
+#: pindialog.cpp:98
 #, kde-format
 msgid "SIM PIN2"
 msgstr "SIM PIN2"
 
-#: pindialog.cpp:101
+#: pindialog.cpp:100
 #, kde-format
 msgid "Service provider PIN"
 msgstr "Paslaugų tiekėjo PIN"
 
-#: pindialog.cpp:103
+#: pindialog.cpp:102
 #, kde-format
 msgid "Network PIN"
 msgstr "Tinklo PIN"
 
-#: pindialog.cpp:105
+#: pindialog.cpp:104
 #, kde-format
 msgid "PIN"
 msgstr "PIN"
 
-#: pindialog.cpp:107
+#: pindialog.cpp:106
 #, kde-format
 msgid "Corporate PIN"
 msgstr "Korporacijos PIN"
 
-#: pindialog.cpp:109
+#: pindialog.cpp:108
 #, kde-format
 msgid "PH-FSIM PIN"
 msgstr "PH-FSIM PIN"
 
-#: pindialog.cpp:111
+#: pindialog.cpp:110
 #, kde-format
 msgid "Network Subset PIN"
 msgstr "Tinklo poaibio PIN"
 
-#: pindialog.cpp:117
+#: pindialog.cpp:116
 #, kde-format
 msgid "Show PIN code"
 msgstr "Rodyti PIN kodą"
 
-#: pindialog.cpp:199
+#: pindialog.cpp:198
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "PIN kodas per trumpas. Jis turi būti bent 4 skaitmenų ilgio."
 
-#: pindialog.cpp:204
+#: pindialog.cpp:203
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "Du PIN kodai nesutampa"
 
-#: pindialog.cpp:209
+#: pindialog.cpp:208
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "Per trumpas PUK kodas. Jis turi būti 8 skaitmenų ilgio."
 
-#: pindialog.cpp:214
+#: pindialog.cpp:213
 #, kde-format
 msgid "Unknown Error"
 msgstr "Nežinoma klaida"
@@ -764,7 +764,7 @@ msgstr "PUK kodas:"
 msgid "Re-enter PIN code:"
 msgstr "Dar kartą įveskite PIN kodą:"
 
-#: secretagent.cpp:406
+#: secretagent.cpp:405
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Tapatybės nustatymas ties %1 patyrė nesėkmę. Neteisingas slaptažodis?"

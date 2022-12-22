@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-08 00:48+0000\n"
+"POT-Creation-Date: 2022-12-22 00:49+0000\n"
 "PO-Revision-Date: 2022-02-16 14:58+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -617,52 +617,52 @@ msgstr "Dialog de introducere a parolei"
 msgid "Password:"
 msgstr "Parolă:"
 
-#: pindialog.cpp:66
+#: pindialog.cpp:65
 #, kde-format
 msgid "SIM PUK"
 msgstr ""
 
-#: pindialog.cpp:68
+#: pindialog.cpp:67
 #, kde-format
 msgid "SIM PUK2"
 msgstr ""
 
-#: pindialog.cpp:70
+#: pindialog.cpp:69
 #, kde-format
 msgid "Service provider PUK"
 msgstr ""
 
-#: pindialog.cpp:72
+#: pindialog.cpp:71
 #, kde-format
 msgid "Network PUK"
 msgstr "PUK rețea"
 
-#: pindialog.cpp:74
+#: pindialog.cpp:73
 #, kde-format
 msgid "Corporate PUK"
 msgstr "PUK corporativ"
 
-#: pindialog.cpp:76
+#: pindialog.cpp:75
 #, kde-format
 msgid "PH-FSIM PUK"
 msgstr ""
 
-#: pindialog.cpp:78
+#: pindialog.cpp:77
 #, kde-format
 msgid "Network Subset PUK"
 msgstr ""
 
-#: pindialog.cpp:81 pindialog.cpp:113
+#: pindialog.cpp:80 pindialog.cpp:112
 #, kde-format
 msgid "%1 unlock required"
 msgstr "Este necesară deblocarea %1"
 
-#: pindialog.cpp:82 pindialog.cpp:114
+#: pindialog.cpp:81 pindialog.cpp:113
 #, kde-format
 msgid "%1 Unlock Required"
 msgstr "Este necesară deblocarea %1"
 
-#: pindialog.cpp:83 pindialog.cpp:115
+#: pindialog.cpp:82 pindialog.cpp:114
 #, fuzzy, kde-format
 #| msgid ""
 #| "The mobile broadband device '%1' requires a SIM PUK code before it can be "
@@ -673,89 +673,89 @@ msgstr ""
 "Dispozitivul mobil de bandă largă „%1” necesită deblocarea SIM PUK înainte "
 "să poată fi folosit."
 
-#: pindialog.cpp:84 pindialog.cpp:116
+#: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
 msgid "%1 code:"
 msgstr "Cod %1:"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:85 pinwidget.ui:153
+#: pindialog.cpp:84 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "Cod PIN nou:"
 
-#: pindialog.cpp:86
+#: pindialog.cpp:85
 #, kde-format
 msgid "Re-enter new PIN code:"
 msgstr "Re-introduceți noul cod PIN:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:87 pinwidget.ui:193
+#: pindialog.cpp:86 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "Arată codul PIN/PUK"
 
-#: pindialog.cpp:97
+#: pindialog.cpp:96
 #, kde-format
 msgid "SIM PIN"
 msgstr ""
 
-#: pindialog.cpp:99
+#: pindialog.cpp:98
 #, kde-format
 msgid "SIM PIN2"
 msgstr ""
 
-#: pindialog.cpp:101
+#: pindialog.cpp:100
 #, kde-format
 msgid "Service provider PIN"
 msgstr ""
 
-#: pindialog.cpp:103
+#: pindialog.cpp:102
 #, kde-format
 msgid "Network PIN"
 msgstr "PIN rețea"
 
-#: pindialog.cpp:105
+#: pindialog.cpp:104
 #, kde-format
 msgid "PIN"
 msgstr "PIN"
 
-#: pindialog.cpp:107
+#: pindialog.cpp:106
 #, kde-format
 msgid "Corporate PIN"
 msgstr "PIN corporativ"
 
-#: pindialog.cpp:109
+#: pindialog.cpp:108
 #, kde-format
 msgid "PH-FSIM PIN"
 msgstr ""
 
-#: pindialog.cpp:111
+#: pindialog.cpp:110
 #, kde-format
 msgid "Network Subset PIN"
 msgstr ""
 
-#: pindialog.cpp:117
+#: pindialog.cpp:116
 #, kde-format
 msgid "Show PIN code"
 msgstr "Arată codul PIN"
 
-#: pindialog.cpp:199
+#: pindialog.cpp:198
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "Codul PIN este prea scurt. Ar trebui să conțină cel puțin 4 cifre."
 
-#: pindialog.cpp:204
+#: pindialog.cpp:203
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "Codurile PIN nu se potrivesc"
 
-#: pindialog.cpp:209
+#: pindialog.cpp:208
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "Codul PUK este prea scurt. Ar trebui să conțină 8 cifre."
 
-#: pindialog.cpp:214
+#: pindialog.cpp:213
 #, kde-format
 msgid "Unknown Error"
 msgstr "Eroare necunoscută"
@@ -790,7 +790,7 @@ msgstr "Cod PUK:"
 msgid "Re-enter PIN code:"
 msgstr "Reintroduceți codul PIN:"
 
-#: secretagent.cpp:406
+#: secretagent.cpp:405
 #, fuzzy, kde-format
 #| msgid "Authentication to the VPN server failed."
 msgid "Authentication to %1 failed. Wrong password?"

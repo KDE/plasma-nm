@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-13 00:58+0000\n"
-"PO-Revision-Date: 2022-12-14 08:00+0100\n"
+"PO-Revision-Date: 2022-12-21 08:34+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -67,7 +67,7 @@ msgstr "არასწორი ზომა (უნდა იყოს დი�
 #: openvpn.cpp:559
 #, kde-format
 msgid "Invalid number of arguments (expected 2) in option: %1"
-msgstr ""
+msgstr "არგუმენტების არასწორი (მოველოდი ორს) რაოდენობა პარამეტრში: %1"
 
 #: openvpn.cpp:581
 #, kde-format
@@ -77,12 +77,14 @@ msgstr "არასწორი არგუმენტი პარამე�
 #: openvpn.cpp:669
 #, kde-format
 msgid "File %1 is not a valid OpenVPN's client configuration file"
-msgstr ""
+msgstr "ფაილი %1 OpenVPN-ის კლიენტის სწორ ფაილს არ წარმოადგენს"
 
 #: openvpn.cpp:671
 #, kde-format
 msgid "File %1 is not a valid OpenVPN configuration (no remote)."
 msgstr ""
+"ფაილი %1 OpenVPN-ის კონფიგურაციის სწორ ფაილს არ წარმოადგენს (პარტნიორის "
+"გარეშე)."
 
 #: openvpn.cpp:739
 #, kde-format
@@ -160,7 +162,7 @@ msgstr "CA სერტიფიკატი:"
 #: openvpn.ui:117 openvpn.ui:378 openvpn.ui:471
 #, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr ""
+msgstr "სერტიფიკატების გამომცემლის (CA) ფაილი .pem ფორმატში."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509Cert)
@@ -202,7 +204,7 @@ msgstr "პირადი გასაღები:"
 #: openvpn.ui:163 openvpn.ui:517
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr ""
+msgstr "ლოკალური პარტნიორის პირადი გასაღები .pem ფორმატში."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -229,6 +231,8 @@ msgstr "სტატიკური გასაღები:"
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
 msgstr ""
+"წინასწარ-გაზიარებული ფაილი სტატიკური გასაღების დაშიფვრის რეჟიმისთვის (არა-"
+"TLS)"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, pskSharedKey)
 #: openvpn.ui:227
@@ -328,7 +332,7 @@ msgstr "მომხმარებელი:"
 #: openvpn.ui:404 openvpn.ui:561
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "OpenVPN-სთვის გადაცემული მომხმარებელი."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -343,7 +347,7 @@ msgstr "პაროლი:"
 #: openvpn.ui:429 openvpn.ui:583
 #, kde-format
 msgid "Password passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "OpenVPN-სთვის გადაცემული პაროლი."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: openvpn.ui:627
@@ -365,6 +369,8 @@ msgid ""
 "TCP/UDP port number for peer. (Default value when there is no port for "
 "gateway)."
 msgstr ""
+"TCP/UDP პორტის ნომერი პარტნიორისთვის. (ნაგულისხმები მნიშვნელობა, როცა "
+"რაუტერისთვს პორტი არ არსებობს)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomPort)
 #: openvpnadvanced.ui:39
@@ -591,7 +597,7 @@ msgstr ""
 #: openvpnadvanced.ui:363
 #, kde-format
 msgid "Specify exit or restart ping:"
-msgstr ""
+msgstr "მიუთითეთ გასვლა ან გადატვირთეთ ping:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbSpecifyExitRestartPing)
 #: openvpnadvanced.ui:377
@@ -688,7 +694,7 @@ msgstr ""
 #: openvpnadvanced.ui:531
 #, kde-format
 msgid "Use custom size of cipher key:"
-msgstr ""
+msgstr "დაშიფვრის გასაღების ზომის ხელით მითითბა:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboHmac)
@@ -832,6 +838,7 @@ msgstr ""
 msgid ""
 "Subject or Common Name to verify server certificate information against."
 msgstr ""
+"საგანი ან საერთო სახელი სერვერის სერტიფიკატის ინფორმაციასთან შესადარებლად."
 
 #. i18n: ectx: property (text), widget (QLabel, lbSubjectMatch)
 #: openvpnadvanced.ui:728
@@ -1090,7 +1097,7 @@ msgstr "OpenVPN -ის დამატებითი პარამეტრ�
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
-msgstr ""
+msgstr "OpenVPN შიფრის მოძებნის შეცდომა"
 
 #: openvpnadvancedwidget.cpp:139
 #, kde-format
@@ -1102,7 +1109,7 @@ msgstr "ნაგულისხმები"
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
-msgstr ""
+msgstr "OpenVPN შიფრები ვერ ვიპოვე"
 
 #: openvpnauth.cpp:73 openvpnauth.cpp:103
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-20 00:48+0000\n"
+"POT-Creation-Date: 2022-12-22 00:49+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -3272,73 +3272,73 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "چىقىرىۋەت(&E)"
 
-#: handler.cpp:108
+#: handler.cpp:107
 #, kde-format
 msgid ""
 "Plasma is missing support for '%1' VPN connections. Please report this to "
 "your distribution."
 msgstr ""
 
-#: handler.cpp:126
+#: handler.cpp:125
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:128
+#: handler.cpp:127
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:776
+#: handler.cpp:775
 #, kde-format
 msgid "Failed to activate %1"
 msgstr ""
 
-#: handler.cpp:780
+#: handler.cpp:779
 #, kde-format
 msgid "Failed to add %1"
 msgstr ""
 
-#: handler.cpp:784
+#: handler.cpp:783
 #, fuzzy, kde-format
 #| msgid "Remove Connection"
 msgid "Failed to add connection %1"
 msgstr "باغلىنىشنى چىقىۋەت"
 
-#: handler.cpp:788
+#: handler.cpp:787
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr ""
 
-#: handler.cpp:792
+#: handler.cpp:791
 #, kde-format
 msgid "Failed to remove %1"
 msgstr ""
 
-#: handler.cpp:796
+#: handler.cpp:795
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr ""
 
-#: handler.cpp:807
+#: handler.cpp:806
 #, fuzzy, kde-format
 #| msgid "Remove Connection"
 msgid "Failed to create hotspot %1"
 msgstr "باغلىنىشنى چىقىۋەت"
 
-#: handler.cpp:826
+#: handler.cpp:825
 #, fuzzy, kde-format
 #| msgid "Connection name:"
 msgid "Connection %1 has been added"
 msgstr "باغلىنىش ئاتى:"
 
-#: handler.cpp:830
+#: handler.cpp:829
 #, fuzzy, kde-format
 #| msgid "Connection name:"
 msgid "Connection %1 has been removed"
 msgstr "باغلىنىش ئاتى:"
 
-#: handler.cpp:834
+#: handler.cpp:833
 #, fuzzy, kde-format
 #| msgid "Connection name:"
 msgid "Connection %1 has been updated"

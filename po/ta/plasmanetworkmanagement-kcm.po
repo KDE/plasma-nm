@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 00:48+0000\n"
-"PO-Revision-Date: 2022-12-13 19:33+0530\n"
+"PO-Revision-Date: 2022-12-22 21:24+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -96,7 +96,7 @@ msgstr "ஹாட்ஸ்பாட்டிற்கான கடவுச்�
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "சரி"
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 00:48+0000\n"
-"PO-Revision-Date: 2022-12-13 19:39+0100\n"
+"PO-Revision-Date: 2022-12-22 00:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -99,7 +99,7 @@ msgstr "Contraseña del punto de acceso:"
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "Aceptar"
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"

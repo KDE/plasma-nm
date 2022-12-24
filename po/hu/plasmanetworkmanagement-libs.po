@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-22 00:49+0000\n"
+"POT-Creation-Date: 2022-12-24 00:51+0000\n"
 "PO-Revision-Date: 2022-02-18 11:21+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3323,16 +3323,22 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Eltávolítás"
 
-#: handler.cpp:107
-#, kde-format
-msgid ""
-"Plasma is missing support for '%1' VPN connections. Please report this to "
-"your distribution."
+#: handler.cpp:108
+#, fuzzy, kde-format
+#| msgid ""
+#| "NetworkManager is missing support for '%1' VPN connections. Please use "
+#| "the package manager to install it."
+msgid "Plasma is missing support for '%1' VPN connections."
 msgstr ""
-"A Plasmából hiányzik a(z) „%1” VPN-kapcsolatok támogatása. Jelentse ezt a "
-"hibát a disztribóciójánál."
+"A NetworkManagerből hiányzik a(z) „%1” VPN-kapcsolatok támogatása. Használja "
+"a csomagkezelőt a telepítéséhez."
 
-#: handler.cpp:125
+#: handler.cpp:110
+#, kde-format
+msgid "Report Bug"
+msgstr ""
+
+#: handler.cpp:133
 #, fuzzy, kde-format
 #| msgid ""
 #| "NetworkManager is missing support for '%1' VPN connections. Please use "
@@ -3342,57 +3348,57 @@ msgstr ""
 "A NetworkManagerből hiányzik a(z) „%1” VPN-kapcsolatok támogatása. Használja "
 "a csomagkezelőt a telepítéséhez."
 
-#: handler.cpp:127
+#: handler.cpp:135
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:775
+#: handler.cpp:783
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Nem sikerült aktiválni: %1"
 
-#: handler.cpp:779
+#: handler.cpp:787
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Nem sikerült hozzáadni: %1"
 
-#: handler.cpp:783
+#: handler.cpp:791
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Nem sikerült hozzáadni a(z) %1 kapcsolatot"
 
-#: handler.cpp:787
+#: handler.cpp:795
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Nem sikerült deaktiválni: %1"
 
-#: handler.cpp:791
+#: handler.cpp:799
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Nem sikerült eltávolítani: %1"
 
-#: handler.cpp:795
+#: handler.cpp:803
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Nem sikerült frissíteni a(z) %1 kapcsolatot"
 
-#: handler.cpp:806
+#: handler.cpp:814
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "A(z) %1 hotspot létrehozása meghiúsult"
 
-#: handler.cpp:825
+#: handler.cpp:833
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "A(z) %1 kapcsolat sikeresen hozzáadva"
 
-#: handler.cpp:829
+#: handler.cpp:837
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "A(z) %1 kapcsolat eltávolításra került"
 
-#: handler.cpp:833
+#: handler.cpp:841
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "A(z) %1 kapcsolat frissült"
@@ -3768,6 +3774,13 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Eszköz"
+
+#~ msgid ""
+#~ "Plasma is missing support for '%1' VPN connections. Please report this to "
+#~ "your distribution."
+#~ msgstr ""
+#~ "A Plasmából hiányzik a(z) „%1” VPN-kapcsolatok támogatása. Jelentse ezt a "
+#~ "hibát a disztribóciójánál."
 
 #~ msgctxt "Error message in VPN import/export dialog"
 #~ msgid "Operation not supported for this VPN type."

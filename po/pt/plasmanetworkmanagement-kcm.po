@@ -92,7 +92,7 @@ msgstr "Senha do ponto de acesso:"
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"

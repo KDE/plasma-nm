@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-21 00:48+0000\n"
-"PO-Revision-Date: 2022-12-14 20:21+0100\n"
+"PO-Revision-Date: 2022-12-23 18:24+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -96,7 +96,7 @@ msgstr "Парола на точка на достъп:"
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "Добре"
 
 #: qml/ConnectionItem.qml:99
 msgid "Connect"

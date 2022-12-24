@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-22 00:49+0000\n"
+"POT-Creation-Date: 2022-12-24 00:51+0000\n"
 "PO-Revision-Date: 2022-12-14 09:39+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -3354,16 +3354,22 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "R&emover"
 
-#: handler.cpp:107
-#, kde-format
-msgid ""
-"Plasma is missing support for '%1' VPN connections. Please report this to "
-"your distribution."
+#: handler.cpp:108
+#, fuzzy, kde-format
+#| msgid ""
+#| "NetworkManager is missing support for '%1' VPN connections. Please use "
+#| "the package manager to install it."
+msgid "Plasma is missing support for '%1' VPN connections."
 msgstr ""
-"Falta ao Plasma o suporte para as ligações de VPN '%1'. Por favor, comunique "
-"isto à sua distribuição."
+"Falta ao NetworkManager o suporte para as ligações de VPN '%1'. Por favor, "
+"use o gestor de pacotes para o instalar."
 
-#: handler.cpp:125
+#: handler.cpp:110
+#, kde-format
+msgid "Report Bug"
+msgstr ""
+
+#: handler.cpp:133
 #, fuzzy, kde-format
 #| msgid ""
 #| "NetworkManager is missing support for '%1' VPN connections. Please use "
@@ -3373,57 +3379,57 @@ msgstr ""
 "Falta ao NetworkManager o suporte para as ligações de VPN '%1'. Por favor, "
 "use o gestor de pacotes para o instalar."
 
-#: handler.cpp:127
+#: handler.cpp:135
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Instalar"
 
-#: handler.cpp:775
+#: handler.cpp:783
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Não foi possível activar a %1"
 
-#: handler.cpp:779
+#: handler.cpp:787
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Não foi possível adicionar a %1"
 
-#: handler.cpp:783
+#: handler.cpp:791
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Não foi possível adicionar a ligação %1"
 
-#: handler.cpp:787
+#: handler.cpp:795
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Não foi possível desactivar a %1"
 
-#: handler.cpp:791
+#: handler.cpp:799
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Não foi possível remover a %1"
 
-#: handler.cpp:795
+#: handler.cpp:803
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Não foi possível actualizar a ligação %1"
 
-#: handler.cpp:806
+#: handler.cpp:814
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Não foi possível criar o ponto de acesso %1"
 
-#: handler.cpp:825
+#: handler.cpp:833
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Foi adicionada a ligação %1"
 
-#: handler.cpp:829
+#: handler.cpp:837
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "A ligação %1 foi removida"
 
-#: handler.cpp:833
+#: handler.cpp:841
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "A ligação %1 foi actualizada"
@@ -3784,3 +3790,10 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Dispositivo"
+
+#~ msgid ""
+#~ "Plasma is missing support for '%1' VPN connections. Please report this to "
+#~ "your distribution."
+#~ msgstr ""
+#~ "Falta ao Plasma o suporte para as ligações de VPN '%1'. Por favor, "
+#~ "comunique isto à sua distribuição."

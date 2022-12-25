@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-12-14 09:39+0000\n"
+"PO-Revision-Date: 2022-12-24 07:19+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
 "Language: pt\n"
@@ -3355,29 +3355,19 @@ msgid "R&emove"
 msgstr "R&emover"
 
 #: handler.cpp:108
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
-"Falta ao NetworkManager o suporte para as ligações de VPN '%1'. Por favor, "
-"use o gestor de pacotes para o instalar."
+msgstr "Falta ao Plasma o suporte para as ligações de VPN '%1'."
 
 #: handler.cpp:110
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Comunicar um Erro"
 
 #: handler.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
-"Falta ao NetworkManager o suporte para as ligações de VPN '%1'. Por favor, "
-"use o gestor de pacotes para o instalar."
+msgstr "Falta ao NetworkManager o suporte para as ligações de VPN '%1'."
 
 #: handler.cpp:135
 #, kde-format
@@ -3790,10 +3780,3 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Dispositivo"
-
-#~ msgid ""
-#~ "Plasma is missing support for '%1' VPN connections. Please report this to "
-#~ "your distribution."
-#~ msgstr ""
-#~ "Falta ao Plasma o suporte para as ligações de VPN '%1'. Por favor, "
-#~ "comunique isto à sua distribuição."

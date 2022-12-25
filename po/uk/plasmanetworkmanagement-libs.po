@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-12-20 11:16+0200\n"
-"Last-Translator: Fracture dept <yurchor@ukr.net>\n"
+"PO-Revision-Date: 2022-12-24 08:46+0200\n"
+"Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
 "MIME-Version: 1.0\n"
@@ -3333,15 +3333,14 @@ msgid "R&emove"
 msgstr "Ви&лучити"
 
 #: handler.cpp:108
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "У NetworkManager немає підтримки з'єднань VPN «%1»."
+msgstr "У Плазмі немає підтримки з'єднань VPN «%1»."
 
 #: handler.cpp:110
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Повідомити про ваду"
 
 #: handler.cpp:133
 #, kde-format

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-12-13 12:21\n"
+"PO-Revision-Date: 2022-12-24 11:42\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -3262,10 +3262,10 @@ msgstr "移除(&E)"
 #: handler.cpp:108
 #, fuzzy, kde-format
 #| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#| "Plasma is missing support for '%1' VPN connections. Please report this to "
+#| "your distribution."
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "网络管理器 缺少对“%1”VPN 连接的支持。请通过包管理器安装它。"
+msgstr "Plasma 缺少对“%1”VPN 连接的支持。请将此问题报告给您正在使用的发行版。"
 
 #: handler.cpp:110
 #, kde-format
@@ -3273,12 +3273,9 @@ msgid "Report Bug"
 msgstr ""
 
 #: handler.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr "网络管理器 缺少对“%1”VPN 连接的支持。请通过包管理器安装它。"
+msgstr ""
 
 #: handler.cpp:135
 #, kde-format
@@ -3691,13 +3688,3 @@ msgstr "Adsl"
 #, kde-format
 msgid "Device"
 msgstr "设备"
-
-#~ msgid ""
-#~ "Plasma is missing support for '%1' VPN connections. Please report this to "
-#~ "your distribution."
-#~ msgstr ""
-#~ "Plasma 缺少对“%1”VPN 连接的支持。请将此问题报告给您正在使用的发行版。"
-
-#~ msgctxt "Error message in VPN import/export dialog"
-#~ msgid "Operation not supported for this VPN type."
-#~ msgstr "此 VPN 类型不支持这个操作"

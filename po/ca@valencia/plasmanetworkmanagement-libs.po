@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-12-20 09:13+0100\n"
+"PO-Revision-Date: 2022-12-24 11:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -3328,16 +3328,14 @@ msgid "R&emove"
 msgstr "&Elimina"
 
 #: handler.cpp:108
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
-"Falta la implementació de NetworkManager per a les connexions VPN «%1»."
+msgstr "Falta la implementació de Plasma per a les connexions VPN «%1»."
 
 #: handler.cpp:110
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Informeu d'un error"
 
 #: handler.cpp:133
 #, kde-format
@@ -3756,10 +3754,3 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Dispositiu"
-
-#~ msgid ""
-#~ "Plasma is missing support for '%1' VPN connections. Please report this to "
-#~ "your distribution."
-#~ msgstr ""
-#~ "Falta la implementació de Plasma per a les connexions VPN «%1». Informeu-"
-#~ "ho a la vostra distribució."

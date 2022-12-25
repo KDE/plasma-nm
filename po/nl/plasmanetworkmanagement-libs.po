@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-12-20 10:52+0100\n"
+"PO-Revision-Date: 2022-12-24 15:18+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -3323,16 +3323,14 @@ msgid "R&emove"
 msgstr "V&erwijderen"
 
 #: handler.cpp:108
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
-"Er ontbreekt in NetworkManager ondersteuning voor '%1' VPN-verbindingen."
+msgstr "Er ontbreekt ondersteuning voor '%1' VPN-verbindingen in Plasma."
 
 #: handler.cpp:110
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Bug rapporteren"
 
 #: handler.cpp:133
 #, kde-format

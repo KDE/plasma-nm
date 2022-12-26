@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2022-12-21 08:29+0100\n"
+"PO-Revision-Date: 2022-12-25 07:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -345,6 +345,9 @@ msgid ""
 "of encryption/authentication keys for user packets) should last, from "
 "successful negotiation to expiry.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>რამდენ ხანს უნდა გაძლოს მითითებულმა მიერთებამ "
+"(მომხმარებლის პაკეტებისთვის გამოყენებული დაშიფვრის სეტი/ავთენტიკაციის "
+"გასაღებების) მიერთებიდან ვადის გასვლამდე.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
 #: l2tpipsec.ui:299
@@ -394,6 +397,9 @@ msgid ""
 "encapsulation even if no NAT situation is detected might help in such cases."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>ზოგიერთი ბრანდმაუერი ბლოკავს ESP ტრაფიკს. პრობლემა "
+"შეიძლება UDP ენკაფსულაციით გადაჭრათ მაშინაც კი, როცა NAT-ს არ იყენებთ.</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:329

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-12-21 08:37+0100\n"
+"PO-Revision-Date: 2022-12-25 07:19+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2008,7 +2008,7 @@ msgstr ""
 #: editor/settings/ui/wireguardpeerwidget.ui:109
 #, kde-format
 msgid "Persistent keepalive:"
-msgstr ""
+msgstr "მუდმივად ჩართული მდგომარეობა:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:127
@@ -3044,6 +3044,10 @@ msgid ""
 "\n"
 "If you are unsure of your plan please ask your provider for your plan's APN."
 msgstr ""
+"გაფრთხლება: არასწორი სატარიფო გეგმის არჩევის შემთხვევაში შეიძლება თქვენს "
+"მობილურ ოპერატორთან პრობლემები გქონდეთ.\n"
+"\n"
+"თუ დარწმუნებული არ ბრძანდებით, ჰკითხეთ ოპერატორს, რომელი APN უნდა აირჩიოთ."
 
 #: editor/widgets/mobileconnectionwizard.cpp:540
 #, kde-format
@@ -3211,10 +3215,9 @@ msgid "R&emove"
 msgstr "&წაშლა"
 
 #: handler.cpp:108
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "NetworkManager-ს აკლია %1 VPN-ის მხარდაჭერა."
+msgstr "Plasma -ს აკლია %1 VPN-ის მხარდაჭერა."
 
 #: handler.cpp:110
 #, kde-format

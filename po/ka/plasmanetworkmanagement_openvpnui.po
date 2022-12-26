@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-13 00:58+0000\n"
-"PO-Revision-Date: 2022-12-21 08:34+0100\n"
+"PO-Revision-Date: 2022-12-25 07:16+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -191,6 +191,8 @@ msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
 "Certificate)."
 msgstr ""
+"ლოკალური პარტნიორის ხელმოწერილი სერტიფიკატი .pem ფორმატში (ხელმოწერილი CA ან "
+"CA სერტიფიკატით)."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
@@ -251,7 +253,7 @@ msgstr "გასაღების მიმართულება:"
 #: openvpn.ui:247
 #, kde-format
 msgid "Direction for Static Key encryption mode (non-TLS)."
-msgstr ""
+msgstr "სტატიკური გასაღებით დაშიფვრის რეჟიმის მიმართულება (არა-TLS)."
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:250
@@ -260,6 +262,8 @@ msgid ""
 "If key direction is used, it must be the opposite of that used on the VPN "
 "peer."
 msgstr ""
+"თუ გასაღების მიმართულებას იყენებთ, ის VPN პარტნიორის მიერ გამოყენებულის "
+"საპირისპირო უნდა იყოს."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:254
@@ -917,7 +921,7 @@ msgstr ""
 #: openvpnadvanced.ui:853
 #, kde-format
 msgid "Add an additional layer of HMAC authentication."
-msgstr ""
+msgstr "HMAC ავთენტიკაციის დამატებითი ფენის დამატება."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: openvpnadvanced.ui:868
@@ -952,6 +956,8 @@ msgid ""
 "channel\n"
 "to protect against DoS attacks."
 msgstr ""
+"TLS კონტროლის არხზე HMAC ავთენტიკაციის დამატებითი ფენის დამატება\n"
+"DoS შეტევებისგან თავის დასაცავად."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
 #: openvpnadvanced.ui:898
@@ -964,7 +970,7 @@ msgstr "გასაღების ფაილი:"
 #: openvpnadvanced.ui:922 openvpnadvanced.ui:941
 #, kde-format
 msgid "Direction parameter for static key mode."
-msgstr ""
+msgstr "მიმართულების პარამეტეტრი სტატიკური გასაღების რეჟიმისთვის."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
 #: openvpnadvanced.ui:950

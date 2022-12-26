@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-13 00:58+0000\n"
-"PO-Revision-Date: 2022-12-21 08:35+0100\n"
+"PO-Revision-Date: 2022-12-25 07:18+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -52,6 +52,11 @@ msgid ""
 "The connection can still be created, with TCP tunneling disabled, however it "
 "may not work as expected."
 msgstr ""
+"VPN პარამეტრების ფაილი '%1' მიუთითებს, რომ VPN ტრაფიკი TCP-ის უნდა იყოს "
+"გადაცემული, რაც vpnc-ის მიერ ამჟამად მხარდაჭერილი არაა.\n"
+"\n"
+"მიერთება შეიქმნება, მაგრამ TCP გვირაბ-გამორთულით, რატომაც მან შეიძლება არც "
+"იმუშაოს."
 
 #: vpnc.cpp:252
 #, kde-format
@@ -246,7 +251,7 @@ msgstr "IKE DH ჯგუფის სახელი."
 #: vpncadvanced.ui:151
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr ""
+msgstr "შესანიშნავი გადამისამართების საიდუმლოება:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
 #: vpncadvanced.ui:167

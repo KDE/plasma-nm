@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-12-21 09:17+0100\n"
+"PO-Revision-Date: 2022-12-25 09:03+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Lokalize 22.08.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -3324,15 +3324,14 @@ msgid "R&emove"
 msgstr "&Odstrani"
 
 #: handler.cpp:108
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "Programu NetworkManager manjka podpora za '%1' povezave VPN."
+msgstr "Plasmi manjka podpora za '%1' povezave VPN."
 
 #: handler.cpp:110
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Poročaj o hrošču"
 
 #: handler.cpp:133
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-12-23 20:47+0300\n"
+"PO-Revision-Date: 2022-12-26 21:52+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -3319,15 +3319,14 @@ msgid "R&emove"
 msgstr "&Kaldır"
 
 #: handler.cpp:108
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "NetworkManager, '%1' VPN bağlantıları için destek içermiyor."
+msgstr "Plasma, '%1' VPN bağlantıları için destek içermiyor."
 
 #: handler.cpp:110
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Hata Bildir"
 
 #: handler.cpp:133
 #, kde-format

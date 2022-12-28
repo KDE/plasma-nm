@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-12-20 19:38+0530\n"
+"PO-Revision-Date: 2022-12-27 21:42+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -657,7 +657,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:385
 #, kde-format
 msgid "Both"
-msgstr ""
+msgstr "இரண்டும்"
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: editor/settings/ui/802-1x.ui:393
@@ -729,13 +729,13 @@ msgstr "தானியங்கி"
 #: editor/settings/ui/802-1x.ui:640
 #, kde-format
 msgid "Version 0"
-msgstr ""
+msgstr "பதிப்பு 0"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:645
 #, kde-format
 msgid "Version 1"
-msgstr ""
+msgstr "பதிப்பு 1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/bond.ui:21 editor/settings/ui/bridge.ui:18
@@ -797,7 +797,7 @@ msgstr ""
 #: editor/settings/ui/bond.ui:225
 #, kde-format
 msgid " ms"
-msgstr ""
+msgstr " மி.நொ."
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: editor/settings/ui/bond.ui:195
@@ -844,7 +844,7 @@ msgstr ""
 #, kde-format
 msgctxt "seconds"
 msgid " s"
-msgstr ""
+msgstr " நொ"
 
 #. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
 #: editor/settings/ui/bridge.ui:139
@@ -1385,19 +1385,19 @@ msgstr ""
 #: editor/settings/ui/team.ui:113
 #, kde-format
 msgid "JSON config:"
-msgstr ""
+msgstr "JSON அமைப்பு:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnImport)
 #: editor/settings/ui/team.ui:123
 #, kde-format
 msgid "Import configuration from file…"
-msgstr ""
+msgstr "கோப்பிலிருந்து அமைப்பை இறக்குமதி செய்…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
 #, kde-format
 msgid "Parent interface:"
-msgstr ""
+msgstr "தாய் இடைமுகப்பு:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/vlan.ui:41
@@ -1512,7 +1512,7 @@ msgstr ""
 #: editor/settings/ui/wificonnectionwidget.ui:159
 #, kde-format
 msgid "Channel:"
-msgstr ""
+msgstr "அலைவரிசை :"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, channel)
 #: editor/settings/ui/wificonnectionwidget.ui:179
@@ -1528,7 +1528,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:47
 #, kde-format
 msgid "Cloned MAC address:"
-msgstr ""
+msgstr "போலி MAC முகவரி:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:240
@@ -1633,25 +1633,25 @@ msgstr ""
 #: editor/settings/ui/wifisecurity.ui:134
 #, kde-format
 msgid "1 (default)"
-msgstr ""
+msgstr "1 (இயல்பிருப்பு)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:139
 #, kde-format
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:144
 #, kde-format
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:149
 #, kde-format
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
 #: editor/settings/ui/wifisecurity.ui:174

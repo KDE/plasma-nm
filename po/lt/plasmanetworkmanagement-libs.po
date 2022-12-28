@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-11-16 21:39+0200\n"
+"PO-Revision-Date: 2022-12-28 00:52+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.2.1\n"
+"X-Generator: Poedit 3.2.2\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -2937,12 +2937,12 @@ msgstr "Nerasta jokio VPN papildinio, skirto %1 tipui"
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "Šio tipo VPN importavimas yra neįgyvendintas"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "Neįgyvendinta"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3334,34 +3334,24 @@ msgid "R&emove"
 msgstr "Ša&linti"
 
 #: handler.cpp:108
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
-"NetworkManager trūksta palaikymo, skirto „%1“ VPN ryšiams. Naudokite paketų "
-"tvarkytuvę, kad įdiegtumėte palaikymą."
+msgstr "Plasma trūksta palaikymo, skirto „%1“ VPN ryšiams."
 
 #: handler.cpp:110
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Pranešti apie programos klaidą"
 
 #: handler.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
-"NetworkManager trūksta palaikymo, skirto „%1“ VPN ryšiams. Naudokite paketų "
-"tvarkytuvę, kad įdiegtumėte palaikymą."
+msgstr "NetworkManager trūksta palaikymo, skirto „%1“ VPN ryšiams."
 
 #: handler.cpp:135
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Įdiegti"
 
 #: handler.cpp:783
 #, kde-format

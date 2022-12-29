@@ -67,9 +67,23 @@ Dialog {
                     color: Kirigami.Theme.backgroundColor
                 }
                 delegate: ListItem {
-                    checked: mouseArea.containsMouse || view.currentlySelectedIndex == index
                     height: connectionTypeBase.height
                     width: view.width
+                    checked: view.currentlySelectedIndex == index
+
+                    onClicked: {
+                        createButton.enabled = true
+                        view.currentlySelectedIndex = index
+                        view.connectionSpecificType = ConnectionSpecificType
+                        view.connectionShared = ConnectionShared
+                        view.connectionType = ConnectionType
+                        view.connectionVpnType = ConnectionVpnType
+                    }
+
+                    onDoubleClicked: {
+                        dialog.close()
+                        dialog.requestCreateConnection(view.connectionType, view.connectionVpnType, view.connectionSpecificType, view.connectionShared)
+                    }
 
                     Item {
                         id: connectionTypeBase
@@ -127,26 +141,6 @@ Dialog {
                             opacity: 0.6
                             text: ConnectionDescription
                             visible: ConnectionType == PlasmaNM.Enums.Vpn
-                        }
-                    }
-
-                    MouseArea {
-                        id: mouseArea
-                        anchors.fill: parent
-                        hoverEnabled: true
-
-                        onClicked: {
-                            createButton.enabled = true
-                            view.currentlySelectedIndex = index
-                            view.connectionSpecificType = ConnectionSpecificType
-                            view.connectionShared = ConnectionShared
-                            view.connectionType = ConnectionType
-                            view.connectionVpnType = ConnectionVpnType
-                        }
-
-                        onDoubleClicked: {
-                            dialog.close()
-                            dialog.requestCreateConnection(view.connectionType, view.connectionVpnType, view.connectionSpecificType, view.connectionShared)
                         }
                     }
                 }

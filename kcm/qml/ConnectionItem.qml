@@ -13,12 +13,21 @@ import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 ListItem {
     id: connectionItem
 
-    checked: mouseArea.containsMouse || ConnectionPath === connectionView.currentConnectionPath
     height: connectionItemBase.height
+    acceptedButtons: Qt.AllButtons
+    checked: ConnectionPath === connectionView.currentConnectionPath
 
     signal aboutToChangeConnection(bool exportable, string name, string path)
     signal aboutToExportConnection(string path)
     signal aboutToRemoveConnection(string name, string path)
+
+    onClicked: {
+        if (mouse.button === Qt.LeftButton) {
+            aboutToChangeConnection(KcmVpnConnectionExportable, Name, ConnectionPath)
+        } else if (mouse.button == Qt.RightButton) {
+            connectionItemMenu.popup()
+        }
+    }
 
     Item {
         id: connectionItemBase
@@ -122,21 +131,6 @@ ListItem {
             text: i18n("Export");
 
             onTriggered: aboutToExportConnection(ConnectionPath)
-        }
-    }
-
-    MouseArea {
-        id: mouseArea
-        anchors.fill: parent
-        acceptedButtons: Qt.AllButtons;
-        hoverEnabled: true
-
-        onClicked: {
-            if (mouse.button === Qt.LeftButton) {
-                aboutToChangeConnection(KcmVpnConnectionExportable, Name, ConnectionPath)
-            } else if (mouse.button == Qt.RightButton) {
-                connectionItemMenu.popup()
-            }
         }
     }
 

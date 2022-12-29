@@ -14,12 +14,9 @@ import org.kde.plasma.core 2.0 as PlasmaCore
  * Could break some themes but the majority look fine.
  * Also includes a separator to be used in sections.
  */
-Item {
+MouseArea {
     id: listItem
 
-    signal clicked
-
-    property alias containsMouse: itemMouse.containsMouse
     property bool checked: false
     property bool separator: false
     property rect highlightRect: Qt.rect(0, 0, width, height)
@@ -28,6 +25,7 @@ Item {
 
     // Sections have spacing above but not below. Will use 2 of them below.
     height: separator ? separatorLine.height + PlasmaCore.Units.smallSpacing * 3 : parent.height
+    hoverEnabled: true
 
     PlasmaCore.Svg {
         id: lineSvg
@@ -65,12 +63,5 @@ Item {
         y: highlightRect.y
         height: highlightRect.height
         width: highlightRect.width
-    }
-
-    MouseArea {
-        id: itemMouse
-        anchors.fill: parent
-        hoverEnabled: true
-        onClicked: listItem.clicked()
     }
 }

@@ -9,42 +9,30 @@ import QtQuick 2.1
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kirigami 2.15 as Kirigami
 
-Item {
+MouseArea {
     id: listItem
 
     default property alias content: paddingItem.data
-    property alias containsMouse: itemMouse.containsMouse
-    property alias enabled: itemMouse.enabled
     property bool checked: false
     property bool sectionDelegate: false
 
-    signal clicked
-
     width: parent ? parent.width : undefined
     height: paddingItem.childrenRect.height + background.margins.top + background.margins.bottom
-
     implicitHeight: paddingItem.childrenRect.height + Math.round(Kirigami.Units.gridUnit / 2)
+    property bool changeBackgroundOnPress: !listItem.checked && !listItem.sectionDelegate
+    hoverEnabled: true
 
-    Connections {
-        target: listItem
-        function onCheckedChanged() {
-            background.color = (listItem.checked ? highlightColor : baseColor)
-        }
-        function onSectionDelegateChanged() {
-            background.color = (listItem.sectionDelegate ? alternateBaseColor : baseColor)
-        }
-    }
+    onPressed: if (changeBackgroundOnPress) background.prefix = "pressed"
+    onReleased: if (changeBackgroundOnPress) background.prefix = "normal"
+    onCanceled: if (changeBackgroundOnPress) background.prefix = "normal"
 
     Rectangle {
         id: background
 
         anchors.fill: parent
         visible: listItem.ListView.view ? listItem.ListView.view.highlight === null : true
-        opacity: itemMouse.containsMouse && !itemMouse.pressed ? 0.5 : 1
-        Component.onCompleted: {
-            color = (listItem.sectionDelegate ? alternateBaseColor : (listItem.checked ? highlightColor : baseColor))
-        }
-        Behavior on opacity { NumberAnimation { duration: Kirigami.Units.longDuration } }
+        opacity: !listItem.checked && listItem.containsMouse && !listItem.pressed ? 0.5 : 1
+        color: listItem.sectionDelegate ? alternateBaseColor : (listItem.checked || listItem.containsMouse ? highlightColor : baseColor)
     }
 
     PlasmaCore.SvgItem {
@@ -56,27 +44,14 @@ Item {
             top: parent.top
         }
         height: naturalSize.height
-        visible: listItem.sectionDelegate || (typeof(index) != "undefined" && index > 0 && !listItem.checked && !itemMouse.pressed)
+        visible: listItem.sectionDelegate || (typeof(index) != "undefined" && index > 0 && !listItem.checked && !listItem.pressed)
     }
 
-    MouseArea {
-        id: itemMouse
-        property bool changeBackgroundOnPress: !listItem.checked && !listItem.sectionDelegate
-        anchors.fill: background
-        enabled: false
-
-        onClicked: listItem.clicked()
-        onPressAndHold: listItem.pressAndHold()
-        onPressed: if (changeBackgroundOnPress) background.prefix = "pressed"
-        onReleased: if (changeBackgroundOnPress) background.prefix = "normal"
-        onCanceled: if (changeBackgroundOnPress) background.prefix = "normal"
-
-        Item {
-            id: paddingItem
-            anchors {
-                fill: parent
-                margins: Math.round(Kirigami.Units.gridUnit / 3)
-            }
+    Item {
+        id: paddingItem
+        anchors {
+            fill: parent
+            margins: Math.round(Kirigami.Units.gridUnit / 3)
         }
     }
 

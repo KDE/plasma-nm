@@ -19,7 +19,8 @@ Kirigami.SwipeListItem {
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
                                                     (SecurityType == PlasmaNM.Enums.StaticWep ||
                                                      SecurityType == PlasmaNM.Enums.WpaPsk ||
-                                                     SecurityType == PlasmaNM.Enums.Wpa2Psk)
+                                                     SecurityType == PlasmaNM.Enums.Wpa2Psk ||
+                                                     SecurityType == PlasmaNM.Enums.SAE)
 
     RowLayout {
         anchors.leftMargin: Kirigami.Units.largeSpacing * 5

@@ -12,9 +12,9 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-12-17 09:46+0100\n"
+"PO-Revision-Date: 2022-12-28 23:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
-"Language-Team: Basque\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -107,12 +107,12 @@ msgstr "%1(e)ra konektatuta"
 #: declarative/networkstatus.cpp:237
 #, kde-format
 msgid "NetworkManager not running"
-msgstr "Sare kudeatzailea ez dabil behar bezala."
+msgstr "«NetworkManager» ez dabil"
 
 #: declarative/networkstatus.cpp:242
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
-msgstr "Sare kudeatzailearen 0.9.8 bertsioa behar da, %1 aurkitu da."
+msgstr "«NetworkManager» 0.9.8 behar da, %1 aurkitu da."
 
 #: declarative/networkstatus.cpp:245
 #, kde-format
@@ -979,9 +979,9 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManagerrek aplikazioei adierazten die konexioa tarifatua den eta "
-"ondorioz\n"
-"datu erabilera mugatu behar den."
+"«NetworkManager» sare-kudeatzaileak aplikazioei konexioa tarifatua den eta "
+"ondorioz datuen\n"
+"erabilera mugatu beharko litzatekeen adierazten die."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:160
@@ -3332,34 +3332,25 @@ msgid "R&emove"
 msgstr "&Kendu"
 
 #: handler.cpp:108
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
-"Plasmari «%1» VPN konexioen euskarria falta zaio. Mesedez, erabili pakete-"
-"kudeatzailea hura instalatzeko."
+msgstr "Plasmari '%1' VPN konexioen euskarria falta zaio."
 
 #: handler.cpp:110
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Eman errorearen berri"
 
 #: handler.cpp:133
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
-"Plasmari «%1» VPN konexioen euskarria falta zaio. Mesedez, erabili pakete-"
-"kudeatzailea hura instalatzeko."
+"«NetworkManager» sare-kudeatzaileari '%1' VPN konexioen euskarria falta zaio."
 
 #: handler.cpp:135
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Instalatu"
 
 #: handler.cpp:783
 #, kde-format

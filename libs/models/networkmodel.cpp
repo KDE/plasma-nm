@@ -126,7 +126,6 @@ bool NetworkModel::setData(const QModelIndex &index, const QVariant &value, int 
 
 int NetworkModel::rowCount(const QModelIndex &parent) const
 {
-    Q_UNUSED(parent);
     return parent.isValid() ? 0 : m_list.count();
 }
 

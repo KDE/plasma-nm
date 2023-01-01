@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-28 00:19+0000\n"
+"POT-Creation-Date: 2023-01-01 01:00+0000\n"
 "PO-Revision-Date: 2022-05-22 13:09+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -32,7 +32,7 @@ msgstr "mkondarev@yahoo.de"
 msgid "Invalid input."
 msgstr "Невалиден вход."
 
-#: package/contents/ui/ConnectionItemDelegate.qml:107
+#: package/contents/ui/ConnectionItemDelegate.qml:108
 #, kde-format
 msgid "Connect to"
 msgstr "Свързване с"

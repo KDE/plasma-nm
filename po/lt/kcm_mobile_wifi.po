@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-28 00:19+0000\n"
+"POT-Creation-Date: 2023-01-01 01:00+0000\n"
 "PO-Revision-Date: 2021-08-21 12:30+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt\n"
@@ -34,7 +34,7 @@ msgstr "<>"
 msgid "Invalid input."
 msgstr "Neteisinga įvestis."
 
-#: package/contents/ui/ConnectionItemDelegate.qml:107
+#: package/contents/ui/ConnectionItemDelegate.qml:108
 #, kde-format
 msgid "Connect to"
 msgstr "Prisijungti prie"

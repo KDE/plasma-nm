@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-28 00:19+0000\n"
+"POT-Creation-Date: 2023-01-01 01:00+0000\n"
 "PO-Revision-Date: 2022-07-23 23:47+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -33,7 +33,7 @@ msgstr "kde-i18n-de@kde.org"
 msgid "Invalid input."
 msgstr "Ungültige Eingabe."
 
-#: package/contents/ui/ConnectionItemDelegate.qml:107
+#: package/contents/ui/ConnectionItemDelegate.qml:108
 #, kde-format
 msgid "Connect to"
 msgstr "Verbinden mit"

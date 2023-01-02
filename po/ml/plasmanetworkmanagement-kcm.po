@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:48+0000\n"
+"POT-Creation-Date: 2023-01-02 01:06+0000\n"
 "PO-Revision-Date: 2019-12-12 22:22+0000\n"
 "Last-Translator: Sabu Siyad <ssiyad@tuta.io>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -54,15 +54,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr ""
 
-#: qml/AddConnectionDialog.qml:169
+#: qml/AddConnectionDialog.qml:163
 msgid "Create"
 msgstr ""
 
-#: qml/AddConnectionDialog.qml:180 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr ""
 
-#: qml/AddConnectionDialog.qml:197 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:191 qml/main.qml:193
 msgid "Configuration"
 msgstr ""
 
@@ -99,27 +99,27 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:108
 msgid "Connect"
 msgstr ""
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:108
 msgid "Disconnect"
 msgstr ""
 
-#: qml/ConnectionItem.qml:112
+#: qml/ConnectionItem.qml:121
 msgid "Delete"
 msgstr ""
 
-#: qml/ConnectionItem.qml:122
+#: qml/ConnectionItem.qml:131
 msgid "Export"
 msgstr ""
 
-#: qml/ConnectionItem.qml:147
+#: qml/ConnectionItem.qml:141
 msgid "Connected"
 msgstr ""
 
-#: qml/ConnectionItem.qml:149
+#: qml/ConnectionItem.qml:143
 msgid "Connecting"
 msgstr ""
 

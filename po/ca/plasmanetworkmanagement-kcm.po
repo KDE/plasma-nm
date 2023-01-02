@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:48+0000\n"
+"POT-Creation-Date: 2023-01-02 01:06+0000\n"
 "PO-Revision-Date: 2022-12-21 10:19+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -56,15 +56,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Trieu un tipus de connexió"
 
-#: qml/AddConnectionDialog.qml:169
+#: qml/AddConnectionDialog.qml:163
 msgid "Create"
 msgstr "Crea"
 
-#: qml/AddConnectionDialog.qml:180 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: qml/AddConnectionDialog.qml:197 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:191 qml/main.qml:193
 msgid "Configuration"
 msgstr "Configuració"
 
@@ -101,27 +101,27 @@ msgstr "Contrasenya del punt d'accés:"
 msgid "OK"
 msgstr "D'acord"
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:108
 msgid "Connect"
 msgstr "Connecta"
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:108
 msgid "Disconnect"
 msgstr "Desconnecta"
 
-#: qml/ConnectionItem.qml:112
+#: qml/ConnectionItem.qml:121
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: qml/ConnectionItem.qml:122
+#: qml/ConnectionItem.qml:131
 msgid "Export"
 msgstr "Exporta"
 
-#: qml/ConnectionItem.qml:147
+#: qml/ConnectionItem.qml:141
 msgid "Connected"
 msgstr "Connectat"
 
-#: qml/ConnectionItem.qml:149
+#: qml/ConnectionItem.qml:143
 msgid "Connecting"
 msgstr "Connectant"
 

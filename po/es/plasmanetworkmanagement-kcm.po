@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-21 00:48+0000\n"
+"POT-Creation-Date: 2023-01-02 01:06+0000\n"
 "PO-Revision-Date: 2022-12-22 00:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -56,15 +56,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Escoja un tipo de conexión"
 
-#: qml/AddConnectionDialog.qml:169
+#: qml/AddConnectionDialog.qml:163
 msgid "Create"
 msgstr "Crear"
 
-#: qml/AddConnectionDialog.qml:180 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: qml/AddConnectionDialog.qml:197 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:191 qml/main.qml:193
 msgid "Configuration"
 msgstr "Configuración"
 
@@ -101,27 +101,27 @@ msgstr "Contraseña del punto de acceso:"
 msgid "OK"
 msgstr "Aceptar"
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:108
 msgid "Connect"
 msgstr "Conectar"
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:108
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: qml/ConnectionItem.qml:112
+#: qml/ConnectionItem.qml:121
 msgid "Delete"
 msgstr "Borrar"
 
-#: qml/ConnectionItem.qml:122
+#: qml/ConnectionItem.qml:131
 msgid "Export"
 msgstr "Exportar"
 
-#: qml/ConnectionItem.qml:147
+#: qml/ConnectionItem.qml:141
 msgid "Connected"
 msgstr "Conectado"
 
-#: qml/ConnectionItem.qml:149
+#: qml/ConnectionItem.qml:143
 msgid "Connecting"
 msgstr "Conectando"
 

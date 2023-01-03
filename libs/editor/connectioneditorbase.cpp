@@ -72,6 +72,7 @@ void ConnectionEditorBase::setConnection(const NetworkManager::ConnectionSetting
     m_connection.clear();
     m_connection = connection;
     m_initialized = false;
+    m_wifiSecurity = nullptr;
 
     // Reset UI setting widgets
     delete m_connectionWidget;

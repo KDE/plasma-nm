@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-24 00:51+0000\n"
-"PO-Revision-Date: 2022-12-24 11:42\n"
+"PO-Revision-Date: 2023-01-02 07:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -3260,12 +3260,9 @@ msgid "R&emove"
 msgstr "移除(&E)"
 
 #: handler.cpp:108
-#, fuzzy, kde-format
-#| msgid ""
-#| "Plasma is missing support for '%1' VPN connections. Please report this to "
-#| "your distribution."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "Plasma 缺少对“%1”VPN 连接的支持。请将此问题报告给您正在使用的发行版。"
+msgstr ""
 
 #: handler.cpp:110
 #, kde-format

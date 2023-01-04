@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-02 01:06+0000\n"
 "PO-Revision-Date: 2021-09-18 20:19+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -56,15 +56,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Vel tilkoplingstype"
 
-#: qml/AddConnectionDialog.qml:159
+#: qml/AddConnectionDialog.qml:163
 msgid "Create"
 msgstr "Legg til"
 
-#: qml/AddConnectionDialog.qml:169 qml/ConfigurationDialog.qml:110
+#: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: qml/AddConnectionDialog.qml:186 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:191 qml/main.qml:193
 msgid "Configuration"
 msgstr "Oppsett"
 
@@ -97,31 +97,31 @@ msgstr "Namn på trådlaussone:"
 msgid "Hotspot password:"
 msgstr "Passord på trådlaussone:"
 
-#: qml/ConfigurationDialog.qml:101
-msgid "Ok"
-msgstr "OK"
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
+msgstr ""
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:108
 msgid "Connect"
 msgstr "Kopla til"
 
-#: qml/ConnectionItem.qml:99
+#: qml/ConnectionItem.qml:108
 msgid "Disconnect"
 msgstr "Kopla frå"
 
-#: qml/ConnectionItem.qml:112
+#: qml/ConnectionItem.qml:121
 msgid "Delete"
 msgstr "Slett"
 
-#: qml/ConnectionItem.qml:122
+#: qml/ConnectionItem.qml:131
 msgid "Export"
 msgstr "Eksporter"
 
-#: qml/ConnectionItem.qml:147
+#: qml/ConnectionItem.qml:141
 msgid "Connected"
 msgstr "Kopla til"
 
-#: qml/ConnectionItem.qml:149
+#: qml/ConnectionItem.qml:143
 msgid "Connecting"
 msgstr "Koplar til"
 

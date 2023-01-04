@@ -9,7 +9,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-13 00:58+0000\n"
 "PO-Revision-Date: 2021-08-13 10:52+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -38,7 +38,7 @@ msgstr "Kopírovat certifikáty"
 #: openvpn.cpp:194
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Kopírovat"
 
 #: openvpn.cpp:253 openvpn.cpp:271 openvpn.cpp:550
 #, kde-format
@@ -1138,6 +1138,3 @@ msgstr "token"
 #, kde-format
 msgid "one-time password"
 msgstr "Jednorázové heslo"
-
-#~ msgid "Could not open file for writing"
-#~ msgstr "Nelze otevřít soubor pro zápis"

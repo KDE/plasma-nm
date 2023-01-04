@@ -1,15 +1,15 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
-# Vit Pelcak <vpelcak@suse.cz>, 2021, 2022.
+# Vit Pelcak <vit@pelcak.org>, 2021, 2022.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-24 00:51+0000\n"
+"POT-Creation-Date: 2023-01-04 00:50+0000\n"
 "PO-Revision-Date: 2022-06-29 20:00+0200\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -118,112 +118,112 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Neznámý"
 
-#: editor/connectioneditorbase.cpp:197
+#: editor/connectioneditorbase.cpp:198
 #, kde-format
 msgctxt "General"
 msgid "General configuration"
 msgstr "Obecné nastavení"
 
-#: editor/connectioneditorbase.cpp:204 editor/connectioneditorbase.cpp:221
+#: editor/connectioneditorbase.cpp:205 editor/connectioneditorbase.cpp:222
 #, kde-format
 msgid "Wired"
 msgstr "Drátové"
 
-#: editor/connectioneditorbase.cpp:207
+#: editor/connectioneditorbase.cpp:208
 #, kde-format
 msgid "802.1x Security"
 msgstr "802.1x zabezpečení"
 
-#: editor/connectioneditorbase.cpp:210 editor/settings/bridgewidget.cpp:39
+#: editor/connectioneditorbase.cpp:211 editor/settings/bridgewidget.cpp:39
 #: editor/settings/teamwidget.cpp:42 editor/uiutils.cpp:228
 #: models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
-#: editor/connectioneditorbase.cpp:214
+#: editor/connectioneditorbase.cpp:215
 #, kde-format
 msgid "Wi-Fi Security"
 msgstr "Zabezpečení Wi-Fi"
 
-#: editor/connectioneditorbase.cpp:219 editor/uiutils.cpp:192
+#: editor/connectioneditorbase.cpp:220 editor/uiutils.cpp:192
 #: models/creatableconnectionsmodel.cpp:135
 #, kde-format
 msgid "DSL"
 msgstr "DSL"
 
-#: editor/connectioneditorbase.cpp:224 editor/connectioneditorbase.cpp:227
+#: editor/connectioneditorbase.cpp:225 editor/connectioneditorbase.cpp:228
 #, kde-format
 msgid "Mobile Broadband (%1)"
 msgstr "Mobilní Broadband (%1)"
 
-#: editor/connectioneditorbase.cpp:230 editor/uiutils.cpp:196
+#: editor/connectioneditorbase.cpp:231 editor/uiutils.cpp:196
 #, kde-format
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: editor/connectioneditorbase.cpp:235
+#: editor/connectioneditorbase.cpp:236
 #, kde-format
 msgid "GSM"
 msgstr "GSM"
 
-#: editor/connectioneditorbase.cpp:237 editor/connectioneditorbase.cpp:280
+#: editor/connectioneditorbase.cpp:238 editor/connectioneditorbase.cpp:281
 #, kde-format
 msgid "PPP"
 msgstr "PPP"
 
-#: editor/connectioneditorbase.cpp:241 editor/settings/teamwidget.cpp:39
+#: editor/connectioneditorbase.cpp:242 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:211 models/creatableconnectionsmodel.cpp:142
 #: models/networkmodelitem.cpp:713
 #, kde-format
 msgid "Infiniband"
 msgstr "Infiniband"
 
-#: editor/connectioneditorbase.cpp:244 editor/uiutils.cpp:200
+#: editor/connectioneditorbase.cpp:245 editor/uiutils.cpp:200
 #: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:719
 #, kde-format
 msgid "Bond"
 msgstr "Bond"
 
-#: editor/connectioneditorbase.cpp:247 editor/uiutils.cpp:203
+#: editor/connectioneditorbase.cpp:248 editor/uiutils.cpp:203
 #: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:725
 #, kde-format
 msgid "Bridge"
 msgstr "Bridge"
 
-#: editor/connectioneditorbase.cpp:250 models/creatableconnectionsmodel.cpp:220
+#: editor/connectioneditorbase.cpp:251 models/creatableconnectionsmodel.cpp:220
 #: models/networkmodelitem.cpp:731
 #, kde-format
 msgid "Vlan"
 msgstr "VLAN"
 
-#: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:232
+#: editor/connectioneditorbase.cpp:254 editor/uiutils.cpp:232
 #: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:740
 #, kde-format
 msgid "Team"
 msgstr "Tým"
 
-#: editor/connectioneditorbase.cpp:256
+#: editor/connectioneditorbase.cpp:257
 #, kde-format
 msgid "WireGuard Interface"
 msgstr "Rozhraní WireGuard:"
 
-#: editor/connectioneditorbase.cpp:269
+#: editor/connectioneditorbase.cpp:270
 #, kde-format
 msgid "VPN (%1)"
 msgstr "VPN (%1)"
 
-#: editor/connectioneditorbase.cpp:286
+#: editor/connectioneditorbase.cpp:287
 #, kde-format
 msgid "IPv4"
 msgstr "IPv4"
 
-#: editor/connectioneditorbase.cpp:303
+#: editor/connectioneditorbase.cpp:304
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:486
+#: editor/connectioneditorbase.cpp:487
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "Selhalo získávání přístupu pro %1"
@@ -1606,10 +1606,9 @@ msgstr "WPA3 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA/WPA2 Enterprise"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -2818,7 +2817,7 @@ msgstr ""
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "Neimplementováno"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3205,7 +3204,7 @@ msgstr ""
 #: handler.cpp:110
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Nahlásit chybu"
 
 #: handler.cpp:133
 #, kde-format
@@ -3215,7 +3214,7 @@ msgstr ""
 #: handler.cpp:135
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Instalovat"
 
 #: handler.cpp:783
 #, kde-format
@@ -3366,18 +3365,16 @@ msgid "Import a saved configuration file"
 msgstr "Importovat uložený konfigurační soubor"
 
 #: models/networkmodelitem.cpp:42
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:43
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
@@ -3386,25 +3383,22 @@ msgid "The connection type is Bluetooth"
 msgstr ""
 
 #: models/networkmodelitem.cpp:45
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:46
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:47
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
@@ -3419,39 +3413,34 @@ msgid "The connection type is OLPC Mesh"
 msgstr ""
 
 #: models/networkmodelitem.cpp:50
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:51
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:52
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:53
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:54
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:55
 #, kde-format
@@ -3460,25 +3449,22 @@ msgid "The connection type is Wireless"
 msgstr ""
 
 #: models/networkmodelitem.cpp:56
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:57
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr "Typ připojení:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
@@ -3636,7 +3622,3 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Zařízení"
-
-#~ msgctxt "Error message in VPN import/export dialog"
-#~ msgid "Operation not supported for this VPN type."
-#~ msgstr "Operace není podporována tímto typem VPN."

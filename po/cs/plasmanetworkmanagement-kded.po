@@ -36,10 +36,9 @@ msgid "Log in"
 msgstr "Přihlásit"
 
 #: connectivitymonitor.cpp:71
-#, fuzzy, kde-format
-#| msgid "You need to log in to this network"
+#, kde-format
 msgid "You need to log into this network"
-msgstr "Do této sítě se potřebujete přihlásit"
+msgstr ""
 
 #: connectivitymonitor.cpp:91
 #, kde-format

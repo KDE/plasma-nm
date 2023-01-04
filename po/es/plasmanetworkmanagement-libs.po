@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-24 00:51+0000\n"
+"POT-Creation-Date: 2023-01-04 00:50+0000\n"
 "PO-Revision-Date: 2022-12-24 20:51+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -117,112 +117,112 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconocido"
 
-#: editor/connectioneditorbase.cpp:197
+#: editor/connectioneditorbase.cpp:198
 #, kde-format
 msgctxt "General"
 msgid "General configuration"
 msgstr "Configuración general"
 
-#: editor/connectioneditorbase.cpp:204 editor/connectioneditorbase.cpp:221
+#: editor/connectioneditorbase.cpp:205 editor/connectioneditorbase.cpp:222
 #, kde-format
 msgid "Wired"
 msgstr "Cableada"
 
-#: editor/connectioneditorbase.cpp:207
+#: editor/connectioneditorbase.cpp:208
 #, kde-format
 msgid "802.1x Security"
 msgstr "Seguridad 802.1x"
 
-#: editor/connectioneditorbase.cpp:210 editor/settings/bridgewidget.cpp:39
+#: editor/connectioneditorbase.cpp:211 editor/settings/bridgewidget.cpp:39
 #: editor/settings/teamwidget.cpp:42 editor/uiutils.cpp:228
 #: models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
-#: editor/connectioneditorbase.cpp:214
+#: editor/connectioneditorbase.cpp:215
 #, kde-format
 msgid "Wi-Fi Security"
 msgstr "Seguridad Wi-Fi"
 
-#: editor/connectioneditorbase.cpp:219 editor/uiutils.cpp:192
+#: editor/connectioneditorbase.cpp:220 editor/uiutils.cpp:192
 #: models/creatableconnectionsmodel.cpp:135
 #, kde-format
 msgid "DSL"
 msgstr "DSL"
 
-#: editor/connectioneditorbase.cpp:224 editor/connectioneditorbase.cpp:227
+#: editor/connectioneditorbase.cpp:225 editor/connectioneditorbase.cpp:228
 #, kde-format
 msgid "Mobile Broadband (%1)"
 msgstr "Banda ancha móvil (%1)"
 
-#: editor/connectioneditorbase.cpp:230 editor/uiutils.cpp:196
+#: editor/connectioneditorbase.cpp:231 editor/uiutils.cpp:196
 #, kde-format
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: editor/connectioneditorbase.cpp:235
+#: editor/connectioneditorbase.cpp:236
 #, kde-format
 msgid "GSM"
 msgstr "GSM"
 
-#: editor/connectioneditorbase.cpp:237 editor/connectioneditorbase.cpp:280
+#: editor/connectioneditorbase.cpp:238 editor/connectioneditorbase.cpp:281
 #, kde-format
 msgid "PPP"
 msgstr "PPP"
 
-#: editor/connectioneditorbase.cpp:241 editor/settings/teamwidget.cpp:39
+#: editor/connectioneditorbase.cpp:242 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:211 models/creatableconnectionsmodel.cpp:142
 #: models/networkmodelitem.cpp:713
 #, kde-format
 msgid "Infiniband"
 msgstr "InfiniBand"
 
-#: editor/connectioneditorbase.cpp:244 editor/uiutils.cpp:200
+#: editor/connectioneditorbase.cpp:245 editor/uiutils.cpp:200
 #: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:719
 #, kde-format
 msgid "Bond"
 msgstr "Enlace"
 
-#: editor/connectioneditorbase.cpp:247 editor/uiutils.cpp:203
+#: editor/connectioneditorbase.cpp:248 editor/uiutils.cpp:203
 #: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:725
 #, kde-format
 msgid "Bridge"
 msgstr "Puente"
 
-#: editor/connectioneditorbase.cpp:250 models/creatableconnectionsmodel.cpp:220
+#: editor/connectioneditorbase.cpp:251 models/creatableconnectionsmodel.cpp:220
 #: models/networkmodelitem.cpp:731
 #, kde-format
 msgid "Vlan"
 msgstr "VLAN"
 
-#: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:232
+#: editor/connectioneditorbase.cpp:254 editor/uiutils.cpp:232
 #: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:740
 #, kde-format
 msgid "Team"
 msgstr "Team"
 
-#: editor/connectioneditorbase.cpp:256
+#: editor/connectioneditorbase.cpp:257
 #, kde-format
 msgid "WireGuard Interface"
 msgstr "Interfaz de WireGuard"
 
-#: editor/connectioneditorbase.cpp:269
+#: editor/connectioneditorbase.cpp:270
 #, kde-format
 msgid "VPN (%1)"
 msgstr "VPN (%1)"
 
-#: editor/connectioneditorbase.cpp:286
+#: editor/connectioneditorbase.cpp:287
 #, kde-format
 msgid "IPv4"
 msgstr "IPv4"
 
-#: editor/connectioneditorbase.cpp:303
+#: editor/connectioneditorbase.cpp:304
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:486
+#: editor/connectioneditorbase.cpp:487
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "La obtención de claves secretas ha fallado para %1"

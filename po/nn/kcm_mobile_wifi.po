@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-28 00:19+0000\n"
+"POT-Creation-Date: 2023-01-01 01:00+0000\n"
 "PO-Revision-Date: 2021-12-15 12:49+0100\n"
 "Last-Translator: Oystein Steffensen-Alvaervik <ystein@posteo.net>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -35,7 +35,7 @@ msgstr "karl@huftis.org"
 msgid "Invalid input."
 msgstr "Ugyldige inndata."
 
-#: package/contents/ui/ConnectionItemDelegate.qml:107
+#: package/contents/ui/ConnectionItemDelegate.qml:108
 #, kde-format
 msgid "Connect to"
 msgstr "Kopla til"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-04 00:50+0000\n"
-"PO-Revision-Date: 2022-12-25 07:19+0100\n"
+"PO-Revision-Date: 2023-01-04 09:17+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -3222,7 +3222,7 @@ msgstr "Plasma -ს აკლია %1 VPN-ის მხარდაჭერა
 #: handler.cpp:110
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "შეცდომის ანგარიში"
 
 #: handler.cpp:133
 #, kde-format

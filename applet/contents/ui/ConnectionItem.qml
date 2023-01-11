@@ -59,8 +59,6 @@ PlasmaExtras.ExpandableListItem {
         icon.name: isDeactivated ? "network-connect" : "network-disconnect"
         text: isDeactivated ? i18n("Connect") : i18n("Disconnect")
         onTriggered: changeState()
-
-        Accessible.description: isDeactivated ? i18nc("@info:tooltip %1 is the name of a network connection", "Connect to %1", connectionItem.title) : i18nc("@info:tooltip %1 is the name of a network connection", "Disconnect from %1", connectionItem.title)
     }
     showDefaultActionButtonWhenBusy: true
 

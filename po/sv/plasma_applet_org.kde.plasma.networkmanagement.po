@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-12 00:57+0000\n"
 "PO-Revision-Date: 2022-09-24 15:52+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -27,39 +27,27 @@ msgstr "Anslut"
 msgid "Disconnect"
 msgstr "Koppla ner"
 
-#: contents/ui/ConnectionItem.qml:63
-#, kde-format
-msgctxt "@info:tooltip %1 is the name of a network connection"
-msgid "Connect to %1"
-msgstr "Anslut till %1"
-
-#: contents/ui/ConnectionItem.qml:63
-#, kde-format
-msgctxt "@info:tooltip %1 is the name of a network connection"
-msgid "Disconnect from %1"
-msgstr "Koppla bort från %1"
-
-#: contents/ui/ConnectionItem.qml:87
+#: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Visa nätverkets QR-kod"
 
-#: contents/ui/ConnectionItem.qml:92
+#: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "Anpassa…"
 
-#: contents/ui/ConnectionItem.qml:123
+#: contents/ui/ConnectionItem.qml:121
 #, kde-format
 msgid "Speed"
 msgstr "Hastighet"
 
-#: contents/ui/ConnectionItem.qml:128
+#: contents/ui/ConnectionItem.qml:126
 #, kde-format
 msgid "Details"
 msgstr "Detaljinformation"
 
-#: contents/ui/ConnectionItem.qml:171
+#: contents/ui/ConnectionItem.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -69,12 +57,12 @@ msgstr ""
 "Nuvarande nerladdningshastighet är %1 kibibyte/sekund, nuvarande "
 "uppladdningshastighet är %2 kibibyte/sekund"
 
-#: contents/ui/ConnectionItem.qml:288
+#: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Ansluten, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:292
+#: contents/ui/ConnectionItem.qml:290
 #, kde-format
 msgid "Connected"
 msgstr "Ansluten"
@@ -218,6 +206,14 @@ msgstr "Ladda upp"
 #, kde-format
 msgid "Download"
 msgstr "Ladda ner"
+
+#~ msgctxt "@info:tooltip %1 is the name of a network connection"
+#~ msgid "Connect to %1"
+#~ msgstr "Anslut till %1"
+
+#~ msgctxt "@info:tooltip %1 is the name of a network connection"
+#~ msgid "Disconnect from %1"
+#~ msgstr "Koppla bort från %1"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is ADSL"

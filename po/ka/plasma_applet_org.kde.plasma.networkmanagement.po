@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-12 00:57+0000\n"
 "PO-Revision-Date: 2022-12-09 10:40+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,39 +28,27 @@ msgstr "დაკავშირება"
 msgid "Disconnect"
 msgstr "გათიშვა"
 
-#: contents/ui/ConnectionItem.qml:63
-#, kde-format
-msgctxt "@info:tooltip %1 is the name of a network connection"
-msgid "Connect to %1"
-msgstr "%1- სთან დაკავშირება"
-
-#: contents/ui/ConnectionItem.qml:63
-#, kde-format
-msgctxt "@info:tooltip %1 is the name of a network connection"
-msgid "Disconnect from %1"
-msgstr "%1-დან გათიშვა"
-
-#: contents/ui/ConnectionItem.qml:87
+#: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "ქსელის QR კოდის ჩვენება"
 
-#: contents/ui/ConnectionItem.qml:92
+#: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "მორგება…"
 
-#: contents/ui/ConnectionItem.qml:123
+#: contents/ui/ConnectionItem.qml:121
 #, kde-format
 msgid "Speed"
 msgstr "სიჩქარე"
 
-#: contents/ui/ConnectionItem.qml:128
+#: contents/ui/ConnectionItem.qml:126
 #, kde-format
 msgid "Details"
 msgstr "დეტალები"
 
-#: contents/ui/ConnectionItem.qml:171
+#: contents/ui/ConnectionItem.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -70,12 +58,12 @@ msgstr ""
 "გადმოწერის მიმდინარე სიჩქარეა %1 კიბიბაიტი წამში. მიმდინარე ატვირთვის "
 "სიჩქარეა %2 კიბიბაიტი წამში"
 
-#: contents/ui/ConnectionItem.qml:288
+#: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "შეერთებულია, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:292
+#: contents/ui/ConnectionItem.qml:290
 #, kde-format
 msgid "Connected"
 msgstr "შეერთებული"
@@ -221,6 +209,14 @@ msgstr "ატვირთვა"
 #, kde-format
 msgid "Download"
 msgstr "ჩამოტვირთვა"
+
+#~ msgctxt "@info:tooltip %1 is the name of a network connection"
+#~ msgid "Connect to %1"
+#~ msgstr "%1- სთან დაკავშირება"
+
+#~ msgctxt "@info:tooltip %1 is the name of a network connection"
+#~ msgid "Disconnect from %1"
+#~ msgstr "%1-დან გათიშვა"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is ADSL"

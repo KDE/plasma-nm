@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-12 00:57+0000\n"
 "PO-Revision-Date: 2022-06-29 14:50+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -27,41 +27,27 @@ msgstr "Connecte"
 msgid "Disconnect"
 msgstr "Disconnecte"
 
-#: contents/ui/ConnectionItem.qml:63
-#, fuzzy, kde-format
-#| msgid "Connect"
-msgctxt "@info:tooltip %1 is the name of a network connection"
-msgid "Connect to %1"
-msgstr "Connecte"
-
-#: contents/ui/ConnectionItem.qml:63
-#, fuzzy, kde-format
-#| msgid "Disconnect"
-msgctxt "@info:tooltip %1 is the name of a network connection"
-msgid "Disconnect from %1"
-msgstr "Disconnecte"
-
-#: contents/ui/ConnectionItem.qml:87
+#: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Monstra codice QR de rete"
 
-#: contents/ui/ConnectionItem.qml:92
+#: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "Configura..."
 
-#: contents/ui/ConnectionItem.qml:123
+#: contents/ui/ConnectionItem.qml:121
 #, kde-format
 msgid "Speed"
 msgstr "Velocitate"
 
-#: contents/ui/ConnectionItem.qml:128
+#: contents/ui/ConnectionItem.qml:126
 #, kde-format
 msgid "Details"
 msgstr "Detalios"
 
-#: contents/ui/ConnectionItem.qml:171
+#: contents/ui/ConnectionItem.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -69,12 +55,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:288
+#: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Connectite, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:292
+#: contents/ui/ConnectionItem.qml:290
 #, kde-format
 msgid "Connected"
 msgstr "Connectite"
@@ -220,6 +206,18 @@ msgstr "Incarga"
 #, kde-format
 msgid "Download"
 msgstr "Discarga"
+
+#, fuzzy
+#~| msgid "Connect"
+#~ msgctxt "@info:tooltip %1 is the name of a network connection"
+#~ msgid "Connect to %1"
+#~ msgstr "Connecte"
+
+#, fuzzy
+#~| msgid "Disconnect"
+#~ msgctxt "@info:tooltip %1 is the name of a network connection"
+#~ msgid "Disconnect from %1"
+#~ msgstr "Disconnecte"
 
 #~ msgctxt "text field placeholder text"
 #~ msgid "Search…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-12 00:57+0000\n"
 "PO-Revision-Date: 2022-07-13 15:44+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,41 +27,27 @@ msgstr "연결"
 msgid "Disconnect"
 msgstr "연결 해제"
 
-#: contents/ui/ConnectionItem.qml:63
-#, fuzzy, kde-format
-#| msgid "Connect"
-msgctxt "@info:tooltip %1 is the name of a network connection"
-msgid "Connect to %1"
-msgstr "연결"
-
-#: contents/ui/ConnectionItem.qml:63
-#, fuzzy, kde-format
-#| msgid "Disconnect"
-msgctxt "@info:tooltip %1 is the name of a network connection"
-msgid "Disconnect from %1"
-msgstr "연결 해제"
-
-#: contents/ui/ConnectionItem.qml:87
+#: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "네트워크의 QR 코드 표시"
 
-#: contents/ui/ConnectionItem.qml:92
+#: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "설정…"
 
-#: contents/ui/ConnectionItem.qml:123
+#: contents/ui/ConnectionItem.qml:121
 #, kde-format
 msgid "Speed"
 msgstr "속도"
 
-#: contents/ui/ConnectionItem.qml:128
+#: contents/ui/ConnectionItem.qml:126
 #, kde-format
 msgid "Details"
 msgstr "자세히"
 
-#: contents/ui/ConnectionItem.qml:171
+#: contents/ui/ConnectionItem.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -69,12 +55,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:288
+#: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "연결됨, ⬇ %1/초, ⬆ %2/초"
 
-#: contents/ui/ConnectionItem.qml:292
+#: contents/ui/ConnectionItem.qml:290
 #, kde-format
 msgid "Connected"
 msgstr "연결됨"
@@ -220,6 +206,18 @@ msgstr "업로드"
 #, kde-format
 msgid "Download"
 msgstr "다운로드"
+
+#, fuzzy
+#~| msgid "Connect"
+#~ msgctxt "@info:tooltip %1 is the name of a network connection"
+#~ msgid "Connect to %1"
+#~ msgstr "연결"
+
+#, fuzzy
+#~| msgid "Disconnect"
+#~ msgctxt "@info:tooltip %1 is the name of a network connection"
+#~ msgid "Disconnect from %1"
+#~ msgstr "연결 해제"
 
 #~ msgctxt "text field placeholder text"
 #~ msgid "Search…"

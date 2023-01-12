@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-12 00:57+0000\n"
 "PO-Revision-Date: 2022-12-09 08:26+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -30,39 +30,27 @@ msgstr "З'єднатися"
 msgid "Disconnect"
 msgstr "Від'єднатися"
 
-#: contents/ui/ConnectionItem.qml:63
-#, kde-format
-msgctxt "@info:tooltip %1 is the name of a network connection"
-msgid "Connect to %1"
-msgstr "З'єднатися з %1"
-
-#: contents/ui/ConnectionItem.qml:63
-#, kde-format
-msgctxt "@info:tooltip %1 is the name of a network connection"
-msgid "Disconnect from %1"
-msgstr "Від'єднатися від %1"
-
-#: contents/ui/ConnectionItem.qml:87
+#: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Показувати код QR мережі"
 
-#: contents/ui/ConnectionItem.qml:92
+#: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "Налаштувати…"
 
-#: contents/ui/ConnectionItem.qml:123
+#: contents/ui/ConnectionItem.qml:121
 #, kde-format
 msgid "Speed"
 msgstr "Швидкість"
 
-#: contents/ui/ConnectionItem.qml:128
+#: contents/ui/ConnectionItem.qml:126
 #, kde-format
 msgid "Details"
 msgstr "Параметри"
 
-#: contents/ui/ConnectionItem.qml:171
+#: contents/ui/ConnectionItem.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -72,12 +60,12 @@ msgstr ""
 "Поточна швидкість отримання даних — %1 кібібайтів за секунду; поточна "
 "швидкість вивантаження даних — %2 кібібайтів за секунду"
 
-#: contents/ui/ConnectionItem.qml:288
+#: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "З'єднано, ⬇ %1/с, ⬆ %2/с"
 
-#: contents/ui/ConnectionItem.qml:292
+#: contents/ui/ConnectionItem.qml:290
 #, kde-format
 msgid "Connected"
 msgstr "З'єднано"
@@ -221,6 +209,14 @@ msgstr "Вивантаження"
 #, kde-format
 msgid "Download"
 msgstr "Отримання"
+
+#~ msgctxt "@info:tooltip %1 is the name of a network connection"
+#~ msgid "Connect to %1"
+#~ msgstr "З'єднатися з %1"
+
+#~ msgctxt "@info:tooltip %1 is the name of a network connection"
+#~ msgid "Disconnect from %1"
+#~ msgstr "Від'єднатися від %1"
 
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is ADSL"

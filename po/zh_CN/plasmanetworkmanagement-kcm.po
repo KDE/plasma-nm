@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-02 01:06+0000\n"
-"PO-Revision-Date: 2023-01-02 07:11\n"
+"PO-Revision-Date: 2023-01-12 10:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -47,7 +47,7 @@ msgstr "导入 VPN 连接"
 #: kcm.cpp:531
 #, kde-format
 msgid "VPN connections (%1)"
-msgstr ""
+msgstr "VPN 连接 (%1)"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
@@ -97,7 +97,7 @@ msgstr "热点密码："
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "确认"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

@@ -203,6 +203,7 @@ RowLayout {
         focus: plasmoid.expanded && !Kirigami.InputMethod.willShowOnActive
 
         KeyNavigation.left: hotspotButton.visible ? hotspotButton : hotspotButton.KeyNavigation.left
+        KeyNavigation.right: openEditorButton
 
         onTextChanged: {
             appletProxyModel.setFilterFixedString(text)

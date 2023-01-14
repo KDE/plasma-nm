@@ -572,7 +572,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
             return result;
         }
     }
-    if (!havePrivateKey || !haveAllowedIps || !havePublicKey || !haveAllowedIps)
+    if (!havePrivateKey || !haveAllowedIps || !havePublicKey)
         return result;
 
     QVariantMap conn;

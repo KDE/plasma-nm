@@ -46,6 +46,7 @@ extern "C" {
 #include <QThread>
 
 class QMutex;
+class QSemaphore;
 class QWaitCondition;
 struct openconnect_info;
 
@@ -66,6 +67,7 @@ Q_SIGNALS:
     void writeNewConfig(const QString &);
     void cookieObtained(const int &);
     void initTokens();
+    void openWebEngine(const char *, QSemaphore *);
 
 protected:
     void run() override;
@@ -75,9 +77,8 @@ private:
     int validatePeerCert(void *, const char *);
     int processAuthFormP(struct oc_auth_form *);
     void writeProgress(int level, const char *, va_list);
-#if OPENCONNECT_CHECK_VER(5, 8)
+    int openWebEngineP(struct openconnect_info *, const char *, void *);
     int openUri(struct openconnect_info *, const char *, void *);
-#endif
 
     QMutex *m_mutex;
     QWaitCondition *m_waitForUserInput;

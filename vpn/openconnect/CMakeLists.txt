@@ -28,6 +28,8 @@ macro(add_openconnect_plugin name)
         KF5::I18n
         KF5::KIOWidgets
         KF5::WidgetsAddons
+        Qt::WebEngineCore
+        Qt::WebEngineWidgets
         Qt::Xml
         PkgConfig::OPENCONNECT
     )

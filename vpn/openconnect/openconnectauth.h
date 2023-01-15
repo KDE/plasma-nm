@@ -12,7 +12,10 @@
 
 #include <NetworkManagerQt/VpnSetting>
 
+#include <QNetworkCookie>
+#include <QSemaphore>
 #include <QString>
+#include <QUrl>
 
 class QLayout;
 struct openconnect_info;
@@ -49,6 +52,9 @@ private Q_SLOTS:
     void viewServerLogToggled(bool);
     void connectHost();
     void initTokens();
+    void handleWebEngineCookie(const QNetworkCookie &);
+    void handleWebEngineUrl(const QUrl &url);
+    void openWebEngine(const char *, QSemaphore *);
 };
 
 #endif // OPENCONNECTAUTH_H

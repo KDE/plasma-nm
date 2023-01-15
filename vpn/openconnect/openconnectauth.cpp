@@ -12,6 +12,8 @@
 #include "passwordfield.h"
 #include "plasma_nm_openconnect.h"
 
+#include <QAtomicPointer>
+#include <QByteArray>
 #include <QComboBox>
 #include <QCryptographicHash>
 #include <QDialog>
@@ -27,6 +29,9 @@
 #include <QPushButton>
 #include <QTimer>
 #include <QWaitCondition>
+#include <QWebEngineCookieStore>
+#include <QWebEngineProfile>
+#include <QWebEngineView>
 
 #include <KLocalizedString>
 
@@ -84,6 +89,7 @@ public:
     int passwordFormIndex;
     QByteArray tokenMode;
     Token token;
+    QAtomicPointer<QSemaphore> waitForWebEngineFinish;
 
     enum LogLevels { Error = 0, Info, Debug, Trace };
 };
@@ -122,6 +128,7 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
             QOverload<const QString &, const QString &, const QString &, bool *>::of(&OpenconnectAuthWorkerThread::validatePeerCert),
             this,
             &OpenconnectAuthWidget::validatePeerCert);
+    connect(d->worker, &OpenconnectAuthWorkerThread::openWebEngine, this, &OpenconnectAuthWidget::openWebEngine);
     connect(d->worker, &OpenconnectAuthWorkerThread::processAuthForm, this, &OpenconnectAuthWidget::processAuthForm);
     connect(d->worker, &OpenconnectAuthWorkerThread::updateLog, this, &OpenconnectAuthWidget::updateLog);
     connect(d->worker, QOverload<const QString &>::of(&OpenconnectAuthWorkerThread::writeNewConfig), this, &OpenconnectAuthWidget::writeNewConfig);
@@ -144,6 +151,11 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
 OpenconnectAuthWidget::~OpenconnectAuthWidget()
 {
     Q_D(OpenconnectAuthWidget);
+    QSemaphore *webEngineCancel =
+        d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
+    if (webEngineCancel) {
+        webEngineCancel->release();
+    }
     d->userQuit = true;
     if (write(d->cancelPipes[1], "x", 1)) {
         // not a lot we can do
@@ -478,6 +490,87 @@ void OpenconnectAuthWidget::logLevelChanged(int newLevel)
             d->ui.serverLog->append(pair.first);
         }
     }
+}
+
+
+void OpenconnectAuthWidget::handleWebEngineCookie(const QNetworkCookie &cookie)
+{
+    Q_D(OpenconnectAuthWidget);
+    const char *cookiesArr[3] = {nullptr};
+
+    cookiesArr[0] = cookie.name().constData();
+    cookiesArr[1] = cookie.value().constData();
+
+#if OPENCONNECT_CHECK_VER(5, 7)
+    struct oc_webview_result res;
+    res.cookies = cookiesArr;
+    if (!openconnect_webview_load_changed(d->vpninfo, &res)) {
+        QSemaphore *waitForWebEngineFinish =
+            d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
+        if (waitForWebEngineFinish) {
+            waitForWebEngineFinish->release();
+        }
+    }
+#endif
+}
+
+void OpenconnectAuthWidget::handleWebEngineUrl(const QUrl &url)
+{
+    Q_D(OpenconnectAuthWidget);
+    // Hack due to lack of NULL pointer check in AnyConnect sso_detect_done
+    // logic in libopenconnect.
+    const char *cookiesArr[1] = {nullptr};
+    QByteArray urlByteArray = url.toString().toLocal8Bit();
+
+#if OPENCONNECT_CHECK_VER(5, 7)
+    struct oc_webview_result res;
+    res.cookies = cookiesArr;
+    res.uri = urlByteArray.constData();
+    if (!openconnect_webview_load_changed(d->vpninfo, &res)) {
+        QSemaphore *waitForWebEngineFinish =
+            d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
+        if (waitForWebEngineFinish) {
+            waitForWebEngineFinish->release();
+        }
+    }
+#endif
+}
+
+void OpenconnectAuthWidget::openWebEngine(const char *loginUri, QSemaphore *waitForWebEngineFinish)
+{
+    Q_D(OpenconnectAuthWidget);
+    d->waitForWebEngineFinish.storeRelease(waitForWebEngineFinish);
+    auto webEngineView = new QWebEngineView(this);
+    QWebEngineCookieStore *cookieStore = webEngineView->page()->profile()->cookieStore();
+
+    // Some VPN protocols depend on parsing HTTP response headers to complete
+    // authentication. However, QtWebEngine does not provide an interface for
+    // capturing HTTP response data. QtWebEngine currently offers the capability
+    // to intercept HTTP requests made by the browser instance using
+    // QWebEngineUrlRequestInterceptor, but there is no equivalent for HTTP
+    // response data.
+    //
+    // VPN protocols with SSO support that do not depend on HTTP response headers
+    //
+    //     - Cisco AnyConnect Protocol
+    //
+    // VPN protocols with SSO support that do depend on HTTP response headers
+    //
+    //     - Palo Alto Networks GlobalProtect Protocol
+    //
+    // FIXME Add HTTP response header handling when the QtWebEngine ecosystem
+    // adds support for HTTP response intercepting.
+    connect(webEngineView, &QWebEngineView::urlChanged, this, &OpenconnectAuthWidget::handleWebEngineUrl);
+    connect(cookieStore, &QWebEngineCookieStore::cookieAdded, this, &OpenconnectAuthWidget::handleWebEngineCookie);
+    cookieStore->loadAllCookies();
+
+    webEngineView->load(QUrl(loginUri, QUrl::TolerantMode));
+    // QWebEngineView sizeHint fails to size window correctly based on contents
+    // when QLayout::setSizeConstraint(QLayout::SetFixedSize) is set. Using same
+    // size as webkitgtk is set to in GNOME/NetworkManager-openconnect.
+    webEngineView->setFixedSize(640, 480);
+
+    d->ui.loginBoxLayout->addWidget(webEngineView);
 }
 
 void OpenconnectAuthWidget::addFormInfo(const QString &iconName, const QString &message)

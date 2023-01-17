@@ -207,7 +207,7 @@ msgstr "Equip"
 #: editor/connectioneditorbase.cpp:257
 #, kde-format
 msgid "WireGuard Interface"
-msgstr "Interfície del WireGuard"
+msgstr "Interfície de WireGuard"
 
 #: editor/connectioneditorbase.cpp:270
 #, kde-format
@@ -1891,7 +1891,7 @@ msgstr "Utilitza la seguretat 802.1x per a esta connexió"
 #: editor/settings/ui/wireguardinterfacewidget.ui:14
 #, kde-format
 msgid "WireGuard Settings"
-msgstr "Configuració del WireGuard"
+msgstr "Configureu WireGuard"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:20
@@ -2162,7 +2162,7 @@ msgstr "%1 (%2 MHz)"
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
-msgstr "Propietats dels parells del WireGuard"
+msgstr "Propietats dels parells de WireGuard"
 
 #: editor/uiutils.cpp:133
 #, kde-format

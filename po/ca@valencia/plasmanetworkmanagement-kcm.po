@@ -28,7 +28,7 @@ msgstr "la_meva_connexió_compartida"
 #: kcm.cpp:416
 #, kde-format
 msgid "Export VPN Connection"
-msgstr "Exportació de la connexió VPN"
+msgstr "Exporteu la connexió VPN"
 
 #: kcm.cpp:441
 #, kde-format
@@ -44,7 +44,7 @@ msgstr "Guarda els canvis"
 #: kcm.cpp:531
 #, kde-format
 msgid "Import VPN Connection"
-msgstr "Importació d'una connexió VPN"
+msgstr "Importeu una connexió VPN"
 
 #: kcm.cpp:531
 #, kde-format

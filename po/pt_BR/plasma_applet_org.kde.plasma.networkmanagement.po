@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the plasma-nm package.
 #
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2014, 2015, 2019, 2020.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2017, 2018, 2019, 2020, 2021, 2022.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Frederico Gonçalves Guimarães <frederico@teia.bio.br>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-12 00:57+0000\n"
-"PO-Revision-Date: 2022-07-12 16:12-0300\n"
+"PO-Revision-Date: 2023-01-16 23:42-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -57,6 +57,8 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
+"A velocidade de download atual é de %1 kibibytes por segundo; a velocidade "
+"de upload atual é de %2 kibibytes por segundo"
 
 #: contents/ui/ConnectionItem.qml:286
 #, kde-format

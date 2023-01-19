@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-08-26 23:44+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -17,80 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.12.3\n"
 
-#: openvpn.cpp:180
-#, kde-format
-msgid "Could not open file"
-msgstr "Tidak dapat membuka file"
-
-#: openvpn.cpp:192
-#, kde-format
-msgid "Do you want to copy your certificates to %1?"
-msgstr "Apakah kamu ingin menyalin sertifikatmu ke %1?"
-
-#: openvpn.cpp:193
-#, kde-format
-msgid "Copy certificates"
-msgstr "Salin sertifikat"
-
-#: openvpn.cpp:194
-#, kde-format
-msgid "Copy"
-msgstr ""
-
-#: openvpn.cpp:253 openvpn.cpp:271 openvpn.cpp:550
-#, kde-format
-msgid "Unknown option: %1"
-msgstr "Opsi takdiketahui: %1"
-
-#: openvpn.cpp:256 openvpn.cpp:274 openvpn.cpp:290 openvpn.cpp:302
-#: openvpn.cpp:334 openvpn.cpp:425 openvpn.cpp:542 openvpn.cpp:570
-#, kde-format
-msgid "Invalid number of arguments (expected 1) in option: %1"
-msgstr "Nomor tak absah pada argumen (diharapkan 1) dalam opsi: %1"
-
-#: openvpn.cpp:287 openvpn.cpp:299
-#, kde-format
-msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-msgstr "Ukuran tak absah (seharusnya antara 0 dan 0xFFFF) dalam opsi: %1"
-
-#: openvpn.cpp:388
-#, kde-format
-msgid "Invalid proxy option: %1"
-msgstr "Opsi proxy tak absah: %1"
-
-#: openvpn.cpp:422
-#, kde-format
-msgid "Invalid port (should be between 1 and 65535) in option: %1"
-msgstr "Port tak absah (seharusnya antara 1 dan 65535) dalam opsi: %1"
-
-#: openvpn.cpp:559
-#, kde-format
-msgid "Invalid number of arguments (expected 2) in option: %1"
-msgstr "Nomor tak absah pada argumen (diharapkan 2) dalam opsi: %1"
-
-#: openvpn.cpp:581
-#, kde-format
-msgid "Invalid argument in option: %1"
-msgstr "Argumen tak absah dalam opsi: %1"
-
-#: openvpn.cpp:669
-#, kde-format
-msgid "File %1 is not a valid OpenVPN's client configuration file"
-msgstr "File %1 bukanlah sebuah file konfigurasi klien OpenVPN yang absah"
-
-#: openvpn.cpp:671
-#, kde-format
-msgid "File %1 is not a valid OpenVPN configuration (no remote)."
-msgstr ""
-"File %1 bukanlah sebuah konfigurasi klien OpenVPN yang absah (tiada jarak "
-"jauh)."
-
-#: openvpn.cpp:739
+#: openvpn.cpp:204
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "Error menyimpan file %1: %2"
 
-#: openvpn.cpp:767
+#: openvpn.cpp:232
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "Error menyalin sertifikat ke %1: %2"
@@ -1210,6 +1142,44 @@ msgstr "token"
 #, kde-format
 msgid "one-time password"
 msgstr "sandi satu kali"
+
+#~ msgid "Could not open file"
+#~ msgstr "Tidak dapat membuka file"
+
+#~ msgid "Do you want to copy your certificates to %1?"
+#~ msgstr "Apakah kamu ingin menyalin sertifikatmu ke %1?"
+
+#~ msgid "Copy certificates"
+#~ msgstr "Salin sertifikat"
+
+#~ msgid "Unknown option: %1"
+#~ msgstr "Opsi takdiketahui: %1"
+
+#~ msgid "Invalid number of arguments (expected 1) in option: %1"
+#~ msgstr "Nomor tak absah pada argumen (diharapkan 1) dalam opsi: %1"
+
+#~ msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
+#~ msgstr "Ukuran tak absah (seharusnya antara 0 dan 0xFFFF) dalam opsi: %1"
+
+#~ msgid "Invalid proxy option: %1"
+#~ msgstr "Opsi proxy tak absah: %1"
+
+#~ msgid "Invalid port (should be between 1 and 65535) in option: %1"
+#~ msgstr "Port tak absah (seharusnya antara 1 dan 65535) dalam opsi: %1"
+
+#~ msgid "Invalid number of arguments (expected 2) in option: %1"
+#~ msgstr "Nomor tak absah pada argumen (diharapkan 2) dalam opsi: %1"
+
+#~ msgid "Invalid argument in option: %1"
+#~ msgstr "Argumen tak absah dalam opsi: %1"
+
+#~ msgid "File %1 is not a valid OpenVPN's client configuration file"
+#~ msgstr "File %1 bukanlah sebuah file konfigurasi klien OpenVPN yang absah"
+
+#~ msgid "File %1 is not a valid OpenVPN configuration (no remote)."
+#~ msgstr ""
+#~ "File %1 bukanlah sebuah konfigurasi klien OpenVPN yang absah (tiada jarak "
+#~ "jauh)."
 
 #~ msgid "Could not open file for writing"
 #~ msgstr "Tidak dapat membuka file untuk penulisan"

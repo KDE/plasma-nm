@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2021-05-31 23:17+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -27,47 +27,7 @@ msgstr "난독화된 암호를 복호화할 수 없음"
 msgid "Error"
 msgstr "오류"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "파일 %1을(를) 열 수 없습니다."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "cisco-decrypt 실행 파일을 찾을 수 없습니다."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"파일 '%1'에 있는 VPN 설정에 의하면 VPN 트래픽이 TCP로 터널링되어야 하지만, 현"
-"재 vpnc 소프트웨어에서 지원하지 않습니다.\n"
-"\n"
-"TCP 터널링을 사용하지 않고 연결을 설정할 수 있지만 예상했던 대로 작동하지 않"
-"을 수도 있습니다."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "지원하지 않음"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: 파일 형식 오류입니다."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: 파일을 만들 수 없음"
@@ -427,6 +387,31 @@ msgstr "사용자 이름:"
 #, kde-format
 msgid "Group name."
 msgstr "그룹 이름입니다."
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "파일 %1을(를) 열 수 없습니다."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "cisco-decrypt 실행 파일을 찾을 수 없습니다."
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "파일 '%1'에 있는 VPN 설정에 의하면 VPN 트래픽이 TCP로 터널링되어야 하지"
+#~ "만, 현재 vpnc 소프트웨어에서 지원하지 않습니다.\n"
+#~ "\n"
+#~ "TCP 터널링을 사용하지 않고 연결을 설정할 수 있지만 예상했던 대로 작동하지 "
+#~ "않을 수도 있습니다."
+
+#~ msgid "Not supported"
+#~ msgstr "지원하지 않음"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: 파일 형식 오류입니다."
 
 #~ msgid "Store"
 #~ msgstr "저장"

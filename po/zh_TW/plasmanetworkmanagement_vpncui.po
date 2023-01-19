@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2016-11-03 20:25+0800\n"
 "Last-Translator: Jeff Huang <s8321414@gmail.com>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -28,45 +28,7 @@ msgstr "解開混淆密碼時發生錯誤"
 msgid "Error"
 msgstr "錯誤"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "檔案 %1 無法開啟"
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "找不到必須的執行檔 cisco-decrypt。"
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"VPN 設定檔 %1 指定 VPN 連線要透過 TCP 通道，但目前的 vpnc 軟體不支援。\n"
-"\n"
-"連線還是可以建立，不過 TCP 通道功能會被關閉，而可能不會依您所期望地運作。"
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "不支援"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1：檔案格式錯誤"
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1：無法建立檔案"
@@ -427,3 +389,26 @@ msgstr "使用者名稱："
 #, kde-format
 msgid "Group name."
 msgstr "群組名稱。"
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "檔案 %1 無法開啟"
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "找不到必須的執行檔 cisco-decrypt。"
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "VPN 設定檔 %1 指定 VPN 連線要透過 TCP 通道，但目前的 vpnc 軟體不支援。\n"
+#~ "\n"
+#~ "連線還是可以建立，不過 TCP 通道功能會被關閉，而可能不會依您所期望地運作。"
+
+#~ msgid "Not supported"
+#~ msgstr "不支援"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1：檔案格式錯誤"

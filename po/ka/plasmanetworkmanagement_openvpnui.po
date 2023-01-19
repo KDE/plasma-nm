@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-12-25 07:16+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,80 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: openvpn.cpp:180
-#, kde-format
-msgid "Could not open file"
-msgstr "ფაილის გახსნის შეცდომა"
-
-#: openvpn.cpp:192
-#, kde-format
-msgid "Do you want to copy your certificates to %1?"
-msgstr "გნებავთ თქვენი სერტიფიკატების %1-ში კოპირება?"
-
-#: openvpn.cpp:193
-#, kde-format
-msgid "Copy certificates"
-msgstr "სერტიფიკატების კოპირება"
-
-#: openvpn.cpp:194
-#, kde-format
-msgid "Copy"
-msgstr "კოპირება"
-
-#: openvpn.cpp:253 openvpn.cpp:271 openvpn.cpp:550
-#, kde-format
-msgid "Unknown option: %1"
-msgstr "უცნობი პარამეტრი '%1'"
-
-#: openvpn.cpp:256 openvpn.cpp:274 openvpn.cpp:290 openvpn.cpp:302
-#: openvpn.cpp:334 openvpn.cpp:425 openvpn.cpp:542 openvpn.cpp:570
-#, kde-format
-msgid "Invalid number of arguments (expected 1) in option: %1"
-msgstr "არგუმენტების არასწორი რაოდენობა (მოველოდი 1-ს) პარამეტრში: %1"
-
-#: openvpn.cpp:287 openvpn.cpp:299
-#, kde-format
-msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-msgstr "არასწორი ზომა (უნდა იყოს დიაპაზონში 0 ... 0xFFFF): %1"
-
-#: openvpn.cpp:388
-#, kde-format
-msgid "Invalid proxy option: %1"
-msgstr "პროქსის არასწორი პარამეტრი: %1"
-
-#: openvpn.cpp:422
-#, kde-format
-msgid "Invalid port (should be between 1 and 65535) in option: %1"
-msgstr "არასწორი ზომა (უნდა იყოს დიაპაზონში 1 ... 65535): %1"
-
-#: openvpn.cpp:559
-#, kde-format
-msgid "Invalid number of arguments (expected 2) in option: %1"
-msgstr "არგუმენტების არასწორი (მოველოდი ორს) რაოდენობა პარამეტრში: %1"
-
-#: openvpn.cpp:581
-#, kde-format
-msgid "Invalid argument in option: %1"
-msgstr "არასწორი არგუმენტი პარამეტრში: %1"
-
-#: openvpn.cpp:669
-#, kde-format
-msgid "File %1 is not a valid OpenVPN's client configuration file"
-msgstr "ფაილი %1 OpenVPN-ის კლიენტის სწორ ფაილს არ წარმოადგენს"
-
-#: openvpn.cpp:671
-#, kde-format
-msgid "File %1 is not a valid OpenVPN configuration (no remote)."
-msgstr ""
-"ფაილი %1 OpenVPN-ის კონფიგურაციის სწორ ფაილს არ წარმოადგენს (პარტნიორის "
-"გარეშე)."
-
-#: openvpn.cpp:739
+#: openvpn.cpp:204
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "%1-ის შენახვის შეცდომა: %2"
 
-#: openvpn.cpp:767
+#: openvpn.cpp:232
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "სერტიფიკატის %1 -ში კოპირების შეცდომა: %2"
@@ -1146,6 +1078,47 @@ msgstr "ტოკენი"
 #, kde-format
 msgid "one-time password"
 msgstr "one-time password"
+
+#~ msgid "Could not open file"
+#~ msgstr "ფაილის გახსნის შეცდომა"
+
+#~ msgid "Do you want to copy your certificates to %1?"
+#~ msgstr "გნებავთ თქვენი სერტიფიკატების %1-ში კოპირება?"
+
+#~ msgid "Copy certificates"
+#~ msgstr "სერტიფიკატების კოპირება"
+
+#~ msgid "Copy"
+#~ msgstr "კოპირება"
+
+#~ msgid "Unknown option: %1"
+#~ msgstr "უცნობი პარამეტრი '%1'"
+
+#~ msgid "Invalid number of arguments (expected 1) in option: %1"
+#~ msgstr "არგუმენტების არასწორი რაოდენობა (მოველოდი 1-ს) პარამეტრში: %1"
+
+#~ msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
+#~ msgstr "არასწორი ზომა (უნდა იყოს დიაპაზონში 0 ... 0xFFFF): %1"
+
+#~ msgid "Invalid proxy option: %1"
+#~ msgstr "პროქსის არასწორი პარამეტრი: %1"
+
+#~ msgid "Invalid port (should be between 1 and 65535) in option: %1"
+#~ msgstr "არასწორი ზომა (უნდა იყოს დიაპაზონში 1 ... 65535): %1"
+
+#~ msgid "Invalid number of arguments (expected 2) in option: %1"
+#~ msgstr "არგუმენტების არასწორი (მოველოდი ორს) რაოდენობა პარამეტრში: %1"
+
+#~ msgid "Invalid argument in option: %1"
+#~ msgstr "არასწორი არგუმენტი პარამეტრში: %1"
+
+#~ msgid "File %1 is not a valid OpenVPN's client configuration file"
+#~ msgstr "ფაილი %1 OpenVPN-ის კლიენტის სწორ ფაილს არ წარმოადგენს"
+
+#~ msgid "File %1 is not a valid OpenVPN configuration (no remote)."
+#~ msgstr ""
+#~ "ფაილი %1 OpenVPN-ის კონფიგურაციის სწორ ფაილს არ წარმოადგენს (პარტნიორის "
+#~ "გარეშე)."
 
 #~ msgid "Could not open file for writing"
 #~ msgstr "ფაილის ჩასაწერად გახსნა შეუძლებელია"

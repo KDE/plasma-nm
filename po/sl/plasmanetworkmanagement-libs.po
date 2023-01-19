@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:50+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-12-25 09:03+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3323,72 +3323,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Odstrani"
 
-#: handler.cpp:108
+#: handler.cpp:110
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasmi manjka podpora za '%1' povezave VPN."
 
-#: handler.cpp:110
+#: handler.cpp:112
 #, kde-format
 msgid "Report Bug"
 msgstr "Poročaj o hrošču"
 
-#: handler.cpp:133
+#: handler.cpp:135
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "Programu NetworkManager manjka podpora za '%1' povezave VPN."
 
-#: handler.cpp:135
+#: handler.cpp:137
 #, kde-format
 msgid "Install"
 msgstr "Namesti"
 
-#: handler.cpp:783
-#, kde-format
-msgid "Failed to activate %1"
-msgstr "Ni bilo mogoče omogočiti %1"
-
-#: handler.cpp:787
-#, kde-format
-msgid "Failed to add %1"
-msgstr "Ni bilo mogoče dodati %1"
-
-#: handler.cpp:791
+#: handler.cpp:351 handler.cpp:844
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Povezave %1 ni bilo mogoče dodati"
 
-#: handler.cpp:795
-#, kde-format
-msgid "Failed to deactivate %1"
-msgstr "Povezave %1 ni bilo mogoče onemogočiti"
-
-#: handler.cpp:799
-#, kde-format
-msgid "Failed to remove %1"
-msgstr "Ni bilo mogoče odstraniti %1"
-
-#: handler.cpp:803
-#, kde-format
-msgid "Failed to update connection %1"
-msgstr "Povezave %1 ni bilo mogoče posodobiti"
-
-#: handler.cpp:814
-#, kde-format
-msgid "Failed to create hotspot %1"
-msgstr "Ni bilo mogoče ustvariti vroče točke %1"
-
-#: handler.cpp:833
+#: handler.cpp:360 handler.cpp:886
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Povezava %1 je bila dodana"
 
-#: handler.cpp:837
+#: handler.cpp:836
+#, kde-format
+msgid "Failed to activate %1"
+msgstr "Ni bilo mogoče omogočiti %1"
+
+#: handler.cpp:840
+#, kde-format
+msgid "Failed to add %1"
+msgstr "Ni bilo mogoče dodati %1"
+
+#: handler.cpp:848
+#, kde-format
+msgid "Failed to deactivate %1"
+msgstr "Povezave %1 ni bilo mogoče onemogočiti"
+
+#: handler.cpp:852
+#, kde-format
+msgid "Failed to remove %1"
+msgstr "Ni bilo mogoče odstraniti %1"
+
+#: handler.cpp:856
+#, kde-format
+msgid "Failed to update connection %1"
+msgstr "Povezave %1 ni bilo mogoče posodobiti"
+
+#: handler.cpp:867
+#, kde-format
+msgid "Failed to create hotspot %1"
+msgstr "Ni bilo mogoče ustvariti vroče točke %1"
+
+#: handler.cpp:890
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Povezava %1 je bila odstranjena"
 
-#: handler.cpp:841
+#: handler.cpp:894
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Povezava %1 je bila posodobljena"

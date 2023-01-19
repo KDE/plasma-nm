@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2021-07-25 13:12+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -28,42 +28,7 @@ msgstr ""
 msgid "Error"
 msgstr "Eroare"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "Fișierul %1 nu a putut fi deschis."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr ""
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "Nu este susținut"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr ""
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr ""
@@ -423,3 +388,9 @@ msgstr "Utilizator:"
 #, kde-format
 msgid "Group name."
 msgstr "Denumirea grupului."
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "Fișierul %1 nu a putut fi deschis."
+
+#~ msgid "Not supported"
+#~ msgstr "Nu este susținut"

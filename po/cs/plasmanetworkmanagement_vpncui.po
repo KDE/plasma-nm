@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2021-06-17 16:27+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -30,42 +30,7 @@ msgstr ""
 msgid "Error"
 msgstr "Chyba"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "Soubor %1 nelze otevřít."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "Potřebný spustitelný soubor cisco-decrypt nebyl nalezen."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "Nepodporováno"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: Chyba ve formátu souboru."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: soubor nelze vytvořit"
@@ -423,3 +388,15 @@ msgstr "Uživatelské jméno:"
 #, kde-format
 msgid "Group name."
 msgstr "Název skupiny."
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "Soubor %1 nelze otevřít."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "Potřebný spustitelný soubor cisco-decrypt nebyl nalezen."
+
+#~ msgid "Not supported"
+#~ msgstr "Nepodporováno"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: Chyba ve formátu souboru."

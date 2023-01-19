@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:50+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2021-09-25 16:17-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -3187,73 +3187,73 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "削除(&R)"
 
-#: handler.cpp:108
+#: handler.cpp:110
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:110
+#: handler.cpp:112
 #, kde-format
 msgid "Report Bug"
 msgstr ""
 
-#: handler.cpp:133
+#: handler.cpp:135
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:135
+#: handler.cpp:137
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:783
-#, kde-format
-msgid "Failed to activate %1"
-msgstr ""
-
-#: handler.cpp:787
-#, kde-format
-msgid "Failed to add %1"
-msgstr "%1の追加に失敗"
-
-#: handler.cpp:791
+#: handler.cpp:351 handler.cpp:844
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "接続 %1 の追加に失敗"
 
-#: handler.cpp:795
+#: handler.cpp:360 handler.cpp:886
+#, kde-format
+msgid "Connection %1 has been added"
+msgstr "接続 %1 は追加されました"
+
+#: handler.cpp:836
+#, kde-format
+msgid "Failed to activate %1"
+msgstr ""
+
+#: handler.cpp:840
+#, kde-format
+msgid "Failed to add %1"
+msgstr "%1の追加に失敗"
+
+#: handler.cpp:848
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr ""
 
-#: handler.cpp:799
+#: handler.cpp:852
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "%1の削除に失敗"
 
-#: handler.cpp:803
+#: handler.cpp:856
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "接続 %1 の更新に失敗"
 
-#: handler.cpp:814
+#: handler.cpp:867
 #, fuzzy, kde-format
 #| msgid "Failed to update connection %1"
 msgid "Failed to create hotspot %1"
 msgstr "接続 %1 の更新に失敗"
 
-#: handler.cpp:833
-#, kde-format
-msgid "Connection %1 has been added"
-msgstr "接続 %1 は追加されました"
-
-#: handler.cpp:837
+#: handler.cpp:890
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "接続 %1 は削除されました"
 
-#: handler.cpp:841
+#: handler.cpp:894
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "接続 %1 は更新されました"

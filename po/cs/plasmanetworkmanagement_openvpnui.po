@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2023-01-04 10:27+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -20,80 +20,12 @@ msgstr ""
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
-#: openvpn.cpp:180
-#, kde-format
-msgid "Could not open file"
-msgstr "Nelze otevřít soubor"
-
-#: openvpn.cpp:192
-#, kde-format
-msgid "Do you want to copy your certificates to %1?"
-msgstr "Přejete si zkopírovat certifikáty do %1?"
-
-#: openvpn.cpp:193
-#, kde-format
-msgid "Copy certificates"
-msgstr "Kopírovat certifikáty"
-
-#: openvpn.cpp:194
-#, kde-format
-msgid "Copy"
-msgstr "Kopírovat"
-
-#: openvpn.cpp:253 openvpn.cpp:271 openvpn.cpp:550
-#, kde-format
-msgid "Unknown option: %1"
-msgstr "Neznámá možnost: %1"
-
-#: openvpn.cpp:256 openvpn.cpp:274 openvpn.cpp:290 openvpn.cpp:302
-#: openvpn.cpp:334 openvpn.cpp:425 openvpn.cpp:542 openvpn.cpp:570
-#, kde-format
-msgid "Invalid number of arguments (expected 1) in option: %1"
-msgstr "Neplatný počet argumentů (očekáván 1) ve volbě: %1"
-
-#: openvpn.cpp:287 openvpn.cpp:299
-#, kde-format
-msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-msgstr "Neplatná velikost (měla by být mezi 0 a 0xFFFF) ve volbě: %1"
-
-#: openvpn.cpp:388
-#, kde-format
-msgid "Invalid proxy option: %1"
-msgstr "Neplatná volba proxy: %1"
-
-#: openvpn.cpp:422
-#, kde-format
-msgid "Invalid port (should be between 1 and 65535) in option: %1"
-msgstr "Neplatná velikost (mela by být mezi 1 a 65535) ve volbě: %1"
-
-#: openvpn.cpp:559
-#, kde-format
-msgid "Invalid number of arguments (expected 2) in option: %1"
-msgstr "Neplatný počet argumentů (očekávány 2) ve volbě: %1"
-
-#: openvpn.cpp:581
-#, kde-format
-msgid "Invalid argument in option: %1"
-msgstr "Neplatný argument pro volbu: %1"
-
-#: openvpn.cpp:669
-#, kde-format
-msgid "File %1 is not a valid OpenVPN's client configuration file"
-msgstr "Soubor %1 není platný konfigurační soubor pro klienta OpenVPN"
-
-#: openvpn.cpp:671
-#, kde-format
-msgid "File %1 is not a valid OpenVPN configuration (no remote)."
-msgstr ""
-"Soubor %1 není platný konfigurační soubor pro klienta OpenVPN (chybí "
-"vzdálený bod)."
-
-#: openvpn.cpp:739
+#: openvpn.cpp:204
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "Chyba při ukládání souboru %1: %2"
 
-#: openvpn.cpp:767
+#: openvpn.cpp:232
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "Chyba při kopírování certifikátu do %1: %2"
@@ -1140,3 +1072,44 @@ msgstr "token"
 #, kde-format
 msgid "one-time password"
 msgstr "Jednorázové heslo"
+
+#~ msgid "Could not open file"
+#~ msgstr "Nelze otevřít soubor"
+
+#~ msgid "Do you want to copy your certificates to %1?"
+#~ msgstr "Přejete si zkopírovat certifikáty do %1?"
+
+#~ msgid "Copy certificates"
+#~ msgstr "Kopírovat certifikáty"
+
+#~ msgid "Copy"
+#~ msgstr "Kopírovat"
+
+#~ msgid "Unknown option: %1"
+#~ msgstr "Neznámá možnost: %1"
+
+#~ msgid "Invalid number of arguments (expected 1) in option: %1"
+#~ msgstr "Neplatný počet argumentů (očekáván 1) ve volbě: %1"
+
+#~ msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
+#~ msgstr "Neplatná velikost (měla by být mezi 0 a 0xFFFF) ve volbě: %1"
+
+#~ msgid "Invalid proxy option: %1"
+#~ msgstr "Neplatná volba proxy: %1"
+
+#~ msgid "Invalid port (should be between 1 and 65535) in option: %1"
+#~ msgstr "Neplatná velikost (mela by být mezi 1 a 65535) ve volbě: %1"
+
+#~ msgid "Invalid number of arguments (expected 2) in option: %1"
+#~ msgstr "Neplatný počet argumentů (očekávány 2) ve volbě: %1"
+
+#~ msgid "Invalid argument in option: %1"
+#~ msgstr "Neplatný argument pro volbu: %1"
+
+#~ msgid "File %1 is not a valid OpenVPN's client configuration file"
+#~ msgstr "Soubor %1 není platný konfigurační soubor pro klienta OpenVPN"
+
+#~ msgid "File %1 is not a valid OpenVPN configuration (no remote)."
+#~ msgstr ""
+#~ "Soubor %1 není platný konfigurační soubor pro klienta OpenVPN (chybí "
+#~ "vzdálený bod)."

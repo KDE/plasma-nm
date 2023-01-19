@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-12-14 09:02+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -30,47 +30,7 @@ msgstr "Napaka med dešifriranjem zapletenega gesla"
 msgid "Error"
 msgstr "Napaka"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr "Napačen podaljšek datoteke"
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "Datoteke %1 ni bilo mogoče odpreti."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "Ni bilo mogoče najti zahtevane izvedljive datoteke cisco-decrypt."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"Datoteka z nastavitvami VPN, '%1', določa, da naj bi bil promet skozi VPN "
-"tuneliran skozi TCP, to pa trenutno ni podprto v programu vpnc.\n"
-"\n"
-"Povezava se lahko vseeno ustvari, z onemogočenim TCP tuneliranjem, obstaja "
-"pa možnost, da ne bo delovala kot bi pričakovali."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "Ni podprto"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: napaka oblike datoteke."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: datoteke ni bilo mogoče ustvariti"
@@ -430,6 +390,34 @@ msgstr "Uporabniško ime:"
 #, kde-format
 msgid "Group name."
 msgstr "Ime skupine."
+
+#~ msgid "Wrong file extension"
+#~ msgstr "Napačen podaljšek datoteke"
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "Datoteke %1 ni bilo mogoče odpreti."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "Ni bilo mogoče najti zahtevane izvedljive datoteke cisco-decrypt."
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "Datoteka z nastavitvami VPN, '%1', določa, da naj bi bil promet skozi VPN "
+#~ "tuneliran skozi TCP, to pa trenutno ni podprto v programu vpnc.\n"
+#~ "\n"
+#~ "Povezava se lahko vseeno ustvari, z onemogočenim TCP tuneliranjem, "
+#~ "obstaja pa možnost, da ne bo delovala kot bi pričakovali."
+
+#~ msgid "Not supported"
+#~ msgstr "Ni podprto"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: napaka oblike datoteke."
 
 #~ msgid "Store"
 #~ msgstr "Shrani"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2014-07-05 17:47+0200\n"
 "Last-Translator: Abd_Allatif\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -29,45 +29,7 @@ msgstr "حدث خطأ أثناء فك تشفير كلمة المرور المش�
 msgid "Error"
 msgstr "خطأ"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "تعذر فتح الملف %1."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "لا يمكن العثور على الملف التنفيذي الضروري cisco-decrypt."
-
-#: vpnc.cpp:249
-#, fuzzy, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"ملف إعدادات VPN '%1' يحدد أن البيانات المنقولة يجب أن تمرر عبر TCP؛ الأمر "
-"غير المدعوم حاليًا في برمجية vpnc.سيُنشئ الاتصال، لكن مع تعطيل التمرير عبر "
-"TCP، لكن ربما لن يعمل كما يجب."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "غير مدعوم"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: خطأ في صياغة الملف."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: لا يمكن إنشاء الملف"
@@ -434,6 +396,30 @@ msgstr "اسم المستخدم:"
 #| msgid "Group name:"
 msgid "Group name."
 msgstr "اسم المجموعة:"
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "تعذر فتح الملف %1."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "لا يمكن العثور على الملف التنفيذي الضروري cisco-decrypt."
+
+#, fuzzy
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "ملف إعدادات VPN '%1' يحدد أن البيانات المنقولة يجب أن تمرر عبر TCP؛ الأمر "
+#~ "غير المدعوم حاليًا في برمجية vpnc.سيُنشئ الاتصال، لكن مع تعطيل التمرير عبر "
+#~ "TCP، لكن ربما لن يعمل كما يجب."
+
+#~ msgid "Not supported"
+#~ msgstr "غير مدعوم"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: خطأ في صياغة الملف."
 
 #~ msgid "Store"
 #~ msgstr "تخزين"

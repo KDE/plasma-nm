@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -27,42 +27,7 @@ msgstr ""
 msgid "Error"
 msgstr "خاتالىق"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "ھۆججەت %1 نى ئاچقىلى بولمىدى."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr ""
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "قوللىمايدۇ"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: ھۆججەت پىچىمى خاتالىقى."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr ""
@@ -433,6 +398,15 @@ msgstr "ئىشلەتكۈچى ئاتى:"
 #| msgid "Group name:"
 msgid "Group name."
 msgstr "گۇرۇپپا ئاتى:"
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "ھۆججەت %1 نى ئاچقىلى بولمىدى."
+
+#~ msgid "Not supported"
+#~ msgstr "قوللىمايدۇ"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: ھۆججەت پىچىمى خاتالىقى."
 
 #~ msgid "Store"
 #~ msgstr "ساقلا"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-12-25 07:18+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -28,47 +28,7 @@ msgstr "დამახინჯებული პაროლის გაშ�
 msgid "Error"
 msgstr "შეცდომა"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr "ფაილის არასწორი გაფართოება"
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "ფაილის გახსნის შეცდომა: %1."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "გამშვები ფაილი cisco-decrypt არ არსებობს."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"VPN პარამეტრების ფაილი '%1' მიუთითებს, რომ VPN ტრაფიკი TCP-ის უნდა იყოს "
-"გადაცემული, რაც vpnc-ის მიერ ამჟამად მხარდაჭერილი არაა.\n"
-"\n"
-"მიერთება შეიქმნება, მაგრამ TCP გვირაბ-გამორთულით, რატომაც მან შეიძლება არც "
-"იმუშაოს."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "მხარდაუჭერელია"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: ფაილის ფორმატის შეცდომა."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: ფაილის შექმნის შეცდომა"
@@ -429,3 +389,31 @@ msgstr "მომხმარებელი:"
 #, kde-format
 msgid "Group name."
 msgstr "ჯგუფის სახელი."
+
+#~ msgid "Wrong file extension"
+#~ msgstr "ფაილის არასწორი გაფართოება"
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "ფაილის გახსნის შეცდომა: %1."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "გამშვები ფაილი cisco-decrypt არ არსებობს."
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "VPN პარამეტრების ფაილი '%1' მიუთითებს, რომ VPN ტრაფიკი TCP-ის უნდა იყოს "
+#~ "გადაცემული, რაც vpnc-ის მიერ ამჟამად მხარდაჭერილი არაა.\n"
+#~ "\n"
+#~ "მიერთება შეიქმნება, მაგრამ TCP გვირაბ-გამორთულით, რატომაც მან შეიძლება "
+#~ "არც იმუშაოს."
+
+#~ msgid "Not supported"
+#~ msgstr "მხარდაუჭერელია"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: ფაილის ფორმატის შეცდომა."

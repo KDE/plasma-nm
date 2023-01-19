@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2021-05-31 14:22+0400\n"
 "Last-Translator: Kheyyam Gojayev <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -27,47 +27,7 @@ msgstr "Mürəkkəb şifrənin deşifrə olunmasında xəta"
 msgid "Error"
 msgstr "Xəta"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "%1 faylı açıla bilmədi"
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "Lazımi cisco-decrypt icra faylı tapılmadı."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"\"%1 VPN ayarları faylı göstərir ki, VPN trafiki TCP-tunel üzərindən "
-"keçməlidir, lakin vpnc proqram təminatı bunu dəstəkləmir.\n"
-"\n"
-"Bağlantı TCP tuneli olmadan da qurula bilər, lakin bu problemlər yarada "
-"bilər."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "Dəstəklənmir"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: fayl formatı xətası."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: fayl yaradıla bilmədi"
@@ -431,3 +391,28 @@ msgstr "İstifadəçi adı:"
 #, kde-format
 msgid "Group name."
 msgstr "Qrup adı."
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "%1 faylı açıla bilmədi"
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "Lazımi cisco-decrypt icra faylı tapılmadı."
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "\"%1 VPN ayarları faylı göstərir ki, VPN trafiki TCP-tunel üzərindən "
+#~ "keçməlidir, lakin vpnc proqram təminatı bunu dəstəkləmir.\n"
+#~ "\n"
+#~ "Bağlantı TCP tuneli olmadan da qurula bilər, lakin bu problemlər yarada "
+#~ "bilər."
+
+#~ msgid "Not supported"
+#~ msgstr "Dəstəklənmir"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: fayl formatı xətası."

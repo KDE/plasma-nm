@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2019-10-30 18:51+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -27,47 +27,7 @@ msgstr "Tõrge hägustatud parooli lahtikrüptimisel"
 msgid "Error"
 msgstr "Tõrge"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "Faili %1 avamine nurjus."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "Vajalikku täitmisfaili cisco-decrypt ei leitud."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"VPN-i seadistustefail \"%1\" määrab, et VPN-liiklus peab kulgema TCP tunneli "
-"kaudu, mida vpnc tarkvara praegu ei toeta.\n"
-"\n"
-"Ühenduse loomine on siiski võimalik TCP tunneli väljalülitamisega, aga see "
-"ei pruugi toimida oodatult."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "Pole toetatud"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: failivormingu viga."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: faili loomine nurjus"
@@ -430,3 +390,28 @@ msgstr "Kasutajanimi:"
 #, kde-format
 msgid "Group name."
 msgstr "Grupi nimi."
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "Faili %1 avamine nurjus."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "Vajalikku täitmisfaili cisco-decrypt ei leitud."
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "VPN-i seadistustefail \"%1\" määrab, et VPN-liiklus peab kulgema TCP "
+#~ "tunneli kaudu, mida vpnc tarkvara praegu ei toeta.\n"
+#~ "\n"
+#~ "Ühenduse loomine on siiski võimalik TCP tunneli väljalülitamisega, aga "
+#~ "see ei pruugi toimida oodatult."
+
+#~ msgid "Not supported"
+#~ msgstr "Pole toetatud"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: failivormingu viga."

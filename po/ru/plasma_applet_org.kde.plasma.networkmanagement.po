@@ -11,13 +11,13 @@
 # Yury G. Kudryashov <urkud.urkud@gmail.com>, 2012.
 # Victor Ryzhykh <victorr2007@yandex.ru>, 2014.
 # Alexander Lakhin <exclusion@gmail.com>, 2013, 2014.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2019, 2020, 2021, 2022.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-12 00:57+0000\n"
-"PO-Revision-Date: 2022-09-24 14:03+0300\n"
+"PO-Revision-Date: 2023-01-13 17:43+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -93,13 +93,13 @@ msgstr "Сетевые подключения"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Включить режим полёта: щелчок средней кнопкой"
 
 #: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "Отключить режим полёта: щелчок средней кнопкой"
 
 #: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format

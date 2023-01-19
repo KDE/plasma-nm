@@ -1,14 +1,14 @@
 #
 # Translators:
-# Volkan Gezer <volkangezer@gmail.com>, 2013, 2021, 2022
-# Emir SARI <emir_sari@icloud.com>, 2022
 #
+# Volkan Gezer <volkangezer@gmail.com>, 2013, 2021, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2022-02-27 14:21+0100\n"
+"PO-Revision-Date: 2023-01-18 22:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-POOTLE-MTIME: 1413102235.000000\n"
-"X-Generator: Lokalize 20.12.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -598,7 +598,7 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"Not: MPPE şifrelemesi sadece MSCHAP kimlik denetimi yöntemlerinde "
+"Not: MPPE şifrelemesi yalnızca MSCHAP kimlik denetimi yöntemlerinde "
 "geçerlidir.\n"
 "\\Etkinleştirmek için bir veya daha fazla MSCHAP kimlik denetimi yöntemini\n"
 "seçin:\\MSCHAP veya MSCHAPv2."

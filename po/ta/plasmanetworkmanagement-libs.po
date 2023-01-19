@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:50+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-12-27 21:42+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -3189,72 +3189,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&நீக்கு"
 
-#: handler.cpp:108
+#: handler.cpp:110
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:110
+#: handler.cpp:112
 #, kde-format
 msgid "Report Bug"
 msgstr ""
 
-#: handler.cpp:133
+#: handler.cpp:135
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:135
+#: handler.cpp:137
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:783
-#, kde-format
-msgid "Failed to activate %1"
-msgstr "%1 என்பதை இயக்குதல் தோல்வியடைந்தது"
-
-#: handler.cpp:787
-#, kde-format
-msgid "Failed to add %1"
-msgstr "%1 என்பதை சேர்த்தல் தோல்வியடைந்தது"
-
-#: handler.cpp:791
+#: handler.cpp:351 handler.cpp:844
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "%1 என்ற இணைப்பை சேர்த்தல் தோல்வியடைந்தது"
 
-#: handler.cpp:795
-#, kde-format
-msgid "Failed to deactivate %1"
-msgstr "%1 என்பதை முடக்குதல் தோல்வியடைந்தது"
-
-#: handler.cpp:799
-#, kde-format
-msgid "Failed to remove %1"
-msgstr "%1 என்பதை நீக்குதல் தோல்வியடைந்தது"
-
-#: handler.cpp:803
-#, kde-format
-msgid "Failed to update connection %1"
-msgstr "%1 என்ற இணைப்பை புதுப்பித்தல் தோல்வியடைந்தது"
-
-#: handler.cpp:814
-#, kde-format
-msgid "Failed to create hotspot %1"
-msgstr "%1 என்ற ஹாட்ஸ்பாட்டை உருவாக்குதல் தோல்வியடைந்தது"
-
-#: handler.cpp:833
+#: handler.cpp:360 handler.cpp:886
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "%1 என்ற இணைப்பு சேர்க்கப்பட்டது"
 
-#: handler.cpp:837
+#: handler.cpp:836
+#, kde-format
+msgid "Failed to activate %1"
+msgstr "%1 என்பதை இயக்குதல் தோல்வியடைந்தது"
+
+#: handler.cpp:840
+#, kde-format
+msgid "Failed to add %1"
+msgstr "%1 என்பதை சேர்த்தல் தோல்வியடைந்தது"
+
+#: handler.cpp:848
+#, kde-format
+msgid "Failed to deactivate %1"
+msgstr "%1 என்பதை முடக்குதல் தோல்வியடைந்தது"
+
+#: handler.cpp:852
+#, kde-format
+msgid "Failed to remove %1"
+msgstr "%1 என்பதை நீக்குதல் தோல்வியடைந்தது"
+
+#: handler.cpp:856
+#, kde-format
+msgid "Failed to update connection %1"
+msgstr "%1 என்ற இணைப்பை புதுப்பித்தல் தோல்வியடைந்தது"
+
+#: handler.cpp:867
+#, kde-format
+msgid "Failed to create hotspot %1"
+msgstr "%1 என்ற ஹாட்ஸ்பாட்டை உருவாக்குதல் தோல்வியடைந்தது"
+
+#: handler.cpp:890
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "%1 என்ற இணைப்பு நீக்கப்பட்டது"
 
-#: handler.cpp:841
+#: handler.cpp:894
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "%1 என்ற இணைப்பு புதுப்பிக்கப்பட்டது"

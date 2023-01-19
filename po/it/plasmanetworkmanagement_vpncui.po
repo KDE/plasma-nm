@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-12-16 11:03+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -27,48 +27,7 @@ msgstr "Errore durante la decifratura della password oscurata"
 msgid "Error"
 msgstr "Errore"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr "Estensione del file errata"
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "Il file %1 non può essere aperto."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "L'eseguibile necessario cisco-decrypt non può essere trovato."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"Il file delle impostazioni VPN «%1» specifica che il traffico VPN deve "
-"transitare su un tunnel TCP che attualmente non è supportato dal software "
-"vpnc.\n"
-"\n"
-"La connessione può essere creata comunque, con il tunnel TCP disabilitato, "
-"ma potrebbe non funzionare come previsto."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "Non supportato"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: errore di formato del file."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: il file non può essere creato"
@@ -430,6 +389,35 @@ msgstr "Nome utente:"
 #, kde-format
 msgid "Group name."
 msgstr "Nome del gruppo."
+
+#~ msgid "Wrong file extension"
+#~ msgstr "Estensione del file errata"
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "Il file %1 non può essere aperto."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "L'eseguibile necessario cisco-decrypt non può essere trovato."
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "Il file delle impostazioni VPN «%1» specifica che il traffico VPN deve "
+#~ "transitare su un tunnel TCP che attualmente non è supportato dal software "
+#~ "vpnc.\n"
+#~ "\n"
+#~ "La connessione può essere creata comunque, con il tunnel TCP "
+#~ "disabilitato, ma potrebbe non funzionare come previsto."
+
+#~ msgid "Not supported"
+#~ msgstr "Non supportato"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: errore di formato del file."
 
 #~ msgid "Store"
 #~ msgstr "Memorizza"

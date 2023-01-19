@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-10-19 07:00+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -26,82 +26,12 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: openvpn.cpp:180
-#, kde-format
-msgid "Could not open file"
-msgstr "Impossible d'ouvrir le fichier"
-
-#: openvpn.cpp:192
-#, kde-format
-msgid "Do you want to copy your certificates to %1?"
-msgstr "Voulez-vous vraiment copier les certificats vers %1 ?"
-
-#: openvpn.cpp:193
-#, kde-format
-msgid "Copy certificates"
-msgstr "Copier les certificats"
-
-#: openvpn.cpp:194
-#, kde-format
-msgid "Copy"
-msgstr "Copier"
-
-#: openvpn.cpp:253 openvpn.cpp:271 openvpn.cpp:550
-#, kde-format
-msgid "Unknown option: %1"
-msgstr "Option inconnue : %1"
-
-#: openvpn.cpp:256 openvpn.cpp:274 openvpn.cpp:290 openvpn.cpp:302
-#: openvpn.cpp:334 openvpn.cpp:425 openvpn.cpp:542 openvpn.cpp:570
-#, kde-format
-msgid "Invalid number of arguments (expected 1) in option: %1"
-msgstr "Nombre d'arguments non valable (1 était attendu) dans l'option : %1"
-
-#: openvpn.cpp:287 openvpn.cpp:299
-#, kde-format
-msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-msgstr "Taille non valable (devrait être entre 0 et 0xFFFF) dans l'option : %1"
-
-#: openvpn.cpp:388
-#, kde-format
-msgid "Invalid proxy option: %1"
-msgstr "Option de serveur mandataire non valable : %1"
-
-#: openvpn.cpp:422
-#, kde-format
-msgid "Invalid port (should be between 1 and 65535) in option: %1"
-msgstr "Port non valable (devrait être entre 1 et 65535) dans l'option : %1"
-
-#: openvpn.cpp:559
-#, kde-format
-msgid "Invalid number of arguments (expected 2) in option: %1"
-msgstr "Nombre d'arguments non valable (2 étaient attendus) dans l'option : %1"
-
-#: openvpn.cpp:581
-#, kde-format
-msgid "Invalid argument in option: %1"
-msgstr "Argument non valable dans l'option : %1"
-
-#: openvpn.cpp:669
-#, kde-format
-msgid "File %1 is not a valid OpenVPN's client configuration file"
-msgstr ""
-"Le fichier %1 n'est pas un fichier de configuration client « OpenVPN » "
-"valable"
-
-#: openvpn.cpp:671
-#, kde-format
-msgid "File %1 is not a valid OpenVPN configuration (no remote)."
-msgstr ""
-"Le fichier %1 n'est pas un fichier de configuration OpenVPN valable (pas de "
-"poste distant)."
-
-#: openvpn.cpp:739
+#: openvpn.cpp:204
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "Impossible d'enregistrer le fichier %1 : %2"
 
-#: openvpn.cpp:767
+#: openvpn.cpp:232
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "Impossible de copier le certificat vers %1 : %2"
@@ -1226,6 +1156,51 @@ msgstr "Jeton"
 #, kde-format
 msgid "one-time password"
 msgstr "Mot de passe à usage unique"
+
+#~ msgid "Could not open file"
+#~ msgstr "Impossible d'ouvrir le fichier"
+
+#~ msgid "Do you want to copy your certificates to %1?"
+#~ msgstr "Voulez-vous vraiment copier les certificats vers %1 ?"
+
+#~ msgid "Copy certificates"
+#~ msgstr "Copier les certificats"
+
+#~ msgid "Copy"
+#~ msgstr "Copier"
+
+#~ msgid "Unknown option: %1"
+#~ msgstr "Option inconnue : %1"
+
+#~ msgid "Invalid number of arguments (expected 1) in option: %1"
+#~ msgstr "Nombre d'arguments non valable (1 était attendu) dans l'option : %1"
+
+#~ msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
+#~ msgstr ""
+#~ "Taille non valable (devrait être entre 0 et 0xFFFF) dans l'option : %1"
+
+#~ msgid "Invalid proxy option: %1"
+#~ msgstr "Option de serveur mandataire non valable : %1"
+
+#~ msgid "Invalid port (should be between 1 and 65535) in option: %1"
+#~ msgstr "Port non valable (devrait être entre 1 et 65535) dans l'option : %1"
+
+#~ msgid "Invalid number of arguments (expected 2) in option: %1"
+#~ msgstr ""
+#~ "Nombre d'arguments non valable (2 étaient attendus) dans l'option : %1"
+
+#~ msgid "Invalid argument in option: %1"
+#~ msgstr "Argument non valable dans l'option : %1"
+
+#~ msgid "File %1 is not a valid OpenVPN's client configuration file"
+#~ msgstr ""
+#~ "Le fichier %1 n'est pas un fichier de configuration client « OpenVPN » "
+#~ "valable"
+
+#~ msgid "File %1 is not a valid OpenVPN configuration (no remote)."
+#~ msgstr ""
+#~ "Le fichier %1 n'est pas un fichier de configuration OpenVPN valable (pas "
+#~ "de poste distant)."
 
 #~ msgid "Could not open file for writing"
 #~ msgstr "Il est impossible d'ouvrir le fichier en écriture"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2015-02-04 16:07+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -20,78 +20,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: openvpn.cpp:180
-#, kde-format
-msgid "Could not open file"
-msgstr "Nije moguće otvoriti datoteku"
-
-#: openvpn.cpp:192
-#, kde-format
-msgid "Do you want to copy your certificates to %1?"
-msgstr "Želite li kopirati certifikate od %1?"
-
-#: openvpn.cpp:193
-#, kde-format
-msgid "Copy certificates"
-msgstr "Kopirati certifikate"
-
-#: openvpn.cpp:194
-#, kde-format
-msgid "Copy"
-msgstr ""
-
-#: openvpn.cpp:253 openvpn.cpp:271 openvpn.cpp:550
-#, kde-format
-msgid "Unknown option: %1"
-msgstr "Nepoznata opcija: %1"
-
-#: openvpn.cpp:256 openvpn.cpp:274 openvpn.cpp:290 openvpn.cpp:302
-#: openvpn.cpp:334 openvpn.cpp:425 openvpn.cpp:542 openvpn.cpp:570
-#, kde-format
-msgid "Invalid number of arguments (expected 1) in option: %1"
-msgstr "Pogrešan broj argumenata (očekivano 1) u opciji: %1"
-
-#: openvpn.cpp:287 openvpn.cpp:299
-#, kde-format
-msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-msgstr "Pogrešna veličina (treba biti između 0 i 0xFFFF) u opciji: %1"
-
-#: openvpn.cpp:388
-#, kde-format
-msgid "Invalid proxy option: %1"
-msgstr "Pogrešna proxy opcija: %1"
-
-#: openvpn.cpp:422
-#, kde-format
-msgid "Invalid port (should be between 1 and 65535) in option: %1"
-msgstr "Pogrešan port (treba biti između 1 i 65535) u opciji: %1"
-
-#: openvpn.cpp:559
-#, kde-format
-msgid "Invalid number of arguments (expected 2) in option: %1"
-msgstr "Pogrešan broj argumenata (očekivano 2) u opciji: %1"
-
-#: openvpn.cpp:581
-#, kde-format
-msgid "Invalid argument in option: %1"
-msgstr "Pogrešan argument opciji: %1"
-
-#: openvpn.cpp:669
-#, kde-format
-msgid "File %1 is not a valid OpenVPN's client configuration file"
-msgstr "Datoteka %1 nije važeća OpenVPN klijentska konfiguracijska datoteka"
-
-#: openvpn.cpp:671
-#, kde-format
-msgid "File %1 is not a valid OpenVPN configuration (no remote)."
-msgstr "Datoteka %1 nije važeća OpenVPN konfiguracija (nije udaljena)."
-
-#: openvpn.cpp:739
+#: openvpn.cpp:204
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "Greška pri sačuvanju fajla %1:%2"
 
-#: openvpn.cpp:767
+#: openvpn.cpp:232
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "Greška pri kopiranju certifikata od %1:%2"
@@ -1164,6 +1098,42 @@ msgstr ""
 #| msgid "Key password:"
 msgid "one-time password"
 msgstr "Ključna lozinka:"
+
+#~ msgid "Could not open file"
+#~ msgstr "Nije moguće otvoriti datoteku"
+
+#~ msgid "Do you want to copy your certificates to %1?"
+#~ msgstr "Želite li kopirati certifikate od %1?"
+
+#~ msgid "Copy certificates"
+#~ msgstr "Kopirati certifikate"
+
+#~ msgid "Unknown option: %1"
+#~ msgstr "Nepoznata opcija: %1"
+
+#~ msgid "Invalid number of arguments (expected 1) in option: %1"
+#~ msgstr "Pogrešan broj argumenata (očekivano 1) u opciji: %1"
+
+#~ msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
+#~ msgstr "Pogrešna veličina (treba biti između 0 i 0xFFFF) u opciji: %1"
+
+#~ msgid "Invalid proxy option: %1"
+#~ msgstr "Pogrešna proxy opcija: %1"
+
+#~ msgid "Invalid port (should be between 1 and 65535) in option: %1"
+#~ msgstr "Pogrešan port (treba biti između 1 i 65535) u opciji: %1"
+
+#~ msgid "Invalid number of arguments (expected 2) in option: %1"
+#~ msgstr "Pogrešan broj argumenata (očekivano 2) u opciji: %1"
+
+#~ msgid "Invalid argument in option: %1"
+#~ msgstr "Pogrešan argument opciji: %1"
+
+#~ msgid "File %1 is not a valid OpenVPN's client configuration file"
+#~ msgstr "Datoteka %1 nije važeća OpenVPN klijentska konfiguracijska datoteka"
+
+#~ msgid "File %1 is not a valid OpenVPN configuration (no remote)."
+#~ msgstr "Datoteka %1 nije važeća OpenVPN konfiguracija (nije udaljena)."
 
 #~ msgid "Could not open file for writing"
 #~ msgstr "Ne mogu otvoriti datoteku za pisanje"

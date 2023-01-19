@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-07-02 09:08+0800\n"
 "Last-Translator: Yi-Jyun Pan <pan93412@gmail.com>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
@@ -20,78 +20,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 3.1\n"
 
-#: openvpn.cpp:180
-#, kde-format
-msgid "Could not open file"
-msgstr "無法開啟檔案"
-
-#: openvpn.cpp:192
-#, kde-format
-msgid "Do you want to copy your certificates to %1?"
-msgstr "您要複製您的憑證到 %1 嗎？"
-
-#: openvpn.cpp:193
-#, kde-format
-msgid "Copy certificates"
-msgstr "複製憑證"
-
-#: openvpn.cpp:194
-#, kde-format
-msgid "Copy"
-msgstr ""
-
-#: openvpn.cpp:253 openvpn.cpp:271 openvpn.cpp:550
-#, kde-format
-msgid "Unknown option: %1"
-msgstr "未知的選項：%1"
-
-#: openvpn.cpp:256 openvpn.cpp:274 openvpn.cpp:290 openvpn.cpp:302
-#: openvpn.cpp:334 openvpn.cpp:425 openvpn.cpp:542 openvpn.cpp:570
-#, kde-format
-msgid "Invalid number of arguments (expected 1) in option: %1"
-msgstr "選項中引數數目不正確（應為 1 個）：%1"
-
-#: openvpn.cpp:287 openvpn.cpp:299
-#, kde-format
-msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-msgstr "選項中大小不正確（應為 0 到 0xffff 間）：%1"
-
-#: openvpn.cpp:388
-#, kde-format
-msgid "Invalid proxy option: %1"
-msgstr "代理伺服器選項不正確：%1"
-
-#: openvpn.cpp:422
-#, kde-format
-msgid "Invalid port (should be between 1 and 65535) in option: %1"
-msgstr "選項中連接埠不正確（應為 1 到 65535 間）：%1"
-
-#: openvpn.cpp:559
-#, kde-format
-msgid "Invalid number of arguments (expected 2) in option: %1"
-msgstr "選項中參數數目不正確（應為 2 個）：%1"
-
-#: openvpn.cpp:581
-#, kde-format
-msgid "Invalid argument in option: %1"
-msgstr "選項中引數無效：%1"
-
-#: openvpn.cpp:669
-#, kde-format
-msgid "File %1 is not a valid OpenVPN's client configuration file"
-msgstr "檔案 %1 不是合法的 OpenVPN 用戶端設定檔"
-
-#: openvpn.cpp:671
-#, kde-format
-msgid "File %1 is not a valid OpenVPN configuration (no remote)."
-msgstr "檔案 %1 不是合法的 OpenVPN 設定檔（無遠端）"
-
-#: openvpn.cpp:739
+#: openvpn.cpp:204
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "儲存檔案 %1 時發生錯誤：%2"
 
-#: openvpn.cpp:767
+#: openvpn.cpp:232
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "複製憑證到 %1 時發生錯誤：%2"
@@ -1159,6 +1093,42 @@ msgstr "憑證"
 #, kde-format
 msgid "one-time password"
 msgstr "一次性動態密碼："
+
+#~ msgid "Could not open file"
+#~ msgstr "無法開啟檔案"
+
+#~ msgid "Do you want to copy your certificates to %1?"
+#~ msgstr "您要複製您的憑證到 %1 嗎？"
+
+#~ msgid "Copy certificates"
+#~ msgstr "複製憑證"
+
+#~ msgid "Unknown option: %1"
+#~ msgstr "未知的選項：%1"
+
+#~ msgid "Invalid number of arguments (expected 1) in option: %1"
+#~ msgstr "選項中引數數目不正確（應為 1 個）：%1"
+
+#~ msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
+#~ msgstr "選項中大小不正確（應為 0 到 0xffff 間）：%1"
+
+#~ msgid "Invalid proxy option: %1"
+#~ msgstr "代理伺服器選項不正確：%1"
+
+#~ msgid "Invalid port (should be between 1 and 65535) in option: %1"
+#~ msgstr "選項中連接埠不正確（應為 1 到 65535 間）：%1"
+
+#~ msgid "Invalid number of arguments (expected 2) in option: %1"
+#~ msgstr "選項中參數數目不正確（應為 2 個）：%1"
+
+#~ msgid "Invalid argument in option: %1"
+#~ msgstr "選項中引數無效：%1"
+
+#~ msgid "File %1 is not a valid OpenVPN's client configuration file"
+#~ msgstr "檔案 %1 不是合法的 OpenVPN 用戶端設定檔"
+
+#~ msgid "File %1 is not a valid OpenVPN configuration (no remote)."
+#~ msgstr "檔案 %1 不是合法的 OpenVPN 設定檔（無遠端）"
 
 #~ msgid "Could not open file for writing"
 #~ msgstr "無法開啟檔案以寫入"

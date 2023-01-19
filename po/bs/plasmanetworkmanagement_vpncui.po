@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vpn\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2015-02-14 03:53+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -30,47 +30,7 @@ msgstr "Greška u dekriptovanju zašifrovane šifre"
 msgid "Error"
 msgstr "Greška"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "Datoteka %1 se ne može otvoriti."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "Potrebni izvršni program cisco-decrypt se ne može naći."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"VPN datoteka za podešavanje \"%1\" navodi da bi VPN saobraćaj trebalo da "
-"bude kanalisanih kroz TCP koji trenutno nije podržan u vpnc softveru.\n"
-"\n"
-"Veza može i dalje biti kreirana, sa TCP tunelom isključenim, ali to možda "
-"neće raditi kao što se očekuje."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "Nije podržano"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: greška formata datoteke."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: datoteka se ne može napraviti"
@@ -440,6 +400,31 @@ msgstr "Korisničko ime:"
 #| msgid "Group name:"
 msgid "Group name."
 msgstr "Naziv grupe:"
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "Datoteka %1 se ne može otvoriti."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "Potrebni izvršni program cisco-decrypt se ne može naći."
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "VPN datoteka za podešavanje \"%1\" navodi da bi VPN saobraćaj trebalo da "
+#~ "bude kanalisanih kroz TCP koji trenutno nije podržan u vpnc softveru.\n"
+#~ "\n"
+#~ "Veza može i dalje biti kreirana, sa TCP tunelom isključenim, ali to možda "
+#~ "neće raditi kao što se očekuje."
+
+#~ msgid "Not supported"
+#~ msgstr "Nije podržano"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: greška formata datoteke."
 
 #~ msgid "Store"
 #~ msgstr "Pohrani"

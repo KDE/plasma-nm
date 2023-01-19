@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:50+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -3272,76 +3272,76 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "چىقىرىۋەت(&E)"
 
-#: handler.cpp:108
+#: handler.cpp:110
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:110
+#: handler.cpp:112
 #, kde-format
 msgid "Report Bug"
 msgstr ""
 
-#: handler.cpp:133
+#: handler.cpp:135
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:135
+#: handler.cpp:137
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:783
-#, kde-format
-msgid "Failed to activate %1"
-msgstr ""
-
-#: handler.cpp:787
-#, kde-format
-msgid "Failed to add %1"
-msgstr ""
-
-#: handler.cpp:791
+#: handler.cpp:351 handler.cpp:844
 #, fuzzy, kde-format
 #| msgid "Remove Connection"
 msgid "Failed to add connection %1"
 msgstr "باغلىنىشنى چىقىۋەت"
 
-#: handler.cpp:795
-#, kde-format
-msgid "Failed to deactivate %1"
-msgstr ""
-
-#: handler.cpp:799
-#, kde-format
-msgid "Failed to remove %1"
-msgstr ""
-
-#: handler.cpp:803
-#, kde-format
-msgid "Failed to update connection %1"
-msgstr ""
-
-#: handler.cpp:814
-#, fuzzy, kde-format
-#| msgid "Remove Connection"
-msgid "Failed to create hotspot %1"
-msgstr "باغلىنىشنى چىقىۋەت"
-
-#: handler.cpp:833
+#: handler.cpp:360 handler.cpp:886
 #, fuzzy, kde-format
 #| msgid "Connection name:"
 msgid "Connection %1 has been added"
 msgstr "باغلىنىش ئاتى:"
 
-#: handler.cpp:837
+#: handler.cpp:836
+#, kde-format
+msgid "Failed to activate %1"
+msgstr ""
+
+#: handler.cpp:840
+#, kde-format
+msgid "Failed to add %1"
+msgstr ""
+
+#: handler.cpp:848
+#, kde-format
+msgid "Failed to deactivate %1"
+msgstr ""
+
+#: handler.cpp:852
+#, kde-format
+msgid "Failed to remove %1"
+msgstr ""
+
+#: handler.cpp:856
+#, kde-format
+msgid "Failed to update connection %1"
+msgstr ""
+
+#: handler.cpp:867
+#, fuzzy, kde-format
+#| msgid "Remove Connection"
+msgid "Failed to create hotspot %1"
+msgstr "باغلىنىشنى چىقىۋەت"
+
+#: handler.cpp:890
 #, fuzzy, kde-format
 #| msgid "Connection name:"
 msgid "Connection %1 has been removed"
 msgstr "باغلىنىش ئاتى:"
 
-#: handler.cpp:841
+#: handler.cpp:894
 #, fuzzy, kde-format
 #| msgid "Connection name:"
 msgid "Connection %1 has been updated"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2017-02-12 10:19+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -27,47 +27,7 @@ msgstr "Fejl ved dekryptering af den maskerede adgangskode"
 msgid "Error"
 msgstr "Fejl"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "Filen %1 kunne ikke åbnes."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "Den krævede kørbare fil cisco-decrypt kunne ikke findes."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"VPN-indstillingsfilen \"%1\" angiver at VPN-trafik skal tunneleres  igennem "
-"TCP hvilket i øjeblikket ikke understøttes i vpnc-softwaren.\n"
-"\n"
-"Forbindelsen kan stadig oprettes med TCP-tunnelering deaktiveret, men det "
-"vil måske ikke fungere som forventet."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "Ikke understøttet"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: Fejl i filformat"
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: Filen kunne ikke oprettes"
@@ -429,6 +389,31 @@ msgstr "Brugernavn:"
 #, kde-format
 msgid "Group name."
 msgstr "Gruppenavn."
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "Filen %1 kunne ikke åbnes."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "Den krævede kørbare fil cisco-decrypt kunne ikke findes."
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "VPN-indstillingsfilen \"%1\" angiver at VPN-trafik skal tunneleres  "
+#~ "igennem TCP hvilket i øjeblikket ikke understøttes i vpnc-softwaren.\n"
+#~ "\n"
+#~ "Forbindelsen kan stadig oprettes med TCP-tunnelering deaktiveret, men det "
+#~ "vil måske ikke fungere som forventet."
+
+#~ msgid "Not supported"
+#~ msgstr "Ikke understøttet"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: Fejl i filformat"
 
 #~ msgid "Store"
 #~ msgstr "Opbevar"

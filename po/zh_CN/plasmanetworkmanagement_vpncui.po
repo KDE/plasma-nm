@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2023-01-12 10:31\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -28,46 +28,7 @@ msgstr "解密混淆的密码时出错"
 msgid "Error"
 msgstr "错误"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr "文件扩展名错误"
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "无法打开文件 %1。"
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "需要 cisco-decrypt 的可执行文件但未找到。"
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"VPN 设置文件“%1”指定了 VPN 流量需要通过 TCP 隧道传输，但当前并未被 vpnc 软件"
-"支持。\n"
-"\n"
-"连接仍将被创建，并禁用 TCP 隧道，但是可能不能正常工作。"
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "不支持"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: 文件格式错误。"
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1：文件无法创建"
@@ -426,3 +387,30 @@ msgstr "用户名："
 #, kde-format
 msgid "Group name."
 msgstr "组名称。"
+
+#~ msgid "Wrong file extension"
+#~ msgstr "文件扩展名错误"
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "无法打开文件 %1。"
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "需要 cisco-decrypt 的可执行文件但未找到。"
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "VPN 设置文件“%1”指定了 VPN 流量需要通过 TCP 隧道传输，但当前并未被 vpnc 软"
+#~ "件支持。\n"
+#~ "\n"
+#~ "连接仍将被创建，并禁用 TCP 隧道，但是可能不能正常工作。"
+
+#~ msgid "Not supported"
+#~ msgstr "不支持"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: 文件格式错误。"

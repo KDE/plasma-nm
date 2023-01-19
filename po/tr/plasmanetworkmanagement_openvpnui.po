@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2017, 2019, 2021.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
-"PO-Revision-Date: 2022-10-18 04:44+0300\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
+"PO-Revision-Date: 2023-01-18 22:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,82 +16,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.08.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-POOTLE-MTIME: 1413106147.000000\n"
 
-#: openvpn.cpp:180
-#, kde-format
-msgid "Could not open file"
-msgstr "Dosya açılamadı"
-
-#: openvpn.cpp:192
-#, kde-format
-msgid "Do you want to copy your certificates to %1?"
-msgstr "Sertifikalarınızı %1 konumuna kopyalamak istiyor musunuz?"
-
-#: openvpn.cpp:193
-#, kde-format
-msgid "Copy certificates"
-msgstr "Sertifikaları kopyala"
-
-#: openvpn.cpp:194
-#, kde-format
-msgid "Copy"
-msgstr "Kopyala"
-
-#: openvpn.cpp:253 openvpn.cpp:271 openvpn.cpp:550
-#, kde-format
-msgid "Unknown option: %1"
-msgstr "Bilinmeyen seçenek: %1"
-
-#: openvpn.cpp:256 openvpn.cpp:274 openvpn.cpp:290 openvpn.cpp:302
-#: openvpn.cpp:334 openvpn.cpp:425 openvpn.cpp:542 openvpn.cpp:570
-#, kde-format
-msgid "Invalid number of arguments (expected 1) in option: %1"
-msgstr "Seçenekte geçersiz argüman sayısı (beklenen 1): %1"
-
-#: openvpn.cpp:287 openvpn.cpp:299
-#, kde-format
-msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-msgstr "Seçenekte geçersiz boyut (0 ve 0xFFFF arasında olmalı): %1"
-
-#: openvpn.cpp:388
-#, kde-format
-msgid "Invalid proxy option: %1"
-msgstr "Geçersiz vekil sunucu seçeneği: %1"
-
-#: openvpn.cpp:422
-#, kde-format
-msgid "Invalid port (should be between 1 and 65535) in option: %1"
-msgstr "Seçenekte geçersiz kapı (1 ve 65535 arasında olmalı): %1"
-
-#: openvpn.cpp:559
-#, kde-format
-msgid "Invalid number of arguments (expected 2) in option: %1"
-msgstr "Seçenekte geçersiz argüman sayısı (beklenen 2): %1"
-
-#: openvpn.cpp:581
-#, kde-format
-msgid "Invalid argument in option: %1"
-msgstr "Seçenekte geçersiz değişken: %1"
-
-#: openvpn.cpp:669
-#, kde-format
-msgid "File %1 is not a valid OpenVPN's client configuration file"
-msgstr "%1 dosyası geçerli bir OpenVPN istemci yapılandırma dosyası değil"
-
-#: openvpn.cpp:671
-#, kde-format
-msgid "File %1 is not a valid OpenVPN configuration (no remote)."
-msgstr ""
-"%1 dosyası geçerli bir OpenVPN istemci yapılandırması değil (uzak değil)."
-
-#: openvpn.cpp:739
+#: openvpn.cpp:204
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "%1 dosyasını kaydederken hata: %2"
 
-#: openvpn.cpp:767
+#: openvpn.cpp:232
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "Sertifikaları %1 konumuna kopyalarken hata: %2"
@@ -834,9 +767,9 @@ msgid ""
 msgstr ""
 "Sunucu sertifika kimliklendirmesini onayla.\n"
 "\n"
-"Etkin olduğunda bağlantı, sadece sertifikaların bazı beklenen\n"
+"Etkin olduğunda bağlantı, yalnızca sertifikaların bazı beklenen\n"
 "özellikleri uyuştuğunda sağlanacaktır.\n"
-"Eşleşme, tüm sertifika öznesi (tüm alanlar) veya sadece\n"
+"Eşleşme, tüm sertifika öznesi (tüm alanlar) veya yalnızca\n"
 "Ortak İsim (CN alanı) için uygulanabilir.\n"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCertCheck)
@@ -896,7 +829,7 @@ msgid ""
 "Connect only to servers whose certificate matches the given subject. "
 "Example: /CN=myvpn.company.com"
 msgstr ""
-"Sadece belirtilen konuyla eşleşen sertifikaya sahip sunuculara bağlan. "
+"Yalnızca belirtilen konuyla eşleşen sertifikaya sahip sunuculara bağlan. "
 "Örnek: /CN=vpnim.sirket.com"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRemoteCertTls)
@@ -1197,6 +1130,46 @@ msgstr "jeton"
 #, kde-format
 msgid "one-time password"
 msgstr "tek kerelik parola"
+
+#~ msgid "Could not open file"
+#~ msgstr "Dosya açılamadı"
+
+#~ msgid "Do you want to copy your certificates to %1?"
+#~ msgstr "Sertifikalarınızı %1 konumuna kopyalamak istiyor musunuz?"
+
+#~ msgid "Copy certificates"
+#~ msgstr "Sertifikaları kopyala"
+
+#~ msgid "Copy"
+#~ msgstr "Kopyala"
+
+#~ msgid "Unknown option: %1"
+#~ msgstr "Bilinmeyen seçenek: %1"
+
+#~ msgid "Invalid number of arguments (expected 1) in option: %1"
+#~ msgstr "Seçenekte geçersiz argüman sayısı (beklenen 1): %1"
+
+#~ msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
+#~ msgstr "Seçenekte geçersiz boyut (0 ve 0xFFFF arasında olmalı): %1"
+
+#~ msgid "Invalid proxy option: %1"
+#~ msgstr "Geçersiz vekil sunucu seçeneği: %1"
+
+#~ msgid "Invalid port (should be between 1 and 65535) in option: %1"
+#~ msgstr "Seçenekte geçersiz kapı (1 ve 65535 arasında olmalı): %1"
+
+#~ msgid "Invalid number of arguments (expected 2) in option: %1"
+#~ msgstr "Seçenekte geçersiz argüman sayısı (beklenen 2): %1"
+
+#~ msgid "Invalid argument in option: %1"
+#~ msgstr "Seçenekte geçersiz değişken: %1"
+
+#~ msgid "File %1 is not a valid OpenVPN's client configuration file"
+#~ msgstr "%1 dosyası geçerli bir OpenVPN istemci yapılandırma dosyası değil"
+
+#~ msgid "File %1 is not a valid OpenVPN configuration (no remote)."
+#~ msgstr ""
+#~ "%1 dosyası geçerli bir OpenVPN istemci yapılandırması değil (uzak değil)."
 
 #~ msgid "Could not open file for writing"
 #~ msgstr "Dosya yazmak için açılamıyor"

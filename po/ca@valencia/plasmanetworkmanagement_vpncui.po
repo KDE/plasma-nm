@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-12-13 14:15+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -31,49 +31,7 @@ msgstr "S'ha produït un error en desencriptar la contrasenya ofuscada"
 msgid "Error"
 msgstr "S'ha produït un error"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr "Extensió errònia del fitxer"
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "No s'ha pogut obrir el fitxer %1."
-
-# skip-rule: kct-decrypt
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "No s'ha trobat l'executable «cisco-decrypt» necessari."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"El fitxer de configuració de la VPN «%1» especifica que el trànsit VPN "
-"hauria d'estar en un túnel TCP que actualment no està disponible en el "
-"programari vpnc.\n"
-"\n"
-"La connexió encara pot crear-se, amb el túnel TCP desactivat, però podria no "
-"funcionar com s'espera."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "No acceptat"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: S'ha produït un error de format del fitxer."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: No s'ha pogut crear el fitxer"
@@ -435,3 +393,33 @@ msgstr "Nom d'usuari:"
 #, kde-format
 msgid "Group name."
 msgstr "Nom del grup."
+
+#~ msgid "Wrong file extension"
+#~ msgstr "Extensió errònia del fitxer"
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "No s'ha pogut obrir el fitxer %1."
+
+# skip-rule: kct-decrypt
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "No s'ha trobat l'executable «cisco-decrypt» necessari."
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "El fitxer de configuració de la VPN «%1» especifica que el trànsit VPN "
+#~ "hauria d'estar en un túnel TCP que actualment no està disponible en el "
+#~ "programari vpnc.\n"
+#~ "\n"
+#~ "La connexió encara pot crear-se, amb el túnel TCP desactivat, però podria "
+#~ "no funcionar com s'espera."
+
+#~ msgid "Not supported"
+#~ msgstr "No acceptat"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: S'ha produït un error de format del fitxer."

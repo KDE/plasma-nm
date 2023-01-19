@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2016-12-21 12:32+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -28,48 +28,7 @@ msgstr "Σφάλμα αποκρυπτογράφησης ασαφούς κωδι�
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "Το αρχείο %1 δεν ήταν δυνατό να ανοιχθεί."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "Το απαιτούμενο εκτελέσιμο cisco-decrypt δεν ήταν δυνατό να βρεθεί."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"Το αρχείο '%1' των VPN ρυθμίσεων ορίζει ότι η VPN κυκλοφορία πρέπει να "
-"διοχετευτεί μέσω TCP το οποίο προς το παρόν δεν υποστηρίζεται στο VPN "
-"λογισμικό.\n"
-"\n"
-"Η σύνδεση μπορεί να δημιουργηθεί, αλλά με απενεργοποιημένη τη διοχέτευση "
-"TCP, ωστόσο ίσως να μη λειτουργεί όπως προβλέπεται."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "Δεν υποστηρίζεται"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: σφάλμα τύπου αρχείου."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: το αρχείο δεν ήταν δυνατό να δημιουργηθεί"
@@ -432,6 +391,32 @@ msgstr "Όνομα χρήστη:"
 #, kde-format
 msgid "Group name."
 msgstr "Όνομα ομάδας."
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "Το αρχείο %1 δεν ήταν δυνατό να ανοιχθεί."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "Το απαιτούμενο εκτελέσιμο cisco-decrypt δεν ήταν δυνατό να βρεθεί."
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "Το αρχείο '%1' των VPN ρυθμίσεων ορίζει ότι η VPN κυκλοφορία πρέπει να "
+#~ "διοχετευτεί μέσω TCP το οποίο προς το παρόν δεν υποστηρίζεται στο VPN "
+#~ "λογισμικό.\n"
+#~ "\n"
+#~ "Η σύνδεση μπορεί να δημιουργηθεί, αλλά με απενεργοποιημένη τη διοχέτευση "
+#~ "TCP, ωστόσο ίσως να μη λειτουργεί όπως προβλέπεται."
+
+#~ msgid "Not supported"
+#~ msgstr "Δεν υποστηρίζεται"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: σφάλμα τύπου αρχείου."
 
 #~ msgid "Store"
 #~ msgstr "Αποθήκευση"

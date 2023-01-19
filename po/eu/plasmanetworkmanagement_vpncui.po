@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-12-17 09:44+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque\n"
@@ -32,48 +32,7 @@ msgstr "Errorea ezkutuko pasahitza deszifratzean"
 msgid "Error"
 msgstr "Errorea"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr "Okerreko fitxategi-luzapena"
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "Ezin izan da %1 fitxategia ireki."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "Beharrezkoa den cisco-decrypt exekutagarria ezin da aurkitu."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"'%1' VPN ezarpen fitxategiak zehazten du VPN trafikoa TCP tunel batetik "
-"garraiatu behar dela, baino vpnc softwareak ez du oraindik halakorik "
-"onartzen.\n"
-"\n"
-"Konexioa sortu daiteke, TCP tunela desgaituta, hala ere baliteke uste bezala "
-"ez ibiltzea."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "Ez dago onartuta"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: fitxategi-formatu errorea."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: ezin izan da fitxategia sortu"
@@ -434,3 +393,32 @@ msgstr "Erabiltzaile-izena:"
 #, kde-format
 msgid "Group name."
 msgstr "Taldearen izena."
+
+#~ msgid "Wrong file extension"
+#~ msgstr "Okerreko fitxategi-luzapena"
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "Ezin izan da %1 fitxategia ireki."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "Beharrezkoa den cisco-decrypt exekutagarria ezin da aurkitu."
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "'%1' VPN ezarpen fitxategiak zehazten du VPN trafikoa TCP tunel batetik "
+#~ "garraiatu behar dela, baino vpnc softwareak ez du oraindik halakorik "
+#~ "onartzen.\n"
+#~ "\n"
+#~ "Konexioa sortu daiteke, TCP tunela desgaituta, hala ere baliteke uste "
+#~ "bezala ez ibiltzea."
+
+#~ msgid "Not supported"
+#~ msgstr "Ez dago onartuta"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: fitxategi-formatu errorea."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2014-07-08 16:06-0500\n"
 "Last-Translator: A S Alam <aalam@users.sf.net>\n"
 "Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
@@ -27,47 +27,7 @@ msgstr ""
 msgid "Error"
 msgstr "ਗਲਤੀ"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "%1 ਫਾਈਲ ਨੂੰ ਖੋਲਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ ਹੈ।"
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr ""
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"VPN ਸੈਟਿੰਗ ਫਾਈਲ '%1' ਦੱਸ ਰਹੀ ਹੈ ਕਿ VPN ਟਰੈਫਿਕ ਨੂੰ TCP ਰਾਹੀਂ ਟਨਲ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ ਹੈ, "
-"ਜੋ ਕਿ ਹਾਲੇ vpnc ਸਾਫਟਵੇਅਰ ਨਾਲ ਸਹਾਇਕ ਨਹੀਂ ਹੈ।\n"
-"\n"
-"ਕੁਨੈਕਸ਼ਨ ਤਾਂ ਵੀ ਬਣਾਇਆ ਜਾ ਸਕਦਾ ਹੈ, ਜਿਸ ਵਿੱਚ TCP ਟਨਲਿੰਗ ਆਯੋਗ ਹੋਵੇਗੀ। ਪਰ ਇਹ ਉਮੀਦ ਮੁਤਾਬਕ ਕੰਮ "
-"ਨਹੀਂ ਕਰੇਗਾ।"
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr ""
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1:  ਫਾਈਲ ਫਾਰਮੈਟ ਗਲਤੀ ਹੈ।"
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr ""
@@ -425,3 +385,22 @@ msgstr ""
 #, kde-format
 msgid "Group name."
 msgstr ""
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "%1 ਫਾਈਲ ਨੂੰ ਖੋਲਿਆ ਨਹੀਂ ਜਾ ਸਕਦਾ ਹੈ।"
+
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "VPN ਸੈਟਿੰਗ ਫਾਈਲ '%1' ਦੱਸ ਰਹੀ ਹੈ ਕਿ VPN ਟਰੈਫਿਕ ਨੂੰ TCP ਰਾਹੀਂ ਟਨਲ ਕੀਤਾ ਜਾਣਾ ਚਾਹੀਦਾ "
+#~ "ਹੈ, ਜੋ ਕਿ ਹਾਲੇ vpnc ਸਾਫਟਵੇਅਰ ਨਾਲ ਸਹਾਇਕ ਨਹੀਂ ਹੈ।\n"
+#~ "\n"
+#~ "ਕੁਨੈਕਸ਼ਨ ਤਾਂ ਵੀ ਬਣਾਇਆ ਜਾ ਸਕਦਾ ਹੈ, ਜਿਸ ਵਿੱਚ TCP ਟਨਲਿੰਗ ਆਯੋਗ ਹੋਵੇਗੀ। ਪਰ ਇਹ ਉਮੀਦ ਮੁਤਾਬਕ "
+#~ "ਕੰਮ ਨਹੀਂ ਕਰੇਗਾ।"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1:  ਫਾਈਲ ਫਾਰਮੈਟ ਗਲਤੀ ਹੈ।"

@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2015, 2017, 2019, 2021, 2022.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:50+0000\n"
-"PO-Revision-Date: 2022-12-26 21:52+0300\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
+"PO-Revision-Date: 2023-01-18 22:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-POOTLE-MTIME: 1413102236.000000\n"
 
 #: declarative/networkstatus.cpp:104
@@ -471,7 +471,7 @@ msgstr ""
 #: editor/settings/security802-1x.cpp:523
 #, kde-format
 msgid "Connect to these servers only"
-msgstr "Sadece bu sunuculara bağlan"
+msgstr "Yalnızca bu sunuculara bağlan"
 
 #: editor/settings/teamwidget.cpp:228
 #, kde-format
@@ -1103,13 +1103,13 @@ msgstr "Otomatik"
 #: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
 #, kde-format
 msgid "Automatic (Only addresses)"
-msgstr "Otomatik (Sadece adresler)"
+msgstr "Otomatik (Yalnızca adresler)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
 #, kde-format
 msgid "Link-Local"
-msgstr "Sadece Yerel Ağ"
+msgstr "Yalnızca Yerel Ağ"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
@@ -1305,7 +1305,7 @@ msgstr "Etkin (geçici adresleri tercih et)"
 #: editor/settings/ui/ipv6.ui:237
 #, kde-format
 msgid "Automatic (Only DHCP)"
-msgstr "Otomatik (Sadece DHCP)"
+msgstr "Otomatik (Yalnızca DHCP)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:252
@@ -1566,8 +1566,8 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
-"Wi-Fi bağlantısı için kullanılacak kablosuz kanalı. Aygıt sadece belirtilen "
-"kanaldaki Wi-Fi ağına katılacaktır\n"
+"Wi-Fi bağlantısı için kullanılacak kablosuz kanalı. Aygıt yalnızca "
+"belirtilen kanaldaki Wi-Fi ağına katılacaktır\n"
 "(veya Ad-Hoc ağlar için bağlantı oluşturacaktır)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -1750,7 +1750,7 @@ msgid ""
 "packets up\n"
 "into multiple Ethernet frames"
 msgstr ""
-"Sadece belirtilen boyutta veya daha küçük paketleri geçirir, daha büyük "
+"Yalnızca belirtilen boyutta veya daha küçük paketleri geçirir, daha büyük "
 "paketleri\n"
 "çoklu Ethernet çerçevelerine ayırır"
 
@@ -3185,7 +3185,7 @@ msgstr "Parolanın görünürlüğünü değiştir"
 #: editor/widgets/passwordfield.cpp:41
 #, kde-format
 msgid "Store password for this user only (encrypted)"
-msgstr "Sadece bu kullanıcı için parolaları sakla (şifreli)"
+msgstr "Yalnızca bu kullanıcı için parolaları sakla (şifreli)"
 
 #: editor/widgets/passwordfield.cpp:43
 #, kde-format
@@ -3273,7 +3273,7 @@ msgstr ""
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
 #, kde-format
 msgid "Use only for resources on this connection"
-msgstr "Kaynakları sadece bu bağlantı için kullan"
+msgstr "Kaynakları yalnızca bu bağlantı için kullan"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv4routes.ui:74
@@ -3296,7 +3296,7 @@ msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
 "specified above are used"
 msgstr ""
-"Etkinleştirilirse otomatik yapılandırılan rotalar yerine sadece yukarıda "
+"Etkinleştirilirse otomatik yapılandırılan rotalar yerine yalnızca yukarıda "
 "belirtilen rotalar kullanılır"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
@@ -3318,72 +3318,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Kaldır"
 
-#: handler.cpp:108
+#: handler.cpp:110
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma, '%1' VPN bağlantıları için destek içermiyor."
 
-#: handler.cpp:110
+#: handler.cpp:112
 #, kde-format
 msgid "Report Bug"
 msgstr "Hata Bildir"
 
-#: handler.cpp:133
+#: handler.cpp:135
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager, '%1' VPN bağlantıları için destek içermiyor."
 
-#: handler.cpp:135
+#: handler.cpp:137
 #, kde-format
 msgid "Install"
 msgstr "Kur"
 
-#: handler.cpp:783
-#, kde-format
-msgid "Failed to activate %1"
-msgstr "%1 etkinleştirilemedi"
-
-#: handler.cpp:787
-#, kde-format
-msgid "Failed to add %1"
-msgstr "%1 eklenemedi"
-
-#: handler.cpp:791
+#: handler.cpp:351 handler.cpp:844
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "%1 bağlantısı eklenemedi"
 
-#: handler.cpp:795
-#, kde-format
-msgid "Failed to deactivate %1"
-msgstr "%1 devre dışı bırakılamadı"
-
-#: handler.cpp:799
-#, kde-format
-msgid "Failed to remove %1"
-msgstr "%1 silinemedi"
-
-#: handler.cpp:803
-#, kde-format
-msgid "Failed to update connection %1"
-msgstr "%1 bağlantısı güncellenemedi"
-
-#: handler.cpp:814
-#, kde-format
-msgid "Failed to create hotspot %1"
-msgstr "%1 kişisel erişim noktası oluşturulamadı"
-
-#: handler.cpp:833
+#: handler.cpp:360 handler.cpp:886
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "%1 bağlantısı eklendi"
 
-#: handler.cpp:837
+#: handler.cpp:836
+#, kde-format
+msgid "Failed to activate %1"
+msgstr "%1 etkinleştirilemedi"
+
+#: handler.cpp:840
+#, kde-format
+msgid "Failed to add %1"
+msgstr "%1 eklenemedi"
+
+#: handler.cpp:848
+#, kde-format
+msgid "Failed to deactivate %1"
+msgstr "%1 devre dışı bırakılamadı"
+
+#: handler.cpp:852
+#, kde-format
+msgid "Failed to remove %1"
+msgstr "%1 silinemedi"
+
+#: handler.cpp:856
+#, kde-format
+msgid "Failed to update connection %1"
+msgstr "%1 bağlantısı güncellenemedi"
+
+#: handler.cpp:867
+#, kde-format
+msgid "Failed to create hotspot %1"
+msgstr "%1 kişisel erişim noktası oluşturulamadı"
+
+#: handler.cpp:890
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "%1 bağlantısı silindi"
 
-#: handler.cpp:841
+#: handler.cpp:894
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "%1 bağlantısı güncellendi"

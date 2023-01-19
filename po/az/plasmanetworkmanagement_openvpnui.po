@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2022-10-18 12:22+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -17,80 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.08.2\n"
 
-#: openvpn.cpp:180
-#, kde-format
-msgid "Could not open file"
-msgstr "Fayl açıla bilmədi"
-
-#: openvpn.cpp:192
-#, kde-format
-msgid "Do you want to copy your certificates to %1?"
-msgstr "Sertifikatlarınızı %1-ə/a kopyalamaq istəyirsiniz?"
-
-#: openvpn.cpp:193
-#, kde-format
-msgid "Copy certificates"
-msgstr "Sertifikatları kopyalamaq"
-
-#: openvpn.cpp:194
-#, kde-format
-msgid "Copy"
-msgstr "Kopyala"
-
-#: openvpn.cpp:253 openvpn.cpp:271 openvpn.cpp:550
-#, kde-format
-msgid "Unknown option: %1"
-msgstr "Naməlum seçim: %1"
-
-#: openvpn.cpp:256 openvpn.cpp:274 openvpn.cpp:290 openvpn.cpp:302
-#: openvpn.cpp:334 openvpn.cpp:425 openvpn.cpp:542 openvpn.cpp:570
-#, kde-format
-msgid "Invalid number of arguments (expected 1) in option: %1"
-msgstr "Bu seçimdəki yalnış arqument (gözlənilən 1) sayı: %1"
-
-#: openvpn.cpp:287 openvpn.cpp:299
-#, kde-format
-msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-msgstr "Bu seçimdəki yalnış ölçü (0 və 0xFFFF arasında olmalıdır): %1"
-
-#: openvpn.cpp:388
-#, kde-format
-msgid "Invalid proxy option: %1"
-msgstr "Səhv proksi seçimi: %1"
-
-#: openvpn.cpp:422
-#, kde-format
-msgid "Invalid port (should be between 1 and 65535) in option: %1"
-msgstr "Bu seçimdəki yalnış port (1 və 65535 arasında olmalıdır): %1"
-
-#: openvpn.cpp:559
-#, kde-format
-msgid "Invalid number of arguments (expected 2) in option: %1"
-msgstr "Bu seçimdəki arqumentlərin yalnış sayı (gözlənilən 2): %1"
-
-#: openvpn.cpp:581
-#, kde-format
-msgid "Invalid argument in option: %1"
-msgstr "Bu seçimdəki yalnış arqument: %1"
-
-#: openvpn.cpp:669
-#, kde-format
-msgid "File %1 is not a valid OpenVPN's client configuration file"
-msgstr "%1 faylı düzgün OpenVPN müştəri tənzimləmə faylından ibarət deyil"
-
-#: openvpn.cpp:671
-#, kde-format
-msgid "File %1 is not a valid OpenVPN configuration (no remote)."
-msgstr ""
-"%1 faylı düzgün OpenVPN tənzimləmə faylından ibarət deyil. Serverin "
-"parametrlərini göstərməli olan \"remote\" bölməsi mövcud deyil."
-
-#: openvpn.cpp:739
+#: openvpn.cpp:204
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "%1 faylının saxlanılmasında xəta: %2"
 
-#: openvpn.cpp:767
+#: openvpn.cpp:232
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "Sertifikatın %1-ə/a kopyalanması xətası: %2"
@@ -1207,6 +1139,47 @@ msgstr "əlamət"
 #, kde-format
 msgid "one-time password"
 msgstr "Birdəfəlik şifrə"
+
+#~ msgid "Could not open file"
+#~ msgstr "Fayl açıla bilmədi"
+
+#~ msgid "Do you want to copy your certificates to %1?"
+#~ msgstr "Sertifikatlarınızı %1-ə/a kopyalamaq istəyirsiniz?"
+
+#~ msgid "Copy certificates"
+#~ msgstr "Sertifikatları kopyalamaq"
+
+#~ msgid "Copy"
+#~ msgstr "Kopyala"
+
+#~ msgid "Unknown option: %1"
+#~ msgstr "Naməlum seçim: %1"
+
+#~ msgid "Invalid number of arguments (expected 1) in option: %1"
+#~ msgstr "Bu seçimdəki yalnış arqument (gözlənilən 1) sayı: %1"
+
+#~ msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
+#~ msgstr "Bu seçimdəki yalnış ölçü (0 və 0xFFFF arasında olmalıdır): %1"
+
+#~ msgid "Invalid proxy option: %1"
+#~ msgstr "Səhv proksi seçimi: %1"
+
+#~ msgid "Invalid port (should be between 1 and 65535) in option: %1"
+#~ msgstr "Bu seçimdəki yalnış port (1 və 65535 arasında olmalıdır): %1"
+
+#~ msgid "Invalid number of arguments (expected 2) in option: %1"
+#~ msgstr "Bu seçimdəki arqumentlərin yalnış sayı (gözlənilən 2): %1"
+
+#~ msgid "Invalid argument in option: %1"
+#~ msgstr "Bu seçimdəki yalnış arqument: %1"
+
+#~ msgid "File %1 is not a valid OpenVPN's client configuration file"
+#~ msgstr "%1 faylı düzgün OpenVPN müştəri tənzimləmə faylından ibarət deyil"
+
+#~ msgid "File %1 is not a valid OpenVPN configuration (no remote)."
+#~ msgstr ""
+#~ "%1 faylı düzgün OpenVPN tənzimləmə faylından ibarət deyil. Serverin "
+#~ "parametrlərini göstərməli olan \"remote\" bölməsi mövcud deyil."
 
 #~ msgid "Could not open file for writing"
 #~ msgstr "Yazılmaq üçün fayl açıla bilmədi"

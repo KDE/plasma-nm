@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-04 00:50+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2014-09-18 16:04+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -3260,73 +3260,73 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Wegmaken"
 
-#: handler.cpp:108
+#: handler.cpp:110
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:110
+#: handler.cpp:112
 #, kde-format
 msgid "Report Bug"
 msgstr ""
 
-#: handler.cpp:133
+#: handler.cpp:135
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:135
+#: handler.cpp:137
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:783
-#, kde-format
-msgid "Failed to activate %1"
-msgstr "„%1“ lett sik nich anmaken"
-
-#: handler.cpp:787
-#, kde-format
-msgid "Failed to add %1"
-msgstr "„%1“ lett sik nich tofögen"
-
-#: handler.cpp:791
+#: handler.cpp:351 handler.cpp:844
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Verbinnen „%1“ lett sik nich tofögen"
 
-#: handler.cpp:795
+#: handler.cpp:360 handler.cpp:886
+#, kde-format
+msgid "Connection %1 has been added"
+msgstr "Verbinnen „%1“ wöör toföögt"
+
+#: handler.cpp:836
+#, kde-format
+msgid "Failed to activate %1"
+msgstr "„%1“ lett sik nich anmaken"
+
+#: handler.cpp:840
+#, kde-format
+msgid "Failed to add %1"
+msgstr "„%1“ lett sik nich tofögen"
+
+#: handler.cpp:848
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "„%1“ lett sik nich utmaken"
 
-#: handler.cpp:799
+#: handler.cpp:852
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "„%1“ lett sik nich wegdoon"
 
-#: handler.cpp:803
+#: handler.cpp:856
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Verbinnen „%1“ lett sik nich opfrischen"
 
-#: handler.cpp:814
+#: handler.cpp:867
 #, fuzzy, kde-format
 #| msgid "Failed to activate %1"
 msgid "Failed to create hotspot %1"
 msgstr "„%1“ lett sik nich anmaken"
 
-#: handler.cpp:833
-#, kde-format
-msgid "Connection %1 has been added"
-msgstr "Verbinnen „%1“ wöör toföögt"
-
-#: handler.cpp:837
+#: handler.cpp:890
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Verbinnen „%1“ wöör wegmaakt"
 
-#: handler.cpp:841
+#: handler.cpp:894
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Verbinnen „%1“ wöör opfrischt"

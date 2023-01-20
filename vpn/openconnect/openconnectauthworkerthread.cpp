@@ -41,34 +41,39 @@ public:
 #if OPENCONNECT_CHECK_VER(5, 0)
     static int writeNewConfig(void *obj, const char *str, int num)
     {
-        if (obj)
+        if (obj) {
             return static_cast<OpenconnectAuthWorkerThread *>(obj)->writeNewConfig(str, num);
+        }
         return -1;
     }
     static int validatePeerCert(void *obj, const char *str)
     {
-        if (obj)
+        if (obj) {
             return static_cast<OpenconnectAuthWorkerThread *>(obj)->validatePeerCert(nullptr, str);
+        }
         return -1;
     }
 #else
     static int writeNewConfig(void *obj, char *str, int num)
     {
-        if (obj)
+        if (obj) {
             return static_cast<OpenconnectAuthWorkerThread *>(obj)->writeNewConfig(str, num);
+        }
         return -1;
     }
     static int validatePeerCert(void *obj, OPENCONNECT_X509 *cert, const char *str)
     {
-        if (obj)
+        if (obj) {
             return static_cast<OpenconnectAuthWorkerThread *>(obj)->validatePeerCert(cert, str);
+        }
         return -1;
     }
 #endif
     static int processAuthForm(void *obj, struct oc_auth_form *form)
     {
-        if (obj)
+        if (obj) {
             return static_cast<OpenconnectAuthWorkerThread *>(obj)->processAuthFormP(form);
+        }
         return OC_FORM_RESULT_ERR;
     }
     static void writeProgress(void *obj, int level, const char *str, ...)

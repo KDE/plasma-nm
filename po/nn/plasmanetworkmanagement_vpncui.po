@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-13 00:58+0000\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2021-09-18 20:19+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -29,47 +29,7 @@ msgstr "Feil ved dekryptering av forvrengt passord"
 msgid "Error"
 msgstr "Feil"
 
-#: vpnc.cpp:118
-#, kde-format
-msgid "Wrong file extension"
-msgstr ""
-
-#: vpnc.cpp:125
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "Klarte ikkje opna fila «%1»."
-
-#: vpnc.cpp:133
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "Fann ikkje nødvendig programfil «cisco-decrypt»."
-
-#: vpnc.cpp:249
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"Innstillingsfila «%1» for VPN seier at VPN-trafikk skal sendast gjennom TCP, "
-"som ikkje er støtta enno i vpnc-programmet.\n"
-"\n"
-"Tilkoplinga kan likevel opprettast, med TCP-tunell slått av, men dette vil "
-"kanskje ikkje verka som forventa."
-
-#: vpnc.cpp:252
-#, kde-format
-msgid "Not supported"
-msgstr "Ikkje støtta"
-
-#: vpnc.cpp:300
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: filformatfeil."
-
-#: vpnc.cpp:317
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: klarte ikkje oppretta fila"

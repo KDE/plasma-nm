@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:57+0000\n"
+"POT-Creation-Date: 2023-01-21 02:38+0000\n"
 "PO-Revision-Date: 2014-09-18 16:10+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -103,19 +103,19 @@ msgstr ""
 msgid "Enable Airplane Mode"
 msgstr "Funk"
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, fuzzy, kde-format
 #| msgctxt "Disconnected"
 #| msgid "There is no active network connection"
 msgid "&Configure Network Connections…"
 msgstr "Dat gifft keen aktive Nettwarkverbinnen"
 
-#: contents/ui/main.qml:138
+#: contents/ui/main.qml:139
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

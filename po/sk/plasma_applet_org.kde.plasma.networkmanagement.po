@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:57+0000\n"
+"POT-Creation-Date: 2023-01-21 02:38+0000\n"
 "PO-Revision-Date: 2022-05-16 18:12+0200\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -106,17 +106,17 @@ msgstr "Povoliť mobilnú sieť"
 msgid "Enable Airplane Mode"
 msgstr "Povoliť režim v lietadle"
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Otvoriť prihlasovaciu stránku siete..."
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Nastaviť sieťové pripojenia..."
 
-#: contents/ui/main.qml:138
+#: contents/ui/main.qml:139
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

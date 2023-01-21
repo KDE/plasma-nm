@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:57+0000\n"
+"POT-Creation-Date: 2023-01-21 02:38+0000\n"
 "PO-Revision-Date: 2022-12-09 14:13+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -105,17 +105,17 @@ msgstr "Abilita rete mobile"
 msgid "Enable Airplane Mode"
 msgstr "Abilita modalità aereo"
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Apri la pagina di accesso alla rete..."
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configura le connessioni di rete…"
 
-#: contents/ui/main.qml:138
+#: contents/ui/main.qml:139
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

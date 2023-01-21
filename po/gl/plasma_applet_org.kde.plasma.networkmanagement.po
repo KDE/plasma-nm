@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:57+0000\n"
+"POT-Creation-Date: 2023-01-21 02:38+0000\n"
 "PO-Revision-Date: 2019-08-19 20:30+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -113,19 +113,19 @@ msgstr "Activar a rede móbil."
 msgid "Enable Airplane Mode"
 msgstr "Activar o modo de avión."
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, fuzzy, kde-format
 #| msgid "Open Network Login Page..."
 msgid "Open Network Login Page…"
 msgstr "Abrir a páxina de identificación da rede…"
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections..."
 msgid "&Configure Network Connections…"
 msgstr "&Configurar as conexións de rede…"
 
-#: contents/ui/main.qml:138
+#: contents/ui/main.qml:139
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

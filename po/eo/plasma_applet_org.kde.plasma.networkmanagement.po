@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:57+0000\n"
+"POT-Creation-Date: 2023-01-21 02:38+0000\n"
 "PO-Revision-Date: 2023-01-05 14:30+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
@@ -104,17 +104,17 @@ msgstr "Ebligi Mobilan Reton"
 msgid "Enable Airplane Mode"
 msgstr "Ebigi Aviadilan Reĝimon"
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Malfermi Retan Ensalutpaĝon…"
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Agordi Retajn Konektojn…"
 
-#: contents/ui/main.qml:138
+#: contents/ui/main.qml:139
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

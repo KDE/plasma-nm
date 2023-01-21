@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:57+0000\n"
+"POT-Creation-Date: 2023-01-21 02:38+0000\n"
 "PO-Revision-Date: 2022-08-05 10:23+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -106,17 +106,17 @@ msgstr "Käytä mobiiliverkkoa"
 msgid "Enable Airplane Mode"
 msgstr "Käytä lentokonetilaa"
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Avaa verkon kirjautumissivu…"
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Muokkaa &verkkoyhteyksiä…"
 
-#: contents/ui/main.qml:138
+#: contents/ui/main.qml:139
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

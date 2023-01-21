@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:57+0000\n"
+"POT-Creation-Date: 2023-01-21 02:38+0000\n"
 "PO-Revision-Date: 2021-06-08 22:12-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -105,17 +105,17 @@ msgstr "ਮੋਬਾਈਲ ਨੈੱਟਵਰਕ ਸਮਰੱਥ ਕਰੋ"
 msgid "Enable Airplane Mode"
 msgstr "ਹਵਾਈ-ਜਹਾਜ਼ ਢੰਗ ਸਮਰੱਥ ਕਰੋ"
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "ਨੈੱਟਵਰਕ ਲਾਗਇਨ ਸਫ਼ਾ ਖੋਲ੍ਹੋ…"
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "…ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਦੀ ਸੰਰਚਨਾ(&C)"
 
-#: contents/ui/main.qml:138
+#: contents/ui/main.qml:139
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

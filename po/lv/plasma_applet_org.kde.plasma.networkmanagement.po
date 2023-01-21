@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-12 00:57+0000\n"
+"POT-Creation-Date: 2023-01-21 02:38+0000\n"
 "PO-Revision-Date: 2020-11-13 11:23+0200\n"
 "Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -109,19 +109,19 @@ msgstr "Ieslēgt mobilo tīklu"
 msgid "Enable Airplane Mode"
 msgstr "Bezvadu"
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, fuzzy, kde-format
 #| msgid "Open Network Login Page..."
 msgid "Open Network Login Page…"
 msgstr "Atvērt tīkla pieteikšanās lapu..."
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections..."
 msgid "&Configure Network Connections…"
 msgstr "&Konfigurēt tīklu savienojumus..."
 
-#: contents/ui/main.qml:138
+#: contents/ui/main.qml:139
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

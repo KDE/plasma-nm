@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-22 00:59+0000\n"
 "PO-Revision-Date: 2022-08-13 17:12+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -15,23 +15,23 @@ msgstr ""
 "X-POFile-SpellExtra: pem key crt AnyConnect Network Juniper Connect OTP\n"
 "X-POFile-SpellExtra: PAN iOS Mac SO Android PVN BIG Fortinet Array\n"
 
-#: openconnectauth.cpp:304
+#: openconnectauth.cpp:316
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Não foi possível inicializar o código do 'software': %1"
 
-#: openconnectauth.cpp:357
+#: openconnectauth.cpp:369
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "A contactar a máquina, espere por favor…"
 
-#: openconnectauth.cpp:596
+#: openconnectauth.cpp:689
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Ligar"
 
-#: openconnectauth.cpp:658
+#: openconnectauth.cpp:751
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -42,7 +42,7 @@ msgstr ""
 "Razão: %2\n"
 "Deseja aceitá-la à mesma?"
 
-#: openconnectauth.cpp:753
+#: openconnectauth.cpp:846
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "A tentativa de ligação foi mal-sucedida."

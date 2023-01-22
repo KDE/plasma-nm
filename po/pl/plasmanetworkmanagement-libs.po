@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022.
+# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-19 00:59+0000\n"
-"PO-Revision-Date: 2022-12-10 10:43+0100\n"
+"PO-Revision-Date: 2023-01-21 10:12+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -2927,12 +2927,12 @@ msgstr "Nie znaleziono żadnej wtyczki VPN dla rodzaju %1"
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "Importowanie tego rodzaj VPN nie jest zaimplementowane"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "Niezaimplementowane"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3326,34 +3326,24 @@ msgid "R&emove"
 msgstr "&Usuń"
 
 #: handler.cpp:110
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
-"W Zarządzaniu Siecią brakuje obsługi połączeń VPN '%1'. Użyj zarządzania "
-"pakietami, aby je wgrać."
+msgstr "W Plazmie brakuje obsługi połączeń VPN '%1'."
 
 #: handler.cpp:112
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Zgłoś błąd"
 
 #: handler.cpp:135
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
-"W Zarządzaniu Siecią brakuje obsługi połączeń VPN '%1'. Użyj zarządzania "
-"pakietami, aby je wgrać."
+msgstr "W Zarządzaniu Siecią brakuje obsługi połączeń VPN '%1'."
 
 #: handler.cpp:137
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Wgraj"
 
 #: handler.cpp:351 handler.cpp:844
 #, kde-format

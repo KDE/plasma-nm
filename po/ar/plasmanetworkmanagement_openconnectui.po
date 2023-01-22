@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-22 00:59+0000\n"
 "PO-Revision-Date: 2015-01-10 03:31+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -18,25 +18,25 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: openconnectauth.cpp:304
+#: openconnectauth.cpp:316
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr ""
 
-#: openconnectauth.cpp:357
+#: openconnectauth.cpp:369
 #, fuzzy, kde-format
 #| msgid "Contacting host, please wait..."
 msgid "Contacting host, please wait…"
 msgstr "يتّصل بالمضيف، فضلًا انتظر..."
 
-#: openconnectauth.cpp:596
+#: openconnectauth.cpp:689
 #, fuzzy, kde-format
 #| msgid "Login"
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "لِج"
 
-#: openconnectauth.cpp:658
+#: openconnectauth.cpp:751
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -47,7 +47,7 @@ msgstr ""
 "السّبب: %2\n"
 "أأقبلها بأيّ حال؟"
 
-#: openconnectauth.cpp:753
+#: openconnectauth.cpp:846
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "لم تتمّ محاولة الاتصال بنجاح."

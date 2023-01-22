@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-22 00:59+0000\n"
 "PO-Revision-Date: 2022-09-24 14:06+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -21,23 +21,23 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 21.08.3\n"
 
-#: openconnectauth.cpp:304
+#: openconnectauth.cpp:316
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Не удалось инициализировать программные ключи доступа: %1"
 
-#: openconnectauth.cpp:357
+#: openconnectauth.cpp:369
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Установление связи с узлом, подождите..."
 
-#: openconnectauth.cpp:596
+#: openconnectauth.cpp:689
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Войти"
 
-#: openconnectauth.cpp:658
+#: openconnectauth.cpp:751
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -48,7 +48,7 @@ msgstr ""
 "Причина: %2\n"
 "Всё равно принять сертификат?"
 
-#: openconnectauth.cpp:753
+#: openconnectauth.cpp:846
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Попытка подключения не удалась."

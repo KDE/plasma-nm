@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-14 00:48+0000\n"
+"POT-Creation-Date: 2023-01-22 00:59+0000\n"
 "PO-Revision-Date: 2022-08-13 09:10+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -20,24 +20,24 @@ msgstr ""
 "%100==4 ? 3 : 0);\n"
 "X-Generator: Lokalize 22.04.1\n"
 
-#: openconnectauth.cpp:304
+#: openconnectauth.cpp:316
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr ""
 "Ni bilo mogoče postaviti začetne vrednosti žetona programske opreme: %1"
 
-#: openconnectauth.cpp:357
+#: openconnectauth.cpp:369
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Povezovanje z gostiteljem, počakajte…"
 
-#: openconnectauth.cpp:596
+#: openconnectauth.cpp:689
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Prijava"
 
-#: openconnectauth.cpp:658
+#: openconnectauth.cpp:751
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -48,7 +48,7 @@ msgstr ""
 "Vzrok: %2\n"
 "Ali naj ga vseeno sprejmem?"
 
-#: openconnectauth.cpp:753
+#: openconnectauth.cpp:846
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Poskus povezave ni bil uspešen."

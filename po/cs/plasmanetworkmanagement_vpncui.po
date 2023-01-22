@@ -388,15 +388,3 @@ msgstr "Uživatelské jméno:"
 #, kde-format
 msgid "Group name."
 msgstr "Název skupiny."
-
-#~ msgid "File %1 could not be opened."
-#~ msgstr "Soubor %1 nelze otevřít."
-
-#~ msgid "Needed executable cisco-decrypt could not be found."
-#~ msgstr "Potřebný spustitelný soubor cisco-decrypt nebyl nalezen."
-
-#~ msgid "Not supported"
-#~ msgstr "Nepodporováno"
-
-#~ msgid "%1: file format error."
-#~ msgstr "%1: Chyba ve formátu souboru."

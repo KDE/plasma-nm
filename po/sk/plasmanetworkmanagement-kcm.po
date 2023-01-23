@@ -1,21 +1,21 @@
 # translation of plasmanetworkmanagement-kcm.po to Slovak
 # Roman Paholík <wizzardsk@gmail.com>, 2017.
 # Mthw <jari_45@hotmail.com>, 2019.
-# Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021.
+# Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021, 2023.
 # Dusan Kazik <prescott66@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-02 01:06+0000\n"
-"PO-Revision-Date: 2021-09-15 18:52+0200\n"
+"PO-Revision-Date: 2023-01-22 17:03+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: kcm.cpp:344
@@ -45,10 +45,9 @@ msgid "Import VPN Connection"
 msgstr "Importovať pripojenie VPN"
 
 #: kcm.cpp:531
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
-msgstr "Exportovať pripojenie VPN"
+msgstr "VPN pripojenia (%1)"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
@@ -98,7 +97,7 @@ msgstr "Heslo aktívneho bodu:"
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

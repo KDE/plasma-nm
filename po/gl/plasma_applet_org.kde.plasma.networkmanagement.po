@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-21 01:00+0000\n"
+"POT-Creation-Date: 2023-01-23 00:58+0000\n"
 "PO-Revision-Date: 2019-08-19 20:30+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -206,7 +206,7 @@ msgstr "De&sactivar o túnel partido"
 msgid "Create Hotspot"
 msgstr "Crear unha conexión"
 
-#: contents/ui/Toolbar.qml:220
+#: contents/ui/Toolbar.qml:221
 #, fuzzy, kde-format
 #| msgid "Configure network connections..."
 msgid "Configure network connections…"

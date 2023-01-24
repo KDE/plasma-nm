@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-19 00:59+0000\n"
-"PO-Revision-Date: 2022-12-25 07:16+0100\n"
+"PO-Revision-Date: 2023-01-23 06:58+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1023,7 +1023,7 @@ msgstr ""
 #: openvpnadvanced.ui:1165
 #, kde-format
 msgid "Retry indefinitely when errors occur"
-msgstr ""
+msgstr "შეცდომის აღმოჩენისას თავიდან განუსაზღვრელი რაოდენობით ცდა"
 
 #: openvpnadvancedwidget.cpp:60
 #, kde-format

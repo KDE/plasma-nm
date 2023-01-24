@@ -1,21 +1,21 @@
 # translation of plasma_applet_org.kde.plasma.networkmanagement.po to Slovak
 # Roman Paholík <wizzardsk@gmail.com>, 2014, 2015, 2016, 2017.
 # Mthw <jari_45@hotmail.com>, 2018, 2019.
-# Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021, 2022.
+# Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021, 2022, 2023.
 # Dusan Kazik <prescott66@gmail.com>, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-21 02:38+0000\n"
-"PO-Revision-Date: 2022-05-16 18:12+0200\n"
+"POT-Creation-Date: 2023-01-23 02:34+0000\n"
+"PO-Revision-Date: 2023-01-22 16:42+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.1\n"
+"X-Generator: Lokalize 22.12.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: contents/ui/ConnectionItem.qml:60
@@ -29,8 +29,7 @@ msgid "Disconnect"
 msgstr "Odpojiť"
 
 #: contents/ui/ConnectionItem.qml:85
-#, fuzzy, kde-format
-#| msgid "Show network's QR code"
+#, kde-format
 msgid "Show Network's QR Code"
 msgstr "Zobraziť QR kód siete"
 
@@ -56,6 +55,8 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
+"Aktuálna rýchlosť sťahovania je %1 kibibajtov za sekundu; aktuálna rýchlosť "
+"odosielania je %2 kibibajtov za sekundu"
 
 #: contents/ui/ConnectionItem.qml:286
 #, kde-format
@@ -81,13 +82,13 @@ msgstr "Siete"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Kliknutím stredného tlačidla myši vypnete režim v lietadle"
 
 #: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "Kliknutím stredného tlačidla myši zapnete režim v lietadle"
 
 #: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -95,14 +96,12 @@ msgid "Enable Wi-Fi"
 msgstr "Povoliť Wi-Fi"
 
 #: contents/ui/main.qml:83
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Network"
 msgstr "Povoliť mobilnú sieť"
 
 #: contents/ui/main.qml:91
-#, fuzzy, kde-format
-#| msgid "Enable airplane mode"
+#, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Povoliť režim v lietadle"
 
@@ -120,7 +119,7 @@ msgstr "Nastaviť sieťové pripojenia..."
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
-msgstr ""
+msgstr "QR kód pre %1"
 
 #: contents/ui/PasswordField.qml:16
 #, kde-format
@@ -189,7 +188,7 @@ msgstr "Zakázať aktívny bod"
 msgid "Create Hotspot"
 msgstr "Vytvoriť aktívny bod"
 
-#: contents/ui/Toolbar.qml:220
+#: contents/ui/Toolbar.qml:221
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Nastaviť sieťové pripojenia..."

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-21 02:38+0000\n"
+"POT-Creation-Date: 2023-01-23 02:34+0000\n"
 "PO-Revision-Date: 2021-09-25 16:16-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -189,7 +189,7 @@ msgstr "ホットスポットを無効化"
 msgid "Create Hotspot"
 msgstr "ホットスポットを作成"
 
-#: contents/ui/Toolbar.qml:220
+#: contents/ui/Toolbar.qml:221
 #, kde-format
 msgid "Configure network connections…"
 msgstr "ネットワーク接続を設定…"

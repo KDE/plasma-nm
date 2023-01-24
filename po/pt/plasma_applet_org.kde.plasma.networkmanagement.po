@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-21 02:38+0000\n"
+"POT-Creation-Date: 2023-01-23 02:34+0000\n"
 "PO-Revision-Date: 2022-12-12 16:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -208,7 +208,7 @@ msgstr "Desactivar o Ponto de Acesso"
 msgid "Create Hotspot"
 msgstr "Criar um Ponto de Acesso"
 
-#: contents/ui/Toolbar.qml:220
+#: contents/ui/Toolbar.qml:221
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configurar as ligações de rede…"

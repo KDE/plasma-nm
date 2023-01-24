@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-21 02:38+0000\n"
+"POT-Creation-Date: 2023-01-23 02:34+0000\n"
 "PO-Revision-Date: 2022-12-09 19:13+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -196,7 +196,7 @@ msgstr "Erişim Noktasını Devre Dışı Bırak"
 msgid "Create Hotspot"
 msgstr "Erişim Noktası Oluştur"
 
-#: contents/ui/Toolbar.qml:220
+#: contents/ui/Toolbar.qml:221
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Ağ bağlantılarını yapılandır…"

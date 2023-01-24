@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-21 02:38+0000\n"
+"POT-Creation-Date: 2023-01-23 02:34+0000\n"
 "PO-Revision-Date: 2010-07-30 21:29+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -186,7 +186,7 @@ msgstr "Dimatikan"
 msgid "Create Hotspot"
 msgstr "Sambungan"
 
-#: contents/ui/Toolbar.qml:220
+#: contents/ui/Toolbar.qml:221
 #, fuzzy, kde-format
 msgid "Configure network connections…"
 msgstr "Sambungan"

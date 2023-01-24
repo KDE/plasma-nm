@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-21 02:38+0000\n"
+"POT-Creation-Date: 2023-01-23 02:34+0000\n"
 "PO-Revision-Date: 2010-12-17 15:28+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -200,7 +200,7 @@ msgstr "ปิดใช้งานท่อแ&ยก"
 msgid "Create Hotspot"
 msgstr "การเชื่อมต่อ"
 
-#: contents/ui/Toolbar.qml:220
+#: contents/ui/Toolbar.qml:221
 #, fuzzy, kde-format
 msgid "Configure network connections…"
 msgstr "การเชื่อมต่อ"

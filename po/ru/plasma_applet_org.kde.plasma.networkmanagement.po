@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-21 02:38+0000\n"
+"POT-Creation-Date: 2023-01-23 02:34+0000\n"
 "PO-Revision-Date: 2023-01-13 17:43+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -199,7 +199,7 @@ msgstr "Выключить точку доступа"
 msgid "Create Hotspot"
 msgstr "Создать точку доступа"
 
-#: contents/ui/Toolbar.qml:220
+#: contents/ui/Toolbar.qml:221
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Настроить сетевые соединения..."

@@ -3747,10 +3747,3 @@ msgstr "Adsl"
 #, kde-format
 msgid "Device"
 msgstr "Устройство"
-
-#~ msgid ""
-#~ "Plasma is missing support for '%1' VPN connections. Please report this to "
-#~ "your distribution."
-#~ msgstr ""
-#~ "Липсва поддръжка за \"%1\" VPN връзки. Моля, докладвайте това наВашата "
-#~ "дистрибуция."

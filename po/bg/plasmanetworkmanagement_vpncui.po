@@ -391,31 +391,3 @@ msgstr "Потребителско име:"
 #, kde-format
 msgid "Group name."
 msgstr "Име на група."
-
-#~ msgid "Wrong file extension"
-#~ msgstr "Грешно файлово разширение"
-
-#~ msgid "File %1 could not be opened."
-#~ msgstr "Файл %1 не можа да бъде отворен."
-
-#~ msgid "Needed executable cisco-decrypt could not be found."
-#~ msgstr "Необходимият изпълним файл cisco-decrypt не можа да бъде намерен."
-
-#~ msgid ""
-#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-#~ "through TCP which is currently not supported in the vpnc software.\n"
-#~ "\n"
-#~ "The connection can still be created, with TCP tunneling disabled, however "
-#~ "it may not work as expected."
-#~ msgstr ""
-#~ "Файлът за настройки на VPN \"%1\" указва, че VPN трафикът трябва да бъде "
-#~ "тунелиран чрез TCP, който в момента не се поддържа в софтуера vpnc. \n"
-#~ "\n"
-#~ "Връзката все още може да бъде създадена, като TCP тунелът е деактивиран, "
-#~ "но все пак може да не работи според очакванията."
-
-#~ msgid "Not supported"
-#~ msgstr "Не се поддържа"
-
-#~ msgid "%1: file format error."
-#~ msgstr "%1: грешка във файловия формат."

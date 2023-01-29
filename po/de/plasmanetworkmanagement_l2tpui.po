@@ -1,18 +1,20 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2013, 2014, 2015, 2016, 2017, 2020, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2016.
+# Jannick Kuhr <kde-dev@kuhr.org>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2021-06-11 17:40+0200\n"
-"Last-Translator: Burkhard Lück <lueck@hube-lueck.de>\n"
+"PO-Revision-Date: 2023-01-25 15:59+0100\n"
+"Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 20.12.0\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -110,12 +112,13 @@ msgstr "CA-Zertifikat:"
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCA)
 #: l2tp.ui:187 l2tpipsec.ui:119
-#, fuzzy, kde-format
-#| msgid "Password passed to PPPD when prompted for it."
+#, kde-format
 msgid ""
 "<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
 "cer or .p12 formats.</p></body></html>"
-msgstr "Passwort, das auf Anfrage an PPPD übergeben wird."
+msgstr ""
+"<html><head/><body><p>Zertifizierungsstellendatei (CA) im Format .pem, ."
+"der, .crt, .cer oder .p12.</p></body></html>"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCert)
@@ -203,15 +206,14 @@ msgid "User Password:"
 msgstr "Benutzerpasswort:"
 
 #: l2tpauth.cpp:71
-#, fuzzy, kde-format
-#| msgid "Use Certificate"
+#, kde-format
 msgid "User Certificate Password:"
-msgstr "Zertifikat verwenden"
+msgstr "Benutzerzertifikat-Passwort:"
 
 #: l2tpauth.cpp:82
 #, kde-format
 msgid "Machine Certificate Password:"
-msgstr ""
+msgstr "Maschinenzertifikat-Passwort:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbEnableTunnelToHost)
 #: l2tpipsec.ui:20
@@ -221,10 +223,9 @@ msgstr "IPsec-Tunnel zum L2TP-Rechner aktivieren"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAuthentication)
 #: l2tpipsec.ui:38
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Machine Authentication"
-msgstr "Authentifizierung"
+msgstr "Maschinen-Authentifizierung"
 
 #. i18n: ectx: property (text), widget (QLabel, labelAuthType)
 #: l2tpipsec.ui:46
@@ -248,14 +249,13 @@ msgstr "Preshared-Schlüssel (PSK):"
 #: l2tpipsec.ui:103
 #, kde-format
 msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
-msgstr ""
+msgstr "<html><head/><body><p>Preshared-Schlüssel (PSK).</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: l2tpipsec.ui:129
-#, fuzzy, kde-format
-#| msgid "Certificate:"
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "Zertifikat:"
+msgstr "Maschinenzertifikat:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCert)
 #: l2tpipsec.ui:142
@@ -310,10 +310,9 @@ msgstr "hh:mm:ss"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIkelifetime)
 #: l2tpipsec.ui:265
-#, fuzzy, kde-format
-#| msgid "Phase1 algorithms:"
+#, kde-format
 msgid "Phase1 Lifetime:"
-msgstr "„Phase 1“-Algorithmen:"
+msgstr "„Phase 1“-Lebensdauer:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: l2tpipsec.ui:272
@@ -325,10 +324,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:279
-#, fuzzy, kde-format
-#| msgid "Phase2 algorithms:"
+#, kde-format
 msgid "Phase2 Lifetime:"
-msgstr "„Phase 2“-Algorithmen:"
+msgstr "„Phase 2“-Lebensdauer:"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:289

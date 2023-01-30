@@ -371,8 +371,10 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
 
             if (device && device->uni() == item->devicePath()) {
                 auto deviceStatistics = device->deviceStatistics();
-                item->setRxBytes(deviceStatistics->rxBytes());
-                item->setTxBytes(deviceStatistics->txBytes());
+                if (deviceStatistics->refreshRateMs() != 0) {
+                    item->setRxBytes(deviceStatistics->rxBytes());
+                    item->setTxBytes(deviceStatistics->txBytes());
+                }
             }
         }
         updateItem(item);

@@ -274,8 +274,10 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr &device)
     connect(device.data(), &NetworkManager::Device::stateChanged, this, &NetworkModel::deviceStateChanged, Qt::UniqueConnection);
 
     auto deviceStatistics = device->deviceStatistics();
+    qDebug() << "initializeSignals";
     connect(deviceStatistics.data(), &NetworkManager::DeviceStatistics::rxBytesChanged, this, [this, device](qulonglong rxBytes) {
         for (auto item : m_list.returnItems(NetworkItemsList::Device, device->uni())) {
+            qDebug() << "mod:" << rxBytes << (rxBytes - item->rxBytes()) / 2 << QTime::currentTime();
             item->setRxBytes(rxBytes);
             updateItem(item);
         }

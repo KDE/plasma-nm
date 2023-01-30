@@ -228,6 +228,7 @@ PlasmaExtras.ExpandableListItem {
         property real prevRxBytes
         property real prevTxBytes
         Component.onCompleted: {
+            console.log("completed")
             prevRxBytes = 0
             prevTxBytes = 0
         }
@@ -236,6 +237,7 @@ PlasmaExtras.ExpandableListItem {
             txBytes = prevTxBytes == 0 ? 0 : (TxBytes - prevTxBytes) * 1000 / interval
             prevRxBytes = RxBytes
             prevTxBytes = TxBytes
+            console.log(prevRxBytes, rxBytes, new Date().toLocaleTimeString())
         }
     }
 

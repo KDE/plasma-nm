@@ -32,8 +32,8 @@ PlasmaExtras.ExpandableListItem {
                               Type == PlasmaNM.Enums.Gsm ||
                               Type == PlasmaNM.Enums.Cdma)
 
-    property real rxBytes: 0
-    property real txBytes: 0
+    property real rxSpeed: 0
+    property real txSpeed: 0
 
     icon: model.ConnectionIcon
     title: model.ItemUniqueName
@@ -166,7 +166,7 @@ PlasmaExtras.ExpandableListItem {
 
                 activeFocusOnTab: true
 
-                Accessible.description: i18nc("@info:tooltip", "Current download speed is %1 kibibytes per second; current upload speed is %2 kibibytes per second", Math.round(rxBytes / 1024), Math.round(txBytes / 1024))
+                Accessible.description: i18nc("@info:tooltip", "Current download speed is %1 kibibytes per second; current upload speed is %2 kibibytes per second", Math.round(rxSpeed / 1024), Math.round(txSpeed / 1024))
 
                 Loader {
                     anchors.fill: parent
@@ -232,8 +232,8 @@ PlasmaExtras.ExpandableListItem {
             prevTxBytes = 0
         }
         onTriggered: {
-            rxBytes = prevRxBytes == 0 ? 0 : (RxBytes - prevRxBytes) * 1000 / interval
-            txBytes = prevTxBytes == 0 ? 0 : (TxBytes - prevTxBytes) * 1000 / interval
+            rxSpeed = prevRxBytes == 0 ? 0 : (RxBytes - prevRxBytes) * 1000 / interval
+            txSpeed = prevTxBytes == 0 ? 0 : (TxBytes - prevTxBytes) * 1000 / interval
             prevRxBytes = RxBytes
             prevTxBytes = TxBytes
         }
@@ -284,8 +284,8 @@ PlasmaExtras.ExpandableListItem {
         } else if (ConnectionState == PlasmaNM.Enums.Activated) {
             if (showSpeed) {
                 return i18n("Connected, ⬇ %1/s, ⬆ %2/s",
-                    KCoreAddons.Format.formatByteSize(rxBytes),
-                    KCoreAddons.Format.formatByteSize(txBytes))
+                    KCoreAddons.Format.formatByteSize(rxSpeed),
+                    KCoreAddons.Format.formatByteSize(txSpeed))
             } else {
                 return i18n("Connected")
             }

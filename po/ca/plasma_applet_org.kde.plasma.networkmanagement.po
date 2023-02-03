@@ -211,11 +211,3 @@ msgstr "Puja"
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
-
-#~ msgctxt "@info:tooltip %1 is the name of a network connection"
-#~ msgid "Connect to %1"
-#~ msgstr "Connecta a %1"
-
-#~ msgctxt "@info:tooltip %1 is the name of a network connection"
-#~ msgid "Disconnect from %1"
-#~ msgstr "Desconnecta de %1"

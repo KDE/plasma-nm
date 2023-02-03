@@ -210,14 +210,3 @@ msgstr "Xarxes Wi-Fi"
 #, kde-format
 msgid "Martin Kacej"
 msgstr "Martin Kacej"
-
-#~ msgctxt "@action:button"
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"
-
-#~ msgctxt "@action:button"
-#~ msgid "Done"
-#~ msgstr "Fet"
-
-#~ msgid "Password..."
-#~ msgstr "Contrasenya..."

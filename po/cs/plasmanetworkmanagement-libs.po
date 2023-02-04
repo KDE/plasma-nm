@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-19 00:59+0000\n"
-"PO-Revision-Date: 2023-01-24 17:03+0100\n"
+"PO-Revision-Date: 2023-01-30 14:37+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -2812,7 +2812,7 @@ msgstr "Pro typ %1 nebyl nalezen žádný modul VPN."
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "Import tohoto typu VPN ještě nebyl implementován"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
@@ -3199,7 +3199,7 @@ msgstr "Odstr&anit"
 #: handler.cpp:110
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "Podpora spojení '%1' VPN v Plasmě chybí."
 
 #: handler.cpp:112
 #, kde-format

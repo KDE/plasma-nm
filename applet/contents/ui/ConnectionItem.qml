@@ -182,8 +182,8 @@ PlasmaExtras.ExpandableListItem {
                 TrafficMonitor {
                     id: trafficMonitorGraph
                     width: parent.width
-                    downloadSpeed: rxBytes
-                    uploadSpeed: txBytes
+                    downloadSpeed: rxSpeed
+                    uploadSpeed: txSpeed
                 }
             }
 

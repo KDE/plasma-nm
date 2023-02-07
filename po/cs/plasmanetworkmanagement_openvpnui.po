@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-19 00:59+0000\n"
-"PO-Revision-Date: 2023-01-04 10:27+0100\n"
+"PO-Revision-Date: 2023-02-06 13:53+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.1\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -45,6 +45,10 @@ msgid ""
 "You can specify multiple hosts for redundancy (use commas or spaces as "
 "delimiters)."
 msgstr ""
+"Vzdálené brány s vlastním portem a protokolem (např. ovpn.corp.com:1234:"
+"tcp).\n"
+"Můžete určit vícero serverů jako zálohu (použijte čárky nebo mezery pro "
+"oddělení)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
 #: openvpn.ui:46
@@ -96,7 +100,7 @@ msgstr "Certifikát CA:"
 #: openvpn.ui:117 openvpn.ui:378 openvpn.ui:471
 #, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr ""
+msgstr "Soubor Certifikační Autority (CA) ve formátu .pem."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509Cert)
@@ -365,7 +369,7 @@ msgstr "LZ4"
 #: openvpnadvanced.ui:128
 #, kde-format
 msgid "LZ4 v2"
-msgstr ""
+msgstr "LZ4 v2"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:133
@@ -480,25 +484,25 @@ msgstr "Omezit maximální velikost segmentu TCP (MSS)"
 msgid ""
 "Randomize the order of gateways list (remote) as a kind of basic load-\n"
 "balancing measure."
-msgstr ""
+msgstr "Zamíchat pořadí seznamu bran jako základní formu rozložení zátěže."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:308
 #, kde-format
 msgid "Randomize remote hosts"
-msgstr ""
+msgstr "Zamíchat pořadí vzdálených hostitelů"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:315
 #, kde-format
 msgid "Build a tun link capable of forwarding IPv6 traffic."
-msgstr ""
+msgstr "Vytvořit spojení TUN schopné přeposílat síťový provoz IPv6."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:318
 #, kde-format
 msgid "IPv6 tun link"
-msgstr ""
+msgstr "Spojení IPv6 TUN"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPingInterval)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbPingInterval)
@@ -535,13 +539,13 @@ msgstr ""
 #: openvpnadvanced.ui:377
 #, kde-format
 msgid "ping-exit"
-msgstr ""
+msgstr "ping-exit"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbSpecifyExitRestartPing)
 #: openvpnadvanced.ui:382
 #, kde-format
 msgid "ping-restart"
-msgstr ""
+msgstr "ping-restart"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAcceptAuthenticatedPackets)
 #: openvpnadvanced.ui:420
@@ -577,13 +581,13 @@ msgstr ""
 #: openvpnadvanced.ui:432 openvpnadvanced.ui:445
 #, kde-format
 msgid "Specify the maximum number of routes the server is allowed to specify."
-msgstr ""
+msgstr "Zadejte maximální počet cest, které může server povolit."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMaxRoutes)
 #: openvpnadvanced.ui:435
 #, kde-format
 msgid "Specify max routes:"
-msgstr ""
+msgstr "Maximum cest:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, securityTab)
 #: openvpnadvanced.ui:474
@@ -867,7 +871,7 @@ msgstr "Nic"
 #: openvpnadvanced.ui:881
 #, kde-format
 msgid "TLS-Auth"
-msgstr ""
+msgstr "TLS-Auth"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:886

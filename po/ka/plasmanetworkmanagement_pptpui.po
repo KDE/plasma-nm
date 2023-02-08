@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2022-12-21 08:35+0100\n"
+"PO-Revision-Date: 2023-02-07 08:00+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -75,6 +75,10 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
+"შენიშვნა. MPPE დაშიფვრა მხოლოდ MSCHAP-ის ავთენტიკაციის მეთოდებთან ერთადაა "
+"ხელმისაწვდომი.\n"
+"ამ ველის ჩასართავად აირჩიეთ MSCHAP-ის ერთ-ერთი მეთოდი\n"
+"MSCHAP ან MSCHAPv2."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
 #: pptpadvanced.ui:91
@@ -119,6 +123,8 @@ msgstr "40 ბიტი"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
+"MPPE-სთვის stateful რეჟიმის გამოყენების ნების დართვა. პირველი მაინც "
+"Stateless რეჟიმი იქნება ნაცადი."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
 #: pptpadvanced.ui:153
@@ -164,6 +170,8 @@ msgid ""
 "transmit\n"
 " and the receive directions."
 msgstr ""
+"Van Jacobson-ის სტილის TCP/IP თავსართების შეკუმშვის ჩართვა/გამორთვა\n"
+"ორივე, გადაცემისა და მიღების დროს."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
 #: pptpadvanced.ui:205
@@ -269,6 +277,8 @@ msgid ""
 "Append the domain name <domain> to the local host name for\n"
 "authenticating purposes."
 msgstr ""
+"ავთენტიკაციისთვის ლოკალური ჰოსტისთვის\n"
+"დომენის სახელის <domain> მიწერა."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: pptpprop.ui:192

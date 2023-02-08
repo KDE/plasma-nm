@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-19 00:59+0000\n"
-"PO-Revision-Date: 2023-01-12 10:31\n"
+"PO-Revision-Date: 2023-02-07 11:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/plasma-nm/plasmanetworkmanagement_vpncui."
-"pot\n"
-"X-Crowdin-File-ID: 4701\n"
+"X-Crowdin-File: /kf5-stable/messages/plasma-nm/"
+"plasmanetworkmanagement_vpncui.pot\n"
+"X-Crowdin-File-ID: 2940\n"
 
 #: vpnc.cpp:73
 #, kde-format
@@ -387,30 +387,3 @@ msgstr "用户名："
 #, kde-format
 msgid "Group name."
 msgstr "组名称。"
-
-#~ msgid "Wrong file extension"
-#~ msgstr "文件扩展名错误"
-
-#~ msgid "File %1 could not be opened."
-#~ msgstr "无法打开文件 %1。"
-
-#~ msgid "Needed executable cisco-decrypt could not be found."
-#~ msgstr "需要 cisco-decrypt 的可执行文件但未找到。"
-
-#~ msgid ""
-#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-#~ "through TCP which is currently not supported in the vpnc software.\n"
-#~ "\n"
-#~ "The connection can still be created, with TCP tunneling disabled, however "
-#~ "it may not work as expected."
-#~ msgstr ""
-#~ "VPN 设置文件“%1”指定了 VPN 流量需要通过 TCP 隧道传输，但当前并未被 vpnc 软"
-#~ "件支持。\n"
-#~ "\n"
-#~ "连接仍将被创建，并禁用 TCP 隧道，但是可能不能正常工作。"
-
-#~ msgid "Not supported"
-#~ msgstr "不支持"
-
-#~ msgid "%1: file format error."
-#~ msgstr "%1: 文件格式错误。"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-19 00:59+0000\n"
-"PO-Revision-Date: 2022-12-25 07:16+0100\n"
+"PO-Revision-Date: 2023-02-07 08:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -43,6 +43,10 @@ msgid ""
 "You can specify multiple hosts for redundancy (use commas or spaces as "
 "delimiters)."
 msgstr ""
+"დაშორებულ რაუტერებს, არასავალდებულო პორტითა და პროტოკოლით (მაგ: ovpn."
+"com:1234:tcp).\n"
+"მაღალი წვდომადობისთვის შეგიძლიათ ერთზე მეტი ჰოსტი მიუთითოთ (გამოსაყოფად "
+"გამოიყენეთ მძიმეები ან გამოტოვებები)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
 #: openvpn.ui:46
@@ -248,6 +252,10 @@ msgid ""
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
+"თუ გასაღების მიმართულება გამოიყენება, ის VPN პარტნორის მიერ გამოყენებულის "
+"საპირისპირო უნდა იყოს. მაგ: თუ პარტნიორი იყენებს '1', ამ მიერთებამ '0' უნდა "
+"გამოიყენოს. თუ დარწმუნებული არ ბრძანდებით, რომელი მნიშვნელობა გნებავთ, "
+"გამოიყენოთ, დაუკავშირდით სისტემურ ადმინისტრატორს."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, passCaFile)
 #: openvpn.ui:381
@@ -329,6 +337,7 @@ msgstr "ავტომატური"
 #, kde-format
 msgid "Renegotiate data channel key after the specified number of seconds."
 msgstr ""
+"მონაცემების არხის ახალ გასაღების მითითებული რაოდენობა წამში ერთხელ შექმნა."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomReneg)
 #: openvpnadvanced.ui:75
@@ -431,6 +440,7 @@ msgid ""
 "Use custom name for TUN/TAP virtual device (instead of default \"tun\" or "
 "\"tap\")."
 msgstr ""
+"TUN/TAP ვირტუალური მოწყობილობის ხელით მითითება (\"tun\"/\"tap\"-ის მაგიერ)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceName)
 #: openvpnadvanced.ui:197
@@ -446,6 +456,8 @@ msgid ""
 "Take the TUN device MTU to be specified value and derive the link MTU from "
 "it."
 msgstr ""
+"TUN მოწყობილობის MTU-ის მნიშვნელობის აღება და ბმულის MTU-ის მისგან "
+"გამომდინარე დაყენება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtu)
 #: openvpnadvanced.ui:230
@@ -459,6 +471,8 @@ msgstr "ტუნელის MTU-ის ხელით მითითებ�
 #, kde-format
 msgid "Enable internal datagram fragmentation with this maximum size."
 msgstr ""
+"დატაგრამის შიდა ფრაგმენტაციის მაქსიმუმის მითითებულ მნიშვნელობაზე დაყენების "
+"ჩართვა."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomFragmentSize)
 #: openvpnadvanced.ui:266
@@ -485,6 +499,8 @@ msgid ""
 "Randomize the order of gateways list (remote) as a kind of basic load-\n"
 "balancing measure."
 msgstr ""
+"დაშორებული რაუტერების სიიდან შემთხვევითის არჩევა\n"
+"რაღაც დოზით დატვირთვის ბალანსიცაა."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:308
@@ -496,7 +512,7 @@ msgstr "დაშორებული ჰოსტების შემთხ�
 #: openvpnadvanced.ui:315
 #, kde-format
 msgid "Build a tun link capable of forwarding IPv6 traffic."
-msgstr ""
+msgstr "IPv6 ტრაფიკის გადამისამართების შემძლე tun ბმულის აგება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:318
@@ -512,6 +528,8 @@ msgid ""
 "Ping remote over the TCP/UDP control channel if no packets have been sent "
 "for at least n seconds."
 msgstr ""
+"პაკეტების მითითებული რაოდენობა წამების არ-გაგზავნის შემთხვევაში TCP/UDP "
+"არხით ping პაკეტის გაგზავნა."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPingInterval)
 #: openvpnadvanced.ui:330
@@ -528,6 +546,8 @@ msgid ""
 "Exit or restart after n seconds pass without reception of a ping or other "
 "packet from remote."
 msgstr ""
+"გასვლა ან გადატვირთვა n წამის შემდეგ თუ დაშორებული პარტნიორისგან ping-ს ან "
+"რამე სხვა პაკეტს არ მივიღებ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkSpecifyExitRestartPing)
 #: openvpnadvanced.ui:363
@@ -574,14 +594,14 @@ msgstr ""
 #: openvpnadvanced.ui:423
 #, kde-format
 msgid "Accept authenticated packets from any address (Float)"
-msgstr ""
+msgstr "ავთენტიკაციის პაკეტების ყველა მისამართიდან დაშვება (მოლივლივე)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMaxRoutes)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMaxRoutes)
 #: openvpnadvanced.ui:432 openvpnadvanced.ui:445
 #, kde-format
 msgid "Specify the maximum number of routes the server is allowed to specify."
-msgstr ""
+msgstr "რაუტების მაქსიმალური რაოდენობა, რომელიც სერვერს შეუძლია, მოგაწოდოთ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMaxRoutes)
 #: openvpnadvanced.ui:435
@@ -604,6 +624,9 @@ msgid ""
 "Cipher\n"
 "Block Chaining mode)."
 msgstr ""
+"პაკეტების კრიპტოგრაფიული დაშიფვრა. ნაგულისხმები მნიშვნელობაა BF-CBC "
+"(Blowfish in Cipher\n"
+"Block Chaining mode)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openvpnadvanced.ui:486
@@ -625,6 +648,8 @@ msgid ""
 "Set cipher key size to a custom value. If unspecified, it defaults to cipher-"
 "specific size."
 msgstr ""
+"კრიპტოგრაფიის გასაღების მითითებულ მნიშვნელობაზე დაყენება. თუ მითითებული "
+"არაა, ის კრიპტოგრაფიის მითითებულ ზომას უდრის."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomCipherKey)
 #: openvpnadvanced.ui:531
@@ -640,6 +665,8 @@ msgid ""
 "Authenticate packets with HMAC using message digest algorithm. The default "
 "is SHA1."
 msgstr ""
+"პაკეტების HMAC-ით ავთენენტიკაცია შეტყობინების დაიჯესტის ალგორითმით. "
+"ნაგულისხმები მეთოდია SHA1."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openvpnadvanced.ui:564
@@ -730,6 +757,12 @@ msgid ""
 "fields),\n"
 "or just the Common Name (CN field).\n"
 msgstr ""
+"სერვერის სერტიფიკატის იდენტიფიკაციის გადამოწმება.\n"
+"\n"
+"როცა ჩართულია, მიერთება დამყარდება, თუ სერვერის სერტიფიკატი\n"
+"რაიმე წინასწარ-გაწერილ მოთხოვნებში ჯდება.\n"
+"დამთხვევა შეიძლება მთლიანი სერტიფიკატის თემით (ყველა ველი)\n"
+"ან უბრალოდ საერთო სახელით (CN ველი) მოხდეს.\n"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCertCheck)
 #: openvpnadvanced.ui:673
@@ -766,6 +799,7 @@ msgstr "სახელის პრეფიქსით გადამოწ�
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
 msgstr ""
+"თემის ნაწილობრივ შემოწმება (მოძველებული. გამოყენება რეკომენდებული არაა)"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lbSubjectMatch)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, subjectMatch)
@@ -789,6 +823,8 @@ msgid ""
 "Connect only to servers whose certificate matches the given subject. "
 "Example: /CN=myvpn.company.com"
 msgstr ""
+"მხოლოდ იმ სერვერებთან მიერთება, რომლის სერტიფიკატებიც მითითებულ თემას "
+"ემთხვევა. მაგ: /CN=myvpn.company.com"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRemoteCertTls)
 #. i18n: ectx: property (toolTip), widget (QLabel, labelRemoteCertTls)
@@ -800,12 +836,15 @@ msgid ""
 "extended\n"
 "key usage based on RFC3280 TLS rules."
 msgstr ""
+"მოთხოვნა, რომ პარტნიორის სერტიფიკატი ხელმოწერილი იყოს აშკარა\n"
+"გასაღების გამოყენებით და გაფართოებული გასაღების გამოყენება RFC3280 TLS-ის "
+"წესებზეა დამოკიდებული."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRemoteCertTls)
 #: openvpnadvanced.ui:760
 #, kde-format
 msgid "Verify peer (server) certificate usage signature"
-msgstr ""
+msgstr "დაშორებული პარტნიორის (სერვერის) სერტიფიკატის დანიშნულების გადამოწმება"
 
 #. i18n: ectx: property (text), widget (QLabel, labelRemoteCertTls)
 #: openvpnadvanced.ui:776
@@ -836,18 +875,20 @@ msgid ""
 "Require that peer certificate was signed with an explicit nsCertType "
 "designation."
 msgstr ""
+"მოთხოვნა, რომ პარტნიორის სერტიფიკატი nsCertType-ის მნიშვნელობა აშკარად "
+"ჰქონდეს მითითებული."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkNsCertType)
 #: openvpnadvanced.ui:809
 #, kde-format
 msgid "Verify peer (server) certificate nsCertType designation"
-msgstr ""
+msgstr "დაშორებული სერვერის სერტიფიკატში nsCertType-ის მითითების გადამოწმება"
 
 #. i18n: ectx: property (text), widget (QLabel, lblNsCertType)
 #: openvpnadvanced.ui:824
 #, kde-format
 msgid "Remote peer certificate nsCert designation:"
-msgstr ""
+msgstr "დაშორებული სერვერის სერტიფიკატის nsCert:"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useExtraTlsAuth)
 #: openvpnadvanced.ui:853
@@ -960,6 +1001,7 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
+"ჩართეთ, თუ თქვენი ორგანიზაცია ინტერნეტთან წვდომისთვის პროქსი სერვერს იყენებს."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_12)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, proxyServerAddress)
@@ -993,6 +1035,7 @@ msgstr "პორტი:"
 #, kde-format
 msgid "HTTP/SOCKS proxy username passed to OpenVPN when prompted for it."
 msgstr ""
+"OpenVPN-ისთვის მოთხოვნისას გადაცემული HTTP/SOCKS პროქსის მომხმარებლის სახელი."
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: openvpnadvanced.ui:1115
@@ -1005,7 +1048,7 @@ msgstr "პროქსის მომხმარებელი:"
 #: openvpnadvanced.ui:1135 openvpnadvanced.ui:1150
 #, kde-format
 msgid "HTTP/SOCKS proxy password passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "OpenVPN-ისთვის მოთხოვნისას გადაცემული HTTP/SOCKS პროქსის პაროლი."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
 #: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
@@ -1018,12 +1061,14 @@ msgstr "პროქსის პაროლი:"
 #, kde-format
 msgid "Retry indefinitely on proxy errors. It simulates a SIGUSR1 reset."
 msgstr ""
+"პროქსის შეცდომების შემთხვევაში თავიდან მცდელობების უსასრულო რაოდენობა. "
+"იგივე, რაც SIGUSR1."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkProxyRetry)
 #: openvpnadvanced.ui:1165
 #, kde-format
 msgid "Retry indefinitely when errors occur"
-msgstr ""
+msgstr "შეცდომის აღმოჩენისას თავიდან განუსაზღვრელი რაოდენობით ცდა"
 
 #: openvpnadvancedwidget.cpp:60
 #, kde-format

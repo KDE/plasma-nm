@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-19 00:59+0000\n"
-"PO-Revision-Date: 2023-01-12 10:31\n"
+"PO-Revision-Date: 2023-02-07 11:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/plasma-nm/"
+"X-Crowdin-File: /kf5-stable/messages/plasma-nm/"
 "plasmanetworkmanagement_openvpnui.pot\n"
-"X-Crowdin-File-ID: 4199\n"
+"X-Crowdin-File-ID: 2930\n"
 
 #: openvpn.cpp:204
 #, kde-format
@@ -1084,42 +1084,3 @@ msgstr "令牌"
 #, kde-format
 msgid "one-time password"
 msgstr "一次性密码"
-
-#~ msgid "Could not open file"
-#~ msgstr "无法打开文件"
-
-#~ msgid "Do you want to copy your certificates to %1?"
-#~ msgstr "您是否想将您的证书复制到 %1？"
-
-#~ msgid "Copy certificates"
-#~ msgstr "复制证书"
-
-#~ msgid "Copy"
-#~ msgstr "复制"
-
-#~ msgid "Unknown option: %1"
-#~ msgstr "未知选项：%1"
-
-#~ msgid "Invalid number of arguments (expected 1) in option: %1"
-#~ msgstr "无效的参数数量 (应为 1)：%1"
-
-#~ msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-#~ msgstr "无效的大小选项 (应在 0 至 0xFFFF 之间)：%1"
-
-#~ msgid "Invalid proxy option: %1"
-#~ msgstr "无效的代理选项：%1"
-
-#~ msgid "Invalid port (should be between 1 and 65535) in option: %1"
-#~ msgstr "无效的端口选项 (应在 1 至 65535 之间)：%1"
-
-#~ msgid "Invalid number of arguments (expected 2) in option: %1"
-#~ msgstr "无效的参数数量 (应为 2)：%1"
-
-#~ msgid "Invalid argument in option: %1"
-#~ msgstr "选项中有无效参数： %1"
-
-#~ msgid "File %1 is not a valid OpenVPN's client configuration file"
-#~ msgstr "文件 %1 不是一个有效的 OpenVPN 客户端配置文件"
-
-#~ msgid "File %1 is not a valid OpenVPN configuration (no remote)."
-#~ msgstr "文件 %1 不是一个有效的 OpenVPN 配置文件 (无远程)。"

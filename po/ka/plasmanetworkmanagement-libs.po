@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-19 00:59+0000\n"
-"PO-Revision-Date: 2023-01-04 09:17+0100\n"
+"PO-Revision-Date: 2023-02-07 08:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1215,6 +1215,8 @@ msgid ""
 "Allows the connection to complete if IPv4 configuration fails\n"
 "but IPv6 configuration succeeds"
 msgstr ""
+"მიერთების დასრულება მაშინაც კი, თუ IPv4 კონფიგურაცია შეცდომით დასრულდება,\n"
+"მაგრამ IPv6-ის კონფიგურაცია წარმატებულია"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:285
@@ -1236,6 +1238,8 @@ msgid ""
 "if\n"
 "IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
+"IPv4 ფუნქციონალის მქონე ქსელებთან მიერთებისას მიერთება წარმატებულია, თუ\n"
+"IPv6 კონფიგურაცია შეუძლებელია, IPv4 კი წარმატებული"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:33
@@ -1727,6 +1731,8 @@ msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
 msgstr ""
+"მოწყობილობისთვის მითითებული დუპლექსის რეჟიმის გამოყენების მოთხოვნა. \"half"
+"\" (ნახევარი) ან \"full\" (სრული)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-08-28 00:19+0000\n"
-"PO-Revision-Date: 2022-12-09 10:54+0100\n"
+"PO-Revision-Date: 2023-02-08 12:03+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -137,7 +137,7 @@ msgstr "მომხმარებელი:"
 #: strongswanprop.ui:238
 #, kde-format
 msgid "User Password:"
-msgstr "მომხმარებლის _პაროლი:"
+msgstr "მომხმარებლის პაროლი:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: strongswanprop.ui:255

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-19 00:59+0000\n"
-"PO-Revision-Date: 2023-02-07 08:35+0100\n"
+"PO-Revision-Date: 2023-02-08 07:56+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1207,6 +1207,8 @@ msgid ""
 "to add\n"
 "an IP address"
 msgstr ""
+"IP მისამართები თქვენი კომპიუტერის იდენტიფიკაციას ახდენს ქსელში.\n"
+"IP მისამართის დასამატებლად დააჭირეთ ღილაკს \"დამატება\""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:282
@@ -1686,6 +1688,8 @@ msgid ""
 "This option locks this connection to the network device specified by its\n"
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
+"ეს პარამეტრი ამ შეერთებას აქ მითითებული ქსელური\n"
+"მოწყობილობის MAC მისამართზე შეზღუდავს. მაგ: 00:11:22:33:44:55"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:67
@@ -1919,6 +1923,8 @@ msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
 msgstr ""
+"პარტნიორებს ავტომატურად დაემატება,\n"
+"თუ არა AllowedIP-ების დიაპაზონები."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
 #: editor/settings/ui/wireguardinterfacewidget.ui:126

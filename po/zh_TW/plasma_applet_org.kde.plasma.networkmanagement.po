@@ -6,20 +6,20 @@
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2018, 2019, 2020.
 # Frank Weng (a.k.a. Franklin) <franklin at goodhorse dot idv dot tw>, 2009, 2010.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2022.
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-23 02:34+0000\n"
-"PO-Revision-Date: 2022-06-19 23:03+0900\n"
+"PO-Revision-Date: 2023-02-09 01:07+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 23.03.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: contents/ui/ConnectionItem.qml:60
@@ -33,8 +33,7 @@ msgid "Disconnect"
 msgstr "斷線"
 
 #: contents/ui/ConnectionItem.qml:85
-#, fuzzy, kde-format
-#| msgid "Show network's QR code"
+#, kde-format
 msgid "Show Network's QR Code"
 msgstr "顯示網路的 QR 碼"
 
@@ -59,7 +58,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
-msgstr ""
+msgstr "目前下載速度為每秒 %1 KiB；目前上傳速度為每秒 %2 KiB"
 
 #: contents/ui/ConnectionItem.qml:286
 #, kde-format
@@ -85,13 +84,13 @@ msgstr "網路"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "按中鍵關閉飛航模式"
 
 #: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "按中鍵開啟飛航模式"
 
 #: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -99,14 +98,12 @@ msgid "Enable Wi-Fi"
 msgstr "啟用 Wi-Fi"
 
 #: contents/ui/main.qml:83
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Network"
 msgstr "啟用行動網路"
 
 #: contents/ui/main.qml:91
-#, fuzzy, kde-format
-#| msgid "Enable airplane mode"
+#, kde-format
 msgid "Enable Airplane Mode"
 msgstr "啟用飛航模式"
 
@@ -124,7 +121,7 @@ msgstr "設定網路連線…(&C)"
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
-msgstr ""
+msgstr "%1 的 QR 碼"
 
 #: contents/ui/PasswordField.qml:16
 #, kde-format

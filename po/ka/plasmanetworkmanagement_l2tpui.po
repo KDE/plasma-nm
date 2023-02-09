@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2023-02-07 08:35+0100\n"
+"PO-Revision-Date: 2023-02-08 12:03+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -204,7 +204,7 @@ msgstr "PPP-ის მორგება…"
 #: l2tpauth.cpp:63
 #, kde-format
 msgid "User Password:"
-msgstr "მომხმარებლის _პაროლი:"
+msgstr "მომხმარებლის პაროლი:"
 
 #: l2tpauth.cpp:71
 #, kde-format

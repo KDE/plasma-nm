@@ -32,6 +32,7 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 #include <KWallet>
+#include <KWindowSystem>
 
 SecretAgent::SecretAgent(QObject *parent)
     : NetworkManager::SecretAgent(QStringLiteral("org.kde.plasma.networkmanagement"), NetworkManager::SecretAgent::Capability::VpnHints, parent)
@@ -435,8 +436,8 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
         } else {
             request.dialog = m_dialog;
             request.saveSecretsWithoutReply = !connectionSettings->permissions().isEmpty();
-            m_dialog->setWindowFlag(Qt::WindowStaysOnTopHint);
             m_dialog->show();
+            KWindowSystem::setState(m_dialog->winId(), NET::KeepAbove);
             return false;
         }
     } else if (isVpn && userRequested) { // just return what we have

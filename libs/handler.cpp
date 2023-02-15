@@ -40,6 +40,7 @@
 #include <KProcess>
 #include <KUser>
 #include <KWallet>
+#include <KWindowSystem>
 
 #include <nm-client.h>
 
@@ -298,8 +299,8 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
 
         QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(settings);
         editor->setAttribute(Qt::WA_DeleteOnClose);
-        editor->setWindowFlag(Qt::WindowStaysOnTopHint);
         editor->show();
+        KWindowSystem::setState(editor->winId(), NET::KeepAbove);
         connect(editor.data(), &ConnectionEditorDialog::accepted, [editor, device, specificObject, this]() { //
             addAndActivateConnectionDBus(editor->setting(), device, specificObject);
         });

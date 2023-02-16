@@ -13,7 +13,7 @@ import org.kde.plasma.plasmoid 2.0
 MouseArea {
     id: panelIconWidget
 
-    readonly property bool airplaneModeAvailable: availableDevices.modemDeviceAvailable || availableDevices.wirelessDeviceAvailable
+    required property bool airplaneModeAvailable
 
     anchors.fill: parent
     hoverEnabled: true

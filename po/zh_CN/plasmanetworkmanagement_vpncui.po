@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-19 00:59+0000\n"
-"PO-Revision-Date: 2023-02-07 11:05\n"
+"PO-Revision-Date: 2023-02-15 11:07\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: vpnc.cpp:73
 #, kde-format
 msgid "Error decrypting the obfuscated password"
-msgstr "解密混淆的密码时出错"
+msgstr "解密混淆密码时出错"
 
 #: vpnc.cpp:73
 #, kde-format
@@ -31,7 +31,7 @@ msgstr "错误"
 #: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
-msgstr "%1：文件无法创建"
+msgstr "%1：无法创建文件"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: vpnc.ui:18
@@ -43,7 +43,7 @@ msgstr "网关："
 #: vpnc.ui:31
 #, kde-format
 msgid "IP/hostname of IPsec gateway."
-msgstr "IPsec 网关的 IP/主机名"
+msgstr "IPsec 网关的 IP/主机名。"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnc.ui:38
@@ -102,13 +102,13 @@ msgstr "组密码。"
 #, kde-format
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
-msgstr "启用混合认证，例如密码加证书。"
+msgstr "启用混合身份验证，例如密码加证书。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
 #: vpnc.ui:144
 #, kde-format
 msgid "Use hybrid authentication"
-msgstr "使用混合认证"
+msgstr "使用混合身份验证"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpnc.ui:154
@@ -120,7 +120,7 @@ msgstr "CA 文件："
 #: vpnc.ui:167
 #, kde-format
 msgid "CA certificate in PEM format."
-msgstr "PEM 格式的 CA 证书。"
+msgstr "CA 证书，格式为 PEM。"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
 #: vpnc.ui:170
@@ -138,7 +138,7 @@ msgstr "高级…"
 #: vpncadvanced.ui:18
 #, kde-format
 msgid "Identification"
-msgstr "认证"
+msgstr "身份识别"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: vpncadvanced.ui:27
@@ -150,25 +150,25 @@ msgstr "域："
 #: vpncadvanced.ui:37
 #, kde-format
 msgid "(NT-)Domain name for authentication."
-msgstr "认证用 (NT-) 域名。"
+msgstr "用于身份验证的 (NT-) 域名。"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpncadvanced.ui:44
 #, kde-format
 msgid "Vendor:"
-msgstr "制造商："
+msgstr "供应商："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
 #: vpncadvanced.ui:60
 #, kde-format
 msgid "Vendor of your IPsec gateway."
-msgstr "IPsec 网关制造商。"
+msgstr "IPsec 网关的供应商。"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: vpncadvanced.ui:70
 #, kde-format
 msgid "Transport and Security"
-msgstr "传输和安全"
+msgstr "传输方式和安全性"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpncadvanced.ui:82
@@ -210,7 +210,7 @@ msgstr "IKE DH 组名称。"
 #: vpncadvanced.ui:151
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr "完美转发保密："
+msgstr "完全正向保密 (PFS)："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
 #: vpncadvanced.ui:167
@@ -231,7 +231,7 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
-"要使用的本地端口 (0-65535)。0 (默认值) 表示随机端口。500 为 vpnc 的默认。"
+"要使用的本地端口 (0-65535)。0 (默认值) 将使用随机端口。500 为 vpnc 的默认值。"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193
@@ -243,13 +243,13 @@ msgstr "随机"
 #: vpncadvanced.ui:209
 #, kde-format
 msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr "禁用发送 DPD 包 (设置超时为 0)。"
+msgstr "禁止发送 DPD 包 (设置超时为 0)。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
 #: vpncadvanced.ui:212
 #, kde-format
 msgid "Disable dead peer detection"
-msgstr "禁用坏点检测"
+msgstr "禁用故障节点检测 (DPD)"
 
 #: vpncadvancedwidget.cpp:20
 #, kde-format
@@ -278,25 +278,25 @@ msgstr "安全 (默认)"
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Weak (DES encryption, use with caution)"
-msgstr "弱 (DES 加密，小心使用)"
+msgstr "弱 (DES 加密，谨慎使用)"
 
 #: vpncadvancedwidget.cpp:29
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
-msgstr "无 (非常不安全)"
+msgstr "无 (完全不加密)"
 
 #: vpncadvancedwidget.cpp:32
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr "可用时使用 NAT-T (默认)"
+msgstr "NAT-T (如果可用) (默认)"
 
 #: vpncadvancedwidget.cpp:33
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
-msgstr "总是使用 NAT-T"
+msgstr "NAT-T (总是)"
 
 #: vpncadvancedwidget.cpp:34
 #, kde-format
@@ -350,7 +350,7 @@ msgstr "DH 组 1"
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 2"
-msgstr "&DH 组 2"
+msgstr "DH 组 2"
 
 #: vpncadvancedwidget.cpp:47
 #, kde-format
@@ -362,7 +362,7 @@ msgstr "DH 组 5"
 #: vpncauth.ui:14
 #, kde-format
 msgid "VPNCAuthentication"
-msgstr "VPNC 认证"
+msgstr "VPNC 身份验证"
 
 #. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
 #: vpncauth.ui:32

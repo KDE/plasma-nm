@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2020-10-30 02:41+0100\n"
-"PO-Revision-Date: 2023-02-07 11:05\n"
+"PO-Revision-Date: 2023-02-15 11:07\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -40,14 +40,14 @@ msgstr "网关："
 #: fortisslvpn.ui:74
 #, kde-format
 msgid "SSLVPN server IP or name."
-msgstr "SSL 服务器 IP 或名称。"
+msgstr "SSL 服务器 IP 或者名称。"
 
 #. i18n: ectx: property (title), widget (QGroupBox, authenticationGroupBox)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: fortisslvpn.ui:86 fortisslvpnadvanced.ui:35
 #, kde-format
 msgid "Authentication"
-msgstr "验证"
+msgstr "身份验证"
 
 #. i18n: ectx: property (text), widget (QLabel, usernameLabel)
 #: fortisslvpn.ui:92
@@ -60,7 +60,7 @@ msgstr "用户名："
 #, kde-format
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
-msgstr "设置验证本地系统到端的认证名称为 <name>。"
+msgstr "将本地系统到节点的身份验证用户名设置为 <name>。"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: fortisslvpn.ui:109 fortisslvpnauth.ui:26
@@ -102,7 +102,7 @@ msgstr "使用一次性密码"
 #: fortisslvpnadvanced.ui:50
 #, kde-format
 msgid "2FA"
-msgstr "两步验证"
+msgstr "双重身份验证 (2FA)"
 
 #. i18n: ectx: property (text), widget (QLabel, realmLabel)
 #: fortisslvpnadvanced.ui:68
@@ -114,7 +114,7 @@ msgstr "领域："
 #: fortisslvpnadvanced.ui:87
 #, kde-format
 msgid "Security"
-msgstr "安全"
+msgstr "安全性"
 
 #. i18n: ectx: property (text), widget (QLabel, trustedCertLabel)
 #: fortisslvpnadvanced.ui:93

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2023-02-07 11:05\n"
+"PO-Revision-Date: 2023-02-15 11:07\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -22,19 +22,19 @@ msgstr ""
 #: sstpadvanced.ui:39
 #, kde-format
 msgid "Point-to-Point"
-msgstr "点到点"
+msgstr "点对点"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
 #: sstpadvanced.ui:45
 #, kde-format
 msgid "Authentication"
-msgstr "认证"
+msgstr "身份验证"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_auth)
 #: sstpadvanced.ui:54
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr "允许下列认证方式："
+msgstr "允许以下身份验证方式："
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:65
@@ -70,7 +70,7 @@ msgstr "EAP"
 #: sstpadvanced.ui:111
 #, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr "使用微软点到点加密"
+msgstr "使用 Microsoft 点到点加密"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
 #: sstpadvanced.ui:114
@@ -82,7 +82,7 @@ msgstr "使用 MPPE 加密"
 #: sstpadvanced.ui:135
 #, kde-format
 msgid "Crypto:"
-msgstr "加密算法："
+msgstr "加密级别："
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: sstpadvanced.ui:152
@@ -149,7 +149,7 @@ msgstr "发送 PPP 回显包 "
 #: sstpadvanced.ui:244
 #, kde-format
 msgid "Misc"
-msgstr "杂项"
+msgstr "其他"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomUnitNumber)
 #: sstpadvanced.ui:252
@@ -161,7 +161,7 @@ msgstr "使用自定义单位数："
 #: sstpadvanced.ui:285
 #, kde-format
 msgid "Proxy"
-msgstr "代理"
+msgstr "代理服务器"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: ectx: property (title), widget (QGroupBox, grp_general)
@@ -186,7 +186,7 @@ msgstr "端口："
 #: sstpadvanced.ui:330
 #, kde-format
 msgid "Credentials"
-msgstr "身份"
+msgstr "身份验证信息"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_username)
 #: sstpadvanced.ui:336 sstpwidget.ui:86

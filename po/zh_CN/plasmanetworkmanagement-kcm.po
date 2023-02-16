@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-02 01:06+0000\n"
-"PO-Revision-Date: 2023-02-07 11:05\n"
+"PO-Revision-Date: 2023-02-15 11:07\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: kcm.cpp:344
 #, kde-format
 msgid "my_shared_connection"
-msgstr "my_shared_connection"
+msgstr "我的共享连接"
 
 #: kcm.cpp:416
 #, kde-format
@@ -77,7 +77,7 @@ msgstr "常规"
 
 #: qml/ConfigurationDialog.qml:42
 msgid "Ask for PIN on modem detection"
-msgstr "检测调制解调器时询问验证码 (PIN)"
+msgstr "调制解调器检测时询问 PIN 码"
 
 #: qml/ConfigurationDialog.qml:49
 msgid "Show virtual connections"
@@ -125,15 +125,15 @@ msgstr "正在连接"
 
 #: qml/main.qml:139
 msgid "Add new connection"
-msgstr "新增连接"
+msgstr "添加新连接"
 
 #: qml/main.qml:153
 msgid "Remove selected connection"
-msgstr "移除选中连接"
+msgstr "移除选中的连接"
 
 #: qml/main.qml:169
 msgid "Export selected connection"
-msgstr "导出选中连接"
+msgstr "导出选中的连接"
 
 #: qml/main.qml:221
 msgctxt "@title:window"

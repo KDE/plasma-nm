@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-08-28 00:19+0000\n"
-"PO-Revision-Date: 2023-02-07 11:05\n"
+"PO-Revision-Date: 2023-02-15 11:07\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -22,13 +22,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
-msgstr "私有密钥密码："
+msgstr "私钥密码："
 
 #: strongswanauth.cpp:61
 #, kde-format
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
-msgstr "PIN:"
+msgstr "PIN："
 
 #: strongswanauth.cpp:63
 #, kde-format
@@ -42,7 +42,7 @@ msgctxt "@label:textbox error message while saving configuration"
 msgid ""
 "Configuration uses ssh-agent for authentication, but no ssh-agent found "
 "running."
-msgstr "配置使用 ssh-agent 进行验证，但没有正在运行的 ssh-agent。"
+msgstr "配置使用 ssh-agent 进行身份验证，但没有发现正在运行的 ssh-agent。"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
@@ -81,7 +81,7 @@ msgstr "证书："
 #: strongswanprop.ui:62
 #, kde-format
 msgid "Authentication"
-msgstr "认证"
+msgstr "身份验证"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: strongswanprop.ui:78
@@ -117,13 +117,13 @@ msgstr "私钥："
 #: strongswanprop.ui:140
 #, kde-format
 msgid "Private Key Password:"
-msgstr "私有密钥密码："
+msgstr "私钥密码："
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: strongswanprop.ui:182
 #, kde-format
 msgid "PIN:"
-msgstr "PIN:"
+msgstr "PIN："
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: strongswanprop.ui:210
@@ -165,7 +165,7 @@ msgstr "使用 IP 压缩"
 #: strongswanprop.ui:294
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
-msgstr "启用自定义密码建议"
+msgstr "启用自定义加密算法建议"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: strongswanprop.ui:308
@@ -177,7 +177,7 @@ msgstr "IKE："
 #: strongswanprop.ui:315
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
-msgstr "英文分号 ; 分隔的 IKE 提案列表"
+msgstr "IKE 建议列表，以半角分号“;”区隔"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: strongswanprop.ui:322
@@ -189,4 +189,4 @@ msgstr "ESP："
 #: strongswanprop.ui:329
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr "英文分号 ; 分隔的 ESP 提案列表"
+msgstr "ESP 建议列表，以半角分号“;”区隔"

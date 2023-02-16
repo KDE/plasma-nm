@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-05-17 00:46+0000\n"
-"PO-Revision-Date: 2023-02-07 11:02\n"
+"PO-Revision-Date: 2023-02-15 11:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -55,13 +55,13 @@ msgstr "用户名："
 #: libreswan.ui:99
 #, kde-format
 msgid "Phase1 algorithms:"
-msgstr "Phase1 算法："
+msgstr "第 1 阶段 (Phase1) 算法："
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: libreswan.ui:109
 #, kde-format
 msgid "Phase2 algorithms:"
-msgstr "Phase 2 算法："
+msgstr "第 2 阶段 (Phase2) 算法："
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: libreswan.ui:119

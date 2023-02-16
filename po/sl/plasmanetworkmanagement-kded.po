@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-22 00:49+0000\n"
+"POT-Creation-Date: 2023-02-16 01:01+0000\n"
 "PO-Revision-Date: 2022-10-09 08:13+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -595,52 +595,52 @@ msgstr "Pogovorno okno gesla"
 msgid "Password:"
 msgstr "Geslo:"
 
-#: pindialog.cpp:65
+#: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
 msgstr "SIM PUK"
 
-#: pindialog.cpp:67
+#: pindialog.cpp:68
 #, kde-format
 msgid "SIM PUK2"
 msgstr "SIM PUK2"
 
-#: pindialog.cpp:69
+#: pindialog.cpp:70
 #, kde-format
 msgid "Service provider PUK"
 msgstr "PUK ponudnika storitve"
 
-#: pindialog.cpp:71
+#: pindialog.cpp:72
 #, kde-format
 msgid "Network PUK"
 msgstr "PUK omrežja"
 
-#: pindialog.cpp:73
+#: pindialog.cpp:74
 #, kde-format
 msgid "Corporate PUK"
 msgstr "PUK gospodarske družbe"
 
-#: pindialog.cpp:75
+#: pindialog.cpp:76
 #, kde-format
 msgid "PH-FSIM PUK"
 msgstr "PH-FSIM PUK"
 
-#: pindialog.cpp:77
+#: pindialog.cpp:78
 #, kde-format
 msgid "Network Subset PUK"
 msgstr "PUK podskupine omrežja"
 
-#: pindialog.cpp:80 pindialog.cpp:112
+#: pindialog.cpp:81 pindialog.cpp:113
 #, kde-format
 msgid "%1 unlock required"
 msgstr "Zahtevan je odklep %1"
 
-#: pindialog.cpp:81 pindialog.cpp:113
+#: pindialog.cpp:82 pindialog.cpp:114
 #, kde-format
 msgid "%1 Unlock Required"
 msgstr "Zahtevan je odklep %1"
 
-#: pindialog.cpp:82 pindialog.cpp:114
+#: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
@@ -648,89 +648,89 @@ msgstr ""
 "Mobilna širokopasovna naprava '%1' zahteva vnos kode %2, preden jo boste "
 "lahko uporabili."
 
-#: pindialog.cpp:83 pindialog.cpp:115
+#: pindialog.cpp:84 pindialog.cpp:116
 #, kde-format
 msgid "%1 code:"
 msgstr "Koda %1:"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:84 pinwidget.ui:153
+#: pindialog.cpp:85 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "Nova koda PIN:"
 
-#: pindialog.cpp:85
+#: pindialog.cpp:86
 #, kde-format
 msgid "Re-enter new PIN code:"
 msgstr "Ponovno vnesite novo kodo PIN:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:86 pinwidget.ui:193
+#: pindialog.cpp:87 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "Prikaži kodo PIN/PUK"
 
-#: pindialog.cpp:96
+#: pindialog.cpp:97
 #, kde-format
 msgid "SIM PIN"
 msgstr "SIM PIN"
 
-#: pindialog.cpp:98
+#: pindialog.cpp:99
 #, kde-format
 msgid "SIM PIN2"
 msgstr "SIM PIN2"
 
-#: pindialog.cpp:100
+#: pindialog.cpp:101
 #, kde-format
 msgid "Service provider PIN"
 msgstr "PIN ponudnika storitve"
 
-#: pindialog.cpp:102
+#: pindialog.cpp:103
 #, kde-format
 msgid "Network PIN"
 msgstr "PIN omrežja"
 
-#: pindialog.cpp:104
+#: pindialog.cpp:105
 #, kde-format
 msgid "PIN"
 msgstr "PIN"
 
-#: pindialog.cpp:106
+#: pindialog.cpp:107
 #, kde-format
 msgid "Corporate PIN"
 msgstr "PIN gospodarske družbe"
 
-#: pindialog.cpp:108
+#: pindialog.cpp:109
 #, kde-format
 msgid "PH-FSIM PIN"
 msgstr "PH-FSIM PIN"
 
-#: pindialog.cpp:110
+#: pindialog.cpp:111
 #, kde-format
 msgid "Network Subset PIN"
 msgstr "PIN podskupine omrežja"
 
-#: pindialog.cpp:116
+#: pindialog.cpp:117
 #, kde-format
 msgid "Show PIN code"
 msgstr "Prikaži kodo PIN"
 
-#: pindialog.cpp:198
+#: pindialog.cpp:199
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "Koda PIN je prekratka. Dolga naj bi bila vsaj štiri števke."
 
-#: pindialog.cpp:203
+#: pindialog.cpp:204
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "Kodi PIN se ne ujemata"
 
-#: pindialog.cpp:208
+#: pindialog.cpp:209
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "Koda PUK je prekratka. Dolga naj bi bila 8 števk."
 
-#: pindialog.cpp:213
+#: pindialog.cpp:214
 #, kde-format
 msgid "Unknown Error"
 msgstr "Neznana napaka"
@@ -764,7 +764,7 @@ msgstr "Koda PUK:"
 msgid "Re-enter PIN code:"
 msgstr "Ponovno vnesite kodo PIN:"
 
-#: secretagent.cpp:405
+#: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Overitev na %1 je spodletela. Napačno geslo?"

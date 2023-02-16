@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2023-02-07 11:02\n"
+"PO-Revision-Date: 2023-02-15 11:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -68,8 +68,8 @@ msgid ""
 "<html><head/><body><p>Set the name used for authenticating the local system "
 "to the peer to &lt;name&gt;.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>将认证本地系统所使用的名称设置为 &lt;name&gt;。</p></"
-"body></html>"
+"<html><head/><body><p>将本地系统到节点的身份验证用户名设置为 &lt;name&gt;。</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_2)
 #: l2tp.ui:113
@@ -83,8 +83,7 @@ msgstr "密码："
 msgid ""
 "<html><head/><body><p>Password passed to PPPD when prompted for it.</p></"
 "body></html>"
-msgstr ""
-"<html><head/><body><p>在需要的时候将密码传递给 PPPD 。</p></body></html>"
+msgstr "<html><head/><body><p>PPPD 请求密码时传递的密码。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_3)
 #: l2tp.ui:140
@@ -99,8 +98,8 @@ msgid ""
 "<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
 "host name for</p><p>authentication purposes.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>为了身份认证目的，</p><p>将域名 &lt;domain&gt; 附加到本"
-"地主机名。</p></body></html>"
+"<html><head/><body><p>将域名 &lt;域名&gt; 附加到本地主机名称，</p><p>用于身份"
+"验证。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -117,8 +116,8 @@ msgid ""
 "<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
 "cer or .p12 formats.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>.pem, .der, .crt, .cer 或 .p12 格式的证书颁发机构 (CA) "
-"文件。</p></body></html>"
+"<html><head/><body><p>证书颁发机构 (CA) 文件，支持的格式包括 .pem、.der、."
+"crt、.cer 和 .p12。</p></body></html>"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCert)
@@ -142,8 +141,8 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
 "</p></body></html>"
 msgstr ""
-"<html><head/><body><p>.pem, .der, .crt, .cer 或 .p12 格式的证书。</p></"
-"body></html>"
+"<html><head/><body><p>证书文件，支持的格式包括 .pem、.der、.crt、.cer 和 ."
+"p12。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
@@ -160,8 +159,8 @@ msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
 "</p></body></html>"
 msgstr ""
-"<html><head/><body><p>.pem, .der, .key, .pk8 或 .p12 格式的私钥。</p></"
-"body></html>"
+"<html><head/><body><p>私钥文件，支持的格式包括 .pem、.der、.key、.pk8 和 ."
+"p12。</p></body></html>"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineKey)
 #. i18n: ectx: property (filter), widget (KUrlRequester, userKey)
@@ -184,7 +183,7 @@ msgstr "私钥密码："
 msgid ""
 "<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
 "body></html>"
-msgstr "<html><head/><body><p>私钥或 PKCS#12 证书的密码。</p></body></html>"
+msgstr "<html><head/><body><p>私钥或者 PKCS#12 证书的密码。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:286
@@ -241,13 +240,13 @@ msgstr "预共享密钥 (PSK)"
 #: l2tpipsec.ui:91
 #, kde-format
 msgid "Pre-shared Key:"
-msgstr "预分享密钥："
+msgstr "预共享密钥："
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
 #: l2tpipsec.ui:103
 #, kde-format
 msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
-msgstr "<html><head/><body><p>预共享密钥</p></body></html>"
+msgstr "<html><head/><body><p>预共享密钥 (PSK) 密码。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: l2tpipsec.ui:129
@@ -262,7 +261,8 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></body></"
 "html>"
 msgstr ""
-"<html><head/><body><p>.pem, .der 或 .p12 格式的证书。</p></body></html>"
+"<html><head/><body><p>证书文件，支持的格式包括 .pem、.der 和 .p12。</p></"
+"body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAdvanced)
 #: l2tpipsec.ui:219
@@ -274,13 +274,13 @@ msgstr "高级"
 #: l2tpipsec.ui:225
 #, kde-format
 msgid "Phase1 Algorithms:"
-msgstr "阶段1算法："
+msgstr "第 1 阶段 (Phase1) 算法："
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: l2tpipsec.ui:235
 #, kde-format
 msgid "Phase2 Algorithms:"
-msgstr "阶段2算法："
+msgstr "第 2 阶段 (Phase2) 算法："
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
 #: l2tpipsec.ui:245
@@ -289,8 +289,8 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>可选。ESP  - 快速模式的提案列表。格式是 “enc-integ,enc-"
-"integ, ...”。</p></body></html>"
+"<html><head/><body><p>可选项。ESP  - 快速模式 (Quick Mode) 的建议列表。格式"
+"是 “enc-integ,enc-integ, ...”。</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:255
@@ -299,8 +299,8 @@ msgid ""
 "<html><head/><body><p>How long the keying channel of a connection should "
 "last before being renegotiated.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>在重新磋商之前连接的密钥频道应该持续多长时间</p></"
-"body></html>"
+"<html><head/><body><p>密钥频道的存活时间，超过此值后将重新协商密钥频道。</"
+"p></body></html>"
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
@@ -313,7 +313,7 @@ msgstr "hh:mm:ss"
 #: l2tpipsec.ui:265
 #, kde-format
 msgid "Phase1 Lifetime:"
-msgstr "阶段 1 存续时间："
+msgstr "第 1 阶段 (Phase1) 存活周期："
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: l2tpipsec.ui:272
@@ -322,14 +322,14 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>可选. IKE - 主模式的提案列表。格式为 “enc-integ-group,"
-"enc-integ-group, ...”.</p></body></html>"
+"<html><head/><body><p>可选项。IKE - 主模式 (Main Mode) 的建议列表。格式为 "
+"“enc-integ-group,enc-integ-group, ...”.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:279
 #, kde-format
 msgid "Phase2 Lifetime:"
-msgstr "阶段 2 存续时间："
+msgstr "第 2 阶段 (Phase2) 存活周期："
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:289
@@ -339,8 +339,8 @@ msgid ""
 "of encryption/authentication keys for user packets) should last, from "
 "successful negotiation to expiry.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>从成功的磋商到过期，特定的连接实例(用户数据包的一组加"
-"密/认证密钥)应该持续多久 。</p></body></html>"
+"<html><head/><body><p>一个连接实例 (一组用于用户数据包的加密/身份验证密钥) 从"
+"协商成功到过期的存活时间 。</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
 #: l2tpipsec.ui:299
@@ -352,10 +352,10 @@ msgid ""
 "strongSwan or Libreswan documentation for leftid/rightid syntax and identity "
 "parsing.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>可选。如何识别IPsec 服务器进行身份验证。 有时称为Peer "
-"ID或是Gateway ID，在strongSwan, Libreswan, Openswan 和FreeS/WAN中被称为"
-"rightid 。 关于 leftid/rightid 语法和标识解析，请参阅strongSwan或Libreswan文"
-"档。</p></body></html>"
+"<html><head/><body><p>可选项。用于指定在身份识别时 IPsec 服务器的标识方式。 "
+"此项在别的系统中也叫做 Peer ID 或者 Gateway ID，而在 strongSwan、Libreswan、"
+"Openswan 和 FreeS/WAN 中则叫做 rightid。关于 leftid/rightid 的语法和标识解"
+"析，请查看strongSwan 或者 Libreswan 的文档。</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:306
@@ -365,8 +365,8 @@ msgid ""
 "encrypted. This saves some bandwidth, but uses more processing power.</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body><p>IPComp 在加密之前压缩原生的 IP 数据包。这会节省一些带"
-"宽，但也消耗更多的处理能力。</p></body></html>"
+"<html><head/><body><p>IPComp 将在原始 IP 数据包被加密前对它们进行压缩。这可以"
+"节约一点带宽，但也会消耗更多的算力。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:309
@@ -381,8 +381,8 @@ msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
 "only if the server doesn’t support PFS.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>禁用完美转发加密。只有当服务器不支持 PFS 时才启用此选项"
-"</p></body></html>"
+"<html><head/><body><p>禁用完全正向保密 (PFS)。只有在服务器不支持 PFS 时才应勾"
+"选此项。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:319
@@ -398,8 +398,9 @@ msgid ""
 "encapsulation even if no NAT situation is detected might help in such cases."
 "</p></body></html>"
 msgstr ""
-"<html><head/><body><p>一些防火墙阻止ESP 流量。 在此情况下，即使没有发现任何"
-"NAT存在，也强制进行UDP 封装可能会有所帮助。</p></body></html>"
+"<html><head/><body><p>某些防火墙会阻止 ESP 流量。如果您遇到了这种情况，可以尝"
+"试在即使没有检测到 NAT 的情况下强制使用 UDP 封装，或许就能解决问题。</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:329
@@ -422,19 +423,19 @@ msgstr "L2TP IPsec 选项"
 #: l2tpppp.ui:26
 #, kde-format
 msgid "Authentication"
-msgstr "认证"
+msgstr "身份验证"
 
 #. i18n: ectx: property (text), widget (QLabel, lblauth)
 #: l2tpppp.ui:35
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr "允许下列认证方式："
+msgstr "允许以下身份验证方式："
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, listWidget)
 #: l2tpppp.ui:45
 #, kde-format
 msgid "Allow/disable authentication methods"
-msgstr "允许/禁用下列认证方式"
+msgstr "允许/禁用身份验证方式"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: l2tpppp.ui:49
@@ -476,7 +477,7 @@ msgstr "压缩"
 #: l2tpppp.ui:107
 #, kde-format
 msgid "Allow/disable BSD-Compress compression."
-msgstr "允许/禁用 BSD 压缩。"
+msgstr "允许/禁止 BSD-Compress 压缩。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbBSD)
 #: l2tpppp.ui:110
@@ -488,7 +489,7 @@ msgstr "允许 BSD 压缩"
 #: l2tpppp.ui:120
 #, kde-format
 msgid "Allow/disable Deflate compression."
-msgstr "允许/禁用 Deflate 压缩。"
+msgstr "允许/禁止 Deflate 压缩。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbdeflate)
 #: l2tpppp.ui:123
@@ -503,7 +504,7 @@ msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
 "transmit\n"
 "and the receive directions."
-msgstr "允许/禁用发送和接收方向使用 Van Jacobson 风格的 TCP/IP 头压缩"
+msgstr "允许/禁止在发送和接收方向上使用 Van Jacobson 风格的 TCP/IP 头压缩"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbTCPheaders)
 #: l2tpppp.ui:137
@@ -517,19 +518,19 @@ msgstr "允许 TCP 头压缩"
 msgid ""
 "Allow protocol field compression negotiation in both the receive and the\n"
 " transmit directions."
-msgstr "允许在接受和发送方向使用协议字段压缩协商。"
+msgstr "允许在接收和发送方向上使用协议字段压缩协商。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbCompressionNegotiation)
 #: l2tpppp.ui:151
 #, kde-format
 msgid "Use protocol field compression negotiation"
-msgstr "使用协议域压缩协商"
+msgstr "使用协议字段压缩协商"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:164
 #, kde-format
 msgid "Use Address/Control compression in both directions (send and receive)."
-msgstr "在所有方向 (发送和接受) 使用地址/控制压缩"
+msgstr "同时在发送和接收方向上使用地址/控制压缩。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:167
@@ -547,7 +548,7 @@ msgstr "回显"
 #: l2tpppp.ui:189
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
-msgstr "发送 LCP 回响请求来确定对方是否存活"
+msgstr "发送 LCP 回响请求来确定对方是否存活。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbsendEcho)
 #: l2tpppp.ui:192
@@ -582,8 +583,9 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"注：MPPE 加密仅在 MSCHAP 认证方式时可用。要启用这个复选框，选中一个或多个\n"
-"MSCHAP 认证方式：MSCHAP 或 MSCHAPv2"
+"注意：MPPE 加密仅在 MSCHAP 身份验证中可用。\n"
+"您必须先勾选一个或者以上的 MSCHAP 认证方式：\n"
+"MSCHAP 或者 MSCHAPv2 后才能启用此复选框。"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMPPE)
 #: l2tpppp.ui:260
@@ -595,13 +597,13 @@ msgstr "使用 MPPE 加密"
 #: l2tpppp.ui:281
 #, kde-format
 msgid "Crypto:"
-msgstr "加密算法："
+msgstr "加密级别："
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbMPPECrypto)
 #: l2tpppp.ui:297
 #, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr "要求使用 MPPE，使用 40/128 比特加密或者全部。"
+msgstr "必须先启用 MPPE 才能使用 40/128 位或者任意级别的加密。"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
 #: l2tpppp.ui:301
@@ -627,7 +629,7 @@ msgstr "40 位"
 #, kde-format
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
-msgstr "允许 MPPE 使用有状态的模式。无状态模式仍会首先尝试。"
+msgstr "允许 MPPE 使用有状态模式，但仍将首先尝试无状态模式。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbstatefulEncryption)
 #: l2tpppp.ui:322

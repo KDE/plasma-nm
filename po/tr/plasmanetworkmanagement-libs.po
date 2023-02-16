@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:59+0000\n"
+"POT-Creation-Date: 2023-02-16 01:01+0000\n"
 "PO-Revision-Date: 2023-02-07 19:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3318,72 +3318,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Kaldır"
 
-#: handler.cpp:110
+#: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma, '%1' VPN bağlantıları için destek içermiyor."
 
-#: handler.cpp:112
+#: handler.cpp:113
 #, kde-format
 msgid "Report Bug"
 msgstr "Hata Bildir"
 
-#: handler.cpp:135
+#: handler.cpp:136
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager, '%1' VPN bağlantıları için destek içermiyor."
 
-#: handler.cpp:137
+#: handler.cpp:138
 #, kde-format
 msgid "Install"
 msgstr "Kur"
 
-#: handler.cpp:351 handler.cpp:844
+#: handler.cpp:352 handler.cpp:845
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "%1 bağlantısı eklenemedi"
 
-#: handler.cpp:360 handler.cpp:886
+#: handler.cpp:361 handler.cpp:887
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "%1 bağlantısı eklendi"
 
-#: handler.cpp:836
+#: handler.cpp:837
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "%1 etkinleştirilemedi"
 
-#: handler.cpp:840
+#: handler.cpp:841
 #, kde-format
 msgid "Failed to add %1"
 msgstr "%1 eklenemedi"
 
-#: handler.cpp:848
+#: handler.cpp:849
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "%1 devre dışı bırakılamadı"
 
-#: handler.cpp:852
+#: handler.cpp:853
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "%1 silinemedi"
 
-#: handler.cpp:856
+#: handler.cpp:857
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "%1 bağlantısı güncellenemedi"
 
-#: handler.cpp:867
+#: handler.cpp:868
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "%1 kişisel erişim noktası oluşturulamadı"
 
-#: handler.cpp:890
+#: handler.cpp:891
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "%1 bağlantısı silindi"
 
-#: handler.cpp:894
+#: handler.cpp:895
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "%1 bağlantısı güncellendi"

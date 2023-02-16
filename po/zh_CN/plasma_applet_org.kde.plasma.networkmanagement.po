@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-23 00:58+0000\n"
-"PO-Revision-Date: 2023-02-07 11:02\n"
+"PO-Revision-Date: 2023-02-15 11:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -59,7 +59,7 @@ msgstr "当前下载速度为每秒 %1 KB；当前上传速度为每秒 %2 KB"
 #: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
-msgstr "已连接，⬇ %1/s, ⬆ %2/s"
+msgstr "已连接，⬇ %1/s，⬆ %2/s"
 
 #: contents/ui/ConnectionItem.qml:290
 #, kde-format
@@ -86,7 +86,7 @@ msgstr "中键单击以关闭飞行模式"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "中键单击以开启飞行模式"
+msgstr "中键单击以启用飞行模式"
 
 #: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -132,17 +132,17 @@ msgstr "飞行模式已启用"
 #: contents/ui/PopupDialog.qml:106
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
-msgstr "无线网络和移动网络已停用"
+msgstr "无线网络和移动网络已被禁用"
 
 #: contents/ui/PopupDialog.qml:108
 #, kde-format
 msgid "Wireless is deactivated"
-msgstr "无线网络已停用"
+msgstr "无线网络已被禁用"
 
 #: contents/ui/PopupDialog.qml:111
 #, kde-format
 msgid "Mobile network is deactivated"
-msgstr "移动网络已停用"
+msgstr "移动网络已被禁用"
 
 #: contents/ui/PopupDialog.qml:114
 #, kde-format
@@ -194,7 +194,7 @@ msgstr "配置网络连接…"
 #: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:106
 #, kde-format
 msgid "/s"
-msgstr "/秒"
+msgstr "/s"
 
 #: contents/ui/TrafficMonitor.qml:88
 #, kde-format

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2023-02-07 11:02\n"
+"PO-Revision-Date: 2023-02-15 11:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -22,19 +22,19 @@ msgstr ""
 #: pptpadvanced.ui:17
 #, kde-format
 msgid "Authentication"
-msgstr "认证"
+msgstr "身份验证"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_auth)
 #: pptpadvanced.ui:26
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr "允许下列认证方式："
+msgstr "允许以下身份验证方式："
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, listWidget)
 #: pptpadvanced.ui:36
 #, kde-format
 msgid "Allow/disable authentication methods."
-msgstr "允许/禁用下列认证方式。"
+msgstr "允许/禁止身份验证方式。"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: pptpadvanced.ui:40
@@ -75,8 +75,9 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"注：MPPE 加密仅在 MSCHAP 认证方式时可用。要启用这个复选框，选中一个或多个\n"
-"MSCHAP 认证方式：MSCHAP 或 MSCHAPv2"
+"注意：MPPE 加密仅在 MSCHAP 身份验证中可用。\n"
+"您必须先勾选一个或者以上的 MSCHAP 认证方式：\n"
+"MSCHAP 或者 MSCHAPv2 后才能启用此复选框。"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
 #: pptpadvanced.ui:91
@@ -94,7 +95,7 @@ msgstr "加密算法："
 #: pptpadvanced.ui:128
 #, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr "要求使用 MPPE，使用 40/128 比特加密或者全部。"
+msgstr "必须先启用 MPPE 才能使用 40/128 位或者任意级别的加密。"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: pptpadvanced.ui:132
@@ -120,7 +121,7 @@ msgstr "40 位"
 #, kde-format
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
-msgstr "允许 MPPE 使用有状态的模式。无状态模式仍会首先尝试。"
+msgstr "允许 MPPE 使用有状态模式，但仍将首先尝试无状态模式。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
 #: pptpadvanced.ui:153
@@ -138,7 +139,7 @@ msgstr "压缩"
 #: pptpadvanced.ui:175
 #, kde-format
 msgid "Allow/disable BSD-Compress compression."
-msgstr "允许/禁用 BSD 压缩"
+msgstr "允许/禁止 BSD-Compress 压缩。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_BSD)
 #: pptpadvanced.ui:178
@@ -150,7 +151,7 @@ msgstr "允许 BSD 压缩"
 #: pptpadvanced.ui:188
 #, kde-format
 msgid "Allow/disable Deflate compression."
-msgstr "允许/禁用 Deflate 压缩"
+msgstr "允许/禁止 Deflate 压缩。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_deflate)
 #: pptpadvanced.ui:191
@@ -165,7 +166,7 @@ msgid ""
 "Allow/disable Van Jacobson style TCP/IP header compression in both the "
 "transmit\n"
 " and the receive directions."
-msgstr "允许/禁用发送和接收方向使用 Van Jacobson 风格的 TCP/IP 头压缩"
+msgstr "允许/禁止在发送和接收方向上使用 Van Jacobson 风格的 TCP/IP 头压缩"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
 #: pptpadvanced.ui:205
@@ -183,7 +184,7 @@ msgstr "回显"
 #: pptpadvanced.ui:227
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
-msgstr "发送 LCP 回响请求来确定对方是否存活"
+msgstr "发送 LCP 回响请求来确定对方是否存活。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_sendEcho)
 #: pptpadvanced.ui:230
@@ -195,7 +196,7 @@ msgstr "发送 PPP 回显包 "
 #: pptpauth.ui:14
 #, kde-format
 msgid "PPTPAuthentication"
-msgstr "PPTP认证"
+msgstr "PPTP 身份验证"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
@@ -222,7 +223,7 @@ msgstr "PPTP 设置"
 #, kde-format
 msgctxt "like in General settings"
 msgid "General"
-msgstr "常规"
+msgstr "常规选项"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
 #: pptpprop.ui:34
@@ -241,20 +242,20 @@ msgstr "PPTP 服务器 IP 或者名称。"
 #, kde-format
 msgctxt "like in Additional settings"
 msgid "Additional"
-msgstr "附加"
+msgstr "额外选项"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_login)
 #: pptpprop.ui:80
 #, kde-format
 msgid "Login:"
-msgstr "登录："
+msgstr "登录名："
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_login)
 #: pptpprop.ui:93
 #, kde-format
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
-msgstr "设置验证本地系统到端的认证名称为 <name>。"
+msgstr "将本地系统到节点的身份验证用户名设置为 <name>。"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_ntdomain)
 #: pptpprop.ui:153
@@ -268,9 +269,7 @@ msgstr "NT 域："
 msgid ""
 "Append the domain name <domain> to the local host name for\n"
 "authenticating purposes."
-msgstr ""
-"附加域名 <domain> 到本地主机名称\n"
-"以验证。"
+msgstr "<domain>将域名 <域名> 附加到本地主机名称，用于身份验证。"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: pptpprop.ui:192

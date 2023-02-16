@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-22 00:59+0000\n"
-"PO-Revision-Date: 2023-02-07 11:02\n"
+"PO-Revision-Date: 2023-02-15 11:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -26,7 +26,7 @@ msgstr "初始化软件令牌失败：%1"
 #: openconnectauth.cpp:369
 #, kde-format
 msgid "Contacting host, please wait…"
-msgstr "正在连接主机，请稍等…"
+msgstr "正在连接主机，请稍候…"
 
 #: openconnectauth.cpp:689
 #, kde-format
@@ -41,20 +41,20 @@ msgid ""
 "Reason: %2\n"
 "Accept it anyway?"
 msgstr ""
-"VPN 服务器 \"%1\" 的证书验证失败。\n"
+"VPN 服务器“%1”的证书检查失败。\n"
 "原因：%2\n"
-"是否接受？"
+"是否仍然接受此证书？"
 
 #: openconnectauth.cpp:846
 #, kde-format
 msgid "Connection attempt was unsuccessful."
-msgstr "连接失败。"
+msgstr "连接尝试失败。"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
 #: openconnectauth.ui:26
 #, kde-format
 msgid "OpenConnect VPN Authentication"
-msgstr "OpenConnect VPN 认证"
+msgstr "OpenConnect VPN 身份验证"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openconnectauth.ui:55
@@ -78,7 +78,7 @@ msgstr "下次自动开始连接"
 #: openconnectauth.ui:109
 #, kde-format
 msgid "Store passwords"
-msgstr "存储密码"
+msgstr "保存密码"
 
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
 #: openconnectauth.ui:153
@@ -148,13 +148,13 @@ msgstr "CA 证书："
 #: openconnectprop.ui:61 openconnectprop.ui:240 openconnectprop.ui:257
 #, kde-format
 msgid "*.pem *.crt *.key"
-msgstr "*.pem *.crt *.key"
+msgstr "*.pem *.crt *.密钥"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: openconnectprop.ui:68
 #, kde-format
 msgid "Proxy:"
-msgstr "代理："
+msgstr "代理服务器："
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openconnectprop.ui:81
@@ -166,13 +166,13 @@ msgstr "用户代理："
 #: openconnectprop.ui:94
 #, kde-format
 msgid "CSD Wrapper Script:"
-msgstr "CSD 包装脚本："
+msgstr "CSD 包装器脚本："
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
 #: openconnectprop.ui:104
 #, kde-format
 msgid "Allow Cisco Secure Desktop trojan"
-msgstr "允许思科安全桌面木马"
+msgstr "允许 Cisco Secure Desktop 木马"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: openconnectprop.ui:114
@@ -184,7 +184,7 @@ msgstr "VPN 协议："
 #: openconnectprop.ui:131
 #, kde-format
 msgid "Cisco AnyConnect"
-msgstr "思科 AnyConnect"
+msgstr "Cisco AnyConnect"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:136
@@ -196,7 +196,7 @@ msgstr "Juniper Network Connect"
 #: openconnectprop.ui:141
 #, kde-format
 msgid "PAN Global Protect"
-msgstr "PAN 全局保护"
+msgstr "PAN Global Protect"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:146
@@ -268,7 +268,7 @@ msgstr "iOS"
 #: openconnectprop.ui:224
 #, kde-format
 msgid "Certificate Authentication"
-msgstr "证书认证"
+msgstr "证书身份验证"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:230
@@ -286,7 +286,7 @@ msgstr "私钥："
 #: openconnectprop.ui:264
 #, kde-format
 msgid "Use FSID for key passphrase"
-msgstr "对密钥口令使用 FSID(文件空间标识符)"
+msgstr "密钥口令使用 FSID"
 
 #. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
 #: openconnectprop.ui:271
@@ -298,7 +298,7 @@ msgstr "阻止用户手动接受无效证书"
 #: openconnectprop.ui:297
 #, kde-format
 msgid "Token Authentication"
-msgstr "令牌验证"
+msgstr "令牌身份验证"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenConnectToken)
 #: openconnecttoken.ui:14
@@ -310,7 +310,7 @@ msgstr "OpenConnect OTP 令牌"
 #: openconnecttoken.ui:20
 #, kde-format
 msgid "Software Token Authentication"
-msgstr "软件令牌验证"
+msgstr "软件令牌身份验证"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnecttoken.ui:26

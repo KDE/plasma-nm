@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-22 00:49+0000\n"
+"POT-Creation-Date: 2023-02-16 01:01+0000\n"
 "PO-Revision-Date: 2022-12-30 03:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -593,141 +593,141 @@ msgstr "პაროლის ფანჯარა"
 msgid "Password:"
 msgstr "პაროლი:"
 
-#: pindialog.cpp:65
+#: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
 msgstr "SIM PUK"
 
-#: pindialog.cpp:67
+#: pindialog.cpp:68
 #, kde-format
 msgid "SIM PUK2"
 msgstr "SIM PUK2"
 
-#: pindialog.cpp:69
+#: pindialog.cpp:70
 #, kde-format
 msgid "Service provider PUK"
 msgstr "სერვისის მომწოდებლის PUK"
 
-#: pindialog.cpp:71
+#: pindialog.cpp:72
 #, kde-format
 msgid "Network PUK"
 msgstr "ქსელის PUK"
 
-#: pindialog.cpp:73
+#: pindialog.cpp:74
 #, kde-format
 msgid "Corporate PUK"
 msgstr "კორპორატიული PUK-ი"
 
-#: pindialog.cpp:75
+#: pindialog.cpp:76
 #, kde-format
 msgid "PH-FSIM PUK"
 msgstr "PH-FSIM PUK"
 
-#: pindialog.cpp:77
+#: pindialog.cpp:78
 #, kde-format
 msgid "Network Subset PUK"
 msgstr "ქვექსელის PUK-ი"
 
-#: pindialog.cpp:80 pindialog.cpp:112
+#: pindialog.cpp:81 pindialog.cpp:113
 #, kde-format
 msgid "%1 unlock required"
 msgstr "საჭიროა %1 განბლოკვა"
 
-#: pindialog.cpp:81 pindialog.cpp:113
+#: pindialog.cpp:82 pindialog.cpp:114
 #, kde-format
 msgid "%1 Unlock Required"
 msgstr "საჭიროა %1 განბლოკვა"
 
-#: pindialog.cpp:82 pindialog.cpp:114
+#: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
 msgstr ""
 "მობილური ინტერნეტის მოწყობილობას \"%1\" გამოყენებამდე სჭირდება %2 კოდი."
 
-#: pindialog.cpp:83 pindialog.cpp:115
+#: pindialog.cpp:84 pindialog.cpp:116
 #, kde-format
 msgid "%1 code:"
 msgstr "%1 კოდი:"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:84 pinwidget.ui:153
+#: pindialog.cpp:85 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "ახალი PIN კოდი:"
 
-#: pindialog.cpp:85
+#: pindialog.cpp:86
 #, kde-format
 msgid "Re-enter new PIN code:"
 msgstr "ახალი PIN კოდი ხელახლა:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:86 pinwidget.ui:193
+#: pindialog.cpp:87 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "PIN/PUK კოდის ჩვენება"
 
-#: pindialog.cpp:96
+#: pindialog.cpp:97
 #, kde-format
 msgid "SIM PIN"
 msgstr "SIM PIN"
 
-#: pindialog.cpp:98
+#: pindialog.cpp:99
 #, kde-format
 msgid "SIM PIN2"
 msgstr "SIM PIN2"
 
-#: pindialog.cpp:100
+#: pindialog.cpp:101
 #, kde-format
 msgid "Service provider PIN"
 msgstr "სერვისის მომწოდებლის PIN კოდი"
 
-#: pindialog.cpp:102
+#: pindialog.cpp:103
 #, kde-format
 msgid "Network PIN"
 msgstr "ქსელის PIN კოდი"
 
-#: pindialog.cpp:104
+#: pindialog.cpp:105
 #, kde-format
 msgid "PIN"
 msgstr "PIN კოდი"
 
-#: pindialog.cpp:106
+#: pindialog.cpp:107
 #, kde-format
 msgid "Corporate PIN"
 msgstr "კორპორატიული PIN კოდი"
 
-#: pindialog.cpp:108
+#: pindialog.cpp:109
 #, kde-format
 msgid "PH-FSIM PIN"
 msgstr "PH-FSIM PIN"
 
-#: pindialog.cpp:110
+#: pindialog.cpp:111
 #, kde-format
 msgid "Network Subset PIN"
 msgstr "ქვექსელის PIN კოდი"
 
-#: pindialog.cpp:116
+#: pindialog.cpp:117
 #, kde-format
 msgid "Show PIN code"
 msgstr "PIN კოდის ჩვენება"
 
-#: pindialog.cpp:198
+#: pindialog.cpp:199
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "PIN კოდი ძალიან მოკლეა. ის 4 ციფრი მაინც უნდა იყოს."
 
-#: pindialog.cpp:203
+#: pindialog.cpp:204
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "შეყვანილი 2 PIN კოდი არ ემთხვევა"
 
-#: pindialog.cpp:208
+#: pindialog.cpp:209
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "PUK კოდი ძალიან მოკლეა. ის 8 ციფრი მაინც უნდა იყოს."
 
-#: pindialog.cpp:213
+#: pindialog.cpp:214
 #, kde-format
 msgid "Unknown Error"
 msgstr "უცნობი შეცდომა"
@@ -760,7 +760,7 @@ msgstr "PUK კოდი:"
 msgid "Re-enter PIN code:"
 msgstr "ახალი PUK კოდი ხელახლა:"
 
-#: secretagent.cpp:405
+#: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1-ზე ავთენტიკაციის პრობლემა. პაროლი შეგეშალათ?"

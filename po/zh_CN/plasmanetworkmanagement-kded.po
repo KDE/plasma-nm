@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2022-12-22 00:49+0000\n"
-"PO-Revision-Date: 2023-02-07 11:02\n"
+"POT-Creation-Date: 2023-02-16 01:01+0000\n"
+"PO-Revision-Date: 2023-02-15 11:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -21,12 +21,12 @@ msgstr ""
 #: bluetoothmonitor.cpp:67
 #, kde-format
 msgid "Only 'dun' and 'nap' services are supported."
-msgstr "只有“dun”和“nap”服务被支持。"
+msgstr "只支持“dun”和“nap”服务。"
 
 #: connectivitymonitor.cpp:61
 #, kde-format
 msgid "Network authentication"
-msgstr "网络认证"
+msgstr "网络身份验证"
 
 #: connectivitymonitor.cpp:68
 #, kde-format
@@ -36,25 +36,25 @@ msgstr "登录"
 #: connectivitymonitor.cpp:71
 #, kde-format
 msgid "You need to log into this network"
-msgstr "您需要登录这个网络"
+msgstr "您需要登录到此网络"
 
 #: connectivitymonitor.cpp:91
 #, kde-format
 msgid "Limited Connectivity"
-msgstr "受限的连接"
+msgstr "网络连接受限"
 
 #: connectivitymonitor.cpp:92
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "internet."
-msgstr "此设备似乎已连接到网络，但无法连接到互联网。"
+msgstr "此设备已连接到网络，但无法访问互联网。"
 
 #: modemmonitor.cpp:181
 #, kde-format
 msgctxt "Text in GSM PIN/PUK unlock error dialog"
 msgid "Error unlocking modem: %1"
-msgstr "解锁猫失败：%1"
+msgstr "解锁调制解调器时出错：%1"
 
 #: modemmonitor.cpp:182
 #, kde-format
@@ -67,7 +67,7 @@ msgstr "PIN/PUK 解锁错误"
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigFailedReason"
 msgid "The device could not be configured"
-msgstr "设备无法被配置"
+msgstr "设备无法配置"
 
 #: notification.cpp:100
 #, kde-format
@@ -97,7 +97,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantDisconnectReason"
 msgid "Authorization supplicant disconnected"
-msgstr "验证请求方断开连接"
+msgstr "授权请求方已断开连接"
 
 #: notification.cpp:113
 #, kde-format
@@ -105,7 +105,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantConfigFailedReason"
 msgid "Authorization supplicant's configuration failed"
-msgstr "认证请求方配置失败"
+msgstr "授权请求方配置失败"
 
 #: notification.cpp:116
 #, kde-format
@@ -113,7 +113,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantFailedReason"
 msgid "Authorization supplicant failed"
-msgstr "认证请求方失败"
+msgstr "授权请求方失败"
 
 #: notification.cpp:119
 #, kde-format
@@ -121,7 +121,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantTimeoutReason"
 msgid "Authorization supplicant timed out"
-msgstr "认证请求方超时"
+msgstr "授权请求方超时"
 
 #: notification.cpp:122
 #, kde-format
@@ -149,7 +149,7 @@ msgstr "PPP 失败"
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpStartFailedReason"
 msgid "DHCP failed to start"
-msgstr "启动 DHCP 失败"
+msgstr "DHCP 启动失败"
 
 #: notification.cpp:134
 #, kde-format
@@ -221,7 +221,7 @@ msgstr "调制解调器没有拨号音"
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoCarrierReason"
 msgid "The modem shows no carrier"
-msgstr "调制解调器返回 no carrier 信号"
+msgstr "调制解调器没有载波信号"
 
 #: notification.cpp:164
 #, kde-format
@@ -251,7 +251,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmApnSelectFailedReason"
 msgid "The GSM APN could not be selected"
-msgstr "不能选择 GSM APN"
+msgstr "无法选择该 GSM APN"
 
 #: notification.cpp:176
 #, kde-format
@@ -290,7 +290,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmPinCheckFailedReason"
 msgid "The GSM PIN check failed"
-msgstr "GSM PIN 检测失败"
+msgstr "GSM PIN 检查失败"
 
 #: notification.cpp:191
 #, kde-format
@@ -304,7 +304,7 @@ msgstr "设备缺少固件"
 msgctxt ""
 "@info:status Notification when the device failed due to DeviceRemovedReason"
 msgid "The device was removed"
-msgstr "设备已被删除"
+msgstr "设备已被移除"
 
 #: notification.cpp:197
 #, kde-format
@@ -319,48 +319,48 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConnectionRemovedReason"
 msgid "The connection was removed"
-msgstr "连接已经删除"
+msgstr "连接已被移除"
 
 #: notification.cpp:205
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to CarrierReason"
 msgid "The cable was disconnected"
-msgstr "网线已经断开"
+msgstr "网线已被断开"
 
 #: notification.cpp:211
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNotFoundReason"
 msgid "The modem could not be found"
-msgstr "未能找到调制解调器"
+msgstr "无法找到调制解调器"
 
 #: notification.cpp:214
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to BluetoothFailedReason"
 msgid "The bluetooth connection failed or timed out"
-msgstr "蓝牙连接失败或超时"
+msgstr "蓝牙连接失败或者超时"
 
 #: notification.cpp:217
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimNotInserted"
 msgid "GSM Modem's SIM Card not inserted"
-msgstr "GSM 调制解调器的 SIM 卡未插入"
+msgstr "GSM 调制解调器的 SIM 卡没有插入"
 
 #: notification.cpp:220
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPinRequired"
 msgid "GSM Modem's SIM Pin required"
-msgstr "需要 GSM 调制解调器的 SIM Pin"
+msgstr "需要 GSM 调制解调器的 SIM PIN"
 
 #: notification.cpp:223
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPukRequired"
 msgid "GSM Modem's SIM Puk required"
-msgstr "需要 GSM 调制解调器的 SIM Puk"
+msgstr "需要 GSM 调制解调器的 SIM PUK"
 
 #: notification.cpp:226
 #, kde-format
@@ -386,7 +386,7 @@ msgstr "连接依赖失败"
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to Br2684Failed"
 msgid "Problem with the RFC 2684 Ethernet over ADSL bridge"
-msgstr "RFC 2684 ADSL 网桥上的以太网有问题"
+msgstr "RFC 2684 ADSL 桥接的以太网发生问题"
 
 #: notification.cpp:238
 #, kde-format
@@ -394,13 +394,13 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ModemManagerUnavailable"
 msgid "ModemManager not running"
-msgstr "ModemManager 未运行"
+msgstr "ModemManager 没有运行"
 
 #: notification.cpp:241
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to SsidNotFound"
 msgid "The WiFi network could not be found"
-msgstr "WiFi 网络未找到"
+msgstr "无法找到该 Wi-Fi 网络"
 
 #: notification.cpp:245
 #, kde-format
@@ -414,7 +414,7 @@ msgstr "基础连接的二级连接失败"
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to DcbFcoeFailed"
 msgid "DCB or FCoE setup failed"
-msgstr "DCB 或 FCoE 设置失败"
+msgstr "DCB 或者 FCoE 设置失败"
 
 #: notification.cpp:251
 #, kde-format
@@ -427,14 +427,14 @@ msgstr "teamd 控制失败"
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
-msgstr "调制解调器失败或不可用"
+msgstr "调制解调器失败或者不再可用"
 
 #: notification.cpp:257
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemAvailable"
 msgid "Modem now ready and available"
-msgstr "调制解调器现在已准备好并且可用"
+msgstr "调制解调器已经准备就绪并且可用"
 
 #: notification.cpp:260
 #, kde-format
@@ -447,20 +447,20 @@ msgstr "SIM PIN 不正确"
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to NewActivation"
 msgid "A new connection activation was enqueued"
-msgstr "激活新连接请求已在队列中"
+msgstr "新的连接激活请求已被添加到队列"
 
 #: notification.cpp:266
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ParentChanged"
 msgid "The device's parent changed"
-msgstr "设备的父设备已更改"
+msgstr "设备的上级设备已被更改"
 
 #: notification.cpp:269
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ParentManagedChanged"
 msgid "The device parent's management changed"
-msgstr "设备的父设备的管理已更改"
+msgstr "设备的上级设备的管理已被更改"
 
 #: notification.cpp:345
 #, kde-format
@@ -470,7 +470,7 @@ msgstr "连接“%1”已激活。"
 #: notification.cpp:372
 #, kde-format
 msgid "Connection '%1' deactivated."
-msgstr "连接“%1”已断开。"
+msgstr "连接“%1”已禁用。"
 
 #: notification.cpp:423
 #, kde-format
@@ -480,29 +480,29 @@ msgstr "VPN 连接“%1”已激活。"
 #: notification.cpp:426
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "VPN 连接“%1”无法激活。"
+msgstr "VPN 连接“%1”激活失败。"
 
 #: notification.cpp:429 notification.cpp:437
 #, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "VPN 连接“%1”已断开。"
+msgstr "VPN 连接“%1”已禁用。"
 
 #: notification.cpp:440
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
-msgstr "VPN 连接'%1' 因为它正在使用的设备已断开连接而被停用。"
+msgstr "VPN 连接“%1”已禁用，因为它使用的设备已断开。"
 
 #: notification.cpp:443
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "提供 VPN 连接的服务‘%1’已停止。"
+msgstr "提供 VPN 连接“%1”的服务已停止。"
 
 #: notification.cpp:446
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "VPN 连接‘%1’的 IP 配置无效。"
+msgstr "VPN 连接“%1”的 IP 配置无效。"
 
 #: notification.cpp:449
 #, kde-format
@@ -514,32 +514,32 @@ msgstr "连接尝试的 VPN 服务超时"
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
-msgstr "启动提供 VPN 连接‘%1’ 的服务时超时。"
+msgstr "启动提供 VPN 连接“%1”的服务时超时。"
 
 #: notification.cpp:455
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "启动提供 VPN 连接‘%1’的服务失败。"
+msgstr "启动提供 VPN 连接“%1”的服务失败。"
 
 #: notification.cpp:458
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
-msgstr "未提供 VPN 连接‘%1' 需要的密码。"
+msgstr "没有提供 VPN 连接“%1”需要的密码。"
 
 #: notification.cpp:461
 #, kde-format
 msgid "Authentication to the VPN server failed."
-msgstr "到 VPN 服务器的验证失败。"
+msgstr "到 VPN 服务器的身份验证失败。"
 
 #: notification.cpp:464
 #, kde-format
 msgid "The connection was deleted."
-msgstr "连接已经删除."
+msgstr "连接已被删除。"
 
 #: notification.cpp:550
 #, kde-format
 msgid "No Network Connection"
-msgstr "无网络连接"
+msgstr "没有网络连接"
 
 #: notification.cpp:551
 #, kde-format
@@ -549,17 +549,17 @@ msgstr "您已不再连接到网络。"
 #: passworddialog.cpp:54
 #, kde-format
 msgid "Authenticate %1"
-msgstr "验证 %1"
+msgstr "%1 的身份验证"
 
 #: passworddialog.cpp:98
 #, kde-format
 msgid "Provide the password for the wireless network '%1':"
-msgstr "为无线网络‘%1’提供密码："
+msgstr "请提供无线网络“%1”的密码："
 
 #: passworddialog.cpp:100
 #, kde-format
 msgid "Provide the password for the connection '%1':"
-msgstr "为连接 ‘%1’ 提供密码："
+msgstr "请提供连接“%1”的密码："
 
 #: passworddialog.cpp:106
 #, kde-format
@@ -569,7 +569,7 @@ msgstr "%1 密码对话框"
 #: passworddialog.cpp:126
 #, kde-format
 msgid "Provide the secrets for the VPN connection '%1':"
-msgstr "为 VPN 连接 ‘%1’ 提供密钥："
+msgstr "请提供 VPN 连接“%1”的密钥："
 
 #: passworddialog.cpp:127
 #, kde-format
@@ -588,140 +588,140 @@ msgstr "密码对话框"
 msgid "Password:"
 msgstr "密码："
 
-#: pindialog.cpp:65
+#: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
 msgstr "SIM PUK"
 
-#: pindialog.cpp:67
+#: pindialog.cpp:68
 #, kde-format
 msgid "SIM PUK2"
 msgstr "SIM PUK2"
 
-#: pindialog.cpp:69
+#: pindialog.cpp:70
 #, kde-format
 msgid "Service provider PUK"
-msgstr "服务提供者 PUK"
+msgstr "运营商 PUK"
 
-#: pindialog.cpp:71
+#: pindialog.cpp:72
 #, kde-format
 msgid "Network PUK"
 msgstr "网络 PUK"
 
-#: pindialog.cpp:73
+#: pindialog.cpp:74
 #, kde-format
 msgid "Corporate PUK"
 msgstr "企业 PUK"
 
-#: pindialog.cpp:75
+#: pindialog.cpp:76
 #, kde-format
 msgid "PH-FSIM PUK"
 msgstr "PH-FSIM PUK"
 
-#: pindialog.cpp:77
+#: pindialog.cpp:78
 #, kde-format
 msgid "Network Subset PUK"
 msgstr "网络子集 PUK"
 
-#: pindialog.cpp:80 pindialog.cpp:112
+#: pindialog.cpp:81 pindialog.cpp:113
 #, kde-format
 msgid "%1 unlock required"
 msgstr "%1 需要解锁"
 
-#: pindialog.cpp:81 pindialog.cpp:113
+#: pindialog.cpp:82 pindialog.cpp:114
 #, kde-format
 msgid "%1 Unlock Required"
 msgstr "%1 需要解锁"
 
-#: pindialog.cpp:82 pindialog.cpp:114
+#: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
 msgstr "移动宽带设备“%1”需要 %2 码才能使用。"
 
-#: pindialog.cpp:83 pindialog.cpp:115
+#: pindialog.cpp:84 pindialog.cpp:116
 #, kde-format
 msgid "%1 code:"
 msgstr "%1 码："
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:84 pinwidget.ui:153
+#: pindialog.cpp:85 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
-msgstr "新建 PIN 码："
+msgstr "新 PIN 码："
 
-#: pindialog.cpp:85
+#: pindialog.cpp:86
 #, kde-format
 msgid "Re-enter new PIN code:"
-msgstr "重新输入新 PIN 码："
+msgstr "再次输入新 PIN 码："
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:86 pinwidget.ui:193
+#: pindialog.cpp:87 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "显示 PIN/PUK 码"
 
-#: pindialog.cpp:96
+#: pindialog.cpp:97
 #, kde-format
 msgid "SIM PIN"
 msgstr "SIM PIN"
 
-#: pindialog.cpp:98
+#: pindialog.cpp:99
 #, kde-format
 msgid "SIM PIN2"
 msgstr "SIM PIN2"
 
-#: pindialog.cpp:100
+#: pindialog.cpp:101
 #, kde-format
 msgid "Service provider PIN"
-msgstr "服务提供者 PIN"
+msgstr "运营商 PIN"
 
-#: pindialog.cpp:102
+#: pindialog.cpp:103
 #, kde-format
 msgid "Network PIN"
 msgstr "网络 PIN"
 
-#: pindialog.cpp:104
+#: pindialog.cpp:105
 #, kde-format
 msgid "PIN"
 msgstr "PIN"
 
-#: pindialog.cpp:106
+#: pindialog.cpp:107
 #, kde-format
 msgid "Corporate PIN"
 msgstr "企业 PIN"
 
-#: pindialog.cpp:108
+#: pindialog.cpp:109
 #, kde-format
 msgid "PH-FSIM PIN"
 msgstr "PH-FSIM PIN"
 
-#: pindialog.cpp:110
+#: pindialog.cpp:111
 #, kde-format
 msgid "Network Subset PIN"
 msgstr "网络子集 PIN"
 
-#: pindialog.cpp:116
+#: pindialog.cpp:117
 #, kde-format
 msgid "Show PIN code"
 msgstr "显示 PIN 码"
 
-#: pindialog.cpp:198
+#: pindialog.cpp:199
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
-msgstr "PIN 码太短，至少要4位数字。"
+msgstr "PIN 码太短，它至少要有 4 位数字。"
 
-#: pindialog.cpp:203
+#: pindialog.cpp:204
 #, kde-format
 msgid "The two PIN codes do not match"
-msgstr "两个 PIN 码不匹配"
+msgstr "两次输入的 PIN 码不一致"
 
-#: pindialog.cpp:208
+#: pindialog.cpp:209
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
-msgstr "PUK 码太短，至少要8位数字。"
+msgstr "PUK 码太短，它应该是 8 位数字。"
 
-#: pindialog.cpp:213
+#: pindialog.cpp:214
 #, kde-format
 msgid "Unknown Error"
 msgstr "未知错误"
@@ -751,9 +751,9 @@ msgstr "PUK 码："
 #: pinwidget.ui:173
 #, kde-format
 msgid "Re-enter PIN code:"
-msgstr "重新输入 PIN 码："
+msgstr "再次输入 PIN 码："
 
-#: secretagent.cpp:405
+#: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
-msgstr "%1 身份认证失败。也许是密码错误？"
+msgstr "%1 的身份验证失败。您是否输入了错误的密码？"

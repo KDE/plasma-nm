@@ -146,9 +146,14 @@ PlasmaExtras.Representation {
 
             if (expanded) {
                 handler.requestScan();
-                full.connectionModel = networkModelComponent.createObject(full)
+                if (!full.connectionModel) {
+                    full.connectionModel = networkModelComponent.createObject(full);
+                }
             } else {
-                full.connectionModel.destroy()
+                if (full.connectionModel) {
+                    full.connectionModel.destroy();
+                    full.connectionModel = null;
+                }
             }
         }
     }

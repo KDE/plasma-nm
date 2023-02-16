@@ -43,6 +43,7 @@ Item {
     Plasmoid.switchHeight: PlasmaCore.Units.gridUnit * 10
     Plasmoid.compactRepresentation: CompactRepresentation {
         airplaneModeAvailable: mainWindow.airplaneModeAvailable
+        iconName: connectionIconProvider.connectionIcon
     }
     Plasmoid.fullRepresentation: PopupDialog {
         id: dialogItem

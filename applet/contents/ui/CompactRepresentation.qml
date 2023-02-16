@@ -11,11 +11,11 @@ import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.plasmoid 2.0
 
 MouseArea {
-    id: panelIconWidget
+    id: root
 
     required property bool airplaneModeAvailable
+    required property string iconName
 
-    anchors.fill: parent
     hoverEnabled: true
 
     acceptedButtons: airplaneModeAvailable ? Qt.LeftButton | Qt.MiddleButton : Qt.LeftButton
@@ -35,7 +35,7 @@ MouseArea {
         id: connectionIcon
 
         anchors.fill: parent
-        source: connectionIconProvider.connectionIcon
+        source: root.iconName
         colorGroup: PlasmaCore.ColorScope.colorGroup
         active: parent.containsMouse
     }

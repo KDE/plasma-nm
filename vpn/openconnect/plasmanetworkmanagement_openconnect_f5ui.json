@@ -62,7 +62,7 @@
         "Description[tr]": "F5 BIG-IP SSL VPN ile uyumlu",
         "Description[uk]": "Сумісний із F5 BIG-IP SSL VPN",
         "Description[x-test]": "xxCompatible with F5 BIG-IP SSL VPNxx",
-        "Description[zh_CN]": "与 F5 BIG-IP SSL VPN 兼容",
+        "Description[zh_CN]": "兼容 F5 BIG-IP SSL VPN ",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_openconnect_f5ui",

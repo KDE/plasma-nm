@@ -62,7 +62,7 @@
         "Description[tr]": "Array Networks SSL VPN ile uyumlu",
         "Description[uk]": "Сумісний із VPN Array Networks",
         "Description[x-test]": "xxCompatible with Array Networks SSL VPNxx",
-        "Description[zh_CN]": "与 Array Networks SSL VPN 兼容",
+        "Description[zh_CN]": "兼容 Array Networks SSL VPN",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_openconnect_arrayui",

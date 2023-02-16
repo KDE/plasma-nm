@@ -92,7 +92,7 @@ Item {
         plasmoid.action("planeModeSwitch").priority = 0
         plasmoid.action("planeModeSwitch").checkable = true
         plasmoid.action("planeModeSwitch").checked = Qt.binding(() => PlasmaNM.Configuration.airplaneModeEnabled)
-        plasmoid.action("planeModeSwitch").visible = Qt.binding(() => Plasmoid.compactRepresentationItem.airplaneModeAvailable)
+        plasmoid.action("planeModeSwitch").visible = Qt.binding(() => (Plasmoid.compactRepresentationItem && Plasmoid.compactRepresentationItem.airplaneModeAvailable) )
 
         plasmoid.setAction("showPortal", i18n("Open Network Login Page…"), "internet-services")
         plasmoid.action("showPortal").visible = Qt.binding(() => connectionIconProvider.needsPortal)

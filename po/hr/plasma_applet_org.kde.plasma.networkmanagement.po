@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-23 00:58+0000\n"
+"POT-Creation-Date: 2023-02-18 01:01+0000\n"
 "PO-Revision-Date: 2011-06-27 14:57+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -78,53 +78,53 @@ msgstr "Spojen"
 msgid "Copy"
 msgstr ""
 
-#: contents/ui/main.qml:23
+#: contents/ui/main.qml:24
 #, fuzzy, kde-format
 #| msgid "Net&work:"
 msgid "Networks"
 msgstr "Mr&eža:"
 
-#: contents/ui/main.qml:32
+#: contents/ui/main.qml:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:34
+#: contents/ui/main.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:87
 #, fuzzy, kde-format
 #| msgid "User name on this network"
 msgid "Enable Mobile Network"
 msgstr "Korisničko ime na ovoj mreži"
 
-#: contents/ui/main.qml:91
+#: contents/ui/main.qml:95
 #, fuzzy, kde-format
 #| msgid "Wireless"
 msgid "Enable Airplane Mode"
 msgstr "Bežićna"
 
-#: contents/ui/main.qml:97
+#: contents/ui/main.qml:101
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:106
 #, fuzzy, kde-format
 #| msgid "Configure notifications..."
 msgid "&Configure Network Connections…"
 msgstr "Konfiguriraj obavijesti…"
 
-#: contents/ui/main.qml:139
+#: contents/ui/main.qml:143
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

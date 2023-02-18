@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-23 00:58+0000\n"
+"POT-Creation-Date: 2023-02-18 01:01+0000\n"
 "PO-Revision-Date: 2023-02-15 11:05\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -71,49 +71,49 @@ msgstr "已连接"
 msgid "Copy"
 msgstr "复制"
 
-#: contents/ui/main.qml:23
+#: contents/ui/main.qml:24
 #, kde-format
 msgid "Networks"
 msgstr "网络"
 
-#: contents/ui/main.qml:32
+#: contents/ui/main.qml:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "中键单击以关闭飞行模式"
 
-#: contents/ui/main.qml:34
+#: contents/ui/main.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "中键单击以启用飞行模式"
 
-#: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "启用 Wi-Fi"
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:87
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "启用移动网络"
 
-#: contents/ui/main.qml:91
+#: contents/ui/main.qml:95
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "启用飞行模式"
 
-#: contents/ui/main.qml:97
+#: contents/ui/main.qml:101
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "打开网络登录页面…"
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:106
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "配置网络连接(&C)…"
 
-#: contents/ui/main.qml:139
+#: contents/ui/main.qml:143
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

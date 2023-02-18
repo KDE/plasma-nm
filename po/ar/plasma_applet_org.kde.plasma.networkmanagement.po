@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-23 00:58+0000\n"
+"POT-Creation-Date: 2023-02-18 01:01+0000\n"
 "PO-Revision-Date: 2023-01-25 20:42+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -74,49 +74,49 @@ msgstr "متّصل"
 msgid "Copy"
 msgstr "انسخ"
 
-#: contents/ui/main.qml:23
+#: contents/ui/main.qml:24
 #, kde-format
 msgid "Networks"
 msgstr "الشّبكات"
 
-#: contents/ui/main.qml:32
+#: contents/ui/main.qml:33
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "انقر بالزر الأوسط تعطيل نمط الطيران"
 
-#: contents/ui/main.qml:34
+#: contents/ui/main.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "انقر بالزر الأوسط تفعيل نمط الطيران"
 
-#: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "مكّن واي فاي"
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:87
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "مكن شبكة هاتف"
 
-#: contents/ui/main.qml:91
+#: contents/ui/main.qml:95
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "مكن وضع الطيران"
 
-#: contents/ui/main.qml:97
+#: contents/ui/main.qml:101
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "افتح صفحة ولوج الشبكة..."
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:106
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "ا&ضبط اتّصالات الشّبكة..."
 
-#: contents/ui/main.qml:139
+#: contents/ui/main.qml:143
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"

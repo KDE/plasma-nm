@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-16 04:26+0000\n"
+"POT-Creation-Date: 2023-02-18 02:52+0000\n"
 "PO-Revision-Date: 2020-08-27 11:36+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -63,53 +63,53 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Дар ҳоли пайвастшавӣ"
 
-#: declarative/networkstatus.cpp:171 editor/uiutils.cpp:220
+#: declarative/networkstatus.cpp:172 editor/uiutils.cpp:220
 #, kde-format
 msgid "VPN"
 msgstr "VPN"
 
-#: declarative/networkstatus.cpp:193 models/creatableconnectionsmodel.cpp:254
+#: declarative/networkstatus.cpp:194 models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256
 #, kde-format
 msgid "WireGuard"
 msgstr "Муҳофизати симӣ"
 
-#: declarative/networkstatus.cpp:199
+#: declarative/networkstatus.cpp:200
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Дар ҳоли пайвастшавӣ ба %1"
 
-#: declarative/networkstatus.cpp:203
+#: declarative/networkstatus.cpp:204
 #, kde-format
 msgid "Connected to %1 (no connectivity)"
 msgstr "Ба %1 пайваст шуд (пайвастагӣ нест)"
 
-#: declarative/networkstatus.cpp:206
+#: declarative/networkstatus.cpp:207
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
 msgstr "Ба %1 пайваст шуд (пайвастагии маҳдуд)"
 
-#: declarative/networkstatus.cpp:209
+#: declarative/networkstatus.cpp:210
 #, kde-format
 msgid "Connected to %1 (log in required)"
 msgstr "Ба %1 пайваст шуд (воридшавӣ лозим аст)"
 
-#: declarative/networkstatus.cpp:212
+#: declarative/networkstatus.cpp:213
 #, kde-format
 msgid "Connected to %1"
 msgstr "Ба %1 пайваст шуд"
 
-#: declarative/networkstatus.cpp:237
+#: declarative/networkstatus.cpp:238
 #, kde-format
 msgid "NetworkManager not running"
 msgstr "Мудири шабака дар ҳоли иҷро намебошад"
 
-#: declarative/networkstatus.cpp:242
+#: declarative/networkstatus.cpp:243
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Мудири шабакаи 0.9.8 лозим аст, гунаи %1 ёфт шуд."
 
-#: declarative/networkstatus.cpp:245
+#: declarative/networkstatus.cpp:246
 #, kde-format
 msgctxt "global connection state"
 msgid "Unknown"

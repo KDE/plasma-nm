@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-16 04:26+0000\n"
+"POT-Creation-Date: 2023-02-18 02:52+0000\n"
 "PO-Revision-Date: 2015-02-04 14:10+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -66,56 +66,56 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Spajanje"
 
-#: declarative/networkstatus.cpp:171 editor/uiutils.cpp:220
+#: declarative/networkstatus.cpp:172 editor/uiutils.cpp:220
 #, kde-format
 msgid "VPN"
 msgstr "VPN"
 
-#: declarative/networkstatus.cpp:193 models/creatableconnectionsmodel.cpp:254
+#: declarative/networkstatus.cpp:194 models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256
 #, fuzzy, kde-format
 #| msgid "Wired"
 msgid "WireGuard"
 msgstr "Žičana"
 
-#: declarative/networkstatus.cpp:199
+#: declarative/networkstatus.cpp:200
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Spajanje sa %1"
 
-#: declarative/networkstatus.cpp:203
+#: declarative/networkstatus.cpp:204
 #, fuzzy, kde-format
 #| msgid "Connected to %1"
 msgid "Connected to %1 (no connectivity)"
 msgstr "Spojen sa %1"
 
-#: declarative/networkstatus.cpp:206
+#: declarative/networkstatus.cpp:207
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
 msgstr ""
 
-#: declarative/networkstatus.cpp:209
+#: declarative/networkstatus.cpp:210
 #, fuzzy, kde-format
 #| msgid "Connected to %1"
 msgid "Connected to %1 (log in required)"
 msgstr "Spojen sa %1"
 
-#: declarative/networkstatus.cpp:212
+#: declarative/networkstatus.cpp:213
 #, kde-format
 msgid "Connected to %1"
 msgstr "Spojen sa %1"
 
-#: declarative/networkstatus.cpp:237
+#: declarative/networkstatus.cpp:238
 #, kde-format
 msgid "NetworkManager not running"
 msgstr "Mrežni Menadžer ne radi"
 
-#: declarative/networkstatus.cpp:242
+#: declarative/networkstatus.cpp:243
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Mrežni Menadžer 0.9.8 potreban, pronađen %1."
 
-#: declarative/networkstatus.cpp:245
+#: declarative/networkstatus.cpp:246
 #, kde-format
 msgctxt "global connection state"
 msgid "Unknown"

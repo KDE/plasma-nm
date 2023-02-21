@@ -1,21 +1,22 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 # Wantoyo <wantoyek@gmail.com>, 2018, 2019, 2020, 2021, 2022.
+# Linerly <linerly@protonmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-16 04:26+0000\n"
-"PO-Revision-Date: 2022-08-26 23:44+0700\n"
-"Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
-"Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
+"PO-Revision-Date: 2023-02-18 14:52+0700\n"
+"Last-Translator: Linerly <linerly@protonmail.com>\n"
+"Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
 "Language: id\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -30,13 +31,12 @@ msgstr "Autentikasi network"
 #: connectivitymonitor.cpp:68
 #, kde-format
 msgid "Log in"
-msgstr "Login"
+msgstr "Masuk"
 
 #: connectivitymonitor.cpp:71
-#, fuzzy, kde-format
-#| msgid "You need to log in to this network"
+#, kde-format
 msgid "You need to log into this network"
-msgstr "Kamu perlu login ke network ini"
+msgstr "Anda harus masuk ke jaringan ini"
 
 #: connectivitymonitor.cpp:91
 #, kde-format
@@ -519,13 +519,13 @@ msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
 msgstr ""
-"Sebuah timeout terjadi selagi memulai layanan yang menyediakan koneksi VPN "
+"Kehabisan waktu terjadi selagi memulai layanan yang menyediakan koneksi VPN "
 "'%1'."
 
 #: notification.cpp:455
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "Pemulaian layanan yang menyediakan koneksi VPN '%1', gagal."
+msgstr "Pemulaian layanan yang menyediakan koneksi VPN '%1' gagal."
 
 #: notification.cpp:458
 #, kde-format
@@ -550,7 +550,7 @@ msgstr "Tidak ada Koneksi Network"
 #: notification.cpp:551
 #, kde-format
 msgid "You are no longer connected to a network."
-msgstr "Kamu tidak lagi terkoneksi ke sebuah network."
+msgstr "Anda tidak lagi terhubung ke sebuah jaringan."
 
 #: passworddialog.cpp:54
 #, kde-format
@@ -560,7 +560,7 @@ msgstr "Autentikasi %1"
 #: passworddialog.cpp:98
 #, kde-format
 msgid "Provide the password for the wireless network '%1':"
-msgstr "Sediakan sandi untuk jaringan wireless '%1':"
+msgstr "Sediakan sandi untuk jaringan nirkabel '%1':"
 
 #: passworddialog.cpp:100
 #, kde-format
@@ -575,12 +575,12 @@ msgstr "Dialog sandi %1"
 #: passworddialog.cpp:126
 #, kde-format
 msgid "Provide the secrets for the VPN connection '%1':"
-msgstr "Sediakan secrets untuk koneksi VPN '%1':"
+msgstr "Sediakan rahasia untuk koneksi VPN '%1':"
 
 #: passworddialog.cpp:127
 #, kde-format
 msgid "VPN secrets (%1) dialog"
-msgstr "Dialog kerahasiaan VPN (%1)"
+msgstr "Dialog rahasia VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
@@ -592,7 +592,7 @@ msgstr "Dialog sandi"
 #: passworddialog.ui:92
 #, kde-format
 msgid "Password:"
-msgstr "Sandi:"
+msgstr "Kata sandi:"
 
 #: pindialog.cpp:66
 #, kde-format
@@ -761,12 +761,12 @@ msgstr "Kode PUK:"
 #: pinwidget.ui:173
 #, kde-format
 msgid "Re-enter PIN code:"
-msgstr "Masukkan-ulang kode PIN:"
+msgstr "Masukkan ulang kode PIN:"
 
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
-msgstr "Autentikasi terhadap %1, gagal. Apakah password salah?"
+msgstr "Autentikasi terhadap %1, gagal. Apakah kata sandi salah?"
 
 #~ msgid "VPN connection '%1' failed."
 #~ msgstr "Koneksi VPN '%1' dinonaktifkan."

@@ -9,6 +9,6 @@ add_subdirectory(sstp)
 add_subdirectory(strongswan)
 add_subdirectory(vpnc)
 
-if(TARGET PkgConfig::OPENCONNECT)
+if(BUILD_OPENCONNECT)
     add_subdirectory(openconnect)
 endif()

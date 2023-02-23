@@ -17,6 +17,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(ECM ${KF6_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
+option(BUILD_OPENCONNECT "Build OpenConnect VPN plugin" ON)
+
 include(KDEInstallDirs)
 include(KDECMakeSettings)
 include(KDECompilerSettings NO_POLICY_SCOPE)
@@ -34,10 +36,21 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Network
     Quick
     QuickWidgets
-    WebEngineCore
-    WebEngineWidgets
     Widgets
 )
+
+find_package(PkgConfig REQUIRED)
+
+if(BUILD_OPENCONNECT)
+    pkg_check_modules(OPENCONNECT IMPORTED_TARGET openconnect>=3.99)
+    if(NOT TARGET PkgConfig::OPENCONNECT)
+        set(BUILD_OPENCONNECT OFF)
+    endif()
+endif()
+
+if(BUILD_OPENCONNECT)
+    find_package(Qt${QT_MAJOR_VERSION}WebEngineWidgets ${QT_MIN_VERSION} CONFIG REQUIRED)
+endif()
 
 find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
     ConfigWidgets
@@ -80,8 +93,6 @@ set_package_properties(KF6Prison PROPERTIES DESCRIPTION "Prison library"
                        PURPOSE "Needed to create mobile barcodes for WiFi networks"
                       )
 
-find_package(PkgConfig REQUIRED)
-pkg_check_modules(OPENCONNECT IMPORTED_TARGET openconnect>=3.99)
 pkg_check_modules(NETWORKMANAGER IMPORTED_TARGET libnm>1.4.0 REQUIRED)
 pkg_check_modules(MOBILEBROADBANDPROVIDERINFO mobile-broadband-provider-info)
 pkg_get_variable(BROADBANDPROVIDER_DATABASE mobile-broadband-provider-info database)

@@ -1,13 +1,13 @@
 # Translation of plasma_applet_org.kde.plasma.networkmanagement to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2018, 2019, 2020, 2021, 2022.
+# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2018, 2019, 2020, 2021, 2022, 2023.
 # Øystein Steffensen-Alværvik <oysteins.omsetting@protonmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 01:01+0000\n"
-"PO-Revision-Date: 2022-07-26 21:02+0200\n"
+"PO-Revision-Date: 2023-02-23 18:32+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.04.3\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -57,6 +57,7 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
+"Gjeldande nedlastingsfart er %1 KiB/s og gjeldande opplastingsfart %2 KiB/s"
 
 #: contents/ui/ConnectionItem.qml:286
 #, kde-format
@@ -82,13 +83,13 @@ msgstr "Nettverk"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Midtklikk for å slå av flymodus"
 
 #: contents/ui/main.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "Midtklikk for å slå på flymodus"
 
 #: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -98,12 +99,12 @@ msgstr "Slå på Wi-Fi"
 #: contents/ui/main.qml:87
 #, kde-format
 msgid "Enable Mobile Network"
-msgstr ""
+msgstr "Slå på mobilt nettverk"
 
 #: contents/ui/main.qml:95
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr ""
+msgstr "Slå på flymodus"
 
 #: contents/ui/main.qml:101
 #, kde-format

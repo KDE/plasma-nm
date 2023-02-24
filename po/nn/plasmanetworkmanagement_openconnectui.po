@@ -1,12 +1,12 @@
 # Translation of plasmanetworkmanagement_openconnectui to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2017, 2019, 2020, 2021, 2022.
+# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2017, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-22 00:59+0000\n"
-"PO-Revision-Date: 2022-06-18 14:51+0200\n"
+"PO-Revision-Date: 2023-02-23 18:32+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: openconnectauth.cpp:316
 #, kde-format
@@ -209,19 +209,19 @@ msgstr "Pulse Connect Secure"
 #: openconnectprop.ui:151
 #, kde-format
 msgid "F5 BIG-IP SSL VPN"
-msgstr ""
+msgstr "F5 BIG-IP SSL VPN"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:156
 #, kde-format
 msgid "Fortinet SSL VPN"
-msgstr ""
+msgstr "Fortinet SSL VPN"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:161
 #, kde-format
 msgid "Array SSL VPN"
-msgstr ""
+msgstr "Array SSL VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnectprop.ui:169

@@ -1,12 +1,12 @@
 # Translation of plasmanetworkmanagement-libs to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 01:01+0000\n"
-"PO-Revision-Date: 2022-06-18 14:51+0200\n"
+"PO-Revision-Date: 2023-02-23 18:36+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -1656,7 +1656,7 @@ msgstr "WPA3 personleg"
 #: editor/settings/ui/wifisecurity.ui:68
 #, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr ""
+msgstr "WPA3 Enterprise 192 bits"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -2570,7 +2570,7 @@ msgstr "Alle"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:486
 #, kde-format
@@ -2834,7 +2834,7 @@ msgstr "WPA3-SAE"
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:614
 #, kde-format
@@ -2923,12 +2923,12 @@ msgstr "Fann ikkje VPN-programtillegg for typen %1."
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "Støtte for importering av denne typen VPN er ikkje lagd inn enno"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "Ikkje lagd inn"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3322,22 +3322,22 @@ msgstr "&Fjern"
 #: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "Plasma manglar støtte for «%1»-VPN-tilkoplingar."
 
 #: handler.cpp:113
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Meld frå om feil"
 
 #: handler.cpp:136
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "NetworkManager manglar støtte for «%1»-VPN-tilkoplingar."
 
 #: handler.cpp:138
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Installer"
 
 #: handler.cpp:352 handler.cpp:845
 #, kde-format
@@ -3491,115 +3491,115 @@ msgstr "Importer ei lagra oppsettfil"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr ""
+msgstr "Tilkoplingstypen er ukjend"
 
 #: models/networkmodelitem.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr ""
+msgstr "Tilkoplingstypen er ADSL"
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr ""
+msgstr "Tilkoplingstypen er Bluetooth"
 
 #: models/networkmodelitem.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr ""
+msgstr "Tilkoplingstypen er Bridge"
 
 #: models/networkmodelitem.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr ""
+msgstr "Tilkoplingstypen er CDMA"
 
 #: models/networkmodelitem.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr ""
+msgstr "Tilkoplingstypen er GSM"
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr ""
+msgstr "Tilkoplingstypen er InfiniBand"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
-msgstr ""
+msgstr "Tilkoplingstypen er OLPC-mesh"
 
 #: models/networkmodelitem.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr ""
+msgstr "Tilkoplingstypen er PPOPE"
 
 #: models/networkmodelitem.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr ""
+msgstr "Tilkoplingstypen er VLAN"
 
 #: models/networkmodelitem.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr ""
+msgstr "Tilkoplingstypen er VPN"
 
 #: models/networkmodelitem.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr ""
+msgstr "Tilkoplingstypen er Wimax"
 
 #: models/networkmodelitem.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr ""
+msgstr "Tilkoplingstypen er kabla"
 
 #: models/networkmodelitem.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr ""
+msgstr "Tilkoplingstypen er trådlaus"
 
 #: models/networkmodelitem.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr ""
+msgstr "Tilkoplingstypen er Team"
 
 #: models/networkmodelitem.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr ""
+msgstr "Tilkoplingstypen er generisk"
 
 #: models/networkmodelitem.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr ""
+msgstr "Tilkoplingstypen er tunell"
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr ""
+msgstr "Tilkoplingstypen er IP-tunell"
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
-msgstr ""
+msgstr "Tilkoplingstypen er WireGuard"
 
 #: models/networkmodelitem.cpp:585
 #, kde-format

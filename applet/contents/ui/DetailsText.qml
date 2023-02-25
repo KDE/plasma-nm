@@ -12,41 +12,14 @@ import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.components 2.0 as PlasmaComponents // for ContextMenu+MenuItem
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 
-MouseArea {
+Item {
     height: detailsGrid.implicitHeight
 
     property var details: []
-
-    acceptedButtons: Qt.RightButton
-
-    onPressed: {
-        const item = detailsGrid.childAt(mouse.x, mouse.y);
-        if (!item || !item.isContent) {
-            return;
-        }
-        contextMenu.show(this, item.text, mouse.x, mouse.y);
-    }
+    property int hoveredIndex: -1
 
     KQuickControlsAddons.Clipboard {
         id: clipboard
-    }
-
-    PlasmaComponents.ContextMenu {
-        id: contextMenu
-        property string text
-
-        function show(item, text, x, y) {
-            contextMenu.text = text
-            visualParent = item
-            open(x, y)
-        }
-
-        PlasmaComponents.MenuItem {
-            text: i18n("Copy")
-            icon: "edit-copy"
-            enabled: contextMenu.text !== ""
-            onClicked: clipboard.content = contextMenu.text
-        }
     }
 
     GridLayout {
@@ -61,6 +34,7 @@ MouseArea {
             model: details.length
 
             PlasmaComponents3.Label {
+                id: label
                 Layout.fillWidth: true
 
                 readonly property bool isContent: index % 2
@@ -70,7 +44,18 @@ MouseArea {
                 horizontalAlignment: isContent ? Text.AlignLeft : Text.AlignRight
                 text: isContent ? details[index] : `${details[index]}:`
                 textFormat: Text.PlainText
-                opacity: isContent ? 1 : 0.6
+                opacity: isContent && (index % 2 != 0) ? (hoveredIndex == index ? 1 : 0.6) : 1.0
+
+                MouseArea {
+                    anchors.fill: parent
+                    hoverEnabled: true
+                    onEntered: hoveredIndex = index
+                    onExited: hoveredIndex = -1
+                    acceptedButtons: Qt.LeftButton | Qt.RightButton
+                    onPressed: {
+                        clipboard.content = details[index];
+                    }
+                }
             }
         }
     }

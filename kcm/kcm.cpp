@@ -17,6 +17,7 @@
 // KDE
 #include <KLocalizedContext>
 #include <KMessageBox>
+#include <KMessageWidget>
 #include <KPluginFactory>
 #include <KPluginMetaData>
 #include <KSharedConfig>
@@ -113,6 +114,12 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     connect(rootItem, SIGNAL(requestToChangeConnection(QString, QString)), this, SLOT(onRequestToChangeConnection(QString, QString)));
 
     auto l = new QVBoxLayout(this);
+
+    m_errorWidget = new KMessageWidget(this);
+    m_errorWidget->setVisible(false);
+    m_errorWidget->setMessageType(KMessageWidget::Error);
+    l->addWidget(m_errorWidget);
+
     l->addWidget(mainWidget);
 
     setButtons(Button::Apply);
@@ -276,7 +283,15 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
     auto type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(connectionType);
 
     if (type == NetworkManager::ConnectionSettings::Vpn && vpnType == "imported") {
-        importVpn();
+        ImportResult result = importVpn();
+
+        if (!result.success) {
+            m_errorWidget->setText(i18n("Failed to import VPN connection: %1", result.errorMessage));
+            m_errorWidget->setVisible(true);
+        } else {
+            m_errorWidget->setVisible(false);
+        }
+
     } else if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
         QPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
         wizard->setAttribute(Qt::WA_DeleteOnClose);
@@ -514,7 +529,17 @@ void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::Connecti
     kcmChanged(false);
 }
 
-void KCMNetworkmanagement::importVpn()
+KCMNetworkmanagement::ImportResult KCMNetworkmanagement::ImportResult::pass()
+{
+    return {true, QString()};
+}
+
+KCMNetworkmanagement::ImportResult KCMNetworkmanagement::ImportResult::fail(const QString &message)
+{
+    return {false, message};
+}
+
+KCMNetworkmanagement::ImportResult KCMNetworkmanagement::importVpn()
 {
     // get the list of supported extensions
     const QVector<KPluginMetaData> services = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
@@ -531,7 +556,7 @@ void KCMNetworkmanagement::importVpn()
         QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), i18n("VPN connections (%1)", extensions.join(QLatin1Char(' '))));
 
     if (filename.isEmpty()) {
-        return;
+        return ImportResult::fail(i18n("No file was provided"));
     }
 
     QFileInfo fi(filename);
@@ -551,7 +576,7 @@ void KCMNetworkmanagement::importVpn()
         // qCDebug(PLASMA_NM_KCM_LOG) << "Adding imported connection under id:" << conId;
 
         if (!connection.isEmpty()) {
-            return; // get out if the import produced at least some output
+            return ImportResult::pass(); // get out if the import produced at least some output
         }
     }
     for (const KPluginMetaData &service : services) {
@@ -570,15 +595,17 @@ void KCMNetworkmanagement::importVpn()
 
             if (!result) {
                 qWarning(PLASMA_NM_KCM_LOG) << "Failed to import" << filename << result.errorMessage();
-                break;
+                return ImportResult::fail(result.errorMessage());
             }
 
             m_handler->addConnection(result.connection());
 
             // qCDebug(PLASMA_NM_KCM_LOG) << "Adding imported connection under id:" << conId;
-            break;
+            return ImportResult::pass();
         }
     }
+
+    return ImportResult::fail(i18n("Unknown VPN type"));
 }
 
 void KCMNetworkmanagement::resetSelection()

@@ -13,6 +13,7 @@
 #include <KCModule>
 #include <ui_kcm.h>
 
+class KMessageWidget;
 
 class KCMNetworkmanagement : public KCModule
 {
@@ -34,8 +35,16 @@ private Q_SLOTS:
     void onRequestToChangeConnection(const QString &connectionName, const QString &connectionPath);
 
 private:
+    struct ImportResult {
+        bool success;
+        QString errorMessage;
+
+        static ImportResult pass();
+        static ImportResult fail(const QString &message);
+    };
+
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
-    void importVpn();
+    [[nodiscard]] KCMNetworkmanagement::ImportResult importVpn();
     void kcmChanged(bool kcmChanged);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void resetSelection();
@@ -45,6 +54,7 @@ private:
     Handler *const m_handler;
     ConnectionEditorTabWidget *m_tabWidget = nullptr;
     QTimer *m_timer = nullptr;
+    KMessageWidget *m_errorWidget;
     Ui::KCMForm *const m_ui;
 };
 

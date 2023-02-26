@@ -36,6 +36,7 @@ private Q_SLOTS:
 private:
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void importVpn();
+    void importVpnFile(const QString &fileName);
     void kcmChanged(bool kcmChanged);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void resetSelection();

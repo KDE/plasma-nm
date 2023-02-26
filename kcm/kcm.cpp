@@ -119,15 +119,20 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
 
     NetworkManager::Connection::Ptr selectedConnection;
 
-    // Look in the arguments for a connection ID to preselect
+    // Look in the arguments for a connection ID to preselect or VPN file to import
     static const QLatin1String uuidArgumentMarker{"Uuid="};
-    for (QVariant arg : args) {
-        if (arg.canConvert(QMetaType::QString)) {
-            QString uuid = arg.toString();
-            if (uuid.startsWith(uuidArgumentMarker)) {
-                uuid = uuid.replace(uuidArgumentMarker, QString());
+    static const QLatin1String vpnArgumentMarker{"VPN="};
+    for (QVariant argVariant : args) {
+        if (argVariant.canConvert(QMetaType::QString)) {
+            QString arg = argVariant.toString();
+            if (arg.startsWith(uuidArgumentMarker)) {
+                const QString uuid = arg.replace(uuidArgumentMarker, QString());
                 selectedConnection = NetworkManager::findConnectionByUuid(uuid);
                 qDebug(PLASMA_NM_KCM_LOG) << "Selecting user connection:" << uuid;
+                break;
+            } else if (arg.startsWith(vpnArgumentMarker)) {
+                const QString vpnFilePath = arg.replace(vpnArgumentMarker, QString());
+                importVpnFile(vpnFilePath);
                 break;
             }
         }
@@ -534,6 +539,11 @@ void KCMNetworkmanagement::importVpn()
         return;
     }
 
+    importVpnFile(filename);
+}
+
+void KCMNetworkmanagement::importVpnFile(const QString &filename)
+{
     QFileInfo fi(filename);
     const QString ext = QStringLiteral("*.") % fi.suffix();
     qCDebug(PLASMA_NM_KCM_LOG) << "Importing VPN connection " << filename << "extension:" << ext;
@@ -554,6 +564,8 @@ void KCMNetworkmanagement::importVpn()
             return; // get out if the import produced at least some output
         }
     }
+
+    const QVector<KPluginMetaData> services = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
     for (const KPluginMetaData &service : services) {
         const auto result = KPluginFactory::instantiatePlugin<VpnUiPlugin>(service);
 

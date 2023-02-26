@@ -47,16 +47,19 @@ private:
 
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     [[nodiscard]] KCMNetworkmanagement::ImportResult importVpn();
+    [[nodiscard]] KCMNetworkmanagement::ImportResult importVpnFile(const QString &fileName);
     void kcmChanged(bool kcmChanged);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void resetSelection();
+    QString vpnFileFromArgs(const QVariantList &args) const;
+    void promptImportVpn(const QString &vpnFile);
 
     QString m_currentConnectionPath;
     QString m_createdConnectionUuid;
     Handler *const m_handler;
     ConnectionEditorTabWidget *m_tabWidget = nullptr;
     QTimer *m_timer = nullptr;
-    KMessageWidget *m_errorWidget;
+    KMessageWidget *m_importFeedbackWidget;
     QHBoxLayout *m_layout = nullptr;
     QQuickWidget *m_connectionView = nullptr;
 };

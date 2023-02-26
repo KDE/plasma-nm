@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=VPN Importer
+NoDisplay=true
+Exec=systemsettings kcm_networkmanagement --args VPN=%f
+Icon=network-vpn
+MimeType=application/x-openvpn-profile;application/x-cisco-vpn-settings
+X-KDE-AliasFor=systemsettings

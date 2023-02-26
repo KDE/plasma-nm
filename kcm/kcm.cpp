@@ -120,6 +120,21 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
 
     setButtons(Button::Apply);
 
+    connect(this, &KCMNetworkmanagement::activationRequested, this, [this](const QVariantList &args) {
+        const QString vpnFile = vpnFileFromArgs(args);
+        if (!vpnFile.isEmpty()) {
+            promptImportVpn(vpnFile);
+        }
+    });
+
+    const QString vpnFile = vpnFileFromArgs(args);
+    if (!vpnFile.isEmpty()) {
+        // delay showing the prompt until the window is shown
+        QTimer::singleShot(0, this, [this, vpnFile] {
+            promptImportVpn(vpnFile);
+        });
+    }
+
     NetworkManager::Connection::Ptr selectedConnection;
 
     // Look in the arguments for a connection ID to preselect
@@ -216,6 +231,41 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
 KCMNetworkmanagement::~KCMNetworkmanagement()
 {
     delete m_handler;
+}
+
+QString KCMNetworkmanagement::vpnFileFromArgs(const QVariantList &args) const
+{
+    static const QLatin1String vpnArgumentMarker{"VPN="};
+    for (QVariant argVariant : args) {
+        if (argVariant.canConvert(QMetaType::QString)) {
+            QString arg = argVariant.toString();
+            if (arg.startsWith(vpnArgumentMarker)) {
+                return arg.replace(vpnArgumentMarker, QString());
+            }
+        }
+    }
+
+    return QString();
+}
+
+void KCMNetworkmanagement::promptImportVpn(const QString &vpnFile)
+{
+    int result = KMessageBox::questionTwoActions(widget(),
+                                                 i18n("Import the VPN configuration from \"%1\"?", vpnFile),
+                                                 "Import dis",
+                                                 KGuiItem(i18n("Import"), "document-import"),
+                                                 KStandardGuiItem::cancel());
+
+    if (result == KMessageBox::PrimaryAction) {
+        ImportResult result = importVpnFile(vpnFile);
+
+        if (!result.success) {
+            m_errorWidget->setText(i18n("Failed to import VPN connection: %1", result.errorMessage));
+            m_errorWidget->setVisible(true);
+        } else {
+            m_errorWidget->setVisible(false);
+        }
+    }
 }
 
 void KCMNetworkmanagement::defaults()
@@ -547,6 +597,11 @@ KCMNetworkmanagement::ImportResult KCMNetworkmanagement::importVpn()
         return ImportResult::fail(i18n("No file was provided"));
     }
 
+    return importVpnFile(filename);
+}
+
+KCMNetworkmanagement::ImportResult KCMNetworkmanagement::importVpnFile(const QString &filename)
+{
     QFileInfo fi(filename);
     const QString ext = QStringLiteral("*.") % fi.suffix();
     qCDebug(PLASMA_NM_KCM_LOG) << "Importing VPN connection " << filename << "extension:" << ext;
@@ -579,6 +634,8 @@ KCMNetworkmanagement::ImportResult KCMNetworkmanagement::importVpn()
         }
 #endif
     }
+
+    const QVector<KPluginMetaData> services = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
     for (const KPluginMetaData &service : services) {
         const auto result = KPluginFactory::instantiatePlugin<VpnUiPlugin>(service);
 

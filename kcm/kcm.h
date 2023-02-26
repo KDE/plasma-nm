@@ -47,9 +47,12 @@ private:
 
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     [[nodiscard]] KCMNetworkmanagement::ImportResult importVpn();
+    [[nodiscard]] KCMNetworkmanagement::ImportResult importVpnFile(const QString &fileName);
     void kcmChanged(bool kcmChanged);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void resetSelection();
+    QString vpnFileFromArgs(const QVariantList &args) const;
+    void promptImportVpn(const QString &vpnFile);
 
     QString m_currentConnectionPath;
     QString m_createdConnectionUuid;

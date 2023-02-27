@@ -1,11 +1,13 @@
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019.
+# Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
+# Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-02 01:06+0000\n"
-"PO-Revision-Date: 2019-10-20 10:19+0900\n"
-"Last-Translator: Tomohiro Hyakutake <tomhioo@outlook.jp>\n"
+"PO-Revision-Date: 2023-02-25 14:51-0800\n"
+"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -14,12 +16,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 19.08.2\n"
+"X-Generator: Lokalize 22.12.1\n"
 
 #: kcm.cpp:344
 #, kde-format
 msgid "my_shared_connection"
-msgstr ""
+msgstr "my_shared_connection"
 
 #: kcm.cpp:416
 #, kde-format
@@ -43,10 +45,9 @@ msgid "Import VPN Connection"
 msgstr "VPN 接続をインポート"
 
 #: kcm.cpp:531
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
-msgstr "VPN 接続をエクスポート"
+msgstr "VPN 接続 (%1)"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
@@ -63,42 +64,40 @@ msgstr "キャンセル"
 
 #: qml/AddConnectionDialog.qml:191 qml/main.qml:193
 msgid "Configuration"
-msgstr ""
+msgstr "設定"
 
 #: qml/ConfigurationDialog.qml:16
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr ""
+msgstr "設定"
 
 #: qml/ConfigurationDialog.qml:37
 msgid "General"
-msgstr ""
+msgstr "全般"
 
 #: qml/ConfigurationDialog.qml:42
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "モデム検知時に PIN を要求する"
 
 #: qml/ConfigurationDialog.qml:49
-#, fuzzy
-#| msgid "Export selected connection"
 msgid "Show virtual connections"
-msgstr "選択された接続をエクスポート"
+msgstr "仮想接続を表示"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Hotspot"
-msgstr ""
+msgstr "ホットスポット"
 
 #: qml/ConfigurationDialog.qml:63
 msgid "Hotspot name:"
-msgstr ""
+msgstr "ホットスポットの名前:"
 
 #: qml/ConfigurationDialog.qml:73
 msgid "Hotspot password:"
-msgstr ""
+msgstr "ホットスポットのパスワード:"
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

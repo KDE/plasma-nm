@@ -1,13 +1,14 @@
 # Fuminobu TAKEYAMA <ftake@geeko.jp>, 2015, 2019.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020, 2021.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2021.
+# Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 01:01+0000\n"
-"PO-Revision-Date: 2021-09-25 16:16-0700\n"
-"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
+"PO-Revision-Date: 2023-02-22 18:26+0900\n"
+"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 22.12.2\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -29,8 +30,7 @@ msgid "Disconnect"
 msgstr "切断"
 
 #: contents/ui/ConnectionItem.qml:85
-#, fuzzy, kde-format
-#| msgid "Show network's QR code"
+#, kde-format
 msgid "Show Network's QR Code"
 msgstr "ネットワークの QR コードを表示"
 
@@ -56,6 +56,8 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
+"現在のダウンロード速度は %1 KiB/秒です。現在のアップロード速度は %2 KiB/秒で"
+"す。"
 
 #: contents/ui/ConnectionItem.qml:286
 #, kde-format
@@ -81,13 +83,13 @@ msgstr "ネットワーク"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "中クリックで機内モードをオフ"
 
 #: contents/ui/main.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "中クリックで機内モードをオン"
 
 #: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -95,15 +97,14 @@ msgid "Enable Wi-Fi"
 msgstr "Wi-Fi を有効化"
 
 #: contents/ui/main.qml:87
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Network"
 msgstr "モバイルネットワークを有効化"
 
 #: contents/ui/main.qml:95
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr ""
+msgstr "機内モードを有効化"
 
 #: contents/ui/main.qml:101
 #, kde-format
@@ -111,8 +112,7 @@ msgid "Open Network Login Page…"
 msgstr "ネットワークのログインページを開く…"
 
 #: contents/ui/main.qml:106
-#, fuzzy, kde-format
-#| msgid "&Configure Network Connections..."
+#, kde-format
 msgid "&Configure Network Connections…"
 msgstr "ネットワーク接続を設定(&C)..."
 
@@ -120,7 +120,7 @@ msgstr "ネットワーク接続を設定(&C)..."
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
-msgstr ""
+msgstr "%1 の QR コード"
 
 #: contents/ui/PasswordField.qml:16
 #, kde-format
@@ -135,22 +135,22 @@ msgstr "機内モードが有効です"
 #: contents/ui/PopupDialog.qml:106
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
-msgstr ""
+msgstr "ワイヤレスネットワークとモバイルネットワークはオフです"
 
 #: contents/ui/PopupDialog.qml:108
 #, kde-format
 msgid "Wireless is deactivated"
-msgstr "ワイヤレスネットワークは無効です"
+msgstr "ワイヤレスネットワークはオフです"
 
 #: contents/ui/PopupDialog.qml:111
 #, kde-format
 msgid "Mobile network is deactivated"
-msgstr ""
+msgstr "モバイルネットワークはオフです"
 
 #: contents/ui/PopupDialog.qml:114
 #, kde-format
 msgid "No matches"
-msgstr ""
+msgstr "一致なし"
 
 #: contents/ui/PopupDialog.qml:116
 #, kde-format
@@ -208,15 +208,3 @@ msgstr "アップロード"
 #, kde-format
 msgid "Download"
 msgstr "ダウンロード"
-
-#, fuzzy
-#~| msgid "Connect"
-#~ msgctxt "@info:tooltip %1 is the name of a network connection"
-#~ msgid "Connect to %1"
-#~ msgstr "接続"
-
-#, fuzzy
-#~| msgid "Disconnect"
-#~ msgctxt "@info:tooltip %1 is the name of a network connection"
-#~ msgid "Disconnect from %1"
-#~ msgstr "切断"

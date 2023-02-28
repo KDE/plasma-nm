@@ -23,6 +23,7 @@
 
 #include "enums.h"
 #include "handler.h"
+#include "wirelessstatus.h"
 
 void QmlPlugins::registerTypes(const char *uri)
 {
@@ -36,6 +37,8 @@ void QmlPlugins::registerTypes(const char *uri)
     qmlRegisterUncreatableType<Enums>(uri, 0, 2, "Enums", "You cannot create Enums on yourself");
     // @uri org.kde.plasma.networkmanagement.NetworkStatus
     qmlRegisterType<NetworkStatus>(uri, 0, 2, "NetworkStatus");
+    // @uri org.kde.plasma.networkmanagement.WirelessStatus
+    qmlRegisterType<WirelessStatus>(uri, 0, 2, "WirelessStatus");
     // @uri org.kde.plasma.networkmanagement.Handler
     qmlRegisterType<Handler>(uri, 0, 2, "Handler");
     // @uri org.kde.plasma.networkmanagement.NetworkModel

@@ -6,7 +6,6 @@
 
 #include "wifisettings.h"
 
-#include <KAboutData>
 #include <KLocalizedString>
 #include <KPluginFactory>
 
@@ -26,12 +25,9 @@
 
 K_PLUGIN_CLASS_WITH_JSON(WifiSettings, "wifisettings.json")
 
-WifiSettings::WifiSettings(QObject *parent, const QVariantList &args)
-    : KQuickAddons::ConfigModule(parent, args)
+WifiSettings::WifiSettings(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
+    : KQuickAddons::ConfigModule(parent, metaData, args)
 {
-    KAboutData *about = new KAboutData("kcm_mobile_wifi", i18n("Wi-Fi networks"), "0.1", QString(), KAboutLicense::LGPL);
-    about->addAuthor(i18n("Martin Kacej"), QString(), "m.kacej@atlas.sk");
-    setAboutData(about);
 }
 
 WifiSettings::~WifiSettings()

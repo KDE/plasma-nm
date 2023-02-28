@@ -20,10 +20,10 @@ ki18n_wrap_ui(plasmanetworkmanagement_l2tpui l2tp.ui l2tpipsec.ui l2tpppp.ui)
 target_link_libraries(plasmanetworkmanagement_l2tpui
     plasmanm_internal
     plasmanm_editor
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::KIOWidgets
-    KF5::WidgetsAddons
+    KF6::CoreAddons
+    KF6::I18n
+    KF6::KIOWidgets
+    KF6::WidgetsAddons
 )
 
 install(TARGETS plasmanetworkmanagement_l2tpui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

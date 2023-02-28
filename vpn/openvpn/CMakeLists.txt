@@ -22,10 +22,10 @@ ki18n_wrap_ui(plasmanetworkmanagement_openvpnui openvpn.ui openvpnadvanced.ui)
 target_link_libraries(plasmanetworkmanagement_openvpnui
     plasmanm_internal
     plasmanm_editor
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::WidgetsAddons
-    KF5::KIOWidgets
+    KF6::CoreAddons
+    KF6::I18n
+    KF6::WidgetsAddons
+    KF6::KIOWidgets
 )
 
 install(TARGETS plasmanetworkmanagement_openvpnui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

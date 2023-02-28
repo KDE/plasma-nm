@@ -23,11 +23,11 @@ macro(add_openconnect_plugin name)
     target_link_libraries(plasmanetworkmanagement_openconnect_${name}
         plasmanm_internal
         plasmanm_editor
-        KF5::NetworkManagerQt
-        KF5::CoreAddons
-        KF5::I18n
-        KF5::KIOWidgets
-        KF5::WidgetsAddons
+        KF6::NetworkManagerQt
+        KF6::CoreAddons
+        KF6::I18n
+        KF6::KIOWidgets
+        KF6::WidgetsAddons
         Qt::WebEngineCore
         Qt::WebEngineWidgets
         Qt::Xml

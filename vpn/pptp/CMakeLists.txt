@@ -15,9 +15,9 @@ ki18n_wrap_ui(plasmanetworkmanagement_pptpui pptpprop.ui pptpadvanced.ui pptpaut
 target_link_libraries(plasmanetworkmanagement_pptpui
     plasmanm_internal
     plasmanm_editor
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::WidgetsAddons
+    KF6::CoreAddons
+    KF6::I18n
+    KF6::WidgetsAddons
 )
 
 install(TARGETS plasmanetworkmanagement_pptpui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

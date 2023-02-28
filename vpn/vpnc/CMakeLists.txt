@@ -18,11 +18,11 @@ ki18n_wrap_ui(plasmanetworkmanagement_vpncui vpnc.ui vpncadvanced.ui vpncauth.ui
 target_link_libraries(plasmanetworkmanagement_vpncui
     plasmanm_internal
     plasmanm_editor
-    KF5::ConfigCore
-    KF5::CoreAddons
-    KF5::KIOWidgets
-    KF5::I18n
-    KF5::WidgetsAddons
+    KF6::ConfigCore
+    KF6::CoreAddons
+    KF6::KIOWidgets
+    KF6::I18n
+    KF6::WidgetsAddons
 )
 
 install(TARGETS plasmanetworkmanagement_vpncui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

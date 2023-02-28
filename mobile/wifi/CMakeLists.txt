@@ -9,10 +9,10 @@ target_link_libraries(kcm_mobile_wifi
     Qt::Gui
     Qt::Quick
     Qt::Qml
-    KF5::I18n
-    KF5::NetworkManagerQt
-    KF5::Plasma
-    KF5::QuickAddons
+    KF6::I18n
+    KF6::NetworkManagerQt
+    KF6::Plasma
+    KF6::QuickAddons
 )
 
 install(TARGETS kcm_mobile_wifi DESTINATION ${KDE_INSTALL_PLUGINDIR}/kcms)

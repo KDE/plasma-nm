@@ -16,9 +16,9 @@ ki18n_wrap_ui(plasmanetworkmanagement_iodineui iodine.ui iodineauth.ui)
 target_link_libraries(plasmanetworkmanagement_iodineui
     plasmanm_internal
     plasmanm_editor
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::WidgetsAddons
+    KF6::CoreAddons
+    KF6::I18n
+    KF6::WidgetsAddons
 )
 
 install(TARGETS plasmanetworkmanagement_iodineui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

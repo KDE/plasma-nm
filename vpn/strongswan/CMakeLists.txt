@@ -16,9 +16,9 @@ ki18n_wrap_ui(plasmanetworkmanagement_strongswanui strongswanprop.ui strongswana
 target_link_libraries(plasmanetworkmanagement_strongswanui
     plasmanm_internal
     plasmanm_editor
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::KIOWidgets
+    KF6::CoreAddons
+    KF6::I18n
+    KF6::KIOWidgets
 )
 
 install(TARGETS plasmanetworkmanagement_strongswanui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

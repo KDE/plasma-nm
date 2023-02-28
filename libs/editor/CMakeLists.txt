@@ -139,18 +139,19 @@ target_include_directories(plasmanm_editor
 
 target_link_libraries(plasmanm_editor
 PUBLIC
-    KF5::ConfigWidgets
-    KF5::Completion
-    KF5::NetworkManagerQt
-    KF5::WidgetsAddons
-    KF5::ModemManagerQt
+    KF6::ConfigWidgets
+    KF6::Completion
+    KF6::NetworkManagerQt
+    KF6::WidgetsAddons
+    KF6::ModemManagerQt
     Qt::Widgets
+    Qt::Xml
 PRIVATE
-    KF5::I18n
-    KF5::KIOWidgets
-    KF5::Notifications
-    KF5::Solid
-    KF5::Wallet
+    KF6::I18n
+    KF6::KIOWidgets
+    KF6::Notifications
+    KF6::Solid
+    KF6::Wallet
     Qt::DBus
     Qt::Network
     qca-qt${QT_MAJOR_VERSION}

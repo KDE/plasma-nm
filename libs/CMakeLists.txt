@@ -32,19 +32,19 @@ target_include_directories(plasmanm_internal PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/
 
 target_link_libraries(plasmanm_internal
 PUBLIC
-    KF5::NetworkManagerQt
+    KF6::NetworkManagerQt
     plasmanm_editor
     PkgConfig::NETWORKMANAGER
 PRIVATE
-    KF5::I18n
-    KF5::Notifications
-    KF5::Service
-    KF5::Wallet
-    KF5::WindowSystem
-    KF5::KIOGui
+    KF6::I18n
+    KF6::Notifications
+    KF6::Service
+    KF6::Wallet
+    KF6::WindowSystem
+    KF6::KIOGui
 )
 
-target_link_libraries(plasmanm_internal PUBLIC KF5::ModemManagerQt)
+target_link_libraries(plasmanm_internal PUBLIC KF6::ModemManagerQt)
 
 install(TARGETS plasmanm_internal ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 

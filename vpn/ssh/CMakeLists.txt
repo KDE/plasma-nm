@@ -16,10 +16,10 @@ ki18n_wrap_ui(plasmanetworkmanagement_sshui sshwidget.ui sshadvanced.ui sshauth.
 target_link_libraries(plasmanetworkmanagement_sshui
     plasmanm_internal
     plasmanm_editor
-    KF5::CoreAddons
-    KF5::I18n
-    KF5::KIOWidgets
-    KF5::WidgetsAddons
+    KF6::CoreAddons
+    KF6::I18n
+    KF6::KIOWidgets
+    KF6::WidgetsAddons
 )
 
 install(TARGETS plasmanetworkmanagement_sshui  DESTINATION ${KDE_INSTALL_PLUGINDIR}/plasma/network/vpn)

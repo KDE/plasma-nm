@@ -6,7 +6,7 @@ set(PROJECT_VERSION "5.27.80")
 set(PROJECT_VERSION_MAJOR 5)
 
 set(QT_MIN_VERSION "5.15.2")
-set(KF5_MIN_VERSION "5.102.0")
+set(KF6_MIN_VERSION "5.102.0")
 set(KDE_COMPILERSETTINGS_LEVEL "5.82")
 
 set(CMAKE_CXX_STANDARD 17)
@@ -14,7 +14,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 ################# set KDE specific information #################
 
-find_package(ECM ${KF5_MIN_VERSION} REQUIRED NO_MODULE)
+find_package(ECM ${KF6_MIN_VERSION} REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
 
 include(KDEInstallDirs)
@@ -39,7 +39,7 @@ find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Widgets
 )
 
-find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
+find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
     ConfigWidgets
     Completion
     CoreAddons
@@ -61,8 +61,8 @@ find_package(KF5 ${KF5_MIN_VERSION} REQUIRED
 
 ecm_find_qmlmodule(org.kde.prison 1.0)
 
-find_package(KF5Kirigami2 ${KF5_MIN_VERSION} CONFIG)
-set_package_properties(KF5Kirigami2 PROPERTIES
+find_package(KF6Kirigami2 ${KF6_MIN_VERSION} CONFIG)
+set_package_properties(KF6Kirigami2 PROPERTIES
     DESCRIPTION "A QtQuick based components set"
     PURPOSE "Required at runtime by the KCMs"
     TYPE RUNTIME
@@ -73,8 +73,8 @@ set_package_properties(Qca-qt${QT_MAJOR_VERSION} PROPERTIES DESCRIPTION "Support
                        URL "https://download.kde.org/stable/qca-qt5/"
                        TYPE REQUIRED)
 
-find_package(KF5Prison ${KF5_MIN_VERSION})
-set_package_properties(KF5Prison PROPERTIES DESCRIPTION "Prison library"
+find_package(KF6Prison ${KF6_MIN_VERSION})
+set_package_properties(KF6Prison PROPERTIES DESCRIPTION "Prison library"
                        URL "https://commits.kde.org/prison"
                        TYPE RUNTIME
                        PURPOSE "Needed to create mobile barcodes for WiFi networks"

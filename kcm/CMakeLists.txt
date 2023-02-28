@@ -15,9 +15,9 @@ ki18n_wrap_ui(kcm_networkmanagement
 target_link_libraries(kcm_networkmanagement
     plasmanm_internal
     plasmanm_editor
-    KF5::ConfigWidgets
-    KF5::I18n
-    KF5::Service
+    KF6::ConfigWidgets
+    KF6::I18n
+    KF6::Service
     Qt::Quick
     Qt::QuickWidgets
 )

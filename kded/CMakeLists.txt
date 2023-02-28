@@ -36,16 +36,16 @@ set_target_properties(kded_networkmanagement PROPERTIES OUTPUT_NAME networkmanag
 target_link_libraries(kded_networkmanagement
     plasmanm_internal
     plasmanm_editor
-    KF5::ConfigCore
-    KF5::DBusAddons
-    KF5::I18n
-    KF5::Notifications
-    KF5::Service
-    KF5::Solid
-    KF5::Wallet
-    KF5::WindowSystem
-    KF5::KIOGui
-    KF5::ModemManagerQt
+    KF6::ConfigCore
+    KF6::DBusAddons
+    KF6::I18n
+    KF6::Notifications
+    KF6::Service
+    KF6::Solid
+    KF6::Wallet
+    KF6::WindowSystem
+    KF6::KIOGui
+    KF6::ModemManagerQt
 )
 
 install(TARGETS kded_networkmanagement DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf${QT_MAJOR_VERSION}/kded)

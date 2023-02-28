@@ -12,3 +12,4 @@ target_link_libraries(kcm_mobile_hotspot
 
 install(TARGETS kcm_mobile_hotspot DESTINATION ${KDE_INSTALL_PLUGINDIR}/kcms)
 kpackage_install_package(package kcm_mobile_hotspot kcms)
+kcmutils_generate_desktop_file(kcm_mobile_hotspot)

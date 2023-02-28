@@ -9,7 +9,7 @@
 #include <KLocalizedString>
 #include <KPluginFactory>
 
-K_PLUGIN_CLASS_WITH_JSON(HotspotSettings, "hotspotsettings.json")
+K_PLUGIN_CLASS_WITH_JSON(HotspotSettings, "kcm_mobile_hotspot.json")
 
 HotspotSettings::HotspotSettings(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
     : KQuickAddons::ConfigModule(parent, metaData, args)

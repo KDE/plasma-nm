@@ -23,7 +23,7 @@
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 
-K_PLUGIN_CLASS_WITH_JSON(WifiSettings, "wifisettings.json")
+K_PLUGIN_CLASS_WITH_JSON(WifiSettings, "kcm_mobile_wifi.json")
 
 WifiSettings::WifiSettings(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
     : KQuickAddons::ConfigModule(parent, metaData, args)

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-03-10 03:49+0100\n"
+"POT-Creation-Date: 2023-01-02 01:06+0000\n"
 "PO-Revision-Date: 2017-10-30 23:08+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -19,133 +19,136 @@ msgstr ""
 "X-Environment: kde\n"
 
 # well-spelled: моја_дељена_веза
-#: kcm.cpp:362
+#: kcm.cpp:344
 #, kde-format
 msgid "my_shared_connection"
 msgstr "moja_deljena_veza"
 
 # >> @title:window
-#: kcm.cpp:424
+#: kcm.cpp:416
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Izvoz VPN veze"
 
-#: kcm.cpp:444
+#: kcm.cpp:441
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Želite li da sačuvate izmene nad vezom „%1“?"
 
-#: kcm.cpp:444
+#: kcm.cpp:442
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Upisivanje izmena"
 
 # >> @title:window
-#: kcm.cpp:533
+#: kcm.cpp:531
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Uvoz VPN veze"
 
-#: qml/AddConnectionDialog.qml:31
+# >> @title:window
+#: kcm.cpp:531
+#, fuzzy, kde-format
+#| msgid "Export VPN Connection"
+msgid "VPN connections (%1)"
+msgstr "Izvoz VPN veze"
+
+#: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Izbor tipa veze"
 
-#: qml/AddConnectionDialog.qml:174
+#: qml/AddConnectionDialog.qml:163
 msgid "Create"
 msgstr "Napravi"
 
-#: qml/AddConnectionDialog.qml:184 qml/ConfigurationDialog.qml:130
+#: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
 msgstr "Odustani"
 
-#: qml/ConfigurationDialog.qml:30
+#: qml/AddConnectionDialog.qml:191 qml/main.qml:193
+msgid "Configuration"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:16
 msgctxt "@title:window"
 msgid "Configuration"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:55
+#: qml/ConfigurationDialog.qml:37
 msgid "General"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:60
+#: qml/ConfigurationDialog.qml:42
 msgid "Ask for PIN on modem detection"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:67
+#: qml/ConfigurationDialog.qml:49
 #, fuzzy
 #| msgid "Export selected connection"
 msgid "Show virtual connections"
 msgstr "Izvezi izabranu vezu"
 
-#: qml/ConfigurationDialog.qml:75
+#: qml/ConfigurationDialog.qml:57
 msgid "Hotspot"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:81
+#: qml/ConfigurationDialog.qml:63
 msgid "Hotspot name:"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:91
+#: qml/ConfigurationDialog.qml:73
 msgid "Hotspot password:"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:121
-msgid "Ok"
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
 msgstr ""
 
-#: qml/ConnectionItem.qml:112
+#: qml/ConnectionItem.qml:108
 msgid "Connect"
 msgstr "Poveži se"
 
-#: qml/ConnectionItem.qml:112
+#: qml/ConnectionItem.qml:108
 msgid "Disconnect"
 msgstr "Prekini vezu"
 
-#: qml/ConnectionItem.qml:125
+#: qml/ConnectionItem.qml:121
 msgid "Delete"
 msgstr "Obriši"
 
-#: qml/ConnectionItem.qml:135
+#: qml/ConnectionItem.qml:131
 msgid "Export"
 msgstr "Izvezi"
 
 # >> @item
-#: qml/ConnectionItem.qml:160
+#: qml/ConnectionItem.qml:141
 msgid "Connected"
 msgstr "povezan"
 
 # >> @item
-#: qml/ConnectionItem.qml:162
+#: qml/ConnectionItem.qml:143
 msgid "Connecting"
 msgstr "u povezivanju"
 
-#: qml/main.qml:75
-msgid "Search..."
-msgstr ""
-
-#: qml/main.qml:154
+#: qml/main.qml:139
 msgid "Add new connection"
 msgstr "Dodaj novu vezu"
 
-#: qml/main.qml:168
+#: qml/main.qml:153
 msgid "Remove selected connection"
 msgstr "Ukloni izabranu vezu"
 
-#: qml/main.qml:184
+#: qml/main.qml:169
 msgid "Export selected connection"
 msgstr "Izvezi izabranu vezu"
 
-#: qml/main.qml:208
-msgid "Configuration"
-msgstr ""
-
-#: qml/main.qml:236
+#: qml/main.qml:221
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Uklanjanje veze"
 
-#: qml/main.qml:237
+#: qml/main.qml:222
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Želite li zaista da uklonite vezu „%1“?"

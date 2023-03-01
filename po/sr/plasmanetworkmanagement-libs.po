@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-05-10 03:59+0200\n"
+"POT-Creation-Date: 2023-02-18 01:01+0000\n"
 "PO-Revision-Date: 2017-12-17 18:01+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,45 +18,45 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: declarative/networkstatus.cpp:120
+#: declarative/networkstatus.cpp:104
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
 msgstr "повезано"
 
-#: declarative/networkstatus.cpp:123
+#: declarative/networkstatus.cpp:107
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
 msgstr "повезано"
 
-#: declarative/networkstatus.cpp:126
+#: declarative/networkstatus.cpp:110
 #, kde-format
 msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
 msgstr "повезано"
 
-#: declarative/networkstatus.cpp:129
+#: declarative/networkstatus.cpp:113
 #, kde-format
 msgctxt "Networking is inactive and all devices are disabled"
 msgid "Inactive"
 msgstr "неактивно"
 
-#: declarative/networkstatus.cpp:132
+#: declarative/networkstatus.cpp:116
 #, kde-format
 msgctxt "There is no active network connection"
 msgid "Disconnected"
 msgstr "неповезано"
 
-#: declarative/networkstatus.cpp:135
+#: declarative/networkstatus.cpp:119
 #, kde-format
 msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
 msgstr "прекида се"
 
-#: declarative/networkstatus.cpp:138
+#: declarative/networkstatus.cpp:122
 #, kde-format
 msgctxt ""
 "A network device is connecting to a network and there is no other available "
@@ -64,416 +64,416 @@ msgctxt ""
 msgid "Connecting"
 msgstr "повезује се"
 
-#: declarative/networkstatus.cpp:189 uiutils.cpp:239
+#: declarative/networkstatus.cpp:172 editor/uiutils.cpp:220
 #, kde-format
 msgid "VPN"
 msgstr "ВПН"
 
-#: declarative/networkstatus.cpp:211 models/creatableconnectionsmodel.cpp:227
-#: models/creatableconnectionsmodel.cpp:228
+#: declarative/networkstatus.cpp:194 models/creatableconnectionsmodel.cpp:254
+#: models/creatableconnectionsmodel.cpp:256
 #, fuzzy, kde-format
 #| msgid "Wired"
 msgid "WireGuard"
 msgstr "Жичана"
 
-#: declarative/networkstatus.cpp:217
+#: declarative/networkstatus.cpp:200
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Повезујем се на %1"
 
-#: declarative/networkstatus.cpp:221
+#: declarative/networkstatus.cpp:204
 #, fuzzy, kde-format
 #| msgid "Connected to %1"
 msgid "Connected to %1 (no connectivity)"
 msgstr "Повезан на %1"
 
-#: declarative/networkstatus.cpp:224
+#: declarative/networkstatus.cpp:207
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
 msgstr ""
 
-#: declarative/networkstatus.cpp:227
+#: declarative/networkstatus.cpp:210
 #, fuzzy, kde-format
 #| msgid "Connected to %1"
 msgid "Connected to %1 (log in required)"
 msgstr "Повезан на %1"
 
-#: declarative/networkstatus.cpp:230
+#: declarative/networkstatus.cpp:213
 #, kde-format
 msgid "Connected to %1"
 msgstr "Повезан на %1"
 
-#: declarative/networkstatus.cpp:255
+#: declarative/networkstatus.cpp:238
 #, kde-format
 msgid "NetworkManager not running"
 msgstr "Менаџер мреже није у погону"
 
-#: declarative/networkstatus.cpp:260
+#: declarative/networkstatus.cpp:243
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Потребан је Менаџер мреже 0.9.8, нађен %1."
 
-#: declarative/networkstatus.cpp:263
+#: declarative/networkstatus.cpp:246
 #, kde-format
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Непознато"
 
-#: editor/connectioneditorbase.cpp:209
+#: editor/connectioneditorbase.cpp:198
 #, kde-format
 msgctxt "General"
 msgid "General configuration"
 msgstr "Опште подешавање"
 
-#: editor/connectioneditorbase.cpp:215 editor/connectioneditorbase.cpp:230
+#: editor/connectioneditorbase.cpp:205 editor/connectioneditorbase.cpp:222
 #, kde-format
 msgid "Wired"
 msgstr "Жичана"
 
-#: editor/connectioneditorbase.cpp:217
+#: editor/connectioneditorbase.cpp:208
 #, kde-format
 msgid "802.1x Security"
 msgstr "802.1x безбедност"
 
-#: editor/connectioneditorbase.cpp:220 editor/settings/bridgewidget.cpp:54
-#: editor/settings/teamwidget.cpp:55 models/creatableconnectionsmodel.cpp:167
-#: uiutils.cpp:247
+#: editor/connectioneditorbase.cpp:211 editor/settings/bridgewidget.cpp:39
+#: editor/settings/teamwidget.cpp:42 editor/uiutils.cpp:228
+#: models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
 msgstr "Вај‑фај"
 
-#: editor/connectioneditorbase.cpp:224
+#: editor/connectioneditorbase.cpp:215
 #, kde-format
 msgid "Wi-Fi Security"
 msgstr "Вај‑фај безбедност"
 
-#: editor/connectioneditorbase.cpp:228 models/creatableconnectionsmodel.cpp:139
-#: uiutils.cpp:211
+#: editor/connectioneditorbase.cpp:220 editor/uiutils.cpp:192
+#: models/creatableconnectionsmodel.cpp:135
 #, kde-format
 msgid "DSL"
 msgstr "ДСЛ"
 
-#: editor/connectioneditorbase.cpp:233 editor/connectioneditorbase.cpp:236
+#: editor/connectioneditorbase.cpp:225 editor/connectioneditorbase.cpp:228
 #, kde-format
 msgid "Mobile Broadband (%1)"
 msgstr "Мобилна широкопојасна (%1)"
 
-#: editor/connectioneditorbase.cpp:239 uiutils.cpp:215
+#: editor/connectioneditorbase.cpp:231 editor/uiutils.cpp:196
 #, kde-format
 msgid "Bluetooth"
 msgstr "Блутут"
 
-#: editor/connectioneditorbase.cpp:243
+#: editor/connectioneditorbase.cpp:236
 #, kde-format
 msgid "GSM"
 msgstr "ГСМ"
 
-#: editor/connectioneditorbase.cpp:245 editor/connectioneditorbase.cpp:290
+#: editor/connectioneditorbase.cpp:238 editor/connectioneditorbase.cpp:281
 #, kde-format
 msgid "PPP"
 msgstr "ППП"
 
-#: editor/connectioneditorbase.cpp:249 editor/settings/teamwidget.cpp:52
-#: models/creatableconnectionsmodel.cpp:144 models/networkmodelitem.cpp:649
-#: uiutils.cpp:230
+#: editor/connectioneditorbase.cpp:242 editor/settings/teamwidget.cpp:39
+#: editor/uiutils.cpp:211 models/creatableconnectionsmodel.cpp:142
+#: models/networkmodelitem.cpp:713
 #, kde-format
 msgid "Infiniband"
 msgstr "Инфинибанд"
 
-#: editor/connectioneditorbase.cpp:252 models/creatableconnectionsmodel.cpp:179
-#: models/networkmodelitem.cpp:655 uiutils.cpp:219
+#: editor/connectioneditorbase.cpp:245 editor/uiutils.cpp:200
+#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:719
 #, kde-format
 msgid "Bond"
 msgstr "Спој"
 
-#: editor/connectioneditorbase.cpp:255 models/creatableconnectionsmodel.cpp:185
-#: models/networkmodelitem.cpp:661 uiutils.cpp:222
+#: editor/connectioneditorbase.cpp:248 editor/uiutils.cpp:203
+#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:725
 #, kde-format
 msgid "Bridge"
 msgstr "Мост"
 
-#: editor/connectioneditorbase.cpp:258 models/creatableconnectionsmodel.cpp:197
-#: models/networkmodelitem.cpp:667
+#: editor/connectioneditorbase.cpp:251 models/creatableconnectionsmodel.cpp:220
+#: models/networkmodelitem.cpp:731
 #, kde-format
 msgid "Vlan"
 msgstr "ВЛАН"
 
-#: editor/connectioneditorbase.cpp:261 models/creatableconnectionsmodel.cpp:191
-#: models/networkmodelitem.cpp:677 uiutils.cpp:251
+#: editor/connectioneditorbase.cpp:254 editor/uiutils.cpp:232
+#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:740
 #, kde-format
 msgid "Team"
 msgstr "Удружена"
 
-#: editor/connectioneditorbase.cpp:264
+#: editor/connectioneditorbase.cpp:257
 #, fuzzy, kde-format
 #| msgid "Wired Interface (%1)"
 msgid "WireGuard Interface"
 msgstr "Жичано сучеље (%1)"
 
-#: editor/connectioneditorbase.cpp:280
+#: editor/connectioneditorbase.cpp:270
 #, kde-format
 msgid "VPN (%1)"
 msgstr "ВПН (%1)"
 
-#: editor/connectioneditorbase.cpp:296
+#: editor/connectioneditorbase.cpp:287
 #, kde-format
 msgid "IPv4"
 msgstr "ИПв4"
 
-#: editor/connectioneditorbase.cpp:312
+#: editor/connectioneditorbase.cpp:304
 #, kde-format
 msgid "IPv6"
 msgstr "ИПв6"
 
-#: editor/connectioneditorbase.cpp:483
+#: editor/connectioneditorbase.cpp:487
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "Не могу да добавим тајне за %1"
 
 # >> @title:window
-#: editor/connectioneditordialog.cpp:49
+#: editor/connectioneditordialog.cpp:33
 #, kde-format
 msgid "New Connection (%1)"
 msgstr "Нова веза (%1)"
 
 # >> @title:window
-#: editor/connectioneditordialog.cpp:51
+#: editor/connectioneditordialog.cpp:35
 #, kde-format
 msgid "Edit Connection '%1'"
 msgstr "Уређивање везе „%1“"
 
-#: editor/connectioneditortabwidget.cpp:64
+#: editor/connectioneditortabwidget.cpp:47
 #, kde-format
 msgid "New %1 connection"
 msgstr "Нова %1 веза"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/connectioneditortabwidget.ui:17
+#: editor/connectioneditortabwidget.ui:20
 #, kde-format
 msgid "Connection name:"
 msgstr "Име везе:"
 
-#: editor/settings/bondwidget.cpp:50 editor/settings/bridgewidget.cpp:48
-#: editor/settings/teamwidget.cpp:49
+#: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
+#: editor/settings/teamwidget.cpp:36
 #, kde-format
 msgid "Ethernet"
 msgstr "Етернет"
 
-#: editor/settings/bondwidget.cpp:53
+#: editor/settings/bondwidget.cpp:39
 #, kde-format
 msgid "InfiniBand"
 msgstr "Инфинибанд"
 
 # >> @item:inlistbox
-#: editor/settings/bondwidget.cpp:62
+#: editor/settings/bondwidget.cpp:48
 #, kde-format
 msgctxt "bond mode"
 msgid "Round-robin"
 msgstr "кружни"
 
 # >> @item:inlistbox
-#: editor/settings/bondwidget.cpp:63
+#: editor/settings/bondwidget.cpp:49
 #, kde-format
 msgctxt "bond mode"
 msgid "Active backup"
 msgstr "активна резерва"
 
 # >> @item:inlistbox
-#: editor/settings/bondwidget.cpp:64
+#: editor/settings/bondwidget.cpp:50
 #, kde-format
 msgctxt "bond mode"
 msgid "Broadcast"
 msgstr "емитовање"
 
 # >> @item:inlistbox
-#: editor/settings/bondwidget.cpp:65
+#: editor/settings/bondwidget.cpp:51
 #, kde-format
 msgctxt "bond mode"
 msgid "802.3ad"
 msgstr "802.3ad"
 
 # >> @item:inlistbox
-#: editor/settings/bondwidget.cpp:66
+#: editor/settings/bondwidget.cpp:52
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive transmit load balancing"
 msgstr "адаптивна прерасподела преносног оптерећења"
 
 # >> @item:inlistbox
-#: editor/settings/bondwidget.cpp:67
+#: editor/settings/bondwidget.cpp:53
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive load balancing"
 msgstr "адаптивна прерасподела оптерећења"
 
 # >> @item:inlistbox
-#: editor/settings/bondwidget.cpp:70
+#: editor/settings/bondwidget.cpp:56
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "MII (recommended)"
 msgstr "МИИ (препоручен)"
 
 # >> @item:inlistbox
-#: editor/settings/bondwidget.cpp:71
+#: editor/settings/bondwidget.cpp:57
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "ARP"
 msgstr "АРП"
 
-#: editor/settings/bondwidget.cpp:266 editor/settings/bridgewidget.cpp:217
-#: editor/settings/teamwidget.cpp:205
+#: editor/settings/bondwidget.cpp:248 editor/settings/bridgewidget.cpp:198
+#: editor/settings/teamwidget.cpp:187
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Желите ли да уклоните везу „%1“?"
 
-#: editor/settings/bondwidget.cpp:266 editor/settings/bridgewidget.cpp:217
-#: editor/settings/teamwidget.cpp:205
+#: editor/settings/bondwidget.cpp:249 editor/settings/bridgewidget.cpp:199
+#: editor/settings/teamwidget.cpp:188
 #, kde-format
 msgid "Remove Connection"
 msgstr "Уклањање везе"
 
-#: editor/settings/bridgewidget.cpp:51 editor/settings/teamwidget.cpp:58
-#: uiutils.cpp:236
+#: editor/settings/bridgewidget.cpp:36 editor/settings/teamwidget.cpp:45
+#: editor/uiutils.cpp:217
 #, kde-format
 msgid "VLAN"
 msgstr "ВЛАН"
 
 # >> @item
-#: editor/settings/btwidget.cpp:35
+#: editor/settings/btwidget.cpp:20
 #, kde-format
 msgid "DUN (dial up networking)"
 msgstr "ДУН (модемско умрежавање)"
 
 # >> @item
-#: editor/settings/btwidget.cpp:36
+#: editor/settings/btwidget.cpp:21
 #, kde-format
 msgid "PAN (personal area network)"
 msgstr "⁠ПАН (лична обласна мрежа)"
 
-#: editor/settings/connectionwidget.cpp:168
+#: editor/settings/connectionwidget.cpp:158
 #, kde-format
 msgctxt "@title:window advanced permissions editor"
 msgid "Advanced Permissions Editor"
 msgstr "Уређивач напредних дозвола"
 
-#: editor/settings/infinibandwidget.cpp:36
+#: editor/settings/infinibandwidget.cpp:22
 #, kde-format
 msgctxt "infiniband transport mode"
 msgid "Datagram"
 msgstr "датограм"
 
-#: editor/settings/infinibandwidget.cpp:37
+#: editor/settings/infinibandwidget.cpp:23
 #, kde-format
 msgctxt "infiniband transport mode"
 msgid "Connected"
 msgstr "повезано"
 
-#: editor/settings/ipv4widget.cpp:69 editor/widgets/ipv4routeswidget.cpp:38
+#: editor/settings/ipv4widget.cpp:56 editor/widgets/ipv4routeswidget.cpp:25
 #, kde-format
 msgctxt "Header text for IPv4 address"
 msgid "Address"
 msgstr "адреса"
 
-#: editor/settings/ipv4widget.cpp:71 editor/widgets/ipv4routeswidget.cpp:40
+#: editor/settings/ipv4widget.cpp:58 editor/widgets/ipv4routeswidget.cpp:27
 #, kde-format
 msgctxt "Header text for IPv4 netmask"
 msgid "Netmask"
 msgstr "мрежна маска"
 
-#: editor/settings/ipv4widget.cpp:73 editor/widgets/ipv4routeswidget.cpp:42
+#: editor/settings/ipv4widget.cpp:60 editor/widgets/ipv4routeswidget.cpp:29
 #, kde-format
 msgctxt "Header text for IPv4 gateway"
 msgid "Gateway"
 msgstr "мрежни излаз"
 
-#: editor/settings/ipv4widget.cpp:284 editor/settings/ipv6widget.cpp:264
+#: editor/settings/ipv4widget.cpp:271 editor/settings/ipv6widget.cpp:262
 #, kde-format
 msgid "Other DNS Servers:"
 msgstr "Други ДНС сервери:"
 
-#: editor/settings/ipv4widget.cpp:296 editor/settings/ipv4widget.cpp:308
-#: editor/settings/ipv4widget.cpp:320 editor/settings/ipv4widget.cpp:332
-#: editor/settings/ipv6widget.cpp:276 editor/settings/ipv6widget.cpp:288
-#: editor/settings/ipv6widget.cpp:300 editor/settings/ipv6widget.cpp:312
+#: editor/settings/ipv4widget.cpp:283 editor/settings/ipv4widget.cpp:295
+#: editor/settings/ipv4widget.cpp:307 editor/settings/ipv4widget.cpp:319
+#: editor/settings/ipv6widget.cpp:274 editor/settings/ipv6widget.cpp:286
+#: editor/settings/ipv6widget.cpp:298 editor/settings/ipv6widget.cpp:310
 #, kde-format
 msgid "DNS Servers:"
 msgstr "ДНС сервери:"
 
-#: editor/settings/ipv4widget.cpp:439
+#: editor/settings/ipv4widget.cpp:420
 #, kde-format
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
-"href='https://developer.gnome.org/NetworkManager/stable/nm-settings."
-"html'>https://developer.gnome.org/NetworkManager/stable/nm-settings.html</"
+"href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
+"developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 msgstr ""
 
-#: editor/settings/ipv4widget.cpp:443
+#: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
 msgstr ""
 
-#: editor/settings/ipv4widget.cpp:448
+#: editor/settings/ipv4widget.cpp:435
 #, kde-format
 msgid "DHCP hostname:"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:453 editor/settings/ui/ipv6.ui:197
+#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
 #, kde-format
 msgid "Default"
 msgstr "подразумевано"
 
-#: editor/settings/ipv4widget.cpp:454
+#: editor/settings/ipv4widget.cpp:441
 #, fuzzy, kde-format
 #| msgid " ms"
 msgctxt "Milliseconds"
 msgid " ms"
 msgstr " ms"
 
-#: editor/settings/ipv4widget.cpp:457
+#: editor/settings/ipv4widget.cpp:444
 #, fuzzy, kde-format
 #| msgid "Aging time:"
 msgid "DAD timeout:"
 msgstr "Време старења:"
 
 # >> @title:window
-#: editor/settings/ipv4widget.cpp:478 editor/settings/ipv6widget.cpp:413
+#: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:405
 #, kde-format
 msgid "Edit DNS servers"
 msgstr "Уређивање ДНС сервера"
 
 # >> @title:window
-#: editor/settings/ipv4widget.cpp:509 editor/settings/ipv6widget.cpp:444
+#: editor/settings/ipv4widget.cpp:490 editor/settings/ipv6widget.cpp:430
 #, kde-format
 msgid "Edit DNS search domains"
 msgstr "Уређивање ДНС домена за претрагу"
 
-#: editor/settings/ipv6widget.cpp:53 editor/widgets/ipv6routeswidget.cpp:39
+#: editor/settings/ipv6widget.cpp:42 editor/widgets/ipv6routeswidget.cpp:26
 #, kde-format
 msgctxt "Header text for IPv6 address"
 msgid "Address"
 msgstr "адреса"
 
-#: editor/settings/ipv6widget.cpp:55
+#: editor/settings/ipv6widget.cpp:44
 #, kde-format
 msgctxt "Header text for IPv6 prefix"
 msgid "Prefix"
 msgstr "префикс"
 
-#: editor/settings/ipv6widget.cpp:57 editor/widgets/ipv6routeswidget.cpp:43
+#: editor/settings/ipv6widget.cpp:46 editor/widgets/ipv6routeswidget.cpp:30
 #, kde-format
 msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "мрежни излаз"
 
 # >> @title:window
-#: editor/settings/security802-1x.cpp:527
+#: editor/settings/security802-1x.cpp:504
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Алтернативна поклапања теме"
 
-#: editor/settings/security802-1x.cpp:528
+#: editor/settings/security802-1x.cpp:506
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -488,20 +488,20 @@ msgstr ""
 "li><li>EMAIL: &lt;е‑пошта&gt;</li><li>URI: &lt;УРИ, нпр. http://www.kde."
 "org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:550
+#: editor/settings/security802-1x.cpp:523
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Повезуј се само на ове сервере"
 
 # >> @title:window
-#: editor/settings/teamwidget.cpp:236
+#: editor/settings/teamwidget.cpp:228
 #, kde-format
 msgid "Select file to import"
 msgstr "Избор фајла за увоз"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:152
+#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
 #, kde-format
 msgid "Authentication:"
 msgstr "Аутентификација:"
@@ -561,7 +561,7 @@ msgstr "ПЕАП (заштићени ЕАП)"
 #: editor/settings/ui/802-1x.ui:311 editor/settings/ui/802-1x.ui:440
 #: editor/settings/ui/802-1x.ui:544 editor/settings/ui/802-1x.ui:688
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
-#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:189
+#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
 #, kde-format
 msgid "Username:"
 msgstr "Корисничко име:"
@@ -577,8 +577,8 @@ msgstr "Корисничко име:"
 #: editor/settings/ui/802-1x.ui:324 editor/settings/ui/802-1x.ui:453
 #: editor/settings/ui/802-1x.ui:557 editor/settings/ui/802-1x.ui:701
 #: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
-#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:202
-#: editor/settings/ui/wifisecurity.ui:226
+#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:207
+#: editor/settings/ui/wifisecurity.ui:231
 #, kde-format
 msgid "Password:"
 msgstr "Лозинка:"
@@ -629,8 +629,8 @@ msgstr "Алтернативна поклапања теме:"
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
 #: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
 #, kde-format
-msgid "..."
-msgstr "..."
+msgid "…"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:215
@@ -638,8 +638,8 @@ msgstr "..."
 msgid "Connect to these servers:"
 msgstr "Повезуј се на ове сервере:"
 
-#. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
 #: editor/settings/ui/802-1x.ui:239
 #: editor/settings/ui/wireguardinterfacewidget.ui:26
 #, kde-format
@@ -782,15 +782,15 @@ msgstr "Спојене везе"
 #: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
 #: editor/settings/ui/team.ui:56
 #, kde-format
-msgid "Add..."
-msgstr "Додај..."
+msgid "Add…"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnEdit)
 #: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
 #: editor/settings/ui/team.ui:71
 #, kde-format
-msgid "Edit..."
-msgstr "Уреди..."
+msgid "Edit…"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
@@ -970,9 +970,10 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
-#, kde-format
-msgid "Advanced..."
-msgstr "Напредно..."
+#, fuzzy, kde-format
+#| msgid "Advanced"
+msgid "Advanced…"
+msgstr "Напредно"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:81
@@ -1067,8 +1068,8 @@ msgstr "ПИН:"
 msgid "Transport mode:"
 msgstr "Режим преноса:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/infiniband.ui:41
 #: editor/settings/ui/wificonnectionwidget.ui:186
 #: editor/settings/ui/wiredconnectionwidget.ui:23
@@ -1076,9 +1077,9 @@ msgstr "Режим преноса:"
 msgid "Restrict to device:"
 msgstr "Ограничи на уређај:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, mtuLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, mtuLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/infiniband.ui:61
 #: editor/settings/ui/wificonnectionwidget.ui:249
 #: editor/settings/ui/wiredconnectionwidget.ui:89
@@ -1185,14 +1186,14 @@ msgid "Edit DNS the list of servers"
 msgstr "Уреди листу ДНС сервера"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
-#: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:349
+#: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
 #, kde-format
 msgctxt "@info"
 msgid "Search Domains:"
 msgstr "Домени за претрагу:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
-#: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:268
+#: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
 #, kde-format
 msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
@@ -1202,7 +1203,7 @@ msgstr ""
 "раздвајате запетом."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
-#: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:275
+#: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
 msgstr "Уреди листу ДНС домена за претрагу"
@@ -1267,9 +1268,10 @@ msgid "IPv4 is required for this connection"
 msgstr "Ова веза захтева ИПв4"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
-#: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:315
-#, kde-format
-msgid "Routes..."
+#: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
+#, fuzzy, kde-format
+#| msgid "Routes..."
+msgid "Routes…"
 msgstr "Руте..."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
@@ -1340,8 +1342,16 @@ msgctxt "like in this setting is Disabled"
 msgid "Ignored"
 msgstr "игнорисано"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:257
+#, fuzzy, kde-format
+#| msgctxt "like in this setting is Disabled"
+#| msgid "Disabled"
+msgid "Disabled"
+msgstr "искључено"
+
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
-#: editor/settings/ui/ipv6.ui:330
+#: editor/settings/ui/ipv6.ui:335
 #, kde-format
 msgid "Privacy:"
 msgstr "Приватност:"
@@ -1446,8 +1456,9 @@ msgstr "ЈСОН постава:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnImport)
 #: editor/settings/ui/team.ui:123
-#, kde-format
-msgid "Import configuration from file..."
+#, fuzzy, kde-format
+#| msgid "Import configuration from file..."
+msgid "Import configuration from file…"
 msgstr "Увези поставу из фајла..."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -1598,9 +1609,10 @@ msgstr "Клонирана МАЦ адреса:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:240
-#, kde-format
-msgid "Random..."
-msgstr "Насумично..."
+#, fuzzy, kde-format
+#| msgid "Random"
+msgid "Random…"
+msgstr "Насумично"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -1672,56 +1684,63 @@ msgstr "ВПА/ВПА2 предузетнички"
 msgid "WPA3 Personal"
 msgstr "ВПА/ВПА2 лични"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:68
+#, fuzzy, kde-format
+#| msgid "WPA/WPA2 Enterprise"
+msgid "WPA3 Enterprise 192-bit"
+msgstr "ВПА/ВПА2 предузетнички"
+
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/wifisecurity.ui:71
+#: editor/settings/ui/wifisecurity.ui:76
 #, kde-format
 msgid "Security:"
 msgstr "Безбедност:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wifisecurity.ui:92
+#: editor/settings/ui/wifisecurity.ui:97
 #, kde-format
 msgid "Key:"
 msgstr "Кључ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/wifisecurity.ui:112
+#: editor/settings/ui/wifisecurity.ui:117
 #, kde-format
 msgid "WEP index:"
 msgstr "ВЕП индекс:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:129
+#: editor/settings/ui/wifisecurity.ui:134
 #, kde-format
 msgid "1 (default)"
 msgstr "1 (подразумеван)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:134
+#: editor/settings/ui/wifisecurity.ui:139
 #, kde-format
 msgid "2"
 msgstr "2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:139
+#: editor/settings/ui/wifisecurity.ui:144
 #, kde-format
 msgid "3"
 msgstr "3"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:144
+#: editor/settings/ui/wifisecurity.ui:149
 #, kde-format
 msgid "4"
 msgstr "4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:169
+#: editor/settings/ui/wifisecurity.ui:174
 #, kde-format
 msgid "Open System"
 msgstr "отворени систем"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:174
+#: editor/settings/ui/wifisecurity.ui:179
 #, kde-format
 msgid "Shared Key"
 msgstr "дељени кључ"
@@ -1873,7 +1892,31 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:241
 #, kde-format
+msgid "2.5 Gb/s"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:246
+#, kde-format
+msgid "5 Gb/s"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:251
+#, kde-format
 msgid "10 Gb/s"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:256
+#, kde-format
+msgid "40 Gb/s"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:261
+#, kde-format
+msgid "100 Gb/s"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, use8021X)
@@ -1962,7 +2005,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
 #: editor/settings/ui/wireguardinterfacewidget.ui:126
 #, kde-format
-msgid "Peers..."
+msgid "Peers…"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
@@ -2094,42 +2137,827 @@ msgstr ""
 msgid "Remove this Peer"
 msgstr ""
 
-#: editor/settings/wificonnectionwidget.cpp:197
+#: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
 msgid "%1 (%2 MHz)"
 msgstr "%1 (%2 MHz)"
 
-#: editor/settings/wireguardpeerwidget.cpp:103
-#: editor/settings/wireguardtabwidget.cpp:87
+#: editor/settings/wireguardpeerwidget.cpp:71
+#: editor/settings/wireguardtabwidget.cpp:59
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
 msgstr ""
 
-#: editor/vpnuiplugin.cpp:53
+#: editor/uiutils.cpp:133
 #, kde-format
-msgctxt "Error message in VPN import/export dialog"
-msgid "Operation not supported for this VPN type."
-msgstr "Поступак није подржан за овај тип ВПН‑а."
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wi-Fi"
+msgstr "Вај‑фај"
 
-#: editor/widgets/advancedpermissionswidget.cpp:100
+#: editor/uiutils.cpp:136
+#, kde-format
+msgctxt "title of the interface widget in nm's popup"
+msgid "Bluetooth"
+msgstr "Блутут"
+
+#: editor/uiutils.cpp:139
+#, kde-format
+msgctxt "title of the interface widget in nm's popup"
+msgid "Infiniband"
+msgstr "Инфинибанд"
+
+#: editor/uiutils.cpp:142
+#, kde-format
+msgctxt "title of the interface widget in nm's popup"
+msgid "ADSL"
+msgstr "АДСЛ"
+
+#: editor/uiutils.cpp:145
+#, kde-format
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (bond)"
+msgstr "Виртуелно (спој)"
+
+#: editor/uiutils.cpp:148
+#, kde-format
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (bridge)"
+msgstr "Виртуелно (мост)"
+
+#: editor/uiutils.cpp:151
+#, kde-format
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (vlan)"
+msgstr "Виртуелно (ВЛАН)"
+
+#: editor/uiutils.cpp:154
+#, kde-format
+msgctxt "title of the interface widget in nm's popup"
+msgid "Virtual (team)"
+msgstr "Виртуелно (удружено)"
+
+#: editor/uiutils.cpp:161
+#, kde-format
+msgctxt "title of the interface widget in nm's popup"
+msgid "Serial Modem"
+msgstr "Серијско модемско"
+
+#: editor/uiutils.cpp:166
+#, kde-format
+msgctxt "title of the interface widget in nm's popup"
+msgid "Mobile Broadband"
+msgstr "Мобилно широкопојасно"
+
+#: editor/uiutils.cpp:176
+#, kde-format
+msgctxt "title of the interface widget in nm's popup"
+msgid "Wired Ethernet"
+msgstr "Жичано етернетско"
+
+#: editor/uiutils.cpp:188
+#, kde-format
+msgid "ADSL"
+msgstr "АДСЛ"
+
+#: editor/uiutils.cpp:207
+#, kde-format
+msgid "Mobile broadband"
+msgstr "Мобилно широкопојасно"
+
+#: editor/uiutils.cpp:214
+#, kde-format
+msgid "Olpc mesh"
+msgstr "ОЛПЦ решетка"
+
+#: editor/uiutils.cpp:224 models/creatableconnectionsmodel.cpp:156
+#, kde-format
+msgid "Wired Ethernet"
+msgstr "Жичана етернетска"
+
+#: editor/uiutils.cpp:235
+#, kde-format
+msgid "WireGuard VPN"
+msgstr ""
+
+#: editor/uiutils.cpp:239
+#, kde-format
+msgid "Unknown connection type"
+msgstr "Непозната врста везе"
+
+#: editor/uiutils.cpp:251
+#, kde-format
+msgid "Wireless Interface (%1)"
+msgstr "Бежично сучеље (%1)"
+
+#: editor/uiutils.cpp:254
+#, kde-format
+msgid "Wired Interface (%1)"
+msgstr "Жичано сучеље (%1)"
+
+#: editor/uiutils.cpp:257
+#, kde-format
+msgid "Bluetooth (%1)"
+msgstr "Блутут (%1)"
+
+#: editor/uiutils.cpp:260
+#, kde-format
+msgid "Modem (%1)"
+msgstr "Модем (%1)"
+
+#: editor/uiutils.cpp:263
+#, kde-format
+msgid "ADSL (%1)"
+msgstr "АДСЛ (%1)"
+
+#: editor/uiutils.cpp:266
+#, kde-format
+msgid "VLan (%1)"
+msgstr "ВЛАН (%1)"
+
+#: editor/uiutils.cpp:269
+#, kde-format
+msgid "Bridge (%1)"
+msgstr "Мост (%1)"
+
+#: editor/uiutils.cpp:282
+#, kde-format
+msgctxt "description of unknown network interface state"
+msgid "Unknown"
+msgstr "Непознато"
+
+#: editor/uiutils.cpp:285
+#, kde-format
+msgctxt "description of unmanaged network interface state"
+msgid "Unmanaged"
+msgstr "Неуправљано"
+
+#: editor/uiutils.cpp:288
+#, kde-format
+msgctxt "description of unavailable network interface state"
+msgid "Unavailable"
+msgstr "Недоступно"
+
+#: editor/uiutils.cpp:291
+#, kde-format
+msgctxt "description of unconnected network interface state"
+msgid "Not connected"
+msgstr "Није повезано"
+
+#: editor/uiutils.cpp:294
+#, kde-format
+msgctxt "description of preparing to connect network interface state"
+msgid "Preparing to connect"
+msgstr "Припремам повезивање"
+
+#: editor/uiutils.cpp:297
+#, kde-format
+msgctxt "description of configuring hardware network interface state"
+msgid "Configuring interface"
+msgstr "Подешавам сучеље"
+
+#: editor/uiutils.cpp:300
+#, kde-format
+msgctxt "description of waiting for authentication network interface state"
+msgid "Waiting for authorization"
+msgstr "Чекам овлашћење"
+
+#: editor/uiutils.cpp:303
+#, kde-format
+msgctxt "network interface doing dhcp request in most cases"
+msgid "Setting network address"
+msgstr "Постављам мрежну адресу"
+
+#: editor/uiutils.cpp:306
+#, kde-format
+msgctxt "is other action required to fully connect? captive portals, etc."
+msgid "Checking further connectivity"
+msgstr "Проверавам даљу повезивост"
+
+#: editor/uiutils.cpp:309
+#, kde-format
+msgctxt ""
+"a secondary connection (e.g. VPN) has to be activated first to continue"
+msgid "Waiting for a secondary connection"
+msgstr "Чекам секундарну везу"
+
+#: editor/uiutils.cpp:313
+#, kde-format
+msgctxt "network interface connected state label"
+msgid "Connected"
+msgstr "Повезано"
+
+#: editor/uiutils.cpp:315
+#, kde-format
+msgctxt "network interface connected state label"
+msgid "Connected to %1"
+msgstr "Повезано на %1"
+
+#: editor/uiutils.cpp:319
+#, kde-format
+msgctxt "network interface disconnecting state label"
+msgid "Deactivating connection"
+msgstr "Обустављам везу"
+
+#: editor/uiutils.cpp:322
+#, kde-format
+msgctxt "network interface connection failed state label"
+msgid "Connection Failed"
+msgstr "Повезивање пропало"
+
+#: editor/uiutils.cpp:325 editor/uiutils.cpp:359
+#, kde-format
+msgctxt "interface state"
+msgid "Error: Invalid state"
+msgstr "Грешка: лоше стање"
+
+#: editor/uiutils.cpp:335
+#, kde-format
+msgctxt "The state of the VPN connection is unknown"
+msgid "Unknown"
+msgstr "Непознато"
+
+#: editor/uiutils.cpp:338
+#, kde-format
+msgctxt "The VPN connection is preparing to connect"
+msgid "Preparing to connect"
+msgstr "Припремам повезивање"
+
+#: editor/uiutils.cpp:341
+#, kde-format
+msgctxt "The VPN connection needs authorization credentials"
+msgid "Needs authorization"
+msgstr "Потребно овлашћење"
+
+#: editor/uiutils.cpp:344
+#, kde-format
+msgctxt "The VPN connection is being established"
+msgid "Connecting"
+msgstr "Повезујем се"
+
+#: editor/uiutils.cpp:347
+#, kde-format
+msgctxt "The VPN connection is getting an IP address"
+msgid "Setting network address"
+msgstr "Постављам мрежну адресу"
+
+#: editor/uiutils.cpp:350
+#, kde-format
+msgctxt "The VPN connection is active"
+msgid "Activated"
+msgstr "Активирано"
+
+#: editor/uiutils.cpp:353
+#, kde-format
+msgctxt "The VPN connection failed"
+msgid "Failed"
+msgstr "Пропало"
+
+#: editor/uiutils.cpp:356
+#, kde-format
+msgctxt "The VPN connection is disconnected"
+msgid "Failed"
+msgstr "Пропало"
+
+#: editor/uiutils.cpp:369
+#, kde-format
+msgctxt "wireless network operation mode"
+msgid "Unknown"
+msgstr "непозната"
+
+#: editor/uiutils.cpp:372
+#, kde-format
+msgctxt "wireless network operation mode"
+msgid "Adhoc"
+msgstr "импровизована"
+
+#: editor/uiutils.cpp:375
+#, kde-format
+msgctxt "wireless network operation mode"
+msgid "Infrastructure"
+msgstr "инфраструктурна"
+
+#: editor/uiutils.cpp:378
+#, kde-format
+msgctxt "wireless network operation mode"
+msgid "Access point"
+msgstr "приступна тачка"
+
+#: editor/uiutils.cpp:403
+#, kde-format
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP40"
+msgstr "ВЕП40 по паровима"
+
+#: editor/uiutils.cpp:405
+#, kde-format
+msgctxt "wireless network cipher"
+msgid "Pairwise WEP104"
+msgstr "ВЕП104 по паровима"
+
+#: editor/uiutils.cpp:407
+#, kde-format
+msgctxt "wireless network cipher"
+msgid "Pairwise TKIP"
+msgstr "ТКИП по паровима"
+
+#: editor/uiutils.cpp:409
+#, kde-format
+msgctxt "wireless network cipher"
+msgid "Pairwise CCMP"
+msgstr "ЦЦМП по паровима"
+
+#: editor/uiutils.cpp:411
+#, kde-format
+msgctxt "wireless network cipher"
+msgid "Group WEP40"
+msgstr "ВЕП40 групно"
+
+#: editor/uiutils.cpp:413
+#, kde-format
+msgctxt "wireless network cipher"
+msgid "Group WEP104"
+msgstr "ВЕП104 групно"
+
+#: editor/uiutils.cpp:415
+#, kde-format
+msgctxt "wireless network cipher"
+msgid "Group TKIP"
+msgstr "ТКИП групно"
+
+#: editor/uiutils.cpp:417
+#, kde-format
+msgctxt "wireless network cipher"
+msgid "Group CCMP"
+msgstr "ЦЦМП групно"
+
+#: editor/uiutils.cpp:419
+#, kde-format
+msgctxt "wireless network cipher"
+msgid "PSK"
+msgstr "ПСК"
+
+#: editor/uiutils.cpp:421
+#, kde-format
+msgctxt "wireless network cipher"
+msgid "802.1x"
+msgstr "802.1x"
+
+#: editor/uiutils.cpp:430
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 Bit/s"
+msgstr "%1 b/s"
+
+#: editor/uiutils.cpp:432
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 MBit/s"
+msgstr "%1 Mb/s"
+
+#: editor/uiutils.cpp:434
+#, kde-format
+msgctxt "connection speed"
+msgid "%1 GBit/s"
+msgstr "%1 Gb/s"
+
+#: editor/uiutils.cpp:458
+#, kde-format
+msgctxt "Wireless connection frequency"
+msgid "%1 GHz"
+msgstr ""
+
+#: editor/uiutils.cpp:464
+#, kde-format
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "LTE"
+msgstr "ЛТЕ"
+
+#: editor/uiutils.cpp:466
+#, kde-format
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "UMTS/HSxPA"
+msgstr "УМТС/ХСнПА"
+
+#: editor/uiutils.cpp:468
+#, kde-format
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "GPRS/EDGE"
+msgstr "ГПРС/ЕДГЕ"
+
+#: editor/uiutils.cpp:470
+#, kde-format
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "GSM"
+msgstr "ГСМ"
+
+#: editor/uiutils.cpp:472 editor/uiutils.cpp:475
+#, kde-format
+msgctxt "Gsm modes (2G/3G/any)"
+msgid "Any"
+msgstr "било која"
+
+#: editor/uiutils.cpp:482
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "5G NR"
+msgstr ""
+
+#: editor/uiutils.cpp:486
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "LTE"
+msgstr "ЛТЕ"
+
+#: editor/uiutils.cpp:488
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision B"
+msgstr "ЦДМА2000 ЕВ‑ДО ревизија Б"
+
+#: editor/uiutils.cpp:490
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision A"
+msgstr "ЦДМА2000 ЕВ‑ДО ревизија А"
+
+#: editor/uiutils.cpp:492
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "CDMA2000 EVDO revision 0"
+msgstr "ЦДМА2000 ЕВ‑ДО ревизија 0"
+
+#: editor/uiutils.cpp:494
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "CDMA2000 1xRTT"
+msgstr "ЦДМА2000 1xРТТ"
+
+#: editor/uiutils.cpp:496
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "HSPA+"
+msgstr "ХСПА+"
+
+#: editor/uiutils.cpp:498
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "HSPA"
+msgstr "ХСПА"
+
+#: editor/uiutils.cpp:500
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "HSUPA"
+msgstr "ХСУПА"
+
+#: editor/uiutils.cpp:502
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "HSDPA"
+msgstr "ХСДПА"
+
+#: editor/uiutils.cpp:504
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "UMTS"
+msgstr "УМТС"
+
+#: editor/uiutils.cpp:506
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "EDGE"
+msgstr "ЕДГЕ"
+
+#: editor/uiutils.cpp:508
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "GPRS"
+msgstr "ГПРС"
+
+#: editor/uiutils.cpp:510
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "Compact GSM"
+msgstr "компактни ГСМ"
+
+#: editor/uiutils.cpp:512
+#, kde-format
+msgctxt "Cellular access technology"
+msgid "GSM"
+msgstr "ГСМ"
+
+#: editor/uiutils.cpp:514
+#, kde-format
+msgctxt "Analog wireline modem"
+msgid "Analog"
+msgstr "аналогна"
+
+#: editor/uiutils.cpp:516 editor/uiutils.cpp:521
+#, kde-format
+msgctxt "Unknown cellular access technology"
+msgid "Unknown"
+msgstr "непозната"
+
+#: editor/uiutils.cpp:518
+#, kde-format
+msgctxt "Any cellular access technology"
+msgid "Any"
+msgstr "било која"
+
+#: editor/uiutils.cpp:528
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem is unlocked."
+msgstr "Модем је откључан."
+
+#: editor/uiutils.cpp:530
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PIN code."
+msgstr "СИМ захтева ПИН код."
+
+#: editor/uiutils.cpp:532
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PIN2 code."
+msgstr "СИМ захтева ПИН2 код."
+
+#: editor/uiutils.cpp:534
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PUK code."
+msgstr "СИМ захтева ПУК код."
+
+#: editor/uiutils.cpp:536
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "SIM requires the PUK2 code."
+msgstr "СИМ захтева ПУК2 код."
+
+# rewrite-msgid: /service//
+#: editor/uiutils.cpp:538
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the service provider PIN code."
+msgstr "Модем захтева ПИН ко̂д провајдера."
+
+# rewrite-msgid: /service//
+#: editor/uiutils.cpp:540
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the service provider PUK code."
+msgstr "Модем захтева ПУК ко̂д провајдера."
+
+#: editor/uiutils.cpp:542
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network PIN code."
+msgstr "Модем захтева ПИН ко̂д мреже."
+
+#: editor/uiutils.cpp:544
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network PUK code."
+msgstr "Модем захтева ПУК ко̂д мреже."
+
+#: editor/uiutils.cpp:546
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PIN code."
+msgstr "Модем захтева ПИН код."
+
+#: editor/uiutils.cpp:548
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the corporate PIN code."
+msgstr "Модем захтева компанијски ПИН код."
+
+#: editor/uiutils.cpp:550
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the corporate PUK code."
+msgstr "Модем захтева компанијски ПУК код."
+
+#: editor/uiutils.cpp:552
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PH-FSIM PIN code."
+msgstr "Модем захтева ПХ‑ФСИМ ПИН код."
+
+#: editor/uiutils.cpp:554
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the PH-FSIM PUK code."
+msgstr "Модем захтева ПХ‑ФСИМ ПУК код."
+
+#: editor/uiutils.cpp:556
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network subset PIN code."
+msgstr "Модем захтева ПИН ко̂д мрежног подскупа."
+
+#: editor/uiutils.cpp:558
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Modem requires the network subset PUK code."
+msgstr "Модем захтева ПУК ко̂д мрежног подскупа."
+
+#: editor/uiutils.cpp:561
+#, kde-format
+msgctxt "possible SIM lock reason"
+msgid "Lock reason unknown."
+msgstr "Непознат разлог закључавања."
+
+# >> @item wireless security
+#: editor/uiutils.cpp:584
+#, kde-format
+msgctxt "@label no security"
+msgid "Insecure"
+msgstr "небезбедно"
+
+# >> @item wireless security
+#: editor/uiutils.cpp:587
+#, kde-format
+msgctxt "@label WEP security"
+msgid "WEP"
+msgstr "ВЕП"
+
+# >> @item wireless security
+#: editor/uiutils.cpp:590
+#, kde-format
+msgctxt "@label LEAP security"
+msgid "LEAP"
+msgstr "ЛЕАП"
+
+# >> @item wireless security
+#: editor/uiutils.cpp:593
+#, kde-format
+msgctxt "@label Dynamic WEP security"
+msgid "Dynamic WEP"
+msgstr "динамички ВЕП"
+
+# >> @item wireless security
+#: editor/uiutils.cpp:596
+#, kde-format
+msgctxt "@label WPA-PSK security"
+msgid "WPA-PSK"
+msgstr "ВПА‑ПСК"
+
+# >> @item wireless security
+#: editor/uiutils.cpp:599
+#, kde-format
+msgctxt "@label WPA-EAP security"
+msgid "WPA-EAP"
+msgstr "ВПА‑ЕАП"
+
+# >> @item wireless security
+#: editor/uiutils.cpp:602
+#, kde-format
+msgctxt "@label WPA2-PSK security"
+msgid "WPA2-PSK"
+msgstr "ВПА2‑ПСК"
+
+# >> @item wireless security
+#: editor/uiutils.cpp:605
+#, kde-format
+msgctxt "@label WPA2-EAP security"
+msgid "WPA2-EAP"
+msgstr "ВПА‑ЕАП"
+
+#: editor/uiutils.cpp:608
+#, kde-format
+msgctxt "@label WPA3-SAE security"
+msgid "WPA3-SAE"
+msgstr ""
+
+#: editor/uiutils.cpp:611
+#, kde-format
+msgctxt "@label WPA3-EAP-SUITE-B-192 security"
+msgid "WPA3-EAP-SUITE-B-192"
+msgstr ""
+
+# >> @item wireless security
+#: editor/uiutils.cpp:614
+#, kde-format
+msgctxt "@label unknown security"
+msgid "Unknown security type"
+msgstr "непознат тип безбедности"
+
+#: editor/uiutils.cpp:630
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "One minute ago"
+msgid_plural "%1 minutes ago"
+msgstr[0] "пре %1 минута"
+msgstr[1] "пре %1 минута"
+msgstr[2] "пре %1 минута"
+msgstr[3] "пре минут"
+
+#: editor/uiutils.cpp:636
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "One hour ago"
+msgid_plural "%1 hours ago"
+msgstr[0] "пре %1 сат"
+msgstr[1] "пре %1 сата"
+msgstr[2] "пре %1 сати"
+msgstr[3] "пре сат"
+
+#: editor/uiutils.cpp:641
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Yesterday"
+msgstr "јуче"
+
+#: editor/uiutils.cpp:649
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never"
+msgstr "никад"
+
+#: editor/uiutils.cpp:664
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last hour, as "
+"the number of minutes since usage"
+msgid "Last used one minute ago"
+msgid_plural "Last used %1 minutes ago"
+msgstr[0] "последње коришћено пре %1 минут"
+msgstr[1] "последње коришћено пре %1 минута"
+msgstr[2] "последње коришћено пре %1 минута"
+msgstr[3] "последње коришћено пре минут"
+
+#: editor/uiutils.cpp:670
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used in the last day, as "
+"the number of hours since usage"
+msgid "Last used one hour ago"
+msgid_plural "Last used %1 hours ago"
+msgstr[0] "последње коришћено пре %1 сат"
+msgstr[1] "последње коришћено пре %1 сата"
+msgstr[2] "последње коришћено пре %1 сати"
+msgstr[3] "последње коришћено пре сат"
+
+#: editor/uiutils.cpp:675
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection used the previous day"
+msgid "Last used yesterday"
+msgstr "последње коришћено јуче"
+
+#: editor/uiutils.cpp:677
+#, kde-format
+msgid "Last used on %1"
+msgstr "последње коришћено %1|/|последње коришћено $[на-реч %1 ген]"
+
+#: editor/uiutils.cpp:683
+#, kde-format
+msgctxt ""
+"Label for last used time for a network connection that has never been used"
+msgid "Never used"
+msgstr "никад коришћено"
+
+#: editor/vpnuiplugin.cpp:42
+#, kde-format
+msgid "No VPN plugin found for type %1"
+msgstr ""
+
+#: editor/vpnuiplugin.cpp:99
+#, kde-format
+msgid "Importing this type of VPN is not implemented"
+msgstr ""
+
+#: editor/vpnuiplugin.cpp:123
+#, kde-format
+msgid "Not implemented"
+msgstr ""
+
+#: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
 msgctxt "@item:intable shortcut for Not Available"
 msgid "N/A"
 msgstr "нд."
 
-#: editor/widgets/advancedpermissionswidget.cpp:101
+#: editor/widgets/advancedpermissionswidget.cpp:87
 #, kde-format
 msgctxt "@info:tooltip real user name is not available"
 msgid "Not Available"
 msgstr "Није доступно"
 
-#: editor/widgets/bssidcombobox.cpp:135
+#: editor/widgets/bssidcombobox.cpp:122
 #, kde-format
 msgid "First select the SSID"
 msgstr "Прво изаберите ССИД."
 
-#: editor/widgets/bssidcombobox.cpp:144
+#: editor/widgets/bssidcombobox.cpp:131
 #, kde-format
 msgid ""
 "%1 (%2%)\n"
@@ -2140,65 +2968,67 @@ msgstr ""
 "Фреквенција: %3 MHz\n"
 "Канал: %4"
 
-#: editor/widgets/ipv4routeswidget.cpp:44
+#: editor/widgets/ipv4routeswidget.cpp:31
 #, kde-format
 msgctxt "Header text for IPv4 route metric"
 msgid "Metric"
 msgstr "метрика"
 
-#: editor/widgets/ipv6routeswidget.cpp:41
+#: editor/widgets/ipv6routeswidget.cpp:28
 #, kde-format
 msgctxt "Header text for IPv6 netmask"
 msgid "Netmask"
 msgstr "мрежна маска"
 
-#: editor/widgets/ipv6routeswidget.cpp:45
+#: editor/widgets/ipv6routeswidget.cpp:32
 #, kde-format
 msgctxt "Header text for IPv6 route metric"
 msgid "Metric"
 msgstr "метрика"
 
-#: editor/widgets/mobileconnectionwizard.cpp:54
+#: editor/widgets/mobileconnectionwizard.cpp:39
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "New Mobile Broadband Connection"
 msgstr "Нова мобилна широкопојасна веза"
 
-#: editor/widgets/mobileconnectionwizard.cpp:150
-#: editor/widgets/mobileconnectionwizard.cpp:168
-#: editor/widgets/mobileconnectionwizard.cpp:196
-#: editor/widgets/mobileconnectionwizard.cpp:529
-#, kde-format
+#: editor/widgets/mobileconnectionwizard.cpp:135
+#: editor/widgets/mobileconnectionwizard.cpp:153
+#: editor/widgets/mobileconnectionwizard.cpp:181
+#: editor/widgets/mobileconnectionwizard.cpp:518
+#, fuzzy, kde-format
+#| msgctxt "Mobile Connection Wizard"
+#| msgid "My plan is not listed..."
 msgctxt "Mobile Connection Wizard"
-msgid "My plan is not listed..."
+msgid "My plan is not listed…"
 msgstr "Мој пакет није наведен..."
 
-#: editor/widgets/mobileconnectionwizard.cpp:153
+#: editor/widgets/mobileconnectionwizard.cpp:138
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Unknown Provider"
 msgstr "Непознат провајдер"
 
-#: editor/widgets/mobileconnectionwizard.cpp:161
+#: editor/widgets/mobileconnectionwizard.cpp:146
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Default"
 msgstr "Подразумевано"
 
-#: editor/widgets/mobileconnectionwizard.cpp:198
-#: editor/widgets/mobileconnectionwizard.cpp:206
+#: editor/widgets/mobileconnectionwizard.cpp:183
+#: editor/widgets/mobileconnectionwizard.cpp:191
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "APN: %1"
 msgstr "АПН: %1"
 
-#: editor/widgets/mobileconnectionwizard.cpp:251
+#: editor/widgets/mobileconnectionwizard.cpp:236
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Set up a Mobile Broadband Connection"
 msgstr "Постављање мобилне широкопојасне везе"
 
-#: editor/widgets/mobileconnectionwizard.cpp:254
+#: editor/widgets/mobileconnectionwizard.cpp:240
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid ""
@@ -2208,117 +3038,117 @@ msgstr ""
 "Ова помоћник вам олакшава постављање мобилне широкопојасне везе ка мобилној "
 "(3Г) мрежи."
 
-#: editor/widgets/mobileconnectionwizard.cpp:258
+#: editor/widgets/mobileconnectionwizard.cpp:244
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "You will need the following information:"
 msgstr "Требаће вам следећи подаци:"
 
-#: editor/widgets/mobileconnectionwizard.cpp:262
+#: editor/widgets/mobileconnectionwizard.cpp:248
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband provider's name"
 msgstr "име вашег широкопојасног провајдера"
 
-#: editor/widgets/mobileconnectionwizard.cpp:263
+#: editor/widgets/mobileconnectionwizard.cpp:249
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband billing plan name"
 msgstr "назив вашег широкопојасног пакета"
 
-#: editor/widgets/mobileconnectionwizard.cpp:264
+#: editor/widgets/mobileconnectionwizard.cpp:250
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
 msgstr "(у неким случајевима) АПН широкопојасног пакета (име приступне тачке)"
 
-#: editor/widgets/mobileconnectionwizard.cpp:268
+#: editor/widgets/mobileconnectionwizard.cpp:254
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Create a connection for &this mobile broadband device:"
 msgstr "Направи везу за &овај мобилни широкопојасни уређај:"
 
-#: editor/widgets/mobileconnectionwizard.cpp:272
-#: editor/widgets/mobileconnectionwizard.cpp:399
+#: editor/widgets/mobileconnectionwizard.cpp:258
+#: editor/widgets/mobileconnectionwizard.cpp:385
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Any GSM device"
 msgstr "било који ГСМ уређај"
 
-#: editor/widgets/mobileconnectionwizard.cpp:274
-#: editor/widgets/mobileconnectionwizard.cpp:401
+#: editor/widgets/mobileconnectionwizard.cpp:260
+#: editor/widgets/mobileconnectionwizard.cpp:387
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Any CDMA device"
 msgstr "било који ЦДМА уређај"
 
-#: editor/widgets/mobileconnectionwizard.cpp:325
+#: editor/widgets/mobileconnectionwizard.cpp:311
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Installed GSM device"
 msgstr "инсталирани ГСМ уређај"
 
-#: editor/widgets/mobileconnectionwizard.cpp:329
+#: editor/widgets/mobileconnectionwizard.cpp:315
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Installed CDMA device"
 msgstr "инсталирани ЦДМА уређај"
 
-#: editor/widgets/mobileconnectionwizard.cpp:414
+#: editor/widgets/mobileconnectionwizard.cpp:400
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider's Country"
 msgstr "Избор државе провајдера"
 
-#: editor/widgets/mobileconnectionwizard.cpp:417
+#: editor/widgets/mobileconnectionwizard.cpp:403
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Country List:"
 msgstr "Списак држава:"
 
-#: editor/widgets/mobileconnectionwizard.cpp:421
+#: editor/widgets/mobileconnectionwizard.cpp:407
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My country is not listed"
 msgstr "Моја држава није наведена"
 
-#: editor/widgets/mobileconnectionwizard.cpp:437
+#: editor/widgets/mobileconnectionwizard.cpp:423
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider"
 msgstr "Избор провајдера"
 
-#: editor/widgets/mobileconnectionwizard.cpp:440
+#: editor/widgets/mobileconnectionwizard.cpp:426
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Select your provider from a &list:"
 msgstr "Изаберите свог провајдера са &списка:"
 
-#: editor/widgets/mobileconnectionwizard.cpp:449
+#: editor/widgets/mobileconnectionwizard.cpp:435
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "I cannot find my provider and I wish to enter it &manually:"
 msgstr "Не могу да нађем провајдера &па хоћу ручно да га унесем:"
 
-#: editor/widgets/mobileconnectionwizard.cpp:491
+#: editor/widgets/mobileconnectionwizard.cpp:477
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Billing Plan"
 msgstr "Избор пакета"
 
-#: editor/widgets/mobileconnectionwizard.cpp:494
+#: editor/widgets/mobileconnectionwizard.cpp:480
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "&Select your plan:"
 msgstr "&Изаберите свој пакет:"
 
-#: editor/widgets/mobileconnectionwizard.cpp:501
+#: editor/widgets/mobileconnectionwizard.cpp:487
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Selected plan &APN (Access Point Name):"
 msgstr "&АПН (име приступне тачке) изабраног пакета:"
 
-#: editor/widgets/mobileconnectionwizard.cpp:513
+#: editor/widgets/mobileconnectionwizard.cpp:500
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid ""
@@ -2332,58 +3162,58 @@ msgstr ""
 "\n"
 "Ако нисте сигурни за пакет, тражите провајдеру да вам да АПН пакета."
 
-#: editor/widgets/mobileconnectionwizard.cpp:550
+#: editor/widgets/mobileconnectionwizard.cpp:540
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Confirm Mobile Broadband Settings"
 msgstr "Потврда мобилних широкопојасних поставки"
 
-#: editor/widgets/mobileconnectionwizard.cpp:553
+#: editor/widgets/mobileconnectionwizard.cpp:543
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid ""
 "Your mobile broadband connection is configured with the following settings:"
 msgstr "Мобилна широкопојасна веза подешена је са следећим поставкама:"
 
-#: editor/widgets/mobileconnectionwizard.cpp:557
+#: editor/widgets/mobileconnectionwizard.cpp:547
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your Provider:"
 msgstr "Провајдер:"
 
-#: editor/widgets/mobileconnectionwizard.cpp:562
+#: editor/widgets/mobileconnectionwizard.cpp:552
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your Plan:"
 msgstr "Пакет:"
 
 # >> @info:tooltip
-#: editor/widgets/passwordfield.cpp:45
+#: editor/widgets/passwordfield.cpp:32
 #, kde-format
 msgid "Change the visibility of the password"
 msgstr "Промени видљивост лозинке"
 
-#: editor/widgets/passwordfield.cpp:55
+#: editor/widgets/passwordfield.cpp:41
 #, kde-format
 msgid "Store password for this user only (encrypted)"
 msgstr "Складишти лозинку само за овог корисника (шифровано)"
 
-#: editor/widgets/passwordfield.cpp:56
+#: editor/widgets/passwordfield.cpp:43
 #, kde-format
 msgid "Store password for all users (not encrypted)"
 msgstr "Складишти лозинку за све кориснике (без шифровања)"
 
-#: editor/widgets/passwordfield.cpp:57 editor/widgets/passwordfield.cpp:103
+#: editor/widgets/passwordfield.cpp:45 editor/widgets/passwordfield.cpp:91
 #, kde-format
 msgid "Ask for this password every time"
 msgstr "Тражи лозинку сваки пут"
 
-#: editor/widgets/passwordfield.cpp:118
+#: editor/widgets/passwordfield.cpp:106
 #, kde-format
 msgid "This password is not required"
 msgstr "Ово лозинка није неопходна"
 
-#: editor/widgets/ssidcombobox.cpp:139
+#: editor/widgets/ssidcombobox.cpp:131
 #, kde-format
 msgid ""
 "%1 (%2%)\n"
@@ -2394,7 +3224,7 @@ msgstr ""
 "Безбедност: %3\n"
 "Фреквенција: %4 MHz"
 
-#: editor/widgets/ssidcombobox.cpp:142
+#: editor/widgets/ssidcombobox.cpp:139
 #, kde-format
 msgid ""
 "%1 (%2%)\n"
@@ -2498,84 +3328,99 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Уклони"
 
-#: handler.cpp:135
+#: handler.cpp:111
 #, kde-format
-msgid "Missing VPN plugin"
-msgstr "Недостаје прикључак за ВПН"
+msgid "Plasma is missing support for '%1' VPN connections."
+msgstr ""
 
-#: handler.cpp:753
+#: handler.cpp:113
 #, kde-format
-msgid "Failed to activate %1"
-msgstr "Не могу да активирам %1"
+msgid "Report Bug"
+msgstr ""
 
-#: handler.cpp:757
+#: handler.cpp:136
 #, kde-format
-msgid "Failed to add %1"
-msgstr "Не могу да додам %1"
+msgid "NetworkManager is missing support for '%1' VPN connections."
+msgstr ""
 
-#: handler.cpp:761
+#: handler.cpp:138
+#, kde-format
+msgid "Install"
+msgstr ""
+
+#: handler.cpp:352 handler.cpp:845
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Не могу да додам везу %1"
 
-#: handler.cpp:765
+#: handler.cpp:361 handler.cpp:887
+#, kde-format
+msgid "Connection %1 has been added"
+msgstr "Веза %1 додата"
+
+#: handler.cpp:837
+#, kde-format
+msgid "Failed to activate %1"
+msgstr "Не могу да активирам %1"
+
+#: handler.cpp:841
+#, kde-format
+msgid "Failed to add %1"
+msgstr "Не могу да додам %1"
+
+#: handler.cpp:849
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Не могу да деактивирам %1"
 
-#: handler.cpp:769
+#: handler.cpp:853
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Не могу да уклоним %1"
 
-#: handler.cpp:773
+#: handler.cpp:857
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Не могу да ажурирам везу %1"
 
-#: handler.cpp:784
+#: handler.cpp:868
 #, fuzzy, kde-format
 #| msgid "Failed to activate %1"
 msgid "Failed to create hotspot %1"
 msgstr "Не могу да активирам %1"
 
-#: handler.cpp:803
-#, kde-format
-msgid "Connection %1 has been added"
-msgstr "Веза %1 додата"
-
-#: handler.cpp:807
+#: handler.cpp:891
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Веза %1 уклоњена"
 
-#: handler.cpp:811
+#: handler.cpp:895
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Веза %1 ажурирана"
 
-#: models/creatableconnectionsmodel.cpp:139
-#: models/creatableconnectionsmodel.cpp:144
+#: models/creatableconnectionsmodel.cpp:136
+#: models/creatableconnectionsmodel.cpp:143
 #: models/creatableconnectionsmodel.cpp:150
-#: models/creatableconnectionsmodel.cpp:156
-#: models/creatableconnectionsmodel.cpp:161
-#: models/creatableconnectionsmodel.cpp:167
-#: models/creatableconnectionsmodel.cpp:172
+#: models/creatableconnectionsmodel.cpp:157
+#: models/creatableconnectionsmodel.cpp:164
+#: models/creatableconnectionsmodel.cpp:174
+#: models/creatableconnectionsmodel.cpp:181
 #, kde-format
 msgid "Hardware based connections"
 msgstr "Везе на основу хардвера"
 
-#: models/creatableconnectionsmodel.cpp:140
+#: models/creatableconnectionsmodel.cpp:137
 #, kde-format
 msgid "Some DSL description"
 msgstr "Неки опис ДСЛ‑а"
 
-#: models/creatableconnectionsmodel.cpp:145
+#: models/creatableconnectionsmodel.cpp:144
 #, kde-format
 msgid "Some infiniband description"
 msgstr "Неки опис инфинибанда"
 
-#: models/creatableconnectionsmodel.cpp:150
+#: models/creatableconnectionsmodel.cpp:149
 #, kde-format
 msgid "Mobile Broadband"
 msgstr "Мобилна широкопојасна"
@@ -2585,942 +3430,370 @@ msgstr "Мобилна широкопојасна"
 msgid "Some mobile broadband description"
 msgstr "Неки опис мобилне широкопојасне"
 
-#: models/creatableconnectionsmodel.cpp:156 uiutils.cpp:243
-#, kde-format
-msgid "Wired Ethernet"
-msgstr "Жичана етернетска"
-
-#: models/creatableconnectionsmodel.cpp:157
-#: models/creatableconnectionsmodel.cpp:162
+#: models/creatableconnectionsmodel.cpp:158
+#: models/creatableconnectionsmodel.cpp:165
 #, kde-format
 msgid "Some wired ethernet description"
 msgstr "Неки опис жичаног етернета"
 
-#: models/creatableconnectionsmodel.cpp:161
+#: models/creatableconnectionsmodel.cpp:163
 #, kde-format
 msgid "Wired Ethernet (shared)"
 msgstr "Жичана етернетска (дељена)"
 
-#: models/creatableconnectionsmodel.cpp:168
-#: models/creatableconnectionsmodel.cpp:173
+#: models/creatableconnectionsmodel.cpp:175
+#: models/creatableconnectionsmodel.cpp:182
 #, kde-format
 msgid "Some wi-fi description"
 msgstr "Неки опис вај‑фаја"
 
-#: models/creatableconnectionsmodel.cpp:172
+#: models/creatableconnectionsmodel.cpp:180
 #, kde-format
 msgid "Wi-Fi (shared)"
 msgstr "Вај‑фај (дељена)"
 
-#: models/creatableconnectionsmodel.cpp:179
-#: models/creatableconnectionsmodel.cpp:185
 #: models/creatableconnectionsmodel.cpp:191
-#: models/creatableconnectionsmodel.cpp:197
+#: models/creatableconnectionsmodel.cpp:201
+#: models/creatableconnectionsmodel.cpp:211
+#: models/creatableconnectionsmodel.cpp:221
 #, kde-format
 msgid "Virtual connections"
 msgstr "Виртуелне везе"
 
-#: models/creatableconnectionsmodel.cpp:180
-#: models/creatableconnectionsmodel.cpp:186
+#: models/creatableconnectionsmodel.cpp:192
+#: models/creatableconnectionsmodel.cpp:202
 #, kde-format
 msgid "Some bond description"
 msgstr "Неки опис споја"
 
-#: models/creatableconnectionsmodel.cpp:192
+#: models/creatableconnectionsmodel.cpp:212
 #, kde-format
 msgid "Some team description"
 msgstr "Неки опис удруженог"
 
-#: models/creatableconnectionsmodel.cpp:198
+#: models/creatableconnectionsmodel.cpp:222
 #, kde-format
 msgid "Some vlan description"
 msgstr "Неки опис ВЛАН‑а"
 
-#: models/creatableconnectionsmodel.cpp:217
-#: models/creatableconnectionsmodel.cpp:227
+#: models/creatableconnectionsmodel.cpp:242
+#: models/creatableconnectionsmodel.cpp:255
 #, kde-format
 msgid "VPN connections"
 msgstr "ВПН везе"
 
-#: models/creatableconnectionsmodel.cpp:235
-#, kde-format
-msgid "Import VPN connection..."
+#: models/creatableconnectionsmodel.cpp:266
+#, fuzzy, kde-format
+#| msgid "Import VPN connection..."
+msgid "Import VPN connection…"
 msgstr "Увези ВПН везу..."
 
-#: models/creatableconnectionsmodel.cpp:235
+#: models/creatableconnectionsmodel.cpp:267
 #, kde-format
 msgid "Other"
 msgstr "Друго"
 
-#: models/creatableconnectionsmodel.cpp:236
+#: models/creatableconnectionsmodel.cpp:268
 #, kde-format
 msgid "Import a saved configuration file"
 msgstr "Увези сачувани поставни фајл"
 
-#: models/networkmodelitem.cpp:543
+#: models/networkmodelitem.cpp:42
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is Unknown"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:43
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is ADSL"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:44
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Bluetooth"
+msgstr ""
+
+#: models/networkmodelitem.cpp:45
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is Bridge"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:46
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is CDMA"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:47
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is GSM"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:48
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Infiniband"
+msgstr ""
+
+#: models/networkmodelitem.cpp:49
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is OLPC Mesh"
+msgstr ""
+
+#: models/networkmodelitem.cpp:50
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is PPOPE"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:51
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is VLAN"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:52
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is VPN"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:53
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is Wimax"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:54
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is Wired"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:55
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is Wireless"
+msgstr ""
+
+#: models/networkmodelitem.cpp:56
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is Team"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:57
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is Generic"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:58
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgctxt "@info:tooltip"
+msgid "The connection type is Tunnel"
+msgstr "Тип везе:"
+
+#: models/networkmodelitem.cpp:59
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is IP Tunnel"
+msgstr ""
+
+#: models/networkmodelitem.cpp:60
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "The connection type is WireGuard"
+msgstr ""
+
+#: models/networkmodelitem.cpp:585
 #, kde-format
 msgid "IPv4 Address"
 msgstr "ИПв4 адресе"
 
-#: models/networkmodelitem.cpp:549
+#: models/networkmodelitem.cpp:591
 #, kde-format
 msgid "IPv4 Default Gateway"
 msgstr ""
 
-#: models/networkmodelitem.cpp:555
+#: models/networkmodelitem.cpp:598
 #, kde-format
-msgid "IPv4 Nameserver"
+msgid "IPv4 Primary Nameserver"
 msgstr ""
 
-#: models/networkmodelitem.cpp:564
+#: models/networkmodelitem.cpp:602
+#, kde-format
+msgid "IPv4 Secondary Nameserver"
+msgstr ""
+
+#: models/networkmodelitem.cpp:612
 #, kde-format
 msgid "IPv6 Address"
 msgstr "ИПв6 адресе"
 
-#: models/networkmodelitem.cpp:570
+#: models/networkmodelitem.cpp:614
+#, fuzzy, kde-format
+#| msgid "IPv6 Address"
+msgid "IPv6 ULA Address"
+msgstr "ИПв6 адресе"
+
+#: models/networkmodelitem.cpp:620
 #, kde-format
-msgid "IPv6 Nameserver"
+msgid "IPv6 Default Gateway"
 msgstr ""
 
-#: models/networkmodelitem.cpp:578 models/networkmodelitem.cpp:591
+#: models/networkmodelitem.cpp:627
+#, kde-format
+msgid "IPv6 Primary Nameserver"
+msgstr ""
+
+#: models/networkmodelitem.cpp:631
+#, kde-format
+msgid "IPv6 Secondary Nameserver"
+msgstr ""
+
+#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
 #, kde-format
 msgid "Connection speed"
 msgstr "Брзина везе"
 
-#: models/networkmodelitem.cpp:580 models/networkmodelitem.cpp:593
-#: models/networkmodelitem.cpp:644 models/networkmodelitem.cpp:651
-#: models/networkmodelitem.cpp:657 models/networkmodelitem.cpp:663
-#: models/networkmodelitem.cpp:670 models/networkmodelitem.cpp:679
+#: models/networkmodelitem.cpp:642 models/networkmodelitem.cpp:660
+#: models/networkmodelitem.cpp:709 models/networkmodelitem.cpp:715
+#: models/networkmodelitem.cpp:721 models/networkmodelitem.cpp:727
+#: models/networkmodelitem.cpp:734 models/networkmodelitem.cpp:742
 #, kde-format
 msgid "MAC Address"
 msgstr "МАЦ адреса"
 
-#: models/networkmodelitem.cpp:584
+#: models/networkmodelitem.cpp:646
 #, kde-format
 msgid "Access point (SSID)"
 msgstr "Приступна тачка (ССИД)"
 
-#: models/networkmodelitem.cpp:586
+#: models/networkmodelitem.cpp:648
 #, kde-format
 msgid "Signal strength"
 msgstr "Јачина сигнала"
 
-#: models/networkmodelitem.cpp:588
+#: models/networkmodelitem.cpp:650
 #, kde-format
 msgid "Security type"
 msgstr "Тип безбедности"
 
-#: models/networkmodelitem.cpp:606
+#: models/networkmodelitem.cpp:657
+#, kde-format
+msgid "Frequency"
+msgstr ""
+
+#: models/networkmodelitem.cpp:658
+#, fuzzy, kde-format
+#| msgid "BSSID:"
+msgid "BSSID"
+msgstr "БССИД:"
+
+#: models/networkmodelitem.cpp:672
 #, kde-format
 msgid "Operator"
 msgstr "Оператер"
 
-#: models/networkmodelitem.cpp:610
+#: models/networkmodelitem.cpp:676
 #, kde-format
 msgid "Network ID"
 msgstr "ИД мреже"
 
-#: models/networkmodelitem.cpp:614
+#: models/networkmodelitem.cpp:680
 #, kde-format
 msgid "Signal Quality"
 msgstr "Квалитет сигнала"
 
-#: models/networkmodelitem.cpp:615
+#: models/networkmodelitem.cpp:681
 #, kde-format
 msgid "Access Technology"
 msgstr "Технологија приступа"
 
-#: models/networkmodelitem.cpp:621
+#: models/networkmodelitem.cpp:686
 #, kde-format
 msgid "VPN plugin"
 msgstr "ВПН прикључак"
 
-#: models/networkmodelitem.cpp:632
+#: models/networkmodelitem.cpp:697
 #, kde-format
 msgid "Banner"
 msgstr "Барјак"
 
-#: models/networkmodelitem.cpp:638
+#: models/networkmodelitem.cpp:703
 #, kde-format
 msgid "Name"
 msgstr "Име"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:642
+#: models/networkmodelitem.cpp:705 models/networkmodelitem.cpp:707
 #, kde-format
 msgid "Capabilities"
 msgstr "Способности"
 
-#: models/networkmodelitem.cpp:649 models/networkmodelitem.cpp:655
-#: models/networkmodelitem.cpp:661 models/networkmodelitem.cpp:667
-#: models/networkmodelitem.cpp:673 models/networkmodelitem.cpp:677
+#: models/networkmodelitem.cpp:713 models/networkmodelitem.cpp:719
+#: models/networkmodelitem.cpp:725 models/networkmodelitem.cpp:731
+#: models/networkmodelitem.cpp:737 models/networkmodelitem.cpp:740
 #, kde-format
 msgid "Type"
 msgstr "Тип"
 
-#: models/networkmodelitem.cpp:669
+#: models/networkmodelitem.cpp:733
 #, kde-format
 msgid "Vlan ID"
 msgstr "ВЛАН ИД"
 
-#: models/networkmodelitem.cpp:673
+#: models/networkmodelitem.cpp:737
 #, kde-format
 msgid "Adsl"
 msgstr "АДСЛ"
 
-#: uiutils.cpp:151
-#, kde-format
-msgctxt "title of the interface widget in nm's popup"
-msgid "Wi-Fi"
-msgstr "Вај‑фај"
+#: models/networkmodelitem.cpp:747
+#, fuzzy, kde-format
+#| msgid "Service:"
+msgid "Device"
+msgstr "Сервис:"
 
-#: uiutils.cpp:154
-#, kde-format
-msgctxt "title of the interface widget in nm's popup"
-msgid "Bluetooth"
-msgstr "Блутут"
+#~ msgid "..."
+#~ msgstr "..."
 
-#: uiutils.cpp:157
-#, kde-format
-msgctxt "title of the interface widget in nm's popup"
-msgid "Infiniband"
-msgstr "Инфинибанд"
+#~ msgid "Add..."
+#~ msgstr "Додај..."
 
-#: uiutils.cpp:160
-#, kde-format
-msgctxt "title of the interface widget in nm's popup"
-msgid "ADSL"
-msgstr "АДСЛ"
+#~ msgid "Edit..."
+#~ msgstr "Уреди..."
 
-#: uiutils.cpp:163
-#, kde-format
-msgctxt "title of the interface widget in nm's popup"
-msgid "Virtual (bond)"
-msgstr "Виртуелно (спој)"
+#~ msgid "Advanced..."
+#~ msgstr "Напредно..."
 
-#: uiutils.cpp:166
-#, kde-format
-msgctxt "title of the interface widget in nm's popup"
-msgid "Virtual (bridge)"
-msgstr "Виртуелно (мост)"
+#~ msgid "Random..."
+#~ msgstr "Насумично..."
 
-#: uiutils.cpp:169
-#, kde-format
-msgctxt "title of the interface widget in nm's popup"
-msgid "Virtual (vlan)"
-msgstr "Виртуелно (ВЛАН)"
+#~ msgctxt "Error message in VPN import/export dialog"
+#~ msgid "Operation not supported for this VPN type."
+#~ msgstr "Поступак није подржан за овај тип ВПН‑а."
 
-#: uiutils.cpp:172
-#, kde-format
-msgctxt "title of the interface widget in nm's popup"
-msgid "Virtual (team)"
-msgstr "Виртуелно (удружено)"
+#~ msgid "Missing VPN plugin"
+#~ msgstr "Недостаје прикључак за ВПН"
 
-#: uiutils.cpp:179
-#, kde-format
-msgctxt "title of the interface widget in nm's popup"
-msgid "Serial Modem"
-msgstr "Серијско модемско"
-
-#: uiutils.cpp:184
-#, kde-format
-msgctxt "title of the interface widget in nm's popup"
-msgid "Mobile Broadband"
-msgstr "Мобилно широкопојасно"
-
-#: uiutils.cpp:195
-#, kde-format
-msgctxt "title of the interface widget in nm's popup"
-msgid "Wired Ethernet"
-msgstr "Жичано етернетско"
-
-#: uiutils.cpp:207
-#, kde-format
-msgid "ADSL"
-msgstr "АДСЛ"
-
-#: uiutils.cpp:226
-#, kde-format
-msgid "Mobile broadband"
-msgstr "Мобилно широкопојасно"
-
-#: uiutils.cpp:233
-#, kde-format
-msgid "Olpc mesh"
-msgstr "ОЛПЦ решетка"
-
-#: uiutils.cpp:254
-#, kde-format
-msgid "WireGuard VPN"
-msgstr ""
-
-#: uiutils.cpp:258
-#, kde-format
-msgid "Unknown connection type"
-msgstr "Непозната врста везе"
-
-#: uiutils.cpp:270
-#, kde-format
-msgid "Wireless Interface (%1)"
-msgstr "Бежично сучеље (%1)"
-
-#: uiutils.cpp:273
-#, kde-format
-msgid "Wired Interface (%1)"
-msgstr "Жичано сучеље (%1)"
-
-#: uiutils.cpp:276
-#, kde-format
-msgid "Bluetooth (%1)"
-msgstr "Блутут (%1)"
-
-#: uiutils.cpp:279
-#, kde-format
-msgid "Modem (%1)"
-msgstr "Модем (%1)"
-
-#: uiutils.cpp:282
-#, kde-format
-msgid "ADSL (%1)"
-msgstr "АДСЛ (%1)"
-
-#: uiutils.cpp:285
-#, kde-format
-msgid "VLan (%1)"
-msgstr "ВЛАН (%1)"
-
-#: uiutils.cpp:288
-#, kde-format
-msgid "Bridge (%1)"
-msgstr "Мост (%1)"
-
-#: uiutils.cpp:301
-#, kde-format
-msgctxt "description of unknown network interface state"
-msgid "Unknown"
-msgstr "Непознато"
-
-#: uiutils.cpp:304
-#, kde-format
-msgctxt "description of unmanaged network interface state"
-msgid "Unmanaged"
-msgstr "Неуправљано"
-
-#: uiutils.cpp:307
-#, kde-format
-msgctxt "description of unavailable network interface state"
-msgid "Unavailable"
-msgstr "Недоступно"
-
-#: uiutils.cpp:310
-#, kde-format
-msgctxt "description of unconnected network interface state"
-msgid "Not connected"
-msgstr "Није повезано"
-
-#: uiutils.cpp:313
-#, kde-format
-msgctxt "description of preparing to connect network interface state"
-msgid "Preparing to connect"
-msgstr "Припремам повезивање"
-
-#: uiutils.cpp:316
-#, kde-format
-msgctxt "description of configuring hardware network interface state"
-msgid "Configuring interface"
-msgstr "Подешавам сучеље"
-
-#: uiutils.cpp:319
-#, kde-format
-msgctxt "description of waiting for authentication network interface state"
-msgid "Waiting for authorization"
-msgstr "Чекам овлашћење"
-
-#: uiutils.cpp:322
-#, kde-format
-msgctxt "network interface doing dhcp request in most cases"
-msgid "Setting network address"
-msgstr "Постављам мрежну адресу"
-
-#: uiutils.cpp:325
-#, kde-format
-msgctxt "is other action required to fully connect? captive portals, etc."
-msgid "Checking further connectivity"
-msgstr "Проверавам даљу повезивост"
-
-#: uiutils.cpp:328
-#, kde-format
-msgctxt ""
-"a secondary connection (e.g. VPN) has to be activated first to continue"
-msgid "Waiting for a secondary connection"
-msgstr "Чекам секундарну везу"
-
-#: uiutils.cpp:332
-#, kde-format
-msgctxt "network interface connected state label"
-msgid "Connected"
-msgstr "Повезано"
-
-#: uiutils.cpp:334
-#, kde-format
-msgctxt "network interface connected state label"
-msgid "Connected to %1"
-msgstr "Повезано на %1"
-
-#: uiutils.cpp:338
-#, kde-format
-msgctxt "network interface disconnecting state label"
-msgid "Deactivating connection"
-msgstr "Обустављам везу"
-
-#: uiutils.cpp:341
-#, kde-format
-msgctxt "network interface connection failed state label"
-msgid "Connection Failed"
-msgstr "Повезивање пропало"
-
-#: uiutils.cpp:344 uiutils.cpp:378
-#, kde-format
-msgctxt "interface state"
-msgid "Error: Invalid state"
-msgstr "Грешка: лоше стање"
-
-#: uiutils.cpp:354
-#, kde-format
-msgctxt "The state of the VPN connection is unknown"
-msgid "Unknown"
-msgstr "Непознато"
-
-#: uiutils.cpp:357
-#, kde-format
-msgctxt "The VPN connection is preparing to connect"
-msgid "Preparing to connect"
-msgstr "Припремам повезивање"
-
-#: uiutils.cpp:360
-#, kde-format
-msgctxt "The VPN connection needs authorization credentials"
-msgid "Needs authorization"
-msgstr "Потребно овлашћење"
-
-#: uiutils.cpp:363
-#, kde-format
-msgctxt "The VPN connection is being established"
-msgid "Connecting"
-msgstr "Повезујем се"
-
-#: uiutils.cpp:366
-#, kde-format
-msgctxt "The VPN connection is getting an IP address"
-msgid "Setting network address"
-msgstr "Постављам мрежну адресу"
-
-#: uiutils.cpp:369
-#, kde-format
-msgctxt "The VPN connection is active"
-msgid "Activated"
-msgstr "Активирано"
-
-#: uiutils.cpp:372
-#, kde-format
-msgctxt "The VPN connection failed"
-msgid "Failed"
-msgstr "Пропало"
-
-#: uiutils.cpp:375
-#, kde-format
-msgctxt "The VPN connection is disconnected"
-msgid "Failed"
-msgstr "Пропало"
-
-#: uiutils.cpp:387
-#, kde-format
-msgctxt "wireless network operation mode"
-msgid "Unknown"
-msgstr "непозната"
-
-#: uiutils.cpp:390
-#, kde-format
-msgctxt "wireless network operation mode"
-msgid "Adhoc"
-msgstr "импровизована"
-
-#: uiutils.cpp:393
-#, kde-format
-msgctxt "wireless network operation mode"
-msgid "Infrastructure"
-msgstr "инфраструктурна"
-
-#: uiutils.cpp:396
-#, kde-format
-msgctxt "wireless network operation mode"
-msgid "Access point"
-msgstr "приступна тачка"
-
-#: uiutils.cpp:399
-#, kde-format
-msgid "INCORRECT MODE FIX ME"
-msgstr "ЛОШ РЕЖИМ ПОПРАВИ МЕ"
-
-#: uiutils.cpp:421
-#, kde-format
-msgctxt "wireless network cipher"
-msgid "Pairwise WEP40"
-msgstr "ВЕП40 по паровима"
-
-#: uiutils.cpp:423
-#, kde-format
-msgctxt "wireless network cipher"
-msgid "Pairwise WEP104"
-msgstr "ВЕП104 по паровима"
-
-#: uiutils.cpp:425
-#, kde-format
-msgctxt "wireless network cipher"
-msgid "Pairwise TKIP"
-msgstr "ТКИП по паровима"
-
-#: uiutils.cpp:427
-#, kde-format
-msgctxt "wireless network cipher"
-msgid "Pairwise CCMP"
-msgstr "ЦЦМП по паровима"
-
-#: uiutils.cpp:429
-#, kde-format
-msgctxt "wireless network cipher"
-msgid "Group WEP40"
-msgstr "ВЕП40 групно"
-
-#: uiutils.cpp:431
-#, kde-format
-msgctxt "wireless network cipher"
-msgid "Group WEP104"
-msgstr "ВЕП104 групно"
-
-#: uiutils.cpp:433
-#, kde-format
-msgctxt "wireless network cipher"
-msgid "Group TKIP"
-msgstr "ТКИП групно"
-
-#: uiutils.cpp:435
-#, kde-format
-msgctxt "wireless network cipher"
-msgid "Group CCMP"
-msgstr "ЦЦМП групно"
-
-#: uiutils.cpp:437
-#, kde-format
-msgctxt "wireless network cipher"
-msgid "PSK"
-msgstr "ПСК"
-
-#: uiutils.cpp:439
-#, kde-format
-msgctxt "wireless network cipher"
-msgid "802.1x"
-msgstr "802.1x"
-
-#: uiutils.cpp:449
-#, kde-format
-msgctxt "connection speed"
-msgid "%1 Bit/s"
-msgstr "%1 b/s"
-
-#: uiutils.cpp:451
-#, kde-format
-msgctxt "connection speed"
-msgid "%1 MBit/s"
-msgstr "%1 Mb/s"
-
-#: uiutils.cpp:453
-#, kde-format
-msgctxt "connection speed"
-msgid "%1 GBit/s"
-msgstr "%1 Gb/s"
-
-#: uiutils.cpp:479
-#, kde-format
-msgctxt "Gsm modes (2G/3G/any)"
-msgid "LTE"
-msgstr "ЛТЕ"
-
-#: uiutils.cpp:481
-#, kde-format
-msgctxt "Gsm modes (2G/3G/any)"
-msgid "UMTS/HSxPA"
-msgstr "УМТС/ХСнПА"
-
-#: uiutils.cpp:483
-#, kde-format
-msgctxt "Gsm modes (2G/3G/any)"
-msgid "GPRS/EDGE"
-msgstr "ГПРС/ЕДГЕ"
-
-#: uiutils.cpp:485
-#, kde-format
-msgctxt "Gsm modes (2G/3G/any)"
-msgid "GSM"
-msgstr "ГСМ"
-
-#: uiutils.cpp:487 uiutils.cpp:490
-#, kde-format
-msgctxt "Gsm modes (2G/3G/any)"
-msgid "Any"
-msgstr "било која"
-
-#: uiutils.cpp:496
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "LTE"
-msgstr "ЛТЕ"
-
-#: uiutils.cpp:498
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "CDMA2000 EVDO revision B"
-msgstr "ЦДМА2000 ЕВ‑ДО ревизија Б"
-
-#: uiutils.cpp:500
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "CDMA2000 EVDO revision A"
-msgstr "ЦДМА2000 ЕВ‑ДО ревизија А"
-
-#: uiutils.cpp:502
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "CDMA2000 EVDO revision 0"
-msgstr "ЦДМА2000 ЕВ‑ДО ревизија 0"
-
-#: uiutils.cpp:504
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "CDMA2000 1xRTT"
-msgstr "ЦДМА2000 1xРТТ"
-
-#: uiutils.cpp:506
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "HSPA+"
-msgstr "ХСПА+"
-
-#: uiutils.cpp:508
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "HSPA"
-msgstr "ХСПА"
-
-#: uiutils.cpp:510
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "HSUPA"
-msgstr "ХСУПА"
-
-#: uiutils.cpp:512
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "HSDPA"
-msgstr "ХСДПА"
-
-#: uiutils.cpp:514
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "UMTS"
-msgstr "УМТС"
-
-#: uiutils.cpp:516
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "EDGE"
-msgstr "ЕДГЕ"
-
-#: uiutils.cpp:518
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "GPRS"
-msgstr "ГПРС"
-
-#: uiutils.cpp:520
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "Compact GSM"
-msgstr "компактни ГСМ"
-
-#: uiutils.cpp:522
-#, kde-format
-msgctxt "Cellular access technology"
-msgid "GSM"
-msgstr "ГСМ"
-
-#: uiutils.cpp:524
-#, kde-format
-msgctxt "Analog wireline modem"
-msgid "Analog"
-msgstr "аналогна"
-
-#: uiutils.cpp:526 uiutils.cpp:531
-#, kde-format
-msgctxt "Unknown cellular access technology"
-msgid "Unknown"
-msgstr "непозната"
-
-#: uiutils.cpp:528
-#, kde-format
-msgctxt "Any cellular access technology"
-msgid "Any"
-msgstr "било која"
-
-#: uiutils.cpp:538
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem is unlocked."
-msgstr "Модем је откључан."
-
-#: uiutils.cpp:540
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "SIM requires the PIN code."
-msgstr "СИМ захтева ПИН код."
-
-#: uiutils.cpp:542
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "SIM requires the PIN2 code."
-msgstr "СИМ захтева ПИН2 код."
-
-#: uiutils.cpp:544
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "SIM requires the PUK code."
-msgstr "СИМ захтева ПУК код."
-
-#: uiutils.cpp:546
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "SIM requires the PUK2 code."
-msgstr "СИМ захтева ПУК2 код."
-
-# rewrite-msgid: /service//
-#: uiutils.cpp:548
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem requires the service provider PIN code."
-msgstr "Модем захтева ПИН ко̂д провајдера."
-
-# rewrite-msgid: /service//
-#: uiutils.cpp:550
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem requires the service provider PUK code."
-msgstr "Модем захтева ПУК ко̂д провајдера."
-
-#: uiutils.cpp:552
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem requires the network PIN code."
-msgstr "Модем захтева ПИН ко̂д мреже."
-
-#: uiutils.cpp:554
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem requires the network PUK code."
-msgstr "Модем захтева ПУК ко̂д мреже."
-
-#: uiutils.cpp:556
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem requires the PIN code."
-msgstr "Модем захтева ПИН код."
-
-#: uiutils.cpp:558
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem requires the corporate PIN code."
-msgstr "Модем захтева компанијски ПИН код."
-
-#: uiutils.cpp:560
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem requires the corporate PUK code."
-msgstr "Модем захтева компанијски ПУК код."
-
-#: uiutils.cpp:562
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem requires the PH-FSIM PIN code."
-msgstr "Модем захтева ПХ‑ФСИМ ПИН код."
-
-#: uiutils.cpp:564
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem requires the PH-FSIM PUK code."
-msgstr "Модем захтева ПХ‑ФСИМ ПУК код."
-
-#: uiutils.cpp:566
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem requires the network subset PIN code."
-msgstr "Модем захтева ПИН ко̂д мрежног подскупа."
-
-#: uiutils.cpp:568
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Modem requires the network subset PUK code."
-msgstr "Модем захтева ПУК ко̂д мрежног подскупа."
-
-#: uiutils.cpp:571
-#, kde-format
-msgctxt "possible SIM lock reason"
-msgid "Lock reason unknown."
-msgstr "Непознат разлог закључавања."
-
-# >> @item wireless security
-#: uiutils.cpp:595
-#, kde-format
-msgctxt "@label no security"
-msgid "Insecure"
-msgstr "небезбедно"
-
-# >> @item wireless security
-#: uiutils.cpp:598
-#, kde-format
-msgctxt "@label WEP security"
-msgid "WEP"
-msgstr "ВЕП"
-
-# >> @item wireless security
-#: uiutils.cpp:601
-#, kde-format
-msgctxt "@label LEAP security"
-msgid "LEAP"
-msgstr "ЛЕАП"
-
-# >> @item wireless security
-#: uiutils.cpp:604
-#, kde-format
-msgctxt "@label Dynamic WEP security"
-msgid "Dynamic WEP"
-msgstr "динамички ВЕП"
-
-# >> @item wireless security
-#: uiutils.cpp:607
-#, kde-format
-msgctxt "@label WPA-PSK security"
-msgid "WPA-PSK"
-msgstr "ВПА‑ПСК"
-
-# >> @item wireless security
-#: uiutils.cpp:610
-#, kde-format
-msgctxt "@label WPA-EAP security"
-msgid "WPA-EAP"
-msgstr "ВПА‑ЕАП"
-
-# >> @item wireless security
-#: uiutils.cpp:613
-#, kde-format
-msgctxt "@label WPA2-PSK security"
-msgid "WPA2-PSK"
-msgstr "ВПА2‑ПСК"
-
-# >> @item wireless security
-#: uiutils.cpp:616
-#, kde-format
-msgctxt "@label WPA2-EAP security"
-msgid "WPA2-EAP"
-msgstr "ВПА‑ЕАП"
-
-#: uiutils.cpp:619
-#, kde-format
-msgctxt "@label WPA3-SAE security"
-msgid "WPA3-SAE"
-msgstr ""
-
-# >> @item wireless security
-#: uiutils.cpp:622
-#, kde-format
-msgctxt "@label unknown security"
-msgid "Unknown security type"
-msgstr "непознат тип безбедности"
-
-#: uiutils.cpp:639
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last hour, as "
-"the number of minutes since usage"
-msgid "One minute ago"
-msgid_plural "%1 minutes ago"
-msgstr[0] "пре %1 минута"
-msgstr[1] "пре %1 минута"
-msgstr[2] "пре %1 минута"
-msgstr[3] "пре минут"
-
-#: uiutils.cpp:646
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last day, as "
-"the number of hours since usage"
-msgid "One hour ago"
-msgid_plural "%1 hours ago"
-msgstr[0] "пре %1 сат"
-msgstr[1] "пре %1 сата"
-msgstr[2] "пре %1 сати"
-msgstr[3] "пре сат"
-
-#: uiutils.cpp:651
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used the previous day"
-msgid "Yesterday"
-msgstr "јуче"
-
-#: uiutils.cpp:657
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection that has never been used"
-msgid "Never"
-msgstr "никад"
-
-#: uiutils.cpp:673
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last hour, as "
-"the number of minutes since usage"
-msgid "Last used one minute ago"
-msgid_plural "Last used %1 minutes ago"
-msgstr[0] "последње коришћено пре %1 минут"
-msgstr[1] "последње коришћено пре %1 минута"
-msgstr[2] "последње коришћено пре %1 минута"
-msgstr[3] "последње коришћено пре минут"
-
-#: uiutils.cpp:680
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last day, as "
-"the number of hours since usage"
-msgid "Last used one hour ago"
-msgid_plural "Last used %1 hours ago"
-msgstr[0] "последње коришћено пре %1 сат"
-msgstr[1] "последње коришћено пре %1 сата"
-msgstr[2] "последње коришћено пре %1 сати"
-msgstr[3] "последње коришћено пре сат"
-
-#: uiutils.cpp:685
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used the previous day"
-msgid "Last used yesterday"
-msgstr "последње коришћено јуче"
-
-#: uiutils.cpp:687
-#, kde-format
-msgid "Last used on %1"
-msgstr "последње коришћено %1|/|последње коришћено $[на-реч %1 ген]"
-
-#: uiutils.cpp:691
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection that has never been used"
-msgid "Never used"
-msgstr "никад коришћено"
+#~ msgid "INCORRECT MODE FIX ME"
+#~ msgstr "ЛОШ РЕЖИМ ПОПРАВИ МЕ"

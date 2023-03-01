@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-28 00:19+0000\n"
+"POT-Creation-Date: 2023-03-01 23:30+0000\n"
 "PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -16,26 +16,6 @@ msgstr ""
 "X-Crowdin-Language: zh-CN\n"
 "X-Crowdin-File: /kf5-trunk/messages/plasma-nm/kcm_mobile_hotspot.pot\n"
 "X-Crowdin-File-ID: 12220\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "KDE 中国, csslayer, Tyson Tan"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "kde-china@kde.org, csslayer@kde.org, tysontan@tysontan.com"
-
-#: hotspotsettings.cpp:18
-#, kde-format
-msgid "Hotspot"
-msgstr "无线热点"
-
-#: hotspotsettings.cpp:19
-#, kde-format
-msgid "Tobias Fella"
-msgstr "Tobias Fella"
 
 #: package/contents/ui/main.qml:23
 #, kde-format
@@ -56,3 +36,17 @@ msgstr "密码："
 #, kde-format
 msgid "Save"
 msgstr "保存"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "KDE 中国, csslayer, Tyson Tan"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "kde-china@kde.org, csslayer@kde.org, tysontan@tysontan.com"
+
+#~ msgid "Hotspot"
+#~ msgstr "无线热点"
+
+#~ msgid "Tobias Fella"
+#~ msgstr "Tobias Fella"

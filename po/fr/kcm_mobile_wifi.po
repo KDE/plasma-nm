@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-01 01:00+0000\n"
+"POT-Creation-Date: 2023-03-01 23:30+0000\n"
 "PO-Revision-Date: 2021-06-22 08:50+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@neuf.fr>\n"
 "Language-Team: French <kde-francophone@kde.org>\n"
@@ -17,18 +17,6 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Geoffray Levasseur, Matthieu Robin, Simon Depiets, Xavier Besnard"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr ""
-"geoffray.levasseurbrandin@numericable.fr, kde@macolu.org, sdepiets@gmail."
-"com, xavier.besnard@neuf.fr"
 
 #: package/contents/ui/ConnectDialog.qml:136
 #, kde-format
@@ -200,15 +188,21 @@ msgstr "DNS :"
 msgid "Password…"
 msgstr "Mot de passe..."
 
-#: wifisettings.cpp:32
-#, kde-format
-msgid "Wi-Fi networks"
-msgstr "Réseaux Wi-Fi"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Geoffray Levasseur, Matthieu Robin, Simon Depiets, Xavier Besnard"
 
-#: wifisettings.cpp:33
-#, kde-format
-msgid "Martin Kacej"
-msgstr "Martin Kacej"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr ""
+#~ "geoffray.levasseurbrandin@numericable.fr, kde@macolu.org, sdepiets@gmail."
+#~ "com, xavier.besnard@neuf.fr"
+
+#~ msgid "Wi-Fi networks"
+#~ msgstr "Réseaux Wi-Fi"
+
+#~ msgid "Martin Kacej"
+#~ msgstr "Martin Kacej"
 
 #~ msgctxt "@action:button"
 #~ msgid "Cancel"

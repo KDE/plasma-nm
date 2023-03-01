@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-01 01:00+0000\n"
+"POT-Creation-Date: 2023-03-01 23:30+0000\n"
 "PO-Revision-Date: 2021-12-15 12:49+0100\n"
 "Last-Translator: Oystein Steffensen-Alvaervik <ystein@posteo.net>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -19,16 +19,6 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Karl Ove Hufthammer"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "karl@huftis.org"
 
 #: package/contents/ui/ConnectDialog.qml:136
 #, kde-format
@@ -200,12 +190,16 @@ msgstr "DNS:"
 msgid "Password…"
 msgstr "Passord …"
 
-#: wifisettings.cpp:32
-#, kde-format
-msgid "Wi-Fi networks"
-msgstr "Wi-Fi-nettverk"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Karl Ove Hufthammer"
 
-#: wifisettings.cpp:33
-#, kde-format
-msgid "Martin Kacej"
-msgstr "Martin Kacej"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "karl@huftis.org"
+
+#~ msgid "Wi-Fi networks"
+#~ msgstr "Wi-Fi-nettverk"
+
+#~ msgid "Martin Kacej"
+#~ msgstr "Martin Kacej"

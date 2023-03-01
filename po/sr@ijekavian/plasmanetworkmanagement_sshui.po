@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_sshui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-20 03:25+0200\n"
+"POT-Creation-Date: 2021-05-31 00:18+0000\n"
 "PO-Revision-Date: 2017-05-07 21:01+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -172,6 +172,7 @@ msgstr "аутентификација кључем"
 
 #. i18n: ectx: property (text), widget (QPushButton, btn_advancedOption)
 #: sshwidget.ui:300
-#, kde-format
-msgid "Advanced..."
+#, fuzzy, kde-format
+#| msgid "Advanced..."
+msgid "Advanced…"
 msgstr "Напредно..."

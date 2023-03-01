@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-28 00:19+0000\n"
+"POT-Creation-Date: 2023-03-01 23:30+0000\n"
 "PO-Revision-Date: 2020-04-22 12:47+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -16,26 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 19.12.3\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Marek Laane"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "qiilaq69@gmail.com"
-
-#: hotspotsettings.cpp:18
-#, kde-format
-msgid "Hotspot"
-msgstr "Pääsupunkt"
-
-#: hotspotsettings.cpp:19
-#, kde-format
-msgid "Tobias Fella"
-msgstr "Tobias Fella"
 
 #: package/contents/ui/main.qml:23
 #, kde-format
@@ -56,3 +36,17 @@ msgstr "Parool:"
 #, kde-format
 msgid "Save"
 msgstr "Salvesta"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Marek Laane"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "qiilaq69@gmail.com"
+
+#~ msgid "Hotspot"
+#~ msgstr "Pääsupunkt"
+
+#~ msgid "Tobias Fella"
+#~ msgstr "Tobias Fella"

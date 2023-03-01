@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-28 00:19+0000\n"
+"POT-Creation-Date: 2023-03-01 23:30+0000\n"
 "PO-Revision-Date: 2021-01-23 14:16-0800\n"
 "Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -16,26 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.08.1\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "ਅ.ਸ.ਆਲਮ. ੨੦੦੯-੨੦੨੧"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "alam.yellow@gmail.com"
-
-#: hotspotsettings.cpp:18
-#, kde-format
-msgid "Hotspot"
-msgstr "ਹਾਟਸਪਾਟ"
-
-#: hotspotsettings.cpp:19
-#, kde-format
-msgid "Tobias Fella"
-msgstr "Tobias Fella"
 
 #: package/contents/ui/main.qml:23
 #, kde-format
@@ -56,3 +36,17 @@ msgstr "ਪਾਸਵਰਡ:"
 #, kde-format
 msgid "Save"
 msgstr "ਸੰਭਾਲੋ"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "ਅ.ਸ.ਆਲਮ. ੨੦੦੯-੨੦੨੧"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "alam.yellow@gmail.com"
+
+#~ msgid "Hotspot"
+#~ msgstr "ਹਾਟਸਪਾਟ"
+
+#~ msgid "Tobias Fella"
+#~ msgstr "Tobias Fella"

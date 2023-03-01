@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2020-04-27 03:46+0200\n"
+"POT-Creation-Date: 2021-05-31 00:18+0000\n"
 "PO-Revision-Date: 2017-10-30 23:08+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -192,28 +192,30 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:286
-#, kde-format
-msgid "IPsec Settings..."
+#, fuzzy, kde-format
+#| msgid "IPsec Settings..."
+msgid "IPsec Settings…"
 msgstr "ИПсек поставке..."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPPPSettings)
 #: l2tp.ui:293
-#, kde-format
-msgid "PPP Settings..."
+#, fuzzy, kde-format
+#| msgid "PPP Settings..."
+msgid "PPP Settings…"
 msgstr "ППП поставке..."
 
-#: l2tpauth.cpp:77
+#: l2tpauth.cpp:63
 #, kde-format
 msgid "User Password:"
 msgstr "Корисничка лозинка:"
 
-#: l2tpauth.cpp:85
+#: l2tpauth.cpp:71
 #, fuzzy, kde-format
 #| msgid "Use Certificate"
 msgid "User Certificate Password:"
 msgstr "Користи сертификат"
 
-#: l2tpauth.cpp:96
+#: l2tpauth.cpp:82
 #, kde-format
 msgid "Machine Certificate Password:"
 msgstr ""
@@ -407,7 +409,7 @@ msgstr "Наметни УДП енкапсулацију"
 msgid "Remote ID:"
 msgstr ""
 
-#: l2tpipsecwidget.cpp:57
+#: l2tpipsecwidget.cpp:43
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr "Опције Л2ТП‑а/ИПсека"
@@ -638,7 +640,7 @@ msgstr ""
 msgid "Use stateful encryption"
 msgstr "Шифровање са стањем"
 
-#: l2tppppwidget.cpp:36
+#: l2tppppwidget.cpp:22
 #, kde-format
 msgid "L2TP PPP Options"
 msgstr "Опције Л2ТП‑а/ППП‑а"

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-28 00:19+0000\n"
+"POT-Creation-Date: 2023-03-01 23:30+0000\n"
 "PO-Revision-Date: 2020-04-24 19:27+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -18,26 +18,6 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Karl Ove Hufthammer"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "karl@huftis.org"
-
-#: hotspotsettings.cpp:18
-#, kde-format
-msgid "Hotspot"
-msgstr "Trådlaussone"
-
-#: hotspotsettings.cpp:19
-#, kde-format
-msgid "Tobias Fella"
-msgstr "Tobias Fella"
 
 #: package/contents/ui/main.qml:23
 #, kde-format
@@ -58,3 +38,17 @@ msgstr "Passord:"
 #, kde-format
 msgid "Save"
 msgstr "Lagra"
+
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Karl Ove Hufthammer"
+
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "karl@huftis.org"
+
+#~ msgid "Hotspot"
+#~ msgstr "Trådlaussone"
+
+#~ msgid "Tobias Fella"
+#~ msgstr "Tobias Fella"

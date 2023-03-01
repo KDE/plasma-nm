@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_fortisslvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-28 03:28+0200\n"
+"POT-Creation-Date: 2020-10-30 02:41+0100\n"
 "PO-Revision-Date: 2017-06-25 23:15+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -64,7 +64,7 @@ msgstr ""
 "Postavlja ime za autentifikaciju lokalnog sistema kod parnjaka na zadato."
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
-#: fortisslvpn.ui:109 fortisslvpnauth.ui:20
+#: fortisslvpn.ui:109 fortisslvpnauth.ui:26
 #, kde-format
 msgid "Password:"
 msgstr "Lozinka:"
@@ -94,44 +94,50 @@ msgid "User Key:"
 msgstr "Korisnički ključ:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, otp)
-#: fortisslvpnadvanced.ui:41
+#: fortisslvpnadvanced.ui:43
 #, kde-format
 msgid "Use a One-Time Password"
 msgstr ""
 
+#. i18n: ectx: property (text), widget (QCheckBox, tfa)
+#: fortisslvpnadvanced.ui:50
+#, kde-format
+msgid "2FA"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, realmLabel)
-#: fortisslvpnadvanced.ui:57
+#: fortisslvpnadvanced.ui:68
 #, kde-format
 msgid "Realm:"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: fortisslvpnadvanced.ui:76
+#: fortisslvpnadvanced.ui:87
 #, kde-format
 msgid "Security"
 msgstr "Bezbednost"
 
 #. i18n: ectx: property (text), widget (QLabel, trustedCertLabel)
-#: fortisslvpnadvanced.ui:82
+#: fortisslvpnadvanced.ui:93
 #, kde-format
 msgid "Trusted certificate:"
 msgstr "Pouzdani sertifikat:"
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, trustedCert)
-#: fortisslvpnadvanced.ui:95
+#: fortisslvpnadvanced.ui:106
 #, kde-format
 msgid "0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
 msgstr "0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: fortisslvpnauth.ui:52
+#. i18n: ectx: property (text), widget (QLabel, labelOtp)
+#: fortisslvpnauth.ui:61
 #, fuzzy, kde-format
 #| msgid "Password:"
 msgid "One Time Password"
 msgstr "Lozinka:"
 
 #. i18n: ectx: property (text), widget (QLabel, otpLabel)
-#: fortisslvpnauth.ui:59
+#: fortisslvpnauth.ui:68
 #, kde-format
 msgid "Token:"
 msgstr ""

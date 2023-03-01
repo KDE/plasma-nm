@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openswanui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-20 03:25+0200\n"
+"POT-Creation-Date: 2022-05-17 00:46+0000\n"
 "PO-Revision-Date: 2014-08-17 13:36+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -19,52 +19,52 @@ msgstr ""
 "X-Environment: kde\n"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: openswan.ui:20
+#: libreswan.ui:20
 #, kde-format
 msgid "Gateway:"
 msgstr "Мрежни излаз:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
-#: openswan.ui:30 openswanauth.ui:20
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libreswan.ui:30 libreswanauth.ui:20
 #, kde-format
 msgid "Group name:"
 msgstr "Име групе:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
-#: openswan.ui:40 openswanauth.ui:40
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: libreswan.ui:40 libreswanauth.ui:40
 #, kde-format
 msgid "User password:"
 msgstr "Корисничка лозинка:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
-#: openswan.ui:58 openswanauth.ui:60
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: libreswan.ui:58 libreswanauth.ui:60
 #, kde-format
 msgid "Group password:"
 msgstr "Групна лозинка:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: openswan.ui:89
+#: libreswan.ui:89
 #, kde-format
 msgid "User name:"
 msgstr "Корисничко име:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openswan.ui:99
+#: libreswan.ui:99
 #, kde-format
 msgid "Phase1 algorithms:"
 msgstr "Алгоритми фазе 1:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: openswan.ui:109
+#: libreswan.ui:109
 #, kde-format
 msgid "Phase2 algorithms:"
 msgstr "Алгоритми фазе 2:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: openswan.ui:119
+#: libreswan.ui:119
 #, kde-format
 msgid "Domain:"
 msgstr "Домен:"

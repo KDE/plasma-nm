@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-01 01:00+0000\n"
+"POT-Creation-Date: 2023-03-01 23:30+0000\n"
 "PO-Revision-Date: 2021-07-20 21:48+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -19,16 +19,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 21.04.3\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "Iñigo Salvador Azurmendi"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "xalba@ni.eus"
 
 #: package/contents/ui/ConnectDialog.qml:136
 #, kde-format
@@ -200,15 +190,19 @@ msgstr "DNS:"
 msgid "Password…"
 msgstr "Pasahitza..."
 
-#: wifisettings.cpp:32
-#, kde-format
-msgid "Wi-Fi networks"
-msgstr "Wi-Fi sareak"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "Iñigo Salvador Azurmendi"
 
-#: wifisettings.cpp:33
-#, kde-format
-msgid "Martin Kacej"
-msgstr "Martin Kacej"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "xalba@ni.eus"
+
+#~ msgid "Wi-Fi networks"
+#~ msgstr "Wi-Fi sareak"
+
+#~ msgid "Martin Kacej"
+#~ msgstr "Martin Kacej"
 
 #~ msgctxt "@action:button"
 #~ msgid "Cancel"

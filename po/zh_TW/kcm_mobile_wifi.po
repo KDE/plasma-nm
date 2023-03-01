@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-01 01:00+0000\n"
+"POT-Creation-Date: 2023-03-01 23:30+0000\n"
 "PO-Revision-Date: 2023-02-07 23:05+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -17,16 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 23.03.70\n"
-
-#, kde-format
-msgctxt "NAME OF TRANSLATORS"
-msgid "Your names"
-msgstr "pan93412"
-
-#, kde-format
-msgctxt "EMAIL OF TRANSLATORS"
-msgid "Your emails"
-msgstr "pan93412@gmail.com"
 
 #: package/contents/ui/ConnectDialog.qml:136
 #, kde-format
@@ -201,15 +191,19 @@ msgstr "DNS："
 msgid "Password…"
 msgstr "密碼…"
 
-#: wifisettings.cpp:32
-#, kde-format
-msgid "Wi-Fi networks"
-msgstr "Wi-Fi 網路"
+#~ msgctxt "NAME OF TRANSLATORS"
+#~ msgid "Your names"
+#~ msgstr "pan93412"
 
-#: wifisettings.cpp:33
-#, kde-format
-msgid "Martin Kacej"
-msgstr "Martin Kacej"
+#~ msgctxt "EMAIL OF TRANSLATORS"
+#~ msgid "Your emails"
+#~ msgstr "pan93412@gmail.com"
+
+#~ msgid "Wi-Fi networks"
+#~ msgstr "Wi-Fi 網路"
+
+#~ msgid "Martin Kacej"
+#~ msgstr "Martin Kacej"
 
 #, fuzzy
 #~| msgid "Cancel"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-05-20 03:25+0200\n"
+"POT-Creation-Date: 2023-01-19 00:59+0000\n"
 "PO-Revision-Date: 2016-11-28 01:33+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,53 +18,17 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: vpnc.cpp:89
+#: vpnc.cpp:73
 #, kde-format
 msgid "Error decrypting the obfuscated password"
 msgstr "Грешка при дешифровању замагљене лозинке"
 
-#: vpnc.cpp:89
+#: vpnc.cpp:73
 #, kde-format
 msgid "Error"
 msgstr "Грешка"
 
-#: vpnc.cpp:147
-#, kde-format
-msgid "File %1 could not be opened."
-msgstr "Фајл %1 не може да се отвори."
-
-#: vpnc.cpp:156
-#, kde-format
-msgid "Needed executable cisco-decrypt could not be found."
-msgstr "Неопходна наредба cisco-decrypt не може да се нађе."
-
-# rewrite-msgid: /vpnc software/VPNC/
-#: vpnc.cpp:268
-#, kde-format
-msgid ""
-"The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-"through TCP which is currently not supported in the vpnc software.\n"
-"\n"
-"The connection can still be created, with TCP tunneling disabled, however it "
-"may not work as expected."
-msgstr ""
-"Фајл ВПН поставки „%1“ задаје тунеловање ВПН саобраћаја кроз ТЦП, што ВПНЦ "
-"тренутно не подржава.\n"
-"\n"
-"Веза ће свеједно бити успостављена, без ТЦП тунеловања, али можда неће "
-"радити према очекивању."
-
-#: vpnc.cpp:268
-#, kde-format
-msgid "Not supported"
-msgstr "Није подржано"
-
-#: vpnc.cpp:318
-#, kde-format
-msgid "%1: file format error."
-msgstr "%1: грешка фајл формата."
-
-#: vpnc.cpp:337
+#: vpnc.cpp:142
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: фајл не може да се направи."
@@ -88,8 +52,8 @@ msgstr "ИП адреса/име домаћина ИПсек мрежног из
 msgid "User name:"
 msgstr "Корисничко име:"
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, user)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leUserName)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, user)
 #: vpnc.ui:51 vpncauth.ui:97
 #, kde-format
 msgid "User name for the connection."
@@ -101,15 +65,15 @@ msgstr "Корисничко име за повезивање."
 msgid "User password:"
 msgstr "Корисничка лозинка:"
 
-#. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, leUserPassword)
+#. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
 #: vpnc.ui:79 vpncauth.ui:58
 #, kde-format
 msgid "User password for the connection."
 msgstr "Корисничка лозинка за повезивање."
 
-#. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpnc.ui:91 vpncauth.ui:124
 #, kde-format
 msgid "Group name:"
@@ -127,8 +91,8 @@ msgstr "Име групе"
 msgid "Group password:"
 msgstr "Групна лозинка:"
 
-#. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
+#. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
 #: vpnc.ui:129 vpncauth.ui:84
 #, kde-format
 msgid "Group password."
@@ -167,8 +131,9 @@ msgstr "*.pem *.crt *.cer"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:192
-#, kde-format
-msgid "Advanced..."
+#, fuzzy, kde-format
+#| msgid "Advanced..."
+msgid "Advanced…"
 msgstr "Напредно..."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
@@ -290,125 +255,125 @@ msgstr "Без слања ДПД пакета (поставља прековре
 msgid "Disable dead peer detection"
 msgstr "Без откривања мртвих парњака"
 
-#: vpncadvancedwidget.cpp:34
+#: vpncadvancedwidget.cpp:20
 #, kde-format
 msgid "Advanced VPNC properties"
 msgstr "Напредна ВПНЦ‑ова својства"
 
 # >> @item
-#: vpncadvancedwidget.cpp:37
+#: vpncadvancedwidget.cpp:23
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Cisco"
 msgstr "Сиско"
 
 # >> @item
-#: vpncadvancedwidget.cpp:38
+#: vpncadvancedwidget.cpp:24
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Netscreen"
 msgstr "Нетскрин"
 
 # >> @item
-#: vpncadvancedwidget.cpp:41
+#: vpncadvancedwidget.cpp:27
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
 msgstr "безбедно (подразумевано)"
 
 # >> @item
-#: vpncadvancedwidget.cpp:42
+#: vpncadvancedwidget.cpp:28
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Weak (DES encryption, use with caution)"
 msgstr "слабо (ДЕС шифровање, користити обазриво)"
 
 # >> @item
-#: vpncadvancedwidget.cpp:43
+#: vpncadvancedwidget.cpp:29
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
 msgstr "никакво (потпуно небезбедно)"
 
 # >> @item
-#: vpncadvancedwidget.cpp:46
+#: vpncadvancedwidget.cpp:32
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
 msgstr "НАТ‑пролаз када је доступно (подразумевано)"
 
 # >> @item
-#: vpncadvancedwidget.cpp:47
+#: vpncadvancedwidget.cpp:33
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
 msgstr "увек НАТ‑пролаз"
 
 # >> @item
-#: vpncadvancedwidget.cpp:48
+#: vpncadvancedwidget.cpp:34
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "Cisco UDP"
 msgstr "Сисков УДП"
 
 # >> @item
-#: vpncadvancedwidget.cpp:49
+#: vpncadvancedwidget.cpp:35
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "Disabled"
 msgstr "искључено"
 
 # >> @item
-#: vpncadvancedwidget.cpp:52
+#: vpncadvancedwidget.cpp:38
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 1"
 msgstr "ДХ група 1"
 
 # >> @item
-#: vpncadvancedwidget.cpp:53
+#: vpncadvancedwidget.cpp:39
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 2 (default)"
 msgstr "ДХ група 2 (подразумевано)"
 
 # >> @item
-#: vpncadvancedwidget.cpp:54
+#: vpncadvancedwidget.cpp:40
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 5"
 msgstr "ДХ група 5"
 
 # >> @item
-#: vpncadvancedwidget.cpp:57
+#: vpncadvancedwidget.cpp:43
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
 msgstr "сервер (подразумевано)"
 
 # >> @item
-#: vpncadvancedwidget.cpp:58
+#: vpncadvancedwidget.cpp:44
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "None"
 msgstr "ништа"
 
 # >> @item
-#: vpncadvancedwidget.cpp:59
+#: vpncadvancedwidget.cpp:45
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 1"
 msgstr "ДХ група 1"
 
 # >> @item
-#: vpncadvancedwidget.cpp:60
+#: vpncadvancedwidget.cpp:46
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 2"
 msgstr "ДХ група 2"
 
 # >> @item
-#: vpncadvancedwidget.cpp:61
+#: vpncadvancedwidget.cpp:47
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
@@ -443,3 +408,29 @@ msgstr "Корисничко име:"
 #, kde-format
 msgid "Group name."
 msgstr "Име групе."
+
+#~ msgid "File %1 could not be opened."
+#~ msgstr "Фајл %1 не може да се отвори."
+
+#~ msgid "Needed executable cisco-decrypt could not be found."
+#~ msgstr "Неопходна наредба cisco-decrypt не може да се нађе."
+
+# rewrite-msgid: /vpnc software/VPNC/
+#~ msgid ""
+#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
+#~ "through TCP which is currently not supported in the vpnc software.\n"
+#~ "\n"
+#~ "The connection can still be created, with TCP tunneling disabled, however "
+#~ "it may not work as expected."
+#~ msgstr ""
+#~ "Фајл ВПН поставки „%1“ задаје тунеловање ВПН саобраћаја кроз ТЦП, што "
+#~ "ВПНЦ тренутно не подржава.\n"
+#~ "\n"
+#~ "Веза ће свеједно бити успостављена, без ТЦП тунеловања, али можда неће "
+#~ "радити према очекивању."
+
+#~ msgid "Not supported"
+#~ msgstr "Није подржано"
+
+#~ msgid "%1: file format error."
+#~ msgstr "%1: грешка фајл формата."

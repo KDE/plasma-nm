@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_strongswanui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2019-09-14 03:30+0200\n"
+"POT-Creation-Date: 2021-08-28 00:19+0000\n"
 "PO-Revision-Date: 2017-10-30 23:08+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,25 +18,25 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: strongswanauth.cpp:73
+#: strongswanauth.cpp:59
 #, kde-format
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
 msgstr "Lozinka privatnog ključa:"
 
-#: strongswanauth.cpp:75
+#: strongswanauth.cpp:61
 #, kde-format
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
 msgstr "PIN:"
 
-#: strongswanauth.cpp:77
+#: strongswanauth.cpp:63
 #, kde-format
 msgctxt "@label:textbox password label for EAP password"
 msgid "Password:"
 msgstr "Lozinka:"
 
-#: strongswanauth.cpp:118
+#: strongswanauth.cpp:106
 #, kde-format
 msgctxt "@label:textbox error message while saving configuration"
 msgid ""

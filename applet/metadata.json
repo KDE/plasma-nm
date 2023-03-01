@@ -1,4 +1,5 @@
 {
+    "KPackageStructure": "Plasma/Applet",
     "KPlugin": {
         "Authors": [
             {
@@ -148,6 +149,5 @@
     "X-Plasma-DBusActivationService": "org.freedesktop.NetworkManager",
     "X-Plasma-MainScript": "ui/main.qml",
     "X-Plasma-NotificationArea": "true",
-    "X-Plasma-NotificationAreaCategory": "Hardware",
-    "KPackageStructure": "Plasma/Applet"
+    "X-Plasma-NotificationAreaCategory": "Hardware"
 }

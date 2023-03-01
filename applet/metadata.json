@@ -140,9 +140,6 @@
         "Name[x-test]": "xxNetworksxx",
         "Name[zh_CN]": "网络",
         "Name[zh_TW]": "網路",
-        "ServiceTypes": [
-            "Plasma/Applet"
-        ],
         "Version": "1.0.0",
         "Website": "https://projects.kde.org/projects/kde/workspace/plasma-nm"
     },
@@ -151,5 +148,6 @@
     "X-Plasma-DBusActivationService": "org.freedesktop.NetworkManager",
     "X-Plasma-MainScript": "ui/main.qml",
     "X-Plasma-NotificationArea": "true",
-    "X-Plasma-NotificationAreaCategory": "Hardware"
+    "X-Plasma-NotificationAreaCategory": "Hardware",
+    "KPackageStructure": "Plasma/Applet"
 }

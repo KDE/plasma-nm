@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2017, 2019, 2020, 2021.
+# Shinjo Park <kde@peremen.name>, 2017, 2019, 2020, 2021, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-02 01:06+0000\n"
-"PO-Revision-Date: 2021-05-31 23:17+0200\n"
+"PO-Revision-Date: 2023-03-01 00:14+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 20.12.3\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: kcm.cpp:344
 #, kde-format
@@ -44,10 +44,9 @@ msgid "Import VPN Connection"
 msgstr "VPN 연결 가져오기"
 
 #: kcm.cpp:531
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
-msgstr "VPN 연결 내보내기"
+msgstr "VPN 연결(%1)"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
@@ -97,7 +96,7 @@ msgstr "핫스팟 암호:"
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "확인"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

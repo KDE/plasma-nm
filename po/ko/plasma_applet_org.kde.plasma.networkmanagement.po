@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022.
+# Shinjo Park <kde@peremen.name>, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
 # JungHee Lee <daemu72@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-23 02:34+0000\n"
-"PO-Revision-Date: 2022-07-13 15:44+0200\n"
+"PO-Revision-Date: 2023-03-01 00:13+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -53,7 +53,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
-msgstr ""
+msgstr "현재 다운로드 속도: %1 KiB/초, 현재 업로드 속도: %2 KiB/초"
 
 #: contents/ui/ConnectionItem.qml:286
 #, kde-format
@@ -79,13 +79,13 @@ msgstr "네트워크"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "가운데 단추로 클릭하여 비행기 탑승 모드 해제"
 
 #: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "가운데 단추로 클릭하여 비행기 탑승 모드 활성화"
 
 #: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -93,16 +93,14 @@ msgid "Enable Wi-Fi"
 msgstr "Wi-Fi 활성화"
 
 #: contents/ui/main.qml:83
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Network"
-msgstr "모바일 네트워크 사용"
+msgstr "모바일 네트워크 활성화"
 
 #: contents/ui/main.qml:91
-#, fuzzy, kde-format
-#| msgid "Enable airplane mode"
+#, kde-format
 msgid "Enable Airplane Mode"
-msgstr "비행기 모드 사용"
+msgstr "비행기 모드 활성화"
 
 #: contents/ui/main.qml:97
 #, kde-format

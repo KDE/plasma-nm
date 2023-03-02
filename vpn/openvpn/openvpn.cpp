@@ -179,6 +179,10 @@ VpnUiPlugin::ImportResult OpenVpnUiPlugin::importConnectionSettings(const QStrin
 
     NMVpnPluginInfo *plugin_info = nm_vpn_plugin_info_list_find_by_service(plugins, "org.freedesktop.NetworkManager.openvpn");
 
+    if (!plugin_info) {
+        return VpnUiPlugin::ImportResult::fail(i18n("NetworkManager is missing support for OpenVPN"));
+    }
+
     NMVpnEditorPlugin *plugin = nm_vpn_plugin_info_load_editor_plugin(plugin_info, &error);
 
     NMConnection *connection = nm_vpn_editor_plugin_import(plugin, fileName.toUtf8().constData(), &error);

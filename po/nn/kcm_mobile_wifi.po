@@ -189,17 +189,3 @@ msgstr "DNS:"
 #, kde-format
 msgid "Password…"
 msgstr "Passord …"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Karl Ove Hufthammer"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "karl@huftis.org"
-
-#~ msgid "Wi-Fi networks"
-#~ msgstr "Wi-Fi-nettverk"
-
-#~ msgid "Martin Kacej"
-#~ msgstr "Martin Kacej"

@@ -33,7 +33,8 @@
                 "Name[tr]": "KDE Plasma",
                 "Name[uk]": "Плазма KDE",
                 "Name[x-test]": "xxKDE plasmaxx",
-                "Name[zh_CN]": "KDE plasma"
+                "Name[zh_CN]": "KDE plasma",
+                "Name[zh_TW]": "KDE plasma"
             }
         ],
         "Category": "VPNService",
@@ -67,6 +68,7 @@
         "Description[uk]": "Сумісний із VPN Array Networks",
         "Description[x-test]": "xxCompatible with Array Networks SSL VPNxx",
         "Description[zh_CN]": "兼容 Array Networks SSL VPN",
+        "Description[zh_TW]": "與 Array Networks SSL VPN 相容",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_openconnect_arrayui",
@@ -101,6 +103,7 @@
         "Name[uk]": "VPN, сумісний з Array Networks (openconnect)",
         "Name[x-test]": "xxArray Networks Compatible VPN (openconnect)xx",
         "Name[zh_CN]": "Array Networks 兼容 VPN (openconnect)",
+        "Name[zh_TW]": "與 Array Networks 相容的 VPN (openconnect)",
         "Version": "0.1",
         "Website": ""
     },

@@ -39,17 +39,3 @@ msgstr "Contrasenya:"
 #, kde-format
 msgid "Save"
 msgstr "Guarda"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Josep M. Ferrer"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "txemaq@gmail.com"
-
-#~ msgid "Hotspot"
-#~ msgstr "Punt d'accés"
-
-#~ msgid "Tobias Fella"
-#~ msgstr "Tobias Fella"

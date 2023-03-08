@@ -2,14 +2,14 @@
 # This file is distributed under the same license as the plasma-nm package.
 # Lorenz Adam Damara <lorenzrenz@gmail.com>, 2018.
 # Wantoyo <wantoyek@gmail.com>, 2018, 2019, 2020, 2021, 2022.
-# Linerly <linerly@protonmail.com>, 2022.
+# Linerly <linerly@protonmail.com>, 2022, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 01:01+0000\n"
-"PO-Revision-Date: 2022-11-22 20:23+0700\n"
+"PO-Revision-Date: 2023-03-03 09:54+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
 "Language: id\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -86,16 +86,10 @@ msgid "Middle-click to turn off Airplane Mode"
 msgstr "Klik tengah untuk mematikan Mode Pesawat"
 
 #: contents/ui/main.qml:35
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip %1 is a list of the active network connections"
-#| msgid ""
-#| "%1\n"
-#| "Middle-click to turn on Airplane Mode"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
-"%1\n"
-"Klik tengah untuk menyalakan Mode Pesawat"
+msgstr "Klik tengah untuk menyalakan Mode Pesawat"
 
 #: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
 #, kde-format

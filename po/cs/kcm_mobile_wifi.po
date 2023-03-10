@@ -186,17 +186,3 @@ msgstr "DNS:"
 #, kde-format
 msgid "Password…"
 msgstr "Heslo…"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Vít Pelčák"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "vit@pelcak.org"
-
-#~ msgid "Wi-Fi networks"
-#~ msgstr "Sítě Wi-Fi"
-
-#~ msgid "Martin Kacej"
-#~ msgstr "Martin Kacej"

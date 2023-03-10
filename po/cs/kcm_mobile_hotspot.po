@@ -36,17 +36,3 @@ msgstr "Heslo:"
 #, kde-format
 msgid "Save"
 msgstr "Uložit"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Vít Pelčák"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "vit@pelcak.org"
-
-#~ msgid "Hotspot"
-#~ msgstr "Hotspot"
-
-#~ msgid "Tobias Fella"
-#~ msgstr "Tobias Fella"

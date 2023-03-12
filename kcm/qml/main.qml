@@ -5,7 +5,7 @@
 */
 
 import QtQuick 2.1
-import QtQuick.Dialogs 1.1
+import QtQuick.Dialogs
 import QtQuick.Controls 2.5 as QQC2
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kirigami 2.15 as Kirigami
@@ -140,7 +140,7 @@ Item {
             QQC2.ToolTip.visible: hovered
 
             onClicked: {
-                addNewConnectionDialog.open()
+                addNewConnectionDialog.show()
             }
         }
 
@@ -194,7 +194,7 @@ Item {
             QQC2.ToolTip.visible: hovered
 
             onClicked: {
-                configurationDialog.open()
+                configurationDialog.show()
             }
         }
     }
@@ -216,8 +216,7 @@ Item {
             });
         }
 
-        icon: StandardIcon.Question
-        standardButtons: StandardButton.Ok | StandardButton.Cancel
+        buttons: MessageDialog.Ok | MessageDialog.Cancel
         title: i18nc("@title:window", "Remove Connection")
         text: i18n("Do you want to remove the connection '%1'?", toHtmlEscaped(connectionName))
 

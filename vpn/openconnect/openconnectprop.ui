@@ -237,6 +237,44 @@
      </property>
      <layout class="QFormLayout" name="formLayout_2">
       <item row="0" column="0">
+       <widget class="QLabel" name="leMcaCertLabel">
+        <property name="text">
+         <string>Machine Certificate:</string>
+        </property>
+        <property name="buddy">
+         <cstring>leMcaCert</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="KUrlRequester" name="leMcaCert">
+        <property name="nameFilters">
+         <StringList>
+          <string notr="true">*.pem *.crt *.key</string>
+         </StringList>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="leMcaPrivateKeyLabel">
+        <property name="text">
+         <string>Private Key:</string>
+        </property>
+        <property name="buddy">
+         <cstring>leMcaPrivateKey</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="KUrlRequester" name="leMcaPrivateKey">
+        <property name="nameFilters">
+         <StringList>
+          <string notr="true">*.pem *.crt *.key</string>
+         </StringList>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
        <widget class="QLabel" name="label_5">
         <property name="text">
          <string>User Certificate:</string>
@@ -246,7 +284,7 @@
         </property>
        </widget>
       </item>
-      <item row="0" column="1">
+      <item row="2" column="1">
        <widget class="KUrlRequester" name="leUserCert">
         <property name="nameFilters">
          <StringList>
@@ -255,7 +293,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="3" column="0">
        <widget class="QLabel" name="label_6">
         <property name="text">
          <string>Private Key:</string>
@@ -265,7 +303,7 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1">
+      <item row="3" column="1">
        <widget class="KUrlRequester" name="leUserPrivateKey">
         <property name="nameFilters">
          <StringList>
@@ -274,14 +312,14 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="0" colspan="2">
+      <item row="4" column="0" colspan="2">
        <widget class="QCheckBox" name="chkUseFsid">
         <property name="text">
          <string>Use FSID for key passphrase</string>
         </property>
        </widget>
       </item>
-      <item row="3" column="0" colspan="2">
+      <item row="5" column="0" colspan="2">
        <widget class="QCheckBox" name="preventInvalidCert">
         <property name="text">
          <string>Prevent user from manually accepting invalid certificates</string>

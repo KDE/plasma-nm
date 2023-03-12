@@ -53,6 +53,13 @@ OpenconnectSettingWidget::OpenconnectSettingWidget(const NetworkManager::VpnSett
     d->ui.setupUi(this);
     d->setting = setting;
 
+#if !OPENCONNECT_CHECK_VER(5, 8)
+    d->ui.leMcaCertLabel->setVisible(false);
+    d->ui.leMcaCert->setVisible(false);
+    d->ui.leMcaPrivateKeyLabel->setVisible(false);
+    d->ui.leMcaPrivateKey->setVisible(false);
+#endif
+
     // Connect for validity check
     connect(d->ui.leGateway, &QLineEdit::textChanged, this, &OpenconnectSettingWidget::slotWidgetChanged);
 
@@ -232,6 +239,8 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     d->ui.cmbReportedOs->setCurrentIndex(cmbReportedOsIndex);
     d->ui.chkAllowTrojan->setChecked(dataMap[NM_OPENCONNECT_KEY_CSD_ENABLE] == "yes");
     d->ui.leCsdWrapperScript->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_CSD_WRAPPER]));
+    d->ui.leMcaCert->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_MCACERT]));
+    d->ui.leMcaPrivateKey->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_MCAKEY]));
     d->ui.leUserCert->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_USERCERT]));
     d->ui.leUserPrivateKey->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_PRIVKEY]));
     d->ui.chkUseFsid->setChecked(dataMap[NM_OPENCONNECT_KEY_PEM_PASSPHRASE_FSID] == "yes");
@@ -350,6 +359,12 @@ QVariantMap OpenconnectSettingWidget::setting() const
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_CSD_ENABLE), d->ui.chkAllowTrojan->isChecked() ? "yes" : "no");
     if (d->ui.leCsdWrapperScript->url().isValid()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_CSD_WRAPPER), d->ui.leCsdWrapperScript->url().toLocalFile());
+    }
+    if (d->ui.leMcaCert->url().isValid()) {
+        data.insert(QLatin1String(NM_OPENCONNECT_KEY_MCACERT), d->ui.leMcaCert->url().toLocalFile());
+    }
+    if (d->ui.leMcaPrivateKey->url().isValid()) {
+        data.insert(QLatin1String(NM_OPENCONNECT_KEY_MCAKEY), d->ui.leMcaPrivateKey->url().toLocalFile());
     }
     if (d->ui.leUserCert->url().isValid()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_USERCERT), d->ui.leUserCert->url().toLocalFile());

@@ -209,6 +209,16 @@ void OpenconnectAuthWidget::readConfig()
         const QByteArray useragent = dataMap[NM_OPENCONNECT_KEY_USERAGENT].toUtf8();
         openconnect_set_useragent(d->vpninfo, OC3DUP(useragent.data()));
     }
+
+    if (!dataMap[NM_OPENCONNECT_KEY_MCACERT].isEmpty()) {
+        const QByteArray mca_crt = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_MCACERT]);
+        const QByteArray mca_key = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_MCAKEY]);
+        openconnect_set_mca_cert(d->vpninfo, OC3DUP(mca_crt.data()), OC3DUP(mca_key.isEmpty() ? nullptr : mca_key.data()));
+
+        if (!mca_crt.isEmpty() && dataMap[NM_OPENCONNECT_KEY_PEM_PASSPHRASE_FSID] == "yes") {
+            openconnect_passphrase_from_fsid(d->vpninfo);
+        }
+    }
 #endif
 #if OPENCONNECT_CHECK_VER(5, 5)
     if (!dataMap[NM_OPENCONNECT_KEY_VERSION_STRING].isEmpty()) {

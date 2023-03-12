@@ -36,6 +36,9 @@
 #define NM_OPENCONNECT_KEY_TOKEN_MODE "stoken_source"
 #define NM_OPENCONNECT_KEY_TOKEN_SECRET "stoken_string"
 #define NM_OPENCONNECT_KEY_REPORTED_OS "reported_os"
+#define NM_OPENCONNECT_KEY_MCACERT "mcacert"
+#define NM_OPENCONNECT_KEY_MCAKEY "mcakey"
+#define NM_OPENCONNECT_KEY_MCA_PASS "mca_key_pass"
 
 #define NM_OPENCONNECT_USER "nm-openconnect"
 

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:59+0000\n"
+"POT-Creation-Date: 2023-03-14 02:17+0000\n"
 "PO-Revision-Date: 2022-12-30 22:24+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -21,12 +21,17 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 21.08.3\n"
 
-#: openvpn.cpp:204
+#: openvpn.cpp:183
+#, kde-format
+msgid "NetworkManager is missing support for OpenVPN"
+msgstr ""
+
+#: openvpn.cpp:208
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "Не удалось сохранить файл %1: %2"
 
-#: openvpn.cpp:232
+#: openvpn.cpp:236
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "Не удалось скопировать сертификат в %1: %2"

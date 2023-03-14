@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:59+0000\n"
+"POT-Creation-Date: 2023-03-14 02:17+0000\n"
 "PO-Revision-Date: 2014-07-05 17:47+0200\n"
 "Last-Translator: Abd_Allatif\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -29,7 +29,12 @@ msgstr "حدث خطأ أثناء فك تشفير كلمة المرور المش�
 msgid "Error"
 msgstr "خطأ"
 
-#: vpnc.cpp:142
+#: vpnc.cpp:118
+#, kde-format
+msgid "NetworkManager is missing support for Cisco Compatible VPN"
+msgstr ""
+
+#: vpnc.cpp:146
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: لا يمكن إنشاء الملف"

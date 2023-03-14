@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:59+0000\n"
+"POT-Creation-Date: 2023-03-14 02:17+0000\n"
 "PO-Revision-Date: 2022-10-18 13:34+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,12 +19,17 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.08.2\n"
 
-#: openvpn.cpp:204
+#: openvpn.cpp:183
+#, kde-format
+msgid "NetworkManager is missing support for OpenVPN"
+msgstr ""
+
+#: openvpn.cpp:208
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "Error al guardar el archivo %1: %2"
 
-#: openvpn.cpp:232
+#: openvpn.cpp:236
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "Error al copiar certificado en %1: %2"

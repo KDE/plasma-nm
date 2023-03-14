@@ -104,10 +104,6 @@ add_subdirectory(kcm)
 add_subdirectory(libs)
 add_subdirectory(vpn)
 
-if (BUILD_MOBILE)
-    add_subdirectory(mobile)
-endif()
-
 # Enable unit testing
 if (BUILD_TESTING)
     add_subdirectory(tests)

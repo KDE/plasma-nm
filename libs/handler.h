@@ -125,7 +125,10 @@ public Q_SLOTS:
     void updateConnection(const NetworkManager::Connection::Ptr &connection, const NMVariantMapMap &map);
     void requestScan(const QString &interface = QString());
 
+    // Attempts to create an hotspot; fails if wireless is not enabled
     void createHotspot();
+    // Same as `createHotspot`, but tries to enable wireless if not enabled yet
+    void createHotspotUnconditionally();
     void stopHotspot();
 
 private Q_SLOTS:

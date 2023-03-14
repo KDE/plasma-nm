@@ -713,6 +713,20 @@ void Handler::createHotspot()
     connect(watcher, &QDBusPendingCallWatcher::finished, this, QOverload<QDBusPendingCallWatcher *>::of(&Handler::hotspotCreated));
 }
 
+void Handler::createHotspotUnconditionally()
+{
+    auto createHotspotLambda = [this]() {
+        createHotspot();
+    };
+
+    if (!NetworkManager::isWirelessEnabled()) {
+        enableWireless(true);
+        QTimer::singleShot(1000, this, createHotspotLambda);
+    } else {
+        createHotspotLambda();
+    }
+}
+
 void Handler::stopHotspot()
 {
     const QString activeConnectionPath = Configuration::self().hotspotConnectionPath();

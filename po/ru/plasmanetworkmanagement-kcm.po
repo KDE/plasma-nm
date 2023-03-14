@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-02 01:06+0000\n"
+"POT-Creation-Date: 2023-03-14 02:54+0000\n"
 "PO-Revision-Date: 2022-12-23 11:11+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -21,36 +21,52 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 21.08.3\n"
 
-#: kcm.cpp:344
+#: kcm.cpp:289
+#, fuzzy, kde-format
+#| msgid "Import VPN Connection"
+msgid "Failed to import VPN connection: %1"
+msgstr "Импорт соединения VPN"
+
+#: kcm.cpp:359
 #, kde-format
 msgid "my_shared_connection"
 msgstr "моя_точка_доступа"
 
-#: kcm.cpp:416
+#: kcm.cpp:431
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Экспорт соединения VPN"
 
-#: kcm.cpp:441
+#: kcm.cpp:456
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Сохранить изменения, внесённые в соединение «%1»?"
 
-#: kcm.cpp:442
+#: kcm.cpp:457
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Сохранение изменений"
 
-#: kcm.cpp:531
+#: kcm.cpp:556
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Импорт соединения VPN"
 
-#: kcm.cpp:531
+#: kcm.cpp:556
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "Соединения VPN (%1)"
+
+#: kcm.cpp:559
+#, kde-format
+msgid "No file was provided"
+msgstr ""
+
+#: kcm.cpp:608
+#, kde-format
+msgid "Unknown VPN type"
+msgstr ""
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

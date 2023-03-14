@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:59+0000\n"
+"POT-Creation-Date: 2023-03-14 02:54+0000\n"
 "PO-Revision-Date: 2016-12-21 12:32+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -28,7 +28,12 @@ msgstr "Σφάλμα αποκρυπτογράφησης ασαφούς κωδι�
 msgid "Error"
 msgstr "Σφάλμα"
 
-#: vpnc.cpp:142
+#: vpnc.cpp:118
+#, kde-format
+msgid "NetworkManager is missing support for Cisco Compatible VPN"
+msgstr ""
+
+#: vpnc.cpp:146
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: το αρχείο δεν ήταν δυνατό να δημιουργηθεί"

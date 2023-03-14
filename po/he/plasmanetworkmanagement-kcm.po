@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-02 01:06+0000\n"
+"POT-Creation-Date: 2023-03-14 02:54+0000\n"
 "PO-Revision-Date: 2017-05-23 09:10-0400\n"
 "Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
 "Language-Team: Hebrew\n"
@@ -14,38 +14,54 @@ msgstr ""
 "X-Generator: Zanata 3.9.6\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcm.cpp:344
+#: kcm.cpp:289
+#, fuzzy, kde-format
+#| msgid "Import VPN Connection"
+msgid "Failed to import VPN connection: %1"
+msgstr "ייבא חיבור VPN"
+
+#: kcm.cpp:359
 #, kde-format
 msgid "my_shared_connection"
 msgstr "החיבור_המשותף_שלי"
 
-#: kcm.cpp:416
+#: kcm.cpp:431
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "ייצוא חיבור VPN"
 
-#: kcm.cpp:441
+#: kcm.cpp:456
 #, fuzzy, kde-format
 #| msgid "Do you want to remove the connection '%1'"
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "להסיר את החיבור \"%1\"?"
 
-#: kcm.cpp:442
+#: kcm.cpp:457
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr ""
 
-#: kcm.cpp:531
+#: kcm.cpp:556
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "ייבא חיבור VPN"
 
-#: kcm.cpp:531
+#: kcm.cpp:556
 #, fuzzy, kde-format
 #| msgid "Export VPN Connection"
 msgid "VPN connections (%1)"
 msgstr "ייצוא חיבור VPN"
+
+#: kcm.cpp:559
+#, kde-format
+msgid "No file was provided"
+msgstr ""
+
+#: kcm.cpp:608
+#, kde-format
+msgid "Unknown VPN type"
+msgstr ""
 
 #: qml/AddConnectionDialog.qml:15
 #, fuzzy

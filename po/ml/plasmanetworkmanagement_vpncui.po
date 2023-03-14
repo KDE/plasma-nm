@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:59+0000\n"
+"POT-Creation-Date: 2023-03-14 02:54+0000\n"
 "PO-Revision-Date: 2018-11-15 04:03+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -28,7 +28,12 @@ msgstr ""
 msgid "Error"
 msgstr ""
 
-#: vpnc.cpp:142
+#: vpnc.cpp:118
+#, kde-format
+msgid "NetworkManager is missing support for Cisco Compatible VPN"
+msgstr ""
+
+#: vpnc.cpp:146
 #, kde-format
 msgid "%1: file could not be created"
 msgstr ""

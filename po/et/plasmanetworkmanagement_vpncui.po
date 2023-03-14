@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-19 00:59+0000\n"
+"POT-Creation-Date: 2023-03-14 02:54+0000\n"
 "PO-Revision-Date: 2019-10-30 18:51+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -27,7 +27,12 @@ msgstr "Tõrge hägustatud parooli lahtikrüptimisel"
 msgid "Error"
 msgstr "Tõrge"
 
-#: vpnc.cpp:142
+#: vpnc.cpp:118
+#, kde-format
+msgid "NetworkManager is missing support for Cisco Compatible VPN"
+msgstr ""
+
+#: vpnc.cpp:146
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: faili loomine nurjus"

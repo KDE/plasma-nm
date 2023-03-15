@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement_openvpnui.po to Catalan
-# Copyright (C) 2014-2022 This_file_is_part_of_KDE
+# Copyright (C) 2014-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2020.
-# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2017, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2017, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:17+0000\n"
-"PO-Revision-Date: 2022-10-18 09:40+0200\n"
+"PO-Revision-Date: 2023-03-14 10:24+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -24,7 +24,7 @@ msgstr ""
 #: openvpn.cpp:183
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
-msgstr ""
+msgstr "Manca la implementació de l'OpenVPN en el NetworkManager"
 
 #: openvpn.cpp:208
 #, kde-format
@@ -1159,46 +1159,3 @@ msgstr "testimoni"
 #, kde-format
 msgid "one-time password"
 msgstr "contrasenya d'un sol ús"
-
-#~ msgid "Could not open file"
-#~ msgstr "No s'ha pogut obrir el fitxer"
-
-#~ msgid "Do you want to copy your certificates to %1?"
-#~ msgstr "Voleu copiar els vostres certificats a %1?"
-
-#~ msgid "Copy certificates"
-#~ msgstr "Copia els certificats"
-
-#~ msgid "Copy"
-#~ msgstr "Copia"
-
-#~ msgid "Unknown option: %1"
-#~ msgstr "Opció desconeguda: %1"
-
-#~ msgid "Invalid number of arguments (expected 1) in option: %1"
-#~ msgstr "Nombre no vàlid d'arguments (s'esperava 1) en l'opció: %1"
-
-#~ msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-#~ msgstr "Mida no vàlida (hauria d'estar entre 0 i 0xFFFF) en l'opció: %1"
-
-#~ msgid "Invalid proxy option: %1"
-#~ msgstr "Opció no vàlida del servidor intermediari: %1"
-
-#~ msgid "Invalid port (should be between 1 and 65535) in option: %1"
-#~ msgstr "Port no vàlid (hauria d'estar entre 0 i 65535) en l'opció: %1"
-
-#~ msgid "Invalid number of arguments (expected 2) in option: %1"
-#~ msgstr "Nombre no vàlid d'arguments (s'esperava 2) en l'opció: %1"
-
-#~ msgid "Invalid argument in option: %1"
-#~ msgstr "Argument no vàlid en l'opció: %1"
-
-#~ msgid "File %1 is not a valid OpenVPN's client configuration file"
-#~ msgstr ""
-#~ "El fitxer %1 no és un fitxer de configuració d'un client OpenVPN vàlid"
-
-#~ msgid "File %1 is not a valid OpenVPN configuration (no remote)."
-#~ msgstr "El fitxer %1 no és una configuració OpenVPN vàlida (sense remot)."
-
-#~ msgid "Could not open file for writing"
-#~ msgstr "No s'ha pogut obrir el fitxer per a escriptura"

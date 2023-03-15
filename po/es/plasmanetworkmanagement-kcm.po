@@ -4,13 +4,13 @@
 #
 # Automatically generated, 2017.
 # Eloy <ecuadra@eloihr.net>, 2017.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2017, 2019, 2020, 2021, 2022.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2017, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2022-12-22 00:22+0100\n"
+"PO-Revision-Date: 2023-03-14 13:24+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -18,13 +18,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: kcm.cpp:289
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Importar conexión VPN"
+msgstr "No se ha podido importar la conexión VPN: %1"
 
 #: kcm.cpp:359
 #, kde-format
@@ -60,12 +59,12 @@ msgstr "Conexiones VPN (%1)"
 #: kcm.cpp:559
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "No se ha proporcionado ningún archivo"
 
 #: kcm.cpp:608
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Tipo de VPN desconocido"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

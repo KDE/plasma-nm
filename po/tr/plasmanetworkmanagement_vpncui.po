@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2023-01-21 14:45+0300\n"
+"PO-Revision-Date: 2023-03-14 11:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-POOTLE-MTIME: 1413102233.000000\n"
 
 #: vpnc.cpp:73
@@ -32,7 +32,7 @@ msgstr "Hata"
 #: vpnc.cpp:118
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
-msgstr ""
+msgstr "NetworkManager'da Cisco uyumlu VPN'ler için destek yok"
 
 #: vpnc.cpp:146
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 02:52+0000\n"
-"PO-Revision-Date: 2023-03-09 13:38+0300\n"
+"PO-Revision-Date: 2023-03-14 13:09+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1022,13 +1022,13 @@ msgstr "Eğer ev ağı kullanılamıyorsa dolaşıma izin ver"
 #: editor/settings/ui/gsm.ui:100
 #, kde-format
 msgid "APN:"
-msgstr "APN:"
+msgstr "Erişim noktası adı:"
 
 #. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
 #: editor/settings/ui/gsm.ui:110
 #, kde-format
 msgid "Network ID:"
-msgstr "Ağ Kimliği:"
+msgstr "Ağ kimliği:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/gsm.ui:130
@@ -1040,7 +1040,7 @@ msgstr "PIN:"
 #: editor/settings/ui/infiniband.ui:21
 #, kde-format
 msgid "Transport mode:"
-msgstr "Aktarım Kipi:"
+msgstr "Aktarım kipi:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -3006,7 +3006,7 @@ msgstr "Öntanımlı"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "APN: %1"
-msgstr "API: %1"
+msgstr "Erişim noktası adı: %1"
 
 #: editor/widgets/mobileconnectionwizard.cpp:236
 #, kde-format
@@ -3046,7 +3046,7 @@ msgstr "Geniş bant ödeme planınızın adı"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
-msgstr "(bazı durumlarda) geniş bant ödeme plan Erişim Noktası İsmi (APN)"
+msgstr "(bazı durumlarda) Geniş bant ödeme planınızın Erişim Noktası Adı (APN)"
 
 #: editor/widgets/mobileconnectionwizard.cpp:254
 #, kde-format
@@ -3132,7 +3132,7 @@ msgstr "&Planınızı seçin:"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Selected plan &APN (Access Point Name):"
-msgstr "Seçili plan Erişim &Noktası İsmi (APN):"
+msgstr "Seçili planın &Erişim Noktası Adı:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:500
 #, kde-format
@@ -3147,8 +3147,8 @@ msgstr ""
 "ile ilgili sorunlar yaşayabilirsiniz veya bağlantı sorunlarıyla "
 "karşılaşabilirsiniz \n"
 "\n"
-"Eğer planınızdan emin değilseniz lütfen servis sağlayıcınıza planınızın "
-"erişim noktası adını sorunuz."
+"Eğer planınızdan emin değilseniz lütfen servis sağlayıcınızdan planınızın "
+"erişim noktası adını sorun."
 
 #: editor/widgets/mobileconnectionwizard.cpp:540
 #, kde-format
@@ -3236,7 +3236,7 @@ msgstr "Uygun Kullanıcılar"
 #: editor/widgets/ui/advancedpermissionswidget.ui:213
 #, kde-format
 msgid "Real Name"
-msgstr "Gerçek İsim"
+msgstr "Gerçek Ad"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)

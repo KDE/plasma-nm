@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Automatically generated, 2014.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Eloy Cuadra <ecuadra@eloihr.net>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 01:01+0000\n"
-"PO-Revision-Date: 2022-12-24 20:51+0100\n"
+"PO-Revision-Date: 2023-03-15 17:21+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -138,12 +138,12 @@ msgstr "Seguridad 802.1x"
 #: models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr "Wifi"
 
 #: editor/connectioneditorbase.cpp:215
 #, kde-format
 msgid "Wi-Fi Security"
-msgstr "Seguridad Wi-Fi"
+msgstr "Seguridad de la wifi"
 
 #: editor/connectioneditorbase.cpp:220 editor/uiutils.cpp:192
 #: models/creatableconnectionsmodel.cpp:135
@@ -1510,7 +1510,7 @@ msgid ""
 "by the\n"
 " BSSID entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"Esta opción enlaza esta conexión al punto de acceso Wi-Fi (AP) indicado por "
+"Esta opción enlaza esta conexión al punto de acceso wifi (AP) indicado por "
 "la\n"
 "BSSID introducida aquí. Por ejemplo: 00:11:22:33:44:55"
 
@@ -1528,7 +1528,7 @@ msgid ""
 "specified band. This setting depends\n"
 " on specific driver capability and may not work with all drivers"
 msgstr ""
-"Esta opción enlaza la conexión a la red Wi-Fi asociada a la banda indicada. "
+"Esta opción enlaza la conexión a la red wifi asociada a la banda indicada. "
 "Este ajuste depende\n"
 "de la capacidad específica del controlador y es posible que no funcione con "
 "todos los controladores."
@@ -1566,9 +1566,9 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
-"Canal inalámbrico a usar por la conexión Wi-Fi. El dispositivo solo se unirá "
+"Canal inalámbrico a usar por la conexión wifi. El dispositivo solo se unirá "
 "(o creará en las redes a medida)\n"
-"a una red Wi-Fi en el canal indicado."
+"a una red wifi en el canal indicado."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:209
@@ -2166,7 +2166,7 @@ msgstr "Propiedades de los pares de WireGuard"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr "Wifi"
 
 #: editor/uiutils.cpp:136
 #, kde-format
@@ -3441,12 +3441,12 @@ msgstr "Ethernet cableada (compartida)"
 #: models/creatableconnectionsmodel.cpp:182
 #, kde-format
 msgid "Some wi-fi description"
-msgstr "Descripción de la wi-fi"
+msgstr "Descripción de la wifi"
 
 #: models/creatableconnectionsmodel.cpp:180
 #, kde-format
 msgid "Wi-Fi (shared)"
-msgstr "Wi-Fi (compartida)"
+msgstr "Wifi (compartida)"
 
 #: models/creatableconnectionsmodel.cpp:191
 #: models/creatableconnectionsmodel.cpp:201

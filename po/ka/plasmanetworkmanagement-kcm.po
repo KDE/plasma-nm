@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:17+0000\n"
-"PO-Revision-Date: 2022-12-21 08:36+0100\n"
+"PO-Revision-Date: 2023-03-15 06:43+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -19,10 +19,9 @@ msgstr ""
 "X-Generator: Poedit 3.2.2\n"
 
 #: kcm.cpp:289
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "VPN შეერთების შემოტანა"
+msgstr "VPN შეერთების შემოტანის შეცდომა: %1"
 
 #: kcm.cpp:359
 #, kde-format
@@ -58,12 +57,12 @@ msgstr "VPN შეერთებები (%1)"
 #: kcm.cpp:559
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "ფაილი მითითებული არაა"
 
 #: kcm.cpp:608
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "VPN-ის უცნობი ტიპი"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

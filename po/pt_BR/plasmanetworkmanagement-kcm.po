@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2023-03-03 09:20-0300\n"
+"PO-Revision-Date: 2023-03-15 16:18-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,10 +20,9 @@ msgstr ""
 "X-Generator: Lokalize 21.12.3\n"
 
 #: kcm.cpp:289
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Importar conexão VPN"
+msgstr "Falha ao importar a conexão VPN: %1"
 
 #: kcm.cpp:359
 #, kde-format
@@ -59,12 +58,12 @@ msgstr "Conexões VPN (%1)"
 #: kcm.cpp:559
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Nenhum arquivo foi fornecido"
 
 #: kcm.cpp:608
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Tipo de VPN desconhecida"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

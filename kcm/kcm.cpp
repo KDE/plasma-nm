@@ -51,12 +51,12 @@
 
 K_PLUGIN_CLASS_WITH_JSON(KCMNetworkmanagement, "kcm_networkmanagement.json")
 
-KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &args)
-    : KCModule(parent, args)
+KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
+    : KCModule(parent, metaData, args)
     , m_handler(new Handler(this))
     , m_ui(new Ui::KCMForm)
 {
-    auto mainWidget = new QWidget(this);
+    auto mainWidget = new QWidget(widget());
     m_ui->setupUi(mainWidget);
 
     KLocalizedContext *l10nContext = new KLocalizedContext(m_ui->connectionView->engine());
@@ -113,9 +113,9 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
     connect(rootItem, SIGNAL(requestExportConnection(QString)), this, SLOT(onRequestExportConnection(QString)));
     connect(rootItem, SIGNAL(requestToChangeConnection(QString, QString)), this, SLOT(onRequestToChangeConnection(QString, QString)));
 
-    auto l = new QVBoxLayout(this);
+    auto l = new QVBoxLayout(widget());
 
-    m_errorWidget = new KMessageWidget(this);
+    m_errorWidget = new KMessageWidget(widget());
     m_errorWidget->setVisible(false);
     m_errorWidget->setMessageType(KMessageWidget::Error);
     l->addWidget(m_errorWidget);
@@ -293,7 +293,7 @@ void KCMNetworkmanagement::onRequestCreateConnection(int connectionType, const Q
         }
 
     } else if (type == NetworkManager::ConnectionSettings::Gsm) { // launch the mobile broadband wizard, both gsm/cdma
-        QPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, this);
+        QPointer<MobileConnectionWizard> wizard = new MobileConnectionWizard(NetworkManager::ConnectionSettings::Unknown, widget());
         wizard->setAttribute(Qt::WA_DeleteOnClose);
         connect(wizard.data(), &MobileConnectionWizard::accepted, [wizard, this]() {
             if (wizard->getError() == MobileProviders::Success) {
@@ -428,7 +428,7 @@ void KCMNetworkmanagement::onRequestExportConnection(const QString &connectionPa
         const QString url =
             QStandardPaths::writableLocation(QStandardPaths::DocumentsLocation) + QDir::separator() + vpnPlugin->suggestedFileName(connSettings);
         const QString filename =
-            QFileDialog::getSaveFileName(this, i18n("Export VPN Connection"), url, vpnPlugin->supportedFileExtensions().join(QLatin1Char(' ')));
+            QFileDialog::getSaveFileName(widget(), i18n("Export VPN Connection"), url, vpnPlugin->supportedFileExtensions().join(QLatin1Char(' ')));
         if (!filename.isEmpty()) {
             if (auto result = vpnPlugin->exportConnectionSettings(connSettings, filename)) {
                 // TODO display success
@@ -448,9 +448,9 @@ void KCMNetworkmanagement::onRequestToChangeConnection(const QString &connection
 
     if (connection) {
 #if KWIDGETSADDONS_VERSION >= QT_VERSION_CHECK(5, 100, 0)
-        if (KMessageBox::questionTwoActions(this,
+        if (KMessageBox::questionTwoActions(widget(),
 #else
-        if (KMessageBox::questionYesNo(this,
+        if (KMessageBox::questionYesNo(widget(),
 
 #endif
                                             i18n("Do you want to save changes made to the connection '%1'?", connection->name()),
@@ -504,7 +504,7 @@ void KCMNetworkmanagement::addConnection(const NetworkManager::ConnectionSetting
 void KCMNetworkmanagement::kcmChanged(bool kcmChanged)
 {
     m_ui->connectionView->rootContext()->setContextProperty("connectionModified", kcmChanged);
-    Q_EMIT changed(kcmChanged);
+    setNeedsSave(kcmChanged);
 }
 
 void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings)
@@ -552,8 +552,10 @@ KCMNetworkmanagement::ImportResult KCMNetworkmanagement::importVpn()
         }
     }
 
-    const QString &filename =
-        QFileDialog::getOpenFileName(this, i18n("Import VPN Connection"), QDir::homePath(), i18n("VPN connections (%1)", extensions.join(QLatin1Char(' '))));
+    const QString &filename = QFileDialog::getOpenFileName(widget(),
+                                                           i18n("Import VPN Connection"),
+                                                           QDir::homePath(),
+                                                           i18n("VPN connections (%1)", extensions.join(QLatin1Char(' '))));
 
     if (filename.isEmpty()) {
         return ImportResult::fail(i18n("No file was provided"));
@@ -618,7 +620,7 @@ void KCMNetworkmanagement::resetSelection()
         delete m_tabWidget;
         m_tabWidget = nullptr;
     }
-    Q_EMIT changed(false);
+    setNeedsSave(false);
 }
 
 #include "kcm.moc"

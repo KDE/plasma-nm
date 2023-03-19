@@ -10,7 +10,7 @@
 #include "connectioneditortabwidget.h"
 #include "handler.h"
 
-#include <KCModule>
+#include <KCMUtils/KCModule>
 #include <ui_kcm.h>
 
 class KMessageWidget;

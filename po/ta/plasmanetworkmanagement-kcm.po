@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Kishore G <kishore96@gmail.com>, 2021, 2022.
+# Kishore G <kishore96@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:17+0000\n"
-"PO-Revision-Date: 2022-12-22 21:24+0530\n"
+"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"PO-Revision-Date: 2023-03-19 11:59+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,13 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: kcm.cpp:289
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "VPN இணைப்பை இறக்குமதி செய்"
+msgstr "VPN இணைப்பை இறக்குமதி செய்வது தோல்வியடைந்த‍து: %1"
 
 #: kcm.cpp:359
 #, kde-format
@@ -33,36 +32,36 @@ msgstr "என்_பகிர்ந்த_இணைப்பு"
 msgid "Export VPN Connection"
 msgstr "VPN இணைப்பை ஏற்றுமதி செய்"
 
-#: kcm.cpp:456
+#: kcm.cpp:451
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "'%1' என்ற இணைப்பிற்கான மாற்றங்களை சேமிக்கலாமா?"
 
-#: kcm.cpp:457
+#: kcm.cpp:452
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "மாற்றங்களை சேமி"
 
-#: kcm.cpp:556
+#: kcm.cpp:547
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "VPN இணைப்பை இறக்குமதி செய்"
 
-#: kcm.cpp:556
+#: kcm.cpp:549
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN இணைப்புகள் (%1)"
 
-#: kcm.cpp:559
+#: kcm.cpp:552
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "எந்த கோப்பும் கொடுக்கப்படவில்லை"
 
-#: kcm.cpp:608
+#: kcm.cpp:601
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "தெரியாத வகையான VPN"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

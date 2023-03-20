@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:17+0000\n"
+"POT-Creation-Date: 2023-03-20 02:18+0000\n"
 "PO-Revision-Date: 2023-03-14 20:38+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -32,33 +32,33 @@ msgstr "my_shared_connection"
 msgid "Export VPN Connection"
 msgstr "Export VPN Connection"
 
-#: kcm.cpp:456
+#: kcm.cpp:451
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Do you want to save changes made to the connection '%1'?"
 
-#: kcm.cpp:457
+#: kcm.cpp:452
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Save Changes"
 
-#: kcm.cpp:556
+#: kcm.cpp:547
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Import VPN Connection"
 
-#: kcm.cpp:556
+#: kcm.cpp:549
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN connections (%1)"
 
-#: kcm.cpp:559
+#: kcm.cpp:552
 #, kde-format
 msgid "No file was provided"
 msgstr "No file was provided"
 
-#: kcm.cpp:608
+#: kcm.cpp:601
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Unknown VPN type"

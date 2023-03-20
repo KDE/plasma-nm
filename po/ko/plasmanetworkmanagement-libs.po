@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 01:01+0000\n"
+"POT-Creation-Date: 2023-03-20 02:18+0000\n"
 "PO-Revision-Date: 2023-03-01 00:16+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -305,14 +305,14 @@ msgctxt "bond link monitoring"
 msgid "ARP"
 msgstr "ARP"
 
-#: editor/settings/bondwidget.cpp:248 editor/settings/bridgewidget.cpp:198
-#: editor/settings/teamwidget.cpp:187
+#: editor/settings/bondwidget.cpp:243 editor/settings/bridgewidget.cpp:193
+#: editor/settings/teamwidget.cpp:182
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
 msgstr "연결 '%1'을(를) 삭제하시겠습니까?"
 
-#: editor/settings/bondwidget.cpp:249 editor/settings/bridgewidget.cpp:199
-#: editor/settings/teamwidget.cpp:188
+#: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:194
+#: editor/settings/teamwidget.cpp:183
 #, kde-format
 msgid "Remove Connection"
 msgstr "연결 삭제"
@@ -471,7 +471,7 @@ msgstr ""
 msgid "Connect to these servers only"
 msgstr "다음 서버에만 연결"
 
-#: editor/settings/teamwidget.cpp:228
+#: editor/settings/teamwidget.cpp:219
 #, kde-format
 msgid "Select file to import"
 msgstr "가져올 파일 선택"

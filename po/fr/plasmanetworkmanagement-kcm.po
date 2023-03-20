@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:17+0000\n"
+"POT-Creation-Date: 2023-03-20 02:18+0000\n"
 "PO-Revision-Date: 2023-03-15 14:44+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -35,33 +35,33 @@ msgstr "ma_connexion_partagée"
 msgid "Export VPN Connection"
 msgstr "Exporter une connexion VPN"
 
-#: kcm.cpp:456
+#: kcm.cpp:451
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Voulez-vous enregistrer les changements pour la connexion « %1 » ?"
 
-#: kcm.cpp:457
+#: kcm.cpp:452
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Enregistrer les changements"
 
-#: kcm.cpp:556
+#: kcm.cpp:547
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Importer une connexion VPN"
 
-#: kcm.cpp:556
+#: kcm.cpp:549
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "Connexions « VPN » (%1)"
 
-#: kcm.cpp:559
+#: kcm.cpp:552
 #, kde-format
 msgid "No file was provided"
 msgstr "Aucun fichier n'a été fourni."
 
-#: kcm.cpp:608
+#: kcm.cpp:601
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Type « VPN » inconnu"

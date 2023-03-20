@@ -1,16 +1,16 @@
 # Translation for plasmanetworkmanagement-kcm.po to Euskara/Basque (eu).
-# Copyright (C) 2017-2022 This file is copyright:
+# Copyright (C) 2017-2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 # KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2018, 2019, 2020, 2021, 2022.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:17+0000\n"
-"PO-Revision-Date: 2022-12-28 23:03+0100\n"
+"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"PO-Revision-Date: 2023-03-19 11:18+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,13 +18,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: kcm.cpp:289
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Inportatu VPN konexioa"
+msgstr "VPN konexioa inportatzea huts egin du: %1"
 
 #: kcm.cpp:359
 #, kde-format
@@ -36,36 +35,36 @@ msgstr "nere_konexio_partekatua"
 msgid "Export VPN Connection"
 msgstr "Esportatu VPN konexioa"
 
-#: kcm.cpp:456
+#: kcm.cpp:451
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "'%1' konexioari eginiko aldaketak gorde nahi dituzu?"
 
-#: kcm.cpp:457
+#: kcm.cpp:452
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Gorde aldaketak"
 
-#: kcm.cpp:556
+#: kcm.cpp:547
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Inportatu VPN konexioa"
 
-#: kcm.cpp:556
+#: kcm.cpp:549
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN konexioak (%1)"
 
-#: kcm.cpp:559
+#: kcm.cpp:552
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Ez da fitxategirik eman"
 
-#: kcm.cpp:608
+#: kcm.cpp:601
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "VPN mota ezezaguna"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

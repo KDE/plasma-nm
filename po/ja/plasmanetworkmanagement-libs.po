@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 01:01+0000\n"
+"POT-Creation-Date: 2023-03-20 02:18+0000\n"
 "PO-Revision-Date: 2021-09-25 16:17-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -306,14 +306,14 @@ msgctxt "bond link monitoring"
 msgid "ARP"
 msgstr ""
 
-#: editor/settings/bondwidget.cpp:248 editor/settings/bridgewidget.cpp:198
-#: editor/settings/teamwidget.cpp:187
+#: editor/settings/bondwidget.cpp:243 editor/settings/bridgewidget.cpp:193
+#: editor/settings/teamwidget.cpp:182
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
 msgstr "接続'%1'を削除しますか？"
 
-#: editor/settings/bondwidget.cpp:249 editor/settings/bridgewidget.cpp:199
-#: editor/settings/teamwidget.cpp:188
+#: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:194
+#: editor/settings/teamwidget.cpp:183
 #, kde-format
 msgid "Remove Connection"
 msgstr "接続を削除"
@@ -465,7 +465,7 @@ msgstr ""
 msgid "Connect to these servers only"
 msgstr "これらのサーバのみに接続"
 
-#: editor/settings/teamwidget.cpp:228
+#: editor/settings/teamwidget.cpp:219
 #, kde-format
 msgid "Select file to import"
 msgstr ""

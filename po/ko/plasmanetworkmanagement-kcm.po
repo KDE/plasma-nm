@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-22 02:45+0000\n"
 "PO-Revision-Date: 2023-03-01 00:14+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -69,19 +69,19 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "연결 종류 선택"
 
-#: qml/AddConnectionDialog.qml:163
+#: qml/AddConnectionDialog.qml:164
 msgid "Create"
 msgstr "만들기"
 
-#: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:175 qml/ConfigurationDialog.qml:117
 msgid "Cancel"
 msgstr "취소"
 
-#: qml/AddConnectionDialog.qml:191 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:192 qml/main.qml:193
 msgid "Configuration"
 msgstr "설정"
 
-#: qml/ConfigurationDialog.qml:16
+#: qml/ConfigurationDialog.qml:15
 msgctxt "@title:window"
 msgid "Configuration"
 msgstr "설정"
@@ -150,12 +150,12 @@ msgstr "선택한 연결 삭제"
 msgid "Export selected connection"
 msgstr "선택한 연결 내보내기"
 
-#: qml/main.qml:221
+#: qml/main.qml:220
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "연결 삭제"
 
-#: qml/main.qml:222
+#: qml/main.qml:221
 msgid "Do you want to remove the connection '%1'?"
 msgstr "연결 '%1'을(를) 삭제하시겠습니까?"
 

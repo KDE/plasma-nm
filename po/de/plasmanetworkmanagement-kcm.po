@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-22 02:45+0000\n"
 "PO-Revision-Date: 2023-01-25 16:00+0100\n"
 "Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -71,19 +71,19 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Wählen Sie eine Verbindungsart"
 
-#: qml/AddConnectionDialog.qml:163
+#: qml/AddConnectionDialog.qml:164
 msgid "Create"
 msgstr "Erstellen"
 
-#: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:175 qml/ConfigurationDialog.qml:117
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: qml/AddConnectionDialog.qml:191 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:192 qml/main.qml:193
 msgid "Configuration"
 msgstr "Einrichtung"
 
-#: qml/ConfigurationDialog.qml:16
+#: qml/ConfigurationDialog.qml:15
 msgctxt "@title:window"
 msgid "Configuration"
 msgstr "Einrichtung"
@@ -152,12 +152,12 @@ msgstr "Ausgewählte Verbindung entfernen"
 msgid "Export selected connection"
 msgstr "Ausgewählte Verbindung exportieren"
 
-#: qml/main.qml:221
+#: qml/main.qml:220
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Verbindung entfernen"
 
-#: qml/main.qml:222
+#: qml/main.qml:221
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Möchten Sie die Verbindung „'%1“ entfernen?"
 

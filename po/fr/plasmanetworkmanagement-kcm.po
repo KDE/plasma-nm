@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-22 02:45+0000\n"
 "PO-Revision-Date: 2023-03-15 14:44+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -71,19 +71,19 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Choisir un type de connexion"
 
-#: qml/AddConnectionDialog.qml:163
+#: qml/AddConnectionDialog.qml:164
 msgid "Create"
 msgstr "Créer"
 
-#: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
+#: qml/AddConnectionDialog.qml:175 qml/ConfigurationDialog.qml:117
 msgid "Cancel"
 msgstr "Annuler"
 
-#: qml/AddConnectionDialog.qml:191 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:192 qml/main.qml:193
 msgid "Configuration"
 msgstr "Configuration"
 
-#: qml/ConfigurationDialog.qml:16
+#: qml/ConfigurationDialog.qml:15
 msgctxt "@title:window"
 msgid "Configuration"
 msgstr "Configuration"
@@ -152,12 +152,12 @@ msgstr "Supprimer la connexion sélectionnée"
 msgid "Export selected connection"
 msgstr "Exporter la connexion sélectionnée"
 
-#: qml/main.qml:221
+#: qml/main.qml:220
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Supprimer la connexion"
 
-#: qml/main.qml:222
+#: qml/main.qml:221
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Voulez-vous supprimer la connexion « %1 » ?"
 

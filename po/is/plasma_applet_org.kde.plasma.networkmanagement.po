@@ -2,13 +2,13 @@
 # Copyright (C) 2009 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Sveinn í Felli <sveinki@nett.is>, 2009, 2010, 2022.
+# Sveinn í Felli <sveinki@nett.is>, 2009, 2010, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 01:01+0000\n"
-"PO-Revision-Date: 2022-08-23 08:48+0000\n"
+"PO-Revision-Date: 2023-03-22 14:51+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -85,13 +85,13 @@ msgstr "Netkerfi"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Miðju-smelltu til að slökkva á flugvélaham"
 
 #: contents/ui/main.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "Miðju-smelltu til að kveikja á flugvélaham"
 
 #: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -99,16 +99,14 @@ msgid "Enable Wi-Fi"
 msgstr "Virkja Wi-Fi"
 
 #: contents/ui/main.qml:87
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Network"
 msgstr "Virkja farsímanet"
 
 #: contents/ui/main.qml:95
-#, fuzzy, kde-format
-#| msgid "Wireless"
+#, kde-format
 msgid "Enable Airplane Mode"
-msgstr "Þráðlaust"
+msgstr "Virkja flugvélaham"
 
 #: contents/ui/main.qml:101
 #, kde-format

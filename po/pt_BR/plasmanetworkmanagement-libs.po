@@ -3,21 +3,21 @@
 # This file is distributed under the same license as the plasma-nm package.
 #
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2014, 2015, 2016, 2019, 2020.
-# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2017, 2018, 2019, 2020, 2021, 2022.
+# Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-20 02:18+0000\n"
-"PO-Revision-Date: 2022-05-03 13:30-0300\n"
+"PO-Revision-Date: 2023-03-22 10:52-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
-"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -1652,10 +1652,9 @@ msgstr "WPA3 Pessoal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA/WPA2 Empresarial"
+msgstr "WPA3 Empresarial de 192 bit"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -2573,7 +2572,7 @@ msgstr "Qualquer"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:486
 #, kde-format
@@ -2837,7 +2836,7 @@ msgstr "WPA3-SAE"
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:614
 #, kde-format
@@ -2926,12 +2925,12 @@ msgstr "Nenhum plugin de VPN encontrado para o tipo %1"
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "A importação deste tipo de VPN ainda não está implementada"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "Não implementado"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3322,34 +3321,24 @@ msgid "R&emove"
 msgstr "R&emover"
 
 #: handler.cpp:111
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
-"O NetworkManager não tem suporte para conexões VPN '%1'. Use o gerenciador "
-"de pacotes para instalá-lo."
+msgstr "O Plasma não tem suporte para conexões VPN '%1'."
 
 #: handler.cpp:113
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Relatar erro"
 
 #: handler.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
-"O NetworkManager não tem suporte para conexões VPN '%1'. Use o gerenciador "
-"de pacotes para instalá-lo."
+msgstr "O NetworkManager não tem suporte para conexões VPN '%1'."
 
 #: handler.cpp:138
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Instalar"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
 #: handler.cpp:352 handler.cpp:845
@@ -3507,131 +3496,118 @@ msgid "Import a saved configuration file"
 msgstr "Importar um arquivo de configuração salvo"
 
 #: models/networkmodelitem.cpp:42
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é desconhecido"
 
 #: models/networkmodelitem.cpp:43
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é ADSL"
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr ""
+msgstr "O tipo de conexão é Bluetooth"
 
 #: models/networkmodelitem.cpp:45
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é ponte"
 
 #: models/networkmodelitem.cpp:46
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é CDMA"
 
 #: models/networkmodelitem.cpp:47
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é GSM"
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr ""
+msgstr "O tipo de conexão é Infiniband"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
-msgstr ""
+msgstr "O tipo de conexão é OLPC Mesh"
 
 #: models/networkmodelitem.cpp:50
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é PPOPE"
 
 #: models/networkmodelitem.cpp:51
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é VLAN"
 
 #: models/networkmodelitem.cpp:52
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é VPN"
 
 #: models/networkmodelitem.cpp:53
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é Wimax"
 
 #: models/networkmodelitem.cpp:54
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é com fio"
 
 #: models/networkmodelitem.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr ""
+msgstr "O tipo de conexão é sem fio"
 
 #: models/networkmodelitem.cpp:56
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é Team"
 
 #: models/networkmodelitem.cpp:57
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr "Tipo de conexão:"
+msgstr "O tipo de conexão é genérico"
 
 #: models/networkmodelitem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr "Tipo de conexão:"
+msgstr "Tipo de conexão é encapsulada"
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr ""
+msgstr "Tipo de conexão é IP encapsulado"
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
-msgstr ""
+msgstr "O tipo de conexão é WireGuard"
 
 #: models/networkmodelitem.cpp:585
 #, kde-format

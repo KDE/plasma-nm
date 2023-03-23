@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Sveinn í Felli <sv1@fellsnet.is>, 2022.
+# Sveinn í Felli <sv1@fellsnet.is>, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:17+0000\n"
-"PO-Revision-Date: 2022-08-23 09:09+0000\n"
+"PO-Revision-Date: 2023-03-22 14:49+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -641,7 +641,7 @@ msgstr ""
 #: openvpnadvanced.ui:564
 #, kde-format
 msgid "HMAC Authentication:"
-msgstr ""
+msgstr "HMAC auðkenning:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:587
@@ -811,7 +811,7 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbRemoteCertTls)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbNsCertType)
 #: openvpnadvanced.ui:791 openvpnadvanced.ui:838
-#, fuzzy, kde-format
+#, kde-format
 msgid "Server"
 msgstr "Þjónn"
 

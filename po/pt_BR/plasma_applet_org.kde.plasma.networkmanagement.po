@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 01:01+0000\n"
-"PO-Revision-Date: 2023-01-16 23:42-0300\n"
+"PO-Revision-Date: 2023-03-22 10:50-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
-"Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
+"Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,13 +84,13 @@ msgstr "Redes"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Clique do meio para desligar o modo avião"
 
 #: contents/ui/main.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "Clique do meio para ligar o modo avião"
 
 #: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -98,14 +98,12 @@ msgid "Enable Wi-Fi"
 msgstr "Habilitar Wi-Fi"
 
 #: contents/ui/main.qml:87
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Network"
 msgstr "Habilitar rede móvel"
 
 #: contents/ui/main.qml:95
-#, fuzzy, kde-format
-#| msgid "Enable airplane mode"
+#, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Habilitar modo avião"
 

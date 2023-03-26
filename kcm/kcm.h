@@ -10,7 +10,7 @@
 #include "connectioneditortabwidget.h"
 #include "handler.h"
 
-#include <KCMUtils/KCModule> // TODO Remove namespace when KConfigWidgets class is removed
+#include <KCModule>
 #include <ui_kcm.h>
 
 class KMessageWidget;

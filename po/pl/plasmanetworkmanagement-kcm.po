@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2023-01-21 10:11+0100\n"
+"PO-Revision-Date: 2023-03-25 09:36+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,13 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: kcm.cpp:289
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Zaimportuj połączenie VPN"
+msgstr "Nie udało się zaimportować połączenia VPN: %1"
 
 #: kcm.cpp:359
 #, kde-format
@@ -58,12 +57,12 @@ msgstr "Połączenia VPN (%1)"
 #: kcm.cpp:559
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Nie podano żadnego pliku"
 
 #: kcm.cpp:608
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Nieznany rodzaj VPNu"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

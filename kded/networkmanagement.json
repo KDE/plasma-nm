@@ -13,6 +13,7 @@
         "Description[eu]": "«NetworkManager» daimonari sekretuak hornitzen dizkio",
         "Description[fi]": "Välittää salaisuuksia NetworkManager-palvelulle",
         "Description[fr]": "Fournit des éléments secrets pour le démon « NetworkManager »",
+        "Description[gl]": "Fornece segredos ao servizo de xestión da rede",
         "Description[hu]": "Titkokat biztosít a NetworkManager démonhoz",
         "Description[ia]": "Forni secretos per le demon de NetworkManager",
         "Description[is]": "Kemur leyniteiknum áleiðis til netstjóravaktarinnar",

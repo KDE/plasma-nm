@@ -2,19 +2,20 @@
 # Roman Paholík <wizzardsk@gmail.com>, 2014, 2015, 2017, 2019.
 # Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021.
 # Dusan Kazik <prescott66@gmail.com>, 2020.
+# Ferdinand Galko <galko.ferdinand@gmail.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-22 00:59+0000\n"
-"PO-Revision-Date: 2021-09-15 18:52+0200\n"
-"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
-"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2023-03-25 14:00+0100\n"
+"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
+"Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: openconnectauth.cpp:316
@@ -159,7 +160,7 @@ msgstr "Proxy:"
 #: openconnectprop.ui:81
 #, kde-format
 msgid "User Agent:"
-msgstr ""
+msgstr "Používateľský agent:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openconnectprop.ui:94
@@ -207,19 +208,19 @@ msgstr "Pulse Connect Secure"
 #: openconnectprop.ui:151
 #, kde-format
 msgid "F5 BIG-IP SSL VPN"
-msgstr ""
+msgstr "F5 BIG-IP SSL VPN"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:156
 #, kde-format
 msgid "Fortinet SSL VPN"
-msgstr ""
+msgstr "Fortinet SSL VPN"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:161
 #, kde-format
 msgid "Array SSL VPN"
-msgstr ""
+msgstr "Array SSL VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnectprop.ui:169

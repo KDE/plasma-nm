@@ -38,7 +38,7 @@ msgstr "Erreur"
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr ""
-"La prise en charge pour les connexions  « VPN » compatible avec Cisco est "
+"La prise en charge pour les connexions « VPN » compatible avec Cisco est "
 "manquante dans le module « NetworkManager »."
 
 #: vpnc.cpp:146

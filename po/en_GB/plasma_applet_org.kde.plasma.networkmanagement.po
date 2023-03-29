@@ -82,13 +82,13 @@ msgstr "Networks"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr "Middle-click to turn off Airplane Mode"
+msgstr "Middle-click to turn off Aeroplane Mode"
 
 #: contents/ui/main.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "Middle-click to turn on Airplane Mode"
+msgstr "Middle-click to turn on Aeroplane Mode"
 
 #: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -103,7 +103,7 @@ msgstr "Enable Mobile Network"
 #: contents/ui/main.qml:95
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr "Enable Airplane Mode"
+msgstr "Enable Aeroplane Mode"
 
 #: contents/ui/main.qml:101
 #, kde-format
@@ -129,7 +129,7 @@ msgstr "Password…"
 #: contents/ui/PopupDialog.qml:102
 #, kde-format
 msgid "Airplane mode is enabled"
-msgstr "Airplane mode is enabled"
+msgstr "Aeroplane mode is enabled"
 
 #: contents/ui/PopupDialog.qml:106
 #, kde-format
@@ -165,13 +165,13 @@ msgstr "Enable mobile network"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
-msgstr "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
+msgstr "Disable aeroplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 
 #: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
-msgstr "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
+msgstr "Enable aeroplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 
 #: contents/ui/Toolbar.qml:154
 #, kde-format

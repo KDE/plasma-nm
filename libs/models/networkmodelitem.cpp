@@ -643,14 +643,14 @@ void NetworkModelItem::updateDetails() const
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Wireless) {
         NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
-        m_details << i18n("Access point (SSID)") << m_ssid;
+        m_details << i18n("Access Point (SSID)") << m_ssid;
         if (m_mode == NetworkManager::WirelessSetting::Infrastructure) {
-            m_details << i18n("Signal strength") << QStringLiteral("%1%").arg(m_signal);
+            m_details << i18n("Signal Strength") << i18nc("WiFi signal strength percentage indicator", "%1%", m_signal);
         }
-        m_details << i18n("Security type") << UiUtils::labelFromWirelessSecurity(m_securityType);
+        m_details << i18n("Security Type") << UiUtils::labelFromWirelessSecurity(m_securityType);
         if (wirelessDevice) {
             if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
-                m_details << i18n("Connection speed") << UiUtils::connectionSpeed(wirelessDevice->bitRate());
+                m_details << i18n("Connection Speed") << UiUtils::connectionSpeed(wirelessDevice->bitRate());
             }
             const NetworkManager::AccessPoint::Ptr accessPoint = wirelessDevice->findAccessPoint(m_specificPath);
             if (accessPoint) {
@@ -683,7 +683,7 @@ void NetworkModelItem::updateDetails() const
             }
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Vpn) {
-        m_details << i18n("VPN plugin") << m_vpnType;
+        m_details << i18n("VPN Plugin") << m_vpnType;
 
         if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
             NetworkManager::ActiveConnection::Ptr active = NetworkManager::findActiveConnection(m_activeConnectionPath);

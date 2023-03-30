@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2015-02-04 14:10+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -3605,7 +3605,7 @@ msgstr ""
 msgid "IPv6 Secondary Nameserver"
 msgstr ""
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Brzina konekcije"
@@ -3619,19 +3619,37 @@ msgid "MAC Address"
 msgstr "MAC adresa"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Pristupna tačka (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
-msgstr "Jačina signala"
+msgid "Signal Strength"
+msgstr "Jačina Signala"
+
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "traffic, e.g. n KB/s\n"
+#| " m KB/s"
+#| msgid "%1 %2"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1 %2"
 
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Vrsta Sigurnosti"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Brzina konekcije"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3665,8 +3683,9 @@ msgid "Access Technology"
 msgstr "Tehnologija pristupa"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "VPN dodatak"
 
 #: models/networkmodelitem.cpp:697
@@ -3706,6 +3725,9 @@ msgstr "Adsl"
 #| msgid "Service:"
 msgid "Device"
 msgstr "Usluga:"
+
+#~ msgid "Signal strength"
+#~ msgstr "Jačina signala"
 
 #~ msgctxt "Error message in VPN import/export dialog"
 #~ msgid "Operation not supported for this VPN type."
@@ -3756,9 +3778,6 @@ msgstr "Usluga:"
 
 #~ msgid "NSP Name"
 #~ msgstr "NSP Naziv"
-
-#~ msgid "Signal Strength"
-#~ msgstr "Jačina Signala"
 
 #~ msgid "Network Type"
 #~ msgstr "Tip mreže"
@@ -3843,12 +3862,6 @@ msgstr "Usluga:"
 
 #~ msgid "GBit/s"
 #~ msgstr "GBit/s"
-
-#~ msgctxt ""
-#~ "traffic, e.g. n KB/s\n"
-#~ " m KB/s"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
 
 #~ msgid "Received"
 #~ msgstr "Primljeno"

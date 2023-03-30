@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2022-12-27 21:42+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -3519,7 +3519,7 @@ msgstr ""
 msgid "IPv6 Secondary Nameserver"
 msgstr ""
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "இணைப்பின் வேகம்"
@@ -3534,18 +3534,31 @@ msgstr "MAC முகவரி"
 
 #: models/networkmodelitem.cpp:646
 #, kde-format
-msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr ""
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
+msgstr ""
+
+#: models/networkmodelitem.cpp:648
+#, kde-format
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
 msgstr ""
 
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "பாதுகாப்பு வகை"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "இணைப்பின் வேகம்"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3578,8 +3591,9 @@ msgid "Access Technology"
 msgstr "அணுகல் தொழில்நுட்பம்"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "VPN செருகுநிரல்"
 
 #: models/networkmodelitem.cpp:697

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2020-11-01 21:51-0800\n"
 "Last-Translator: A S Alam <aalam.yellow@gmail.com>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -3563,7 +3563,7 @@ msgstr ""
 msgid "IPv6 Secondary Nameserver"
 msgstr ""
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "ਕਨੈਕਸ਼ਨ ਸਪੀਡ"
@@ -3577,19 +3577,37 @@ msgid "MAC Address"
 msgstr "MAC ਐਡਰੈਸ"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Access Point"
+msgid "Access Point (SSID)"
+msgstr "ਅਸੈੱਸ ਪੁਆਇੰਟ"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "ਸਿਗਨਲ ਮਜ਼ਬੂਤੀ"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "traffic, e.g. n KB/s\n"
+#| " m KB/s"
+#| msgid "%1 %2"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1 %2"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "ਸੁਰੱਖਿਆ ਕਿਸਮ"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "ਕਨੈਕਸ਼ਨ ਸਪੀਡ"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3623,8 +3641,9 @@ msgid "Access Technology"
 msgstr "ਅਸੈੱਸ ਤਕਨਾਲੋਜੀ"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "VPN ਪਲੱਗਇਨ"
 
 #: models/networkmodelitem.cpp:697
@@ -3664,6 +3683,9 @@ msgstr "Adsl"
 msgid "Device"
 msgstr "ਡਿਵਾਈਸ"
 
+#~ msgid "Signal strength"
+#~ msgstr "ਸਿਗਨਲ ਮਜ਼ਬੂਤੀ"
+
 #~ msgctxt "Error message in VPN import/export dialog"
 #~ msgid "Operation not supported for this VPN type."
 #~ msgstr "ਇਹ VPN ਕਿਸਮ ਲਈ ਕਾਰਵਾਈ ਸਹਾਇਕ ਨਹੀਂ ਹੈ।"
@@ -3699,9 +3721,6 @@ msgstr "ਡਿਵਾਈਸ"
 
 #~ msgid "Network name:"
 #~ msgstr "ਨੈੱਟਵਰਕ ਨਾਂ:"
-
-#~ msgid "Signal Strength"
-#~ msgstr "ਸਿਗਨਲ ਮਜ਼ਬੂਤੀ"
 
 #~ msgid "Network Type"
 #~ msgstr "ਨੈੱਟਵਰਕ ਕਿਸਮ"
@@ -3770,12 +3789,6 @@ msgstr "ਡਿਵਾਈਸ"
 
 #~ msgid "GBit/s"
 #~ msgstr "GBit/s"
-
-#~ msgctxt ""
-#~ "traffic, e.g. n KB/s\n"
-#~ " m KB/s"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
 
 #~ msgid "Received"
 #~ msgstr "ਪ੍ਰਾਪਤ ਕੀਤੇ"

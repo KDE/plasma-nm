@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2022-12-24 08:46+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -3659,7 +3659,7 @@ msgstr "Основний сервер назв IPv6"
 msgid "IPv6 Secondary Nameserver"
 msgstr "Вторинний сервер назв IPv6"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Швидкість з'єднання"
@@ -3673,19 +3673,37 @@ msgid "MAC Address"
 msgstr "MAC-адреса"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Точка доступу (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Потужність сигналу"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "traffic, e.g. n KB/s\n"
+#| " m KB/s"
+#| msgid "%1 %2"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1 %2"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Тип захисту"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Швидкість з'єднання"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3718,8 +3736,9 @@ msgid "Access Technology"
 msgstr "Технологія доступу"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "Додаток VPN"
 
 #: models/networkmodelitem.cpp:697
@@ -3758,6 +3777,9 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Пристрій"
+
+#~ msgid "Signal strength"
+#~ msgstr "Потужність сигналу"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3821,9 +3843,6 @@ msgstr "Пристрій"
 
 #~ msgid "NSP Name"
 #~ msgstr "Назва надавача"
-
-#~ msgid "Signal Strength"
-#~ msgstr "Потужність сигналу"
 
 #~ msgid "Network Type"
 #~ msgstr "Тип мережі"
@@ -3916,12 +3935,6 @@ msgstr "Пристрій"
 
 #~ msgid "GBit/s"
 #~ msgstr "Гбіт/с"
-
-#~ msgctxt ""
-#~ "traffic, e.g. n KB/s\n"
-#~ " m KB/s"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
 
 #~ msgid "Received"
 #~ msgstr "Отримано"

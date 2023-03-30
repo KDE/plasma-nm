@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2022-12-24 11:31+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3655,7 +3655,7 @@ msgstr "Servidor de noms IPv6 primari"
 msgid "IPv6 Secondary Nameserver"
 msgstr "Servidor de noms IPv6 secundari"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Velocitat de la connexió"
@@ -3669,19 +3669,34 @@ msgid "MAC Address"
 msgstr "Adreça MAC"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Punt d'accés (SSID)"
 
 #: models/networkmodelitem.cpp:648
-#, kde-format
-msgid "Signal strength"
+#, fuzzy, kde-format
+#| msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Potència del senyal"
 
-#: models/networkmodelitem.cpp:650
+#: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Security type"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr ""
+
+#: models/networkmodelitem.cpp:650
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Tipus de seguretat"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Velocitat de la connexió"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3714,8 +3729,9 @@ msgid "Access Technology"
 msgstr "Tecnologia d'accés"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "Connector VPN"
 
 #: models/networkmodelitem.cpp:697

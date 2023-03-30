@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2023-02-21 09:35+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -3682,7 +3682,7 @@ msgstr "Nama-Server Primer IPv6"
 msgid "IPv6 Secondary Nameserver"
 msgstr "Nama-Server Sekunder IPv6"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Kecepatan koneksi"
@@ -3696,19 +3696,34 @@ msgid "MAC Address"
 msgstr "Alamat MAC"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Titik akses (SSID)"
 
 #: models/networkmodelitem.cpp:648
-#, kde-format
-msgid "Signal strength"
+#, fuzzy, kde-format
+#| msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Kekuatan sinyal"
 
-#: models/networkmodelitem.cpp:650
+#: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Security type"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr ""
+
+#: models/networkmodelitem.cpp:650
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Tipe keamanan"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Kecepatan koneksi"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3742,8 +3757,9 @@ msgid "Access Technology"
 msgstr "Teknologi Akses"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "Plugin VPN"
 
 #: models/networkmodelitem.cpp:697

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2014-10-29 11:38+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -3504,7 +3504,7 @@ msgstr ""
 msgid "IPv6 Secondary Nameserver"
 msgstr ""
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr ""
@@ -3519,17 +3519,32 @@ msgstr ""
 
 #: models/networkmodelitem.cpp:646
 #, kde-format
-msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr ""
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr ""
+
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "traffic, e.g. n KB/s\n"
+#| " m KB/s"
+#| msgid "%1 %2"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1 %2"
 
 #: models/networkmodelitem.cpp:650
 #, kde-format
-msgid "Security type"
+msgid "Security Type"
+msgstr ""
+
+#: models/networkmodelitem.cpp:653
+#, kde-format
+msgid "Connection Speed"
 msgstr ""
 
 #: models/networkmodelitem.cpp:657
@@ -3564,7 +3579,7 @@ msgstr ""
 
 #: models/networkmodelitem.cpp:686
 #, kde-format
-msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr ""
 
 #: models/networkmodelitem.cpp:697
@@ -3612,9 +3627,3 @@ msgstr ""
 
 #~ msgid "GBit/s"
 #~ msgstr "GBit/s"
-
-#~ msgctxt ""
-#~ "traffic, e.g. n KB/s\n"
-#~ " m KB/s"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2023-03-26 19:10+0200\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -3645,7 +3645,7 @@ msgstr "Primárny IPv6 nameserver"
 msgid "IPv6 Secondary Nameserver"
 msgstr "Sekundárny IPv6 nameserver"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Rýchlosť pripojenia"
@@ -3659,19 +3659,34 @@ msgid "MAC Address"
 msgstr "MAC adresa"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Prístupový bod (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Sila signálu"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgid "%1%"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1%"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Typ zabezpečenia"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Rýchlosť pripojenia"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3704,8 +3719,9 @@ msgid "Access Technology"
 msgstr "Prístupová technológia"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "Zásuvný modul siete VPN"
 
 #: models/networkmodelitem.cpp:697
@@ -3744,6 +3760,9 @@ msgstr "Adsl"
 #, kde-format
 msgid "Device"
 msgstr "Zariadenie"
+
+#~ msgid "Signal strength"
+#~ msgstr "Sila signálu"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3803,9 +3822,6 @@ msgstr "Zariadenie"
 
 #~ msgid "NSP Name"
 #~ msgstr "Názov NSP"
-
-#~ msgid "Signal Strength"
-#~ msgstr "Sila signálu"
 
 #~ msgid "Network Type"
 #~ msgstr "Typ siete"
@@ -4011,6 +4027,3 @@ msgstr "Zariadenie"
 #~ msgctxt "Disconnecting"
 #~ msgid "Network connections are being cleaned up"
 #~ msgstr "Sieťové pripojenia sa čistia"
-
-#~ msgid "%1%"
-#~ msgstr "%1%"

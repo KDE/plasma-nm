@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2017-09-08 16:16+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -3644,7 +3644,7 @@ msgstr ""
 msgid "IPv6 Secondary Nameserver"
 msgstr ""
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Ταχύτητα σύνδεσης"
@@ -3658,19 +3658,37 @@ msgid "MAC Address"
 msgstr "Διεύθυνση MAC"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Σημείο πρόσβασης (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Ισχύς σήματος"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "traffic, e.g. n KB/s\n"
+#| " m KB/s"
+#| msgid "%1 %2"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1 %2"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Τύπος ασφάλειας"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Ταχύτητα σύνδεσης"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3704,8 +3722,9 @@ msgid "Access Technology"
 msgstr "Τεχνολογία πρόσβασης"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "Πρόσθετο VPN"
 
 #: models/networkmodelitem.cpp:697
@@ -3745,6 +3764,9 @@ msgstr "Adsl"
 #| msgid "Service:"
 msgid "Device"
 msgstr "Υπηρεσία:"
+
+#~ msgid "Signal strength"
+#~ msgstr "Ισχύς σήματος"
 
 #~ msgctxt "Error message in VPN import/export dialog"
 #~ msgid "Operation not supported for this VPN type."
@@ -3800,9 +3822,6 @@ msgstr "Υπηρεσία:"
 
 #~ msgid "NSP Name"
 #~ msgstr "Όνομα NSP"
-
-#~ msgid "Signal Strength"
-#~ msgstr "Ισχύς σήματος"
 
 #~ msgid "Network Type"
 #~ msgstr "Τύπος δικτύου"
@@ -3892,12 +3911,6 @@ msgstr "Υπηρεσία:"
 
 #~ msgid "GBit/s"
 #~ msgstr "GBit/δ"
-
-#~ msgctxt ""
-#~ "traffic, e.g. n KB/s\n"
-#~ " m KB/s"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
 
 #~ msgid "Received"
 #~ msgstr "Λήφθηκαν"

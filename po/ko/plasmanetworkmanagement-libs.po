@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2023-03-01 00:16+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3621,7 +3621,7 @@ msgstr "IPv6 주 네임 서버"
 msgid "IPv6 Secondary Nameserver"
 msgstr "IPv6 보조 네임 서버"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "연결 속도"
@@ -3635,19 +3635,37 @@ msgid "MAC Address"
 msgstr "MAC 주소"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "액세스 포인트(SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "신호 강도"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "traffic, e.g. n KB/s\n"
+#| " m KB/s"
+#| msgid "%1 %2"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1%2"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "보안 형식"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "연결 속도"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3680,8 +3698,9 @@ msgid "Access Technology"
 msgstr "접속 기술"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "VPN 플러그인"
 
 #: models/networkmodelitem.cpp:697
@@ -3720,6 +3739,9 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "장치"
+
+#~ msgid "Signal strength"
+#~ msgstr "신호 강도"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3779,9 +3801,6 @@ msgstr "장치"
 
 #~ msgid "NSP Name"
 #~ msgstr "NSP 이름"
-
-#~ msgid "Signal Strength"
-#~ msgstr "신호 강도"
 
 #~ msgid "Network Type"
 #~ msgstr "네트워크 종류"
@@ -3869,12 +3888,6 @@ msgstr "장치"
 
 #~ msgid "GBit/s"
 #~ msgstr "GBit/초"
-
-#~ msgctxt ""
-#~ "traffic, e.g. n KB/s\n"
-#~ " m KB/s"
-#~ msgid "%1 %2"
-#~ msgstr "%1%2"
 
 #~ msgid "Received"
 #~ msgstr "수신"

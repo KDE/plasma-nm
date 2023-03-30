@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2021-11-03 17:13+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -3528,7 +3528,7 @@ msgstr ""
 msgid "IPv6 Secondary Nameserver"
 msgstr ""
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr ""
@@ -3542,19 +3542,36 @@ msgid "MAC Address"
 msgstr ""
 
 #: models/networkmodelitem.cpp:646
+#, fuzzy, kde-format
+#| msgctxt "wireless network operation mode"
+#| msgid "Access point"
+msgid "Access Point (SSID)"
+msgstr "Přistupnišćo (access point)"
+
+#: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Access point (SSID)"
+msgid "Signal Strength"
 msgstr ""
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
 msgstr ""
 
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@label unknown security"
+#| msgid "Unknown security type"
+msgid "Security Type"
+msgstr "Njeznaty typ wěstosće"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgctxt "network interface connection failed state label"
+#| msgid "Connection Failed"
+msgid "Connection Speed"
+msgstr "Zwisk je so zwrěšćił"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3587,8 +3604,9 @@ msgid "Access Technology"
 msgstr ""
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "VPN-zašćěpka"
 
 #: models/networkmodelitem.cpp:697

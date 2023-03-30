@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2017-05-16 06:57-0400\n"
 "Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
 "Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
@@ -3546,7 +3546,7 @@ msgstr ""
 msgid "IPv6 Secondary Nameserver"
 msgstr ""
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "מהירות החיבור"
@@ -3560,19 +3560,33 @@ msgid "MAC Address"
 msgstr "כתובת MAC"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "נקודת גישה (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "עוצמת אות"
 
-#: models/networkmodelitem.cpp:650
+#: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Security type"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr ""
+
+#: models/networkmodelitem.cpp:650
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "סוג אבטחה"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "מהירות החיבור"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3606,8 +3620,9 @@ msgid "Access Technology"
 msgstr "טכנולוגית גישה"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "תוסף VPN"
 
 #: models/networkmodelitem.cpp:697
@@ -3648,6 +3663,9 @@ msgstr "ADSL"
 msgid "Device"
 msgstr "שירות:"
 
+#~ msgid "Signal strength"
+#~ msgstr "עוצמת אות"
+
 #~ msgid "Missing VPN plugin"
 #~ msgstr "תוסף VPN חסר"
 
@@ -3677,9 +3695,6 @@ msgstr "שירות:"
 
 #~ msgid "Network name:"
 #~ msgstr "שם רשת:"
-
-#~ msgid "Signal Strength"
-#~ msgstr "עוצמת אות"
 
 #~ msgid "Network Type"
 #~ msgstr "סוג רשת"

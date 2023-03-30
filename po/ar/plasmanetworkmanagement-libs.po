@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2022-08-10 23:20+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: Arabic <kde-l10n-ar@kde.org>\n"
@@ -3578,7 +3578,7 @@ msgstr "خادوم النطاقات IPv6 الأساسي"
 msgid "IPv6 Secondary Nameserver"
 msgstr "خادوم النطاقات IPv6 الثانوي"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "سرعة الاتصال"
@@ -3592,19 +3592,37 @@ msgid "MAC Address"
 msgstr "عنوان ماك (MAC)"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "نقطة الوصول (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "قوّة الإشارة"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "traffic, e.g. n KB/s\n"
+#| " m KB/s"
+#| msgid "%1 %2"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1 %2"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "نوع الأمن"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "سرعة الاتصال"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3637,8 +3655,9 @@ msgid "Access Technology"
 msgstr "تقنيّة الوصول"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "ملحقة VPN"
 
 #: models/networkmodelitem.cpp:697
@@ -3677,6 +3696,9 @@ msgstr "Adsl"
 #, kde-format
 msgid "Device"
 msgstr "الجهاز"
+
+#~ msgid "Signal strength"
+#~ msgstr "قوّة الإشارة"
 
 #~ msgctxt "Error message in VPN import/export dialog"
 #~ msgid "Operation not supported for this VPN type."
@@ -3722,9 +3744,6 @@ msgstr "الجهاز"
 
 #~ msgid "NSP Name"
 #~ msgstr "اسم NSP"
-
-#~ msgid "Signal Strength"
-#~ msgstr "قوّة الإشارة"
 
 #~ msgid "Network Type"
 #~ msgstr "نوع الشبكة"
@@ -3789,12 +3808,6 @@ msgstr "الجهاز"
 
 #~ msgid "GBit/s"
 #~ msgstr "ج.بت/ث"
-
-#~ msgctxt ""
-#~ "traffic, e.g. n KB/s\n"
-#~ " m KB/s"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
 
 #~ msgid "Received"
 #~ msgstr "استُلِمت"

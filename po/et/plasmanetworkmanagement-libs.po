@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2020-09-28 13:49+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -3670,7 +3670,7 @@ msgstr "IPv6 nimeserver"
 msgid "IPv6 Secondary Nameserver"
 msgstr "IPv6 nimeserver"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Ühenduse kiirus"
@@ -3684,19 +3684,37 @@ msgid "MAC Address"
 msgstr "MAC-aadress"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Tugijaam (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Signaali tugevus"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "traffic, e.g. n KB/s\n"
+#| " m KB/s"
+#| msgid "%1 %2"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1 %2"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Turbetüüp"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Ühenduse kiirus"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3730,8 +3748,9 @@ msgid "Access Technology"
 msgstr "Tehnoloogia"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "VPN-i plugin"
 
 #: models/networkmodelitem.cpp:697
@@ -3770,6 +3789,9 @@ msgstr "Adsl"
 #, kde-format
 msgid "Device"
 msgstr "Seade"
+
+#~ msgid "Signal strength"
+#~ msgstr "Signaali tugevus"
 
 #~ msgctxt "Error message in VPN import/export dialog"
 #~ msgid "Operation not supported for this VPN type."
@@ -3822,9 +3844,6 @@ msgstr "Seade"
 
 #~ msgid "NSP Name"
 #~ msgstr "NSP nimi"
-
-#~ msgid "Signal Strength"
-#~ msgstr "Signaali tugevus"
 
 #~ msgid "Network Type"
 #~ msgstr "Võrgu tüüp"
@@ -3914,12 +3933,6 @@ msgstr "Seade"
 
 #~ msgid "GBit/s"
 #~ msgstr "GBit/s"
-
-#~ msgctxt ""
-#~ "traffic, e.g. n KB/s\n"
-#~ " m KB/s"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
 
 #~ msgid "Received"
 #~ msgstr "Saadud"

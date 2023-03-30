@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2022-12-24 15:18+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -3650,7 +3650,7 @@ msgstr "IPv6 primaire nameserver"
 msgid "IPv6 Secondary Nameserver"
 msgstr "IPv6 secundaire nameserver"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Verbindingssnelheid"
@@ -3664,19 +3664,34 @@ msgid "MAC Address"
 msgstr "MAC-adres"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Accesspoint (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Signaalsterkte"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgid "%1%"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1%"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Type beveiliging"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Verbindingssnelheid"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3709,8 +3724,9 @@ msgid "Access Technology"
 msgstr "Toegangstechnologie"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "VPN-plug-in"
 
 #: models/networkmodelitem.cpp:697
@@ -3749,6 +3765,9 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Apparaat"
+
+#~ msgid "Signal strength"
+#~ msgstr "Signaalsterkte"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3809,9 +3828,6 @@ msgstr "Apparaat"
 
 #~ msgid "NSP Name"
 #~ msgstr "NSP-naam"
-
-#~ msgid "Signal Strength"
-#~ msgstr "Signaalsterkte"
 
 #~ msgid "Network Type"
 #~ msgstr "Netwerktype"
@@ -4023,6 +4039,3 @@ msgstr "Apparaat"
 #~ msgctxt "Disconnecting"
 #~ msgid "Network connections are being cleaned up"
 #~ msgstr "Netwerkverbindingen worden opgeschoond"
-
-#~ msgid "%1%"
-#~ msgstr "%1%"

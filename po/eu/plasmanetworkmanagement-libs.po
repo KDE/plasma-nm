@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2022-12-28 23:15+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3659,7 +3659,7 @@ msgstr "IPv6 izen-zerbitzari nagusia"
 msgid "IPv6 Secondary Nameserver"
 msgstr "IPv6 bigarren mailako izen-zerbitzaria"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Konexioaren abiadura"
@@ -3673,19 +3673,33 @@ msgid "MAC Address"
 msgstr "MAC helbidea"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Sarbide puntua (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Seinalearen indarra"
 
-#: models/networkmodelitem.cpp:650
+#: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Security type"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr ""
+
+#: models/networkmodelitem.cpp:650
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Segurtasun mota"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Konexioaren abiadura"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3718,8 +3732,9 @@ msgid "Access Technology"
 msgstr "Atzipen teknologia"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "VPN plugina"
 
 #: models/networkmodelitem.cpp:697
@@ -3758,6 +3773,9 @@ msgstr "Adsl"
 #, kde-format
 msgid "Device"
 msgstr "Gailua"
+
+#~ msgid "Signal strength"
+#~ msgstr "Seinalearen indarra"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3818,9 +3836,6 @@ msgstr "Gailua"
 
 #~ msgid "NSP Name"
 #~ msgstr "NSP izena"
-
-#~ msgid "Signal Strength"
-#~ msgstr "Seinalearen indarra"
 
 #~ msgid "Network Type"
 #~ msgstr "Sare mota"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2023-01-21 10:12+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -3652,7 +3652,7 @@ msgstr "Główny serwer nazw IPv6"
 msgid "IPv6 Secondary Nameserver"
 msgstr "Zapasowy serwer nazw IPv6"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Szybkość połączenia"
@@ -3666,19 +3666,37 @@ msgid "MAC Address"
 msgstr "Adres MAC"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Punkt dostępowy (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Siła sygnału"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "traffic, e.g. n KB/s\n"
+#| " m KB/s"
+#| msgid "%1 %2"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1 %2"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Rodzaj zabezpieczenia"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Szybkość połączenia"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3711,8 +3729,9 @@ msgid "Access Technology"
 msgstr "Technologia dostępu"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "Wtyczka VPN"
 
 #: models/networkmodelitem.cpp:697
@@ -3751,6 +3770,9 @@ msgstr "Adsl"
 #, kde-format
 msgid "Device"
 msgstr "Urządzenie"
+
+#~ msgid "Signal strength"
+#~ msgstr "Siła sygnału"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3809,9 +3831,6 @@ msgstr "Urządzenie"
 
 #~ msgid "NSP Name"
 #~ msgstr "Nazwa NSP"
-
-#~ msgid "Signal Strength"
-#~ msgstr "Siła sygnału"
 
 #~ msgid "Network Type"
 #~ msgstr "Rodzaj sieci"
@@ -3899,12 +3918,6 @@ msgstr "Urządzenie"
 
 #~ msgid "GBit/s"
 #~ msgstr "GBit/s"
-
-#~ msgctxt ""
-#~ "traffic, e.g. n KB/s\n"
-#~ " m KB/s"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
 
 #~ msgid "Received"
 #~ msgstr "Odebrano"

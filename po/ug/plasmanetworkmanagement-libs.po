@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -3630,7 +3630,7 @@ msgstr ""
 msgid "IPv6 Secondary Nameserver"
 msgstr ""
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, fuzzy, kde-format
 #| msgid "Connection type:"
 msgid "Connection speed"
@@ -3649,19 +3649,31 @@ msgstr "ئادرېس"
 #: models/networkmodelitem.cpp:646
 #, fuzzy, kde-format
 #| msgid "Access Point"
-msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "زىيارەت نۇقتىسى"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
+msgstr ""
+
+#: models/networkmodelitem.cpp:648
+#, kde-format
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
 msgstr ""
 
 #: models/networkmodelitem.cpp:650
 #, fuzzy, kde-format
 #| msgid "Security:"
-msgid "Security type"
+msgid "Security Type"
 msgstr "بىخەتەرلىك:"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection type:"
+msgid "Connection Speed"
+msgstr "باغلىنىش تىپى:"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3697,7 +3709,7 @@ msgstr ""
 
 #: models/networkmodelitem.cpp:686
 #, kde-format
-msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr ""
 
 #: models/networkmodelitem.cpp:697

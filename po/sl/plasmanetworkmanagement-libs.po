@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2023-03-23 08:07+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -3650,7 +3650,7 @@ msgstr "Primarni imenski strežnik IPv6"
 msgid "IPv6 Secondary Nameserver"
 msgstr "Sekundarni imenski strežnik IPv6"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Hitrost povezave"
@@ -3664,19 +3664,34 @@ msgid "MAC Address"
 msgstr "Strojni naslov"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Dostopna točka (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Moč signala"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgid "%1%"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1 %"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Vrsta varnosti"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Hitrost povezave"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3709,8 +3724,9 @@ msgid "Access Technology"
 msgstr "Tehnologija dostopa"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "Vstavek VPN"
 
 #: models/networkmodelitem.cpp:697
@@ -3749,6 +3765,9 @@ msgstr "Adsl"
 #, kde-format
 msgid "Device"
 msgstr "Naprava"
+
+#~ msgid "Signal strength"
+#~ msgstr "Moč signala"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3809,9 +3828,6 @@ msgstr "Naprava"
 
 #~ msgid "NSP Name"
 #~ msgstr "Ime NSP"
-
-#~ msgid "Signal Strength"
-#~ msgstr "Moč signala"
 
 #~ msgid "Network Type"
 #~ msgstr "Vrsta omrežja"
@@ -4020,6 +4036,3 @@ msgstr "Naprava"
 #~ msgctxt "Disconnecting"
 #~ msgid "Network connections are being cleaned up"
 #~ msgstr "Poteka čiščenje omrežnih povezav"
-
-#~ msgid "%1%"
-#~ msgstr "%1 %"

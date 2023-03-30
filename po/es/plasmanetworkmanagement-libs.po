@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2023-03-15 17:21+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3652,7 +3652,7 @@ msgstr "Servidor de nombres principal para IPv6"
 msgid "IPv6 Secondary Nameserver"
 msgstr "Servidor de nombres secundario para IPv6"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Velocidad de la conexión"
@@ -3666,19 +3666,34 @@ msgid "MAC Address"
 msgstr "Dirección MAC"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Punto de acceso (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Potencia de la señal"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgid "%1%"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1%"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Tipo de seguridad"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Velocidad de la conexión"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3711,8 +3726,9 @@ msgid "Access Technology"
 msgstr "Tecnología de acceso"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "Complemento VPN"
 
 #: models/networkmodelitem.cpp:697
@@ -3751,6 +3767,9 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Dispositivo"
+
+#~ msgid "Signal strength"
+#~ msgstr "Potencia de la señal"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "
@@ -3814,9 +3833,6 @@ msgstr "Dispositivo"
 
 #~ msgid "NSP Name"
 #~ msgstr "Nombre del NSP"
-
-#~ msgid "Signal Strength"
-#~ msgstr "Potencia de la señal"
 
 #~ msgid "Network Type"
 #~ msgstr "Tipo de red"
@@ -4028,6 +4044,3 @@ msgstr "Dispositivo"
 #~ msgctxt "Disconnecting"
 #~ msgid "Network connections are being cleaned up"
 #~ msgstr "Las conexiones de red se están limpiando"
-
-#~ msgid "%1%"
-#~ msgstr "%1%"

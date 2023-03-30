@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-20 02:18+0000\n"
+"POT-Creation-Date: 2023-03-30 02:10+0000\n"
 "PO-Revision-Date: 2022-05-14 17:16+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -3671,7 +3671,7 @@ msgstr "IPv6 navneserver"
 msgid "IPv6 Secondary Nameserver"
 msgstr "IPv6 navneserver"
 
-#: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Forbindelseshastighed"
@@ -3685,19 +3685,37 @@ msgid "MAC Address"
 msgstr "MAC-adresse"
 
 #: models/networkmodelitem.cpp:646
-#, kde-format
-msgid "Access point (SSID)"
+#, fuzzy, kde-format
+#| msgid "Access point (SSID)"
+msgid "Access Point (SSID)"
 msgstr "Adgangspunkt (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
-msgid "Signal strength"
+msgid "Signal Strength"
 msgstr "Signalstyrke"
 
+#: models/networkmodelitem.cpp:648
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "traffic, e.g. n KB/s\n"
+#| " m KB/s"
+#| msgid "%1 %2"
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1 %2"
+
 #: models/networkmodelitem.cpp:650
-#, kde-format
-msgid "Security type"
+#, fuzzy, kde-format
+#| msgid "Security type"
+msgid "Security Type"
 msgstr "Sikkerhedstype"
+
+#: models/networkmodelitem.cpp:653
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgid "Connection Speed"
+msgstr "Forbindelseshastighed"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3731,8 +3749,9 @@ msgid "Access Technology"
 msgstr "Adgangsteknologi"
 
 #: models/networkmodelitem.cpp:686
-#, kde-format
-msgid "VPN plugin"
+#, fuzzy, kde-format
+#| msgid "VPN plugin"
+msgid "VPN Plugin"
 msgstr "VPN-plugin"
 
 #: models/networkmodelitem.cpp:697
@@ -3771,6 +3790,9 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Enhed"
+
+#~ msgid "Signal strength"
+#~ msgstr "Signalstyrke"
 
 #~ msgctxt "Error message in VPN import/export dialog"
 #~ msgid "Operation not supported for this VPN type."
@@ -3823,9 +3845,6 @@ msgstr "Enhed"
 
 #~ msgid "NSP Name"
 #~ msgstr "NSP-navn"
-
-#~ msgid "Signal Strength"
-#~ msgstr "Signalstyrke"
 
 #~ msgid "Network Type"
 #~ msgstr "Netværkstype"
@@ -3914,12 +3933,6 @@ msgstr "Enhed"
 
 #~ msgid "GBit/s"
 #~ msgstr "GBit/s"
-
-#~ msgctxt ""
-#~ "traffic, e.g. n KB/s\n"
-#~ " m KB/s"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
 
 #~ msgid "Received"
 #~ msgstr "Modtaget"

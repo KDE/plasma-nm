@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 02:52+0000\n"
-"PO-Revision-Date: 2023-03-14 13:09+0300\n"
+"PO-Revision-Date: 2023-03-29 16:37+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -2364,7 +2364,7 @@ msgstr "%1 ağına bağlı"
 #, kde-format
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
-msgstr "Bağlantı pasifleştiriliyor"
+msgstr "Bağlantı kapatılıyor"
 
 #: editor/uiutils.cpp:322
 #, kde-format
@@ -3648,7 +3648,7 @@ msgstr "IPv6 İkincil Ağ Sunucusu"
 #: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
 #, kde-format
 msgid "Connection speed"
-msgstr "Bağlantı hızı"
+msgstr "Bağlantı Hızı"
 
 #: models/networkmodelitem.cpp:642 models/networkmodelitem.cpp:660
 #: models/networkmodelitem.cpp:709 models/networkmodelitem.cpp:715
@@ -3666,12 +3666,12 @@ msgstr "Erişim Noktası (SSID)"
 #: models/networkmodelitem.cpp:648
 #, kde-format
 msgid "Signal strength"
-msgstr "Sinyal gücü"
+msgstr "Sinyal Gücü"
 
 #: models/networkmodelitem.cpp:650
 #, kde-format
 msgid "Security type"
-msgstr "Güvenlik türü"
+msgstr "Güvenlik Türü"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format

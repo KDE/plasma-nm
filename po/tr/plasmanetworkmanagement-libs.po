@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 02:52+0000\n"
-"PO-Revision-Date: 2023-03-29 16:37+0300\n"
+"PO-Revision-Date: 2023-03-30 10:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -333,7 +333,7 @@ msgstr "DUN (çevirmeli ağ)"
 #: editor/settings/btwidget.cpp:21
 #, kde-format
 msgid "PAN (personal area network)"
-msgstr "PAN (kişisel alan ağı)"
+msgstr "PAN (Kişisel Alan Ağı)"
 
 #: editor/settings/connectionwidget.cpp:158
 #, kde-format
@@ -345,7 +345,7 @@ msgstr "Gelişmiş İzin Düzenleyici"
 #, kde-format
 msgctxt "infiniband transport mode"
 msgid "Datagram"
-msgstr "Veri birimi"
+msgstr "Veri Birimi"
 
 #: editor/settings/infinibandwidget.cpp:23
 #, kde-format
@@ -793,7 +793,7 @@ msgstr "Bağlantı izleme:"
 #: editor/settings/ui/bond.ui:153
 #, kde-format
 msgid "Monitoring frequency:"
-msgstr "İzleme sıklığı:"
+msgstr "İzleme frekansı:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
 #. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
@@ -992,7 +992,7 @@ msgstr "Otomatik"
 #: editor/settings/ui/connectionwidget.ui:165
 #, kde-format
 msgid "Yes"
-msgstr "Yes"
+msgstr "Evet"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:170
@@ -1372,7 +1372,7 @@ msgstr "TCP başlık sıkıştırması kullan"
 #: editor/settings/ui/ppp.ui:152
 #, kde-format
 msgid "Require 128-bit encryption"
-msgstr "128-bit şifreleme gerektir"
+msgstr "128 bit şifreleme gerektir"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppeStateful)
 #: editor/settings/ui/ppp.ui:165
@@ -1407,7 +1407,7 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
-"Belirtilmişse, PPPoE'ye, yalnızca belirtilen hizmetleri sağlayan erişim "
+"Belirtilmişse PPPoE'ye, yalnızca belirtilen hizmetleri sağlayan erişim "
 "yoğunlaştırıcıları olan oturumları başlatması için talimat verir. Bir çok "
 "sağlayıcı için burasu boş bırakılmalıdır. Yalnızca birden çok erişim "
 "toplayıcısı varsa veya belirli bir hizmetin gerekli olduğu biliniyorsa "
@@ -1550,7 +1550,7 @@ msgstr "A (5 GHz)"
 #: editor/settings/ui/wificonnectionwidget.ui:151
 #, kde-format
 msgid "B/G (2.4 GHz)"
-msgstr "B/G (2.4 GHz)"
+msgstr "B/G (2,4 GHz)"
 
 #. i18n: ectx: property (text), widget (QLabel, channelLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:159
@@ -2952,8 +2952,8 @@ msgid ""
 "Frequency: %3 Mhz\n"
 "Channel: %4"
 msgstr ""
-"%1 (%​%2)\n"
-"Sıklık: %3 Mhz\n"
+"%1 (%​​%2)\n"
+"Frekans: %3 Mhz\n"
 "Kanal: %4"
 
 #: editor/widgets/ipv4routeswidget.cpp:31
@@ -3209,7 +3209,7 @@ msgid ""
 "Security: %3\n"
 "Frequency: %4 Mhz"
 msgstr ""
-"%1 (%%2)\n"
+"%1 (%​​%2)\n"
 "Güvenlik: %3\n"
 "Frekans: %4 Mhz"
 
@@ -3220,7 +3220,7 @@ msgid ""
 "Security: Insecure\n"
 "Frequency: %3 Mhz"
 msgstr ""
-"%1 (%%2)\n"
+"%1 (%​%2)\n"
 "Güvenlik: Güvenli Değil\n"
 "Frekans: %3 Mhz"
 
@@ -3434,7 +3434,7 @@ msgstr "Kablolu Ethernet (paylaşımlı)"
 #: models/creatableconnectionsmodel.cpp:182
 #, kde-format
 msgid "Some wi-fi description"
-msgstr "Bazı wi-fi açıklamaları"
+msgstr "Bazı Wi-Fi açıklamaları"
 
 #: models/creatableconnectionsmodel.cpp:180
 #, kde-format
@@ -3463,7 +3463,7 @@ msgstr "Bazı team tanımlamaları"
 #: models/creatableconnectionsmodel.cpp:222
 #, kde-format
 msgid "Some vlan description"
-msgstr "Bazı vlan tanımlamaları"
+msgstr "Bazı VLAN tanımlamaları"
 
 #: models/creatableconnectionsmodel.cpp:242
 #: models/creatableconnectionsmodel.cpp:255

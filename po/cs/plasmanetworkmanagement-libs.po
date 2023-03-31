@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-30 02:10+0000\n"
-"PO-Revision-Date: 2023-01-30 14:37+0100\n"
+"PO-Revision-Date: 2023-03-30 13:34+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -3537,14 +3537,12 @@ msgid "MAC Address"
 msgstr "MAC adresa"
 
 #: models/networkmodelitem.cpp:646
-#, fuzzy, kde-format
-#| msgid "Access point (SSID)"
+#, kde-format
 msgid "Access Point (SSID)"
 msgstr "Přístupový bod (SSID)"
 
 #: models/networkmodelitem.cpp:648
-#, fuzzy, kde-format
-#| msgid "Signal strength"
+#, kde-format
 msgid "Signal Strength"
 msgstr "Síla signálu"
 
@@ -3552,19 +3550,17 @@ msgstr "Síla signálu"
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: models/networkmodelitem.cpp:650
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
 msgstr "Typ zabezpečení"
 
 #: models/networkmodelitem.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
-msgstr "Rychlost připojení"
+msgstr "Rychlost spojení"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
@@ -3597,8 +3593,7 @@ msgid "Access Technology"
 msgstr "Technologie přístupu"
 
 #: models/networkmodelitem.cpp:686
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
 msgstr "Modul VPN"
 

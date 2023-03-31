@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Freek de Kruijf <freekdekruijf@kde.nl>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Freek de Kruijf <freekdekruijf@kde.nl>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-30 02:10+0000\n"
-"PO-Revision-Date: 2022-12-24 15:18+0100\n"
+"PO-Revision-Date: 2023-03-30 10:01+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -3664,10 +3664,9 @@ msgid "MAC Address"
 msgstr "MAC-adres"
 
 #: models/networkmodelitem.cpp:646
-#, fuzzy, kde-format
-#| msgid "Access point (SSID)"
+#, kde-format
 msgid "Access Point (SSID)"
-msgstr "Accesspoint (SSID)"
+msgstr "Access-point (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
@@ -3675,21 +3674,18 @@ msgid "Signal Strength"
 msgstr "Signaalsterkte"
 
 #: models/networkmodelitem.cpp:648
-#, fuzzy, kde-format
-#| msgid "%1%"
+#, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
 
 #: models/networkmodelitem.cpp:650
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
 msgstr "Type beveiliging"
 
 #: models/networkmodelitem.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
 msgstr "Verbindingssnelheid"
 
@@ -3724,8 +3720,7 @@ msgid "Access Technology"
 msgstr "Toegangstechnologie"
 
 #: models/networkmodelitem.cpp:686
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
 msgstr "VPN-plug-in"
 

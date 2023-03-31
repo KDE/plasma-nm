@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-30 02:10+0000\n"
-"PO-Revision-Date: 2022-12-24 08:46+0200\n"
+"PO-Revision-Date: 2023-03-30 07:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -3673,8 +3673,7 @@ msgid "MAC Address"
 msgstr "MAC-адреса"
 
 #: models/networkmodelitem.cpp:646
-#, fuzzy, kde-format
-#| msgid "Access point (SSID)"
+#, kde-format
 msgid "Access Point (SSID)"
 msgstr "Точка доступу (SSID)"
 
@@ -3684,24 +3683,18 @@ msgid "Signal Strength"
 msgstr "Потужність сигналу"
 
 #: models/networkmodelitem.cpp:648
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "traffic, e.g. n KB/s\n"
-#| " m KB/s"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: models/networkmodelitem.cpp:650
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
 msgstr "Тип захисту"
 
 #: models/networkmodelitem.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
 msgstr "Швидкість з'єднання"
 
@@ -3736,8 +3729,7 @@ msgid "Access Technology"
 msgstr "Технологія доступу"
 
 #: models/networkmodelitem.cpp:686
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
 msgstr "Додаток VPN"
 

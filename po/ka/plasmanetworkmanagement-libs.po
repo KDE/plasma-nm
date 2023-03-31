@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-30 02:10+0000\n"
-"PO-Revision-Date: 2023-02-08 06:27+0100\n"
+"PO-Revision-Date: 2023-03-31 02:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1715,6 +1715,8 @@ msgid ""
 "packets up\n"
 "into multiple Ethernet frames"
 msgstr ""
+"მხოლოდ მითითებულზე ნაკლები ან ტოლი ზომის მქონე პაკეტების გადაცემა.\n"
+"უფრო დიდი პაკეტები Ethernet-ის Frame-ების მსგავსად დაიხლიჩება"
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
@@ -3567,14 +3569,12 @@ msgid "MAC Address"
 msgstr "MAC მისამართი"
 
 #: models/networkmodelitem.cpp:646
-#, fuzzy, kde-format
-#| msgid "Access point (SSID)"
+#, kde-format
 msgid "Access Point (SSID)"
 msgstr "წვდომის წერტილი (SSID)"
 
 #: models/networkmodelitem.cpp:648
-#, fuzzy, kde-format
-#| msgid "Signal strength"
+#, kde-format
 msgid "Signal Strength"
 msgstr "სიგნალის სიძლიერე"
 
@@ -3585,14 +3585,12 @@ msgid "%1%"
 msgstr ""
 
 #: models/networkmodelitem.cpp:650
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
-msgstr "დაცვის ტიპი"
+msgstr "უსაფრთხოების ტიპი"
 
 #: models/networkmodelitem.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
 msgstr "შეერთების სიჩქარე"
 
@@ -3627,10 +3625,9 @@ msgid "Access Technology"
 msgstr "წვდომის ტექნოლოგია"
 
 #: models/networkmodelitem.cpp:686
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
-msgstr "VPN-ის დამატება"
+msgstr "VPN მოდული"
 
 #: models/networkmodelitem.cpp:697
 #, kde-format

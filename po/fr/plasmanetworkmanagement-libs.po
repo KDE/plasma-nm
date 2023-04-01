@@ -3688,8 +3688,7 @@ msgid "Access Point (SSID)"
 msgstr "Point d'accès (SSID)"
 
 #: models/networkmodelitem.cpp:648
-#, fuzzy, kde-format
-#| msgid "Signal Strength"
+#, kde-format
 msgid "Signal Strength"
 msgstr "Force du signal"
 

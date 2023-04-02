@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Andrew Coles <andrew_coles@yahoo.co.uk>, 2009, 2010, 2011.
-# Steve Allewell <steve.allewell@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# Steve Allewell <steve.allewell@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 01:01+0000\n"
-"PO-Revision-Date: 2022-12-31 16:19+0000\n"
+"PO-Revision-Date: 2023-04-01 19:20+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language-Team: British English\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.03.70\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -82,13 +82,13 @@ msgstr "Networks"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr "Middle-click to turn off Airplane Mode"
+msgstr "Middle-click to turn off Aeroplane Mode"
 
 #: contents/ui/main.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "Middle-click to turn on Airplane Mode"
+msgstr "Middle-click to turn on Aeroplane Mode"
 
 #: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -103,7 +103,7 @@ msgstr "Enable Mobile Network"
 #: contents/ui/main.qml:95
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr "Enable Airplane Mode"
+msgstr "Enable Aeroplane Mode"
 
 #: contents/ui/main.qml:101
 #, kde-format
@@ -129,7 +129,7 @@ msgstr "Password…"
 #: contents/ui/PopupDialog.qml:102
 #, kde-format
 msgid "Airplane mode is enabled"
-msgstr "Airplane mode is enabled"
+msgstr "Aeroplane mode is enabled"
 
 #: contents/ui/PopupDialog.qml:106
 #, kde-format
@@ -165,13 +165,13 @@ msgstr "Enable mobile network"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
-msgstr "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
+msgstr "Disable aeroplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 
 #: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
-msgstr "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
+msgstr "Enable aeroplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 
 #: contents/ui/Toolbar.qml:154
 #, kde-format

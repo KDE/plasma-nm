@@ -4,13 +4,13 @@
 # Victor Ryzhykh <victorr2007@yandex.ru>, 2014, 2016, 2017.
 # Alexander Lakhin <exclusion@gmail.com>, 2014.
 # Alexander Potashev <aspotashev@gmail.com>, 2015, 2017, 2019.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2020, 2021, 2022.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2022-12-23 11:11+0300\n"
+"PO-Revision-Date: 2023-04-02 09:49+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -22,10 +22,9 @@ msgstr ""
 "X-Generator: Lokalize 21.08.3\n"
 
 #: kcm.cpp:289
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Импорт соединения VPN"
+msgstr "Ошибка импорта соединения VPN: %1"
 
 #: kcm.cpp:359
 #, kde-format
@@ -61,12 +60,12 @@ msgstr "Соединения VPN (%1)"
 #: kcm.cpp:559
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Файл отсутствует"
 
 #: kcm.cpp:608
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Неизвестный тип VPN"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

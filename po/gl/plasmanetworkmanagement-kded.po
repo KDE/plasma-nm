@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015, 2016.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-16 01:01+0000\n"
-"PO-Revision-Date: 2019-07-28 12:29+0200\n"
+"PO-Revision-Date: 2023-04-02 12:04+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.04.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -34,15 +34,14 @@ msgid "Log in"
 msgstr "Identificarse"
 
 #: connectivitymonitor.cpp:71
-#, fuzzy, kde-format
-#| msgid "You need to log in to this network"
+#, kde-format
 msgid "You need to log into this network"
 msgstr "Debe identificarse nesta rede"
 
 #: connectivitymonitor.cpp:91
 #, kde-format
 msgid "Limited Connectivity"
-msgstr ""
+msgstr "Conectividade limitada"
 
 #: connectivitymonitor.cpp:92
 #, kde-format
@@ -50,6 +49,8 @@ msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "internet."
 msgstr ""
+"Este dispositivo parece estar conectado a unha rede pero non dá chegado a "
+"internet."
 
 #: modemmonitor.cpp:181
 #, kde-format
@@ -479,40 +480,33 @@ msgid "VPN connection '%1' activated."
 msgstr "Activouse a conexión de VPN «%1»."
 
 #: notification.cpp:426
-#, fuzzy, kde-format
-#| msgid "VPN connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "Activouse a conexión de VPN «%1»."
+msgstr "Non se puido activar a conexión de VPN «%1»."
 
 #: notification.cpp:429 notification.cpp:437
-#, fuzzy, kde-format
-#| msgid "VPN connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "Activouse a conexión de VPN «%1»."
+msgstr "Desactivouse a conexión de VPN «%1»."
 
 #: notification.cpp:440
-#, fuzzy, kde-format
-#| msgid ""
-#| "The VPN connection changed state because the device it was using was "
-#| "disconnected."
+#, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
 msgstr ""
-"O estado da conexión de VPN cambiou porque se desconectou o dispositivo que "
+"A conexión de VPN «%1» desactivouse porque se desconectou o dispositivo que "
 "estaba usando."
 
 #: notification.cpp:443
-#, fuzzy, kde-format
-#| msgid "The service providing the VPN connection was stopped."
+#, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "Detívose o servizo que fornecía a conexión de VPN."
+msgstr "Detívose o servizo que fornecía a conexión de VPN «%1»."
 
 #: notification.cpp:446
-#, fuzzy, kde-format
-#| msgid "The IP config of the VPN connection was invalid."
+#, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "A configuración IP da conexión de VPN era incorrecta."
+msgstr "A configuración IP da conexión de VPN «%1» era incorrecta."
 
 #: notification.cpp:449
 #, kde-format
@@ -520,29 +514,25 @@ msgid "The connection attempt to the VPN service timed out."
 msgstr "O intento de conexión co servizo de VPN superou o tempo límite."
 
 #: notification.cpp:452
-#, fuzzy, kde-format
-#| msgid ""
-#| "A timeout occurred while starting the service providing the VPN "
-#| "connection."
+#, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
 msgstr ""
 "Esgotouse o tempo límite durante o proceso de inicio do servizo que fornece "
-"a conexión de VPN."
+"a conexión de VPN «%1»."
 
 #: notification.cpp:455
-#, fuzzy, kde-format
-#| msgid "Starting the service providing the VPN connection failed."
+#, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "O inicio do servizo que fornece a conexión de VPN fallou."
+msgstr "O inicio do servizo que fornece a conexión de VPN «%1» fallou."
 
 #: notification.cpp:458
-#, fuzzy, kde-format
-#| msgid "Necessary secrets for the VPN connection were not provided."
+#, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr ""
-"Non se forneceron os segredos necesarios para estabelecer a conexión de VPN."
+"Non se forneceron os segredos necesarios para estabelecer a conexión de VPN "
+"«%1»."
 
 #: notification.cpp:461
 #, kde-format
@@ -550,13 +540,9 @@ msgid "Authentication to the VPN server failed."
 msgstr "A autenticación co servidor de VPN fallou."
 
 #: notification.cpp:464
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "The connection was deleted."
-msgstr "Retirouse a conexión."
+msgstr "Eliminouse a conexión."
 
 #: notification.cpp:550
 #, kde-format
@@ -574,16 +560,14 @@ msgid "Authenticate %1"
 msgstr "Autenticar %1"
 
 #: passworddialog.cpp:98
-#, fuzzy, kde-format
-#| msgid "Please provide the password for activating connection <b>%1</b>:"
+#, kde-format
 msgid "Provide the password for the wireless network '%1':"
-msgstr "Forneza o contrasinal para activar a conexión <b>%1</b>:"
+msgstr "Forneza o contrasinal da rede sen fíos «%1»:"
 
 #: passworddialog.cpp:100
-#, fuzzy, kde-format
-#| msgid "Please provide the password for activating connection <b>%1</b>:"
+#, kde-format
 msgid "Provide the password for the connection '%1':"
-msgstr "Forneza o contrasinal para activar a conexión <b>%1</b>:"
+msgstr "Forneza o contrasinal para a conexión «%1»:"
 
 #: passworddialog.cpp:106
 #, kde-format
@@ -591,10 +575,9 @@ msgid "%1 password dialog"
 msgstr "Diálogo de contrasinal de %1"
 
 #: passworddialog.cpp:126
-#, fuzzy, kde-format
-#| msgid "Please provide the password for activating connection <b>%1</b>:"
+#, kde-format
 msgid "Provide the secrets for the VPN connection '%1':"
-msgstr "Forneza o contrasinal para activar a conexión <b>%1</b>:"
+msgstr "Forneza os segredos para a conexión de VPN «%1»:"
 
 #: passworddialog.cpp:127
 #, kde-format

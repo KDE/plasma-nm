@@ -1,26 +1,26 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
 #
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-22 02:45+0000\n"
-"PO-Revision-Date: 2019-01-15 20:21+0100\n"
+"PO-Revision-Date: 2023-04-02 12:01+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
-"Language-Team: Galician <kde-i18n-doc@kde.org>\n"
+"Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: kcm.cpp:289
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Importar unha conexión de VPN"
+msgstr "Non se puido importar a conexión de VPN: %1"
 
 #: kcm.cpp:359
 #, kde-format
@@ -49,20 +49,19 @@ msgid "Import VPN Connection"
 msgstr "Importar unha conexión de VPN"
 
 #: kcm.cpp:549
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
-msgstr "Exportar a conexión de VPN"
+msgstr "Conexións de VPN (%1)"
 
 #: kcm.cpp:552
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Non se forneceu ningún ficheiro"
 
 #: kcm.cpp:601
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Tipo de VPN descoñecido"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
@@ -79,42 +78,40 @@ msgstr "Cancelar"
 
 #: qml/AddConnectionDialog.qml:192 qml/main.qml:193
 msgid "Configuration"
-msgstr ""
+msgstr "Configuración"
 
 #: qml/ConfigurationDialog.qml:15
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr ""
+msgstr "Configuración"
 
 #: qml/ConfigurationDialog.qml:37
 msgid "General"
-msgstr ""
+msgstr "Xeral"
 
 #: qml/ConfigurationDialog.qml:42
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "Solicitar o PIN ao detectar un módem."
 
 #: qml/ConfigurationDialog.qml:49
-#, fuzzy
-#| msgid "Export selected connection"
 msgid "Show virtual connections"
-msgstr "Exportar a conexión seleccionada"
+msgstr "Mostrar as conexións virtuais"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Hotspot"
-msgstr ""
+msgstr "Punto de acceso"
 
 #: qml/ConfigurationDialog.qml:63
 msgid "Hotspot name:"
-msgstr ""
+msgstr "Nome do punto de acceso:"
 
 #: qml/ConfigurationDialog.qml:73
 msgid "Hotspot password:"
-msgstr ""
+msgstr "Contrasinal do punto de acceso:"
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "Aceptar"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

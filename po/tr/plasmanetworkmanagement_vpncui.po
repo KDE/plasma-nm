@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:17+0000\n"
-"PO-Revision-Date: 2023-04-02 17:30+0300\n"
+"PO-Revision-Date: 2023-04-04 00:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -293,7 +293,7 @@ msgstr "Düşük (DES şifreleme, dikkatli kullanın)"
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
-msgstr "Hiçbiri (tamamen güvensiz)"
+msgstr "Yok (tamamen güvensiz)"
 
 #: vpncadvancedwidget.cpp:32
 #, kde-format
@@ -347,7 +347,7 @@ msgstr "Sunucu (öntanımlı)"
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "None"
-msgstr "Hiçbiri"
+msgstr "Yok"
 
 #: vpncadvancedwidget.cpp:45
 #, kde-format

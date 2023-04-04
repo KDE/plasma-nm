@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-22 02:45+0000\n"
-"PO-Revision-Date: 2023-03-04 20:06+0200\n"
+"PO-Revision-Date: 2023-04-02 17:09+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -19,10 +19,9 @@ msgstr ""
 "X-Generator: Lokalize 22.12.3\n"
 
 #: kcm.cpp:289
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Tuo VPN-yhteys"
+msgstr "VPN-yhteyden tuonti epäonnistui: %1"
 
 #: kcm.cpp:359
 #, kde-format
@@ -58,12 +57,12 @@ msgstr "VPN-yhteydet (%1)"
 #: kcm.cpp:552
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Tiedostoa ei annettu"
 
 #: kcm.cpp:601
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Tuntematon VPN-tyyppi"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

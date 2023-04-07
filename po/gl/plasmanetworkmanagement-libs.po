@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 02:52+0000\n"
-"PO-Revision-Date: 2023-04-02 12:18+0200\n"
+"PO-Revision-Date: 2023-04-06 21:18+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -913,7 +913,7 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
-"Se a conexión está definita como automática, preferiranse as conexións con "
+"Se a conexión está definida como automática, preferiranse as conexións con "
 "maior prioridade. O valor predeterminado é 0.\n"
 "Canto maior sexa o número, maior será a prioridade. Poden usarse números "
 "negativos para indicar unha prioridade inferior á prioridade "
@@ -2234,7 +2234,7 @@ msgstr "Banda larga móbil"
 #: editor/uiutils.cpp:214
 #, kde-format
 msgid "Olpc mesh"
-msgstr "Mesh OLPC"
+msgstr "Mesh de Olpc"
 
 #: editor/uiutils.cpp:224 models/creatableconnectionsmodel.cpp:156
 #, kde-format
@@ -2279,7 +2279,7 @@ msgstr "ADSL (%1)"
 #: editor/uiutils.cpp:266
 #, kde-format
 msgid "VLan (%1)"
-msgstr "VLAN (%1)"
+msgstr "VLan (%1)"
 
 #: editor/uiutils.cpp:269
 #, kde-format
@@ -2759,13 +2759,13 @@ msgstr "O módem necesita o código PUK PH-FSIM."
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PIN code."
-msgstr "O módem necesita o código PIN da subrede."
+msgstr "O módem necesita o código PIN do subconxunto de rede."
 
 #: editor/uiutils.cpp:558
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PUK code."
-msgstr "O módem necesita o código PUK da subrede."
+msgstr "O módem necesita o código PUK do subconxunto de rede."
 
 #: editor/uiutils.cpp:561
 #, kde-format
@@ -3463,7 +3463,7 @@ msgstr "Unha descrición de equipo."
 #: models/creatableconnectionsmodel.cpp:222
 #, kde-format
 msgid "Some vlan description"
-msgstr "Unha descrición de VLAN."
+msgstr "Unha descrición de vlan."
 
 #: models/creatableconnectionsmodel.cpp:242
 #: models/creatableconnectionsmodel.cpp:255
@@ -3526,7 +3526,7 @@ msgstr "O tipo de conexión é GSM"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr "O tipo de conexión é InfiniBand"
+msgstr "O tipo de conexión é Infiniband"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
@@ -3711,7 +3711,7 @@ msgstr "Complemento de VPN"
 #: models/networkmodelitem.cpp:697
 #, kde-format
 msgid "Banner"
-msgstr "Cartaz"
+msgstr "Cartel"
 
 #: models/networkmodelitem.cpp:703
 #, kde-format
@@ -3733,7 +3733,7 @@ msgstr "Tipo"
 #: models/networkmodelitem.cpp:733
 #, kde-format
 msgid "Vlan ID"
-msgstr "Identificador de VLAN"
+msgstr "Identificador de Vlan"
 
 #: models/networkmodelitem.cpp:737
 #, kde-format

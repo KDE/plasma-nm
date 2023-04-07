@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-16 04:26+0000\n"
-"PO-Revision-Date: 2023-04-02 12:04+0200\n"
+"PO-Revision-Date: 2023-04-06 21:20+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -629,7 +629,7 @@ msgstr "PUK de PH-FSIM"
 #: pindialog.cpp:78
 #, kde-format
 msgid "Network Subset PUK"
-msgstr "PUK de subrede"
+msgstr "PUK de subconxunto de rede"
 
 #: pindialog.cpp:81 pindialog.cpp:113
 #, kde-format
@@ -709,7 +709,7 @@ msgstr "PIN de PH-FSIM"
 #: pindialog.cpp:111
 #, kde-format
 msgid "Network Subset PIN"
-msgstr "PIN de subrede"
+msgstr "PIN de subconxunto de rede"
 
 #: pindialog.cpp:117
 #, kde-format

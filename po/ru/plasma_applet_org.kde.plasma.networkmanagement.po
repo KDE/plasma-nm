@@ -17,7 +17,7 @@ msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-23 02:34+0000\n"
-"PO-Revision-Date: 2023-01-13 17:43+0300\n"
+"PO-Revision-Date: 2023-04-07 15:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -93,13 +93,13 @@ msgstr "Сетевые подключения"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr "Включить режим полёта: щелчок средней кнопкой"
+msgstr "Отключить авиарежим: щелчок средней кнопкой"
 
 #: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "Отключить режим полёта: щелчок средней кнопкой"
+msgstr "Включить авиарежим: щелчок средней кнопкой"
 
 #: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -176,13 +176,13 @@ msgstr "Мобильные сети"
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
-msgstr "Отключение режима полёта<nl/><nl/>Wi-Fi и Bluetooth будут активированы"
+msgstr "Отключение авиарежима<nl/><nl/>Wi-Fi и Bluetooth будут активированы"
 
 #: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
-msgstr "Включение режима полёта<nl/><nl/>Wi-Fi и Bluetooth будут отключены"
+msgstr "Включение авиарежима<nl/><nl/>Wi-Fi и Bluetooth будут отключены"
 
 #: contents/ui/Toolbar.qml:154
 #, kde-format

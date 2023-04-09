@@ -1,14 +1,14 @@
 # Fuminobu TAKEYAMA <ftake@geeko.jp>, 2015, 2019.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020, 2021.
-# Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2021.
 # Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
+# Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 01:01+0000\n"
-"PO-Revision-Date: 2023-02-22 18:26+0900\n"
-"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
+"PO-Revision-Date: 2023-04-07 23:41-0700\n"
+"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -83,13 +83,13 @@ msgstr "ネットワーク"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr "中クリックで機内モードをオフ"
+msgstr "中クリックして機内モードをオフ"
 
 #: contents/ui/main.qml:35
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "中クリックで機内モードをオン"
+msgstr "中クリックして機内モードをオン"
 
 #: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
 #, kde-format
@@ -197,7 +197,7 @@ msgstr "ネットワーク接続を設定…"
 #: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:106
 #, kde-format
 msgid "/s"
-msgstr "/s"
+msgstr "/秒"
 
 #: contents/ui/TrafficMonitor.qml:88
 #, kde-format

@@ -1,12 +1,13 @@
 # Fuminobu TAKEYAMA <ftake@geeko.jp>, 2015, 2019.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020, 2021.
-# Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2021.
+# Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
+# Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-30 02:10+0000\n"
-"PO-Revision-Date: 2021-09-25 16:17-0700\n"
+"PO-Revision-Date: 2023-04-07 23:51-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 21.08.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -108,7 +109,7 @@ msgstr "NetworkManager は実行されていません"
 #: declarative/networkstatus.cpp:243
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
-msgstr "NetworkManager 0.9.8 が必要です、%1が見つかりました."
+msgstr "NetworkManager 0.9.8 が必要です、%1が見つかりました。"
 
 #: declarative/networkstatus.cpp:246
 #, kde-format
@@ -148,7 +149,7 @@ msgstr "Wi-Fi セキュリティ"
 #: models/creatableconnectionsmodel.cpp:135
 #, kde-format
 msgid "DSL"
-msgstr ""
+msgstr "DSL"
 
 #: editor/connectioneditorbase.cpp:225 editor/connectioneditorbase.cpp:228
 #, kde-format
@@ -322,7 +323,7 @@ msgstr "接続を削除"
 #: editor/uiutils.cpp:217
 #, kde-format
 msgid "VLAN"
-msgstr ""
+msgstr "VLAN"
 
 #: editor/settings/btwidget.cpp:20
 #, kde-format
@@ -344,7 +345,7 @@ msgstr "高度な権限エディタ"
 #, kde-format
 msgctxt "infiniband transport mode"
 msgid "Datagram"
-msgstr ""
+msgstr "データグラム"
 
 #: editor/settings/infinibandwidget.cpp:23
 #, kde-format
@@ -391,6 +392,9 @@ msgid ""
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 msgstr ""
+"<qt>これらの値についての詳細は次のページをご覧ください:<br/><a href='https://"
+"developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome."
+"org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format
@@ -412,7 +416,7 @@ msgstr "デフォルト"
 #, kde-format
 msgctxt "Milliseconds"
 msgid " ms"
-msgstr ""
+msgstr " ミリ秒"
 
 #: editor/settings/ipv4widget.cpp:444
 #, kde-format
@@ -501,13 +505,13 @@ msgstr "LEAP"
 #: editor/settings/ui/802-1x.ui:53
 #, kde-format
 msgid "PWD"
-msgstr ""
+msgstr "PWD"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:58
 #, kde-format
 msgid "FAST"
-msgstr ""
+msgstr "FAST"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:63
@@ -573,7 +577,7 @@ msgstr "ドメイン:"
 #: editor/settings/ui/802-1x.ui:140
 #, kde-format
 msgid "User certificate:"
-msgstr ""
+msgstr "ユーザ証明書:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_20)
@@ -1278,9 +1282,7 @@ msgstr "無効"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:257
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Disabled"
+#, kde-format
 msgid "Disabled"
 msgstr "無効"
 
@@ -1386,10 +1388,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnImport)
 #: editor/settings/ui/team.ui:123
-#, fuzzy, kde-format
-#| msgid "Import a saved configuration file"
+#, kde-format
 msgid "Import configuration from file…"
-msgstr "保存された設定ファイルをインポート"
+msgstr "ファイルから設定をインポート..."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
@@ -1605,10 +1606,9 @@ msgstr "WPA3 パーソナル"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA/WPA2 エンタープライズ"
+msgstr "WPA3 エンタープライズ 192-bit"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -1749,7 +1749,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:192
 #, kde-format
 msgid "Ignore"
-msgstr ""
+msgstr "無視"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:197
@@ -1760,9 +1760,7 @@ msgstr "自動"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:202
-#, fuzzy, kde-format
-#| msgctxt "like in use Manual configuration"
-#| msgid "Manual"
+#, kde-format
 msgid "Manual"
 msgstr "手動"
 
@@ -2150,7 +2148,7 @@ msgstr "ワイヤレス インターフェース (%1)"
 #: editor/uiutils.cpp:254
 #, kde-format
 msgid "Wired Interface (%1)"
-msgstr ""
+msgstr "有線インターフェース (%1)"
 
 #: editor/uiutils.cpp:257
 #, kde-format
@@ -2248,7 +2246,7 @@ msgstr "接続済み"
 #, kde-format
 msgctxt "network interface connected state label"
 msgid "Connected to %1"
-msgstr "%1に接続済み"
+msgstr "%1 に接続済み"
 
 #: editor/uiutils.cpp:319
 #, kde-format
@@ -2404,19 +2402,19 @@ msgstr "802.1x"
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 Bit/s"
-msgstr "%1 Bit/s"
+msgstr "%1 Bit/秒"
 
 #: editor/uiutils.cpp:432
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 MBit/s"
-msgstr "%1 MBit/s"
+msgstr "%1 MBit/秒"
 
 #: editor/uiutils.cpp:434
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 GBit/s"
-msgstr "%1 GBit/s"
+msgstr "%1 GBit/秒"
 
 #: editor/uiutils.cpp:458
 #, kde-format
@@ -2762,7 +2760,7 @@ msgstr "昨日"
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
-msgstr ""
+msgstr "未使用"
 
 #: editor/uiutils.cpp:664
 #, kde-format
@@ -2822,7 +2820,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:intable shortcut for Not Available"
 msgid "N/A"
-msgstr ""
+msgstr "利用不可"
 
 #: editor/widgets/advancedpermissionswidget.cpp:87
 #, kde-format
@@ -3195,7 +3193,7 @@ msgstr ""
 #: handler.cpp:113
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "バグを報告"
 
 #: handler.cpp:136
 #, kde-format
@@ -3205,7 +3203,7 @@ msgstr ""
 #: handler.cpp:138
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "インストール"
 
 #: handler.cpp:352 handler.cpp:845
 #, kde-format
@@ -3215,27 +3213,27 @@ msgstr "接続 %1 の追加に失敗"
 #: handler.cpp:361 handler.cpp:887
 #, kde-format
 msgid "Connection %1 has been added"
-msgstr "接続 %1 は追加されました"
+msgstr "接続 %1 が追加されました"
 
 #: handler.cpp:837
 #, kde-format
 msgid "Failed to activate %1"
-msgstr ""
+msgstr "%1 の有効化に失敗"
 
 #: handler.cpp:841
 #, kde-format
 msgid "Failed to add %1"
-msgstr "%1の追加に失敗"
+msgstr "%1 の追加に失敗"
 
 #: handler.cpp:849
 #, kde-format
 msgid "Failed to deactivate %1"
-msgstr ""
+msgstr "%1 の無効化に失敗"
 
 #: handler.cpp:853
 #, kde-format
 msgid "Failed to remove %1"
-msgstr "%1の削除に失敗"
+msgstr "%1 の削除に失敗"
 
 #: handler.cpp:857
 #, kde-format
@@ -3243,10 +3241,9 @@ msgid "Failed to update connection %1"
 msgstr "接続 %1 の更新に失敗"
 
 #: handler.cpp:868
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgid "Failed to create hotspot %1"
-msgstr "接続 %1 の更新に失敗"
+msgstr "ホットスポット %1 の作成に失敗"
 
 #: handler.cpp:891
 #, kde-format
@@ -3342,8 +3339,7 @@ msgid "VPN connections"
 msgstr "VPN 接続"
 
 #: models/creatableconnectionsmodel.cpp:266
-#, fuzzy, kde-format
-#| msgid "Import VPN connection..."
+#, kde-format
 msgid "Import VPN connection…"
 msgstr "VPN 接続をインポート..."
 
@@ -3575,12 +3571,12 @@ msgstr "接続速度"
 #: models/networkmodelitem.cpp:657
 #, kde-format
 msgid "Frequency"
-msgstr ""
+msgstr "周波数"
 
 #: models/networkmodelitem.cpp:658
 #, kde-format
 msgid "BSSID"
-msgstr ""
+msgstr "BSSID"
 
 #: models/networkmodelitem.cpp:672
 #, kde-format
@@ -3590,7 +3586,7 @@ msgstr ""
 #: models/networkmodelitem.cpp:676
 #, kde-format
 msgid "Network ID"
-msgstr ""
+msgstr "ネットワーク ID"
 
 #: models/networkmodelitem.cpp:680
 #, kde-format

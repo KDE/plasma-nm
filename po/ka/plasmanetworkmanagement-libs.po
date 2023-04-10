@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-30 02:10+0000\n"
-"PO-Revision-Date: 2023-03-31 02:17+0200\n"
+"PO-Revision-Date: 2023-04-09 08:41+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -914,6 +914,12 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
+"თუ ეს მიერთება ავტომატურად მიერთებაზე აყენია, უპირატესობა უფრო დიდი "
+"პრიორიტეტის მქონე მიერთებებს ექნებათ მინიჭებული. ნაგულისხმები მნიშვნელობაა "
+"0.\n"
+"რაც დიდია რიცხვი, მით დიდია პრიორიტეტი. უარყოფითი რიცხვი ნაგულისხმებზე "
+"ნაკლებ პრიორიტეტს ნიშნავს.\n"
+"            "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:48
@@ -1185,6 +1191,11 @@ msgid ""
 "DHCP\n"
 "lease and options."
 msgstr ""
+"გამოიყენეთ ეს ველი DHCP-ის კლენტის ID-ის მისათითებლად. წარმოადგენს სტრიქონს, "
+"რომელიც\n"
+"DHCO სერვერს ეგზავნება, რათა DHCP სერვერს იჯარებისა და პარამეტრების მორგების "
+"საშუალება \n"
+"მისცეს."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
@@ -1264,6 +1275,10 @@ msgid ""
 "a temporary IPv6 address in addition to the public one generated from MAC "
 "address via modified EUI-64."
 msgstr ""
+"მოირგეთ IPv6-ის კონფიდენციალობის გაფართოებები SLAAC-სთვის, როგორც ეს RFC4941-"
+"შია აღწერილი. თუ ჩართულია,\n"
+"ის ბირთვს აიძულებს MAC მისამართიდან შეცვლილი EUI-64-ით შექმნილი საჯარო "
+"მისამართის გარდა დროებითი IPv6 მისამართიც დააგენერიროს."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:202
@@ -1390,6 +1405,10 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
+"თუ ჩართულია, PPPoE მხოლოდ იმ კონცენტრატორებს დაუკავშირდება, რომლებისაც "
+"მითითებული სერვისი გააჩნიათ. სერვისის მომწოდებლის უმრავლესობებისათვის ეს "
+"ველი ცარიელი უნდა იყოს. მხოლოდ საჭიროა მაშინ, თუ ხელმისაწვდომია ერთზე მეტი "
+"წვდომის კონცენტრატორი, ან სპეციფიკური სერვისია საჭირო."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31
@@ -1489,6 +1508,8 @@ msgid ""
 "by the\n"
 " BSSID entered here. Example: 00:11:22:33:44:55"
 msgstr ""
+"ეს პარამეტრი ბლოკავს ამ შეერთებას Wi-Fi წვდომის წერტილთან, რომელიც\n"
+"აქ შეყვანილი BSSID-ითაა აღწერილი. მაგ: 00:11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:117
@@ -1504,6 +1525,9 @@ msgid ""
 "specified band. This setting depends\n"
 " on specific driver capability and may not work with all drivers"
 msgstr ""
+"ეს პარამეტრი ბლოკავს მიერთებებს Wi-Fi ქსელებთან, რომლებიც მითითებულ სპექტრს "
+"იყენებენ. ეს პარამეტრი ეყრდნობა\n"
+"სპეციფიკური დრაივერის შესაძლებლობებს და ყველა დრაივერით შეიძლება არ იმუშაოს"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:141
@@ -1538,6 +1562,9 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
+"Wi-Fi მიერთებისთვის გამოყენებული უსადენო არხი. ეს მოწყობილობა მხოლოდ "
+"მიერთდება (ან შექმნის Ad-Hoc ქსელებს)\n"
+"Wi-Fi ქსელებთან, როლებიც მითითებულ არხს იყენებენ"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:209
@@ -1700,6 +1727,9 @@ msgid ""
 "MAC\n"
 "cloning or spoofing. Example 11:22:33:44:55"
 msgstr ""
+"აქ მითითებული MAC მისამართი გამოყენებული იქნება როგორც აპარატურული\n"
+"მისამართი ქსელური მოწყობილობისა, რომელზეც ეს მიერთება აქტიურდება.\n"
+"ფუნქციას Mac cloning/spoofing ეწოდება. მაგ: 11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wiredconnectionwidget.ui:80
@@ -1766,6 +1796,10 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
+"მოწყობილობის მიერთების მოლაპარაკება. თუ არჩეულია \"ხელით\", \"სიჩქარის\" და "
+"\"დუპლექსის\"\n"
+"მნიშვნელობები მოწყობილობასთან თავსებადობის შემოწმების გარეშე დადგება. თუ "
+"დარწმუნებული არ ბრძანდებით, დატოვეთ \"იგნორირება\" ან აირჩიეთ \"ავტომატური\"."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -1899,6 +1933,10 @@ msgid ""
 "option is disabled. May be specified in hexadecimal by\n"
 "prepending '0x'."
 msgstr ""
+"არასავალდებულ.\n"
+"გამავალი პაკეტების fwmark. თუ დაყენებულია 0 ან \"გამორთული\",\n"
+"ეს პარამეტრი გამორთულია. შეიძლება მიუთითოთ თექვსმეტობითი რიცხვიც,\n"
+"თუ წინ '0x'-ს მიუწერთ."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:86

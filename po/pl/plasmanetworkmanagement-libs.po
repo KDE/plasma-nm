@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 02:52+0000\n"
-"PO-Revision-Date: 2023-01-21 10:12+0100\n"
+"PO-Revision-Date: 2023-04-09 09:56+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.12.1\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -409,7 +409,7 @@ msgstr "Nazwa gospodarza DHCP:"
 #: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
 #, kde-format
 msgid "Default"
-msgstr "Domyślna"
+msgstr "Domyślny"
 
 #: editor/settings/ipv4widget.cpp:441
 #, kde-format
@@ -726,7 +726,7 @@ msgstr "Wersja PEAP:"
 #, kde-format
 msgctxt "PEAP version"
 msgid "Automatic"
-msgstr "Samoczynnie"
+msgstr "Sam wykryj"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:640
@@ -901,7 +901,7 @@ msgstr "Numer:"
 #: editor/settings/ui/connectionwidget.ui:17
 #, kde-format
 msgid "Connect automatically with priority"
-msgstr "Połącz samoczynnie z priorytetem"
+msgstr "Sam połącz z priorytetem"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
@@ -923,7 +923,7 @@ msgstr ""
 #: editor/settings/ui/connectionwidget.ui:48
 #, kde-format
 msgid "All users may connect to this network"
-msgstr "Użytkownikom wolno łączyć się z tą siecią"
+msgstr "Wszystkim użytkownikom wolno się łączyć"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:64
@@ -946,19 +946,19 @@ msgstr ""
 #: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
 #, kde-format
 msgid "Advanced…"
-msgstr "Rozszerzone..."
+msgstr "Wybierz użytkowników..."
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:81
 #, kde-format
 msgid "Automatically connect to VPN"
-msgstr "Samoczynnie połącz do VPN-u"
+msgstr "Sam połącz do VPN-u"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:101
 #, kde-format
 msgid "Firewall zone:"
-msgstr "Strefa zapory ogniowej:"
+msgstr "Poziom zapory ogniowej:"
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:130
@@ -1066,7 +1066,7 @@ msgstr "MTU:"
 #, kde-format
 msgctxt "MTU:"
 msgid "Automatic"
-msgstr "Samoczynnie"
+msgstr "Sam wykryj"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:83
@@ -1276,9 +1276,9 @@ msgid ""
 "address via modified EUI-64."
 msgstr ""
 "Ustawienia rozszerzeń prywatności IPv6 dla SLAAC, opisanych w RFC4941. Jeśli "
-"włączono, to jądro wygeneruje\n"
-"tymczasowy adres IPv6 w dodatku do adresu publicznego, wygenerowanego z "
-"adresu MAC poprzez zmieniony EUI-64."
+"włączono, to jądro utworzy\n"
+"tymczasowy adres IPv6 w dodatku do adresu publicznego, utworzonego z adresu "
+"MAC poprzez zmieniony EUI-64."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:202
@@ -1310,13 +1310,13 @@ msgstr "Sam ustaw (tylko DHCP)"
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
-msgstr "Połączenie pomijane"
+msgstr "Pomijaj"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:257
 #, kde-format
 msgid "Disabled"
-msgstr "Wyłączona"
+msgstr "Wyłącz"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
 #: editor/settings/ui/ipv6.ui:335
@@ -1535,7 +1535,7 @@ msgstr ""
 #, kde-format
 msgctxt "Band:"
 msgid "Automatic"
-msgstr "Samoczynnie"
+msgstr "Sam wykryj"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:146
@@ -1578,7 +1578,7 @@ msgstr "Sklonowany adres MAC:"
 #: editor/settings/ui/wificonnectionwidget.ui:240
 #, kde-format
 msgid "Random…"
-msgstr "Losowo…"
+msgstr "Wylosuj"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -1737,7 +1737,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:80
 #, kde-format
 msgid "Random"
-msgstr "Losowo"
+msgstr "Wylosuj"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
 #: editor/settings/ui/wiredconnectionwidget.ui:106
@@ -1760,7 +1760,7 @@ msgstr "Szybkość:"
 #: editor/settings/ui/wiredconnectionwidget.ui:132
 #, kde-format
 msgid "Duplex:"
-msgstr "Dupleks:"
+msgstr "Duplex:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:151
@@ -1800,8 +1800,8 @@ msgid ""
 msgstr ""
 "Negocjacja łącza urządzenia. Jeśli wybrano “Ręcznie“, to wartości "
 "“Szybkości“ oraz “Duplex“ zostaną wymuszone bez sprawdzenia\n"
-"zgodności urządzenia. W przypadku wątpliwości, pozostaw tutaj “Pomijaj“ lub "
-"wybierz “Samoczynnie“"
+"zgodności urządzenia. W przypadku wątpliwości, pozostaw tutaj “Pomiń“ lub "
+"wybierz “Sam wykryj“"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -1814,13 +1814,13 @@ msgstr "Pomiń"
 #, kde-format
 msgctxt "Link negotiation:"
 msgid "Automatic"
-msgstr "Samoczynnie"
+msgstr "Sam wykryj"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:202
 #, kde-format
 msgid "Manual"
-msgstr "Ręcznie"
+msgstr "Ustawię ręcznie"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:219
@@ -3258,7 +3258,7 @@ msgstr "Nazwa użytkownika"
 #: editor/widgets/ui/advancedpermissionswidget.ui:160
 #, kde-format
 msgid "Users allowed to activate the connection"
-msgstr "Użytkownicy ze zgodą na połączenie"
+msgstr "Użytkownicy, którym wolno się łączyć"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
 #: editor/widgets/ui/ipv4routes.ui:20
@@ -3280,7 +3280,7 @@ msgstr ""
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
 #, kde-format
 msgid "Use only for resources on this connection"
-msgstr "Użyj tylko dla zasobów w tym połączeniu"
+msgstr "Użyj tylko dla zasobów tego połączenia"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv4routes.ui:74

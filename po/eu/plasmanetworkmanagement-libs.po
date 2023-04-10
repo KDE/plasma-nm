@@ -5,14 +5,14 @@
 #
 # Translators:
 # Osoitz <oelkoro@gmail.com>, 2017.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2018, 2019, 2020, 2021, 2022.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # Ander Elortondo <ander.elor@gmail.com>, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 02:52+0000\n"
-"PO-Revision-Date: 2022-12-28 23:15+0100\n"
+"PO-Revision-Date: 2023-04-09 21:39+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -1513,8 +1513,8 @@ msgid ""
 "by the\n"
 " BSSID entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"Aukera honek konexio hau hemen sartutako BSSID-k adierazitako Wi-Fi sarbide\n"
-" puntuarekin (AP) giltzatzen du. Adibidez: 00:11:22:33:44:55"
+"Aukera honek, konexio hau, hemen sartutako «BSSID»k adierazitako Wi-Fi\n"
+"sarbide-puntuarekin (AP) giltzatzen du. Adibidez: 00:11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:117
@@ -2461,7 +2461,7 @@ msgstr "Azpiegitura"
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Access point"
-msgstr "Sarbide puntua"
+msgstr "Sarbide-puntua"
 
 #: editor/uiutils.cpp:403
 #, kde-format
@@ -3060,7 +3060,7 @@ msgstr "Zure banda zabaleko fakturazio planaren izena"
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
 msgstr ""
-"(kasu batzuetan) Zure fakturazio planaren APN (Sarbide Puntuaren Izena)"
+"(kasu batzuetan) Zure fakturazio planaren APN (Sarbide-puntuaren izena)"
 
 #: editor/widgets/mobileconnectionwizard.cpp:254
 #, kde-format
@@ -3146,7 +3146,7 @@ msgstr "&Hautatu zure plana:"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Selected plan &APN (Access Point Name):"
-msgstr "Hautatu planaren &APN (Sarbide Puntuaren Izena):"
+msgstr "Hautatu planaren &APN (Sarbide-puntuaren izena):"
 
 #: editor/widgets/mobileconnectionwizard.cpp:500
 #, kde-format

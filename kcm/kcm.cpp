@@ -554,6 +554,17 @@ KCMNetworkmanagement::ImportResult KCMNetworkmanagement::importVpn()
 
     // Handle WireGuard separately because it is different than all the other VPNs
     if (WireGuardInterfaceWidget::supportedFileExtensions().contains(ext)) {
+#if NM_CHECK_VERSION(1, 40, 0)
+        GError *error = nullptr;
+        NMConnection *conn = nm_conn_wireguard_import(filename.toUtf8().constData(), &error);
+
+        if (error) {
+            qCDebug(PLASMA_NM_KCM_LOG) << "Could not import WireGuard connection" << error->message;
+        } else {
+            m_handler->addConnection(conn);
+            return ImportResult::pass();
+        }
+#else
         NMVariantMapMap connection = WireGuardInterfaceWidget::importConnectionSettings(filename);
         NetworkManager::ConnectionSettings connectionSettings;
         connectionSettings.fromMap(connection);
@@ -567,6 +578,7 @@ KCMNetworkmanagement::ImportResult KCMNetworkmanagement::importVpn()
         if (!connection.isEmpty()) {
             return ImportResult::pass(); // get out if the import produced at least some output
         }
+#endif
     }
     for (const KPluginMetaData &service : services) {
         const auto result = KPluginFactory::instantiatePlugin<VpnUiPlugin>(service);

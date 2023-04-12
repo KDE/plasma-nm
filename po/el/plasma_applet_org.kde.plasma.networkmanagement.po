@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 01:01+0000\n"
+"POT-Creation-Date: 2023-04-12 02:13+0000\n"
 "PO-Revision-Date: 2017-09-08 16:23+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -61,12 +61,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:286
+#: contents/ui/ConnectionItem.qml:282
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Συνδεδεμένο, ⬇ %1/δ, ⬆ %2/δ"
 
-#: contents/ui/ConnectionItem.qml:290
+#: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected"
 msgstr "Συνδέθηκε"
@@ -133,13 +133,13 @@ msgstr ""
 msgid "Password…"
 msgstr "Κωδικός πρόσβασης:"
 
-#: contents/ui/PopupDialog.qml:102
+#: contents/ui/PopupDialog.qml:124
 #, fuzzy, kde-format
 #| msgid "Airplane mode enabled"
 msgid "Airplane mode is enabled"
 msgstr "Ενεργοποίηση λειτουργίας πτήσης"
 
-#: contents/ui/PopupDialog.qml:106
+#: contents/ui/PopupDialog.qml:128
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:status Notification text when a single wireless network disappeared"
@@ -147,23 +147,23 @@ msgstr "Ενεργοποίηση λειτουργίας πτήσης"
 msgid "Wireless and mobile networks are deactivated"
 msgstr "%1 ασύρματο δίκτυο εξαφανίστηκε"
 
-#: contents/ui/PopupDialog.qml:108
+#: contents/ui/PopupDialog.qml:130
 #, fuzzy, kde-format
 #| msgid "Wireless disabled"
 msgid "Wireless is deactivated"
 msgstr "Απενεργοποίηση ασυρμάτου"
 
-#: contents/ui/PopupDialog.qml:111
+#: contents/ui/PopupDialog.qml:133
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:114
+#: contents/ui/PopupDialog.qml:136
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:116
+#: contents/ui/PopupDialog.qml:138
 #, fuzzy, kde-format
 #| msgid "Available connections"
 msgid "No available connections"

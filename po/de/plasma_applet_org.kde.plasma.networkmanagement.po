@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 01:01+0000\n"
+"POT-Creation-Date: 2023-04-12 02:13+0000\n"
 "PO-Revision-Date: 2023-01-25 15:58+0100\n"
 "Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -59,12 +59,12 @@ msgstr ""
 "Aktuelle Download-Geschwindigkeit ist %1 Kibibytes pro Sekunde; aktuelle "
 "Upload-Geschwindigkeit ist %2 Kibibytes pro Sekunde"
 
-#: contents/ui/ConnectionItem.qml:286
+#: contents/ui/ConnectionItem.qml:282
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Verbunden, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:290
+#: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected"
 msgstr "Verbunden"
@@ -127,32 +127,32 @@ msgstr "QR-Code für %1"
 msgid "Password…"
 msgstr "Passwort ..."
 
-#: contents/ui/PopupDialog.qml:102
+#: contents/ui/PopupDialog.qml:124
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Flugmodus ist aktiviert"
 
-#: contents/ui/PopupDialog.qml:106
+#: contents/ui/PopupDialog.qml:128
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Dratlose und mobile Netze sind deaktiviert"
 
-#: contents/ui/PopupDialog.qml:108
+#: contents/ui/PopupDialog.qml:130
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Drahtloses Netzwerk ist abgeschaltet"
 
-#: contents/ui/PopupDialog.qml:111
+#: contents/ui/PopupDialog.qml:133
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobiles Netzwerk ist abgeschaltet"
 
-#: contents/ui/PopupDialog.qml:114
+#: contents/ui/PopupDialog.qml:136
 #, kde-format
 msgid "No matches"
 msgstr "Keine Übereinstimmungen"
 
-#: contents/ui/PopupDialog.qml:116
+#: contents/ui/PopupDialog.qml:138
 #, kde-format
 msgid "No available connections"
 msgstr "Keine verfügbaren Verbindungen"

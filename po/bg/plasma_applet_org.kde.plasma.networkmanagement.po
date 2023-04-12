@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 01:01+0000\n"
+"POT-Creation-Date: 2023-04-12 02:13+0000\n"
 "PO-Revision-Date: 2022-12-14 20:21+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -59,12 +59,12 @@ msgstr ""
 "Текущата скорост на изтегляне е %1 килобайта в секунда; текущата скорост на "
 "качване е %2 килобайта в секунда"
 
-#: contents/ui/ConnectionItem.qml:286
+#: contents/ui/ConnectionItem.qml:282
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Свързан, ⬇%1/s, ⬆%2/s"
 
-#: contents/ui/ConnectionItem.qml:290
+#: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected"
 msgstr "Свързан"
@@ -127,32 +127,32 @@ msgstr "QR код за  %1"
 msgid "Password…"
 msgstr "Парола…"
 
-#: contents/ui/PopupDialog.qml:102
+#: contents/ui/PopupDialog.qml:124
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Самолетен режим е активиран"
 
-#: contents/ui/PopupDialog.qml:106
+#: contents/ui/PopupDialog.qml:128
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Безжичните и мобилните мрежи са деактивирани"
 
-#: contents/ui/PopupDialog.qml:108
+#: contents/ui/PopupDialog.qml:130
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Безжичната връзка е деактивирана"
 
-#: contents/ui/PopupDialog.qml:111
+#: contents/ui/PopupDialog.qml:133
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Мобилната мрежа е деактивирана"
 
-#: contents/ui/PopupDialog.qml:114
+#: contents/ui/PopupDialog.qml:136
 #, kde-format
 msgid "No matches"
 msgstr "Няма съвпадения"
 
-#: contents/ui/PopupDialog.qml:116
+#: contents/ui/PopupDialog.qml:138
 #, kde-format
 msgid "No available connections"
 msgstr "Няма налични връзки"

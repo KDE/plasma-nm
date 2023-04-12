@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 01:01+0000\n"
+"POT-Creation-Date: 2023-04-12 02:13+0000\n"
 "PO-Revision-Date: 2023-02-24 12:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -56,12 +56,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr "当前下载速度为每秒 %1 KB；当前上传速度为每秒 %2 KB"
 
-#: contents/ui/ConnectionItem.qml:286
+#: contents/ui/ConnectionItem.qml:282
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "已连接，⬇ %1/s，⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:290
+#: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected"
 msgstr "已连接"
@@ -124,32 +124,32 @@ msgstr "%1 的二维码"
 msgid "Password…"
 msgstr "密码…"
 
-#: contents/ui/PopupDialog.qml:102
+#: contents/ui/PopupDialog.qml:124
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "飞行模式已启用"
 
-#: contents/ui/PopupDialog.qml:106
+#: contents/ui/PopupDialog.qml:128
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "无线网络和移动网络已被禁用"
 
-#: contents/ui/PopupDialog.qml:108
+#: contents/ui/PopupDialog.qml:130
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "无线网络已被禁用"
 
-#: contents/ui/PopupDialog.qml:111
+#: contents/ui/PopupDialog.qml:133
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "移动网络已被禁用"
 
-#: contents/ui/PopupDialog.qml:114
+#: contents/ui/PopupDialog.qml:136
 #, kde-format
 msgid "No matches"
 msgstr "无匹配项"
 
-#: contents/ui/PopupDialog.qml:116
+#: contents/ui/PopupDialog.qml:138
 #, kde-format
 msgid "No available connections"
 msgstr "无可用的连接"

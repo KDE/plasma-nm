@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 01:01+0000\n"
+"POT-Creation-Date: 2023-04-12 02:13+0000\n"
 "PO-Revision-Date: 2023-03-22 10:50-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -60,12 +60,12 @@ msgstr ""
 "A velocidade de download atual é de %1 kibibytes por segundo; a velocidade "
 "de upload atual é de %2 kibibytes por segundo"
 
-#: contents/ui/ConnectionItem.qml:286
+#: contents/ui/ConnectionItem.qml:282
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Conectado, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:290
+#: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected"
 msgstr "Conectado"
@@ -128,32 +128,32 @@ msgstr "Código QR para %1"
 msgid "Password…"
 msgstr "Senha..."
 
-#: contents/ui/PopupDialog.qml:102
+#: contents/ui/PopupDialog.qml:124
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "O modo avião está habilitado"
 
-#: contents/ui/PopupDialog.qml:106
+#: contents/ui/PopupDialog.qml:128
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "As redes móveis e sem fio estão desativadas"
 
-#: contents/ui/PopupDialog.qml:108
+#: contents/ui/PopupDialog.qml:130
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "A rede sem fio está desativada"
 
-#: contents/ui/PopupDialog.qml:111
+#: contents/ui/PopupDialog.qml:133
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "A rede móvel está desativada"
 
-#: contents/ui/PopupDialog.qml:114
+#: contents/ui/PopupDialog.qml:136
 #, kde-format
 msgid "No matches"
 msgstr "Nenhuma ocorrência"
 
-#: contents/ui/PopupDialog.qml:116
+#: contents/ui/PopupDialog.qml:138
 #, kde-format
 msgid "No available connections"
 msgstr "Nenhuma conexão disponível"

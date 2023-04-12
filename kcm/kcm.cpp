@@ -102,16 +102,11 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
     m_ui->connectionView->rootContext()->setContextProperty("textColor", mainWidget->palette().color(QPalette::Active, QPalette::Text));
     m_ui->connectionView->rootContext()->setContextProperty("connectionModified", false);
     m_ui->connectionView->rootContext()->setContextProperty("useApMode", useApMode);
+    m_ui->connectionView->rootContext()->setContextProperty("kcm", this);
     m_ui->connectionView->setClearColor(Qt::transparent);
     m_ui->connectionView->setResizeMode(QQuickWidget::SizeRootObjectToView);
     m_ui->connectionView->setSource(
         QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcm_networkmanagement/qml/main.qml"))));
-
-    QObject *rootItem = m_ui->connectionView->rootObject();
-    connect(rootItem, SIGNAL(selectedConnectionChanged(QString)), this, SLOT(onSelectedConnectionChanged(QString)));
-    connect(rootItem, SIGNAL(requestCreateConnection(int, QString, QString, bool)), this, SLOT(onRequestCreateConnection(int, QString, QString, bool)));
-    connect(rootItem, SIGNAL(requestExportConnection(QString)), this, SLOT(onRequestExportConnection(QString)));
-    connect(rootItem, SIGNAL(requestToChangeConnection(QString, QString)), this, SLOT(onRequestToChangeConnection(QString, QString)));
 
     auto l = new QVBoxLayout(widget());
 
@@ -193,6 +188,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
     if (selectedConnection && selectedConnection->isValid()) {
         const NetworkManager::ConnectionSettings::Ptr settings = selectedConnection->settings();
         if (UiUtils::isConnectionTypeSupported(settings->connectionType())) {
+            QObject *rootItem = m_ui->connectionView->rootObject();
             QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, settings->id()), Q_ARG(QVariant, selectedConnection->path()));
         }
     } else {

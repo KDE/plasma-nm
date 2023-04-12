@@ -18,7 +18,6 @@ ListItem {
     checked: ConnectionPath === connectionView.currentConnectionPath
 
     signal aboutToChangeConnection(bool exportable, string name, string path)
-    signal aboutToExportConnection(string path)
     signal aboutToRemoveConnection(string name, string path)
 
     onClicked: {
@@ -130,7 +129,7 @@ ListItem {
             visible: KcmVpnConnectionExportable
             text: i18n("Export");
 
-            onTriggered: aboutToExportConnection(ConnectionPath)
+            onTriggered: kcm.onRequestExportConnection(ConnectionPath)
         }
     }
 

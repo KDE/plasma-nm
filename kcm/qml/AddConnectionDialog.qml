@@ -14,8 +14,6 @@ Window {
     id: dialog
     title: i18nc("@title:window", "Choose a Connection Type")
 
-    signal requestCreateConnection(int type, string vpnType, string specificType, bool shared)
-
     height: 600
     minimumHeight: 400
     width: 500
@@ -83,7 +81,7 @@ Window {
 
                 onDoubleClicked: {
                     dialog.close()
-                    dialog.requestCreateConnection(view.connectionType, view.connectionVpnType, view.connectionSpecificType, view.connectionShared)
+                    kcm.onRequestCreateConnection(view.connectionType, view.connectionVpnType, view.connectionSpecificType, view.connectionShared)
                 }
 
                 Item {
@@ -165,7 +163,7 @@ Window {
 
             onClicked: {
                 dialog.close()
-                dialog.requestCreateConnection(view.connectionType, view.connectionVpnType, view.connectionSpecificType, view.connectionShared)
+                kcm.onRequestCreateConnection(view.connectionType, view.connectionVpnType, view.connectionSpecificType, view.connectionShared)
             }
         }
 

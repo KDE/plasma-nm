@@ -22,6 +22,11 @@ public:
     explicit KCMNetworkmanagement(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args);
     ~KCMNetworkmanagement() override;
 
+    Q_INVOKABLE void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
+    Q_INVOKABLE void onSelectedConnectionChanged(const QString &connectionPath);
+    Q_INVOKABLE void onRequestExportConnection(const QString &connectionPath);
+    Q_INVOKABLE void onRequestToChangeConnection(const QString &connectionName, const QString &connectionPath);
+
 public Q_SLOTS:
     void defaults() override;
     void load() override;
@@ -29,10 +34,6 @@ public Q_SLOTS:
 
 private Q_SLOTS:
     void onConnectionAdded(const QString &connection);
-    void onSelectedConnectionChanged(const QString &connectionPath);
-    void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
-    void onRequestExportConnection(const QString &connectionPath);
-    void onRequestToChangeConnection(const QString &connectionName, const QString &connectionPath);
 
 private:
     struct ImportResult {

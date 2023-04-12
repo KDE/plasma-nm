@@ -15,11 +15,6 @@ Item {
 
     focus: true
 
-    signal selectedConnectionChanged(string connection)
-    signal requestCreateConnection(int type, string vpnType, string specificType, bool shared)
-    signal requestExportConnection(string connection)
-    signal requestToChangeConnection(string name, string path)
-
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
 
     Connections {
@@ -97,15 +92,11 @@ Item {
                     // Shouldn't be problem to set this in advance
                     connectionView.currentConnectionExportable = exportable
                     if (connectionModified) {
-                        requestToChangeConnection(name, path)
+                        kcm.onRequestToChangeConnection(name, path)
                     } else {
                         connectionView.currentConnectionName = name
                         connectionView.currentConnectionPath = path
                     }
-                }
-
-                onAboutToExportConnection: {
-                    requestExportConnection(path)
                 }
 
                 onAboutToRemoveConnection: {
@@ -116,7 +107,7 @@ Item {
             }
 
             onCurrentConnectionPathChanged: {
-                root.selectedConnectionChanged(currentConnectionPath)
+                kcm.onSelectedConnectionChanged(currentConnectionPath)
             }
         }
     }
@@ -170,7 +161,7 @@ Item {
             QQC2.ToolTip.visible: hovered
 
             onClicked: {
-                root.requestExportConnection(connectionView.currentConnectionPath)
+                kcm.onRequestExportConnection(connectionView.currentConnectionPath)
             }
         }
     }
@@ -231,10 +222,6 @@ Item {
 
     AddConnectionDialog {
         id: addNewConnectionDialog
-
-        onRequestCreateConnection: {
-            root.requestCreateConnection(type, vpnType, specificType, shared)
-        }
     }
 
     ConfigurationDialog {

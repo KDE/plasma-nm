@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2023-04-11 21:39+0100\n"
+"PO-Revision-Date: 2023-04-17 06:53+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-doc@kde.org>\n"
 "Language: eo\n"
@@ -69,7 +69,7 @@ msgid ""
 "to the peer to &lt;name&gt;.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Agordu la nomon uzatan por aŭtentikigi la lokan "
-"sistemon al la kunulo al <name>.</p></body></html>"
+"sistemon al la kunulo al &lt;name&gt;.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_2)
 #: l2tp.ui:113
@@ -100,8 +100,8 @@ msgid ""
 "<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
 "host name for</p><p>authentication purposes.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Aldonu la domajnan nomon <domain> al la loka gastiga "
-"nomo por</p><p>aŭtentikigceloj.</p></body></html>"
+"<html><head/><body><p>Aldonu la domajnan nomon &lt;domain&gt; al la loka "
+"gastiga nomo por</p><p>aŭtentikigceloj.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -644,14 +644,14 @@ msgstr "40 bitoj"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
-"Permesu al MPPE uzi ŝtatan reĝimon. Sennacia reĝimo ankoraŭ estas provita "
+"Permesu al MPPE uzi stathavan reĝimon. Sennacia reĝimo ankoraŭ estas provita "
 "unue."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbstatefulEncryption)
 #: l2tpppp.ui:322
 #, kde-format
 msgid "Use stateful encryption"
-msgstr "Uzu ŝtatan ĉifradon"
+msgstr "Uzu stathavan ĉifradon"
 
 #: l2tppppwidget.cpp:22
 #, kde-format

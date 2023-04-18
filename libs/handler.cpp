@@ -378,7 +378,7 @@ void Handler::addConnection(NMConnection *connection)
 
     nm_client_add_connection2(client,
                               nm_connection_to_dbus(connection, NM_CONNECTION_SERIALIZE_ALL),
-                              NM_SETTINGS_ADD_CONNECTION2_FLAG_IN_MEMORY,
+                              NM_SETTINGS_ADD_CONNECTION2_FLAG_TO_DISK,
                               nullptr,
                               true,
                               nullptr,

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 02:52+0000\n"
-"PO-Revision-Date: 2023-03-04 20:07+0200\n"
+"PO-Revision-Date: 2023-04-04 23:08+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -3638,7 +3638,7 @@ msgstr "Toissijainen IPv6-nimipalvelin"
 #: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
 #, kde-format
 msgid "Connection speed"
-msgstr "Yhteyden nopeus"
+msgstr "Yhteysnopeus"
 
 #: models/networkmodelitem.cpp:642 models/networkmodelitem.cpp:660
 #: models/networkmodelitem.cpp:709 models/networkmodelitem.cpp:715

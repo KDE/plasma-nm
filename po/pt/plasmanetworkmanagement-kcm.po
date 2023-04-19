@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:45+0000\n"
+"POT-Creation-Date: 2023-04-19 02:23+0000\n"
 "PO-Revision-Date: 2022-12-14 09:39+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -13,49 +13,49 @@ msgstr ""
 "X-POFile-SpellExtra: minhaligaçãopartilhada VPN PIN\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: kcm.cpp:289
+#: kcm.cpp:285
 #, fuzzy, kde-format
 #| msgid "Import VPN Connection"
 msgid "Failed to import VPN connection: %1"
 msgstr "Importar uma Ligação VPN"
 
-#: kcm.cpp:359
+#: kcm.cpp:355
 #, kde-format
 msgid "my_shared_connection"
 msgstr "minha_ligação_partilhada"
 
-#: kcm.cpp:431
+#: kcm.cpp:427
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Exportar a Ligação VPN"
 
-#: kcm.cpp:451
+#: kcm.cpp:447
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Deseja gravar as alterações feitas à ligação '%1'?"
 
-#: kcm.cpp:452
+#: kcm.cpp:448
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Gravar as Alterações"
 
-#: kcm.cpp:547
+#: kcm.cpp:543
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Importar uma Ligação VPN"
 
-#: kcm.cpp:549
+#: kcm.cpp:545
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "Ligações de VPN (%1)"
 
-#: kcm.cpp:552
+#: kcm.cpp:548
 #, kde-format
 msgid "No file was provided"
 msgstr ""
 
-#: kcm.cpp:601
+#: kcm.cpp:597
 #, kde-format
 msgid "Unknown VPN type"
 msgstr ""
@@ -65,15 +65,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Escolha um Tipo de Ligação"
 
-#: qml/AddConnectionDialog.qml:164
+#: qml/AddConnectionDialog.qml:162
 msgid "Create"
 msgstr "Criar"
 
-#: qml/AddConnectionDialog.qml:175 qml/ConfigurationDialog.qml:117
+#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:117
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: qml/AddConnectionDialog.qml:192 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:190 qml/main.qml:184
 msgid "Configuration"
 msgstr "Configuração"
 
@@ -110,48 +110,48 @@ msgstr "Senha do ponto de acesso:"
 msgid "OK"
 msgstr "OK"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:107
 msgid "Connect"
 msgstr "Ligar"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:107
 msgid "Disconnect"
 msgstr "Desligar"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:120
 msgid "Delete"
 msgstr "Apagar"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:130
 msgid "Export"
 msgstr "Exportar"
 
-#: qml/ConnectionItem.qml:141
+#: qml/ConnectionItem.qml:140
 msgid "Connected"
 msgstr "Ligado"
 
-#: qml/ConnectionItem.qml:143
+#: qml/ConnectionItem.qml:142
 msgid "Connecting"
 msgstr "A ligar"
 
-#: qml/main.qml:139
+#: qml/main.qml:130
 msgid "Add new connection"
 msgstr "Adicionar uma nova ligação"
 
-#: qml/main.qml:153
+#: qml/main.qml:144
 msgid "Remove selected connection"
 msgstr "Remover a ligação seleccionada"
 
-#: qml/main.qml:169
+#: qml/main.qml:160
 msgid "Export selected connection"
 msgstr "Exportar a ligação seleccionada"
 
-#: qml/main.qml:220
+#: qml/main.qml:211
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Remover a Ligação"
 
-#: qml/main.qml:221
+#: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Deseja remover a ligação '%1'?"
 

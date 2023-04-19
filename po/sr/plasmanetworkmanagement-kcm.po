@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:45+0000\n"
+"POT-Creation-Date: 2023-04-19 02:23+0000\n"
 "PO-Revision-Date: 2017-10-30 23:08+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -19,54 +19,54 @@ msgstr ""
 "X-Environment: kde\n"
 
 # >> @title:window
-#: kcm.cpp:289
+#: kcm.cpp:285
 #, fuzzy, kde-format
 #| msgid "Import VPN Connection"
 msgid "Failed to import VPN connection: %1"
 msgstr "Увоз ВПН везе"
 
 # well-spelled: моја_дељена_веза
-#: kcm.cpp:359
+#: kcm.cpp:355
 #, kde-format
 msgid "my_shared_connection"
 msgstr "моја_дељена_веза"
 
 # >> @title:window
-#: kcm.cpp:431
+#: kcm.cpp:427
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Извоз ВПН везе"
 
-#: kcm.cpp:451
+#: kcm.cpp:447
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Желите ли да сачувате измене над везом „%1“?"
 
-#: kcm.cpp:452
+#: kcm.cpp:448
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Уписивање измена"
 
 # >> @title:window
-#: kcm.cpp:547
+#: kcm.cpp:543
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Увоз ВПН везе"
 
 # >> @title:window
-#: kcm.cpp:549
+#: kcm.cpp:545
 #, fuzzy, kde-format
 #| msgid "Export VPN Connection"
 msgid "VPN connections (%1)"
 msgstr "Извоз ВПН везе"
 
-#: kcm.cpp:552
+#: kcm.cpp:548
 #, kde-format
 msgid "No file was provided"
 msgstr ""
 
-#: kcm.cpp:601
+#: kcm.cpp:597
 #, kde-format
 msgid "Unknown VPN type"
 msgstr ""
@@ -76,15 +76,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Избор типа везе"
 
-#: qml/AddConnectionDialog.qml:164
+#: qml/AddConnectionDialog.qml:162
 msgid "Create"
 msgstr "Направи"
 
-#: qml/AddConnectionDialog.qml:175 qml/ConfigurationDialog.qml:117
+#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:117
 msgid "Cancel"
 msgstr "Одустани"
 
-#: qml/AddConnectionDialog.qml:192 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:190 qml/main.qml:184
 msgid "Configuration"
 msgstr ""
 
@@ -123,49 +123,49 @@ msgstr ""
 msgid "OK"
 msgstr ""
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:107
 msgid "Connect"
 msgstr "Повежи се"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:107
 msgid "Disconnect"
 msgstr "Прекини везу"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:120
 msgid "Delete"
 msgstr "Обриши"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:130
 msgid "Export"
 msgstr "Извези"
 
 # >> @item
-#: qml/ConnectionItem.qml:141
+#: qml/ConnectionItem.qml:140
 msgid "Connected"
 msgstr "повезан"
 
 # >> @item
-#: qml/ConnectionItem.qml:143
+#: qml/ConnectionItem.qml:142
 msgid "Connecting"
 msgstr "у повезивању"
 
-#: qml/main.qml:139
+#: qml/main.qml:130
 msgid "Add new connection"
 msgstr "Додај нову везу"
 
-#: qml/main.qml:153
+#: qml/main.qml:144
 msgid "Remove selected connection"
 msgstr "Уклони изабрану везу"
 
-#: qml/main.qml:169
+#: qml/main.qml:160
 msgid "Export selected connection"
 msgstr "Извези изабрану везу"
 
-#: qml/main.qml:220
+#: qml/main.qml:211
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Уклањање везе"
 
-#: qml/main.qml:221
+#: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Желите ли заиста да уклоните везу „%1“?"

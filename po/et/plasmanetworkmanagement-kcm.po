@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:45+0000\n"
+"POT-Creation-Date: 2023-04-19 02:23+0000\n"
 "PO-Revision-Date: 2020-01-16 11:07+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -17,50 +17,50 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 19.08.1\n"
 
-#: kcm.cpp:289
+#: kcm.cpp:285
 #, fuzzy, kde-format
 #| msgid "Import VPN Connection"
 msgid "Failed to import VPN connection: %1"
 msgstr "VPN-ühenduse import"
 
-#: kcm.cpp:359
+#: kcm.cpp:355
 #, kde-format
 msgid "my_shared_connection"
 msgstr "minu_jagatud_ühendus"
 
-#: kcm.cpp:431
+#: kcm.cpp:427
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "VPN-ühenduse eksport"
 
-#: kcm.cpp:451
+#: kcm.cpp:447
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Kas salvestada ühenduses '%1' tehtud muudatused?"
 
-#: kcm.cpp:452
+#: kcm.cpp:448
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Muudatuste salvestamine"
 
-#: kcm.cpp:547
+#: kcm.cpp:543
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "VPN-ühenduse import"
 
-#: kcm.cpp:549
+#: kcm.cpp:545
 #, fuzzy, kde-format
 #| msgid "Export VPN Connection"
 msgid "VPN connections (%1)"
 msgstr "VPN-ühenduse eksport"
 
-#: kcm.cpp:552
+#: kcm.cpp:548
 #, kde-format
 msgid "No file was provided"
 msgstr ""
 
-#: kcm.cpp:601
+#: kcm.cpp:597
 #, kde-format
 msgid "Unknown VPN type"
 msgstr ""
@@ -70,15 +70,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Ühenduse tüübi valimine"
 
-#: qml/AddConnectionDialog.qml:164
+#: qml/AddConnectionDialog.qml:162
 msgid "Create"
 msgstr "Loo"
 
-#: qml/AddConnectionDialog.qml:175 qml/ConfigurationDialog.qml:117
+#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:117
 msgid "Cancel"
 msgstr "Loobu"
 
-#: qml/AddConnectionDialog.qml:192 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:190 qml/main.qml:184
 msgid "Configuration"
 msgstr "Seadistamine"
 
@@ -115,48 +115,48 @@ msgstr "Pääsupunkti parool:"
 msgid "OK"
 msgstr ""
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:107
 msgid "Connect"
 msgstr "Ühenda"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:107
 msgid "Disconnect"
 msgstr "Lahuta"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:120
 msgid "Delete"
 msgstr "Kustuta"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:130
 msgid "Export"
 msgstr "Ekspordi"
 
-#: qml/ConnectionItem.qml:141
+#: qml/ConnectionItem.qml:140
 msgid "Connected"
 msgstr "Ühendatud"
 
-#: qml/ConnectionItem.qml:143
+#: qml/ConnectionItem.qml:142
 msgid "Connecting"
 msgstr "Ühendumine"
 
-#: qml/main.qml:139
+#: qml/main.qml:130
 msgid "Add new connection"
 msgstr "Lisa uus ühendus"
 
-#: qml/main.qml:153
+#: qml/main.qml:144
 msgid "Remove selected connection"
 msgstr "Eemalda valitud ühendus"
 
-#: qml/main.qml:169
+#: qml/main.qml:160
 msgid "Export selected connection"
 msgstr "Ekspordi valitud ühendus"
 
-#: qml/main.qml:220
+#: qml/main.qml:211
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Ühenduse eemaldamine"
 
-#: qml/main.qml:221
+#: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Kas eemaldada ühendus '%1'?"
 

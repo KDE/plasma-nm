@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:45+0000\n"
+"POT-Creation-Date: 2023-04-19 02:23+0000\n"
 "PO-Revision-Date: 2023-03-19 14:31+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -20,48 +20,48 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: kcm.cpp:289
+#: kcm.cpp:285
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Klarte ikkje importera VPN-tilkopling: %1"
 
-#: kcm.cpp:359
+#: kcm.cpp:355
 #, kde-format
 msgid "my_shared_connection"
 msgstr "mi_delte_tilkopling"
 
-#: kcm.cpp:431
+#: kcm.cpp:427
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Eksporter VPN-tilkopling"
 
-#: kcm.cpp:451
+#: kcm.cpp:447
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Vil du lagra endringane du har gjort i tilkoplinga «%1»?"
 
-#: kcm.cpp:452
+#: kcm.cpp:448
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Lagra endringar"
 
-#: kcm.cpp:547
+#: kcm.cpp:543
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Importer VPN-tilkopling"
 
-#: kcm.cpp:549
+#: kcm.cpp:545
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN-tilkoplingar (%1)"
 
-#: kcm.cpp:552
+#: kcm.cpp:548
 #, kde-format
 msgid "No file was provided"
 msgstr "Inga fil oppgjeven"
 
-#: kcm.cpp:601
+#: kcm.cpp:597
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Ukjend VPN-type"
@@ -71,15 +71,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Vel tilkoplingstype"
 
-#: qml/AddConnectionDialog.qml:164
+#: qml/AddConnectionDialog.qml:162
 msgid "Create"
 msgstr "Legg til"
 
-#: qml/AddConnectionDialog.qml:175 qml/ConfigurationDialog.qml:117
+#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:117
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: qml/AddConnectionDialog.qml:192 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:190 qml/main.qml:184
 msgid "Configuration"
 msgstr "Oppsett"
 
@@ -116,47 +116,47 @@ msgstr "Passord på trådlaussone:"
 msgid "OK"
 msgstr "OK"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:107
 msgid "Connect"
 msgstr "Kopla til"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:107
 msgid "Disconnect"
 msgstr "Kopla frå"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:120
 msgid "Delete"
 msgstr "Slett"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:130
 msgid "Export"
 msgstr "Eksporter"
 
-#: qml/ConnectionItem.qml:141
+#: qml/ConnectionItem.qml:140
 msgid "Connected"
 msgstr "Kopla til"
 
-#: qml/ConnectionItem.qml:143
+#: qml/ConnectionItem.qml:142
 msgid "Connecting"
 msgstr "Koplar til"
 
-#: qml/main.qml:139
+#: qml/main.qml:130
 msgid "Add new connection"
 msgstr "Legg til ny tilkopling"
 
-#: qml/main.qml:153
+#: qml/main.qml:144
 msgid "Remove selected connection"
 msgstr "Fjern merkt tilkopling"
 
-#: qml/main.qml:169
+#: qml/main.qml:160
 msgid "Export selected connection"
 msgstr "Eksporter merkt tilkopling"
 
-#: qml/main.qml:220
+#: qml/main.qml:211
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Fjern tilkopling"
 
-#: qml/main.qml:221
+#: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Er du sikker på at du vil fjerna tilkoplinga «%1»?"

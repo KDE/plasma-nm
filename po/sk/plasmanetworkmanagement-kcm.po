@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-22 02:45+0000\n"
+"POT-Creation-Date: 2023-04-19 02:23+0000\n"
 "PO-Revision-Date: 2023-03-25 13:51+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -19,48 +19,48 @@ msgstr ""
 "X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: kcm.cpp:289
+#: kcm.cpp:285
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Nepodarilo sa importovať pripojenie VPN: %1"
 
-#: kcm.cpp:359
+#: kcm.cpp:355
 #, kde-format
 msgid "my_shared_connection"
 msgstr "moje_zdielane_pripojenie"
 
-#: kcm.cpp:431
+#: kcm.cpp:427
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Exportovať pripojenie VPN"
 
-#: kcm.cpp:451
+#: kcm.cpp:447
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Chcete uložiť zmeny vytvorené v pripojení \"%1\"?"
 
-#: kcm.cpp:452
+#: kcm.cpp:448
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Uloženie zmien"
 
-#: kcm.cpp:547
+#: kcm.cpp:543
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Importovať pripojenie VPN"
 
-#: kcm.cpp:549
+#: kcm.cpp:545
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN pripojenia (%1)"
 
-#: kcm.cpp:552
+#: kcm.cpp:548
 #, kde-format
 msgid "No file was provided"
 msgstr "Nebol poskytnutý žiadny súbor"
 
-#: kcm.cpp:601
+#: kcm.cpp:597
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Neznámy typ VPN"
@@ -70,15 +70,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Výber typu pripojenia"
 
-#: qml/AddConnectionDialog.qml:164
+#: qml/AddConnectionDialog.qml:162
 msgid "Create"
 msgstr "Vytvoriť"
 
-#: qml/AddConnectionDialog.qml:175 qml/ConfigurationDialog.qml:117
+#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:117
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: qml/AddConnectionDialog.qml:192 qml/main.qml:193
+#: qml/AddConnectionDialog.qml:190 qml/main.qml:184
 msgid "Configuration"
 msgstr "Nastavenia"
 
@@ -115,48 +115,48 @@ msgstr "Heslo aktívneho bodu:"
 msgid "OK"
 msgstr "OK"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:107
 msgid "Connect"
 msgstr "Pripojiť"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:107
 msgid "Disconnect"
 msgstr "Odpojiť"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:120
 msgid "Delete"
 msgstr "Odstrániť"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:130
 msgid "Export"
 msgstr "Exportovať"
 
-#: qml/ConnectionItem.qml:141
+#: qml/ConnectionItem.qml:140
 msgid "Connected"
 msgstr "Pripojené"
 
-#: qml/ConnectionItem.qml:143
+#: qml/ConnectionItem.qml:142
 msgid "Connecting"
 msgstr "Pripája sa"
 
-#: qml/main.qml:139
+#: qml/main.qml:130
 msgid "Add new connection"
 msgstr "Pridať nové pripojenie"
 
-#: qml/main.qml:153
+#: qml/main.qml:144
 msgid "Remove selected connection"
 msgstr "Odstrániť vybrané pripojenie"
 
-#: qml/main.qml:169
+#: qml/main.qml:160
 msgid "Export selected connection"
 msgstr "Exportovať vybrané pripojenie"
 
-#: qml/main.qml:220
+#: qml/main.qml:211
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Odstránenie pripojenia"
 
-#: qml/main.qml:221
+#: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Chcete odstrániť pripojenie \"%1\"?"
 

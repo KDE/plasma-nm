@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-30 02:10+0000\n"
-"PO-Revision-Date: 2023-04-13 05:38+0200\n"
+"PO-Revision-Date: 2023-04-18 06:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1993,6 +1993,10 @@ msgid ""
 "            from a private key, and usually transmitted \n"
 "            out of band to the author of the configuration file."
 msgstr ""
+"აუცილებელია.\n"
+"            Base64 საჯარო გასაღები, რომელიც wg pubkey-ის \n"
+"            მიერ პირადი გასაღებიდან ითვლება და \n"
+"            ჩვეულებრივ კონფიგურაციის ავტორს გადაეცემა."
 
 #. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:34
@@ -2012,6 +2016,13 @@ msgid ""
 "            may be specified for matching all IPv4 addresses, \n"
 "            and ::/0 may be specified for matching all IPv6 addresses."
 msgstr ""
+"აუცილებელია.\n"
+"            მძიმით დაშორებული IP (v4 ან v6) მისამართების სია CIDR\n"
+"            ნიღბით, რომლისთვისაც ამ პარტიორისთვის შემომავალი ტრაფიკი\n"
+"            დაშვებული იქნება და რომელზეც ხდება გამავალი ტრაფიკის გაგზავნა.\n"
+"            'დაიჭირე ყველა' 0.0.0.0/0 მისამართი\n"
+"            შეგიძლიათ ყველა IPv4 მისამართის დამთხვევისთვის\n"
+"            გამოიყენოთ, ::/0 კი ყველა IPv6 მისამართისთვის."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55
@@ -2029,6 +2040,11 @@ msgid ""
 "            qualified domain name such as abc.com). If\n"
 "            present, Endpoint port must also be set."
 msgstr ""
+"არასავალდებულო.\n"
+"            მიერთების ბოლო წერტილი. შეიძლება წარმოადგენდეს\n"
+"            IPv4/IPv6 მისამართს ან FQDN-ს. თუ დაყენებულია,\n"
+"            ბოლო წერტილის პორტიც აუცილებლად უნდა\n"
+"            მიუთითოთ."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
@@ -2044,6 +2060,9 @@ msgid ""
 "            The port number of an endpoint. If present Endpoint\n"
 "            Address must also be set."
 msgstr ""
+"არასავალდებულოა.\n"
+"            ბოლოწერტილის პორტის ნომერი. თუ მითითებულია, ასევე აუცილებელია\n"
+"            ბოლოწერტილის მისამართის დაყენებაც."
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
@@ -2061,6 +2080,13 @@ msgid ""
 "            cryptography to be mixed into the already existing\n"
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
+"არასავალდებულო.\n"
+"            genpsk-ის მიერ დაყენებული base64 წინასწარ გაზიარებული გასაღები.\n"
+"            ეს პარამეტრი სიმეტრიული გასაღების კრიპტოგრაფიას დამატებით ფენას "
+"ამატებს,\n"
+"            რომელიც შეგიძლიათ,უკვე არსებულ საჯარო-გასაღების "
+"კრიპტოგრაფიასთან\n"
+"            ერთად გამოიყენოთ, კვანტური გამძლეობისთვის."
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
@@ -2085,6 +2111,20 @@ msgid ""
 "            when unspecified, this option is off. Most users will not\n"
 "            need this."
 msgstr ""
+"სურვილისამებრ.\n"
+"            წამის ინტერვალი, 1-დან 65535-ის ჩათვლით,\n"
+"            რამდენად ხშირად უნდა გაგზავნოთ დამოწმებული ცარიელი პაკეტი\n"
+"            თანატოლი სახელმწიფო ბუხრის შენახვის მიზნით\n"
+"            ან NAT რუქა ძალაშია მუდმივად. მაგალითად, თუ\n"
+"            ინტერფეისი ძალიან იშვიათად აგზავნის ტრაფიკს, მაგრამ ეს შეიძლება "
+"იყოს\n"
+"            ნებისმიერ დროს მიიღეთ ტრაფიკი თანატოლისგან და ის უკან დგას\n"
+"            NAT, ინტერფეისმა შეიძლება ისარგებლოს ა\n"
+"            მუდმივი შენარჩუნება ინტერვალი 25 წამი. თუ მითითებულია\n"
+"            0 ან \"გამორთული\", ეს ვარიანტი გამორთულია. სტანდარტულად ან\n"
+"            როდესაც დაუზუსტებელია, ეს ვარიანტი გამორთულია. მომხმარებელთა "
+"უმეტესობა არ იქნება\n"
+"            ეს სჭირდება."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: editor/settings/ui/wireguardtabwidget.ui:24

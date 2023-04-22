@@ -30,7 +30,7 @@
         "Description[ro]": "Furnizează secrete către demonul NetworkManager",
         "Description[ru]": "Предоставляет пароли и ключи демону NetworkManager",
         "Description[sk]": "Poskytuje tajnosti službe správcu siete NetworkManager",
-        "Description[sl]": "Ponuja skrivnosti za odzadnji program NetworkManager",
+        "Description[sl]": "Ponuja skrivnosti za ozadnji program NetworkManager",
         "Description[sv]": "Tillhandahåller hemligheter till nätverkshanteringsdemonen",
         "Description[ta]": "NetworkManager பின்னணி சேவைக்கு கடவுச்சொற்களை வழங்கும்",
         "Description[tr]": "AğYönetici yardımcısına şifreleri sağlar",

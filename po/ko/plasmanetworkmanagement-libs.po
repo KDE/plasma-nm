@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-30 02:10+0000\n"
-"PO-Revision-Date: 2023-03-01 00:16+0100\n"
+"PO-Revision-Date: 2023-04-22 00:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -3635,8 +3635,7 @@ msgid "MAC Address"
 msgstr "MAC 주소"
 
 #: models/networkmodelitem.cpp:646
-#, fuzzy, kde-format
-#| msgid "Access point (SSID)"
+#, kde-format
 msgid "Access Point (SSID)"
 msgstr "액세스 포인트(SSID)"
 
@@ -3646,24 +3645,18 @@ msgid "Signal Strength"
 msgstr "신호 강도"
 
 #: models/networkmodelitem.cpp:648
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "traffic, e.g. n KB/s\n"
-#| " m KB/s"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
-msgstr "%1%2"
+msgstr "%1%"
 
 #: models/networkmodelitem.cpp:650
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
 msgstr "보안 형식"
 
 #: models/networkmodelitem.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
 msgstr "연결 속도"
 
@@ -3698,8 +3691,7 @@ msgid "Access Technology"
 msgstr "접속 기술"
 
 #: models/networkmodelitem.cpp:686
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
 msgstr "VPN 플러그인"
 

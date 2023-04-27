@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-16 01:01+0000\n"
+"POT-Creation-Date: 2023-04-27 02:13+0000\n"
 "PO-Revision-Date: 2023-01-22 17:03+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -23,27 +23,27 @@ msgstr ""
 msgid "Only 'dun' and 'nap' services are supported."
 msgstr "Podporované sú iba služby 'dun' a 'nap'."
 
-#: connectivitymonitor.cpp:61
+#: connectivitymonitor.cpp:63
 #, kde-format
 msgid "Network authentication"
 msgstr "Sieťové overenie"
 
-#: connectivitymonitor.cpp:68
+#: connectivitymonitor.cpp:70
 #, kde-format
 msgid "Log in"
 msgstr "Prihlásenie"
 
-#: connectivitymonitor.cpp:71
+#: connectivitymonitor.cpp:73
 #, kde-format
 msgid "You need to log into this network"
 msgstr "Do tejto siete sa potrebujete prihlásiť"
 
-#: connectivitymonitor.cpp:91
+#: connectivitymonitor.cpp:93
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "Obmedzené pripojenie"
 
-#: connectivitymonitor.cpp:92
+#: connectivitymonitor.cpp:94
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "

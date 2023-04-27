@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-16 01:01+0000\n"
+"POT-Creation-Date: 2023-04-27 02:13+0000\n"
 "PO-Revision-Date: 2020-12-21 21:43+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -24,28 +24,28 @@ msgstr ""
 msgid "Only 'dun' and 'nap' services are supported."
 msgstr "Csak a „dun” és „nap” szolgáltatások támogatottak."
 
-#: connectivitymonitor.cpp:61
+#: connectivitymonitor.cpp:63
 #, kde-format
 msgid "Network authentication"
 msgstr "Hálózati hitelesítés"
 
-#: connectivitymonitor.cpp:68
+#: connectivitymonitor.cpp:70
 #, kde-format
 msgid "Log in"
 msgstr "Bejelentkezés"
 
-#: connectivitymonitor.cpp:71
+#: connectivitymonitor.cpp:73
 #, fuzzy, kde-format
 #| msgid "You need to log in to this network"
 msgid "You need to log into this network"
 msgstr "Be kell jelentkeznie a hálózatba"
 
-#: connectivitymonitor.cpp:91
+#: connectivitymonitor.cpp:93
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "Korlátozott kapcsolat"
 
-#: connectivitymonitor.cpp:92
+#: connectivitymonitor.cpp:94
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "

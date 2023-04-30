@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:54+0000\n"
+"POT-Creation-Date: 2023-04-30 04:16+0000\n"
 "PO-Revision-Date: 2023-02-25 14:51-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -60,7 +60,7 @@ msgstr "VPN 接続 (%1)"
 msgid "No file was provided"
 msgstr ""
 
-#: kcm.cpp:608
+#: kcm.cpp:620
 #, kde-format
 msgid "Unknown VPN type"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:54+0000\n"
+"POT-Creation-Date: 2023-04-30 04:16+0000\n"
 "PO-Revision-Date: 2023-03-19 11:59+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -58,7 +58,7 @@ msgstr "VPN இணைப்புகள் (%1)"
 msgid "No file was provided"
 msgstr "எந்த கோப்பும் கொடுக்கப்படவில்லை"
 
-#: kcm.cpp:608
+#: kcm.cpp:620
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "தெரியாத வகையான VPN"

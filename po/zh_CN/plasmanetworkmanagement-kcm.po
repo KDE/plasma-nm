@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2023-04-16 12:33\n"
+"POT-Creation-Date: 2023-04-30 04:16+0000\n"
+"PO-Revision-Date: 2023-04-29 08:36\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -59,7 +59,7 @@ msgstr "VPN 连接 (%1)"
 msgid "No file was provided"
 msgstr "没有提供文件"
 
-#: kcm.cpp:608
+#: kcm.cpp:620
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "未知的 VPN 类型"

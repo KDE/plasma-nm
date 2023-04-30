@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:54+0000\n"
+"POT-Creation-Date: 2023-04-30 04:16+0000\n"
 "PO-Revision-Date: 2023-03-14 11:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -60,7 +60,7 @@ msgstr "VPN bağlantıları (%1)"
 msgid "No file was provided"
 msgstr "Sağlanan dosya yok"
 
-#: kcm.cpp:608
+#: kcm.cpp:620
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Bilinmeyen VPN türü"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:54+0000\n"
+"POT-Creation-Date: 2023-04-30 04:16+0000\n"
 "PO-Revision-Date: 2023-03-19 11:18+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -61,7 +61,7 @@ msgstr "VPN konexioak (%1)"
 msgid "No file was provided"
 msgstr "Ez da fitxategirik eman"
 
-#: kcm.cpp:608
+#: kcm.cpp:620
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "VPN mota ezezaguna"

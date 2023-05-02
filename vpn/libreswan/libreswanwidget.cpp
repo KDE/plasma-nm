@@ -187,5 +187,5 @@ QVariantMap LibreswanWidget::setting() const
 
 bool LibreswanWidget::isValid() const
 {
-    return !m_ui->gateway->text().isEmpty() && !m_ui->groupname->text().isEmpty();
+    return !m_ui->gateway->text().isEmpty();
 }

@@ -7,11 +7,13 @@
 #ifndef PLASMA_NM_HWADDRCOMBOBOX_H
 #define PLASMA_NM_HWADDRCOMBOBOX_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QComboBox>
 
 #include <NetworkManagerQt/Device>
 
-class Q_DECL_EXPORT HwAddrComboBox : public QComboBox
+class PLASMANM_EDITOR_EXPORT HwAddrComboBox : public QComboBox
 {
     Q_OBJECT
 public:

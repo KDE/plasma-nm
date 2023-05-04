@@ -7,11 +7,13 @@
 #ifndef CONFIGURATIONPROXY_H
 #define CONFIGURATIONPROXY_H
 
+#include "plasmanm_internal_export.h"
+
 #include "configuration.h"
 #include <QObject>
 #include <QPointer>
 
-class Q_DECL_EXPORT ConfigurationProxy : public QObject
+class PLASMANM_INTERNAL_EXPORT ConfigurationProxy : public QObject
 {
     Q_PROPERTY(bool unlockModemOnDetection READ unlockModemOnDetection WRITE setUnlockModemOnDetection)
     Q_PROPERTY(bool manageVirtualConnections READ manageVirtualConnections WRITE setManageVirtualConnections NOTIFY manageVirtualConnectionsChanged)

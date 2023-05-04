@@ -7,11 +7,13 @@
 #ifndef SIMPLEIPLISTVALIDATOR_H
 #define SIMPLEIPLISTVALIDATOR_H
 
+#include "plasmanm_editor_export.h"
+
 #include "simpleipv4addressvalidator.h"
 #include "simpleipv6addressvalidator.h"
 #include <QValidator>
 
-class Q_DECL_EXPORT SimpleIpListValidator : public QValidator
+class PLASMANM_EDITOR_EXPORT SimpleIpListValidator : public QValidator
 {
     Q_OBJECT
 public:

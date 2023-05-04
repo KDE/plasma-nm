@@ -7,9 +7,11 @@
 #ifndef PLASMA_NM_EDITOR_PROXY_MODEL_H
 #define PLASMA_NM_EDITOR_PROXY_MODEL_H
 
+#include "plasmanm_internal_export.h"
+
 #include <QSortFilterProxyModel>
 
-class Q_DECL_EXPORT EditorProxyModel : public QSortFilterProxyModel
+class PLASMANM_INTERNAL_EXPORT EditorProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(QAbstractItemModel *sourceModel READ sourceModel WRITE setSourceModel)

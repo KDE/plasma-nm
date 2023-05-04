@@ -8,6 +8,8 @@
 #ifndef PLASMA_NM_MOBILE_CONNECTION_WIZARD_H
 #define PLASMA_NM_MOBILE_CONNECTION_WIZARD_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QLabel>
 #include <QListWidget>
 #include <QRadioButton>
@@ -21,7 +23,7 @@
 
 #include "mobileproviders.h"
 
-class Q_DECL_EXPORT MobileConnectionWizard : public QWizard
+class PLASMANM_EDITOR_EXPORT MobileConnectionWizard : public QWizard
 {
     Q_OBJECT
 public:

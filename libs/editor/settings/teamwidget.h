@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_TEAM_WIDGET_H
 #define PLASMA_NM_TEAM_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QDBusPendingCallWatcher>
 #include <QListWidgetItem>
 #include <QMenu>
@@ -21,7 +23,7 @@ namespace Ui
 class TeamWidget;
 }
 
-class Q_DECL_EXPORT TeamWidget : public SettingWidget
+class PLASMANM_EDITOR_EXPORT TeamWidget : public SettingWidget
 {
     Q_OBJECT
 public:

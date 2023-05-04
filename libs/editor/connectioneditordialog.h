@@ -7,13 +7,15 @@
 #ifndef PLASMA_NM_CONNECTION_EDITOR_DIALOG_H
 #define PLASMA_NM_CONNECTION_EDITOR_DIALOG_H
 
+#include "plasmanm_editor_export.h"
+
 #include "connectioneditortabwidget.h"
 
 #include <QDBusPendingCallWatcher>
 #include <QDialog>
 #include <QDialogButtonBox>
 
-class Q_DECL_EXPORT ConnectionEditorDialog : public QDialog
+class PLASMANM_EDITOR_EXPORT ConnectionEditorDialog : public QDialog
 {
     Q_OBJECT
 public:

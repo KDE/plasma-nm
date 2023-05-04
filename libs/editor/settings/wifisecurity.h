@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_WIFI_SECURITY_H
 #define PLASMA_NM_WIFI_SECURITY_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QWidget>
 
 #include <NetworkManagerQt/Security8021xSetting>
@@ -20,7 +22,7 @@ namespace Ui
 class WifiSecurity;
 }
 
-class Q_DECL_EXPORT WifiSecurity : public SettingWidget
+class PLASMANM_EDITOR_EXPORT WifiSecurity : public SettingWidget
 {
     Q_OBJECT
 public:

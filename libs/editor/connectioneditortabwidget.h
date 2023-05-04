@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_CONNECTION_EDITOR_TAB_WIDGET_H
 #define PLASMA_NM_CONNECTION_EDITOR_TAB_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include "connectioneditorbase.h"
 
 #include <QDBusPendingCallWatcher>
@@ -17,7 +19,7 @@ namespace Ui
 class ConnectionEditorTabWidget;
 }
 
-class Q_DECL_EXPORT ConnectionEditorTabWidget : public ConnectionEditorBase
+class PLASMANM_EDITOR_EXPORT ConnectionEditorTabWidget : public ConnectionEditorBase
 {
     Q_OBJECT
 public:

@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_MOBILE_PROVIDERS_H
 #define PLASMA_NM_MOBILE_PROVIDERS_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QDomDocument>
 #include <QHash>
 #include <QStringList>
@@ -19,7 +21,7 @@ struct ProviderData {
     QString name;
 };
 
-class Q_DECL_EXPORT MobileProviders
+class PLASMANM_EDITOR_EXPORT MobileProviders
 {
 public:
     static const QString ProvidersFile;

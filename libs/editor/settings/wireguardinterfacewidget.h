@@ -7,13 +7,15 @@
 #ifndef PLASMA_NM_WIREGUARD_INTERFACE_WIDGET_H
 #define PLASMA_NM_WIREGUARD_INTERFACE_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QWidget>
 
 #include "settingwidget.h"
 #include "ui_wireguardinterfacewidget.h"
 #include <NetworkManagerQt/WireguardSetting>
 
-class Q_DECL_EXPORT WireGuardInterfaceWidget : public SettingWidget
+class PLASMANM_EDITOR_EXPORT WireGuardInterfaceWidget : public SettingWidget
 {
     Q_OBJECT
 

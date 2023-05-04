@@ -7,12 +7,14 @@
 #ifndef PLASMA_NM_WIREGUARD_PEER_WIDGET_H
 #define PLASMA_NM_WIREGUARD_PEER_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QDialog>
 
 #include "settingwidget.h"
 #include <NetworkManagerQt/WireguardSetting>
 
-class Q_DECL_EXPORT WireGuardPeerWidget : public QDialog
+class PLASMANM_EDITOR_EXPORT WireGuardPeerWidget : public QDialog
 {
     Q_OBJECT
 

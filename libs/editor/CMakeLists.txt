@@ -129,6 +129,7 @@ ki18n_wrap_ui(plasmanm_editor_SRCS
 ecm_qt_declare_logging_category(plasmanm_editor_SRCS HEADER plasma_nm_editor.h IDENTIFIER PLASMA_NM_EDITOR_LOG CATEGORY_NAME org.kde.plasma.nm.editor DESCRIPTION "Plasma NM (editor)" EXPORT PLASMANM)
 
 add_library(plasmanm_editor SHARED ${plasmanm_editor_SRCS})
+generate_export_header(plasmanm_editor)
 
 target_include_directories(plasmanm_editor
     PUBLIC

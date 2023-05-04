@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_WIFI_CONNECTION_WIDGET_H
 #define PLASMA_NM_WIFI_CONNECTION_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QWidget>
 
 #include <NetworkManagerQt/WirelessSetting>
@@ -18,7 +20,7 @@ namespace Ui
 class WifiConnectionWidget;
 }
 
-class Q_DECL_EXPORT WifiConnectionWidget : public SettingWidget
+class PLASMANM_EDITOR_EXPORT WifiConnectionWidget : public SettingWidget
 {
     Q_OBJECT
 

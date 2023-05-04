@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_BT_WIDGET_H
 #define PLASMA_NM_BT_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QWidget>
 
 #include <NetworkManagerQt/BluetoothSetting>
@@ -18,7 +20,7 @@ namespace Ui
 class BtWidget;
 }
 
-class Q_DECL_EXPORT BtWidget : public SettingWidget
+class PLASMANM_EDITOR_EXPORT BtWidget : public SettingWidget
 {
     Q_OBJECT
 public:

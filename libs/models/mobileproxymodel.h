@@ -9,9 +9,11 @@
 #ifndef PLASMA_NM_MOBILE_PROXY_MODEL_H
 #define PLASMA_NM_MOBILE_PROXY_MODEL_H
 
+#include "plasmanm_internal_export.h"
+
 #include <QSortFilterProxyModel>
 
-class Q_DECL_EXPORT MobileProxyModel : public QSortFilterProxyModel
+class PLASMANM_INTERNAL_EXPORT MobileProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
     Q_PROPERTY(QAbstractItemModel *sourceModel READ sourceModel WRITE setSourceModel)

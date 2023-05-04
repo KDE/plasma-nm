@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_BRIDGE_WIDGET_H
 #define PLASMA_NM_BRIDGE_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QDBusPendingCallWatcher>
 #include <QListWidgetItem>
 #include <QMenu>
@@ -21,7 +23,7 @@ namespace Ui
 class BridgeWidget;
 }
 
-class Q_DECL_EXPORT BridgeWidget : public SettingWidget
+class PLASMANM_EDITOR_EXPORT BridgeWidget : public SettingWidget
 {
     Q_OBJECT
 public:

@@ -7,10 +7,12 @@
 #ifndef PLASMA_NM_CREATABLE_CONNECTIONS_MODEL_H
 #define PLASMA_NM_CREATABLE_CONNECTIONS_MODEL_H
 
+#include "plasmanm_internal_export.h"
+
 #include <NetworkManagerQt/ConnectionSettings>
 #include <QAbstractListModel>
 
-class Q_DECL_EXPORT CreatableConnectionItem : public QObject
+class PLASMANM_INTERNAL_EXPORT CreatableConnectionItem : public QObject
 {
     Q_OBJECT
 public:
@@ -61,7 +63,7 @@ private:
     QString m_vpnType;
 };
 
-class Q_DECL_EXPORT CreatableConnectionsModel : public QAbstractListModel
+class PLASMANM_INTERNAL_EXPORT CreatableConnectionsModel : public QAbstractListModel
 {
     Q_OBJECT
 public:

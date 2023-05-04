@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_IPV6_WIDGET_H
 #define PLASMA_NM_IPV6_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <NetworkManagerQt/Ipv6Setting>
 #include <QWidget>
 
@@ -18,7 +20,7 @@ namespace Ui
 class IPv6Widget;
 }
 
-class Q_DECL_EXPORT IPv6Widget : public SettingWidget
+class PLASMANM_EDITOR_EXPORT IPv6Widget : public SettingWidget
 {
     Q_OBJECT
 public:

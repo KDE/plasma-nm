@@ -4,6 +4,8 @@ add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement-libs\")
 
 
 add_library(plasmanm_internal SHARED)
+generate_export_header(plasmanm_internal)
+
 ecm_qt_declare_logging_category(plasmanm_internal HEADER plasma_nm_libs.h IDENTIFIER PLASMA_NM_LIBS_LOG CATEGORY_NAME org.kde.plasma.nm.libs DESCRIPTION "Plasma NM (libs)" EXPORT PLASMANM)
 target_sources(plasmanm_internal PRIVATE
     models/appletproxymodel.cpp

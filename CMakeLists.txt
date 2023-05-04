@@ -28,6 +28,7 @@ include(KDEGitCommitHooks)
 include(ECMQtDeclareLoggingCategory)
 
 include(FeatureSummary)
+include(GenerateExportHeader)
 
 find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core

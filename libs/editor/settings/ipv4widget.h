@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_IPV4_WIDGET_H
 #define PLASMA_NM_IPV4_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <NetworkManagerQt/Ipv4Setting>
 #include <QWidget>
 
@@ -18,7 +20,7 @@ namespace Ui
 class IPv4Widget;
 }
 
-class Q_DECL_EXPORT IPv4Widget : public SettingWidget
+class PLASMANM_EDITOR_EXPORT IPv4Widget : public SettingWidget
 {
     Q_OBJECT
 public:

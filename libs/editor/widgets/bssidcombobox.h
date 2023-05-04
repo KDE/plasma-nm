@@ -8,12 +8,14 @@
 #ifndef PLASMA_NM_BSSIDCOMBOBOX_H
 #define PLASMA_NM_BSSIDCOMBOBOX_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QComboBox>
 
 #include <NetworkManagerQt/AccessPoint>
 #include <NetworkManagerQt/Device>
 
-class Q_DECL_EXPORT BssidComboBox : public QComboBox
+class PLASMANM_EDITOR_EXPORT BssidComboBox : public QComboBox
 {
     Q_OBJECT
 public:

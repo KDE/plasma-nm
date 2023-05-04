@@ -7,10 +7,12 @@
 #ifndef PLASMA_NM_KCM_IDENTITY_MODEL_H
 #define PLASMA_NM_KCM_IDENTITY_MODEL_H
 
+#include "plasmanm_internal_export.h"
+
 #include <QIdentityProxyModel>
 #include <QModelIndex>
 
-class Q_DECL_EXPORT KcmIdentityModel : public QIdentityProxyModel
+class PLASMANM_INTERNAL_EXPORT KcmIdentityModel : public QIdentityProxyModel
 {
     Q_OBJECT
 public:

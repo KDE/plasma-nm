@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_MODEL_NETWORK_MODEL_ITEM_H
 #define PLASMA_NM_MODEL_NETWORK_MODEL_ITEM_H
 
+#include "plasmanm_internal_export.h"
+
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
@@ -14,7 +16,7 @@
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/VpnConnection>
 
-class Q_DECL_EXPORT NetworkModelItem : public QObject
+class PLASMANM_INTERNAL_EXPORT NetworkModelItem : public QObject
 {
     Q_OBJECT
 public:

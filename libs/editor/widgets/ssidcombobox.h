@@ -8,11 +8,13 @@
 #ifndef PLASMA_NM_SSIDCOMBOBOX_H
 #define PLASMA_NM_SSIDCOMBOBOX_H
 
+#include "plasmanm_editor_export.h"
+
 #include <KComboBox>
 
 #include <NetworkManagerQt/WirelessNetwork>
 
-class Q_DECL_EXPORT SsidComboBox : public KComboBox
+class PLASMANM_EDITOR_EXPORT SsidComboBox : public KComboBox
 {
     Q_OBJECT
 public:

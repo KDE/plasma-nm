@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_VLAN_WIDGET_H
 #define PLASMA_NM_VLAN_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QWidget>
 
 #include "settingwidget.h"
@@ -16,7 +18,7 @@ namespace Ui
 class VlanWidget;
 }
 
-class Q_DECL_EXPORT VlanWidget : public SettingWidget
+class PLASMANM_EDITOR_EXPORT VlanWidget : public SettingWidget
 {
     Q_OBJECT
 

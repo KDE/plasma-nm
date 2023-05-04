@@ -8,6 +8,8 @@
 #ifndef PLASMA_NM_VPN_UI_PLUGIN_H
 #define PLASMA_NM_VPN_UI_PLUGIN_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QMessageBox>
 #include <QObject>
 #include <QVariant>
@@ -25,7 +27,7 @@
 /**
  * Plugin for UI elements for VPN configuration
  */
-class Q_DECL_EXPORT VpnUiPlugin : public QObject
+class PLASMANM_EDITOR_EXPORT VpnUiPlugin : public QObject
 {
     Q_OBJECT
 public:

@@ -8,6 +8,8 @@
 #ifndef PLASMA_NM_UIUTILS_H
 #define PLASMA_NM_UIUTILS_H
 
+#include "plasmanm_editor_export.h"
+
 #include <NetworkManagerQt/AccessPoint>
 #include <NetworkManagerQt/BluetoothDevice>
 #include <NetworkManagerQt/Device>
@@ -22,7 +24,7 @@
 #include <ModemManager/ModemManager.h>
 #include <ModemManagerQt/Modem>
 
-class Q_DECL_EXPORT UiUtils
+class PLASMANM_EDITOR_EXPORT UiUtils
 {
 public:
     enum SortedConnectionType {

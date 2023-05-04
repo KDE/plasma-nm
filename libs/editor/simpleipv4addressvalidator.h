@@ -7,9 +7,11 @@
 #ifndef SIMPLEIPV4ADDRESSVALIDATOR_H
 #define SIMPLEIPV4ADDRESSVALIDATOR_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QValidator>
 
-class Q_DECL_EXPORT SimpleIpV4AddressValidator : public QValidator
+class PLASMANM_EDITOR_EXPORT SimpleIpV4AddressValidator : public QValidator
 {
     Q_OBJECT
 public:

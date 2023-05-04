@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_SECURITY8021X_H
 #define PLASMA_NM_SECURITY8021X_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QRegularExpressionValidator>
 #include <QWidget>
 
@@ -20,7 +22,7 @@ namespace Ui
 class Security8021x;
 }
 
-class Q_DECL_EXPORT Security8021x : public SettingWidget
+class PLASMANM_EDITOR_EXPORT Security8021x : public SettingWidget
 {
     Q_OBJECT
 public:

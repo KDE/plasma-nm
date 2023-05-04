@@ -7,12 +7,14 @@
 #ifndef PLASMA_NM_PASSWORD_FIELD_H
 #define PLASMA_NM_PASSWORD_FIELD_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QComboBox>
 #include <QLineEdit>
 
 #include <QVBoxLayout>
 
-class Q_DECL_EXPORT PasswordField : public QWidget
+class PLASMANM_EDITOR_EXPORT PasswordField : public QWidget
 {
     Q_OBJECT
     Q_PROPERTY(bool passwordModeEnabled WRITE setPasswordModeEnabled)

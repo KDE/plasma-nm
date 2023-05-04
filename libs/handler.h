@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_HANDLER_H
 #define PLASMA_NM_HANDLER_H
 
+#include "plasmanm_internal_export.h"
+
 #include <QDBusInterface>
 #include <QPointer>
 #include <QTimer>
@@ -19,7 +21,7 @@
 
 #include <QCoroCore>
 
-class Q_DECL_EXPORT Handler : public QObject
+class PLASMANM_INTERNAL_EXPORT Handler : public QObject
 {
     Q_OBJECT
 

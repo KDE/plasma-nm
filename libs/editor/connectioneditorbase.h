@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_CONNECTION_EDITOR_BASE_H
 #define PLASMA_NM_CONNECTION_EDITOR_BASE_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QDBusPendingCallWatcher>
 #include <QWidget>
 
@@ -16,7 +18,7 @@ class ConnectionWidget;
 class SettingWidget;
 class WifiSecurity;
 
-class Q_DECL_EXPORT ConnectionEditorBase : public QWidget
+class PLASMANM_EDITOR_EXPORT ConnectionEditorBase : public QWidget
 {
     Q_OBJECT
 public:

@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_WIRED_CONNECTION_WIDGET_H
 #define PLASMA_NM_WIRED_CONNECTION_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QWidget>
 
 #include "settingwidget.h"
@@ -16,7 +18,7 @@ namespace Ui
 class WiredConnectionWidget;
 }
 
-class Q_DECL_EXPORT WiredConnectionWidget : public SettingWidget
+class PLASMANM_EDITOR_EXPORT WiredConnectionWidget : public SettingWidget
 {
     Q_OBJECT
 

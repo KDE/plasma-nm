@@ -7,11 +7,13 @@
 #ifndef PLASMA_NM_CONFIGURATION_H
 #define PLASMA_NM_CONFIGURATION_H
 
+#include "plasmanm_editor_export.h"
+
 #include <NetworkManagerQt/Manager>
 #include <QMutex>
 #include <QObject>
 
-class Q_DECL_EXPORT Configuration : public QObject
+class PLASMANM_EDITOR_EXPORT Configuration : public QObject
 {
     Q_OBJECT
 public:

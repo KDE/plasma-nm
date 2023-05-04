@@ -7,12 +7,14 @@
 #ifndef SETTING_WIDGET_H
 #define SETTING_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <NetworkManagerQt/Setting>
 #include <QWidget>
 
 #include <KAcceleratorManager>
 
-class Q_DECL_EXPORT SettingWidget : public QWidget
+class PLASMANM_EDITOR_EXPORT SettingWidget : public QWidget
 {
     Q_OBJECT
 public:

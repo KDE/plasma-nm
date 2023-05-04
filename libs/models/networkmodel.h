@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_NETWORK_MODEL_H
 #define PLASMA_NM_NETWORK_MODEL_H
 
+#include "plasmanm_internal_export.h"
+
 #include <QAbstractListModel>
 #include <QQueue>
 
@@ -19,7 +21,7 @@
 
 #include <ModemManagerQt/Modem>
 
-class Q_DECL_EXPORT NetworkModel : public QAbstractListModel
+class PLASMANM_INTERNAL_EXPORT NetworkModel : public QAbstractListModel
 {
     Q_OBJECT
 public:

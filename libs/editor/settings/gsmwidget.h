@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_GSM_WIDGET_H
 #define PLASMA_NM_GSM_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QWidget>
 
 #include <NetworkManagerQt/Setting>
@@ -18,7 +20,7 @@ namespace Ui
 class GsmWidget;
 }
 
-class Q_DECL_EXPORT GsmWidget : public SettingWidget
+class PLASMANM_EDITOR_EXPORT GsmWidget : public SettingWidget
 {
     Q_OBJECT
 public:

@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_PPPOE_WIDGET_H
 #define PLASMA_NM_PPPOE_WIDGET_H
 
+#include "plasmanm_editor_export.h"
+
 #include <QWidget>
 
 #include <NetworkManagerQt/Setting>
@@ -18,7 +20,7 @@ namespace Ui
 class PppoeWidget;
 }
 
-class Q_DECL_EXPORT PppoeWidget : public SettingWidget
+class PLASMANM_EDITOR_EXPORT PppoeWidget : public SettingWidget
 {
     Q_OBJECT
 public:

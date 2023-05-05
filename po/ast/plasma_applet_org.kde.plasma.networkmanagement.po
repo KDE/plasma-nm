@@ -1,0 +1,206 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+#
+# Enol P. <enolp@softastur.org>, 2023.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-04-12 02:13+0000\n"
+"PO-Revision-Date: 2023-05-03 23:21+0200\n"
+"Last-Translator: Enol P. <enolp@softastur.org>\n"
+"Language-Team: \n"
+"Language: ast_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.04.0\n"
+
+#: contents/ui/ConnectionItem.qml:60
+#, kde-format
+msgid "Connect"
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:60
+#, kde-format
+msgid "Disconnect"
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:85
+#, kde-format
+msgid "Show Network's QR Code"
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:90
+#, kde-format
+msgid "Configure…"
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:121
+#, kde-format
+msgid "Speed"
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:126
+#, kde-format
+msgid "Details"
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:169
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Current download speed is %1 kibibytes per second; current upload speed is "
+"%2 kibibytes per second"
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:282
+#, kde-format
+msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgstr ""
+
+#: contents/ui/ConnectionItem.qml:286
+#, kde-format
+msgid "Connected"
+msgstr ""
+
+#: contents/ui/DetailsText.qml:45
+#, kde-format
+msgid "Copy"
+msgstr ""
+
+#: contents/ui/main.qml:24
+#, kde-format
+msgid "Networks"
+msgstr ""
+
+#: contents/ui/main.qml:33
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Middle-click to turn off Airplane Mode"
+msgstr ""
+
+#: contents/ui/main.qml:35
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Middle-click to turn on Airplane Mode"
+msgstr ""
+
+#: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
+#, kde-format
+msgid "Enable Wi-Fi"
+msgstr ""
+
+#: contents/ui/main.qml:87
+#, kde-format
+msgid "Enable Mobile Network"
+msgstr ""
+
+#: contents/ui/main.qml:95
+#, kde-format
+msgid "Enable Airplane Mode"
+msgstr ""
+
+#: contents/ui/main.qml:101
+#, kde-format
+msgid "Open Network Login Page…"
+msgstr ""
+
+#: contents/ui/main.qml:106
+#, kde-format
+msgid "&Configure Network Connections…"
+msgstr ""
+
+#: contents/ui/main.qml:143
+#, kde-format
+msgctxt "@title:window"
+msgid "QR Code for %1"
+msgstr ""
+
+#: contents/ui/PasswordField.qml:16
+#, kde-format
+msgid "Password…"
+msgstr "Contraseña…"
+
+#: contents/ui/PopupDialog.qml:124
+#, kde-format
+msgid "Airplane mode is enabled"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:128
+#, kde-format
+msgid "Wireless and mobile networks are deactivated"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:130
+#, kde-format
+msgid "Wireless is deactivated"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:133
+#, kde-format
+msgid "Mobile network is deactivated"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:136
+#, kde-format
+msgid "No matches"
+msgstr ""
+
+#: contents/ui/PopupDialog.qml:138
+#, kde-format
+msgid "No available connections"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:118
+#, kde-format
+msgid "Enable mobile network"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:143
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:144
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:154
+#, kde-format
+msgid "Hotspot"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:178 contents/ui/Toolbar.qml:189
+#, kde-format
+msgid "Disable Hotspot"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:189
+#, kde-format
+msgid "Create Hotspot"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:221
+#, kde-format
+msgid "Configure network connections…"
+msgstr ""
+
+#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:106
+#, kde-format
+msgid "/s"
+msgstr ""
+
+#: contents/ui/TrafficMonitor.qml:88
+#, kde-format
+msgid "Upload"
+msgstr ""
+
+#: contents/ui/TrafficMonitor.qml:88
+#, kde-format
+msgid "Download"
+msgstr ""

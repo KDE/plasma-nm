@@ -21,6 +21,7 @@ RowLayout {
     readonly property var displayWwanMessage: !wwanSwitchButton.checked && wwanSwitchButton.visible
     readonly property var displayplaneModeMessage: planeModeSwitchButton.checked && planeModeSwitchButton.visible
 
+    property bool hasConnections
     property alias searchTextField: searchTextField
 
     PlasmaCore.Svg {
@@ -195,7 +196,7 @@ RowLayout {
 
         Layout.fillWidth: true
 
-        enabled: connectionView.count > 0 || text.length > 0
+        enabled: toolbar.hasConnections || text.length > 0
 
         // This uses expanded to ensure the binding gets reevaluated
         // when the plasmoid is shown again and that way ensure we are

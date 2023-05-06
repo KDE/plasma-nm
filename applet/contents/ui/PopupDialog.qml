@@ -15,6 +15,9 @@ import org.kde.plasma.plasmoid 2.0
 
 PlasmaExtras.Representation {
     id: full
+
+    required property PlasmaNM.Handler nmHandler
+
     collapseMarginsHint: true
 
     Component {
@@ -57,6 +60,28 @@ PlasmaExtras.Representation {
                 sourceComponent: stack.currentItem?.headerItems
                 visible: !!item
             }
+        }
+    }
+
+    Connections {
+        target: full.nmHandler
+        function onWifiCodeReceived(data, connectionName) {
+            if (data.length === 0) {
+                console.error("Cannot create QR code component: Unsupported connection");
+                return;
+            }
+
+            const showQRComponent = Qt.createComponent("ShareNetworkQrCodePage.qml");
+            if (showQRComponent.status === Component.Error) {
+                console.warn("Cannot create QR code component:", showQRComponent.errorString());
+                return;
+            }
+
+            full.Plasmoid.expanded = true; // just in case.
+            stack.push(showQRComponent, {
+                content: data,
+                connectionName
+            });
         }
     }
 

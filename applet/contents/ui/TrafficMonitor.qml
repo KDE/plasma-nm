@@ -6,7 +6,7 @@
 
 import QtQuick 2.4
 import QtQuick.Layouts 1.4
-import org.kde.kcoreaddons 1.0 as KCoreAddons
+import org.kde.coreaddons 1.0 as KCoreAddons
 import org.kde.quickcharts 1.0 as QuickCharts
 import org.kde.quickcharts.controls 1.0 as QuickChartControls
 import org.kde.kirigami 2.15 as Kirigami

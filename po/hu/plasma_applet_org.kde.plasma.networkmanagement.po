@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 02:13+0000\n"
+"POT-Creation-Date: 2023-05-08 02:08+0000\n"
 "PO-Revision-Date: 2021-10-17 16:07+0200\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -68,6 +68,36 @@ msgstr "Kapcsolódva, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Kapcsolódva"
 
+#: contents/ui/ConnectionListPage.qml:83
+#, kde-format
+msgid "Airplane mode is enabled"
+msgstr "Repülős üzemmód bekapcsolva"
+
+#: contents/ui/ConnectionListPage.qml:87
+#, kde-format
+msgid "Wireless and mobile networks are deactivated"
+msgstr "Vezeték nélküli és mobilhálózatok deaktiválva"
+
+#: contents/ui/ConnectionListPage.qml:89
+#, kde-format
+msgid "Wireless is deactivated"
+msgstr "Vezeték nélküli deaktiválva"
+
+#: contents/ui/ConnectionListPage.qml:92
+#, kde-format
+msgid "Mobile network is deactivated"
+msgstr "Mobilhálózat deaktiválva"
+
+#: contents/ui/ConnectionListPage.qml:95
+#, kde-format
+msgid "No matches"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:97
+#, kde-format
+msgid "No available connections"
+msgstr "Nincsenek elérhető kapcsolatok"
+
 #: contents/ui/DetailsText.qml:45
 #, kde-format
 msgid "Copy"
@@ -90,80 +120,56 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:80 contents/ui/Toolbar.qml:70
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi bekapcsolása"
 
-#: contents/ui/main.qml:87
+#: contents/ui/main.qml:88
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "Mobil adatkapcsolat bekapcsolása"
 
-#: contents/ui/main.qml:95
+#: contents/ui/main.qml:96
 #, fuzzy, kde-format
 #| msgid "Enable airplane mode"
 msgid "Enable Airplane Mode"
 msgstr "Repülő üzemmód bekapcsolása"
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Hálózat bejelentkező ablakának megnyitása…"
 
-#: contents/ui/main.qml:106
+#: contents/ui/main.qml:107
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Hálózati kapcsolatok szer&kesztése…"
-
-#: contents/ui/main.qml:143
-#, kde-format
-msgctxt "@title:window"
-msgid "QR Code for %1"
-msgstr ""
 
 #: contents/ui/PasswordField.qml:16
 #, kde-format
 msgid "Password…"
 msgstr "Jelszó…"
 
-#: contents/ui/PopupDialog.qml:124
-#, kde-format
-msgid "Airplane mode is enabled"
-msgstr "Repülős üzemmód bekapcsolva"
+#: contents/ui/PopupDialog.qml:52
+#, fuzzy, kde-format
+#| msgid "&Configure Network Connections…"
+msgctxt "@action:button"
+msgid "Return to Network Connections"
+msgstr "Hálózati kapcsolatok szer&kesztése…"
 
-#: contents/ui/PopupDialog.qml:128
+#: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
-msgid "Wireless and mobile networks are deactivated"
-msgstr "Vezeték nélküli és mobilhálózatok deaktiválva"
-
-#: contents/ui/PopupDialog.qml:130
-#, kde-format
-msgid "Wireless is deactivated"
-msgstr "Vezeték nélküli deaktiválva"
-
-#: contents/ui/PopupDialog.qml:133
-#, kde-format
-msgid "Mobile network is deactivated"
-msgstr "Mobilhálózat deaktiválva"
-
-#: contents/ui/PopupDialog.qml:136
-#, kde-format
-msgid "No matches"
+msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:138
-#, kde-format
-msgid "No available connections"
-msgstr "Nincsenek elérhető kapcsolatok"
-
-#: contents/ui/Toolbar.qml:118
+#: contents/ui/Toolbar.qml:119
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Mobil adatkapcsolat bekapcsolása"
 
-#: contents/ui/Toolbar.qml:143
+#: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
@@ -171,7 +177,7 @@ msgstr ""
 "Repülős üzemmód kikapcsolása<nl/><nl/>Ez bekapcsolja a Wi-Fi-t és a "
 "Bluetooth-t"
 
-#: contents/ui/Toolbar.qml:144
+#: contents/ui/Toolbar.qml:145
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
@@ -179,22 +185,22 @@ msgstr ""
 "Repülős üzemmód bekapcsolása<nl/><nl/>Ez kikapcsolja a Wi-Fi-t és a "
 "Bluetooth-t"
 
-#: contents/ui/Toolbar.qml:154
+#: contents/ui/Toolbar.qml:155
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: contents/ui/Toolbar.qml:178 contents/ui/Toolbar.qml:189
+#: contents/ui/Toolbar.qml:179 contents/ui/Toolbar.qml:190
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Hotspot kikapcsolása"
 
-#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:189
+#: contents/ui/Toolbar.qml:184 contents/ui/Toolbar.qml:190
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Hotspot létrehozása"
 
-#: contents/ui/Toolbar.qml:221
+#: contents/ui/Toolbar.qml:222
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Hálózati kapcsolatok szerkesztése…"

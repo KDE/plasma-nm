@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 02:13+0000\n"
+"POT-Creation-Date: 2023-05-08 02:08+0000\n"
 "PO-Revision-Date: 2022-12-28 00:50+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -73,6 +73,36 @@ msgstr "Prisijungta, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Prisijungta"
 
+#: contents/ui/ConnectionListPage.qml:83
+#, kde-format
+msgid "Airplane mode is enabled"
+msgstr "Lėktuvo veiksena yra įjungta"
+
+#: contents/ui/ConnectionListPage.qml:87
+#, kde-format
+msgid "Wireless and mobile networks are deactivated"
+msgstr "Belaidis ir mobilusis tinklas yra pasyvinti"
+
+#: contents/ui/ConnectionListPage.qml:89
+#, kde-format
+msgid "Wireless is deactivated"
+msgstr "Belaidis yra pasyvintas"
+
+#: contents/ui/ConnectionListPage.qml:92
+#, kde-format
+msgid "Mobile network is deactivated"
+msgstr "Mobilusis tinklas yra pasyvintas"
+
+#: contents/ui/ConnectionListPage.qml:95
+#, kde-format
+msgid "No matches"
+msgstr "Nėra atitikmenų"
+
+#: contents/ui/ConnectionListPage.qml:97
+#, kde-format
+msgid "No available connections"
+msgstr "Nėra prieinamų ryšių"
+
 #: contents/ui/DetailsText.qml:45
 #, kde-format
 msgid "Copy"
@@ -97,107 +127,83 @@ msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 "Spustelėkite viduriniuoju pelės mygtuku, kad įjungtumėte lėktuvo veikseną"
 
-#: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:80 contents/ui/Toolbar.qml:70
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Įjungti belaidį (Wi-Fi)"
 
-#: contents/ui/main.qml:87
+#: contents/ui/main.qml:88
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Įjungti mobilųjį tinklą"
 
-#: contents/ui/main.qml:95
+#: contents/ui/main.qml:96
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Įjungti lėktuvo veikseną"
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Atverti prisijungimo prie tinklo puslapį…"
 
-#: contents/ui/main.qml:106
+#: contents/ui/main.qml:107
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Konfigūruoti tinklo ryšius…"
-
-#: contents/ui/main.qml:143
-#, kde-format
-msgctxt "@title:window"
-msgid "QR Code for %1"
-msgstr "„%1“ QR kodas"
 
 #: contents/ui/PasswordField.qml:16
 #, kde-format
 msgid "Password…"
 msgstr "Slaptažodis…"
 
-#: contents/ui/PopupDialog.qml:124
-#, kde-format
-msgid "Airplane mode is enabled"
-msgstr "Lėktuvo veiksena yra įjungta"
+#: contents/ui/PopupDialog.qml:52
+#, fuzzy, kde-format
+#| msgid "&Configure Network Connections…"
+msgctxt "@action:button"
+msgid "Return to Network Connections"
+msgstr "&Konfigūruoti tinklo ryšius…"
 
-#: contents/ui/PopupDialog.qml:128
+#: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
-msgid "Wireless and mobile networks are deactivated"
-msgstr "Belaidis ir mobilusis tinklas yra pasyvinti"
+msgid "Scan this QR code with another device to connect to the \"%1\" network."
+msgstr ""
 
-#: contents/ui/PopupDialog.qml:130
-#, kde-format
-msgid "Wireless is deactivated"
-msgstr "Belaidis yra pasyvintas"
-
-#: contents/ui/PopupDialog.qml:133
-#, kde-format
-msgid "Mobile network is deactivated"
-msgstr "Mobilusis tinklas yra pasyvintas"
-
-#: contents/ui/PopupDialog.qml:136
-#, kde-format
-msgid "No matches"
-msgstr "Nėra atitikmenų"
-
-#: contents/ui/PopupDialog.qml:138
-#, kde-format
-msgid "No available connections"
-msgstr "Nėra prieinamų ryšių"
-
-#: contents/ui/Toolbar.qml:118
+#: contents/ui/Toolbar.qml:119
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Įjungti mobilųjį tinklą"
 
-#: contents/ui/Toolbar.qml:143
+#: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Išjungti lėktuvo veikseną<nl/><nl/>Tai įjungs belaidį (Wi-Fi) ir Bluetooth"
 
-#: contents/ui/Toolbar.qml:144
+#: contents/ui/Toolbar.qml:145
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Įjungti lėktuvo veikseną<nl/><nl/>Tai išjungs belaidį (Wi-Fi) ir Bluetooth"
 
-#: contents/ui/Toolbar.qml:154
+#: contents/ui/Toolbar.qml:155
 #, kde-format
 msgid "Hotspot"
 msgstr "Viešosios prieigos taškas"
 
-#: contents/ui/Toolbar.qml:178 contents/ui/Toolbar.qml:189
+#: contents/ui/Toolbar.qml:179 contents/ui/Toolbar.qml:190
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Išjungti viešosios prieigos tašką"
 
-#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:189
+#: contents/ui/Toolbar.qml:184 contents/ui/Toolbar.qml:190
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Sukurti viešosios prieigos tašką"
 
-#: contents/ui/Toolbar.qml:221
+#: contents/ui/Toolbar.qml:222
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Konfigūruoti tinklo ryšius…"
@@ -216,6 +222,10 @@ msgstr "Išsiuntimas"
 #, kde-format
 msgid "Download"
 msgstr "Atsiuntimas"
+
+#~ msgctxt "@title:window"
+#~ msgid "QR Code for %1"
+#~ msgstr "„%1“ QR kodas"
 
 #~ msgctxt "@info:tooltip %1 is the name of a network connection"
 #~ msgid "Connect to %1"

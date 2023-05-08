@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 02:13+0000\n"
+"POT-Creation-Date: 2023-05-08 02:08+0000\n"
 "PO-Revision-Date: 2020-09-28 13:41+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -69,6 +69,36 @@ msgstr "Ühendatud, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Ühendatud"
 
+#: contents/ui/ConnectionListPage.qml:83
+#, kde-format
+msgid "Airplane mode is enabled"
+msgstr "Lennurežiim on sisse lülitatud"
+
+#: contents/ui/ConnectionListPage.qml:87
+#, kde-format
+msgid "Wireless and mobile networks are deactivated"
+msgstr "Juhtmeta ja mobiilne side on välja lülitatud"
+
+#: contents/ui/ConnectionListPage.qml:89
+#, kde-format
+msgid "Wireless is deactivated"
+msgstr "Juhtmeta side on välja lülitatud"
+
+#: contents/ui/ConnectionListPage.qml:92
+#, kde-format
+msgid "Mobile network is deactivated"
+msgstr "Mobiilne side on välja lülitatud"
+
+#: contents/ui/ConnectionListPage.qml:95
+#, kde-format
+msgid "No matches"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:97
+#, kde-format
+msgid "No available connections"
+msgstr "Ühtegi ühendust pole saadaval"
+
 #: contents/ui/DetailsText.qml:45
 #, kde-format
 msgid "Copy"
@@ -91,40 +121,34 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:80 contents/ui/Toolbar.qml:70
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi lubamine"
 
-#: contents/ui/main.qml:87
+#: contents/ui/main.qml:88
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "Mobiilandmeside lubamine"
 
-#: contents/ui/main.qml:95
+#: contents/ui/main.qml:96
 #, fuzzy, kde-format
 #| msgid "Enable airplane mode"
 msgid "Enable Airplane Mode"
 msgstr "Lennurežiimi lubamine"
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, fuzzy, kde-format
 #| msgid "Open Network Login Page..."
 msgid "Open Network Login Page…"
 msgstr "Ava võrku sisselogimise lehekülg ..."
 
-#: contents/ui/main.qml:106
+#: contents/ui/main.qml:107
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections..."
 msgid "&Configure Network Connections…"
 msgstr "Seadista &võrguühendusi ..."
-
-#: contents/ui/main.qml:143
-#, kde-format
-msgctxt "@title:window"
-msgid "QR Code for %1"
-msgstr ""
 
 #: contents/ui/PasswordField.qml:16
 #, fuzzy, kde-format
@@ -132,71 +156,54 @@ msgstr ""
 msgid "Password…"
 msgstr "Parool:"
 
-#: contents/ui/PopupDialog.qml:124
-#, kde-format
-msgid "Airplane mode is enabled"
-msgstr "Lennurežiim on sisse lülitatud"
+#: contents/ui/PopupDialog.qml:52
+#, fuzzy, kde-format
+#| msgctxt "Edit connection dialog caption"
+#| msgid "Edit Network Connection"
+msgctxt "@action:button"
+msgid "Return to Network Connections"
+msgstr "Võrguühenduse muutmine"
 
-#: contents/ui/PopupDialog.qml:128
+#: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
-msgid "Wireless and mobile networks are deactivated"
-msgstr "Juhtmeta ja mobiilne side on välja lülitatud"
-
-#: contents/ui/PopupDialog.qml:130
-#, kde-format
-msgid "Wireless is deactivated"
-msgstr "Juhtmeta side on välja lülitatud"
-
-#: contents/ui/PopupDialog.qml:133
-#, kde-format
-msgid "Mobile network is deactivated"
-msgstr "Mobiilne side on välja lülitatud"
-
-#: contents/ui/PopupDialog.qml:136
-#, kde-format
-msgid "No matches"
+msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/PopupDialog.qml:138
-#, kde-format
-msgid "No available connections"
-msgstr "Ühtegi ühendust pole saadaval"
-
-#: contents/ui/Toolbar.qml:118
+#: contents/ui/Toolbar.qml:119
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Mobiilandmeside lubamine"
 
-#: contents/ui/Toolbar.qml:143
+#: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Lennurežiimi välja lülitamine<nl/><nl/>See lülitab sisse Wi-Fi ja Bluetoothi"
 
-#: contents/ui/Toolbar.qml:144
+#: contents/ui/Toolbar.qml:145
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Lennurežiimi sisse lülitamine<nl/><nl/>See lülitab välja Wi-Fi ja Bluetoothi"
 
-#: contents/ui/Toolbar.qml:154
+#: contents/ui/Toolbar.qml:155
 #, kde-format
 msgid "Hotspot"
 msgstr "Pääsupunkt"
 
-#: contents/ui/Toolbar.qml:178 contents/ui/Toolbar.qml:189
+#: contents/ui/Toolbar.qml:179 contents/ui/Toolbar.qml:190
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Keela pääsupunkt"
 
-#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:189
+#: contents/ui/Toolbar.qml:184 contents/ui/Toolbar.qml:190
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Loo pääsupunkt"
 
-#: contents/ui/Toolbar.qml:221
+#: contents/ui/Toolbar.qml:222
 #, fuzzy, kde-format
 #| msgid "Configure network connections..."
 msgid "Configure network connections…"
@@ -2658,10 +2665,6 @@ msgstr "Allalaadimine"
 #~ "Tsoon määrab ühenduse usaldatavuse. Vaikimisi tsooni pole, selle "
 #~ "valimisel muutub valitud tsoon tulemüüri vaikimisi tsooniks. Seda on "
 #~ "mõtet kasutada ainult aktiivse tulemüüri korral."
-
-#~ msgctxt "Edit connection dialog caption"
-#~ msgid "Edit Network Connection"
-#~ msgstr "Võrguühenduse muutmine"
 
 #~ msgctxt "Add connection dialog caption"
 #~ msgid "Add Network Connection"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-12 02:13+0000\n"
+"POT-Creation-Date: 2023-05-08 02:08+0000\n"
 "PO-Revision-Date: 2023-01-25 15:58+0100\n"
 "Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -69,6 +69,36 @@ msgstr "Verbunden, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Verbunden"
 
+#: contents/ui/ConnectionListPage.qml:83
+#, kde-format
+msgid "Airplane mode is enabled"
+msgstr "Flugmodus ist aktiviert"
+
+#: contents/ui/ConnectionListPage.qml:87
+#, kde-format
+msgid "Wireless and mobile networks are deactivated"
+msgstr "Dratlose und mobile Netze sind deaktiviert"
+
+#: contents/ui/ConnectionListPage.qml:89
+#, kde-format
+msgid "Wireless is deactivated"
+msgstr "Drahtloses Netzwerk ist abgeschaltet"
+
+#: contents/ui/ConnectionListPage.qml:92
+#, kde-format
+msgid "Mobile network is deactivated"
+msgstr "Mobiles Netzwerk ist abgeschaltet"
+
+#: contents/ui/ConnectionListPage.qml:95
+#, kde-format
+msgid "No matches"
+msgstr "Keine Übereinstimmungen"
+
+#: contents/ui/ConnectionListPage.qml:97
+#, kde-format
+msgid "No available connections"
+msgstr "Keine verfügbaren Verbindungen"
+
 #: contents/ui/DetailsText.qml:45
 #, kde-format
 msgid "Copy"
@@ -91,107 +121,83 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Mittelklick zum Aktivieren des Flugmodus"
 
-#: contents/ui/main.qml:79 contents/ui/Toolbar.qml:69
+#: contents/ui/main.qml:80 contents/ui/Toolbar.qml:70
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi aktivieren"
 
-#: contents/ui/main.qml:87
+#: contents/ui/main.qml:88
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Mobiles Netzwerk aktivieren"
 
-#: contents/ui/main.qml:95
+#: contents/ui/main.qml:96
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Flugmodus aktivieren"
 
-#: contents/ui/main.qml:101
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Anmeldungsseite des Netzwerks öffnen ..."
 
-#: contents/ui/main.qml:106
+#: contents/ui/main.qml:107
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Netzwerkverbindungen einri&chten ..."
-
-#: contents/ui/main.qml:143
-#, kde-format
-msgctxt "@title:window"
-msgid "QR Code for %1"
-msgstr "QR-Code für %1"
 
 #: contents/ui/PasswordField.qml:16
 #, kde-format
 msgid "Password…"
 msgstr "Passwort ..."
 
-#: contents/ui/PopupDialog.qml:124
-#, kde-format
-msgid "Airplane mode is enabled"
-msgstr "Flugmodus ist aktiviert"
+#: contents/ui/PopupDialog.qml:52
+#, fuzzy, kde-format
+#| msgid "&Configure Network Connections…"
+msgctxt "@action:button"
+msgid "Return to Network Connections"
+msgstr "Netzwerkverbindungen einri&chten ..."
 
-#: contents/ui/PopupDialog.qml:128
+#: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
-msgid "Wireless and mobile networks are deactivated"
-msgstr "Dratlose und mobile Netze sind deaktiviert"
+msgid "Scan this QR code with another device to connect to the \"%1\" network."
+msgstr ""
 
-#: contents/ui/PopupDialog.qml:130
-#, kde-format
-msgid "Wireless is deactivated"
-msgstr "Drahtloses Netzwerk ist abgeschaltet"
-
-#: contents/ui/PopupDialog.qml:133
-#, kde-format
-msgid "Mobile network is deactivated"
-msgstr "Mobiles Netzwerk ist abgeschaltet"
-
-#: contents/ui/PopupDialog.qml:136
-#, kde-format
-msgid "No matches"
-msgstr "Keine Übereinstimmungen"
-
-#: contents/ui/PopupDialog.qml:138
-#, kde-format
-msgid "No available connections"
-msgstr "Keine verfügbaren Verbindungen"
-
-#: contents/ui/Toolbar.qml:118
+#: contents/ui/Toolbar.qml:119
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Mobiles Netzwerk aktivieren"
 
-#: contents/ui/Toolbar.qml:143
+#: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Flugmodus deaktivieren<nl/><nl/>Damit werden WLAN und Bluetooth aktiviert"
 
-#: contents/ui/Toolbar.qml:144
+#: contents/ui/Toolbar.qml:145
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Flugmodus aktivieren<nl/><nl/>Damit werden WLAN und Bluetooth deaktiviert"
 
-#: contents/ui/Toolbar.qml:154
+#: contents/ui/Toolbar.qml:155
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: contents/ui/Toolbar.qml:178 contents/ui/Toolbar.qml:189
+#: contents/ui/Toolbar.qml:179 contents/ui/Toolbar.qml:190
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Hotspot deaktivieren"
 
-#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:189
+#: contents/ui/Toolbar.qml:184 contents/ui/Toolbar.qml:190
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Hotspot erstellen"
 
-#: contents/ui/Toolbar.qml:221
+#: contents/ui/Toolbar.qml:222
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Netzwerkverbindungen bearbeiten ..."
@@ -210,6 +216,10 @@ msgstr "Hochladen"
 #, kde-format
 msgid "Download"
 msgstr "Herunterladen"
+
+#~ msgctxt "@title:window"
+#~ msgid "QR Code for %1"
+#~ msgstr "QR-Code für %1"
 
 #~ msgctxt "@info:tooltip %1 is the name of a network connection"
 #~ msgid "Connect to %1"

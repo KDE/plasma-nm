@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-08 02:08+0000\n"
-"PO-Revision-Date: 2022-12-09 10:40+0100\n"
+"PO-Revision-Date: 2023-05-09 10:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -151,16 +151,16 @@ msgid "Password…"
 msgstr "პაროლი…"
 
 #: contents/ui/PopupDialog.qml:52
-#, fuzzy, kde-format
-#| msgid "&Configure Network Connections…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "&ქსელური შეერთებების მართვა…"
+msgstr "ქსელურ შეერთებებზე დაბრუნებ"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+"\"%1\" ქსელთან მისაერთებლად ეს QR კოდი შესაბამისი მოწყობილობით დაასკანერეთ."
 
 #: contents/ui/Toolbar.qml:119
 #, kde-format

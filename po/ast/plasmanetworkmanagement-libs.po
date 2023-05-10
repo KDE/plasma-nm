@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 02:13+0000\n"
-"PO-Revision-Date: 2023-05-01 23:41+0200\n"
+"PO-Revision-Date: 2023-05-09 22:43+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -66,13 +66,13 @@ msgstr ""
 #: declarative/networkstatus.cpp:172 editor/uiutils.cpp:220
 #, kde-format
 msgid "VPN"
-msgstr ""
+msgstr "VPN"
 
 #: declarative/networkstatus.cpp:194 models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256
 #, kde-format
 msgid "WireGuard"
-msgstr ""
+msgstr "WireGuard"
 
 #: declarative/networkstatus.cpp:200
 #, kde-format
@@ -136,7 +136,7 @@ msgstr ""
 #: models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: editor/connectioneditorbase.cpp:215
 #, kde-format
@@ -157,17 +157,17 @@ msgstr ""
 #: editor/connectioneditorbase.cpp:231 editor/uiutils.cpp:196
 #, kde-format
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: editor/connectioneditorbase.cpp:236
 #, kde-format
 msgid "GSM"
-msgstr ""
+msgstr "GSM"
 
 #: editor/connectioneditorbase.cpp:238 editor/connectioneditorbase.cpp:281
 #, kde-format
 msgid "PPP"
-msgstr ""
+msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:242 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:211 models/creatableconnectionsmodel.cpp:142
@@ -208,7 +208,7 @@ msgstr ""
 #: editor/connectioneditorbase.cpp:270
 #, kde-format
 msgid "VPN (%1)"
-msgstr ""
+msgstr "VPN (%1)"
 
 #: editor/connectioneditorbase.cpp:287
 #, kde-format
@@ -250,7 +250,7 @@ msgstr ""
 #: editor/settings/teamwidget.cpp:36
 #, kde-format
 msgid "Ethernet"
-msgstr ""
+msgstr "Ethernet"
 
 #: editor/settings/bondwidget.cpp:39
 #, kde-format
@@ -261,7 +261,7 @@ msgstr ""
 #, kde-format
 msgctxt "bond mode"
 msgid "Round-robin"
-msgstr ""
+msgstr "Round-robin"
 
 #: editor/settings/bondwidget.cpp:49
 #, kde-format
@@ -279,7 +279,7 @@ msgstr ""
 #, kde-format
 msgctxt "bond mode"
 msgid "802.3ad"
-msgstr ""
+msgstr "802.3ad"
 
 #: editor/settings/bondwidget.cpp:52
 #, kde-format
@@ -303,7 +303,7 @@ msgstr ""
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "ARP"
-msgstr ""
+msgstr "ARP"
 
 #: editor/settings/bondwidget.cpp:243 editor/settings/bridgewidget.cpp:193
 #: editor/settings/teamwidget.cpp:182
@@ -321,7 +321,7 @@ msgstr ""
 #: editor/uiutils.cpp:217
 #, kde-format
 msgid "VLAN"
-msgstr ""
+msgstr "VLAN"
 
 #: editor/settings/btwidget.cpp:20
 #, kde-format
@@ -355,7 +355,7 @@ msgstr ""
 #, kde-format
 msgctxt "Header text for IPv4 address"
 msgid "Address"
-msgstr ""
+msgstr "Direición"
 
 #: editor/settings/ipv4widget.cpp:58 editor/widgets/ipv4routeswidget.cpp:27
 #, kde-format
@@ -367,7 +367,7 @@ msgstr ""
 #, kde-format
 msgctxt "Header text for IPv4 gateway"
 msgid "Gateway"
-msgstr ""
+msgstr "Pasera"
 
 #: editor/settings/ipv4widget.cpp:271 editor/settings/ipv6widget.cpp:262
 #, kde-format
@@ -411,7 +411,7 @@ msgstr ""
 #, kde-format
 msgctxt "Milliseconds"
 msgid " ms"
-msgstr ""
+msgstr " ms"
 
 #: editor/settings/ipv4widget.cpp:444
 #, kde-format
@@ -438,7 +438,7 @@ msgstr ""
 #, kde-format
 msgctxt "Header text for IPv6 prefix"
 msgid "Prefix"
-msgstr ""
+msgstr "Prefixu"
 
 #: editor/settings/ipv6widget.cpp:46 editor/widgets/ipv6routeswidget.cpp:30
 #, kde-format
@@ -474,39 +474,39 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
 #, kde-format
 msgid "Authentication:"
-msgstr ""
+msgstr "Autenticación:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
 #: editor/settings/ui/802-1x.ui:38 editor/settings/ui/802-1x.ui:675
 #, kde-format
 msgid "MD5"
-msgstr ""
+msgstr "MD5"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:43
 #, kde-format
 msgid "TLS"
-msgstr ""
+msgstr "TLS"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
 #, kde-format
 msgid "LEAP"
-msgstr ""
+msgstr "LEAP"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:53
 #, kde-format
 msgid "PWD"
-msgstr ""
+msgstr "PWD"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:58
 #, kde-format
 msgid "FAST"
-msgstr ""
+msgstr "FAST"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:63
@@ -551,13 +551,13 @@ msgstr ""
 #: editor/settings/ui/wifisecurity.ui:231
 #, kde-format
 msgid "Password:"
-msgstr ""
+msgstr "Contraseña:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/802-1x.ui:117
 #, kde-format
 msgid "Identity:"
-msgstr ""
+msgstr "Identidá:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_32)
 #. i18n: ectx: property (text), widget (QLabel, label_30)
@@ -566,7 +566,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:718
 #, kde-format
 msgid "Domain:"
-msgstr ""
+msgstr "Dominiu:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/802-1x.ui:140
@@ -600,7 +600,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:215
@@ -614,13 +614,13 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:26
 #, kde-format
 msgid "Private key:"
-msgstr ""
+msgstr "Clave privada:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/802-1x.ui:256
 #, kde-format
 msgid "Private key password:"
-msgstr ""
+msgstr "Contraseña de la clave privada:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #. i18n: ectx: property (text), widget (QLabel, label_19)
@@ -629,7 +629,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:588
 #, kde-format
 msgid "Anonymous identity:"
-msgstr ""
+msgstr "Identidá anónima:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
 #: editor/settings/ui/802-1x.ui:358
@@ -675,7 +675,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:427 editor/settings/ui/802-1x.ui:680
 #, kde-format
 msgid "GTC"
-msgstr ""
+msgstr "GTC"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
 #. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
@@ -685,28 +685,28 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:670 editor/settings/ui/ppp.ui:68
 #, kde-format
 msgid "MSCHAPv2"
-msgstr ""
+msgstr "MSCHAPv2"
 
 #. i18n: ectx: property (text), widget (QCheckBox, pap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:521 editor/settings/ui/ppp.ui:58
 #, kde-format
 msgid "PAP"
-msgstr ""
+msgstr "PAP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mschap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:526 editor/settings/ui/ppp.ui:48
 #, kde-format
 msgid "MSCHAP"
-msgstr ""
+msgstr "MSCHAP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:536 editor/settings/ui/ppp.ui:78
 #, kde-format
 msgid "CHAP"
-msgstr ""
+msgstr "CHAP"
 
 #. i18n: ectx: property (text), widget (QLabel, label_26)
 #: editor/settings/ui/802-1x.ui:618
@@ -725,13 +725,13 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:640
 #, kde-format
 msgid "Version 0"
-msgstr ""
+msgstr "Versión 0"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:645
 #, kde-format
 msgid "Version 1"
-msgstr ""
+msgstr "Versión 1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/bond.ui:21 editor/settings/ui/bridge.ui:18
@@ -793,7 +793,7 @@ msgstr ""
 #: editor/settings/ui/bond.ui:225
 #, kde-format
 msgid " ms"
-msgstr ""
+msgstr " ms"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: editor/settings/ui/bond.ui:195
@@ -840,7 +840,7 @@ msgstr ""
 #, kde-format
 msgctxt "seconds"
 msgid " s"
-msgstr ""
+msgstr " s"
 
 #. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
 #: editor/settings/ui/bridge.ui:139
@@ -972,13 +972,13 @@ msgstr ""
 #: editor/settings/ui/connectionwidget.ui:165
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Sí"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:170
 #, kde-format
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 #. i18n: ectx: property (title), widget (QGroupBox, basicGroup)
 #: editor/settings/ui/gsm.ui:18
@@ -1002,7 +1002,7 @@ msgstr ""
 #: editor/settings/ui/gsm.ui:100
 #, kde-format
 msgid "APN:"
-msgstr ""
+msgstr "APN:"
 
 #. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
 #: editor/settings/ui/gsm.ui:110
@@ -1014,7 +1014,7 @@ msgstr ""
 #: editor/settings/ui/gsm.ui:130
 #, kde-format
 msgid "PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/infiniband.ui:21
@@ -1040,7 +1040,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:74
 #, kde-format
 msgid "MTU:"
-msgstr ""
+msgstr "MTU:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:80
@@ -1057,7 +1057,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:115
 #, kde-format
 msgid " bytes"
-msgstr ""
+msgstr " bytes"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, IPv6Widget)
 #. i18n: ectx: property (toolTip), widget (QWidget, IPv4Widget)
@@ -1285,7 +1285,7 @@ msgstr ""
 #: editor/settings/ui/ipv6.ui:335
 #, kde-format
 msgid "Privacy:"
-msgstr ""
+msgstr "Privacidá:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, authGroup)
 #: editor/settings/ui/ppp.ui:23
@@ -1297,13 +1297,13 @@ msgstr ""
 #: editor/settings/ui/ppp.ui:38
 #, kde-format
 msgid "EAP"
-msgstr ""
+msgstr "EAP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
 #: editor/settings/ui/ppp.ui:91
 #, kde-format
 msgid "Compression"
-msgstr ""
+msgstr "Compresión"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppe)
 #: editor/settings/ui/ppp.ui:109
@@ -1357,7 +1357,7 @@ msgstr ""
 #: editor/settings/ui/pppoe.ui:20
 #, kde-format
 msgid "Service:"
-msgstr ""
+msgstr "Serviciu:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, service)
 #: editor/settings/ui/pppoe.ui:30
@@ -1421,7 +1421,7 @@ msgstr ""
 #: editor/settings/ui/vlan.ui:87
 #, kde-format
 msgid "GVRP"
-msgstr ""
+msgstr "GVRP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
 #: editor/settings/ui/vlan.ui:94
@@ -1433,7 +1433,7 @@ msgstr ""
 #: editor/settings/ui/wificonnectionwidget.ui:17
 #, kde-format
 msgid "SSID:"
-msgstr ""
+msgstr "SSID:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:63
@@ -1457,7 +1457,7 @@ msgstr ""
 #: editor/settings/ui/wificonnectionwidget.ui:81
 #, kde-format
 msgid "BSSID:"
-msgstr ""
+msgstr "BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:101
@@ -1494,19 +1494,19 @@ msgstr ""
 #: editor/settings/ui/wificonnectionwidget.ui:146
 #, kde-format
 msgid "A (5 GHz)"
-msgstr ""
+msgstr "A (5 GHz)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:151
 #, kde-format
 msgid "B/G (2.4 GHz)"
-msgstr ""
+msgstr "B/G (2.4 GHz)"
 
 #. i18n: ectx: property (text), widget (QLabel, channelLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:159
 #, kde-format
 msgid "Channel:"
-msgstr ""
+msgstr "Canal:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, channel)
 #: editor/settings/ui/wificonnectionwidget.ui:179
@@ -1542,7 +1542,7 @@ msgstr ""
 #: editor/settings/ui/wificonnectionwidget.ui:290
 #, kde-format
 msgid "Visibility:"
-msgstr ""
+msgstr "Visibilidá:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:306
@@ -1609,13 +1609,13 @@ msgstr ""
 #: editor/settings/ui/wifisecurity.ui:76
 #, kde-format
 msgid "Security:"
-msgstr ""
+msgstr "Seguranza:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wifisecurity.ui:97
 #, kde-format
 msgid "Key:"
-msgstr ""
+msgstr "Clave:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/wifisecurity.ui:117
@@ -1633,19 +1633,19 @@ msgstr ""
 #: editor/settings/ui/wifisecurity.ui:139
 #, kde-format
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:144
 #, kde-format
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:149
 #, kde-format
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
 #: editor/settings/ui/wifisecurity.ui:174
@@ -1657,7 +1657,7 @@ msgstr ""
 #: editor/settings/ui/wifisecurity.ui:179
 #, kde-format
 msgid "Shared Key"
-msgstr ""
+msgstr "Clave compartida"
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:40
@@ -1696,7 +1696,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:125
 #, kde-format
 msgid "Speed:"
-msgstr ""
+msgstr "Velocidá:"
 
 #. i18n: ectx: property (text), widget (QLabel, duplexLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:132
@@ -1768,49 +1768,49 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:226
 #, kde-format
 msgid "10 Mb/s"
-msgstr ""
+msgstr "10 Mb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:231
 #, kde-format
 msgid "100 Mb/s"
-msgstr ""
+msgstr "100 Mb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:236
 #, kde-format
 msgid "1 Gb/s"
-msgstr ""
+msgstr "1 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:241
 #, kde-format
 msgid "2.5 Gb/s"
-msgstr ""
+msgstr "2,5 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:246
 #, kde-format
 msgid "5 Gb/s"
-msgstr ""
+msgstr "5 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:251
 #, kde-format
 msgid "10 Gb/s"
-msgstr ""
+msgstr "10 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:256
 #, kde-format
 msgid "40 Gb/s"
-msgstr ""
+msgstr "40 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:261
 #, kde-format
 msgid "100 Gb/s"
-msgstr ""
+msgstr "100 Gb/s"
 
 #. i18n: ectx: property (text), widget (QCheckBox, use8021X)
 #: editor/settings/ui/wiredsecurity.ui:17
@@ -1828,7 +1828,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:20
 #, kde-format
 msgid "Interface"
-msgstr ""
+msgstr "Interfaz"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
@@ -1856,7 +1856,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:57
 #, kde-format
 msgid "fwmark:"
-msgstr ""
+msgstr "fwmark:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:67
@@ -1904,7 +1904,7 @@ msgstr ""
 #: editor/settings/ui/wireguardpeerwidget.ui:17
 #, kde-format
 msgid "Public key:"
-msgstr ""
+msgstr "Clave pública:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, publicKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:27
@@ -1971,7 +1971,7 @@ msgstr ""
 #: editor/settings/ui/wireguardpeerwidget.ui:91
 #, kde-format
 msgid "Preshared key:"
-msgstr ""
+msgstr "Clave precompartida:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:102
@@ -2029,7 +2029,7 @@ msgstr ""
 #: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
 msgid "%1 (%2 MHz)"
-msgstr ""
+msgstr "%1 (%2 MHz)"
 
 #: editor/settings/wireguardpeerwidget.cpp:71
 #: editor/settings/wireguardtabwidget.cpp:59
@@ -2042,13 +2042,13 @@ msgstr ""
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: editor/uiutils.cpp:136
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Bluetooth"
-msgstr ""
+msgstr "Bluetooth"
 
 #: editor/uiutils.cpp:139
 #, kde-format
@@ -2060,7 +2060,7 @@ msgstr ""
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "ADSL"
-msgstr ""
+msgstr "ADSL"
 
 #: editor/uiutils.cpp:145
 #, kde-format
@@ -2107,7 +2107,7 @@ msgstr ""
 #: editor/uiutils.cpp:188
 #, kde-format
 msgid "ADSL"
-msgstr ""
+msgstr "ADSL"
 
 #: editor/uiutils.cpp:207
 #, kde-format
@@ -2147,17 +2147,17 @@ msgstr ""
 #: editor/uiutils.cpp:257
 #, kde-format
 msgid "Bluetooth (%1)"
-msgstr ""
+msgstr "Bluetooth (%1)"
 
 #: editor/uiutils.cpp:260
 #, kde-format
 msgid "Modem (%1)"
-msgstr ""
+msgstr "Módem (%1)"
 
 #: editor/uiutils.cpp:263
 #, kde-format
 msgid "ADSL (%1)"
-msgstr ""
+msgstr "ADSL (%1)"
 
 #: editor/uiutils.cpp:266
 #, kde-format
@@ -2258,7 +2258,7 @@ msgstr ""
 #, kde-format
 msgctxt "interface state"
 msgid "Error: Invalid state"
-msgstr ""
+msgstr "Error: l'estáu nun ye válidu"
 
 #: editor/uiutils.cpp:335
 #, kde-format
@@ -2330,7 +2330,7 @@ msgstr ""
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Access point"
-msgstr ""
+msgstr "Puntu d'accesu"
 
 #: editor/uiutils.cpp:403
 #, kde-format
@@ -2384,61 +2384,61 @@ msgstr ""
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "PSK"
-msgstr ""
+msgstr "PSK"
 
 #: editor/uiutils.cpp:421
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "802.1x"
-msgstr ""
+msgstr "802.1x"
 
 #: editor/uiutils.cpp:430
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 Bit/s"
-msgstr ""
+msgstr "%1 Bit/s"
 
 #: editor/uiutils.cpp:432
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 MBit/s"
-msgstr ""
+msgstr "%1 MBit/s"
 
 #: editor/uiutils.cpp:434
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 GBit/s"
-msgstr ""
+msgstr "%1 GBit/s"
 
 #: editor/uiutils.cpp:458
 #, kde-format
 msgctxt "Wireless connection frequency"
 msgid "%1 GHz"
-msgstr ""
+msgstr "%1 GHz"
 
 #: editor/uiutils.cpp:464
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "LTE"
-msgstr ""
+msgstr "LTE"
 
 #: editor/uiutils.cpp:466
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "UMTS/HSxPA"
-msgstr ""
+msgstr "UMTS/HSxPA"
 
 #: editor/uiutils.cpp:468
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GPRS/EDGE"
-msgstr ""
+msgstr "GPRS/EDGE"
 
 #: editor/uiutils.cpp:470
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GSM"
-msgstr ""
+msgstr "GSM"
 
 #: editor/uiutils.cpp:472 editor/uiutils.cpp:475
 #, kde-format
@@ -2450,13 +2450,13 @@ msgstr ""
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:486
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "LTE"
-msgstr ""
+msgstr "LTE"
 
 #: editor/uiutils.cpp:488
 #, kde-format
@@ -2480,49 +2480,49 @@ msgstr ""
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 1xRTT"
-msgstr ""
+msgstr "CDMA2000 1xRTT"
 
 #: editor/uiutils.cpp:496
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA+"
-msgstr ""
+msgstr "HSPA+"
 
 #: editor/uiutils.cpp:498
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA"
-msgstr ""
+msgstr "HSPA"
 
 #: editor/uiutils.cpp:500
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSUPA"
-msgstr ""
+msgstr "HSUPA"
 
 #: editor/uiutils.cpp:502
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSDPA"
-msgstr ""
+msgstr "HSDPA"
 
 #: editor/uiutils.cpp:504
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "UMTS"
-msgstr ""
+msgstr "UMTS"
 
 #: editor/uiutils.cpp:506
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "EDGE"
-msgstr ""
+msgstr "EDGE"
 
 #: editor/uiutils.cpp:508
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "GPRS"
-msgstr ""
+msgstr "GPRS"
 
 #: editor/uiutils.cpp:510
 #, kde-format
@@ -2534,7 +2534,7 @@ msgstr ""
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "GSM"
-msgstr ""
+msgstr "GSM"
 
 #: editor/uiutils.cpp:514
 #, kde-format
@@ -2666,13 +2666,13 @@ msgstr ""
 #, kde-format
 msgctxt "@label WEP security"
 msgid "WEP"
-msgstr ""
+msgstr "WEP"
 
 #: editor/uiutils.cpp:590
 #, kde-format
 msgctxt "@label LEAP security"
 msgid "LEAP"
-msgstr ""
+msgstr "LEAP"
 
 #: editor/uiutils.cpp:593
 #, kde-format
@@ -2684,37 +2684,37 @@ msgstr ""
 #, kde-format
 msgctxt "@label WPA-PSK security"
 msgid "WPA-PSK"
-msgstr ""
+msgstr "WPA-PSK"
 
 #: editor/uiutils.cpp:599
 #, kde-format
 msgctxt "@label WPA-EAP security"
 msgid "WPA-EAP"
-msgstr ""
+msgstr "WPA-EAP"
 
 #: editor/uiutils.cpp:602
 #, kde-format
 msgctxt "@label WPA2-PSK security"
 msgid "WPA2-PSK"
-msgstr ""
+msgstr "WPA2-PSK"
 
 #: editor/uiutils.cpp:605
 #, kde-format
 msgctxt "@label WPA2-EAP security"
 msgid "WPA2-EAP"
-msgstr ""
+msgstr "WPA2-EAP"
 
 #: editor/uiutils.cpp:608
 #, kde-format
 msgctxt "@label WPA3-SAE security"
 msgid "WPA3-SAE"
-msgstr ""
+msgstr "WPA3-SAE"
 
 #: editor/uiutils.cpp:611
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:614
 #, kde-format
@@ -2729,8 +2729,8 @@ msgctxt ""
 "the number of minutes since usage"
 msgid "One minute ago"
 msgid_plural "%1 minutes ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hai 1 minutu"
+msgstr[1] "Hai %1 minutos"
 
 #: editor/uiutils.cpp:636
 #, kde-format
@@ -2739,15 +2739,15 @@ msgctxt ""
 "the number of hours since usage"
 msgid "One hour ago"
 msgid_plural "%1 hours ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Hai 1 hora"
+msgstr[1] "Hai %1 hores"
 
 #: editor/uiutils.cpp:641
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
-msgstr ""
+msgstr "Ayeri"
 
 #: editor/uiutils.cpp:649
 #, kde-format
@@ -2814,7 +2814,7 @@ msgstr ""
 #, kde-format
 msgctxt "@item:intable shortcut for Not Available"
 msgid "N/A"
-msgstr ""
+msgstr "N/D"
 
 #: editor/widgets/advancedpermissionswidget.cpp:87
 #, kde-format
@@ -2885,7 +2885,7 @@ msgstr ""
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "APN: %1"
-msgstr ""
+msgstr "APN: %1"
 
 #: editor/widgets/mobileconnectionwizard.cpp:236
 #, kde-format
@@ -3507,7 +3507,7 @@ msgstr ""
 #: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
-msgstr ""
+msgstr "Velocidá de la conexón"
 
 #: models/networkmodelitem.cpp:642 models/networkmodelitem.cpp:660
 #: models/networkmodelitem.cpp:709 models/networkmodelitem.cpp:715
@@ -3515,23 +3515,23 @@ msgstr ""
 #: models/networkmodelitem.cpp:734 models/networkmodelitem.cpp:742
 #, kde-format
 msgid "MAC Address"
-msgstr ""
+msgstr "Direición MAC"
 
 #: models/networkmodelitem.cpp:646
 #, kde-format
 msgid "Access Point (SSID)"
-msgstr ""
+msgstr "Puntu d'accesu (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
 msgid "Signal Strength"
-msgstr ""
+msgstr "Intensidá de la señal"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: models/networkmodelitem.cpp:650
 #, kde-format
@@ -3541,22 +3541,22 @@ msgstr ""
 #: models/networkmodelitem.cpp:653
 #, kde-format
 msgid "Connection Speed"
-msgstr ""
+msgstr "Velocidá de la conexón"
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
 msgid "Frequency"
-msgstr ""
+msgstr "Frecuencia"
 
 #: models/networkmodelitem.cpp:658
 #, kde-format
 msgid "BSSID"
-msgstr ""
+msgstr "BSSID"
 
 #: models/networkmodelitem.cpp:672
 #, kde-format
 msgid "Operator"
-msgstr ""
+msgstr "Operadora"
 
 #: models/networkmodelitem.cpp:676
 #, kde-format
@@ -3566,7 +3566,7 @@ msgstr ""
 #: models/networkmodelitem.cpp:680
 #, kde-format
 msgid "Signal Quality"
-msgstr ""
+msgstr "Calidá de la señal"
 
 #: models/networkmodelitem.cpp:681
 #, kde-format
@@ -3586,7 +3586,7 @@ msgstr ""
 #: models/networkmodelitem.cpp:703
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 #: models/networkmodelitem.cpp:705 models/networkmodelitem.cpp:707
 #, kde-format
@@ -3598,7 +3598,7 @@ msgstr ""
 #: models/networkmodelitem.cpp:737 models/networkmodelitem.cpp:740
 #, kde-format
 msgid "Type"
-msgstr ""
+msgstr "Tipu"
 
 #: models/networkmodelitem.cpp:733
 #, kde-format

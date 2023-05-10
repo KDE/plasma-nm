@@ -214,7 +214,3 @@ msgstr "Opplasting"
 #, kde-format
 msgid "Download"
 msgstr "Nedlasting"
-
-#~ msgctxt "@title:window"
-#~ msgid "QR Code for %1"
-#~ msgstr "QR-kode for %1"

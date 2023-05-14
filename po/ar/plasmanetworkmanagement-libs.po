@@ -1779,49 +1779,49 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:226
 #, kde-format
 msgid "10 Mb/s"
-msgstr "١٠ م.ب/ث"
+msgstr "10 م.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:231
 #, kde-format
 msgid "100 Mb/s"
-msgstr "١٠٠ م.ب/ث"
+msgstr "100 م.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:236
 #, kde-format
 msgid "1 Gb/s"
-msgstr "١ ج.ب/ث"
+msgstr "1 ج.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:241
 #, kde-format
 msgid "2.5 Gb/s"
-msgstr "٢٫٥ ج.ب/ث"
+msgstr "2٫5 ج.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:246
 #, kde-format
 msgid "5 Gb/s"
-msgstr "٥ ج.ب/ث"
+msgstr "5 ج.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:251
 #, kde-format
 msgid "10 Gb/s"
-msgstr "١٠ ج.ب/ث"
+msgstr "10 ج.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:256
 #, kde-format
 msgid "40 Gb/s"
-msgstr "٤٠ ج.ب/ث"
+msgstr "40 ج.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:261
 #, kde-format
 msgid "100 Gb/s"
-msgstr "١٠٠ ج.ب/ث"
+msgstr "100 ج.ب/ث"
 
 #. i18n: ectx: property (text), widget (QCheckBox, use8021X)
 #: editor/settings/ui/wiredsecurity.ui:17
@@ -2025,7 +2025,7 @@ msgstr ""
 #: editor/settings/ui/wireguardtabwidget.ui:24
 #, kde-format
 msgid "Peer 1"
-msgstr "الند ١"
+msgstr "الند 1"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/wireguardtabwidget.ui:37

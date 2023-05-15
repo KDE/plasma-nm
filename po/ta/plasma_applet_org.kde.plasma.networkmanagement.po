@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Kishore G <kishore96@gmail.com>, 2021, 2022.
+# Kishore G <kishore96@gmail.com>, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-08 02:08+0000\n"
-"PO-Revision-Date: 2022-12-13 19:34+0530\n"
+"PO-Revision-Date: 2023-05-14 15:12+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.0\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -150,16 +150,15 @@ msgid "Password…"
 msgstr "கடவுச்சொல்..."
 
 #: contents/ui/PopupDialog.qml:52
-#, fuzzy, kde-format
-#| msgid "&Configure Network Connections…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "பிணைய இணைப்புகளை &அமை…"
+msgstr "பிணைய இணைப்புகளுக்கு திரும்பசெல்"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
-msgstr ""
+msgstr "\"%1\" பிணையத்தில் இன்னொரு சாதனத்தை இணைக்க இப்படத்தை அச்சாதனத்தில் வருடவும்."
 
 #: contents/ui/Toolbar.qml:119
 #, kde-format

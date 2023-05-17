@@ -47,7 +47,7 @@ RowLayout {
 
     spacing: PlasmaCore.Units.smallSpacing * 3
 
-    PlasmaComponents3.CheckBox {
+    PlasmaComponents3.Switch {
         id: wifiSwitchButton
 
         // can't overload Item::enabled, because it's being used for other things, like Edit Mode on a desktop
@@ -95,7 +95,7 @@ RowLayout {
         }
     }
 
-    PlasmaComponents3.CheckBox {
+    PlasmaComponents3.Switch {
         id: wwanSwitchButton
 
         // can't overload Item::enabled, because it's being used for other things, like Edit Mode on a desktop
@@ -120,7 +120,7 @@ RowLayout {
         }
     }
 
-    PlasmaComponents3.CheckBox {
+    PlasmaComponents3.Switch {
         id: planeModeSwitchButton
 
         property bool initialized: false

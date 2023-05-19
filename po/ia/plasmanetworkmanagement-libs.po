@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 02:13+0000\n"
-"PO-Revision-Date: 2023-03-30 11:56+0200\n"
+"PO-Revision-Date: 2023-05-18 15:50+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -372,7 +372,7 @@ msgstr "Gateway"
 #: editor/settings/ipv4widget.cpp:271 editor/settings/ipv6widget.cpp:262
 #, kde-format
 msgid "Other DNS Servers:"
-msgstr "sltere Servitores de DNS:"
+msgstr "Altere Servitores de DNS:"
 
 #: editor/settings/ipv4widget.cpp:283 editor/settings/ipv4widget.cpp:295
 #: editor/settings/ipv4widget.cpp:307 editor/settings/ipv4widget.cpp:319

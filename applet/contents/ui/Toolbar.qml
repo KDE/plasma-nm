@@ -47,102 +47,112 @@ RowLayout {
 
     spacing: PlasmaCore.Units.smallSpacing * 3
 
-    PlasmaComponents3.Switch {
-        id: wifiSwitchButton
+    RowLayout {
+        // Add margin before switches for consistency with other applets
+        Layout.leftMargin: PlasmaCore.Units.smallSpacing
 
-        // can't overload Item::enabled, because it's being used for other things, like Edit Mode on a desktop
-        readonly property bool administrativelyEnabled:
-            !PlasmaNM.Configuration.airplaneModeEnabled
-            && availableDevices.wirelessDeviceAvailable
-            && enabledConnections.wirelessHwEnabled
+        spacing: parent.spacing
 
-        checked: administrativelyEnabled && enabledConnections.wirelessEnabled
-        enabled: administrativelyEnabled
+        // Only show when switches are visible (and avoid parent spacing otherwise)
+        visible: availableDevices.wirelessDeviceAvailable || availableDevices.modemDeviceAvailable
 
-        icon.name: administrativelyEnabled ? "network-wireless-on" : "network-wireless-off"
-        visible: availableDevices.wirelessDeviceAvailable
+        PlasmaComponents3.Switch {
+            id: wifiSwitchButton
 
-        KeyNavigation.right: wwanSwitchButton.visible ? wwanSwitchButton : wwanSwitchButton.KeyNavigation.right
+            // can't overload Item::enabled, because it's being used for other things, like Edit Mode on a desktop
+            readonly property bool administrativelyEnabled:
+                !PlasmaNM.Configuration.airplaneModeEnabled
+                && availableDevices.wirelessDeviceAvailable
+                && enabledConnections.wirelessHwEnabled
 
-        onToggled: handler.enableWireless(checked);
+            checked: administrativelyEnabled && enabledConnections.wirelessEnabled
+            enabled: administrativelyEnabled
 
-        PlasmaComponents3.ToolTip {
-            text: i18n("Enable Wi-Fi")
-        }
+            icon.name: administrativelyEnabled ? "network-wireless-on" : "network-wireless-off"
+            visible: availableDevices.wirelessDeviceAvailable
 
-        PlasmaComponents3.BusyIndicator {
-            parent: wifiSwitchButton
-            anchors {
-                fill: wifiSwitchButton.contentItem
-                leftMargin: wifiSwitchButton.indicator.width + wifiSwitchButton.spacing
+            KeyNavigation.right: wwanSwitchButton.visible ? wwanSwitchButton : wwanSwitchButton.KeyNavigation.right
+
+            onToggled: handler.enableWireless(checked);
+
+            PlasmaComponents3.ToolTip {
+                text: i18n("Enable Wi-Fi")
             }
-            z: 1
 
-            // Scanning may be too fast to notice. Prolong the animation up to at least `humanMoment`.
-            running: handler.scanning || timer.running
-            Timer {
-                id: timer
-                interval: PlasmaCore.Units.humanMoment
-            }
-            Connections {
-                target: handler
-                function onScanningChanged() {
-                    if (handler.scanning) {
-                        timer.restart();
+            PlasmaComponents3.BusyIndicator {
+                parent: wifiSwitchButton
+                anchors {
+                    fill: wifiSwitchButton.contentItem
+                    leftMargin: wifiSwitchButton.indicator.width + wifiSwitchButton.spacing
+                }
+                z: 1
+
+                // Scanning may be too fast to notice. Prolong the animation up to at least `humanMoment`.
+                running: handler.scanning || timer.running
+                Timer {
+                    id: timer
+                    interval: PlasmaCore.Units.humanMoment
+                }
+                Connections {
+                    target: handler
+                    function onScanningChanged() {
+                        if (handler.scanning) {
+                            timer.restart();
+                        }
                     }
                 }
             }
         }
-    }
 
-    PlasmaComponents3.Switch {
-        id: wwanSwitchButton
+        PlasmaComponents3.Switch {
+            id: wwanSwitchButton
 
-        // can't overload Item::enabled, because it's being used for other things, like Edit Mode on a desktop
-        readonly property bool administrativelyEnabled:
-            !PlasmaNM.Configuration.airplaneModeEnabled
-            && availableDevices.modemDeviceAvailable
-            && enabledConnections.wwanHwEnabled
+            // can't overload Item::enabled, because it's being used for other things, like Edit Mode on a desktop
+            readonly property bool administrativelyEnabled:
+                !PlasmaNM.Configuration.airplaneModeEnabled
+                && availableDevices.modemDeviceAvailable
+                && enabledConnections.wwanHwEnabled
 
-        checked: administrativelyEnabled && enabledConnections.wwanEnabled
-        enabled: administrativelyEnabled
+            checked: administrativelyEnabled && enabledConnections.wwanEnabled
+            enabled: administrativelyEnabled
 
-        icon.name: administrativelyEnabled ? "network-mobile-on" : "network-mobile-off"
-        visible: availableDevices.modemDeviceAvailable
+            icon.name: administrativelyEnabled ? "network-mobile-on" : "network-mobile-off"
+            visible: availableDevices.modemDeviceAvailable
 
-        KeyNavigation.left: wifiSwitchButton
-        KeyNavigation.right: planeModeSwitchButton.visible ? planeModeSwitchButton : planeModeSwitchButton.KeyNavigation.right
+            KeyNavigation.left: wifiSwitchButton
+            KeyNavigation.right: planeModeSwitchButton.visible ? planeModeSwitchButton : planeModeSwitchButton.KeyNavigation.right
 
-        onToggled: handler.enableWwan(checked);
+            onToggled: handler.enableWwan(checked);
 
-        PlasmaComponents3.ToolTip {
-            text: i18n("Enable mobile network")
-        }
-    }
-
-    PlasmaComponents3.Switch {
-        id: planeModeSwitchButton
-
-        property bool initialized: false
-
-        checked: PlasmaNM.Configuration.airplaneModeEnabled
-
-        icon.name: PlasmaNM.Configuration.airplaneModeEnabled ? "network-flightmode-on" : "network-flightmode-off"
-
-        visible: availableDevices.modemDeviceAvailable || availableDevices.wirelessDeviceAvailable
-
-        KeyNavigation.left: wwanSwitchButton.visible ? wwanSwitchButton : wwanSwitchButton.KeyNavigation.left
-        KeyNavigation.right: hotspotButton.visible ? hotspotButton : hotspotButton.KeyNavigation.right
-
-        onToggled: {
-            handler.enableAirplaneMode(checked);
-            PlasmaNM.Configuration.airplaneModeEnabled = checked;
+            PlasmaComponents3.ToolTip {
+                text: i18n("Enable mobile network")
+            }
         }
 
-        PlasmaComponents3.ToolTip {
-            text: planeModeSwitchButton.checked ?
-                  xi18nc("@info", "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth") :
-                  xi18nc("@info", "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth")
+        PlasmaComponents3.Switch {
+            id: planeModeSwitchButton
+
+            property bool initialized: false
+
+            checked: PlasmaNM.Configuration.airplaneModeEnabled
+
+            icon.name: PlasmaNM.Configuration.airplaneModeEnabled ? "network-flightmode-on" : "network-flightmode-off"
+
+            visible: availableDevices.modemDeviceAvailable || availableDevices.wirelessDeviceAvailable
+
+            KeyNavigation.left: wwanSwitchButton.visible ? wwanSwitchButton : wwanSwitchButton.KeyNavigation.left
+            KeyNavigation.right: hotspotButton.visible ? hotspotButton : hotspotButton.KeyNavigation.right
+
+            onToggled: {
+                handler.enableAirplaneMode(checked);
+                PlasmaNM.Configuration.airplaneModeEnabled = checked;
+            }
+
+            PlasmaComponents3.ToolTip {
+                text: planeModeSwitchButton.checked ?
+                    xi18nc("@info", "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth") :
+                    xi18nc("@info", "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth")
+            }
         }
     }
 

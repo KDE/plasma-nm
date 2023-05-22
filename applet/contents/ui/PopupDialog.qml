@@ -35,7 +35,6 @@ PlasmaExtras.Representation {
 
     header: PlasmaExtras.PlasmoidHeading {
         focus: true
-        leftPadding: PlasmaCore.Units.smallSpacing
         contentItem: RowLayout {
             Layout.fillWidth: true
 

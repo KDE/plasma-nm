@@ -817,7 +817,7 @@ QCoro::Task<void> Handler::createHotspotInternal()
             co_return;
         }
 
-        connect(hotspot.data(), &NetworkManager::ActiveConnection::stateChanged, [=](NetworkManager::ActiveConnection::State state) {
+        connect(hotspot.data(), &NetworkManager::ActiveConnection::stateChanged, [this](NetworkManager::ActiveConnection::State state) {
             if (state > NetworkManager::ActiveConnection::Activated) {
                 Configuration::self().setHotspotConnectionPath(QString());
                 Q_EMIT hotspotDisabled();

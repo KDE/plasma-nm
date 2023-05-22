@@ -448,7 +448,7 @@ void IPv4Widget::slotAdvancedDialog()
     connect(box, &QDialogButtonBox::rejected, dlg, &QDialog::reject);
     layout->addWidget(box);
 
-    connect(dlg, &QDialog::accepted, this, [=]() {
+    connect(dlg, &QDialog::accepted, this, [this, sendHostname, dhcpHostname, dadTimeout]() {
         m_tmpIpv4Setting.setDhcpSendHostname(sendHostname->isChecked());
         m_tmpIpv4Setting.setDhcpHostname(dhcpHostname->text());
         m_tmpIpv4Setting.setDadTimeout(dadTimeout->value());

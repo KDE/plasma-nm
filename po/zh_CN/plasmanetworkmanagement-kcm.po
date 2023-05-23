@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-30 03:36+0000\n"
-"PO-Revision-Date: 2023-02-24 12:43\n"
+"PO-Revision-Date: 2023-05-22 13:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,15 +14,14 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/plasma-nm/plasmanetworkmanagement-kcm."
+"X-Crowdin-File: /kf6-trunk/messages/plasma-nm/plasmanetworkmanagement-kcm."
 "pot\n"
-"X-Crowdin-File-ID: 4176\n"
+"X-Crowdin-File-ID: 43205\n"
 
 #: kcm.cpp:285
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "导入 VPN 连接"
+msgstr "导入 VPN 连接失败：%1"
 
 #: kcm.cpp:355
 #, kde-format
@@ -58,12 +57,12 @@ msgstr "VPN 连接 (%1)"
 #: kcm.cpp:548
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "没有提供文件"
 
 #: kcm.cpp:609
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "未知的 VPN 类型"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-04-27 02:13+0000\n"
-"PO-Revision-Date: 2023-02-24 12:43\n"
+"PO-Revision-Date: 2023-05-22 13:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-trunk/messages/plasma-nm/plasmanetworkmanagement-libs."
+"X-Crowdin-File: /kf6-trunk/messages/plasma-nm/plasmanetworkmanagement-libs."
 "pot\n"
-"X-Crowdin-File-ID: 4209\n"
+"X-Crowdin-File-ID: 42533\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -1308,7 +1308,7 @@ msgstr "已禁用"
 #: editor/settings/ui/ipv6.ui:335
 #, kde-format
 msgid "Privacy:"
-msgstr "隐私："
+msgstr "私密性："
 
 #. i18n: ectx: property (title), widget (QGroupBox, authGroup)
 #: editor/settings/ui/ppp.ui:23
@@ -1858,7 +1858,7 @@ msgstr "100 Gb/s"
 #: editor/settings/ui/wiredsecurity.ui:17
 #, kde-format
 msgid "Use 802.1x security for this connection"
-msgstr "启用此连接的 802.1x 安全性"
+msgstr "启用此连接的 802.1x 安全性功能"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
 #: editor/settings/ui/wireguardinterfacewidget.ui:14
@@ -2921,8 +2921,8 @@ msgid ""
 "Channel: %4"
 msgstr ""
 "%1 (%2%)\n"
-"频率：%3 Mhz\n"
-"频道：%4"
+"频段：%3 Mhz\n"
+"信道：%4"
 
 #: editor/widgets/ipv4routeswidget.cpp:31
 #, kde-format
@@ -3617,14 +3617,12 @@ msgid "MAC Address"
 msgstr "MAC 地址"
 
 #: models/networkmodelitem.cpp:646
-#, fuzzy, kde-format
-#| msgid "Access point (SSID)"
+#, kde-format
 msgid "Access Point (SSID)"
 msgstr "接入点 (SSID)"
 
 #: models/networkmodelitem.cpp:648
-#, fuzzy, kde-format
-#| msgid "Signal strength"
+#, kde-format
 msgid "Signal Strength"
 msgstr "信号强度"
 
@@ -3632,17 +3630,15 @@ msgstr "信号强度"
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: models/networkmodelitem.cpp:650
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
 msgstr "安全性类型"
 
 #: models/networkmodelitem.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
 msgstr "连接速度"
 
@@ -3677,8 +3673,7 @@ msgid "Access Technology"
 msgstr "接入技术"
 
 #: models/networkmodelitem.cpp:686
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
 msgstr "VPN 插件"
 

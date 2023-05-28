@@ -3545,13 +3545,11 @@ msgstr "MAC-adresse"
 
 #: models/networkmodelitem.cpp:646
 #, fuzzy, kde-format
-#| msgid "Access point (SSID)"
 msgid "Access Point (SSID)"
 msgstr "Tilgangspunkt (SSID)"
 
 #: models/networkmodelitem.cpp:648
 #, fuzzy, kde-format
-#| msgid "Signal strength"
 msgid "Signal Strength"
 msgstr "Signalstyrke"
 
@@ -3563,13 +3561,11 @@ msgstr ""
 
 #: models/networkmodelitem.cpp:650
 #, fuzzy, kde-format
-#| msgid "Security type"
 msgid "Security Type"
 msgstr "Sikkerhetstype"
 
 #: models/networkmodelitem.cpp:653
 #, fuzzy, kde-format
-#| msgid "Connection speed"
 msgid "Connection Speed"
 msgstr "Tilkoblingshastighet"
 
@@ -3605,7 +3601,6 @@ msgstr "Tilgangsteknologi"
 
 #: models/networkmodelitem.cpp:686
 #, fuzzy, kde-format
-#| msgid "VPN plugin"
 msgid "VPN Plugin"
 msgstr "VPN-programtillegg"
 

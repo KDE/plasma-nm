@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-08 02:08+0000\n"
-"PO-Revision-Date: 2023-02-23 18:32+0100\n"
+"PO-Revision-Date: 2023-05-27 14:21+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -152,16 +152,16 @@ msgid "Password…"
 msgstr "Passord …"
 
 #: contents/ui/PopupDialog.qml:52
-#, fuzzy, kde-format
-#| msgid "&Configure Network Connections…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "&Set opp nettverkstilkoplingar …"
+msgstr "Tilbake til nettverkstilkoplingar"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+"Skann denne QR-koden med ei anna einig for å kopla til nettverket «%1»."
 
 #: contents/ui/Toolbar.qml:119
 #, kde-format

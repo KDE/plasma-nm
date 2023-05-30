@@ -14,7 +14,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "X-Generator: Lokalize 22.12.3\n"
@@ -2735,8 +2735,7 @@ msgctxt ""
 "the number of minutes since usage"
 msgid "One minute ago"
 msgid_plural "%1 minutes ago"
-msgstr[0] "1分前"
-msgstr[1] "%1分前"
+msgstr[0] "%1分前"
 
 #: editor/uiutils.cpp:636
 #, kde-format
@@ -2745,8 +2744,7 @@ msgctxt ""
 "the number of hours since usage"
 msgid "One hour ago"
 msgid_plural "%1 hours ago"
-msgstr[0] "1時間前"
-msgstr[1] "%1時間前"
+msgstr[0] "%1時間前"
 
 #: editor/uiutils.cpp:641
 #, kde-format
@@ -2769,8 +2767,7 @@ msgctxt ""
 "the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
-msgstr[0] "1分前に最後に使用"
-msgstr[1] "%1分前に最後に使用"
+msgstr[0] "%1分前に最後に使用"
 
 #: editor/uiutils.cpp:670
 #, kde-format
@@ -2779,8 +2776,7 @@ msgctxt ""
 "the number of hours since usage"
 msgid "Last used one hour ago"
 msgid_plural "Last used %1 hours ago"
-msgstr[0] "1時間前に最後に使用"
-msgstr[1] "%1時間前に最後に使用"
+msgstr[0] "%1時間前に最後に使用"
 
 #: editor/uiutils.cpp:675
 #, kde-format

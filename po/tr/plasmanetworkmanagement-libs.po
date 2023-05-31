@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-02-18 02:52+0000\n"
-"PO-Revision-Date: 2023-05-24 01:29+0300\n"
+"PO-Revision-Date: 2023-05-30 23:11+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -121,7 +121,7 @@ msgstr "Bilinmeyen"
 #, kde-format
 msgctxt "General"
 msgid "General configuration"
-msgstr "Genel yapılandırma"
+msgstr "Genel Yapılandırma"
 
 #: editor/connectioneditorbase.cpp:205 editor/connectioneditorbase.cpp:222
 #, kde-format
@@ -374,7 +374,7 @@ msgstr "Ağ Geçidi"
 #: editor/settings/ipv4widget.cpp:271 editor/settings/ipv6widget.cpp:262
 #, kde-format
 msgid "Other DNS Servers:"
-msgstr "Diğer DNS Sunucuları:"
+msgstr "Diğer DNS sunucuları:"
 
 #: editor/settings/ipv4widget.cpp:283 editor/settings/ipv4widget.cpp:295
 #: editor/settings/ipv4widget.cpp:307 editor/settings/ipv4widget.cpp:319
@@ -483,7 +483,7 @@ msgstr "İçe aktarmak için dosya seç"
 #: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
 #, kde-format
 msgid "Authentication:"
-msgstr "Kimlik Doğrulama:"
+msgstr "Kimlik doğrulama:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
@@ -1159,7 +1159,7 @@ msgstr "DNS sunucu listesini düzenle"
 #, kde-format
 msgctxt "@info"
 msgid "Search Domains:"
-msgstr "Arama Alan Adları:"
+msgstr "Aranacak alan adları:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
 #: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
@@ -1181,7 +1181,7 @@ msgstr "Aranan DNS alan adlarının listesini düzenle"
 #: editor/settings/ui/ipv4.ui:191
 #, kde-format
 msgid "DHCP Client ID:"
-msgstr "DHCP İstemci Kimliği:"
+msgstr "DHCP istemcisi kimliği:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
 #: editor/settings/ui/ipv4.ui:206
@@ -1236,7 +1236,7 @@ msgstr ""
 #: editor/settings/ui/ipv4.ui:285
 #, kde-format
 msgid "IPv4 is required for this connection"
-msgstr "Bu bağlantı için IPv4 kullanılması gerekmektedir"
+msgstr "Bu bağlantı için IPv4 gerekir"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
 #: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
@@ -1260,7 +1260,7 @@ msgstr ""
 #: editor/settings/ui/ipv6.ui:33
 #, kde-format
 msgid "IPv6 is required for this connection"
-msgstr "Bu bağlantı için IPv6 kullanılması gerekmektedir"
+msgstr "Bu bağlantı için IPv6 gerekir"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv6.ui:83
@@ -3273,7 +3273,7 @@ msgstr ""
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
 #, kde-format
 msgid "Use only for resources on this connection"
-msgstr "Kaynakları yalnızca bu bağlantı için kullan"
+msgstr "Yalnızca bu bağlantıdaki özkaynaklar için kullan"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv4routes.ui:74

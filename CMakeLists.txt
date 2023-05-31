@@ -30,7 +30,7 @@ include(ECMQtDeclareLoggingCategory)
 include(FeatureSummary)
 include(GenerateExportHeader)
 
-find_package(Qt${QT_MAJOR_VERSION} ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
+find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Core
     DBus
     Gui
@@ -50,7 +50,7 @@ if(BUILD_OPENCONNECT)
 endif()
 
 if(BUILD_OPENCONNECT)
-    find_package(Qt${QT_MAJOR_VERSION}WebEngineWidgets ${QT_MIN_VERSION} CONFIG REQUIRED)
+    find_package(Qt6WebEngineWidgets ${QT_MIN_VERSION} CONFIG REQUIRED)
 endif()
 
 find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
@@ -82,8 +82,8 @@ set_package_properties(KF6Kirigami2 PROPERTIES
     TYPE RUNTIME
 )
 
-find_package(Qca-qt${QT_MAJOR_VERSION} 2.1.0)
-set_package_properties(Qca-qt${QT_MAJOR_VERSION} PROPERTIES DESCRIPTION "Support for encryption"
+find_package(Qca-qt6 2.1.0)
+set_package_properties(Qca-qt6 PROPERTIES DESCRIPTION "Support for encryption"
                        URL "https://download.kde.org/stable/qca-qt5/"
                        TYPE REQUIRED)
 
@@ -98,7 +98,7 @@ pkg_check_modules(NETWORKMANAGER IMPORTED_TARGET libnm>1.4.0 REQUIRED)
 pkg_check_modules(MOBILEBROADBANDPROVIDERINFO mobile-broadband-provider-info)
 pkg_get_variable(BROADBANDPROVIDER_DATABASE mobile-broadband-provider-info database)
 
-find_package(QCoro${QT_MAJOR_VERSION} REQUIRED COMPONENTS Core DBus)
+find_package(QCoro6 REQUIRED COMPONENTS Core DBus)
 
 qcoro_enable_coroutines()
 

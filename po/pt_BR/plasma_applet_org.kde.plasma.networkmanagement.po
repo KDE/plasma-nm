@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-05-08 02:08+0000\n"
-"PO-Revision-Date: 2023-03-22 10:50-0300\n"
+"PO-Revision-Date: 2023-05-31 14:54-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -153,16 +153,16 @@ msgid "Password…"
 msgstr "Senha..."
 
 #: contents/ui/PopupDialog.qml:52
-#, fuzzy, kde-format
-#| msgid "&Configure Network Connections…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "&Configurar as conexões de rede..."
+msgstr "Retornar às conexões de rede"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+"Digitalize este código QR com outro dispositivo para conectar à rede \"%1\"."
 
 #: contents/ui/Toolbar.qml:119
 #, kde-format

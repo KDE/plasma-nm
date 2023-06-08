@@ -25,7 +25,7 @@ PlasmaExtras.ExpandableListItem {
     property bool passwordIsStatic: (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
                                      SecurityType == PlasmaNM.Enums.Wpa2Psk || SecurityType == PlasmaNM.Enums.SAE)
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless && passwordIsStatic
-    property bool showSpeed: plasmoid.expanded &&
+    property bool showSpeed: mainWindow.expanded &&
                              ConnectionState == PlasmaNM.Enums.Activated &&
                              (Type == PlasmaNM.Enums.Wired ||
                               Type == PlasmaNM.Enums.Wireless ||
@@ -39,7 +39,7 @@ PlasmaExtras.ExpandableListItem {
     title: model.ItemUniqueName
     subtitle: itemText()
     iconUsesPlasmaSVG: true // We want the nice detailed network SVGs from the Plasma theme
-    isBusy: plasmoid.expanded && model.ConnectionState == PlasmaNM.Enums.Activating
+    isBusy: mainWindow.expanded && model.ConnectionState == PlasmaNM.Enums.Activating
     isDefault: ConnectionState == PlasmaNM.Enums.Activated
     defaultActionButtonAction: Action {
         id: stateChangeButton

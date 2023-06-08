@@ -77,7 +77,7 @@ PlasmaExtras.Representation {
                 return;
             }
 
-            full.Plasmoid.expanded = true; // just in case.
+            mainWindow.expanded = true; // just in case.
             stack.push(showQRComponent, {
                 content: data,
                 connectionName
@@ -110,16 +110,19 @@ PlasmaExtras.Representation {
         }
     }
 
-    Plasmoid.onExpandedChanged: expanded => {
-        if (expanded) {
-            handler.requestScan();
-            if (!full.connectionModel) {
-                full.connectionModel = networkModelComponent.createObject(full);
-            }
-        } else {
-            if (full.connectionModel) {
-                full.connectionModel.destroy();
-                full.connectionModel = null;
+    Connections {
+        target: mainWindow
+        function onExpandedChanged(expanded) {
+            if (expanded) {
+                handler.requestScan();
+                if (!full.connectionModel) {
+                    full.connectionModel = networkModelComponent.createObject(full);
+                }
+            } else {
+                if (full.connectionModel) {
+                    full.connectionModel.destroy();
+                    full.connectionModel = null;
+                }
             }
         }
     }

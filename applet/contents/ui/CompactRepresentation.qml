@@ -22,12 +22,12 @@ MouseArea {
 
     property bool wasExpanded
 
-    onPressed: wasExpanded = Plasmoid.expanded
+    onPressed: wasExpanded = mainWindow.expanded
     onClicked: {
         if (airplaneModeAvailable && mouse.button === Qt.MiddleButton) {
             Plasmoid.action("planeModeSwitch").trigger();
         } else {
-            Plasmoid.expanded = !wasExpanded;
+            mainWindow.expanded = !wasExpanded;
         }
     }
 

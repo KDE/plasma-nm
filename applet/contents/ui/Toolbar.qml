@@ -201,7 +201,7 @@ RowLayout {
         // This uses expanded to ensure the binding gets reevaluated
         // when the plasmoid is shown again and that way ensure we are
         // always in the correct state on show.
-        focus: plasmoid.expanded && !Kirigami.InputMethod.willShowOnActive
+        focus: mainWindow.expanded && !Kirigami.InputMethod.willShowOnActive
 
         KeyNavigation.left: hotspotButton.visible ? hotspotButton : hotspotButton.KeyNavigation.left
         KeyNavigation.right: openEditorButton

@@ -10,6 +10,7 @@
 #include "plasma_nm_kded.h"
 
 #include <QDBusPendingReply>
+#include <QPointer>
 
 #include <KConfigGroup>
 #include <KLocalizedString>

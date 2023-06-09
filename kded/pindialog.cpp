@@ -10,6 +10,7 @@
 #include <QIcon>
 #include <QIntValidator>
 #include <QScreen>
+#include <QStringBuilder>
 
 #include <KLocalizedString>
 #include <KWindowSystem>

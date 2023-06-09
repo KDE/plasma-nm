@@ -19,6 +19,8 @@
 
 #include <ModemManagerQt/Manager>
 
+#include <QDBusReply>
+
 #include <QCoroDBus>
 
 ConnectionIcon::ConnectionIcon(QObject *parent)

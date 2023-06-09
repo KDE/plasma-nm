@@ -29,8 +29,10 @@
 #include <QDBusError>
 #include <QDBusMetaType>
 #include <QDBusPendingReply>
+#include <QDBusReply>
 #include <QFile>
 #include <QIcon>
+#include <QStringBuilder>
 
 #include <KIO/OpenUrlJob>
 #include <KLocalizedString>

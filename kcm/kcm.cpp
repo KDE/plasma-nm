@@ -52,7 +52,7 @@
 K_PLUGIN_CLASS_WITH_JSON(KCMNetworkmanagement, "kcm_networkmanagement.json")
 
 KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
-    : KCModule(parent, metaData, args)
+    : KCModule(parent, metaData)
     , m_handler(new Handler(this))
     , m_ui(new Ui::KCMForm)
 {

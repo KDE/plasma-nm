@@ -10,7 +10,7 @@ import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import org.kde.kquickcontrolsaddons 2.0
+import org.kde.kcmutils as KCMUtils
 
 import org.kde.kirigami 2.19 as Kirigami
 
@@ -223,7 +223,7 @@ RowLayout {
         }
 
         onClicked: {
-            KCMShell.openSystemSettings(mainWindow.kcm)
+            KCMUtils.KCMLauncher.openSystemSettings(mainWindow.kcm)
         }
     }
 }

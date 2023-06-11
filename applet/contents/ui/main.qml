@@ -8,14 +8,15 @@ import QtQuick 2.2
 import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
-import org.kde.kquickcontrolsaddons 2.0
 import QtQuick.Layouts 1.1
+import org.kde.kcmutils as KCMUtils
+import org.kde.config as KConfig
 
 PlasmoidItem {
     id: mainWindow
 
     readonly property string kcm: "kcm_networkmanagement"
-    readonly property bool kcmAuthorized: KCMShell.authorize("kcm_networkmanagement.desktop").length == 1
+    readonly property bool kcmAuthorized: KConfig.KAuthorized.authorizeControlModule("kcm_networkmanagement")
     readonly property bool delayModelUpdates: fullRepresentationItem !== null
         && fullRepresentationItem.connectionModel !== null
         && fullRepresentationItem.connectionModel.delayModelUpdates
@@ -69,7 +70,7 @@ PlasmoidItem {
     }
 
     function action_configure() {
-        KCMShell.openSystemSettings(kcm)
+        KCMUtils.KCMLauncher.openSystemSettings(kcm)
     }
 
     function action_showPortal() {

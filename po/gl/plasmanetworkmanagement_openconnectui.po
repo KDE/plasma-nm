@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-14 00:48+0000\n"
-"PO-Revision-Date: 2019-08-19 20:27+0200\n"
+"PO-Revision-Date: 2023-06-11 13:58+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.04.3\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #: openconnectauth.cpp:304
 #, kde-format
@@ -24,8 +24,7 @@ msgid "Failed to initialize software token: %1"
 msgstr "Non puido inicializarse o código temporal de software: %1"
 
 #: openconnectauth.cpp:357
-#, fuzzy, kde-format
-#| msgid "Contacting host, please wait..."
+#, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Contactando co servidor, agarde…"
 
@@ -161,7 +160,7 @@ msgstr "Proxy:"
 #: openconnectprop.ui:81
 #, kde-format
 msgid "User Agent:"
-msgstr ""
+msgstr "Axente de usuario:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openconnectprop.ui:94
@@ -189,10 +188,9 @@ msgstr "AnyConnect de Cisco"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:136
-#, fuzzy, kde-format
-#| msgid "Juniper/Pulse Network Connect"
+#, kde-format
 msgid "Juniper Network Connect"
-msgstr "Juniper/Pulse Network Connect"
+msgstr "Juniper Network Connect"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:141
@@ -204,67 +202,67 @@ msgstr "PAN Global Protect"
 #: openconnectprop.ui:146
 #, kde-format
 msgid "Pulse Connect Secure"
-msgstr ""
+msgstr "Pulse Connect Secure"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:151
 #, kde-format
 msgid "F5 BIG-IP SSL VPN"
-msgstr ""
+msgstr "VPN con SSL de F5 BIG-IP"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:156
 #, kde-format
 msgid "Fortinet SSL VPN"
-msgstr ""
+msgstr "VPN con SSL Fortinet"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:161
 #, kde-format
 msgid "Array SSL VPN"
-msgstr ""
+msgstr "VPN con SSL de Array"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnectprop.ui:169
 #, kde-format
 msgid "Reported OS:"
-msgstr ""
+msgstr "Sistema operativo indicado:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:188
 #, kde-format
 msgid "GNU/Linux"
-msgstr ""
+msgstr "GNU/Linux"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:193
 #, kde-format
 msgid "GNU/Linux 64-bit"
-msgstr ""
+msgstr "GNU/Linux de 64 bits"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:198
 #, kde-format
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:203
 #, kde-format
 msgid "Mac OS X"
-msgstr ""
+msgstr "Mac OS X"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:208
 #, kde-format
 msgid "Android"
-msgstr ""
+msgstr "Android"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:213
 #, kde-format
 msgid "Apple iOS"
-msgstr ""
+msgstr "iOS de Apple"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: openconnectprop.ui:224

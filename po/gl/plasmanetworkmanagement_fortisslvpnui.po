@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2019, 2023.
 #
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2020-10-30 02:41+0100\n"
-"PO-Revision-Date: 2019-08-19 20:27+0200\n"
+"PO-Revision-Date: 2023-06-11 13:54+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.04.3\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #. i18n: ectx: property (text), widget (QPushButton, advancedButton)
 #: fortisslvpn.ui:36
@@ -103,7 +103,7 @@ msgstr "Usar un contrasinal dun só uso"
 #: fortisslvpnadvanced.ui:50
 #, kde-format
 msgid "2FA"
-msgstr ""
+msgstr "2FA"
 
 #. i18n: ectx: property (text), widget (QLabel, realmLabel)
 #: fortisslvpnadvanced.ui:68

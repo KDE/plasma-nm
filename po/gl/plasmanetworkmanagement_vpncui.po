@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2019-03-02 21:49+0100\n"
+"PO-Revision-Date: 2023-06-11 22:11+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.04.1\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: vpnc.cpp:73
 #, kde-format
@@ -31,7 +31,7 @@ msgstr "Erro"
 #: vpnc.cpp:118
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
-msgstr ""
+msgstr "NetworkManager non é compatíbel con VPN compatíbeis con Cisco"
 
 #: vpnc.cpp:146
 #, kde-format
@@ -108,7 +108,7 @@ msgstr "Contrasinal de grupo."
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
 msgstr ""
-"Permitir unha autenticación híbrida, é dicir, usar o certificado e máis o "
+"Permitir unha autenticación híbrida, é dicir, usar o certificado e mailo "
 "contrasinal."
 
 #. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
@@ -137,8 +137,7 @@ msgstr "*.pem"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:192
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
 msgstr "Avanzado…"
 
@@ -371,7 +370,7 @@ msgstr "Grupo DH 5"
 #: vpncauth.ui:14
 #, kde-format
 msgid "VPNCAuthentication"
-msgstr "Autenticación VPNC"
+msgstr "Autenticación con vpnc"
 
 #. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
 #: vpncauth.ui:32

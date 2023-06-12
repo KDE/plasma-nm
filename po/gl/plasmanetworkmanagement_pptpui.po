@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2019-02-17 17:27+0100\n"
+"PO-Revision-Date: 2023-06-11 21:50+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.04.1\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
 #: pptpadvanced.ui:17
@@ -122,7 +122,7 @@ msgstr "40 bits"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
-"Permitir que MPPE use un modo con estado. En calquera caso, primero "
+"Permitir que MPPE use un modo con estado. En calquera caso, primeiro "
 "intentarase usar o modo sen estado."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
@@ -282,9 +282,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: pptpprop.ui:192
-#, fuzzy, kde-format
-#| msgctxt "like in Advanced settings"
-#| msgid "Advanced..."
+#, kde-format
 msgctxt "like in Advanced settings"
 msgid "Advanced…"
 msgstr "Avanzado…"

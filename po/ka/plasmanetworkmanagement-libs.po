@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 02:13+0000\n"
+"POT-Creation-Date: 2023-06-12 02:34+0000\n"
 "PO-Revision-Date: 2023-04-18 06:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -3312,72 +3312,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&წაშლა"
 
-#: handler.cpp:118
+#: handler.cpp:120
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma -ს აკლია %1 VPN-ის მხარდაჭერა."
 
-#: handler.cpp:120
+#: handler.cpp:122
 #, kde-format
 msgid "Report Bug"
 msgstr "შეცდომის ანგარიში"
 
-#: handler.cpp:143
+#: handler.cpp:145
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager-ს აკლია %1 VPN-ის მხარდაჭერა."
 
-#: handler.cpp:145
+#: handler.cpp:147
 #, kde-format
 msgid "Install"
 msgstr "დაყენება"
 
-#: handler.cpp:188
+#: handler.cpp:190
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "%1-ის აქტივაციის შეცდომა"
 
-#: handler.cpp:355 handler.cpp:384
+#: handler.cpp:357 handler.cpp:386
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "%1 შეერთების დამატების შეცდომა"
 
-#: handler.cpp:362 handler.cpp:393
+#: handler.cpp:364 handler.cpp:395
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "შეერთება %1 დამატებულია"
 
-#: handler.cpp:428
+#: handler.cpp:430
 #, kde-format
 msgid "Failed to add %1"
 msgstr "%1-ის დამატების შეცდომა"
 
-#: handler.cpp:467
+#: handler.cpp:469
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "%1-ის დეაქტივაციის შეცდომა"
 
-#: handler.cpp:598
+#: handler.cpp:600
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "%1-ის წაშლის შეცდომა"
 
-#: handler.cpp:605
+#: handler.cpp:607
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "შეერთება %1 წაშლილია"
 
-#: handler.cpp:619
+#: handler.cpp:621
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "%1-ს განახლების შეცდომა"
 
-#: handler.cpp:626
+#: handler.cpp:628
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "შეერთება %1 განახლებულია"
 
-#: handler.cpp:800
+#: handler.cpp:802
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "%1 hotspot-ის შექმნის შეცდომა"

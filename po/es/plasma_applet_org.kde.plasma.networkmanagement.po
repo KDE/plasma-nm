@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:08+0000\n"
+"POT-Creation-Date: 2023-06-12 02:34+0000\n"
 "PO-Revision-Date: 2023-05-09 01:44+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -104,44 +104,44 @@ msgstr "No hay conexiones disponibles"
 msgid "Copy"
 msgstr "Copiar"
 
-#: contents/ui/main.qml:24
+#: contents/ui/main.qml:25
 #, kde-format
 msgid "Networks"
 msgstr "Redes"
 
-#: contents/ui/main.qml:33
+#: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Clic central para desactivar el modo avión"
 
-#: contents/ui/main.qml:35
+#: contents/ui/main.qml:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Clic central para activar el modo avión"
 
-#: contents/ui/main.qml:80 contents/ui/Toolbar.qml:70
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:70
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activar wifi"
 
-#: contents/ui/main.qml:88
+#: contents/ui/main.qml:89
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Activar red móvil"
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Activar modo avión"
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:103
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Abrir la página de inicio de sesión en la red..."
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:108
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configurar conexiones de red..."

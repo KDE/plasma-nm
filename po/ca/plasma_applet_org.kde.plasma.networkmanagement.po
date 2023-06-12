@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:08+0000\n"
+"POT-Creation-Date: 2023-06-12 02:34+0000\n"
 "PO-Revision-Date: 2023-05-08 11:09+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -107,44 +107,44 @@ msgstr "No hi ha cap connexió disponible"
 msgid "Copy"
 msgstr "Copia"
 
-#: contents/ui/main.qml:24
+#: contents/ui/main.qml:25
 #, kde-format
 msgid "Networks"
 msgstr "Xarxes"
 
-#: contents/ui/main.qml:33
+#: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Clic del mig per a apagar al mode avió"
 
-#: contents/ui/main.qml:35
+#: contents/ui/main.qml:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Clic del mig per a activar al mode avió"
 
-#: contents/ui/main.qml:80 contents/ui/Toolbar.qml:70
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:70
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activa la Wi-Fi"
 
-#: contents/ui/main.qml:88
+#: contents/ui/main.qml:89
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Activa la xarxa mòbil"
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Activa el mode avió"
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:103
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Obre la pàgina de connexió a la xarxa…"
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:108
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configura les connexions de xarxa…"

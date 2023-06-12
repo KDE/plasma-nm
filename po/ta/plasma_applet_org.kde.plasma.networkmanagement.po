@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:08+0000\n"
+"POT-Creation-Date: 2023-06-12 02:34+0000\n"
 "PO-Revision-Date: 2023-05-14 15:12+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -102,44 +102,44 @@ msgstr "பிணையங்கள் எதுவும் இல்லை"
 msgid "Copy"
 msgstr "நகலெடு"
 
-#: contents/ui/main.qml:24
+#: contents/ui/main.qml:25
 #, kde-format
 msgid "Networks"
 msgstr "பிணையங்கள்"
 
-#: contents/ui/main.qml:33
+#: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "விமானப் பயன்முறையை முடக்க நடு-கிளிக் செய்யுங்கள்"
 
-#: contents/ui/main.qml:35
+#: contents/ui/main.qml:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "விமானப் பயன்முறையை இயக்க நடு-கிளிக் செய்யுங்கள்"
 
-#: contents/ui/main.qml:80 contents/ui/Toolbar.qml:70
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:70
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "அருகலையை இயக்கு"
 
-#: contents/ui/main.qml:88
+#: contents/ui/main.qml:89
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "கைபேசி பிணையத்தை இயக்கு"
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "விமான பயன்முறையை இயக்கு"
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:103
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "பிணைய நுழைவு பக்கத்தை திற..."
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:108
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "பிணைய இணைப்புகளை &அமை…"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-05-08 02:08+0000\n"
+"POT-Creation-Date: 2023-06-12 02:34+0000\n"
 "PO-Revision-Date: 2021-11-19 10:47+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -101,45 +101,45 @@ msgstr "Žane zwiski přistupne"
 msgid "Copy"
 msgstr "Kopěrować"
 
-#: contents/ui/main.qml:24
+#: contents/ui/main.qml:25
 #, kde-format
 msgid "Networks"
 msgstr "Syć"
 
-#: contents/ui/main.qml:33
+#: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:35
+#: contents/ui/main.qml:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:80 contents/ui/Toolbar.qml:70
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:70
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi zaswěćić"
 
-#: contents/ui/main.qml:88
+#: contents/ui/main.qml:89
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "Mobilnu syć zaswěćić"
 
-#: contents/ui/main.qml:96
+#: contents/ui/main.qml:97
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:103
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Stronu za přizjewjenje na syći wočinić..."
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:108
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Syćowe zwiski &připrawić..."

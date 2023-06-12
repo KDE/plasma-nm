@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 02:13+0000\n"
+"POT-Creation-Date: 2023-06-12 02:34+0000\n"
 "PO-Revision-Date: 2023-05-22 13:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -50,13 +50,13 @@ msgid ""
 "internet."
 msgstr "此设备已连接到网络，但无法访问互联网。"
 
-#: modemmonitor.cpp:181
+#: modemmonitor.cpp:182
 #, kde-format
 msgctxt "Text in GSM PIN/PUK unlock error dialog"
 msgid "Error unlocking modem: %1"
 msgstr "解锁调制解调器时出错：%1"
 
-#: modemmonitor.cpp:182
+#: modemmonitor.cpp:183
 #, kde-format
 msgctxt "Title for GSM PIN/PUK unlock error dialog"
 msgid "PIN/PUK unlock error"
@@ -588,140 +588,140 @@ msgstr "密码对话框"
 msgid "Password:"
 msgstr "密码："
 
-#: pindialog.cpp:66
+#: pindialog.cpp:67
 #, kde-format
 msgid "SIM PUK"
 msgstr "SIM PUK"
 
-#: pindialog.cpp:68
+#: pindialog.cpp:69
 #, kde-format
 msgid "SIM PUK2"
 msgstr "SIM PUK2"
 
-#: pindialog.cpp:70
+#: pindialog.cpp:71
 #, kde-format
 msgid "Service provider PUK"
 msgstr "运营商 PUK"
 
-#: pindialog.cpp:72
+#: pindialog.cpp:73
 #, kde-format
 msgid "Network PUK"
 msgstr "网络 PUK"
 
-#: pindialog.cpp:74
+#: pindialog.cpp:75
 #, kde-format
 msgid "Corporate PUK"
 msgstr "企业 PUK"
 
-#: pindialog.cpp:76
+#: pindialog.cpp:77
 #, kde-format
 msgid "PH-FSIM PUK"
 msgstr "PH-FSIM PUK"
 
-#: pindialog.cpp:78
+#: pindialog.cpp:79
 #, kde-format
 msgid "Network Subset PUK"
 msgstr "网络子集 PUK"
 
-#: pindialog.cpp:81 pindialog.cpp:113
+#: pindialog.cpp:82 pindialog.cpp:114
 #, kde-format
 msgid "%1 unlock required"
 msgstr "%1 需要解锁"
 
-#: pindialog.cpp:82 pindialog.cpp:114
+#: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
 msgid "%1 Unlock Required"
 msgstr "%1 需要解锁"
 
-#: pindialog.cpp:83 pindialog.cpp:115
+#: pindialog.cpp:84 pindialog.cpp:116
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
 msgstr "移动宽带设备“%1”需要 %2 码才能使用。"
 
-#: pindialog.cpp:84 pindialog.cpp:116
+#: pindialog.cpp:85 pindialog.cpp:117
 #, kde-format
 msgid "%1 code:"
 msgstr "%1 码："
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:85 pinwidget.ui:153
+#: pindialog.cpp:86 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "新 PIN 码："
 
-#: pindialog.cpp:86
+#: pindialog.cpp:87
 #, kde-format
 msgid "Re-enter new PIN code:"
 msgstr "再次输入新 PIN 码："
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:87 pinwidget.ui:193
+#: pindialog.cpp:88 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "显示 PIN/PUK 码"
 
-#: pindialog.cpp:97
+#: pindialog.cpp:98
 #, kde-format
 msgid "SIM PIN"
 msgstr "SIM PIN"
 
-#: pindialog.cpp:99
+#: pindialog.cpp:100
 #, kde-format
 msgid "SIM PIN2"
 msgstr "SIM PIN2"
 
-#: pindialog.cpp:101
+#: pindialog.cpp:102
 #, kde-format
 msgid "Service provider PIN"
 msgstr "运营商 PIN"
 
-#: pindialog.cpp:103
+#: pindialog.cpp:104
 #, kde-format
 msgid "Network PIN"
 msgstr "网络 PIN"
 
-#: pindialog.cpp:105
+#: pindialog.cpp:106
 #, kde-format
 msgid "PIN"
 msgstr "PIN"
 
-#: pindialog.cpp:107
+#: pindialog.cpp:108
 #, kde-format
 msgid "Corporate PIN"
 msgstr "企业 PIN"
 
-#: pindialog.cpp:109
+#: pindialog.cpp:110
 #, kde-format
 msgid "PH-FSIM PIN"
 msgstr "PH-FSIM PIN"
 
-#: pindialog.cpp:111
+#: pindialog.cpp:112
 #, kde-format
 msgid "Network Subset PIN"
 msgstr "网络子集 PIN"
 
-#: pindialog.cpp:117
+#: pindialog.cpp:118
 #, kde-format
 msgid "Show PIN code"
 msgstr "显示 PIN 码"
 
-#: pindialog.cpp:199
+#: pindialog.cpp:200
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "PIN 码太短，它至少要有 4 位数字。"
 
-#: pindialog.cpp:204
+#: pindialog.cpp:205
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "两次输入的 PIN 码不一致"
 
-#: pindialog.cpp:209
+#: pindialog.cpp:210
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "PUK 码太短，它应该是 8 位数字。"
 
-#: pindialog.cpp:214
+#: pindialog.cpp:215
 #, kde-format
 msgid "Unknown Error"
 msgstr "未知错误"

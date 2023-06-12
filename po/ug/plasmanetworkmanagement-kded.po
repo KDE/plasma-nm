@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-04-27 02:13+0000\n"
+"POT-Creation-Date: 2023-06-12 02:34+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -49,13 +49,13 @@ msgid ""
 "internet."
 msgstr ""
 
-#: modemmonitor.cpp:181
+#: modemmonitor.cpp:182
 #, kde-format
 msgctxt "Text in GSM PIN/PUK unlock error dialog"
 msgid "Error unlocking modem: %1"
 msgstr ""
 
-#: modemmonitor.cpp:182
+#: modemmonitor.cpp:183
 #, kde-format
 msgctxt "Title for GSM PIN/PUK unlock error dialog"
 msgid "PIN/PUK unlock error"
@@ -588,143 +588,143 @@ msgstr "ئىم سۆزلەشكۈسى"
 msgid "Password:"
 msgstr "ئىم:"
 
-#: pindialog.cpp:66
+#: pindialog.cpp:67
 #, kde-format
 msgid "SIM PUK"
 msgstr ""
 
-#: pindialog.cpp:68
+#: pindialog.cpp:69
 #, kde-format
 msgid "SIM PUK2"
 msgstr ""
 
-#: pindialog.cpp:70
+#: pindialog.cpp:71
 #, kde-format
 msgid "Service provider PUK"
 msgstr ""
 
-#: pindialog.cpp:72
+#: pindialog.cpp:73
 #, kde-format
 msgid "Network PUK"
 msgstr ""
 
-#: pindialog.cpp:74
+#: pindialog.cpp:75
 #, kde-format
 msgid "Corporate PUK"
 msgstr ""
 
-#: pindialog.cpp:76
+#: pindialog.cpp:77
 #, kde-format
 msgid "PH-FSIM PUK"
 msgstr ""
 
-#: pindialog.cpp:78
+#: pindialog.cpp:79
 #, kde-format
 msgid "Network Subset PUK"
 msgstr ""
 
-#: pindialog.cpp:81 pindialog.cpp:113
+#: pindialog.cpp:82 pindialog.cpp:114
 #, fuzzy, kde-format
 #| msgid "SIM PUK unlock required"
 msgid "%1 unlock required"
 msgstr "SIM PUK قۇلۇپسىزلاش كېرەك"
 
-#: pindialog.cpp:82 pindialog.cpp:114
+#: pindialog.cpp:83 pindialog.cpp:115
 #, fuzzy, kde-format
 #| msgid "SIM PUK Unlock Required"
 msgid "%1 Unlock Required"
 msgstr "SIM PUK قۇلۇپسىزلاش كېرەك"
 
-#: pindialog.cpp:83 pindialog.cpp:115
+#: pindialog.cpp:84 pindialog.cpp:116
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
 msgstr ""
 
-#: pindialog.cpp:84 pindialog.cpp:116
+#: pindialog.cpp:85 pindialog.cpp:117
 #, fuzzy, kde-format
 #| msgid "PUK code:"
 msgid "%1 code:"
 msgstr "PUK نومۇرى:"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:85 pinwidget.ui:153
+#: pindialog.cpp:86 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "يېڭى PUK نومۇرى:"
 
-#: pindialog.cpp:86
+#: pindialog.cpp:87
 #, kde-format
 msgid "Re-enter new PIN code:"
 msgstr "يېڭى PUK نومۇرىنى يەنە كىرگۈزۈڭ:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:87 pinwidget.ui:193
+#: pindialog.cpp:88 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr ""
 
-#: pindialog.cpp:97
+#: pindialog.cpp:98
 #, kde-format
 msgid "SIM PIN"
 msgstr ""
 
-#: pindialog.cpp:99
+#: pindialog.cpp:100
 #, kde-format
 msgid "SIM PIN2"
 msgstr ""
 
-#: pindialog.cpp:101
+#: pindialog.cpp:102
 #, kde-format
 msgid "Service provider PIN"
 msgstr ""
 
-#: pindialog.cpp:103
+#: pindialog.cpp:104
 #, kde-format
 msgid "Network PIN"
 msgstr ""
 
-#: pindialog.cpp:105
+#: pindialog.cpp:106
 #, kde-format
 msgid "PIN"
 msgstr ""
 
-#: pindialog.cpp:107
+#: pindialog.cpp:108
 #, kde-format
 msgid "Corporate PIN"
 msgstr ""
 
-#: pindialog.cpp:109
+#: pindialog.cpp:110
 #, kde-format
 msgid "PH-FSIM PIN"
 msgstr ""
 
-#: pindialog.cpp:111
+#: pindialog.cpp:112
 #, kde-format
 msgid "Network Subset PIN"
 msgstr ""
 
-#: pindialog.cpp:117
+#: pindialog.cpp:118
 #, kde-format
 msgid "Show PIN code"
 msgstr "PIN نومۇرىنى كۆرسەت"
 
-#: pindialog.cpp:199
+#: pindialog.cpp:200
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr ""
 
-#: pindialog.cpp:204
+#: pindialog.cpp:205
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr ""
 
-#: pindialog.cpp:209
+#: pindialog.cpp:210
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr ""
 
-#: pindialog.cpp:214
+#: pindialog.cpp:215
 #, kde-format
 msgid "Unknown Error"
 msgstr "نامەلۇم خاتالىق"

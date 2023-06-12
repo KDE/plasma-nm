@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2017, 2018, 2019, 2023.
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:17+0000\n"
-"PO-Revision-Date: 2019-07-28 12:25+0200\n"
+"PO-Revision-Date: 2023-06-11 21:48+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.04.1\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: openvpn.cpp:183
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
-msgstr ""
+msgstr "NetworkManager non é compatíbel con OpenVPN"
 
 #: openvpn.cpp:208
 #, kde-format
@@ -299,8 +299,7 @@ msgstr "Contrasinal para pasarlle a OpenVPN cando o solicite."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: openvpn.ui:627
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
 msgstr "Avanzado…"
 
@@ -354,17 +353,15 @@ msgstr "Empregar un intervalo de renegociación personalizado:"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCompression)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:96 openvpnadvanced.ui:109
-#, fuzzy, kde-format
-#| msgid "Use LZO compression"
+#, kde-format
 msgid "Use compression."
-msgstr "Empregar unha compresión LZO."
+msgstr "Usar compresión."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCompression)
 #: openvpnadvanced.ui:99
-#, fuzzy, kde-format
-#| msgid "Use LZO compression"
+#, kde-format
 msgid "Use compression"
-msgstr "Empregar unha compresión LZO."
+msgstr "Usar compresión"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:113
@@ -376,19 +373,19 @@ msgstr "Non"
 #: openvpnadvanced.ui:118
 #, kde-format
 msgid "LZO"
-msgstr ""
+msgstr "LZO"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:123
 #, kde-format
 msgid "LZ4"
-msgstr ""
+msgstr "LZ4"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:128
 #, kde-format
 msgid "LZ4 v2"
-msgstr ""
+msgstr "LZ4 v2"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:133
@@ -519,7 +516,7 @@ msgstr "Máquinas remotas aleatorias"
 #: openvpnadvanced.ui:315
 #, kde-format
 msgid "Build a tun link capable of forwarding IPv6 traffic."
-msgstr "Contruír unha ligazón tun capaz de reenviar tráfico IPv6."
+msgstr "Construír unha ligazón tun capaz de reenviar tráfico IPv6."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:318
@@ -655,8 +652,7 @@ msgstr "Algoritmo de cifraxe:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboCipher)
 #: openvpnadvanced.ui:513
-#, fuzzy, kde-format
-#| msgid "Obtaining available ciphers..."
+#, kde-format
 msgid "Obtaining available ciphers…"
 msgstr "Obtendo os algoritmos de cifraxe…"
 
@@ -1030,7 +1026,7 @@ msgstr ""
 #: openvpnadvanced.ui:1060 openvpnadvanced.ui:1073
 #, kde-format
 msgid "Connect to remote host through a proxy with this address."
-msgstr "Connectar á máquina remota a través dun proxy co enderezo indicado."
+msgstr "Conectar á máquina remota a través dun proxy co enderezo indicado."
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: openvpnadvanced.ui:1063
@@ -1043,7 +1039,7 @@ msgstr "Enderezo do servidor:"
 #: openvpnadvanced.ui:1083 openvpnadvanced.ui:1102
 #, kde-format
 msgid "Connect to remote host through a proxy with this port."
-msgstr "Connectar á máquina remota a través dun proxy co porto indicado."
+msgstr "Conectar á máquina remota a través dun proxy co porto indicado."
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #: openvpnadvanced.ui:1086
@@ -1124,32 +1120,29 @@ msgid "Key Password:"
 msgstr "Contrasinal da chave:"
 
 #: openvpnauth.cpp:86
-#, fuzzy, kde-format
-#| msgid "TAP"
+#, kde-format
 msgid "OTP"
-msgstr "TAP"
+msgstr "OTP"
 
 #: openvpnauth.cpp:86
-#, fuzzy, kde-format
-#| msgid "HMAC Authentication:"
+#, kde-format
 msgid "authenticator"
-msgstr "Autenticación HMAC:"
+msgstr "autenticador"
 
 #: openvpnauth.cpp:86
 #, kde-format
 msgid "code"
-msgstr ""
+msgstr "código"
 
 #: openvpnauth.cpp:86
 #, kde-format
 msgid "token"
-msgstr ""
+msgstr "código temporal"
 
 #: openvpnauth.cpp:86
-#, fuzzy, kde-format
-#| msgid "Key password:"
+#, kde-format
 msgid "one-time password"
-msgstr "Contrasinal da chave:"
+msgstr "contrasinal dun uso"
 
 #~ msgid "Could not open file"
 #~ msgstr "Non se puido abrir o ficheiro."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 02:34+0000\n"
+"POT-Creation-Date: 2023-06-14 02:07+0000\n"
 "PO-Revision-Date: 2010-12-17 15:28+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -126,7 +126,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:70
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:79
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
@@ -159,7 +159,7 @@ msgstr "การเชื่อมต่อ"
 msgid "Password…"
 msgstr "รหัสผ่าน:"
 
-#: contents/ui/PopupDialog.qml:52
+#: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgctxt "Edit connection dialog caption"
 #| msgid "Edit Network Connection"
@@ -172,42 +172,42 @@ msgstr "แก้ไขการเชื่อมต่อเครือข่
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:119
+#: contents/ui/Toolbar.qml:128
 #, fuzzy, kde-format
 #| msgid "User name on this network"
 msgid "Enable mobile network"
 msgstr "ชื่อผู้ใช้บนเครือข่ายนี้"
 
-#: contents/ui/Toolbar.qml:144
+#: contents/ui/Toolbar.qml:153
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:145
+#: contents/ui/Toolbar.qml:154
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:155
+#: contents/ui/Toolbar.qml:165
 #, kde-format
 msgid "Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:179 contents/ui/Toolbar.qml:190
+#: contents/ui/Toolbar.qml:189 contents/ui/Toolbar.qml:200
 #, fuzzy, kde-format
 #| msgid "Disable &split tunnel"
 msgid "Disable Hotspot"
 msgstr "ปิดใช้งานท่อแ&ยก"
 
-#: contents/ui/Toolbar.qml:184 contents/ui/Toolbar.qml:190
+#: contents/ui/Toolbar.qml:194 contents/ui/Toolbar.qml:200
 #, fuzzy, kde-format
 #| msgid "Connection"
 msgid "Create Hotspot"
 msgstr "การเชื่อมต่อ"
 
-#: contents/ui/Toolbar.qml:222
+#: contents/ui/Toolbar.qml:232
 #, fuzzy, kde-format
 msgid "Configure network connections…"
 msgstr "การเชื่อมต่อ"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 02:34+0000\n"
+"POT-Creation-Date: 2023-06-14 02:07+0000\n"
 "PO-Revision-Date: 2021-10-17 16:07+0200\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -120,7 +120,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:70
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:79
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi bekapcsolása"
@@ -152,7 +152,7 @@ msgstr "Hálózati kapcsolatok szer&kesztése…"
 msgid "Password…"
 msgstr "Jelszó…"
 
-#: contents/ui/PopupDialog.qml:52
+#: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections…"
 msgctxt "@action:button"
@@ -164,12 +164,12 @@ msgstr "Hálózati kapcsolatok szer&kesztése…"
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:119
+#: contents/ui/Toolbar.qml:128
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Mobil adatkapcsolat bekapcsolása"
 
-#: contents/ui/Toolbar.qml:144
+#: contents/ui/Toolbar.qml:153
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
@@ -177,7 +177,7 @@ msgstr ""
 "Repülős üzemmód kikapcsolása<nl/><nl/>Ez bekapcsolja a Wi-Fi-t és a "
 "Bluetooth-t"
 
-#: contents/ui/Toolbar.qml:145
+#: contents/ui/Toolbar.qml:154
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
@@ -185,22 +185,22 @@ msgstr ""
 "Repülős üzemmód bekapcsolása<nl/><nl/>Ez kikapcsolja a Wi-Fi-t és a "
 "Bluetooth-t"
 
-#: contents/ui/Toolbar.qml:155
+#: contents/ui/Toolbar.qml:165
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: contents/ui/Toolbar.qml:179 contents/ui/Toolbar.qml:190
+#: contents/ui/Toolbar.qml:189 contents/ui/Toolbar.qml:200
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Hotspot kikapcsolása"
 
-#: contents/ui/Toolbar.qml:184 contents/ui/Toolbar.qml:190
+#: contents/ui/Toolbar.qml:194 contents/ui/Toolbar.qml:200
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Hotspot létrehozása"
 
-#: contents/ui/Toolbar.qml:222
+#: contents/ui/Toolbar.qml:232
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Hálózati kapcsolatok szerkesztése…"

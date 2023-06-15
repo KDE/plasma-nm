@@ -8,7 +8,7 @@ import QtQuick 2.2
 import QtQuick.Layouts 1.15
 
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 
@@ -53,7 +53,7 @@ MouseArea {
         id: detailsGrid
         width: parent.width
         columns: 2
-        rowSpacing: PlasmaCore.Units.smallSpacing / 4
+        rowSpacing: Kirigami.Units.smallSpacing / 4
 
         Repeater {
             id: repeater
@@ -66,7 +66,7 @@ MouseArea {
                 readonly property bool isContent: index % 2
 
                 elide: isContent ? Text.ElideRight : Text.ElideNone
-                font: PlasmaCore.Theme.smallestFont
+                font: Kirigami.Theme.smallFont
                 horizontalAlignment: isContent ? Text.AlignLeft : Text.AlignRight
                 text: isContent ? details[index] : `${details[index]}:`
                 textFormat: Text.PlainText

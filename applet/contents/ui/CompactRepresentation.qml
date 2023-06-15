@@ -7,6 +7,7 @@
 import QtQuick 2.2
 
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.plasmoid 2.0
 
@@ -36,7 +37,7 @@ MouseArea {
 
         anchors.fill: parent
         source: root.iconName
-        colorGroup: PlasmaCore.ColorScope.colorGroup
+        colorGroup: Kirigami.Theme.colorSet
         active: parent.containsMouse
     }
 }

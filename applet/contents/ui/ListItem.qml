@@ -8,6 +8,7 @@
 
 import QtQuick 2.1
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.20 as Kirigami
 
 /**
  * Ignores the theme's listItem margins, and uses custom highlight(pressed) area.
@@ -24,7 +25,7 @@ MouseArea {
     width: parent.width
 
     // Sections have spacing above but not below. Will use 2 of them below.
-    height: separator ? separatorLine.height + PlasmaCore.Units.smallSpacing * 3 : parent.height
+    height: separator ? separatorLine.height + Kirigami.Units.smallSpacing * 3 : parent.height
     hoverEnabled: true
 
     PlasmaCore.Svg {
@@ -36,10 +37,10 @@ MouseArea {
         anchors {
             horizontalCenter: parent.horizontalCenter
             top: parent.top
-            topMargin: PlasmaCore.Units.smallSpacing
+            topMargin: Kirigami.Units.smallSpacing
         }
         elementId: "horizontal-line"
-        width: parent.width - PlasmaCore.Units.gridUnit * 2
+        width: parent.width - Kirigami.Units.gridUnit * 2
         svg: lineSvg
         visible: separator
     }
@@ -57,7 +58,7 @@ MouseArea {
         imagePath: "widgets/listitem"
         prefix: "pressed"
         opacity: checked ? 1 : 0
-        Behavior on opacity { NumberAnimation { duration: PlasmaCore.Units.shortDuration } }
+        Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration } }
 
         x: highlightRect.x
         y: highlightRect.y

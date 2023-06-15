@@ -12,7 +12,7 @@ import QtQuick.Controls 2.15
 import org.kde.coreaddons 1.0 as KCoreAddons
 import org.kde.kcmutils as KCMUtils
 
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
@@ -101,7 +101,7 @@ PlasmaExtras.ExpandableListItem {
         id: detailsComponent
 
         Column {
-            spacing: PlasmaCore.Units.smallSpacing
+            spacing: Kirigami.Units.smallSpacing
             property Item detailsTabBar: detailsTabBar
 
             PlasmaComponents3.TabBar {
@@ -201,8 +201,8 @@ PlasmaExtras.ExpandableListItem {
                 id: passwordField
 
                 Layout.fillWidth: true
-                Layout.leftMargin: PlasmaCore.Units.gridUnit
-                Layout.rightMargin: PlasmaCore.Units.gridUnit
+                Layout.leftMargin: Kirigami.Units.gridUnit
+                Layout.rightMargin: Kirigami.Units.gridUnit
 
                 securityType: SecurityType
 

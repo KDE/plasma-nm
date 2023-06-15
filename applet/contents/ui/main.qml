@@ -6,7 +6,7 @@
 
 import QtQuick 2.2
 import org.kde.plasma.plasmoid 2.0
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import QtQuick.Layouts 1.1
 import org.kde.kcmutils as KCMUtils
@@ -40,8 +40,8 @@ PlasmoidItem {
 
     Plasmoid.busy: connectionIconProvider.connecting
     Plasmoid.icon: connectionIconProvider.connectionTooltipIcon
-    switchWidth: PlasmaCore.Units.gridUnit * 10
-    switchHeight: PlasmaCore.Units.gridUnit * 10
+    switchWidth: Kirigami.Units.gridUnit * 10
+    switchHeight: Kirigami.Units.gridUnit * 10
     compactRepresentation: CompactRepresentation {
         airplaneModeAvailable: mainWindow.airplaneModeAvailable
         iconName: connectionIconProvider.connectionIcon
@@ -49,8 +49,8 @@ PlasmoidItem {
     fullRepresentation: PopupDialog {
         id: dialogItem
         nmHandler: handler
-        Layout.minimumWidth: PlasmaCore.Units.iconSizes.medium * 10
-        Layout.minimumHeight: PlasmaCore.Units.gridUnit * 20
+        Layout.minimumWidth: Kirigami.Units.iconSizes.medium * 10
+        Layout.minimumHeight: Kirigami.Units.gridUnit * 20
         anchors.fill: parent
         focus: true
     }

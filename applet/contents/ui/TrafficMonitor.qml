@@ -12,12 +12,13 @@ import org.kde.quickcharts.controls 1.0 as QuickChartControls
 import org.kde.kirigami 2.15 as Kirigami
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.20 as Kirigami
 
 ColumnLayout {
     property alias downloadSpeed: download.value
     property alias uploadSpeed: upload.value
 
-    spacing: PlasmaCore.Units.largeSpacing
+    spacing: Kirigami.Units.largeSpacing
 
     Item {
         Layout.fillWidth: true
@@ -26,7 +27,7 @@ ColumnLayout {
         QuickCharts.AxisLabels {
             anchors {
                 right: plotter.left
-                rightMargin: PlasmaCore.Units.smallSpacing
+                rightMargin: Kirigami.Units.smallSpacing
                 top: plotter.top
                 bottom: plotter.bottom
             }
@@ -34,7 +35,7 @@ ColumnLayout {
             direction: QuickCharts.AxisLabels.VerticalBottomTop
             delegate:  PlasmaComponents3.Label {
                 text: KCoreAddons.Format.formatByteSize(QuickCharts.AxisLabels.label) + i18n("/s")
-                font: PlasmaCore.Theme.smallestFont
+                font: Kirigami.Theme.smallFont
             }
             source: QuickCharts.ChartAxisSource {
                 chart: plotter
@@ -55,13 +56,13 @@ ColumnLayout {
             id: plotter
             anchors {
                 left: parent.left
-                leftMargin: speedMetrics.width + PlasmaCore.Units.smallSpacing
+                leftMargin: speedMetrics.width + Kirigami.Units.smallSpacing
                 right: parent.right
                 top: parent.top
                 // Align plotter lines with labels.
-                topMargin: speedMetrics.height / 2 + PlasmaCore.Units.smallSpacing
+                topMargin: speedMetrics.height / 2 + Kirigami.Units.smallSpacing
             }
-            height: PlasmaCore.Units.gridUnit * 8
+            height: Kirigami.Units.gridUnit * 8
             smooth: true
             direction: QuickCharts.XYChart.ZeroAtEnd
             yRange {
@@ -101,25 +102,25 @@ ColumnLayout {
         }
         TextMetrics {
             id: speedMetrics
-            font: PlasmaCore.Theme.smallestFont
+            font: Kirigami.Theme.smallFont
             // Measure 888.8 KiB/s
             text: KCoreAddons.Format.formatByteSize(910131) + i18n("/s")
         }
     }
     QuickChartControls.Legend {
         chart: plotter
-        Layout.leftMargin: PlasmaCore.Units.smallSpacing
-        spacing: PlasmaCore.Units.largeSpacing
+        Layout.leftMargin: Kirigami.Units.smallSpacing
+        spacing: Kirigami.Units.largeSpacing
         delegate: RowLayout {
-            spacing: PlasmaCore.Units.smallSpacing
+            spacing: Kirigami.Units.smallSpacing
             Rectangle {
                 color: model.color
-                width: PlasmaCore.Units.smallSpacing
+                width: Kirigami.Units.smallSpacing
                 height: legendLabel.height
             }
             PlasmaComponents3.Label {
                 id: legendLabel
-                font: PlasmaCore.Theme.smallestFont
+                font: Kirigami.Theme.smallFont
                 text: model.name
             }
         }

@@ -8,7 +8,7 @@ import QtQuick 2.15
 import QtQuick.Controls 2.15 as QQC2
 import QtQuick.Layouts 1.2
 import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 
 PlasmaComponents3.ScrollView {
@@ -39,11 +39,11 @@ PlasmaComponents3.ScrollView {
             }
         }
 
-        topMargin: PlasmaCore.Units.smallSpacing * 2
-        bottomMargin: PlasmaCore.Units.smallSpacing * 2
-        leftMargin: PlasmaCore.Units.smallSpacing * 2
-        rightMargin: PlasmaCore.Units.smallSpacing * 2
-        spacing: PlasmaCore.Units.smallSpacing
+        topMargin: Kirigami.Units.smallSpacing * 2
+        bottomMargin: Kirigami.Units.smallSpacing * 2
+        leftMargin: Kirigami.Units.smallSpacing * 2
+        rightMargin: Kirigami.Units.smallSpacing * 2
+        spacing: Kirigami.Units.smallSpacing
         model: appletProxyModel
         currentIndex: -1
         boundsBehavior: Flickable.StopAtBounds
@@ -55,13 +55,13 @@ PlasmaComponents3.ScrollView {
         highlightMoveDuration: 0
         highlightResizeDuration: 0
         delegate: ConnectionItem {
-            width: connectionView.width - PlasmaCore.Units.smallSpacing * 4
+            width: connectionView.width - Kirigami.Units.smallSpacing * 4
         }
     }
 
     Loader {
         anchors.centerIn: parent
-        width: parent.width - (PlasmaCore.Units.largeSpacing * 4)
+        width: parent.width - (Kirigami.Units.largeSpacing * 4)
         active: connectionView.count === 0
         asynchronous: true
         visible: status == Loader.Ready

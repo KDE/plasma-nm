@@ -8,6 +8,7 @@ import QtQuick 2.2
 import QtQuick.Layouts 1.2
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
 import org.kde.kcmutils as KCMUtils
@@ -45,11 +46,11 @@ RowLayout {
         );
     }
 
-    spacing: PlasmaCore.Units.smallSpacing * 3
+    spacing: Kirigami.Units.smallSpacing * 3
 
     RowLayout {
         // Add margin before switches for consistency with other applets
-        Layout.leftMargin: PlasmaCore.Units.smallSpacing
+        Layout.leftMargin: Kirigami.Units.smallSpacing
 
         spacing: parent.spacing
 
@@ -91,7 +92,7 @@ RowLayout {
                 running: handler.scanning || timer.running
                 Timer {
                     id: timer
-                    interval: PlasmaCore.Units.humanMoment
+                    interval: Kirigami.Units.humanMoment
                 }
                 Connections {
                     target: handler

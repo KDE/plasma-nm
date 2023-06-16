@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-14 02:07+0000\n"
+"POT-Creation-Date: 2023-06-16 02:04+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -125,7 +125,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:79
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:80
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
@@ -159,7 +159,7 @@ msgstr "កំណត់​រចនា​សម្ព័ន្ធ​ការ​
 msgid "Password…"
 msgstr "ពាក្យ​សម្ងាត់ ៖"
 
-#: contents/ui/PopupDialog.qml:51
+#: contents/ui/PopupDialog.qml:50
 #, fuzzy, kde-format
 #| msgctxt "Edit connection dialog caption"
 #| msgid "Edit Network Connection"
@@ -172,59 +172,59 @@ msgstr "កែសម្រួល​ការ​តភ្ជាប់​បណ្
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:128
+#: contents/ui/Toolbar.qml:129
 #, fuzzy, kde-format
 #| msgid "Username on this network"
 msgid "Enable mobile network"
 msgstr "ឈ្មោះ​អ្នក​ប្រើ​នៅ​លើ​បណ្ដាញ​នេះ"
 
-#: contents/ui/Toolbar.qml:153
+#: contents/ui/Toolbar.qml:154
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:154
+#: contents/ui/Toolbar.qml:155
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:165
+#: contents/ui/Toolbar.qml:166
 #, kde-format
 msgid "Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:189 contents/ui/Toolbar.qml:200
+#: contents/ui/Toolbar.qml:190 contents/ui/Toolbar.qml:201
 #, fuzzy, kde-format
 #| msgid "Disable &split tunnel"
 msgid "Disable Hotspot"
 msgstr "បិទ​ធ្យូនែល​ពុះ​"
 
-#: contents/ui/Toolbar.qml:194 contents/ui/Toolbar.qml:200
+#: contents/ui/Toolbar.qml:195 contents/ui/Toolbar.qml:201
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Create Connection"
 msgid "Create Hotspot"
 msgstr "ធ្វើ​ការ​តភ្ជាប់​"
 
-#: contents/ui/Toolbar.qml:232
+#: contents/ui/Toolbar.qml:233
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgid "Configure network connections…"
 msgstr "កំណត់​រចនា​សម្ព័ន្ធ​ការ​ជូនដំណឹង​...​"
 
-#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:106
+#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:107
 #, kde-format
 msgid "/s"
 msgstr ""
 
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr ""
 
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr ""

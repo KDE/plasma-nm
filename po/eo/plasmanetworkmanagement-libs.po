@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-12 02:34+0000\n"
-"PO-Revision-Date: 2023-05-10 20:40+0100\n"
+"PO-Revision-Date: 2023-06-15 20:56+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -1528,7 +1528,7 @@ msgid ""
 msgstr ""
 "Ĉi tiu opcio ŝlosas la konekton al la reto Wi-Fi asociita al la specifita "
 "bando. Ĉi tiu agordo dependas\n"
-" de specifa ŝoforo-kapablo kaj eble ne funkcias kun ĉiuj ŝoforoj"
+"de specifa pelilo-kapablo kaj eble ne funkcias kun ĉiuj peliloj"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:141

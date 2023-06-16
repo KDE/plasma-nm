@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-14 02:07+0000\n"
+"POT-Creation-Date: 2023-06-16 02:04+0000\n"
 "PO-Revision-Date: 2023-05-31 09:52+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -122,7 +122,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Kliknutí prostředním tlačítkem myši zapne režim V Letadle"
 
-#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:79
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:80
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Povolit Wi-Fi"
@@ -152,7 +152,7 @@ msgstr "&Nastavit síťová spojení…"
 msgid "Password…"
 msgstr "Heslo…"
 
-#: contents/ui/PopupDialog.qml:51
+#: contents/ui/PopupDialog.qml:50
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
@@ -164,54 +164,54 @@ msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 "Přečtěte tento QR kód pomocí jiného zařízení pro připojení k síti \"%1\"."
 
-#: contents/ui/Toolbar.qml:128
+#: contents/ui/Toolbar.qml:129
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Zapnout mobilní síť"
 
-#: contents/ui/Toolbar.qml:153
+#: contents/ui/Toolbar.qml:154
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Vypnout režim v Letadle<nl/><nl/>Tím dojde k zapnutí Wi-Fi a Bluetooth"
 
-#: contents/ui/Toolbar.qml:154
+#: contents/ui/Toolbar.qml:155
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Zapnout režim v Letadle<nl/><nl/>Tím dojde k vypnutí Wi-Fi a Bluetooth"
 
-#: contents/ui/Toolbar.qml:165
+#: contents/ui/Toolbar.qml:166
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: contents/ui/Toolbar.qml:189 contents/ui/Toolbar.qml:200
+#: contents/ui/Toolbar.qml:190 contents/ui/Toolbar.qml:201
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Zakázat hotspot"
 
-#: contents/ui/Toolbar.qml:194 contents/ui/Toolbar.qml:200
+#: contents/ui/Toolbar.qml:195 contents/ui/Toolbar.qml:201
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Vytvořit hotspot"
 
-#: contents/ui/Toolbar.qml:232
+#: contents/ui/Toolbar.qml:233
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Nastavit síťová spojení…"
 
-#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:106
+#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:107
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr "Odesílání"
 
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr "Stahování"

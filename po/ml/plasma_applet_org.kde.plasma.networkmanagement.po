@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-14 02:07+0000\n"
+"POT-Creation-Date: 2023-06-16 02:04+0000\n"
 "PO-Revision-Date: 2019-12-29 06:50+0000\n"
 "Last-Translator: Subin Siby <subins2000@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -120,7 +120,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:79
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:80
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
@@ -154,7 +154,7 @@ msgstr "ശൃംഖലയുടെ ബന്ധങ്ങള്‍ ക്രമ�
 msgid "Password…"
 msgstr "രഹസ്യവാക്കു്..."
 
-#: contents/ui/PopupDialog.qml:51
+#: contents/ui/PopupDialog.qml:50
 #, fuzzy, kde-format
 #| msgid "Configure network connections..."
 msgctxt "@action:button"
@@ -166,55 +166,55 @@ msgstr "ശൃംഖലയുടെ ബന്ധങ്ങള്‍ ക്രമ�
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:128
+#: contents/ui/Toolbar.qml:129
 #, kde-format
 msgid "Enable mobile network"
 msgstr "മൊബൈൽ ശൃംഖല പ്രവര്‍ത്തനസജ്ജമാക്കുക"
 
-#: contents/ui/Toolbar.qml:153
+#: contents/ui/Toolbar.qml:154
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:154
+#: contents/ui/Toolbar.qml:155
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:165
+#: contents/ui/Toolbar.qml:166
 #, kde-format
 msgid "Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:189 contents/ui/Toolbar.qml:200
+#: contents/ui/Toolbar.qml:190 contents/ui/Toolbar.qml:201
 #, kde-format
 msgid "Disable Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:194 contents/ui/Toolbar.qml:200
+#: contents/ui/Toolbar.qml:195 contents/ui/Toolbar.qml:201
 #, kde-format
 msgid "Create Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:232
+#: contents/ui/Toolbar.qml:233
 #, fuzzy, kde-format
 #| msgid "Configure network connections..."
 msgid "Configure network connections…"
 msgstr "ശൃംഖലയുടെ ബന്ധങ്ങള്‍ ക്രമീകരിക്കുക..."
 
-#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:106
+#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:107
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr "അപ്‌ലോഡ്"
 
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr "ഡൗൺലോഡ്"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:17+0000\n"
-"PO-Revision-Date: 2023-04-04 00:53+0300\n"
+"PO-Revision-Date: 2023-06-16 12:44+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.07.70\n"
 "X-POOTLE-MTIME: 1413102233.000000\n"
 
 #: vpnc.cpp:73
@@ -109,8 +109,8 @@ msgstr "Grup parolası."
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
 msgstr ""
-"Hibrit kimlik kanıtlaması kullan; yani parolaya ek olarak sertifika da "
-"kullan."
+"Hibrit kimlik doğrulaması kullan; yani parolaya ek olarak sertifika da "
+"kullanın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
 #: vpnc.ui:144
@@ -158,7 +158,7 @@ msgstr "Alan Adı:"
 #: vpncadvanced.ui:37
 #, kde-format
 msgid "(NT-)Domain name for authentication."
-msgstr "Kimlik denetimi için (NT) etki alanı."
+msgstr "Kimlik doğrulama için (NT) alan adı."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpncadvanced.ui:44
@@ -371,7 +371,7 @@ msgstr "DH Grubu 5"
 #: vpncauth.ui:14
 #, kde-format
 msgid "VPNCAuthentication"
-msgstr "VPNCA Yetkilendirmesi"
+msgstr "VPNCA Kimlik Doğrulaması"
 
 #. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
 #: vpncauth.ui:32

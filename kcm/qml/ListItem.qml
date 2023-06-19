@@ -35,8 +35,8 @@ MouseArea {
         color: listItem.sectionDelegate ? alternateBaseColor : (listItem.checked || listItem.containsMouse ? highlightColor : baseColor)
     }
 
-    PlasmaCore.SvgItem {
-        svg: PlasmaCore.Svg {imagePath: "widgets/listitem"}
+    KSvg.SvgItem {
+        svg: KSvg.Svg {imagePath: "widgets/listitem"}
         elementId: "separator"
         anchors {
             left: parent.left

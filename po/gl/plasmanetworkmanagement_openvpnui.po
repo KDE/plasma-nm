@@ -203,8 +203,8 @@ msgid ""
 "If key direction is used, it must be the opposite of that used on the VPN "
 "peer."
 msgstr ""
-"De empregarse a dirección da chave, deberá ter o valor oposto daquel que se "
-"use no parceiro VPN."
+"De usarse a dirección da chave, deberá ter o valor oposto daquel que se use "
+"no parceiro VPN."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:254
@@ -348,7 +348,7 @@ msgstr ""
 #: openvpnadvanced.ui:75
 #, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr "Empregar un intervalo de renegociación personalizado:"
+msgstr "Usar un intervalo de renegociación personalizado:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCompression)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUseCompression)
@@ -630,7 +630,7 @@ msgstr "Indicar as rutas máximas:"
 #: openvpnadvanced.ui:474
 #, kde-format
 msgid "Security"
-msgstr "Seguranza"
+msgstr "Seguridade"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_3)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboCipher)
@@ -671,7 +671,7 @@ msgstr ""
 #: openvpnadvanced.ui:531
 #, kde-format
 msgid "Use custom size of cipher key:"
-msgstr "Empregar un tamaño personalizado para a chave de cifraxe:"
+msgstr "Usar un tamaño personalizado para a chave de cifraxe:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboHmac)
@@ -1018,8 +1018,8 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
-"Seleccione esta opción se a súa organización necesita usar un servidor proxy "
-"para acceder a Internet."
+"Seleccione esta opción se a súa organización necesita usar un servidor "
+"mandatario para acceder a Internet."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_12)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, proxyServerAddress)

@@ -70,13 +70,13 @@ msgstr "EAP"
 #: sstpadvanced.ui:111
 #, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr "Empregar o cifrado punto a punto de Microsoft."
+msgstr "Usar o cifrado punto a punto de Microsoft."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
 #: sstpadvanced.ui:114
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr "Empregar o cifrado MPPE."
+msgstr "Usar o cifrado MPPE."
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_MMPEcrypto)
 #: sstpadvanced.ui:135
@@ -107,7 +107,7 @@ msgstr "40 bits"
 #: sstpadvanced.ui:170
 #, kde-format
 msgid "Use stateful encryption"
-msgstr "Empregar cifrado de estado."
+msgstr "Usar cifrado de estado."
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
 #: sstpadvanced.ui:180

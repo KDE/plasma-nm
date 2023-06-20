@@ -95,7 +95,7 @@ msgstr "Solicitar o PIN ao detectar un módem."
 
 #: qml/ConfigurationDialog.qml:49
 msgid "Show virtual connections"
-msgstr "Mostrar as conexións virtuais"
+msgstr "Amosar as conexións virtuais"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Hotspot"

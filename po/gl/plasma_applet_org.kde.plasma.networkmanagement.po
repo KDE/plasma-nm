@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-16 02:04+0000\n"
+"POT-Creation-Date: 2023-06-20 02:58+0000\n"
 "PO-Revision-Date: 2023-05-11 09:53+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -37,7 +37,7 @@ msgstr "Desconectar"
 #: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
-msgstr "Mostrar o código QR da rede"
+msgstr "Amosar o código QR da rede"
 
 #: contents/ui/ConnectionItem.qml:90
 #, kde-format
@@ -126,7 +126,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Clic central para activar o modo avión"
 
-#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:80
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activar a Wi-Fi"
@@ -168,39 +168,39 @@ msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 "Escanee este código QR con outro dispositivo para conectarse á rede «%1»."
 
-#: contents/ui/Toolbar.qml:129
+#: contents/ui/Toolbar.qml:130
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Activar a rede móbil."
 
-#: contents/ui/Toolbar.qml:154
+#: contents/ui/Toolbar.qml:155
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Desactivar o modo avión<nl/><nl/>Isto activará a Wi-Fi e o Bluetooth"
 
-#: contents/ui/Toolbar.qml:155
+#: contents/ui/Toolbar.qml:156
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Activar o modo avión<nl/><nl/>Isto desactivará a Wi-Fi e o Bluetooth"
 
-#: contents/ui/Toolbar.qml:166
+#: contents/ui/Toolbar.qml:167
 #, kde-format
 msgid "Hotspot"
 msgstr "Punto de acceso"
 
-#: contents/ui/Toolbar.qml:190 contents/ui/Toolbar.qml:201
+#: contents/ui/Toolbar.qml:191 contents/ui/Toolbar.qml:202
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Desactivar o punto de acceso"
 
-#: contents/ui/Toolbar.qml:195 contents/ui/Toolbar.qml:201
+#: contents/ui/Toolbar.qml:196 contents/ui/Toolbar.qml:202
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Crear un punto de acceso"
 
-#: contents/ui/Toolbar.qml:233
+#: contents/ui/Toolbar.qml:234
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configurar as conexións de rede…"

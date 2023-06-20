@@ -380,7 +380,7 @@ msgstr ""
 #: l2tpipsec.ui:309
 #, kde-format
 msgid "Use IP compression"
-msgstr "Empregar a compresión do IP."
+msgstr "Usar a compresión do IP."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:316
@@ -606,7 +606,7 @@ msgstr ""
 #: l2tpppp.ui:260
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr "Empregar o cifrado MPPE."
+msgstr "Usar o cifrado MPPE."
 
 #. i18n: ectx: property (text), widget (QLabel, lblMMPEcrypto)
 #: l2tpppp.ui:281
@@ -652,7 +652,7 @@ msgstr ""
 #: l2tpppp.ui:322
 #, kde-format
 msgid "Use stateful encryption"
-msgstr "Empregar cifrado de estado."
+msgstr "Usar cifrado de estado."
 
 #: l2tppppwidget.cpp:22
 #, kde-format

@@ -161,7 +161,7 @@ msgstr "Forzar o encapsulamento UDP."
 #: strongswanprop.ui:284
 #, kde-format
 msgid "Use IP compression"
-msgstr "Empregar a compresión do IP."
+msgstr "Usar a compresión do IP."
 
 #. i18n: ectx: property (title), widget (QGroupBox, proposal)
 #: strongswanprop.ui:294

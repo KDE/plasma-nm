@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-16 02:04+0000\n"
+"POT-Creation-Date: 2023-06-20 02:58+0000\n"
 "PO-Revision-Date: 2023-05-09 19:51+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -121,7 +121,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Среден бутон на мишката за включване на самолетен режим"
 
-#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:80
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Активиране на  Wi-Fi"
@@ -164,12 +164,12 @@ msgstr ""
 "Сканирайте този QR код с друго устройство, за да се свържете с мрежата "
 "\"%1\"."
 
-#: contents/ui/Toolbar.qml:129
+#: contents/ui/Toolbar.qml:130
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Активиране на мобилната мрежа"
 
-#: contents/ui/Toolbar.qml:154
+#: contents/ui/Toolbar.qml:155
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
@@ -177,7 +177,7 @@ msgstr ""
 "Деактивиране на самолетен режим <nl /> <nl /> Това ще активира Wi-Fi и "
 "Bluetooth"
 
-#: contents/ui/Toolbar.qml:155
+#: contents/ui/Toolbar.qml:156
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
@@ -185,22 +185,22 @@ msgstr ""
 "Активиране на самолетен режим <nl /> <nl /> Това ще деактивира Wi-Fi и "
 "Bluetooth"
 
-#: contents/ui/Toolbar.qml:166
+#: contents/ui/Toolbar.qml:167
 #, kde-format
 msgid "Hotspot"
 msgstr "Активна точка"
 
-#: contents/ui/Toolbar.qml:190 contents/ui/Toolbar.qml:201
+#: contents/ui/Toolbar.qml:191 contents/ui/Toolbar.qml:202
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Деактивиране точка за достъп"
 
-#: contents/ui/Toolbar.qml:195 contents/ui/Toolbar.qml:201
+#: contents/ui/Toolbar.qml:196 contents/ui/Toolbar.qml:202
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Създаване на точка за достъп"
 
-#: contents/ui/Toolbar.qml:233
+#: contents/ui/Toolbar.qml:234
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Конфигуриране на мрежови връзки…"

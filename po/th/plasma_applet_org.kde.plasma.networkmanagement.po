@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-16 02:04+0000\n"
+"POT-Creation-Date: 2023-06-20 02:58+0000\n"
 "PO-Revision-Date: 2010-12-17 15:28+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -126,7 +126,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:80
+#: contents/ui/main.qml:81 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
@@ -172,42 +172,42 @@ msgstr "แก้ไขการเชื่อมต่อเครือข่
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:129
+#: contents/ui/Toolbar.qml:130
 #, fuzzy, kde-format
 #| msgid "User name on this network"
 msgid "Enable mobile network"
 msgstr "ชื่อผู้ใช้บนเครือข่ายนี้"
 
-#: contents/ui/Toolbar.qml:154
+#: contents/ui/Toolbar.qml:155
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:155
+#: contents/ui/Toolbar.qml:156
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:166
+#: contents/ui/Toolbar.qml:167
 #, kde-format
 msgid "Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:190 contents/ui/Toolbar.qml:201
+#: contents/ui/Toolbar.qml:191 contents/ui/Toolbar.qml:202
 #, fuzzy, kde-format
 #| msgid "Disable &split tunnel"
 msgid "Disable Hotspot"
 msgstr "ปิดใช้งานท่อแ&ยก"
 
-#: contents/ui/Toolbar.qml:195 contents/ui/Toolbar.qml:201
+#: contents/ui/Toolbar.qml:196 contents/ui/Toolbar.qml:202
 #, fuzzy, kde-format
 #| msgid "Connection"
 msgid "Create Hotspot"
 msgstr "การเชื่อมต่อ"
 
-#: contents/ui/Toolbar.qml:233
+#: contents/ui/Toolbar.qml:234
 #, fuzzy, kde-format
 msgid "Configure network connections…"
 msgstr "การเชื่อมต่อ"

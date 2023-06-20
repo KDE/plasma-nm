@@ -115,7 +115,7 @@ msgstr ""
 #: vpnc.ui:144
 #, kde-format
 msgid "Use hybrid authentication"
-msgstr "Empregar autenticación híbrida."
+msgstr "Usar autenticación híbrida."
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpnc.ui:154
@@ -175,7 +175,7 @@ msgstr "Fabricante da pasarela de IPsec."
 #: vpncadvanced.ui:70
 #, kde-format
 msgid "Transport and Security"
-msgstr "Transporte e seguranza"
+msgstr "Transporte e seguridade"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpncadvanced.ui:82

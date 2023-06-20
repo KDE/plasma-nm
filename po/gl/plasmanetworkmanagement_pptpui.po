@@ -83,7 +83,7 @@ msgstr ""
 #: pptpadvanced.ui:91
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr "Empregar o cifrado MPPE."
+msgstr "Usar o cifrado MPPE."
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_MMPEcrypto)
 #: pptpadvanced.ui:112
@@ -129,7 +129,7 @@ msgstr ""
 #: pptpadvanced.ui:153
 #, kde-format
 msgid "Use stateful encryption"
-msgstr "Empregar cifrado de estado."
+msgstr "Usar cifrado de estado."
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
 #: pptpadvanced.ui:163

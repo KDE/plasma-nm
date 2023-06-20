@@ -286,7 +286,7 @@ msgstr "Chave privada:"
 #: openconnectprop.ui:264
 #, kde-format
 msgid "Use FSID for key passphrase"
-msgstr "Empregar FSID para a frase de paso da chave."
+msgstr "Usar FSID para a frase de paso da chave."
 
 #. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
 #: openconnectprop.ui:271

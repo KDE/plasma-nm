@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2018, 2019.
+# Adrián Chaves (Gallaecio) <adrian@chaves.io>, 2018, 2019, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-01 01:00+0000\n"
-"PO-Revision-Date: 2019-10-19 15:34+0200\n"
+"PO-Revision-Date: 2023-06-19 08:31+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.11.70\n"
+"X-Generator: Lokalize 23.04.2\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -30,24 +30,22 @@ msgstr "adrian@chaves.io"
 #: package/contents/ui/ConnectDialog.qml:136
 #, kde-format
 msgid "Invalid input."
-msgstr ""
+msgstr "A entrada é incorrecta."
 
 #: package/contents/ui/ConnectionItemDelegate.qml:108
-#, fuzzy, kde-format
-#| msgid "Connection Editor"
+#, kde-format
 msgid "Connect to"
-msgstr "Editor de conexións"
+msgstr "Conectar con"
 
 #: package/contents/ui/main.qml:82
 #, kde-format
 msgid "Wi-Fi is disabled"
-msgstr ""
+msgstr "A Wi-Fi está desactivada"
 
 #: package/contents/ui/main.qml:86
-#, fuzzy, kde-format
-#| msgid "Enable Wi-Fi"
+#, kde-format
 msgid "Enable"
-msgstr "Activar a Wi-Fi"
+msgstr "Activar"
 
 #: package/contents/ui/main.qml:96
 #, kde-format
@@ -55,22 +53,19 @@ msgid "Disable Wi-Fi"
 msgstr "Desactivar a Wi-Fi"
 
 #: package/contents/ui/main.qml:102
-#, fuzzy, kde-format
-#| msgid "Add custom connection"
+#, kde-format
 msgid "Add Custom Connection"
 msgstr "Engadir unha conexión personalizada"
 
 #: package/contents/ui/main.qml:108
-#, fuzzy, kde-format
-#| msgid "Saved Connections"
+#, kde-format
 msgid "Show Saved Connections"
-msgstr "Conexións gardadas"
+msgstr "Amosar as conexións gardadas"
 
 #: package/contents/ui/NetworkSettings.qml:14
-#, fuzzy, kde-format
-#| msgid "Add custom connection"
+#, kde-format
 msgid "Add new Connection"
-msgstr "Engadir unha conexión personalizada"
+msgstr "Engadir unha nova conexión"
 
 #: package/contents/ui/NetworkSettings.qml:34
 #, kde-format
@@ -80,29 +75,27 @@ msgstr "Gardar"
 #: package/contents/ui/NetworkSettings.qml:44
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Xeral"
 
 #: package/contents/ui/NetworkSettings.qml:49
-#, fuzzy, kde-format
-#| msgid "SSID"
+#, kde-format
 msgid "SSID:"
-msgstr "SSID"
+msgstr "SSID:"
 
 #: package/contents/ui/NetworkSettings.qml:58
-#, fuzzy, kde-format
-#| msgid "Hide this network"
+#, kde-format
 msgid "Hidden Network:"
-msgstr "Agochar a rede"
+msgstr "Rede agochada:"
 
 #: package/contents/ui/NetworkSettings.qml:64
 #, kde-format
 msgid "Security"
-msgstr "Seguranza"
+msgstr "Seguridade"
 
 #: package/contents/ui/NetworkSettings.qml:70
 #, kde-format
 msgid "Security type:"
-msgstr "Tipo de seguranza:"
+msgstr "Tipo de seguridade:"
 
 #: package/contents/ui/NetworkSettings.qml:79
 #, kde-format
@@ -200,10 +193,9 @@ msgid "DNS:"
 msgstr "DNS:"
 
 #: package/contents/ui/PasswordField.qml:13
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password…"
-msgstr "Contrasinal:"
+msgstr "Contrasinal…"
 
 #: wifisettings.cpp:32
 #, kde-format

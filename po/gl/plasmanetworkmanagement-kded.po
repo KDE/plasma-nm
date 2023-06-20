@@ -669,7 +669,7 @@ msgstr "Volva inserir o PIN:"
 #: pindialog.cpp:87 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
-msgstr "Mostrar o código PIN/PUK"
+msgstr "Amosar o código PIN/PUK"
 
 #: pindialog.cpp:97
 #, kde-format
@@ -714,7 +714,7 @@ msgstr "PIN de subconxunto de rede"
 #: pindialog.cpp:117
 #, kde-format
 msgid "Show PIN code"
-msgstr "Mostrar o código PIN"
+msgstr "Amosar o código PIN"
 
 #: pindialog.cpp:199
 #, kde-format

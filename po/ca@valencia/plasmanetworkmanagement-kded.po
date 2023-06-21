@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 02:34+0000\n"
+"POT-Creation-Date: 2023-06-21 02:02+0000\n"
 "PO-Revision-Date: 2022-12-07 14:51+0100\n"
 "Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -767,7 +767,7 @@ msgstr "Codi PUK:"
 msgid "Re-enter PIN code:"
 msgstr "Torneu a introduir el codi PIN:"
 
-#: secretagent.cpp:406
+#: secretagent.cpp:407
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "No s'ha pogut fer l'autenticació a %1. Contrasenya incorrecta?"

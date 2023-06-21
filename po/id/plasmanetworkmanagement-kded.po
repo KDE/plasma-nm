@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 02:34+0000\n"
+"POT-Creation-Date: 2023-06-21 02:02+0000\n"
 "PO-Revision-Date: 2023-02-18 14:52+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -763,7 +763,7 @@ msgstr "Kode PUK:"
 msgid "Re-enter PIN code:"
 msgstr "Masukkan ulang kode PIN:"
 
-#: secretagent.cpp:406
+#: secretagent.cpp:407
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Autentikasi terhadap %1, gagal. Apakah kata sandi salah?"

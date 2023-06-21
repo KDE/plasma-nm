@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 02:34+0000\n"
+"POT-Creation-Date: 2023-06-21 02:02+0000\n"
 "PO-Revision-Date: 2022-11-16 21:41+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -764,7 +764,7 @@ msgstr "PUK kodas:"
 msgid "Re-enter PIN code:"
 msgstr "Dar kartą įveskite PIN kodą:"
 
-#: secretagent.cpp:406
+#: secretagent.cpp:407
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Tapatybės nustatymas ties %1 patyrė nesėkmę. Neteisingas slaptažodis?"

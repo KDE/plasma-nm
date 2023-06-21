@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 02:34+0000\n"
+"POT-Creation-Date: 2023-06-21 02:02+0000\n"
 "PO-Revision-Date: 2020-12-21 21:43+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -761,7 +761,7 @@ msgstr "PUK-kód:"
 msgid "Re-enter PIN code:"
 msgstr "Írja be újra a PIN-kódot:"
 
-#: secretagent.cpp:406
+#: secretagent.cpp:407
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "A(z) %1 hitelesítése meghiúsult. Hibás a jelszó?"

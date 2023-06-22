@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 02:58+0000\n"
+"POT-Creation-Date: 2023-06-22 02:08+0000\n"
 "PO-Revision-Date: 2023-02-19 14:03+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -67,32 +67,32 @@ msgstr "Qoşulub, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Qoşuldu"
 
-#: contents/ui/ConnectionListPage.qml:83
+#: contents/ui/ConnectionListPage.qml:82
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Təyyarə rejimi aktivdir"
 
-#: contents/ui/ConnectionListPage.qml:87
+#: contents/ui/ConnectionListPage.qml:86
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Naqilsiz və mobil şəbəkələr söndürülüb"
 
-#: contents/ui/ConnectionListPage.qml:89
+#: contents/ui/ConnectionListPage.qml:88
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Naqilsiz şəbəkə söndürülüb"
 
-#: contents/ui/ConnectionListPage.qml:92
+#: contents/ui/ConnectionListPage.qml:91
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobil şəbəkə söndürülüb"
 
-#: contents/ui/ConnectionListPage.qml:95
+#: contents/ui/ConnectionListPage.qml:94
 #, kde-format
 msgid "No matches"
 msgstr "Uyğun gələn yoxdur"
 
-#: contents/ui/ConnectionListPage.qml:97
+#: contents/ui/ConnectionListPage.qml:96
 #, kde-format
 msgid "No available connections"
 msgstr "Əlçatan bağlantılar yoxdur"
@@ -156,7 +156,7 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "&Şəbəkə bağlantılarını tənzimləyin..."
 
-#: contents/ui/ShareNetworkQrCodePage.qml:31
+#: contents/ui/ShareNetworkQrCodePage.qml:30
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""

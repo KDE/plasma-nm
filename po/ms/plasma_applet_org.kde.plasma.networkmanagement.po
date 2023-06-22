@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 02:58+0000\n"
+"POT-Creation-Date: 2023-06-22 02:08+0000\n"
 "PO-Revision-Date: 2010-07-30 21:29+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -66,32 +66,32 @@ msgstr "Tersambung"
 msgid "Connected"
 msgstr "Tersambung"
 
-#: contents/ui/ConnectionListPage.qml:83
+#: contents/ui/ConnectionListPage.qml:82
 #, fuzzy, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Tanpa wayar"
 
-#: contents/ui/ConnectionListPage.qml:87
+#: contents/ui/ConnectionListPage.qml:86
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:89
+#: contents/ui/ConnectionListPage.qml:88
 #, fuzzy, kde-format
 msgid "Wireless is deactivated"
 msgstr "Tanpa wayar"
 
-#: contents/ui/ConnectionListPage.qml:92
+#: contents/ui/ConnectionListPage.qml:91
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:95
+#: contents/ui/ConnectionListPage.qml:94
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:97
+#: contents/ui/ConnectionListPage.qml:96
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "Sambungan"
@@ -154,7 +154,7 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Sambungan"
 
-#: contents/ui/ShareNetworkQrCodePage.qml:31
+#: contents/ui/ShareNetworkQrCodePage.qml:30
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 02:58+0000\n"
+"POT-Creation-Date: 2023-06-22 02:08+0000\n"
 "PO-Revision-Date: 2023-03-01 00:13+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -65,32 +65,32 @@ msgstr "연결됨, ⬇ %1/초, ⬆ %2/초"
 msgid "Connected"
 msgstr "연결됨"
 
-#: contents/ui/ConnectionListPage.qml:83
+#: contents/ui/ConnectionListPage.qml:82
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "비행기 모드가 활성화됨"
 
-#: contents/ui/ConnectionListPage.qml:87
+#: contents/ui/ConnectionListPage.qml:86
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "무선 및 모바일 네트워크가 비활성화됨"
 
-#: contents/ui/ConnectionListPage.qml:89
+#: contents/ui/ConnectionListPage.qml:88
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "무선 네트워크가 비활성화됨"
 
-#: contents/ui/ConnectionListPage.qml:92
+#: contents/ui/ConnectionListPage.qml:91
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "모바일 네트워크가 비활성화됨"
 
-#: contents/ui/ConnectionListPage.qml:95
+#: contents/ui/ConnectionListPage.qml:94
 #, kde-format
 msgid "No matches"
 msgstr "검색 결과 없음"
 
-#: contents/ui/ConnectionListPage.qml:97
+#: contents/ui/ConnectionListPage.qml:96
 #, kde-format
 msgid "No available connections"
 msgstr "사용 가능한 연결 없음"
@@ -154,7 +154,7 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "네트워크 연결 설정(&C)…"
 
-#: contents/ui/ShareNetworkQrCodePage.qml:31
+#: contents/ui/ShareNetworkQrCodePage.qml:30
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""

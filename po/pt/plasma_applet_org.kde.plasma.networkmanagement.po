@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 02:58+0000\n"
+"POT-Creation-Date: 2023-06-22 02:08+0000\n"
 "PO-Revision-Date: 2022-12-12 16:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -86,32 +86,32 @@ msgstr "Ligada, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Ligada"
 
-#: contents/ui/ConnectionListPage.qml:83
+#: contents/ui/ConnectionListPage.qml:82
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "O modo de avião está activo"
 
-#: contents/ui/ConnectionListPage.qml:87
+#: contents/ui/ConnectionListPage.qml:86
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "As redes móveis e sem-fios estão desactivadas"
 
-#: contents/ui/ConnectionListPage.qml:89
+#: contents/ui/ConnectionListPage.qml:88
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "A rede sem-fios está desactivada"
 
-#: contents/ui/ConnectionListPage.qml:92
+#: contents/ui/ConnectionListPage.qml:91
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "A rede móvel está desactivada"
 
-#: contents/ui/ConnectionListPage.qml:95
+#: contents/ui/ConnectionListPage.qml:94
 #, kde-format
 msgid "No matches"
 msgstr "Sem correspondências"
 
-#: contents/ui/ConnectionListPage.qml:97
+#: contents/ui/ConnectionListPage.qml:96
 #, kde-format
 msgid "No available connections"
 msgstr "Sem ligações disponíveis"
@@ -175,7 +175,7 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "&Configurar as Ligações de Rede…"
 
-#: contents/ui/ShareNetworkQrCodePage.qml:31
+#: contents/ui/ShareNetworkQrCodePage.qml:30
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""

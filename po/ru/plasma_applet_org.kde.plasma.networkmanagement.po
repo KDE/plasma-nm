@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-20 02:58+0000\n"
+"POT-Creation-Date: 2023-06-22 02:08+0000\n"
 "PO-Revision-Date: 2023-01-13 17:43+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -79,32 +79,32 @@ msgstr "Подключено, ⬇ %1/с, ⬆ %2/с"
 msgid "Connected"
 msgstr "Подключено"
 
-#: contents/ui/ConnectionListPage.qml:83
+#: contents/ui/ConnectionListPage.qml:82
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Режим полёта активен"
 
-#: contents/ui/ConnectionListPage.qml:87
+#: contents/ui/ConnectionListPage.qml:86
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Беспроводные и мобильные сети отключены"
 
-#: contents/ui/ConnectionListPage.qml:89
+#: contents/ui/ConnectionListPage.qml:88
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Беспроводная сеть отключена"
 
-#: contents/ui/ConnectionListPage.qml:92
+#: contents/ui/ConnectionListPage.qml:91
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Мобильная сеть отключена"
 
-#: contents/ui/ConnectionListPage.qml:95
+#: contents/ui/ConnectionListPage.qml:94
 #, kde-format
 msgid "No matches"
 msgstr "Совпадений не найдено"
 
-#: contents/ui/ConnectionListPage.qml:97
+#: contents/ui/ConnectionListPage.qml:96
 #, kde-format
 msgid "No available connections"
 msgstr "Нет доступных соединений"
@@ -168,7 +168,7 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "На&строить сетевые соединения..."
 
-#: contents/ui/ShareNetworkQrCodePage.qml:31
+#: contents/ui/ShareNetworkQrCodePage.qml:30
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""

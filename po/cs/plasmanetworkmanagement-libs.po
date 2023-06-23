@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-12 02:34+0000\n"
-"PO-Revision-Date: 2023-03-30 13:34+0200\n"
+"PO-Revision-Date: 2023-06-22 13:21+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.2\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -95,7 +95,7 @@ msgstr "Připojen k %1 (omezené spojení)"
 #: declarative/networkstatus.cpp:210
 #, kde-format
 msgid "Connected to %1 (log in required)"
-msgstr "Připojen k %1 (příhlášení není potřeba)"
+msgstr "Připojen k %1 (přihlášení není potřeba)"
 
 #: declarative/networkstatus.cpp:213
 #, kde-format
@@ -3199,7 +3199,7 @@ msgstr "Odstr&anit"
 #: handler.cpp:120
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "Podpora spojení '%1' VPN v Plasmě chybí."
+msgstr "Podpora spojení '%1' VPN v Plasma chybí."
 
 #: handler.cpp:122
 #, kde-format

@@ -985,13 +985,13 @@ msgstr "Proxys"
 #: openvpnadvanced.ui:992 openvpnadvanced.ui:1017
 #, kde-format
 msgid "Proxy type: HTTP or SOCKS"
-msgstr "Tipo de proxy: HTTP ou SOCKS."
+msgstr "Tipo de mandatario: HTTP ou SOCKS."
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: openvpnadvanced.ui:995
 #, kde-format
 msgid "Proxy Type:"
-msgstr "Tipo de proxy:"
+msgstr "Tipo de mandatario:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProxyType)
 #: openvpnadvanced.ui:1021
@@ -1053,14 +1053,14 @@ msgstr "Porto:"
 #, kde-format
 msgid "HTTP/SOCKS proxy username passed to OpenVPN when prompted for it."
 msgstr ""
-"Nome de usuario do proxy HTTP ou SOCKS, para pasarllo a OpenVPN cando o "
+"Nome de usuario do mandatario HTTP ou SOCKS, para pasarllo a OpenVPN cando o "
 "solicite."
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: openvpnadvanced.ui:1115
 #, kde-format
 msgid "Proxy Username:"
-msgstr "Nome de usuario do proxy:"
+msgstr "Nome de usuario do mandatario:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_15)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyPassword)
@@ -1068,13 +1068,14 @@ msgstr "Nome de usuario do proxy:"
 #, kde-format
 msgid "HTTP/SOCKS proxy password passed to OpenVPN when prompted for it."
 msgstr ""
-"Contrasinal do proxy HTTP ou SOCKS, para pasarllo a OpenVPN cando o solicite."
+"Contrasinal do mandatario HTTP ou SOCKS, para pasarllo a OpenVPN cando o "
+"solicite."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
 #: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
 #, kde-format
 msgid "Proxy Password:"
-msgstr "Contrasinal do proxy:"
+msgstr "Contrasinal do mandatario:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkProxyRetry)
 #: openvpnadvanced.ui:1162

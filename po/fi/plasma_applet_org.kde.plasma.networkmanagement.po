@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-06-22 02:08+0000\n"
-"PO-Revision-Date: 2023-03-04 20:06+0200\n"
+"PO-Revision-Date: 2023-05-29 21:17+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -150,16 +150,15 @@ msgid "Password…"
 msgstr "Salasana…"
 
 #: contents/ui/PopupDialog.qml:50
-#, fuzzy, kde-format
-#| msgid "&Configure Network Connections…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "Muokkaa &verkkoyhteyksiä…"
+msgstr "Palaa verkkoyhteyksiin"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:30
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
-msgstr ""
+msgstr "Yhdistä verkkoon ”%1” lukemalla toisella laitteella tämä QR-koodi."
 
 #: contents/ui/Toolbar.qml:130
 #, kde-format

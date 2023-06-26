@@ -155,7 +155,7 @@ PRIVATE
     KF6::Wallet
     Qt::DBus
     Qt::Network
-    qca-qt${QT_MAJOR_VERSION}
+    qca-qt6
 )
 
 target_compile_definitions(plasmanm_editor PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

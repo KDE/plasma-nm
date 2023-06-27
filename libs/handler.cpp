@@ -48,7 +48,7 @@
 #include <QCoroCore>
 #include <QCoroDBus>
 
-#define AGENT_SERVICE "org.kde.kded5"
+#define AGENT_SERVICE "org.kde.kded6"
 #define AGENT_PATH "/modules/networkmanagement"
 #define AGENT_IFACE "org.kde.plasmanetworkmanagement"
 

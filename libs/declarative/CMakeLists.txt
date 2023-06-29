@@ -23,6 +23,7 @@ target_link_libraries(plasmanm_qmlplugins
     Qt::Quick
     KF6::I18n
     KF6::ModemManagerQt
+    KF6::KIOGui
 )
 
 install(TARGETS plasmanm_qmlplugins DESTINATION ${KDE_INSTALL_QMLDIR}/org/kde/plasma/networkmanagement)

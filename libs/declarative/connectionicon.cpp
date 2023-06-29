@@ -5,8 +5,12 @@
 */
 
 #include "connectionicon.h"
+
+#include "../plasma-nm-config.h"
 #include "configuration.h"
 #include "uiutils.h"
+
+#include <KIO/CommandLauncherJob>
 
 #include <NetworkManagerQt/BluetoothDevice>
 #include <NetworkManagerQt/Connection>
@@ -619,4 +623,10 @@ void ConnectionIcon::setLimited(bool limited)
         m_limited = limited;
         Q_EMIT connectionIconChanged(connectionIcon());
     }
+}
+
+void ConnectionIcon::showCaptivePortalLogin()
+{
+    auto job = new KIO::CommandLauncherJob((KDE_INSTALL_FULL_LIBEXECDIR u"/captiveportalview"_qs));
+    job->start();
 }

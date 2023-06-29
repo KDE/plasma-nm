@@ -36,6 +36,8 @@ public:
         return m_needsPortal;
     }
 
+    Q_INVOKABLE void showCaptivePortalLogin();
+
 private Q_SLOTS:
     void activatingConnectionChanged(const QString &connection);
     void activeConnectionAdded(const QString &activeConnection);

@@ -6,11 +6,12 @@
 */
 
 #include "connectivitymonitor.h"
+#include "../plasma-nm-config.h"
 
 #include <QDBusReply>
 #include <QDesktopServices>
 
-#include <KIO/OpenUrlJob>
+#include <KIO/CommandLauncherJob>
 #include <KLocalizedString>
 
 #include <NetworkManagerQt/ActiveConnection>
@@ -22,6 +23,7 @@
 #include <chrono>
 
 using namespace std::chrono_literals;
+using namespace Qt::StringLiterals;
 
 ConnectivityMonitor::ConnectivityMonitor(QObject *parent)
     : QObject(parent)
@@ -72,7 +74,7 @@ void ConnectivityMonitor::connectivityChanged(NetworkManager::Connectivity conne
                 m_notification->setTitle(title);
                 m_notification->setText(i18n("You need to log into this network"));
                 connect(m_notification, &KNotification::action1Activated, this, [this]() {
-                    auto job = new KIO::OpenUrlJob(QUrl(QStringLiteral("http://networkcheck.kde.org")));
+                    auto job = new KIO::CommandLauncherJob((KDE_INSTALL_FULL_LIBEXECDIR u"/captiveportalview"_qs));
                     job->setStartupId(m_notification->xdgActivationToken().toUtf8());
                     job->start();
                 });

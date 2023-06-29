@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Captive Portal
+Exec= captiveportalview
+Icon=dialog-password
+Type=Application
+NoDisplay=true
+DBusActivatable=True
+

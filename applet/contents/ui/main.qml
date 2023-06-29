@@ -74,7 +74,7 @@ PlasmoidItem {
     }
 
     function action_showPortal() {
-        Qt.openUrlExternally("http://networkcheck.kde.org")
+        connectionIconProvider.showCaptivePortalLogin()
     }
 
     Component.onCompleted: {

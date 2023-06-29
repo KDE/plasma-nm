@@ -53,6 +53,9 @@ if(BUILD_OPENCONNECT)
     find_package(Qt6WebEngineWidgets ${QT_MIN_VERSION} CONFIG REQUIRED)
 endif()
 
+find_package(Qt6WebEngineQuick ${QT_MIN_VERSION} CONFIG REQUIRED)
+
+
 find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
     ConfigWidgets
     Completion
@@ -115,7 +118,10 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 
 remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
 
+configure_file(plasma-nm-config.h.in plasma-nm-config.h)
+
 add_subdirectory(applet)
+add_subdirectory(captiveportalview)
 add_subdirectory(kded)
 add_subdirectory(kcm)
 add_subdirectory(libs)

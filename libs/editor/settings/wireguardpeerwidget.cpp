@@ -342,3 +342,5 @@ void WireGuardPeerWidget::slotWidgetChanged()
 {
     Q_EMIT notifyValid();
 }
+
+#include "moc_wireguardpeerwidget.cpp"

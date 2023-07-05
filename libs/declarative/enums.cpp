@@ -12,3 +12,5 @@ Enums::Enums(QObject *parent)
 }
 
 Enums::~Enums() = default;
+
+#include "moc_enums.cpp"

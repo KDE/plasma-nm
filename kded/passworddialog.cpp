@@ -178,3 +178,5 @@ NMVariantMapMap PasswordDialog::secrets() const
 
     return ret;
 }
+
+#include "moc_passworddialog.cpp"

@@ -48,3 +48,5 @@ QVariantMap IodineAuthDialog::setting() const
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
     return secretData;
 }
+
+#include "moc_iodineauth.cpp"

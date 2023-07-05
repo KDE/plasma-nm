@@ -38,3 +38,5 @@ QString SshUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings:
 }
 
 #include "ssh.moc"
+
+#include "moc_ssh.cpp"

@@ -36,3 +36,5 @@ QString FortisslvpnUiPlugin::suggestedFileName(const NetworkManager::ConnectionS
 }
 
 #include "fortisslvpn.moc"
+
+#include "moc_fortisslvpn.cpp"

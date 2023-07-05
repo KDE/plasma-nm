@@ -232,3 +232,5 @@ bool TeamWidget::isValid() const
 {
     return !m_ui->ifaceName->text().isEmpty() && m_ui->teams->count() > 0;
 }
+
+#include "moc_teamwidget.cpp"

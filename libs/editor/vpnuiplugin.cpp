@@ -133,3 +133,5 @@ VpnUiPlugin::ExportResult VpnUiPlugin::ExportResult::fail(const QString &errorMe
 
     return result;
 }
+
+#include "moc_vpnuiplugin.cpp"

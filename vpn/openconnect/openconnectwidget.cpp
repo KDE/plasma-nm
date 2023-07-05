@@ -415,3 +415,5 @@ bool OpenconnectSettingWidget::isValid() const
 
     return !d->ui.leGateway->text().isEmpty();
 }
+
+#include "moc_openconnectwidget.cpp"

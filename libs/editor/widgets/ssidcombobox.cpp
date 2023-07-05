@@ -143,3 +143,5 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
         }
     }
 }
+
+#include "moc_ssidcombobox.cpp"

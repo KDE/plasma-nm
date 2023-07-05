@@ -38,3 +38,5 @@ QString SstpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings
 }
 
 #include "sstp.moc"
+
+#include "moc_sstp.cpp"

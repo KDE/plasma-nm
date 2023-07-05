@@ -37,3 +37,5 @@ QString LibreswanUiPlugin::suggestedFileName(const NetworkManager::ConnectionSet
 }
 
 #include "libreswan.moc"
+
+#include "moc_libreswan.cpp"

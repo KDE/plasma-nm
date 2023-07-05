@@ -36,3 +36,5 @@ QString IodineUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettin
 }
 
 #include "iodine.moc"
+
+#include "moc_iodine.cpp"

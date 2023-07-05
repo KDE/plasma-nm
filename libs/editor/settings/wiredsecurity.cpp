@@ -68,3 +68,5 @@ QVariantMap WiredSecurity::setting() const
 
     return {};
 }
+
+#include "moc_wiredsecurity.cpp"

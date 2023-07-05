@@ -720,3 +720,5 @@ void OpenVpnAdvancedWidget::handleOnePasswordType(const PasswordField *passwordF
         break;
     }
 }
+
+#include "moc_openvpnadvancedwidget.cpp"

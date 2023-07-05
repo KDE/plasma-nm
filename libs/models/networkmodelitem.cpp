@@ -747,3 +747,5 @@ void NetworkModelItem::updateDetails() const
         m_details << i18n("Device") << device->interfaceName();
     }
 }
+
+#include "moc_networkmodelitem.cpp"

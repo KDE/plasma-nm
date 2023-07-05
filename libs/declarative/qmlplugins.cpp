@@ -60,3 +60,5 @@ void QmlPlugins::registerTypes(const char *uri)
         return new ConfigurationProxy;
     });
 }
+
+#include "moc_qmlplugins.cpp"

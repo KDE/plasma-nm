@@ -194,3 +194,5 @@ void IpV4RoutesWidget::tableViewItemChanged(QStandardItem *item)
         }
     }
 }
+
+#include "moc_ipv4routeswidget.cpp"

@@ -620,3 +620,5 @@ void ConnectionIcon::setLimited(bool limited)
         Q_EMIT connectionIconChanged(connectionIcon());
     }
 }
+
+#include "moc_connectionicon.cpp"

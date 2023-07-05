@@ -292,3 +292,5 @@ bool BondWidget::isValid() const
 
     return !m_ui->ifaceName->text().isEmpty() && m_ui->bonds->count() > 0;
 }
+
+#include "moc_bondwidget.cpp"

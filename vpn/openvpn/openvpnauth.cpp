@@ -152,3 +152,5 @@ void OpenVpnAuthWidget::addPasswordField(const QString &labelText, const QString
     lineEdit->setText(password);
     d->layout->addRow(label, lineEdit);
 }
+
+#include "moc_openvpnauth.cpp"

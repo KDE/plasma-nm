@@ -103,3 +103,5 @@ QCoro::Task<void> ConnectivityMonitor::checkConnectivity()
         connectivityChanged((NetworkManager::Connectivity)reply.value());
     }
 }
+
+#include "moc_connectivitymonitor.cpp"

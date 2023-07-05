@@ -185,3 +185,5 @@ bool Configuration::systemConnectionsByDefault() const
     KConfigGroup grp(config, QStringLiteral("General"));
     return grp.readEntry(QStringLiteral("SystemConnectionsByDefault"), false);
 }
+
+#include "moc_configuration.cpp"

@@ -111,3 +111,5 @@ bool ConfigurationProxy::systemConnectionsByDefault() const
 
     return mConfiguration->systemConnectionsByDefault();
 }
+
+#include "moc_configurationproxy.cpp"

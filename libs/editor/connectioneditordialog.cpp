@@ -47,3 +47,5 @@ void ConnectionEditorDialog::onValidityChanged(bool valid)
 {
     m_buttonBox->button(QDialogButtonBox::Save)->setEnabled(valid);
 }
+
+#include "moc_connectioneditordialog.cpp"

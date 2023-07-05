@@ -658,3 +658,5 @@ void SecretAgent::importSecretsFromPlainTextFiles()
         }
     }
 }
+
+#include "moc_secretagent.cpp"

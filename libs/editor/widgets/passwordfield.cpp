@@ -167,3 +167,5 @@ void PasswordField::changePasswordOption(int index)
 
     Q_EMIT passwordOptionChanged(m_currentPasswordOption);
 }
+
+#include "moc_passwordfield.cpp"

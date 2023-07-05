@@ -195,3 +195,5 @@ void IpV6RoutesWidget::tableViewItemChanged(QStandardItem *item)
         }
     }
 }
+
+#include "moc_ipv6routeswidget.cpp"

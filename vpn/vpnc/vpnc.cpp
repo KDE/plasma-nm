@@ -223,3 +223,5 @@ VpncUiPlugin::ExportResult VpncUiPlugin::exportConnectionSettings(const NetworkM
 }
 
 #include "vpnc.moc"
+
+#include "moc_vpnc.cpp"

@@ -38,3 +38,5 @@ QString L2tpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings
 }
 
 #include "l2tp.moc"
+
+#include "moc_l2tp.cpp"

@@ -561,3 +561,5 @@ QWizardPage *MobileConnectionWizard::createConfirmPage()
 
     return page;
 }
+
+#include "moc_mobileconnectionwizard.cpp"

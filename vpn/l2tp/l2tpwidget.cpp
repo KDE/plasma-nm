@@ -285,3 +285,5 @@ bool L2tpWidget::isValid() const
 {
     return !m_ui->gateway->text().isEmpty();
 }
+
+#include "moc_l2tpwidget.cpp"

@@ -987,3 +987,5 @@ void Handler::slotRequestWifiCode(QDBusPendingCallWatcher *watcher)
 
     Q_EMIT wifiCodeReceived(ret % QLatin1Char(';'), connectionName);
 }
+
+#include "moc_handler.cpp"

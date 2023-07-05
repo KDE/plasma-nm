@@ -371,3 +371,5 @@ bool L2tpIpsecWidget::hasIpsecDaemon()
     }
     return false;
 }
+
+#include "moc_l2tpipsecwidget.cpp"

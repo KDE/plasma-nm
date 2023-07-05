@@ -128,3 +128,5 @@ bool IodineWidget::isValid() const
 {
     return !m_ui->le_toplevelDomain->text().isEmpty();
 }
+
+#include "moc_iodinewidget.cpp"

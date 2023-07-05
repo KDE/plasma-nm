@@ -527,3 +527,5 @@ void ConnectionEditorBase::onAllUsersChanged()
     auto allUsers = m_connectionWidget->allUsers();
     m_wifiSecurity->setStoreSecretsSystemWide(allUsers);
 }
+
+#include "moc_connectioneditorbase.cpp"

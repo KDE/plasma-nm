@@ -23,3 +23,5 @@ QValidator::State WireGuardKeyValidator::validate(QString &address, int &pos) co
 {
     return m_validator->validate(address, pos);
 }
+
+#include "moc_wireguardkeyvalidator.cpp"

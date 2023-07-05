@@ -539,3 +539,5 @@ bool IPv4Widget::isValid() const
 
     return true;
 }
+
+#include "moc_ipv4widget.cpp"

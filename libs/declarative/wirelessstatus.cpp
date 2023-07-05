@@ -65,3 +65,5 @@ void WirelessStatus::stateChanged()
         }
     }
 }
+
+#include "moc_wirelessstatus.cpp"

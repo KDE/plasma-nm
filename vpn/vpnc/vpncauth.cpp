@@ -100,3 +100,5 @@ QVariantMap VpncAuthDialog::setting() const
 
     return result;
 }
+
+#include "moc_vpncauth.cpp"

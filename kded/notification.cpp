@@ -552,3 +552,5 @@ void Notification::onCheckActiveConnectionOnResume()
     m_notifications[uni] = notify;
     notify->sendEvent();
 }
+
+#include "moc_notification.cpp"

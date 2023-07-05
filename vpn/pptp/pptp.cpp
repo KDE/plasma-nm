@@ -38,3 +38,5 @@ QString PptpUiPlugin::suggestedFileName(const NetworkManager::ConnectionSettings
 }
 
 #include "pptp.moc"
+
+#include "moc_pptp.cpp"

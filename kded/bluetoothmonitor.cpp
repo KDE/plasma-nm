@@ -122,3 +122,5 @@ void BluetoothMonitor::addBluetoothConnection(const QString &bdAddr, const QStri
         mobileConnectionWizard->show();
     }
 }
+
+#include "moc_bluetoothmonitor.cpp"

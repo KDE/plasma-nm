@@ -90,3 +90,5 @@ QVariantMap LibreswanAuthDialog::setting() const
 
     return result;
 }
+
+#include "moc_libreswanauth.cpp"

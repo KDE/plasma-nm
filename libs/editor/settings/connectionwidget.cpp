@@ -201,3 +201,5 @@ void ConnectionWidget::populateVpnConnections()
         m_widget->vpnCombobox->addItem(it.value(), it.key());
     }
 }
+
+#include "moc_connectionwidget.cpp"

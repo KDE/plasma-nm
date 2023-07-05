@@ -42,3 +42,5 @@ void Delegate::updateEditorGeometry(QWidget *editor, const QStyleOptionViewItem 
 {
     editor->setGeometry(option.rect);
 }
+
+#include "moc_delegate.cpp"

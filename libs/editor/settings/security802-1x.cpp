@@ -608,3 +608,5 @@ void Security8021x::currentAuthChanged(int index)
     Q_UNUSED(index);
     KAcceleratorManager::manage(m_ui->stackedWidget->currentWidget());
 }
+
+#include "moc_security802-1x.cpp"

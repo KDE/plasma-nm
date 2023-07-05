@@ -172,3 +172,5 @@ bool StrongswanSettingWidget::isValid() const
     Q_D(const StrongswanSettingWidget);
     return !d->ui.leGateway->text().isEmpty();
 }
+
+#include "moc_strongswanwidget.cpp"

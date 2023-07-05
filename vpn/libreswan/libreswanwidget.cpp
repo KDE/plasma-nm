@@ -189,3 +189,5 @@ bool LibreswanWidget::isValid() const
 {
     return !m_ui->gateway->text().isEmpty() && !m_ui->groupname->text().isEmpty();
 }
+
+#include "moc_libreswanwidget.cpp"

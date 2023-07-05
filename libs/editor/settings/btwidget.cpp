@@ -62,3 +62,5 @@ bool BtWidget::isValid() const
 {
     return m_ui->bdaddr->isValid();
 }
+
+#include "moc_btwidget.cpp"

@@ -193,3 +193,5 @@ NMStringMap L2tpPPPWidget::setting() const
 
     return result;
 }
+
+#include "moc_l2tppppwidget.cpp"

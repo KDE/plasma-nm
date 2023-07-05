@@ -448,3 +448,5 @@ void WifiSecurity::securityChanged(int index)
 
     KAcceleratorManager::manage(m_ui->stackedWidget->currentWidget());
 }
+
+#include "moc_wifisecurity.cpp"

@@ -157,3 +157,5 @@ bool GsmWidget::isValid() const
 
     return !m_ui->apn->text().isEmpty() && passwordUserValid && pinValid;
 }
+
+#include "moc_gsmwidget.cpp"

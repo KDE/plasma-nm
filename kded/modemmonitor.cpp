@@ -185,3 +185,5 @@ void ModemMonitor::onSendPinArrived(QDBusPendingCallWatcher *watcher)
 
     watcher->deleteLater();
 }
+
+#include "moc_modemmonitor.cpp"

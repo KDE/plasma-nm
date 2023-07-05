@@ -237,3 +237,5 @@ int OpenconnectAuthWorkerThread::openUri(__attribute__((unused)) struct openconn
 
     return 0;
 }
+
+#include "moc_openconnectauthworkerthread.cpp"

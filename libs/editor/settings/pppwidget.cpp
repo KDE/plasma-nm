@@ -80,3 +80,5 @@ QVariantMap PPPWidget::setting() const
 
     return pppSetting.toMap();
 }
+
+#include "moc_pppwidget.cpp"

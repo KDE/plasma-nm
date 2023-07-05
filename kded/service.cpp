@@ -68,3 +68,5 @@ void NetworkManagementService::init()
 }
 
 #include "service.moc"
+
+#include "moc_service.cpp"

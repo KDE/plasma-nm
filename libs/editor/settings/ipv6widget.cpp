@@ -479,3 +479,5 @@ bool IPv6Widget::isValid() const
 
     return true;
 }
+
+#include "moc_ipv6widget.cpp"

@@ -148,3 +148,5 @@ QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value,
         return QValidator::Acceptable;
     }
 }
+
+#include "moc_simpleipv4addressvalidator.cpp"

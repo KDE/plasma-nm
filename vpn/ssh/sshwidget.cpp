@@ -378,3 +378,5 @@ bool SshSettingWidget::isValid() const
     return !d->ui.le_gateway->text().isEmpty() && !d->ui.le_localIp->text().isEmpty() && !d->ui.le_remoteIp->text().isEmpty()
         && !d->ui.le_netmask->text().isEmpty();
 }
+
+#include "moc_sshwidget.cpp"

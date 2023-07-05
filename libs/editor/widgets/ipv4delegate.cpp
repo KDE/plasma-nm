@@ -23,3 +23,5 @@ QWidget *IpV4Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem 
 
     return editor;
 }
+
+#include "moc_ipv4delegate.cpp"

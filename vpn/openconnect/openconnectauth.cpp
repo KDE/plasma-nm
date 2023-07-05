@@ -887,3 +887,5 @@ void OpenconnectAuthWidget::viewServerLogToggled(bool toggled)
         d->ui.serverLogBox->setSizePolicy(policy);
     }
 }
+
+#include "moc_openconnectauth.cpp"

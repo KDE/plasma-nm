@@ -425,3 +425,5 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
 }
 
 #include "openvpn.moc"
+
+#include "moc_openvpn.cpp"

@@ -23,3 +23,5 @@ QWidget *IpV6Delegate::createEditor(QWidget *parent, const QStyleOptionViewItem 
 
     return editor;
 }
+
+#include "moc_ipv6delegate.cpp"

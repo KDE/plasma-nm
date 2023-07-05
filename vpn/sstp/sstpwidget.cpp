@@ -372,3 +372,5 @@ bool SstpSettingWidget::isValid() const
 
     return !d->ui.le_gateway->text().isEmpty();
 }
+
+#include "moc_sstpwidget.cpp"

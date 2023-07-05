@@ -254,3 +254,5 @@ bool PinDialog::isPukDialog() const
 {
     return !isPinDialog();
 }
+
+#include "moc_pindialog.cpp"

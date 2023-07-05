@@ -111,3 +111,5 @@ bool PppoeWidget::isValid() const
 
     return passwordUserValid;
 }
+
+#include "moc_pppoewidget.cpp"

@@ -50,3 +50,5 @@ void ListValidator::setInnerValidator(QValidator *validator)
 {
     inner = validator;
 }
+
+#include "moc_listvalidator.cpp"

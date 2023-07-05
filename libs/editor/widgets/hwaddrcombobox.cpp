@@ -143,3 +143,5 @@ QVariant HwAddrComboBox::hwAddressFromDevice(const NetworkManager::Device::Ptr &
 
     return data;
 }
+
+#include "moc_hwaddrcombobox.cpp"

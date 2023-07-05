@@ -86,3 +86,5 @@ QValidator::State SimpleIpListValidator::validate(QString &address, int &pos) co
     }
     return result;
 }
+
+#include "moc_simpleiplistvalidator.cpp"

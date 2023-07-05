@@ -39,3 +39,5 @@ QMessageBox::StandardButtons OpenconnectUiPlugin::suggestedAuthDialogButtons() c
 {
     return QMessageBox::Close;
 }
+
+#include "moc_openconnectui.cpp"

@@ -131,3 +131,5 @@ void AdvancedPermissionsWidget::leftArrowClicked()
         }
     }
 }
+
+#include "moc_advancedpermissionswidget.cpp"

@@ -329,3 +329,5 @@ int CreatableConnectionsModel::rowCount(const QModelIndex &parent) const
     Q_UNUSED(parent);
     return m_list.count();
 }
+
+#include "moc_creatableconnectionsmodel.cpp"

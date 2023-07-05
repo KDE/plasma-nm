@@ -42,3 +42,5 @@ QString StrongswanUiPlugin::suggestedFileName(const NetworkManager::ConnectionSe
 #include "strongswan.moc"
 
 // vim: sw=4 sts=4 et tw=100
+
+#include "moc_strongswan.cpp"

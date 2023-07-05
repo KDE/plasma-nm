@@ -337,3 +337,5 @@ bool OpenVpnSettingWidget::isValid() const
 {
     return !d->ui.gateway->text().isEmpty();
 }
+
+#include "moc_openvpnwidget.cpp"

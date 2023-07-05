@@ -90,3 +90,5 @@ bool VlanWidget::isValid() const
 {
     return !m_ui->parent->currentText().isEmpty() || !m_ui->ifaceName->text().isEmpty();
 }
+
+#include "moc_vlanwidget.cpp"

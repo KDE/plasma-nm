@@ -74,3 +74,5 @@ void EditListDialog::setToolTip(const QString &toolTip)
 {
     editListWidget->lineEdit()->setToolTip(toolTip);
 }
+
+#include "moc_editlistdialog.cpp"

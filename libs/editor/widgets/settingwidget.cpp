@@ -138,3 +138,5 @@ void SettingWidget::slotWidgetChanged()
 {
     Q_EMIT validChanged(isValid());
 }
+
+#include "moc_settingwidget.cpp"

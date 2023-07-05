@@ -78,3 +78,5 @@ bool InfinibandWidget::isValid() const
 {
     return m_ui->macAddress->isValid();
 }
+
+#include "moc_infinibandwidget.cpp"

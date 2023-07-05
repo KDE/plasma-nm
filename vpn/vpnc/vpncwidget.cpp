@@ -217,3 +217,5 @@ bool VpncWidget::isValid() const
 {
     return !m_ui->gateway->text().isEmpty();
 }
+
+#include "moc_vpncwidget.cpp"

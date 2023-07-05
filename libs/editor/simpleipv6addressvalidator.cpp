@@ -169,3 +169,5 @@ QValidator::State SimpleIpV6AddressValidator::checkTetradsRanges(QString &value)
     }
     return result;
 }
+
+#include "moc_simpleipv6addressvalidator.cpp"

@@ -307,3 +307,5 @@ bool PptpSettingWidget::isValid() const
 
     return !d->ui.edt_gateway->text().isEmpty();
 }
+
+#include "moc_pptpwidget.cpp"

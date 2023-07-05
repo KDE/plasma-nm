@@ -591,3 +591,5 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
     impFile.close();
     return result;
 }
+
+#include "moc_wireguardinterfacewidget.cpp"

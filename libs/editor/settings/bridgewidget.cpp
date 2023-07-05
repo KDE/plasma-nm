@@ -228,3 +228,5 @@ bool BridgeWidget::isValid() const
 {
     return !m_ui->ifaceName->text().isEmpty() && m_ui->bridges->count() > 0;
 }
+
+#include "moc_bridgewidget.cpp"

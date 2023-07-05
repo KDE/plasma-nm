@@ -187,3 +187,5 @@ bool WiredConnectionWidget::isValid() const
 
     return true;
 }
+
+#include "moc_wiredconnectionwidget.cpp"

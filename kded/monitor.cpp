@@ -39,3 +39,5 @@ void Monitor::unlockModem(const QString &modem)
     qDebug() << "unlocking " << modem;
     m_modemMonitor->unlockModem(modem);
 }
+
+#include "moc_monitor.cpp"

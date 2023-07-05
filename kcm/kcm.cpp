@@ -623,3 +623,5 @@ void KCMNetworkmanagement::resetSelection()
 }
 
 #include "kcm.moc"
+
+#include "moc_kcm.cpp"

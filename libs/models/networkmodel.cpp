@@ -1206,3 +1206,5 @@ void NetworkModel::updateFromWirelessNetwork(NetworkModelItem *item,
     item->setSecurityType(securityType);
     updateItem(item);
 }
+
+#include "moc_networkmodel.cpp"

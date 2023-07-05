@@ -186,3 +186,5 @@ bool WifiConnectionWidget::isValid() const
 {
     return !m_ui->SSIDCombo->currentText().isEmpty() && m_ui->macAddress->isValid() && m_ui->BSSIDCombo->isValid();
 }
+
+#include "moc_wificonnectionwidget.cpp"

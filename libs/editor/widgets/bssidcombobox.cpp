@@ -136,3 +136,5 @@ void BssidComboBox::addBssidsToCombo(const QList<NetworkManager::AccessPoint::Pt
         addItem(text, QVariant::fromValue(ap->hardwareAddress()));
     }
 }
+
+#include "moc_bssidcombobox.cpp"

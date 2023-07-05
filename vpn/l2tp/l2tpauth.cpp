@@ -114,3 +114,5 @@ QVariantMap L2tpAuthWidget::setting() const
     secretData.insert("secrets", QVariant::fromValue<NMStringMap>(secrets));
     return secretData;
 }
+
+#include "moc_l2tpauth.cpp"

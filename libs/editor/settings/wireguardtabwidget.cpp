@@ -147,3 +147,5 @@ void WireGuardTabWidget::slotWidgetChanged()
     }
     d->ui.buttonBox->button(QDialogButtonBox::Ok)->setEnabled(valid);
 }
+
+#include "moc_wireguardtabwidget.cpp"

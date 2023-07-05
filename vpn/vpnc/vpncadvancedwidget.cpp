@@ -131,3 +131,5 @@ NMStringMap VpncAdvancedWidget::setting() const
 
     return result;
 }
+
+#include "moc_vpncadvancedwidget.cpp"

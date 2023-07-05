@@ -116,3 +116,5 @@ bool CdmaWidget::isValid() const
 
     return !m_ui->number->text().isEmpty() && passwordUserValid;
 }
+
+#include "moc_cdmawidget.cpp"

@@ -244,3 +244,5 @@ bool FortisslvpnWidget::isValid() const
 
     return !d->ui.gateway->text().isEmpty();
 }
+
+#include "moc_fortisslvpnwidget.cpp"

@@ -22,6 +22,7 @@ PlasmoidItem {
         && fullRepresentationItem.connectionModel !== null
         && fullRepresentationItem.connectionModel.delayModelUpdates
     readonly property bool airplaneModeAvailable: availableDevices.modemDeviceAvailable || availableDevices.wirelessDeviceAvailable
+    property alias planeModeSwitchAction: planeAction
 
     toolTipMainText: i18n("Networks")
     toolTipSubText: {
@@ -80,6 +81,7 @@ PlasmoidItem {
             onTriggered: checked => {handler.enableWwan(checked)}
         },
         PlasmaCore.Action {
+            id: planeAction
             text: i18n("Enable Airplane Mode")
             icon.name: "network-flightmode-on"
             priority: PlasmaCore.Action.LowPriority

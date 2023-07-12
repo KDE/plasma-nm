@@ -25,7 +25,7 @@ MouseArea {
     onPressed: wasExpanded = mainWindow.expanded
     onClicked: {
         if (airplaneModeAvailable && mouse.button === Qt.MiddleButton) {
-            Plasmoid.action("planeModeSwitch").trigger();
+            mainWindow.planeModeSwitchAction.trigger();
         } else {
             mainWindow.expanded = !wasExpanded;
         }

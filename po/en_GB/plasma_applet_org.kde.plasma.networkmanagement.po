@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-11 02:03+0000\n"
+"POT-Creation-Date: 2023-07-13 02:10+0000\n"
 "PO-Revision-Date: 2023-05-21 14:47+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -103,44 +103,44 @@ msgstr "No available connections"
 msgid "Copy"
 msgstr "Copy"
 
-#: contents/ui/main.qml:26
+#: contents/ui/main.qml:27
 #, kde-format
 msgid "Networks"
 msgstr "Networks"
 
-#: contents/ui/main.qml:35
+#: contents/ui/main.qml:36
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Middle-click to turn off Aeroplane Mode"
 
-#: contents/ui/main.qml:37
+#: contents/ui/main.qml:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Middle-click to turn on Aeroplane Mode"
 
-#: contents/ui/main.qml:61 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:62 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Enable Wi-Fi"
 
-#: contents/ui/main.qml:72
+#: contents/ui/main.qml:73
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Enable Mobile Network"
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:85
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Enable Aeroplane Mode"
 
-#: contents/ui/main.qml:95
+#: contents/ui/main.qml:97
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Open Network Login Page…"
 
-#: contents/ui/main.qml:105
+#: contents/ui/main.qml:107
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configure Network Connections…"

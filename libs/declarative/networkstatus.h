@@ -8,6 +8,7 @@
 #define PLASMA_NM_NETWORK_STATUS_H
 
 #include <QObject>
+#include <QUrl>
 
 #include <NetworkManagerQt/Manager>
 
@@ -17,6 +18,11 @@ class NetworkStatus : public QObject
      * Returns a formated list of active connections or NM status when there is no active connection
      */
     Q_PROPERTY(QString activeConnections READ activeConnections NOTIFY activeConnectionsChanged)
+
+    /**
+     * Returns the KDE portal network check website URL
+     */
+    Q_PROPERTY(QUrl networkCheckUrl READ networkCheckUrl CONSTANT)
 
     /**
      * Returns the network connectivity state
@@ -44,6 +50,8 @@ public:
 
     explicit NetworkStatus(QObject *parent = nullptr);
     ~NetworkStatus() override;
+
+    static QUrl networkCheckUrl();
 
     QString activeConnections() const;
     QString networkStatus() const;

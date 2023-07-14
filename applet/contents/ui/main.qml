@@ -51,6 +51,7 @@ PlasmoidItem {
     fullRepresentation: PopupDialog {
         id: dialogItem
         nmHandler: handler
+        nmStatus: networkStatus
         Layout.minimumWidth: Kirigami.Units.iconSizes.medium * 10
         Layout.minimumHeight: Kirigami.Units.gridUnit * 20
         anchors.fill: parent

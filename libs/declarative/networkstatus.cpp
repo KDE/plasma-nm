@@ -81,6 +81,11 @@ NetworkStatus::NetworkStatus(QObject *parent)
 
 NetworkStatus::~NetworkStatus() = default;
 
+QUrl NetworkStatus::networkCheckUrl()
+{
+    return QUrl(QStringLiteral("http://networkcheck.kde.org/"));
+}
+
 QString NetworkStatus::activeConnections() const
 {
     return m_activeConnections;

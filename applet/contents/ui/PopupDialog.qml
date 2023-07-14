@@ -16,6 +16,7 @@ PlasmaExtras.Representation {
     id: full
 
     required property PlasmaNM.Handler nmHandler
+    required property PlasmaNM.NetworkStatus nmStatus
 
     collapseMarginsHint: true
 
@@ -105,6 +106,7 @@ PlasmaExtras.Representation {
         initialItem: ConnectionListPage {
             id: connectionListPage
             model: appletProxyModel
+            nmStatus: full.nmStatus
         }
     }
 

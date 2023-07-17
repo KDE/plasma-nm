@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 02:10+0000\n"
+"POT-Creation-Date: 2023-07-17 02:11+0000\n"
 "PO-Revision-Date: 2022-12-28 00:50+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -73,32 +73,43 @@ msgstr "Prisijungta, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Prisijungta"
 
-#: contents/ui/ConnectionListPage.qml:82
+#: contents/ui/ConnectionListPage.qml:34
+#, kde-format
+msgid "You need to log in to this network"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:38
+#, kde-format
+msgctxt "@action:button"
+msgid "Log in"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:114
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Lėktuvo veiksena yra įjungta"
 
-#: contents/ui/ConnectionListPage.qml:86
+#: contents/ui/ConnectionListPage.qml:118
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Belaidis ir mobilusis tinklas yra pasyvinti"
 
-#: contents/ui/ConnectionListPage.qml:88
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Belaidis yra pasyvintas"
 
-#: contents/ui/ConnectionListPage.qml:91
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobilusis tinklas yra pasyvintas"
 
-#: contents/ui/ConnectionListPage.qml:94
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr "Nėra atitikmenų"
 
-#: contents/ui/ConnectionListPage.qml:96
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No available connections"
 msgstr "Nėra prieinamų ryšių"
@@ -127,27 +138,27 @@ msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 "Spustelėkite viduriniuoju pelės mygtuku, kad įjungtumėte lėktuvo veikseną"
 
-#: contents/ui/main.qml:62 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Įjungti belaidį (Wi-Fi)"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:74
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Įjungti mobilųjį tinklą"
 
-#: contents/ui/main.qml:85
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Įjungti lėktuvo veikseną"
 
-#: contents/ui/main.qml:97
+#: contents/ui/main.qml:98
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Atverti prisijungimo prie tinklo puslapį…"
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:108
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Konfigūruoti tinklo ryšius…"
@@ -157,7 +168,7 @@ msgstr "&Konfigūruoti tinklo ryšius…"
 msgid "Password…"
 msgstr "Slaptažodis…"
 
-#: contents/ui/PopupDialog.qml:50
+#: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections…"
 msgctxt "@action:button"

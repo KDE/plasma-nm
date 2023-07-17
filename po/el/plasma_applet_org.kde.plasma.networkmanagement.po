@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 02:10+0000\n"
+"POT-Creation-Date: 2023-07-17 02:11+0000\n"
 "PO-Revision-Date: 2017-09-08 16:23+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -71,13 +71,25 @@ msgstr "Συνδεδεμένο, ⬇ %1/δ, ⬆ %2/δ"
 msgid "Connected"
 msgstr "Συνδέθηκε"
 
-#: contents/ui/ConnectionListPage.qml:82
+#: contents/ui/ConnectionListPage.qml:34
+#, fuzzy, kde-format
+#| msgid "Password on this network"
+msgid "You need to log in to this network"
+msgstr "Κωδικός πρόσβασης για το δίκτυο αυτό"
+
+#: contents/ui/ConnectionListPage.qml:38
+#, kde-format
+msgctxt "@action:button"
+msgid "Log in"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:114
 #, fuzzy, kde-format
 #| msgid "Airplane mode enabled"
 msgid "Airplane mode is enabled"
 msgstr "Ενεργοποίηση λειτουργίας πτήσης"
 
-#: contents/ui/ConnectionListPage.qml:86
+#: contents/ui/ConnectionListPage.qml:118
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:status Notification text when a single wireless network disappeared"
@@ -85,23 +97,23 @@ msgstr "Ενεργοποίηση λειτουργίας πτήσης"
 msgid "Wireless and mobile networks are deactivated"
 msgstr "%1 ασύρματο δίκτυο εξαφανίστηκε"
 
-#: contents/ui/ConnectionListPage.qml:88
+#: contents/ui/ConnectionListPage.qml:120
 #, fuzzy, kde-format
 #| msgid "Wireless disabled"
 msgid "Wireless is deactivated"
 msgstr "Απενεργοποίηση ασυρμάτου"
 
-#: contents/ui/ConnectionListPage.qml:91
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:94
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:96
+#: contents/ui/ConnectionListPage.qml:128
 #, fuzzy, kde-format
 #| msgid "Available connections"
 msgid "No available connections"
@@ -129,29 +141,29 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:62 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:74
 #, fuzzy, kde-format
 #| msgid "Username on this network"
 msgid "Enable Mobile Network"
 msgstr "Όνομα χρήστη για το δίκτυο αυτό"
 
-#: contents/ui/main.qml:85
+#: contents/ui/main.qml:86
 #, fuzzy, kde-format
 #| msgid "Wireless"
 msgid "Enable Airplane Mode"
 msgstr "Ασύρματο"
 
-#: contents/ui/main.qml:97
+#: contents/ui/main.qml:98
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:108
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections..."
 msgid "&Configure Network Connections…"
@@ -163,7 +175,7 @@ msgstr "&Διαμόρφωση συνδέσεων δικτύου..."
 msgid "Password…"
 msgstr "Κωδικός πρόσβασης:"
 
-#: contents/ui/PopupDialog.qml:50
+#: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgctxt "Edit connection dialog caption"
 #| msgid "Edit Network Connection"
@@ -3204,9 +3216,6 @@ msgstr "Λήψη"
 #~ msgctxt "Label for inner auth combobox"
 #~ msgid "&Inner Authentication:"
 #~ msgstr "Εσωτερική &ταυτοποίηση:"
-
-#~ msgid "Password on this network"
-#~ msgstr "Κωδικός πρόσβασης για το δίκτυο αυτό"
 
 #~ msgid "&Anonymous Identity:"
 #~ msgstr "Ανώνυμη &ταυτότητα:"

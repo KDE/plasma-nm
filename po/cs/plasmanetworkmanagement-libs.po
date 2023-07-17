@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 02:34+0000\n"
+"POT-Creation-Date: 2023-07-17 02:11+0000\n"
 "PO-Revision-Date: 2023-06-22 13:21+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -20,45 +20,45 @@ msgstr ""
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
-#: declarative/networkstatus.cpp:104
+#: declarative/networkstatus.cpp:125
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
 msgstr "Připojen"
 
-#: declarative/networkstatus.cpp:107
+#: declarative/networkstatus.cpp:128
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
 msgstr "Připojen"
 
-#: declarative/networkstatus.cpp:110
+#: declarative/networkstatus.cpp:131
 #, kde-format
 msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
 msgstr "Připojen"
 
-#: declarative/networkstatus.cpp:113
+#: declarative/networkstatus.cpp:134
 #, kde-format
 msgctxt "Networking is inactive and all devices are disabled"
 msgid "Inactive"
 msgstr "Neaktivní"
 
-#: declarative/networkstatus.cpp:116
+#: declarative/networkstatus.cpp:137
 #, kde-format
 msgctxt "There is no active network connection"
 msgid "Disconnected"
 msgstr "Odpojen"
 
-#: declarative/networkstatus.cpp:119
+#: declarative/networkstatus.cpp:140
 #, kde-format
 msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
 msgstr "Odpojuji"
 
-#: declarative/networkstatus.cpp:122
+#: declarative/networkstatus.cpp:143
 #, kde-format
 msgctxt ""
 "A network device is connecting to a network and there is no other available "
@@ -66,53 +66,53 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Připojuji se"
 
-#: declarative/networkstatus.cpp:172 editor/uiutils.cpp:220
+#: declarative/networkstatus.cpp:189 editor/uiutils.cpp:220
 #, kde-format
 msgid "VPN"
 msgstr "VPN"
 
-#: declarative/networkstatus.cpp:194 models/creatableconnectionsmodel.cpp:254
+#: declarative/networkstatus.cpp:211 models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256
 #, kde-format
 msgid "WireGuard"
 msgstr "WireGuard"
 
-#: declarative/networkstatus.cpp:200
+#: declarative/networkstatus.cpp:217
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Připojuji se k %1"
 
-#: declarative/networkstatus.cpp:204
+#: declarative/networkstatus.cpp:221
 #, kde-format
 msgid "Connected to %1 (no connectivity)"
 msgstr "Připojen k %1 (bez spojení)"
 
-#: declarative/networkstatus.cpp:207
+#: declarative/networkstatus.cpp:224
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
 msgstr "Připojen k %1 (omezené spojení)"
 
-#: declarative/networkstatus.cpp:210
+#: declarative/networkstatus.cpp:227
 #, kde-format
 msgid "Connected to %1 (log in required)"
 msgstr "Připojen k %1 (přihlášení není potřeba)"
 
-#: declarative/networkstatus.cpp:213
+#: declarative/networkstatus.cpp:230
 #, kde-format
 msgid "Connected to %1"
 msgstr "Připojen k %1"
 
-#: declarative/networkstatus.cpp:238
+#: declarative/networkstatus.cpp:255
 #, kde-format
 msgid "NetworkManager not running"
 msgstr "NetworkManager neběží"
 
-#: declarative/networkstatus.cpp:243
+#: declarative/networkstatus.cpp:260
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Je potřeba NetworkManager 0.9.8, nalezena verze %1."
 
-#: declarative/networkstatus.cpp:246
+#: declarative/networkstatus.cpp:263
 #, kde-format
 msgctxt "global connection state"
 msgid "Unknown"

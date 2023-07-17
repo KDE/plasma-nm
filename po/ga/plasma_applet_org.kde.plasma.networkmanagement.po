@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 02:10+0000\n"
+"POT-Creation-Date: 2023-07-17 02:11+0000\n"
 "PO-Revision-Date: 2009-02-05 06:35-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -66,32 +66,44 @@ msgstr "Ceangailte"
 msgid "Connected"
 msgstr "Ceangailte"
 
-#: contents/ui/ConnectionListPage.qml:82
+#: contents/ui/ConnectionListPage.qml:34
+#, fuzzy, kde-format
+#| msgid "Username on this network"
+msgid "You need to log in to this network"
+msgstr "Ainm úsáideora ar an líonra seo"
+
+#: contents/ui/ConnectionListPage.qml:38
+#, kde-format
+msgctxt "@action:button"
+msgid "Log in"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:114
 #, fuzzy, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Díchumasaíodh crua-earraí gan sreang"
 
-#: contents/ui/ConnectionListPage.qml:86
+#: contents/ui/ConnectionListPage.qml:118
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:88
+#: contents/ui/ConnectionListPage.qml:120
 #, fuzzy, kde-format
 msgid "Wireless is deactivated"
 msgstr "Díchumasaíodh crua-earraí gan sreang"
 
-#: contents/ui/ConnectionListPage.qml:91
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:94
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:96
+#: contents/ui/ConnectionListPage.qml:128
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "Ceangal córai&s"
@@ -119,29 +131,29 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:62 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:74
 #, fuzzy, kde-format
 #| msgid "Username on this network"
 msgid "Enable Mobile Network"
 msgstr "Ainm úsáideora ar an líonra seo"
 
-#: contents/ui/main.qml:85
+#: contents/ui/main.qml:86
 #, fuzzy, kde-format
 #| msgid "Wireless"
 msgid "Enable Airplane Mode"
 msgstr "Gan Sreang"
 
-#: contents/ui/main.qml:97
+#: contents/ui/main.qml:98
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:108
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgid "&Configure Network Connections…"
@@ -153,7 +165,7 @@ msgstr "Cumraigh Fógairt..."
 msgid "Password…"
 msgstr "Focal Faire:"
 
-#: contents/ui/PopupDialog.qml:50
+#: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgctxt "@action:button"
@@ -1591,11 +1603,6 @@ msgstr ""
 
 #~ msgid "Map"
 #~ msgstr "Mapa"
-
-#, fuzzy
-#~| msgid "Username on this network"
-#~ msgid "Password on this network"
-#~ msgstr "Ainm úsáideora ar an líonra seo"
 
 #, fuzzy
 #~| msgid "&Identity:"

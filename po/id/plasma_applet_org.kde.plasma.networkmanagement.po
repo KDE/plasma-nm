@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 02:10+0000\n"
+"POT-Creation-Date: 2023-07-17 02:11+0000\n"
 "PO-Revision-Date: 2023-03-03 09:54+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -69,32 +69,43 @@ msgstr "Terhubung, ⬇ %1/dt,  ⬆ %2/dt"
 msgid "Connected"
 msgstr "Terhubung"
 
-#: contents/ui/ConnectionListPage.qml:82
+#: contents/ui/ConnectionListPage.qml:34
+#, kde-format
+msgid "You need to log in to this network"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:38
+#, kde-format
+msgctxt "@action:button"
+msgid "Log in"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:114
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Mode pesawat diaktifkan"
 
-#: contents/ui/ConnectionListPage.qml:86
+#: contents/ui/ConnectionListPage.qml:118
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Nirkabel dan jaringan seluler dinonaktifkan"
 
-#: contents/ui/ConnectionListPage.qml:88
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Nirkabel dinonaktifkan"
 
-#: contents/ui/ConnectionListPage.qml:91
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Jaringan seluler dinonaktifkan"
 
-#: contents/ui/ConnectionListPage.qml:94
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr "Tidak ada yang cocok"
 
-#: contents/ui/ConnectionListPage.qml:96
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No available connections"
 msgstr "Tidak ada koneksi yang tersedia"
@@ -121,27 +132,27 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Klik tengah untuk menyalakan Mode Pesawat"
 
-#: contents/ui/main.qml:62 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Aktifkan Wi-Fi"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:74
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Aktifkan Jaringan Seluler"
 
-#: contents/ui/main.qml:85
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Aktifkan Mode Pesawat"
 
-#: contents/ui/main.qml:97
+#: contents/ui/main.qml:98
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Buka Halaman Masuk Jaringan..."
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:108
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Konfigurasikan Koneksi Jaringan..."
@@ -151,7 +162,7 @@ msgstr "&Konfigurasikan Koneksi Jaringan..."
 msgid "Password…"
 msgstr "Kata Sandi..."
 
-#: contents/ui/PopupDialog.qml:50
+#: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections…"
 msgctxt "@action:button"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 02:10+0000\n"
+"POT-Creation-Date: 2023-07-17 02:11+0000\n"
 "PO-Revision-Date: 2021-06-08 22:12-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -66,32 +66,44 @@ msgstr "ਕਨੈਕਟ ਹੈ, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "ਕਨੈਕਟ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:82
+#: contents/ui/ConnectionListPage.qml:34
+#, fuzzy, kde-format
+#| msgid "Password on this network"
+msgid "You need to log in to this network"
+msgstr "ਇਹ ਨੈੱਟਵਰਕ ਲਈ ਪਾਸਵਰਡ"
+
+#: contents/ui/ConnectionListPage.qml:38
+#, kde-format
+msgctxt "@action:button"
+msgid "Log in"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:114
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "ਏਅਰਪਲਾਨ ਢੰਗ ਸਮਰੱਥ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:86
+#: contents/ui/ConnectionListPage.qml:118
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "ਬੇਤਾਰ ਅਤੇ ਬੇਤਾਰ ਨੈੱਟਵਰਕ ਨਾ-ਸਰਗਰਮ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:88
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "ਬੇਤਾਰ ਨਾ-ਸਰਗਰਮ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:91
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "ਮੋਬਾਈਲ ਨੈੱਟਵਰਕ ਨਾ-ਸਰਗਰਮ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:94
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:96
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No available connections"
 msgstr "ਕੋਈ ਕਨੈਕਸ਼ਨ ਉਪਲਬਧ ਨਹੀਂ ਹਨ"
@@ -118,29 +130,29 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:62 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "ਵਾਈ-ਫਾਈ ਸਮਰੱਥ ਕਰੋ"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:74
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "ਮੋਬਾਈਲ ਨੈੱਟਵਰਕ ਸਮਰੱਥ ਕਰੋ"
 
-#: contents/ui/main.qml:85
+#: contents/ui/main.qml:86
 #, fuzzy, kde-format
 #| msgid "Enable airplane mode"
 msgid "Enable Airplane Mode"
 msgstr "ਹਵਾਈ-ਜਹਾਜ਼ ਢੰਗ ਸਮਰੱਥ ਕਰੋ"
 
-#: contents/ui/main.qml:97
+#: contents/ui/main.qml:98
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "ਨੈੱਟਵਰਕ ਲਾਗਇਨ ਸਫ਼ਾ ਖੋਲ੍ਹੋ…"
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:108
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "…ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਦੀ ਸੰਰਚਨਾ(&C)"
@@ -150,7 +162,7 @@ msgstr "…ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਦੀ ਸੰਰਚਨ
 msgid "Password…"
 msgstr "ਪਾਸਵਰਡ…"
 
-#: contents/ui/PopupDialog.qml:50
+#: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgctxt "Edit connection dialog caption"
 #| msgid "Edit Network Connection"
@@ -2788,9 +2800,6 @@ msgstr "ਡਾਊਨਲੋਡ"
 #~ msgctxt "Label for inner auth combobox"
 #~ msgid "&Inner Authentication:"
 #~ msgstr "ਅੰਦਰੂਨੀ ਪਰਮਾਣਕਿਤਾ(&I):"
-
-#~ msgid "Password on this network"
-#~ msgstr "ਇਹ ਨੈੱਟਵਰਕ ਲਈ ਪਾਸਵਰਡ"
 
 #~ msgid "&Anonymous Identity:"
 #~ msgstr "ਅਗਿਆਤ ਪਛਾਣ(&A):"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 02:10+0000\n"
+"POT-Creation-Date: 2023-07-17 02:11+0000\n"
 "PO-Revision-Date: 2021-10-17 16:07+0200\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -68,32 +68,43 @@ msgstr "Kapcsolódva, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Kapcsolódva"
 
-#: contents/ui/ConnectionListPage.qml:82
+#: contents/ui/ConnectionListPage.qml:34
+#, kde-format
+msgid "You need to log in to this network"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:38
+#, kde-format
+msgctxt "@action:button"
+msgid "Log in"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:114
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Repülős üzemmód bekapcsolva"
 
-#: contents/ui/ConnectionListPage.qml:86
+#: contents/ui/ConnectionListPage.qml:118
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Vezeték nélküli és mobilhálózatok deaktiválva"
 
-#: contents/ui/ConnectionListPage.qml:88
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Vezeték nélküli deaktiválva"
 
-#: contents/ui/ConnectionListPage.qml:91
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobilhálózat deaktiválva"
 
-#: contents/ui/ConnectionListPage.qml:94
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:96
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No available connections"
 msgstr "Nincsenek elérhető kapcsolatok"
@@ -120,29 +131,29 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:62 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi bekapcsolása"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:74
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "Mobil adatkapcsolat bekapcsolása"
 
-#: contents/ui/main.qml:85
+#: contents/ui/main.qml:86
 #, fuzzy, kde-format
 #| msgid "Enable airplane mode"
 msgid "Enable Airplane Mode"
 msgstr "Repülő üzemmód bekapcsolása"
 
-#: contents/ui/main.qml:97
+#: contents/ui/main.qml:98
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Hálózat bejelentkező ablakának megnyitása…"
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:108
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Hálózati kapcsolatok szer&kesztése…"
@@ -152,7 +163,7 @@ msgstr "Hálózati kapcsolatok szer&kesztése…"
 msgid "Password…"
 msgstr "Jelszó…"
 
-#: contents/ui/PopupDialog.qml:50
+#: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections…"
 msgctxt "@action:button"

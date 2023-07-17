@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-13 02:10+0000\n"
+"POT-Creation-Date: 2023-07-17 02:11+0000\n"
 "PO-Revision-Date: 2023-03-22 14:51+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -71,32 +71,44 @@ msgstr "Tengt, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Tengt"
 
-#: contents/ui/ConnectionListPage.qml:82
+#: contents/ui/ConnectionListPage.qml:34
+#, fuzzy, kde-format
+#| msgid "Password on this network"
+msgid "You need to log in to this network"
+msgstr "Lykilorð á þessu neti"
+
+#: contents/ui/ConnectionListPage.qml:38
+#, kde-format
+msgctxt "@action:button"
+msgid "Log in"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:114
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Flughamur er virkur"
 
-#: contents/ui/ConnectionListPage.qml:86
+#: contents/ui/ConnectionListPage.qml:118
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Þráðlaus og farsímanet eru óvirk"
 
-#: contents/ui/ConnectionListPage.qml:88
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Þráðlaust net er óvirkt"
 
-#: contents/ui/ConnectionListPage.qml:91
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Farsímanet er óvirkt"
 
-#: contents/ui/ConnectionListPage.qml:94
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr "Engar samsvaranir"
 
-#: contents/ui/ConnectionListPage.qml:96
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No available connections"
 msgstr "Engar tiltækar tengingar"
@@ -123,27 +135,27 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Miðju-smelltu til að kveikja á flugvélaham"
 
-#: contents/ui/main.qml:62 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Virkja Wi-Fi"
 
-#: contents/ui/main.qml:73
+#: contents/ui/main.qml:74
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Virkja farsímanet"
 
-#: contents/ui/main.qml:85
+#: contents/ui/main.qml:86
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Virkja flugvélaham"
 
-#: contents/ui/main.qml:97
+#: contents/ui/main.qml:98
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Opna innskráningarsíðu netkerfis…"
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:108
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Stilla netten&gingar…"
@@ -153,7 +165,7 @@ msgstr "Stilla netten&gingar…"
 msgid "Password…"
 msgstr "Lykilorð…"
 
-#: contents/ui/PopupDialog.qml:50
+#: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgctxt "Edit connection dialog caption"
 #| msgid "Edit Network Connection"
@@ -2218,9 +2230,6 @@ msgstr "Sótt"
 #~ msgctxt "Label for inner auth combobox"
 #~ msgid "&Inner Authentication:"
 #~ msgstr "&HMAC auðkenning:"
-
-#~ msgid "Password on this network"
-#~ msgstr "Lykilorð á þessu neti"
 
 #~ msgid "&Anonymous Identity:"
 #~ msgstr "N&afnlaust auðkenni:"

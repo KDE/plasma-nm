@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-12 02:34+0000\n"
+"POT-Creation-Date: 2023-07-17 02:11+0000\n"
 "PO-Revision-Date: 2022-12-28 00:52+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -21,45 +21,45 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.2.2\n"
 
-#: declarative/networkstatus.cpp:104
+#: declarative/networkstatus.cpp:125
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
 msgstr "Prisijungta"
 
-#: declarative/networkstatus.cpp:107
+#: declarative/networkstatus.cpp:128
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
 msgstr "Prisijungta"
 
-#: declarative/networkstatus.cpp:110
+#: declarative/networkstatus.cpp:131
 #, kde-format
 msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
 msgstr "Prisijungta"
 
-#: declarative/networkstatus.cpp:113
+#: declarative/networkstatus.cpp:134
 #, kde-format
 msgctxt "Networking is inactive and all devices are disabled"
 msgid "Inactive"
 msgstr "Neaktyvus"
 
-#: declarative/networkstatus.cpp:116
+#: declarative/networkstatus.cpp:137
 #, kde-format
 msgctxt "There is no active network connection"
 msgid "Disconnected"
 msgstr "Atsijungta"
 
-#: declarative/networkstatus.cpp:119
+#: declarative/networkstatus.cpp:140
 #, kde-format
 msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
 msgstr "Atsijungiama"
 
-#: declarative/networkstatus.cpp:122
+#: declarative/networkstatus.cpp:143
 #, kde-format
 msgctxt ""
 "A network device is connecting to a network and there is no other available "
@@ -67,53 +67,53 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Jungiamasi"
 
-#: declarative/networkstatus.cpp:172 editor/uiutils.cpp:220
+#: declarative/networkstatus.cpp:189 editor/uiutils.cpp:220
 #, kde-format
 msgid "VPN"
 msgstr "VPN"
 
-#: declarative/networkstatus.cpp:194 models/creatableconnectionsmodel.cpp:254
+#: declarative/networkstatus.cpp:211 models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256
 #, kde-format
 msgid "WireGuard"
 msgstr "WireGuard"
 
-#: declarative/networkstatus.cpp:200
+#: declarative/networkstatus.cpp:217
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Jungiamasi prie %1"
 
-#: declarative/networkstatus.cpp:204
+#: declarative/networkstatus.cpp:221
 #, kde-format
 msgid "Connected to %1 (no connectivity)"
 msgstr "Prisijungta prie %1 (nėra jungiamumo)"
 
-#: declarative/networkstatus.cpp:207
+#: declarative/networkstatus.cpp:224
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
 msgstr "Prisijungta prie %1 (ribotas jungiamumas)"
 
-#: declarative/networkstatus.cpp:210
+#: declarative/networkstatus.cpp:227
 #, kde-format
 msgid "Connected to %1 (log in required)"
 msgstr "Prisijungta prie %1 (reikia prisijungti)"
 
-#: declarative/networkstatus.cpp:213
+#: declarative/networkstatus.cpp:230
 #, kde-format
 msgid "Connected to %1"
 msgstr "Prisijungta prie %1"
 
-#: declarative/networkstatus.cpp:238
+#: declarative/networkstatus.cpp:255
 #, kde-format
 msgid "NetworkManager not running"
 msgstr "NetworkManager neveikia"
 
-#: declarative/networkstatus.cpp:243
+#: declarative/networkstatus.cpp:260
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "Reikalinga NetworkManager 0.9.8, rasta %1."
 
-#: declarative/networkstatus.cpp:246
+#: declarative/networkstatus.cpp:263
 #, kde-format
 msgctxt "global connection state"
 msgid "Unknown"

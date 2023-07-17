@@ -78,8 +78,7 @@ public Q_SLOTS:
      */
     void requestWifiCode(const QString &connectionPath,
                          const QString &ssid,
-                         /*NetworkManager::WirelessSecurityType*/ int securityType,
-                         const QString &connectionName);
+                         /*NetworkManager::WirelessSecurityType*/ int securityType);
 
     /**
      * Adds a new connection
@@ -133,7 +132,7 @@ Q_SIGNALS:
     void hotspotDisabled();
     void hotspotSupportedChanged(bool hotspotSupported);
     void scanningChanged();
-    void wifiCodeReceived(const QString &data, const QString &connectionName);
+    void wifiCodeReceived(const QString &data, const QString &ssid);
 
 private:
     QCoro::Task<void> addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject);

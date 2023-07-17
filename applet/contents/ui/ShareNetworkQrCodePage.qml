@@ -15,7 +15,7 @@ import org.kde.prison 1.0 as Prison
 ColumnLayout {
     id: page
 
-    property string connectionName
+    property string ssid
     property alias content: barcode.content
 
     spacing: Kirigami.Units.smallSpacing
@@ -27,7 +27,7 @@ ColumnLayout {
         wrapMode: Text.WordWrap
         horizontalAlignment: Text.AlignHCenter
         textFormat: Text.PlainText
-        text: i18n("Scan this QR code with another device to connect to the \"%1\" network.", page.connectionName)
+        text: i18n("Scan this QR code with another device to connect to the \"%1\" network.", page.ssid)
     }
 
     Prison.Barcode {

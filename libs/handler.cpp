@@ -195,7 +195,7 @@ QCoro::Task<void> Handler::activateConnectionInternal(const QString &connection,
     }
 }
 
-void Handler::requestWifiCode(const QString &connectionPath, const QString &ssid, int _securityType, const QString &connectionName)
+void Handler::requestWifiCode(const QString &connectionPath, const QString &ssid, int _securityType)
 {
     if (!m_requestWifiCodeWatcher.isNull()) {
         delete m_requestWifiCodeWatcher;
@@ -224,14 +224,14 @@ void Handler::requestWifiCode(const QString &connectionPath, const QString &ssid
         case NetworkManager::Wpa2Eap:
         case NetworkManager::Wpa3SuiteB192:
         case NetworkManager::Leap:
-            Q_EMIT wifiCodeReceived(QString(), connectionName);
+            Q_EMIT wifiCodeReceived(QString(), ssid);
             return;
         }
     }
 
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(connectionPath);
     if (!connection) {
-        Q_EMIT wifiCodeReceived(QString(), connectionName);
+        Q_EMIT wifiCodeReceived(QString(), ssid);
         return;
     }
 
@@ -241,7 +241,7 @@ void Handler::requestWifiCode(const QString &connectionPath, const QString &ssid
     m_requestWifiCodeWatcher->setProperty("key", key);
     m_requestWifiCodeWatcher->setProperty("ret", ret);
     m_requestWifiCodeWatcher->setProperty("securityType", static_cast<int>(securityType));
-    m_requestWifiCodeWatcher->setProperty("connectionName", connectionName);
+    m_requestWifiCodeWatcher->setProperty("ssid", ssid);
     connect(m_requestWifiCodeWatcher, &QDBusPendingCallWatcher::finished, this, &Handler::slotRequestWifiCode);
 }
 
@@ -960,10 +960,10 @@ void Handler::slotRequestWifiCode(QDBusPendingCallWatcher *watcher)
     watcher->deleteLater();
 
     QString ret = watcher->property("ret").toString();
-    const QString connectionName = watcher->property("connectionName").toString();
+    const QString ssid = watcher->property("ssid").toString();
     QDBusPendingReply<NMVariantMapMap> reply = *watcher;
     if (!reply.isValid() || reply.isError()) {
-        Q_EMIT wifiCodeReceived(ret % QLatin1Char(';'), connectionName);
+        Q_EMIT wifiCodeReceived(ret % QLatin1Char(';'), ssid);
         return;
     }
 
@@ -978,14 +978,14 @@ void Handler::slotRequestWifiCode(QDBusPendingCallWatcher *watcher)
         pass = secret[QStringLiteral("psk")].toString();
         break;
     default:
-        Q_EMIT wifiCodeReceived(QString(), connectionName);
+        Q_EMIT wifiCodeReceived(QString(), ssid);
         return;
     }
     if (!pass.isEmpty()) {
         ret += QStringLiteral("P:") % pass % QLatin1Char(';');
     }
 
-    Q_EMIT wifiCodeReceived(ret % QLatin1Char(';'), connectionName);
+    Q_EMIT wifiCodeReceived(ret % QLatin1Char(';'), ssid);
 }
 
 #include "moc_handler.cpp"

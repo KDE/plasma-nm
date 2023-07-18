@@ -228,6 +228,7 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     d->ui.leCaCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_CACERT]));
     d->ui.leProxy->setText(dataMap[NM_OPENCONNECT_KEY_PROXY]);
     d->ui.leUserAgent->setText(dataMap[NM_OPENCONNECT_KEY_USERAGENT]);
+    d->ui.leVersionString->setText(dataMap[NM_OPENCONNECT_KEY_VERSION_STRING]);
     d->ui.cmbReportedOs->setCurrentIndex(cmbReportedOsIndex);
     d->ui.chkAllowTrojan->setChecked(dataMap[NM_OPENCONNECT_KEY_CSD_ENABLE] == "yes");
     d->ui.leCsdWrapperScript->setUrl(QUrl::fromLocalFile(dataMap[NM_OPENCONNECT_KEY_CSD_WRAPPER]));
@@ -341,6 +342,9 @@ QVariantMap OpenconnectSettingWidget::setting() const
     }
     if (!d->ui.leUserAgent->text().isEmpty()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_USERAGENT), d->ui.leUserAgent->text());
+    }
+    if (!d->ui.leVersionString->text().isEmpty()) {
+        data.insert(QLatin1String(NM_OPENCONNECT_KEY_VERSION_STRING), d->ui.leVersionString->text());
     }
     data.insert(NM_OPENCONNECT_KEY_REPORTED_OS, reportedOs);
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_CSD_ENABLE), d->ui.chkAllowTrojan->isChecked() ? "yes" : "no");

@@ -201,13 +201,19 @@ void OpenconnectAuthWidget::readConfig()
         openconnect_setup_csd(d->vpninfo, getuid(), 1, wrapper);
     }
     if (!dataMap[NM_OPENCONNECT_KEY_PROXY].isEmpty()) {
-        const QByteArray proxy = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_PROXY]);
+        const QByteArray proxy = dataMap[NM_OPENCONNECT_KEY_PROXY].toUtf8();
         openconnect_set_http_proxy(d->vpninfo, OC3DUP(proxy.data()));
     }
 #if OPENCONNECT_CHECK_VER(5, 8)
     if (!dataMap[NM_OPENCONNECT_KEY_USERAGENT].isEmpty()) {
-        const QByteArray useragent = QFile::encodeName(dataMap[NM_OPENCONNECT_KEY_USERAGENT]);
+        const QByteArray useragent = dataMap[NM_OPENCONNECT_KEY_USERAGENT].toUtf8();
         openconnect_set_useragent(d->vpninfo, OC3DUP(useragent.data()));
+    }
+#endif
+#if OPENCONNECT_CHECK_VER(5, 5)
+    if (!dataMap[NM_OPENCONNECT_KEY_VERSION_STRING].isEmpty()) {
+        const QByteArray versionstring = dataMap[NM_OPENCONNECT_KEY_VERSION_STRING].toUtf8();
+        openconnect_set_version_string(d->vpninfo, OC3DUP(versionstring.data()));
     }
 #endif
     if (!dataMap[NM_OPENCONNECT_KEY_USERCERT].isEmpty()) {

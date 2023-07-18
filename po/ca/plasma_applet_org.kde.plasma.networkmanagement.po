@@ -11,14 +11,14 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-17 02:11+0000\n"
-"PO-Revision-Date: 2023-05-08 11:09+0200\n"
+"PO-Revision-Date: 2023-07-17 10:38+0300\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
@@ -75,13 +75,13 @@ msgstr "Connectat"
 #: contents/ui/ConnectionListPage.qml:34
 #, kde-format
 msgid "You need to log in to this network"
-msgstr ""
+msgstr "Cal iniciar la sessió en aquesta xarxa"
 
 #: contents/ui/ConnectionListPage.qml:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Inicia la sessió"
 
 #: contents/ui/ConnectionListPage.qml:114
 #, kde-format

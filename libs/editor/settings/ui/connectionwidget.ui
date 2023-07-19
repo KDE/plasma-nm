@@ -70,8 +70,7 @@ The higher number means higher priority. An negative number can be used to indic
       <string>Advanced…</string>
      </property>
      <property name="icon">
-      <iconset theme="preferences-desktop-user">
-       <normaloff>.</normaloff>.</iconset>
+      <iconset theme="preferences-desktop-user"/>
      </property>
     </widget>
    </item>

@@ -125,8 +125,7 @@
         <string>Edit DNS the list of servers</string>
        </property>
        <property name="icon">
-        <iconset theme="document-properties">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset theme="document-properties"/>
        </property>
       </widget>
      </item>
@@ -172,8 +171,7 @@
         <string>Edit the list of DNS domains being searched</string>
        </property>
        <property name="icon">
-        <iconset theme="document-properties">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset theme="document-properties"/>
        </property>
       </widget>
      </item>
@@ -215,8 +213,7 @@ lease and options.</string>
         <string>Remove</string>
        </property>
        <property name="icon">
-        <iconset theme="list-remove">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset theme="list-remove"/>
        </property>
       </widget>
      </item>
@@ -226,8 +223,7 @@ lease and options.</string>
         <string>Add</string>
        </property>
        <property name="icon">
-        <iconset theme="list-add">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset theme="list-add"/>
        </property>
       </widget>
      </item>

@@ -83,8 +83,7 @@ IPv6 configuration fails but IPv4 configuration succeeds</string>
         <string>Edit the list of DNS servers</string>
        </property>
        <property name="icon">
-        <iconset theme="document-properties">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset theme="document-properties"/>
        </property>
       </widget>
      </item>
@@ -98,8 +97,7 @@ IPv6 configuration fails but IPv4 configuration succeeds</string>
         <string>Remove</string>
        </property>
        <property name="icon">
-        <iconset theme="list-remove">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset theme="list-remove"/>
        </property>
       </widget>
      </item>
@@ -109,8 +107,7 @@ IPv6 configuration fails but IPv4 configuration succeeds</string>
         <string>Add</string>
        </property>
        <property name="icon">
-        <iconset theme="list-add">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset theme="list-add"/>
        </property>
       </widget>
      </item>
@@ -280,8 +277,7 @@ a temporary IPv6 address in addition to the public one generated from MAC addres
         <string>Edit the list of DNS domains being searched</string>
        </property>
        <property name="icon">
-        <iconset theme="document-properties">
-         <normaloff>.</normaloff>.</iconset>
+        <iconset theme="document-properties"/>
        </property>
       </widget>
      </item>

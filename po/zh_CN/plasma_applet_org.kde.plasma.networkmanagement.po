@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-17 02:11+0000\n"
-"PO-Revision-Date: 2023-07-03 11:36\n"
+"PO-Revision-Date: 2023-07-18 11:08\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -69,13 +69,13 @@ msgstr "已连接"
 #: contents/ui/ConnectionListPage.qml:34
 #, kde-format
 msgid "You need to log in to this network"
-msgstr ""
+msgstr "您需要登录到此网络"
 
 #: contents/ui/ConnectionListPage.qml:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "登录"
 
 #: contents/ui/ConnectionListPage.qml:114
 #, kde-format

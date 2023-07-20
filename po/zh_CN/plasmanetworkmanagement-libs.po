@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-17 02:11+0000\n"
+"POT-Creation-Date: 2023-07-20 02:12+0000\n"
 "PO-Revision-Date: 2023-07-18 11:08\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -406,7 +406,7 @@ msgid "DHCP hostname:"
 msgstr "DHCP 主机名："
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
+#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:194
 #, kde-format
 msgid "Default"
 msgstr "默认"
@@ -761,14 +761,14 @@ msgid "Add…"
 msgstr "添加…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnEdit)
-#: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
+#: editor/settings/ui/bond.ui:72 editor/settings/ui/bridge.ui:69
 #: editor/settings/ui/team.ui:71
 #, kde-format
 msgid "Edit…"
 msgstr "编辑…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
-#: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
+#: editor/settings/ui/bond.ui:85 editor/settings/ui/bridge.ui:82
 #: editor/settings/ui/team.ui:86
 #, kde-format
 msgid "Delete"
@@ -776,19 +776,19 @@ msgstr "删除"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
-#: editor/settings/ui/bond.ui:113 editor/settings/ui/wificonnectionwidget.ui:43
+#: editor/settings/ui/bond.ui:110 editor/settings/ui/wificonnectionwidget.ui:43
 #, kde-format
 msgid "Mode:"
 msgstr "模式："
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/bond.ui:133
+#: editor/settings/ui/bond.ui:130
 #, kde-format
 msgid "Link monitoring:"
 msgstr "连接监测："
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: editor/settings/ui/bond.ui:153
+#: editor/settings/ui/bond.ui:150
 #, kde-format
 msgid "Monitoring frequency:"
 msgstr "监测频率："
@@ -796,32 +796,32 @@ msgstr "监测频率："
 #. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
 #. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
 #. i18n: ectx: property (suffix), widget (QSpinBox, downDelay)
-#: editor/settings/ui/bond.ui:163 editor/settings/ui/bond.ui:205
-#: editor/settings/ui/bond.ui:225
+#: editor/settings/ui/bond.ui:160 editor/settings/ui/bond.ui:202
+#: editor/settings/ui/bond.ui:222
 #, kde-format
 msgid " ms"
 msgstr " 毫秒"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: editor/settings/ui/bond.ui:195
+#: editor/settings/ui/bond.ui:192
 #, kde-format
 msgid "Link up delay:"
 msgstr "连接 up 延迟："
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/bond.ui:215
+#: editor/settings/ui/bond.ui:212
 #, kde-format
 msgid "Link down delay:"
 msgstr "连接 down 延迟："
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/bond.ui:242
+#: editor/settings/ui/bond.ui:239
 #, kde-format
 msgid "ARP targets:"
 msgstr "ARP 目标："
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
-#: editor/settings/ui/bond.ui:252
+#: editor/settings/ui/bond.ui:249
 #, kde-format
 msgid "An IP address or comma-separated list of addresses."
 msgstr "单个 IP 地址或者以逗号分隔的地址列表。"
@@ -833,7 +833,7 @@ msgid "Bridged connections:"
 msgstr "桥接的连接："
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bridge.ui:110
+#: editor/settings/ui/bridge.ui:107
 #, kde-format
 msgid "Aging time:"
 msgstr "老化时间："
@@ -842,39 +842,39 @@ msgstr "老化时间："
 #. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
 #. i18n: ectx: property (suffix), widget (QSpinBox, helloTime)
 #. i18n: ectx: property (suffix), widget (QSpinBox, maxAge)
-#: editor/settings/ui/bridge.ui:126 editor/settings/ui/bridge.ui:193
-#: editor/settings/ui/bridge.ui:222 editor/settings/ui/bridge.ui:251
+#: editor/settings/ui/bridge.ui:123 editor/settings/ui/bridge.ui:190
+#: editor/settings/ui/bridge.ui:219 editor/settings/ui/bridge.ui:248
 #, kde-format
 msgctxt "seconds"
 msgid " s"
 msgstr " 秒"
 
 #. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
-#: editor/settings/ui/bridge.ui:139
+#: editor/settings/ui/bridge.ui:136
 #, kde-format
 msgid "Enable STP (Spanning Tree Protocol)"
 msgstr "启用 STP (生成树协议)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/bridge.ui:151
+#: editor/settings/ui/bridge.ui:148
 #, kde-format
 msgid "Priority:"
 msgstr "优先级："
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/bridge.ui:177
+#: editor/settings/ui/bridge.ui:174
 #, kde-format
 msgid "Forward delay:"
 msgstr "转发延迟："
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: editor/settings/ui/bridge.ui:206
+#: editor/settings/ui/bridge.ui:203
 #, kde-format
 msgid "Hello time:"
 msgstr "Hello 时间："
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: editor/settings/ui/bridge.ui:235
+#: editor/settings/ui/bridge.ui:232
 #, kde-format
 msgid "Max age:"
 msgstr "最大寿命："
@@ -940,31 +940,31 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
+#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:306
 #, kde-format
 msgid "Advanced…"
 msgstr "高级…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
-#: editor/settings/ui/connectionwidget.ui:81
+#: editor/settings/ui/connectionwidget.ui:80
 #, kde-format
 msgid "Automatically connect to VPN"
 msgstr "自动连接到 VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
-#: editor/settings/ui/connectionwidget.ui:101
+#: editor/settings/ui/connectionwidget.ui:100
 #, kde-format
 msgid "Firewall zone:"
 msgstr "防火墙区域："
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
-#: editor/settings/ui/connectionwidget.ui:130
+#: editor/settings/ui/connectionwidget.ui:129
 #, kde-format
 msgid "Metered:"
 msgstr "按流量计费："
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:150
+#: editor/settings/ui/connectionwidget.ui:149
 #, kde-format
 msgid ""
 "NetworkManager indicates to applications whether the connection is metered "
@@ -974,20 +974,20 @@ msgstr ""
 "NetworkManager 会告知应用程序此连接是否按流量计费，以便据此限制使用流量。"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:160
+#: editor/settings/ui/connectionwidget.ui:159
 #, kde-format
 msgctxt "Item in the Metered: list"
 msgid "Automatic"
 msgstr "自动"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:165
+#: editor/settings/ui/connectionwidget.ui:164
 #, kde-format
 msgid "Yes"
 msgstr "是"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:170
+#: editor/settings/ui/connectionwidget.ui:169
 #, kde-format
 msgid "No"
 msgstr "否"
@@ -1085,26 +1085,26 @@ msgid "Method:"
 msgstr "方式："
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:227
+#: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:224
 #, kde-format
 msgctxt "Method:"
 msgid "Automatic"
 msgstr "自动"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
+#: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:229
 #, kde-format
 msgid "Automatic (Only addresses)"
 msgstr "自动 (仅地址)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
+#: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:239
 #, kde-format
 msgid "Link-Local"
 msgstr "本地链路"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
+#: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:244
 #, kde-format
 msgctxt "like in use Manual configuration"
 msgid "Manual"
@@ -1124,7 +1124,7 @@ msgid "Disabled"
 msgstr "已禁用"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
-#: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:170
+#: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:167
 #, kde-format
 msgctxt "@info"
 msgid "DNS Servers:"
@@ -1145,14 +1145,14 @@ msgid "Edit DNS the list of servers"
 msgstr "编辑 DNS 服务器列表"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
-#: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
+#: editor/settings/ui/ipv4.ui:143 editor/settings/ui/ipv6.ui:350
 #, kde-format
 msgctxt "@info"
 msgid "Search Domains:"
 msgstr "搜索域："
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
-#: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
+#: editor/settings/ui/ipv4.ui:164 editor/settings/ui/ipv6.ui:270
 #, kde-format
 msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
@@ -1160,19 +1160,19 @@ msgid ""
 msgstr "此字段用于指定要搜索的 DNS 域。使用半角逗号“,”来区分多个域。"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
-#: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
+#: editor/settings/ui/ipv4.ui:171 editor/settings/ui/ipv6.ui:277
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
 msgstr "编辑 DNS 搜索域列表"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
-#: editor/settings/ui/ipv4.ui:191
+#: editor/settings/ui/ipv4.ui:189
 #, kde-format
 msgid "DHCP Client ID:"
 msgstr "DHCP 客户端 ID："
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
-#: editor/settings/ui/ipv4.ui:206
+#: editor/settings/ui/ipv4.ui:204
 #, kde-format
 msgid ""
 "Use this field to specify the DHCP client ID which is a string sent to the "
@@ -1185,19 +1185,19 @@ msgstr ""
 "地计算机。DHCP 服务器可能会在自定义 DHCP 租期和选项时使用它。"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
-#: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
+#: editor/settings/ui/ipv4.ui:213 editor/settings/ui/ipv6.ui:97
 #, kde-format
 msgid "Remove"
 msgstr "移除"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:109
+#: editor/settings/ui/ipv4.ui:223 editor/settings/ui/ipv6.ui:107
 #, kde-format
 msgid "Add"
 msgstr "添加"
 
 #. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
-#: editor/settings/ui/ipv4.ui:244 editor/settings/ui/ipv6.ui:127
+#: editor/settings/ui/ipv4.ui:240 editor/settings/ui/ipv6.ui:124
 #: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
 #, kde-format
 msgid ""
@@ -1209,7 +1209,7 @@ msgstr ""
 "点击“添加”按钮来添加一个 IP 地址"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:282
+#: editor/settings/ui/ipv4.ui:278
 #, kde-format
 msgid ""
 "Allows the connection to complete if IPv4 configuration fails\n"
@@ -1219,13 +1219,13 @@ msgstr ""
 "仍然允许连接完成"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:285
+#: editor/settings/ui/ipv4.ui:281
 #, kde-format
 msgid "IPv4 is required for this connection"
 msgstr "此连接需要 IPv4"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
-#: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
+#: editor/settings/ui/ipv4.ui:331 editor/settings/ui/ipv6.ui:316
 #, kde-format
 msgid "Routes…"
 msgstr "路由…"
@@ -1254,7 +1254,7 @@ msgid "Edit the list of DNS servers"
 msgstr "编辑 DNS 服务器列表"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:193
+#: editor/settings/ui/ipv6.ui:190
 #, kde-format
 msgid ""
 "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
@@ -1267,45 +1267,45 @@ msgstr ""
 "还会基于 EUI-64 的修改版本生成一个临时的 IPv6 地址。"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:202
+#: editor/settings/ui/ipv6.ui:199
 #, kde-format
 msgctxt "privacy disabled"
 msgid "Disabled"
 msgstr "已禁用"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:207
+#: editor/settings/ui/ipv6.ui:204
 #, kde-format
 msgid "Enabled (prefer public address)"
 msgstr "已启用 (公共地址优先)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:212
+#: editor/settings/ui/ipv6.ui:209
 #, kde-format
 msgid "Enabled (prefer temporary addresses)"
 msgstr "已启用 (临时地址优先)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:237
+#: editor/settings/ui/ipv6.ui:234
 #, kde-format
 msgid "Automatic (Only DHCP)"
 msgstr "自动 (仅DHCP)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:252
+#: editor/settings/ui/ipv6.ui:249
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
 msgstr "忽略"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:257
+#: editor/settings/ui/ipv6.ui:254
 #, kde-format
 msgid "Disabled"
 msgstr "已禁用"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
-#: editor/settings/ui/ipv6.ui:335
+#: editor/settings/ui/ipv6.ui:331
 #, kde-format
 msgid "Privacy:"
 msgstr "私密性："

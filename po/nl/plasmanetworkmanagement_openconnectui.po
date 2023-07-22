@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-22 00:59+0000\n"
+"POT-Creation-Date: 2023-07-22 02:10+0000\n"
 "PO-Revision-Date: 2022-08-11 18:03+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,23 +17,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 22.04.3\n"
 
-#: openconnectauth.cpp:316
+#: openconnectauth.cpp:322
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Softwaretoken initialiseren is mislukt: %1"
 
-#: openconnectauth.cpp:369
+#: openconnectauth.cpp:375
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Contact maken met de host, even geduld a.u.b…"
 
-#: openconnectauth.cpp:689
+#: openconnectauth.cpp:695
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Aanmelden"
 
-#: openconnectauth.cpp:751
+#: openconnectauth.cpp:757
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Reden: %2\n"
 "Toch accepteren?"
 
-#: openconnectauth.cpp:846
+#: openconnectauth.cpp:852
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Verbindingspoging was zonder succes."
@@ -144,7 +144,7 @@ msgstr "CA-certificaat:"
 #. i18n: ectx: property (filter), widget (KUrlRequester, leCaCertificate)
 #. i18n: ectx: property (filter), widget (KUrlRequester, leUserCert)
 #. i18n: ectx: property (filter), widget (KUrlRequester, leUserPrivateKey)
-#: openconnectprop.ui:61 openconnectprop.ui:240 openconnectprop.ui:257
+#: openconnectprop.ui:61 openconnectprop.ui:250 openconnectprop.ui:267
 #, kde-format
 msgid "*.pem *.crt *.key"
 msgstr "*.pem *.crt *.key"
@@ -263,38 +263,45 @@ msgstr "Android"
 msgid "Apple iOS"
 msgstr "Apple iOS"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnectprop.ui:224
+#, fuzzy, kde-format
+#| msgid "Reported OS:"
+msgid "Reported Version"
+msgstr "Gerapporteerde OS:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: openconnectprop.ui:234
 #, kde-format
 msgid "Certificate Authentication"
 msgstr "Authenticatie op basis van certificaat"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: openconnectprop.ui:230
+#: openconnectprop.ui:240
 #, kde-format
 msgid "User Certificate:"
 msgstr "Gebruikercertificaat:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openconnectprop.ui:247
+#: openconnectprop.ui:257
 #, kde-format
 msgid "Private Key:"
 msgstr "Privé sleutel:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
-#: openconnectprop.ui:264
+#: openconnectprop.ui:274
 #, kde-format
 msgid "Use FSID for key passphrase"
 msgstr "FSID gebruiken voor wachtwoordzin van sleutel"
 
 #. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
-#: openconnectprop.ui:271
+#: openconnectprop.ui:281
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
 msgstr "Voorkomen dat gebruiker handmatig ongeldige certificaten accepteert"
 
 #. i18n: ectx: property (text), widget (QPushButton, buTokens)
-#: openconnectprop.ui:297
+#: openconnectprop.ui:307
 #, kde-format
 msgid "Token Authentication"
 msgstr "Authenticatie van token"

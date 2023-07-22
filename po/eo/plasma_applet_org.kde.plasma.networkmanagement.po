@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-17 02:11+0000\n"
-"PO-Revision-Date: 2023-05-08 04:33+0100\n"
+"PO-Revision-Date: 2023-07-21 18:55+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -73,13 +73,13 @@ msgstr "Konektita"
 #: contents/ui/ConnectionListPage.qml:34
 #, kde-format
 msgid "You need to log in to this network"
-msgstr ""
+msgstr "Necesas ke vi ensalutas ĉi tiun reton"
 
 #: contents/ui/ConnectionListPage.qml:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Ensaluti"
 
 #: contents/ui/ConnectionListPage.qml:114
 #, kde-format

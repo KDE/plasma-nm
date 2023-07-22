@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-22 00:59+0000\n"
+"POT-Creation-Date: 2023-07-22 02:10+0000\n"
 "PO-Revision-Date: 2023-02-08 14:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Generator: Lokalize 22.12.2\n"
 
-#: openconnectauth.cpp:316
+#: openconnectauth.cpp:322
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Yazılım jetonu ilklendirilemedi: %1"
 
-#: openconnectauth.cpp:369
+#: openconnectauth.cpp:375
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Ana bilgisayara bağlanılıyor, lütfen bekleyin…"
 
-#: openconnectauth.cpp:689
+#: openconnectauth.cpp:695
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Oturum Aç"
 
-#: openconnectauth.cpp:751
+#: openconnectauth.cpp:757
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -45,7 +45,7 @@ msgstr ""
 "Neden: %2\n"
 "Yine de kabul edilsin mi?"
 
-#: openconnectauth.cpp:846
+#: openconnectauth.cpp:852
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Bağlanma girişimi başarısız oldu."
@@ -145,7 +145,7 @@ msgstr "CA Sertifikası:"
 #. i18n: ectx: property (filter), widget (KUrlRequester, leCaCertificate)
 #. i18n: ectx: property (filter), widget (KUrlRequester, leUserCert)
 #. i18n: ectx: property (filter), widget (KUrlRequester, leUserPrivateKey)
-#: openconnectprop.ui:61 openconnectprop.ui:240 openconnectprop.ui:257
+#: openconnectprop.ui:61 openconnectprop.ui:250 openconnectprop.ui:267
 #, kde-format
 msgid "*.pem *.crt *.key"
 msgstr "*.pem *.crt *.key"
@@ -264,38 +264,45 @@ msgstr "Android"
 msgid "Apple iOS"
 msgstr "Apple iOS"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnectprop.ui:224
+#, fuzzy, kde-format
+#| msgid "Reported OS:"
+msgid "Reported Version"
+msgstr "Rapor edilen işletim sistemi:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: openconnectprop.ui:234
 #, kde-format
 msgid "Certificate Authentication"
 msgstr "Sertifika Doğrulama"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: openconnectprop.ui:230
+#: openconnectprop.ui:240
 #, kde-format
 msgid "User Certificate:"
 msgstr "Kullanıcı Sertifikası:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openconnectprop.ui:247
+#: openconnectprop.ui:257
 #, kde-format
 msgid "Private Key:"
 msgstr "Gizli Anahtar:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
-#: openconnectprop.ui:264
+#: openconnectprop.ui:274
 #, kde-format
 msgid "Use FSID for key passphrase"
 msgstr "Anahtar parolası için FSID kullan"
 
 #. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
-#: openconnectprop.ui:271
+#: openconnectprop.ui:281
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
 msgstr "Kullanıcının geçersiz sertifikaları kabul etmesini engelle"
 
 #. i18n: ectx: property (text), widget (QPushButton, buTokens)
-#: openconnectprop.ui:297
+#: openconnectprop.ui:307
 #, kde-format
 msgid "Token Authentication"
 msgstr "Jeton Doğrulama"

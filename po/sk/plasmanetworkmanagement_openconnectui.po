@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-01-22 00:59+0000\n"
+"POT-Creation-Date: 2023-07-22 02:10+0000\n"
 "PO-Revision-Date: 2023-03-25 14:00+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: openconnectauth.cpp:316
+#: openconnectauth.cpp:322
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Zlyhala inicializácia softvérového tokenu: %1"
 
-#: openconnectauth.cpp:369
+#: openconnectauth.cpp:375
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Kontaktuje sa hostiteľ, prosím čakajte..."
 
-#: openconnectauth.cpp:689
+#: openconnectauth.cpp:695
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Prihlásiť"
 
-#: openconnectauth.cpp:751
+#: openconnectauth.cpp:757
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -45,7 +45,7 @@ msgstr ""
 "Dôvod: %2\n"
 "Prijať ho aj napriek tomu?"
 
-#: openconnectauth.cpp:846
+#: openconnectauth.cpp:852
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Pokus o pripojenie bol neúspešný."
@@ -145,7 +145,7 @@ msgstr "Certifikát CA:"
 #. i18n: ectx: property (filter), widget (KUrlRequester, leCaCertificate)
 #. i18n: ectx: property (filter), widget (KUrlRequester, leUserCert)
 #. i18n: ectx: property (filter), widget (KUrlRequester, leUserPrivateKey)
-#: openconnectprop.ui:61 openconnectprop.ui:240 openconnectprop.ui:257
+#: openconnectprop.ui:61 openconnectprop.ui:250 openconnectprop.ui:267
 #, kde-format
 msgid "*.pem *.crt *.key"
 msgstr "*.pem *.crt *.key"
@@ -264,38 +264,45 @@ msgstr "Android"
 msgid "Apple iOS"
 msgstr "Apple iOS"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnectprop.ui:224
+#, fuzzy, kde-format
+#| msgid "Reported OS:"
+msgid "Reported Version"
+msgstr "Nahlásený OS:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: openconnectprop.ui:234
 #, kde-format
 msgid "Certificate Authentication"
 msgstr "Overenie totožnosti certifikátu"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: openconnectprop.ui:230
+#: openconnectprop.ui:240
 #, kde-format
 msgid "User Certificate:"
 msgstr "Certifikát používateľa:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openconnectprop.ui:247
+#: openconnectprop.ui:257
 #, kde-format
 msgid "Private Key:"
 msgstr "Súkromný kľúč:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
-#: openconnectprop.ui:264
+#: openconnectprop.ui:274
 #, kde-format
 msgid "Use FSID for key passphrase"
 msgstr "Použiť FSID pre heslo kľúča"
 
 #. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
-#: openconnectprop.ui:271
+#: openconnectprop.ui:281
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
 msgstr "Zabrániť používateľovi v ručnom prijímaní neplatných certifikátov"
 
 #. i18n: ectx: property (text), widget (QPushButton, buTokens)
-#: openconnectprop.ui:297
+#: openconnectprop.ui:307
 #, kde-format
 msgid "Token Authentication"
 msgstr "Overenie totožnosti tokenu"

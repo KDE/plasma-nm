@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2015, 2017, 2019, 2020, 2021, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2015, 2017, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-22 02:10+0000\n"
-"PO-Revision-Date: 2022-08-11 09:14+0300\n"
+"PO-Revision-Date: 2023-07-22 18:09+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -268,10 +268,9 @@ msgstr "Apple iOS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnectprop.ui:224
-#, fuzzy, kde-format
-#| msgid "Reported OS:"
+#, kde-format
 msgid "Reported Version"
-msgstr "Повідомлена ОС:"
+msgstr "Повідомлена версія"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: openconnectprop.ui:234

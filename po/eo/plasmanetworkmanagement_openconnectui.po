@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-22 02:10+0000\n"
-"PO-Revision-Date: 2023-04-11 21:39+0100\n"
+"PO-Revision-Date: 2023-07-22 12:42+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -266,10 +266,9 @@ msgstr "Apple iOS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnectprop.ui:224
-#, fuzzy, kde-format
-#| msgid "Reported OS:"
+#, kde-format
 msgid "Reported Version"
-msgstr "Raportita OS:"
+msgstr "Raportita Versio:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: openconnectprop.ui:234

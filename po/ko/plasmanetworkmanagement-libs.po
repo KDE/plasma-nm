@@ -974,7 +974,7 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager는 프로그램에 현재 연결의 종량제 여부를 알려 주어서\n"
+"NetworkManager는 앱에 현재 연결의 종량제 여부를 알려 주어서\n"
 "데이터 사용량을 제어합니다."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)

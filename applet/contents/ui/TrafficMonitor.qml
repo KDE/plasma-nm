@@ -9,7 +9,7 @@ import QtQuick.Layouts 1.4
 import org.kde.coreaddons 1.0 as KCoreAddons
 import org.kde.quickcharts 1.0 as QuickCharts
 import org.kde.quickcharts.controls 1.0 as QuickChartControls
-import org.kde.kirigami 2.15 as Kirigami
+import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kirigami 2.20 as Kirigami
@@ -50,7 +50,7 @@ ColumnLayout {
             major.count: 3
             major.lineWidth: 1
             // Same calculation as Kirigami Separator
-            major.color: Kirigami.ColorUtils.linearInterpolation(PlasmaCore.Theme.backgroundColor, PlasmaCore.Theme.textColor, 0.4)
+            major.color: Kirigami.ColorUtils.linearInterpolation(Kirigami.Theme.backgroundColor, Kirigami.Theme.textColor, 0.4)
         }
         QuickCharts.LineChart {
             id: plotter
@@ -89,14 +89,15 @@ ColumnLayout {
                 array: [i18n("Upload"), i18n("Download")]
             }
             colorSource: QuickCharts.ArraySource {
-                array: colors.colors.reverse()
+                // Array.reverse() mutates the array but colors.colors is read-only.
+                array: [colors.colors[1], colors.colors[0]]
             }
             fillColorSource: QuickCharts.ArraySource  {
-                array: colors.colors.reverse().map(color => Qt.lighter(color, 1.5))
+                array: plotter.colorSource.array.map(color => Qt.lighter(color, 1.5))
             }
             QuickCharts.ColorGradientSource {
                 id: colors
-                baseColor:  PlasmaCore.Theme.highlightColor
+                baseColor:  Kirigami.Theme.highlightColor
                 itemCount: 2
             }
         }

@@ -64,7 +64,7 @@ void ConnectivityMonitor::connectivityChanged(NetworkManager::Connectivity conne
 
             if (m_notification) {
                 m_notification->setTitle(title);
-                m_notification->update();
+                m_notification->sendEvent();
             } else {
                 m_notification = new KNotification(QStringLiteral("CaptivePortal"), KNotification::Persistent);
                 m_notification->setActions(QStringList{i18n("Log in")});

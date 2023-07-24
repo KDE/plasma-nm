@@ -275,7 +275,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate,
     if (m_notifications.contains(device->uni())) {
         KNotification *notify = m_notifications.value(device->uni());
         notify->setText(text.toHtmlEscaped());
-        notify->update();
+        notify->sendEvent();
     } else {
         auto notify = new KNotification(QStringLiteral("DeviceFailed"), KNotification::CloseOnTimeout);
         connect(notify, &KNotification::closed, this, &Notification::notificationClosed);

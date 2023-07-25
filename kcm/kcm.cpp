@@ -219,7 +219,6 @@ KCMNetworkmanagement::KCMNetworkmanagement(QWidget *parent, const QVariantList &
 KCMNetworkmanagement::~KCMNetworkmanagement()
 {
     delete m_handler;
-    delete m_tabWidget;
     delete m_ui;
 }
 

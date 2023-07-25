@@ -215,7 +215,6 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
 KCMNetworkmanagement::~KCMNetworkmanagement()
 {
     delete m_handler;
-    delete m_tabWidget;
     delete m_ui;
 }
 

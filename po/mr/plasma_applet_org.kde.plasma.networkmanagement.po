@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-17 02:11+0000\n"
+"POT-Creation-Date: 2023-07-25 02:00+0000\n"
 "PO-Revision-Date: 2014-10-28 10:24+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -17,38 +17,38 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 1.5\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "जोडा"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "तोडा"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:86
 #, fuzzy, kde-format
 #| msgid "Connection speed:"
 msgid "Show Network's QR Code"
 msgstr "जुळवणी वेग :"
 
-#: contents/ui/ConnectionItem.qml:90
+#: contents/ui/ConnectionItem.qml:91
 #, kde-format
 msgid "Configure…"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:121
+#: contents/ui/ConnectionItem.qml:128
 #, kde-format
 msgid "Speed"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:126
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Details"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:169
+#: contents/ui/ConnectionItem.qml:176
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56,12 +56,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:282
+#: contents/ui/ConnectionItem.qml:289
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "जुळलेले, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:286
+#: contents/ui/ConnectionItem.qml:293
 #, kde-format
 msgid "Connected"
 msgstr "जुळलेले"
@@ -215,7 +215,7 @@ msgstr ""
 msgid "Configure network connections…"
 msgstr "जुळवण्या संपादित करा..."
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:107
+#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:108
 #, kde-format
 msgid "/s"
 msgstr ""

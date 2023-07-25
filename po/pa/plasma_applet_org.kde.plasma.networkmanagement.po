@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-17 02:11+0000\n"
+"POT-Creation-Date: 2023-07-25 02:00+0000\n"
 "PO-Revision-Date: 2021-06-08 22:12-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -17,38 +17,38 @@ msgstr ""
 "X-Generator: Lokalize 20.12.2\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "ਕਨੈਕਟ"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "ਡਿਸ-ਕਨੈਕਟ"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:86
 #, fuzzy, kde-format
 #| msgid "Show network's QR code"
 msgid "Show Network's QR Code"
 msgstr "ਨੈੱਟਵਰਕ ਦਾ QR ਕੋਡ ਵੇਖਾਓ"
 
-#: contents/ui/ConnectionItem.qml:90
+#: contents/ui/ConnectionItem.qml:91
 #, kde-format
 msgid "Configure…"
 msgstr "…ਸੰਰਚਨਾ"
 
-#: contents/ui/ConnectionItem.qml:121
+#: contents/ui/ConnectionItem.qml:128
 #, kde-format
 msgid "Speed"
 msgstr "ਸਪੀਡ"
 
-#: contents/ui/ConnectionItem.qml:126
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Details"
 msgstr "ਵੇਰਵੇ"
 
-#: contents/ui/ConnectionItem.qml:169
+#: contents/ui/ConnectionItem.qml:176
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56,12 +56,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:282
+#: contents/ui/ConnectionItem.qml:289
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "ਕਨੈਕਟ ਹੈ, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:286
+#: contents/ui/ConnectionItem.qml:293
 #, kde-format
 msgid "Connected"
 msgstr "ਕਨੈਕਟ ਹੈ"
@@ -212,7 +212,7 @@ msgstr "ਹਾਟ-ਸਪਾਟ ਬਣਾਓ"
 msgid "Configure network connections…"
 msgstr "…ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਦੀ ਸੰਰਚਨਾ"
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:107
+#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:108
 #, kde-format
 msgid "/s"
 msgstr "/ਸ"

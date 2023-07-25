@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-17 02:11+0000\n"
+"POT-Creation-Date: 2023-07-25 02:00+0000\n"
 "PO-Revision-Date: 2023-07-17 12:35+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,37 +19,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "Conectar"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:86
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Mostrar el código QR de la red"
 
-#: contents/ui/ConnectionItem.qml:90
+#: contents/ui/ConnectionItem.qml:91
 #, kde-format
 msgid "Configure…"
 msgstr "Configurar..."
 
-#: contents/ui/ConnectionItem.qml:121
+#: contents/ui/ConnectionItem.qml:128
 #, kde-format
 msgid "Speed"
 msgstr "Velocidad"
 
-#: contents/ui/ConnectionItem.qml:126
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Details"
 msgstr "Detalles"
 
-#: contents/ui/ConnectionItem.qml:169
+#: contents/ui/ConnectionItem.qml:176
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59,12 +59,12 @@ msgstr ""
 "La velocidad de descarga actual es de %1 kibibytes por segundo; la velocidad "
 "de subida actual es de %2 kibibytes por segundo"
 
-#: contents/ui/ConnectionItem.qml:282
+#: contents/ui/ConnectionItem.qml:289
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Conectado, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:286
+#: contents/ui/ConnectionItem.qml:293
 #, kde-format
 msgid "Connected"
 msgstr "Conectado"
@@ -211,7 +211,7 @@ msgstr "Crear punto de acceso"
 msgid "Configure network connections…"
 msgstr "Configurar conexiones de red..."
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:107
+#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:108
 #, kde-format
 msgid "/s"
 msgstr "/s"

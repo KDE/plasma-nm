@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 02:00+0000\n"
+"POT-Creation-Date: 2023-07-28 02:08+0000\n"
 "PO-Revision-Date: 2023-04-07 23:41-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -211,17 +211,17 @@ msgstr "ホットスポットを作成"
 msgid "Configure network connections…"
 msgstr "ネットワーク接続を設定…"
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:108
+#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:107
 #, kde-format
 msgid "/s"
 msgstr "/秒"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: contents/ui/TrafficMonitor.qml:88
 #, kde-format
 msgid "Upload"
 msgstr "アップロード"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: contents/ui/TrafficMonitor.qml:88
 #, kde-format
 msgid "Download"
 msgstr "ダウンロード"

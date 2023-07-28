@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 02:00+0000\n"
+"POT-Creation-Date: 2023-07-28 02:08+0000\n"
 "PO-Revision-Date: 2023-07-19 18:23+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -213,17 +213,17 @@ msgstr "Sortu berogunea"
 msgid "Configure network connections…"
 msgstr "Konfiguratu sare-konexioak..."
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:108
+#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:107
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: contents/ui/TrafficMonitor.qml:88
 #, kde-format
 msgid "Upload"
 msgstr "Igo"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: contents/ui/TrafficMonitor.qml:88
 #, kde-format
 msgid "Download"
 msgstr "Jaitsi"

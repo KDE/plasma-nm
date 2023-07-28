@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 02:00+0000\n"
-"PO-Revision-Date: 2023-05-27 14:21+0200\n"
+"POT-Creation-Date: 2023-07-28 02:08+0000\n"
+"PO-Revision-Date: 2023-07-27 22:01+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -18,7 +18,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: contents/ui/ConnectionItem.qml:61
 #, kde-format
@@ -72,13 +72,13 @@ msgstr "Kopla til"
 #: contents/ui/ConnectionListPage.qml:34
 #, kde-format
 msgid "You need to log in to this network"
-msgstr ""
+msgstr "Du må logga på dette nettverket"
 
 #: contents/ui/ConnectionListPage.qml:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Logg på"
 
 #: contents/ui/ConnectionListPage.qml:114
 #, kde-format
@@ -211,17 +211,17 @@ msgstr "Opprett trådlaussone"
 msgid "Configure network connections…"
 msgstr "Set opp nettverkstilkoplingar …"
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:108
+#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:107
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: contents/ui/TrafficMonitor.qml:88
 #, kde-format
 msgid "Upload"
 msgstr "Opplasting"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: contents/ui/TrafficMonitor.qml:88
 #, kde-format
 msgid "Download"
 msgstr "Nedlasting"

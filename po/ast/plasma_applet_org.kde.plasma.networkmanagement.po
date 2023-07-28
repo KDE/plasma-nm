@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-25 02:00+0000\n"
+"POT-Creation-Date: 2023-07-28 02:08+0000\n"
 "PO-Revision-Date: 2023-05-09 22:32+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -206,17 +206,17 @@ msgstr ""
 msgid "Configure network connections…"
 msgstr ""
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:108
+#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:107
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: contents/ui/TrafficMonitor.qml:88
 #, kde-format
 msgid "Upload"
 msgstr ""
 
-#: contents/ui/TrafficMonitor.qml:89
+#: contents/ui/TrafficMonitor.qml:88
 #, kde-format
 msgid "Download"
 msgstr ""

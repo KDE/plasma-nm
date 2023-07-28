@@ -5,12 +5,12 @@
 */
 
 import QtQuick 2.2
-import QtQuick.Controls as QQC2
 import QtQuick.Layouts 1.15
 
 import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.plasma.components 3.0 as PlasmaComponents3
 
 MouseArea {
     height: detailsGrid.implicitHeight
@@ -60,7 +60,7 @@ MouseArea {
 
             model: details.length
 
-            QQC2.Label {
+            PlasmaComponents3.Label {
                 Layout.fillWidth: true
 
                 readonly property bool isContent: index % 2

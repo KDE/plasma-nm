@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-28 02:08+0000\n"
-"PO-Revision-Date: 2023-05-11 09:53+0200\n"
+"PO-Revision-Date: 2023-07-29 09:30+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: contents/ui/ConnectionItem.qml:61
 #, kde-format
@@ -62,7 +62,7 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 "A velocidade actual de descarga é de %1 kibibytes por segundo; a velocidade "
-"actual de envío é de %2 kibibytes por segundo"
+"actual de envío é de %2 kibibytes por segundo."
 
 #: contents/ui/ConnectionItem.qml:289
 #, kde-format
@@ -75,16 +75,15 @@ msgid "Connected"
 msgstr "Conectado."
 
 #: contents/ui/ConnectionListPage.qml:34
-#, fuzzy, kde-format
-#| msgid "Password on this network"
+#, kde-format
 msgid "You need to log in to this network"
-msgstr "O contrasinal nesta rede."
+msgstr "Debe identificarse nesta rede."
 
 #: contents/ui/ConnectionListPage.qml:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Identificarse"
 
 #: contents/ui/ConnectionListPage.qml:114
 #, kde-format
@@ -130,13 +129,13 @@ msgstr "Redes"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr "Clic central para desactivar o modo avión"
+msgstr "Clic central para desactivar o modo avión."
 
 #: contents/ui/main.qml:38
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "Clic central para activar o modo avión"
+msgstr "Clic central para activar o modo avión."
 
 #: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
 #, kde-format

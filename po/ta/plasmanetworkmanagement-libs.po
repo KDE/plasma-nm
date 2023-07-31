@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-20 02:12+0000\n"
-"PO-Revision-Date: 2023-04-02 16:20+0530\n"
+"PO-Revision-Date: 2023-07-30 12:47+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.90\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: declarative/networkstatus.cpp:125
 #, kde-format
@@ -618,13 +618,13 @@ msgstr "இந்த சேவையகங்களுடன் இணை:"
 #: editor/settings/ui/wireguardinterfacewidget.ui:26
 #, kde-format
 msgid "Private key:"
-msgstr ""
+msgstr "கமுக்க சாவி:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/802-1x.ui:256
 #, kde-format
 msgid "Private key password:"
-msgstr ""
+msgstr "கமுக்க சாவிக்கான கடவுச்சொல்:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #. i18n: ectx: property (text), widget (QLabel, label_19)
@@ -663,7 +663,7 @@ msgstr "இரண்டும்"
 #: editor/settings/ui/802-1x.ui:393
 #, kde-format
 msgid "PAC file:"
-msgstr ""
+msgstr "PAC கோப்பு:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #. i18n: ectx: property (text), widget (QLabel, label_16)
@@ -672,7 +672,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:653
 #, kde-format
 msgid "Inner authentication:"
-msgstr ""
+msgstr "உள்ளக சான்றளிப்பு:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
@@ -1095,7 +1095,7 @@ msgstr "தானியக்கம் (முகவரிகள் மட்ட
 #: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:239
 #, kde-format
 msgid "Link-Local"
-msgstr ""
+msgstr "பிணையத்துள் மட்டும்"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:244

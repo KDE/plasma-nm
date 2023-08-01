@@ -23,7 +23,8 @@ ColumnLayout {
     PlasmaComponents3.Label {
         Layout.topMargin: page.spacing
         Layout.alignment: Qt.AlignHCenter
-        Layout.preferredWidth: barcode.height
+        Layout.minimumWidth: barcode.height
+        Layout.maximumWidth: barcode.width - page.spacing * 2
         wrapMode: Text.WordWrap
         horizontalAlignment: Text.AlignHCenter
         textFormat: Text.PlainText

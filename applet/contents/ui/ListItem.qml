@@ -28,10 +28,6 @@ MouseArea {
     height: separator ? separatorLine.height + Kirigami.Units.smallSpacing * 3 : parent.height
     hoverEnabled: true
 
-    KSvg.Svg {
-        id: lineSvg
-        imagePath: "widgets/line"
-    }
     KSvg.SvgItem {
         id: separatorLine
         anchors {
@@ -39,9 +35,9 @@ MouseArea {
             top: parent.top
             topMargin: Kirigami.Units.smallSpacing
         }
+        imagePath: "widgets/line"
         elementId: "horizontal-line"
         width: parent.width - Kirigami.Units.gridUnit * 2
-        svg: lineSvg
         visible: separator
     }
 

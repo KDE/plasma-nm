@@ -36,7 +36,7 @@ MouseArea {
     }
 
     KSvg.SvgItem {
-        svg: KSvg.Svg {imagePath: "widgets/listitem"}
+        imagePath: "widgets/listitem"
         elementId: "separator"
         anchors {
             left: parent.left

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 02:08+0000\n"
+"POT-Creation-Date: 2023-08-01 02:16+0000\n"
 "PO-Revision-Date: 2023-07-30 12:10+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -130,27 +130,27 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "விமானப் பயன்முறையை இயக்க நடு-கிளிக் செய்யுங்கள்"
 
-#: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:67 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "அருகலையை இயக்கு"
 
-#: contents/ui/main.qml:74
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "கைபேசி பிணையத்தை இயக்கு"
 
-#: contents/ui/main.qml:86
+#: contents/ui/main.qml:90
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "விமான பயன்முறையை இயக்கு"
 
-#: contents/ui/main.qml:98
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "பிணைய நுழைவு பக்கத்தை திற..."
 
-#: contents/ui/main.qml:108
+#: contents/ui/main.qml:112
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "பிணைய இணைப்புகளை &அமை…"

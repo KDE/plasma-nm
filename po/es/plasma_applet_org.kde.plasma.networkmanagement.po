@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 02:08+0000\n"
+"POT-Creation-Date: 2023-08-01 02:16+0000\n"
 "PO-Revision-Date: 2023-07-17 12:35+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -132,27 +132,27 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Clic central para activar el modo avión"
 
-#: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:67 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activar wifi"
 
-#: contents/ui/main.qml:74
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Activar red móvil"
 
-#: contents/ui/main.qml:86
+#: contents/ui/main.qml:90
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Activar modo avión"
 
-#: contents/ui/main.qml:98
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Abrir la página de inicio de sesión en la red..."
 
-#: contents/ui/main.qml:108
+#: contents/ui/main.qml:112
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configurar conexiones de red..."

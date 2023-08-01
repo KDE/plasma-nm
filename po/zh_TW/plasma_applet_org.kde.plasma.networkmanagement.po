@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 02:08+0000\n"
+"POT-Creation-Date: 2023-08-01 02:16+0000\n"
 "PO-Revision-Date: 2023-02-09 01:07+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@linux.org.tw>\n"
@@ -133,27 +133,27 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "按中鍵開啟飛航模式"
 
-#: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:67 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "啟用 Wi-Fi"
 
-#: contents/ui/main.qml:74
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "啟用行動網路"
 
-#: contents/ui/main.qml:86
+#: contents/ui/main.qml:90
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "啟用飛航模式"
 
-#: contents/ui/main.qml:98
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "開啟網路登入頁面…"
 
-#: contents/ui/main.qml:108
+#: contents/ui/main.qml:112
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "設定網路連線…(&C)"

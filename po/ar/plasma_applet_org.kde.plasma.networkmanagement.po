@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-28 02:08+0000\n"
+"POT-Creation-Date: 2023-08-01 02:16+0000\n"
 "PO-Revision-Date: 2023-01-25 20:42+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -132,27 +132,27 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "انقر بالزر الأوسط تفعيل نمط الطيران"
 
-#: contents/ui/main.qml:63 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:67 contents/ui/Toolbar.qml:81
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "مكّن واي فاي"
 
-#: contents/ui/main.qml:74
+#: contents/ui/main.qml:78
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "مكن شبكة هاتف"
 
-#: contents/ui/main.qml:86
+#: contents/ui/main.qml:90
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "مكن وضع الطيران"
 
-#: contents/ui/main.qml:98
+#: contents/ui/main.qml:102
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "افتح صفحة ولوج الشبكة..."
 
-#: contents/ui/main.qml:108
+#: contents/ui/main.qml:112
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "ا&ضبط اتّصالات الشّبكة..."

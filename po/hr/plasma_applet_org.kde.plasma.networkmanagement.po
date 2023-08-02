@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-01 02:16+0000\n"
+"POT-Creation-Date: 2023-08-02 02:09+0000\n"
 "PO-Revision-Date: 2011-06-27 14:57+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -143,7 +143,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:67 contents/ui/Toolbar.qml:81
+#: contents/ui/main.qml:67 contents/ui/Toolbar.qml:75
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
@@ -185,46 +185,46 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Uredi mrežnu vezu"
 
-#: contents/ui/ShareNetworkQrCodePage.qml:30
+#: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:130
+#: contents/ui/Toolbar.qml:124
 #, fuzzy, kde-format
 #| msgid "User name on this network"
 msgid "Enable mobile network"
 msgstr "Korisničko ime na ovoj mreži"
 
-#: contents/ui/Toolbar.qml:155
+#: contents/ui/Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:156
+#: contents/ui/Toolbar.qml:150
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:167
+#: contents/ui/Toolbar.qml:161
 #, kde-format
 msgid "Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:191 contents/ui/Toolbar.qml:202
+#: contents/ui/Toolbar.qml:185 contents/ui/Toolbar.qml:196
 #, fuzzy, kde-format
 #| msgid "Disabled"
 msgid "Disable Hotspot"
 msgstr "Onemogućeno"
 
-#: contents/ui/Toolbar.qml:196 contents/ui/Toolbar.qml:202
+#: contents/ui/Toolbar.qml:190 contents/ui/Toolbar.qml:196
 #, kde-format
 msgid "Create Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:234
+#: contents/ui/Toolbar.qml:228
 #, fuzzy, kde-format
 #| msgid "Configure notifications..."
 msgid "Configure network connections…"

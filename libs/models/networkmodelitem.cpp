@@ -211,11 +211,7 @@ QString NetworkModelItem::computeIcon() const
         return QStringLiteral("network-mobile-100");
         break;
     case NetworkManager::ConnectionSettings::Bluetooth:
-        if (m_connectionState == NetworkManager::ActiveConnection::Activated) {
-            return QStringLiteral("network-bluetooth-activated");
-        } else {
-            return QStringLiteral("network-bluetooth");
-        }
+        return QStringLiteral("network-wireless-bluetooth-symbolic");
         break;
     case NetworkManager::ConnectionSettings::Bond:
         break;

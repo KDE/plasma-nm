@@ -1272,7 +1272,7 @@ msgid ""
 "a temporary IPv6 address in addition to the public one generated from MAC "
 "address via modified EUI-64."
 msgstr ""
-"Configurar extensións de protección da intimidade de IPv6 para SLAAC, "
+"Configurar extensións de protección da privacidade de IPv6 para SLAAC, "
 "descritas no estándar RFC4941. Active esta opción para facer que o núcleo do "
 "sistema xere un enderezo IPv6 temporal ademais do enderezo público xerado a "
 "partir do enderezo MAC mediante un EUI-64 modificado."
@@ -1319,7 +1319,7 @@ msgstr "Desactivado"
 #: editor/settings/ui/ipv6.ui:335
 #, kde-format
 msgid "Privacy:"
-msgstr "Intimidade:"
+msgstr "Privacidade:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, authGroup)
 #: editor/settings/ui/ppp.ui:23

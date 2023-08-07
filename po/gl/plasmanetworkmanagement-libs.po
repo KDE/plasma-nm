@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-06 02:04+0000\n"
-"PO-Revision-Date: 2023-04-06 21:18+0200\n"
+"PO-Revision-Date: 2023-08-06 05:27+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: declarative/networkstatus.cpp:125
 #, kde-format
@@ -642,7 +642,7 @@ msgstr "Identidade anónima:"
 #: editor/settings/ui/802-1x.ui:358
 #, kde-format
 msgid "Automatic PAC provisioning"
-msgstr "Fornecemento automático de PAC"
+msgstr "Fornecemento automático de PAC."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:375
@@ -901,7 +901,7 @@ msgstr "Número:"
 #: editor/settings/ui/connectionwidget.ui:17
 #, kde-format
 msgid "Connect automatically with priority"
-msgstr "Conectar automaticamente con prioridade"
+msgstr "Conectar automaticamente con prioridade."
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
@@ -952,7 +952,7 @@ msgstr "Avanzado…"
 #: editor/settings/ui/connectionwidget.ui:80
 #, kde-format
 msgid "Automatically connect to VPN"
-msgstr "Conectarse automaticamente á VPN"
+msgstr "Conectarse automaticamente á VPN."
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:100
@@ -1081,7 +1081,7 @@ msgstr " bytes"
 #: editor/settings/ui/ipv4.ui:17 editor/settings/ui/ipv6.ui:20
 #, kde-format
 msgid "Advanced IP settings"
-msgstr "Configuración avanzada de IP"
+msgstr "Configuración avanzada de IP."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
@@ -1149,7 +1149,7 @@ msgstr ""
 #: editor/settings/ui/ipv4.ui:125
 #, kde-format
 msgid "Edit DNS the list of servers"
-msgstr "Editar a lista de servidores DNS"
+msgstr "Editar a lista de servidores DNS."
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: editor/settings/ui/ipv4.ui:143 editor/settings/ui/ipv6.ui:350
@@ -1261,7 +1261,7 @@ msgstr "A conexión require IPv6."
 #: editor/settings/ui/ipv6.ui:83
 #, kde-format
 msgid "Edit the list of DNS servers"
-msgstr "Editar a lista de servidores de DNS"
+msgstr "Editar a lista de servidores de DNS."
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:190
@@ -1331,7 +1331,7 @@ msgstr "Autenticación"
 #: editor/settings/ui/ppp.ui:38
 #, kde-format
 msgid "EAP"
-msgstr "EAP"
+msgstr "EAP."
 
 #. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
 #: editor/settings/ui/ppp.ui:91
@@ -1460,13 +1460,13 @@ msgstr "Protocolo de rexistro GARP VLAN."
 #: editor/settings/ui/vlan.ui:87
 #, kde-format
 msgid "GVRP"
-msgstr "GVRP"
+msgstr "GVRP."
 
 #. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
 #: editor/settings/ui/vlan.ui:94
 #, kde-format
 msgid "Loose binding"
-msgstr "Encadeamento feble"
+msgstr "Encadeamento feble."
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:17
@@ -1594,7 +1594,7 @@ msgstr "Visibilidade:"
 #: editor/settings/ui/wificonnectionwidget.ui:306
 #, kde-format
 msgid "Hidden network"
-msgstr "Rede agochada"
+msgstr "Rede agochada."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
 #: editor/settings/ui/wifisecurity.ui:15
@@ -1727,7 +1727,7 @@ msgstr ""
 "O enderezo MAC inserido aquí usarase como enderezo de\n"
 "soporte físico do dispositivo de rede empregado para esta conexión. Esta\n"
 "funcionalidade denomínase «clonación da MAC». Por exemplo:\n"
-"11:22:33:44:55"
+"11:22:33:44:55."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wiredconnectionwidget.ui:80
@@ -2937,7 +2937,7 @@ msgstr "N/A"
 #, kde-format
 msgctxt "@info:tooltip real user name is not available"
 msgid "Not Available"
-msgstr "Non dispoñíbel"
+msgstr "Non dispoñíbel."
 
 #: editor/widgets/bssidcombobox.cpp:122
 #, kde-format
@@ -3490,115 +3490,115 @@ msgstr "Importar un ficheiro de configuración gardado"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "O tipo de conexión é descoñecido"
+msgstr "O tipo de conexión é descoñecido."
 
 #: models/networkmodelitem.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "O tipo de conexión é ADSL"
+msgstr "O tipo de conexión é ADSL."
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr "O tipo de conexión é Bluetooth"
+msgstr "O tipo de conexión é Bluetooth."
 
 #: models/networkmodelitem.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "O tipo de conexión é ponte"
+msgstr "O tipo de conexión é ponte."
 
 #: models/networkmodelitem.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "O tipo de conexión é CDMA"
+msgstr "O tipo de conexión é CDMA."
 
 #: models/networkmodelitem.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "O tipo de conexión é GSM"
+msgstr "O tipo de conexión é GSM."
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr "O tipo de conexión é Infiniband"
+msgstr "O tipo de conexión é Infiniband."
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
-msgstr "O tipo de conexión é Mesh OLPC"
+msgstr "O tipo de conexión é Mesh OLPC."
 
 #: models/networkmodelitem.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr "O tipo de conexión é PPOPE"
+msgstr "O tipo de conexión é PPOPE."
 
 #: models/networkmodelitem.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "O tipo de conexión é VLAN"
+msgstr "O tipo de conexión é VLAN."
 
 #: models/networkmodelitem.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "O tipo de conexión é VPN"
+msgstr "O tipo de conexión é VPN."
 
 #: models/networkmodelitem.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "O tipo de conexión é Wimax"
+msgstr "O tipo de conexión é Wimax."
 
 #: models/networkmodelitem.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "O tipo de conexión é con fíos"
+msgstr "O tipo de conexión é con fíos."
 
 #: models/networkmodelitem.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr "O tipo de conexión é sen fíos"
+msgstr "O tipo de conexión é sen fíos."
 
 #: models/networkmodelitem.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr "O tipo de conexión é Team"
+msgstr "O tipo de conexión é Team."
 
 #: models/networkmodelitem.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr "O tipo de conexión é xenérico"
+msgstr "O tipo de conexión é xenérico."
 
 #: models/networkmodelitem.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr "O tipo de conexión é túnel"
+msgstr "O tipo de conexión é túnel."
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr "O tipo de conexión é túnel de IP"
+msgstr "O tipo de conexión é túnel de IP."
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
-msgstr "O tipo de conexión é WireGuard"
+msgstr "O tipo de conexión é WireGuard."
 
 #: models/networkmodelitem.cpp:581
 #, kde-format

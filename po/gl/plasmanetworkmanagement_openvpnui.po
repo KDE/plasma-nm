@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2023-06-11 21:48+0200\n"
+"PO-Revision-Date: 2023-08-06 05:26+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.1\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: openvpn.cpp:183
 #, kde-format
@@ -361,7 +361,7 @@ msgstr "Usar compresión."
 #: openvpnadvanced.ui:99
 #, kde-format
 msgid "Use compression"
-msgstr "Usar compresión"
+msgstr "Usar compresión."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:113
@@ -510,7 +510,7 @@ msgstr ""
 #: openvpnadvanced.ui:308
 #, kde-format
 msgid "Randomize remote hosts"
-msgstr "Máquinas remotas aleatorias"
+msgstr "Máquinas remotas aleatorias."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:315
@@ -522,7 +522,7 @@ msgstr "Construír unha ligazón tun capaz de reenviar tráfico IPv6."
 #: openvpnadvanced.ui:318
 #, kde-format
 msgid "IPv6 tun link"
-msgstr "Ligazón tun de IPv6"
+msgstr "Ligazón tun de IPv6."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPingInterval)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbPingInterval)

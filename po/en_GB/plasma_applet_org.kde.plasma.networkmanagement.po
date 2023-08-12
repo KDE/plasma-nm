@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 02:09+0000\n"
+"POT-Creation-Date: 2023-08-12 02:01+0000\n"
 "PO-Revision-Date: 2023-05-21 14:47+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -211,17 +211,17 @@ msgstr "Create Hotspot"
 msgid "Configure network connections…"
 msgstr "Configure network connections…"
 
-#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:107
+#: contents/ui/TrafficMonitor.qml:35 contents/ui/TrafficMonitor.qml:106
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:87
 #, kde-format
 msgid "Upload"
 msgstr "Upload"
 
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:87
 #, kde-format
 msgid "Download"
 msgstr "Download"

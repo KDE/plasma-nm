@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 02:09+0000\n"
+"POT-Creation-Date: 2023-08-12 02:01+0000\n"
 "PO-Revision-Date: 2023-07-25 10:07-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -212,19 +212,19 @@ msgstr "Criar ponto de acesso"
 msgid "Configure network connections…"
 msgstr "Configurar as conexões de rede..."
 
-#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:107
+#: contents/ui/TrafficMonitor.qml:35 contents/ui/TrafficMonitor.qml:106
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
 # Não traduzir (Alvarenga)
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:87
 #, kde-format
 msgid "Upload"
 msgstr "Upload"
 
 # Não traduzir (Alvarenga)
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:87
 #, kde-format
 msgid "Download"
 msgstr "Download"

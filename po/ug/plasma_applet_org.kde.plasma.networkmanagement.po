@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-02 02:09+0000\n"
+"POT-Creation-Date: 2023-08-12 02:01+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -218,17 +218,17 @@ msgstr ""
 msgid "Configure network connections…"
 msgstr "ئۇقتۇرۇشلارنى سەپلە"
 
-#: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:107
+#: contents/ui/TrafficMonitor.qml:35 contents/ui/TrafficMonitor.qml:106
 #, kde-format
 msgid "/s"
 msgstr ""
 
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:87
 #, kde-format
 msgid "Upload"
 msgstr ""
 
-#: contents/ui/TrafficMonitor.qml:88
+#: contents/ui/TrafficMonitor.qml:87
 #, kde-format
 msgid "Download"
 msgstr ""

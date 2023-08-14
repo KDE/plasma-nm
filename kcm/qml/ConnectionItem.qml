@@ -46,6 +46,7 @@ ListItem {
                 left: parent.left
                 verticalCenter: parent.verticalCenter
             }
+            color: (connectionItem.checked || connectionItem.pressed) ? Kirigami.Theme.highlightedTextColor : textColor
             height: Kirigami.Units.iconSizes.medium; width: height
             source: KcmConnectionIcon
         }
@@ -59,7 +60,7 @@ ListItem {
                 leftMargin: Math.round(Kirigami.Units.gridUnit / 2)
                 right: connectingIndicator.visible ? connectingIndicator.left : parent.right
             }
-            color: textColor
+            color: (connectionItem.checked || connectionItem.pressed) ? Kirigami.Theme.highlightedTextColor : textColor
             height: paintedHeight
             elide: Text.ElideRight
             font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
@@ -77,7 +78,7 @@ ListItem {
                 right: connectingIndicator.visible ? connectingIndicator.left : parent.right
                 top: connectionNameLabel.bottom
             }
-            color: textColor
+            color: (connectionItem.checked || connectionItem.pressed) ? Kirigami.Theme.highlightedTextColor : textColor
             height: paintedHeight
             elide: Text.ElideRight
             font.pointSize: Kirigami.Theme.smallFont.pointSize

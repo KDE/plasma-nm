@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-08-12 02:01+0000\n"
-"PO-Revision-Date: 2023-06-13 22:24+0200\n"
+"PO-Revision-Date: 2023-08-13 16:38+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 23.11.70\n"
 
 #: contents/ui/ConnectionItem.qml:61
 #, kde-format
@@ -72,13 +72,13 @@ msgstr "Verbunden"
 #: contents/ui/ConnectionListPage.qml:34
 #, kde-format
 msgid "You need to log in to this network"
-msgstr ""
+msgstr "Sie müssen sich in diesem Netzwerk anmelden"
 
 #: contents/ui/ConnectionListPage.qml:38
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Anmelden"
 
 #: contents/ui/ConnectionListPage.qml:114
 #, kde-format

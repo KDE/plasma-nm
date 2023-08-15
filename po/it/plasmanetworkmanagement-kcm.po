@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-26 02:02+0000\n"
+"POT-Creation-Date: 2023-08-15 02:00+0000\n"
 "PO-Revision-Date: 2023-03-14 13:45+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -114,27 +114,27 @@ msgstr "Password dell'hotspot:"
 msgid "OK"
 msgstr "OK"
 
-#: qml/ConnectionItem.qml:107
+#: qml/ConnectionItem.qml:108
 msgid "Connect"
 msgstr "Connetti"
 
-#: qml/ConnectionItem.qml:107
+#: qml/ConnectionItem.qml:108
 msgid "Disconnect"
 msgstr "Disconnetti"
 
-#: qml/ConnectionItem.qml:120
+#: qml/ConnectionItem.qml:121
 msgid "Delete"
 msgstr "Elimina"
 
-#: qml/ConnectionItem.qml:130
+#: qml/ConnectionItem.qml:131
 msgid "Export"
 msgstr "Esporta"
 
-#: qml/ConnectionItem.qml:140
+#: qml/ConnectionItem.qml:141
 msgid "Connected"
 msgstr "Connesso"
 
-#: qml/ConnectionItem.qml:142
+#: qml/ConnectionItem.qml:143
 msgid "Connecting"
 msgstr "Connessione in corso"
 

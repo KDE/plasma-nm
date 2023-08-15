@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-26 02:02+0000\n"
+"POT-Creation-Date: 2023-08-15 02:00+0000\n"
 "PO-Revision-Date: 2020-01-30 20:19+0100\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -115,27 +115,27 @@ msgstr "Adgangskode til delt internet:"
 msgid "OK"
 msgstr ""
 
-#: qml/ConnectionItem.qml:107
+#: qml/ConnectionItem.qml:108
 msgid "Connect"
 msgstr "Forbind"
 
-#: qml/ConnectionItem.qml:107
+#: qml/ConnectionItem.qml:108
 msgid "Disconnect"
 msgstr "Afbryd forbindelse"
 
-#: qml/ConnectionItem.qml:120
+#: qml/ConnectionItem.qml:121
 msgid "Delete"
 msgstr "Slet"
 
-#: qml/ConnectionItem.qml:130
+#: qml/ConnectionItem.qml:131
 msgid "Export"
 msgstr "Eksportér"
 
-#: qml/ConnectionItem.qml:140
+#: qml/ConnectionItem.qml:141
 msgid "Connected"
 msgstr "Forbundet"
 
-#: qml/ConnectionItem.qml:142
+#: qml/ConnectionItem.qml:143
 msgid "Connecting"
 msgstr "Forbinder"
 

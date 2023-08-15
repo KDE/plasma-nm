@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-26 02:02+0000\n"
+"POT-Creation-Date: 2023-08-15 02:00+0000\n"
 "PO-Revision-Date: 2023-03-15 06:43+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -114,27 +114,27 @@ msgstr "ჰოტსპოტის პაროლი:"
 msgid "OK"
 msgstr "დიახ"
 
-#: qml/ConnectionItem.qml:107
+#: qml/ConnectionItem.qml:108
 msgid "Connect"
 msgstr "დაკავშირება"
 
-#: qml/ConnectionItem.qml:107
+#: qml/ConnectionItem.qml:108
 msgid "Disconnect"
 msgstr "გათიშვა"
 
-#: qml/ConnectionItem.qml:120
+#: qml/ConnectionItem.qml:121
 msgid "Delete"
 msgstr "წაშლა"
 
-#: qml/ConnectionItem.qml:130
+#: qml/ConnectionItem.qml:131
 msgid "Export"
 msgstr "ექსპორტი"
 
-#: qml/ConnectionItem.qml:140
+#: qml/ConnectionItem.qml:141
 msgid "Connected"
 msgstr "დაკავშირებულია"
 
-#: qml/ConnectionItem.qml:142
+#: qml/ConnectionItem.qml:143
 msgid "Connecting"
 msgstr "დაკავშირება"
 

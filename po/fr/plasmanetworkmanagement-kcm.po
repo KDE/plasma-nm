@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-26 02:02+0000\n"
+"POT-Creation-Date: 2023-08-15 02:00+0000\n"
 "PO-Revision-Date: 2023-03-15 14:44+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard]neuf.fr>\n"
 "Language-Team: fr\n"
@@ -116,27 +116,27 @@ msgstr "Mot de passe du point d'accès :"
 msgid "OK"
 msgstr "Ok"
 
-#: qml/ConnectionItem.qml:107
+#: qml/ConnectionItem.qml:108
 msgid "Connect"
 msgstr "Connecter"
 
-#: qml/ConnectionItem.qml:107
+#: qml/ConnectionItem.qml:108
 msgid "Disconnect"
 msgstr "Déconnecter"
 
-#: qml/ConnectionItem.qml:120
+#: qml/ConnectionItem.qml:121
 msgid "Delete"
 msgstr "Supprimer"
 
-#: qml/ConnectionItem.qml:130
+#: qml/ConnectionItem.qml:131
 msgid "Export"
 msgstr "Exporter"
 
-#: qml/ConnectionItem.qml:140
+#: qml/ConnectionItem.qml:141
 msgid "Connected"
 msgstr "Connecté"
 
-#: qml/ConnectionItem.qml:142
+#: qml/ConnectionItem.qml:143
 msgid "Connecting"
 msgstr "Connexion en cours"
 

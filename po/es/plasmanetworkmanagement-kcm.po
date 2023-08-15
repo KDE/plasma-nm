@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-07-26 02:02+0000\n"
+"POT-Creation-Date: 2023-08-15 02:00+0000\n"
 "PO-Revision-Date: 2023-03-14 18:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -116,27 +116,27 @@ msgstr "Contraseña del punto de acceso:"
 msgid "OK"
 msgstr "Aceptar"
 
-#: qml/ConnectionItem.qml:107
+#: qml/ConnectionItem.qml:108
 msgid "Connect"
 msgstr "Conectar"
 
-#: qml/ConnectionItem.qml:107
+#: qml/ConnectionItem.qml:108
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: qml/ConnectionItem.qml:120
+#: qml/ConnectionItem.qml:121
 msgid "Delete"
 msgstr "Borrar"
 
-#: qml/ConnectionItem.qml:130
+#: qml/ConnectionItem.qml:131
 msgid "Export"
 msgstr "Exportar"
 
-#: qml/ConnectionItem.qml:140
+#: qml/ConnectionItem.qml:141
 msgid "Connected"
 msgstr "Conectado"
 
-#: qml/ConnectionItem.qml:142
+#: qml/ConnectionItem.qml:143
 msgid "Connecting"
 msgstr "Conectando"
 

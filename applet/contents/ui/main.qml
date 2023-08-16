@@ -22,6 +22,10 @@ PlasmoidItem {
         && fullRepresentationItem.connectionModel !== null
         && fullRepresentationItem.connectionModel.delayModelUpdates
     readonly property bool airplaneModeAvailable: availableDevices.modemDeviceAvailable || availableDevices.wirelessDeviceAvailable
+    readonly property bool inPanel: (Plasmoid.location === PlasmaCore.Types.TopEdge
+        || Plasmoid.location === PlasmaCore.Types.RightEdge
+        || Plasmoid.location === PlasmaCore.Types.BottomEdge
+        || Plasmoid.location === PlasmaCore.Types.LeftEdge)
     property alias planeModeSwitchAction: planeAction
 
     toolTipMainText: i18n("Networks")
@@ -41,7 +45,7 @@ PlasmoidItem {
     }
 
     Plasmoid.busy: connectionIconProvider.connecting
-    Plasmoid.icon: connectionIconProvider.connectionTooltipIcon
+    Plasmoid.icon: inPanel ? connectionIconProvider.connectionIcon : connectionIconProvider.connectionTooltipIcon
     switchWidth: Kirigami.Units.gridUnit * 10
     switchHeight: Kirigami.Units.gridUnit * 10
 
@@ -50,7 +54,7 @@ PlasmoidItem {
     // TODO remove once it gains that feature.
     compactRepresentation: CompactRepresentation {
         airplaneModeAvailable: mainWindow.airplaneModeAvailable
-        iconName: connectionIconProvider.connectionIcon
+        iconName: Plasmoid.icon
     }
     fullRepresentation: PopupDialog {
         id: dialogItem

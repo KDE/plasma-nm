@@ -118,7 +118,7 @@
                <property name="toolTip">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
-               <property name="filter">
+               <property name="nameFilter">
                 <string>*.pem *.der *.crt *.cer *.p12</string>
                </property>
               </widget>
@@ -141,7 +141,7 @@
                <property name="toolTip">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Certificate in .pem, .der or .p12 formats.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
-               <property name="filter">
+               <property name="nameFilter">
                 <string>*.pem *.der *.crt *.cer *.p12</string>
                </property>
               </widget>
@@ -164,7 +164,7 @@
                <property name="toolTip">
                 <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Private key in .pem, .der, .key, .pk8 or .p12 formats.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                </property>
-               <property name="filter">
+               <property name="nameFilter">
                 <string>*.pem *der *.key *.pk8 *.p12</string>
                </property>
               </widget>

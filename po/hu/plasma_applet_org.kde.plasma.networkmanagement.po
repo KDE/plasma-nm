@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 02:01+0000\n"
+"POT-Creation-Date: 2023-08-17 01:58+0000\n"
 "PO-Revision-Date: 2021-10-17 16:07+0200\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -114,46 +114,46 @@ msgstr "Nincsenek elérhető kapcsolatok"
 msgid "Copy"
 msgstr "Másolás"
 
-#: contents/ui/main.qml:27
+#: contents/ui/main.qml:31
 #, kde-format
 msgid "Networks"
 msgstr "Hálózatok"
 
-#: contents/ui/main.qml:36
+#: contents/ui/main.qml:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:38
+#: contents/ui/main.qml:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:67 contents/ui/Toolbar.qml:75
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:75
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi bekapcsolása"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:82
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "Mobil adatkapcsolat bekapcsolása"
 
-#: contents/ui/main.qml:90
+#: contents/ui/main.qml:94
 #, fuzzy, kde-format
 #| msgid "Enable airplane mode"
 msgid "Enable Airplane Mode"
 msgstr "Repülő üzemmód bekapcsolása"
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Hálózat bejelentkező ablakának megnyitása…"
 
-#: contents/ui/main.qml:112
+#: contents/ui/main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Hálózati kapcsolatok szer&kesztése…"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 02:01+0000\n"
+"POT-Creation-Date: 2023-08-17 01:58+0000\n"
 "PO-Revision-Date: 2023-07-21 18:55+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -116,44 +116,44 @@ msgstr "Neniuj konektoj je dispono"
 msgid "Copy"
 msgstr "Kopii"
 
-#: contents/ui/main.qml:27
+#: contents/ui/main.qml:31
 #, kde-format
 msgid "Networks"
 msgstr "Retoj"
 
-#: contents/ui/main.qml:36
+#: contents/ui/main.qml:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Mezklaku por malŝalti Aviadilan Reĝimon"
 
-#: contents/ui/main.qml:38
+#: contents/ui/main.qml:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Mezklaku por enŝalti Aviadilan Reĝimon"
 
-#: contents/ui/main.qml:67 contents/ui/Toolbar.qml:75
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:75
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Ebligi Wi-Fi"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Ebligi Mobilan Reton"
 
-#: contents/ui/main.qml:90
+#: contents/ui/main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Ebigi Aviadilan Reĝimon"
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Malfermi Retan Ensalutpaĝon…"
 
-#: contents/ui/main.qml:112
+#: contents/ui/main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Agordi Retajn Konektojn…"

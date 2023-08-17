@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 02:01+0000\n"
+"POT-Creation-Date: 2023-08-17 01:58+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -113,45 +113,45 @@ msgstr "Доступне везе"
 msgid "Copy"
 msgstr "Копирање"
 
-#: contents/ui/main.qml:27
+#: contents/ui/main.qml:31
 #, kde-format
 msgid "Networks"
 msgstr "Мреже"
 
-#: contents/ui/main.qml:36
+#: contents/ui/main.qml:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:38
+#: contents/ui/main.qml:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:67 contents/ui/Toolbar.qml:75
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:75
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:82
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "Активирај мобилну мрежу"
 
-#: contents/ui/main.qml:90
+#: contents/ui/main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: contents/ui/main.qml:112
+#: contents/ui/main.qml:116
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections..."
 msgid "&Configure Network Connections…"

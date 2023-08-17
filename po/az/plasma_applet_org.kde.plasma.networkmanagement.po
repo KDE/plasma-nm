@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 02:01+0000\n"
+"POT-Creation-Date: 2023-08-17 01:58+0000\n"
 "PO-Revision-Date: 2023-02-19 14:03+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -113,44 +113,44 @@ msgstr "Əlçatan bağlantılar yoxdur"
 msgid "Copy"
 msgstr "Kopyalamaq"
 
-#: contents/ui/main.qml:27
+#: contents/ui/main.qml:31
 #, kde-format
 msgid "Networks"
 msgstr "Şəbəkələr"
 
-#: contents/ui/main.qml:36
+#: contents/ui/main.qml:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Təyyarə rejimini sönürmək üçün orta düyməyə vur"
 
-#: contents/ui/main.qml:38
+#: contents/ui/main.qml:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Təyyarə rejimini işə salmaq üçün orta düyməyə vur"
 
-#: contents/ui/main.qml:67 contents/ui/Toolbar.qml:75
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:75
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi açmaq"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Mobil şəbəkəni açın"
 
-#: contents/ui/main.qml:90
+#: contents/ui/main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Təyyarə rejimini açın"
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Şəbəkəyə giriş səhifəsini açın..."
 
-#: contents/ui/main.qml:112
+#: contents/ui/main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Şəbəkə bağlantılarını tənzimləyin..."

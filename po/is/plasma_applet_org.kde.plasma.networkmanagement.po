@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-12 02:01+0000\n"
+"POT-Creation-Date: 2023-08-17 01:58+0000\n"
 "PO-Revision-Date: 2023-03-22 14:51+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -118,44 +118,44 @@ msgstr "Engar tiltækar tengingar"
 msgid "Copy"
 msgstr "Afrita"
 
-#: contents/ui/main.qml:27
+#: contents/ui/main.qml:31
 #, kde-format
 msgid "Networks"
 msgstr "Netkerfi"
 
-#: contents/ui/main.qml:36
+#: contents/ui/main.qml:40
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Miðju-smelltu til að slökkva á flugvélaham"
 
-#: contents/ui/main.qml:38
+#: contents/ui/main.qml:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Miðju-smelltu til að kveikja á flugvélaham"
 
-#: contents/ui/main.qml:67 contents/ui/Toolbar.qml:75
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:75
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Virkja Wi-Fi"
 
-#: contents/ui/main.qml:78
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Virkja farsímanet"
 
-#: contents/ui/main.qml:90
+#: contents/ui/main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Virkja flugvélaham"
 
-#: contents/ui/main.qml:102
+#: contents/ui/main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Opna innskráningarsíðu netkerfis…"
 
-#: contents/ui/main.qml:112
+#: contents/ui/main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Stilla netten&gingar…"

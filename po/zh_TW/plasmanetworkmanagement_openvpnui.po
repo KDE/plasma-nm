@@ -10,9 +10,9 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:17+0000\n"
-"PO-Revision-Date: 2023-08-07 23:57+0900\n"
+"PO-Revision-Date: 2023-08-17 21:36+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.slat.org>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -630,7 +630,7 @@ msgstr "加密文字："
 #: openvpnadvanced.ui:513
 #, kde-format
 msgid "Obtaining available ciphers…"
-msgstr "取得可用的加密文字中⋯⋯"
+msgstr "取得可用的加密文字中…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)

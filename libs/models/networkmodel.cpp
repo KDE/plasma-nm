@@ -370,7 +370,6 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
                 }
                 item->setVpnState(state);
             }
-            item->invalidateDetails();
             qCDebug(PLASMA_NM_LIBS_LOG).nospace() << "Item " << item->name() << ": active connection state changed to " << item->connectionState();
 
             if (device && device->uni() == item->devicePath()) {

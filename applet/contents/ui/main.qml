@@ -83,9 +83,9 @@ PlasmoidItem {
             icon.name: "network-mobile-on"
             priority: PlasmaCore.Action.LowPriority
             checkable: true
-            checked: enabledConnections.wirelessEnabled
-            visible: enabledConnections.wirelessHwEnabled
-                        && availableDevices.wirelessDeviceAvailable
+            checked: enabledConnections.wwanEnabled
+            visible: enabledConnections.wwanHwEnabled
+                        && availableDevices.modemDeviceAvailable
                         && !PlasmaNM.Configuration.airplaneModeEnabled
             onTriggered: checked => {handler.enableWwan(checked)}
         },

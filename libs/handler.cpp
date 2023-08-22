@@ -120,8 +120,9 @@ QCoro::Task<void> Handler::activateConnectionInternal(const QString &connection,
                 notification->setTitle(con->name());
                 notification->setText(i18n("Plasma is missing support for '%1' VPN connections.", pluginBaseName));
                 notification->setIconName(QStringLiteral("dialog-error"));
-                notification->setActions({i18n("Report Bug")});
-                connect(notification, &KNotification::action1Activated, this, [notification] {
+
+                auto reportBugAction = notification->addAction(i18n("Report Bug"));
+                connect(reportBugAction, &KNotificationAction::activated, this, [notification] {
                     auto *job = new KIO::OpenUrlJob(QUrl(KOSRelease().bugReportUrl()));
                     job->setStartupId(notification->xdgActivationToken().toUtf8());
                     job->start();
@@ -145,9 +146,9 @@ QCoro::Task<void> Handler::activateConnectionInternal(const QString &connection,
                 notification->setTitle(con->name());
                 notification->setText(i18n("NetworkManager is missing support for '%1' VPN connections.", pluginBaseName));
                 notification->setIconName(QStringLiteral("dialog-error"));
-                notification->setActions({i18n("Install")});
 
-                connect(notification, &KNotification::action1Activated, this, [notification, pluginBaseName] {
+                auto installAction = notification->addAction(i18n("Install"));
+                connect(installAction, &KNotificationAction::activated, this, [notification, pluginBaseName] {
                     auto *job = new KIO::OpenUrlJob(QUrl(QStringLiteral("appstream:network-manager-") + pluginBaseName));
                     job->setStartupId(notification->xdgActivationToken().toUtf8());
                     job->start();

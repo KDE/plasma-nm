@@ -88,7 +88,7 @@ Item {
             section.property: "KcmConnectionType"
             section.delegate: Kirigami.ListSectionHeader { text: section }
             delegate: ConnectionItem {
-                onAboutToChangeConnection: {
+                onAboutToChangeConnection: (exportable, name, path) => {
                     // Shouldn't be problem to set this in advance
                     connectionView.currentConnectionExportable = exportable
                     if (connectionModified) {
@@ -99,7 +99,7 @@ Item {
                     }
                 }
 
-                onAboutToRemoveConnection: {
+                onAboutToRemoveConnection: (name, path) => {
                     deleteConfirmationDialog.connectionName = name
                     deleteConfirmationDialog.connectionPath = path
                     deleteConfirmationDialog.open()

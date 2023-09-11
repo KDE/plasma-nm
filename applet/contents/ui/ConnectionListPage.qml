@@ -88,44 +88,45 @@ ColumnLayout {
             delegate: ConnectionItem {
                 width: connectionView.width - Kirigami.Units.smallSpacing * 4
             }
-        }
 
-        Loader {
-            anchors.centerIn: parent
-            width: parent.width - (Kirigami.Units.largeSpacing * 4)
-            active: connectionView.count === 0
-            asynchronous: true
-            visible: status == Loader.Ready
-            sourceComponent: PlasmaExtras.PlaceholderMessage {
-                iconName: {
-                    if (toolbar.displayplaneModeMessage) {
-                        return "network-flightmode-on"
-                    }
-                    if (toolbar.displayWifiMessage) {
-                        return "network-wireless-off"
-                    }
-                    if (toolbar.displayWwanMessage) {
-                        return "network-mobile-off"
-                    }
-                    return "edit-none"
-                }
-                text: {
-                    if (toolbar.displayplaneModeMessage) {
-                        return i18n("Airplane mode is enabled")
-                    }
-                    if (toolbar.displayWifiMessage) {
-                        if (toolbar.displayWwanMessage) {
-                            return i18n("Wireless and mobile networks are deactivated")
+            // Placeholder message
+            Loader {
+                anchors.centerIn: parent
+                width: parent.width - (Kirigami.Units.largeSpacing * 4)
+                active: connectionView.count === 0
+                asynchronous: true
+                visible: status == Loader.Ready
+                sourceComponent: PlasmaExtras.PlaceholderMessage {
+                    iconName: {
+                        if (toolbar.displayplaneModeMessage) {
+                            return "network-flightmode-on"
                         }
-                        return i18n("Wireless is deactivated")
+                        if (toolbar.displayWifiMessage) {
+                            return "network-wireless-off"
+                        }
+                        if (toolbar.displayWwanMessage) {
+                            return "network-mobile-off"
+                        }
+                        return "edit-none"
                     }
-                    if (toolbar.displayWwanMessage) {
-                        return i18n("Mobile network is deactivated")
+                    text: {
+                        if (toolbar.displayplaneModeMessage) {
+                            return i18n("Airplane mode is enabled")
+                        }
+                        if (toolbar.displayWifiMessage) {
+                            if (toolbar.displayWwanMessage) {
+                                return i18n("Wireless and mobile networks are deactivated")
+                            }
+                            return i18n("Wireless is deactivated")
+                        }
+                        if (toolbar.displayWwanMessage) {
+                            return i18n("Mobile network is deactivated")
+                        }
+                        if (toolbar.searchTextField.text.length > 0) {
+                            return i18n("No matches")
+                        }
+                        return i18n("No available connections")
                     }
-                    if (toolbar.searchTextField.text.length > 0) {
-                        return i18n("No matches")
-                    }
-                    return i18n("No available connections")
                 }
             }
         }

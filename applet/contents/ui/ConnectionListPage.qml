@@ -28,7 +28,7 @@ ColumnLayout {
         Layout.leftMargin: connectionView.leftMargin
         Layout.rightMargin: connectionView.rightMargin
         Layout.topMargin: Kirigami.Units.smallSpacing * 2
-        height: contentItem.implicitHeight + topPadding + bottomPadding
+        Layout.preferredHeight: contentItem.implicitHeight + topPadding + bottomPadding
         type: Kirigami.MessageType.Information
         icon.name: "dialog-password"
         text: i18n("You need to log in to this network")

@@ -468,8 +468,8 @@ msgid ""
 "org&gt;</li></ul></qt>"
 msgstr ""
 "<qt>Esta entrada ha de ser una de les següents:<ul><li>DNS: &lt;nom o adreça "
-"IP&gt;</li><li>EMAIL: &lt;correu electrònic&gt;</li><li>URI: &lt;URI, p. ex. "
-"https://www.kde.org&gt;</li></ul></qt>"
+"IP&gt;</li><li>EMAIL: &lt;correu electrònic&gt;</li><li>URI: &lt;URI, p. "
+"ex., https://www.kde.org&gt;</li></ul></qt>"
 
 #: editor/settings/security802-1x.cpp:523
 #, kde-format

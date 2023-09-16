@@ -142,8 +142,3 @@ msgstr "Bir Kerelik Parola"
 #, kde-format
 msgid "Token:"
 msgstr "Jeton:"
-
-#, fuzzy
-#~| msgid "Authentication"
-#~ msgid "Autentication"
-#~ msgstr "Kimlik Doğrulama"

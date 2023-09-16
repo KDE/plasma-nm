@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 01:58+0000\n"
+"POT-Creation-Date: 2023-09-16 01:56+0000\n"
 "PO-Revision-Date: 2023-07-25 01:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -128,7 +128,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "가운데 단추로 클릭하여 비행기 탑승 모드 활성화"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:75
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi 활성화"
@@ -169,39 +169,39 @@ msgstr "네트워크 연결로 돌아가기"
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "다른 장치에서 \"%1\" 네트워크에 연결하려면 이 QR 코드를 스캔하십시오."
 
-#: contents/ui/Toolbar.qml:124
+#: contents/ui/Toolbar.qml:122
 #, kde-format
 msgid "Enable mobile network"
 msgstr "모바일 네트워크 사용"
 
-#: contents/ui/Toolbar.qml:149
+#: contents/ui/Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "비행기 모드 비활성화<nl/><nl/>Wi-Fi와 블루투스를 활성화합니다"
 
-#: contents/ui/Toolbar.qml:150
+#: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "비행기 모드 활성화<nl/><nl/>Wi-Fi와 블루투스를 비활성화합니다"
 
-#: contents/ui/Toolbar.qml:161
+#: contents/ui/Toolbar.qml:159
 #, kde-format
 msgid "Hotspot"
 msgstr "핫스팟"
 
-#: contents/ui/Toolbar.qml:185 contents/ui/Toolbar.qml:196
+#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:194
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "핫스팟 비활성화"
 
-#: contents/ui/Toolbar.qml:190 contents/ui/Toolbar.qml:196
+#: contents/ui/Toolbar.qml:188 contents/ui/Toolbar.qml:194
 #, kde-format
 msgid "Create Hotspot"
 msgstr "핫스팟 만들기"
 
-#: contents/ui/Toolbar.qml:228
+#: contents/ui/Toolbar.qml:226
 #, kde-format
 msgid "Configure network connections…"
 msgstr "네트워크 연결 설정…"

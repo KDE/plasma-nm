@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-17 01:58+0000\n"
+"POT-Creation-Date: 2023-09-16 01:56+0000\n"
 "PO-Revision-Date: 2023-01-13 17:43+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -142,7 +142,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Отключить режим полёта: щелчок средней кнопкой"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:75
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Включить Wi-Fi"
@@ -184,39 +184,39 @@ msgstr "На&строить сетевые соединения..."
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:124
+#: contents/ui/Toolbar.qml:122
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Мобильные сети"
 
-#: contents/ui/Toolbar.qml:149
+#: contents/ui/Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Отключение режима полёта<nl/><nl/>Wi-Fi и Bluetooth будут активированы"
 
-#: contents/ui/Toolbar.qml:150
+#: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Включение режима полёта<nl/><nl/>Wi-Fi и Bluetooth будут отключены"
 
-#: contents/ui/Toolbar.qml:161
+#: contents/ui/Toolbar.qml:159
 #, kde-format
 msgid "Hotspot"
 msgstr "Точка доступа Wi-Fi"
 
-#: contents/ui/Toolbar.qml:185 contents/ui/Toolbar.qml:196
+#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:194
 #, kde-format
 msgid "Disable Hotspot"
 msgstr "Выключить точку доступа"
 
-#: contents/ui/Toolbar.qml:190 contents/ui/Toolbar.qml:196
+#: contents/ui/Toolbar.qml:188 contents/ui/Toolbar.qml:194
 #, kde-format
 msgid "Create Hotspot"
 msgstr "Создать точку доступа"
 
-#: contents/ui/Toolbar.qml:228
+#: contents/ui/Toolbar.qml:226
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Настроить сетевые соединения..."

@@ -3156,8 +3156,8 @@ msgstr ""
 "Alerta: seleccionar un pla incorrecte pot comportar problemes de facturació "
 "per al vostre compte de banda ampla o pot impedir la connectivitat.\n"
 "\n"
-"Si no segur de quin és el vostre pla, pregunteu al vostre proveïdor l'APN "
-"del vostre pla."
+"Si no esteu segur de quin és el vostre pla, pregunteu al vostre proveïdor "
+"l'APN del vostre pla."
 
 #: editor/widgets/mobileconnectionwizard.cpp:540
 #, kde-format

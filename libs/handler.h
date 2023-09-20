@@ -10,8 +10,11 @@
 #include "plasmanm_internal_export.h"
 
 #include <QDBusInterface>
+#include <QDBusPendingCallWatcher>
 #include <QPointer>
 #include <QTimer>
+
+#include <qqmlregistration.h>
 
 #include <ModemManagerQt/GenericTypes>
 #include <NetworkManagerQt/Connection>
@@ -24,6 +27,7 @@
 class PLASMANM_INTERNAL_EXPORT Handler : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
 
 public:
     explicit Handler(QObject *parent = nullptr);
@@ -44,6 +48,8 @@ public:
     {
         return m_ongoingScansCount != 0;
     }
+
+    void addConnection(NMConnection *connection);
 
 public Q_SLOTS:
     /**
@@ -85,8 +91,6 @@ public Q_SLOTS:
      * @map - NMVariantMapMap with connection settings
      */
     QCoro::Task<void> addConnection(const NMVariantMapMap &map);
-
-    void addConnection(NMConnection *connection);
 
     /**
      * Deactivates given connection

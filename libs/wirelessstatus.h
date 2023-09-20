@@ -6,8 +6,13 @@
 
 #include <QObject>
 
+#include <qqmlregistration.h>
+
 class WirelessStatus : public QObject
 {
+    Q_OBJECT
+    QML_ELEMENT
+
     /**
      * Returns the SSID of the currently active hotspot, if any, otherwise an empty string
      */
@@ -16,9 +21,6 @@ class WirelessStatus : public QObject
      * Returns the SSID of the currently active wireless connection, if any, otherwise an empty string
      */
     Q_PROPERTY(QString wifiSSID READ wifiSSID NOTIFY wifiSSIDChanged)
-
-    Q_OBJECT
-
 public:
     explicit WirelessStatus(QObject *parent = nullptr);
     ~WirelessStatus() override;

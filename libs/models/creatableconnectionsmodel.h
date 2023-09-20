@@ -12,6 +12,8 @@
 #include <NetworkManagerQt/ConnectionSettings>
 #include <QAbstractListModel>
 
+#include <qqmlregistration.h>
+
 class PLASMANM_INTERNAL_EXPORT CreatableConnectionItem : public QObject
 {
     Q_OBJECT
@@ -66,6 +68,7 @@ private:
 class PLASMANM_INTERNAL_EXPORT CreatableConnectionsModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
 public:
     explicit CreatableConnectionsModel(QObject *parent = nullptr);
     ~CreatableConnectionsModel() override;

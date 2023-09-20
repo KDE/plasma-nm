@@ -9,10 +9,14 @@
 
 #include <QObject>
 
+#include <qqmlregistration.h>
+
 #include <NetworkManagerQt/Device>
 
 class AvailableDevices : public QObject
 {
+    Q_OBJECT
+    QML_ELEMENT
     /**
      * Return true when there is present wired device
      */
@@ -31,7 +35,6 @@ class AvailableDevices : public QObject
      * Bluetooth device is visible for NetworkManager only when there is some Bluetooth connection
      */
     Q_PROPERTY(bool bluetoothDeviceAvailable READ isBluetoothDeviceAvailable NOTIFY bluetoothDeviceAvailableChanged)
-    Q_OBJECT
 public:
     explicit AvailableDevices(QObject *parent = nullptr);
     ~AvailableDevices() override;

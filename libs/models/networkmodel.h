@@ -12,6 +12,8 @@
 #include <QAbstractListModel>
 #include <QQueue>
 
+#include <qqmlregistration.h>
+
 #include "networkitemslist.h"
 
 #include <NetworkManagerQt/Manager>
@@ -24,6 +26,7 @@
 class PLASMANM_INTERNAL_EXPORT NetworkModel : public QAbstractListModel
 {
     Q_OBJECT
+    QML_ELEMENT
 public:
     // Delay model updates to prevent jumping password entry in the applet.
     // This is an aggregate property, which is true whenever any of model items is true.

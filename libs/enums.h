@@ -9,9 +9,14 @@
 
 #include <QObject>
 
+#include <qqmlregistration.h>
+
 class Enums : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("")
+
     Q_ENUMS(ConnectionStatus)
     Q_ENUMS(ConnectionType)
     Q_ENUMS(SecurityType)

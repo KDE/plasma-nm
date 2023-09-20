@@ -28,6 +28,18 @@ target_sources(plasmanm_internal PRIVATE
     models/networkmodelitem.h
     configurationproxy.h
     handler.h
+    availabledevices.cpp
+    connectionicon.cpp
+    enabledconnections.cpp
+    enums.cpp
+    networkstatus.cpp
+    wirelessstatus.cpp
+    availabledevices.h
+    connectionicon.h
+    enabledconnections.h
+    enums.h
+    networkstatus.h
+    wirelessstatus.h
 )
 
 target_include_directories(plasmanm_internal PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/models)
@@ -39,6 +51,7 @@ PUBLIC
     PkgConfig::NETWORKMANAGER
     QCoro::Core
 PRIVATE
+    Qt6::Qml
     KF6::I18n
     KF6::Notifications
     KF6::Service
@@ -50,7 +63,9 @@ PRIVATE
 
 target_link_libraries(plasmanm_internal PUBLIC KF6::ModemManagerQt)
 
+ecm_add_qml_module(plasmanm_internal URI org.kde.plasma.networkmanagement GENERATE_PLUGIN_SOURCE)
+ecm_finalize_qml_module(plasmanm_internal)
+
 install(TARGETS plasmanm_internal ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
-add_subdirectory(declarative)
 add_subdirectory(editor)

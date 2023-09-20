@@ -13,9 +13,12 @@
 
 #include <QSortFilterProxyModel>
 
+#include <qqmlregistration.h>
+
 class PLASMANM_INTERNAL_EXPORT MobileProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QAbstractItemModel *sourceModel READ sourceModel WRITE setSourceModel)
     Q_PROPERTY(bool showSavedMode READ showSavedMode WRITE setShowSavedMode NOTIFY showSavedModeChanged)
 public:

@@ -8,7 +8,7 @@ import QtQuick 2.1
 import QtQuick.Controls 2.15 as QQC
 import org.kde.kirigami 2.5 as Kirigami
 import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import org.kde.plasma.networkmanagement as PlasmaNM
 
 ListItem {
     id: connectionItem

@@ -11,9 +11,12 @@
 
 #include <QSortFilterProxyModel>
 
+#include <qqmlregistration.h>
+
 class PLASMANM_INTERNAL_EXPORT EditorProxyModel : public QSortFilterProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
     Q_PROPERTY(QAbstractItemModel *sourceModel READ sourceModel WRITE setSourceModel)
 public:
     explicit EditorProxyModel(QObject *parent = nullptr);

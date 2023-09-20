@@ -10,10 +10,15 @@
 #include <QObject>
 #include <QUrl>
 
+#include <qqmlregistration.h>
+
 #include <NetworkManagerQt/Manager>
 
 class NetworkStatus : public QObject
 {
+    Q_OBJECT
+    QML_ELEMENT
+
     /**
      * Returns a formated list of active connections or NM status when there is no active connection
      */
@@ -28,8 +33,6 @@ class NetworkStatus : public QObject
      * Returns the network connectivity state
      */
     Q_PROPERTY(NetworkManager::Connectivity connectivity READ connectivity NOTIFY connectivityChanged)
-
-    Q_OBJECT
 public:
     enum SortedConnectionType {
         Wired,

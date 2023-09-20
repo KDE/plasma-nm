@@ -8,7 +8,8 @@ import QtQuick 2.2
 import org.kde.plasma.plasmoid 2.0
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import org.kde.plasma.networkmanagement as PlasmaNM
+import org.kde.networkmanager as NMQt
 import QtQuick.Layouts 1.1
 import org.kde.kcmutils as KCMUtils
 import org.kde.config as KConfig
@@ -106,7 +107,7 @@ PlasmoidItem {
             text: i18n("Open Network Login Page…")
             icon.name: "network-flightmode-on"
             priority: PlasmaCore.Action.LowPriority
-            visible: networkStatus.connectivity === PlasmaNM.NetworkManager.Portal
+            visible: networkStatus.connectivity === NMQt.NetworkManager.Portal
             onTriggered: Qt.openUrlExternally("http://networkcheck.kde.org")
         }
     ]

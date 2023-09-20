@@ -9,10 +9,15 @@
 
 #include <QObject>
 
+#include <qqmlregistration.h>
+
 #include <NetworkManagerQt/Manager>
 
 class EnabledConnections : public QObject
 {
+    Q_OBJECT
+    QML_ELEMENT
+
     /**
      * Indicates if overall networking is currently enabled or not
      */
@@ -34,7 +39,6 @@ class EnabledConnections : public QObject
      */
     Q_PROPERTY(bool wwanHwEnabled READ isWwanHwEnabled NOTIFY wwanHwEnabled)
 
-    Q_OBJECT
 public:
     explicit EnabledConnections(QObject *parent = nullptr);
     ~EnabledConnections() override;

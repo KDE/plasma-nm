@@ -8,7 +8,7 @@ import QtQuick 2.15
 import QtQuick.Window
 import QtQuick.Controls 2.5 as QQC2
 import org.kde.kirigami 2.5 as Kirigami
-import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import org.kde.plasma.networkmanagement as PlasmaNM
 
 Window {
     id: configurationDialog

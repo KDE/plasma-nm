@@ -13,8 +13,14 @@
 #include <QObject>
 #include <QPointer>
 
+#include <qqmlregistration.h>
+
 class PLASMANM_INTERNAL_EXPORT ConfigurationProxy : public QObject
 {
+    Q_OBJECT
+    QML_ELEMENT
+    QML_NAMED_ELEMENT(Configuration)
+    QML_SINGLETON
     Q_PROPERTY(bool unlockModemOnDetection READ unlockModemOnDetection WRITE setUnlockModemOnDetection)
     Q_PROPERTY(bool manageVirtualConnections READ manageVirtualConnections WRITE setManageVirtualConnections NOTIFY manageVirtualConnectionsChanged)
     Q_PROPERTY(bool airplaneModeEnabled READ airplaneModeEnabled WRITE setAirplaneModeEnabled NOTIFY airplaneModeEnabledChanged)
@@ -24,7 +30,6 @@ class PLASMANM_INTERNAL_EXPORT ConfigurationProxy : public QObject
 
     // Readonly constant property, as this value should only be set by the platform
     Q_PROPERTY(bool showPasswordDialog READ showPasswordDialog CONSTANT)
-    Q_OBJECT
 public:
     ConfigurationProxy(QObject *parent = nullptr);
     bool unlockModemOnDetection() const;

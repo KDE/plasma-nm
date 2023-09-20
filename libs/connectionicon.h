@@ -15,15 +15,18 @@
 
 #include <QCoroCore>
 
+#include <qqmlregistration.h>
+
 class ConnectionIcon : public QObject
 {
+    Q_OBJECT
+    QML_ELEMENT
+
     Q_PROPERTY(bool connecting READ connecting NOTIFY connectingChanged)
     Q_PROPERTY(QString connectionIcon READ connectionIcon NOTIFY connectionIconChanged)
     Q_PROPERTY(QString connectionTooltipIcon READ connectionTooltipIcon NOTIFY connectionTooltipIconChanged)
 
     Q_PROPERTY(NetworkManager::Connectivity connectivity READ connectivity WRITE setConnectivity NOTIFY connectivityChanged)
-
-    Q_OBJECT
 public:
     explicit ConnectionIcon(QObject *parent = nullptr);
     ~ConnectionIcon() override;

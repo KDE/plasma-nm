@@ -9,7 +9,8 @@ import QtQuick.Layouts 1.2
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.plasma.networkmanagement 0.2 as PlasmaNM
+import org.kde.plasma.networkmanagement as PlasmaNM
+import org.kde.networkmanager as NMQt
 
 ColumnLayout {
     id: connectionListPage
@@ -32,7 +33,7 @@ ColumnLayout {
         type: Kirigami.MessageType.Information
         icon.name: "dialog-password"
         text: i18n("You need to log in to this network")
-        visible: connectionListPage.nmStatus.connectivity === PlasmaNM.NetworkManager.Portal
+        visible: connectionListPage.nmStatus.connectivity === NMQt.NetworkManager.Portal
 
         actions: Kirigami.Action {
             text: i18nc("@action:button", "Log in")

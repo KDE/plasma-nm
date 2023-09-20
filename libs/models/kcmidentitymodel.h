@@ -12,9 +12,12 @@
 #include <QIdentityProxyModel>
 #include <QModelIndex>
 
+#include <qqmlregistration.h>
+
 class PLASMANM_INTERNAL_EXPORT KcmIdentityModel : public QIdentityProxyModel
 {
     Q_OBJECT
+    QML_ELEMENT
 public:
     explicit KcmIdentityModel(QObject *parent = nullptr);
     ~KcmIdentityModel() override;

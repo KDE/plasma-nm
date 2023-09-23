@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 02:04+0000\n"
+"POT-Creation-Date: 2023-09-23 01:46+0000\n"
 "PO-Revision-Date: 2023-04-18 06:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -17,104 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
-
-#: declarative/networkstatus.cpp:125
-#, kde-format
-msgctxt ""
-"A network device is connected, but there is only link-local connectivity"
-msgid "Connected"
-msgstr "დაკავშირებულია"
-
-#: declarative/networkstatus.cpp:128
-#, kde-format
-msgctxt ""
-"A network device is connected, but there is only site-local connectivity"
-msgid "Connected"
-msgstr "დაკავშირებულია"
-
-#: declarative/networkstatus.cpp:131
-#, kde-format
-msgctxt "A network device is connected, with global network connectivity"
-msgid "Connected"
-msgstr "დაკავშირებულია"
-
-#: declarative/networkstatus.cpp:134
-#, kde-format
-msgctxt "Networking is inactive and all devices are disabled"
-msgid "Inactive"
-msgstr "არააქტიური"
-
-#: declarative/networkstatus.cpp:137
-#, kde-format
-msgctxt "There is no active network connection"
-msgid "Disconnected"
-msgstr "გათიშულია"
-
-#: declarative/networkstatus.cpp:140
-#, kde-format
-msgctxt "Network connections are being cleaned up"
-msgid "Disconnecting"
-msgstr "გათიშვა"
-
-#: declarative/networkstatus.cpp:143
-#, kde-format
-msgctxt ""
-"A network device is connecting to a network and there is no other available "
-"network connection"
-msgid "Connecting"
-msgstr "დაკავშირება"
-
-#: declarative/networkstatus.cpp:189 editor/uiutils.cpp:220
-#, kde-format
-msgid "VPN"
-msgstr "VPN"
-
-#: declarative/networkstatus.cpp:211 models/creatableconnectionsmodel.cpp:254
-#: models/creatableconnectionsmodel.cpp:256
-#, kde-format
-msgid "WireGuard"
-msgstr "WireGuard"
-
-#: declarative/networkstatus.cpp:217
-#, kde-format
-msgid "Connecting to %1"
-msgstr "%1-სთან შეერთება"
-
-#: declarative/networkstatus.cpp:221
-#, kde-format
-msgid "Connected to %1 (no connectivity)"
-msgstr "შეერთებული %1-სთან (ქსელის გარეშე)"
-
-#: declarative/networkstatus.cpp:224
-#, kde-format
-msgid "Connected to %1 (limited connectivity)"
-msgstr "შეერთებული %1-სთან (ქსელი შეზღუდულია)"
-
-#: declarative/networkstatus.cpp:227
-#, kde-format
-msgid "Connected to %1 (log in required)"
-msgstr "შეერთებული %1-სთან (საჭიროა მომხმარებელი და პაროლი)"
-
-#: declarative/networkstatus.cpp:230
-#, kde-format
-msgid "Connected to %1"
-msgstr "შეერთებული %1-სთან"
-
-#: declarative/networkstatus.cpp:255
-#, kde-format
-msgid "NetworkManager not running"
-msgstr "NetworkManager-ი გაშვებული არაა"
-
-#: declarative/networkstatus.cpp:260
-#, kde-format
-msgid "NetworkManager 0.9.8 required, found %1."
-msgstr "NetworkManager-ის საჭირო ვერსიაა 0.9.8 , ნაპოვნია %1."
-
-#: declarative/networkstatus.cpp:263
-#, kde-format
-msgctxt "global connection state"
-msgid "Unknown"
-msgstr "უცნობია"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -2237,6 +2139,11 @@ msgstr "მობილური ინტერნეტი"
 msgid "Olpc mesh"
 msgstr "OPLC ბადე"
 
+#: editor/uiutils.cpp:220 networkstatus.cpp:189
+#, kde-format
+msgid "VPN"
+msgstr "VPN"
+
 #: editor/uiutils.cpp:224 models/creatableconnectionsmodel.cpp:156
 #, kde-format
 msgid "Wired Ethernet"
@@ -3465,6 +3372,12 @@ msgstr "VLAN-ის მოკლე აღწერა"
 msgid "VPN connections"
 msgstr "VPN შეერთებები"
 
+#: models/creatableconnectionsmodel.cpp:254
+#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:211
+#, kde-format
+msgid "WireGuard"
+msgstr "WireGuard"
+
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
@@ -3749,6 +3662,93 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "მოწყობილობა"
+
+#: networkstatus.cpp:125
+#, kde-format
+msgctxt ""
+"A network device is connected, but there is only link-local connectivity"
+msgid "Connected"
+msgstr "დაკავშირებულია"
+
+#: networkstatus.cpp:128
+#, kde-format
+msgctxt ""
+"A network device is connected, but there is only site-local connectivity"
+msgid "Connected"
+msgstr "დაკავშირებულია"
+
+#: networkstatus.cpp:131
+#, kde-format
+msgctxt "A network device is connected, with global network connectivity"
+msgid "Connected"
+msgstr "დაკავშირებულია"
+
+#: networkstatus.cpp:134
+#, kde-format
+msgctxt "Networking is inactive and all devices are disabled"
+msgid "Inactive"
+msgstr "არააქტიური"
+
+#: networkstatus.cpp:137
+#, kde-format
+msgctxt "There is no active network connection"
+msgid "Disconnected"
+msgstr "გათიშულია"
+
+#: networkstatus.cpp:140
+#, kde-format
+msgctxt "Network connections are being cleaned up"
+msgid "Disconnecting"
+msgstr "გათიშვა"
+
+#: networkstatus.cpp:143
+#, kde-format
+msgctxt ""
+"A network device is connecting to a network and there is no other available "
+"network connection"
+msgid "Connecting"
+msgstr "დაკავშირება"
+
+#: networkstatus.cpp:217
+#, kde-format
+msgid "Connecting to %1"
+msgstr "%1-სთან შეერთება"
+
+#: networkstatus.cpp:221
+#, kde-format
+msgid "Connected to %1 (no connectivity)"
+msgstr "შეერთებული %1-სთან (ქსელის გარეშე)"
+
+#: networkstatus.cpp:224
+#, kde-format
+msgid "Connected to %1 (limited connectivity)"
+msgstr "შეერთებული %1-სთან (ქსელი შეზღუდულია)"
+
+#: networkstatus.cpp:227
+#, kde-format
+msgid "Connected to %1 (log in required)"
+msgstr "შეერთებული %1-სთან (საჭიროა მომხმარებელი და პაროლი)"
+
+#: networkstatus.cpp:230
+#, kde-format
+msgid "Connected to %1"
+msgstr "შეერთებული %1-სთან"
+
+#: networkstatus.cpp:255
+#, kde-format
+msgid "NetworkManager not running"
+msgstr "NetworkManager-ი გაშვებული არაა"
+
+#: networkstatus.cpp:260
+#, kde-format
+msgid "NetworkManager 0.9.8 required, found %1."
+msgstr "NetworkManager-ის საჭირო ვერსიაა 0.9.8 , ნაპოვნია %1."
+
+#: networkstatus.cpp:263
+#, kde-format
+msgctxt "global connection state"
+msgid "Unknown"
+msgstr "უცნობია"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "

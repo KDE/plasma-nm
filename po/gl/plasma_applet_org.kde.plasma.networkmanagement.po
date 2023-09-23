@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 01:56+0000\n"
+"POT-Creation-Date: 2023-09-23 01:46+0000\n"
 "PO-Revision-Date: 2023-07-29 09:30+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -74,43 +74,43 @@ msgstr "Conectado, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Conectado."
 
-#: contents/ui/ConnectionListPage.qml:34
+#: contents/ui/ConnectionListPage.qml:35
 #, kde-format
 msgid "You need to log in to this network"
 msgstr "Debe identificarse nesta rede."
 
-#: contents/ui/ConnectionListPage.qml:38
+#: contents/ui/ConnectionListPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Identificarse"
 
-#: contents/ui/ConnectionListPage.qml:114
+#: contents/ui/ConnectionListPage.qml:115
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "O modo avión está activado"
 
-#: contents/ui/ConnectionListPage.qml:118
+#: contents/ui/ConnectionListPage.qml:119
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "As redes sen fíos e móbiles están desactivadas"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "A rede sen fíos está desactivada"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: contents/ui/ConnectionListPage.qml:124
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "A rede móbil está desactivada"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: contents/ui/ConnectionListPage.qml:127
 #, kde-format
 msgid "No matches"
 msgstr "Non hai coincidencias"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "No available connections"
 msgstr "Non hai conexións dispoñíbeis"
@@ -120,44 +120,44 @@ msgstr "Non hai conexións dispoñíbeis"
 msgid "Copy"
 msgstr "Copiar"
 
-#: contents/ui/main.qml:31
+#: contents/ui/main.qml:32
 #, kde-format
 msgid "Networks"
 msgstr "Redes"
 
-#: contents/ui/main.qml:40
+#: contents/ui/main.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Clic central para desactivar o modo avión."
 
-#: contents/ui/main.qml:42
+#: contents/ui/main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Clic central para activar o modo avión."
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:72 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activar a Wi-Fi"
 
-#: contents/ui/main.qml:82
+#: contents/ui/main.qml:83
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Activar a rede móbil"
 
-#: contents/ui/main.qml:94
+#: contents/ui/main.qml:95
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Activar o modo de avión"
 
-#: contents/ui/main.qml:106
+#: contents/ui/main.qml:107
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Abrir a páxina de identificación da rede…"
 
-#: contents/ui/main.qml:116
+#: contents/ui/main.qml:117
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configurar as conexións de rede…"

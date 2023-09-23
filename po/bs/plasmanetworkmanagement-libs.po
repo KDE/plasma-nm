@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 02:04+0000\n"
+"POT-Creation-Date: 2023-09-23 01:46+0000\n"
 "PO-Revision-Date: 2015-02-04 14:10+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -19,107 +19,6 @@ msgstr ""
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Launchpad-Export-Date: 2015-02-05 07:28+0000\n"
 "X-Generator: Launchpad (build 17331)\n"
-
-#: declarative/networkstatus.cpp:125
-#, kde-format
-msgctxt ""
-"A network device is connected, but there is only link-local connectivity"
-msgid "Connected"
-msgstr "Spojen"
-
-#: declarative/networkstatus.cpp:128
-#, kde-format
-msgctxt ""
-"A network device is connected, but there is only site-local connectivity"
-msgid "Connected"
-msgstr "Spojen"
-
-#: declarative/networkstatus.cpp:131
-#, kde-format
-msgctxt "A network device is connected, with global network connectivity"
-msgid "Connected"
-msgstr "Spojen"
-
-#: declarative/networkstatus.cpp:134
-#, kde-format
-msgctxt "Networking is inactive and all devices are disabled"
-msgid "Inactive"
-msgstr "Neaktivan"
-
-#: declarative/networkstatus.cpp:137
-#, kde-format
-msgctxt "There is no active network connection"
-msgid "Disconnected"
-msgstr "Odspojen"
-
-#: declarative/networkstatus.cpp:140
-#, kde-format
-msgctxt "Network connections are being cleaned up"
-msgid "Disconnecting"
-msgstr "Odspajanje"
-
-#: declarative/networkstatus.cpp:143
-#, kde-format
-msgctxt ""
-"A network device is connecting to a network and there is no other available "
-"network connection"
-msgid "Connecting"
-msgstr "Spajanje"
-
-#: declarative/networkstatus.cpp:189 editor/uiutils.cpp:220
-#, kde-format
-msgid "VPN"
-msgstr "VPN"
-
-#: declarative/networkstatus.cpp:211 models/creatableconnectionsmodel.cpp:254
-#: models/creatableconnectionsmodel.cpp:256
-#, fuzzy, kde-format
-#| msgid "Wired"
-msgid "WireGuard"
-msgstr "Žičana"
-
-#: declarative/networkstatus.cpp:217
-#, kde-format
-msgid "Connecting to %1"
-msgstr "Spajanje sa %1"
-
-#: declarative/networkstatus.cpp:221
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
-msgid "Connected to %1 (no connectivity)"
-msgstr "Spojen sa %1"
-
-#: declarative/networkstatus.cpp:224
-#, kde-format
-msgid "Connected to %1 (limited connectivity)"
-msgstr ""
-
-#: declarative/networkstatus.cpp:227
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
-msgid "Connected to %1 (log in required)"
-msgstr "Spojen sa %1"
-
-#: declarative/networkstatus.cpp:230
-#, kde-format
-msgid "Connected to %1"
-msgstr "Spojen sa %1"
-
-#: declarative/networkstatus.cpp:255
-#, kde-format
-msgid "NetworkManager not running"
-msgstr "Mrežni Menadžer ne radi"
-
-#: declarative/networkstatus.cpp:260
-#, kde-format
-msgid "NetworkManager 0.9.8 required, found %1."
-msgstr "Mrežni Menadžer 0.9.8 potreban, pronađen %1."
-
-#: declarative/networkstatus.cpp:263
-#, kde-format
-msgctxt "global connection state"
-msgid "Unknown"
-msgstr "Nepoznato"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -2175,6 +2074,11 @@ msgstr "Mobilna širokopojasna mreža"
 msgid "Olpc mesh"
 msgstr "Olpc mesh"
 
+#: editor/uiutils.cpp:220 networkstatus.cpp:189
+#, kde-format
+msgid "VPN"
+msgstr "VPN"
+
 #: editor/uiutils.cpp:224 models/creatableconnectionsmodel.cpp:156
 #, kde-format
 msgid "Wired Ethernet"
@@ -3427,6 +3331,13 @@ msgstr "Nova Mobilna Širokopojasna Veza"
 msgid "VPN connections"
 msgstr "Nova %1 povezanost"
 
+#: models/creatableconnectionsmodel.cpp:254
+#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:211
+#, fuzzy, kde-format
+#| msgid "Wired"
+msgid "WireGuard"
+msgstr "Žičana"
+
 #: models/creatableconnectionsmodel.cpp:266
 #, fuzzy, kde-format
 #| msgid "New %1 connection"
@@ -3725,6 +3636,95 @@ msgstr "Adsl"
 #| msgid "Service:"
 msgid "Device"
 msgstr "Usluga:"
+
+#: networkstatus.cpp:125
+#, kde-format
+msgctxt ""
+"A network device is connected, but there is only link-local connectivity"
+msgid "Connected"
+msgstr "Spojen"
+
+#: networkstatus.cpp:128
+#, kde-format
+msgctxt ""
+"A network device is connected, but there is only site-local connectivity"
+msgid "Connected"
+msgstr "Spojen"
+
+#: networkstatus.cpp:131
+#, kde-format
+msgctxt "A network device is connected, with global network connectivity"
+msgid "Connected"
+msgstr "Spojen"
+
+#: networkstatus.cpp:134
+#, kde-format
+msgctxt "Networking is inactive and all devices are disabled"
+msgid "Inactive"
+msgstr "Neaktivan"
+
+#: networkstatus.cpp:137
+#, kde-format
+msgctxt "There is no active network connection"
+msgid "Disconnected"
+msgstr "Odspojen"
+
+#: networkstatus.cpp:140
+#, kde-format
+msgctxt "Network connections are being cleaned up"
+msgid "Disconnecting"
+msgstr "Odspajanje"
+
+#: networkstatus.cpp:143
+#, kde-format
+msgctxt ""
+"A network device is connecting to a network and there is no other available "
+"network connection"
+msgid "Connecting"
+msgstr "Spajanje"
+
+#: networkstatus.cpp:217
+#, kde-format
+msgid "Connecting to %1"
+msgstr "Spajanje sa %1"
+
+#: networkstatus.cpp:221
+#, fuzzy, kde-format
+#| msgid "Connected to %1"
+msgid "Connected to %1 (no connectivity)"
+msgstr "Spojen sa %1"
+
+#: networkstatus.cpp:224
+#, kde-format
+msgid "Connected to %1 (limited connectivity)"
+msgstr ""
+
+#: networkstatus.cpp:227
+#, fuzzy, kde-format
+#| msgid "Connected to %1"
+msgid "Connected to %1 (log in required)"
+msgstr "Spojen sa %1"
+
+#: networkstatus.cpp:230
+#, kde-format
+msgid "Connected to %1"
+msgstr "Spojen sa %1"
+
+#: networkstatus.cpp:255
+#, kde-format
+msgid "NetworkManager not running"
+msgstr "Mrežni Menadžer ne radi"
+
+#: networkstatus.cpp:260
+#, kde-format
+msgid "NetworkManager 0.9.8 required, found %1."
+msgstr "Mrežni Menadžer 0.9.8 potreban, pronađen %1."
+
+#: networkstatus.cpp:263
+#, kde-format
+msgctxt "global connection state"
+msgid "Unknown"
+msgstr "Nepoznato"
 
 #~ msgid "Signal strength"
 #~ msgstr "Jačina signala"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 02:04+0000\n"
+"POT-Creation-Date: 2023-09-23 01:46+0000\n"
 "PO-Revision-Date: 2022-02-16 16:42+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -17,104 +17,6 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
 "X-Generator: Lokalize 21.12.2\n"
-
-#: declarative/networkstatus.cpp:125
-#, kde-format
-msgctxt ""
-"A network device is connected, but there is only link-local connectivity"
-msgid "Connected"
-msgstr "Conectat"
-
-#: declarative/networkstatus.cpp:128
-#, kde-format
-msgctxt ""
-"A network device is connected, but there is only site-local connectivity"
-msgid "Connected"
-msgstr "Conectat"
-
-#: declarative/networkstatus.cpp:131
-#, kde-format
-msgctxt "A network device is connected, with global network connectivity"
-msgid "Connected"
-msgstr "Conectat"
-
-#: declarative/networkstatus.cpp:134
-#, kde-format
-msgctxt "Networking is inactive and all devices are disabled"
-msgid "Inactive"
-msgstr "Inactiv"
-
-#: declarative/networkstatus.cpp:137
-#, kde-format
-msgctxt "There is no active network connection"
-msgid "Disconnected"
-msgstr "Deconectat"
-
-#: declarative/networkstatus.cpp:140
-#, kde-format
-msgctxt "Network connections are being cleaned up"
-msgid "Disconnecting"
-msgstr "Se deconectează"
-
-#: declarative/networkstatus.cpp:143
-#, kde-format
-msgctxt ""
-"A network device is connecting to a network and there is no other available "
-"network connection"
-msgid "Connecting"
-msgstr "Se conectează"
-
-#: declarative/networkstatus.cpp:189 editor/uiutils.cpp:220
-#, kde-format
-msgid "VPN"
-msgstr "VPN"
-
-#: declarative/networkstatus.cpp:211 models/creatableconnectionsmodel.cpp:254
-#: models/creatableconnectionsmodel.cpp:256
-#, kde-format
-msgid "WireGuard"
-msgstr "WireGuard"
-
-#: declarative/networkstatus.cpp:217
-#, kde-format
-msgid "Connecting to %1"
-msgstr "Se conectează la %1"
-
-#: declarative/networkstatus.cpp:221
-#, kde-format
-msgid "Connected to %1 (no connectivity)"
-msgstr "Conectat la %1 (fără conectivitate)"
-
-#: declarative/networkstatus.cpp:224
-#, kde-format
-msgid "Connected to %1 (limited connectivity)"
-msgstr "Conectat la %1 (conectivitate limitată)"
-
-#: declarative/networkstatus.cpp:227
-#, kde-format
-msgid "Connected to %1 (log in required)"
-msgstr "Conectat la %1 (autentificare necesară)"
-
-#: declarative/networkstatus.cpp:230
-#, kde-format
-msgid "Connected to %1"
-msgstr "Conectat la %1"
-
-#: declarative/networkstatus.cpp:255
-#, kde-format
-msgid "NetworkManager not running"
-msgstr "NetworkManager nu rulează"
-
-#: declarative/networkstatus.cpp:260
-#, kde-format
-msgid "NetworkManager 0.9.8 required, found %1."
-msgstr "NetworkManager 0.9.8 e necesar, s-a găsit %1."
-
-#: declarative/networkstatus.cpp:263
-#, kde-format
-msgctxt "global connection state"
-msgid "Unknown"
-msgstr "Necunoscută"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -2127,6 +2029,11 @@ msgstr "Bandă largă mobilă"
 msgid "Olpc mesh"
 msgstr ""
 
+#: editor/uiutils.cpp:220 networkstatus.cpp:189
+#, kde-format
+msgid "VPN"
+msgstr "VPN"
+
 #: editor/uiutils.cpp:224 models/creatableconnectionsmodel.cpp:156
 #, kde-format
 msgid "Wired Ethernet"
@@ -3369,6 +3276,12 @@ msgstr "O descriere pentru VLAN"
 msgid "VPN connections"
 msgstr "Conexiuni VPN"
 
+#: models/creatableconnectionsmodel.cpp:254
+#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:211
+#, kde-format
+msgid "WireGuard"
+msgstr "WireGuard"
+
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
@@ -3679,6 +3592,93 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Dispozitiv"
+
+#: networkstatus.cpp:125
+#, kde-format
+msgctxt ""
+"A network device is connected, but there is only link-local connectivity"
+msgid "Connected"
+msgstr "Conectat"
+
+#: networkstatus.cpp:128
+#, kde-format
+msgctxt ""
+"A network device is connected, but there is only site-local connectivity"
+msgid "Connected"
+msgstr "Conectat"
+
+#: networkstatus.cpp:131
+#, kde-format
+msgctxt "A network device is connected, with global network connectivity"
+msgid "Connected"
+msgstr "Conectat"
+
+#: networkstatus.cpp:134
+#, kde-format
+msgctxt "Networking is inactive and all devices are disabled"
+msgid "Inactive"
+msgstr "Inactiv"
+
+#: networkstatus.cpp:137
+#, kde-format
+msgctxt "There is no active network connection"
+msgid "Disconnected"
+msgstr "Deconectat"
+
+#: networkstatus.cpp:140
+#, kde-format
+msgctxt "Network connections are being cleaned up"
+msgid "Disconnecting"
+msgstr "Se deconectează"
+
+#: networkstatus.cpp:143
+#, kde-format
+msgctxt ""
+"A network device is connecting to a network and there is no other available "
+"network connection"
+msgid "Connecting"
+msgstr "Se conectează"
+
+#: networkstatus.cpp:217
+#, kde-format
+msgid "Connecting to %1"
+msgstr "Se conectează la %1"
+
+#: networkstatus.cpp:221
+#, kde-format
+msgid "Connected to %1 (no connectivity)"
+msgstr "Conectat la %1 (fără conectivitate)"
+
+#: networkstatus.cpp:224
+#, kde-format
+msgid "Connected to %1 (limited connectivity)"
+msgstr "Conectat la %1 (conectivitate limitată)"
+
+#: networkstatus.cpp:227
+#, kde-format
+msgid "Connected to %1 (log in required)"
+msgstr "Conectat la %1 (autentificare necesară)"
+
+#: networkstatus.cpp:230
+#, kde-format
+msgid "Connected to %1"
+msgstr "Conectat la %1"
+
+#: networkstatus.cpp:255
+#, kde-format
+msgid "NetworkManager not running"
+msgstr "NetworkManager nu rulează"
+
+#: networkstatus.cpp:260
+#, kde-format
+msgid "NetworkManager 0.9.8 required, found %1."
+msgstr "NetworkManager 0.9.8 e necesar, s-a găsit %1."
+
+#: networkstatus.cpp:263
+#, kde-format
+msgctxt "global connection state"
+msgid "Unknown"
+msgstr "Necunoscută"
 
 #~ msgctxt "Error message in VPN import/export dialog"
 #~ msgid "Operation not supported for this VPN type."

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 01:56+0000\n"
+"POT-Creation-Date: 2023-09-23 01:46+0000\n"
 "PO-Revision-Date: 2020-11-13 11:23+0200\n"
 "Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -70,44 +70,44 @@ msgstr "Savienots, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Savienots"
 
-#: contents/ui/ConnectionListPage.qml:34
+#: contents/ui/ConnectionListPage.qml:35
 #, fuzzy, kde-format
 #| msgid "Connect to wireless networks..."
 msgid "You need to log in to this network"
 msgstr "Pieslēgties bezvadu tīkliem..."
 
-#: contents/ui/ConnectionListPage.qml:38
+#: contents/ui/ConnectionListPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:114
+#: contents/ui/ConnectionListPage.qml:115
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Ir ieslēgts lidmašīnas režīms"
 
-#: contents/ui/ConnectionListPage.qml:118
+#: contents/ui/ConnectionListPage.qml:119
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Bezvadu un mobilie tīkli ir atslēgti"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Bezvadu tīkls ir atslēgts"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: contents/ui/ConnectionListPage.qml:124
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobilais tīkls ir atslēgts"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: contents/ui/ConnectionListPage.qml:127
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "No available connections"
 msgstr "Nav pieejamu savienojumu"
@@ -117,47 +117,47 @@ msgstr "Nav pieejamu savienojumu"
 msgid "Copy"
 msgstr "Kopēt"
 
-#: contents/ui/main.qml:31
+#: contents/ui/main.qml:32
 #, kde-format
 msgid "Networks"
 msgstr "Tīkli"
 
-#: contents/ui/main.qml:40
+#: contents/ui/main.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:42
+#: contents/ui/main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:72 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Ieslēgt Wi-Fi"
 
-#: contents/ui/main.qml:82
+#: contents/ui/main.qml:83
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Network"
 msgstr "Ieslēgt mobilo tīklu"
 
-#: contents/ui/main.qml:94
+#: contents/ui/main.qml:95
 #, fuzzy, kde-format
 #| msgid "Wireless"
 msgid "Enable Airplane Mode"
 msgstr "Bezvadu"
 
-#: contents/ui/main.qml:106
+#: contents/ui/main.qml:107
 #, fuzzy, kde-format
 #| msgid "Open Network Login Page..."
 msgid "Open Network Login Page…"
 msgstr "Atvērt tīkla pieteikšanās lapu..."
 
-#: contents/ui/main.qml:116
+#: contents/ui/main.qml:117
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections..."
 msgid "&Configure Network Connections…"

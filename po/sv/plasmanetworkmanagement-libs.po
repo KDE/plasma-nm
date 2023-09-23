@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-06 02:04+0000\n"
+"POT-Creation-Date: 2023-09-23 01:46+0000\n"
 "PO-Revision-Date: 2022-04-19 19:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -16,104 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.08.1\n"
-
-#: declarative/networkstatus.cpp:125
-#, kde-format
-msgctxt ""
-"A network device is connected, but there is only link-local connectivity"
-msgid "Connected"
-msgstr "Ansluten"
-
-#: declarative/networkstatus.cpp:128
-#, kde-format
-msgctxt ""
-"A network device is connected, but there is only site-local connectivity"
-msgid "Connected"
-msgstr "Ansluten"
-
-#: declarative/networkstatus.cpp:131
-#, kde-format
-msgctxt "A network device is connected, with global network connectivity"
-msgid "Connected"
-msgstr "Ansluten"
-
-#: declarative/networkstatus.cpp:134
-#, kde-format
-msgctxt "Networking is inactive and all devices are disabled"
-msgid "Inactive"
-msgstr "Inaktiv"
-
-#: declarative/networkstatus.cpp:137
-#, kde-format
-msgctxt "There is no active network connection"
-msgid "Disconnected"
-msgstr "Nerkopplad"
-
-#: declarative/networkstatus.cpp:140
-#, kde-format
-msgctxt "Network connections are being cleaned up"
-msgid "Disconnecting"
-msgstr "Kopplar ner"
-
-#: declarative/networkstatus.cpp:143
-#, kde-format
-msgctxt ""
-"A network device is connecting to a network and there is no other available "
-"network connection"
-msgid "Connecting"
-msgstr "Ansluter"
-
-#: declarative/networkstatus.cpp:189 editor/uiutils.cpp:220
-#, kde-format
-msgid "VPN"
-msgstr "VPN"
-
-#: declarative/networkstatus.cpp:211 models/creatableconnectionsmodel.cpp:254
-#: models/creatableconnectionsmodel.cpp:256
-#, kde-format
-msgid "WireGuard"
-msgstr "Wireguard"
-
-#: declarative/networkstatus.cpp:217
-#, kde-format
-msgid "Connecting to %1"
-msgstr "Ansluter till %1"
-
-#: declarative/networkstatus.cpp:221
-#, kde-format
-msgid "Connected to %1 (no connectivity)"
-msgstr "Ansluten till %1 (ingen uppkoppling)"
-
-#: declarative/networkstatus.cpp:224
-#, kde-format
-msgid "Connected to %1 (limited connectivity)"
-msgstr "Ansluten till %1 (begränsad uppkoppling)"
-
-#: declarative/networkstatus.cpp:227
-#, kde-format
-msgid "Connected to %1 (log in required)"
-msgstr "Ansluten till %1 (inloggning krävs)"
-
-#: declarative/networkstatus.cpp:230
-#, kde-format
-msgid "Connected to %1"
-msgstr "Ansluten till %1"
-
-#: declarative/networkstatus.cpp:255
-#, kde-format
-msgid "NetworkManager not running"
-msgstr "Nätverkshantering kör inte"
-
-#: declarative/networkstatus.cpp:260
-#, kde-format
-msgid "NetworkManager 0.9.8 required, found %1."
-msgstr "Nätverkshantering 0.9.8 krävs, hittade %1."
-
-#: declarative/networkstatus.cpp:263
-#, kde-format
-msgctxt "global connection state"
-msgid "Unknown"
-msgstr "Okänd"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -2234,6 +2136,11 @@ msgstr "Mobilt bredband"
 msgid "Olpc mesh"
 msgstr "OLPC-mesh"
 
+#: editor/uiutils.cpp:220 networkstatus.cpp:189
+#, kde-format
+msgid "VPN"
+msgstr "VPN"
+
 #: editor/uiutils.cpp:224 models/creatableconnectionsmodel.cpp:156
 #, kde-format
 msgid "Wired Ethernet"
@@ -3473,6 +3380,12 @@ msgstr "En beskrivning av VLAN"
 msgid "VPN connections"
 msgstr "VPN-anslutningar"
 
+#: models/creatableconnectionsmodel.cpp:254
+#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:211
+#, kde-format
+msgid "WireGuard"
+msgstr "Wireguard"
+
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
@@ -3776,6 +3689,93 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Enhet"
+
+#: networkstatus.cpp:125
+#, kde-format
+msgctxt ""
+"A network device is connected, but there is only link-local connectivity"
+msgid "Connected"
+msgstr "Ansluten"
+
+#: networkstatus.cpp:128
+#, kde-format
+msgctxt ""
+"A network device is connected, but there is only site-local connectivity"
+msgid "Connected"
+msgstr "Ansluten"
+
+#: networkstatus.cpp:131
+#, kde-format
+msgctxt "A network device is connected, with global network connectivity"
+msgid "Connected"
+msgstr "Ansluten"
+
+#: networkstatus.cpp:134
+#, kde-format
+msgctxt "Networking is inactive and all devices are disabled"
+msgid "Inactive"
+msgstr "Inaktiv"
+
+#: networkstatus.cpp:137
+#, kde-format
+msgctxt "There is no active network connection"
+msgid "Disconnected"
+msgstr "Nerkopplad"
+
+#: networkstatus.cpp:140
+#, kde-format
+msgctxt "Network connections are being cleaned up"
+msgid "Disconnecting"
+msgstr "Kopplar ner"
+
+#: networkstatus.cpp:143
+#, kde-format
+msgctxt ""
+"A network device is connecting to a network and there is no other available "
+"network connection"
+msgid "Connecting"
+msgstr "Ansluter"
+
+#: networkstatus.cpp:217
+#, kde-format
+msgid "Connecting to %1"
+msgstr "Ansluter till %1"
+
+#: networkstatus.cpp:221
+#, kde-format
+msgid "Connected to %1 (no connectivity)"
+msgstr "Ansluten till %1 (ingen uppkoppling)"
+
+#: networkstatus.cpp:224
+#, kde-format
+msgid "Connected to %1 (limited connectivity)"
+msgstr "Ansluten till %1 (begränsad uppkoppling)"
+
+#: networkstatus.cpp:227
+#, kde-format
+msgid "Connected to %1 (log in required)"
+msgstr "Ansluten till %1 (inloggning krävs)"
+
+#: networkstatus.cpp:230
+#, kde-format
+msgid "Connected to %1"
+msgstr "Ansluten till %1"
+
+#: networkstatus.cpp:255
+#, kde-format
+msgid "NetworkManager not running"
+msgstr "Nätverkshantering kör inte"
+
+#: networkstatus.cpp:260
+#, kde-format
+msgid "NetworkManager 0.9.8 required, found %1."
+msgstr "Nätverkshantering 0.9.8 krävs, hittade %1."
+
+#: networkstatus.cpp:263
+#, kde-format
+msgctxt "global connection state"
+msgid "Unknown"
+msgstr "Okänd"
 
 #~ msgid "Signal strength"
 #~ msgstr "Signalstyrka"

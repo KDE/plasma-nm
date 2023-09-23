@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-16 01:56+0000\n"
+"POT-Creation-Date: 2023-09-23 01:46+0000\n"
 "PO-Revision-Date: 2023-08-21 14:14+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -74,43 +74,43 @@ msgstr "Connecté, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected"
 msgstr "Connecté"
 
-#: contents/ui/ConnectionListPage.qml:34
+#: contents/ui/ConnectionListPage.qml:35
 #, kde-format
 msgid "You need to log in to this network"
 msgstr "Vous devez vous connecter à ce réseau"
 
-#: contents/ui/ConnectionListPage.qml:38
+#: contents/ui/ConnectionListPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Se connecter"
 
-#: contents/ui/ConnectionListPage.qml:114
+#: contents/ui/ConnectionListPage.qml:115
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Le mode avion est activé"
 
-#: contents/ui/ConnectionListPage.qml:118
+#: contents/ui/ConnectionListPage.qml:119
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Les réseaux sans fil et mobiles sont désactivés"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Les réseaux sans fil sont désactivés"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: contents/ui/ConnectionListPage.qml:124
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Les réseaux mobiles sont désactivés"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: contents/ui/ConnectionListPage.qml:127
 #, kde-format
 msgid "No matches"
 msgstr "Aucune correspondance"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "No available connections"
 msgstr "Aucune connexion disponible"
@@ -120,44 +120,44 @@ msgstr "Aucune connexion disponible"
 msgid "Copy"
 msgstr "Copier"
 
-#: contents/ui/main.qml:31
+#: contents/ui/main.qml:32
 #, kde-format
 msgid "Networks"
 msgstr "Réseaux"
 
-#: contents/ui/main.qml:40
+#: contents/ui/main.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Effectuer un clic central pour sortir du mode « Avion »"
 
-#: contents/ui/main.qml:42
+#: contents/ui/main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Effectuer un clic central pour basculer en mode « Avion »"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:72 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activer la connexion « wifi »"
 
-#: contents/ui/main.qml:82
+#: contents/ui/main.qml:83
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Activer le réseau mobile"
 
-#: contents/ui/main.qml:94
+#: contents/ui/main.qml:95
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Activer le mode avion"
 
-#: contents/ui/main.qml:106
+#: contents/ui/main.qml:107
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Ouvrir la page de connexion du réseau..."
 
-#: contents/ui/main.qml:116
+#: contents/ui/main.qml:117
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configurer les connexions réseau…"

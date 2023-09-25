@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-09-23 01:46+0000\n"
-"PO-Revision-Date: 2023-03-30 09:55+0200\n"
+"PO-Revision-Date: 2023-09-24 20:20+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -784,7 +784,7 @@ msgstr "Temps de «HELLO»:"
 #: editor/settings/ui/bridge.ui:232
 #, kde-format
 msgid "Max age:"
-msgstr "Durada màx:"
+msgstr "Durada màx.:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/bt.ui:21
@@ -881,8 +881,8 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"El NetworkManager indica a les aplicacions si la connexió té un ús mesurat, "
-"i per tant,\n"
+"El NetworkManager indica a les aplicacions si la connexió té un ús mesurat "
+"i, per tant,\n"
 "cal restringir l'ús de les dades."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)

@@ -68,7 +68,7 @@ Window {
             delegate: ListItem {
                 height: connectionTypeBase.height
                 width: view.width
-                checked: view.currentlySelectedIndex == index
+                checked: view.currentlySelectedIndex === index
 
                 onClicked: {
                     createButton.enabled = true
@@ -111,11 +111,11 @@ Window {
                         id: connectionNameLabel
 
                         anchors {
-                            bottom: ConnectionType == PlasmaNM.Enums.Vpn ? connectionIcon.verticalCenter : undefined
+                            bottom: ConnectionType === PlasmaNM.Enums.Vpn ? connectionIcon.verticalCenter : undefined
                             left: connectionIcon.right
                             leftMargin: Math.round(Kirigami.Units.gridUnit / 2)
                             right: parent.right
-                            verticalCenter: ConnectionType == PlasmaNM.Enums.Vpn ? undefined : parent.verticalCenter
+                            verticalCenter: ConnectionType === PlasmaNM.Enums.Vpn ? undefined : parent.verticalCenter
                         }
                         color: textColor
                         height: paintedHeight
@@ -139,7 +139,7 @@ Window {
                         font.pointSize: Kirigami.Theme.smallFont.pointSize
                         opacity: 0.6
                         text: ConnectionDescription
-                        visible: ConnectionType == PlasmaNM.Enums.Vpn
+                        visible: ConnectionType === PlasmaNM.Enums.Vpn
                     }
                 }
             }

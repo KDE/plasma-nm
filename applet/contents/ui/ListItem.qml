@@ -42,7 +42,7 @@ MouseArea {
     }
 
     KSvg.FrameSvgItem {
-        id : background
+        id: background
         imagePath: "widgets/listitem"
         prefix: "normal"
         anchors.fill: parent
@@ -50,7 +50,7 @@ MouseArea {
     }
 
     KSvg.FrameSvgItem {
-        id : pressed
+        id: pressed
         imagePath: "widgets/listitem"
         prefix: "pressed"
         opacity: checked ? 1 : 0

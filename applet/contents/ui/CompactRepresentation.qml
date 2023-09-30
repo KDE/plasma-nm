@@ -22,7 +22,7 @@ MouseArea {
     property bool wasExpanded
 
     onPressed: wasExpanded = mainWindow.expanded
-    onClicked: function (mouse) {
+    onClicked: mouse => {
         if (airplaneModeAvailable && mouse.button === Qt.MiddleButton) {
             mainWindow.planeModeSwitchAction.trigger();
         } else {

@@ -21,17 +21,17 @@ import org.kde.plasma.plasmoid 2.0
 PlasmaExtras.ExpandableListItem {
     id: connectionItem
 
-    property bool activating: ConnectionState == PlasmaNM.Enums.Activating
+    property bool activating: ConnectionState === PlasmaNM.Enums.Activating
     property bool deactivated: ConnectionState === PlasmaNM.Enums.Deactivated
-    property bool passwordIsStatic: (SecurityType == PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
-                                     SecurityType == PlasmaNM.Enums.Wpa2Psk || SecurityType == PlasmaNM.Enums.SAE)
-    property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless && passwordIsStatic
+    property bool passwordIsStatic: (SecurityType === PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
+                                     SecurityType === PlasmaNM.Enums.Wpa2Psk || SecurityType == PlasmaNM.Enums.SAE)
+    property bool predictableWirelessPassword: !Uuid && Type === PlasmaNM.Enums.Wireless && passwordIsStatic
     property bool showSpeed: mainWindow.expanded &&
-                             ConnectionState == PlasmaNM.Enums.Activated &&
-                             (Type == PlasmaNM.Enums.Wired ||
-                              Type == PlasmaNM.Enums.Wireless ||
-                              Type == PlasmaNM.Enums.Gsm ||
-                              Type == PlasmaNM.Enums.Cdma)
+                             ConnectionState === PlasmaNM.Enums.Activated &&
+                             (Type === PlasmaNM.Enums.Wired ||
+                              Type === PlasmaNM.Enums.Wireless ||
+                              Type === PlasmaNM.Enums.Gsm ||
+                              Type === PlasmaNM.Enums.Cdma)
 
     property real rxSpeed: 0
     property real txSpeed: 0
@@ -40,8 +40,8 @@ PlasmaExtras.ExpandableListItem {
     title: model.ItemUniqueName
     subtitle: itemText()
     iconUsesPlasmaSVG: true // We want the nice detailed network SVGs from the Plasma theme
-    isBusy: mainWindow.expanded && model.ConnectionState == PlasmaNM.Enums.Activating
-    isDefault: ConnectionState == PlasmaNM.Enums.Activated
+    isBusy: mainWindow.expanded && model.ConnectionState === PlasmaNM.Enums.Activating
+    isDefault: ConnectionState === PlasmaNM.Enums.Activated
     defaultActionButtonAction: Action {
         id: stateChangeButton
 
@@ -69,11 +69,11 @@ PlasmaExtras.ExpandableListItem {
             return;
         }
 
-        if ((customExpandedViewContent == detailsComponent) && showSpeed) {
-            if (event.key == Qt.Key_Right) {
+        if ((customExpandedViewContent === detailsComponent) && showSpeed) {
+            if (event.key === Qt.Key_Right) {
                 customExpandedViewContentItem.detailsTabBar.currentIndex = 1;
                 event.accepted = true;
-            } else if (event.key == Qt.Key_Left) {
+            } else if (event.key === Qt.Key_Left) {
                 customExpandedViewContentItem.detailsTabBar.currentIndex = 0;
                 event.accepted = true;
             }
@@ -144,7 +144,7 @@ PlasmaExtras.ExpandableListItem {
                 id: detailsTextColumn
 
                 width: parent.width
-                visible: detailsTabBar.currentIndex == 1
+                visible: detailsTabBar.currentIndex === 1
 
                 activeFocusOnTab: details.length > 0
                 details: ConnectionDetails
@@ -169,7 +169,7 @@ PlasmaExtras.ExpandableListItem {
                     right: parent.right
                 }
                 height: trafficMonitorGraph.implicitHeight
-                visible: detailsTabBar.currentIndex == 0
+                visible: detailsTabBar.currentIndex === 0
 
                 activeFocusOnTab: true
 
@@ -232,11 +232,11 @@ PlasmaExtras.ExpandableListItem {
         interval: 2000
         running: showSpeed
         triggeredOnStart: true
-        property real prevRxBytes: 0
-        property real prevTxBytes: 0
+        property int prevRxBytes: 0
+        property int prevTxBytes: 0
         onTriggered: {
-            rxSpeed = prevRxBytes == 0 ? 0 : (RxBytes - prevRxBytes) * 1000 / interval
-            txSpeed = prevTxBytes == 0 ? 0 : (TxBytes - prevTxBytes) * 1000 / interval
+            rxSpeed = prevRxBytes === 0 ? 0 : (RxBytes - prevRxBytes) * 1000 / interval
+            txSpeed = prevTxBytes === 0 ? 0 : (TxBytes - prevTxBytes) * 1000 / interval
             prevRxBytes = RxBytes
             prevTxBytes = TxBytes
         }
@@ -272,19 +272,21 @@ PlasmaExtras.ExpandableListItem {
        in the popup where the connections can be "Connect"ed and
        "Disconnect"ed. */
     function itemText() {
-        if (ConnectionState == PlasmaNM.Enums.Activating) {
-            if (Type == PlasmaNM.Enums.Vpn)
+        if (ConnectionState === PlasmaNM.Enums.Activating) {
+            if (Type === PlasmaNM.Enums.Vpn) {
                 return VpnState
-            else
+            } else {
                 return DeviceState
-        } else if (ConnectionState == PlasmaNM.Enums.Deactivating) {
-            if (Type == PlasmaNM.Enums.Vpn)
+            }
+        } else if (ConnectionState === PlasmaNM.Enums.Deactivating) {
+            if (Type === PlasmaNM.Enums.Vpn) {
                 return VpnState
-            else
+            } else {
                 return DeviceState
-        } else if (Uuid && ConnectionState == PlasmaNM.Enums.Deactivated) {
+            }
+        } else if (Uuid && ConnectionState === PlasmaNM.Enums.Deactivated) {
             return LastUsed
-        } else if (ConnectionState == PlasmaNM.Enums.Activated) {
+        } else if (ConnectionState === PlasmaNM.Enums.Activated) {
             if (showSpeed) {
                 return i18n("Connected, ⬇ %1/s, ⬆ %2/s",
                     KCoreAddons.Format.formatByteSize(rxSpeed),
@@ -305,7 +307,7 @@ PlasmaExtras.ExpandableListItem {
     }
 
     onActivatingChanged: {
-        if (ConnectionState == PlasmaNM.Enums.Activating) {
+        if (ConnectionState === PlasmaNM.Enums.Activating) {
             ListView.view.positionViewAtBeginning()
         }
     }

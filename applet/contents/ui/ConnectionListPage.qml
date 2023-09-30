@@ -96,7 +96,7 @@ ColumnLayout {
                 width: parent.width - (Kirigami.Units.largeSpacing * 4)
                 active: connectionView.count === 0
                 asynchronous: true
-                visible: status == Loader.Ready
+                visible: status === Loader.Ready
                 sourceComponent: PlasmaExtras.PlaceholderMessage {
                     iconName: {
                         if (toolbar.displayplaneModeMessage) {

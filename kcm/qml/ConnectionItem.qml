@@ -5,7 +5,7 @@
 */
 
 import QtQuick 2.1
-import QtQuick.Controls 2.15 as QQC
+import QtQuick.Controls 2.15 as QQC2
 import org.kde.kirigami 2.5 as Kirigami
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.networkmanagement as PlasmaNM
@@ -23,7 +23,7 @@ ListItem {
     onClicked: mouse => {
         if (mouse.button === Qt.LeftButton) {
             aboutToChangeConnection(KcmVpnConnectionExportable, Name, ConnectionPath)
-        } else if (mouse.button == Qt.RightButton) {
+        } else if (mouse.button === Qt.RightButton) {
             connectionItemMenu.popup()
         }
     }
@@ -63,8 +63,8 @@ ListItem {
             color: (connectionItem.checked || connectionItem.pressed) ? Kirigami.Theme.highlightedTextColor : textColor
             height: paintedHeight
             elide: Text.ElideRight
-            font.weight: ConnectionState == PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
-            font.italic: ConnectionState == PlasmaNM.Enums.Activating ? true : false
+            font.weight: ConnectionState === PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
+            font.italic: ConnectionState === PlasmaNM.Enums.Activating ? true : false
             text: Name
             textFormat: Text.PlainText
         }
@@ -96,19 +96,19 @@ ListItem {
             }
             height: Kirigami.Units.iconSizes.medium
             width: Kirigami.Units.iconSizes.medium
-            running: ConnectionState == PlasmaNM.Enums.Activating
+            running: ConnectionState === PlasmaNM.Enums.Activating
             visible: running
         }
     }
 
-    QQC.Menu {
+    QQC2.Menu {
         id: connectionItemMenu
 
-        QQC.MenuItem {
-            text: ConnectionState == PlasmaNM.Enums.Deactivated ? i18n("Connect") : i18n("Disconnect")
-            visible: ItemType == 1
+        QQC2.MenuItem {
+            text: ConnectionState === PlasmaNM.Enums.Deactivated ? i18n("Connect") : i18n("Disconnect")
+            visible: ItemType === 1
             onTriggered: {
-                if (ConnectionState == PlasmaNM.Enums.Deactivated) {
+                if (ConnectionState === PlasmaNM.Enums.Deactivated) {
                     handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
                 } else {
                     handler.deactivateConnection(ConnectionPath, DevicePath);
@@ -116,7 +116,7 @@ ListItem {
             }
         }
 
-        QQC.MenuItem {
+        QQC2.MenuItem {
             icon.name: "list-remove"
             text: i18n("Delete");
 
@@ -125,7 +125,7 @@ ListItem {
             }
         }
 
-        QQC.MenuItem {
+        QQC2.MenuItem {
             icon.name: "document-export"
             visible: KcmVpnConnectionExportable
             text: i18n("Export");
@@ -137,9 +137,9 @@ ListItem {
     /* This generates the status description under each connection
        in the list at the left side of the applet. */
     function itemText() {
-        if (ConnectionState == PlasmaNM.Enums.Activated) {
+        if (ConnectionState === PlasmaNM.Enums.Activated) {
             return i18n("Connected")
-        } else if (ConnectionState == PlasmaNM.Enums.Activating) {
+        } else if (ConnectionState === PlasmaNM.Enums.Activating) {
             return i18n("Connecting")
         } else {
             return LastUsed

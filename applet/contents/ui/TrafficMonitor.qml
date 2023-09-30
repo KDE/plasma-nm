@@ -31,7 +31,7 @@ ColumnLayout {
             }
             constrainToBounds: false
             direction: QuickCharts.AxisLabels.VerticalBottomTop
-            delegate:  PlasmaComponents3.Label {
+            delegate: PlasmaComponents3.Label {
                 text: KCoreAddons.Format.formatByteSize(QuickCharts.AxisLabels.label) + i18n("/s")
                 font: Kirigami.Theme.smallFont
             }

@@ -212,7 +212,7 @@ Item {
         text: i18n("Do you want to remove the connection '%1'?", toHtmlEscaped(connectionName))
 
         onAccepted: {
-            if (connectionPath == connectionView.currentConnectionPath) {
+            if (connectionPath === connectionView.currentConnectionPath) {
                 // Deselect now non-existing connection
                 deselectConnections()
             }

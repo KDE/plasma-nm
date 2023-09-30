@@ -52,7 +52,7 @@ PlasmaExtras.ExpandableListItem {
                 return true;
             }
             if (connectionItem.customExpandedViewContent === passwordDialogComponent) {
-                return connectionItem.customExpandedViewContentItem.passwordField.acceptableInput;
+                return connectionItem.customExpandedViewContentItem?.passwordField.acceptableInput ?? false;
             }
             return true;
         }
@@ -248,8 +248,9 @@ PlasmaExtras.ExpandableListItem {
                 if (!predictableWirelessPassword && !Uuid) {
                     handler.addAndActivateConnection(DevicePath, SpecificPath)
                 } else if (connectionItem.customExpandedViewContent == passwordDialogComponent) {
-                    if (connectionItem.customExpandedViewContentItem.password != "") {
-                        handler.addAndActivateConnection(DevicePath, SpecificPath, connectionItem.customExpandedViewContentItem.password)
+                    const item = connectionItem.customExpandedViewContentItem;
+                    if (item && item.password !== "") {
+                        handler.addAndActivateConnection(DevicePath, SpecificPath, item.password)
                         connectionItem.customExpandedViewContent = detailsComponent
                         connectionItem.collapse()
                     } else {

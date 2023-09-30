@@ -62,7 +62,11 @@ Item {
     QQC2.ScrollView {
         id: scrollView
 
-        Component.onCompleted: scrollView.background.visible = true // show frame
+        Component.onCompleted: {
+            if (background) {
+                background.visible = true;
+            }
+        }
 
         anchors {
             bottom: rightButtonRow.top

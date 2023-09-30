@@ -63,7 +63,7 @@ PlasmaExtras.ExpandableListItem {
     }
     showDefaultActionButtonWhenBusy: true
 
-    Keys.onPressed: {
+    Keys.onPressed: event => {
         if (!connectionItem.expanded) {
             event.accepted = false;
             return;

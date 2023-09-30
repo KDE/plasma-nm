@@ -20,7 +20,7 @@ ListItem {
     signal aboutToChangeConnection(bool exportable, string name, string path)
     signal aboutToRemoveConnection(string name, string path)
 
-    onClicked: {
+    onClicked: mouse => {
         if (mouse.button === Qt.LeftButton) {
             aboutToChangeConnection(KcmVpnConnectionExportable, Name, ConnectionPath)
         } else if (mouse.button == Qt.RightButton) {

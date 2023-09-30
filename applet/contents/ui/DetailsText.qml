@@ -19,7 +19,7 @@ MouseArea {
 
     acceptedButtons: Qt.RightButton
 
-    onPressed: {
+    onPressed: mouse => {
         const item = detailsGrid.childAt(mouse.x, mouse.y);
         if (!item || !item.isContent) {
             return;

@@ -85,7 +85,7 @@ PlasmaExtras.Representation {
     }
 
     Keys.forwardTo: [stack.currentItem]
-    Keys.onPressed: {
+    Keys.onPressed: event => {
         if (event.modifiers & Qt.ControlModifier && event.key == Qt.Key_F) {
             toolbar.searchTextField.forceActiveFocus();
             toolbar.searchTextField.selectAll();

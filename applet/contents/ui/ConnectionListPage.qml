@@ -56,11 +56,11 @@ ColumnLayout {
             property int currentVisibleButtonIndex: -1
             property bool showSeparator: false
 
-            Keys.onDownPressed: {
+            Keys.onDownPressed: event => {
                 connectionView.incrementCurrentIndex();
                 connectionView.currentItem.forceActiveFocus();
             }
-            Keys.onUpPressed: {
+            Keys.onUpPressed: event => {
                 if (connectionView.currentIndex === 0) {
                     connectionView.currentIndex = -1;
                     toolbar.searchTextField.forceActiveFocus();

@@ -12,6 +12,9 @@ import org.kde.plasma.networkmanagement as PlasmaNM
 
 Window {
     id: dialog
+
+    signal configurationDialogRequested()
+
     title: i18nc("@title:window", "Choose a Connection Type")
 
     height: 600
@@ -191,7 +194,7 @@ Window {
         QQC2.ToolTip.visible: hovered
 
         onClicked: {
-            configurationDialog.open()
+            dialog.configurationDialogRequested();
         }
     }
 }

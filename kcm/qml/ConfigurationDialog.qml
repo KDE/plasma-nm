@@ -6,8 +6,8 @@
 
 import QtQuick 2.15
 import QtQuick.Window
-import QtQuick.Controls 2.5 as QQC2
-import org.kde.kirigami 2.5 as Kirigami
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
 import org.kde.plasma.networkmanagement as PlasmaNM
 
 Window {
@@ -68,10 +68,12 @@ Window {
             }
         }
 
-        QQC2.TextField {
+        Kirigami.PasswordField {
             id: hotspotPassword
             Kirigami.FormData.label: i18n("Hotspot password:")
+            showPassword: true
             validator: RegularExpressionValidator {
+                // useApMode is a context property
                 regularExpression: useApMode
                     ? /^$|^(?:.{8,64}){1}$/
                     : /^$|^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26}){1}$/

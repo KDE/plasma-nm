@@ -224,7 +224,7 @@ msgstr "IPv6"
 #: editor/connectioneditorbase.cpp:487
 #, kde-format
 msgid "Failed to get secrets for %1"
-msgstr "Non se puideron obter os segredos de %1"
+msgstr "Non foi posíbel obter os segredos de %1"
 
 #: editor/connectioneditordialog.cpp:33
 #, kde-format
@@ -268,7 +268,7 @@ msgstr "Round Robin"
 #, kde-format
 msgctxt "bond mode"
 msgid "Active backup"
-msgstr "Copia de seguridade activa"
+msgstr "Salvagarda activa"
 
 #: editor/settings/bondwidget.cpp:50
 #, kde-format
@@ -2920,7 +2920,7 @@ msgstr "Non se atopou ningún complemento de VPN para o tipo %1"
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr "Non se pode importar este tipo de VPN"
+msgstr "Non é posíbel importar este tipo de VPN"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
@@ -3341,7 +3341,7 @@ msgstr "Instalar"
 #: handler.cpp:352 handler.cpp:845
 #, kde-format
 msgid "Failed to add connection %1"
-msgstr "Non se puido engadir a conexión %1"
+msgstr "Non foi posíbel engadir a conexión %1"
 
 #: handler.cpp:361 handler.cpp:887
 #, kde-format
@@ -3351,32 +3351,32 @@ msgstr "Engadiuse a conexión %1."
 #: handler.cpp:837
 #, kde-format
 msgid "Failed to activate %1"
-msgstr "Non se puido activar %1."
+msgstr "Non foi posíbel activar %1."
 
 #: handler.cpp:841
 #, kde-format
 msgid "Failed to add %1"
-msgstr "Non se puido engadir %1."
+msgstr "Non foi posíbel engadir %1."
 
 #: handler.cpp:849
 #, kde-format
 msgid "Failed to deactivate %1"
-msgstr "Non se puido desactivar %1"
+msgstr "Non foi posíbel desactivar %1"
 
 #: handler.cpp:853
 #, kde-format
 msgid "Failed to remove %1"
-msgstr "Non se puido retirar %1"
+msgstr "Non foi posíbel retirar %1"
 
 #: handler.cpp:857
 #, kde-format
 msgid "Failed to update connection %1"
-msgstr "Non se puido actualizar a conexión %1"
+msgstr "Non foi posíbel actualizar a conexión %1"
 
 #: handler.cpp:868
 #, kde-format
 msgid "Failed to create hotspot %1"
-msgstr "Non se puido crear un punto de acceso %1"
+msgstr "Non foi posíbel crear un punto de acceso %1"
 
 #: handler.cpp:891
 #, kde-format

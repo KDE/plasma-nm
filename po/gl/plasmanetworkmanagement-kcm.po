@@ -20,7 +20,7 @@ msgstr ""
 #: kcm.cpp:288
 #, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Non se puido importar a conexión de VPN: %1"
+msgstr "Non foi posíbel importar a conexión de VPN: %1"
 
 #: kcm.cpp:358
 #, kde-format

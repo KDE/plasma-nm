@@ -69,7 +69,7 @@ msgstr "Erro de desbloqueo de PIN/PUK"
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigFailedReason"
 msgid "The device could not be configured"
-msgstr "Non se puido configurar o dispositivo."
+msgstr "Non foi posíbel configurar o dispositivo."
 
 #: notification.cpp:100
 #, kde-format
@@ -130,7 +130,7 @@ msgstr "Esgotouse o tempo de espera do solicitante da autenticación."
 msgctxt ""
 "@info:status Notification when the device failed due to PppStartFailedReason"
 msgid "PPP failed to start"
-msgstr "Non se puido iniciar PPP."
+msgstr "Non foi posíbel iniciar PPP."
 
 #: notification.cpp:125
 #, kde-format
@@ -151,7 +151,7 @@ msgstr "PPP fallou."
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpStartFailedReason"
 msgid "DHCP failed to start"
-msgstr "Non se puido iniciar DHCP."
+msgstr "Non foi posíbel iniciar DHCP."
 
 #: notification.cpp:134
 #, kde-format
@@ -173,7 +173,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "SharedStartFailedReason"
 msgid "The shared service failed to start"
-msgstr "Non se puido iniciar o servizo compartido."
+msgstr "Non foi posíbel iniciar o servizo compartido."
 
 #: notification.cpp:143
 #, kde-format
@@ -188,7 +188,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AutoIpStartFailedReason"
 msgid "The auto IP service failed to start"
-msgstr "Non se puido iniciar o servizo de enderezos IP automáticos."
+msgstr "Non foi posíbel iniciar o servizo de enderezos IP automáticos."
 
 #: notification.cpp:149
 #, kde-format
@@ -245,7 +245,7 @@ msgstr "Fallou a marcación do módem."
 msgctxt ""
 "@info:status Notification when the device failed due to ModemInitFailedReason"
 msgid "The modem could not be initialized"
-msgstr "Non se puido inicializar o módem."
+msgstr "Non foi posíbel inicializar o módem."
 
 #: notification.cpp:173
 #, kde-format
@@ -253,7 +253,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmApnSelectFailedReason"
 msgid "The GSM APN could not be selected"
-msgstr "Non se puido seleccionar o APN de GSM."
+msgstr "Non foi posíbel seleccionar o APN de GSM."
 
 #: notification.cpp:176
 #, kde-format
@@ -334,7 +334,7 @@ msgstr "Desconectouse o cable."
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNotFoundReason"
 msgid "The modem could not be found"
-msgstr "Non se puido atopar o módem."
+msgstr "Non foi posíbel atopar o módem."
 
 #: notification.cpp:214
 #, kde-format
@@ -402,7 +402,7 @@ msgstr "O xestor de módems non está a executarse."
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to SsidNotFound"
 msgid "The WiFi network could not be found"
-msgstr "Non se puido atopar a rede sen fíos."
+msgstr "Non foi posíbel atopar a rede sen fíos."
 
 #: notification.cpp:245
 #, kde-format
@@ -482,7 +482,7 @@ msgstr "Activouse a conexión de VPN «%1»."
 #: notification.cpp:426
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "Non se puido activar a conexión de VPN «%1»."
+msgstr "Non foi posíbel activar a conexión de VPN «%1»."
 
 #: notification.cpp:429 notification.cpp:437
 #, kde-format

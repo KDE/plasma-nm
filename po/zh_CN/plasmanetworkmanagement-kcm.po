@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 02:00+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2023-09-16 10:06\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -73,7 +73,7 @@ msgstr "选择连接类型"
 msgid "Create"
 msgstr "创建"
 
-#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:117
+#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:119
 msgid "Cancel"
 msgstr "取消"
 
@@ -110,7 +110,7 @@ msgstr "热点名称："
 msgid "Hotspot password:"
 msgstr "热点密码："
 
-#: qml/ConfigurationDialog.qml:102
+#: qml/ConfigurationDialog.qml:104
 msgid "OK"
 msgstr "确认"
 

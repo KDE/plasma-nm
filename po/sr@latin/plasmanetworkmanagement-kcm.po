@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 02:00+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2017-10-30 23:08+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -80,7 +80,7 @@ msgstr "Izbor tipa veze"
 msgid "Create"
 msgstr "Napravi"
 
-#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:117
+#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:119
 msgid "Cancel"
 msgstr "Odustani"
 
@@ -119,7 +119,7 @@ msgstr ""
 msgid "Hotspot password:"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:102
+#: qml/ConfigurationDialog.qml:104
 msgid "OK"
 msgstr ""
 

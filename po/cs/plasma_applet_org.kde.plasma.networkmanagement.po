@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2023-08-07 16:45+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -60,12 +60,12 @@ msgstr ""
 "Současná rychlost stahování je %1 kibibajtů za sekundu; současná rychlost "
 "odesílání je %2 kibibajtů za sekundu"
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Připojen, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Připojen"
@@ -158,11 +158,6 @@ msgstr "Otevřít přihlašovací stránku sítě…"
 msgid "&Configure Network Connections…"
 msgstr "&Nastavit síťová spojení…"
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "Heslo…"
-
 #: contents/ui/PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
@@ -226,3 +221,6 @@ msgstr "Odesílání"
 #, kde-format
 msgid "Download"
 msgstr "Stahování"
+
+#~ msgid "Password…"
+#~ msgstr "Heslo…"

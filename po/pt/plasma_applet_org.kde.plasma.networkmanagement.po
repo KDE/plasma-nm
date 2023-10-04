@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2022-12-12 16:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -76,12 +76,12 @@ msgstr ""
 "A velocidade actual de recepção é de %1 kibibytes por segundo; a velocidade "
 "de envio actual é de %2 kibibytes por segundo"
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Ligada, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Ligada"
@@ -174,11 +174,6 @@ msgstr "Abrir a Página de Autenticação na Rede…"
 msgid "&Configure Network Connections…"
 msgstr "&Configurar as Ligações de Rede…"
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "Senha…"
-
 #: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections…"
@@ -244,6 +239,9 @@ msgstr "Enviar"
 #, kde-format
 msgid "Download"
 msgstr "Obter"
+
+#~ msgid "Password…"
+#~ msgstr "Senha…"
 
 #~ msgctxt "@title:window"
 #~ msgid "QR Code for %1"

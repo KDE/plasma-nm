@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2023-08-15 02:00+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -63,12 +63,12 @@ msgstr ""
 "Η τρέχουσα ταχύτητα λήψης είναι %1 kibibytes το δευτερόλεπτο, η τρέχουσα "
 "ταχύτητα αποστολής είναι %2 kibibytes το δευτερόλεπτο"
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Συνδεδεμένο, ⬇ %1/δ, ⬆ %2/δ"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Συνδέθηκε"
@@ -161,11 +161,6 @@ msgstr "Άνοιγμα Σελίδας Εισόδου Δικτύου..."
 msgid "&Configure Network Connections…"
 msgstr "&Διαμόρφωση συνδέσεων δικτύου..."
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "Κωδικός πρόσβασης:"
-
 #: contents/ui/PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
@@ -234,6 +229,9 @@ msgstr "Αποστολή"
 #, kde-format
 msgid "Download"
 msgstr "Λήψη"
+
+#~ msgid "Password…"
+#~ msgstr "Κωδικός πρόσβασης:"
 
 #, fuzzy
 #~| msgid "Connected to %1"

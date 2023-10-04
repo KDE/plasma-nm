@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2023-07-17 06:32+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -60,12 +60,12 @@ msgstr ""
 "Trenutna hitrost prenosa sem je %1 kibibytov na sekundo; hitrost prenosa tja "
 "je %2 kibibytov na sekundo"
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Povezano, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Povezano"
@@ -158,11 +158,6 @@ msgstr "Odpri prijavno stran omrežja…"
 msgid "&Configure Network Connections…"
 msgstr "Nastavi omrežne povezave…"
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "Geslo…"
-
 #: contents/ui/PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
@@ -225,6 +220,9 @@ msgstr "Pošiljanje"
 #, kde-format
 msgid "Download"
 msgstr "Prejemanje"
+
+#~ msgid "Password…"
+#~ msgstr "Geslo…"
 
 #~ msgctxt "@title:window"
 #~ msgid "QR Code for %1"

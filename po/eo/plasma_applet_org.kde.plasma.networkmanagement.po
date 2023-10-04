@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2023-07-21 18:55+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -60,12 +60,12 @@ msgstr ""
 "Aktuala elŝutrapido estas %1 kibibajtoj sekunde; aktuala alŝutrapido estas "
 "%2 kibibajtoj sekunde"
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Konektita, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Konektita"
@@ -158,11 +158,6 @@ msgstr "Malfermi Retan Ensalutpaĝon…"
 msgid "&Configure Network Connections…"
 msgstr "&Agordi Retajn Konektojn…"
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "Pasvorto…"
-
 #: contents/ui/PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
@@ -225,3 +220,6 @@ msgstr "Alŝuti"
 #, kde-format
 msgid "Download"
 msgstr "Elŝuti"
+
+#~ msgid "Password…"
+#~ msgstr "Pasvorto…"

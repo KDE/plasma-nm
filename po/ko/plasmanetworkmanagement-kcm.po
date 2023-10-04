@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 02:00+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2023-04-22 00:16+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -72,7 +72,7 @@ msgstr "연결 종류 선택"
 msgid "Create"
 msgstr "만들기"
 
-#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:117
+#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:119
 msgid "Cancel"
 msgstr "취소"
 
@@ -109,7 +109,7 @@ msgstr "핫스팟 이름:"
 msgid "Hotspot password:"
 msgstr "핫스팟 암호:"
 
-#: qml/ConfigurationDialog.qml:102
+#: qml/ConfigurationDialog.qml:104
 msgid "OK"
 msgstr "확인"
 

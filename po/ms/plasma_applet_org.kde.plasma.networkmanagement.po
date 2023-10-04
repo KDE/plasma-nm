@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2010-07-30 21:29+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -56,12 +56,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, fuzzy, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Tersambung"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, fuzzy, kde-format
 msgid "Connected"
 msgstr "Tersambung"
@@ -154,11 +154,6 @@ msgstr ""
 msgid "&Configure Network Connections…"
 msgstr "Sambungan"
 
-#: contents/ui/PasswordField.qml:16
-#, fuzzy, kde-format
-msgid "Password…"
-msgstr "Katalaluan:"
-
 #: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 msgctxt "@action:button"
@@ -221,6 +216,10 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Password…"
+#~ msgstr "Katalaluan:"
 
 #, fuzzy
 #~ msgctxt "@info:tooltip %1 is the name of a network connection"

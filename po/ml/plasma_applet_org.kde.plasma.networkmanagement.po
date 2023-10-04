@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2019-12-29 06:50+0000\n"
 "Last-Translator: Subin Siby <subins2000@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -58,12 +58,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "ബന്ധിപ്പിച്ചു"
@@ -159,12 +159,6 @@ msgstr "ശൃംഖലയുടെ പ്രവേശന താള്‍ തു
 msgid "&Configure Network Connections…"
 msgstr "ശൃംഖലയുടെ ബന്ധങ്ങള്‍ ക്രമീകരിക്കുക..."
 
-#: contents/ui/PasswordField.qml:16
-#, fuzzy, kde-format
-#| msgid "Password..."
-msgid "Password…"
-msgstr "രഹസ്യവാക്കു്..."
-
 #: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "Configure network connections..."
@@ -229,6 +223,11 @@ msgstr "അപ്‌ലോഡ്"
 #, kde-format
 msgid "Download"
 msgstr "ഡൗൺലോഡ്"
+
+#, fuzzy
+#~| msgid "Password..."
+#~ msgid "Password…"
+#~ msgstr "രഹസ്യവാക്കു്..."
 
 #, fuzzy
 #~| msgid "Connect"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 02:00+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2022-12-23 11:11+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -77,7 +77,7 @@ msgstr "Выбор типа соединения"
 msgid "Create"
 msgstr "Создать"
 
-#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:117
+#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:119
 msgid "Cancel"
 msgstr "Отмена"
 
@@ -114,7 +114,7 @@ msgstr "Имя точки доступа:"
 msgid "Hotspot password:"
 msgstr "Пароль точки доступа"
 
-#: qml/ConfigurationDialog.qml:102
+#: qml/ConfigurationDialog.qml:104
 msgid "OK"
 msgstr "ОК"
 

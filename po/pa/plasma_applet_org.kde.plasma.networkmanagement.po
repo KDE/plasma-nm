@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2021-06-08 22:12-0700\n"
 "Last-Translator: A S Alam <aalam@satluj.org>\n"
 "Language-Team: Punjabi <punjabi-users@lists.sf.net>\n"
@@ -56,12 +56,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "ਕਨੈਕਟ ਹੈ, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "ਕਨੈਕਟ ਹੈ"
@@ -157,11 +157,6 @@ msgstr "ਨੈੱਟਵਰਕ ਲਾਗਇਨ ਸਫ਼ਾ ਖੋਲ੍ਹੋ…
 msgid "&Configure Network Connections…"
 msgstr "…ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਦੀ ਸੰਰਚਨਾ(&C)"
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "ਪਾਸਵਰਡ…"
-
 #: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgctxt "Edit connection dialog caption"
@@ -226,6 +221,9 @@ msgstr "ਅੱਪਲੋਡ"
 #, kde-format
 msgid "Download"
 msgstr "ਡਾਊਨਲੋਡ"
+
+#~ msgid "Password…"
+#~ msgstr "ਪਾਸਵਰਡ…"
 
 #, fuzzy
 #~ msgctxt "@info:tooltip %1 is the name of a network connection"

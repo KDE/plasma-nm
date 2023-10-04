@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-08-15 02:00+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2023-04-11 21:39+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -73,7 +73,7 @@ msgstr "Elektu Konekto-Tipon"
 msgid "Create"
 msgstr "Krei"
 
-#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:117
+#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:119
 msgid "Cancel"
 msgstr "Nuligi"
 
@@ -110,7 +110,7 @@ msgstr "Hotspot nomo:"
 msgid "Hotspot password:"
 msgstr "Hotspot pasvorto:"
 
-#: qml/ConfigurationDialog.qml:102
+#: qml/ConfigurationDialog.qml:104
 msgid "OK"
 msgstr "bone"
 

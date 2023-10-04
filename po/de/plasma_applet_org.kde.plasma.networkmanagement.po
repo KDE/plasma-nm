@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2023-08-13 16:38+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -59,12 +59,12 @@ msgstr ""
 "Aktuelle Download-Geschwindigkeit ist %1 Kibibytes pro Sekunde; aktuelle "
 "Upload-Geschwindigkeit ist %2 Kibibytes pro Sekunde"
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Verbunden, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Verbunden"
@@ -157,11 +157,6 @@ msgstr "Anmeldungsseite des Netzwerks öffnen ..."
 msgid "&Configure Network Connections…"
 msgstr "Netzwerkverbindungen einri&chten ..."
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "Passwort ..."
-
 #: contents/ui/PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
@@ -228,6 +223,9 @@ msgstr "Hochladen"
 #, kde-format
 msgid "Download"
 msgstr "Herunterladen"
+
+#~ msgid "Password…"
+#~ msgstr "Passwort ..."
 
 #~ msgctxt "@title:window"
 #~ msgid "QR Code for %1"

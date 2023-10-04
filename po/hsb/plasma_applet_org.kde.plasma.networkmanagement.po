@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2021-11-19 10:47+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -56,12 +56,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Zwjazany, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Zwjazany"
@@ -155,11 +155,6 @@ msgstr "Stronu za přizjewjenje na syći wočinić..."
 msgid "&Configure Network Connections…"
 msgstr "Syćowe zwiski &připrawić..."
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "Hesło…"
-
 #: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections…"
@@ -223,6 +218,9 @@ msgstr "Na serwer pósłać"
 #, kde-format
 msgid "Download"
 msgstr "Sćahnyć"
+
+#~ msgid "Password…"
+#~ msgstr "Hesło…"
 
 #, fuzzy
 #~| msgid "Connect"

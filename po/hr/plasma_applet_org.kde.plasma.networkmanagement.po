@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2011-06-27 14:57+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -63,12 +63,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, fuzzy, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Spojen na %1"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, fuzzy, kde-format
 msgid "Connected"
 msgstr "Spojen"
@@ -171,12 +171,6 @@ msgstr ""
 msgid "&Configure Network Connections…"
 msgstr "Konfiguriraj obavijesti…"
 
-#: contents/ui/PasswordField.qml:16
-#, fuzzy, kde-format
-#| msgid "Password:"
-msgid "Password…"
-msgstr "Zaporka:"
-
 #: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgctxt "Edit connection dialog caption"
@@ -244,6 +238,11 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Password:"
+#~ msgid "Password…"
+#~ msgstr "Zaporka:"
 
 #, fuzzy
 #~| msgctxt "network interface connected state label"

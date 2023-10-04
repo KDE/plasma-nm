@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2023-07-27 15:58+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -57,12 +57,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr "Nykyinen latausnopeus on %1 KB/s, nykyinen lähetysnopeus on %2 KB/s"
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Yhteydessä, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Yhdistetty"
@@ -155,11 +155,6 @@ msgstr "Avaa verkon kirjautumissivu…"
 msgid "&Configure Network Connections…"
 msgstr "Muokkaa &verkkoyhteyksiä…"
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "Salasana…"
-
 #: contents/ui/PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
@@ -226,6 +221,9 @@ msgstr "Lähetys"
 #, kde-format
 msgid "Download"
 msgstr "Lataus"
+
+#~ msgid "Password…"
+#~ msgstr "Salasana…"
 
 #~ msgctxt "@title:window"
 #~ msgid "QR Code for %1"

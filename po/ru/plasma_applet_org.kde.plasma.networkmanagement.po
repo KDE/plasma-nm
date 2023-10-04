@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2023-01-13 17:43+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -69,12 +69,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr "Текущая скорость приёма: %1 КиБ/с, скорость отдачи: %2 КиБ/с"
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Подключено, ⬇ %1/с, ⬆ %2/с"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Подключено"
@@ -167,11 +167,6 @@ msgstr "Открыть страницу входа в сеть..."
 msgid "&Configure Network Connections…"
 msgstr "На&строить сетевые соединения..."
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "Пароль..."
-
 #: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections…"
@@ -235,6 +230,9 @@ msgstr "Передача"
 #, kde-format
 msgid "Download"
 msgstr "Приём"
+
+#~ msgid "Password…"
+#~ msgstr "Пароль..."
 
 #~ msgctxt "@title:window"
 #~ msgid "QR Code for %1"

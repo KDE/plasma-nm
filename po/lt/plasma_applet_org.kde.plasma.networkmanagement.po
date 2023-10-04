@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2022-12-28 00:50+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -63,12 +63,12 @@ msgstr ""
 "Dabartinis atsiuntimo greitis yra %1 kibibaitų per sekundę; dabartinis "
 "išsiuntimo greitis yra %2 kibibaitų per sekundę"
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Prisijungta, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Prisijungta"
@@ -163,11 +163,6 @@ msgstr "Atverti prisijungimo prie tinklo puslapį…"
 msgid "&Configure Network Connections…"
 msgstr "&Konfigūruoti tinklo ryšius…"
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "Slaptažodis…"
-
 #: contents/ui/PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections…"
@@ -233,6 +228,9 @@ msgstr "Išsiuntimas"
 #, kde-format
 msgid "Download"
 msgstr "Atsiuntimas"
+
+#~ msgid "Password…"
+#~ msgstr "Slaptažodis…"
 
 #~ msgctxt "@title:window"
 #~ msgid "QR Code for %1"

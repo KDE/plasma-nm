@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-04 01:40+0000\n"
 "PO-Revision-Date: 2023-07-25 10:07-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -60,12 +60,12 @@ msgstr ""
 "A velocidade de download atual é de %1 kibibytes por segundo; a velocidade "
 "de upload atual é de %2 kibibytes por segundo"
 
-#: contents/ui/ConnectionItem.qml:289
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Conectado, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:293
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Conectado"
@@ -158,11 +158,6 @@ msgstr "Abrir página de autenticação da rede..."
 msgid "&Configure Network Connections…"
 msgstr "&Configurar as conexões de rede..."
 
-#: contents/ui/PasswordField.qml:16
-#, kde-format
-msgid "Password…"
-msgstr "Senha..."
-
 #: contents/ui/PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
@@ -228,6 +223,9 @@ msgstr "Upload"
 #, kde-format
 msgid "Download"
 msgstr "Download"
+
+#~ msgid "Password…"
+#~ msgstr "Senha..."
 
 #~ msgctxt "@title:window"
 #~ msgid "QR Code for %1"

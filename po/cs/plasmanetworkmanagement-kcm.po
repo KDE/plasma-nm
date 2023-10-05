@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-04 01:40+0000\n"
+"POT-Creation-Date: 2023-10-05 01:41+0000\n"
 "PO-Revision-Date: 2023-03-16 16:31+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -77,7 +77,7 @@ msgstr "Vytvořit"
 msgid "Cancel"
 msgstr "Zrušit"
 
-#: qml/AddConnectionDialog.qml:190 qml/main.qml:184
+#: qml/AddConnectionDialog.qml:190 qml/main.qml:188
 msgid "Configuration"
 msgstr "Nastavení"
 
@@ -138,23 +138,23 @@ msgstr "Připojen"
 msgid "Connecting"
 msgstr "Připojuji se"
 
-#: qml/main.qml:130
+#: qml/main.qml:134
 msgid "Add new connection"
 msgstr "Přidat nové připojení"
 
-#: qml/main.qml:144
+#: qml/main.qml:148
 msgid "Remove selected connection"
 msgstr "Odstranit zvolené připojení"
 
-#: qml/main.qml:160
+#: qml/main.qml:164
 msgid "Export selected connection"
 msgstr "Exportovat zvolené připojení"
 
-#: qml/main.qml:211
+#: qml/main.qml:215
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Odstranit spojení"
 
-#: qml/main.qml:212
+#: qml/main.qml:216
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Opravdu si přejete smazat spojení '%1'?"

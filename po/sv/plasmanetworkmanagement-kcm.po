@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-04 01:40+0000\n"
+"POT-Creation-Date: 2023-10-05 01:41+0000\n"
 "PO-Revision-Date: 2021-06-26 22:30+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -78,7 +78,7 @@ msgstr "Skapa"
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: qml/AddConnectionDialog.qml:190 qml/main.qml:184
+#: qml/AddConnectionDialog.qml:190 qml/main.qml:188
 msgid "Configuration"
 msgstr "Inställning"
 
@@ -139,24 +139,24 @@ msgstr "Ansluten"
 msgid "Connecting"
 msgstr "Ansluter"
 
-#: qml/main.qml:130
+#: qml/main.qml:134
 msgid "Add new connection"
 msgstr "Lägg till ny anslutning"
 
-#: qml/main.qml:144
+#: qml/main.qml:148
 msgid "Remove selected connection"
 msgstr "Ta bort markerad anslutning"
 
-#: qml/main.qml:160
+#: qml/main.qml:164
 msgid "Export selected connection"
 msgstr "Exportera markerad anslutning"
 
-#: qml/main.qml:211
+#: qml/main.qml:215
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Ta bort anslutning"
 
-#: qml/main.qml:212
+#: qml/main.qml:216
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Vill du ta bort anslutningen '%1'?"
 

@@ -4,6 +4,7 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
+import org.kde.plasma.plasmoid 2.0
 import QtQuick 2.2
 import org.kde.plasma.plasmoid 2.0
 import org.kde.kirigami 2.20 as Kirigami
@@ -122,7 +123,7 @@ PlasmoidItem {
     }
 
     Component.onCompleted: {
-        plasmoid.setInternalAction("configure", configureAction);
+        Plasmoid.setInternalAction("configure", configureAction);
     }
 
     PlasmaNM.EnabledConnections {

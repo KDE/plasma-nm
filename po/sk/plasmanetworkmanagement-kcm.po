@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:41+0000\n"
+"POT-Creation-Date: 2023-10-06 01:41+0000\n"
 "PO-Revision-Date: 2023-03-25 13:51+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -65,20 +65,20 @@ msgstr "Nebol poskytnutý žiadny súbor"
 msgid "Unknown VPN type"
 msgstr "Neznámy typ VPN"
 
-#: qml/AddConnectionDialog.qml:15
+#: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Výber typu pripojenia"
 
-#: qml/AddConnectionDialog.qml:162
+#: qml/AddConnectionDialog.qml:165
 msgid "Create"
 msgstr "Vytvoriť"
 
-#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:119
+#: qml/AddConnectionDialog.qml:176 qml/ConfigurationDialog.qml:119
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: qml/AddConnectionDialog.qml:190 qml/main.qml:188
+#: qml/AddConnectionDialog.qml:193 qml/main.qml:184
 msgid "Configuration"
 msgstr "Nastavenia"
 
@@ -151,12 +151,12 @@ msgstr "Odstrániť vybrané pripojenie"
 msgid "Export selected connection"
 msgstr "Exportovať vybrané pripojenie"
 
-#: qml/main.qml:215
+#: qml/main.qml:211
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Odstránenie pripojenia"
 
-#: qml/main.qml:216
+#: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Chcete odstrániť pripojenie \"%1\"?"
 

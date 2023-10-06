@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:41+0000\n"
+"POT-Creation-Date: 2023-10-06 01:41+0000\n"
 "PO-Revision-Date: 2023-03-15 08:03+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -66,20 +66,20 @@ msgstr "Не надано жодного файла"
 msgid "Unknown VPN type"
 msgstr "Невідомий тип VPN"
 
-#: qml/AddConnectionDialog.qml:15
+#: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Виберіть тип з’єднання"
 
-#: qml/AddConnectionDialog.qml:162
+#: qml/AddConnectionDialog.qml:165
 msgid "Create"
 msgstr "Створити"
 
-#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:119
+#: qml/AddConnectionDialog.qml:176 qml/ConfigurationDialog.qml:119
 msgid "Cancel"
 msgstr "Скасувати"
 
-#: qml/AddConnectionDialog.qml:190 qml/main.qml:188
+#: qml/AddConnectionDialog.qml:193 qml/main.qml:184
 msgid "Configuration"
 msgstr "Налаштування"
 
@@ -152,12 +152,12 @@ msgstr "Вилучити позначене з’єднання"
 msgid "Export selected connection"
 msgstr "Експортувати позначене з’єднання"
 
-#: qml/main.qml:215
+#: qml/main.qml:211
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Вилучення з'єднання"
 
-#: qml/main.qml:216
+#: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Хочете вилучити запис з’єднання «%1»?"
 

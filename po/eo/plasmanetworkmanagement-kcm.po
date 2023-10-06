@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:41+0000\n"
+"POT-Creation-Date: 2023-10-06 01:41+0000\n"
 "PO-Revision-Date: 2023-04-11 21:39+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -64,20 +64,20 @@ msgstr "Neniu dosiero estis disponigita"
 msgid "Unknown VPN type"
 msgstr "Nekonata VPN-tipo"
 
-#: qml/AddConnectionDialog.qml:15
+#: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Elektu Konekto-Tipon"
 
-#: qml/AddConnectionDialog.qml:162
+#: qml/AddConnectionDialog.qml:165
 msgid "Create"
 msgstr "Krei"
 
-#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:119
+#: qml/AddConnectionDialog.qml:176 qml/ConfigurationDialog.qml:119
 msgid "Cancel"
 msgstr "Nuligi"
 
-#: qml/AddConnectionDialog.qml:190 qml/main.qml:188
+#: qml/AddConnectionDialog.qml:193 qml/main.qml:184
 msgid "Configuration"
 msgstr "Agordo"
 
@@ -150,11 +150,11 @@ msgstr "Forigi elektitan konekton"
 msgid "Export selected connection"
 msgstr "Eksportu elektitan konekton"
 
-#: qml/main.qml:215
+#: qml/main.qml:211
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Forigi Konekton"
 
-#: qml/main.qml:216
+#: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Ĉu vi volas forigi la konekton '%1'?"

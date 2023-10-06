@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:41+0000\n"
+"POT-Creation-Date: 2023-10-06 01:41+0000\n"
 "PO-Revision-Date: 2023-03-19 11:59+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -63,20 +63,20 @@ msgstr "எந்த கோப்பும் கொடுக்கப்பட�
 msgid "Unknown VPN type"
 msgstr "தெரியாத வகையான VPN"
 
-#: qml/AddConnectionDialog.qml:15
+#: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "இணைப்பின் வகையை தேர்ந்தெடுத்தல்"
 
-#: qml/AddConnectionDialog.qml:162
+#: qml/AddConnectionDialog.qml:165
 msgid "Create"
 msgstr "உருவாக்கு"
 
-#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:119
+#: qml/AddConnectionDialog.qml:176 qml/ConfigurationDialog.qml:119
 msgid "Cancel"
 msgstr "ரத்து செய்"
 
-#: qml/AddConnectionDialog.qml:190 qml/main.qml:188
+#: qml/AddConnectionDialog.qml:193 qml/main.qml:184
 msgid "Configuration"
 msgstr "அமைப்பு"
 
@@ -149,12 +149,12 @@ msgstr "தேர்ந்தெடுத்த இணைப்பை நீக�
 msgid "Export selected connection"
 msgstr "தேர்ந்தெடுத்த இணைப்பை ஏற்றுமதி செய்"
 
-#: qml/main.qml:215
+#: qml/main.qml:211
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "இணைப்பை நீக்குதல்"
 
-#: qml/main.qml:216
+#: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "'%1' என்ற இணைப்பை உறுதியாக நீக்க வேண்டுமா?"
 

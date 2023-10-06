@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-05 01:41+0000\n"
+"POT-Creation-Date: 2023-10-06 01:41+0000\n"
 "PO-Revision-Date: 2023-03-14 18:08+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -66,20 +66,20 @@ msgstr "No se ha proporcionado ningún archivo"
 msgid "Unknown VPN type"
 msgstr "Tipo de VPN desconocido"
 
-#: qml/AddConnectionDialog.qml:15
+#: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Escoja un tipo de conexión"
 
-#: qml/AddConnectionDialog.qml:162
+#: qml/AddConnectionDialog.qml:165
 msgid "Create"
 msgstr "Crear"
 
-#: qml/AddConnectionDialog.qml:173 qml/ConfigurationDialog.qml:119
+#: qml/AddConnectionDialog.qml:176 qml/ConfigurationDialog.qml:119
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: qml/AddConnectionDialog.qml:190 qml/main.qml:188
+#: qml/AddConnectionDialog.qml:193 qml/main.qml:184
 msgid "Configuration"
 msgstr "Configuración"
 
@@ -152,12 +152,12 @@ msgstr "Eliminar la conexión seleccionada"
 msgid "Export selected connection"
 msgstr "Exportar la conexión seleccionada"
 
-#: qml/main.qml:215
+#: qml/main.qml:211
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Eliminar conexión"
 
-#: qml/main.qml:216
+#: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "¿Desea eliminar la conexión «%1»?"
 

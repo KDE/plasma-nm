@@ -220,6 +220,3 @@ msgstr "Opplasting"
 #, kde-format
 msgid "Download"
 msgstr "Nedlasting"
-
-#~ msgid "Password…"
-#~ msgstr "Passord …"

@@ -220,10 +220,3 @@ msgstr "アップロード"
 #, kde-format
 msgid "Download"
 msgstr "ダウンロード"
-
-#~ msgid "Password…"
-#~ msgstr "パスワード…"
-
-#~ msgctxt "@title:window"
-#~ msgid "QR Code for %1"
-#~ msgstr "%1 の QR コード"

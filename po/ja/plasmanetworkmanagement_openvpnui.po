@@ -1070,6 +1070,3 @@ msgstr ""
 #, kde-format
 msgid "one-time password"
 msgstr ""
-
-#~ msgid "Could not open file"
-#~ msgstr "ファイルを開けませんでした"

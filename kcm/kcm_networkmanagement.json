@@ -61,7 +61,8 @@
         "Name[sl]": "Wi-Fi in omrežje",
         "Name[tr]": "Wi-Fi ve Ağ",
         "Name[uk]": "Wi-Fi і мережа",
-        "Name[x-test]": "xxWi-Fi & Networkingxx"
+        "Name[x-test]": "xxWi-Fi & Networkingxx",
+        "Name[zh_CN]": "Wi-Fi 和网络"
     },
     "X-KDE-Keywords": "networks,wifi,wi-fi,ethernet,mobile,cdma,gsm,lte,wimax,apn,carrier,2g,3g,4g,5g,5ge,broadband,internet,traffic,connections,websites,web,DSL,infiniband,wired,wireless,bssid,ipv4,ipv6,mac address,ip,access point,dns,gateway,wep,leap,wpa,wpa2,wpa3,dhcp,shared network,private network,public network,vpn,openvpn,wireguard,fortinet,juniper,l2tp,pptp,sstp,ssh,iodine,ipsec,anyconnect,openconnect",
     "X-KDE-Keywords[az]": "networks,wifi,wi-fi,ethernet,mobile,cdma,gsm,lte,wimax,apn,carrier,2g,3g,4g,5g,5ge,broadband,internet,traffic,connections,websites,web,DSL,infiniband,wired,wireless,bssid,ipv4,ipv6,mac address,ip,access point,dns,gateway,wep,leap,wpa,wpa2,wpa3,dhcp,shared network,private network,public network,vpn,openvpn,wireguard,fortinet,juniper,l2tp,pptp,sstp,ssh,iodine,ipsec,anyconnect,openconnect,şəbəkə,bağlantılar,veb-səhifələr,sonsuz,simli,simsiz,mac ünvanlar,giriş nöqtəsi,şəbəkə keçidi,paylaşılan şəbəkə,fərdi şəbəkə,ümumi şəbəkə",

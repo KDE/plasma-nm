@@ -221,6 +221,3 @@ msgstr "Odesílání"
 #, kde-format
 msgid "Download"
 msgstr "Stahování"
-
-#~ msgid "Password…"
-#~ msgstr "Heslo…"

@@ -273,14 +273,14 @@ msgstr "*.pem *.crt *.key *.cer"
 #, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username:"
-msgstr "Nome de usuario:"
+msgstr "Nome de usuaria:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, passUserName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, x509PassUsername)
 #: openvpn.ui:404 openvpn.ui:561
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
-msgstr "Nome de usuario para pasarlle a OpenVPN cando o solicite."
+msgstr "Nome de usuaria para pasarlle a OpenVPN cando o solicite."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -1053,14 +1053,14 @@ msgstr "Porto:"
 #, kde-format
 msgid "HTTP/SOCKS proxy username passed to OpenVPN when prompted for it."
 msgstr ""
-"Nome de usuario do mandatario HTTP ou SOCKS, para pasarllo a OpenVPN cando o "
+"Nome de usuaria do mandatario HTTP ou SOCKS, para pasarllo a OpenVPN cando o "
 "solicite."
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: openvpnadvanced.ui:1115
 #, kde-format
 msgid "Proxy Username:"
-msgstr "Nome de usuario do mandatario:"
+msgstr "Nome de usuaria do mandatario:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_15)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyPassword)

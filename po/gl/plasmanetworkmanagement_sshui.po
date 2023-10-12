@@ -52,7 +52,7 @@ msgstr "Usar un dispositivo TAP."
 #: sshadvanced.ui:116
 #, kde-format
 msgid "Remote username"
-msgstr "Nome de usuario remoto."
+msgstr "Nome de usuaria remoto."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_doNotReplaceDefaultRoute)
 #: sshadvanced.ui:132

@@ -192,7 +192,7 @@ msgstr "Credenciais"
 #: sstpadvanced.ui:336 sstpwidget.ui:86
 #, kde-format
 msgid "Username:"
-msgstr "Nome de usuario:"
+msgstr "Nome de usuaria:"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
 #: sstpadvanced.ui:349 sstpwidget.ui:99

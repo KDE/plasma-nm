@@ -47,7 +47,7 @@ msgstr "Contrasinal de grupo:"
 #: libreswan.ui:89
 #, kde-format
 msgid "User name:"
-msgstr "Nome de usuario:"
+msgstr "Nome de usuaria:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libreswan.ui:99

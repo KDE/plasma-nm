@@ -54,14 +54,14 @@ msgstr "IP ou nome da pasarela de IPsec."
 #: vpnc.ui:38
 #, kde-format
 msgid "User name:"
-msgstr "Nome de usuario:"
+msgstr "Nome de usuaria:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leUserName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, user)
 #: vpnc.ui:51 vpncauth.ui:97
 #, kde-format
 msgid "User name for the connection."
-msgstr "Nome de usuario para a conexión."
+msgstr "Nome de usuaria para a conexión."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnc.ui:58
@@ -388,7 +388,7 @@ msgstr "Contrasinal de grupo:"
 #: vpncauth.ui:104
 #, kde-format
 msgid "Username:"
-msgstr "Nome de usuario:"
+msgstr "Nome de usuaria:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leGroupName)
 #: vpncauth.ui:117

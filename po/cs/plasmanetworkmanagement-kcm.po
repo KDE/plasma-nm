@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 01:41+0000\n"
+"POT-Creation-Date: 2023-10-12 01:43+0000\n"
 "PO-Revision-Date: 2023-03-16 16:31+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -73,7 +73,7 @@ msgstr "Vyberte typ připojení"
 msgid "Create"
 msgstr "Vytvořit"
 
-#: qml/AddConnectionDialog.qml:176 qml/ConfigurationDialog.qml:119
+#: qml/AddConnectionDialog.qml:176
 msgid "Cancel"
 msgstr "Zrušit"
 
@@ -81,38 +81,55 @@ msgstr "Zrušit"
 msgid "Configuration"
 msgstr "Nastavení"
 
-#: qml/ConfigurationDialog.qml:15
+#: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
 msgid "Configuration"
 msgstr "Nastavení"
 
-#: qml/ConfigurationDialog.qml:37
+#: qml/ConfigurationDialog.qml:35
 msgid "General"
 msgstr "Obecné"
 
-#: qml/ConfigurationDialog.qml:42
+#: qml/ConfigurationDialog.qml:43
 msgid "Ask for PIN on modem detection"
 msgstr "Při detekci modemu požádat o PIN"
 
-#: qml/ConfigurationDialog.qml:49
+#: qml/ConfigurationDialog.qml:50
 msgid "Show virtual connections"
 msgstr "Zobrazit virtuální připojení"
 
-#: qml/ConfigurationDialog.qml:57
+#: qml/ConfigurationDialog.qml:55
 msgid "Hotspot"
 msgstr "Hotspot"
 
 #: qml/ConfigurationDialog.qml:63
-msgid "Hotspot name:"
-msgstr "Název hotspotu:"
+msgctxt "@label Hotspot name"
+msgid "Name:"
+msgstr ""
 
-#: qml/ConfigurationDialog.qml:73
-msgid "Hotspot password:"
+#: qml/ConfigurationDialog.qml:69
+#, fuzzy
+#| msgid "Hotspot password:"
+msgctxt "@label Hotspot password"
+msgid "Password:"
 msgstr "Heslo hotspotu:"
 
-#: qml/ConfigurationDialog.qml:104
-msgid "OK"
-msgstr "OK"
+#: qml/ConfigurationDialog.qml:88
+msgid "Hotspot name must not be empty"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:98
+msgid ""
+"Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
+"characters"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:99
+msgid ""
+"Hotspot password must either be empty or consist of one of the following:"
+"<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
+"characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
+msgstr ""
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"
@@ -158,3 +175,9 @@ msgstr "Odstranit spojení"
 #: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Opravdu si přejete smazat spojení '%1'?"
+
+#~ msgid "Hotspot name:"
+#~ msgstr "Název hotspotu:"
+
+#~ msgid "OK"
+#~ msgstr "OK"

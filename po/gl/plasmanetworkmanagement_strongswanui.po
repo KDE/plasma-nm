@@ -131,7 +131,7 @@ msgstr "PIN:"
 #: strongswanprop.ui:210
 #, kde-format
 msgid "Username:"
-msgstr "Nome de usuario:"
+msgstr "Nome de usuaria:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: strongswanprop.ui:238

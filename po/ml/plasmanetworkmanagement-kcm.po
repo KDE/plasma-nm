@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-06 01:41+0000\n"
+"POT-Creation-Date: 2023-10-12 01:43+0000\n"
 "PO-Revision-Date: 2019-12-12 22:22+0000\n"
 "Last-Translator: Sabu Siyad <ssiyad@tuta.io>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -73,7 +73,7 @@ msgstr ""
 msgid "Create"
 msgstr ""
 
-#: qml/AddConnectionDialog.qml:176 qml/ConfigurationDialog.qml:119
+#: qml/AddConnectionDialog.qml:176
 msgid "Cancel"
 msgstr ""
 
@@ -81,37 +81,52 @@ msgstr ""
 msgid "Configuration"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:15
+#: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
 msgid "Configuration"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:37
+#: qml/ConfigurationDialog.qml:35
 msgid "General"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:42
+#: qml/ConfigurationDialog.qml:43
 msgid "Ask for PIN on modem detection"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:49
+#: qml/ConfigurationDialog.qml:50
 msgid "Show virtual connections"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:57
+#: qml/ConfigurationDialog.qml:55
 msgid "Hotspot"
 msgstr ""
 
 #: qml/ConfigurationDialog.qml:63
-msgid "Hotspot name:"
+msgctxt "@label Hotspot name"
+msgid "Name:"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:73
-msgid "Hotspot password:"
+#: qml/ConfigurationDialog.qml:69
+msgctxt "@label Hotspot password"
+msgid "Password:"
 msgstr ""
 
-#: qml/ConfigurationDialog.qml:104
-msgid "OK"
+#: qml/ConfigurationDialog.qml:88
+msgid "Hotspot name must not be empty"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:98
+msgid ""
+"Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
+"characters"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:99
+msgid ""
+"Hotspot password must either be empty or consist of one of the following:"
+"<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
+"characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
 
 #: qml/ConnectionItem.qml:108

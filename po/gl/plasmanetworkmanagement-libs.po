@@ -443,7 +443,7 @@ msgstr "EAP protexida (PEAP)"
 #: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
 #, kde-format
 msgid "Username:"
-msgstr "Nome de usuario:"
+msgstr "Nome de usuaria:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_10)
@@ -3152,7 +3152,7 @@ msgstr "Nome real"
 #, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username"
-msgstr "Nome de usuario"
+msgstr "Nome de usuaria"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/widgets/ui/advancedpermissionswidget.ui:160

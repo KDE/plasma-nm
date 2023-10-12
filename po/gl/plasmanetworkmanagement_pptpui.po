@@ -253,7 +253,7 @@ msgstr "Adicional"
 #: pptpprop.ui:80
 #, kde-format
 msgid "Login:"
-msgstr "Nome de usuario:"
+msgstr "Nome de usuaria:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_login)
 #: pptpprop.ui:93

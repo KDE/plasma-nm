@@ -52,7 +52,7 @@ msgstr "Autenticación"
 #: fortisslvpn.ui:92
 #, kde-format
 msgid "User name:"
-msgstr "Nome de usuario:"
+msgstr "Nome de usuaria:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, username)
 #: fortisslvpn.ui:102

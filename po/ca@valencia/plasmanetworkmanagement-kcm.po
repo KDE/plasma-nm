@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:43+0000\n"
-"PO-Revision-Date: 2023-03-14 10:27+0100\n"
+"PO-Revision-Date: 2023-10-12 09:42+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: kcm.cpp:284
 #, kde-format
@@ -107,24 +107,24 @@ msgstr "Punt d'accés"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Nom:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Contrasenya del punt d'accés:"
+msgstr "Contrasenya:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "El nom del punt d'accés no ha d'estar buit"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"La contrasenya del punt d'accés ha d'estar buida o estar formada per entre 8 "
+"i 64 caràcters"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -132,6 +132,10 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"La contrasenya del punt d'accés ha d'estar buida o estar formada per una de "
+"les següents:<ul><li>Exactament 5 o 13 caràcters qualssevol</"
+"li><li>Exactament 10 o 26 caràcters hexadecimals:<br/>abcdef, ABCDEF o 0-9</"
+"li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"
@@ -177,9 +181,3 @@ msgstr "Elimina la connexió"
 #: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Voleu eliminar la connexió «%1»?"
-
-#~ msgid "Hotspot name:"
-#~ msgstr "Nom del punt d'accés:"
-
-#~ msgid "OK"
-#~ msgstr "D'acord"

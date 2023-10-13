@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:43+0000\n"
-"PO-Revision-Date: 2023-04-11 21:39+0100\n"
+"PO-Revision-Date: 2023-10-12 06:03+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -105,24 +105,24 @@ msgstr "Hotspot"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Nomo:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Hotspot pasvorto:"
+msgstr "Pasvorto:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "Hotspot-nomo devas esti nemalplena"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"Hotspot-pasvorto devas esti aŭ malplena aŭ konsisti el io inter 8 ĝis 64 "
+"signoj"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -130,6 +130,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"Hotspot-pasvorto devas esti aŭ malplena aŭ konsisti el unu el la sekvantaj:"
+"<ul><li>Ekzakte 5 aŭ 13 de ajn signoj</li><li>Ekzakte 10 aŭ 26 deksesumaj "
+"signoj:<br/>abcdef, ABCDEF aŭ 0-9</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"
@@ -175,9 +178,3 @@ msgstr "Forigi Konekton"
 #: qml/main.qml:212
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Ĉu vi volas forigi la konekton '%1'?"
-
-#~ msgid "Hotspot name:"
-#~ msgstr "Hotspot nomo:"
-
-#~ msgid "OK"
-#~ msgstr "bone"

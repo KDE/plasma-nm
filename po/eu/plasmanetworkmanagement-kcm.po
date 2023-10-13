@@ -1,7 +1,7 @@
 # Translation for plasmanetworkmanagement-kcm.po to Euskara/Basque (eu).
 # Copyright (C) 2017-2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:43+0000\n"
-"PO-Revision-Date: 2023-03-19 11:18+0100\n"
+"PO-Revision-Date: 2023-10-13 01:26+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: kcm.cpp:284
 #, kde-format
@@ -107,24 +107,24 @@ msgstr "Berogunea"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Izena:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Berogunearen pasahitza:"
+msgstr "Pasahitza:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "Bero-gunearen izena ez da hutsik egon behar"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"Bero-gunearen pasahitza hutsik egon behar da, edo 8 eta 64 karaktere bitarte "
+"izanbehar ditu"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -132,6 +132,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"Bero-gunearen pasahitza hutsik egon behar da, edo ondokoen arteko bat izan "
+"behar du:<ul><li>5 edo 13 karaktere doi-doi</li><li>10 edo 26 karaktere "
+"hamaseitar doi-doi:<br/>abcde, ABCDE edo 0-9</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

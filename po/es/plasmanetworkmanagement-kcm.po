@@ -3,14 +3,14 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Automatically generated, 2017.
-# Eloy <ecuadra@eloihr.net>, 2017.
+# SPDX-FileCopyrightText: 2017, 2023 Eloy <ecuadra@eloihr.net>
 # Eloy Cuadra <ecuadra@eloihr.net>, 2017, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:43+0000\n"
-"PO-Revision-Date: 2023-03-14 18:08+0100\n"
+"PO-Revision-Date: 2023-10-12 22:08+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: kcm.cpp:284
 #, kde-format
@@ -107,24 +107,24 @@ msgstr "Punto de acceso"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Nombre:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Contraseña del punto de acceso:"
+msgstr "Contraseña:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "El nombre del punto de acceso no puede estar vacío"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"La contraseña del punto de acceso debe estar vacía o tener entre 8 y 64 "
+"caracteres"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -132,6 +132,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"La contraseña del punto de acceso debe estar vacía o consistir en una de las "
+"siguientes:<ul><li>Exactamente 5 o 13 caracteres</li><li>Exactamente 10 o 26 "
+"caracteres hexadecimales:<br/>abcdef, ABCDEF o 0123456789</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

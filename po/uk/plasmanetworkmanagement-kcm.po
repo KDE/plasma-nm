@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:43+0000\n"
-"PO-Revision-Date: 2023-03-15 08:03+0200\n"
+"PO-Revision-Date: 2023-10-12 09:03+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -107,24 +107,24 @@ msgstr "Хот-спот"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Назва:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Пароль до хот-споту:"
+msgstr "Пароль:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "Назва хот-споту має бути непорожньою"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"Пароль до хот-споту має бути або порожнім, або складатися з від 8 до 64 "
+"символів"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -132,6 +132,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"Пароль до хот-споту має бути або порожнім, або відповідати таким умовам:"
+"<ul><li>Складатися з 5 або 13 довільних символів</li><li>Складатися з 10 або "
+"26 шістнадцяткових цифр:<br/>abcdef, ABCDEF або 0-9</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

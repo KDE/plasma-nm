@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:43+0000\n"
-"PO-Revision-Date: 2023-03-14 11:31+0300\n"
+"PO-Revision-Date: 2023-10-12 17:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.11.70\n"
 
 #: kcm.cpp:284
 #, kde-format
@@ -106,24 +106,22 @@ msgstr "Erişim Noktası"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Ad:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Erişim noktası parolası:"
+msgstr "Parola:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "Erişim noktası adı boş olmamalı"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
-msgstr ""
+msgstr "Erişim noktası parolası ya boş ya da 8-64 karakter arası olmalı"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -131,6 +129,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"Erişim noktası parolası ya boş ya da şunlardan birini içermeli:<ul><li>Tam "
+"olarak 5 veya 13 herhangi bir karakter</li><li>Tam olarak 10 veya 26 "
+"onaltılık karakter:<br/>abcdef, ABCDEF veya 0-9</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

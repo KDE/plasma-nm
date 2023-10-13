@@ -43,6 +43,7 @@
 #include <KUser>
 #include <KWallet>
 #include <KWindowSystem>
+#include <KX11Extras>
 
 #include <nm-client.h>
 #include <QCoroCore>
@@ -320,7 +321,11 @@ QCoro::Task<void> Handler::addAndActivateConnectionInternal(const QString &devic
         QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(settings);
         editor->setAttribute(Qt::WA_DeleteOnClose);
         editor->show();
-        KWindowSystem::setState(editor->winId(), NET::KeepAbove);
+
+        if (KWindowSystem::isPlatformX11()) {
+            KX11Extras::setState(editor->winId(), NET::KeepAbove);
+        }
+
         connect(editor.data(), &ConnectionEditorDialog::accepted, [editor, device, specificObject, this]() { //
             addAndActivateConnectionDBus(editor->setting(), device, specificObject);
         });

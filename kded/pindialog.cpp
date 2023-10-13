@@ -14,6 +14,7 @@
 
 #include <KLocalizedString>
 #include <KWindowSystem>
+#include <KX11Extras>
 
 #include <ModemManagerQt/Manager>
 
@@ -131,7 +132,9 @@ PinDialog::PinDialog(ModemManager::Modem *modem, const Type type, QWidget *paren
     ui->pin->setCursorPosition(0);
     ui->pin2->setCursorPosition(0);
 
-    KWindowSystem::setState(winId(), NET::KeepAbove);
+    if (KWindowSystem::isPlatformX11()) {
+        KX11Extras::setState(winId(), NET::KeepAbove);
+    }
 
     move((desktop.width() - width()) / 2, (desktop.height() - height()) / 2);
     connect(ui->chkShowPass, &QCheckBox::toggled, this, &PinDialog::chkShowPassToggled);

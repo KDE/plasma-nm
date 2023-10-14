@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:43+0000\n"
-"PO-Revision-Date: 2023-03-15 06:43+0100\n"
+"PO-Revision-Date: 2023-10-13 08:09+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.4\n"
 
 #: kcm.cpp:284
 #, kde-format
@@ -105,24 +105,22 @@ msgstr "ჰოტსპოტი"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "სახელი:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "ჰოტსპოტის პაროლი:"
+msgstr "პაროლი:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "ჰოტსპოტის სახელი ცარიელი ვერ იქნება"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
-msgstr ""
+msgstr "პოტსპოტის პაროლი ან ცარიელი უნდა იყოს, ან შედგებოდეს 8-64 სიმბოლოსგან"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -130,6 +128,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"ჰოტსპოტის პაროლი ან ცარიელი უნდა იყოს, ან უნდა შედებოდეს ერთ-ერთისგან სიიდან:"
+"<ul><li>ზუსტად 5 ან 13 ნებისმიერი სიმბოლოსგან</li><li>ზუსტად 10 ან 26 "
+"თექვსმეტობითი სიმბოლოსგან:<br/>abcdef, ABCDEF, 0-9)</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

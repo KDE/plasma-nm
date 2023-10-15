@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:43+0000\n"
-"PO-Revision-Date: 2023-04-10 10:59+0200\n"
+"PO-Revision-Date: 2023-10-14 11:00+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.04.3\n"
 
 #: kcm.cpp:284
 #, kde-format
@@ -105,24 +105,23 @@ msgstr "Hotspot"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Nazwa:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Hasło hotspotu:"
+msgstr "Hasło:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "Nazwa hotspotu nie może być pusta"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"Hasło hotspotu musi być albo puste albo składać się z od 8 do 64 znaków"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -130,6 +129,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"Hasło hotspotu musi być albo puste albo wyglądać jak jedno z poniższych:"
+"<ul><li>Dokładnie 5 lub 13 dowolnych znaków</li><li>Dokładnie 10 lub 26 "
+"szesnastkowych znaków:<br/>abcdef, ABCDEF lub 0-9</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

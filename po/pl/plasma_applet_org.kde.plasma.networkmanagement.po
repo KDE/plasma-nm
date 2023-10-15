@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-23 02:34+0000\n"
-"PO-Revision-Date: 2023-10-07 08:19+0200\n"
+"PO-Revision-Date: 2023-10-14 11:36+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -82,13 +82,13 @@ msgstr "Sieci"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr "Naciśnij środkowy, aby wyłączyć tryb samolotowy"
+msgstr "Kliknij środkowym, aby wyłączyć tryb samolotowy"
 
 #: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "Naciśnij środkowy, aby włączyć tryb samolotowy"
+msgstr "Kliknij środkowym, aby włączyć tryb samolotowy"
 
 #: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format

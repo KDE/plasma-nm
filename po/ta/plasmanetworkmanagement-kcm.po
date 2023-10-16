@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Kishore G <kishore96@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:43+0000\n"
-"PO-Revision-Date: 2023-03-19 11:59+0530\n"
+"PO-Revision-Date: 2023-10-15 12:37+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: kcm.cpp:284
 #, kde-format
@@ -104,24 +104,24 @@ msgstr "ஹாட்ஸ்பாட்"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "பெயர்:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "ஹாட்ஸ்பாட்டிற்கான கடவுச்சொல்:"
+msgstr "கடவுச்சொல்:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "ஹாட்ஸ்பாட்டின் பெயர் காலியாக இருக்கக் கூடாது"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"ஹாட்ஸ்பாட்டிற்கான கடவுச்சொல் காலியாக இல்லாத பட்சத்தில் 8-இலிருந்து 64 எழுத்துகளுக்குள் "
+"கொண்டிருக்க வேண்டும்."
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""

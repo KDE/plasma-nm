@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-06-21 02:02+0000\n"
+"POT-Creation-Date: 2023-10-18 01:43+0000\n"
 "PO-Revision-Date: 2014-08-13 22:07+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -620,141 +620,141 @@ msgstr "Passwoort-Dialoog"
 msgid "Password:"
 msgstr "Passwoort:"
 
-#: pindialog.cpp:67
+#: pindialog.cpp:68
 #, kde-format
 msgid "SIM PUK"
 msgstr "SIM-PUK"
 
-#: pindialog.cpp:69
+#: pindialog.cpp:70
 #, kde-format
 msgid "SIM PUK2"
 msgstr "SIM-PUK2"
 
-#: pindialog.cpp:71
+#: pindialog.cpp:72
 #, kde-format
 msgid "Service provider PUK"
 msgstr "Deenstanbeder-PUK"
 
-#: pindialog.cpp:73
+#: pindialog.cpp:74
 #, kde-format
 msgid "Network PUK"
 msgstr "Nettwark-PUK"
 
-#: pindialog.cpp:75
+#: pindialog.cpp:76
 #, kde-format
 msgid "Corporate PUK"
 msgstr "Firmen-PUK"
 
-#: pindialog.cpp:77
+#: pindialog.cpp:78
 #, kde-format
 msgid "PH-FSIM PUK"
 msgstr "PH-FSIM-PUK"
 
-#: pindialog.cpp:79
+#: pindialog.cpp:80
 #, kde-format
 msgid "Network Subset PUK"
 msgstr "Ünnernettwark-PUK"
 
-#: pindialog.cpp:82 pindialog.cpp:114
+#: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
 msgid "%1 unlock required"
 msgstr "Opsluten mit %1 deit noot"
 
-#: pindialog.cpp:83 pindialog.cpp:115
+#: pindialog.cpp:84 pindialog.cpp:116
 #, kde-format
 msgid "%1 Unlock Required"
 msgstr "Opsluten mit %1 deit noot"
 
-#: pindialog.cpp:84 pindialog.cpp:116
+#: pindialog.cpp:85 pindialog.cpp:117
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
 msgstr ""
 "Ehr sik de mobile Breedbandreedschap „%1“ bruken lett, deit de %2-Kode noot."
 
-#: pindialog.cpp:85 pindialog.cpp:117
+#: pindialog.cpp:86 pindialog.cpp:118
 #, kde-format
 msgid "%1 code:"
 msgstr "%1-Kode:"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:86 pinwidget.ui:153
+#: pindialog.cpp:87 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "Nieg PIN-Kode:"
 
-#: pindialog.cpp:87
+#: pindialog.cpp:88
 #, kde-format
 msgid "Re-enter new PIN code:"
 msgstr "Nieg PIN-Kode nochmaal ingeven:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:88 pinwidget.ui:193
+#: pindialog.cpp:89 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "PIN-/PUK-Kode wiesen"
 
-#: pindialog.cpp:98
+#: pindialog.cpp:99
 #, kde-format
 msgid "SIM PIN"
 msgstr "SIM-PIN"
 
-#: pindialog.cpp:100
+#: pindialog.cpp:101
 #, kde-format
 msgid "SIM PIN2"
 msgstr "SIM-PIN2"
 
-#: pindialog.cpp:102
+#: pindialog.cpp:103
 #, kde-format
 msgid "Service provider PIN"
 msgstr "Deenstanbeder-PIN"
 
-#: pindialog.cpp:104
+#: pindialog.cpp:105
 #, kde-format
 msgid "Network PIN"
 msgstr "Nettwark-PIN"
 
-#: pindialog.cpp:106
+#: pindialog.cpp:107
 #, kde-format
 msgid "PIN"
 msgstr "PIN"
 
-#: pindialog.cpp:108
+#: pindialog.cpp:109
 #, kde-format
 msgid "Corporate PIN"
 msgstr "Firmen-PIN"
 
-#: pindialog.cpp:110
+#: pindialog.cpp:111
 #, kde-format
 msgid "PH-FSIM PIN"
 msgstr "PH-FSIM-PIN"
 
-#: pindialog.cpp:112
+#: pindialog.cpp:113
 #, kde-format
 msgid "Network Subset PIN"
 msgstr "Ünnernettwark-PIN"
 
-#: pindialog.cpp:118
+#: pindialog.cpp:119
 #, kde-format
 msgid "Show PIN code"
 msgstr "PIN-Kode wiesen"
 
-#: pindialog.cpp:200
+#: pindialog.cpp:203
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "PIN-Kode is to kort. Dat mööt tominnst veer Steden wesen."
 
-#: pindialog.cpp:205
+#: pindialog.cpp:208
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "De twee PIN-Koden sünd nich liek"
 
-#: pindialog.cpp:210
+#: pindialog.cpp:213
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "PUK-Kode is to kort. Dat mööt tominnst acht Steden wesen."
 
-#: pindialog.cpp:215
+#: pindialog.cpp:218
 #, kde-format
 msgid "Unknown Error"
 msgstr "Nich begäng Fehler"
@@ -789,7 +789,7 @@ msgstr "PUK-Kode:"
 msgid "Re-enter PIN code:"
 msgstr "PIN-Kode nochmaal ingeven:"
 
-#: secretagent.cpp:407
+#: secretagent.cpp:408
 #, fuzzy, kde-format
 #| msgid "Authentication to the VPN server failed."
 msgid "Authentication to %1 failed. Wrong password?"

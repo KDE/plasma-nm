@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-09-23 01:46+0000\n"
+"POT-Creation-Date: 2023-10-18 01:43+0000\n"
 "PO-Revision-Date: 2023-02-21 09:35+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -3239,7 +3239,7 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Hapus"
 
-#: handler.cpp:120
+#: handler.cpp:121
 #, fuzzy, kde-format
 #| msgid ""
 #| "NetworkManager is missing support for '%1' VPN connections. Please use "
@@ -3249,12 +3249,12 @@ msgstr ""
 "NetworkManager kehilangan dukungan koneksi VPN '%1'. Mohon gunakan manajer "
 "paket untuk menginstalnya."
 
-#: handler.cpp:122
+#: handler.cpp:123
 #, kde-format
 msgid "Report Bug"
 msgstr ""
 
-#: handler.cpp:145
+#: handler.cpp:146
 #, fuzzy, kde-format
 #| msgid ""
 #| "NetworkManager is missing support for '%1' VPN connections. Please use "
@@ -3264,57 +3264,57 @@ msgstr ""
 "NetworkManager kehilangan dukungan koneksi VPN '%1'. Mohon gunakan manajer "
 "paket untuk menginstalnya."
 
-#: handler.cpp:147
+#: handler.cpp:148
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:190
+#: handler.cpp:191
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Gagal mengaktifkan %1"
 
-#: handler.cpp:357 handler.cpp:386
+#: handler.cpp:362 handler.cpp:391
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Gagal menambahkan koneksi %1"
 
-#: handler.cpp:364 handler.cpp:395
+#: handler.cpp:369 handler.cpp:400
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Koneksi %1 telah ditambahkan"
 
-#: handler.cpp:430
+#: handler.cpp:435
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Gagal menambahkan %1"
 
-#: handler.cpp:469
+#: handler.cpp:474
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Gagal menonaktifkan %1"
 
-#: handler.cpp:600
+#: handler.cpp:605
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Gagal menghapus %1"
 
-#: handler.cpp:607
+#: handler.cpp:612
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Koneksi %1 telah dihapus"
 
-#: handler.cpp:621
+#: handler.cpp:626
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Gagal memperbarui koneksi %1"
 
-#: handler.cpp:628
+#: handler.cpp:633
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Koneksi %1 telah diperbarui"
 
-#: handler.cpp:802
+#: handler.cpp:807
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Gagal menciptakan hotspot %1"

@@ -528,7 +528,7 @@ KCMNetworkmanagement::ImportResult KCMNetworkmanagement::ImportResult::fail(cons
 KCMNetworkmanagement::ImportResult KCMNetworkmanagement::importVpn()
 {
     // get the list of supported extensions
-    const QVector<KPluginMetaData> services = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
+    const QList<KPluginMetaData> services = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
     QStringList extensions;
     for (const KPluginMetaData &service : services) {
         const auto result = KPluginFactory::instantiatePlugin<VpnUiPlugin>(service);

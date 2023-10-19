@@ -33,7 +33,7 @@ KPluginFactory::Result<VpnUiPlugin> VpnUiPlugin::loadPluginForType(QObject *pare
         return md.value(QStringLiteral("X-NetworkManager-Services")) == serviceType;
     };
 
-    const QVector<KPluginMetaData> offers = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
+    const QList<KPluginMetaData> offers = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
 
     if (offers.isEmpty()) {
         KPluginFactory::Result<VpnUiPlugin> result;

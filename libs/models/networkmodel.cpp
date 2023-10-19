@@ -9,7 +9,7 @@
 #include "networkmodelitem.h"
 #include "plasma_nm_libs.h"
 #include "uiutils.h"
-#include <QVector>
+#include <QList>
 #include <algorithm>
 
 #include <ModemManagerQt/Manager>
@@ -116,7 +116,7 @@ bool NetworkModel::setData(const QModelIndex &index, const QVariant &value, int 
         NetworkModelItem *item = m_list.itemAt(row);
         if (item->delayModelUpdates() != delay) {
             item->setDelayModelUpdates(delay);
-            dataChanged(index, index, QVector<int>{DelayModelUpdatesRole});
+            dataChanged(index, index, QList<int>{DelayModelUpdatesRole});
             updateDelayModelUpdates();
             return true;
         }

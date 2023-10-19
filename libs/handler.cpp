@@ -109,7 +109,7 @@ QCoro::Task<void> Handler::activateConnectionInternal(const QString &connection,
                 return md.value(QStringLiteral("X-NetworkManager-Services")) == vpnSetting->serviceType();
             };
 
-            const QVector<KPluginMetaData> plasmaNmPlugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
+            const QList<KPluginMetaData> plasmaNmPlugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"), filter);
 
             const QString pluginBaseName = vpnSetting->serviceType().remove(QLatin1String("org.freedesktop.NetworkManager."));
 

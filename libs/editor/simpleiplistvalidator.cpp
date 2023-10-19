@@ -6,8 +6,8 @@
 
 #include "simpleiplistvalidator.h"
 
+#include <QList>
 #include <QStringList>
-#include <QVector>
 
 SimpleIpListValidator::SimpleIpListValidator(AddressStyle style, AddressType type, QObject *parent)
     : QValidator(parent)

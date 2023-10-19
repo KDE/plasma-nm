@@ -6,8 +6,8 @@
 
 #include "simpleipv4addressvalidator.h"
 
+#include <QList>
 #include <QStringList>
-#include <QVector>
 
 SimpleIpV4AddressValidator::SimpleIpV4AddressValidator(AddressStyle style, QObject *parent)
     : QValidator(parent)
@@ -56,7 +56,7 @@ QValidator::State SimpleIpV4AddressValidator::checkWithInputMask(QString &value,
 QValidator::State SimpleIpV4AddressValidator::checkTetradsRanges(QString &value, QList<int> &tetrads) const
 {
     QStringList temp;
-    QVector<QStringView> addrParts;
+    QList<QStringView> addrParts;
     QStringList cidrParts;
     QStringList portParts;
 

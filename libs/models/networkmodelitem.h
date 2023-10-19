@@ -111,7 +111,7 @@ public:
 
     bool operator==(const NetworkModelItem *item) const;
 
-    QVector<int> changedRoles() const
+    QList<int> changedRoles() const
     {
         return m_changedRoles;
     }
@@ -154,7 +154,7 @@ private:
     qulonglong m_rxBytes;
     qulonglong m_txBytes;
     QString m_icon;
-    QVector<int> m_changedRoles;
+    QList<int> m_changedRoles;
 };
 
 #endif // PLASMA_NM_MODEL_NETWORK_MODEL_ITEM_H

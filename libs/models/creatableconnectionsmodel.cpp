@@ -227,7 +227,7 @@ void CreatableConnectionsModel::populateModel()
                                                  true); // VpnType and SpecificType are empty
     m_list << connectionItem;
 
-    QVector<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
+    QList<KPluginMetaData> plugins = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
 
     std::sort(plugins.begin(), plugins.end(), [](const auto &left, const auto &right) {
         return QString::localeAwareCompare(left.name(), right.name()) <= 0;

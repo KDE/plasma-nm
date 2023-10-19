@@ -4,7 +4,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-12 01:43+0000\n"
-"PO-Revision-Date: 2023-09-28 20:32+0300\n"
+"PO-Revision-Date: 2023-10-18 09:58+0300\n"
 "Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
 "Language-Team: Hebrew\n"
 "Language: he\n"
@@ -101,24 +101,23 @@ msgstr "נקודה חמה"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "שם:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "סיסמה לנקודה חמה:"
+msgstr "סיסמה:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "שם הנקודה החמה לא יכול להישאר ריק"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"סיסמת הנקודה החמה יכולה להיות או ריקה או להיות רצף כלשהו של 8 עד 64 תווים"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -126,6 +125,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"סיסמת הנקודה החמה יכולה להיות או ריקה או להיות באחת מהתצורות הבאות:"
+"<ul><li>בדיוק 5 או 13 תווים כלשהם</li><li>בדיוק 10 או 26 תווים הקסדצימליים:"
+"<br/>abcdef,‏ ABCDEF או 0 עד 9</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

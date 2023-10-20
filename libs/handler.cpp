@@ -301,6 +301,7 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
         editor->setAttribute(Qt::WA_DeleteOnClose);
         editor->show();
         KWindowSystem::setState(editor->winId(), NET::KeepAbove);
+        KWindowSystem::forceActiveWindow(editor->winId());
         connect(editor.data(), &ConnectionEditorDialog::accepted, [editor, device, specificObject, this]() { //
             addAndActivateConnectionDBus(editor->setting(), device, specificObject);
         });

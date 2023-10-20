@@ -438,6 +438,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
             request.saveSecretsWithoutReply = !connectionSettings->permissions().isEmpty();
             m_dialog->show();
             KWindowSystem::setState(m_dialog->winId(), NET::KeepAbove);
+            KWindowSystem::forceActiveWindow(m_dialog->winId());
             return false;
         }
     } else if (isVpn && userRequested) { // just return what we have

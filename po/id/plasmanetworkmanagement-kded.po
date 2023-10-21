@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-16 04:26+0000\n"
+"POT-Creation-Date: 2023-10-21 02:36+0000\n"
 "PO-Revision-Date: 2023-02-18 14:52+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -714,22 +714,22 @@ msgstr "PIN Subset Network"
 msgid "Show PIN code"
 msgstr "Tampilkan kode PIN"
 
-#: pindialog.cpp:199
+#: pindialog.cpp:200
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "Kode PIN terlalu pendek. Yang seharusnya paling tidak 4 digit."
 
-#: pindialog.cpp:204
+#: pindialog.cpp:205
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "Kedua kode PIN tidaklah cocok"
 
-#: pindialog.cpp:209
+#: pindialog.cpp:210
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "Kode PUK terlalu pendek. Yang seharusnya 8 digit."
 
-#: pindialog.cpp:214
+#: pindialog.cpp:215
 #, kde-format
 msgid "Unknown Error"
 msgstr "Error Takdiketahui"

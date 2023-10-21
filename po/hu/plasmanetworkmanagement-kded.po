@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-16 04:26+0000\n"
+"POT-Creation-Date: 2023-10-21 02:36+0000\n"
 "PO-Revision-Date: 2020-12-21 21:43+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -713,22 +713,22 @@ msgstr "Hálózati részhalmaz PIN-kódja"
 msgid "Show PIN code"
 msgstr "PIN-kód megjelenítése"
 
-#: pindialog.cpp:199
+#: pindialog.cpp:200
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "A PIN-kód túl rövid. Legalább négy számjegyűnek kell lennie."
 
-#: pindialog.cpp:204
+#: pindialog.cpp:205
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "A két PIN-kód nem egyezik"
 
-#: pindialog.cpp:209
+#: pindialog.cpp:210
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "A PUK-kód túl rövid. Legalább nyolc számjegyűnek kell lennie."
 
-#: pindialog.cpp:214
+#: pindialog.cpp:215
 #, kde-format
 msgid "Unknown Error"
 msgstr "Ismeretlen hiba"

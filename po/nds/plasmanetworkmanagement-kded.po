@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-16 04:26+0000\n"
+"POT-Creation-Date: 2023-10-21 02:36+0000\n"
 "PO-Revision-Date: 2014-08-13 22:07+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -739,22 +739,22 @@ msgstr "Ünnernettwark-PIN"
 msgid "Show PIN code"
 msgstr "PIN-Kode wiesen"
 
-#: pindialog.cpp:199
+#: pindialog.cpp:200
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
 msgstr "PIN-Kode is to kort. Dat mööt tominnst veer Steden wesen."
 
-#: pindialog.cpp:204
+#: pindialog.cpp:205
 #, kde-format
 msgid "The two PIN codes do not match"
 msgstr "De twee PIN-Koden sünd nich liek"
 
-#: pindialog.cpp:209
+#: pindialog.cpp:210
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
 msgstr "PUK-Kode is to kort. Dat mööt tominnst acht Steden wesen."
 
-#: pindialog.cpp:214
+#: pindialog.cpp:215
 #, kde-format
 msgid "Unknown Error"
 msgstr "Nich begäng Fehler"

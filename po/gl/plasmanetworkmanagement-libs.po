@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-02-18 02:52+0000\n"
+"POT-Creation-Date: 2023-10-21 02:36+0000\n"
 "PO-Revision-Date: 2023-08-06 05:27+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Galician <proxecto@trasno.gal>\n"
@@ -3338,52 +3338,52 @@ msgstr "NetworkManager non é compatíbel coas conexións de VPN de «%1»."
 msgid "Install"
 msgstr "Instalar"
 
-#: handler.cpp:352 handler.cpp:845
+#: handler.cpp:353 handler.cpp:846
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Non foi posíbel engadir a conexión %1"
 
-#: handler.cpp:361 handler.cpp:887
+#: handler.cpp:362 handler.cpp:888
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Engadiuse a conexión %1."
 
-#: handler.cpp:837
+#: handler.cpp:838
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Non foi posíbel activar %1."
 
-#: handler.cpp:841
+#: handler.cpp:842
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Non foi posíbel engadir %1."
 
-#: handler.cpp:849
+#: handler.cpp:850
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Non foi posíbel desactivar %1"
 
-#: handler.cpp:853
+#: handler.cpp:854
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Non foi posíbel retirar %1"
 
-#: handler.cpp:857
+#: handler.cpp:858
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Non foi posíbel actualizar a conexión %1"
 
-#: handler.cpp:868
+#: handler.cpp:869
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Non foi posíbel crear un punto de acceso %1"
 
-#: handler.cpp:891
+#: handler.cpp:892
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Retirouse a conexión %1"
 
-#: handler.cpp:895
+#: handler.cpp:896
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Actualizouse a conexión %1"

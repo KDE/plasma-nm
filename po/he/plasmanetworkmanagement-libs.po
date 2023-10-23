@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-18 01:43+0000\n"
-"PO-Revision-Date: 2023-10-21 16:14+0300\n"
+"PO-Revision-Date: 2023-10-22 22:15+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -960,7 +960,7 @@ msgstr "הגבלה להתקן:"
 #: editor/settings/ui/wireguardinterfacewidget.ui:74
 #, kde-format
 msgid "MTU:"
-msgstr "MTU (גודל מרבי להתמסרות):"
+msgstr "‏MTU (גודל מרבי להתמסרות):"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:80
@@ -969,7 +969,7 @@ msgstr "MTU (גודל מרבי להתמסרות):"
 #, kde-format
 msgctxt "MTU:"
 msgid "Automatic"
-msgstr "אוטומטית"
+msgstr "אוטומטי"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:83
@@ -1670,13 +1670,13 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:158
 #, kde-format
 msgid "Half"
-msgstr "חצי"
+msgstr "חצויה"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:163
 #, kde-format
 msgid "Full"
-msgstr "מלא"
+msgstr "מלאה"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174

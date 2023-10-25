@@ -215,7 +215,7 @@ Item {
         onAccepted: {
             if (connectionPath === connectionView.currentConnectionPath) {
                 // Deselect now non-existing connection
-                deselectConnections()
+                root.deselectConnections()
             }
             handler.removeConnection(connectionPath)
         }
@@ -241,6 +241,7 @@ Item {
     }
 
     function deselectConnections() {
+        connectionView.currentConnectionName = ""
         connectionView.currentConnectionPath = ""
     }
 

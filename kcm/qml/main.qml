@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-import QtQuick 2.1
+import QtQuick
 import QtQuick.Dialogs
 import QtQuick.Controls 2.5 as QQC2
 import org.kde.plasma.networkmanagement as PlasmaNM
@@ -207,6 +207,7 @@ Item {
             });
         }
 
+        parentWindow: root.Window.window
         buttons: MessageDialog.Ok | MessageDialog.Cancel
         title: i18nc("@title:window", "Remove Connection")
         text: i18n("Do you want to remove the connection '%1'?", toHtmlEscaped(connectionName))

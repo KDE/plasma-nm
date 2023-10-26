@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Enol P. <enolp@softastur.org>, 2023.
+# SPDX-FileCopyrightText: 2023 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-18 01:43+0000\n"
-"PO-Revision-Date: 2023-05-03 23:21+0200\n"
+"PO-Revision-Date: 2023-10-25 11:31+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
 "Language: ast\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -177,7 +177,7 @@ msgstr ""
 msgctxt ""
 "@info:status Notification when the device failed due to SharedFailedReason"
 msgid "The shared service failed"
-msgstr ""
+msgstr "El serviciu compartíu falló"
 
 #: notification.cpp:146
 #, kde-format
@@ -206,7 +206,7 @@ msgstr ""
 msgctxt ""
 "@info:status Notification when the device failed due to ModemBusyReason"
 msgid "The modem is busy"
-msgstr ""
+msgstr "El módem ta ocupáu"
 
 #: notification.cpp:158
 #, kde-format
@@ -585,17 +585,17 @@ msgstr ""
 #: passworddialog.ui:92
 #, kde-format
 msgid "Password:"
-msgstr ""
+msgstr "Contraseña:"
 
 #: pindialog.cpp:68
 #, kde-format
 msgid "SIM PUK"
-msgstr ""
+msgstr "PUK de la SIM"
 
 #: pindialog.cpp:70
 #, kde-format
 msgid "SIM PUK2"
-msgstr ""
+msgstr "PUK2 de la SIM"
 
 #: pindialog.cpp:72
 #, kde-format
@@ -605,7 +605,7 @@ msgstr ""
 #: pindialog.cpp:74
 #, kde-format
 msgid "Network PUK"
-msgstr ""
+msgstr "PUK de la rede"
 
 #: pindialog.cpp:76
 #, kde-format
@@ -744,7 +744,7 @@ msgstr ""
 #: pinwidget.ui:133
 #, kde-format
 msgid "PUK code:"
-msgstr ""
+msgstr "Códigu PUK:"
 
 #. i18n: ectx: property (text), widget (QLabel, pin2Label)
 #: pinwidget.ui:173

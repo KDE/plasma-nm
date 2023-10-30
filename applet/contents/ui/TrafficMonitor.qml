@@ -4,13 +4,13 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-import QtQuick 2.4
-import QtQuick.Layouts 1.4
-import org.kde.coreaddons 1.0 as KCoreAddons
-import org.kde.quickcharts 1.0 as QuickCharts
-import org.kde.quickcharts.controls 1.0 as QuickChartControls
-import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.kirigami 2.20 as Kirigami
+import QtQuick
+import QtQuick.Layouts
+import org.kde.coreaddons as KCoreAddons
+import org.kde.quickcharts as QuickCharts
+import org.kde.quickcharts.controls as QuickChartsControls
+import org.kde.plasma.components as PlasmaComponents3
+import org.kde.kirigami as Kirigami
 
 ColumnLayout {
     property alias downloadSpeed: download.value
@@ -22,7 +22,7 @@ ColumnLayout {
         Layout.fillWidth: true
         implicitHeight: plotter.height + speedMetrics.height
 
-        QuickCharts.AxisLabels {
+        QuickChartsControls.AxisLabels {
             anchors {
                 right: plotter.left
                 rightMargin: Kirigami.Units.smallSpacing
@@ -30,9 +30,9 @@ ColumnLayout {
                 bottom: plotter.bottom
             }
             constrainToBounds: false
-            direction: QuickCharts.AxisLabels.VerticalBottomTop
+            direction: QuickChartsControls.AxisLabels.VerticalBottomTop
             delegate: PlasmaComponents3.Label {
-                text: KCoreAddons.Format.formatByteSize(QuickCharts.AxisLabels.label) + i18n("/s")
+                text: KCoreAddons.Format.formatByteSize(QuickChartsControls.AxisLabels.label) + i18n("/s")
                 font: Kirigami.Theme.smallFont
             }
             source: QuickCharts.ChartAxisSource {
@@ -41,9 +41,9 @@ ColumnLayout {
                 itemCount: 5
             }
         }
-        QuickCharts.GridLines {
+        QuickChartsControls.GridLines {
             anchors.fill: plotter
-            direction: QuickCharts.GridLines.Vertical
+            direction: QuickChartsControls.GridLines.Vertical
             minor.visible: false
             major.count: 3
             major.lineWidth: 1
@@ -61,7 +61,7 @@ ColumnLayout {
                 topMargin: speedMetrics.height / 2 + Kirigami.Units.smallSpacing
             }
             height: Kirigami.Units.gridUnit * 8
-            smooth: true
+            interpolate: true
             direction: QuickCharts.XYChart.ZeroAtEnd
             yRange {
                 minimum: 100 * 1024
@@ -106,12 +106,16 @@ ColumnLayout {
             text: KCoreAddons.Format.formatByteSize(910131) + i18n("/s")
         }
     }
-    QuickChartControls.Legend {
+    QuickChartsControls.Legend {
         chart: plotter
         Layout.leftMargin: Kirigami.Units.smallSpacing
+        Layout.fillWidth: true
         spacing: Kirigami.Units.largeSpacing
         delegate: RowLayout {
             spacing: Kirigami.Units.smallSpacing
+
+            QuickChartsControls.LegendLayout.maximumWidth: implicitWidth
+
             Rectangle {
                 color: model.color
                 width: Kirigami.Units.smallSpacing

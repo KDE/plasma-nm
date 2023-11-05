@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 01:43+0000\n"
+"POT-Creation-Date: 2023-11-05 01:09+0000\n"
 "PO-Revision-Date: 2020-10-25 19:48+0100\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -28,23 +28,23 @@ msgstr "Toetatud on ainult \"dun\" ja \"nap\" teenused."
 msgid "Network authentication"
 msgstr "Võrgu autentimine"
 
-#: connectivitymonitor.cpp:70
-#, kde-format
-msgid "Log in"
-msgstr "Logi sisse"
-
-#: connectivitymonitor.cpp:73
+#: connectivitymonitor.cpp:72
 #, fuzzy, kde-format
 #| msgid "You need to log in to this network"
 msgid "You need to log into this network"
 msgstr "Sellesse võrku tuleb sisse logida"
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:74
+#, kde-format
+msgid "Log in"
+msgstr "Logi sisse"
+
+#: connectivitymonitor.cpp:94
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "Piiratud ühenduvus"
 
-#: connectivitymonitor.cpp:94
+#: connectivitymonitor.cpp:95
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "

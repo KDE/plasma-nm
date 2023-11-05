@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 01:43+0000\n"
+"POT-Creation-Date: 2023-11-05 01:09+0000\n"
 "PO-Revision-Date: 2023-08-08 00:04+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <zh-l10n@lists.slat.org>\n"
@@ -3153,67 +3153,67 @@ msgstr "移除(&E)"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma 目前缺乏對「%1」VPN 連線的支援。"
 
-#: handler.cpp:123
+#: handler.cpp:124
 #, kde-format
 msgid "Report Bug"
 msgstr "回報問題"
 
-#: handler.cpp:146
+#: handler.cpp:147
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager 目前缺乏對「%1」VPN 連線的支援。"
 
-#: handler.cpp:148
+#: handler.cpp:150
 #, kde-format
 msgid "Install"
 msgstr "安裝"
 
-#: handler.cpp:191
+#: handler.cpp:192
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "啟動 %1 失敗"
 
-#: handler.cpp:362 handler.cpp:391
+#: handler.cpp:363 handler.cpp:392
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "新增連線 %1 失敗"
 
-#: handler.cpp:369 handler.cpp:400
+#: handler.cpp:370 handler.cpp:401
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "連線 %1 已被新增"
 
-#: handler.cpp:435
+#: handler.cpp:436
 #, kde-format
 msgid "Failed to add %1"
 msgstr "新增 %1 失敗"
 
-#: handler.cpp:474
+#: handler.cpp:475
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "中止 %1 失敗"
 
-#: handler.cpp:605
+#: handler.cpp:606
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "移除 %1 失敗"
 
-#: handler.cpp:612
+#: handler.cpp:613
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "連線 %1 已被移除"
 
-#: handler.cpp:626
+#: handler.cpp:627
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "更新連線 %1 失敗"
 
-#: handler.cpp:633
+#: handler.cpp:634
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "連線 %1 已被更新"
 
-#: handler.cpp:807
+#: handler.cpp:808
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "無法建立 %1 熱點"

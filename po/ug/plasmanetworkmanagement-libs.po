@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 01:43+0000\n"
+"POT-Creation-Date: 2023-11-05 01:09+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -3164,71 +3164,71 @@ msgstr "چىقىرىۋەت(&E)"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:123
+#: handler.cpp:124
 #, kde-format
 msgid "Report Bug"
 msgstr ""
 
-#: handler.cpp:146
+#: handler.cpp:147
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:148
+#: handler.cpp:150
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:191
+#: handler.cpp:192
 #, kde-format
 msgid "Failed to activate %1"
 msgstr ""
 
-#: handler.cpp:362 handler.cpp:391
+#: handler.cpp:363 handler.cpp:392
 #, fuzzy, kde-format
 #| msgid "Remove Connection"
 msgid "Failed to add connection %1"
 msgstr "باغلىنىشنى چىقىۋەت"
 
-#: handler.cpp:369 handler.cpp:400
+#: handler.cpp:370 handler.cpp:401
 #, fuzzy, kde-format
 #| msgid "Connection name:"
 msgid "Connection %1 has been added"
 msgstr "باغلىنىش ئاتى:"
 
-#: handler.cpp:435
+#: handler.cpp:436
 #, kde-format
 msgid "Failed to add %1"
 msgstr ""
 
-#: handler.cpp:474
+#: handler.cpp:475
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr ""
 
-#: handler.cpp:605
+#: handler.cpp:606
 #, kde-format
 msgid "Failed to remove %1"
 msgstr ""
 
-#: handler.cpp:612
+#: handler.cpp:613
 #, fuzzy, kde-format
 #| msgid "Connection name:"
 msgid "Connection %1 has been removed"
 msgstr "باغلىنىش ئاتى:"
 
-#: handler.cpp:626
+#: handler.cpp:627
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr ""
 
-#: handler.cpp:633
+#: handler.cpp:634
 #, fuzzy, kde-format
 #| msgid "Connection name:"
 msgid "Connection %1 has been updated"
 msgstr "باغلىنىش ئاتى:"
 
-#: handler.cpp:807
+#: handler.cpp:808
 #, fuzzy, kde-format
 #| msgid "Remove Connection"
 msgid "Failed to create hotspot %1"

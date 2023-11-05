@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 01:43+0000\n"
+"POT-Creation-Date: 2023-11-05 01:09+0000\n"
 "PO-Revision-Date: 2023-02-23 18:32+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -29,22 +29,22 @@ msgstr "Det er berre støtte for tenestene «dun» og «nap»."
 msgid "Network authentication"
 msgstr "Nettverksautentisering"
 
-#: connectivitymonitor.cpp:70
-#, kde-format
-msgid "Log in"
-msgstr "Logg på"
-
-#: connectivitymonitor.cpp:73
+#: connectivitymonitor.cpp:72
 #, kde-format
 msgid "You need to log into this network"
 msgstr "Du må logga på nettverket"
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:74
+#, kde-format
+msgid "Log in"
+msgstr "Logg på"
+
+#: connectivitymonitor.cpp:94
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "Avgrensa samband"
 
-#: connectivitymonitor.cpp:94
+#: connectivitymonitor.cpp:95
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 01:43+0000\n"
+"POT-Creation-Date: 2023-11-05 01:09+0000\n"
 "PO-Revision-Date: 2022-12-30 22:25+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -31,22 +31,22 @@ msgstr "Поддерживаются только службы «dun» и «nap�
 msgid "Network authentication"
 msgstr "Вход в сеть"
 
-#: connectivitymonitor.cpp:70
-#, kde-format
-msgid "Log in"
-msgstr "Войти"
-
-#: connectivitymonitor.cpp:73
+#: connectivitymonitor.cpp:72
 #, kde-format
 msgid "You need to log into this network"
 msgstr "Необходимо выполнить вход в эту сеть"
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:74
+#, kde-format
+msgid "Log in"
+msgstr "Войти"
+
+#: connectivitymonitor.cpp:94
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "Ограниченное подключение"
 
-#: connectivitymonitor.cpp:94
+#: connectivitymonitor.cpp:95
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "

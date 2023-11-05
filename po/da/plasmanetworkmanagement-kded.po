@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-18 01:43+0000\n"
+"POT-Creation-Date: 2023-11-05 01:09+0000\n"
 "PO-Revision-Date: 2022-05-14 17:15+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -27,23 +27,23 @@ msgstr "Kun \"dun\"- og \"nap\"-tjenester er understøttet."
 msgid "Network authentication"
 msgstr "Netværksautentificering"
 
-#: connectivitymonitor.cpp:70
-#, kde-format
-msgid "Log in"
-msgstr "Log på"
-
-#: connectivitymonitor.cpp:73
+#: connectivitymonitor.cpp:72
 #, fuzzy, kde-format
 #| msgid "You need to log in to this network"
 msgid "You need to log into this network"
 msgstr "Du skal logge på dette netværk"
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:74
+#, kde-format
+msgid "Log in"
+msgstr "Log på"
+
+#: connectivitymonitor.cpp:94
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "Begrænset forbindelse"
 
-#: connectivitymonitor.cpp:94
+#: connectivitymonitor.cpp:95
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "

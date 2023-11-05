@@ -25,8 +25,8 @@ Dependencies:
     'frameworks/modemmanager-qt': '@latest'
     'frameworks/networkmanager-qt': '@latest'
     'frameworks/solid': '@latest'
-    'frameworks/plasma-framework': '@latest'
     'frameworks/kcmutils': '@latest'
+    'plasma/plasma-framework': 'kf5'
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']
   cmake-options: ' -DBUILD_MOBILE=ON'

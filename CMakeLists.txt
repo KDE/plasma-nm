@@ -64,7 +64,6 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
     I18n
     NetworkManagerQt
     Notifications
-    Plasma
     Service
     Solid
     Wallet
@@ -74,6 +73,8 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
     Svg
     ModemManagerQt
 )
+
+find_package(KF6Plasma ${PROJECT_VERSION} REQUIRED)
 
 ecm_find_qmlmodule(org.kde.prison 1.0)
 

@@ -6,11 +6,11 @@
 
 import QtQuick
 import QtQuick.Dialogs
-import QtQuick.Controls 2.5 as QQC2
+import QtQuick.Controls as QQC2
 import org.kde.plasma.networkmanagement as PlasmaNM
 import org.kde.kirigami 2.15 as Kirigami
 
-Item {
+QQC2.Page {
     id: root
 
     focus: true
@@ -22,13 +22,6 @@ Item {
         function onManageVirtualConnectionsChanged() {
             editorProxyModel.invalidate()
         }
-    }
-
-    Rectangle {
-        id: background
-        anchors.fill: parent
-        focus: true
-        color: Kirigami.Theme.backgroundColor
     }
 
     PlasmaNM.Handler {

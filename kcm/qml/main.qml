@@ -63,8 +63,8 @@ Item {
         id: scrollView
 
         Component.onCompleted: {
-            if (background) {
-                background.visible = true;
+            if (scrollView.background) {
+                scrollView.background.visible = true;
             }
         }
 

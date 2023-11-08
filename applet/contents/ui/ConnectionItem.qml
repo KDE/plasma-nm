@@ -39,7 +39,6 @@ PlasmaExtras.ExpandableListItem {
     icon: model.ConnectionIcon
     title: model.ItemUniqueName
     subtitle: itemText()
-    iconUsesPlasmaSVG: true // We want the nice detailed network SVGs from the Plasma theme
     isBusy: mainWindow.expanded && model.ConnectionState === PlasmaNM.Enums.Activating
     isDefault: ConnectionState === PlasmaNM.Enums.Activated
     defaultActionButtonAction: Action {

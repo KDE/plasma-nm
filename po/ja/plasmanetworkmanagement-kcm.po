@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-06 01:40+0000\n"
+"POT-Creation-Date: 2023-11-08 08:48+0000\n"
 "PO-Revision-Date: 2023-02-25 14:51-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -78,7 +78,7 @@ msgstr "作成"
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: qml/AddConnectionDialog.qml:193 qml/main.qml:184
+#: qml/AddConnectionDialog.qml:193 qml/main.qml:177
 msgid "Configuration"
 msgstr "設定"
 
@@ -156,24 +156,24 @@ msgstr "接続済み"
 msgid "Connecting"
 msgstr "接続中"
 
-#: qml/main.qml:134
+#: qml/main.qml:127
 msgid "Add new connection"
 msgstr "新しい接続を追加"
 
-#: qml/main.qml:148
+#: qml/main.qml:141
 msgid "Remove selected connection"
 msgstr "選択された接続を削除"
 
-#: qml/main.qml:164
+#: qml/main.qml:157
 msgid "Export selected connection"
 msgstr "選択された接続をエクスポート"
 
-#: qml/main.qml:212
+#: qml/main.qml:205
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "接続を削除"
 
-#: qml/main.qml:213
+#: qml/main.qml:206
 msgid "Do you want to remove the connection '%1'?"
 msgstr "接続'%1'を削除しますか？"
 

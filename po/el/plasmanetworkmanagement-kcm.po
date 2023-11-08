@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-06 01:40+0000\n"
+"POT-Creation-Date: 2023-11-08 08:48+0000\n"
 "PO-Revision-Date: 2017-01-19 19:33+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -81,7 +81,7 @@ msgstr "Δημιουργία"
 msgid "Cancel"
 msgstr ""
 
-#: qml/AddConnectionDialog.qml:193 qml/main.qml:184
+#: qml/AddConnectionDialog.qml:193 qml/main.qml:177
 msgid "Configuration"
 msgstr ""
 
@@ -159,26 +159,26 @@ msgstr "Συνδέθηκε"
 msgid "Connecting"
 msgstr "Συνδέεται"
 
-#: qml/main.qml:134
+#: qml/main.qml:127
 msgid "Add new connection"
 msgstr "Προσθήκη νέας σύνδεσης"
 
-#: qml/main.qml:148
+#: qml/main.qml:141
 msgid "Remove selected connection"
 msgstr "Αφαίρεση επιλεγμένης σύνδεσης"
 
-#: qml/main.qml:164
+#: qml/main.qml:157
 msgid "Export selected connection"
 msgstr "Εξαγωγή επιλεγμένης σύνδεσης"
 
-#: qml/main.qml:212
+#: qml/main.qml:205
 #, fuzzy
 #| msgid "Remove connection"
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Αφαίρεση σύνδεσης"
 
-#: qml/main.qml:213
+#: qml/main.qml:206
 #, fuzzy
 #| msgid "Do you want to remove the connection '%1'"
 msgid "Do you want to remove the connection '%1'?"

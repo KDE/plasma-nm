@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-06 01:40+0000\n"
+"POT-Creation-Date: 2023-11-08 08:48+0000\n"
 "PO-Revision-Date: 2023-10-18 09:58+0300\n"
 "Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
 "Language-Team: Hebrew\n"
@@ -74,7 +74,7 @@ msgstr "יצירה"
 msgid "Cancel"
 msgstr "ביטול"
 
-#: qml/AddConnectionDialog.qml:193 qml/main.qml:184
+#: qml/AddConnectionDialog.qml:193 qml/main.qml:177
 msgid "Configuration"
 msgstr "הגדרות"
 
@@ -154,24 +154,24 @@ msgstr "מחובר"
 msgid "Connecting"
 msgstr "מתחבר"
 
-#: qml/main.qml:134
+#: qml/main.qml:127
 msgid "Add new connection"
 msgstr "הוספת חיבור חדש"
 
-#: qml/main.qml:148
+#: qml/main.qml:141
 msgid "Remove selected connection"
 msgstr "הסרת חיבורים נבחרים"
 
-#: qml/main.qml:164
+#: qml/main.qml:157
 msgid "Export selected connection"
 msgstr "ייצוא חיבורים נבחרים"
 
-#: qml/main.qml:212
+#: qml/main.qml:205
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "הסרת חיבור"
 
-#: qml/main.qml:213
+#: qml/main.qml:206
 msgid "Do you want to remove the connection '%1'?"
 msgstr "להסיר את החיבור ‚%1’?"
 

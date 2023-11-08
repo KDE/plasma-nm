@@ -238,8 +238,7 @@ void Notification::stateChanged(NetworkManager::Device::State newstate,
         text = i18nc("@info:status Notification when the device failed due to ModemManagerUnavailable", "ModemManager not running");
         break;
     case NetworkManager::Device::SsidNotFound:
-        text = i18nc("@info:status Notification when the device failed due to SsidNotFound", "The WiFi network could not be found");
-        break;
+        return;
     case NetworkManager::Device::SecondaryConnectionFailed:
         text =
             i18nc("@info:status Notification when the device failed due to SecondaryConnectionFailed", "A secondary connection of the base connection failed");

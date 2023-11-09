@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 01:09+0000\n"
+"POT-Creation-Date: 2023-11-09 01:39+0000\n"
 "PO-Revision-Date: 2022-12-30 03:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -398,13 +398,7 @@ msgctxt ""
 msgid "ModemManager not running"
 msgstr "ModemManager-ი გაშვებული არაა"
 
-#: notification.cpp:241
-#, kde-format
-msgctxt "@info:status Notification when the device failed due to SsidNotFound"
-msgid "The WiFi network could not be found"
-msgstr "Wifi ქსელი ნაპოვნი არაა"
-
-#: notification.cpp:245
+#: notification.cpp:244
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -412,84 +406,84 @@ msgctxt ""
 msgid "A secondary connection of the base connection failed"
 msgstr "მეორადი შეერთების შეცდომა საბაზისო შეერთებამდე"
 
-#: notification.cpp:248
+#: notification.cpp:247
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to DcbFcoeFailed"
 msgid "DCB or FCoE setup failed"
 msgstr "DCB ან FCoE-ის მორგების შეცდომა"
 
-#: notification.cpp:251
+#: notification.cpp:250
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to TeamdControlFailed"
 msgid "teamd control failed"
 msgstr "teamd-ის კონტროლის შეცდომა"
 
-#: notification.cpp:254
+#: notification.cpp:253
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
 msgstr "Modem-ის გაფუჭდა ან მიუწვდომელია"
 
-#: notification.cpp:257
+#: notification.cpp:256
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemAvailable"
 msgid "Modem now ready and available"
 msgstr "მოდემი ახლა მზადაა და ხელმისაწვდომია"
 
-#: notification.cpp:260
+#: notification.cpp:259
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SimPinIncorrect"
 msgid "The SIM PIN was incorrect"
 msgstr "SIM-ის PIN კოდი არასწორია"
 
-#: notification.cpp:263
+#: notification.cpp:262
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to NewActivation"
 msgid "A new connection activation was enqueued"
 msgstr "ახალი შეერთების აქტივაცია რიგშია"
 
-#: notification.cpp:266
+#: notification.cpp:265
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ParentChanged"
 msgid "The device's parent changed"
 msgstr "შეიცვალა ამ მოწყობილობის მშობელი"
 
-#: notification.cpp:269
+#: notification.cpp:268
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ParentManagedChanged"
 msgid "The device parent's management changed"
 msgstr "შეიცვალა მშობელი მოწყობილობის მართვა"
 
-#: notification.cpp:345
+#: notification.cpp:344
 #, kde-format
 msgid "Connection '%1' activated."
 msgstr "შეერთება %1 გააქტიურდა."
 
-#: notification.cpp:372
+#: notification.cpp:371
 #, kde-format
 msgid "Connection '%1' deactivated."
 msgstr "შეერთება %1-ის დეაქტივაცია დასრულდა."
 
-#: notification.cpp:423
+#: notification.cpp:422
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "VPN შეერთება %1 გააქტიურდა."
 
-#: notification.cpp:426
+#: notification.cpp:425
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
 msgstr "VPN შეერთების %1 აქტივაციის შეცდომა."
 
-#: notification.cpp:429 notification.cpp:437
+#: notification.cpp:428 notification.cpp:436
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "VPN შეერთება %1 დეაქტივირებულია."
 
-#: notification.cpp:440
+#: notification.cpp:439
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -498,22 +492,22 @@ msgstr ""
 "VPN შეერთება %1 დეაქტივირებულია იმიტომ, რომ გაითიშა მოწყობილობა, რომელსაც ის "
 "იყენებდა."
 
-#: notification.cpp:443
+#: notification.cpp:442
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "სერვისი, რომელიც მოგვაწოდებდა VPN შეერთებას \"%1\", გაჩერებულია."
 
-#: notification.cpp:446
+#: notification.cpp:445
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "VPN შეერთება \"%1\"-ის IP კონფიგურაცია არასწორია."
 
-#: notification.cpp:449
+#: notification.cpp:448
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "VPN სერვისთან მიერთების დრო გავიდა."
 
-#: notification.cpp:452
+#: notification.cpp:451
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
@@ -521,32 +515,32 @@ msgid ""
 msgstr ""
 "სერვისის, რომელიც მოგვაწოდებს VPN შეერთებას \"%1\", გაშვების ვადა გავიდა."
 
-#: notification.cpp:455
+#: notification.cpp:454
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "სერვისის, რომელიც მოგვაწოდებს VPN შეერთებას \"%1\", გაშვების შეცდომა."
 
-#: notification.cpp:458
+#: notification.cpp:457
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "VPN შეერთება \"%1\"-სთვის საჭირო პაროლები მითითებული არაა."
 
-#: notification.cpp:461
+#: notification.cpp:460
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "VPN სერვერზე ავთენტიკაციის შეცდომა."
 
-#: notification.cpp:464
+#: notification.cpp:463
 #, kde-format
 msgid "The connection was deleted."
 msgstr "შეერთება წაშლილია."
 
-#: notification.cpp:550
+#: notification.cpp:549
 #, kde-format
 msgid "No Network Connection"
 msgstr "ქსელური შეერთებების გარეშე"
 
-#: notification.cpp:551
+#: notification.cpp:550
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "ქსელთან მიერთებული აღარ ბრძანდებით."
@@ -764,3 +758,8 @@ msgstr "ახალი PUK კოდი ხელახლა:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1-ზე ავთენტიკაციის პრობლემა. პაროლი შეგეშალათ?"
+
+#~ msgctxt ""
+#~ "@info:status Notification when the device failed due to SsidNotFound"
+#~ msgid "The WiFi network could not be found"
+#~ msgstr "Wifi ქსელი ნაპოვნი არაა"

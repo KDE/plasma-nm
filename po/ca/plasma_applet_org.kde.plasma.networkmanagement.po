@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 01:43+0000\n"
+"POT-Creation-Date: 2023-11-09 01:39+0000\n"
 "PO-Revision-Date: 2023-07-17 10:38+0300\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -22,37 +22,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Connect"
 msgstr "Connecta"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Disconnect"
 msgstr "Desconnecta"
 
-#: contents/ui/ConnectionItem.qml:86
+#: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Mostra el codi QR de la xarxa"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "Configura…"
 
-#: contents/ui/ConnectionItem.qml:128
+#: contents/ui/ConnectionItem.qml:127
 #, kde-format
 msgid "Speed"
 msgstr "Velocitat"
 
-#: contents/ui/ConnectionItem.qml:133
+#: contents/ui/ConnectionItem.qml:132
 #, kde-format
 msgid "Details"
 msgstr "Detalls"
 
-#: contents/ui/ConnectionItem.qml:176
+#: contents/ui/ConnectionItem.qml:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -62,12 +62,12 @@ msgstr ""
 "La velocitat actual de baixada és de %1 kibibytes per segon; la velocitat "
 "actual de pujada és de %2 kibibytes per segon"
 
-#: contents/ui/ConnectionItem.qml:292
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Connectat, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:296
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Connectat"

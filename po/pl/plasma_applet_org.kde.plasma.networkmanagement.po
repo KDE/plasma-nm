@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 01:43+0000\n"
+"POT-Creation-Date: 2023-11-09 01:39+0000\n"
 "PO-Revision-Date: 2023-09-24 08:12+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -18,37 +18,37 @@ msgstr ""
 "|| n%100>=20) ? 1 : 2);\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Connect"
 msgstr "Połącz"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Disconnect"
 msgstr "Rozłącz"
 
-#: contents/ui/ConnectionItem.qml:86
+#: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Pokaż kod QR sieci"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "Ustawienia..."
 
-#: contents/ui/ConnectionItem.qml:128
+#: contents/ui/ConnectionItem.qml:127
 #, kde-format
 msgid "Speed"
 msgstr "Szybkość"
 
-#: contents/ui/ConnectionItem.qml:133
+#: contents/ui/ConnectionItem.qml:132
 #, kde-format
 msgid "Details"
 msgstr "Szczegóły"
 
-#: contents/ui/ConnectionItem.qml:176
+#: contents/ui/ConnectionItem.qml:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58,12 +58,12 @@ msgstr ""
 "Bieżąca szybkość pobierania to %1 kibibajtów na sekundę; bieżąca szybkość "
 "wysyłania to %2 kibibajtów na sekundę"
 
-#: contents/ui/ConnectionItem.qml:292
+#: contents/ui/ConnectionItem.qml:291
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Połączony, ⬇ %1, ⬆ %2"
 
-#: contents/ui/ConnectionItem.qml:296
+#: contents/ui/ConnectionItem.qml:295
 #, kde-format
 msgid "Connected"
 msgstr "Połączony"

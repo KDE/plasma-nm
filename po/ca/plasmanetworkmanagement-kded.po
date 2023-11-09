@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 01:09+0000\n"
+"POT-Creation-Date: 2023-11-09 01:39+0000\n"
 "PO-Revision-Date: 2022-12-07 14:51+0100\n"
 "Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -401,13 +401,7 @@ msgctxt ""
 msgid "ModemManager not running"
 msgstr "ModemManager no s'està executant"
 
-#: notification.cpp:241
-#, kde-format
-msgctxt "@info:status Notification when the device failed due to SsidNotFound"
-msgid "The WiFi network could not be found"
-msgstr "No s'ha pogut trobar la xarxa Wi-Fi"
-
-#: notification.cpp:245
+#: notification.cpp:244
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -415,84 +409,84 @@ msgctxt ""
 msgid "A secondary connection of the base connection failed"
 msgstr "Ha fallat una connexió secundària de la connexió base"
 
-#: notification.cpp:248
+#: notification.cpp:247
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to DcbFcoeFailed"
 msgid "DCB or FCoE setup failed"
 msgstr "Ha fallat la configuració del DCB o FCoE"
 
-#: notification.cpp:251
+#: notification.cpp:250
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to TeamdControlFailed"
 msgid "teamd control failed"
 msgstr "El control del «teamd» ha fallat"
 
-#: notification.cpp:254
+#: notification.cpp:253
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
 msgstr "El mòdem ha fallat o ja no està disponible"
 
-#: notification.cpp:257
+#: notification.cpp:256
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemAvailable"
 msgid "Modem now ready and available"
 msgstr "El mòdem està preparat i disponible"
 
-#: notification.cpp:260
+#: notification.cpp:259
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SimPinIncorrect"
 msgid "The SIM PIN was incorrect"
 msgstr "El PIN de la SIM és incorrecte"
 
-#: notification.cpp:263
+#: notification.cpp:262
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to NewActivation"
 msgid "A new connection activation was enqueued"
 msgstr "S'ha posat a la cua una activació nova de la connexió"
 
-#: notification.cpp:266
+#: notification.cpp:265
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ParentChanged"
 msgid "The device's parent changed"
 msgstr "Els pares del dispositiu han canviat"
 
-#: notification.cpp:269
+#: notification.cpp:268
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ParentManagedChanged"
 msgid "The device parent's management changed"
 msgstr "La gestió dels pares del dispositiu ha canviat"
 
-#: notification.cpp:345
+#: notification.cpp:344
 #, kde-format
 msgid "Connection '%1' activated."
 msgstr "Connexió «%1» activada."
 
-#: notification.cpp:372
+#: notification.cpp:371
 #, kde-format
 msgid "Connection '%1' deactivated."
 msgstr "Connexió «%1» desactivada."
 
-#: notification.cpp:423
+#: notification.cpp:422
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "Connexió VPN «%1» activada."
 
-#: notification.cpp:426
+#: notification.cpp:425
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
 msgstr "La connexió VPN «%1» ha fallat en activar-se."
 
-#: notification.cpp:429 notification.cpp:437
+#: notification.cpp:428 notification.cpp:436
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "Connexió VPN «%1» desactivada."
 
-#: notification.cpp:440
+#: notification.cpp:439
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -501,22 +495,22 @@ msgstr ""
 "La connexió VPN «%1» s'ha desactivat perquè el dispositiu usat s'ha "
 "desconnectat."
 
-#: notification.cpp:443
+#: notification.cpp:442
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "El servei que proporciona la connexió VPN «%1» s'ha aturat."
 
-#: notification.cpp:446
+#: notification.cpp:445
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "La configuració IP de la connexió VPN «%1» no és vàlida."
 
-#: notification.cpp:449
+#: notification.cpp:448
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "L'intent de connexió amb el servei VPN ha exhaurit el temps."
 
-#: notification.cpp:452
+#: notification.cpp:451
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
@@ -525,33 +519,33 @@ msgstr ""
 "S'ha exhaurit el temps mentre s'iniciava el servei que proporciona la "
 "connexió VPN «%1»."
 
-#: notification.cpp:455
+#: notification.cpp:454
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "L'inici del servei que proporciona la connexió VPN «%1» ha fallat."
 
-#: notification.cpp:458
+#: notification.cpp:457
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr ""
 "No s'han proporcionat els secrets necessaris per a la connexió VPN «%1»."
 
-#: notification.cpp:461
+#: notification.cpp:460
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "L'autenticació amb el servidor VPN ha fallat."
 
-#: notification.cpp:464
+#: notification.cpp:463
 #, kde-format
 msgid "The connection was deleted."
 msgstr "S'ha suprimit la connexió."
 
-#: notification.cpp:550
+#: notification.cpp:549
 #, kde-format
 msgid "No Network Connection"
 msgstr "No hi ha cap connexió de xarxa"
 
-#: notification.cpp:551
+#: notification.cpp:550
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Ja no està connectat a cap xarxa."
@@ -771,3 +765,8 @@ msgstr "Torneu a introduir el codi PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Ha fallat l'autenticació a %1. Contrasenya incorrecta?"
+
+#~ msgctxt ""
+#~ "@info:status Notification when the device failed due to SsidNotFound"
+#~ msgid "The WiFi network could not be found"
+#~ msgstr "No s'ha pogut trobar la xarxa Wi-Fi"

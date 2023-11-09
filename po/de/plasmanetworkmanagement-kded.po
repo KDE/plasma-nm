@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 01:09+0000\n"
+"POT-Creation-Date: 2023-11-09 01:39+0000\n"
 "PO-Revision-Date: 2023-01-25 16:00+0100\n"
 "Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -399,13 +399,7 @@ msgctxt ""
 msgid "ModemManager not running"
 msgstr "Der ModemManager läuft nicht"
 
-#: notification.cpp:241
-#, kde-format
-msgctxt "@info:status Notification when the device failed due to SsidNotFound"
-msgid "The WiFi network could not be found"
-msgstr "Das WiFi-Netzwerk wurde nicht gefunden"
-
-#: notification.cpp:245
+#: notification.cpp:244
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -413,84 +407,84 @@ msgctxt ""
 msgid "A secondary connection of the base connection failed"
 msgstr "Eine untergeordnete Verbindung der Basis-Verbindung ist fehlgeschlagen"
 
-#: notification.cpp:248
+#: notification.cpp:247
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to DcbFcoeFailed"
 msgid "DCB or FCoE setup failed"
 msgstr "Die Einrichtung von DCB oder FCoE ist fehlgeschlagen"
 
-#: notification.cpp:251
+#: notification.cpp:250
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to TeamdControlFailed"
 msgid "teamd control failed"
 msgstr "„teamd“-Steuerung fehlgeschlagen"
 
-#: notification.cpp:254
+#: notification.cpp:253
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
 msgstr "Das Modem ist nicht bereit oder nicht mehr verfügbar"
 
-#: notification.cpp:257
+#: notification.cpp:256
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemAvailable"
 msgid "Modem now ready and available"
 msgstr "Das Modem ist bereit und verfügbar"
 
-#: notification.cpp:260
+#: notification.cpp:259
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SimPinIncorrect"
 msgid "The SIM PIN was incorrect"
 msgstr "Die SIM-PIN ist falsch"
 
-#: notification.cpp:263
+#: notification.cpp:262
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to NewActivation"
 msgid "A new connection activation was enqueued"
 msgstr "Die Aktivierung einer neuen Verbindung ist anstehend"
 
-#: notification.cpp:266
+#: notification.cpp:265
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ParentChanged"
 msgid "The device's parent changed"
 msgstr "Die übergeordnete Abhängigkeit des Gerätes wurde geändert"
 
-#: notification.cpp:269
+#: notification.cpp:268
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ParentManagedChanged"
 msgid "The device parent's management changed"
 msgstr "Die übergeordnete Verwaltung des Geräts wurde geändert"
 
-#: notification.cpp:345
+#: notification.cpp:344
 #, kde-format
 msgid "Connection '%1' activated."
 msgstr "Die Verbindung %1 wurde aktiviert"
 
-#: notification.cpp:372
+#: notification.cpp:371
 #, kde-format
 msgid "Connection '%1' deactivated."
 msgstr "Die Verbindung %1 wurde deaktiviert."
 
-#: notification.cpp:423
+#: notification.cpp:422
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "Die VPN-Verbindung %1 wurde aktiviert."
 
-#: notification.cpp:426
+#: notification.cpp:425
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
 msgstr "Die VPN-Verbindung „%1“ kann nicht aktiviert werden."
 
-#: notification.cpp:429 notification.cpp:437
+#: notification.cpp:428 notification.cpp:436
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "Die VPN-Verbindung „%1“ wurde deaktiviert."
 
-#: notification.cpp:440
+#: notification.cpp:439
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -499,25 +493,25 @@ msgstr ""
 "Die VPN-Verbindung „%1“ wurde deaktiviert, weil das benutzende Gerät "
 "getrennt wurde."
 
-#: notification.cpp:443
+#: notification.cpp:442
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr ""
 "Der Dienst, der die VPN-Verbindung „%1“ bereit stellt, wurde angehalten."
 
-#: notification.cpp:446
+#: notification.cpp:445
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "Die IP-Konfiguration der VPN-Verbindung „%1“ ist ungültig."
 
-#: notification.cpp:449
+#: notification.cpp:448
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr ""
 "Beim Verbindungsversuch zum VPN-Dienst ist eine Zeitüberschreitung "
 "aufgetreten"
 
-#: notification.cpp:452
+#: notification.cpp:451
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
@@ -526,35 +520,35 @@ msgstr ""
 "Beim Start des Dienstes, der die VPN-Verbindung „%1“ bereitstellt, ist eine "
 "Zeitüberschreitung aufgetreten."
 
-#: notification.cpp:455
+#: notification.cpp:454
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr ""
 "Das Starten des Dienstes, der die VPN-Verbindung „%1“ bereit stellt, ist "
 "fehlgeschlagen."
 
-#: notification.cpp:458
+#: notification.cpp:457
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr ""
 "Die nötigen Anmeldedaten für die VPN-Verbindung „%1“ wurden nicht angegeben."
 
-#: notification.cpp:461
+#: notification.cpp:460
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "Die Authentifizierung mit dem VPN-Server ist fehlgeschlagen."
 
-#: notification.cpp:464
+#: notification.cpp:463
 #, kde-format
 msgid "The connection was deleted."
 msgstr "Die Verbindung wurde gelöscht."
 
-#: notification.cpp:550
+#: notification.cpp:549
 #, kde-format
 msgid "No Network Connection"
 msgstr "Keine Netzwerkverbindung"
 
-#: notification.cpp:551
+#: notification.cpp:550
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Sie sind nicht mehr mit einem Netzwerk verbunden."
@@ -774,6 +768,11 @@ msgstr "PIN-Code erneut eingeben:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Die Authentifizierung mit %1 ist fehlgeschlagen."
+
+#~ msgctxt ""
+#~ "@info:status Notification when the device failed due to SsidNotFound"
+#~ msgid "The WiFi network could not be found"
+#~ msgstr "Das WiFi-Netzwerk wurde nicht gefunden"
 
 #~ msgid "VPN connection '%1' failed."
 #~ msgstr "VPN-Verbindung %1 ist fehlgeschlagen."

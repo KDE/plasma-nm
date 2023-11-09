@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-12 01:43+0000\n"
+"POT-Creation-Date: 2023-11-09 01:39+0000\n"
 "PO-Revision-Date: 2009-02-05 06:35-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -17,38 +17,38 @@ msgstr ""
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Connect"
 msgstr "Ceangail"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:60
 #, fuzzy, kde-format
 msgid "Disconnect"
 msgstr "Ceangailte"
 
-#: contents/ui/ConnectionItem.qml:86
+#: contents/ui/ConnectionItem.qml:85
 #, fuzzy, kde-format
 msgid "Show Network's QR Code"
 msgstr "Ceangal"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:90
 #, fuzzy, kde-format
 #| msgid "Confirm Delete"
 msgid "Configure…"
 msgstr "Dearbhaigh an Scriosadh"
 
-#: contents/ui/ConnectionItem.qml:128
+#: contents/ui/ConnectionItem.qml:127
 #, kde-format
 msgid "Speed"
 msgstr "Luas"
 
-#: contents/ui/ConnectionItem.qml:133
+#: contents/ui/ConnectionItem.qml:132
 #, kde-format
 msgid "Details"
 msgstr "Mionsonraí"
 
-#: contents/ui/ConnectionItem.qml:176
+#: contents/ui/ConnectionItem.qml:175
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56,12 +56,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:292
+#: contents/ui/ConnectionItem.qml:291
 #, fuzzy, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Ceangailte"
 
-#: contents/ui/ConnectionItem.qml:296
+#: contents/ui/ConnectionItem.qml:295
 #, fuzzy, kde-format
 msgid "Connected"
 msgstr "Ceangailte"

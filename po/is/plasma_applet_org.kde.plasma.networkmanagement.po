@@ -3,19 +3,20 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Sveinn í Felli <sveinki@nett.is>, 2009, 2010, 2022, 2023.
+# SPDX-FileCopyrightText: 2023 Guðmundur Erlingsson <gudmundure@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-09 01:39+0000\n"
-"PO-Revision-Date: 2023-03-22 14:51+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic\n"
+"PO-Revision-Date: 2023-11-08 13:46+0000\n"
+"Last-Translator: Guðmundur Erlingsson <gudmundure@gmail.com>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
@@ -34,12 +35,12 @@ msgstr "Aftengjast"
 #: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
-msgstr "Birta QR-kóða netkerfis"
+msgstr "Sýna QR-kóða nets"
 
 #: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
-msgstr "Stilla…"
+msgstr "Grunnstilla…"
 
 #: contents/ui/ConnectionItem.qml:127
 #, kde-format
@@ -58,8 +59,8 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
-"Núverandi niðurhalshraði er %1 kibibæti á sekúndu; núverandi "
-"innsendingarhraði er %2 kibibæti á sekúndu"
+"Núverandi niðurhalshraði er %1 kibibæti á sekúndu. Núverandi upphleðsluhraði "
+"er %2 kibibæti á sekúndu"
 
 #: contents/ui/ConnectionItem.qml:291
 #, kde-format
@@ -72,36 +73,35 @@ msgid "Connected"
 msgstr "Tengt"
 
 #: contents/ui/ConnectionListPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Password on this network"
+#, kde-format
 msgid "You need to log in to this network"
-msgstr "Lykilorð á þessu neti"
+msgstr "Þú þarft að skrá þig inn á þetta net"
 
 #: contents/ui/ConnectionListPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Skrá inn"
 
 #: contents/ui/ConnectionListPage.qml:115
 #, kde-format
 msgid "Airplane mode is enabled"
-msgstr "Flughamur er virkur"
+msgstr "Flugstilling er virk"
 
 #: contents/ui/ConnectionListPage.qml:119
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
-msgstr "Þráðlaus og farsímanet eru óvirk"
+msgstr "Slökkt er á þráðlausu neti og farsímaneti"
 
 #: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless is deactivated"
-msgstr "Þráðlaust net er óvirkt"
+msgstr "Slökkt er á þráðlausu neti"
 
 #: contents/ui/ConnectionListPage.qml:124
 #, kde-format
 msgid "Mobile network is deactivated"
-msgstr "Farsímanet er óvirkt"
+msgstr "Slökkt er á farsímaneti"
 
 #: contents/ui/ConnectionListPage.qml:127
 #, kde-format
@@ -121,39 +121,39 @@ msgstr "Afrita"
 #: contents/ui/main.qml:32
 #, kde-format
 msgid "Networks"
-msgstr "Netkerfi"
+msgstr "Net"
 
 #: contents/ui/main.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr "Miðju-smelltu til að slökkva á flugvélaham"
+msgstr "Miðjusmelltu til að slökkva á flugstillingu"
 
 #: contents/ui/main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "Miðju-smelltu til að kveikja á flugvélaham"
+msgstr "Miðjusmelltu til að kveikja á flugstillingu"
 
 #: contents/ui/main.qml:72 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
-msgstr "Virkja Wi-Fi"
+msgstr "Kveikja á Wi-Fi"
 
 #: contents/ui/main.qml:83
 #, kde-format
 msgid "Enable Mobile Network"
-msgstr "Virkja farsímanet"
+msgstr "Kveikja á farsímaneti"
 
 #: contents/ui/main.qml:95
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr "Virkja flugvélaham"
+msgstr "Kveikja á flugstillingu"
 
 #: contents/ui/main.qml:107
 #, kde-format
 msgid "Open Network Login Page…"
-msgstr "Opna innskráningarsíðu netkerfis…"
+msgstr "Opna innskráningarsíðu nets…"
 
 #: contents/ui/main.qml:117
 #, kde-format
@@ -161,34 +161,32 @@ msgid "&Configure Network Connections…"
 msgstr "Stilla netten&gingar…"
 
 #: contents/ui/PopupDialog.qml:51
-#, fuzzy, kde-format
-#| msgctxt "Edit connection dialog caption"
-#| msgid "Edit Network Connection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "Breyta nettengingu"
+msgstr "Snúa aftur í nettengingar"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
-msgstr ""
+msgstr "Skannaðu þennan QR-kóða með öðru tæki til að tengjast netinu \"%1\"."
 
 #: contents/ui/Toolbar.qml:122
 #, kde-format
 msgid "Enable mobile network"
-msgstr "Virkja farsímanet"
+msgstr "Kveikja á farsímaneti"
 
 #: contents/ui/Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
-msgstr "Slökktu á flugham<nl/><nl/>Þetta mun virkja Wi-Fi og Bluetooth"
+msgstr "Slökktu á flugstillingu<nl/><nl/>Þá kviknar á Wi-Fi og Bluetooth"
 
 #: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
-msgstr "Virkjaðu á flugham<nl/><nl/>Þetta mun gera Wi-Fi og Bluetooth óvirkt"
+msgstr "Kveiktu á flugstillingu<nl/><nl/>Þá slokknar á Wi-Fi og Bluetooth"
 
 #: contents/ui/Toolbar.qml:159
 #, kde-format
@@ -208,7 +206,7 @@ msgstr "Búa til aðgangsstað"
 #: contents/ui/Toolbar.qml:226
 #, kde-format
 msgid "Configure network connections…"
-msgstr "Stilla nettengingar…"
+msgstr "Grunnstilla nettengingar…"
 
 #: contents/ui/TrafficMonitor.qml:35 contents/ui/TrafficMonitor.qml:106
 #, kde-format
@@ -218,12 +216,12 @@ msgstr "/s"
 #: contents/ui/TrafficMonitor.qml:87
 #, kde-format
 msgid "Upload"
-msgstr "Sent"
+msgstr "Upphleðsla"
 
 #: contents/ui/TrafficMonitor.qml:87
 #, kde-format
 msgid "Download"
-msgstr "Sótt"
+msgstr "Niðurhal"
 
 #~ msgid "Password…"
 #~ msgstr "Lykilorð…"

@@ -4,13 +4,13 @@
 # Franklin, 2014.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2018, 2020.
-# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2022-06-23 09:17+0900\n"
+"PO-Revision-Date: 2023-11-10 22:39+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Chinese <kde-i18n-doc@kde.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.04.2\n"
+"X-Generator: Lokalize 23.08.2\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -338,6 +338,8 @@ msgid ""
 "of encryption/authentication keys for user packets) should last, from "
 "successful negotiation to expiry.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>一個連線（即一組使用者封包用的加密 / 認證金鑰）的一個實"
+"體從協調成功到逾期應該要持續多久。</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
 #: l2tpipsec.ui:299
@@ -520,7 +522,7 @@ msgstr "允許在傳送與接收雙向使用協定欄位壓縮協調。"
 #: l2tpppp.ui:151
 #, kde-format
 msgid "Use protocol field compression negotiation"
-msgstr "使用協定欄位決定壓縮方式"
+msgstr "使用協定欄位壓縮協調"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:164

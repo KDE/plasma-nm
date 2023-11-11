@@ -758,8 +758,3 @@ msgstr "Znovu zadat kód PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Ověření totožnosti s %1 selhalo. Je heslo správné?"
-
-#~ msgctxt ""
-#~ "@info:status Notification when the device failed due to SsidNotFound"
-#~ msgid "The WiFi network could not be found"
-#~ msgstr "Nelze najít WiFi síť"

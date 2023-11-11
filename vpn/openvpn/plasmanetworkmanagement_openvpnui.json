@@ -87,7 +87,6 @@
         "Description[zh_TW]": "與 OpenVPN 伺服器相容",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_openvpnui",
         "License": "GPL",
         "Name": "OpenVPN",
         "Name[ar]": "اوبن في بي ان",

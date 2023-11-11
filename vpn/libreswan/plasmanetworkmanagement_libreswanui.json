@@ -86,7 +86,6 @@
         "Description[zh_TW]": "基於 IPsec, IKEv1, IKEv2 的 VPN",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_libreswanui",
         "License": "GPL",
         "Name": "IPsec based VPN (libreswan)",
         "Name[ar]": "شبكة خاصة افتراضية بالاعتماد على IPsec بواسطة (libreswan)",

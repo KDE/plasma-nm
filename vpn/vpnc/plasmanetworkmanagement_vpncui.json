@@ -87,7 +87,6 @@
         "Description[zh_TW]": "與多種 Cisco, Juniper, Netscreen 與 Sonicwall IPsec 為基底的 VPN 閘道相容",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_vpncui",
         "License": "GPL",
         "Name": "Cisco Compatible VPN (vpnc)",
         "Name[ar]": "شبكات خاصة متوافقة مع سيسكو بواسطة (vpnc)",

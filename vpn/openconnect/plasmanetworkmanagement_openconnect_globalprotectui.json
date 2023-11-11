@@ -86,7 +86,6 @@
         "Description[zh_TW]": "與 PAN GlobalProtect SSL VPN 相容",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_openconnect_globalprotectui",
         "License": "GPL",
         "Name": "PAN Global Protect (openconnect)",
         "Name[ar]": "خادم PAN Global Protect بواسطة (openconnect)",

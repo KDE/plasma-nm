@@ -81,7 +81,6 @@
         "Description[zh_TW]": "與 Array Networks SSL VPN 相容",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_openconnect_arrayui",
         "License": "GPL",
         "Name": "Array Networks Compatible VPN (openconnect)",
         "Name[az]": "Array Networks ilə uyğun VPN (openconnect)",

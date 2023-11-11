@@ -86,7 +86,6 @@
         "Description[zh_TW]": "透過 DNS 的通道連線",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_iodineui",
         "License": "GPL",
         "Name": "Iodine DNS tunnel (iodine)",
         "Name[ar]": "نفق ايوداين (iodine) لـDNS",

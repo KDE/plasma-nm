@@ -87,7 +87,6 @@
         "Description[zh_TW]": "與微軟和其他 PPTP VPN 伺服器相容",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_pptpui",
         "License": "GPL",
         "Name": "Point-to-Point Tunneling Protocol (PPTP)",
         "Name[ar]": "ميفاق النقطة لنقطة النفقي (PPTP)",

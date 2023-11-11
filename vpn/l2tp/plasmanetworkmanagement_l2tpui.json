@@ -86,7 +86,6 @@
         "Description[zh_TW]": "與 L2TP VPN 伺服器相容",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_l2tpui",
         "License": "GPL",
         "Name": "Layer 2 Tunneling Protocol (L2TP)",
         "Name[ar]": "ميفاق تغليف ذو طبقتين (L2TP)",

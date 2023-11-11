@@ -81,7 +81,6 @@
         "Description[zh_TW]": "與 F5 BIG-IP SSL VPN 相容",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_openconnect_f5ui",
         "License": "GPL",
         "Name": "F5 BIG-IP Compatible VPN (openconnect)",
         "Name[az]": "F5 BIG-IP ilə uyğun VPN (openconnect)",

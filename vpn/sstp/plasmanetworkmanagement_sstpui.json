@@ -86,7 +86,6 @@
         "Description[zh_TW]": "與微軟和其他 SSTP VPN 伺服器相容",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_sstpui",
         "License": "GPL",
         "Name": "Secure Socket Tunneling Protocol (SSTP)",
         "Name[ar]": "ميفاق المقبس الآمن النفقي (SSTP)",

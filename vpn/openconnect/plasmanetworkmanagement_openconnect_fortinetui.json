@@ -81,7 +81,6 @@
         "Description[zh_TW]": "與 Fortinet VPN 相容",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_openconnect_fortinetui",
         "License": "GPL",
         "Name": "Fortinet Compatible VPN (openconnect)",
         "Name[az]": "Fortinet ilə uyğun VPN (openconnect)",

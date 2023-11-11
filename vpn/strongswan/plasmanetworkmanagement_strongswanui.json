@@ -87,7 +87,6 @@
         "Description[zh_TW]": "基於 IPsec, IKEv1, IKEv2 的 VPN",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_strongswanui",
         "License": "GPL",
         "Name": "IPsec based VPN (strongswan)",
         "Name[ar]": "شبكة خاصة افتراضية بالاعتماد على IPsec بواسطة (strongswan)",

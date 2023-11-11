@@ -87,7 +87,6 @@
         "Description[zh_TW]": "Fortinet SSLVPN 虛擬私人網路",
         "EnabledByDefault": false,
         "Icon": "",
-        "Id": "plasmanetworkmanagement_fortisslvpnui",
         "License": "GPL",
         "Name": "Fortinet SSLVPN (fortisslvpn)",
         "Name[ar]": "فورت نت SSLVPN (fortisslvpn)",

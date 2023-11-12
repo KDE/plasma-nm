@@ -1,6 +1,6 @@
 # translation of plasmanetworkmanagement_openconnectui.po to Slovak
 # Roman Paholík <wizzardsk@gmail.com>, 2014, 2015, 2017, 2019.
-# Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021.
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2023 Matej Mrenica <matejm98mthw@gmail.com>
 # Dusan Kazik <prescott66@gmail.com>, 2020.
 # Ferdinand Galko <galko.ferdinand@gmail.com>, 2023.
 msgid ""
@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-22 02:10+0000\n"
-"PO-Revision-Date: 2023-03-25 14:00+0100\n"
-"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
-"Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
+"PO-Revision-Date: 2023-11-11 15:35+0100\n"
+"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: openconnectauth.cpp:322
@@ -266,10 +266,9 @@ msgstr "Apple iOS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnectprop.ui:224
-#, fuzzy, kde-format
-#| msgid "Reported OS:"
+#, kde-format
 msgid "Reported Version"
-msgstr "Nahlásený OS:"
+msgstr "Nahlásená verzia"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: openconnectprop.ui:234

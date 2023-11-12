@@ -1,7 +1,7 @@
 # translation of plasmanetworkmanagement-libs.po to Slovak
 # Roman Paholík <wizzardsk@gmail.com>, 2014, 2015, 2016, 2017, 2019.
 # Mthw <jari_45@hotmail.com>, 2018.
-# Matej Mrenica <matejm98mthw@gmail.com>, 2019, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023 Matej Mrenica <matejm98mthw@gmail.com>
 # Dusan Kazik <prescott66@gmail.com>, 2020.
 # Ferdinand Galko <galko.ferdinand@gmail.com>, 2023.
 msgid ""
@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-11-05 01:09+0000\n"
-"PO-Revision-Date: 2023-03-26 19:10+0200\n"
-"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
-"Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
+"PO-Revision-Date: 2023-11-11 15:32+0100\n"
+"Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: editor/connectioneditorbase.cpp:198
@@ -3572,8 +3572,7 @@ msgid "MAC Address"
 msgstr "MAC adresa"
 
 #: models/networkmodelitem.cpp:642
-#, fuzzy, kde-format
-#| msgid "Access point (SSID)"
+#, kde-format
 msgid "Access Point (SSID)"
 msgstr "Prístupový bod (SSID)"
 
@@ -3583,21 +3582,18 @@ msgid "Signal Strength"
 msgstr "Sila signálu"
 
 #: models/networkmodelitem.cpp:644
-#, fuzzy, kde-format
-#| msgid "%1%"
+#, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
 
 #: models/networkmodelitem.cpp:646
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
 msgstr "Typ zabezpečenia"
 
 #: models/networkmodelitem.cpp:649
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
 msgstr "Rýchlosť pripojenia"
 
@@ -3632,8 +3628,7 @@ msgid "Access Technology"
 msgstr "Prístupová technológia"
 
 #: models/networkmodelitem.cpp:682
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
 msgstr "Zásuvný modul siete VPN"
 

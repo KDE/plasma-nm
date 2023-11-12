@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2023-05-30 23:11+0300\n"
+"PO-Revision-Date: 2023-11-11 23:22+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 23.11.70\n"
 "X-POOTLE-MTIME: 1413102236.000000\n"
 
 #: declarative/networkstatus.cpp:104
@@ -363,7 +363,7 @@ msgstr "Adres"
 #, kde-format
 msgctxt "Header text for IPv4 netmask"
 msgid "Netmask"
-msgstr "Ağ maskesi"
+msgstr "Ağ Maskesi"
 
 #: editor/settings/ipv4widget.cpp:60 editor/widgets/ipv4routeswidget.cpp:29
 #, kde-format
@@ -422,7 +422,7 @@ msgstr " ms"
 #: editor/settings/ipv4widget.cpp:444
 #, kde-format
 msgid "DAD timeout:"
-msgstr "DAD zaman aşımı::"
+msgstr "DAD zaman aşımı:"
 
 #: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:405
 #, kde-format
@@ -644,7 +644,7 @@ msgstr "Anonim kimlik:"
 #: editor/settings/ui/802-1x.ui:358
 #, kde-format
 msgid "Automatic PAC provisioning"
-msgstr "Otomatik PAC sağlama"
+msgstr "Kendiliğinden PAC sağlama"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:375
@@ -728,7 +728,7 @@ msgstr "PEAP sürümü:"
 #, kde-format
 msgctxt "PEAP version"
 msgid "Automatic"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:640
@@ -903,7 +903,7 @@ msgstr "Sayı:"
 #: editor/settings/ui/connectionwidget.ui:17
 #, kde-format
 msgid "Connect automatically with priority"
-msgstr "Otomatik olarak öncelikli bağlan"
+msgstr "Kendiliğinden öncelikli bağlan"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
@@ -915,10 +915,10 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
-"Eğer otomatik bağlantı ayarlanmışsa daha yüksek öncelikli bağlantılar tercih "
-"edilecektir. Öntanımlı değer 0'dır.\n"
+"Eğer Kendiliğinden bağlantı ayarlanırsa daha yüksek öncelikli bağlantılar "
+"tercih edilir. Öntanımlı değer 0'dır.\n"
 "Daha yüksek sayı daha yüksek öncelik anlamına gelir. Negatif sayı kullanımı "
-"Öntanımlıdan daha düşük önceliği tarif etmek için kullanılabilir.\n"
+"öntanımlıdan daha düşük önceliği tarif etmek için kullanılabilir.\n"
 "           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
@@ -955,7 +955,7 @@ msgstr "Gelişmiş…"
 #: editor/settings/ui/connectionwidget.ui:81
 #, kde-format
 msgid "Automatically connect to VPN"
-msgstr "VPN'e otomatik olarak bağlan"
+msgstr "VPN'e kendiliğinden bağlan"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:101
@@ -986,7 +986,7 @@ msgstr ""
 #, kde-format
 msgctxt "Item in the Metered: list"
 msgid "Automatic"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:165
@@ -1069,7 +1069,7 @@ msgstr "MTU:"
 #, kde-format
 msgctxt "MTU:"
 msgid "Automatic"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:83
@@ -1097,13 +1097,13 @@ msgstr "Yöntem:"
 #, kde-format
 msgctxt "Method:"
 msgid "Automatic"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
 #, kde-format
 msgid "Automatic (Only addresses)"
-msgstr "Otomatik (Yalnızca adresler)"
+msgstr "Kendiliğinden (Yalnızca adresler)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
@@ -1305,7 +1305,7 @@ msgstr "Etkin (geçici adresleri tercih et)"
 #: editor/settings/ui/ipv6.ui:237
 #, kde-format
 msgid "Automatic (Only DHCP)"
-msgstr "Otomatik (Yalnızca DHCP)"
+msgstr "Kendiliğinden (Yalnızca DHCP)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:252
@@ -1538,7 +1538,7 @@ msgstr ""
 #, kde-format
 msgctxt "Band:"
 msgid "Automatic"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:146
@@ -1656,7 +1656,7 @@ msgstr "WPA3 Kişisel"
 #: editor/settings/ui/wifisecurity.ui:68
 #, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA3 Kurumsal 192-bit"
+msgstr "WPA3 Kurumsal 192 bit"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -1674,7 +1674,7 @@ msgstr "Anahtar:"
 #: editor/settings/ui/wifisecurity.ui:117
 #, kde-format
 msgid "WEP index:"
-msgstr "WEP dizini:"
+msgstr "WEP indeksi:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:134
@@ -1764,7 +1764,7 @@ msgstr "Hız:"
 #: editor/settings/ui/wiredconnectionwidget.ui:132
 #, kde-format
 msgid "Duplex:"
-msgstr "Çift Yönlü:"
+msgstr "Çift yönlü:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:151
@@ -1802,10 +1802,10 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
-"Aygıt bağlantı pazarlığı. Eğer 'Elle' seçilmişse 'Hız' ve 'Duplex' "
+"Aygıt bağlantı pazarlığı. Eğer 'Elle' seçilmişse 'Hız' ve 'Çift Yönlü' "
 "değerleri\n"
 "aygıt uyumluluğu denetlenmeden zorlanacaktır. Emin değilseniz 'Yok Say'ı\n"
-"bırakın ve 'Otomatik'i seçin."
+"bırakın ve 'Kendiliğinden'i seçin."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -1818,7 +1818,7 @@ msgstr "Yok Say"
 #, kde-format
 msgctxt "Link negotiation:"
 msgid "Automatic"
-msgstr "Otomatik"
+msgstr "Kendiliğinden"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:202
@@ -1884,7 +1884,7 @@ msgstr "100 Gb/sn"
 #: editor/settings/ui/wiredsecurity.ui:17
 #, kde-format
 msgid "Use 802.1x security for this connection"
-msgstr "Bu bağlantı için 802.1x güvenliği kullan"
+msgstr "Bu bağlantı için 802.1x güvenliğini kullan"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
 #: editor/settings/ui/wireguardinterfacewidget.ui:14
@@ -1922,7 +1922,7 @@ msgid ""
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
 "İsteğe bağlı.\n"
-"Dinlenecek kapı numarası. 'Otomatik' seçilirse rastgele seçilir."
+"Dinlenecek kapı numarası. 'Kendiliğinden' seçilirse rastgele seçilir."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:57
@@ -1958,14 +1958,14 @@ msgstr ""
 "İsteğe bağlı.\n"
 "Belirtilmezse MTU son uç adreslerinden veya sistem öntanımlı\n"
 "rotasından oluşturulur; genelde de düzgün bir seçimdir. Ancak;\n"
-"bir MTU'yu elle belirtmek ve bu otomatik keşfi devre dışı bırakmak\n"
-"için bu değer açıkça belirtilmelidir."
+"bir MTU'yu elle belirtmek ve bu kendiliğinden keşfi devre dışı\n"
+"bırakmak için bu değer açıkça belirtilmelidir."
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:93
 #, kde-format
 msgid "Autoroute peers:"
-msgstr "Otomatik rota eşleri:"
+msgstr "Kendiliğinden rota eşleri:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:101
@@ -1974,7 +1974,7 @@ msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
 msgstr ""
-"Eşlerin izin verilen IP erimleri için otomatik olarak rota\n"
+"Eşlerin izin verilen IP erimleri için kendiliğinden olarak rota\n"
 "eklenip eklenmeyeceği."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
@@ -3296,14 +3296,14 @@ msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
 "specified above are used"
 msgstr ""
-"Etkinleştirilirse otomatik yapılandırılan rotalar yerine yalnızca yukarıda "
-"belirtilen rotalar kullanılır"
+"Etkinleştirilirse kendiliğinden yapılandırılan rotalar yerine yalnızca "
+"yukarıda belirtilen rotalar kullanılır"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
 #, kde-format
 msgid "Ignore automatically obtained routes"
-msgstr "Otomatik olarak elde edilen rotaları yok say"
+msgstr "Kendiliğinden elde edilen rotaları yok say"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
 #: editor/widgets/ui/ipv6routes.ui:20

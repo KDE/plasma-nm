@@ -226,7 +226,7 @@ msgstr "Secret de redirecció perfecte (PFS):"
 #: vpncadvanced.ui:167
 #, kde-format
 msgid "Diffie-Hellman group to use for PFS."
-msgstr "El grup Diffie-Hellman que s'utilitzarà per al PFS."
+msgstr "El grup Diffie-Hellman que s'utilitzarà per a PFS."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: vpncadvanced.ui:174

@@ -79,7 +79,7 @@ PlasmaExtras.ExpandableListItem {
         }
     }
 
-    contextualActionsModel: [
+    contextualActions: [
         Action {
             enabled: Uuid && Type === PlasmaNM.Enums.Wireless && passwordIsStatic
             text: i18n("Show Network's QR Code")

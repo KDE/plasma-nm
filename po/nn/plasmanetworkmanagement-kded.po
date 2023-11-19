@@ -758,8 +758,3 @@ msgstr "Tast inn ny PIN-kode igjen:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Feil ved autentisering til %1. Feil passord?"
-
-#~ msgctxt ""
-#~ "@info:status Notification when the device failed due to SsidNotFound"
-#~ msgid "The WiFi network could not be found"
-#~ msgstr "Fann ikkje WiFi-nettverket"

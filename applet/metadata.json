@@ -153,8 +153,8 @@
         "Name[zh_TW]": "網路",
         "Website": "https://projects.kde.org/projects/kde/workspace/plasma-nm"
     },
-    "X-Plasma-API-Minimum-Version": "6.0",
     "X-KDE-Keywords": "network,internet,ethernet,wireless,wifi,wlan,vpn",
+    "X-Plasma-API-Minimum-Version": "6.0",
     "X-Plasma-DBusActivationService": "org.freedesktop.NetworkManager",
     "X-Plasma-NotificationAreaCategory": "Hardware"
 }

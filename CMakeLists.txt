@@ -74,7 +74,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
     ModemManagerQt
 )
 
-find_package(KF6Plasma ${PROJECT_VERSION} REQUIRED)
+find_package(Plasma ${PROJECT_VERSION} REQUIRED)
 
 ecm_find_qmlmodule(org.kde.prison 1.0)
 

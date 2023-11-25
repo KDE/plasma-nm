@@ -28,7 +28,7 @@ Dependencies:
     'frameworks/kcmutils': '@latest-kf6'
     'third-party/qcoro': '@latest'
     'frameworks/ksvg': '@latest-kf6'
-    'plasma/plasma-framework': '@same'
+    'plasma/libplasma': '@same'
 Options:
   require-passing-tests-on: [ 'Linux', 'FreeBSD']
   cmake-options: ' -DBUILD_MOBILE=ON'

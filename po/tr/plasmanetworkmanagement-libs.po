@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2023-11-11 23:22+0300\n"
+"PO-Revision-Date: 2023-11-25 19:58+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1811,7 +1811,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:192
 #, kde-format
 msgid "Ignore"
-msgstr "Yok Say"
+msgstr "Yok say"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:197
@@ -1830,7 +1830,7 @@ msgstr "Elle"
 #: editor/settings/ui/wiredconnectionwidget.ui:219
 #, kde-format
 msgid "Request that the device use only the specified speed."
-msgstr "Aygıtın yalnızca belirtilen hızı kullanmasını iste."
+msgstr "Aygıtın yalnızca belirtilen hızı kullanmasını isteyin."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:226
@@ -1922,7 +1922,7 @@ msgid ""
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
 "İsteğe bağlı.\n"
-"Dinlenecek kapı numarası. 'Kendiliğinden' seçilirse rastgele seçilir."
+"Dinlenecek kapı numarası. 'Kendiliğinden' ise rastgele seçilir."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:57
@@ -1941,8 +1941,8 @@ msgid ""
 msgstr ""
 "İsteğe bağlı.\n"
 "Giden paketler için bir fwmark. 0 veya 'off' olarak ayarlanırsa\n"
-"bu seçenek devre dışı bırakılır. 0x ile öneklenirse onaltılık olarak\n"
-"da belirtilebilir."
+"bu seçenek devre dışı bırakılır. 0x ile öneklenirse onaltılık\n"
+"olarak da belirtilebilir."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:86
@@ -2047,9 +2047,10 @@ msgid ""
 "            present, Endpoint port must also be set."
 msgstr ""
 "İsteğe bağlı.\n"
-"            Bağlantı için bir son uç. Bir IPv4 veya IPv6 adresi veya bir\n"
-"            FQDN (tam bir alan adı, örn. abc.com) olabilir. Eğer varsa\n"
-"            Son Uç Kapısı da ayarlanmış olmalıdır."
+"            Bağlantı için bir son uç. Bir IPv4 veya IPv6\n"
+"            adresi veya bir FQDN (tam bir alan adı, örn.\n"
+"            abc.com) olabilir. Eğer varsa Son Uç Kapısı da\n"
+"            ayarlanmış olmalıdır."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
@@ -2066,7 +2067,7 @@ msgid ""
 "            Address must also be set."
 msgstr ""
 "İsteğe bağlı.\n"
-"            Bir son ucun kapı numarası. Varsa Son Uç Adresi de "
+"            Bir son ucun kapı numarası. Varsa Son Uç Adresi de             "
 "ayarlanmalıdır."
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
@@ -2085,11 +2086,11 @@ msgid ""
 "            cryptography to be mixed into the already existing\n"
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
-"Optional.\n"
-"            wg genpsk tarafından oluşturulan bir base64 ön paylaşımlı "
-"anahtar.\n"
-"            Bu seçenek, halihazırda var olar genel anahtar şifrelemesine ek\n"
-"            olarak ek bir simetrik anahtar şifrelemesi ekler."
+"İsteğe bağlı.\n"
+"            wg genpsk tarafından oluşturulan bir base64 ön\n"
+"            paylaşımlı anahtar. Bu seçenek, halihazırda var\n"
+"            olan genel anahtar şifrelemesine ek olarak ek bir\n"
+"            simetrik anahtar şifrelemesi ekler."
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
@@ -2118,7 +2119,7 @@ msgstr ""
 "            Bir NAT eşlemlemesini geçerli tutmak veya güvenlik duvarını\n"
 "            çalışır tutmak için gönderilecek kimlik doğrulanmış paketin\n"
 "            ne kadar aralıklarla gönderileceğini belirtmek için kullanılan\n"
-"            1 ve 65535 dahil olmak üzere saniye aralığı, of\n"
+"            1 ve 65535 dahil olmak üzere saniye aralığı.\n"
 "            Örneğin, arabirim çok az trafik gönderiyorsa; ancak herhangi\n"
 "            bir zamanda bir eşten trafik alabilirse ve NAT arkasındaysa\n"
 "            arabirim 25 saniyelik düzenli bir yaşama bağlı tutma işleminden\n"

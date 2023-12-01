@@ -20,7 +20,7 @@ ColumnLayout {
 
     Item {
         Layout.fillWidth: true
-        implicitHeight: plotter.height + speedMetrics.height
+        implicitHeight: plotter.height + metricsLabel.implicitHeight
 
         QuickChartsControls.AxisLabels {
             anchors {
@@ -33,7 +33,7 @@ ColumnLayout {
             direction: QuickChartsControls.AxisLabels.VerticalBottomTop
             delegate: PlasmaComponents3.Label {
                 text: KCoreAddons.Format.formatByteSize(QuickChartsControls.AxisLabels.label) + i18n("/s")
-                font: Kirigami.Theme.smallFont
+                font: metricsLabel.font
             }
             source: QuickCharts.ChartAxisSource {
                 chart: plotter
@@ -54,11 +54,11 @@ ColumnLayout {
             id: plotter
             anchors {
                 left: parent.left
-                leftMargin: speedMetrics.width + Kirigami.Units.smallSpacing
+                leftMargin: metricsLabel.implicitWidth + Kirigami.Units.smallSpacing
                 right: parent.right
                 top: parent.top
                 // Align plotter lines with labels.
-                topMargin: speedMetrics.height / 2 + Kirigami.Units.smallSpacing
+                topMargin: metricsLabel.implicitHeight / 2 + Kirigami.Units.smallSpacing
             }
             height: Kirigami.Units.gridUnit * 8
             interpolate: true
@@ -99,8 +99,11 @@ ColumnLayout {
                 itemCount: 2
             }
         }
-        TextMetrics {
-            id: speedMetrics
+        // Note: TextMetrics might be using a different renderType by default,
+        // so we need a Label instance anyway.
+        PlasmaComponents3.Label {
+            id: metricsLabel
+            visible: false
             font: Kirigami.Theme.smallFont
             // Measure 888.8 KiB/s
             text: KCoreAddons.Format.formatByteSize(910131) + i18n("/s")

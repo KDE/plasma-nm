@@ -19,16 +19,18 @@ ColumnLayout {
     spacing: Kirigami.Units.largeSpacing
 
     Item {
+        Layout.leftMargin: Kirigami.Units.smallSpacing
         Layout.fillWidth: true
         implicitHeight: plotter.height + metricsLabel.implicitHeight
 
         QuickChartsControls.AxisLabels {
+            id: verticalAxisLabels
             anchors {
-                right: plotter.left
-                rightMargin: Kirigami.Units.smallSpacing
+                left: parent.left
                 top: plotter.top
                 bottom: plotter.bottom
             }
+            width: metricsLabel.implicitWidth
             constrainToBounds: false
             direction: QuickChartsControls.AxisLabels.VerticalBottomTop
             delegate: PlasmaComponents3.Label {
@@ -53,12 +55,12 @@ ColumnLayout {
         QuickCharts.LineChart {
             id: plotter
             anchors {
-                left: parent.left
-                leftMargin: metricsLabel.implicitWidth + Kirigami.Units.smallSpacing
+                left: verticalAxisLabels.right
+                leftMargin: Kirigami.Units.smallSpacing
                 right: parent.right
                 top: parent.top
                 // Align plotter lines with labels.
-                topMargin: metricsLabel.implicitHeight / 2 + Kirigami.Units.smallSpacing
+                topMargin: Math.round(metricsLabel.implicitHeight / 2) + Kirigami.Units.smallSpacing
             }
             height: Kirigami.Units.gridUnit * 8
             interpolate: true

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-12-02 01:37+0000\n"
 "PO-Revision-Date: 2023-07-21 18:55+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -206,17 +206,17 @@ msgstr "Krei Hotspot"
 msgid "Configure network connections…"
 msgstr "Agordi retajn konektojn…"
 
-#: contents/ui/TrafficMonitor.qml:35 contents/ui/TrafficMonitor.qml:106
+#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:87
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr "Alŝuti"
 
-#: contents/ui/TrafficMonitor.qml:87
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr "Elŝuti"

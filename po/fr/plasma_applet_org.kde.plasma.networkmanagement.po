@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-12-02 01:37+0000\n"
 "PO-Revision-Date: 2023-08-21 14:14+0200\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
 "Language-Team: fr\n"
@@ -216,17 +216,17 @@ msgstr "Créer un point d'accès"
 msgid "Configure network connections…"
 msgstr "Configurer les connexions réseau…"
 
-#: contents/ui/TrafficMonitor.qml:35 contents/ui/TrafficMonitor.qml:106
+#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
 msgstr " / s"
 
-#: contents/ui/TrafficMonitor.qml:87
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr "Montant"
 
-#: contents/ui/TrafficMonitor.qml:87
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr "Descendant"

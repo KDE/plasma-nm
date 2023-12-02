@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-12-02 01:37+0000\n"
 "PO-Revision-Date: 2023-08-13 16:38+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -209,17 +209,17 @@ msgstr "Hotspot erstellen"
 msgid "Configure network connections…"
 msgstr "Netzwerkverbindungen bearbeiten ..."
 
-#: contents/ui/TrafficMonitor.qml:35 contents/ui/TrafficMonitor.qml:106
+#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:87
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr "Hochladen"
 
-#: contents/ui/TrafficMonitor.qml:87
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr "Herunterladen"

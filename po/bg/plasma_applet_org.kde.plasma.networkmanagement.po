@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-12-02 01:37+0000\n"
 "PO-Revision-Date: 2023-07-27 14:24+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: \n"
@@ -211,17 +211,17 @@ msgstr "Създаване на точка за достъп"
 msgid "Configure network connections…"
 msgstr "Конфигуриране на мрежови връзки…"
 
-#: contents/ui/TrafficMonitor.qml:35 contents/ui/TrafficMonitor.qml:106
+#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:87
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr "Качване"
 
-#: contents/ui/TrafficMonitor.qml:87
+#: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr "Изтегляне"

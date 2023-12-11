@@ -87,7 +87,7 @@ void PasswordDialog::initializeUi()
             qCWarning(PLASMA_NM_KDED_LOG) << "list of secrets is empty!!!";
             m_hasError = true;
             m_error = SecretAgent::InternalError;
-            m_errorMessage = QLatin1String("No secrets were requested");
+            m_errorMessage = i18nc("@info:status 'secrets' means the authentication needed for a VPN", "No secrets were requested");
             return;
         }
 
@@ -119,7 +119,7 @@ void PasswordDialog::initializeUi()
             qCWarning(PLASMA_NM_KDED_LOG) << "Missing VPN setting!";
             m_hasError = true;
             m_error = SecretAgent::InternalError;
-            m_errorMessage = QLatin1String("VPN settings are missing");
+            m_errorMessage = i18nc("@info:status", "VPN settings are missing");
         } else {
             const QString serviceType = vpnSetting->serviceType();
             const auto result = VpnUiPlugin::loadPluginForType(this, serviceType);

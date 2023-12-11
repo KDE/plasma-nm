@@ -96,16 +96,15 @@ void PasswordDialog::initializeUi()
         if (wifi && (connectionType == Setting::WirelessSecurity || connectionType == Setting::Security8021x)) {
             const QString ssid = QString::fromUtf8(wifi->ssid());
             if (m_flags & NetworkManager::SecretAgent::RequestNew) {
-                m_ui->labelText->setText(i18n("The provided password seems incorrect. Provide the password for the wireless network '%1':", ssid));
+                m_ui->labelText->setText(i18n("Incorrect password for the wireless network \"%1\". Please try again.", ssid));
             } else {
-                m_ui->labelText->setText(i18n("Provide the password for the wireless network '%1':", ssid));
+                m_ui->labelText->setText(i18n("Enter the password for the wireless network \"%1\":", ssid));
             }
         } else {
             if (m_flags & NetworkManager::SecretAgent::RequestNew) {
-                m_ui->labelText->setText(
-                    i18n("The provided password seems incorrect. Provide the password for the connection '%1':", m_connectionSettings->id()));
+                m_ui->labelText->setText(i18n("Incorrect password for the connection \"%1\". Please try again.", m_connectionSettings->id()));
             } else {
-                m_ui->labelText->setText(i18n("Provide the password for the connection '%1':", m_connectionSettings->id()));
+                m_ui->labelText->setText(i18n("Enter the password for the connection \"%1\":", m_connectionSettings->id()));
             }
         }
 
@@ -132,7 +131,7 @@ void PasswordDialog::initializeUi()
                 auto layout = new QVBoxLayout();
                 layout->addWidget(m_vpnWidget);
                 m_ui->vpnWidget->setLayout(layout);
-                m_ui->labelText->setText(i18n("Provide the secrets for the VPN connection '%1':", m_connectionSettings->id()));
+                m_ui->labelText->setText(i18n("Provide the secrets for the VPN connection \"%1\":", m_connectionSettings->id()));
                 setWindowTitle(i18n("VPN secrets (%1) dialog", shortName));
 
                 // Hide generic password field and OK button in case of openconnect dialog

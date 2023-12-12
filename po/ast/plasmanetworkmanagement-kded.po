@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-12-12 01:38+0000\n"
 "PO-Revision-Date: 2023-10-25 11:31+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -544,27 +544,53 @@ msgstr ""
 msgid "Authenticate %1"
 msgstr ""
 
-#: passworddialog.cpp:98
+#: passworddialog.cpp:90
+#, kde-format
+msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
+msgid "No secrets were requested"
+msgstr ""
+
+#: passworddialog.cpp:99
+#, kde-format
+msgid ""
+"The provided password seems incorrect. Provide the password for the wireless "
+"network '%1':"
+msgstr ""
+
+#: passworddialog.cpp:101
 #, kde-format
 msgid "Provide the password for the wireless network '%1':"
 msgstr ""
 
-#: passworddialog.cpp:100
+#: passworddialog.cpp:106
+#, kde-format
+msgid ""
+"The provided password seems incorrect. Provide the password for the "
+"connection '%1':"
+msgstr ""
+
+#: passworddialog.cpp:108
 #, kde-format
 msgid "Provide the password for the connection '%1':"
 msgstr ""
 
-#: passworddialog.cpp:106
+#: passworddialog.cpp:115
 #, kde-format
 msgid "%1 password dialog"
 msgstr ""
 
-#: passworddialog.cpp:126
+#: passworddialog.cpp:122
+#, kde-format
+msgctxt "@info:status"
+msgid "VPN settings are missing"
+msgstr ""
+
+#: passworddialog.cpp:135
 #, kde-format
 msgid "Provide the secrets for the VPN connection '%1':"
 msgstr ""
 
-#: passworddialog.cpp:127
+#: passworddialog.cpp:136
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr ""

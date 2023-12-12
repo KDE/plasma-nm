@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-12-12 01:38+0000\n"
 "PO-Revision-Date: 2021-10-30 10:49+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -547,27 +547,58 @@ msgstr "Kompjuter njeje hižo ze syću zwjazany."
 msgid "Authenticate %1"
 msgstr ""
 
-#: passworddialog.cpp:98
+#: passworddialog.cpp:90
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to NoSecretsReason"
+#| msgid "No secrets were provided"
+msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
+msgid "No secrets were requested"
+msgstr "Žane potajnstwa zdźělene"
+
+#: passworddialog.cpp:99
+#, fuzzy, kde-format
+#| msgid "Provide the password for the wireless network '%1':"
+msgid ""
+"The provided password seems incorrect. Provide the password for the wireless "
+"network '%1':"
+msgstr "Zapodajće hesło za bjezkablowu syć '%1':"
+
+#: passworddialog.cpp:101
 #, kde-format
 msgid "Provide the password for the wireless network '%1':"
 msgstr "Zapodajće hesło za bjezkablowu syć '%1':"
 
-#: passworddialog.cpp:100
+#: passworddialog.cpp:106
+#, fuzzy, kde-format
+#| msgid "Provide the password for the connection '%1':"
+msgid ""
+"The provided password seems incorrect. Provide the password for the "
+"connection '%1':"
+msgstr "Zapodajće hesło za zwisk '%1':"
+
+#: passworddialog.cpp:108
 #, kde-format
 msgid "Provide the password for the connection '%1':"
 msgstr "Zapodajće hesło za zwisk '%1':"
 
-#: passworddialog.cpp:106
+#: passworddialog.cpp:115
 #, kde-format
 msgid "%1 password dialog"
 msgstr "%1 - dialog za hesło"
 
-#: passworddialog.cpp:126
+#: passworddialog.cpp:122
+#, kde-format
+msgctxt "@info:status"
+msgid "VPN settings are missing"
+msgstr ""
+
+#: passworddialog.cpp:135
 #, kde-format
 msgid "Provide the secrets for the VPN connection '%1':"
 msgstr "Zapodajće potajnstwa za VPN-zwisk '%1':"
 
-#: passworddialog.cpp:127
+#: passworddialog.cpp:136
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr "Dialog za VPN-potajnstwa (%1)"

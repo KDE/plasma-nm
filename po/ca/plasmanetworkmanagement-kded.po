@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-09 01:39+0000\n"
+"POT-Creation-Date: 2023-12-12 01:38+0000\n"
 "PO-Revision-Date: 2022-12-07 14:51+0100\n"
 "Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -555,27 +555,58 @@ msgstr "Ja no està connectat a cap xarxa."
 msgid "Authenticate %1"
 msgstr "Autentica %1"
 
-#: passworddialog.cpp:98
+#: passworddialog.cpp:90
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to NoSecretsReason"
+#| msgid "No secrets were provided"
+msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
+msgid "No secrets were requested"
+msgstr "No s'han proporcionat secrets"
+
+#: passworddialog.cpp:99
+#, fuzzy, kde-format
+#| msgid "Provide the password for the wireless network '%1':"
+msgid ""
+"The provided password seems incorrect. Provide the password for the wireless "
+"network '%1':"
+msgstr "Proporcioneu la contrasenya per a la xarxa sense fil «%1»:"
+
+#: passworddialog.cpp:101
 #, kde-format
 msgid "Provide the password for the wireless network '%1':"
 msgstr "Proporcioneu la contrasenya per a la xarxa sense fil «%1»:"
 
-#: passworddialog.cpp:100
+#: passworddialog.cpp:106
+#, fuzzy, kde-format
+#| msgid "Provide the password for the connection '%1':"
+msgid ""
+"The provided password seems incorrect. Provide the password for the "
+"connection '%1':"
+msgstr "Proporcioneu la contrasenya per a la connexió «%1»:"
+
+#: passworddialog.cpp:108
 #, kde-format
 msgid "Provide the password for the connection '%1':"
 msgstr "Proporcioneu la contrasenya per a la connexió «%1»:"
 
-#: passworddialog.cpp:106
+#: passworddialog.cpp:115
 #, kde-format
 msgid "%1 password dialog"
 msgstr "Diàleg de contrasenya %1"
 
-#: passworddialog.cpp:126
+#: passworddialog.cpp:122
+#, kde-format
+msgctxt "@info:status"
+msgid "VPN settings are missing"
+msgstr ""
+
+#: passworddialog.cpp:135
 #, kde-format
 msgid "Provide the secrets for the VPN connection '%1':"
 msgstr "Proporcioneu els secrets per a la connexió VPN «%1»:"
 
-#: passworddialog.cpp:127
+#: passworddialog.cpp:136
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr "Diàleg de secrets de VPN (%1)"

@@ -1,17 +1,17 @@
 # Translation of plasmanetworkmanagement-kded.po to Catalan
-# Copyright (C) 2014-2022 This_file_is_part_of_KDE
+# Copyright (C) 2014-2023 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2017, 2020, 2022.
-# Josep M. Ferrer <txemaq@gmail.com>, 2015, 2016, 2017, 2019, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
-"PO-Revision-Date: 2022-12-07 14:51+0100\n"
-"Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
+"POT-Creation-Date: 2023-12-13 01:35+0000\n"
+"PO-Revision-Date: 2023-12-12 11:03+0100\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Kate 22.08.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -556,57 +556,53 @@ msgid "Authenticate %1"
 msgstr "Autentica %1"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "No s'han proporcionat secrets"
+msgstr "No s'han sol·licitat secrets"
 
 #: passworddialog.cpp:99
 #, fuzzy, kde-format
 #| msgid "Provide the password for the wireless network '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the wireless "
-"network '%1':"
+msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr "Proporcioneu la contrasenya per a la xarxa sense fil «%1»:"
 
 #: passworddialog.cpp:101
-#, kde-format
-msgid "Provide the password for the wireless network '%1':"
+#, fuzzy, kde-format
+#| msgid "Provide the password for the wireless network '%1':"
+msgid "Enter the password for the wireless network \"%1\":"
 msgstr "Proporcioneu la contrasenya per a la xarxa sense fil «%1»:"
 
-#: passworddialog.cpp:106
+#: passworddialog.cpp:105
 #, fuzzy, kde-format
 #| msgid "Provide the password for the connection '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the "
-"connection '%1':"
+msgid "Incorrect password for the connection \"%1\". Please try again."
 msgstr "Proporcioneu la contrasenya per a la connexió «%1»:"
 
-#: passworddialog.cpp:108
-#, kde-format
-msgid "Provide the password for the connection '%1':"
+#: passworddialog.cpp:107
+#, fuzzy, kde-format
+#| msgid "Provide the password for the connection '%1':"
+msgid "Enter the password for the connection \"%1\":"
 msgstr "Proporcioneu la contrasenya per a la connexió «%1»:"
 
-#: passworddialog.cpp:115
+#: passworddialog.cpp:114
 #, kde-format
 msgid "%1 password dialog"
 msgstr "Diàleg de contrasenya %1"
 
-#: passworddialog.cpp:122
+#: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "Manquen els paràmetres de la VPN"
 
-#: passworddialog.cpp:135
-#, kde-format
-msgid "Provide the secrets for the VPN connection '%1':"
+#: passworddialog.cpp:134
+#, fuzzy, kde-format
+#| msgid "Provide the secrets for the VPN connection '%1':"
+msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Proporcioneu els secrets per a la connexió VPN «%1»:"
 
-#: passworddialog.cpp:136
+#: passworddialog.cpp:135
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr "Diàleg de secrets de VPN (%1)"
@@ -797,7 +793,18 @@ msgstr "Torneu a introduir el codi PIN:"
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Ha fallat l'autenticació a %1. Contrasenya incorrecta?"
 
-#~ msgctxt ""
-#~ "@info:status Notification when the device failed due to SsidNotFound"
-#~ msgid "The WiFi network could not be found"
-#~ msgstr "No s'ha pogut trobar la xarxa Wi-Fi"
+#~| msgid "Provide the password for the wireless network '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "wireless network '%1':"
+#~ msgstr ""
+#~ "La contrasenya proporcionada sembla incorrecta. Proporcioneu la "
+#~ "contrasenya per a la xarxa sense fil «%1»:"
+
+#~| msgid "Provide the password for the connection '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "connection '%1':"
+#~ msgstr ""
+#~ "La contrasenya proporcionada sembla incorrecta. Proporcioneu la "
+#~ "contrasenya per a la connexió «%1»:"

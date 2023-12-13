@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
+"POT-Creation-Date: 2023-12-13 01:35+0000\n"
 "PO-Revision-Date: 2020-10-09 16:53+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -563,46 +563,45 @@ msgstr "Inga hemligheter tillhandahölls"
 #: passworddialog.cpp:99
 #, fuzzy, kde-format
 #| msgid "Provide the password for the wireless network '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the wireless "
-"network '%1':"
+msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr "Ange lösenordet för att aktivera det trådlösa nätverket '%1':"
 
 #: passworddialog.cpp:101
-#, kde-format
-msgid "Provide the password for the wireless network '%1':"
+#, fuzzy, kde-format
+#| msgid "Provide the password for the wireless network '%1':"
+msgid "Enter the password for the wireless network \"%1\":"
 msgstr "Ange lösenordet för att aktivera det trådlösa nätverket '%1':"
 
-#: passworddialog.cpp:106
+#: passworddialog.cpp:105
 #, fuzzy, kde-format
 #| msgid "Provide the password for the connection '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the "
-"connection '%1':"
+msgid "Incorrect password for the connection \"%1\". Please try again."
 msgstr "Ange lösenordet för att anslutningen '%1':"
 
-#: passworddialog.cpp:108
-#, kde-format
-msgid "Provide the password for the connection '%1':"
+#: passworddialog.cpp:107
+#, fuzzy, kde-format
+#| msgid "Provide the password for the connection '%1':"
+msgid "Enter the password for the connection \"%1\":"
 msgstr "Ange lösenordet för att anslutningen '%1':"
 
-#: passworddialog.cpp:115
+#: passworddialog.cpp:114
 #, kde-format
 msgid "%1 password dialog"
 msgstr "Lösenordsdialogruta för %1"
 
-#: passworddialog.cpp:122
+#: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
 msgstr ""
 
-#: passworddialog.cpp:135
-#, kde-format
-msgid "Provide the secrets for the VPN connection '%1':"
+#: passworddialog.cpp:134
+#, fuzzy, kde-format
+#| msgid "Provide the secrets for the VPN connection '%1':"
+msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Ange hemligheterna för att VPN-anslutningen '%1':"
 
-#: passworddialog.cpp:136
+#: passworddialog.cpp:135
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr "Dialogruta för VPN-hemligheter (%1)"
@@ -791,6 +790,20 @@ msgstr "Mata in PIN-kod igen:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Behörighetskontroll för %1 misslyckades. Fel lösenord?"
+
+#, fuzzy
+#~| msgid "Provide the password for the wireless network '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "wireless network '%1':"
+#~ msgstr "Ange lösenordet för att aktivera det trådlösa nätverket '%1':"
+
+#, fuzzy
+#~| msgid "Provide the password for the connection '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "connection '%1':"
+#~ msgstr "Ange lösenordet för att anslutningen '%1':"
 
 #~ msgctxt ""
 #~ "@info:status Notification when the device failed due to SsidNotFound"

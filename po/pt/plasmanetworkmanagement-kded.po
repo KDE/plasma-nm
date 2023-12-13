@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
+"POT-Creation-Date: 2023-12-13 01:35+0000\n"
 "PO-Revision-Date: 2022-10-08 10:55+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -559,46 +559,45 @@ msgstr "Não foram fornecidas senhas"
 #: passworddialog.cpp:99
 #, fuzzy, kde-format
 #| msgid "Provide the password for the wireless network '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the wireless "
-"network '%1':"
+msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr "Indique por favor a senha para a rede sem-fios '%1':"
 
 #: passworddialog.cpp:101
-#, kde-format
-msgid "Provide the password for the wireless network '%1':"
+#, fuzzy, kde-format
+#| msgid "Provide the password for the wireless network '%1':"
+msgid "Enter the password for the wireless network \"%1\":"
 msgstr "Indique por favor a senha para a rede sem-fios '%1':"
 
-#: passworddialog.cpp:106
+#: passworddialog.cpp:105
 #, fuzzy, kde-format
 #| msgid "Provide the password for the connection '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the "
-"connection '%1':"
+msgid "Incorrect password for the connection \"%1\". Please try again."
 msgstr "Indique por favor a senha para a ligação '%1':"
 
-#: passworddialog.cpp:108
-#, kde-format
-msgid "Provide the password for the connection '%1':"
+#: passworddialog.cpp:107
+#, fuzzy, kde-format
+#| msgid "Provide the password for the connection '%1':"
+msgid "Enter the password for the connection \"%1\":"
 msgstr "Indique por favor a senha para a ligação '%1':"
 
-#: passworddialog.cpp:115
+#: passworddialog.cpp:114
 #, kde-format
 msgid "%1 password dialog"
 msgstr "Janela de senha da %1"
 
-#: passworddialog.cpp:122
+#: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
 msgstr ""
 
-#: passworddialog.cpp:135
-#, kde-format
-msgid "Provide the secrets for the VPN connection '%1':"
+#: passworddialog.cpp:134
+#, fuzzy, kde-format
+#| msgid "Provide the secrets for the VPN connection '%1':"
+msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Indique as senhas da ligação VPN '%1':"
 
-#: passworddialog.cpp:136
+#: passworddialog.cpp:135
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr "Janela de senhas da VPN (%1)"
@@ -788,6 +787,20 @@ msgstr "Indique de novo o código PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "A autenticação em %1 foi mal-sucedida. Senha errada?"
+
+#, fuzzy
+#~| msgid "Provide the password for the wireless network '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "wireless network '%1':"
+#~ msgstr "Indique por favor a senha para a rede sem-fios '%1':"
+
+#, fuzzy
+#~| msgid "Provide the password for the connection '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "connection '%1':"
+#~ msgstr "Indique por favor a senha para a ligação '%1':"
 
 #~ msgctxt ""
 #~ "@info:status Notification when the device failed due to SsidNotFound"

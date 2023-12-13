@@ -224,6 +224,3 @@ msgstr "Puja"
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
-
-#~ msgid "Password…"
-#~ msgstr "Contrasenya…"

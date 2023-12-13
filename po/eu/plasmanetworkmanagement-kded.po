@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasman-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
+"POT-Creation-Date: 2023-12-13 01:35+0000\n"
 "PO-Revision-Date: 2022-10-08 06:55+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -568,46 +568,45 @@ msgstr "Ez da isilpekorik zehaztu"
 #: passworddialog.cpp:99
 #, fuzzy, kde-format
 #| msgid "Provide the password for the wireless network '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the wireless "
-"network '%1':"
+msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr "Hornitu «%1» hari-gabeko sarearen pasahitza:"
 
 #: passworddialog.cpp:101
-#, kde-format
-msgid "Provide the password for the wireless network '%1':"
+#, fuzzy, kde-format
+#| msgid "Provide the password for the wireless network '%1':"
+msgid "Enter the password for the wireless network \"%1\":"
 msgstr "Hornitu «%1» hari-gabeko sarearen pasahitza:"
 
-#: passworddialog.cpp:106
+#: passworddialog.cpp:105
 #, fuzzy, kde-format
 #| msgid "Provide the password for the connection '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the "
-"connection '%1':"
+msgid "Incorrect password for the connection \"%1\". Please try again."
 msgstr "Hornitu «%1» konexioaren pasahitza:"
 
-#: passworddialog.cpp:108
-#, kde-format
-msgid "Provide the password for the connection '%1':"
+#: passworddialog.cpp:107
+#, fuzzy, kde-format
+#| msgid "Provide the password for the connection '%1':"
+msgid "Enter the password for the connection \"%1\":"
 msgstr "Hornitu «%1» konexioaren pasahitza:"
 
-#: passworddialog.cpp:115
+#: passworddialog.cpp:114
 #, kde-format
 msgid "%1 password dialog"
 msgstr "%1 Pasahitzaren elkarrizketa-koadroa"
 
-#: passworddialog.cpp:122
+#: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
 msgstr ""
 
-#: passworddialog.cpp:135
-#, kde-format
-msgid "Provide the secrets for the VPN connection '%1':"
+#: passworddialog.cpp:134
+#, fuzzy, kde-format
+#| msgid "Provide the secrets for the VPN connection '%1':"
+msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Hornitu «%1» VPN konexiorako isilpekoak:"
 
-#: passworddialog.cpp:136
+#: passworddialog.cpp:135
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr "(%1) VPN isilpekoen elkarrizketa-koadroa"
@@ -797,6 +796,20 @@ msgstr "Sartu berriz PIN kodea:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1(r)ekin autentifikatzea huts egin du. Pasahitz okerra?"
+
+#, fuzzy
+#~| msgid "Provide the password for the wireless network '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "wireless network '%1':"
+#~ msgstr "Hornitu «%1» hari-gabeko sarearen pasahitza:"
+
+#, fuzzy
+#~| msgid "Provide the password for the connection '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "connection '%1':"
+#~ msgstr "Hornitu «%1» konexioaren pasahitza:"
 
 #~ msgctxt ""
 #~ "@info:status Notification when the device failed due to SsidNotFound"

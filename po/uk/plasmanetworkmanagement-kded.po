@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2022.
+# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
-"PO-Revision-Date: 2022-10-08 08:45+0300\n"
+"POT-Creation-Date: 2023-12-13 01:35+0000\n"
+"PO-Revision-Date: 2023-12-12 08:55+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -560,57 +560,53 @@ msgid "Authenticate %1"
 msgstr "Розпізнавання %1"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "Не надано ключів"
+msgstr "Запиту щодо реєстраційних даних не надходило"
 
 #: passworddialog.cpp:99
 #, fuzzy, kde-format
 #| msgid "Provide the password for the wireless network '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the wireless "
-"network '%1':"
+msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr "Будь ласка, вкажіть пароль для доступу до дротової мережі «%1»:"
 
 #: passworddialog.cpp:101
-#, kde-format
-msgid "Provide the password for the wireless network '%1':"
+#, fuzzy, kde-format
+#| msgid "Provide the password for the wireless network '%1':"
+msgid "Enter the password for the wireless network \"%1\":"
 msgstr "Будь ласка, вкажіть пароль для доступу до дротової мережі «%1»:"
 
-#: passworddialog.cpp:106
+#: passworddialog.cpp:105
 #, fuzzy, kde-format
 #| msgid "Provide the password for the connection '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the "
-"connection '%1':"
+msgid "Incorrect password for the connection \"%1\". Please try again."
 msgstr "Будь ласка, вкажіть пароль для встановлення з'єднання «%1»:"
 
-#: passworddialog.cpp:108
-#, kde-format
-msgid "Provide the password for the connection '%1':"
+#: passworddialog.cpp:107
+#, fuzzy, kde-format
+#| msgid "Provide the password for the connection '%1':"
+msgid "Enter the password for the connection \"%1\":"
 msgstr "Будь ласка, вкажіть пароль для встановлення з'єднання «%1»:"
 
-#: passworddialog.cpp:115
+#: passworddialog.cpp:114
 #, kde-format
 msgid "%1 password dialog"
 msgstr "Вікно для введення пароля %1"
 
-#: passworddialog.cpp:122
+#: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "Не вказано параметрів VPN"
 
-#: passworddialog.cpp:135
-#, kde-format
-msgid "Provide the secrets for the VPN connection '%1':"
+#: passworddialog.cpp:134
+#, fuzzy, kde-format
+#| msgid "Provide the secrets for the VPN connection '%1':"
+msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Вкажіть реєстраційні дані для доступу до з'єднання VPN «%1»:"
 
-#: passworddialog.cpp:136
+#: passworddialog.cpp:135
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr "Вікно ключів до VPN (%1)"
@@ -797,6 +793,22 @@ msgstr "Вкажіть PIN-код ще раз:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Не вдалося пройти розпізнавання на %1. Не той пароль?"
+
+#~| msgid "Provide the password for the wireless network '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "wireless network '%1':"
+#~ msgstr ""
+#~ "Здається, вказаний пароль є неправильним. Будь ласка, вкажіть пароль для "
+#~ "доступу до дротової мережі «%1»:"
+
+#~| msgid "Provide the password for the connection '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "connection '%1':"
+#~ msgstr ""
+#~ "Здається, вказаний пароль є неправильним. Будь ласка, вкажіть пароль для "
+#~ "встановлення з'єднання «%1»:"
 
 #~ msgctxt ""
 #~ "@info:status Notification when the device failed due to SsidNotFound"

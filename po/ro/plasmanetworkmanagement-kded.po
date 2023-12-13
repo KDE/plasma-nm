@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
+"POT-Creation-Date: 2023-12-13 01:35+0000\n"
 "PO-Revision-Date: 2022-02-16 14:58+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -581,50 +581,46 @@ msgstr "Nu au fost furnizate secrete"
 #: passworddialog.cpp:99
 #, fuzzy, kde-format
 #| msgid "Please provide a password below"
-msgid ""
-"The provided password seems incorrect. Provide the password for the wireless "
-"network '%1':"
+msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr "Furnizați o parolă mai jos"
 
 #: passworddialog.cpp:101
 #, fuzzy, kde-format
 #| msgid "Please provide a password below"
-msgid "Provide the password for the wireless network '%1':"
+msgid "Enter the password for the wireless network \"%1\":"
 msgstr "Furnizați o parolă mai jos"
 
-#: passworddialog.cpp:106
+#: passworddialog.cpp:105
 #, fuzzy, kde-format
 #| msgid "Please provide a password below"
-msgid ""
-"The provided password seems incorrect. Provide the password for the "
-"connection '%1':"
+msgid "Incorrect password for the connection \"%1\". Please try again."
 msgstr "Furnizați o parolă mai jos"
 
-#: passworddialog.cpp:108
+#: passworddialog.cpp:107
 #, fuzzy, kde-format
 #| msgid "Please provide a password below"
-msgid "Provide the password for the connection '%1':"
+msgid "Enter the password for the connection \"%1\":"
 msgstr "Furnizați o parolă mai jos"
 
-#: passworddialog.cpp:115
+#: passworddialog.cpp:114
 #, fuzzy, kde-format
 #| msgid "Password dialog"
 msgid "%1 password dialog"
 msgstr "Dialog de introducere a parolei"
 
-#: passworddialog.cpp:122
+#: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
 msgstr ""
 
-#: passworddialog.cpp:135
+#: passworddialog.cpp:134
 #, fuzzy, kde-format
 #| msgid "Please provide a password below"
-msgid "Provide the secrets for the VPN connection '%1':"
+msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Furnizați o parolă mai jos"
 
-#: passworddialog.cpp:136
+#: passworddialog.cpp:135
 #, fuzzy, kde-format
 #| msgid "VPN secrets (%1)"
 msgid "VPN secrets (%1) dialog"
@@ -820,6 +816,20 @@ msgstr "Reintroduceți codul PIN:"
 #| msgid "Authentication to the VPN server failed."
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Autentificarea la serverul VPN a eșuat."
+
+#, fuzzy
+#~| msgid "Please provide a password below"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "wireless network '%1':"
+#~ msgstr "Furnizați o parolă mai jos"
+
+#, fuzzy
+#~| msgid "Please provide a password below"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "connection '%1':"
+#~ msgstr "Furnizați o parolă mai jos"
 
 #~ msgctxt ""
 #~ "@info:status Notification when the device failed due to SsidNotFound"

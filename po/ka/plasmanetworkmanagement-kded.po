@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
-"PO-Revision-Date: 2022-12-30 03:35+0100\n"
+"POT-Creation-Date: 2023-12-13 01:35+0000\n"
+"PO-Revision-Date: 2023-12-12 05:59+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -551,57 +551,53 @@ msgid "Authenticate %1"
 msgstr "%1-ში ავთენტიკაცია"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "საიდუმლო კოდები მიწოდებული არაა"
+msgstr "საიდუმლო კოდები არ მოთხოვნილა"
 
 #: passworddialog.cpp:99
 #, fuzzy, kde-format
 #| msgid "Provide the password for the wireless network '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the wireless "
-"network '%1':"
+msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr "შეიყვანეთ უსადენო შეერთება \"%1\"-ის პაროლი:"
 
 #: passworddialog.cpp:101
-#, kde-format
-msgid "Provide the password for the wireless network '%1':"
+#, fuzzy, kde-format
+#| msgid "Provide the password for the wireless network '%1':"
+msgid "Enter the password for the wireless network \"%1\":"
 msgstr "შეიყვანეთ უსადენო შეერთება \"%1\"-ის პაროლი:"
 
-#: passworddialog.cpp:106
+#: passworddialog.cpp:105
 #, fuzzy, kde-format
 #| msgid "Provide the password for the connection '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the "
-"connection '%1':"
+msgid "Incorrect password for the connection \"%1\". Please try again."
 msgstr "შეიყვანეთ პაროლი შეერთებისთვის \"%1\":"
 
-#: passworddialog.cpp:108
-#, kde-format
-msgid "Provide the password for the connection '%1':"
+#: passworddialog.cpp:107
+#, fuzzy, kde-format
+#| msgid "Provide the password for the connection '%1':"
+msgid "Enter the password for the connection \"%1\":"
 msgstr "შეიყვანეთ პაროლი შეერთებისთვის \"%1\":"
 
-#: passworddialog.cpp:115
+#: passworddialog.cpp:114
 #, kde-format
 msgid "%1 password dialog"
 msgstr "%1 პაროლის ფანჯარა"
 
-#: passworddialog.cpp:122
+#: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "VPN-ის პარამეტრები მითითებული არაა"
 
-#: passworddialog.cpp:135
-#, kde-format
-msgid "Provide the secrets for the VPN connection '%1':"
+#: passworddialog.cpp:134
+#, fuzzy, kde-format
+#| msgid "Provide the secrets for the VPN connection '%1':"
+msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "შეიყვანეთ პაროლი VPN შეერთებისთვის \"%1\":"
 
-#: passworddialog.cpp:136
+#: passworddialog.cpp:135
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr "VPN-ის პაროლების (%1) ფანჯარა"
@@ -789,6 +785,20 @@ msgstr "ახალი PUK კოდი ხელახლა:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1-ზე ავთენტიკაციის პრობლემა. პაროლი შეგეშალათ?"
+
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "wireless network '%1':"
+#~ msgstr ""
+#~ "როგორც ჩანს, შეყვანილი პაროლი არასწორია. შეიყვანეთ პაროლი უსადენო "
+#~ "შეერთებისთვის '%1':"
+
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "connection '%1':"
+#~ msgstr ""
+#~ "როგორც ჩანს, შეყვანილი პაროლი არასწორია. შეიყვანეთ პაროლი შეერთებისთვის "
+#~ "'%1':"
 
 #~ msgctxt ""
 #~ "@info:status Notification when the device failed due to SsidNotFound"

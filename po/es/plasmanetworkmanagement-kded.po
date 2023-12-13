@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Automatically generated, 2014.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2014, 2015, 2016, 2017, 2019, 2020, 2022, 2023.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2022, 2023 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-12 01:38+0000\n"
-"PO-Revision-Date: 2023-03-15 17:24+0100\n"
+"POT-Creation-Date: 2023-12-13 01:35+0000\n"
+"PO-Revision-Date: 2023-12-12 23:54+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -556,57 +556,53 @@ msgid "Authenticate %1"
 msgstr "Autenticar %1"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "No se ha proporcionado ninguna credencial"
+msgstr "No se ha solicitado ninguna credencial"
 
 #: passworddialog.cpp:99
 #, fuzzy, kde-format
 #| msgid "Provide the password for the wireless network '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the wireless "
-"network '%1':"
+msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr "Introduzca la contraseña para la red inalámbrica «%1»:"
 
 #: passworddialog.cpp:101
-#, kde-format
-msgid "Provide the password for the wireless network '%1':"
+#, fuzzy, kde-format
+#| msgid "Provide the password for the wireless network '%1':"
+msgid "Enter the password for the wireless network \"%1\":"
 msgstr "Introduzca la contraseña para la red inalámbrica «%1»:"
 
-#: passworddialog.cpp:106
+#: passworddialog.cpp:105
 #, fuzzy, kde-format
 #| msgid "Provide the password for the connection '%1':"
-msgid ""
-"The provided password seems incorrect. Provide the password for the "
-"connection '%1':"
+msgid "Incorrect password for the connection \"%1\". Please try again."
 msgstr "Introduzca la contraseña para la conexión «%1»:"
 
-#: passworddialog.cpp:108
-#, kde-format
-msgid "Provide the password for the connection '%1':"
+#: passworddialog.cpp:107
+#, fuzzy, kde-format
+#| msgid "Provide the password for the connection '%1':"
+msgid "Enter the password for the connection \"%1\":"
 msgstr "Introduzca la contraseña para la conexión «%1»:"
 
-#: passworddialog.cpp:115
+#: passworddialog.cpp:114
 #, kde-format
 msgid "%1 password dialog"
 msgstr "Diálogo de contraseña de %1"
 
-#: passworddialog.cpp:122
+#: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "Faltan las preferencias de VPN"
+
+#: passworddialog.cpp:134
+#, fuzzy, kde-format
+#| msgid "Provide the secrets for the VPN connection '%1':"
+msgid "Provide the secrets for the VPN connection \"%1\":"
+msgstr "Introduzca las credenciales para la conexión VPN «%1»:"
 
 #: passworddialog.cpp:135
-#, kde-format
-msgid "Provide the secrets for the VPN connection '%1':"
-msgstr "Introduzca los secretos para la conexión VPN «%1»:"
-
-#: passworddialog.cpp:136
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr "Diálogo de credenciales de VPN (%1)"
@@ -796,6 +792,22 @@ msgstr "Vuelva a introducir el código PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "La autenticación en %1 ha fallado. ¿Es incorrecta la contraseña?"
+
+#~| msgid "Provide the password for the wireless network '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "wireless network '%1':"
+#~ msgstr ""
+#~ "Parece que la contraseña que ha proporcionado es incorrecta. Introduzca "
+#~ "la contraseña para la red inalámbrica «%1»:"
+
+#~| msgid "Provide the password for the connection '%1':"
+#~ msgid ""
+#~ "The provided password seems incorrect. Provide the password for the "
+#~ "connection '%1':"
+#~ msgstr ""
+#~ "Parece que la contraseña que ha proporcionado es incorrecta. Introduzca "
+#~ "la contraseña para la conexión «%1»:"
 
 #~ msgctxt ""
 #~ "@info:status Notification when the device failed due to SsidNotFound"

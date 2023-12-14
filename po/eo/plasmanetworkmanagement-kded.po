@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-12 07:09+0100\n"
+"PO-Revision-Date: 2023-12-13 07:55+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -557,28 +557,24 @@ msgid "No secrets were requested"
 msgstr "Neniuj sekretoj estis alpetitaj"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "Provizu la pasvorton por la sendrata reto '%1':"
+msgstr "Neĝusta pasvorto por la sendrata reto \"%1\". Bonvolu reprovi."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "Provizu la pasvorton por la sendrata reto '%1':"
+msgstr "Provizu la pasvorton por la sendrata reto \"%1\":"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Provizu la pasvorton por la konekto '%1':"
+msgstr "Neĝusta pasvorto por la konekto \"%1\". Bonvolu reprovi."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Provizu la pasvorton por la konekto '%1':"
+msgstr "Provizu la pasvorton por la konekto \"%1\":"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -592,10 +588,9 @@ msgid "VPN settings are missing"
 msgstr "VPN-agordoj mankas"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "Provizu la sekretojn por la VPN-konekto '%1':"
+msgstr "Provizu la sekretojn por la VPN-konekto \"%1\":"
 
 #: passworddialog.cpp:135
 #, kde-format
@@ -787,22 +782,3 @@ msgstr "Reenigu PIN-kodon:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Aŭtentigo al %1 malsukcesis. Erara pasvorto?"
-
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "wireless network '%1':"
-#~ msgstr ""
-#~ "La provizita pasvorto ŝajnas nekorekta. Provizu la pasvorton por la "
-#~ "sendrata reto '%1':"
-
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "connection '%1':"
-#~ msgstr ""
-#~ "La provizita pasvorto ŝajnas nekorekta. Provizu la pasvorton por la "
-#~ "konekto '%1':"
-
-#~ msgctxt ""
-#~ "@info:status Notification when the device failed due to SsidNotFound"
-#~ msgid "The WiFi network could not be found"
-#~ msgstr "La WiFi-reto ne estis trovita"

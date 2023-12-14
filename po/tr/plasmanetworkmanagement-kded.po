@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-12 15:49+0300\n"
+"PO-Revision-Date: 2023-12-13 21:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -556,28 +556,26 @@ msgid "No secrets were requested"
 msgstr "İstenen giz yok"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "'%1' Kablosuz ağının parolasını girin:"
+msgstr ""
+"\"%1\" kablosuz ağı için girdiğiniz parola yanlış. Lütfen yeniden deneyin."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "'%1' Kablosuz ağının parolasını girin:"
+msgstr "\"%1\" kablosuz ağının parolasını girin:"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "'%1' bağlantısının parolasını girin:"
+msgstr ""
+"\"%1\" bağlantısı için girdiğiniz parola yanlış. Lütfen yeniden deneyin."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "'%1' bağlantısının parolasını girin:"
+msgstr "\"%1\" bağlantısının parolasını girin:"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -591,10 +589,9 @@ msgid "VPN settings are missing"
 msgstr "VPN ayarları eksik"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "VPN bağlantısı '%1' için şifreleri sağlayın:"
+msgstr "\"%1\" VPN bağlantısının gizlerini sağlayın:"
 
 #: passworddialog.cpp:135
 #, kde-format

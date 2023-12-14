@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-12 08:55+0200\n"
+"PO-Revision-Date: 2023-12-13 16:47+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -566,28 +566,25 @@ msgid "No secrets were requested"
 msgstr "Запиту щодо реєстраційних даних не надходило"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "Будь ласка, вкажіть пароль для доступу до дротової мережі «%1»:"
+msgstr ""
+"Помилковий пароль до бездротової мережі «%1». Будь ласка, повторіть спробу."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "Будь ласка, вкажіть пароль для доступу до дротової мережі «%1»:"
+msgstr "Будь ласка, введіть пароль для доступу до бездротової мережі «%1»:"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Будь ласка, вкажіть пароль для встановлення з'єднання «%1»:"
+msgstr "Помилковий пароль для з'єднання «%1». Будь ласка, повторіть спробу."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Будь ласка, вкажіть пароль для встановлення з'єднання «%1»:"
+msgstr "Будь ласка, введіть пароль для встановлення з'єднання «%1»:"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -601,8 +598,7 @@ msgid "VPN settings are missing"
 msgstr "Не вказано параметрів VPN"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Вкажіть реєстраційні дані для доступу до з'єднання VPN «%1»:"
 

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-12 09:37+0100\n"
+"PO-Revision-Date: 2023-12-13 06:45+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -559,28 +559,24 @@ msgid "No secrets were requested"
 msgstr "Nobena skrivnosti ni bila zahtevana"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "Podajte geslo za brezžično povezavo %1:"
+msgstr "Napačno geslo za brezžično omrežje \"%1\". Poskusite znova."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "Podajte geslo za brezžično povezavo %1:"
+msgstr "Vnesite geslo za brezžično omrežje \"%1\":"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Podajte geslo za povezavo %1:"
+msgstr "Napačno geslo za povezavo \"%1\". Poskusite znova."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Podajte geslo za povezavo %1:"
+msgstr "Vnesite geslo za povezavo \"%1\":"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -594,10 +590,9 @@ msgid "VPN settings are missing"
 msgstr "Nastavitve VPN manjkajo"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "Podajte skrivnosti za VPN povezavo '%1':"
+msgstr "Podajte skrivnosti za VPN povezavo \"%1\":"
 
 #: passworddialog.cpp:135
 #, kde-format

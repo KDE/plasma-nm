@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-12 08:34+0200\n"
+"PO-Revision-Date: 2023-12-13 09:22+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -553,28 +553,24 @@ msgid "No secrets were requested"
 msgstr "לא התבקשו סודות"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "נא לספק סיסמה לרשת האלחוטית ‚%1’:"
+msgstr "הסיסמה של הרשת האלחוטית „%1” שגויה. נא לנסות שוב."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "נא לספק סיסמה לרשת האלחוטית ‚%1’:"
+msgstr "נא לספק סיסמה לרשת האלחוטית „%1”:"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "לא לספק סיסמה לחיבור ‚%1’:"
+msgstr "סיסמה שגויה לחיבור „%1”. נא לנסות שוב."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "לא לספק סיסמה לחיבור ‚%1’:"
+msgstr "נא לספק סיסמה לחיבור „%1”:"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -588,10 +584,9 @@ msgid "VPN settings are missing"
 msgstr "הגדרות ה־VPN חסרות"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "אספקת הסודות לחיבור ה־VPN‏ ‚%1’:"
+msgstr "אספקת הסודות לחיבור ה־VPN‏ „%1”:"
 
 #: passworddialog.cpp:135
 #, kde-format

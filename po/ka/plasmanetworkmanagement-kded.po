@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-12 05:59+0100\n"
+"PO-Revision-Date: 2023-12-13 07:02+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -557,26 +557,22 @@ msgid "No secrets were requested"
 msgstr "საიდუმლო კოდები არ მოთხოვნილა"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "შეიყვანეთ უსადენო შეერთება \"%1\"-ის პაროლი:"
+msgstr "არასწორი პაროლი უსადენო შეერთებისთვის \"%1\". თავიდან სცადეთ."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "შეიყვანეთ უსადენო შეერთება \"%1\"-ის პაროლი:"
+msgstr "შეიყვანეთ პაროლი უსადენო შეერთებისთვის \"%1\":"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "შეიყვანეთ პაროლი შეერთებისთვის \"%1\":"
+msgstr "არასწორი პაროლი შეერთებისთვის \"%1\". თავიდან სცადეთ."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
 msgstr "შეიყვანეთ პაროლი შეერთებისთვის \"%1\":"
 
@@ -592,8 +588,7 @@ msgid "VPN settings are missing"
 msgstr "VPN-ის პარამეტრები მითითებული არაა"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "შეიყვანეთ პაროლი VPN შეერთებისთვის \"%1\":"
 

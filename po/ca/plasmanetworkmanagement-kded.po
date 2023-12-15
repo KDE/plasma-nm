@@ -3,15 +3,15 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2017, 2020, 2022.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2020, 2022, 2023 Antoni Bella Pérez <antonibella5@yahoo.com>
 # Josep M. Ferrer <txemaq@gmail.com>, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-13 10:18+0100\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"PO-Revision-Date: 2023-12-14 15:41+0100\n"
+"Last-Translator: Antoni Bella Pérez <antonibella5@yahoo.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -575,7 +575,7 @@ msgstr "Introduïu la contrasenya per a la xarxa sense fil «%1»:"
 #: passworddialog.cpp:105
 #, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Contrasenya incorrecta per a la connexió «%1» Torneu-ho a provar."
+msgstr "Contrasenya incorrecta per a la connexió «%1». Torneu-ho a provar."
 
 #: passworddialog.cpp:107
 #, kde-format

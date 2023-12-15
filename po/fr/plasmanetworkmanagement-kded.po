@@ -13,15 +13,15 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-10-26 16:16+0200\n"
+"PO-Revision-Date: 2023-12-13 11:22+0100\n"
 "Last-Translator: Xavier BESNARD <xavier.besnard@neuf.fr>\n"
-"Language-Team: fr\n"
+"Language-Team: \n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -562,13 +562,10 @@ msgid "Authenticate %1"
 msgstr "Authentification %1"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "Aucune phrase secrète n'a été fournie"
+msgstr "Aucun élément secret n'a été fourni."
 
 #: passworddialog.cpp:99
 #, fuzzy, kde-format
@@ -603,7 +600,7 @@ msgstr "Boîte de dialogue de mot de passe %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "La configuration « VPN » est absente."
 
 #: passworddialog.cpp:134
 #, fuzzy, kde-format

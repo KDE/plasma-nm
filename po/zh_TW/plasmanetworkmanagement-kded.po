@@ -1,16 +1,17 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
+# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
 # Franklin, 2014, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2019, 2020.
-# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# Kisaragi Hiu <mail@kisaragi-hiu.com>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-12 18:47+0900\n"
+"PO-Revision-Date: 2023-12-15 18:17+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.01.80\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -554,28 +555,24 @@ msgid "No secrets were requested"
 msgstr "沒有請求密鑰"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "提供無線網路 '%1' 的密碼："
+msgstr "無線網路 \"%1\" 的密碼錯誤。請再試一次。"
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "提供無線網路 '%1' 的密碼："
+msgstr "請輸入無線網路 \"%1\" 的密碼："
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "提供連線 '%1' 的密碼："
+msgstr "連線 \"%1\" 的密碼錯誤。請再試一次。"
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "提供連線 '%1' 的密碼："
+msgstr "請輸入連線 \"%1\" 的密碼："
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -589,10 +586,9 @@ msgid "VPN settings are missing"
 msgstr "遺失 VPN 設定"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "為 VPN 連線 '%1' 提供密鑰："
+msgstr "請提供 VPN 連線 \"%1\" 的密鑰："
 
 #: passworddialog.cpp:135
 #, kde-format

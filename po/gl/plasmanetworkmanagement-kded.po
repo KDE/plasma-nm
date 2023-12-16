@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-13 08:35+0100\n"
+"PO-Revision-Date: 2023-12-15 08:08+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -560,28 +560,24 @@ msgid "No secrets were requested"
 msgstr "Non se solicitou ningún segredo."
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "Forneza o contrasinal da rede sen fíos «%1»:"
+msgstr "O contrasinal da rede sen fíos «%1» é incorrecto. Inténteo de novo."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "Forneza o contrasinal da rede sen fíos «%1»:"
+msgstr "Escriba o contrasinal da rede sen fíos «%1»:"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Forneza o contrasinal para a conexión «%1»:"
+msgstr "O contrasinal para a conexión «%1» é incorrecto. Inténteo de novo."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Forneza o contrasinal para a conexión «%1»:"
+msgstr "Escriba o contrasinal para a conexión «%1»:"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -595,8 +591,7 @@ msgid "VPN settings are missing"
 msgstr "Falta a configuración da VPN"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Forneza os segredos para a conexión de VPN «%1»:"
 

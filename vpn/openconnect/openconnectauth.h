@@ -16,6 +16,7 @@
 #include <QSemaphore>
 #include <QString>
 #include <QUrl>
+#include <QWebEngineLoadingInfo>
 
 class QLayout;
 struct openconnect_info;
@@ -53,6 +54,7 @@ private Q_SLOTS:
     void connectHost();
     void initTokens();
     void handleWebEngineCookie(const QNetworkCookie &);
+    void handleWebEngineLoad(const QWebEngineLoadingInfo &);
     void handleWebEngineUrl(const QUrl &url);
     void openWebEngine(const char *, QSemaphore *);
 };

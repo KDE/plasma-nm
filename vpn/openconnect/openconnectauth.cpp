@@ -30,6 +30,7 @@
 #include <QTimer>
 #include <QWaitCondition>
 #include <QWebEngineCookieStore>
+#include <QWebEnginePage>
 #include <QWebEngineProfile>
 #include <QWebEngineView>
 
@@ -509,9 +510,52 @@ void OpenconnectAuthWidget::handleWebEngineCookie(const QNetworkCookie &cookie)
 
 #if OPENCONNECT_CHECK_VER(5, 7)
     struct oc_webview_result res;
+    res.headers = nullptr;
     res.cookies = cookiesArr;
     // Hack due to lack of NULL pointer check in AnyConnect sso_detect_done
     // logic in libopenconnect.
+    res.uri = "";
+    if (!openconnect_webview_load_changed(d->vpninfo, &res)) {
+        QSemaphore *waitForWebEngineFinish =
+            d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
+        if (waitForWebEngineFinish) {
+            waitForWebEngineFinish->release();
+        }
+    }
+#endif
+}
+
+void OpenconnectAuthWidget::handleWebEngineLoad(const QWebEngineLoadingInfo &loadingInfo)
+{
+    Q_D(OpenconnectAuthWidget);
+    const char *cookiesArr[1] = {nullptr};
+    QList<const char *> responseHeaderList;
+
+    switch (loadingInfo.status()) {
+    case QWebEngineLoadingInfo::LoadSucceededStatus:
+    case QWebEngineLoadingInfo::LoadFailedStatus:
+        break;
+    default:
+        return;
+    }
+
+    const QMultiMap<QByteArray, QByteArray> responseHeaders =
+        loadingInfo.responseHeaders();
+    QMultiMapIterator<QByteArray, QByteArray> headerIter(responseHeaders);
+    responseHeaderList.reserve((responseHeaders.size() * 2) + 1);
+    while (headerIter.hasNext()) {
+        headerIter.next();
+        responseHeaderList.push_back(headerIter.key().constData());
+        responseHeaderList.push_back(headerIter.value().constData());
+    }
+    responseHeaderList.push_back(nullptr);
+
+#if OPENCONNECT_CHECK_VER(5, 7)
+    struct oc_webview_result res;
+    res.headers = responseHeaderList.data();
+    // Hack due to lack of NULL pointer check in AnyConnect sso_detect_done
+    // logic in libopenconnect.
+    res.cookies = cookiesArr;
     res.uri = "";
     if (!openconnect_webview_load_changed(d->vpninfo, &res)) {
         QSemaphore *waitForWebEngineFinish =
@@ -533,6 +577,7 @@ void OpenconnectAuthWidget::handleWebEngineUrl(const QUrl &url)
 
 #if OPENCONNECT_CHECK_VER(5, 7)
     struct oc_webview_result res;
+    res.headers = nullptr;
     res.cookies = cookiesArr;
     res.uri = urlByteArray.constData();
     if (!openconnect_webview_load_changed(d->vpninfo, &res)) {
@@ -550,26 +595,11 @@ void OpenconnectAuthWidget::openWebEngine(const char *loginUri, QSemaphore *wait
     Q_D(OpenconnectAuthWidget);
     d->waitForWebEngineFinish.storeRelease(waitForWebEngineFinish);
     auto webEngineView = new QWebEngineView(this);
-    QWebEngineCookieStore *cookieStore = webEngineView->page()->profile()->cookieStore();
+    QWebEnginePage *page = webEngineView->page();
+    QWebEngineCookieStore *cookieStore = page->profile()->cookieStore();
 
-    // Some VPN protocols depend on parsing HTTP response headers to complete
-    // authentication. However, QtWebEngine does not provide an interface for
-    // capturing HTTP response data. QtWebEngine currently offers the capability
-    // to intercept HTTP requests made by the browser instance using
-    // QWebEngineUrlRequestInterceptor, but there is no equivalent for HTTP
-    // response data.
-    //
-    // VPN protocols with SSO support that do not depend on HTTP response headers
-    //
-    //     - Cisco AnyConnect Protocol
-    //
-    // VPN protocols with SSO support that do depend on HTTP response headers
-    //
-    //     - Palo Alto Networks GlobalProtect Protocol
-    //
-    // FIXME Add HTTP response header handling when the QtWebEngine ecosystem
-    // adds support for HTTP response intercepting.
     connect(webEngineView, &QWebEngineView::urlChanged, this, &OpenconnectAuthWidget::handleWebEngineUrl);
+    connect(page, &QWebEnginePage::loadingChanged, this, &OpenconnectAuthWidget::handleWebEngineLoad);
     connect(cookieStore, &QWebEngineCookieStore::cookieAdded, this, &OpenconnectAuthWidget::handleWebEngineCookie);
     cookieStore->loadAllCookies();
 

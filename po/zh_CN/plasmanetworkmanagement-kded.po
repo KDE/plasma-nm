@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-09 09:24\n"
+"PO-Revision-Date: 2023-12-17 11:26\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -546,37 +546,30 @@ msgid "Authenticate %1"
 msgstr "%1 的身份验证"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "没有提供密码"
+msgstr "没有请求密码"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "请提供无线网络“%1”的密码："
+msgstr "无线网络“%1”的密码不正确。请重新输入。"
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "请提供无线网络“%1”的密码："
+msgstr "请输入无线网络“%1”的密码："
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "请提供连接“%1”的密码："
+msgstr "网络连接“%1”的密码不正确。请重新输入。"
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "请提供连接“%1”的密码："
+msgstr "请输入网络连接“%1”的密码："
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -587,11 +580,10 @@ msgstr "%1 密码对话框"
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "VPN 设置缺失"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "请提供 VPN 连接“%1”的密钥："
 
@@ -781,17 +773,3 @@ msgstr "再次输入 PIN 码："
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1 的身份验证失败。您是否输入了错误的密码？"
-
-#, fuzzy
-#~| msgid "Provide the password for the wireless network '%1':"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "wireless network '%1':"
-#~ msgstr "请提供无线网络“%1”的密码："
-
-#, fuzzy
-#~| msgid "Provide the password for the connection '%1':"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "connection '%1':"
-#~ msgstr "请提供连接“%1”的密码："

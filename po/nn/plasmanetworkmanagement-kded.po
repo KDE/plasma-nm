@@ -788,17 +788,3 @@ msgstr "Tast inn ny PIN-kode igjen:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Feil ved autentisering til %1. Feil passord?"
-
-#, fuzzy
-#~| msgid "Provide the password for the wireless network '%1':"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "wireless network '%1':"
-#~ msgstr "Oppgje passord for trådlaus­nettverket «%1»:"
-
-#, fuzzy
-#~| msgid "Provide the password for the connection '%1':"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "connection '%1':"
-#~ msgstr "Oppgje passord for tilkoplinga «%1»:"

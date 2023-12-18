@@ -650,7 +650,14 @@ void NetworkModelItem::updateDetails() const
             }
             const NetworkManager::AccessPoint::Ptr accessPoint = wirelessDevice->findAccessPoint(m_specificPath);
             if (accessPoint) {
-                m_details << i18n("Frequency") << UiUtils::wirelessFrequencyToString(accessPoint->frequency());
+                const int channel = NetworkManager::findChannel(accessPoint->frequency());
+                const QString frequencyString = UiUtils::wirelessFrequencyToString(accessPoint->frequency());
+                m_details << i18n("Frequency");
+                if (channel > 0) {
+                    m_details << i18nc("Frequency (Channel)", "%1 (Channel %2)", frequencyString, channel);
+                } else {
+                    m_details << frequencyString;
+                }
                 m_details << i18n("BSSID") << accessPoint->hardwareAddress();
             }
             m_details << i18n("MAC Address") << wirelessDevice->hardwareAddress();

@@ -510,6 +510,9 @@ void OpenconnectAuthWidget::handleWebEngineCookie(const QNetworkCookie &cookie)
 #if OPENCONNECT_CHECK_VER(5, 7)
     struct oc_webview_result res;
     res.cookies = cookiesArr;
+    // Hack due to lack of NULL pointer check in AnyConnect sso_detect_done
+    // logic in libopenconnect.
+    res.uri = "";
     if (!openconnect_webview_load_changed(d->vpninfo, &res)) {
         QSemaphore *waitForWebEngineFinish =
             d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);

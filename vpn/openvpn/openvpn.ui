@@ -116,8 +116,10 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          <property name="toolTip">
           <string>Certificate authority (CA) file in .pem format.</string>
          </property>
-         <property name="filter">
-          <string>*.pem *.crt *.key *.cer *.p12</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.pem *.crt *.key *.cer *.p12</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -139,8 +141,10 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          <property name="toolTip">
           <string>Local peer's signed certificate in .pem format (signed by CA of CA Certificate).</string>
          </property>
-         <property name="filter">
-          <string>*.pem *.crt *.key *.cer *.p12</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.pem *.crt *.key *.cer *.p12</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -162,8 +166,10 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          <property name="toolTip">
           <string>Local peer's private key in .pem format.</string>
          </property>
-         <property name="filter">
-          <string>*.pem *.crt *.key *.cer *.p12</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.pem *.crt *.key *.cer *.p12</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -223,8 +229,10 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          <property name="toolTip">
           <string>Pre-shared file for Static Key encryption mode (non-TLS).</string>
          </property>
-         <property name="filter">
-          <string>*.key</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.key</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -377,8 +385,10 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          <property name="toolTip">
           <string>Certificate authority (CA) file in .pem format.</string>
          </property>
-         <property name="filter">
-          <string>*.pem *.crt *.key *.cer</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.pem *.crt *.key *.cer</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -470,8 +480,10 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          <property name="toolTip">
           <string>Certificate authority (CA) file in .pem format.</string>
          </property>
-         <property name="filter">
-          <string>*.pem *.crt *.key *.cer *.p12</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.pem *.crt *.key *.cer *.p12</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -493,8 +505,10 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          <property name="toolTip">
           <string>Local peer's signed certificate in .pem format (signed by CA of CA Certificate).</string>
          </property>
-         <property name="filter">
-          <string>*.pem *.crt *.key *.cer *.p12</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.pem *.crt *.key *.cer *.p12</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -516,8 +530,10 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          <property name="toolTip">
           <string>Local peer's private key in .pem format.</string>
          </property>
-         <property name="filter">
-          <string>*.pem *.crt *.key *.cer *.p12</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.pem *.crt *.key *.cer *.p12</string>
+          </StringList>
          </property>
         </widget>
        </item>

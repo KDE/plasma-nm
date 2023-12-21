@@ -166,8 +166,10 @@
      <property name="toolTip">
       <string>CA certificate in PEM format.</string>
      </property>
-     <property name="filter">
-      <string>*.pem *.crt *.cer</string>
+     <property name="nameFilters">
+      <StringList>
+       <string>*.pem *.crt *.cer</string>
+      </StringList>
      </property>
     </widget>
    </item>

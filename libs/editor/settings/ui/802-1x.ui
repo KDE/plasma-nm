@@ -146,8 +146,10 @@
        </item>
        <item row="2" column="1">
         <widget class="KUrlRequester" name="tlsUserCert">
-         <property name="filter">
-          <string notr="true">*.der *.pem *.crt *.cer</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.der *.pem *.crt *.cer</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -163,8 +165,10 @@
        </item>
        <item row="3" column="1">
         <widget class="KUrlRequester" name="tlsCACert">
-         <property name="filter">
-          <string notr="true">*.der *.pem *.crt *.cer</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.der *.pem *.crt *.cer</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -245,8 +249,10 @@
        </item>
        <item row="7" column="1">
         <widget class="KUrlRequester" name="tlsPrivateKey">
-         <property name="filter">
-          <string notr="true">*.der *.pem *.p12 *.key</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.der *.pem *.p12 *.key</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -399,8 +405,10 @@
        </item>
        <item row="2" column="1">
         <widget class="KUrlRequester" name="pacFile">
-         <property name="filter">
-          <string notr="true">*.pac</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.pac</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -493,8 +501,10 @@
        </item>
        <item row="3" column="1">
         <widget class="KUrlRequester" name="ttlsCACert">
-         <property name="filter">
-          <string notr="true">*.der *.pem *.crt *.cer</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.der *.pem *.crt *.cer</string>
+          </StringList>
          </property>
         </widget>
        </item>
@@ -607,8 +617,10 @@
        </item>
        <item row="6" column="1">
         <widget class="KUrlRequester" name="peapCACert">
-         <property name="filter">
-          <string notr="true">*.der *.pem *.crt *.cer</string>
+         <property name="nameFilters">
+          <StringList>
+           <string>*.der *.pem *.crt *.cer</string>
+          </StringList>
          </property>
         </widget>
        </item>

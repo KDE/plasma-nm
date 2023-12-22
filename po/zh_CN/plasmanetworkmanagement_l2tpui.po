@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-05-31 00:18+0000\n"
+"POT-Creation-Date: 2023-12-22 01:40+0000\n"
 "PO-Revision-Date: 2023-12-20 11:21\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -103,7 +103,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: l2tp.ui:174 l2tpipsec.ui:199
+#: l2tp.ui:174 l2tpipsec.ui:205
 #, kde-format
 msgid "CA Certificate:"
 msgstr "CA 证书："
@@ -119,23 +119,23 @@ msgstr ""
 "<html><head/><body><p>证书颁发机构 (CA) 文件，支持的格式包括 .pem、.der、."
 "crt、.cer 和 .p12。</p></body></html>"
 
-#. i18n: ectx: property (filter), widget (KUrlRequester, machineCA)
-#. i18n: ectx: property (filter), widget (KUrlRequester, machineCert)
-#. i18n: ectx: property (filter), widget (KUrlRequester, userCA)
-#. i18n: ectx: property (filter), widget (KUrlRequester, userCert)
-#: l2tp.ui:190 l2tp.ui:213 l2tpipsec.ui:122 l2tpipsec.ui:145
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCA)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCert)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCA)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCert)
+#: l2tp.ui:191 l2tp.ui:216 l2tpipsec.ui:123 l2tpipsec.ui:148
 #, kde-format
 msgid "*.pem *.der *.crt *.cer *.p12"
 msgstr "*.pem *.der *.crt *.cer *.p12"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
-#: l2tp.ui:197
+#: l2tp.ui:199
 #, kde-format
 msgid "User Certificate:"
 msgstr "用户证书："
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCert)
-#: l2tp.ui:210
+#: l2tp.ui:212
 #, kde-format
 msgid ""
 "<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
@@ -146,14 +146,14 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: l2tp.ui:220 l2tpipsec.ui:152
+#: l2tp.ui:224 l2tpipsec.ui:156
 #, kde-format
 msgid "Private Key:"
 msgstr "私钥："
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineKey)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userKey)
-#: l2tp.ui:233 l2tpipsec.ui:165
+#: l2tp.ui:237 l2tpipsec.ui:169
 #, kde-format
 msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
@@ -162,23 +162,24 @@ msgstr ""
 "<html><head/><body><p>私钥文件，支持的格式包括 .pem、.der、.key、.pk8 和 ."
 "p12。</p></body></html>"
 
-#. i18n: ectx: property (filter), widget (KUrlRequester, machineKey)
-#. i18n: ectx: property (filter), widget (KUrlRequester, userKey)
-#: l2tp.ui:236 l2tpipsec.ui:168
-#, kde-format
-msgid "*.pem *der *.key *.pk8 *.p12"
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineKey)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userKey)
+#: l2tp.ui:241 l2tpipsec.ui:173
+#, fuzzy, kde-format
+#| msgid "*.pem *der *.key *.pk8 *.p12"
+msgid "*.pem *.der *.key *.pk8 *.p12"
 msgstr "*.pem *der *.key *.pk8 *.p12"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: l2tp.ui:243 l2tpipsec.ui:175
+#: l2tp.ui:249 l2tpipsec.ui:181
 #, kde-format
 msgid "Private Key Password:"
 msgstr "私钥密码："
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, machineKeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userKeyPassword)
-#: l2tp.ui:255 l2tpipsec.ui:187
+#: l2tp.ui:261 l2tpipsec.ui:193
 #, kde-format
 msgid ""
 "<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
@@ -186,13 +187,13 @@ msgid ""
 msgstr "<html><head/><body><p>私钥或者 PKCS#12 证书的密码。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
-#: l2tp.ui:286
+#: l2tp.ui:292
 #, kde-format
 msgid "IPsec Settings…"
 msgstr "IPSec 设置…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPPPSettings)
-#: l2tp.ui:293
+#: l2tp.ui:299
 #, kde-format
 msgid "PPP Settings…"
 msgstr "PPP 设置…"
@@ -249,13 +250,13 @@ msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
 msgstr "<html><head/><body><p>预共享密钥 (PSK) 密码。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: l2tpipsec.ui:129
+#: l2tpipsec.ui:131
 #, kde-format
 msgid "Machine Certificate:"
 msgstr "机器证书："
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCert)
-#: l2tpipsec.ui:142
+#: l2tpipsec.ui:144
 #, kde-format
 msgid ""
 "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></body></"
@@ -265,25 +266,25 @@ msgstr ""
 "body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAdvanced)
-#: l2tpipsec.ui:219
+#: l2tpipsec.ui:225
 #, kde-format
 msgid "Advanced"
 msgstr "高级"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: l2tpipsec.ui:225
+#: l2tpipsec.ui:231
 #, kde-format
 msgid "Phase1 Algorithms:"
 msgstr "第 1 阶段 (Phase1) 算法："
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: l2tpipsec.ui:235
+#: l2tpipsec.ui:241
 #, kde-format
 msgid "Phase2 Algorithms:"
 msgstr "第 2 阶段 (Phase2) 算法："
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
-#: l2tpipsec.ui:245
+#: l2tpipsec.ui:251
 #, kde-format
 msgid ""
 "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
@@ -293,7 +294,7 @@ msgstr ""
 "是 “enc-integ,enc-integ, ...”。</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
-#: l2tpipsec.ui:255
+#: l2tpipsec.ui:261
 #, kde-format
 msgid ""
 "<html><head/><body><p>How long the keying channel of a connection should "
@@ -304,19 +305,19 @@ msgstr ""
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
-#: l2tpipsec.ui:258 l2tpipsec.ui:292
+#: l2tpipsec.ui:264 l2tpipsec.ui:298
 #, kde-format
 msgid "hh:mm:ss"
 msgstr "hh:mm:ss"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIkelifetime)
-#: l2tpipsec.ui:265
+#: l2tpipsec.ui:271
 #, kde-format
 msgid "Phase1 Lifetime:"
 msgstr "第 1 阶段 (Phase1) 存活周期："
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
-#: l2tpipsec.ui:272
+#: l2tpipsec.ui:278
 #, kde-format
 msgid ""
 "<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
@@ -326,13 +327,13 @@ msgstr ""
 "“enc-integ-group,enc-integ-group, ...”.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
-#: l2tpipsec.ui:279
+#: l2tpipsec.ui:285
 #, kde-format
 msgid "Phase2 Lifetime:"
 msgstr "第 2 阶段 (Phase2) 存活周期："
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, salifetime)
-#: l2tpipsec.ui:289
+#: l2tpipsec.ui:295
 #, kde-format
 msgid ""
 "<html><head/><body><p>How long a particular instance of a connection (a set "
@@ -343,7 +344,7 @@ msgstr ""
 "协商成功到过期的存活时间 。</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
-#: l2tpipsec.ui:299
+#: l2tpipsec.ui:305
 #, kde-format
 msgid ""
 "<html><head/><body><p>Optional. How the IPsec server should be identified "
@@ -358,7 +359,7 @@ msgstr ""
 "析，请查看strongSwan 或者 Libreswan 的文档。</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIPComp)
-#: l2tpipsec.ui:306
+#: l2tpipsec.ui:312
 #, kde-format
 msgid ""
 "<html><head/><body><p>IPComp compresses raw IP packets before they get "
@@ -369,13 +370,13 @@ msgstr ""
 "节约一点带宽，但也会消耗更多的算力。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIPComp)
-#: l2tpipsec.ui:309
+#: l2tpipsec.ui:315
 #, kde-format
 msgid "Use IP compression"
 msgstr "使用 IP 压缩"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
-#: l2tpipsec.ui:316
+#: l2tpipsec.ui:322
 #, kde-format
 msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
@@ -385,13 +386,13 @@ msgstr ""
 "选此项。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
-#: l2tpipsec.ui:319
+#: l2tpipsec.ui:325
 #, kde-format
 msgid "Disable PFS"
 msgstr "禁用 PFS"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbForceEncaps)
-#: l2tpipsec.ui:326
+#: l2tpipsec.ui:332
 #, kde-format
 msgid ""
 "<html><head/><body><p>Some firewalls block ESP traffic. Enforcing UDP "
@@ -403,13 +404,13 @@ msgstr ""
 "body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
-#: l2tpipsec.ui:329
+#: l2tpipsec.ui:335
 #, kde-format
 msgid "Enforce UDP encapsulation"
 msgstr "强制 UDP 封装"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: l2tpipsec.ui:339
+#: l2tpipsec.ui:345
 #, kde-format
 msgid "Remote ID:"
 msgstr "远程 ID："

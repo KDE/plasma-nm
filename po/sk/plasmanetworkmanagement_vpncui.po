@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:17+0000\n"
+"POT-Creation-Date: 2023-12-22 01:40+0000\n"
 "PO-Revision-Date: 2023-03-25 14:05+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -128,14 +128,14 @@ msgstr "Súbor CA:"
 msgid "CA certificate in PEM format."
 msgstr "Certifikát CA vo formáte PEM."
 
-#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
-#: vpnc.ui:170
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, caFile)
+#: vpnc.ui:171
 #, kde-format
 msgid "*.pem *.crt *.cer"
 msgstr "*.pem *.crt *.cer"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: vpnc.ui:192
+#: vpnc.ui:194
 #, kde-format
 msgid "Advanced…"
 msgstr "Pokročilé..."

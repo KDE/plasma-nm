@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:17+0000\n"
+"POT-Creation-Date: 2023-12-22 01:40+0000\n"
 "PO-Revision-Date: 2013-04-12 23:09-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -123,14 +123,14 @@ msgstr ""
 msgid "CA certificate in PEM format."
 msgstr ""
 
-#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
-#: vpnc.ui:170
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, caFile)
+#: vpnc.ui:171
 #, kde-format
 msgid "*.pem *.crt *.cer"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: vpnc.ui:192
+#: vpnc.ui:194
 #, kde-format
 msgid "Advanced…"
 msgstr ""

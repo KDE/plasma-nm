@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:17+0000\n"
+"POT-Creation-Date: 2023-12-22 01:40+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -88,7 +88,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
-#: openvpn.ui:104 openvpn.ui:362 openvpn.ui:458
+#: openvpn.ui:104 openvpn.ui:370 openvpn.ui:468
 #, fuzzy, kde-format
 #| msgid "Certificate:"
 msgid "CA Certificate:"
@@ -97,26 +97,26 @@ msgstr "گۇۋاھنامە:"
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, passCaFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassCaFile)
-#: openvpn.ui:117 openvpn.ui:378 openvpn.ui:471
+#: openvpn.ui:117 openvpn.ui:386 openvpn.ui:481
 #, kde-format
 msgid "Certificate authority (CA) file in .pem format."
 msgstr ""
 
-#. i18n: ectx: property (filter), widget (KUrlRequester, x509CaFile)
-#. i18n: ectx: property (filter), widget (KUrlRequester, x509Cert)
-#. i18n: ectx: property (filter), widget (KUrlRequester, x509Key)
-#. i18n: ectx: property (filter), widget (KUrlRequester, x509PassCaFile)
-#. i18n: ectx: property (filter), widget (KUrlRequester, x509PassCert)
-#. i18n: ectx: property (filter), widget (KUrlRequester, x509PassKey)
-#: openvpn.ui:120 openvpn.ui:143 openvpn.ui:166 openvpn.ui:474 openvpn.ui:497
-#: openvpn.ui:520
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509CaFile)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509Cert)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509Key)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509PassCaFile)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509PassCert)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509PassKey)
+#: openvpn.ui:121 openvpn.ui:146 openvpn.ui:171 openvpn.ui:485 openvpn.ui:510
+#: openvpn.ui:535
 #, kde-format
 msgid "*.pem *.crt *.key *.cer *.p12"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2_2)
-#: openvpn.ui:127 openvpn.ui:481
+#: openvpn.ui:129 openvpn.ui:493
 #, fuzzy, kde-format
 #| msgid "Certificate:"
 msgid "User Certificate:"
@@ -124,7 +124,7 @@ msgstr "گۇۋاھنامە:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Cert)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassCert)
-#: openvpn.ui:140 openvpn.ui:494
+#: openvpn.ui:142 openvpn.ui:506
 #, kde-format
 msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
@@ -133,21 +133,21 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
-#: openvpn.ui:150 openvpn.ui:504
+#: openvpn.ui:154 openvpn.ui:518
 #, kde-format
 msgid "Private Key:"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Key)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassKey)
-#: openvpn.ui:163 openvpn.ui:517
+#: openvpn.ui:167 openvpn.ui:531
 #, kde-format
 msgid "Local peer's private key in .pem format."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openvpn.ui:173 openvpn.ui:527
+#: openvpn.ui:179 openvpn.ui:543
 #, fuzzy, kde-format
 #| msgid "Proxy Password:"
 msgid "Private Key Password:"
@@ -155,44 +155,44 @@ msgstr "ۋاكالەتچى ئىمى:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509KeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509PassKeyPassword)
-#: openvpn.ui:182 openvpn.ui:536
+#: openvpn.ui:188 openvpn.ui:552
 #, kde-format
 msgid "Password for private key."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
-#: openvpn.ui:211
+#: openvpn.ui:217
 #, kde-format
 msgid "Static Key:"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, pskSharedKey)
-#: openvpn.ui:224
+#: openvpn.ui:230
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
 msgstr ""
 
-#. i18n: ectx: property (filter), widget (KUrlRequester, pskSharedKey)
-#: openvpn.ui:227
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, pskSharedKey)
+#: openvpn.ui:234
 #, kde-format
 msgid "*.key"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_16)
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
-#: openvpn.ui:234 openvpnadvanced.ui:925
+#: openvpn.ui:242 openvpnadvanced.ui:925
 #, kde-format
 msgid "Key Direction:"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbKeyDirection)
-#: openvpn.ui:247
+#: openvpn.ui:255
 #, kde-format
 msgid "Direction for Static Key encryption mode (non-TLS)."
 msgstr ""
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cmbKeyDirection)
-#: openvpn.ui:250
+#: openvpn.ui:258
 #, kde-format
 msgid ""
 "If key direction is used, it must be the opposite of that used on the VPN "
@@ -200,7 +200,7 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
-#: openvpn.ui:254
+#: openvpn.ui:262
 #, fuzzy, kde-format
 #| msgctxt "like in None setting selected"
 #| msgid "None"
@@ -209,44 +209,44 @@ msgid "None"
 msgstr "يوق"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
-#: openvpn.ui:259
+#: openvpn.ui:267
 #, kde-format
 msgid "0"
 msgstr "0"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
-#: openvpn.ui:264
+#: openvpn.ui:272
 #, kde-format
 msgid "1"
 msgstr "1"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel6)
-#: openvpn.ui:272
+#: openvpn.ui:280
 #, kde-format
 msgid "Local IP Address:"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, pskLocalIp)
-#: openvpn.ui:285
+#: openvpn.ui:293
 #, kde-format
 msgid "IP address of the remote VPN endpoint."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel7)
-#: openvpn.ui:295
+#: openvpn.ui:303
 #, fuzzy, kde-format
 #| msgid "Server Address:"
 msgid "Remote IP Address:"
 msgstr "مۇلازىمېتىر ئادرېسى:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, pskRemoteIp)
-#: openvpn.ui:308
+#: openvpn.ui:316
 #, kde-format
 msgid "IP address of the local VPN endpoint."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, lblKeyDirection)
-#: openvpn.ui:342
+#: openvpn.ui:350
 #, kde-format
 msgid ""
 "If key direction is used, it must be the opposite of that used on the VPN "
@@ -254,15 +254,15 @@ msgid ""
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
 
-#. i18n: ectx: property (filter), widget (KUrlRequester, passCaFile)
-#: openvpn.ui:381
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, passCaFile)
+#: openvpn.ui:390
 #, kde-format
 msgid "*.pem *.crt *.key *.cer"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
-#: openvpn.ui:388 openvpn.ui:548
+#: openvpn.ui:398 openvpn.ui:564
 #, fuzzy, kde-format
 #| msgctxt "like in Username for athentication"
 #| msgid "Username:"
@@ -272,14 +272,14 @@ msgstr "ئىشلەتكۈچى ئاتى:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, passUserName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, x509PassUsername)
-#: openvpn.ui:404 openvpn.ui:561
+#: openvpn.ui:414 openvpn.ui:577
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: openvpn.ui:414 openvpn.ui:571 openvpnauth.cpp:77 openvpnauth.cpp:99
+#: openvpn.ui:424 openvpn.ui:587 openvpnauth.cpp:77 openvpnauth.cpp:99
 #: openvpnauth.cpp:106
 #, kde-format
 msgid "Password:"
@@ -287,13 +287,13 @@ msgstr "ئىم:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, passPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509PassPassword)
-#: openvpn.ui:429 openvpn.ui:583
+#: openvpn.ui:439 openvpn.ui:599
 #, kde-format
 msgid "Password passed to OpenVPN when prompted for it."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: openvpn.ui:627
+#: openvpn.ui:643
 #, fuzzy, kde-format
 #| msgid "Advanced..."
 msgid "Advanced…"

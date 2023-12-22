@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-11-05 01:09+0000\n"
+"POT-Creation-Date: 2023-12-22 01:40+0000\n"
 "PO-Revision-Date: 2023-04-01 17:48+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -387,7 +387,7 @@ msgstr "Authentication:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:38 editor/settings/ui/802-1x.ui:675
+#: editor/settings/ui/802-1x.ui:38 editor/settings/ui/802-1x.ui:687
 #, kde-format
 msgid "MD5"
 msgstr "MD5"
@@ -436,9 +436,9 @@ msgstr "Protected EAP (PEAP)"
 #. i18n: ectx: property (text), widget (QLabel, label_17)
 #. i18n: ectx: property (text), widget (QLabel, label_25)
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/802-1x.ui:83 editor/settings/ui/802-1x.ui:277
-#: editor/settings/ui/802-1x.ui:311 editor/settings/ui/802-1x.ui:440
-#: editor/settings/ui/802-1x.ui:544 editor/settings/ui/802-1x.ui:688
+#: editor/settings/ui/802-1x.ui:83 editor/settings/ui/802-1x.ui:283
+#: editor/settings/ui/802-1x.ui:317 editor/settings/ui/802-1x.ui:448
+#: editor/settings/ui/802-1x.ui:554 editor/settings/ui/802-1x.ui:700
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
 #: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
 #, kde-format
@@ -452,9 +452,9 @@ msgstr "Username:"
 #. i18n: ectx: property (text), widget (QLabel, label_18)
 #. i18n: ectx: property (text), widget (QLabel, label_21)
 #. i18n: ectx: property (text), widget (QLabel, label_9)
-#: editor/settings/ui/802-1x.ui:96 editor/settings/ui/802-1x.ui:290
-#: editor/settings/ui/802-1x.ui:324 editor/settings/ui/802-1x.ui:453
-#: editor/settings/ui/802-1x.ui:557 editor/settings/ui/802-1x.ui:701
+#: editor/settings/ui/802-1x.ui:96 editor/settings/ui/802-1x.ui:296
+#: editor/settings/ui/802-1x.ui:330 editor/settings/ui/802-1x.ui:461
+#: editor/settings/ui/802-1x.ui:567 editor/settings/ui/802-1x.ui:713
 #: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
 #: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:207
 #: editor/settings/ui/wifisecurity.ui:231
@@ -471,8 +471,8 @@ msgstr "Identity:"
 #. i18n: ectx: property (text), widget (QLabel, label_32)
 #. i18n: ectx: property (text), widget (QLabel, label_30)
 #. i18n: ectx: property (text), widget (QLabel, label_31)
-#: editor/settings/ui/802-1x.ui:130 editor/settings/ui/802-1x.ui:574
-#: editor/settings/ui/802-1x.ui:718
+#: editor/settings/ui/802-1x.ui:130 editor/settings/ui/802-1x.ui:584
+#: editor/settings/ui/802-1x.ui:730
 #, kde-format
 msgid "Domain:"
 msgstr "Domain:"
@@ -483,50 +483,66 @@ msgstr "Domain:"
 msgid "User certificate:"
 msgstr "User certificate:"
 
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsUserCert)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsCACert)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, ttlsCACert)
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, peapCACert)
+#: editor/settings/ui/802-1x.ui:151 editor/settings/ui/802-1x.ui:170
+#: editor/settings/ui/802-1x.ui:506 editor/settings/ui/802-1x.ui:622
+#, kde-format
+msgid "*.der *.pem *.crt *.cer"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_20)
 #. i18n: ectx: property (text), widget (QLabel, label_23)
-#: editor/settings/ui/802-1x.ui:157 editor/settings/ui/802-1x.ui:487
-#: editor/settings/ui/802-1x.ui:601
+#: editor/settings/ui/802-1x.ui:159 editor/settings/ui/802-1x.ui:495
+#: editor/settings/ui/802-1x.ui:611
 #, kde-format
 msgid "CA certificate:"
 msgstr "CA certificate:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_27)
-#: editor/settings/ui/802-1x.ui:174
+#: editor/settings/ui/802-1x.ui:178
 #, kde-format
 msgid "Subject match:"
 msgstr "Subject match:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
-#: editor/settings/ui/802-1x.ui:191
+#: editor/settings/ui/802-1x.ui:195
 #, kde-format
 msgid "Alternative subject matches:"
 msgstr "Alternative subject matches:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
-#: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
+#: editor/settings/ui/802-1x.ui:210 editor/settings/ui/802-1x.ui:234
 #, kde-format
 msgid "…"
 msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
-#: editor/settings/ui/802-1x.ui:215
+#: editor/settings/ui/802-1x.ui:219
 #, kde-format
 msgid "Connect to these servers:"
 msgstr "Connect to these servers:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
-#: editor/settings/ui/802-1x.ui:239
+#: editor/settings/ui/802-1x.ui:243
 #: editor/settings/ui/wireguardinterfacewidget.ui:26
 #, kde-format
 msgid "Private key:"
 msgstr "Private key:"
 
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsPrivateKey)
+#: editor/settings/ui/802-1x.ui:254
+#, kde-format
+msgid "*.der *.pem *.p12 *.key"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/802-1x.ui:256
+#: editor/settings/ui/802-1x.ui:262
 #, kde-format
 msgid "Private key password:"
 msgstr "Private key password:"
@@ -534,54 +550,60 @@ msgstr "Private key password:"
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #. i18n: ectx: property (text), widget (QLabel, label_19)
 #. i18n: ectx: property (text), widget (QLabel, label_24)
-#: editor/settings/ui/802-1x.ui:345 editor/settings/ui/802-1x.ui:474
-#: editor/settings/ui/802-1x.ui:588
+#: editor/settings/ui/802-1x.ui:351 editor/settings/ui/802-1x.ui:482
+#: editor/settings/ui/802-1x.ui:598
 #, kde-format
 msgid "Anonymous identity:"
 msgstr "Anonymous identity:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
-#: editor/settings/ui/802-1x.ui:358
+#: editor/settings/ui/802-1x.ui:364
 #, kde-format
 msgid "Automatic PAC provisioning"
 msgstr "Automatic PAC provisioning"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:375
+#: editor/settings/ui/802-1x.ui:381
 #, kde-format
 msgid "Anonymous"
 msgstr "Anonymous"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:380
+#: editor/settings/ui/802-1x.ui:386
 #, kde-format
 msgid "Authenticated"
 msgstr "Authenticated"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:385
+#: editor/settings/ui/802-1x.ui:391
 #, kde-format
 msgid "Both"
 msgstr "Both"
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
-#: editor/settings/ui/802-1x.ui:393
+#: editor/settings/ui/802-1x.ui:399
 #, kde-format
 msgid "PAC file:"
 msgstr "PAC file:"
 
+#. i18n: ectx: property (nameFilters), widget (KUrlRequester, pacFile)
+#: editor/settings/ui/802-1x.ui:410
+#, kde-format
+msgid "*.pac"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #. i18n: ectx: property (text), widget (QLabel, label_16)
 #. i18n: ectx: property (text), widget (QLabel, label_22)
-#: editor/settings/ui/802-1x.ui:410 editor/settings/ui/802-1x.ui:504
-#: editor/settings/ui/802-1x.ui:653
+#: editor/settings/ui/802-1x.ui:418 editor/settings/ui/802-1x.ui:514
+#: editor/settings/ui/802-1x.ui:665
 #, kde-format
 msgid "Inner authentication:"
 msgstr "Inner authentication:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:427 editor/settings/ui/802-1x.ui:680
+#: editor/settings/ui/802-1x.ui:435 editor/settings/ui/802-1x.ui:692
 #, kde-format
 msgid "GTC"
 msgstr "GTC"
@@ -590,54 +612,54 @@ msgstr "GTC"
 #. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:432 editor/settings/ui/802-1x.ui:531
-#: editor/settings/ui/802-1x.ui:670 editor/settings/ui/ppp.ui:68
+#: editor/settings/ui/802-1x.ui:440 editor/settings/ui/802-1x.ui:541
+#: editor/settings/ui/802-1x.ui:682 editor/settings/ui/ppp.ui:68
 #, kde-format
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
 
 #. i18n: ectx: property (text), widget (QCheckBox, pap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:521 editor/settings/ui/ppp.ui:58
+#: editor/settings/ui/802-1x.ui:531 editor/settings/ui/ppp.ui:58
 #, kde-format
 msgid "PAP"
 msgstr "PAP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mschap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:526 editor/settings/ui/ppp.ui:48
+#: editor/settings/ui/802-1x.ui:536 editor/settings/ui/ppp.ui:48
 #, kde-format
 msgid "MSCHAP"
 msgstr "MSCHAP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:536 editor/settings/ui/ppp.ui:78
+#: editor/settings/ui/802-1x.ui:546 editor/settings/ui/ppp.ui:78
 #, kde-format
 msgid "CHAP"
 msgstr "CHAP"
 
 #. i18n: ectx: property (text), widget (QLabel, label_26)
-#: editor/settings/ui/802-1x.ui:618
+#: editor/settings/ui/802-1x.ui:630
 #, kde-format
 msgid "PEAP version:"
 msgstr "PEAP version:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:635
+#: editor/settings/ui/802-1x.ui:647
 #, kde-format
 msgctxt "PEAP version"
 msgid "Automatic"
 msgstr "Automatic"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:640
+#: editor/settings/ui/802-1x.ui:652
 #, kde-format
 msgid "Version 0"
 msgstr "Version 0"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:645
+#: editor/settings/ui/802-1x.ui:657
 #, kde-format
 msgid "Version 1"
 msgstr "Version 1"

@@ -168,7 +168,7 @@
      </property>
      <property name="nameFilters">
       <StringList>
-       <string>*.pem *.crt *.cer</string>
+       <string notr="true">*.pem *.crt *.cer</string>
       </StringList>
      </property>
     </widget>

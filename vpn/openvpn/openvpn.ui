@@ -118,7 +118,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          </property>
          <property name="nameFilters">
           <StringList>
-           <string>*.pem *.crt *.key *.cer *.p12</string>
+           <string notr="true">*.pem *.crt *.key *.cer *.p12</string>
           </StringList>
          </property>
         </widget>
@@ -143,7 +143,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          </property>
          <property name="nameFilters">
           <StringList>
-           <string>*.pem *.crt *.key *.cer *.p12</string>
+           <string notr="true">*.pem *.crt *.key *.cer *.p12</string>
           </StringList>
          </property>
         </widget>
@@ -168,7 +168,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          </property>
          <property name="nameFilters">
           <StringList>
-           <string>*.pem *.crt *.key *.cer *.p12</string>
+           <string notr="true">*.pem *.crt *.key *.cer *.p12</string>
           </StringList>
          </property>
         </widget>
@@ -231,7 +231,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          </property>
          <property name="nameFilters">
           <StringList>
-           <string>*.key</string>
+           <string notr="true">*.key</string>
           </StringList>
          </property>
         </widget>
@@ -387,7 +387,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          </property>
          <property name="nameFilters">
           <StringList>
-           <string>*.pem *.crt *.key *.cer</string>
+           <string notr="true">*.pem *.crt *.key *.cer</string>
           </StringList>
          </property>
         </widget>
@@ -482,7 +482,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          </property>
          <property name="nameFilters">
           <StringList>
-           <string>*.pem *.crt *.key *.cer *.p12</string>
+           <string notr="true">*.pem *.crt *.key *.cer *.p12</string>
           </StringList>
          </property>
         </widget>
@@ -507,7 +507,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          </property>
          <property name="nameFilters">
           <StringList>
-           <string>*.pem *.crt *.key *.cer *.p12</string>
+           <string notr="true">*.pem *.crt *.key *.cer *.p12</string>
           </StringList>
          </property>
         </widget>
@@ -532,7 +532,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          </property>
          <property name="nameFilters">
           <StringList>
-           <string>*.pem *.crt *.key *.cer *.p12</string>
+           <string notr="true">*.pem *.crt *.key *.cer *.p12</string>
           </StringList>
          </property>
         </widget>

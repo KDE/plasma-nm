@@ -188,7 +188,7 @@
          </property>
          <property name="nameFilters">
           <StringList>
-           <string>*.pem *.der *.crt *.cer *.p12</string>
+           <string notr="true">*.pem *.der *.crt *.cer *.p12</string>
           </StringList>
          </property>
         </widget>
@@ -213,7 +213,7 @@
          </property>
          <property name="nameFilters">
           <StringList>
-           <string>*.pem *.der *.crt *.cer *.p12</string>
+           <string notr="true">*.pem *.der *.crt *.cer *.p12</string>
           </StringList>
          </property>
         </widget>
@@ -238,7 +238,7 @@
          </property>
          <property name="nameFilters">
           <StringList>
-           <string>*.pem *.der *.key *.pk8 *.p12</string>
+           <string notr="true">*.pem *.der *.key *.pk8 *.p12</string>
           </StringList>
          </property>
         </widget>

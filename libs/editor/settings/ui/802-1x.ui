@@ -148,7 +148,7 @@
         <widget class="KUrlRequester" name="tlsUserCert">
          <property name="nameFilters">
           <StringList>
-           <string>*.der *.pem *.crt *.cer</string>
+           <string notr="true">*.der *.pem *.crt *.cer</string>
           </StringList>
          </property>
         </widget>
@@ -167,7 +167,7 @@
         <widget class="KUrlRequester" name="tlsCACert">
          <property name="nameFilters">
           <StringList>
-           <string>*.der *.pem *.crt *.cer</string>
+           <string notr="true">*.der *.pem *.crt *.cer</string>
           </StringList>
          </property>
         </widget>
@@ -251,7 +251,7 @@
         <widget class="KUrlRequester" name="tlsPrivateKey">
          <property name="nameFilters">
           <StringList>
-           <string>*.der *.pem *.p12 *.key</string>
+           <string notr="true">*.der *.pem *.p12 *.key</string>
           </StringList>
          </property>
         </widget>
@@ -407,7 +407,7 @@
         <widget class="KUrlRequester" name="pacFile">
          <property name="nameFilters">
           <StringList>
-           <string>*.pac</string>
+           <string notr="true">*.pac</string>
           </StringList>
          </property>
         </widget>
@@ -503,7 +503,7 @@
         <widget class="KUrlRequester" name="ttlsCACert">
          <property name="nameFilters">
           <StringList>
-           <string>*.der *.pem *.crt *.cer</string>
+           <string notr="true">*.der *.pem *.crt *.cer</string>
           </StringList>
          </property>
         </widget>
@@ -619,7 +619,7 @@
         <widget class="KUrlRequester" name="peapCACert">
          <property name="nameFilters">
           <StringList>
-           <string>*.der *.pem *.crt *.cer</string>
+           <string notr="true">*.der *.pem *.crt *.cer</string>
           </StringList>
          </property>
         </widget>

@@ -4,7 +4,7 @@
 # Joëlle Cornavin <jcorn@free.fr>, 2013, 2014.
 # Maxime Corteel <mcorteel@gmail.com>, 2014.
 # Vincent Pinon <vpinon@kde.org>, 2016.
-# Xavier Besnard <xavier.besnard@neuf.fr>, 2021.
+# Xavier Besnard <xavier.besnard@kde.org>, 2021.
 #
 msgid ""
 msgstr ""

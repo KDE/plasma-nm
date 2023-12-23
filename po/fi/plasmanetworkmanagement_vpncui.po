@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2023-04-02 17:08+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -126,12 +126,6 @@ msgstr "CA-tiedosto:"
 #, kde-format
 msgid "CA certificate in PEM format."
 msgstr "CA-varmenne PEM-muodossa."
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, caFile)
-#: vpnc.ui:171
-#, kde-format
-msgid "*.pem *.crt *.cer"
-msgstr "*.pem *.crt *.cer"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:194
@@ -393,6 +387,9 @@ msgstr "Käyttäjätunnus:"
 #, kde-format
 msgid "Group name."
 msgstr "Ryhmän nimi."
+
+#~ msgid "*.pem *.crt *.cer"
+#~ msgstr "*.pem *.crt *.cer"
 
 #~ msgid "File %1 could not be opened."
 #~ msgstr "Tiedostoa %1 ei voitu avata."

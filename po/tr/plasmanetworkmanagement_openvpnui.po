@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2023-08-27 21:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -106,18 +106,6 @@ msgstr "CA Sertifikası:"
 msgid "Certificate authority (CA) file in .pem format."
 msgstr "Sertifika otoritesi (CA) dosyası, .pem biçiminde."
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509CaFile)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509Cert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509Key)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509PassCaFile)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509PassCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509PassKey)
-#: openvpn.ui:121 openvpn.ui:146 openvpn.ui:171 openvpn.ui:485 openvpn.ui:510
-#: openvpn.ui:535
-#, kde-format
-msgid "*.pem *.crt *.key *.cer *.p12"
-msgstr "*.pem *.crt *.key *.cer *.p12"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2_2)
 #: openvpn.ui:129 openvpn.ui:493
@@ -177,12 +165,6 @@ msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
 msgstr ""
 "Sabit Anahtar şifreleme kipi (non-TLS) için önceden paylaşılmış Sabit "
 "Anahtar dosyası."
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, pskSharedKey)
-#: openvpn.ui:234
-#, kde-format
-msgid "*.key"
-msgstr "*.key"
 
 #. i18n: ectx: property (text), widget (QLabel, label_16)
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -261,12 +243,6 @@ msgstr ""
 "Örneğin, eş '1' kullıyorsa, bu bağlantı '0' kullanmalıdır. Eğer hangi değer "
 "kullanmanız gerektiğinden emin değilseniz, lütfen sistem yöneticiniz ile "
 "irtibata geçiniz."
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, passCaFile)
-#: openvpn.ui:390
-#, kde-format
-msgid "*.pem *.crt *.key *.cer"
-msgstr "*.pem *.crt *.key *.cer"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
@@ -1135,6 +1111,15 @@ msgstr "jeton"
 #, kde-format
 msgid "one-time password"
 msgstr "tek kerelik parola"
+
+#~ msgid "*.pem *.crt *.key *.cer *.p12"
+#~ msgstr "*.pem *.crt *.key *.cer *.p12"
+
+#~ msgid "*.key"
+#~ msgstr "*.key"
+
+#~ msgid "*.pem *.crt *.key *.cer"
+#~ msgstr "*.pem *.crt *.key *.cer"
 
 #~ msgid "Could not open file"
 #~ msgstr "Dosya açılamadı"

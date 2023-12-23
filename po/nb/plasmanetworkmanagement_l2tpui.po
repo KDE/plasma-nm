@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2014-09-01 18:44+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -114,15 +114,6 @@ msgid ""
 "cer or .p12 formats.</p></body></html>"
 msgstr ""
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCert)
-#: l2tp.ui:191 l2tp.ui:216 l2tpipsec.ui:123 l2tpipsec.ui:148
-#, kde-format
-msgid "*.pem *.der *.crt *.cer *.p12"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: l2tp.ui:199
 #, kde-format
@@ -151,13 +142,6 @@ msgstr "Privat nøkkel:"
 msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
 "</p></body></html>"
-msgstr ""
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineKey)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userKey)
-#: l2tp.ui:241 l2tpipsec.ui:173
-#, kde-format
-msgid "*.pem *.der *.key *.pk8 *.p12"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)

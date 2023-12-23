@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2023-05-03 23:23+0200\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: \n"
@@ -124,12 +124,6 @@ msgstr ""
 #: vpnc.ui:167
 #, kde-format
 msgid "CA certificate in PEM format."
-msgstr ""
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, caFile)
-#: vpnc.ui:171
-#, kde-format
-msgid "*.pem *.crt *.cer"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)

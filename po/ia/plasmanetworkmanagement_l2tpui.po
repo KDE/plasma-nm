@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2014, 2020, 2021.
+# Giovanni Sora <g.sora@tiscali.it>, 2014, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
-"PO-Revision-Date: 2021-08-05 22:59+0200\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"PO-Revision-Date: 2023-12-22 10:20+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.04.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -120,15 +120,6 @@ msgstr ""
 "<html><head/><body><p>File de authoritate de certificato (CA)  in formatos ."
 "pem, .der, .crt, .cer o .p12 .</p></body></html>"
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCert)
-#: l2tp.ui:191 l2tp.ui:216 l2tpipsec.ui:123 l2tpipsec.ui:148
-#, kde-format
-msgid "*.pem *.der *.crt *.cer *.p12"
-msgstr "*.pem *.der *.crt *.cer *.p12"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: l2tp.ui:199
 #, kde-format
@@ -162,14 +153,6 @@ msgid ""
 msgstr ""
 "<html><head/><body><p>Clave private in formatos .pem, .der, .key, .pk8 or ."
 "p12 .</p></body></html>"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineKey)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userKey)
-#: l2tp.ui:241 l2tpipsec.ui:173
-#, fuzzy, kde-format
-#| msgid "*.pem *der *.key *.pk8 *.p12"
-msgid "*.pem *.der *.key *.pk8 *.p12"
-msgstr "*.pem *der *.key *.pk8 *.p12"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -661,6 +644,13 @@ msgstr "Usa cryptation stateful"
 #, kde-format
 msgid "L2TP PPP Options"
 msgstr "Optiones L2TP PPP"
+
+#~ msgid "*.pem *.der *.crt *.cer *.p12"
+#~ msgstr "*.pem *.der *.crt *.cer *.p12"
+
+#~| msgid "*.pem *der *.key *.pk8 *.p12"
+#~ msgid "*.pem *.der *.key *.pk8 *.p12"
+#~ msgstr "*.pem *.der *.key *.pk8 *.p12"
 
 #~ msgid "User name:"
 #~ msgstr "Nomine de usator:"

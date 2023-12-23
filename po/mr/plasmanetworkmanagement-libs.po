@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2014-10-29 11:38+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -476,16 +476,6 @@ msgstr ""
 msgid "User certificate:"
 msgstr ""
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsUserCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, ttlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, peapCACert)
-#: editor/settings/ui/802-1x.ui:151 editor/settings/ui/802-1x.ui:170
-#: editor/settings/ui/802-1x.ui:506 editor/settings/ui/802-1x.ui:622
-#, kde-format
-msgid "*.der *.pem *.crt *.cer"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_20)
 #. i18n: ectx: property (text), widget (QLabel, label_23)
@@ -526,12 +516,6 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:26
 #, kde-format
 msgid "Private key:"
-msgstr ""
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsPrivateKey)
-#: editor/settings/ui/802-1x.ui:254
-#, kde-format
-msgid "*.der *.pem *.p12 *.key"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
@@ -577,12 +561,6 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:399
 #, kde-format
 msgid "PAC file:"
-msgstr ""
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, pacFile)
-#: editor/settings/ui/802-1x.ui:410
-#, kde-format
-msgid "*.pac"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)

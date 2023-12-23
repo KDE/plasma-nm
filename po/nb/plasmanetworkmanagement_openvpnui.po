@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2015-04-29 08:42+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -102,18 +102,6 @@ msgstr "CA-sertifikat:"
 msgid "Certificate authority (CA) file in .pem format."
 msgstr ""
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509CaFile)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509Cert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509Key)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509PassCaFile)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509PassCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, x509PassKey)
-#: openvpn.ui:121 openvpn.ui:146 openvpn.ui:171 openvpn.ui:485 openvpn.ui:510
-#: openvpn.ui:535
-#, kde-format
-msgid "*.pem *.crt *.key *.cer *.p12"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2_2)
 #: openvpn.ui:129 openvpn.ui:493
@@ -168,12 +156,6 @@ msgstr ""
 #: openvpn.ui:230
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
-msgstr ""
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, pskSharedKey)
-#: openvpn.ui:234
-#, kde-format
-msgid "*.key"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_16)
@@ -249,12 +231,6 @@ msgid ""
 "If key direction is used, it must be the opposite of that used on the VPN "
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
-msgstr ""
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, passCaFile)
-#: openvpn.ui:390
-#, kde-format
-msgid "*.pem *.crt *.key *.cer"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)

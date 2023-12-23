@@ -1,21 +1,21 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Enol P. <enolp@softastur.org>, 2023.
+# SPDX-FileCopyrightText: 2023 Enol P. <enolp@softastur.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
-"PO-Revision-Date: 2023-05-09 22:43+0200\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"PO-Revision-Date: 2023-12-15 14:10+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
-"Language-Team: \n"
+"Language-Team: Assamese <alministradores@softastur.org>\n"
 "Language: ast\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.0\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -476,16 +476,6 @@ msgstr "Dominiu:"
 msgid "User certificate:"
 msgstr ""
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsUserCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, ttlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, peapCACert)
-#: editor/settings/ui/802-1x.ui:151 editor/settings/ui/802-1x.ui:170
-#: editor/settings/ui/802-1x.ui:506 editor/settings/ui/802-1x.ui:622
-#, kde-format
-msgid "*.der *.pem *.crt *.cer"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_20)
 #. i18n: ectx: property (text), widget (QLabel, label_23)
@@ -527,12 +517,6 @@ msgstr ""
 #, kde-format
 msgid "Private key:"
 msgstr "Clave privada:"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsPrivateKey)
-#: editor/settings/ui/802-1x.ui:254
-#, kde-format
-msgid "*.der *.pem *.p12 *.key"
-msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/802-1x.ui:262
@@ -577,12 +561,6 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:399
 #, kde-format
 msgid "PAC file:"
-msgstr ""
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, pacFile)
-#: editor/settings/ui/802-1x.ui:410
-#, kde-format
-msgid "*.pac"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
@@ -2187,7 +2165,7 @@ msgstr ""
 #, kde-format
 msgctxt "interface state"
 msgid "Error: Invalid state"
-msgstr "Error: l'estáu nun ye válidu"
+msgstr "Error: l'estáu ye inválidu"
 
 #: editor/uiutils.cpp:335
 #, kde-format

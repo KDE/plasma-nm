@@ -1,21 +1,20 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# SPDX-FileCopyrightText: 2023 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
-"PO-Revision-Date: 2023-10-18 22:33+0300\n"
-"Last-Translator: \n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"PO-Revision-Date: 2023-12-22 10:46+0200\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -120,15 +119,6 @@ msgstr ""
 "<html><head/><body><p>קובץ רשות אישורים (CA) בקבצים מהסוגים ‎.pem,‏ ‎.der,‏ ‎."
 "crt,‏ .cer או ‎.p12.</p></body></html>"
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCert)
-#: l2tp.ui:191 l2tp.ui:216 l2tpipsec.ui:123 l2tpipsec.ui:148
-#, kde-format
-msgid "*.pem *.der *.crt *.cer *.p12"
-msgstr "‎*.pem‏ ‎*.der‏ ‎*.crt‏ ‎*.cer‏ ‎*.p12"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: l2tp.ui:199
 #, kde-format
@@ -162,14 +152,6 @@ msgid ""
 msgstr ""
 "<html><head/><body><p>מפתח פרטי בקבצים מהסוגים ‎.pem,‏ ‎.der,‏ ‎.key,‏ ‎.pk8 או ‎."
 "p12.</p></body></html>"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineKey)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userKey)
-#: l2tp.ui:241 l2tpipsec.ui:173
-#, fuzzy, kde-format
-#| msgid "*.pem *der *.key *.pk8 *.p12"
-msgid "*.pem *.der *.key *.pk8 *.p12"
-msgstr "‎*.pem‏ ‎*der‏ ‎*.key‏ ‎*.pk8‏ ‎*.p12"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -652,3 +634,10 @@ msgstr "להשתמש בהצפנה בת־עבר (stateful)"
 #, kde-format
 msgid "L2TP PPP Options"
 msgstr "אפשרויות PPP של L2TP"
+
+#~ msgid "*.pem *.der *.crt *.cer *.p12"
+#~ msgstr "‎*.pem‏ ‎*.der‏ ‎*.crt‏ ‎*.cer‏ ‎*.p12"
+
+#~| msgid "*.pem *der *.key *.pk8 *.p12"
+#~ msgid "*.pem *.der *.key *.pk8 *.p12"
+#~ msgstr "*.pem *.der *.key *.pk8 *.p12"

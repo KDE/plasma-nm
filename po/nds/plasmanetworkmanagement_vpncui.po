@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2014-08-13 22:07+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -127,12 +127,6 @@ msgstr "ZA-Datei:"
 #, kde-format
 msgid "CA certificate in PEM format."
 msgstr ""
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, caFile)
-#: vpnc.ui:171
-#, kde-format
-msgid "*.pem *.crt *.cer"
-msgstr "*.pem *.crt *.cer"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:194
@@ -402,6 +396,9 @@ msgstr "Brukernaam:"
 #| msgid "Group name:"
 msgid "Group name."
 msgstr "Koppelnaam:"
+
+#~ msgid "*.pem *.crt *.cer"
+#~ msgstr "*.pem *.crt *.cer"
 
 #~ msgid "File %1 could not be opened."
 #~ msgstr "Datei „%1“ lett sik nich opmaken."

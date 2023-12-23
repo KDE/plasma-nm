@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2023-03-25 14:05+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -127,12 +127,6 @@ msgstr "Súbor CA:"
 #, kde-format
 msgid "CA certificate in PEM format."
 msgstr "Certifikát CA vo formáte PEM."
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, caFile)
-#: vpnc.ui:171
-#, kde-format
-msgid "*.pem *.crt *.cer"
-msgstr "*.pem *.crt *.cer"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:194
@@ -394,6 +388,9 @@ msgstr "Meno používateľa:"
 #, kde-format
 msgid "Group name."
 msgstr "Názov skupiny."
+
+#~ msgid "*.pem *.crt *.cer"
+#~ msgstr "*.pem *.crt *.cer"
 
 #~ msgid "File %1 could not be opened."
 #~ msgstr "Súbor %1 nie je možné otvoriť."

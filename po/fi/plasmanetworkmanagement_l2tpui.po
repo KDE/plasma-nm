@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2021-06-18 12:40+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -122,15 +122,6 @@ msgstr ""
 "<html><head/><body><p>CA- eli varmenneauktoriteettitiedosto .pem-, .der-, ."
 "crt-, .cer- tai .p12-muodossa.</p></body></html>"
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCert)
-#: l2tp.ui:191 l2tp.ui:216 l2tpipsec.ui:123 l2tpipsec.ui:148
-#, kde-format
-msgid "*.pem *.der *.crt *.cer *.p12"
-msgstr "*.pem *.der *.crt *.cer *.p12"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: l2tp.ui:199
 #, kde-format
@@ -164,14 +155,6 @@ msgid ""
 msgstr ""
 "<html><head/><body><p>Yksityisavain .pem-, .der-, .key-, .pk8- tai .p12-"
 "muodossa.</p></body></html>"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineKey)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userKey)
-#: l2tp.ui:241 l2tpipsec.ui:173
-#, fuzzy, kde-format
-#| msgid "*.pem *der *.key *.pk8 *.p12"
-msgid "*.pem *.der *.key *.pk8 *.p12"
-msgstr "*.pem *der *.key *.pk8 *.p12"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -658,6 +641,14 @@ msgstr "Käytä tilallista salausta"
 #, kde-format
 msgid "L2TP PPP Options"
 msgstr "L2TP:n PPP-valinnat"
+
+#~ msgid "*.pem *.der *.crt *.cer *.p12"
+#~ msgstr "*.pem *.der *.crt *.cer *.p12"
+
+#, fuzzy
+#~| msgid "*.pem *der *.key *.pk8 *.p12"
+#~ msgid "*.pem *.der *.key *.pk8 *.p12"
+#~ msgstr "*.pem *der *.key *.pk8 *.p12"
 
 #~ msgid "User name:"
 #~ msgstr "Käyttäjätunnus:"

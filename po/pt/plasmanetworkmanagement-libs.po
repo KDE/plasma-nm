@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2022-12-24 07:19+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -508,16 +508,6 @@ msgstr "Domínio:"
 msgid "User certificate:"
 msgstr "Certificado do utilizador:"
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsUserCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, ttlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, peapCACert)
-#: editor/settings/ui/802-1x.ui:151 editor/settings/ui/802-1x.ui:170
-#: editor/settings/ui/802-1x.ui:506 editor/settings/ui/802-1x.ui:622
-#, kde-format
-msgid "*.der *.pem *.crt *.cer"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_20)
 #. i18n: ectx: property (text), widget (QLabel, label_23)
@@ -559,12 +549,6 @@ msgstr "Ligar a estes servidores:"
 #, kde-format
 msgid "Private key:"
 msgstr "Chave privada:"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsPrivateKey)
-#: editor/settings/ui/802-1x.ui:254
-#, kde-format
-msgid "*.der *.pem *.p12 *.key"
-msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/802-1x.ui:262
@@ -610,12 +594,6 @@ msgstr "Ambos"
 #, kde-format
 msgid "PAC file:"
 msgstr "Ficheiro PAC:"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, pacFile)
-#: editor/settings/ui/802-1x.ui:410
-#, kde-format
-msgid "*.pac"
-msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #. i18n: ectx: property (text), widget (QLabel, label_16)

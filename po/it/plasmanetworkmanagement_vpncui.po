@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2023-03-14 13:46+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -127,12 +127,6 @@ msgstr "File CA:"
 #, kde-format
 msgid "CA certificate in PEM format."
 msgstr "Certificato CA in formato PEM."
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, caFile)
-#: vpnc.ui:171
-#, kde-format
-msgid "*.pem *.crt *.cer"
-msgstr "*.pem *.crt *.cer"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:194
@@ -394,6 +388,9 @@ msgstr "Nome utente:"
 #, kde-format
 msgid "Group name."
 msgstr "Nome del gruppo."
+
+#~ msgid "*.pem *.crt *.cer"
+#~ msgstr "*.pem *.crt *.cer"
 
 #~ msgid "Wrong file extension"
 #~ msgstr "Estensione del file errata"

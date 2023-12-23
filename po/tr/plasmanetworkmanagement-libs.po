@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
-"PO-Revision-Date: 2023-11-25 19:58+0300\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"PO-Revision-Date: 2023-12-22 10:29+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.01.85\n"
 "X-POOTLE-MTIME: 1413102236.000000\n"
 
 #: editor/connectioneditorbase.cpp:198
@@ -485,16 +485,6 @@ msgstr "Alan adı:"
 msgid "User certificate:"
 msgstr "Kullanıcı sertifikası:"
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsUserCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, ttlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, peapCACert)
-#: editor/settings/ui/802-1x.ui:151 editor/settings/ui/802-1x.ui:170
-#: editor/settings/ui/802-1x.ui:506 editor/settings/ui/802-1x.ui:622
-#, kde-format
-msgid "*.der *.pem *.crt *.cer"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_20)
 #. i18n: ectx: property (text), widget (QLabel, label_23)
@@ -536,12 +526,6 @@ msgstr "Bu sunuculara bağlan:"
 #, kde-format
 msgid "Private key:"
 msgstr "Gizli anahtar:"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsPrivateKey)
-#: editor/settings/ui/802-1x.ui:254
-#, kde-format
-msgid "*.der *.pem *.p12 *.key"
-msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/802-1x.ui:262
@@ -587,12 +571,6 @@ msgstr "Her ikisi de"
 #, kde-format
 msgid "PAC file:"
 msgstr "PAC dosyası:"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, pacFile)
-#: editor/settings/ui/802-1x.ui:410
-#, kde-format
-msgid "*.pac"
-msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #. i18n: ectx: property (text), widget (QLabel, label_16)
@@ -3778,3 +3756,12 @@ msgstr "Ağ Yönetici 0.9.8 gerekli, bulunan %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Bilinmeyen"
+
+#~ msgid "*.der *.pem *.crt *.cer"
+#~ msgstr "*.der *.pem *.crt *.cer"
+
+#~ msgid "*.der *.pem *.p12 *.key"
+#~ msgstr "*.der *.pem *.p12 *.key"
+
+#~ msgid "*.pac"
+#~ msgstr "*.pac"

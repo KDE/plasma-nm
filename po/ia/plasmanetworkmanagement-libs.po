@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
-"PO-Revision-Date: 2023-05-18 15:50+0200\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"PO-Revision-Date: 2023-12-22 10:21+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -483,16 +483,6 @@ msgstr "Dominio:"
 msgid "User certificate:"
 msgstr "Certificato de &usator:"
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsUserCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, ttlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, peapCACert)
-#: editor/settings/ui/802-1x.ui:151 editor/settings/ui/802-1x.ui:170
-#: editor/settings/ui/802-1x.ui:506 editor/settings/ui/802-1x.ui:622
-#, kde-format
-msgid "*.der *.pem *.crt *.cer"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_20)
 #. i18n: ectx: property (text), widget (QLabel, label_23)
@@ -534,12 +524,6 @@ msgstr "Connecte a iste servitores:"
 #, kde-format
 msgid "Private key:"
 msgstr "Clave private:"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsPrivateKey)
-#: editor/settings/ui/802-1x.ui:254
-#, kde-format
-msgid "*.der *.pem *.p12 *.key"
-msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/802-1x.ui:262
@@ -585,12 +569,6 @@ msgstr "Ambe"
 #, kde-format
 msgid "PAC file:"
 msgstr "File PAC:"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, pacFile)
-#: editor/settings/ui/802-1x.ui:410
-#, kde-format
-msgid "*.pac"
-msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #. i18n: ectx: property (text), widget (QLabel, label_16)
@@ -3780,6 +3758,15 @@ msgstr "NetworkManager 0.9.8 requirite, trovate %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Incognite"
+
+#~ msgid "*.der *.pem *.crt *.cer"
+#~ msgstr "*.der *.pem *.crt *.cer"
+
+#~ msgid "*.der *.pem *.p12 *.key"
+#~ msgstr "*.der *.pem *.p12 *.key"
+
+#~ msgid "*.pac"
+#~ msgstr "*.pac"
 
 #~ msgid "Signal strength"
 #~ msgstr "Fortia de signal"

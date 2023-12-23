@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
-"PO-Revision-Date: 2021-06-01 08:24+0200\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"PO-Revision-Date: 2023-12-22 09:50+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
-"X-Generator: Poedit 2.4.3\n"
+"X-Generator: Poedit 3.4.1\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -122,15 +122,6 @@ msgstr ""
 "<html><head/><body><p>Datoteka s potrdilom (CA) v formatih .pem, .der, ."
 "crt, .cer ali .p12.</p></body></html>"
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCert)
-#: l2tp.ui:191 l2tp.ui:216 l2tpipsec.ui:123 l2tpipsec.ui:148
-#, kde-format
-msgid "*.pem *.der *.crt *.cer *.p12"
-msgstr "*.pem *.der *.crt *.cer *.p12"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: l2tp.ui:199
 #, kde-format
@@ -164,14 +155,6 @@ msgid ""
 msgstr ""
 "<html><head/><body><p>Zasebni ključ v formatih .pem, .der, .key, .pk8 ali ."
 "p12.</p></body></html>"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineKey)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userKey)
-#: l2tp.ui:241 l2tpipsec.ui:173
-#, fuzzy, kde-format
-#| msgid "*.pem *der *.key *.pk8 *.p12"
-msgid "*.pem *.der *.key *.pk8 *.p12"
-msgstr "*.pem *der *.key *.pk8 *.p12"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -656,6 +639,12 @@ msgstr "Uporabi šifriranje s stanji"
 #, kde-format
 msgid "L2TP PPP Options"
 msgstr "Možnosti PPP za L2TP"
+
+#~ msgid "*.pem *.der *.crt *.cer *.p12"
+#~ msgstr "*.pem *.der *.crt *.cer *.p12"
+
+#~ msgid "*.pem *.der *.key *.pk8 *.p12"
+#~ msgstr "*.pem *.der *.key *.pk8 *.p12"
 
 #~ msgid "User name:"
 #~ msgstr "Uporabniško ime:"

@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
-"PO-Revision-Date: 2023-06-16 12:43+0300\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"PO-Revision-Date: 2023-12-22 10:29+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-POOTLE-MTIME: 1413102235.000000\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 24.01.85\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -122,15 +122,6 @@ msgstr ""
 "<html><head/><body><p>Sertifika otoritesi (CA) dosyası, .pem, .der, .crt, ."
 "cer veya .p12 biçimlerinde.</p></body></html>"
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCA)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userCert)
-#: l2tp.ui:191 l2tp.ui:216 l2tpipsec.ui:123 l2tpipsec.ui:148
-#, kde-format
-msgid "*.pem *.der *.crt *.cer *.p12"
-msgstr "*.pem *.der *.crt *.cer *.p12"
-
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: l2tp.ui:199
 #, kde-format
@@ -164,14 +155,6 @@ msgid ""
 msgstr ""
 "<html><head/><body><p>.pem, .der, .key, .pk8 or .p12 biçimlerinde özel "
 "anahtar.</p></body></html>"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, machineKey)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, userKey)
-#: l2tp.ui:241 l2tpipsec.ui:173
-#, fuzzy, kde-format
-#| msgid "*.pem *der *.key *.pk8 *.p12"
-msgid "*.pem *.der *.key *.pk8 *.p12"
-msgstr "*.pem *der *.key *.pk8 *.p12"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -659,3 +642,10 @@ msgstr "Durum temelli şifreleme kullan"
 #, kde-format
 msgid "L2TP PPP Options"
 msgstr "L2TP PPP Seçenekleri"
+
+#~ msgid "*.pem *.der *.crt *.cer *.p12"
+#~ msgstr "*.pem *.der *.crt *.cer *.p12"
+
+#~| msgid "*.pem *der *.key *.pk8 *.p12"
+#~ msgid "*.pem *.der *.key *.pk8 *.p12"
+#~ msgstr "*.pem *.der *.key *.pk8 *.p12"

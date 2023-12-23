@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-22 01:40+0000\n"
-"PO-Revision-Date: 2023-06-15 20:56+0100\n"
+"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"PO-Revision-Date: 2023-12-22 05:51+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -484,16 +484,6 @@ msgstr "Domajno:"
 msgid "User certificate:"
 msgstr "Atestilo de uzanto:"
 
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsUserCert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, ttlsCACert)
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, peapCACert)
-#: editor/settings/ui/802-1x.ui:151 editor/settings/ui/802-1x.ui:170
-#: editor/settings/ui/802-1x.ui:506 editor/settings/ui/802-1x.ui:622
-#, kde-format
-msgid "*.der *.pem *.crt *.cer"
-msgstr ""
-
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_20)
 #. i18n: ectx: property (text), widget (QLabel, label_23)
@@ -535,12 +525,6 @@ msgstr "Konekti al ĉi tiuj serviloj:"
 #, kde-format
 msgid "Private key:"
 msgstr "Privata ŝlosilo:"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, tlsPrivateKey)
-#: editor/settings/ui/802-1x.ui:254
-#, kde-format
-msgid "*.der *.pem *.p12 *.key"
-msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/802-1x.ui:262
@@ -586,12 +570,6 @@ msgstr "Ambaŭ"
 #, kde-format
 msgid "PAC file:"
 msgstr "PAC-dosiero:"
-
-#. i18n: ectx: property (nameFilters), widget (KUrlRequester, pacFile)
-#: editor/settings/ui/802-1x.ui:410
-#, kde-format
-msgid "*.pac"
-msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #. i18n: ectx: property (text), widget (QLabel, label_16)
@@ -3773,3 +3751,12 @@ msgstr "NetworkManager 0.9.8 bezonata, trovita %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Nekonata"
+
+#~ msgid "*.der *.pem *.crt *.cer"
+#~ msgstr "*.der *.pem *.crt *.cer"
+
+#~ msgid "*.der *.pem *.p12 *.key"
+#~ msgstr "*.der *.pem *.p12 *.key"
+
+#~ msgid "*.pac"
+#~ msgstr "*.pac"

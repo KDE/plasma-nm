@@ -105,10 +105,11 @@ ListItem {
         id: connectionItemMenu
 
         QQC2.MenuItem {
-            text: ConnectionState === PlasmaNM.Enums.Deactivated ? i18n("Connect") : i18n("Disconnect")
-            visible: ItemType === 1
+            icon.name: connectionItem.connectionIsDeactivated() ? "network-connect-symbolic" : "network-disconnect-symbolic"
+            text: connectionItem.connectionIsDeactivated() ? i18n("Connect") : i18n("Disconnect")
+            visible: ItemType === 1 // NetworkModelItem::ItemType::AvailableConnection
             onTriggered: {
-                if (ConnectionState === PlasmaNM.Enums.Deactivated) {
+                if (connectionItem.connectionIsDeactivated()) {
                     handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
                 } else {
                     handler.deactivateConnection(ConnectionPath, DevicePath);
@@ -117,7 +118,7 @@ ListItem {
         }
 
         QQC2.MenuItem {
-            icon.name: "list-remove"
+            icon.name: "list-remove-symbolic"
             text: i18n("Delete");
 
             onTriggered: {
@@ -126,12 +127,16 @@ ListItem {
         }
 
         QQC2.MenuItem {
-            icon.name: "document-export"
+            icon.name: "document-export-symbolic"
             visible: KcmVpnConnectionExportable
             text: i18n("Export");
 
             onTriggered: kcm.onRequestExportConnection(ConnectionPath)
         }
+    }
+
+    function connectionIsDeactivated(): bool {
+        return ConnectionState === PlasmaNM.Enums.Deactivated;
     }
 
     /* This generates the status description under each connection

@@ -107,7 +107,7 @@ ListItem {
         QQC2.MenuItem {
             icon.name: connectionItem.connectionIsDeactivated() ? "network-connect-symbolic" : "network-disconnect-symbolic"
             text: connectionItem.connectionIsDeactivated() ? i18n("Connect") : i18n("Disconnect")
-            visible: ItemType === 1 // NetworkModelItem::ItemType::AvailableConnection
+            visible: ItemType === PlasmaNM.NetworkModelItem.AvailableConnection
             onTriggered: {
                 if (connectionItem.connectionIsDeactivated()) {
                     handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);

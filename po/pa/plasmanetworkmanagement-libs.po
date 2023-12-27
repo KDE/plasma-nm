@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2023-12-24 09:28-0600\n"
+"PO-Revision-Date: 2023-12-26 10:44-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
@@ -228,12 +228,12 @@ msgstr "VLAN"
 #: editor/settings/btwidget.cpp:20
 #, kde-format
 msgid "DUN (dial up networking)"
-msgstr ""
+msgstr "DUN (ਡਾਇਲ ਅੱਪ ਨੈੱਟਵਰਕਿੰਗ)"
 
 #: editor/settings/btwidget.cpp:21
 #, kde-format
 msgid "PAN (personal area network)"
-msgstr ""
+msgstr "PAN (ਪਰਸਨਲ ਏਰੀਆ ਨੈੱਟਵਰਕ)"
 
 #: editor/settings/connectionwidget.cpp:158
 #, kde-format
@@ -292,11 +292,14 @@ msgid ""
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 msgstr ""
+"<qt>ਇਹ ਮੁੱਲਾਂ ਬਾਰੇ ਹੋਰ ਜਾਣਕਾਰੀ ਤੁਸੀਂ ਇੱਥੇ ਵੇਖ ਸਕਦੇ ਹੋ:<br/><a href='https://developer."
+"gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome.org/"
+"NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
-msgstr ""
+msgstr "ਹੋਸਟ-ਨਾਂ ਭੇਜੋ:"
 
 #: editor/settings/ipv4widget.cpp:435
 #, kde-format
@@ -318,7 +321,7 @@ msgstr "ਮਿਲੀਸਕਿੰਟ"
 #: editor/settings/ipv4widget.cpp:444
 #, kde-format
 msgid "DAD timeout:"
-msgstr ""
+msgstr "DAD ਆਈਟਮ-ਆਉਟ:"
 
 #: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:405
 #, kde-format
@@ -360,6 +363,9 @@ msgid ""
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://www.kde."
 "org&gt;</li></ul></qt>"
 msgstr ""
+"<qt>ਇਹ ਐੰਟਰੀ ਇਹਨਾਂ ਵਿੱਚੋਂ ਇੱਕ ਹੋਣੀ ਚਾਹੀਦੀ ਹੈ:<ul><li>DNS: &lt;ਨਾਂ ਜਾਂ ip ਐਡਰੈੱਸ&gt;</"
+"li><li>EMAIL: &lt;ਈਮੇਲ&gt;</li><li>URI: &lt;uri, e.g. https://www.kde.org&gt;"
+"</li></ul></qt>"
 
 #: editor/settings/security802-1x.cpp:523
 #, kde-format
@@ -701,25 +707,25 @@ msgstr " ms"
 #: editor/settings/ui/bond.ui:192
 #, kde-format
 msgid "Link up delay:"
-msgstr ""
+msgstr "ਲਿੰਕ ਅੱਪ ਲਈ ਦੇਰੀ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/bond.ui:212
 #, kde-format
 msgid "Link down delay:"
-msgstr ""
+msgstr "ਲਿੰਕ ਬੰਦ ਕਰਨ ਲਈ ਦੇਰੀ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/bond.ui:239
 #, kde-format
 msgid "ARP targets:"
-msgstr ""
+msgstr "ARP ਟਾਰਗੇਟ:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
 #: editor/settings/ui/bond.ui:249
 #, kde-format
 msgid "An IP address or comma-separated list of addresses."
-msgstr ""
+msgstr "ਇੱਕ IP ਐਡਰੈਸ ਜਾਂ ਕਾਮਿਆਂ ਨਾਲ ਵੱਖ ਕੀਤੀ ਐਡਰੈਸਾਂ ਦੀ ਸੂਚੀ ਹੈ।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/bridge.ui:31
@@ -748,7 +754,7 @@ msgstr "ਸਕਿੰਟ"
 #: editor/settings/ui/bridge.ui:136
 #, kde-format
 msgid "Enable STP (Spanning Tree Protocol)"
-msgstr ""
+msgstr "STP (ਸਪੈਨਿੰਗ ਟਰੀ ਪਰੋਟੋਕਾਲ) ਸਮਰੱਥ ਕਰੋ"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/bridge.ui:148
@@ -760,25 +766,25 @@ msgstr "ਤਰਜੀਹ:"
 #: editor/settings/ui/bridge.ui:174
 #, kde-format
 msgid "Forward delay:"
-msgstr ""
+msgstr "ਅੱਗੇ ਭੇਜਣ ਲਈ ਦੇਰੀ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bridge.ui:203
 #, kde-format
 msgid "Hello time:"
-msgstr ""
+msgstr "ਹੈਲੋ ਸਮਾਂ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: editor/settings/ui/bridge.ui:232
 #, kde-format
 msgid "Max age:"
-msgstr ""
+msgstr "ਵੱਧ ਤੋਂ ਵੱਧ ਉਮਰ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/bt.ui:21
 #, kde-format
 msgid "Address of the device:"
-msgstr ""
+msgstr "ਡਿਵਾਈਸ ਦਾ ਐਡਰੈਸ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bt.ui:41
@@ -794,10 +800,9 @@ msgstr "ਗਿਣਤੀ:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
 #: editor/settings/ui/connectionwidget.ui:17
-#, fuzzy, kde-format
-#| msgid "Ignore automatically obtained routes"
+#, kde-format
 msgid "Connect automatically with priority"
-msgstr "ਆਟੋਮੈਟਿਕ ਲਏ ਰੂਟ ਅਣਡਿੱਠੇ ਕਰੋ"
+msgstr "ਆਪਣੇ-ਆਪ ਤਰਜੀਹ ਨਾਲ ਕਨੈਕਟ ਕਰੋ"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
@@ -853,7 +858,7 @@ msgstr "ਫਾਇਰਵਾਲ ਜ਼ੋਨ:"
 #: editor/settings/ui/connectionwidget.ui:129
 #, kde-format
 msgid "Metered:"
-msgstr ""
+msgstr "ਮੀਟਰ ਵਾਲਾ:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:149
@@ -1061,7 +1066,7 @@ msgstr ""
 #: editor/settings/ui/ipv4.ui:189
 #, kde-format
 msgid "DHCP Client ID:"
-msgstr ""
+msgstr "DHCP ਕਲਾਈਂਟ ID:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
 #: editor/settings/ui/ipv4.ui:204
@@ -1084,7 +1089,7 @@ msgstr "ਹਟਾਓ"
 #: editor/settings/ui/ipv4.ui:223 editor/settings/ui/ipv6.ui:107
 #, kde-format
 msgid "Add"
-msgstr "ਸ਼ਾਮਿਲ"
+msgstr "ਜੋੜੋ"
 
 #. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
 #: editor/settings/ui/ipv4.ui:240 editor/settings/ui/ipv6.ui:124
@@ -1095,6 +1100,8 @@ msgid ""
 "to add\n"
 "an IP address"
 msgstr ""
+"IP ਐਡਰੈੱਸ ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਨੂੰ ਨੈੱਟਵਰਕ ਉੱਤੇ ਪਛਾਣ ਦਿੰਦਾ ਹੈ। ਇੱਕ IP ਐਡਰੈਸ ਜੋੜਨ ਲਈ \"ਜੋੜੋ\" ਬਟਨ\n"
+"ਨੂੰ ਕਲਿੱਕ ਕਰੋ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:278
@@ -1158,13 +1165,13 @@ msgstr "ਅਸਮਰੱਥ ਹੈ"
 #: editor/settings/ui/ipv6.ui:204
 #, kde-format
 msgid "Enabled (prefer public address)"
-msgstr "ਸਮਰੱਥ ਹੈ (ਤਰਜੀਹੀ ਪਬਲਿਕ ਸਿਰਨਾਵਾਂ)"
+msgstr "ਸਮਰੱਥ ਹੈ (ਪਬਲਿਕ ਐਡਰੈਸ ਲਈ ਤਰਜੀਹ)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:209
 #, kde-format
 msgid "Enabled (prefer temporary addresses)"
-msgstr ""
+msgstr "ਸਮਰੱਥ ਹੈ (ਆਰਜ਼ੀ ਐਡਰੈਸ ਲਈ ਤਰਜੀਹ)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:234
@@ -1177,7 +1184,7 @@ msgstr "ਆਟੋਮੈਟਿਕ (ਸਿਰਫ਼ DHCP)"
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
-msgstr "ਅਣਡਿੱਠ ਕੀਤਾ"
+msgstr "ਅਣਡਿੱਠਾ ਕੀਤਾ"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:254
@@ -1237,7 +1244,7 @@ msgstr ""
 #: editor/settings/ui/ppp.ui:152
 #, kde-format
 msgid "Require 128-bit encryption"
-msgstr ""
+msgstr "128-ਬਿੱਟ ਇੰਕ੍ਰਿਪਸ਼ਨ ਚਾਹੀਦੀ ਹੈ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppeStateful)
 #: editor/settings/ui/ppp.ui:165
@@ -1255,7 +1262,7 @@ msgstr "ਈਕੋ"
 #: editor/settings/ui/ppp.ui:184
 #, kde-format
 msgid "Send PPP echo packets"
-msgstr ""
+msgstr "PPP ਈਕੋ ਪੈਕੇਟ ਭੇਜੋ"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/pppoe.ui:20
@@ -1283,21 +1290,19 @@ msgstr "ਟੀਮਡ ਕਨੈਕਸ਼ਨ:"
 #: editor/settings/ui/team.ui:113
 #, kde-format
 msgid "JSON config:"
-msgstr ""
+msgstr "JSON ਸੰਰਚਨਾ:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnImport)
 #: editor/settings/ui/team.ui:123
 #, kde-format
 msgid "Import configuration from file…"
-msgstr ""
+msgstr "…ਫਾਇਲ ਤੋਂ ਸੰਰਚਨਾ ਇੰਪੋਰਟ ਕਰੋ"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
-#, fuzzy, kde-format
-#| msgctxt "description of configuring hardware network interface state"
-#| msgid "Configuring interface"
+#, kde-format
 msgid "Parent interface:"
-msgstr "ਇੰਟਰਫੇਸ ਸੰਰਚਨਾ ਜਾਰੀ"
+msgstr "ਮੁੱਢਲਾ ਇੰਟਰਫੇਸ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/vlan.ui:41
@@ -1321,7 +1326,7 @@ msgstr ""
 #: editor/settings/ui/vlan.ui:84
 #, kde-format
 msgid "GARP VLAN Registration Protocol"
-msgstr ""
+msgstr "GARP VLAN ਰਜਿਟਰੇਸ਼ਨ ਪਰੋਟੋਕਾਲ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, gvrp)
 #: editor/settings/ui/vlan.ui:87
@@ -1422,13 +1427,16 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
+"ਵਾਈ-ਫਾਈ ਕਨੈਕਸ਼ਨ ਨਾਲ ਵਰਤਣ ਲਈ ਬੇਤਾਰ ਚੈਨਲ ਹੈ। ਡਿਵਾਈਸ ਨਿਰਧਾਰਿਤ ਕੀਤੇ ਚੈਨਲ ਉੱਤੇ ਵਾਈ-ਫਾਈ ਨੂੰ "
+"ਹੀ ਜੁਆਇੰਨ\n"
+"ਕਰੇਗਾ (ਜਾਂ ਐਡ-ਹਾਕ ਨੈੱਟਵਰਕ ਬਣਾਓ)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:209
 #: editor/settings/ui/wiredconnectionwidget.ui:47
 #, kde-format
 msgid "Cloned MAC address:"
-msgstr "ਕਲੋਨ ਕੀਤਾ  MAC ਐਡਰੈਸ:"
+msgstr "ਕਲੋਨ ਕੀਤਾ MAC ਐਡਰੈਸ:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:240
@@ -1442,7 +1450,7 @@ msgstr "ਰਲਵਾਂ…"
 #: editor/settings/ui/wificonnectionwidget.ui:303
 #, kde-format
 msgid "Mark this if you want to create a connection for a hidden network"
-msgstr ""
+msgstr "ਜੇ ਤੁਸੀਂ ਲੁਕਵੇਂ ਨੈੱਟਵਰਕ ਨਾਲ ਕਨੈਕਸ਼ਨ ਬਣਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ ਤਾਂ ਇਸ ਨੂੰ ਚੁਣੋ"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:290
@@ -1473,13 +1481,13 @@ msgstr "ਕੋਈ ਨਹੀਂ"
 #: editor/settings/ui/wifisecurity.ui:33
 #, kde-format
 msgid "WEP key 40/128 bits (Hex or ASCII)"
-msgstr ""
+msgstr "WEP ਕੁੰਜੀ 40/128 ਬਿੱਟ ਕੁੰਜੀ (Hex ਜਾਂ ASCII)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:38
 #, kde-format
 msgid "WEP key 128 bits"
-msgstr ""
+msgstr "WEP ਕੁੰਜੀ 128 ਬਿੱਟ"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:48
@@ -1763,7 +1771,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:57
 #, kde-format
 msgid "fwmark:"
-msgstr ""
+msgstr "fwmark:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:67
@@ -1805,7 +1813,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:126
 #, kde-format
 msgid "Peers…"
-msgstr ""
+msgstr "ਪੀਅਰ…"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
@@ -2440,7 +2448,7 @@ msgstr "GPRS"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "Compact GSM"
-msgstr ""
+msgstr "ਕੰਪੈਕਟ GSM"
 
 #: editor/uiutils.cpp:512
 #, kde-format
@@ -2476,91 +2484,91 @@ msgstr "ਮਾਡਮ ਅਣ-ਲਾਕ ਹੈ।"
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN code."
-msgstr ""
+msgstr "ਸਿਮ ਲਈ ਪਿਨ ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:532
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN2 code."
-msgstr ""
+msgstr "ਸਿਮ ਲਈ ਪਿਨ2 ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:534
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK code."
-msgstr ""
+msgstr "ਸਿਮ ਲਈ PUK ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:536
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK2 code."
-msgstr ""
+msgstr "ਸਿਮ ਲਈ PUK2 ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:538
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PIN code."
-msgstr ""
+msgstr "ਮਾਡਮ ਲਈ ਸਰਵਿਸ ਪੂਰਕ ਪਿਨ ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:540
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PUK code."
-msgstr ""
+msgstr "ਮਾਡਮ ਲਈ ਸਰਵਿਸ ਪੂਰਕ PUK ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:542
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PIN code."
-msgstr ""
+msgstr "ਮਾਡਮ ਲਈ ਨੈ਼ਟਵਰਕ ਪਿੰਨ ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:544
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PUK code."
-msgstr ""
+msgstr "ਮਾਡਮ ਲਈ ਨੈ਼ਟਵਰਕ PUK ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:546
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PIN code."
-msgstr ""
+msgstr "ਮਾਡਮ ਲਈ ਪਿੰਨ ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:548
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PIN code."
-msgstr ""
+msgstr "ਮਾਡਮ ਲਈ ਕਾਰਪੋਰੇਟ ਪਿੰਨ ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:550
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PUK code."
-msgstr ""
+msgstr "ਮਾਡਮ ਲਈ ਕਾਰਪੋਰੇਟ PUK ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:552
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PIN code."
-msgstr ""
+msgstr "ਮਾਡਮ ਲਈ PH-FSIM ਪਿੰਨ ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:554
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PUK code."
-msgstr ""
+msgstr "ਮਾਡਮ ਲਈ PH-FSIM PUK ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:556
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PIN code."
-msgstr ""
+msgstr "ਮਾਡਮ ਲਈ ਨੈ਼ਟਵਰਕ ਸਬ-ਸੈਟ ਪਿੰਨ ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:558
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PUK code."
-msgstr ""
+msgstr "ਮਾਡਮ ਲਈ ਨੈ਼ਟਵਰਕ ਸਬ-ਸੈਟ PUK ਕੋਡ ਚਾਹੀਦਾ ਹੈ।"
 
 #: editor/uiutils.cpp:561
 #, kde-format
@@ -3060,7 +3068,7 @@ msgstr ""
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
 #, kde-format
 msgid "Use only for resources on this connection"
-msgstr "ਕੇਵਲ ਇਸ ਕਨੈਕਸ਼ਨ ਤੋਂ ਹੀ ਸਰੋਤ ਲਈ ਵਰਤੋਂ"
+msgstr "ਸਿਰਫ਼ ਇਸ ਕਨੈਕਸ਼ਨ ਤੋਂ ਹੀ ਸਰੋਤ ਲਈ ਵਰਤੋਂ"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv4routes.ui:74
@@ -3074,7 +3082,7 @@ msgstr "ਹਟਾਓ"
 #, kde-format
 msgctxt "Insert a row"
 msgid "Add"
-msgstr "ਸ਼ਾਮਿਲ"
+msgstr "ਜੋੜੋ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:136 editor/widgets/ui/ipv6routes.ui:120
@@ -3116,7 +3124,7 @@ msgstr "ਬੱਗ ਰਿਪੋਰਟ ਦਿਓ"
 #: handler.cpp:147
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ-ਮੈਨੇਜਰ ਵਿੱਚ '%1' VPN ਕਨੈਕਸ਼ਨਾਂ ਲਈ ਸਹਿਯੋਗ ਨਹੀਂ ਹੈ।"
 
 #: handler.cpp:150
 #, kde-format
@@ -3146,7 +3154,7 @@ msgstr "%1 ਨੂੰ ਜੋੜਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 #: handler.cpp:475
 #, kde-format
 msgid "Failed to deactivate %1"
-msgstr ""
+msgstr "%1 ਨਾ-ਸਰਗਰਮ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
 #: handler.cpp:606
 #, kde-format

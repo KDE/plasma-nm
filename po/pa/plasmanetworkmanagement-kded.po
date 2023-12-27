@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# A S Alam <aalam@users.sf.net>, 2014.
+# SPDX-FileCopyrightText: 2014, 2023 A S Alam <aalam@users.sf.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2014-07-08 15:45-0500\n"
-"Last-Translator: A S Alam <aalam@users.sf.net>\n"
-"Language-Team: Punjabi/Panjabi <punjabi-users@lists.sf.net>\n"
+"PO-Revision-Date: 2023-12-26 11:00-0600\n"
+"Last-Translator: A S Alam <aalam@punlinux.org>\n"
+"Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -25,29 +25,29 @@ msgstr ""
 #: connectivitymonitor.cpp:63
 #, kde-format
 msgid "Network authentication"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਪਰਮਾਣਕਿਤਾ"
 
 #: connectivitymonitor.cpp:72
 #, kde-format
 msgid "You need to log into this network"
-msgstr ""
+msgstr "ਇਸ ਨੈੱਟਵਰਕ ਲਈ ਤੁਹਾਨੂੰ ਲਾਗਇਨ ਕਰਨਾ ਪਵੇਗਾ"
 
 #: connectivitymonitor.cpp:74
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "ਲਾਗ ਇਨ"
 
 #: connectivitymonitor.cpp:94
 #, kde-format
 msgid "Limited Connectivity"
-msgstr ""
+msgstr "ਸੀਮਤ ਕਨੈਕਟਵਿਟੀ"
 
 #: connectivitymonitor.cpp:95
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "internet."
-msgstr ""
+msgstr "ਇਹ ਡਿਵਾਈਸ ਨੈੱਟਵਰਕ ਨਾਲ ਕਨੈਕਟ ਤਾਂ ਜਾਪਦਾ ਹੈ, ਪਰ ਇੰਟਰਨੈੱਟ ਵਰਤਣ ਲਈ ਅਸਮਰੱਥ ਹੈ।"
 
 #: modemmonitor.cpp:182
 #, kde-format
@@ -66,7 +66,7 @@ msgstr "ਪਿੰਨ/PUK ਅਣ-ਲਾਕ ਗਲਤੀ"
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigFailedReason"
 msgid "The device could not be configured"
-msgstr ""
+msgstr "ਡਿਵਾਈਸ ਦੀ ਸੰਰਚਨਾ ਨਹੀਂ ਕੀਤੀ ਜਾ ਸਕੀ"
 
 #: notification.cpp:100
 #, kde-format
@@ -155,14 +155,14 @@ msgstr ""
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpErrorReason"
 msgid "A DHCP error occurred"
-msgstr ""
+msgstr "DHCP ਗਲਤੀ ਹੋਈ"
 
 #: notification.cpp:137
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpFailedReason"
 msgid "DHCP failed "
-msgstr ""
+msgstr "DHCP ਫੇਲ੍ਹ ਹੈ"
 
 #: notification.cpp:140
 #, kde-format
@@ -296,21 +296,21 @@ msgstr ""
 msgctxt ""
 "@info:status Notification when the device failed due to FirmwareMissingReason"
 msgid "Device firmware is missing"
-msgstr ""
+msgstr "ਡਿਵਾਇਸ ਫਿਰਮਵੇਅਰ ਮੌਜੂਦ ਨਹੀਂ ਹੈ"
 
 #: notification.cpp:194
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DeviceRemovedReason"
 msgid "The device was removed"
-msgstr ""
+msgstr "ਡਿਵਾਈਸ ਹਟਾਇਆ ਗਿਆ"
 
 #: notification.cpp:197
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SleepingReason"
 msgid "The networking system is now sleeping"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਸਿਸਟਮ ਹੁਣ ਸਲੀਪ ਹੈ"
 
 #: notification.cpp:200
 #, kde-format
@@ -318,13 +318,13 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConnectionRemovedReason"
 msgid "The connection was removed"
-msgstr ""
+msgstr "ਕਨੈਕਸ਼ਨ ਹਟਾਇਆ ਗਿਆ"
 
 #: notification.cpp:205
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to CarrierReason"
 msgid "The cable was disconnected"
-msgstr ""
+msgstr "ਕੇਬਲ ਡਿਸ-ਕਨੈਕਟ ਹੈ"
 
 #: notification.cpp:211
 #, kde-format
@@ -338,7 +338,7 @@ msgstr ""
 msgctxt ""
 "@info:status Notification when the device failed due to BluetoothFailedReason"
 msgid "The bluetooth connection failed or timed out"
-msgstr ""
+msgstr "ਬਲੂਟੁੱਥ ਕਨੈਕਸ਼ਨ ਫੇਲ੍ਹ ਹੋਇਆ ਜਾਂ ਟਾਈਮ ਆਉਟ ਹੋਇਆ"
 
 #: notification.cpp:217
 #, kde-format
@@ -393,7 +393,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ModemManagerUnavailable"
 msgid "ModemManager not running"
-msgstr ""
+msgstr "ModemManager ਚੱਲ ਨਹੀਂ ਰਿਹਾ ਹੈ"
 
 #: notification.cpp:244
 #, kde-format
@@ -427,14 +427,14 @@ msgstr ""
 msgctxt ""
 "@info:status Notification when the device failed due to ModemAvailable"
 msgid "Modem now ready and available"
-msgstr ""
+msgstr "ਮਾਡਮ ਹੁਣ ਤਿਆਰ ਹੈ ਅਤੇ ਮੌਜੂਦ ਹੈ"
 
 #: notification.cpp:259
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SimPinIncorrect"
 msgid "The SIM PIN was incorrect"
-msgstr ""
+msgstr "ਸਿਮ ਪਿਨ ਗਲਤ ਹੈ"
 
 #: notification.cpp:262
 #, kde-format
@@ -458,29 +458,27 @@ msgstr ""
 #: notification.cpp:344
 #, kde-format
 msgid "Connection '%1' activated."
-msgstr "ਕੁਨੈਕਸ਼ਨ '%1' ਸਰਗਰਮ ਹੈ।"
+msgstr "ਕਨੈਕਸ਼ਨ '%1' ਸਰਗਰਮ ਹੈ।"
 
 #: notification.cpp:371
 #, kde-format
 msgid "Connection '%1' deactivated."
-msgstr ""
+msgstr "ਕਨੈਕਸ਼ਨ '%1' ਨਾ-ਸਰਗਰਮ ਕੀਤਾ।"
 
 #: notification.cpp:422
 #, kde-format
 msgid "VPN connection '%1' activated."
-msgstr ""
+msgstr "VPN ਕਨੈਕਸ਼ਨ '%1' ਸਰਗਰਮ ਕੀਤਾ।"
 
 #: notification.cpp:425
-#, fuzzy, kde-format
-#| msgid "Connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "ਕੁਨੈਕਸ਼ਨ '%1' ਸਰਗਰਮ ਹੈ।"
+msgstr "VPN ਕਨੈਕਸ਼ਨ '%1' ਸਰਗਰਮ ਕਰਨ ਲਈ ਫੇਲ੍ਹ ਹੈ।"
 
 #: notification.cpp:428 notification.cpp:436
-#, fuzzy, kde-format
-#| msgid "Connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "ਕੁਨੈਕਸ਼ਨ '%1' ਸਰਗਰਮ ਹੈ।"
+msgstr "VPN ਕਨੈਕਸ਼ਨ '%1' ਨਾ-ਸਰਗਰਮ ਹੈ।"
 
 #: notification.cpp:439
 #, kde-format
@@ -488,6 +486,7 @@ msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
 msgstr ""
+"'%1' VPN ਕਨੈਕਸ਼ਨ ਵਰਤਣ ਵਾਲੇ ਡਿਵਾਈਸ ਦੇ ਡਿਸ-ਕਨੈਕਟ ਹੋਣ ਕਰਕੇ ਇਸ ਨੂੰ ਡਿਸ-ਕਨੈਕਟ ਕੀਤਾ ਗਿਆ ਸੀ।"
 
 #: notification.cpp:442
 #, kde-format
@@ -524,75 +523,74 @@ msgstr ""
 #: notification.cpp:460
 #, kde-format
 msgid "Authentication to the VPN server failed."
-msgstr ""
+msgstr "VPN ਸਰਵਰ ਨਾਲ ਪਰਮਾਣਕਿਤਾ ਫੇਲ੍ਹ ਹੋਈ।"
 
 #: notification.cpp:463
 #, kde-format
 msgid "The connection was deleted."
-msgstr ""
+msgstr "ਕਨੈਕਸ਼ਨ ਨੂੰ ਹਟਾਇਆ ਗਿਆ।"
 
 #: notification.cpp:549
 #, kde-format
 msgid "No Network Connection"
-msgstr ""
+msgstr "ਕੋਈ ਨੈੱਟਵਰਕ ਨਹੀਂ ਹੈ"
 
 #: notification.cpp:550
 #, kde-format
 msgid "You are no longer connected to a network."
-msgstr ""
+msgstr "ਤੁਸੀਂ ਹੁਣ ਕਿਸੇ ਨੈੱਟਵਰਕ ਨਾਲ ਕਨੈਕਟ ਨਹੀਂ ਰਹੇ ਹੋ।"
 
 #: passworddialog.cpp:54
 #, kde-format
 msgid "Authenticate %1"
-msgstr ""
+msgstr "%1 ਪਰਮਾਣਿਤ ਕਰੋ"
 
 #: passworddialog.cpp:90
 #, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr ""
+msgstr "ਕਿਸੇ ਭੇਤ ਦੀ ਮੰਗ ਨਹੀਂ ਕੀਤੀ ਗਈ"
 
 #: passworddialog.cpp:99
 #, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr ""
+msgstr "\"%1\" ਬੇਤਾਰ ਨੈੱਟਵਰਕ ਲਈ ਪਾਸਵਰਡ ਗਲਤ ਹੈ। ਫੇਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: passworddialog.cpp:101
 #, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr ""
+msgstr "\"%1\" ਬੇਤਾਰ ਨੈੱਟਵਰਕ ਲਈ ਪਾਸਵਰਡ ਦਿਓ:"
 
 #: passworddialog.cpp:105
 #, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr ""
+msgstr "\"%1\" ਕਨੈਕਸ਼ਨ ਲਈ ਪਾਸਵਰਡ ਗਲਤ ਹੈ। ਫੇਰ ਕੋਸ਼ਿਸ਼ ਕਰੋ।"
 
 #: passworddialog.cpp:107
 #, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr ""
+msgstr "\"%1\" ਕਨੈਕਸ਼ਨ ਲਈ ਪਾਸਵਰਡ ਦਿਓ:"
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password dialog"
+#, kde-format
 msgid "%1 password dialog"
-msgstr "ਪਾਸਵਰਡ ਡਾਈਲਾਗ"
+msgstr "%1 ਪਾਸਵਰਡ ਡਾਈਲਾਗ"
 
 #: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "VPN ਸੈਟਿੰਗਾਂ ਗੁੰਮ ਹਨ"
 
 #: passworddialog.cpp:134
 #, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr ""
+msgstr "VPN ਕਨੈਕਸ਼ਨ \"%1\" ਲਈ ਭੇਤ ਦਿਓ:"
 
 #: passworddialog.cpp:135
 #, kde-format
 msgid "VPN secrets (%1) dialog"
-msgstr ""
+msgstr "VPN ਭੇਤ (%1) ਡਾਈਲਾਗ"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
@@ -619,32 +617,32 @@ msgstr "SIM PUK2"
 #: pindialog.cpp:72
 #, kde-format
 msgid "Service provider PUK"
-msgstr ""
+msgstr "ਸਰਵਿਸ ਪੂਰਕ PUK"
 
 #: pindialog.cpp:74
 #, kde-format
 msgid "Network PUK"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ PUK"
 
 #: pindialog.cpp:76
 #, kde-format
 msgid "Corporate PUK"
-msgstr ""
+msgstr "ਕਾਰਪੋਰੇਟ PUK"
 
 #: pindialog.cpp:78
 #, kde-format
 msgid "PH-FSIM PUK"
-msgstr ""
+msgstr "PH-FSIM PUK"
 
 #: pindialog.cpp:80
 #, kde-format
 msgid "Network Subset PUK"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਸਬ-ਸੈਟ PUK"
 
 #: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
 msgid "%1 unlock required"
-msgstr ""
+msgstr "%1 ਅਣ-ਲਾਕ ਕਰਨ ਦੀ ਲੋੜ ਹੈ"
 
 #: pindialog.cpp:84 pindialog.cpp:116
 #, kde-format
@@ -692,12 +690,12 @@ msgstr "SIM ਪਿੰਨ2"
 #: pindialog.cpp:103
 #, kde-format
 msgid "Service provider PIN"
-msgstr ""
+msgstr "ਸਰਵਿਸ ਪੂਰਕ ਪਿੰਨ"
 
 #: pindialog.cpp:105
 #, kde-format
 msgid "Network PIN"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਪਿੰਨ"
 
 #: pindialog.cpp:107
 #, kde-format
@@ -707,17 +705,17 @@ msgstr "ਪਿੰਨ"
 #: pindialog.cpp:109
 #, kde-format
 msgid "Corporate PIN"
-msgstr ""
+msgstr "ਕਾਰਪੋਰੇਟ ਪਿੰਨ"
 
 #: pindialog.cpp:111
 #, kde-format
 msgid "PH-FSIM PIN"
-msgstr ""
+msgstr "PH-FSIM PIN"
 
 #: pindialog.cpp:113
 #, kde-format
 msgid "Network Subset PIN"
-msgstr ""
+msgstr "ਨੈੱਟਵਰਕ ਸਬ-ਸੈਟ ਪਿੰਨ"
 
 #: pindialog.cpp:119
 #, kde-format
@@ -747,10 +745,9 @@ msgstr "ਅਣਜਾਣ ਗਲਤੀ"
 #. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
 #. i18n: ectx: property (text), widget (QLabel, title)
 #: pinwidget.ui:14 pinwidget.ui:47
-#, fuzzy, kde-format
-#| msgid "%1 Unlock Required"
+#, kde-format
 msgid "SIM PIN unlock required"
-msgstr "%1 ਅਣਲਾਕ ਮੰਗ"
+msgstr "ਸਿਮ ਪਿੰਨ ਅਣਲਾਕ ਮੰਗ"
 
 #. i18n: ectx: property (text), widget (QLabel, prompt)
 #: pinwidget.ui:76
@@ -762,22 +759,20 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, pukLabel)
 #: pinwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "%1 code:"
+#, kde-format
 msgid "PUK code:"
-msgstr "%1 ਕੋਡ:"
+msgstr "PUK ਕੋਡ:"
 
 #. i18n: ectx: property (text), widget (QLabel, pin2Label)
 #: pinwidget.ui:173
-#, fuzzy, kde-format
-#| msgid "Re-enter new PIN code:"
+#, kde-format
 msgid "Re-enter PIN code:"
-msgstr "ਨਵਾਂ ਪਿੰਨ ਕੋਡ ਫੇਰ ਦਿਓ:"
+msgstr "ਪਿੰਨ ਕੋਡ ਫੇਰ ਦਿਓ:"
 
 #: secretagent.cpp:408
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
-msgstr ""
+msgstr "%1 ਲਈ ਪਰਮਾਣਕਿਤਾ ਫੇਲ੍ਹ ਹੈ। ਪਾਸਵਰਡ ਗਲਤ ਹੈ?"
 
 #~ msgid "TextLabel"
 #~ msgstr "TextLabel"

@@ -26,6 +26,7 @@
         "Description[lt]": "Teikia paslaptis NetworkManager tarnybai",
         "Description[nl]": "Levert secrets aan de NetworkManager-daemon",
         "Description[nn]": "Forsyner NetworkManager-tenesta med løyndomar",
+        "Description[pa]": "ਨੈੱਟਵਰਕਮੈਨੇਜਰ ਡੈਮਨ ਲਈ ਭੇਤ ਦਿੰਦਾ ਹੈ",
         "Description[pl]": "Dostarcza danych poufnych do usługi Zarządzania Siecią",
         "Description[pt]": "Fornece as senhas ao serviço NetworkManager",
         "Description[pt_BR]": "Fornece as senhas do serviço NetworkManager",

@@ -216,7 +216,8 @@ void OpenconnectAuthWorkerThread::writeProgress(int level, const char *fmt, va_l
 }
 
 int OpenconnectAuthWorkerThread::openWebEngineP(__attribute__((unused)) struct openconnect_info *vpninfo,
-                                                const char *loginUri, __attribute__((unused)) void *privdata)
+                                                const char *loginUri,
+                                                __attribute__((unused)) void *privdata)
 {
     QSemaphore waitForWebEngineFinish;
 
@@ -226,8 +227,7 @@ int OpenconnectAuthWorkerThread::openWebEngineP(__attribute__((unused)) struct o
     return 0;
 }
 
-int OpenconnectAuthWorkerThread::openUri(__attribute__((unused)) struct openconnect_info *vpninfo,
-                                         const char *loginUri, __attribute__((unused)) void *privdata)
+int OpenconnectAuthWorkerThread::openUri(__attribute__((unused)) struct openconnect_info *vpninfo, const char *loginUri, __attribute__((unused)) void *privdata)
 {
     bool opened = QDesktopServices::openUrl(QUrl(loginUri, QUrl::TolerantMode));
     if (!opened) {

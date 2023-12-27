@@ -27,9 +27,9 @@
 #include <ModemManagerQt/ModemDevice>
 
 // Qt
+#include <QFile>
 #include <QHostAddress>
 #include <QSizeF>
-#include <QFile>
 #include <QString>
 
 #include <optional>

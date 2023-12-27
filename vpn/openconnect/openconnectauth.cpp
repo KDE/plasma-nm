@@ -152,8 +152,7 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
 OpenconnectAuthWidget::~OpenconnectAuthWidget()
 {
     Q_D(OpenconnectAuthWidget);
-    QSemaphore *webEngineCancel =
-        d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
+    QSemaphore *webEngineCancel = d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
     if (webEngineCancel) {
         webEngineCancel->release();
     }
@@ -499,7 +498,6 @@ void OpenconnectAuthWidget::logLevelChanged(int newLevel)
     }
 }
 
-
 void OpenconnectAuthWidget::handleWebEngineCookie(const QNetworkCookie &cookie)
 {
     Q_D(OpenconnectAuthWidget);
@@ -516,8 +514,7 @@ void OpenconnectAuthWidget::handleWebEngineCookie(const QNetworkCookie &cookie)
     // logic in libopenconnect.
     res.uri = "";
     if (!openconnect_webview_load_changed(d->vpninfo, &res)) {
-        QSemaphore *waitForWebEngineFinish =
-            d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
+        QSemaphore *waitForWebEngineFinish = d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
         if (waitForWebEngineFinish) {
             waitForWebEngineFinish->release();
         }
@@ -539,8 +536,7 @@ void OpenconnectAuthWidget::handleWebEngineLoad(const QWebEngineLoadingInfo &loa
         return;
     }
 
-    const QMultiMap<QByteArray, QByteArray> responseHeaders =
-        loadingInfo.responseHeaders();
+    const QMultiMap<QByteArray, QByteArray> responseHeaders = loadingInfo.responseHeaders();
     QMultiMapIterator<QByteArray, QByteArray> headerIter(responseHeaders);
     responseHeaderList.reserve((responseHeaders.size() * 2) + 1);
     while (headerIter.hasNext()) {
@@ -558,8 +554,7 @@ void OpenconnectAuthWidget::handleWebEngineLoad(const QWebEngineLoadingInfo &loa
     res.cookies = cookiesArr;
     res.uri = "";
     if (!openconnect_webview_load_changed(d->vpninfo, &res)) {
-        QSemaphore *waitForWebEngineFinish =
-            d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
+        QSemaphore *waitForWebEngineFinish = d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
         if (waitForWebEngineFinish) {
             waitForWebEngineFinish->release();
         }
@@ -581,8 +576,7 @@ void OpenconnectAuthWidget::handleWebEngineUrl(const QUrl &url)
     res.cookies = cookiesArr;
     res.uri = urlByteArray.constData();
     if (!openconnect_webview_load_changed(d->vpninfo, &res)) {
-        QSemaphore *waitForWebEngineFinish =
-            d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
+        QSemaphore *waitForWebEngineFinish = d->waitForWebEngineFinish.fetchAndStoreRelaxed(nullptr);
         if (waitForWebEngineFinish) {
             waitForWebEngineFinish->release();
         }

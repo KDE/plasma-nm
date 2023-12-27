@@ -45,9 +45,9 @@
 #include <KWindowSystem>
 #include <KX11Extras>
 
-#include <nm-client.h>
 #include <QCoroCore>
 #include <QCoroDBus>
+#include <nm-client.h>
 
 #define AGENT_SERVICE "org.kde.kded6"
 #define AGENT_PATH "/modules/networkmanagement"

@@ -83,7 +83,10 @@ QQC2.Page {
             currentIndex: -1
             boundsBehavior: Flickable.StopAtBounds
             section.property: "KcmConnectionType"
-            section.delegate: Kirigami.ListSectionHeader { text: section }
+            section.delegate: Kirigami.ListSectionHeader {
+                text: section
+                width: ListView.view.width
+            }
             delegate: ConnectionItem {
                 onAboutToChangeConnection: (exportable, name, path) => {
                     // Shouldn't be problem to set this in advance

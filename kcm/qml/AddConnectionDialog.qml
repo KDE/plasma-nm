@@ -59,7 +59,10 @@ Window {
             currentIndex: -1
             boundsBehavior: Flickable.StopAtBounds
             section.property: "ConnectionTypeSection"
-            section.delegate: Kirigami.ListSectionHeader { text: section }
+            section.delegate: Kirigami.ListSectionHeader {
+                text: section
+                width: ListView.view.width
+            }
             Rectangle {
                 id: background1
                 z: -1

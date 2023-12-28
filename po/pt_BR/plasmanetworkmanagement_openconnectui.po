@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2023-12-28 01:34+0000\n"
 "PO-Revision-Date: 2023-07-25 10:07-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -29,13 +29,13 @@ msgstr "Não foi possível inicializar o token do software: %1"
 msgid "Contacting host, please wait…"
 msgstr "Contactando a máquina, aguarde..."
 
-#: openconnectauth.cpp:695
+#: openconnectauth.cpp:722
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Autenticar"
 
-#: openconnectauth.cpp:757
+#: openconnectauth.cpp:784
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -46,7 +46,7 @@ msgstr ""
 "Motivo: %2\n"
 "Deseja aceitá-la assim mesmo?"
 
-#: openconnectauth.cpp:852
+#: openconnectauth.cpp:879
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Falha na tentativa de conexão."

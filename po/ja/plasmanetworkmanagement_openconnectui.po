@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2023-12-28 01:34+0000\n"
 "PO-Revision-Date: 2013-06-14 04:26-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -24,13 +24,13 @@ msgstr ""
 msgid "Contacting host, please wait…"
 msgstr ""
 
-#: openconnectauth.cpp:695
+#: openconnectauth.cpp:722
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr ""
 
-#: openconnectauth.cpp:757
+#: openconnectauth.cpp:784
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -38,7 +38,7 @@ msgid ""
 "Accept it anyway?"
 msgstr ""
 
-#: openconnectauth.cpp:852
+#: openconnectauth.cpp:879
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr ""

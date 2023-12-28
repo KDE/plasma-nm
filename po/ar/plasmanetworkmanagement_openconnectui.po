@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2023-12-28 01:34+0000\n"
 "PO-Revision-Date: 2015-01-10 03:31+0300\n"
 "Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -29,14 +29,14 @@ msgstr ""
 msgid "Contacting host, please wait…"
 msgstr "يتّصل بالمضيف، فضلًا انتظر..."
 
-#: openconnectauth.cpp:695
+#: openconnectauth.cpp:722
 #, fuzzy, kde-format
 #| msgid "Login"
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "لِج"
 
-#: openconnectauth.cpp:757
+#: openconnectauth.cpp:784
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -47,7 +47,7 @@ msgstr ""
 "السّبب: %2\n"
 "أأقبلها بأيّ حال؟"
 
-#: openconnectauth.cpp:852
+#: openconnectauth.cpp:879
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "لم تتمّ محاولة الاتصال بنجاح."

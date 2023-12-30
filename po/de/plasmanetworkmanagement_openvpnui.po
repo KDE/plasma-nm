@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
 # Burkhard Lück <lueck@hube-lueck.de>, 2013, 2014, 2015, 2016, 2017, 2018, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2014, 2016, 2023.
 msgid ""
@@ -5,15 +6,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2023-04-26 20:13+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2023-12-21 18:32+0100\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.07.70\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: openvpn.cpp:183
 #, kde-format
@@ -864,10 +865,11 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkNsCertType)
 #: openvpnadvanced.ui:809
-#, fuzzy, kde-format
-#| msgid "Verify peer (server) certificate usage signature"
+#, kde-format
 msgid "Verify peer (server) certificate nsCertType designation"
-msgstr "Zertifikat der Gegenstelle (Server) mithilfe der Signatur überprüfen"
+msgstr ""
+"Zertifikat der Gegenstelle (Server) mithilfe der nsCertType-Bezeichnung "
+"überprüfen"
 
 #. i18n: ectx: property (text), widget (QLabel, lblNsCertType)
 #: openvpnadvanced.ui:824
@@ -1106,10 +1108,9 @@ msgid "token"
 msgstr ""
 
 #: openvpnauth.cpp:86
-#, fuzzy, kde-format
-#| msgid "Key password"
+#, kde-format
 msgid "one-time password"
-msgstr "Schlüssel-Passwort"
+msgstr "Einmalpasswort"
 
 #~ msgid "Could not open file"
 #~ msgstr "Datei kann nicht geöffnet werden"

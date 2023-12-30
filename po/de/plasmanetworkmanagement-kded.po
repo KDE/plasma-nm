@@ -1,3 +1,4 @@
+# SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
 # Burkhard Lück <lueck@hube-lueck.de>, 2013, 2014, 2015, 2016, 2017, 2019, 2020.
 # Frederik Schwarzer <schwarzer@kde.org>, 2016, 2020, 2021.
 # Alois Spitzbart <spitz234@hotmail.com>, 2020.
@@ -7,15 +8,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2023-01-25 16:00+0100\n"
-"Last-Translator: Jannick Kuhr <opensource@kuhr.org>\n"
+"PO-Revision-Date: 2023-12-21 18:30+0100\n"
+"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -567,7 +568,7 @@ msgstr "%1 authentifizieren"
 #: passworddialog.cpp:98
 #, kde-format
 msgid "Provide the password for the wireless network '%1':"
-msgstr "Bitte geben Sie das Passwort für Funknetzwerk „%1“ ein:"
+msgstr "Bitte geben Sie das Passwort für das Funknetzwerk „%1“ ein:"
 
 #: passworddialog.cpp:100
 #, kde-format
@@ -773,7 +774,9 @@ msgstr "PIN-Code erneut eingeben:"
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
-msgstr "Die Authentifizierung mit %1 ist fehlgeschlagen."
+msgstr ""
+"Die Authentifizierung mit %1 ist fehlgeschlagen. Haben Sie das richtige "
+"Passwort verwendet?"
 
 #~ msgid "VPN connection '%1' failed."
 #~ msgstr "VPN-Verbindung %1 ist fehlgeschlagen."

@@ -1,7 +1,6 @@
 # Burkhard Lück <lueck@hube-lueck.de>, 2013, 2014, 2015, 2017, 2019, 2021.
 # Frederik Schwarzer <schwarzer@kde.org>, 2020.
 # Jannick Kuhr <kde-dev@kuhr.org>, 2023.
-# Johannes Obermayr <johannesobermayr@gmx.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"

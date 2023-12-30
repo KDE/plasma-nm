@@ -1,14 +1,14 @@
+# SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
 # Burkhard Lück <lueck@hube-lueck.de>, 2013, 2014, 2015, 2016, 2017, 2019, 2020.
 # Frederik Schwarzer <schwarzer@kde.org>, 2016, 2020, 2021.
 # Alois Spitzbart <spitz234@hotmail.com>, 2020.
 # Jannick Kuhr <kde-dev@kuhr.org>, 2023.
-# Johannes Obermayr <johannesobermayr@gmx.de>, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-18 14:22+0100\n"
+"PO-Revision-Date: 2023-12-21 18:30+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -569,20 +569,18 @@ msgstr "Es wurde nach keinen geheimen Daten gefragt"
 #, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr ""
-"Das Passwort für das Funknetzwerk „%1“ ist falsch. Bitte versuchen Sie es "
-"nochmal."
+"Das Passwort für das Funknetzwerk „%1“ ist falsch. Versuchen Sie es nochmal."
 
 #: passworddialog.cpp:101
 #, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "Bitte geben Sie das Passwort für Funknetzwerk „%1“ ein:"
+msgstr "Bitte geben Sie das Passwort für das Funknetzwerk „%1“ ein:"
 
 #: passworddialog.cpp:105
 #, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
 msgstr ""
-"Das Passwort für die Verbindung „%1“ ist falsch. Bitte versuchen Sie es "
-"nochmal."
+"Das Passwort für die Verbindung „%1“ ist falsch. Versuchen Sie es erneut."
 
 #: passworddialog.cpp:107
 #, kde-format
@@ -603,7 +601,7 @@ msgstr "Die VPN-Einstellungen fehlen"
 #: passworddialog.cpp:134
 #, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "Bitte geben Sie die geheimen Daten für die VPN-Verbindung „%1“ ein:"
+msgstr "Bitte geben Sie das Passwort für die VPN-Verbindung „%1“ ein:"
 
 #: passworddialog.cpp:135
 #, kde-format

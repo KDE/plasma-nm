@@ -1115,7 +1115,7 @@ msgstr "Propietats avançades d'OpenVPN"
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
-msgstr "Ha fallat la busca del xifratge OpenVPN"
+msgstr "No s'ha pogut fer la busca del xifratge OpenVPN"
 
 #: openvpnadvancedwidget.cpp:139
 #, kde-format

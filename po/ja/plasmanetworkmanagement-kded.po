@@ -787,10 +787,3 @@ msgstr ""
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1への認証に失敗しました。パスワードは正しいですか？"
-
-#, fuzzy
-#~| msgid "Starting the service providing the VPN connection failed."
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "connection '%1':"
-#~ msgstr "VPN 接続を提供するサービスの開始に失敗しました。"

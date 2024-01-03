@@ -386,6 +386,3 @@ msgstr "Brukernavn:"
 #, kde-format
 msgid "Group name."
 msgstr ""
-
-#~ msgid "*.pem *.crt *.cer"
-#~ msgstr "*.pem *.crt *.cer"

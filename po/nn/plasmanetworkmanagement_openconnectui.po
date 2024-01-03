@@ -322,6 +322,3 @@ msgstr "Tilgangspollett-modus:"
 #, kde-format
 msgid "Token Secret:"
 msgstr "Tilgangspollett-løyndom:"
-
-#~ msgid "*.pem *.crt *.key"
-#~ msgstr "*.pem *.crt *.key"

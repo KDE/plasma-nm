@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2014, 2015, 2018, 2019, 2020, 2023 A S Alam <aalam@users.sf.net>
+# SPDX-FileCopyrightText: 2014, 2015, 2018, 2019, 2020, 2023, 2024 A S Alam <aalam@users.sf.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2023-12-26 10:44-0600\n"
+"PO-Revision-Date: 2024-01-03 14:00-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
@@ -375,7 +375,7 @@ msgstr "ਸਿਰਫ਼ ਇਹਨਾਂ ਸਰਵਰਾਂ ਨਾਲ ਕਨੈਕ�
 #: editor/settings/teamwidget.cpp:219
 #, kde-format
 msgid "Select file to import"
-msgstr "ਇੰਪੋਰਟ ਕਰਨ ਲਈ ਫਾਈਲ ਚੁਣੋ"
+msgstr "ਇੰਪੋਰਟ ਕਰਨ ਲਈ ਫਾਇਲ ਚੁਣੋ"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)

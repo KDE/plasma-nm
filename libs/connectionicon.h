@@ -13,8 +13,6 @@
 #include <NetworkManagerQt/VpnConnection>
 #include <NetworkManagerQt/WirelessNetwork>
 
-#include <QCoroCore>
-
 #include <qqmlregistration.h>
 
 class ConnectionIcon : public QObject

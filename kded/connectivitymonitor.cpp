@@ -94,7 +94,7 @@ void ConnectivityMonitor::showLimitedConnectivityNotification()
     m_notification->sendEvent();
 }
 
-QCoro::Task<void> ConnectivityMonitor::checkConnectivity()
+QCoro::Task<> ConnectivityMonitor::checkConnectivity()
 {
     QDBusReply<uint> reply = co_await NetworkManager::checkConnectivity();
 

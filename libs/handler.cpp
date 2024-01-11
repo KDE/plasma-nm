@@ -96,7 +96,7 @@ void Handler::activateConnection(const QString &connection, const QString &devic
     activateConnectionInternal(connection, device, specificObject);
 }
 
-QCoro::Task<void> Handler::activateConnectionInternal(const QString &connection, const QString &device, const QString &specificObject)
+QCoro::Task<> Handler::activateConnectionInternal(const QString &connection, const QString &device, const QString &specificObject)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
@@ -262,7 +262,7 @@ void Handler::addAndActivateConnection(const QString &device, const QString &spe
     addAndActivateConnectionInternal(device, specificParameter, password);
 }
 
-QCoro::Task<void> Handler::addAndActivateConnectionInternal(const QString &device, const QString &specificObject, const QString &password)
+QCoro::Task<> Handler::addAndActivateConnectionInternal(const QString &device, const QString &specificObject, const QString &password)
 {
     NetworkManager::AccessPoint::Ptr ap;
     NetworkManager::WirelessDevice::Ptr wifiDev;
@@ -364,7 +364,7 @@ QCoro::Task<void> Handler::addAndActivateConnectionInternal(const QString &devic
     settings.clear();
 }
 
-QCoro::Task<void> Handler::addConnection(const NMVariantMapMap &map)
+QCoro::Task<> Handler::addConnection(const NMVariantMapMap &map)
 {
     const QString connectionId = map.value(QStringLiteral("connection")).value(QStringLiteral("id")).toString();
 
@@ -442,7 +442,7 @@ void Handler::addConnection(NMConnection *connection)
                               userData);
 }
 
-QCoro::Task<void> Handler::addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject)
+QCoro::Task<> Handler::addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject)
 {
     const QString name = map.value(QStringLiteral("connection")).value(QStringLiteral("id")).toString();
     QPointer<Handler> alive(this);
@@ -466,7 +466,7 @@ void Handler::deactivateConnection(const QString &connection, const QString &dev
     deactivateConnectionInternal(connection, device);
 }
 
-QCoro::Task<void> Handler::deactivateConnectionInternal(const QString &_connection, const QString &device)
+QCoro::Task<> Handler::deactivateConnectionInternal(const QString &_connection, const QString &device)
 {
     const QString connection = _connection;
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
@@ -539,7 +539,7 @@ void setBluetoothEnabled(const QString &path, bool enabled)
     QDBusConnection::systemBus().asyncCall(message);
 }
 
-QCoro::Task<void> Handler::enableBluetooth(bool enable)
+QCoro::Task<> Handler::enableBluetooth(bool enable)
 {
     qDBusRegisterMetaType<QMap<QDBusObjectPath, NMVariantMapMap>>();
 
@@ -606,7 +606,7 @@ void Handler::removeConnection(const QString &connection)
     removeConnectionInternal(connection);
 }
 
-QCoro::Task<void> Handler::removeConnectionInternal(const QString &connection)
+QCoro::Task<> Handler::removeConnectionInternal(const QString &connection)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
@@ -646,7 +646,7 @@ QCoro::Task<void> Handler::removeConnectionInternal(const QString &connection)
     }
 }
 
-QCoro::Task<void> Handler::updateConnection(NetworkManager::Connection::Ptr connection, const NMVariantMapMap &map)
+QCoro::Task<> Handler::updateConnection(NetworkManager::Connection::Ptr connection, const NMVariantMapMap &map)
 {
     QPointer<Handler> thisGuard(this);
     QDBusReply<void> reply = co_await connection->update(map);
@@ -678,7 +678,7 @@ void Handler::requestScan(const QString &interface)
     requestScanInternal(interface);
 }
 
-QCoro::Task<void> Handler::requestScanInternal(const QString &interface)
+QCoro::Task<> Handler::requestScanInternal(const QString &interface)
 {
     for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
@@ -761,7 +761,7 @@ void Handler::createHotspot()
     createHotspotInternal();
 }
 
-QCoro::Task<void> Handler::createHotspotInternal()
+QCoro::Task<> Handler::createHotspotInternal()
 {
     bool foundInactive = false;
     bool useApMode = false;

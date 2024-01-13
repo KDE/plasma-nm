@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2022-11-16 21:41+0200\n"
+"PO-Revision-Date: 2024-01-11 16:39+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.2.1\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -553,37 +553,30 @@ msgid "Authenticate %1"
 msgstr "Nustatyti tapatybę %1"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "Nebuvo pateikta jokių paslapčių"
+msgstr "Nebuvo užklausta jokių paslapčių"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "Pateikite slaptažodį belaidžiam ryšiui „%1“:"
+msgstr "Neteisingas belaidžio ryšio „%1“ slaptažodis. Bandykite dar kartą."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "Pateikite slaptažodį belaidžiam ryšiui „%1“:"
+msgstr "Įveskite belaidžio ryšio „%1“ slaptažodį:"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Pateikite slaptažodį ryšiui „%1“:"
+msgstr "Neteisingas ryšio „%1“ slaptažodis. Bandykite dar kartą."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Pateikite slaptažodį ryšiui „%1“:"
+msgstr "Įveskite ryšio „%1“ slaptažodį:"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -594,13 +587,12 @@ msgstr "%1 slaptažodžio dialogas"
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "Trūksta VPN nuostatų"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "Pateikite paslaptis VPN ryšiui „%1“:"
+msgstr "Pateikite paslaptis, skirtas VPN ryšiui „%1“:"
 
 #: passworddialog.cpp:135
 #, kde-format

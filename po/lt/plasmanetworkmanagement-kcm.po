@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-28 01:34+0000\n"
-"PO-Revision-Date: 2022-12-28 00:53+0200\n"
+"PO-Revision-Date: 2024-01-11 16:45+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -17,13 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: kcm.cpp:284
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Importuoti VPN ryšį"
+msgstr "Nepavyko importuoti VPN ryšio: %1"
 
 #: kcm.cpp:354
 #, kde-format
@@ -59,12 +58,12 @@ msgstr "VPN ryšiai (%1)"
 #: kcm.cpp:547
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Nepateikta jokio failo"
 
 #: kcm.cpp:608
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Nežinomas VPN tipas"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -107,24 +106,24 @@ msgstr "Viešosios prieigos taškas"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Pavadinimas:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Viešosios prieigos taško slaptažodis:"
+msgstr "Slaptažodis:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "Viešosios prieigos taško pavadinimas negali būti tuščias"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"Viešosios prieigos taško slaptažodis privalo būti arba tuščias, arba jį "
+"privalo sudaryti nuo 8 iki 64 simbolių"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -132,6 +131,10 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"Viešosios prieigos taško slaptažodis privalo būti arba tuščias, arba jį "
+"privalo sudaryti:<ul><li>Tiksliai 5 arba 13 bet kokių simbolių</"
+"li><li>Tiksliai 10 arba 26 šešioliktainių simbolių:<br/>abcdef, ABCDEF ar "
+"0-9</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

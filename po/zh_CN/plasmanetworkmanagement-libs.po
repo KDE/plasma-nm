@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-01-16 00:38+0000\n"
 "PO-Revision-Date: 2024-01-13 05:59\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -74,31 +74,31 @@ msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:242 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:211 models/creatableconnectionsmodel.cpp:142
-#: models/networkmodelitem.cpp:709
+#: models/networkmodelitem.cpp:716
 #, kde-format
 msgid "Infiniband"
 msgstr "Infiniband"
 
 #: editor/connectioneditorbase.cpp:245 editor/uiutils.cpp:200
-#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:715
+#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:722
 #, kde-format
 msgid "Bond"
 msgstr "多网卡绑定 (Bond)"
 
 #: editor/connectioneditorbase.cpp:248 editor/uiutils.cpp:203
-#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:721
+#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:728
 #, kde-format
 msgid "Bridge"
 msgstr "桥接 (Bridge)"
 
 #: editor/connectioneditorbase.cpp:251 models/creatableconnectionsmodel.cpp:220
-#: models/networkmodelitem.cpp:727
+#: models/networkmodelitem.cpp:734
 #, kde-format
 msgid "Vlan"
 msgstr "虚拟局域网 (Vlan)"
 
 #: editor/connectioneditorbase.cpp:254 editor/uiutils.cpp:232
-#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:736
+#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:743
 #, kde-format
 msgid "Team"
 msgstr "网络组 (Team)"
@@ -3521,10 +3521,10 @@ msgstr "IPv6 辅助域名服务器"
 msgid "Connection speed"
 msgstr "连接速度"
 
-#: models/networkmodelitem.cpp:638 models/networkmodelitem.cpp:656
-#: models/networkmodelitem.cpp:705 models/networkmodelitem.cpp:711
-#: models/networkmodelitem.cpp:717 models/networkmodelitem.cpp:723
-#: models/networkmodelitem.cpp:730 models/networkmodelitem.cpp:738
+#: models/networkmodelitem.cpp:638 models/networkmodelitem.cpp:663
+#: models/networkmodelitem.cpp:712 models/networkmodelitem.cpp:718
+#: models/networkmodelitem.cpp:724 models/networkmodelitem.cpp:730
+#: models/networkmodelitem.cpp:737 models/networkmodelitem.cpp:745
 #, kde-format
 msgid "MAC Address"
 msgstr "MAC 地址"
@@ -3555,74 +3555,81 @@ msgstr "安全性类型"
 msgid "Connection Speed"
 msgstr "连接速度"
 
-#: models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:655
 #, kde-format
 msgid "Frequency"
 msgstr "频段"
 
-#: models/networkmodelitem.cpp:654
+#: models/networkmodelitem.cpp:657
+#, fuzzy, kde-format
+#| msgid "Channel:"
+msgctxt "Frequency (Channel)"
+msgid "%1 (Channel %2)"
+msgstr "信道："
+
+#: models/networkmodelitem.cpp:661
 #, kde-format
 msgid "BSSID"
 msgstr "BSSID"
 
-#: models/networkmodelitem.cpp:668
+#: models/networkmodelitem.cpp:675
 #, kde-format
 msgid "Operator"
 msgstr "运营商"
 
-#: models/networkmodelitem.cpp:672
+#: models/networkmodelitem.cpp:679
 #, kde-format
 msgid "Network ID"
 msgstr "网络 ID"
 
-#: models/networkmodelitem.cpp:676
+#: models/networkmodelitem.cpp:683
 #, kde-format
 msgid "Signal Quality"
 msgstr "信号质量"
 
-#: models/networkmodelitem.cpp:677
+#: models/networkmodelitem.cpp:684
 #, kde-format
 msgid "Access Technology"
 msgstr "接入技术"
 
-#: models/networkmodelitem.cpp:682
+#: models/networkmodelitem.cpp:689
 #, kde-format
 msgid "VPN Plugin"
 msgstr "VPN 插件"
 
-#: models/networkmodelitem.cpp:693
+#: models/networkmodelitem.cpp:700
 #, kde-format
 msgid "Banner"
 msgstr "横幅"
 
-#: models/networkmodelitem.cpp:699
+#: models/networkmodelitem.cpp:706
 #, kde-format
 msgid "Name"
 msgstr "名称"
 
-#: models/networkmodelitem.cpp:701 models/networkmodelitem.cpp:703
+#: models/networkmodelitem.cpp:708 models/networkmodelitem.cpp:710
 #, kde-format
 msgid "Capabilities"
 msgstr "功能"
 
-#: models/networkmodelitem.cpp:709 models/networkmodelitem.cpp:715
-#: models/networkmodelitem.cpp:721 models/networkmodelitem.cpp:727
-#: models/networkmodelitem.cpp:733 models/networkmodelitem.cpp:736
+#: models/networkmodelitem.cpp:716 models/networkmodelitem.cpp:722
+#: models/networkmodelitem.cpp:728 models/networkmodelitem.cpp:734
+#: models/networkmodelitem.cpp:740 models/networkmodelitem.cpp:743
 #, kde-format
 msgid "Type"
 msgstr "类型"
 
-#: models/networkmodelitem.cpp:729
+#: models/networkmodelitem.cpp:736
 #, kde-format
 msgid "Vlan ID"
 msgstr "VLAN ID"
 
-#: models/networkmodelitem.cpp:733
+#: models/networkmodelitem.cpp:740
 #, kde-format
 msgid "Adsl"
 msgstr "ADSL"
 
-#: models/networkmodelitem.cpp:743
+#: models/networkmodelitem.cpp:750
 #, kde-format
 msgid "Device"
 msgstr "设备"

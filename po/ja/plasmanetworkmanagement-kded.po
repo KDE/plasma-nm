@@ -1,12 +1,13 @@
+# SPDX-FileCopyrightText: 2024 Ryuichi Yamada <ryuichi_ya220@outlook.jp>
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019.
-# Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019.
+# Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2019-11-01 01:42+0900\n"
-"Last-Translator: Tomohiro Hyakutake <tomhioo@outlook.jp>\n"
+"PO-Revision-Date: 2024-01-14 21:01-0800\n"
+"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -15,12 +16,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 19.08.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
 msgid "Only 'dun' and 'nap' services are supported."
-msgstr ""
+msgstr "'dun' と 'nap' サービスのみがサポートされています。"
 
 #: connectivitymonitor.cpp:63
 #, kde-format
@@ -28,8 +29,7 @@ msgid "Network authentication"
 msgstr "ネットワーク認証"
 
 #: connectivitymonitor.cpp:72
-#, fuzzy, kde-format
-#| msgid "You need to log in to this network"
+#, kde-format
 msgid "You need to log into this network"
 msgstr "このネットワークにログインする必要があります"
 
@@ -41,7 +41,7 @@ msgstr "ログイン"
 #: connectivitymonitor.cpp:94
 #, kde-format
 msgid "Limited Connectivity"
-msgstr ""
+msgstr "制限された接続"
 
 #: connectivitymonitor.cpp:95
 #, kde-format
@@ -49,6 +49,8 @@ msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "internet."
 msgstr ""
+"このデバイスはネットワークに接続されているようですが、インターネットに到達で"
+"きていません。"
 
 #: modemmonitor.cpp:182
 #, kde-format
@@ -67,7 +69,7 @@ msgstr ""
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigFailedReason"
 msgid "The device could not be configured"
-msgstr ""
+msgstr "デバイスの設定に失敗しました"
 
 #: notification.cpp:100
 #, kde-format
@@ -75,21 +77,21 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConfigUnavailableReason"
 msgid "IP configuration was unavailable"
-msgstr ""
+msgstr "IP 設定が利用できません"
 
 #: notification.cpp:103
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigExpiredReason"
 msgid "IP configuration expired"
-msgstr ""
+msgstr "IP 設定の期限が切れました"
 
 #: notification.cpp:106
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to NoSecretsReason"
 msgid "No secrets were provided"
-msgstr ""
+msgstr "シークレットが提供されませんでした"
 
 #: notification.cpp:109
 #, kde-format
@@ -319,13 +321,13 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConnectionRemovedReason"
 msgid "The connection was removed"
-msgstr ""
+msgstr "接続が削除されました"
 
 #: notification.cpp:205
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to CarrierReason"
 msgid "The cable was disconnected"
-msgstr ""
+msgstr "ケーブルが切断されました"
 
 #: notification.cpp:211
 #, kde-format
@@ -472,40 +474,33 @@ msgid "VPN connection '%1' activated."
 msgstr "VPN 接続 '%1' が有効化されました。"
 
 #: notification.cpp:425
-#, fuzzy, kde-format
-#| msgid "VPN connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "VPN 接続 '%1' が有効化されました。"
+msgstr "VPN 接続 '%1' の有効化に失敗しました。"
 
 #: notification.cpp:428 notification.cpp:436
-#, fuzzy, kde-format
-#| msgid "VPN connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "VPN 接続 '%1' が有効化されました。"
+msgstr "VPN 接続 '%1' が無効化されました。"
 
 #: notification.cpp:439
-#, fuzzy, kde-format
-#| msgid ""
-#| "The VPN connection changed state because the device it was using was "
-#| "disconnected."
+#, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
 msgstr ""
-"VPN 接続に使用されていたデバイスが切断されたため、VPN の状態が変更されまし"
+"VPN 接続 '%1' に使用されていたデバイスが切断されたため、接続が無効化されまし"
 "た。"
 
 #: notification.cpp:442
-#, fuzzy, kde-format
-#| msgid "The service providing the VPN connection was stopped."
+#, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "VPN 接続を提供しているサービスが停止しました。"
+msgstr "VPN 接続 '%1' を提供しているサービスが停止しました。"
 
 #: notification.cpp:445
-#, fuzzy, kde-format
-#| msgid "The IP config of the VPN connection was invalid."
+#, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "VPN 接続の IP 設定が不正です。"
+msgstr "VPN 接続 '%1' の IP 設定が不正です。"
 
 #: notification.cpp:448
 #, kde-format
@@ -513,34 +508,31 @@ msgid "The connection attempt to the VPN service timed out."
 msgstr "VPN サービスへの接続の試行がタイムアウトしました。"
 
 #: notification.cpp:451
-#, fuzzy, kde-format
-#| msgid "Starting the service providing the VPN connection failed."
+#, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
-msgstr "VPN 接続を提供するサービスの開始に失敗しました。"
+msgstr "VPN 接続 '%1' を提供するサービスの開始中にタイムアウトしました。"
 
 #: notification.cpp:454
-#, fuzzy, kde-format
-#| msgid "Starting the service providing the VPN connection failed."
+#, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "VPN 接続を提供するサービスの開始に失敗しました。"
+msgstr "VPN 接続 '%1' を提供するサービスの開始に失敗しました。"
 
 #: notification.cpp:457
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
-msgstr ""
+msgstr "VPN 接続 \"%1\" のためのシークレットが提供されませんでした。"
 
 #: notification.cpp:460
 #, kde-format
 msgid "Authentication to the VPN server failed."
-msgstr ""
+msgstr "VPN サーバの認証に失敗しました。"
 
 #: notification.cpp:463
-#, fuzzy, kde-format
-#| msgid "VPN connection '%1' disconnected."
+#, kde-format
 msgid "The connection was deleted."
-msgstr "VPN 接続 '%1' が接続解除されました。"
+msgstr "接続が削除されました。"
 
 #: notification.cpp:549
 #, kde-format
@@ -550,67 +542,69 @@ msgstr "ネットワーク接続なし"
 #: notification.cpp:550
 #, kde-format
 msgid "You are no longer connected to a network."
-msgstr ""
+msgstr "現在ネットワークに接続されていません。"
 
 #: passworddialog.cpp:54
 #, kde-format
 msgid "Authenticate %1"
-msgstr ""
+msgstr "%1 を認証する"
 
 #: passworddialog.cpp:90
 #, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr ""
+msgstr "シークレットが要求されませんでした"
 
 #: passworddialog.cpp:99
 #, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr ""
+"不正なパスワードが入力されたため、ワイヤレスネットワーク \"%1\" に接続できま"
+"せんでした。再試行してください。"
 
 #: passworddialog.cpp:101
 #, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr ""
+msgstr "ワイヤレスネットワーク \"%1\" のためのパスワードを入力してください:"
 
 #: passworddialog.cpp:105
 #, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
 msgstr ""
+"不正なパスワードが入力されたため、\"%1\" に接続できませんでした。再試行してく"
+"ださい。"
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Starting the service providing the VPN connection failed."
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "VPN 接続を提供するサービスの開始に失敗しました。"
+msgstr "接続 \"%1\" のためのパスワードを入力してください:"
 
 #: passworddialog.cpp:114
 #, kde-format
 msgid "%1 password dialog"
-msgstr ""
+msgstr "%1 パスワード入力ダイアログ"
 
 #: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "VPN 設定がありません"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Starting the service providing the VPN connection failed."
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "VPN 接続を提供するサービスの開始に失敗しました。"
+msgstr "VPN 接続 \"%1\" のためのパスワードを入力してください:"
 
 #: passworddialog.cpp:135
 #, kde-format
 msgid "VPN secrets (%1) dialog"
-msgstr ""
+msgstr "VPN シークレット (%1) ダイヤログ"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
 #, kde-format
 msgid "Password dialog"
-msgstr ""
+msgstr "パスワード入力ダイアログ"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -754,7 +748,7 @@ msgstr ""
 #: pindialog.cpp:218
 #, kde-format
 msgid "Unknown Error"
-msgstr ""
+msgstr "不明なエラー"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
 #. i18n: ectx: property (text), widget (QLabel, title)

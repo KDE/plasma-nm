@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-16 00:38+0000\n"
-"PO-Revision-Date: 2024-01-04 17:19+0100\n"
+"PO-Revision-Date: 2024-01-16 21:56+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -3599,11 +3599,10 @@ msgid "Frequency"
 msgstr "Frekvenco"
 
 #: models/networkmodelitem.cpp:657
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "Kanalo:"
+msgstr "%1 (Kanalo %2)"
 
 #: models/networkmodelitem.cpp:661
 #, kde-format
@@ -3758,12 +3757,3 @@ msgstr "NetworkManager 0.9.8 bezonata, trovita %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Nekonata"
-
-#~ msgid "*.der *.pem *.crt *.cer"
-#~ msgstr "*.der *.pem *.crt *.cer"
-
-#~ msgid "*.der *.pem *.p12 *.key"
-#~ msgstr "*.der *.pem *.p12 *.key"
-
-#~ msgid "*.pac"
-#~ msgstr "*.pac"

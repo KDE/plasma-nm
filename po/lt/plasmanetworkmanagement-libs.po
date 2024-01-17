@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-16 00:38+0000\n"
-"PO-Revision-Date: 2024-01-11 16:36+0200\n"
+"PO-Revision-Date: 2024-01-16 23:41+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -3345,7 +3345,7 @@ msgstr "Kažkoks mobiliojo plačiajuosčio aprašas"
 #: models/creatableconnectionsmodel.cpp:165
 #, kde-format
 msgid "Some wired ethernet description"
-msgstr "Kažkosks laidinio eterneto aprašas"
+msgstr "Kažkoks laidinio eterneto aprašas"
 
 #: models/creatableconnectionsmodel.cpp:163
 #, kde-format
@@ -3618,11 +3618,10 @@ msgid "Frequency"
 msgstr "Dažnis"
 
 #: models/networkmodelitem.cpp:657
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "Kanalas:"
+msgstr "%1 (%2 kanalas)"
 
 #: models/networkmodelitem.cpp:661
 #, kde-format

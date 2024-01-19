@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Svetoslav Stefanov <svetlisashkov@yahoo.com>, 2014.
-# SPDX-FileCopyrightText: 2022, 2023 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-16 00:38+0000\n"
-"PO-Revision-Date: 2023-12-22 23:11+0100\n"
+"PO-Revision-Date: 2024-01-18 20:38+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -3606,11 +3606,10 @@ msgid "Frequency"
 msgstr "Честота"
 
 #: models/networkmodelitem.cpp:657
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "Канал:"
+msgstr "%1 (Канал %2)"
 
 #: models/networkmodelitem.cpp:661
 #, kde-format
@@ -3765,12 +3764,3 @@ msgstr "Необходим е NetworkManager 0.9.8, намерен %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Неизвестно"
-
-#~ msgid "*.der *.pem *.crt *.cer"
-#~ msgstr "*.der *.pem *.crt *.cer"
-
-#~ msgid "*.der *.pem *.p12 *.key"
-#~ msgstr "*.der *.pem *.p12 *.key"
-
-#~ msgid "*.pac"
-#~ msgstr "*.pac"

@@ -390,6 +390,3 @@ msgstr "Потребителско име:"
 #, kde-format
 msgid "Group name."
 msgstr "Име на група."
-
-#~ msgid "*.pem *.crt *.cer"
-#~ msgstr "*.pem *.crt *.cer"

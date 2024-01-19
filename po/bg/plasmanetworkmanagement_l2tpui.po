@@ -647,10 +647,3 @@ msgstr "Използване на stateful криптиране"
 #, kde-format
 msgid "L2TP PPP Options"
 msgstr "L2TP PPP Опции"
-
-#~ msgid "*.pem *.der *.crt *.cer *.p12"
-#~ msgstr "*.pem *.der *.crt *.cer *.p12"
-
-#~| msgid "*.pem *der *.key *.pk8 *.p12"
-#~ msgid "*.pem *.der *.key *.pk8 *.p12"
-#~ msgstr "*.pem *.der *.key *.pk8 *.p12"

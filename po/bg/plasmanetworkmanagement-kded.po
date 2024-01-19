@@ -781,22 +781,3 @@ msgstr "Въведете отново ПИН код:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Удостоверяването на %1 е неуспешно. Грешна парола?"
-
-#, fuzzy
-#~| msgid "Provide the password for the wireless network '%1':"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "wireless network '%1':"
-#~ msgstr "Посочете паролата за безжичната мрежа \"%1\":"
-
-#, fuzzy
-#~| msgid "Provide the password for the connection '%1':"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "connection '%1':"
-#~ msgstr "Посочете паролата за връзката \"%1\":"
-
-#~ msgctxt ""
-#~ "@info:status Notification when the device failed due to SsidNotFound"
-#~ msgid "The WiFi network could not be found"
-#~ msgstr "WiFi мрежата не можа да бъде намерена"

@@ -1121,12 +1121,3 @@ msgstr "token"
 #, kde-format
 msgid "one-time password"
 msgstr "еднократна парола"
-
-#~ msgid "*.pem *.crt *.key *.cer *.p12"
-#~ msgstr "*.pem *.crt *.key *.cer *.p12"
-
-#~ msgid "*.key"
-#~ msgstr "*.key"
-
-#~ msgid "*.pem *.crt *.key *.cer"
-#~ msgstr "*.pem *.crt *.key *.cer"

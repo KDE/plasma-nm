@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-16 00:38+0000\n"
-"PO-Revision-Date: 2024-01-13 05:59\n"
+"PO-Revision-Date: 2024-01-21 14:11\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -3561,11 +3561,10 @@ msgid "Frequency"
 msgstr "频段"
 
 #: models/networkmodelitem.cpp:657
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "信道："
+msgstr "%1 (频道 %2)"
 
 #: models/networkmodelitem.cpp:661
 #, kde-format

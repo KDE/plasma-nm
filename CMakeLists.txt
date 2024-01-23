@@ -5,6 +5,7 @@ project(plasma-networkmanagement)
 set(PROJECT_VERSION "6.0.80")
 set(PROJECT_VERSION_MAJOR 6)
 
+set(PROJECT_DEP_VERSION "6.0.80")
 set(QT_MIN_VERSION "6.6.0")
 set(KF6_MIN_VERSION "5.240.0")
 set(KDE_COMPILERSETTINGS_LEVEL "5.82")
@@ -73,7 +74,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
     ModemManagerQt
 )
 
-find_package(Plasma ${PROJECT_VERSION} REQUIRED)
+find_package(Plasma ${PROJECT_DEP_VERSION} REQUIRED)
 
 ecm_find_qmlmodule(org.kde.prison 1.0)
 

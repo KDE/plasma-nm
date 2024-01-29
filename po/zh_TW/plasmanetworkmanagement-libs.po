@@ -4,21 +4,21 @@
 # Franklin, 2014, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2018, 2019, 2020.
-# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2023-11-10 22:41+0900\n"
+"PO-Revision-Date: 2024-01-28 19:20+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.slat.org>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.2\n"
+"X-Generator: Lokalize 24.01.95\n"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -1829,7 +1829,7 @@ msgid ""
 "this value may be specified explicitly."
 msgstr ""
 "選用。\n"
-"若未指定，MTU 值會自動從終端位址或系統預設路由決定，而\n"
+"若未指定，MTU 值會自動從端點位址或系統預設路由決定，而\n"
 "這個自動的值通常是合理的。不過，要手動指定 MTU 並覆寫\n"
 "這個自動發現的過程，這個數值可以明確指定。"
 
@@ -1896,7 +1896,7 @@ msgstr ""
 #: editor/settings/ui/wireguardpeerwidget.ui:55
 #, kde-format
 msgid "Endpoint address:"
-msgstr "終端位址："
+msgstr "端點位址："
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:66
@@ -1908,12 +1908,17 @@ msgid ""
 "            qualified domain name such as abc.com). If\n"
 "            present, Endpoint port must also be set."
 msgstr ""
+"選用。\n"
+"            連線用的一個端點。可以是 IPv4 位址、\n"
+"            IPv6 位址，或是完整網域名稱（FQDN，\n"
+"            像是 abc.com）。如果指定此選項，\n"
+"            也需要設定端點連線埠。"
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
 #, kde-format
 msgid "Endpoint port:"
-msgstr "終端連線埠："
+msgstr "端點連線埠："
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:83
@@ -1924,8 +1929,8 @@ msgid ""
 "            Address must also be set."
 msgstr ""
 "選用。\n"
-"            終端的連線埠號碼。如果指定此選項，\n"
-"            亦需設定終端位址。"
+"            端點的連線埠號碼。如果指定此選項，\n"
+"            亦需設定端點位址。"
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
@@ -1943,6 +1948,10 @@ msgid ""
 "            cryptography to be mixed into the already existing\n"
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
+"選用。\n"
+"            以 base64 編碼的預先分享金鑰，用 wg genpsk 所產生。\n"
+"            這個選項在現存的公鑰加密方式上再加上一層對稱加密，\n"
+"            來為未來可能的量子電腦解密做準備。"
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109

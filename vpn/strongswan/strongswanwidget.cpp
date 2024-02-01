@@ -69,9 +69,9 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
     d->ui.leGatewayCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_STRONGSWAN_CERTIFICATE]));
     
     // Remote Identity
-    const QString ridentity = dataMap[NM_STRONGSWAN_RIDENTITY];
-    if (!ridentity.isEmpty()) {
-        d->ui.leRIdentity->setText(ridentity);
+    const QString rIdentity = dataMap[NM_STRONGSWAN_RIDENTITY];
+    if (!rIdentity.isEmpty()) {
+        d->ui.leRemoteIdentity->setText(rIdentity);
     }
 
     // Authentication
@@ -143,8 +143,8 @@ QVariantMap StrongswanSettingWidget::setting() const
     }
         
     // Server Identity (Right Identity)
-    if (!d->ui.leRIdentity->text().isEmpty()) {
-        data.insert(NM_STRONGSWAN_RIDENTITY, d->ui.leRIdentity->text());
+    if (!d->ui.leRemoteIdentity->text().isEmpty()) {
+        data.insert(NM_STRONGSWAN_RIDENTITY, d->ui.leRemoteIdentity->text());
     }
 
     // Authentication

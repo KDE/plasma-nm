@@ -29,6 +29,10 @@ StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSettin
     d->ui.setupUi(this);
 
     d->setting = setting;
+    
+    // Enables combo box for password
+    d->ui.leUserPassword->setPasswordOptionsEnabled(true);
+    d->ui.leUserPassword->setPasswordNotRequiredEnabled(true);
 
     // Connect for setting check
     watchChangedSetting();
@@ -63,6 +67,12 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
     }
     // Certificate
     d->ui.leGatewayCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_STRONGSWAN_CERTIFICATE]));
+    
+    // Remote Identity
+    const QString rIdentity = dataMap[NM_STRONGSWAN_RIDENTITY];
+    if (!rIdentity.isEmpty()) {
+        d->ui.leRemoteIdentity->setText(rIdentity);
+    }
 
     // Authentication
     const QString method = dataMap[NM_STRONGSWAN_METHOD];
@@ -78,6 +88,22 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_EAP)) {
         d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::Eap);
         d->ui.leUserName->setText(dataMap[NM_STRONGSWAN_USER]);
+        
+        PasswordField *passwordField = d->ui.leUserPassword;
+        const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_STRONGSWAN_POPTION].toInt();
+        if (type.testFlag(NetworkManager::Setting::None)) {
+            passwordField->setPasswordOption(PasswordField::StoreForAllUsers);
+        } else if (type.testFlag(NetworkManager::Setting::AgentOwned)) {
+            passwordField->setPasswordOption(PasswordField::StoreForUser);
+        } else if (type.testFlag(NetworkManager::Setting::NotSaved)) {
+            passwordField->setPasswordOption(PasswordField::AlwaysAsk);
+        } else if (type.testFlag(NetworkManager::Setting::NotRequired)) {
+            passwordField->setPasswordOption(PasswordField::NotRequired);
+        }
+        // Strongswan always reads the password inside [vpn-secrets] section for global users
+        NetworkManager::VpnSetting::Ptr vpnSetting = setting.staticCast<NetworkManager::VpnSetting>();
+        const NMStringMap secrets = vpnSetting->secrets();
+        d->ui.leUserPassword->setText(secrets.value(NM_STRONGSWAN_SECRET));
     }
 
     // Settings
@@ -115,6 +141,11 @@ QVariantMap StrongswanSettingWidget::setting() const
     if (!certificate.isEmpty()) {
         data.insert(NM_STRONGSWAN_CERTIFICATE, certificate);
     }
+        
+    // Server Identity (Right Identity)
+    if (!d->ui.leRemoteIdentity->text().isEmpty()) {
+        data.insert(NM_STRONGSWAN_RIDENTITY, d->ui.leRemoteIdentity->text());
+    }
 
     // Authentication
     switch (d->ui.cmbMethod->currentIndex()) {
@@ -147,6 +178,23 @@ QVariantMap StrongswanSettingWidget::setting() const
             data.insert(NM_STRONGSWAN_USER, d->ui.leUserName->text());
         }
         // StrongSwan-nm 1.2 does not appear to be able to save secrets, the must be entered through the auth dialog
+        // flags for password
+        PasswordField *passwordField = d->ui.leUserPassword;
+        const PasswordField::PasswordOption option = passwordField->passwordOption();
+        if (option == PasswordField::StoreForAllUsers) {
+            data.insert(NM_STRONGSWAN_POPTION, QString::number(NetworkManager::Setting::None));
+        } else if (option == PasswordField::StoreForUser) {
+            data.insert(NM_STRONGSWAN_POPTION, QString::number(NetworkManager::Setting::AgentOwned));
+        } else if (option == PasswordField::AlwaysAsk) {
+            data.insert(NM_STRONGSWAN_POPTION, QString::number(NetworkManager::Setting::NotSaved));
+        } else {
+            data.insert(NM_STRONGSWAN_POPTION, QString::number(NetworkManager::Setting::NotRequired));
+        }
+        // Saving the password
+        if (!d->ui.leUserPassword->text().isEmpty()) {
+            secretData = d->setting->secrets();
+            secretData.insert(NM_STRONGSWAN_SECRET, d->ui.leUserPassword->text());
+        }
     }
 
     // Options

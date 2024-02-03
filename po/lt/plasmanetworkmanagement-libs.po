@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2024-01-21 00:57+0200\n"
+"PO-Revision-Date: 2024-02-03 01:13+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -2839,7 +2839,7 @@ msgstr "Niekada nenaudotas"
 #: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
-msgstr "Nerasta jokio VPN papildinio, skirto %1 tipui"
+msgstr "Nerasta jokio VPN įskiepio, skirto %1 tipui"
 
 #: editor/vpnuiplugin.cpp:99
 #, kde-format

@@ -3758,12 +3758,3 @@ msgstr "Необходим е NetworkManager 0.9.8, намерен %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Неизвестно"
-
-#~ msgid "*.der *.pem *.crt *.cer"
-#~ msgstr "*.der *.pem *.crt *.cer"
-
-#~ msgid "*.der *.pem *.p12 *.key"
-#~ msgstr "*.der *.pem *.p12 *.key"
-
-#~ msgid "*.pac"
-#~ msgstr "*.pac"

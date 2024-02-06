@@ -140,7 +140,7 @@ target_include_directories(plasmanm_editor
 
 target_link_libraries(plasmanm_editor
 PUBLIC
-    KF6::ConfigWidgets
+    KF6::ColorScheme
     KF6::Completion
     KF6::NetworkManagerQt
     KF6::WidgetsAddons

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2017, 2019, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2017, 2019, 2020, 2021, 2023, 2024 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-28 01:34+0000\n"
-"PO-Revision-Date: 2023-04-22 00:16+0200\n"
+"PO-Revision-Date: 2024-02-06 00:21+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: kcm.cpp:284
 #, kde-format
@@ -104,24 +104,22 @@ msgstr "핫스팟"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "이름:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "핫스팟 암호:"
+msgstr "암호:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "핫스팟 이름을 입력해야 함"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
-msgstr ""
+msgstr "핫스팟 암호는 비워 두거나 8글자에서 64글자 사이로 입력해야 함"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -129,6 +127,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"핫스팟 암호는 비어 있거나 다음 중 하나로 구성되어야 함:<ul><li>정확히 5글자 "
+"또는 13글자인 문자열</li><li>정확히 10글자 또는 26글자의 16진수 자릿수:<br/"
+">abcdef, ABCDEF, 0-9</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

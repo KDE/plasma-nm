@@ -55,7 +55,7 @@ if(BUILD_OPENCONNECT)
 endif()
 
 find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
-    ConfigWidgets
+    ColorScheme
     Completion
     CoreAddons
     DBusAddons

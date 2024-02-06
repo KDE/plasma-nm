@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2023, 2024 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-03-01 00:14+0100\n"
+"PO-Revision-Date: 2024-02-06 00:24+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.1\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -458,27 +458,27 @@ msgstr "장치 부모 관리 변경됨"
 #: notification.cpp:344
 #, kde-format
 msgid "Connection '%1' activated."
-msgstr "연결 '%1'이(가) 활성화됨."
+msgstr "'%1' 연결이 활성화됨."
 
 #: notification.cpp:371
 #, kde-format
 msgid "Connection '%1' deactivated."
-msgstr "연결 '%1'이(가) 비활성화됨."
+msgstr "'%1' 연결이 비활성화됨."
 
 #: notification.cpp:422
 #, kde-format
 msgid "VPN connection '%1' activated."
-msgstr "VPN 연결 '%1'이(가) 활성화됨."
+msgstr "'%1' VPN 연결이 활성화됨."
 
 #: notification.cpp:425
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "VPN 연결 '%1'을(를) 활성화할 수 없음."
+msgstr "'%1' VPN 연결을 활성화할 수 없음."
 
 #: notification.cpp:428 notification.cpp:436
 #, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "VPN 연결 '%1'이(가) 비활성화됨."
+msgstr "'%1' VPN 연결이 비활성화됨."
 
 #: notification.cpp:439
 #, kde-format
@@ -486,18 +486,18 @@ msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
 msgstr ""
-"마지막으로 VPN 연결을 사용하는 장치 연결이 해제되어 VPN 연결 '%1'이(가) 해제"
-"되었습니다."
+"마지막으로 VPN 연결을 사용하는 장치 연결이 해제되어 '%1' VPN 연결이 해제되었"
+"습니다."
 
 #: notification.cpp:442
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "VPN 연결 '%1'을(를) 제공하는 서비스가 중단되었습니다."
+msgstr "'%1' VPN 연결을 제공하는 서비스가 중단되었습니다."
 
 #: notification.cpp:445
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "VPN 연결 '%1'의 IP 설정이 잘못되었습니다."
+msgstr "'%1' VPN 연결의 IP 설정이 잘못되었습니다."
 
 #: notification.cpp:448
 #, kde-format
@@ -509,17 +509,17 @@ msgstr "VPN 서비스에 연결하려는 시도의 시간이 초과되었습니�
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
-msgstr "VPN 연결 '%1'을(를) 제공하는 서비스를 시작하는 시간이 초과되었습니다."
+msgstr "'%1' VPN 연결을 제공하는 서비스를 시작하는 시간이 초과되었습니다."
 
 #: notification.cpp:454
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "VPN 연결 '%1'을(를) 제공하는 서비스를 시작할 수 없습니다."
+msgstr "'%1' VPN 연결을 제공하는 서비스를 시작할 수 없습니다."
 
 #: notification.cpp:457
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
-msgstr "VPN 연결 '%1'을(를) 맺는 데 필요한 비밀 정보를 입력하지 않았습니다."
+msgstr "'%1' VPN 연결을 맺는 데 필요한 비밀 정보를 입력하지 않았습니다."
 
 #: notification.cpp:460
 #, kde-format
@@ -547,37 +547,30 @@ msgid "Authenticate %1"
 msgstr "%1 인증"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "비밀 정보가 입력되지 않았음"
+msgstr "요청된 서비스가 없음"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "무선 네트워크 '%1'의 암호를 입력하십시오:"
+msgstr "\"%1\" 무선 네트워크의 암호가 잘못되었습니다. 다시 시도하십시오."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "무선 네트워크 '%1'의 암호를 입력하십시오:"
+msgstr "\"%1\" 무선 네트워크의 암호를 입력하십시오:"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "연결 '%1'의 암호를 입력하십시오:"
+msgstr "\"%1\" 연결의 암호가 잘못되었습니다 다시 시도하십시오."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "연결 '%1'의 암호를 입력하십시오:"
+msgstr "\"%1\" 연결의 암호를 입력하십시오:"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -588,13 +581,12 @@ msgstr "%1 암호 대화 상자"
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "VPN 설정이 없음"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "VPN 연결 '%1'의 비밀 정보를 입력하십시오:"
+msgstr "\"%1\" VPN 연결의 비밀 정보를 입력하십시오:"
 
 #: passworddialog.cpp:135
 #, kde-format

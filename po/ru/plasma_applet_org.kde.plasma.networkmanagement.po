@@ -11,13 +11,13 @@
 # Yury G. Kudryashov <urkud.urkud@gmail.com>, 2012.
 # Victor Ryzhykh <victorr2007@yandex.ru>, 2014.
 # Alexander Lakhin <exclusion@gmail.com>, 2013, 2014.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2023, 2024 Alexander Yavorsky <kekcuha@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-02 01:37+0000\n"
-"PO-Revision-Date: 2023-01-13 17:43+0300\n"
+"PO-Revision-Date: 2024-02-07 11:43+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -26,7 +26,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 23.08.4\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -82,13 +82,13 @@ msgstr "Подключено"
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format
 msgid "You need to log in to this network"
-msgstr ""
+msgstr "Необходимо выполнить вход в эту сеть"
 
 #: contents/ui/ConnectionListPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Войти"
 
 #: contents/ui/ConnectionListPage.qml:115
 #, kde-format
@@ -168,16 +168,16 @@ msgid "&Configure Network Connections…"
 msgstr "На&строить сетевые соединения..."
 
 #: contents/ui/PopupDialog.qml:51
-#, fuzzy, kde-format
-#| msgid "&Configure Network Connections…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "На&строить сетевые соединения..."
+msgstr "Вернуться к настройкам соединений"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+"Используйте этот QR-код чтобы подключиться к сети «%1» с другого устройства."
 
 #: contents/ui/Toolbar.qml:122
 #, kde-format

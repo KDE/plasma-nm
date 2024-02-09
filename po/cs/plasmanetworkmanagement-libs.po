@@ -3481,11 +3481,10 @@ msgid "Frequency"
 msgstr "Frekvence"
 
 #: models/networkmodelitem.cpp:657
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "Kanál:"
+msgstr ""
 
 #: models/networkmodelitem.cpp:661
 #, kde-format

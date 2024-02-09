@@ -550,37 +550,30 @@ msgid "Authenticate %1"
 msgstr "Ověřit přístup %1"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "Nebyly poskytnuty ověřovací údaje"
+msgstr ""
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "Zadejte heslo pro bezdrátovou síť '%1':"
+msgstr ""
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "Zadejte heslo pro bezdrátovou síť '%1':"
+msgstr ""
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Zadejte heslo pro spojení '%1':"
+msgstr ""
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Zadejte heslo pro spojení '%1':"
+msgstr ""
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -594,10 +587,9 @@ msgid "VPN settings are missing"
 msgstr ""
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "Zadejte přihlašovací údaje pro spojení VPN '%1':"
+msgstr ""
 
 #: passworddialog.cpp:135
 #, kde-format
@@ -788,17 +780,3 @@ msgstr "Znovu zadat kód PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Ověření totožnosti s %1 selhalo. Je heslo správné?"
-
-#, fuzzy
-#~| msgid "Provide the password for the wireless network '%1':"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "wireless network '%1':"
-#~ msgstr "Zadejte heslo pro bezdrátovou síť '%1':"
-
-#, fuzzy
-#~| msgid "Provide the password for the connection '%1':"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "connection '%1':"
-#~ msgstr "Zadejte heslo pro spojení '%1':"

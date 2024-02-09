@@ -595,11 +595,3 @@ msgstr "Použít stavové šifrování"
 #, kde-format
 msgid "L2TP PPP Options"
 msgstr "Možnosti L2TP PPP"
-
-#~ msgid "*.pem *.der *.crt *.cer *.p12"
-#~ msgstr "*.pem *.der *.crt *.cer *.p12"
-
-#, fuzzy
-#~| msgid "*.pem *der *.key *.pk8 *.p12"
-#~ msgid "*.pem *.der *.key *.pk8 *.p12"
-#~ msgstr "*.pem *der *.key *.pk8 *.p12"

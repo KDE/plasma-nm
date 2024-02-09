@@ -322,6 +322,3 @@ msgstr "Režim tokenu:"
 #, kde-format
 msgid "Token Secret:"
 msgstr "Heslo tokenu:"
-
-#~ msgid "*.pem *.crt *.key"
-#~ msgstr "*.pem *.crt *.key"

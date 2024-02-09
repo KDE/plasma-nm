@@ -387,6 +387,3 @@ msgstr "Uživatelské jméno:"
 #, kde-format
 msgid "Group name."
 msgstr "Název skupiny."
-
-#~ msgid "*.pem *.crt *.cer"
-#~ msgstr "*.pem *.crt *.cer"

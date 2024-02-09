@@ -117,6 +117,7 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
 
 add_subdirectory(applet)
+add_subdirectory(importer)
 add_subdirectory(kded)
 add_subdirectory(kcm)
 add_subdirectory(libs)

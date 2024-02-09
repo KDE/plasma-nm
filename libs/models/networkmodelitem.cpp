@@ -34,33 +34,6 @@
 
 #include <QStringBuilder>
 
-namespace
-{
-using ConnectionType = NetworkManager::ConnectionSettings::ConnectionType;
-
-static const std::unordered_map<ConnectionType, QString> s_connectionTypeToString{
-    {ConnectionType::Unknown, i18nc("@info:tooltip", "The connection type is Unknown")},
-    {ConnectionType::Adsl, i18nc("@info:tooltip", "The connection type is ADSL")},
-    {ConnectionType::Bluetooth, i18nc("@info:tooltip", "The connection type is Bluetooth")},
-    {ConnectionType::Bridge, i18nc("@info:tooltip", "The connection type is Bridge")},
-    {ConnectionType::Cdma, i18nc("@info:tooltip", "The connection type is CDMA")},
-    {ConnectionType::Gsm, i18nc("@info:tooltip", "The connection type is GSM")},
-    {ConnectionType::Infiniband, i18nc("@info:tooltip", "The connection type is Infiniband")},
-    {ConnectionType::OLPCMesh, i18nc("@info:tooltip", "The connection type is OLPC Mesh")},
-    {ConnectionType::Pppoe, i18nc("@info:tooltip", "The connection type is PPOPE")},
-    {ConnectionType::Vlan, i18nc("@info:tooltip", "The connection type is VLAN")},
-    {ConnectionType::Vpn, i18nc("@info:tooltip", "The connection type is VPN")},
-    {ConnectionType::Wimax, i18nc("@info:tooltip", "The connection type is Wimax")},
-    {ConnectionType::Wired, i18nc("@info:tooltip", "The connection type is Wired")},
-    {ConnectionType::Wireless, i18nc("@info:tooltip", "The connection type is Wireless")},
-    {ConnectionType::Team, i18nc("@info:tooltip", "The connection type is Team")},
-    {ConnectionType::Generic, i18nc("@info:tooltip", "The connection type is Generic")},
-    {ConnectionType::Tun, i18nc("@info:tooltip", "The connection type is Tunnel")},
-    {ConnectionType::IpTunnel, i18nc("@info:tooltip", "The connection type is IP Tunnel")},
-    {ConnectionType::WireGuard, i18nc("@info:tooltip", "The connection type is WireGuard")},
-};
-}
-
 NetworkModelItem::NetworkModelItem(QObject *parent)
     : QObject(parent)
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
@@ -442,6 +415,30 @@ void NetworkModelItem::setType(NetworkManager::ConnectionSettings::ConnectionTyp
     }
 
     m_type = type;
+
+    using ConnectionType = NetworkManager::ConnectionSettings::ConnectionType;
+
+    static const std::unordered_map<ConnectionType, QString> s_connectionTypeToString{
+        {ConnectionType::Unknown, i18nc("@info:tooltip", "The connection type is Unknown")},
+        {ConnectionType::Adsl, i18nc("@info:tooltip", "The connection type is ADSL")},
+        {ConnectionType::Bluetooth, i18nc("@info:tooltip", "The connection type is Bluetooth")},
+        {ConnectionType::Bridge, i18nc("@info:tooltip", "The connection type is Bridge")},
+        {ConnectionType::Cdma, i18nc("@info:tooltip", "The connection type is CDMA")},
+        {ConnectionType::Gsm, i18nc("@info:tooltip", "The connection type is GSM")},
+        {ConnectionType::Infiniband, i18nc("@info:tooltip", "The connection type is Infiniband")},
+        {ConnectionType::OLPCMesh, i18nc("@info:tooltip", "The connection type is OLPC Mesh")},
+        {ConnectionType::Pppoe, i18nc("@info:tooltip", "The connection type is PPOPE")},
+        {ConnectionType::Vlan, i18nc("@info:tooltip", "The connection type is VLAN")},
+        {ConnectionType::Vpn, i18nc("@info:tooltip", "The connection type is VPN")},
+        {ConnectionType::Wimax, i18nc("@info:tooltip", "The connection type is Wimax")},
+        {ConnectionType::Wired, i18nc("@info:tooltip", "The connection type is Wired")},
+        {ConnectionType::Wireless, i18nc("@info:tooltip", "The connection type is Wireless")},
+        {ConnectionType::Team, i18nc("@info:tooltip", "The connection type is Team")},
+        {ConnectionType::Generic, i18nc("@info:tooltip", "The connection type is Generic")},
+        {ConnectionType::Tun, i18nc("@info:tooltip", "The connection type is Tunnel")},
+        {ConnectionType::IpTunnel, i18nc("@info:tooltip", "The connection type is IP Tunnel")},
+        {ConnectionType::WireGuard, i18nc("@info:tooltip", "The connection type is WireGuard")},
+    };
 
     const auto it = s_connectionTypeToString.find(type);
     if (it != s_connectionTypeToString.end()) {

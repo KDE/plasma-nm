@@ -45,6 +45,7 @@
         "Description[zh_TW]": "編輯您的網路連線",
         "Icon": "preferences-system-network",
         "Name": "Wi-Fi & Networking",
+        "Name[ar]": "واي فاي و الشبكات",
         "Name[bg]": "Wi-Fi и мрежа",
         "Name[ca@valencia]": "Wi-Fi i xarxes",
         "Name[ca]": "Wi-Fi i xarxes",

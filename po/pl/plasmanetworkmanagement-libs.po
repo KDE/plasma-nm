@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2023-07-01 08:35+0200\n"
+"PO-Revision-Date: 2024-02-11 13:11+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.04.2\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -923,7 +923,7 @@ msgstr ""
 #: editor/settings/ui/connectionwidget.ui:48
 #, kde-format
 msgid "All users may connect to this network"
-msgstr "Wszystkim użytkownikom wolno się łączyć"
+msgstr "Użytkownikom wolno łączyć się z tą siecią"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:64
@@ -1578,7 +1578,7 @@ msgstr "Sklonowany adres MAC:"
 #: editor/settings/ui/wificonnectionwidget.ui:240
 #, kde-format
 msgid "Random…"
-msgstr "Wylosuj"
+msgstr "Wylosuj..."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -2917,7 +2917,7 @@ msgstr "Ostatnio używane w dniu %1"
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never used"
-msgstr "Nigdy nieużywane"
+msgstr "Nigdy nie połączono"
 
 #: editor/vpnuiplugin.cpp:42
 #, kde-format

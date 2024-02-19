@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Kishore G <kishore96@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2023-07-30 12:47+0530\n"
+"PO-Revision-Date: 2024-02-18 16:14+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -3010,7 +3010,7 @@ msgstr ""
 #: editor/widgets/ui/advancedpermissionswidget.ui:33
 #, kde-format
 msgid "Available Users"
-msgstr ""
+msgstr "உள்ள பயனர்கள்"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
@@ -3033,13 +3033,13 @@ msgstr "பயனர் பெயர்"
 #: editor/widgets/ui/advancedpermissionswidget.ui:160
 #, kde-format
 msgid "Users allowed to activate the connection"
-msgstr ""
+msgstr "இணைப்பை இயக்கக்கூடிய பயனர்கள்"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
 #: editor/widgets/ui/ipv4routes.ui:20
 #, kde-format
 msgid "Edit IPv4 Routes"
-msgstr ""
+msgstr "IPv4 வழிகளை மாற்று"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
@@ -3053,7 +3053,7 @@ msgstr ""
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
 #, kde-format
 msgid "Use only for resources on this connection"
-msgstr ""
+msgstr "இவ்விணைப்பிலுள்ளவற்றிற்கு மட்டும் பயன்படுத்து"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv4routes.ui:74
@@ -3081,13 +3081,13 @@ msgstr ""
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
 #, kde-format
 msgid "Ignore automatically obtained routes"
-msgstr ""
+msgstr "தானாக கண்டறிந்த வழிகளைப் பயன்படுத்தாதே"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
 #: editor/widgets/ui/ipv6routes.ui:20
 #, kde-format
 msgid "Edit IPv6 Routes"
-msgstr ""
+msgstr "IPv6 வழிகளை மாற்று"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv6routes.ui:92
@@ -3099,22 +3099,22 @@ msgstr "&நீக்கு"
 #: handler.cpp:121
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "'%1' VPN இணைப்புகளை பிளாஸ்மா ஆதரிக்கவில்லை."
 
 #: handler.cpp:124
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "பிழையை தெரிவி"
 
 #: handler.cpp:147
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "'%1' VPN இணைப்புகளை NetworkManager ஆதரிக்கவில்லை."
 
 #: handler.cpp:150
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "நிறுவு"
 
 #: handler.cpp:192
 #, kde-format
@@ -3190,7 +3190,7 @@ msgstr ""
 #: models/creatableconnectionsmodel.cpp:149
 #, kde-format
 msgid "Mobile Broadband"
-msgstr ""
+msgstr "கைபேசி பிராட்பேண்டு"
 
 #: models/creatableconnectionsmodel.cpp:151
 #, kde-format
@@ -3217,7 +3217,7 @@ msgstr ""
 #: models/creatableconnectionsmodel.cpp:180
 #, kde-format
 msgid "Wi-Fi (shared)"
-msgstr ""
+msgstr "அருகலை (பகிர்ந்த‍து)"
 
 #: models/creatableconnectionsmodel.cpp:191
 #: models/creatableconnectionsmodel.cpp:201
@@ -3247,7 +3247,7 @@ msgstr ""
 #: models/creatableconnectionsmodel.cpp:255
 #, kde-format
 msgid "VPN connections"
-msgstr ""
+msgstr "VPN இணைப்புகள்"
 
 #: models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:211
@@ -3258,7 +3258,7 @@ msgstr ""
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
-msgstr ""
+msgstr "VPN இணைப்பை இறக்குமதி செய்…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format
@@ -3268,7 +3268,7 @@ msgstr "வேறு"
 #: models/creatableconnectionsmodel.cpp:268
 #, kde-format
 msgid "Import a saved configuration file"
-msgstr ""
+msgstr "சேமித்துள்ள அமைப்புக்கோப்பை ஏற்று"
 
 #: models/networkmodelitem.cpp:42
 #, kde-format
@@ -3389,7 +3389,7 @@ msgstr ""
 #: models/networkmodelitem.cpp:581
 #, kde-format
 msgid "IPv4 Address"
-msgstr ""
+msgstr "IPv4 முகவரி"
 
 #: models/networkmodelitem.cpp:587
 #, kde-format
@@ -3409,13 +3409,12 @@ msgstr ""
 #: models/networkmodelitem.cpp:608
 #, kde-format
 msgid "IPv6 Address"
-msgstr ""
+msgstr "IPv6 முகவரி"
 
 #: models/networkmodelitem.cpp:610
-#, fuzzy, kde-format
-#| msgid "MAC Address"
+#, kde-format
 msgid "IPv6 ULA Address"
-msgstr "MAC முகவரி"
+msgstr ""
 
 #: models/networkmodelitem.cpp:616
 #, kde-format
@@ -3453,23 +3452,21 @@ msgstr ""
 #: models/networkmodelitem.cpp:644
 #, kde-format
 msgid "Signal Strength"
-msgstr ""
+msgstr "குறிப்பலையின் வலிமை"
 
 #: models/networkmodelitem.cpp:644
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: models/networkmodelitem.cpp:646
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
 msgstr "பாதுகாப்பு வகை"
 
 #: models/networkmodelitem.cpp:649
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
 msgstr "இணைப்பின் வேகம்"
 
@@ -3491,12 +3488,12 @@ msgstr ""
 #: models/networkmodelitem.cpp:672
 #, kde-format
 msgid "Network ID"
-msgstr ""
+msgstr "பிணைய அடையாளம்"
 
 #: models/networkmodelitem.cpp:676
 #, kde-format
 msgid "Signal Quality"
-msgstr ""
+msgstr "குறிப்பலை தரம்"
 
 #: models/networkmodelitem.cpp:677
 #, kde-format
@@ -3504,8 +3501,7 @@ msgid "Access Technology"
 msgstr "அணுகல் தொழில்நுட்பம்"
 
 #: models/networkmodelitem.cpp:682
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
 msgstr "VPN செருகுநிரல்"
 

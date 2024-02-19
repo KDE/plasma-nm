@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-18 00:39+0000\n"
-"PO-Revision-Date: 2023-04-11 21:39+0100\n"
+"PO-Revision-Date: 2024-02-18 08:21+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -83,7 +83,7 @@ msgstr "Atestilo:"
 #: strongswanprop.ui:59
 #, kde-format
 msgid "Identity:"
-msgstr ""
+msgstr "Identeco:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: strongswanprop.ui:82

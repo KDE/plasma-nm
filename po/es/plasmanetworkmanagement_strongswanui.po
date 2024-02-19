@@ -3,13 +3,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Automatically generated, 2014.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2014, 2015, 2017, 2019.
+# SPDX-FileCopyrightText: 2014, 2015, 2017, 2019, 2024 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_strongswanui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-18 00:39+0000\n"
-"PO-Revision-Date: 2019-09-17 21:04+0200\n"
+"PO-Revision-Date: 2024-02-18 19:38+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.08.1\n"
+"X-Generator: Lokalize 23.08.4\n"
 
 #: strongswanauth.cpp:59
 #, kde-format
@@ -84,7 +84,7 @@ msgstr "Certificado:"
 #: strongswanprop.ui:59
 #, kde-format
 msgid "Identity:"
-msgstr ""
+msgstr "Identidad:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: strongswanprop.ui:82

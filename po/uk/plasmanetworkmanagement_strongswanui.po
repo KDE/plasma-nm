@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2014, 2015, 2017, 2019.
+# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2014, 2015, 2017, 2019, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_strongswanui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-18 00:39+0000\n"
-"PO-Revision-Date: 2019-09-14 08:31+0300\n"
+"PO-Revision-Date: 2024-02-18 08:41+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
 "Language: uk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 19.11.70\n"
+"X-Generator: Lokalize 23.04.1\n"
 
 #: strongswanauth.cpp:59
 #, kde-format
@@ -85,7 +85,7 @@ msgstr "Сертифікат:"
 #: strongswanprop.ui:59
 #, kde-format
 msgid "Identity:"
-msgstr ""
+msgstr "Профіль:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: strongswanprop.ui:82

@@ -1,7 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-# Sergiu Bivol <sergiu@cip.md>, 2009, 2010, 2011.
-# Sergiu Bivol <sergiu@cip.md>, 2009, 2010, 2012, 2013, 2014, 2020, 2021, 2022.
+# This file is distributed under the same license as the plasma-nm package.
+# Sergiu Bivol <sergiu@cip.md>, 2009-2014, 2020, 2021, 2022, 2023.
 # Cristian Oneț <onet.cristian@gmail.com>, 2011.
 #
 msgid ""
@@ -9,7 +8,7 @@ msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-02 01:37+0000\n"
-"PO-Revision-Date: 2022-06-01 18:37+0100\n"
+"PO-Revision-Date: 2023-04-10 19:14+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -31,8 +30,7 @@ msgid "Disconnect"
 msgstr "Deconectează"
 
 #: contents/ui/ConnectionItem.qml:85
-#, fuzzy, kde-format
-#| msgid "Show network's QR code"
+#, kde-format
 msgid "Show Network's QR Code"
 msgstr "Arată codul QR al rețelei"
 
@@ -58,6 +56,8 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
+"Viteza actuală de descărcare e %1 kilo-octeți pe secundă; viteza actuală de "
+"încărcare e %2 kilo-octeți pe secundă"
 
 #: contents/ui/ConnectionItem.qml:291
 #, kde-format
@@ -125,13 +125,13 @@ msgstr "Rețele"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Clic mijlociu pentru dezactivarea regimului de avion"
 
 #: contents/ui/main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "Clic mijlociu pentru activarea regimului de avion"
 
 #: contents/ui/main.qml:72 contents/ui/Toolbar.qml:73
 #, kde-format
@@ -139,16 +139,14 @@ msgid "Enable Wi-Fi"
 msgstr "Activează Wi-Fi"
 
 #: contents/ui/main.qml:83
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Network"
 msgstr "Activează rețeaua mobilă"
 
 #: contents/ui/main.qml:95
-#, fuzzy, kde-format
-#| msgid "Wireless"
+#, kde-format
 msgid "Enable Airplane Mode"
-msgstr "Fără fir"
+msgstr "Activează regimul de avion"
 
 #: contents/ui/main.qml:107
 #, kde-format
@@ -340,14 +338,6 @@ msgstr "Descărcare"
 
 #~ msgid "Show password"
 #~ msgstr "Arată parola"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Sergiu Bivol"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "sergiu@ase.md"
 
 #~ msgid "Show sections"
 #~ msgstr "Arată secțiuni"

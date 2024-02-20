@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:34+0000\n"
+"POT-Creation-Date: 2024-02-20 00:39+0000\n"
 "PO-Revision-Date: 2023-07-25 21:45+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: openconnectauth.cpp:322
+#: openconnectauth.cpp:332
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "소프트웨어 토큰을 초기화할 수 없음: %1"
 
-#: openconnectauth.cpp:375
+#: openconnectauth.cpp:385
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "호스트 연결 중, 잠시 기다려 주십시오…"
 
-#: openconnectauth.cpp:722
+#: openconnectauth.cpp:732
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "로그인"
 
-#: openconnectauth.cpp:784
+#: openconnectauth.cpp:794
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -44,7 +44,7 @@ msgstr ""
 "이유: %2\n"
 "인증서를 수락하시겠습니까?"
 
-#: openconnectauth.cpp:879
+#: openconnectauth.cpp:889
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "연결 시도가 실패했습니다."
@@ -267,32 +267,40 @@ msgstr "보고할 버전"
 msgid "Certificate Authentication"
 msgstr "인증서 인증"
 
-#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, leMcaCertLabel)
 #: openconnectprop.ui:242
-#, kde-format
-msgid "User Certificate:"
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "Machine Certificate:"
 msgstr "사용자 인증서:"
 
+#. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openconnectprop.ui:261
+#: openconnectprop.ui:261 openconnectprop.ui:299
 #, kde-format
 msgid "Private Key:"
 msgstr "개인 키:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
+#, kde-format
+msgid "User Certificate:"
+msgstr "사용자 인증서:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: openconnectprop.ui:318
 #, kde-format
 msgid "Use FSID for key passphrase"
 msgstr "키 암호에 FSID 사용"
 
 #. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
-#: openconnectprop.ui:287
+#: openconnectprop.ui:325
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
 msgstr "사용자가 수동으로 잘못된 인증서를 수락하는 것 방지"
 
 #. i18n: ectx: property (text), widget (QPushButton, buTokens)
-#: openconnectprop.ui:313
+#: openconnectprop.ui:351
 #, kde-format
 msgid "Token Authentication"
 msgstr "토큰 인증"

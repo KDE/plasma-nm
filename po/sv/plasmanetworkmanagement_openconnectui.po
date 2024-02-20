@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:34+0000\n"
+"POT-Creation-Date: 2024-02-20 00:39+0000\n"
 "PO-Revision-Date: 2022-09-24 15:52+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 20.08.1\n"
 
-#: openconnectauth.cpp:322
+#: openconnectauth.cpp:332
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Misslyckades initiera programvarusymbol: %1"
 
-#: openconnectauth.cpp:375
+#: openconnectauth.cpp:385
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Kontaktar värddator, vänta..."
 
-#: openconnectauth.cpp:722
+#: openconnectauth.cpp:732
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Logga in"
 
-#: openconnectauth.cpp:784
+#: openconnectauth.cpp:794
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Orsak: %2\n"
 "Acceptera det ändå?"
 
-#: openconnectauth.cpp:879
+#: openconnectauth.cpp:889
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Anslutningsförsök lyckades inte."
@@ -268,32 +268,40 @@ msgstr "Rapporterat operativsystem:"
 msgid "Certificate Authentication"
 msgstr "Certifikatbehörighetskontroll"
 
-#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, leMcaCertLabel)
 #: openconnectprop.ui:242
-#, kde-format
-msgid "User Certificate:"
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "Machine Certificate:"
 msgstr "Användarcertifikat:"
 
+#. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openconnectprop.ui:261
+#: openconnectprop.ui:261 openconnectprop.ui:299
 #, kde-format
 msgid "Private Key:"
 msgstr "Privat nyckel:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
+#, kde-format
+msgid "User Certificate:"
+msgstr "Användarcertifikat:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: openconnectprop.ui:318
 #, kde-format
 msgid "Use FSID for key passphrase"
 msgstr "Använd FSID som nyckellösenordsfras"
 
 #. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
-#: openconnectprop.ui:287
+#: openconnectprop.ui:325
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
 msgstr "Förhindra användaren från att manuellt acceptera ogiltiga certifikat."
 
 #. i18n: ectx: property (text), widget (QPushButton, buTokens)
-#: openconnectprop.ui:313
+#: openconnectprop.ui:351
 #, kde-format
 msgid "Token Authentication"
 msgstr "Symbolbehörighetskontroll"

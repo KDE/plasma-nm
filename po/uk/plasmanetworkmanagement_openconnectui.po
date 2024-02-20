@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:34+0000\n"
+"POT-Creation-Date: 2024-02-20 00:39+0000\n"
 "PO-Revision-Date: 2023-07-22 18:09+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -20,23 +20,23 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 20.12.0\n"
 
-#: openconnectauth.cpp:322
+#: openconnectauth.cpp:332
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Не вдалося ініціалізувати програмний ключ: %1"
 
-#: openconnectauth.cpp:375
+#: openconnectauth.cpp:385
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Встановлення зв’язку з вузлом, будь ласка, зачекайте…"
 
-#: openconnectauth.cpp:722
+#: openconnectauth.cpp:732
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Увійти"
 
-#: openconnectauth.cpp:784
+#: openconnectauth.cpp:794
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -47,7 +47,7 @@ msgstr ""
 "Причина: %2\n"
 "Прийняти сертифікат попри це?"
 
-#: openconnectauth.cpp:879
+#: openconnectauth.cpp:889
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Спроба встановлення з’єднання зазнала невдачі."
@@ -270,32 +270,40 @@ msgstr "Повідомлена версія"
 msgid "Certificate Authentication"
 msgstr "Розпізнавання за сертифікатом"
 
-#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, leMcaCertLabel)
 #: openconnectprop.ui:242
-#, kde-format
-msgid "User Certificate:"
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "Machine Certificate:"
 msgstr "Сертифікат користувача:"
 
+#. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openconnectprop.ui:261
+#: openconnectprop.ui:261 openconnectprop.ui:299
 #, kde-format
 msgid "Private Key:"
 msgstr "Закритий ключ:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
+#, kde-format
+msgid "User Certificate:"
+msgstr "Сертифікат користувача:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: openconnectprop.ui:318
 #, kde-format
 msgid "Use FSID for key passphrase"
 msgstr "Використовувати FSID для пароля ключа"
 
 #. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
-#: openconnectprop.ui:287
+#: openconnectprop.ui:325
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
 msgstr "Заборонити користувачеві приймати вручну некоректні сертифікати"
 
 #. i18n: ectx: property (text), widget (QPushButton, buTokens)
-#: openconnectprop.ui:313
+#: openconnectprop.ui:351
 #, kde-format
 msgid "Token Authentication"
 msgstr "Розпізнавання за ключем"

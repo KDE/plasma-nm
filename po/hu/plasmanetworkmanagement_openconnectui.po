@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:34+0000\n"
+"POT-Creation-Date: 2024-02-20 00:39+0000\n"
 "PO-Revision-Date: 2023-12-17 22:08+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -19,23 +19,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.3\n"
 
-#: openconnectauth.cpp:322
+#: openconnectauth.cpp:332
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Nem sikerült inicializálni a szoftvertokent: %1"
 
-#: openconnectauth.cpp:375
+#: openconnectauth.cpp:385
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Kapcsolódás a kiszolgálóhoz, kérem várjon…"
 
-#: openconnectauth.cpp:722
+#: openconnectauth.cpp:732
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Bejelentkezés"
 
-#: openconnectauth.cpp:784
+#: openconnectauth.cpp:794
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -47,7 +47,7 @@ msgstr ""
 "Ok: %2\n"
 "Elfogadja ennek ellenére?"
 
-#: openconnectauth.cpp:879
+#: openconnectauth.cpp:889
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "A kapcsolódási kísérlet sikertelen volt."
@@ -270,26 +270,34 @@ msgstr "Jelentett verzió"
 msgid "Certificate Authentication"
 msgstr "Tanúsítvány hitelesítése"
 
-#. i18n: ectx: property (text), widget (QLabel, label_5)
+#. i18n: ectx: property (text), widget (QLabel, leMcaCertLabel)
 #: openconnectprop.ui:242
-#, kde-format
-msgid "User Certificate:"
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "Machine Certificate:"
 msgstr "Felhasználói tanúsítvány:"
 
+#. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openconnectprop.ui:261
+#: openconnectprop.ui:261 openconnectprop.ui:299
 #, kde-format
 msgid "Private Key:"
 msgstr "Privát kulcs:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
+#, kde-format
+msgid "User Certificate:"
+msgstr "Felhasználói tanúsítvány:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: openconnectprop.ui:318
 #, kde-format
 msgid "Use FSID for key passphrase"
 msgstr "FSID használata a kulcs jelmondatához"
 
 #. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
-#: openconnectprop.ui:287
+#: openconnectprop.ui:325
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
 msgstr ""
@@ -297,7 +305,7 @@ msgstr ""
 "tanúsítványokat"
 
 #. i18n: ectx: property (text), widget (QPushButton, buTokens)
-#: openconnectprop.ui:313
+#: openconnectprop.ui:351
 #, kde-format
 msgid "Token Authentication"
 msgstr "Tokenes hitelesítés"

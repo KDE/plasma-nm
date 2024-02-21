@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2015, 2017, 2021, 2022.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-20 00:39+0000\n"
-"PO-Revision-Date: 2023-11-11 23:26+0300\n"
+"PO-Revision-Date: 2024-02-20 17:00+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.01.95\n"
 
 #: openconnectauth.cpp:332
 #, kde-format
@@ -41,7 +41,7 @@ msgid ""
 "Reason: %2\n"
 "Accept it anyway?"
 msgstr ""
-"\"%1\" VPN sunucusundan sertifika denetimi başarısız oldu.\n"
+"‘%1’ VPN sunucusundan sertifika denetimi başarısız oldu.\n"
 "Neden: %2\n"
 "Yine de kabul edilsin mi?"
 
@@ -164,7 +164,7 @@ msgstr "CSD Kaplama Betiği:"
 #: openconnectprop.ui:106
 #, kde-format
 msgid "Allow Cisco Secure Desktop trojan"
-msgstr "Cisco Secure Desktop trojan'ına izin ver"
+msgstr "Cisco Secure Desktop truva atına izin ver"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: openconnectprop.ui:116
@@ -270,10 +270,9 @@ msgstr "Sertifika Doğrulama"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaCertLabel)
 #: openconnectprop.ui:242
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "Kullanıcı Sertifikası:"
+msgstr "Makine sertifikası:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_6)

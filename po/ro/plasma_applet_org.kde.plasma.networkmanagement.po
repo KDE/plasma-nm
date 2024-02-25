@@ -1,6 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
-# This file is distributed under the same license as the plasma-nm package.
-# Sergiu Bivol <sergiu@cip.md>, 2009-2014, 2020, 2021, 2022, 2023.
+# This file is distributed under the same license as the PACKAGE package.
+# Sergiu Bivol <sergiu@cip.md>, 2009, 2010, 2011.
+# Sergiu Bivol <sergiu@cip.md>, 2009, 2010, 2012, 2013, 2014, 2020, 2021, 2022, 2023, 2024.
 # Cristian Oneț <onet.cristian@gmail.com>, 2011.
 #
 msgid ""
@@ -8,7 +9,7 @@ msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-02 01:37+0000\n"
-"PO-Revision-Date: 2023-04-10 19:14+0100\n"
+"PO-Revision-Date: 2024-02-24 18:38+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -70,16 +71,15 @@ msgid "Connected"
 msgstr "Conectat"
 
 #: contents/ui/ConnectionListPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Password on this network"
+#, kde-format
 msgid "You need to log in to this network"
-msgstr "Parola în această rețea"
+msgstr "Trebuie să vă autentificați în această rețea"
 
 #: contents/ui/ConnectionListPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Autentificare"
 
 #: contents/ui/ConnectionListPage.qml:115
 #, kde-format
@@ -159,17 +159,16 @@ msgid "&Configure Network Connections…"
 msgstr "&Configurare conexiuni de rețea…"
 
 #: contents/ui/PopupDialog.qml:51
-#, fuzzy, kde-format
-#| msgctxt "Edit connection dialog caption"
-#| msgid "Edit Network Connection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "Modificare conexiune la rețea"
+msgstr "Înapoi la conexiuni de rețea"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+"Scanați acest cod QR cu alt dispozitiv pentru a-l conecta la rețeaua „%1”."
 
 #: contents/ui/Toolbar.qml:122
 #, kde-format

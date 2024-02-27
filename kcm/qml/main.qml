@@ -208,12 +208,15 @@ QQC2.Page {
         title: i18nc("@title:window", "Remove Connection")
         text: i18n("Do you want to remove the connection '%1'?", toHtmlEscaped(connectionName))
 
-        onAccepted: {
-            if (connectionPath === connectionView.currentConnectionPath) {
-                // Deselect now non-existing connection
-                root.deselectConnections()
+        // QTBUG-122770 accepted signal isn't emitted for Ok button.
+        onButtonClicked: (button, role) => {
+            if (role === MessageDialog.AcceptRole) {
+                if (connectionPath === connectionView.currentConnectionPath) {
+                    // Deselect now non-existing connection
+                    root.deselectConnections()
+                }
+                handler.removeConnection(connectionPath)
             }
-            handler.removeConnection(connectionPath)
         }
     }
 

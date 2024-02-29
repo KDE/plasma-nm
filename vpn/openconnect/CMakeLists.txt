@@ -13,10 +13,17 @@ macro(add_openconnect_plugin name)
         openconnectwidget.h
         openconnectauth.h
         openconnectauthworkerthread.h
+        openconnectwebauthdialog.cpp
+        openconnectwebauthdialog.h
         openconnect_${name}.cpp
     )
 
-    ki18n_wrap_ui(openconnect_SRCS openconnectprop.ui openconnectauth.ui openconnecttoken.ui)
+    ki18n_wrap_ui(openconnect_SRCS
+        openconnectprop.ui
+        openconnectauth.ui
+        openconnecttoken.ui
+        openconnectwebauthdialog.ui
+    )
 
     add_library(plasmanetworkmanagement_openconnect_${name} MODULE ${openconnect_SRCS})
 

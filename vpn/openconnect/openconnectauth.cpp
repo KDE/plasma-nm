@@ -7,6 +7,7 @@
 
 #include "openconnectauth.h"
 #include "openconnectauthworkerthread.h"
+#include "openconnectwebauthdialog.h"
 #include "ui_openconnectauth.h"
 
 #include "passwordfield.h"
@@ -33,6 +34,7 @@
 #include <QWebEnginePage>
 #include <QWebEngineProfile>
 #include <QWebEngineView>
+#include <QWebEngineWebAuthUxRequest>
 
 #include <KLocalizedString>
 
@@ -91,6 +93,7 @@ public:
     QByteArray tokenMode;
     Token token;
     QAtomicPointer<QSemaphore> waitForWebEngineFinish;
+    OpenconnectWebAuthDialog *authDialog;
 
     enum LogLevels { Error = 0, Info, Debug, Trace };
 };
@@ -145,6 +148,8 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
 
     // This might be set by readSecrets() so don't connect it until now
     connect(d->ui.cmbHosts, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenconnectAuthWidget::connectHost);
+
+    d->authDialog = nullptr;
 
     KAcceleratorManager::manage(this);
 }
@@ -594,6 +599,35 @@ void OpenconnectAuthWidget::handleWebEngineUrl(const QUrl &url)
 #endif
 }
 
+void OpenconnectAuthWidget::handleWebAuthUxRequested(QWebEngineWebAuthUxRequest *request)
+{
+    Q_D(OpenconnectAuthWidget);
+
+    if (d->authDialog)
+        d->authDialog->close();
+
+    d->authDialog = new OpenconnectWebAuthDialog(request, this);
+    d->authDialog->setAttribute(Qt::WA_DeleteOnClose);
+    d->authDialog->setModal(false);
+    d->authDialog->setWindowFlags(d->authDialog->windowFlags() & ~Qt::WindowContextHelpButtonHint);
+
+    connect(request, &QWebEngineWebAuthUxRequest::stateChanged, this, &OpenconnectAuthWidget::handleWebAuthUxStateChanged);
+
+    d->authDialog->show();
+}
+
+void OpenconnectAuthWidget::handleWebAuthUxStateChanged(QWebEngineWebAuthUxRequest::WebAuthUxState state)
+{
+    Q_D(OpenconnectAuthWidget);
+
+    if (QWebEngineWebAuthUxRequest::WebAuthUxState::Completed == state || QWebEngineWebAuthUxRequest::WebAuthUxState::Cancelled == state) {
+        if (d->authDialog)
+            d->authDialog->close();
+    } else {
+        d->authDialog->updateDisplay();
+    }
+}
+
 void OpenconnectAuthWidget::openWebEngine(const char *loginUri, QSemaphore *waitForWebEngineFinish)
 {
     Q_D(OpenconnectAuthWidget);
@@ -604,6 +638,7 @@ void OpenconnectAuthWidget::openWebEngine(const char *loginUri, QSemaphore *wait
 
     connect(webEngineView, &QWebEngineView::urlChanged, this, &OpenconnectAuthWidget::handleWebEngineUrl);
     connect(page, &QWebEnginePage::loadingChanged, this, &OpenconnectAuthWidget::handleWebEngineLoad);
+    connect(page, &QWebEnginePage::webAuthUxRequested, this, &OpenconnectAuthWidget::handleWebAuthUxRequested);
     connect(cookieStore, &QWebEngineCookieStore::cookieAdded, this, &OpenconnectAuthWidget::handleWebEngineCookie);
     cookieStore->loadAllCookies();
 

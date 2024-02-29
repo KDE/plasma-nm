@@ -17,6 +17,7 @@
 #include <QString>
 #include <QUrl>
 #include <QWebEngineLoadingInfo>
+#include <QWebEngineWebAuthUxRequest>
 
 class QLayout;
 struct openconnect_info;
@@ -56,6 +57,8 @@ private Q_SLOTS:
     void handleWebEngineCookie(const QNetworkCookie &);
     void handleWebEngineLoad(const QWebEngineLoadingInfo &);
     void handleWebEngineUrl(const QUrl &url);
+    void handleWebAuthUxRequested(QWebEngineWebAuthUxRequest *request);
+    void handleWebAuthUxStateChanged(QWebEngineWebAuthUxRequest::WebAuthUxState state);
     void openWebEngine(const char *, QSemaphore *);
 };
 

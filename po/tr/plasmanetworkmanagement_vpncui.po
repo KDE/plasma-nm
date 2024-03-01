@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2015, 2017, 2021, 2022.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2023-09-02 12:53+0300\n"
+"PO-Revision-Date: 2024-02-29 17:01+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.02.0\n"
 "X-POOTLE-MTIME: 1413102233.000000\n"
 
 #: vpnc.cpp:73
@@ -158,13 +158,13 @@ msgstr "Kimlik doğrulama için (NT) alan adı."
 #: vpncadvanced.ui:44
 #, kde-format
 msgid "Vendor:"
-msgstr "Üretici:"
+msgstr "Satıcı:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
 #: vpncadvanced.ui:60
 #, kde-format
 msgid "Vendor of your IPsec gateway."
-msgstr "IPsec geçidinin üreticisi."
+msgstr "IPsec geçidinin satıcısı."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: vpncadvanced.ui:70

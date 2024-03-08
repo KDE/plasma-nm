@@ -111,6 +111,13 @@
     </widget>
    </item>
    <item>
+    <widget class="QCheckBox" name="chkStorePlaintextCookies">
+     <property name="text">
+      <string>Store browser cookies in plain-text</string>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QGroupBox" name="loginBox">
      <property name="minimumSize">
       <size>

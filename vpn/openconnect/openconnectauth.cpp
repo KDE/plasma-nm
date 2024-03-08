@@ -28,6 +28,7 @@
 #include <QMutex>
 #include <QPointer>
 #include <QPushButton>
+#include <QStandardPaths>
 #include <QTimer>
 #include <QWaitCondition>
 #include <QWebEngineCookieStore>
@@ -309,6 +310,10 @@ void OpenconnectAuthWidget::readSecrets()
         d->ui.chkStorePasswords->setChecked(true);
     }
 
+    if (d->secrets["save_plaintext_cookies"] == "yes") {
+        d->ui.chkStorePlaintextCookies->setChecked(true);
+    }
+
     d->token.tokenMode = OC_TOKEN_MODE_NONE;
     d->token.tokenSecret = nullptr;
 
@@ -436,6 +441,7 @@ QVariantMap OpenconnectAuthWidget::setting() const
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_GWCERT), QLatin1String(fingerprint));
     secrets.insert(QLatin1String("autoconnect"), d->ui.chkAutoconnect->isChecked() ? "yes" : "no");
     secrets.insert(QLatin1String("save_passwords"), d->ui.chkStorePasswords->isChecked() ? "yes" : "no");
+    secrets.insert(QLatin1String("save_plaintext_cookies"), d->ui.chkStorePlaintextCookies->isChecked() ? "yes" : "no");
 
     NMStringMap::iterator i = secrets.begin();
     while (i != secrets.end()) {
@@ -638,8 +644,17 @@ void OpenconnectAuthWidget::openWebEngine(const char *loginUri, QSemaphore *wait
     Q_D(OpenconnectAuthWidget);
     d->waitForWebEngineFinish.storeRelease(waitForWebEngineFinish);
     auto webEngineView = new QWebEngineView(this);
-    QWebEnginePage *page = webEngineView->page();
-    QWebEngineCookieStore *cookieStore = page->profile()->cookieStore();
+    QWebEngineProfile *profile = new QWebEngineProfile("plasma-nm-openconnect", this);
+    QString persistentStoragePath = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation);
+    profile->setPersistentStoragePath(persistentStoragePath.append("/plasma-nm-openconnect"));
+
+    if (d->ui.chkStorePlaintextCookies->isChecked()) {
+        profile->setPersistentCookiesPolicy(QWebEngineProfile::AllowPersistentCookies);
+    } else {
+        profile->setPersistentCookiesPolicy(QWebEngineProfile::NoPersistentCookies);
+    }
+    QWebEnginePage *page = new QWebEnginePage(profile, this);
+    QWebEngineCookieStore *cookieStore = profile->cookieStore();
 
     connect(webEngineView, &QWebEngineView::urlChanged, this, &OpenconnectAuthWidget::handleWebEngineUrl);
     connect(page, &QWebEnginePage::loadingChanged, this, &OpenconnectAuthWidget::handleWebEngineLoad);
@@ -647,6 +662,7 @@ void OpenconnectAuthWidget::openWebEngine(const char *loginUri, QSemaphore *wait
     connect(cookieStore, &QWebEngineCookieStore::cookieAdded, this, &OpenconnectAuthWidget::handleWebEngineCookie);
     cookieStore->loadAllCookies();
 
+    webEngineView->setPage(page);
     webEngineView->load(QUrl(loginUri, QUrl::TolerantMode));
     // QWebEngineView sizeHint fails to size window correctly based on contents
     // when QLayout::setSizeConstraint(QLayout::SetFixedSize) is set. Using same

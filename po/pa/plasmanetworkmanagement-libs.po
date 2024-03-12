@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-01-16 00:38+0000\n"
-"PO-Revision-Date: 2024-01-03 14:00-0600\n"
+"PO-Revision-Date: 2024-03-11 07:43-0500\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
 "Language: pa\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -3489,11 +3489,10 @@ msgid "Frequency"
 msgstr "ਫਰੀਕਿਊਂਸੀ"
 
 #: models/networkmodelitem.cpp:657
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "ਚੈਨਲ:"
+msgstr "%1 (ਚੈਨਲ %2)"
 
 #: models/networkmodelitem.cpp:661
 #, kde-format

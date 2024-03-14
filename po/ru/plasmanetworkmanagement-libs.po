@@ -816,7 +816,7 @@ msgstr "Подключаться автоматически с приорите�
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
-"The higher number means higher priority. An negative number can be used to "
+"The higher number means higher priority. A negative number can be used to "
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""

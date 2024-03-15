@@ -69,9 +69,9 @@ void ConnectivityMonitor::connectivityChanged(NetworkManager::Connectivity conne
                 m_notification = new KNotification(QStringLiteral("CaptivePortal"), KNotification::Persistent);
                 m_notification->setComponentName(QStringLiteral("networkmanagement"));
                 m_notification->setTitle(title);
-                m_notification->setText(i18n("You need to log into this network"));
+                m_notification->setText(i18n("Log into this network"));
 
-                auto logInAction = m_notification->addAction(i18n("Log in"));
+                auto logInAction = m_notification->addDefaultAction(i18n("Log in"));
                 connect(logInAction, &KNotificationAction::activated, this, [this]() {
                     auto job = new KIO::OpenUrlJob(QUrl(QStringLiteral("http://networkcheck.kde.org")));
                     job->setStartupId(m_notification->xdgActivationToken().toUtf8());

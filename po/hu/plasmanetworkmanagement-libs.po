@@ -4,13 +4,13 @@
 # Balázs Úr <urbalazs@gmail.com>, 2013, 2014.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2014.
 # Kiszel Kristóf <kiszel.kristof@gmail.com>, 2017, 2020, 2021.
-# Kristof Kiszel <ulysses@fsf.hu>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2022-02-18 11:21+0100\n"
+"PO-Revision-Date: 2024-03-14 11:55+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 21.07.70\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -1657,10 +1657,9 @@ msgstr "WPA3 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA/WPA2 Enterprise"
+msgstr "WPA3 Enterprise 192 bites"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -2537,7 +2536,7 @@ msgstr "%1 GBit/s"
 #, kde-format
 msgctxt "Wireless connection frequency"
 msgid "%1 GHz"
-msgstr ""
+msgstr "%1 GHz"
 
 #: editor/uiutils.cpp:464
 #, kde-format
@@ -2573,7 +2572,7 @@ msgstr "Bármely"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:486
 #, kde-format
@@ -2837,7 +2836,7 @@ msgstr "WPA3-SAE"
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:614
 #, kde-format
@@ -2926,12 +2925,12 @@ msgstr "Nem található VPN bővítmény a(z) %1 típushoz"
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "Ilyen típusú VPN importálása nincs megvalósítva"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "Nincs megvalósítva"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3324,34 +3323,24 @@ msgid "R&emove"
 msgstr "&Eltávolítás"
 
 #: handler.cpp:111
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
-"A NetworkManagerből hiányzik a(z) „%1” VPN-kapcsolatok támogatása. Használja "
-"a csomagkezelőt a telepítéséhez."
+msgstr "A Plasmából hiányzik a(z) „%1” VPN-kapcsolatok támogatása."
 
 #: handler.cpp:113
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Hibabejelentés"
 
 #: handler.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
-"A NetworkManagerből hiányzik a(z) „%1” VPN-kapcsolatok támogatása. Használja "
-"a csomagkezelőt a telepítéséhez."
+msgstr "A NetworkManagerből hiányzik a(z) „%1” VPN-kapcsolatok támogatása."
 
 #: handler.cpp:138
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Telepítés"
 
 #: handler.cpp:353 handler.cpp:846
 #, kde-format
@@ -3502,132 +3491,118 @@ msgid "Import a saved configuration file"
 msgstr "Importálás mentett beállítófájlból"
 
 #: models/networkmodelitem.cpp:42
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa ismeretlen"
 
 #: models/networkmodelitem.cpp:43
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa ADSL"
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr ""
+msgstr "A kapcsolat típusa Bluetooth"
 
 #: models/networkmodelitem.cpp:45
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa híd"
 
 #: models/networkmodelitem.cpp:46
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa CDMA"
 
 #: models/networkmodelitem.cpp:47
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa GSM"
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr ""
+msgstr "A kapcsolat típusa Infiniband"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
-msgstr ""
+msgstr "A kapcsolat típusa OLPC Mesh"
 
 #: models/networkmodelitem.cpp:50
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa PPOPE"
 
 #: models/networkmodelitem.cpp:51
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa VLAN"
 
 #: models/networkmodelitem.cpp:52
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa VPN"
 
 #: models/networkmodelitem.cpp:53
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa Wimax"
 
 #: models/networkmodelitem.cpp:54
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa vezetékes"
 
 #: models/networkmodelitem.cpp:55
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa vezeték nélküli"
 
 #: models/networkmodelitem.cpp:56
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa Team"
 
 #: models/networkmodelitem.cpp:57
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa általános"
 
 #: models/networkmodelitem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr "Kapcsolattípus"
+msgstr "A kapcsolat típusa alagút"
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr ""
+msgstr "A kapcsolat típusa IP-alagút"
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
-msgstr ""
+msgstr "A kapcsolat típusa WireGuard"
 
 #: models/networkmodelitem.cpp:585
 #, kde-format
@@ -3705,13 +3680,12 @@ msgstr "Biztonságtípus"
 #: models/networkmodelitem.cpp:657
 #, kde-format
 msgid "Frequency"
-msgstr ""
+msgstr "Frekvencia"
 
 #: models/networkmodelitem.cpp:658
-#, fuzzy, kde-format
-#| msgid "BSSID:"
+#, kde-format
 msgid "BSSID"
-msgstr "BSSID:"
+msgstr "BSSID"
 
 #: models/networkmodelitem.cpp:672
 #, kde-format

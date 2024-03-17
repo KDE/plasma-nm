@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2024-02-08 17:34+0300\n"
+"PO-Revision-Date: 2024-03-16 14:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,13 +16,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.02.0\n"
 "X-POOTLE-MTIME: 1413106147.000000\n"
 
 #: openvpn.cpp:183
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
-msgstr "NetworkManager'da OpenVPN için destek yok"
+msgstr "NetworkManager’da OpenVPN desteği şu an bulunmuyor"
 
 #: openvpn.cpp:208
 #, kde-format
@@ -38,7 +38,7 @@ msgstr "Sertifikaları %1 konumuna kopyalarken hata: %2"
 #: openvpn.ui:19
 #, kde-format
 msgid "Gateway:"
-msgstr "Ağ Geçidi:"
+msgstr "Ağ geçidi:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: openvpn.ui:36
@@ -64,7 +64,7 @@ msgstr "Bağlantı türü:"
 #: openvpn.ui:68
 #, kde-format
 msgid "Select an authentication mode."
-msgstr "Kimlik doğrulama kipi seçin."
+msgstr "Bir kimlik doğrulama kipi seçin."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:72
@@ -76,7 +76,7 @@ msgstr "Sertifikalar (TLS)"
 #: openvpn.ui:77
 #, kde-format
 msgid "Static Key"
-msgstr "Sabit Anahtar"
+msgstr "Durağan Anahtar"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:82
@@ -96,7 +96,7 @@ msgstr "Sertifikalar (TLS) ile Parola"
 #: openvpn.ui:104 openvpn.ui:370 openvpn.ui:468
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA Sertifikası:"
+msgstr "CA sertifikası:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, passCaFile)
@@ -111,7 +111,7 @@ msgstr "Sertifika otoritesi (CA) dosyası, .pem biçiminde."
 #: openvpn.ui:129 openvpn.ui:493
 #, kde-format
 msgid "User Certificate:"
-msgstr "Kullanıcı Sertifikası:"
+msgstr "Kullanıcı sertifikası:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Cert)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassCert)
@@ -121,7 +121,7 @@ msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
 "Certificate)."
 msgstr ""
-"Yerel eşin imzalı sertifikası, .pem biçiminde (CA sertifikasının CA'sı "
+"Yerel eşin imzalı sertifikası, .pem biçiminde (CA sertifikasının CA’sı "
 "tarafından imzalanmış)."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
@@ -129,21 +129,21 @@ msgstr ""
 #: openvpn.ui:154 openvpn.ui:518
 #, kde-format
 msgid "Private Key:"
-msgstr "Gizli Anahtar:"
+msgstr "Gizli anahtar:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Key)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassKey)
 #: openvpn.ui:167 openvpn.ui:531
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr "Yerel eşin gizli anahtarı, .pem biçiminde."
+msgstr ".pem biçiminde yerel eşin gizli anahtarı."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: openvpn.ui:179 openvpn.ui:543
 #, kde-format
 msgid "Private Key Password:"
-msgstr "Gizli Anahtar Parolası:"
+msgstr "Gizli anahtar parolası:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509KeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509PassKeyPassword)
@@ -156,14 +156,14 @@ msgstr "Gizli anahtar için paraola."
 #: openvpn.ui:217
 #, kde-format
 msgid "Static Key:"
-msgstr "Sabit Anahtar:"
+msgstr "Durağan anahtar:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, pskSharedKey)
 #: openvpn.ui:230
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
 msgstr ""
-"Sabit Anahtar şifreleme kipi (non-TLS) için önceden paylaşılmış Sabit "
+"Durağan Anahtar şifreleme kipi (non-TLS) için önceden paylaşılmış Durağan "
 "Anahtar dosyası."
 
 #. i18n: ectx: property (text), widget (QLabel, label_16)
@@ -171,13 +171,13 @@ msgstr ""
 #: openvpn.ui:242 openvpnadvanced.ui:925
 #, kde-format
 msgid "Key Direction:"
-msgstr "Anahtar Yönetimi:"
+msgstr "Anahtar yönü:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:255
 #, kde-format
 msgid "Direction for Static Key encryption mode (non-TLS)."
-msgstr "Sabit Anahtar şifreleme kipi (non-TLS) için anahtar yönetimi."
+msgstr "Durağan Anahtar şifreleme kipi yönü (TLS olmayan)"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:258
@@ -185,8 +185,7 @@ msgstr "Sabit Anahtar şifreleme kipi (non-TLS) için anahtar yönetimi."
 msgid ""
 "If key direction is used, it must be the opposite of that used on the VPN "
 "peer."
-msgstr ""
-"Anahtar yönetimi kullanılırsa, VPN eşinde kullanılanın tersi olmalıdır."
+msgstr "Anahtar yönü kullanılırsa VPN eşinde kullanılanın tersi olmalıdır."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:262
@@ -239,10 +238,9 @@ msgid ""
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
-"Anahtar yönetimi kullanılırsa, VPN eşinde kullanılanın tersi olmalıdır. "
-"Örneğin, eş '1' kullıyorsa, bu bağlantı '0' kullanmalıdır. Eğer hangi değer "
-"kullanmanız gerektiğinden emin değilseniz, lütfen sistem yöneticiniz ile "
-"irtibata geçiniz."
+"Anahtar yönü kullanılırsa VPN eşinde kullanılanın tersi olmalıdır. Örneğin, "
+"eş ‘1’ kullanıyorsa bu bağlantı ‘0’ kullanmalıdır. Hangi değeri kullanmanız "
+"gerektiğinden emin değilseniz lütfen sistem yöneticinizle iletişime geçin."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
@@ -318,7 +316,7 @@ msgstr "Otomatik"
 #, kde-format
 msgid "Renegotiate data channel key after the specified number of seconds."
 msgstr ""
-"Belirtilen saniye kadar sonra, veri kanalı anahtarı için yeniden anlaş."
+"Belirtilen saniye kadar sonra, veri kanalı anahtarı için yeniden anlaşın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomReneg)
 #: openvpnadvanced.ui:75
@@ -421,14 +419,14 @@ msgid ""
 "Use custom name for TUN/TAP virtual device (instead of default \"tun\" or "
 "\"tap\")."
 msgstr ""
-"TUN/TAP sana aygıtı için özel isim (\"tun\" veya \"tap\" öntanımlıları "
-"yerine) kullan."
+"TUN/TAP sanal aygıtı için özel ad (“tun” veya “tap” öntanımlıları yerine) "
+"kullanın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceName)
 #: openvpnadvanced.ui:197
 #, kde-format
 msgid "Set virtual device name:"
-msgstr "Sanal aygıt ismi ayarla:"
+msgstr "Sanal aygıt adı ayarla:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMtu)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMtu)
@@ -438,7 +436,7 @@ msgid ""
 "Take the TUN device MTU to be specified value and derive the link MTU from "
 "it."
 msgstr ""
-"Belirlenen değer için TUN aygıtı MTU kullan ve bundan bağlantı MTU oluştur."
+"Belirlenen değer için TUN aygıtı MTU kullan ve bundan bağlantı MTU oluşturun."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtu)
 #: openvpnadvanced.ui:230
@@ -451,19 +449,19 @@ msgstr "Özel tünel Maksimum İleti Birimi (MTU) kullan:"
 #: openvpnadvanced.ui:263 openvpnadvanced.ui:276
 #, kde-format
 msgid "Enable internal datagram fragmentation with this maximum size."
-msgstr "Dahili veri birimi parçalamayı, azami boyutta etkinleştir."
+msgstr "İçsel veri birimi parçalamayı en yüksek boyutta etkinleştirin."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomFragmentSize)
 #: openvpnadvanced.ui:266
 #, kde-format
 msgid "Use custom UDP fragment size:"
-msgstr "Özel UDP parçalam boyutu seçin:"
+msgstr "Özel UDP parçalama boyutu seç:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:294
 #, kde-format
 msgid "Restrict tunnel TCP maximum segment size."
-msgstr "Tünel TCP en büyük bölüt boyutunu sınırla."
+msgstr "Tünel TCP en büyük bölüt boyutunu sınırlayın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:297
@@ -479,7 +477,7 @@ msgid ""
 "balancing measure."
 msgstr ""
 "Ağ geçidi listesnin sırasını, temeş bir yük dengeleme ölçüsüne\n"
-"göre rastgele olarak seç."
+"göre rastgele olarak seçin."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:308
@@ -491,13 +489,13 @@ msgstr "Uzak makineleri rastgele seç"
 #: openvpnadvanced.ui:315
 #, kde-format
 msgid "Build a tun link capable of forwarding IPv6 traffic."
-msgstr "IPv6 trafik yönlendirmesinin tun bağlantı özelliği inşa et."
+msgstr "IPv6 trafik yönlendirmesinin TUN bağlantı özelliği yapın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:318
 #, kde-format
 msgid "IPv6 tun link"
-msgstr "IPv6 tun bağlantısı"
+msgstr "IPv6 TUN bağlantısı"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPingInterval)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbPingInterval)
@@ -507,8 +505,8 @@ msgid ""
 "Ping remote over the TCP/UDP control channel if no packets have been sent "
 "for at least n seconds."
 msgstr ""
-"Son n saniyedir her hangi bir paket gönderilmemişse, uzak makineye TCP/UDP "
-"denetim kanalı üstünden ping at."
+"Son n saniyede herhangi bir paket gönderilmemişse uzak makineye TCP/UDP "
+"denetim kanalı üstünden ping atın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPingInterval)
 #: openvpnadvanced.ui:330
@@ -525,8 +523,8 @@ msgid ""
 "Exit or restart after n seconds pass without reception of a ping or other "
 "packet from remote."
 msgstr ""
-"Uzak makineden, ping veya başka bir paket almadan, n saniye sonra çıkış yap "
-"veya yeniden başlat."
+"Uzak makineden ping veya başka bir paket almadan, n saniye sonra çıkış yapın "
+"veya yeniden başlatın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkSpecifyExitRestartPing)
 #: openvpnadvanced.ui:363
@@ -572,13 +570,13 @@ msgstr ""
 "ve/veya kapı numarasını değiştirmesi için izin ver. --float, --remote ile\n"
 "belirtildiğinde, OpenVPN oturumu, eşe bilinen adresten bağlanır,\n"
 "Ayrıca, paket yeni bir adresten gelirse ve tüm kimlik doğrulamalardan\n"
-"geçerse yeni adres, oturumun kontrolünü eline alır. Bu, dinamik adres\n"
-"kullanan veya DHCP istemcisi olan için uygundur.\n"
+"geçerse yeni adres, oturumun denetimini eline alır. Bu, devingen adres\n"
+"kullanan veya DHCP istemcisi olanlar için uygundur.\n"
 "\n"
 "\n"
-"Aslında --float, OpenVPN'ye kimliği doğrulanmış paketleri herhangi bir\n"
+"Aslında --float, OpenVPN’ye kimliği doğrulanmış paketleri herhangi bir\n"
 "adresten kabul etmesini söyler, yalnızca --remote seçeneğinde belirtilen\n"
-"adrese değil."
+"adresten değil."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAcceptAuthenticatedPackets)
 #: openvpnadvanced.ui:423
@@ -598,7 +596,7 @@ msgstr ""
 #: openvpnadvanced.ui:435
 #, kde-format
 msgid "Specify max routes:"
-msgstr "Azami yönlendirmeyi belirler:"
+msgstr "En çok yönlendirmeyi belirt:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, securityTab)
 #: openvpnadvanced.ui:474
@@ -661,7 +659,7 @@ msgstr ""
 #: openvpnadvanced.ui:564
 #, kde-format
 msgid "HMAC Authentication:"
-msgstr "HMAC Doğrulaması:"
+msgstr "HMAC kimlik doğrulaması:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:587
@@ -746,18 +744,18 @@ msgid ""
 "fields),\n"
 "or just the Common Name (CN field).\n"
 msgstr ""
-"Sunucu sertifika kimliklendirmesini onayla.\n"
+"Sunucu sertifika kimliklendirmesini onaylayın.\n"
 "\n"
 "Etkin olduğunda bağlantı, yalnızca sertifikaların bazı beklenen\n"
 "özellikleri uyuştuğunda sağlanacaktır.\n"
 "Eşleşme, tüm sertifika öznesi (tüm alanlar) veya yalnızca\n"
-"Ortak İsim (CN alanı) için uygulanabilir.\n"
+"Ortak Ad (CN alanı) için uygulanabilir.\n"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCertCheck)
 #: openvpnadvanced.ui:673
 #, kde-format
 msgid "Server Certificate Check:"
-msgstr "Sunucu Sertifika Kontrolü:"
+msgstr "Sunucu sertifikası denetimi:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:690
@@ -787,7 +785,7 @@ msgstr "Adı önek tarafından onayla"
 #: openvpnadvanced.ui:710
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
-msgstr "Konuyu kısmen onayla (eski kip, kesinlikle önerilmez)"
+msgstr "Özneyi kısmen onayla (eski kip, kesinlikle önerilmez)"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lbSubjectMatch)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, subjectMatch)
@@ -795,13 +793,13 @@ msgstr "Konuyu kısmen onayla (eski kip, kesinlikle önerilmez)"
 #, kde-format
 msgid ""
 "Subject or Common Name to verify server certificate information against."
-msgstr "Sunucu sertifika bilgisine karşı Konu ve ya Yaygın Ad."
+msgstr "Sunucu sertifika bilgisine karşı Özne veya Yaygın Ad."
 
 #. i18n: ectx: property (text), widget (QLabel, lbSubjectMatch)
 #: openvpnadvanced.ui:728
 #, kde-format
 msgid "Subject Match:"
-msgstr "Konu Eşleşmesi:"
+msgstr "Özne eşleşmesi:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, subjectMatch)
 #: openvpnadvanced.ui:744
@@ -810,7 +808,7 @@ msgid ""
 "Connect only to servers whose certificate matches the given subject. "
 "Example: /CN=myvpn.company.com"
 msgstr ""
-"Yalnızca belirtilen konuyla eşleşen sertifikaya sahip sunuculara bağlan. "
+"Yalnızca belirtilen özneyle eşleşen sertifikaya sahip sunuculara bağlanın. "
 "Örnek: /CN=vpnim.sirket.com"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRemoteCertTls)
@@ -896,7 +894,7 @@ msgstr "Yok"
 #: openvpnadvanced.ui:881
 #, kde-format
 msgid "TLS-Auth"
-msgstr "TLS-Doğrula"
+msgstr "TLS-Doğrulama"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:886
@@ -920,14 +918,14 @@ msgstr ""
 #: openvpnadvanced.ui:898
 #, kde-format
 msgid "Key File:"
-msgstr "Anahtar Dosyası:"
+msgstr "Anahtar dosyası:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)
 #: openvpnadvanced.ui:922 openvpnadvanced.ui:941
 #, kde-format
 msgid "Direction parameter for static key mode."
-msgstr "Sabit anahtar kipi yönetimi."
+msgstr "Durağan anahtar kipi için yön parametresi."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
 #: openvpnadvanced.ui:950
@@ -958,7 +956,7 @@ msgstr "Vekil sunucu türü: HTTP veya SOCKS"
 #: openvpnadvanced.ui:995
 #, kde-format
 msgid "Proxy Type:"
-msgstr "Vekil Sunucu Türü:"
+msgstr "Vekil sunucu türü:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProxyType)
 #: openvpnadvanced.ui:1021
@@ -985,8 +983,8 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
-"Kurumunuzun İnternet'e erişmek için bir proxy sunucusu kullanması "
-"gerektiriyorsa bu seçeneği seçin."
+"Kurumunuzun İnternet’e erişmek için bir vekil sunucu kullanması gerekiyorsa "
+"bu seçeneği seçin."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_12)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, proxyServerAddress)
@@ -999,7 +997,7 @@ msgstr "Uzak makineye bu adresi kullanarak vekil sunucu üzerinden bağlan."
 #: openvpnadvanced.ui:1063
 #, kde-format
 msgid "Server Address:"
-msgstr "Sunucu Adresi:"
+msgstr "Sunucu adresi:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_13)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbProxyPort)
@@ -1027,7 +1025,7 @@ msgstr ""
 #: openvpnadvanced.ui:1115
 #, kde-format
 msgid "Proxy Username:"
-msgstr "Vekil Sunucu Kullanıcı Adı:"
+msgstr "Vekil sunucu kullanıcı adı:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_15)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyPassword)
@@ -1042,7 +1040,7 @@ msgstr ""
 #: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
 #, kde-format
 msgid "Proxy Password:"
-msgstr "Vekil Parolası:"
+msgstr "Vekil parolası:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkProxyRetry)
 #: openvpnadvanced.ui:1162
@@ -1085,7 +1083,7 @@ msgstr "OpenVPN şifresi bulunamadı"
 #: openvpnauth.cpp:73 openvpnauth.cpp:103
 #, kde-format
 msgid "Key Password:"
-msgstr "Anahtar Parolası:"
+msgstr "Anahtar parolası:"
 
 #: openvpnauth.cpp:86
 #, kde-format

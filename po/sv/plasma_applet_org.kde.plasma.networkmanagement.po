@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 01:37+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2022-09-24 15:52+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -57,12 +57,12 @@ msgstr ""
 "Nuvarande nerladdningshastighet är %1 kibibyte/sekund, nuvarande "
 "uppladdningshastighet är %2 kibibyte/sekund"
 
-#: contents/ui/ConnectionItem.qml:291
+#: contents/ui/ConnectionItem.qml:292
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Ansluten, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:295
+#: contents/ui/ConnectionItem.qml:296
 #, kde-format
 msgid "Connected"
 msgstr "Ansluten"

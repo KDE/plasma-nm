@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 01:37+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2023-02-19 14:03+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -57,12 +57,12 @@ msgstr ""
 "Cari endirmə sürəti saniyədə %1 kilobaytdır; cari göndərmə sürəti saniyədə "
 "%2 kilobaytdır"
 
-#: contents/ui/ConnectionItem.qml:291
+#: contents/ui/ConnectionItem.qml:292
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Qoşulub, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:295
+#: contents/ui/ConnectionItem.qml:296
 #, kde-format
 msgid "Connected"
 msgstr "Qoşuldu"

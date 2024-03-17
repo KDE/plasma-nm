@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-18 00:39+0000\n"
-"PO-Revision-Date: 2024-02-18 16:03+0300\n"
+"PO-Revision-Date: 2024-03-16 14:30+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-POOTLE-MTIME: 1413102224.000000\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: strongswanauth.cpp:59
 #, kde-format
@@ -70,7 +70,7 @@ msgstr "Ağ Geçidi"
 #: strongswanprop.ui:29
 #, kde-format
 msgid "Gateway:"
-msgstr "Ağ Geçidi:"
+msgstr "Ağ geçidi:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -120,13 +120,13 @@ msgstr "EAP"
 #: strongswanprop.ui:150
 #, kde-format
 msgid "Private key:"
-msgstr "Gizli Anahtar:"
+msgstr "Gizli anahtar:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: strongswanprop.ui:160
 #, kde-format
 msgid "Private Key Password:"
-msgstr "Gizli Anahtar Parolası:"
+msgstr "Gizli anahtar parolası:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: strongswanprop.ui:202
@@ -138,13 +138,13 @@ msgstr "PIN:"
 #: strongswanprop.ui:230
 #, kde-format
 msgid "Username:"
-msgstr "Kullanıcı Adı:"
+msgstr "Kullanıcı adı:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: strongswanprop.ui:258
 #, kde-format
 msgid "User Password:"
-msgstr "Kullanıcı Parolası:"
+msgstr "Kullanıcı parolası:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: strongswanprop.ui:275
@@ -186,7 +186,7 @@ msgstr "IKE:"
 #: strongswanprop.ui:335
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
-msgstr "“;” ile ayrılmış IKE öneri taslakları listesi"
+msgstr "‘;’ ile ayrılmış IKE öneri taslakları listesi"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: strongswanprop.ui:342
@@ -198,7 +198,7 @@ msgstr "ESP:"
 #: strongswanprop.ui:349
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr "“;” ile ayrılmış ESP öneri taslakları listesi"
+msgstr "‘;’ ile ayrılmış ESP öneri taslakları listesi"
 
 #~ msgid "Store"
 #~ msgstr "Kaydet"

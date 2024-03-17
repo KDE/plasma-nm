@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2024-02-29 17:01+0300\n"
+"PO-Revision-Date: 2024-03-16 14:32+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -32,18 +32,18 @@ msgstr "Hata"
 #: vpnc.cpp:118
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
-msgstr "Ağ yöneticisinde Cisco uyumlu VPN'ler için destek yok"
+msgstr "Ağ yöneticisinde Cisco uyumlu VPN desteği henüz yok"
 
 #: vpnc.cpp:146
 #, kde-format
 msgid "%1: file could not be created"
-msgstr "%1: dosya oluşturulamadı"
+msgstr "%1: Dosya oluşturulamadı"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: vpnc.ui:18
 #, kde-format
 msgid "Gateway:"
-msgstr "Ağ Geçidi:"
+msgstr "Ağ geçidi:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: vpnc.ui:31
@@ -55,7 +55,7 @@ msgstr "IPsec geçidinin IP/makine adı."
 #: vpnc.ui:38
 #, kde-format
 msgid "User name:"
-msgstr "Kullanıcı Adı:"
+msgstr "Kullanıcı adı:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leUserName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, user)
@@ -68,7 +68,7 @@ msgstr "Bağlantı için kullanıcı adı."
 #: vpnc.ui:58
 #, kde-format
 msgid "User password:"
-msgstr "Kullanıcı Parolası:"
+msgstr "Kullanıcı parolası:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, leUserPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
@@ -82,7 +82,7 @@ msgstr "Bağlantı için kullanıcı parolası."
 #: vpnc.ui:91 vpncauth.ui:124
 #, kde-format
 msgid "Group name:"
-msgstr "Grup Adı:"
+msgstr "Grup adı:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, group)
 #: vpnc.ui:104
@@ -94,7 +94,7 @@ msgstr "Grup adı"
 #: vpnc.ui:111
 #, kde-format
 msgid "Group password:"
-msgstr "Grup Parolası:"
+msgstr "Grup parolası:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
@@ -146,7 +146,7 @@ msgstr "Kimlik"
 #: vpncadvanced.ui:27
 #, kde-format
 msgid "Domain:"
-msgstr "Alan Adı:"
+msgstr "Etki alanı:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
 #: vpncadvanced.ui:37
@@ -176,7 +176,7 @@ msgstr "Taşıma ve Güvenlik"
 #: vpncadvanced.ui:82
 #, kde-format
 msgid "Encryption method:"
-msgstr "Şifreleme Yöntemi:"
+msgstr "Şifreleme yöntemi:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, encryption)
 #: vpncadvanced.ui:98
@@ -200,7 +200,7 @@ msgstr "Kullanılacak Aykırı NAT yöntemi."
 #: vpncadvanced.ui:128
 #, kde-format
 msgid "IKE DH Group:"
-msgstr "IKE DH Grubu:"
+msgstr "IKE DH grubu:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, dhGroup)
 #: vpncadvanced.ui:144
@@ -212,13 +212,13 @@ msgstr "IKE DH grubunun adı."
 #: vpncadvanced.ui:151
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr "Aktarım Güvenliliğini Mükemmelleştir:"
+msgstr "Mükemmel ileri gizlilik:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
 #: vpncadvanced.ui:167
 #, kde-format
 msgid "Diffie-Hellman group to use for PFS."
-msgstr "PFS için kullanılacak Deffie-Hellman grubu."
+msgstr "PFS için kullanılacak Deffie–Hellman grubu."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: vpncadvanced.ui:174
@@ -233,8 +233,8 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
-"Kullanılacak yerel kapı (0-65535). 0 (öntanımlı kapı) rastgele kapı anlamına "
-"gelir. 500, vpnc'nin öntanımlı kapısıdır."
+"Kullanılacak yerel kapı (0–65535). 0 (öntanımlı kapı) rastgele kapı anlamına "
+"gelir. 500, vpnc’nin öntanımlı kapısıdır."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193
@@ -371,19 +371,19 @@ msgstr "VPNCA Kimlik Doğrulaması"
 #: vpncauth.ui:32
 #, kde-format
 msgid "User Password:"
-msgstr "Kullanıcı Parolası:"
+msgstr "Kullanıcı parolası:"
 
 #. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
 #: vpncauth.ui:45
 #, kde-format
 msgid "Group Password:"
-msgstr "Grup Parolası:"
+msgstr "Grup parolası:"
 
 #. i18n: ectx: property (text), widget (QLabel, userNameLabel)
 #: vpncauth.ui:104
 #, kde-format
 msgid "Username:"
-msgstr "Kullanıcı Adı:"
+msgstr "Kullanıcı adı:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leGroupName)
 #: vpncauth.ui:117

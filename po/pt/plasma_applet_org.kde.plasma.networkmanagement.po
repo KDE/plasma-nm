@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 01:37+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2022-12-12 16:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -76,12 +76,12 @@ msgstr ""
 "A velocidade actual de recepção é de %1 kibibytes por segundo; a velocidade "
 "de envio actual é de %2 kibibytes por segundo"
 
-#: contents/ui/ConnectionItem.qml:291
+#: contents/ui/ConnectionItem.qml:292
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Ligada, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:295
+#: contents/ui/ConnectionItem.qml:296
 #, kde-format
 msgid "Connected"
 msgstr "Ligada"

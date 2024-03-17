@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-16 00:39+0000\n"
-"PO-Revision-Date: 2024-02-08 17:34+0300\n"
+"PO-Revision-Date: 2024-03-16 14:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.01.95\n"
+"X-Generator: Lokalize 24.02.0\n"
 "X-POOTLE-MTIME: 1413102236.000000\n"
 
 #: editor/connectioneditorbase.cpp:198
@@ -137,7 +137,7 @@ msgstr "Yeni Bağlantı (%1)"
 #: editor/connectioneditordialog.cpp:35
 #, kde-format
 msgid "Edit Connection '%1'"
-msgstr "'%1' Bağlantısını Düzenle"
+msgstr "“%1” Bağlantısını Düzenle"
 
 #: editor/connectioneditortabwidget.cpp:47
 #, kde-format
@@ -213,7 +213,7 @@ msgstr "ARP"
 #: editor/settings/teamwidget.cpp:182
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
-msgstr "'%1' bağlantısını kaldırmak istiyor musunuz?"
+msgstr "“%1” bağlantısını kaldırmak istiyor musunuz?"
 
 #: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:194
 #: editor/settings/teamwidget.cpp:183
@@ -284,7 +284,7 @@ msgstr "Diğer DNS sunucuları:"
 #: editor/settings/ipv6widget.cpp:298 editor/settings/ipv6widget.cpp:310
 #, kde-format
 msgid "DNS Servers:"
-msgstr "DNS Sunucuları:"
+msgstr "DNS sunucuları:"
 
 #: editor/settings/ipv4widget.cpp:420
 #, kde-format
@@ -757,7 +757,7 @@ msgstr " sn"
 #: editor/settings/ui/bridge.ui:136
 #, kde-format
 msgid "Enable STP (Spanning Tree Protocol)"
-msgstr "STP'yi Etkinleştir (Yayılım Ağacı Protokolü)"
+msgstr "STP’yi Etkinleştir (Yayılım Ağacı Protokolü)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/bridge.ui:148
@@ -809,13 +809,7 @@ msgstr "Kendiliğinden öncelikli bağlan"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. An negative number can be used "
-#| "to indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -823,10 +817,10 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
-"Eğer Kendiliğinden bağlantı ayarlanırsa daha yüksek öncelikli bağlantılar "
-"tercih edilir. Öntanımlı değer 0'dır.\n"
-"Daha yüksek sayı daha yüksek öncelik anlamına gelir. Negatif sayı kullanımı "
-"öntanımlıdan daha düşük önceliği tarif etmek için kullanılabilir.\n"
+"Kendiliğinden bağlantı ayarlanırsa daha yüksek öncelikli bağlantılar tercih "
+"edilir. Öntanımlı değer 0’dır.\n"
+"Daha yüksek sayı, daha yüksek öncelik anlamına gelir. Negatif sayı kullanımı "
+"öntanımlıdan daha düşük önceliği belirtmek için kullanılabilir.\n"
 "           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
@@ -863,7 +857,7 @@ msgstr "Gelişmiş…"
 #: editor/settings/ui/connectionwidget.ui:80
 #, kde-format
 msgid "Automatically connect to VPN"
-msgstr "VPN'e kendiliğinden bağlan"
+msgstr "VPN’e kendiliğinden bağlan"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:100
@@ -1044,7 +1038,7 @@ msgstr "Devre dışı"
 #, kde-format
 msgctxt "@info"
 msgid "DNS Servers:"
-msgstr "DNS Sunucuları:"
+msgstr "DNS sunucuları:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
 #: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
@@ -1053,8 +1047,8 @@ msgid ""
 "Use this field to specify the IP address(es) of one or more DNS servers. Use "
 "',' to separate entries."
 msgstr ""
-"Bir ya da daha fazla DNS sunucusunun IP adresini belirtmek için bu alanı "
-"kullanın. Girdileri ayırmak için ',' kullanabilirsiniz."
+"Bir veya daha fazla DNS sunucusunun IP adresini belirtmek için bu alanı "
+"kullanın. Girdileri ayırmak için ‘,’ kullanabilirsiniz."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv4.ui:125
@@ -1067,7 +1061,7 @@ msgstr "DNS sunucu listesini düzenle"
 #, kde-format
 msgctxt "@info"
 msgid "Search Domains:"
-msgstr "Aranacak alan adları:"
+msgstr "Aranacak etki alanları:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
 #: editor/settings/ui/ipv4.ui:164 editor/settings/ui/ipv6.ui:270
@@ -1077,7 +1071,7 @@ msgid ""
 "separate entries."
 msgstr ""
 "Bu alanı kullanarak aranacak DNS alan adlarının bir veya daha fazlasını "
-"belirtin. Girdileri ayırmak için ',' kullanın."
+"belirtin. Girdileri ayırmak için ‘,’ kullanın."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:171 editor/settings/ui/ipv6.ui:277
@@ -1126,9 +1120,9 @@ msgid ""
 "to add\n"
 "an IP address"
 msgstr ""
-"IP adresleri bilgisayarınızı ağ üzerinde tanımlayan özel adresledir. Bir IP "
+"IP adresleri bilgisayarınızı ağ üzerinde tanımlayan özel adreslerdir. Bir IP "
 "adresi eklemek için\n"
-"\"Ekle\" düğmesine tıklayın"
+"‘Ekle’ düğmesine tıklayın"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:278
@@ -1315,7 +1309,7 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
-"Belirtilmişse PPPoE'ye, yalnızca belirtilen hizmetleri sağlayan erişim "
+"Belirtilmişse PPPoE’ye, yalnızca belirtilen hizmetleri sağlayan erişim "
 "yoğunlaştırıcıları olan oturumları başlatması için talimat verir. Bir çok "
 "sağlayıcı için burasu boş bırakılmalıdır. Yalnızca birden çok erişim "
 "toplayıcısı varsa veya belirli bir hizmetin gerekli olduğu biliniyorsa "
@@ -1681,8 +1675,8 @@ msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
 msgstr ""
-"Aygıtın belirtilen dupleks kipinde çalışmasına izin verir. \"half\" veya "
-"\"full\" olabilir."
+"Aygıtın belirtilen dupleks kipinde çalışmasına izin verir. “half” veya "
+"“full” olabilir."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158
@@ -1710,10 +1704,10 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
-"Aygıt bağlantı pazarlığı. Eğer 'Elle' seçilmişse 'Hız' ve 'Çift Yönlü' "
+"Aygıt bağlantı pazarlığı. Eğer ‘Elle’ seçilmişse ‘Hız’ ve ‘Çift Yönlü’ "
 "değerleri\n"
-"aygıt uyumluluğu denetlenmeden zorlanacaktır. Emin değilseniz 'Yok Say'ı\n"
-"bırakın ve 'Kendiliğinden'i seçin."
+"aygıt uyumluluğu denetlenmeden zorlanacaktır. Emin değilseniz ‘Yok Say’ı\n"
+"bırakın ve ‘Kendiliğinden’i seçin."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -1830,7 +1824,7 @@ msgid ""
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
 "İsteğe bağlı.\n"
-"Dinlenecek kapı numarası. 'Kendiliğinden' ise rastgele seçilir."
+"Dinlenecek kapı numarası. ‘Kendiliğinden’ ise rastgele seçilir."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:57
@@ -1848,7 +1842,7 @@ msgid ""
 "prepending '0x'."
 msgstr ""
 "İsteğe bağlı.\n"
-"Giden paketler için bir fwmark. 0 veya 'off' olarak ayarlanırsa\n"
+"Giden paketler için bir fwmark. ‘0’ veya ‘off’ olarak ayarlanırsa\n"
 "bu seçenek devre dışı bırakılır. 0x ile öneklenirse onaltılık\n"
 "olarak da belirtilebilir."
 
@@ -1866,7 +1860,7 @@ msgstr ""
 "İsteğe bağlı.\n"
 "Belirtilmezse MTU son uç adreslerinden veya sistem öntanımlı\n"
 "rotasından oluşturulur; genelde de düzgün bir seçimdir. Ancak;\n"
-"bir MTU'yu elle belirtmek ve bu kendiliğinden keşfi devre dışı\n"
+"bir MTU’yu elle belirtmek ve bu kendiliğinden keşfi devre dışı\n"
 "bırakmak için bu değer açıkça belirtilmelidir."
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
@@ -1915,7 +1909,7 @@ msgstr ""
 #: editor/settings/ui/wireguardpeerwidget.ui:34
 #, kde-format
 msgid "Allowed IPs:"
-msgstr "İzin verilen IP'ler:"
+msgstr "İzin verilen IP’ler:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, allowedIPsLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:47
@@ -2031,7 +2025,7 @@ msgstr ""
 "            Örneğin, arabirim çok az trafik gönderiyorsa; ancak herhangi\n"
 "            bir zamanda bir eşten trafik alabilirse ve NAT arkasındaysa\n"
 "            arabirim 25 saniyelik düzenli bir yaşama bağlı tutma işleminden\n"
-"            yarar sağlayabilir. 0 veya \"off\" olarak ayarlanmışsa bu\n"
+"            yarar sağlayabilir. ‘0’ veya ‘off’ olarak ayarlanmışsa bu\n"
 "            seçenek devre dışıdır. Çoğu kullanıcı bu ayara gereksinim\n"
 "            duymayacaktır."
 
@@ -2835,7 +2829,7 @@ msgstr "%1 türü için VPN eklentisi bulunamadı"
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr "Bu tür bir VPN'in içe aktarılması henüz uygulamaya eklenmemiş"
+msgstr "Bu tür bir VPN’in içe aktarılması henüz uygulamaya eklenmemiş"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
@@ -2942,7 +2936,7 @@ msgstr ""
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "You will need the following information:"
-msgstr "Aşağıdaki bilgilere gereksiniminiz olacak:"
+msgstr "Aşağıdaki bilgiler gerekli:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:248
 #, kde-format
@@ -3022,7 +3016,7 @@ msgstr "Sağlayıcınızı Seçin"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Select your provider from a &list:"
-msgstr "&Listeden hizmet sağlayıcınızı seçin:"
+msgstr "&Listeden hizmet sağlayıcı seç:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:435
 #, kde-format
@@ -3040,7 +3034,7 @@ msgstr "Ödeme Planınızı Seçin"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "&Select your plan:"
-msgstr "&Planınızı seçin:"
+msgstr "&Plan seç:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:487
 #, kde-format
@@ -3235,7 +3229,7 @@ msgstr "&Kaldır"
 #: handler.cpp:121
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "Plasma, '%1' VPN bağlantıları için destek içermiyor."
+msgstr "Plasma, “%1” VPN bağlantıları için destek içermiyor."
 
 #: handler.cpp:124
 #, kde-format
@@ -3245,7 +3239,7 @@ msgstr "Hata Bildir"
 #: handler.cpp:147
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr "NetworkManager, '%1' VPN bağlantıları için destek içermiyor."
+msgstr "NetworkManager, “%1” VPN bağlantıları için destek içermiyor."
 
 #: handler.cpp:150
 #, kde-format

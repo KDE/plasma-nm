@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2021, 2022.
-# Emir SARI <emir_sari@icloud.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_sshui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2023-06-16 12:40+0300\n"
+"PO-Revision-Date: 2024-03-16 14:28+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomGatewayPort)
 #: sshadvanced.ui:19
@@ -28,7 +28,7 @@ msgstr "Özel ağ geçidi kapısı kullan:"
 #: sshadvanced.ui:46
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr "Özel tünel Azami İletim Birimi (MTU) kullan:"
+msgstr "Özel tünel En Yüksek İletim Birimi (MTU) kullan:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_extraSshOptions)
 #: sshadvanced.ui:70
@@ -82,7 +82,7 @@ msgstr "Genel"
 #: sshwidget.ui:55
 #, kde-format
 msgid "Gateway:"
-msgstr "Ağ Geçidi:"
+msgstr "Ağ geçidi:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: sshwidget.ui:73
@@ -95,20 +95,20 @@ msgstr "Ağ Ayarları"
 #: sshwidget.ui:79 sshwidget.ui:134
 #, kde-format
 msgid "Remote IP Address:"
-msgstr "Uzak IP Adresi:"
+msgstr "Uzak IP adresi:"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_localIp)
 #. i18n: ectx: property (text), widget (QLabel, lbl_localIpv6)
 #: sshwidget.ui:92 sshwidget.ui:151
 #, kde-format
 msgid "Local IP Address:"
-msgstr "Yerel IP Adresi:"
+msgstr "Yerel IP adresi:"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_netmask)
 #: sshwidget.ui:105
 #, kde-format
 msgid "Netmask:"
-msgstr "Ağ Maskesi:"
+msgstr "Ağ maskesi:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: sshwidget.ui:121
@@ -156,7 +156,7 @@ msgstr "Tür:"
 #: sshwidget.ui:249
 #, kde-format
 msgid "SSH Agent"
-msgstr "SSH Aracı"
+msgstr "SSH Aracısı"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmb_authType)
 #: sshwidget.ui:254

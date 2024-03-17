@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 01:37+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2023-07-17 23:37+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -60,12 +60,12 @@ msgstr ""
 "Поточна швидкість отримання даних — %1 кібібайтів за секунду; поточна "
 "швидкість вивантаження даних — %2 кібібайтів за секунду"
 
-#: contents/ui/ConnectionItem.qml:291
+#: contents/ui/ConnectionItem.qml:292
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "З'єднано, ⬇ %1/с, ⬆ %2/с"
 
-#: contents/ui/ConnectionItem.qml:295
+#: contents/ui/ConnectionItem.qml:296
 #, kde-format
 msgid "Connected"
 msgstr "З'єднано"

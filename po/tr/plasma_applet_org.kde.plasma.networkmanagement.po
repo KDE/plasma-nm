@@ -5,13 +5,13 @@
 # Serdar SOYTETİR <tulliana@gmail.com>, 2010, 2011, 2012.
 # Gökçen Eraslan <gokcen@pardus.org.tr>, 2011, 2013.
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2017, 2021.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 01:37+0000\n"
-"PO-Revision-Date: 2023-07-17 13:48+0300\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
+"PO-Revision-Date: 2024-03-16 14:18+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 24.02.0\n"
 "X-POOTLE-MTIME: 1413102242.000000\n"
 
 #: contents/ui/ConnectionItem.qml:60
@@ -62,12 +62,12 @@ msgstr ""
 "Geçerli indirme hızı saniye başına %1 kibibayt; geçerli karşıya yükleme hızı "
 "saniye başına %2 kibibayt"
 
-#: contents/ui/ConnectionItem.qml:291
+#: contents/ui/ConnectionItem.qml:292
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Bağlı, ⬇ %1/sn, ⬆ %2/sn"
 
-#: contents/ui/ConnectionItem.qml:295
+#: contents/ui/ConnectionItem.qml:296
 #, kde-format
 msgid "Connected"
 msgstr "Bağlı"
@@ -127,18 +127,18 @@ msgstr "Ağlar"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr "Uçak Kipi'ni kapatmak için orta tıklayın"
+msgstr "Uçak Kipi’ni kapatmak için orta tıklayın"
 
 #: contents/ui/main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "Uçak Kipi'ni açmak için orta tıklayın"
+msgstr "Uçak Kipi’ni açmak için orta tıklayın"
 
 #: contents/ui/main.qml:72 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
-msgstr "Wi-Fi'yi Etkinleştir"
+msgstr "Wi-Fi’yi Etkinleştir"
 
 #: contents/ui/main.qml:83
 #, kde-format
@@ -148,7 +148,7 @@ msgstr "Taşınabilir Ağı Etkinleştir"
 #: contents/ui/main.qml:95
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr "Uçak Kipi'ni Etkinleştir"
+msgstr "Uçak Kipi’ni Etkinleştir"
 
 #: contents/ui/main.qml:107
 #, kde-format
@@ -169,7 +169,7 @@ msgstr "Ağ Bağlantılarına Dön"
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
-msgstr "\"%1\" ağına bağlanmak için bu kare kodu başka bir aygıtla tarayın."
+msgstr "“%1” ağına bağlanmak için bu kare kodu başka bir aygıtla tarayın."
 
 #: contents/ui/Toolbar.qml:122
 #, kde-format
@@ -181,14 +181,16 @@ msgstr "Taşınabilir ağları etkinleştir"
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
-"Uçak Kipi'ni devre dışı bırak<nl/><nl/>Bu, Wi-Fi ve Bluetooth'u etkinleştirir"
+"Uçak Kipi’ni devre dışı bırak<nl/><nl/>Bu, Wi-Fi’yi ve Bluetooth’u "
+"etkinleştirir"
 
 #: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
-"Uçak Kipi'ni etkinleştir<nl/><nl/>Bu, Wi-Fi ve Bluetooth'u devre dışı bırakır"
+"Uçak Kipi’ni etkinleştir<nl/><nl/>Bu, Wi-Fi’yi ve Bluetooth’u devre dışı "
+"bırakır"
 
 #: contents/ui/Toolbar.qml:159
 #, kde-format

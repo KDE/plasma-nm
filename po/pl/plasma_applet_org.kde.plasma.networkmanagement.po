@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 01:37+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2024-01-21 09:44+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -58,12 +58,12 @@ msgstr ""
 "Bieżąca szybkość pobierania to %1 kibibajtów na sekundę; bieżąca szybkość "
 "wysyłania to %2 kibibajtów na sekundę"
 
-#: contents/ui/ConnectionItem.qml:291
+#: contents/ui/ConnectionItem.qml:292
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Połączony, ⬇ %1, ⬆ %2"
 
-#: contents/ui/ConnectionItem.qml:295
+#: contents/ui/ConnectionItem.qml:296
 #, kde-format
 msgid "Connected"
 msgstr "Połączony"

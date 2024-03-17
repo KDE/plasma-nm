@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 01:37+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2023-07-30 12:10+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -57,12 +57,12 @@ msgstr ""
 "தற்போதைய பதிவிறக்க வேகம் நொடிக்கு %1 கிபிபைட்டுகள் ஆகும்; தற்போதைய பதிவேற்ற வேகம் "
 "நொடிக்கு %2 கிபிபைட்டுகள் ஆகும்"
 
-#: contents/ui/ConnectionItem.qml:291
+#: contents/ui/ConnectionItem.qml:292
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "இணைந்துள்ளது, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:295
+#: contents/ui/ConnectionItem.qml:296
 #, kde-format
 msgid "Connected"
 msgstr "இணைந்துள்ளது"

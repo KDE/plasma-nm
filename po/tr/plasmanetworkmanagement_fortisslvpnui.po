@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2022.
-# Emir SARI <emir_sari@icloud.com>, 2022.
+# SPDX-FileCopyrightText: 2022, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_fortisslvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2020-10-30 02:41+0100\n"
-"PO-Revision-Date: 2022-03-12 14:19+0300\n"
+"PO-Revision-Date: 2024-03-16 14:20+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 24.02.0\n"
 "X-POOTLE-MTIME: 1502202407.000000\n"
 
 #. i18n: ectx: property (text), widget (QPushButton, advancedButton)
@@ -35,13 +35,13 @@ msgstr "Genel"
 #: fortisslvpn.ui:64
 #, kde-format
 msgid "Gateway:"
-msgstr "Ağ Geçidi:"
+msgstr "Ağ geçidi:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: fortisslvpn.ui:74
 #, kde-format
 msgid "SSLVPN server IP or name."
-msgstr "SSLVPN sunucu IP veya ismi."
+msgstr "SSLVPN sunucu IP’si veya adı."
 
 #. i18n: ectx: property (title), widget (QGroupBox, authenticationGroupBox)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -62,7 +62,7 @@ msgstr "Kullanıcı adı:"
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
 msgstr ""
-"Yerel sistemin kimlik doğrulamasında kullanılan isim adını <name> olarak "
+"Yerel sistemin kimlik doğrulamasında kullanılan ad adını <ad> olarak "
 "ayarlayın."
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
@@ -81,19 +81,19 @@ msgstr "İstendiğinde SSLVPN'e gönderilecek olan parola."
 #: fortisslvpn.ui:129
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA Sertifikası:"
+msgstr "CA sertifikası:"
 
 #. i18n: ectx: property (text), widget (QLabel, userCertLabel)
 #: fortisslvpn.ui:142
 #, kde-format
 msgid "User Certificate:"
-msgstr "Kullanıcı Sertifikası:"
+msgstr "Kullanıcı sertifikası:"
 
 #. i18n: ectx: property (text), widget (QLabel, userKeyLabel)
 #: fortisslvpn.ui:155
 #, kde-format
 msgid "User Key:"
-msgstr "Kullanıcı Anahtarı:"
+msgstr "Kullanıcı anahtarı:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, otp)
 #: fortisslvpnadvanced.ui:43
@@ -111,7 +111,7 @@ msgstr "2FA"
 #: fortisslvpnadvanced.ui:68
 #, kde-format
 msgid "Realm:"
-msgstr "Yetki Alanı:"
+msgstr "Yetki alanı:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: fortisslvpnadvanced.ui:87
@@ -135,7 +135,7 @@ msgstr "0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
 #: fortisslvpnauth.ui:61
 #, kde-format
 msgid "One Time Password"
-msgstr "Bir Kerelik Parola"
+msgstr "Tek Kerelik Parola"
 
 #. i18n: ectx: property (text), widget (QLabel, otpLabel)
 #: fortisslvpnauth.ui:68

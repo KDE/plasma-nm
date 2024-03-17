@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-02 01:37+0000\n"
+"POT-Creation-Date: 2024-03-17 00:38+0000\n"
 "PO-Revision-Date: 2012-02-29 00:25+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
@@ -56,12 +56,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:291
+#: contents/ui/ConnectionItem.qml:292
 #, fuzzy, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "متصل‌شده"
 
-#: contents/ui/ConnectionItem.qml:295
+#: contents/ui/ConnectionItem.qml:296
 #, fuzzy, kde-format
 msgid "Connected"
 msgstr "متصل‌شده"

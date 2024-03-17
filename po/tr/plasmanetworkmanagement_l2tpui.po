@@ -2,13 +2,13 @@
 # Translators:
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2021, 2022.
-# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2023-12-27 14:09+0300\n"
+"PO-Revision-Date: 2024-03-16 14:25+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,13 +17,13 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-POOTLE-MTIME: 1413102235.000000\n"
-"X-Generator: Lokalize 24.01.85\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
 #, kde-format
 msgid "Gateway:"
-msgstr "Ağ Geçidi:"
+msgstr "Ağ geçidi:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: l2tp.ui:35
@@ -92,7 +92,7 @@ msgstr ""
 #: l2tp.ui:140
 #, kde-format
 msgid "NT Domain:"
-msgstr "NT Alan Adı:"
+msgstr "NT alan adı:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
 #: l2tp.ui:150
@@ -102,14 +102,14 @@ msgid ""
 "host name for</p><p>authentication purposes.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Kimlik doğrulama amaçlı olarak &lt;domain&gt; alan "
-"adını</p><p>makine adına ekle.</p></body></html>"
+"adını</p><p>makine adına ekleyin.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #: l2tp.ui:174 l2tpipsec.ui:205
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA Sertifikası:"
+msgstr "CA sertifikası:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCA)
@@ -126,7 +126,7 @@ msgstr ""
 #: l2tp.ui:199
 #, kde-format
 msgid "User Certificate:"
-msgstr "Kullanıcı Sertifikası:"
+msgstr "Kullanıcı sertifikası:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCert)
 #: l2tp.ui:212
@@ -143,7 +143,7 @@ msgstr ""
 #: l2tp.ui:224 l2tpipsec.ui:156
 #, kde-format
 msgid "Private Key:"
-msgstr "Özel Anahtar:"
+msgstr "Özel anahtar:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineKey)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userKey)
@@ -161,7 +161,7 @@ msgstr ""
 #: l2tp.ui:249 l2tpipsec.ui:181
 #, kde-format
 msgid "Private Key Password:"
-msgstr "Özel Anahtar Parolası:"
+msgstr "Özel anahtar parolası:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, machineKeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userKeyPassword)
@@ -189,17 +189,17 @@ msgstr "PPP Ayarları…"
 #: l2tpauth.cpp:63
 #, kde-format
 msgid "User Password:"
-msgstr "Kullanıcı Parolası:"
+msgstr "Kullanıcı parolası:"
 
 #: l2tpauth.cpp:71
 #, kde-format
 msgid "User Certificate Password:"
-msgstr "Kullanıcı Sertifikası Parolası:"
+msgstr "Kullanıcı sertifikası parolası:"
 
 #: l2tpauth.cpp:82
 #, kde-format
 msgid "Machine Certificate Password:"
-msgstr "Sertifika Parolası:"
+msgstr "Makine sertifikası parolası:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbEnableTunnelToHost)
 #: l2tpipsec.ui:20
@@ -229,7 +229,7 @@ msgstr "Önceden Paylaşılmış Anahtar (PSK)"
 #: l2tpipsec.ui:91
 #, kde-format
 msgid "Pre-shared Key:"
-msgstr "Önceden Paylaşılmış Anahtar:"
+msgstr "Önceden paylaşılan anahtar:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
 #: l2tpipsec.ui:103
@@ -242,7 +242,7 @@ msgstr ""
 #: l2tpipsec.ui:131
 #, kde-format
 msgid "Machine Certificate:"
-msgstr "Makine Sertifikası:"
+msgstr "Makine sertifikası:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCert)
 #: l2tpipsec.ui:144
@@ -264,13 +264,13 @@ msgstr "Gelişmiş"
 #: l2tpipsec.ui:231
 #, kde-format
 msgid "Phase1 Algorithms:"
-msgstr "Faz1 Algoritmaları:"
+msgstr "Faz1 algoritmaları:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: l2tpipsec.ui:241
 #, kde-format
 msgid "Phase2 Algorithms:"
-msgstr "Faz2 Algoritmaları:"
+msgstr "Faz2 algoritmaları:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
 #: l2tpipsec.ui:251
@@ -279,8 +279,8 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>İsteğe bağlı. ESP - Tez Kip için öneri taslakları "
-"listesi. Biçim şöyledir: 'enc-integ,enc-integ,…'.</p></body></html>"
+"<html><head/><body><p>İsteğe bağlı. ESP — Tez Kip için öneri taslakları "
+"listesi. Biçim şöyledir: “enc-integ,enc-integ,…”.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:261
@@ -303,7 +303,7 @@ msgstr "ss:dd:ss"
 #: l2tpipsec.ui:271
 #, kde-format
 msgid "Phase1 Lifetime:"
-msgstr "Faz1 Yaşam Süresi:"
+msgstr "Faz1 yaşam süresi:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: l2tpipsec.ui:278
@@ -312,15 +312,15 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>İsteğe bağlı. IKE - Ana Kip için bir öneri taslakları "
-"listesi. Biçim şöyledir: 'enc-integ-group,enc-integ-group,…'.</p></body></"
+"<html><head/><body><p>İsteğe bağlı. IKE — Ana Kip için bir öneri taslakları "
+"listesi. Biçim şöyledir: “enc-integ-group,enc-integ-group,…”.</p></body></"
 "html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:285
 #, kde-format
 msgid "Phase2 Lifetime:"
-msgstr "Faz2 Yaşam Süresi:"
+msgstr "Faz2 yaşam süresi:"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:295
@@ -382,7 +382,7 @@ msgstr ""
 #: l2tpipsec.ui:325
 #, kde-format
 msgid "Disable PFS"
-msgstr "PFS'yi Devre Dışı Bırak"
+msgstr "PFS’yi Devre Dışı Bırak"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:332
@@ -406,7 +406,7 @@ msgstr "UDP sarmalamaya zorla"
 #: l2tpipsec.ui:345
 #, kde-format
 msgid "Remote ID:"
-msgstr "Uzak Konum Kimliği:"
+msgstr "Uzak konum kimliği:"
 
 #: l2tpipsecwidget.cpp:43
 #, kde-format
@@ -423,7 +423,7 @@ msgstr "Kimlik Doğrulama"
 #: l2tpppp.ui:35
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr "Bu kimlik doğrulama yöntemlerine izin ver:"
+msgstr "Şu kimlik doğrulama yöntemlerine izin ver:"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, listWidget)
 #: l2tpppp.ui:45
@@ -471,7 +471,7 @@ msgstr "Sıkıştırma"
 #: l2tpppp.ui:107
 #, kde-format
 msgid "Allow/disable BSD-Compress compression."
-msgstr "BSD sıkıştırmasına izin ver/devre dışı bırak."
+msgstr "BSD sıkıştırmasına izin verin/devre dışı bırakın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbBSD)
 #: l2tpppp.ui:110
@@ -483,7 +483,7 @@ msgstr "BSD sıkıştırmasına izin ver"
 #: l2tpppp.ui:120
 #, kde-format
 msgid "Allow/disable Deflate compression."
-msgstr "Deflate sıkıştırmasına izin ver/devre dışı bırak."
+msgstr "Deflate sıkıştırmasına izin verin/devre dışı bırakın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbdeflate)
 #: l2tpppp.ui:123
@@ -500,7 +500,7 @@ msgid ""
 "and the receive directions."
 msgstr ""
 "Veri gönderip alırken Van Jacobson türü TCP/IP başlık sıkıştırmasına\n"
-"izin ver/kapat."
+"izin verin/kapatın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbTCPheaders)
 #: l2tpppp.ui:137
@@ -516,7 +516,7 @@ msgid ""
 " transmit directions."
 msgstr ""
 "Veri gönderip alırken protokol alan sıkıştırmasına\n"
-" izin ver."
+" izin verin."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbCompressionNegotiation)
 #: l2tpppp.ui:151
@@ -528,7 +528,7 @@ msgstr "Protokol alan sıkıştırma anlaşması kullan"
 #: l2tpppp.ui:164
 #, kde-format
 msgid "Use Address/Control compression in both directions (send and receive)."
-msgstr "Veri gönderip alırken Adres/Kontrol sıkıştırması kullan."
+msgstr "Veri gönderip alırken Adres/Kontrol sıkıştırması kullanın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:167
@@ -547,7 +547,7 @@ msgstr "Yankı"
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
 msgstr ""
-"Karşı tarafın ayakta olup olmadığını kontrol için LCP echo-request gönder."
+"Karşı tarafın ayakta olup olmadığını kontrol için LCP echo-request gönderin."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbsendEcho)
 #: l2tpppp.ui:192
@@ -629,7 +629,7 @@ msgstr "40 bit"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
-"Duruma bağlı kipi kullanmak için MPPE'ye izin verin. Yine de ilk olarak "
+"Duruma bağlı kipi kullanmak için MPPE’ye izin verin. Yine de ilk olarak "
 "durumdan bağımsız kip denenecektir."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbstatefulEncryption)

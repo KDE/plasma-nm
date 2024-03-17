@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2021, 2022.
-# SPDX-FileCopyrightText: 2022, 2023 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-12-23 11:29+0300\n"
+"PO-Revision-Date: 2024-03-16 14:38+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-POOTLE-MTIME: 1413102232.000000\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
 msgid "Only 'dun' and 'nap' services are supported."
-msgstr "Yalnızca 'dun' ve 'nap' hizmetlerini desteklenmektedir."
+msgstr "Yalnızca ‘dun’ ve ‘nap’ hizmetleri desteklenmektedir."
 
 #: connectivitymonitor.cpp:63
 #, kde-format
@@ -354,20 +354,20 @@ msgstr "GSM Modem SIM Kartı takılı değil"
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPinRequired"
 msgid "GSM Modem's SIM Pin required"
-msgstr "GSM Modem SIM Pin'i gerekli"
+msgstr "GSM Modem SIM PIN’i gerekli"
 
 #: notification.cpp:223
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPukRequired"
 msgid "GSM Modem's SIM Puk required"
-msgstr "GSM Modem SIM PUK'u gerekli"
+msgstr "GSM Modem SIM PUK’u gerekli"
 
 #: notification.cpp:226
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to GsmSimWrong"
 msgid "GSM Modem's SIM wrong"
-msgstr "GSM Modem SIM Pin'i hatalı"
+msgstr "GSM Modem SIM PIN’i hatalı"
 
 #: notification.cpp:229
 #, kde-format
@@ -460,27 +460,27 @@ msgstr "Aygıtın üst yönetimi değiştirildi"
 #: notification.cpp:344
 #, kde-format
 msgid "Connection '%1' activated."
-msgstr "'%1' bağlantısı etkinleştirildi."
+msgstr "“%1” bağlantısı etkinleştirildi."
 
 #: notification.cpp:371
 #, kde-format
 msgid "Connection '%1' deactivated."
-msgstr "'%1' bağlantısı devre dışı bırakıldı."
+msgstr "“%1” bağlantısı devre dışı bırakıldı."
 
 #: notification.cpp:422
 #, kde-format
 msgid "VPN connection '%1' activated."
-msgstr "'%1' VPN bağlantısı etkinleştirildi."
+msgstr "“%1” VPN bağlantısı etkinleştirildi."
 
 #: notification.cpp:425
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "'%1' VPN bağlantısı etkinleştirilemedi."
+msgstr "“%1” VPN bağlantısı etkinleştirilemedi."
 
 #: notification.cpp:428 notification.cpp:436
 #, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "VPN bağlantısı '%1' devre dışı bırakıldı."
+msgstr "“%1” VPN bağlantısı devre dışı bırakıldı."
 
 #: notification.cpp:439
 #, kde-format
@@ -488,18 +488,18 @@ msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
 msgstr ""
-"VPN bağlantısı '%1', kullandığı aygıtın bağlantısı kesildiği için devre dışı "
+"“%1” VPN bağlantısı, kullandığı aygıtın bağlantısı kesildiği için devre dışı "
 "bırakıldı."
 
 #: notification.cpp:442
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "'%1'  VPN bağlantısını sağlayan hizmet durduruldu."
+msgstr "“%1” VPN bağlantısını sağlayan hizmet durduruldu."
 
 #: notification.cpp:445
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "'%1' VPN bağlantısının IP yapılandırması geçersiz."
+msgstr "“%1” VPN bağlantısının IP yapılandırması geçersiz."
 
 #: notification.cpp:448
 #, kde-format
@@ -512,17 +512,17 @@ msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
 msgstr ""
-"'%1' VPN bağlantısını sağlayan hizmet başlatılırken bir zaman aşımı oluştu."
+"“%1” VPN bağlantısını sağlayan hizmet başlatılırken bir zaman aşımı oluştu."
 
 #: notification.cpp:454
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "VPN bağlantısı '%1' başlatma hizmeti sağlama başarısız oldu."
+msgstr "“%1” VPN bağlantısını başlatma hizmeti sağlama başarısız oldu."
 
 #: notification.cpp:457
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
-msgstr "VPN bağlantısı '%1' için gerekli gizler sağlanmadı sağlanmadı."
+msgstr "“%1” VPN bağlantısı için gerekli gizler sağlanmadı."
 
 #: notification.cpp:460
 #, kde-format
@@ -559,23 +559,22 @@ msgstr "İstenen giz yok"
 #, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr ""
-"\"%1\" kablosuz ağı için girdiğiniz parola yanlış. Lütfen yeniden deneyin."
+"“%1” kablosuz ağı için girdiğiniz parola yanlış. Lütfen yeniden deneyin."
 
 #: passworddialog.cpp:101
 #, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "\"%1\" kablosuz ağının parolasını girin:"
+msgstr "“%1” kablosuz ağının parolasını gir:"
 
 #: passworddialog.cpp:105
 #, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr ""
-"\"%1\" bağlantısı için girdiğiniz parola yanlış. Lütfen yeniden deneyin."
+msgstr "“%1” bağlantısı için girdiğiniz parola yanlış. Lütfen yeniden deneyin."
 
 #: passworddialog.cpp:107
 #, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "\"%1\" bağlantısının parolasını girin:"
+msgstr "“%1” bağlantısının parolasını gir:"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -591,7 +590,7 @@ msgstr "VPN ayarları eksik"
 #: passworddialog.cpp:134
 #, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "\"%1\" VPN bağlantısının gizlerini sağlayın:"
+msgstr "“%1” VPN bağlantısının gizlerini sağla:"
 
 #: passworddialog.cpp:135
 #, kde-format
@@ -623,17 +622,17 @@ msgstr "SIM PUK2"
 #: pindialog.cpp:72
 #, kde-format
 msgid "Service provider PUK"
-msgstr "Hizmet Sağlayıcı PUK'u"
+msgstr "Hizmet Sağlayıcısı PUK’u"
 
 #: pindialog.cpp:74
 #, kde-format
 msgid "Network PUK"
-msgstr "Ağ PUK'u"
+msgstr "Ağ PUK’u"
 
 #: pindialog.cpp:76
 #, kde-format
 msgid "Corporate PUK"
-msgstr "Şirket PUK'u"
+msgstr "Kurumsal PUK"
 
 #: pindialog.cpp:78
 #, kde-format
@@ -643,7 +642,7 @@ msgstr "PH-FSIM PUK"
 #: pindialog.cpp:80
 #, kde-format
 msgid "Network Subset PUK"
-msgstr "Ağ Alt Küme PUK'u"
+msgstr "Ağ Alt Küme PUK’u"
 
 #: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
@@ -660,7 +659,8 @@ msgstr "%1 Kilidini Açma Gerekli"
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
 msgstr ""
-"'%1' mobil geniş bant aygıtının kullanılabilmesi için %2 kodu gerekiyor."
+"“%1” taşınabilir geniş bant aygıtının kullanılabilmesi için %2 kodu "
+"gerekiyor."
 
 #: pindialog.cpp:86 pindialog.cpp:118
 #, kde-format
@@ -676,7 +676,7 @@ msgstr "Yeni PIN kodu:"
 #: pindialog.cpp:88
 #, kde-format
 msgid "Re-enter new PIN code:"
-msgstr "Yeni PIN kodunu yeniden girin:"
+msgstr "Yeni PIN kodunu yeniden gir:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: pindialog.cpp:89 pinwidget.ui:193
@@ -697,12 +697,12 @@ msgstr "SIM PIN2"
 #: pindialog.cpp:103
 #, kde-format
 msgid "Service provider PIN"
-msgstr "Hizmet sağlayıcı PIN'i"
+msgstr "Hizmet Sağlayıcısı PIN’i"
 
 #: pindialog.cpp:105
 #, kde-format
 msgid "Network PIN"
-msgstr "Ağ PIN'i"
+msgstr "Ağ PIN’i"
 
 #: pindialog.cpp:107
 #, kde-format
@@ -712,7 +712,7 @@ msgstr "PIN"
 #: pindialog.cpp:109
 #, kde-format
 msgid "Corporate PIN"
-msgstr "Şirket PIN'i"
+msgstr "Kurumsal PIN"
 
 #: pindialog.cpp:111
 #, kde-format
@@ -722,7 +722,7 @@ msgstr "PH-FSIM PIN"
 #: pindialog.cpp:113
 #, kde-format
 msgid "Network Subset PIN"
-msgstr "Ağ Alt Küme PIN'i"
+msgstr "Ağ Alt Küme PIN’i"
 
 #: pindialog.cpp:119
 #, kde-format
@@ -775,7 +775,7 @@ msgstr "PUK kodu:"
 #: pinwidget.ui:173
 #, kde-format
 msgid "Re-enter PIN code:"
-msgstr "PIN kodunu yeniden girin:"
+msgstr "PIN kodunu yeniden gir:"
 
 #: secretagent.cpp:408
 #, kde-format

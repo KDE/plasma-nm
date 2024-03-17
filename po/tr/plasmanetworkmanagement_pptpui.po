@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2021.
-# Emir SARI <emir_sari@icloud.com>, 2023.
+# SPDX-FileCopyrightText: 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2023-06-16 12:40+0300\n"
+"PO-Revision-Date: 2024-03-16 14:27+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-POOTLE-MTIME: 1413102226.000000\n"
-"X-Generator: Lokalize 23.07.70\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
 #: pptpadvanced.ui:17
@@ -236,7 +236,7 @@ msgstr "Genel"
 #: pptpprop.ui:34
 #, kde-format
 msgid "Gateway:"
-msgstr "Ağ Geçidi:"
+msgstr "Ağ geçidi:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_gateway)
 #: pptpprop.ui:47
@@ -263,14 +263,14 @@ msgstr "Kullanıcı adı:"
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
 msgstr ""
-"Yerel makinenizin karşı tarafta <name> kimlik doğrulamada kullanacağı adı "
+"Yerel makinenizin karşı tarafta <ad> kimlik doğrulamada kullanacağı adı "
 "girin."
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_ntdomain)
 #: pptpprop.ui:153
 #, kde-format
 msgid "NT Domain:"
-msgstr "NT Alan Adı:"
+msgstr "NT alan adı:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_ntDomain)
 #: pptpprop.ui:167
@@ -279,7 +279,7 @@ msgid ""
 "Append the domain name <domain> to the local host name for\n"
 "authenticating purposes."
 msgstr ""
-"Kimlik doğrulama amaçlı olarak <domain> alan adını yerel makine\n"
+"Kimlik doğrulama amaçlı olarak <etki-alanı> alan adını yerel makine\n"
 "adına ekleyin."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)

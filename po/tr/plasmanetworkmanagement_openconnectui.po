@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2015, 2017, 2021, 2022.
-# Emir SARI <emir_sari@icloud.com>, 2022, 2023.
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-28 01:34+0000\n"
-"PO-Revision-Date: 2023-11-11 23:26+0300\n"
+"PO-Revision-Date: 2024-03-16 14:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.11.70\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: openconnectauth.cpp:322
 #, kde-format
@@ -90,7 +90,7 @@ msgstr "Günlük Dosyasına Bak"
 #: openconnectauth.ui:163
 #, kde-format
 msgid "Log Level:"
-msgstr "Günlük Kaydı Düzeyi:"
+msgstr "Günlük düzeyi:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
 #: openconnectauth.ui:174
@@ -134,13 +134,13 @@ msgstr "Genel"
 #: openconnectprop.ui:38
 #, kde-format
 msgid "Gateway:"
-msgstr "Ağ Geçidi:"
+msgstr "Ağ geçidi:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: openconnectprop.ui:51
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA Sertifikası:"
+msgstr "CA sertifikası:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: openconnectprop.ui:70
@@ -152,13 +152,13 @@ msgstr "Vekil sunucu:"
 #: openconnectprop.ui:83
 #, kde-format
 msgid "User Agent:"
-msgstr "Kullanıcı Aracısı:"
+msgstr "Kullanıcı aracısı:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openconnectprop.ui:96
 #, kde-format
 msgid "CSD Wrapper Script:"
-msgstr "CSD Kaplama Betiği:"
+msgstr "CSD kaplama betiği:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
 #: openconnectprop.ui:106
@@ -170,7 +170,7 @@ msgstr "Cisco Secure Desktop trojan'ına izin ver"
 #: openconnectprop.ui:116
 #, kde-format
 msgid "VPN Protocol:"
-msgstr "VPN Protokolü:"
+msgstr "VPN protokolü:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:133
@@ -272,13 +272,13 @@ msgstr "Sertifika Doğrulama"
 #: openconnectprop.ui:242
 #, kde-format
 msgid "User Certificate:"
-msgstr "Kullanıcı Sertifikası:"
+msgstr "Kullanıcı sertifikası:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: openconnectprop.ui:261
 #, kde-format
 msgid "Private Key:"
-msgstr "Gizli Anahtar:"
+msgstr "Gizli anahtar:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:280
@@ -314,13 +314,13 @@ msgstr "Sertifika Jeton Kimlik Doğrulaması"
 #: openconnecttoken.ui:26
 #, kde-format
 msgid "Token Mode:"
-msgstr "Jeton Kipi:"
+msgstr "Jeton kipi:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnecttoken.ui:43
 #, kde-format
 msgid "Token Secret:"
-msgstr "Jeton Gizi:"
+msgstr "Jeton gizi:"
 
 #~ msgid "*.pem *.crt *.key"
 #~ msgstr "*.pem *.crt *.key"

@@ -1,13 +1,12 @@
 # Translation of plasmanetworkmanagement-kcm to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2017, 2018, 2019, 2020, 2021, 2023.
 # Øystein Steffensen-Alværvik <oysteins.omsetting@protonmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-28 01:34+0000\n"
-"PO-Revision-Date: 2023-03-19 14:31+0100\n"
+"PO-Revision-Date: 2024-03-17 11:00+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -15,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.02.0\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -107,24 +106,22 @@ msgstr "Trådlaussone"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Namn:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Passord på trådlaussone:"
+msgstr "Passord:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "Namnet til trådlaussona kan ikkje vera tomt."
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
-msgstr ""
+msgstr "Passordet til trådlaussona må anten vera tomt eller ha 8–64 teikn"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -132,6 +129,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"Passordet til trådlaussona må anten vera tomt eller ha dette:"
+"<ul><li>Nøyaktig 5 eller 13 vilkårlege teikn</li><li>Nøyaktig 10 eller 26 "
+"heksadesimalteikn:<br/>abcdef, ABCDEF eller 0–9</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-16 00:39+0000\n"
-"PO-Revision-Date: 2024-03-16 20:45\n"
+"PO-Revision-Date: 2024-03-17 20:42\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
 "Language: zh_CN\n"
@@ -815,6 +815,9 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
+"设置为自动连接时，优先级较高的连接将优先使用。默认值为 0。\n"
+"数字越大，优先级越高。负值可以用于指定比默认值更低的优先级。\n"
+"           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:48

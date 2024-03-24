@@ -1,12 +1,11 @@
 # Translation of plasmanetworkmanagement_strongswanui to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2018, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-18 00:39+0000\n"
-"PO-Revision-Date: 2019-10-26 12:50+0200\n"
+"PO-Revision-Date: 2024-03-23 13:05+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -17,7 +16,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 19.11.70\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: strongswanauth.cpp:59
 #, kde-format
@@ -84,7 +83,7 @@ msgstr "Sertifikat:"
 #: strongswanprop.ui:59
 #, kde-format
 msgid "Identity:"
-msgstr ""
+msgstr "Identitet:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: strongswanprop.ui:82

@@ -84,8 +84,8 @@ ColumnLayout {
                 separator: true
             }
             highlight: PlasmaExtras.Highlight { }
-            highlightMoveDuration: 0
-            highlightResizeDuration: 0
+            highlightMoveDuration: Kirigami.Units.shortDuration
+            highlightResizeDuration: Kirigami.Units.shortDuration
             delegate: ConnectionItem {
                 width: connectionView.width - Kirigami.Units.smallSpacing * 4
             }

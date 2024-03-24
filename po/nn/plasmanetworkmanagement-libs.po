@@ -1,6 +1,5 @@
 # Translation of plasmanetworkmanagement-libs to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -17,7 +16,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format

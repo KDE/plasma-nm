@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-16 00:39+0000\n"
-"PO-Revision-Date: 2024-01-16 19:32+0100\n"
+"PO-Revision-Date: 2024-03-17 14:22+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.0\n"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -807,13 +807,7 @@ msgstr "Connettiti automaticamente con priorità"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. An negative number can be used "
-#| "to indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -821,11 +815,11 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
-"Se la connessione è impostata per la connessione automatica, le connessioni "
-"con priorità più alta saranno preferite. Il valore predefinito è 0.\n"
+"Se la connessione è impostata a connessione automatica, le connessioni con "
+"priorità più alta saranno preferite. Il valore predefinito è 0.\n"
 "Il numero più alto significa maggiore priorità. Un numero negativo può "
-"essere utilizzato per indicare priorità inferiore rispetto a quello "
-"predefinito.\n"
+"essere utilizzato per indicare priorità inferiore rispetto a quella "
+"predefinita.\n"
 "           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)

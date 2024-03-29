@@ -1,160 +1,160 @@
+# Translation of plasmanetworkmanagement-kcm.pot to esperanto.
+# Copyright (C) 2017 Free Software Foundation, Inc.
+# This file is distributed under the same license as the plasma-nm package.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-26 02:31+0000\n"
-"PO-Revision-Date: 2024-03-28 19:24\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2023-10-12 06:03+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-stable/messages/plasma-nm/plasmanetworkmanagement-kcm."
-"pot\n"
-"X-Crowdin-File-ID: 2372\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: kcm.cpp:288
 #, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "导入 VPN 连接失败：%1"
+msgstr "Malsukcesis importi VPN-konekton: %1"
 
 #: kcm.cpp:358
 #, kde-format
 msgid "my_shared_connection"
-msgstr "我的共享连接"
+msgstr "mia_kunhava_konekto"
 
 #: kcm.cpp:430
 #, kde-format
 msgid "Export VPN Connection"
-msgstr "导出 VPN 连接"
+msgstr "Eksportu VPN-Konekton"
 
 #: kcm.cpp:455
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
-msgstr "您想要保存对连接“%1”的更改吗？"
+msgstr "Ĉu vi volas konservi ŝanĝojn faritajn al la konekto '%1'?"
 
 #: kcm.cpp:456
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
-msgstr "保存更改"
+msgstr "Konservu Ŝanĝojn"
 
 #: kcm.cpp:555
 #, kde-format
 msgid "Import VPN Connection"
-msgstr "导入 VPN 连接"
+msgstr "Importu VPN-konekton"
 
 #: kcm.cpp:555
 #, kde-format
 msgid "VPN connections (%1)"
-msgstr "VPN 连接 (%1)"
+msgstr "VPN-konektoj (%1)"
 
 #: kcm.cpp:558
 #, kde-format
 msgid "No file was provided"
-msgstr "没有提供文件"
+msgstr "Neniu dosiero estis disponigita"
 
 #: kcm.cpp:619
 #, kde-format
 msgid "Unknown VPN type"
-msgstr "未知的 VPN 类型"
+msgstr "Nekonata VPN-tipo"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr "选择连接类型"
+msgstr "Elektu Konekto-Tipon"
 
 #: qml/AddConnectionDialog.qml:163
 msgid "Create"
-msgstr "创建"
+msgstr "Krei"
 
 #: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
-msgstr "取消"
+msgstr "Nuligi"
 
 #: qml/AddConnectionDialog.qml:191 qml/main.qml:193
 msgid "Configuration"
-msgstr "配置"
+msgstr "Agordo"
 
 #: qml/ConfigurationDialog.qml:16
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr "配置"
+msgstr "Agordo"
 
 #: qml/ConfigurationDialog.qml:37
 msgid "General"
-msgstr "常规"
+msgstr "Generalo"
 
 #: qml/ConfigurationDialog.qml:42
 msgid "Ask for PIN on modem detection"
-msgstr "调制解调器检测时询问 PIN 码"
+msgstr "Petu PIN pri modema detekto"
 
 #: qml/ConfigurationDialog.qml:49
 msgid "Show virtual connections"
-msgstr "显示虚拟连接"
+msgstr "Montru virtualajn konektojn"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Hotspot"
-msgstr "热点"
+msgstr "Hotspot"
 
 #: qml/ConfigurationDialog.qml:63
 msgid "Hotspot name:"
-msgstr "热点名称："
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:73
 msgid "Hotspot password:"
-msgstr "热点密码："
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr "确认"
+msgstr "Bone"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"
-msgstr "连接"
+msgstr "Konekti"
 
 #: qml/ConnectionItem.qml:108
 msgid "Disconnect"
-msgstr "断开"
+msgstr "Malkonekti"
 
 #: qml/ConnectionItem.qml:121
 msgid "Delete"
-msgstr "删除"
+msgstr "Forigi"
 
 #: qml/ConnectionItem.qml:131
 msgid "Export"
-msgstr "导出"
+msgstr "Eksporto"
 
 #: qml/ConnectionItem.qml:141
 msgid "Connected"
-msgstr "已连接"
+msgstr "Konektis"
 
 #: qml/ConnectionItem.qml:143
 msgid "Connecting"
-msgstr "正在连接"
+msgstr "Konektante"
 
 #: qml/main.qml:139
 msgid "Add new connection"
-msgstr "添加新连接"
+msgstr "Aldonu novan konekton"
 
 #: qml/main.qml:153
 msgid "Remove selected connection"
-msgstr "移除选中的连接"
+msgstr "Forigi elektitan konekton"
 
 #: qml/main.qml:169
 msgid "Export selected connection"
-msgstr "导出选中的连接"
+msgstr "Eksportu elektitan konekton"
 
 #: qml/main.qml:221
 msgctxt "@title:window"
 msgid "Remove Connection"
-msgstr "移除连接"
+msgstr "Forigi Konekton"
 
 #: qml/main.qml:222
 msgid "Do you want to remove the connection '%1'?"
-msgstr "您想要移除连接“%1”吗？"
+msgstr "Ĉu vi volas forigi la konekton '%1'?"

@@ -1,73 +1,75 @@
+# Translation of plasmanetworkmanagement-kded.pot to esperanto.
+# Copyright (C) 2017 Free Software Foundation, Inc.
+# This file is distributed under the same license as the plasma-nm package.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2024-03-28 19:24\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2023-12-13 07:55+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-stable/messages/plasma-nm/plasmanetworkmanagement-kded."
-"pot\n"
-"X-Crowdin-File-ID: 2356\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
 msgid "Only 'dun' and 'nap' services are supported."
-msgstr "只支持“dun”和“nap”服务。"
+msgstr "Nur servoj 'dun' kaj 'nap' estas subtenataj."
 
 #: connectivitymonitor.cpp:61
 #, kde-format
 msgid "Network authentication"
-msgstr "网络身份验证"
+msgstr "Reta aŭtentigo"
 
 #: connectivitymonitor.cpp:68
 #, kde-format
 msgid "Log in"
-msgstr "登录"
+msgstr "Ensaluti"
 
 #: connectivitymonitor.cpp:71
 #, kde-format
 msgid "You need to log into this network"
-msgstr "您需要登录到此网络"
+msgstr "Vi devas ensaluti en ĉi tiun reton"
 
 #: connectivitymonitor.cpp:91
 #, kde-format
 msgid "Limited Connectivity"
-msgstr "网络连接受限"
+msgstr "Limigita Konektebleco"
 
 #: connectivitymonitor.cpp:92
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "internet."
-msgstr "此设备已连接到网络，但无法访问互联网。"
+msgstr ""
+"Ĉi tiu aparato ŝajnas esti konektita al reto sed ne povas atingi la "
+"interreton."
 
 #: modemmonitor.cpp:181
 #, kde-format
 msgctxt "Text in GSM PIN/PUK unlock error dialog"
 msgid "Error unlocking modem: %1"
-msgstr "解锁调制解调器时出错：%1"
+msgstr "Eraro malŝlosante modemon: %1"
 
 #: modemmonitor.cpp:182
 #, kde-format
 msgctxt "Title for GSM PIN/PUK unlock error dialog"
 msgid "PIN/PUK unlock error"
-msgstr "PIN/PUK 解锁错误"
+msgstr "PIN/PUK malŝlosa eraro"
 
 #: notification.cpp:97
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigFailedReason"
 msgid "The device could not be configured"
-msgstr "设备无法配置"
+msgstr "La aparato ne povus esti agordita"
 
 #: notification.cpp:100
 #, kde-format
@@ -75,21 +77,21 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConfigUnavailableReason"
 msgid "IP configuration was unavailable"
-msgstr "IP 配置不可用"
+msgstr "IP-agordo ne estis disponebla"
 
 #: notification.cpp:103
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigExpiredReason"
 msgid "IP configuration expired"
-msgstr "IP 配置已过期"
+msgstr "IP-agordo eksvalidiĝis"
 
 #: notification.cpp:106
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to NoSecretsReason"
 msgid "No secrets were provided"
-msgstr "没有提供密码"
+msgstr "Neniuj sekretoj estis disponigitaj"
 
 #: notification.cpp:109
 #, kde-format
@@ -97,7 +99,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantDisconnectReason"
 msgid "Authorization supplicant disconnected"
-msgstr "授权请求方已断开连接"
+msgstr "Petanto de rajtigo malkonektita"
 
 #: notification.cpp:113
 #, kde-format
@@ -105,7 +107,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantConfigFailedReason"
 msgid "Authorization supplicant's configuration failed"
-msgstr "授权请求方配置失败"
+msgstr "La agordo de rajtigo petanto malsukcesis"
 
 #: notification.cpp:116
 #, kde-format
@@ -113,7 +115,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantFailedReason"
 msgid "Authorization supplicant failed"
-msgstr "授权请求方失败"
+msgstr "Petanto de rajtigo malsukcesis"
 
 #: notification.cpp:119
 #, kde-format
@@ -121,49 +123,49 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantTimeoutReason"
 msgid "Authorization supplicant timed out"
-msgstr "授权请求方超时"
+msgstr "Petantulo pri rajtigo eksvalidiĝis"
 
 #: notification.cpp:122
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppStartFailedReason"
 msgid "PPP failed to start"
-msgstr "PPP 启动失败"
+msgstr "PPP malsukcesis komenci"
 
 #: notification.cpp:125
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppDisconnectReason"
 msgid "PPP disconnected"
-msgstr "PPP 断开连接"
+msgstr "PPP malkonektita"
 
 #: notification.cpp:128
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppFailedReason"
 msgid "PPP failed"
-msgstr "PPP 失败"
+msgstr "PPP malsukcesis"
 
 #: notification.cpp:131
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpStartFailedReason"
 msgid "DHCP failed to start"
-msgstr "DHCP 启动失败"
+msgstr "DHCP malsukcesis komenci"
 
 #: notification.cpp:134
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpErrorReason"
 msgid "A DHCP error occurred"
-msgstr "发生了一个 DHCP 错误"
+msgstr "Okazis DHCP-eraro"
 
 #: notification.cpp:137
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpFailedReason"
 msgid "DHCP failed "
-msgstr "DHCP 失败"
+msgstr "DHCP malsukcesis"
 
 #: notification.cpp:140
 #, kde-format
@@ -171,14 +173,14 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "SharedStartFailedReason"
 msgid "The shared service failed to start"
-msgstr "共享服务启动失败"
+msgstr "La komuna servo malsukcesis komenci"
 
 #: notification.cpp:143
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SharedFailedReason"
 msgid "The shared service failed"
-msgstr "共享服务失败"
+msgstr "La komuna servo malsukcesis"
 
 #: notification.cpp:146
 #, kde-format
@@ -186,42 +188,42 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AutoIpStartFailedReason"
 msgid "The auto IP service failed to start"
-msgstr "自动 IP 服务启动失败"
+msgstr "La aŭtomata IP-servo malsukcesis komenci"
 
 #: notification.cpp:149
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpErrorReason"
 msgid "The auto IP service reported an error"
-msgstr "自动 IP 服务报告了一个错误"
+msgstr "La aŭtomata IP-servo raportis eraron"
 
 #: notification.cpp:152
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpFailedReason"
 msgid "The auto IP service failed"
-msgstr "自动 IP 服务失败"
+msgstr "La aŭtomata IP-servo malsukcesis"
 
 #: notification.cpp:155
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemBusyReason"
 msgid "The modem is busy"
-msgstr "调制解调器忙"
+msgstr "La modemo estas okupata"
 
 #: notification.cpp:158
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoDialToneReason"
 msgid "The modem has no dial tone"
-msgstr "调制解调器没有拨号音"
+msgstr "La modemo ne havas telefontonon"
 
 #: notification.cpp:161
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoCarrierReason"
 msgid "The modem shows no carrier"
-msgstr "调制解调器没有载波信号"
+msgstr "La modemo montras neniun portanton"
 
 #: notification.cpp:164
 #, kde-format
@@ -229,21 +231,21 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ModemDialTimeoutReason"
 msgid "The modem dial timed out"
-msgstr "调制解调器拨号超时"
+msgstr "La modema ciferdisko elĉerpiĝis"
 
 #: notification.cpp:167
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemDialFailedReason"
 msgid "The modem dial failed"
-msgstr "调制解调器拨号失败"
+msgstr "La modema ciferdisko malsukcesis"
 
 #: notification.cpp:170
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemInitFailedReason"
 msgid "The modem could not be initialized"
-msgstr "无法初始化调制解调器"
+msgstr "La modemo ne povus esti pravigita"
 
 #: notification.cpp:173
 #, kde-format
@@ -251,14 +253,14 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmApnSelectFailedReason"
 msgid "The GSM APN could not be selected"
-msgstr "无法选择该 GSM APN"
+msgstr "La GSM APN ne povus esti elektita"
 
 #: notification.cpp:176
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmNotSearchingReason"
 msgid "The GSM modem is not searching"
-msgstr "GSM 调制解调器未在搜索"
+msgstr "La GSM-modemo ne serĉas"
 
 #: notification.cpp:179
 #, kde-format
@@ -266,7 +268,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmRegistrationDeniedReason"
 msgid "GSM network registration was denied"
-msgstr "GSM 网络注册被拒绝"
+msgstr "GSM-retoregistrado estis rifuzita"
 
 #: notification.cpp:182
 #, kde-format
@@ -274,7 +276,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmRegistrationTimeoutReason"
 msgid "GSM network registration timed out"
-msgstr "GSM 网络注册超时"
+msgstr "GSM-reto-registriĝo eltempiĝis"
 
 #: notification.cpp:185
 #, kde-format
@@ -282,7 +284,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmRegistrationFailedReason"
 msgid "GSM registration failed"
-msgstr "GSM 注册失败"
+msgstr "GSM-registriĝo malsukcesis"
 
 #: notification.cpp:188
 #, kde-format
@@ -290,28 +292,28 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmPinCheckFailedReason"
 msgid "The GSM PIN check failed"
-msgstr "GSM PIN 检查失败"
+msgstr "La kontrolo de GSM PIN malsukcesis"
 
 #: notification.cpp:191
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to FirmwareMissingReason"
 msgid "Device firmware is missing"
-msgstr "设备缺少固件"
+msgstr "Aparato-firmvaro mankas"
 
 #: notification.cpp:194
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DeviceRemovedReason"
 msgid "The device was removed"
-msgstr "设备已被移除"
+msgstr "La aparato estis forigita"
 
 #: notification.cpp:197
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SleepingReason"
 msgid "The networking system is now sleeping"
-msgstr "网络系统正在休眠"
+msgstr "La interkonekta sistemo nun dormas"
 
 #: notification.cpp:200
 #, kde-format
@@ -319,74 +321,74 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConnectionRemovedReason"
 msgid "The connection was removed"
-msgstr "连接已被移除"
+msgstr "La konekto estis forigita"
 
 #: notification.cpp:205
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to CarrierReason"
 msgid "The cable was disconnected"
-msgstr "网线已被断开"
+msgstr "La kablo estis malkonektita"
 
 #: notification.cpp:211
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNotFoundReason"
 msgid "The modem could not be found"
-msgstr "无法找到调制解调器"
+msgstr "La modemo ne estis trovita"
 
 #: notification.cpp:214
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to BluetoothFailedReason"
 msgid "The bluetooth connection failed or timed out"
-msgstr "蓝牙连接失败或者超时"
+msgstr "La bluetooth-konekto malsukcesis aŭ elĉerpiĝis"
 
 #: notification.cpp:217
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimNotInserted"
 msgid "GSM Modem's SIM Card not inserted"
-msgstr "GSM 调制解调器的 SIM 卡没有插入"
+msgstr "SIM-Karto de GSM Modemo ne estas enigita"
 
 #: notification.cpp:220
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPinRequired"
 msgid "GSM Modem's SIM Pin required"
-msgstr "需要 GSM 调制解调器的 SIM PIN"
+msgstr "SIM Pinglo de GSM Modemo bezonata"
 
 #: notification.cpp:223
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPukRequired"
 msgid "GSM Modem's SIM Puk required"
-msgstr "需要 GSM 调制解调器的 SIM PUK"
+msgstr "SIM Puk de GSM Modemo bezonata"
 
 #: notification.cpp:226
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to GsmSimWrong"
 msgid "GSM Modem's SIM wrong"
-msgstr "GSM 调制解调器的 SIM 错误"
+msgstr "SIM de GSM Modemo malĝusta"
 
 #: notification.cpp:229
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to InfiniBandMode"
 msgid "InfiniBand device does not support connected mode"
-msgstr "InfiniBand 设备不支持已连接模式"
+msgstr "InfiniBand-aparato ne subtenas konektitan reĝimon"
 
 #: notification.cpp:232
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DependencyFailed"
 msgid "A dependency of the connection failed"
-msgstr "连接依赖失败"
+msgstr "Dependeco de la konekto malsukcesis"
 
 #: notification.cpp:235
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to Br2684Failed"
 msgid "Problem with the RFC 2684 Ethernet over ADSL bridge"
-msgstr "RFC 2684 ADSL 桥接的以太网发生问题"
+msgstr "Problemo kun la RFC 2684 Ethernet super ADSL-ponto"
 
 #: notification.cpp:238
 #, kde-format
@@ -394,13 +396,13 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ModemManagerUnavailable"
 msgid "ModemManager not running"
-msgstr "ModemManager 没有运行"
+msgstr "ModemManager ne funkcias"
 
 #: notification.cpp:241
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to SsidNotFound"
 msgid "The WiFi network could not be found"
-msgstr "无法找到该 Wi-Fi 网络"
+msgstr ""
 
 #: notification.cpp:245
 #, kde-format
@@ -408,185 +410,188 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "SecondaryConnectionFailed"
 msgid "A secondary connection of the base connection failed"
-msgstr "基础连接的二级连接失败"
+msgstr "Malsukcesa konekto de la baza konekto malsukcesis"
 
 #: notification.cpp:248
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to DcbFcoeFailed"
 msgid "DCB or FCoE setup failed"
-msgstr "DCB 或者 FCoE 设置失败"
+msgstr "DCB aŭ FCoE-aranĝo malsukcesis"
 
 #: notification.cpp:251
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to TeamdControlFailed"
 msgid "teamd control failed"
-msgstr "teamd 控制失败"
+msgstr "teama kontrolo malsukcesis"
 
 #: notification.cpp:254
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
-msgstr "调制解调器失败或者不再可用"
+msgstr "Modemo malsukcesis aŭ ne plu havebla"
 
 #: notification.cpp:257
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemAvailable"
 msgid "Modem now ready and available"
-msgstr "调制解调器已经准备就绪并且可用"
+msgstr "Modemo nun preta kaj disponebla"
 
 #: notification.cpp:260
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SimPinIncorrect"
 msgid "The SIM PIN was incorrect"
-msgstr "SIM PIN 不正确"
+msgstr "La SIM PIN estis malĝusta"
 
 #: notification.cpp:263
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to NewActivation"
 msgid "A new connection activation was enqueued"
-msgstr "新的连接激活请求已被添加到队列"
+msgstr "Nova aktivigo de konekto estis envicigita"
 
 #: notification.cpp:266
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ParentChanged"
 msgid "The device's parent changed"
-msgstr "设备的上级设备已被更改"
+msgstr "La gepatro de la aparato ŝanĝiĝis"
 
 #: notification.cpp:269
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ParentManagedChanged"
 msgid "The device parent's management changed"
-msgstr "设备的上级设备的管理已被更改"
+msgstr "La administrado de la gepatro de la aparato ŝanĝiĝis"
 
 #: notification.cpp:345
 #, kde-format
 msgid "Connection '%1' activated."
-msgstr "连接“%1”已激活。"
+msgstr "Konekto '%1' aktivigita."
 
 #: notification.cpp:372
 #, kde-format
 msgid "Connection '%1' deactivated."
-msgstr "连接“%1”已禁用。"
+msgstr "Konekto '%1' malaktivigita."
 
 #: notification.cpp:423
 #, kde-format
 msgid "VPN connection '%1' activated."
-msgstr "VPN 连接“%1”已激活。"
+msgstr "VPN-konekto '%1' aktivigita."
 
 #: notification.cpp:426
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "VPN 连接“%1”激活失败。"
+msgstr "VPN-konekto '%1' malsukcesis aktivigi."
 
 #: notification.cpp:429 notification.cpp:437
 #, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "VPN 连接“%1”已禁用。"
+msgstr "VPN-konekto '%1' malaktivigita."
 
 #: notification.cpp:440
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
-msgstr "VPN 连接“%1”已禁用，因为它使用的设备已断开。"
+msgstr ""
+"VPN-konekto '%1' estis malaktivigita ĉar la aparato, kiun ĝi uzis, estis "
+"malkonektita."
 
 #: notification.cpp:443
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "提供 VPN 连接“%1”的服务已停止。"
+msgstr "La servo provizanta la VPN-konekton '%1' estis ĉesigita."
 
 #: notification.cpp:446
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "VPN 连接“%1”的 IP 配置无效。"
+msgstr "La IP-agordo de la VPN-konekto '%1', estis nevalida."
 
 #: notification.cpp:449
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
-msgstr "连接尝试的 VPN 服务超时"
+msgstr "La provo de konekto al la VPN-servo eksvalidiĝis."
 
 #: notification.cpp:452
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
-msgstr "启动提供 VPN 连接“%1”的服务时超时。"
+msgstr ""
+"Okazis tempodaŭro dum lanĉado de la servo provizanta la VPN-konekton '%1'."
 
 #: notification.cpp:455
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "启动提供 VPN 连接“%1”的服务失败。"
+msgstr "Lanĉi la servon provizantan la VPN-konekton '%1' malsukcesis."
 
 #: notification.cpp:458
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
-msgstr "没有提供 VPN 连接“%1”需要的密码。"
+msgstr "Necesaj sekretoj por la VPN-konekto '%1' ne estis provizitaj."
 
 #: notification.cpp:461
 #, kde-format
 msgid "Authentication to the VPN server failed."
-msgstr "到 VPN 服务器的身份验证失败。"
+msgstr "Aŭtentigo al la VPN-servilo malsukcesis."
 
 #: notification.cpp:464
 #, kde-format
 msgid "The connection was deleted."
-msgstr "连接已被删除。"
+msgstr "La konekto estis forigita."
 
 #: notification.cpp:550
 #, kde-format
 msgid "No Network Connection"
-msgstr "没有网络连接"
+msgstr "Neniu Reta Konekto"
 
 #: notification.cpp:551
 #, kde-format
 msgid "You are no longer connected to a network."
-msgstr "您已不再连接到网络。"
+msgstr "Vi ne plu estas konektita al reto."
 
 #: passworddialog.cpp:54
 #, kde-format
 msgid "Authenticate %1"
-msgstr "%1 的身份验证"
+msgstr "Aŭtentikigi %1"
 
 #: passworddialog.cpp:98
 #, kde-format
 msgid "Provide the password for the wireless network '%1':"
-msgstr "请提供无线网络“%1”的密码："
+msgstr ""
 
 #: passworddialog.cpp:100
 #, kde-format
 msgid "Provide the password for the connection '%1':"
-msgstr "请提供连接“%1”的密码："
+msgstr ""
 
 #: passworddialog.cpp:106
 #, kde-format
 msgid "%1 password dialog"
-msgstr "%1 密码对话框"
+msgstr "%1 pasvorta dialogo"
 
 #: passworddialog.cpp:126
 #, kde-format
 msgid "Provide the secrets for the VPN connection '%1':"
-msgstr "请提供 VPN 连接“%1”的密钥："
+msgstr ""
 
 #: passworddialog.cpp:127
 #, kde-format
 msgid "VPN secrets (%1) dialog"
-msgstr "VPN 密钥 (%1) 对话框"
+msgstr "Dialogo pri VPN-sekretoj (%1)."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
 #, kde-format
 msgid "Password dialog"
-msgstr "密码对话框"
+msgstr "Pasvorta dialogo"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
 #, kde-format
 msgid "Password:"
-msgstr "密码："
+msgstr "Pasvorto:"
 
 #: pindialog.cpp:66
 #, kde-format
@@ -601,17 +606,17 @@ msgstr "SIM PUK2"
 #: pindialog.cpp:70
 #, kde-format
 msgid "Service provider PUK"
-msgstr "运营商 PUK"
+msgstr "Servoprovizanto PUK"
 
 #: pindialog.cpp:72
 #, kde-format
 msgid "Network PUK"
-msgstr "网络 PUK"
+msgstr "Reto PUK"
 
 #: pindialog.cpp:74
 #, kde-format
 msgid "Corporate PUK"
-msgstr "企业 PUK"
+msgstr "Korporacia PUK"
 
 #: pindialog.cpp:76
 #, kde-format
@@ -621,45 +626,47 @@ msgstr "PH-FSIM PUK"
 #: pindialog.cpp:78
 #, kde-format
 msgid "Network Subset PUK"
-msgstr "网络子集 PUK"
+msgstr "Reta Subaro PUK"
 
 #: pindialog.cpp:81 pindialog.cpp:113
 #, kde-format
 msgid "%1 unlock required"
-msgstr "%1 需要解锁"
+msgstr "%1 malŝloso necesas"
 
 #: pindialog.cpp:82 pindialog.cpp:114
 #, kde-format
 msgid "%1 Unlock Required"
-msgstr "%1 需要解锁"
+msgstr "%1 Malŝloso Bezonata"
 
 #: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
-msgstr "移动宽带设备“%1”需要 %2 码才能使用。"
+msgstr ""
+"La movebla larĝbenda aparato '%1' postulas %2 kodon antaŭ ol ĝi povas esti "
+"uzata."
 
 #: pindialog.cpp:84 pindialog.cpp:116
 #, kde-format
 msgid "%1 code:"
-msgstr "%1 码："
+msgstr "%1 kodo:"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
 #: pindialog.cpp:85 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
-msgstr "新 PIN 码："
+msgstr "Nova PIN-kodo:"
 
 #: pindialog.cpp:86
 #, kde-format
 msgid "Re-enter new PIN code:"
-msgstr "再次输入新 PIN 码："
+msgstr "Reenigu novan PIN-kodon:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: pindialog.cpp:87 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
-msgstr "显示 PIN/PUK 码"
+msgstr "Montru PIN/PUK-kodon"
 
 #: pindialog.cpp:97
 #, kde-format
@@ -674,12 +681,12 @@ msgstr "SIM PIN2"
 #: pindialog.cpp:101
 #, kde-format
 msgid "Service provider PIN"
-msgstr "运营商 PIN"
+msgstr "Servoprovizanto PIN"
 
 #: pindialog.cpp:103
 #, kde-format
 msgid "Network PIN"
-msgstr "网络 PIN"
+msgstr "Reto PIN"
 
 #: pindialog.cpp:105
 #, kde-format
@@ -689,7 +696,7 @@ msgstr "PIN"
 #: pindialog.cpp:107
 #, kde-format
 msgid "Corporate PIN"
-msgstr "企业 PIN"
+msgstr "Korporacia PIN"
 
 #: pindialog.cpp:109
 #, kde-format
@@ -699,39 +706,39 @@ msgstr "PH-FSIM PIN"
 #: pindialog.cpp:111
 #, kde-format
 msgid "Network Subset PIN"
-msgstr "网络子集 PIN"
+msgstr "Reta Subaro PIN"
 
 #: pindialog.cpp:117
 #, kde-format
 msgid "Show PIN code"
-msgstr "显示 PIN 码"
+msgstr "Montru PIN-kodon"
 
 #: pindialog.cpp:200
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
-msgstr "PIN 码太短，它至少要有 4 位数字。"
+msgstr "PIN-kodo tro mallonga. Ĝi devus esti almenaŭ 4 ciferoj."
 
 #: pindialog.cpp:205
 #, kde-format
 msgid "The two PIN codes do not match"
-msgstr "两次输入的 PIN 码不一致"
+msgstr "La du PIN-kodoj ne kongruas"
 
 #: pindialog.cpp:210
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
-msgstr "PUK 码太短，它应该是 8 位数字。"
+msgstr "PUK-kodo tro mallonga. Ĝi devus esti 8 ciferoj."
 
 #: pindialog.cpp:215
 #, kde-format
 msgid "Unknown Error"
-msgstr "未知错误"
+msgstr "Nekonata eraro"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
 #. i18n: ectx: property (text), widget (QLabel, title)
 #: pinwidget.ui:14 pinwidget.ui:47
 #, kde-format
 msgid "SIM PIN unlock required"
-msgstr "需要解锁 SIM PIN"
+msgstr "SIM PIN-malŝloso necesas"
 
 #. i18n: ectx: property (text), widget (QLabel, prompt)
 #: pinwidget.ui:76
@@ -739,21 +746,23 @@ msgstr "需要解锁 SIM PIN"
 msgid ""
 "The mobile broadband device '%1' requires a SIM PIN code before it can be "
 "used."
-msgstr "移动宽带设备“%1”需要 SIM PIN 码才能使用。"
+msgstr ""
+"La movebla larĝbenda aparato '%1' postulas SIM PIN-kodon antaŭ ol ĝi povas "
+"esti uzata."
 
 #. i18n: ectx: property (text), widget (QLabel, pukLabel)
 #: pinwidget.ui:133
 #, kde-format
 msgid "PUK code:"
-msgstr "PUK 码："
+msgstr "PUK-kodo:"
 
 #. i18n: ectx: property (text), widget (QLabel, pin2Label)
 #: pinwidget.ui:173
 #, kde-format
 msgid "Re-enter PIN code:"
-msgstr "再次输入 PIN 码："
+msgstr "Reenigu PIN-kodon:"
 
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
-msgstr "%1 的身份验证失败。您是否输入了错误的密码？"
+msgstr "Aŭtentigo al %1 malsukcesis. Erara pasvorto?"

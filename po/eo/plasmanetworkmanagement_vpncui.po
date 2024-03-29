@@ -1,233 +1,233 @@
+# Translation of plasmanetworkmanagement_vpncui.pot to esperanto.
+# Copyright (C) 2017 Free Software Foundation, Inc.
+# This file is distributed under the same license as the plasma-nm package.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2024-03-28 19:24\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2023-04-11 21:39+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-stable/messages/plasma-nm/"
-"plasmanetworkmanagement_vpncui.pot\n"
-"X-Crowdin-File-ID: 2940\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: vpnc.cpp:73
 #, kde-format
 msgid "Error decrypting the obfuscated password"
-msgstr "解密混淆密码时出错"
+msgstr "Eraro deĉifri la malklarigitan pasvorton"
 
 #: vpnc.cpp:73
 #, kde-format
 msgid "Error"
-msgstr "错误"
+msgstr "Eraro"
 
 #: vpnc.cpp:118
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
-msgstr "NetworkManager 缺少对 Cisco 兼容 VPN 的支持"
+msgstr "NetworkManager mankas subteno por Cisco Compatible VPN"
 
 #: vpnc.cpp:146
 #, kde-format
 msgid "%1: file could not be created"
-msgstr "%1：无法创建文件"
+msgstr "%1: dosiero ne povis esti kreita"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: vpnc.ui:18
 #, kde-format
 msgid "Gateway:"
-msgstr "网关："
+msgstr "Enirejo:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: vpnc.ui:31
 #, kde-format
 msgid "IP/hostname of IPsec gateway."
-msgstr "IPsec 网关的 IP/主机名。"
+msgstr "IP/gastnomo de IPsec-enirejo."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnc.ui:38
 #, kde-format
 msgid "User name:"
-msgstr "用户名："
+msgstr "Uzantnomo:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leUserName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, user)
 #: vpnc.ui:51 vpncauth.ui:97
 #, kde-format
 msgid "User name for the connection."
-msgstr "连接的用户名。"
+msgstr "Uzantnomo por la konekto."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnc.ui:58
 #, kde-format
 msgid "User password:"
-msgstr "用户密码："
+msgstr "Pasvorto de uzanto:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, leUserPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
 #: vpnc.ui:79 vpncauth.ui:58
 #, kde-format
 msgid "User password for the connection."
-msgstr "连接的用户密码。"
+msgstr "Pasvorto de uzanto por la konekto."
 
 #. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpnc.ui:91 vpncauth.ui:124
 #, kde-format
 msgid "Group name:"
-msgstr "组名称："
+msgstr "Grupnomo:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, group)
 #: vpnc.ui:104
 #, kde-format
 msgid "Group name"
-msgstr "组名称"
+msgstr "Grupnomo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: vpnc.ui:111
 #, kde-format
 msgid "Group password:"
-msgstr "组密码："
+msgstr "Gruppasvorto:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
 #: vpnc.ui:129 vpncauth.ui:84
 #, kde-format
 msgid "Group password."
-msgstr "组密码。"
+msgstr "Gruppasvorto."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useHybridAuth)
 #: vpnc.ui:141
 #, kde-format
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
-msgstr "启用混合身份验证，例如密码加证书。"
+msgstr "Ebligi hibridan aŭtentikigon, t.e. uzu atestilon krom pasvorto."
 
 #. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
 #: vpnc.ui:144
 #, kde-format
 msgid "Use hybrid authentication"
-msgstr "使用混合身份验证"
+msgstr "Uzi hibridan aŭtentikigon"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpnc.ui:154
 #, kde-format
 msgid "CA file:"
-msgstr "CA 文件："
+msgstr "CA-dosiero:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, caFile)
 #: vpnc.ui:167
 #, kde-format
 msgid "CA certificate in PEM format."
-msgstr "CA 证书，格式为 PEM。"
+msgstr "CA-atestilo en PEM-formato."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
 #: vpnc.ui:170
 #, kde-format
 msgid "*.pem *.crt *.cer"
-msgstr "*.pem *.crt *.cer"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:192
 #, kde-format
 msgid "Advanced…"
-msgstr "高级…"
+msgstr "Altnivela…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpncadvanced.ui:18
 #, kde-format
 msgid "Identification"
-msgstr "身份识别"
+msgstr "Identigo"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: vpncadvanced.ui:27
 #, kde-format
 msgid "Domain:"
-msgstr "域："
+msgstr "Domajno:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
 #: vpncadvanced.ui:37
 #, kde-format
 msgid "(NT-)Domain name for authentication."
-msgstr "用于身份验证的 (NT-) 域名。"
+msgstr "(NT-)Domajna nomo por aŭtentigo."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpncadvanced.ui:44
 #, kde-format
 msgid "Vendor:"
-msgstr "供应商："
+msgstr "Vendisto:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
 #: vpncadvanced.ui:60
 #, kde-format
 msgid "Vendor of your IPsec gateway."
-msgstr "IPsec 网关的供应商。"
+msgstr "Vendisto de via IPsec-enirejo."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: vpncadvanced.ui:70
 #, kde-format
 msgid "Transport and Security"
-msgstr "传输方式和安全性"
+msgstr "Transporto kaj Sekureco"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpncadvanced.ui:82
 #, kde-format
 msgid "Encryption method:"
-msgstr "加密方式："
+msgstr "Ĉifrada metodo:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, encryption)
 #: vpncadvanced.ui:98
 #, kde-format
 msgid "Encryption method."
-msgstr "加密方式。"
+msgstr "Ĉifrada metodo."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpncadvanced.ui:105
 #, kde-format
 msgid "NAT traversal:"
-msgstr "NAT 穿透："
+msgstr "NAT-trapaso:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, nat)
 #: vpncadvanced.ui:121
 #, kde-format
 msgid "NAT traversal method to use."
-msgstr "要使用的 NAT 穿透方法。"
+msgstr "NAT-traversa metodo por uzi."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: vpncadvanced.ui:128
 #, kde-format
 msgid "IKE DH Group:"
-msgstr "IKE DH 组："
+msgstr "IKE DH Grupo:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, dhGroup)
 #: vpncadvanced.ui:144
 #, kde-format
 msgid "Name of the IKE DH group."
-msgstr "IKE DH 组名称。"
+msgstr "Nomo de la IKE DH-grupo."
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpncadvanced.ui:151
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr "完全正向保密 (PFS)："
+msgstr "Perfekta Antaŭa Sekreteco:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
 #: vpncadvanced.ui:167
 #, kde-format
 msgid "Diffie-Hellman group to use for PFS."
-msgstr "PFS 使用的 Diffie-Hellman 组。"
+msgstr "Diffie-Hellman-grupo por uzi por PFS."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: vpncadvanced.ui:174
 #, kde-format
 msgid "Local Port:"
-msgstr "本地端口："
+msgstr "Loka Pordo:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, localport)
 #: vpncadvanced.ui:190
@@ -236,30 +236,31 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
-"要使用的本地端口 (0-65535)。0 (默认值) 将使用随机端口。500 为 vpnc 的默认值。"
+"Loka pordo uzinda (0-65535). 0 (defaŭlta valoro) signifas hazardan pordon. "
+"500 estas la defaŭlto de vpnc."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193
 #, kde-format
 msgid "Random"
-msgstr "随机"
+msgstr "Hazarda"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, deadPeer)
 #: vpncadvanced.ui:209
 #, kde-format
 msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr "禁止发送 DPD 包 (设置超时为 0)。"
+msgstr "Malebligi la sendon de DPD-pakaĵoj (agordu la tempodaŭron al 0)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
 #: vpncadvanced.ui:212
 #, kde-format
 msgid "Disable dead peer detection"
-msgstr "禁用故障节点检测 (DPD)"
+msgstr "Malebligi detekton de mortintaj samuloj"
 
 #: vpncadvancedwidget.cpp:20
 #, kde-format
 msgid "Advanced VPNC properties"
-msgstr "高级 VPNC 属性"
+msgstr "Altnivelaj VPNC-ecoj"
 
 #: vpncadvancedwidget.cpp:23
 #, kde-format
@@ -271,37 +272,37 @@ msgstr "Cisco"
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Netscreen"
-msgstr "Netscreen"
+msgstr "Reta ekrano"
 
 #: vpncadvancedwidget.cpp:27
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
-msgstr "安全 (默认)"
+msgstr "Sekura (defaŭlte)"
 
 #: vpncadvancedwidget.cpp:28
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Weak (DES encryption, use with caution)"
-msgstr "弱 (DES 加密，谨慎使用)"
+msgstr "Malforta (DES-ĉifrado, uzu singarde)"
 
 #: vpncadvancedwidget.cpp:29
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
-msgstr "无 (完全不加密)"
+msgstr "Neniu (tute nesekura)"
 
 #: vpncadvancedwidget.cpp:32
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr "NAT-T (如果可用) (默认)"
+msgstr "NAT-T kiam disponebla (defaŭlte)"
 
 #: vpncadvancedwidget.cpp:33
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
-msgstr "NAT-T (总是)"
+msgstr "NAT-T ĉiam"
 
 #: vpncadvancedwidget.cpp:34
 #, kde-format
@@ -313,82 +314,82 @@ msgstr "Cisco UDP"
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "Disabled"
-msgstr "已禁用"
+msgstr "Malebligita"
 
 #: vpncadvancedwidget.cpp:38
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 1"
-msgstr "DH 组 1"
+msgstr "DH-grupo 1"
 
 #: vpncadvancedwidget.cpp:39
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 2 (default)"
-msgstr "DH 组 2 (默认)"
+msgstr "DH Grupo 2 (defaŭlte)"
 
 #: vpncadvancedwidget.cpp:40
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 5"
-msgstr "DH 组 5"
+msgstr "DH-grupo 5"
 
 #: vpncadvancedwidget.cpp:43
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
-msgstr "服务器 (默认)"
+msgstr "Servilo (defaŭlte)"
 
 #: vpncadvancedwidget.cpp:44
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "None"
-msgstr "无"
+msgstr "Neniu"
 
 #: vpncadvancedwidget.cpp:45
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 1"
-msgstr "DH 组 1"
+msgstr "DH-grupo 1"
 
 #: vpncadvancedwidget.cpp:46
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 2"
-msgstr "DH 组 2"
+msgstr "DH-grupo 2"
 
 #: vpncadvancedwidget.cpp:47
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
-msgstr "DH 组 5"
+msgstr "DH-grupo 5"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
 #: vpncauth.ui:14
 #, kde-format
 msgid "VPNCAuthentication"
-msgstr "VPNC 身份验证"
+msgstr "VPNCAŭtentikigo"
 
 #. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
 #: vpncauth.ui:32
 #, kde-format
 msgid "User Password:"
-msgstr "用户密码："
+msgstr "Uzanto Pasvorto:"
 
 #. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
 #: vpncauth.ui:45
 #, kde-format
 msgid "Group Password:"
-msgstr "组密码："
+msgstr "Gruppasvorto:"
 
 #. i18n: ectx: property (text), widget (QLabel, userNameLabel)
 #: vpncauth.ui:104
 #, kde-format
 msgid "Username:"
-msgstr "用户名："
+msgstr "Uzantnomo:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leGroupName)
 #: vpncauth.ui:117
 #, kde-format
 msgid "Group name."
-msgstr "组名称。"
+msgstr "Grupnomo."

@@ -1,60 +1,60 @@
+# Translation of plasmanetworkmanagement-libs.pot to esperanto.
+# Copyright (C) 2017 Free Software Foundation, Inc.
+# This file is distributed under the same license as the plasma-nm package.
+# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: kdeorg\n"
+"Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2024-03-28 19:24\n"
-"Last-Translator: \n"
-"Language-Team: Chinese Simplified\n"
-"Language: zh_CN\n"
+"PO-Revision-Date: 2024-03-17 05:34+0100\n"
+"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
+"Language: eo\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: kdeorg\n"
-"X-Crowdin-Project-ID: 269464\n"
-"X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf5-stable/messages/plasma-nm/plasmanetworkmanagement-libs."
-"pot\n"
-"X-Crowdin-File-ID: 2919\n"
+"X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
-msgstr "已连接"
+msgstr "Konektis"
 
 #: declarative/networkstatus.cpp:107
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
-msgstr "已连接"
+msgstr "Konektis"
 
 #: declarative/networkstatus.cpp:110
 #, kde-format
 msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
-msgstr "已连接"
+msgstr "Konektis"
 
 #: declarative/networkstatus.cpp:113
 #, kde-format
 msgctxt "Networking is inactive and all devices are disabled"
 msgid "Inactive"
-msgstr "未激活"
+msgstr "Neaktiva"
 
 #: declarative/networkstatus.cpp:116
 #, kde-format
 msgctxt "There is no active network connection"
 msgid "Disconnected"
-msgstr "已断开连接"
+msgstr "Malkonektita"
 
 #: declarative/networkstatus.cpp:119
 #, kde-format
 msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
-msgstr "正在断开连接"
+msgstr "Malkonekti"
 
 #: declarative/networkstatus.cpp:122
 #, kde-format
@@ -62,7 +62,7 @@ msgctxt ""
 "A network device is connecting to a network and there is no other available "
 "network connection"
 msgid "Connecting"
-msgstr "正在连接"
+msgstr "Konektante"
 
 #: declarative/networkstatus.cpp:172 editor/uiutils.cpp:220
 #, kde-format
@@ -78,71 +78,71 @@ msgstr "WireGuard"
 #: declarative/networkstatus.cpp:200
 #, kde-format
 msgid "Connecting to %1"
-msgstr "正在连接到 %1"
+msgstr "Konektante al %1"
 
 #: declarative/networkstatus.cpp:204
 #, kde-format
 msgid "Connected to %1 (no connectivity)"
-msgstr "已连接到 %1 (无网络连接)"
+msgstr "Konektita al %1 (neniu konektebleco)"
 
 #: declarative/networkstatus.cpp:207
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
-msgstr "已连接到 %1 (网络连接受限)"
+msgstr "Konektita al %1 (limigita konektebleco)"
 
 #: declarative/networkstatus.cpp:210
 #, kde-format
 msgid "Connected to %1 (log in required)"
-msgstr "已连接到 %1 (需要登录)"
+msgstr "Konektita al %1 (ensaluto necesas)"
 
 #: declarative/networkstatus.cpp:213
 #, kde-format
 msgid "Connected to %1"
-msgstr "已连接到 %1"
+msgstr "Konektita al %1"
 
 #: declarative/networkstatus.cpp:238
 #, kde-format
 msgid "NetworkManager not running"
-msgstr "NetworkManager 没有运行"
+msgstr "NetworkManager ne funkcias"
 
 #: declarative/networkstatus.cpp:243
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
-msgstr "需要 NetworkManager 0.9.8，找到了 %1。"
+msgstr "NetworkManager 0.9.8 bezonata, trovita %1."
 
 #: declarative/networkstatus.cpp:246
 #, kde-format
 msgctxt "global connection state"
 msgid "Unknown"
-msgstr "未知"
+msgstr "Nekonata"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
 msgctxt "General"
 msgid "General configuration"
-msgstr "常规配置"
+msgstr "Ĝenerala agordo"
 
 #: editor/connectioneditorbase.cpp:205 editor/connectioneditorbase.cpp:222
 #, kde-format
 msgid "Wired"
-msgstr "有线连接"
+msgstr "Kabligita"
 
 #: editor/connectioneditorbase.cpp:208
 #, kde-format
 msgid "802.1x Security"
-msgstr "802.1x 安全性"
+msgstr "802.1x Sekureco"
 
 #: editor/connectioneditorbase.cpp:211 editor/settings/bridgewidget.cpp:39
 #: editor/settings/teamwidget.cpp:42 editor/uiutils.cpp:228
 #: models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr "Wifi"
 
 #: editor/connectioneditorbase.cpp:215
 #, kde-format
 msgid "Wi-Fi Security"
-msgstr "Wi-Fi 安全性"
+msgstr "Sekureco Wi-Fi"
 
 #: editor/connectioneditorbase.cpp:220 editor/uiutils.cpp:192
 #: models/creatableconnectionsmodel.cpp:135
@@ -153,12 +153,12 @@ msgstr "DSL"
 #: editor/connectioneditorbase.cpp:225 editor/connectioneditorbase.cpp:228
 #, kde-format
 msgid "Mobile Broadband (%1)"
-msgstr "移动宽带 (%1)"
+msgstr "Poŝtelefona Larĝbendo (%1)"
 
 #: editor/connectioneditorbase.cpp:231 editor/uiutils.cpp:196
 #, kde-format
 msgid "Bluetooth"
-msgstr "蓝牙"
+msgstr "Bluetooth"
 
 #: editor/connectioneditorbase.cpp:236
 #, kde-format
@@ -181,30 +181,30 @@ msgstr "Infiniband"
 #: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:719
 #, kde-format
 msgid "Bond"
-msgstr "多网卡绑定 (Bond)"
+msgstr "Bond"
 
 #: editor/connectioneditorbase.cpp:248 editor/uiutils.cpp:203
 #: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:725
 #, kde-format
 msgid "Bridge"
-msgstr "桥接 (Bridge)"
+msgstr "Ponto"
 
 #: editor/connectioneditorbase.cpp:251 models/creatableconnectionsmodel.cpp:220
 #: models/networkmodelitem.cpp:731
 #, kde-format
 msgid "Vlan"
-msgstr "虚拟局域网 (Vlan)"
+msgstr "Vlan"
 
 #: editor/connectioneditorbase.cpp:254 editor/uiutils.cpp:232
 #: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:740
 #, kde-format
 msgid "Team"
-msgstr "网络组 (Team)"
+msgstr "Teamo"
 
 #: editor/connectioneditorbase.cpp:257
 #, kde-format
 msgid "WireGuard Interface"
-msgstr "WireGuard 接口"
+msgstr "WireGuard Interfaco"
 
 #: editor/connectioneditorbase.cpp:270
 #, kde-format
@@ -224,34 +224,34 @@ msgstr "IPv6"
 #: editor/connectioneditorbase.cpp:487
 #, kde-format
 msgid "Failed to get secrets for %1"
-msgstr "获取 %1 的密码失败"
+msgstr "Malsukcesis akiri sekretojn por %1"
 
 #: editor/connectioneditordialog.cpp:33
 #, kde-format
 msgid "New Connection (%1)"
-msgstr "新建连接 (%1)"
+msgstr "Nova Konekto (%1)"
 
 #: editor/connectioneditordialog.cpp:35
 #, kde-format
 msgid "Edit Connection '%1'"
-msgstr "编辑连接“%1”"
+msgstr "Redakti konekton '%1'"
 
 #: editor/connectioneditortabwidget.cpp:47
 #, kde-format
 msgid "New %1 connection"
-msgstr "新建 %1 连接"
+msgstr "Nova konekto %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/connectioneditortabwidget.ui:20
 #, kde-format
 msgid "Connection name:"
-msgstr "连接名称："
+msgstr "Nomo de konekto:"
 
 #: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
 #: editor/settings/teamwidget.cpp:36
 #, kde-format
 msgid "Ethernet"
-msgstr "以太网"
+msgstr "Eterreto"
 
 #: editor/settings/bondwidget.cpp:39
 #, kde-format
@@ -262,19 +262,19 @@ msgstr "InfiniBand"
 #, kde-format
 msgctxt "bond mode"
 msgid "Round-robin"
-msgstr "轮询"
+msgstr "Ĉirkaŭ-subskribolista"
 
 #: editor/settings/bondwidget.cpp:49
 #, kde-format
 msgctxt "bond mode"
 msgid "Active backup"
-msgstr "活动备份"
+msgstr "Aktiva sekurkopio"
 
 #: editor/settings/bondwidget.cpp:50
 #, kde-format
 msgctxt "bond mode"
 msgid "Broadcast"
-msgstr "广播"
+msgstr "Elsendo"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format
@@ -286,19 +286,19 @@ msgstr "802.3ad"
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive transmit load balancing"
-msgstr "自适应传输负载均衡"
+msgstr "Adaptiva elsenda ŝarĝobalancado"
 
 #: editor/settings/bondwidget.cpp:53
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive load balancing"
-msgstr "自适应负载均衡"
+msgstr "Adapta ŝarĝo-ekvilibro"
 
 #: editor/settings/bondwidget.cpp:56
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "MII (recommended)"
-msgstr "MII (推荐)"
+msgstr "MII (rekomendita)"
 
 #: editor/settings/bondwidget.cpp:57
 #, kde-format
@@ -310,70 +310,70 @@ msgstr "ARP"
 #: editor/settings/teamwidget.cpp:187
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
-msgstr "您想要移除连接“%1”吗？"
+msgstr "Ĉu vi volas forigi la konekton '%1'?"
 
 #: editor/settings/bondwidget.cpp:249 editor/settings/bridgewidget.cpp:199
 #: editor/settings/teamwidget.cpp:188
 #, kde-format
 msgid "Remove Connection"
-msgstr "移除连接"
+msgstr "Forigi Konekton"
 
 #: editor/settings/bridgewidget.cpp:36 editor/settings/teamwidget.cpp:45
 #: editor/uiutils.cpp:217
 #, kde-format
 msgid "VLAN"
-msgstr "VLAN"
+msgstr "VLANO"
 
 #: editor/settings/btwidget.cpp:20
 #, kde-format
 msgid "DUN (dial up networking)"
-msgstr "DUN (拨号网络)"
+msgstr "DUN (telefona retoj)"
 
 #: editor/settings/btwidget.cpp:21
 #, kde-format
 msgid "PAN (personal area network)"
-msgstr "PAN (个人区域网络)"
+msgstr "PAN (persona areoreto)"
 
 #: editor/settings/connectionwidget.cpp:158
 #, kde-format
 msgctxt "@title:window advanced permissions editor"
 msgid "Advanced Permissions Editor"
-msgstr "高级权限编辑器"
+msgstr "Altnivela Permesa Redaktoro"
 
 #: editor/settings/infinibandwidget.cpp:22
 #, kde-format
 msgctxt "infiniband transport mode"
 msgid "Datagram"
-msgstr "数据报"
+msgstr "Datagramo"
 
 #: editor/settings/infinibandwidget.cpp:23
 #, kde-format
 msgctxt "infiniband transport mode"
 msgid "Connected"
-msgstr "已连接"
+msgstr "Konektis"
 
 #: editor/settings/ipv4widget.cpp:56 editor/widgets/ipv4routeswidget.cpp:25
 #, kde-format
 msgctxt "Header text for IPv4 address"
 msgid "Address"
-msgstr "地址"
+msgstr "Adreso"
 
 #: editor/settings/ipv4widget.cpp:58 editor/widgets/ipv4routeswidget.cpp:27
 #, kde-format
 msgctxt "Header text for IPv4 netmask"
 msgid "Netmask"
-msgstr "子网掩码"
+msgstr "Reta masko"
 
 #: editor/settings/ipv4widget.cpp:60 editor/widgets/ipv4routeswidget.cpp:29
 #, kde-format
 msgctxt "Header text for IPv4 gateway"
 msgid "Gateway"
-msgstr "网关"
+msgstr "Enirejo"
 
 #: editor/settings/ipv4widget.cpp:271 editor/settings/ipv6widget.cpp:262
 #, kde-format
 msgid "Other DNS Servers:"
-msgstr "其他 DNS 服务器："
+msgstr "Aliaj DNS-Serviloj:"
 
 #: editor/settings/ipv4widget.cpp:283 editor/settings/ipv4widget.cpp:295
 #: editor/settings/ipv4widget.cpp:307 editor/settings/ipv4widget.cpp:319
@@ -381,7 +381,7 @@ msgstr "其他 DNS 服务器："
 #: editor/settings/ipv6widget.cpp:298 editor/settings/ipv6widget.cpp:310
 #, kde-format
 msgid "DNS Servers:"
-msgstr "DNS 服务器："
+msgstr "DNS-Serviloj:"
 
 #: editor/settings/ipv4widget.cpp:420
 #, kde-format
@@ -391,69 +391,70 @@ msgid ""
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 msgstr ""
-"<qt>您可以在这里找到这些值的更多相关信息：<br/><a href='https://developer."
-"gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome.org/"
-"NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
+"<qt>Vi povas trovi pliajn informojn pri ĉi tiuj valoroj ĉi tie:<br/><a "
+"href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
+"developer.gnome.org /NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
+"a></qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
-msgstr "发送主机名："
+msgstr "Sendi gastigan nomon:"
 
 #: editor/settings/ipv4widget.cpp:435
 #, kde-format
 msgid "DHCP hostname:"
-msgstr "DHCP 主机名："
+msgstr "DHCP-gastigantonomo:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
 #, kde-format
 msgid "Default"
-msgstr "默认"
+msgstr "Defaŭlte"
 
 #: editor/settings/ipv4widget.cpp:441
 #, kde-format
 msgctxt "Milliseconds"
 msgid " ms"
-msgstr " 毫秒"
+msgstr " ms"
 
 #: editor/settings/ipv4widget.cpp:444
 #, kde-format
 msgid "DAD timeout:"
-msgstr "DAD 超时："
+msgstr "DAD-tempiĝo:"
 
 #: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:405
 #, kde-format
 msgid "Edit DNS servers"
-msgstr "编辑 DNS 服务器"
+msgstr "Redakti DNS-servilojn"
 
 #: editor/settings/ipv4widget.cpp:490 editor/settings/ipv6widget.cpp:430
 #, kde-format
 msgid "Edit DNS search domains"
-msgstr "编辑 DNS 搜索域"
+msgstr "Redakti DNS-serĉajn domajnojn"
 
 #: editor/settings/ipv6widget.cpp:42 editor/widgets/ipv6routeswidget.cpp:26
 #, kde-format
 msgctxt "Header text for IPv6 address"
 msgid "Address"
-msgstr "地址"
+msgstr "Adreso"
 
 #: editor/settings/ipv6widget.cpp:44
 #, kde-format
 msgctxt "Header text for IPv6 prefix"
 msgid "Prefix"
-msgstr "前缀"
+msgstr "Prefikso"
 
 #: editor/settings/ipv6widget.cpp:46 editor/widgets/ipv6routeswidget.cpp:30
 #, kde-format
 msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
-msgstr "网关"
+msgstr "Enirejo"
 
 #: editor/settings/security802-1x.cpp:504
 #, kde-format
 msgid "Alternative Subject Matches"
-msgstr "备用主体匹配"
+msgstr "Alternativaj Temaj Kongruoj"
 
 #: editor/settings/security802-1x.cpp:506
 #, kde-format
@@ -462,26 +463,26 @@ msgid ""
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://www.kde."
 "org&gt;</li></ul></qt>"
 msgstr ""
-"<qt>此项目必须是下列类型之一：<ul><li>DNS：&lt;名称或者 IP 地址&gt;</"
-"li><li>EMAIL：&lt;电子邮件地址&gt;</li><li>URI：&lt;URI，例如 https://www."
+"<qt>Ĉi tiu enskribo devas esti unu el:<ul><li>DNS: &lt;nomo aŭ ip-adreso&gt;"
+"</li><li>RETPOŜTO: &lt;retpoŝto&gt;</li><li>URI: &lt;uri, ekz. https://www."
 "kde.org&gt;</li></ul></qt>"
 
 #: editor/settings/security802-1x.cpp:523
 #, kde-format
 msgid "Connect to these servers only"
-msgstr "只连接到这些服务器："
+msgstr "Konekti nur al ĉi tiuj serviloj"
 
 #: editor/settings/teamwidget.cpp:228
 #, kde-format
 msgid "Select file to import"
-msgstr "选择要导入的文件"
+msgstr "Elekti dosieron por importi"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
 #, kde-format
 msgid "Authentication:"
-msgstr "身份验证："
+msgstr "Aŭtentikigo:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
@@ -501,7 +502,7 @@ msgstr "TLS"
 #: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
 #, kde-format
 msgid "LEAP"
-msgstr "LEAP"
+msgstr "SALTO"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:53
@@ -513,19 +514,19 @@ msgstr "PWD"
 #: editor/settings/ui/802-1x.ui:58
 #, kde-format
 msgid "FAST"
-msgstr "FAST"
+msgstr "RAPIDE"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:63
 #, kde-format
 msgid "Tunneled TLS (TTLS)"
-msgstr "隧道式 TLS (TTLS)"
+msgstr "Tunnelita TLS (TTLS)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:68
 #, kde-format
 msgid "Protected EAP (PEAP)"
-msgstr "受保护的 EAP (PEAP)"
+msgstr "Protektita EAP (PEAP)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_9)
@@ -541,7 +542,7 @@ msgstr "受保护的 EAP (PEAP)"
 #: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
 #, kde-format
 msgid "Username:"
-msgstr "用户名："
+msgstr "Uzantnomo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_10)
@@ -558,13 +559,13 @@ msgstr "用户名："
 #: editor/settings/ui/wifisecurity.ui:231
 #, kde-format
 msgid "Password:"
-msgstr "密码："
+msgstr "Pasvorto:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/802-1x.ui:117
 #, kde-format
 msgid "Identity:"
-msgstr "身份："
+msgstr "Identeco:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_32)
 #. i18n: ectx: property (text), widget (QLabel, label_30)
@@ -573,13 +574,13 @@ msgstr "身份："
 #: editor/settings/ui/802-1x.ui:718
 #, kde-format
 msgid "Domain:"
-msgstr "域："
+msgstr "Domajno:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/802-1x.ui:140
 #, kde-format
 msgid "User certificate:"
-msgstr "用户证书："
+msgstr "Atestilo de uzanto:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_20)
@@ -588,19 +589,19 @@ msgstr "用户证书："
 #: editor/settings/ui/802-1x.ui:601
 #, kde-format
 msgid "CA certificate:"
-msgstr "CA 证书："
+msgstr "CA-atestilo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_27)
 #: editor/settings/ui/802-1x.ui:174
 #, kde-format
 msgid "Subject match:"
-msgstr "主体匹配："
+msgstr "Temo-kongruo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:191
 #, kde-format
 msgid "Alternative subject matches:"
-msgstr "备用主体匹配："
+msgstr "Alternativaj temaj kongruoj:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
@@ -613,7 +614,7 @@ msgstr "…"
 #: editor/settings/ui/802-1x.ui:215
 #, kde-format
 msgid "Connect to these servers:"
-msgstr "连接到这些服务器："
+msgstr "Konekti al ĉi tiuj serviloj:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
@@ -621,13 +622,13 @@ msgstr "连接到这些服务器："
 #: editor/settings/ui/wireguardinterfacewidget.ui:26
 #, kde-format
 msgid "Private key:"
-msgstr "私钥："
+msgstr "Privata ŝlosilo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/802-1x.ui:256
 #, kde-format
 msgid "Private key password:"
-msgstr "私钥密码："
+msgstr "Pasvorto de privata ŝlosilo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #. i18n: ectx: property (text), widget (QLabel, label_19)
@@ -636,37 +637,37 @@ msgstr "私钥密码："
 #: editor/settings/ui/802-1x.ui:588
 #, kde-format
 msgid "Anonymous identity:"
-msgstr "匿名身份："
+msgstr "Anonima identeco:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
 #: editor/settings/ui/802-1x.ui:358
 #, kde-format
 msgid "Automatic PAC provisioning"
-msgstr "自动 PAC 提供"
+msgstr "Aŭtomata PAC-provizo"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:375
 #, kde-format
 msgid "Anonymous"
-msgstr "匿名"
+msgstr "Anonima"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:380
 #, kde-format
 msgid "Authenticated"
-msgstr "已通过身份验证"
+msgstr "Aŭtentikigita"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:385
 #, kde-format
 msgid "Both"
-msgstr "两者皆有"
+msgstr "Ambaŭ"
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: editor/settings/ui/802-1x.ui:393
 #, kde-format
 msgid "PAC file:"
-msgstr "PAC 文件："
+msgstr "PAC-dosiero:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #. i18n: ectx: property (text), widget (QLabel, label_16)
@@ -675,7 +676,7 @@ msgstr "PAC 文件："
 #: editor/settings/ui/802-1x.ui:653
 #, kde-format
 msgid "Inner authentication:"
-msgstr "内部身份验证："
+msgstr "Interna aŭtentikigo:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
@@ -713,85 +714,85 @@ msgstr "MSCHAP"
 #: editor/settings/ui/802-1x.ui:536 editor/settings/ui/ppp.ui:78
 #, kde-format
 msgid "CHAP"
-msgstr "CHAP"
+msgstr "ĈAP"
 
 #. i18n: ectx: property (text), widget (QLabel, label_26)
 #: editor/settings/ui/802-1x.ui:618
 #, kde-format
 msgid "PEAP version:"
-msgstr "PEAP 版本："
+msgstr "Versio de PEAP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:635
 #, kde-format
 msgctxt "PEAP version"
 msgid "Automatic"
-msgstr "自动"
+msgstr "Aŭtomata"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:640
 #, kde-format
 msgid "Version 0"
-msgstr "版本 0"
+msgstr "Versio 0"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:645
 #, kde-format
 msgid "Version 1"
-msgstr "版本 1"
+msgstr "Versio 1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/bond.ui:21 editor/settings/ui/bridge.ui:18
 #: editor/settings/ui/team.ui:18
 #, kde-format
 msgid "Interface name:"
-msgstr "接口名称："
+msgstr "Interfaconomo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bond.ui:34
 #, kde-format
 msgid "Bonded connections:"
-msgstr "绑定的连接："
+msgstr "Ligitaj ligoj:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
 #: editor/settings/ui/team.ui:56
 #, kde-format
 msgid "Add…"
-msgstr "添加…"
+msgstr "Aldoni…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnEdit)
 #: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
 #: editor/settings/ui/team.ui:71
 #, kde-format
 msgid "Edit…"
-msgstr "编辑…"
+msgstr "Redaktu…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
 #: editor/settings/ui/team.ui:86
 #, kde-format
 msgid "Delete"
-msgstr "删除"
+msgstr "Forigi"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #: editor/settings/ui/bond.ui:113 editor/settings/ui/wificonnectionwidget.ui:43
 #, kde-format
 msgid "Mode:"
-msgstr "模式："
+msgstr "Reĝimo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/bond.ui:133
 #, kde-format
 msgid "Link monitoring:"
-msgstr "连接监测："
+msgstr "Monitorado de ligoj:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bond.ui:153
 #, kde-format
 msgid "Monitoring frequency:"
-msgstr "监测频率："
+msgstr "Monitora frekvenco:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
 #. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
@@ -800,43 +801,43 @@ msgstr "监测频率："
 #: editor/settings/ui/bond.ui:225
 #, kde-format
 msgid " ms"
-msgstr " 毫秒"
+msgstr " ms"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: editor/settings/ui/bond.ui:195
 #, kde-format
 msgid "Link up delay:"
-msgstr "连接 up 延迟："
+msgstr "Prokrasto de ligo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/bond.ui:215
 #, kde-format
 msgid "Link down delay:"
-msgstr "连接 down 延迟："
+msgstr "Malprokrasto de ligo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/bond.ui:242
 #, kde-format
 msgid "ARP targets:"
-msgstr "ARP 目标："
+msgstr "ARP-celoj:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
 #: editor/settings/ui/bond.ui:252
 #, kde-format
 msgid "An IP address or comma-separated list of addresses."
-msgstr "单个 IP 地址或者以逗号分隔的地址列表。"
+msgstr "IP-adreso aŭ komo-disigita listo de adresoj."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/bridge.ui:31
 #, kde-format
 msgid "Bridged connections:"
-msgstr "桥接的连接："
+msgstr "Pontitaj konektoj:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bridge.ui:110
 #, kde-format
 msgid "Aging time:"
-msgstr "老化时间："
+msgstr "Maljuniĝotempo:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, agingTime)
 #. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
@@ -847,61 +848,61 @@ msgstr "老化时间："
 #, kde-format
 msgctxt "seconds"
 msgid " s"
-msgstr " 秒"
+msgstr " s"
 
 #. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
 #: editor/settings/ui/bridge.ui:139
 #, kde-format
 msgid "Enable STP (Spanning Tree Protocol)"
-msgstr "启用 STP (生成树协议)"
+msgstr "Ebligi STP (Spanning Tree Protocol)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/bridge.ui:151
 #, kde-format
 msgid "Priority:"
-msgstr "优先级："
+msgstr "Prioritato:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/bridge.ui:177
 #, kde-format
 msgid "Forward delay:"
-msgstr "转发延迟："
+msgstr "Antaŭen prokrasto:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bridge.ui:206
 #, kde-format
 msgid "Hello time:"
-msgstr "Hello 时间："
+msgstr "Saluton tempo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: editor/settings/ui/bridge.ui:235
 #, kde-format
 msgid "Max age:"
-msgstr "最大寿命："
+msgstr "Maksimuma aĝo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/bt.ui:21
 #, kde-format
 msgid "Address of the device:"
-msgstr "设备地址："
+msgstr "Adreso de la aparato:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bt.ui:41
 #, kde-format
 msgid "Connection type:"
-msgstr "连接类型："
+msgstr "Tipo de konekto:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/cdma.ui:20 editor/settings/ui/gsm.ui:24
 #, kde-format
 msgid "Number:"
-msgstr "号码："
+msgstr "Nombro:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
 #: editor/settings/ui/connectionwidget.ui:17
 #, kde-format
 msgid "Connect automatically with priority"
-msgstr "自动连接，优先级为"
+msgstr "Konekti aŭtomate kun prioritato"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
@@ -913,21 +914,18 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
-"设置为自动连接时，优先级较高的连接将优先使用。默认值为 0。\n"
-"数字越大，优先级越高。负值可以用于指定比默认值更低的优先级。\n"
-"           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:48
 #, kde-format
 msgid "All users may connect to this network"
-msgstr "允许所有用户连接到此网络"
+msgstr "Ĉiuj uzantoj povas konektiĝi al ĉi tiu reto"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:64
 #, kde-format
 msgid "Edit advanced permissions for this connection"
-msgstr "编辑此连接的高级权限"
+msgstr "Redakti altnivelajn permesojn por ĉi tiu konekto"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:67
@@ -936,32 +934,33 @@ msgid ""
 "Fine-grained permissions editor for this connection. It lets you choose "
 "which users can activate/modify/delete this connection."
 msgstr ""
-"打开此连接的高级权限编辑器，您可以在此选择允许激活/修改/删除此连接的用户。"
+"Delikata permesa redaktilo por ĉi tiu konekto. Ĝi ebligas al vi elekti, kiuj "
+"uzantoj povas aktivigi/modifi/forigi ĉi tiun konekton."
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
 #, kde-format
 msgid "Advanced…"
-msgstr "高级…"
+msgstr "Altnivela…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:81
 #, kde-format
 msgid "Automatically connect to VPN"
-msgstr "自动连接到 VPN"
+msgstr "Aŭtomate konekti al VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:101
 #, kde-format
 msgid "Firewall zone:"
-msgstr "防火墙区域："
+msgstr "Fajromuro-zono:"
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:130
 #, kde-format
 msgid "Metered:"
-msgstr "按流量计费："
+msgstr "Mezurita:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:150
@@ -971,68 +970,69 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager 会告知应用程序此连接是否按流量计费，以便据此限制使用流量。"
+"NetworkManager indikas al aplikaĵoj ĉu la konekto estas mezurita kaj tial\n"
+"datumuzado devus esti limigita."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:160
 #, kde-format
 msgctxt "Item in the Metered: list"
 msgid "Automatic"
-msgstr "自动"
+msgstr "Aŭtomata"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:165
 #, kde-format
 msgid "Yes"
-msgstr "是"
+msgstr "Jes"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:170
 #, kde-format
 msgid "No"
-msgstr "否"
+msgstr "Ne"
 
 #. i18n: ectx: property (title), widget (QGroupBox, basicGroup)
 #: editor/settings/ui/gsm.ui:18
 #, kde-format
 msgid "Basic"
-msgstr "基本"
+msgstr "Baza"
 
 #. i18n: ectx: property (title), widget (QGroupBox, advGroup)
 #: editor/settings/ui/gsm.ui:84
 #, kde-format
 msgid "Advanced"
-msgstr "高级"
+msgstr "Altnivela"
 
 #. i18n: ectx: property (text), widget (QCheckBox, roaming)
 #: editor/settings/ui/gsm.ui:93
 #, kde-format
 msgid "Allow roaming if home network is not available"
-msgstr "主网络不可用时，允许漫游"
+msgstr "Permesi vagadon se hejma reto ne disponeblas"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/gsm.ui:100
 #, kde-format
 msgid "APN:"
-msgstr "APN："
+msgstr "APN:"
 
 #. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
 #: editor/settings/ui/gsm.ui:110
 #, kde-format
 msgid "Network ID:"
-msgstr "网络 ID："
+msgstr "Reto ID:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/gsm.ui:130
 #, kde-format
 msgid "PIN:"
-msgstr "PIN："
+msgstr "PIN:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/infiniband.ui:21
 #, kde-format
 msgid "Transport mode:"
-msgstr "传输模式："
+msgstr "Transportreĝimo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -1041,7 +1041,7 @@ msgstr "传输模式："
 #: editor/settings/ui/wiredconnectionwidget.ui:23
 #, kde-format
 msgid "Restrict to device:"
-msgstr "仅限使用此设备："
+msgstr "Limigi al aparato:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, mtuLabel)
@@ -1052,7 +1052,7 @@ msgstr "仅限使用此设备："
 #: editor/settings/ui/wireguardinterfacewidget.ui:74
 #, kde-format
 msgid "MTU:"
-msgstr "MTU："
+msgstr "MTU:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:80
@@ -1061,7 +1061,7 @@ msgstr "MTU："
 #, kde-format
 msgctxt "MTU:"
 msgid "Automatic"
-msgstr "自动"
+msgstr "Aŭtomata"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:83
@@ -1069,66 +1069,66 @@ msgstr "自动"
 #: editor/settings/ui/wiredconnectionwidget.ui:115
 #, kde-format
 msgid " bytes"
-msgstr " 字节"
+msgstr "bajtoj"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, IPv6Widget)
 #. i18n: ectx: property (toolTip), widget (QWidget, IPv4Widget)
 #: editor/settings/ui/ipv4.ui:17 editor/settings/ui/ipv6.ui:20
 #, kde-format
 msgid "Advanced IP settings"
-msgstr "高级 IP 设置"
+msgstr "Altnivelaj IP-agordoj"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
 #, kde-format
 msgid "Method:"
-msgstr "方式："
+msgstr "Metodo:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:227
 #, kde-format
 msgctxt "Method:"
 msgid "Automatic"
-msgstr "自动"
+msgstr "Aŭtomata"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
 #, kde-format
 msgid "Automatic (Only addresses)"
-msgstr "自动 (仅地址)"
+msgstr "Aŭtomata (Nur adresoj)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
 #, kde-format
 msgid "Link-Local"
-msgstr "本地链路"
+msgstr "Ligo-Loka"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
 #, kde-format
 msgctxt "like in use Manual configuration"
 msgid "Manual"
-msgstr "手动"
+msgstr "Manlibro"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:69
 #, kde-format
 msgid "Shared to other computers"
-msgstr "共享给其他计算机"
+msgstr "Dividita al aliaj komputiloj"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:74
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Disabled"
-msgstr "已禁用"
+msgstr "Malebligita"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:170
 #, kde-format
 msgctxt "@info"
 msgid "DNS Servers:"
-msgstr "DNS 服务器："
+msgstr "DNS-Serviloj:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
 #: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
@@ -1136,20 +1136,22 @@ msgstr "DNS 服务器："
 msgid ""
 "Use this field to specify the IP address(es) of one or more DNS servers. Use "
 "',' to separate entries."
-msgstr "此字段用于指定 DNS 服务器的 IP 地址。使用半角逗号“,”来区分多个地址。"
+msgstr ""
+"Uzu ĉi tiun kampon por specifi la IP-adreson(j)n de unu aŭ pluraj DNS-"
+"serviloj. Uzu ',' por apartigi enskribojn."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv4.ui:125
 #, kde-format
 msgid "Edit DNS the list of servers"
-msgstr "编辑 DNS 服务器列表"
+msgstr "Redakti DNS la liston de serviloj"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
 #, kde-format
 msgctxt "@info"
 msgid "Search Domains:"
-msgstr "搜索域："
+msgstr "Serĉaj Domajnoj:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
 #: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
@@ -1157,19 +1159,21 @@ msgstr "搜索域："
 msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
 "separate entries."
-msgstr "此字段用于指定要搜索的 DNS 域。使用半角逗号“,”来区分多个域。"
+msgstr ""
+"Uzu ĉi tiun kampon por specifi unu aŭ plurajn DNS-domajnojn por serĉi. Uzu "
+"',' por apartigi enskribojn."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
-msgstr "编辑 DNS 搜索域列表"
+msgstr "Redakti la liston de DNS-domajnoj serĉataj"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
 #: editor/settings/ui/ipv4.ui:191
 #, kde-format
 msgid "DHCP Client ID:"
-msgstr "DHCP 客户端 ID："
+msgstr "ID de Kliento de DHCP:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
 #: editor/settings/ui/ipv4.ui:206
@@ -1181,20 +1185,23 @@ msgid ""
 "DHCP\n"
 "lease and options."
 msgstr ""
-"此字段用于指定 DHCP 客户端 ID。这是一条发送给 DHCP 服务器的字符串，用于识别本"
-"地计算机。DHCP 服务器可能会在自定义 DHCP 租期和选项时使用它。"
+"Uzu ĉi tiun kampon por specifi la DHCP-klientidentigilon kiu estas ĉeno "
+"sendita al la DHCP-servilo\n"
+"por identigi la lokan maŝinon kiun la DHCP-servilo povas uzi por personecigi "
+"la DHCP\n"
+"lezon kaj opciojn."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
 #, kde-format
 msgid "Remove"
-msgstr "移除"
+msgstr "Forigi"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:109
 #, kde-format
 msgid "Add"
-msgstr "添加"
+msgstr "Aldoni"
 
 #. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
 #: editor/settings/ui/ipv4.ui:244 editor/settings/ui/ipv6.ui:127
@@ -1205,8 +1212,9 @@ msgid ""
 "to add\n"
 "an IP address"
 msgstr ""
-"IP 地址列表，用于在网络中标识这台计算机。\n"
-"点击“添加”按钮来添加一个 IP 地址"
+"IP-adresoj identigas vian komputilon en la reto. Alklaku la butonon \"Aldoni"
+"\" por aldoni\n"
+"IP-adreson"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:282
@@ -1215,20 +1223,20 @@ msgid ""
 "Allows the connection to complete if IPv4 configuration fails\n"
 "but IPv6 configuration succeeds"
 msgstr ""
-"如果 IPv4 配置失败，但是 IPv6 配置成功，\n"
-"仍然允许连接完成"
+"Ebligas la konekton finiĝi se IPv4-agordo malsukcesas\n"
+"sed IPv6-agordo sukcesas"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:285
 #, kde-format
 msgid "IPv4 is required for this connection"
-msgstr "此连接需要 IPv4"
+msgstr "IPv4 estas postulata por ĉi tiu konekto"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
 #: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
 #, kde-format
 msgid "Routes…"
-msgstr "路由…"
+msgstr "Itineroj…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:30
@@ -1238,20 +1246,20 @@ msgid ""
 "if\n"
 "IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
-"连接到支持 IPv4 的网络时，如果 IPv6 配置失败，但是 IPv4 配置成功，\n"
-"仍然允许连接完成"
+"Kiam vi konektas al IPv4-kapablaj retoj, permesas la konekton finiĝi se\n"
+"IPv6-agordo malsukcesas sed IPv4-agordo sukcesas"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:33
 #, kde-format
 msgid "IPv6 is required for this connection"
-msgstr "此连接需要 IPv6"
+msgstr "IPv6 estas bezonata por ĉi tiu konekto"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv6.ui:83
 #, kde-format
 msgid "Edit the list of DNS servers"
-msgstr "编辑 DNS 服务器列表"
+msgstr "Redakti la liston de DNS-serviloj"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:193
@@ -1262,59 +1270,60 @@ msgid ""
 "a temporary IPv6 address in addition to the public one generated from MAC "
 "address via modified EUI-64."
 msgstr ""
-"配置 SLAAC 的 IPv6 隐私扩展，RFC 4941 规范中描述了此功能。\n"
-"勾选此项后，内核不但会基于 MAC 地址生成一个公共地址，\n"
-"还会基于 EUI-64 的修改版本生成一个临时的 IPv6 地址。"
+"Agordi IPv6-Privatecaj Etendaĵoj por SLAAC, priskribitaj en RFC4941. Se ĝi "
+"estas ebligita, ĝi igas la kernon generi\n"
+"provizoran IPv6-adreson aldone al la publika unu generita de MAC-adreso per "
+"modifita EUI-64."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:202
 #, kde-format
 msgctxt "privacy disabled"
 msgid "Disabled"
-msgstr "已禁用"
+msgstr "Malebligita"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:207
 #, kde-format
 msgid "Enabled (prefer public address)"
-msgstr "已启用 (公共地址优先)"
+msgstr "Ebligita (preferas publikan adreson)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:212
 #, kde-format
 msgid "Enabled (prefer temporary addresses)"
-msgstr "已启用 (临时地址优先)"
+msgstr "Ebligita (preferas provizorajn adresojn)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:237
 #, kde-format
 msgid "Automatic (Only DHCP)"
-msgstr "自动 (仅DHCP)"
+msgstr "Aŭtomata (Nur DHCP)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:252
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
-msgstr "忽略"
+msgstr "Ignorita"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:257
 #, kde-format
 msgid "Disabled"
-msgstr "已禁用"
+msgstr "Malebligita"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
 #: editor/settings/ui/ipv6.ui:335
 #, kde-format
 msgid "Privacy:"
-msgstr "私密性："
+msgstr "Privateco:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, authGroup)
 #: editor/settings/ui/ppp.ui:23
 #, kde-format
 msgid "Authentication"
-msgstr "身份验证"
+msgstr "Aŭtentikigo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
 #: editor/settings/ui/ppp.ui:38
@@ -1326,61 +1335,61 @@ msgstr "EAP"
 #: editor/settings/ui/ppp.ui:91
 #, kde-format
 msgid "Compression"
-msgstr "压缩"
+msgstr "Kunpremo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppe)
 #: editor/settings/ui/ppp.ui:109
 #, kde-format
 msgid "Use point-to-point encryption (MPPE)"
-msgstr "使用点对点加密 (MPPE)"
+msgstr "Uzi punkton-al-punktan ĉifradon (MPPE)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, bsdComp)
 #: editor/settings/ui/ppp.ui:116
 #, kde-format
 msgid "Use BSD data compression"
-msgstr "使用 BSD 数据压缩"
+msgstr "Uzi BSD-datumpremadon"
 
 #. i18n: ectx: property (text), widget (QCheckBox, deflateComp)
 #: editor/settings/ui/ppp.ui:126
 #, kde-format
 msgid "Use Deflate data compression"
-msgstr "使用 Deflate 数据压缩"
+msgstr "Uzi Deflate datuman kunpremadon"
 
 #. i18n: ectx: property (text), widget (QCheckBox, tcpComp)
 #: editor/settings/ui/ppp.ui:136
 #, kde-format
 msgid "Use TCP header compression"
-msgstr "使用 TCP 头压缩"
+msgstr "Uzi TCP-kapokunpremadon"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppe128)
 #: editor/settings/ui/ppp.ui:152
 #, kde-format
 msgid "Require 128-bit encryption"
-msgstr "需要 128 位加密"
+msgstr "Postulas 128-bitan ĉifradon"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppeStateful)
 #: editor/settings/ui/ppp.ui:165
 #, kde-format
 msgid "Use stateful MPPE"
-msgstr "使用有状态 MPPE"
+msgstr "Uzi statohavan MPPE"
 
 #. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
 #: editor/settings/ui/ppp.ui:175
 #, kde-format
 msgid "Echo"
-msgstr "回显"
+msgstr "Eĥo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
 #: editor/settings/ui/ppp.ui:184
 #, kde-format
 msgid "Send PPP echo packets"
-msgstr "发送 PPP 回显包"
+msgstr "Sendi PPP-eĥajn pakojn"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/pppoe.ui:20
 #, kde-format
 msgid "Service:"
-msgstr "服务："
+msgstr "Servo:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, service)
 #: editor/settings/ui/pppoe.ui:30
@@ -1391,57 +1400,58 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
-"如果指定了服务，PPPoE 将只会发起带有提供该服务的访问集中器的会话。对于大多数"
-"运营商而言，此项应该留空。只有在同时存在多个访问集中器，或者在某个服务确定需"
-"要此功能时，才应该在此指定服务。"
+"Se specifite, instruu PPPoE nur komenci seancojn kun alirkoncentriloj kiuj "
+"provizas la specifitan servon. Por plej multaj provizantoj, ĉi tio estu "
+"malplena. Ĝi estas nur postulata se ekzistas multoblaj alirkoncentriloj aŭ "
+"specifa servo estas konata esti postulata."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31
 #, kde-format
 msgid "Teamed connections:"
-msgstr "已绑定的连接："
+msgstr "Teamitaj ligoj:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/team.ui:113
 #, kde-format
 msgid "JSON config:"
-msgstr "JSON 配置："
+msgstr "JSON-agordo:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnImport)
 #: editor/settings/ui/team.ui:123
 #, kde-format
 msgid "Import configuration from file…"
-msgstr "从文件导入配置…"
+msgstr "Importi agordon el dosiero…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
 #, kde-format
 msgid "Parent interface:"
-msgstr "上级接口："
+msgstr "Gepatra interfaco:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/vlan.ui:41
 #, kde-format
 msgid "VLAN id:"
-msgstr "VLAN ID："
+msgstr "ID de VLAN:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/vlan.ui:64
 #, kde-format
 msgid "VLAN interface name:"
-msgstr "VLAN 接口名称："
+msgstr "VLAN-interfaconomo:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, reorderHeaders)
 #: editor/settings/ui/vlan.ui:77
 #, kde-format
 msgid "Output packet headers reordering"
-msgstr "输出数据包头重新排序"
+msgstr "Reordigo de la kaplinioj de eligo"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, gvrp)
 #: editor/settings/ui/vlan.ui:84
 #, kde-format
 msgid "GARP VLAN Registration Protocol"
-msgstr "GARP VLAN 注册协议"
+msgstr "GARP VLAN Registrada Protokolo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, gvrp)
 #: editor/settings/ui/vlan.ui:87
@@ -1453,37 +1463,37 @@ msgstr "GVRP"
 #: editor/settings/ui/vlan.ui:94
 #, kde-format
 msgid "Loose binding"
-msgstr "松散绑定"
+msgstr "Malfiksa ligado"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:17
 #, kde-format
 msgid "SSID:"
-msgstr "SSID："
+msgstr "SSID:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:63
 #, kde-format
 msgid "Infrastructure"
-msgstr "基础设施 (Infrastructure)"
+msgstr "Infrastrukturo"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:68
 #, kde-format
 msgid "Ad-hoc"
-msgstr "自组网 (Ad-hoc)"
+msgstr "Ad-hoc"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:73
 #, kde-format
 msgid "Access Point"
-msgstr "接入点/无线 AP (Access Point)"
+msgstr "Alirpunkto"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:81
 #, kde-format
 msgid "BSSID:"
-msgstr "BSSID："
+msgstr "BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:101
@@ -1493,14 +1503,15 @@ msgid ""
 "by the\n"
 " BSSID entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"此连接将只会使用在此输入的 BSSID 所指定的无线接入点 (AP)。\n"
-"示例：00:11:22:33:44:55"
+"Ĉi tiu opcio ŝlosas ĉi tiun konekton al la Wifi-alirpunkto (AP) specifita de "
+"la\n"
+" BSSID enigita ĉi tie. Ekzemplo: 00:11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:117
 #, kde-format
 msgid "Band:"
-msgstr "频段："
+msgstr "Bando:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:137
@@ -1510,15 +1521,16 @@ msgid ""
 "specified band. This setting depends\n"
 " on specific driver capability and may not work with all drivers"
 msgstr ""
-"此连接将只会使用在此指定的无线频段。\n"
-"此设置需要驱动程序支持才能工作，它未必兼容所有驱动程序。"
+"Ĉi tiu opcio ŝlosas la konekton al la reto Wi-Fi asociita al la specifita "
+"bando. Ĉi tiu agordo dependas\n"
+"de specifa pelilo-kapablo kaj eble ne funkcias kun ĉiuj peliloj"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:141
 #, kde-format
 msgctxt "Band:"
 msgid "Automatic"
-msgstr "自动"
+msgstr "Aŭtomata"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:146
@@ -1536,7 +1548,7 @@ msgstr "B/G (2.4 GHz)"
 #: editor/settings/ui/wificonnectionwidget.ui:159
 #, kde-format
 msgid "Channel:"
-msgstr "信道："
+msgstr "Kanalo:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, channel)
 #: editor/settings/ui/wificonnectionwidget.ui:179
@@ -1546,21 +1558,22 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
-"Wi-Fi 连接使用的无线信道。此设备将只会加入指定信道上的网络，\n"
-"或者只会在指定信道上创建自组网 (Ad-hoc)。"
+"Sendrata kanalo por uzi por la Wi-Fi-konekto. La aparato nur aliĝos (aŭ "
+"kreos por Ad-Hoc-retoj)\n"
+" Vifi-reton sur la specifita kanalo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:209
 #: editor/settings/ui/wiredconnectionwidget.ui:47
 #, kde-format
 msgid "Cloned MAC address:"
-msgstr "克隆 MAC 地址："
+msgstr "Klonita MAC-adreso:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:240
 #, kde-format
 msgid "Random…"
-msgstr "随机…"
+msgstr "Hazarda…"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -1568,98 +1581,98 @@ msgstr "随机…"
 #: editor/settings/ui/wificonnectionwidget.ui:303
 #, kde-format
 msgid "Mark this if you want to create a connection for a hidden network"
-msgstr "如果您想要为隐藏的网络创建连接，请勾选此项"
+msgstr "Marki ĉi tion se vi volas krei konekton por kaŝita reto"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:290
 #, kde-format
 msgid "Visibility:"
-msgstr "可见性："
+msgstr "Videbleco:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:306
 #, kde-format
 msgid "Hidden network"
-msgstr "隐藏网络"
+msgstr "Kaŝita reto"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
 #: editor/settings/ui/wifisecurity.ui:15
 #, kde-format
 msgid "Wifi Security"
-msgstr "Wi-Fi 安全性"
+msgstr "Wifi Sekureco"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:28
 #, kde-format
 msgctxt "no security"
 msgid "None"
-msgstr "无"
+msgstr "Neniu"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:33
 #, kde-format
 msgid "WEP key 40/128 bits (Hex or ASCII)"
-msgstr "WEP 40/128 位 密钥 (Hex 或者 ASCII)"
+msgstr "WEP-ŝlosilo 40/128 bitoj (Heks aŭ ASCII)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:38
 #, kde-format
 msgid "WEP key 128 bits"
-msgstr "WEP 128 位密钥"
+msgstr "WEP-ŝlosilo 128 bitoj"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:48
 #, kde-format
 msgid "Dynamic WEP (802.1x)"
-msgstr "动态 WEP (802.1x)"
+msgstr "Dinamika WEP (802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:53
 #, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr "WPA/WPA2 个人版"
+msgstr "WPA/WPA2 Persona"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:58
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr "WPA/WPA2 企业版"
+msgstr "WPA/WPA2 Enterprise"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:63
 #, kde-format
 msgid "WPA3 Personal"
-msgstr "WPA3 个人版"
+msgstr "WPA3 Persona"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
 #, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA3 企业版 192 位"
+msgstr "WPA3 Enterprise 192-bita"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
 #, kde-format
 msgid "Security:"
-msgstr "安全性："
+msgstr "Sekureco:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wifisecurity.ui:97
 #, kde-format
 msgid "Key:"
-msgstr "密钥："
+msgstr "Ŝlosilo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/wifisecurity.ui:117
 #, kde-format
 msgid "WEP index:"
-msgstr "WEP 索引："
+msgstr "WEP-indekso:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:134
 #, kde-format
 msgid "1 (default)"
-msgstr "1 (默认)"
+msgstr "1 (defaŭlte)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:139
@@ -1683,13 +1696,13 @@ msgstr "4"
 #: editor/settings/ui/wifisecurity.ui:174
 #, kde-format
 msgid "Open System"
-msgstr "开放系统"
+msgstr "Malfermi Sistemon"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
 #: editor/settings/ui/wifisecurity.ui:179
 #, kde-format
 msgid "Shared Key"
-msgstr "共享密钥"
+msgstr "Komuna Ŝlosilo"
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:40
@@ -1698,8 +1711,8 @@ msgid ""
 "This option locks this connection to the network device specified by its\n"
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"此连接将只使用在此输入的 MAC 地址指定的网络设备。\n"
-"示例：00:11:22:33:44:55"
+"Ĉi tiu opcio ŝlosas ĉi tiun konekton al la reto-aparato specifita per ĝia\n"
+"permanenta MAC-adreso enigita ĉi tie. Ekzemplo: 00:11:22:33:44:55"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:67
@@ -1710,15 +1723,16 @@ msgid ""
 "MAC\n"
 "cloning or spoofing. Example 11:22:33:44:55"
 msgstr ""
-"此处输入的 MAC 地址将用作此连接激活的网络设备的硬件地址\n"
-"此功能也叫做 MAC 地址克隆或者 MAC 地址欺骗。\n"
-"示例：11:22:33:44:55"
+"La MAC-adreso ĉi tie enigita estos uzata kiel aparatadreso por la\n"
+"retaparato, sur kiu ĉi tiu konekto estas aktivigita. Ĉi tiu funkcio estas "
+"konata kiel MAC\n"
+"klonado aŭ spoofing. Ekzemplo 11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wiredconnectionwidget.ui:80
 #, kde-format
 msgid "Random"
-msgstr "随机"
+msgstr "Hazarda"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
 #: editor/settings/ui/wiredconnectionwidget.ui:106
@@ -1728,20 +1742,21 @@ msgid ""
 "packets up\n"
 "into multiple Ethernet frames"
 msgstr ""
-"只传输指定大小或者更小的包，\n"
-"大包将被拆分成多个以太网帧"
+"Transsendi nur pakaĵetojn de la specifita grandeco aŭ pli malgrandaj, "
+"rompante pli grandajn pakaĵetojn\n"
+"en plurajn Eterretajn kadrojn."
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
 #, kde-format
 msgid "Speed:"
-msgstr "速度："
+msgstr "Rapido:"
 
 #. i18n: ectx: property (text), widget (QLabel, duplexLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:132
 #, kde-format
 msgid "Duplex:"
-msgstr "双工："
+msgstr "Dupleksa:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:151
@@ -1749,25 +1764,27 @@ msgstr "双工："
 msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
-msgstr "请求设备使用指定的双工模式。可以是“半双工”或者“全双工”"
+msgstr ""
+"Petu, ke la aparato uzu la specifitan dupleksan reĝimon. Aŭ \"duone\" aŭ "
+"\"plena\""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158
 #, kde-format
 msgid "Half"
-msgstr "半双工"
+msgstr "Duono"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:163
 #, kde-format
 msgid "Full"
-msgstr "全双工"
+msgstr "Plena"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174
 #, kde-format
 msgid "Link negotiation:"
-msgstr "连接协商："
+msgstr "Ligo-intertraktado:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:188
@@ -1777,34 +1794,35 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
-"设备的连接协商模式。选择“手动”时将强制使用指定的“速度”和“双工”值，不检查设备"
-"是否兼容\n"
-"如果您不确定，请保留默认值“忽略”，或者选择“自动”。"
+"Intertraktado pri aparato-ligo. Se \"Manlibro\" estas elektita, \"Rapido\" "
+"kaj \"Duplekso\" valoroj estos devigitaj sen kontroli\n"
+"la aparato kongruo. Se ne certas, lasu ĉi tie \"Ignori\" aŭ elektu \"Aŭtomata"
+"\"."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
 #, kde-format
 msgid "Ignore"
-msgstr "忽略"
+msgstr "Ignori"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:197
 #, kde-format
 msgctxt "Link negotiation:"
 msgid "Automatic"
-msgstr "自动"
+msgstr "Aŭtomata"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:202
 #, kde-format
 msgid "Manual"
-msgstr "手动"
+msgstr "Manlibro"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:219
 #, kde-format
 msgid "Request that the device use only the specified speed."
-msgstr "请求让设备只使用指定的速度。"
+msgstr "Peiu, ke la aparato uzu nur la specifitan rapidon."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:226
@@ -1828,7 +1846,7 @@ msgstr "1 Gb/s"
 #: editor/settings/ui/wiredconnectionwidget.ui:241
 #, kde-format
 msgid "2.5 Gb/s"
-msgstr "2.5 Gb/s"
+msgstr "2,5 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:246
@@ -1858,19 +1876,19 @@ msgstr "100 Gb/s"
 #: editor/settings/ui/wiredsecurity.ui:17
 #, kde-format
 msgid "Use 802.1x security for this connection"
-msgstr "启用此连接的 802.1x 安全性功能"
+msgstr "Uzi 802.1x sekurecon por ĉi tiu konekto"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
 #: editor/settings/ui/wireguardinterfacewidget.ui:14
 #, kde-format
 msgid "WireGuard Settings"
-msgstr "WireGuard 设置"
+msgstr "WireGuard Agordoj"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:20
 #, kde-format
 msgid "Interface"
-msgstr "接口"
+msgstr "Interfaco"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
@@ -1879,14 +1897,14 @@ msgid ""
 "Required.\n"
 "A base64 private key generated by wg genkey."
 msgstr ""
-"必填项。\n"
-"请填写使用 wg genkey 生成的 Base64 私钥。"
+"Bezonata.\n"
+"Privata ŝlosilo baz64 generita de wg genkey."
 
 #. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:41
 #, kde-format
 msgid "Listen port:"
-msgstr "监听端口："
+msgstr "Aŭskulta pordo:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -1895,14 +1913,14 @@ msgid ""
 "Optional.\n"
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
-"可选项。\n"
-"请填写监听端口。如果设为自动，程序将选择一个随机端口。"
+"Laŭvola.\n"
+"Aŭskultu pordan numeron. Elektita hazarde se lasita kiel 'Aŭtomata'."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:57
 #, kde-format
 msgid "fwmark:"
-msgstr "fwmark："
+msgstr "fwmark:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:67
@@ -1913,10 +1931,10 @@ msgid ""
 "option is disabled. May be specified in hexadecimal by\n"
 "prepending '0x'."
 msgstr ""
-"可选项。\n"
-"为传出数据包打上 fwmark 标记。\n"
-"如果设置为 0 或者“off”(关)，此选项将被禁用。\n"
-"加上 0x 前缀时可以指定一个十六进制数。"
+"Nedeviga.\n"
+"Fwmark por elirantaj pakoj. Se agordita al 0 aŭ 'off', ĉi tiu\n"
+"opcio estas malŝaltita. Povas esti specifita deksesuma per\n"
+"antaŭigante '0x'."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:86
@@ -1929,17 +1947,18 @@ msgid ""
 "specify an MTU and to override this automatic discovery,\n"
 "this value may be specified explicitly."
 msgstr ""
-"可选项。\n"
-"如果不指定 MTU，\n"
-"程序会根据节点地址或者系统的默认路由自动确定 MTU。\n"
-"在一般情况下推荐使用自动 MTU。\n"
-"您也可以在此指定 MTU，它将覆盖上述的自动 MTU。"
+"Laŭvola.\n"
+"Se ne specifita, la MTU estas aŭtomate determinita\n"
+"de la finpunkto-adresoj aŭ la sistema defaŭlta itinero,\n"
+"kio estas kutime prudenta elekto. Tamen, por permane\n"
+"specifi MTU kaj por anstataŭi ĉi tiun aŭtomatan malkovron,\n"
+"ĉi tiu valoro povas esti specifita eksplicite."
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:93
 #, kde-format
 msgid "Autoroute peers:"
-msgstr "自动路由节点："
+msgstr "Aŭtoitineraj samuloj:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:101
@@ -1947,19 +1966,21 @@ msgstr "自动路由节点："
 msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
-msgstr "是否为允许的 IP 范围内的节点自动添加路由。"
+msgstr ""
+"Ĉu aŭtomate aldoni itinerojn por la AllowedIPs intervaloj\n"
+"de la samuloj."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
 #: editor/settings/ui/wireguardinterfacewidget.ui:126
 #, kde-format
 msgid "Peers…"
-msgstr "节点…"
+msgstr "Samuloj…"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
 #, kde-format
 msgid "Public key:"
-msgstr "公钥："
+msgstr "Publika ŝlosilo:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, publicKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:27
@@ -1970,16 +1991,16 @@ msgid ""
 "            from a private key, and usually transmitted \n"
 "            out of band to the author of the configuration file."
 msgstr ""
-"必填项。\n"
-"            请填写一个 base64 公钥，\n"
-"            此公钥由 wg pubkey 基于一个私钥算出。\n"
-"            它通常会在带外传输给配置文件的作者。"
+"Bezonata.\n"
+" Publika ŝlosilo baz64 kalkulita per wg pubkey \n"
+" el privata ŝlosilo, kaj kutime transdonita \n"
+" eksterbendo al la aŭtoro de la agorda dosiero."
 
 #. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:34
 #, kde-format
 msgid "Allowed IPs:"
-msgstr "允许的 IP："
+msgstr "Permesitaj IP-oj:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, allowedIPsLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:47
@@ -1993,19 +2014,19 @@ msgid ""
 "            may be specified for matching all IPv4 addresses, \n"
 "            and ::/0 may be specified for matching all IPv6 addresses."
 msgstr ""
-"必填项。\n"
-"            请填写 IPv4 或者 v6 地址列表，\n"
-"            地址需带有 CIDR 掩码，用半角逗号区分地址。\n"
-"            来自该掩码的节点传入连接将被允许，\n"
-"            该节点的传出连接也会被导向该掩码。\n"
-"            指定 0.0.0.0/0 可以匹配所有 IPv4 地址，\n"
-"            指定 ::/0 可以匹配所有 IPv4 地址。"
+"Bezonata.\n"
+" Komo-separata listo de IP (v4 aŭ v6) adresoj \n"
+" kun CIDR-maskoj de kiuj envenanta trafiko por \n"
+" ĉi tiu samaĝulo estas permesita kaj al kiu elira trafiko \n"
+" por ĉi tiu samaĝulo estas direktita. Catch-all 0.0.0.0/0 \n"
+" povas esti specifita por kongrui kun ĉiuj IPv4-adresoj, \n"
+" kaj ::/0 povas esti specifita por kongrui kun ĉiuj IPv6-adresoj."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55
 #, kde-format
 msgid "Endpoint address:"
-msgstr "端点地址："
+msgstr "Finpunkto-adreso:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:66
@@ -2017,17 +2038,17 @@ msgid ""
 "            qualified domain name such as abc.com). If\n"
 "            present, Endpoint port must also be set."
 msgstr ""
-"可选项。\n"
-"            请在此填写连接的端点。\n"
-"            它可以是 IPv4 地址，\n"
-"            也可以是 FQDN (完全限定域名，例如 abc.com)。\n"
-"            如果在此填写了端点地址，那么也要填写端点端口。"
+"Nedeviga.\n"
+" Finpunkto por la konekto. Povas esti\n"
+" IPv4-adreso, IPv6-adreso aŭ FQDN (plene\n"
+" kvalifikita domajna nomo kiel abc.com). Se\n"
+" ĉeestas, Endpoint-pordo ankaŭ devas esti agordita."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
 #, kde-format
 msgid "Endpoint port:"
-msgstr "端点端口："
+msgstr "Finpunkta pordo:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:83
@@ -2037,15 +2058,15 @@ msgid ""
 "            The port number of an endpoint. If present Endpoint\n"
 "            Address must also be set."
 msgstr ""
-"可选项。\n"
-"            请填写端点的端口号。\n"
-"             如果在此填写了端点号，那么也要填写端点地址。"
+"Nedeviga.\n"
+" La pordnumero de finpunkto. Se nuna Finpunkto\n"
+" Adreso ankaŭ devas esti agordita."
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
 #, kde-format
 msgid "Preshared key:"
-msgstr "预共享密钥："
+msgstr "Antaŭdividita ŝlosilo:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:102
@@ -2057,16 +2078,17 @@ msgid ""
 "            cryptography to be mixed into the already existing\n"
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
-"可选项。\n"
-"            请填写一个由 wg genpsk 算出的 base64 预共享密钥。\n"
-"            这将在现存的公钥加密之上额外混叠一层对称密钥加密，\n"
-"            以提高进入量子时代之后的安全性。"
+"Nedeviga.\n"
+" Baz64-antaŭdividita ŝlosilo generita de wg genpsk.\n"
+" Ĉi tiu opcio aldonas plian tavolon de simetria ŝlosilo\n"
+" kriptografio por esti miksita en la jam ekzistantan\n"
+" publikŝlosila kriptografio, por postkvantuma rezisto."
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
 #, kde-format
 msgid "Persistent keepalive:"
-msgstr "连接保活间隔："
+msgstr "Konstanta konservado:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:127
@@ -2085,36 +2107,36 @@ msgid ""
 "            when unspecified, this option is off. Most users will not\n"
 "            need this."
 msgstr ""
-"可选项。\n"
-"            请填写一个间隔时间值，范围 (1 - 65535) ，\n"
-"            它用于指定发送保活包的间隔时间。\n"
-"            保活包是一种经过身份验证的空数据包，\n"
-"            它们按照一定的间隔时间被发送到节点，\n"
-"            用于保持有状态防火墙或者 NAT 映射的有效性。\n"
-"            例如：如果此接口位于 NAT 的后方，\n"
-"            且很少发送数据，但需要随时接收来自节点的数据时，\n"
-"            您可以将它的连接保活间隔设为 25 秒。\n"
-"            此值设为 0 或者“off”时，它将被禁用。\n"
-"            在默认状态下或者留空时，它也将被禁用。\n"
-"            在大多数情况下，您不需要使用此功能。"
+"Nedeviga.\n"
+" Sekunda intervalo, inter 1 kaj 65535 inkluzive, de\n"
+" kiom ofte sendi aŭtentikigitan malplenan pakaĵeton al\n"
+" la kunulo kun la celo konservi statan fajroŝirmilon\n"
+" aŭ NAT-mapadon valida persiste. Ekzemple, se la\n"
+" interfaco tre malofte sendas trafikon, sed ĝi povas iam ajn ricevi trafikon "
+"de kunulo, kaj ĝi estas malantaŭ\n"
+" NAT, la interfaco povus profiti de havi\n"
+" konstantan konservan intervalon de 25 sekundoj. Se agordita al\n"
+" 0 aŭ \"off\", ĉi tiu opcio estas malŝaltita. Defaŭlte aŭ\n"
+" kiam nespecifita, ĉi tiu opcio estas malŝaltita. Plej multaj uzantoj ne\n"
+" bezonos ĉi tion."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: editor/settings/ui/wireguardtabwidget.ui:24
 #, kde-format
 msgid "Peer 1"
-msgstr "节点 1"
+msgstr "Samulo 1"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/wireguardtabwidget.ui:37
 #, kde-format
 msgid "Add new Peer"
-msgstr "添加新节点"
+msgstr "Aldoni novan Peer"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/wireguardtabwidget.ui:44
 #, kde-format
 msgid "Remove this Peer"
-msgstr "移除此节点"
+msgstr "Forigi ĉi tiun Peer"
 
 #: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
@@ -2126,19 +2148,19 @@ msgstr "%1 (%2 MHz)"
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
-msgstr "WireGuard 节点属性"
+msgstr "WireGuard kunuloj propraĵoj"
 
 #: editor/uiutils.cpp:133
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr "Wifi"
 
 #: editor/uiutils.cpp:136
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Bluetooth"
-msgstr "蓝牙"
+msgstr "Bluetooth"
 
 #: editor/uiutils.cpp:139
 #, kde-format
@@ -2156,43 +2178,43 @@ msgstr "ADSL"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bond)"
-msgstr "虚拟 (多网卡绑定/bond)"
+msgstr "Virtuala (obligacio)"
 
 #: editor/uiutils.cpp:148
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bridge)"
-msgstr "虚拟 (桥接/bridge)"
+msgstr "Virtuala (ponto)"
 
 #: editor/uiutils.cpp:151
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (vlan)"
-msgstr "虚拟 (虚拟局域网/vlan)"
+msgstr "Virtuala (vlan)"
 
 #: editor/uiutils.cpp:154
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (team)"
-msgstr "虚拟 (网络组/team)"
+msgstr "Virtuala (teamo)"
 
 #: editor/uiutils.cpp:161
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Serial Modem"
-msgstr "串口调制解调器"
+msgstr "Seria modemo"
 
 #: editor/uiutils.cpp:166
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Mobile Broadband"
-msgstr "移动宽带"
+msgstr "Poŝtelefona Larĝbendo"
 
 #: editor/uiutils.cpp:176
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wired Ethernet"
-msgstr "有线以太网"
+msgstr "Kablita Ethernet"
 
 #: editor/uiutils.cpp:188
 #, kde-format
@@ -2202,17 +2224,17 @@ msgstr "ADSL"
 #: editor/uiutils.cpp:207
 #, kde-format
 msgid "Mobile broadband"
-msgstr "移动宽带"
+msgstr "Poŝtelefona larĝa bando"
 
 #: editor/uiutils.cpp:214
 #, kde-format
 msgid "Olpc mesh"
-msgstr "OLPC 网格"
+msgstr "Olpc-maŝo"
 
 #: editor/uiutils.cpp:224 models/creatableconnectionsmodel.cpp:156
 #, kde-format
 msgid "Wired Ethernet"
-msgstr "有线以太网"
+msgstr "Kablita Ethernet"
 
 #: editor/uiutils.cpp:235
 #, kde-format
@@ -2222,27 +2244,27 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:239
 #, kde-format
 msgid "Unknown connection type"
-msgstr "未知连接类型"
+msgstr "Nekonata konektotipo"
 
 #: editor/uiutils.cpp:251
 #, kde-format
 msgid "Wireless Interface (%1)"
-msgstr "无线接口 (%1)"
+msgstr "Sendrata Interfaco (%1)"
 
 #: editor/uiutils.cpp:254
 #, kde-format
 msgid "Wired Interface (%1)"
-msgstr "有线接口 (%1)"
+msgstr "Kablita Interfaco (%1)"
 
 #: editor/uiutils.cpp:257
 #, kde-format
 msgid "Bluetooth (%1)"
-msgstr "蓝牙 (%1)"
+msgstr "Bluetooth (%1)"
 
 #: editor/uiutils.cpp:260
 #, kde-format
 msgid "Modem (%1)"
-msgstr "调制解调器 (%1)"
+msgstr "Modemo (%1)"
 
 #: editor/uiutils.cpp:263
 #, kde-format
@@ -2252,229 +2274,229 @@ msgstr "ADSL (%1)"
 #: editor/uiutils.cpp:266
 #, kde-format
 msgid "VLan (%1)"
-msgstr "虚拟局域网/VLAN (%1)"
+msgstr "VLan (%1)"
 
 #: editor/uiutils.cpp:269
 #, kde-format
 msgid "Bridge (%1)"
-msgstr "桥接/Bridge (%1)"
+msgstr "Ponto (%1)"
 
 #: editor/uiutils.cpp:282
 #, kde-format
 msgctxt "description of unknown network interface state"
 msgid "Unknown"
-msgstr "未知"
+msgstr "Nekonata"
 
 #: editor/uiutils.cpp:285
 #, kde-format
 msgctxt "description of unmanaged network interface state"
 msgid "Unmanaged"
-msgstr "非管理型"
+msgstr "Neadministrata"
 
 #: editor/uiutils.cpp:288
 #, kde-format
 msgctxt "description of unavailable network interface state"
 msgid "Unavailable"
-msgstr "不可用"
+msgstr "Nedisponebla"
 
 #: editor/uiutils.cpp:291
 #, kde-format
 msgctxt "description of unconnected network interface state"
 msgid "Not connected"
-msgstr "未连接"
+msgstr "Ne konektita"
 
 #: editor/uiutils.cpp:294
 #, kde-format
 msgctxt "description of preparing to connect network interface state"
 msgid "Preparing to connect"
-msgstr "正在准备连接"
+msgstr "Preparante por konekti"
 
 #: editor/uiutils.cpp:297
 #, kde-format
 msgctxt "description of configuring hardware network interface state"
 msgid "Configuring interface"
-msgstr "正在配置接口"
+msgstr "Agordante interfacon"
 
 #: editor/uiutils.cpp:300
 #, kde-format
 msgctxt "description of waiting for authentication network interface state"
 msgid "Waiting for authorization"
-msgstr "正在等待授权"
+msgstr "Atendante rajtigon"
 
 #: editor/uiutils.cpp:303
 #, kde-format
 msgctxt "network interface doing dhcp request in most cases"
 msgid "Setting network address"
-msgstr "正在设置网络地址"
+msgstr "Agordi retan adreson"
 
 #: editor/uiutils.cpp:306
 #, kde-format
 msgctxt "is other action required to fully connect? captive portals, etc."
 msgid "Checking further connectivity"
-msgstr "正在进一步检查连接情况"
+msgstr "Kontrolante plian konekteblecon"
 
 #: editor/uiutils.cpp:309
 #, kde-format
 msgctxt ""
 "a secondary connection (e.g. VPN) has to be activated first to continue"
 msgid "Waiting for a secondary connection"
-msgstr "正在等待二次连接"
+msgstr "Atendante sekundaran konekton"
 
 #: editor/uiutils.cpp:313
 #, kde-format
 msgctxt "network interface connected state label"
 msgid "Connected"
-msgstr "已连接"
+msgstr "Konektis"
 
 #: editor/uiutils.cpp:315
 #, kde-format
 msgctxt "network interface connected state label"
 msgid "Connected to %1"
-msgstr "已连接到 %1"
+msgstr "Konektita al %1"
 
 #: editor/uiutils.cpp:319
 #, kde-format
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
-msgstr "正在禁用连接"
+msgstr "Malaktivigo de konekto"
 
 #: editor/uiutils.cpp:322
 #, kde-format
 msgctxt "network interface connection failed state label"
 msgid "Connection Failed"
-msgstr "连接失败"
+msgstr "Konekto Malsukcesis"
 
 #: editor/uiutils.cpp:325 editor/uiutils.cpp:359
 #, kde-format
 msgctxt "interface state"
 msgid "Error: Invalid state"
-msgstr "错误：无效的状态"
+msgstr "Eraro: Nevalida stato"
 
 #: editor/uiutils.cpp:335
 #, kde-format
 msgctxt "The state of the VPN connection is unknown"
 msgid "Unknown"
-msgstr "未知"
+msgstr "Nekonata"
 
 #: editor/uiutils.cpp:338
 #, kde-format
 msgctxt "The VPN connection is preparing to connect"
 msgid "Preparing to connect"
-msgstr "正在准备连接"
+msgstr "Preparante por konekti"
 
 #: editor/uiutils.cpp:341
 #, kde-format
 msgctxt "The VPN connection needs authorization credentials"
 msgid "Needs authorization"
-msgstr "需要授权"
+msgstr "Bezonas rajtigon"
 
 #: editor/uiutils.cpp:344
 #, kde-format
 msgctxt "The VPN connection is being established"
 msgid "Connecting"
-msgstr "正在连接"
+msgstr "Konektante"
 
 #: editor/uiutils.cpp:347
 #, kde-format
 msgctxt "The VPN connection is getting an IP address"
 msgid "Setting network address"
-msgstr "正在设置网络地址"
+msgstr "Agordi retan adreson"
 
 #: editor/uiutils.cpp:350
 #, kde-format
 msgctxt "The VPN connection is active"
 msgid "Activated"
-msgstr "已激活"
+msgstr "Aktivigita"
 
 #: editor/uiutils.cpp:353
 #, kde-format
 msgctxt "The VPN connection failed"
 msgid "Failed"
-msgstr "已失败"
+msgstr "Malsukcesis"
 
 #: editor/uiutils.cpp:356
 #, kde-format
 msgctxt "The VPN connection is disconnected"
 msgid "Failed"
-msgstr "已失败"
+msgstr "Malsukcesis"
 
 #: editor/uiutils.cpp:369
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Unknown"
-msgstr "未知"
+msgstr "Nekonata"
 
 #: editor/uiutils.cpp:372
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Adhoc"
-msgstr "自组网 (Ad-hoc)"
+msgstr "Adhoc"
 
 #: editor/uiutils.cpp:375
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Infrastructure"
-msgstr "基础设施 (Infrastructure)"
+msgstr "Infrastrukturo"
 
 #: editor/uiutils.cpp:378
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Access point"
-msgstr "接入点/无线 AP (Access Point)"
+msgstr "Alirpunkto"
 
 #: editor/uiutils.cpp:403
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise WEP40"
-msgstr "成对/Pairwise WEP40"
+msgstr "Duope WEP40"
 
 #: editor/uiutils.cpp:405
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise WEP104"
-msgstr "成对/Pairwise WEP104"
+msgstr "Duope WEP104"
 
 #: editor/uiutils.cpp:407
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise TKIP"
-msgstr "成对/Pairwise TKIP"
+msgstr "Duope TKIP"
 
 #: editor/uiutils.cpp:409
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise CCMP"
-msgstr "成对/Pairwise CCMP"
+msgstr "Duope CCMP"
 
 #: editor/uiutils.cpp:411
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group WEP40"
-msgstr "分组/Group WEP40"
+msgstr "Grupo WEP40"
 
 #: editor/uiutils.cpp:413
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group WEP104"
-msgstr "分组/Group WEP104"
+msgstr "Grupo WEP104"
 
 #: editor/uiutils.cpp:415
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group TKIP"
-msgstr "分组/Group TKIP"
+msgstr "Grupo TKIP"
 
 #: editor/uiutils.cpp:417
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group CCMP"
-msgstr "分组/Group CCMP"
+msgstr "Grupo CCMP"
 
 #: editor/uiutils.cpp:419
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "PSK"
-msgstr "共享密钥/PSK"
+msgstr "PSK"
 
 #: editor/uiutils.cpp:421
 #, kde-format
@@ -2486,7 +2508,7 @@ msgstr "802.1x"
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 Bit/s"
-msgstr "%1 Bit/s"
+msgstr "%1 Bito/s"
 
 #: editor/uiutils.cpp:432
 #, kde-format
@@ -2522,7 +2544,7 @@ msgstr "UMTS/HSxPA"
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GPRS/EDGE"
-msgstr "GPRS/EDGE"
+msgstr "GPRS/RANDO"
 
 #: editor/uiutils.cpp:470
 #, kde-format
@@ -2534,7 +2556,7 @@ msgstr "GSM"
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "Any"
-msgstr "任意"
+msgstr "Ajna"
 
 #: editor/uiutils.cpp:482
 #, kde-format
@@ -2552,19 +2574,19 @@ msgstr "LTE"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision B"
-msgstr "CDMA2000 EVDO 修订版 B"
+msgstr "CDMA2000 EVDO-revizio B"
 
 #: editor/uiutils.cpp:490
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision A"
-msgstr "CDMA2000 EVDO 修订版 A"
+msgstr "CDMA2000 EVDO-revizio A"
 
 #: editor/uiutils.cpp:492
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision 0"
-msgstr "CDMA2000 EVDO 修订版 0"
+msgstr "CDMA2000 EVDO-revizio 0"
 
 #: editor/uiutils.cpp:494
 #, kde-format
@@ -2606,7 +2628,7 @@ msgstr "UMTS"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "EDGE"
-msgstr "EDGE"
+msgstr "RANDO"
 
 #: editor/uiutils.cpp:508
 #, kde-format
@@ -2618,7 +2640,7 @@ msgstr "GPRS"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "Compact GSM"
-msgstr "Compact GSM"
+msgstr "Kompakta GSM"
 
 #: editor/uiutils.cpp:512
 #, kde-format
@@ -2630,127 +2652,127 @@ msgstr "GSM"
 #, kde-format
 msgctxt "Analog wireline modem"
 msgid "Analog"
-msgstr "模拟"
+msgstr "Analoga"
 
 #: editor/uiutils.cpp:516 editor/uiutils.cpp:521
 #, kde-format
 msgctxt "Unknown cellular access technology"
 msgid "Unknown"
-msgstr "未知"
+msgstr "Nekonata"
 
 #: editor/uiutils.cpp:518
 #, kde-format
 msgctxt "Any cellular access technology"
 msgid "Any"
-msgstr "任意"
+msgstr "Ajna"
 
 #: editor/uiutils.cpp:528
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem is unlocked."
-msgstr "调制解调器已被解锁。"
+msgstr "Modemo estas malŝlosita."
 
 #: editor/uiutils.cpp:530
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN code."
-msgstr "SIM 需要 PIN 码。"
+msgstr "SIM postulas la PIN-kodon."
 
 #: editor/uiutils.cpp:532
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN2 code."
-msgstr "SIM 需要 PIN2 码。"
+msgstr "SIM postulas la PIN2-kodon."
 
 #: editor/uiutils.cpp:534
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK code."
-msgstr "SIM 需要 PUK 码。"
+msgstr "SIM postulas la PUK-kodon."
 
 #: editor/uiutils.cpp:536
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK2 code."
-msgstr "SIM 需要 PUK2 码。"
+msgstr "SIM postulas la PUK2-kodon."
 
 #: editor/uiutils.cpp:538
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PIN code."
-msgstr "调制解调器需要运营商 PIN 码。"
+msgstr "Modemo postulas la PIN-kodon de la servoprovizanto."
 
 #: editor/uiutils.cpp:540
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PUK code."
-msgstr "调制解调器需要运营商 PUK 码。"
+msgstr "Modemo postulas la servoprovizanto PUK-kodo."
 
 #: editor/uiutils.cpp:542
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PIN code."
-msgstr "调制解调器需要网络 PIN 码。"
+msgstr "Modemo postulas la retan PIN-kodon."
 
 #: editor/uiutils.cpp:544
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PUK code."
-msgstr "调制解调器需要网络 PUK 码。"
+msgstr "Modemo postulas la retan PUK-kodon."
 
 #: editor/uiutils.cpp:546
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PIN code."
-msgstr "调制解调器需要 PIN 码。"
+msgstr "Modemo postulas la PIN-kodon."
 
 #: editor/uiutils.cpp:548
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PIN code."
-msgstr "调制解调器需要企业 PIN 码。"
+msgstr "Modemo postulas la kompanian PIN-kodon."
 
 #: editor/uiutils.cpp:550
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PUK code."
-msgstr "调制解调器需要企业 PUK 码。"
+msgstr "Modemo postulas la kompanian PUK-kodon."
 
 #: editor/uiutils.cpp:552
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PIN code."
-msgstr "调制解调器需要 PH-FSIM PIN 码。"
+msgstr "Modemo postulas la PIN-kodon PH-FSIM."
 
 #: editor/uiutils.cpp:554
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PUK code."
-msgstr "调制解调器需要 PH-FSIM PUK 码。"
+msgstr "Modemo postulas la PH-FSIM PUK-kodon."
 
 #: editor/uiutils.cpp:556
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PIN code."
-msgstr "调制解调器需要网络子集 PIN 码。"
+msgstr "Modemo postulas la reto-subaron PIN-kodon."
 
 #: editor/uiutils.cpp:558
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PUK code."
-msgstr "调制解调器需要网络子集 PUK 码。"
+msgstr "Modemo postulas la retan subaron PUK-kodon."
 
 #: editor/uiutils.cpp:561
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Lock reason unknown."
-msgstr "锁定原因未知。"
+msgstr "Ŝlosa kialo nekonata."
 
 #: editor/uiutils.cpp:584
 #, kde-format
 msgctxt "@label no security"
 msgid "Insecure"
-msgstr "不安全"
+msgstr "Nesekura"
 
 #: editor/uiutils.cpp:587
 #, kde-format
@@ -2762,13 +2784,13 @@ msgstr "WEP"
 #, kde-format
 msgctxt "@label LEAP security"
 msgid "LEAP"
-msgstr "LEAP"
+msgstr "SALTO"
 
 #: editor/uiutils.cpp:593
 #, kde-format
 msgctxt "@label Dynamic WEP security"
 msgid "Dynamic WEP"
-msgstr "动态 WEP"
+msgstr "Dinamika WEP"
 
 #: editor/uiutils.cpp:596
 #, kde-format
@@ -2810,7 +2832,7 @@ msgstr "WPA3-EAP-SUITE-B-192"
 #, kde-format
 msgctxt "@label unknown security"
 msgid "Unknown security type"
-msgstr "未知安全性类型"
+msgstr "Nekonata sekureca tipo"
 
 #: editor/uiutils.cpp:630
 #, kde-format
@@ -2819,7 +2841,8 @@ msgctxt ""
 "the number of minutes since usage"
 msgid "One minute ago"
 msgid_plural "%1 minutes ago"
-msgstr[0] "%1 分钟前"
+msgstr[0] "Antaŭ unu minuto"
+msgstr[1] "Antaŭ %1 minutoj"
 
 #: editor/uiutils.cpp:636
 #, kde-format
@@ -2828,21 +2851,22 @@ msgctxt ""
 "the number of hours since usage"
 msgid "One hour ago"
 msgid_plural "%1 hours ago"
-msgstr[0] "%1 小时前"
+msgstr[0] "Antaŭ unu horo"
+msgstr[1] "Antaŭ %1 horoj"
 
 #: editor/uiutils.cpp:641
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
-msgstr "昨天"
+msgstr "Hieraŭ"
 
 #: editor/uiutils.cpp:649
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
-msgstr "从未使用"
+msgstr "Neniam"
 
 #: editor/uiutils.cpp:664
 #, kde-format
@@ -2851,7 +2875,8 @@ msgctxt ""
 "the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
-msgstr[0] "上次使用时间 ：%1 分钟前"
+msgstr[0] "Laste uzita antaŭ unu minuto"
+msgstr[1] "Laste uzita antaŭ %1 minutoj"
 
 #: editor/uiutils.cpp:670
 #, kde-format
@@ -2860,58 +2885,59 @@ msgctxt ""
 "the number of hours since usage"
 msgid "Last used one hour ago"
 msgid_plural "Last used %1 hours ago"
-msgstr[0] "上次使用时间 ：%1 小时前"
+msgstr[0] "Laste uzita antaŭ unu horo"
+msgstr[1] "Laste uzita antaŭ %1 horoj"
 
 #: editor/uiutils.cpp:675
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
-msgstr "上次使用时间 ：昨天"
+msgstr "Laste uzata hieraŭ"
 
 #: editor/uiutils.cpp:677
 #, kde-format
 msgid "Last used on %1"
-msgstr "上次使用时间 ：%1"
+msgstr "Laste uzata en %1"
 
 #: editor/uiutils.cpp:683
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never used"
-msgstr "从未使用"
+msgstr "Neniam uzata"
 
 #: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
-msgstr "找不到类型 %1 的 VPN 插件"
+msgstr "Neniu VPN-aldonaĵo trovita por tipo %1"
 
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr "导入此类型的 VPN 尚未实现"
+msgstr "Importi ĉi tiun tipon de VPN ne estas efektivigita"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr "尚未实现"
+msgstr "Ne efektivigita"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
 msgctxt "@item:intable shortcut for Not Available"
 msgid "N/A"
-msgstr "不可用"
+msgstr "N/A"
 
 #: editor/widgets/advancedpermissionswidget.cpp:87
 #, kde-format
 msgctxt "@info:tooltip real user name is not available"
 msgid "Not Available"
-msgstr "不可用"
+msgstr "Ne disponebla"
 
 #: editor/widgets/bssidcombobox.cpp:122
 #, kde-format
 msgid "First select the SSID"
-msgstr "首先选择 SSID"
+msgstr "Unue elekti la SSID"
 
 #: editor/widgets/bssidcombobox.cpp:131
 #, kde-format
@@ -2921,32 +2947,32 @@ msgid ""
 "Channel: %4"
 msgstr ""
 "%1 (%2%)\n"
-"频段：%3 Mhz\n"
-"信道：%4"
+"Frekvenco: %3 Mhz\n"
+"Kanalo: %4"
 
 #: editor/widgets/ipv4routeswidget.cpp:31
 #, kde-format
 msgctxt "Header text for IPv4 route metric"
 msgid "Metric"
-msgstr "跃点数"
+msgstr "Metriko"
 
 #: editor/widgets/ipv6routeswidget.cpp:28
 #, kde-format
 msgctxt "Header text for IPv6 netmask"
 msgid "Netmask"
-msgstr "子网掩码"
+msgstr "Reta masko"
 
 #: editor/widgets/ipv6routeswidget.cpp:32
 #, kde-format
 msgctxt "Header text for IPv6 route metric"
 msgid "Metric"
-msgstr "跃点数"
+msgstr "Metriko"
 
 #: editor/widgets/mobileconnectionwizard.cpp:39
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "New Mobile Broadband Connection"
-msgstr "新建移动宽带连接"
+msgstr "Nova Poŝtelefona Larĝbenda Konekto"
 
 #: editor/widgets/mobileconnectionwizard.cpp:135
 #: editor/widgets/mobileconnectionwizard.cpp:153
@@ -2955,32 +2981,32 @@ msgstr "新建移动宽带连接"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My plan is not listed…"
-msgstr "没有列出我的资费方案…"
+msgstr "Mia plano ne estas listigita…"
 
 #: editor/widgets/mobileconnectionwizard.cpp:138
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Unknown Provider"
-msgstr "未知运营商"
+msgstr "Nekonata Provizanto"
 
 #: editor/widgets/mobileconnectionwizard.cpp:146
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Default"
-msgstr "默认"
+msgstr "Defaŭlte"
 
 #: editor/widgets/mobileconnectionwizard.cpp:183
 #: editor/widgets/mobileconnectionwizard.cpp:191
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "APN: %1"
-msgstr "APN：%1"
+msgstr "APN: %1"
 
 #: editor/widgets/mobileconnectionwizard.cpp:236
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Set up a Mobile Broadband Connection"
-msgstr "设置移动宽带连接"
+msgstr "Agordi Poŝtelefonan Larĝbendan Konekton"
 
 #: editor/widgets/mobileconnectionwizard.cpp:240
 #, kde-format
@@ -2988,117 +3014,119 @@ msgctxt "Mobile Connection Wizard"
 msgid ""
 "This assistant helps you easily set up a mobile broadband connection to a "
 "cellular (3G) network."
-msgstr "此辅助程序将引导您轻松设置移动宽带，以连接到 3G 移动网络。"
+msgstr ""
+"Ĉi tiu asistanto helpas vin facile agordi moveblan larĝbendan konekton al "
+"ĉela (3G) reto."
 
 #: editor/widgets/mobileconnectionwizard.cpp:244
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "You will need the following information:"
-msgstr "您需要提供以下信息："
+msgstr "Vi bezonos la jenajn informojn:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:248
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband provider's name"
-msgstr "您的宽带运营商名称"
+msgstr "La nomo de via larĝbenda provizanto"
 
 #: editor/widgets/mobileconnectionwizard.cpp:249
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband billing plan name"
-msgstr "您的宽带资费方案名称"
+msgstr "Nomo de via larĝbenda faktura plano"
 
 #: editor/widgets/mobileconnectionwizard.cpp:250
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
-msgstr "(某些情况下需要) 您的宽带付费方案 APN (接入点名称)"
+msgstr "(en iuj kazoj) Via larĝbenda faktura plano APN (Alirpunkto-Nomo)"
 
 #: editor/widgets/mobileconnectionwizard.cpp:254
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Create a connection for &this mobile broadband device:"
-msgstr "创建连接使用的宽带设备(%T)："
+msgstr "Krei konekton por &ĉi tiu movebla larĝbenda aparato:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:258
 #: editor/widgets/mobileconnectionwizard.cpp:385
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Any GSM device"
-msgstr "任意 GSM 设备"
+msgstr "Ajna GSM-aparato"
 
 #: editor/widgets/mobileconnectionwizard.cpp:260
 #: editor/widgets/mobileconnectionwizard.cpp:387
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Any CDMA device"
-msgstr "任意 CDMA 设备"
+msgstr "Ajna CDMA-aparato"
 
 #: editor/widgets/mobileconnectionwizard.cpp:311
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Installed GSM device"
-msgstr "已安装的 GSM 设备"
+msgstr "Instalita GSM-aparato"
 
 #: editor/widgets/mobileconnectionwizard.cpp:315
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Installed CDMA device"
-msgstr "已安装的 CDMA 设备"
+msgstr "Instalita CDMA-aparato"
 
 #: editor/widgets/mobileconnectionwizard.cpp:400
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider's Country"
-msgstr "选择运营商所在的国家/地区"
+msgstr "Elekti la Lando de via Provizanto"
 
 #: editor/widgets/mobileconnectionwizard.cpp:403
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Country List:"
-msgstr "国家/地区列表："
+msgstr "Landa Listo:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:407
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My country is not listed"
-msgstr "没有列出我的国家/地区"
+msgstr "Mia lando ne estas listigita"
 
 #: editor/widgets/mobileconnectionwizard.cpp:423
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider"
-msgstr "选择您的运营商"
+msgstr "Elekti vian Provizanton"
 
 #: editor/widgets/mobileconnectionwizard.cpp:426
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Select your provider from a &list:"
-msgstr "从列表中选择您的运营商(&l)："
+msgstr "Elekti vian provizanton el &listo:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:435
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "I cannot find my provider and I wish to enter it &manually:"
-msgstr "无法找到我的运营商，我想要手动输入(&M)："
+msgstr "Mi ne povas trovi mian provizanton kaj mi deziras enigi ĝin &mane:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:477
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Billing Plan"
-msgstr "选择您的资费方案"
+msgstr "Elekti vian Fakturan Planon"
 
 #: editor/widgets/mobileconnectionwizard.cpp:480
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "&Select your plan:"
-msgstr "选择您的资费方案(&S)："
+msgstr "&Selektu vian planon:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:487
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Selected plan &APN (Access Point Name):"
-msgstr "所选资费方案的 APN (接入点名称) (&A)："
+msgstr "Elektita plano &APN (Nomo de Alirpunkto):"
 
 #: editor/widgets/mobileconnectionwizard.cpp:500
 #, kde-format
@@ -3109,60 +3137,61 @@ msgid ""
 "\n"
 "If you are unsure of your plan please ask your provider for your plan's APN."
 msgstr ""
-"警告：选择了错误的资费方案可能会导致您的宽带账户发生付款问题，甚至无法连"
-"接。\n"
+"Averto: Elekti malĝustan planon povas rezultigi fakturajn problemojn por via "
+"larĝbenda konto aŭ povas malhelpi konekteblecon.\n"
 "\n"
-"如果您不了解正在使用的资费方案，请向您的运营商咨询该资费方案的 APN。"
+"Se vi ne certas pri via plano, bonvolu peti al via provizanto la APN de via "
+"plano."
 
 #: editor/widgets/mobileconnectionwizard.cpp:540
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Confirm Mobile Broadband Settings"
-msgstr "确认移动宽带设置"
+msgstr "Konfirmi Poŝtelefonajn Larĝbendajn Agordojn"
 
 #: editor/widgets/mobileconnectionwizard.cpp:543
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid ""
 "Your mobile broadband connection is configured with the following settings:"
-msgstr "您的移动宽带连接将按照以下设置进行配置："
+msgstr "Via movebla larĝbenda konekto estas agordita kun la sekvaj agordoj:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:547
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your Provider:"
-msgstr "您的运营商："
+msgstr "Via Provizanto:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:552
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your Plan:"
-msgstr "您的资费方案："
+msgstr "Via Plano:"
 
 #: editor/widgets/passwordfield.cpp:32
 #, kde-format
 msgid "Change the visibility of the password"
-msgstr "显示/隐藏密码"
+msgstr "Ŝanĝi la videblecon de la pasvorto"
 
 #: editor/widgets/passwordfield.cpp:41
 #, kde-format
 msgid "Store password for this user only (encrypted)"
-msgstr "仅为当前用户保存密码 (加密)"
+msgstr "Konservi pasvorton nur por ĉi tiu uzanto (ĉifrita)"
 
 #: editor/widgets/passwordfield.cpp:43
 #, kde-format
 msgid "Store password for all users (not encrypted)"
-msgstr "为所有用户保存密码 (不加密)"
+msgstr "Konservi pasvorton por ĉiuj uzantoj (ne ĉifrita)"
 
 #: editor/widgets/passwordfield.cpp:45 editor/widgets/passwordfield.cpp:91
 #, kde-format
 msgid "Ask for this password every time"
-msgstr "每次都询问密码"
+msgstr "Peti ĉi tiun pasvorton ĉiufoje"
 
 #: editor/widgets/passwordfield.cpp:106
 #, kde-format
 msgid "This password is not required"
-msgstr "不需要密码"
+msgstr "Ĉi tiu pasvorto ne estas bezonata"
 
 #: editor/widgets/ssidcombobox.cpp:131
 #, kde-format
@@ -3172,8 +3201,8 @@ msgid ""
 "Frequency: %4 Mhz"
 msgstr ""
 "%1 (%2%)\n"
-"安全性：%3\n"
-"　频段：%4 Mhz"
+"Sekureco: %3\n"
+"Frekvenco: %4 Mhz"
 
 #: editor/widgets/ssidcombobox.cpp:139
 #, kde-format
@@ -3183,14 +3212,14 @@ msgid ""
 "Frequency: %3 Mhz"
 msgstr ""
 "%1 (%2%)\n"
-"安全性：不安全\n"
-"　频段：%3 Mhz"
+"Sekureco: Nesekura\n"
+"Frekvenco: %3 Mhz"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/widgets/ui/advancedpermissionswidget.ui:33
 #, kde-format
 msgid "Available Users"
-msgstr "可用用户"
+msgstr "Disponeblaj Uzantoj"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
@@ -3198,7 +3227,7 @@ msgstr "可用用户"
 #: editor/widgets/ui/advancedpermissionswidget.ui:213
 #, kde-format
 msgid "Real Name"
-msgstr "全称"
+msgstr "Reala Nomo"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
@@ -3207,19 +3236,19 @@ msgstr "全称"
 #, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username"
-msgstr "用户名"
+msgstr "Uzantnomo"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/widgets/ui/advancedpermissionswidget.ui:160
 #, kde-format
 msgid "Users allowed to activate the connection"
-msgstr "允许激活连接的用户"
+msgstr "Uzantoj permesis aktivigi la konekton"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
 #: editor/widgets/ui/ipv4routes.ui:20
 #, kde-format
 msgid "Edit IPv4 Routes"
-msgstr "编辑 IPv4 路由"
+msgstr "Redakti IPv4-Itinerojn"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
@@ -3227,27 +3256,29 @@ msgstr "编辑 IPv4 路由"
 msgid ""
 "If enabled, this connection will never be used as the default network "
 "connection"
-msgstr "勾选此项后，此连接将不会被用作默认网络连接"
+msgstr ""
+"Se ĝi estas ebligita, ĉi tiu konekto neniam estos uzata kiel la defaŭlta "
+"retkonekto"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
 #, kde-format
 msgid "Use only for resources on this connection"
-msgstr "仅用于此连接的资源"
+msgstr "Uzi nur por rimedoj pri ĉi tiu konekto"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv4routes.ui:74
 #, kde-format
 msgctxt "Remove a selected row"
 msgid "Remove"
-msgstr "移除"
+msgstr "Forigi"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
 #: editor/widgets/ui/ipv4routes.ui:124 editor/widgets/ui/ipv6routes.ui:77
 #, kde-format
 msgctxt "Insert a row"
 msgid "Add"
-msgstr "添加"
+msgstr "Aldoni"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:136 editor/widgets/ui/ipv6routes.ui:120
@@ -3255,96 +3286,98 @@ msgstr "添加"
 msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
 "specified above are used"
-msgstr "勾选此项时，自动配置路由将被忽略，系统将只使用上面指定的路由。"
+msgstr ""
+"Se ebligita, aŭtomate agorditaj itineroj estas ignoritaj kaj nur itineroj "
+"specifitaj supre estas uzataj"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
 #, kde-format
 msgid "Ignore automatically obtained routes"
-msgstr "忽略自动获取的路由"
+msgstr "Ignori aŭtomate akiritajn itinerojn"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
 #: editor/widgets/ui/ipv6routes.ui:20
 #, kde-format
 msgid "Edit IPv6 Routes"
-msgstr "编辑 IPv6 路由"
+msgstr "Redakti IPv6-Itinerojn"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv6routes.ui:92
 #, kde-format
 msgctxt "Remove a selected row"
 msgid "R&emove"
-msgstr "移除(&E)"
+msgstr "R&forigi"
 
 #: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "Plasma 缺少对“%1”VPN 连接的支持。"
+msgstr "Plasmo mankas subteno por '%1' VPN-konektoj."
 
 #: handler.cpp:113
 #, kde-format
 msgid "Report Bug"
-msgstr "报告程序缺陷"
+msgstr "Raporti Cimon"
 
 #: handler.cpp:136
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr "NetworkManager 缺少对“%1”VPN 连接的支持。"
+msgstr "NetworkManager mankas subteno por '%1' VPN-konektoj."
 
 #: handler.cpp:138
 #, kde-format
 msgid "Install"
-msgstr "安装"
+msgstr "Instali"
 
 #: handler.cpp:353 handler.cpp:846
 #, kde-format
 msgid "Failed to add connection %1"
-msgstr "添加连接 %1 失败"
+msgstr "Malsukcesis aldoni konekton %1"
 
 #: handler.cpp:362 handler.cpp:888
 #, kde-format
 msgid "Connection %1 has been added"
-msgstr "连接 %1 已被添加"
+msgstr "Konekto %1 estis aldonita"
 
 #: handler.cpp:838
 #, kde-format
 msgid "Failed to activate %1"
-msgstr "激活 %1 失败"
+msgstr "Malsukcesis aktivigi %1"
 
 #: handler.cpp:842
 #, kde-format
 msgid "Failed to add %1"
-msgstr "添加 %1 失败"
+msgstr "Malsukcesis aldoni %1"
 
 #: handler.cpp:850
 #, kde-format
 msgid "Failed to deactivate %1"
-msgstr "禁用 %1 失败"
+msgstr "Malsukcesis malaktivigi %1"
 
 #: handler.cpp:854
 #, kde-format
 msgid "Failed to remove %1"
-msgstr "移除 %1 失败"
+msgstr "Malsukcesis forigi %1"
 
 #: handler.cpp:858
 #, kde-format
 msgid "Failed to update connection %1"
-msgstr "更新连接 %1 失败"
+msgstr "Malsukcesis ĝisdatigi konekton %1"
 
 #: handler.cpp:869
 #, kde-format
 msgid "Failed to create hotspot %1"
-msgstr "创建热点 %1 失败"
+msgstr "Malsukcesis krei retpunkton %1"
 
 #: handler.cpp:892
 #, kde-format
 msgid "Connection %1 has been removed"
-msgstr "连接 %1 已被移除"
+msgstr "Konekto %1 estas forigita"
 
 #: handler.cpp:896
 #, kde-format
 msgid "Connection %1 has been updated"
-msgstr "连接 %1 已被更新"
+msgstr "Konekto %1 estas ĝisdatigita"
 
 #: models/creatableconnectionsmodel.cpp:136
 #: models/creatableconnectionsmodel.cpp:143
@@ -3355,49 +3388,49 @@ msgstr "连接 %1 已被更新"
 #: models/creatableconnectionsmodel.cpp:181
 #, kde-format
 msgid "Hardware based connections"
-msgstr "基于硬件的连接"
+msgstr "Konektoj bazitaj en aparataro"
 
 #: models/creatableconnectionsmodel.cpp:137
 #, kde-format
 msgid "Some DSL description"
-msgstr "DSL 的描述"
+msgstr "Iu DSL-priskribo"
 
 #: models/creatableconnectionsmodel.cpp:144
 #, kde-format
 msgid "Some infiniband description"
-msgstr "InfiniBand 的描述"
+msgstr "Iu senfinaba priskribo"
 
 #: models/creatableconnectionsmodel.cpp:149
 #, kde-format
 msgid "Mobile Broadband"
-msgstr "移动宽带"
+msgstr "Poŝtelefona Larĝbendo"
 
 #: models/creatableconnectionsmodel.cpp:151
 #, kde-format
 msgid "Some mobile broadband description"
-msgstr "移动宽带的描述"
+msgstr "Iu movebla larĝa bando priskribo"
 
 #: models/creatableconnectionsmodel.cpp:158
 #: models/creatableconnectionsmodel.cpp:165
 #, kde-format
 msgid "Some wired ethernet description"
-msgstr "有线以太网的描述"
+msgstr "Iu kablata eterreta priskribo"
 
 #: models/creatableconnectionsmodel.cpp:163
 #, kde-format
 msgid "Wired Ethernet (shared)"
-msgstr "有线以太网 (共享)"
+msgstr "Kablita Eterreto (komuna)"
 
 #: models/creatableconnectionsmodel.cpp:175
 #: models/creatableconnectionsmodel.cpp:182
 #, kde-format
 msgid "Some wi-fi description"
-msgstr "Wi-Fi 的描述"
+msgstr "Iu wi-fi-priskribo"
 
 #: models/creatableconnectionsmodel.cpp:180
 #, kde-format
 msgid "Wi-Fi (shared)"
-msgstr "Wi-Fi (共享)"
+msgstr "Wifi (kunhavita)"
 
 #: models/creatableconnectionsmodel.cpp:191
 #: models/creatableconnectionsmodel.cpp:201
@@ -3405,208 +3438,208 @@ msgstr "Wi-Fi (共享)"
 #: models/creatableconnectionsmodel.cpp:221
 #, kde-format
 msgid "Virtual connections"
-msgstr "虚拟连接"
+msgstr "Virtualaj konektoj"
 
 #: models/creatableconnectionsmodel.cpp:192
 #: models/creatableconnectionsmodel.cpp:202
 #, kde-format
 msgid "Some bond description"
-msgstr "多网卡绑定 (bond) 的描述"
+msgstr "Iu priskribo de obligacio"
 
 #: models/creatableconnectionsmodel.cpp:212
 #, kde-format
 msgid "Some team description"
-msgstr "网络组 (team) 的描述"
+msgstr "Iu teampriskribo"
 
 #: models/creatableconnectionsmodel.cpp:222
 #, kde-format
 msgid "Some vlan description"
-msgstr "虚拟局域网 (vlan) 的描述"
+msgstr "Iu vlan priskribo"
 
 #: models/creatableconnectionsmodel.cpp:242
 #: models/creatableconnectionsmodel.cpp:255
 #, kde-format
 msgid "VPN connections"
-msgstr "VPN 连接"
+msgstr "VPN-konektoj"
 
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
-msgstr "导入 VPN 连接…"
+msgstr "Importi VPN-konekton…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format
 msgid "Other"
-msgstr "其他"
+msgstr "Alia"
 
 #: models/creatableconnectionsmodel.cpp:268
 #, kde-format
 msgid "Import a saved configuration file"
-msgstr "导入保存的配置文件"
+msgstr "Importi konservitan agordan dosieron"
 
 #: models/networkmodelitem.cpp:42
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "连接类型未知"
+msgstr "La konektotipo estas Nekonata"
 
 #: models/networkmodelitem.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "连接类型为 ADSL"
+msgstr "La konektotipo estas ADSL"
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr "连接类型为蓝牙"
+msgstr "La konektotipo estas Bluetooth"
 
 #: models/networkmodelitem.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "连接类型为桥接 (Bridge)"
+msgstr "La konektotipo estas Ponto"
 
 #: models/networkmodelitem.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "连接类型为 CDMA"
+msgstr "La konektotipo estas CDMA"
 
 #: models/networkmodelitem.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "连接类型为 GSM"
+msgstr "La konektotipo estas GSM"
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr "连接类型为 InfiniBand"
+msgstr "La konektotipo estas Infiniband"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
-msgstr "连接类型为 OLPC 网格"
+msgstr "La konektotipo estas OLPC Mesh"
 
 #: models/networkmodelitem.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr "连接类型为 PPPoE"
+msgstr "La konektotipo estas PPOPE"
 
 #: models/networkmodelitem.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "连接类型为虚拟局域网 (VLAN)"
+msgstr "La konektotipo estas VLAN"
 
 #: models/networkmodelitem.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "连接类型为 VPN"
+msgstr "La konektotipo estas VPN"
 
 #: models/networkmodelitem.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "连接类型为 Wimax"
+msgstr "La konektotipo estas Wimax"
 
 #: models/networkmodelitem.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "连接类型为有线网络"
+msgstr "La konektotipo estas Kablata"
 
 #: models/networkmodelitem.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr "连接类型为无线网络"
+msgstr "La konektotipo estas Sendrata"
 
 #: models/networkmodelitem.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr "连接类型为网络组 (Team)"
+msgstr "La konektotipo estas Teamo"
 
 #: models/networkmodelitem.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr "连接类型为常规"
+msgstr "La konektotipo estas Ĝenerala"
 
 #: models/networkmodelitem.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr "连接类型为隧道"
+msgstr "La konektotipo estas Tunelo"
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr "连接类型为 IP 隧道"
+msgstr "La konektotipo estas IP Tunelo"
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
-msgstr "连接类型为 WireGuard"
+msgstr "La konektotipo estas WireGuard"
 
 #: models/networkmodelitem.cpp:585
 #, kde-format
 msgid "IPv4 Address"
-msgstr "IPv4 地址"
+msgstr "IPv4-adreso"
 
 #: models/networkmodelitem.cpp:591
 #, kde-format
 msgid "IPv4 Default Gateway"
-msgstr "IPv4 默认网关"
+msgstr "IPv4 Defaŭlta Enirejo"
 
 #: models/networkmodelitem.cpp:598
 #, kde-format
 msgid "IPv4 Primary Nameserver"
-msgstr "IPv4 主域名服务器"
+msgstr "IPv4 Ĉefa Nomservilo"
 
 #: models/networkmodelitem.cpp:602
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
-msgstr "IPv4 辅助域名服务器"
+msgstr "IPv4 Malĉefa Nomservilo"
 
 #: models/networkmodelitem.cpp:612
 #, kde-format
 msgid "IPv6 Address"
-msgstr "IPv6 地址"
+msgstr "IPv6-adreso"
 
 #: models/networkmodelitem.cpp:614
 #, kde-format
 msgid "IPv6 ULA Address"
-msgstr "IPv6 ULA 地址"
+msgstr "IPv6 ULA Adreso"
 
 #: models/networkmodelitem.cpp:620
 #, kde-format
 msgid "IPv6 Default Gateway"
-msgstr "IPv6 默认网关"
+msgstr "IPv6 Defaŭlta Enirejo"
 
 #: models/networkmodelitem.cpp:627
 #, kde-format
 msgid "IPv6 Primary Nameserver"
-msgstr "IPv6 主域名服务器"
+msgstr "IPv6 Ĉefa Nomservilo"
 
 #: models/networkmodelitem.cpp:631
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
-msgstr "IPv6 辅助域名服务器"
+msgstr "IPv6 Malĉefa Nomservilo"
 
 #: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
 #, kde-format
 msgid "Connection speed"
-msgstr "连接速度"
+msgstr "Konekta rapido"
 
 #: models/networkmodelitem.cpp:642 models/networkmodelitem.cpp:660
 #: models/networkmodelitem.cpp:709 models/networkmodelitem.cpp:715
@@ -3614,27 +3647,27 @@ msgstr "连接速度"
 #: models/networkmodelitem.cpp:734 models/networkmodelitem.cpp:742
 #, kde-format
 msgid "MAC Address"
-msgstr "MAC 地址"
+msgstr "MAC-adreso"
 
 #: models/networkmodelitem.cpp:646
 #, kde-format
 msgid "Access point (SSID)"
-msgstr "接入点 (SSID)"
+msgstr ""
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
 msgid "Signal strength"
-msgstr "信号强度"
+msgstr ""
 
 #: models/networkmodelitem.cpp:650
 #, kde-format
 msgid "Security type"
-msgstr "安全性类型"
+msgstr ""
 
 #: models/networkmodelitem.cpp:657
 #, kde-format
 msgid "Frequency"
-msgstr "频段"
+msgstr "Frekvenco"
 
 #: models/networkmodelitem.cpp:658
 #, kde-format
@@ -3644,61 +3677,61 @@ msgstr "BSSID"
 #: models/networkmodelitem.cpp:672
 #, kde-format
 msgid "Operator"
-msgstr "运营商"
+msgstr "Operatoro"
 
 #: models/networkmodelitem.cpp:676
 #, kde-format
 msgid "Network ID"
-msgstr "网络 ID"
+msgstr "Reto ID"
 
 #: models/networkmodelitem.cpp:680
 #, kde-format
 msgid "Signal Quality"
-msgstr "信号质量"
+msgstr "Signala Kvalito"
 
 #: models/networkmodelitem.cpp:681
 #, kde-format
 msgid "Access Technology"
-msgstr "接入技术"
+msgstr "Aliro Teknologio"
 
 #: models/networkmodelitem.cpp:686
 #, kde-format
 msgid "VPN plugin"
-msgstr "VPN 插件"
+msgstr ""
 
 #: models/networkmodelitem.cpp:697
 #, kde-format
 msgid "Banner"
-msgstr "横幅"
+msgstr "Standardo"
 
 #: models/networkmodelitem.cpp:703
 #, kde-format
 msgid "Name"
-msgstr "名称"
+msgstr "Nomo"
 
 #: models/networkmodelitem.cpp:705 models/networkmodelitem.cpp:707
 #, kde-format
 msgid "Capabilities"
-msgstr "功能"
+msgstr "Kapabloj"
 
 #: models/networkmodelitem.cpp:713 models/networkmodelitem.cpp:719
 #: models/networkmodelitem.cpp:725 models/networkmodelitem.cpp:731
 #: models/networkmodelitem.cpp:737 models/networkmodelitem.cpp:740
 #, kde-format
 msgid "Type"
-msgstr "类型"
+msgstr "Tipo"
 
 #: models/networkmodelitem.cpp:733
 #, kde-format
 msgid "Vlan ID"
-msgstr "VLAN ID"
+msgstr "Vlan ID"
 
 #: models/networkmodelitem.cpp:737
 #, kde-format
 msgid "Adsl"
-msgstr "ADSL"
+msgstr "Adsl"
 
 #: models/networkmodelitem.cpp:747
 #, kde-format
 msgid "Device"
-msgstr "设备"
+msgstr "Aparato"

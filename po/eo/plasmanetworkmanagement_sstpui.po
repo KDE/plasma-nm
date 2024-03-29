@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2023-04-11 21:39+0100\n"
+"PO-Revision-Date: 2024-03-28 10:37+0100\n"
 "Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -131,7 +131,7 @@ msgstr "Permesi Malŝveligi kunpremadon"
 #: sstpadvanced.ui:212
 #, kde-format
 msgid "Allow TCP header compression"
-msgstr "Permesi TCP-kapa kunpremo"
+msgstr "Permesi TCP-kapan kunpremon"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
 #: sstpadvanced.ui:225

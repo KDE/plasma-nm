@@ -622,21 +622,23 @@ QCoro::Task<void> Handler::updateConnection(NetworkManager::Connection::Ptr conn
 {
     QDBusReply<void> reply = co_await connection->update(map);
 
+    KNotification *notification = nullptr;
     if (!reply.isValid()) {
-        KNotification *notification = new KNotification(QStringLiteral("FailedToUpdateConnection"), KNotification::CloseOnTimeout, this);
+        KNotification *notification = new KNotification(QStringLiteral("FailedToUpdateConnection"), KNotification::CloseOnTimeout);
         notification->setTitle(i18n("Failed to update connection %1", connection->name()));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setText(reply.error().message());
         notification->setIconName(QStringLiteral("dialog-warning"));
         notification->sendEvent();
     } else {
-        KNotification *notification = new KNotification(QStringLiteral("ConnectionUpdated"), KNotification::CloseOnTimeout, this);
+        KNotification *notification = new KNotification(QStringLiteral("ConnectionUpdated"), KNotification::CloseOnTimeout);
         notification->setText(i18n("Connection %1 has been updated", connection->name()));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setTitle(connection->name());
         notification->setIconName(QStringLiteral("dialog-information"));
         notification->sendEvent();
     }
+    connect(notification, &KNotification::closed, notification, &QObject::deleteLater);
 }
 
 void Handler::requestScan(const QString &interface)

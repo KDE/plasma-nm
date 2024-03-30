@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-03-30 02:21+0000\n"
 "PO-Revision-Date: 2023-04-22 00:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -3256,17 +3256,17 @@ msgstr "연결 %1을(를) 삭제할 수 없음"
 msgid "Connection %1 has been removed"
 msgstr "연결 %1이(가) 삭제됨"
 
-#: handler.cpp:627
+#: handler.cpp:628
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "연결 %1을(를) 업데이트할 수 없음"
 
-#: handler.cpp:634
+#: handler.cpp:635
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "연결 %1이(가) 업데이트됨"
 
-#: handler.cpp:808
+#: handler.cpp:810
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "핫스팟 %1을(를) 만들 수 없음"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-03-30 02:21+0000\n"
 "PO-Revision-Date: 2024-03-01 22:43+0200\n"
 "Last-Translator: Lasse Liehu <lasse.liehu@iki.fi>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3271,17 +3271,17 @@ msgstr "Poistaminen epäonnistui: %1"
 msgid "Connection %1 has been removed"
 msgstr "Yhteys %1 on poistettu"
 
-#: handler.cpp:627
+#: handler.cpp:628
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Yhteyden %1 katkaiseminen epäonnistui"
 
-#: handler.cpp:634
+#: handler.cpp:635
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Yhteys %1 on päivitetty"
 
-#: handler.cpp:808
+#: handler.cpp:810
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Tukiaseman %1 luonti epäonnistui"

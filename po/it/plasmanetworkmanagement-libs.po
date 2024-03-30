@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-03-30 02:21+0000\n"
 "PO-Revision-Date: 2023-03-30 21:20+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -3296,17 +3296,17 @@ msgstr "Rimozione di %1 non riuscita"
 msgid "Connection %1 has been removed"
 msgstr "La connessione %1 è stata rimossa"
 
-#: handler.cpp:627
+#: handler.cpp:628
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Aggiornamento della connessione %1 non riuscito"
 
-#: handler.cpp:634
+#: handler.cpp:635
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "La connessione %1 è stata aggiornata"
 
-#: handler.cpp:808
+#: handler.cpp:810
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Creazione dell'hotspot %1 non riuscita"

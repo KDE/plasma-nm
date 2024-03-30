@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-03-30 02:21+0000\n"
 "PO-Revision-Date: 2024-01-14 16:57+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -3292,17 +3292,17 @@ msgstr "No s'ha pogut eliminar %1"
 msgid "Connection %1 has been removed"
 msgstr "S'ha eliminat la connexió %1"
 
-#: handler.cpp:627
+#: handler.cpp:628
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "No s'ha pogut actualitzar la connexió %1"
 
-#: handler.cpp:634
+#: handler.cpp:635
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "S'ha actualitzat la connexió %1"
 
-#: handler.cpp:808
+#: handler.cpp:810
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "No s'ha pogut crear el punt d'accés %1"

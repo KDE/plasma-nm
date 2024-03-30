@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-16 00:39+0000\n"
+"POT-Creation-Date: 2024-03-30 00:39+0000\n"
 "PO-Revision-Date: 2017-09-08 16:16+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -3265,17 +3265,17 @@ msgstr "Αποτυχία αφαίρεσης %1"
 msgid "Connection %1 has been removed"
 msgstr "Η σύνδεση %1 αφαιρέθηκε"
 
-#: handler.cpp:627
+#: handler.cpp:628
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Αποτυχία ενημέρωσης σύνδεσης %1"
 
-#: handler.cpp:634
+#: handler.cpp:635
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Η σύνδεση %1 ενημερώθηκε"
 
-#: handler.cpp:808
+#: handler.cpp:810
 #, fuzzy, kde-format
 #| msgid "Failed to activate %1"
 msgid "Failed to create hotspot %1"

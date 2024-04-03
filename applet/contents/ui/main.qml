@@ -67,6 +67,16 @@ PlasmoidItem {
         focus: true
     }
 
+    Plasmoid.status: {
+        if (networkStatus.activeConnections.indexOf(":") == -1 && (availableDevices.wiredDeviceAvailable || availableDevices.wirelessDeviceAvailable || availableDevices.modemDeviceAvailable || availableDevices.bluetoothDeviceAvailable)) {
+            // connections available but none active
+            return PlasmaCore.Types.ActiveStatus;
+        } else if (PlasmaNM.Configuration.airplaneModeEnabled) {
+            return PlasmaCore.Types.ActiveStatus;
+        }
+        return PlasmaCore.Types.PassiveStatus;
+    }
+
     Plasmoid.contextualActions: [
         PlasmaCore.Action {
             text: i18n("Enable Wi-Fi")

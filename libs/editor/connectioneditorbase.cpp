@@ -120,8 +120,13 @@ NMVariantMapMap ConnectionEditorBase::setting() const
 
     connectionSettings->fromMap(settings);
     connectionSettings->setId(connectionName());
-    if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::WireGuard)
-        connectionSettings->setInterfaceName(connectionName());
+    for (SettingWidget *widget : m_settingWidgets) {
+        // WireGuard also defines the connection settings interface name
+        if (widget->type() == NetworkManager::Setting::typeAsString(NetworkManager::Setting::WireGuard)) {
+            auto wireGuard = static_cast<WireGuardInterfaceWidget *>(widget);
+            connectionSettings->setInterfaceName(wireGuard->interfaceName());
+        }
+    }
     connectionSettings->setUuid(m_connection->uuid());
 
     if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
@@ -253,7 +258,7 @@ void ConnectionEditorBase::initialize()
         auto teamWidget = new TeamWidget(m_connection->uuid(), m_connection->id(), m_connection->setting(NetworkManager::Setting::Team), this);
         addSettingWidget(teamWidget, i18n("Team"));
     } else if (type == NetworkManager::ConnectionSettings::WireGuard) { // WireGuard
-        auto wireGuardInterfaceWidget = new WireGuardInterfaceWidget(m_connection->setting(NetworkManager::Setting::WireGuard), this);
+        auto wireGuardInterfaceWidget = new WireGuardInterfaceWidget(m_connection, this);
         addSettingWidget(wireGuardInterfaceWidget, i18n("WireGuard Interface"));
     } else if (type == NetworkManager::ConnectionSettings::Vpn) { // VPN
         NetworkManager::VpnSetting::Ptr vpnSetting = m_connection->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();

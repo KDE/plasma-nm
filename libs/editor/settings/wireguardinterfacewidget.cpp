@@ -4,6 +4,7 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 #include "wireguardinterfacewidget.h"
+#include "interfacenamevalidator.h"
 #include "simpleiplistvalidator.h"
 #include "wireguardkeyvalidator.h"
 #include "wireguardtabwidget.h"
@@ -19,6 +20,8 @@
 #include <NetworkManagerQt/Ipv4Setting>
 #include <NetworkManagerQt/Ipv6Setting>
 #include <NetworkManagerQt/Utils>
+
+#define DEFAULT_WG_INTERFACE_NAME "wg2"
 
 // Tags used in a WireGuard .conf file - Used for importing
 #define PNM_WG_CONF_TAG_INTERFACE "[Interface]"
@@ -65,6 +68,7 @@ public:
 
     Ui_WireGuardInterfaceProp ui;
     NetworkManager::WireGuardSetting::Ptr setting;
+    NetworkManager::ConnectionSettings::Ptr connectionSettings;
     KSharedConfigPtr config;
     QPalette warningPalette;
     QPalette normalPalette;
@@ -72,6 +76,7 @@ public:
     QRegularExpressionValidator *fwmarkValidator;
     QIntValidator *mtuValidator;
     QIntValidator *portValidator;
+    bool interfaceNameValid = false;
     bool privateKeyValid = false;
     bool fwmarkValid = true;
     bool listenPortValid = true;
@@ -87,11 +92,13 @@ WireGuardInterfaceWidget::Private::~Private()
     delete portValidator;
 }
 
-WireGuardInterfaceWidget::WireGuardInterfaceWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
-    : SettingWidget(setting, parent, f)
+WireGuardInterfaceWidget::WireGuardInterfaceWidget(const NetworkManager::ConnectionSettings::Ptr &connectionSettings, QWidget *parent, Qt::WindowFlags f)
+    : SettingWidget(connectionSettings->setting(NetworkManager::Setting::WireGuard), parent, f)
     , d(new Private)
 {
+    NetworkManager::Setting::Ptr setting = connectionSettings->setting(NetworkManager::Setting::WireGuard);
     d->ui.setupUi(this);
+    d->connectionSettings = connectionSettings;
     d->setting = setting.staticCast<NetworkManager::WireGuardSetting>();
     d->config = KSharedConfig::openConfig();
     d->warningPalette = KColorScheme::createApplicationPalette(d->config);
@@ -100,6 +107,7 @@ WireGuardInterfaceWidget::WireGuardInterfaceWidget(const NetworkManager::Setting
 
     KColorScheme::adjustBackground(d->normalPalette, KColorScheme::NormalBackground, QPalette::Base, KColorScheme::ColorSet::View, d->config);
 
+    connect(d->ui.interfaceNameLineEdit, &QLineEdit::textChanged, this, &WireGuardInterfaceWidget::checkInterfaceNameValid);
     connect(d->ui.privateKeyLineEdit, &PasswordField::textChanged, this, &WireGuardInterfaceWidget::checkPrivateKeyValid);
     connect(d->ui.privateKeyLineEdit, &PasswordField::passwordOptionChanged, this, &WireGuardInterfaceWidget::checkPrivateKeyValid);
     connect(d->ui.fwmarkLineEdit, &QLineEdit::textChanged, this, &WireGuardInterfaceWidget::checkFwmarkValid);
@@ -113,6 +121,16 @@ WireGuardInterfaceWidget::WireGuardInterfaceWidget(const NetworkManager::Setting
     // This is done as a private variable rather than a local variable so it can be
     // used both here and to validate the private key later
     d->keyValidator = new WireGuardKeyValidator(this);
+
+    // Test for valid interface (network device) names.
+    // This test is based off of the Linux kernel's dev_valid_name.
+    //   * Must be between 1-15 characters
+    //   * Must be a valid filename with no whitespace or colons
+    //   * Must not be "." or ".." (for simplicity, this test simply checks that the name does not start with ".")
+    d->ui.interfaceNameLineEdit->setValidator(new InterfaceNameValidator(this));
+
+    // Set default interface name
+    d->ui.interfaceNameLineEdit->setText(DEFAULT_WG_INTERFACE_NAME);
 
     // Create validator for listen port
     d->portValidator = new QIntValidator;
@@ -144,6 +162,7 @@ WireGuardInterfaceWidget::WireGuardInterfaceWidget(const NetworkManager::Setting
 
     // Set the initial backgrounds on all the widgets
     checkPrivateKeyValid();
+    checkInterfaceNameValid();
 }
 
 WireGuardInterfaceWidget::~WireGuardInterfaceWidget()
@@ -153,6 +172,10 @@ WireGuardInterfaceWidget::~WireGuardInterfaceWidget()
 
 void WireGuardInterfaceWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
+    if (d->connectionSettings != nullptr) {
+        d->ui.interfaceNameLineEdit->setText(d->connectionSettings->interfaceName());
+    }
+
     NetworkManager::WireGuardSetting::Ptr wireGuardSetting = setting.staticCast<NetworkManager::WireGuardSetting>();
     d->ui.privateKeyLineEdit->setText(wireGuardSetting->privateKey());
 
@@ -278,11 +301,25 @@ QVariantMap WireGuardInterfaceWidget::setting() const
     return wgSetting.toMap();
 }
 
-bool WireGuardInterfaceWidget::isValid() const
+QString WireGuardInterfaceWidget::interfaceName() const
 {
-    return d->privateKeyValid && d->fwmarkValid && d->listenPortValid && d->peersValid;
+    return d->ui.interfaceNameLineEdit->displayText();
 }
 
+bool WireGuardInterfaceWidget::isValid() const
+{
+    return d->interfaceNameValid && d->privateKeyValid && d->fwmarkValid && d->listenPortValid && d->peersValid;
+}
+
+void WireGuardInterfaceWidget::checkInterfaceNameValid()
+{
+    int pos = 0;
+    QLineEdit *widget = d->ui.interfaceNameLineEdit;
+    QString value = widget->displayText();
+    d->interfaceNameValid = (QValidator::Acceptable == widget->validator()->validate(value, pos));
+    setBackground(widget, d->interfaceNameValid);
+    slotWidgetChanged();
+}
 void WireGuardInterfaceWidget::checkPrivateKeyValid()
 {
     int pos = 0;
@@ -345,6 +382,28 @@ void WireGuardInterfaceWidget::showPeers()
     peers->show();
 }
 
+// Take any input string and turn it into a valid interface name.
+QString WireGuardInterfaceWidget::sanitizeInterfaceName(const QString &interfaceName)
+{
+    QString ret(interfaceName);
+
+    // Remove all whitespace, slash, and colon characters
+    ret.removeIf([](QChar c) {
+        return c == '\r' || c == '\n' || c == '\t' || c == '\f' || c == ' ' || c == ':' || c == '/';
+    });
+
+    // Iterface names on Linux must be < 16 chars
+    if (ret.length() >= 16) {
+        ret.remove(15, ret.length() - 15);
+    }
+
+    if (ret.length() == 0 || ret == "." || ret == "..") {
+        return DEFAULT_WG_INTERFACE_NAME; // Fall-back to a sane default
+    }
+
+    return ret;
+}
+
 NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString &fileName)
 {
     NMVariantMapMap result;
@@ -358,6 +417,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
     }
 
     const QString connectionName = QFileInfo(fileName).completeBaseName();
+    const QString interfaceName = sanitizeInterfaceName(connectionName);
     NMVariantMapList peers;
     QVariantMap *currentPeer = nullptr;
     WireGuardKeyValidator keyValidator;
@@ -578,7 +638,7 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
     QVariantMap conn;
     wgSetting.setPeers(peers);
     conn.insert("id", connectionName);
-    conn.insert("interface-name", connectionName);
+    conn.insert("interface-name", interfaceName);
     conn.insert("type", "wireguard");
     conn.insert("autoconnect", "false");
     result.insert("connection", conn);

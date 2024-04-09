@@ -93,6 +93,8 @@ set(plasmanm_editor_SRCS
     wireguardkeyvalidator.h
     mobileproviders.cpp
     mobileproviders.h
+    interfacenamevalidator.cpp
+    interfacenamevalidator.h
 )
 
 ki18n_wrap_ui(plasmanm_editor_SRCS

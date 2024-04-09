@@ -13,6 +13,7 @@
 
 #include "settingwidget.h"
 #include "ui_wireguardinterfacewidget.h"
+#include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/WireguardSetting>
 
 class PLASMANM_EDITOR_EXPORT WireGuardInterfaceWidget : public SettingWidget
@@ -20,7 +21,7 @@ class PLASMANM_EDITOR_EXPORT WireGuardInterfaceWidget : public SettingWidget
     Q_OBJECT
 
 public:
-    explicit WireGuardInterfaceWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent = nullptr, Qt::WindowFlags f = {});
+    explicit WireGuardInterfaceWidget(const NetworkManager::ConnectionSettings::Ptr &connectionSettings, QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~WireGuardInterfaceWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
@@ -32,14 +33,18 @@ public:
     static QString supportedFileExtensions();
     static NMVariantMapMap importConnectionSettings(const QString &fileName);
 
+    QString interfaceName() const;
+
 private Q_SLOTS:
     void showPeers();
 
 private:
     void setBackground(QWidget *w, bool result) const;
+    void checkInterfaceNameValid();
     void checkPrivateKeyValid();
     void checkFwmarkValid();
     void checkListenPortValid();
+    static QString sanitizeInterfaceName(const QString &interfaceName);
     class Private;
     Private *const d;
 };

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-30 00:39+0000\n"
+"POT-Creation-Date: 2024-04-10 00:39+0000\n"
 "PO-Revision-Date: 2024-04-01 14:43\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,112 +18,112 @@ msgstr ""
 "pot\n"
 "X-Crowdin-File-ID: 42533\n"
 
-#: editor/connectioneditorbase.cpp:198
+#: editor/connectioneditorbase.cpp:203
 #, kde-format
 msgctxt "General"
 msgid "General configuration"
 msgstr "常规配置"
 
-#: editor/connectioneditorbase.cpp:205 editor/connectioneditorbase.cpp:222
+#: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
 msgid "Wired"
 msgstr "有线连接"
 
-#: editor/connectioneditorbase.cpp:208
+#: editor/connectioneditorbase.cpp:213
 #, kde-format
 msgid "802.1x Security"
 msgstr "802.1x 安全性"
 
-#: editor/connectioneditorbase.cpp:211 editor/settings/bridgewidget.cpp:39
+#: editor/connectioneditorbase.cpp:216 editor/settings/bridgewidget.cpp:39
 #: editor/settings/teamwidget.cpp:42 editor/uiutils.cpp:228
 #: models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
-#: editor/connectioneditorbase.cpp:215
+#: editor/connectioneditorbase.cpp:220
 #, kde-format
 msgid "Wi-Fi Security"
 msgstr "Wi-Fi 安全性"
 
-#: editor/connectioneditorbase.cpp:220 editor/uiutils.cpp:192
+#: editor/connectioneditorbase.cpp:225 editor/uiutils.cpp:192
 #: models/creatableconnectionsmodel.cpp:135
 #, kde-format
 msgid "DSL"
 msgstr "DSL"
 
-#: editor/connectioneditorbase.cpp:225 editor/connectioneditorbase.cpp:228
+#: editor/connectioneditorbase.cpp:230 editor/connectioneditorbase.cpp:233
 #, kde-format
 msgid "Mobile Broadband (%1)"
 msgstr "移动宽带 (%1)"
 
-#: editor/connectioneditorbase.cpp:231 editor/uiutils.cpp:196
+#: editor/connectioneditorbase.cpp:236 editor/uiutils.cpp:196
 #, kde-format
 msgid "Bluetooth"
 msgstr "蓝牙"
 
-#: editor/connectioneditorbase.cpp:236
+#: editor/connectioneditorbase.cpp:241
 #, kde-format
 msgid "GSM"
 msgstr "GSM"
 
-#: editor/connectioneditorbase.cpp:238 editor/connectioneditorbase.cpp:281
+#: editor/connectioneditorbase.cpp:243 editor/connectioneditorbase.cpp:286
 #, kde-format
 msgid "PPP"
 msgstr "PPP"
 
-#: editor/connectioneditorbase.cpp:242 editor/settings/teamwidget.cpp:39
+#: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:211 models/creatableconnectionsmodel.cpp:142
 #: models/networkmodelitem.cpp:716
 #, kde-format
 msgid "Infiniband"
 msgstr "Infiniband"
 
-#: editor/connectioneditorbase.cpp:245 editor/uiutils.cpp:200
+#: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:200
 #: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:722
 #, kde-format
 msgid "Bond"
 msgstr "多网卡绑定 (Bond)"
 
-#: editor/connectioneditorbase.cpp:248 editor/uiutils.cpp:203
+#: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:203
 #: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:728
 #, kde-format
 msgid "Bridge"
 msgstr "桥接 (Bridge)"
 
-#: editor/connectioneditorbase.cpp:251 models/creatableconnectionsmodel.cpp:220
+#: editor/connectioneditorbase.cpp:256 models/creatableconnectionsmodel.cpp:220
 #: models/networkmodelitem.cpp:734
 #, kde-format
 msgid "Vlan"
 msgstr "虚拟局域网 (Vlan)"
 
-#: editor/connectioneditorbase.cpp:254 editor/uiutils.cpp:232
+#: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:232
 #: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:743
 #, kde-format
 msgid "Team"
 msgstr "网络组 (Team)"
 
-#: editor/connectioneditorbase.cpp:257
+#: editor/connectioneditorbase.cpp:262
 #, kde-format
 msgid "WireGuard Interface"
 msgstr "WireGuard 接口"
 
-#: editor/connectioneditorbase.cpp:270
+#: editor/connectioneditorbase.cpp:275
 #, kde-format
 msgid "VPN (%1)"
 msgstr "VPN (%1)"
 
-#: editor/connectioneditorbase.cpp:287
+#: editor/connectioneditorbase.cpp:292
 #, kde-format
 msgid "IPv4"
 msgstr "IPv4"
 
-#: editor/connectioneditorbase.cpp:304
+#: editor/connectioneditorbase.cpp:309
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:487
+#: editor/connectioneditorbase.cpp:492
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "获取 %1 的密码失败"
@@ -520,7 +520,7 @@ msgstr "连接到这些服务器："
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
 #: editor/settings/ui/802-1x.ui:243
-#: editor/settings/ui/wireguardinterfacewidget.ui:26
+#: editor/settings/ui/wireguardinterfacewidget.ui:41
 #, kde-format
 msgid "Private key:"
 msgstr "私钥："
@@ -642,9 +642,11 @@ msgstr "版本 0"
 msgid "Version 1"
 msgstr "版本 1"
 
+#. i18n: ectx: property (text), widget (QLabel, interfaceNameLabel)
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/bond.ui:21 editor/settings/ui/bridge.ui:18
 #: editor/settings/ui/team.ui:18
+#: editor/settings/ui/wireguardinterfacewidget.ui:26
 #, kde-format
 msgid "Interface name:"
 msgstr "接口名称："
@@ -951,7 +953,7 @@ msgstr "仅限使用此设备："
 #: editor/settings/ui/infiniband.ui:61
 #: editor/settings/ui/wificonnectionwidget.ui:249
 #: editor/settings/ui/wiredconnectionwidget.ui:89
-#: editor/settings/ui/wireguardinterfacewidget.ui:74
+#: editor/settings/ui/wireguardinterfacewidget.ui:89
 #, kde-format
 msgid "MTU:"
 msgstr "MTU："
@@ -1774,8 +1776,17 @@ msgstr "WireGuard 设置"
 msgid "Interface"
 msgstr "接口"
 
-#. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
+#, fuzzy, kde-format
+#| msgid "VLAN interface name:"
+msgid ""
+"Required.\n"
+"Network interface name."
+msgstr "VLAN 接口名称："
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:49
 #, kde-format
 msgid ""
 "Required.\n"
@@ -1785,13 +1796,13 @@ msgstr ""
 "请填写使用 wg genkey 生成的 Base64 私钥。"
 
 #. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:41
+#: editor/settings/ui/wireguardinterfacewidget.ui:56
 #, kde-format
 msgid "Listen port:"
 msgstr "监听端口："
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:49
+#: editor/settings/ui/wireguardinterfacewidget.ui:64
 #, kde-format
 msgid ""
 "Optional.\n"
@@ -1801,13 +1812,13 @@ msgstr ""
 "请填写监听端口。如果设为自动，程序将选择一个随机端口。"
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:57
+#: editor/settings/ui/wireguardinterfacewidget.ui:72
 #, kde-format
 msgid "fwmark:"
 msgstr "fwmark："
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:67
+#: editor/settings/ui/wireguardinterfacewidget.ui:82
 #, kde-format
 msgid ""
 "Optional.\n"
@@ -1821,7 +1832,7 @@ msgstr ""
 "加上 0x 前缀时可以指定一个十六进制数。"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:86
+#: editor/settings/ui/wireguardinterfacewidget.ui:101
 #, kde-format
 msgid ""
 "Optional.\n"
@@ -1838,13 +1849,13 @@ msgstr ""
 "您也可以在此指定 MTU，它将覆盖上述的自动 MTU。"
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:93
+#: editor/settings/ui/wireguardinterfacewidget.ui:108
 #, kde-format
 msgid "Autoroute peers:"
 msgstr "自动路由节点："
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
-#: editor/settings/ui/wireguardinterfacewidget.ui:101
+#: editor/settings/ui/wireguardinterfacewidget.ui:116
 #, kde-format
 msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
@@ -1852,7 +1863,7 @@ msgid ""
 msgstr "是否为允许的 IP 范围内的节点自动添加路由。"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
-#: editor/settings/ui/wireguardinterfacewidget.ui:126
+#: editor/settings/ui/wireguardinterfacewidget.ui:141
 #, kde-format
 msgid "Peers…"
 msgstr "节点…"

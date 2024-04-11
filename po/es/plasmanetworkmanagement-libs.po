@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-10 00:39+0000\n"
-"PO-Revision-Date: 2024-03-17 02:08+0100\n"
+"PO-Revision-Date: 2024-04-10 12:35+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.02.1\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -1804,12 +1804,13 @@ msgstr "Interfaz"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, fuzzy, kde-format
-#| msgid "VLAN interface name:"
+#, kde-format
 msgid ""
 "Required.\n"
 "Network interface name."
-msgstr "Nombre de la interfaz VLAN:"
+msgstr ""
+"Necesario.\n"
+"Nombre de la interfaz de red."
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -2876,7 +2877,7 @@ msgid ""
 "Frequency: %3 Mhz\n"
 "Channel: %4"
 msgstr ""
-"%1 (%2%)\n"
+"%1 (%2 %)\n"
 "Frecuencia: %3 MHz\n"
 "Canal: %4"
 
@@ -3134,7 +3135,7 @@ msgid ""
 "Security: %3\n"
 "Frequency: %4 Mhz"
 msgstr ""
-"%1 (%2%)\n"
+"%1 (%2 %)\n"
 "Seguridad: %3\n"
 "Frecuencia: %4 Mhz"
 
@@ -3145,7 +3146,7 @@ msgid ""
 "Security: Insecure\n"
 "Frequency: %3 Mhz"
 msgstr ""
-"%1 (%2%)\n"
+"%1 (%2 %)\n"
 "Seguridad: Insegura\n"
 "Frecuencia: %3 Mhz"
 
@@ -3603,7 +3604,7 @@ msgstr "Potencia de la señal"
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: models/networkmodelitem.cpp:646
 #, kde-format

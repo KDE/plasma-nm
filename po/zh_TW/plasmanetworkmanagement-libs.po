@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-10 00:39+0000\n"
-"PO-Revision-Date: 2024-03-20 18:07+0900\n"
+"PO-Revision-Date: 2024-04-16 18:20+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -1776,12 +1776,13 @@ msgstr "介面"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, fuzzy, kde-format
-#| msgid "VLAN interface name:"
+#, kde-format
 msgid ""
 "Required.\n"
 "Network interface name."
-msgstr "VLAN 介面名稱："
+msgstr ""
+"必要。\n"
+"網路介面名稱。"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -1902,6 +1903,11 @@ msgid ""
 "            may be specified for matching all IPv4 addresses, \n"
 "            and ::/0 may be specified for matching all IPv6 addresses."
 msgstr ""
+"必要。\n"
+"            包含 CIDR 遮罩的 IP 位址清單 (IPv4 或 IPv6)，以逗號\n"
+"            分隔。這個對等連線會允許來自這些位址的封包，且\n"
+"            將外傳封包導向它們。要符合所有 IPv4 位址可以\n"
+"            使用 0.0.0.0/0；要符合所有 IPv6 位址則可使用 ::/0。"
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55

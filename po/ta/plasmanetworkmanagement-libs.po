@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-30 02:21+0000\n"
-"PO-Revision-Date: 2024-02-18 16:14+0530\n"
+"PO-Revision-Date: 2024-04-21 21:44+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: editor/connectioneditorbase.cpp:198
 #, kde-format
@@ -535,7 +535,7 @@ msgstr "கமுக்க சாவிக்கான கடவுச்சொ�
 #: editor/settings/ui/802-1x.ui:598
 #, kde-format
 msgid "Anonymous identity:"
-msgstr ""
+msgstr "அனாமதேய அடையாளம்:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
 #: editor/settings/ui/802-1x.ui:364
@@ -1565,7 +1565,7 @@ msgstr ""
 #: editor/settings/ui/wifisecurity.ui:179
 #, kde-format
 msgid "Shared Key"
-msgstr ""
+msgstr "பகிரப்பட்ட சாவி"
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:40
@@ -1670,7 +1670,7 @@ msgstr "கைமுறை"
 #: editor/settings/ui/wiredconnectionwidget.ui:219
 #, kde-format
 msgid "Request that the device use only the specified speed."
-msgstr ""
+msgstr "குறிப்பிட்ட விகித‍த்தை மட்டும் பயன்படுத்துமாறு சாதனத்தை அமைக்கும்."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:226
@@ -1950,13 +1950,13 @@ msgstr ""
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wi-Fi"
-msgstr ""
+msgstr "அருகலை"
 
 #: editor/uiutils.cpp:136
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Bluetooth"
-msgstr ""
+msgstr "ஊடலை"
 
 #: editor/uiutils.cpp:139
 #, kde-format
@@ -2045,7 +2045,7 @@ msgstr ""
 #: editor/uiutils.cpp:239
 #, kde-format
 msgid "Unknown connection type"
-msgstr ""
+msgstr "தெரியாத வகையான இணைப்பு"
 
 #: editor/uiutils.cpp:251
 #, kde-format
@@ -2060,7 +2060,7 @@ msgstr ""
 #: editor/uiutils.cpp:257
 #, kde-format
 msgid "Bluetooth (%1)"
-msgstr ""
+msgstr "ஊடலை (%1)"
 
 #: editor/uiutils.cpp:260
 #, kde-format
@@ -2086,19 +2086,19 @@ msgstr ""
 #, kde-format
 msgctxt "description of unknown network interface state"
 msgid "Unknown"
-msgstr ""
+msgstr "தெரியாதது"
 
 #: editor/uiutils.cpp:285
 #, kde-format
 msgctxt "description of unmanaged network interface state"
 msgid "Unmanaged"
-msgstr ""
+msgstr "நிர்வகிக்கப்படாத‍து"
 
 #: editor/uiutils.cpp:288
 #, kde-format
 msgctxt "description of unavailable network interface state"
 msgid "Unavailable"
-msgstr ""
+msgstr "பயன்படுத்த முடியாது"
 
 #: editor/uiutils.cpp:291
 #, kde-format

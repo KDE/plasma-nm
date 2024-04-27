@@ -47,6 +47,7 @@ BondWidget::BondWidget(const QString &masterUuid, const QString &masterId, const
     // mode
     m_ui->mode->addItem(i18nc("bond mode", "Round-robin"), QLatin1String("balance-rr"));
     m_ui->mode->addItem(i18nc("bond mode", "Active backup"), QLatin1String("active-backup"));
+    m_ui->mode->addItem(i18nc("bond mode", "XOR"), QLatin1String("balance-xor"));
     m_ui->mode->addItem(i18nc("bond mode", "Broadcast"), QLatin1String("broadcast"));
     m_ui->mode->addItem(i18nc("bond mode", "802.3ad"), QLatin1String("802.3ad"));
     m_ui->mode->addItem(i18nc("bond mode", "Adaptive transmit load balancing"), QLatin1String("balance-tlb"));

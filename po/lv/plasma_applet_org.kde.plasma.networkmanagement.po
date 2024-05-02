@@ -4,19 +4,20 @@
 #
 # Viesturs Zarins <viesturs.zarins@mii.lu.lv>, 2008.
 # Maris Nartiss <maris.kde@gmail.com>, 2020.
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-17 00:38+0000\n"
-"PO-Revision-Date: 2020-11-13 11:23+0200\n"
-"Last-Translator: Maris Nartiss <maris.kde@gmail.com>\n"
+"PO-Revision-Date: 2024-04-24 16:47+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 20.08.3\n"
+"X-Generator: Lokalize 24.02.1\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
@@ -31,14 +32,12 @@ msgid "Disconnect"
 msgstr "Atslēgties"
 
 #: contents/ui/ConnectionItem.qml:85
-#, fuzzy, kde-format
-#| msgid "Show network's QR code"
+#, kde-format
 msgid "Show Network's QR Code"
-msgstr "Rādīt tīkla QR kodu"
+msgstr "Rādīt tīkla kvadrātkodu"
 
 #: contents/ui/ConnectionItem.qml:90
-#, fuzzy, kde-format
-#| msgid "Configure..."
+#, kde-format
 msgid "Configure…"
 msgstr "Konfigurēt..."
 
@@ -50,7 +49,7 @@ msgstr "Ātrums"
 #: contents/ui/ConnectionItem.qml:132
 #, kde-format
 msgid "Details"
-msgstr "Detaļas"
+msgstr "Informācija"
 
 #: contents/ui/ConnectionItem.qml:175
 #, kde-format
@@ -59,6 +58,8 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
+"Pašreizējais lejupielādes ātrums ir %1 kibibaiti sekundē. Pašreizējais "
+"augšupielādes ātrums ir %2 kibibaiti sekundē"
 
 #: contents/ui/ConnectionItem.qml:292
 #, kde-format
@@ -71,41 +72,40 @@ msgid "Connected"
 msgstr "Savienots"
 
 #: contents/ui/ConnectionListPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Connect to wireless networks..."
+#, kde-format
 msgid "You need to log in to this network"
-msgstr "Pieslēgties bezvadu tīkliem..."
+msgstr "Jums jāierakstās šajā tīklā"
 
 #: contents/ui/ConnectionListPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Ierakstīties"
 
 #: contents/ui/ConnectionListPage.qml:115
 #, kde-format
 msgid "Airplane mode is enabled"
-msgstr "Ir ieslēgts lidmašīnas režīms"
+msgstr "Ieslēgts lidmašīnas režīms"
 
 #: contents/ui/ConnectionListPage.qml:119
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
-msgstr "Bezvadu un mobilie tīkli ir atslēgti"
+msgstr "Bezvadu un mobilie tīkli ir izslēgti"
 
 #: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless is deactivated"
-msgstr "Bezvadu tīkls ir atslēgts"
+msgstr "Bezvadu tīkls ir izslēgts"
 
 #: contents/ui/ConnectionListPage.qml:124
 #, kde-format
 msgid "Mobile network is deactivated"
-msgstr "Mobilais tīkls ir atslēgts"
+msgstr "Mobilais tīkls ir izslēgts"
 
 #: contents/ui/ConnectionListPage.qml:127
 #, kde-format
 msgid "No matches"
-msgstr ""
+msgstr "Nav atbilstību"
 
 #: contents/ui/ConnectionListPage.qml:129
 #, kde-format
@@ -126,54 +126,49 @@ msgstr "Tīkli"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Lidmašīnas režīmu varat izslēgt ar peles vidējo pogu"
 
 #: contents/ui/main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "Lidmašīnas režīmu varat ieslēgt ar peles vidējo pogu"
 
 #: contents/ui/main.qml:72 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
-msgstr "Ieslēgt Wi-Fi"
+msgstr "Ieslēgt „Wi-Fi“"
 
 #: contents/ui/main.qml:83
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Network"
 msgstr "Ieslēgt mobilo tīklu"
 
 #: contents/ui/main.qml:95
-#, fuzzy, kde-format
-#| msgid "Wireless"
+#, kde-format
 msgid "Enable Airplane Mode"
-msgstr "Bezvadu"
+msgstr "Ieslēgt lidmašīnas režīmu"
 
 #: contents/ui/main.qml:107
-#, fuzzy, kde-format
-#| msgid "Open Network Login Page..."
+#, kde-format
 msgid "Open Network Login Page…"
-msgstr "Atvērt tīkla pieteikšanās lapu..."
+msgstr "Atvērt ierakstīšanās tīklā lapu..."
 
 #: contents/ui/main.qml:117
-#, fuzzy, kde-format
-#| msgid "&Configure Network Connections..."
+#, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Konfigurēt tīklu savienojumus..."
 
 #: contents/ui/PopupDialog.qml:51
-#, fuzzy, kde-format
-#| msgid "Type of Connection"
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "Pieslēguma tips"
+msgstr "Atgriezties pie tīkla savienojumiem"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
-msgstr ""
+msgstr "Skenējiet šo kvadrātkodu citā ierīcē, lai savienotos ar „%1“ tīklu."
 
 #: contents/ui/Toolbar.qml:122
 #, kde-format
@@ -185,33 +180,32 @@ msgstr "Ieslēgt mobilo tīklu"
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
-"Atslēgt lidmašīnas režīmu<nl/><nl/>Šī darbība ieslēgs Wi-Fi un Bluetooth"
+"Izslēgt lidmašīnas režīmu<nl/><nl/>Šī darbība ieslēgs „Wi-Fi“ un „Bluetooth“"
 
 #: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
-"Ieslēgt lidmašīnas režīmu<nl/><nl/>Šī darbība atslēgs Wi-Fi un Bluetooth"
+"Ieslēgt lidmašīnas režīmu<nl/><nl/>Šī darbība izslēgs „Wi-Fi“ un „Bluetooth“"
 
 #: contents/ui/Toolbar.qml:159
 #, kde-format
 msgid "Hotspot"
-msgstr "Piekļuves punkts"
+msgstr "Tīklājs"
 
 #: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:194
 #, kde-format
 msgid "Disable Hotspot"
-msgstr "Atslēgt piekļuves punktu"
+msgstr "Izslēgt tīklāju"
 
 #: contents/ui/Toolbar.qml:188 contents/ui/Toolbar.qml:194
 #, kde-format
 msgid "Create Hotspot"
-msgstr "Izveidot piekļuves punktu"
+msgstr "Izveidot tīklāju"
 
 #: contents/ui/Toolbar.qml:226
-#, fuzzy, kde-format
-#| msgid "Configure network connections..."
+#, kde-format
 msgid "Configure network connections…"
 msgstr "Konfigurēt tīkla savienojumus..."
 

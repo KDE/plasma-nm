@@ -1,0 +1,330 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+#
+# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-02-20 00:39+0000\n"
+"PO-Revision-Date: 2024-04-24 17:46+0300\n"
+"Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
+"Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"2);\n"
+"X-Generator: Lokalize 24.02.1\n"
+
+#: openconnectauth.cpp:332
+#, kde-format
+msgid "Failed to initialize software token: %1"
+msgstr "Neizdevās inicializēt programmatūras žetonu: %1"
+
+#: openconnectauth.cpp:385
+#, kde-format
+msgid "Contacting host, please wait…"
+msgstr "Savienojas ar resursdatoru, uzgaidiet..."
+
+#: openconnectauth.cpp:732
+#, kde-format
+msgctxt "Verb, to proceed with login"
+msgid "Login"
+msgstr "Ierakstīšanās"
+
+#: openconnectauth.cpp:794
+#, kde-format
+msgid ""
+"Check failed for certificate from VPN server \"%1\".\n"
+"Reason: %2\n"
+"Accept it anyway?"
+msgstr ""
+"Neizdevās VPN servera „%1“ sertifikāta pārbaude.\n"
+"Iemesls: %2\n"
+"Vai to pieņemt tik un tā?"
+
+#: openconnectauth.cpp:889
+#, kde-format
+msgid "Connection attempt was unsuccessful."
+msgstr "Savienojums neizdevās."
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
+#: openconnectauth.ui:26
+#, kde-format
+msgid "OpenConnect VPN Authentication"
+msgstr "„OpenConnect“ VPN autentifikācija"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectauth.ui:55
+#, kde-format
+msgid "VPN Host"
+msgstr "VPN resursdators"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, btnConnect)
+#: openconnectauth.ui:81
+#, kde-format
+msgid "Connect"
+msgstr "Savienoties"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
+#: openconnectauth.ui:102
+#, kde-format
+msgid "Automatically start connecting next time"
+msgstr "Nākamreiz automātiski sākt savienoties"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkStorePasswords)
+#: openconnectauth.ui:109
+#, kde-format
+msgid "Store passwords"
+msgstr "Uzglabāt paroles"
+
+#. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
+#: openconnectauth.ui:153
+#, kde-format
+msgid "View Log"
+msgstr "Skatīt žurnālu"
+
+#. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
+#: openconnectauth.ui:163
+#, kde-format
+msgid "Log Level:"
+msgstr "Žurnāla līmenis:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:174
+#, kde-format
+msgid "Error"
+msgstr "Kļūda"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:179
+#, kde-format
+msgid "Info"
+msgstr "Informācija"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:184
+#, kde-format
+msgctxt "like in Debug log level"
+msgid "Debug"
+msgstr "Atkļūdot"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:189
+#, kde-format
+msgid "Trace"
+msgstr "Izsekot"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectProp)
+#: openconnectprop.ui:20
+#, kde-format
+msgid "OpenConnect Settings"
+msgstr "„OpenConnect“ iestatījumi"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#: openconnectprop.ui:26
+#, kde-format
+msgctxt "like in General settings"
+msgid "General"
+msgstr "Pamata"
+
+#. i18n: ectx: property (text), widget (QLabel, label_41)
+#: openconnectprop.ui:38
+#, kde-format
+msgid "Gateway:"
+msgstr "Vārteja:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: openconnectprop.ui:51
+#, kde-format
+msgid "CA Certificate:"
+msgstr "CA sertifikāts:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: openconnectprop.ui:70
+#, kde-format
+msgid "Proxy:"
+msgstr "Starpniekserveris:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectprop.ui:83
+#, kde-format
+msgid "User Agent:"
+msgstr "Lietotāja aģents:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: openconnectprop.ui:96
+#, kde-format
+msgid "CSD Wrapper Script:"
+msgstr "CSD apvalka skripts:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
+#: openconnectprop.ui:106
+#, kde-format
+msgid "Allow Cisco Secure Desktop trojan"
+msgstr "Atļaut „Cisco Secure Desktop“ trojieti"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: openconnectprop.ui:116
+#, kde-format
+msgid "VPN Protocol:"
+msgstr "VPN protokols:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:133
+#, kde-format
+msgid "Cisco AnyConnect"
+msgstr "Cisco AnyConnect"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:138
+#, kde-format
+msgid "Juniper Network Connect"
+msgstr "Juniper Network Connect"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:143
+#, kde-format
+msgid "PAN Global Protect"
+msgstr "PAN Global Protect"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:148
+#, kde-format
+msgid "Pulse Connect Secure"
+msgstr "Pulse Connect Secure"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:153
+#, kde-format
+msgid "F5 BIG-IP SSL VPN"
+msgstr "F5 BIG-IP SSL VPN"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:158
+#, kde-format
+msgid "Fortinet SSL VPN"
+msgstr "Fortinet SSL VPN"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:163
+#, kde-format
+msgid "Array SSL VPN"
+msgstr "Array SSL VPN"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: openconnectprop.ui:171
+#, kde-format
+msgid "Reported OS:"
+msgstr "Ziņotā OS:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:190
+#, kde-format
+msgid "GNU/Linux"
+msgstr "GNU/Linux"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:195
+#, kde-format
+msgid "GNU/Linux 64-bit"
+msgstr "GNU/Linux 64-bit"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:200
+#, kde-format
+msgid "Windows"
+msgstr "Windows"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:205
+#, kde-format
+msgid "Mac OS X"
+msgstr "Mac OS X"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:210
+#, kde-format
+msgid "Android"
+msgstr "Android"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:215
+#, kde-format
+msgid "Apple iOS"
+msgstr "Apple iOS"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: openconnectprop.ui:226
+#, kde-format
+msgid "Reported Version"
+msgstr "Ziņotā versija"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: openconnectprop.ui:236
+#, kde-format
+msgid "Certificate Authentication"
+msgstr "Sertifikāta autentifikācija"
+
+#. i18n: ectx: property (text), widget (QLabel, leMcaCertLabel)
+#: openconnectprop.ui:242
+#, kde-format
+msgid "Machine Certificate:"
+msgstr "Mašīnas sertifikāts"
+
+#. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openconnectprop.ui:261 openconnectprop.ui:299
+#, kde-format
+msgid "Private Key:"
+msgstr "Privātā atslēga"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: openconnectprop.ui:280
+#, kde-format
+msgid "User Certificate:"
+msgstr "Lietotāja sertifikāts"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: openconnectprop.ui:318
+#, kde-format
+msgid "Use FSID for key passphrase"
+msgstr "Atslēgu parolei izmantot FSID"
+
+#. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
+#: openconnectprop.ui:325
+#, kde-format
+msgid "Prevent user from manually accepting invalid certificates"
+msgstr "Neļaut lietotājam manuāli piekrist nederīgiem sertifikātiem"
+
+#. i18n: ectx: property (text), widget (QPushButton, buTokens)
+#: openconnectprop.ui:351
+#, kde-format
+msgid "Token Authentication"
+msgstr "Autentifikācija ar žetonu"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenConnectToken)
+#: openconnecttoken.ui:14
+#, kde-format
+msgid "OpenConnect OTP Tokens"
+msgstr "„OpenConnect“ OTP Žetoni"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbToken)
+#: openconnecttoken.ui:20
+#, kde-format
+msgid "Software Token Authentication"
+msgstr "Autentifikācija ar programmatūras žetonu"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: openconnecttoken.ui:26
+#, kde-format
+msgid "Token Mode:"
+msgstr "Žetona režīms:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: openconnecttoken.ui:43
+#, kde-format
+msgid "Token Secret:"
+msgstr "Žetona noslēpums:"

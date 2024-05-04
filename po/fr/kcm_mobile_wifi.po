@@ -1,19 +1,19 @@
-# SPDX-FileCopyrightText: 2020, 2021, 2023 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2020, 2021, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
 # Simon Depiets <sdepiets@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-01 01:00+0000\n"
-"PO-Revision-Date: 2023-12-18 09:41+0100\n"
+"PO-Revision-Date: 2024-04-26 11:58+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
-"Language-Team: French <kde-francophone@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -153,7 +153,7 @@ msgstr "FAST"
 #: package/contents/ui/NetworkSettings.qml:120
 #, kde-format
 msgid "Tunneled TLS"
-msgstr "TLS tunnellisé (TTLS)"
+msgstr "TLS en mode tunnel (TTLS)"
 
 #: package/contents/ui/NetworkSettings.qml:121
 #, kde-format

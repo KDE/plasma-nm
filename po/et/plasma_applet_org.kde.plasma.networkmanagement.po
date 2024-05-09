@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-17 00:38+0000\n"
+"POT-Creation-Date: 2024-05-09 00:40+0000\n"
 "PO-Revision-Date: 2020-09-28 13:41+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -41,17 +41,17 @@ msgstr "Võrgu QR-koodi näitamine"
 msgid "Configure…"
 msgstr "Seadista ..."
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Speed"
 msgstr "Kiirus"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:138
 #, kde-format
 msgid "Details"
 msgstr "Üksikasjad"
 
-#: contents/ui/ConnectionItem.qml:175
+#: contents/ui/ConnectionItem.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59,12 +59,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:292
+#: contents/ui/ConnectionItem.qml:298
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Ühendatud, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:296
+#: contents/ui/ConnectionItem.qml:302
 #, kde-format
 msgid "Connected"
 msgstr "Ühendatud"

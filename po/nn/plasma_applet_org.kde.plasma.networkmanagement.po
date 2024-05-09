@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-17 00:38+0000\n"
+"POT-Creation-Date: 2024-05-09 00:40+0000\n"
 "PO-Revision-Date: 2023-07-27 22:01+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -40,17 +40,17 @@ msgstr "Vis QR-kode for nettverket"
 msgid "Configure…"
 msgstr "Set opp …"
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Speed"
 msgstr "Fart"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:138
 #, kde-format
 msgid "Details"
 msgstr "Detaljar"
 
-#: contents/ui/ConnectionItem.qml:175
+#: contents/ui/ConnectionItem.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59,12 +59,12 @@ msgid ""
 msgstr ""
 "Gjeldande nedlastingsfart er %1 KiB/s og gjeldande opplastingsfart %2 KiB/s"
 
-#: contents/ui/ConnectionItem.qml:292
+#: contents/ui/ConnectionItem.qml:298
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Kopla til – ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:296
+#: contents/ui/ConnectionItem.qml:302
 #, kde-format
 msgid "Connected"
 msgstr "Kopla til"

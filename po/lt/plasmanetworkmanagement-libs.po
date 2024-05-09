@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-10 00:39+0000\n"
-"PO-Revision-Date: 2024-04-06 01:15+0300\n"
+"PO-Revision-Date: 2024-05-08 23:45+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -1807,12 +1807,13 @@ msgstr "Sąsaja"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, fuzzy, kde-format
-#| msgid "VLAN interface name:"
+#, kde-format
 msgid ""
 "Required.\n"
 "Network interface name."
-msgstr "VLAN sąsajos pavadinimas:"
+msgstr ""
+"Reikalinga.\n"
+"Tinklo sąsajos pavadinimas."
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49

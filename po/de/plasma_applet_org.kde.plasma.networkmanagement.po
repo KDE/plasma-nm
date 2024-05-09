@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-03-17 00:38+0000\n"
+"POT-Creation-Date: 2024-05-09 00:40+0000\n"
 "PO-Revision-Date: 2023-08-13 16:38+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -39,17 +39,17 @@ msgstr "QR-Code des Netzwerks anzeigen"
 msgid "Configure…"
 msgstr "Einrichten ..."
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Speed"
 msgstr "Geschwindigkeit"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:138
 #, kde-format
 msgid "Details"
 msgstr "Details"
 
-#: contents/ui/ConnectionItem.qml:175
+#: contents/ui/ConnectionItem.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59,12 +59,12 @@ msgstr ""
 "Aktuelle Download-Geschwindigkeit ist %1 Kibibytes pro Sekunde; aktuelle "
 "Upload-Geschwindigkeit ist %2 Kibibytes pro Sekunde"
 
-#: contents/ui/ConnectionItem.qml:292
+#: contents/ui/ConnectionItem.qml:298
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Verbunden, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:296
+#: contents/ui/ConnectionItem.qml:302
 #, kde-format
 msgid "Connected"
 msgstr "Verbunden"

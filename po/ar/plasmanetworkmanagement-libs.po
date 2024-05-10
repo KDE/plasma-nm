@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-03-30 02:21+0000\n"
-"PO-Revision-Date: 2024-05-04 11:48+0400\n"
+"PO-Revision-Date: 2024-05-09 10:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -84,7 +84,7 @@ msgstr "Infiniband"
 #: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:715
 #, kde-format
 msgid "Bond"
-msgstr "Bond"
+msgstr "تجميع"
 
 #: editor/connectioneditorbase.cpp:248 editor/uiutils.cpp:203
 #: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:721
@@ -485,7 +485,7 @@ msgstr "شهادة المستخدِم:"
 #: editor/settings/ui/802-1x.ui:611
 #, kde-format
 msgid "CA certificate:"
-msgstr "شهادة كاليفورنيا:"
+msgstr "شهادة هيئة الشهادات:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_27)
 #: editor/settings/ui/802-1x.ui:178
@@ -504,7 +504,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:210 editor/settings/ui/802-1x.ui:234
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:219
@@ -1207,7 +1207,7 @@ msgstr "الاستيثاق"
 #: editor/settings/ui/ppp.ui:38
 #, kde-format
 msgid "EAP"
-msgstr ""
+msgstr "EAP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
 #: editor/settings/ui/ppp.ui:91
@@ -1281,10 +1281,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31
-#, fuzzy, kde-format
-#| msgid "Remove Connection"
+#, kde-format
 msgid "Teamed connections:"
-msgstr "أزل الاتصال"
+msgstr "اتصالات جماعية:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/team.ui:113
@@ -1294,10 +1293,9 @@ msgstr "تضبيط JSON:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnImport)
 #: editor/settings/ui/team.ui:123
-#, fuzzy, kde-format
-#| msgid "Import configuration from file..."
+#, kde-format
 msgid "Import configuration from file…"
-msgstr "استورد التضبيط من ملف..."
+msgstr "استورد الضبط من ملف…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
@@ -1333,7 +1331,7 @@ msgstr ""
 #: editor/settings/ui/vlan.ui:87
 #, kde-format
 msgid "GVRP"
-msgstr ""
+msgstr "GVRP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
 #: editor/settings/ui/vlan.ui:94
@@ -1345,7 +1343,7 @@ msgstr ""
 #: editor/settings/ui/wificonnectionwidget.ui:17
 #, kde-format
 msgid "SSID:"
-msgstr ""
+msgstr "SSID:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:63
@@ -1369,7 +1367,7 @@ msgstr "نقطة الوصول"
 #: editor/settings/ui/wificonnectionwidget.ui:81
 #, kde-format
 msgid "BSSID:"
-msgstr ""
+msgstr "BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:101
@@ -1513,10 +1511,9 @@ msgstr "‏WPA/WPA2 شخصي"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "‏WPA/WPA2 للمؤسسات"
+msgstr "‏WPA3 للمؤسسات 192-بت"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -1755,7 +1752,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:41
 #, kde-format
 msgid "Listen port:"
-msgstr ""
+msgstr "منفذ الاستماع:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -1769,7 +1766,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:57
 #, kde-format
 msgid "fwmark:"
-msgstr ""
+msgstr "fwmark:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:67
@@ -1850,10 +1847,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55
-#, fuzzy, kde-format
-#| msgid "MAC Address"
+#, kde-format
 msgid "Endpoint address:"
-msgstr "عنوان ماك (MAC)"
+msgstr "عنوان نقطة النهاية:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:66
@@ -1883,10 +1879,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Preshared key:"
-msgstr "المفتاح الخاص:"
+msgstr "المفتاح المشترك مسبقًا:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:102
@@ -2334,7 +2329,7 @@ msgstr "%1 غ.بت/ث"
 #, kde-format
 msgctxt "Wireless connection frequency"
 msgid "%1 GHz"
-msgstr ""
+msgstr "%1 غ هرتز"
 
 #: editor/uiutils.cpp:464
 #, kde-format
@@ -2370,7 +2365,7 @@ msgstr "أيّ"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:486
 #, kde-format
@@ -3075,15 +3070,11 @@ msgstr "حرّر سُبُل IPv4"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
-#, fuzzy, kde-format
-#| msgctxt "Connecting"
-#| msgid ""
-#| "A network device is connecting to a network and there is no other "
-#| "available network connection"
+#, kde-format
 msgid ""
 "If enabled, this connection will never be used as the default network "
 "connection"
-msgstr "جهاز شبكي يتّصل بشكلة ولا يوجد أيّ اتصال شبكي آخر متوفّر"
+msgstr "في حالة تمكينه، لن يستخدم هذا الاتصال مطلقًا كاتصال شبكة مبدئي"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
@@ -3209,10 +3200,9 @@ msgstr "فشل إنشاء نقطة فعالة %1"
 #: models/creatableconnectionsmodel.cpp:164
 #: models/creatableconnectionsmodel.cpp:174
 #: models/creatableconnectionsmodel.cpp:181
-#, fuzzy, kde-format
-#| msgid "Remove Connection"
+#, kde-format
 msgid "Hardware based connections"
-msgstr "أزل الاتصال"
+msgstr "الاتصالات القائمة على الأجهزة"
 
 #: models/creatableconnectionsmodel.cpp:137
 #, kde-format
@@ -3230,11 +3220,9 @@ msgid "Mobile Broadband"
 msgstr "شبكة هاتف محمول"
 
 #: models/creatableconnectionsmodel.cpp:151
-#, fuzzy, kde-format
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "New Mobile Broadband Connection"
+#, kde-format
 msgid "Some mobile broadband description"
-msgstr "اتصال شبكة هاتف محمول جديد..."
+msgstr "وصف للنطاق العريض المحمول"
 
 #: models/creatableconnectionsmodel.cpp:158
 #: models/creatableconnectionsmodel.cpp:165
@@ -3268,25 +3256,19 @@ msgstr "اتصال افتراضي"
 
 #: models/creatableconnectionsmodel.cpp:192
 #: models/creatableconnectionsmodel.cpp:202
-#, fuzzy, kde-format
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "New Mobile Broadband Connection"
+#, kde-format
 msgid "Some bond description"
-msgstr "اتصال شبكة هاتف محمول جديد..."
+msgstr "وصف للتجميع"
 
 #: models/creatableconnectionsmodel.cpp:212
-#, fuzzy, kde-format
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "New Mobile Broadband Connection"
+#, kde-format
 msgid "Some team description"
-msgstr "اتصال شبكة هاتف محمول جديد..."
+msgstr "وصف للفريق"
 
 #: models/creatableconnectionsmodel.cpp:222
-#, fuzzy, kde-format
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "New Mobile Broadband Connection"
+#, kde-format
 msgid "Some vlan description"
-msgstr "اتصال شبكة هاتف محمول جديد..."
+msgstr "وصف للشبكة الافتراضية"
 
 #: models/creatableconnectionsmodel.cpp:242
 #: models/creatableconnectionsmodel.cpp:255
@@ -3301,10 +3283,9 @@ msgid "WireGuard"
 msgstr "واير غارد"
 
 #: models/creatableconnectionsmodel.cpp:266
-#, fuzzy, kde-format
-#| msgid "VPN Connection"
+#, kde-format
 msgid "Import VPN connection…"
-msgstr "استورد اتصال في بي ان"
+msgstr "استورد اتصال في بي ان…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format
@@ -3317,18 +3298,16 @@ msgid "Import a saved configuration file"
 msgstr "استورد ملف ضبط محفوظ"
 
 #: models/networkmodelitem.cpp:42
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال مجهول"
 
 #: models/networkmodelitem.cpp:43
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال ADSL"
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
@@ -3337,25 +3316,22 @@ msgid "The connection type is Bluetooth"
 msgstr ""
 
 #: models/networkmodelitem.cpp:45
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال جسر"
 
 #: models/networkmodelitem.cpp:46
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال CDMA"
 
 #: models/networkmodelitem.cpp:47
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال GSM"
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
@@ -3376,32 +3352,28 @@ msgid "The connection type is PPOPE"
 msgstr "نوع الاتصال PPOPE"
 
 #: models/networkmodelitem.cpp:51
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال VLAN"
 
 #: models/networkmodelitem.cpp:52
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال في بي ان"
 
 #: models/networkmodelitem.cpp:53
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال Wimax"
 
 #: models/networkmodelitem.cpp:54
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال سلكي"
 
 #: models/networkmodelitem.cpp:55
 #, kde-format
@@ -3410,25 +3382,22 @@ msgid "The connection type is Wireless"
 msgstr "نوع الاتصال لاسلكي"
 
 #: models/networkmodelitem.cpp:56
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال جماعي"
 
 #: models/networkmodelitem.cpp:57
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال عام"
 
 #: models/networkmodelitem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr "نوع الاتصال:"
+msgstr "نوع الاتصال نفق"
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
@@ -3468,10 +3437,9 @@ msgid "IPv6 Address"
 msgstr "عنوان IPv6"
 
 #: models/networkmodelitem.cpp:610
-#, fuzzy, kde-format
-#| msgid "IPv6 Address"
+#, kde-format
 msgid "IPv6 ULA Address"
-msgstr "عناوين IPv6"
+msgstr "عنوان IPv6 ULA"
 
 #: models/networkmodelitem.cpp:616
 #, kde-format
@@ -3535,7 +3503,7 @@ msgstr "التردّد"
 #: models/networkmodelitem.cpp:654
 #, kde-format
 msgid "BSSID"
-msgstr ""
+msgstr "BSSID"
 
 #: models/networkmodelitem.cpp:668
 #, kde-format

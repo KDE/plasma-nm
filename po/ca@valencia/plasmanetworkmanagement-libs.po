@@ -1281,7 +1281,7 @@ msgid ""
 "address via modified EUI-64."
 msgstr ""
 "Configura les extensions de privadesa IPv6 per a SLAAC, descrit a la "
-"RFC4941. Si se selecciona, fa que el nucli genere una adreça IPv6\n"
+"RFC4941. Si s'activa, fa que el nucli genere una adreça IPv6\n"
 "temporal, a més de la pública generada a partir de l'adreça MAC amb l'EUI-64 "
 "modificat."
 
@@ -1591,8 +1591,7 @@ msgstr "Aleatòria…"
 #: editor/settings/ui/wificonnectionwidget.ui:303
 #, kde-format
 msgid "Mark this if you want to create a connection for a hidden network"
-msgstr ""
-"Seleccioneu esta opció si voleu crear una connexió per a una xarxa oculta"
+msgstr "Marqueu esta opció si voleu crear una connexió per a una xarxa oculta"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:290
@@ -1944,7 +1943,7 @@ msgid ""
 msgstr ""
 "Opcional.\n"
 "Una marca «fwmark» per als paquets que ixen. Si s'establix a 0 o\n"
-"«off», es desselecciona esta opció. Es pot especificar en hexadecimal\n"
+"«off», es desmarca esta opció. Es pot especificar en hexadecimal\n"
 "prefixant-ho amb «0x»."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
@@ -3277,7 +3276,7 @@ msgid ""
 "If enabled, this connection will never be used as the default network "
 "connection"
 msgstr ""
-"Si se selecciona, esta connexió mai es farà servir com la\n"
+"Si està marcada, esta connexió mai es farà servir com la\n"
 "connexió de xarxa per defecte"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
@@ -3307,7 +3306,7 @@ msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
 "specified above are used"
 msgstr ""
-"Si se selecciona, els camins configurats de forma automàtica seran\n"
+"Si està marcada, els camins configurats de forma automàtica seran\n"
 "ignorats i només s'utilitzaran els camins especificats anteriorment"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)

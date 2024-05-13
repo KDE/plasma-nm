@@ -396,7 +396,7 @@ msgid ""
 "only if the server doesn’t support PFS.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Desactiva el secret perfecte del reenviament (PFS). "
-"Seleccioneu esta opció només si el servidor no admet PFS.</p></body></html>"
+"Marqueu esta opció només si el servidor no admet PFS.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:319
@@ -606,7 +606,7 @@ msgid ""
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
 "Nota: l'encriptació MPPE només estarà disponible amb els mètodes\n"
-"d'autenticació MSCHAP. Per a seleccionar esta casella de selecció, escolliu\n"
+"d'autenticació MSCHAP. Per a marcar esta casella de selecció, escolliu\n"
 "un o més mètodes d'autenticació MSCHAP: MSCHAP o MSCHAPv2."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMPPE)

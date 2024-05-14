@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2022, 2023 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022, 2023, 2024 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2023-12-22 23:12+0100\n"
+"PO-Revision-Date: 2024-05-13 23:14+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -279,7 +279,7 @@ msgid ""
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Незадължително. Списък с предложения за ESP - Quick "
-"Mode. Форматът е \"enc-integ,enc-integ, …”.</p></body></html>"
+"Mode. Форматът е \"enc-integ,enc-integ,…”.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:261
@@ -312,7 +312,7 @@ msgid ""
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Незадължително. Списък с предложения за IKE - Main "
-"Mode. Форматът е \"enc-integ-group,enc-integ-group, …”.</p></body></html>"
+"Mode. Форматът е \"enc-integ-group,enc-integ-group,…”.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:285

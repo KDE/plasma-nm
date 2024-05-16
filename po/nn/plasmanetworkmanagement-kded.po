@@ -1,12 +1,11 @@
 # Translation of plasmanetworkmanagement-kded to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2016, 2018, 2019, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2023-02-23 18:32+0100\n"
+"PO-Revision-Date: 2024-05-15 20:30+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -17,7 +16,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -552,37 +551,30 @@ msgid "Authenticate %1"
 msgstr "Autentiser %1"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "Ingen løyndomar vart oppgjevne"
+msgstr "Ingen førespurnadar om løyndomar"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "Oppgje passord for trådlaus­nettverket «%1»:"
+msgstr "Ugyldig passord for trådlausnettverket «%1». Prøv på nytt."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "Oppgje passord for trådlaus­nettverket «%1»:"
+msgstr "Skriv inn passord for trådlaus­nettverket «%1»:"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Oppgje passord for tilkoplinga «%1»:"
+msgstr "Ugyldig passord for tilkoplinga «%1». Prøv på nytt."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Oppgje passord for tilkoplinga «%1»:"
+msgstr "Skriv inn passord for tilkoplinga «%1»:"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -593,11 +585,10 @@ msgstr "Passordvindauge for %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "VPN-innstillingar manglar"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Oppgje løyndomar for VPN-tilkoplinga «%1»:"
 

@@ -1,12 +1,11 @@
 # Translation of plasmanetworkmanagement-kded to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2016, 2018, 2019, 2020, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2023-02-23 18:32+0100\n"
+"PO-Revision-Date: 2024-05-15 20:30+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -17,7 +16,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -560,12 +559,12 @@ msgstr "Autentiser %1"
 #: passworddialog.cpp:98
 #, kde-format
 msgid "Provide the password for the wireless network '%1':"
-msgstr "Oppgje passord for trådlaus­nettverket «%1»:"
+msgstr "Skriv inn passord for trådlaus­nettverket «%1»:"
 
 #: passworddialog.cpp:100
 #, kde-format
 msgid "Provide the password for the connection '%1':"
-msgstr "Oppgje passord for tilkoplinga «%1»:"
+msgstr "Skriv inn passord for tilkoplinga «%1»:"
 
 #: passworddialog.cpp:106
 #, kde-format

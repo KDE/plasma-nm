@@ -1,15 +1,15 @@
 # Translation of plasmanetworkmanagement_l2tpui.pot to esperanto.
 # Copyright (C) 2017 Free Software Foundation, Inc.
 # This file is distributed under the same license as the plasma-nm package.
-# Oliver Kellogg <okellogg@users.sourceforge.net>, 2023.
+# Oliver Kellogg <olivermkellogg@gmail.com>, 2023.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2023-12-22 05:51+0100\n"
-"Last-Translator: Oliver Kellogg <okellogg@users.sourceforge.net>\n"
+"PO-Revision-Date: 2024-03-28 10:37+0100\n"
+"Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
 "MIME-Version: 1.0\n"
@@ -506,7 +506,7 @@ msgstr ""
 #: l2tpppp.ui:137
 #, kde-format
 msgid "Allow TCP header compression"
-msgstr "Permesu TCP-kapa kunpremo"
+msgstr "Permesi TCP-kapan kunpremon"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbCompressionNegotiation)
 #: l2tpppp.ui:148
@@ -641,9 +641,3 @@ msgstr "Uzu stathavan ĉifradon"
 #, kde-format
 msgid "L2TP PPP Options"
 msgstr "L2TP PPP-Ebloj"
-
-#~ msgid "*.pem *.der *.crt *.cer *.p12"
-#~ msgstr "*.pem *.der *.crt *.cer *.p12"
-
-#~ msgid "*.pem *.der *.key *.pk8 *.p12"
-#~ msgstr "*.pem *.der *.key *.pk8 *.p12"

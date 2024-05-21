@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2014, 2020, 2021, 2023.
+# Giovanni Sora <g.sora@tiscali.it>, 2014, 2020, 2021, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2023-03-14 22:30+0100\n"
+"PO-Revision-Date: 2024-05-20 15:24+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -186,7 +186,7 @@ msgstr "Methodo de cryptation:"
 #: vpncadvanced.ui:98
 #, kde-format
 msgid "Encryption method."
-msgstr "Methodo de encryption:"
+msgstr "Methodo de cryptation:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpncadvanced.ui:105

@@ -1,26 +1,27 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
 # Sveinn í Felli <sv1@fellsnet.is>, 2022.
+# SPDX-FileCopyrightText: 2024 Gummi <gudmundure@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2022-08-23 09:09+0000\n"
-"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
-"Language-Team: Icelandic\n"
+"PO-Revision-Date: 2024-05-13 11:28+0000\n"
+"Last-Translator: Gummi <gudmundure@gmail.com>\n"
+"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: openvpn.cpp:183
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
-msgstr ""
+msgstr "NetworkManager vantar stuðning við OpenVPN"
 
 #: openvpn.cpp:208
 #, kde-format
@@ -30,13 +31,13 @@ msgstr "Villa við vistun skráar %1: %2"
 #: openvpn.cpp:236
 #, kde-format
 msgid "Error copying certificate to %1: %2"
-msgstr ""
+msgstr "Villa við að afrita vottorð í %1: %2"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19
 #, kde-format
 msgid "Gateway:"
-msgstr "Netgátt"
+msgstr "Netgátt:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: openvpn.ui:36
@@ -47,6 +48,10 @@ msgid ""
 "You can specify multiple hosts for redundancy (use commas or spaces as "
 "delimiters)."
 msgstr ""
+"Fjartengd(ar) netgátt(ir), með valkvæmu tengi og samskiptareglu (t.d. ovpn."
+"corp.com:1234:tcp).\n"
+"Þú getur tilgreint margar vélar til að eiga umfram (notaðu kommur eða bil "
+"til að skilja á milli)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
 #: openvpn.ui:46
@@ -58,13 +63,13 @@ msgstr "Tegund tengingar:"
 #: openvpn.ui:68
 #, kde-format
 msgid "Select an authentication mode."
-msgstr "Veldu auðkenningarham."
+msgstr "Veldu sannvottunargerð:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:72
 #, kde-format
 msgid "Certificates (TLS)"
-msgstr "Skilríki (TLS)"
+msgstr "Vottorð (TLS)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:77
@@ -82,7 +87,7 @@ msgstr "Lykilorð"
 #: openvpn.ui:87
 #, kde-format
 msgid "Password with Certificates (TLS)"
-msgstr "Lykilorð með skilríkjum (TLS)"
+msgstr "Lykilorð með vottorðum (TLS)"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
@@ -90,7 +95,7 @@ msgstr "Lykilorð með skilríkjum (TLS)"
 #: openvpn.ui:104 openvpn.ui:362 openvpn.ui:458
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA-skilríki:"
+msgstr "CA-vottorð:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, passCaFile)
@@ -98,7 +103,7 @@ msgstr "CA-skilríki:"
 #: openvpn.ui:117 openvpn.ui:378 openvpn.ui:471
 #, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr "Vottunaraðili skilríkis (CA) á .pem sniði."
+msgstr "Vottunaraðilaskrá (CA) á .pem sniði."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509Cert)
@@ -117,7 +122,7 @@ msgstr "*.pem *.crt *.key *.cer *.p12"
 #: openvpn.ui:127 openvpn.ui:481
 #, kde-format
 msgid "User Certificate:"
-msgstr "Skilríki notanda:"
+msgstr "Vottorð notanda:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Cert)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassCert)
@@ -127,6 +132,8 @@ msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
 "Certificate)."
 msgstr ""
+"Vottorð undirritað af staðbundnum jafningja á .pem-sniði (undirritað af CA "
+"frá CA Certificate)."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
@@ -140,7 +147,7 @@ msgstr "Einkalykill:"
 #: openvpn.ui:163 openvpn.ui:517
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr ""
+msgstr "Einkalykill staðbundins jafningja á .pem-sniði."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -166,7 +173,7 @@ msgstr "Fastur lykill:"
 #: openvpn.ui:224
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
-msgstr ""
+msgstr "Forsamnýtt skrá fyrir dulritunarsnið fasts lykils (ekki TLS)."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, pskSharedKey)
 #: openvpn.ui:227
@@ -185,7 +192,7 @@ msgstr "Stefna lykils:"
 #: openvpn.ui:247
 #, kde-format
 msgid "Direction for Static Key encryption mode (non-TLS)."
-msgstr ""
+msgstr "Stefna fyrir dulritunarsnið fasts lykils (ekki TLS)."
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:250
@@ -194,6 +201,8 @@ msgid ""
 "If key direction is used, it must be the opposite of that used on the VPN "
 "peer."
 msgstr ""
+"Ef stefna lykils er notuð verður hún að vera gagnstæð við þá sem notuð er á "
+"VPN-jafningjanum."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:254
@@ -218,25 +227,25 @@ msgstr "1"
 #: openvpn.ui:272
 #, kde-format
 msgid "Local IP Address:"
-msgstr "Staðvært IP-vistfang:"
+msgstr "Staðbundin IP-tala:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, pskLocalIp)
 #: openvpn.ui:285
 #, kde-format
 msgid "IP address of the remote VPN endpoint."
-msgstr ""
+msgstr "IP-tala fjartengda VPN-endastaðarins."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel7)
 #: openvpn.ui:295
 #, kde-format
 msgid "Remote IP Address:"
-msgstr "Fjartengt IP-vistfang:"
+msgstr "Fjartengd IP-tala:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, pskRemoteIp)
 #: openvpn.ui:308
 #, kde-format
 msgid "IP address of the local VPN endpoint."
-msgstr ""
+msgstr "IP-tala staðbundna VPN-endastaðarins."
 
 #. i18n: ectx: property (text), widget (QLabel, lblKeyDirection)
 #: openvpn.ui:342
@@ -246,6 +255,10 @@ msgid ""
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
+"Ef stefna lykils er notuð verður hún að vera gagnstæð við þá sem notuð er á "
+"VPN-jafningjanum. Ef t.d. jafningi nota '1' verður þessi tenging að nota "
+"'0'. Ef þú ert ekki viss um hvað gildi eigi að nota skaltu hafa samband við "
+"kerfisstjórann þinn."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, passCaFile)
 #: openvpn.ui:381
@@ -266,7 +279,7 @@ msgstr "Notandanafn:"
 #: openvpn.ui:404 openvpn.ui:561
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "Notandanafn sent til OpenVPN þegar beðið er um það."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -281,7 +294,7 @@ msgstr "Lykilorð:"
 #: openvpn.ui:429 openvpn.ui:583
 #, kde-format
 msgid "Password passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "Lykilorð sent til OpenVPN þegar beðið er um það."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: openvpn.ui:627
@@ -303,12 +316,14 @@ msgid ""
 "TCP/UDP port number for peer. (Default value when there is no port for "
 "gateway)."
 msgstr ""
+"TCP/UDP-tengisnúmer fyrir jafningja. (Sjálfgefið gildi þegar ekkert tengi er "
+"til staðar fyrir netgáttina)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomPort)
 #: openvpnadvanced.ui:39
 #, kde-format
 msgid "Use custom gateway port:"
-msgstr ""
+msgstr "Nota sérstillt netgáttartengi:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbCustomPort)
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbMtu)
@@ -324,13 +339,13 @@ msgstr "Sjálfvirkt"
 #: openvpnadvanced.ui:72 openvpnadvanced.ui:85
 #, kde-format
 msgid "Renegotiate data channel key after the specified number of seconds."
-msgstr ""
+msgstr "Endursemja um gagnarásarlykil eftir tiltekinn fjölda sekúndna."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomReneg)
 #: openvpnadvanced.ui:75
 #, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr ""
+msgstr "Nota sérstillt millibil til að endursemja:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCompression)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUseCompression)
@@ -373,7 +388,7 @@ msgstr "LZ4 v2"
 #: openvpnadvanced.ui:133
 #, kde-format
 msgid "Adaptive"
-msgstr "Aðlaganlegt"
+msgstr "Aðlögunarhæft"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, leVirtualDeviceName)
@@ -386,7 +401,7 @@ msgstr "Sjálfvirkt"
 #: openvpnadvanced.ui:148
 #, kde-format
 msgid "Use TCP for communicating with remote host."
-msgstr ""
+msgstr "Nota TCP í samskiptum við fjartengda vél."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:151
@@ -399,13 +414,13 @@ msgstr "Nota TCP-tengingu"
 #: openvpnadvanced.ui:160 openvpnadvanced.ui:173
 #, kde-format
 msgid "Explicitly set virtual device type (TUN/TAP)."
-msgstr ""
+msgstr "Velja sérstaklega tegund sýndartækis (TUN/TAP)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceType)
 #: openvpnadvanced.ui:163
 #, kde-format
 msgid "Set virtual device type:"
-msgstr ""
+msgstr "Velja tegund sýndartækis:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:177
@@ -427,12 +442,14 @@ msgid ""
 "Use custom name for TUN/TAP virtual device (instead of default \"tun\" or "
 "\"tap\")."
 msgstr ""
+"Nota sérvalið heiti fyrir TUN/TAP-sýndartæki (í stað sjálfgefins \"tun\" eða "
+"\"tap\")."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceName)
 #: openvpnadvanced.ui:197
 #, kde-format
 msgid "Set virtual device name:"
-msgstr ""
+msgstr "Velja heiti sýndartækis:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMtu)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMtu)
@@ -442,37 +459,39 @@ msgid ""
 "Take the TUN device MTU to be specified value and derive the link MTU from "
 "it."
 msgstr ""
+"Láta MTU fyrir TUN-tæki vera tilgreint gildi og leiða MTU fyrir tengilinn af "
+"því."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtu)
 #: openvpnadvanced.ui:230
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr ""
+msgstr "Nota sérstillt hámarksgildi sendingar (MTU) fyrir einkagöng:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkCustomFragmentSize)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomFragmentSize)
 #: openvpnadvanced.ui:263 openvpnadvanced.ui:276
 #, kde-format
 msgid "Enable internal datagram fragmentation with this maximum size."
-msgstr ""
+msgstr "Virkja innri gagnaskeytatvístrun með þessari hámarksstærð."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomFragmentSize)
 #: openvpnadvanced.ui:266
 #, kde-format
 msgid "Use custom UDP fragment size:"
-msgstr ""
+msgstr "Nota sérstillta UDP-tvístrunarstærð:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:294
 #, kde-format
 msgid "Restrict tunnel TCP maximum segment size."
-msgstr ""
+msgstr "Takmarka hámarkshlutastærð TCP fyrir einkagöng."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:297
 #, kde-format
 msgid "Restrict TCP maximum segment size (MSS)"
-msgstr ""
+msgstr "Takmarka TCP hámarkshlutastærð (MSS)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:305
@@ -481,24 +500,26 @@ msgid ""
 "Randomize the order of gateways list (remote) as a kind of basic load-\n"
 "balancing measure."
 msgstr ""
+"Nota slembiröðun netgáttalista (fjartenging) sem eins konar einfalda\n"
+"álagsdreifingaraðgerð."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:308
 #, kde-format
 msgid "Randomize remote hosts"
-msgstr ""
+msgstr "Slembiraða fjartengdum vélum"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:315
 #, kde-format
 msgid "Build a tun link capable of forwarding IPv6 traffic."
-msgstr ""
+msgstr "Setja upp tun-tengil sem getur framsent IPv6-umferð."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:318
 #, kde-format
 msgid "IPv6 tun link"
-msgstr ""
+msgstr "IPv6 tun-tengill"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPingInterval)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbPingInterval)
@@ -508,12 +529,14 @@ msgid ""
 "Ping remote over the TCP/UDP control channel if no packets have been sent "
 "for at least n seconds."
 msgstr ""
+"Senda ping-skipun á fjartengda vél í gegnum TCP/UDP-stýrirásina ef engir "
+"pakkar hafa verið sendir í a.m.k. n sekúndur."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPingInterval)
 #: openvpnadvanced.ui:330
 #, kde-format
 msgid "Specify ping interval:"
-msgstr ""
+msgstr "Tilgreina bil á milli ping-skipana:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkSpecifyExitRestartPing)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbSpecifyExitRestartPing)
@@ -524,12 +547,14 @@ msgid ""
 "Exit or restart after n seconds pass without reception of a ping or other "
 "packet from remote."
 msgstr ""
+"Hætta eða endurræsa eftir n sekúndna bið án þess að ping-merki eða aðrir "
+"pakkar séu mótteknir frá fjartengdri vél."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkSpecifyExitRestartPing)
 #: openvpnadvanced.ui:363
 #, kde-format
 msgid "Specify exit or restart ping:"
-msgstr ""
+msgstr "Tilgreina lokun eða endurræsa ping-skipun:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbSpecifyExitRestartPing)
 #: openvpnadvanced.ui:377
@@ -565,25 +590,41 @@ msgid ""
 "address,\n"
 "not only the address which was specified in the --remote option."
 msgstr ""
+"Leyfa fjartengdum jafningja að breyta IP-tölu og tengisnúmeri sínu t.d. "
+"vegna DHCP\n"
+"(sjálfgefið ef --remote er ekki notað). Þegar --float er tilgreint með--"
+"remote\n"
+"leyfir það OpenVPN-setu í fyrstu að tengjast jafningja á þekktu vistfangi,\n"
+"ef pakkarnir koma hins vegar frá nýju vistfangi og standast öll "
+"sannvottunarpróf\n"
+"tekur nýja vistfangið yfir stjórn setunnar. Þetta er gagnlegt þegar þú ert "
+"að tengjast\n"
+"við jafningja sem er með breytilegt vistfang, eins og með innhringitengingu "
+"eða DHCP-biðlara.\n"
+"\n"
+"\n"
+"Valkosturinn --float segir OpenVPN að samþykkja sannvottaða pakka frá hvaða\n"
+"vistfangi sem er, ekki einungis vistfanginu sem er tilgreint með --remote "
+"valkostinum."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAcceptAuthenticatedPackets)
 #: openvpnadvanced.ui:423
 #, kde-format
 msgid "Accept authenticated packets from any address (Float)"
-msgstr ""
+msgstr "Taka við sannvottuðum pökkum frá hvaða vistfangi sem er (Float)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMaxRoutes)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMaxRoutes)
 #: openvpnadvanced.ui:432 openvpnadvanced.ui:445
 #, kde-format
 msgid "Specify the maximum number of routes the server is allowed to specify."
-msgstr ""
+msgstr "Tilgreina hámarksfjölda leiða sem þjónninn má tilgreina."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMaxRoutes)
 #: openvpnadvanced.ui:435
 #, kde-format
 msgid "Specify max routes:"
-msgstr ""
+msgstr "Tilgreina hám. leiðir:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, securityTab)
 #: openvpnadvanced.ui:474
@@ -600,6 +641,9 @@ msgid ""
 "Cipher\n"
 "Block Chaining mode)."
 msgstr ""
+"Dulrita pakka með dulritunaralgrími. Sjálfgefið snið er BF-CBC (Blowfish in "
+"Cipher\n"
+"Block Chaining-snið)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openvpnadvanced.ui:486
@@ -611,7 +655,7 @@ msgstr "Dulritunaraðferð (cipher):"
 #: openvpnadvanced.ui:513
 #, kde-format
 msgid "Obtaining available ciphers…"
-msgstr ""
+msgstr "Sæki tiltækar dulritunaraðferðir..."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -621,12 +665,14 @@ msgid ""
 "Set cipher key size to a custom value. If unspecified, it defaults to cipher-"
 "specific size."
 msgstr ""
+"Stilla stærð dulritunarlykils á sérvalið gildi. Ef ekkert er tilgreint er "
+"sjálfgefið stillt á stærð sem á við dulritunaraðferðina."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomCipherKey)
 #: openvpnadvanced.ui:531
 #, kde-format
 msgid "Use custom size of cipher key:"
-msgstr ""
+msgstr "Nota sérstillta stærð dulritunarlykils:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboHmac)
@@ -636,12 +682,14 @@ msgid ""
 "Authenticate packets with HMAC using message digest algorithm. The default "
 "is SHA1."
 msgstr ""
+"Sannvotta pakka með HMAC með því að nota boðatætingsalgrím (message digest "
+"algorithm). SHA1 er sjálfgefið."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openvpnadvanced.ui:564
 #, kde-format
 msgid "HMAC Authentication:"
-msgstr ""
+msgstr "HMAC-sannvottun:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:587
@@ -726,42 +774,49 @@ msgid ""
 "fields),\n"
 "or just the Common Name (CN field).\n"
 msgstr ""
+"Sannreyna vottorðsauðkenningu þjóns.\n"
+"\n"
+"Þegar þetta er virkt kemst einungis á samband ef þjónsvottorðið samsvarar\n"
+"eiginleikum sem vænst er.\n"
+"Samsvörun getur annað hvort átt við alla efnislínu vottorðsins (alla "
+"reitina),\n"
+"eða einungis kjörnafnið (CN-reiturinn).\n"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCertCheck)
 #: openvpnadvanced.ui:673
 #, kde-format
 msgid "Server Certificate Check:"
-msgstr ""
+msgstr "Athugun þjónsvottorðs:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:690
 #, kde-format
 msgid "Don't verify certificate identification"
-msgstr ""
+msgstr "Ekki sannreyna auðkenni vottorðs"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:695
 #, kde-format
 msgid "Verify whole subject exactly"
-msgstr ""
+msgstr "Sannreyna alla efnislínu nákvæmlega"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:700
 #, kde-format
 msgid "Verify name exactly"
-msgstr ""
+msgstr "Sannreyna nafn nákvæmlega"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:705
 #, kde-format
 msgid "Verify name by prefix"
-msgstr ""
+msgstr "Sannreyna nafn eftir forskeyti"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:710
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
-msgstr ""
+msgstr "Sannreyna efnislínu að hluta (eldra snið, alls ekki ráðlegt að nota)"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lbSubjectMatch)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, subjectMatch)
@@ -770,12 +825,13 @@ msgstr ""
 msgid ""
 "Subject or Common Name to verify server certificate information against."
 msgstr ""
+"Efnislína eða kjörnafn til að nota til sannvottunar upplýsinga þjónsvottorðs."
 
 #. i18n: ectx: property (text), widget (QLabel, lbSubjectMatch)
 #: openvpnadvanced.ui:728
 #, kde-format
 msgid "Subject Match:"
-msgstr ""
+msgstr "Samsvörun efnislínu:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, subjectMatch)
 #: openvpnadvanced.ui:744
@@ -784,6 +840,8 @@ msgid ""
 "Connect only to servers whose certificate matches the given subject. "
 "Example: /CN=myvpn.company.com"
 msgstr ""
+"Tengjast einungis við þjóna með vottorð sem samsvarar tilgreindri efnislínu. "
+"Dæmi: /CN=myvpn.company.com"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRemoteCertTls)
 #. i18n: ectx: property (toolTip), widget (QLabel, labelRemoteCertTls)
@@ -795,23 +853,26 @@ msgid ""
 "extended\n"
 "key usage based on RFC3280 TLS rules."
 msgstr ""
+"Krefjast þess að jafningjavottorð sé undirritað með beinni lyklanotkun og "
+"aukinni\n"
+"lyklanotkun sem byggir á RFC3280 TLS-reglum."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRemoteCertTls)
 #: openvpnadvanced.ui:760
 #, kde-format
 msgid "Verify peer (server) certificate usage signature"
-msgstr ""
+msgstr "Sannreyna notkunarundirritun vottorðs jafningja (þjóns)"
 
 #. i18n: ectx: property (text), widget (QLabel, labelRemoteCertTls)
 #: openvpnadvanced.ui:776
 #, kde-format
 msgid "Remote peer certificate TLS type:"
-msgstr ""
+msgstr "TLS-gerð vottorðs fjartengds jafningja:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbRemoteCertTls)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbNsCertType)
 #: openvpnadvanced.ui:791 openvpnadvanced.ui:838
-#, fuzzy, kde-format
+#, kde-format
 msgid "Server"
 msgstr "Þjónn"
 
@@ -831,30 +892,32 @@ msgid ""
 "Require that peer certificate was signed with an explicit nsCertType "
 "designation."
 msgstr ""
+"Krefjast þess að jafningjavottorð sé undirritað með yfirlýstu nsCertType-"
+"auðkenni."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkNsCertType)
 #: openvpnadvanced.ui:809
 #, kde-format
 msgid "Verify peer (server) certificate nsCertType designation"
-msgstr ""
+msgstr "Sannreyna nsCertType-auðkenni vottorðs jafningja (þjóns)"
 
 #. i18n: ectx: property (text), widget (QLabel, lblNsCertType)
 #: openvpnadvanced.ui:824
 #, kde-format
 msgid "Remote peer certificate nsCert designation:"
-msgstr ""
+msgstr "nsCert-auðkenni vottorðs fjartengds jafningja:"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useExtraTlsAuth)
 #: openvpnadvanced.ui:853
 #, kde-format
 msgid "Add an additional layer of HMAC authentication."
-msgstr ""
+msgstr "Bæta við aukalagi af HMAC-sannvottun."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: openvpnadvanced.ui:868
 #, kde-format
 msgid "Mode:"
-msgstr "Hamur:"
+msgstr "Snið:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:876
@@ -883,6 +946,8 @@ msgid ""
 "channel\n"
 "to protect against DoS attacks."
 msgstr ""
+"Bæta við aukalagi af HMAC-sannvottun ofan á TLS stjórnrásina til að\n"
+"verjast DoS-árásum."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
 #: openvpnadvanced.ui:898
@@ -895,7 +960,7 @@ msgstr "Lykilskrá:"
 #: openvpnadvanced.ui:922 openvpnadvanced.ui:941
 #, kde-format
 msgid "Direction parameter for static key mode."
-msgstr ""
+msgstr "Stefnuviðfang fyrir fast lykilsnið."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
 #: openvpnadvanced.ui:950
@@ -920,13 +985,13 @@ msgstr "Milliþjónar"
 #: openvpnadvanced.ui:992 openvpnadvanced.ui:1017
 #, kde-format
 msgid "Proxy type: HTTP or SOCKS"
-msgstr ""
+msgstr "Tegund milliþjóns: HTTP eða SOCKS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: openvpnadvanced.ui:995
 #, kde-format
 msgid "Proxy Type:"
-msgstr "Tegund milliþjóns (proxy):"
+msgstr "Tegund milliþjóns:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProxyType)
 #: openvpnadvanced.ui:1021
@@ -953,13 +1018,15 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
+"Veldu þennan valkost ef fyrirtæki þitt krefst notkunar milliþjóns til að fá "
+"aðgang að internetinu."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_12)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, proxyServerAddress)
 #: openvpnadvanced.ui:1060 openvpnadvanced.ui:1073
 #, kde-format
 msgid "Connect to remote host through a proxy with this address."
-msgstr ""
+msgstr "Tengjast fjartengdri vél í gegnum milliþjón með þetta vistfang."
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: openvpnadvanced.ui:1063
@@ -972,13 +1039,13 @@ msgstr "Vistfang netþjóns:"
 #: openvpnadvanced.ui:1083 openvpnadvanced.ui:1102
 #, kde-format
 msgid "Connect to remote host through a proxy with this port."
-msgstr ""
+msgstr "Tengjast fjartengdri vél um milliþjón með þessu tengi."
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #: openvpnadvanced.ui:1086
 #, kde-format
 msgid "Port:"
-msgstr "Gátt:"
+msgstr "Tengi:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_14)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyUsername)
@@ -986,6 +1053,7 @@ msgstr "Gátt:"
 #, kde-format
 msgid "HTTP/SOCKS proxy username passed to OpenVPN when prompted for it."
 msgstr ""
+"Notandanafn á HTTP/SOCKS-milliþjóni sent til OpenVPN þegar beðið er um það."
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: openvpnadvanced.ui:1115
@@ -999,6 +1067,7 @@ msgstr "Notandanafn á milliþjóni:"
 #, kde-format
 msgid "HTTP/SOCKS proxy password passed to OpenVPN when prompted for it."
 msgstr ""
+"Lykilorð á HTTP/SOCKS-milliþjóni sent til OpenVPN þegar beðið er um það."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
 #: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
@@ -1011,24 +1080,26 @@ msgstr "Lykilorð á milliþjóni:"
 #, kde-format
 msgid "Retry indefinitely on proxy errors. It simulates a SIGUSR1 reset."
 msgstr ""
+"Reyna aftur endalaust þegar milliþjónn skilar villu. Það hermir eftir "
+"SIGUSR1-endurstillingu."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkProxyRetry)
 #: openvpnadvanced.ui:1165
 #, kde-format
 msgid "Retry indefinitely when errors occur"
-msgstr ""
+msgstr "Reyna aftur endalaust þegar villa kemur upp"
 
 #: openvpnadvancedwidget.cpp:60
 #, kde-format
 msgctxt "@title: window advanced openvpn properties"
 msgid "Advanced OpenVPN properties"
-msgstr ""
+msgstr "Ítarlegir eiginleikar OpenVPN"
 
 #: openvpnadvancedwidget.cpp:132 openvpnadvancedwidget.cpp:156
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
-msgstr ""
+msgstr "OpenVPN dulritunaruppfletting brást"
 
 #: openvpnadvancedwidget.cpp:139
 #, kde-format
@@ -1040,7 +1111,7 @@ msgstr "Sjálfgefið"
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
-msgstr ""
+msgstr "Engar OpenVPN dulritunaraðferðir fundust"
 
 #: openvpnauth.cpp:73 openvpnauth.cpp:103
 #, kde-format

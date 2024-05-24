@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Steve Allewell <steve.allewell@gmail.com>, 2014, 2015, 2017, 2019, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2014, 2015, 2017, 2019, 2020, 2021, 2022, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-20 00:39+0000\n"
-"PO-Revision-Date: 2022-08-22 17:13+0100\n"
+"PO-Revision-Date: 2024-05-23 19:27+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language-Team: British English\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.08.0\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: openconnectauth.cpp:332
 #, kde-format
@@ -257,10 +257,9 @@ msgstr "Apple iOS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnectprop.ui:226
-#, fuzzy, kde-format
-#| msgid "Reported OS:"
+#, kde-format
 msgid "Reported Version"
-msgstr "Reported OS:"
+msgstr "Reported Version"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: openconnectprop.ui:236
@@ -270,10 +269,9 @@ msgstr "Certificate Authentication"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaCertLabel)
 #: openconnectprop.ui:242
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "User Certificate:"
+msgstr "Machine Certificate:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_6)

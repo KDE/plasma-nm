@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Steve Allewell <steve.allewell@gmail.com>, 2017, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2017, 2019, 2020, 2021, 2022, 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-28 01:34+0000\n"
-"PO-Revision-Date: 2023-03-14 20:38+0000\n"
+"PO-Revision-Date: 2024-05-23 19:28+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: kcm.cpp:284
 #, kde-format
@@ -104,24 +104,24 @@ msgstr "Hotspot"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Name:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Hotspot password:"
+msgstr "Password:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "Hotspot name must not be empty"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
+"characters"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -129,6 +129,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"Hotspot password must either be empty or consist of one of the following:"
+"<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
+"characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

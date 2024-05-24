@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Andrew Coles <andrew_coles@yahoo.co.uk>, 2009, 2010, 2011.
-# Steve Allewell <steve.allewell@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-09 00:40+0000\n"
-"PO-Revision-Date: 2023-05-21 14:47+0100\n"
+"PO-Revision-Date: 2024-05-23 19:27+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.03.70\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -69,16 +69,15 @@ msgid "Connected"
 msgstr "Connected"
 
 #: contents/ui/ConnectionListPage.qml:35
-#, fuzzy, kde-format
-#| msgid "Password on this network"
+#, kde-format
 msgid "You need to log in to this network"
-msgstr "Password on this network"
+msgstr "You need to log in to this network"
 
 #: contents/ui/ConnectionListPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Log in"
 
 #: contents/ui/ConnectionListPage.qml:115
 #, kde-format

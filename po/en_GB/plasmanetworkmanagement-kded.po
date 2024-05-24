@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Steve Allewell <steve.allewell@gmail.com>, 2014, 2015, 2016, 2017, 2019, 2020, 2022.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2022, 2024 Steve Allewell <steve.allewell@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2022-12-31 16:18+0000\n"
+"PO-Revision-Date: 2024-05-23 19:28+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
-"Language-Team: British English <kde-l10n-en_gb@kde.org>\n"
+"Language-Team: British English\n"
 "Language: en_GB\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 24.02.2\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -551,37 +551,30 @@ msgid "Authenticate %1"
 msgstr "Authenticate %1"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "No secrets were provided"
+msgstr "No secrets were requested"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "Provide the password for the wireless network '%1':"
+msgstr "Incorrect password for the wireless network \"%1\". Please try again."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "Provide the password for the wireless network '%1':"
+msgstr "Enter the password for the wireless network \"%1\":"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Provide the password for the connection '%1':"
+msgstr "Incorrect password for the connection \"%1\". Please try again."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Provide the password for the connection '%1':"
+msgstr "Enter the password for the connection \"%1\":"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -592,13 +585,12 @@ msgstr "%1 password dialogue"
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "VPN settings are missing"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "Provide the secrets for the VPN connection '%1':"
+msgstr "Provide the secrets for the VPN connection \"%1\":"
 
 #: passworddialog.cpp:135
 #, kde-format

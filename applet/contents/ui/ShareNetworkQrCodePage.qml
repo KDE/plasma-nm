@@ -4,7 +4,7 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-import QtQuick 2.15
+import QtQuick
 import QtQuick.Layouts 1.2
 
 import org.kde.plasma.components 3.0 as PlasmaComponents3
@@ -36,5 +36,32 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
         barcodeType: Prison.Barcode.QRCode
+
+        Drag.dragType: Drag.Automatic
+        Drag.supportedActions: Qt.CopyAction
+
+        HoverHandler {
+            enabled: barcode.valid
+            cursorShape: Qt.OpenHandCursor
+        }
+
+        DragHandler {
+            id: dragHandler
+            enabled: barcode.valid
+            cursorShape: Qt.ClosedHandCursor
+
+            onActiveChanged: {
+                if (active) {
+                    barcode.grabToImage((result) => {
+                        barcode.Drag.mimeData = {
+                            "image/png": result.image,
+                        };
+                        barcode.Drag.active = dragHandler.active;
+                    });
+                } else {
+                    barcode.Drag.active = false;
+                }
+            }
+        }
     }
 }

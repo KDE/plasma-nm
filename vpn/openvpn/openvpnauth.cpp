@@ -57,13 +57,22 @@ void OpenVpnAuthWidget::readSecrets()
 
     // If hints are given, then always ask for what the hints require
     if (!m_hints.isEmpty()) {
+        const QString vpnMessage = QStringLiteral("x-vpn-message:");
+        const QString tagDynChallNoEcho = QStringLiteral("x-dynamic-challenge:");
+        const QString tagDynChallEcho = QStringLiteral("x-dynamic-challenge-echo:");
+        std::optional<bool> passwordModeEnabled = std::nullopt;
         QString passwordType;
         QString prompt;
+
         for (const QString &hint : std::as_const(m_hints)) {
-            const QString vpnMessage = QStringLiteral("x-vpn-message:");
             if (hint.startsWith(vpnMessage)) {
-                prompt = hint.right(hint.length() - vpnMessage.length());
+                prompt = hint.sliced(vpnMessage.length());
             } else {
+                if (hint.startsWith(tagDynChallNoEcho)) {
+                    passwordModeEnabled = true;
+                } else if (hint.startsWith(tagDynChallEcho)) {
+                    passwordModeEnabled = false;
+                }
                 passwordType = hint;
             }
         }
@@ -82,16 +91,18 @@ void OpenVpnAuthWidget::readSecrets()
             prompt += QLatin1Char(':');
         }
 
-        bool isOTP = false;
-        QStringList possibleTokens = {i18n("OTP"), i18n("authenticator"), i18n("code"), i18n("token"), i18n("one-time password")};
-        for (const QString &possibleToken : possibleTokens) {
-            if (prompt.toLower().contains(possibleToken.toLower())) {
-                isOTP = true;
-                break;
+        if (!passwordModeEnabled.has_value()) {
+            QStringList possibleTokens = {i18n("OTP"), i18n("authenticator"), i18n("code"), i18n("token"), i18n("one-time password")};
+
+            for (const QString &possibleToken : possibleTokens) {
+                if (prompt.toLower().contains(possibleToken.toLower())) {
+                    passwordModeEnabled = false;
+                    break;
+                }
             }
         }
 
-        addPasswordField(prompt, QString(), passwordType, !isOTP);
+        addPasswordField(prompt, QString(), passwordType, passwordModeEnabled.value_or(true));
     } else {
         if (cType == QLatin1String(NM_OPENVPN_CONTYPE_TLS) || cType == QLatin1String(NM_OPENVPN_CONTYPE_PASSWORD_TLS)) {
             // Normal user password

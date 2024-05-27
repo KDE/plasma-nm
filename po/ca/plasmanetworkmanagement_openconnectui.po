@@ -332,6 +332,3 @@ msgstr "Mode del testimoni:"
 #, kde-format
 msgid "Token Secret:"
 msgstr "Secret del testimoni:"
-
-#~ msgid "*.pem *.crt *.key"
-#~ msgstr "*.pem *.crt *.key"

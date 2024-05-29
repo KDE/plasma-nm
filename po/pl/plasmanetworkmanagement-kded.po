@@ -16,7 +16,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 23.08.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -580,7 +579,7 @@ msgstr "Wpisz hasło do połączenia \"%1\":"
 #: passworddialog.cpp:114
 #, kde-format
 msgid "%1 password dialog"
-msgstr "Okno wpisywania hasła %1"
+msgstr "Okno dialogowe hasła %1"
 
 #: passworddialog.cpp:121
 #, kde-format

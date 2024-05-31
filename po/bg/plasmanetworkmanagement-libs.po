@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-10 00:39+0000\n"
-"PO-Revision-Date: 2024-04-11 11:24+0200\n"
+"PO-Revision-Date: 2024-05-30 21:11+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -294,7 +294,7 @@ msgid ""
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 msgstr ""
-"<qt> Повече информация за тези стойности можете да намерите тук: <br/><a "
+"<qt>Повече информация за тези стойности можете да намерите тук: <br/><a "
 "href='https://developer.gnome.org/NetworkManager/stable/nm-settings."
 "html'>https://developer.gnome.org/NetworkManager/stable/nm-settings.html</"
 "a></qt>"
@@ -366,9 +366,9 @@ msgid ""
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://www.kde."
 "org&gt;</li></ul></qt>"
 msgstr ""
-"<qt> Този запис трябва да е един от: <ul> <li> DNS: &lt; име или ip адрес "
-"&gt; </li> <li> Имейл: &lt; имейл &gt; </li> <li> URI: &lt; uri, напр. "
-"https: //www.kde.org &gt; </li> </ul> </qt>"
+"<qt>Този запис трябва да е един от: <ul><li> DNS: &lt; име или ip адрес &gt; "
+"</li><li> Имейл: &lt; имейл &gt; </li><li> URI: &lt; uri, напр. https: //www."
+"kde.org &gt; </li></ul></qt>"
 
 #: editor/settings/security802-1x.cpp:523
 #, kde-format
@@ -2039,7 +2039,7 @@ msgstr ""
 "по всяко време получавайте трафик от връстник и той е зад \n"
 "NAT, интерфейсът може да се възползва от \n"
 "постоянен интервал на поддържане от 25 секунди. Ако е зададено на \n"
-"0 или \\ \"изключен \", тази опция е деактивирана. По подразбиране или \n"
+"0 или \"изключен\", тази опция е деактивирана. По подразбиране или \n"
 "когато не е посочена, тази опция е изключена. Повечето потребители няма \n"
 "да имат нужда от това."
 
@@ -3032,7 +3032,7 @@ msgstr "Избиране на вашия доставчик"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Select your provider from a &list:"
-msgstr "Избиране на вашия доставчик от & списък:"
+msgstr "Избиране на доставчик от &списък:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:435
 #, kde-format
@@ -3244,7 +3244,7 @@ msgstr "Премахване"
 #: handler.cpp:121
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "Plasma няма поддръжка за \"%1\" VPN връзки. "
+msgstr "Plasma няма поддръжка за \"%1\" VPN връзки."
 
 #: handler.cpp:124
 #, kde-format
@@ -3254,7 +3254,7 @@ msgstr "Подаване на сигнал за грешка"
 #: handler.cpp:147
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr "NetworkManager няма поддръжка за \"%1\" VPN връзки. "
+msgstr "NetworkManager няма поддръжка за \"%1\" VPN връзки."
 
 #: handler.cpp:150
 #, kde-format

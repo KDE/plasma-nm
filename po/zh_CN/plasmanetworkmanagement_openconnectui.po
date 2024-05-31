@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-02-20 00:39+0000\n"
+"POT-Creation-Date: 2024-05-31 00:41+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,23 +18,23 @@ msgstr ""
 "plasmanetworkmanagement_openconnectui.pot\n"
 "X-Crowdin-File-ID: 43097\n"
 
-#: openconnectauth.cpp:332
+#: openconnectauth.cpp:337
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "初始化软件令牌失败：%1"
 
-#: openconnectauth.cpp:385
+#: openconnectauth.cpp:390
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "正在连接主机，请稍候…"
 
-#: openconnectauth.cpp:732
+#: openconnectauth.cpp:767
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "登录"
 
-#: openconnectauth.cpp:794
+#: openconnectauth.cpp:829
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -45,7 +45,7 @@ msgstr ""
 "原因：%2\n"
 "是否仍然接受此证书？"
 
-#: openconnectauth.cpp:889
+#: openconnectauth.cpp:924
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "连接尝试失败。"
@@ -328,3 +328,204 @@ msgstr "令牌模式："
 #, kde-format
 msgid "Token Secret:"
 msgstr "令牌密钥："
+
+#: openconnectwebauthdialog.cpp:111
+#, kde-format
+msgid "Choose a Passkey"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:112
+#, kde-format
+msgid "Which passkey do you want to use for %1?"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:129
+#, kde-format
+msgid "Ok"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:140
+#, kde-format
+msgid "Use your security key with %1"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:141
+#, kde-format
+msgid "Touch your security key again to complete the request."
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:158
+#, kde-format
+msgid "Next"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:167
+#, kde-format
+msgid "PIN Required"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:168
+#, kde-format
+msgid "Enter the PIN for your security key"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:173
+#, kde-format
+msgid "New PIN Required"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:174
+#, kde-format
+msgid "Set new PIN for your security key"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:176
+#, kde-format
+msgid "Change PIN Required"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:177
+#, kde-format
+msgid "Change PIN for your security key"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:188
+#, kde-format
+msgid "Internal User Verification Locked"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:191
+#, kde-format
+msgid "Wrong PIN. %1 attempts remaining."
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:194
+#, kde-format
+msgid "Too Short. %1 attempts remaining."
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:197
+#, kde-format
+msgid "Invalid Characters. %1 attempts remaining."
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:201
+#, kde-format
+msgid "Same as current PIN. %1 attempts remaining."
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:239
+#, kde-format
+msgid "Something went wrong"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:243
+#, kde-format
+msgid "Request Timeout"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:246
+#, kde-format
+msgid "Key not registered"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:250
+#, kde-format
+msgid "You already registered this device.Try again with device"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:256
+#, kde-format
+msgid ""
+"The security key is locked because the wrong PIN was entered too many times."
+"To unlock it, remove and reinsert it."
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:262
+#, kde-format
+msgid ""
+"The security key is locked because the wrong PIN was entered too many times. "
+"You'll need to reset the security key."
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:266
+#, kde-format
+msgid ""
+"Authenticator removed during verification. Please reinsert and try again"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:269
+#, kde-format
+msgid "Authenticator doesn't have resident key support"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:272
+#, kde-format
+msgid "Authenticator missing user verification"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:275
+#, kde-format
+msgid "Authenticator missing Large Blob support"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:278
+#, kde-format
+msgid "No common algorithms"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:281
+#, kde-format
+msgid "Storage Full"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:284
+#, kde-format
+msgid "User consent denied"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:287
+#, kde-format
+msgid "User Cancelled Request"
+msgstr ""
+
+#: openconnectwebauthdialog.cpp:300
+#, kde-format
+msgid "Close"
+msgstr ""
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, Dialog)
+#: openconnectwebauthdialog.ui:20
+#, kde-format
+msgid "WebAuth"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, headingLabel)
+#: openconnectwebauthdialog.ui:32
+#, kde-format
+msgid "Heading"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, description)
+#: openconnectwebauthdialog.ui:48
+#, kde-format
+msgid "Description"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, pinLabel)
+#: openconnectwebauthdialog.ui:84
+#, kde-format
+msgid "PIN"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, confirmPinLabel)
+#: openconnectwebauthdialog.ui:107
+#, kde-format
+msgid "Confirm PIN"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, pinEntryErrorLabel)
+#: openconnectwebauthdialog.ui:130
+#, kde-format
+msgid "TextLabel"
+msgstr ""

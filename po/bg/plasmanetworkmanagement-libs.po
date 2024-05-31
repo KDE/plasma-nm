@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-04-10 00:39+0000\n"
-"PO-Revision-Date: 2024-04-11 11:24+0200\n"
+"PO-Revision-Date: 2024-05-30 16:57+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -366,9 +366,9 @@ msgid ""
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://www.kde."
 "org&gt;</li></ul></qt>"
 msgstr ""
-"<qt> Този запис трябва да е един от: <ul> <li> DNS: &lt; име или ip адрес "
-"&gt; </li> <li> Имейл: &lt; имейл &gt; </li> <li> URI: &lt; uri, напр. "
-"https: //www.kde.org &gt; </li> </ul> </qt>"
+"<qt> Този запис трябва да е един от: <ul><li> DNS: &lt; име или ip адрес "
+"&gt; </li><li> Имейл: &lt; имейл &gt; </li><li> URI: &lt; uri, напр. "
+"https: //www.kde.org &gt; </li></ul></qt>"
 
 #: editor/settings/security802-1x.cpp:523
 #, kde-format
@@ -3032,7 +3032,7 @@ msgstr "Избиране на вашия доставчик"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Select your provider from a &list:"
-msgstr "Избиране на вашия доставчик от & списък:"
+msgstr "Избиране на вашия доставчик от &списък:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:435
 #, kde-format

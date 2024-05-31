@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2024-05-13 23:14+0200\n"
+"PO-Revision-Date: 2024-05-30 16:59+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.0\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -67,8 +67,8 @@ msgid ""
 "<html><head/><body><p>Set the name used for authenticating the local system "
 "to the peer to &lt;name&gt;.</p></body></html>"
 msgstr ""
-"<html><head/><body> <p> Задайте името, използвано за удостоверяване на "
-"локалната система към peer до &lt; име &gt ;. </p> </body> </html>"
+"<html><head/><body><p> Задайте името, използвано за удостоверяване на "
+"локалната система към peer до &lt; име &gt ;. </p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_2)
 #: l2tp.ui:113
@@ -83,8 +83,8 @@ msgid ""
 "<html><head/><body><p>Password passed to PPPD when prompted for it.</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body> <p> Паролата се предава на PPPD при поискване. </p> </"
-"тяло> </html>"
+"<html><head/><body><p> Паролата се предава на PPPD при поискване. </p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_3)
 #: l2tp.ui:140
@@ -99,8 +99,8 @@ msgid ""
 "<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
 "host name for</p><p>authentication purposes.</p></body></html>"
 msgstr ""
-"<html><head/><body> <p> Добавете името на домейна &lt; домейн &gt; в "
-"локалния хост за целите на удостоверяване </p> <p>. </p> </body> </html>"
+"<html><head/><body><p> Добавете името на домейна &lt; домейн &gt; в локалния "
+"хост за целите на удостоверяване </p><p>. </p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -117,8 +117,8 @@ msgid ""
 "<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
 "cer or .p12 formats.</p></body></html>"
 msgstr ""
-"<html><head/><body> <p> Файл на удостоверителния орган (CA) в .pem, .der, ."
-"crt,.cer или .p12 формати. </p> </body> </html>"
+"<html><head/><body><p> Файл на удостоверителния орган (CA) в .pem, .der, ."
+"crt,.cer или .p12 формати. </p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: l2tp.ui:199
@@ -133,8 +133,8 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
 "</p></body></html>"
 msgstr ""
-"<html><head/><body> <p> Сертификат във формати .pem, .der, .crt, .cer или ."
-"p12.</p></body> </html>"
+"<html><head/><body><p> Сертификат във формати .pem, .der, .crt, .cer или ."
+"p12.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
@@ -151,8 +151,8 @@ msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
 "</p></body></html>"
 msgstr ""
-"<html><head/><body> <p> Частен ключ във формати .pem, .der, .key, .pk8 или ."
-"p12.</p></body> </html>"
+"<html><head/><body><p> Частен ключ във формати .pem, .der, .key, .pk8 или ."
+"p12.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -169,8 +169,8 @@ msgid ""
 "<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body> <p> Парола за частен ключ или PKCS #12 сертификат. </p> "
-"</тяло> </html>"
+"<html><head/><body><p> Парола за частен ключ или PKCS #12 сертификат. </p> </"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:292
@@ -234,8 +234,8 @@ msgstr "Предварително споделен ключ:"
 #, kde-format
 msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
 msgstr ""
-"<html><head/><body> <p> Тайната на предварително споделен ключ (PSK). </p> </"
-"body> </html>"
+"<html><head/><body><p> Тайната на предварително споделен ключ (PSK). </p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: l2tpipsec.ui:131
@@ -250,8 +250,8 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></body></"
 "html>"
 msgstr ""
-"<html><head/><body> <p> Сертификат във формати .pem, .der или .p12. </p> </"
-"body> </html>"
+"<html><head/><body><p> Сертификат във формати .pem, .der или .p12. </p></"
+"body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAdvanced)
 #: l2tpipsec.ui:225
@@ -288,8 +288,8 @@ msgid ""
 "<html><head/><body><p>How long the keying channel of a connection should "
 "last before being renegotiated.</p></body></html>"
 msgstr ""
-"<html><head/><body> <p> Колко дълго трябва да продължи каналът за въвеждане "
-"на връзка преди предоговаряне. </p> </body> </html>"
+"<html><head/><body><p> Колко дълго трябва да продължи каналът за въвеждане "
+"на връзка преди предоговаряне. </p></body></html>"
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
@@ -328,9 +328,9 @@ msgid ""
 "of encryption/authentication keys for user packets) should last, from "
 "successful negotiation to expiry.</p></body></html>"
 msgstr ""
-"<html><head/><body> <p>Колко време трябва да продължи конкретен случай на "
+"<html><head/><body><p>Колко време трябва да продължи конкретен случай на "
 "връзка (набор от ключове за шифроване / удостоверяване за потребителски "
-"пакети), от успешното договаряне до изтичането.</p> </body> </html>"
+"пакети), от успешното договаряне до изтичането.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
 #: l2tpipsec.ui:305
@@ -356,9 +356,9 @@ msgid ""
 "encrypted. This saves some bandwidth, but uses more processing power.</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body> <p> IPComp компресира сурови IP пакети, преди да ги "
+"<html><head/><body><p> IPComp компресира сурови IP пакети, преди да ги "
 "получи криптиран. Това спестява известна честотна лента, но използва повече "
-"процесорна мощ. </p> </тяло> </html>"
+"процесорна мощ. </p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:315
@@ -373,9 +373,8 @@ msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
 "only if the server doesn’t support PFS.</p></body></html>"
 msgstr ""
-"<html><head/><body> <p> Деактивиране на перфектно препращане секретност. "
-"Активирайте тази опция само, ако сървърът не поддържа PFS. </p> </body> </"
-"html>"
+"<html><head/><body><p> Деактивиране на перфектно препращане секретност. "
+"Активирайте тази опция само, ако сървърът не поддържа PFS. </p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:325
@@ -391,9 +390,9 @@ msgid ""
 "encapsulation even if no NAT situation is detected might help in such cases."
 "</p></body></html>"
 msgstr ""
-"<html><head/><body> <p> Някои защитни стени блокират трафика на ESP. "
+"<html><head/><body><p> Някои защитни стени блокират трафика на ESP. "
 "Прилагане на UDP капсулиране, дори ако не се открие NAT ситуация, може да "
-"помогне в такива случаи.</p></body> </html>"
+"помогне в такива случаи.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:335

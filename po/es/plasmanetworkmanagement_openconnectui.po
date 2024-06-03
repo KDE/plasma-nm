@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-06-02 00:00+0200\n"
+"PO-Revision-Date: 2024-06-02 12:40+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -423,7 +423,7 @@ msgstr "Algo ha ido mal"
 #: openconnectwebauthdialog.cpp:243
 #, kde-format
 msgid "Request Timeout"
-msgstr ""
+msgstr "Se ha agotado el tiempo de espera de la solicitud"
 
 #: openconnectwebauthdialog.cpp:246
 #, kde-format
@@ -431,7 +431,7 @@ msgid "Key not registered"
 msgstr "Clave no registrada"
 
 #: openconnectwebauthdialog.cpp:250
-#, fuzzy, kde-format
+#, kde-format
 msgid "You already registered this device.Try again with device"
 msgstr ""
 "Ya ha registrado este dispositivo. Vuelva a probar de nuevo con el "
@@ -443,6 +443,9 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times."
 "To unlock it, remove and reinsert it."
 msgstr ""
+"La clave de seguridad está bloqueada porque se ha introducido un PIN "
+"incorrecto demasiadas veces. Para desbloquearla, extráigala y vuelva a "
+"insertarla."
 
 #: openconnectwebauthdialog.cpp:262
 #, kde-format
@@ -450,47 +453,51 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "You'll need to reset the security key."
 msgstr ""
+"La clave de seguridad está bloqueada porque se ha introducido un PIN "
+"incorrecto demasiadas veces. Tendrá que establecer la clave de seguridad."
 
 #: openconnectwebauthdialog.cpp:266
 #, kde-format
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
 msgstr ""
+"Se ha extraído en autenticador durante la verificación. Vuelva a insertarlo "
+"y pruebe otra vez."
 
 #: openconnectwebauthdialog.cpp:269
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
+msgstr "El autenticador no admite una clave residente"
 
 #: openconnectwebauthdialog.cpp:272
 #, kde-format
 msgid "Authenticator missing user verification"
-msgstr ""
+msgstr "El autenticador carece de verificación del usuario"
 
 #: openconnectwebauthdialog.cpp:275
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr ""
+msgstr "El autenticador no permite usar bloques de almacenamiento grandes"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
 msgid "No common algorithms"
-msgstr ""
+msgstr "No hay algoritmos comunes"
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
 msgid "Storage Full"
-msgstr ""
+msgstr "Almacenamiento completo"
 
 #: openconnectwebauthdialog.cpp:284
 #, kde-format
 msgid "User consent denied"
-msgstr ""
+msgstr "Consentimiento del usuario denegado"
 
 #: openconnectwebauthdialog.cpp:287
 #, kde-format
 msgid "User Cancelled Request"
-msgstr ""
+msgstr "Solicitud cancelada por el usuario"
 
 #: openconnectwebauthdialog.cpp:300
 #, kde-format
@@ -501,13 +508,13 @@ msgstr "Cerrar"
 #: openconnectwebauthdialog.ui:20
 #, kde-format
 msgid "WebAuth"
-msgstr ""
+msgstr "WebAuth"
 
 #. i18n: ectx: property (text), widget (QLabel, headingLabel)
 #: openconnectwebauthdialog.ui:32
 #, kde-format
 msgid "Heading"
-msgstr ""
+msgstr "Cabecera"
 
 #. i18n: ectx: property (text), widget (QLabel, description)
 #: openconnectwebauthdialog.ui:48
@@ -531,7 +538,7 @@ msgstr "Confirmar PIN"
 #: openconnectwebauthdialog.ui:130
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "Etiqueta de texto"
 
 #~ msgid "*.pem *.crt *.key"
 #~ msgstr "*.pem *.crt *.key"

@@ -99,14 +99,8 @@ bool UiUtils::isConnectionTypeSupported(NetworkManager::ConnectionSettings::Conn
         return false;
     }
 
-    bool manageVirtualConnections = Configuration::self().manageVirtualConnections();
-
-    if (type == NetworkManager::ConnectionSettings::Bond //
-        || type == NetworkManager::ConnectionSettings::Bridge //
-        || type == NetworkManager::ConnectionSettings::Infiniband //
-        || type == NetworkManager::ConnectionSettings::Team //
-        || type == NetworkManager::ConnectionSettings::Vlan) {
-        return manageVirtualConnections;
+    if (isConnectionTypeVirtual(type)) {
+        return Configuration::self().manageVirtualConnections();
     }
 
     return true;
@@ -118,7 +112,8 @@ bool UiUtils::isConnectionTypeVirtual(NetworkManager::ConnectionSettings::Connec
         || type == NetworkManager::ConnectionSettings::Bridge //
         || type == NetworkManager::ConnectionSettings::Infiniband //
         || type == NetworkManager::ConnectionSettings::Team //
-        || type == NetworkManager::ConnectionSettings::Vlan) {
+        || type == NetworkManager::ConnectionSettings::Vlan //
+        || type == NetworkManager::ConnectionSettings::Loopback) {
         return true;
     }
 

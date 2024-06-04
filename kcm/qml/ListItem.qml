@@ -44,7 +44,7 @@ MouseArea {
             top: parent.top
         }
         height: naturalSize.height
-        visible: listItem.sectionDelegate || (typeof(index) != "undefined" && index > 0 && !listItem.checked && !listItem.pressed)
+        visible: listItem.sectionDelegate || (typeof(index) != "undefined" && index > 0 && !listItem.checked && !listItem.pressed && (listItem.ListView.previousSection == listItem.ListView.section))
     }
 
     Item {

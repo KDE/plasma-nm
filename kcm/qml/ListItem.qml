@@ -42,6 +42,8 @@ MouseArea {
             left: parent.left
             right: parent.right
             top: parent.top
+            leftMargin: Kirigami.Units.largeSpacing
+            rightMargin: Kirigami.Units.largeSpacing
         }
         height: naturalSize.height
         visible: listItem.sectionDelegate || (typeof(index) != "undefined" && index > 0 && !listItem.checked && !listItem.pressed && (listItem.ListView.previousSection == listItem.ListView.section))

@@ -171,6 +171,9 @@ QString UiUtils::interfaceTypeLabel(const NetworkManager::Device::Type type, con
             }
         }
     } break;
+    case NetworkManager::Device::Loopback:
+        deviceText = i18nc("title of the interface widget in nm's popup", "Loopback");
+        break;
     case NetworkManager::Device::Ethernet:
     default:
         deviceText = i18nc("title of the interface widget in nm's popup", "Wired Ethernet");
@@ -235,6 +238,9 @@ QString UiUtils::iconAndTitleForConnectionSettingsType(NetworkManager::Connectio
         text = i18n("WireGuard VPN");
         icon = QStringLiteral("network-vpn");
         break;
+    case ConnectionSettings::Loopback:
+        text = i18n("Loopback");
+        break;
     default:
         text = i18n("Unknown connection type");
         break;
@@ -267,6 +273,9 @@ QString UiUtils::prettyInterfaceName(NetworkManager::Device::Type type, const QS
         break;
     case NetworkManager::Device::Bridge:
         ret = i18n("Bridge (%1)", interfaceName);
+        break;
+    case NetworkManager::Device::Loopback:
+        ret = i18n("Loopback Interface (%1)", interfaceName);
         break;
     default:
         ret = interfaceName;

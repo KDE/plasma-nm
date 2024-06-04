@@ -177,8 +177,8 @@ void NetworkStatus::changeActiveConnections()
             NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(active->devices().first());
             if (device
                 && ((device->type() != NetworkManager::Device::Generic && device->type() <= NetworkManager::Device::Team)
-                    || device->type() == 29) // TODO: Change to WireGuard enum value when it is added
-                && device->interfaceName() != QLatin1String("lo")) { // TODO change to comparison with LocalHost enum value when it is added
+                    || device->type() == NetworkManager::Device::WireGuard)
+                && device->type() != NetworkManager::Device::Loopback) {
                 bool connecting = false;
                 bool connected = false;
                 QString conType;

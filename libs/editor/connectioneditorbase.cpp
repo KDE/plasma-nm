@@ -303,6 +303,7 @@ void ConnectionEditorBase::initialize()
          || type == NetworkManager::ConnectionSettings::Bridge //
          || type == NetworkManager::ConnectionSettings::Vlan //
          || type == NetworkManager::ConnectionSettings::WireGuard //
+         || type == NetworkManager::ConnectionSettings::Loopback //
          || (type == NetworkManager::ConnectionSettings::Vpn && serviceType == QLatin1String("org.freedesktop.NetworkManager.openvpn")))
         && !m_connection->isSlave()) {
         auto ipv6Widget = new IPv6Widget(m_connection->setting(NetworkManager::Setting::Ipv6), this);

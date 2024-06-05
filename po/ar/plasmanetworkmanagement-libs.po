@@ -17,7 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.1\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -84,7 +83,7 @@ msgstr "Infiniband"
 #: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:722
 #, kde-format
 msgid "Bond"
-msgstr "تجميع"
+msgstr "Bond"
 
 #: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:203
 #: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:728
@@ -485,7 +484,7 @@ msgstr "شهادة المستخدِم:"
 #: editor/settings/ui/802-1x.ui:611
 #, kde-format
 msgid "CA certificate:"
-msgstr "شهادة هيئة الشهادات:"
+msgstr "شهادة كاليفورنيا:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_27)
 #: editor/settings/ui/802-1x.ui:178
@@ -1692,37 +1691,37 @@ msgstr "100 م.ب/ث"
 #: editor/settings/ui/wiredconnectionwidget.ui:236
 #, kde-format
 msgid "1 Gb/s"
-msgstr "1 غ.ب/ث"
+msgstr "1 ج.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:241
 #, kde-format
 msgid "2.5 Gb/s"
-msgstr "2٫5 غ.ب/ث"
+msgstr "2٫5 ج.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:246
 #, kde-format
 msgid "5 Gb/s"
-msgstr "5 غ.ب/ث"
+msgstr "5 ج.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:251
 #, kde-format
 msgid "10 Gb/s"
-msgstr "10 غ.ب/ث"
+msgstr "10 ج.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:256
 #, kde-format
 msgid "40 Gb/s"
-msgstr "40 غ.ب/ث"
+msgstr "40 ج.ب/ث"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:261
 #, kde-format
 msgid "100 Gb/s"
-msgstr "100 غ.ب/ث"
+msgstr "100 ج.ب/ث"
 
 #. i18n: ectx: property (text), widget (QCheckBox, use8021X)
 #: editor/settings/ui/wiredsecurity.ui:17
@@ -2335,7 +2334,7 @@ msgstr "%1 م.بت/ث"
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 GBit/s"
-msgstr "%1 غ.بت/ث"
+msgstr "%1 ج.بت/ث"
 
 #: editor/uiutils.cpp:458
 #, kde-format

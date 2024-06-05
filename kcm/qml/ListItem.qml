@@ -7,7 +7,6 @@
 
 import QtQuick 2.1
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.ksvg 1.0 as KSvg
 
 MouseArea {
     id: listItem
@@ -33,18 +32,6 @@ MouseArea {
         visible: listItem.ListView.view ? listItem.ListView.view.highlight === null : true
         opacity: !listItem.checked && listItem.containsMouse && !listItem.pressed ? 0.5 : 1
         color: listItem.sectionDelegate ? alternateBaseColor : (listItem.checked || listItem.containsMouse ? highlightColor : baseColor)
-    }
-
-    KSvg.SvgItem {
-        imagePath: "widgets/listitem"
-        elementId: "separator"
-        anchors {
-            left: parent.left
-            right: parent.right
-            top: parent.top
-        }
-        height: naturalSize.height
-        visible: listItem.sectionDelegate || (typeof(index) != "undefined" && index > 0 && !listItem.checked && !listItem.pressed)
     }
 
     Item {

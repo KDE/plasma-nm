@@ -1,0 +1,159 @@
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-07-26 02:31+0000\n"
+"PO-Revision-Date: 2024-02-10 17:45+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: kcm.cpp:288
+#, kde-format
+msgid "Failed to import VPN connection: %1"
+msgstr "فشل في استيراد اتصال في بي ان: %1"
+
+#: kcm.cpp:358
+#, kde-format
+msgid "my_shared_connection"
+msgstr "اتصالي_المشترك"
+
+#: kcm.cpp:430
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "صدر الاتصال في بي ان"
+
+#: kcm.cpp:455
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "أتريد حفظ التّغييرات على اتصال '%1'؟"
+
+#: kcm.cpp:456
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "احفظ التّغييرات"
+
+#: kcm.cpp:555
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "استورد اتصال في بي ان"
+
+#: kcm.cpp:555
+#, kde-format
+msgid "VPN connections (%1)"
+msgstr "اتصالات في بي ان (%1)"
+
+#: kcm.cpp:558
+#, kde-format
+msgid "No file was provided"
+msgstr "لا يوجد ملف"
+
+#: kcm.cpp:619
+#, kde-format
+msgid "Unknown VPN type"
+msgstr "نوع في بي ان مجهول"
+
+#: qml/AddConnectionDialog.qml:15
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr "اختر نوع الاتصال"
+
+#: qml/AddConnectionDialog.qml:163
+msgid "Create"
+msgstr "أنشئ"
+
+#: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr "ألغِ"
+
+#: qml/AddConnectionDialog.qml:191 qml/main.qml:193
+msgid "Configuration"
+msgstr "الضّبط"
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr "الضّبط"
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr "عامّ"
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr "اسأل عن رمز السري عند اكتشاف مودم"
+
+#: qml/ConfigurationDialog.qml:49
+msgid "Show virtual connections"
+msgstr "اعرض الاتصالات الافتراضية"
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr "نقطة فعالة"
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
+msgstr ""
+
+#: qml/ConnectionItem.qml:108
+msgid "Connect"
+msgstr "اتّصل"
+
+#: qml/ConnectionItem.qml:108
+msgid "Disconnect"
+msgstr "اقطع الاتصال"
+
+#: qml/ConnectionItem.qml:121
+msgid "Delete"
+msgstr "احذف"
+
+#: qml/ConnectionItem.qml:131
+msgid "Export"
+msgstr "صدّر"
+
+#: qml/ConnectionItem.qml:141
+msgid "Connected"
+msgstr "متّصل"
+
+#: qml/ConnectionItem.qml:143
+msgid "Connecting"
+msgstr "يتّصل"
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr "أضف اتصالاً جديداً"
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr "أزل الاتصال المحدد"
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr "صدر الاتصال المحدد"
+
+#: qml/main.qml:221
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr "أزل الاتصال"
+
+#: qml/main.qml:222
+msgid "Do you want to remove the connection '%1'?"
+msgstr "أتريد إزالة الاتصال '%1'؟"

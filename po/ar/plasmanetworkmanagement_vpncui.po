@@ -1,6 +1,7 @@
 # Arabic Translation.
 # Copyright (C) 2014 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
+# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 # Abd_Allatif, 2014.
 #
 msgid ""
@@ -8,14 +9,13 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2014-07-05 17:47+0200\n"
-"Last-Translator: Abd_Allatif\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"PO-Revision-Date: 2024-05-09 10:35+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.5.4\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
@@ -86,10 +86,9 @@ msgstr "اسم المجموعة:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, group)
 #: vpnc.ui:104
-#, fuzzy, kde-format
-#| msgid "Group name:"
+#, kde-format
 msgid "Group name"
-msgstr "اسم المجموعة:"
+msgstr "اسم المجموعة"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: vpnc.ui:111
@@ -100,10 +99,9 @@ msgstr "كلمة مرور المجموعة:"
 #. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
 #: vpnc.ui:129 vpncauth.ui:84
-#, fuzzy, kde-format
-#| msgid "Group password:"
+#, kde-format
 msgid "Group password."
-msgstr "كلمة مرور المجموعة:"
+msgstr "كلمة مرور المجموعة."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useHybridAuth)
 #: vpnc.ui:141
@@ -120,7 +118,7 @@ msgstr "استخدم استيثاقًا هجينًا"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpnc.ui:154
-#, fuzzy, kde-format
+#, kde-format
 msgid "CA file:"
 msgstr "ملف CA:"
 
@@ -138,16 +136,15 @@ msgstr "*.pem *.crt *.cer"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:192
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
-msgstr "متقدم..."
+msgstr "متقدّم…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpncadvanced.ui:18
-#, fuzzy, kde-format
+#, kde-format
 msgid "Identification"
-msgstr "التعريف"
+msgstr "التّعريف"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: vpncadvanced.ui:27
@@ -163,10 +160,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpncadvanced.ui:44
-#, fuzzy, kde-format
-#| msgid "Vendor:"
+#, kde-format
 msgid "Vendor:"
-msgstr "الشركة المصنّعة:"
+msgstr "البائع:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
 #: vpncadvanced.ui:60
@@ -182,17 +178,15 @@ msgstr "النقل والآمان"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpncadvanced.ui:82
-#, fuzzy, kde-format
-#| msgid "Encryption method:"
+#, kde-format
 msgid "Encryption method:"
 msgstr "طريقة التشفير:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, encryption)
 #: vpncadvanced.ui:98
-#, fuzzy, kde-format
-#| msgid "Encryption method:"
+#, kde-format
 msgid "Encryption method."
-msgstr "طريقة التشفير:"
+msgstr "طريقة التشفير."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpncadvanced.ui:105
@@ -208,11 +202,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: vpncadvanced.ui:128
-#, fuzzy, kde-format
-#| msgctxt "IKE DH group"
-#| msgid "DH Group 1"
+#, kde-format
 msgid "IKE DH Group:"
-msgstr "مجموعة DH الأولى"
+msgstr "مجموعة IKE DH:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, dhGroup)
 #: vpncadvanced.ui:144
@@ -236,7 +228,7 @@ msgstr ""
 #: vpncadvanced.ui:174
 #, kde-format
 msgid "Local Port:"
-msgstr ""
+msgstr "المنفذ المحليّ:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, localport)
 #: vpncadvanced.ui:190
@@ -250,7 +242,7 @@ msgstr ""
 #: vpncadvanced.ui:193
 #, kde-format
 msgid "Random"
-msgstr ""
+msgstr "عشوائي"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, deadPeer)
 #: vpncadvanced.ui:209
@@ -260,7 +252,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
 #: vpncadvanced.ui:212
-#, fuzzy, kde-format
+#, kde-format
 msgid "Disable dead peer detection"
 msgstr "تعطيل ميزة الكشف عن انقطاع الاتصال عند الند"
 
@@ -276,7 +268,7 @@ msgid "Cisco"
 msgstr "سيسكو"
 
 #: vpncadvancedwidget.cpp:24
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "VPNC vendor name"
 msgid "Netscreen"
 msgstr "نت سكرين"
@@ -300,13 +292,13 @@ msgid "None (completely insecure)"
 msgstr "بدون (غير آمن إطلاقًا)"
 
 #: vpncadvancedwidget.cpp:32
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
 msgstr "استخدم NAT-T عند توفره (افتراضي)"
 
 #: vpncadvancedwidget.cpp:33
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
 msgstr "استخدم NAT-T دومًا"
@@ -397,10 +389,9 @@ msgstr "اسم المستخدم:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leGroupName)
 #: vpncauth.ui:117
-#, fuzzy, kde-format
-#| msgid "Group name:"
+#, kde-format
 msgid "Group name."
-msgstr "اسم المجموعة:"
+msgstr "اسم المجموعة."
 
 #~ msgid "File %1 could not be opened."
 #~ msgstr "تعذر فتح الملف %1."

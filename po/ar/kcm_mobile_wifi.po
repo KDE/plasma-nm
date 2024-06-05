@@ -1,0 +1,208 @@
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-mobile package.
+# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2023.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-mobile\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-01-01 01:00+0000\n"
+"PO-Revision-Date: 2023-05-07 20:41+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr ""
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr ""
+
+#: package/contents/ui/ConnectDialog.qml:136
+#, kde-format
+msgid "Invalid input."
+msgstr "إدخال غير صحيح"
+
+#: package/contents/ui/ConnectionItemDelegate.qml:108
+#, kde-format
+msgid "Connect to"
+msgstr "متصل ب"
+
+#: package/contents/ui/main.qml:82
+#, kde-format
+msgid "Wi-Fi is disabled"
+msgstr ""
+
+#: package/contents/ui/main.qml:86
+#, kde-format
+msgid "Enable"
+msgstr ""
+
+#: package/contents/ui/main.qml:96
+#, kde-format
+msgid "Disable Wi-Fi"
+msgstr ""
+
+#: package/contents/ui/main.qml:102
+#, kde-format
+msgid "Add Custom Connection"
+msgstr ""
+
+#: package/contents/ui/main.qml:108
+#, kde-format
+msgid "Show Saved Connections"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:14
+#, kde-format
+msgid "Add new Connection"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:34
+#, kde-format
+msgid "Save"
+msgstr "احفظ"
+
+#: package/contents/ui/NetworkSettings.qml:44
+#, kde-format
+msgid "General"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:49
+#, kde-format
+msgid "SSID:"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:58
+#, kde-format
+msgid "Hidden Network:"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:64
+#, kde-format
+msgid "Security"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:70
+#, kde-format
+msgid "Security type:"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:79
+#, kde-format
+msgid "None"
+msgstr "بدون"
+
+#: package/contents/ui/NetworkSettings.qml:80
+#, kde-format
+msgid "WEP Key"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:81
+#, kde-format
+msgid "Dynamic WEP"
+msgstr "WEP حركي"
+
+#: package/contents/ui/NetworkSettings.qml:82
+#, kde-format
+msgid "WPA/WPA2 Personal"
+msgstr "‏WPA/WPA2 شخصي"
+
+#: package/contents/ui/NetworkSettings.qml:83
+#, kde-format
+msgid "WPA/WPA2 Enterprise"
+msgstr "‏WPA/WPA2 للمؤسسات"
+
+#: package/contents/ui/NetworkSettings.qml:108
+#, kde-format
+msgid "Password:"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:116
+#, kde-format
+msgid "Authentication:"
+msgstr "الاستيثاق:"
+
+#: package/contents/ui/NetworkSettings.qml:119
+#, kde-format
+msgid "TLS"
+msgstr "TLS"
+
+#: package/contents/ui/NetworkSettings.qml:119
+#, kde-format
+msgid "LEAP"
+msgstr "LEAP"
+
+#: package/contents/ui/NetworkSettings.qml:119
+#, kde-format
+msgid "FAST"
+msgstr "FAST"
+
+#: package/contents/ui/NetworkSettings.qml:120
+#, kde-format
+msgid "Tunneled TLS"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:121
+#, kde-format
+msgid "Protected EAP"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:130
+#, kde-format
+msgid "IP settings"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:136
+#, kde-format
+msgid "Automatic"
+msgstr "تلقائي"
+
+#: package/contents/ui/NetworkSettings.qml:136
+#, kde-format
+msgid "Manual"
+msgstr "يدويّ"
+
+#: package/contents/ui/NetworkSettings.qml:146
+#, kde-format
+msgid "IP Address:"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:158
+#, kde-format
+msgid "Gateway:"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:170
+#, kde-format
+msgid "Network prefix length:"
+msgstr ""
+
+#: package/contents/ui/NetworkSettings.qml:183
+#, kde-format
+msgid "DNS:"
+msgstr ""
+
+#: package/contents/ui/PasswordField.qml:13
+#, kde-format
+msgid "Password…"
+msgstr "كلمة المرور..."
+
+#: wifisettings.cpp:32
+#, kde-format
+msgid "Wi-Fi networks"
+msgstr ""
+
+#: wifisettings.cpp:33
+#, kde-format
+msgid "Martin Kacej"
+msgstr ""

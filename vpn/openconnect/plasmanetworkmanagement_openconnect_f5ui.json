@@ -4,6 +4,7 @@
             {
                 "Email": "plasma-devel@kde.org  ",
                 "Name": "KDE plasma",
+                "Name[ar]": "كِيدِي بلازما",
                 "Name[az]": "KDE plasma",
                 "Name[bg]": "KDE plasma",
                 "Name[ca@valencia]": "Plasma de KDE",
@@ -43,6 +44,7 @@
         ],
         "Category": "VPNService",
         "Description": "Compatible with F5 BIG-IP SSL VPN",
+        "Description[ar]": "متوافق مع F5 BIG-IP SSL VPN",
         "Description[az]": "F5 BIG-IP SSL VPN ilə uyğun SSL VPN",
         "Description[bg]": "Съвместим с F5 BIG-IP SSL VPN",
         "Description[ca@valencia]": "VPN sobre SSL compatible amb F5 en BIG-IP",
@@ -82,6 +84,7 @@
         "Id": "plasmanetworkmanagement_openconnect_f5ui",
         "License": "GPL",
         "Name": "F5 BIG-IP Compatible VPN (openconnect)",
+        "Name[ar]": "شبكات افتراضية متوافقة مع F5 BIG-IP (openconnect)",
         "Name[az]": "F5 BIG-IP ilə uyğun VPN (openconnect)",
         "Name[bg]": "F5 BIG-IP съвместим VPN (openconnect)",
         "Name[ca@valencia]": "VPN compatible amb F5 en BIG-IP (openconnect)",

@@ -4,6 +4,7 @@
             {
                 "Email": "plasma-devel@kde.org  ",
                 "Name": "KDE plasma",
+                "Name[ar]": "كِيدِي بلازما",
                 "Name[az]": "KDE plasma",
                 "Name[bg]": "KDE plasma",
                 "Name[ca@valencia]": "Plasma de KDE",
@@ -43,6 +44,7 @@
         ],
         "Category": "VPNService",
         "Description": "Compatible with Array Networks SSL VPN",
+        "Description[ar]": "متوافق مع Array Networks SSL VPN",
         "Description[az]": "Array Networks SSL ilə uyğun Cisco AnyConnect VPN",
         "Description[bg]": "Съвместим с  Array Networks SSL VPN",
         "Description[ca@valencia]": "VPN sobre SSL compatible amb xarxes de matriu",
@@ -82,6 +84,7 @@
         "Id": "plasmanetworkmanagement_openconnect_arrayui",
         "License": "GPL",
         "Name": "Array Networks Compatible VPN (openconnect)",
+        "Name[ar]": "شبكات افتراضية متوافقة مع Array Networks (openconnect)",
         "Name[az]": "Array Networks ilə uyğun VPN (openconnect)",
         "Name[bg]": "Array Networks съвместим VPN (openconnect)",
         "Name[ca@valencia]": "VPN compatible amb xarxes de matriu (openconnect)",

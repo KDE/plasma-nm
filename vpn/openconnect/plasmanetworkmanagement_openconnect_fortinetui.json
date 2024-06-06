@@ -4,6 +4,7 @@
             {
                 "Email": "plasma-devel@kde.org  ",
                 "Name": "KDE plasma",
+                "Name[ar]": "كِيدِي بلازما",
                 "Name[az]": "KDE plasma",
                 "Name[bg]": "KDE plasma",
                 "Name[ca@valencia]": "Plasma de KDE",
@@ -43,6 +44,7 @@
         ],
         "Category": "VPNService",
         "Description": "Compatible with Fortinet VPN",
+        "Description[ar]": "متوافق مع Fortinet VPN",
         "Description[az]": "Fortinet VPN ilə uyğun SSL VPN",
         "Description[bg]": "Съвместим с Fortinet VPN",
         "Description[ca@valencia]": "VPN compatible amb Fortinet",
@@ -82,6 +84,7 @@
         "Id": "plasmanetworkmanagement_openconnect_fortinetui",
         "License": "GPL",
         "Name": "Fortinet Compatible VPN (openconnect)",
+        "Name[ar]": "شبكات افتراضية متوافقة مع Fortinet (openconnect)",
         "Name[az]": "Fortinet ilə uyğun VPN (openconnect)",
         "Name[bg]": "Fortinet съвместим VPN (openconnect)",
         "Name[ca@valencia]": "VPN compatible amb Fortinet (openconnect)",

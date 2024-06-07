@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2014, 2020, 2021, 2022, 2023.
+# Giovanni Sora <g.sora@tiscali.it>, 2014, 2020, 2021, 2022, 2023, 2024.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2023-05-18 15:46+0200\n"
+"PO-Revision-Date: 2024-06-06 10:38+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -2048,7 +2048,7 @@ msgstr ""
 "Optional.\n"
 "            Un endpoint per le connexion. Pote esser un\n"
 "            adresse IPv4, adresse IPv6, o FQDN (nomine\n"
-"            de dominio plenemente qualificate tal como abc.com). \n"
+"            de dominio plenmente qualificate tal como abc.com). \n"
 "            Si presente, le porto de Enddpoint debera esser fixate."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)

@@ -49,6 +49,7 @@ ColumnLayout {
             id: dragHandler
             enabled: barcode.valid
             cursorShape: Qt.ClosedHandCursor
+            target: null
 
             onActiveChanged: {
                 if (active) {

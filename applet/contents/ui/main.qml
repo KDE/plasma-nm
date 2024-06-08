@@ -46,7 +46,7 @@ PlasmoidItem {
     }
 
     Plasmoid.busy: connectionIconProvider.connecting
-    Plasmoid.icon: inPanel ? connectionIconProvider.connectionIcon : connectionIconProvider.connectionTooltipIcon
+    Plasmoid.icon: inPanel ? connectionIconProvider.connectionIcon + "-symbolic" : connectionIconProvider.connectionTooltipIcon
     switchWidth: Kirigami.Units.gridUnit * 10
     switchHeight: Kirigami.Units.gridUnit * 10
 

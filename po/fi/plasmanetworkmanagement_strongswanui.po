@@ -1,8 +1,8 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Lasse Liehu <lasse.liehu@gmail.com>, 2013, 2014, 2015.
-# Tommi Nieminen <translator@legisign.org>, 2017, 2019, 2020.
 # SPDX-FileCopyrightText: 2024 Kimmo Kujansuu <mrkujansuu@gmail.com>
+# Lasse Liehu <lasse.liehu@gmail.com>, 2013, 2014, 2015.
+# Tommi Nieminen <translator@legisign.org>, 2017, 2019, 2020, 2024.
 #
 #
 msgid ""
@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-18 00:39+0000\n"
-"PO-Revision-Date: 2020-08-21 16:19+0300\n"
+"PO-Revision-Date: 2024-04-08 17:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: strongswanauth.cpp:59
 #, kde-format
@@ -85,7 +85,7 @@ msgstr "Varmenne:"
 #: strongswanprop.ui:59
 #, kde-format
 msgid "Identity:"
-msgstr ""
+msgstr "Henkilöys:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: strongswanprop.ui:82

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2024 Stefan Asserhäll <stefan.asserhall@bredband.net>
+# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2019, 2020, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-13 01:35+0000\n"
-"PO-Revision-Date: 2024-06-08 22:10+0200\n"
+"PO-Revision-Date: 2024-06-09 14:33+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@bredband.net>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -28,8 +28,7 @@ msgid "Network authentication"
 msgstr "Behörighetskontroll för nätverk"
 
 #: connectivitymonitor.cpp:72
-#, fuzzy, kde-format
-#| msgid "You need to log in to this network"
+#, kde-format
 msgid "You need to log into this network"
 msgstr "Du måste logga in på nätverket"
 
@@ -552,37 +551,30 @@ msgid "Authenticate %1"
 msgstr "Kontrollera behörighet för %1"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "Inga hemligheter tillhandahölls"
+msgstr "Inga hemligheter begärdes"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "Ange lösenordet för att aktivera det trådlösa nätverket '%1':"
+msgstr "Felaktigt lösenordet för det trådlösa nätverket \"%1\". Försök igen."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "Ange lösenordet för att aktivera det trådlösa nätverket '%1':"
+msgstr "Ange lösenordet för det trådlösa nätverket \"%1\":"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Ange lösenordet för att anslutningen '%1':"
+msgstr "Felaktigt lösenordet för anslutningen \"%1\". Försök igen."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Ange lösenordet för att anslutningen '%1':"
+msgstr "Ange lösenordet för anslutningen \"%1\":"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -596,10 +588,9 @@ msgid "VPN settings are missing"
 msgstr "VPN-inställningar saknas"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "Ange hemligheterna för att VPN-anslutningen '%1':"
+msgstr "Ange hemligheterna för att VPN-anslutningen \"%1\":"
 
 #: passworddialog.cpp:135
 #, kde-format

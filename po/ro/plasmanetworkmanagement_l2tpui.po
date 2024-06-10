@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-06-10 02:52+0000\n"
 "PO-Revision-Date: 2021-07-25 13:16+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -367,7 +367,7 @@ msgstr "Impune încapsularea UDP"
 msgid "Remote ID:"
 msgstr "ID distant:"
 
-#: l2tpipsecwidget.cpp:43
+#: l2tpipsecwidget.cpp:44
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr "Opțiuni L2TP IPsec"

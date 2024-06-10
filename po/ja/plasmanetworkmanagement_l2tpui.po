@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-06-10 02:52+0000\n"
 "PO-Revision-Date: 2013-06-12 01:02-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -363,7 +363,7 @@ msgstr ""
 msgid "Remote ID:"
 msgstr ""
 
-#: l2tpipsecwidget.cpp:43
+#: l2tpipsecwidget.cpp:44
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr ""

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-06-10 02:52+0000\n"
 "PO-Revision-Date: 2021-12-08 00:30+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -400,7 +400,7 @@ msgstr "UDP 캡슐화 강제"
 msgid "Remote ID:"
 msgstr "원격 ID:"
 
-#: l2tpipsecwidget.cpp:43
+#: l2tpipsecwidget.cpp:44
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr "L2TP IPsec 옵션"

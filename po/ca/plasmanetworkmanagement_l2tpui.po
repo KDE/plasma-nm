@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-06-10 02:52+0000\n"
 "PO-Revision-Date: 2023-12-22 08:12+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -412,7 +412,7 @@ msgstr "Força l'encapsulat UDP"
 msgid "Remote ID:"
 msgstr "ID remot:"
 
-#: l2tpipsecwidget.cpp:43
+#: l2tpipsecwidget.cpp:44
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr "Opcions d'IPsec del L2TP"

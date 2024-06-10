@@ -46,8 +46,15 @@ QQC2.ApplicationWindow {
             QQC2.CheckBox {
                 id: manageVirtualConnections
                 Layout.fillWidth: true
-                KeyNavigation.down: hotspotName
+                KeyNavigation.down: systemConnectionsByDefault
                 text: i18n("Show virtual connections")
+            }
+
+            QQC2.CheckBox {
+                id: systemConnectionsByDefault
+                Layout.fillWidth: true
+                KeyNavigation.down: hotspotName
+                text: i18n("Create new connections as system connections")
             }
 
             Kirigami.Separator {
@@ -157,6 +164,7 @@ QQC2.ApplicationWindow {
     function loadConfiguration() {
         unlockModem.checked = PlasmaNM.Configuration.unlockModemOnDetection;
         manageVirtualConnections.checked = PlasmaNM.Configuration.manageVirtualConnections;
+        systemConnectionsByDefault.checked = PlasmaNM.Configuration.systemConnectionsByDefault;
         // hotspot
         hotspotLabel.visible = handler.hotspotSupported;
         hotspotName.visible = handler.hotspotSupported;
@@ -170,6 +178,7 @@ QQC2.ApplicationWindow {
     function saveConfiguration() {
         PlasmaNM.Configuration.unlockModemOnDetection = unlockModem.checked;
         PlasmaNM.Configuration.manageVirtualConnections = manageVirtualConnections.checked;
+        PlasmaNM.Configuration.systemConnectionsByDefault = systemConnectionsByDefault.checked;
         if (handler.hotspotSupported) {
             PlasmaNM.Configuration.hotspotName = hotspotName.text;
             PlasmaNM.Configuration.hotspotPassword = hotspotPassword.text;

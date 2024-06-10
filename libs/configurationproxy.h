@@ -24,6 +24,7 @@ class PLASMANM_INTERNAL_EXPORT ConfigurationProxy : public QObject
     Q_PROPERTY(bool unlockModemOnDetection READ unlockModemOnDetection WRITE setUnlockModemOnDetection)
     Q_PROPERTY(bool manageVirtualConnections READ manageVirtualConnections WRITE setManageVirtualConnections NOTIFY manageVirtualConnectionsChanged)
     Q_PROPERTY(bool airplaneModeEnabled READ airplaneModeEnabled WRITE setAirplaneModeEnabled NOTIFY airplaneModeEnabledChanged)
+    Q_PROPERTY(bool systemConnectionsByDefault READ systemConnectionsByDefault WRITE setSystemConnectionsByDefault)
     Q_PROPERTY(QString hotspotName READ hotspotName WRITE setHotspotName)
     Q_PROPERTY(QString hotspotPassword READ hotspotPassword WRITE setHotspotPassword)
     Q_PROPERTY(QString hotspotConnectionPath READ hotspotConnectionPath WRITE setHotspotConnectionPath)
@@ -53,6 +54,7 @@ public:
     bool showPasswordDialog() const;
 
     bool systemConnectionsByDefault() const;
+    void setSystemConnectionsByDefault(bool opt);
 
 Q_SIGNALS:
     void airplaneModeEnabledChanged();

@@ -183,7 +183,22 @@ bool Configuration::systemConnectionsByDefault() const
 {
     KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
     KConfigGroup grp(config, QStringLiteral("General"));
-    return grp.readEntry(QStringLiteral("SystemConnectionsByDefault"), false);
+
+    if (grp.isValid()) {
+        return grp.readEntry(QStringLiteral("SystemConnectionsByDefault"), false);
+    }
+
+    return false;
+}
+
+void Configuration::setSystemConnectionsByDefault(bool opt)
+{
+    KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
+    KConfigGroup grp(config, QStringLiteral("General"));
+
+    if (grp.isValid()) {
+        grp.writeEntry(QStringLiteral("SystemConnectionsByDefault"), opt);
+    }
 }
 
 #include "moc_configuration.cpp"

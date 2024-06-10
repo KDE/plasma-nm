@@ -38,6 +38,7 @@ public:
     bool showPasswordDialog() const;
 
     bool systemConnectionsByDefault() const;
+    void setSystemConnectionsByDefault(bool opt);
 
     static Configuration &self();
 

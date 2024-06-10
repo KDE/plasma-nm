@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-06-10 00:40+0000\n"
 "PO-Revision-Date: 2022-02-14 16:14+0300\n"
 "Last-Translator: Мария Шикунова <translation-team@basealt.ru>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -417,7 +417,7 @@ msgstr "Принудительная инкапсуляция в UDP"
 msgid "Remote ID:"
 msgstr "ID сетевого узла:"
 
-#: l2tpipsecwidget.cpp:43
+#: l2tpipsecwidget.cpp:44
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr "Параметры L2TP IPsec"

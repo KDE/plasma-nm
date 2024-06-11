@@ -63,6 +63,7 @@ public:
         Wpa2Eap,
         SAE,
         Wpa3SuiteB192,
+        OWE,
     };
 };
 

@@ -68,6 +68,11 @@
        <string>WPA3 Enterprise 192-bit</string>
       </property>
      </item>
+     <item>
+      <property name="text">
+       <string>Enhanced Open (OWE)</string>
+      </property>
+     </item>
     </widget>
    </item>
    <item row="0" column="0">

@@ -209,6 +209,8 @@ void WifiSecurity::loadConfig(const NetworkManager::Setting::Ptr &setting)
     } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::WpaEapSuiteB192) {
         m_ui->securityCombo->setCurrentIndex(Wpa3SuiteB192); // WPA3 Enterprise Suite B 192
         // done in the widget
+    } else if (keyMgmt == NetworkManager::WirelessSecuritySetting::OWE) {
+        m_ui->securityCombo->setCurrentIndex(OWE); // Enhanced Open (OWE)
     }
 
     if (keyMgmt != NetworkManager::WirelessSecuritySetting::Ieee8021x && keyMgmt != NetworkManager::WirelessSecuritySetting::WpaEap
@@ -338,6 +340,8 @@ QVariantMap WifiSecurity::setting() const
     } else if (securityIndex == Wpa3SuiteB192) { // WPA3 Enterprise Suite B 192
         wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaEapSuiteB192);
         wifiSecurity.setPmf(NetworkManager::WirelessSecuritySetting::RequiredPmf);
+    } else if (securityIndex == OWE) { // Enhanced Open (OWE)
+        wifiSecurity.setKeyMgmt(NetworkManager::WirelessSecuritySetting::OWE);
     }
 
     return wifiSecurity.toMap();
@@ -400,6 +404,9 @@ void WifiSecurity::onSsidChanged(const QString &ssid)
                         case NetworkManager::WirelessSecurityType::Wpa3SuiteB192:
                             m_ui->securityCombo->setCurrentIndex(Wpa3SuiteB192);
                             break;
+                        case NetworkManager::WirelessSecurityType::OWE:
+                            m_ui->securityCombo->setCurrentIndex(OWE);
+                            break;
                         default:
                             m_ui->securityCombo->setCurrentIndex(None);
                         }
@@ -430,7 +437,7 @@ void WifiSecurity::setWepKey(int keyIndex)
 
 void WifiSecurity::securityChanged(int index)
 {
-    if (index == None) {
+    if (index == None || index == OWE) {
         m_ui->stackedWidget->setCurrentIndex(0);
     } else if (index == WepHex || index == WepPassphrase) {
         m_ui->stackedWidget->setCurrentIndex(1);

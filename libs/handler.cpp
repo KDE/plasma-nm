@@ -209,6 +209,7 @@ void Handler::requestWifiCode(const QString &connectionPath, const QString &ssid
     if (securityType != NetworkManager::NoneSecurity) {
         switch (securityType) {
         case NetworkManager::NoneSecurity:
+        case NetworkManager::OWE:
             break;
         case NetworkManager::StaticWep:
             ret += QStringLiteral("T:WEP;");
@@ -336,6 +337,8 @@ QCoro::Task<void> Handler::addAndActivateConnectionInternal(const QString &devic
         if (securityType == NetworkManager::StaticWep) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
             wifiSecurity->setWepKey0(password);
+        } else if (securityType == NetworkManager::OWE) {
+            wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::OWE);
         } else {
             if (ap->mode() == NetworkManager::AccessPoint::Adhoc) {
                 wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaNone);
@@ -979,6 +982,7 @@ void Handler::slotRequestWifiCode(QDBusPendingCallWatcher *watcher)
     QString pass;
     switch (static_cast<NetworkManager::WirelessSecurityType>(watcher->property("securityType").toInt())) {
     case NetworkManager::NoneSecurity:
+    case NetworkManager::OWE:
         break;
     case NetworkManager::WpaPsk:
     case NetworkManager::Wpa2Psk:

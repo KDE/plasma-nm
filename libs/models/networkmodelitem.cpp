@@ -76,7 +76,9 @@ NetworkModelItem::NetworkModelItem(QObject *parent)
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
     , m_rxBytes(0)
     , m_txBytes(0)
+    , m_icon(QStringLiteral("network-wired"))
 {
+    m_icon = computeIcon();
 }
 
 NetworkModelItem::NetworkModelItem(const NetworkModelItem *item, QObject *parent)
@@ -97,6 +99,7 @@ NetworkModelItem::NetworkModelItem(const NetworkModelItem *item, QObject *parent
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
     , m_rxBytes(0)
     , m_txBytes(0)
+    , m_icon(item->icon())
 {
 }
 

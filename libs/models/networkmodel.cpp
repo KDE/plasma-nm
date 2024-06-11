@@ -1175,6 +1175,8 @@ void NetworkModel::updateFromWirelessNetwork(NetworkModelItem *item,
                                                                 ap->capabilities(),
                                                                 ap->wpaFlags(),
                                                                 ap->rsnFlags());
+    } else if (ap) {
+        securityType = NetworkManager::NoneSecurity;
     }
 
     // Check whether the connection is associated with some concrete AP

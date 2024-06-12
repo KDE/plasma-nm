@@ -105,7 +105,7 @@ msgstr "无匹配项"
 #: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "No available connections"
-msgstr "无可用的连接"
+msgstr "没有可用的连接"
 
 #: contents/ui/DetailsText.qml:45
 #, kde-format

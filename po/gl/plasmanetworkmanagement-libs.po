@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-04-10 00:39+0000\n"
+"POT-Creation-Date: 2024-06-13 02:27+0000\n"
 "PO-Revision-Date: 2024-04-14 15:14+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -74,31 +74,31 @@ msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:211 models/creatableconnectionsmodel.cpp:142
-#: models/networkmodelitem.cpp:716
+#: models/networkmodelitem.cpp:719
 #, kde-format
 msgid "Infiniband"
 msgstr "InfiniBand"
 
 #: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:200
-#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:722
+#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:725
 #, kde-format
 msgid "Bond"
 msgstr "Vínculo"
 
 #: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:203
-#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:728
+#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:731
 #, kde-format
 msgid "Bridge"
 msgstr "Ponte"
 
 #: editor/connectioneditorbase.cpp:256 models/creatableconnectionsmodel.cpp:220
-#: models/networkmodelitem.cpp:734
+#: models/networkmodelitem.cpp:737
 #, kde-format
 msgid "Vlan"
 msgstr "VLAN"
 
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:232
-#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:743
+#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:746
 #, kde-format
 msgid "Team"
 msgstr "Team"
@@ -3525,164 +3525,164 @@ msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
 msgstr "O tipo de conexión é WireGuard."
 
-#: models/networkmodelitem.cpp:581
+#: models/networkmodelitem.cpp:584
 #, kde-format
 msgid "IPv4 Address"
 msgstr "Enderezo IPv4"
 
-#: models/networkmodelitem.cpp:587
+#: models/networkmodelitem.cpp:590
 #, kde-format
 msgid "IPv4 Default Gateway"
 msgstr "Pasarela predeterminada de IPv4"
 
-#: models/networkmodelitem.cpp:594
+#: models/networkmodelitem.cpp:597
 #, kde-format
 msgid "IPv4 Primary Nameserver"
 msgstr "Servidor de nomes principal de IPv4"
 
-#: models/networkmodelitem.cpp:598
+#: models/networkmodelitem.cpp:601
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
 msgstr "Servidor de nomes secundario de IPv4"
 
-#: models/networkmodelitem.cpp:608
+#: models/networkmodelitem.cpp:611
 #, kde-format
 msgid "IPv6 Address"
 msgstr "Enderezo IPv6"
 
-#: models/networkmodelitem.cpp:610
+#: models/networkmodelitem.cpp:613
 #, kde-format
 msgid "IPv6 ULA Address"
 msgstr "Enderezo IPv6 ULA"
 
-#: models/networkmodelitem.cpp:616
+#: models/networkmodelitem.cpp:619
 #, kde-format
 msgid "IPv6 Default Gateway"
 msgstr "Pasarela predeterminada de IPv6"
 
-#: models/networkmodelitem.cpp:623
+#: models/networkmodelitem.cpp:626
 #, kde-format
 msgid "IPv6 Primary Nameserver"
 msgstr "Servidor de nomes principal de IPv6"
 
-#: models/networkmodelitem.cpp:627
+#: models/networkmodelitem.cpp:630
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
 msgstr "Servidor de nomes secundario de IPv6"
 
-#: models/networkmodelitem.cpp:636
+#: models/networkmodelitem.cpp:639
 #, kde-format
 msgid "Connection speed"
 msgstr "Velocidade da conexión"
 
-#: models/networkmodelitem.cpp:638 models/networkmodelitem.cpp:663
-#: models/networkmodelitem.cpp:712 models/networkmodelitem.cpp:718
-#: models/networkmodelitem.cpp:724 models/networkmodelitem.cpp:730
-#: models/networkmodelitem.cpp:737 models/networkmodelitem.cpp:745
+#: models/networkmodelitem.cpp:641 models/networkmodelitem.cpp:666
+#: models/networkmodelitem.cpp:715 models/networkmodelitem.cpp:721
+#: models/networkmodelitem.cpp:727 models/networkmodelitem.cpp:733
+#: models/networkmodelitem.cpp:740 models/networkmodelitem.cpp:748
 #, kde-format
 msgid "MAC Address"
 msgstr "Enderezo MAC"
 
-#: models/networkmodelitem.cpp:642
+#: models/networkmodelitem.cpp:645
 #, kde-format
 msgid "Access Point (SSID)"
 msgstr "Punto de acceso (SSID)"
 
-#: models/networkmodelitem.cpp:644
+#: models/networkmodelitem.cpp:647
 #, kde-format
 msgid "Signal Strength"
 msgstr "Potencia do sinal"
 
-#: models/networkmodelitem.cpp:644
+#: models/networkmodelitem.cpp:647
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
 
-#: models/networkmodelitem.cpp:646
+#: models/networkmodelitem.cpp:649
 #, kde-format
 msgid "Security Type"
 msgstr "Tipo de seguridade"
 
-#: models/networkmodelitem.cpp:649
+#: models/networkmodelitem.cpp:652
 #, kde-format
 msgid "Connection Speed"
 msgstr "Velocidade da conexión"
 
-#: models/networkmodelitem.cpp:655
+#: models/networkmodelitem.cpp:658
 #, kde-format
 msgid "Frequency"
 msgstr "Frecuencia"
 
-#: models/networkmodelitem.cpp:657
+#: models/networkmodelitem.cpp:660
 #, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
 msgstr "%1 (canle %2)"
 
-#: models/networkmodelitem.cpp:661
+#: models/networkmodelitem.cpp:664
 #, kde-format
 msgid "BSSID"
 msgstr "BSSID"
 
-#: models/networkmodelitem.cpp:675
+#: models/networkmodelitem.cpp:678
 #, kde-format
 msgid "Operator"
 msgstr "Operador"
 
-#: models/networkmodelitem.cpp:679
+#: models/networkmodelitem.cpp:682
 #, kde-format
 msgid "Network ID"
 msgstr "Identidade da rede"
 
-#: models/networkmodelitem.cpp:683
+#: models/networkmodelitem.cpp:686
 #, kde-format
 msgid "Signal Quality"
 msgstr "Potencia do sinal"
 
-#: models/networkmodelitem.cpp:684
+#: models/networkmodelitem.cpp:687
 #, kde-format
 msgid "Access Technology"
 msgstr "Tecnoloxía de acceso"
 
-#: models/networkmodelitem.cpp:689
+#: models/networkmodelitem.cpp:692
 #, kde-format
 msgid "VPN Plugin"
 msgstr "Complemento de VPN"
 
-#: models/networkmodelitem.cpp:700
+#: models/networkmodelitem.cpp:703
 #, kde-format
 msgid "Banner"
 msgstr "Cartel"
 
-#: models/networkmodelitem.cpp:706
+#: models/networkmodelitem.cpp:709
 #, kde-format
 msgid "Name"
 msgstr "Nome"
 
-#: models/networkmodelitem.cpp:708 models/networkmodelitem.cpp:710
+#: models/networkmodelitem.cpp:711 models/networkmodelitem.cpp:713
 #, kde-format
 msgid "Capabilities"
 msgstr "Capacidades"
 
-#: models/networkmodelitem.cpp:716 models/networkmodelitem.cpp:722
-#: models/networkmodelitem.cpp:728 models/networkmodelitem.cpp:734
-#: models/networkmodelitem.cpp:740 models/networkmodelitem.cpp:743
+#: models/networkmodelitem.cpp:719 models/networkmodelitem.cpp:725
+#: models/networkmodelitem.cpp:731 models/networkmodelitem.cpp:737
+#: models/networkmodelitem.cpp:743 models/networkmodelitem.cpp:746
 #, kde-format
 msgid "Type"
 msgstr "Tipo"
 
-#: models/networkmodelitem.cpp:736
+#: models/networkmodelitem.cpp:739
 #, kde-format
 msgid "Vlan ID"
 msgstr "Identificador de Vlan"
 
-#: models/networkmodelitem.cpp:740
+#: models/networkmodelitem.cpp:743
 #, kde-format
 msgid "Adsl"
 msgstr "ADSL"
 
-#: models/networkmodelitem.cpp:750
+#: models/networkmodelitem.cpp:753
 #, kde-format
 msgid "Device"
 msgstr "Dispositivo"

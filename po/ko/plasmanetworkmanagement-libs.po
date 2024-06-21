@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-13 00:40+0000\n"
+"POT-Creation-Date: 2024-06-21 00:40+0000\n"
 "PO-Revision-Date: 2024-02-06 00:24+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -34,7 +34,7 @@ msgid "802.1x Security"
 msgstr "802.1x 보안"
 
 #: editor/connectioneditorbase.cpp:216 editor/settings/bridgewidget.cpp:39
-#: editor/settings/teamwidget.cpp:42 editor/uiutils.cpp:228
+#: editor/settings/teamwidget.cpp:42 editor/uiutils.cpp:226
 #: models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
@@ -45,7 +45,7 @@ msgstr "Wi-Fi"
 msgid "Wi-Fi Security"
 msgstr "Wi-Fi 보안"
 
-#: editor/connectioneditorbase.cpp:225 editor/uiutils.cpp:192
+#: editor/connectioneditorbase.cpp:225 editor/uiutils.cpp:190
 #: models/creatableconnectionsmodel.cpp:135
 #, kde-format
 msgid "DSL"
@@ -56,7 +56,7 @@ msgstr "DSL"
 msgid "Mobile Broadband (%1)"
 msgstr "모바일 광대역(%1)"
 
-#: editor/connectioneditorbase.cpp:236 editor/uiutils.cpp:196
+#: editor/connectioneditorbase.cpp:236 editor/uiutils.cpp:194
 #, kde-format
 msgid "Bluetooth"
 msgstr "블루투스"
@@ -72,19 +72,19 @@ msgid "PPP"
 msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
-#: editor/uiutils.cpp:211 models/creatableconnectionsmodel.cpp:142
+#: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
 #: models/networkmodelitem.cpp:719
 #, kde-format
 msgid "Infiniband"
 msgstr "인피니밴드"
 
-#: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:200
+#: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:198
 #: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:725
 #, kde-format
 msgid "Bond"
 msgstr "본드"
 
-#: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:203
+#: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:201
 #: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:731
 #, kde-format
 msgid "Bridge"
@@ -96,7 +96,7 @@ msgstr "브리지"
 msgid "Vlan"
 msgstr "VLAN"
 
-#: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:232
+#: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:230
 #: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:746
 #, kde-format
 msgid "Team"
@@ -117,12 +117,12 @@ msgstr "VPN(%1)"
 msgid "IPv4"
 msgstr "IPv4"
 
-#: editor/connectioneditorbase.cpp:309
+#: editor/connectioneditorbase.cpp:310
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:492
+#: editor/connectioneditorbase.cpp:493
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "%1의 비밀 정보를 가져올 수 없음"
@@ -220,7 +220,7 @@ msgid "Remove Connection"
 msgstr "연결 삭제"
 
 #: editor/settings/bridgewidget.cpp:36 editor/settings/teamwidget.cpp:45
-#: editor/uiutils.cpp:217
+#: editor/uiutils.cpp:215
 #, kde-format
 msgid "VLAN"
 msgstr "VLAN"
@@ -2062,696 +2062,713 @@ msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
 msgstr "WireGuard 피어 속성"
 
-#: editor/uiutils.cpp:133
+#: editor/uiutils.cpp:128
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
-#: editor/uiutils.cpp:136
+#: editor/uiutils.cpp:131
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Bluetooth"
 msgstr "블루투스"
 
-#: editor/uiutils.cpp:139
+#: editor/uiutils.cpp:134
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Infiniband"
 msgstr "인피니밴드"
 
-#: editor/uiutils.cpp:142
+#: editor/uiutils.cpp:137
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "ADSL"
 msgstr "ADSL"
 
-#: editor/uiutils.cpp:145
+#: editor/uiutils.cpp:140
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bond)"
 msgstr "가상(본드)"
 
-#: editor/uiutils.cpp:148
+#: editor/uiutils.cpp:143
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bridge)"
 msgstr "가상(브리지)"
 
-#: editor/uiutils.cpp:151
+#: editor/uiutils.cpp:146
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (vlan)"
 msgstr "가상(VLAN)"
 
-#: editor/uiutils.cpp:154
+#: editor/uiutils.cpp:149
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (team)"
 msgstr "가상(팀)"
 
-#: editor/uiutils.cpp:161
+#: editor/uiutils.cpp:156
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Serial Modem"
 msgstr "직렬 모뎀"
 
-#: editor/uiutils.cpp:166
+#: editor/uiutils.cpp:161
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Mobile Broadband"
 msgstr "모바일 광대역"
 
-#: editor/uiutils.cpp:176
+#: editor/uiutils.cpp:170
+#, kde-format
+msgctxt "title of the interface widget in nm's popup"
+msgid "Loopback"
+msgstr ""
+
+#: editor/uiutils.cpp:174
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wired Ethernet"
 msgstr "유선 이더넷"
 
-#: editor/uiutils.cpp:188
+#: editor/uiutils.cpp:186
 #, kde-format
 msgid "ADSL"
 msgstr "ADSL"
 
-#: editor/uiutils.cpp:207
+#: editor/uiutils.cpp:205
 #, kde-format
 msgid "Mobile broadband"
 msgstr "모바일 광대역"
 
-#: editor/uiutils.cpp:214
+#: editor/uiutils.cpp:212
 #, kde-format
 msgid "Olpc mesh"
 msgstr "OLPC 메시"
 
-#: editor/uiutils.cpp:220 networkstatus.cpp:189
+#: editor/uiutils.cpp:218 networkstatus.cpp:189
 #, kde-format
 msgid "VPN"
 msgstr "VPN"
 
-#: editor/uiutils.cpp:224 models/creatableconnectionsmodel.cpp:156
+#: editor/uiutils.cpp:222 models/creatableconnectionsmodel.cpp:156
 #, kde-format
 msgid "Wired Ethernet"
 msgstr "유선 이더넷"
 
-#: editor/uiutils.cpp:235
+#: editor/uiutils.cpp:233
 #, kde-format
 msgid "WireGuard VPN"
 msgstr "WireGuard VPN"
 
-#: editor/uiutils.cpp:239
+#: editor/uiutils.cpp:237
+#, kde-format
+msgid "Loopback"
+msgstr ""
+
+#: editor/uiutils.cpp:240
 #, kde-format
 msgid "Unknown connection type"
 msgstr "알 수 없는 연결 형식"
 
-#: editor/uiutils.cpp:251
+#: editor/uiutils.cpp:252
 #, kde-format
 msgid "Wireless Interface (%1)"
 msgstr "무선 인터페이스(%1)"
 
-#: editor/uiutils.cpp:254
+#: editor/uiutils.cpp:255
 #, kde-format
 msgid "Wired Interface (%1)"
 msgstr "유선 인터페이스(%1)"
 
-#: editor/uiutils.cpp:257
+#: editor/uiutils.cpp:258
 #, kde-format
 msgid "Bluetooth (%1)"
 msgstr "블루투스(%1)"
 
-#: editor/uiutils.cpp:260
+#: editor/uiutils.cpp:261
 #, kde-format
 msgid "Modem (%1)"
 msgstr "모뎀(%1)"
 
-#: editor/uiutils.cpp:263
+#: editor/uiutils.cpp:264
 #, kde-format
 msgid "ADSL (%1)"
 msgstr "ADSL(%1)"
 
-#: editor/uiutils.cpp:266
+#: editor/uiutils.cpp:267
 #, kde-format
 msgid "VLan (%1)"
 msgstr "VLAN(%1)"
 
-#: editor/uiutils.cpp:269
+#: editor/uiutils.cpp:270
 #, kde-format
 msgid "Bridge (%1)"
 msgstr "브리지(%1)"
 
-#: editor/uiutils.cpp:282
+#: editor/uiutils.cpp:273
+#, fuzzy, kde-format
+#| msgid "Wired Interface (%1)"
+msgid "Loopback Interface (%1)"
+msgstr "유선 인터페이스(%1)"
+
+#: editor/uiutils.cpp:286
 #, kde-format
 msgctxt "description of unknown network interface state"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: editor/uiutils.cpp:285
+#: editor/uiutils.cpp:289
 #, kde-format
 msgctxt "description of unmanaged network interface state"
 msgid "Unmanaged"
 msgstr "관리되지 않음"
 
-#: editor/uiutils.cpp:288
+#: editor/uiutils.cpp:292
 #, kde-format
 msgctxt "description of unavailable network interface state"
 msgid "Unavailable"
 msgstr "사용 불가능"
 
-#: editor/uiutils.cpp:291
+#: editor/uiutils.cpp:295
 #, kde-format
 msgctxt "description of unconnected network interface state"
 msgid "Not connected"
 msgstr "연결되지 않음"
 
-#: editor/uiutils.cpp:294
+#: editor/uiutils.cpp:298
 #, kde-format
 msgctxt "description of preparing to connect network interface state"
 msgid "Preparing to connect"
 msgstr "연결 준비 중"
 
-#: editor/uiutils.cpp:297
+#: editor/uiutils.cpp:301
 #, kde-format
 msgctxt "description of configuring hardware network interface state"
 msgid "Configuring interface"
 msgstr "인터페이스 설정 중"
 
-#: editor/uiutils.cpp:300
+#: editor/uiutils.cpp:304
 #, kde-format
 msgctxt "description of waiting for authentication network interface state"
 msgid "Waiting for authorization"
 msgstr "인증 대기 중"
 
-#: editor/uiutils.cpp:303
+#: editor/uiutils.cpp:307
 #, kde-format
 msgctxt "network interface doing dhcp request in most cases"
 msgid "Setting network address"
 msgstr "네트워크 주소 설정 중"
 
-#: editor/uiutils.cpp:306
+#: editor/uiutils.cpp:310
 #, kde-format
 msgctxt "is other action required to fully connect? captive portals, etc."
 msgid "Checking further connectivity"
 msgstr "추가 인증 확인 중"
 
-#: editor/uiutils.cpp:309
+#: editor/uiutils.cpp:313
 #, kde-format
 msgctxt ""
 "a secondary connection (e.g. VPN) has to be activated first to continue"
 msgid "Waiting for a secondary connection"
 msgstr "2차 연결 대가 중"
 
-#: editor/uiutils.cpp:313
+#: editor/uiutils.cpp:317
 #, kde-format
 msgctxt "network interface connected state label"
 msgid "Connected"
 msgstr "연결됨"
 
-#: editor/uiutils.cpp:315
+#: editor/uiutils.cpp:319
 #, kde-format
 msgctxt "network interface connected state label"
 msgid "Connected to %1"
 msgstr "%1에 연결됨"
 
-#: editor/uiutils.cpp:319
+#: editor/uiutils.cpp:323
 #, kde-format
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
 msgstr "연결 비활성화 중"
 
-#: editor/uiutils.cpp:322
+#: editor/uiutils.cpp:326
 #, kde-format
 msgctxt "network interface connection failed state label"
 msgid "Connection Failed"
 msgstr "연결 실패"
 
-#: editor/uiutils.cpp:325 editor/uiutils.cpp:359
+#: editor/uiutils.cpp:329 editor/uiutils.cpp:363
 #, kde-format
 msgctxt "interface state"
 msgid "Error: Invalid state"
 msgstr "오류: 잘못된 상태"
 
-#: editor/uiutils.cpp:335
+#: editor/uiutils.cpp:339
 #, kde-format
 msgctxt "The state of the VPN connection is unknown"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: editor/uiutils.cpp:338
+#: editor/uiutils.cpp:342
 #, kde-format
 msgctxt "The VPN connection is preparing to connect"
 msgid "Preparing to connect"
 msgstr "연결 준비 중"
 
-#: editor/uiutils.cpp:341
+#: editor/uiutils.cpp:345
 #, kde-format
 msgctxt "The VPN connection needs authorization credentials"
 msgid "Needs authorization"
 msgstr "인증 필요"
 
-#: editor/uiutils.cpp:344
+#: editor/uiutils.cpp:348
 #, kde-format
 msgctxt "The VPN connection is being established"
 msgid "Connecting"
 msgstr "연결 중"
 
-#: editor/uiutils.cpp:347
+#: editor/uiutils.cpp:351
 #, kde-format
 msgctxt "The VPN connection is getting an IP address"
 msgid "Setting network address"
 msgstr "네트워크 주소 설정 중"
 
-#: editor/uiutils.cpp:350
+#: editor/uiutils.cpp:354
 #, kde-format
 msgctxt "The VPN connection is active"
 msgid "Activated"
 msgstr "활성화됨"
 
-#: editor/uiutils.cpp:353
+#: editor/uiutils.cpp:357
 #, kde-format
 msgctxt "The VPN connection failed"
 msgid "Failed"
 msgstr "실패"
 
-#: editor/uiutils.cpp:356
+#: editor/uiutils.cpp:360
 #, kde-format
 msgctxt "The VPN connection is disconnected"
 msgid "Failed"
 msgstr "실패"
 
-#: editor/uiutils.cpp:369
+#: editor/uiutils.cpp:373
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: editor/uiutils.cpp:372
+#: editor/uiutils.cpp:376
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Adhoc"
 msgstr "Adhoc"
 
-#: editor/uiutils.cpp:375
+#: editor/uiutils.cpp:379
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Infrastructure"
 msgstr "Infrastructure"
 
-#: editor/uiutils.cpp:378
+#: editor/uiutils.cpp:382
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Access point"
 msgstr "액세스 포인트"
 
-#: editor/uiutils.cpp:403
+#: editor/uiutils.cpp:407
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise WEP40"
 msgstr "페어와이즈 WEP40"
 
-#: editor/uiutils.cpp:405
+#: editor/uiutils.cpp:409
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise WEP104"
 msgstr "페어와이즈 WEP104"
 
-#: editor/uiutils.cpp:407
+#: editor/uiutils.cpp:411
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise TKIP"
 msgstr "페어와이즈 TKIP"
 
-#: editor/uiutils.cpp:409
+#: editor/uiutils.cpp:413
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise CCMP"
 msgstr "페어와이즈 CCMP"
 
-#: editor/uiutils.cpp:411
+#: editor/uiutils.cpp:415
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group WEP40"
 msgstr "그룹 WEP40"
 
-#: editor/uiutils.cpp:413
+#: editor/uiutils.cpp:417
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group WEP104"
 msgstr "그룹 WEP104"
 
-#: editor/uiutils.cpp:415
+#: editor/uiutils.cpp:419
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group TKIP"
 msgstr "그룹 TKIP"
 
-#: editor/uiutils.cpp:417
+#: editor/uiutils.cpp:421
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group CCMP"
 msgstr "그룹 CCMP"
 
-#: editor/uiutils.cpp:419
+#: editor/uiutils.cpp:423
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "PSK"
 msgstr "PSK"
 
-#: editor/uiutils.cpp:421
+#: editor/uiutils.cpp:425
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "802.1x"
 msgstr "802.1x"
 
-#: editor/uiutils.cpp:430
+#: editor/uiutils.cpp:434
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 Bit/s"
 msgstr "%1 Bit/초"
 
-#: editor/uiutils.cpp:432
+#: editor/uiutils.cpp:436
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 MBit/s"
 msgstr "%1 MBit/초"
 
-#: editor/uiutils.cpp:434
+#: editor/uiutils.cpp:438
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 GBit/s"
 msgstr "%1 GBit/초"
 
-#: editor/uiutils.cpp:458
+#: editor/uiutils.cpp:462
 #, kde-format
 msgctxt "Wireless connection frequency"
 msgid "%1 GHz"
 msgstr "%1 GHz"
 
-#: editor/uiutils.cpp:464
+#: editor/uiutils.cpp:468
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "LTE"
 msgstr "LTE"
 
-#: editor/uiutils.cpp:466
+#: editor/uiutils.cpp:470
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "UMTS/HSxPA"
 msgstr "UMTS/HSxPA"
 
-#: editor/uiutils.cpp:468
+#: editor/uiutils.cpp:472
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GPRS/EDGE"
 msgstr "GPRS/EDGE"
 
-#: editor/uiutils.cpp:470
+#: editor/uiutils.cpp:474
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GSM"
 msgstr "GSM"
 
-#: editor/uiutils.cpp:472 editor/uiutils.cpp:475
+#: editor/uiutils.cpp:476 editor/uiutils.cpp:479
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "Any"
 msgstr "임의"
 
-#: editor/uiutils.cpp:482
+#: editor/uiutils.cpp:486
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
 msgstr "5G NR"
 
-#: editor/uiutils.cpp:486
+#: editor/uiutils.cpp:490
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "LTE"
 msgstr "LTE"
 
-#: editor/uiutils.cpp:488
+#: editor/uiutils.cpp:492
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision B"
 msgstr "CDMA2000 EVDO 리비전 B"
 
-#: editor/uiutils.cpp:490
+#: editor/uiutils.cpp:494
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision A"
 msgstr "CDMA2000 EVDO 리비전 A"
 
-#: editor/uiutils.cpp:492
+#: editor/uiutils.cpp:496
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision 0"
 msgstr "CDMA2000 EVDO 리비전 0"
 
-#: editor/uiutils.cpp:494
+#: editor/uiutils.cpp:498
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 1xRTT"
 msgstr "CDMA2000 1xRTT"
 
-#: editor/uiutils.cpp:496
+#: editor/uiutils.cpp:500
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA+"
 msgstr "HSPA+"
 
-#: editor/uiutils.cpp:498
+#: editor/uiutils.cpp:502
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA"
 msgstr "HSPA"
 
-#: editor/uiutils.cpp:500
+#: editor/uiutils.cpp:504
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSUPA"
 msgstr "HSUPA"
 
-#: editor/uiutils.cpp:502
+#: editor/uiutils.cpp:506
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSDPA"
 msgstr "HSDPA"
 
-#: editor/uiutils.cpp:504
+#: editor/uiutils.cpp:508
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "UMTS"
 msgstr "UMTS"
 
-#: editor/uiutils.cpp:506
+#: editor/uiutils.cpp:510
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "EDGE"
 msgstr "EDGE"
 
-#: editor/uiutils.cpp:508
+#: editor/uiutils.cpp:512
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "GPRS"
 msgstr "GPRS"
 
-#: editor/uiutils.cpp:510
+#: editor/uiutils.cpp:514
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "Compact GSM"
 msgstr "Compact GSM"
 
-#: editor/uiutils.cpp:512
+#: editor/uiutils.cpp:516
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "GSM"
 msgstr "GSM"
 
-#: editor/uiutils.cpp:514
+#: editor/uiutils.cpp:518
 #, kde-format
 msgctxt "Analog wireline modem"
 msgid "Analog"
 msgstr "아날로그"
 
-#: editor/uiutils.cpp:516 editor/uiutils.cpp:521
+#: editor/uiutils.cpp:520 editor/uiutils.cpp:525
 #, kde-format
 msgctxt "Unknown cellular access technology"
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: editor/uiutils.cpp:518
+#: editor/uiutils.cpp:522
 #, kde-format
 msgctxt "Any cellular access technology"
 msgid "Any"
 msgstr "임의"
 
-#: editor/uiutils.cpp:528
+#: editor/uiutils.cpp:532
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem is unlocked."
 msgstr "모뎀 잠금이 해제되었습니다."
 
-#: editor/uiutils.cpp:530
+#: editor/uiutils.cpp:534
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN code."
 msgstr "SIM PIN 코드가 필요합니다."
 
-#: editor/uiutils.cpp:532
+#: editor/uiutils.cpp:536
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN2 code."
 msgstr "SIM PIN2 코드가 필요합니다."
 
-#: editor/uiutils.cpp:534
+#: editor/uiutils.cpp:538
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK code."
 msgstr "SIM PUK 코드가 필요합니다."
 
-#: editor/uiutils.cpp:536
+#: editor/uiutils.cpp:540
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK2 code."
 msgstr "SIM PUK2 코드가 필요합니다."
 
-#: editor/uiutils.cpp:538
+#: editor/uiutils.cpp:542
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PIN code."
 msgstr "모뎀에서 서비스 제공자 PIN 코드가 필요합니다."
 
-#: editor/uiutils.cpp:540
+#: editor/uiutils.cpp:544
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PUK code."
 msgstr "모뎀에서 서비스 제공자 PUK 코드가 필요합니다."
 
-#: editor/uiutils.cpp:542
+#: editor/uiutils.cpp:546
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PIN code."
 msgstr "모뎀에서 네트워크 PIN 코드가 필요합니다."
 
-#: editor/uiutils.cpp:544
+#: editor/uiutils.cpp:548
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PUK code."
 msgstr "모뎀에서 네트워크 PUK 코드가 필요합니다."
 
-#: editor/uiutils.cpp:546
+#: editor/uiutils.cpp:550
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PIN code."
 msgstr "모뎀에서 PIN 코드가 필요합니다."
 
-#: editor/uiutils.cpp:548
+#: editor/uiutils.cpp:552
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PIN code."
 msgstr "모뎀에서 사업자 PIN 코드가 필요합니다."
 
-#: editor/uiutils.cpp:550
+#: editor/uiutils.cpp:554
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PUK code."
 msgstr "모뎀에서 사업자 PUK 코드가 필요합니다."
 
-#: editor/uiutils.cpp:552
+#: editor/uiutils.cpp:556
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PIN code."
 msgstr "모뎀에서 PH-FSIM PIN 코드가 필요합니다."
 
-#: editor/uiutils.cpp:554
+#: editor/uiutils.cpp:558
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PUK code."
 msgstr "모뎀에서 PH-FSIM PUK 코드가 필요합니다."
 
-#: editor/uiutils.cpp:556
+#: editor/uiutils.cpp:560
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PIN code."
 msgstr "모뎀에서 네트워크 하위 집합 PIN 코드가 필요합니다."
 
-#: editor/uiutils.cpp:558
+#: editor/uiutils.cpp:562
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PUK code."
 msgstr "모뎀에서 네트워크 하위 집합 PUK 코드가 필요합니다."
 
-#: editor/uiutils.cpp:561
+#: editor/uiutils.cpp:565
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Lock reason unknown."
 msgstr "잠금 원인을 알 수 없습니다."
 
-#: editor/uiutils.cpp:584
+#: editor/uiutils.cpp:588
 #, kde-format
 msgctxt "@label no security"
 msgid "Insecure"
 msgstr "보안 없음"
 
-#: editor/uiutils.cpp:587
+#: editor/uiutils.cpp:591
 #, kde-format
 msgctxt "@label WEP security"
 msgid "WEP"
 msgstr "WEP"
 
-#: editor/uiutils.cpp:590
+#: editor/uiutils.cpp:594
 #, kde-format
 msgctxt "@label LEAP security"
 msgid "LEAP"
 msgstr "LEAP"
 
-#: editor/uiutils.cpp:593
+#: editor/uiutils.cpp:597
 #, kde-format
 msgctxt "@label Dynamic WEP security"
 msgid "Dynamic WEP"
 msgstr "동적 WEP"
 
-#: editor/uiutils.cpp:596
+#: editor/uiutils.cpp:600
 #, kde-format
 msgctxt "@label WPA-PSK security"
 msgid "WPA-PSK"
 msgstr "WPA-PSK"
 
-#: editor/uiutils.cpp:599
+#: editor/uiutils.cpp:603
 #, kde-format
 msgctxt "@label WPA-EAP security"
 msgid "WPA-EAP"
 msgstr "WPA-EAP"
 
-#: editor/uiutils.cpp:602
+#: editor/uiutils.cpp:606
 #, kde-format
 msgctxt "@label WPA2-PSK security"
 msgid "WPA2-PSK"
 msgstr "WPA2-PSK"
 
-#: editor/uiutils.cpp:605
+#: editor/uiutils.cpp:609
 #, kde-format
 msgctxt "@label WPA2-EAP security"
 msgid "WPA2-EAP"
 msgstr "WPA2-EAP"
 
-#: editor/uiutils.cpp:608
+#: editor/uiutils.cpp:612
 #, kde-format
 msgctxt "@label WPA3-SAE security"
 msgid "WPA3-SAE"
 msgstr "WPA3-SAE"
 
-#: editor/uiutils.cpp:611
+#: editor/uiutils.cpp:615
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
 msgstr "WPA3-EAP-SUITE-B-192"
 
-#: editor/uiutils.cpp:614
+#: editor/uiutils.cpp:618
 #, kde-format
 msgctxt "@label unknown security"
 msgid "Unknown security type"
 msgstr "알 수 없는 보안 형식"
 
-#: editor/uiutils.cpp:630
+#: editor/uiutils.cpp:634
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
@@ -2760,7 +2777,7 @@ msgid "One minute ago"
 msgid_plural "%1 minutes ago"
 msgstr[0] "%1분 전"
 
-#: editor/uiutils.cpp:636
+#: editor/uiutils.cpp:640
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2769,21 +2786,21 @@ msgid "One hour ago"
 msgid_plural "%1 hours ago"
 msgstr[0] "%1시간 전"
 
-#: editor/uiutils.cpp:641
+#: editor/uiutils.cpp:645
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
 msgstr "어제"
 
-#: editor/uiutils.cpp:649
+#: editor/uiutils.cpp:653
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
 msgstr "사용되지 않음"
 
-#: editor/uiutils.cpp:664
+#: editor/uiutils.cpp:668
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
@@ -2792,7 +2809,7 @@ msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
 msgstr[0] "%1분 전에 마지막으로 사용됨"
 
-#: editor/uiutils.cpp:670
+#: editor/uiutils.cpp:674
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2801,19 +2818,19 @@ msgid "Last used one hour ago"
 msgid_plural "Last used %1 hours ago"
 msgstr[0] "%1시간 전에 마지막으로 사용됨"
 
-#: editor/uiutils.cpp:675
+#: editor/uiutils.cpp:679
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
 msgstr "어제 마지막으로 사용됨"
 
-#: editor/uiutils.cpp:677
+#: editor/uiutils.cpp:681
 #, kde-format
 msgid "Last used on %1"
 msgstr "%1에 마지막으로 사용됨"
 
-#: editor/uiutils.cpp:683
+#: editor/uiutils.cpp:687
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"

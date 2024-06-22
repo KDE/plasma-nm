@@ -2190,10 +2190,9 @@ msgid "Bridge (%1)"
 msgstr "桥接/Bridge (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "有线接口 (%1)"
+msgstr ""
 
 #: editor/uiutils.cpp:286
 #, kde-format

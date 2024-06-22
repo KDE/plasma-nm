@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-21 00:40+0000\n"
-"PO-Revision-Date: 2024-04-10 14:08+0300\n"
+"PO-Revision-Date: 2024-06-22 00:53+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.07.70\n"
 "X-POOTLE-MTIME: 1413102236.000000\n"
 
 #: editor/connectioneditorbase.cpp:203
@@ -2135,7 +2135,7 @@ msgstr "Taşınabilir Geniş Bant"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Geri Döngü"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2176,7 +2176,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Geri Döngü"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2219,10 +2219,9 @@ msgid "Bridge (%1)"
 msgstr "Köprü (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Kablolu Arayüz (%1)"
+msgstr "Geri Döngü Arayüzü (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format

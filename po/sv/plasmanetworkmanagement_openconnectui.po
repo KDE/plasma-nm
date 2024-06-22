@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2013, 2015, 2017, 2019, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2013, 2015, 2017, 2019, 2020, 2021, 2022, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2022-09-24 15:52+0200\n"
+"PO-Revision-Date: 2024-06-21 10:07+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: openconnectauth.cpp:337
 #, kde-format
@@ -257,10 +257,9 @@ msgstr "Apple iOS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnectprop.ui:226
-#, fuzzy, kde-format
-#| msgid "Reported OS:"
+#, kde-format
 msgid "Reported Version"
-msgstr "Rapporterat operativsystem:"
+msgstr "Rapporterad version"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: openconnectprop.ui:236
@@ -270,10 +269,9 @@ msgstr "Certifikatbehörighetskontroll"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaCertLabel)
 #: openconnectprop.ui:242
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "Användarcertifikat:"
+msgstr "Datorcertifikat:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -333,107 +331,107 @@ msgstr "Symbolhemlighet:"
 #: openconnectwebauthdialog.cpp:111
 #, kde-format
 msgid "Choose a Passkey"
-msgstr ""
+msgstr "Välj en lösenordsnyckel"
 
 #: openconnectwebauthdialog.cpp:112
 #, kde-format
 msgid "Which passkey do you want to use for %1?"
-msgstr ""
+msgstr "Vilken lösenordsnyckel vill du använda för %1?"
 
 #: openconnectwebauthdialog.cpp:129
 #, kde-format
 msgid "Ok"
-msgstr ""
+msgstr "Ok"
 
 #: openconnectwebauthdialog.cpp:140
 #, kde-format
 msgid "Use your security key with %1"
-msgstr ""
+msgstr "Använd din säkerhetsnyckel med %1"
 
 #: openconnectwebauthdialog.cpp:141
 #, kde-format
 msgid "Touch your security key again to complete the request."
-msgstr ""
+msgstr "Använd din säkerhetsnyckel igen för att slutföra förfrågan."
 
 #: openconnectwebauthdialog.cpp:158
 #, kde-format
 msgid "Next"
-msgstr ""
+msgstr "Nästa"
 
 #: openconnectwebauthdialog.cpp:167
 #, kde-format
 msgid "PIN Required"
-msgstr ""
+msgstr "PIN-kod krävs"
 
 #: openconnectwebauthdialog.cpp:168
 #, kde-format
 msgid "Enter the PIN for your security key"
-msgstr ""
+msgstr "Ange PIN-koden för din säkerhetsnyckel"
 
 #: openconnectwebauthdialog.cpp:173
 #, kde-format
 msgid "New PIN Required"
-msgstr ""
+msgstr "Ny PIN-kod krävs"
 
 #: openconnectwebauthdialog.cpp:174
 #, kde-format
 msgid "Set new PIN for your security key"
-msgstr ""
+msgstr "Ange ny PIN-kod för din säkerhetsnyckel"
 
 #: openconnectwebauthdialog.cpp:176
 #, kde-format
 msgid "Change PIN Required"
-msgstr ""
+msgstr "Ändrad PIN-kod krävs"
 
 #: openconnectwebauthdialog.cpp:177
 #, kde-format
 msgid "Change PIN for your security key"
-msgstr ""
+msgstr "Ändrad PIN-kod för din säkerhetsnyckel"
 
 #: openconnectwebauthdialog.cpp:188
 #, kde-format
 msgid "Internal User Verification Locked"
-msgstr ""
+msgstr "Intern användarverifiering låst"
 
 #: openconnectwebauthdialog.cpp:191
 #, kde-format
 msgid "Wrong PIN. %1 attempts remaining."
-msgstr ""
+msgstr "Felaktig PIN-kod. %1 försök kvar."
 
 #: openconnectwebauthdialog.cpp:194
 #, kde-format
 msgid "Too Short. %1 attempts remaining."
-msgstr ""
+msgstr "För kort. %1 försök kvar."
 
 #: openconnectwebauthdialog.cpp:197
 #, kde-format
 msgid "Invalid Characters. %1 attempts remaining."
-msgstr ""
+msgstr "Ogiltiga tecken. %1 försök kvar."
 
 #: openconnectwebauthdialog.cpp:201
 #, kde-format
 msgid "Same as current PIN. %1 attempts remaining."
-msgstr ""
+msgstr "Samma som nuvarande PIN-kod.%1 försök kvar."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format
 msgid "Something went wrong"
-msgstr ""
+msgstr "Någonting gick fel"
 
 #: openconnectwebauthdialog.cpp:243
 #, kde-format
 msgid "Request Timeout"
-msgstr ""
+msgstr "Tidsgräns överskreds för förfrågan"
 
 #: openconnectwebauthdialog.cpp:246
 #, kde-format
 msgid "Key not registered"
-msgstr ""
+msgstr "Nyckel ej registrerad"
 
 #: openconnectwebauthdialog.cpp:250
 #, kde-format
 msgid "You already registered this device.Try again with device"
-msgstr ""
+msgstr "Du har redan registrerat enheten. Försök igen med enhet"
 
 #: openconnectwebauthdialog.cpp:256
 #, kde-format
@@ -441,6 +439,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times."
 "To unlock it, remove and reinsert it."
 msgstr ""
+"Säkerhetsnyckeln är låst eftersom fel PIN-kod har angetts för många gånger. "
+"För att låsa upp den, ta bort och infoga den igen."
 
 #: openconnectwebauthdialog.cpp:262
 #, kde-format
@@ -448,88 +448,92 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "You'll need to reset the security key."
 msgstr ""
+"Säkerhetsnyckeln är låst eftersom fel PIN-kod har angetts för många gånger. "
+"Du måste återställa säkerhetsnyckeln."
 
 #: openconnectwebauthdialog.cpp:266
 #, kde-format
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
 msgstr ""
+"Behörighetskontrollverktyget togs bort under verifieringen. Infoga igen och "
+"försök igen."
 
 #: openconnectwebauthdialog.cpp:269
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
+msgstr "Behörighetskontrollverktyget har inte stöd för inbyggd nyckel"
 
 #: openconnectwebauthdialog.cpp:272
 #, kde-format
 msgid "Authenticator missing user verification"
-msgstr ""
+msgstr "Behörighetskontrollverktyget saknar användarverifiering"
 
 #: openconnectwebauthdialog.cpp:275
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr ""
+msgstr "Behörighetskontrollverktyget saknar stöd för stor binärdata"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
 msgid "No common algorithms"
-msgstr ""
+msgstr "Inga vanliga algoritmer"
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
 msgid "Storage Full"
-msgstr ""
+msgstr "Lagring full"
 
 #: openconnectwebauthdialog.cpp:284
 #, kde-format
 msgid "User consent denied"
-msgstr ""
+msgstr "Användarens samtycke nekades"
 
 #: openconnectwebauthdialog.cpp:287
 #, kde-format
 msgid "User Cancelled Request"
-msgstr ""
+msgstr "Användaren avbröt förfrågan"
 
 #: openconnectwebauthdialog.cpp:300
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Stäng"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, Dialog)
 #: openconnectwebauthdialog.ui:20
 #, kde-format
 msgid "WebAuth"
-msgstr ""
+msgstr "WebAuth"
 
 #. i18n: ectx: property (text), widget (QLabel, headingLabel)
 #: openconnectwebauthdialog.ui:32
 #, kde-format
 msgid "Heading"
-msgstr ""
+msgstr "Rubrik"
 
 #. i18n: ectx: property (text), widget (QLabel, description)
 #: openconnectwebauthdialog.ui:48
 #, kde-format
 msgid "Description"
-msgstr ""
+msgstr "Beskrivning"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
 #: openconnectwebauthdialog.ui:84
 #, kde-format
 msgid "PIN"
-msgstr ""
+msgstr "PIN-kod"
 
 #. i18n: ectx: property (text), widget (QLabel, confirmPinLabel)
 #: openconnectwebauthdialog.ui:107
 #, kde-format
 msgid "Confirm PIN"
-msgstr ""
+msgstr "Bekräfta PIN-kod"
 
 #. i18n: ectx: property (text), widget (QLabel, pinEntryErrorLabel)
 #: openconnectwebauthdialog.ui:130
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "Textetikett"
 
 #~ msgid "*.pem *.crt *.key"
 #~ msgstr "*.pem *.crt *.key"

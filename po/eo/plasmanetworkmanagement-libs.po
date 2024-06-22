@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-21 00:40+0000\n"
-"PO-Revision-Date: 2024-04-13 11:51+0100\n"
+"PO-Revision-Date: 2024-06-21 23:56+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -2217,10 +2217,9 @@ msgid "Bridge (%1)"
 msgstr "Ponto (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Kablita Interfaco (%1)"
+msgstr "Inversocikla Interfaco (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format

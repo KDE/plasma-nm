@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-21 00:40+0000\n"
-"PO-Revision-Date: 2022-04-19 19:38+0200\n"
+"PO-Revision-Date: 2024-06-21 09:49+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -808,13 +808,7 @@ msgstr "Anslut automatiskt med prioritet"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. An negative number can be used "
-#| "to indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -825,7 +819,7 @@ msgstr ""
 "Om anslutningen är inställt till automatisk, föredras anslutningar med högre "
 "prioritet. Förvalt värde är 0.\n"
 "Ett högre tal betyder högre prioritet. Ett negativt tal kan användas för att "
-"indikera en prioritet lägre än det förvalda värdet.\n"
+"ange en prioritet lägre än det förvalda värdet.\n"
 "           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
@@ -1559,10 +1553,9 @@ msgstr "WPA3 personlig"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA/WPA2 företag"
+msgstr "WPA3 Enterprise 192-bitar"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -1805,12 +1798,13 @@ msgstr "Gränssnitt"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, fuzzy, kde-format
-#| msgid "VLAN interface name:"
+#, kde-format
 msgid ""
 "Required.\n"
 "Network interface name."
-msgstr "VLAN-gränssnittsnamn:"
+msgstr ""
+"Krävs.\n"
+"Nätverksgränssnittets namn."
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -2136,7 +2130,7 @@ msgstr "Mobilt bredband"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Slingkrets"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2177,7 +2171,7 @@ msgstr "Wireguard-baserad VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Slingkrets"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2220,10 +2214,9 @@ msgid "Bridge (%1)"
 msgstr "Brygga (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Trådbundet gränssnitt (%1)"
+msgstr "Slingkretsgränssnitt (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format
@@ -2506,7 +2499,7 @@ msgstr "Alla"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:490
 #, kde-format
@@ -2770,7 +2763,7 @@ msgstr "WPA3-SAE"
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:618
 #, kde-format
@@ -2859,12 +2852,12 @@ msgstr "Inget VPN-insticksprogram hittades för typ %1"
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "Import av den här VPN-typen är inte implementerad"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "Inte implementerad"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3252,34 +3245,24 @@ msgid "R&emove"
 msgstr "&Ta bort"
 
 #: handler.cpp:121
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
-"NetworkManager saknar stöd för VPN-anslutningar med '%1' . Använd "
-"pakethanteraren för att installera det."
+msgstr "Plasma saknar stöd för VPN-anslutningar med '%1'."
 
 #: handler.cpp:124
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Rapportera fel"
 
 #: handler.cpp:147
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
-"NetworkManager saknar stöd för VPN-anslutningar med '%1' . Använd "
-"pakethanteraren för att installera det."
+msgstr "Nätverkshanteraren saknar stöd för VPN-anslutningar med '%1'."
 
 #: handler.cpp:150
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Installera"
 
 #: handler.cpp:192
 #, kde-format
@@ -3436,132 +3419,118 @@ msgid "Import a saved configuration file"
 msgstr "Importera en sparad inställningsfil"
 
 #: models/networkmodelitem.cpp:42
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är okänd"
 
 #: models/networkmodelitem.cpp:43
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är ADSL"
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr ""
+msgstr "Anslutningstypen är Blåtand"
 
 #: models/networkmodelitem.cpp:45
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är Brygga"
 
 #: models/networkmodelitem.cpp:46
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är CDMA"
 
 #: models/networkmodelitem.cpp:47
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är GSM"
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr ""
+msgstr "Anslutningstypen är Infiniband"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
-msgstr ""
+msgstr "Anslutningstypen är OLPC Mesh"
 
 #: models/networkmodelitem.cpp:50
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är PPOPE"
 
 #: models/networkmodelitem.cpp:51
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är VLAN"
 
 #: models/networkmodelitem.cpp:52
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är VPN"
 
 #: models/networkmodelitem.cpp:53
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är Wimax"
 
 #: models/networkmodelitem.cpp:54
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är trådbunden"
 
 #: models/networkmodelitem.cpp:55
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är trådlös"
 
 #: models/networkmodelitem.cpp:56
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är Team"
 
 #: models/networkmodelitem.cpp:57
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är generell"
 
 #: models/networkmodelitem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr "Anslutningstyp"
+msgstr "Anslutningstypen är Tunnel"
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr ""
+msgstr "Anslutningstypen är IP-tunnel"
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
-msgstr ""
+msgstr "Anslutningstypen är WireGuard"
 
 #: models/networkmodelitem.cpp:584
 #, kde-format
@@ -3622,8 +3591,7 @@ msgid "MAC Address"
 msgstr "MAC-adress"
 
 #: models/networkmodelitem.cpp:645
-#, fuzzy, kde-format
-#| msgid "Access point (SSID)"
+#, kde-format
 msgid "Access Point (SSID)"
 msgstr "Åtkomstpunkt (SSID)"
 
@@ -3633,21 +3601,18 @@ msgid "Signal Strength"
 msgstr "Signalstyrka"
 
 #: models/networkmodelitem.cpp:647
-#, fuzzy, kde-format
-#| msgid "%1%"
+#, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1 %"
 
 #: models/networkmodelitem.cpp:649
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
 msgstr "Säkerhetstyp"
 
 #: models/networkmodelitem.cpp:652
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
 msgstr "Anslutningshastighet"
 
@@ -3657,11 +3622,10 @@ msgid "Frequency"
 msgstr "Frekvens"
 
 #: models/networkmodelitem.cpp:660
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "Kanal:"
+msgstr "%1 (kanal %2)"
 
 #: models/networkmodelitem.cpp:664
 #, kde-format
@@ -3689,8 +3653,7 @@ msgid "Access Technology"
 msgstr "Åtkomstteknologi"
 
 #: models/networkmodelitem.cpp:692
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
 msgstr "VPN-insticksprogram"
 

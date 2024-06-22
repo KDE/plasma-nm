@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-21 00:40+0000\n"
-"PO-Revision-Date: 2024-04-10 07:29+0200\n"
+"PO-Revision-Date: 2024-06-21 07:09+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.4.4\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -2133,7 +2133,7 @@ msgstr "Mobilno širokopasovno"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Povratna zanka"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2174,7 +2174,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Povratna zanka"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2217,10 +2217,9 @@ msgid "Bridge (%1)"
 msgstr "Most (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Žični vmesnik (%1)"
+msgstr "Vmesnik povratne zanke (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format

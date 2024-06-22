@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2014, 2020, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2014, 2020, 2021, 2022, 2023, 2024 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-21 00:40+0000\n"
-"PO-Revision-Date: 2024-06-06 10:17+0200\n"
+"PO-Revision-Date: 2024-06-21 10:42+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -2136,7 +2136,7 @@ msgstr "Banda large mobile"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2177,7 +2177,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2220,10 +2220,9 @@ msgid "Bridge (%1)"
 msgstr "Ponte (Bridge) (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Interfacie cablate (%1)"
+msgstr "Interfacie de Loopback (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format

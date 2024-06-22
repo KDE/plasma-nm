@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-21 00:40+0000\n"
-"PO-Revision-Date: 2024-04-10 11:08+0200\n"
+"PO-Revision-Date: 2024-06-21 09:38+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -2140,7 +2140,7 @@ msgstr "Mobiel breedband"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2181,7 +2181,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2224,10 +2224,9 @@ msgid "Bridge (%1)"
 msgstr "Bridge (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Interface via kabel (%1)"
+msgstr "Loopback-interface (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format

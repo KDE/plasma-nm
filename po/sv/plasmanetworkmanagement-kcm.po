@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2017, 2019, 2020, 2021.
+# SPDX-FileCopyrightText: 2017, 2019, 2020, 2021, 2024 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-28 01:34+0000\n"
-"PO-Revision-Date: 2021-06-26 22:30+0200\n"
+"PO-Revision-Date: 2024-06-21 09:47+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,13 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: kcm.cpp:284
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Importera VPN-anslutning"
+msgstr "Misslyckades importera VPN-anslutning: %1"
 
 #: kcm.cpp:354
 #, kde-format
@@ -50,20 +49,19 @@ msgid "Import VPN Connection"
 msgstr "Importera VPN-anslutning"
 
 #: kcm.cpp:544
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
-msgstr "Exportera VPN-anslutning"
+msgstr "VPN-anslutningar (%1)"
 
 #: kcm.cpp:547
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Ingen fil tillhandahölls"
 
 #: kcm.cpp:608
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Okänd VPN-typ"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -106,24 +104,24 @@ msgstr "Accesspunkt"
 #: qml/ConfigurationDialog.qml:63
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Namn:"
 
 #: qml/ConfigurationDialog.qml:69
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Accesspunktens lösenord:"
+msgstr "Lösenord:"
 
 #: qml/ConfigurationDialog.qml:88
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "Accesspunktens namn får inte vara tomt"
 
 #: qml/ConfigurationDialog.qml:98
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"Accesspunktens lösenord måste antingen vara tomt eller bestå av allt från 8 "
+"upp till 64 tecken"
 
 #: qml/ConfigurationDialog.qml:99
 msgid ""
@@ -131,6 +129,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"Accesspunktens lösenord måste antingen vara tomt eller bestå av något av "
+"följande: <ul><li>Exakt 5 eller 13 godtyckliga tecken</li><li>Exakt 10 eller "
+"26 hexadecimala tecken:<br/>abcdef, ABCDEF eller 0-9</li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-21 00:40+0000\n"
-"PO-Revision-Date: 2024-04-10 04:44+0200\n"
+"PO-Revision-Date: 2024-06-21 05:59+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -2133,7 +2133,7 @@ msgstr "მობილური ინტერნეტი"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "მარყუჟი ინტერფეისი"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2174,7 +2174,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "მარყუჟი ინტერფეისი"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2217,10 +2217,9 @@ msgid "Bridge (%1)"
 msgstr "ხიდი (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "მავთულოვანი შეერთება (%1)"
+msgstr "მარყუჟი ინტერფეისი (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-21 00:40+0000\n"
+"POT-Creation-Date: 2024-06-24 00:39+0000\n"
 "PO-Revision-Date: 2024-06-21 10:15+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -77,31 +77,31 @@ msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
-#: models/networkmodelitem.cpp:719
+#: models/networkmodelitem.cpp:720
 #, kde-format
 msgid "Infiniband"
 msgstr "Infiniband"
 
 #: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:198
-#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:725
+#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:726
 #, kde-format
 msgid "Bond"
 msgstr "Enllaç (bond)"
 
 #: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:201
-#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:731
+#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:732
 #, kde-format
 msgid "Bridge"
 msgstr "Pont"
 
 #: editor/connectioneditorbase.cpp:256 models/creatableconnectionsmodel.cpp:220
-#: models/networkmodelitem.cpp:737
+#: models/networkmodelitem.cpp:738
 #, kde-format
 msgid "Vlan"
 msgstr "Vlan"
 
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:230
-#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:746
+#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:747
 #, kde-format
 msgid "Team"
 msgstr "Equip"
@@ -385,7 +385,7 @@ msgstr "Trieu el fitxer a importar"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
+#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:162
 #, kde-format
 msgid "Authentication:"
 msgstr "Autenticació:"
@@ -445,7 +445,7 @@ msgstr "EAP protegit (PEAP)"
 #: editor/settings/ui/802-1x.ui:317 editor/settings/ui/802-1x.ui:448
 #: editor/settings/ui/802-1x.ui:554 editor/settings/ui/802-1x.ui:700
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
-#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
+#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:199
 #, kde-format
 msgid "Username:"
 msgstr "Nom d'usuari:"
@@ -461,8 +461,8 @@ msgstr "Nom d'usuari:"
 #: editor/settings/ui/802-1x.ui:330 editor/settings/ui/802-1x.ui:461
 #: editor/settings/ui/802-1x.ui:567 editor/settings/ui/802-1x.ui:713
 #: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
-#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:207
-#: editor/settings/ui/wifisecurity.ui:231
+#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:212
+#: editor/settings/ui/wifisecurity.ui:236
 #, kde-format
 msgid "Password:"
 msgstr "Contrasenya:"
@@ -1563,56 +1563,62 @@ msgstr "WPA3 personal"
 msgid "WPA3 Enterprise 192-bit"
 msgstr "WPA3 corporativa de 192-bits"
 
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:73
+#, kde-format
+msgid "Enhanced Open (OWE)"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/wifisecurity.ui:76
+#: editor/settings/ui/wifisecurity.ui:81
 #, kde-format
 msgid "Security:"
 msgstr "Seguretat:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wifisecurity.ui:97
+#: editor/settings/ui/wifisecurity.ui:102
 #, kde-format
 msgid "Key:"
 msgstr "Clau:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/wifisecurity.ui:117
+#: editor/settings/ui/wifisecurity.ui:122
 #, kde-format
 msgid "WEP index:"
 msgstr "Índex WEP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:134
+#: editor/settings/ui/wifisecurity.ui:139
 #, kde-format
 msgid "1 (default)"
 msgstr "1 (predeterminat)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:139
+#: editor/settings/ui/wifisecurity.ui:144
 #, kde-format
 msgid "2"
 msgstr "2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:144
+#: editor/settings/ui/wifisecurity.ui:149
 #, kde-format
 msgid "3"
 msgstr "3"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:149
+#: editor/settings/ui/wifisecurity.ui:154
 #, kde-format
 msgid "4"
 msgstr "4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:174
+#: editor/settings/ui/wifisecurity.ui:179
 #, kde-format
 msgid "Open System"
 msgstr "Sistema obert"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:179
+#: editor/settings/ui/wifisecurity.ui:184
 #, kde-format
 msgid "Shared Key"
 msgstr "Clau compartida"
@@ -2780,11 +2786,17 @@ msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:618
 #, kde-format
+msgctxt "@label OWE security"
+msgid "Enhanced Open (OWE)"
+msgstr ""
+
+#: editor/uiutils.cpp:621
+#, kde-format
 msgctxt "@label unknown security"
 msgid "Unknown security type"
 msgstr "Tipus de seguretat desconeguda"
 
-#: editor/uiutils.cpp:634
+#: editor/uiutils.cpp:637
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
@@ -2794,7 +2806,7 @@ msgid_plural "%1 minutes ago"
 msgstr[0] "Fa un minut"
 msgstr[1] "Fa %1 minuts"
 
-#: editor/uiutils.cpp:640
+#: editor/uiutils.cpp:643
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2804,21 +2816,21 @@ msgid_plural "%1 hours ago"
 msgstr[0] "Fa 1 hora"
 msgstr[1] "Fa %1 hores"
 
-#: editor/uiutils.cpp:645
+#: editor/uiutils.cpp:648
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
 msgstr "Ahir"
 
-#: editor/uiutils.cpp:653
+#: editor/uiutils.cpp:656
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
 msgstr "Mai"
 
-#: editor/uiutils.cpp:668
+#: editor/uiutils.cpp:671
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
@@ -2828,7 +2840,7 @@ msgid_plural "Last used %1 minutes ago"
 msgstr[0] "Usada per darrera vegada fa un minut"
 msgstr[1] "Usada per darrera vegada fa %1 minuts"
 
-#: editor/uiutils.cpp:674
+#: editor/uiutils.cpp:677
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2838,19 +2850,19 @@ msgid_plural "Last used %1 hours ago"
 msgstr[0] "Usada per darrera vegada fa una hora"
 msgstr[1] "Usada per darrera vegada fa %1 hores"
 
-#: editor/uiutils.cpp:679
+#: editor/uiutils.cpp:682
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
 msgstr "Es va usar per darrera vegada ahir"
 
-#: editor/uiutils.cpp:681
+#: editor/uiutils.cpp:684
 #, kde-format
 msgid "Last used on %1"
 msgstr "Usada per darrera vegada el %1"
 
-#: editor/uiutils.cpp:687
+#: editor/uiutils.cpp:690
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
@@ -3289,47 +3301,47 @@ msgstr "Instal·la"
 msgid "Failed to activate %1"
 msgstr "Ha fallat en activar %1"
 
-#: handler.cpp:363 handler.cpp:392
+#: handler.cpp:366 handler.cpp:395
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Ha fallat en afegir la connexió %1"
 
-#: handler.cpp:370 handler.cpp:401
+#: handler.cpp:373 handler.cpp:404
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "S'ha afegit la connexió %1"
 
-#: handler.cpp:436
+#: handler.cpp:439
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Ha fallat en afegir %1"
 
-#: handler.cpp:475
+#: handler.cpp:478
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Ha fallat en desactivar %1"
 
-#: handler.cpp:606
+#: handler.cpp:609
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Ha fallat en eliminar %1"
 
-#: handler.cpp:613
+#: handler.cpp:616
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "S'ha eliminat la connexió %1"
 
-#: handler.cpp:628
+#: handler.cpp:631
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Ha fallat en actualitzar la connexió %1"
 
-#: handler.cpp:635
+#: handler.cpp:638
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "S'ha actualitzat la connexió %1"
 
-#: handler.cpp:810
+#: handler.cpp:813
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Ha fallat en crear el punt d'accés %1"
@@ -3552,164 +3564,164 @@ msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
 msgstr "El tipus de connexió és WireGuard"
 
-#: models/networkmodelitem.cpp:584
+#: models/networkmodelitem.cpp:585
 #, kde-format
 msgid "IPv4 Address"
 msgstr "Adreça IPv4"
 
-#: models/networkmodelitem.cpp:590
+#: models/networkmodelitem.cpp:591
 #, kde-format
 msgid "IPv4 Default Gateway"
 msgstr "Passarel·la IPv4 predeterminada"
 
-#: models/networkmodelitem.cpp:597
+#: models/networkmodelitem.cpp:598
 #, kde-format
 msgid "IPv4 Primary Nameserver"
 msgstr "Servidor de noms IPv4 primari"
 
-#: models/networkmodelitem.cpp:601
+#: models/networkmodelitem.cpp:602
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
 msgstr "Servidor de noms IPv4 secundari"
 
-#: models/networkmodelitem.cpp:611
+#: models/networkmodelitem.cpp:612
 #, kde-format
 msgid "IPv6 Address"
 msgstr "Adreça IPv6"
 
-#: models/networkmodelitem.cpp:613
+#: models/networkmodelitem.cpp:614
 #, kde-format
 msgid "IPv6 ULA Address"
 msgstr "Adreça IPv6 ULA"
 
-#: models/networkmodelitem.cpp:619
+#: models/networkmodelitem.cpp:620
 #, kde-format
 msgid "IPv6 Default Gateway"
 msgstr "Passarel·la IPv6 predeterminada"
 
-#: models/networkmodelitem.cpp:626
+#: models/networkmodelitem.cpp:627
 #, kde-format
 msgid "IPv6 Primary Nameserver"
 msgstr "Servidor de noms IPv6 primari"
 
-#: models/networkmodelitem.cpp:630
+#: models/networkmodelitem.cpp:631
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
 msgstr "Servidor de noms IPv6 secundari"
 
-#: models/networkmodelitem.cpp:639
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "Connection speed"
 msgstr "Velocitat de la connexió"
 
-#: models/networkmodelitem.cpp:641 models/networkmodelitem.cpp:666
-#: models/networkmodelitem.cpp:715 models/networkmodelitem.cpp:721
-#: models/networkmodelitem.cpp:727 models/networkmodelitem.cpp:733
-#: models/networkmodelitem.cpp:740 models/networkmodelitem.cpp:748
+#: models/networkmodelitem.cpp:642 models/networkmodelitem.cpp:667
+#: models/networkmodelitem.cpp:716 models/networkmodelitem.cpp:722
+#: models/networkmodelitem.cpp:728 models/networkmodelitem.cpp:734
+#: models/networkmodelitem.cpp:741 models/networkmodelitem.cpp:749
 #, kde-format
 msgid "MAC Address"
 msgstr "Adreça MAC"
 
-#: models/networkmodelitem.cpp:645
+#: models/networkmodelitem.cpp:646
 #, kde-format
 msgid "Access Point (SSID)"
 msgstr "Punt d'accés (SSID)"
 
-#: models/networkmodelitem.cpp:647
+#: models/networkmodelitem.cpp:648
 #, kde-format
 msgid "Signal Strength"
 msgstr "Potència del senyal"
 
-#: models/networkmodelitem.cpp:647
+#: models/networkmodelitem.cpp:648
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
 
-#: models/networkmodelitem.cpp:649
+#: models/networkmodelitem.cpp:650
 #, kde-format
 msgid "Security Type"
 msgstr "Tipus de seguretat"
 
-#: models/networkmodelitem.cpp:652
+#: models/networkmodelitem.cpp:653
 #, kde-format
 msgid "Connection Speed"
 msgstr "Velocitat de la connexió"
 
-#: models/networkmodelitem.cpp:658
+#: models/networkmodelitem.cpp:659
 #, kde-format
 msgid "Frequency"
 msgstr "Freqüència"
 
-#: models/networkmodelitem.cpp:660
+#: models/networkmodelitem.cpp:661
 #, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
 msgstr "%1 (canal %2)"
 
-#: models/networkmodelitem.cpp:664
+#: models/networkmodelitem.cpp:665
 #, kde-format
 msgid "BSSID"
 msgstr "BSSID"
 
-#: models/networkmodelitem.cpp:678
+#: models/networkmodelitem.cpp:679
 #, kde-format
 msgid "Operator"
 msgstr "Operador"
 
-#: models/networkmodelitem.cpp:682
+#: models/networkmodelitem.cpp:683
 #, kde-format
 msgid "Network ID"
 msgstr "ID de la xarxa"
 
-#: models/networkmodelitem.cpp:686
+#: models/networkmodelitem.cpp:687
 #, kde-format
 msgid "Signal Quality"
 msgstr "Qualitat del senyal"
 
-#: models/networkmodelitem.cpp:687
+#: models/networkmodelitem.cpp:688
 #, kde-format
 msgid "Access Technology"
 msgstr "Tecnologia d'accés"
 
-#: models/networkmodelitem.cpp:692
+#: models/networkmodelitem.cpp:693
 #, kde-format
 msgid "VPN Plugin"
 msgstr "Connector VPN"
 
-#: models/networkmodelitem.cpp:703
+#: models/networkmodelitem.cpp:704
 #, kde-format
 msgid "Banner"
 msgstr "Rètol"
 
-#: models/networkmodelitem.cpp:709
+#: models/networkmodelitem.cpp:710
 #, kde-format
 msgid "Name"
 msgstr "Nom"
 
-#: models/networkmodelitem.cpp:711 models/networkmodelitem.cpp:713
+#: models/networkmodelitem.cpp:712 models/networkmodelitem.cpp:714
 #, kde-format
 msgid "Capabilities"
 msgstr "Capacitats"
 
-#: models/networkmodelitem.cpp:719 models/networkmodelitem.cpp:725
-#: models/networkmodelitem.cpp:731 models/networkmodelitem.cpp:737
-#: models/networkmodelitem.cpp:743 models/networkmodelitem.cpp:746
+#: models/networkmodelitem.cpp:720 models/networkmodelitem.cpp:726
+#: models/networkmodelitem.cpp:732 models/networkmodelitem.cpp:738
+#: models/networkmodelitem.cpp:744 models/networkmodelitem.cpp:747
 #, kde-format
 msgid "Type"
 msgstr "Tipus"
 
-#: models/networkmodelitem.cpp:739
+#: models/networkmodelitem.cpp:740
 #, kde-format
 msgid "Vlan ID"
 msgstr "ID de la VLAN"
 
-#: models/networkmodelitem.cpp:743
+#: models/networkmodelitem.cpp:744
 #, kde-format
 msgid "Adsl"
 msgstr "ADSL"
 
-#: models/networkmodelitem.cpp:753
+#: models/networkmodelitem.cpp:754
 #, kde-format
 msgid "Device"
 msgstr "Dispositiu"

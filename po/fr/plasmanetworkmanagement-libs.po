@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2024-05-02 16:40+0200\n"
+"PO-Revision-Date: 2024-06-24 17:32+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -21,9 +21,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
-"X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
+"X-Environment: kde\n"
+"X-Generator: Lokalize 23.08.5\n"
 "X-Text-Markup: kde4\n"
 
 #: editor/connectioneditorbase.cpp:203
@@ -2162,7 +2162,7 @@ msgstr "Mobile large bande"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2203,7 +2203,7 @@ msgstr "VPN WireGuard"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2246,10 +2246,9 @@ msgid "Bridge (%1)"
 msgstr "Pont (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Interface filaire (%1)"
+msgstr "Interface Loopback (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format

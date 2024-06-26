@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2024-06-21 12:35+0200\n"
+"PO-Revision-Date: 2024-06-25 18:13+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1542,7 +1542,7 @@ msgstr "WEP dinámica (802.1x)"
 #: editor/settings/ui/wifisecurity.ui:53
 #, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr "WPA/WPA2 Personal"
+msgstr "WPA/WPA2 personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:58
@@ -1554,7 +1554,7 @@ msgstr "WPA/WPA2 empresarial"
 #: editor/settings/ui/wifisecurity.ui:63
 #, kde-format
 msgid "WPA3 Personal"
-msgstr "WPA3 Personal"
+msgstr "WPA3 personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
@@ -1566,7 +1566,7 @@ msgstr "WPA3 empresarial de 192 bits"
 #: editor/settings/ui/wifisecurity.ui:73
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:81
@@ -2785,7 +2785,7 @@ msgstr "WPA3-EAP-SUITE-B-192"
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format

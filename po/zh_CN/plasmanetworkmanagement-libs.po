@@ -2112,7 +2112,7 @@ msgstr "移动宽带"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "回环"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2153,7 +2153,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "回环"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2198,7 +2198,7 @@ msgstr "桥接/Bridge (%1)"
 #: editor/uiutils.cpp:273
 #, kde-format
 msgid "Loopback Interface (%1)"
-msgstr ""
+msgstr "回环接口 (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format

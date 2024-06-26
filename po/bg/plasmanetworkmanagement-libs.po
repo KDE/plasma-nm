@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2024-05-30 21:11+0200\n"
+"PO-Revision-Date: 2024-06-25 17:14+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.05.1\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -1565,7 +1565,7 @@ msgstr "WPA3 Enterprise 192-bit"
 #: editor/settings/ui/wifisecurity.ui:73
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:81
@@ -2143,7 +2143,7 @@ msgstr "Мобилна широколентова връзка"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Виртуален интерфейс (Loopback)"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2184,7 +2184,7 @@ msgstr "VPN на WireGuard"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Виртуален интерфейс (Loopback)"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2227,10 +2227,9 @@ msgid "Bridge (%1)"
 msgstr "Мост (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Кабелен интерфейс (%1)"
+msgstr "Виртуален интерфейс (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format
@@ -2783,7 +2782,7 @@ msgstr "WPA3-EAP-SUITE-B-192"
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format

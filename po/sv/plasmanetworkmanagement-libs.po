@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2024-06-21 09:49+0200\n"
+"PO-Revision-Date: 2024-06-25 19:10+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -1561,7 +1561,7 @@ msgstr "WPA3 Enterprise 192-bitar"
 #: editor/settings/ui/wifisecurity.ui:73
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Förbättrad öppen (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:81
@@ -2775,7 +2775,7 @@ msgstr "WPA3-EAP-SUITE-B-192"
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Förbättrad öppen (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format

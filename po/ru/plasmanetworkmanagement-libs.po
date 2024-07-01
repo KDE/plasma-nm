@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2024-05-21 22:42+0300\n"
+"PO-Revision-Date: 2024-06-27 20:39+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -2146,7 +2146,7 @@ msgstr "Мобильное"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2187,7 +2187,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Петлевой интерфейс (Loopback)"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2230,10 +2230,9 @@ msgid "Bridge (%1)"
 msgstr "Мост (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Проводной интерфейс (%1)"
+msgstr "Петлевой интерфейс (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format

@@ -11,9 +11,10 @@
 #include "handler.h"
 
 #include <KCModule>
-#include <ui_kcm.h>
 
 class KMessageWidget;
+class QQuickWidget;
+class QHBoxLayout;
 
 class KCMNetworkmanagement : public KCModule
 {
@@ -56,7 +57,8 @@ private:
     ConnectionEditorTabWidget *m_tabWidget = nullptr;
     QTimer *m_timer = nullptr;
     KMessageWidget *m_errorWidget;
-    Ui::KCMForm *const m_ui;
+    QHBoxLayout *m_layout = nullptr;
+    QQuickWidget *m_connectionView = nullptr;
 };
 
 #endif

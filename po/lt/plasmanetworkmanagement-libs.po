@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2024-05-08 23:45+0300\n"
+"PO-Revision-Date: 2024-07-05 23:33+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -1567,7 +1567,7 @@ msgstr "WPA3 industrinis 192 bitų"
 #: editor/settings/ui/wifisecurity.ui:73
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "„Enhanced Open“ (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:81
@@ -2148,7 +2148,7 @@ msgstr "Mobilusis plačiajuostis"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Kilpinis sujungimas"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2189,7 +2189,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Kilpinis sujungimas"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2232,10 +2232,9 @@ msgid "Bridge (%1)"
 msgstr "Tinklų tiltas (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Laidinio tinklo sąsaja (%1)"
+msgstr "Kilpinis sujungimas (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format
@@ -2788,7 +2787,7 @@ msgstr "WPA3-EAP-SUITE-B-192"
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "„Enhanced Open“ (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-13 02:27+0000\n"
-"PO-Revision-Date: 2024-04-16 18:20+0900\n"
+"PO-Revision-Date: 2024-07-08 16:01+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -423,7 +423,7 @@ msgstr "FAST"
 #: editor/settings/ui/802-1x.ui:63
 #, kde-format
 msgid "Tunneled TLS (TTLS)"
-msgstr "Tunneled TLS (TTLS)"
+msgstr "隧道 TLS (TTLS)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:68

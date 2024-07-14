@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-07-07 14:49+0200\n"
+"PO-Revision-Date: 2024-07-13 21:39+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: openconnectauth.cpp:337
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr "Klarte ikkje gjera klar programvarebasert tilgangspollett: %1"
+msgstr "Klarte ikkje gjera klar programvare­basert tilgangspollett: %1"
 
 #: openconnectauth.cpp:390
 #, kde-format
@@ -218,7 +218,7 @@ msgstr "Array SSL VPN"
 #: openconnectprop.ui:171
 #, kde-format
 msgid "Reported OS:"
-msgstr "Rapportert OS:"
+msgstr "Oppgjeve OS:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:190
@@ -260,7 +260,7 @@ msgstr "Apple iOS"
 #: openconnectprop.ui:226
 #, kde-format
 msgid "Reported Version"
-msgstr "Rapportert versjon"
+msgstr "Oppgjeven versjon"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: openconnectprop.ui:236
@@ -332,97 +332,98 @@ msgstr "Tilgangspollett-løyndom:"
 #: openconnectwebauthdialog.cpp:111
 #, kde-format
 msgid "Choose a Passkey"
-msgstr ""
+msgstr "Vel ein passnøkkel"
 
 #: openconnectwebauthdialog.cpp:112
 #, kde-format
 msgid "Which passkey do you want to use for %1?"
-msgstr ""
+msgstr "Kva passnøkkel vil du bruka for %1?"
 
 #: openconnectwebauthdialog.cpp:129
 #, kde-format
 msgid "Ok"
-msgstr ""
+msgstr "OK"
 
 #: openconnectwebauthdialog.cpp:140
 #, kde-format
 msgid "Use your security key with %1"
-msgstr ""
+msgstr "Bruk tryggleiksnøkkelen din med %1"
 
 #: openconnectwebauthdialog.cpp:141
 #, kde-format
 msgid "Touch your security key again to complete the request."
-msgstr ""
+msgstr "Trykk på tryggleiksnøkkelen igjen for å fullføra førespurnaden."
 
 #: openconnectwebauthdialog.cpp:158
 #, kde-format
 msgid "Next"
 msgstr "Neste"
 
+# Er vanleg å kalla det PIN-kode på norsk, ikkje berre PIN.
 #: openconnectwebauthdialog.cpp:167
 #, kde-format
 msgid "PIN Required"
-msgstr ""
+msgstr "Treng PIN-kode"
 
 #: openconnectwebauthdialog.cpp:168
 #, kde-format
 msgid "Enter the PIN for your security key"
-msgstr ""
+msgstr "Skriv inn PIN-koden til tryggleiksnøkkelen"
 
 #: openconnectwebauthdialog.cpp:173
 #, kde-format
 msgid "New PIN Required"
-msgstr ""
+msgstr "Treng ny PIN-kode"
 
 #: openconnectwebauthdialog.cpp:174
 #, kde-format
 msgid "Set new PIN for your security key"
-msgstr ""
+msgstr "Vel ny PIN-kode for tryggleiksnøkkelen"
 
 #: openconnectwebauthdialog.cpp:176
 #, kde-format
 msgid "Change PIN Required"
-msgstr ""
+msgstr "Må byta PIN-kode"
 
 #: openconnectwebauthdialog.cpp:177
 #, kde-format
 msgid "Change PIN for your security key"
-msgstr ""
+msgstr "Byt PIN-koden til tryggleiksnøkkelen"
 
 #: openconnectwebauthdialog.cpp:188
 #, kde-format
 msgid "Internal User Verification Locked"
-msgstr ""
+msgstr "Intern brukarstadfesting låst"
 
 #: openconnectwebauthdialog.cpp:191
 #, kde-format
 msgid "Wrong PIN. %1 attempts remaining."
-msgstr ""
+msgstr "Feil PIN-kode – %1 forsøk att."
 
 #: openconnectwebauthdialog.cpp:194
 #, kde-format
 msgid "Too Short. %1 attempts remaining."
-msgstr ""
+msgstr "For kort – %1 forsøk att."
 
 #: openconnectwebauthdialog.cpp:197
 #, kde-format
 msgid "Invalid Characters. %1 attempts remaining."
-msgstr ""
+msgstr "Ugyldige teikn – %1 forsøk att."
 
 #: openconnectwebauthdialog.cpp:201
 #, kde-format
 msgid "Same as current PIN. %1 attempts remaining."
-msgstr ""
+msgstr "Koden er lik den gamle PIN-koden – %1 forsøk att."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format
 msgid "Something went wrong"
-msgstr ""
+msgstr "Noko gjekk gale."
 
 #: openconnectwebauthdialog.cpp:243
 #, kde-format
 msgid "Request Timeout"
-msgstr ""
+msgstr "Førespurnaden vart tidsavbroten"
 
 #: openconnectwebauthdialog.cpp:246
 #, kde-format
@@ -432,7 +433,7 @@ msgstr "Nøkkel ikkje registrert"
 #: openconnectwebauthdialog.cpp:250
 #, kde-format
 msgid "You already registered this device.Try again with device"
-msgstr ""
+msgstr "Du har alt registrert denne eininga. Prøv igjen med eining"
 
 #: openconnectwebauthdialog.cpp:256
 #, kde-format
@@ -440,6 +441,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times."
 "To unlock it, remove and reinsert it."
 msgstr ""
+"Tryggleiksnøkkelen er låst fordi du skreiv inn feil PIN-kode for mange "
+"gongar. Du kan låsa han opp att ved å kopla han frå og så til igjen."
 
 #: openconnectwebauthdialog.cpp:262
 #, kde-format
@@ -447,85 +450,88 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "You'll need to reset the security key."
 msgstr ""
+"Tryggleiksnøkkelen er låst fordi du skreiv inn feil PIN-kode for mange "
+"gongar. Du må nullstilla nøkkelen."
 
 #: openconnectwebauthdialog.cpp:266
 #, kde-format
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
 msgstr ""
+"Autentikator fjerna under stadfesting. Kopla han til att og prøv på nytt."
 
 #: openconnectwebauthdialog.cpp:269
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
+msgstr "Autentikatoren støttar ikkje internlagring av nøkkel"
 
 #: openconnectwebauthdialog.cpp:272
 #, kde-format
 msgid "Authenticator missing user verification"
-msgstr ""
+msgstr "Autentikatoren manglar brukarstadfesting"
 
 #: openconnectwebauthdialog.cpp:275
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr ""
+msgstr "Autentikatoren har ikkje støtte for store dataobjekt (blob-ar)"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
 msgid "No common algorithms"
-msgstr ""
+msgstr "Ingen felles algoritmar"
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
 msgid "Storage Full"
-msgstr ""
+msgstr "Lagringsplass full"
 
 #: openconnectwebauthdialog.cpp:284
 #, kde-format
 msgid "User consent denied"
-msgstr ""
+msgstr "Nekta brukar­samtykke"
 
 #: openconnectwebauthdialog.cpp:287
 #, kde-format
 msgid "User Cancelled Request"
-msgstr ""
+msgstr "Brukaren avbraut førespurnaden"
 
 #: openconnectwebauthdialog.cpp:300
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Lukk"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, Dialog)
 #: openconnectwebauthdialog.ui:20
 #, kde-format
 msgid "WebAuth"
-msgstr ""
+msgstr "WebAuth"
 
 #. i18n: ectx: property (text), widget (QLabel, headingLabel)
 #: openconnectwebauthdialog.ui:32
 #, kde-format
 msgid "Heading"
-msgstr ""
+msgstr "Overskrift"
 
 #. i18n: ectx: property (text), widget (QLabel, description)
 #: openconnectwebauthdialog.ui:48
 #, kde-format
 msgid "Description"
-msgstr ""
+msgstr "Skildring"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
 #: openconnectwebauthdialog.ui:84
 #, kde-format
 msgid "PIN"
-msgstr ""
+msgstr "PIN-kode"
 
 #. i18n: ectx: property (text), widget (QLabel, confirmPinLabel)
 #: openconnectwebauthdialog.ui:107
 #, kde-format
 msgid "Confirm PIN"
-msgstr ""
+msgstr "Stadfest PIN-kode"
 
 #. i18n: ectx: property (text), widget (QLabel, pinEntryErrorLabel)
 #: openconnectwebauthdialog.ui:130
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "Tekstmerkelapp"

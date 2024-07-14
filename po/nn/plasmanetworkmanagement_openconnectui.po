@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-14 00:48+0000\n"
-"PO-Revision-Date: 2023-02-23 18:32+0100\n"
+"PO-Revision-Date: 2024-07-13 21:39+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -16,12 +16,12 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: openconnectauth.cpp:304
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr "Klarte ikkje gjera klar programvarebasert tilgangspollett: %1"
+msgstr "Klarte ikkje gjera klar programvare­basert tilgangspollett: %1"
 
 #: openconnectauth.cpp:357
 #, kde-format
@@ -226,7 +226,7 @@ msgstr "Array SSL VPN"
 #: openconnectprop.ui:169
 #, kde-format
 msgid "Reported OS:"
-msgstr "Rapportert OS:"
+msgstr "Oppgjeve OS:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:188

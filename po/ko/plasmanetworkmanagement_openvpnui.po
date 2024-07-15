@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-07-15 00:40+0000\n"
 "PO-Revision-Date: 2023-04-22 00:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -253,8 +253,8 @@ msgstr "OpenVPN에서 사용자 이름을 물어볼 때 사용할 값입니다."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: openvpn.ui:424 openvpn.ui:587 openvpnauth.cpp:77 openvpnauth.cpp:99
-#: openvpnauth.cpp:106
+#: openvpn.ui:424 openvpn.ui:587 openvpnauth.cpp:86 openvpnauth.cpp:110
+#: openvpnauth.cpp:117
 #, kde-format
 msgid "Password:"
 msgstr "암호:"
@@ -1025,7 +1025,7 @@ msgid "HTTP/SOCKS proxy password passed to OpenVPN when prompted for it."
 msgstr "OpenVPN에서 HTTP/SOCKS 프록시 사용자 암호를 물어볼 때 사용할 값입니다."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
-#: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
+#: openvpnadvanced.ui:1138 openvpnauth.cpp:84 openvpnauth.cpp:121
 #, kde-format
 msgid "Proxy Password:"
 msgstr "프록시 암호:"
@@ -1067,32 +1067,32 @@ msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
 msgstr "OpenVPN 암호화 방식을 찾을 수 없음"
 
-#: openvpnauth.cpp:73 openvpnauth.cpp:103
+#: openvpnauth.cpp:82 openvpnauth.cpp:114
 #, kde-format
 msgid "Key Password:"
 msgstr "키 암호:"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "OTP"
 msgstr "OTP"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "authenticator"
 msgstr "인증기"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "code"
 msgstr "코드"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "token"
 msgstr "토큰"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "one-time password"
 msgstr "일회용 암호"

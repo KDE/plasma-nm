@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-07-15 00:40+0000\n"
 "PO-Revision-Date: 2022-08-26 23:44+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -258,8 +258,8 @@ msgstr "Nama-pengguna diluluskan untuk OpenVPN ketika diminta untuknya."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: openvpn.ui:424 openvpn.ui:587 openvpnauth.cpp:77 openvpnauth.cpp:99
-#: openvpnauth.cpp:106
+#: openvpn.ui:424 openvpn.ui:587 openvpnauth.cpp:86 openvpnauth.cpp:110
+#: openvpnauth.cpp:117
 #, kde-format
 msgid "Password:"
 msgstr "Sandi:"
@@ -1051,7 +1051,7 @@ msgstr ""
 "Sandi proxy HTTP/SOCKS diluluskan untuk OpenVPN ketika diminta untuknya."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
-#: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
+#: openvpnadvanced.ui:1138 openvpnauth.cpp:84 openvpnauth.cpp:121
 #, kde-format
 msgid "Proxy Password:"
 msgstr "Sandi Proxy:"
@@ -1094,32 +1094,32 @@ msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
 msgstr "Tidak ada cipher OpenVPN yang ditemukan"
 
-#: openvpnauth.cpp:73 openvpnauth.cpp:103
+#: openvpnauth.cpp:82 openvpnauth.cpp:114
 #, kde-format
 msgid "Key Password:"
 msgstr "Sandi Kunci:"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "OTP"
 msgstr "OTP"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "authenticator"
 msgstr "pengautentikasi"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "code"
 msgstr "kode"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "token"
 msgstr "token"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "one-time password"
 msgstr "sandi satu kali"

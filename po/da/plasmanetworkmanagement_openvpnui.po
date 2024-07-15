@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-07-15 00:40+0000\n"
 "PO-Revision-Date: 2018-01-20 00:01+0200\n"
 "Last-Translator: scootergrisen\n"
 "Language-Team: Danish\n"
@@ -257,8 +257,8 @@ msgstr "Brugernavn sendt til OpenVPN når der spørges efter det."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: openvpn.ui:424 openvpn.ui:587 openvpnauth.cpp:77 openvpnauth.cpp:99
-#: openvpnauth.cpp:106
+#: openvpn.ui:424 openvpn.ui:587 openvpnauth.cpp:86 openvpnauth.cpp:110
+#: openvpnauth.cpp:117
 #, kde-format
 msgid "Password:"
 msgstr "Adgangskode:"
@@ -1047,7 +1047,7 @@ msgstr ""
 "HTTP/SOCKS proxy-adgangskode sendes til OpenVPN når der spørges efter det."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
-#: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
+#: openvpnadvanced.ui:1138 openvpnauth.cpp:84 openvpnauth.cpp:121
 #, kde-format
 msgid "Proxy Password:"
 msgstr "Adgangskode til proxy:"
@@ -1089,34 +1089,34 @@ msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
 msgstr "Ingen OpenVPN-chifre fundet"
 
-#: openvpnauth.cpp:73 openvpnauth.cpp:103
+#: openvpnauth.cpp:82 openvpnauth.cpp:114
 #, kde-format
 msgid "Key Password:"
 msgstr "Nøgleadgangskode:"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, fuzzy, kde-format
 #| msgid "TAP"
 msgid "OTP"
 msgstr "TAP"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, fuzzy, kde-format
 #| msgid "HMAC Authentication:"
 msgid "authenticator"
 msgstr "HMAC-autentificering:"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "code"
 msgstr ""
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "token"
 msgstr ""
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, fuzzy, kde-format
 #| msgid "Key password:"
 msgid "one-time password"

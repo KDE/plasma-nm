@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-07-15 00:40+0000\n"
 "PO-Revision-Date: 2021-08-14 09:51+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -264,8 +264,8 @@ msgstr "O utilizador passado ao OpenVPN, quando o mesmo for pedido."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: openvpn.ui:424 openvpn.ui:587 openvpnauth.cpp:77 openvpnauth.cpp:99
-#: openvpnauth.cpp:106
+#: openvpn.ui:424 openvpn.ui:587 openvpnauth.cpp:86 openvpnauth.cpp:110
+#: openvpnauth.cpp:117
 #, kde-format
 msgid "Password:"
 msgstr "Senha:"
@@ -1057,7 +1057,7 @@ msgstr ""
 "A senha do 'proxy' HTTP/SOCKS passada ao OpenVPN, quando a mesma for pedida."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
-#: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
+#: openvpnadvanced.ui:1138 openvpnauth.cpp:84 openvpnauth.cpp:121
 #, kde-format
 msgid "Proxy Password:"
 msgstr "Senha do 'Proxy':"
@@ -1100,32 +1100,32 @@ msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
 msgstr "Não foram encontradas cifras do OpenVPN"
 
-#: openvpnauth.cpp:73 openvpnauth.cpp:103
+#: openvpnauth.cpp:82 openvpnauth.cpp:114
 #, kde-format
 msgid "Key Password:"
 msgstr "Senha da Chave:"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "OTP"
 msgstr "OTP"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "authenticator"
 msgstr "autenticação"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "code"
 msgstr "código"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "token"
 msgstr "código numérico"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "one-time password"
 msgstr "senha de uso único"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2024-07-15 00:40+0000\n"
 "PO-Revision-Date: 2023-03-22 10:50-0300\n"
 "Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -263,8 +263,8 @@ msgstr "O usuário passado ao OpenVPN, quando o mesmo for solicitado."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: openvpn.ui:424 openvpn.ui:587 openvpnauth.cpp:77 openvpnauth.cpp:99
-#: openvpnauth.cpp:106
+#: openvpn.ui:424 openvpn.ui:587 openvpnauth.cpp:86 openvpnauth.cpp:110
+#: openvpnauth.cpp:117
 #, kde-format
 msgid "Password:"
 msgstr "Senha:"
@@ -1058,7 +1058,7 @@ msgid "HTTP/SOCKS proxy password passed to OpenVPN when prompted for it."
 msgstr "Senha do proxy HTTP/SOCKS passado ao OpenVPN, quando for solicitada."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
-#: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
+#: openvpnadvanced.ui:1138 openvpnauth.cpp:84 openvpnauth.cpp:121
 #, kde-format
 msgid "Proxy Password:"
 msgstr "Senha do proxy:"
@@ -1101,32 +1101,32 @@ msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
 msgstr "Nenhuma cifra OpenVPN encontrada"
 
-#: openvpnauth.cpp:73 openvpnauth.cpp:103
+#: openvpnauth.cpp:82 openvpnauth.cpp:114
 #, kde-format
 msgid "Key Password:"
 msgstr "Senha da chave:"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "OTP"
 msgstr "OTP"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "authenticator"
 msgstr "autenticador"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "code"
 msgstr "código"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "token"
 msgstr "token"
 
-#: openvpnauth.cpp:86
+#: openvpnauth.cpp:95
 #, kde-format
 msgid "one-time password"
 msgstr "senha de uso único"

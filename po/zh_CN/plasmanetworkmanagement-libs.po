@@ -3501,7 +3501,7 @@ msgstr "IPv4 主域名服务器"
 #: models/networkmodelitem.cpp:601
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
-msgstr "IPv4 辅助域名服务器"
+msgstr "IPv4 副域名服务器"
 
 #: models/networkmodelitem.cpp:611
 #, kde-format
@@ -3526,7 +3526,7 @@ msgstr "IPv6 主域名服务器"
 #: models/networkmodelitem.cpp:630
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
-msgstr "IPv6 辅助域名服务器"
+msgstr "IPv4 副域名服务器"
 
 #: models/networkmodelitem.cpp:639
 #, kde-format

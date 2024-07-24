@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-13 02:27+0000\n"
-"PO-Revision-Date: 2024-07-08 16:01+0900\n"
+"PO-Revision-Date: 2024-07-22 07:17+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -3589,7 +3589,7 @@ msgstr "網路 ID"
 #: models/networkmodelitem.cpp:686
 #, kde-format
 msgid "Signal Quality"
-msgstr "信號品質"
+msgstr "訊號品質"
 
 #: models/networkmodelitem.cpp:687
 #, kde-format

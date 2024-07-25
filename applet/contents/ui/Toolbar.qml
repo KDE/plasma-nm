@@ -16,12 +16,15 @@ import org.kde.kcmutils as KCMUtils
 RowLayout {
     id: toolbar
 
+    signal scanQrCodeRequested
+
     readonly property var displayWifiMessage: !wifiSwitchButton.checked && wifiSwitchButton.visible
     readonly property var displayWwanMessage: !wwanSwitchButton.checked && wwanSwitchButton.visible
     readonly property var displayplaneModeMessage: planeModeSwitchButton.checked && planeModeSwitchButton.visible
 
     property bool hasConnections
     property alias searchTextField: searchTextField
+    property alias scanQrCodeSupported: scanQrCodeButton.visible
 
     PlasmaNM.EnabledConnections {
         id: enabledConnections
@@ -212,6 +215,22 @@ RowLayout {
 
         onTextChanged: {
             appletProxyModel.setFilterFixedString(text)
+        }
+    }
+
+    PlasmaComponents3.ToolButton {
+        id: scanQrCodeButton
+        Layout.leftMargin: -Kirigami.Units.smallSpacing
+        text: i18nc("@action:button", "Scan QR Code")
+        icon.name: "view-barcode-qr"
+        display: PlasmaComponents3.ToolButton.IconOnly
+
+        PlasmaComponents3.ToolTip {
+            text: i18nc("@info:tooltip", "Connect to a Wi-Fi network by scanning its QR Code")
+        }
+
+        onClicked: {
+            toolbar.scanQrCodeRequested();
         }
     }
 

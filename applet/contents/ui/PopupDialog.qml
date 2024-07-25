@@ -43,6 +43,30 @@ PlasmaExtras.Representation {
                 Layout.fillWidth: true
                 hasConnections: connectionListPage.count > 0
                 visible: stack.depth === 1
+                scanQrCodeSupported: {
+                    // Checks whether Prison scanner and QtMultimedia imports are available
+                    // and that there is a camera.
+                    try {
+                        const testItem = Qt.createQmlObject(`
+                            import QtQml
+                            import QtMultimedia as QtMultimedia
+                            import org.kde.prison.scanner as PrisonScanner
+
+                            QtMultimedia.MediaDevices { }
+                        `, this, "qrCodeScanTest");
+
+                        const supported = testItem && testItem.defaultVideoInput !== null;
+                        testItem.destroy();
+                        return supported;
+                    } catch (e) {
+                        console.log("QR code scanning is not supported", e);
+                        return false;
+                    }
+                }
+
+                onScanQrCodeRequested: {
+                    stack.push("ScanQrCodePage.qml");
+                }
             }
 
             PlasmaComponents3.Button {

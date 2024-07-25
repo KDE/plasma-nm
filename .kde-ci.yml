@@ -23,6 +23,7 @@ Dependencies:
     'frameworks/kwindowsystem': '@latest-kf6'
     'frameworks/modemmanager-qt': '@latest-kf6'
     'frameworks/networkmanager-qt': '@latest-kf6'
+    'frameworks/prison': '@latest-kf6'
     'frameworks/solid': '@latest-kf6'
     'frameworks/kcmutils': '@latest-kf6'
     'third-party/qcoro': '@latest'

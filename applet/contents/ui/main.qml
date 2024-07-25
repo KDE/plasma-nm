@@ -65,6 +65,7 @@ PlasmoidItem {
         Layout.minimumHeight: Kirigami.Units.gridUnit * 20
         anchors.fill: parent
         focus: true
+        scanQrCodeSupported: scanQrCodeAction.visible
     }
 
     Plasmoid.contextualActions: [
@@ -109,8 +110,56 @@ PlasmoidItem {
             priority: PlasmaCore.Action.LowPriority
             visible: networkStatus.connectivity === NMQt.NetworkManager.Portal
             onTriggered: Qt.openUrlExternally("http://networkcheck.kde.org")
+        },
+        PlasmaCore.Action {
+            id: scanQrCodeAction
+            objectName: "scanQrCodeAction"
+            // "var" so it can be "undefined" (not checked), true, or false.
+            property var supported: undefined
+            text: i18nc("@action:inmenu", "Scan QR Code")
+            icon.name: "view-barcode-qr"
+            priority: PlasmaCore.Action.HighPriority
+            onTriggered: {
+                const wasExpanded = mainWindow.expanded;
+                mainWindow.expanded = true;
+                mainWindow.fullRepresentationItem.scanQrCode({skipAnimation: !wasExpanded});
+            }
+            visible: (mainWindow.fullRepresentationItem && !mainWindow.fullRepresentationItem.scanQrCodeAllowed) ? false : (supported === true)
+
+            function checkSupported() {
+                if (supported !== undefined) {
+                    return;
+                }
+
+                // Checks whether Prison scanner and QtMultimedia imports are available
+                // and that there is a camera.
+                try {
+                    const testItem = Qt.createQmlObject(`
+                        import QtQml
+                        import QtMultimedia as QtMultimedia
+                        import org.kde.prison.scanner as PrisonScanner
+
+                        QtMultimedia.MediaDevices { }
+                    `, this, "qrCodeScanTest");
+
+                    supported = (testItem && testItem.defaultVideoInput !== null);
+                } catch (e) {
+                    console.log("QR code scanning is not supported", e);
+                    supported = false;
+                }
+            }
         }
+
     ]
+
+    Plasmoid.onContextualActionsAboutToShow: {
+        scanQrCodeAction.checkSupported();
+    }
+    onExpandedChanged: (expanded) => {
+        if (expanded) {
+            scanQrCodeAction.checkSupported();
+        }
+    }
 
     PlasmaCore.Action {
         id: configureAction

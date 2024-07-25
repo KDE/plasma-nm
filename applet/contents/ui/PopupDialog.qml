@@ -18,7 +18,20 @@ PlasmaExtras.Representation {
     required property PlasmaNM.Handler nmHandler
     required property PlasmaNM.NetworkStatus nmStatus
 
+    property alias scanQrCodeSupported: toolbar.scanQrCodeSupported
+    readonly property bool scanQrCodeAllowed: stack.depth === 1
+
     collapseMarginsHint: true
+
+    function scanQrCode(args : var) : void {
+        if (scanQrCodeAllowed) {
+            let transition = QQC2.StackView.PushTransition;
+            if (args && args.skipAnimation) {
+                transition = QQC2.StackView.Immediate;
+            }
+            stack.pushItem(Qt.resolvedUrl("ScanQrCodePage.qml"), {}, transition);
+        }
+    }
 
     Component {
         id: networkModelComponent
@@ -43,6 +56,7 @@ PlasmaExtras.Representation {
                 Layout.fillWidth: true
                 hasConnections: connectionListPage.count > 0
                 visible: stack.depth === 1
+                onScanQrCodeRequested: full.scanQrCode()
             }
 
             PlasmaComponents3.Button {

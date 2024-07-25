@@ -6,6 +6,7 @@
 
 import QtQuick 2.2
 import QtQuick.Layouts 1.2
+import org.kde.plasma.plasmoid 2.0
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.plasma.core 2.0 as PlasmaCore
 import org.kde.kirigami 2.20 as Kirigami
@@ -16,12 +17,15 @@ import org.kde.kcmutils as KCMUtils
 RowLayout {
     id: toolbar
 
+    signal scanQrCodeRequested
+
     readonly property var displayWifiMessage: !wifiSwitchButton.checked && wifiSwitchButton.visible
     readonly property var displayWwanMessage: !wwanSwitchButton.checked && wwanSwitchButton.visible
     readonly property var displayplaneModeMessage: planeModeSwitchButton.checked && planeModeSwitchButton.visible
 
     property bool hasConnections
     property alias searchTextField: searchTextField
+    property bool scanQrCodeSupported
 
     PlasmaNM.EnabledConnections {
         id: enabledConnections
@@ -212,6 +216,24 @@ RowLayout {
 
         onTextChanged: {
             appletProxyModel.setFilterFixedString(text)
+        }
+    }
+
+    PlasmaComponents3.ToolButton {
+        id: scanQrCodeButton
+        // Cannot assign to "action" directly: Unable to assign ActionExtension to QQuickAction
+        readonly property PlasmaCore.Action scanQrCodeAction: Plasmoid.contextualActions.find(action => action.objectName === "scanQrCodeAction")
+        text: scanQrCodeAction.text
+        icon.name: scanQrCodeAction.icon.name
+        display: PlasmaComponents3.ToolButton.IconOnly
+        visible: scanQrCodeAction.visible && !(Plasmoid.containmentDisplayHints & PlasmaCore.Types.ContainmentDrawsPlasmoidHeading)
+
+        PlasmaComponents3.ToolTip {
+            text: scanQrCodeButton.text
+        }
+
+        onClicked: {
+            toolbar.scanQrCodeRequested();
         }
     }
 

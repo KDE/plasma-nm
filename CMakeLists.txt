@@ -41,6 +41,12 @@ find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     Widgets
 )
 
+find_package(Qt6Multimedia ${QT_MIN_VERSION} CONFIG)
+set_package_properties(Qt6Multimedia PROPERTIES
+    PURPOSE "Required for QR code scanner"
+    TYPE RUNTIME
+)
+
 find_package(PkgConfig REQUIRED)
 
 if(BUILD_OPENCONNECT)
@@ -63,6 +69,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
     I18n
     NetworkManagerQt
     Notifications
+    Prison
     Service
     Solid
     Wallet
@@ -74,8 +81,6 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
 )
 
 find_package(Plasma ${PROJECT_VERSION} REQUIRED)
-
-ecm_find_qmlmodule(org.kde.prison 1.0)
 
 find_package(KF6Kirigami ${KF6_MIN_VERSION} CONFIG)
 set_package_properties(KF6Kirigami PROPERTIES

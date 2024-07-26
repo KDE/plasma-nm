@@ -79,16 +79,15 @@ ColumnLayout {
             model: appletProxyModel
             currentIndex: -1
             boundsBehavior: Flickable.StopAtBounds
+
             section.property: showSeparator ? "Section" : ""
-            section.delegate: ListItem {
-                separator: true
-            }
+            section.delegate: ListSectionsSeparator { }
+
             highlight: PlasmaExtras.Highlight { }
             highlightMoveDuration: Kirigami.Units.shortDuration
             highlightResizeDuration: Kirigami.Units.shortDuration
-            delegate: ConnectionItem {
-                width: connectionView.width - Kirigami.Units.smallSpacing * 4
-            }
+
+            delegate: ConnectionItem { }
 
             // Placeholder message
             Loader {

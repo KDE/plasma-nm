@@ -19,7 +19,7 @@ ColumnLayout {
     property alias model: connectionView.model
     property alias count: connectionView.count
 
-    spacing: Kirigami.Units.smallSpacing * 2
+    spacing: Kirigami.Units.largeSpacing
 
     Keys.forwardTo: [connectionView]
 
@@ -28,7 +28,7 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.leftMargin: connectionView.leftMargin
         Layout.rightMargin: connectionView.rightMargin
-        Layout.topMargin: Kirigami.Units.smallSpacing * 2
+        Layout.topMargin: Kirigami.Units.largeSpacing
         Layout.preferredHeight: contentItem.implicitHeight + topPadding + bottomPadding
         type: Kirigami.MessageType.Information
         icon.name: "dialog-password"
@@ -71,11 +71,12 @@ ColumnLayout {
             }
 
             // We use the spacing around the connectivity message, if shown.
-            topMargin: connectivityMessage.visible ? 0 : Kirigami.Units.smallSpacing * 2
-            bottomMargin: Kirigami.Units.smallSpacing * 2
-            leftMargin: Kirigami.Units.smallSpacing * 2
-            rightMargin: Kirigami.Units.smallSpacing * 2
+            topMargin: connectivityMessage.visible ? 0 : Kirigami.Units.largeSpacing
+            leftMargin: Kirigami.Units.largeSpacing
+            rightMargin: Kirigami.Units.largeSpacing
+            bottomMargin: Kirigami.Units.largeSpacing
             spacing: Kirigami.Units.smallSpacing
+
             model: appletProxyModel
             currentIndex: -1
             boundsBehavior: Flickable.StopAtBounds

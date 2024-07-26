@@ -123,6 +123,7 @@ PlasmaExtras.Representation {
                     full.connectionModel.destroy();
                     full.connectionModel = null;
                 }
+                stack.pop(null);
             }
         }
     }

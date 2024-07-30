@@ -7,6 +7,7 @@
         "Description[ca@valencia]": "Proporciona secrets al dimoni NetworkManager",
         "Description[ca]": "Proporciona secrets al dimoni NetworkManager",
         "Description[cs]": "Poskytuje přihlašovací informace pro službu NetworkManageru",
+        "Description[da]": "Giver hemmeligheder til NetworkManager-dæmonen",
         "Description[de]": "Stellt dem NetworkManager-Dienst vertrauliche Daten zur Verfügung",
         "Description[el]": "Παρέχει κωδικούς ασφαλείας στον δαίμονα NetworkManager",
         "Description[eo]": "Disponigas sekretojn al la demono NetworkManager",

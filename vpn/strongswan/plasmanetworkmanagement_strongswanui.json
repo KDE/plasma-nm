@@ -18,6 +18,7 @@
         "Description[ca@valencia]": "VPN basada en IKEv1, IKEv2 sobre IPsec",
         "Description[ca]": "VPN basada en IKEv1, IKEv2 sobre IPsec",
         "Description[cs]": "VPN založena na IPsec, IKEv1, IKEv2",
+        "Description[da]": "IPsec, IKEv1, IKEv2 baseret VPN",
         "Description[de]": "VPN basierend auf IPsec, IKEv1, IKEv2",
         "Description[el]": "VPN βασισμένο σε IPsec, IKEv1, IKEv2",
         "Description[eo]": "VPN bazita sur IPsec, IKEv1, IKEv2",

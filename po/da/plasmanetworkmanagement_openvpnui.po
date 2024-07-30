@@ -2,24 +2,26 @@
 # This file is distributed under the same license as the PACKAGE package.
 # Martin Schlander <mschlander@opensuse.org>, 2013, 2014, 2015, 2016, 2017.
 # scootergrisen, 2018.
+# SPDX-FileCopyrightText: 2024 rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-07-15 00:40+0000\n"
-"PO-Revision-Date: 2018-01-20 00:01+0200\n"
-"Last-Translator: scootergrisen\n"
-"Language-Team: Danish\n"
+"PO-Revision-Date: 2024-07-17 14:59+0200\n"
+"Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
+"Language-Team: Danish <kde-i18n-doc@kde.org>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: openvpn.cpp:183
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
-msgstr ""
+msgstr "NetworkManager mangler OpenVPN-understøttelse"
 
 #: openvpn.cpp:208
 #, kde-format
@@ -272,10 +274,9 @@ msgstr "Adgangskode sendt til OpenVPN når der spørges efter det."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: openvpn.ui:643
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
-msgstr "Avanceret..."
+msgstr "Avanceret…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, generalTab)
 #: openvpnadvanced.ui:28
@@ -325,17 +326,15 @@ msgstr "Anvend brugervalgt genforhandlingsinterval:"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCompression)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:96 openvpnadvanced.ui:109
-#, fuzzy, kde-format
-#| msgid "Use LZO compression"
+#, kde-format
 msgid "Use compression."
-msgstr "Brug LZO-komprimering"
+msgstr "Brug komprimering"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCompression)
 #: openvpnadvanced.ui:99
-#, fuzzy, kde-format
-#| msgid "Use LZO compression"
+#, kde-format
 msgid "Use compression"
-msgstr "Brug LZO-komprimering"
+msgstr "Brug komprimering"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:113
@@ -347,19 +346,19 @@ msgstr "Nej"
 #: openvpnadvanced.ui:118
 #, kde-format
 msgid "LZO"
-msgstr ""
+msgstr "LZO"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:123
 #, kde-format
 msgid "LZ4"
-msgstr ""
+msgstr "LZ4"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:128
 #, kde-format
 msgid "LZ4 v2"
-msgstr ""
+msgstr "LZ4 v2"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:133
@@ -629,10 +628,9 @@ msgstr "Chiffer:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboCipher)
 #: openvpnadvanced.ui:513
-#, fuzzy, kde-format
-#| msgid "Obtaining available ciphers..."
+#, kde-format
 msgid "Obtaining available ciphers…"
-msgstr "Henter tilgængelige chifre..."
+msgstr "Henter tilgængelige chifre…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -1095,32 +1093,29 @@ msgid "Key Password:"
 msgstr "Nøgleadgangskode:"
 
 #: openvpnauth.cpp:95
-#, fuzzy, kde-format
-#| msgid "TAP"
+#, kde-format
 msgid "OTP"
-msgstr "TAP"
+msgstr "OTP"
 
 #: openvpnauth.cpp:95
-#, fuzzy, kde-format
-#| msgid "HMAC Authentication:"
+#, kde-format
 msgid "authenticator"
-msgstr "HMAC-autentificering:"
+msgstr "autentificator"
 
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "code"
-msgstr ""
+msgstr "kode"
 
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "token"
-msgstr ""
+msgstr "polet"
 
 #: openvpnauth.cpp:95
-#, fuzzy, kde-format
-#| msgid "Key password:"
+#, kde-format
 msgid "one-time password"
-msgstr "Nøgleadgangskode:"
+msgstr "engangsadgangskode"
 
 #~ msgid "*.pem *.crt *.key *.cer *.p12"
 #~ msgstr "*.pem *.crt *.key *.cer *.p12"

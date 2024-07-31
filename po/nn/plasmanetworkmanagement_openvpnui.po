@@ -1,12 +1,11 @@
 # Translation of plasmanetworkmanagement_openvpnui to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2016, 2018, 2020, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2023-08-10 20:06+0200\n"
+"PO-Revision-Date: 2024-07-28 12:38+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -17,7 +16,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: openvpn.cpp:183
 #, kde-format
@@ -51,7 +50,8 @@ msgid ""
 msgstr ""
 "Fjernportnar(ar), eventuelt med port og protokoll (eks.: openvpn.firma."
 "no:1234:tcp).\n"
-"For redundans kan du oppgje fleire portar, skilde med komma eller mellomrom."
+"For redundans kan du oppgje fleire portnarar, skilde med komma eller "
+"mellomrom."
 
 #. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
 #: openvpn.ui:46

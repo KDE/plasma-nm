@@ -333,7 +333,7 @@ msgstr "Le cablo esseva disconnectite"
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNotFoundReason"
 msgid "The modem could not be found"
-msgstr "Le modemo nonpoteva esser trovate"
+msgstr "Le modemo non poteva esser trovate"
 
 #: notification.cpp:214
 #, kde-format

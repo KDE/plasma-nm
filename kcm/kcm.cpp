@@ -123,6 +123,17 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
         const QString vpnFile = vpnFileFromArgs(args);
         if (!vpnFile.isEmpty()) {
             promptImportVpn(vpnFile);
+            return;
+        }
+
+        NetworkManager::Connection::Ptr selectedConnection = connectionFromArgs(args);
+
+        if (selectedConnection) {
+            const NetworkManager::ConnectionSettings::Ptr settings = selectedConnection->settings();
+            if (UiUtils::isConnectionTypeSupported(settings->connectionType())) {
+                QObject *rootItem = m_connectionView->rootObject();
+                QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, settings->id()), Q_ARG(QVariant, selectedConnection->path()));
+            }
         }
     });
 
@@ -134,21 +145,8 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
         });
     }
 
-    NetworkManager::Connection::Ptr selectedConnection;
-
     // Look in the arguments for a connection ID to preselect
-    static const QLatin1String uuidArgumentMarker{"Uuid="};
-    for (QVariant arg : args) {
-        if (arg.canConvert(QMetaType::QString)) {
-            QString uuid = arg.toString();
-            if (uuid.startsWith(uuidArgumentMarker)) {
-                uuid = uuid.replace(uuidArgumentMarker, QString());
-                selectedConnection = NetworkManager::findConnectionByUuid(uuid);
-                qDebug(PLASMA_NM_KCM_LOG) << "Selecting user connection:" << uuid;
-                break;
-            }
-        }
-    }
+    NetworkManager::Connection::Ptr selectedConnection = connectionFromArgs(args);
 
     // Pre-select the currently active primary connection
     if (!selectedConnection || !selectedConnection->isValid()) {
@@ -245,6 +243,22 @@ QString KCMNetworkmanagement::vpnFileFromArgs(const QVariantList &args) const
     }
 
     return QString();
+}
+
+NetworkManager::Connection::Ptr KCMNetworkmanagement::connectionFromArgs(const QVariantList &args) const
+{
+    static const QLatin1String uuidArgumentMarker{"Uuid="};
+    for (QVariant arg : args) {
+        if (arg.canConvert(QMetaType::QString)) {
+            QString uuid = arg.toString();
+            if (uuid.startsWith(uuidArgumentMarker)) {
+                uuid = uuid.replace(uuidArgumentMarker, QString());
+                return NetworkManager::findConnectionByUuid(uuid);
+            }
+        }
+    }
+
+    return nullptr;
 }
 
 void KCMNetworkmanagement::promptImportVpn(const QString &vpnFile)

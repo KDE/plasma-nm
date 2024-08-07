@@ -120,21 +120,20 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
 
     setButtons(Button::Apply);
 
-    NetworkManager::Connection::Ptr selectedConnection;
+    connect(this, &KCModule::activationRequested, this, [this](const QVariantList &args) {
+        NetworkManager::Connection::Ptr selectedConnection = connectionFromArgs(args);
 
-    // Look in the arguments for a connection ID to preselect
-    static const QLatin1String uuidArgumentMarker{"Uuid="};
-    for (QVariant arg : args) {
-        if (arg.canConvert(QMetaType::QString)) {
-            QString uuid = arg.toString();
-            if (uuid.startsWith(uuidArgumentMarker)) {
-                uuid = uuid.replace(uuidArgumentMarker, QString());
-                selectedConnection = NetworkManager::findConnectionByUuid(uuid);
-                qDebug(PLASMA_NM_KCM_LOG) << "Selecting user connection:" << uuid;
-                break;
+        if (selectedConnection) {
+            const NetworkManager::ConnectionSettings::Ptr settings = selectedConnection->settings();
+            if (UiUtils::isConnectionTypeSupported(settings->connectionType())) {
+                QObject *rootItem = m_connectionView->rootObject();
+                QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, settings->id()), Q_ARG(QVariant, selectedConnection->path()));
             }
         }
-    }
+    });
+
+    // Look in the arguments for a connection ID to preselect
+    NetworkManager::Connection::Ptr selectedConnection = connectionFromArgs(args);
 
     // Pre-select the currently active primary connection
     if (!selectedConnection || !selectedConnection->isValid()) {
@@ -216,6 +215,22 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
 KCMNetworkmanagement::~KCMNetworkmanagement()
 {
     delete m_handler;
+}
+
+NetworkManager::Connection::Ptr KCMNetworkmanagement::connectionFromArgs(const QVariantList &args) const
+{
+    static const QLatin1String uuidArgumentMarker{"Uuid="};
+    for (QVariant arg : args) {
+        if (arg.canConvert(QMetaType::QString)) {
+            QString uuid = arg.toString();
+            if (uuid.startsWith(uuidArgumentMarker)) {
+                uuid = uuid.replace(uuidArgumentMarker, QString());
+                return NetworkManager::findConnectionByUuid(uuid);
+            }
+        }
+    }
+
+    return nullptr;
 }
 
 void KCMNetworkmanagement::defaults()

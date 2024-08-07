@@ -50,6 +50,7 @@ private:
     void kcmChanged(bool kcmChanged);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void resetSelection();
+    NetworkManager::Connection::Ptr connectionFromArgs(const QVariantList &args) const;
 
     QString m_currentConnectionPath;
     QString m_createdConnectionUuid;

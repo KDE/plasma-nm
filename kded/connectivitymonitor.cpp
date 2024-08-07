@@ -92,7 +92,7 @@ void ConnectivityMonitor::showLimitedConnectivityNotification()
     m_notification = new KNotification(QStringLiteral("LimitedConnectivity"));
     m_notification->setComponentName(QStringLiteral("networkmanagement"));
     m_notification->setTitle(i18n("Limited Connectivity"));
-    m_notification->setText(i18n("This device appears to be connected to a network but is unable to reach the internet."));
+    m_notification->setText(i18n("This device appears to be connected to a network but is unable to reach the Internet."));
     m_notification->sendEvent();
 }
 

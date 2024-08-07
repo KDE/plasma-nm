@@ -53,6 +53,7 @@ private:
     void resetSelection();
     QString vpnFileFromArgs(const QVariantList &args) const;
     void promptImportVpn(const QString &vpnFile);
+    NetworkManager::Connection::Ptr connectionFromArgs(const QVariantList &args) const;
 
     QString m_currentConnectionPath;
     QString m_createdConnectionUuid;

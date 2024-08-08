@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-13 01:35+0000\n"
+"POT-Creation-Date: 2024-08-08 00:41+0000\n"
 "PO-Revision-Date: 2021-10-30 10:49+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -44,10 +44,13 @@ msgid "Limited Connectivity"
 msgstr "Wobmjezowana reakcija"
 
 #: connectivitymonitor.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This device appears to be connected to a network but is unable to reach "
+#| "the internet."
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
-"internet."
+"Internet."
 msgstr "Tutón grat zda so na syć přizamknjeny, ale njemóže internet dosćahnyć."
 
 #: modemmonitor.cpp:182

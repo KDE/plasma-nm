@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-13 01:35+0000\n"
+"POT-Creation-Date: 2024-08-08 00:41+0000\n"
 "PO-Revision-Date: 2022-10-17 23:37+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -43,10 +43,13 @@ msgid "Limited Connectivity"
 msgstr "Məhdud şəbəkə bağlantısı"
 
 #: connectivitymonitor.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This device appears to be connected to a network but is unable to reach "
+#| "the internet."
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
-"internet."
+"Internet."
 msgstr "Bu cihaz şəbəkəyə qoşulmuş kimi görünür, lakin internetə girə bilmir."
 
 #: modemmonitor.cpp:182

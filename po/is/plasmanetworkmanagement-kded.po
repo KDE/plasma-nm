@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-13 01:35+0000\n"
+"POT-Creation-Date: 2024-08-08 00:41+0000\n"
 "PO-Revision-Date: 2024-07-16 15:46+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -43,10 +43,13 @@ msgid "Limited Connectivity"
 msgstr "Takmörkuð tengigeta"
 
 #: connectivitymonitor.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This device appears to be connected to a network but is unable to reach "
+#| "the internet."
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
-"internet."
+"Internet."
 msgstr "Þetta tæki virðist vera nettengt en nær ekki sambandi við internetið."
 
 #: modemmonitor.cpp:182

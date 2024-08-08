@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-13 01:35+0000\n"
+"POT-Creation-Date: 2024-08-08 00:41+0000\n"
 "PO-Revision-Date: 2022-02-05 13:57+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -45,10 +45,13 @@ msgid "Limited Connectivity"
 msgstr "اتصال محدود"
 
 #: connectivitymonitor.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This device appears to be connected to a network but is unable to reach "
+#| "the internet."
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
-"internet."
+"Internet."
 msgstr "يبدو أن هذا الجهاز متصل بشبكة ولكنه غير قادر على الاتصال بالإنترنت."
 
 #: modemmonitor.cpp:182

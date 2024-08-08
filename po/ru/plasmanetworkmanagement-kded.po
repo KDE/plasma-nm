@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-13 01:35+0000\n"
+"POT-Creation-Date: 2024-08-08 00:41+0000\n"
 "PO-Revision-Date: 2024-02-07 11:40+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -47,10 +47,13 @@ msgid "Limited Connectivity"
 msgstr "Ограниченное соединение"
 
 #: connectivitymonitor.cpp:95
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "This device appears to be connected to a network but is unable to reach "
+#| "the internet."
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
-"internet."
+"Internet."
 msgstr "Это устройство подключено к сети, но не имеет выхода в интернет."
 
 #: modemmonitor.cpp:182

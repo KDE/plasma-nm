@@ -4,20 +4,21 @@
 #
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2014, 2015, 2016, 2019, 2020.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2024 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-13 02:27+0000\n"
-"PO-Revision-Date: 2023-04-05 10:54-0300\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"PO-Revision-Date: 2024-08-07 01:02-0300\n"
+"Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -811,13 +812,7 @@ msgstr "Conectar automaticamente com prioridade"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. An negative number can be used "
-#| "to indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -825,10 +820,10 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
-"Se a conexão estiver definida para conectar automaticamente, as conexões com "
-"prioridade mais altas serão preferidas. O padrão é 0.\n"
+"Se a conexão for definida para autoconexão, conexões com prioridade mais "
+"alta serão preferidas. O padrão é 0.\n"
 "O número mais alto significa prioridade mais alta. Um número negativo pode "
-"ser usado para indicar prioridade mais baixa que a padrão.\n"
+"ser usado para indicar prioridade menor que o padrão.\n"
 "           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
@@ -1807,12 +1802,13 @@ msgstr "Interface"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, fuzzy, kde-format
-#| msgid "VLAN interface name:"
+#, kde-format
 msgid ""
 "Required.\n"
 "Network interface name."
-msgstr "Nome da interface VLAN:"
+msgstr ""
+"Obrigatório.\n"
+"Nome da interface de rede."
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -3629,11 +3625,10 @@ msgid "Frequency"
 msgstr "Frequência"
 
 #: models/networkmodelitem.cpp:660
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "Canal:"
+msgstr "%1 (Canal %2)"
 
 #: models/networkmodelitem.cpp:664
 #, kde-format

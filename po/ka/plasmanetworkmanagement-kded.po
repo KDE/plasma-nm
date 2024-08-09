@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-08 00:41+0000\n"
-"PO-Revision-Date: 2023-12-13 07:02+0100\n"
+"PO-Revision-Date: 2024-08-08 05:56+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -44,15 +44,12 @@ msgid "Limited Connectivity"
 msgstr "შეზღუდული შეერთება"
 
 #: connectivitymonitor.cpp:95
-#, fuzzy, kde-format
-#| msgid ""
-#| "This device appears to be connected to a network but is unable to reach "
-#| "the internet."
+#, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."
 msgstr ""
-"როგორც ჩანს, მოწყობილობა ქსელთან დაკავშირებულია, მაგრამ ვერ ინტერნეტს ვერ "
+"როგორც ჩანს, ეს მოწყობილობა ქსელთან დაკავშირებულია, მაგრამ ინტერნეტს ვერ "
 "სწვდება."
 
 #: modemmonitor.cpp:182

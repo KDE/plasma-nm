@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2023 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
 # Franklin, 2014, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2019, 2020.
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-08 00:41+0000\n"
-"PO-Revision-Date: 2023-12-15 18:17+0900\n"
+"PO-Revision-Date: 2024-08-09 03:36+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.01.80\n"
+"X-Generator: Lokalize 24.04.70\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -47,10 +47,7 @@ msgid "Limited Connectivity"
 msgstr "受限的網路"
 
 #: connectivitymonitor.cpp:95
-#, fuzzy, kde-format
-#| msgid ""
-#| "This device appears to be connected to a network but is unable to reach "
-#| "the internet."
+#, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."

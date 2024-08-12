@@ -44,10 +44,7 @@ msgid "Limited Connectivity"
 msgstr "网络连接受限"
 
 #: connectivitymonitor.cpp:95
-#, fuzzy, kde-format
-#| msgid ""
-#| "This device appears to be connected to a network but is unable to reach "
-#| "the internet."
+#, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."

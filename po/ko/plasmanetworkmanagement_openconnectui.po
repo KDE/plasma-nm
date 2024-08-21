@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-02-20 23:54+0100\n"
+"PO-Revision-Date: 2024-08-21 00:30+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: openconnectauth.cpp:337
 #, kde-format
@@ -331,107 +331,107 @@ msgstr "토큰 비밀 정보:"
 #: openconnectwebauthdialog.cpp:111
 #, kde-format
 msgid "Choose a Passkey"
-msgstr ""
+msgstr "패스키 선택"
 
 #: openconnectwebauthdialog.cpp:112
 #, kde-format
 msgid "Which passkey do you want to use for %1?"
-msgstr ""
+msgstr "%1에 어떤 패스키를 사용하시겠습니까?"
 
 #: openconnectwebauthdialog.cpp:129
 #, kde-format
 msgid "Ok"
-msgstr ""
+msgstr "확인"
 
 #: openconnectwebauthdialog.cpp:140
 #, kde-format
 msgid "Use your security key with %1"
-msgstr ""
+msgstr "%1에 보안 키 사용"
 
 #: openconnectwebauthdialog.cpp:141
 #, kde-format
 msgid "Touch your security key again to complete the request."
-msgstr ""
+msgstr "요청을 완료하려면 보안 키를 다시 터치하십시오."
 
 #: openconnectwebauthdialog.cpp:158
 #, kde-format
 msgid "Next"
-msgstr ""
+msgstr "다음"
 
 #: openconnectwebauthdialog.cpp:167
 #, kde-format
 msgid "PIN Required"
-msgstr ""
+msgstr "PIN 필요함"
 
 #: openconnectwebauthdialog.cpp:168
 #, kde-format
 msgid "Enter the PIN for your security key"
-msgstr ""
+msgstr "보안 키의 PIN 입력"
 
 #: openconnectwebauthdialog.cpp:173
 #, kde-format
 msgid "New PIN Required"
-msgstr ""
+msgstr "새 PIN 필요함"
 
 #: openconnectwebauthdialog.cpp:174
 #, kde-format
 msgid "Set new PIN for your security key"
-msgstr ""
+msgstr "보안 키의 새 PIN 설정"
 
 #: openconnectwebauthdialog.cpp:176
 #, kde-format
 msgid "Change PIN Required"
-msgstr ""
+msgstr "PIN 변경 필요함"
 
 #: openconnectwebauthdialog.cpp:177
 #, kde-format
 msgid "Change PIN for your security key"
-msgstr ""
+msgstr "보안 키의 PIN 변경"
 
 #: openconnectwebauthdialog.cpp:188
 #, kde-format
 msgid "Internal User Verification Locked"
-msgstr ""
+msgstr "내부 사용자 확인 잠김"
 
 #: openconnectwebauthdialog.cpp:191
 #, kde-format
 msgid "Wrong PIN. %1 attempts remaining."
-msgstr ""
+msgstr "PIN이 잘못되었습니다. %1회 남았습니다."
 
 #: openconnectwebauthdialog.cpp:194
 #, kde-format
 msgid "Too Short. %1 attempts remaining."
-msgstr ""
+msgstr "너무 짧습니다. %1회 남았습니다."
 
 #: openconnectwebauthdialog.cpp:197
 #, kde-format
 msgid "Invalid Characters. %1 attempts remaining."
-msgstr ""
+msgstr "잘못된 문자입니다. %1회 남았습니다."
 
 #: openconnectwebauthdialog.cpp:201
 #, kde-format
 msgid "Same as current PIN. %1 attempts remaining."
-msgstr ""
+msgstr "현재 PIN과 같습니다. %1회 남았습니다."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format
 msgid "Something went wrong"
-msgstr ""
+msgstr "무언가 잘못됨"
 
 #: openconnectwebauthdialog.cpp:243
 #, kde-format
 msgid "Request Timeout"
-msgstr ""
+msgstr "요청 시간 제한"
 
 #: openconnectwebauthdialog.cpp:246
 #, kde-format
 msgid "Key not registered"
-msgstr ""
+msgstr "키가 등록되지 않음"
 
 #: openconnectwebauthdialog.cpp:250
 #, kde-format
 msgid "You already registered this device.Try again with device"
-msgstr ""
+msgstr "이미 이 장치를 등록했습니다. 다시 시도하십시오"
 
 #: openconnectwebauthdialog.cpp:256
 #, kde-format
@@ -439,6 +439,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times."
 "To unlock it, remove and reinsert it."
 msgstr ""
+"잘못된 PIN이 너무 많이 입력되어서 보안 키가 잠겼습니다. 잠금을 해제하려면 제"
+"거 후 다시 연결하십시오."
 
 #: openconnectwebauthdialog.cpp:262
 #, kde-format
@@ -446,88 +448,90 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "You'll need to reset the security key."
 msgstr ""
+"잘못된 PIN이 너무 많이 입력되어서 보안 키가 잠겼습니다. 보안 키를 초기화해야 "
+"합니다."
 
 #: openconnectwebauthdialog.cpp:266
 #, kde-format
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
-msgstr ""
+msgstr "인증 중에 인증기가 제거되었습니다. 다시 연결하고 다시 시도하십시오"
 
 #: openconnectwebauthdialog.cpp:269
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
+msgstr "인증기에서 상주 키를 지원하지 않음"
 
 #: openconnectwebauthdialog.cpp:272
 #, kde-format
 msgid "Authenticator missing user verification"
-msgstr ""
+msgstr "인증기에 사용자 인증 기능이 없음"
 
 #: openconnectwebauthdialog.cpp:275
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr ""
+msgstr "인증기에 대형 Blob 지원이 없음"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
 msgid "No common algorithms"
-msgstr ""
+msgstr "공통된 알고리즘 없음"
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
 msgid "Storage Full"
-msgstr ""
+msgstr "저장소가 가득 참"
 
 #: openconnectwebauthdialog.cpp:284
 #, kde-format
 msgid "User consent denied"
-msgstr ""
+msgstr "사용자 동의 거부됨"
 
 #: openconnectwebauthdialog.cpp:287
 #, kde-format
 msgid "User Cancelled Request"
-msgstr ""
+msgstr "사용자가 요청을 취소함"
 
 #: openconnectwebauthdialog.cpp:300
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "닫기"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, Dialog)
 #: openconnectwebauthdialog.ui:20
 #, kde-format
 msgid "WebAuth"
-msgstr ""
+msgstr "WebAuth"
 
 #. i18n: ectx: property (text), widget (QLabel, headingLabel)
 #: openconnectwebauthdialog.ui:32
 #, kde-format
 msgid "Heading"
-msgstr ""
+msgstr "머리글"
 
 #. i18n: ectx: property (text), widget (QLabel, description)
 #: openconnectwebauthdialog.ui:48
 #, kde-format
 msgid "Description"
-msgstr ""
+msgstr "설명"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
 #: openconnectwebauthdialog.ui:84
 #, kde-format
 msgid "PIN"
-msgstr ""
+msgstr "PIN"
 
 #. i18n: ectx: property (text), widget (QLabel, confirmPinLabel)
 #: openconnectwebauthdialog.ui:107
 #, kde-format
 msgid "Confirm PIN"
-msgstr ""
+msgstr "PIN 확인"
 
 #. i18n: ectx: property (text), widget (QLabel, pinEntryErrorLabel)
 #: openconnectwebauthdialog.ui:130
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "텍스트 레이블"
 
 #~ msgid "*.pem *.crt *.key"
 #~ msgstr "*.pem *.crt *.key"

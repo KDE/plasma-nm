@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-06-02 09:53+0200\n"
+"PO-Revision-Date: 2024-08-16 14:27+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -481,12 +481,12 @@ msgstr ""
 #, kde-format
 msgid "Authenticator missing user verification"
 msgstr ""
-"L’authentificateur ne prend pas en charge la vérification des utilisateurs."
+"L’authentifieur ne prend pas en charge la vérification des utilisateurs."
 
 #: openconnectwebauthdialog.cpp:275
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr "L’authentificateur ne prend pas en charge les grands objets binaires."
+msgstr "L’authentifieur ne prend pas en charge les grands objets binaires."
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-08-08 00:41+0000\n"
-"PO-Revision-Date: 2023-12-13 07:55+0100\n"
+"PO-Revision-Date: 2024-08-23 21:45+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -44,16 +44,13 @@ msgid "Limited Connectivity"
 msgstr "Limigita Konektebleco"
 
 #: connectivitymonitor.cpp:95
-#, fuzzy, kde-format
-#| msgid ""
-#| "This device appears to be connected to a network but is unable to reach "
-#| "the internet."
+#, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."
 msgstr ""
 "Ĉi tiu aparato ŝajnas esti konektita al reto sed ne povas atingi la "
-"interreton."
+"Interreton."
 
 #: modemmonitor.cpp:182
 #, kde-format

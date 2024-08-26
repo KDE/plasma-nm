@@ -272,7 +272,6 @@ msgstr "Sertifikatautentisering:"
 #. i18n: ectx: property (text), widget (QLabel, leMcaCertLabel)
 #: openconnectprop.ui:242
 #, fuzzy, kde-format
-#| msgid "User Certificate:"
 msgid "Machine Certificate:"
 msgstr "Brukersertifikat:"
 

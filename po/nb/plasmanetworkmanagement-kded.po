@@ -548,9 +548,6 @@ msgstr ""
 
 #: passworddialog.cpp:90
 #, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
 msgstr "Ingen hemmeligheter ble oppgitt"

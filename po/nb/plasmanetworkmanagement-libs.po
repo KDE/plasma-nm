@@ -1752,7 +1752,6 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
 #, fuzzy, kde-format
-#| msgid "VLAN interface name:"
 msgid ""
 "Required.\n"
 "Network interface name."
@@ -2115,7 +2114,6 @@ msgstr "Bru (%1)"
 
 #: editor/uiutils.cpp:273
 #, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
 msgid "Loopback Interface (%1)"
 msgstr "Kablet grensesnitt (%1)"
 
@@ -3529,7 +3527,6 @@ msgstr ""
 
 #: models/networkmodelitem.cpp:661
 #, fuzzy, kde-format
-#| msgid "Channel:"
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
 msgstr "Kanal:"

@@ -157,7 +157,7 @@ RowLayout {
         checkable: true
 
         text: i18n("Hotspot")
-        icon.name: "network-wireless-on"
+        icon.name: "network-wireless-hotspot"
 
         KeyNavigation.left: planeModeSwitchButton.visible ? planeModeSwitchButton : planeModeSwitchButton.KeyNavigation.left
         KeyNavigation.right: searchTextField

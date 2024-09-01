@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:34+0000\n"
+"POT-Creation-Date: 2024-09-01 00:40+0000\n"
 "PO-Revision-Date: 2023-10-12 09:42+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -20,48 +20,72 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: kcm.cpp:284
+#: kcm.cpp:253
+#, kde-format
+msgid "Import the VPN configuration from \"%1\"?"
+msgstr ""
+
+#: kcm.cpp:254
+#, fuzzy, kde-format
+#| msgid "Import VPN Connection"
+msgctxt "@title:window"
+msgid "Import VPN Configuration"
+msgstr "Importeu una connexió VPN"
+
+#: kcm.cpp:255
+#, fuzzy, kde-format
+#| msgid "Export"
+msgid "Import"
+msgstr "Exporta"
+
+#: kcm.cpp:262 kcm.cpp:335
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "No s'ha pogut importar la connexió VPN: %1"
 
-#: kcm.cpp:354
+#: kcm.cpp:265 kcm.cpp:338
+#, fuzzy, kde-format
+#| msgid "Connected"
+msgid "Connection imported."
+msgstr "Connectat"
+
+#: kcm.cpp:407
 #, kde-format
 msgid "my_shared_connection"
 msgstr "la_meva_connexió_compartida"
 
-#: kcm.cpp:426
+#: kcm.cpp:479
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Exporteu la connexió VPN"
 
-#: kcm.cpp:446
+#: kcm.cpp:499
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Voleu guardar els canvis efectuats a la connexió «%1»?"
 
-#: kcm.cpp:447
+#: kcm.cpp:500
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Guarda els canvis"
 
-#: kcm.cpp:542
+#: kcm.cpp:595
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Importeu una connexió VPN"
 
-#: kcm.cpp:544
+#: kcm.cpp:597
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "Connexions VPN (%1)"
 
-#: kcm.cpp:547
+#: kcm.cpp:600
 #, kde-format
 msgid "No file was provided"
 msgstr "No s'ha proporcionat cap fitxer"
 
-#: kcm.cpp:608
+#: kcm.cpp:668
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Tipus desconegut de VPN"

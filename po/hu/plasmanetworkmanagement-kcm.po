@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-28 01:34+0000\n"
+"POT-Creation-Date: 2024-09-01 00:40+0000\n"
 "PO-Revision-Date: 2023-12-17 22:05+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -17,48 +17,72 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.3\n"
 
-#: kcm.cpp:284
+#: kcm.cpp:253
+#, kde-format
+msgid "Import the VPN configuration from \"%1\"?"
+msgstr ""
+
+#: kcm.cpp:254
+#, fuzzy, kde-format
+#| msgid "Import VPN Connection"
+msgctxt "@title:window"
+msgid "Import VPN Configuration"
+msgstr "VPN-kapcsolat importálása"
+
+#: kcm.cpp:255
+#, fuzzy, kde-format
+#| msgid "Export"
+msgid "Import"
+msgstr "Exportálás"
+
+#: kcm.cpp:262 kcm.cpp:335
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Nem sikerült importálni a VPN kapcsolatot: %1"
 
-#: kcm.cpp:354
+#: kcm.cpp:265 kcm.cpp:338
+#, fuzzy, kde-format
+#| msgid "Connected"
+msgid "Connection imported."
+msgstr "Kapcsolódva"
+
+#: kcm.cpp:407
 #, kde-format
 msgid "my_shared_connection"
 msgstr "megosztott_kapcsolat"
 
-#: kcm.cpp:426
+#: kcm.cpp:479
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "VPN-kapcsolat exportálása"
 
-#: kcm.cpp:446
+#: kcm.cpp:499
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Szeretné menteni a(z) „%1” kapcsolat változtatásait?"
 
-#: kcm.cpp:447
+#: kcm.cpp:500
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Változtatások mentése"
 
-#: kcm.cpp:542
+#: kcm.cpp:595
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "VPN-kapcsolat importálása"
 
-#: kcm.cpp:544
+#: kcm.cpp:597
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN kapcsolatok (%1)"
 
-#: kcm.cpp:547
+#: kcm.cpp:600
 #, kde-format
 msgid "No file was provided"
 msgstr "Nem lett megadva fájl"
 
-#: kcm.cpp:608
+#: kcm.cpp:668
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Ismeretlen VPN típus"

@@ -55,9 +55,9 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
     : KCModule(parent, metaData)
     , m_handler(new Handler(this))
 {
-    QQmlEngine *engine = qApp->property("__qmlEngine").value<QQmlEngine *>();
-    if (engine) {
-        m_connectionView = new QQuickWidget(engine, widget());
+    auto engine = qApp->property("__qmlEngine").value<std::weak_ptr<QQmlEngine>>();
+    if (auto locked = engine.lock(); locked) {
+        m_connectionView = new QQuickWidget(locked.get(), widget());
     } else {
         m_connectionView = new QQuickWidget(widget());
     }

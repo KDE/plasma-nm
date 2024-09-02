@@ -1,6 +1,19 @@
 [Desktop Entry]
 Type=Application
 Name=VPN Importer
+Name[ca]=Importador de VPN
+Name[es]=Importador VPN
+Name[eu]=VPN inportatzailea
+Name[he]=מייבא VPN
+Name[it]=Importatore VPN
+Name[ka]=VPN-ის შემოტანა
+Name[nl]=VPN-importeur
+Name[nn]=VPN-importering
+Name[sl]=Uvoznik VPN
+Name[sv]=VPN-import
+Name[tr]=VPN İçe Aktarıcısı
+Name[uk]=Засіб імпортування VPN
+Name[x-test]=xxVPN Importerxx
 NoDisplay=true
 Exec=systemsettings kcm_networkmanagement --args VPN=%f
 Icon=network-vpn

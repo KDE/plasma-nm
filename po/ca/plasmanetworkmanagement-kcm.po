@@ -1,15 +1,15 @@
 # Translation of plasmanetworkmanagement-kcm.po to Catalan
-# Copyright (C) 2017-2023 This_file_is_part_of_KDE
+# Copyright (C) 2017-2024 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2017, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2017, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2023-10-12 09:42+0200\n"
+"PO-Revision-Date: 2024-09-01 12:22+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,25 +18,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: kcm.cpp:253
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "Importo la configuració de la VPN des de «%1»?"
 
 #: kcm.cpp:254
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "Importació d'una connexió VPN"
+msgstr "Importació de configuració de VPN"
 
 #: kcm.cpp:255
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "Exporta"
+msgstr "Importa"
 
 #: kcm.cpp:262 kcm.cpp:335
 #, kde-format
@@ -44,10 +42,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "Ha fallat en importar la connexió VPN: %1"
 
 #: kcm.cpp:265 kcm.cpp:338
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "Connectat"
+msgstr "Connexió importada."
 
 #: kcm.cpp:407
 #, kde-format

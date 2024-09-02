@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2023-10-13 08:09+0200\n"
+"PO-Revision-Date: 2024-09-01 04:46+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,25 +16,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.4\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: kcm.cpp:253
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "შემოვიტანო VPN-ის პარამეტრები \"%1\"-დან?"
 
 #: kcm.cpp:254
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr "VPN შეერთების შემოტანა"
 
 #: kcm.cpp:255
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "ექსპორტი"
+msgstr "შემოტანა"
 
 #: kcm.cpp:262 kcm.cpp:335
 #, kde-format
@@ -42,10 +40,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "VPN შეერთების შემოტანის შეცდომა: %1"
 
 #: kcm.cpp:265 kcm.cpp:338
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "დაკავშირებულია"
+msgstr "მიერთება შემოტანილია."
 
 #: kcm.cpp:407
 #, kde-format
@@ -170,7 +167,7 @@ msgstr "წაშლა"
 
 #: qml/ConnectionItem.qml:131
 msgid "Export"
-msgstr "ექსპორტი"
+msgstr "გატანა"
 
 #: qml/ConnectionItem.qml:141
 msgid "Connected"

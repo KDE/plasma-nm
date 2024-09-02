@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2024-03-16 14:33+0300\n"
+"PO-Revision-Date: 2024-09-01 19:31+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,25 +16,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #: kcm.cpp:253
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "“%1” konumundan VPN yapılandırması içe aktarılsın mı?"
 
 #: kcm.cpp:254
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "VPN Bağlantısını İçe Aktar"
+msgstr "VPN Yapılandırması İçe Aktar"
 
 #: kcm.cpp:255
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "Dışa Aktar"
+msgstr "İçe Aktar"
 
 #: kcm.cpp:262 kcm.cpp:335
 #, kde-format
@@ -42,10 +40,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "VPN bağlantısı içe aktarılamadı: %1"
 
 #: kcm.cpp:265 kcm.cpp:338
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "Bağlandı"
+msgstr "Bağlantı içe aktarıldı."
 
 #: kcm.cpp:407
 #, kde-format
@@ -72,7 +69,7 @@ msgstr "Değişiklikleri Kaydet"
 #: kcm.cpp:595
 #, kde-format
 msgid "Import VPN Connection"
-msgstr "VPN Bağlantısını İçe Aktar"
+msgstr "VPN Bağlantısı İçe Aktar"
 
 #: kcm.cpp:597
 #, kde-format

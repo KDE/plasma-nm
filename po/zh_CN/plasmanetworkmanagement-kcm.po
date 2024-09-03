@@ -24,17 +24,15 @@ msgid "Import the VPN configuration from \"%1\"?"
 msgstr ""
 
 #: kcm.cpp:254
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "导入 VPN 连接"
+msgstr ""
 
 #: kcm.cpp:255
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "导出"
+msgstr ""
 
 #: kcm.cpp:262 kcm.cpp:335
 #, kde-format
@@ -42,10 +40,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "导入 VPN 连接失败：%1"
 
 #: kcm.cpp:265 kcm.cpp:338
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "已连接"
+msgstr ""
 
 #: kcm.cpp:407
 #, kde-format

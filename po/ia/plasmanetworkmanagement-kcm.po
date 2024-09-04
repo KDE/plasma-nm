@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2017, 2020, 2021, 2023 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2017, 2020, 2021, 2023, 2024 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2023-10-12 09:41+0200\n"
+"PO-Revision-Date: 2024-09-03 11:57+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,25 +15,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: kcm.cpp:253
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "Importa le configuration de VPN ex \"%1\"?"
 
 #: kcm.cpp:254
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "Importa connexion VPN"
+msgstr "Importa configuration de VPN"
 
 #: kcm.cpp:255
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "Exporta"
+msgstr "Importa"
 
 #: kcm.cpp:262 kcm.cpp:335
 #, kde-format
@@ -41,10 +39,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "Il falleva a importar connexion VPN: %1"
 
 #: kcm.cpp:265 kcm.cpp:338
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "Connectite"
+msgstr "Connexion importate."
 
 #: kcm.cpp:407
 #, kde-format

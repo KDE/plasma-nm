@@ -2,6 +2,7 @@
 Type=Application
 Name=VPN Importer
 Name[ca]=Importador de VPN
+Name[ca@valencia]=Importador de VPN
 Name[es]=Importador VPN
 Name[eu]=VPN inportatzailea
 Name[fr]=Importateur VPN
@@ -10,6 +11,7 @@ Name[he]=מייבא VPN
 Name[ia]=Importator de VPN
 Name[it]=Importatore VPN
 Name[ka]=VPN-ის შემოტანა
+Name[lt]=VPN importuotojas
 Name[nl]=VPN-importeur
 Name[nn]=VPN-importering
 Name[sl]=Uvoznik VPN

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-26 02:31+0000\n"
-"PO-Revision-Date: 2024-02-10 17:45+0400\n"
+"PO-Revision-Date: 2024-09-05 11:03+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,6 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: kcm.cpp:288
 #, kde-format
@@ -103,15 +104,15 @@ msgstr "نقطة فعالة"
 
 #: qml/ConfigurationDialog.qml:63
 msgid "Hotspot name:"
-msgstr ""
+msgstr "اسم النقطة الفعالة:"
 
 #: qml/ConfigurationDialog.qml:73
 msgid "Hotspot password:"
-msgstr ""
+msgstr "كلمة سر النقطة الفعالة:"
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "حسنًا"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

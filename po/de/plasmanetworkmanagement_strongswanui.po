@@ -2,7 +2,7 @@
 # Jannick Kuhr <kde-dev@kuhr.org>, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: plasmanetworkmanagement_strongswanui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-08-28 00:19+0000\n"
 "PO-Revision-Date: 2023-01-25 16:00+0100\n"

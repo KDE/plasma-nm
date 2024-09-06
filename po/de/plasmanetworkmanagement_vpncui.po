@@ -3,7 +3,7 @@
 # Jannick Kuhr <kde-dev@kuhr.org>, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2023-04-26 20:13+0200\n"

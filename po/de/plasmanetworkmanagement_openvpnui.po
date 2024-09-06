@@ -3,7 +3,7 @@
 # Frederik Schwarzer <schwarzer@kde.org>, 2014, 2016, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
+"Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
 "PO-Revision-Date: 2023-12-18 14:35+0100\n"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2024-05-23 19:28+0100\n"
+"PO-Revision-Date: 2024-09-07 12:21+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
 "Language: en_GB\n"
@@ -15,25 +15,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.05.2\n"
 
 #: kcm.cpp:253
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "Import the VPN configuration from \"%1\"?"
 
 #: kcm.cpp:254
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "Import VPN Connection"
+msgstr "Import VPN Configuration"
 
 #: kcm.cpp:255
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "Export"
+msgstr "Import"
 
 #: kcm.cpp:262 kcm.cpp:335
 #, kde-format
@@ -41,10 +39,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "Failed to import VPN connection: %1"
 
 #: kcm.cpp:265 kcm.cpp:338
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "Connected"
+msgstr "Connection imported."
 
 #: kcm.cpp:407
 #, kde-format

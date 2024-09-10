@@ -22,6 +22,7 @@ Name[tr]=VPN İçe Aktarıcısı
 Name[uk]=Засіб імпортування VPN
 Name[x-test]=xxVPN Importerxx
 Name[zh_CN]=VPN 导入程序
+Name[zh_TW]=VPN 匯入工具
 NoDisplay=true
 Exec=systemsettings kcm_networkmanagement --args VPN=%f
 Icon=network-vpn

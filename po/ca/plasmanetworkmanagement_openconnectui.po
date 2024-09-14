@@ -541,6 +541,3 @@ msgstr "Confirmació del PIN"
 #, kde-format
 msgid "TextLabel"
 msgstr "EtiquetaDeText"
-
-#~ msgid "*.pem *.crt *.key"
-#~ msgstr "*.pem *.crt *.key"

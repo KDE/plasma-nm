@@ -154,6 +154,7 @@
         "Website": "https://projects.kde.org/projects/kde/workspace/plasma-nm"
     },
     "X-KDE-Keywords": "network,internet,ethernet,wireless,wifi,wlan,vpn",
+    "X-KDE-Keywords[x-test]": "xxnetworkxx,xxinternetxx,xxethernetxx,xxwirelessxx,xxwifixx,xxwlanxx,xxvpnxx",
     "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-DBusActivationService": "org.freedesktop.NetworkManager",
     "X-Plasma-MainScript": "ui/main.qml",

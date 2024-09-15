@@ -162,6 +162,9 @@
         "Website": "https://projects.kde.org/projects/kde/workspace/plasma-nm"
     },
     "X-KDE-Keywords": "network,internet,ethernet,wireless,wifi,wlan,vpn",
+    "X-KDE-Keywords[ca]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",
+    "X-KDE-Keywords[sl]": "omrežje,internet,ethernet,brezžično,wifi,wlan,vpn",
+    "X-KDE-Keywords[sv]": "nätverk,internet,ethernet,trådlös,wifi,wlan,vpn",
     "X-Plasma-API-Minimum-Version": "6.0",
     "X-Plasma-DBusActivationService": "org.freedesktop.NetworkManager",
     "X-Plasma-NotificationAreaCategory": "Hardware"

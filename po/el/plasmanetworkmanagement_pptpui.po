@@ -285,12 +285,10 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: pptpprop.ui:192
-#, fuzzy, kde-format
-#| msgctxt "like in Advanced settings"
-#| msgid "Advanced..."
+#, kde-format
 msgctxt "like in Advanced settings"
 msgid "Advanced…"
-msgstr "Για προχωρημένους..."
+msgstr "Για προχωρημένους…"
 
 #~ msgid "Store"
 #~ msgstr "Αποθήκευση"

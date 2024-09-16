@@ -131,10 +131,9 @@ msgstr "Πιστοποιητικό CA σε μορφή PEM."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:194
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
-msgstr "Για προχωρημένους..."
+msgstr "Για προχωρημένους…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpncadvanced.ui:18

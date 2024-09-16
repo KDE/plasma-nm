@@ -24,14 +24,12 @@ msgid "Failed to initialize software token: %1"
 msgstr ""
 
 #: openconnectauth.cpp:390
-#, fuzzy, kde-format
-#| msgid "Contacting host, please wait..."
+#, kde-format
 msgid "Contacting host, please wait…"
-msgstr "Επαφή με υπολογιστή, παρακαλώ περιμένετε..."
+msgstr "Επαφή με υπολογιστή, παρακαλώ περιμένετε…"
 
 #: openconnectauth.cpp:767
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Είσοδος"

@@ -312,8 +312,7 @@ msgid "Default"
 msgstr "Προκαθορισμένο"
 
 #: editor/settings/ipv4widget.cpp:441
-#, fuzzy, kde-format
-#| msgid " ms"
+#, kde-format
 msgctxt "Milliseconds"
 msgid " ms"
 msgstr " ms"
@@ -631,8 +630,7 @@ msgstr "Έκδοση PEAP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:647
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "PEAP version"
 msgid "Automatic"
 msgstr "Αυτόματα"
@@ -864,10 +862,9 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:306
-#, fuzzy, kde-format
-#| msgid "Advanced"
+#, kde-format
 msgid "Advanced…"
-msgstr "Για προχωρημένους"
+msgstr "Για προχωρημένους…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:80
@@ -899,8 +896,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:159
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "Item in the Metered: list"
 msgid "Automatic"
 msgstr "Αυτόματα"
@@ -985,8 +981,7 @@ msgstr "ΜTU:"
 #: editor/settings/ui/infiniband.ui:80
 #: editor/settings/ui/wificonnectionwidget.ui:271
 #: editor/settings/ui/wiredconnectionwidget.ui:112
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "MTU:"
 msgid "Automatic"
 msgstr "Αυτόματα"
@@ -1014,8 +1009,7 @@ msgstr "Μέθοδος:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:224
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "Method:"
 msgid "Automatic"
 msgstr "Αυτόματα"
@@ -1164,10 +1158,9 @@ msgstr "Το IPv4 απαιτείται για τη σύνδεση αυτή"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
 #: editor/settings/ui/ipv4.ui:331 editor/settings/ui/ipv6.ui:316
-#, fuzzy, kde-format
-#| msgid "Routes..."
+#, kde-format
 msgid "Routes…"
-msgstr "Διαδρομές δικτύου..."
+msgstr "Διαδρομές δικτύου…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:30
@@ -1237,9 +1230,7 @@ msgstr "Αγνόηση"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:254
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Disabled"
+#, kde-format
 msgid "Disabled"
 msgstr "Ανενεργή"
 
@@ -1345,10 +1336,9 @@ msgstr "JSON ρύθμιση:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnImport)
 #: editor/settings/ui/team.ui:123
-#, fuzzy, kde-format
-#| msgid "Import configuration from file..."
+#, kde-format
 msgid "Import configuration from file…"
-msgstr "Εισαγωγή ρύθμισης από αρχείο..."
+msgstr "Εισαγωγή ρύθμισης από αρχείο…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
@@ -1455,8 +1445,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:141
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "Band:"
 msgid "Automatic"
 msgstr "Αυτόματα"
@@ -1500,10 +1489,9 @@ msgstr "Κλώνος διεύθυνσης MAC:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:240
-#, fuzzy, kde-format
-#| msgid "Random"
+#, kde-format
 msgid "Random…"
-msgstr "Τυχαία"
+msgstr "Τυχαία…"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -1744,17 +1732,14 @@ msgstr "Αγνόηση"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:197
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "Link negotiation:"
 msgid "Automatic"
 msgstr "Αυτόματα"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:202
-#, fuzzy, kde-format
-#| msgctxt "like in use Manual configuration"
-#| msgid "Manual"
+#, kde-format
 msgid "Manual"
 msgstr "Χειροκίνητα"
 
@@ -2912,12 +2897,10 @@ msgstr "Νέα ευρυζωνική σύνδεση με κινητό"
 #: editor/widgets/mobileconnectionwizard.cpp:153
 #: editor/widgets/mobileconnectionwizard.cpp:181
 #: editor/widgets/mobileconnectionwizard.cpp:518
-#, fuzzy, kde-format
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "My plan is not listed..."
+#, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My plan is not listed…"
-msgstr "Το σχέδιό μου δεν είναι στη λίστα..."
+msgstr "Το σχέδιό μου δεν είναι στη λίστα…"
 
 #: editor/widgets/mobileconnectionwizard.cpp:138
 #, kde-format
@@ -3412,10 +3395,9 @@ msgid "WireGuard"
 msgstr "Ενσύρματο"
 
 #: models/creatableconnectionsmodel.cpp:266
-#, fuzzy, kde-format
-#| msgid "Import VPN connection..."
+#, kde-format
 msgid "Import VPN connection…"
-msgstr "Εισαγωγή σύνδεσης VPN..."
+msgstr "Εισαγωγή σύνδεσης VPN…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format
@@ -3636,14 +3618,12 @@ msgid "%1%"
 msgstr "%1 %2"
 
 #: models/networkmodelitem.cpp:650
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
 msgstr "Τύπος ασφάλειας"
 
 #: models/networkmodelitem.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
 msgstr "Ταχύτητα σύνδεσης"
 
@@ -3660,10 +3640,9 @@ msgid "%1 (Channel %2)"
 msgstr "Κανάλι:"
 
 #: models/networkmodelitem.cpp:665
-#, fuzzy, kde-format
-#| msgid "BSSID:"
+#, kde-format
 msgid "BSSID"
-msgstr "BSSID:"
+msgstr "BSSID"
 
 #: models/networkmodelitem.cpp:679
 #, kde-format

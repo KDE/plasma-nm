@@ -55,11 +55,9 @@ msgstr "Strong Swan VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: strongswanauth.ui:32
-#, fuzzy, kde-format
-#| msgctxt "@label:textbox password label for EAP password"
-#| msgid "Password:"
+#, kde-format
 msgid "Password: "
-msgstr "Κωδικός πρόσβασης:"
+msgstr "Κωδικός πρόσβασης: "
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: strongswanprop.ui:20
@@ -143,10 +141,9 @@ msgstr "Όνομα χρήστη:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: strongswanprop.ui:258
-#, fuzzy, kde-format
-#| msgid "User Password"
+#, kde-format
 msgid "User Password:"
-msgstr "Κωδικός πρόσβασης χρήστη"
+msgstr "Κωδικός πρόσβασης χρήστη:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: strongswanprop.ui:275

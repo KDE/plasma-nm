@@ -276,10 +276,9 @@ msgstr "Ο κωδικός χρήστη να περνά στο OpenVPN όταν �
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: openvpn.ui:643
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
-msgstr "Για προχωρημένους..."
+msgstr "Για προχωρημένους…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, generalTab)
 #: openvpnadvanced.ui:28
@@ -323,10 +322,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomReneg)
 #: openvpnadvanced.ui:75
-#, fuzzy, kde-format
-#| msgid "Use custom renegotiation interval"
+#, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr "Χρήση προσαρμοσμένου διαστήματος αναδιαπραγμάτευσης"
+msgstr "Χρήση προσαρμοσμένου διαστήματος αναδιαπραγμάτευσης:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCompression)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUseCompression)
@@ -622,10 +620,9 @@ msgstr "Κρυπτογράφηση:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboCipher)
 #: openvpnadvanced.ui:513
-#, fuzzy, kde-format
-#| msgid "Obtaining available ciphers..."
+#, kde-format
 msgid "Obtaining available ciphers…"
-msgstr "Ανάκτηση διαθέσιμων αλγορίθμων κρυπτογράφησης..."
+msgstr "Ανάκτηση διαθέσιμων αλγορίθμων κρυπτογράφησης…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -891,9 +888,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:876
-#, fuzzy, kde-format
-#| msgctxt "No \"Key Direction\""
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "Καμία"
 

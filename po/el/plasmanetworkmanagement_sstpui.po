@@ -207,10 +207,9 @@ msgstr "SSH VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: sstpauth.ui:32
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password: "
-msgstr "Κωδικός πρόσβασης:"
+msgstr "Κωδικός πρόσβασης: "
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
 #: sstpwidget.ui:25
@@ -220,10 +219,9 @@ msgstr "Πύλη:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btn_advancedOption)
 #: sstpwidget.ui:58
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
-msgstr "Για προχωρημένους..."
+msgstr "Για προχωρημένους…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: sstpwidget.ui:80

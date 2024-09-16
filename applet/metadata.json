@@ -156,6 +156,8 @@
     "X-KDE-Keywords": "network,internet,ethernet,wireless,wifi,wlan,vpn",
     "X-KDE-Keywords[ca]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",
     "X-KDE-Keywords[es]": "red,redes,internet,ethernet,inalámbrica,wifi,wlan,vpn",
+    "X-KDE-Keywords[fr]": "réseau, internet, ethernet, sans fil, wifi, wlan, vpn",
+    "X-KDE-Keywords[pl]": "sieć,internet,ethernet,bezprzewodowa,wifi,wlan,vpn",
     "X-KDE-Keywords[sl]": "omrežje,internet,ethernet,brezžično,wifi,wlan,vpn",
     "X-KDE-Keywords[sv]": "nätverk,internet,ethernet,trådlös,wifi,wlan,vpn",
     "X-KDE-Keywords[x-test]": "xxnetworkxx,xxinternetxx,xxethernetxx,xxwirelessxx,xxwifixx,xxwlanxx,xxvpnxx",

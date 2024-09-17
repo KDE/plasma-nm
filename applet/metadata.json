@@ -162,12 +162,17 @@
         "Website": "https://projects.kde.org/projects/kde/workspace/plasma-nm"
     },
     "X-KDE-Keywords": "network,internet,ethernet,wireless,wifi,wlan,vpn",
+    "X-KDE-Keywords[ca@valencia]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",
     "X-KDE-Keywords[ca]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",
+    "X-KDE-Keywords[en_GB]": "network,internet,ethernet,wireless,wifi,wlan,vpn",
+    "X-KDE-Keywords[fr]": "réseau, internet, ethernet, sans fil, wifi, wlan, vpn",
     "X-KDE-Keywords[he]": "רשת,אינטרנט,רשת,כבל,אתרנט,את׳רנט,את'רנט,אלחוט,תקשורת אלחוטית,רשת אלחוטית,vpn",
+    "X-KDE-Keywords[it]": "rete,internet,ethernet,wireless,wifi,wlan,vpn",
     "X-KDE-Keywords[ka]": "network,internet,ethernet,wireless,wifi,wlan,vpn,ქსელი,ინტერნეტი,უსადენო ქსელი",
     "X-KDE-Keywords[pl]": "sieć,internet,ethernet,bezprzewodowa,wifi,wlan,vpn",
     "X-KDE-Keywords[sl]": "omrežje,internet,ethernet,brezžično,wifi,wlan,vpn",
     "X-KDE-Keywords[sv]": "nätverk,internet,ethernet,trådlös,wifi,wlan,vpn",
+    "X-KDE-Keywords[tr]": "ağ,internet,ethernet,kablosuz,wireless,wifi,wi-fi,wlan,vpn",
     "X-Plasma-API-Minimum-Version": "6.0",
     "X-Plasma-DBusActivationService": "org.freedesktop.NetworkManager",
     "X-Plasma-NotificationAreaCategory": "Hardware"

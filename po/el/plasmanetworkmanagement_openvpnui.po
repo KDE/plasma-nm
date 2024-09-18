@@ -951,10 +951,9 @@ msgstr "Διαμεσολαβητές"
 #. i18n: ectx: property (toolTip), widget (QLabel, label_11)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbProxyType)
 #: openvpnadvanced.ui:992 openvpnadvanced.ui:1017
-#, fuzzy, kde-format
-#| msgid "Proxy type: HTTP or Socks"
+#, kde-format
 msgid "Proxy type: HTTP or SOCKS"
-msgstr "Τύπος διαμεσολαβητή: HTTP ή Socks"
+msgstr "Τύπος διαμεσολαβητή: HTTP ή SOCKS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: openvpnadvanced.ui:995
@@ -1021,11 +1020,10 @@ msgstr "Θύρα:"
 #. i18n: ectx: property (toolTip), widget (QLabel, label_14)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyUsername)
 #: openvpnadvanced.ui:1112 openvpnadvanced.ui:1125
-#, fuzzy, kde-format
-#| msgid "HTTP/Socks proxy username passed to OpenVPN when prompted for it."
+#, kde-format
 msgid "HTTP/SOCKS proxy username passed to OpenVPN when prompted for it."
 msgstr ""
-"Πέρασμα ονόματος χρήστη για διαμεσολαβητή HTTP/Socks στο OpenVPN όταν "
+"Πέρασμα ονόματος χρήστη για διαμεσολαβητή HTTP/SOCKS στο OpenVPN όταν "
 "ζητείται."
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
@@ -1037,10 +1035,9 @@ msgstr "Όνομα χρήστη διαμεσολαβητή:"
 #. i18n: ectx: property (toolTip), widget (QLabel, label_15)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyPassword)
 #: openvpnadvanced.ui:1135 openvpnadvanced.ui:1150
-#, fuzzy, kde-format
-#| msgid "HTTP/Socks proxy password passed to OpenVPN when prompted for it."
+#, kde-format
 msgid "HTTP/SOCKS proxy password passed to OpenVPN when prompted for it."
-msgstr "Πέρασμα κωδικού διαμεσολαβητή HTTP/Socks στο OpenVPN όταν ζητείται."
+msgstr "Πέρασμα κωδικού διαμεσολαβητή HTTP/SOCKS στο OpenVPN όταν ζητείται."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
 #: openvpnadvanced.ui:1138 openvpnauth.cpp:84 openvpnauth.cpp:121

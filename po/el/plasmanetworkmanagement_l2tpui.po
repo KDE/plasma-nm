@@ -537,8 +537,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbsendEcho)
 #: l2tpppp.ui:192
-#, fuzzy, kde-format
-#| msgid "Send PPP echo packets "
+#, kde-format
 msgid "Send PPP echo packets"
 msgstr "Αποστολή πακέτων PPP echo "
 

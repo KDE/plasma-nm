@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2023-10-12 06:03+0100\n"
+"PO-Revision-Date: 2024-09-17 21:39+0200\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -21,20 +21,18 @@ msgstr ""
 #: kcm.cpp:253
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "Ĉu enporti la VPN-agordon el \"%1\"?"
 
 #: kcm.cpp:254
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "Importu VPN-konekton"
+msgstr "Enporti VPN-Agordon"
 
 #: kcm.cpp:255
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "Eksporto"
+msgstr "Enporti"
 
 #: kcm.cpp:262 kcm.cpp:335
 #, kde-format
@@ -42,10 +40,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "Malsukcesis importi VPN-konekton: %1"
 
 #: kcm.cpp:265 kcm.cpp:338
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "Konektis"
+msgstr "Konekto enportiĝis."
 
 #: kcm.cpp:407
 #, kde-format

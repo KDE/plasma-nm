@@ -3597,8 +3597,7 @@ msgid "MAC Address"
 msgstr "Διεύθυνση MAC"
 
 #: models/networkmodelitem.cpp:646
-#, fuzzy, kde-format
-#| msgid "Access point (SSID)"
+#, kde-format
 msgid "Access Point (SSID)"
 msgstr "Σημείο πρόσβασης (SSID)"
 
@@ -3665,8 +3664,7 @@ msgid "Access Technology"
 msgstr "Τεχνολογία πρόσβασης"
 
 #: models/networkmodelitem.cpp:693
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
 msgstr "Πρόσθετο VPN"
 

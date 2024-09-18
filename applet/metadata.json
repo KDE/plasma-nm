@@ -165,6 +165,7 @@
     "X-KDE-Keywords[ca@valencia]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",
     "X-KDE-Keywords[ca]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",
     "X-KDE-Keywords[en_GB]": "network,internet,ethernet,wireless,wifi,wlan,vpn",
+    "X-KDE-Keywords[es]": "red,internet,ethernet,inalámbrica,wifi,wlan,vpn",
     "X-KDE-Keywords[fr]": "réseau, internet, ethernet, sans fil, wifi, wlan, vpn",
     "X-KDE-Keywords[he]": "רשת,אינטרנט,רשת,כבל,אתרנט,את׳רנט,את'רנט,אלחוט,תקשורת אלחוטית,רשת אלחוטית,vpn",
     "X-KDE-Keywords[it]": "rete,internet,ethernet,wireless,wifi,wlan,vpn",
@@ -173,6 +174,7 @@
     "X-KDE-Keywords[sl]": "omrežje,internet,ethernet,brezžično,wifi,wlan,vpn",
     "X-KDE-Keywords[sv]": "nätverk,internet,ethernet,trådlös,wifi,wlan,vpn",
     "X-KDE-Keywords[tr]": "ağ,internet,ethernet,kablosuz,wireless,wifi,wi-fi,wlan,vpn",
+    "X-KDE-Keywords[zh_TW]": "網路,網絡,網際網路,乙太網路,以太網路,無線",
     "X-Plasma-API-Minimum-Version": "6.0",
     "X-Plasma-DBusActivationService": "org.freedesktop.NetworkManager",
     "X-Plasma-NotificationAreaCategory": "Hardware"

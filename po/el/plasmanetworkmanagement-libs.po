@@ -1,22 +1,22 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Antonis Geralis <capoiosct@gmail.com>, 2013, 2014.
+# SPDX-FileCopyrightText: 2013, 2014, 2024 Antonis Geralis <capoiosct@gmail.com>
 # Dimitris Kardarakos <dimkard@gmail.com>, 2014, 2015, 2016, 2017.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2017-09-08 16:16+0200\n"
-"Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
+"PO-Revision-Date: 2024-09-19 17:05+0300\n"
+"Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
 "Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -1147,7 +1147,7 @@ msgid ""
 "Allows the connection to complete if IPv4 configuration fails\n"
 "but IPv6 configuration succeeds"
 msgstr ""
-"Eπιτρέπει την ολοκλήρωση της σύνδεσης \n"
+"Επιτρέπει την ολοκλήρωση της σύνδεσης \n"
 "αν η διαμόρφωση IPv4 αποτύχει αλλά η διαμόρφωση IPv6 επιτύχει"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
@@ -3029,7 +3029,7 @@ msgstr "Επιλογή παρόχου από &λίστα:"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "I cannot find my provider and I wish to enter it &manually:"
-msgstr "Δεν βρίσκω τον πάροχό μου και επιθυμώ να τον εισάγω &χειροκίνητα:"
+msgstr "Δεν βρίσκω τον πάροχο μου και επιθυμώ να τον εισάγω &χειροκίνητα:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:477
 #, kde-format
@@ -3061,7 +3061,7 @@ msgstr ""
 "Προειδοποίηση: Ένα λανθασμένο σχέδιο ίσως προκαλέσει προβλήματα χρέωσης για "
 "τον ευρυζωνικό σας λογαριασμό ή ίσως να εμποδίσει τη συνδεσιμότητα.\n"
 "\n"
-"Αν δεν είστε βέβαιοι για το σχέδιό σας παρακαλώ ρωτήστε τον πάροχό σας για "
+"Αν δεν είστε βέβαιοι για το σχέδιό σας παρακαλώ ρωτήστε τον πάροχο σας για "
 "το APN."
 
 #: editor/widgets/mobileconnectionwizard.cpp:540
@@ -3082,7 +3082,7 @@ msgstr ""
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your Provider:"
-msgstr "Ο πάροχός σας:"
+msgstr "Ο πάροχος σας:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:552
 #, kde-format

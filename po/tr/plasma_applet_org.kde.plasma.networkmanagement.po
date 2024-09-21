@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-09 00:40+0000\n"
+"POT-Creation-Date: 2024-09-21 00:42+0000\n"
 "PO-Revision-Date: 2024-03-16 14:18+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -37,22 +37,22 @@ msgstr "Bağlantıyı Kes"
 msgid "Show Network's QR Code"
 msgstr "Ağın kare kodunu göster"
 
-#: contents/ui/ConnectionItem.qml:90
+#: contents/ui/ConnectionItem.qml:91
 #, kde-format
 msgid "Configure…"
 msgstr "Yapılandır…"
 
-#: contents/ui/ConnectionItem.qml:133
+#: contents/ui/ConnectionItem.qml:134
 #, kde-format
 msgid "Speed"
 msgstr "Hız"
 
-#: contents/ui/ConnectionItem.qml:138
+#: contents/ui/ConnectionItem.qml:139
 #, kde-format
 msgid "Details"
 msgstr "Ayrıntılar"
 
-#: contents/ui/ConnectionItem.qml:181
+#: contents/ui/ConnectionItem.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -62,12 +62,12 @@ msgstr ""
 "Geçerli indirme hızı saniye başına %1 kibibayt; geçerli karşıya yükleme hızı "
 "saniye başına %2 kibibayt"
 
-#: contents/ui/ConnectionItem.qml:298
+#: contents/ui/ConnectionItem.qml:299
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgstr "Bağlı, ⬇ %1/sn, ⬆ %2/sn"
 
-#: contents/ui/ConnectionItem.qml:302
+#: contents/ui/ConnectionItem.qml:303
 #, kde-format
 msgid "Connected"
 msgstr "Bağlı"

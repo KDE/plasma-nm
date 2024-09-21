@@ -2,6 +2,7 @@
     "KPlugin": {
         "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=systemsettings&component=kcm_networkmanagement",
         "Description": "Edit network connections",
+        "Description[ar]": "حرّر اتّصالات الشّبكة",
         "Description[bg]": "Управление на мрежови устройства и връзки",
         "Description[ca@valencia]": "Edita les connexions de xarxa",
         "Description[ca]": "Edita les connexions de xarxa",
@@ -75,6 +76,7 @@
     },
     "X-KDE-Keywords": "networks,wifi,wi-fi,ethernet,mobile,cdma,gsm,lte,wimax,apn,carrier,2g,3g,4g,5g,5ge,broadband,internet,traffic,connections,websites,web,DSL,infiniband,wired,wireless,bssid,ipv4,ipv6,mac address,ip,access point,dns,gateway,wep,leap,wpa,wpa2,wpa3,dhcp,shared network,private network,public network,vpn,openvpn,wireguard,fortinet,juniper,l2tp,pptp,sstp,ssh,iodine,ipsec,anyconnect,openconnect",
     "X-KDE-Keywords[az]": "networks,wifi,wi-fi,ethernet,mobile,cdma,gsm,lte,wimax,apn,carrier,2g,3g,4g,5g,5ge,broadband,internet,traffic,connections,websites,web,DSL,infiniband,wired,wireless,bssid,ipv4,ipv6,mac address,ip,access point,dns,gateway,wep,leap,wpa,wpa2,wpa3,dhcp,shared network,private network,public network,vpn,openvpn,wireguard,fortinet,juniper,l2tp,pptp,sstp,ssh,iodine,ipsec,anyconnect,openconnect,şəbəkə,bağlantılar,veb-səhifələr,sonsuz,simli,simsiz,mac ünvanlar,giriş nöqtəsi,şəbəkə keçidi,paylaşılan şəbəkə,fərdi şəbəkə,ümumi şəbəkə",
+    "X-KDE-Keywords[bg]": "networks,wifi,wi-fi,ethernet,mobile,cdma,gsm,lte,wimax,apn,carrier,2g,3g,4g,5g,5ge,broadband,internet,traffic,connections,websites,web,DSL,infiniband,wired,wireless,bssid,ipv4,ipv6,mac address,ip,access point,dns,gateway,wep,leap,wpa,wpa2,wpa3,dhcp,shared network,private network,public network,vpn,openvpn,wireguard,fortinet,juniper,l2tp,pptp,sstp,ssh,iodine,ipsec,anyconnect,openconnect",
     "X-KDE-Keywords[ca@valencia]": "xarxes,wifi,wi-fi,ethernet,mòbil,cdma,gsm,lte,wimax,apn,operador,2g,3g,4g,5g,5ge,banda pla,internet,trànsit,connexions,llocs web,web,DSL,infiniband,per cable,sense fil,bssid,ipv4,ipv6,adreça mac,ip,punt d'accés,dns,passarel·la,wep,leap,wpa,wpa2,wpa3,dhcp,xarxa compartida,xarxa privada,xarxa pública,vpn,openvpn,wireguard,fortinet,juniper,l2tp,pptp,sstp,ssh,iodine,ipsec,anyconnect,openconnect",
     "X-KDE-Keywords[ca]": "xarxes,wifi,wi-fi,ethernet,mòbil,cdma,gsm,lte,wimax,apn,operador,2g,3g,4g,5g,5ge,banda pla,internet,trànsit,connexions,llocs web,web,DSL,infiniband,per cable,sense fil,bssid,ipv4,ipv6,adreça mac,ip,punt d'accés,dns,passarel·la,wep,leap,wpa,wpa2,wpa3,dhcp,xarxa compartida,xarxa privada,xarxa pública,vpn,openvpn,wireguard,fortinet,juniper,l2tp,pptp,sstp,ssh,iodine,ipsec,anyconnect,openconnect",
     "X-KDE-Keywords[en_GB]": "networks,wifi,wi-fi,ethernet,mobile,cdma,gsm,lte,wimax,apn,carrier,2g,3g,4g,5g,5ge,broadband,internet,traffic,connections,websites,web,DSL,infiniband,wired,wireless,bssid,ipv4,ipv6,mac address,ip,access point,dns,gateway,wep,leap,wpa,wpa2,wpa3,dhcp,shared network,private network,public network,vpn,openvpn,wireguard,fortinet,juniper,l2tp,pptp,sstp,ssh,iodine,ipsec,anyconnect,openconnect",

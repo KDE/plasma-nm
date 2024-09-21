@@ -162,6 +162,7 @@
         "Website": "https://projects.kde.org/projects/kde/workspace/plasma-nm"
     },
     "X-KDE-Keywords": "network,internet,ethernet,wireless,wifi,wlan,vpn",
+    "X-KDE-Keywords[bg]": "мрежа,интернет,кабел,безжичен,wifi,wlan,vpn",
     "X-KDE-Keywords[ca@valencia]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",
     "X-KDE-Keywords[ca]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",
     "X-KDE-Keywords[en_GB]": "network,internet,ethernet,wireless,wifi,wlan,vpn",

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-03-01 13:07+0100\n"
+"PO-Revision-Date: 2024-09-23 21:56+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.04.70\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: openconnectauth.cpp:337
 #, kde-format
@@ -337,107 +337,107 @@ msgstr "Token titkos kulcsa:"
 #: openconnectwebauthdialog.cpp:111
 #, kde-format
 msgid "Choose a Passkey"
-msgstr ""
+msgstr "Válasszon hozzáférési kulcsot"
 
 #: openconnectwebauthdialog.cpp:112
 #, kde-format
 msgid "Which passkey do you want to use for %1?"
-msgstr ""
+msgstr "Melyik hozzáférési kulcsot szeretné használni ehhez: %1?"
 
 #: openconnectwebauthdialog.cpp:129
 #, kde-format
 msgid "Ok"
-msgstr ""
+msgstr "OK"
 
 #: openconnectwebauthdialog.cpp:140
 #, kde-format
 msgid "Use your security key with %1"
-msgstr ""
+msgstr "Használja a biztonsági kulcsát ezzel: %1"
 
 #: openconnectwebauthdialog.cpp:141
 #, kde-format
 msgid "Touch your security key again to complete the request."
-msgstr ""
+msgstr "Érintse meg ismét a biztonsági kulcsot a kérés befejezéséhez."
 
 #: openconnectwebauthdialog.cpp:158
 #, kde-format
 msgid "Next"
-msgstr ""
+msgstr "Következő"
 
 #: openconnectwebauthdialog.cpp:167
 #, kde-format
 msgid "PIN Required"
-msgstr ""
+msgstr "PIN szükséges"
 
 #: openconnectwebauthdialog.cpp:168
 #, kde-format
 msgid "Enter the PIN for your security key"
-msgstr ""
+msgstr "Adja meg a biztonsági kulcsa PIN-jét"
 
 #: openconnectwebauthdialog.cpp:173
 #, kde-format
 msgid "New PIN Required"
-msgstr ""
+msgstr "Új PIN szükséges"
 
 #: openconnectwebauthdialog.cpp:174
 #, kde-format
 msgid "Set new PIN for your security key"
-msgstr ""
+msgstr "Állítson be új PIN-t a biztonsági kulcsához"
 
 #: openconnectwebauthdialog.cpp:176
 #, kde-format
 msgid "Change PIN Required"
-msgstr ""
+msgstr "PIN módosítás szükséges"
 
 #: openconnectwebauthdialog.cpp:177
 #, kde-format
 msgid "Change PIN for your security key"
-msgstr ""
+msgstr "Változtassa meg a biztonsági kulcsa PIN-jét"
 
 #: openconnectwebauthdialog.cpp:188
 #, kde-format
 msgid "Internal User Verification Locked"
-msgstr ""
+msgstr "Belső felhasználóellenőrzés zárolva"
 
 #: openconnectwebauthdialog.cpp:191
 #, kde-format
 msgid "Wrong PIN. %1 attempts remaining."
-msgstr ""
+msgstr "Hibás PIN. %1 próbálkozás maradt."
 
 #: openconnectwebauthdialog.cpp:194
 #, kde-format
 msgid "Too Short. %1 attempts remaining."
-msgstr ""
+msgstr "Túl rövid. %1 próbálkozás maradt."
 
 #: openconnectwebauthdialog.cpp:197
 #, kde-format
 msgid "Invalid Characters. %1 attempts remaining."
-msgstr ""
+msgstr "Érvénytelen karakterek. %1 próbálkozás maradt."
 
 #: openconnectwebauthdialog.cpp:201
 #, kde-format
 msgid "Same as current PIN. %1 attempts remaining."
-msgstr ""
+msgstr "Ugyanaz, mint a jelenlegi PIN. %1 próbálkozás maradt."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format
 msgid "Something went wrong"
-msgstr ""
+msgstr "Valami elromlott"
 
 #: openconnectwebauthdialog.cpp:243
 #, kde-format
 msgid "Request Timeout"
-msgstr ""
+msgstr "A kérés túllépte az időkorlátot"
 
 #: openconnectwebauthdialog.cpp:246
 #, kde-format
 msgid "Key not registered"
-msgstr ""
+msgstr "A kulcs nincs regisztrálva"
 
 #: openconnectwebauthdialog.cpp:250
 #, kde-format
 msgid "You already registered this device.Try again with device"
-msgstr ""
+msgstr "Már regisztrálta ezt az eszközt. Próbálja újra az eszközzel"
 
 #: openconnectwebauthdialog.cpp:256
 #, kde-format
@@ -445,6 +445,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times."
 "To unlock it, remove and reinsert it."
 msgstr ""
+"A biztonsági kulcs zárolt, mivel túl sokszor lett megadva hibás PIN. A "
+"feloldáshoz távolítsa el, és helyezze be újra."
 
 #: openconnectwebauthdialog.cpp:262
 #, kde-format
@@ -452,88 +454,92 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "You'll need to reset the security key."
 msgstr ""
+"A biztonsági kulcs zárolt, mivel túl sokszor lett megadva hibás PIN. Vissza "
+"kell állítania a biztonsági kulcsot."
 
 #: openconnectwebauthdialog.cpp:266
 #, kde-format
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
 msgstr ""
+"A hitelesítőt eltávolították az ellenőrzés során. Kérjük, helyezze be újra "
+"és próbálja meg ismét."
 
 #: openconnectwebauthdialog.cpp:269
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
+msgstr "A hitelesítő nem támogatja a helyi kulcsokat"
 
 #: openconnectwebauthdialog.cpp:272
 #, kde-format
 msgid "Authenticator missing user verification"
-msgstr ""
+msgstr "A hitelesítőből hiányzik a felhasználói hitelesítés"
 
 #: openconnectwebauthdialog.cpp:275
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr ""
+msgstr "A hitelesítőből hiányzik a nagy blobok támogatása"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
 msgid "No common algorithms"
-msgstr ""
+msgstr "Nincs közös algoritmus"
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
 msgid "Storage Full"
-msgstr ""
+msgstr "A tároló megtelt"
 
 #: openconnectwebauthdialog.cpp:284
 #, kde-format
 msgid "User consent denied"
-msgstr ""
+msgstr "Felhasználói hozzájárulás megtagadva"
 
 #: openconnectwebauthdialog.cpp:287
 #, kde-format
 msgid "User Cancelled Request"
-msgstr ""
+msgstr "Felhasználói megszakítás"
 
 #: openconnectwebauthdialog.cpp:300
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Bezárás"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, Dialog)
 #: openconnectwebauthdialog.ui:20
 #, kde-format
 msgid "WebAuth"
-msgstr ""
+msgstr "WebAuth"
 
 #. i18n: ectx: property (text), widget (QLabel, headingLabel)
 #: openconnectwebauthdialog.ui:32
 #, kde-format
 msgid "Heading"
-msgstr ""
+msgstr "Címsor"
 
 #. i18n: ectx: property (text), widget (QLabel, description)
 #: openconnectwebauthdialog.ui:48
 #, kde-format
 msgid "Description"
-msgstr ""
+msgstr "Leírás"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
 #: openconnectwebauthdialog.ui:84
 #, kde-format
 msgid "PIN"
-msgstr ""
+msgstr "PIN"
 
 #. i18n: ectx: property (text), widget (QLabel, confirmPinLabel)
 #: openconnectwebauthdialog.ui:107
 #, kde-format
 msgid "Confirm PIN"
-msgstr ""
+msgstr "PIN megerősítése"
 
 #. i18n: ectx: property (text), widget (QLabel, pinEntryErrorLabel)
 #: openconnectwebauthdialog.ui:130
 #, kde-format
 msgid "TextLabel"
-msgstr ""
+msgstr "Szövegcímke"
 
 #~ msgid "*.pem *.crt *.key"
 #~ msgstr "*.pem *.crt *.key"

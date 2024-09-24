@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2024-05-11 23:08+0200\n"
+"PO-Revision-Date: 2024-09-23 21:29+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.02.2\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -1569,7 +1569,7 @@ msgstr "WPA3 Enterprise 192 bites"
 #: editor/settings/ui/wifisecurity.ui:73
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:81
@@ -2144,7 +2144,7 @@ msgstr "Mobil széles sáv"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Visszacsatolás"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2185,7 +2185,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Visszacsatolás"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2228,10 +2228,9 @@ msgid "Bridge (%1)"
 msgstr "Híd (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Vezetékes csatoló (%1)"
+msgstr "Visszacsatolási csatoló (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format
@@ -2784,7 +2783,7 @@ msgstr "WPA3-EAP-SUITE-B-192"
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format

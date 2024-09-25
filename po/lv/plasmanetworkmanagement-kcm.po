@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2024-04-27 11:39+0300\n"
+"PO-Revision-Date: 2024-09-23 20:50+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,25 +16,23 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.08.0\n"
 
 #: kcm.cpp:253
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "Vai importēt VPN konfigurāciju no „%1“?"
 
 #: kcm.cpp:254
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "Importēt VPN savienojumu"
+msgstr "Importēt VPN konfigurāciju"
 
 #: kcm.cpp:255
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "Eksportēt"
+msgstr "Importēt"
 
 #: kcm.cpp:262 kcm.cpp:335
 #, kde-format
@@ -42,10 +40,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "Neizdevās importēt VPN savienojumu: %1"
 
 #: kcm.cpp:265 kcm.cpp:338
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "Savienots"
+msgstr "Savienojums ir importēts."
 
 #: kcm.cpp:407
 #, kde-format

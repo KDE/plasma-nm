@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-05-31 17:30+0200\n"
+"PO-Revision-Date: 2024-09-21 06:44+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.08.1\n"
 
 #: openconnectauth.cpp:337
 #, kde-format
@@ -326,7 +326,7 @@ msgstr "Modalità token:"
 #: openconnecttoken.ui:43
 #, kde-format
 msgid "Token Secret:"
-msgstr "Secreto del token:"
+msgstr "Segreto del token:"
 
 #: openconnectwebauthdialog.cpp:111
 #, kde-format

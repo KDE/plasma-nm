@@ -334,8 +334,6 @@ void NetworkModel::initializeSignals(const NetworkManager::WirelessNetwork::Ptr 
 
 void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::Ptr &activeConnection)
 {
-    initializeSignals(activeConnection);
-
     NetworkManager::Device::Ptr device;
     NetworkManager::Connection::Ptr connection = activeConnection->connection();
 
@@ -349,6 +347,7 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
         // Active connection appeared before a base connection, so we have to add its base connection first
         addConnection(connection);
     }
+    initializeSignals(activeConnection);
 
     for (const auto items = m_list.returnItems(NetworkItemsList::NetworkItemsList::Uuid, connection->uuid()); NetworkModelItem * item : items) {
         if (((device && device->uni() == item->devicePath()) || item->devicePath().isEmpty()) || item->type() == NetworkManager::ConnectionSettings::Vpn) {
@@ -448,8 +447,6 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr &connecti
         return;
     }
 
-    initializeSignals(connection);
-
     NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
     NetworkManager::VpnSetting::Ptr vpnSetting;
     NetworkManager::WirelessSetting::Ptr wirelessSetting;
@@ -484,13 +481,13 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr &connecti
     item->invalidateDetails();
 
     insertItem(item);
+    initializeSignals(connection);
+
     qCDebug(PLASMA_NM_LIBS_LOG) << "New connection" << item->name() << "added";
 }
 
 void NetworkModel::addDevice(const NetworkManager::Device::Ptr &device)
 {
-    initializeSignals(device);
-
     if (device->type() == NetworkManager::Device::Wifi) {
         NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
         for (const NetworkManager::WirelessNetwork::Ptr &wifiNetwork : wifiDev->networks()) {
@@ -501,18 +498,19 @@ void NetworkModel::addDevice(const NetworkManager::Device::Ptr &device)
     for (const NetworkManager::Connection::Ptr &connection : device->availableConnections()) {
         addAvailableConnection(connection->path(), device);
     }
+
+    initializeSignals(device);
 }
 
 void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::WirelessDevice::Ptr &device)
 {
-    initializeSignals(network);
-
     // Avoid duplicating entries in the model
     if (!Configuration::self().hotspotConnectionPath().isEmpty()) {
         NetworkManager::ActiveConnection::Ptr activeConnection = NetworkManager::findActiveConnection(Configuration::self().hotspotConnectionPath());
 
         // If we are trying to add an AP which is the one created by our hotspot, then we can skip this and don't add it twice
         if (activeConnection && activeConnection->specificObject() == network->referenceAccessPoint()->uni()) {
+            initializeSignals(network);
             return;
         }
     }
@@ -580,6 +578,7 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     item->invalidateDetails();
 
     insertItem(item);
+    initializeSignals(network);
     qCDebug(PLASMA_NM_LIBS_LOG) << "New wireless network" << item->name() << "added";
 }
 

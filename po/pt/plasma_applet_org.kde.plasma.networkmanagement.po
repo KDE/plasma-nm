@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 00:42+0000\n"
+"POT-Creation-Date: 2024-10-11 00:42+0000\n"
 "PO-Revision-Date: 2022-12-12 16:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -149,27 +149,27 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Carregue com o botão do meio para activar o Modo de Avião"
 
-#: contents/ui/main.qml:72 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activar o Wi-Fi"
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Activar a Rede Móvel"
 
-#: contents/ui/main.qml:95
+#: contents/ui/main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Activar o Modo de Avião"
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Abrir a Página de Autenticação na Rede…"
 
-#: contents/ui/main.qml:117
+#: contents/ui/main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configurar as Ligações de Rede…"

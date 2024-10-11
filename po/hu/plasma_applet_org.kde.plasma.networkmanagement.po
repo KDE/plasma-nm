@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-21 00:42+0000\n"
+"POT-Creation-Date: 2024-10-11 00:42+0000\n"
 "PO-Revision-Date: 2023-12-17 22:12+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -132,27 +132,27 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Kattintson a középső gombbal a repülős üzemmód bekapcsolásához"
 
-#: contents/ui/main.qml:72 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi bekapcsolása"
 
-#: contents/ui/main.qml:83
+#: contents/ui/main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Mobil adatkapcsolat bekapcsolása"
 
-#: contents/ui/main.qml:95
+#: contents/ui/main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Repülős üzemmód bekapcsolása"
 
-#: contents/ui/main.qml:107
+#: contents/ui/main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Hálózat bejelentkező ablakának megnyitása…"
 
-#: contents/ui/main.qml:117
+#: contents/ui/main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Hálózati kapcsolatok szer&kesztése…"

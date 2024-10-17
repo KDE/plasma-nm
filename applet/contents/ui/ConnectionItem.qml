@@ -296,7 +296,7 @@ PlasmaExtras.ExpandableListItem {
             return LastUsed
         } else if (ConnectionState === PlasmaNM.Enums.Activated) {
             if (showSpeed) {
-                return i18n("Connected, ⬇ %1/s, ⬆ %2/s",
+                return i18n("Connected, ↓ %1/s, ↑ %2/s",
                     KCoreAddons.Format.formatByteSize(rxSpeed),
                     KCoreAddons.Format.formatByteSize(txSpeed))
             } else {

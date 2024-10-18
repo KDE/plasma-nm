@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-11 00:42+0000\n"
+"POT-Creation-Date: 2024-10-18 00:41+0000\n"
 "PO-Revision-Date: 2023-12-17 22:12+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -60,8 +60,9 @@ msgstr ""
 "feltöltési sebesség %2 kibibájt másodpercenként"
 
 #: contents/ui/ConnectionItem.qml:299
-#, kde-format
-msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, fuzzy, kde-format
+#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Kapcsolódva, ⬇ %1/s, ⬆ %2/s"
 
 #: contents/ui/ConnectionItem.qml:303

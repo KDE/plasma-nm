@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-11 00:42+0000\n"
+"POT-Creation-Date: 2024-10-18 00:41+0000\n"
 "PO-Revision-Date: 2023-07-19 18:23+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -61,8 +61,9 @@ msgstr ""
 "abiadura %2 kibibyte segundokoa da"
 
 #: contents/ui/ConnectionItem.qml:299
-#, kde-format
-msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, fuzzy, kde-format
+#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Konektatuta, ⬇ %1/s, ⬆ %2/s"
 
 #: contents/ui/ConnectionItem.qml:303

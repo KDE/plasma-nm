@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-11 00:42+0000\n"
+"POT-Creation-Date: 2024-10-18 00:41+0000\n"
 "PO-Revision-Date: 2023-07-17 06:32+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -61,8 +61,9 @@ msgstr ""
 "je %2 kibibytov na sekundo"
 
 #: contents/ui/ConnectionItem.qml:299
-#, kde-format
-msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, fuzzy, kde-format
+#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Povezano, ⬇ %1/s, ⬆ %2/s"
 
 #: contents/ui/ConnectionItem.qml:303

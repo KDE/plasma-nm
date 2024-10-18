@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-11 00:42+0000\n"
+"POT-Creation-Date: 2024-10-18 00:41+0000\n"
 "PO-Revision-Date: 2020-09-28 13:41+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -60,8 +60,9 @@ msgid ""
 msgstr ""
 
 #: contents/ui/ConnectionItem.qml:299
-#, kde-format
-msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, fuzzy, kde-format
+#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Ühendatud, ⬇ %1/s, ⬆ %2/s"
 
 #: contents/ui/ConnectionItem.qml:303

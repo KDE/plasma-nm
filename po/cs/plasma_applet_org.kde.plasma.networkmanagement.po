@@ -61,10 +61,9 @@ msgstr ""
 "odesílání je %2 kibibajtů za sekundu"
 
 #: contents/ui/ConnectionItem.qml:299
-#, fuzzy, kde-format
-#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr "Připojen, ⬇ %1/s, ⬆ %2/s"
+msgstr ""
 
 #: contents/ui/ConnectionItem.qml:303
 #, kde-format

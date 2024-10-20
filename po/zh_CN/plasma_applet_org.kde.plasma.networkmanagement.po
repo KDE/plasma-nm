@@ -59,7 +59,7 @@ msgstr "当前下载速度为每秒 %1 KB；当前上传速度为每秒 %2 KB"
 #: contents/ui/ConnectionItem.qml:299
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr ""
+msgstr "已连接，↓ %1/秒，↑ %2/秒"
 
 #: contents/ui/ConnectionItem.qml:303
 #, kde-format

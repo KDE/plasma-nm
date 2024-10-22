@@ -704,6 +704,10 @@ void NetworkModelItem::updateDetails() const
                 m_details << i18n("Banner") << vpnConnection->banner().simplified();
             }
         }
+    } else if (m_type == NetworkManager::ConnectionSettings::WireGuard) {
+        // From NetworkManager perspective, WireGuard is not a VPN connection,
+        // so there are no specific VpnConnection settings to be fetched.
+        m_details << i18n("VPN Plugin") << "WireGuard";
     } else if (m_type == NetworkManager::ConnectionSettings::Bluetooth) {
         NetworkManager::BluetoothDevice::Ptr bluetoothDevice = device.objectCast<NetworkManager::BluetoothDevice>();
         if (bluetoothDevice) {

@@ -8,6 +8,7 @@
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
 import QtQuick.Controls 2.15
+import QtQuick.Templates as T
 
 import org.kde.coreaddons 1.0 as KCoreAddons
 import org.kde.kcmutils as KCMUtils
@@ -102,8 +103,9 @@ PlasmaExtras.ExpandableListItem {
         id: detailsComponent
 
         Column {
+            readonly property T.TabBar detailsTabBar: detailsTabBar
+
             spacing: Kirigami.Units.smallSpacing
-            property Item detailsTabBar: detailsTabBar
 
             PlasmaComponents3.TabBar {
                 id: detailsTabBar
@@ -114,7 +116,7 @@ PlasmaExtras.ExpandableListItem {
                 }
                 height: visible ? implicitHeight : 0
                 implicitHeight: contentHeight
-                position: PlasmaComponents3.TabBar.Header
+                position: T.TabBar.Header
                 visible: showSpeed
                 onCurrentIndexChanged: {
                     // Only if there are the two tabs.

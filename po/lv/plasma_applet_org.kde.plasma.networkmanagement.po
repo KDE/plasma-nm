@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-18 00:41+0000\n"
+"POT-Creation-Date: 2024-10-23 00:42+0000\n"
 "PO-Revision-Date: 2024-04-24 16:47+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -21,37 +21,37 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "Pieslēgties"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "Atslēgties"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:86
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Rādīt tīkla kvadrātkodu"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:92
 #, kde-format
 msgid "Configure…"
 msgstr "Konfigurēt..."
 
-#: contents/ui/ConnectionItem.qml:134
+#: contents/ui/ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "Ātrums"
 
-#: contents/ui/ConnectionItem.qml:139
+#: contents/ui/ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "Informācija"
 
-#: contents/ui/ConnectionItem.qml:182
+#: contents/ui/ConnectionItem.qml:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -61,13 +61,13 @@ msgstr ""
 "Pašreizējais lejupielādes ātrums ir %1 kibibaiti sekundē. Pašreizējais "
 "augšupielādes ātrums ir %2 kibibaiti sekundē"
 
-#: contents/ui/ConnectionItem.qml:299
+#: contents/ui/ConnectionItem.qml:301
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Savienots, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:303
+#: contents/ui/ConnectionItem.qml:305
 #, kde-format
 msgid "Connected"
 msgstr "Savienots"

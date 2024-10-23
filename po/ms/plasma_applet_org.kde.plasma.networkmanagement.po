@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-18 00:41+0000\n"
+"POT-Creation-Date: 2024-10-23 00:42+0000\n"
 "PO-Revision-Date: 2010-07-30 21:29+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -18,37 +18,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=1;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, fuzzy, kde-format
 msgid "Connect"
 msgstr "Tersambung"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, fuzzy, kde-format
 msgid "Disconnect"
 msgstr "Tersambung"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:86
 #, fuzzy, kde-format
 msgid "Show Network's QR Code"
 msgstr "Sambungan Gagal"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:92
 #, fuzzy, kde-format
 msgid "Configure…"
 msgstr "Sahkan Hapus"
 
-#: contents/ui/ConnectionItem.qml:134
+#: contents/ui/ConnectionItem.qml:136
 #, fuzzy, kde-format
 msgid "Speed"
 msgstr "Kelajuan"
 
-#: contents/ui/ConnectionItem.qml:139
+#: contents/ui/ConnectionItem.qml:141
 #, fuzzy, kde-format
 msgid "Details"
 msgstr "Terperinci"
 
-#: contents/ui/ConnectionItem.qml:182
+#: contents/ui/ConnectionItem.qml:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56,12 +56,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:299
+#: contents/ui/ConnectionItem.qml:301
 #, fuzzy, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Tersambung"
 
-#: contents/ui/ConnectionItem.qml:303
+#: contents/ui/ConnectionItem.qml:305
 #, fuzzy, kde-format
 msgid "Connected"
 msgstr "Tersambung"

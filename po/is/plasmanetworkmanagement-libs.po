@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 00:39+0000\n"
+"POT-Creation-Date: 2024-10-23 00:42+0000\n"
 "PO-Revision-Date: 2024-07-16 20:41+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -73,31 +73,31 @@ msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
-#: models/networkmodelitem.cpp:720
+#: models/networkmodelitem.cpp:724
 #, kde-format
 msgid "Infiniband"
 msgstr "Infiniband"
 
 #: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:198
-#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:726
+#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:730
 #, kde-format
 msgid "Bond"
 msgstr "Bond"
 
 #: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:201
-#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:732
+#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:736
 #, kde-format
 msgid "Bridge"
 msgstr "Brú (bridge)"
 
 #: editor/connectioneditorbase.cpp:256 models/creatableconnectionsmodel.cpp:220
-#: models/networkmodelitem.cpp:738
+#: models/networkmodelitem.cpp:742
 #, kde-format
 msgid "Vlan"
 msgstr "Vlan"
 
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:230
-#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:747
+#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:751
 #, kde-format
 msgid "Team"
 msgstr "Teymi (team)"
@@ -3598,9 +3598,9 @@ msgid "Connection speed"
 msgstr "Tengihraði"
 
 #: models/networkmodelitem.cpp:642 models/networkmodelitem.cpp:667
-#: models/networkmodelitem.cpp:716 models/networkmodelitem.cpp:722
-#: models/networkmodelitem.cpp:728 models/networkmodelitem.cpp:734
-#: models/networkmodelitem.cpp:741 models/networkmodelitem.cpp:749
+#: models/networkmodelitem.cpp:720 models/networkmodelitem.cpp:726
+#: models/networkmodelitem.cpp:732 models/networkmodelitem.cpp:738
+#: models/networkmodelitem.cpp:745 models/networkmodelitem.cpp:753
 #, kde-format
 msgid "MAC Address"
 msgstr "MAC-vistfang"
@@ -3667,7 +3667,7 @@ msgstr "Gæði merkis"
 msgid "Access Technology"
 msgstr "Aðgangstækni"
 
-#: models/networkmodelitem.cpp:693
+#: models/networkmodelitem.cpp:693 models/networkmodelitem.cpp:710
 #, kde-format
 msgid "VPN Plugin"
 msgstr "VPN-viðbót"
@@ -3677,34 +3677,34 @@ msgstr "VPN-viðbót"
 msgid "Banner"
 msgstr "Borði"
 
-#: models/networkmodelitem.cpp:710
+#: models/networkmodelitem.cpp:714
 #, kde-format
 msgid "Name"
 msgstr "Heiti"
 
-#: models/networkmodelitem.cpp:712 models/networkmodelitem.cpp:714
+#: models/networkmodelitem.cpp:716 models/networkmodelitem.cpp:718
 #, kde-format
 msgid "Capabilities"
 msgstr "Geta"
 
-#: models/networkmodelitem.cpp:720 models/networkmodelitem.cpp:726
-#: models/networkmodelitem.cpp:732 models/networkmodelitem.cpp:738
-#: models/networkmodelitem.cpp:744 models/networkmodelitem.cpp:747
+#: models/networkmodelitem.cpp:724 models/networkmodelitem.cpp:730
+#: models/networkmodelitem.cpp:736 models/networkmodelitem.cpp:742
+#: models/networkmodelitem.cpp:748 models/networkmodelitem.cpp:751
 #, kde-format
 msgid "Type"
 msgstr "Tegund"
 
-#: models/networkmodelitem.cpp:740
+#: models/networkmodelitem.cpp:744
 #, kde-format
 msgid "Vlan ID"
 msgstr "Vlan-auðkenni"
 
-#: models/networkmodelitem.cpp:744
+#: models/networkmodelitem.cpp:748
 #, kde-format
 msgid "Adsl"
 msgstr "Adsl"
 
-#: models/networkmodelitem.cpp:754
+#: models/networkmodelitem.cpp:758
 #, kde-format
 msgid "Device"
 msgstr "Tæki"

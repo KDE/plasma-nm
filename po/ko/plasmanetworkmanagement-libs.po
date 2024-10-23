@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 00:39+0000\n"
+"POT-Creation-Date: 2024-10-23 00:42+0000\n"
 "PO-Revision-Date: 2024-08-21 00:41+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -73,31 +73,31 @@ msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
-#: models/networkmodelitem.cpp:720
+#: models/networkmodelitem.cpp:724
 #, kde-format
 msgid "Infiniband"
 msgstr "인피니밴드"
 
 #: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:198
-#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:726
+#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:730
 #, kde-format
 msgid "Bond"
 msgstr "본드"
 
 #: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:201
-#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:732
+#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:736
 #, kde-format
 msgid "Bridge"
 msgstr "브리지"
 
 #: editor/connectioneditorbase.cpp:256 models/creatableconnectionsmodel.cpp:220
-#: models/networkmodelitem.cpp:738
+#: models/networkmodelitem.cpp:742
 #, kde-format
 msgid "Vlan"
 msgstr "VLAN"
 
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:230
-#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:747
+#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:751
 #, kde-format
 msgid "Team"
 msgstr "팀"
@@ -3580,9 +3580,9 @@ msgid "Connection speed"
 msgstr "연결 속도"
 
 #: models/networkmodelitem.cpp:642 models/networkmodelitem.cpp:667
-#: models/networkmodelitem.cpp:716 models/networkmodelitem.cpp:722
-#: models/networkmodelitem.cpp:728 models/networkmodelitem.cpp:734
-#: models/networkmodelitem.cpp:741 models/networkmodelitem.cpp:749
+#: models/networkmodelitem.cpp:720 models/networkmodelitem.cpp:726
+#: models/networkmodelitem.cpp:732 models/networkmodelitem.cpp:738
+#: models/networkmodelitem.cpp:745 models/networkmodelitem.cpp:753
 #, kde-format
 msgid "MAC Address"
 msgstr "MAC 주소"
@@ -3649,7 +3649,7 @@ msgstr "신호 품질"
 msgid "Access Technology"
 msgstr "접속 기술"
 
-#: models/networkmodelitem.cpp:693
+#: models/networkmodelitem.cpp:693 models/networkmodelitem.cpp:710
 #, kde-format
 msgid "VPN Plugin"
 msgstr "VPN 플러그인"
@@ -3659,34 +3659,34 @@ msgstr "VPN 플러그인"
 msgid "Banner"
 msgstr "배너"
 
-#: models/networkmodelitem.cpp:710
+#: models/networkmodelitem.cpp:714
 #, kde-format
 msgid "Name"
 msgstr "이름"
 
-#: models/networkmodelitem.cpp:712 models/networkmodelitem.cpp:714
+#: models/networkmodelitem.cpp:716 models/networkmodelitem.cpp:718
 #, kde-format
 msgid "Capabilities"
 msgstr "사용 가능한 기능"
 
-#: models/networkmodelitem.cpp:720 models/networkmodelitem.cpp:726
-#: models/networkmodelitem.cpp:732 models/networkmodelitem.cpp:738
-#: models/networkmodelitem.cpp:744 models/networkmodelitem.cpp:747
+#: models/networkmodelitem.cpp:724 models/networkmodelitem.cpp:730
+#: models/networkmodelitem.cpp:736 models/networkmodelitem.cpp:742
+#: models/networkmodelitem.cpp:748 models/networkmodelitem.cpp:751
 #, kde-format
 msgid "Type"
 msgstr "종류"
 
-#: models/networkmodelitem.cpp:740
+#: models/networkmodelitem.cpp:744
 #, kde-format
 msgid "Vlan ID"
 msgstr "VLAN ID"
 
-#: models/networkmodelitem.cpp:744
+#: models/networkmodelitem.cpp:748
 #, kde-format
 msgid "Adsl"
 msgstr "ADSL"
 
-#: models/networkmodelitem.cpp:754
+#: models/networkmodelitem.cpp:758
 #, kde-format
 msgid "Device"
 msgstr "장치"

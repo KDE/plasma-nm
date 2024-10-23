@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-18 00:41+0000\n"
+"POT-Creation-Date: 2024-10-23 00:42+0000\n"
 "PO-Revision-Date: 2024-01-11 16:34+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -23,37 +23,37 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "Prisijungti"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "Atsijungti"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:86
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Rodyti tinklo QR kodą"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:92
 #, kde-format
 msgid "Configure…"
 msgstr "Konfigūruoti…"
 
-#: contents/ui/ConnectionItem.qml:134
+#: contents/ui/ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "Greitis"
 
-#: contents/ui/ConnectionItem.qml:139
+#: contents/ui/ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "Išsamiau"
 
-#: contents/ui/ConnectionItem.qml:182
+#: contents/ui/ConnectionItem.qml:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -63,13 +63,13 @@ msgstr ""
 "Dabartinis atsiuntimo greitis yra %1 kibibaitų per sekundę; dabartinis "
 "išsiuntimo greitis yra %2 kibibaitų per sekundę"
 
-#: contents/ui/ConnectionItem.qml:299
+#: contents/ui/ConnectionItem.qml:301
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Prisijungta, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:303
+#: contents/ui/ConnectionItem.qml:305
 #, kde-format
 msgid "Connected"
 msgstr "Prisijungta"

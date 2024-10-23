@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-18 00:41+0000\n"
+"POT-Creation-Date: 2024-10-23 00:42+0000\n"
 "PO-Revision-Date: 2023-12-26 09:17-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "ਕਨੈਕਟ"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "ਡਿਸ-ਕਨੈਕਟ"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:86
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "ਨੈੱਟਵਰਕ ਦਾ QR ਕੋਡ ਵੇਖਾਓ"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:92
 #, kde-format
 msgid "Configure…"
 msgstr "…ਸੰਰਚਨਾ"
 
-#: contents/ui/ConnectionItem.qml:134
+#: contents/ui/ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "ਸਪੀਡ"
 
-#: contents/ui/ConnectionItem.qml:139
+#: contents/ui/ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "ਵੇਰਵੇ"
 
-#: contents/ui/ConnectionItem.qml:182
+#: contents/ui/ConnectionItem.qml:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57,13 +57,13 @@ msgstr ""
 "ਮੌਜੂਦਾ ਡਾਊਨਲੋਡ ਸਪੀਡ %1 ਕਿਬੀਬਾਈਟ ਪ੍ਰਤੀ ਸਕਿੰਟ ਹੈ; ਮੌਜੂਦਾ ਅੱਪਲੋਡ ਸਪੀਡ %2 ਕਿਬੀਬਾਈਟ ਪ੍ਰਤੀ "
 "ਸਕਿੰਟ ਹੈ"
 
-#: contents/ui/ConnectionItem.qml:299
+#: contents/ui/ConnectionItem.qml:301
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "ਕਨੈਕਟ ਹੈ, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:303
+#: contents/ui/ConnectionItem.qml:305
 #, kde-format
 msgid "Connected"
 msgstr "ਕਨੈਕਟ ਹੈ"

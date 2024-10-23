@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-18 00:41+0000\n"
+"POT-Creation-Date: 2024-10-23 00:42+0000\n"
 "PO-Revision-Date: 2023-07-27 15:58+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -19,37 +19,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Connect"
 msgstr "Yhdistä"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:61
 #, kde-format
 msgid "Disconnect"
 msgstr "Katkaise yhteys"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:86
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Näytä verkon QR-koodi"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:92
 #, kde-format
 msgid "Configure…"
 msgstr "Asetukset…"
 
-#: contents/ui/ConnectionItem.qml:134
+#: contents/ui/ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "Nopeus"
 
-#: contents/ui/ConnectionItem.qml:139
+#: contents/ui/ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "Tiedot"
 
-#: contents/ui/ConnectionItem.qml:182
+#: contents/ui/ConnectionItem.qml:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57,13 +57,13 @@ msgid ""
 "%2 kibibytes per second"
 msgstr "Nykyinen latausnopeus on %1 KB/s, nykyinen lähetysnopeus on %2 KB/s"
 
-#: contents/ui/ConnectionItem.qml:299
+#: contents/ui/ConnectionItem.qml:301
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Yhteydessä, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:303
+#: contents/ui/ConnectionItem.qml:305
 #, kde-format
 msgid "Connected"
 msgstr "Yhdistetty"

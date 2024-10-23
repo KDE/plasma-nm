@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-24 00:39+0000\n"
+"POT-Creation-Date: 2024-10-23 00:42+0000\n"
 "PO-Revision-Date: 2024-09-23 21:29+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -76,31 +76,31 @@ msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
-#: models/networkmodelitem.cpp:720
+#: models/networkmodelitem.cpp:724
 #, kde-format
 msgid "Infiniband"
 msgstr "InfiniBand"
 
 #: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:198
-#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:726
+#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:730
 #, kde-format
 msgid "Bond"
 msgstr "Csatolás"
 
 #: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:201
-#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:732
+#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:736
 #, kde-format
 msgid "Bridge"
 msgstr "Híd"
 
 #: editor/connectioneditorbase.cpp:256 models/creatableconnectionsmodel.cpp:220
-#: models/networkmodelitem.cpp:738
+#: models/networkmodelitem.cpp:742
 #, kde-format
 msgid "Vlan"
 msgstr "Vlan"
 
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:230
-#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:747
+#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:751
 #, kde-format
 msgid "Team"
 msgstr "Team"
@@ -3608,9 +3608,9 @@ msgid "Connection speed"
 msgstr "Kapcsolat sebessége"
 
 #: models/networkmodelitem.cpp:642 models/networkmodelitem.cpp:667
-#: models/networkmodelitem.cpp:716 models/networkmodelitem.cpp:722
-#: models/networkmodelitem.cpp:728 models/networkmodelitem.cpp:734
-#: models/networkmodelitem.cpp:741 models/networkmodelitem.cpp:749
+#: models/networkmodelitem.cpp:720 models/networkmodelitem.cpp:726
+#: models/networkmodelitem.cpp:732 models/networkmodelitem.cpp:738
+#: models/networkmodelitem.cpp:745 models/networkmodelitem.cpp:753
 #, kde-format
 msgid "MAC Address"
 msgstr "MAC-cím"
@@ -3677,7 +3677,7 @@ msgstr "Jelminőség"
 msgid "Access Technology"
 msgstr "Hozzáférési technológia"
 
-#: models/networkmodelitem.cpp:693
+#: models/networkmodelitem.cpp:693 models/networkmodelitem.cpp:710
 #, kde-format
 msgid "VPN Plugin"
 msgstr "VPN bővítmény"
@@ -3687,34 +3687,34 @@ msgstr "VPN bővítmény"
 msgid "Banner"
 msgstr "Banner"
 
-#: models/networkmodelitem.cpp:710
+#: models/networkmodelitem.cpp:714
 #, kde-format
 msgid "Name"
 msgstr "Név"
 
-#: models/networkmodelitem.cpp:712 models/networkmodelitem.cpp:714
+#: models/networkmodelitem.cpp:716 models/networkmodelitem.cpp:718
 #, kde-format
 msgid "Capabilities"
 msgstr "Képességek"
 
-#: models/networkmodelitem.cpp:720 models/networkmodelitem.cpp:726
-#: models/networkmodelitem.cpp:732 models/networkmodelitem.cpp:738
-#: models/networkmodelitem.cpp:744 models/networkmodelitem.cpp:747
+#: models/networkmodelitem.cpp:724 models/networkmodelitem.cpp:730
+#: models/networkmodelitem.cpp:736 models/networkmodelitem.cpp:742
+#: models/networkmodelitem.cpp:748 models/networkmodelitem.cpp:751
 #, kde-format
 msgid "Type"
 msgstr "Típus"
 
-#: models/networkmodelitem.cpp:740
+#: models/networkmodelitem.cpp:744
 #, kde-format
 msgid "Vlan ID"
 msgstr "VLAN azonosító"
 
-#: models/networkmodelitem.cpp:744
+#: models/networkmodelitem.cpp:748
 #, kde-format
 msgid "Adsl"
 msgstr "ADSL"
 
-#: models/networkmodelitem.cpp:754
+#: models/networkmodelitem.cpp:758
 #, kde-format
 msgid "Device"
 msgstr "Eszköz"

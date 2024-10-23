@@ -121,11 +121,6 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     NetworkManager::Ipv4Setting::Ptr ipv4Setting = setting.staticCast<NetworkManager::Ipv4Setting>();
 
-    // BUG:406118
-    // We don't have route-metric in the UI, maybe even won't have for now, but that doesn't mean we
-    // want to loose it when it's configured manually in a config file
-    m_tmpIpv4Setting.setRouteMetric(ipv4Setting->routeMetric());
-
     m_tmpIpv4Setting.setRoutes(ipv4Setting->routes());
     m_tmpIpv4Setting.setNeverDefault(ipv4Setting->neverDefault());
     m_tmpIpv4Setting.setIgnoreAutoRoutes(ipv4Setting->ignoreAutoRoutes());
@@ -167,6 +162,9 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 
     m_ui->dhcpClientId->setText(ipv4Setting->dhcpClientId());
 
+    // metric
+    m_ui->routeMetric->setValue(static_cast<double>(ipv4Setting->routeMetric()));
+
     // addresses
     for (const NetworkManager::IpAddress &addr : ipv4Setting->addresses()) {
         QList<QStandardItem *> item{
@@ -185,11 +183,6 @@ void IPv4Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 QVariantMap IPv4Widget::setting() const
 {
     NetworkManager::Ipv4Setting ipv4Setting;
-
-    // BUG:406118
-    // We don't have route-metric in the UI, maybe even won't have for now, but that doesn't mean we
-    // want to loose it when it's configured manually in a config file
-    ipv4Setting.setRouteMetric(m_tmpIpv4Setting.routeMetric());
 
     ipv4Setting.setRoutes(m_tmpIpv4Setting.routes());
     ipv4Setting.setNeverDefault(m_tmpIpv4Setting.neverDefault());
@@ -242,6 +235,9 @@ QVariantMap IPv4Widget::setting() const
         ipv4Setting.setDhcpClientId(m_ui->dhcpClientId->text());
     }
 
+    // metric
+    ipv4Setting.setRouteMetric(static_cast<int>(m_ui->routeMetric->value()));
+
     // addresses
     if (m_ui->tableViewAddresses->isEnabled()) {
         QList<NetworkManager::IpAddress> list;
@@ -274,6 +270,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->dnsSearch->setEnabled(true);
         m_ui->dnsSearchMorePushButton->setEnabled(true);
         m_ui->dhcpClientId->setEnabled(true);
+        m_ui->routeMetric->setEnabled(true);
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(false);
@@ -286,6 +283,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->dnsSearch->setEnabled(true);
         m_ui->dnsSearchMorePushButton->setEnabled(true);
         m_ui->dhcpClientId->setEnabled(true);
+        m_ui->routeMetric->setEnabled(true);
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(false);
@@ -298,6 +296,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->dnsSearch->setEnabled(true);
         m_ui->dnsSearchMorePushButton->setEnabled(true);
         m_ui->dhcpClientId->setEnabled(false);
+        m_ui->routeMetric->setEnabled(true);
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(true);
@@ -310,6 +309,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->dnsSearch->setEnabled(false);
         m_ui->dnsSearchMorePushButton->setEnabled(false);
         m_ui->dhcpClientId->setEnabled(false);
+        m_ui->routeMetric->setEnabled(true);
         m_ui->ipv4RequiredCB->setEnabled(true);
         m_ui->btnRoutes->setEnabled(false);
         m_ui->tableViewAddresses->setEnabled(false);
@@ -322,6 +322,7 @@ void IPv4Widget::slotModeComboChanged(int index)
         m_ui->dnsSearch->setEnabled(false);
         m_ui->dnsSearchMorePushButton->setEnabled(false);
         m_ui->dhcpClientId->setEnabled(false);
+        m_ui->routeMetric->setEnabled(false);
         m_ui->ipv4RequiredCB->setEnabled(false);
         m_ui->btnRoutes->setEnabled(false);
         m_ui->tableViewAddresses->setEnabled(false);

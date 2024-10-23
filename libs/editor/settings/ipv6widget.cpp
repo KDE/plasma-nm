@@ -112,11 +112,6 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 {
     NetworkManager::Ipv6Setting::Ptr ipv6Setting = setting.staticCast<NetworkManager::Ipv6Setting>();
 
-    // BUG:406118
-    // We don't have route-metric in the UI, maybe even won't have for now, but that doesn't mean we
-    // want to loose it when it's configured manually in a config file
-    m_tmpIpv6Setting.setRouteMetric(ipv6Setting->routeMetric());
-
     m_tmpIpv6Setting.setRoutes(ipv6Setting->routes());
     m_tmpIpv6Setting.setNeverDefault(ipv6Setting->neverDefault());
     m_tmpIpv6Setting.setIgnoreAutoRoutes(ipv6Setting->ignoreAutoRoutes());
@@ -155,6 +150,9 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
     m_ui->dns->setText(tmp.join(QStringLiteral(",")));
     m_ui->dnsSearch->setText(ipv6Setting->dnsSearch().join(QStringLiteral(",")));
 
+    // metric
+    m_ui->routeMetric->setValue(static_cast<double>(ipv6Setting->routeMetric()));
+
     // addresses
     for (const NetworkManager::IpAddress &address : ipv6Setting->addresses()) {
         QList<QStandardItem *> item{
@@ -178,11 +176,6 @@ void IPv6Widget::loadConfig(const NetworkManager::Setting::Ptr &setting)
 QVariantMap IPv6Widget::setting() const
 {
     NetworkManager::Ipv6Setting ipv6Setting;
-
-    // BUG:406118
-    // We don't have route-metric in the UI, maybe even won't have for now, but that doesn't mean we
-    // want to loose it when it's configured manually in a config file
-    ipv6Setting.setRouteMetric(m_tmpIpv6Setting.routeMetric());
 
     ipv6Setting.setRoutes(m_tmpIpv6Setting.routes());
     ipv6Setting.setNeverDefault(m_tmpIpv6Setting.neverDefault());
@@ -229,6 +222,9 @@ QVariantMap IPv6Widget::setting() const
         ipv6Setting.setDnsSearch(m_ui->dnsSearch->text().split(QLatin1Char(',')));
     }
 
+    // metric
+    ipv6Setting.setRouteMetric(static_cast<int>(m_ui->routeMetric->value()));
+
     // addresses
     if (m_ui->tableViewAddresses->isEnabled()) {
         QList<NetworkManager::IpAddress> list;
@@ -266,6 +262,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->dnsSearchMorePushButton->setEnabled(true);
         m_ui->ipv6RequiredCB->setEnabled(true);
         m_ui->privacyCombo->setEnabled(true);
+        m_ui->routeMetric->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(false);
         m_ui->btnAdd->setEnabled(false);
@@ -278,6 +275,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->dnsSearchMorePushButton->setEnabled(true);
         m_ui->ipv6RequiredCB->setEnabled(true);
         m_ui->privacyCombo->setEnabled(true);
+        m_ui->routeMetric->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(false);
         m_ui->btnAdd->setEnabled(false);
@@ -290,6 +288,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->dnsSearchMorePushButton->setEnabled(true);
         m_ui->ipv6RequiredCB->setEnabled(true);
         m_ui->privacyCombo->setEnabled(true);
+        m_ui->routeMetric->setEnabled(true);
         m_ui->btnRoutes->setEnabled(true);
         m_ui->tableViewAddresses->setEnabled(true);
         m_ui->btnAdd->setEnabled(true);
@@ -302,6 +301,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->dnsSearchMorePushButton->setEnabled(false);
         m_ui->ipv6RequiredCB->setEnabled(true);
         m_ui->privacyCombo->setEnabled(true);
+        m_ui->routeMetric->setEnabled(true);
         m_ui->btnRoutes->setEnabled(false);
         m_ui->tableViewAddresses->setEnabled(false);
         m_ui->btnAdd->setEnabled(false);
@@ -314,6 +314,7 @@ void IPv6Widget::slotModeComboChanged(int index)
         m_ui->dnsSearchMorePushButton->setEnabled(false);
         m_ui->ipv6RequiredCB->setEnabled(false);
         m_ui->privacyCombo->setEnabled(false);
+        m_ui->routeMetric->setEnabled(false);
         m_ui->btnRoutes->setEnabled(false);
         m_ui->tableViewAddresses->setEnabled(false);
         m_ui->btnAdd->setEnabled(false);

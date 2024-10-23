@@ -83,6 +83,12 @@ void SettingWidget::watchChangedSetting()
         connect(spinbox, QOverload<int>::of(&QSpinBox::valueChanged), this, &SettingWidget::settingChanged);
     }
 
+    // Connect all QDoubleSpinBox widgets
+    const QList<QDoubleSpinBox *> doublespinboxes = findChildren<QDoubleSpinBox *>();
+    for (QDoubleSpinBox *spinbox : doublespinboxes) {
+        connect(spinbox, QOverload<double>::of(&QDoubleSpinBox::valueChanged), this, &SettingWidget::settingChanged);
+    }
+
     // Connect all KUrlRequester widgets
     const QList<KUrlRequester *> urlrequesters = findChildren<KUrlRequester *>();
     for (KUrlRequester *urlrequester : urlrequesters) {

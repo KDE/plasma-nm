@@ -290,11 +290,13 @@ QVariantMap Security8021x::setting() const
         }
 
         if (m_ui->tlsUserCert->url().isValid()) {
-            setting.setClientCertificate(m_ui->tlsUserCert->url().toString().toUtf8().append('\0'));
+            const auto formattingOption = m_ui->tlsUserCert->url().scheme() == "file" ? QUrl::PrettyDecoded : QUrl::FullyEncoded;
+            setting.setClientCertificate(m_ui->tlsUserCert->url().toString(formattingOption).toUtf8().append('\0'));
         }
 
         if (m_ui->tlsCACert->url().isValid()) {
-            setting.setCaCertificate(m_ui->tlsCACert->url().toString().toUtf8().append('\0'));
+            const auto formattingOption = m_ui->tlsCACert->url().scheme() == "file" ? QUrl::PrettyDecoded : QUrl::FullyEncoded;
+            setting.setCaCertificate(m_ui->tlsCACert->url().toString(formattingOption).toUtf8().append('\0'));
         }
 
         QStringList altsubjectmatches = m_ui->leTlsAlternativeSubjectMatches->text().remove(QLatin1Char(' ')).split(QLatin1Char(','), Qt::SkipEmptyParts);
@@ -308,7 +310,8 @@ QVariantMap Security8021x::setting() const
         setting.setAltSubjectMatches(altsubjectmatches);
 
         if (m_ui->tlsPrivateKey->url().isValid()) {
-            setting.setPrivateKey(m_ui->tlsPrivateKey->url().toString().toUtf8().append('\0'));
+            const auto formattingOption = m_ui->tlsPrivateKey->url().scheme() == "file" ? QUrl::PrettyDecoded : QUrl::FullyEncoded;
+            setting.setPrivateKey(m_ui->tlsPrivateKey->url().toString(formattingOption).toUtf8().append('\0'));
         }
 
         if (!m_ui->tlsPrivateKeyPassword->text().isEmpty()) {

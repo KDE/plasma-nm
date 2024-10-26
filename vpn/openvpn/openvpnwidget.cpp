@@ -27,12 +27,21 @@ public:
     class EnumConnectionType
     {
     public:
-        enum ConnectionType { Certificates = 0, Psk, Password, CertsPassword };
+        enum ConnectionType {
+            Certificates = 0,
+            Psk,
+            Password,
+            CertsPassword
+        };
     };
     class EnumKeyDirection
     {
     public:
-        enum KeyDirection { None = 0, D0, D1 };
+        enum KeyDirection {
+            None = 0,
+            D0,
+            D1
+        };
     };
 };
 

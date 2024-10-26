@@ -15,7 +15,11 @@ class PLASMANM_EDITOR_EXPORT SimpleIpV6AddressValidator : public QValidator
 {
     Q_OBJECT
 public:
-    enum AddressStyle { Base, WithCidr, WithPort };
+    enum AddressStyle {
+        Base,
+        WithCidr,
+        WithPort
+    };
 
     explicit SimpleIpV6AddressValidator(AddressStyle style = AddressStyle::Base, QObject *parent = nullptr);
     ~SimpleIpV6AddressValidator() override;

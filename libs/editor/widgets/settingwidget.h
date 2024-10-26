@@ -21,7 +21,11 @@ public:
     class EnumPasswordStorageType
     {
     public:
-        enum PasswordStorageType { Store = 0, AlwaysAsk, NotRequired };
+        enum PasswordStorageType {
+            Store = 0,
+            AlwaysAsk,
+            NotRequired
+        };
     };
 
     explicit SettingWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget *parent = nullptr, Qt::WindowFlags f = {});

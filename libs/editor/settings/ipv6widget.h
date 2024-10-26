@@ -24,7 +24,15 @@ class PLASMANM_EDITOR_EXPORT IPv6Widget : public SettingWidget
 {
     Q_OBJECT
 public:
-    enum MethodIndex { Automatic = 0, AutomaticOnlyIP, AutomaticOnlyDHCP, LinkLocal, Manual, Ignored, Disabled };
+    enum MethodIndex {
+        Automatic = 0,
+        AutomaticOnlyIP,
+        AutomaticOnlyDHCP,
+        LinkLocal,
+        Manual,
+        Ignored,
+        Disabled
+    };
 
     explicit IPv6Widget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(), QWidget *parent = nullptr, Qt::WindowFlags f = {});
     ~IPv6Widget() override;

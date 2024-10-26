@@ -95,7 +95,12 @@ public:
     QAtomicPointer<QSemaphore> waitForWebEngineFinish;
     OpenconnectWebAuthDialog *authDialog;
 
-    enum LogLevels { Error = 0, Info, Debug, Trace };
+    enum LogLevels {
+        Error = 0,
+        Info,
+        Debug,
+        Trace
+    };
 };
 
 OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::Ptr &setting, const QStringList &hints, QWidget *parent)

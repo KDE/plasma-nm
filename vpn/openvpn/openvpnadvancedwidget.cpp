@@ -36,17 +36,39 @@ public:
     class EnumProxyType
     {
     public:
-        enum ProxyType { NotRequired = 0, HTTP = 1, SOCKS = 2 };
+        enum ProxyType {
+            NotRequired = 0,
+            HTTP = 1,
+            SOCKS = 2
+        };
     };
     class EnumHashingAlgorithms
     {
     public:
-        enum HashingAlgorithms { Default = 0, None, Md4, Md5, Sha1, Sha224, Sha256, Sha384, Sha512, Ripemd160 };
+        enum HashingAlgorithms {
+            Default = 0,
+            None,
+            Md4,
+            Md5,
+            Sha1,
+            Sha224,
+            Sha256,
+            Sha384,
+            Sha512,
+            Ripemd160
+        };
     };
     class EnumCompression
     {
     public:
-        enum Compression { None = 0, LZO, LZ4, LZ4v2, Adaptive, Automatic };
+        enum Compression {
+            None = 0,
+            LZO,
+            LZ4,
+            LZ4v2,
+            Adaptive,
+            Automatic
+        };
     };
 };
 

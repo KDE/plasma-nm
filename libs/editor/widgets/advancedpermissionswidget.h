@@ -32,7 +32,10 @@ protected:
 private:
     void leftArrowClicked();
     void rightArrowClicked();
-    enum Columns { FullName = 0, LoginName = 1 };
+    enum Columns {
+        FullName = 0,
+        LoginName = 1
+    };
     void setupCommon();
     QTreeWidgetItem *constructItem(const KUser &user, const QString &itemData = QString());
 };

@@ -39,7 +39,11 @@ public:
         ModemNetworkSubsetPin,
         ModemNetworkSubsetPuk,
     };
-    enum ErrorCode { PinCodeTooShort, PinCodesDoNotMatch, PukCodeTooShort };
+    enum ErrorCode {
+        PinCodeTooShort,
+        PinCodesDoNotMatch,
+        PukCodeTooShort
+    };
 
     explicit PinDialog(ModemManager::Modem *modem, const Type type = SimPin, QWidget *parent = nullptr);
     ~PinDialog() override;

@@ -26,7 +26,11 @@ class PLASMANM_EDITOR_EXPORT Security8021x : public SettingWidget
 {
     Q_OBJECT
 public:
-    enum Type { Ethernet = 0, WirelessWpaEap, WirelessWpaEapSuiteB192 };
+    enum Type {
+        Ethernet = 0,
+        WirelessWpaEap,
+        WirelessWpaEapSuiteB192
+    };
 
     explicit Security8021x(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
                            Type type = WirelessWpaEap,

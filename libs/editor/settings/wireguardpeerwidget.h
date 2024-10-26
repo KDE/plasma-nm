@@ -24,7 +24,12 @@ public:
 
     QVariantMap setting() const;
     bool isValid();
-    enum EndPointValid { BothValid, AddressValid, PortValid, BothInvalid };
+    enum EndPointValid {
+        BothValid,
+        AddressValid,
+        PortValid,
+        BothInvalid
+    };
     static WireGuardPeerWidget::EndPointValid isEndpointValid(QString &, QString &);
 
 Q_SIGNALS:

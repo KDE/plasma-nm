@@ -20,7 +20,11 @@ class PLASMANM_INTERNAL_EXPORT NetworkModelItem : public QObject
 {
     Q_OBJECT
 public:
-    enum ItemType { UnavailableConnection, AvailableConnection, AvailableAccessPoint };
+    enum ItemType {
+        UnavailableConnection,
+        AvailableConnection,
+        AvailableAccessPoint
+    };
 
     explicit NetworkModelItem(QObject *parent = nullptr);
     explicit NetworkModelItem(const NetworkModelItem *item, QObject *parent = nullptr);

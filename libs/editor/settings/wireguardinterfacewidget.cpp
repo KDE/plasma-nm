@@ -436,7 +436,11 @@ NMVariantMapMap WireGuardInterfaceWidget::importConnectionSettings(const QString
     int pos = 0;
 
     QTextStream in(&impFile);
-    enum { IDLE, INTERFACE_SECTION, PEER_SECTION } currentState = IDLE;
+    enum {
+        IDLE,
+        INTERFACE_SECTION,
+        PEER_SECTION
+    } currentState = IDLE;
 
     ipv4Setting.setMethod(NetworkManager::Ipv4Setting::Disabled);
     ipv6Setting.setMethod(NetworkManager::Ipv6Setting::Ignored);

@@ -31,7 +31,11 @@ class PLASMANM_EDITOR_EXPORT VpnUiPlugin : public QObject
 {
     Q_OBJECT
 public:
-    enum ErrorType { NoError, NotImplemented, Error };
+    enum ErrorType {
+        NoError,
+        NotImplemented,
+        Error
+    };
 
     explicit VpnUiPlugin(QObject *parent = nullptr, const QVariantList & = QVariantList());
     ~VpnUiPlugin() override;

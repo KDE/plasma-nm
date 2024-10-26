@@ -18,7 +18,12 @@ class StrongswanSettingWidgetPrivate
 public:
     Ui_StrongswanProp ui;
     NetworkManager::VpnSetting::Ptr setting;
-    enum AuthType { PrivateKey = 0, SshAgent, Smartcard, Eap };
+    enum AuthType {
+        PrivateKey = 0,
+        SshAgent,
+        Smartcard,
+        Eap
+    };
 };
 
 StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *parent)
@@ -29,7 +34,7 @@ StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSettin
     d->ui.setupUi(this);
 
     d->setting = setting;
-    
+
     // Enables combo box for password
     d->ui.leUserPassword->setPasswordOptionsEnabled(true);
     d->ui.leUserPassword->setPasswordNotRequiredEnabled(true);
@@ -67,7 +72,7 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
     }
     // Certificate
     d->ui.leGatewayCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_STRONGSWAN_CERTIFICATE]));
-    
+
     // Remote Identity
     const QString rIdentity = dataMap[NM_STRONGSWAN_RIDENTITY];
     if (!rIdentity.isEmpty()) {
@@ -88,7 +93,7 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_EAP)) {
         d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::Eap);
         d->ui.leUserName->setText(dataMap[NM_STRONGSWAN_USER]);
-        
+
         PasswordField *passwordField = d->ui.leUserPassword;
         const NetworkManager::Setting::SecretFlags type = (NetworkManager::Setting::SecretFlags)dataMap[NM_STRONGSWAN_POPTION].toInt();
         if (type.testFlag(NetworkManager::Setting::None)) {
@@ -141,7 +146,7 @@ QVariantMap StrongswanSettingWidget::setting() const
     if (!certificate.isEmpty()) {
         data.insert(NM_STRONGSWAN_CERTIFICATE, certificate);
     }
-        
+
     // Server Identity (Right Identity)
     if (!d->ui.leRemoteIdentity->text().isEmpty()) {
         data.insert(NM_STRONGSWAN_RIDENTITY, d->ui.leRemoteIdentity->text());

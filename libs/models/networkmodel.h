@@ -70,7 +70,11 @@ public:
     };
     Q_ENUMS(ItemRole)
 
-    enum ModelChangeType { ItemAdded, ItemRemoved, ItemPropertyChanged };
+    enum ModelChangeType {
+        ItemAdded,
+        ItemRemoved,
+        ItemPropertyChanged
+    };
 
     int rowCount(const QModelIndex &parent) const override;
     QVariant data(const QModelIndex &index, int role) const override;

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
 "PO-Revision-Date: 2023-12-21 18:29+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -124,25 +124,29 @@ msgstr "Pin bei Modem-Erkennung abfragen"
 msgid "Show virtual connections"
 msgstr "Virtuelle Verbindungen anzeigen"
 
-#: qml/ConfigurationDialog.qml:55
+#: qml/ConfigurationDialog.qml:57
+msgid "Create new connections as system connections"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: qml/ConfigurationDialog.qml:63
+#: qml/ConfigurationDialog.qml:70
 msgctxt "@label Hotspot name"
 msgid "Name:"
 msgstr "Name:"
 
-#: qml/ConfigurationDialog.qml:69
+#: qml/ConfigurationDialog.qml:76
 msgctxt "@label Hotspot password"
 msgid "Password:"
 msgstr "Passwort:"
 
-#: qml/ConfigurationDialog.qml:88
+#: qml/ConfigurationDialog.qml:95
 msgid "Hotspot name must not be empty"
 msgstr "Der Hotspot-Name darf nicht leer sein"
 
-#: qml/ConfigurationDialog.qml:98
+#: qml/ConfigurationDialog.qml:105
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
@@ -150,7 +154,7 @@ msgstr ""
 "Das Hotspot-Passwort muss entweder leer sein oder aus 8 bis 64 Zeichen "
 "bestehen"
 
-#: qml/ConfigurationDialog.qml:99
+#: qml/ConfigurationDialog.qml:106
 msgid ""
 "Hotspot password must either be empty or consist of one of the following:"
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "

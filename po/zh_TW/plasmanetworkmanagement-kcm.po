@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
 "PO-Revision-Date: 2024-09-10 01:10+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -120,31 +120,35 @@ msgstr "偵測到數據機時詢問 PIN"
 msgid "Show virtual connections"
 msgstr "顯示虛擬連線"
 
-#: qml/ConfigurationDialog.qml:55
+#: qml/ConfigurationDialog.qml:57
+msgid "Create new connections as system connections"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
 msgstr "熱點"
 
-#: qml/ConfigurationDialog.qml:63
+#: qml/ConfigurationDialog.qml:70
 msgctxt "@label Hotspot name"
 msgid "Name:"
 msgstr "名稱："
 
-#: qml/ConfigurationDialog.qml:69
+#: qml/ConfigurationDialog.qml:76
 msgctxt "@label Hotspot password"
 msgid "Password:"
 msgstr "密碼："
 
-#: qml/ConfigurationDialog.qml:88
+#: qml/ConfigurationDialog.qml:95
 msgid "Hotspot name must not be empty"
 msgstr "熱點名稱不能是空白的"
 
-#: qml/ConfigurationDialog.qml:98
+#: qml/ConfigurationDialog.qml:105
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr "熱點密碼非空白時必須有 8 到 64 個字元"
 
-#: qml/ConfigurationDialog.qml:99
+#: qml/ConfigurationDialog.qml:106
 msgid ""
 "Hotspot password must either be empty or consist of one of the following:"
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "

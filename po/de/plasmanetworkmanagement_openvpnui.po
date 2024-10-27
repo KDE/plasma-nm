@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-15 00:40+0000\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
 "PO-Revision-Date: 2023-12-18 14:35+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -1033,25 +1033,25 @@ msgstr ""
 msgid "Retry indefinitely when errors occur"
 msgstr "Beim Auftreten von Fehlern endlos erneut versuchen"
 
-#: openvpnadvancedwidget.cpp:60
+#: openvpnadvancedwidget.cpp:82
 #, kde-format
 msgctxt "@title: window advanced openvpn properties"
 msgid "Advanced OpenVPN properties"
 msgstr "Erweiterte OpenVPN-Eigenschaften"
 
-#: openvpnadvancedwidget.cpp:132 openvpnadvancedwidget.cpp:156
+#: openvpnadvancedwidget.cpp:154 openvpnadvancedwidget.cpp:178
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
 msgstr "OpenVPN-Chiffren nicht auffindbar"
 
-#: openvpnadvancedwidget.cpp:139
+#: openvpnadvancedwidget.cpp:161
 #, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
 msgstr "Standard"
 
-#: openvpnadvancedwidget.cpp:153
+#: openvpnadvancedwidget.cpp:175
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"

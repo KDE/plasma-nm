@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
 "PO-Revision-Date: 2024-02-06 00:21+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -121,31 +121,35 @@ msgstr "모뎀을 감지했을 때 PIN 묻기"
 msgid "Show virtual connections"
 msgstr "가상 연결 표시"
 
-#: qml/ConfigurationDialog.qml:55
+#: qml/ConfigurationDialog.qml:57
+msgid "Create new connections as system connections"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
 msgstr "핫스팟"
 
-#: qml/ConfigurationDialog.qml:63
+#: qml/ConfigurationDialog.qml:70
 msgctxt "@label Hotspot name"
 msgid "Name:"
 msgstr "이름:"
 
-#: qml/ConfigurationDialog.qml:69
+#: qml/ConfigurationDialog.qml:76
 msgctxt "@label Hotspot password"
 msgid "Password:"
 msgstr "암호:"
 
-#: qml/ConfigurationDialog.qml:88
+#: qml/ConfigurationDialog.qml:95
 msgid "Hotspot name must not be empty"
 msgstr "핫스팟 이름을 입력해야 함"
 
-#: qml/ConfigurationDialog.qml:98
+#: qml/ConfigurationDialog.qml:105
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr "핫스팟 암호는 비워 두거나 8글자에서 64글자 사이로 입력해야 함"
 
-#: qml/ConfigurationDialog.qml:99
+#: qml/ConfigurationDialog.qml:106
 msgid ""
 "Hotspot password must either be empty or consist of one of the following:"
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "

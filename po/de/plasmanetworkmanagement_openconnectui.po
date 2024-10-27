@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-05-31 00:41+0000\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
 "PO-Revision-Date: 2023-12-18 02:57+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -16,23 +16,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 23.08.4\n"
 
-#: openconnectauth.cpp:337
+#: openconnectauth.cpp:347
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Fehler beim Initialisieren des Software-Tokens: %1"
 
-#: openconnectauth.cpp:390
+#: openconnectauth.cpp:400
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Verbindung zum Rechner wird hergestellt, bitte warten ..."
 
-#: openconnectauth.cpp:767
+#: openconnectauth.cpp:788
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Anmeldung"
 
-#: openconnectauth.cpp:829
+#: openconnectauth.cpp:850
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -43,7 +43,7 @@ msgstr ""
 "Ursache: %2\n"
 "Möchten Sie das Zertifikat trotzdem akzeptieren?"
 
-#: openconnectauth.cpp:924
+#: openconnectauth.cpp:945
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Der Verbindungsversuch ist fehlgeschlagen"
@@ -78,39 +78,45 @@ msgstr "Verbindung beim nächsten Mal automatisch starten"
 msgid "Store passwords"
 msgstr "Passwort speichern"
 
+#. i18n: ectx: property (text), widget (QCheckBox, chkStorePlaintextCookies)
+#: openconnectauth.ui:116
+#, kde-format
+msgid "Store browser cookies in plain-text"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
-#: openconnectauth.ui:153
+#: openconnectauth.ui:160
 #, kde-format
 msgid "View Log"
 msgstr "Protokoll anzeigen"
 
 #. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
-#: openconnectauth.ui:163
+#: openconnectauth.ui:170
 #, kde-format
 msgid "Log Level:"
 msgstr "Protokollstufe:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
-#: openconnectauth.ui:174
+#: openconnectauth.ui:181
 #, kde-format
 msgid "Error"
 msgstr "Fehler"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
-#: openconnectauth.ui:179
+#: openconnectauth.ui:186
 #, kde-format
 msgid "Info"
 msgstr "Information"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
-#: openconnectauth.ui:184
+#: openconnectauth.ui:191
 #, kde-format
 msgctxt "like in Debug log level"
 msgid "Debug"
 msgstr "Fehlersuche"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
-#: openconnectauth.ui:189
+#: openconnectauth.ui:196
 #, kde-format
 msgid "Trace"
 msgstr "Profildaten"

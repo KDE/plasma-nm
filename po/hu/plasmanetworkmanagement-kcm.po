@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
 "PO-Revision-Date: 2024-09-23 21:30+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -119,25 +119,29 @@ msgstr "PIN-kód kérése modem érzékelésekor"
 msgid "Show virtual connections"
 msgstr "Virtuális kapcsolatok megjelenítése"
 
-#: qml/ConfigurationDialog.qml:55
+#: qml/ConfigurationDialog.qml:57
+msgid "Create new connections as system connections"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: qml/ConfigurationDialog.qml:63
+#: qml/ConfigurationDialog.qml:70
 msgctxt "@label Hotspot name"
 msgid "Name:"
 msgstr "Név:"
 
-#: qml/ConfigurationDialog.qml:69
+#: qml/ConfigurationDialog.qml:76
 msgctxt "@label Hotspot password"
 msgid "Password:"
 msgstr "Jelszó:"
 
-#: qml/ConfigurationDialog.qml:88
+#: qml/ConfigurationDialog.qml:95
 msgid "Hotspot name must not be empty"
 msgstr "A hotspot neve nem lehet üres"
 
-#: qml/ConfigurationDialog.qml:98
+#: qml/ConfigurationDialog.qml:105
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
@@ -145,7 +149,7 @@ msgstr ""
 "A hotspot jelszava vagy legyen üres, vagy legyen legalább 8, de legfeljebb "
 "64 karakteres"
 
-#: qml/ConfigurationDialog.qml:99
+#: qml/ConfigurationDialog.qml:106
 msgid ""
 "Hotspot password must either be empty or consist of one of the following:"
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "

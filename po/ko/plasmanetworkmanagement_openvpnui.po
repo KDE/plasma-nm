@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-15 00:40+0000\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
 "PO-Revision-Date: 2023-04-22 00:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -1043,25 +1043,25 @@ msgstr ""
 msgid "Retry indefinitely when errors occur"
 msgstr "오류가 발생할 때 계속 재시도"
 
-#: openvpnadvancedwidget.cpp:60
+#: openvpnadvancedwidget.cpp:82
 #, kde-format
 msgctxt "@title: window advanced openvpn properties"
 msgid "Advanced OpenVPN properties"
 msgstr "고급 OpenVPN 속성"
 
-#: openvpnadvancedwidget.cpp:132 openvpnadvancedwidget.cpp:156
+#: openvpnadvancedwidget.cpp:154 openvpnadvancedwidget.cpp:178
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
 msgstr "OpenVPN 암호화 방식 목록을 찾을 수 없음"
 
-#: openvpnadvancedwidget.cpp:139
+#: openvpnadvancedwidget.cpp:161
 #, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
 msgstr "기본값"
 
-#: openvpnadvancedwidget.cpp:153
+#: openvpnadvancedwidget.cpp:175
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"

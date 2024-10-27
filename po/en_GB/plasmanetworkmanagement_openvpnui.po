@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-07-15 00:40+0000\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
 "PO-Revision-Date: 2023-03-14 20:38+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -1062,25 +1062,25 @@ msgstr "Retry indefinitely on proxy errors. It simulates a SIGUSR1 reset."
 msgid "Retry indefinitely when errors occur"
 msgstr "Retry indefinitely when errors occur"
 
-#: openvpnadvancedwidget.cpp:60
+#: openvpnadvancedwidget.cpp:82
 #, kde-format
 msgctxt "@title: window advanced openvpn properties"
 msgid "Advanced OpenVPN properties"
 msgstr "Advanced OpenVPN properties"
 
-#: openvpnadvancedwidget.cpp:132 openvpnadvancedwidget.cpp:156
+#: openvpnadvancedwidget.cpp:154 openvpnadvancedwidget.cpp:178
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
 msgstr "OpenVPN cipher lookup failed"
 
-#: openvpnadvancedwidget.cpp:139
+#: openvpnadvancedwidget.cpp:161
 #, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
 msgstr "Default"
 
-#: openvpnadvancedwidget.cpp:153
+#: openvpnadvancedwidget.cpp:175
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"

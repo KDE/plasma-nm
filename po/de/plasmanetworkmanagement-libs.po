@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:42+0000\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
 "PO-Revision-Date: 2024-10-13 16:00+0200\n"
 "Last-Translator: Flori G <Renner03@protonmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -177,46 +177,52 @@ msgstr "Aktive Backup"
 #: editor/settings/bondwidget.cpp:50
 #, kde-format
 msgctxt "bond mode"
+msgid "XOR"
+msgstr ""
+
+#: editor/settings/bondwidget.cpp:51
+#, kde-format
+msgctxt "bond mode"
 msgid "Broadcast"
 msgstr "Broadcast"
 
-#: editor/settings/bondwidget.cpp:51
+#: editor/settings/bondwidget.cpp:52
 #, kde-format
 msgctxt "bond mode"
 msgid "802.3ad"
 msgstr "802.3ad"
 
-#: editor/settings/bondwidget.cpp:52
+#: editor/settings/bondwidget.cpp:53
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive transmit load balancing"
 msgstr "Adaptive Sendelastverteilung"
 
-#: editor/settings/bondwidget.cpp:53
+#: editor/settings/bondwidget.cpp:54
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive load balancing"
 msgstr "Adaptive Lastverteilung"
 
-#: editor/settings/bondwidget.cpp:56
+#: editor/settings/bondwidget.cpp:57
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "MII (recommended)"
 msgstr "MII (empfohlen)"
 
-#: editor/settings/bondwidget.cpp:57
+#: editor/settings/bondwidget.cpp:58
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "ARP"
 msgstr "ARP"
 
-#: editor/settings/bondwidget.cpp:243 editor/settings/bridgewidget.cpp:193
+#: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:193
 #: editor/settings/teamwidget.cpp:182
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Möchten Sie die Verbindung „'%1“ entfernen?"
 
-#: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:194
+#: editor/settings/bondwidget.cpp:245 editor/settings/bridgewidget.cpp:194
 #: editor/settings/teamwidget.cpp:183
 #, kde-format
 msgid "Remove Connection"
@@ -354,12 +360,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Gateway"
 
-#: editor/settings/security802-1x.cpp:504
+#: editor/settings/security802-1x.cpp:507
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Alternative Betreff-Übereinstimmungen"
 
-#: editor/settings/security802-1x.cpp:506
+#: editor/settings/security802-1x.cpp:509
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -370,7 +376,7 @@ msgstr ""
 "Name oder IP-Adresse&gt;</li><li>EMAIL: &lt;E-Mail&gt;</li><li>URI: &lt;URI "
 "wie z. B. https://www.kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:523
+#: editor/settings/security802-1x.cpp:526
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Nur mit diesen Servern verbinden"

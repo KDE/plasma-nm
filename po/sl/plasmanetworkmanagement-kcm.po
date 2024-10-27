@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-01 00:40+0000\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
 "PO-Revision-Date: 2024-09-01 06:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -121,25 +121,29 @@ msgstr "Pri zaznavanju modema vprašaj za PIN"
 msgid "Show virtual connections"
 msgstr "Pokaži navidezne povezave"
 
-#: qml/ConfigurationDialog.qml:55
+#: qml/ConfigurationDialog.qml:57
+msgid "Create new connections as system connections"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
 msgstr "Vroča točka"
 
-#: qml/ConfigurationDialog.qml:63
+#: qml/ConfigurationDialog.qml:70
 msgctxt "@label Hotspot name"
 msgid "Name:"
 msgstr "Ime:"
 
-#: qml/ConfigurationDialog.qml:69
+#: qml/ConfigurationDialog.qml:76
 msgctxt "@label Hotspot password"
 msgid "Password:"
 msgstr "Geslo:"
 
-#: qml/ConfigurationDialog.qml:88
+#: qml/ConfigurationDialog.qml:95
 msgid "Hotspot name must not be empty"
 msgstr "Ime vroče točke ne sme biti prazno"
 
-#: qml/ConfigurationDialog.qml:98
+#: qml/ConfigurationDialog.qml:105
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
@@ -147,7 +151,7 @@ msgstr ""
 "Geslo dostopne točke mora biti ali prazno ali pa mora vsebovati od 8 do 64 "
 "znakov"
 
-#: qml/ConfigurationDialog.qml:99
+#: qml/ConfigurationDialog.qml:106
 msgid ""
 "Hotspot password must either be empty or consist of one of the following:"
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "

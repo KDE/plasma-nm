@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:42+0000\n"
-"PO-Revision-Date: 2024-06-29 09:08+0200\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"PO-Revision-Date: 2024-10-26 13:00+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -175,46 +175,52 @@ msgstr "Aktywna kopia zapasowa"
 #: editor/settings/bondwidget.cpp:50
 #, kde-format
 msgctxt "bond mode"
+msgid "XOR"
+msgstr ""
+
+#: editor/settings/bondwidget.cpp:51
+#, kde-format
+msgctxt "bond mode"
 msgid "Broadcast"
 msgstr "Rozgłoszeniowy"
 
-#: editor/settings/bondwidget.cpp:51
+#: editor/settings/bondwidget.cpp:52
 #, kde-format
 msgctxt "bond mode"
 msgid "802.3ad"
 msgstr "802.3ad"
 
-#: editor/settings/bondwidget.cpp:52
+#: editor/settings/bondwidget.cpp:53
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive transmit load balancing"
 msgstr "Adaptacyjne równoważenie obciążenia"
 
-#: editor/settings/bondwidget.cpp:53
+#: editor/settings/bondwidget.cpp:54
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive load balancing"
 msgstr "Adaptacyjne równoważenie obciążenia"
 
-#: editor/settings/bondwidget.cpp:56
+#: editor/settings/bondwidget.cpp:57
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "MII (recommended)"
 msgstr "MII (zalecane)"
 
-#: editor/settings/bondwidget.cpp:57
+#: editor/settings/bondwidget.cpp:58
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "ARP"
 msgstr "ARP"
 
-#: editor/settings/bondwidget.cpp:243 editor/settings/bridgewidget.cpp:193
+#: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:193
 #: editor/settings/teamwidget.cpp:182
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Czy chcesz usunąć połączenie '%1?"
 
-#: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:194
+#: editor/settings/bondwidget.cpp:245 editor/settings/bridgewidget.cpp:194
 #: editor/settings/teamwidget.cpp:183
 #, kde-format
 msgid "Remove Connection"
@@ -352,12 +358,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Brama"
 
-#: editor/settings/security802-1x.cpp:504
+#: editor/settings/security802-1x.cpp:507
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Alternatywnie Pasujące Podmioty"
 
-#: editor/settings/security802-1x.cpp:506
+#: editor/settings/security802-1x.cpp:509
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -368,7 +374,7 @@ msgstr ""
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, np. https://www.kde.org&gt;"
 "</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:523
+#: editor/settings/security802-1x.cpp:526
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Łącz się tylko z tymi serwerami"
@@ -998,32 +1004,32 @@ msgstr "Tryb:"
 #, kde-format
 msgctxt "Method:"
 msgid "Automatic"
-msgstr "Sam ustaw"
+msgstr "Automatyczny"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:229
 #, kde-format
 msgid "Automatic (Only addresses)"
-msgstr "Sam ustaw (tylko adresy)"
+msgstr "Automatyczny (tylko adresy)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:239
 #, kde-format
 msgid "Link-Local"
-msgstr "Połącz miejscowo"
+msgstr "Link-Local"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:244
 #, kde-format
 msgctxt "like in use Manual configuration"
 msgid "Manual"
-msgstr "Ustawię ręcznie"
+msgstr "Ręczny"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:69
 #, kde-format
 msgid "Shared to other computers"
-msgstr "Współdziel z innymi"
+msgstr "Współdzielony z innymi komputerami"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:74

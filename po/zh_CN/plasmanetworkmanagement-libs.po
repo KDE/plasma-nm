@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:42+0000\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -175,46 +175,52 @@ msgstr "活动备份"
 #: editor/settings/bondwidget.cpp:50
 #, kde-format
 msgctxt "bond mode"
+msgid "XOR"
+msgstr ""
+
+#: editor/settings/bondwidget.cpp:51
+#, kde-format
+msgctxt "bond mode"
 msgid "Broadcast"
 msgstr "广播"
 
-#: editor/settings/bondwidget.cpp:51
+#: editor/settings/bondwidget.cpp:52
 #, kde-format
 msgctxt "bond mode"
 msgid "802.3ad"
 msgstr "802.3ad"
 
-#: editor/settings/bondwidget.cpp:52
+#: editor/settings/bondwidget.cpp:53
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive transmit load balancing"
 msgstr "自适应传输负载均衡"
 
-#: editor/settings/bondwidget.cpp:53
+#: editor/settings/bondwidget.cpp:54
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive load balancing"
 msgstr "自适应负载均衡"
 
-#: editor/settings/bondwidget.cpp:56
+#: editor/settings/bondwidget.cpp:57
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "MII (recommended)"
 msgstr "MII (推荐)"
 
-#: editor/settings/bondwidget.cpp:57
+#: editor/settings/bondwidget.cpp:58
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "ARP"
 msgstr "ARP"
 
-#: editor/settings/bondwidget.cpp:243 editor/settings/bridgewidget.cpp:193
+#: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:193
 #: editor/settings/teamwidget.cpp:182
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
 msgstr "您想要移除连接“%1”吗？"
 
-#: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:194
+#: editor/settings/bondwidget.cpp:245 editor/settings/bridgewidget.cpp:194
 #: editor/settings/teamwidget.cpp:183
 #, kde-format
 msgid "Remove Connection"
@@ -352,12 +358,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "网关"
 
-#: editor/settings/security802-1x.cpp:504
+#: editor/settings/security802-1x.cpp:507
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "备用主体匹配"
 
-#: editor/settings/security802-1x.cpp:506
+#: editor/settings/security802-1x.cpp:509
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -368,7 +374,7 @@ msgstr ""
 "li><li>EMAIL：&lt;电子邮件地址&gt;</li><li>URI：&lt;URI，例如 https://www."
 "kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:523
+#: editor/settings/security802-1x.cpp:526
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "只连接到这些服务器："

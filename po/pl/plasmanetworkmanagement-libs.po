@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2024-02-11 13:11+0100\n"
+"PO-Revision-Date: 2024-10-26 13:00+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
 "Language: pl\n"
@@ -1094,32 +1094,32 @@ msgstr "Tryb:"
 #, kde-format
 msgctxt "Method:"
 msgid "Automatic"
-msgstr "Sam ustaw"
+msgstr "Automatyczny"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
 #, kde-format
 msgid "Automatic (Only addresses)"
-msgstr "Sam ustaw (tylko adresy)"
+msgstr "Automatyczny (tylko adresy)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
 #, kde-format
 msgid "Link-Local"
-msgstr "Połącz miejscowo"
+msgstr "Link-Local"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
 #, kde-format
 msgctxt "like in use Manual configuration"
 msgid "Manual"
-msgstr "Ustawię ręcznie"
+msgstr "Ręczny"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:69
 #, kde-format
 msgid "Shared to other computers"
-msgstr "Współdziel z innymi"
+msgstr "Współdzielony z innymi komputerami"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:74

@@ -1,13 +1,12 @@
 # Translation of plasma_applet_org.kde.plasma.networkmanagement to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2018, 2019, 2020, 2021, 2022, 2023.
 # Øystein Steffensen-Alværvik <oysteins.omsetting@protonmail.com>, 2018.
 msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-01-23 02:34+0000\n"
-"PO-Revision-Date: 2023-02-23 18:32+0100\n"
+"PO-Revision-Date: 2024-10-27 14:47+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
 "Language: nn\n"
@@ -18,7 +17,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -62,7 +61,7 @@ msgstr ""
 #: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
-msgstr "Kopla til – ⬇ %1/s, ⬆ %2/s"
+msgstr "Kopla til – ↓ %1/s, ↑ %2/s"
 
 #: contents/ui/ConnectionItem.qml:290
 #, kde-format

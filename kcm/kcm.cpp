@@ -54,13 +54,14 @@ K_PLUGIN_CLASS_WITH_JSON(KCMNetworkmanagement, "kcm_networkmanagement.json")
 KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaData &metaData, const QVariantList &args)
     : KCModule(parent, metaData)
     , m_handler(new Handler(this))
+    , m_ui(new Ui::KCMForm)
 {
-    QQmlEngine *engine = qApp->property("__qmlEngine").value<QQmlEngine *>();
-    if (engine) {
-        m_connectionView = new QQuickWidget(engine, widget());
-    } else {
-        m_connectionView = new QQuickWidget(widget());
-    }
+    auto mainWidget = new QWidget(widget());
+    m_ui->setupUi(mainWidget);
+
+    KLocalizedContext *l10nContext = new KLocalizedContext(m_ui->connectionView->engine());
+    l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
+    m_ui->connectionView->engine()->rootContext()->setContextObject(l10nContext);
 
     // Check if we can use AP mode to identify security type
     bool useApMode = false;
@@ -93,18 +94,18 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
         }
     }
 
-    m_connectionView->setMinimumWidth(300);
-    m_connectionView->rootContext()->setContextProperty("alternateBaseColor", widget()->palette().color(QPalette::Active, QPalette::AlternateBase));
-    m_connectionView->rootContext()->setContextProperty("backgroundColor", widget()->palette().color(QPalette::Active, QPalette::Window));
-    m_connectionView->rootContext()->setContextProperty("baseColor", widget()->palette().color(QPalette::Active, QPalette::Base));
-    m_connectionView->rootContext()->setContextProperty("highlightColor", widget()->palette().color(QPalette::Active, QPalette::Highlight));
-    m_connectionView->rootContext()->setContextProperty("textColor", widget()->palette().color(QPalette::Active, QPalette::Text));
-    m_connectionView->rootContext()->setContextProperty("connectionModified", false);
-    m_connectionView->rootContext()->setContextProperty("useApMode", useApMode);
-    m_connectionView->rootContext()->setContextProperty("kcm", this);
-    m_connectionView->setClearColor(Qt::transparent);
-    m_connectionView->setResizeMode(QQuickWidget::SizeRootObjectToView);
-    m_connectionView->setSource(
+    m_ui->connectionView->setMinimumWidth(300);
+    m_ui->connectionView->rootContext()->setContextProperty("alternateBaseColor", mainWidget->palette().color(QPalette::Active, QPalette::AlternateBase));
+    m_ui->connectionView->rootContext()->setContextProperty("backgroundColor", mainWidget->palette().color(QPalette::Active, QPalette::Window));
+    m_ui->connectionView->rootContext()->setContextProperty("baseColor", mainWidget->palette().color(QPalette::Active, QPalette::Base));
+    m_ui->connectionView->rootContext()->setContextProperty("highlightColor", mainWidget->palette().color(QPalette::Active, QPalette::Highlight));
+    m_ui->connectionView->rootContext()->setContextProperty("textColor", mainWidget->palette().color(QPalette::Active, QPalette::Text));
+    m_ui->connectionView->rootContext()->setContextProperty("connectionModified", false);
+    m_ui->connectionView->rootContext()->setContextProperty("useApMode", useApMode);
+    m_ui->connectionView->rootContext()->setContextProperty("kcm", this);
+    m_ui->connectionView->setClearColor(Qt::transparent);
+    m_ui->connectionView->setResizeMode(QQuickWidget::SizeRootObjectToView);
+    m_ui->connectionView->setSource(
         QUrl::fromLocalFile(QStandardPaths::locate(QStandardPaths::GenericDataLocation, QStringLiteral("kcm_networkmanagement/qml/main.qml"))));
 
     auto l = new QVBoxLayout(widget());
@@ -115,7 +116,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
     m_layout = new QHBoxLayout;
     l->addLayout(m_layout);
 
-    m_layout->addWidget(m_connectionView);
+    l->addWidget(mainWidget);
 
     setButtons(Button::Apply);
 
@@ -131,7 +132,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
         if (selectedConnection) {
             const NetworkManager::ConnectionSettings::Ptr settings = selectedConnection->settings();
             if (UiUtils::isConnectionTypeSupported(settings->connectionType())) {
-                QObject *rootItem = m_connectionView->rootObject();
+                QObject *rootItem = m_ui->connectionView->rootObject();
                 QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, settings->id()), Q_ARG(QVariant, selectedConnection->path()));
             }
         }
@@ -201,7 +202,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
     if (selectedConnection && selectedConnection->isValid()) {
         const NetworkManager::ConnectionSettings::Ptr settings = selectedConnection->settings();
         if (UiUtils::isConnectionTypeSupported(settings->connectionType())) {
-            QObject *rootItem = m_connectionView->rootObject();
+            QObject *rootItem = m_ui->connectionView->rootObject();
             QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, settings->id()), Q_ARG(QVariant, selectedConnection->path()));
         }
     } else {
@@ -228,6 +229,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
 KCMNetworkmanagement::~KCMNetworkmanagement()
 {
     delete m_handler;
+    delete m_ui;
 }
 
 QString KCMNetworkmanagement::vpnFileFromArgs(const QVariantList &args) const
@@ -330,7 +332,7 @@ void KCMNetworkmanagement::onConnectionAdded(const QString &connection)
     if (newConnection) {
         NetworkManager::ConnectionSettings::Ptr connectionSettings = newConnection->settings();
         if (connectionSettings && connectionSettings->uuid() == m_createdConnectionUuid) {
-            QObject *rootItem = m_connectionView->rootObject();
+            QObject *rootItem = m_ui->connectionView->rootObject();
             loadConnectionSettings(connectionSettings);
             QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, connectionSettings->id()), Q_ARG(QVariant, newConnection->path()));
             m_createdConnectionUuid.clear();
@@ -521,7 +523,7 @@ void KCMNetworkmanagement::onRequestToChangeConnection(const QString &connection
         }
     }
 
-    QObject *rootItem = m_connectionView->rootObject();
+    QObject *rootItem = m_ui->connectionView->rootObject();
     QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, connectionName), Q_ARG(QVariant, connectionPath));
 }
 
@@ -556,7 +558,7 @@ void KCMNetworkmanagement::addConnection(const NetworkManager::ConnectionSetting
 
 void KCMNetworkmanagement::kcmChanged(bool kcmChanged)
 {
-    m_connectionView->rootContext()->setContextProperty("connectionModified", kcmChanged);
+    m_ui->connectionView->rootContext()->setContextProperty("connectionModified", kcmChanged);
     setNeedsSave(kcmChanged);
 }
 
@@ -576,7 +578,7 @@ void KCMNetworkmanagement::loadConnectionSettings(const NetworkManager::Connecti
                 kcmChanged(valid);
             }
         });
-        m_layout->addWidget(m_tabWidget);
+        m_ui->horizontalLayout->addWidget(m_tabWidget);
     }
 
     kcmChanged(false);
@@ -686,7 +688,7 @@ void KCMNetworkmanagement::resetSelection()
 {
     // Reset selected connections
     m_currentConnectionPath.clear();
-    QObject *rootItem = m_connectionView->rootObject();
+    QObject *rootItem = m_ui->connectionView->rootObject();
     QMetaObject::invokeMethod(rootItem, "deselectConnections");
     if (m_tabWidget) {
         delete m_tabWidget;

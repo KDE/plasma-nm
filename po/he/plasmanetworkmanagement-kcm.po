@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2024-09-01 10:11+0300\n"
+"PO-Revision-Date: 2024-10-27 07:57+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -119,7 +119,7 @@ msgstr "הצגת חיבורים וירטואליים"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "יצירת חיבורים חדשים כחיבורי מערכת"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"

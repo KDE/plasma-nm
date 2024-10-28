@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2024-09-01 19:31+0300\n"
+"PO-Revision-Date: 2024-10-27 14:15+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -122,7 +122,7 @@ msgstr "Sanal bağlantıları göster"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "Yeni bağlantıları sistem bağlantıları olarak oluştur"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"

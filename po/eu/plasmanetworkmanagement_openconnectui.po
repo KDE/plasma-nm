@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-05-31 00:41+0000\n"
-"PO-Revision-Date: 2024-07-05 11:55+0200\n"
+"PO-Revision-Date: 2024-10-27 07:11+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,12 +20,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: openconnectauth.cpp:337
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr "Ezin izan da software tokena hasieratu: %1"
+msgstr "Software-tokena hasieratzea huts egin du: %1"
 
 #: openconnectauth.cpp:390
 #, kde-format

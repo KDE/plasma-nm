@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-09-01 00:40+0000\n"
-"PO-Revision-Date: 2023-12-17 16:39+0530\n"
+"PO-Revision-Date: 2024-10-27 11:54+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,25 +15,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: kcm.cpp:253
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "\"%1\" தனிலிருந்து VPN அமைப்புகளை இறக்குமதி செய்யலாமா?"
 
 #: kcm.cpp:254
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "VPN இணைப்பை இறக்குமதி செய்"
+msgstr "VPN அமைப்புகளை இறக்குமதி செய்"
 
 #: kcm.cpp:255
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "ஏற்றுமதி"
+msgstr "இறக்குமதி"
 
 #: kcm.cpp:262 kcm.cpp:335
 #, kde-format
@@ -41,10 +39,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "VPN இணைப்பை இறக்குமதி செய்வது தோல்வியடைந்த‍து: %1"
 
 #: kcm.cpp:265 kcm.cpp:338
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "இணைந்துள்ளது"
+msgstr "இணைப்பு இறக்குமதி செய்யப்பட்டது"
 
 #: kcm.cpp:407
 #, kde-format
@@ -153,6 +150,10 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"ஹாட்ஸ்பாட்டிற்கான கடவுச்சொல் காலியாக இல்லாத பட்சத்தில் பின்வருபவற்றில் ஏதாவதொன்றாக இருக்க "
+"வேண்டும்: <ul><li>5-இலிருந்து 13 எழுத்துகள் (ஏதேனும்)</li><li>சரியாக 10 அல்லது 26 "
+"பதினறும எண்கள்:<br/>abcdef, ABCDEF அல்லது 0-9 என்று குறிகளை இதற்கு பயன்படுத்தலாம்</"
+"li></ul>"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

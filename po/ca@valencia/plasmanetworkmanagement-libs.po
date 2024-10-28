@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2024-07-05 19:25+0200\n"
+"PO-Revision-Date: 2024-10-27 18:02+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -1716,7 +1716,7 @@ msgid ""
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
 "Negociació de l'enllaç del dispositiu. Si es tria «Manual», es forçaran els "
-"valors de «Velocitat» i «Duplex» sense verificar la compatibilitat del "
+"valors de «Velocitat» i «Dúplex» sense verificar la compatibilitat del "
 "dispositiu. Si no esteu segur, deixeu «Ignora» o seleccioneu «Automàtic»."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
@@ -1845,7 +1845,7 @@ msgid ""
 msgstr ""
 "Opcional.\n"
 "Número del port d'escolta. Es tria aleatòriament si es deixa com a "
-"«Automatic»."
+"«Automàtic»."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:72

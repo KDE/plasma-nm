@@ -93,7 +93,11 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
         }
     }
 
+    KLocalizedContext *l10nContext = new KLocalizedContext(engine);
+    l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
+
     m_connectionView->setMinimumWidth(300);
+    m_connectionView->rootContext()->setContextObject(l10nContext);
     m_connectionView->rootContext()->setContextProperty("alternateBaseColor", widget()->palette().color(QPalette::Active, QPalette::AlternateBase));
     m_connectionView->rootContext()->setContextProperty("backgroundColor", widget()->palette().color(QPalette::Active, QPalette::Window));
     m_connectionView->rootContext()->setContextProperty("baseColor", widget()->palette().color(QPalette::Active, QPalette::Base));

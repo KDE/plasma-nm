@@ -176,7 +176,7 @@ msgstr "活动备份"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format

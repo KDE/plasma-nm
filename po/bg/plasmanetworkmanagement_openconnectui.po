@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2024-06-01 20:22+0200\n"
+"PO-Revision-Date: 2024-10-28 21:56+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #: openconnectauth.cpp:347
 #, kde-format
@@ -83,7 +83,7 @@ msgstr "Съхраняване на пароли"
 #: openconnectauth.ui:116
 #, kde-format
 msgid "Store browser cookies in plain-text"
-msgstr ""
+msgstr "Съхраняване на бисквитките на браузъра в обикновен текст"
 
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
 #: openconnectauth.ui:160

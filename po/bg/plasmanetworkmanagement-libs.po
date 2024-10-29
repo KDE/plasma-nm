@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2024-06-25 17:14+0200\n"
+"PO-Revision-Date: 2024-10-28 21:55+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -177,7 +177,7 @@ msgstr "Active backup"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format

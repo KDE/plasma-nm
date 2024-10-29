@@ -121,7 +121,7 @@ msgstr "显示虚拟连接"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "创建新连接作为系统连接"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"

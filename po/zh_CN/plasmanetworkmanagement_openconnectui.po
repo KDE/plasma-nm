@@ -84,7 +84,7 @@ msgstr "保存密码"
 #: openconnectauth.ui:116
 #, kde-format
 msgid "Store browser cookies in plain-text"
-msgstr ""
+msgstr "存储浏览器 cookie 为纯文本"
 
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
 #: openconnectauth.ui:160

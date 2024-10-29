@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2024-09-11 13:30+0200\n"
+"PO-Revision-Date: 2024-10-28 21:56+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #: kcm.cpp:253
 #, kde-format
@@ -120,7 +120,7 @@ msgstr "Показване на виртуални връзки"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "Създаване на нови връзки като системни връзки"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"

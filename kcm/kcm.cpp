@@ -93,7 +93,7 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
         }
     }
 
-    KLocalizedContext *l10nContext = new KLocalizedContext(engine);
+    KLocalizedContext *l10nContext = new KLocalizedContext(m_connectionView->rootContext());
     l10nContext->setTranslationDomain(QStringLiteral(TRANSLATION_DOMAIN));
 
     m_connectionView->setMinimumWidth(300);

@@ -8,15 +8,16 @@ import QtQuick
 import QtQuick.Layouts 1.2
 
 import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigami as Kirigami
 
 import org.kde.prison 1.0 as Prison
 
 ColumnLayout {
     id: page
 
-    property string ssid
     property alias content: barcode.content
+    property string ssid
+    property string password
 
     spacing: Kirigami.Units.smallSpacing
 
@@ -64,5 +65,17 @@ ColumnLayout {
                 }
             }
         }
+    }
+
+    Kirigami.SelectableLabel {
+        Layout.bottomMargin: page.spacing
+        Layout.alignment: Qt.AlignHCenter
+        Layout.minimumWidth: barcode.height
+        Layout.maximumWidth: barcode.width - page.spacing * 2
+        horizontalAlignment: Text.AlignHCenter
+        textFormat: Text.PlainText
+        font.family: "monospace"
+        text: i18n("Wi-Fi password: %1", page.password)
+        visible: page.password !== ""
     }
 }

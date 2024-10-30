@@ -136,7 +136,7 @@ Q_SIGNALS:
     void hotspotDisabled();
     void hotspotSupportedChanged(bool hotspotSupported);
     void scanningChanged();
-    void wifiCodeReceived(const QString &data, const QString &ssid);
+    void wifiCodeReceived(const QString &data, const QString &ssid, const QString &password = QString());
 
 private:
     QCoro::Task<void> addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject);

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-11-01 00:41+0000\n"
 "PO-Revision-Date: 2024-10-28 21:56+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -17,69 +17,69 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.11.70\n"
 
-#: kcm.cpp:253
+#: kcm.cpp:267
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Импортиране на конфигурация на VPN от \"%1\"?"
 
-#: kcm.cpp:254
+#: kcm.cpp:268
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr "Импортиране на VPN конфигурация"
 
-#: kcm.cpp:255
+#: kcm.cpp:269
 #, kde-format
 msgid "Import"
 msgstr "Импортиране"
 
-#: kcm.cpp:262 kcm.cpp:335
+#: kcm.cpp:276 kcm.cpp:349
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Неуспешно импортиране на VPN връзка: %1"
 
-#: kcm.cpp:265 kcm.cpp:338
+#: kcm.cpp:279 kcm.cpp:352
 #, kde-format
 msgid "Connection imported."
 msgstr "Връзката е импортирана."
 
-#: kcm.cpp:407
+#: kcm.cpp:421
 #, kde-format
 msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
-#: kcm.cpp:479
+#: kcm.cpp:493
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Експортиране на VPN връзка"
 
-#: kcm.cpp:499
+#: kcm.cpp:513
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Искате ли да запазите промените, направени във връзката \"%1\"?"
 
-#: kcm.cpp:500
+#: kcm.cpp:514
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Запазване на промените"
 
-#: kcm.cpp:595
+#: kcm.cpp:609
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Импортиране на VPN връзка"
 
-#: kcm.cpp:597
+#: kcm.cpp:611
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN връзки (%1)"
 
-#: kcm.cpp:600
+#: kcm.cpp:614
 #, kde-format
 msgid "No file was provided"
 msgstr "Не е предоставен файл"
 
-#: kcm.cpp:668
+#: kcm.cpp:682
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Неизвестен тип VPN"

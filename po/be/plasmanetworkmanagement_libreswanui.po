@@ -1,0 +1,74 @@
+# SPDX-FileCopyrightText: 2024 Antikruk <nashtlumach@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2022-05-17 00:46+0000\n"
+"PO-Revision-Date: 2024-10-25 08:20\n"
+"Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
+"Language-Team: Belarusian\n"
+"Language: be_BY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+"X-Generator: Lokalize 24.08.1\n"
+"X-Crowdin-Project: fc57ad16a28d02dea100ceb1c60de14e\n"
+"X-Crowdin-Project-ID: 136\n"
+"X-Crowdin-Language: be\n"
+"X-Crowdin-File: /[antikruk.KDE] main/KDE6/be/messages/plasma-nm/"
+"plasmanetworkmanagement_libreswanui.po\n"
+"X-Crowdin-File-ID: 18081\n"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: libreswan.ui:20
+#, kde-format
+msgid "Gateway:"
+msgstr "Шлюз:"
+
+#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: libreswan.ui:30 libreswanauth.ui:20
+#, kde-format
+msgid "Group name:"
+msgstr "Назва групы:"
+
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: libreswan.ui:40 libreswanauth.ui:40
+#, kde-format
+msgid "User password:"
+msgstr "Пароль карыстальніка:"
+
+#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: libreswan.ui:58 libreswanauth.ui:60
+#, kde-format
+msgid "Group password:"
+msgstr "Пароль групы:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: libreswan.ui:89
+#, kde-format
+msgid "User name:"
+msgstr "Імя карыстальніка:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: libreswan.ui:99
+#, kde-format
+msgid "Phase1 algorithms:"
+msgstr "Алгарытмы фазы 1:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: libreswan.ui:109
+#, kde-format
+msgid "Phase2 algorithms:"
+msgstr "Алгарытмы фазы 2:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: libreswan.ui:119
+#, kde-format
+msgid "Domain:"
+msgstr "Дамен:"

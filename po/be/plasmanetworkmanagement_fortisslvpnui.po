@@ -1,0 +1,147 @@
+# SPDX-FileCopyrightText: 2024 Antikruk <nashtlumach@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2020-10-30 02:41+0100\n"
+"PO-Revision-Date: 2024-10-24 20:20\n"
+"Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
+"Language-Team: Belarusian\n"
+"Language: be_BY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+"X-Generator: Lokalize 24.08.1\n"
+"X-Crowdin-Project: fc57ad16a28d02dea100ceb1c60de14e\n"
+"X-Crowdin-Project-ID: 136\n"
+"X-Crowdin-Language: be\n"
+"X-Crowdin-File: /[antikruk.KDE] main/KDE6/be/messages/plasma-nm/"
+"plasmanetworkmanagement_fortisslvpnui.po\n"
+"X-Crowdin-File-ID: 18075\n"
+
+#. i18n: ectx: property (text), widget (QPushButton, advancedButton)
+#: fortisslvpn.ui:36
+#, kde-format
+msgid "Advanced"
+msgstr "Дадаткова"
+
+#. i18n: ectx: property (title), widget (QGroupBox, generalGroupBox)
+#: fortisslvpn.ui:56
+#, kde-format
+msgid "General"
+msgstr "Асноўныя налады"
+
+#. i18n: ectx: property (text), widget (QLabel, gatewayLabel)
+#: fortisslvpn.ui:64
+#, kde-format
+msgid "Gateway:"
+msgstr "Шлюз:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
+#: fortisslvpn.ui:74
+#, kde-format
+msgid "SSLVPN server IP or name."
+msgstr "IP-адрас або назва SSLVPN-сервера."
+
+#. i18n: ectx: property (title), widget (QGroupBox, authenticationGroupBox)
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: fortisslvpn.ui:86 fortisslvpnadvanced.ui:35
+#, kde-format
+msgid "Authentication"
+msgstr "Аўтэнтыфікацыя"
+
+#. i18n: ectx: property (text), widget (QLabel, usernameLabel)
+#: fortisslvpn.ui:92
+#, kde-format
+msgid "User name:"
+msgstr "Імя карыстальніка:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, username)
+#: fortisslvpn.ui:102
+#, kde-format
+msgid ""
+"Set the name used for authenticating the local system to the peer to <name>."
+msgstr ""
+"Пазначце назву, якая выкарыстоўваецца для аўтэнтыфікацыі лакальнай сістэмы ў "
+"аднарангавым вузле на <name>."
+
+#. i18n: ectx: property (text), widget (QLabel, passwordLabel)
+#: fortisslvpn.ui:109 fortisslvpnauth.ui:26
+#, kde-format
+msgid "Password:"
+msgstr "Пароль:"
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, password)
+#: fortisslvpn.ui:119
+#, kde-format
+msgid "Password passed to SSLVPN when prompted for it."
+msgstr "Пароль перадаецца ў SSLVPN пры запыце."
+
+#. i18n: ectx: property (text), widget (QLabel, caCertLabel)
+#: fortisslvpn.ui:129
+#, kde-format
+msgid "CA Certificate:"
+msgstr "Сертыфікат CA:"
+
+#. i18n: ectx: property (text), widget (QLabel, userCertLabel)
+#: fortisslvpn.ui:142
+#, kde-format
+msgid "User Certificate:"
+msgstr "Сертыфікат карыстальніка:"
+
+#. i18n: ectx: property (text), widget (QLabel, userKeyLabel)
+#: fortisslvpn.ui:155
+#, kde-format
+msgid "User Key:"
+msgstr "Ключ карыстальніка:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, otp)
+#: fortisslvpnadvanced.ui:43
+#, kde-format
+msgid "Use a One-Time Password"
+msgstr "Выкарыстоўваць аднаразовы пароль"
+
+#. i18n: ectx: property (text), widget (QCheckBox, tfa)
+#: fortisslvpnadvanced.ui:50
+#, kde-format
+msgid "2FA"
+msgstr "2FA"
+
+#. i18n: ectx: property (text), widget (QLabel, realmLabel)
+#: fortisslvpnadvanced.ui:68
+#, kde-format
+msgid "Realm:"
+msgstr "Сфера:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: fortisslvpnadvanced.ui:87
+#, kde-format
+msgid "Security"
+msgstr "Бяспека"
+
+#. i18n: ectx: property (text), widget (QLabel, trustedCertLabel)
+#: fortisslvpnadvanced.ui:93
+#, kde-format
+msgid "Trusted certificate:"
+msgstr "Правераны сертыфікат:"
+
+#. i18n: ectx: property (placeholderText), widget (QLineEdit, trustedCert)
+#: fortisslvpnadvanced.ui:106
+#, kde-format
+msgid "0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
+msgstr "0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
+
+#. i18n: ectx: property (text), widget (QLabel, labelOtp)
+#: fortisslvpnauth.ui:61
+#, kde-format
+msgid "One Time Password"
+msgstr "Аднаразовы пароль"
+
+#. i18n: ectx: property (text), widget (QLabel, otpLabel)
+#: fortisslvpnauth.ui:68
+#, kde-format
+msgid "Token:"
+msgstr "Токен:"

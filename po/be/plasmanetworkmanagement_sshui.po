@@ -1,0 +1,181 @@
+# SPDX-FileCopyrightText: 2024 Antikruk <nashtlumach@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-05-31 00:18+0000\n"
+"PO-Revision-Date: 2024-10-28 19:13\n"
+"Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
+"Language-Team: Belarusian\n"
+"Language: be_BY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+"X-Generator: Lokalize 24.08.1\n"
+"X-Crowdin-Project: fc57ad16a28d02dea100ceb1c60de14e\n"
+"X-Crowdin-Project-ID: 136\n"
+"X-Crowdin-Language: be\n"
+"X-Crowdin-File: /[antikruk.KDE] main/KDE6/be/messages/plasma-nm/"
+"plasmanetworkmanagement_sshui.po\n"
+"X-Crowdin-File-ID: 18089\n"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomGatewayPort)
+#: sshadvanced.ui:19
+#, kde-format
+msgid "Use custom gateway port:"
+msgstr "Выкарыстоўваць адвольны порт шлюза:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomTunnelMtu)
+#: sshadvanced.ui:46
+#, kde-format
+msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
+msgstr "Выкарыстоўвайце адвольны тунэль Maximum Transmission Unit (MTU):"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_extraSshOptions)
+#: sshadvanced.ui:70
+#, kde-format
+msgid "Extra SSH options:"
+msgstr "Дадатковыя параметры SSH:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_remoteDeviceNumber)
+#: sshadvanced.ui:88
+#, kde-format
+msgid "Remote device number:"
+msgstr "Нумар адлеглай прылады:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useTapDevice)
+#: sshadvanced.ui:107
+#, kde-format
+msgid "Use a TAP device"
+msgstr "Выкарыстоўваць TAP-прыладу"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_remoteUsername)
+#: sshadvanced.ui:116
+#, kde-format
+msgid "Remote username"
+msgstr "Адлеглае імя карыстальніка"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_doNotReplaceDefaultRoute)
+#: sshadvanced.ui:132
+#, kde-format
+msgid "Do not replace default route"
+msgstr "Не замяняць прадвызначаны маршрут"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SshAuth)
+#: sshauth.ui:14
+#, kde-format
+msgid "SSH VPN"
+msgstr "SSH VPN"
+
+#. i18n: ectx: property (text), widget (QLabel, passwordLabel)
+#: sshauth.ui:32
+#, kde-format
+msgid "Password: "
+msgstr "Пароль: "
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: sshwidget.ui:47
+#, kde-format
+msgid "General"
+msgstr "Асноўныя налады"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
+#: sshwidget.ui:55
+#, kde-format
+msgid "Gateway:"
+msgstr "Шлюз:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: sshwidget.ui:73
+#, kde-format
+msgid "Network Settings"
+msgstr "Налады сеткі"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_remoteIp)
+#. i18n: ectx: property (text), widget (QLabel, lbl_remoteIpv6)
+#: sshwidget.ui:79 sshwidget.ui:134
+#, kde-format
+msgid "Remote IP Address:"
+msgstr "Адлеглы IP-адрас:"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_localIp)
+#. i18n: ectx: property (text), widget (QLabel, lbl_localIpv6)
+#: sshwidget.ui:92 sshwidget.ui:151
+#, kde-format
+msgid "Local IP Address:"
+msgstr "Лакальны IP-адрас:"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_netmask)
+#: sshwidget.ui:105
+#, kde-format
+msgid "Netmask:"
+msgstr "Сеткавая маска:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: sshwidget.ui:121
+#, kde-format
+msgid "IPv6 Network Settings"
+msgstr "Налады сеткі IPv6"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useIpv6)
+#: sshwidget.ui:127
+#, kde-format
+msgid "Use IPv6"
+msgstr "Выкарыстоўваць IPv6"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_netmaskIpv6)
+#: sshwidget.ui:168
+#, kde-format
+msgid "Prefix:"
+msgstr "Прэфікс:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: sshwidget.ui:188
+#, kde-format
+msgid "Authentication"
+msgstr "Аўтэнтыфікацыя"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_password)
+#: sshwidget.ui:204
+#, kde-format
+msgid "Password:"
+msgstr "Пароль:"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_sshKeyFile)
+#: sshwidget.ui:222
+#, kde-format
+msgid "SSH Key File:"
+msgstr "Файл ключа SSH:"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_authType)
+#: sshwidget.ui:238
+#, kde-format
+msgid "Type:"
+msgstr "Тып:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmb_authType)
+#: sshwidget.ui:249
+#, kde-format
+msgid "SSH Agent"
+msgstr "Агент SSH"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmb_authType)
+#: sshwidget.ui:254
+#, kde-format
+msgid "Password"
+msgstr "Пароль"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmb_authType)
+#: sshwidget.ui:259
+#, kde-format
+msgid "Key authentication"
+msgstr "Аўтэнтыфікацыя ключа"
+
+#. i18n: ectx: property (text), widget (QPushButton, btn_advancedOption)
+#: sshwidget.ui:300
+#, kde-format
+msgid "Advanced…"
+msgstr "Дадаткова…"

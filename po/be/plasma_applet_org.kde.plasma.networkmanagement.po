@@ -1,0 +1,226 @@
+# SPDX-FileCopyrightText: 2024 Antikruk <nashtlumach@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-10-23 00:42+0000\n"
+"PO-Revision-Date: 2024-10-17 02:10\n"
+"Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
+"Language-Team: Belarusian\n"
+"Language: be_BY\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || n%10>=5 && n%10<=9 || n"
+"%100>=11 && n%100<=14 ? 2 : 3);\n"
+"X-Generator: Lokalize 24.08.1\n"
+"X-Crowdin-Project: fc57ad16a28d02dea100ceb1c60de14e\n"
+"X-Crowdin-Project-ID: 136\n"
+"X-Crowdin-Language: be\n"
+"X-Crowdin-File: /[antikruk.KDE] main/KDE6/be/messages/plasma-nm/"
+"plasma_applet_org.kde.plasma.networkmanagement.po\n"
+"X-Crowdin-File-ID: 18067\n"
+
+#: contents/ui/ConnectionItem.qml:61
+#, kde-format
+msgid "Connect"
+msgstr "Падлучыцца"
+
+#: contents/ui/ConnectionItem.qml:61
+#, kde-format
+msgid "Disconnect"
+msgstr "Адлучыцца"
+
+#: contents/ui/ConnectionItem.qml:86
+#, kde-format
+msgid "Show Network's QR Code"
+msgstr "Паказаць QR-код сеткі"
+
+#: contents/ui/ConnectionItem.qml:92
+#, kde-format
+msgid "Configure…"
+msgstr "Наладжванне…"
+
+#: contents/ui/ConnectionItem.qml:136
+#, kde-format
+msgid "Speed"
+msgstr "Хуткасць"
+
+#: contents/ui/ConnectionItem.qml:141
+#, kde-format
+msgid "Details"
+msgstr "Падрабязнасці"
+
+#: contents/ui/ConnectionItem.qml:184
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Current download speed is %1 kibibytes per second; current upload speed is "
+"%2 kibibytes per second"
+msgstr ""
+"Бягучая хуткасць спампоўвання - %1 кібібайтаў за секунду; запампоўвання - %2 "
+"кібібайтаў за секунду"
+
+#: contents/ui/ConnectionItem.qml:301
+#, fuzzy, kde-format
+#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+msgid "Connected, ↓ %1/s, ↑ %2/s"
+msgstr "Падлучана, ⬇ %1/с, ⬆ %2/с"
+
+#: contents/ui/ConnectionItem.qml:305
+#, kde-format
+msgid "Connected"
+msgstr "Падлучана"
+
+#: contents/ui/ConnectionListPage.qml:35
+#, kde-format
+msgid "You need to log in to this network"
+msgstr "Вам неабходна ўвайсці ў гэтую сетку"
+
+#: contents/ui/ConnectionListPage.qml:39
+#, kde-format
+msgctxt "@action:button"
+msgid "Log in"
+msgstr "Увайсці"
+
+#: contents/ui/ConnectionListPage.qml:115
+#, kde-format
+msgid "Airplane mode is enabled"
+msgstr "Рэжым палёту ўключаны"
+
+#: contents/ui/ConnectionListPage.qml:119
+#, kde-format
+msgid "Wireless and mobile networks are deactivated"
+msgstr "Бесправадныя і мабільныя сеткі дэактываваныя"
+
+#: contents/ui/ConnectionListPage.qml:121
+#, kde-format
+msgid "Wireless is deactivated"
+msgstr "Бесправадная сетка дэактываваная"
+
+#: contents/ui/ConnectionListPage.qml:124
+#, kde-format
+msgid "Mobile network is deactivated"
+msgstr "Мабільная сетка дэактываваная"
+
+#: contents/ui/ConnectionListPage.qml:127
+#, kde-format
+msgid "No matches"
+msgstr "Няма супадзенняў"
+
+#: contents/ui/ConnectionListPage.qml:129
+#, kde-format
+msgid "No available connections"
+msgstr "Няма даступных злучэнняў"
+
+#: contents/ui/DetailsText.qml:45
+#, kde-format
+msgid "Copy"
+msgstr "Скапіяваць"
+
+#: contents/ui/main.qml:32
+#, kde-format
+msgid "Networks"
+msgstr "Сеткі"
+
+#: contents/ui/main.qml:41
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Middle-click to turn off Airplane Mode"
+msgstr "Каб выключыць рэжым палёту, пстрыкніце сярэдняй кнопкай мышы"
+
+#: contents/ui/main.qml:43
+#, kde-format
+msgctxt "@info:tooltip"
+msgid "Middle-click to turn on Airplane Mode"
+msgstr "Каб уключыць рэжым палёту, пстрыкніце сярэдняй кнопкай мышы"
+
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#, kde-format
+msgid "Enable Wi-Fi"
+msgstr "Уключыць Wi-Fi"
+
+#: contents/ui/main.qml:82
+#, kde-format
+msgid "Enable Mobile Network"
+msgstr "Уключыць мабільную сетку"
+
+#: contents/ui/main.qml:94
+#, kde-format
+msgid "Enable Airplane Mode"
+msgstr "Уключыць рэжым палёту"
+
+#: contents/ui/main.qml:106
+#, kde-format
+msgid "Open Network Login Page…"
+msgstr "Адкрыць старонку ўваходу ў сетку…"
+
+#: contents/ui/main.qml:116
+#, kde-format
+msgid "&Configure Network Connections…"
+msgstr "&Наладжванне сеткавых злучэнняў…"
+
+#: contents/ui/PopupDialog.qml:51
+#, kde-format
+msgctxt "@action:button"
+msgid "Return to Network Connections"
+msgstr "Вярнуцца да сеткавых злучэнняў"
+
+#: contents/ui/ShareNetworkQrCodePage.qml:31
+#, kde-format
+msgid "Scan this QR code with another device to connect to the \"%1\" network."
+msgstr ""
+"Каб падлучыцца да сеткі \"%1\", адскануйце гэты QR-код на іншай прыладзе."
+
+#: contents/ui/Toolbar.qml:122
+#, kde-format
+msgid "Enable mobile network"
+msgstr "Уключыць мабільную сетку"
+
+#: contents/ui/Toolbar.qml:147
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
+msgstr "Адключыць рэжым палёту<nl/><nl/>Можна будзе ўключыць Wi-Fi і Bluetooth"
+
+#: contents/ui/Toolbar.qml:148
+#, kde-kuit-format
+msgctxt "@info"
+msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
+msgstr "Уключыць рэжым палёту<nl/><nl/>Пры гэтым адключыцца Wi-Fi і Bluetooth"
+
+#: contents/ui/Toolbar.qml:159
+#, kde-format
+msgid "Hotspot"
+msgstr "Пункт доступу"
+
+#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:194
+#, kde-format
+msgid "Disable Hotspot"
+msgstr "Адключыць пункт доступу"
+
+#: contents/ui/Toolbar.qml:188 contents/ui/Toolbar.qml:194
+#, kde-format
+msgid "Create Hotspot"
+msgstr "Стварыць пункт доступу"
+
+#: contents/ui/Toolbar.qml:226
+#, kde-format
+msgid "Configure network connections…"
+msgstr "Наладжванне сеткавых злучэнняў…"
+
+#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:111
+#, kde-format
+msgid "/s"
+msgstr "/с"
+
+#: contents/ui/TrafficMonitor.qml:89
+#, kde-format
+msgid "Upload"
+msgstr "Запампаваць"
+
+#: contents/ui/TrafficMonitor.qml:89
+#, kde-format
+msgid "Download"
+msgstr "Спампаваць"

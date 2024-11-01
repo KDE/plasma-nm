@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-09-01 00:40+0000\n"
+"POT-Creation-Date: 2024-11-01 02:31+0000\n"
 "PO-Revision-Date: 2023-11-11 15:35+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -19,72 +19,72 @@ msgstr ""
 "X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: kcm.cpp:253
+#: kcm.cpp:267
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr ""
 
-#: kcm.cpp:254
+#: kcm.cpp:268
 #, fuzzy, kde-format
 #| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr "Importovať pripojenie VPN"
 
-#: kcm.cpp:255
+#: kcm.cpp:269
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Import"
 msgstr "Exportovať"
 
-#: kcm.cpp:262 kcm.cpp:335
+#: kcm.cpp:276 kcm.cpp:349
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Nepodarilo sa importovať pripojenie VPN: %1"
 
-#: kcm.cpp:265 kcm.cpp:338
+#: kcm.cpp:279 kcm.cpp:352
 #, fuzzy, kde-format
 #| msgid "Connected"
 msgid "Connection imported."
 msgstr "Pripojené"
 
-#: kcm.cpp:407
+#: kcm.cpp:421
 #, kde-format
 msgid "my_shared_connection"
 msgstr "moje_zdielane_pripojenie"
 
-#: kcm.cpp:479
+#: kcm.cpp:493
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Exportovať pripojenie VPN"
 
-#: kcm.cpp:499
+#: kcm.cpp:513
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Chcete uložiť zmeny vytvorené v pripojení \"%1\"?"
 
-#: kcm.cpp:500
+#: kcm.cpp:514
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Uloženie zmien"
 
-#: kcm.cpp:595
+#: kcm.cpp:609
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Importovať pripojenie VPN"
 
-#: kcm.cpp:597
+#: kcm.cpp:611
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN pripojenia (%1)"
 
-#: kcm.cpp:600
+#: kcm.cpp:614
 #, kde-format
 msgid "No file was provided"
 msgstr "Nebol poskytnutý žiadny súbor"
 
-#: kcm.cpp:668
+#: kcm.cpp:682
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Neznámy typ VPN"

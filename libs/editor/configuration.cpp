@@ -9,6 +9,7 @@
 #include <KSharedConfig>
 #include <KUser>
 #include <QMutexLocker>
+#include <QRandomGenerator>
 
 static bool propManageVirtualConnectionsInitialized = false;
 static bool propManageVirtualConnections = false;
@@ -129,7 +130,17 @@ QString Configuration::hotspotPassword() const
     KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        return grp.readEntry(QStringLiteral("HotspotPassword"), QString());
+        QString pwd = grp.readEntry(QStringLiteral("HotspotPassword"), QString());
+        if (pwd.isNull()) {
+            // Use a default non empty password for the hotspot
+            // Make it 26 characters long so it works for both WPA and WEP
+            static const int base16 = 16;
+            for (int i = 0; i < 26; ++i) {
+                pwd += QString::number(QRandomGenerator::global()->bounded(base16), base16).toUpper();
+            }
+            grp.writeEntry(QStringLiteral("HotspotPassword"), pwd);
+        }
+        return pwd;
     }
 
     return {};

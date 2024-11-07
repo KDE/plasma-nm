@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2024-06-25 17:14+0200\n"
+"PO-Revision-Date: 2024-11-06 23:58+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -137,7 +137,7 @@ msgstr "Нова връзка (%1)"
 #: editor/connectioneditordialog.cpp:35
 #, kde-format
 msgid "Edit Connection '%1'"
-msgstr "Редактиране на връзката \"%1\""
+msgstr "Редактиране на връзката „%1“"
 
 #: editor/connectioneditortabwidget.cpp:47
 #, kde-format
@@ -213,7 +213,7 @@ msgstr "ARP"
 #: editor/settings/teamwidget.cpp:182
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
-msgstr "Искате ли да премахнете връзка '%1'?"
+msgstr "Искате ли да премахнете връзка „%1“?"
 
 #: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:194
 #: editor/settings/teamwidget.cpp:183
@@ -2866,7 +2866,7 @@ msgstr "Неизползвана"
 #: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
-msgstr "Не е намерена VPN приставка за\"%1\""
+msgstr "Не е намерена VPN приставка за„%1“"
 
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
@@ -3272,7 +3272,7 @@ msgstr "Премахване"
 #: handler.cpp:121
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "Plasma няма поддръжка за \"%1\" VPN връзки."
+msgstr "Plasma няма поддръжка за „%1“ VPN връзки."
 
 #: handler.cpp:124
 #, kde-format
@@ -3282,7 +3282,7 @@ msgstr "Подаване на сигнал за грешка"
 #: handler.cpp:147
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr "NetworkManager няма поддръжка за \"%1\" VPN връзки."
+msgstr "NetworkManager няма поддръжка за „%1“ VPN връзки."
 
 #: handler.cpp:150
 #, kde-format

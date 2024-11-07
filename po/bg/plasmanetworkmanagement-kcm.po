@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-01 02:31+0000\n"
-"PO-Revision-Date: 2024-09-13 21:37+0200\n"
+"PO-Revision-Date: 2024-11-06 23:58+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.07.70\n"
+"X-Generator: Lokalize 24.11.70\n"
 
 #: kcm.cpp:267
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr "Да се импортират ли VPN настройките от \"%1\"?"
+msgstr "Да се импортират ли VPN настройките от „%1“?"
 
 #: kcm.cpp:268
 #, kde-format
@@ -56,7 +56,7 @@ msgstr "Експортиране на VPN връзка"
 #: kcm.cpp:513
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
-msgstr "Искате ли да запазите промените, направени във връзката \"%1\"?"
+msgstr "Искате ли да запазите промените, направени във връзката „%1“?"
 
 #: kcm.cpp:514
 #, kde-format
@@ -197,4 +197,4 @@ msgstr "Премахване на връзка"
 
 #: qml/main.qml:209
 msgid "Do you want to remove the connection '%1'?"
-msgstr "Искате ли да премахнете връзка '%1'?"
+msgstr "Искате ли да премахнете връзка „%1“?"

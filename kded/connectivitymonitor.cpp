@@ -73,9 +73,11 @@ void ConnectivityMonitor::connectivityChanged(NetworkManager::Connectivity conne
 
                 auto logInAction = m_notification->addAction(i18n("Log in"));
                 connect(logInAction, &KNotificationAction::activated, this, [this]() {
-                    auto job = new KIO::OpenUrlJob(QUrl(QStringLiteral("http://networkcheck.kde.org")));
-                    job->setStartupId(m_notification->xdgActivationToken().toUtf8());
-                    job->start();
+                    if (m_notification) {
+                        auto job = new KIO::OpenUrlJob(QUrl(QStringLiteral("http://networkcheck.kde.org")));
+                        job->setStartupId(m_notification->xdgActivationToken().toUtf8());
+                        job->start();
+                    }
                 });
                 m_notification->sendEvent();
             }

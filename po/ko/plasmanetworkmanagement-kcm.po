@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-01 00:41+0000\n"
+"POT-Creation-Date: 2024-11-08 00:42+0000\n"
 "PO-Revision-Date: 2024-02-06 00:21+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,72 +17,72 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 23.08.1\n"
 
-#: kcm.cpp:267
+#: kcm.cpp:269
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr ""
 
-#: kcm.cpp:268
+#: kcm.cpp:270
 #, fuzzy, kde-format
 #| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr "VPN 연결 가져오기"
 
-#: kcm.cpp:269
+#: kcm.cpp:271
 #, fuzzy, kde-format
 #| msgid "Export"
 msgid "Import"
 msgstr "내보내기"
 
-#: kcm.cpp:276 kcm.cpp:349
+#: kcm.cpp:278 kcm.cpp:351
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "VPN 연결을 가져올 수 없음: %1"
 
-#: kcm.cpp:279 kcm.cpp:352
+#: kcm.cpp:281 kcm.cpp:354
 #, fuzzy, kde-format
 #| msgid "Connected"
 msgid "Connection imported."
 msgstr "연결됨"
 
-#: kcm.cpp:421
+#: kcm.cpp:423
 #, kde-format
 msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
-#: kcm.cpp:493
+#: kcm.cpp:495
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "VPN 연결 내보내기"
 
-#: kcm.cpp:513
+#: kcm.cpp:515
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "연결 '%1'의 변경 사항을 저장하시겠습니까?"
 
-#: kcm.cpp:514
+#: kcm.cpp:516
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "변경 사항 저장"
 
-#: kcm.cpp:609
+#: kcm.cpp:611
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "VPN 연결 가져오기"
 
-#: kcm.cpp:611
+#: kcm.cpp:613
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN 연결(%1)"
 
-#: kcm.cpp:614
+#: kcm.cpp:616
 #, kde-format
 msgid "No file was provided"
 msgstr "파일을 지정하지 않았음"
 
-#: kcm.cpp:682
+#: kcm.cpp:684
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "알 수 없는 VPN 형식"

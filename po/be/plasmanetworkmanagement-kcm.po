@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-01 00:41+0000\n"
+"POT-Creation-Date: 2024-11-08 00:42+0000\n"
 "PO-Revision-Date: 2024-10-17 02:10\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -22,69 +22,69 @@ msgstr ""
 "plasmanetworkmanagement-kcm.po\n"
 "X-Crowdin-File-ID: 18069\n"
 
-#: kcm.cpp:267
+#: kcm.cpp:269
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Імпартаваць канфігурацыю VPN з \"%1\"?"
 
-#: kcm.cpp:268
+#: kcm.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr "Імпартаванне канфігурацыі VPN"
 
-#: kcm.cpp:269
+#: kcm.cpp:271
 #, kde-format
 msgid "Import"
 msgstr "Імпартаваць"
 
-#: kcm.cpp:276 kcm.cpp:349
+#: kcm.cpp:278 kcm.cpp:351
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Не ўдалося імпартаваць злучэнне VPN: %1"
 
-#: kcm.cpp:279 kcm.cpp:352
+#: kcm.cpp:281 kcm.cpp:354
 #, kde-format
 msgid "Connection imported."
 msgstr "Злучэнне імпартавана."
 
-#: kcm.cpp:421
+#: kcm.cpp:423
 #, kde-format
 msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
-#: kcm.cpp:493
+#: kcm.cpp:495
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Экспартаванне VPN-злучэння"
 
-#: kcm.cpp:513
+#: kcm.cpp:515
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Хочаце захаваць змены, унесеныя ў злучэнне \"%1\"?"
 
-#: kcm.cpp:514
+#: kcm.cpp:516
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Захаваць змены"
 
-#: kcm.cpp:609
+#: kcm.cpp:611
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Імпартаванне VPN-злучэння"
 
-#: kcm.cpp:611
+#: kcm.cpp:613
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN-злучэнні (%1)"
 
-#: kcm.cpp:614
+#: kcm.cpp:616
 #, kde-format
 msgid "No file was provided"
 msgstr "Файл не быў пададзены"
 
-#: kcm.cpp:682
+#: kcm.cpp:684
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Невядомы тып VPN"

@@ -21,10 +21,6 @@ MouseArea {
     property bool changeBackgroundOnPress: !listItem.checked && !listItem.sectionDelegate
     hoverEnabled: true
 
-    onPressed: if (changeBackgroundOnPress) background.prefix = "pressed"
-    onReleased: if (changeBackgroundOnPress) background.prefix = "normal"
-    onCanceled: if (changeBackgroundOnPress) background.prefix = "normal"
-
     Rectangle {
         id: background
 

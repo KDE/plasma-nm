@@ -3,21 +3,21 @@
 #
 # Balázs Úr <urbalazs@gmail.com>, 2013, 2014.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2014, 2019, 2020.
-# SPDX-FileCopyrightText: 2021, 2023 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2023, 2024 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-23 00:42+0000\n"
-"PO-Revision-Date: 2023-12-17 22:12+0100\n"
-"Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
+"PO-Revision-Date: 2024-11-13 22:25+0100\n"
+"Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.3\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: contents/ui/ConnectionItem.qml:61
 #, kde-format
@@ -60,10 +60,9 @@ msgstr ""
 "feltöltési sebesség %2 kibibájt másodpercenként"
 
 #: contents/ui/ConnectionItem.qml:301
-#, fuzzy, kde-format
-#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr "Kapcsolódva, ⬇ %1/s, ⬆ %2/s"
+msgstr "Kapcsolódva, ↓ %1/s, ↑ %2/s"
 
 #: contents/ui/ConnectionItem.qml:305
 #, kde-format

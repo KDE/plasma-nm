@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-23 00:42+0000\n"
-"PO-Revision-Date: 2024-06-04 11:33+0300\n"
+"PO-Revision-Date: 2024-11-17 17:18+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -71,10 +71,9 @@ msgid ""
 msgstr "Текущая скорость приёма: %1 КиБ/с, скорость отдачи: %2 КиБ/с"
 
 #: contents/ui/ConnectionItem.qml:301
-#, fuzzy, kde-format
-#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr "Подключено, ⬇ %1/с, ⬆ %2/с"
+msgstr "Подключено, ↓ %1/с, ↑ %2/с"
 
 #: contents/ui/ConnectionItem.qml:305
 #, kde-format

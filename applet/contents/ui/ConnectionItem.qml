@@ -109,7 +109,9 @@ PlasmaExtras.ExpandableListItem {
                     left: parent.left
                     right: parent.right
                 }
-                height: visible ? implicitHeight : 0
+                // Be very careful when changing this as Qt (6.8) liked to bug out the tab highlight when the height is initially 0
+                // https://bugs.kde.org/show_bug.cgi?id=495948
+                height: implicitHeight
                 implicitHeight: contentHeight
                 position: T.TabBar.Header
                 visible: showSpeed
@@ -140,6 +142,10 @@ PlasmaExtras.ExpandableListItem {
                     if (!showSpeed || Plasmoid.configuration.currentDetailsTab === "details") {
                         currentIndex = 1;
                     }
+
+                    // Workaround for Qt bugging out the highlight when doing this as an expression on the property directly
+                    // https://bugs.kde.org/show_bug.cgi?id=495948
+                    height = Qt.binding(function() { return visible ? implicitHeight : 0 })
                 }
             }
 

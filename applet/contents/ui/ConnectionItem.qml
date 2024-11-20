@@ -125,12 +125,6 @@ PlasmaExtras.ExpandableListItem {
                     }
                 }
 
-                onVisibleChanged: {
-                    if (!visible) {
-                        currentIndex = 1;
-                    }
-                }
-
                 PlasmaComponents3.TabButton {
                     id: speedTabButton
                     text: i18n("Speed")

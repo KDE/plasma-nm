@@ -46,7 +46,6 @@ void ConnectivityMonitor::connectivityChanged(NetworkManager::Connectivity conne
 {
     if (m_notification && m_notification->property("nm_connectivity") != connectivity) {
         m_notification->close();
-        m_notification = nullptr;
     }
 
     if (connectivity == NetworkManager::Limited) {

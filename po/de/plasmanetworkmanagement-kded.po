@@ -569,7 +569,7 @@ msgstr "%1 authentifizieren"
 #: passworddialog.cpp:98
 #, kde-format
 msgid "Provide the password for the wireless network '%1':"
-msgstr "Bitte geben Sie das Passwort für das Funknetzwerk „%1“ ein:"
+msgstr "Bitte geben Sie das Passwort für das drahtlose Netzwerk „%1“ ein:"
 
 #: passworddialog.cpp:100
 #, kde-format

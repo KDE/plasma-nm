@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-08 00:41+0000\n"
+"POT-Creation-Date: 2024-11-26 00:41+0000\n"
 "PO-Revision-Date: 2024-08-08 06:33+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -22,27 +22,27 @@ msgstr ""
 msgid "Only 'dun' and 'nap' services are supported."
 msgstr "Bara tjänsterna 'dun' och 'nap' stöds."
 
-#: connectivitymonitor.cpp:63
+#: connectivitymonitor.cpp:62
 #, kde-format
 msgid "Network authentication"
 msgstr "Behörighetskontroll för nätverk"
 
-#: connectivitymonitor.cpp:72
+#: connectivitymonitor.cpp:71
 #, kde-format
 msgid "You need to log into this network"
 msgstr "Du måste logga in på nätverket"
 
-#: connectivitymonitor.cpp:74
+#: connectivitymonitor.cpp:73
 #, kde-format
 msgid "Log in"
 msgstr "Logga in"
 
-#: connectivitymonitor.cpp:94
+#: connectivitymonitor.cpp:93
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "Begränsad anslutning"
 
-#: connectivitymonitor.cpp:95
+#: connectivitymonitor.cpp:94
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "

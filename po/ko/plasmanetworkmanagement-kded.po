@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-08 00:41+0000\n"
+"POT-Creation-Date: 2024-11-26 00:41+0000\n"
 "PO-Revision-Date: 2024-08-21 00:22+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -22,27 +22,27 @@ msgstr ""
 msgid "Only 'dun' and 'nap' services are supported."
 msgstr "'dun' 및 'nap' 서비스만 지원합니다."
 
-#: connectivitymonitor.cpp:63
+#: connectivitymonitor.cpp:62
 #, kde-format
 msgid "Network authentication"
 msgstr "네트워크 인증"
 
-#: connectivitymonitor.cpp:72
+#: connectivitymonitor.cpp:71
 #, kde-format
 msgid "You need to log into this network"
 msgstr "이 네트워크를 사용하려면 로그인해야 합니다"
 
-#: connectivitymonitor.cpp:74
+#: connectivitymonitor.cpp:73
 #, kde-format
 msgid "Log in"
 msgstr "로그인"
 
-#: connectivitymonitor.cpp:94
+#: connectivitymonitor.cpp:93
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "제한된 연결"
 
-#: connectivitymonitor.cpp:95
+#: connectivitymonitor.cpp:94
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "

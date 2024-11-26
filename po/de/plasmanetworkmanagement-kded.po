@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-08-08 00:41+0000\n"
-"PO-Revision-Date: 2023-12-21 18:30+0100\n"
-"Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
+"POT-Creation-Date: 2024-11-26 00:41+0000\n"
+"PO-Revision-Date: 2024-10-13 15:59+0200\n"
+"Last-Translator: Flori G <Renner03@protonmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -24,27 +24,27 @@ msgstr ""
 msgid "Only 'dun' and 'nap' services are supported."
 msgstr "Nur „dun“- und „nap“-Dienste werden unterstützt."
 
-#: connectivitymonitor.cpp:63
+#: connectivitymonitor.cpp:62
 #, kde-format
 msgid "Network authentication"
 msgstr "Netzwerk-Authentifizierung"
 
-#: connectivitymonitor.cpp:72
+#: connectivitymonitor.cpp:71
 #, kde-format
 msgid "You need to log into this network"
 msgstr "Sie müssen sich in diesem Netzwerk anmelden"
 
-#: connectivitymonitor.cpp:74
+#: connectivitymonitor.cpp:73
 #, kde-format
 msgid "Log in"
 msgstr "Anmelden"
 
-#: connectivitymonitor.cpp:94
+#: connectivitymonitor.cpp:93
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "Eingeschränkte Verbindung"
 
-#: connectivitymonitor.cpp:95
+#: connectivitymonitor.cpp:94
 #, fuzzy, kde-format
 #| msgid ""
 #| "This device appears to be connected to a network but is unable to reach "
@@ -573,12 +573,13 @@ msgstr "Es wurde nach keinen geheimen Daten gefragt"
 #, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
 msgstr ""
-"Das Passwort für das Funknetzwerk „%1“ ist falsch. Versuchen Sie es nochmal."
+"Das Passwort für das drahtlose Netzwerk „%1“ ist falsch. Versuchen Sie es "
+"erneut."
 
 #: passworddialog.cpp:101
 #, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "Bitte geben Sie das Passwort für das Funknetzwerk „%1“ ein:"
+msgstr "Bitte geben Sie das Passwort für das drahtlose Netzwerk „%1“ ein:"
 
 #: passworddialog.cpp:105
 #, kde-format

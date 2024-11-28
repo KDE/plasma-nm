@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:42+0000\n"
+"POT-Creation-Date: 2024-11-28 00:41+0000\n"
 "PO-Revision-Date: 2023-07-25 01:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 22.12.3\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Connect"
 msgstr "연결"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Disconnect"
 msgstr "연결 해제"
 
-#: contents/ui/ConnectionItem.qml:86
+#: contents/ui/ConnectionItem.qml:81
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "네트워크의 QR 코드 표시"
 
-#: contents/ui/ConnectionItem.qml:92
+#: contents/ui/ConnectionItem.qml:87
 #, kde-format
 msgid "Configure…"
 msgstr "설정…"
 
-#: contents/ui/ConnectionItem.qml:136
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Speed"
 msgstr "속도"
 
-#: contents/ui/ConnectionItem.qml:141
+#: contents/ui/ConnectionItem.qml:138
 #, kde-format
 msgid "Details"
 msgstr "자세히"
 
-#: contents/ui/ConnectionItem.qml:184
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55,13 +55,13 @@ msgid ""
 "%2 kibibytes per second"
 msgstr "현재 다운로드 속도: %1 KiB/초, 현재 업로드 속도: %2 KiB/초"
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "연결됨, ⬇ %1/초, ⬆ %2/초"
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, kde-format
 msgid "Connected"
 msgstr "연결됨"

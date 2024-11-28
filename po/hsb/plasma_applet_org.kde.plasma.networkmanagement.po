@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:42+0000\n"
+"POT-Creation-Date: 2024-11-28 00:41+0000\n"
 "PO-Revision-Date: 2021-11-19 10:47+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -17,38 +17,38 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3;\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Connect"
 msgstr "Zwjazać"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Disconnect"
 msgstr "Wotwjazać"
 
-#: contents/ui/ConnectionItem.qml:86
+#: contents/ui/ConnectionItem.qml:81
 #, fuzzy, kde-format
 #| msgid "Show network's QR code"
 msgid "Show Network's QR Code"
 msgstr "QR-kod syće pokazać"
 
-#: contents/ui/ConnectionItem.qml:92
+#: contents/ui/ConnectionItem.qml:87
 #, kde-format
 msgid "Configure…"
 msgstr "Připrawić…"
 
-#: contents/ui/ConnectionItem.qml:136
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Speed"
 msgstr "Spěšnosć"
 
-#: contents/ui/ConnectionItem.qml:141
+#: contents/ui/ConnectionItem.qml:138
 #, kde-format
 msgid "Details"
 msgstr "Nadrobnosće"
 
-#: contents/ui/ConnectionItem.qml:184
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56,13 +56,13 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Zwjazany, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, kde-format
 msgid "Connected"
 msgstr "Zwjazany"

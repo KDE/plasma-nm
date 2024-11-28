@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:42+0000\n"
+"POT-Creation-Date: 2024-11-28 00:41+0000\n"
 "PO-Revision-Date: 2023-11-11 15:36+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -18,37 +18,37 @@ msgstr ""
 "X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Connect"
 msgstr "Pripojiť"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Disconnect"
 msgstr "Odpojiť"
 
-#: contents/ui/ConnectionItem.qml:86
+#: contents/ui/ConnectionItem.qml:81
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Zobraziť QR kód siete"
 
-#: contents/ui/ConnectionItem.qml:92
+#: contents/ui/ConnectionItem.qml:87
 #, kde-format
 msgid "Configure…"
 msgstr "Nastaviť..."
 
-#: contents/ui/ConnectionItem.qml:136
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Speed"
 msgstr "Rýchlosť"
 
-#: contents/ui/ConnectionItem.qml:141
+#: contents/ui/ConnectionItem.qml:138
 #, kde-format
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: contents/ui/ConnectionItem.qml:184
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58,13 +58,13 @@ msgstr ""
 "Aktuálna rýchlosť sťahovania je %1 kibibajtov za sekundu; aktuálna rýchlosť "
 "odosielania je %2 kibibajtov za sekundu"
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Pripojené, ⬇ %1, ⬆ %2/s"
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, kde-format
 msgid "Connected"
 msgstr "Pripojené"

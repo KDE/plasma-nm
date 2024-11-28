@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:42+0000\n"
+"POT-Creation-Date: 2024-11-28 00:41+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,37 +18,37 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Connect"
 msgstr "Повежи се"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Disconnect"
 msgstr "Прекини везу"
 
-#: contents/ui/ConnectionItem.qml:86
+#: contents/ui/ConnectionItem.qml:81
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:92
+#: contents/ui/ConnectionItem.qml:87
 #, kde-format
 msgid "Configure…"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:136
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Speed"
 msgstr "Брзина"
 
-#: contents/ui/ConnectionItem.qml:141
+#: contents/ui/ConnectionItem.qml:138
 #, kde-format
 msgid "Details"
 msgstr "Детаљи"
 
-#: contents/ui/ConnectionItem.qml:184
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56,12 +56,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, kde-format
 msgid "Connected"
 msgstr "Повезан"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:42+0000\n"
+"POT-Creation-Date: 2024-11-28 00:41+0000\n"
 "PO-Revision-Date: 2024-10-21 11:22+0200\n"
 "Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -18,37 +18,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Connect"
 msgstr "Forbind"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Disconnect"
 msgstr "Afbryd forbindelse"
 
-#: contents/ui/ConnectionItem.qml:86
+#: contents/ui/ConnectionItem.qml:81
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Vis netværkets QR-kode"
 
-#: contents/ui/ConnectionItem.qml:92
+#: contents/ui/ConnectionItem.qml:87
 #, kde-format
 msgid "Configure…"
 msgstr "Indstil…"
 
-#: contents/ui/ConnectionItem.qml:136
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Speed"
 msgstr "Hastighed"
 
-#: contents/ui/ConnectionItem.qml:141
+#: contents/ui/ConnectionItem.qml:138
 #, kde-format
 msgid "Details"
 msgstr "Detaljer"
 
-#: contents/ui/ConnectionItem.qml:184
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58,12 +58,12 @@ msgstr ""
 "Nuværende downloadhastighed er %1 kibibytes per sekund; nuværende "
 "uploadhastighed er %2 kibibytes per sekund"
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Forbundet, ↓ %1/s, ↑ %2/s"
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, kde-format
 msgid "Connected"
 msgstr "Forbundet"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-23 00:42+0000\n"
+"POT-Creation-Date: 2024-11-28 00:41+0000\n"
 "PO-Revision-Date: 2010-12-17 15:28+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -18,41 +18,41 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 1.1\n"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, fuzzy, kde-format
 #| msgctxt "network interface connected state label"
 #| msgid "Connected"
 msgid "Connect"
 msgstr "เชื่อมต่อแล้ว"
 
-#: contents/ui/ConnectionItem.qml:61
+#: contents/ui/ConnectionItem.qml:56
 #, fuzzy, kde-format
 msgid "Disconnect"
 msgstr "เชื่อมต่อแล้ว"
 
-#: contents/ui/ConnectionItem.qml:86
+#: contents/ui/ConnectionItem.qml:81
 #, fuzzy, kde-format
 #| msgid "Show network interfaces using:"
 msgid "Show Network's QR Code"
 msgstr "แสดงอินเทอร์เฟซเครือข่ายที่ใช้:"
 
-#: contents/ui/ConnectionItem.qml:92
+#: contents/ui/ConnectionItem.qml:87
 #, fuzzy, kde-format
 #| msgid "Confirm Delete"
 msgid "Configure…"
 msgstr "ยืนยันการลบ"
 
-#: contents/ui/ConnectionItem.qml:136
+#: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Speed"
 msgstr "ความเร็ว"
 
-#: contents/ui/ConnectionItem.qml:141
+#: contents/ui/ConnectionItem.qml:138
 #, kde-format
 msgid "Details"
 msgstr "รายละเอียด"
 
-#: contents/ui/ConnectionItem.qml:184
+#: contents/ui/ConnectionItem.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -60,12 +60,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:301
+#: contents/ui/ConnectionItem.qml:302
 #, fuzzy, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "เชื่อมต่อไปยัง %1 แล้ว"
 
-#: contents/ui/ConnectionItem.qml:305
+#: contents/ui/ConnectionItem.qml:306
 #, fuzzy, kde-format
 msgid "Connected"
 msgstr "เชื่อมต่อแล้ว"

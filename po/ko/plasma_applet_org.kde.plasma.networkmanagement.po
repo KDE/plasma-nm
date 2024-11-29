@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Shinjo Park <kde@peremen.name>, 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
 # JungHee Lee <daemu72@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-28 00:41+0000\n"
-"PO-Revision-Date: 2023-07-25 01:14+0200\n"
+"PO-Revision-Date: 2024-11-29 00:08+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: contents/ui/ConnectionItem.qml:56
 #, kde-format
@@ -56,10 +56,9 @@ msgid ""
 msgstr "현재 다운로드 속도: %1 KiB/초, 현재 업로드 속도: %2 KiB/초"
 
 #: contents/ui/ConnectionItem.qml:302
-#, fuzzy, kde-format
-#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr "연결됨, ⬇ %1/초, ⬆ %2/초"
+msgstr "연결됨, ↓ %1/초, ↑ %2/초"
 
 #: contents/ui/ConnectionItem.qml:306
 #, kde-format

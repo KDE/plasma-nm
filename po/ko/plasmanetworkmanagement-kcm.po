@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-08 00:42+0000\n"
-"PO-Revision-Date: 2024-02-06 00:21+0100\n"
+"PO-Revision-Date: 2024-11-29 00:09+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,25 +15,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: kcm.cpp:269
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "\"%1\"에서 VPN 설정을 가져오시겠습니까?"
 
 #: kcm.cpp:270
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "VPN 연결 가져오기"
+msgstr "VPN 설정 가져오기"
 
 #: kcm.cpp:271
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "내보내기"
+msgstr "가져오기"
 
 #: kcm.cpp:278 kcm.cpp:351
 #, kde-format
@@ -41,10 +39,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "VPN 연결을 가져올 수 없음: %1"
 
 #: kcm.cpp:281 kcm.cpp:354
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "연결됨"
+msgstr "연결을 가져왔습니다."
 
 #: kcm.cpp:423
 #, kde-format
@@ -123,7 +120,7 @@ msgstr "가상 연결 표시"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "새 연결을 시스템 연결로 만들기"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"

@@ -4,13 +4,13 @@
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2017, 2019, 2021, 2023.
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2019, 2020.
-# SPDX-FileCopyrightText: 2023 Geraldo Simiao <geraldosimiao@fedoraproject.org>
+# SPDX-FileCopyrightText: 2023, 2024 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-08 00:42+0000\n"
-"PO-Revision-Date: 2023-10-28 00:37-0300\n"
+"PO-Revision-Date: 2024-11-29 00:19-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -18,25 +18,23 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 23.08.1\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: kcm.cpp:269
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "Importar a configuração da VPN de \"%1\"?"
 
 #: kcm.cpp:270
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "Importar conexão VPN"
+msgstr "Importar configuração da VPN"
 
 #: kcm.cpp:271
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "Exportar"
+msgstr "Importar"
 
 #: kcm.cpp:278 kcm.cpp:351
 #, kde-format
@@ -44,10 +42,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "Falha ao importar a conexão VPN: %1"
 
 #: kcm.cpp:281 kcm.cpp:354
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "Conectado"
+msgstr "Conexão importada."
 
 #: kcm.cpp:423
 #, kde-format

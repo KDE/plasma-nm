@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2022, 2024 Lasse Liehu <lasse.liehu@gmail.com>
-# Tommi Nieminen <translator@legisign.org>, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024.
+# SPDX-FileCopyrightText: 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 # SPDX-FileCopyrightText: 2024 Kimmo Kujansuu <mrkujansuu@gmail.com>
 #
 #
@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2024-03-01 22:43+0200\n"
-"Last-Translator: Lasse Liehu <lasse.liehu@iki.fi>\n"
+"PO-Revision-Date: 2024-11-07 17:19+0200\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
 "MIME-Version: 1.0\n"
@@ -811,13 +811,7 @@ msgstr "Yhdistä automaattisesti etusijalla"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. An negative number can be used "
-#| "to indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -825,10 +819,10 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
-"Jos yhdistäminen on asetettu automaattiseksi, suositaan korkeamman etusijan "
-"yhteyksiä. Oletusarvo on 0.\n"
-"Isompi luku tarkoittaa korkeampaa etusijaisuutta. Negatiivisella luvulla voi "
-"osoittaa oletusarvoa pienempää etusijaisuutta.\n"
+"Jos yhteys on asetettu automaattiseksi, suuremman etusijan yhteyksiä "
+"suositaan. Oletusarvo on 0.\n"
+"Suurempi luku tarkoittaa suurempaa etusijaisuutta. Negatiivisella luvulla "
+"voi osoittaa oletusarvoa pienempää etusijaisuutta.\n"
 "           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
@@ -1569,7 +1563,7 @@ msgstr "192-bittinen WPA3 Enterprise"
 #: editor/settings/ui/wifisecurity.ui:73
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:81
@@ -1812,12 +1806,13 @@ msgstr "Liitäntä"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, fuzzy, kde-format
-#| msgid "VLAN interface name:"
+#, kde-format
 msgid ""
 "Required.\n"
 "Network interface name."
-msgstr "VLAN-liitännän nimi:"
+msgstr ""
+"Vaaditaan.\n"
+"Verkkoliitännän nimi."
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -2141,7 +2136,7 @@ msgstr "Mobiililaajakaista"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Silmukka"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2182,7 +2177,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Silmukka"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2225,10 +2220,9 @@ msgid "Bridge (%1)"
 msgstr "Silta (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Kiinteä yhteys (%1)"
+msgstr "Silmukkaliitäntä (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format
@@ -2781,7 +2775,7 @@ msgstr "WPA3-EAP-SUITE-B-192"
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format

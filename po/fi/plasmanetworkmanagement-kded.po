@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Lasse Liehu <lasse.liehu@gmail.com>, 2013, 2014, 2015, 2016.
-# Tommi Nieminen <translator@legisign.org>, 2016, 2017, 2019, 2020, 2023, 2024.
+# SPDX-FileCopyrightText: 2016, 2017, 2019, 2020, 2023, 2024 Tommi Nieminen <translator@legisign.org>
 #
 #
 msgid ""
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-26 02:31+0000\n"
-"PO-Revision-Date: 2024-01-29 21:58+0200\n"
+"PO-Revision-Date: 2024-10-18 12:00+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -45,14 +45,12 @@ msgid "Limited Connectivity"
 msgstr "Rajallinen yhteys"
 
 #: connectivitymonitor.cpp:94
-#, fuzzy, kde-format
-#| msgid ""
-#| "This device appears to be connected to a network but is unable to reach "
-#| "the internet."
+#, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."
-msgstr "Laite vaikuttaisi olevan verkkoyhteydessä muttei tavoita internetiä."
+msgstr ""
+"Laitteella vaikuttaisi olevan verkkoyhteys, mutta se ei tavoita internetiä."
 
 #: modemmonitor.cpp:182
 #, kde-format

@@ -10,26 +10,26 @@ msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-28 00:41+0000\n"
-"PO-Revision-Date: 2024-04-24 16:47+0300\n"
+"PO-Revision-Date: 2024-12-02 18:39+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 24.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
 
 #: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Connect"
-msgstr "Pieslēgties"
+msgstr "Savienoties"
 
 #: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Disconnect"
-msgstr "Atslēgties"
+msgstr "Atvienoties"
 
 #: contents/ui/ConnectionItem.qml:81
 #, kde-format
@@ -62,10 +62,9 @@ msgstr ""
 "augšupielādes ātrums ir %2 kibibaiti sekundē"
 
 #: contents/ui/ConnectionItem.qml:302
-#, fuzzy, kde-format
-#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr "Savienots, ⬇ %1/s, ⬆ %2/s"
+msgstr "Savienots, ↓ %1/s, ↑ %2/s"
 
 #: contents/ui/ConnectionItem.qml:306
 #, kde-format

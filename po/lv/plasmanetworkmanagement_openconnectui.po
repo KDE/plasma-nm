@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2024-08-29 20:31+0300\n"
+"PO-Revision-Date: 2024-12-02 18:40+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,12 +16,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 24.08.3\n"
 
 #: openconnectauth.cpp:347
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr "Neizdevās inicializēt programmatūras marķieri: %1"
+msgstr "Neizdevās inicializēt programmatūras žetonu: %1"
 
 #: openconnectauth.cpp:400
 #, kde-format
@@ -84,7 +84,7 @@ msgstr "Uzglabāt paroles"
 #: openconnectauth.ui:116
 #, kde-format
 msgid "Store browser cookies in plain-text"
-msgstr ""
+msgstr "Pārlūka sīkdatnes glabāt kā vienkāršu tekstu"
 
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
 #: openconnectauth.ui:160
@@ -309,31 +309,31 @@ msgstr "Neļaut lietotājam manuāli piekrist nederīgiem sertifikātiem"
 #: openconnectprop.ui:351
 #, kde-format
 msgid "Token Authentication"
-msgstr "Autentifikācija ar marķieri"
+msgstr "Autentifikācija ar žetonu"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenConnectToken)
 #: openconnecttoken.ui:14
 #, kde-format
 msgid "OpenConnect OTP Tokens"
-msgstr "„OpenConnect“ OTP marķieri"
+msgstr "„OpenConnect“ OTP žetoni"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbToken)
 #: openconnecttoken.ui:20
 #, kde-format
 msgid "Software Token Authentication"
-msgstr "Autentifikācija ar programmatūras marķieri"
+msgstr "Autentifikācija ar programmatūras žetonu"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnecttoken.ui:26
 #, kde-format
 msgid "Token Mode:"
-msgstr "Marķiera režīms:"
+msgstr "Žetona režīms:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnecttoken.ui:43
 #, kde-format
 msgid "Token Secret:"
-msgstr "Marķiera noslēpums:"
+msgstr "Žetona noslēpums:"
 
 #: openconnectwebauthdialog.cpp:111
 #, kde-format

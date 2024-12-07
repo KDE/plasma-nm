@@ -64,6 +64,7 @@ NetworkStatus::NetworkStatus(QObject *parent)
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityChanged, this, &NetworkStatus::connectivityChanged);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::statusChanged, this, &NetworkStatus::statusChanged);
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::activeConnectionsChanged, this, QOverload<>::of(&NetworkStatus::activeConnectionsChanged));
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::connectivityCheckUriChanged, this, &NetworkStatus::networkCheckUrlChanged);
 
     activeConnectionsChanged();
     statusChanged(NetworkManager::status());
@@ -83,7 +84,7 @@ NetworkStatus::~NetworkStatus() = default;
 
 QUrl NetworkStatus::networkCheckUrl()
 {
-    return QUrl(QStringLiteral("http://networkcheck.kde.org/"));
+    return QUrl(NetworkManager::connectivityCheckUri());
 }
 
 QString NetworkStatus::activeConnections() const

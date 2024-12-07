@@ -27,7 +27,7 @@ class NetworkStatus : public QObject
     /**
      * Returns the KDE portal network check website URL
      */
-    Q_PROPERTY(QUrl networkCheckUrl READ networkCheckUrl CONSTANT)
+    Q_PROPERTY(QUrl networkCheckUrl READ networkCheckUrl NOTIFY networkCheckUrlChanged)
 
     /**
      * Returns the network connectivity state
@@ -69,6 +69,7 @@ private Q_SLOTS:
 Q_SIGNALS:
     void activeConnectionsChanged(const QString &activeConnections);
     void connectivityChanged(NetworkManager::Connectivity connectivity);
+    void networkCheckUrlChanged();
 
 private:
     QString m_activeConnections;

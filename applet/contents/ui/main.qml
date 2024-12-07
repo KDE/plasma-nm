@@ -107,7 +107,7 @@ PlasmoidItem {
             icon.name: "network-flightmode-on"
             priority: PlasmaCore.Action.LowPriority
             visible: networkStatus.connectivity === NMQt.NetworkManager.Portal
-            onTriggered: Qt.openUrlExternally("http://networkcheck.kde.org")
+            onTriggered: Qt.openUrlExternally(networkStatus.networkCheckUrl)
         }
     ]
 

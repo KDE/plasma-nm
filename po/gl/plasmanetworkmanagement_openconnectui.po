@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-14 00:48+0000\n"
-"PO-Revision-Date: 2023-07-29 09:30+0200\n"
+"PO-Revision-Date: 2024-12-08 15:45+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -21,7 +21,7 @@ msgstr ""
 #: openconnectauth.cpp:304
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr "Non puido inicializarse o código temporal de software: %1"
+msgstr "Non puido inicializarse o código lóxico temporal: %1"
 
 #: openconnectauth.cpp:357
 #, kde-format
@@ -310,7 +310,7 @@ msgstr "Códigos temporais de OTP de OpenConnect"
 #: openconnecttoken.ui:20
 #, kde-format
 msgid "Software Token Authentication"
-msgstr "Autenticación mediante código temporal de software"
+msgstr "Autenticación mediante código lóxico temporal"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnecttoken.ui:26

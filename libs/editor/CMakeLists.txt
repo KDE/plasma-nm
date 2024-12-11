@@ -1,6 +1,6 @@
 set(plasmanm_editor_SRCS
-    configuration.cpp
-    uiutils.cpp
+    configuration.cpp configuration.h
+    uiutils.cpp uiutils.h
     connectioneditorbase.cpp
     connectioneditorbase.h
     connectioneditordialog.cpp

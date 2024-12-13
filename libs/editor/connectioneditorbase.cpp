@@ -200,7 +200,7 @@ void ConnectionEditorBase::initialize()
 
     // General configuration common to all connection types
     auto connectionWidget = new ConnectionWidget(m_connection);
-    addConnectionWidget(connectionWidget, i18nc("General", "General configuration"));
+    addConnectionWidget(connectionWidget, i18nc("@title:tab General configuration", "General"));
     connect(connectionWidget, &ConnectionWidget::allUsersChanged, this, &ConnectionEditorBase::onAllUsersChanged);
 
     // Add the rest of widgets

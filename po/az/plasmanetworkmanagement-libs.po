@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2023-02-19 14:18+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -19,9 +19,9 @@ msgstr ""
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Əsas tənzimləmələr"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3817,6 +3817,10 @@ msgstr "NetworkManager 0.9.8 tələb olunur, tapıldı %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Naməlum"
+
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Əsas tənzimləmələr"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "

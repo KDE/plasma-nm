@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-10-27 18:02+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -23,9 +23,9 @@ msgstr ""
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Configuració general"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3819,3 +3819,7 @@ msgstr "Es requerix NetworkManager 0.9.8, però s'ha trobat %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconeguda"
+
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Configuració general"

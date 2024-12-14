@@ -1,0 +1,175 @@
+# Sanskrit translations for plasma-nm package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-05-31 00:18+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomGatewayPort)
+#: sshadvanced.ui:19
+#, kde-format
+msgid "Use custom gateway port:"
+msgstr "कस्टम् गेटवे पोर्ट् इत्यस्य उपयोगं कुर्वन्तु:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomTunnelMtu)
+#: sshadvanced.ui:46
+#, kde-format
+msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
+msgstr "कस्टम सुरङ्ग अधिकतम संचरण इकाई (MTU) इत्यस्य उपयोगं कुर्वन्तु:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_extraSshOptions)
+#: sshadvanced.ui:70
+#, kde-format
+msgid "Extra SSH options:"
+msgstr "अतिरिक्त SSH विकल्पाः : १."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_remoteDeviceNumber)
+#: sshadvanced.ui:88
+#, kde-format
+msgid "Remote device number:"
+msgstr "दूरस्थयन्त्रसङ्ख्याः १."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useTapDevice)
+#: sshadvanced.ui:107
+#, kde-format
+msgid "Use a TAP device"
+msgstr "TAP उपकरणस्य उपयोगं कुर्वन्तु"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_remoteUsername)
+#: sshadvanced.ui:116
+#, kde-format
+msgid "Remote username"
+msgstr "दूरस्थं उपयोक्तृनाम"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_doNotReplaceDefaultRoute)
+#: sshadvanced.ui:132
+#, kde-format
+msgid "Do not replace default route"
+msgstr "पूर्वनिर्धारितमार्गं न प्रतिस्थापयन्तु"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SshAuth)
+#: sshauth.ui:14
+#, kde-format
+msgid "SSH VPN"
+msgstr "SSH VPN"
+
+#. i18n: ectx: property (text), widget (QLabel, passwordLabel)
+#: sshauth.ui:32
+#, kde-format
+msgid "Password: "
+msgstr "समाभाष्: "
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: sshwidget.ui:47
+#, kde-format
+msgid "General"
+msgstr "सामान्य"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
+#: sshwidget.ui:55
+#, kde-format
+msgid "Gateway:"
+msgstr "प्रवेशद्वारः : १."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: sshwidget.ui:73
+#, kde-format
+msgid "Network Settings"
+msgstr "संजालसेटिंग्स्"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_remoteIp)
+#. i18n: ectx: property (text), widget (QLabel, lbl_remoteIpv6)
+#: sshwidget.ui:79 sshwidget.ui:134
+#, kde-format
+msgid "Remote IP Address:"
+msgstr "दूरस्थः IP-सङ्केतः : १."
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_localIp)
+#. i18n: ectx: property (text), widget (QLabel, lbl_localIpv6)
+#: sshwidget.ui:92 sshwidget.ui:151
+#, kde-format
+msgid "Local IP Address:"
+msgstr "स्थानीय IP-सङ्केतः : १."
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_netmask)
+#: sshwidget.ui:105
+#, kde-format
+msgid "Netmask:"
+msgstr "नेटमास्कः : १."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: sshwidget.ui:121
+#, kde-format
+msgid "IPv6 Network Settings"
+msgstr "IPv6 संजालसेटिंग्स्"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useIpv6)
+#: sshwidget.ui:127
+#, kde-format
+msgid "Use IPv6"
+msgstr "IPv6 इत्यस्य उपयोगं कुर्वन्तु"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_netmaskIpv6)
+#: sshwidget.ui:168
+#, kde-format
+msgid "Prefix:"
+msgstr "उपसर्गः : १."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: sshwidget.ui:188
+#, kde-format
+msgid "Authentication"
+msgstr "प्रमाणीकरणम्"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_password)
+#: sshwidget.ui:204
+#, kde-format
+msgid "Password:"
+msgstr "समाभाष्:"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_sshKeyFile)
+#: sshwidget.ui:222
+#, kde-format
+msgid "SSH Key File:"
+msgstr "SSH कुञ्जी सञ्चिका: १."
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_authType)
+#: sshwidget.ui:238
+#, kde-format
+msgid "Type:"
+msgstr "प्रकारः:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmb_authType)
+#: sshwidget.ui:249
+#, kde-format
+msgid "SSH Agent"
+msgstr "SSH एजेण्ट्"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmb_authType)
+#: sshwidget.ui:254
+#, kde-format
+msgid "Password"
+msgstr "समाभाष्"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmb_authType)
+#: sshwidget.ui:259
+#, kde-format
+msgid "Key authentication"
+msgstr "कुञ्जी प्रमाणीकरणम्"
+
+#. i18n: ectx: property (text), widget (QPushButton, btn_advancedOption)
+#: sshwidget.ui:300
+#, kde-format
+msgid "Advanced…"
+msgstr "उन्नतं…"

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-10-28 09:30+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -27,10 +27,11 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 
 #: editor/connectioneditorbase.cpp:203
-#, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Configuration générale"
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr "Général"
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3834,6 +3835,10 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Inconnu"
 
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Configuration générale"
+
 #~ msgid "Signal strength"
 #~ msgstr "Force du signal"
 
@@ -4049,9 +4054,6 @@ msgstr "Inconnu"
 
 #~ msgid "my_shared_connection"
 #~ msgstr "ma_connexion_partagée"
-
-#~ msgid "General"
-#~ msgstr "Général"
 
 #~ msgid "Wimax"
 #~ msgstr "Wimax"

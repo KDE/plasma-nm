@@ -1,0 +1,202 @@
+# Sanskrit translations for plasma-nm package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-11-08 00:42+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kcm.cpp:269
+#, kde-format
+msgid "Import the VPN configuration from \"%1\"?"
+msgstr "\"%1\" तः VPN विन्यासम् आयातयतु?"
+
+#: kcm.cpp:270
+#, kde-format
+msgctxt "@title:window"
+msgid "Import VPN Configuration"
+msgstr ""
+
+#: kcm.cpp:271
+#, kde-format
+msgid "Import"
+msgstr "आयात"
+
+#: kcm.cpp:278 kcm.cpp:351
+#, kde-format
+msgid "Failed to import VPN connection: %1"
+msgstr "VPN संयोजनम् आयातुं असफलम्: %1"
+
+#: kcm.cpp:281 kcm.cpp:354
+#, kde-format
+msgid "Connection imported."
+msgstr "संयोजनम् आयातम्।"
+
+#: kcm.cpp:423
+#, kde-format
+msgid "my_shared_connection"
+msgstr "मम_साझा_सम्बन्धः"
+
+#: kcm.cpp:495
+#, kde-format
+msgid "Export VPN Connection"
+msgstr "VPN Connection निर्यातयन्तु"
+
+#: kcm.cpp:515
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "किं भवन्तः '%1' संयोजने कृतानि परिवर्तनानि रक्षितुम् इच्छन्ति?"
+
+#: kcm.cpp:516
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr ""
+
+#: kcm.cpp:611
+#, kde-format
+msgid "Import VPN Connection"
+msgstr "VPN Connection आयात करें"
+
+#: kcm.cpp:613
+#, kde-format
+msgid "VPN connections (%1)"
+msgstr "VPN संयोजनानि (%1) ."
+
+#: kcm.cpp:616
+#, kde-format
+msgid "No file was provided"
+msgstr "कोऽपि सञ्चिका न प्रदत्ता"
+
+#: kcm.cpp:684
+#, kde-format
+msgid "Unknown VPN type"
+msgstr "अज्ञात VPN प्रकार"
+
+#: qml/AddConnectionDialog.qml:18
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr ""
+
+#: qml/AddConnectionDialog.qml:168
+msgid "Create"
+msgstr "निर्मियताम्"
+
+#: qml/AddConnectionDialog.qml:179
+msgid "Cancel"
+msgstr "निरसयतु"
+
+#: qml/AddConnectionDialog.qml:196 qml/main.qml:180
+msgid "Configuration"
+msgstr "विन्यासः"
+
+#: qml/ConfigurationDialog.qml:20
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr "विन्यासः"
+
+#: qml/ConfigurationDialog.qml:35
+msgid "General"
+msgstr "सामान्य"
+
+#: qml/ConfigurationDialog.qml:43
+msgid "Ask for PIN on modem detection"
+msgstr "मोडेम-परिचये पिन-पृच्छन्तु"
+
+#: qml/ConfigurationDialog.qml:50
+msgid "Show virtual connections"
+msgstr "आभासीसंयोजनानि दर्शयतु"
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Create new connections as system connections"
+msgstr "प्रणालीसंयोजनरूपेण नूतनानि संयोजनानि रचयन्तु"
+
+#: qml/ConfigurationDialog.qml:62
+msgid "Hotspot"
+msgstr "हॉटस्पॉट्"
+
+#: qml/ConfigurationDialog.qml:70
+msgctxt "@label Hotspot name"
+msgid "Name:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:76
+msgctxt "@label Hotspot password"
+msgid "Password:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:95
+msgid "Hotspot name must not be empty"
+msgstr "हॉटस्पॉट् नाम रिक्तं न भवितुमर्हति"
+
+#: qml/ConfigurationDialog.qml:105
+msgid ""
+"Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
+"characters"
+msgstr ""
+"हॉटस्पॉट् गुप्तशब्दः रिक्तः भवितुमर्हति अथवा ८ तः ६४ वर्णपर्यन्तं कुत्रापि युक्तः भवितुमर्हति"
+
+#: qml/ConfigurationDialog.qml:106
+msgid ""
+"Hotspot password must either be empty or consist of one of the following:"
+"<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
+"characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
+msgstr ""
+"हॉटस्पॉट् गुप्तशब्दः रिक्तः भवितुमर्हति अथवा निम्नलिखितयोः एकं भवितुमर्हति:<ul><li> सम्यक् "
+"५ वा १३ वा कोऽपि वर्णः</li><li> सम्यक् १० वा २६ षट्दशमलववर्णाः : १.<br/> abcdef, "
+"ABCDEF अथवा 0-9</li></ul>"
+
+#: qml/ConnectionItem.qml:108
+msgid "Connect"
+msgstr "संयुज्"
+
+#: qml/ConnectionItem.qml:108
+msgid "Disconnect"
+msgstr "विच्छेदं कुर्वन्तु"
+
+#: qml/ConnectionItem.qml:121
+msgid "Delete"
+msgstr "लुप्"
+
+#: qml/ConnectionItem.qml:131
+msgid "Export"
+msgstr "निर्यात"
+
+#: qml/ConnectionItem.qml:141
+msgid "Connected"
+msgstr "संबद्धः"
+
+#: qml/ConnectionItem.qml:143
+msgid "Connecting"
+msgstr "संयोजयन्"
+
+#: qml/main.qml:130
+msgid "Add new connection"
+msgstr "नूतनं संयोजनं योजयन्तु"
+
+#: qml/main.qml:144
+msgid "Remove selected connection"
+msgstr "चयनितं संयोजनं निष्कासयन्तु"
+
+#: qml/main.qml:160
+msgid "Export selected connection"
+msgstr "चयनितं संयोजनं निर्यातयन्तु"
+
+#: qml/main.qml:208
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr ""
+
+#: qml/main.qml:209
+msgid "Do you want to remove the connection '%1'?"
+msgstr "किं भवान् '%1' इति संयोजनं हर्तुं इच्छति?"

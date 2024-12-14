@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2020-09-28 13:49+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -20,9 +20,9 @@ msgstr ""
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Üldised seadistused"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3848,6 +3848,10 @@ msgstr "Vajalik on NetworkManager 0.9.8, leiti %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Teadmata"
+
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Üldised seadistused"
 
 #~ msgid "Signal strength"
 #~ msgstr "Signaali tugevus"

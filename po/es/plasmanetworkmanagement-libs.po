@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-10-27 08:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -21,9 +21,9 @@ msgstr ""
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Configuración general"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3814,6 +3814,10 @@ msgstr "Se necesita NetworkManager 0.9.8; se ha encontrado %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconocido"
+
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Configuración general"
 
 #~ msgid "Signal strength"
 #~ msgstr "Potencia de la señal"

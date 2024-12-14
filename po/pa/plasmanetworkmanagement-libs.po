@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-03-11 07:43-0500\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -19,9 +19,9 @@ msgstr ""
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "ਆਮ ਸੰਰਚਨਾ"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3693,6 +3693,10 @@ msgstr "ਨੈੱਟਵਰਕਮੈਨੇਜਰ 0.9.8 ਚਾਹੀਦਾ ਹੈ,
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "ਅਣਪਛਾਤਾ"
+
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "ਆਮ ਸੰਰਚਨਾ"
 
 #~ msgid "Signal strength"
 #~ msgstr "ਸਿਗਨਲ ਮਜ਼ਬੂਤੀ"

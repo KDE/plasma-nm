@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-09-20 13:21+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -24,9 +24,9 @@ msgstr ""
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Основные параметры"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3822,6 +3822,10 @@ msgstr "Требуется NetworkManager 0.9.8, установлен %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Неизвестно"
+
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Основные параметры"
 
 #~ msgid "Signal strength"
 #~ msgstr "Уровень сигнала"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-10-27 21:13+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -18,10 +18,11 @@ msgstr ""
 "X-Generator: Lokalize 24.08.2\n"
 
 #: editor/connectioneditorbase.cpp:203
-#, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Configurazione generale"
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr "Generale"
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3824,6 +3825,10 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Sconosciuto"
 
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Configurazione generale"
+
 #~ msgid "Signal strength"
 #~ msgstr "Potenza del segnale"
 
@@ -4047,6 +4052,3 @@ msgstr "Sconosciuto"
 
 #~ msgid "my_shared_connection"
 #~ msgstr "la_mia_connessione_condivisa"
-
-#~ msgid "General"
-#~ msgstr "Generale"

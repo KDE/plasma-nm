@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-09-23 21:29+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -21,10 +21,11 @@ msgstr ""
 "X-Generator: Lokalize 24.08.0\n"
 
 #: editor/connectioneditorbase.cpp:203
-#, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Általános beállítások"
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr "Általános"
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3812,6 +3813,10 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Ismeretlen"
 
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Általános beállítások"
+
 #~ msgid "*.der *.pem *.crt *.cer"
 #~ msgstr "*.der *.pem *.crt *.cer"
 
@@ -4044,9 +4049,6 @@ msgstr "Ismeretlen"
 
 #~ msgid "my_shared_connection"
 #~ msgstr "my_shared_connection"
-
-#~ msgid "General"
-#~ msgstr "Általános"
 
 #~ msgid "Wimax"
 #~ msgstr "WiMAX"

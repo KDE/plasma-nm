@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-10-27 14:14+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -21,9 +21,9 @@ msgstr ""
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Genel Yapılandırma"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3808,6 +3808,10 @@ msgstr "Ağ Yönetici 0.9.8 gerekli, bulunan %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Bilinmeyen"
+
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Genel Yapılandırma"
 
 #~ msgid "*.der *.pem *.crt *.cer"
 #~ msgstr "*.der *.pem *.crt *.cer"

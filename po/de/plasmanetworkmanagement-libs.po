@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-10-13 16:00+0200\n"
 "Last-Translator: Flori G <Renner03@protonmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -21,10 +21,11 @@ msgstr ""
 "X-Generator: Lokalize 24.08.2\n"
 
 #: editor/connectioneditorbase.cpp:203
-#, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Allgemeine Einstellungen"
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr "Allgemein"
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3828,6 +3829,10 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Unbekannt"
 
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Allgemeine Einstellungen"
+
 #~ msgid "Signal strength"
 #~ msgstr "Signalstärke"
 
@@ -4063,9 +4068,6 @@ msgstr "Unbekannt"
 
 #~ msgid "my_shared_connection"
 #~ msgstr "meine_gemeinsame_Verbindung"
-
-#~ msgid "General"
-#~ msgstr "Allgemein"
 
 #~ msgid "Wimax"
 #~ msgstr "WiMAX"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-10-27 03:44+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -20,9 +20,9 @@ msgstr ""
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "ზოგადი კონფიგურაცია"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3800,6 +3800,10 @@ msgstr "NetworkManager-ის საჭირო ვერსიაა 0.9.8 , �
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "უცნობია"
+
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "ზოგადი კონფიგურაცია"
 
 #~ msgid "*.der *.pem *.crt *.cer"
 #~ msgstr "*.der *.pem *.crt *.cer"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-05-09 10:33+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -20,9 +20,9 @@ msgstr ""
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "ضبط عامّ"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3705,6 +3705,10 @@ msgstr "مدير الشبكة (NetworkManager) الإصدار 0.9.8 مطلوب،
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "مجهولة"
+
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "ضبط عامّ"
 
 #~ msgid "Signal strength"
 #~ msgstr "قوّة الإشارة"

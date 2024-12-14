@@ -1,0 +1,539 @@
+# Sanskrit translations for plasma-nm package.
+# Copyright (C) 2024 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+# Kali <EMAIL@ADDRESS>, 2024.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"Last-Translator: Kali <EMAIL@ADDRESS>\n"
+"Language-Team: Sanskrit\n"
+"Language: sa\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: openconnectauth.cpp:347
+#, kde-format
+msgid "Failed to initialize software token: %1"
+msgstr "सॉफ्टवेयर टोकन प्रारम्भं कर्तुं असफलम्: %1"
+
+#: openconnectauth.cpp:400
+#, kde-format
+msgid "Contacting host, please wait…"
+msgstr "मेजबानेन सह सम्पर्कं कुर्वन्, कृपया प्रतीक्षां कुर्वन्तु..."
+
+#: openconnectauth.cpp:788
+#, kde-format
+msgctxt "Verb, to proceed with login"
+msgid "Login"
+msgstr ""
+
+#: openconnectauth.cpp:850
+#, kde-format
+msgid ""
+"Check failed for certificate from VPN server \"%1\".\n"
+"Reason: %2\n"
+"Accept it anyway?"
+msgstr ""
+"VPN सर्वर \"%1\" इत्यस्मात् प्रमाणपत्रस्य जाँचः विफलः ।\n"
+"कारणम् : %2\n"
+"तथापि स्वीकुरुत ?"
+
+#: openconnectauth.cpp:945
+#, kde-format
+msgid "Connection attempt was unsuccessful."
+msgstr "संयोजनस्य प्रयासः असफलः अभवत् ।"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
+#: openconnectauth.ui:26
+#, kde-format
+msgid "OpenConnect VPN Authentication"
+msgstr "OpenConnect VPN प्रमाणीकरणम्"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectauth.ui:55
+#, kde-format
+msgid "VPN Host"
+msgstr "वीपीएन होस्ट"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, btnConnect)
+#: openconnectauth.ui:81
+#, kde-format
+msgid "Connect"
+msgstr "संयुज्"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
+#: openconnectauth.ui:102
+#, kde-format
+msgid "Automatically start connecting next time"
+msgstr "अग्रिमे समये स्वयमेव संयोजनं आरभत"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkStorePasswords)
+#: openconnectauth.ui:109
+#, kde-format
+msgid "Store passwords"
+msgstr "गुप्तशब्दान् संग्रहयन्तु"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkStorePlaintextCookies)
+#: openconnectauth.ui:116
+#, kde-format
+msgid "Store browser cookies in plain-text"
+msgstr "ब्राउजर् कुकीजं सादे-पाठे संग्रहयन्तु"
+
+#. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
+#: openconnectauth.ui:160
+#, kde-format
+msgid "View Log"
+msgstr "लॉगं पश्यन्तु"
+
+#. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
+#: openconnectauth.ui:170
+#, kde-format
+msgid "Log Level:"
+msgstr "लॉग स्तरः : १."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:181
+#, kde-format
+msgid "Error"
+msgstr "त्रुटि"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:186
+#, kde-format
+msgid "Info"
+msgstr "Info"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:191
+#, kde-format
+msgctxt "like in Debug log level"
+msgid "Debug"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:196
+#, kde-format
+msgid "Trace"
+msgstr "चिह्न"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectProp)
+#: openconnectprop.ui:20
+#, kde-format
+msgid "OpenConnect Settings"
+msgstr "OpenConnect सेटिंग्स्"
+
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#: openconnectprop.ui:26
+#, kde-format
+msgctxt "like in General settings"
+msgid "General"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label_41)
+#: openconnectprop.ui:38
+#, kde-format
+msgid "Gateway:"
+msgstr "प्रवेशद्वारः : १."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: openconnectprop.ui:51
+#, kde-format
+msgid "CA Certificate:"
+msgstr "CA प्रमाणपत्राणि : १."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: openconnectprop.ui:70
+#, kde-format
+msgid "Proxy:"
+msgstr "प्रॉक्सी : १."
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectprop.ui:83
+#, kde-format
+msgid "User Agent:"
+msgstr "उपयोक्ता एजेण्ट् : १."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: openconnectprop.ui:96
+#, kde-format
+msgid "CSD Wrapper Script:"
+msgstr "CSD Wrapper स्क्रिप्ट: 1.1."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
+#: openconnectprop.ui:106
+#, kde-format
+msgid "Allow Cisco Secure Desktop trojan"
+msgstr "Cisco Secure Desktop trojan इत्यस्य अनुमतिं ददातु"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: openconnectprop.ui:116
+#, kde-format
+msgid "VPN Protocol:"
+msgstr "वीपीएन प्रोटोकॉल : १."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:133
+#, kde-format
+msgid "Cisco AnyConnect"
+msgstr "सिस्को एनीकनेक्ट्"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:138
+#, kde-format
+msgid "Juniper Network Connect"
+msgstr "जुनिपर नेटवर्क कनेक्ट"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:143
+#, kde-format
+msgid "PAN Global Protect"
+msgstr "पैन ग्लोबल प्रोटेक्ट"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:148
+#, kde-format
+msgid "Pulse Connect Secure"
+msgstr "पल्स कनेक्ट सुरक्षित"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:153
+#, kde-format
+msgid "F5 BIG-IP SSL VPN"
+msgstr "F5 BIG-IP SSL VPN"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:158
+#, kde-format
+msgid "Fortinet SSL VPN"
+msgstr "Fortinet SSL VPN"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:163
+#, kde-format
+msgid "Array SSL VPN"
+msgstr "सरणी SSL VPN"
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: openconnectprop.ui:171
+#, kde-format
+msgid "Reported OS:"
+msgstr "रिपोर्ट्ड् ओएस: १."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:190
+#, kde-format
+msgid "GNU/Linux"
+msgstr "GNU/Linux इति"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:195
+#, kde-format
+msgid "GNU/Linux 64-bit"
+msgstr "GNU/Linux 64-बिट्"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:200
+#, kde-format
+msgid "Windows"
+msgstr "विण्डोज"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:205
+#, kde-format
+msgid "Mac OS X"
+msgstr "मैक ओएस एक्स"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:210
+#, kde-format
+msgid "Android"
+msgstr "एण्ड्रॉयड्"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:215
+#, kde-format
+msgid "Apple iOS"
+msgstr "एप्पल् iOS"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: openconnectprop.ui:226
+#, kde-format
+msgid "Reported Version"
+msgstr "रिपोर्ट्ड् संस्करणम्"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: openconnectprop.ui:236
+#, kde-format
+msgid "Certificate Authentication"
+msgstr "प्रमाणपत्र प्रमाणीकरणम्"
+
+#. i18n: ectx: property (text), widget (QLabel, leMcaCertLabel)
+#: openconnectprop.ui:242
+#, kde-format
+msgid "Machine Certificate:"
+msgstr "यन्त्रप्रमाणपत्रम् : १."
+
+#. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openconnectprop.ui:261 openconnectprop.ui:299
+#, kde-format
+msgid "Private Key:"
+msgstr "निजी कुञ्जी : १."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: openconnectprop.ui:280
+#, kde-format
+msgid "User Certificate:"
+msgstr "उपयोक्तृप्रमाणपत्रम् : १."
+
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: openconnectprop.ui:318
+#, kde-format
+msgid "Use FSID for key passphrase"
+msgstr "कीलगुप्तवाक्यस्य कृते FSID इत्यस्य उपयोगं कुर्वन्तु"
+
+#. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
+#: openconnectprop.ui:325
+#, kde-format
+msgid "Prevent user from manually accepting invalid certificates"
+msgstr "अमान्यप्रमाणपत्राणि स्वहस्तेन स्वीकुर्वन्तु इति उपयोक्तारं निवारयन्तु"
+
+#. i18n: ectx: property (text), widget (QPushButton, buTokens)
+#: openconnectprop.ui:351
+#, kde-format
+msgid "Token Authentication"
+msgstr "टोकन प्रमाणीकरण"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenConnectToken)
+#: openconnecttoken.ui:14
+#, kde-format
+msgid "OpenConnect OTP Tokens"
+msgstr "OpenConnect OTP टोकन"
+
+#. i18n: ectx: property (title), widget (QGroupBox, gbToken)
+#: openconnecttoken.ui:20
+#, kde-format
+msgid "Software Token Authentication"
+msgstr "सॉफ्टवेयर टोकन प्रमाणीकरण"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: openconnecttoken.ui:26
+#, kde-format
+msgid "Token Mode:"
+msgstr "टोकन मोड : १."
+
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: openconnecttoken.ui:43
+#, kde-format
+msgid "Token Secret:"
+msgstr "टोकन रहस्य : १."
+
+#: openconnectwebauthdialog.cpp:111
+#, kde-format
+msgid "Choose a Passkey"
+msgstr "एकं Passkey चिनोतु"
+
+#: openconnectwebauthdialog.cpp:112
+#, kde-format
+msgid "Which passkey do you want to use for %1?"
+msgstr "%1 कृते भवान् कस्य पासकील् उपयोक्तुं इच्छति?"
+
+#: openconnectwebauthdialog.cpp:129
+#, kde-format
+msgid "Ok"
+msgstr "अस्तु"
+
+#: openconnectwebauthdialog.cpp:140
+#, kde-format
+msgid "Use your security key with %1"
+msgstr "%1 इत्यनेन सह स्वस्य सुरक्षाकुंजी उपयुज्यताम्"
+
+#: openconnectwebauthdialog.cpp:141
+#, kde-format
+msgid "Touch your security key again to complete the request."
+msgstr "अनुरोधं पूर्णं कर्तुं पुनः स्वस्य सुरक्षाकुंजी स्पृशन्तु।"
+
+#: openconnectwebauthdialog.cpp:158
+#, kde-format
+msgid "Next"
+msgstr "अग्रिम"
+
+#: openconnectwebauthdialog.cpp:167
+#, kde-format
+msgid "PIN Required"
+msgstr "पिन आवश्यक"
+
+#: openconnectwebauthdialog.cpp:168
+#, kde-format
+msgid "Enter the PIN for your security key"
+msgstr "स्वस्य सुरक्षाकुंजी कृते पिन प्रविष्टं कुर्वन्तु"
+
+#: openconnectwebauthdialog.cpp:173
+#, kde-format
+msgid "New PIN Required"
+msgstr "नवीन पिन आवश्यक"
+
+#: openconnectwebauthdialog.cpp:174
+#, kde-format
+msgid "Set new PIN for your security key"
+msgstr "स्वस्य सुरक्षाकुंजी कृते नूतनं PIN सेट् कुर्वन्तु"
+
+#: openconnectwebauthdialog.cpp:176
+#, kde-format
+msgid "Change PIN Required"
+msgstr "पिन परिवर्तनम् आवश्यकम्"
+
+#: openconnectwebauthdialog.cpp:177
+#, kde-format
+msgid "Change PIN for your security key"
+msgstr "स्वस्य सुरक्षाकुंजी कृते पिन परिवर्तयन्तु"
+
+#: openconnectwebauthdialog.cpp:188
+#, kde-format
+msgid "Internal User Verification Locked"
+msgstr "आन्तरिकप्रयोक्तृसत्यापनं ताडितम्"
+
+#: openconnectwebauthdialog.cpp:191
+#, kde-format
+msgid "Wrong PIN. %1 attempts remaining."
+msgstr "गलत पिन। %1 प्रयत्नाः अवशिष्टाः सन्ति ।"
+
+#: openconnectwebauthdialog.cpp:194
+#, kde-format
+msgid "Too Short. %1 attempts remaining."
+msgstr "अति लघु। %1 प्रयत्नाः अवशिष्टाः सन्ति ।"
+
+#: openconnectwebauthdialog.cpp:197
+#, kde-format
+msgid "Invalid Characters. %1 attempts remaining."
+msgstr "अमान्यवर्णाः । %1 प्रयत्नाः अवशिष्टाः सन्ति ।"
+
+#: openconnectwebauthdialog.cpp:201
+#, kde-format
+msgid "Same as current PIN. %1 attempts remaining."
+msgstr "वर्तमानपिनस्य समानम्। %1 प्रयत्नाः अवशिष्टाः सन्ति ।"
+
+#: openconnectwebauthdialog.cpp:239
+#, kde-format
+msgid "Something went wrong"
+msgstr "किमपि भ्रष्टं जातम्"
+
+#: openconnectwebauthdialog.cpp:243
+#, kde-format
+msgid "Request Timeout"
+msgstr "अनुरोधः समयसमाप्तिः"
+
+#: openconnectwebauthdialog.cpp:246
+#, kde-format
+msgid "Key not registered"
+msgstr "कुञ्जी पञ्जीकृता नास्ति"
+
+#: openconnectwebauthdialog.cpp:250
+#, kde-format
+msgid "You already registered this device.Try again with device"
+msgstr "भवान् पूर्वमेव एतत् यन्त्रं पञ्जीकृतवान्।यन्त्रेण पुनः प्रयासं कुर्वन्तु"
+
+#: openconnectwebauthdialog.cpp:256
+#, kde-format
+msgid ""
+"The security key is locked because the wrong PIN was entered too many times."
+"To unlock it, remove and reinsert it."
+msgstr ""
+"सुरक्षाकुंजी ताडितम् अस्ति यतोहि गलत् पिनः बहुवारं प्रविष्टः आसीत्।तस्य तालान् अनलॉक् कर्तुं, "
+"तत् निष्कास्य पुनः सम्मिलितं कुर्वन्तु।"
+
+#: openconnectwebauthdialog.cpp:262
+#, kde-format
+msgid ""
+"The security key is locked because the wrong PIN was entered too many times. "
+"You'll need to reset the security key."
+msgstr ""
+"सुरक्षाकुंजी ताडितम् अस्ति यतोहि गलत् पिनः बहुवारं प्रविष्टः आसीत् । भवद्भिः सुरक्षाकुंजी पुनः "
+"सेट् कर्तव्या भविष्यति ।"
+
+#: openconnectwebauthdialog.cpp:266
+#, kde-format
+msgid ""
+"Authenticator removed during verification. Please reinsert and try again"
+msgstr "सत्यापनस्य समये प्रमाणकं निष्कासितम्। कृपया पुनः सम्मिलितं कृत्वा पुनः प्रयासं कुर्वन्तु"
+
+#: openconnectwebauthdialog.cpp:269
+#, kde-format
+msgid "Authenticator doesn't have resident key support"
+msgstr "प्रमाणकस्य निवासी कुञ्जीसमर्थनं नास्ति"
+
+#: openconnectwebauthdialog.cpp:272
+#, kde-format
+msgid "Authenticator missing user verification"
+msgstr "प्रमाणककर्ता उपयोक्तृसत्यापनं गम्यते"
+
+#: openconnectwebauthdialog.cpp:275
+#, kde-format
+msgid "Authenticator missing Large Blob support"
+msgstr "प्रमाणीकरणकर्ता Large Blob समर्थनम् अनुपलब्धम्"
+
+#: openconnectwebauthdialog.cpp:278
+#, kde-format
+msgid "No common algorithms"
+msgstr "सामान्यं एल्गोरिदम् नास्ति"
+
+#: openconnectwebauthdialog.cpp:281
+#, kde-format
+msgid "Storage Full"
+msgstr "भण्डारण पूर्ण"
+
+#: openconnectwebauthdialog.cpp:284
+#, kde-format
+msgid "User consent denied"
+msgstr "उपयोक्तृसहमतिः अङ्गीकृता"
+
+#: openconnectwebauthdialog.cpp:287
+#, kde-format
+msgid "User Cancelled Request"
+msgstr "उपयोक्ता रद्दः अनुरोधः"
+
+#: openconnectwebauthdialog.cpp:300
+#, kde-format
+msgid "Close"
+msgstr "पिधानं करोतु"
+
+#. i18n: ectx: property (windowTitle), widget (QDialog, Dialog)
+#: openconnectwebauthdialog.ui:20
+#, kde-format
+msgid "WebAuth"
+msgstr "WebAuth"
+
+#. i18n: ectx: property (text), widget (QLabel, headingLabel)
+#: openconnectwebauthdialog.ui:32
+#, kde-format
+msgid "Heading"
+msgstr "शीर्षकम्"
+
+#. i18n: ectx: property (text), widget (QLabel, description)
+#: openconnectwebauthdialog.ui:48
+#, kde-format
+msgid "Description"
+msgstr "वर्णनम्‌"
+
+#. i18n: ectx: property (text), widget (QLabel, pinLabel)
+#: openconnectwebauthdialog.ui:84
+#, kde-format
+msgid "PIN"
+msgstr "आतप"
+
+#. i18n: ectx: property (text), widget (QLabel, confirmPinLabel)
+#: openconnectwebauthdialog.ui:107
+#, kde-format
+msgid "Confirm PIN"
+msgstr "पिन पुष्टि करें"
+
+#. i18n: ectx: property (text), widget (QLabel, pinEntryErrorLabel)
+#: openconnectwebauthdialog.ui:130
+#, kde-format
+msgid "TextLabel"
+msgstr "TextLabel इति"

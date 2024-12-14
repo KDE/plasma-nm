@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2022-02-16 16:42+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -19,10 +19,11 @@ msgstr ""
 "X-Generator: Lokalize 21.12.2\n"
 
 #: editor/connectioneditorbase.cpp:203
-#, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Configurări generale"
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr "General"
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3733,6 +3734,10 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Necunoscută"
 
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Configurări generale"
+
 #~ msgctxt "Error message in VPN import/export dialog"
 #~ msgid "Operation not supported for this VPN type."
 #~ msgstr "Operația nu este acceptată pentru acest tip de VPN."
@@ -3891,9 +3896,6 @@ msgstr "Necunoscută"
 #~ msgctxt "Disconnected"
 #~ msgid "There is no active network connection"
 #~ msgstr "Utilizatori cărora li se permite activarea conexiunii"
-
-#~ msgid "General"
-#~ msgstr "General"
 
 #~ msgid "Wimax"
 #~ msgstr "Wimax"

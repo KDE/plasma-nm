@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2024-12-14 00:54+0000\n"
 "PO-Revision-Date: 2024-09-19 17:05+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -19,10 +19,11 @@ msgstr ""
 "X-Generator: Lokalize 24.08.1\n"
 
 #: editor/connectioneditorbase.cpp:203
-#, kde-format
-msgctxt "General"
-msgid "General configuration"
-msgstr "Γενική διαμόρφωση"
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title:tab General configuration"
+msgid "General"
+msgstr "Γενικά"
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -3801,6 +3802,10 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Άγνωστη"
 
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "Γενική διαμόρφωση"
+
 #~ msgid "Signal strength"
 #~ msgstr "Ισχύς σήματος"
 
@@ -4013,9 +4018,6 @@ msgstr "Άγνωστη"
 
 #~ msgid "my_shared_connection"
 #~ msgstr "my_shared_connection"
-
-#~ msgid "General"
-#~ msgstr "Γενικά"
 
 #~ msgid "Wimax"
 #~ msgstr "Wimax"

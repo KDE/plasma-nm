@@ -87,7 +87,7 @@ msgstr "क्रिप्टो : १."
 #, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
-msgstr ""
+msgstr "कश्चित्‌"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: sstpadvanced.ui:157

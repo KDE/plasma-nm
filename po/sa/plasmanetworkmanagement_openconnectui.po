@@ -30,7 +30,7 @@ msgstr "मेजबानेन सह सम्पर्कं कुर्व
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
-msgstr ""
+msgstr "प्रवेशः"
 
 #: openconnectauth.cpp:850
 #, kde-format
@@ -113,7 +113,7 @@ msgstr "Info"
 #, kde-format
 msgctxt "like in Debug log level"
 msgid "Debug"
-msgstr ""
+msgstr "त्रुटिनिवारणम्"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
 #: openconnectauth.ui:196
@@ -132,7 +132,7 @@ msgstr "OpenConnect सेटिंग्स्"
 #, kde-format
 msgctxt "like in General settings"
 msgid "General"
-msgstr ""
+msgstr "सामान्य"
 
 #. i18n: ectx: property (text), widget (QLabel, label_41)
 #: openconnectprop.ui:38

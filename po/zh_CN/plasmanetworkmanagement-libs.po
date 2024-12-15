@@ -3765,7 +3765,3 @@ msgstr "需要 NetworkManager 0.9.8，找到了 %1。"
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "未知"
-
-#~ msgctxt "General"
-#~ msgid "General configuration"
-#~ msgstr "常规配置"

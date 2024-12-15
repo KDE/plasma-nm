@@ -57,7 +57,7 @@ msgstr "प्रमाणपत्राणि (TLS) ९."
 #, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username:"
-msgstr ""
+msgstr "उपयोक्तृनाम : १."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, username)
 #: l2tp.ui:103
@@ -603,7 +603,7 @@ msgstr "MPPE इत्यस्य उपयोगः आवश्यकः, 40/
 #, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
-msgstr ""
+msgstr "कश्चित्‌"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
 #: l2tpppp.ui:306

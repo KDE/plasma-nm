@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-14 00:54+0000\n"
-"PO-Revision-Date: 2024-12-13 20:50+0530\n"
+"PO-Revision-Date: 2024-12-14 13:43+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Poedit 3.5\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -165,55 +165,55 @@ msgstr "इन्फिनिबैण्ड"
 #, kde-format
 msgctxt "bond mode"
 msgid "Round-robin"
-msgstr ""
+msgstr "गोल-रोबिन्"
 
 #: editor/settings/bondwidget.cpp:49
 #, kde-format
 msgctxt "bond mode"
 msgid "Active backup"
-msgstr ""
+msgstr "सक्रियः बैकअपः"
 
 #: editor/settings/bondwidget.cpp:50
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "निःशुल्कः"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format
 msgctxt "bond mode"
 msgid "Broadcast"
-msgstr ""
+msgstr "प्रसारण"
 
 #: editor/settings/bondwidget.cpp:52
 #, kde-format
 msgctxt "bond mode"
 msgid "802.3ad"
-msgstr ""
+msgstr "८०२.३अद्"
 
 #: editor/settings/bondwidget.cpp:53
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive transmit load balancing"
-msgstr ""
+msgstr "अनुकूली संचरण भार संतुलन"
 
 #: editor/settings/bondwidget.cpp:54
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive load balancing"
-msgstr ""
+msgstr "अनुकूली भार संतुलन"
 
 #: editor/settings/bondwidget.cpp:57
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "MII (recommended)"
-msgstr ""
+msgstr "MII (अनुशंसितम्) २."
 
 #: editor/settings/bondwidget.cpp:58
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "ARP"
-msgstr ""
+msgstr "ए आर पी"
 
 #: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:193
 #: editor/settings/teamwidget.cpp:182
@@ -247,37 +247,37 @@ msgstr "PAN (व्यक्तिगत क्षेत्रजालम्) �
 #, kde-format
 msgctxt "@title:window advanced permissions editor"
 msgid "Advanced Permissions Editor"
-msgstr ""
+msgstr "उन्नत अनुमति सम्पादक"
 
 #: editor/settings/infinibandwidget.cpp:22
 #, kde-format
 msgctxt "infiniband transport mode"
 msgid "Datagram"
-msgstr ""
+msgstr "डाटाग्राम"
 
 #: editor/settings/infinibandwidget.cpp:23
 #, kde-format
 msgctxt "infiniband transport mode"
 msgid "Connected"
-msgstr ""
+msgstr "संबद्धः"
 
 #: editor/settings/ipv4widget.cpp:56 editor/widgets/ipv4routeswidget.cpp:25
 #, kde-format
 msgctxt "Header text for IPv4 address"
 msgid "Address"
-msgstr ""
+msgstr "पत्रसङ्केतः"
 
 #: editor/settings/ipv4widget.cpp:58 editor/widgets/ipv4routeswidget.cpp:27
 #, kde-format
 msgctxt "Header text for IPv4 netmask"
 msgid "Netmask"
-msgstr ""
+msgstr "नेटमास्क"
 
 #: editor/settings/ipv4widget.cpp:60 editor/widgets/ipv4routeswidget.cpp:29
 #, kde-format
 msgctxt "Header text for IPv4 gateway"
 msgid "Gateway"
-msgstr ""
+msgstr "द्वारम्"
 
 #: editor/settings/ipv4widget.cpp:271 editor/settings/ipv6widget.cpp:262
 #, kde-format
@@ -345,19 +345,19 @@ msgstr "DNS अन्वेषणक्षेत्राणि सम्पा�
 #, kde-format
 msgctxt "Header text for IPv6 address"
 msgid "Address"
-msgstr ""
+msgstr "पत्रसङ्केतः"
 
 #: editor/settings/ipv6widget.cpp:44
 #, kde-format
 msgctxt "Header text for IPv6 prefix"
 msgid "Prefix"
-msgstr ""
+msgstr "उपसर्गः"
 
 #: editor/settings/ipv6widget.cpp:46 editor/widgets/ipv6routeswidget.cpp:30
 #, kde-format
 msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
-msgstr ""
+msgstr "द्वारम्"
 
 #: editor/settings/security802-1x.cpp:507
 #, kde-format
@@ -635,7 +635,7 @@ msgstr "PEAP संस्करणम् : १."
 #, kde-format
 msgctxt "PEAP version"
 msgid "Automatic"
-msgstr ""
+msgstr "स्वतः"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:652
@@ -758,7 +758,7 @@ msgstr "वृद्धावस्थाः समयः : १."
 #, kde-format
 msgctxt "seconds"
 msgid " s"
-msgstr ""
+msgstr " स"
 
 #. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
 #: editor/settings/ui/bridge.ui:136
@@ -893,7 +893,7 @@ msgstr ""
 #, kde-format
 msgctxt "Item in the Metered: list"
 msgid "Automatic"
-msgstr ""
+msgstr "स्वतः"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:164
@@ -976,7 +976,7 @@ msgstr "व्यक्ति:"
 #, kde-format
 msgctxt "MTU:"
 msgid "Automatic"
-msgstr ""
+msgstr "स्वतः"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:83
@@ -1004,7 +1004,7 @@ msgstr "प्रक्रिया:"
 #, kde-format
 msgctxt "Method:"
 msgid "Automatic"
-msgstr ""
+msgstr "स्वतः"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:229
@@ -1066,7 +1066,7 @@ msgstr "सर्वरस्य सूचीं DNS सम्पादयन्
 #, kde-format
 msgctxt "@info"
 msgid "Search Domains:"
-msgstr ""
+msgstr "अन्वेषणक्षेत्राणि : १."
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
 #: editor/settings/ui/ipv4.ui:164 editor/settings/ui/ipv6.ui:270
@@ -1216,7 +1216,7 @@ msgstr "स्वचालितम् (केवलं DHCP) २."
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
-msgstr ""
+msgstr "उपेक्षितम्"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:254
@@ -1439,7 +1439,7 @@ msgstr ""
 #, kde-format
 msgctxt "Band:"
 msgid "Automatic"
-msgstr ""
+msgstr "स्वतः"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:146
@@ -1515,7 +1515,7 @@ msgstr "Wifi सुरक्षा"
 #, kde-format
 msgctxt "no security"
 msgid "None"
-msgstr ""
+msgstr "न कश्चित्"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:33
@@ -1722,7 +1722,7 @@ msgstr "उपेक्षा"
 #, kde-format
 msgctxt "Link negotiation:"
 msgid "Automatic"
-msgstr ""
+msgstr "स्वतः"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:202
@@ -2071,7 +2071,7 @@ msgstr "%1 (%2 मेगाहर्ट्ज) २."
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
-msgstr ""
+msgstr "WireGuard सहकर्मी गुणाः"
 
 #: editor/uiutils.cpp:128
 #, kde-format
@@ -2101,31 +2101,31 @@ msgstr "एडीएसएल"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bond)"
-msgstr ""
+msgstr "आभासी (बन्धन) २."
 
 #: editor/uiutils.cpp:143
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bridge)"
-msgstr ""
+msgstr "आभासी (सेतु) ९."
 
 #: editor/uiutils.cpp:146
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (vlan)"
-msgstr ""
+msgstr "आभासी (vlan) ९."
 
 #: editor/uiutils.cpp:149
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (team)"
-msgstr ""
+msgstr "आभासी (दल) ९."
 
 #: editor/uiutils.cpp:156
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Serial Modem"
-msgstr ""
+msgstr "धारावाहिक मोडेम"
 
 #: editor/uiutils.cpp:161
 #, kde-format
@@ -2229,68 +2229,68 @@ msgstr "लूपबैक अन्तरफलक (%1) ."
 #, kde-format
 msgctxt "description of unknown network interface state"
 msgid "Unknown"
-msgstr ""
+msgstr "अज्ञात"
 
 #: editor/uiutils.cpp:289
 #, kde-format
 msgctxt "description of unmanaged network interface state"
 msgid "Unmanaged"
-msgstr ""
+msgstr "अप्रबन्धितम्"
 
 #: editor/uiutils.cpp:292
 #, kde-format
 msgctxt "description of unavailable network interface state"
 msgid "Unavailable"
-msgstr ""
+msgstr "अनुपलब्धम्"
 
 #: editor/uiutils.cpp:295
 #, kde-format
 msgctxt "description of unconnected network interface state"
 msgid "Not connected"
-msgstr ""
+msgstr "न संबद्धः"
 
 #: editor/uiutils.cpp:298
 #, kde-format
 msgctxt "description of preparing to connect network interface state"
 msgid "Preparing to connect"
-msgstr ""
+msgstr "संयोजयितुं सज्जता"
 
 #: editor/uiutils.cpp:301
 #, kde-format
 msgctxt "description of configuring hardware network interface state"
 msgid "Configuring interface"
-msgstr ""
+msgstr "अन्तरफलकं विन्यस्तम्"
 
 #: editor/uiutils.cpp:304
 #, kde-format
 msgctxt "description of waiting for authentication network interface state"
 msgid "Waiting for authorization"
-msgstr ""
+msgstr "प्राधिकरणस्य प्रतीक्षां कुर्वन्"
 
 #: editor/uiutils.cpp:307
 #, kde-format
 msgctxt "network interface doing dhcp request in most cases"
 msgid "Setting network address"
-msgstr ""
+msgstr "संजालपतेः सेट् करणम्"
 
 #: editor/uiutils.cpp:310
 #, kde-format
 msgctxt "is other action required to fully connect? captive portals, etc."
 msgid "Checking further connectivity"
-msgstr ""
+msgstr "अग्रे संयोजनस्य जाँचः"
 
 #: editor/uiutils.cpp:313
 #, kde-format
 msgctxt ""
 "a secondary connection (e.g. VPN) has to be activated first to continue"
 msgid "Waiting for a secondary connection"
-msgstr ""
+msgstr "गौणसंयोजनस्य प्रतीक्षां कुर्वन्"
 
 #: editor/uiutils.cpp:317
 #, kde-format
 msgctxt "network interface connected state label"
 msgid "Connected"
-msgstr ""
+msgstr "संबद्धः"
 
 #: editor/uiutils.cpp:319
 #, kde-format
@@ -2302,79 +2302,79 @@ msgstr "%1 इत्यनेन सह सम्बद्धम्"
 #, kde-format
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
-msgstr ""
+msgstr "संयोजनं निष्क्रियं कुर्वन्"
 
 #: editor/uiutils.cpp:326
 #, kde-format
 msgctxt "network interface connection failed state label"
 msgid "Connection Failed"
-msgstr ""
+msgstr "संयोजनं विफलम्"
 
 #: editor/uiutils.cpp:329 editor/uiutils.cpp:363
 #, kde-format
 msgctxt "interface state"
 msgid "Error: Invalid state"
-msgstr ""
+msgstr "त्रुटिः - अमान्य अवस्था"
 
 #: editor/uiutils.cpp:339
 #, kde-format
 msgctxt "The state of the VPN connection is unknown"
 msgid "Unknown"
-msgstr ""
+msgstr "अज्ञात"
 
 #: editor/uiutils.cpp:342
 #, kde-format
 msgctxt "The VPN connection is preparing to connect"
 msgid "Preparing to connect"
-msgstr ""
+msgstr "संयोजयितुं सज्जता"
 
 #: editor/uiutils.cpp:345
 #, kde-format
 msgctxt "The VPN connection needs authorization credentials"
 msgid "Needs authorization"
-msgstr ""
+msgstr "प्राधिकरणस्य आवश्यकता अस्ति"
 
 #: editor/uiutils.cpp:348
 #, kde-format
 msgctxt "The VPN connection is being established"
 msgid "Connecting"
-msgstr ""
+msgstr "संयोजयन्"
 
 #: editor/uiutils.cpp:351
 #, kde-format
 msgctxt "The VPN connection is getting an IP address"
 msgid "Setting network address"
-msgstr ""
+msgstr "संजालपतेः सेट् करणम्"
 
 #: editor/uiutils.cpp:354
 #, kde-format
 msgctxt "The VPN connection is active"
 msgid "Activated"
-msgstr ""
+msgstr "सक्रियः"
 
 #: editor/uiutils.cpp:357
 #, kde-format
 msgctxt "The VPN connection failed"
 msgid "Failed"
-msgstr ""
+msgstr "असफल"
 
 #: editor/uiutils.cpp:360
 #, kde-format
 msgctxt "The VPN connection is disconnected"
 msgid "Failed"
-msgstr ""
+msgstr "असफल"
 
 #: editor/uiutils.cpp:373
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Unknown"
-msgstr ""
+msgstr "अज्ञात"
 
 #: editor/uiutils.cpp:376
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Adhoc"
-msgstr ""
+msgstr "अधोक्"
 
 #: editor/uiutils.cpp:379
 #, kde-format
@@ -2386,109 +2386,109 @@ msgstr "आधारभूतसंरचना"
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Access point"
-msgstr ""
+msgstr "अभिगमनबिन्दु"
 
 #: editor/uiutils.cpp:407
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise WEP40"
-msgstr ""
+msgstr "युग्मरूपेण WEP40"
 
 #: editor/uiutils.cpp:409
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise WEP104"
-msgstr ""
+msgstr "युग्मरूपेण WEP104"
 
 #: editor/uiutils.cpp:411
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise TKIP"
-msgstr ""
+msgstr "युग्मरूपेण TKIP"
 
 #: editor/uiutils.cpp:413
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise CCMP"
-msgstr ""
+msgstr "युग्मवार सीसीएमपी"
 
 #: editor/uiutils.cpp:415
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group WEP40"
-msgstr ""
+msgstr "समूह WEP40"
 
 #: editor/uiutils.cpp:417
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group WEP104"
-msgstr ""
+msgstr "समूह WEP104"
 
 #: editor/uiutils.cpp:419
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group TKIP"
-msgstr ""
+msgstr "समूह TKIP"
 
 #: editor/uiutils.cpp:421
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group CCMP"
-msgstr ""
+msgstr "समूह सीसीएमपी"
 
 #: editor/uiutils.cpp:423
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "PSK"
-msgstr ""
+msgstr "PSK"
 
 #: editor/uiutils.cpp:425
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "802.1x"
-msgstr ""
+msgstr "८०२.१x इति"
 
 #: editor/uiutils.cpp:434
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 Bit/s"
-msgstr ""
+msgstr "%1 बिट्/से"
 
 #: editor/uiutils.cpp:436
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 MBit/s"
-msgstr ""
+msgstr "%1 MBit/s"
 
 #: editor/uiutils.cpp:438
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 GBit/s"
-msgstr ""
+msgstr "%1 GBit/s"
 
 #: editor/uiutils.cpp:462
 #, kde-format
 msgctxt "Wireless connection frequency"
 msgid "%1 GHz"
-msgstr ""
+msgstr "%1 गीगाहर्ट्ज"
 
 #: editor/uiutils.cpp:468
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "LTE"
-msgstr ""
+msgstr "एलटीई"
 
 #: editor/uiutils.cpp:470
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "UMTS/HSxPA"
-msgstr ""
+msgstr "UMTS/HSxPA"
 
 #: editor/uiutils.cpp:472
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GPRS/EDGE"
-msgstr ""
+msgstr "जीपीआरएस/एज"
 
 #: editor/uiutils.cpp:474
 #, kde-format
@@ -2500,91 +2500,91 @@ msgstr "जीएसएम"
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "Any"
-msgstr ""
+msgstr "कश्चित्‌"
 
 #: editor/uiutils.cpp:486
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G नं"
 
 #: editor/uiutils.cpp:490
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "LTE"
-msgstr ""
+msgstr "एलटीई"
 
 #: editor/uiutils.cpp:492
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision B"
-msgstr ""
+msgstr "CDMA2000 EVDO संशोधन बी"
 
 #: editor/uiutils.cpp:494
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision A"
-msgstr ""
+msgstr "CDMA2000 EVDO संशोधन क"
 
 #: editor/uiutils.cpp:496
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision 0"
-msgstr ""
+msgstr "CDMA2000 EVDO संशोधन 0"
 
 #: editor/uiutils.cpp:498
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 1xRTT"
-msgstr ""
+msgstr "सीडीएमए२००० १xआरटीटी"
 
 #: editor/uiutils.cpp:500
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA+"
-msgstr ""
+msgstr "एचएसपीए+"
 
 #: editor/uiutils.cpp:502
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA"
-msgstr ""
+msgstr "HSPA"
 
 #: editor/uiutils.cpp:504
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSUPA"
-msgstr ""
+msgstr "हसुपा"
 
 #: editor/uiutils.cpp:506
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSDPA"
-msgstr ""
+msgstr "एचएसडीपीए"
 
 #: editor/uiutils.cpp:508
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "UMTS"
-msgstr ""
+msgstr "उमट्स्"
 
 #: editor/uiutils.cpp:510
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "EDGE"
-msgstr ""
+msgstr "धारा"
 
 #: editor/uiutils.cpp:512
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "GPRS"
-msgstr ""
+msgstr "जीपीआरएस"
 
 #: editor/uiutils.cpp:514
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "Compact GSM"
-msgstr ""
+msgstr "संकुचित जीएसएम"
 
 #: editor/uiutils.cpp:516
 #, kde-format
@@ -2596,133 +2596,133 @@ msgstr "जीएसएम"
 #, kde-format
 msgctxt "Analog wireline modem"
 msgid "Analog"
-msgstr ""
+msgstr "एनालॉग्"
 
 #: editor/uiutils.cpp:520 editor/uiutils.cpp:525
 #, kde-format
 msgctxt "Unknown cellular access technology"
 msgid "Unknown"
-msgstr ""
+msgstr "अज्ञात"
 
 #: editor/uiutils.cpp:522
 #, kde-format
 msgctxt "Any cellular access technology"
 msgid "Any"
-msgstr ""
+msgstr "कश्चित्‌"
 
 #: editor/uiutils.cpp:532
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem is unlocked."
-msgstr ""
+msgstr "मोडेम् अनलॉक्ड् अस्ति।"
 
 #: editor/uiutils.cpp:534
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN code."
-msgstr ""
+msgstr "सिम इत्यस्य कृते पिन कोड् आवश्यकम् अस्ति ।"
 
 #: editor/uiutils.cpp:536
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN2 code."
-msgstr ""
+msgstr "सिम इत्यस्य कृते PIN2 कोडस्य आवश्यकता भवति ।"
 
 #: editor/uiutils.cpp:538
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK code."
-msgstr ""
+msgstr "सिम इत्यस्य कृते PUK कोडः आवश्यकः भवति ।"
 
 #: editor/uiutils.cpp:540
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK2 code."
-msgstr ""
+msgstr "सिम इत्यस्य कृते PUK2 कोडस्य आवश्यकता भवति ।"
 
 #: editor/uiutils.cpp:542
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PIN code."
-msgstr ""
+msgstr "मोडेम् इत्यस्य कृते सेवाप्रदातुः पिनकोड् आवश्यकः भवति ।"
 
 #: editor/uiutils.cpp:544
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PUK code."
-msgstr ""
+msgstr "मोडेम् इत्यस्य कृते सेवाप्रदातृणां PUK कोडस्य आवश्यकता भवति ।"
 
 #: editor/uiutils.cpp:546
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PIN code."
-msgstr ""
+msgstr "मोडेम् इत्यस्य कृते नेटवर्क् पिन कोड् आवश्यकम् अस्ति ।"
 
 #: editor/uiutils.cpp:548
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PUK code."
-msgstr ""
+msgstr "मोडेम् इत्यस्य कृते नेटवर्क् PUK कोड् आवश्यकम् अस्ति ।"
 
 #: editor/uiutils.cpp:550
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PIN code."
-msgstr ""
+msgstr "मोडेम् इत्यस्य कृते पिन कोड् आवश्यकम् अस्ति ।"
 
 #: editor/uiutils.cpp:552
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PIN code."
-msgstr ""
+msgstr "मोडेम् इत्यस्य कृते निगमस्य पिनसङ्केतः आवश्यकः भवति ।"
 
 #: editor/uiutils.cpp:554
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PUK code."
-msgstr ""
+msgstr "मोडेम् इत्यस्य कृते निगमस्य PUK कोडस्य आवश्यकता भवति ।"
 
 #: editor/uiutils.cpp:556
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PIN code."
-msgstr ""
+msgstr "मोडेम् इत्यस्य कृते PH-FSIM PIN कोडः आवश्यकः भवति ।"
 
 #: editor/uiutils.cpp:558
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PUK code."
-msgstr ""
+msgstr "मोडेम् इत्यस्य कृते PH-FSIM PUK कोडस्य आवश्यकता भवति ।"
 
 #: editor/uiutils.cpp:560
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PIN code."
-msgstr ""
+msgstr "मोडेम् इत्यस्य कृते नेटवर्क् उपसमूहस्य पिन कोड् आवश्यकम् अस्ति ।"
 
 #: editor/uiutils.cpp:562
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PUK code."
-msgstr ""
+msgstr "मोडेम् इत्यस्य कृते संजालस्य उपसमूहस्य PUK कोडस्य आवश्यकता भवति ।"
 
 #: editor/uiutils.cpp:565
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Lock reason unknown."
-msgstr ""
+msgstr "तालाकारणम् अज्ञातम्।"
 
 #: editor/uiutils.cpp:588
 #, kde-format
 msgctxt "@label no security"
 msgid "Insecure"
-msgstr ""
+msgstr "असुरक्षित"
 
 #: editor/uiutils.cpp:591
 #, kde-format
 msgctxt "@label WEP security"
 msgid "WEP"
-msgstr ""
+msgstr "WEP"
 
 #: editor/uiutils.cpp:594
 #, kde-format
@@ -2734,43 +2734,43 @@ msgstr "प्लुति"
 #, kde-format
 msgctxt "@label Dynamic WEP security"
 msgid "Dynamic WEP"
-msgstr ""
+msgstr "गतिशील WEP"
 
 #: editor/uiutils.cpp:600
 #, kde-format
 msgctxt "@label WPA-PSK security"
 msgid "WPA-PSK"
-msgstr ""
+msgstr "डब्ल्यूपीए-पीएसके"
 
 #: editor/uiutils.cpp:603
 #, kde-format
 msgctxt "@label WPA-EAP security"
 msgid "WPA-EAP"
-msgstr ""
+msgstr "डब्ल्यूपीए-ईएपी"
 
 #: editor/uiutils.cpp:606
 #, kde-format
 msgctxt "@label WPA2-PSK security"
 msgid "WPA2-PSK"
-msgstr ""
+msgstr "WPA2-PSK इति"
 
 #: editor/uiutils.cpp:609
 #, kde-format
 msgctxt "@label WPA2-EAP security"
 msgid "WPA2-EAP"
-msgstr ""
+msgstr "डब्ल्यूपीए२-ईएपी"
 
 #: editor/uiutils.cpp:612
 #, kde-format
 msgctxt "@label WPA3-SAE security"
 msgid "WPA3-SAE"
-msgstr ""
+msgstr "WPA3-SAE इति"
 
 #: editor/uiutils.cpp:615
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:618
 #, kde-format
@@ -2782,7 +2782,7 @@ msgstr "वर्धितं मुक्तं (OWE) 1.1."
 #, kde-format
 msgctxt "@label unknown security"
 msgid "Unknown security type"
-msgstr ""
+msgstr "अज्ञात सुरक्षा प्रकार"
 
 #: editor/uiutils.cpp:637
 #, kde-format
@@ -2791,8 +2791,8 @@ msgctxt ""
 "the number of minutes since usage"
 msgid "One minute ago"
 msgid_plural "%1 minutes ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "एकनिमेषपूर्वम्"
+msgstr[1] "%1 निमेषपूर्वम्"
 
 #: editor/uiutils.cpp:643
 #, kde-format
@@ -2801,22 +2801,22 @@ msgctxt ""
 "the number of hours since usage"
 msgid "One hour ago"
 msgid_plural "%1 hours ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "एकघण्टापूर्वम्"
+msgstr[1] "%1 घण्टापूर्वम्"
 
 #: editor/uiutils.cpp:648
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
-msgstr ""
+msgstr "ह्यः"
 
 #: editor/uiutils.cpp:656
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
-msgstr ""
+msgstr "कदापि न"
 
 #: editor/uiutils.cpp:671
 #, kde-format
@@ -2825,8 +2825,8 @@ msgctxt ""
 "the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "अन्तिमवारं एकनिमेषपूर्वं प्रयुक्तः"
+msgstr[1] "अन्तिमप्रयुक्तः %1 निमेषपूर्वम्"
 
 #: editor/uiutils.cpp:677
 #, kde-format
@@ -2835,15 +2835,15 @@ msgctxt ""
 "the number of hours since usage"
 msgid "Last used one hour ago"
 msgid_plural "Last used %1 hours ago"
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "अन्तिमवारं एकघण्टापूर्वं प्रयुक्तम्"
+msgstr[1] "अन्तिमप्रयुक्तः %1 घण्टापूर्वम्"
 
 #: editor/uiutils.cpp:682
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
-msgstr ""
+msgstr "अन्तिमवारं कालः प्रयुक्तः"
 
 #: editor/uiutils.cpp:684
 #, kde-format
@@ -2855,7 +2855,7 @@ msgstr "%1 इत्यत्र अन्तिमवारं प्रयु�
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never used"
-msgstr ""
+msgstr "कदापि न प्रयुक्तम्"
 
 #: editor/vpnuiplugin.cpp:42
 #, kde-format
@@ -2876,13 +2876,13 @@ msgstr "न कार्यान्वितम्"
 #, kde-format
 msgctxt "@item:intable shortcut for Not Available"
 msgid "N/A"
-msgstr ""
+msgstr "न/अ"
 
 #: editor/widgets/advancedpermissionswidget.cpp:87
 #, kde-format
 msgctxt "@info:tooltip real user name is not available"
 msgid "Not Available"
-msgstr ""
+msgstr "न उपलब्धम्"
 
 #: editor/widgets/bssidcombobox.cpp:122
 #, kde-format
@@ -2904,25 +2904,25 @@ msgstr ""
 #, kde-format
 msgctxt "Header text for IPv4 route metric"
 msgid "Metric"
-msgstr ""
+msgstr "मेट्रिक"
 
 #: editor/widgets/ipv6routeswidget.cpp:28
 #, kde-format
 msgctxt "Header text for IPv6 netmask"
 msgid "Netmask"
-msgstr ""
+msgstr "नेटमास्क"
 
 #: editor/widgets/ipv6routeswidget.cpp:32
 #, kde-format
 msgctxt "Header text for IPv6 route metric"
 msgid "Metric"
-msgstr ""
+msgstr "मेट्रिक"
 
 #: editor/widgets/mobileconnectionwizard.cpp:39
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "New Mobile Broadband Connection"
-msgstr ""
+msgstr "नवीन मोबाईल ब्रॉडबैण्ड कनेक्शन"
 
 #: editor/widgets/mobileconnectionwizard.cpp:135
 #: editor/widgets/mobileconnectionwizard.cpp:153
@@ -2931,13 +2931,13 @@ msgstr ""
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My plan is not listed…"
-msgstr ""
+msgstr "मम योजना सूचीकृता नास्ति..."
 
 #: editor/widgets/mobileconnectionwizard.cpp:138
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Unknown Provider"
-msgstr ""
+msgstr "अज्ञात प्रदाता"
 
 #: editor/widgets/mobileconnectionwizard.cpp:146
 #, kde-format
@@ -2950,13 +2950,13 @@ msgstr "मूलभूतम्‌"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "APN: %1"
-msgstr ""
+msgstr "एपीएन: %1"
 
 #: editor/widgets/mobileconnectionwizard.cpp:236
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Set up a Mobile Broadband Connection"
-msgstr ""
+msgstr "एकं Mobile Broadband Connection स्थापयन्तु"
 
 #: editor/widgets/mobileconnectionwizard.cpp:240
 #, kde-format
@@ -2965,116 +2965,118 @@ msgid ""
 "This assistant helps you easily set up a mobile broadband connection to a "
 "cellular (3G) network."
 msgstr ""
+"एषः सहायकः भवन्तं सेलुलर (3G) संजाले सहजतया मोबाईल् ब्रॉडबैण्ड् संयोजनं स्थापयितुं साहाय्यं "
+"करोति ।"
 
 #: editor/widgets/mobileconnectionwizard.cpp:244
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "You will need the following information:"
-msgstr ""
+msgstr "भवद्भ्यः निम्नलिखितसूचनाः आवश्यकाः भविष्यन्ति।"
 
 #: editor/widgets/mobileconnectionwizard.cpp:248
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband provider's name"
-msgstr ""
+msgstr "भवतः ब्रॉडबैण्ड् प्रदातुः नाम"
 
 #: editor/widgets/mobileconnectionwizard.cpp:249
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband billing plan name"
-msgstr ""
+msgstr "भवतः ब्रॉडबैण्ड् बिलिंग् योजनायाः नाम"
 
 #: editor/widgets/mobileconnectionwizard.cpp:250
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
-msgstr ""
+msgstr "(केषुचित् सन्दर्भेषु) भवतः ब्रॉडबैण्ड बिलिंग् योजना APN (Access Point Name)"
 
 #: editor/widgets/mobileconnectionwizard.cpp:254
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Create a connection for &this mobile broadband device:"
-msgstr ""
+msgstr "&अस्य मोबाईल ब्रॉडबैण्ड् उपकरणस्य कृते संयोजनं रचयन्तु:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:258
 #: editor/widgets/mobileconnectionwizard.cpp:385
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Any GSM device"
-msgstr ""
+msgstr "यत्किमपि GSM यन्त्रम्"
 
 #: editor/widgets/mobileconnectionwizard.cpp:260
 #: editor/widgets/mobileconnectionwizard.cpp:387
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Any CDMA device"
-msgstr ""
+msgstr "यत्किमपि CDMA-यन्त्रम्"
 
 #: editor/widgets/mobileconnectionwizard.cpp:311
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Installed GSM device"
-msgstr ""
+msgstr "GSM उपकरणं संस्थापितम्"
 
 #: editor/widgets/mobileconnectionwizard.cpp:315
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Installed CDMA device"
-msgstr ""
+msgstr "CDMA उपकरणं संस्थापितम्"
 
 #: editor/widgets/mobileconnectionwizard.cpp:400
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider's Country"
-msgstr ""
+msgstr "स्वस्य प्रदातुः देशं चिनुत"
 
 #: editor/widgets/mobileconnectionwizard.cpp:403
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Country List:"
-msgstr ""
+msgstr "देशसूची : १."
 
 #: editor/widgets/mobileconnectionwizard.cpp:407
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My country is not listed"
-msgstr ""
+msgstr "मम देशः सूचीकृतः नास्ति"
 
 #: editor/widgets/mobileconnectionwizard.cpp:423
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider"
-msgstr ""
+msgstr "स्वस्य प्रदातारं चिनुत"
 
 #: editor/widgets/mobileconnectionwizard.cpp:426
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Select your provider from a &list:"
-msgstr ""
+msgstr "&सूचिकातः स्वस्य प्रदातारं चिनुत:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:435
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "I cannot find my provider and I wish to enter it &manually:"
-msgstr ""
+msgstr "अहं मम प्रदातारं न प्राप्नोमि तथा च अहं तस्मिन् प्रविष्टुम् इच्छामि &manually:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:477
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Billing Plan"
-msgstr ""
+msgstr "स्वस्य बिलिंग् योजनां चिनोतु"
 
 #: editor/widgets/mobileconnectionwizard.cpp:480
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "&Select your plan:"
-msgstr ""
+msgstr "&स्वयोजनां चयनं कुर्वन्तु:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:487
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Selected plan &APN (Access Point Name):"
-msgstr ""
+msgstr "चयनित योजना &APN (Access Point Name):"
 
 #: editor/widgets/mobileconnectionwizard.cpp:500
 #, kde-format
@@ -3085,31 +3087,36 @@ msgid ""
 "\n"
 "If you are unsure of your plan please ask your provider for your plan's APN."
 msgstr ""
+"चेतावनी: अशुद्धयोजनायाः चयनेन भवतः ब्रॉडबैण्ड् खातेः बिलिंग्-समस्याः भवितुम् अर्हन्ति अथवा "
+"संयोजनं निवारयितुं शक्यते ।\n"
+"\n"
+"यदि भवान् स्वयोजनायाः विषये अनिश्चितः अस्ति तर्हि कृपया स्वस्य योजनायाः एपीएन् कृते स्वस्य "
+"प्रदातारं पृच्छतु।"
 
 #: editor/widgets/mobileconnectionwizard.cpp:540
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Confirm Mobile Broadband Settings"
-msgstr ""
+msgstr "मोबाईल ब्रॉडबैण्ड सेटिंग्स् पुष्टयन्तु"
 
 #: editor/widgets/mobileconnectionwizard.cpp:543
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid ""
 "Your mobile broadband connection is configured with the following settings:"
-msgstr ""
+msgstr "भवतः चल-ब्रॉडबैण्ड-सम्बद्धता निम्नलिखित-सेटिंग्स्-सहितं विन्यस्तम् अस्ति ।"
 
 #: editor/widgets/mobileconnectionwizard.cpp:547
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your Provider:"
-msgstr ""
+msgstr "भवतः प्रदाता : १."
 
 #: editor/widgets/mobileconnectionwizard.cpp:552
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your Plan:"
-msgstr ""
+msgstr "भवतः योजना : १."
 
 #: editor/widgets/passwordfield.cpp:32
 #, kde-format
@@ -3179,7 +3186,7 @@ msgstr "वास्तविक नाम"
 #, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username"
-msgstr ""
+msgstr "उपयोक्तृनाम"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/widgets/ui/advancedpermissionswidget.ui:160
@@ -3248,7 +3255,7 @@ msgstr "IPv6 मार्गाः सम्पादयन्तु"
 #, kde-format
 msgctxt "Remove a selected row"
 msgid "R&emove"
-msgstr ""
+msgstr "अपाकरोति"
 
 #: handler.cpp:121
 #, kde-format
@@ -3428,115 +3435,115 @@ msgstr "रक्षितां विन्याससञ्चिकां �
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr ""
+msgstr "संयोजनप्रकारः अज्ञातः अस्ति"
 
 #: models/networkmodelitem.cpp:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr ""
+msgstr "संयोजनप्रकारः ADSL अस्ति"
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr ""
+msgstr "संयोजनप्रकारः ब्लूटूथ् अस्ति"
 
 #: models/networkmodelitem.cpp:45
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr ""
+msgstr "संयोजनप्रकारः Bridge इति"
 
 #: models/networkmodelitem.cpp:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr ""
+msgstr "संयोजनप्रकारः CDMA अस्ति"
 
 #: models/networkmodelitem.cpp:47
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr ""
+msgstr "संयोजनप्रकारः GSM अस्ति"
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr ""
+msgstr "संयोजनप्रकारः Infiniband इति"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
-msgstr ""
+msgstr "संयोजनप्रकारः OLPC Mesh इति"
 
 #: models/networkmodelitem.cpp:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr ""
+msgstr "संयोजनप्रकारः PPOPE इति"
 
 #: models/networkmodelitem.cpp:51
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr ""
+msgstr "संयोजनप्रकारः VLAN अस्ति"
 
 #: models/networkmodelitem.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr ""
+msgstr "संयोजनप्रकारः VPN अस्ति"
 
 #: models/networkmodelitem.cpp:53
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr ""
+msgstr "संयोजनप्रकारः Wimax अस्ति"
 
 #: models/networkmodelitem.cpp:54
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr ""
+msgstr "संयोजनप्रकारः Wired इति"
 
 #: models/networkmodelitem.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr ""
+msgstr "संयोजनप्रकारः Wireless अस्ति"
 
 #: models/networkmodelitem.cpp:56
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr ""
+msgstr "संयोजनप्रकारः Team इति"
 
 #: models/networkmodelitem.cpp:57
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr ""
+msgstr "संयोजनप्रकारः Generic अस्ति"
 
 #: models/networkmodelitem.cpp:58
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr ""
+msgstr "संयोजनप्रकारः Tunnel इति"
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr ""
+msgstr "संयोजनप्रकारः IP Tunnel इति"
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
-msgstr ""
+msgstr "संयोजनप्रकारः WireGuard इति"
 
 #: models/networkmodelitem.cpp:585
 #, kde-format
@@ -3610,7 +3617,7 @@ msgstr "संकेतबलम्"
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
-msgstr ""
+msgstr "%1% २."
 
 #: models/networkmodelitem.cpp:650
 #, kde-format
@@ -3631,7 +3638,7 @@ msgstr "आवृत्ती"
 #, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr ""
+msgstr "%1 (चैनल %2) २."
 
 #: models/networkmodelitem.cpp:665
 #, kde-format
@@ -3705,38 +3712,38 @@ msgstr "उपकरणम्‌"
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
-msgstr ""
+msgstr "संबद्धः"
 
 #: networkstatus.cpp:128
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
-msgstr ""
+msgstr "संबद्धः"
 
 #: networkstatus.cpp:131
 #, kde-format
 msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
-msgstr ""
+msgstr "संबद्धः"
 
 #: networkstatus.cpp:134
 #, kde-format
 msgctxt "Networking is inactive and all devices are disabled"
 msgid "Inactive"
-msgstr ""
+msgstr "निष्क्रिय"
 
 #: networkstatus.cpp:137
 #, kde-format
 msgctxt "There is no active network connection"
 msgid "Disconnected"
-msgstr ""
+msgstr "विच्छिन्नः"
 
 #: networkstatus.cpp:140
 #, kde-format
 msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
-msgstr ""
+msgstr "विच्छेदनम्"
 
 #: networkstatus.cpp:143
 #, kde-format
@@ -3744,7 +3751,7 @@ msgctxt ""
 "A network device is connecting to a network and there is no other available "
 "network connection"
 msgid "Connecting"
-msgstr ""
+msgstr "संयोजयन्"
 
 #: networkstatus.cpp:217
 #, kde-format
@@ -3785,4 +3792,8 @@ msgstr "NetworkManager 0.9.8 आवश्यकम्, %1 प्राप्त�
 #, kde-format
 msgctxt "global connection state"
 msgid "Unknown"
-msgstr ""
+msgstr "अज्ञात"
+
+#~ msgctxt "General"
+#~ msgid "General configuration"
+#~ msgstr "सामान्यविन्यासः"

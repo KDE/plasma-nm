@@ -243,7 +243,7 @@ msgstr ""
 #, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username:"
-msgstr ""
+msgstr "उपयोक्तृनाम : १."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, passUserName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, x509PassUsername)
@@ -661,7 +661,7 @@ msgstr "एचएमएसी प्रमाणीकरणम् : १."
 #, kde-format
 msgctxt "like in use Default configuration"
 msgid "Default"
-msgstr ""
+msgstr "मूलभूतम्‌"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
@@ -1050,25 +1050,25 @@ msgstr "यदा दोषाः भवन्ति तदा अनिश्�
 #, kde-format
 msgctxt "@title: window advanced openvpn properties"
 msgid "Advanced OpenVPN properties"
-msgstr ""
+msgstr "उन्नत OpenVPN गुणाः"
 
 #: openvpnadvancedwidget.cpp:154 openvpnadvancedwidget.cpp:178
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
-msgstr ""
+msgstr "OpenVPN सिफर लुकअप विफलम्"
 
 #: openvpnadvancedwidget.cpp:161
 #, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
-msgstr ""
+msgstr "मूलभूतम्‌"
 
 #: openvpnadvancedwidget.cpp:175
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
-msgstr ""
+msgstr "OpenVPN सिफर्स् न प्राप्ताः"
 
 #: openvpnauth.cpp:82 openvpnauth.cpp:114
 #, kde-format

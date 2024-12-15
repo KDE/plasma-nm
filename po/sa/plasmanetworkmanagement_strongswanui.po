@@ -32,7 +32,7 @@ msgstr "आतप:"
 #, kde-format
 msgctxt "@label:textbox password label for EAP password"
 msgid "Password:"
-msgstr ""
+msgstr "समाभाष्:"
 
 #: strongswanauth.cpp:106
 #, kde-format
@@ -41,6 +41,8 @@ msgid ""
 "Configuration uses ssh-agent for authentication, but no ssh-agent found "
 "running."
 msgstr ""
+"विन्यासः प्रमाणीकरणाय ssh-agent इत्यस्य उपयोगं करोति, परन्तु कोऽपि ssh-agent चालितः "
+"न प्राप्तः ।"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)

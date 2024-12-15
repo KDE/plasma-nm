@@ -259,103 +259,103 @@ msgstr "उन्नत VPNC गुण"
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Cisco"
-msgstr ""
+msgstr "सिस्को"
 
 #: vpncadvancedwidget.cpp:24
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Netscreen"
-msgstr ""
+msgstr "नेटस्क्रीन्"
 
 #: vpncadvancedwidget.cpp:27
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
-msgstr ""
+msgstr "सुरक्षित (पूर्वनिर्धारित) २."
 
 #: vpncadvancedwidget.cpp:28
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Weak (DES encryption, use with caution)"
-msgstr ""
+msgstr "दुर्बल (DES एन्क्रिप्शन, सावधानीपूर्वकं उपयोगः)"
 
 #: vpncadvancedwidget.cpp:29
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
-msgstr ""
+msgstr "न कश्चित् (पूर्णतया असुरक्षितः) २."
 
 #: vpncadvancedwidget.cpp:32
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr ""
+msgstr "NAT-T यदा उपलब्धं भवति (पूर्वनिर्धारितम्)"
 
 #: vpncadvancedwidget.cpp:33
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
-msgstr ""
+msgstr "नत्-त सदा"
 
 #: vpncadvancedwidget.cpp:34
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "Cisco UDP"
-msgstr ""
+msgstr "सिस्को यूडीपी"
 
 #: vpncadvancedwidget.cpp:35
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "Disabled"
-msgstr ""
+msgstr "अक्षमित"
 
 #: vpncadvancedwidget.cpp:38
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 1"
-msgstr ""
+msgstr "डीएच समूह 1"
 
 #: vpncadvancedwidget.cpp:39
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 2 (default)"
-msgstr ""
+msgstr "डीएच समूहः २ (पूर्वनिर्धारितः) २."
 
 #: vpncadvancedwidget.cpp:40
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 5"
-msgstr ""
+msgstr "डीएच समूह 5"
 
 #: vpncadvancedwidget.cpp:43
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
-msgstr ""
+msgstr "सर्वर (पूर्वनिर्धारित) २."
 
 #: vpncadvancedwidget.cpp:44
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "None"
-msgstr ""
+msgstr "न कश्चित्"
 
 #: vpncadvancedwidget.cpp:45
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 1"
-msgstr ""
+msgstr "डीएच समूह 1"
 
 #: vpncadvancedwidget.cpp:46
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 2"
-msgstr ""
+msgstr "डीएच समूह 2"
 
 #: vpncadvancedwidget.cpp:47
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
-msgstr ""
+msgstr "डीएच समूह 5"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
 #: vpncauth.ui:14

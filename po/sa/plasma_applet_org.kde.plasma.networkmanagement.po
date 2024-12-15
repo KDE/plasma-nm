@@ -53,6 +53,8 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
+"वर्तमान डाउनलोड् गतिः %1 किबिबाइट् प्रति सेकण्ड् अस्ति; वर्तमान अपलोड् वेगः %2 किबिबाइट् "
+"प्रति सेकण्ड् अस्ति"
 
 #: contents/ui/ConnectionItem.qml:302
 #, kde-format
@@ -73,7 +75,7 @@ msgstr "भवद्भिः अस्मिन् जालपुटे प्
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "प्रवेशं कुर्वन्तु"
 
 #: contents/ui/ConnectionListPage.qml:115
 #, kde-format
@@ -119,13 +121,13 @@ msgstr "संजालम्"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Airplane Mode इत्येतत् निष्क्रियं कर्तुं मध्य-क्लिक् कुर्वन्तु"
 
 #: contents/ui/main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "Airplane Mode इत्येतत् चालू कर्तुं मध्य-क्लिक् कुर्वन्तु"
 
 #: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
 #, kde-format
@@ -156,7 +158,7 @@ msgstr "&संजालसंयोजनानि विन्यस्तं 
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr ""
+msgstr "Network Connections इत्यत्र प्रत्यागच्छन्तु"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
@@ -173,12 +175,13 @@ msgstr "चलजालं सक्षमं कुर्वन्तु"
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
+"विमानविधानं निष्क्रियं कुर्वन्तु<nl/><nl/>एतेन Wi-Fi, Bluetooth च सक्षमाः भविष्यन्ति"
 
 #: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
-msgstr ""
+msgstr "विमानविधानं सक्षमं कुर्वन्तु<nl/><nl/>एतेन Wi-Fi, Bluetooth च निष्क्रियं भविष्यति"
 
 #: contents/ui/Toolbar.qml:159
 #, kde-format

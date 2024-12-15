@@ -100,7 +100,7 @@ msgstr "MPPE इत्यस्य उपयोगः आवश्यकः, 40/
 #, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
-msgstr ""
+msgstr "कश्चित्‌"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: pptpadvanced.ui:137
@@ -225,7 +225,7 @@ msgstr "PPTP सेटिंग्स्"
 #, kde-format
 msgctxt "like in General settings"
 msgid "General"
-msgstr ""
+msgstr "सामान्य"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
 #: pptpprop.ui:34
@@ -244,7 +244,7 @@ msgstr "PPTP सर्वर IP अथवा नाम।"
 #, kde-format
 msgctxt "like in Additional settings"
 msgid "Additional"
-msgstr ""
+msgstr "अतिरिक्त रूपेन"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_login)
 #: pptpprop.ui:80
@@ -280,4 +280,4 @@ msgstr ""
 #, kde-format
 msgctxt "like in Advanced settings"
 msgid "Advanced…"
-msgstr ""
+msgstr "उन्नतं…"

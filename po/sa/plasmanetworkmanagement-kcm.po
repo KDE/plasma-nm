@@ -25,7 +25,7 @@ msgstr "\"%1\" तः VPN विन्यासम् आयातयतु?"
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr ""
+msgstr "VPN विन्यासम् आयातयन्तु"
 
 #: kcm.cpp:271
 #, kde-format
@@ -61,7 +61,7 @@ msgstr "किं भवन्तः '%1' संयोजने कृतान�
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
-msgstr ""
+msgstr "परिवर्तनं रक्षतु"
 
 #: kcm.cpp:611
 #, kde-format
@@ -86,7 +86,7 @@ msgstr "अज्ञात VPN प्रकार"
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr ""
+msgstr "एकं Connection Type चिनोतु"
 
 #: qml/AddConnectionDialog.qml:168
 msgid "Create"
@@ -128,12 +128,12 @@ msgstr "हॉटस्पॉट्"
 #: qml/ConfigurationDialog.qml:70
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "नामः:"
 
 #: qml/ConfigurationDialog.qml:76
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr ""
+msgstr "समाभाष्:"
 
 #: qml/ConfigurationDialog.qml:95
 msgid "Hotspot name must not be empty"
@@ -195,7 +195,7 @@ msgstr "चयनितं संयोजनं निर्यातयन्�
 #: qml/main.qml:208
 msgctxt "@title:window"
 msgid "Remove Connection"
-msgstr ""
+msgstr "संयोजनं निष्कासयन्तु"
 
 #: qml/main.qml:209
 msgid "Do you want to remove the connection '%1'?"

@@ -1,4 +1,4 @@
-# Sanskrit translations for plasma-nm package.
+# Hindi translations for plasma-nm package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,44 +8,43 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-28 00:41+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Connect"
-msgstr "संयुज्"
+msgstr "जोड़ना"
 
 #: contents/ui/ConnectionItem.qml:56
 #, kde-format
 msgid "Disconnect"
-msgstr "विच्छेदं कुर्वन्तु"
+msgstr "डिस्कनेक्ट"
 
 #: contents/ui/ConnectionItem.qml:81
 #, kde-format
 msgid "Show Network's QR Code"
-msgstr "नेटवर्कस्य QR कोडं दर्शयतु"
+msgstr "नेटवर्क का क्यूआर कोड दिखाएं"
 
 #: contents/ui/ConnectionItem.qml:87
 #, kde-format
 msgid "Configure…"
-msgstr "विन्यस्तं कुर्वन्तु..."
+msgstr "कॉन्फ़िगर करें…"
 
 #: contents/ui/ConnectionItem.qml:133
 #, kde-format
 msgid "Speed"
-msgstr "गति"
+msgstr "रफ़्तार"
 
 #: contents/ui/ConnectionItem.qml:138
 #, kde-format
 msgid "Details"
-msgstr "वर्णन"
+msgstr "विवरण"
 
 #: contents/ui/ConnectionItem.qml:185
 #, kde-format
@@ -54,59 +53,59 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
-"वर्तमान डाउनलोड् गतिः %1 किबिबाइट् प्रति सेकण्ड् अस्ति; वर्तमान अपलोड् वेगः %2 किबिबाइट् "
-"प्रति सेकण्ड् अस्ति"
+"वर्तमान डाउनलोड गति %1 किबिबाइट प्रति सेकंड है; वर्तमान अपलोड गति %2 किबिबाइट प्रति "
+"सेकंड है"
 
 #: contents/ui/ConnectionItem.qml:302
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr "संयोजितः, ↓ %1/s, ↑ %2/s"
+msgstr "कनेक्टेड, ↓ %1/s, ↑ %2/s"
 
 #: contents/ui/ConnectionItem.qml:306
 #, kde-format
 msgid "Connected"
-msgstr "संबद्धः"
+msgstr "जुड़े हुए"
 
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format
 msgid "You need to log in to this network"
-msgstr "भवद्भिः अस्मिन् जालपुटे प्रवेशः करणीयः"
+msgstr "आपको इस नेटवर्क में लॉग इन करना होगा"
 
 #: contents/ui/ConnectionListPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr "प्रवेशं कुर्वन्तु"
+msgstr "लॉग इन करें"
 
 #: contents/ui/ConnectionListPage.qml:115
 #, kde-format
 msgid "Airplane mode is enabled"
-msgstr "विमानविधिः सक्षमः अस्ति"
+msgstr "हवाई जहाज़ मोड सक्षम है"
 
 #: contents/ui/ConnectionListPage.qml:119
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
-msgstr "वायरलेस्, मोबाईल् नेटवर्क् निष्क्रियं भवति"
+msgstr "वायरलेस और मोबाइल नेटवर्क निष्क्रिय कर दिए गए हैं"
 
 #: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless is deactivated"
-msgstr "वायरलेस् निष्क्रियः भवति"
+msgstr "वायरलेस निष्क्रिय है"
 
 #: contents/ui/ConnectionListPage.qml:124
 #, kde-format
 msgid "Mobile network is deactivated"
-msgstr "चलजालं निष्क्रियं भवति"
+msgstr "मोबाइल नेटवर्क निष्क्रिय है"
 
 #: contents/ui/ConnectionListPage.qml:127
 #, kde-format
 msgid "No matches"
-msgstr "न मेलनं"
+msgstr "कोई मेल नहीं"
 
 #: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "No available connections"
-msgstr "न उपलब्धाः संयोजनाः"
+msgstr "कोई कनेक्शन उपलब्ध नहीं है"
 
 #: contents/ui/DetailsText.qml:45
 #, kde-format
@@ -116,98 +115,97 @@ msgstr "प्रतिलिपि"
 #: contents/ui/main.qml:32
 #, kde-format
 msgid "Networks"
-msgstr "संजालम्"
+msgstr "नेटवर्क"
 
 #: contents/ui/main.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr "Airplane Mode इत्येतत् निष्क्रियं कर्तुं मध्य-क्लिक् कुर्वन्तु"
+msgstr "एयरप्लेन मोड को बंद करने के लिए मध्य-क्लिक करें"
 
 #: contents/ui/main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "Airplane Mode इत्येतत् चालू कर्तुं मध्य-क्लिक् कुर्वन्तु"
+msgstr "एयरप्लेन मोड चालू करने के लिए मध्य-क्लिक करें"
 
 #: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
-msgstr "Wi-Fi सक्षमं कुर्वन्तु"
+msgstr "वाई-फाई सक्षम करें"
 
 #: contents/ui/main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
-msgstr "मोबाइल संजाल सक्षमं कुर्वन्तु"
+msgstr "मोबाइल नेटवर्क सक्षम करें"
 
 #: contents/ui/main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr "विमानविधानं सक्षमं कुर्वन्तु"
+msgstr "हवाई जहाज मोड सक्षम करें"
 
 #: contents/ui/main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
-msgstr "संजालप्रवेशपृष्ठं उद्घाटयतु..."
+msgstr "नेटवर्क लॉगिन पेज खोलें…"
 
 #: contents/ui/main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
-msgstr "&संजालसंयोजनानि विन्यस्तं कुर्वन्तु..."
+msgstr "&नेटवर्क कनेक्शन कॉन्फ़िगर करें…"
 
 #: contents/ui/PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "Network Connections इत्यत्र प्रत्यागच्छन्तु"
+msgstr "नेटवर्क कनेक्शन पर वापस लौटें"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
-msgstr "\"%1\" संजालेन सह सम्बद्धं कर्तुं अन्येन उपकरणेन एतत् QR-सङ्केतं स्कैन् कुर्वन्तु ।"
+msgstr "\"%1\" नेटवर्क से कनेक्ट करने के लिए इस QR कोड को किसी अन्य डिवाइस से स्कैन करें।"
 
 #: contents/ui/Toolbar.qml:122
 #, kde-format
 msgid "Enable mobile network"
-msgstr "चलजालं सक्षमं कुर्वन्तु"
+msgstr "मोबाइल नेटवर्क सक्षम करें"
 
 #: contents/ui/Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
-msgstr ""
-"विमानविधानं निष्क्रियं कुर्वन्तु<nl/><nl/>एतेन Wi-Fi, Bluetooth च सक्षमाः भविष्यन्ति"
+msgstr "एयरप्लेन मोड अक्षम करें<nl/><nl/>इससे वाई-फाई और ब्लूटूथ सक्षम हो जाएगा"
 
 #: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
-msgstr "विमानविधानं सक्षमं कुर्वन्तु<nl/><nl/>एतेन Wi-Fi, Bluetooth च निष्क्रियं भविष्यति"
+msgstr "एयरप्लेन मोड सक्षम करें<nl/><nl/>इससे वाई-फाई और ब्लूटूथ अक्षम हो जाएगा"
 
 #: contents/ui/Toolbar.qml:159
 #, kde-format
 msgid "Hotspot"
-msgstr "हॉटस्पॉट्"
+msgstr "हॉटस्पॉट"
 
 #: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:194
 #, kde-format
 msgid "Disable Hotspot"
-msgstr "हॉटस्पॉट् अक्षमम्"
+msgstr "हॉटस्पॉट अक्षम करें"
 
 #: contents/ui/Toolbar.qml:188 contents/ui/Toolbar.qml:194
 #, kde-format
 msgid "Create Hotspot"
-msgstr "हॉटस्पॉट् रचयन्तु"
+msgstr "हॉटस्पॉट बनाएं"
 
 #: contents/ui/Toolbar.qml:226
 #, kde-format
 msgid "Configure network connections…"
-msgstr "संजालसंयोजनानि विन्यस्यताम्..."
+msgstr "नेटवर्क कनेक्शन कॉन्फ़िगर करें…"
 
 #: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
-msgstr "/स"
+msgstr "/एस"
 
 #: contents/ui/TrafficMonitor.qml:89
 #, kde-format
@@ -217,4 +215,4 @@ msgstr "अपलोड करें"
 #: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
-msgstr "अवाहरन"
+msgstr "डाउनलोड करना"

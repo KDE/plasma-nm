@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-14 00:54+0000\n"
-"PO-Revision-Date: 2024-10-27 03:44+0100\n"
+"PO-Revision-Date: 2024-12-15 06:24+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -22,7 +22,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab General configuration"
 msgid "General"
-msgstr ""
+msgstr "ზოგადი"
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format

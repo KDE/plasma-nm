@@ -1,4 +1,4 @@
-# Sanskrit translations for plasma-nm package.
+# Hindi translations for plasma-nm package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,38 +8,37 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #. i18n: ectx: attribute (title), widget (QWidget, pptpTab)
 #: sstpadvanced.ui:39
 #, kde-format
 msgid "Point-to-Point"
-msgstr "बिन्दु-बिन्दु"
+msgstr "बिंदु से बिंदु तक"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
 #: sstpadvanced.ui:45
 #, kde-format
 msgid "Authentication"
-msgstr "प्रमाणीकरणम्"
+msgstr "प्रमाणीकरण"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_auth)
 #: sstpadvanced.ui:54
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr "निम्नलिखित प्रमाणीकरणविधयः अनुमन्यताम् : १."
+msgstr "निम्नलिखित प्रमाणीकरण विधियों की अनुमति दें:"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:65
 #, kde-format
 msgid "PAP"
-msgstr "PAP"
+msgstr "गूदा"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:73
@@ -69,98 +68,98 @@ msgstr "ईएपी"
 #: sstpadvanced.ui:111
 #, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr "Microsoft Point-to-Point Encryption इत्यस्य उपयोगं कुर्वन्तु"
+msgstr "Microsoft पॉइंट-टू-पॉइंट एन्क्रिप्शन का उपयोग करें"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
 #: sstpadvanced.ui:114
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr "MPPE Encryption इत्यस्य उपयोगं कुर्वन्तु"
+msgstr "MPPE एन्क्रिप्शन का उपयोग करें"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_MMPEcrypto)
 #: sstpadvanced.ui:135
 #, kde-format
 msgid "Crypto:"
-msgstr "क्रिप्टो : १."
+msgstr "क्रिप्टो:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: sstpadvanced.ui:152
 #, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
-msgstr "कश्चित्‌"
+msgstr "कोई"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: sstpadvanced.ui:157
 #, kde-format
 msgid "128 bit"
-msgstr "१२८ बिट्"
+msgstr "128 बिट"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: sstpadvanced.ui:162
 #, kde-format
 msgid "40 bit"
-msgstr "४० बिट्"
+msgstr "40 बिट"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
 #: sstpadvanced.ui:170
 #, kde-format
 msgid "Use stateful encryption"
-msgstr "स्टेटफुल् एन्क्रिप्शनस्य उपयोगं कुर्वन्तु"
+msgstr "स्टेटफुल एन्क्रिप्शन का उपयोग करें"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
 #: sstpadvanced.ui:180
 #, kde-format
 msgid "Compression"
-msgstr "संपीडनम्"
+msgstr "दबाव"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_BSD)
 #: sstpadvanced.ui:192
 #, kde-format
 msgid "Allow BSD compression"
-msgstr "BSD संपीडनं अनुमन्यताम्"
+msgstr "BSD संपीड़न की अनुमति दें"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_deflate)
 #: sstpadvanced.ui:202
 #, kde-format
 msgid "Allow Deflate compression"
-msgstr "Deflate compression इत्यस्य अनुमतिं ददातु"
+msgstr "डिफ्लेट संपीड़न की अनुमति दें"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
 #: sstpadvanced.ui:212
 #, kde-format
 msgid "Allow TCP header compression"
-msgstr "TCP शीर्षकसंपीडनं अनुमन्यताम्"
+msgstr "TCP हेडर संपीड़न की अनुमति दें"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
 #: sstpadvanced.ui:225
 #, kde-format
 msgid "Echo"
-msgstr "प्रतिध्वनि"
+msgstr "गूंज"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_sendEcho)
 #: sstpadvanced.ui:234
 #, kde-format
 msgid "Send PPP echo packets "
-msgstr "PPP echo packets प्रेषयन्तु "
+msgstr "PPP प्रतिध्वनि पैकेट भेजें"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_misc)
 #: sstpadvanced.ui:244
 #, kde-format
 msgid "Misc"
-msgstr "विविधाः"
+msgstr "विविध"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomUnitNumber)
 #: sstpadvanced.ui:252
 #, kde-format
 msgid "Use custom unit number:"
-msgstr "कस्टम् यूनिट् सङ्ख्यायाः उपयोगं कुर्वन्तु : १."
+msgstr "कस्टम इकाई संख्या का उपयोग करें:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: sstpadvanced.ui:285
 #, kde-format
 msgid "Proxy"
-msgstr "प्रॉक्सी"
+msgstr "प्रतिनिधि"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #. i18n: ectx: property (title), widget (QGroupBox, grp_general)
@@ -173,55 +172,55 @@ msgstr "सामान्य"
 #: sstpadvanced.ui:297
 #, kde-format
 msgid "Address:"
-msgstr "पत्रसङ्केतः:"
+msgstr "पता:"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_port)
 #: sstpadvanced.ui:310
 #, kde-format
 msgid "Port:"
-msgstr "पोताश्रय:"
+msgstr "पत्तन:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_credentials)
 #: sstpadvanced.ui:330
 #, kde-format
 msgid "Credentials"
-msgstr "प्रमाणपत्राणि"
+msgstr "साख"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_username)
 #: sstpadvanced.ui:336 sstpwidget.ui:86
 #, kde-format
 msgid "Username:"
-msgstr "उपयोक्तृनाम : १."
+msgstr "उपयोगकर्ता नाम:"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
 #: sstpadvanced.ui:349 sstpwidget.ui:99
 #, kde-format
 msgid "Password:"
-msgstr "समाभाष्:"
+msgstr "पासवर्ड:"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SstpAuth)
 #: sstpauth.ui:14
 #, kde-format
 msgid "SSH VPN"
-msgstr "SSH VPN"
+msgstr "एसएसएच वीपीएन"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: sstpauth.ui:32
 #, kde-format
 msgid "Password: "
-msgstr "समाभाष्: "
+msgstr "पासवर्ड: "
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
 #: sstpwidget.ui:25
 #, kde-format
 msgid "Gateway:"
-msgstr "प्रवेशद्वारः : १."
+msgstr "गेटवे:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btn_advancedOption)
 #: sstpwidget.ui:58
 #, kde-format
 msgid "Advanced…"
-msgstr "उन्नतं…"
+msgstr "विकसित…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: sstpwidget.ui:80
@@ -233,16 +232,16 @@ msgstr "वैकल्पिक"
 #: sstpwidget.ui:116
 #, kde-format
 msgid "NT Domain:"
-msgstr "एन टी डोमेन : १."
+msgstr "एनटी डोमेन:"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_caCert)
 #: sstpwidget.ui:129
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA प्रमाणपत्राणि : १."
+msgstr "सीए प्रमाणपत्र:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_ignoreCertWarnings)
 #: sstpwidget.ui:142
 #, kde-format
 msgid "Ignore certificate warnings"
-msgstr "प्रमाणपत्रस्य चेतावनीम् अवहेलयन्तु"
+msgstr "प्रमाणपत्र चेतावनियों पर ध्यान न दें"

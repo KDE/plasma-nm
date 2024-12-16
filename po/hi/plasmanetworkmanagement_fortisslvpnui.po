@@ -1,4 +1,4 @@
-# Sanskrit translations for plasma-nm package.
+# Hindi translations for plasma-nm package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,20 +8,19 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2020-10-30 02:41+0100\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #. i18n: ectx: property (text), widget (QPushButton, advancedButton)
 #: fortisslvpn.ui:36
 #, kde-format
 msgid "Advanced"
-msgstr "उन्नतं"
+msgstr "विकसित"
 
 #. i18n: ectx: property (title), widget (QGroupBox, generalGroupBox)
 #: fortisslvpn.ui:56
@@ -33,81 +32,81 @@ msgstr "सामान्य"
 #: fortisslvpn.ui:64
 #, kde-format
 msgid "Gateway:"
-msgstr "प्रवेशद्वारः : १."
+msgstr "गेटवे:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: fortisslvpn.ui:74
 #, kde-format
 msgid "SSLVPN server IP or name."
-msgstr "SSLVPN सर्वर IP अथवा नाम।"
+msgstr "SSLVPN सर्वर आईपी या नाम."
 
 #. i18n: ectx: property (title), widget (QGroupBox, authenticationGroupBox)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: fortisslvpn.ui:86 fortisslvpnadvanced.ui:35
 #, kde-format
 msgid "Authentication"
-msgstr "प्रमाणीकरणम्"
+msgstr "प्रमाणीकरण"
 
 #. i18n: ectx: property (text), widget (QLabel, usernameLabel)
 #: fortisslvpn.ui:92
 #, kde-format
 msgid "User name:"
-msgstr "उपयोक्तृनाम : १."
+msgstr "उपयोगकर्ता नाम:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, username)
 #: fortisslvpn.ui:102
 #, kde-format
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
-msgstr "स्थानीयतन्त्रस्य प्रमाणीकरणार्थं प्रयुक्तं नाम समकक्षं प्रति <name> इति सेट् कुर्वन्तु ।"
+msgstr "स्थानीय सिस्टम को पीयर में प्रमाणित करने के लिए प्रयुक्त नाम को <name> पर सेट करें।"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: fortisslvpn.ui:109 fortisslvpnauth.ui:26
 #, kde-format
 msgid "Password:"
-msgstr "समाभाष्:"
+msgstr "पासवर्ड:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, password)
 #: fortisslvpn.ui:119
 #, kde-format
 msgid "Password passed to SSLVPN when prompted for it."
-msgstr "तस्य कृते प्रार्थितस्य गुप्तशब्दः SSLVPN कृते पारितः।"
+msgstr "जब पासवर्ड मांगा गया तो उसे SSLVPN को भेज दिया गया।"
 
 #. i18n: ectx: property (text), widget (QLabel, caCertLabel)
 #: fortisslvpn.ui:129
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA प्रमाणपत्राणि : १."
+msgstr "सीए प्रमाणपत्र:"
 
 #. i18n: ectx: property (text), widget (QLabel, userCertLabel)
 #: fortisslvpn.ui:142
 #, kde-format
 msgid "User Certificate:"
-msgstr "उपयोक्तृप्रमाणपत्रम् : १."
+msgstr "उपयोगकर्ता प्रमाणपत्र:"
 
 #. i18n: ectx: property (text), widget (QLabel, userKeyLabel)
 #: fortisslvpn.ui:155
 #, kde-format
 msgid "User Key:"
-msgstr "उपयोक्तृकुंजी : १."
+msgstr "उपयोगकर्ता कुंजी:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, otp)
 #: fortisslvpnadvanced.ui:43
 #, kde-format
 msgid "Use a One-Time Password"
-msgstr "एकवारं गुप्तशब्दस्य उपयोगं कुर्वन्तु"
+msgstr "एक बार इस्तेमाल होने वाला पासवर्ड इस्तेमाल करें"
 
 #. i18n: ectx: property (text), widget (QCheckBox, tfa)
 #: fortisslvpnadvanced.ui:50
 #, kde-format
 msgid "2FA"
-msgstr "२फा"
+msgstr "2एफए"
 
 #. i18n: ectx: property (text), widget (QLabel, realmLabel)
 #: fortisslvpnadvanced.ui:68
 #, kde-format
 msgid "Realm:"
-msgstr "क्षेत्रम् : १."
+msgstr "क्षेत्र:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: fortisslvpnadvanced.ui:87
@@ -119,7 +118,7 @@ msgstr "सुरक्षा"
 #: fortisslvpnadvanced.ui:93
 #, kde-format
 msgid "Trusted certificate:"
-msgstr "विश्वसनीयं प्रमाणपत्रम् : १."
+msgstr "विश्वसनीय प्रमाणपत्र:"
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, trustedCert)
 #: fortisslvpnadvanced.ui:106
@@ -131,10 +130,10 @@ msgstr "0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
 #: fortisslvpnauth.ui:61
 #, kde-format
 msgid "One Time Password"
-msgstr "एकवारं गुप्तशब्दः"
+msgstr "एक बारी पासवर्ड"
 
 #. i18n: ectx: property (text), widget (QLabel, otpLabel)
 #: fortisslvpnauth.ui:68
 #, kde-format
 msgid "Token:"
-msgstr "टोकन : १."
+msgstr "टोकन:"

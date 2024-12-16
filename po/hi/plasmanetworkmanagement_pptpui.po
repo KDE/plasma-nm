@@ -1,4 +1,4 @@
-# Sanskrit translations for plasma-nm package.
+# Hindi translations for plasma-nm package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,38 +8,37 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
 #: pptpadvanced.ui:17
 #, kde-format
 msgid "Authentication"
-msgstr "प्रमाणीकरणम्"
+msgstr "प्रमाणीकरण"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_auth)
 #: pptpadvanced.ui:26
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr "निम्नलिखित प्रमाणीकरणविधयः अनुमन्यताम् : १."
+msgstr "निम्नलिखित प्रमाणीकरण विधियों की अनुमति दें:"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, listWidget)
 #: pptpadvanced.ui:36
 #, kde-format
 msgid "Allow/disable authentication methods."
-msgstr "प्रमाणीकरणविधयः अनुमन्यताम्/अक्षमं कुर्वन्तु।"
+msgstr "प्रमाणीकरण विधियों को अनुमति दें/अक्षम करें."
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: pptpadvanced.ui:40
 #, kde-format
 msgid "PAP"
-msgstr "PAP"
+msgstr "गूदा"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: pptpadvanced.ui:48
@@ -74,46 +73,46 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"नोट्: MPPE एन्क्रिप्शन केवलं MSCHAP प्रमाणीकरणविधिभिः सह एव उपलभ्यते । इत्यस्मै\n"
-"एतत् चेकबॉक्सं सक्षमं कुर्वन्तु, MSCHAP प्रमाणीकरणस्य एकं वा अधिकं वा चिनोतु\n"
-"विधियाः : MSCHAP अथवा MSCHAPv2।"
+"नोट: MPPE एन्क्रिप्शन केवल MSCHAP प्रमाणीकरण विधियों के साथ उपलब्ध है। इस चेकबॉक्स को "
+"सक्षम करने के लिए, MSCHAP प्रमाणीकरण विधियों में से एक या अधिक का चयन करें: MSCHAP या "
+"MSCHAPv2।"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
 #: pptpadvanced.ui:91
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr "MPPE Encryption इत्यस्य उपयोगं कुर्वन्तु"
+msgstr "MPPE एन्क्रिप्शन का उपयोग करें"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_MMPEcrypto)
 #: pptpadvanced.ui:112
 #, kde-format
 msgid "Crypto:"
-msgstr "क्रिप्टो : १."
+msgstr "क्रिप्टो:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cb_MPPECrypto)
 #: pptpadvanced.ui:128
 #, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr "MPPE इत्यस्य उपयोगः आवश्यकः, 40/128-बिट् एन्क्रिप्शनेन सह वा सर्वैः सह ।"
+msgstr "40/128-बिट एन्क्रिप्शन या सभी के साथ MPPE के उपयोग की आवश्यकता है।"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: pptpadvanced.ui:132
 #, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
-msgstr "कश्चित्‌"
+msgstr "कोई"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: pptpadvanced.ui:137
 #, kde-format
 msgid "128 bit"
-msgstr "१२८ बिट्"
+msgstr "128 बिट"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: pptpadvanced.ui:142
 #, kde-format
 msgid "40 bit"
-msgstr "४० बिट्"
+msgstr "40 बिट"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cb_statefulEncryption)
 #: pptpadvanced.ui:150
@@ -121,44 +120,44 @@ msgstr "४० बिट्"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
-"MPPE इत्यस्य स्टेटफुल् मोड् इत्यस्य उपयोगं कर्तुं अनुमतिं ददातु । राज्यरहितविधिः अद्यापि प्रथमं "
-"प्रयत्नः क्रियते ।"
+"MPPE को स्टेटफुल मोड का उपयोग करने की अनुमति दें। स्टेटलेस मोड का प्रयास अभी भी पहले "
+"किया जाता है।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
 #: pptpadvanced.ui:153
 #, kde-format
 msgid "Use stateful encryption"
-msgstr "स्टेटफुल् एन्क्रिप्शनस्य उपयोगं कुर्वन्तु"
+msgstr "स्टेटफुल एन्क्रिप्शन का उपयोग करें"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
 #: pptpadvanced.ui:163
 #, kde-format
 msgid "Compression"
-msgstr "संपीडनम्"
+msgstr "दबाव"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cb_BSD)
 #: pptpadvanced.ui:175
 #, kde-format
 msgid "Allow/disable BSD-Compress compression."
-msgstr "BSD-Compress संपीडनं अनुमन्यताम्/अक्षमं कुर्वन्तु।"
+msgstr "BSD-Compress संपीड़न की अनुमति दें/अक्षम करें।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_BSD)
 #: pptpadvanced.ui:178
 #, kde-format
 msgid "Allow BSD compression"
-msgstr "BSD संपीडनं अनुमन्यताम्"
+msgstr "BSD संपीड़न की अनुमति दें"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cb_deflate)
 #: pptpadvanced.ui:188
 #, kde-format
 msgid "Allow/disable Deflate compression."
-msgstr "संपीडनं Deflate अनुमन्यताम्/अक्षमं कुर्वन्तु।"
+msgstr "डिफ्लेट संपीड़न की अनुमति दें/अक्षम करें."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_deflate)
 #: pptpadvanced.ui:191
 #, kde-format
 msgid "Allow Deflate compression"
-msgstr "Deflate compression इत्यस्य अनुमतिं ददातु"
+msgstr "डिफ्लेट संपीड़न की अनुमति दें"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cb_TCPheaders)
 #: pptpadvanced.ui:202
@@ -168,58 +167,58 @@ msgid ""
 "transmit\n"
 " and the receive directions."
 msgstr ""
-"उभयत्र संचरणयोः Van Jacobson शैली TCP/IP शीर्षकसंपीडनं अनुमन्यताम्/अक्षमं कुर्वन्तु\n"
-" ग्रहणदिशाश्च ।"
+"प्रेषण और प्राप्ति दोनों दिशाओं में वैन जैकबसन शैली के टीसीपी/आईपी हेडर संपीड़न को अनुमति दें/"
+"अक्षम करें।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
 #: pptpadvanced.ui:205
 #, kde-format
 msgid "Allow TCP header compression"
-msgstr "TCP शीर्षकसंपीडनं अनुमन्यताम्"
+msgstr "TCP हेडर संपीड़न की अनुमति दें"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
 #: pptpadvanced.ui:218
 #, kde-format
 msgid "Echo"
-msgstr "प्रतिध्वनि"
+msgstr "गूंज"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cb_sendEcho)
 #: pptpadvanced.ui:227
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
-msgstr "सहपाठी जीवितः अस्ति वा इति ज्ञातुं LCP प्रतिध्वनि-अनुरोधं प्रेषयन्तु।"
+msgstr "यह पता लगाने के लिए कि क्या सहकर्मी जीवित है, LCP प्रतिध्वनि-अनुरोध भेजें।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_sendEcho)
 #: pptpadvanced.ui:230
 #, kde-format
 msgid "Send PPP echo packets "
-msgstr "PPP echo packets प्रेषयन्तु "
+msgstr "PPP प्रतिध्वनि पैकेट भेजें"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PptpAuthenticationWidget)
 #: pptpauth.ui:14
 #, kde-format
 msgid "PPTPAuthentication"
-msgstr "पीपीटीपीएप्रमाणीकरण"
+msgstr "पीपीटीपी प्रमाणीकरण"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
 #: pptpauth.ui:38 pptpprop.ui:115
 #, kde-format
 msgid "Password:"
-msgstr "समाभाष्:"
+msgstr "पासवर्ड:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, lePassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, edt_password)
 #: pptpauth.ui:51 pptpprop.ui:131
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr "तस्य कृते प्रार्थितस्य गुप्तशब्दः PPTP कृते पारितः।"
+msgstr "पासवर्ड पूछे जाने पर उसे PPTP को भेज दिया जाता है।"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PptpProp)
 #: pptpprop.ui:14
 #, kde-format
 msgid "PPTP Settings"
-msgstr "PPTP सेटिंग्स्"
+msgstr "पीपीटीपी सेटिंग्स"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_general)
 #: pptpprop.ui:26
@@ -232,39 +231,39 @@ msgstr "सामान्य"
 #: pptpprop.ui:34
 #, kde-format
 msgid "Gateway:"
-msgstr "प्रवेशद्वारः : १."
+msgstr "गेटवे:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_gateway)
 #: pptpprop.ui:47
 #, kde-format
 msgid "PPTP server IP or name."
-msgstr "PPTP सर्वर IP अथवा नाम।"
+msgstr "PPTP सर्वर IP या नाम."
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_additional)
 #: pptpprop.ui:62
 #, kde-format
 msgctxt "like in Additional settings"
 msgid "Additional"
-msgstr "अतिरिक्त रूपेन"
+msgstr "अतिरिक्त"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_login)
 #: pptpprop.ui:80
 #, kde-format
 msgid "Login:"
-msgstr "प्रवेशः : १."
+msgstr "लॉग इन करें:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_login)
 #: pptpprop.ui:93
 #, kde-format
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
-msgstr "स्थानीयतन्त्रस्य प्रमाणीकरणार्थं प्रयुक्तं नाम समकक्षं प्रति <name> इति सेट् कुर्वन्तु ।"
+msgstr "स्थानीय सिस्टम को पीयर में प्रमाणित करने के लिए प्रयुक्त नाम को <name> पर सेट करें।"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_ntdomain)
 #: pptpprop.ui:153
 #, kde-format
 msgid "NT Domain:"
-msgstr "एन टी डोमेन : १."
+msgstr "एनटी डोमेन:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_ntDomain)
 #: pptpprop.ui:167
@@ -272,13 +271,11 @@ msgstr "एन टी डोमेन : १."
 msgid ""
 "Append the domain name <domain> to the local host name for\n"
 "authenticating purposes."
-msgstr ""
-"कृते स्थानीयहोस्ट् नाम्ने <domain> इति डोमेननाम योजयन्तु\n"
-"प्रमाणीकरणप्रयोजनानि।"
+msgstr "प्रमाणीकरण प्रयोजनों के लिए डोमेन नाम <डोमेन> को स्थानीय होस्ट नाम में जोड़ें।"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: pptpprop.ui:192
 #, kde-format
 msgctxt "like in Advanced settings"
 msgid "Advanced…"
-msgstr "उन्नतं…"
+msgstr "विकसित…"

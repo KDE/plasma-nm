@@ -1,4 +1,4 @@
-# Sanskrit translations for plasma-nm package.
+# Hindi translations for plasma-nm package.
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 # Kali <EMAIL@ADDRESS>, 2024.
@@ -8,35 +8,34 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
+"PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
-"Language: sa\n"
+"Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
+"Language: hi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n>2);\n"
 
 #: openvpn.cpp:183
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
-msgstr "NetworkManager OpenVPN कृते समर्थनं गम्यते"
+msgstr "नेटवर्कमैनेजर में OpenVPN के लिए समर्थन नहीं है"
 
 #: openvpn.cpp:208
 #, kde-format
 msgid "Error saving file %1: %2"
-msgstr "%1: %2 सञ्चिकायाः रक्षणे त्रुटिः"
+msgstr "फ़ाइल %1 सहेजने में त्रुटि: %2"
 
 #: openvpn.cpp:236
 #, kde-format
 msgid "Error copying certificate to %1: %2"
-msgstr "प्रमाणपत्रं %1 प्रति प्रतिलिखितुं त्रुटिः: %2"
+msgstr "प्रमाणपत्र को %1 में कॉपी करते समय त्रुटि: %2"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19
 #, kde-format
 msgid "Gateway:"
-msgstr "प्रवेशद्वारः : १."
+msgstr "गेटवे:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: openvpn.ui:36
@@ -47,45 +46,45 @@ msgid ""
 "You can specify multiple hosts for redundancy (use commas or spaces as "
 "delimiters)."
 msgstr ""
-"दूरस्थद्वार(द्वाराः), वैकल्पिक-पोर्ट्-प्रोटोकॉल-सहितं (उदा. ovpn.corp.com:1234:tcp) ।\n"
-"अतिरेकस्य कृते भवान् बहुविधं होस्ट् निर्दिष्टुं शक्नोति (अल्पविरामस्य अथवा रिक्तस्थानस्य उपयोगं "
-"परिसीमकरूपेण) ।"
+"वैकल्पिक पोर्ट और प्रोटोकॉल के साथ रिमोट गेटवे (जैसे ovpn.corp.com:1234:tcp)।\n"
+"आप अतिरेक के लिए कई होस्ट निर्दिष्ट कर सकते हैं (सीमांकक के रूप में अल्पविराम या रिक्त स्थान "
+"का उपयोग करें)।"
 
 #. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
 #: openvpn.ui:46
 #, kde-format
 msgid "Connection type:"
-msgstr "संयोजनप्रकारः : १."
+msgstr "रिश्ते का प्रकार:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:68
 #, kde-format
 msgid "Select an authentication mode."
-msgstr "प्रमाणीकरणविधिं चिनोतु ।"
+msgstr "प्रमाणीकरण मोड का चयन करें."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:72
 #, kde-format
 msgid "Certificates (TLS)"
-msgstr "प्रमाणपत्राणि (TLS) ."
+msgstr "प्रमाणपत्र (TLS)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:77
 #, kde-format
 msgid "Static Key"
-msgstr "स्थिर कुञ्जी"
+msgstr "स्थैतिक कुंजी"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:82
 #, kde-format
 msgid "Password"
-msgstr "समाभाष्"
+msgstr "पासवर्ड"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:87
 #, kde-format
 msgid "Password with Certificates (TLS)"
-msgstr "प्रमाणपत्रैः सह गुप्तशब्दः (TLS) ."
+msgstr "प्रमाणपत्र सहित पासवर्ड (TLS)"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
@@ -93,7 +92,7 @@ msgstr "प्रमाणपत्रैः सह गुप्तशब्द�
 #: openvpn.ui:104 openvpn.ui:370 openvpn.ui:468
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA प्रमाणपत्राणि : १."
+msgstr "सीए प्रमाणपत्र:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, passCaFile)
@@ -101,14 +100,14 @@ msgstr "CA प्रमाणपत्राणि : १."
 #: openvpn.ui:117 openvpn.ui:386 openvpn.ui:481
 #, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr "प्रमाणपत्र प्राधिकरण (CA) सञ्चिका .pem प्रारूपेण ।"
+msgstr "प्रमाणपत्र प्राधिकरण (CA) फ़ाइल .pem प्रारूप में।"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2_2)
 #: openvpn.ui:129 openvpn.ui:493
 #, kde-format
 msgid "User Certificate:"
-msgstr "उपयोक्तृप्रमाणपत्रम् : १."
+msgstr "उपयोगकर्ता प्रमाणपत्र:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Cert)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassCert)
@@ -118,61 +117,61 @@ msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
 "Certificate)."
 msgstr ""
-"स्थानीयसमवयस्कस्य हस्ताक्षरितं प्रमाणपत्रं .pem प्रारूपेण (CA प्रमाणपत्रस्य CA द्वारा "
-"हस्ताक्षरितम्) ।"
+".pem प्रारूप में स्थानीय सहकर्मी का हस्ताक्षरित प्रमाणपत्र (CA प्रमाणपत्र के CA द्वारा "
+"हस्ताक्षरित)."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
 #: openvpn.ui:154 openvpn.ui:518
 #, kde-format
 msgid "Private Key:"
-msgstr "निजी कुञ्जी : १."
+msgstr "निजी चाबी:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Key)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassKey)
 #: openvpn.ui:167 openvpn.ui:531
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr "स्थानीयसमवयस्कस्य निजकुंजी .pem प्रारूपेण ।"
+msgstr "स्थानीय सहकर्मी की निजी कुंजी .pem प्रारूप में."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: openvpn.ui:179 openvpn.ui:543
 #, kde-format
 msgid "Private Key Password:"
-msgstr "निजी मुख्यगुप्तशब्दः : १."
+msgstr "निजी कुंजी पासवर्ड:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509KeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509PassKeyPassword)
 #: openvpn.ui:188 openvpn.ui:552
 #, kde-format
 msgid "Password for private key."
-msgstr "निजीकुंजी कृते गुप्तशब्दः।"
+msgstr "निजी कुंजी के लिए पासवर्ड."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
 #: openvpn.ui:217
 #, kde-format
 msgid "Static Key:"
-msgstr "स्थिर कुञ्जी : १."
+msgstr "स्थैतिक कुंजी:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, pskSharedKey)
 #: openvpn.ui:230
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
-msgstr "Static Key encryption mode (non-TLS) कृते पूर्वसाझा सञ्चिका ।"
+msgstr "स्थैतिक कुंजी एन्क्रिप्शन मोड (गैर-TLS) के लिए पूर्व-साझा फ़ाइल."
 
 #. i18n: ectx: property (text), widget (QLabel, label_16)
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: openvpn.ui:242 openvpnadvanced.ui:925
 #, kde-format
 msgid "Key Direction:"
-msgstr "मुख्यदिशा : १."
+msgstr "मुख्य निर्देश:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:255
 #, kde-format
 msgid "Direction for Static Key encryption mode (non-TLS)."
-msgstr "Static Key एन्क्रिप्शन मोड (non-TLS) कृते दिशा ।"
+msgstr "स्थैतिक कुंजी एन्क्रिप्शन मोड (गैर-TLS) के लिए निर्देश."
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:258
@@ -180,50 +179,52 @@ msgstr "Static Key एन्क्रिप्शन मोड (non-TLS) कृ�
 msgid ""
 "If key direction is used, it must be the opposite of that used on the VPN "
 "peer."
-msgstr "यदि कीलदिशा उपयुज्यते तर्हि VPN समकक्षे प्रयुक्तस्य विपरीतम् एव भवितुमर्हति ।"
+msgstr ""
+"यदि कुंजी दिशा का उपयोग किया जाता है, तो यह VPN पीयर पर प्रयुक्त कुंजी दिशा के विपरीत "
+"होनी चाहिए।"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:262
 #, kde-format
 msgctxt "No \"Key Direction\""
 msgid "None"
-msgstr "न कश्चित्"
+msgstr "कोई नहीं"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:267
 #, kde-format
 msgid "0"
-msgstr "०"
+msgstr "0"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:272
 #, kde-format
 msgid "1"
-msgstr "१"
+msgstr "1"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel6)
 #: openvpn.ui:280
 #, kde-format
 msgid "Local IP Address:"
-msgstr "स्थानीय IP-सङ्केतः : १."
+msgstr "स्थानीय आईपी पता:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, pskLocalIp)
 #: openvpn.ui:293
 #, kde-format
 msgid "IP address of the remote VPN endpoint."
-msgstr "दूरस्थस्य VPN अन्त्यबिन्दुस्य IP पता ।"
+msgstr "दूरस्थ VPN समापन बिंदु का IP पता."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel7)
 #: openvpn.ui:303
 #, kde-format
 msgid "Remote IP Address:"
-msgstr "दूरस्थः IP-सङ्केतः : १."
+msgstr "दूरस्थ आईपी पता:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, pskRemoteIp)
 #: openvpn.ui:316
 #, kde-format
 msgid "IP address of the local VPN endpoint."
-msgstr "स्थानीय VPN अन्त्यबिन्दुस्य IP पता ।"
+msgstr "स्थानीय VPN समापन बिंदु का IP पता."
 
 #. i18n: ectx: property (text), widget (QLabel, lblKeyDirection)
 #: openvpn.ui:350
@@ -233,10 +234,10 @@ msgid ""
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
-"यदि कीलदिशा उपयुज्यते तर्हि VPN समकक्षे प्रयुक्तस्य विपरीतम् एव भवितुमर्हति । यथा, यदि "
-"समवयस्कः '1' इत्यस्य उपयोगं करोति तर्हि एतत् संयोजनं '0' इत्यस्य उपयोगं अवश्यं करोति । "
-"यदि भवान् अनिश्चितः अस्ति यत् किं मूल्यं उपयोक्तव्यं तर्हि स्वस्य प्रणालीप्रशासकेन सह सम्पर्कं "
-"कुर्वन्तु ।"
+"यदि कुंजी दिशा का उपयोग किया जाता है, तो यह VPN पीयर पर उपयोग की जाने वाली दिशा "
+"के विपरीत होनी चाहिए। उदाहरण के लिए, यदि पीयर '1' का उपयोग करता है, तो इस कनेक्शन "
+"को '0' का उपयोग करना चाहिए। यदि आप अनिश्चित हैं कि किस मान का उपयोग करना है, तो "
+"अपने सिस्टम व्यवस्थापक से संपर्क करें।"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
@@ -244,14 +245,14 @@ msgstr ""
 #, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username:"
-msgstr "उपयोक्तृनाम : १."
+msgstr "उपयोगकर्ता नाम:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, passUserName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, x509PassUsername)
 #: openvpn.ui:414 openvpn.ui:577
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
-msgstr "उपयोक्तृनाम OpenVPN -इत्यस्मै प्रार्थिते सति पारितम् ।"
+msgstr "जब उपयोगकर्ता नाम के लिए कहा गया तो उसे OpenVPN को भेज दिया गया।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -259,20 +260,20 @@ msgstr "उपयोक्तृनाम OpenVPN -इत्यस्मै प�
 #: openvpnauth.cpp:117
 #, kde-format
 msgid "Password:"
-msgstr "समाभाष्:"
+msgstr "पासवर्ड:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, passPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509PassPassword)
 #: openvpn.ui:439 openvpn.ui:599
 #, kde-format
 msgid "Password passed to OpenVPN when prompted for it."
-msgstr "तस्य कृते प्रार्थितस्य OpenVPN कृते गुप्तशब्दः पारितः ।"
+msgstr "पासवर्ड पूछे जाने पर उसे OpenVPN को भेज दिया जाता है।"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: openvpn.ui:643
 #, kde-format
 msgid "Advanced…"
-msgstr "उन्नतं…"
+msgstr "विकसित…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, generalTab)
 #: openvpnadvanced.ui:28
@@ -288,13 +289,13 @@ msgid ""
 "TCP/UDP port number for peer. (Default value when there is no port for "
 "gateway)."
 msgstr ""
-"समवयस्कस्य कृते TCP/UDP पोर्ट् सङ्ख्या । (पूर्वनिर्धारितं मूल्यं यदा द्वारस्य कृते पोर्ट् नास्ति)।"
+"पीयर के लिए TCP/UDP पोर्ट संख्या. (जब गेटवे के लिए कोई पोर्ट न हो तो डिफ़ॉल्ट मान)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomPort)
 #: openvpnadvanced.ui:39
 #, kde-format
 msgid "Use custom gateway port:"
-msgstr "कस्टम् गेटवे पोर्ट् इत्यस्य उपयोगं कुर्वन्तु:"
+msgstr "कस्टम गेटवे पोर्ट का उपयोग करें:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbCustomPort)
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbMtu)
@@ -303,57 +304,57 @@ msgstr "कस्टम् गेटवे पोर्ट् इत्यस्
 #, kde-format
 msgctxt "like in use Automatic configuration"
 msgid "Automatic"
-msgstr "स्वतः"
+msgstr "स्वचालित"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomReneg)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomReneg)
 #: openvpnadvanced.ui:72 openvpnadvanced.ui:85
 #, kde-format
 msgid "Renegotiate data channel key after the specified number of seconds."
-msgstr "निर्दिष्टस्य सेकण्ड्-सङ्ख्यायाः अनन्तरं दत्तांशचैनल-कुंजी पुनः वार्तालापं कुर्वन्तु ।"
+msgstr "निर्दिष्ट सेकंड के बाद डेटा चैनल कुंजी पर पुनः बातचीत करें।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomReneg)
 #: openvpnadvanced.ui:75
 #, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr "कस्टम् पुनर्वार्तालापान्तरस्य उपयोगं कुर्वन्तु:"
+msgstr "कस्टम पुनर्वार्ता अंतराल का उपयोग करें:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCompression)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:96 openvpnadvanced.ui:109
 #, kde-format
 msgid "Use compression."
-msgstr "संपीडनस्य उपयोगं कुर्वन्तु।"
+msgstr "संपीड़न का उपयोग करें."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCompression)
 #: openvpnadvanced.ui:99
 #, kde-format
 msgid "Use compression"
-msgstr "संपीडनस्य उपयोगं कुर्वन्तु"
+msgstr "संपीड़न का उपयोग करें"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:113
 #, kde-format
 msgid "No"
-msgstr "नहि"
+msgstr "नहीं"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:118
 #, kde-format
 msgid "LZO"
-msgstr "LZO"
+msgstr "एलजेडओ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:123
 #, kde-format
 msgid "LZ4"
-msgstr "LZ4"
+msgstr "एलजेड4"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:128
 #, kde-format
 msgid "LZ4 v2"
-msgstr "LZ4 v2"
+msgstr "एलजेड4 वी2"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:133
@@ -366,44 +367,44 @@ msgstr "अनुकूली"
 #: openvpnadvanced.ui:138 openvpnadvanced.ui:216
 #, kde-format
 msgid "Automatic"
-msgstr "स्वतः"
+msgstr "स्वचालित"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:148
 #, kde-format
 msgid "Use TCP for communicating with remote host."
-msgstr "दूरस्थहोस्ट् इत्यनेन सह संवादार्थं TCP इत्यस्य उपयोगं कुर्वन्तु ।"
+msgstr "दूरस्थ होस्ट के साथ संचार करने के लिए TCP का उपयोग करें।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:151
 #, kde-format
 msgid "Use a TCP connection"
-msgstr "TCP संयोजनस्य उपयोगं कुर्वन्तु"
+msgstr "TCP कनेक्शन का उपयोग करें"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseVirtualDeviceType)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:160 openvpnadvanced.ui:173
 #, kde-format
 msgid "Explicitly set virtual device type (TUN/TAP)."
-msgstr "आभासीयन्त्रप्रकारं (TUN/TAP) स्पष्टतया सेट् कुर्वन्तु ।"
+msgstr "वर्चुअल डिवाइस प्रकार (TUN/TAP) को स्पष्ट रूप से सेट करें."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceType)
 #: openvpnadvanced.ui:163
 #, kde-format
 msgid "Set virtual device type:"
-msgstr "आभासीयन्त्रप्रकारं सेट् कुर्वन्तु:"
+msgstr "वर्चुअल डिवाइस प्रकार सेट करें:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:177
 #, kde-format
 msgid "TUN"
-msgstr "पुनः"
+msgstr "दोबारा"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:182
 #, kde-format
 msgid "TAP"
-msgstr "नाल"
+msgstr "नल"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseVirtualDeviceName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leVirtualDeviceName)
@@ -413,14 +414,14 @@ msgid ""
 "Use custom name for TUN/TAP virtual device (instead of default \"tun\" or "
 "\"tap\")."
 msgstr ""
-"TUN/TAP आभासीयन्त्रस्य कृते इष्टनामस्य उपयोगं कुर्वन्तु (पूर्वनिर्धारित \"tun\" अथवा \"tap"
-"\" इत्यस्य स्थाने) ।"
+"TUN/TAP वर्चुअल डिवाइस के लिए कस्टम नाम का उपयोग करें (डिफ़ॉल्ट \"tun\" या \"tap\" के "
+"बजाय)।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceName)
 #: openvpnadvanced.ui:197
 #, kde-format
 msgid "Set virtual device name:"
-msgstr "आभासीयन्त्रस्य नाम सेट् कुर्वन्तु:"
+msgstr "वर्चुअल डिवाइस नाम सेट करें:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMtu)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMtu)
@@ -429,38 +430,38 @@ msgstr "आभासीयन्त्रस्य नाम सेट् कु
 msgid ""
 "Take the TUN device MTU to be specified value and derive the link MTU from "
 "it."
-msgstr "निर्दिष्टमूल्यं भवितुं TUN उपकरणं MTU गृहीत्वा तस्मात् लिङ्क् MTU व्युत्पादयन्तु ।"
+msgstr "TUN डिवाइस MTU का निर्दिष्ट मान लें और उससे लिंक MTU प्राप्त करें।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtu)
 #: openvpnadvanced.ui:230
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr "कस्टम सुरङ्गस्य अधिकतमसंचरण-एककस्य (MTU) उपयोगं कुर्वन्तु:"
+msgstr "कस्टम टनल अधिकतम ट्रांसमिशन यूनिट (MTU) का उपयोग करें:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkCustomFragmentSize)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomFragmentSize)
 #: openvpnadvanced.ui:263 openvpnadvanced.ui:276
 #, kde-format
 msgid "Enable internal datagram fragmentation with this maximum size."
-msgstr "एतेन अधिकतमाकारेन आन्तरिकदत्तांशग्रामविखण्डनं सक्षमं कुर्वन्तु ।"
+msgstr "इस अधिकतम आकार के साथ आंतरिक डेटाग्राम विखंडन सक्षम करें।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomFragmentSize)
 #: openvpnadvanced.ui:266
 #, kde-format
 msgid "Use custom UDP fragment size:"
-msgstr "कस्टम् UDP खण्ड आकारस्य उपयोगं कुर्वन्तु:"
+msgstr "कस्टम UDP खंड आकार का उपयोग करें:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:294
 #, kde-format
 msgid "Restrict tunnel TCP maximum segment size."
-msgstr "सुरङ्ग TCP अधिकतमं खण्डस्य आकारं प्रतिबन्धयन्तु ।"
+msgstr "सुरंग TCP अधिकतम खंड आकार को प्रतिबंधित करें."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:297
 #, kde-format
 msgid "Restrict TCP maximum segment size (MSS)"
-msgstr "TCP अधिकतमखण्ड आकारं (MSS) प्रतिबन्धयन्तु ।"
+msgstr "TCP अधिकतम खंड आकार (MSS) को प्रतिबंधित करें"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:305
@@ -469,26 +470,25 @@ msgid ""
 "Randomize the order of gateways list (remote) as a kind of basic load-\n"
 "balancing measure."
 msgstr ""
-"एकप्रकारस्य मूलभूतभाररूपेण द्वारसूचिकायाः (दूरस्थस्य) क्रमं यादृच्छिकं कुर्वन्तु-\n"
-"संतुलनमापः ।"
+"एक प्रकार के बुनियादी लोड-संतुलन उपाय के रूप में गेटवे सूची (दूरस्थ) के क्रम को यादृच्छिक करें।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:308
 #, kde-format
 msgid "Randomize remote hosts"
-msgstr "दूरस्थं होस्ट् यादृच्छिकं कुर्वन्तु"
+msgstr "दूरस्थ होस्ट को यादृच्छिक करें"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:315
 #, kde-format
 msgid "Build a tun link capable of forwarding IPv6 traffic."
-msgstr "IPv6 यातायातस्य अग्रे प्रेषणं कर्तुं समर्थं tun लिङ्क् निर्मायताम् ।"
+msgstr "IPv6 ट्रैफ़िक को अग्रेषित करने में सक्षम ट्यून लिंक बनाएं।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:318
 #, kde-format
 msgid "IPv6 tun link"
-msgstr "IPv6 tun link"
+msgstr "IPv6 ट्यून लिंक"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPingInterval)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbPingInterval)
@@ -498,14 +498,14 @@ msgid ""
 "Ping remote over the TCP/UDP control channel if no packets have been sent "
 "for at least n seconds."
 msgstr ""
-"यदि न्यूनातिन्यूनं n सेकण्ड् यावत् कोऽपि पैकेट् न प्रेषितः अस्ति तर्हि TCP/UDP नियन्त्रणचैनलस्य "
-"उपरि दूरस्थं पिंगं कुर्वन्तु ।"
+"यदि कम से कम n सेकंड तक कोई पैकेट नहीं भेजा गया है, तो TCP/UDP नियंत्रण चैनल पर दूरस्थ "
+"पिंग करें।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPingInterval)
 #: openvpnadvanced.ui:330
 #, kde-format
 msgid "Specify ping interval:"
-msgstr "ping अन्तरालं निर्दिशन्तु : १."
+msgstr "पिंग अंतराल निर्दिष्ट करें:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkSpecifyExitRestartPing)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbSpecifyExitRestartPing)
@@ -516,26 +516,26 @@ msgid ""
 "Exit or restart after n seconds pass without reception of a ping or other "
 "packet from remote."
 msgstr ""
-"दूरस्थतः ping अथवा अन्यस्य पैकेटस्य स्वागतं विना n सेकण्ड् व्यतीतस्य अनन्तरं निर्गमनं वा पुनः "
-"आरम्भं वा कुर्वन्तु ।"
+"रिमोट से पिंग या अन्य पैकेट प्राप्त न होने पर n सेकंड बीत जाने पर बाहर निकलें या पुनः "
+"प्रारंभ करें।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkSpecifyExitRestartPing)
 #: openvpnadvanced.ui:363
 #, kde-format
 msgid "Specify exit or restart ping:"
-msgstr "निर्गमनं वा पुनः आरम्भं वा ping निर्दिशन्तु:"
+msgstr "बाहर निकलें या पुनः आरंभ करें पिंग निर्दिष्ट करें:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbSpecifyExitRestartPing)
 #: openvpnadvanced.ui:377
 #, kde-format
 msgid "ping-exit"
-msgstr "पिंग-निर्गमः"
+msgstr "पिंग-एक्ज़िट"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbSpecifyExitRestartPing)
 #: openvpnadvanced.ui:382
 #, kde-format
 msgid "ping-restart"
-msgstr "पिंग-पुनः आरम्भः"
+msgstr "पिंग-पुनरारंभ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAcceptAuthenticatedPackets)
 #: openvpnadvanced.ui:420
@@ -559,38 +559,34 @@ msgid ""
 "address,\n"
 "not only the address which was specified in the --remote option."
 msgstr ""
-"दूरस्थं समवयस्कं स्वस्य IP-सङ्केतं तथा/वा पोर्ट्-सङ्ख्यां परिवर्तयितुं अनुमन्यताम् यथा कारणम्\n"
-"DHCP (यदि --remote इत्यस्य उपयोगः न भवति तर्हि एतत् पूर्वनिर्धारितम् अस्ति) । --float "
-"यदा --remote इत्यनेन सह निर्दिष्टं भवति\n"
-"OpenVPN सत्रं प्रारम्भे ज्ञातपतेः सहचरेन सह सम्बद्धं कर्तुं शक्नोति,\n"
-"तथापि यदि पैकेट् नूतनपतेः आगत्य सर्वाणि प्रमाणीकरणपरीक्षाणि उत्तीर्णं कुर्वन्ति तर्हि...\n"
-"नूतनं पता सत्रस्य नियन्त्रणं करिष्यति। यदा भवन्तः संयोजयन्ति तदा एतत् उपयोगी भवति\n"
-"एकं समवयस्कं प्रति यत् डायल-इन-उपयोक्ता अथवा DHCP-क्लायन्ट् इत्यादिं गतिशील-सङ्केतं धारयति "
-"।\n"
-"\n"
-"\n"
-"अनिवार्यतया, --float OpenVPN इत्यस्मै कस्मात् अपि पतातः प्रमाणीकृतपैकेट् स्वीकुर्वन्तु इति "
-"वदति,\n"
-"न केवलं तत् पता यत् --remote विकल्पे निर्दिष्टम् आसीत् ।"
+"रिमोट पीयर को अपना IP पता और/या पोर्ट नंबर बदलने की अनुमति दें जैसे कि DHCP के कारण "
+"(यह डिफ़ॉल्ट है यदि --remote का उपयोग नहीं किया जाता है)। --float जब --remote के "
+"साथ निर्दिष्ट किया जाता है, तो OpenVPN सत्र को शुरू में किसी ज्ञात पते पर पीयर से कनेक्ट "
+"करने की अनुमति देता है, हालाँकि यदि पैकेट किसी नए पते से आते हैं और सभी प्रमाणीकरण "
+"परीक्षणों को पास करते हैं, तो नया पता सत्र का नियंत्रण ले लेगा। यह तब उपयोगी होता है जब "
+"आप किसी ऐसे पीयर से कनेक्ट हो रहे हों जो डायल-इन उपयोगकर्ता या DHCP क्लाइंट जैसे "
+"डायनेमिक पते को रखता हो। अनिवार्य रूप से, --float OpenVPN को किसी भी पते से "
+"प्रमाणीकृत पैकेट स्वीकार करने के लिए कहता है, न कि केवल उस पते से जिसे --remote विकल्प में "
+"निर्दिष्ट किया गया था।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAcceptAuthenticatedPackets)
 #: openvpnadvanced.ui:423
 #, kde-format
 msgid "Accept authenticated packets from any address (Float)"
-msgstr "कस्मात् अपि पत्तनात् प्रमाणीकृतपैकेट् स्वीकुर्वन्तु (Float)"
+msgstr "किसी भी पते से प्रमाणीकृत पैकेट स्वीकार करें (फ्लोट)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMaxRoutes)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMaxRoutes)
 #: openvpnadvanced.ui:432 openvpnadvanced.ui:445
 #, kde-format
 msgid "Specify the maximum number of routes the server is allowed to specify."
-msgstr "सर्वरस्य अधिकतमं मार्गसङ्ख्यां निर्दिशन्तु ।"
+msgstr "सर्वर को निर्दिष्ट करने की अनुमति दी गई रूट्स की अधिकतम संख्या निर्दिष्ट करें."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMaxRoutes)
 #: openvpnadvanced.ui:435
 #, kde-format
 msgid "Specify max routes:"
-msgstr "अधिकतममार्गाः निर्दिशन्तु : १."
+msgstr "अधिकतम रूट निर्दिष्ट करें:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, securityTab)
 #: openvpnadvanced.ui:474
@@ -607,21 +603,20 @@ msgid ""
 "Cipher\n"
 "Block Chaining mode)."
 msgstr ""
-"सिफर एल्गोरिदम् इत्यनेन पैकेट् एन्क्रिप्ट् कुर्वन्तु । पूर्वनिर्धारितं BF-CBC (Cipher मध्ये "
-"Blowfish) अस्ति\n"
-"Block Chaining मोड)।"
+"सिफर एल्गोरिथ्म के साथ पैकेट एन्क्रिप्ट करें। डिफ़ॉल्ट BF-CBC (सिफर\n"
+"ब्लॉक चेनिंग मोड में ब्लोफ़िश) है।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openvpnadvanced.ui:486
 #, kde-format
 msgid "Cipher:"
-msgstr "सिफरः : १."
+msgstr "सिफर:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboCipher)
 #: openvpnadvanced.ui:513
 #, kde-format
 msgid "Obtaining available ciphers…"
-msgstr "उपलब्धानि सिफर्स् प्राप्तुं..."
+msgstr "उपलब्ध सिफर प्राप्त करना…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -631,14 +626,14 @@ msgid ""
 "Set cipher key size to a custom value. If unspecified, it defaults to cipher-"
 "specific size."
 msgstr ""
-"सिफर कील आकारं कस्टम् मूल्ये सेट् कुर्वन्तु । यदि अनिर्दिष्टं तर्हि पूर्वनिर्धारितं सिफर-विशिष्टं "
-"आकारं भवति ।"
+"सिफर कुंजी आकार को कस्टम मान पर सेट करें। यदि निर्दिष्ट नहीं किया गया है, तो यह डिफ़ॉल्ट "
+"रूप से सिफर-विशिष्ट आकार पर सेट होता है।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomCipherKey)
 #: openvpnadvanced.ui:531
 #, kde-format
 msgid "Use custom size of cipher key:"
-msgstr "सिफर कीलस्य कस्टम आकारस्य उपयोगं कुर्वन्तु:"
+msgstr "सिफर कुंजी का कस्टम आकार का उपयोग करें:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboHmac)
@@ -648,21 +643,20 @@ msgid ""
 "Authenticate packets with HMAC using message digest algorithm. The default "
 "is SHA1."
 msgstr ""
-"message digest algorithm इत्यस्य उपयोगेन HMAC इत्यनेन सह पैकेट् प्रमाणीकरणं कुर्वन्तु । "
-"पूर्वनिर्धारितं SHA1 अस्ति ।"
+"संदेश डाइजेस्ट एल्गोरिथ्म का उपयोग करके HMAC के साथ पैकेट को प्रमाणित करें। डिफ़ॉल्ट SHA1 है।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openvpnadvanced.ui:564
 #, kde-format
 msgid "HMAC Authentication:"
-msgstr "एचएमएसी प्रमाणीकरणम् : १."
+msgstr "एचएमएसी प्रमाणीकरण:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:587
 #, kde-format
 msgctxt "like in use Default configuration"
 msgid "Default"
-msgstr "मूलभूतम्‌"
+msgstr "गलती करना"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
@@ -670,61 +664,61 @@ msgstr "मूलभूतम्‌"
 #, kde-format
 msgctxt "like in None setting selected"
 msgid "None"
-msgstr "न कश्चित्"
+msgstr "कोई नहीं"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:597
 #, kde-format
 msgid "MD-4"
-msgstr "MD-4"
+msgstr "एमडी-4"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:602
 #, kde-format
 msgid "MD-5"
-msgstr "MD-5"
+msgstr "एमडी 5"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:607
 #, kde-format
 msgid "SHA-1"
-msgstr "शा-1"
+msgstr "SHA-1"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:612
 #, kde-format
 msgid "SHA-224"
-msgstr "शा-२२४"
+msgstr "एसएचए-224"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:617
 #, kde-format
 msgid "SHA-256"
-msgstr "शा-256"
+msgstr "SHA-256"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:622
 #, kde-format
 msgid "SHA-384"
-msgstr "शा-384"
+msgstr "एसएचए-384"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:627
 #, kde-format
 msgid "SHA-512"
-msgstr "शा-५१२"
+msgstr "SHA-512"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:632
 #, kde-format
 msgid "RIPEMD-160"
-msgstr "RIPEMD-160"
+msgstr "आरआईपीईएमडी-160"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tlsTab)
 #: openvpnadvanced.ui:656
 #, kde-format
 msgid "TLS Settings"
-msgstr "TLS सेटिंग्स्"
+msgstr "टीएलएस सेटिंग्स"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCertCheck)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbCertCheck)
@@ -740,48 +734,48 @@ msgid ""
 "fields),\n"
 "or just the Common Name (CN field).\n"
 msgstr ""
-"सर्वर प्रमाणपत्रपरिचयं सत्यापयन्तु।\n"
+"सर्वर प्रमाणपत्र पहचान सत्यापित करें।\n"
 "\n"
-"यदा सक्षमं भवति तदा एव संयोजनं सफलं भविष्यति यदा सर्वरप्रमाणपत्रं मेलति\n"
-"केचन अपेक्षिताः गुणाः।\n"
-"मेलनं सम्पूर्णप्रमाणपत्रविषये (सर्वक्षेत्रेषु) वा प्रवर्तयितुं शक्नोति,\n"
-"अथवा केवलं सामान्यनाम (CN क्षेत्रम्) ।\n"
+"सक्षम होने पर, कनेक्शन तभी सफल होगा जब सर्वर प्रमाणपत्र कुछ अपेक्षित गुणों से मेल खाता "
+"हो।\n"
+"मिलान या तो पूरे प्रमाणपत्र विषय (सभी फ़ील्ड) पर लागू हो सकता है,\n"
+"या केवल सामान्य नाम (CN फ़ील्ड) पर लागू हो सकता है।\n"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCertCheck)
 #: openvpnadvanced.ui:673
 #, kde-format
 msgid "Server Certificate Check:"
-msgstr "सर्वर प्रमाणपत्रपरीक्षाः : १."
+msgstr "सर्वर प्रमाणपत्र जाँच:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:690
 #, kde-format
 msgid "Don't verify certificate identification"
-msgstr "प्रमाणपत्रपरिचयस्य सत्यापनम् न कुर्वन्तु"
+msgstr "प्रमाणपत्र पहचान सत्यापित न करें"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:695
 #, kde-format
 msgid "Verify whole subject exactly"
-msgstr "सम्पूर्ण विषयं सम्यक् सत्यापयन्तु"
+msgstr "संपूर्ण विषय की सटीक जांच करें"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:700
 #, kde-format
 msgid "Verify name exactly"
-msgstr "नाम सम्यक् सत्यापयन्तु"
+msgstr "नाम की सटीक पुष्टि करें"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:705
 #, kde-format
 msgid "Verify name by prefix"
-msgstr "उपसर्गेण नाम सत्यापयन्तु"
+msgstr "उपसर्ग द्वारा नाम सत्यापित करें"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:710
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
-msgstr "विषयस्य आंशिकरूपेण सत्यापनम् (विरासतविधिः, दृढतया निरुत्साहितः)"
+msgstr "विषय का आंशिक सत्यापन करें (विरासत मोड, दृढ़तापूर्वक हतोत्साहित)"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lbSubjectMatch)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, subjectMatch)
@@ -789,13 +783,13 @@ msgstr "विषयस्य आंशिकरूपेण सत्याप�
 #, kde-format
 msgid ""
 "Subject or Common Name to verify server certificate information against."
-msgstr "सर्वर प्रमाणपत्रसूचनायाः विरुद्धं सत्यापयितुं विषयः अथवा सामान्यनाम ।"
+msgstr "सर्वर प्रमाणपत्र जानकारी को सत्यापित करने के लिए विषय या सामान्य नाम।"
 
 #. i18n: ectx: property (text), widget (QLabel, lbSubjectMatch)
 #: openvpnadvanced.ui:728
 #, kde-format
 msgid "Subject Match:"
-msgstr "विषयमेलः : १."
+msgstr "विषय मिलान:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, subjectMatch)
 #: openvpnadvanced.ui:744
@@ -804,8 +798,8 @@ msgid ""
 "Connect only to servers whose certificate matches the given subject. "
 "Example: /CN=myvpn.company.com"
 msgstr ""
-"केवलं तेषु सर्वरेषु सम्बद्धं कुर्वन्तु येषां प्रमाणपत्रं दत्तविषयेण सह मेलति । उदाहरणम् : /CN=myvpn."
-"company.com"
+"केवल उन सर्वर से कनेक्ट करें जिनका प्रमाणपत्र दिए गए विषय से मेल खाता हो। उदाहरण: /"
+"CN=myvpn.company.com"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRemoteCertTls)
 #. i18n: ectx: property (toolTip), widget (QLabel, labelRemoteCertTls)
@@ -817,20 +811,20 @@ msgid ""
 "extended\n"
 "key usage based on RFC3280 TLS rules."
 msgstr ""
-"अपेक्षितं यत् सहकर्मी प्रमाणपत्रं स्पष्टकुंजीप्रयोगेन सह हस्ताक्षरितं विस्तारितं च आसीत्\n"
-"RFC3280 TLS नियमानाम् आधारेण कुञ्जीप्रयोगः ।"
+"यह आवश्यक है कि सहकर्मी प्रमाणपत्र को RFC3280 TLS नियमों के आधार पर स्पष्ट कुंजी उपयोग "
+"और विस्तारित कुंजी उपयोग के साथ हस्ताक्षरित किया गया हो।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRemoteCertTls)
 #: openvpnadvanced.ui:760
 #, kde-format
 msgid "Verify peer (server) certificate usage signature"
-msgstr "सहकर्मी (सर्वर) प्रमाणपत्रस्य उपयोगहस्ताक्षरं सत्यापयन्तु"
+msgstr "सहकर्मी (सर्वर) प्रमाणपत्र उपयोग हस्ताक्षर सत्यापित करें"
 
 #. i18n: ectx: property (text), widget (QLabel, labelRemoteCertTls)
 #: openvpnadvanced.ui:776
 #, kde-format
 msgid "Remote peer certificate TLS type:"
-msgstr "दूरस्थं सहकर्मी प्रमाणपत्रं TLS प्रकारः:"
+msgstr "दूरस्थ सहकर्मी प्रमाणपत्र TLS प्रकार:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbRemoteCertTls)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbNsCertType)
@@ -844,7 +838,7 @@ msgstr "सर्वर"
 #: openvpnadvanced.ui:796 openvpnadvanced.ui:843
 #, kde-format
 msgid "Client"
-msgstr "ग्राहिका"
+msgstr "ग्राहक"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkNsCertType)
 #. i18n: ectx: property (toolTip), widget (QLabel, lblNsCertType)
@@ -854,49 +848,50 @@ msgstr "ग्राहिका"
 msgid ""
 "Require that peer certificate was signed with an explicit nsCertType "
 "designation."
-msgstr "अपेक्षितं यत् सहकर्मी प्रमाणपत्रं स्पष्टेन nsCertType पदनामेन सह हस्ताक्षरितम् आसीत् ।"
+msgstr ""
+"यह आवश्यक है कि सहकर्मी प्रमाणपत्र स्पष्ट nsCertType पदनाम के साथ हस्ताक्षरित हो।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkNsCertType)
 #: openvpnadvanced.ui:809
 #, kde-format
 msgid "Verify peer (server) certificate nsCertType designation"
-msgstr "सहकर्मी (सर्वर) प्रमाणपत्रं nsCertType पदनाम सत्यापयन्तु"
+msgstr "सहकर्मी (सर्वर) प्रमाणपत्र nsCertType पदनाम सत्यापित करें"
 
 #. i18n: ectx: property (text), widget (QLabel, lblNsCertType)
 #: openvpnadvanced.ui:824
 #, kde-format
 msgid "Remote peer certificate nsCert designation:"
-msgstr "दूरस्थं सहकर्मी प्रमाणपत्रं nsCert पदनाम:"
+msgstr "दूरस्थ सहकर्मी प्रमाणपत्र nsCert पदनाम:"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useExtraTlsAuth)
 #: openvpnadvanced.ui:853
 #, kde-format
 msgid "Add an additional layer of HMAC authentication."
-msgstr "HMAC प्रमाणीकरणस्य अतिरिक्तं स्तरं योजयन्तु ।"
+msgstr "HMAC प्रमाणीकरण की एक अतिरिक्त परत जोड़ें."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: openvpnadvanced.ui:868
 #, kde-format
 msgid "Mode:"
-msgstr "मोडः : १."
+msgstr "तरीका:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:876
 #, kde-format
 msgid "None"
-msgstr "न कश्चित्"
+msgstr "कोई नहीं"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:881
 #, kde-format
 msgid "TLS-Auth"
-msgstr "TLS-Auth"
+msgstr "टीएलएस-प्रमाणीकरण"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:886
 #, kde-format
 msgid "TLS-Crypt"
-msgstr "TLS-Crypt"
+msgstr "टीएलएस-क्रिप्ट"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -907,33 +902,33 @@ msgid ""
 "channel\n"
 "to protect against DoS attacks."
 msgstr ""
-"TLS नियन्त्रणचैनलस्य उपरि HMAC प्रमाणीकरणस्य अतिरिक्तस्तरं योजयन्तु\n"
-"DoS आक्रमणानां रक्षणार्थम् ।"
+"DoS हमलों से सुरक्षा के लिए TLS नियंत्रण चैनल के शीर्ष पर HMAC प्रमाणीकरण की एक अतिरिक्त "
+"परत जोड़ें।"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
 #: openvpnadvanced.ui:898
 #, kde-format
 msgid "Key File:"
-msgstr "कीलसञ्चिका : १."
+msgstr "कुंजी फ़ाइल:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)
 #: openvpnadvanced.ui:922 openvpnadvanced.ui:941
 #, kde-format
 msgid "Direction parameter for static key mode."
-msgstr "स्थिरकुंजी मोडस्य कृते दिशामापदण्डः ।"
+msgstr "स्थिर कुंजी मोड के लिए दिशा पैरामीटर."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
 #: openvpnadvanced.ui:950
 #, kde-format
 msgid "Server (0)"
-msgstr "सर्वर् (०) ९."
+msgstr "सर्वर (0)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
 #: openvpnadvanced.ui:955
 #, kde-format
 msgid "Client (1)"
-msgstr "ग्राहक (१) ९."
+msgstr "ग्राहक (1)"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: openvpnadvanced.ui:980
@@ -946,19 +941,19 @@ msgstr "प्रॉक्सी"
 #: openvpnadvanced.ui:992 openvpnadvanced.ui:1017
 #, kde-format
 msgid "Proxy type: HTTP or SOCKS"
-msgstr "प्रॉक्सी प्रकारः : HTTP अथवा SOCKS"
+msgstr "प्रॉक्सी प्रकार: HTTP या SOCKS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: openvpnadvanced.ui:995
 #, kde-format
 msgid "Proxy Type:"
-msgstr "प्रॉक्सी प्रकारः : १."
+msgstr "प्रॉक्सी प्रकार:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProxyType)
 #: openvpnadvanced.ui:1021
 #, kde-format
 msgid "Not Required"
-msgstr "न आवश्यकम्"
+msgstr "आवश्यक नहीं"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProxyType)
 #: openvpnadvanced.ui:1026
@@ -970,7 +965,7 @@ msgstr "एचटीटीपी"
 #: openvpnadvanced.ui:1031
 #, kde-format
 msgid "SOCKS"
-msgstr "पादकोश"
+msgstr "मोज़े"
 
 #. i18n: ectx: property (text), widget (QLabel, lbProxyType)
 #: openvpnadvanced.ui:1050
@@ -979,102 +974,106 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
-"यदि भवतः संस्थायाः अन्तर्जालं प्राप्तुं प्रॉक्सी सर्वरस्य उपयोगः आवश्यकः अस्ति तर्हि एतत् "
-"विकल्पं चिनोतु ।"
+"यदि आपके संगठन को इंटरनेट तक पहुंचने के लिए प्रॉक्सी सर्वर के उपयोग की आवश्यकता है तो इस "
+"विकल्प का चयन करें।"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_12)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, proxyServerAddress)
 #: openvpnadvanced.ui:1060 openvpnadvanced.ui:1073
 #, kde-format
 msgid "Connect to remote host through a proxy with this address."
-msgstr "एतेन पतनेन सह प्रॉक्सीद्वारा दूरस्थहोस्ट् इत्यनेन सह संयोजयन्तु ।"
+msgstr "इस पते के साथ प्रॉक्सी के माध्यम से दूरस्थ होस्ट से कनेक्ट करें।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: openvpnadvanced.ui:1063
 #, kde-format
 msgid "Server Address:"
-msgstr "सर्वर पता : १."
+msgstr "सर्वर पता:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_13)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbProxyPort)
 #: openvpnadvanced.ui:1083 openvpnadvanced.ui:1102
 #, kde-format
 msgid "Connect to remote host through a proxy with this port."
-msgstr "एतेन पोर्ट् इत्यनेन सह प्रॉक्सी इत्यस्य माध्यमेन दूरस्थं होस्ट् इत्यनेन सह संयोजयन्तु ।"
+msgstr "इस पोर्ट के साथ प्रॉक्सी के माध्यम से दूरस्थ होस्ट से कनेक्ट करें।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #: openvpnadvanced.ui:1086
 #, kde-format
 msgid "Port:"
-msgstr "पोताश्रय:"
+msgstr "पत्तन:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_14)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyUsername)
 #: openvpnadvanced.ui:1112 openvpnadvanced.ui:1125
 #, kde-format
 msgid "HTTP/SOCKS proxy username passed to OpenVPN when prompted for it."
-msgstr "HTTP/SOCKS प्रॉक्सी उपयोक्तृनाम OpenVPN कृते पारितं यदा तस्य कृते प्रार्थ्यते ।"
+msgstr ""
+"HTTP/SOCKS प्रॉक्सी उपयोगकर्ता नाम OpenVPN को तब दिया जाता है जब इसके लिए संकेत "
+"दिया जाता है।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: openvpnadvanced.ui:1115
 #, kde-format
 msgid "Proxy Username:"
-msgstr "प्रॉक्सी उपयोक्तृनाम : १."
+msgstr "प्रॉक्सी उपयोगकर्ता नाम:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_15)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyPassword)
 #: openvpnadvanced.ui:1135 openvpnadvanced.ui:1150
 #, kde-format
 msgid "HTTP/SOCKS proxy password passed to OpenVPN when prompted for it."
-msgstr "HTTP/SOCKS प्रॉक्सी गुप्तशब्दः OpenVPN कृते प्रार्थितः सति पारितः ।"
+msgstr ""
+"HTTP/SOCKS प्रॉक्सी पासवर्ड, जब इसके लिए कहा जाता है, तो OpenVPN को दे दिया जाता है।"
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
 #: openvpnadvanced.ui:1138 openvpnauth.cpp:84 openvpnauth.cpp:121
 #, kde-format
 msgid "Proxy Password:"
-msgstr "प्रॉक्सी गुप्तशब्दः : १."
+msgstr "प्रॉक्सी पासवर्ड:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkProxyRetry)
 #: openvpnadvanced.ui:1162
 #, kde-format
 msgid "Retry indefinitely on proxy errors. It simulates a SIGUSR1 reset."
 msgstr ""
-"प्रॉक्सीदोषेषु अनिश्चितकालं यावत् पुनः प्रयासं कुर्वन्तु। एतत् SIGUSR1 रीसेट् अनुकरणं करोति ।"
+"प्रॉक्सी त्रुटियों पर अनिश्चित काल तक पुनः प्रयास करें। यह SIGUSR1 रीसेट का अनुकरण करता "
+"है।"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkProxyRetry)
 #: openvpnadvanced.ui:1165
 #, kde-format
 msgid "Retry indefinitely when errors occur"
-msgstr "यदा दोषाः भवन्ति तदा अनिश्चितकालं यावत् पुनः प्रयासं कुर्वन्तु"
+msgstr "त्रुटियाँ होने पर अनिश्चित काल तक पुनः प्रयास करें"
 
 #: openvpnadvancedwidget.cpp:82
 #, kde-format
 msgctxt "@title: window advanced openvpn properties"
 msgid "Advanced OpenVPN properties"
-msgstr "उन्नत OpenVPN गुणाः"
+msgstr "उन्नत OpenVPN गुण"
 
 #: openvpnadvancedwidget.cpp:154 openvpnadvancedwidget.cpp:178
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
-msgstr "OpenVPN सिफर लुकअप विफलम्"
+msgstr "OpenVPN सिफर लुकअप विफल हुआ"
 
 #: openvpnadvancedwidget.cpp:161
 #, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
-msgstr "मूलभूतम्‌"
+msgstr "गलती करना"
 
 #: openvpnadvancedwidget.cpp:175
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
-msgstr "OpenVPN सिफर्स् न प्राप्ताः"
+msgstr "कोई OpenVPN सिफर नहीं मिला"
 
 #: openvpnauth.cpp:82 openvpnauth.cpp:114
 #, kde-format
 msgid "Key Password:"
-msgstr "मुख्यगुप्तशब्दः : १."
+msgstr "कुंजी पासवर्ड:"
 
 #: openvpnauth.cpp:95
 #, kde-format
@@ -1084,7 +1083,7 @@ msgstr "ओटीपी"
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "authenticator"
-msgstr "प्रमाणकम्"
+msgstr "प्रमाणक"
 
 #: openvpnauth.cpp:95
 #, kde-format
@@ -1099,4 +1098,4 @@ msgstr "टोकन"
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "one-time password"
-msgstr "एकवारं गुप्तशब्दः"
+msgstr "एक बारी पासवर्ड"

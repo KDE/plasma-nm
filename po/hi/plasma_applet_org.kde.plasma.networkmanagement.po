@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-28 00:41+0000\n"
+"POT-Creation-Date: 2024-12-17 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -15,6 +15,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: contents/ui/ConnectionItem.qml:56
 #, kde-format
@@ -36,17 +37,17 @@ msgstr "नेटवर्क का क्यूआर कोड दिखा�
 msgid "Configure…"
 msgstr "कॉन्फ़िगर करें…"
 
-#: contents/ui/ConnectionItem.qml:133
+#: contents/ui/ConnectionItem.qml:127
 #, kde-format
 msgid "Speed"
 msgstr "रफ़्तार"
 
-#: contents/ui/ConnectionItem.qml:138
+#: contents/ui/ConnectionItem.qml:132
 #, kde-format
 msgid "Details"
 msgstr "विवरण"
 
-#: contents/ui/ConnectionItem.qml:185
+#: contents/ui/ConnectionItem.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56,12 +57,12 @@ msgstr ""
 "वर्तमान डाउनलोड गति %1 किबिबाइट प्रति सेकंड है; वर्तमान अपलोड गति %2 किबिबाइट प्रति "
 "सेकंड है"
 
-#: contents/ui/ConnectionItem.qml:302
+#: contents/ui/ConnectionItem.qml:296
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "कनेक्टेड, ↓ %1/s, ↑ %2/s"
 
-#: contents/ui/ConnectionItem.qml:306
+#: contents/ui/ConnectionItem.qml:300
 #, kde-format
 msgid "Connected"
 msgstr "जुड़े हुए"

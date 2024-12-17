@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-28 00:41+0000\n"
+"POT-Creation-Date: 2024-12-17 00:42+0000\n"
 "PO-Revision-Date: 2024-10-19 19:58+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -42,17 +42,17 @@ msgstr "顯示網路的 QR 碼"
 msgid "Configure…"
 msgstr "設定…"
 
-#: contents/ui/ConnectionItem.qml:133
+#: contents/ui/ConnectionItem.qml:127
 #, kde-format
 msgid "Speed"
 msgstr "速度"
 
-#: contents/ui/ConnectionItem.qml:138
+#: contents/ui/ConnectionItem.qml:132
 #, kde-format
 msgid "Details"
 msgstr "詳情"
 
-#: contents/ui/ConnectionItem.qml:185
+#: contents/ui/ConnectionItem.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -60,12 +60,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr "目前下載速度為每秒 %1 KiB；目前上傳速度為每秒 %2 KiB"
 
-#: contents/ui/ConnectionItem.qml:302
+#: contents/ui/ConnectionItem.qml:296
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "已連線，↓ %1/秒, ↑ %2/秒"
 
-#: contents/ui/ConnectionItem.qml:306
+#: contents/ui/ConnectionItem.qml:300
 #, kde-format
 msgid "Connected"
 msgstr "已連線"

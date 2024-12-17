@@ -243,7 +243,7 @@ void WireGuardPeerWidget::saveKeepAlive()
     if (value.isEmpty())
         d->peerData.remove(PNM_WG_PEER_KEY_PERSISTENT_KEEPALIVE);
     else
-        d->peerData[PNM_WG_PEER_KEY_PERSISTENT_KEEPALIVE] = value;
+        d->peerData[PNM_WG_PEER_KEY_PERSISTENT_KEEPALIVE] = value.toUInt();
 }
 
 void WireGuardPeerWidget::saveKeyFlags()

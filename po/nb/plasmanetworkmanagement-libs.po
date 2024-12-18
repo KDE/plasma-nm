@@ -3690,7 +3690,3 @@ msgstr "NetworkManager 0.9.8 kreves, fant %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Ukjent"
-
-#~ msgctxt "General"
-#~ msgid "General configuration"
-#~ msgstr "Generelt oppsett"

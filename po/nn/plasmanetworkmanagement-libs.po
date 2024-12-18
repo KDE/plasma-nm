@@ -3808,7 +3808,3 @@ msgstr "Krev NetworkManager 0.9.8. Fann %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Ukjend"
-
-#~ msgctxt "General"
-#~ msgid "General configuration"
-#~ msgstr "Generelt oppsett"

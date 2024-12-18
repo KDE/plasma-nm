@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-24 00:39+0000\n"
-"PO-Revision-Date: 2024-06-27 20:57+0200\n"
+"PO-Revision-Date: 2024-12-17 22:51+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -544,7 +544,7 @@ msgstr "Identidade anónima:"
 #: editor/settings/ui/802-1x.ui:364
 #, kde-format
 msgid "Automatic PAC provisioning"
-msgstr "Fornecemento automático de PAC."
+msgstr "Aprovisionamento automático de PAC."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:381

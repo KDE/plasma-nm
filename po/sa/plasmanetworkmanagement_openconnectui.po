@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the plasma-nm package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:54+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: openconnectauth.cpp:347
 #, kde-format
@@ -95,7 +97,7 @@ msgstr "लॉगं पश्यन्तु"
 #: openconnectauth.ui:170
 #, kde-format
 msgid "Log Level:"
-msgstr "लॉग स्तरः : १."
+msgstr "लॉग स्तरः :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
 #: openconnectauth.ui:181
@@ -139,25 +141,25 @@ msgstr "सामान्य"
 #: openconnectprop.ui:38
 #, kde-format
 msgid "Gateway:"
-msgstr "प्रवेशद्वारः : १."
+msgstr "प्रवेशद्वारः :"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: openconnectprop.ui:51
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA प्रमाणपत्राणि : १."
+msgstr "CA प्रमाणपत्राणि :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: openconnectprop.ui:70
 #, kde-format
 msgid "Proxy:"
-msgstr "प्रॉक्सी : १."
+msgstr "प्रॉक्सी :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openconnectprop.ui:83
 #, kde-format
 msgid "User Agent:"
-msgstr "उपयोक्ता एजेण्ट् : १."
+msgstr "उपयोक्ता एजेण्ट् :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openconnectprop.ui:96
@@ -175,7 +177,7 @@ msgstr "Cisco Secure Desktop trojan इत्यस्य अनुमतिं 
 #: openconnectprop.ui:116
 #, kde-format
 msgid "VPN Protocol:"
-msgstr "वीपीएन प्रोटोकॉल : १."
+msgstr "वीपीएन प्रोटोकॉल :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:133
@@ -223,7 +225,7 @@ msgstr "सरणी SSL VPN"
 #: openconnectprop.ui:171
 #, kde-format
 msgid "Reported OS:"
-msgstr "रिपोर्ट्ड् ओएस: १."
+msgstr "रिपोर्ट्ड् ओएस:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:190
@@ -277,20 +279,20 @@ msgstr "प्रमाणपत्र प्रमाणीकरणम्"
 #: openconnectprop.ui:242
 #, kde-format
 msgid "Machine Certificate:"
-msgstr "यन्त्रप्रमाणपत्रम् : १."
+msgstr "यन्त्रप्रमाणपत्रम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: openconnectprop.ui:261 openconnectprop.ui:299
 #, kde-format
 msgid "Private Key:"
-msgstr "निजी कुञ्जी : १."
+msgstr "निजी कुञ्जी :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
 #, kde-format
 msgid "User Certificate:"
-msgstr "उपयोक्तृप्रमाणपत्रम् : १."
+msgstr "उपयोक्तृप्रमाणपत्रम् :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318
@@ -326,13 +328,13 @@ msgstr "सॉफ्टवेयर टोकन प्रमाणीकरण"
 #: openconnecttoken.ui:26
 #, kde-format
 msgid "Token Mode:"
-msgstr "टोकन मोड : १."
+msgstr "टोकन मोड :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnecttoken.ui:43
 #, kde-format
 msgid "Token Secret:"
-msgstr "टोकन रहस्य : १."
+msgstr "टोकन रहस्य :"
 
 #: openconnectwebauthdialog.cpp:111
 #, kde-format

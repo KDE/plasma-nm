@@ -3,25 +3,27 @@
 # This file is distributed under the same license as the plasma-nm package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-10 00:40+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 22:01+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
 #, kde-format
 msgid "Gateway:"
-msgstr "प्रवेशद्वारः : १."
+msgstr "प्रवेशद्वारः :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: l2tp.ui:35
@@ -33,7 +35,7 @@ msgstr "L2TP सर्वर IP अथवा नाम।"
 #: l2tp.ui:45
 #, kde-format
 msgid "Authentication type:"
-msgstr "प्रमाणीकरणप्रकारः : १."
+msgstr "प्रमाणीकरणप्रकारः :"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbAuthType)
 #: l2tp.ui:67 l2tpipsec.ui:68
@@ -51,14 +53,14 @@ msgstr "समाभाष्"
 #: l2tp.ui:76 l2tpipsec.ui:77
 #, kde-format
 msgid "Certificates (TLS)"
-msgstr "प्रमाणपत्राणि (TLS) ९."
+msgstr "प्रमाणपत्राणि (TLS)"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_1)
 #: l2tp.ui:90
 #, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username:"
-msgstr "उपयोक्तृनाम : १."
+msgstr "उपयोक्तृनाम :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, username)
 #: l2tp.ui:103
@@ -90,7 +92,7 @@ msgstr ""
 #: l2tp.ui:140
 #, kde-format
 msgid "NT Domain:"
-msgstr "एन टी डोमेन : १."
+msgstr "एन टी डोमेन :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
 #: l2tp.ui:150
@@ -107,7 +109,7 @@ msgstr ""
 #: l2tp.ui:174 l2tpipsec.ui:205
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA प्रमाणपत्राणि : १."
+msgstr "CA प्रमाणपत्राणि :"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCA)
@@ -124,7 +126,7 @@ msgstr ""
 #: l2tp.ui:199
 #, kde-format
 msgid "User Certificate:"
-msgstr "उपयोक्तृप्रमाणपत्रम् : १."
+msgstr "उपयोक्तृप्रमाणपत्रम् :"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCert)
 #: l2tp.ui:212
@@ -141,7 +143,7 @@ msgstr ""
 #: l2tp.ui:224 l2tpipsec.ui:156
 #, kde-format
 msgid "Private Key:"
-msgstr "निजी कुञ्जी : १."
+msgstr "निजी कुञ्जी :"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineKey)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userKey)
@@ -159,7 +161,7 @@ msgstr ""
 #: l2tp.ui:249 l2tpipsec.ui:181
 #, kde-format
 msgid "Private Key Password:"
-msgstr "निजी मुख्यगुप्तशब्दः : १."
+msgstr "निजी मुख्यगुप्तशब्दः :"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, machineKeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userKeyPassword)
@@ -187,17 +189,17 @@ msgstr "पीपीपी सेटिंग्स्..."
 #: l2tpauth.cpp:63
 #, kde-format
 msgid "User Password:"
-msgstr "उपयोक्तृगुप्तशब्दः : १."
+msgstr "उपयोक्तृगुप्तशब्दः :"
 
 #: l2tpauth.cpp:71
 #, kde-format
 msgid "User Certificate Password:"
-msgstr "उपयोक्तृप्रमाणपत्रगुप्तशब्दः : १."
+msgstr "उपयोक्तृप्रमाणपत्रगुप्तशब्दः :"
 
 #: l2tpauth.cpp:82
 #, kde-format
 msgid "Machine Certificate Password:"
-msgstr "यन्त्रप्रमाणपत्रगुप्तशब्दः : १."
+msgstr "यन्त्रप्रमाणपत्रगुप्तशब्दः :"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbEnableTunnelToHost)
 #: l2tpipsec.ui:20
@@ -227,7 +229,7 @@ msgstr "पूर्वसाझा कुञ्जी (PSK) 1.1."
 #: l2tpipsec.ui:91
 #, kde-format
 msgid "Pre-shared Key:"
-msgstr "पूर्वसाझा कुञ्जी : १."
+msgstr "पूर्वसाझा कुञ्जी :"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
 #: l2tpipsec.ui:103
@@ -239,7 +241,7 @@ msgstr "<html><head/><body><p>पूर्वसाझा कुञ्जी (PS
 #: l2tpipsec.ui:131
 #, kde-format
 msgid "Machine Certificate:"
-msgstr "यन्त्रप्रमाणपत्रम् : १."
+msgstr "यन्त्रप्रमाणपत्रम् :"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCert)
 #: l2tpipsec.ui:144
@@ -261,13 +263,13 @@ msgstr "उन्नतं"
 #: l2tpipsec.ui:231
 #, kde-format
 msgid "Phase1 Algorithms:"
-msgstr "चरण1 एल्गोरिदम् : १."
+msgstr "चरण1 एल्गोरिदम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: l2tpipsec.ui:241
 #, kde-format
 msgid "Phase2 Algorithms:"
-msgstr "चरण2 एल्गोरिदम् : १."
+msgstr "चरण2 एल्गोरिदम् :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
 #: l2tpipsec.ui:251
@@ -300,7 +302,7 @@ msgstr "हः:म्:स्स्"
 #: l2tpipsec.ui:271
 #, kde-format
 msgid "Phase1 Lifetime:"
-msgstr "चरण१ आयुः : १."
+msgstr "चरण१ आयुः :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: l2tpipsec.ui:278
@@ -316,7 +318,7 @@ msgstr ""
 #: l2tpipsec.ui:285
 #, kde-format
 msgid "Phase2 Lifetime:"
-msgstr "चरण२ जीवनकालः १."
+msgstr "चरण२ जीवनकालः"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:295
@@ -402,7 +404,7 @@ msgstr "UDP एनकैप्सुलेशनं प्रवर्तयन�
 #: l2tpipsec.ui:345
 #, kde-format
 msgid "Remote ID:"
-msgstr "दूरस्थः आईडी : १."
+msgstr "दूरस्थः आईडी :"
 
 #: l2tpipsecwidget.cpp:44
 #, kde-format
@@ -419,7 +421,7 @@ msgstr "प्रमाणीकरणम्"
 #: l2tpppp.ui:35
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr "निम्नलिखित प्रमाणीकरणविधयः अनुमन्यताम् : १."
+msgstr "निम्नलिखित प्रमाणीकरणविधयः अनुमन्यताम् :"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, listWidget)
 #: l2tpppp.ui:45
@@ -591,7 +593,7 @@ msgstr "MPPE Encryption इत्यस्य उपयोगं कुर्व
 #: l2tpppp.ui:281
 #, kde-format
 msgid "Crypto:"
-msgstr "क्रिप्टो : १."
+msgstr "क्रिप्टो :"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbMPPECrypto)
 #: l2tpppp.ui:297

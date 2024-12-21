@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the plasma-nm package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 22:01+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #: openvpn.cpp:183
 #, kde-format
@@ -36,7 +38,7 @@ msgstr "प्रमाणपत्रं %1 प्रति प्रतिल�
 #: openvpn.ui:19
 #, kde-format
 msgid "Gateway:"
-msgstr "प्रवेशद्वारः : १."
+msgstr "प्रवेशद्वारः :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: openvpn.ui:36
@@ -55,7 +57,7 @@ msgstr ""
 #: openvpn.ui:46
 #, kde-format
 msgid "Connection type:"
-msgstr "संयोजनप्रकारः : १."
+msgstr "संयोजनप्रकारः :"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:68
@@ -93,7 +95,7 @@ msgstr "प्रमाणपत्रैः सह गुप्तशब्द�
 #: openvpn.ui:104 openvpn.ui:370 openvpn.ui:468
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA प्रमाणपत्राणि : १."
+msgstr "CA प्रमाणपत्राणि :"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, passCaFile)
@@ -108,7 +110,7 @@ msgstr "प्रमाणपत्र प्राधिकरण (CA) सञ�
 #: openvpn.ui:129 openvpn.ui:493
 #, kde-format
 msgid "User Certificate:"
-msgstr "उपयोक्तृप्रमाणपत्रम् : १."
+msgstr "उपयोक्तृप्रमाणपत्रम् :"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Cert)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassCert)
@@ -126,7 +128,7 @@ msgstr ""
 #: openvpn.ui:154 openvpn.ui:518
 #, kde-format
 msgid "Private Key:"
-msgstr "निजी कुञ्जी : १."
+msgstr "निजी कुञ्जी :"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Key)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassKey)
@@ -140,7 +142,7 @@ msgstr "स्थानीयसमवयस्कस्य निजकुं�
 #: openvpn.ui:179 openvpn.ui:543
 #, kde-format
 msgid "Private Key Password:"
-msgstr "निजी मुख्यगुप्तशब्दः : १."
+msgstr "निजी मुख्यगुप्तशब्दः :"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509KeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509PassKeyPassword)
@@ -153,7 +155,7 @@ msgstr "निजीकुंजी कृते गुप्तशब्दः�
 #: openvpn.ui:217
 #, kde-format
 msgid "Static Key:"
-msgstr "स्थिर कुञ्जी : १."
+msgstr "स्थिर कुञ्जी :"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, pskSharedKey)
 #: openvpn.ui:230
@@ -166,7 +168,7 @@ msgstr "Static Key encryption mode (non-TLS) कृते पूर्वसा�
 #: openvpn.ui:242 openvpnadvanced.ui:925
 #, kde-format
 msgid "Key Direction:"
-msgstr "मुख्यदिशा : १."
+msgstr "मुख्यदिशा :"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:255
@@ -205,7 +207,7 @@ msgstr "१"
 #: openvpn.ui:280
 #, kde-format
 msgid "Local IP Address:"
-msgstr "स्थानीय IP-सङ्केतः : १."
+msgstr "स्थानीय IP-सङ्केतः :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, pskLocalIp)
 #: openvpn.ui:293
@@ -217,7 +219,7 @@ msgstr "दूरस्थस्य VPN अन्त्यबिन्दुस�
 #: openvpn.ui:303
 #, kde-format
 msgid "Remote IP Address:"
-msgstr "दूरस्थः IP-सङ्केतः : १."
+msgstr "दूरस्थः IP-सङ्केतः :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, pskRemoteIp)
 #: openvpn.ui:316
@@ -244,7 +246,7 @@ msgstr ""
 #, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username:"
-msgstr "उपयोक्तृनाम : १."
+msgstr "उपयोक्तृनाम :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, passUserName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, x509PassUsername)
@@ -505,7 +507,7 @@ msgstr ""
 #: openvpnadvanced.ui:330
 #, kde-format
 msgid "Specify ping interval:"
-msgstr "ping अन्तरालं निर्दिशन्तु : १."
+msgstr "ping अन्तरालं निर्दिशन्तु :"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkSpecifyExitRestartPing)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbSpecifyExitRestartPing)
@@ -590,7 +592,7 @@ msgstr "सर्वरस्य अधिकतमं मार्गसङ्�
 #: openvpnadvanced.ui:435
 #, kde-format
 msgid "Specify max routes:"
-msgstr "अधिकतममार्गाः निर्दिशन्तु : १."
+msgstr "अधिकतममार्गाः निर्दिशन्तु :"
 
 #. i18n: ectx: attribute (title), widget (QWidget, securityTab)
 #: openvpnadvanced.ui:474
@@ -615,7 +617,7 @@ msgstr ""
 #: openvpnadvanced.ui:486
 #, kde-format
 msgid "Cipher:"
-msgstr "सिफरः : १."
+msgstr "सिफरः :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboCipher)
 #: openvpnadvanced.ui:513
@@ -655,7 +657,7 @@ msgstr ""
 #: openvpnadvanced.ui:564
 #, kde-format
 msgid "HMAC Authentication:"
-msgstr "एचएमएसी प्रमाणीकरणम् : १."
+msgstr "एचएमएसी प्रमाणीकरणम् :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:587
@@ -751,7 +753,7 @@ msgstr ""
 #: openvpnadvanced.ui:673
 #, kde-format
 msgid "Server Certificate Check:"
-msgstr "सर्वर प्रमाणपत्रपरीक्षाः : १."
+msgstr "सर्वर प्रमाणपत्रपरीक्षाः :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:690
@@ -795,7 +797,7 @@ msgstr "सर्वर प्रमाणपत्रसूचनायाः �
 #: openvpnadvanced.ui:728
 #, kde-format
 msgid "Subject Match:"
-msgstr "विषयमेलः : १."
+msgstr "विषयमेलः :"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, subjectMatch)
 #: openvpnadvanced.ui:744
@@ -878,7 +880,7 @@ msgstr "HMAC प्रमाणीकरणस्य अतिरिक्तं
 #: openvpnadvanced.ui:868
 #, kde-format
 msgid "Mode:"
-msgstr "मोडः : १."
+msgstr "मोडः :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:876
@@ -914,7 +916,7 @@ msgstr ""
 #: openvpnadvanced.ui:898
 #, kde-format
 msgid "Key File:"
-msgstr "कीलसञ्चिका : १."
+msgstr "कीलसञ्चिका :"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)
@@ -927,13 +929,13 @@ msgstr "स्थिरकुंजी मोडस्य कृते दिश
 #: openvpnadvanced.ui:950
 #, kde-format
 msgid "Server (0)"
-msgstr "सर्वर् (०) ९."
+msgstr "सर्वर् (०)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
 #: openvpnadvanced.ui:955
 #, kde-format
 msgid "Client (1)"
-msgstr "ग्राहक (१) ९."
+msgstr "ग्राहक (१)"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: openvpnadvanced.ui:980
@@ -952,7 +954,7 @@ msgstr "प्रॉक्सी प्रकारः : HTTP अथवा SOCKS
 #: openvpnadvanced.ui:995
 #, kde-format
 msgid "Proxy Type:"
-msgstr "प्रॉक्सी प्रकारः : १."
+msgstr "प्रॉक्सी प्रकारः :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProxyType)
 #: openvpnadvanced.ui:1021
@@ -993,7 +995,7 @@ msgstr "एतेन पतनेन सह प्रॉक्सीद्वा
 #: openvpnadvanced.ui:1063
 #, kde-format
 msgid "Server Address:"
-msgstr "सर्वर पता : १."
+msgstr "सर्वर पता :"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_13)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbProxyPort)
@@ -1019,7 +1021,7 @@ msgstr "HTTP/SOCKS प्रॉक्सी उपयोक्तृनाम Op
 #: openvpnadvanced.ui:1115
 #, kde-format
 msgid "Proxy Username:"
-msgstr "प्रॉक्सी उपयोक्तृनाम : १."
+msgstr "प्रॉक्सी उपयोक्तृनाम :"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_15)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyPassword)
@@ -1032,7 +1034,7 @@ msgstr "HTTP/SOCKS प्रॉक्सी गुप्तशब्दः OpenV
 #: openvpnadvanced.ui:1138 openvpnauth.cpp:84 openvpnauth.cpp:121
 #, kde-format
 msgid "Proxy Password:"
-msgstr "प्रॉक्सी गुप्तशब्दः : १."
+msgstr "प्रॉक्सी गुप्तशब्दः :"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkProxyRetry)
 #: openvpnadvanced.ui:1162
@@ -1074,7 +1076,7 @@ msgstr "OpenVPN सिफर्स् न प्राप्ताः"
 #: openvpnauth.cpp:82 openvpnauth.cpp:114
 #, kde-format
 msgid "Key Password:"
-msgstr "मुख्यगुप्तशब्दः : १."
+msgstr "मुख्यगुप्तशब्दः :"
 
 #: openvpnauth.cpp:95
 #, kde-format

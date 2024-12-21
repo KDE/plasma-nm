@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the plasma-nm package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:54+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
 #: pptpadvanced.ui:17
@@ -27,7 +29,7 @@ msgstr "प्रमाणीकरणम्"
 #: pptpadvanced.ui:26
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr "निम्नलिखित प्रमाणीकरणविधयः अनुमन्यताम् : १."
+msgstr "निम्नलिखित प्रमाणीकरणविधयः अनुमन्यताम् :"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, listWidget)
 #: pptpadvanced.ui:36
@@ -88,7 +90,7 @@ msgstr "MPPE Encryption इत्यस्य उपयोगं कुर्व
 #: pptpadvanced.ui:112
 #, kde-format
 msgid "Crypto:"
-msgstr "क्रिप्टो : १."
+msgstr "क्रिप्टो :"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cb_MPPECrypto)
 #: pptpadvanced.ui:128
@@ -232,7 +234,7 @@ msgstr "सामान्य"
 #: pptpprop.ui:34
 #, kde-format
 msgid "Gateway:"
-msgstr "प्रवेशद्वारः : १."
+msgstr "प्रवेशद्वारः :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_gateway)
 #: pptpprop.ui:47
@@ -251,7 +253,7 @@ msgstr "अतिरिक्त रूपेन"
 #: pptpprop.ui:80
 #, kde-format
 msgid "Login:"
-msgstr "प्रवेशः : १."
+msgstr "प्रवेशः :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_login)
 #: pptpprop.ui:93
@@ -264,7 +266,7 @@ msgstr "स्थानीयतन्त्रस्य प्रमाणी�
 #: pptpprop.ui:153
 #, kde-format
 msgid "NT Domain:"
-msgstr "एन टी डोमेन : १."
+msgstr "एन टी डोमेन :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_ntDomain)
 #: pptpprop.ui:167

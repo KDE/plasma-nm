@@ -3,19 +3,21 @@
 # This file is distributed under the same license as the plasma-nm package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:54+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #. i18n: ectx: attribute (title), widget (QWidget, pptpTab)
 #: sstpadvanced.ui:39
@@ -33,7 +35,7 @@ msgstr "प्रमाणीकरणम्"
 #: sstpadvanced.ui:54
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr "निम्नलिखित प्रमाणीकरणविधयः अनुमन्यताम् : १."
+msgstr "निम्नलिखित प्रमाणीकरणविधयः अनुमन्यताम् :"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:65
@@ -81,7 +83,7 @@ msgstr "MPPE Encryption इत्यस्य उपयोगं कुर्व
 #: sstpadvanced.ui:135
 #, kde-format
 msgid "Crypto:"
-msgstr "क्रिप्टो : १."
+msgstr "क्रिप्टो :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: sstpadvanced.ui:152
@@ -154,7 +156,7 @@ msgstr "विविधाः"
 #: sstpadvanced.ui:252
 #, kde-format
 msgid "Use custom unit number:"
-msgstr "कस्टम् यूनिट् सङ्ख्यायाः उपयोगं कुर्वन्तु : १."
+msgstr "कस्टम् यूनिट् सङ्ख्यायाः उपयोगं कुर्वन्तु :"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: sstpadvanced.ui:285
@@ -191,7 +193,7 @@ msgstr "प्रमाणपत्राणि"
 #: sstpadvanced.ui:336 sstpwidget.ui:86
 #, kde-format
 msgid "Username:"
-msgstr "उपयोक्तृनाम : १."
+msgstr "उपयोक्तृनाम :"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
 #: sstpadvanced.ui:349 sstpwidget.ui:99
@@ -215,7 +217,7 @@ msgstr "समाभाष्: "
 #: sstpwidget.ui:25
 #, kde-format
 msgid "Gateway:"
-msgstr "प्रवेशद्वारः : १."
+msgstr "प्रवेशद्वारः :"
 
 #. i18n: ectx: property (text), widget (QPushButton, btn_advancedOption)
 #: sstpwidget.ui:58
@@ -233,13 +235,13 @@ msgstr "वैकल्पिक"
 #: sstpwidget.ui:116
 #, kde-format
 msgid "NT Domain:"
-msgstr "एन टी डोमेन : १."
+msgstr "एन टी डोमेन :"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_caCert)
 #: sstpwidget.ui:129
 #, kde-format
 msgid "CA Certificate:"
-msgstr "CA प्रमाणपत्राणि : १."
+msgstr "CA प्रमाणपत्राणि :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_ignoreCertWarnings)
 #: sstpwidget.ui:142

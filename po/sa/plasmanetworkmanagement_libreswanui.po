@@ -3,64 +3,66 @@
 # This file is distributed under the same license as the plasma-nm package.
 # Kali <EMAIL@ADDRESS>, 2024.
 #
+# SPDX-FileCopyrightText: 2024 kali <skkalwar999@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-05-17 00:46+0000\n"
-"PO-Revision-Date: 2024-12-13 19:10+0530\n"
-"Last-Translator: Kali <EMAIL@ADDRESS>\n"
-"Language-Team: Sanskrit\n"
+"PO-Revision-Date: 2024-12-20 21:54+0530\n"
+"Last-Translator: kali <skkalwar999@gmail.com>\n"
+"Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
 "Language: sa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
+"X-Generator: Lokalize 24.08.2\n"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libreswan.ui:20
 #, kde-format
 msgid "Gateway:"
-msgstr "प्रवेशद्वारः : १."
+msgstr "प्रवेशद्वारः :"
 
 #. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: libreswan.ui:30 libreswanauth.ui:20
 #, kde-format
 msgid "Group name:"
-msgstr "समूहनाम : १."
+msgstr "समूहनाम :"
 
 #. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: libreswan.ui:40 libreswanauth.ui:40
 #, kde-format
 msgid "User password:"
-msgstr "उपयोक्तृगुप्तशब्दः : १."
+msgstr "उपयोक्तृगुप्तशब्दः :"
 
 #. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: libreswan.ui:58 libreswanauth.ui:60
 #, kde-format
 msgid "Group password:"
-msgstr "समूहगुप्तशब्दः : १."
+msgstr "समूहगुप्तशब्दः :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: libreswan.ui:89
 #, kde-format
 msgid "User name:"
-msgstr "उपयोक्तृनाम : १."
+msgstr "उपयोक्तृनाम :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: libreswan.ui:99
 #, kde-format
 msgid "Phase1 algorithms:"
-msgstr "चरण1 एल्गोरिदम् : १."
+msgstr "चरण1 एल्गोरिदम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: libreswan.ui:109
 #, kde-format
 msgid "Phase2 algorithms:"
-msgstr "चरण२ एल्गोरिदम् : १."
+msgstr "चरण२ एल्गोरिदम् :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: libreswan.ui:119

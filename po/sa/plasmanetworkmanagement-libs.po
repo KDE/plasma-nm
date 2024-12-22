@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-14 00:54+0000\n"
+"POT-Creation-Date: 2024-12-22 00:42+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -2160,7 +2160,7 @@ msgstr "मोबाईल ब्रॉडबैण्ड"
 msgid "Olpc mesh"
 msgstr "ओल्प्च मेष"
 
-#: editor/uiutils.cpp:218 networkstatus.cpp:189
+#: editor/uiutils.cpp:218 networkstatus.cpp:190
 #, kde-format
 msgid "VPN"
 msgstr "वीपीएन"
@@ -3411,7 +3411,7 @@ msgid "VPN connections"
 msgstr "VPN संयोजनानि"
 
 #: models/creatableconnectionsmodel.cpp:254
-#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:211
+#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
 #, kde-format
 msgid "WireGuard"
 msgstr "ताररक्षक"
@@ -3707,45 +3707,45 @@ msgstr "Adsl"
 msgid "Device"
 msgstr "उपकरणम्‌"
 
-#: networkstatus.cpp:125
+#: networkstatus.cpp:126
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
 msgstr "संबद्धः"
 
-#: networkstatus.cpp:128
+#: networkstatus.cpp:129
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
 msgstr "संबद्धः"
 
-#: networkstatus.cpp:131
+#: networkstatus.cpp:132
 #, kde-format
 msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
 msgstr "संबद्धः"
 
-#: networkstatus.cpp:134
+#: networkstatus.cpp:135
 #, kde-format
 msgctxt "Networking is inactive and all devices are disabled"
 msgid "Inactive"
 msgstr "निष्क्रिय"
 
-#: networkstatus.cpp:137
+#: networkstatus.cpp:138
 #, kde-format
 msgctxt "There is no active network connection"
 msgid "Disconnected"
 msgstr "विच्छिन्नः"
 
-#: networkstatus.cpp:140
+#: networkstatus.cpp:141
 #, kde-format
 msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
 msgstr "विच्छेदनम्"
 
-#: networkstatus.cpp:143
+#: networkstatus.cpp:144
 #, kde-format
 msgctxt ""
 "A network device is connecting to a network and there is no other available "
@@ -3753,42 +3753,42 @@ msgctxt ""
 msgid "Connecting"
 msgstr "संयोजयन्"
 
-#: networkstatus.cpp:217
+#: networkstatus.cpp:218
 #, kde-format
 msgid "Connecting to %1"
 msgstr "%1 इत्यनेन सह सम्बद्धं भवति"
 
-#: networkstatus.cpp:221
+#: networkstatus.cpp:222
 #, kde-format
 msgid "Connected to %1 (no connectivity)"
 msgstr "%1 इत्यनेन सह सम्बद्धम् (संयोजनं नास्ति)"
 
-#: networkstatus.cpp:224
+#: networkstatus.cpp:225
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
 msgstr "%1 (सीमितसंयोजनम्) इत्यनेन सह सम्बद्धम् ।"
 
-#: networkstatus.cpp:227
+#: networkstatus.cpp:228
 #, kde-format
 msgid "Connected to %1 (log in required)"
 msgstr "%1 इत्यनेन सह सम्बद्धम् (प्रवेशः आवश्यकम्)"
 
-#: networkstatus.cpp:230
+#: networkstatus.cpp:231
 #, kde-format
 msgid "Connected to %1"
 msgstr "%1 इत्यनेन सह सम्बद्धम्"
 
-#: networkstatus.cpp:255
+#: networkstatus.cpp:256
 #, kde-format
 msgid "NetworkManager not running"
 msgstr "NetworkManager न चाल्यते"
 
-#: networkstatus.cpp:260
+#: networkstatus.cpp:261
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "NetworkManager 0.9.8 आवश्यकम्, %1 प्राप्तम् ।"
 
-#: networkstatus.cpp:263
+#: networkstatus.cpp:264
 #, kde-format
 msgctxt "global connection state"
 msgid "Unknown"

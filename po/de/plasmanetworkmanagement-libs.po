@@ -5,12 +5,13 @@
 # Frederik Schwarzer <schwarzer@kde.org>, 2014, 2016, 2018, 2020, 2022, 2023.
 # Alois Spitzbart <spitz234@hotmail.com>, 2022.
 # Jannick Kuhr <kde-dev@kuhr.org>, 2023.
+# SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-14 00:54+0000\n"
-"PO-Revision-Date: 2024-10-13 16:00+0200\n"
+"POT-Creation-Date: 2024-12-22 00:42+0000\n"
+"PO-Revision-Date: 2024-11-04 20:16+0100\n"
 "Last-Translator: Flori G <Renner03@protonmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -179,7 +180,7 @@ msgstr "Aktive Backup"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format
@@ -818,13 +819,7 @@ msgstr "Automatisch mit Priorität verbinden"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. An negative number can be used "
-#| "to indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -834,9 +829,10 @@ msgid ""
 msgstr ""
 "Wenn die Verbindung auf automatische Verbindung eingestellt ist, werden "
 "Verbindungen mit höherer Priorität bevorzugt werden. Standardwert ist 0.\n"
-".Eine höhere Zahl bedeutet höhere Priorität. Eine negative Zahl kann "
-"verwendet werden, um eine Priorität niedriger ist als die "
-"Standardeinstellung anzugeben."
+"Eine höhere Zahl bedeutet höhere Priorität. Eine negative Zahl kann "
+"verwendet werden, um eine Priorität niedriger als die Standardpriorität "
+"anzugeben.\n"
+"           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:48
@@ -1593,7 +1589,7 @@ msgstr "WPA3 Enterprise 192-bit"
 #: editor/settings/ui/wifisecurity.ui:73
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:81
@@ -1837,12 +1833,13 @@ msgstr "Schnittstelle"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, fuzzy, kde-format
-#| msgid "VLAN interface name:"
+#, kde-format
 msgid ""
 "Required.\n"
 "Network interface name."
-msgstr "VLAN-Schnittstellenname:"
+msgstr ""
+"Erforderlich.\n"
+"Name der Netzwerkschnittstelle."
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -2166,7 +2163,7 @@ msgstr "Mobiles Breitband"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2189,7 +2186,7 @@ msgstr "Mobiles Breitband"
 msgid "Olpc mesh"
 msgstr "Vermaschtes OLPC-Netz"
 
-#: editor/uiutils.cpp:218 networkstatus.cpp:189
+#: editor/uiutils.cpp:218 networkstatus.cpp:190
 #, kde-format
 msgid "VPN"
 msgstr "VPN"
@@ -2207,7 +2204,7 @@ msgstr "WireGuard-VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2250,10 +2247,9 @@ msgid "Bridge (%1)"
 msgstr "Netzwerkbrücke (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Kabelgebundene Schnittstelle (%1)"
+msgstr "Loopback-Schnittstelle (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format
@@ -2806,7 +2802,7 @@ msgstr "WPA3-EAP-SUITE-B-192"
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format
@@ -3445,7 +3441,7 @@ msgid "VPN connections"
 msgstr "VPN-Verbindungen"
 
 #: models/creatableconnectionsmodel.cpp:254
-#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:211
+#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
 #, kde-format
 msgid "WireGuard"
 msgstr "WireGuard"
@@ -3669,11 +3665,10 @@ msgid "Frequency"
 msgstr "Frequenz"
 
 #: models/networkmodelitem.cpp:661
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "Kanal:"
+msgstr "%1 (Kanal %2)"
 
 #: models/networkmodelitem.cpp:665
 #, kde-format
@@ -3742,45 +3737,45 @@ msgstr "ADSL"
 msgid "Device"
 msgstr "Gerät"
 
-#: networkstatus.cpp:125
+#: networkstatus.cpp:126
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
 msgstr "Verbunden"
 
-#: networkstatus.cpp:128
+#: networkstatus.cpp:129
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
 msgstr "Verbunden"
 
-#: networkstatus.cpp:131
+#: networkstatus.cpp:132
 #, kde-format
 msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
 msgstr "Verbunden"
 
-#: networkstatus.cpp:134
+#: networkstatus.cpp:135
 #, kde-format
 msgctxt "Networking is inactive and all devices are disabled"
 msgid "Inactive"
 msgstr "Inaktiv"
 
-#: networkstatus.cpp:137
+#: networkstatus.cpp:138
 #, kde-format
 msgctxt "There is no active network connection"
 msgid "Disconnected"
 msgstr "Nicht verbunden"
 
-#: networkstatus.cpp:140
+#: networkstatus.cpp:141
 #, kde-format
 msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
 msgstr "Verbindung wird abgebrochen"
 
-#: networkstatus.cpp:143
+#: networkstatus.cpp:144
 #, kde-format
 msgctxt ""
 "A network device is connecting to a network and there is no other available "
@@ -3788,42 +3783,42 @@ msgctxt ""
 msgid "Connecting"
 msgstr "Verbindung wird hergestellt"
 
-#: networkstatus.cpp:217
+#: networkstatus.cpp:218
 #, kde-format
 msgid "Connecting to %1"
 msgstr "Verbindung mit %1 wird hergestellt"
 
-#: networkstatus.cpp:221
+#: networkstatus.cpp:222
 #, kde-format
 msgid "Connected to %1 (no connectivity)"
 msgstr "Verbunden mit %1 (keine Verbindung)"
 
-#: networkstatus.cpp:224
+#: networkstatus.cpp:225
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
 msgstr "Verbunden mit %1 (eingeschränkte Verbindung)"
 
-#: networkstatus.cpp:227
+#: networkstatus.cpp:228
 #, kde-format
 msgid "Connected to %1 (log in required)"
 msgstr "Verbunden mit %1 (Anmeldung erforderlich)"
 
-#: networkstatus.cpp:230
+#: networkstatus.cpp:231
 #, kde-format
 msgid "Connected to %1"
 msgstr "Verbunden mit %1"
 
-#: networkstatus.cpp:255
+#: networkstatus.cpp:256
 #, kde-format
 msgid "NetworkManager not running"
 msgstr "NetworkManager läuft nicht"
 
-#: networkstatus.cpp:260
+#: networkstatus.cpp:261
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr "NetworkManager 0.9.8 benötigt, %1 gefunden."
 
-#: networkstatus.cpp:263
+#: networkstatus.cpp:264
 #, kde-format
 msgctxt "global connection state"
 msgid "Unknown"

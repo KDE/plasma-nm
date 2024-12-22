@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-14 00:54+0000\n"
+"POT-Creation-Date: 2024-12-22 00:42+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -2093,7 +2093,7 @@ msgstr ""
 msgid "Olpc mesh"
 msgstr ""
 
-#: editor/uiutils.cpp:218 networkstatus.cpp:189
+#: editor/uiutils.cpp:218 networkstatus.cpp:190
 #, fuzzy, kde-format
 #| msgid "PAP"
 msgid "VPN"
@@ -3367,7 +3367,7 @@ msgid "VPN connections"
 msgstr "باغلىنىشنى چىقىۋەت"
 
 #: models/creatableconnectionsmodel.cpp:254
-#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:211
+#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
 #, fuzzy, kde-format
 #| msgid "Wired"
 msgid "WireGuard"
@@ -3698,7 +3698,7 @@ msgstr ""
 msgid "Device"
 msgstr "مۇلازىمەت:"
 
-#: networkstatus.cpp:125
+#: networkstatus.cpp:126
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3707,7 +3707,7 @@ msgctxt ""
 msgid "Connected"
 msgstr "باغلاندى"
 
-#: networkstatus.cpp:128
+#: networkstatus.cpp:129
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3716,7 +3716,7 @@ msgctxt ""
 msgid "Connected"
 msgstr "باغلاندى"
 
-#: networkstatus.cpp:131
+#: networkstatus.cpp:132
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3724,13 +3724,13 @@ msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
 msgstr "باغلاندى"
 
-#: networkstatus.cpp:134
+#: networkstatus.cpp:135
 #, kde-format
 msgctxt "Networking is inactive and all devices are disabled"
 msgid "Inactive"
 msgstr ""
 
-#: networkstatus.cpp:137
+#: networkstatus.cpp:138
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3738,7 +3738,7 @@ msgctxt "There is no active network connection"
 msgid "Disconnected"
 msgstr "باغلاندى"
 
-#: networkstatus.cpp:140
+#: networkstatus.cpp:141
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3746,7 +3746,7 @@ msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
 msgstr "باغلاندى"
 
-#: networkstatus.cpp:143
+#: networkstatus.cpp:144
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3756,49 +3756,49 @@ msgctxt ""
 msgid "Connecting"
 msgstr "باغلاندى"
 
-#: networkstatus.cpp:217
+#: networkstatus.cpp:218
 #, fuzzy, kde-format
 #| msgid "Connection type:"
 msgid "Connecting to %1"
 msgstr "باغلىنىش تىپى:"
 
-#: networkstatus.cpp:221
+#: networkstatus.cpp:222
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
 msgid "Connected to %1 (no connectivity)"
 msgstr "باغلاندى"
 
-#: networkstatus.cpp:224
+#: networkstatus.cpp:225
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
 msgstr ""
 
-#: networkstatus.cpp:227
+#: networkstatus.cpp:228
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
 msgid "Connected to %1 (log in required)"
 msgstr "باغلاندى"
 
-#: networkstatus.cpp:230
+#: networkstatus.cpp:231
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
 msgid "Connected to %1"
 msgstr "باغلاندى"
 
-#: networkstatus.cpp:255
+#: networkstatus.cpp:256
 #, kde-format
 msgid "NetworkManager not running"
 msgstr ""
 
-#: networkstatus.cpp:260
+#: networkstatus.cpp:261
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
 msgstr ""
 
-#: networkstatus.cpp:263
+#: networkstatus.cpp:264
 #, kde-format
 msgctxt "global connection state"
 msgid "Unknown"

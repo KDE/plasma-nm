@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-17 00:42+0000\n"
-"PO-Revision-Date: 2024-02-10 21:48+0400\n"
+"PO-Revision-Date: 2024-12-19 07:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: contents/ui/ConnectionItem.qml:56
 #, kde-format
@@ -59,10 +60,9 @@ msgstr ""
 "في الثانية، "
 
 #: contents/ui/ConnectionItem.qml:296
-#, fuzzy, kde-format
-#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr "متّصل، ⬇%1/ث، ⬆ %2/ث"
+msgstr "متّصل، ↓%1/ث، ↑ %2/ث"
 
 #: contents/ui/ConnectionItem.qml:300
 #, kde-format

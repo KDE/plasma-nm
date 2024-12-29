@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-22 00:42+0000\n"
-"PO-Revision-Date: 2024-06-28 16:51+0200\n"
+"PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -22,7 +22,7 @@ msgstr ""
 #, kde-format
 msgctxt "@title:tab General configuration"
 msgid "General"
-msgstr ""
+msgstr "Ĝenerala"
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -176,7 +176,7 @@ msgstr "Aktiva sekurkopio"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format
@@ -3803,7 +3803,3 @@ msgstr "NetworkManager 0.9.8 bezonata, trovita %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Nekonata"
-
-#~ msgctxt "General"
-#~ msgid "General configuration"
-#~ msgstr "Ĝenerala agordo"

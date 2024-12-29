@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2024-05-31 16:09+0200\n"
+"PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
 "Language: eo\n"
@@ -84,7 +84,7 @@ msgstr "Konservi pasvortojn"
 #: openconnectauth.ui:116
 #, kde-format
 msgid "Store browser cookies in plain-text"
-msgstr ""
+msgstr "Konservi retumilajn kuketojn en platteksto"
 
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
 #: openconnectauth.ui:160

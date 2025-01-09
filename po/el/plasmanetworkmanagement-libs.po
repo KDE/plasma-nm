@@ -19,8 +19,7 @@ msgstr ""
 "X-Generator: Lokalize 24.08.1\n"
 
 #: editor/connectioneditorbase.cpp:203
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:tab General configuration"
 msgid "General"
 msgstr "Γενικά"

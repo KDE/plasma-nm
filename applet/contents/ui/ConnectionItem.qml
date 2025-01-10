@@ -83,7 +83,7 @@ PlasmaExtras.ExpandableListItem {
             onTriggered: checked => handler.requestWifiCode(ConnectionPath, Ssid, SecurityType);
         },
         Action {
-            enabled: ConnectionState === PlasmaNM.Enums.Activated || Type === PlasmaNM.Enums.Vpn
+            enabled: model.Uuid !== ""
             text: i18n("Configure…")
             icon.name: "configure"
             onTriggered: checked => KCMUtils.KCMLauncher.openSystemSettings(mainWindow.kcm, ["--args", "Uuid=" + Uuid])

@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/plasma-nm/plasmanetworkmanagement_sshui."
+"X-Crowdin-File: /kf6-stable/messages/plasma-nm/plasmanetworkmanagement_sshui."
 "pot\n"
-"X-Crowdin-File-ID: 42617\n"
+"X-Crowdin-File-ID: 50244\n"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomGatewayPort)
 #: sshadvanced.ui:19

@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/plasma-nm/"
+"X-Crowdin-File: /kf6-stable/messages/plasma-nm/"
 "plasmanetworkmanagement_openvpnui.pot\n"
-"X-Crowdin-File-ID: 43161\n"
+"X-Crowdin-File-ID: 53050\n"
 
 #: openvpn.cpp:183
 #, kde-format

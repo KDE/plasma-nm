@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2015, 2017, 2019, 2021, 2022.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-22 00:42+0000\n"
-"PO-Revision-Date: 2024-12-14 18:02+0300\n"
+"PO-Revision-Date: 2025-01-09 16:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1056,7 +1056,7 @@ msgid ""
 "',' to separate entries."
 msgstr ""
 "Bir veya daha fazla DNS sunucusunun IP adresini belirtmek için bu alanı "
-"kullanın. Girdileri ayırmak için ‘,’ kullanabilirsiniz."
+"kullanın. Girdileri ayırmak için “,’ kullanabilirsiniz."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv4.ui:125
@@ -1079,7 +1079,7 @@ msgid ""
 "separate entries."
 msgstr ""
 "Bu alanı kullanarak aranacak DNS alan adlarının bir veya daha fazlasını "
-"belirtin. Girdileri ayırmak için ‘,’ kullanın."
+"belirtin. Girdileri ayırmak için “,’ kullanın."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:171 editor/settings/ui/ipv6.ui:277
@@ -1128,9 +1128,8 @@ msgid ""
 "to add\n"
 "an IP address"
 msgstr ""
-"IP adresleri bilgisayarınızı ağ üzerinde tanımlayan özel adreslerdir. Bir IP "
-"adresi eklemek için\n"
-"‘Ekle’ düğmesine tıklayın"
+"IP adresleri bilgisayarınızı ağ üzerinde tanımlayan özel adreslerdir.\n"
+"Bir IP adresi eklemek için “Ekle’ düğmesine tıklayın"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:278
@@ -1718,10 +1717,9 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
-"Aygıt bağlantı pazarlığı. Eğer ‘Elle’ seçilmişse ‘Hız’ ve ‘Çift Yönlü’ "
-"değerleri\n"
-"aygıt uyumluluğu denetlenmeden zorlanacaktır. Emin değilseniz ‘Yok Say’ı\n"
-"bırakın ve ‘Kendiliğinden’i seçin."
+"Aygıt bağlantı pazarlığı. Eğer “Elle” seçilmişse “Hız” ve “Çift Yönlü”\n"
+"değerleri aygıt uyumluluğu denetlenmeden zorlanacaktır. Emin değilseniz\n"
+"burada “Yok Say”ı bırakın ve “Kendiliğinden”i seçin."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -1848,7 +1846,7 @@ msgid ""
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
 "İsteğe bağlı.\n"
-"Dinlenecek kapı numarası. ‘Kendiliğinden’ ise rastgele seçilir."
+"Dinlenecek kapı numarası. “Kendiliğinden” ise rastgele seçilir."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:72
@@ -1866,7 +1864,7 @@ msgid ""
 "prepending '0x'."
 msgstr ""
 "İsteğe bağlı.\n"
-"Giden paketler için bir fwmark. ‘0’ veya ‘off’ olarak ayarlanırsa\n"
+"Giden paketler için bir fwmark. “0” veya “off” olarak ayarlanırsa\n"
 "bu seçenek devre dışı bırakılır. 0x ile öneklenirse onaltılık\n"
 "olarak da belirtilebilir."
 
@@ -2049,7 +2047,7 @@ msgstr ""
 "            Örneğin, arabirim çok az trafik gönderiyorsa; ancak herhangi\n"
 "            bir zamanda bir eşten trafik alabilirse ve NAT arkasındaysa\n"
 "            arabirim 25 saniyelik düzenli bir yaşama bağlı tutma işleminden\n"
-"            yarar sağlayabilir. ‘0’ veya ‘off’ olarak ayarlanmışsa bu\n"
+"            yarar sağlayabilir. “0” veya “off” olarak ayarlanmışsa bu\n"
 "            seçenek devre dışıdır. Çoğu kullanıcı bu ayara gereksinim\n"
 "            duymayacaktır."
 

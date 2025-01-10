@@ -381,7 +381,9 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
             break;
         }
     } else {
-        qCWarning(PLASMA_NM_KDED_LOG) << "Unhandled active connection state change: " << state;
+        if (state != NetworkManager::ActiveConnection::Activating && state != NetworkManager::ActiveConnection::Deactivating) {
+            qCWarning(PLASMA_NM_KDED_LOG) << "Unhandled active connection state change: " << state;
+        }
         return;
     }
 

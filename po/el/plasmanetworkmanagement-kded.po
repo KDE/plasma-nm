@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-26 00:41+0000\n"
+"POT-Creation-Date: 2025-01-11 02:29+0000\n"
 "PO-Revision-Date: 2017-06-12 16:38+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -467,24 +467,24 @@ msgstr "Η σύνδεση '%1' ενεργοποιήθηκε."
 msgid "Connection '%1' deactivated."
 msgstr "Η σύνδεση '%1' απενεργοποιήθηκε."
 
-#: notification.cpp:422
+#: notification.cpp:424
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "Η σύνδεση VPN '%1' ενεργοποιήθηκε."
 
-#: notification.cpp:425
+#: notification.cpp:427
 #, fuzzy, kde-format
 #| msgid "VPN connection '%1' activated."
 msgid "VPN connection '%1' failed to activate."
 msgstr "Η σύνδεση VPN '%1' ενεργοποιήθηκε."
 
-#: notification.cpp:428 notification.cpp:436
+#: notification.cpp:430 notification.cpp:438
 #, fuzzy, kde-format
 #| msgid "VPN connection '%1' activated."
 msgid "VPN connection '%1' deactivated."
 msgstr "Η σύνδεση VPN '%1' ενεργοποιήθηκε."
 
-#: notification.cpp:439
+#: notification.cpp:441
 #, fuzzy, kde-format
 #| msgid ""
 #| "The VPN connection changed state because the device it was using was "
@@ -496,24 +496,24 @@ msgstr ""
 "Η σύνδεση VPN άλλαξε κατάσταση, γιατί η συσκευή που χρησιμοποιούσε "
 "αποσυνδέθηκε."
 
-#: notification.cpp:442
+#: notification.cpp:444
 #, fuzzy, kde-format
 #| msgid "The service providing the VPN connection was stopped."
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "Η υπηρεσία που παρέχει τη σύνδεση VPN σταμάτησε."
 
-#: notification.cpp:445
+#: notification.cpp:447
 #, fuzzy, kde-format
 #| msgid "The IP config of the VPN connection was invalid."
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "Η διαμόρφωση IP της σύνδεσης VPN δεν ήταν έγκυρη."
 
-#: notification.cpp:448
+#: notification.cpp:450
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "Η προσπάθεια σύνδεσης στην υπηρεσία VPN εξέπνευσε."
 
-#: notification.cpp:451
+#: notification.cpp:453
 #, fuzzy, kde-format
 #| msgid ""
 #| "A timeout occurred while starting the service providing the VPN "
@@ -525,24 +525,24 @@ msgstr ""
 "Προέκυψε μια καθυστέρηση κατά την εκκίνηση της υπηρεσίας που παρέχει τη "
 "σύνδεση VPN."
 
-#: notification.cpp:454
+#: notification.cpp:456
 #, fuzzy, kde-format
 #| msgid "Starting the service providing the VPN connection failed."
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "Η εκκίνηση της υπηρεσίας που παρέχει τη σύνδεση VPN απέτυχε."
 
-#: notification.cpp:457
+#: notification.cpp:459
 #, fuzzy, kde-format
 #| msgid "Necessary secrets for the VPN connection were not provided."
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "Οι απαραίτητοι κωδικοί ασφαλείας για τη σύνδεση VPN δεν παρέχονται."
 
-#: notification.cpp:460
+#: notification.cpp:462
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "Η ταυτοποίηση στον εξυπηρετητή VPN απέτυχε."
 
-#: notification.cpp:463
+#: notification.cpp:465
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:status Notification when the device failed due to "
@@ -551,12 +551,12 @@ msgstr "Η ταυτοποίηση στον εξυπηρετητή VPN απέτυ
 msgid "The connection was deleted."
 msgstr "Η σύνδεση αφαιρέθηκε"
 
-#: notification.cpp:549
+#: notification.cpp:551
 #, kde-format
 msgid "No Network Connection"
 msgstr "Χωρίς σύνδεση δικτύου"
 
-#: notification.cpp:550
+#: notification.cpp:552
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Δεν είστε πλέον συνδεδεμένοι σε κάποιο δίκτυο."

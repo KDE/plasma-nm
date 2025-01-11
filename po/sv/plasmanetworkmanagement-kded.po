@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-26 00:41+0000\n"
+"POT-Creation-Date: 2025-01-11 02:29+0000\n"
 "PO-Revision-Date: 2024-08-08 06:33+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -466,22 +466,22 @@ msgstr "Anslutning '%1' aktiverad."
 msgid "Connection '%1' deactivated."
 msgstr "Anslutning '%1' inaktiverad."
 
-#: notification.cpp:422
+#: notification.cpp:424
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "VPN-anslutning '%1' aktiverad."
 
-#: notification.cpp:425
+#: notification.cpp:427
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
 msgstr "Aktivering av VPN-anslutning '%1' misslyckades."
 
-#: notification.cpp:428 notification.cpp:436
+#: notification.cpp:430 notification.cpp:438
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "VPN-anslutning '%1' avaktiverad."
 
-#: notification.cpp:439
+#: notification.cpp:441
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -490,22 +490,22 @@ msgstr ""
 "VPN-anslutningen '%1' avaktiverades eftersom enheten den använde kopplades "
 "ner."
 
-#: notification.cpp:442
+#: notification.cpp:444
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "Tjänsten som tillhandahåller VPN-anslutningen '%1' stoppades."
 
-#: notification.cpp:445
+#: notification.cpp:447
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "IP-inställningen för VPN-anslutningen '%1' är ogiltig."
 
-#: notification.cpp:448
+#: notification.cpp:450
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "Tidsgräns gick ut för anslutningsförsöket till VPN-tjänsten."
 
-#: notification.cpp:451
+#: notification.cpp:453
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
@@ -514,33 +514,33 @@ msgstr ""
 "En tidsgräns överskreds vid start av tjänsten som tillhandahåller VPN-"
 "anslutningen '%1'."
 
-#: notification.cpp:454
+#: notification.cpp:456
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr ""
 "Start av tjänsten som tillhandahåller VPN-anslutningen '%1' misslyckades."
 
-#: notification.cpp:457
+#: notification.cpp:459
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "Nödvändiga hemligheter för VPN-anslutningen '%1' tillhandahölls inte."
 
-#: notification.cpp:460
+#: notification.cpp:462
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "Behörighetskontroll till VPN-servern misslyckades."
 
-#: notification.cpp:463
+#: notification.cpp:465
 #, kde-format
 msgid "The connection was deleted."
 msgstr "Anslutningen togs bort."
 
-#: notification.cpp:549
+#: notification.cpp:551
 #, kde-format
 msgid "No Network Connection"
 msgstr "Ingen nätverksanslutning"
 
-#: notification.cpp:550
+#: notification.cpp:552
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Du är inte längre ansluten till ett nätverk."

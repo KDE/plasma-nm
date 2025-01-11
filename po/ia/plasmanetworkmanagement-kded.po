@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-26 00:41+0000\n"
+"POT-Creation-Date: 2025-01-11 02:29+0000\n"
 "PO-Revision-Date: 2024-09-03 11:58+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -467,22 +467,22 @@ msgstr "Connexion '%1' activate."
 msgid "Connection '%1' deactivated."
 msgstr "Connexion '%1' deactivate."
 
-#: notification.cpp:422
+#: notification.cpp:424
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "Connexion VPN '%1' activate."
 
-#: notification.cpp:425
+#: notification.cpp:427
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
 msgstr "Connexion 'VPN %1' falleva a activar."
 
-#: notification.cpp:428 notification.cpp:436
+#: notification.cpp:430 notification.cpp:438
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "Connexion VPN '%1' deactivate."
 
-#: notification.cpp:439
+#: notification.cpp:441
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -491,22 +491,22 @@ msgstr ""
 "Connexion VPN '%1' esseva deactivate proque le dispositivo que illo usava "
 "esseva disconnecite."
 
-#: notification.cpp:442
+#: notification.cpp:444
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "Le servicio forniente le connexion VPN '%1ì esseva stoppate."
 
-#: notification.cpp:445
+#: notification.cpp:447
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "Le config de IP del connexion VPN '%1' esseva invalide."
 
-#: notification.cpp:448
+#: notification.cpp:450
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "Le tentativa de connexion al servicio de VPN expirava"
 
-#: notification.cpp:451
+#: notification.cpp:453
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
@@ -515,32 +515,32 @@ msgstr ""
 "Un tempore limite occurreva durante que il initiava le servicio forniente le "
 "connexion VPN '%1'."
 
-#: notification.cpp:454
+#: notification.cpp:456
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "Falleva a initiar le servicio forniente le connexion VPN '%1'."
 
-#: notification.cpp:457
+#: notification.cpp:459
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "Secretos necessari per le connexion VN '%1' non esseva fornite."
 
-#: notification.cpp:460
+#: notification.cpp:462
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "Authentication al servitor VPN falleva."
 
-#: notification.cpp:463
+#: notification.cpp:465
 #, kde-format
 msgid "The connection was deleted."
 msgstr "Le connexion esseva delite."
 
-#: notification.cpp:549
+#: notification.cpp:551
 #, kde-format
 msgid "No Network Connection"
 msgstr "Necun connexion de rete"
 
-#: notification.cpp:550
+#: notification.cpp:552
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Tu non es plus connectite a un rete."

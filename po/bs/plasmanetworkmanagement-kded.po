@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-26 00:41+0000\n"
+"POT-Creation-Date: 2025-01-11 00:42+0000\n"
 "PO-Revision-Date: 2015-02-16 12:48+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -476,24 +476,24 @@ msgstr "Konekcija '%1' aktivirana."
 msgid "Connection '%1' deactivated."
 msgstr "Konekcija '%1' deaktivirana."
 
-#: notification.cpp:422
+#: notification.cpp:424
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "VPN konekcija '%1' aktivirana."
 
-#: notification.cpp:425
+#: notification.cpp:427
 #, fuzzy, kde-format
 #| msgid "VPN connection '%1' activated."
 msgid "VPN connection '%1' failed to activate."
 msgstr "VPN konekcija '%1' aktivirana."
 
-#: notification.cpp:428 notification.cpp:436
+#: notification.cpp:430 notification.cpp:438
 #, fuzzy, kde-format
 #| msgid "VPN connection '%1' activated."
 msgid "VPN connection '%1' deactivated."
 msgstr "VPN konekcija '%1' aktivirana."
 
-#: notification.cpp:439
+#: notification.cpp:441
 #, fuzzy, kde-format
 #| msgid ""
 #| "The VPN connection changed state because the device it was using was "
@@ -504,24 +504,24 @@ msgid ""
 msgstr ""
 "VPN veza je promijenila stanje jer je korišteni uređaj za vezu isključen."
 
-#: notification.cpp:442
+#: notification.cpp:444
 #, fuzzy, kde-format
 #| msgid "The service providing the VPN connection was stopped."
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "Usluga pružanja VPN veze je zaustavljena."
 
-#: notification.cpp:445
+#: notification.cpp:447
 #, fuzzy, kde-format
 #| msgid "The IP config of the VPN connection was invalid."
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "IP config VPN veze je nevažeća."
 
-#: notification.cpp:448
+#: notification.cpp:450
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "Pokušaj povezivanja na VPN uslugu istekao."
 
-#: notification.cpp:451
+#: notification.cpp:453
 #, fuzzy, kde-format
 #| msgid ""
 #| "A timeout occurred while starting the service providing the VPN "
@@ -531,24 +531,24 @@ msgid ""
 "'%1'."
 msgstr "Došlo je do isteka vremena pri pokretanju usluge VPN veze."
 
-#: notification.cpp:454
+#: notification.cpp:456
 #, fuzzy, kde-format
 #| msgid "Starting the service providing the VPN connection failed."
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "Pokretanje pružanja usluge VPN veze nije uspjela."
 
-#: notification.cpp:457
+#: notification.cpp:459
 #, fuzzy, kde-format
 #| msgid "Necessary secrets for the VPN connection were not provided."
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "Potrebne tajne za VPN vezu nisu obezbjeđene."
 
-#: notification.cpp:460
+#: notification.cpp:462
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "Autentifikacija na VPN serveru nije uspjela."
 
-#: notification.cpp:463
+#: notification.cpp:465
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:status Notification when the device failed due to "
@@ -557,12 +557,12 @@ msgstr "Autentifikacija na VPN serveru nije uspjela."
 msgid "The connection was deleted."
 msgstr "Konekcija je uklonjena"
 
-#: notification.cpp:549
+#: notification.cpp:551
 #, kde-format
 msgid "No Network Connection"
 msgstr ""
 
-#: notification.cpp:550
+#: notification.cpp:552
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr ""

@@ -15,7 +15,6 @@
 
 #include <NetworkManagerQt/ActiveConnection>
 
-#include <QCoroCore>
 #include <QCoroDBus>
 
 #include "plasma_nm_kded.h"

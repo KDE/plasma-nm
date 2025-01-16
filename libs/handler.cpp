@@ -45,7 +45,6 @@
 #include <KWindowSystem>
 #include <KX11Extras>
 
-#include <QCoroCore>
 #include <QCoroDBus>
 #include <nm-client.h>
 

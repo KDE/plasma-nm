@@ -35,7 +35,6 @@
 #include <QWebEnginePage>
 #include <QWebEngineProfile>
 #include <QWebEngineView>
-#include <QWebEngineWebAuthUxRequest>
 
 #include <KLocalizedString>
 

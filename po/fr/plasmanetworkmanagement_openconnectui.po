@@ -4,14 +4,14 @@
 # Maxime Corteel <mcorteel@gmail.com>, 2015.
 # Vincent Pinon <vpinon@kde.org>, 2017.
 # Simon Depiets <sdepiets@gmail.com>, 2019.
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Xavier Besnard <xavier.besnard@kde.org>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Xavier Besnard <xavier.besnard@kde.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2024-10-28 09:31+0100\n"
+"PO-Revision-Date: 2025-01-14 18:01+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.1\n"
 "X-Text-Markup: kde4\n"
 
 #: openconnectauth.cpp:347
@@ -351,7 +351,7 @@ msgstr "Sélectionner une clé d'accès"
 #: openconnectwebauthdialog.cpp:112
 #, kde-format
 msgid "Which passkey do you want to use for %1?"
-msgstr "Quelle clé d'accès souhaitez-vous utiliser pour %1 ?"
+msgstr "Quelle clé d'accès voulez-vous utiliser pour %1 ?"
 
 #: openconnectwebauthdialog.cpp:129
 #, kde-format
@@ -487,12 +487,12 @@ msgstr ""
 #, kde-format
 msgid "Authenticator missing user verification"
 msgstr ""
-"L’authentifieur ne prend pas en charge la vérification des utilisateurs."
+"L'authentifieur ne prend pas en charge la vérification des utilisateurs."
 
 #: openconnectwebauthdialog.cpp:275
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr "L’authentifieur ne prend pas en charge les grands objets binaires."
+msgstr "L'authentifieur ne prend pas en charge les grands objets binaires."
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format

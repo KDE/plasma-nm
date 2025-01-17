@@ -165,7 +165,12 @@ void OpenVpnAdvancedWidget::openVpnCipherFinished(int exitCode, QProcess::ExitSt
             if (cipher.length() == 0) {
                 foundFirstSpace = true;
             } else if (foundFirstSpace) {
-                m_ui->cboCipher->addItem(QString::fromLocal8Bit(cipher.left(cipher.indexOf(' '))));
+                static const QRegularExpression cipherRe("(.*)  \\(.*\\)");
+                const auto match = cipherRe.match(cipher);
+
+                if (match.hasMatch()) {
+                    m_ui->cboCipher->addItem(match.captured(1));
+                }
             }
         }
 

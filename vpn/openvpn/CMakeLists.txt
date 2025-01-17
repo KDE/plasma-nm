@@ -1,10 +1,5 @@
 add_definitions(-DTRANSLATION_DOMAIN=\"plasmanetworkmanagement_openvpnui\")
 
-# Needed to build this module
-remove_definitions(-DQT_USE_FAST_OPERATOR_PLUS)
-
-
-
 add_library(plasmanetworkmanagement_openvpnui MODULE)
 target_sources(plasmanetworkmanagement_openvpnui PRIVATE
     openvpn.cpp

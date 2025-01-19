@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2025-01-19 00:42+0000\n"
 "PO-Revision-Date: 2017-06-04 23:06+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,26 +18,26 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: openconnectauth.cpp:347
+#: openconnectauth.cpp:346
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr ""
 
-#: openconnectauth.cpp:400
+#: openconnectauth.cpp:399
 #, fuzzy, kde-format
 #| msgid "Contacting host, please wait..."
 msgid "Contacting host, please wait…"
 msgstr "Обраћам се домаћину, сачекајте..."
 
 # >> @action:button
-#: openconnectauth.cpp:788
+#: openconnectauth.cpp:787
 #, fuzzy, kde-format
 #| msgid "Login"
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Пријава"
 
-#: openconnectauth.cpp:850
+#: openconnectauth.cpp:849
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -48,7 +48,7 @@ msgstr ""
 "Разлог: %2\n"
 "Свеједно га прихватити?"
 
-#: openconnectauth.cpp:945
+#: openconnectauth.cpp:944
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Покушај повезивања није успео."

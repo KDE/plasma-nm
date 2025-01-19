@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-11 00:42+0000\n"
+"POT-Creation-Date: 2025-01-19 00:42+0000\n"
 "PO-Revision-Date: 2024-11-09 20:04+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -22,27 +22,27 @@ msgstr ""
 msgid "Only 'dun' and 'nap' services are supported."
 msgstr "Поддържат се само услугите \"dun\" и \"nap\"."
 
-#: connectivitymonitor.cpp:62
+#: connectivitymonitor.cpp:61
 #, kde-format
 msgid "Network authentication"
 msgstr "Удостоверяване на мрежата"
 
-#: connectivitymonitor.cpp:71
+#: connectivitymonitor.cpp:70
 #, kde-format
 msgid "You need to log into this network"
 msgstr "Трябва да се регистрирате в тази мрежа"
 
-#: connectivitymonitor.cpp:73
+#: connectivitymonitor.cpp:72
 #, kde-format
 msgid "Log in"
 msgstr "Вход"
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:92
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "Ограничена свързаност"
 
-#: connectivitymonitor.cpp:94
+#: connectivitymonitor.cpp:93
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "

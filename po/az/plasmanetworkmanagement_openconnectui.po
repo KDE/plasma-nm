@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2025-01-19 00:42+0000\n"
 "PO-Revision-Date: 2022-08-16 16:51+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 22.04.3\n"
 
-#: openconnectauth.cpp:347
+#: openconnectauth.cpp:346
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Proqrama giriş açarlarını işə salmaq mümkün olmadı: %1"
 
-#: openconnectauth.cpp:400
+#: openconnectauth.cpp:399
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Qovşaq ilə bağlantı qurulur, gözləyin..."
 
-#: openconnectauth.cpp:788
+#: openconnectauth.cpp:787
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Giriş"
 
-#: openconnectauth.cpp:850
+#: openconnectauth.cpp:849
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Səbəb: %2\n"
 "Sertifikatı istənilən halda qəbul etmək?"
 
-#: openconnectauth.cpp:945
+#: openconnectauth.cpp:944
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Qoşulma cəhdi uğursiz oldu."

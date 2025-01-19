@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-11 00:42+0000\n"
+"POT-Creation-Date: 2025-01-19 00:42+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -22,27 +22,27 @@ msgstr ""
 msgid "Only 'dun' and 'nap' services are supported."
 msgstr "केवल 'डन' और 'नैप' सेवाएं ही समर्थित हैं।"
 
-#: connectivitymonitor.cpp:62
+#: connectivitymonitor.cpp:61
 #, kde-format
 msgid "Network authentication"
 msgstr "नेटवर्क प्रमाणीकरण"
 
-#: connectivitymonitor.cpp:71
+#: connectivitymonitor.cpp:70
 #, kde-format
 msgid "You need to log into this network"
 msgstr "आपको इस नेटवर्क में लॉग इन करना होगा"
 
-#: connectivitymonitor.cpp:73
+#: connectivitymonitor.cpp:72
 #, kde-format
 msgid "Log in"
 msgstr "लॉग इन करें"
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:92
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "सीमित कनेक्टिविटी"
 
-#: connectivitymonitor.cpp:94
+#: connectivitymonitor.cpp:93
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "

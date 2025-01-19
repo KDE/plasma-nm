@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2025-01-19 00:42+0000\n"
 "PO-Revision-Date: 2024-07-13 21:39+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -18,23 +18,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.05.2\n"
 
-#: openconnectauth.cpp:347
+#: openconnectauth.cpp:346
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Klarte ikkje gjera klar programvare­basert tilgangspollett: %1"
 
-#: openconnectauth.cpp:400
+#: openconnectauth.cpp:399
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Koplar til tenaren. Vent litt …"
 
-#: openconnectauth.cpp:788
+#: openconnectauth.cpp:787
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Logg inn"
 
-#: openconnectauth.cpp:850
+#: openconnectauth.cpp:849
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -45,7 +45,7 @@ msgstr ""
 "Grunn: %2\n"
 "Vil du godta det likevel?"
 
-#: openconnectauth.cpp:945
+#: openconnectauth.cpp:944
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Mislukka tilkoplingsforsøk."

@@ -61,8 +61,6 @@ QVariant NetworkModel::data(const QModelIndex &index, int role) const
             return item->itemType();
         case LastUsedRole:
             return UiUtils::formatLastUsedDateRelative(item->timestamp());
-        case LastUsedDateOnlyRole:
-            return UiUtils::formatDateRelative(item->timestamp());
         case NameRole:
             return item->name();
         case SectionRole:
@@ -143,7 +141,6 @@ QHash<int, QByteArray> NetworkModel::roleNames() const
     roles[ItemUniqueNameRole] = "ItemUniqueName";
     roles[ItemTypeRole] = "ItemType";
     roles[LastUsedRole] = "LastUsed";
-    roles[LastUsedDateOnlyRole] = "LastUsedDateOnly";
     roles[NameRole] = "Name";
     roles[SectionRole] = "Section";
     roles[SignalRole] = "Signal";

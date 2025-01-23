@@ -142,7 +142,6 @@ public:
     static NetworkManager::ModemDevice::Capability modemSubType(NetworkManager::ModemDevice::Capabilities modemCaps);
     static QString labelFromWirelessSecurity(NetworkManager::WirelessSecurityType type);
 
-    static QString formatDateRelative(const QDateTime &lastUsed);
     static QString formatLastUsedDateRelative(const QDateTime &lastUsed);
 };
 #endif // UIUTILS_H

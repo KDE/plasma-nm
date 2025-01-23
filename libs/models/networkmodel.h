@@ -48,7 +48,6 @@ public:
         ItemUniqueNameRole,
         ItemTypeRole,
         LastUsedRole,
-        LastUsedDateOnlyRole,
         NameRole,
         SecurityTypeRole,
         SecurityTypeStringRole,

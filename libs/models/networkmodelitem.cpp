@@ -431,7 +431,7 @@ void NetworkModelItem::setTimestamp(const QDateTime &date)
 {
     if (m_timestamp != date) {
         m_timestamp = date;
-        m_changedRoles << NetworkModel::TimeStampRole;
+        m_changedRoles << NetworkModel::TimeStampRole << NetworkModel::LastUsedRole;
     }
 }
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-10-27 00:42+0000\n"
+"POT-Creation-Date: 2025-01-24 00:43+0000\n"
 "PO-Revision-Date: 2023-12-17 22:06+0100\n"
 "Last-Translator: Kristof Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -1073,7 +1073,7 @@ msgctxt "@title: window advanced openvpn properties"
 msgid "Advanced OpenVPN properties"
 msgstr "Speciális OpenVPN tulajdonságok"
 
-#: openvpnadvancedwidget.cpp:154 openvpnadvancedwidget.cpp:178
+#: openvpnadvancedwidget.cpp:154 openvpnadvancedwidget.cpp:183
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
@@ -1085,7 +1085,7 @@ msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: openvpnadvancedwidget.cpp:175
+#: openvpnadvancedwidget.cpp:180
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"

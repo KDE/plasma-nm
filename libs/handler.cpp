@@ -459,6 +459,7 @@ QCoro::Task<void> Handler::deactivateConnectionInternal(const QString &_connecti
         co_return;
     }
 
+    QPointer<Handler> alive(this);
     QDBusReply<void> reply;
     for (const NetworkManager::ActiveConnection::Ptr &active : NetworkManager::activeConnections()) {
         if (active->uuid() == con->uuid() && ((!active->devices().isEmpty() && active->devices().first() == device) || active->vpn())) {
@@ -473,7 +474,7 @@ QCoro::Task<void> Handler::deactivateConnectionInternal(const QString &_connecti
         }
     }
 
-    if (!reply.isValid()) {
+    if (alive && !reply.isValid()) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToDeactivateConnection"), KNotification::CloseOnTimeout, this);
         notification->setTitle(i18n("Failed to deactivate %1", connection));
         notification->setComponentName(QStringLiteral("networkmanagement"));

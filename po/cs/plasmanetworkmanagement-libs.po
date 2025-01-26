@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-22 00:42+0000\n"
+"POT-Creation-Date: 2025-01-26 02:34+0000\n"
 "PO-Revision-Date: 2024-06-21 13:40+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -3189,32 +3189,32 @@ msgstr "Spojení %1 bylo přidáno"
 msgid "Failed to add %1"
 msgstr "Selhalo přidání %1"
 
-#: handler.cpp:478
+#: handler.cpp:479
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Selhala deaktivace %1"
 
-#: handler.cpp:609
+#: handler.cpp:610
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Selhalo odstranění %1"
 
-#: handler.cpp:616
+#: handler.cpp:617
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Spojení %1 bylo odstraněno"
 
-#: handler.cpp:631
+#: handler.cpp:632
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Selhala aktualizace spojení %1"
 
-#: handler.cpp:638
+#: handler.cpp:639
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Spojení %1 bylo aktualizováno"
 
-#: handler.cpp:813
+#: handler.cpp:814
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Nepovedlo se vytvořit hotspot %1"

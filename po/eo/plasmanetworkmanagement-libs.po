@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-22 00:42+0000\n"
+"POT-Creation-Date: 2025-01-26 02:34+0000\n"
 "PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -3307,32 +3307,32 @@ msgstr "Konekto %1 estis aldonita"
 msgid "Failed to add %1"
 msgstr "Malsukcesis aldoni %1"
 
-#: handler.cpp:478
+#: handler.cpp:479
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Malsukcesis malaktivigi %1"
 
-#: handler.cpp:609
+#: handler.cpp:610
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Malsukcesis forigi %1"
 
-#: handler.cpp:616
+#: handler.cpp:617
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Konekto %1 estas forigita"
 
-#: handler.cpp:631
+#: handler.cpp:632
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Malsukcesis ĝisdatigi konekton %1"
 
-#: handler.cpp:638
+#: handler.cpp:639
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Konekto %1 estas ĝisdatigita"
 
-#: handler.cpp:813
+#: handler.cpp:814
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Malsukcesis krei retpunkton %1"

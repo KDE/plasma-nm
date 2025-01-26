@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-22 00:42+0000\n"
+"POT-Creation-Date: 2025-01-26 02:34+0000\n"
 "PO-Revision-Date: 2024-12-14 09:17+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -3325,32 +3325,32 @@ msgstr "Додано запис з'єднання %1"
 msgid "Failed to add %1"
 msgstr "Не вдалося додати %1"
 
-#: handler.cpp:478
+#: handler.cpp:479
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Не вдалося вимкнути %1"
 
-#: handler.cpp:609
+#: handler.cpp:610
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Не вдалося вилучити %1"
 
-#: handler.cpp:616
+#: handler.cpp:617
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Запис з'єднання %1 вилучено"
 
-#: handler.cpp:631
+#: handler.cpp:632
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Не вдалося оновити запис з'єднання %1"
 
-#: handler.cpp:638
+#: handler.cpp:639
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Запис з'єднання %1 оновлено"
 
-#: handler.cpp:813
+#: handler.cpp:814
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Не вдалося створити хот-спот %1"

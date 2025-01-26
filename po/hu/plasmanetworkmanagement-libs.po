@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-01-26 00:43+0000\n"
 "PO-Revision-Date: 2024-09-23 21:29+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3316,32 +3316,32 @@ msgstr "A(z) %1 kapcsolat sikeresen hozzáadva"
 msgid "Failed to add %1"
 msgstr "Nem sikerült hozzáadni: %1"
 
-#: handler.cpp:477
+#: handler.cpp:478
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Nem sikerült deaktiválni: %1"
 
-#: handler.cpp:608
+#: handler.cpp:609
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Nem sikerült eltávolítani: %1"
 
-#: handler.cpp:615
+#: handler.cpp:616
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "A(z) %1 kapcsolat eltávolításra került"
 
-#: handler.cpp:630
+#: handler.cpp:631
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Nem sikerült frissíteni a(z) %1 kapcsolatot"
 
-#: handler.cpp:637
+#: handler.cpp:638
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "A(z) %1 kapcsolat frissült"
 
-#: handler.cpp:812
+#: handler.cpp:813
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "A(z) %1 hotspot létrehozása meghiúsult"

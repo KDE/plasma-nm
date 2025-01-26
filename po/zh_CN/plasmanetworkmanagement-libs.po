@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-01-26 00:43+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3269,32 +3269,32 @@ msgstr "连接 %1 已被添加"
 msgid "Failed to add %1"
 msgstr "添加 %1 失败"
 
-#: handler.cpp:477
+#: handler.cpp:478
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "禁用 %1 失败"
 
-#: handler.cpp:608
+#: handler.cpp:609
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "移除 %1 失败"
 
-#: handler.cpp:615
+#: handler.cpp:616
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "连接 %1 已被移除"
 
-#: handler.cpp:630
+#: handler.cpp:631
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "更新连接 %1 失败"
 
-#: handler.cpp:637
+#: handler.cpp:638
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "连接 %1 已被更新"
 
-#: handler.cpp:812
+#: handler.cpp:813
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "创建热点 %1 失败"

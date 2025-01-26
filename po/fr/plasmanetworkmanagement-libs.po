@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-01-26 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 10:41+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -3337,32 +3337,32 @@ msgstr "La connexion %1 a été ajoutée"
 msgid "Failed to add %1"
 msgstr "L'ajout de %1 a échoué"
 
-#: handler.cpp:477
+#: handler.cpp:478
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "La désactivation de %1 a échouée"
 
-#: handler.cpp:608
+#: handler.cpp:609
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "La suppression de %1 a échouée"
 
-#: handler.cpp:615
+#: handler.cpp:616
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "La connexion %1 a été supprimée"
 
-#: handler.cpp:630
+#: handler.cpp:631
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "La mise à jour de la connexion %1 a échoué"
 
-#: handler.cpp:637
+#: handler.cpp:638
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "La connexion %1 a été mise à jour"
 
-#: handler.cpp:812
+#: handler.cpp:813
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Échec de création du point d'accès %1"

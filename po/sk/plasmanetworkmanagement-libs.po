@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-01-26 00:43+0000\n"
 "PO-Revision-Date: 2023-11-11 15:32+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -3317,32 +3317,32 @@ msgstr "Pripojenie %1 bolo pridané"
 msgid "Failed to add %1"
 msgstr "Zlyhalo pridanie %1"
 
-#: handler.cpp:477
+#: handler.cpp:478
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Zlyhalo deaktivovanie %1"
 
-#: handler.cpp:608
+#: handler.cpp:609
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Zlyhalo odstránenie %1"
 
-#: handler.cpp:615
+#: handler.cpp:616
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Pripojenie %1 bolo odstránené"
 
-#: handler.cpp:630
+#: handler.cpp:631
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Zlyhala aktualizácia pripojenia %1"
 
-#: handler.cpp:637
+#: handler.cpp:638
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Pripojenie %1 bolo aktualizované"
 
-#: handler.cpp:812
+#: handler.cpp:813
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Zlyhalo vytvorenie aktívneho bodu %1"

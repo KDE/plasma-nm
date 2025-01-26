@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-01-26 00:43+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -3246,34 +3246,34 @@ msgstr "باغلىنىش ئاتى:"
 msgid "Failed to add %1"
 msgstr ""
 
-#: handler.cpp:477
+#: handler.cpp:478
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr ""
 
-#: handler.cpp:608
+#: handler.cpp:609
 #, kde-format
 msgid "Failed to remove %1"
 msgstr ""
 
-#: handler.cpp:615
+#: handler.cpp:616
 #, fuzzy, kde-format
 #| msgid "Connection name:"
 msgid "Connection %1 has been removed"
 msgstr "باغلىنىش ئاتى:"
 
-#: handler.cpp:630
+#: handler.cpp:631
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr ""
 
-#: handler.cpp:637
+#: handler.cpp:638
 #, fuzzy, kde-format
 #| msgid "Connection name:"
 msgid "Connection %1 has been updated"
 msgstr "باغلىنىش ئاتى:"
 
-#: handler.cpp:812
+#: handler.cpp:813
 #, fuzzy, kde-format
 #| msgid "Remove Connection"
 msgid "Failed to create hotspot %1"

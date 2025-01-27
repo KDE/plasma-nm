@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Adrián Chaves Fernández <adriyetichaves@gmail.com>, 2015, 2016.
-# SPDX-FileCopyrightText: 2023 Adrián Chaves (Gallaecio)
+# SPDX-FileCopyrightText: 2023, 2025 Adrián Chaves (Gallaecio)
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2023-06-11 21:46+0200\n"
+"PO-Revision-Date: 2025-01-26 21:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -506,6 +506,7 @@ msgstr "Permitir ou desactivar a compresión Deflate."
 msgid "Allow Deflate compression"
 msgstr "Permitir a compresión Deflate."
 
+# skip-rule: trasno-download_reverse
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbTCPheaders)
 #: l2tpppp.ui:134
 #, kde-format
@@ -523,6 +524,7 @@ msgstr ""
 msgid "Allow TCP header compression"
 msgstr "Permitir a compresión das cabeceiras TCP."
 
+# skip-rule: trasno-download_reverse
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbCompressionNegotiation)
 #: l2tpppp.ui:148
 #, kde-format
@@ -539,6 +541,7 @@ msgstr ""
 msgid "Use protocol field compression negotiation"
 msgstr "Usar a negociación da compresión do campo do protocolo."
 
+# skip-rule: trasno-download_reverse
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:164
 #, kde-format

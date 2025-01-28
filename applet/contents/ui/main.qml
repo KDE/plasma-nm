@@ -116,7 +116,6 @@ PlasmoidItem {
         text: i18n("&Configure Network Connections…")
         icon.name: "configure"
         visible: kcmAuthorized
-        shortcut: "alt+d, s"
         onTriggered: KCMUtils.KCMLauncher.openSystemSettings(kcm)
     }
 

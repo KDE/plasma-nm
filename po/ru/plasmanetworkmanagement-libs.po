@@ -5,13 +5,13 @@
 # Victor Ryzhykh <victorr2007@yandex.ru>, 2014.
 # Alexander Lakhin <exclusion@gmail.com>, 2014.
 # Alexander Potashev <aspotashev@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2024.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-26 02:34+0000\n"
-"PO-Revision-Date: 2024-09-20 13:21+0300\n"
+"PO-Revision-Date: 2025-01-27 12:07+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -181,7 +181,7 @@ msgstr "Активный + резерв"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format

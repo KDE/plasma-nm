@@ -2,8 +2,8 @@
 # SPDX-License-Identifier: CC0-1.0
 
 Dependencies:
-- 'on': ['@all']
-  'require':
+ - 'on': ['@all']
+   'require':
     'frameworks/extra-cmake-modules': '@latest-kf6'
     'frameworks/kauth': '@latest-kf6'
     'frameworks/kcodecs': '@latest-kf6'
@@ -29,5 +29,5 @@ Dependencies:
     'frameworks/ksvg': '@latest-kf6'
     'plasma/libplasma': '@same'
 Options:
-  require-passing-tests-on: [ 'Linux', 'FreeBSD']
-  cmake-options: ' -DBUILD_MOBILE=ON'
+ require-passing-tests-on: ['Linux', 'FreeBSD']
+ cmake-options: ' -DBUILD_MOBILE=ON'

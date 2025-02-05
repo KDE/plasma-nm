@@ -4,13 +4,13 @@
 #
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2014, 2015, 2016, 2019, 2020.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
-# SPDX-FileCopyrightText: 2024 Geraldo Simiao <geraldosimiao@fedoraproject.org>
+# SPDX-FileCopyrightText: 2024, 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-26 02:34+0000\n"
-"PO-Revision-Date: 2024-08-07 01:06-0300\n"
+"PO-Revision-Date: 2025-02-04 15:48-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -18,13 +18,13 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 24.12.1\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
 msgctxt "@title:tab General configuration"
 msgid "General"
-msgstr ""
+msgstr "Geral"
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -178,7 +178,7 @@ msgstr "Backup ativo"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format

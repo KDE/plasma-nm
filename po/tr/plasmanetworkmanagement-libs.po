@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-26 02:34+0000\n"
-"PO-Revision-Date: 2025-01-09 16:02+0300\n"
+"PO-Revision-Date: 2025-02-05 11:23+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -877,7 +877,7 @@ msgstr "Güvenlik duvarı alanı:"
 #: editor/settings/ui/connectionwidget.ui:129
 #, kde-format
 msgid "Metered:"
-msgstr "Ölçülen:"
+msgstr "Ölçülü:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:149
@@ -887,9 +887,9 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager, uygulamalara bağlantının ölçülüp ölçülmediğini ve "
-"dolayısıyla\n"
-"veri kullanımının sınırlandırılıp sınırlandırılmaması gerektiğini iletir."
+"NetworkManager, uygulamalara bağlantının ölçülüp ölçülmediğini ve\n"
+"dolayısıyla veri kullanımının sınırlandırılıp sınırlandırılmaması\n"
+"gerektiğini iletir."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:159

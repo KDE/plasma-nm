@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
-# Zayed Al-Saidi <zayed.alsaidi@gmail.com>, 2021, 2022.
+# SPDX-FileCopyrightText: 2021, 2022, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-19 00:42+0000\n"
-"PO-Revision-Date: 2022-02-05 13:57+0400\n"
+"PO-Revision-Date: 2025-02-09 11:57+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -29,8 +30,7 @@ msgid "Network authentication"
 msgstr "استيثاق الشبكة"
 
 #: connectivitymonitor.cpp:70
-#, fuzzy, kde-format
-#| msgid "You need to log in to this network"
+#, kde-format
 msgid "You need to log into this network"
 msgstr "عليك أن تلج في هذه الشبكة"
 
@@ -45,10 +45,7 @@ msgid "Limited Connectivity"
 msgstr "اتصال محدود"
 
 #: connectivitymonitor.cpp:93
-#, fuzzy, kde-format
-#| msgid ""
-#| "This device appears to be connected to a network but is unable to reach "
-#| "the internet."
+#, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."
@@ -101,7 +98,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantDisconnectReason"
 msgid "Authorization supplicant disconnected"
-msgstr ""
+msgstr "انفصل مقدم طلب التصريح"
 
 #: notification.cpp:113
 #, kde-format
@@ -109,7 +106,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantConfigFailedReason"
 msgid "Authorization supplicant's configuration failed"
-msgstr ""
+msgstr "فشل ضبط مقدم طلب التصريح"
 
 #: notification.cpp:116
 #, kde-format
@@ -117,7 +114,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantFailedReason"
 msgid "Authorization supplicant failed"
-msgstr ""
+msgstr "فشل مقدم طلب التصريح"
 
 #: notification.cpp:119
 #, kde-format
@@ -125,7 +122,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantTimeoutReason"
 msgid "Authorization supplicant timed out"
-msgstr ""
+msgstr "انتهت مهلة مقدم طلب التصريح"
 
 #: notification.cpp:122
 #, kde-format
@@ -218,14 +215,14 @@ msgstr "المودم مشغول"
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoDialToneReason"
 msgid "The modem has no dial tone"
-msgstr ""
+msgstr "المودم ليس لديه نغمة اتصال"
 
 #: notification.cpp:161
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoCarrierReason"
 msgid "The modem shows no carrier"
-msgstr ""
+msgstr "لا يعرض المودم أي ناقل"
 
 #: notification.cpp:164
 #, kde-format
@@ -233,14 +230,14 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ModemDialTimeoutReason"
 msgid "The modem dial timed out"
-msgstr ""
+msgstr "انتهت مهلة الاتصال بالمودم"
 
 #: notification.cpp:167
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemDialFailedReason"
 msgid "The modem dial failed"
-msgstr ""
+msgstr "فشل الاتصال بالمودم"
 
 #: notification.cpp:170
 #, kde-format
@@ -412,34 +409,34 @@ msgstr "فشل اتصال ثانويّ للاتصال الأساسيّ"
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to DcbFcoeFailed"
 msgid "DCB or FCoE setup failed"
-msgstr ""
+msgstr "فشل إعداد DCB أو FCoE"
 
 #: notification.cpp:250
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to TeamdControlFailed"
 msgid "teamd control failed"
-msgstr ""
+msgstr "فشل تحكم teamd"
 
 #: notification.cpp:253
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
-msgstr ""
+msgstr "تعطل المودم أو لم يعد متوفراً"
 
 #: notification.cpp:256
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemAvailable"
 msgid "Modem now ready and available"
-msgstr ""
+msgstr "المودم جاهز ومتاح الآن"
 
 #: notification.cpp:259
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SimPinIncorrect"
 msgid "The SIM PIN was incorrect"
-msgstr ""
+msgstr "رقم التعريف الشخصي لبطاقة SIM كان غير صحيح"
 
 #: notification.cpp:262
 #, kde-format
@@ -458,7 +455,7 @@ msgstr "تم تغيير والد الجهاز"
 msgctxt ""
 "@info:status Notification when the device failed due to ParentManagedChanged"
 msgid "The device parent's management changed"
-msgstr ""
+msgstr "تغيرت إدارة الجهاز الرئيس"
 
 #: notification.cpp:344
 #, kde-format
@@ -550,37 +547,30 @@ msgid "Authenticate %1"
 msgstr "استوثق %1"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "لم تُوفّر أسرار"
+msgstr "لم يُطلب أي أسرار"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "وفّر كلمة سر لتفعيل اتصال '%1':"
+msgstr "كلمة السر غير صحيحة للشبكة اللاسلكية ”%1“. الرجاء المحاولة مرة أخرى."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
-msgstr "وفّر كلمة سر لتفعيل اتصال '%1':"
+msgstr "أدخل كلمة سر لتفعيل الاتصال اللاسلكي '\"%1':"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "وفّر كلمة سر لتفعيل اتصال '%1':"
+msgstr "كلمة السر غير صحيحة للاتصال ”%1“. الرجاء المحاولة مرة أخرى."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "وفّر كلمة سر لتفعيل اتصال '%1':"
+msgstr "أدخل كلمة السر للاتصال ”%1“:"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -591,13 +581,12 @@ msgstr "حواري كلمة سر %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "إعدادات الشبكة الافتراضية الخاصة مفقودة"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "وفّر كلمة سر لتفعيل اتصال '%1':"
+msgstr "وفّر الأسرار الخاصة باتصال الشبكة الافتراضية الخاصة ”%1“:"
 
 #: passworddialog.cpp:135
 #, kde-format
@@ -639,17 +628,17 @@ msgstr "رمز PUK للشبكة"
 #: pindialog.cpp:76
 #, kde-format
 msgid "Corporate PUK"
-msgstr ""
+msgstr "مفتاح إلغاء الحظر الشخصي للشركات (PUK)"
 
 #: pindialog.cpp:78
 #, kde-format
 msgid "PH-FSIM PUK"
-msgstr ""
+msgstr "مفتاح إلغاء الحظر الشخصي PH-FSIM"
 
 #: pindialog.cpp:80
 #, kde-format
 msgid "Network Subset PUK"
-msgstr ""
+msgstr "مفتاح إلغاء الحظر الشخصي للشبكة الفرعية"
 
 #: pindialog.cpp:83 pindialog.cpp:115
 #, kde-format
@@ -717,17 +706,17 @@ msgstr "رمز PIN"
 #: pindialog.cpp:109
 #, kde-format
 msgid "Corporate PIN"
-msgstr ""
+msgstr "رقم التعريف الشخصي للشركات"
 
 #: pindialog.cpp:111
 #, kde-format
 msgid "PH-FSIM PIN"
-msgstr ""
+msgstr "رقم التعريف الشخصي PH-FSIM"
 
 #: pindialog.cpp:113
 #, kde-format
 msgid "Network Subset PIN"
-msgstr ""
+msgstr "رقم التعريف الشخصي للشبكة الفرعية"
 
 #: pindialog.cpp:119
 #, kde-format

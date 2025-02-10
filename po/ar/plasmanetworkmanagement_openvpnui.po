@@ -1,27 +1,28 @@
-# SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Jalal Ahmed <jalalsfs@yahoo.com>, 2014.
 # Abdalrahim Fakhouri <abdilra7eem@yahoo.com>, 2014.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2014-07-05 04:08+0300\n"
-"Last-Translator: Abdalrahim Fakhouri <abdilra7eem@yahoo.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org\n"
+"PO-Revision-Date: 2025-02-09 17:26+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: openvpn.cpp:183
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
-msgstr ""
+msgstr "يفتقد NetworkManager دعم OpenVPN"
 
 #: openvpn.cpp:208
 #, kde-format
@@ -37,7 +38,7 @@ msgstr ""
 #: openvpn.ui:19
 #, kde-format
 msgid "Gateway:"
-msgstr "بوابة:"
+msgstr "البوّابة:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: openvpn.ui:36
@@ -64,37 +65,35 @@ msgstr "استخدم استيثاق TLS إضافي"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:72
-#, fuzzy, kde-format
-#| msgid "Certificate:"
+#, kde-format
 msgid "Certificates (TLS)"
-msgstr "شهادة:"
+msgstr "الشّهادات (TLS)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:77
 #, kde-format
 msgid "Static Key"
-msgstr ""
+msgstr "المفتاح الثابت"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:82
 #, kde-format
 msgid "Password"
-msgstr "كلمة مرور"
+msgstr "كلمة السّر"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:87
 #, kde-format
 msgid "Password with Certificates (TLS)"
-msgstr ""
+msgstr "كلمة السر مع الشهادات (TLS)"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
 #: openvpn.ui:104 openvpn.ui:362 openvpn.ui:458
-#, fuzzy, kde-format
-#| msgid "Certificate:"
+#, kde-format
 msgid "CA Certificate:"
-msgstr "شهادة:"
+msgstr "شهادة المرجع المصدق (CA):"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, passCaFile)
@@ -102,7 +101,7 @@ msgstr "شهادة:"
 #: openvpn.ui:117 openvpn.ui:378 openvpn.ui:471
 #, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr ""
+msgstr "ملف المرجع المصدق (CA) بتنسيق .pem."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509Cert)
@@ -114,15 +113,14 @@ msgstr ""
 #: openvpn.ui:520
 #, kde-format
 msgid "*.pem *.crt *.key *.cer *.p12"
-msgstr ""
+msgstr "*.pem *.crt *.key *.cer *.p12"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2_2)
 #: openvpn.ui:127 openvpn.ui:481
-#, fuzzy, kde-format
-#| msgid "Certificate:"
+#, kde-format
 msgid "User Certificate:"
-msgstr "شهادة:"
+msgstr "شهادة المستخدِم:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Cert)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassCert)
@@ -136,10 +134,9 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
 #: openvpn.ui:150 openvpn.ui:504
-#, fuzzy, kde-format
-#| msgid "Pre-shared Key"
+#, kde-format
 msgid "Private Key:"
-msgstr "مفتاح قبل التشارك"
+msgstr "المفتاح الخاصّ:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Key)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassKey)
@@ -151,24 +148,22 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: openvpn.ui:173 openvpn.ui:527
-#, fuzzy, kde-format
-#| msgid "Key Password:"
+#, kde-format
 msgid "Private Key Password:"
-msgstr "كلمة مرور:"
+msgstr "كلمة مرور المفتاح الخاص:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509KeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509PassKeyPassword)
 #: openvpn.ui:182 openvpn.ui:536
 #, kde-format
 msgid "Password for private key."
-msgstr ""
+msgstr "كلم السر للمفتاح الخاص."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
 #: openvpn.ui:211
-#, fuzzy, kde-format
-#| msgid "Shared Key:"
+#, kde-format
 msgid "Static Key:"
-msgstr "مفتاح مشترك:"
+msgstr "المفتاح الثابت:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, pskSharedKey)
 #: openvpn.ui:224
@@ -180,7 +175,7 @@ msgstr ""
 #: openvpn.ui:227
 #, kde-format
 msgid "*.key"
-msgstr ""
+msgstr "*.key"
 
 #. i18n: ectx: property (text), widget (QLabel, label_16)
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -193,7 +188,7 @@ msgstr "توجيه المفتاح:"
 #: openvpn.ui:247
 #, kde-format
 msgid "Direction for Static Key encryption mode (non-TLS)."
-msgstr ""
+msgstr "الاتجاه لوضع تشفير المفتاح الثابت (غير TLS)."
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:250
@@ -205,9 +200,7 @@ msgstr "إذا استُخدم توجيه المفتاح، يجب أن يكون �
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:254
-#, fuzzy, kde-format
-#| msgctxt "like in None setting selected"
-#| msgid "None"
+#, kde-format
 msgctxt "No \"Key Direction\""
 msgid "None"
 msgstr "لا شيء"
@@ -226,10 +219,9 @@ msgstr "1"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel6)
 #: openvpn.ui:272
-#, fuzzy, kde-format
-#| msgid "Local IP:"
+#, kde-format
 msgid "Local IP Address:"
-msgstr "IP محلي:"
+msgstr "عنوان IP المحلي:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, pskLocalIp)
 #: openvpn.ui:285
@@ -263,14 +255,12 @@ msgstr ""
 #: openvpn.ui:381
 #, kde-format
 msgid "*.pem *.crt *.key *.cer"
-msgstr ""
+msgstr "*.pem *.crt *.key *.cer"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
 #: openvpn.ui:388 openvpn.ui:548
-#, fuzzy, kde-format
-#| msgctxt "like in Username for athentication"
-#| msgid "Username:"
+#, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username:"
 msgstr "اسم المستخدم:"
@@ -280,7 +270,7 @@ msgstr "اسم المستخدم:"
 #: openvpn.ui:404 openvpn.ui:561
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "اسم المستخدم المرر إلى OpenVPN عندما يُطلب منه ذلك."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -288,21 +278,20 @@ msgstr ""
 #: openvpnauth.cpp:106
 #, kde-format
 msgid "Password:"
-msgstr "كلمة المرور:"
+msgstr "كلمة السر:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, passPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509PassPassword)
 #: openvpn.ui:429 openvpn.ui:583
 #, kde-format
 msgid "Password passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "كلمة السر المررة إلى OpenVPN عندما يُطلب منه ذلك."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: openvpn.ui:627
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
-msgstr "متقدم..."
+msgstr "متقدّم…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, generalTab)
 #: openvpnadvanced.ui:28
@@ -344,64 +333,57 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomReneg)
 #: openvpnadvanced.ui:75
-#, fuzzy, kde-format
-#| msgid "Use custom renegotiation interval"
+#, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr "استخدم فترة إعادة مفاوضات مخصصة"
+msgstr "استخدم فاصل إعادة التفاوض المخصص:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCompression)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:96 openvpnadvanced.ui:109
-#, fuzzy, kde-format
-#| msgid "Use LZO compression"
+#, kde-format
 msgid "Use compression."
-msgstr "استخدم ضغط LZO"
+msgstr "استخدام الضغط."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCompression)
 #: openvpnadvanced.ui:99
-#, fuzzy, kde-format
-#| msgid "Use LZO compression"
+#, kde-format
 msgid "Use compression"
-msgstr "استخدم ضغط LZO"
+msgstr "استخدام الضغط"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:113
-#, fuzzy, kde-format
-#| msgctxt "like in None setting selected"
-#| msgid "None"
+#, kde-format
 msgid "No"
-msgstr "لا شيء"
+msgstr "لا"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:118
 #, kde-format
 msgid "LZO"
-msgstr ""
+msgstr "LZO"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:123
 #, kde-format
 msgid "LZ4"
-msgstr ""
+msgstr "LZ4"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:128
 #, kde-format
 msgid "LZ4 v2"
-msgstr ""
+msgstr "LZ4 v2"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:133
 #, kde-format
 msgid "Adaptive"
-msgstr ""
+msgstr "متكيف"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, leVirtualDeviceName)
 #: openvpnadvanced.ui:138 openvpnadvanced.ui:216
-#, fuzzy, kde-format
-#| msgctxt "like in use Automatic configuration"
-#| msgid "Automatic"
+#, kde-format
 msgid "Automatic"
 msgstr "آلي"
 
@@ -429,19 +411,19 @@ msgstr ""
 #: openvpnadvanced.ui:163
 #, kde-format
 msgid "Set virtual device type:"
-msgstr ""
+msgstr "عيّن نوع الجهاز الافتراضي:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:177
 #, kde-format
 msgid "TUN"
-msgstr ""
+msgstr "TUN"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:182
 #, kde-format
 msgid "TAP"
-msgstr ""
+msgstr "TAP"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseVirtualDeviceName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leVirtualDeviceName)
@@ -843,18 +825,16 @@ msgstr ""
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbRemoteCertTls)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbNsCertType)
 #: openvpnadvanced.ui:791 openvpnadvanced.ui:838
-#, fuzzy, kde-format
-#| msgid "Server (0)"
+#, kde-format
 msgid "Server"
-msgstr "خادوم (0)"
+msgstr "الخادم"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbRemoteCertTls)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbNsCertType)
 #: openvpnadvanced.ui:796 openvpnadvanced.ui:843
-#, fuzzy, kde-format
-#| msgid "Client (1)"
+#, kde-format
 msgid "Client"
-msgstr "عميل (1)"
+msgstr "العميل"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkNsCertType)
 #. i18n: ectx: property (toolTip), widget (QLabel, lblNsCertType)
@@ -889,13 +869,11 @@ msgstr "استخدم استيثاق TLS إضافي"
 #: openvpnadvanced.ui:868
 #, kde-format
 msgid "Mode:"
-msgstr ""
+msgstr "الوضع:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:876
-#, fuzzy, kde-format
-#| msgctxt "like in None setting selected"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "لا شيء"
 
@@ -903,13 +881,13 @@ msgstr "لا شيء"
 #: openvpnadvanced.ui:881
 #, kde-format
 msgid "TLS-Auth"
-msgstr ""
+msgstr "TLS-Auth"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:886
 #, kde-format
 msgid "TLS-Crypt"
-msgstr ""
+msgstr "TLS-Crypt"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -923,10 +901,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
 #: openvpnadvanced.ui:898
-#, fuzzy, kde-format
-#| msgid "CA File:"
+#, kde-format
 msgid "Key File:"
-msgstr "ملف CA:"
+msgstr "ملف المفتاح:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)
@@ -1001,8 +978,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: openvpnadvanced.ui:1063
-#, fuzzy, kde-format
-#| msgid "Server Address:"
+#, kde-format
 msgid "Server Address:"
 msgstr "عنوان الخادم:"
 
@@ -1028,10 +1004,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: openvpnadvanced.ui:1115
-#, fuzzy, kde-format
-#| msgid "Proxy Username:"
+#, kde-format
 msgid "Proxy Username:"
-msgstr "وسيط اسم المستخدم:"
+msgstr "اسم مستخدم الوسيط:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_15)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyPassword)
@@ -1044,7 +1019,7 @@ msgstr ""
 #: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
 #, kde-format
 msgid "Proxy Password:"
-msgstr "كملة مرور الوسيط:"
+msgstr "كملة سر الوسيط:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkProxyRetry)
 #: openvpnadvanced.ui:1162
@@ -1074,7 +1049,7 @@ msgstr "فشل بحث شفرة OpenVPN"
 #, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
-msgstr "مبدأيّ"
+msgstr "المبدئي"
 
 #: openvpnadvancedwidget.cpp:153
 #, kde-format
@@ -1085,23 +1060,22 @@ msgstr "لم يُعثَر على شفرات OpenVPN"
 #: openvpnauth.cpp:73 openvpnauth.cpp:103
 #, kde-format
 msgid "Key Password:"
-msgstr "كلمة مرور:"
+msgstr "مفتاح كلمة السر:"
 
 #: openvpnauth.cpp:86
 #, kde-format
 msgid "OTP"
-msgstr ""
+msgstr "كلمة سر لمرة واحدة"
 
 #: openvpnauth.cpp:86
-#, fuzzy, kde-format
-#| msgid "HMAC Authentication:"
+#, kde-format
 msgid "authenticator"
-msgstr "استيثاق HMAC:"
+msgstr "مصادق"
 
 #: openvpnauth.cpp:86
 #, kde-format
 msgid "code"
-msgstr ""
+msgstr "الرمز"
 
 #: openvpnauth.cpp:86
 #, kde-format
@@ -1109,10 +1083,9 @@ msgid "token"
 msgstr ""
 
 #: openvpnauth.cpp:86
-#, fuzzy, kde-format
-#| msgid "Key password:"
+#, kde-format
 msgid "one-time password"
-msgstr "كلمة مرور:"
+msgstr "كلمة سر لمرة واحدة"
 
 #~ msgid "Could not open file"
 #~ msgstr "تعذّر فتح الملف"

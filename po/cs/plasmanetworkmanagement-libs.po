@@ -3685,7 +3685,3 @@ msgstr "Je potřeba NetworkManager 0.9.8, nalezena verze %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Neznámý"
-
-#~ msgctxt "General"
-#~ msgid "General configuration"
-#~ msgstr "Obecné nastavení"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:43+0000\n"
+"POT-Creation-Date: 2025-02-12 00:43+0000\n"
 "PO-Revision-Date: 2024-03-11 07:43-0500\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -2693,46 +2693,12 @@ msgstr "ਅਣਜਾਣ ਸੁਰੱਖਿਆ ਟਾਈਪ"
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
 "the number of minutes since usage"
-msgid "One minute ago"
-msgid_plural "%1 minutes ago"
-msgstr[0] "ਇੱਕ ਮਿੰਟ ਪਹਿਲਾਂ"
-msgstr[1] "%1 ਮਿੰਟ ਪਹਿਲਾਂ"
-
-#: editor/uiutils.cpp:643
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last day, as "
-"the number of hours since usage"
-msgid "One hour ago"
-msgid_plural "%1 hours ago"
-msgstr[0] "ਇੱਕ ਘੰਟਾ ਪਹਿਲਾਂ"
-msgstr[1] "%1 ਘੰਟੇ ਪਹਿਲਾਂ"
-
-#: editor/uiutils.cpp:648
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used the previous day"
-msgid "Yesterday"
-msgstr "ਕੱਲ੍ਹ"
-
-#: editor/uiutils.cpp:656
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection that has never been used"
-msgid "Never"
-msgstr "ਕਦੇ ਨਹੀਂ"
-
-#: editor/uiutils.cpp:671
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last hour, as "
-"the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
 msgstr[0] "ਇੱਕ ਮਿੰਟ ਪਹਿਲਾਂ ਵਰਤਿਆ"
 msgstr[1] "%1 ਮਿੰਟ ਪਹਿਲਾਂ ਵਰਤਿਆ"
 
-#: editor/uiutils.cpp:677
+#: editor/uiutils.cpp:643
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2742,19 +2708,19 @@ msgid_plural "Last used %1 hours ago"
 msgstr[0] "ਇੱਕ ਘੰਟਾ ਪਹਿਲਾਂ ਵਰਤਿਆ"
 msgstr[1] "%1 ਘੰਟੇ ਪਹਿਲਾਂ ਵਰਤਿਆ"
 
-#: editor/uiutils.cpp:682
+#: editor/uiutils.cpp:648
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
 msgstr "ਕੱਲ੍ਹ ਆਖਰੀ ਵਾਰੀ ਵਰਤਿਆ"
 
-#: editor/uiutils.cpp:684
+#: editor/uiutils.cpp:650
 #, kde-format
 msgid "Last used on %1"
 msgstr "%1 ਨੂੰ ਆਖਰੀ ਵਾਰੀ ਵਰਤਿਆ"
 
-#: editor/uiutils.cpp:690
+#: editor/uiutils.cpp:656
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
@@ -3693,6 +3659,32 @@ msgstr "ਨੈੱਟਵਰਕਮੈਨੇਜਰ 0.9.8 ਚਾਹੀਦਾ ਹੈ,
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "ਅਣਪਛਾਤਾ"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used in the last hour, "
+#~ "as the number of minutes since usage"
+#~ msgid "One minute ago"
+#~ msgid_plural "%1 minutes ago"
+#~ msgstr[0] "ਇੱਕ ਮਿੰਟ ਪਹਿਲਾਂ"
+#~ msgstr[1] "%1 ਮਿੰਟ ਪਹਿਲਾਂ"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used in the last day, "
+#~ "as the number of hours since usage"
+#~ msgid "One hour ago"
+#~ msgid_plural "%1 hours ago"
+#~ msgstr[0] "ਇੱਕ ਘੰਟਾ ਪਹਿਲਾਂ"
+#~ msgstr[1] "%1 ਘੰਟੇ ਪਹਿਲਾਂ"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used the previous day"
+#~ msgid "Yesterday"
+#~ msgstr "ਕੱਲ੍ਹ"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection that has never been used"
+#~ msgid "Never"
+#~ msgstr "ਕਦੇ ਨਹੀਂ"
 
 #~ msgctxt "General"
 #~ msgid "General configuration"

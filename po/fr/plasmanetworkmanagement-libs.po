@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:43+0000\n"
+"POT-Creation-Date: 2025-02-12 00:43+0000\n"
 "PO-Revision-Date: 2024-12-15 10:41+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -2820,46 +2820,12 @@ msgstr "Type de sécurité inconnu"
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
 "the number of minutes since usage"
-msgid "One minute ago"
-msgid_plural "%1 minutes ago"
-msgstr[0] "Il y a une minute"
-msgstr[1] "Il y a %1 minutes"
-
-#: editor/uiutils.cpp:643
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last day, as "
-"the number of hours since usage"
-msgid "One hour ago"
-msgid_plural "%1 hours ago"
-msgstr[0] "Il y a une heure"
-msgstr[1] "Il y a %1 heures"
-
-#: editor/uiutils.cpp:648
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used the previous day"
-msgid "Yesterday"
-msgstr "Hier"
-
-#: editor/uiutils.cpp:656
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection that has never been used"
-msgid "Never"
-msgstr "Jamais"
-
-#: editor/uiutils.cpp:671
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last hour, as "
-"the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
 msgstr[0] "Utilisé la dernière fois il y a une minute"
 msgstr[1] "Utilisé la dernière fois il y a %1 minutes"
 
-#: editor/uiutils.cpp:677
+#: editor/uiutils.cpp:643
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2869,19 +2835,19 @@ msgid_plural "Last used %1 hours ago"
 msgstr[0] "Utilisé la dernière fois il y a une heure"
 msgstr[1] "Utilisé la dernière fois il y a %1 heures"
 
-#: editor/uiutils.cpp:682
+#: editor/uiutils.cpp:648
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
 msgstr "Utilisé la dernière fois hier"
 
-#: editor/uiutils.cpp:684
+#: editor/uiutils.cpp:650
 #, kde-format
 msgid "Last used on %1"
 msgstr "Utilisé la dernière fois %1"
 
-#: editor/uiutils.cpp:690
+#: editor/uiutils.cpp:656
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
@@ -3833,6 +3799,32 @@ msgstr "NetworkManager 0.9.8 est requis, trouvé %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Inconnu"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used in the last hour, "
+#~ "as the number of minutes since usage"
+#~ msgid "One minute ago"
+#~ msgid_plural "%1 minutes ago"
+#~ msgstr[0] "Il y a une minute"
+#~ msgstr[1] "Il y a %1 minutes"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used in the last day, "
+#~ "as the number of hours since usage"
+#~ msgid "One hour ago"
+#~ msgid_plural "%1 hours ago"
+#~ msgstr[0] "Il y a une heure"
+#~ msgstr[1] "Il y a %1 heures"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used the previous day"
+#~ msgid "Yesterday"
+#~ msgstr "Hier"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection that has never been used"
+#~ msgid "Never"
+#~ msgstr "Jamais"
 
 #~ msgctxt "General"
 #~ msgid "General configuration"

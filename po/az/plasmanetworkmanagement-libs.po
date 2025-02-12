@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:43+0000\n"
+"POT-Creation-Date: 2025-02-12 00:43+0000\n"
 "PO-Revision-Date: 2023-02-19 14:18+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -2805,46 +2805,12 @@ msgstr "Naməlum təhlükəsizlik növü"
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
 "the number of minutes since usage"
-msgid "One minute ago"
-msgid_plural "%1 minutes ago"
-msgstr[0] "%1 dəqiqə öncə"
-msgstr[1] "%1 dəqiqə öncə"
-
-#: editor/uiutils.cpp:643
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last day, as "
-"the number of hours since usage"
-msgid "One hour ago"
-msgid_plural "%1 hours ago"
-msgstr[0] "%1 saat öncə"
-msgstr[1] "%1 saat öncə"
-
-#: editor/uiutils.cpp:648
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used the previous day"
-msgid "Yesterday"
-msgstr "Dünən"
-
-#: editor/uiutils.cpp:656
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection that has never been used"
-msgid "Never"
-msgstr "Heç vaxt"
-
-#: editor/uiutils.cpp:671
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last hour, as "
-"the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
 msgstr[0] "Son istifadə %1 dəqiqə əvvəl"
 msgstr[1] "Son istifadə %1 dəqiqə əvvəl"
 
-#: editor/uiutils.cpp:677
+#: editor/uiutils.cpp:643
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2854,19 +2820,19 @@ msgid_plural "Last used %1 hours ago"
 msgstr[0] "Son istifadə %1 saat öncə"
 msgstr[1] "Son istifadə %1 saat öncə"
 
-#: editor/uiutils.cpp:682
+#: editor/uiutils.cpp:648
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
 msgstr "Son istifadə dünən"
 
-#: editor/uiutils.cpp:684
+#: editor/uiutils.cpp:650
 #, kde-format
 msgid "Last used on %1"
 msgstr "Son istifadə %1-də/da"
 
-#: editor/uiutils.cpp:690
+#: editor/uiutils.cpp:656
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
@@ -3817,6 +3783,32 @@ msgstr "NetworkManager 0.9.8 tələb olunur, tapıldı %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Naməlum"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used in the last hour, "
+#~ "as the number of minutes since usage"
+#~ msgid "One minute ago"
+#~ msgid_plural "%1 minutes ago"
+#~ msgstr[0] "%1 dəqiqə öncə"
+#~ msgstr[1] "%1 dəqiqə öncə"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used in the last day, "
+#~ "as the number of hours since usage"
+#~ msgid "One hour ago"
+#~ msgid_plural "%1 hours ago"
+#~ msgstr[0] "%1 saat öncə"
+#~ msgstr[1] "%1 saat öncə"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used the previous day"
+#~ msgid "Yesterday"
+#~ msgstr "Dünən"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection that has never been used"
+#~ msgid "Never"
+#~ msgstr "Heç vaxt"
 
 #~ msgctxt "General"
 #~ msgid "General configuration"

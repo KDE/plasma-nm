@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:43+0000\n"
+"POT-Creation-Date: 2025-02-12 00:43+0000\n"
 "PO-Revision-Date: 2025-01-06 22:27+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -2806,44 +2806,6 @@ msgstr "Nežinomas saugumo tipas"
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
 "the number of minutes since usage"
-msgid "One minute ago"
-msgid_plural "%1 minutes ago"
-msgstr[0] "Prieš vieną minutę"
-msgstr[1] "prieš %1 minutes"
-msgstr[2] "prieš %1 minučių"
-msgstr[3] "prieš %1 minutes"
-
-#: editor/uiutils.cpp:643
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last day, as "
-"the number of hours since usage"
-msgid "One hour ago"
-msgid_plural "%1 hours ago"
-msgstr[0] "Prieš vieną valandą"
-msgstr[1] "Prieš %1 valandas"
-msgstr[2] "Prieš %1 valandų"
-msgstr[3] "Prieš %1 valandą"
-
-#: editor/uiutils.cpp:648
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used the previous day"
-msgid "Yesterday"
-msgstr "Vakar"
-
-#: editor/uiutils.cpp:656
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection that has never been used"
-msgid "Never"
-msgstr "Niekada"
-
-#: editor/uiutils.cpp:671
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last hour, as "
-"the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
 msgstr[0] "Naudotas prieš vieną minutę"
@@ -2851,7 +2813,7 @@ msgstr[1] "Naudotas prieš %1 minutes"
 msgstr[2] "Naudotas prieš %1 minučių"
 msgstr[3] "Naudotas prieš %1 minutę"
 
-#: editor/uiutils.cpp:677
+#: editor/uiutils.cpp:643
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2863,19 +2825,19 @@ msgstr[1] "Naudotas prieš %1 valandas"
 msgstr[2] "Naudotas prieš %1 valandų"
 msgstr[3] "Naudotas prieš %1 valandą"
 
-#: editor/uiutils.cpp:682
+#: editor/uiutils.cpp:648
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
 msgstr "Paskutinį kartą naudotas vakar"
 
-#: editor/uiutils.cpp:684
+#: editor/uiutils.cpp:650
 #, kde-format
 msgid "Last used on %1"
 msgstr "Paskutinį kartą naudotas %1"
 
-#: editor/uiutils.cpp:690
+#: editor/uiutils.cpp:656
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
@@ -3822,6 +3784,36 @@ msgstr "Reikalinga NetworkManager 0.9.8, rasta %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Nežinoma"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used in the last hour, "
+#~ "as the number of minutes since usage"
+#~ msgid "One minute ago"
+#~ msgid_plural "%1 minutes ago"
+#~ msgstr[0] "Prieš vieną minutę"
+#~ msgstr[1] "prieš %1 minutes"
+#~ msgstr[2] "prieš %1 minučių"
+#~ msgstr[3] "prieš %1 minutes"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used in the last day, "
+#~ "as the number of hours since usage"
+#~ msgid "One hour ago"
+#~ msgid_plural "%1 hours ago"
+#~ msgstr[0] "Prieš vieną valandą"
+#~ msgstr[1] "Prieš %1 valandas"
+#~ msgstr[2] "Prieš %1 valandų"
+#~ msgstr[3] "Prieš %1 valandą"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used the previous day"
+#~ msgid "Yesterday"
+#~ msgstr "Vakar"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection that has never been used"
+#~ msgid "Never"
+#~ msgstr "Niekada"
 
 #~ msgctxt "General"
 #~ msgid "General configuration"

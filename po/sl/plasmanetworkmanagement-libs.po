@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 00:43+0000\n"
+"POT-Creation-Date: 2025-02-12 00:43+0000\n"
 "PO-Revision-Date: 2024-12-14 09:39+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -2797,44 +2797,6 @@ msgstr "Neznana vrsta varnosti"
 msgctxt ""
 "Label for last used time for a network connection used in the last hour, as "
 "the number of minutes since usage"
-msgid "One minute ago"
-msgid_plural "%1 minutes ago"
-msgstr[0] "Pred %1 minuto"
-msgstr[1] "Pred %1 minutama"
-msgstr[2] "Pred %1 minutami"
-msgstr[3] "Pred %1 minutami"
-
-#: editor/uiutils.cpp:643
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last day, as "
-"the number of hours since usage"
-msgid "One hour ago"
-msgid_plural "%1 hours ago"
-msgstr[0] "Pred %1 uro"
-msgstr[1] "Pred %1 urama"
-msgstr[2] "Pred %1 urami"
-msgstr[3] "Pred %1 urami"
-
-#: editor/uiutils.cpp:648
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used the previous day"
-msgid "Yesterday"
-msgstr "Včeraj"
-
-#: editor/uiutils.cpp:656
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection that has never been used"
-msgid "Never"
-msgstr "Nikoli"
-
-#: editor/uiutils.cpp:671
-#, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last hour, as "
-"the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
 msgstr[0] "Nazadnje uporabljeno pred %1 minuto"
@@ -2842,7 +2804,7 @@ msgstr[1] "Nazadnje uporabljeno pred %1 minutama"
 msgstr[2] "Nazadnje uporabljeno pred %1 minutami"
 msgstr[3] "Nazadnje uporabljeno pred %1 minutami"
 
-#: editor/uiutils.cpp:677
+#: editor/uiutils.cpp:643
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used in the last day, as "
@@ -2854,19 +2816,19 @@ msgstr[1] "Nazadnje uporabljeno pred %1 urama"
 msgstr[2] "Nazadnje uporabljeno pred %1 urami"
 msgstr[3] "Nazadnje uporabljeno pred %1 urami"
 
-#: editor/uiutils.cpp:682
+#: editor/uiutils.cpp:648
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
 msgstr "Nazadnje uporabljeno včeraj"
 
-#: editor/uiutils.cpp:684
+#: editor/uiutils.cpp:650
 #, kde-format
 msgid "Last used on %1"
 msgstr "Nazadnje uporabljeno %1"
 
-#: editor/uiutils.cpp:690
+#: editor/uiutils.cpp:656
 #, kde-format
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
@@ -3812,6 +3774,36 @@ msgstr "Zahtevan NetworkManager 0.9.8, najden %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Neznano"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used in the last hour, "
+#~ "as the number of minutes since usage"
+#~ msgid "One minute ago"
+#~ msgid_plural "%1 minutes ago"
+#~ msgstr[0] "Pred %1 minuto"
+#~ msgstr[1] "Pred %1 minutama"
+#~ msgstr[2] "Pred %1 minutami"
+#~ msgstr[3] "Pred %1 minutami"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used in the last day, "
+#~ "as the number of hours since usage"
+#~ msgid "One hour ago"
+#~ msgid_plural "%1 hours ago"
+#~ msgstr[0] "Pred %1 uro"
+#~ msgstr[1] "Pred %1 urama"
+#~ msgstr[2] "Pred %1 urami"
+#~ msgstr[3] "Pred %1 urami"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection used the previous day"
+#~ msgid "Yesterday"
+#~ msgstr "Včeraj"
+
+#~ msgctxt ""
+#~ "Label for last used time for a network connection that has never been used"
+#~ msgid "Never"
+#~ msgstr "Nikoli"
 
 #~ msgctxt "General"
 #~ msgid "General configuration"

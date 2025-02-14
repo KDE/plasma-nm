@@ -5,13 +5,13 @@
 # Victor Ryzhykh <victorr2007@yandex.ru>, 2014, 2016, 2017.
 # Alexander Lakhin <exclusion@gmail.com>, 2014.
 # Alexander Potashev <aspotashev@gmail.com>, 2015, 2017, 2019.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2024.
+# Alexander Yavorsky <kekcuha@gmail.com>, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-08 00:42+0000\n"
-"PO-Revision-Date: 2024-09-20 13:22+0300\n"
+"PO-Revision-Date: 2025-02-13 11:23+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -125,7 +125,7 @@ msgstr "Показывать виртуальные сетевые соедин�
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "Создать новое соединение как системное"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"

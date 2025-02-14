@@ -184,7 +184,11 @@ QCoro::Task<void> Handler::activateConnectionInternal(const QString &connection,
         }
     }
 
+    QPointer<Handler> thisGuard(this);
     QDBusReply<QDBusObjectPath> reply = co_await NetworkManager::activateConnection(connection, device, specificObject);
+    if (!thisGuard) {
+        co_return;
+    }
 
     if (!reply.isValid()) {
         QString error = reply.error().message();
@@ -359,7 +363,11 @@ QCoro::Task<void> Handler::addConnection(const NMVariantMapMap &map)
 {
     const QString connectionId = map.value(QStringLiteral("connection")).value(QStringLiteral("id")).toString();
 
+    QPointer<Handler> thisGuard(this);
     QDBusReply<QDBusObjectPath> reply = co_await NetworkManager::addConnection(map);
+    if (!thisGuard) {
+        co_return;
+    }
 
     if (!reply.isValid()) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToAddConnection"), KNotification::CloseOnTimeout, this);
@@ -432,7 +440,11 @@ void Handler::addConnection(NMConnection *connection)
 QCoro::Task<void> Handler::addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject)
 {
     const QString name = map.value(QStringLiteral("connection")).value(QStringLiteral("id")).toString();
+    QPointer<Handler> alive(this);
     QDBusReply<QDBusObjectPath> reply = co_await NetworkManager::addAndActivateConnection(map, device, specificObject);
+    if (!alive) {
+        co_return;
+    }
 
     if (!reply.isValid()) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToAddConnection"), KNotification::CloseOnTimeout, this);
@@ -529,7 +541,6 @@ QCoro::Task<void> Handler::enableBluetooth(bool enable)
     const QDBusMessage getObjects = QDBusMessage::createMethodCall("org.bluez", "/", "org.freedesktop.DBus.ObjectManager", "GetManagedObjects");
 
     QDBusReply<QMap<QDBusObjectPath, NMVariantMapMap>> reply = co_await QDBusConnection::systemBus().asyncCall(getObjects);
-
     if (!reply.isValid()) {
         qCWarning(PLASMA_NM_LIBS_LOG) << reply.error().message();
         co_return;
@@ -603,7 +614,11 @@ QCoro::Task<void> Handler::removeConnectionInternal(const QString &connection)
         }
     }
 
+    QPointer<Handler> thisGuard(this);
     QDBusReply<void> reply = co_await con->remove();
+    if (!thisGuard) {
+        co_return;
+    }
 
     if (!reply.isValid()) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToRemoveConnection"), KNotification::CloseOnTimeout, this);
@@ -624,7 +639,11 @@ QCoro::Task<void> Handler::removeConnectionInternal(const QString &connection)
 
 QCoro::Task<void> Handler::updateConnection(NetworkManager::Connection::Ptr connection, const NMVariantMapMap &map)
 {
+    QPointer<Handler> thisGuard(this);
     QDBusReply<void> reply = co_await connection->update(map);
+    if (!thisGuard) {
+        co_return;
+    }
 
     KNotification *notification = nullptr;
     if (!reply.isValid()) {
@@ -688,7 +707,12 @@ QCoro::Task<void> Handler::requestScanInternal(const QString &interface)
                 qCDebug(PLASMA_NM_LIBS_LOG) << "Requesting wifi scan on device" << wifiDevice->interfaceName();
 
                 incrementScansCount();
+
+                QPointer<Handler> thisGuard(this);
                 QDBusReply<void> reply = co_await wifiDevice->requestScan();
+                if (!thisGuard) {
+                    co_return;
+                }
 
                 if (!reply.isValid()) {
                     const QString interface = wifiDevice->interfaceName();
@@ -806,8 +830,12 @@ QCoro::Task<void> Handler::createHotspotInternal()
 
     const QVariantMap options = {{QLatin1String("persist"), QLatin1String("volatile")}};
 
+    QPointer<Handler> thisGuard(this);
     QDBusPendingReply<QDBusObjectPath, QDBusObjectPath, QVariantMap> reply =
         co_await NetworkManager::addAndActivateConnection2(connectionSettings->toMap(), wifiDev->uni(), QString(), options);
+    if (!thisGuard) {
+        co_return;
+    }
 
     if (!reply.isValid()) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToCreateHotspot"), KNotification::CloseOnTimeout, this);

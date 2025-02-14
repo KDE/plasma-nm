@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 02:34+0000\n"
+"POT-Creation-Date: 2025-02-14 02:46+0000\n"
 "PO-Revision-Date: 2024-07-16 20:41+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -3285,52 +3285,52 @@ msgstr "NetworkManager er ekki með stuðning við '%1' VPN-tengingar."
 msgid "Install"
 msgstr "Setja upp"
 
-#: handler.cpp:192
+#: handler.cpp:196
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Mistókst að virkja %1"
 
-#: handler.cpp:366 handler.cpp:395
+#: handler.cpp:374 handler.cpp:403
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Mistókst að bæta við tengingu %1"
 
-#: handler.cpp:373 handler.cpp:404
+#: handler.cpp:381 handler.cpp:412
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Tengingunni %1 var bætt við"
 
-#: handler.cpp:439
+#: handler.cpp:451
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Mistókst að bæta við %1"
 
-#: handler.cpp:479
+#: handler.cpp:491
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Mistókst að afvirkja %1"
 
-#: handler.cpp:610
+#: handler.cpp:625
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Mistókst að fjarlægja %1"
 
-#: handler.cpp:617
+#: handler.cpp:632
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Tengingin %1 var fjarlægð"
 
-#: handler.cpp:632
+#: handler.cpp:651
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Mistókst að uppfæra tenginguna %1"
 
-#: handler.cpp:639
+#: handler.cpp:658
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Tengingin %1 var uppfærð"
 
-#: handler.cpp:814
+#: handler.cpp:842
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Mistókst að búa til aðgangsstaðinn %1"

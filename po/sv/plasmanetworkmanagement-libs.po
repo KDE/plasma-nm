@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-26 02:34+0000\n"
+"POT-Creation-Date: 2025-02-14 02:46+0000\n"
 "PO-Revision-Date: 2025-01-10 17:00+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -3282,52 +3282,52 @@ msgstr "Nätverkshanteraren saknar stöd för VPN-anslutningar med '%1'."
 msgid "Install"
 msgstr "Installera"
 
-#: handler.cpp:192
+#: handler.cpp:196
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Misslyckades aktivera %1"
 
-#: handler.cpp:366 handler.cpp:395
+#: handler.cpp:374 handler.cpp:403
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Tillägg av anslutning %1 misslyckades"
 
-#: handler.cpp:373 handler.cpp:404
+#: handler.cpp:381 handler.cpp:412
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Anslutning %1 har lagts till"
 
-#: handler.cpp:439
+#: handler.cpp:451
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Misslyckades lägga till %1"
 
-#: handler.cpp:479
+#: handler.cpp:491
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Misslyckades inaktivera %1"
 
-#: handler.cpp:610
+#: handler.cpp:625
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Misslyckades ta bort %1"
 
-#: handler.cpp:617
+#: handler.cpp:632
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Anslutning %1 har tagits bort"
 
-#: handler.cpp:632
+#: handler.cpp:651
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Uppdatering av anslutning %1 misslyckades"
 
-#: handler.cpp:639
+#: handler.cpp:658
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Anslutning %1 har uppdaterats"
 
-#: handler.cpp:814
+#: handler.cpp:842
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Misslyckade skapa accesspunkt %1"

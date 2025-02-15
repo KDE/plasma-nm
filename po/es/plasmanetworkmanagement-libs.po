@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-12 00:43+0000\n"
+"POT-Creation-Date: 2025-02-15 00:44+0000\n"
 "PO-Revision-Date: 2024-12-14 02:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3264,52 +3264,52 @@ msgstr "NetworkManager carece de soporte lógico para conexiones VPN «%1»."
 msgid "Install"
 msgstr "Instalar"
 
-#: handler.cpp:191
+#: handler.cpp:195
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Ha ocurrido un fallo al activar %1"
 
-#: handler.cpp:365 handler.cpp:394
+#: handler.cpp:373 handler.cpp:402
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Ha ocurrido un fallo al añadir la conexión %1"
 
-#: handler.cpp:372 handler.cpp:403
+#: handler.cpp:380 handler.cpp:411
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Se ha añadido la conexión %1"
 
-#: handler.cpp:438
+#: handler.cpp:450
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Ha ocurrido un fallo al añadir %1"
 
-#: handler.cpp:478
+#: handler.cpp:490
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Ha ocurrido un fallo al desactivar %1"
 
-#: handler.cpp:609
+#: handler.cpp:624
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Ha ocurrido un fallo al eliminar %1"
 
-#: handler.cpp:616
+#: handler.cpp:631
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "La conexión %1 ha sido eliminada"
 
-#: handler.cpp:631
+#: handler.cpp:650
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "La actualización de la conexión %1 ha fallado"
 
-#: handler.cpp:638
+#: handler.cpp:657
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "La conexión %1 ha sido actualizada"
 
-#: handler.cpp:813
+#: handler.cpp:841
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "No se ha podido crear el punto de acceso %1"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-12 00:43+0000\n"
+"POT-Creation-Date: 2025-02-15 00:44+0000\n"
 "PO-Revision-Date: 2025-01-26 21:07+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3261,52 +3261,52 @@ msgstr "A NetworkManagerből hiányzik a(z) „%1” VPN-kapcsolatok támogatás
 msgid "Install"
 msgstr "Telepítés"
 
-#: handler.cpp:191
+#: handler.cpp:195
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Nem sikerült aktiválni: %1"
 
-#: handler.cpp:365 handler.cpp:394
+#: handler.cpp:373 handler.cpp:402
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Nem sikerült hozzáadni a(z) %1 kapcsolatot"
 
-#: handler.cpp:372 handler.cpp:403
+#: handler.cpp:380 handler.cpp:411
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "A(z) %1 kapcsolat sikeresen hozzáadva"
 
-#: handler.cpp:438
+#: handler.cpp:450
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Nem sikerült hozzáadni: %1"
 
-#: handler.cpp:478
+#: handler.cpp:490
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Nem sikerült deaktiválni: %1"
 
-#: handler.cpp:609
+#: handler.cpp:624
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Nem sikerült eltávolítani: %1"
 
-#: handler.cpp:616
+#: handler.cpp:631
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "A(z) %1 kapcsolat eltávolításra került"
 
-#: handler.cpp:631
+#: handler.cpp:650
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Nem sikerült frissíteni a(z) %1 kapcsolatot"
 
-#: handler.cpp:638
+#: handler.cpp:657
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "A(z) %1 kapcsolat frissült"
 
-#: handler.cpp:813
+#: handler.cpp:841
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "A(z) %1 hotspot létrehozása meghiúsult"

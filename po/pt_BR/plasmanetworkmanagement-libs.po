@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-12 00:43+0000\n"
+"POT-Creation-Date: 2025-02-15 00:44+0000\n"
 "PO-Revision-Date: 2025-02-04 15:48-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -3261,58 +3261,58 @@ msgid "Install"
 msgstr "Instalar"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:191
+#: handler.cpp:195
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Falha ao ativar a %1"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:365 handler.cpp:394
+#: handler.cpp:373 handler.cpp:402
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Falha ao adicionar a conexão %1"
 
-#: handler.cpp:372 handler.cpp:403
+#: handler.cpp:380 handler.cpp:411
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "A conexão %1 foi adicionada"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:438
+#: handler.cpp:450
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Falha ao adicionar a %1"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:478
+#: handler.cpp:490
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Falha ao desativar a %1"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:609
+#: handler.cpp:624
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Falha ao remover a %1"
 
-#: handler.cpp:616
+#: handler.cpp:631
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "A conexão %1 foi removida"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:631
+#: handler.cpp:650
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Falha ao atualizar a conexão %1"
 
-#: handler.cpp:638
+#: handler.cpp:657
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "A conexão %1 foi atualizada"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:813
+#: handler.cpp:841
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Falha ao criar o ponto de acesso %1"

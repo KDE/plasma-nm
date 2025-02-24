@@ -119,6 +119,7 @@ add_subdirectory(kded)
 add_subdirectory(kcm)
 add_subdirectory(libs)
 add_subdirectory(vpn)
+add_subdirectory(kcm_cellularnetwork)
 
 # Enable unit testing
 if (BUILD_TESTING)

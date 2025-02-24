@@ -120,6 +120,7 @@ add_subdirectory(kcm)
 add_subdirectory(kcm_mobile_wifi)
 add_subdirectory(libs)
 add_subdirectory(vpn)
+add_subdirectory(kcm_cellularnetwork)
 
 # Enable unit testing
 if (BUILD_TESTING)

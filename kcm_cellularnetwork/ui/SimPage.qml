@@ -32,7 +32,7 @@ FormCard.FormCardPage {
     property string simIdentifier: sim ? sim.simIdentifier : ""
     property var simEmergencyNumbers: sim ? sim.emergencyNumbers : []
 
-    title: i18n("SIM") + " " + displayId
+    title: i18nc("@title", "SIM %1", displayId)
 
     data: PlasmaNM.EnabledConnections {
         id: enabledConnections

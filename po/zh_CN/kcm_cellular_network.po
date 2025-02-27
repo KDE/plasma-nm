@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-02-27 00:42+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -636,7 +636,7 @@ msgstr "流量使用情况"
 msgid "View data usage."
 msgstr "查看流量使用情况。"
 
-#: ui/main.qml:122 ui/SimPage.qml:35
+#: ui/main.qml:122
 #, kde-format
 msgid "SIM"
 msgid_plural "SIMs"
@@ -922,6 +922,13 @@ msgstr "移除 SIM 卡 PIN 码"
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "添加 SIM 卡 PIN 码"
+
+#: ui/SimPage.qml:35
+#, fuzzy, kde-format
+#| msgid "SIM %1"
+msgctxt "@title"
+msgid "SIM %1"
+msgstr "SIM 卡 %1"
 
 #: ui/SimPage.qml:45
 #, kde-format

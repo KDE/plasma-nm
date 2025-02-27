@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-02-27 00:42+0000\n"
 "PO-Revision-Date: 2024-09-30 19:05+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -638,7 +638,7 @@ msgstr "Utilizzo dei dati"
 msgid "View data usage."
 msgstr "Visualizza l'utilizzo dei dati."
 
-#: ui/main.qml:122 ui/SimPage.qml:35
+#: ui/main.qml:122
 #, kde-format
 msgid "SIM"
 msgid_plural "SIMs"
@@ -930,6 +930,13 @@ msgstr "Rimuovi PIN dalla SIM"
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "Aggiungi PIN alla SIM"
+
+#: ui/SimPage.qml:35
+#, fuzzy, kde-format
+#| msgid "SIM %1"
+msgctxt "@title"
+msgid "SIM %1"
+msgstr "SIM %1"
 
 #: ui/SimPage.qml:45
 #, kde-format

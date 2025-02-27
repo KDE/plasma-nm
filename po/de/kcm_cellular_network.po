@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_cellular_network\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-02-27 00:42+0000\n"
 "PO-Revision-Date: 2024-10-30 15:23+0100\n"
 "Last-Translator: Flori G <Renner03@protonmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -640,7 +640,7 @@ msgstr "Datenverwendung"
 msgid "View data usage."
 msgstr "Datenverwendung anzeigen."
 
-#: ui/main.qml:122 ui/SimPage.qml:35
+#: ui/main.qml:122
 #, kde-format
 msgid "SIM"
 msgid_plural "SIMs"
@@ -930,6 +930,13 @@ msgstr "PIN für SIM entfernen"
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "PIN für SIM hinzufügen"
+
+#: ui/SimPage.qml:35
+#, fuzzy, kde-format
+#| msgid "SIM %1"
+msgctxt "@title"
+msgid "SIM %1"
+msgstr "SIM %1"
 
 #: ui/SimPage.qml:45
 #, kde-format

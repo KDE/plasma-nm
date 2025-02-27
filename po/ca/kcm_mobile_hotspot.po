@@ -6,7 +6,7 @@
 # Josep M. Ferrer <txemaq@gmail.com>, 2020, 2023.
 msgid ""
 msgstr ""
-"Project-Id-Version: plasma-mobile\n"
+"Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-26 00:43+0000\n"
 "PO-Revision-Date: 2023-12-18 10:38+0100\n"
@@ -51,6 +51,3 @@ msgstr "SSID del punt d'accés"
 #, kde-format
 msgid "Hotspot Password"
 msgstr "Contrasenya del punt d'accés"
-
-#~ msgid "Whether the wireless hotspot is enabled."
-#~ msgstr "Si el punt d'accés sense fil està activat."

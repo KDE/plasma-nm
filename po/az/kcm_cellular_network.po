@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-02-27 00:42+0000\n"
 "PO-Revision-Date: 2023-02-19 17:40+0400\n"
 "Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -638,7 +638,7 @@ msgstr "Verilənlərin istifadəsi"
 msgid "View data usage."
 msgstr "Verilənlərin istifadəsinə baxış."
 
-#: ui/main.qml:122 ui/SimPage.qml:35
+#: ui/main.qml:122
 #, fuzzy, kde-format
 #| msgid "SIM"
 msgid "SIM"
@@ -927,6 +927,13 @@ msgstr "SİM PİN kodunu silin"
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "SİM PİN kodu əlavə edin"
+
+#: ui/SimPage.qml:35
+#, fuzzy, kde-format
+#| msgid "SIM %1"
+msgctxt "@title"
+msgid "SIM %1"
+msgstr "SIM %1"
 
 #: ui/SimPage.qml:45
 #, kde-format

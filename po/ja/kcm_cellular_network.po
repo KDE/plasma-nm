@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-02-27 00:42+0000\n"
 "PO-Revision-Date: 2021-09-18 17:27-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -633,7 +633,7 @@ msgstr ""
 msgid "View data usage."
 msgstr ""
 
-#: ui/main.qml:122 ui/SimPage.qml:35
+#: ui/main.qml:122
 #, kde-format
 msgid "SIM"
 msgid_plural "SIMs"
@@ -916,6 +916,12 @@ msgstr ""
 #: ui/SimLockPage.qml:191
 #, kde-format
 msgid "Add SIM PIN"
+msgstr ""
+
+#: ui/SimPage.qml:35
+#, kde-format
+msgctxt "@title"
+msgid "SIM %1"
 msgstr ""
 
 #: ui/SimPage.qml:45

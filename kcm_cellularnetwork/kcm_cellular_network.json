@@ -2,6 +2,7 @@
     "Categories": "Qt;KDE;X-KDE-settings-system;",
     "KPlugin": {
         "Description": "Management of cellular networks",
+        "Description[ca@valencia]": "Gestió de xarxes de telefonia mòbil",
         "Description[ca]": "Gestió de xarxes de telefonia mòbil",
         "Description[es]": "Gestión de redes móviles",
         "Description[he]": "ניהול רשתות סלולריות",
@@ -20,6 +21,7 @@
         ],
         "Icon": "smartphone",
         "Name": "Cellular Network",
+        "Name[ca@valencia]": "Xarxa de telefonia mòbil",
         "Name[ca]": "Xarxa de telefonia mòbil",
         "Name[es]": "Red móvil",
         "Name[he]": "רשת סלולרית",
@@ -33,6 +35,7 @@
         "Name[x-test]": "xxCellular Networkxx"
     },
     "X-KDE-Keywords": "mobile,data,network",
+    "X-KDE-Keywords[ca@valencia]": "mòbil,dades,xarxa",
     "X-KDE-Keywords[ca]": "mòbil,dades,xarxa",
     "X-KDE-Keywords[da]": "mobil,data,netværk",
     "X-KDE-Keywords[de]": "mobil,daten,netzwerk",
@@ -41,6 +44,7 @@
     "X-KDE-Keywords[et]": "mobiil,mobiilandmeside,andmed,võrk",
     "X-KDE-Keywords[eu]": "mugikorra,datuak,sarea",
     "X-KDE-Keywords[fi]": "mobiili,data,verkko",
+    "X-KDE-Keywords[fr]": "mobile,données,réseau",
     "X-KDE-Keywords[gl]": "móbil,datos,rede",
     "X-KDE-Keywords[he]": "נייד,נתונים,רשת,פס רחב",
     "X-KDE-Keywords[hu]": "mobil,adat,hálózat",

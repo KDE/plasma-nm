@@ -5,20 +5,21 @@
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2014, 2015, 2016.
 # Aracele Torres <aracele@kde.org>, 2017.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2017, 2020, 2021.
+# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-10 00:40+0000\n"
-"PO-Revision-Date: 2021-06-02 10:29-0300\n"
-"Last-Translator: Luiz Fernando Ranghetti <elchevive@opensuse.org>\n"
+"PO-Revision-Date: 2025-02-27 20:09-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 20.04.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -102,8 +103,8 @@ msgid ""
 "<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
 "host name for</p><p>authentication purposes.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Adiciona o nome de domínio  &lt;domínio&gt;  ao nome "
-"da máquina local</p><p>para fins de autenticação.</p></body></html>"
+"<html><head/><body><p>Adiciona o nome de domínio &lt;domínio&gt; ao nome da "
+"máquina local</p><p>para fins de autenticação.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)

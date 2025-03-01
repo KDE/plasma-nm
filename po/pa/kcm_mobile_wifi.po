@@ -1,21 +1,21 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2021, 2023 A S Alam <aalam.yellow@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2023, 2025 A S Alam <aalam.yellow@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-26 00:43+0000\n"
-"PO-Revision-Date: 2023-12-24 09:09-0600\n"
-"Last-Translator: A S Alam <aalam@punlinux.org>\n"
-"Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2025-02-28 10:23-0600\n"
+"Last-Translator: A S Alam <aman@punlinux.org>\n"
+"Language-Team: pa\n"
 "Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: ui/ConnectDialog.qml:57
 #, kde-format
@@ -26,25 +26,24 @@ msgstr "ਗਲਤ ਇੰਪੁੱਟ ਹੈ।"
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
-msgstr ""
+msgstr "\"%1\" ਲਈ ਕਨੈਕਸ਼ਨ ਜਾਣਕਾਰੀ"
 
 #: ui/ConnectionInfo.qml:21
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
-msgstr ""
+msgstr "ਟਰਾਂਸਫਰ ਰੇਟ"
 
 #: ui/ConnectionInfo.qml:37
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr ""
+msgstr "ਕਨੈਕਟ ਹੈ, ↓ %1/s, ↑ %2/s"
 
 #: ui/ConnectionInfo.qml:44
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
-msgstr "ਕਨੈਕਟ ਕਰੋ"
+msgstr "ਕਨੈਕਸ਼ਨ ਦੇ ਵੇਰਵੇ"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -62,11 +61,10 @@ msgid "Wi-Fi"
 msgstr "ਵਾਈ-ਫਾਈ"
 
 #: ui/main.qml:98
-#, fuzzy, kde-format
-#| msgid "Available Networks"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Networks"
-msgstr "ਮੌਜੂਦਾ ਨੈੱਟਵਰਕ"
+msgstr "ਸੰਭਾਲੇ ਹੋਏ ਨੈੱਟਵਰਕ"
 
 #: ui/main.qml:135
 #, kde-format
@@ -89,17 +87,15 @@ msgid "Save"
 msgstr "ਸੰਭਾਲੋ"
 
 #: ui/NetworkSettings.qml:52
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "ਆਮ"
 
 #: ui/NetworkSettings.qml:58
-#, fuzzy, kde-format
-#| msgid "SSID:"
+#, kde-format
 msgid "SSID"
-msgstr "SSID:"
+msgstr "SSID"
 
 #: ui/NetworkSettings.qml:73
 #, kde-format
@@ -107,17 +103,15 @@ msgid "Hidden Network"
 msgstr "ਲੁਕਵਾਂ ਨੈੱਟਵਰਕ"
 
 #: ui/NetworkSettings.qml:80
-#, fuzzy, kde-format
-#| msgid "Security"
+#, kde-format
 msgctxt "@title:group"
 msgid "Security"
 msgstr "ਸੁਰੱਖਿਆ"
 
 #: ui/NetworkSettings.qml:87
-#, fuzzy, kde-format
-#| msgid "Security type:"
+#, kde-format
 msgid "Security type"
-msgstr "ਸੁਰੱਖਿਆ ਦੀ ਕਿਸਮ:"
+msgstr "ਸੁਰੱਖਿਆ ਦੀ ਕਿਸਮ"
 
 #: ui/NetworkSettings.qml:96
 #, kde-format
@@ -145,22 +139,19 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 ਇੰਟਰਪ੍ਰਾਈਜ"
 
 #: ui/NetworkSettings.qml:101
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA3 Personal"
-msgstr "WPA/WPA2 ਪਰਸਨਲ"
+msgstr "WPA3 ਪਰਸਨਲ"
 
 #: ui/NetworkSettings.qml:102
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise"
-msgstr "WPA/WPA2 ਇੰਟਰਪ੍ਰਾਈਜ"
+msgstr "WPA3 ਇੰਟਰਪ੍ਰਾਈਜ"
 
 #: ui/NetworkSettings.qml:140
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password"
-msgstr "ਪਾਸਵਰਡ:"
+msgstr "ਪਾਸਵਰਡ"
 
 #: ui/NetworkSettings.qml:156
 #, kde-format
@@ -193,8 +184,7 @@ msgid "Protected EAP"
 msgstr "ਸੁਰੱਖਿਅਤ EAP"
 
 #: ui/NetworkSettings.qml:173
-#, fuzzy, kde-format
-#| msgid "IP settings"
+#, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP ਸੈਟਿੰਗਾਂ"
@@ -237,17 +227,17 @@ msgstr "…ਪਾਸਵਰਡ"
 #: ui/TrafficMonitor.qml:37 ui/TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
-msgstr ""
+msgstr "/s"
 
 #: ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
-msgstr ""
+msgstr "ਅੱਪਲੋਡ"
 
 #: ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "ਡਾਊਨਲੋਡ"
 
 #~ msgid "Wi-Fi is disabled"
 #~ msgstr "ਵਾਈ-ਫ਼ਾਈ ਅਸਮਰੱਥ ਹੈ"

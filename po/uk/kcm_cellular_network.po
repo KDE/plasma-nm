@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-settings package.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2021, 2022, 2023, 2024.
+# Yuri Chornoivan <yurchor@ukr.net>, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-27 00:42+0000\n"
-"PO-Revision-Date: 2024-09-29 08:48+0300\n"
+"PO-Revision-Date: 2025-02-27 08:40+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -934,8 +934,7 @@ msgid "Add SIM PIN"
 msgstr "Додати PIN-код SIM-картки"
 
 #: ui/SimPage.qml:35
-#, fuzzy, kde-format
-#| msgid "SIM %1"
+#, kde-format
 msgctxt "@title"
 msgid "SIM %1"
 msgstr "SIM-картка %1"

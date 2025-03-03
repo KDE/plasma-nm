@@ -248,12 +248,12 @@ void Handler::requestWifiCode(const QString &connectionPath, const QString &ssid
     connect(m_requestWifiCodeWatcher, &QDBusPendingCallWatcher::finished, this, &Handler::slotRequestWifiCode);
 }
 
-void Handler::addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password)
+void Handler::addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password, StoreMode storeMode)
 {
-    addAndActivateConnectionInternal(device, specificParameter, password);
+    addAndActivateConnectionInternal(device, specificParameter, password, storeMode);
 }
 
-QCoro::Task<void> Handler::addAndActivateConnectionInternal(const QString &device, const QString &specificObject, const QString &password)
+QCoro::Task<void> Handler::addAndActivateConnectionInternal(const QString &device, const QString &specificObject, const QString &password, StoreMode storeMode)
 {
     NetworkManager::AccessPoint::Ptr ap;
     NetworkManager::WirelessDevice::Ptr wifiDev;
@@ -337,6 +337,7 @@ QCoro::Task<void> Handler::addAndActivateConnectionInternal(const QString &devic
         if (securityType == NetworkManager::StaticWep) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
             wifiSecurity->setWepKey0(password);
+            wifiSecurity->setWepKeyFlags(storeMode == StoreForUser ? NetworkManager::Setting::AgentOwned : NetworkManager::Setting::None);
         } else if (securityType == NetworkManager::OWE) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::OWE);
         } else {
@@ -348,6 +349,7 @@ QCoro::Task<void> Handler::addAndActivateConnectionInternal(const QString &devic
                 wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
             }
             wifiSecurity->setPsk(password);
+            wifiSecurity->setPskFlags(storeMode == StoreForUser ? NetworkManager::Setting::AgentOwned : NetworkManager::Setting::None);
         }
         addAndActivateConnectionDBus(settings->toMap(), device, specificObject);
     }

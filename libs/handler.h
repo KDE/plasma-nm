@@ -28,17 +28,20 @@ class PLASMANM_INTERNAL_EXPORT Handler : public QObject
 {
     Q_OBJECT
     QML_ELEMENT
-
-public:
-    explicit Handler(QObject *parent = nullptr);
-    ~Handler() override;
-
     Q_PROPERTY(bool hotspotSupported READ hotspotSupported NOTIFY hotspotSupportedChanged)
-
     // Not scientifically correct, but a good estimation of whether a scanning is currently in progress.
     Q_PROPERTY(bool scanning READ isScanning NOTIFY scanningChanged)
 
 public:
+    enum StoreMode {
+        StoreForUser,
+        StoreForAllUsers,
+    };
+    Q_ENUM(StoreMode);
+
+    explicit Handler(QObject *parent = nullptr);
+    ~Handler() override;
+
     bool hotspotSupported() const
     {
         return m_hotspotSupported;
@@ -69,7 +72,8 @@ public Q_SLOTS:
      * Works automatically for wireless connections with WEP/WPA security, for wireless connections with WPA/WPA
      * it will open the connection editor for advanced configuration.
      * */
-    void addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password = QString());
+    void
+    addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password = QString(), StoreMode storeMode = StoreForUser);
 
     /**
      * Request a code that includes the credentials to a said wifi connection
@@ -141,7 +145,10 @@ Q_SIGNALS:
 private:
     QCoro::Task<void> addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject);
     QCoro::Task<void> activateConnectionInternal(const QString &connection, const QString &device, const QString &specificParameter);
-    QCoro::Task<void> addAndActivateConnectionInternal(const QString &device, const QString &specificParameter, const QString &password = QString());
+    QCoro::Task<void> addAndActivateConnectionInternal(const QString &device,
+                                                       const QString &specificParameter,
+                                                       const QString &password = QString(),
+                                                       StoreMode storeMode = StoreForUser);
     QCoro::Task<void> deactivateConnectionInternal(const QString &connection, const QString &device);
     QCoro::Task<void> removeConnectionInternal(const QString &connection);
     QCoro::Task<void> requestScanInternal(const QString &interface = QString());

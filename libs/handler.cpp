@@ -257,12 +257,12 @@ void Handler::requestWifiCode(const QString &connectionPath, const QString &ssid
     });
 }
 
-void Handler::addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password)
+void Handler::addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password, StoreMode storeMode)
 {
-    addAndActivateConnectionInternal(device, specificParameter, password);
+    addAndActivateConnectionInternal(device, specificParameter, password, storeMode);
 }
 
-QCoro::Task<> Handler::addAndActivateConnectionInternal(const QString &device, const QString &specificObject, const QString &password)
+QCoro::Task<> Handler::addAndActivateConnectionInternal(const QString &device, const QString &specificObject, const QString &password, StoreMode storeMode)
 {
     NetworkManager::AccessPoint::Ptr ap;
     NetworkManager::WirelessDevice::Ptr wifiDev;
@@ -346,6 +346,7 @@ QCoro::Task<> Handler::addAndActivateConnectionInternal(const QString &device, c
         if (securityType == NetworkManager::StaticWep) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::Wep);
             wifiSecurity->setWepKey0(password);
+            wifiSecurity->setWepKeyFlags(storeMode == StoreForUser ? NetworkManager::Setting::AgentOwned : NetworkManager::Setting::None);
         } else if (securityType == NetworkManager::OWE) {
             wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::OWE);
         } else {
@@ -357,6 +358,7 @@ QCoro::Task<> Handler::addAndActivateConnectionInternal(const QString &device, c
                 wifiSecurity->setKeyMgmt(NetworkManager::WirelessSecuritySetting::WpaPsk);
             }
             wifiSecurity->setPsk(password);
+            wifiSecurity->setPskFlags(storeMode == StoreForUser ? NetworkManager::Setting::AgentOwned : NetworkManager::Setting::None);
         }
         addAndActivateConnectionDBus(settings->toMap(), device, specificObject);
     }

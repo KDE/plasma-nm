@@ -39,9 +39,6 @@
 #include <KNotification>
 #include <KOSRelease>
 #include <KPluginMetaData>
-#include <KProcess>
-#include <KUser>
-#include <KWallet>
 #include <KWindowSystem>
 #include <KX11Extras>
 

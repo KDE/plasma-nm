@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-15 00:44+0000\n"
+"POT-Creation-Date: 2025-03-04 00:42+0000\n"
 "PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -3233,72 +3233,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "R&forigi"
 
-#: handler.cpp:120
+#: handler.cpp:117
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasmo mankas subteno por '%1' VPN-konektoj."
 
-#: handler.cpp:123
+#: handler.cpp:120
 #, kde-format
 msgid "Report Bug"
 msgstr "Raporti Cimon"
 
-#: handler.cpp:146
+#: handler.cpp:143
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager mankas subteno por '%1' VPN-konektoj."
 
-#: handler.cpp:149
+#: handler.cpp:146
 #, kde-format
 msgid "Install"
 msgstr "Instali"
 
-#: handler.cpp:195
+#: handler.cpp:192
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Malsukcesis aktivigi %1"
 
-#: handler.cpp:373 handler.cpp:402
+#: handler.cpp:370 handler.cpp:399
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Malsukcesis aldoni konekton %1"
 
-#: handler.cpp:380 handler.cpp:411
+#: handler.cpp:377 handler.cpp:408
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Konekto %1 estis aldonita"
 
-#: handler.cpp:450
+#: handler.cpp:447
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Malsukcesis aldoni %1"
 
-#: handler.cpp:490
+#: handler.cpp:487
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Malsukcesis malaktivigi %1"
 
-#: handler.cpp:624
+#: handler.cpp:621
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Malsukcesis forigi %1"
 
-#: handler.cpp:631
+#: handler.cpp:628
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Konekto %1 estas forigita"
 
-#: handler.cpp:650
+#: handler.cpp:647
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Malsukcesis ĝisdatigi konekton %1"
 
-#: handler.cpp:657
+#: handler.cpp:654
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Konekto %1 estas ĝisdatigita"
 
-#: handler.cpp:841
+#: handler.cpp:838
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Malsukcesis krei retpunkton %1"

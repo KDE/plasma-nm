@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-15 00:44+0000\n"
+"POT-Creation-Date: 2025-03-04 00:42+0000\n"
 "PO-Revision-Date: 2024-12-14 02:52+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -3244,72 +3244,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Eliminar"
 
-#: handler.cpp:120
+#: handler.cpp:117
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma carece de soporte lógico para conexiones VPN «%1»."
 
-#: handler.cpp:123
+#: handler.cpp:120
 #, kde-format
 msgid "Report Bug"
 msgstr "Informar del fallo"
 
-#: handler.cpp:146
+#: handler.cpp:143
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager carece de soporte lógico para conexiones VPN «%1»."
 
-#: handler.cpp:149
+#: handler.cpp:146
 #, kde-format
 msgid "Install"
 msgstr "Instalar"
 
-#: handler.cpp:195
+#: handler.cpp:192
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Ha ocurrido un fallo al activar %1"
 
-#: handler.cpp:373 handler.cpp:402
+#: handler.cpp:370 handler.cpp:399
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Ha ocurrido un fallo al añadir la conexión %1"
 
-#: handler.cpp:380 handler.cpp:411
+#: handler.cpp:377 handler.cpp:408
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Se ha añadido la conexión %1"
 
-#: handler.cpp:450
+#: handler.cpp:447
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Ha ocurrido un fallo al añadir %1"
 
-#: handler.cpp:490
+#: handler.cpp:487
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Ha ocurrido un fallo al desactivar %1"
 
-#: handler.cpp:624
+#: handler.cpp:621
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Ha ocurrido un fallo al eliminar %1"
 
-#: handler.cpp:631
+#: handler.cpp:628
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "La conexión %1 ha sido eliminada"
 
-#: handler.cpp:650
+#: handler.cpp:647
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "La actualización de la conexión %1 ha fallado"
 
-#: handler.cpp:657
+#: handler.cpp:654
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "La conexión %1 ha sido actualizada"
 
-#: handler.cpp:841
+#: handler.cpp:838
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "No se ha podido crear el punto de acceso %1"

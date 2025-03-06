@@ -21,6 +21,7 @@
         "Description[ka]": "უსადენო ქსელის მორგება",
         "Description[ko]": "무선 네트워크 설정",
         "Description[lt]": "Belaidžio tinklo nuostata",
+        "Description[lv]": "Bezvadu tīkla iestatījumi",
         "Description[nl]": "Instelling van draadloos netwerk",
         "Description[nn]": "Innstilling for trådlaust nettverk",
         "Description[pl]": "Ustawienia sieci bezprzewodowej",
@@ -35,6 +36,7 @@
         "Description[tr]": "Kablosuz ağ ayarları",
         "Description[uk]": "Налаштовування бездротової мережі",
         "Description[x-test]": "xxWireless network settingxx",
+        "Description[zh_CN]": "无线网络设置",
         "Description[zh_TW]": "無線網路設定",
         "FormFactors": [
             "handset",
@@ -66,6 +68,7 @@
         "Name[ka]": "Wi-Fi",
         "Name[ko]": "Wi-Fi",
         "Name[lt]": "Belaidis (Wi-Fi)",
+        "Name[lv]": "Wi-Fi",
         "Name[ml]": "വൈ-ഫൈ",
         "Name[nl]": "Wi-Fi",
         "Name[nn]": "Wi-Fi",
@@ -83,6 +86,7 @@
         "Name[tr]": "Wi-Fi",
         "Name[uk]": "Wi-Fi",
         "Name[x-test]": "xxWi-Fixx",
+        "Name[zh_CN]": "Wi-Fi",
         "Name[zh_TW]": "Wi-Fi"
     },
     "X-KDE-Keywords": "wifi,network",
@@ -107,6 +111,7 @@
     "X-KDE-Keywords[ka]": "wifi,network",
     "X-KDE-Keywords[ko]": "wifi,network,네트워크,무선",
     "X-KDE-Keywords[lt]": "wifi,belaidis,bevielis,tinklas",
+    "X-KDE-Keywords[lv]": "wifi,tīkls",
     "X-KDE-Keywords[ml]": "വൈഫൈ,ശൃംഖല",
     "X-KDE-Keywords[nl]": "wifi,netwerk",
     "X-KDE-Keywords[nn]": "wifi,nettverk,trådlaust",
@@ -123,6 +128,7 @@
     "X-KDE-Keywords[tr]": "wifi,kablosuz,wi-fi,ağ",
     "X-KDE-Keywords[uk]": "wifi,network,вайфай,мережа",
     "X-KDE-Keywords[x-test]": "xxwifixx,xxnetworkxx",
+    "X-KDE-Keywords[zh_CN]": "wifi,network,wangluo,wuxian,网络,无线",
     "X-KDE-Keywords[zh_TW]": "wifi,network,網路,無線網路",
     "X-KDE-System-Settings-Parent-Category": "network",
     "X-KDE-Weight": 70

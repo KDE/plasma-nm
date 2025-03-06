@@ -23,6 +23,7 @@
                 "Name[ka]": "Tobias Fella",
                 "Name[ko]": "Tobias Fella",
                 "Name[lt]": "Tobias Fella",
+                "Name[lv]": "Tobias Fella",
                 "Name[nl]": "Tobias Fella",
                 "Name[nn]": "Tobias Fella",
                 "Name[pl]": "Tobias Fella",
@@ -37,6 +38,7 @@
                 "Name[tr]": "Tobias Fella",
                 "Name[uk]": "Tobias Fella",
                 "Name[x-test]": "xxTobias Fellaxx",
+                "Name[zh_CN]": "Tobias Fella",
                 "Name[zh_TW]": "Tobias Fella"
             }
         ],
@@ -59,6 +61,7 @@
         "Description[ka]": "Wi-Fi ჰოტსპოტი",
         "Description[ko]": "Wi-Fi 핫스팟",
         "Description[lt]": "Belaidis (Wi-Fi) prieigos taškas",
+        "Description[lv]": "„Wi-Fi“ tīklājs",
         "Description[nl]": "Wi-Fi-hotspot",
         "Description[nn]": "Trådlaussone",
         "Description[pl]": "Hotspot Wi-Fi",
@@ -71,6 +74,7 @@
         "Description[tr]": "Wi-Fi erişim noktası",
         "Description[uk]": "Хот-спот Wi-Fi",
         "Description[x-test]": "xxWi-Fi Hotspotxx",
+        "Description[zh_CN]": "Wi-Fi 热点",
         "Description[zh_TW]": "Wi-Fi 熱點",
         "EnabledByDefault": true,
         "FormFactors": [
@@ -104,6 +108,7 @@
         "Name[ka]": "ჰოტსპოტი",
         "Name[ko]": "핫스팟",
         "Name[lt]": "Prieigos taškas",
+        "Name[lv]": "Tīklājs",
         "Name[nl]": "Hotspot",
         "Name[nn]": "Trådlaussone",
         "Name[pa]": "ਹਾਟਸਪਾਟ",
@@ -119,6 +124,7 @@
         "Name[tr]": "Erişim Noktası",
         "Name[uk]": "Хот-спот",
         "Name[x-test]": "xxHotspotxx",
+        "Name[zh_CN]": "无线热点",
         "Name[zh_TW]": "熱點",
         "Website": "https://plasma-mobile.org/"
     },

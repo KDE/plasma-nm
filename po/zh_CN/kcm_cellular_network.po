@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/plasma-mobile/kcm_cellular_network.pot\n"
-"X-Crowdin-File-ID: 43141\n"
+"X-Crowdin-File: /kf6-trunk/messages/plasma-nm/kcm_cellular_network.pot\n"
+"X-Crowdin-File-ID: 57219\n"
 
 #: modem.cpp:130
 #, kde-format
@@ -924,8 +924,7 @@ msgid "Add SIM PIN"
 msgstr "添加 SIM 卡 PIN 码"
 
 #: ui/SimPage.qml:35
-#, fuzzy, kde-format
-#| msgid "SIM %1"
+#, kde-format
 msgctxt "@title"
 msgid "SIM %1"
 msgstr "SIM 卡 %1"

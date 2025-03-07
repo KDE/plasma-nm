@@ -8,13 +8,17 @@ import QtQuick.Controls as Controls
 
 import org.kde.kirigami as Kirigami
 import org.kde.plasma.networkmanagement as PlasmaNM
+import org.kde.networkmanager as NetworkManager
 import org.kde.kcmutils
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 
 Kirigami.ScrollablePage {
-    title: path ?  wirelessSettings["ssid"] : i18n("Add New Connection")
+    title: connection?.name ?? i18n("Add New Connection")
 
-    property var path
+    property string path
+
+    readonly property NetworkManager.connectionPtr connectionPtr: NetworkManager.SettingsManager.findConnection(path)
+    readonly property NetworkManager.Connection connection: connectionPtr.connection
 
     property var wirelessSettings: ({})
     property var securitySettings: ({})
@@ -267,7 +271,11 @@ Kirigami.ScrollablePage {
         secrets = kcm.getConnectionSettings(path, "secrets")
 
         securityTypesModel.load()
+        console.log("current connection", connection)
     }
+
+    onConnectionChanged: console.log("new connection", connection, connection.name, connection.uuid)
+
 
     function save() {
         var settings = ipSettings

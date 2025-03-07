@@ -15,11 +15,8 @@ class WifiSettings : public KQuickConfigModule
 public:
     WifiSettings(QObject *parent, const KPluginMetaData &metaData);
     Q_INVOKABLE QVariantMap getConnectionSettings(const QString &connection, const QString &type);
-    Q_INVOKABLE QVariantMap getActiveConnectionInfo(const QString &connection);
     Q_INVOKABLE void addConnectionFromQML(const QVariantMap &QMLmap);
     Q_INVOKABLE void updateConnectionFromQML(const QString &path, const QVariantMap &map);
-    Q_INVOKABLE QString getAccessPointDevice();
-    Q_INVOKABLE QString getAccessPointConnection();
 };
 
 #endif // WIFISETTINGS_H

@@ -63,35 +63,6 @@ QVariantMap WifiSettings::getConnectionSettings(const QString &connection, const
     return map;
 }
 
-QVariantMap WifiSettings::getActiveConnectionInfo(const QString &connection)
-{
-    if (connection.isEmpty())
-        return QVariantMap();
-
-    NetworkManager::ActiveConnection::Ptr activeCon;
-    NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
-    foreach (const NetworkManager::ActiveConnection::Ptr &active, NetworkManager::activeConnections()) {
-        if (active->uuid() == con->uuid())
-            activeCon = active;
-    }
-
-    if (!activeCon) {
-        qWarning() << "Active" << connection << "not found";
-        return QVariantMap();
-    }
-
-    QVariantMap map;
-    if (activeCon->ipV4Config().addresses().count() > 0) {
-        map.insert("address", QVariant(activeCon->ipV4Config().addresses().first().ip().toString()));
-        map.insert("prefix", QVariant(activeCon->ipV4Config().addresses().first().netmask().toString()));
-    }
-    map.insert("gateway", QVariant(activeCon->ipV4Config().gateway()));
-    if (activeCon->ipV4Config().nameservers().count() > 0)
-        map.insert("dns", QVariant(activeCon->ipV4Config().nameservers().first().toString()));
-    // qWarning() << map;
-    return map;
-}
-
 void WifiSettings::addConnectionFromQML(const QVariantMap &QMLmap)
 {
     if (QMLmap.isEmpty())
@@ -256,37 +227,6 @@ void WifiSettings::updateConnectionFromQML(const QString &path, const QVariantMa
     }
     qWarning() << toUpdateMap;
     con->update(toUpdateMap);
-}
-
-QString WifiSettings::getAccessPointDevice()
-{
-    NetworkManager::WirelessDevice::Ptr device;
-    foreach (const NetworkManager::Device::Ptr &dev, NetworkManager::networkInterfaces()) {
-        if (dev->type() == NetworkManager::Device::Wifi) {
-            device = dev.staticCast<NetworkManager::WirelessDevice>();
-            if (device->wirelessCapabilities().testFlag(NetworkManager::WirelessDevice::ApCap))
-                break; // we have wireless device with access point capability
-        }
-    }
-    if (device) {
-        return device->uni();
-    } else {
-        qWarning() << "No wireless device found";
-    }
-    return QString();
-}
-
-QString WifiSettings::getAccessPointConnection()
-{
-    foreach (const NetworkManager::Connection::Ptr &con, NetworkManager::listConnections()) {
-        NetworkManager::Setting::Ptr d = con->settings()->setting(NetworkManager::Setting::Wireless);
-        if (!d.isNull()) {
-            if (d.staticCast<NetworkManager::WirelessSetting>()->mode() == NetworkManager::WirelessSetting::Ap) {
-                return con->path();
-            }
-        }
-    }
-    return QString();
 }
 
 #include "wifisettings.moc"

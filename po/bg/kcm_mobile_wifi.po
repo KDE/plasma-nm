@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Mincho Kondarev <mkondarev@yahoo.de>, 2022.
+# SPDX-FileCopyrightText: 2022, 2025 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-26 00:43+0000\n"
-"PO-Revision-Date: 2022-05-22 13:09+0200\n"
+"PO-Revision-Date: 2025-03-06 20:18+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.04.0\n"
+"X-Generator: Lokalize 25.03.70\n"
 
 #: ui/ConnectDialog.qml:57
 #, kde-format
@@ -26,25 +26,24 @@ msgstr "Невалиден вход."
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
-msgstr ""
+msgstr "Данни за връзка за „%1“"
 
 #: ui/ConnectionInfo.qml:21
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
-msgstr ""
+msgstr "Скорост на трансфер"
 
 #: ui/ConnectionInfo.qml:37
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr ""
+msgstr "Свързано, ↓ %1/s, ↑ %2/s"
 
 #: ui/ConnectionInfo.qml:44
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
-msgstr "Свързване с"
+msgstr "Данни за връзката"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -54,35 +53,31 @@ msgstr "Свързване с"
 #: ui/main.qml:26
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "Редактиране"
 
 #: ui/main.qml:87
 #, kde-format
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: ui/main.qml:98
-#, fuzzy, kde-format
-#| msgid "Hidden Network:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Networks"
-msgstr "Скрита мрежа:"
+msgstr "Запомнени мрежи"
 
 #: ui/main.qml:135
-#, fuzzy, kde-format
-#| msgid "Hidden Network:"
+#, kde-format
 msgid "Available Networks"
-msgstr "Скрита мрежа:"
+msgstr "Налични мрежи"
 
 #: ui/main.qml:169
-#, fuzzy, kde-format
-#| msgid "Add new Connection"
+#, kde-format
 msgid "Add Custom Connection"
-msgstr "Добавяне на нова връзка"
+msgstr "Добавяне на потребителска връзка"
 
 #: ui/NetworkSettings.qml:15
-#, fuzzy, kde-format
-#| msgid "Add new Connection"
+#, kde-format
 msgid "Add New Connection"
 msgstr "Добавяне на нова връзка"
 
@@ -95,29 +90,28 @@ msgstr "Запазване"
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "Общи"
 
 #: ui/NetworkSettings.qml:58
 #, kde-format
 msgid "SSID"
-msgstr ""
+msgstr "SSID"
 
 #: ui/NetworkSettings.qml:73
-#, fuzzy, kde-format
-#| msgid "Hidden Network:"
+#, kde-format
 msgid "Hidden Network"
-msgstr "Скрита мрежа:"
+msgstr "Скрита мрежа"
 
 #: ui/NetworkSettings.qml:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Security"
-msgstr ""
+msgstr "Сигурност"
 
 #: ui/NetworkSettings.qml:87
 #, kde-format
 msgid "Security type"
-msgstr ""
+msgstr "Тип сигурност"
 
 #: ui/NetworkSettings.qml:96
 #, kde-format
@@ -145,22 +139,19 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
 #: ui/NetworkSettings.qml:101
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA3 Personal"
-msgstr "WPA/WPA2 Personal"
+msgstr "WPA3 Personal"
 
 #: ui/NetworkSettings.qml:102
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise"
-msgstr "WPA/WPA2 Enterprise"
+msgstr "WPA3 Enterprise"
 
 #: ui/NetworkSettings.qml:140
-#, fuzzy, kde-format
-#| msgid "Password…"
+#, kde-format
 msgid "Password"
-msgstr "Парола…"
+msgstr "Пароли"
 
 #: ui/NetworkSettings.qml:156
 #, kde-format
@@ -196,7 +187,7 @@ msgstr "Защитена EAP"
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
-msgstr ""
+msgstr "Настройки на IP"
 
 #: ui/NetworkSettings.qml:180
 #, kde-format
@@ -209,28 +200,24 @@ msgid "Manual"
 msgstr "Ръчно"
 
 #: ui/NetworkSettings.qml:196
-#, fuzzy, kde-format
-#| msgid "IP Address:"
+#, kde-format
 msgid "IP Address"
-msgstr "IP адрес:"
+msgstr "IP-адрес"
 
 #: ui/NetworkSettings.qml:214
-#, fuzzy, kde-format
-#| msgid "Gateway:"
+#, kde-format
 msgid "Gateway"
-msgstr "Шлюз:"
+msgstr "Шлюз"
 
 #: ui/NetworkSettings.qml:232
-#, fuzzy, kde-format
-#| msgid "Network prefix length:"
+#, kde-format
 msgid "Network prefix length"
-msgstr "Дължина на мрежовия префикс:"
+msgstr "Дължина на мрежовия префикс"
 
 #: ui/NetworkSettings.qml:251
-#, fuzzy, kde-format
-#| msgid "DNS:"
+#, kde-format
 msgid "DNS"
-msgstr "DNS:"
+msgstr "DNS"
 
 #: ui/PasswordField.qml:13
 #, kde-format
@@ -240,14 +227,14 @@ msgstr "Парола…"
 #: ui/TrafficMonitor.qml:37 ui/TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
-msgstr ""
+msgstr "/s"
 
 #: ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
-msgstr ""
+msgstr "Качване"
 
 #: ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "Изтегляне"

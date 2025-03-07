@@ -2,6 +2,7 @@
     "Categories": "Qt;KDE;X-KDE-settings-system;",
     "KPlugin": {
         "Description": "Management of cellular networks",
+        "Description[bg]": "Управление на мобилни мрежи",
         "Description[ca@valencia]": "Gestió de xarxes de telefonia mòbil",
         "Description[ca]": "Gestió de xarxes de telefonia mòbil",
         "Description[es]": "Gestión de redes móviles",
@@ -26,6 +27,7 @@
         ],
         "Icon": "smartphone",
         "Name": "Cellular Network",
+        "Name[bg]": "Мобилна мрежа",
         "Name[ca@valencia]": "Xarxa de telefonia mòbil",
         "Name[ca]": "Xarxa de telefonia mòbil",
         "Name[es]": "Red móvil",
@@ -45,6 +47,7 @@
         "Name[zh_CN]": "移动网络"
     },
     "X-KDE-Keywords": "mobile,data,network",
+    "X-KDE-Keywords[bg]": "мобилни,данни,мрежа",
     "X-KDE-Keywords[ca@valencia]": "mòbil,dades,xarxa",
     "X-KDE-Keywords[ca]": "mòbil,dades,xarxa",
     "X-KDE-Keywords[da]": "mobil,data,netværk",

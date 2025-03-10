@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-26 00:43+0000\n"
-"PO-Revision-Date: 2024-02-14 01:40+0200\n"
+"PO-Revision-Date: 2025-03-10 00:00+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.5\n"
 
 #: ui/ConnectDialog.qml:57
 #, kde-format
@@ -28,25 +28,24 @@ msgstr "Neteisinga įvestis."
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
-msgstr ""
+msgstr "Informacija apie ryšį „%1“"
 
 #: ui/ConnectionInfo.qml:21
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
-msgstr ""
+msgstr "Perdavimo spartos"
 
 #: ui/ConnectionInfo.qml:37
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr ""
+msgstr "Prisijungta, ↓ %1/sek., ↑ %2/sek."
 
 #: ui/ConnectionInfo.qml:44
-#, fuzzy, kde-format
-#| msgid "Connection Name"
+#, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
-msgstr "Ryšio pavadinimas"
+msgstr "Išsamiau apie ryšį"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -64,8 +63,7 @@ msgid "Wi-Fi"
 msgstr "Belaidis (Wi-Fi)"
 
 #: ui/main.qml:98
-#, fuzzy, kde-format
-#| msgid "Saved networks"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Networks"
 msgstr "Įrašyti tinklai"
@@ -91,8 +89,7 @@ msgid "Save"
 msgstr "Įrašyti"
 
 #: ui/NetworkSettings.qml:52
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Bendra"
@@ -108,17 +105,15 @@ msgid "Hidden Network"
 msgstr "Paslėptas tinklas"
 
 #: ui/NetworkSettings.qml:80
-#, fuzzy, kde-format
-#| msgid "Security"
+#, kde-format
 msgctxt "@title:group"
 msgid "Security"
 msgstr "Saugumas"
 
 #: ui/NetworkSettings.qml:87
-#, fuzzy, kde-format
-#| msgid "Security type:"
+#, kde-format
 msgid "Security type"
-msgstr "Saugumo tipas:"
+msgstr "Saugumo tipas"
 
 #: ui/NetworkSettings.qml:96
 #, kde-format
@@ -146,22 +141,19 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 verslo"
 
 #: ui/NetworkSettings.qml:101
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA3 Personal"
-msgstr "WPA/WPA2 asmeninis"
+msgstr "WPA3 asmeninis"
 
 #: ui/NetworkSettings.qml:102
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise"
-msgstr "WPA/WPA2 verslo"
+msgstr "WPA3 verslo"
 
 #: ui/NetworkSettings.qml:140
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password"
-msgstr "Slaptažodis:"
+msgstr "Slaptažodis"
 
 #: ui/NetworkSettings.qml:156
 #, kde-format
@@ -194,8 +186,7 @@ msgid "Protected EAP"
 msgstr "Apsaugotas EAP"
 
 #: ui/NetworkSettings.qml:173
-#, fuzzy, kde-format
-#| msgid "IP settings"
+#, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP nuostatos"
@@ -238,17 +229,17 @@ msgstr "Slaptažodis…"
 #: ui/TrafficMonitor.qml:37 ui/TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
-msgstr ""
+msgstr "/sek."
 
 #: ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
-msgstr ""
+msgstr "Išsiuntimas"
 
 #: ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "Atsiuntimas"
 
 #~ msgid "Wi-Fi is disabled"
 #~ msgstr "Belaidis (Wi-Fi) išjungtas"

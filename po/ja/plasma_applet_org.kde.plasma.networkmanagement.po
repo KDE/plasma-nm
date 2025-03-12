@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2023, 2024 Ryuichi Yamada <ryuichi_ya220@outlook.jp>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Ryuichi Yamada <ryuichi_ya220@outlook.jp>
 # Fuminobu TAKEYAMA <ftake@geeko.jp>, 2015, 2019.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020, 2021.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2021, 2023.
@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-12-17 00:42+0000\n"
-"PO-Revision-Date: 2024-02-11 23:43+0900\n"
+"PO-Revision-Date: 2025-03-08 19:12+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: contents/ui/ConnectionItem.qml:56
 #, kde-format
@@ -60,10 +60,9 @@ msgstr ""
 "す。"
 
 #: contents/ui/ConnectionItem.qml:296
-#, fuzzy, kde-format
-#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr "接続済み, ⬇ %1/秒, ⬆ %2/秒"
+msgstr "接続済み, ↓ %1/秒, ↑ %2/秒"
 
 #: contents/ui/ConnectionItem.qml:300
 #, kde-format
@@ -73,7 +72,7 @@ msgstr "接続済み"
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format
 msgid "You need to log in to this network"
-msgstr "このネットワークにログインする必要があります"
+msgstr "このネットワークにはログインする必要があります"
 
 #: contents/ui/ConnectionListPage.qml:39
 #, kde-format

@@ -49,6 +49,7 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
         contentWidth: availableWidth - contentItem.leftMargin - contentItem.rightMargin
+        PlasmaComponents3.ScrollBar.horizontal.policy: PlasmaComponents3.ScrollBar.AlwaysOff
 
         contentItem: ListView {
             id: connectionView

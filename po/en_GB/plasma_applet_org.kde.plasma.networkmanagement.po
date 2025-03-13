@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-17 00:42+0000\n"
+"POT-Creation-Date: 2025-03-13 00:43+0000\n"
 "PO-Revision-Date: 2024-10-18 17:19+0100\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -79,32 +79,32 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Log in"
 
-#: contents/ui/ConnectionListPage.qml:115
+#: contents/ui/ConnectionListPage.qml:116
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Aeroplane mode is enabled"
 
-#: contents/ui/ConnectionListPage.qml:119
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Wireless and mobile networks are deactivated"
 
-#: contents/ui/ConnectionListPage.qml:121
+#: contents/ui/ConnectionListPage.qml:122
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Wireless is deactivated"
 
-#: contents/ui/ConnectionListPage.qml:124
+#: contents/ui/ConnectionListPage.qml:125
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobile network is deactivated"
 
-#: contents/ui/ConnectionListPage.qml:127
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No matches"
 msgstr "No matches"
 
-#: contents/ui/ConnectionListPage.qml:129
+#: contents/ui/ConnectionListPage.qml:130
 #, kde-format
 msgid "No available connections"
 msgstr "No available connections"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-17 00:42+0000\n"
+"POT-Creation-Date: 2025-03-13 00:43+0000\n"
 "PO-Revision-Date: 2019-12-29 06:50+0000\n"
 "Last-Translator: Subin Siby <subins2000@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -79,32 +79,32 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:115
+#: contents/ui/ConnectionListPage.qml:116
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:119
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:121
+#: contents/ui/ConnectionListPage.qml:122
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:124
+#: contents/ui/ConnectionListPage.qml:125
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:127
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:129
+#: contents/ui/ConnectionListPage.qml:130
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "ലഭ്യമായ ബന്ധങ്ങള്‍"

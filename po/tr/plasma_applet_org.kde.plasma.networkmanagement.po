@@ -5,13 +5,13 @@
 # Serdar SOYTETİR <tulliana@gmail.com>, 2010, 2011, 2012.
 # Gökçen Eraslan <gokcen@pardus.org.tr>, 2011, 2013.
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2017, 2021.
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-12-17 00:42+0000\n"
-"PO-Revision-Date: 2024-10-18 13:41+0300\n"
+"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"PO-Revision-Date: 2025-03-12 12:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 "X-POOTLE-MTIME: 1413102242.000000\n"
 
 #: contents/ui/ConnectionItem.qml:56
@@ -35,7 +35,7 @@ msgstr "Bağlantıyı Kes"
 #: contents/ui/ConnectionItem.qml:81
 #, kde-format
 msgid "Show Network's QR Code"
-msgstr "Ağın kare kodunu göster"
+msgstr "Ağın Kare Kodunu Göster"
 
 #: contents/ui/ConnectionItem.qml:87
 #, kde-format
@@ -83,32 +83,32 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Oturum Aç"
 
-#: contents/ui/ConnectionListPage.qml:115
+#: contents/ui/ConnectionListPage.qml:116
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Uçak Kipi etkin"
 
-#: contents/ui/ConnectionListPage.qml:119
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Kablosuz ve mobil ağlar devre dışı bırakıldı"
 
-#: contents/ui/ConnectionListPage.qml:121
+#: contents/ui/ConnectionListPage.qml:122
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Kablosuz devre dışı"
 
-#: contents/ui/ConnectionListPage.qml:124
+#: contents/ui/ConnectionListPage.qml:125
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobil ağ devre dışı bırakıldı"
 
-#: contents/ui/ConnectionListPage.qml:127
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No matches"
 msgstr "Eşleşme yok"
 
-#: contents/ui/ConnectionListPage.qml:129
+#: contents/ui/ConnectionListPage.qml:130
 #, kde-format
 msgid "No available connections"
 msgstr "Kullanılabilir bağlantı yok"
@@ -138,17 +138,17 @@ msgstr "Uçak Kipi’ni açmak için orta tıklayın"
 #: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
 #, kde-format
 msgid "Enable Wi-Fi"
-msgstr "Wi-Fi’yi Etkinleştir"
+msgstr "Wi-Fi’yi etkinleştir"
 
 #: contents/ui/main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
-msgstr "Taşınabilir Ağı Etkinleştir"
+msgstr "Hücresel ağı etkinleştir"
 
 #: contents/ui/main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr "Uçak Kipi’ni Etkinleştir"
+msgstr "Uçak Kipi’ni etkinleştir"
 
 #: contents/ui/main.qml:106
 #, kde-format
@@ -174,7 +174,7 @@ msgstr "“%1” ağına bağlanmak için bu kare kodu başka bir aygıtla taray
 #: contents/ui/Toolbar.qml:122
 #, kde-format
 msgid "Enable mobile network"
-msgstr "Taşınabilir ağları etkinleştir"
+msgstr "Hücresel ağı etkinleştir"
 
 #: contents/ui/Toolbar.qml:147
 #, kde-kuit-format
@@ -220,12 +220,12 @@ msgstr "/sn"
 #: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
-msgstr "Karşıya Yükle"
+msgstr "Yükleme"
 
 #: contents/ui/TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
-msgstr "İndir"
+msgstr "İndirme"
 
 #~ msgid "Password…"
 #~ msgstr "Parola…"

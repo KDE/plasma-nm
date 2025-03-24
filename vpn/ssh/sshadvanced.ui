@@ -63,24 +63,6 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="horizontalLayout_3">
-     <item>
-      <widget class="QCheckBox" name="chk_extraSshOptions">
-       <property name="text">
-        <string>Extra SSH options:</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="le_extraSshOptions">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
     <layout class="QHBoxLayout" name="horizontalLayout_4">
      <item>
       <widget class="QCheckBox" name="chk_remoteDeviceNumber">
@@ -127,11 +109,76 @@
     </layout>
    </item>
    <item>
-    <widget class="QCheckBox" name="chk_doNotReplaceDefaultRoute">
-     <property name="text">
-      <string>Do not replace default route</string>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QCheckBox" name="chk_noTunnelInterface">
+       <property name="text">
+        <string>No tunnel (specify dummy interface):</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_noTunnelInterface">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QCheckBox" name="chk_socksBindAddress">
+       <property name="text">
+        <string>SOCKS bind addresses (-D, space separated):</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_socksBindAddress">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QCheckBox" name="chk_localBindAddress">
+       <property name="text">
+        <string>Local bind addresses (-L, space separated):</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_localBindAddress">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="QCheckBox" name="chk_remoteBindAddress">
+       <property name="text">
+        <string>Remote bind addresses (-L, space separated):</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLineEdit" name="le_remoteBindAddress">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
@@ -170,22 +217,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>chk_extraSshOptions</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>le_extraSshOptions</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>84</x>
-     <y>115</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>378</x>
-     <y>115</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>chk_remoteDeviceNumber</sender>
    <signal>toggled(bool)</signal>
    <receiver>sb_remoteDeviceNumber</receiver>
@@ -205,6 +236,70 @@
    <sender>chk_remoteUsername</sender>
    <signal>toggled(bool)</signal>
    <receiver>le_remoteUsername</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>378</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chk_noTunnelInterface</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>le_noTunnelInterface</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>378</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chk_socksBindAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>le_socksBindAddress</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>378</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chk_localBindAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>le_localBindAddress</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>235</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>378</x>
+     <y>235</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chk_remoteBindAddress</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>le_remoteBindAddress</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">

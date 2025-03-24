@@ -19,12 +19,14 @@
 #define NM_SSH_KEY_NETMASK "netmask"
 #define NM_SSH_KEY_PORT "port"
 #define NM_SSH_KEY_TUNNEL_MTU "tunnel-mtu"
-#define NM_SSH_KEY_EXTRA_OPTS "extra-opts"
 #define NM_SSH_KEY_REMOTE_DEV "remote-dev"
 #define NM_SSH_KEY_SSH_AUTH_SOCK "ssh-auth-sock"
 #define NM_SSH_KEY_TAP_DEV "tap-dev"
 #define NM_SSH_KEY_REMOTE_USERNAME "remote-username"
-#define NM_SSH_KEY_NO_DEFAULT_ROUTE "no-default-route"
+#define NM_SSH_KEY_NO_TUNNEL_INTERFACE "no-tunnel-interface"
+#define NM_SSH_KEY_SOCKS_BIND_ADDRESS "socks-bind-address"
+#define NM_SSH_KEY_LOCAL_BIND_ADDRESS "local-bind-address"
+#define NM_SSH_KEY_REMOTE_BIND_ADDRESS "remote-bind-address"
 #define NM_SSH_KEY_IP_6 "ip-6"
 #define NM_SSH_KEY_REMOTE_IP_6 "remote-ip-6"
 #define NM_SSH_KEY_LOCAL_IP_6 "local-ip-6"
@@ -36,8 +38,11 @@
 #define NM_SSH_DEFAULT_PORT 22
 #define NM_SSH_DEFAULT_MTU 1500
 #define NM_SSH_DEFAULT_REMOTE_DEV 100
-#define NM_SSH_DEFAULT_EXTRA_OPTS "-o ServerAliveInterval=10 -o TCPKeepAlive=yes"
 #define NM_SSH_DEFAULT_REMOTE_USERNAME "root"
+#define NM_SSH_DEFAULT_NO_TUNNEL_INTERFACE "dummy0"
+#define NM_SSH_DEFAULT_SOCKS_BIND_ADDRESS "localhost:8080"
+#define NM_SSH_DEFAULT_LOCAL_BIND_ADDRESS "localhost:8080:localhost:8080"
+#define NM_SSH_DEFAULT_REMOTE_BIND_ADDRESS "localhost:8080:localhost:8080"
 
 #define NM_SSH_AUTH_TYPE_SSH_AGENT "ssh-agent"
 #define NM_SSH_AUTH_TYPE_PASSWORD "password"

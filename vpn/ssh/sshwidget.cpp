@@ -76,9 +76,12 @@ SshSettingWidget::SshSettingWidget(const NetworkManager::VpnSetting::Ptr &settin
     d->ui.passwordWidget->setVisible(false);
     d->advUi.sb_useCustomGatewayPort->setValue(NM_SSH_DEFAULT_PORT);
     d->advUi.sb_useCustomTunnelMtu->setValue(NM_SSH_DEFAULT_MTU);
-    d->advUi.le_extraSshOptions->setText(QLatin1String(NM_SSH_DEFAULT_EXTRA_OPTS));
     d->advUi.sb_remoteDeviceNumber->setValue(NM_SSH_DEFAULT_REMOTE_DEV);
     d->advUi.le_remoteUsername->setText(QLatin1String(NM_SSH_DEFAULT_REMOTE_USERNAME));
+    d->advUi.le_noTunnelInterface->setText(QLatin1String(NM_SSH_DEFAULT_NO_TUNNEL_INTERFACE));
+    d->advUi.le_socksBindAddress->setText(QLatin1String(NM_SSH_DEFAULT_SOCKS_BIND_ADDRESS));
+    d->advUi.le_localBindAddress->setText(QLatin1String(NM_SSH_DEFAULT_LOCAL_BIND_ADDRESS));
+    d->advUi.le_remoteBindAddress->setText(QLatin1String(NM_SSH_DEFAULT_REMOTE_BIND_ADDRESS));
 
     KAcceleratorManager::manage(this);
 
@@ -168,12 +171,6 @@ void SshSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         d->advUi.sb_useCustomTunnelMtu->setValue(customMtu.toInt());
     }
 
-    const QString extraSshOptions = dataMap[QLatin1String(NM_SSH_KEY_EXTRA_OPTS)];
-    if (!extraSshOptions.isEmpty()) {
-        d->advUi.chk_extraSshOptions->setChecked(true);
-        d->advUi.le_extraSshOptions->setText(extraSshOptions);
-    }
-
     const QString remoteDeviceNumber = dataMap[QLatin1String(NM_SSH_KEY_REMOTE_DEV)];
     if (!remoteDeviceNumber.isEmpty()) {
         d->advUi.chk_remoteDeviceNumber->setChecked(true);
@@ -193,11 +190,28 @@ void SshSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         d->advUi.le_remoteUsername->setText(remoteUsername);
     }
 
-    const QString doNotReplaceDefaultRoute = dataMap[QLatin1String(NM_SSH_KEY_NO_DEFAULT_ROUTE)];
-    if (!doNotReplaceDefaultRoute.isEmpty()) {
-        if (doNotReplaceDefaultRoute == QLatin1String("yes")) {
-            d->advUi.chk_doNotReplaceDefaultRoute->setChecked(true);
-        }
+    const QString noTunnelInterface = dataMap[QLatin1String(NM_SSH_KEY_NO_TUNNEL_INTERFACE)];
+    if (!noTunnelInterface.isEmpty()) {
+        d->advUi.chk_noTunnelInterface->setChecked(true);
+        d->advUi.le_noTunnelInterface->setText(noTunnelInterface);
+    }
+
+    const QString socksBindAddress = dataMap[QLatin1String(NM_SSH_KEY_SOCKS_BIND_ADDRESS)];
+    if (!socksBindAddress.isEmpty()) {
+        d->advUi.chk_socksBindAddress->setChecked(true);
+        d->advUi.le_socksBindAddress->setText(socksBindAddress);
+    }
+
+    const QString localBindAddress = dataMap[QLatin1String(NM_SSH_KEY_LOCAL_BIND_ADDRESS)];
+    if (!localBindAddress.isEmpty()) {
+        d->advUi.chk_localBindAddress->setChecked(true);
+        d->advUi.le_localBindAddress->setText(localBindAddress);
+    }
+
+    const QString remoteBindAddress = dataMap[QLatin1String(NM_SSH_KEY_REMOTE_BIND_ADDRESS)];
+    if (!remoteBindAddress.isEmpty()) {
+        d->advUi.chk_remoteBindAddress->setChecked(true);
+        d->advUi.le_remoteBindAddress->setText(remoteBindAddress);
     }
 
     loadSecrets(setting);
@@ -285,10 +299,6 @@ QVariantMap SshSettingWidget::setting() const
         data.insert(QLatin1String(NM_SSH_KEY_TUNNEL_MTU), QString::number(d->advUi.sb_useCustomTunnelMtu->value()));
     }
 
-    if (d->advUi.chk_extraSshOptions->isChecked()) {
-        data.insert(QLatin1String(NM_SSH_KEY_EXTRA_OPTS), d->advUi.le_extraSshOptions->text());
-    }
-
     if (d->advUi.chk_remoteDeviceNumber->isChecked()) {
         data.insert(QLatin1String(NM_SSH_KEY_REMOTE_DEV), QString::number(d->advUi.sb_remoteDeviceNumber->value()));
     }
@@ -301,8 +311,20 @@ QVariantMap SshSettingWidget::setting() const
         data.insert(QLatin1String(NM_SSH_KEY_REMOTE_USERNAME), d->advUi.le_remoteUsername->text());
     }
 
-    if (d->advUi.chk_doNotReplaceDefaultRoute->isChecked()) {
-        data.insert(QLatin1String(NM_SSH_KEY_NO_DEFAULT_ROUTE), QLatin1String("yes"));
+    if (d->advUi.chk_noTunnelInterface->isChecked()) {
+        data.insert(QLatin1String(NM_SSH_KEY_NO_TUNNEL_INTERFACE), d->advUi.le_noTunnelInterface->text());
+    }
+
+    if (d->advUi.chk_socksBindAddress->isChecked()) {
+        data.insert(QLatin1String(NM_SSH_KEY_SOCKS_BIND_ADDRESS), d->advUi.le_socksBindAddress->text());
+    }
+
+    if (d->advUi.chk_localBindAddress->isChecked()) {
+        data.insert(QLatin1String(NM_SSH_KEY_LOCAL_BIND_ADDRESS), d->advUi.le_localBindAddress->text());
+    }
+
+    if (d->advUi.chk_remoteBindAddress->isChecked()) {
+        data.insert(QLatin1String(NM_SSH_KEY_REMOTE_BIND_ADDRESS), d->advUi.le_remoteBindAddress->text());
     }
 
     // save it all

@@ -33,12 +33,14 @@ target_sources(plasmanm_internal PRIVATE
     enabledconnections.cpp
     enums.cpp
     networkstatus.cpp
+    qrcahandler.cpp
     wirelessstatus.cpp
     availabledevices.h
     connectionicon.h
     enabledconnections.h
     enums.h
     networkstatus.h
+    qrcahandler.h
     wirelessstatus.h
 )
 
@@ -53,6 +55,7 @@ PUBLIC
 PRIVATE
     Qt6::Qml
     KF6::I18n
+    KF6::JobWidgets
     KF6::Notifications
     KF6::Service
     KF6::Wallet

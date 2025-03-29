@@ -62,6 +62,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
     DBusAddons
     KIO
     I18n
+    JobWidgets
     NetworkManagerQt
     Notifications
     Service

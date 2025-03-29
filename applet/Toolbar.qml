@@ -40,6 +40,10 @@ RowLayout {
         );
     }
 
+    PlasmaNM.QrcaHandler {
+        id: qrca
+    }
+
     spacing: Kirigami.Units.smallSpacing * 3
 
     RowLayout {
@@ -206,6 +210,26 @@ RowLayout {
         onTextChanged: {
             appletProxyModel.setFilterFixedString(text)
         }
+    }
+
+    PlasmaComponents3.ToolButton {
+        icon.name: "view-barcode-qr"
+        text: i18nc("@action:button", "Scan Wifi QR Code")
+        enabled: qrca.available
+        display: PlasmaComponents3.ToolButton.IconOnly
+        Accessible.description: {
+            if (qrca.available) {
+                return i18nc("@info:tooltip", "Scan QR Code to connect to a Wifi network");
+            } else {
+                return i18nc("@info:tooltip", "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi network")
+            }
+        }
+
+        PlasmaComponents3.ToolTip {
+            text: parent.Accessible.description
+        }
+
+        onClicked: qrca.launch()
     }
 
     PlasmaComponents3.ToolButton {

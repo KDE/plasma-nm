@@ -930,7 +930,6 @@ msgstr "Legg til SIM-PIN-kode"
 
 #: ui/SimPage.qml:35
 #, fuzzy, kde-format
-#| msgid "SIM %1"
 msgctxt "@title"
 msgid "SIM %1"
 msgstr "SIM %1"

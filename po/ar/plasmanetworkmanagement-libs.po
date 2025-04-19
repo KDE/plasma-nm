@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-14 02:46+0000\n"
-"PO-Revision-Date: 2025-02-09 11:38+0400\n"
+"PO-Revision-Date: 2025-04-18 21:17+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -45,13 +45,13 @@ msgstr "واي فاي"
 #: editor/connectioneditorbase.cpp:220
 #, kde-format
 msgid "Wi-Fi Security"
-msgstr "أمن الواي-فاي"
+msgstr "أمن واي-فاي"
 
 #: editor/connectioneditorbase.cpp:225 editor/uiutils.cpp:190
 #: models/creatableconnectionsmodel.cpp:135
 #, kde-format
 msgid "DSL"
-msgstr "DSL"
+msgstr "خط المشترك الرقمي DSL"
 
 #: editor/connectioneditorbase.cpp:230 editor/connectioneditorbase.cpp:233
 #, kde-format
@@ -66,43 +66,43 @@ msgstr "بلوتوث"
 #: editor/connectioneditorbase.cpp:241
 #, kde-format
 msgid "GSM"
-msgstr "GSM"
+msgstr "جي إس إم GSM"
 
 #: editor/connectioneditorbase.cpp:243 editor/connectioneditorbase.cpp:286
 #, kde-format
 msgid "PPP"
-msgstr "PPP"
+msgstr "ميفاق الربط بين نقطتين PPP"
 
 #: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
 #: models/networkmodelitem.cpp:724
 #, kde-format
 msgid "Infiniband"
-msgstr "Infiniband"
+msgstr "إنفيني باند"
 
 #: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:198
 #: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:730
 #, kde-format
 msgid "Bond"
-msgstr "Bond"
+msgstr "تجميع"
 
 #: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:201
 #: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:736
 #, kde-format
 msgid "Bridge"
-msgstr "Bridge"
+msgstr "جسر"
 
 #: editor/connectioneditorbase.cpp:256 models/creatableconnectionsmodel.cpp:220
 #: models/networkmodelitem.cpp:742
 #, kde-format
 msgid "Vlan"
-msgstr "Vlan"
+msgstr "شبكة محلية افتراضية"
 
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:230
 #: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:751
 #, kde-format
 msgid "Team"
-msgstr "Team"
+msgstr "فريق"
 
 #: editor/connectioneditorbase.cpp:262
 #, kde-format
@@ -112,7 +112,7 @@ msgstr "واجهة واير غارد"
 #: editor/connectioneditorbase.cpp:275
 #, kde-format
 msgid "VPN (%1)"
-msgstr "ش.خ.ا (%1)"
+msgstr "شبكة خاصة افتراضية (%1)"
 
 #: editor/connectioneditorbase.cpp:292
 #, kde-format
@@ -159,7 +159,7 @@ msgstr "إيثرنت"
 #: editor/settings/bondwidget.cpp:39
 #, kde-format
 msgid "InfiniBand"
-msgstr "InfiniBand"
+msgstr "إنفيني باند"
 
 #: editor/settings/bondwidget.cpp:48
 #, kde-format
@@ -177,7 +177,7 @@ msgstr "نسخ احتياطي نشط"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format
@@ -231,7 +231,7 @@ msgstr "أزل الاتصال"
 #: editor/uiutils.cpp:215
 #, kde-format
 msgid "VLAN"
-msgstr "VLAN"
+msgstr "شبكة محلية افتراضية"
 
 #: editor/settings/btwidget.cpp:20
 #, kde-format
@@ -253,7 +253,7 @@ msgstr "محرّر الصلاحيات المتقدّمة"
 #, kde-format
 msgctxt "infiniband transport mode"
 msgid "Datagram"
-msgstr "Datagram"
+msgstr "حزمة البيانات"
 
 #: editor/settings/infinibandwidget.cpp:23
 #, kde-format
@@ -300,16 +300,19 @@ msgid ""
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 msgstr ""
+"يمكنك العثور على مزيد من المعلومات حول هذه القيم هنا:<a href='https://"
+"developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome."
+"org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
-msgstr ""
+msgstr "اسم مضيف الإرسال:"
 
 #: editor/settings/ipv4widget.cpp:435
 #, kde-format
 msgid "DHCP hostname:"
-msgstr ""
+msgstr "اسم مضيف خادم DHPC:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:194
@@ -359,7 +362,7 @@ msgstr "البوّابة"
 #: editor/settings/security802-1x.cpp:507
 #, kde-format
 msgid "Alternative Subject Matches"
-msgstr ""
+msgstr "تطابقات الموضوعات البديلة"
 
 #: editor/settings/security802-1x.cpp:509
 #, kde-format
@@ -368,11 +371,14 @@ msgid ""
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://www.kde."
 "org&gt;</li></ul></qt>"
 msgstr ""
+"يجب أن يكون هذا الإدخال واحدًا مما يلي:<ul><li>DNS: &lt;اسم أو عنوان "
+"انترنت&gt;</li><li>EMAIL: &lt;بريد إلكتروني&gt;</li><li>URI: &lt;uri، على "
+"سبيل المثال https://www.kde.org&gt;</li></ul></qt>"
 
 #: editor/settings/security802-1x.cpp:526
 #, kde-format
 msgid "Connect to these servers only"
-msgstr ""
+msgstr "الاتصال بهذه الخوادم فقط"
 
 #: editor/settings/teamwidget.cpp:219
 #, kde-format
@@ -497,13 +503,13 @@ msgstr "شهادة المرجع المصدق (CA):"
 #: editor/settings/ui/802-1x.ui:178
 #, kde-format
 msgid "Subject match:"
-msgstr ""
+msgstr "مطابقة الموضوع:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:195
 #, kde-format
 msgid "Alternative subject matches:"
-msgstr ""
+msgstr "تطابقات الموضوعات البديلة:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
@@ -516,7 +522,7 @@ msgstr "…"
 #: editor/settings/ui/802-1x.ui:219
 #, kde-format
 msgid "Connect to these servers:"
-msgstr ""
+msgstr "الاتصال بهذه الخوادم :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
@@ -545,7 +551,7 @@ msgstr "معرّف مجهول:"
 #: editor/settings/ui/802-1x.ui:364
 #, kde-format
 msgid "Automatic PAC provisioning"
-msgstr ""
+msgstr "التوفير الآلي لبيانات اعتماد الوصول المحمي PAC"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:381
@@ -569,7 +575,7 @@ msgstr "كليهما"
 #: editor/settings/ui/802-1x.ui:399
 #, kde-format
 msgid "PAC file:"
-msgstr "ملف PAC:"
+msgstr "ملف اعتماد الوصول المحمي PAC:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #. i18n: ectx: property (text), widget (QLabel, label_16)
@@ -818,6 +824,10 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
+"إذا عُيِّن الاتصال على الاتصال الآلي، فسيُفضل الاتصال ذو الأولوية الأعلى. "
+"الإعداد المبدئي هو 0.\n"
+"الرقم الأعلى يعني أولوية أعلى. يمكن استخدام رقم سالب للإشارة إلى أولوية أقل "
+"من الأولوية المبدئية.            "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:48
@@ -838,6 +848,8 @@ msgid ""
 "Fine-grained permissions editor for this connection. It lets you choose "
 "which users can activate/modify/delete this connection."
 msgstr ""
+"محرر الأذونات الدقيقة لهذا الاتصال. يتيح لك اختيار المستخدمين الذين يمكنهم "
+"تنشيط/تعديل/حذف هذا الاتصال."
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
@@ -850,7 +862,7 @@ msgstr "متقدّم…"
 #: editor/settings/ui/connectionwidget.ui:80
 #, kde-format
 msgid "Automatically connect to VPN"
-msgstr "اتّصل آليًا بـ ش.خ.ا"
+msgstr "اتّصل آليًا بشبكة خاصة افتراضية"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:100
@@ -1068,7 +1080,7 @@ msgstr ""
 #: editor/settings/ui/ipv4.ui:171 editor/settings/ui/ipv6.ui:277
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
-msgstr ""
+msgstr "تحرير قائمة نطاقات DNS التي تبحث عنها"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
 #: editor/settings/ui/ipv4.ui:189
@@ -1111,6 +1123,9 @@ msgid ""
 "to add\n"
 "an IP address"
 msgstr ""
+"تحدد عناوين الشبكة IP جهاز حاسوبك على الشبكة. انقر فوق الزر \"إضافة\" "
+"لإضافة \n"
+"عنوان IP"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:278
@@ -1119,6 +1134,8 @@ msgid ""
 "Allows the connection to complete if IPv4 configuration fails\n"
 "but IPv6 configuration succeeds"
 msgstr ""
+"السماح بإكمال الاتصال في حالة فشل\n"
+" ضبط IPv4 ونجاح ضبط IPv6"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:281
@@ -1140,6 +1157,8 @@ msgid ""
 "if\n"
 "IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
+"عند الاتصال بالشبكات التي تدعم IPv4، يسمح بإكمال الاتصال \n"
+"في حالة فشل ضبط IPv6 ونجاح ضبط IPv4"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:33
@@ -1162,6 +1181,9 @@ msgid ""
 "a temporary IPv6 address in addition to the public one generated from MAC "
 "address via modified EUI-64."
 msgstr ""
+"اضبط امتدادات خصوصية IPv6 لـ IPv6 لـ SLAAC، الموضحة في RFC4941. إذا مُكّن من "
+"ذلك، فإنه يجعل النواة تنشئ عنوان IPv6 مؤقتًا بالإضافة إلى العنوان العام "
+"المُنشأ من عنوان MAC عبر EUI-64 المعدل."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:199
@@ -1259,7 +1281,7 @@ msgstr "تعمية 128 بتّة مطلوبة"
 #: editor/settings/ui/ppp.ui:165
 #, kde-format
 msgid "Use stateful MPPE"
-msgstr ""
+msgstr "استخدام تعمية مايكروسوفت من نقطة إلى نقطة مع الحفاظ على الحالة"
 
 #. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
 #: editor/settings/ui/ppp.ui:175
@@ -1271,7 +1293,7 @@ msgstr "الصدى"
 #: editor/settings/ui/ppp.ui:184
 #, kde-format
 msgid "Send PPP echo packets"
-msgstr ""
+msgstr "أرسل حزم صدى ميفاق الربط بين نقطتين PPP"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/pppoe.ui:20
@@ -1288,6 +1310,10 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
+"في حالة تحديدها، وجِّه PPPoE لبدء جلسات العمل فقط مع مركزات الوصول التي توفر "
+"الخدمة المحددة. بالنسبة لمعظم الموفرين، يجب ترك هذا الخيار فارغاً. وهي مطلوبة "
+"فقط إذا كان هناك العديد من مركزات الوصول أو إذا كان من المعروف أن هناك خدمة "
+"محددة مطلوبة."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31
@@ -1317,25 +1343,25 @@ msgstr "الواجهة الأمّ:"
 #: editor/settings/ui/vlan.ui:41
 #, kde-format
 msgid "VLAN id:"
-msgstr "معرّف VLAN:"
+msgstr "معرّف الشبكة المحلية الافتراضية:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/vlan.ui:64
 #, kde-format
 msgid "VLAN interface name:"
-msgstr "اسم واجهة VLAN:"
+msgstr "اسم واجهة الشكبة الملحية الافتراضية:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, reorderHeaders)
 #: editor/settings/ui/vlan.ui:77
 #, kde-format
 msgid "Output packet headers reordering"
-msgstr ""
+msgstr "إعادة ترتيب رؤوس حزم الخرج"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, gvrp)
 #: editor/settings/ui/vlan.ui:84
 #, kde-format
 msgid "GARP VLAN Registration Protocol"
-msgstr ""
+msgstr "ميفاق تسجيل الشبكات المحلية الافتراضية GARP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, gvrp)
 #: editor/settings/ui/vlan.ui:87
@@ -1347,7 +1373,7 @@ msgstr "GVRP"
 #: editor/settings/ui/vlan.ui:94
 #, kde-format
 msgid "Loose binding"
-msgstr ""
+msgstr "ربط فضفاض"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:17
@@ -1387,6 +1413,8 @@ msgid ""
 "by the\n"
 " BSSID entered here. Example: 00:11:22:33:44:55"
 msgstr ""
+"يقوم هذا الخيار بتأمين هذا الاتصال بنقطة وصول واي فاي (AP) المحددة \n"
+"بواسطة BSSID الذي تم إدخاله هنا. مثال: 00:00:11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:117
@@ -1402,6 +1430,9 @@ msgid ""
 "specified band. This setting depends\n"
 " on specific driver capability and may not work with all drivers"
 msgstr ""
+"يقوم هذا الخيار بتأمين الاتصال بشبكة واي فاي المقترنة بالنطاق المحدد. يعتمد "
+"هذا الإعداد\n"
+" على إمكانية برنامج تشغيل محدد وقد لا يعمل مع جميع برامج التشغيل"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:141
@@ -1436,6 +1467,9 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
+"قناة لاسلكية لاستخدامها في اتصال واي فاي. سينضم الجهاز فقط (أو ينشئ لشبكات "
+"المؤقتة) \n"
+"شبكة واي فاي على القناة المحددة"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:209
@@ -1474,7 +1508,7 @@ msgstr "شبكة مخفية"
 #: editor/settings/ui/wifisecurity.ui:15
 #, kde-format
 msgid "Wifi Security"
-msgstr "أمن الواي-فاي"
+msgstr "أمن واي-فاي"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:28
@@ -1529,7 +1563,7 @@ msgstr "‏WPA3 للمؤسسات 192-بت"
 #: editor/settings/ui/wifisecurity.ui:73
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "فتح معزز (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:81
@@ -1592,6 +1626,8 @@ msgid ""
 "This option locks this connection to the network device specified by its\n"
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
+"يقوم هذا الخيار بتأمين هذا الاتصال بجهاز الشبكة المحدد بواسطة عنوان التحكم "
+"بالنفاذ للوسط MAC الدائم الخاص به الذي أدخل هنا. مثال: 00:00:11:22:33:44:55"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:67
@@ -1602,6 +1638,9 @@ msgid ""
 "MAC\n"
 "cloning or spoofing. Example 11:22:33:44:55"
 msgstr ""
+"سيستخدم عنوان التحكم بالنفاذ للوسط MAC الذي أُدخل \n"
+"هنا كعنوان جهاز لجهاز الشبكة الذي ينشط عليه هذا الاتصال.\n"
+" تُعرف هذه الميزة باسم استنساخ MAC أو الانتحال. مثال 11:22:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wiredconnectionwidget.ui:80
@@ -1617,6 +1656,8 @@ msgid ""
 "packets up\n"
 "into multiple Ethernet frames"
 msgstr ""
+"إرسال الحزم ذات الحجم المحدد أو الأصغر فقط، مع تقسيم الحزم الأكبر إلى إطارات "
+"إيثرنت متعددة"
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
@@ -1636,7 +1677,7 @@ msgstr "مزدَوج:"
 msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
-msgstr ""
+msgstr "اطلب أن يستخدم الجهاز الوضع المزدوج المحدد. إما ”نصف“ أو ”كامل“"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158
@@ -1664,6 +1705,9 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
+"تفاوض ارتباط الجهاز. إذا اخترت ”يدوي“، فسوف تُفرض قيم ’السرعة‘ و”الازدواج“ "
+"دون \n"
+"التحقق من توافق الجهاز. إذا لم تكن متأكداً، اترك هنا ”تجاهل“ أو اختر ”تلقائي“."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -1688,7 +1732,7 @@ msgstr "يدويًا"
 #: editor/settings/ui/wiredconnectionwidget.ui:219
 #, kde-format
 msgid "Request that the device use only the specified speed."
-msgstr ""
+msgstr "اطلب أن يستخدم الجهاز السرعة المحددة فقط."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:226
@@ -2040,7 +2084,7 @@ msgstr "بلوتوث"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Infiniband"
-msgstr "InfiniBand"
+msgstr "إنفيني باند"
 
 #: editor/uiutils.cpp:137
 #, kde-format
@@ -2052,25 +2096,25 @@ msgstr "ADSL"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bond)"
-msgstr "افتراضي (bond)"
+msgstr "افتراضي (تجميع)"
 
 #: editor/uiutils.cpp:143
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bridge)"
-msgstr "افتراضي (bridge)"
+msgstr "افتراضي (جسر)"
 
 #: editor/uiutils.cpp:146
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (vlan)"
-msgstr "افتراضي (vlan)"
+msgstr "افتراضي (شبكة محلية افتراضية)"
 
 #: editor/uiutils.cpp:149
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (team)"
-msgstr "افتراضي (team)"
+msgstr "افتراضي (فريق)"
 
 #: editor/uiutils.cpp:156
 #, kde-format
@@ -2114,7 +2158,7 @@ msgstr "شبكة Olpc"
 #: editor/uiutils.cpp:218 networkstatus.cpp:190
 #, kde-format
 msgid "VPN"
-msgstr "ش.خ.ا"
+msgstr "شبكة خاصة افتراضية"
 
 #: editor/uiutils.cpp:222 models/creatableconnectionsmodel.cpp:156
 #, kde-format
@@ -2164,7 +2208,7 @@ msgstr "ADSL (%1)"
 #: editor/uiutils.cpp:267
 #, kde-format
 msgid "VLan (%1)"
-msgstr "VLan (%1)"
+msgstr "شبكة محلية افتراضية (%1)"
 
 #: editor/uiutils.cpp:270
 #, kde-format
@@ -2172,10 +2216,9 @@ msgid "Bridge (%1)"
 msgstr "Bridge (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "واجهة سلكية (%1)"
+msgstr "واجهة الاسترجاع (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format
@@ -2722,13 +2765,13 @@ msgstr "WPA3-SAE"
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:618
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "فتح معزز (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format
@@ -2776,7 +2819,7 @@ msgstr "الأمس"
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never"
-msgstr "أبدًا"
+msgstr "البتة"
 
 #: editor/uiutils.cpp:671
 #, kde-format
@@ -2828,12 +2871,12 @@ msgstr "لم تُستخدم أبدًا"
 #: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
-msgstr ""
+msgstr "لم يُعثر على محلقة شبكة افتراضية خاصة للنوع %1"
 
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "لم يُنفذ استيراد هذا النوع من الشبكات الخاصة الافتراضية"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
@@ -3093,12 +3136,12 @@ msgstr "غير إمكانية رؤية كلمة السر"
 #: editor/widgets/passwordfield.cpp:41
 #, kde-format
 msgid "Store password for this user only (encrypted)"
-msgstr ""
+msgstr "احفظ كلمة السر لهذا المستخدم فقط ( معمّاة)"
 
 #: editor/widgets/passwordfield.cpp:43
 #, kde-format
 msgid "Store password for all users (not encrypted)"
-msgstr ""
+msgstr "احفظ كلمة السر لجميع المستخدمين (غير معمّاة)"
 
 #: editor/widgets/passwordfield.cpp:45 editor/widgets/passwordfield.cpp:91
 #, kde-format
@@ -3202,6 +3245,8 @@ msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
 "specified above are used"
 msgstr ""
+"في حالة التمكين، تُتجاهل المسارات المضبوطة تلقائيًا وتُستخدم المسارات المحددة "
+"أعلاه فقط"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
@@ -3225,7 +3270,7 @@ msgstr "أ&زل"
 #: handler.cpp:121
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "تفتقد بلازما دعم اتصالات الشبكات الافتراضية الخاصة ”%1“."
 
 #: handler.cpp:124
 #, kde-format
@@ -3235,7 +3280,7 @@ msgstr "أبلغ عن علة"
 #: handler.cpp:147
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "يفتقد مدير الشبكة إلى دعم اتصالات الشبكات الخاصة الافتراضية ’%1‘."
 
 #: handler.cpp:150
 #, kde-format
@@ -3306,12 +3351,12 @@ msgstr "الاتصالات القائمة على الأجهزة"
 #: models/creatableconnectionsmodel.cpp:137
 #, kde-format
 msgid "Some DSL description"
-msgstr ""
+msgstr "وصف اتصال DSL"
 
 #: models/creatableconnectionsmodel.cpp:144
 #, kde-format
 msgid "Some infiniband description"
-msgstr ""
+msgstr "وصف اتصال إنفيني باند"
 
 #: models/creatableconnectionsmodel.cpp:149
 #, kde-format
@@ -3327,7 +3372,7 @@ msgstr "وصف للنطاق العريض المحمول"
 #: models/creatableconnectionsmodel.cpp:165
 #, kde-format
 msgid "Some wired ethernet description"
-msgstr ""
+msgstr "لوصف للإيثرنت السلكي"
 
 #: models/creatableconnectionsmodel.cpp:163
 #, kde-format
@@ -3338,7 +3383,7 @@ msgstr "إيثرنت سلكي (مشاركة)"
 #: models/creatableconnectionsmodel.cpp:182
 #, kde-format
 msgid "Some wi-fi description"
-msgstr ""
+msgstr "وصف للشبكة واي-فاي"
 
 #: models/creatableconnectionsmodel.cpp:180
 #, kde-format
@@ -3367,13 +3412,13 @@ msgstr "وصف للفريق"
 #: models/creatableconnectionsmodel.cpp:222
 #, kde-format
 msgid "Some vlan description"
-msgstr "وصف للشبكة الافتراضية"
+msgstr "وصف للشبكة المحلية الافتراضية"
 
 #: models/creatableconnectionsmodel.cpp:242
 #: models/creatableconnectionsmodel.cpp:255
 #, kde-format
 msgid "VPN connections"
-msgstr "اتصالات في بي ان"
+msgstr "اتصالات شبكات افتراضية خاصة"
 
 #: models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
@@ -3384,7 +3429,7 @@ msgstr "واير غارد"
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
-msgstr "استورد اتصال في بي ان…"
+msgstr "استورد اتصال شبكة افتراضية خاصة…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format
@@ -3436,7 +3481,7 @@ msgstr "نوع الاتصال GSM"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr "نوع الاتصال Infiniband"
+msgstr "نوع الاتصال إنفيني باند"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
@@ -3454,13 +3499,13 @@ msgstr "نوع الاتصال PPOPE"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "نوع الاتصال VLAN"
+msgstr "نوع الاتصال شبكة محلية افتراضية"
 
 #: models/networkmodelitem.cpp:52
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "نوع الاتصال في بي ان"
+msgstr "نوع الاتصال شبكة افتراضية خاصة"
 
 #: models/networkmodelitem.cpp:53
 #, kde-format
@@ -3502,7 +3547,7 @@ msgstr "نوع الاتصال نفق"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr ""
+msgstr "نوع الاتصال نفق عنوان انترنت IP"
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
@@ -3633,7 +3678,7 @@ msgstr "تقنيّة الوصول"
 #: models/networkmodelitem.cpp:693 models/networkmodelitem.cpp:710
 #, kde-format
 msgid "VPN Plugin"
-msgstr "ملحقة VPN"
+msgstr "ملحقة شبكة افتراضية خاصة"
 
 #: models/networkmodelitem.cpp:704
 #, kde-format
@@ -3660,7 +3705,7 @@ msgstr "النوع"
 #: models/networkmodelitem.cpp:744
 #, kde-format
 msgid "Vlan ID"
-msgstr "معرّف VLAN"
+msgstr "معرّف الشبكة المحلية الافتراضية"
 
 #: models/networkmodelitem.cpp:748
 #, kde-format

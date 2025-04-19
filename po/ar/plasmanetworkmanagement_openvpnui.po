@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-24 02:34+0000\n"
-"PO-Revision-Date: 2025-02-09 17:26+0400\n"
+"PO-Revision-Date: 2025-04-18 21:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -261,7 +261,7 @@ msgstr "كلمة السر:"
 #: openvpn.ui:439 openvpn.ui:599
 #, kde-format
 msgid "Password passed to OpenVPN when prompted for it."
-msgstr "كلمة السر المررة إلى OpenVPN عندما يُطلب منه ذلك."
+msgstr "كلمة السر المرور إلى OpenVPN عندما يُطلب منه ذلك."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: openvpn.ui:643
@@ -969,7 +969,7 @@ msgstr ""
 #: openvpnadvanced.ui:1086
 #, kde-format
 msgid "Port:"
-msgstr "منفذ:"
+msgstr "المنفذ:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_14)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyUsername)
@@ -1051,12 +1051,12 @@ msgstr "مصادق"
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "code"
-msgstr "الرمز"
+msgstr "شفرة"
 
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "token"
-msgstr ""
+msgstr "رمز"
 
 #: openvpnauth.cpp:95
 #, kde-format

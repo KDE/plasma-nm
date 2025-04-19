@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2024 Gummi <gudmundure@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Gummi <gudmundure@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-11-08 00:42+0000\n"
-"PO-Revision-Date: 2024-07-16 15:38+0000\n"
+"PO-Revision-Date: 2025-04-18 13:16+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
@@ -20,20 +20,18 @@ msgstr ""
 #: kcm.cpp:269
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "Flytja inn VPN-uppsetningu úr \"%1\"?"
 
 #: kcm.cpp:270
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "Flytja inn VPN-tengingar"
+msgstr "Flytja inn VPN-uppsetningu"
 
 #: kcm.cpp:271
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "Flytja út"
+msgstr "Flytja inn"
 
 #: kcm.cpp:278 kcm.cpp:351
 #, kde-format
@@ -41,10 +39,9 @@ msgid "Failed to import VPN connection: %1"
 msgstr "Mistókst að flytja inn VPN-tengingu: %1"
 
 #: kcm.cpp:281 kcm.cpp:354
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "Tengt"
+msgstr "Tenging flutt inn"
 
 #: kcm.cpp:423
 #, kde-format
@@ -123,7 +120,7 @@ msgstr "Sýna sýndartengingar"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "Búa til nýjar tengingar sem kerfistengingar"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"

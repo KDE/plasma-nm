@@ -5,7 +5,7 @@
             {
                 "Email": "jgrulich@redhat.com,ltinkl@redhat.com",
                 "Name": "Jan Grulich,Lukáš Tinkl",
-                "Name[ar]": "Jan Grulich,Lukáš Tinkl",
+                "Name[ar]": "يان جروليتش,لوكاس تينكل",
                 "Name[az]": "Jan Grulich,Lukáš Tinkl",
                 "Name[be]": "Jan Grulich,Lukáš Tinkl",
                 "Name[bg]": "Jan Grulich,Lukáš Tinkl",
@@ -171,6 +171,7 @@
         "Website": "https://projects.kde.org/projects/kde/workspace/plasma-nm"
     },
     "X-KDE-Keywords": "network,internet,ethernet,wireless,wifi,wlan,vpn",
+    "X-KDE-Keywords[ar]": "شبكة,إنترنت,إيثرنت,لاسلكي,واي فاي,شبكة محلية لاسلكية,VPN",
     "X-KDE-Keywords[be]": "сетка,інтэрнэт,ethernet,бесправадная сувязь,wifi,wlan,vpn",
     "X-KDE-Keywords[bg]": "мрежа,интернет,кабел,безжичен,wifi,wlan,vpn",
     "X-KDE-Keywords[ca@valencia]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",
@@ -187,6 +188,7 @@
     "X-KDE-Keywords[hi]": "नेटवर्क, इंटरनेट, ईथरनेट, वायरलेस, वाईफ़ाई, wlan, वीपीएन",
     "X-KDE-Keywords[hu]": "hálózat,internet,ethernet,vezeték nélküli,wifi,wlan,vpn",
     "X-KDE-Keywords[ia]": "network,internet,ethernet,wireless,wifi,wlan,vpn",
+    "X-KDE-Keywords[is]": "net,internet,ethernet,þráðlaust,wifi,wlan,vpn",
     "X-KDE-Keywords[it]": "rete,internet,ethernet,wireless,wifi,wlan,vpn",
     "X-KDE-Keywords[ka]": "network,internet,ethernet,wireless,wifi,wlan,vpn,ქსელი,ინტერნეტი,უსადენო ქსელი",
     "X-KDE-Keywords[ko]": "network,internet,ethernet,wireless,wifi,wlan,vpn,네트워크,인터넷,이더넷,무선,와이파이",

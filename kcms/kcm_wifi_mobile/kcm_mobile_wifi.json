@@ -94,6 +94,7 @@
         "Name[zh_TW]": "Wi-Fi"
     },
     "X-KDE-Keywords": "wifi,network",
+    "X-KDE-Keywords[ar]": "واي فاي,شبكة",
     "X-KDE-Keywords[az]": "wifi,network,şəbəkə",
     "X-KDE-Keywords[bg]": "wifi,мрежа",
     "X-KDE-Keywords[ca@valencia]": "wi-fi,xarxa",
@@ -112,6 +113,7 @@
     "X-KDE-Keywords[hsb]": "wifi,network,syć",
     "X-KDE-Keywords[hu]": "wifi,hálózat",
     "X-KDE-Keywords[ia]": "wifi,network",
+    "X-KDE-Keywords[is]": "wifi,net",
     "X-KDE-Keywords[it]": "wifi,rete",
     "X-KDE-Keywords[ka]": "wifi,network",
     "X-KDE-Keywords[ko]": "wifi,network,네트워크,무선",

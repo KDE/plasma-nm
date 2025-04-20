@@ -4,7 +4,7 @@
             {
                 "Email": "jgrulich@redhat.com,ltinkl@redhat.com",
                 "Name": "Jan Grulich,Lukáš Tinkl",
-                "Name[ar]": "Jan Grulich,Lukáš Tinkl",
+                "Name[ar]": "يان جروليتش,لوكاس تينكل",
                 "Name[az]": "Jan Grulich,Lukáš Tinkl",
                 "Name[bg]": "Jan Grulich,Lukáš Tinkl",
                 "Name[ca@valencia]": "Jan Grulich,Lukáš Tinkl",
@@ -154,6 +154,7 @@
         "Website": "https://projects.kde.org/projects/kde/workspace/plasma-nm"
     },
     "X-KDE-Keywords": "network,internet,ethernet,wireless,wifi,wlan,vpn",
+    "X-KDE-Keywords[ar]": "شبكة,إنترنت,إيثرنت,لاسلكي,واي فاي,شبكة محلية لاسلكية,VPN",
     "X-KDE-Keywords[ca@valencia]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",
     "X-KDE-Keywords[ca]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",
     "X-KDE-Keywords[en_GB]": "network,internet,ethernet,wireless,wifi,wlan,vpn",

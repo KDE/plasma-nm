@@ -1,7 +1,7 @@
 # Arabic Translation.
 # Copyright (C) 2014 This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 # Abd_Allatif, 2014.
 #
 msgid ""
@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-03-14 02:54+0000\n"
-"PO-Revision-Date: 2024-05-09 10:35+0400\n"
+"PO-Revision-Date: 2025-04-19 13:51+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: vpnc.cpp:73
 #, kde-format
@@ -33,6 +34,8 @@ msgstr "خطأ"
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr ""
+"يفتقد مدير الشبكة NetworkManager دعم شبكة الشبكات الخاصة الافتراضية "
+"المتوافقة مع سيسكو"
 
 #: vpnc.cpp:146
 #, kde-format
@@ -49,7 +52,7 @@ msgstr "البوابة:"
 #: vpnc.ui:31
 #, kde-format
 msgid "IP/hostname of IPsec gateway."
-msgstr ""
+msgstr "عنوان الإنترنت IP/اسم المضيف لبوابة IPsec."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnc.ui:38
@@ -62,7 +65,7 @@ msgstr "اسم المستخدم:"
 #: vpnc.ui:51 vpncauth.ui:97
 #, kde-format
 msgid "User name for the connection."
-msgstr ""
+msgstr "اسم المستخدم للاتصال."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnc.ui:58
@@ -75,7 +78,7 @@ msgstr "كلمة المرور للمستخدم:"
 #: vpnc.ui:79 vpncauth.ui:58
 #, kde-format
 msgid "User password for the connection."
-msgstr ""
+msgstr "كلمة سر المستخدم للاتصال."
 
 #. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -94,21 +97,21 @@ msgstr "اسم المجموعة"
 #: vpnc.ui:111
 #, kde-format
 msgid "Group password:"
-msgstr "كلمة مرور المجموعة:"
+msgstr "كلمة سر المجموعة:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
 #: vpnc.ui:129 vpncauth.ui:84
 #, kde-format
 msgid "Group password."
-msgstr "كلمة مرور المجموعة."
+msgstr "كلمة سر المجموعة."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useHybridAuth)
 #: vpnc.ui:141
 #, kde-format
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
-msgstr ""
+msgstr "تمكين المصادقة المختلطة، أي استخدام الشهادة بالإضافة إلى كلمة السر."
 
 #. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
 #: vpnc.ui:144
@@ -126,7 +129,7 @@ msgstr "ملف CA:"
 #: vpnc.ui:167
 #, kde-format
 msgid "CA certificate in PEM format."
-msgstr ""
+msgstr "شهادة المرجع المصدق (CA) بتنسيق PEM."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
 #: vpnc.ui:170
@@ -156,7 +159,7 @@ msgstr "المجال:"
 #: vpncadvanced.ui:37
 #, kde-format
 msgid "(NT-)Domain name for authentication."
-msgstr ""
+msgstr "اسم المجال (NT-) للمصادقة."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpncadvanced.ui:44
@@ -168,7 +171,7 @@ msgstr "البائع:"
 #: vpncadvanced.ui:60
 #, kde-format
 msgid "Vendor of your IPsec gateway."
-msgstr ""
+msgstr "مورد بوابة IPsec الخاصة بك."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: vpncadvanced.ui:70
@@ -192,13 +195,13 @@ msgstr "طريقة التشفير."
 #: vpncadvanced.ui:105
 #, kde-format
 msgid "NAT traversal:"
-msgstr ""
+msgstr "اجتياز النات:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, nat)
 #: vpncadvanced.ui:121
 #, kde-format
 msgid "NAT traversal method to use."
-msgstr ""
+msgstr "طريقة اجتياز نات NAT لاستخدامها."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: vpncadvanced.ui:128
@@ -210,19 +213,19 @@ msgstr "مجموعة IKE DH:"
 #: vpncadvanced.ui:144
 #, kde-format
 msgid "Name of the IKE DH group."
-msgstr ""
+msgstr "اسم مجموعة IKE DH."
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpncadvanced.ui:151
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr ""
+msgstr "السرية التامة للأمام:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
 #: vpncadvanced.ui:167
 #, kde-format
 msgid "Diffie-Hellman group to use for PFS."
-msgstr ""
+msgstr "مجموعة ديفي-هيلمان لاستخدامها في PFS."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: vpncadvanced.ui:174
@@ -237,6 +240,8 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
+"المنفذ المحلي المراد استخدامه (0-65535). 0 (القيمة الافتراضية) تعني منفذ "
+"عشوائي. 500 هي القيمة الافتراضية لـ vpnc."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193
@@ -248,7 +253,7 @@ msgstr "عشوائي"
 #: vpncadvanced.ui:209
 #, kde-format
 msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr ""
+msgstr "عطّل إرسال حزم DPD (اضبط المهلة على 0)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
 #: vpncadvanced.ui:212
@@ -295,7 +300,7 @@ msgstr "بدون (غير آمن إطلاقًا)"
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr "استخدم NAT-T عند توفره (افتراضي)"
+msgstr "استخدم NAT-T عند توفره (المبدئي)"
 
 #: vpncadvancedwidget.cpp:33
 #, kde-format
@@ -373,13 +378,13 @@ msgstr "استيثاق VPNC"
 #: vpncauth.ui:32
 #, kde-format
 msgid "User Password:"
-msgstr "كلمة مرور المستخدم:"
+msgstr "كلمة سر المستخدم:"
 
 #. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
 #: vpncauth.ui:45
 #, kde-format
 msgid "Group Password:"
-msgstr "كلمة مرور المجموعة:"
+msgstr "كلمة سر المجموعة:"
 
 #. i18n: ectx: property (text), widget (QLabel, userNameLabel)
 #: vpncauth.ui:104

@@ -1,0 +1,177 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2021-05-31 00:18+0000\n"
+"PO-Revision-Date: 2025-04-19 13:35+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomGatewayPort)
+#: sshadvanced.ui:19
+#, kde-format
+msgid "Use custom gateway port:"
+msgstr "استخدام منفذ بوابة مخصص:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomTunnelMtu)
+#: sshadvanced.ui:46
+#, kde-format
+msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
+msgstr "استخدم وحدة النقل القصوى المخصصة للنفق (MTU):"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_extraSshOptions)
+#: sshadvanced.ui:70
+#, kde-format
+msgid "Extra SSH options:"
+msgstr "خيارات اس اس اتش الإضافية:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_remoteDeviceNumber)
+#: sshadvanced.ui:88
+#, kde-format
+msgid "Remote device number:"
+msgstr "رقم الجهاز البعيد:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useTapDevice)
+#: sshadvanced.ui:107
+#, kde-format
+msgid "Use a TAP device"
+msgstr "استخدم جهاز TAP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_remoteUsername)
+#: sshadvanced.ui:116
+#, kde-format
+msgid "Remote username"
+msgstr "اسم المستخدم البعيد"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_doNotReplaceDefaultRoute)
+#: sshadvanced.ui:132
+#, kde-format
+msgid "Do not replace default route"
+msgstr "هل تريد استبدال الطريق المبدئي؟"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, SshAuth)
+#: sshauth.ui:14
+#, kde-format
+msgid "SSH VPN"
+msgstr "شبكة خاصة افتراضية اس اس اتش"
+
+#. i18n: ectx: property (text), widget (QLabel, passwordLabel)
+#: sshauth.ui:32
+#, kde-format
+msgid "Password: "
+msgstr "كلمة السّرّ: "
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: sshwidget.ui:47
+#, kde-format
+msgid "General"
+msgstr "عامّ"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
+#: sshwidget.ui:55
+#, kde-format
+msgid "Gateway:"
+msgstr "البوّابة:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: sshwidget.ui:73
+#, kde-format
+msgid "Network Settings"
+msgstr "إعدادات الشّبكة"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_remoteIp)
+#. i18n: ectx: property (text), widget (QLabel, lbl_remoteIpv6)
+#: sshwidget.ui:79 sshwidget.ui:134
+#, kde-format
+msgid "Remote IP Address:"
+msgstr "عنوان الانترنت IP البعيد:"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_localIp)
+#. i18n: ectx: property (text), widget (QLabel, lbl_localIpv6)
+#: sshwidget.ui:92 sshwidget.ui:151
+#, kde-format
+msgid "Local IP Address:"
+msgstr "عنوان الانترنت IP المحلي:"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_netmask)
+#: sshwidget.ui:105
+#, kde-format
+msgid "Netmask:"
+msgstr "قناع الشّبكة:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: sshwidget.ui:121
+#, kde-format
+msgid "IPv6 Network Settings"
+msgstr "إعدادات الشّبكة IPv6"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chk_useIpv6)
+#: sshwidget.ui:127
+#, kde-format
+msgid "Use IPv6"
+msgstr "استخدم IPv6 "
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_netmaskIpv6)
+#: sshwidget.ui:168
+#, kde-format
+msgid "Prefix:"
+msgstr "البادئة:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_4)
+#: sshwidget.ui:188
+#, kde-format
+msgid "Authentication"
+msgstr "الاستيثاق"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_password)
+#: sshwidget.ui:204
+#, kde-format
+msgid "Password:"
+msgstr "كلمة السر:"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_sshKeyFile)
+#: sshwidget.ui:222
+#, kde-format
+msgid "SSH Key File:"
+msgstr "ملف مفتاح اس اس اتس:"
+
+#. i18n: ectx: property (text), widget (QLabel, lbl_authType)
+#: sshwidget.ui:238
+#, kde-format
+msgid "Type:"
+msgstr "النوع:"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmb_authType)
+#: sshwidget.ui:249
+#, kde-format
+msgid "SSH Agent"
+msgstr "وكيل اس اس اتش"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmb_authType)
+#: sshwidget.ui:254
+#, kde-format
+msgid "Password"
+msgstr "كلمة السّر"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, cmb_authType)
+#: sshwidget.ui:259
+#, kde-format
+msgid "Key authentication"
+msgstr "استيثاق المفتاح"
+
+#. i18n: ectx: property (text), widget (QPushButton, btn_advancedOption)
+#: sshwidget.ui:300
+#, kde-format
+msgid "Advanced…"
+msgstr "متقدّم…"

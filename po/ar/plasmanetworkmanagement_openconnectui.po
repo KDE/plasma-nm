@@ -1,39 +1,39 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-#
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2015.
+# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2022-12-14 00:48+0000\n"
-"PO-Revision-Date: 2015-01-10 03:31+0300\n"
-"Last-Translator: Safa Alfulaij <safa1996alfulaij@gmail.com>\n"
-"Language-Team: Arabic <doc@arabeyes.org>\n"
+"PO-Revision-Date: 2025-04-19 18:27+0400\n"
+"Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
+"Language-Team: ar\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: openconnectauth.cpp:304
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr ""
+msgstr "فشل تهيئة رمز البرنامج: %1"
 
 #: openconnectauth.cpp:357
-#, fuzzy, kde-format
-#| msgid "Contacting host, please wait..."
+#, kde-format
 msgid "Contacting host, please wait…"
-msgstr "يتّصل بالمضيف، فضلًا انتظر..."
+msgstr "جاري الاتصال بالمضيف، الرجاء الانتظار…"
 
 #: openconnectauth.cpp:596
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
-msgstr "لِج"
+msgstr "لج"
 
 #: openconnectauth.cpp:658
 #, kde-format
@@ -42,7 +42,7 @@ msgid ""
 "Reason: %2\n"
 "Accept it anyway?"
 msgstr ""
-"فشل فحص الشّهادة من خادوم VPN ‏\"%1\".\n"
+"فشل فحص الشّهادة من خادوم الشبكة الخاصة الافتراضية ‏\"%1\".\n"
 "السّبب: %2\n"
 "أأقبلها بأيّ حال؟"
 
@@ -61,7 +61,7 @@ msgstr "استيثاق OpenConnect VPN"
 #: openconnectauth.ui:55
 #, kde-format
 msgid "VPN Host"
-msgstr "مضيف VPN"
+msgstr "مضيف الشبكة الخاصة الافتراضية"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, btnConnect)
 #: openconnectauth.ui:81
@@ -77,10 +77,9 @@ msgstr "ابدأ الاتّصال آليًّا في المرّة القادمة"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkStorePasswords)
 #: openconnectauth.ui:109
-#, fuzzy, kde-format
-#| msgid "&Show password"
+#, kde-format
 msgid "Store passwords"
-msgstr "أ&ظهر كلمة المرور"
+msgstr "خزّن كلمات السّرّ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
 #: openconnectauth.ui:153
@@ -142,7 +141,7 @@ msgstr "البوّابة:"
 #: openconnectprop.ui:51
 #, kde-format
 msgid "CA Certificate:"
-msgstr "شهادة كاليفورنيا:"
+msgstr "شهادة المرجع المصدق (CA):"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, leCaCertificate)
 #. i18n: ectx: property (filter), widget (KUrlRequester, leUserCert)
@@ -150,122 +149,121 @@ msgstr "شهادة كاليفورنيا:"
 #: openconnectprop.ui:61 openconnectprop.ui:240 openconnectprop.ui:257
 #, kde-format
 msgid "*.pem *.crt *.key"
-msgstr ""
+msgstr "*.pem *.crt *.key"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: openconnectprop.ui:68
 #, kde-format
 msgid "Proxy:"
-msgstr "الوسيط:"
+msgstr "الوكيل:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openconnectprop.ui:81
 #, kde-format
 msgid "User Agent:"
-msgstr ""
+msgstr "وكيل المستخدم:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openconnectprop.ui:94
 #, kde-format
 msgid "CSD Wrapper Script:"
-msgstr ""
+msgstr "نص برمجي لـ CSD Wrapper:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
 #: openconnectprop.ui:104
 #, kde-format
 msgid "Allow Cisco Secure Desktop trojan"
-msgstr ""
+msgstr "السماح لحصان طروادة Cisco Secure Desktop الآمن لسطح المكتب"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: openconnectprop.ui:114
 #, kde-format
 msgid "VPN Protocol:"
-msgstr ""
+msgstr "ميفاق الشبكة الخاصة الافتراضية:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:131
-#, fuzzy, kde-format
-#| msgid "Connect"
+#, kde-format
 msgid "Cisco AnyConnect"
-msgstr "اتّصل"
+msgstr "سيسكو AnyConnect"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:136
 #, kde-format
 msgid "Juniper Network Connect"
-msgstr ""
+msgstr "جونيبر نتوورك كونيكت"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:141
 #, kde-format
 msgid "PAN Global Protect"
-msgstr ""
+msgstr "PAN Global Protect"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:146
 #, kde-format
 msgid "Pulse Connect Secure"
-msgstr ""
+msgstr "Pulse Connect Secure"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:151
 #, kde-format
 msgid "F5 BIG-IP SSL VPN"
-msgstr ""
+msgstr "F5 BIG-IP SSL VPN"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:156
 #, kde-format
 msgid "Fortinet SSL VPN"
-msgstr ""
+msgstr "Fortinet SSL VPN"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:161
 #, kde-format
 msgid "Array SSL VPN"
-msgstr ""
+msgstr "Array SSL VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnectprop.ui:169
 #, kde-format
 msgid "Reported OS:"
-msgstr ""
+msgstr "نظام التشغيل المبلغ عنه:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:188
 #, kde-format
 msgid "GNU/Linux"
-msgstr ""
+msgstr "غنو/لينكس"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:193
 #, kde-format
 msgid "GNU/Linux 64-bit"
-msgstr ""
+msgstr "غنو/لينكس 64 بت"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:198
 #, kde-format
 msgid "Windows"
-msgstr ""
+msgstr "ويندوز"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:203
 #, kde-format
 msgid "Mac OS X"
-msgstr ""
+msgstr "ماك أو إس إكس"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:208
 #, kde-format
 msgid "Android"
-msgstr ""
+msgstr "أندوريد"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:213
 #, kde-format
 msgid "Apple iOS"
-msgstr ""
+msgstr "أبل أي أو اس"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: openconnectprop.ui:224
@@ -295,40 +293,37 @@ msgstr "استخدم FSID لعبارة المرور"
 #: openconnectprop.ui:271
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
-msgstr ""
+msgstr "امنع المستخدم من قبول الشهادات غير الصالحة يدويًا"
 
 #. i18n: ectx: property (text), widget (QPushButton, buTokens)
 #: openconnectprop.ui:297
-#, fuzzy, kde-format
-#| msgid "Certificate Authentication"
+#, kde-format
 msgid "Token Authentication"
-msgstr "استيثاق الشّهادة"
+msgstr "استيثاق الرمز"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenConnectToken)
 #: openconnecttoken.ui:14
-#, fuzzy, kde-format
-#| msgid "OpenConnect Settings"
+#, kde-format
 msgid "OpenConnect OTP Tokens"
-msgstr "إعدادات OpenConnect"
+msgstr "رموز كلمة سر لمرة واحدة من OpenConnect"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbToken)
 #: openconnecttoken.ui:20
-#, fuzzy, kde-format
-#| msgid "Certificate Authentication"
+#, kde-format
 msgid "Software Token Authentication"
-msgstr "استيثاق الشّهادة"
+msgstr "استيثاق رمز برنامجي"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnecttoken.ui:26
 #, kde-format
 msgid "Token Mode:"
-msgstr ""
+msgstr "نمط الرمز:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnecttoken.ui:43
 #, kde-format
 msgid "Token Secret:"
-msgstr ""
+msgstr "سر الرمز:"
 
 #~ msgid "&Show password"
 #~ msgstr "أ&ظهر كلمة المرور"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2025-02-09 11:57+0400\n"
+"PO-Revision-Date: 2025-04-21 18:07+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -374,7 +374,7 @@ msgstr "شريحة مودم GSM خاطئة"
 msgctxt ""
 "@info:status Notification when the device failed due to InfiniBandMode"
 msgid "InfiniBand device does not support connected mode"
-msgstr "جهاز InfiniBand لا يدعم وضع الاتصال"
+msgstr "جهاز إنفيني باند لا يدعم وضع الاتصال"
 
 #: notification.cpp:232
 #, kde-format
@@ -442,7 +442,7 @@ msgstr "المودم جاهز ومتاح الآن"
 msgctxt ""
 "@info:status Notification when the device failed due to SimPinIncorrect"
 msgid "The SIM PIN was incorrect"
-msgstr "رقم التعريف الشخصي لبطاقة SIM كان غير صحيح"
+msgstr "رقم التعريف الشخصي للشريحة غير صحيح"
 
 #: notification.cpp:263
 #, kde-format
@@ -476,61 +476,64 @@ msgstr "عُطّل اتصال '%1'."
 #: notification.cpp:423
 #, kde-format
 msgid "VPN connection '%1' activated."
-msgstr "فُعِّل اتصال VPN ‏'%1'."
+msgstr "فُعِّل اتصال الشبكة الشخصية الخاصة ‏'%1'."
 
 #: notification.cpp:426
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "فشل تفعيل اتصال VPN ‏'%1'."
+msgstr "فشل تفعيل اتصال الشبكة الشخصية الخاصة ‏'%1'."
 
 #: notification.cpp:429 notification.cpp:437
 #, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "عُطل اتصال  VPN ‏'%1'."
+msgstr "عُطل اتصال الشبكة الشخصية الخاصة ‏'%1'."
 
 #: notification.cpp:440
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
-msgstr "غيّر اتصال  VPN ‏'%1' حالته لأنّ الجهاز الذي استخُدم قُطِع اتصاله."
+msgstr ""
+"غيّر اتصال  الشبكة الشخصية الخاصة ‏'%1' حالته لأنّ الجهاز الذي استخُدم قُطِع "
+"اتصاله."
 
 #: notification.cpp:443
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "توقّفت الخدمة الموفّرة لاتصال  VPN ‏'%1'."
+msgstr "توقّفت الخدمة الموفّرة لاتصال  الشبكة الشخصية الخاصة ‏'%1'."
 
 #: notification.cpp:446
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "إعداد IP لاتصال  VPN ‏'%1' غير صالح."
+msgstr "إعداد عنوان الإنترنت IP لاتصال  الشبكة الشخصية الخاصة ‏'%1' غير صالح."
 
 #: notification.cpp:449
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
-msgstr "انتهت مهلة محاولة الاتصال بخدمة VPN."
+msgstr "انتهت مهلة محاولة الاتصال بخدمة الشبكة الشخصية الخاصة."
 
 #: notification.cpp:452
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
-msgstr "انتهت المهلة خلال بدء الخدمة الموفّرة لاتصال  VPN ‏'%1'."
+msgstr ""
+"انتهت المهلة خلال بدء الخدمة الموفّرة لاتصال  الشبكة الشخصية الخاصة ‏'%1'."
 
 #: notification.cpp:455
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "فشل بدء الخدمة الموفّرة لاتصال VPN ‏'%1' ."
+msgstr "فشل بدء الخدمة الموفّرة لاتصال الشبكة الشخصية الخاصة ‏'%1' ."
 
 #: notification.cpp:458
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
-msgstr "الأسرار المطلوبة لاتصال VPN ‏'%1' لم تُوفَّر."
+msgstr "الأسرار المطلوبة لاتصال الشبكة الشخصية الخاصة ‏'%1' لم تُوفَّر."
 
 #: notification.cpp:461
 #, kde-format
 msgid "Authentication to the VPN server failed."
-msgstr "فشل استيثاق خادوم VPN."
+msgstr "فشل استيثاق خادوم الشبكة الشخصية الخاصة."
 
 #: notification.cpp:464
 #, kde-format
@@ -575,7 +578,7 @@ msgstr "وفّر كلمة سر لتفعيل اتصال '%1':"
 #: passworddialog.cpp:127
 #, kde-format
 msgid "VPN secrets (%1) dialog"
-msgstr "حواري أسرار VPN ‏(%1)"
+msgstr "حواري أسرار شبكات الشخصية الافتراضية ‏(%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
@@ -649,12 +652,12 @@ msgstr "شِفرة %1:"
 #: pindialog.cpp:85 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
-msgstr "شِفرة رمز PIN الجديدة:"
+msgstr "رقم التعريفي الشخصي الجديد:"
 
 #: pindialog.cpp:86
 #, kde-format
 msgid "Re-enter new PIN code:"
-msgstr "أعد إدخال شِفرة رمز PIN الجديدة:"
+msgstr "أعد رقم التعريفي الشخصي الجديد:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: pindialog.cpp:87 pinwidget.ui:193
@@ -665,27 +668,27 @@ msgstr "أظهر شِفرة رمز PIN/PUK"
 #: pindialog.cpp:97
 #, kde-format
 msgid "SIM PIN"
-msgstr "رمز PIN للشريحة"
+msgstr "رقم التعريف الشخصي للشريحة 1"
 
 #: pindialog.cpp:99
 #, kde-format
 msgid "SIM PIN2"
-msgstr "رمز PIN2 للشريحة"
+msgstr "رقم التعريف الشخصي للشريحة 2"
 
 #: pindialog.cpp:101
 #, kde-format
 msgid "Service provider PIN"
-msgstr "رمز PIN للخدمة الموفّرة"
+msgstr "رقم التعريف الشخصي لمزود الخدمة"
 
 #: pindialog.cpp:103
 #, kde-format
 msgid "Network PIN"
-msgstr "رمز PIN للشبكة"
+msgstr "رقم التعريف الشخصي للشبكة"
 
 #: pindialog.cpp:105
 #, kde-format
 msgid "PIN"
-msgstr "رمز PIN"
+msgstr "رقم التعريف الشخصي"
 
 #: pindialog.cpp:107
 #, kde-format
@@ -705,17 +708,17 @@ msgstr "رقم التعريف الشخصي للشبكة الفرعية"
 #: pindialog.cpp:117
 #, kde-format
 msgid "Show PIN code"
-msgstr "أظهر شِفرة رمز PIN"
+msgstr "أظهر رمز رقم التعريف الشخصي"
 
 #: pindialog.cpp:200
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
-msgstr "شِفرة رمز PIN قصيرة جدًا. يجب أن تكون 4 أرقام على الأقل."
+msgstr "رقم التعريف الشخصي قصير جدًا. يجب أن تكون 4 أرقام على الأقل."
 
 #: pindialog.cpp:205
 #, kde-format
 msgid "The two PIN codes do not match"
-msgstr "شِفرتيّ رمز PIN لا تتطابقان"
+msgstr "رقمي التعريف الشخصيان لا تتطابقان"
 
 #: pindialog.cpp:210
 #, kde-format
@@ -732,7 +735,7 @@ msgstr "خطأ مجهول"
 #: pinwidget.ui:14 pinwidget.ui:47
 #, kde-format
 msgid "SIM PIN unlock required"
-msgstr "إزالة قفل رمز PIN للشريحة مطلوب"
+msgstr "يلزم فتح قفل البطاقة باستخدام رقم التعريف الشخصي"
 
 #. i18n: ectx: property (text), widget (QLabel, prompt)
 #: pinwidget.ui:76
@@ -741,7 +744,8 @@ msgid ""
 "The mobile broadband device '%1' requires a SIM PIN code before it can be "
 "used."
 msgstr ""
-"يحتاج جهاز الاتصال بشبكة المحمول '%1' لشِفرة رمز PIN للشريحة قبل استخدامه."
+"يحتاج جهاز الاتصال بشبكة المحمول '%1' لرقم التعريف الشخصي للشريحة قبل "
+"استخدامه."
 
 #. i18n: ectx: property (text), widget (QLabel, pukLabel)
 #: pinwidget.ui:133
@@ -753,7 +757,7 @@ msgstr "شِفرة PUK:"
 #: pinwidget.ui:173
 #, kde-format
 msgid "Re-enter PIN code:"
-msgstr "أعد إدخال شِفرة رمز PIN:"
+msgstr "أعد إدخال رقم التعريفي الشخصي:"
 
 #: secretagent.cpp:406
 #, kde-format

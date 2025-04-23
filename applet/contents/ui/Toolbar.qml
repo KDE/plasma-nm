@@ -155,6 +155,7 @@ RowLayout {
 
         visible: handler.hotspotSupported
         checkable: true
+        checked: handler.hotspotActive
 
         text: i18n("Hotspot")
         icon.name: "network-wireless-hotspot"
@@ -164,34 +165,20 @@ RowLayout {
 
         onClicked: {
             if (PlasmaNM.Configuration.hotspotConnectionPath) {
-                checked = false
                 handler.stopHotspot()
             } else {
-                checked = true
                 handler.createHotspot()
             }
         }
 
         PlasmaComponents3.ToolTip {
-            id: tooltip
-        }
-
-        Connections {
-            target: handler
-            function onHotspotCreated() {
-                hotspotButton.checked = true
-                tooltip.text = i18n("Disable Hotspot")
+            text: {
+                if (handler.hotspotActive) {
+                    return i18n("Disable Hotspot");
+                } else {
+                    return i18n("Create Hotspot");
+                }
             }
-
-            function onHotspotDisabled() {
-                hotspotButton.checked = false
-                tooltip.text = i18n("Create Hotspot")
-            }
-        }
-
-        Component.onCompleted: {
-            checked = PlasmaNM.Configuration.hotspotConnectionPath
-            tooltip.text = PlasmaNM.Configuration.hotspotConnectionPath ? i18n("Disable Hotspot") : i18n("Create Hotspot")
         }
     }
 

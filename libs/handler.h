@@ -34,6 +34,7 @@ public:
     ~Handler() override;
 
     Q_PROPERTY(bool hotspotSupported READ hotspotSupported NOTIFY hotspotSupportedChanged)
+    Q_PROPERTY(bool hotspotActive READ hotspotActive NOTIFY hotspotActiveChanged)
 
     // Not scientifically correct, but a good estimation of whether a scanning is currently in progress.
     Q_PROPERTY(bool scanning READ isScanning NOTIFY scanningChanged)
@@ -42,6 +43,11 @@ public:
     bool hotspotSupported() const
     {
         return m_hotspotSupported;
+    }
+
+    bool hotspotActive() const
+    {
+        return m_hotspotActive;
     }
 
     bool isScanning() const
@@ -132,9 +138,8 @@ private Q_SLOTS:
 
 Q_SIGNALS:
     void connectionActivationFailed(const QString &connectionPath, const QString &message);
-    void hotspotCreated();
-    void hotspotDisabled();
     void hotspotSupportedChanged(bool hotspotSupported);
+    void hotspotActiveChanged(bool hotspotActive);
     void scanningChanged();
     void wifiCodeReceived(const QString &data, const QString &ssid);
 
@@ -148,6 +153,7 @@ private:
     QCoro::Task<void> createHotspotInternal();
 
     bool m_hotspotSupported;
+    bool m_hotspotActive;
     bool m_tmpWirelessEnabled;
     bool m_tmpWwanEnabled;
     QString m_tmpConnectionPath;

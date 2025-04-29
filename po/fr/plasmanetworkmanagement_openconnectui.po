@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-10-27 00:42+0000\n"
-"PO-Revision-Date: 2025-01-14 18:01+0100\n"
+"PO-Revision-Date: 2025-04-23 18:03+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 24.12.3\n"
 "X-Text-Markup: kde4\n"
 
 #: openconnectauth.cpp:347
@@ -153,7 +153,7 @@ msgstr "Passerelle :"
 #: openconnectprop.ui:51
 #, kde-format
 msgid "CA Certificate:"
-msgstr "Certificat de l'AC :"
+msgstr "Certificat « CA » :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: openconnectprop.ui:70
@@ -474,14 +474,13 @@ msgstr ""
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
 msgstr ""
-"L'authentificateur a été supprimé lors de la vérification. Veuillez "
-"l'insérer à nouveau et réessayer."
+"L'authentifieur a été supprimé lors de la vérification. Veuillez l'insérer à "
+"nouveau et réessayer."
 
 #: openconnectwebauthdialog.cpp:269
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
-"L'authentificateur ne possède aucune prise en charge de clés résidentes."
+msgstr "L'authentifieur ne possède aucune prise en charge de clés résidentes."
 
 #: openconnectwebauthdialog.cpp:272
 #, kde-format

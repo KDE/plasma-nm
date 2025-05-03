@@ -58,7 +58,7 @@ PlasmaExtras.ExpandableListItem {
 
         icon.name: isDeactivated ? "network-connect" : "network-disconnect"
         text: isDeactivated ? i18n("Connect") : i18n("Disconnect")
-        onTriggered: checked => connectionItem.changeState()
+        onTriggered: connectionItem.changeState()
     }
     showDefaultActionButtonWhenBusy: true
 
@@ -84,13 +84,13 @@ PlasmaExtras.ExpandableListItem {
             enabled: connectionItem.model.Uuid && connectionItem.model.Type === PlasmaNM.Enums.Wireless && connectionItem.passwordIsStatic
             text: i18n("Show Network's QR Code")
             icon.name: "view-barcode-qr"
-            onTriggered: checked => handler.requestWifiCode(connectionItem.model.ConnectionPath, connectionItem.model.Ssid, connectionItem.model.SecurityType);
+            onTriggered: handler.requestWifiCode(connectionItem.model.ConnectionPath, connectionItem.model.Ssid, connectionItem.model.SecurityType);
         },
         Action {
             enabled: connectionItem.model.Uuid !== ""
             text: i18n("Configure…")
             icon.name: "configure"
-            onTriggered: checked => KCMUtils.KCMLauncher.openSystemSettings(mainWindow.kcm, ["--args", "Uuid=" + connectionItem.model.Uuid])
+            onTriggered: KCMUtils.KCMLauncher.openSystemSettings(mainWindow.kcm, ["--args", "Uuid=" + connectionItem.model.Uuid])
         }
     ]
 

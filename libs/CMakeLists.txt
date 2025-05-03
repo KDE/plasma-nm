@@ -63,7 +63,7 @@ PRIVATE
 
 target_link_libraries(plasmanm_internal PUBLIC KF6::ModemManagerQt)
 
-ecm_add_qml_module(plasmanm_internal URI org.kde.plasma.networkmanagement GENERATE_PLUGIN_SOURCE)
+ecm_add_qml_module(plasmanm_internal URI org.kde.plasma.networkmanagement GENERATE_PLUGIN_SOURCE DEPENDENCIES "org.kde.networkmanager")
 ecm_finalize_qml_module(plasmanm_internal)
 
 install(TARGETS plasmanm_internal ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})

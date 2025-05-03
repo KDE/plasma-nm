@@ -10,10 +10,12 @@ import org.kde.plasma.networkmanagement as PlasmaNM
 import org.kde.plasma.extras as PlasmaExtras
 
 PlasmaExtras.PasswordField {
+    id: root
+
     property int/*PlasmaNM.Enums.SecurityType*/ securityType
 
     validator: RegularExpressionValidator {
-        regularExpression: (securityType === PlasmaNM.Enums.StaticWep)
+        regularExpression: (root.securityType === PlasmaNM.Enums.StaticWep)
             ? /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26})$/
             : /^(?:.{8,64})$/
     }

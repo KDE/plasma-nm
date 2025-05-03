@@ -22,12 +22,15 @@ import org.kde.plasma.plasmoid 2.0
 PlasmaExtras.ExpandableListItem {
     id: connectionItem
 
-    property bool activating: ConnectionState === PlasmaNM.Enums.Activating
-    property bool deactivated: ConnectionState === PlasmaNM.Enums.Deactivated
-    property bool passwordIsStatic: (SecurityType === PlasmaNM.Enums.StaticWep || SecurityType == PlasmaNM.Enums.WpaPsk ||
-                                     SecurityType === PlasmaNM.Enums.Wpa2Psk || SecurityType == PlasmaNM.Enums.SAE)
-    property bool predictableWirelessPassword: !Uuid && Type === PlasmaNM.Enums.Wireless && passwordIsStatic
-    property bool showSpeed: mainWindow.expanded && ConnectionState === PlasmaNM.Enums.Activated
+    required property var model
+    required property int index
+
+    property bool activating: model.ConnectionState === PlasmaNM.Enums.Activating
+    property bool deactivated: model.ConnectionState === PlasmaNM.Enums.Deactivated
+    property bool passwordIsStatic: (model.SecurityType === PlasmaNM.Enums.StaticWep || model.SecurityType == PlasmaNM.Enums.WpaPsk ||
+                                     model.SecurityType === PlasmaNM.Enums.Wpa2Psk || model.SecurityType == PlasmaNM.Enums.SAE)
+    property bool predictableWirelessPassword: !model.Uuid && model.Type === PlasmaNM.Enums.Wireless && passwordIsStatic
+    property bool showSpeed: mainWindow.expanded && model.ConnectionState === PlasmaNM.Enums.Activated
 
     property real rxSpeed: 0
     property real txSpeed: 0
@@ -36,11 +39,11 @@ PlasmaExtras.ExpandableListItem {
     title: model.ItemUniqueName
     subtitle: itemText()
     isBusy: mainWindow.expanded && model.ConnectionState === PlasmaNM.Enums.Activating
-    isDefault: ConnectionState === PlasmaNM.Enums.Activated
+    isDefault: model.ConnectionState === PlasmaNM.Enums.Activated
     defaultActionButtonAction: Action {
         id: stateChangeButton
 
-        readonly property bool isDeactivated: model.ConnectionState === PlasmaNM.Enums.Deactivated
+        readonly property bool isDeactivated: connectionItem.model.ConnectionState === PlasmaNM.Enums.Deactivated
 
         enabled: {
             if (!connectionItem.expanded) {
@@ -77,16 +80,16 @@ PlasmaExtras.ExpandableListItem {
 
     contextualActions: [
         Action {
-            enabled: Uuid && Type === PlasmaNM.Enums.Wireless && passwordIsStatic
+            enabled: connectionItem.model.Uuid && connectionItem.model.Type === PlasmaNM.Enums.Wireless && passwordIsStatic
             text: i18n("Show Network's QR Code")
             icon.name: "view-barcode-qr"
-            onTriggered: checked => handler.requestWifiCode(ConnectionPath, Ssid, SecurityType);
+            onTriggered: checked => handler.requestWifiCode(connectionItem.model.ConnectionPath, connectionItem.model.Ssid, connectionItem.model.SecurityType);
         },
         Action {
-            enabled: model.Uuid !== ""
+            enabled: connectionItem.model.Uuid !== ""
             text: i18n("Configure…")
             icon.name: "configure"
-            onTriggered: checked => KCMUtils.KCMLauncher.openSystemSettings(mainWindow.kcm, ["--args", "Uuid=" + Uuid])
+            onTriggered: checked => KCMUtils.KCMLauncher.openSystemSettings(mainWindow.kcm, ["--args", "Uuid=" + connectionItem.model.Uuid])
         }
     ]
 
@@ -150,7 +153,7 @@ PlasmaExtras.ExpandableListItem {
                 visible: detailsTabBar.currentIndex === 1
 
                 activeFocusOnTab: details.length > 0
-                details: ConnectionDetails
+                details: connectionItem.model.ConnectionDetails
 
                 Accessible.description: details.join(" ")
 
@@ -214,7 +217,7 @@ PlasmaExtras.ExpandableListItem {
                 Layout.leftMargin: Kirigami.Units.gridUnit
                 Layout.rightMargin: Kirigami.Units.gridUnit
 
-                securityType: SecurityType
+                securityType: connectionItem.model.SecurityType
 
                 onAccepted: {
                     stateChangeButton.trigger()
@@ -239,32 +242,32 @@ PlasmaExtras.ExpandableListItem {
         property double prevRxBytes: 0
         property double prevTxBytes: 0
         onTriggered: {
-            rxSpeed = prevRxBytes === 0 ? 0 : (RxBytes - prevRxBytes) * 1000 / interval
-            txSpeed = prevTxBytes === 0 ? 0 : (TxBytes - prevTxBytes) * 1000 / interval
-            prevRxBytes = RxBytes
-            prevTxBytes = TxBytes
+            rxSpeed = prevRxBytes === 0 ? 0 : (connectionItem.model.RxBytes - prevRxBytes) * 1000 / interval
+            txSpeed = prevTxBytes === 0 ? 0 : (connectionItem.model.TxBytes - prevTxBytes) * 1000 / interval
+            prevRxBytes = connectionItem.model.RxBytes
+            prevTxBytes = connectionItem.model.TxBytes
         }
     }
 
     function changeState() {
-        if (Uuid || !predictableWirelessPassword || connectionItem.customExpandedViewContent == passwordDialogComponent) {
-            if (ConnectionState == PlasmaNM.Enums.Deactivated) {
-                if (!predictableWirelessPassword && !Uuid) {
-                    handler.addAndActivateConnection(DevicePath, SpecificPath)
+        if (model.Uuid || !predictableWirelessPassword || connectionItem.customExpandedViewContent == passwordDialogComponent) {
+            if (model.ConnectionState == PlasmaNM.Enums.Deactivated) {
+                if (!predictableWirelessPassword && !model.Uuid) {
+                    handler.addAndActivateConnection(model.DevicePath, model.SpecificPath)
                 } else if (connectionItem.customExpandedViewContent == passwordDialogComponent) {
                     const item = connectionItem.customExpandedViewContentItem;
                     if (item && item.password !== "") {
-                        handler.addAndActivateConnection(DevicePath, SpecificPath, item.password)
+                        handler.addAndActivateConnection(model.DevicePath, model.SpecificPath, item.password)
                         connectionItem.customExpandedViewContent = detailsComponent
                         connectionItem.collapse()
                     } else {
                         connectionItem.expand()
                     }
                 } else {
-                    handler.activateConnection(ConnectionPath, DevicePath, SpecificPath)
+                    handler.activateConnection(model.ConnectionPath, model.DevicePath, model.SpecificPath)
                 }
             } else {
-                handler.deactivateConnection(ConnectionPath, DevicePath)
+                handler.deactivateConnection(model.ConnectionPath, model.DevicePath)
             }
         } else if (predictableWirelessPassword) {
             setDelayModelUpdates(true)
@@ -277,21 +280,21 @@ PlasmaExtras.ExpandableListItem {
        in the popup where the connections can be "Connect"ed and
        "Disconnect"ed. */
     function itemText() {
-        if (ConnectionState === PlasmaNM.Enums.Activating) {
-            if (Type === PlasmaNM.Enums.Vpn) {
-                return VpnState
+        if (model.ConnectionState === PlasmaNM.Enums.Activating) {
+            if (model.Type === PlasmaNM.Enums.Vpn) {
+                return model.VpnState
             } else {
-                return DeviceState
+                return model.DeviceState
             }
-        } else if (ConnectionState === PlasmaNM.Enums.Deactivating) {
-            if (Type === PlasmaNM.Enums.Vpn) {
-                return VpnState
+        } else if (model.ConnectionState === PlasmaNM.Enums.Deactivating) {
+            if (model.Type === PlasmaNM.Enums.Vpn) {
+                return model.VpnState
             } else {
-                return DeviceState
+                return model.DeviceState
             }
-        } else if (Uuid && ConnectionState === PlasmaNM.Enums.Deactivated) {
-            return LastUsed
-        } else if (ConnectionState === PlasmaNM.Enums.Activated) {
+        } else if (model.Uuid && model.ConnectionState === PlasmaNM.Enums.Deactivated) {
+            return model.LastUsed
+        } else if (model.ConnectionState === PlasmaNM.Enums.Activated) {
             if (showSpeed) {
                 return i18n("Connected, ↓ %1/s, ↑ %2/s",
                     KCoreAddons.Format.formatByteSize(rxSpeed),
@@ -308,11 +311,11 @@ PlasmaExtras.ExpandableListItem {
     }
 
     onShowSpeedChanged: {
-        connectionModel.setDeviceStatisticsRefreshRateMs(DevicePath, showSpeed ? 2000 : 0)
+        connectionModel.setDeviceStatisticsRefreshRateMs(model.DevicePath, showSpeed ? 2000 : 0)
     }
 
     onActivatingChanged: {
-        if (ConnectionState === PlasmaNM.Enums.Activating) {
+        if (model.ConnectionState === PlasmaNM.Enums.Activating) {
             ListView.view.positionViewAtBeginning()
         }
     }

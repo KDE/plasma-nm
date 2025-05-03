@@ -4,6 +4,7 @@
 
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
+pragma ComponentBehavior: Bound
 
 import QtQuick 2.15
 import QtQuick.Layouts 1.15
@@ -57,7 +58,7 @@ PlasmaExtras.ExpandableListItem {
 
         icon.name: isDeactivated ? "network-connect" : "network-disconnect"
         text: isDeactivated ? i18n("Connect") : i18n("Disconnect")
-        onTriggered: checked => changeState()
+        onTriggered: checked => connectionItem.changeState()
     }
     showDefaultActionButtonWhenBusy: true
 
@@ -80,7 +81,7 @@ PlasmaExtras.ExpandableListItem {
 
     contextualActions: [
         Action {
-            enabled: connectionItem.model.Uuid && connectionItem.model.Type === PlasmaNM.Enums.Wireless && passwordIsStatic
+            enabled: connectionItem.model.Uuid && connectionItem.model.Type === PlasmaNM.Enums.Wireless && connectionItem.passwordIsStatic
             text: i18n("Show Network's QR Code")
             icon.name: "view-barcode-qr"
             onTriggered: checked => handler.requestWifiCode(connectionItem.model.ConnectionPath, connectionItem.model.Ssid, connectionItem.model.SecurityType);
@@ -117,10 +118,10 @@ PlasmaExtras.ExpandableListItem {
                 height: implicitHeight
                 implicitHeight: contentHeight
                 position: T.TabBar.Header
-                visible: showSpeed
+                visible: connectionItem.showSpeed
                 onCurrentIndexChanged: {
                     // Only if there are the two tabs.
-                    if (showSpeed) {
+                    if (connectionItem.showSpeed) {
                         Plasmoid.configuration.currentDetailsTab = ["speed", "details"][currentIndex];
                     }
                 }
@@ -136,7 +137,7 @@ PlasmaExtras.ExpandableListItem {
                 }
 
                 Component.onCompleted: {
-                    if (!showSpeed || Plasmoid.configuration.currentDetailsTab === "details") {
+                    if (!connectionItem.showSpeed || Plasmoid.configuration.currentDetailsTab === "details") {
                         currentIndex = 1;
                     }
 
@@ -179,7 +180,7 @@ PlasmaExtras.ExpandableListItem {
 
                 activeFocusOnTab: true
 
-                Accessible.description: i18nc("@info:tooltip", "Current download speed is %1 kibibytes per second; current upload speed is %2 kibibytes per second", Math.round(rxSpeed / 1024), Math.round(txSpeed / 1024))
+                Accessible.description: i18nc("@info:tooltip", "Current download speed is %1 kibibytes per second; current upload speed is %2 kibibytes per second", Math.round(connectionItem.rxSpeed / 1024), Math.round(connectionItem.txSpeed / 1024))
 
                 Loader {
                     anchors.fill: parent
@@ -195,8 +196,8 @@ PlasmaExtras.ExpandableListItem {
                 TrafficMonitor {
                     id: trafficMonitorGraph
                     width: parent.width
-                    downloadSpeed: rxSpeed
-                    uploadSpeed: txSpeed
+                    downloadSpeed: connectionItem.rxSpeed
+                    uploadSpeed: connectionItem.txSpeed
                 }
             }
 
@@ -236,14 +237,14 @@ PlasmaExtras.ExpandableListItem {
         id: timer
         repeat: true
         interval: 2000
-        running: showSpeed
+        running: connectionItem.showSpeed
         triggeredOnStart: true
         // property int can overflow with the amount of bytes.
         property double prevRxBytes: 0
         property double prevTxBytes: 0
         onTriggered: {
-            rxSpeed = prevRxBytes === 0 ? 0 : (connectionItem.model.RxBytes - prevRxBytes) * 1000 / interval
-            txSpeed = prevTxBytes === 0 ? 0 : (connectionItem.model.TxBytes - prevTxBytes) * 1000 / interval
+            connectionItem.rxSpeed = prevRxBytes === 0 ? 0 : (connectionItem.model.RxBytes - prevRxBytes) * 1000 / interval
+            connectionItem.txSpeed = prevTxBytes === 0 ? 0 : (connectionItem.model.TxBytes - prevTxBytes) * 1000 / interval
             prevRxBytes = connectionItem.model.RxBytes
             prevTxBytes = connectionItem.model.TxBytes
         }

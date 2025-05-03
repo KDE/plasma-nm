@@ -38,7 +38,7 @@ MouseArea {
         imagePath: "widgets/line"
         elementId: "horizontal-line"
         width: parent.width - Kirigami.Units.gridUnit * 2
-        visible: separator
+        visible: listItem.separator
     }
 
     KSvg.FrameSvgItem {
@@ -46,19 +46,19 @@ MouseArea {
         imagePath: "widgets/listitem"
         prefix: "normal"
         anchors.fill: parent
-        visible: separator ? false : true
+        visible: listItem.separator ? false : true
     }
 
     KSvg.FrameSvgItem {
         id: pressed
         imagePath: "widgets/listitem"
         prefix: "pressed"
-        opacity: checked ? 1 : 0
+        opacity: listItem.checked ? 1 : 0
         Behavior on opacity { NumberAnimation { duration: Kirigami.Units.shortDuration } }
 
-        x: highlightRect.x
-        y: highlightRect.y
-        height: highlightRect.height
-        width: highlightRect.width
+        x: listItem.highlightRect.x
+        y: listItem.highlightRect.y
+        height: listItem.highlightRect.height
+        width: listItem.highlightRect.width
     }
 }

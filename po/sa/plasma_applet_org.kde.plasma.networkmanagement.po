@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-05-04 00:44+0000\n"
 "PO-Revision-Date: 2024-12-13 19:10+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 
-#: contents/ui/ConnectionItem.qml:56
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Connect"
 msgstr "संयुज्"
 
-#: contents/ui/ConnectionItem.qml:56
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Disconnect"
 msgstr "विच्छेदं कुर्वन्तु"
 
-#: contents/ui/ConnectionItem.qml:81
+#: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "नेटवर्कस्य QR कोडं दर्शयतु"
 
-#: contents/ui/ConnectionItem.qml:87
+#: contents/ui/ConnectionItem.qml:91
 #, kde-format
 msgid "Configure…"
 msgstr "विन्यस्तं कुर्वन्तु..."
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:131
 #, kde-format
 msgid "Speed"
 msgstr "गति"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:136
 #, kde-format
 msgid "Details"
 msgstr "वर्णन"
 
-#: contents/ui/ConnectionItem.qml:179
+#: contents/ui/ConnectionItem.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57,12 +57,12 @@ msgstr ""
 "वर्तमान डाउनलोड् गतिः %1 किबिबाइट् प्रति सेकण्ड् अस्ति; वर्तमान अपलोड् वेगः %2 किबिबाइट् "
 "प्रति सेकण्ड् अस्ति"
 
-#: contents/ui/ConnectionItem.qml:296
+#: contents/ui/ConnectionItem.qml:300
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "संयोजितः, ↓ %1/s, ↑ %2/s"
 
-#: contents/ui/ConnectionItem.qml:300
+#: contents/ui/ConnectionItem.qml:304
 #, kde-format
 msgid "Connected"
 msgstr "संबद्धः"
@@ -108,7 +108,7 @@ msgstr "न मेलनं"
 msgid "No available connections"
 msgstr "न उपलब्धाः संयोजनाः"
 
-#: contents/ui/DetailsText.qml:45
+#: contents/ui/DetailsText.qml:49
 #, kde-format
 msgid "Copy"
 msgstr "प्रतिलिपि"

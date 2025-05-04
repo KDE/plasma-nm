@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-05-04 00:44+0000\n"
 "PO-Revision-Date: 2019-12-29 06:50+0000\n"
 "Last-Translator: Subin Siby <subins2000@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -18,39 +18,39 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: contents/ui/ConnectionItem.qml:56
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Connect"
 msgstr "ബന്ധപ്പെടുക"
 
-#: contents/ui/ConnectionItem.qml:56
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Disconnect"
 msgstr "വിഛേദിക്കുക"
 
-#: contents/ui/ConnectionItem.qml:81
+#: contents/ui/ConnectionItem.qml:85
 #, fuzzy, kde-format
 #| msgid "Show network's QR code"
 msgid "Show Network's QR Code"
 msgstr "ശൃംഖലയുടെ QR കോഡ് കാണിക്കുക"
 
-#: contents/ui/ConnectionItem.qml:87
+#: contents/ui/ConnectionItem.qml:91
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgid "Configure…"
 msgstr "ക്രമീകരിക്കുക..."
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:131
 #, kde-format
 msgid "Speed"
 msgstr "വേഗത"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:136
 #, kde-format
 msgid "Details"
 msgstr "വിശദാംശങ്ങള്‍"
 
-#: contents/ui/ConnectionItem.qml:179
+#: contents/ui/ConnectionItem.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58,12 +58,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:296
+#: contents/ui/ConnectionItem.qml:300
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:300
+#: contents/ui/ConnectionItem.qml:304
 #, kde-format
 msgid "Connected"
 msgstr "ബന്ധിപ്പിച്ചു"
@@ -109,7 +109,7 @@ msgstr ""
 msgid "No available connections"
 msgstr "ലഭ്യമായ ബന്ധങ്ങള്‍"
 
-#: contents/ui/DetailsText.qml:45
+#: contents/ui/DetailsText.qml:49
 #, kde-format
 msgid "Copy"
 msgstr "പകര്‍ത്തുക"

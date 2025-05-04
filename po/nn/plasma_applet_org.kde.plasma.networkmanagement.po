@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-05-04 00:44+0000\n"
 "PO-Revision-Date: 2024-10-27 14:47+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -19,37 +19,37 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Generator: Lokalize 24.11.70\n"
 
-#: contents/ui/ConnectionItem.qml:56
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Connect"
 msgstr "Kopla til"
 
-#: contents/ui/ConnectionItem.qml:56
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Disconnect"
 msgstr "Kopla frå"
 
-#: contents/ui/ConnectionItem.qml:81
+#: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Vis QR-kode for nettverket"
 
-#: contents/ui/ConnectionItem.qml:87
+#: contents/ui/ConnectionItem.qml:91
 #, kde-format
 msgid "Configure…"
 msgstr "Set opp …"
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:131
 #, kde-format
 msgid "Speed"
 msgstr "Fart"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:136
 #, kde-format
 msgid "Details"
 msgstr "Detaljar"
 
-#: contents/ui/ConnectionItem.qml:179
+#: contents/ui/ConnectionItem.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58,12 +58,12 @@ msgid ""
 msgstr ""
 "Gjeldande nedlastingsfart er %1 KiB/s og gjeldande opplastingsfart %2 KiB/s"
 
-#: contents/ui/ConnectionItem.qml:296
+#: contents/ui/ConnectionItem.qml:300
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Kopla til – ↓ %1/s, ↑ %2/s"
 
-#: contents/ui/ConnectionItem.qml:300
+#: contents/ui/ConnectionItem.qml:304
 #, kde-format
 msgid "Connected"
 msgstr "Kopla til"
@@ -109,7 +109,7 @@ msgstr "Ingen treff"
 msgid "No available connections"
 msgstr "Ingen tilgjengelege tilkoplingar"
 
-#: contents/ui/DetailsText.qml:45
+#: contents/ui/DetailsText.qml:49
 #, kde-format
 msgid "Copy"
 msgstr "Kopier"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-05-04 00:44+0000\n"
 "PO-Revision-Date: 2025-04-18 13:11+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -22,37 +22,37 @@ msgstr ""
 "\n"
 "\n"
 
-#: contents/ui/ConnectionItem.qml:56
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Connect"
 msgstr "Tengjast"
 
-#: contents/ui/ConnectionItem.qml:56
+#: contents/ui/ConnectionItem.qml:60
 #, kde-format
 msgid "Disconnect"
 msgstr "Aftengjast"
 
-#: contents/ui/ConnectionItem.qml:81
+#: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Sýna QR-kóða nets"
 
-#: contents/ui/ConnectionItem.qml:87
+#: contents/ui/ConnectionItem.qml:91
 #, kde-format
 msgid "Configure…"
 msgstr "Grunnstilla…"
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:131
 #, kde-format
 msgid "Speed"
 msgstr "Hraði"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:136
 #, kde-format
 msgid "Details"
 msgstr "Nánar"
 
-#: contents/ui/ConnectionItem.qml:179
+#: contents/ui/ConnectionItem.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -62,12 +62,12 @@ msgstr ""
 "Núverandi niðurhalshraði er %1 kibibæti á sekúndu. Núverandi upphleðsluhraði "
 "er %2 kibibæti á sekúndu"
 
-#: contents/ui/ConnectionItem.qml:296
+#: contents/ui/ConnectionItem.qml:300
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Tengt, ↓ %1/s, ↑ %2/s"
 
-#: contents/ui/ConnectionItem.qml:300
+#: contents/ui/ConnectionItem.qml:304
 #, kde-format
 msgid "Connected"
 msgstr "Tengt"
@@ -113,7 +113,7 @@ msgstr "Engar samsvaranir"
 msgid "No available connections"
 msgstr "Engar tiltækar tengingar"
 
-#: contents/ui/DetailsText.qml:45
+#: contents/ui/DetailsText.qml:49
 #, kde-format
 msgid "Copy"
 msgstr "Afrita"

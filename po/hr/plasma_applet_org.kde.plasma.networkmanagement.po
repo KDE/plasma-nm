@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-13 00:43+0000\n"
+"POT-Creation-Date: 2025-05-04 00:44+0000\n"
 "PO-Revision-Date: 2011-06-27 14:57+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -24,38 +24,38 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: contents/ui/ConnectionItem.qml:56
+#: contents/ui/ConnectionItem.qml:60
 #, fuzzy, kde-format
 msgid "Connect"
 msgstr "Spojen"
 
-#: contents/ui/ConnectionItem.qml:56
+#: contents/ui/ConnectionItem.qml:60
 #, fuzzy, kde-format
 msgid "Disconnect"
 msgstr "Koristi TCP vezu"
 
-#: contents/ui/ConnectionItem.qml:81
+#: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:87
+#: contents/ui/ConnectionItem.qml:91
 #, fuzzy, kde-format
 #| msgid "Confirm Delete"
 msgid "Configure…"
 msgstr "Potvrda brisanja"
 
-#: contents/ui/ConnectionItem.qml:127
+#: contents/ui/ConnectionItem.qml:131
 #, kde-format
 msgid "Speed"
 msgstr "Brzina"
 
-#: contents/ui/ConnectionItem.qml:132
+#: contents/ui/ConnectionItem.qml:136
 #, fuzzy, kde-format
 msgid "Details"
 msgstr "Detalji"
 
-#: contents/ui/ConnectionItem.qml:179
+#: contents/ui/ConnectionItem.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -63,12 +63,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:296
+#: contents/ui/ConnectionItem.qml:300
 #, fuzzy, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Spojen na %1"
 
-#: contents/ui/ConnectionItem.qml:300
+#: contents/ui/ConnectionItem.qml:304
 #, fuzzy, kde-format
 msgid "Connected"
 msgstr "Spojen"
@@ -120,7 +120,7 @@ msgstr ""
 msgid "No available connections"
 msgstr "&Sistemska veza"
 
-#: contents/ui/DetailsText.qml:45
+#: contents/ui/DetailsText.qml:49
 #, kde-format
 msgid "Copy"
 msgstr ""

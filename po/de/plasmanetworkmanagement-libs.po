@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Flori G <Renner03@protonmail.com>
 # Burkhard Lück <lueck@hube-lueck.de>, 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021.
 # Markus Slopianka <kamikazow@web.de>, 2013.
 # Benjamin Weis <benjamin.weis@gmx.com>, 2013.
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-10-21 02:36+0000\n"
-"PO-Revision-Date: 2024-11-04 20:16+0100\n"
+"PO-Revision-Date: 2025-02-22 03:02+0100\n"
 "Last-Translator: Flori G <Renner03@protonmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 24.12.2\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -3341,7 +3341,7 @@ msgstr "Plasma fehlt die Unterstützung für „%1“-VPN-Verbindungen."
 #: handler.cpp:113
 #, kde-format
 msgid "Report Bug"
-msgstr "Probleme oder Wünsche berichten"
+msgstr "Problem melden"
 
 #: handler.cpp:136
 #, kde-format

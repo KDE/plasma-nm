@@ -1,27 +1,27 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Kheyyam Gojayev <xxmn77@gmail.com>, 2020, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2025 Kheyyam Gojayev <xxmn77@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-04 00:42+0000\n"
-"PO-Revision-Date: 2023-02-19 14:18+0400\n"
-"Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2025-05-06 11:47+0400\n"
+"Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
 msgctxt "@title:tab General configuration"
 msgid "General"
-msgstr ""
+msgstr "Əsas"
 
 #: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
 #, kde-format
@@ -175,7 +175,7 @@ msgstr "Aktiv yedək"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format
@@ -815,13 +815,7 @@ msgstr "Avtomatik qoşulma növbəsi"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. An negative number can be used "
-#| "to indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -829,9 +823,9 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
-"Əgər bağlantı üçün avtomatik qoşulma tıyin olunarsa daha yüksək prioritetli "
+"Əgər bağlantı üçün avtomatik qoşulma təyin olunarsa daha yüksək prioritetli "
 "qoşulmalara üstünlük veriləcəkdir. 0 standart dəyərdir.\n"
-"Daha yüksək say daha yüksək üstünlük deməkdir. Mənfi say, standart "
+"Daha yüksək say, daha yüksək üstünlük deməkdir. Mənfi say, standart "
 "göstəricidən aşağı prioriteti göstərmək üçün istifadə oluna bilər.\n"
 "           "
 
@@ -1574,7 +1568,7 @@ msgstr "WPA3 Enterprise 192-bit"
 #: editor/settings/ui/wifisecurity.ui:73
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:81
@@ -1817,12 +1811,13 @@ msgstr "Interfeys"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, fuzzy, kde-format
-#| msgid "VLAN interface name:"
+#, kde-format
 msgid ""
 "Required.\n"
 "Network interface name."
-msgstr "VLAN interfeysinin adı:"
+msgstr ""
+"Tələb olunur:\n"
+"Şəbəkə interfeysi adı."
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -2152,7 +2147,7 @@ msgstr "Mobil şəbəkə"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -2193,7 +2188,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Geri bağlantılı (Loopback)"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -2236,10 +2231,9 @@ msgid "Bridge (%1)"
 msgstr "Körpü (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Naqilli interfeys (%1)"
+msgstr "Geri bağlantılı interfeys (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format
@@ -2792,7 +2786,7 @@ msgstr "WPA3-EAP-SUITE-B-192"
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Enhanced Open (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format
@@ -3588,14 +3582,12 @@ msgid "MAC Address"
 msgstr "MAC ünvanı"
 
 #: models/networkmodelitem.cpp:646
-#, fuzzy, kde-format
-#| msgid "Access point (SSID)"
+#, kde-format
 msgid "Access Point (SSID)"
-msgstr "Giriş nöqtəsi (SSİD)"
+msgstr "Giriş nöqtəsi (SSID)"
 
 #: models/networkmodelitem.cpp:648
-#, fuzzy, kde-format
-#| msgid "Signal strength"
+#, kde-format
 msgid "Signal Strength"
 msgstr "Siqnal gücü"
 
@@ -3603,17 +3595,15 @@ msgstr "Siqnal gücü"
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: models/networkmodelitem.cpp:650
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
 msgstr "Təhlükəsizlik növü"
 
 #: models/networkmodelitem.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
 msgstr "Bağlantı sürəti"
 
@@ -3623,11 +3613,10 @@ msgid "Frequency"
 msgstr "Tezlik"
 
 #: models/networkmodelitem.cpp:661
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "Kanal:"
+msgstr "%1 (kanal %2)"
 
 #: models/networkmodelitem.cpp:665
 #, kde-format
@@ -3655,8 +3644,7 @@ msgid "Access Technology"
 msgstr "Giriş üsulu"
 
 #: models/networkmodelitem.cpp:693 models/networkmodelitem.cpp:710
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
 msgstr "VPN qoşması"
 

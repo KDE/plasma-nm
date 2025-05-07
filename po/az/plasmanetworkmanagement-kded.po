@@ -1,21 +1,21 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Kheyyam Gojayev <xxmn77@gmail.com>, 2020, 2022.
+# SPDX-FileCopyrightText: 2020, 2022, 2025 Kheyyam Gojayev <xxmn77@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-19 00:42+0000\n"
-"PO-Revision-Date: 2022-10-17 23:37+0400\n"
-"Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2025-05-06 12:02+0400\n"
+"Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.08.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -43,14 +43,11 @@ msgid "Limited Connectivity"
 msgstr "Məhdud şəbəkə bağlantısı"
 
 #: connectivitymonitor.cpp:93
-#, fuzzy, kde-format
-#| msgid ""
-#| "This device appears to be connected to a network but is unable to reach "
-#| "the internet."
+#, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."
-msgstr "Bu cihaz şəbəkəyə qoşulmuş kimi görünür, lakin internetə girə bilmir."
+msgstr "Bu cihaz şəbəkəyə qoşulmuş kimi görünür, lakin internetə giriş yoxdur."
 
 #: modemmonitor.cpp:182
 #, kde-format
@@ -550,35 +547,28 @@ msgid "Authenticate %1"
 msgstr "%1 doğrulaması"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "Şifrə göstərilməyib"
+msgstr "Təhlükəsiz qoşulmalar üçün məlumat tələb olunmayıb"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the wireless network \"%1\". Please try again."
-msgstr "\"%1\" simsiz şəbəkəsi üçün şifrə daxil edin:"
+msgstr "\"%1\" simsiz şəbəkəsi üçün şifrə yalnışdır. Yenidən cəhd edin."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the wireless network \"%1\":"
 msgstr "\"%1\" simsiz şəbəkəsi üçün şifrə daxil edin:"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "\"%1\" bağlantısı üçün şifrə daxil edin:"
+msgstr "\"%1\" bağlantısı üçün şifrə yalnışdır. Yenidən cəhd edin"
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
 msgstr "\"%1\" bağlantısı üçün şifrə daxil edin:"
 
@@ -591,11 +581,10 @@ msgstr "%1 üçün şifrə daxil edilməsi"
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "VPN ayarları yoxdur"
 
 #: passworddialog.cpp:134
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "\"%1\" VPN bağlantısı üçün şifrə daxil edin:"
 

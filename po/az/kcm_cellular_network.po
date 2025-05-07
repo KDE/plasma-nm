@@ -1,21 +1,21 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-settings package.
 #
-# Kheyyam Gojayev <xxmn77@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2025 Kheyyam Gojayev <xxmn77@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-27 00:42+0000\n"
-"PO-Revision-Date: 2023-02-19 17:40+0400\n"
-"Last-Translator: Kheyyam <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2025-05-06 11:57+0400\n"
+"Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.12.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: modem.cpp:130
 #, kde-format
@@ -281,13 +281,12 @@ msgstr "SİM var, lakin istifadə edilə bilməz."
 #: modemdetails.cpp:291
 #, kde-format
 msgid "Unknown modem capabilities."
-msgstr ""
+msgstr "Modemin imkanları bilinmir."
 
 #: modemdetails.cpp:293
-#, fuzzy, kde-format
-#| msgid "SIM is not locked"
+#, kde-format
 msgid "eSIM is not initialized."
-msgstr "SİM kilidlənməyib"
+msgstr "eSİM işə salınmayıb."
 
 #: modemdetails.cpp:316
 #, kde-format
@@ -538,10 +537,9 @@ msgid "Edit APN"
 msgstr "APN-ə düzəliş edin"
 
 #: ui/EditProfilePage.qml:15
-#, fuzzy, kde-format
-#| msgid "New PIN"
+#, kde-format
 msgid "New APN"
-msgstr "Yeni PİN"
+msgstr "Yeni qoşulma nöqtəsi"
 
 #: ui/EditProfilePage.qml:30
 #, kde-format
@@ -596,7 +594,7 @@ msgstr "Yalnız 2G"
 #: ui/EditProfilePage.qml:75
 #, kde-format
 msgid "Save profile"
-msgstr ""
+msgstr "Profili saxlamaq"
 
 #: ui/main.qml:52
 #, kde-format
@@ -639,12 +637,11 @@ msgid "View data usage."
 msgstr "Verilənlərin istifadəsinə baxış."
 
 #: ui/main.qml:122
-#, fuzzy, kde-format
-#| msgid "SIM"
+#, kde-format
 msgid "SIM"
 msgid_plural "SIMs"
 msgstr[0] "SIM kart"
-msgstr[1] "SIM kart"
+msgstr[1] "SIM kartlar"
 
 #: ui/main.qml:143
 #, kde-format
@@ -797,11 +794,14 @@ msgid ""
 "Unable to autodetect connection settings for your carrier. Please find your "
 "carrier's APN settings by either contacting support or searching online."
 msgstr ""
+"Bağlantı ayarlarını avtomatik aşkar etmək mümkün deyil. Təminatınızın canlı "
+"dəstək xidmətindən qoşulma nöqtələri üçün parametrləri tələb edin və ya onu "
+"internetdən axtarış edərək tapın."
 
 #: ui/ProfileList.qml:64
 #, kde-format
 msgid "APN List"
-msgstr ""
+msgstr "Qoşulma nöqtələri siyahısı"
 
 #: ui/ProfileList.qml:98
 #, kde-format
@@ -814,10 +814,9 @@ msgid "Add APN"
 msgstr "APN əlavə edin"
 
 #: ui/ProfileList.qml:115
-#, fuzzy, kde-format
-#| msgid "Autodetect APN"
+#, kde-format
 msgid "Automatically detect APN"
-msgstr "APN-nin aşkarlanması"
+msgstr "Qoşulma nöqtələrini avtomatik aşkarlanmaq"
 
 #: ui/SimLockPage.qml:19 ui/SimPage.qml:94
 #, kde-format
@@ -929,8 +928,7 @@ msgid "Add SIM PIN"
 msgstr "SİM PİN kodu əlavə edin"
 
 #: ui/SimPage.qml:35
-#, fuzzy, kde-format
-#| msgid "SIM %1"
+#, kde-format
 msgctxt "@title"
 msgid "SIM %1"
 msgstr "SIM %1"
@@ -941,6 +939,8 @@ msgid ""
 "This SIM slot is empty, a SIM card needs to be inserted in order for it to "
 "be used."
 msgstr ""
+"Bu SİM kart yuvası boşdur. İstifadə etmədən öncə bir SİM kart daxil etməniz "
+"lazımdır."
 
 #: ui/SimPage.qml:60
 #, kde-format

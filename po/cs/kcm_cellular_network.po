@@ -924,11 +924,10 @@ msgid "Add SIM PIN"
 msgstr "Přidat SIM PIN"
 
 #: ui/SimPage.qml:35
-#, fuzzy, kde-format
-#| msgid "SIM %1"
+#, kde-format
 msgctxt "@title"
 msgid "SIM %1"
-msgstr "SIM %1"
+msgstr ""
 
 #: ui/SimPage.qml:45
 #, kde-format

@@ -21,6 +21,7 @@ QQC2.ItemDelegate {
 
     text: model.Name
     property string subtitle: itemText()
+    Accessible.description: subtitle
 
     checked: model.ConnectionPath === currentConnectionPath
     highlighted: checked || pressed

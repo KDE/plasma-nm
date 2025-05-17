@@ -28,7 +28,6 @@ install( FILES
     qml/AddConnectionDialog.qml
     qml/ConfigurationDialog.qml
     qml/ConnectionItem.qml
-    qml/ListItem.qml
     qml/main.qml
 
     DESTINATION ${KDE_INSTALL_DATADIR}/kcm_networkmanagement/qml)

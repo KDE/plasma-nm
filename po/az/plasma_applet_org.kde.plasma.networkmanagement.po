@@ -1,21 +1,21 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024 Kheyyam Gojayev <xxmn77@gmail.com>
+# SPDX-FileCopyrightText: 2020, 2021, 2022, 2023, 2024, 2025 Kheyyam Gojayev <xxmn77@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-04 00:44+0000\n"
-"PO-Revision-Date: 2024-05-30 11:51+0400\n"
-"Last-Translator: Xəyyam Qocayev <xxmn77@gmail.com>\n"
+"PO-Revision-Date: 2025-05-19 16:54+0400\n"
+"Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.05.0\n"
+"X-Generator: Lokalize 25.04.1\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -58,10 +58,9 @@ msgstr ""
 "%2 kilobaytdır"
 
 #: contents/ui/ConnectionItem.qml:300
-#, fuzzy, kde-format
-#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr "Qoşulub, ⬇ %1/s, ⬆ %2/s"
+msgstr "Qoşulub, ↓ %1/s, ↑ %2/s"
 
 #: contents/ui/ConnectionItem.qml:304
 #, kde-format
@@ -71,13 +70,13 @@ msgstr "Qoşuldu"
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format
 msgid "You need to log in to this network"
-msgstr ""
+msgstr "Bu şəbəkəyə daxil olmanız lazımdır"
 
 #: contents/ui/ConnectionListPage.qml:39
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Daxil olun"
 
 #: contents/ui/ConnectionListPage.qml:116
 #, kde-format
@@ -157,16 +156,15 @@ msgid "&Configure Network Connections…"
 msgstr "&Şəbəkə bağlantılarını tənzimləyin..."
 
 #: contents/ui/PopupDialog.qml:51
-#, fuzzy, kde-format
-#| msgid "&Configure Network Connections…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "&Şəbəkə bağlantılarını tənzimləyin..."
+msgstr "Şəbəkə ayarlarına qayıtmaq"
 
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
-msgstr ""
+msgstr "\"%1\" şəbəkəsinə qoşulmaq üçün başqa cihaz ilə QR kodu oxudun."
 
 #: contents/ui/Toolbar.qml:122
 #, kde-format

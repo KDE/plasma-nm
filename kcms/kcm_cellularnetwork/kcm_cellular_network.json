@@ -3,6 +3,7 @@
     "KPlugin": {
         "Description": "Management of cellular networks",
         "Description[ar]": "إدارة الشبكات الخلوية",
+        "Description[az]": "Mobil şəbəkə idarəetməsi",
         "Description[bg]": "Управление на мобилни мрежи",
         "Description[ca@valencia]": "Gestió de xarxes de telefonia mòbil",
         "Description[ca]": "Gestió de xarxes de telefonia mòbil",
@@ -38,6 +39,7 @@
         "Icon": "smartphone",
         "Name": "Cellular Network",
         "Name[ar]": "شبكة خليوية",
+        "Name[az]": "Mobil şəbəkə",
         "Name[bg]": "Мобилна мрежа",
         "Name[ca@valencia]": "Xarxa de telefonia mòbil",
         "Name[ca]": "Xarxa de telefonia mòbil",
@@ -69,6 +71,7 @@
     },
     "X-KDE-Keywords": "mobile,data,network",
     "X-KDE-Keywords[ar]": "جوال,بيانات,شبكة",
+    "X-KDE-Keywords[az]": "mobile,data,network,mobil,verilənlər,şəbəkə",
     "X-KDE-Keywords[bg]": "мобилни,данни,мрежа",
     "X-KDE-Keywords[ca@valencia]": "mòbil,dades,xarxa",
     "X-KDE-Keywords[ca]": "mòbil,dades,xarxa",

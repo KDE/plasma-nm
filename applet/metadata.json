@@ -172,6 +172,7 @@
     },
     "X-KDE-Keywords": "network,internet,ethernet,wireless,wifi,wlan,vpn",
     "X-KDE-Keywords[ar]": "شبكة,إنترنت,إيثرنت,لاسلكي,واي فاي,شبكة محلية لاسلكية,VPN",
+    "X-KDE-Keywords[az]": "network,internet,ethernet,wireless,wifi,wlan,vpn,şəbəkə,internet,simsiz şəbəkə",
     "X-KDE-Keywords[be]": "сетка,інтэрнэт,ethernet,бесправадная сувязь,wifi,wlan,vpn",
     "X-KDE-Keywords[bg]": "мрежа,интернет,кабел,безжичен,wifi,wlan,vpn",
     "X-KDE-Keywords[ca@valencia]": "xarxa,internet,ethernet,sense fil,wi-fi,wlan,vpn",

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:44+0000\n"
+"POT-Creation-Date: 2025-05-22 00:44+0000\n"
 "PO-Revision-Date: 2025-03-12 12:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -192,22 +192,34 @@ msgstr ""
 "Uçak Kipi’ni etkinleştir<nl/><nl/>Bu, Wi-Fi’yi ve Bluetooth’u devre dışı "
 "bırakır"
 
-#: contents/ui/Toolbar.qml:159
+#: contents/ui/Toolbar.qml:160
 #, kde-format
 msgid "Hotspot"
 msgstr "Erişim Noktası"
 
-#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:194
+#: contents/ui/Toolbar.qml:177
 #, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Cannot create a hotspot because all wireless radios are in use. Disconnect "
+"from the current Wi-Fi network or connect another wireless radio."
+msgstr ""
+
+#: contents/ui/Toolbar.qml:179
+#, fuzzy, kde-format
+#| msgid "Disable Hotspot"
+msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Erişim noktasını devre dışı bırak"
 
-#: contents/ui/Toolbar.qml:188 contents/ui/Toolbar.qml:194
-#, kde-format
+#: contents/ui/Toolbar.qml:181
+#, fuzzy, kde-format
+#| msgid "Create Hotspot"
+msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Erişim noktası oluştur"
 
-#: contents/ui/Toolbar.qml:226
+#: contents/ui/Toolbar.qml:215
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Ağ Bağlantılarını Yapılandır…"

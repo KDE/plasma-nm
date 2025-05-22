@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:44+0000\n"
+"POT-Creation-Date: 2025-05-22 00:44+0000\n"
 "PO-Revision-Date: 2024-11-07 17:19+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -187,22 +187,34 @@ msgstr ""
 "Käytä lentokonetilaa<nl/><nl/>Tämä poistaa langattoman verkon ja Bluetoothin "
 "käytöstä"
 
-#: contents/ui/Toolbar.qml:159
+#: contents/ui/Toolbar.qml:160
 #, kde-format
 msgid "Hotspot"
 msgstr "Tukiasema"
 
-#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:194
+#: contents/ui/Toolbar.qml:177
 #, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Cannot create a hotspot because all wireless radios are in use. Disconnect "
+"from the current Wi-Fi network or connect another wireless radio."
+msgstr ""
+
+#: contents/ui/Toolbar.qml:179
+#, fuzzy, kde-format
+#| msgid "Disable Hotspot"
+msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Poista tukiasema käytöstä"
 
-#: contents/ui/Toolbar.qml:188 contents/ui/Toolbar.qml:194
-#, kde-format
+#: contents/ui/Toolbar.qml:181
+#, fuzzy, kde-format
+#| msgid "Create Hotspot"
+msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Luo tukiasema"
 
-#: contents/ui/Toolbar.qml:226
+#: contents/ui/Toolbar.qml:215
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Muokkaa verkkoyhteyksiä…"

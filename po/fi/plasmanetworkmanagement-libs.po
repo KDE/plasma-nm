@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-03-04 00:42+0000\n"
+"POT-Creation-Date: 2025-05-22 00:44+0000\n"
 "PO-Revision-Date: 2025-01-12 17:08+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3228,72 +3228,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "P&oista"
 
-#: handler.cpp:117
+#: handler.cpp:122
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasmasta puuttuu tuki ”%1”-VPN-yhteyksiin."
 
-#: handler.cpp:120
+#: handler.cpp:125
 #, kde-format
 msgid "Report Bug"
 msgstr "Ilmoita viasta"
 
-#: handler.cpp:143
+#: handler.cpp:148
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManagerista puuttuu tuki ”%1”-VPN-yhteyksiin."
 
-#: handler.cpp:146
+#: handler.cpp:151
 #, kde-format
 msgid "Install"
 msgstr "Asenna"
 
-#: handler.cpp:192
+#: handler.cpp:197
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Yhdistäminen epäonnistui: %1"
 
-#: handler.cpp:370 handler.cpp:399
+#: handler.cpp:375 handler.cpp:404
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Yhteyden %1 lisääminen epäonnistui"
 
-#: handler.cpp:377 handler.cpp:408
+#: handler.cpp:382 handler.cpp:413
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Yhteys %1 on lisätty"
 
-#: handler.cpp:447
+#: handler.cpp:452
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Lisääminen epäonnistui: %1"
 
-#: handler.cpp:487
+#: handler.cpp:492
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Katkaiseminen epäonnistui: %1"
 
-#: handler.cpp:621
+#: handler.cpp:626
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Poistaminen epäonnistui: %1"
 
-#: handler.cpp:628
+#: handler.cpp:633
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Yhteys %1 on poistettu"
 
-#: handler.cpp:647
+#: handler.cpp:652
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Yhteyden %1 katkaiseminen epäonnistui"
 
-#: handler.cpp:654
+#: handler.cpp:659
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Yhteys %1 on päivitetty"
 
-#: handler.cpp:838
+#: handler.cpp:843
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Tukiaseman %1 luonti epäonnistui"

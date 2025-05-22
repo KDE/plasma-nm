@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:44+0000\n"
+"POT-Creation-Date: 2025-05-22 00:44+0000\n"
 "PO-Revision-Date: 2024-10-19 17:31+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -196,22 +196,34 @@ msgstr ""
 "Active le mode « avion »<nl/> <nl/> Cela permettra de désactiver les "
 "connexions « wifi » et « Bluetooth »"
 
-#: contents/ui/Toolbar.qml:159
+#: contents/ui/Toolbar.qml:160
 #, kde-format
 msgid "Hotspot"
 msgstr "Point d'accès"
 
-#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:194
+#: contents/ui/Toolbar.qml:177
 #, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Cannot create a hotspot because all wireless radios are in use. Disconnect "
+"from the current Wi-Fi network or connect another wireless radio."
+msgstr ""
+
+#: contents/ui/Toolbar.qml:179
+#, fuzzy, kde-format
+#| msgid "Disable Hotspot"
+msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Désactiver le point d'accès"
 
-#: contents/ui/Toolbar.qml:188 contents/ui/Toolbar.qml:194
-#, kde-format
+#: contents/ui/Toolbar.qml:181
+#, fuzzy, kde-format
+#| msgid "Create Hotspot"
+msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Créer un point d'accès"
 
-#: contents/ui/Toolbar.qml:226
+#: contents/ui/Toolbar.qml:215
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configurer les connexions réseau…"

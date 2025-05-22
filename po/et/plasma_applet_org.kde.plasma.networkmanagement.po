@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-04 00:44+0000\n"
+"POT-Creation-Date: 2025-05-22 00:44+0000\n"
 "PO-Revision-Date: 2020-09-28 13:41+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -195,22 +195,34 @@ msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Lennurežiimi sisse lülitamine<nl/><nl/>See lülitab välja Wi-Fi ja Bluetoothi"
 
-#: contents/ui/Toolbar.qml:159
+#: contents/ui/Toolbar.qml:160
 #, kde-format
 msgid "Hotspot"
 msgstr "Pääsupunkt"
 
-#: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:194
+#: contents/ui/Toolbar.qml:177
 #, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Cannot create a hotspot because all wireless radios are in use. Disconnect "
+"from the current Wi-Fi network or connect another wireless radio."
+msgstr ""
+
+#: contents/ui/Toolbar.qml:179
+#, fuzzy, kde-format
+#| msgid "Disable Hotspot"
+msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Keela pääsupunkt"
 
-#: contents/ui/Toolbar.qml:188 contents/ui/Toolbar.qml:194
-#, kde-format
+#: contents/ui/Toolbar.qml:181
+#, fuzzy, kde-format
+#| msgid "Create Hotspot"
+msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Loo pääsupunkt"
 
-#: contents/ui/Toolbar.qml:226
+#: contents/ui/Toolbar.qml:215
 #, fuzzy, kde-format
 #| msgid "Configure network connections..."
 msgid "Configure network connections…"

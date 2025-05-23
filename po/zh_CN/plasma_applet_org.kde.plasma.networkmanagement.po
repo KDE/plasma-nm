@@ -196,15 +196,13 @@ msgid ""
 msgstr ""
 
 #: contents/ui/Toolbar.qml:179
-#, fuzzy, kde-format
-#| msgid "Disable Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "禁用热点"
 
 #: contents/ui/Toolbar.qml:181
-#, fuzzy, kde-format
-#| msgid "Create Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "创建热点"

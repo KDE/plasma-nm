@@ -194,6 +194,8 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"无法创建热点，因为所有无线网卡都在使用中。请断开当前 Wi-Fi 网络或插入另一块无"
+"线网卡。"
 
 #: contents/ui/Toolbar.qml:179
 #, kde-format

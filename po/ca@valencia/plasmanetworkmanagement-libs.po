@@ -1134,7 +1134,7 @@ msgid ""
 "an IP address"
 msgstr ""
 "Les adreces IP identifiquen el vostre ordinador a la xarxa.\n"
-"Feu clic en el botó «Afig» per a afegir-ne una"
+"Cliqueu damunt del botó «Afig» per a afegir-ne una"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:278
@@ -3015,7 +3015,7 @@ msgstr "Dispositiu CDMA instal·lat"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider's Country"
-msgstr "Escolliu el país del vostre proveïdor"
+msgstr "Trieu el país del vostre proveïdor"
 
 #: editor/widgets/mobileconnectionwizard.cpp:403
 #, kde-format
@@ -3033,7 +3033,7 @@ msgstr "El meu país no està llistat"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider"
-msgstr "Escolliu el vostre proveïdor"
+msgstr "Trieu el vostre proveïdor"
 
 #: editor/widgets/mobileconnectionwizard.cpp:426
 #, kde-format
@@ -3051,7 +3051,7 @@ msgstr "No puc trobar el meu proveïdor i vull introduir-lo &manualment:"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Billing Plan"
-msgstr "Escolliu el vostre pla de facturació"
+msgstr "Trieu el vostre pla de facturació"
 
 #: editor/widgets/mobileconnectionwizard.cpp:480
 #, kde-format
@@ -3785,29 +3785,3 @@ msgstr "Es requerix NetworkManager 0.9.8, però s'ha trobat %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconeguda"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used in the last hour, "
-#~ "as the number of minutes since usage"
-#~ msgid "One minute ago"
-#~ msgid_plural "%1 minutes ago"
-#~ msgstr[0] "Fa un minut"
-#~ msgstr[1] "Fa %1 minuts"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used in the last day, "
-#~ "as the number of hours since usage"
-#~ msgid "One hour ago"
-#~ msgid_plural "%1 hours ago"
-#~ msgstr[0] "Fa 1 hora"
-#~ msgstr[1] "Fa %1 hores"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used the previous day"
-#~ msgid "Yesterday"
-#~ msgstr "Ahir"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection that has never been used"
-#~ msgid "Never"
-#~ msgstr "Mai"

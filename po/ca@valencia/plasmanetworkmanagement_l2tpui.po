@@ -606,7 +606,7 @@ msgid ""
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
 "Nota: l'encriptació MPPE només estarà disponible amb els mètodes\n"
-"d'autenticació MSCHAP. Per a marcar esta casella de selecció, escolliu\n"
+"d'autenticació MSCHAP. Per a marcar esta casella de selecció, trieu\n"
 "un o més mètodes d'autenticació MSCHAP: MSCHAP o MSCHAPv2."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMPPE)

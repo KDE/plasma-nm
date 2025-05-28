@@ -133,6 +133,7 @@ public Q_SLOTS:
 private Q_SLOTS:
     void secretAgentError(const QString &connectionPath, const QString &message);
     void primaryConnectionTypeChanged(NetworkManager::ConnectionSettings::ConnectionType type);
+    void wirelessEnabledChanged(bool wirelessEnabled);
     void unlockRequiredChanged(MMModemLock modemLock);
     void slotRequestWifiCode(QDBusPendingCallWatcher *watcher);
 

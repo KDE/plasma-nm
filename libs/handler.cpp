@@ -67,19 +67,23 @@ Handler::Handler(QObject *parent)
     if (!Configuration::self().hotspotConnectionPath().isEmpty()) {
         NetworkManager::ActiveConnection::Ptr hotspot = NetworkManager::findActiveConnection(Configuration::self().hotspotConnectionPath());
         if (!hotspot) {
+            Configuration::self().setHotspotConnectionPath(QString());
             m_hotspotActive = false;
             Q_EMIT hotspotActiveChanged(m_hotspotActive);
-            Configuration::self().setHotspotConnectionPath(QString());
         } else {
             m_hotspotActive = true;
             Q_EMIT hotspotActiveChanged(m_hotspotActive);
         }
+    } else {
+        m_hotspotActive = false;
+        Q_EMIT hotspotActiveChanged(m_hotspotActive);
     }
 
     m_hotspotSupported = checkHotspotSupported();
 
     if (NetworkManager::checkVersion(1, 16, 0)) {
         connect(NetworkManager::notifier(), &NetworkManager::Notifier::primaryConnectionTypeChanged, this, &Handler::primaryConnectionTypeChanged);
+        connect(NetworkManager::notifier(), &NetworkManager::Notifier::wirelessEnabledChanged, this, &Handler::wirelessEnabledChanged);
     }
 }
 
@@ -586,6 +590,10 @@ void Handler::enableNetworking(bool enable)
 void Handler::enableWireless(bool enable)
 {
     NetworkManager::setWirelessEnabled(enable);
+    if (!enable && m_hotspotActive) {
+        m_hotspotActive = false;
+        Q_EMIT hotspotActiveChanged(m_hotspotActive);
+    }
 }
 
 void Handler::enableWwan(bool enable)
@@ -924,7 +932,7 @@ bool Handler::checkHotspotSupported()
                 wifiFound = true;
 
                 NetworkManager::WirelessDevice::Ptr wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
-                if (wifiDev && !wifiDev->isActive()) {
+                if (wifiDev && wifiDev->state() == NetworkManager::WirelessDevice::Disconnected) {
                     unusedWifiFound = true;
                 }
             }
@@ -939,7 +947,7 @@ bool Handler::checkHotspotSupported()
         }
 
         // Check if the primary connection which is used for internet connectivity is not using WiFi
-        if (NetworkManager::primaryConnectionType() != NetworkManager::ConnectionSettings::Wireless) {
+        if (NetworkManager::primaryConnectionType() != NetworkManager::ConnectionSettings::Wireless && NetworkManager::isWirelessEnabled()) {
             return true;
         }
     }
@@ -988,6 +996,13 @@ void Handler::secretAgentError(const QString &connectionPath, const QString &mes
 void Handler::primaryConnectionTypeChanged(NetworkManager::ConnectionSettings::ConnectionType type)
 {
     Q_UNUSED(type)
+    m_hotspotSupported = checkHotspotSupported();
+    Q_EMIT hotspotSupportedChanged(m_hotspotSupported);
+}
+
+void Handler::wirelessEnabledChanged(bool wirelessEnabled)
+{
+    Q_UNUSED(wirelessEnabled)
     m_hotspotSupported = checkHotspotSupported();
     Q_EMIT hotspotSupportedChanged(m_hotspotSupported);
 }

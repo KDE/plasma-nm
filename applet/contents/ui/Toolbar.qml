@@ -173,7 +173,9 @@ RowLayout {
 
         PlasmaComponents3.ToolTip {
             text: {
-                if (!handler.hotspotSupported) {
+                if (!wifiSwitchButton.checked) {
+                    return i18nc("@info:tooltip", "Cannot create a hotspot because Wi-Fi is disabled.")
+                } else if (!handler.hotspotSupported) {
                     return i18nc("@info:tooltip", "Cannot create a hotspot because all wireless radios are in use. Disconnect from the current Wi-Fi network or connect another wireless radio.")
                 } else if (handler.hotspotActive) {
                     return i18nc("@info:tooltip", "Disable Hotspot");

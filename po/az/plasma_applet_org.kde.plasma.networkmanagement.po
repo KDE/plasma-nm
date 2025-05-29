@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-22 00:44+0000\n"
-"PO-Revision-Date: 2025-05-19 16:54+0400\n"
+"PO-Revision-Date: 2025-05-28 16:44+0400\n"
 "Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
 "Language: az\n"
@@ -197,17 +197,18 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"Qoşulma nöqtəsi yaratmaq mümkün deyil, çünki bütün simsiz radio "
+"uzlaşdırıcısı artıq istifadə olunur. Hazırkı Wi-Fi şəbəkəsini ayırın və ya "
+"başqa simsiz uzlaşdırıcını qoşun."
 
 #: contents/ui/Toolbar.qml:179
-#, fuzzy, kde-format
-#| msgid "Disable Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Qoşulma nöqtəsini söndürmək"
 
 #: contents/ui/Toolbar.qml:181
-#, fuzzy, kde-format
-#| msgid "Create Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Qoşulma nöqtəsi yaratmaq"

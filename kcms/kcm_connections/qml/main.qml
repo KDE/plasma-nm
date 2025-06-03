@@ -46,6 +46,11 @@ QQC2.Page {
             right: parent.right
             top: parent.top
         }
+        Keys.onDownPressed: event => {
+            connectionView.currentIndex = 0
+            event.accepted = false // pass to KeyNavigation
+        }
+        KeyNavigation.down: scrollView
 
         onTextChanged: {
             editorProxyModel.setFilterFixedString(text)
@@ -78,7 +83,15 @@ QQC2.Page {
 
             clip: true
             focus: true
+            onActiveFocusChanged: {
+                if (currentIndex === -1) {
+                    currentIndex = 0
+                }
+            }
             activeFocusOnTab: true
+            KeyNavigation.up: searchField
+            KeyNavigation.down: configureButton
+            Accessible.role: Accessible.List
             model: editorProxyModel
             currentIndex: -1
             boundsBehavior: Flickable.StopAtBounds
@@ -89,6 +102,7 @@ QQC2.Page {
             }
             delegate: ConnectionItem {
                 currentConnectionPath: connectionView.currentConnectionPath
+                focus: ListView.isCurrentItem
                 width: connectionView.width
                 onAboutToChangeConnection: (exportable, name, path) => {
                     // Shouldn't be problem to set this in advance
@@ -127,7 +141,11 @@ QQC2.Page {
         QQC2.ToolButton {
             id: addConnectionButton
 
+            text: QQC2.ToolTip.text
+            display: QQC2.AbstractButton.IconOnly
             icon.name: "list-add"
+
+            KeyNavigation.right: removeConnectionButton
 
             QQC2.ToolTip.text: i18n("Add new connection")
             QQC2.ToolTip.visible: hovered
@@ -140,8 +158,12 @@ QQC2.Page {
         QQC2.ToolButton {
             id: removeConnectionButton
 
+            text: QQC2.ToolTip.text
+            display: QQC2.AbstractButton.IconOnly
             enabled: connectionView.currentConnectionPath && connectionView.currentConnectionPath.length
             icon.name: "list-remove"
+
+            KeyNavigation.right: exportConnectionButton
 
             QQC2.ToolTip.text: i18n("Remove selected connection")
             QQC2.ToolTip.visible: hovered
@@ -156,6 +178,8 @@ QQC2.Page {
         QQC2.ToolButton {
             id: exportConnectionButton
 
+            text: QQC2.ToolTip.text
+            display: QQC2.AbstractButton.IconOnly
             enabled: connectionView.currentConnectionExportable
             icon.name: "document-export"
 
@@ -177,7 +201,12 @@ QQC2.Page {
         spacing: Kirigami.Units.smallSpacing
 
         QQC2.ToolButton {
+            id: configureButton
+            text: QQC2.ToolTip.text
+            display: QQC2.AbstractButton.IconOnly
             icon.name: "configure"
+
+            KeyNavigation.right: addConnectionButton
 
             QQC2.ToolTip.text: i18n("Configuration")
             QQC2.ToolTip.visible: hovered

@@ -88,6 +88,8 @@ QQC2.Page {
                 width: ListView.view.width
             }
             delegate: ConnectionItem {
+                currentConnectionPath: connectionView.currentConnectionPath
+                width: connectionView.width
                 onAboutToChangeConnection: (exportable, name, path) => {
                     // Shouldn't be problem to set this in advance
                     connectionView.currentConnectionExportable = exportable

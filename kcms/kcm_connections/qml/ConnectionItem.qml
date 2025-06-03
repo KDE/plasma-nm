@@ -4,99 +4,60 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
-import QtQuick 2.1
-import QtQuick.Controls 2.15 as QQC2
-import org.kde.kirigami 2.5 as Kirigami
-import org.kde.plasma.components 3.0 as PlasmaComponents3
+import QtQuick
+import QtQuick.Layouts
+import QtQuick.Controls as QQC2
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.components as PlasmaComponents3
 import org.kde.plasma.networkmanagement as PlasmaNM
 
-ListItem {
-    id: connectionItem
+QQC2.ItemDelegate {
+    id: delegate
 
-    height: connectionItemBase.height
-    acceptedButtons: Qt.AllButtons
-    checked: ConnectionPath === connectionView.currentConnectionPath
+    required property var model
+    required property string currentConnectionPath
+
+    icon.name: model.KcmConnectionIcon
+
+    text: model.Name
+    property string subtitle: itemText()
+
+    checked: model.ConnectionPath === currentConnectionPath
+    highlighted: checked || pressed
 
     signal aboutToChangeConnection(bool exportable, string name, string path)
     signal aboutToRemoveConnection(string name, string path)
 
-    onClicked: mouse => {
-        if (mouse.button === Qt.LeftButton) {
-            aboutToChangeConnection(KcmVpnConnectionExportable, Name, ConnectionPath)
-        } else if (mouse.button === Qt.RightButton) {
-            connectionItemMenu.popup()
-        }
+    onClicked: aboutToChangeConnection(model.KcmVpnConnectionExportable, model.Name, model.ConnectionPath)
+    Keys.onSpacePressed: aboutToChangeConnection(model.KcmVpnConnectionExportable, model.Name, model.ConnectionPath)
+
+    TapHandler {
+        id: mouseArea
+        acceptedButtons: Qt.RightButton
+        onTapped: connectionItemMenu.popup()
     }
 
-    Item {
-        id: connectionItemBase
+    contentItem: RowLayout {
+        spacing: Kirigami.Units.smallSpacing
+        width: delegate.availableWidth
+        implicitHeight: Math.max(iconTitleSubtitle.implicitHeight, Kirigami.Units.iconSizes.medium)
 
-        anchors {
-            left: parent.left
-            right: parent.right
-            top: parent.top
-            topMargin: -Math.round(Kirigami.Units.gridUnit / 3)
-        }
-        height: Math.max(Kirigami.Units.iconSizes.medium, connectionNameLabel.height + connectionStatusLabel.height) + Math.round(Kirigami.Units.gridUnit / 2)
-
-        Kirigami.Icon {
-            id: connectionIcon
-
-            anchors {
-                left: parent.left
-                verticalCenter: parent.verticalCenter
-            }
-            color: (connectionItem.checked || connectionItem.pressed) ? Kirigami.Theme.highlightedTextColor : textColor
-            height: Kirigami.Units.iconSizes.medium; width: height
-            source: KcmConnectionIcon
-        }
-
-        Text {
-            id: connectionNameLabel
-
-            anchors {
-                bottom: connectionIcon.verticalCenter
-                left: connectionIcon.right
-                leftMargin: Math.round(Kirigami.Units.gridUnit / 2)
-                right: connectingIndicator.visible ? connectingIndicator.left : parent.right
-            }
-            color: (connectionItem.checked || connectionItem.pressed) ? Kirigami.Theme.highlightedTextColor : textColor
-            height: paintedHeight
-            elide: Text.ElideRight
-            font.weight: ConnectionState === PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
-            font.italic: ConnectionState === PlasmaNM.Enums.Activating ? true : false
-            text: Name
-            textFormat: Text.PlainText
-        }
-
-        Text {
-            id: connectionStatusLabel
-
-            anchors {
-                left: connectionIcon.right
-                leftMargin: Math.round(Kirigami.Units.gridUnit / 2)
-                right: connectingIndicator.visible ? connectingIndicator.left : parent.right
-                top: connectionNameLabel.bottom
-            }
-            color: (connectionItem.checked || connectionItem.pressed) ? Kirigami.Theme.highlightedTextColor : textColor
-            height: paintedHeight
-            elide: Text.ElideRight
-            font.pointSize: Kirigami.Theme.smallFont.pointSize
-            opacity: 0.6
-            text: itemText()
+        Kirigami.IconTitleSubtitle {
+            id: iconTitleSubtitle
+            Layout.fillWidth: true
+            icon: icon.fromControlsIcon(delegate.icon)
+            title: delegate.text
+            selected: delegate.highlighted
+            subtitle: delegate.subtitle
+            font.weight: delegate.model.ConnectionState === PlasmaNM.Enums.Activated ? Font.DemiBold : Font.Normal
+            font.italic: delegate.model.ConnectionState === PlasmaNM.Enums.Activating ? true : false
         }
 
         PlasmaComponents3.BusyIndicator {
             id: connectingIndicator
-
-            anchors {
-                right: parent.right
-                rightMargin: Math.round(Kirigami.Units.gridUnit / 2)
-                verticalCenter: connectionIcon.verticalCenter
-            }
             height: Kirigami.Units.iconSizes.medium
             width: Kirigami.Units.iconSizes.medium
-            running: ConnectionState === PlasmaNM.Enums.Activating
+            running: model.ConnectionState === PlasmaNM.Enums.Activating
             visible: running
         }
     }
@@ -105,13 +66,13 @@ ListItem {
         id: connectionItemMenu
 
         QQC2.MenuItem {
-            text: ConnectionState === PlasmaNM.Enums.Deactivated ? i18n("Connect") : i18n("Disconnect")
-            visible: ItemType === 1
+            text: model.ConnectionState === PlasmaNM.Enums.Deactivated ? i18n("Connect") : i18n("Disconnect")
+            visible: model.ItemType === 1
             onTriggered: {
-                if (ConnectionState === PlasmaNM.Enums.Deactivated) {
-                    handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
+                if (model.ConnectionState === PlasmaNM.Enums.Deactivated) {
+                    handler.activateConnection(model.ConnectionPath, model.DevicePath, model.SpecificPath);
                 } else {
-                    handler.deactivateConnection(ConnectionPath, DevicePath);
+                    handler.deactivateConnection(model.ConnectionPath, model.DevicePath);
                 }
             }
         }
@@ -121,28 +82,28 @@ ListItem {
             text: i18n("Delete");
 
             onTriggered: {
-                aboutToRemoveConnection(Name, ConnectionPath)
+                delegate.aboutToRemoveConnection(delegate.model.Name, delegate.model.ConnectionPath)
             }
         }
 
         QQC2.MenuItem {
             icon.name: "document-export"
-            visible: KcmVpnConnectionExportable
+            visible: model.KcmVpnConnectionExportable
             text: i18n("Export");
 
-            onTriggered: kcm.onRequestExportConnection(ConnectionPath)
+            onTriggered: kcm.onRequestExportConnection(model.ConnectionPath)
         }
     }
 
     /* This generates the status description under each connection
        in the list at the left side of the applet. */
     function itemText() {
-        if (ConnectionState === PlasmaNM.Enums.Activated) {
+        if (model.ConnectionState === PlasmaNM.Enums.Activated) {
             return i18n("Connected")
-        } else if (ConnectionState === PlasmaNM.Enums.Activating) {
+        } else if (model.ConnectionState === PlasmaNM.Enums.Activating) {
             return i18n("Connecting")
         } else {
-            return LastUsed
+            return model.LastUsed
         }
     }
 }

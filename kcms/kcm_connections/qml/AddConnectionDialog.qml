@@ -71,18 +71,25 @@ Window {
                 Kirigami.Theme.colorSet: Kirigami.Theme.View
                 color: Kirigami.Theme.backgroundColor
             }
-            delegate: ListItem {
-                height: connectionTypeBase.height
+            delegate: QQC2.ItemDelegate {
+                id: delegate
+                required property int index
+                required property var model
+
+                text: model.ConnectionTypeName
+                property string subtitle: model.ConnectionType === PlasmaNM.Enums.Vpn ? delegate.model.ConnectionDescription : null
+
                 width: view.width
                 checked: view.currentlySelectedIndex === index
+                icon.name: model.ConnectionIcon
 
                 onClicked: {
                     createButton.enabled = true
                     view.currentlySelectedIndex = index
-                    view.connectionSpecificType = ConnectionSpecificType
-                    view.connectionShared = ConnectionShared
-                    view.connectionType = ConnectionType
-                    view.connectionVpnType = ConnectionVpnType
+                    view.connectionSpecificType = model.ConnectionSpecificType
+                    view.connectionShared = model.ConnectionShared
+                    view.connectionType = model.ConnectionType
+                    view.connectionVpnType = model.ConnectionVpnType
                 }
 
                 onDoubleClicked: {
@@ -90,63 +97,11 @@ Window {
                     kcm.onRequestCreateConnection(view.connectionType, view.connectionVpnType, view.connectionSpecificType, view.connectionShared)
                 }
 
-                Item {
-                    id: connectionTypeBase
-
-                    anchors {
-                        left: parent.left
-                        right: parent.right
-                        top: parent.top
-                        // Reset top margin from PlasmaComponents.ListItem
-                        topMargin: -Math.round(Kirigami.Units.gridUnit / 3)
-                    }
-                    height: Math.max(Kirigami.Units.iconSizes.medium, connectionNameLabel.height + connectionDescriptionLabel.height) + Math.round(Kirigami.Units.gridUnit / 2)
-
-                    Kirigami.Icon {
-                        id: connectionIcon
-
-                        anchors {
-                            left: parent.left
-                            verticalCenter: parent.verticalCenter
-                        }
-                        height: Kirigami.Units.iconSizes.medium; width: height
-                        source: ConnectionIcon
-                    }
-
-                    Text {
-                        id: connectionNameLabel
-
-                        anchors {
-                            bottom: ConnectionType === PlasmaNM.Enums.Vpn ? connectionIcon.verticalCenter : undefined
-                            left: connectionIcon.right
-                            leftMargin: Math.round(Kirigami.Units.gridUnit / 2)
-                            right: parent.right
-                            verticalCenter: ConnectionType === PlasmaNM.Enums.Vpn ? undefined : parent.verticalCenter
-                        }
-                        color: textColor
-                        height: paintedHeight
-                        elide: Text.ElideRight
-                        text: ConnectionTypeName
-                        textFormat: Text.PlainText
-                    }
-
-                    Text {
-                        id: connectionDescriptionLabel
-
-                        anchors {
-                            left: connectionIcon.right
-                            leftMargin: Math.round(Kirigami.Units.gridUnit / 2)
-                            right: parent.right
-                            top: connectionNameLabel.bottom
-                        }
-                        color: textColor
-                        height: visible ? paintedHeight : 0
-                        elide: Text.ElideRight
-                        font.pointSize: Kirigami.Theme.smallFont.pointSize
-                        opacity: 0.6
-                        text: ConnectionDescription
-                        visible: ConnectionType === PlasmaNM.Enums.Vpn
-                    }
+                contentItem: Kirigami.IconTitleSubtitle {
+                    icon: icon.fromControlsIcon(delegate.icon)
+                    title: delegate.text
+                    subtitle: delegate.subtitle
+                    selected: delegate.highlighted
                 }
             }
         }

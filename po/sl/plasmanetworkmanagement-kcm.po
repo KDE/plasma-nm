@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 00:42+0000\n"
+"POT-Creation-Date: 2025-06-04 00:44+0000\n"
 "PO-Revision-Date: 2024-10-27 07:30+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -92,15 +92,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Izberite vrsto povezave"
 
-#: qml/AddConnectionDialog.qml:168
+#: qml/AddConnectionDialog.qml:123
 msgid "Create"
 msgstr "Ustvari"
 
-#: qml/AddConnectionDialog.qml:179
+#: qml/AddConnectionDialog.qml:134
 msgid "Cancel"
 msgstr "Prekliči"
 
-#: qml/AddConnectionDialog.qml:196 qml/main.qml:180
+#: qml/AddConnectionDialog.qml:151 qml/main.qml:211
 msgid "Configuration"
 msgstr "Nastavitev"
 
@@ -161,48 +161,48 @@ msgstr ""
 "naslednjega:<ul><li>Natančno 5 ali 13 poljubnih znakov</li><li>Natančno 10 "
 "ali 26 šestnajstiških znakov:<br/>abcdef, ABCDEF ali 0- 9</li></ul>"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:70
 msgid "Connect"
 msgstr "Poveži se"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:70
 msgid "Disconnect"
 msgstr "Prekini povezavo"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:83
 msgid "Delete"
 msgstr "Izbriši"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:93
 msgid "Export"
 msgstr "Izvozi"
 
-#: qml/ConnectionItem.qml:141
+#: qml/ConnectionItem.qml:103
 msgid "Connected"
 msgstr "Povezano"
 
-#: qml/ConnectionItem.qml:143
+#: qml/ConnectionItem.qml:105
 msgid "Connecting"
 msgstr "Povezovanje"
 
-#: qml/main.qml:130
+#: qml/main.qml:150
 msgid "Add new connection"
 msgstr "Dodaj novo povezavo"
 
-#: qml/main.qml:144
+#: qml/main.qml:168
 msgid "Remove selected connection"
 msgstr "Odstrani izbrano povezavo"
 
-#: qml/main.qml:160
+#: qml/main.qml:186
 msgid "Export selected connection"
 msgstr "Izvozi izbrano povezavo"
 
-#: qml/main.qml:208
+#: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Odstrani povezavo"
 
-#: qml/main.qml:209
+#: qml/main.qml:240
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Ali želite odstraniti povezavo '%1'?"
 

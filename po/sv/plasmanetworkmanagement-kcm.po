@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 00:42+0000\n"
+"POT-Creation-Date: 2025-06-04 00:44+0000\n"
 "PO-Revision-Date: 2024-11-24 19:40+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -89,15 +89,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Välj en anslutningstyp"
 
-#: qml/AddConnectionDialog.qml:168
+#: qml/AddConnectionDialog.qml:123
 msgid "Create"
 msgstr "Skapa"
 
-#: qml/AddConnectionDialog.qml:179
+#: qml/AddConnectionDialog.qml:134
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: qml/AddConnectionDialog.qml:196 qml/main.qml:180
+#: qml/AddConnectionDialog.qml:151 qml/main.qml:211
 msgid "Configuration"
 msgstr "Inställning"
 
@@ -158,48 +158,48 @@ msgstr ""
 "följande: <ul><li>Exakt 5 eller 13 godtyckliga tecken</li><li>Exakt 10 eller "
 "26 hexadecimala tecken:<br/>abcdef, ABCDEF eller 0-9</li></ul>"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:70
 msgid "Connect"
 msgstr "Anslut"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:70
 msgid "Disconnect"
 msgstr "Koppla ner"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:83
 msgid "Delete"
 msgstr "Ta bort"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:93
 msgid "Export"
 msgstr "Exportera"
 
-#: qml/ConnectionItem.qml:141
+#: qml/ConnectionItem.qml:103
 msgid "Connected"
 msgstr "Ansluten"
 
-#: qml/ConnectionItem.qml:143
+#: qml/ConnectionItem.qml:105
 msgid "Connecting"
 msgstr "Ansluter"
 
-#: qml/main.qml:130
+#: qml/main.qml:150
 msgid "Add new connection"
 msgstr "Lägg till ny anslutning"
 
-#: qml/main.qml:144
+#: qml/main.qml:168
 msgid "Remove selected connection"
 msgstr "Ta bort markerad anslutning"
 
-#: qml/main.qml:160
+#: qml/main.qml:186
 msgid "Export selected connection"
 msgstr "Exportera markerad anslutning"
 
-#: qml/main.qml:208
+#: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Ta bort anslutning"
 
-#: qml/main.qml:209
+#: qml/main.qml:240
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Vill du ta bort anslutningen '%1'?"
 

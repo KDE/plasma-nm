@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 00:42+0000\n"
+"POT-Creation-Date: 2025-06-04 02:35+0000\n"
 "PO-Revision-Date: 2024-10-27 10:16+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -92,15 +92,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Trieu un tipus de connexió"
 
-#: qml/AddConnectionDialog.qml:168
+#: qml/AddConnectionDialog.qml:123
 msgid "Create"
 msgstr "Crea"
 
-#: qml/AddConnectionDialog.qml:179
+#: qml/AddConnectionDialog.qml:134
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: qml/AddConnectionDialog.qml:196 qml/main.qml:180
+#: qml/AddConnectionDialog.qml:151 qml/main.qml:211
 msgid "Configuration"
 msgstr "Configuració"
 
@@ -162,47 +162,47 @@ msgstr ""
 "li><li>Exactament 10 o 26 caràcters hexadecimals:<br/>abcdef, ABCDEF o 0-9</"
 "li></ul>"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:70
 msgid "Connect"
 msgstr "Connecta"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:70
 msgid "Disconnect"
 msgstr "Desconnecta"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:83
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:93
 msgid "Export"
 msgstr "Exporta"
 
-#: qml/ConnectionItem.qml:141
+#: qml/ConnectionItem.qml:103
 msgid "Connected"
 msgstr "Connectat"
 
-#: qml/ConnectionItem.qml:143
+#: qml/ConnectionItem.qml:105
 msgid "Connecting"
 msgstr "Connectant"
 
-#: qml/main.qml:130
+#: qml/main.qml:150
 msgid "Add new connection"
 msgstr "Afegeix una connexió nova"
 
-#: qml/main.qml:144
+#: qml/main.qml:168
 msgid "Remove selected connection"
 msgstr "Elimina la connexió seleccionada"
 
-#: qml/main.qml:160
+#: qml/main.qml:186
 msgid "Export selected connection"
 msgstr "Exporta la connexió seleccionada"
 
-#: qml/main.qml:208
+#: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Elimina la connexió"
 
-#: qml/main.qml:209
+#: qml/main.qml:240
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Voleu eliminar la connexió «%1»?"

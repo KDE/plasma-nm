@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 00:42+0000\n"
+"POT-Creation-Date: 2025-06-04 02:35+0000\n"
 "PO-Revision-Date: 2025-04-18 13:16+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -89,15 +89,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Velja gerð tengingar"
 
-#: qml/AddConnectionDialog.qml:168
+#: qml/AddConnectionDialog.qml:123
 msgid "Create"
 msgstr "Búa til"
 
-#: qml/AddConnectionDialog.qml:179
+#: qml/AddConnectionDialog.qml:134
 msgid "Cancel"
 msgstr "Hætta við"
 
-#: qml/AddConnectionDialog.qml:196 qml/main.qml:180
+#: qml/AddConnectionDialog.qml:151 qml/main.qml:211
 msgid "Configuration"
 msgstr "Grunnstilling"
 
@@ -158,47 +158,47 @@ msgstr ""
 "eftirfarandi:<ul><li>Nákvæmlega 5 eða 13 stafi</li><li>Nákvæmlega 10 eða 26 "
 "hexkóðastafi:<br/>abcdef, ABCDEF eða 0-9</li></ul>"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:70
 msgid "Connect"
 msgstr "Tengjast"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:70
 msgid "Disconnect"
 msgstr "Aftengjast"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:83
 msgid "Delete"
 msgstr "Eyða"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:93
 msgid "Export"
 msgstr "Flytja út"
 
-#: qml/ConnectionItem.qml:141
+#: qml/ConnectionItem.qml:103
 msgid "Connected"
 msgstr "Tengt"
 
-#: qml/ConnectionItem.qml:143
+#: qml/ConnectionItem.qml:105
 msgid "Connecting"
 msgstr "Tengist"
 
-#: qml/main.qml:130
+#: qml/main.qml:150
 msgid "Add new connection"
 msgstr "Bæta við nýrri tengingu"
 
-#: qml/main.qml:144
+#: qml/main.qml:168
 msgid "Remove selected connection"
 msgstr "Fjarlægja völdu tenginguna"
 
-#: qml/main.qml:160
+#: qml/main.qml:186
 msgid "Export selected connection"
 msgstr "Flytja út völdu tenginguna"
 
-#: qml/main.qml:208
+#: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Fjarlægja tengingu"
 
-#: qml/main.qml:209
+#: qml/main.qml:240
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Viltu fjarlægja tenginguna '%1'?"

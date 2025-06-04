@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-11-08 00:42+0000\n"
+"POT-Creation-Date: 2025-06-04 02:35+0000\n"
 "PO-Revision-Date: 2024-10-27 08:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -89,15 +89,15 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Escoja un tipo de conexión"
 
-#: qml/AddConnectionDialog.qml:168
+#: qml/AddConnectionDialog.qml:123
 msgid "Create"
 msgstr "Crear"
 
-#: qml/AddConnectionDialog.qml:179
+#: qml/AddConnectionDialog.qml:134
 msgid "Cancel"
 msgstr "Cancelar"
 
-#: qml/AddConnectionDialog.qml:196 qml/main.qml:180
+#: qml/AddConnectionDialog.qml:151 qml/main.qml:211
 msgid "Configuration"
 msgstr "Configuración"
 
@@ -158,48 +158,48 @@ msgstr ""
 "siguientes:<ul><li>Exactamente 5 o 13 caracteres</li><li>Exactamente 10 o 26 "
 "caracteres hexadecimales:<br/>abcdef, ABCDEF o 0123456789</li></ul>"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:70
 msgid "Connect"
 msgstr "Conectar"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:70
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:83
 msgid "Delete"
 msgstr "Borrar"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:93
 msgid "Export"
 msgstr "Exportar"
 
-#: qml/ConnectionItem.qml:141
+#: qml/ConnectionItem.qml:103
 msgid "Connected"
 msgstr "Conectado"
 
-#: qml/ConnectionItem.qml:143
+#: qml/ConnectionItem.qml:105
 msgid "Connecting"
 msgstr "Conectando"
 
-#: qml/main.qml:130
+#: qml/main.qml:150
 msgid "Add new connection"
 msgstr "Añadir nueva conexión"
 
-#: qml/main.qml:144
+#: qml/main.qml:168
 msgid "Remove selected connection"
 msgstr "Eliminar la conexión seleccionada"
 
-#: qml/main.qml:160
+#: qml/main.qml:186
 msgid "Export selected connection"
 msgstr "Exportar la conexión seleccionada"
 
-#: qml/main.qml:208
+#: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Eliminar conexión"
 
-#: qml/main.qml:209
+#: qml/main.qml:240
 msgid "Do you want to remove the connection '%1'?"
 msgstr "¿Desea eliminar la conexión «%1»?"
 

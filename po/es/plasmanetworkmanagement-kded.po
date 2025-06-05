@@ -1,15 +1,15 @@
 # Spanish translations for plasmanetworkmanagement-kded.po package.
-# Copyright (C) 2014 This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Copyright (C) 2014-2025 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
 # Automatically generated, 2014.
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+#
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-19 00:42+0000\n"
-"PO-Revision-Date: 2024-08-13 12:35+0200\n"
+"PO-Revision-Date: 2025-06-04 19:11+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -788,81 +788,3 @@ msgstr "Vuelva a introducir el código PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "La autenticación en %1 ha fallado. ¿Es incorrecta la contraseña?"
-
-#~| msgid "Provide the password for the wireless network '%1':"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "wireless network '%1':"
-#~ msgstr ""
-#~ "Parece que la contraseña que ha proporcionado es incorrecta. Introduzca "
-#~ "la contraseña para la red inalámbrica «%1»:"
-
-#~| msgid "Provide the password for the connection '%1':"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "connection '%1':"
-#~ msgstr ""
-#~ "Parece que la contraseña que ha proporcionado es incorrecta. Introduzca "
-#~ "la contraseña para la conexión «%1»:"
-
-#~ msgctxt ""
-#~ "@info:status Notification when the device failed due to SsidNotFound"
-#~ msgid "The WiFi network could not be found"
-#~ msgstr "No se puede encontrar la red wifi"
-
-#~ msgid "VPN connection '%1' failed."
-#~ msgstr "La conexión VPN «%1» ha fallado."
-
-#~ msgid "VPN connection '%1' disconnected."
-#~ msgstr "Se ha desconectado la conexión VPN «%1»."
-
-#~ msgid "The VPN connection changed state because the user disconnected it."
-#~ msgstr ""
-#~ "La conexión VPN ha cambiado de estado porque el usuario la ha "
-#~ "desconectado."
-
-#~ msgid "The connection was deleted from settings."
-#~ msgstr "La conexión se ha eliminado desde las preferencias."
-
-#~ msgid ""
-#~ "For accessing the wireless network %1 you need to provide a password "
-#~ "below:"
-#~ msgstr ""
-#~ "Para acceder a la red inalámbrica %1 necesita proporcionar una contraseña "
-#~ "a continuación"
-
-#~ msgid ""
-#~ "For accessing the vpn connection %1 you need to provide secrets below:"
-#~ msgstr ""
-#~ "Para acceder a la red inalámbrica %1 necesita proporcionar sus "
-#~ "credenciales a continuación:"
-
-#~ msgid "TextLabel"
-#~ msgstr "Etiqueta de texto"
-
-#~ msgid "Show password"
-#~ msgstr "Mostrar contraseña"
-
-#~ msgid "&New PIN code:"
-#~ msgstr "&Nuevo código PIN:"
-
-#~ msgid "Could not contact Bluetooth manager (BlueZ)."
-#~ msgstr "No se puede contactar con el gestor de Bluetooth (BlueZ)."
-
-#~ msgid "%1 (%2) does not support Dialup Networking (DUN)."
-#~ msgstr "%1 (%2) no permite usar redes de marcado telefónico (DUN)."
-
-#~ msgid "%1 (%2) does not support Network Access Point (NAP)."
-#~ msgstr "%1 (%2) no permite el uso de punto de acceso a la red (NAP)."
-
-#~ msgid "Default Bluetooth adapter not found: %1"
-#~ msgstr "No se ha encontrado el adaptador Bluetooth por omisión: %1"
-
-#~ msgid "Error activating devices's serial port: %1"
-#~ msgstr "Ha ocurrido un error al activar el puerto serie del dispositivo: %1"
-
-#~ msgid "Device %1 is not the wanted one (%2)"
-#~ msgstr "El dispositivo %1 no es el deseado (%2)"
-
-#~ msgid "Device for serial port %1 (%2) not found."
-#~ msgstr "No se ha encontrado el dispositivo para el puerto serie %1 (%2)."

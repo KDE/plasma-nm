@@ -1,15 +1,15 @@
 # Spanish translations for plasmanetworkmanagement_sshui.po package.
-# Copyright (C) 2015 This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Copyright (C) 2015-2025 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
 # Automatically generated, 2015.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2015, 2017, 2021.
+#
+# SPDX-FileCopyrightText: 2015, 2017, 2021, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_sshui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2021-06-01 00:01+0200\n"
+"PO-Revision-Date: 2025-06-04 19:16+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -175,19 +175,4 @@ msgstr "Autenticación de claves"
 #: sshwidget.ui:300
 #, kde-format
 msgid "Advanced…"
-msgstr "Avanzado..."
-
-#~ msgid "Store"
-#~ msgstr "Almacenar"
-
-#~ msgid "Always ask"
-#~ msgstr "Preguntar siempre"
-
-#~ msgid "Not required"
-#~ msgstr "No es necesaria"
-
-#~ msgid "Show passwords"
-#~ msgstr "Mostrar contraseñas"
-
-#~ msgid "Show password"
-#~ msgstr "Mostrar contraseña"
+msgstr "Avanzado…"

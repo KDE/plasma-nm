@@ -1,15 +1,15 @@
-# Spanish translations for libplasmanm_editor.po package.
-# Copyright (C) 2014 This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Spanish translations for plasmanetworkmanagement-libs.po package.
+# Copyright (C) 2014-2025 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
 # Automatically generated, 2014.
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Eloy Cuadra <ecuadra@eloihr.net>
+#
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
-"Project-Id-Version: libplasmanm_editor\n"
+"Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-22 00:44+0000\n"
-"PO-Revision-Date: 2024-12-14 02:52+0100\n"
+"PO-Revision-Date: 2025-06-04 19:15+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -516,7 +516,7 @@ msgstr "Coincidencias de sujetos alternativos:"
 #: editor/settings/ui/802-1x.ui:210 editor/settings/ui/802-1x.ui:234
 #, kde-format
 msgid "…"
-msgstr "..."
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:219
@@ -669,14 +669,14 @@ msgstr "Conexiones enlazadas:"
 #: editor/settings/ui/team.ui:56
 #, kde-format
 msgid "Add…"
-msgstr "Añadir..."
+msgstr "Añadir…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnEdit)
 #: editor/settings/ui/bond.ui:72 editor/settings/ui/bridge.ui:69
 #: editor/settings/ui/team.ui:71
 #, kde-format
 msgid "Edit…"
-msgstr "Editar..."
+msgstr "Editar…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:85 editor/settings/ui/bridge.ui:82
@@ -857,7 +857,7 @@ msgstr ""
 #: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:306
 #, kde-format
 msgid "Advanced…"
-msgstr "Avanzado..."
+msgstr "Avanzado…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:80
@@ -1152,7 +1152,7 @@ msgstr "Se necesita IPv4 para esta conexión"
 #: editor/settings/ui/ipv4.ui:331 editor/settings/ui/ipv6.ui:316
 #, kde-format
 msgid "Routes…"
-msgstr "Rutas..."
+msgstr "Rutas…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:30
@@ -1338,7 +1338,7 @@ msgstr "Configuración JSON:"
 #: editor/settings/ui/team.ui:123
 #, kde-format
 msgid "Import configuration from file…"
-msgstr "Importar configuración de un archivo..."
+msgstr "Importar configuración de un archivo…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
@@ -1491,7 +1491,7 @@ msgstr "Dirección MAC clonada:"
 #: editor/settings/ui/wificonnectionwidget.ui:240
 #, kde-format
 msgid "Random…"
-msgstr "Aleatoria..."
+msgstr "Aleatoria…"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -1909,7 +1909,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:141
 #, kde-format
 msgid "Peers…"
-msgstr "Pares..."
+msgstr "Pares…"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
@@ -2912,7 +2912,7 @@ msgstr "Nueva conexión de banda ancha móvil "
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My plan is not listed…"
-msgstr "Mi plan no está listado..."
+msgstr "Mi plan no está listado…"
 
 #: editor/widgets/mobileconnectionwizard.cpp:138
 #, kde-format
@@ -3406,7 +3406,7 @@ msgstr "WireGuard"
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
-msgstr "Importar conexión VPN..."
+msgstr "Importar conexión VPN…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format
@@ -3780,310 +3780,3 @@ msgstr "Se necesita NetworkManager 0.9.8; se ha encontrado %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconocido"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used in the last hour, "
-#~ "as the number of minutes since usage"
-#~ msgid "One minute ago"
-#~ msgid_plural "%1 minutes ago"
-#~ msgstr[0] "Hace 1 minuto"
-#~ msgstr[1] "Hace %1 minutos"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used in the last day, "
-#~ "as the number of hours since usage"
-#~ msgid "One hour ago"
-#~ msgid_plural "%1 hours ago"
-#~ msgstr[0] "Hace 1 hora"
-#~ msgstr[1] "Hace %1 horas"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used the previous day"
-#~ msgid "Yesterday"
-#~ msgstr "Ayer"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection that has never been used"
-#~ msgid "Never"
-#~ msgstr "Nunca"
-
-#~ msgctxt "General"
-#~ msgid "General configuration"
-#~ msgstr "Configuración general"
-
-#~ msgid "Signal strength"
-#~ msgstr "Potencia de la señal"
-
-#~ msgid ""
-#~ "Plasma is missing support for '%1' VPN connections. Please report this to "
-#~ "your distribution."
-#~ msgstr ""
-#~ "Plasma carece de soporte lógico para conexiones VPN «%1». Informe de este "
-#~ "problema a su distribución. "
-
-#~ msgctxt "Error message in VPN import/export dialog"
-#~ msgid "Operation not supported for this VPN type."
-#~ msgstr "Operación no permitida por este tipo de VPN."
-
-#~ msgid "Missing VPN plugin"
-#~ msgstr "Falta el complemento VPN"
-
-#~ msgid "INCORRECT MODE FIX ME"
-#~ msgstr "Modo incorrecto: ¡Corríjame!"
-
-#~ msgid "..."
-#~ msgstr "..."
-
-#~ msgid "Add..."
-#~ msgstr "Añadir..."
-
-#~ msgid "Edit..."
-#~ msgstr "Editar..."
-
-#~ msgid "Advanced..."
-#~ msgstr "Avanzado..."
-
-#~ msgid "Random..."
-#~ msgstr "Aleatoria..."
-
-#~ msgid "Active connections"
-#~ msgstr "Conexiones activas"
-
-#~ msgid "Available connections"
-#~ msgstr "Conexiones disponibles"
-
-#~ msgid " Mbit/s"
-#~ msgstr " Mbits/s"
-
-#~ msgid "Allow auto-negotiation of port speed and duplex mode"
-#~ msgstr ""
-#~ "Permitir la negociación automática de la velocidad del puerto y del modo "
-#~ "duplex"
-
-#~ msgid "Allow auto-negotiation"
-#~ msgstr "Permitir negociar automáticamente"
-
-#~ msgid "Automatically connect to this network when it is available"
-#~ msgstr "Conectarse automáticamente a esta red cuando esté disponible"
-
-#~ msgid "(Priority property requires newer version of NetworkManager)"
-#~ msgstr ""
-#~ "(La propiedad de prioridad necesita una versión más moderna de "
-#~ "NetworkManager)"
-
-#~ msgid "Network name:"
-#~ msgstr "Nombre de la red:"
-
-#~ msgid "NSP Name"
-#~ msgstr "Nombre del NSP"
-
-#~ msgid "Network Type"
-#~ msgstr "Tipo de red"
-
-#~ msgid "Bsid"
-#~ msgstr "Bsid"
-
-#~ msgctxt "title of the interface widget in nm's popup"
-#~ msgid "WiMAX"
-#~ msgstr "WiMAX"
-
-#~ msgid "WiMAX"
-#~ msgstr "WiMAX"
-
-#~ msgctxt "unknown Wimax NSP type"
-#~ msgid "Unknown"
-#~ msgstr "Desconocido"
-
-#~ msgid "Home"
-#~ msgstr "Base"
-
-#~ msgid "Partner"
-#~ msgstr "Compañero"
-
-#~ msgid "Roaming partner"
-#~ msgstr "Compañero de itinerancia"
-
-#~ msgctxt "Unknown"
-#~ msgid "Unknown Wimax NSP type"
-#~ msgstr "Tipo de NSP Wimax desconocido"
-
-#~ msgid "Connection name"
-#~ msgstr "Nombre de la conexión"
-
-#~ msgid "Last used"
-#~ msgstr "Último uso"
-
-#~ msgctxt "GSM network type"
-#~ msgid "Any"
-#~ msgstr "Cualquiera"
-
-#~ msgid "3G Only (UMTS/HSPA)"
-#~ msgstr "Solo 3G (UMTS/HSPA)"
-
-#~ msgid "2G Only (GPRS/EDGE)"
-#~ msgstr "Solo 2G (GPRS/EDGE)"
-
-#~ msgid "Prefer 3G (UMTS/HSPA)"
-#~ msgstr "Preferir 3G (UMTS/HSPA)"
-
-#~ msgid "Prefer 2G (GPRS/EDGE)"
-#~ msgstr "Preferir 2G (GPRS/EDGE)"
-
-#~ msgid "Prefer 4G (LTE)"
-#~ msgstr "Preferir 4G (LTE)"
-
-#~ msgid "4G Only (LTE)"
-#~ msgstr "Solo 4G (LTE)"
-
-#~ msgid "Type:"
-#~ msgstr "Tipo:"
-
-#~ msgid "Failed to request scan"
-#~ msgstr "La petición de la exploración ha fallado"
-
-#~ msgid "Dialog"
-#~ msgstr "Diálogo"
-
-#~ msgid "Store password and make it available for all users (not encrypted)"
-#~ msgstr ""
-#~ "Guardar la contraseña y ponerla a disposición de todos los usuarios (sin "
-#~ "cifrar)"
-
-#~ msgctxt "traffic received empty"
-#~ msgid "Received"
-#~ msgstr "Recibido"
-
-#~ msgctxt "traffic transmitted empty"
-#~ msgid "Transmitted"
-#~ msgstr "Transmitido"
-
-#~ msgid "KBit/s"
-#~ msgstr "KBits/s"
-
-#~ msgid "MBit/s"
-#~ msgstr "MBits/s"
-
-#~ msgid "GBit/s"
-#~ msgstr "GBits/s"
-
-#~ msgctxt ""
-#~ "traffic, e.g. n KB/s\n"
-#~ " m KB/s"
-#~ msgid "%1 %2"
-#~ msgstr "%1 %2"
-
-#~ msgid "Received"
-#~ msgstr "Recibido"
-
-#~ msgid "Transmitted"
-#~ msgstr "Transmitido"
-
-#~ msgid "Store"
-#~ msgstr "Almacenar"
-
-#~ msgid "Always Ask"
-#~ msgstr "Preguntar siempre"
-
-#~ msgid "Not Required"
-#~ msgstr "No es necesaria"
-
-#~ msgid "Addresses"
-#~ msgstr "Direcciones"
-
-#~ msgid "Show password"
-#~ msgstr "Mostrar contraseña"
-
-#~ msgid "Show passwords"
-#~ msgstr "Mostrar contraseñas"
-
-#~ msgid "Show key"
-#~ msgstr "Mostrar clave"
-
-#~ msgctxt "@info:tooltip no security"
-#~ msgid "Insecure"
-#~ msgstr "Insegura"
-
-#~ msgctxt "@info:tooltip WEP security"
-#~ msgid "WEP"
-#~ msgstr "WEP"
-
-#~ msgctxt "@info:tooltip LEAP security"
-#~ msgid "LEAP"
-#~ msgstr "LEAP"
-
-#~ msgctxt "@info:tooltip Dynamic WEP security"
-#~ msgid "Dynamic WEP"
-#~ msgstr "WEP dinámica"
-
-#~ msgctxt "@info:tooltip WPA-PSK security"
-#~ msgid "WPA-PSK"
-#~ msgstr "WPA-PSK"
-
-#~ msgctxt "@info:tooltip WPA-EAP security"
-#~ msgid "WPA-EAP"
-#~ msgstr "WPA-EAP"
-
-#~ msgctxt "@info:tooltip WPA2-PSK security"
-#~ msgid "WPA2-PSK"
-#~ msgstr "WPA2-PSK"
-
-#~ msgctxt "@info:tooltip WPA2-EAP security"
-#~ msgid "WPA2-EAP"
-#~ msgstr "WPA2-EAP"
-
-#~ msgctxt "@info:tooltip unknown security"
-#~ msgid "Unknown security type"
-#~ msgstr "Tipo de seguridad desconocido"
-
-#~ msgid "Wireless"
-#~ msgstr "Inalámbrica"
-
-#~ msgid "Wireless Security"
-#~ msgstr "Seguridad inalámbrica"
-
-#~ msgctxt "title of the interface widget in nm's popup"
-#~ msgid "Wireless 802.11"
-#~ msgstr "Inalámbrica 802.11"
-
-#~ msgctxt "connection speed"
-#~ msgid "<numid>%1</numid> Bit/s"
-#~ msgstr "<numid>%1</numid> Bits/s"
-
-#~ msgctxt "connection speed"
-#~ msgid "<numid>%1</numid> MBit/s"
-#~ msgstr "<numid>%1</numid> MBits/s"
-
-#~ msgctxt "connection speed"
-#~ msgid "<numid>%1</numid> GBit/s"
-#~ msgstr "<numid>%1</numid> GBits/s"
-
-#~ msgctxt "Connected"
-#~ msgid ""
-#~ "A network device is connected, but there is only link-local connectivity"
-#~ msgstr ""
-#~ "Se ha conectado un dispositivo de red, pero solo existe conectividad de "
-#~ "enlace local"
-
-#~ msgctxt "Connected"
-#~ msgid ""
-#~ "A network device is connected, but there is only site-local connectivity"
-#~ msgstr ""
-#~ "Se ha conectado un dispositivo de red, pero solo existe conectividad de "
-#~ "sitio local"
-
-#~ msgctxt "Connected"
-#~ msgid "A network device is connected, with global network connectivity"
-#~ msgstr ""
-#~ "Se ha conectado un dispositivo de red, con conectividad de red global"
-
-#~ msgctxt "Inactive"
-#~ msgid "Networking is inactive and all devices are disabled"
-#~ msgstr "La res está inactiva y todos los dispositivos se han desactivado"
-
-#~ msgctxt "Disconnected"
-#~ msgid "There is no active network connection"
-#~ msgstr "No hay ninguna conexión de red activa"
-
-#~ msgctxt "Disconnecting"
-#~ msgid "Network connections are being cleaned up"
-#~ msgstr "Las conexiones de red se están limpiando"

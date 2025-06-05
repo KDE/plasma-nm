@@ -68,7 +68,7 @@ QQC2.ItemDelegate {
 
         QQC2.MenuItem {
             text: model.ConnectionState === PlasmaNM.Enums.Deactivated ? i18n("Connect") : i18n("Disconnect")
-            visible: model.ItemType === 1
+            enabled: model.ItemType === 1 /* available */
             onTriggered: {
                 if (model.ConnectionState === PlasmaNM.Enums.Deactivated) {
                     handler.activateConnection(model.ConnectionPath, model.DevicePath, model.SpecificPath);
@@ -76,6 +76,9 @@ QQC2.ItemDelegate {
                     handler.deactivateConnection(model.ConnectionPath, model.DevicePath);
                 }
             }
+            QQC2.ToolTip.visible: !enabled && hovered
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
+            QQC2.ToolTip.text: i18nc("@info:tooltip", "Cannot connect to this network because it was not detected.")
         }
 
         QQC2.MenuItem {

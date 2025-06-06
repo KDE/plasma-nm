@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:44+0000\n"
+"POT-Creation-Date: 2025-06-06 00:44+0000\n"
 "PO-Revision-Date: 2025-05-22 13:09+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -199,6 +199,12 @@ msgstr "Punto de acceso"
 #: contents/ui/Toolbar.qml:177
 #, kde-format
 msgctxt "@info:tooltip"
+msgid "Cannot create a hotspot because Wi-Fi is disabled."
+msgstr ""
+
+#: contents/ui/Toolbar.qml:179
+#, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
@@ -206,19 +212,19 @@ msgstr ""
 "Non é posíbel crear un punto de acceso porque todas as radios sen fíos están "
 "en uso. Desconecte da rede wi-fi actual ou conecte a outra radio sen fíos."
 
-#: contents/ui/Toolbar.qml:179
+#: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Desactivar o punto de acceso"
 
-#: contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Crear un punto de acceso"
 
-#: contents/ui/Toolbar.qml:215
+#: contents/ui/Toolbar.qml:217
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configurar as conexións de rede…"

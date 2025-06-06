@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:44+0000\n"
+"POT-Creation-Date: 2025-06-06 00:44+0000\n"
 "PO-Revision-Date: 2024-02-24 18:38+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -198,26 +198,32 @@ msgstr "Hotspot"
 #: contents/ui/Toolbar.qml:177
 #, kde-format
 msgctxt "@info:tooltip"
+msgid "Cannot create a hotspot because Wi-Fi is disabled."
+msgstr ""
+
+#: contents/ui/Toolbar.qml:179
+#, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:179
+#: contents/ui/Toolbar.qml:181
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Dezactivează Hotspot"
 
-#: contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:183
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Creează Hotspot"
 
-#: contents/ui/Toolbar.qml:215
+#: contents/ui/Toolbar.qml:217
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configurează conexiuni de rețea…"

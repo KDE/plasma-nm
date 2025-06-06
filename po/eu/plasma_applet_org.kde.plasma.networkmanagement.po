@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:44+0000\n"
+"POT-Creation-Date: 2025-06-06 00:44+0000\n"
 "PO-Revision-Date: 2025-05-25 19:42+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -196,6 +196,12 @@ msgstr "Berogunea"
 #: contents/ui/Toolbar.qml:177
 #, kde-format
 msgctxt "@info:tooltip"
+msgid "Cannot create a hotspot because Wi-Fi is disabled."
+msgstr ""
+
+#: contents/ui/Toolbar.qml:179
+#, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
@@ -204,19 +210,19 @@ msgstr ""
 "direlako. Deskonektatu uneko Wi-Fi saretik edo konektatu beste haririk "
 "gabeko irrati-gailu bat."
 
-#: contents/ui/Toolbar.qml:179
+#: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Ezgaitu berogunea"
 
-#: contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Sortu berogunea"
 
-#: contents/ui/Toolbar.qml:215
+#: contents/ui/Toolbar.qml:217
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Konfiguratu sare-konexioak..."

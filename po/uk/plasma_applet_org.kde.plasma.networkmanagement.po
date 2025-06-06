@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:44+0000\n"
+"POT-Creation-Date: 2025-06-06 00:44+0000\n"
 "PO-Revision-Date: 2025-05-22 19:20+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -196,6 +196,12 @@ msgstr "Хот-спот"
 #: contents/ui/Toolbar.qml:177
 #, kde-format
 msgctxt "@info:tooltip"
+msgid "Cannot create a hotspot because Wi-Fi is disabled."
+msgstr ""
+
+#: contents/ui/Toolbar.qml:179
+#, kde-format
+msgctxt "@info:tooltip"
 msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
@@ -204,19 +210,19 @@ msgstr ""
 "радіопристрої. Від'єднайтеся від поточної мережі Wi-Fi або з'єднайте з "
 "комп'ютером ще один бездротовий радіопристрій."
 
-#: contents/ui/Toolbar.qml:179
+#: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Вимкнути хот-спот"
 
-#: contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Створити хот-спот"
 
-#: contents/ui/Toolbar.qml:215
+#: contents/ui/Toolbar.qml:217
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Налаштувати з'єднання мережі…"

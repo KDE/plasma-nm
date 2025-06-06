@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:44+0000\n"
+"POT-Creation-Date: 2025-06-06 00:44+0000\n"
 "PO-Revision-Date: 2025-01-06 22:27+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -3248,72 +3248,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "Ša&linti"
 
-#: handler.cpp:122
+#: handler.cpp:126
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma trūksta palaikymo, skirto „%1“ VPN ryšiams."
 
-#: handler.cpp:125
+#: handler.cpp:129
 #, kde-format
 msgid "Report Bug"
 msgstr "Pranešti apie programos klaidą"
 
-#: handler.cpp:148
+#: handler.cpp:152
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager trūksta palaikymo, skirto „%1“ VPN ryšiams."
 
-#: handler.cpp:151
+#: handler.cpp:155
 #, kde-format
 msgid "Install"
 msgstr "Įdiegti"
 
-#: handler.cpp:197
+#: handler.cpp:201
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Nepavyko aktyvuoti %1"
 
-#: handler.cpp:375 handler.cpp:404
+#: handler.cpp:379 handler.cpp:408
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Nepavyko pridėti ryšio %1"
 
-#: handler.cpp:382 handler.cpp:413
+#: handler.cpp:386 handler.cpp:417
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Ryšys %1 pridėtas"
 
-#: handler.cpp:452
+#: handler.cpp:456
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Nepavyko pridėti %1"
 
-#: handler.cpp:492
+#: handler.cpp:496
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Nepavyko pasyvinti %1"
 
-#: handler.cpp:626
+#: handler.cpp:634
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Nepavyko pašalinti %1"
 
-#: handler.cpp:633
+#: handler.cpp:641
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Ryšys %1 pašalintas"
 
-#: handler.cpp:652
+#: handler.cpp:660
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Nepavyko atnaujinti ryšio %1"
 
-#: handler.cpp:659
+#: handler.cpp:667
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Ryšys %1 atnaujintas"
 
-#: handler.cpp:843
+#: handler.cpp:851
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Nepavyko sukurti viešosios prieigos taško %1"

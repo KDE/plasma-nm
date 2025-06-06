@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-05-22 00:44+0000\n"
+"POT-Creation-Date: 2025-06-06 00:44+0000\n"
 "PO-Revision-Date: 2014-10-28 10:24+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -197,24 +197,30 @@ msgstr ""
 #: contents/ui/Toolbar.qml:177
 #, kde-format
 msgctxt "@info:tooltip"
-msgid ""
-"Cannot create a hotspot because all wireless radios are in use. Disconnect "
-"from the current Wi-Fi network or connect another wireless radio."
+msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
 #: contents/ui/Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Disable Hotspot"
+msgid ""
+"Cannot create a hotspot because all wireless radios are in use. Disconnect "
+"from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
 #: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
+msgid "Disable Hotspot"
+msgstr ""
+
+#: contents/ui/Toolbar.qml:183
+#, kde-format
+msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:215
+#: contents/ui/Toolbar.qml:217
 #, fuzzy, kde-format
 #| msgid "Edit connections..."
 msgid "Configure network connections…"

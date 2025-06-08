@@ -191,7 +191,7 @@ msgstr "热点"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "无法创建热点，因为 Wi-Fi 已被禁用。"
 
 #: contents/ui/Toolbar.qml:179
 #, kde-format

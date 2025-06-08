@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-06 00:44+0000\n"
-"PO-Revision-Date: 2025-05-26 19:20+0200\n"
+"PO-Revision-Date: 2025-06-07 22:14+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -199,7 +199,7 @@ msgstr "Активна точка"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "Не може да се създаде точка за достъп, защото Wi-Fi е деактивиран."
 
 #: contents/ui/Toolbar.qml:179
 #, kde-format

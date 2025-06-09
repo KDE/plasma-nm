@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-06 00:44+0000\n"
-"PO-Revision-Date: 2025-05-22 08:30+0300\n"
+"PO-Revision-Date: 2025-06-06 11:50+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -195,7 +195,7 @@ msgstr "נקודה חמה"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "לא ניתן ליצור נקודה חמה כי הרשת האלחוטית כבויה."
 
 #: contents/ui/Toolbar.qml:179
 #, kde-format

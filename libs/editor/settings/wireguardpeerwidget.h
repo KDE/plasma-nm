@@ -11,7 +11,6 @@
 
 #include <QDialog>
 
-#include "settingwidget.h"
 #include <NetworkManagerQt/WireguardSetting>
 
 class PLASMANM_EDITOR_EXPORT WireGuardPeerWidget : public QDialog

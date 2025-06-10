@@ -10,6 +10,7 @@
 
 #include <QStandardItemModel>
 
+#include <KAcceleratorManager>
 #include <KColorScheme>
 #include <KConfig>
 #include <KConfigGroup>
@@ -39,7 +40,6 @@ public:
     Ui_WireGuardTabWidget ui;
     NetworkManager::WireGuardSetting::Ptr setting;
     KSharedConfigPtr config;
-    NMVariantMapList peers;
     int currentIndex;
     bool currentPeerValid;
     bool otherPeersValid;
@@ -65,9 +65,6 @@ WireGuardTabWidget::WireGuardTabWidget(const NMVariantMapList &peerData, QWidget
     KAcceleratorManager::manage(this);
 
     loadConfig(peerData);
-
-    if (peerData.isEmpty())
-        slotAddPeer();
 }
 
 WireGuardTabWidget::~WireGuardTabWidget()
@@ -75,77 +72,87 @@ WireGuardTabWidget::~WireGuardTabWidget()
     delete d;
 }
 
-void WireGuardTabWidget::loadConfig(const NMVariantMapList &peerData)
+void WireGuardTabWidget::loadConfig(const NMVariantMapList &peersData)
 {
-    d->peers = peerData;
-    int numIncomingPeers = d->peers.size();
+    while (d->ui.tabWidget->count() > 0) {
+        removeAndDeleteTab(0);
+    }
 
     // If there weren't any peers in the incoming setting, create
     // the required first element
-    if (d->peers.isEmpty())
-        d->peers.append(*(new QVariantMap()));
-
-    for (int i = 0; i < numIncomingPeers; i++) {
-        slotAddPeerWithData(peerData[i]);
+    if (peersData.isEmpty()) {
+        slotAddPeer();
+    } else {
+        for (const auto &peerData : peersData) {
+            slotAddPeerWithData(peerData);
+        }
     }
+
     d->ui.tabWidget->setCurrentIndex(0);
 }
 
 NMVariantMapList WireGuardTabWidget::setting() const
 {
-    d->peers.clear();
-    for (int i = 0; i < d->ui.tabWidget->count(); i++)
-        d->peers.append(static_cast<WireGuardPeerWidget *>(d->ui.tabWidget->widget(i))->setting());
-    return d->peers;
+    NMVariantMapList peers;
+    for (int i = 0; i < d->ui.tabWidget->count(); i++) {
+        if (auto tab = qobject_cast<WireGuardPeerWidget *>(d->ui.tabWidget->widget(i))) {
+            peers.append(tab->setting());
+        }
+    }
+    return peers;
 }
 
 void WireGuardTabWidget::slotAddPeer()
 {
-    auto newItem = new QVariantMap;
-    int numPeers = d->ui.tabWidget->count() + 1;
-    auto newTab = new WireGuardPeerWidget(*newItem);
-    connect(newTab, &WireGuardPeerWidget::notifyValid, this, &WireGuardTabWidget::slotWidgetChanged);
-    d->ui.tabWidget->addTab(newTab, QString("Peer %1").arg(QString::number(numPeers)));
-    d->peers.append(*newItem);
-    d->ui.tabWidget->setCurrentIndex(numPeers - 1);
-    slotWidgetChanged();
+    slotAddPeerWithData(QVariantMap());
 }
 
 void WireGuardTabWidget::slotAddPeerWithData(const QVariantMap &peerData)
 {
-    int numPeers = d->ui.tabWidget->count() + 1;
+    int numPeers = d->ui.tabWidget->count();
     auto newTab = new WireGuardPeerWidget(peerData);
-    d->ui.tabWidget->addTab(newTab, QString("Peer %1").arg(QString::number(numPeers)));
+    d->ui.tabWidget->addTab(newTab, QString("Peer %1").arg(QString::number(numPeers + 1)));
     connect(newTab, &WireGuardPeerWidget::notifyValid, this, &WireGuardTabWidget::slotWidgetChanged);
-    d->peers.append(peerData);
-    d->ui.tabWidget->setCurrentIndex(numPeers - 1);
+    d->ui.tabWidget->setCurrentIndex(numPeers);
     slotWidgetChanged();
 }
 
 void WireGuardTabWidget::slotRemovePeer()
 {
-    int numPeers = d->ui.tabWidget->count() - 1;
-    d->ui.tabWidget->removeTab(d->ui.tabWidget->currentIndex());
+    removeAndDeleteTab(d->ui.tabWidget->currentIndex());
+    int numPeers = d->ui.tabWidget->count();
     if (numPeers == 0) {
         slotAddPeer();
-        numPeers = 1;
+    } else {
+        // Retitle the tabs to reflect the current numbers
+        for (int i = 0; i < numPeers; i++) {
+            d->ui.tabWidget->setTabText(i, QString("Peer %1").arg(QString::number(i + 1)));
+        }
     }
-
-    // Retitle the tabs to reflect the current numbers
-    for (int i = 0; i < numPeers; i++)
-        d->ui.tabWidget->setTabText(i, QString("Peer %1").arg(QString::number(i + 1)));
 }
 
 void WireGuardTabWidget::slotWidgetChanged()
 {
     bool valid = true;
     for (int i = 0; i < d->ui.tabWidget->count(); i++) {
-        if (!static_cast<WireGuardPeerWidget *>(d->ui.tabWidget->widget(i))->isValid()) {
-            valid = false;
-            break;
+        if (auto tab = qobject_cast<WireGuardPeerWidget *>(d->ui.tabWidget->widget(i))) {
+            if (!tab->isValid()) {
+                valid = false;
+                break;
+            }
         }
     }
     d->ui.buttonBox->button(QDialogButtonBox::Ok)->setEnabled(valid);
+}
+
+void WireGuardTabWidget::removeAndDeleteTab(int index)
+{
+    if (auto tab = qobject_cast<WireGuardPeerWidget *>(d->ui.tabWidget->widget(index))) {
+        disconnect(tab, &WireGuardPeerWidget::notifyValid, this, &WireGuardTabWidget::slotWidgetChanged);
+        d->ui.tabWidget->removeTab(index);
+        tab->deleteLater();
+        slotWidgetChanged();
+    }
 }
 
 #include "moc_wireguardtabwidget.cpp"

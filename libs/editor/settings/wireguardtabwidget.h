@@ -28,7 +28,7 @@ public:
         BothInvalid
     };
 
-    void loadConfig(const NMVariantMapList &peerData);
+    void loadConfig(const NMVariantMapList &peersData);
 
     NMVariantMapList setting() const;
 
@@ -38,6 +38,7 @@ public:
 
 private:
     void slotWidgetChanged();
+    void removeAndDeleteTab(int index);
 
     class Private;
     Private *const d;

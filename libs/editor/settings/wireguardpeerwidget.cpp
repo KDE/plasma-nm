@@ -12,6 +12,7 @@
 #include <QStandardItemModel>
 #include <QUrl>
 
+#include <KAcceleratorManager>
 #include <KColorScheme>
 #include <KConfig>
 #include <KConfigGroup>

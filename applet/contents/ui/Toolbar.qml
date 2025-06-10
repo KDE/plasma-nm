@@ -16,7 +16,8 @@ import org.kde.kcmutils as KCMUtils
 RowLayout {
     id: toolbar
 
-    readonly property var displayWifiMessage: !wifiSwitchButton.checked && wifiSwitchButton.visible
+    readonly property var displayWifiOffMessage: !wifiSwitchButton.checked && wifiSwitchButton.visible
+    readonly property var displayWifiConnectingMessage: wifiSwitchButton.checked && wifiSwitchButton.visible
     readonly property var displayWwanMessage: !wwanSwitchButton.checked && wwanSwitchButton.visible
     readonly property var displayplaneModeMessage: planeModeSwitchButton.checked && planeModeSwitchButton.visible
 

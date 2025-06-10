@@ -210,6 +210,5 @@
     "X-KDE-Keywords[zh_CN]": "network,internet,ethernet,wireless,wifi,wlan,vpn,wangluo,hulianwang,yitaiwang,juyuwang,wuxianwangluo,xunizhuanyongwangluo,网络,互联网,以太网,局域网,无线网络,虚拟专用网络",
     "X-KDE-Keywords[zh_TW]": "網路,網絡,網際網路,乙太網路,以太網路,無線",
     "X-Plasma-API-Minimum-Version": "6.0",
-    "X-Plasma-DBusActivationService": "org.freedesktop.NetworkManager",
     "X-Plasma-NotificationAreaCategory": "Hardware"
 }

@@ -37,7 +37,7 @@ K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.jso
 #define AUTH_USER_PASS_TAG "auth-user-pass"
 #define CA_TAG "ca"
 #define CERT_TAG "cert"
-#define CIPHER_TAG "cipher"
+#define DATA_CIPHERS_TAG "data-ciphers"
 #define CLIENT_TAG "client"
 #define COMPRESS_TAG "compress"
 #define COMP_TAG "comp-lzo"
@@ -322,7 +322,7 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
         expFile.write(line.toLatin1());
     }
     if (!dataMap[NM_OPENVPN_KEY_CIPHER].isEmpty()) {
-        line = QString(CIPHER_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_CIPHER] + '\n';
+        line = QString(DATA_CIPHERS_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_CIPHER] + '\n';
         expFile.write(line.toLatin1());
     }
     if (dataMap[NM_OPENVPN_KEY_COMP_LZO] == "adaptive") {

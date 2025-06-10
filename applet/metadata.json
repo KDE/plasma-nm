@@ -52,7 +52,7 @@
                 "Name[zh_TW]": "Jan Grulich,Lukáš Tinkl"
             }
         ],
-        "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=plasma-nm&component=applet",
+        "BugReportUrl": "https://bugs.kde.org/enter_bug.cgi?product=plasmashell&component=Networks%20widget",
         "Category": "System Information",
         "Description": "Network status and control",
         "Description[ar]": "حالة الشّبكة والتّحكّم بها",

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 00:44+0000\n"
+"POT-Creation-Date: 2025-06-10 00:44+0000\n"
 "PO-Revision-Date: 2020-01-16 11:07+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -168,19 +168,24 @@ msgstr "Ühenda"
 msgid "Disconnect"
 msgstr "Lahuta"
 
-#: qml/ConnectionItem.qml:83
+#: qml/ConnectionItem.qml:81
+msgctxt "@info:tooltip"
+msgid "Cannot connect to this network because it was not detected."
+msgstr ""
+
+#: qml/ConnectionItem.qml:86
 msgid "Delete"
 msgstr "Kustuta"
 
-#: qml/ConnectionItem.qml:93
+#: qml/ConnectionItem.qml:96
 msgid "Export"
 msgstr "Ekspordi"
 
-#: qml/ConnectionItem.qml:103
+#: qml/ConnectionItem.qml:106
 msgid "Connected"
 msgstr "Ühendatud"
 
-#: qml/ConnectionItem.qml:105
+#: qml/ConnectionItem.qml:108
 msgid "Connecting"
 msgstr "Ühendumine"
 

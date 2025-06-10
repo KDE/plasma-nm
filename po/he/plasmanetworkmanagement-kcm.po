@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 00:44+0000\n"
+"POT-Creation-Date: 2025-06-10 00:44+0000\n"
 "PO-Revision-Date: 2024-10-27 07:57+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -164,19 +164,24 @@ msgstr "התחברות"
 msgid "Disconnect"
 msgstr "התנתקות"
 
-#: qml/ConnectionItem.qml:83
+#: qml/ConnectionItem.qml:81
+msgctxt "@info:tooltip"
+msgid "Cannot connect to this network because it was not detected."
+msgstr ""
+
+#: qml/ConnectionItem.qml:86
 msgid "Delete"
 msgstr "מחיקה"
 
-#: qml/ConnectionItem.qml:93
+#: qml/ConnectionItem.qml:96
 msgid "Export"
 msgstr "ייצוא"
 
-#: qml/ConnectionItem.qml:103
+#: qml/ConnectionItem.qml:106
 msgid "Connected"
 msgstr "מחובר"
 
-#: qml/ConnectionItem.qml:105
+#: qml/ConnectionItem.qml:108
 msgid "Connecting"
 msgstr "מתחבר"
 

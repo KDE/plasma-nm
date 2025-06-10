@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 00:44+0000\n"
+"POT-Creation-Date: 2025-06-10 00:44+0000\n"
 "PO-Revision-Date: 2024-12-19 07:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -167,19 +167,24 @@ msgstr "اتّصل"
 msgid "Disconnect"
 msgstr "اقطع الاتصال"
 
-#: qml/ConnectionItem.qml:83
+#: qml/ConnectionItem.qml:81
+msgctxt "@info:tooltip"
+msgid "Cannot connect to this network because it was not detected."
+msgstr ""
+
+#: qml/ConnectionItem.qml:86
 msgid "Delete"
 msgstr "احذف"
 
-#: qml/ConnectionItem.qml:93
+#: qml/ConnectionItem.qml:96
 msgid "Export"
 msgstr "صدّر"
 
-#: qml/ConnectionItem.qml:103
+#: qml/ConnectionItem.qml:106
 msgid "Connected"
 msgstr "متّصل"
 
-#: qml/ConnectionItem.qml:105
+#: qml/ConnectionItem.qml:108
 msgid "Connecting"
 msgstr "يتّصل"
 

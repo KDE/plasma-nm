@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 00:44+0000\n"
+"POT-Creation-Date: 2025-06-10 00:44+0000\n"
 "PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -167,19 +167,24 @@ msgstr "Konekti"
 msgid "Disconnect"
 msgstr "Malkonekti"
 
-#: qml/ConnectionItem.qml:83
+#: qml/ConnectionItem.qml:81
+msgctxt "@info:tooltip"
+msgid "Cannot connect to this network because it was not detected."
+msgstr ""
+
+#: qml/ConnectionItem.qml:86
 msgid "Delete"
 msgstr "Forigi"
 
-#: qml/ConnectionItem.qml:93
+#: qml/ConnectionItem.qml:96
 msgid "Export"
 msgstr "Eksporto"
 
-#: qml/ConnectionItem.qml:103
+#: qml/ConnectionItem.qml:106
 msgid "Connected"
 msgstr "Konektis"
 
-#: qml/ConnectionItem.qml:105
+#: qml/ConnectionItem.qml:108
 msgid "Connecting"
 msgstr "Konektante"
 

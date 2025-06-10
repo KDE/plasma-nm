@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-04 00:44+0000\n"
+"POT-Creation-Date: 2025-06-10 00:44+0000\n"
 "PO-Revision-Date: 2024-11-01 14:03+0000\n"
 "Last-Translator: Steve Allewell <steve.allewell@gmail.com>\n"
 "Language-Team: British English\n"
@@ -166,19 +166,24 @@ msgstr "Connect"
 msgid "Disconnect"
 msgstr "Disconnect"
 
-#: qml/ConnectionItem.qml:83
+#: qml/ConnectionItem.qml:81
+msgctxt "@info:tooltip"
+msgid "Cannot connect to this network because it was not detected."
+msgstr ""
+
+#: qml/ConnectionItem.qml:86
 msgid "Delete"
 msgstr "Delete"
 
-#: qml/ConnectionItem.qml:93
+#: qml/ConnectionItem.qml:96
 msgid "Export"
 msgstr "Export"
 
-#: qml/ConnectionItem.qml:103
+#: qml/ConnectionItem.qml:106
 msgid "Connected"
 msgstr "Connected"
 
-#: qml/ConnectionItem.qml:105
+#: qml/ConnectionItem.qml:108
 msgid "Connecting"
 msgstr "Connecting"
 

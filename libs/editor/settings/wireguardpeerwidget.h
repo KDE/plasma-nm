@@ -9,16 +9,16 @@
 
 #include "plasmanm_editor_export.h"
 
-#include <QDialog>
+#include <QWidget>
 
 #include <NetworkManagerQt/WireguardSetting>
 
-class PLASMANM_EDITOR_EXPORT WireGuardPeerWidget : public QDialog
+class PLASMANM_EDITOR_EXPORT WireGuardPeerWidget : public QWidget
 {
     Q_OBJECT
 
 public:
-    explicit WireGuardPeerWidget(const QVariantMap &peerData, QWidget *parent = nullptr, Qt::WindowFlags f = {});
+    explicit WireGuardPeerWidget(const QVariantMap &peerData, QWidget *parent = nullptr);
     ~WireGuardPeerWidget() override;
 
     QVariantMap setting() const;

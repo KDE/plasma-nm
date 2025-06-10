@@ -55,8 +55,8 @@ public:
 
 WireGuardPeerWidget::Private::~Private() = default;
 
-WireGuardPeerWidget::WireGuardPeerWidget(const QVariantMap &peerData, QWidget *parent, Qt::WindowFlags f)
-    : QDialog(parent, f)
+WireGuardPeerWidget::WireGuardPeerWidget(const QVariantMap &peerData, QWidget *parent)
+    : QWidget(parent)
     , d(new Private)
 {
     d->ui.setupUi(this);

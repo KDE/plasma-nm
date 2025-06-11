@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-10 00:44+0000\n"
-"PO-Revision-Date: 2024-10-27 03:44+0100\n"
+"PO-Revision-Date: 2025-06-10 05:48+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -168,7 +168,7 @@ msgstr "გათიშვა"
 #: qml/ConnectionItem.qml:81
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
-msgstr ""
+msgstr "ამ ქსელთან დაკავშირება შეუძლებელია, რადგან ის აღმოჩენილი არაა."
 
 #: qml/ConnectionItem.qml:86
 msgid "Delete"

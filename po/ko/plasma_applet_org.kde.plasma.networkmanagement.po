@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
 # JungHee Lee <daemu72@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-06 00:44+0000\n"
-"PO-Revision-Date: 2024-11-29 00:08+0100\n"
+"PO-Revision-Date: 2025-06-10 22:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -190,7 +190,7 @@ msgstr "핫스팟"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "Wi-Fi가 비활성화되어 있어서 핫스팟을 만들 수 없습니다."
 
 #: contents/ui/Toolbar.qml:179
 #, kde-format
@@ -199,17 +199,17 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"모든 무선 라디오가 사용 중이어서 핫스팟을 생성할 수 없습니다. 현재 Wi-Fi 네트"
+"워크에서 연결을 해제하거나 다른 무선 라디오에 연결하십시오."
 
 #: contents/ui/Toolbar.qml:181
-#, fuzzy, kde-format
-#| msgid "Disable Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "핫스팟 비활성화"
 
 #: contents/ui/Toolbar.qml:183
-#, fuzzy, kde-format
-#| msgid "Create Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "핫스팟 만들기"

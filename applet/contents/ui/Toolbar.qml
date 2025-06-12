@@ -153,6 +153,7 @@ RowLayout {
     PlasmaComponents3.ToolButton {
         id: hotspotButton
 
+        visible: availableDevices.wirelessDeviceAvailable
         enabled: handler.hotspotSupported
         checkable: true
         checked: handler.hotspotActive

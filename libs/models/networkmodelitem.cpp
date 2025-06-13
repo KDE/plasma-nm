@@ -344,7 +344,13 @@ QString NetworkModelItem::originalName() const
 QString NetworkModelItem::sectionType() const
 {
     if (m_connectionState == NetworkManager::ActiveConnection::Deactivated) {
-        return QStringLiteral("Available connections");
+        return i18nc("@title:column header for list of available network connections", "Available");
+        // clang-format off
+    } else if (m_connectionState == NetworkManager::ActiveConnection::Activating
+            || m_connectionState == NetworkManager::ActiveConnection::Activated
+            || m_connectionState == NetworkManager::ActiveConnection::Deactivating) {
+        // clang-format on
+        return i18nc("@title:column header for list of connected network connections", "Connected");
     } else {
         return {};
     }

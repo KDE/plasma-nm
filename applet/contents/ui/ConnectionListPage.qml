@@ -8,7 +8,7 @@ import QtQuick 2.15
 import QtQuick.Layouts 1.2
 import org.kde.plasma.components 3.0 as PlasmaComponents3
 import org.kde.kirigami 2.20 as Kirigami
-import org.kde.plasma.extras 2.0 as PlasmaExtras
+import org.kde.plasma.extras as PlasmaExtras
 import org.kde.plasma.networkmanagement as PlasmaNM
 import org.kde.networkmanager as NMQt
 
@@ -55,7 +55,6 @@ ColumnLayout {
             id: connectionView
 
             property int currentVisibleButtonIndex: -1
-            property bool showSeparator: false
 
             Keys.onDownPressed: event => {
                 connectionView.incrementCurrentIndex();
@@ -80,9 +79,10 @@ ColumnLayout {
             model: appletProxyModel
             currentIndex: -1
             boundsBehavior: Flickable.StopAtBounds
-            section.property: showSeparator ? "Section" : ""
-            section.delegate: ListItem {
-                separator: true
+            section.property: "Section"
+            section.delegate: PlasmaExtras.ListSectionHeader {
+                width: connectionView.width - connectionView.leftMargin - connectionView.rightMargin
+                text: section
             }
             highlight: PlasmaExtras.Highlight { }
             highlightMoveDuration: Kirigami.Units.shortDuration

@@ -1,1 +1,15 @@
-plasma_install_package(. org.kde.plasma.networkmanagement)
+plasma_add_applet(org.kde.plasma.networkmanagement
+    QML_SOURCES
+        main.qml
+        ConnectionItem.qml
+        ConnectionListPage.qml
+        DetailsText.qml
+        PasswordField.qml
+        PopupDialog.qml
+        ShareNetworkQrCodePage.qml
+        Toolbar.qml
+        TrafficMonitor.qml
+    RESOURCES
+        main.xml
+    GENERATE_APPLET_CLASS
+)

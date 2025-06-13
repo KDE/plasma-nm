@@ -1,5 +1,4 @@
 {
-    "KPackageStructure": "Plasma/Applet",
     "KPlugin": {
         "Authors": [
             {
@@ -106,7 +105,6 @@
             "desktop"
         ],
         "Icon": "preferences-system-network",
-        "Id": "org.kde.plasma.networkmanagement",
         "License": "GPL",
         "Name": "Networks",
         "Name[ar]": "الشّبكات",

@@ -70,8 +70,8 @@ ColumnLayout {
                 }
             }
 
-            // We use the spacing around the connectivity message, if shown.
-            topMargin: connectivityMessage.visible ? 0 : Kirigami.Units.smallSpacing * 2
+            // No topMargin because ListSectionHeader and InlineMessage both bring
+            // their own.
             bottomMargin: Kirigami.Units.smallSpacing * 2
             leftMargin: Kirigami.Units.smallSpacing * 2
             rightMargin: Kirigami.Units.smallSpacing * 2

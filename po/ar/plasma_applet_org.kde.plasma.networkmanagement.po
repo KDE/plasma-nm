@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-04 00:44+0000\n"
-"PO-Revision-Date: 2024-12-19 07:26+0400\n"
+"PO-Revision-Date: 2025-06-12 12:00+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -188,17 +188,17 @@ msgstr "مكن وضع الطيران <nl/><nl/> هذا سيعطل الواي ف�
 #: contents/ui/Toolbar.qml:159
 #, kde-format
 msgid "Hotspot"
-msgstr "نقطة فعالة"
+msgstr "نقطة اتصال"
 
 #: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:194
 #, kde-format
 msgid "Disable Hotspot"
-msgstr "عطل النقطة الفعالة"
+msgstr "عطّل نقطة الاتصال"
 
 #: contents/ui/Toolbar.qml:188 contents/ui/Toolbar.qml:194
 #, kde-format
 msgid "Create Hotspot"
-msgstr "أنشئ نقطة فعالة"
+msgstr "أنشئ نقطة اتصال"
 
 #: contents/ui/Toolbar.qml:226
 #, kde-format

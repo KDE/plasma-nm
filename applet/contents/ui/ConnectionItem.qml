@@ -280,13 +280,7 @@ PlasmaExtras.ExpandableListItem {
        in the popup where the connections can be "Connect"ed and
        "Disconnect"ed. */
     function itemText() {
-        if (model.ConnectionState === PlasmaNM.Enums.Activating) {
-            if (model.Type === PlasmaNM.Enums.Vpn) {
-                return model.VpnState
-            } else {
-                return model.DeviceState
-            }
-        } else if (model.ConnectionState === PlasmaNM.Enums.Deactivating) {
+        if (model.ConnectionState === PlasmaNM.Enums.Activating || model.ConnectionState === PlasmaNM.Enums.Deactivating) {
             if (model.Type === PlasmaNM.Enums.Vpn) {
                 return model.VpnState
             } else {
@@ -294,12 +288,10 @@ PlasmaExtras.ExpandableListItem {
             }
         } else if (model.Uuid && model.ConnectionState === PlasmaNM.Enums.Deactivated) {
             return model.LastUsed
-        } else if (model.ConnectionState === PlasmaNM.Enums.Activated) {
-            if (showSpeed) {
-                return i18nc("Download and upload rates in some unit per second", "↓ %1/s, ↑ %2/s",
-                    KCoreAddons.Format.formatByteSize(rxSpeed),
-                    KCoreAddons.Format.formatByteSize(txSpeed))
-            }
+        } else if (model.ConnectionState === PlasmaNM.Enums.Activated && showSpeed) {
+            return i18nc("Download and upload rates in some unit per second", "↓ %1/s, ↑ %2/s",
+                KCoreAddons.Format.formatByteSize(rxSpeed),
+                KCoreAddons.Format.formatByteSize(txSpeed))
         }
         return ""
     }

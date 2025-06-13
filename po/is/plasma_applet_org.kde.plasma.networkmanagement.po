@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 00:44+0000\n"
+"POT-Creation-Date: 2025-06-13 00:44+0000\n"
 "PO-Revision-Date: 2025-04-18 13:11+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -188,18 +188,18 @@ msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Kveiktu á flugstillingu<nl/><nl/>Þá slokknar á Wi-Fi og Bluetooth"
 
-#: contents/ui/Toolbar.qml:160
+#: contents/ui/Toolbar.qml:161
 #, kde-format
 msgid "Hotspot"
 msgstr "Aðgangsstaður"
 
-#: contents/ui/Toolbar.qml:177
+#: contents/ui/Toolbar.qml:178
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:179
+#: contents/ui/Toolbar.qml:180
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -207,21 +207,21 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:182
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Gera aðgangsstað óvirkan"
 
-#: contents/ui/Toolbar.qml:183
+#: contents/ui/Toolbar.qml:184
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Búa til aðgangsstað"
 
-#: contents/ui/Toolbar.qml:217
+#: contents/ui/Toolbar.qml:218
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Grunnstilla nettengingar…"

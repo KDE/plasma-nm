@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 00:44+0000\n"
+"POT-Creation-Date: 2025-06-13 00:44+0000\n"
 "PO-Revision-Date: 2025-05-27 14:57+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -184,18 +184,18 @@ msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Activa modo aeroplano<nl/><nl/>Isto deactivara Wi-Fi e Bluetooth"
 
-#: contents/ui/Toolbar.qml:160
+#: contents/ui/Toolbar.qml:161
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: contents/ui/Toolbar.qml:177
+#: contents/ui/Toolbar.qml:178
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:179
+#: contents/ui/Toolbar.qml:180
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -205,19 +205,19 @@ msgstr ""
 "Non pote crear un hotspot proque omne radios sin filo es in uso. Disconnecte "
 "ex rete de Wi-Fi currente o connecte a un altere radio sin filo."
 
-#: contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Deactivar Hotspot"
 
-#: contents/ui/Toolbar.qml:183
+#: contents/ui/Toolbar.qml:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Crear Hotspot"
 
-#: contents/ui/Toolbar.qml:217
+#: contents/ui/Toolbar.qml:218
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configura Connexiones de Rete..."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 00:44+0000\n"
+"POT-Creation-Date: 2025-06-13 00:44+0000\n"
 "PO-Revision-Date: 2025-06-10 22:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -181,18 +181,18 @@ msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "비행기 모드 활성화<nl/><nl/>Wi-Fi와 블루투스를 비활성화합니다"
 
-#: contents/ui/Toolbar.qml:160
+#: contents/ui/Toolbar.qml:161
 #, kde-format
 msgid "Hotspot"
 msgstr "핫스팟"
 
-#: contents/ui/Toolbar.qml:177
+#: contents/ui/Toolbar.qml:178
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "Wi-Fi가 비활성화되어 있어서 핫스팟을 만들 수 없습니다."
 
-#: contents/ui/Toolbar.qml:179
+#: contents/ui/Toolbar.qml:180
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -202,19 +202,19 @@ msgstr ""
 "모든 무선 라디오가 사용 중이어서 핫스팟을 생성할 수 없습니다. 현재 Wi-Fi 네트"
 "워크에서 연결을 해제하거나 다른 무선 라디오에 연결하십시오."
 
-#: contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "핫스팟 비활성화"
 
-#: contents/ui/Toolbar.qml:183
+#: contents/ui/Toolbar.qml:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "핫스팟 만들기"
 
-#: contents/ui/Toolbar.qml:217
+#: contents/ui/Toolbar.qml:218
 #, kde-format
 msgid "Configure network connections…"
 msgstr "네트워크 연결 설정…"

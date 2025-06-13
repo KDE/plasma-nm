@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 00:44+0000\n"
+"POT-Creation-Date: 2025-06-13 00:44+0000\n"
 "PO-Revision-Date: 2025-06-06 19:53+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -186,18 +186,18 @@ msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Activar el modo avión<nl/><nl/>Esto desactivará la wifi y el Bluetooth"
 
-#: contents/ui/Toolbar.qml:160
+#: contents/ui/Toolbar.qml:161
 #, kde-format
 msgid "Hotspot"
 msgstr "Punto de acceso"
 
-#: contents/ui/Toolbar.qml:177
+#: contents/ui/Toolbar.qml:178
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "No se puede crear un punto de acceso porque la wifi está desactivada."
 
-#: contents/ui/Toolbar.qml:179
+#: contents/ui/Toolbar.qml:180
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -208,19 +208,19 @@ msgstr ""
 "están en uso. Desconéctese de la red wifi actual o conéctese otra banda "
 "inalámbrica."
 
-#: contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Desactivar punto de acceso"
 
-#: contents/ui/Toolbar.qml:183
+#: contents/ui/Toolbar.qml:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Crear punto de acceso"
 
-#: contents/ui/Toolbar.qml:217
+#: contents/ui/Toolbar.qml:218
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configurar conexiones de red…"

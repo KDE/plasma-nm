@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 00:44+0000\n"
-"PO-Revision-Date: 2025-05-27 18:04+0400\n"
+"POT-Creation-Date: 2025-06-13 00:44+0000\n"
+"PO-Revision-Date: 2025-06-12 12:00+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -185,40 +185,40 @@ msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "مكن وضع الطيران <nl/><nl/> هذا سيعطل الواي فاي و البلوتوث"
 
-#: contents/ui/Toolbar.qml:160
+#: contents/ui/Toolbar.qml:161
 #, kde-format
 msgid "Hotspot"
-msgstr "نقطة فعالة"
+msgstr "نقطة اتصال"
 
-#: contents/ui/Toolbar.qml:177
+#: contents/ui/Toolbar.qml:178
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "لا يمكن إنشاء نقطة اتصال لأن شبكة واي فاي معطلة."
 
-#: contents/ui/Toolbar.qml:179
+#: contents/ui/Toolbar.qml:180
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
-"لا يمكن إنشاء نقطة فعّالة لأن جميع أجهزة الراديو اللاسلكية في الاستخدام. افصل "
+"لا يمكن إنشاء نقطة اتصال لأن جميع أجهزة الراديو اللاسلكية في الاستخدام. افصل "
 "شبكة واي فاي الحالية أو قم بتوصيل راديو لاسلكي آخر."
 
-#: contents/ui/Toolbar.qml:181
+#: contents/ui/Toolbar.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
-msgstr "عطل النقطة الفعالة"
+msgstr "عطّل نقطة الاتصال"
 
-#: contents/ui/Toolbar.qml:183
+#: contents/ui/Toolbar.qml:184
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
-msgstr "أنشئ نقطة فعالة"
+msgstr "أنشئ نقطة اتصال"
 
-#: contents/ui/Toolbar.qml:217
+#: contents/ui/Toolbar.qml:218
 #, kde-format
 msgid "Configure network connections…"
 msgstr "اضبط اتّصالات الشّبكة..."

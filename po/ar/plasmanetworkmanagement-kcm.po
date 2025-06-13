@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
+# SPDX-FileCopyrightText: 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
-# SPDX-FileCopyrightText: 2024 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-10 00:44+0000\n"
-"PO-Revision-Date: 2024-12-19 07:26+0400\n"
+"PO-Revision-Date: 2025-06-12 12:02+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -125,7 +125,7 @@ msgstr "أنشئ اتصالات جديدة كاتصالات للنظام"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
-msgstr "نقطة فعالة"
+msgstr "نقطة اتصال"
 
 #: qml/ConfigurationDialog.qml:70
 msgctxt "@label Hotspot name"
@@ -139,14 +139,14 @@ msgstr "كلمة السر:"
 
 #: qml/ConfigurationDialog.qml:95
 msgid "Hotspot name must not be empty"
-msgstr "يجب ألا يكون اسم النقطة الفعالة فارغ"
+msgstr "يجب ألا يكون اسم نقطة الاتصال فارغ"
 
 #: qml/ConfigurationDialog.qml:105
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
-"يجب أن تكون كلمة سر النقطة الفعالة فارغة أو تحوي على 8 محارف أو أكثر حتى 64 "
+"يجب أن تكون كلمة سر نقطة الاتصال فارغة أو تحوي على 8 محارف أو أكثر حتى 64 "
 "محرف"
 
 #: qml/ConfigurationDialog.qml:106
@@ -155,7 +155,7 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
-"يجب أن تكون كلمة سر النقطة الفعالة فارغة أو تحوي على أحد الأشياء التالية: "
+"يجب أن تكون كلمة سر نقطة الاتصال فارغة أو تحوي على أحد الأشياء التالية: "
 "<ul><li>5 محارف أو 13 بالضبط</li><li> 10 أو 26 بالضبط محرف سداسي عشر:<br/"
 ">abcdef أو ABCDEF أو 0-9</li></ul>"
 
@@ -170,7 +170,7 @@ msgstr "اقطع الاتصال"
 #: qml/ConnectionItem.qml:81
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
-msgstr ""
+msgstr "يتعذر الاتصال بهذه الشبكة لأنه لم يجدها."
 
 #: qml/ConnectionItem.qml:86
 msgid "Delete"

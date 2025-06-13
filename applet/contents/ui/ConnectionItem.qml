@@ -40,7 +40,6 @@ PlasmaExtras.ExpandableListItem {
     title: model.ItemUniqueName
     subtitle: itemText()
     isBusy: mainWindow.expanded && model.ConnectionState === PlasmaNM.Enums.Activating
-    isDefault: model.ConnectionState === PlasmaNM.Enums.Activated
     defaultActionButtonAction: Action {
         id: stateChangeButton
 
@@ -297,11 +296,9 @@ PlasmaExtras.ExpandableListItem {
             return model.LastUsed
         } else if (model.ConnectionState === PlasmaNM.Enums.Activated) {
             if (showSpeed) {
-                return i18n("Connected, ↓ %1/s, ↑ %2/s",
+                return i18nc("Download and upload rates in some unit per second", "↓ %1/s, ↑ %2/s",
                     KCoreAddons.Format.formatByteSize(rxSpeed),
                     KCoreAddons.Format.formatByteSize(txSpeed))
-            } else {
-                return i18n("Connected")
             }
         }
         return ""

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-13 00:44+0000\n"
+"POT-Creation-Date: 2025-06-14 00:44+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -17,38 +17,38 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:59
 #, kde-format
 msgid "Connect"
 msgstr "باغلان"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:59
 #, kde-format
 msgid "Disconnect"
 msgstr "ئۈز"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:84
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:90
 #, fuzzy, kde-format
 #| msgid "Confirm Delete"
 msgid "Configure…"
 msgstr "ئۆچۈرۈش جەزملە"
 
-#: contents/ui/ConnectionItem.qml:131
+#: contents/ui/ConnectionItem.qml:130
 #, kde-format
 msgid "Speed"
 msgstr "سۈرئىتى"
 
-#: contents/ui/ConnectionItem.qml:136
+#: contents/ui/ConnectionItem.qml:135
 #, kde-format
 msgid "Details"
 msgstr "تەپسىلاتى"
 
-#: contents/ui/ConnectionItem.qml:183
+#: contents/ui/ConnectionItem.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -56,16 +56,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:300
+#: contents/ui/ConnectionItem.qml:292
 #, fuzzy, kde-format
 #| msgid "Connected to %1"
-msgid "Connected, ↓ %1/s, ↑ %2/s"
+msgctxt "Download and upload rates in some unit per second"
+msgid "↓ %1/s, ↑ %2/s"
 msgstr "%1 غا باغلاندى"
-
-#: contents/ui/ConnectionItem.qml:304
-#, kde-format
-msgid "Connected"
-msgstr "باغلاندى"
 
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format
@@ -243,6 +239,9 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#~ msgid "Connected"
+#~ msgstr "باغلاندى"
 
 #, fuzzy
 #~| msgid "Password:"

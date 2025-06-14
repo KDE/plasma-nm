@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-13 00:44+0000\n"
+"POT-Creation-Date: 2025-06-14 00:44+0000\n"
 "PO-Revision-Date: 2025-06-06 05:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,37 +18,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:59
 #, kde-format
 msgid "Connect"
 msgstr "დაკავშირება"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:59
 #, kde-format
 msgid "Disconnect"
 msgstr "გათიშვა"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:84
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "ქსელის QR კოდის ჩვენება"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "მორგება…"
 
-#: contents/ui/ConnectionItem.qml:131
+#: contents/ui/ConnectionItem.qml:130
 #, kde-format
 msgid "Speed"
 msgstr "სიჩქარე"
 
-#: contents/ui/ConnectionItem.qml:136
+#: contents/ui/ConnectionItem.qml:135
 #, kde-format
 msgid "Details"
 msgstr "დეტალები"
 
-#: contents/ui/ConnectionItem.qml:183
+#: contents/ui/ConnectionItem.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58,15 +58,12 @@ msgstr ""
 "გადმოწერის მიმდინარე სიჩქარეა %1 კიბიბაიტი წამში. მიმდინარე ატვირთვის "
 "სიჩქარეა %2 კიბიბაიტი წამში"
 
-#: contents/ui/ConnectionItem.qml:300
-#, kde-format
-msgid "Connected, ↓ %1/s, ↑ %2/s"
+#: contents/ui/ConnectionItem.qml:292
+#, fuzzy, kde-format
+#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+msgctxt "Download and upload rates in some unit per second"
+msgid "↓ %1/s, ↑ %2/s"
 msgstr "მიერთებულია, ↓ %1/წმ, ↑ %2/წმ"
-
-#: contents/ui/ConnectionItem.qml:304
-#, kde-format
-msgid "Connected"
-msgstr "შეერთებული"
 
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format
@@ -240,6 +237,9 @@ msgstr "ატვირთვა"
 #, kde-format
 msgid "Download"
 msgstr "ჩამოტვირთვა"
+
+#~ msgid "Connected"
+#~ msgstr "შეერთებული"
 
 #~ msgid "Password…"
 #~ msgstr "პაროლი…"

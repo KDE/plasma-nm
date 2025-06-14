@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-13 00:44+0000\n"
+"POT-Creation-Date: 2025-06-14 00:44+0000\n"
 "PO-Revision-Date: 2025-06-10 22:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 24.12.3\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:59
 #, kde-format
 msgid "Connect"
 msgstr "연결"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:59
 #, kde-format
 msgid "Disconnect"
 msgstr "연결 해제"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:84
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "네트워크의 QR 코드 표시"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "설정…"
 
-#: contents/ui/ConnectionItem.qml:131
+#: contents/ui/ConnectionItem.qml:130
 #, kde-format
 msgid "Speed"
 msgstr "속도"
 
-#: contents/ui/ConnectionItem.qml:136
+#: contents/ui/ConnectionItem.qml:135
 #, kde-format
 msgid "Details"
 msgstr "자세히"
 
-#: contents/ui/ConnectionItem.qml:183
+#: contents/ui/ConnectionItem.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -55,15 +55,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr "현재 다운로드 속도: %1 KiB/초, 현재 업로드 속도: %2 KiB/초"
 
-#: contents/ui/ConnectionItem.qml:300
-#, kde-format
-msgid "Connected, ↓ %1/s, ↑ %2/s"
+#: contents/ui/ConnectionItem.qml:292
+#, fuzzy, kde-format
+#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+msgctxt "Download and upload rates in some unit per second"
+msgid "↓ %1/s, ↑ %2/s"
 msgstr "연결됨, ↓ %1/초, ↑ %2/초"
-
-#: contents/ui/ConnectionItem.qml:304
-#, kde-format
-msgid "Connected"
-msgstr "연결됨"
 
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format
@@ -233,6 +230,9 @@ msgstr "업로드"
 #, kde-format
 msgid "Download"
 msgstr "다운로드"
+
+#~ msgid "Connected"
+#~ msgstr "연결됨"
 
 #~ msgid "Password…"
 #~ msgstr "암호…"

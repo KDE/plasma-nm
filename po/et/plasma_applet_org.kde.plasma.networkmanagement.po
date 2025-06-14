@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-13 00:44+0000\n"
+"POT-Creation-Date: 2025-06-14 00:44+0000\n"
 "PO-Revision-Date: 2020-09-28 13:41+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -19,39 +19,39 @@ msgstr ""
 "X-Generator: Lokalize 20.08.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:59
 #, kde-format
 msgid "Connect"
 msgstr "Ühenda"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:59
 #, kde-format
 msgid "Disconnect"
 msgstr "Katkesta ühendus"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:84
 #, fuzzy, kde-format
 #| msgid "Show network's QR code"
 msgid "Show Network's QR Code"
 msgstr "Võrgu QR-koodi näitamine"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:90
 #, fuzzy, kde-format
 #| msgid "Configure..."
 msgid "Configure…"
 msgstr "Seadista ..."
 
-#: contents/ui/ConnectionItem.qml:131
+#: contents/ui/ConnectionItem.qml:130
 #, kde-format
 msgid "Speed"
 msgstr "Kiirus"
 
-#: contents/ui/ConnectionItem.qml:136
+#: contents/ui/ConnectionItem.qml:135
 #, kde-format
 msgid "Details"
 msgstr "Üksikasjad"
 
-#: contents/ui/ConnectionItem.qml:183
+#: contents/ui/ConnectionItem.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59,16 +59,12 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: contents/ui/ConnectionItem.qml:300
+#: contents/ui/ConnectionItem.qml:292
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
-msgid "Connected, ↓ %1/s, ↑ %2/s"
+msgctxt "Download and upload rates in some unit per second"
+msgid "↓ %1/s, ↑ %2/s"
 msgstr "Ühendatud, ⬇ %1/s, ⬆ %2/s"
-
-#: contents/ui/ConnectionItem.qml:304
-#, kde-format
-msgid "Connected"
-msgstr "Ühendatud"
 
 #: contents/ui/ConnectionListPage.qml:35
 #, fuzzy, kde-format
@@ -248,6 +244,9 @@ msgstr "Üleslaadimine"
 #, kde-format
 msgid "Download"
 msgstr "Allalaadimine"
+
+#~ msgid "Connected"
+#~ msgstr "Ühendatud"
 
 #, fuzzy
 #~| msgid "Password:"

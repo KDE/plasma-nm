@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-13 00:44+0000\n"
+"POT-Creation-Date: 2025-06-14 00:44+0000\n"
 "PO-Revision-Date: 2025-05-22 13:09+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -24,37 +24,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.04.1\n"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:59
 #, kde-format
 msgid "Connect"
 msgstr "Conectar"
 
-#: contents/ui/ConnectionItem.qml:60
+#: contents/ui/ConnectionItem.qml:59
 #, kde-format
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: contents/ui/ConnectionItem.qml:85
+#: contents/ui/ConnectionItem.qml:84
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Amosar o código QR da rede"
 
-#: contents/ui/ConnectionItem.qml:91
+#: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "Configurar…"
 
-#: contents/ui/ConnectionItem.qml:131
+#: contents/ui/ConnectionItem.qml:130
 #, kde-format
 msgid "Speed"
 msgstr "Velocidade"
 
-#: contents/ui/ConnectionItem.qml:136
+#: contents/ui/ConnectionItem.qml:135
 #, kde-format
 msgid "Details"
 msgstr "Detalles"
 
-#: contents/ui/ConnectionItem.qml:183
+#: contents/ui/ConnectionItem.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -64,15 +64,12 @@ msgstr ""
 "A velocidade actual de descarga é de %1 kibibytes por segundo; a velocidade "
 "actual de envío é de %2 kibibytes por segundo."
 
-#: contents/ui/ConnectionItem.qml:300
-#, kde-format
-msgid "Connected, ↓ %1/s, ↑ %2/s"
+#: contents/ui/ConnectionItem.qml:292
+#, fuzzy, kde-format
+#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+msgctxt "Download and upload rates in some unit per second"
+msgid "↓ %1/s, ↑ %2/s"
 msgstr "Conectado, ↓ %1/s, ↑ %2/s"
-
-#: contents/ui/ConnectionItem.qml:304
-#, kde-format
-msgid "Connected"
-msgstr "Conectado."
 
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format
@@ -243,6 +240,9 @@ msgstr "Enviar"
 #, kde-format
 msgid "Download"
 msgstr "Descargar"
+
+#~ msgid "Connected"
+#~ msgstr "Conectado."
 
 #~ msgid "Password…"
 #~ msgstr "Contrasinal…"

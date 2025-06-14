@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-06 00:44+0000\n"
+"POT-Creation-Date: 2025-06-14 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 06:24+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -74,31 +74,31 @@ msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
-#: models/networkmodelitem.cpp:724
+#: models/networkmodelitem.cpp:730
 #, kde-format
 msgid "Infiniband"
 msgstr "Infiniband"
 
 #: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:198
-#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:730
+#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:736
 #, kde-format
 msgid "Bond"
 msgstr "ბმა"
 
 #: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:201
-#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:736
+#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:742
 #, kde-format
 msgid "Bridge"
 msgstr "ხიდი"
 
 #: editor/connectioneditorbase.cpp:256 models/creatableconnectionsmodel.cpp:220
-#: models/networkmodelitem.cpp:742
+#: models/networkmodelitem.cpp:748
 #, kde-format
 msgid "Vlan"
 msgstr "VLAN"
 
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:230
-#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:751
+#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:757
 #, kde-format
 msgid "Team"
 msgstr "ჯგუფი"
@@ -3518,164 +3518,180 @@ msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
 msgstr "კავშირის ტიპი არის WireGuard"
 
-#: models/networkmodelitem.cpp:585
+#: models/networkmodelitem.cpp:347
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip real user name is not available"
+#| msgid "Not Available"
+msgctxt "@title:column header for list of available network connections"
+msgid "Available"
+msgstr "მიუწვდომელია"
+
+#: models/networkmodelitem.cpp:353
+#, fuzzy, kde-format
+#| msgctxt "infiniband transport mode"
+#| msgid "Connected"
+msgctxt "@title:column header for list of connected network connections"
+msgid "Connected"
+msgstr "დაკავშირებულია"
+
+#: models/networkmodelitem.cpp:591
 #, kde-format
 msgid "IPv4 Address"
 msgstr "IPv4 მისამართი"
 
-#: models/networkmodelitem.cpp:591
+#: models/networkmodelitem.cpp:597
 #, kde-format
 msgid "IPv4 Default Gateway"
 msgstr "IPv4 ნაგულისხმები რაუტერი"
 
-#: models/networkmodelitem.cpp:598
+#: models/networkmodelitem.cpp:604
 #, kde-format
 msgid "IPv4 Primary Nameserver"
 msgstr "IPv4 ძირითადი DNS სერვერი"
 
-#: models/networkmodelitem.cpp:602
+#: models/networkmodelitem.cpp:608
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
 msgstr "IPv4 მეორადი DNS სერვერი"
 
-#: models/networkmodelitem.cpp:612
+#: models/networkmodelitem.cpp:618
 #, kde-format
 msgid "IPv6 Address"
 msgstr "IPv6 მისამართი"
 
-#: models/networkmodelitem.cpp:614
+#: models/networkmodelitem.cpp:620
 #, kde-format
 msgid "IPv6 ULA Address"
 msgstr "IPv6 ULA მისამართი"
 
-#: models/networkmodelitem.cpp:620
+#: models/networkmodelitem.cpp:626
 #, kde-format
 msgid "IPv6 Default Gateway"
 msgstr "IPv4 Default Gateway"
 
-#: models/networkmodelitem.cpp:627
+#: models/networkmodelitem.cpp:633
 #, kde-format
 msgid "IPv6 Primary Nameserver"
 msgstr "IPv6 ძირითადი DNS სერვერი"
 
-#: models/networkmodelitem.cpp:631
+#: models/networkmodelitem.cpp:637
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
 msgstr "IPv6 მეორადი DNS სერვერი"
 
-#: models/networkmodelitem.cpp:640
+#: models/networkmodelitem.cpp:646
 #, kde-format
 msgid "Connection speed"
 msgstr "შეერთების სიჩქარე"
 
-#: models/networkmodelitem.cpp:642 models/networkmodelitem.cpp:667
-#: models/networkmodelitem.cpp:720 models/networkmodelitem.cpp:726
-#: models/networkmodelitem.cpp:732 models/networkmodelitem.cpp:738
-#: models/networkmodelitem.cpp:745 models/networkmodelitem.cpp:753
+#: models/networkmodelitem.cpp:648 models/networkmodelitem.cpp:673
+#: models/networkmodelitem.cpp:726 models/networkmodelitem.cpp:732
+#: models/networkmodelitem.cpp:738 models/networkmodelitem.cpp:744
+#: models/networkmodelitem.cpp:751 models/networkmodelitem.cpp:759
 #, kde-format
 msgid "MAC Address"
 msgstr "MAC მისამართი"
 
-#: models/networkmodelitem.cpp:646
+#: models/networkmodelitem.cpp:652
 #, kde-format
 msgid "Access Point (SSID)"
 msgstr "წვდომის წერტილი (SSID)"
 
-#: models/networkmodelitem.cpp:648
+#: models/networkmodelitem.cpp:654
 #, kde-format
 msgid "Signal Strength"
 msgstr "სიგნალის სიძლიერე"
 
-#: models/networkmodelitem.cpp:648
+#: models/networkmodelitem.cpp:654
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
 
-#: models/networkmodelitem.cpp:650
+#: models/networkmodelitem.cpp:656
 #, kde-format
 msgid "Security Type"
 msgstr "უსაფრთხოების ტიპი"
 
-#: models/networkmodelitem.cpp:653
+#: models/networkmodelitem.cpp:659
 #, kde-format
 msgid "Connection Speed"
 msgstr "შეერთების სიჩქარე"
 
-#: models/networkmodelitem.cpp:659
+#: models/networkmodelitem.cpp:665
 #, kde-format
 msgid "Frequency"
 msgstr "სიხშირე"
 
-#: models/networkmodelitem.cpp:661
+#: models/networkmodelitem.cpp:667
 #, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
 msgstr "%1 (არხი %2)"
 
-#: models/networkmodelitem.cpp:665
+#: models/networkmodelitem.cpp:671
 #, kde-format
 msgid "BSSID"
 msgstr "BSSID"
 
-#: models/networkmodelitem.cpp:679
+#: models/networkmodelitem.cpp:685
 #, kde-format
 msgid "Operator"
 msgstr "ოპერატორი"
 
-#: models/networkmodelitem.cpp:683
+#: models/networkmodelitem.cpp:689
 #, kde-format
 msgid "Network ID"
 msgstr "ქსელის ID"
 
-#: models/networkmodelitem.cpp:687
+#: models/networkmodelitem.cpp:693
 #, kde-format
 msgid "Signal Quality"
 msgstr "სიგნალის ხარისხი"
 
-#: models/networkmodelitem.cpp:688
+#: models/networkmodelitem.cpp:694
 #, kde-format
 msgid "Access Technology"
 msgstr "წვდომის ტექნოლოგია"
 
-#: models/networkmodelitem.cpp:693 models/networkmodelitem.cpp:710
+#: models/networkmodelitem.cpp:699 models/networkmodelitem.cpp:716
 #, kde-format
 msgid "VPN Plugin"
 msgstr "VPN მოდული"
 
-#: models/networkmodelitem.cpp:704
+#: models/networkmodelitem.cpp:710
 #, kde-format
 msgid "Banner"
 msgstr "ბანერი"
 
-#: models/networkmodelitem.cpp:714
+#: models/networkmodelitem.cpp:720
 #, kde-format
 msgid "Name"
 msgstr "სახელი"
 
-#: models/networkmodelitem.cpp:716 models/networkmodelitem.cpp:718
+#: models/networkmodelitem.cpp:722 models/networkmodelitem.cpp:724
 #, kde-format
 msgid "Capabilities"
 msgstr "შესაძლებლობები"
 
-#: models/networkmodelitem.cpp:724 models/networkmodelitem.cpp:730
-#: models/networkmodelitem.cpp:736 models/networkmodelitem.cpp:742
-#: models/networkmodelitem.cpp:748 models/networkmodelitem.cpp:751
+#: models/networkmodelitem.cpp:730 models/networkmodelitem.cpp:736
+#: models/networkmodelitem.cpp:742 models/networkmodelitem.cpp:748
+#: models/networkmodelitem.cpp:754 models/networkmodelitem.cpp:757
 #, kde-format
 msgid "Type"
 msgstr "ტიპი"
 
-#: models/networkmodelitem.cpp:744
+#: models/networkmodelitem.cpp:750
 #, kde-format
 msgid "Vlan ID"
 msgstr "Vlan ID"
 
-#: models/networkmodelitem.cpp:748
+#: models/networkmodelitem.cpp:754
 #, kde-format
 msgid "Adsl"
 msgstr "ADSL"
 
-#: models/networkmodelitem.cpp:758
+#: models/networkmodelitem.cpp:764
 #, kde-format
 msgid "Device"
 msgstr "მოწყობილობა"

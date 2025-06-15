@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-14 00:44+0000\n"
-"PO-Revision-Date: 2025-06-06 13:58+0300\n"
+"PO-Revision-Date: 2025-06-14 20:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -61,11 +61,10 @@ msgstr ""
 "швидкість вивантаження даних — %2 кібібайтів за секунду"
 
 #: contents/ui/ConnectionItem.qml:292
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "З'єднано, ↓ %1/с, ↑ %2/с"
+msgstr "↓ %1/с, ↑ %2/с"
 
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format

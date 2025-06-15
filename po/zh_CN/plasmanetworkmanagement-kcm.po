@@ -167,7 +167,7 @@ msgstr "断开"
 #: qml/ConnectionItem.qml:81
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
-msgstr ""
+msgstr "无法连接到此网络，因为系统检测不到它。"
 
 #: qml/ConnectionItem.qml:86
 msgid "Delete"

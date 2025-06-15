@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-14 00:44+0000\n"
-"PO-Revision-Date: 2025-06-06 05:17+0200\n"
+"PO-Revision-Date: 2025-06-14 05:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -59,11 +59,10 @@ msgstr ""
 "სიჩქარეა %2 კიბიბაიტი წამში"
 
 #: contents/ui/ConnectionItem.qml:292
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "მიერთებულია, ↓ %1/წმ, ↑ %2/წმ"
+msgstr "↓ %1/წმ, ↑ %2/წმ"
 
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format

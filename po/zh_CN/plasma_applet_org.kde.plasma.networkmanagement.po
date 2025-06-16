@@ -60,7 +60,7 @@ msgstr "当前下载速度为每秒 %1 KB；当前上传速度为每秒 %2 KB"
 #, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr ""
+msgstr "↓ %1/秒，↑ %2/秒"
 
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format

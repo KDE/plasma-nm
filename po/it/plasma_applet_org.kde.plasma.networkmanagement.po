@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-14 00:44+0000\n"
-"PO-Revision-Date: 2025-06-10 08:29+0200\n"
+"PO-Revision-Date: 2025-06-14 15:29+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -58,11 +58,10 @@ msgstr ""
 "di invio attuale è di %2 kibibyte al secondo"
 
 #: contents/ui/ConnectionItem.qml:292
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Connesso, ↓ %1/s, ↑ %2/s"
+msgstr "↓ %1/s, ↑ %2/s"
 
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format

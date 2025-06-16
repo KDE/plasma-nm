@@ -3489,7 +3489,7 @@ msgstr "连接类型为 WireGuard"
 #, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr ""
+msgstr "可用"
 
 #: models/networkmodelitem.cpp:353
 #, kde-format

@@ -12,6 +12,7 @@
 #include <NetworkManagerQt/Manager>
 #include <QMutex>
 #include <QObject>
+#include <kconfigwatcher.h>
 
 class PLASMANM_EDITOR_EXPORT Configuration : public QObject
 {
@@ -47,8 +48,9 @@ Q_SIGNALS:
     void manageVirtualConnectionsChanged(bool manage);
 
 private:
-    Configuration() = default;
+    Configuration();
     static QMutex sMutex;
+    KConfigWatcher::Ptr m_configWatcher;
 };
 
 #endif // PLAMA_NM_CONFIGURATION_H

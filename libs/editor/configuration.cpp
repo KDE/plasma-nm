@@ -15,6 +15,12 @@ static bool propManageVirtualConnectionsInitialized = false;
 static bool propManageVirtualConnections = false;
 QMutex Configuration::sMutex;
 
+Configuration::Configuration()
+{
+    // Add config watcher so that config is reparsed when changes happen externally
+    m_configWatcher = KConfigWatcher::create(KSharedConfig::openConfig(QStringLiteral("plasma-nm")));
+}
+
 Configuration &Configuration::self()
 {
     static Configuration c;
@@ -120,7 +126,8 @@ void Configuration::setHotspotName(const QString &name)
     KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        grp.writeEntry(QStringLiteral("HotspotName"), name);
+        grp.writeEntry(QStringLiteral("HotspotName"), name, KConfigBase::Notify);
+        grp.sync();
     }
 }
 

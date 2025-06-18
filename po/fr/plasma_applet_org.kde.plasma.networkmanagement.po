@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-14 00:44+0000\n"
-"PO-Revision-Date: 2025-06-10 07:54+0200\n"
+"PO-Revision-Date: 2025-06-16 11:08+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -65,11 +65,10 @@ msgstr ""
 "celle d'envoi de %2 Kilo-octets par seconde."
 
 #: contents/ui/ConnectionItem.qml:292
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Connecté, ⬇ %1 / s, ⬆ %2 / s"
+msgstr "⬇ %1 / s, ⬆ %2 / s"
 
 #: contents/ui/ConnectionListPage.qml:35
 #, kde-format

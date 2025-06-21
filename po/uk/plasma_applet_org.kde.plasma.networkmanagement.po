@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:44+0000\n"
+"POT-Creation-Date: 2025-06-21 00:44+0000\n"
 "PO-Revision-Date: 2025-06-14 20:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -66,43 +66,43 @@ msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
 msgstr "↓ %1/с, ↑ %2/с"
 
-#: contents/ui/ConnectionListPage.qml:35
+#: contents/ui/ConnectionListPage.qml:33
 #, kde-format
 msgid "You need to log in to this network"
 msgstr "Вам слід пройти процедуру входу до цієї мережі"
 
-#: contents/ui/ConnectionListPage.qml:39
+#: contents/ui/ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Увійти"
 
-#: contents/ui/ConnectionListPage.qml:116
+#: contents/ui/ConnectionListPage.qml:114
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Увімкнено режим польоту"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:118
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Бездротові і мобільні мережі вимкнено"
 
-#: contents/ui/ConnectionListPage.qml:122
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Бездротову мережу вимкнено"
 
-#: contents/ui/ConnectionListPage.qml:125
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Мобільну мережу вимкнено"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr "Немає відповідників"
 
-#: contents/ui/ConnectionListPage.qml:130
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No available connections"
 msgstr "Немає доступних з'єднань"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:44+0000\n"
+"POT-Creation-Date: 2025-06-21 00:44+0000\n"
 "PO-Revision-Date: 2011-06-27 14:57+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -69,24 +69,24 @@ msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
 msgstr "Spojen na %1"
 
-#: contents/ui/ConnectionListPage.qml:35
+#: contents/ui/ConnectionListPage.qml:33
 #, fuzzy, kde-format
 #| msgid "Password on this network"
 msgid "You need to log in to this network"
 msgstr "Zaporka na ovoj mreži"
 
-#: contents/ui/ConnectionListPage.qml:39
+#: contents/ui/ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:116
+#: contents/ui/ConnectionListPage.qml:114
 #, fuzzy, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Hardver za bežičnu vezu omogućen"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:118
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:status Notification text when a single wireless network disappeared"
@@ -94,24 +94,24 @@ msgstr "Hardver za bežičnu vezu omogućen"
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Bežična mreža %1 je nestala"
 
-#: contents/ui/ConnectionListPage.qml:122
+#: contents/ui/ConnectionListPage.qml:120
 #, fuzzy, kde-format
 msgid "Wireless is deactivated"
 msgstr "Hardver za bežičnu vezu omogućen"
 
-#: contents/ui/ConnectionListPage.qml:125
+#: contents/ui/ConnectionListPage.qml:123
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox"
 #| msgid "Wired network interfaces"
 msgid "Mobile network is deactivated"
 msgstr "Žičana mrežna sučelja"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:130
+#: contents/ui/ConnectionListPage.qml:128
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "&Sistemska veza"

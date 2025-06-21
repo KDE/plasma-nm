@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:44+0000\n"
+"POT-Creation-Date: 2025-06-21 00:44+0000\n"
 "PO-Revision-Date: 2025-06-10 22:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -62,43 +62,43 @@ msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
 msgstr "연결됨, ↓ %1/초, ↑ %2/초"
 
-#: contents/ui/ConnectionListPage.qml:35
+#: contents/ui/ConnectionListPage.qml:33
 #, kde-format
 msgid "You need to log in to this network"
 msgstr "이 네트워크를 사용하려면 로그인해야 합니다"
 
-#: contents/ui/ConnectionListPage.qml:39
+#: contents/ui/ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "로그인"
 
-#: contents/ui/ConnectionListPage.qml:116
+#: contents/ui/ConnectionListPage.qml:114
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "비행기 모드가 활성화됨"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:118
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "무선 및 모바일 네트워크가 비활성화됨"
 
-#: contents/ui/ConnectionListPage.qml:122
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "무선 네트워크가 비활성화됨"
 
-#: contents/ui/ConnectionListPage.qml:125
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "모바일 네트워크가 비활성화됨"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr "검색 결과 없음"
 
-#: contents/ui/ConnectionListPage.qml:130
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No available connections"
 msgstr "사용 가능한 연결 없음"

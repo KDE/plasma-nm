@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:44+0000\n"
-"PO-Revision-Date: 2025-06-07 19:55+0200\n"
+"POT-Creation-Date: 2025-06-21 00:44+0000\n"
+"PO-Revision-Date: 2025-06-20 22:54+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: contents/ui/ConnectionItem.qml:59
 #, kde-format
@@ -61,49 +61,48 @@ msgstr ""
 "abiadura %2 kibibyte segundokoa da"
 
 #: contents/ui/ConnectionItem.qml:292
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Konektatuta, ↓ %1/s, ↑ %2/s"
+msgstr "↓ %1/s, ↑ %2/s"
 
-#: contents/ui/ConnectionListPage.qml:35
+#: contents/ui/ConnectionListPage.qml:33
 #, kde-format
 msgid "You need to log in to this network"
 msgstr "Sare horretan saio-hasi behar duzu"
 
-#: contents/ui/ConnectionListPage.qml:39
+#: contents/ui/ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Hasi saioa"
 
-#: contents/ui/ConnectionListPage.qml:116
+#: contents/ui/ConnectionListPage.qml:114
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Hegaldi modua gaituta dago"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:118
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Hari gabeko eta mugikorreko sareak desaktibatuta daude"
 
-#: contents/ui/ConnectionListPage.qml:122
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Hari gabekoa deskonektatuta dago"
 
-#: contents/ui/ConnectionListPage.qml:125
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mugikorreko sarea desaktibatuta dago"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr "Ez dago bat datorrenik"
 
-#: contents/ui/ConnectionListPage.qml:130
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No available connections"
 msgstr "Ez dago konexio erabilgarririk"

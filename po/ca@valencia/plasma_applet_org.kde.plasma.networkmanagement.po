@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:44+0000\n"
+"POT-Creation-Date: 2025-06-21 00:44+0000\n"
 "PO-Revision-Date: 2025-06-14 11:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -68,43 +68,43 @@ msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
 msgstr "↓ %1/s, ↑ %2/s"
 
-#: contents/ui/ConnectionListPage.qml:35
+#: contents/ui/ConnectionListPage.qml:33
 #, kde-format
 msgid "You need to log in to this network"
 msgstr "Cal iniciar la sessió en esta xarxa"
 
-#: contents/ui/ConnectionListPage.qml:39
+#: contents/ui/ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Inicia la sessió"
 
-#: contents/ui/ConnectionListPage.qml:116
+#: contents/ui/ConnectionListPage.qml:114
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "S'ha activat el mode avió"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:118
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "S'ha desactivat la xarxa sense fil i la mòbil"
 
-#: contents/ui/ConnectionListPage.qml:122
+#: contents/ui/ConnectionListPage.qml:120
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "S'ha desactivat la xarxa sense fil"
 
-#: contents/ui/ConnectionListPage.qml:125
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "S'ha desactivat la xarxa mòbil"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "No matches"
 msgstr "Sense coincidències"
 
-#: contents/ui/ConnectionListPage.qml:130
+#: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No available connections"
 msgstr "No hi ha cap connexió disponible"

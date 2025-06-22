@@ -229,6 +229,3 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr "Last ned"
-
-#~ msgid "Connected"
-#~ msgstr "Tilkoblet"

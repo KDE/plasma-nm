@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-21 00:44+0000\n"
-"PO-Revision-Date: 2025-05-22 13:09+0200\n"
+"PO-Revision-Date: 2025-06-19 09:52+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
 "Language: gl\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: contents/ui/ConnectionItem.qml:59
 #, kde-format
@@ -65,11 +65,10 @@ msgstr ""
 "actual de envío é de %2 kibibytes por segundo."
 
 #: contents/ui/ConnectionItem.qml:292
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Conectado, ↓ %1/s, ↑ %2/s"
+msgstr "↓ %1/s, ↑ %2/s"
 
 #: contents/ui/ConnectionListPage.qml:33
 #, kde-format
@@ -198,6 +197,8 @@ msgstr "Punto de acceso"
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
+"Non é posíbel crear un punto de acceso porque a rede sen fíos está "
+"desactivada."
 
 #: contents/ui/Toolbar.qml:180
 #, kde-format

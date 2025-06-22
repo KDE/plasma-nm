@@ -239,6 +239,3 @@ msgstr "Качване"
 #, kde-format
 msgid "Download"
 msgstr "Изтегляне"
-
-#~ msgid "Connected"
-#~ msgstr "Свързан"

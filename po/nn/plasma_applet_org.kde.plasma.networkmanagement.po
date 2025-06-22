@@ -234,6 +234,3 @@ msgstr "Opplasting"
 #, kde-format
 msgid "Download"
 msgstr "Nedlasting"
-
-#~ msgid "Connected"
-#~ msgstr "Kopla til"

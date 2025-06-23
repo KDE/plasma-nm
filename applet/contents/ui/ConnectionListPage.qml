@@ -101,8 +101,11 @@ ColumnLayout {
                         if (toolbar.displayplaneModeMessage) {
                             return "network-flightmode-on"
                         }
-                        if (toolbar.displayWifiMessage) {
+                        if (toolbar.displayWifiOffMessage) {
                             return "network-wireless-off"
+                        }
+                        if (toolbar.displayWifiConnectingMessage) {
+                            return "view-refresh-symbolic"
                         }
                         if (toolbar.displayWwanMessage) {
                             return "network-mobile-off"
@@ -113,11 +116,14 @@ ColumnLayout {
                         if (toolbar.displayplaneModeMessage) {
                             return i18n("Airplane mode is enabled")
                         }
-                        if (toolbar.displayWifiMessage) {
+                        if (toolbar.displayWifiOffMessage) {
                             if (toolbar.displayWwanMessage) {
                                 return i18n("Wireless and mobile networks are deactivated")
                             }
                             return i18n("Wireless is deactivated")
+                        }
+                        if (toolbar.displayWifiConnectingMessage) {
+                            return i18n("Looking for wireless networks")
                         }
                         if (toolbar.displayWwanMessage) {
                             return i18n("Mobile network is deactivated")
@@ -125,7 +131,10 @@ ColumnLayout {
                         if (toolbar.searchTextField.text.length > 0) {
                             return i18n("No matches")
                         }
-                        return i18n("No available connections")
+                        if (connectionListPage.nmStatus.connectivity === NMQt.NetworkManager.Full) {
+                            return i18n("No available connections")
+                        }
+                        return nmStatus.checkUnknownReason()
                     }
                 }
             }

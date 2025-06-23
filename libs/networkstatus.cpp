@@ -253,7 +253,7 @@ QString NetworkStatus::checkUnknownReason() const
 {
     // Check if NetworkManager is running.
     if (!QDBusConnection::systemBus().interface()->isServiceRegistered(QStringLiteral(NM_DBUS_INTERFACE))) {
-        return i18n("NetworkManager not running");
+        return i18nc("@info:status", "NetworkManager service is not running");
     }
 
     // Check for compatible NetworkManager version.

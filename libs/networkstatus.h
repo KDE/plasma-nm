@@ -59,6 +59,7 @@ public:
     QString activeConnections() const;
     QString networkStatus() const;
     NetworkManager::Connectivity connectivity() const;
+    Q_INVOKABLE QString checkUnknownReason() const;
 
 private Q_SLOTS:
     void activeConnectionsChanged();
@@ -75,8 +76,6 @@ private:
     QString m_activeConnections;
     QString m_networkStatus;
     NetworkManager::Connectivity m_connectivity = NetworkManager::UnknownConnectivity;
-
-    QString checkUnknownReason() const;
 };
 
 #endif // PLAMA_NM_NETWORK_STATUS_H

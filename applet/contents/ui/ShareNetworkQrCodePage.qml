@@ -35,6 +35,8 @@ ColumnLayout {
         id: barcode
         Layout.fillWidth: true
         Layout.fillHeight: true
+        Layout.margins: Kirigami.Units.gridUnit
+
         barcodeType: Prison.Barcode.QRCode
 
         Drag.dragType: Drag.Automatic
@@ -63,6 +65,15 @@ ColumnLayout {
                     barcode.Drag.active = false;
                 }
             }
+        }
+
+        Rectangle {
+            anchors.centerIn: barcode
+            width: Math.floor(Math.min(barcode.width, barcode.height)) + 2 * radius
+            height: width
+            color: barcode.backgroundColor
+            radius: Kirigami.Units.cornerRadius
+            z: -1
         }
     }
 }

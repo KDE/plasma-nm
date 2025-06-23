@@ -33,6 +33,9 @@ ColumnLayout {
 
     Prison.Barcode {
         id: barcode
+
+        readonly property bool valid: implicitWidth > 0 && implicitHeight > 0
+
         Layout.fillWidth: true
         Layout.fillHeight: true
         Layout.margins: Kirigami.Units.gridUnit

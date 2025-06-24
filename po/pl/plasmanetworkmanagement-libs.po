@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2024-12-21 11:42+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -3779,8 +3779,10 @@ msgid "Connected to %1"
 msgstr "Połączono z %1"
 
 #: networkstatus.cpp:256
-#, kde-format
-msgid "NetworkManager not running"
+#, fuzzy, kde-format
+#| msgid "NetworkManager not running"
+msgctxt "@info:status"
+msgid "NetworkManager service is not running"
 msgstr "ZarządzanieSiecią nie jest uruchomione"
 
 #: networkstatus.cpp:261

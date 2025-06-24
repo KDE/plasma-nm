@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2025-06-14 17:22+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -76,32 +76,38 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "لِج"
 
-#: contents/ui/ConnectionListPage.qml:114
+#: contents/ui/ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "وضع الطائرة ممكن"
 
-#: contents/ui/ConnectionListPage.qml:118
+#: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "عُطلت شبكات الهاتف و اللاسلكية"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "عُطلت الشبكة اللاسلكية"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: contents/ui/ConnectionListPage.qml:126
+#, fuzzy, kde-format
+#| msgid "Rescan wireless networks"
+msgid "Looking for wireless networks"
+msgstr "أعد استكشاف الشّبكات اللاسلكيّة"
+
+#: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "عُطلت شبكة الهاتف"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: contents/ui/ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "لا يوجد تطابق"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "لا تتوفر اتصالات"
@@ -128,7 +134,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "انقر بالزر الأوسط تفعيل نمط الطيران"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "مكّن واي فاي"
@@ -164,35 +170,35 @@ msgstr "ارجع إلى اتّصالات الشّبكة"
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "امسح رمز QR هذا ضوئيًا باستخدام جهاز آخر للاتصال بالشبكة \"%1\"."
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "مكن شبكة هاتف"
 
-#: contents/ui/Toolbar.qml:147
+#: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "عطل وضع الطيران <nl/><nl/> هذا سيمكن الواي فاي و البلوتوث"
 
-#: contents/ui/Toolbar.qml:148
+#: contents/ui/Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "مكن وضع الطيران <nl/><nl/> هذا سيعطل الواي فاي و البلوتوث"
 
-#: contents/ui/Toolbar.qml:161
+#: contents/ui/Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "نقطة اتصال"
 
-#: contents/ui/Toolbar.qml:178
+#: contents/ui/Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "لا يمكن إنشاء نقطة اتصال لأن شبكة واي فاي معطلة."
 
-#: contents/ui/Toolbar.qml:180
+#: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -202,19 +208,19 @@ msgstr ""
 "لا يمكن إنشاء نقطة اتصال لأن جميع أجهزة الراديو اللاسلكية في الاستخدام. افصل "
 "شبكة واي فاي الحالية أو قم بتوصيل راديو لاسلكي آخر."
 
-#: contents/ui/Toolbar.qml:182
+#: contents/ui/Toolbar.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "عطّل نقطة الاتصال"
 
-#: contents/ui/Toolbar.qml:184
+#: contents/ui/Toolbar.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "أنشئ نقطة اتصال"
 
-#: contents/ui/Toolbar.qml:218
+#: contents/ui/Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "اضبط اتّصالات الشّبكة..."
@@ -333,9 +339,6 @@ msgstr "التّنزيل"
 #~| msgid "Configure network connections..."
 #~ msgid "Show virtual connections"
 #~ msgstr "اضبط اتّصالات الشّبكة..."
-
-#~ msgid "Rescan wireless networks"
-#~ msgstr "أعد استكشاف الشّبكات اللاسلكيّة"
 
 #~ msgid "Show password"
 #~ msgstr "أظهر كلمة المرور"

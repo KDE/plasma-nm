@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2025-06-14 20:38+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -3781,8 +3781,10 @@ msgid "Connected to %1"
 msgstr "З'єднано з %1"
 
 #: networkstatus.cpp:256
-#, kde-format
-msgid "NetworkManager not running"
+#, fuzzy, kde-format
+#| msgid "NetworkManager not running"
+msgctxt "@info:status"
+msgid "NetworkManager service is not running"
 msgstr "NetworkManager не запущено"
 
 #: networkstatus.cpp:261

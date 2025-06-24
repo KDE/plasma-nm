@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2025-06-14 06:45+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -3758,8 +3758,10 @@ msgid "Connected to %1"
 msgstr "מחובר אל %1"
 
 #: networkstatus.cpp:256
-#, kde-format
-msgid "NetworkManager not running"
+#, fuzzy, kde-format
+#| msgid "NetworkManager not running"
+msgctxt "@info:status"
+msgid "NetworkManager service is not running"
 msgstr "מנהל הרשתות אינו פעיל"
 
 #: networkstatus.cpp:261

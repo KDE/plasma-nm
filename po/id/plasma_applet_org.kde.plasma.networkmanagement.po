@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2023-03-03 09:54+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -77,32 +77,37 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:114
+#: contents/ui/ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Mode pesawat diaktifkan"
 
-#: contents/ui/ConnectionListPage.qml:118
+#: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Nirkabel dan jaringan seluler dinonaktifkan"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Nirkabel dinonaktifkan"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: contents/ui/ConnectionListPage.qml:126
+#, kde-format
+msgid "Looking for wireless networks"
+msgstr ""
+
+#: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Jaringan seluler dinonaktifkan"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: contents/ui/ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "Tidak ada yang cocok"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "Tidak ada koneksi yang tersedia"
@@ -129,7 +134,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Klik tengah untuk menyalakan Mode Pesawat"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Aktifkan Wi-Fi"
@@ -166,37 +171,37 @@ msgstr "&Konfigurasikan Koneksi Jaringan..."
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Aktifkan jaringan seluler"
 
-#: contents/ui/Toolbar.qml:147
+#: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Nonaktifkan mode pesawat<nl/><nl/>Ini akan mengaktifkan Wi-Fi dan Bluetooth"
 
-#: contents/ui/Toolbar.qml:148
+#: contents/ui/Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Aktifkan mode pesawat<nl/><nl/>Ini akan menonaktifkan Wi-Fi dan Bluetooth"
 
-#: contents/ui/Toolbar.qml:161
+#: contents/ui/Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: contents/ui/Toolbar.qml:178
+#: contents/ui/Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:180
+#: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -204,21 +209,21 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:182
+#: contents/ui/Toolbar.qml:183
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Nonaktifkan Hotspot"
 
-#: contents/ui/Toolbar.qml:184
+#: contents/ui/Toolbar.qml:185
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Buat Hotspot"
 
-#: contents/ui/Toolbar.qml:218
+#: contents/ui/Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Konfigurasikan koneksi jaringan..."

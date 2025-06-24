@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2025-05-29 16:58+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -79,32 +79,38 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Ierakstīties"
 
-#: contents/ui/ConnectionListPage.qml:114
+#: contents/ui/ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Ieslēgts lidmašīnas režīms"
 
-#: contents/ui/ConnectionListPage.qml:118
+#: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Bezvadu un mobilie tīkli ir izslēgti"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Bezvadu tīkls ir izslēgts"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: contents/ui/ConnectionListPage.qml:126
+#, fuzzy, kde-format
+#| msgid "Connect to wireless networks..."
+msgid "Looking for wireless networks"
+msgstr "Pieslēgties bezvadu tīkliem..."
+
+#: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobilais tīkls ir izslēgts"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: contents/ui/ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "Nav atbilstību"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "Nav pieejamu savienojumu"
@@ -131,7 +137,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Lidmašīnas režīmu varat ieslēgt ar peles vidējo pogu"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Ieslēgt „Wi-Fi“"
@@ -167,37 +173,37 @@ msgstr "Atgriezties pie tīkla savienojumiem"
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "Skenējiet šo kvadrātkodu citā ierīcē, lai savienotos ar „%1“ tīklu."
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Ieslēgt mobilo tīklu"
 
-#: contents/ui/Toolbar.qml:147
+#: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Izslēgt lidmašīnas režīmu<nl/><nl/>Šī darbība ieslēgs „Wi-Fi“ un „Bluetooth“"
 
-#: contents/ui/Toolbar.qml:148
+#: contents/ui/Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Ieslēgt lidmašīnas režīmu<nl/><nl/>Šī darbība izslēgs „Wi-Fi“ un „Bluetooth“"
 
-#: contents/ui/Toolbar.qml:161
+#: contents/ui/Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "Tīklājs"
 
-#: contents/ui/Toolbar.qml:178
+#: contents/ui/Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:180
+#: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -208,19 +214,19 @@ msgstr ""
 "Atvienojieties no pašreizējā „Wi-Fi“ tīkla vai ierīcei pievienojiet vēl kādu "
 "bezvadu raidītāju."
 
-#: contents/ui/Toolbar.qml:182
+#: contents/ui/Toolbar.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Izslēgt tīklāju"
 
-#: contents/ui/Toolbar.qml:184
+#: contents/ui/Toolbar.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Izveidot tīklāju"
 
-#: contents/ui/Toolbar.qml:218
+#: contents/ui/Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Konfigurēt tīkla savienojumus..."
@@ -343,11 +349,6 @@ msgstr "Lejupielāde"
 #~| msgid "ConnectionType"
 #~ msgid "Show virtual connections"
 #~ msgstr "Pieslēguma veids"
-
-#, fuzzy
-#~| msgid "Connect to wireless networks..."
-#~ msgid "Rescan wireless networks"
-#~ msgstr "Pieslēgties bezvadu tīkliem..."
 
 #, fuzzy
 #~| msgid "Show Passphrase"

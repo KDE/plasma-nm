@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2023-12-26 09:17-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -75,32 +75,38 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "ਲਾਗ ਇਨ"
 
-#: contents/ui/ConnectionListPage.qml:114
+#: contents/ui/ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "ਏਅਰਪਲਾਨ ਢੰਗ ਸਮਰੱਥ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:118
+#: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "ਬੇਤਾਰ ਅਤੇ ਬੇਤਾਰ ਨੈੱਟਵਰਕ ਨਾ-ਸਰਗਰਮ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "ਬੇਤਾਰ ਨਾ-ਸਰਗਰਮ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: contents/ui/ConnectionListPage.qml:126
+#, fuzzy, kde-format
+#| msgid "Rescan wireless networks"
+msgid "Looking for wireless networks"
+msgstr "ਬੇਤਾਰ ਨੈੱਟਵਰਕਾਂ ਦੀ ਮੁੜ-ਜਾਂਚ ਕਰੋ"
+
+#: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "ਮੋਬਾਈਲ ਨੈੱਟਵਰਕ ਨਾ-ਸਰਗਰਮ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: contents/ui/ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "ਕੋਈ ਮੇਲ ਨਹੀਂ"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "ਕੋਈ ਕਨੈਕਸ਼ਨ ਉਪਲਬਧ ਨਹੀਂ ਹਨ"
@@ -127,7 +133,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "ਏਅਰ-ਪਲੇਨ ਮੋਡ ਨੂੰ ਚਾਲੂ ਕਰਨ ਲਈ ਮਿਡਲ-ਕਲਿੱਕ ਕਰੋ"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "ਵਾਈ-ਫਾਈ ਸਮਰੱਥ ਕਰੋ"
@@ -163,35 +169,35 @@ msgstr "ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਉੱਤੇ ਵਾਪ
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "ਹੋਰ ਡਿਵਾਈਸ ਤੋਂ \"%1\" ਨੈੱਟਵਰਕ ਨਾਲ ਕਨੈਕਟ ਕਰਨ ਲਈ ਇਹ QR ਕੋਡ ਸਕੈਨ ਕਰੋ।"
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "ਮੋਬਾਈਲ ਨੈੱਟਵਰਕ ਸਮਰੱਥ ਕਰੋ"
 
-#: contents/ui/Toolbar.qml:147
+#: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "ਏਅਰਪਲੇਨ ਢੰਗ ਅਸਮਰੱਥ ਹੈ<nl/><nl/>ਇਹ ਵਾਈ-ਫਾਈ ਅਤੇ ਬਲੂਟੁੱਥ ਸਮਰੱਥ ਹੋਣਗੇ"
 
-#: contents/ui/Toolbar.qml:148
+#: contents/ui/Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "ਏਅਰਪਲੇਨ ਢੰਗ ਸਮਰੱਥ ਹੈ<nl/><nl/>ਇਹ ਵਾਈ-ਫਾਈ ਅਤੇ ਬਲੂਟੁੱਥ ਅਸਮਰੱਥ ਹੋਣਗੇ"
 
-#: contents/ui/Toolbar.qml:161
+#: contents/ui/Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "ਹਾਟਸਪਾਟ"
 
-#: contents/ui/Toolbar.qml:178
+#: contents/ui/Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:180
+#: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -199,21 +205,21 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:182
+#: contents/ui/Toolbar.qml:183
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "ਹਾਟਸਪਾਟ ਅਸਮਰੱਥ ਕਰੋ"
 
-#: contents/ui/Toolbar.qml:184
+#: contents/ui/Toolbar.qml:185
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "ਹਾਟ-ਸਪਾਟ ਬਣਾਓ"
 
-#: contents/ui/Toolbar.qml:218
+#: contents/ui/Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "…ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਦੀ ਸੰਰਚਨਾ"
@@ -335,9 +341,6 @@ msgstr "ਡਾਊਨਲੋਡ"
 #~| msgid "Show and configure virtual connections"
 #~ msgid "Show virtual connections"
 #~ msgstr "ਵਰਚੁਅਲ ਕਨੈਕਸ਼ਨ ਵੇਖਾਓ ਤੇ ਸੰਰਚਨਾ ਕਰੋ"
-
-#~ msgid "Rescan wireless networks"
-#~ msgstr "ਬੇਤਾਰ ਨੈੱਟਵਰਕਾਂ ਦੀ ਮੁੜ-ਜਾਂਚ ਕਰੋ"
 
 #~ msgid "Show password"
 #~ msgstr "ਪਾਸਵਰਡ ਵੇਖਾਓ"

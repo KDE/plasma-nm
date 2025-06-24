@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2024-10-30 15:28+0100\n"
 "Last-Translator: Flori G <Renner03@protonmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -78,32 +78,38 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Anmelden"
 
-#: contents/ui/ConnectionListPage.qml:114
+#: contents/ui/ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Flugmodus ist aktiviert"
 
-#: contents/ui/ConnectionListPage.qml:118
+#: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Dratlose und mobile Netze sind deaktiviert"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Drahtloses Netzwerk ist abgeschaltet"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: contents/ui/ConnectionListPage.qml:126
+#, fuzzy, kde-format
+#| msgid "Rescan wireless networks"
+msgid "Looking for wireless networks"
+msgstr "Drahtlose Netzwerke erneut durchsuchen"
+
+#: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobiles Netzwerk ist abgeschaltet"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: contents/ui/ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "Keine Übereinstimmungen"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "Keine verfügbaren Verbindungen"
@@ -130,7 +136,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Mittelklick zum Aktivieren des Flugmodus"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "WLAN aktivieren"
@@ -168,37 +174,37 @@ msgstr ""
 "Scannen Sie diesen QR-Code mit einem anderen Gerät, um dieses mit dem "
 "Netzwerk „%1“ zu verbinden"
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Mobiles Netzwerk aktivieren"
 
-#: contents/ui/Toolbar.qml:147
+#: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Flugmodus deaktivieren<nl/><nl/>Damit werden WLAN und Bluetooth aktiviert"
 
-#: contents/ui/Toolbar.qml:148
+#: contents/ui/Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Flugmodus aktivieren<nl/><nl/>Damit werden WLAN und Bluetooth deaktiviert"
 
-#: contents/ui/Toolbar.qml:161
+#: contents/ui/Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: contents/ui/Toolbar.qml:178
+#: contents/ui/Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:180
+#: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -206,21 +212,21 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:182
+#: contents/ui/Toolbar.qml:183
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Hotspot deaktivieren"
 
-#: contents/ui/Toolbar.qml:184
+#: contents/ui/Toolbar.qml:185
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Hotspot erstellen"
 
-#: contents/ui/Toolbar.qml:218
+#: contents/ui/Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Netzwerkverbindungen bearbeiten ..."
@@ -341,9 +347,6 @@ msgstr "Heruntergeladen"
 
 #~ msgid "Show virtual connections"
 #~ msgstr "Virtuelle Verbindungen anzeigen"
-
-#~ msgid "Rescan wireless networks"
-#~ msgstr "Drahtlose Netzwerke erneut durchsuchen"
 
 #~ msgid "Show password"
 #~ msgstr "Passwort anzeigen"

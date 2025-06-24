@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2025-01-06 22:27+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -3786,8 +3786,10 @@ msgid "Connected to %1"
 msgstr "Prisijungta prie %1"
 
 #: networkstatus.cpp:256
-#, kde-format
-msgid "NetworkManager not running"
+#, fuzzy, kde-format
+#| msgid "NetworkManager not running"
+msgctxt "@info:status"
+msgid "NetworkManager service is not running"
 msgstr "NetworkManager neveikia"
 
 #: networkstatus.cpp:261

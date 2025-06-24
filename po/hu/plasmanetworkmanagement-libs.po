@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-14 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2025-01-26 21:07+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -3779,8 +3779,10 @@ msgid "Connected to %1"
 msgstr "Kapcsolódva ehhez: %1"
 
 #: networkstatus.cpp:256
-#, kde-format
-msgid "NetworkManager not running"
+#, fuzzy, kde-format
+#| msgid "NetworkManager not running"
+msgctxt "@info:status"
+msgid "NetworkManager service is not running"
 msgstr "A NetworkManager nem fut"
 
 #: networkstatus.cpp:261

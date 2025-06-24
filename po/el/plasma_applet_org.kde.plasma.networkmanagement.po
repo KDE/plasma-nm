@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2023-08-15 02:00+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -81,32 +81,38 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Είσοδος"
 
-#: contents/ui/ConnectionListPage.qml:114
+#: contents/ui/ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Η λειτουργία πτήσης είναι ενεργοποιημένη"
 
-#: contents/ui/ConnectionListPage.qml:118
+#: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Ασύρματα και κινητά δίκτυα είναι απενεργοποιημένα"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Το ασύρματο είναι απενεργοποιημένο"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: contents/ui/ConnectionListPage.qml:126
+#, fuzzy, kde-format
+#| msgid "Rescan wireless networks"
+msgid "Looking for wireless networks"
+msgstr "Επανασάρωση ασυρμάτων δικτύων"
+
+#: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Τα κινητά δίκτυα είναι απενεργοποιημένα"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: contents/ui/ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "Χωρίς αποτέλεσμα"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "Μη διαθέσιμες συνδέσεις"
@@ -133,7 +139,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Κάντε μεσαίο κλικ για την ενεργοποίηση της αεροπορικής λειτουργίας"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Ενεργοποίηση Wi-Fi"
@@ -171,12 +177,12 @@ msgstr ""
 "Σαρώστε αυτόν τον κωδικό QR με μια άλλη συσκευή για να συνδεθείτε στο δίκτυο "
 "\"%1\"."
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Ενεργοποίηση κινητού δικτύου"
 
-#: contents/ui/Toolbar.qml:147
+#: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
@@ -184,7 +190,7 @@ msgstr ""
 "Απενεργοποίηση λειτουργίας Πτήσης<nl/><nl/>Αυτό θα ενεργοποιήσει το Wi-Fi "
 "και Bluetooth"
 
-#: contents/ui/Toolbar.qml:148
+#: contents/ui/Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
@@ -192,18 +198,18 @@ msgstr ""
 "Ενεργοποίηση λειτουργίας πτήσης<nl/><nl/>Αυτό θα απενεργοποίηση το Wi-Fi και "
 "Bluetooth"
 
-#: contents/ui/Toolbar.qml:161
+#: contents/ui/Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: contents/ui/Toolbar.qml:178
+#: contents/ui/Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:180
+#: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -211,21 +217,21 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:182
+#: contents/ui/Toolbar.qml:183
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Απενεργοποίηση Hotspot"
 
-#: contents/ui/Toolbar.qml:184
+#: contents/ui/Toolbar.qml:185
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Δημιουργία Hotspot"
 
-#: contents/ui/Toolbar.qml:218
+#: contents/ui/Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Διαμόρφωση συνδέσεων δικτύου..."
@@ -354,9 +360,6 @@ msgstr "Λήψη"
 #~| msgid "Show and configure virtual connections"
 #~ msgid "Show virtual connections"
 #~ msgstr "Εμφάνιση και διαμόρφωση εικονικών συνδέσεων"
-
-#~ msgid "Rescan wireless networks"
-#~ msgstr "Επανασάρωση ασυρμάτων δικτύων"
 
 #~ msgid "Show password"
 #~ msgstr "Εμφάνιση κωδικού πρόσβασης"

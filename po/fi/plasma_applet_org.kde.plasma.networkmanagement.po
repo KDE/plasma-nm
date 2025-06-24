@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2025-05-25 10:14+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -75,32 +75,38 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Kirjaudu"
 
-#: contents/ui/ConnectionListPage.qml:114
+#: contents/ui/ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Lentokonetila on käytössä"
 
-#: contents/ui/ConnectionListPage.qml:118
+#: contents/ui/ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Langattomat ja mobiiliverkot on passivoitu"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Langaton verkko on passivoitu"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: contents/ui/ConnectionListPage.qml:126
+#, fuzzy, kde-format
+#| msgid "Rescan wireless networks"
+msgid "Looking for wireless networks"
+msgstr "Etsi langattomat verkot uudelleen"
+
+#: contents/ui/ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobiiliverkko on passivoitu"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: contents/ui/ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "Ei osumia"
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "Ei käytettävissä olevia yhteyksiä"
@@ -127,7 +133,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Siirry lentokonetilaan keskinapsauttamalla"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Käytä langatonta verkkoa"
@@ -163,12 +169,12 @@ msgstr "Palaa verkkoyhteyksiin"
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "Yhdistä verkkoon ”%1” lukemalla toisella laitteella tämä QR-koodi."
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Käytä mobiiliverkkoa"
 
-#: contents/ui/Toolbar.qml:147
+#: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
@@ -176,7 +182,7 @@ msgstr ""
 "Poista lentokonetila käytöstä<nl/><nl/>Tämä ottaa langattoman verkon ja "
 "Bluetoothin käyttöön"
 
-#: contents/ui/Toolbar.qml:148
+#: contents/ui/Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
@@ -184,18 +190,18 @@ msgstr ""
 "Käytä lentokonetilaa<nl/><nl/>Tämä poistaa langattoman verkon ja Bluetoothin "
 "käytöstä"
 
-#: contents/ui/Toolbar.qml:161
+#: contents/ui/Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "Tukiasema"
 
-#: contents/ui/Toolbar.qml:178
+#: contents/ui/Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:180
+#: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -205,19 +211,19 @@ msgstr ""
 "Tukiasemaa ei voida luoda, koska kaikki langattomat lähettimet ovat "
 "käytössä. Katkaise langaton verkkoyhteys tai luo uusi langaton lähetin."
 
-#: contents/ui/Toolbar.qml:182
+#: contents/ui/Toolbar.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Poista tukiasema käytöstä"
 
-#: contents/ui/Toolbar.qml:184
+#: contents/ui/Toolbar.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Luo tukiasema"
 
-#: contents/ui/Toolbar.qml:218
+#: contents/ui/Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Muokkaa verkkoyhteyksiä…"
@@ -338,9 +344,6 @@ msgstr "Lataus"
 
 #~ msgid "Show virtual connections"
 #~ msgstr "Näytä virtuaaliyhteydet"
-
-#~ msgid "Rescan wireless networks"
-#~ msgstr "Etsi langattomat verkot uudelleen"
 
 #~ msgid "Show password"
 #~ msgstr "Näytä salasana"

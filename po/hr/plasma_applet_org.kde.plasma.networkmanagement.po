@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-21 00:44+0000\n"
+"POT-Creation-Date: 2025-06-24 00:44+0000\n"
 "PO-Revision-Date: 2011-06-27 14:57+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -81,12 +81,12 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:114
+#: contents/ui/ConnectionListPage.qml:117
 #, fuzzy, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Hardver za bežičnu vezu omogućen"
 
-#: contents/ui/ConnectionListPage.qml:118
+#: contents/ui/ConnectionListPage.qml:121
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:status Notification text when a single wireless network disappeared"
@@ -94,24 +94,30 @@ msgstr "Hardver za bežičnu vezu omogućen"
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Bežična mreža %1 je nestala"
 
-#: contents/ui/ConnectionListPage.qml:120
+#: contents/ui/ConnectionListPage.qml:123
 #, fuzzy, kde-format
 msgid "Wireless is deactivated"
 msgstr "Hardver za bežičnu vezu omogućen"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: contents/ui/ConnectionListPage.qml:126
+#, fuzzy, kde-format
+#| msgid "The name of the wireless network"
+msgid "Looking for wireless networks"
+msgstr "Ime bežićne mreže"
+
+#: contents/ui/ConnectionListPage.qml:129
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox"
 #| msgid "Wired network interfaces"
 msgid "Mobile network is deactivated"
 msgstr "Žičana mrežna sučelja"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: contents/ui/ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:128
+#: contents/ui/ConnectionListPage.qml:135
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "&Sistemska veza"
@@ -139,7 +145,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:73
+#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
@@ -180,36 +186,36 @@ msgstr "Uredi mrežnu vezu"
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:122
+#: contents/ui/Toolbar.qml:123
 #, fuzzy, kde-format
 #| msgid "User name on this network"
 msgid "Enable mobile network"
 msgstr "Korisničko ime na ovoj mreži"
 
-#: contents/ui/Toolbar.qml:147
+#: contents/ui/Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:148
+#: contents/ui/Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:161
+#: contents/ui/Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr ""
 
-#: contents/ui/Toolbar.qml:178
+#: contents/ui/Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:180
+#: contents/ui/Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -217,21 +223,21 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:182
+#: contents/ui/Toolbar.qml:183
 #, fuzzy, kde-format
 #| msgid "Disabled"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Onemogućeno"
 
-#: contents/ui/Toolbar.qml:184
+#: contents/ui/Toolbar.qml:185
 #, fuzzy, kde-format
 #| msgid "Disabled"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Onemogućeno"
 
-#: contents/ui/Toolbar.qml:218
+#: contents/ui/Toolbar.qml:219
 #, fuzzy, kde-format
 #| msgid "Configure notifications..."
 msgid "Configure network connections…"
@@ -343,11 +349,6 @@ msgstr ""
 #~| msgid "Configure notifications..."
 #~ msgid "Show virtual connections"
 #~ msgstr "Konfiguriraj obavijesti…"
-
-#, fuzzy
-#~| msgid "The name of the wireless network"
-#~ msgid "Rescan wireless networks"
-#~ msgstr "Ime bežićne mreže"
 
 #, fuzzy
 #~| msgid "Password"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:44+0000\n"
-"PO-Revision-Date: 2025-06-14 05:17+0200\n"
+"PO-Revision-Date: 2025-06-24 05:42+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -93,7 +93,7 @@ msgstr "უსადენო ქსელი დეაქტივირებ�
 #: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "Looking for wireless networks"
-msgstr ""
+msgstr "უსადენო ქსელების ძებნა"
 
 #: contents/ui/ConnectionListPage.qml:129
 #, kde-format

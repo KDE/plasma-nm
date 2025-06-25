@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:44+0000\n"
-"PO-Revision-Date: 2025-06-14 11:03+0200\n"
+"PO-Revision-Date: 2025-06-24 11:56+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -3783,11 +3783,10 @@ msgid "Connected to %1"
 msgstr "Connectat a %1"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "El NetworkManager no s'està executant"
+msgstr "El servei NetworkManager no s'està executant"
 
 #: networkstatus.cpp:261
 #, kde-format
@@ -3799,42 +3798,3 @@ msgstr "Es requereix NetworkManager 0.9.8, però s'ha trobat el %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconeguda"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used in the last hour, "
-#~ "as the number of minutes since usage"
-#~ msgid "One minute ago"
-#~ msgid_plural "%1 minutes ago"
-#~ msgstr[0] "Fa un minut"
-#~ msgstr[1] "Fa %1 minuts"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used in the last day, "
-#~ "as the number of hours since usage"
-#~ msgid "One hour ago"
-#~ msgid_plural "%1 hours ago"
-#~ msgstr[0] "Fa 1 hora"
-#~ msgstr[1] "Fa %1 hores"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used the previous day"
-#~ msgid "Yesterday"
-#~ msgstr "Ahir"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection that has never been used"
-#~ msgid "Never"
-#~ msgstr "Mai"
-
-#~ msgctxt "General"
-#~ msgid "General configuration"
-#~ msgstr "Configuració general"
-
-#~ msgid "*.der *.pem *.crt *.cer"
-#~ msgstr "*.der *.pem *.crt *.cer"
-
-#~ msgid "*.der *.pem *.p12 *.key"
-#~ msgstr "*.der *.pem *.p12 *.key"
-
-#~ msgid "*.pac"
-#~ msgstr "*.pac"

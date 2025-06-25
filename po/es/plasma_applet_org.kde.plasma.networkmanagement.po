@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:44+0000\n"
-"PO-Revision-Date: 2025-06-15 00:41+0100\n"
+"PO-Revision-Date: 2025-06-25 01:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -94,7 +94,7 @@ msgstr "Las redes inalámbricas están desactivadas"
 #: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "Looking for wireless networks"
-msgstr ""
+msgstr "Buscando redes inalámbricas"
 
 #: contents/ui/ConnectionListPage.qml:129
 #, kde-format

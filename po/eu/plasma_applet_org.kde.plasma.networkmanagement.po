@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:44+0000\n"
-"PO-Revision-Date: 2025-06-20 22:54+0200\n"
+"PO-Revision-Date: 2025-06-24 12:39+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -95,7 +95,7 @@ msgstr "Hari gabekoa deskonektatuta dago"
 #: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "Looking for wireless networks"
-msgstr ""
+msgstr "Haririk gabeko sareak bilatzen"
 
 #: contents/ui/ConnectionListPage.qml:129
 #, kde-format

@@ -407,7 +407,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
         Q_EMIT secretsError(request.connection_path.path(),
                             i18n("Authentication to %1 failed. Wrong password?", request.connection.value("connection").value("id").toString()));
         return true;
-    } else if (isWireGuard && userRequested) { // Just return what we have
+    } else if (isWireGuard) { // Just return what we have
         NMVariantMapMap result;
         NetworkManager::WireGuardSetting::Ptr wireGuardSetting;
         wireGuardSetting = connectionSettings->setting(NetworkManager::Setting::WireGuard).dynamicCast<NetworkManager::WireGuardSetting>();

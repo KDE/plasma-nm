@@ -3731,11 +3731,10 @@ msgid "Connected to %1"
 msgstr "已连接到 %1"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "NetworkManager 没有运行"
+msgstr ""
 
 #: networkstatus.cpp:261
 #, kde-format

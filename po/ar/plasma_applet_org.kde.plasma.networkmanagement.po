@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:44+0000\n"
-"PO-Revision-Date: 2025-06-14 17:22+0400\n"
+"PO-Revision-Date: 2025-06-26 10:17+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -92,10 +92,9 @@ msgid "Wireless is deactivated"
 msgstr "عُطلت الشبكة اللاسلكية"
 
 #: contents/ui/ConnectionListPage.qml:126
-#, fuzzy, kde-format
-#| msgid "Rescan wireless networks"
+#, kde-format
 msgid "Looking for wireless networks"
-msgstr "أعد استكشاف الشّبكات اللاسلكيّة"
+msgstr "البحث عن الشبكات اللاسلكية"
 
 #: contents/ui/ConnectionListPage.qml:129
 #, kde-format

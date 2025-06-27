@@ -3734,7 +3734,7 @@ msgstr "已连接到 %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr ""
+msgstr "NetworkManager 服务没有运行"
 
 #: networkstatus.cpp:261
 #, kde-format

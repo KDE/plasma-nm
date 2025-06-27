@@ -91,7 +91,7 @@ msgstr "无线网络已被禁用"
 #: contents/ui/ConnectionListPage.qml:126
 #, kde-format
 msgid "Looking for wireless networks"
-msgstr ""
+msgstr "正在寻找无线网络"
 
 #: contents/ui/ConnectionListPage.qml:129
 #, kde-format

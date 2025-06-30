@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-06-24 00:44+0000\n"
-"PO-Revision-Date: 2025-06-14 15:29+0200\n"
+"PO-Revision-Date: 2025-06-24 15:10+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -90,10 +90,9 @@ msgid "Wireless is deactivated"
 msgstr "La rete senza fili è disattivata"
 
 #: contents/ui/ConnectionListPage.qml:126
-#, fuzzy, kde-format
-#| msgid "Rescan wireless networks"
+#, kde-format
 msgid "Looking for wireless networks"
-msgstr "Nuova scansione delle reti senza fili"
+msgstr "Alla ricerca di reti senza fili"
 
 #: contents/ui/ConnectionListPage.qml:129
 #, kde-format

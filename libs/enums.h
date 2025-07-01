@@ -17,10 +17,6 @@ class Enums : public QObject
     QML_ELEMENT
     QML_UNCREATABLE("")
 
-    Q_ENUMS(ConnectionStatus)
-    Q_ENUMS(ConnectionType)
-    Q_ENUMS(SecurityType)
-
 public:
     explicit Enums(QObject *parent = nullptr);
     ~Enums() override;
@@ -32,6 +28,7 @@ public:
         Deactivating,
         Deactivated,
     };
+    Q_ENUM(ConnectionStatus)
 
     enum ConnectionType {
         UnknownConnectionType = 0,
@@ -50,6 +47,7 @@ public:
         Wired,
         Wireless,
     };
+    Q_ENUM(ConnectionType)
 
     enum SecurityType {
         UnknownSecurity = -1,
@@ -65,6 +63,7 @@ public:
         Wpa3SuiteB192,
         OWE,
     };
+    Q_ENUM(SecurityType)
 };
 
 #endif // PLASMA_NM_ENUMS_H

@@ -16,15 +16,21 @@
 #include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/VpnConnection>
 
+#include <qqmlregistration.h>
+
 class PLASMANM_INTERNAL_EXPORT NetworkModelItem : public QObject
 {
     Q_OBJECT
+    QML_ELEMENT
+    QML_UNCREATABLE("")
+
 public:
     enum ItemType {
         UnavailableConnection,
         AvailableConnection,
         AvailableAccessPoint
     };
+    Q_ENUM(ItemType)
 
     explicit NetworkModelItem(QObject *parent = nullptr);
     explicit NetworkModelItem(const NetworkModelItem *item, QObject *parent = nullptr);

@@ -69,7 +69,7 @@ QQC2.ItemDelegate {
         QQC2.MenuItem {
             icon.name: delegate.isConnectionDeactivated() ? "network-connect-symbolic" : "network-disconnect-symbolic"
             text: delegate.isConnectionDeactivated() ? i18n("Connect") : i18n("Disconnect")
-            enabled: model.ItemType === 1 /* available */
+            enabled: model.ItemType === PlasmaNM.NetworkModelItem.AvailableConnection
             onTriggered: {
                 if (delegate.isConnectionDeactivated()) {
                     handler.activateConnection(model.ConnectionPath, model.DevicePath, model.SpecificPath);

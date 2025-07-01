@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:44+0000\n"
+"POT-Creation-Date: 2025-07-01 00:43+0000\n"
 "PO-Revision-Date: 2025-05-28 16:44+0400\n"
 "Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.04.1\n"
 
-#: contents/ui/ConnectionItem.qml:59
+#: ConnectionItem.qml:59
 #, kde-format
 msgid "Connect"
 msgstr "Qoşulun"
 
-#: contents/ui/ConnectionItem.qml:59
+#: ConnectionItem.qml:59
 #, kde-format
 msgid "Disconnect"
 msgstr "Ayırmaq"
 
-#: contents/ui/ConnectionItem.qml:84
+#: ConnectionItem.qml:84
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Şəbəkə QR kodu göstərilsin"
 
-#: contents/ui/ConnectionItem.qml:90
+#: ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "Tənzimləyin..."
 
-#: contents/ui/ConnectionItem.qml:130
+#: ConnectionItem.qml:130
 #, kde-format
 msgid "Speed"
 msgstr "Sürət"
 
-#: contents/ui/ConnectionItem.qml:135
+#: ConnectionItem.qml:135
 #, kde-format
 msgid "Details"
 msgstr "Təfərrüatlar"
 
-#: contents/ui/ConnectionItem.qml:182
+#: ConnectionItem.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57,148 +57,148 @@ msgstr ""
 "Cari endirmə sürəti saniyədə %1 kilobaytdır; cari göndərmə sürəti saniyədə "
 "%2 kilobaytdır"
 
-#: contents/ui/ConnectionItem.qml:292
+#: ConnectionItem.qml:292
 #, fuzzy, kde-format
 #| msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
 msgstr "Qoşulub, ↓ %1/s, ↑ %2/s"
 
-#: contents/ui/ConnectionListPage.qml:33
+#: ConnectionListPage.qml:33
 #, kde-format
 msgid "You need to log in to this network"
 msgstr "Bu şəbəkəyə daxil olmanız lazımdır"
 
-#: contents/ui/ConnectionListPage.qml:37
+#: ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Daxil olun"
 
-#: contents/ui/ConnectionListPage.qml:117
+#: ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Təyyarə rejimi aktivdir"
 
-#: contents/ui/ConnectionListPage.qml:121
+#: ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Naqilsiz və mobil şəbəkələr söndürülüb"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Naqilsiz şəbəkə söndürülüb"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: ConnectionListPage.qml:126
 #, kde-format
 msgid "Looking for wireless networks"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:129
+#: ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mobil şəbəkə söndürülüb"
 
-#: contents/ui/ConnectionListPage.qml:132
+#: ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "Uyğun gələn yoxdur"
 
-#: contents/ui/ConnectionListPage.qml:135
+#: ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "Əlçatan bağlantılar yoxdur"
 
-#: contents/ui/DetailsText.qml:49
+#: DetailsText.qml:49
 #, kde-format
 msgid "Copy"
 msgstr "Kopyalamaq"
 
-#: contents/ui/main.qml:32
+#: main.qml:32
 #, kde-format
 msgid "Networks"
 msgstr "Şəbəkələr"
 
-#: contents/ui/main.qml:41
+#: main.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Təyyarə rejimini sönürmək üçün orta düyməyə vur"
 
-#: contents/ui/main.qml:43
+#: main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Təyyarə rejimini işə salmaq üçün orta düyməyə vur"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
+#: main.qml:71 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi açmaq"
 
-#: contents/ui/main.qml:82
+#: main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Mobil şəbəkəni açın"
 
-#: contents/ui/main.qml:94
+#: main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Təyyarə rejimini açın"
 
-#: contents/ui/main.qml:106
+#: main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Şəbəkəyə giriş səhifəsini açın..."
 
-#: contents/ui/main.qml:116
+#: main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Şəbəkə bağlantılarını tənzimləyin..."
 
-#: contents/ui/PopupDialog.qml:51
+#: PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Şəbəkə ayarlarına qayıtmaq"
 
-#: contents/ui/ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "\"%1\" şəbəkəsinə qoşulmaq üçün başqa cihaz ilə QR kodu oxudun."
 
-#: contents/ui/Toolbar.qml:123
+#: Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Mobil şəbəkəni açmaq"
 
-#: contents/ui/Toolbar.qml:148
+#: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Təyyarə rejimini söndürmək<nl/><nl/>Bu Wi-Fi və Bluetooth-u aktiv edəcək"
 
-#: contents/ui/Toolbar.qml:149
+#: Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Təyyarə rejimini aktiv etmək<nl/><nl/>Bu Wi-Fi və Bluetooth-u söndürəcək"
 
-#: contents/ui/Toolbar.qml:162
+#: Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "Qoşulma nöqtəsi"
 
-#: contents/ui/Toolbar.qml:179
+#: Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:181
+#: Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -209,34 +209,34 @@ msgstr ""
 "uzlaşdırıcısı artıq istifadə olunur. Hazırkı Wi-Fi şəbəkəsini ayırın və ya "
 "başqa simsiz uzlaşdırıcını qoşun."
 
-#: contents/ui/Toolbar.qml:183
+#: Toolbar.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Qoşulma nöqtəsini söndürmək"
 
-#: contents/ui/Toolbar.qml:185
+#: Toolbar.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Qoşulma nöqtəsi yaratmaq"
 
-#: contents/ui/Toolbar.qml:219
+#: Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Şəbəkə bağlantılarını tənzimləyin..."
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:111
+#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
 msgstr "/san"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr "Göndərmə"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr "Yükləmə"

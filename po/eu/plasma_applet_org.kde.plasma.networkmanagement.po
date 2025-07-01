@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:44+0000\n"
+"POT-Creation-Date: 2025-07-01 00:43+0000\n"
 "PO-Revision-Date: 2025-06-24 12:39+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -20,37 +20,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.04.2\n"
 
-#: contents/ui/ConnectionItem.qml:59
+#: ConnectionItem.qml:59
 #, kde-format
 msgid "Connect"
 msgstr "Konektatu"
 
-#: contents/ui/ConnectionItem.qml:59
+#: ConnectionItem.qml:59
 #, kde-format
 msgid "Disconnect"
 msgstr "Deskonektatu"
 
-#: contents/ui/ConnectionItem.qml:84
+#: ConnectionItem.qml:84
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Erakutsi sarearen QR kodea"
 
-#: contents/ui/ConnectionItem.qml:90
+#: ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "Konfiguratu..."
 
-#: contents/ui/ConnectionItem.qml:130
+#: ConnectionItem.qml:130
 #, kde-format
 msgid "Speed"
 msgstr "Abiadura"
 
-#: contents/ui/ConnectionItem.qml:135
+#: ConnectionItem.qml:135
 #, kde-format
 msgid "Details"
 msgstr "Xehetasunak"
 
-#: contents/ui/ConnectionItem.qml:182
+#: ConnectionItem.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -60,147 +60,147 @@ msgstr ""
 "Uneko zama-jaiste abiadura %1 kibibyte segundokoa da; uneko zama-igotze "
 "abiadura %2 kibibyte segundokoa da"
 
-#: contents/ui/ConnectionItem.qml:292
+#: ConnectionItem.qml:292
 #, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
 msgstr "↓ %1/s, ↑ %2/s"
 
-#: contents/ui/ConnectionListPage.qml:33
+#: ConnectionListPage.qml:33
 #, kde-format
 msgid "You need to log in to this network"
 msgstr "Sare horretan saio-hasi behar duzu"
 
-#: contents/ui/ConnectionListPage.qml:37
+#: ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "Hasi saioa"
 
-#: contents/ui/ConnectionListPage.qml:117
+#: ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Hegaldi modua gaituta dago"
 
-#: contents/ui/ConnectionListPage.qml:121
+#: ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "Hari gabeko eta mugikorreko sareak desaktibatuta daude"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "Hari gabekoa deskonektatuta dago"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: ConnectionListPage.qml:126
 #, kde-format
 msgid "Looking for wireless networks"
 msgstr "Haririk gabeko sareak bilatzen"
 
-#: contents/ui/ConnectionListPage.qml:129
+#: ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "Mugikorreko sarea desaktibatuta dago"
 
-#: contents/ui/ConnectionListPage.qml:132
+#: ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "Ez dago bat datorrenik"
 
-#: contents/ui/ConnectionListPage.qml:135
+#: ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "Ez dago konexio erabilgarririk"
 
-#: contents/ui/DetailsText.qml:49
+#: DetailsText.qml:49
 #, kde-format
 msgid "Copy"
 msgstr "Kopiatu"
 
-#: contents/ui/main.qml:32
+#: main.qml:32
 #, kde-format
 msgid "Networks"
 msgstr "Sareak"
 
-#: contents/ui/main.qml:41
+#: main.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Erdiko klik «Hegaldi modua» modua itzaltzeko"
 
-#: contents/ui/main.qml:43
+#: main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Erdiko klik «Hegaldi modua» pizteko"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
+#: main.qml:71 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Gaitu Wi-Fi"
 
-#: contents/ui/main.qml:82
+#: main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Gaitu mugikorrerako sarea"
 
-#: contents/ui/main.qml:94
+#: main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Gaitu hegaldi modua"
 
-#: contents/ui/main.qml:106
+#: main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Ireki sarean saio-hasteko orria..."
 
-#: contents/ui/main.qml:116
+#: main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Konfiguratu sare-konexioak..."
 
-#: contents/ui/PopupDialog.qml:51
+#: PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Itzuli sare-konexioetara"
 
-#: contents/ui/ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "Eskaneatu QR kode hori beste gailu batekin \"%1\" sarera konektatzeko."
 
-#: contents/ui/Toolbar.qml:123
+#: Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Gaitu mugikorrerako sarea"
 
-#: contents/ui/Toolbar.qml:148
+#: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Desgaitu hegaldi modua<nl/><nl/>Horrek Wi-Fi eta Bluetooth gaituko ditu"
 
-#: contents/ui/Toolbar.qml:149
+#: Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Gaitu hegaldi modua<nl/><nl/>Horrek Wi-Fi eta Bluetooth desgaituko ditu"
 
-#: contents/ui/Toolbar.qml:162
+#: Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "Berogunea"
 
-#: contents/ui/Toolbar.qml:179
+#: Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "Ezin da berogune bat sortu Wi-Fi ezgaituta dagoelako."
 
-#: contents/ui/Toolbar.qml:181
+#: Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -211,34 +211,34 @@ msgstr ""
 "direlako. Deskonektatu uneko Wi-Fi saretik edo konektatu beste haririk "
 "gabeko irrati-gailu bat."
 
-#: contents/ui/Toolbar.qml:183
+#: Toolbar.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Ezgaitu berogunea"
 
-#: contents/ui/Toolbar.qml:185
+#: Toolbar.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Sortu berogunea"
 
-#: contents/ui/Toolbar.qml:219
+#: Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Konfiguratu sare-konexioak..."
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:111
+#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr "Igo"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr "Jaitsi"

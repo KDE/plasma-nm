@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:44+0000\n"
+"POT-Creation-Date: 2025-07-01 00:43+0000\n"
 "PO-Revision-Date: 2023-07-30 12:10+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: contents/ui/ConnectionItem.qml:59
+#: ConnectionItem.qml:59
 #, kde-format
 msgid "Connect"
 msgstr "இணை "
 
-#: contents/ui/ConnectionItem.qml:59
+#: ConnectionItem.qml:59
 #, kde-format
 msgid "Disconnect"
 msgstr "இணைப்பை துண்டி"
 
-#: contents/ui/ConnectionItem.qml:84
+#: ConnectionItem.qml:84
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "பிணையத்தின் QR குறிமுறையைக் காட்டு"
 
-#: contents/ui/ConnectionItem.qml:90
+#: ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "அமை..."
 
-#: contents/ui/ConnectionItem.qml:130
+#: ConnectionItem.qml:130
 #, kde-format
 msgid "Speed"
 msgstr "வேகம்"
 
-#: contents/ui/ConnectionItem.qml:135
+#: ConnectionItem.qml:135
 #, kde-format
 msgid "Details"
 msgstr "விவரங்கள்"
 
-#: contents/ui/ConnectionItem.qml:182
+#: ConnectionItem.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57,146 +57,146 @@ msgstr ""
 "தற்போதைய பதிவிறக்க வேகம் நொடிக்கு %1 கிபிபைட்டுகள் ஆகும்; தற்போதைய பதிவேற்ற வேகம் "
 "நொடிக்கு %2 கிபிபைட்டுகள் ஆகும்"
 
-#: contents/ui/ConnectionItem.qml:292
+#: ConnectionItem.qml:292
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
 msgstr "இணைந்துள்ளது, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionListPage.qml:33
+#: ConnectionListPage.qml:33
 #, kde-format
 msgid "You need to log in to this network"
 msgstr "இப்பிணையத்தில் நுழைவுப்பதிவிட வேண்டும்"
 
-#: contents/ui/ConnectionListPage.qml:37
+#: ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "நுழை"
 
-#: contents/ui/ConnectionListPage.qml:117
+#: ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "விமான பயன்முறை இயங்குகிறது"
 
-#: contents/ui/ConnectionListPage.qml:121
+#: ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "அருகலை மற்றும் கைபேசி பிணையங்கள் முடங்கியுள்ளன"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "அருகலை முடங்கியுள்ளது"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: ConnectionListPage.qml:126
 #, kde-format
 msgid "Looking for wireless networks"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:129
+#: ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "கைபேசி பிணையம் முடங்கியுள்ளது"
 
-#: contents/ui/ConnectionListPage.qml:132
+#: ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "பொருத்தங்கள் இல்லை"
 
-#: contents/ui/ConnectionListPage.qml:135
+#: ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "பிணையங்கள் எதுவும் இல்லை"
 
-#: contents/ui/DetailsText.qml:49
+#: DetailsText.qml:49
 #, kde-format
 msgid "Copy"
 msgstr "நகலெடு"
 
-#: contents/ui/main.qml:32
+#: main.qml:32
 #, kde-format
 msgid "Networks"
 msgstr "பிணையங்கள்"
 
-#: contents/ui/main.qml:41
+#: main.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "விமானப் பயன்முறையை முடக்க நடு-கிளிக் செய்யுங்கள்"
 
-#: contents/ui/main.qml:43
+#: main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "விமானப் பயன்முறையை இயக்க நடு-கிளிக் செய்யுங்கள்"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
+#: main.qml:71 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "அருகலையை இயக்கு"
 
-#: contents/ui/main.qml:82
+#: main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "கைபேசி பிணையத்தை இயக்கு"
 
-#: contents/ui/main.qml:94
+#: main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "விமான பயன்முறையை இயக்கு"
 
-#: contents/ui/main.qml:106
+#: main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "பிணைய நுழைவு பக்கத்தை திற..."
 
-#: contents/ui/main.qml:116
+#: main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "பிணைய இணைப்புகளை &அமை…"
 
-#: contents/ui/PopupDialog.qml:51
+#: PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "பிணைய இணைப்புகளுக்கு திரும்பசெல்"
 
-#: contents/ui/ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "\"%1\" பிணையத்தில் இன்னொரு சாதனத்தை இணைக்க இப்படத்தை அச்சாதனத்தில் வருடவும்."
 
-#: contents/ui/Toolbar.qml:123
+#: Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "கைபேசி பிணையத்தை இயக்கு"
 
-#: contents/ui/Toolbar.qml:148
+#: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "விமான பயன்முறையை முடக்கு<nl/><nl/>இது Bluetooth மற்றும் அருகலையை இயக்கும்"
 
-#: contents/ui/Toolbar.qml:149
+#: Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "விமான பயன்முறையை இயக்கு<nl/><nl/>இது Bluetooth மற்றும் அருகலையை முடக்கும்"
 
-#: contents/ui/Toolbar.qml:162
+#: Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "ஹாட்ஸ்பாட்"
 
-#: contents/ui/Toolbar.qml:179
+#: Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:181
+#: Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -204,36 +204,36 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:183
+#: Toolbar.qml:183
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "ஹாட்ஸ்பாட்டை முடக்கு"
 
-#: contents/ui/Toolbar.qml:185
+#: Toolbar.qml:185
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "ஹாட்ஸ்பாட்டை உருவாக்கு"
 
-#: contents/ui/Toolbar.qml:219
+#: Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "பிணைய இணைப்புகளை அமை..."
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:111
+#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr "பதிவேற்றம்"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr "பதிவிறக்கம்"

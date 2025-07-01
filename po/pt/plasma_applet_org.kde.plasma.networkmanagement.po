@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknminternals\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:44+0000\n"
+"POT-Creation-Date: 2025-07-01 00:43+0000\n"
 "PO-Revision-Date: 2022-12-12 16:35+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -36,37 +36,37 @@ msgstr ""
 "X-POFile-SpellExtra: Infiniband NSP BSID roaming PH Edge HSxPA FSIM QR\n"
 "X-POFile-SpellExtra: kibibytes Wimax\n"
 
-#: contents/ui/ConnectionItem.qml:59
+#: ConnectionItem.qml:59
 #, kde-format
 msgid "Connect"
 msgstr "Ligar"
 
-#: contents/ui/ConnectionItem.qml:59
+#: ConnectionItem.qml:59
 #, kde-format
 msgid "Disconnect"
 msgstr "Desligar"
 
-#: contents/ui/ConnectionItem.qml:84
+#: ConnectionItem.qml:84
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "Mostrar o Código QR da Rede"
 
-#: contents/ui/ConnectionItem.qml:90
+#: ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "Configurar…"
 
-#: contents/ui/ConnectionItem.qml:130
+#: ConnectionItem.qml:130
 #, kde-format
 msgid "Speed"
 msgstr "Velocidade"
 
-#: contents/ui/ConnectionItem.qml:135
+#: ConnectionItem.qml:135
 #, kde-format
 msgid "Details"
 msgstr "Detalhes"
 
-#: contents/ui/ConnectionItem.qml:182
+#: ConnectionItem.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -76,149 +76,149 @@ msgstr ""
 "A velocidade actual de recepção é de %1 kibibytes por segundo; a velocidade "
 "de envio actual é de %2 kibibytes por segundo"
 
-#: contents/ui/ConnectionItem.qml:292
+#: ConnectionItem.qml:292
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
 msgstr "Ligada, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionListPage.qml:33
+#: ConnectionListPage.qml:33
 #, kde-format
 msgid "You need to log in to this network"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:37
+#: ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:117
+#: ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "O modo de avião está activo"
 
-#: contents/ui/ConnectionListPage.qml:121
+#: ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "As redes móveis e sem-fios estão desactivadas"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "A rede sem-fios está desactivada"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: ConnectionListPage.qml:126
 #, kde-format
 msgid "Looking for wireless networks"
 msgstr ""
 
-#: contents/ui/ConnectionListPage.qml:129
+#: ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "A rede móvel está desactivada"
 
-#: contents/ui/ConnectionListPage.qml:132
+#: ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "Sem correspondências"
 
-#: contents/ui/ConnectionListPage.qml:135
+#: ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "Sem ligações disponíveis"
 
-#: contents/ui/DetailsText.qml:49
+#: DetailsText.qml:49
 #, kde-format
 msgid "Copy"
 msgstr "Copiar"
 
-#: contents/ui/main.qml:32
+#: main.qml:32
 #, kde-format
 msgid "Networks"
 msgstr "Redes"
 
-#: contents/ui/main.qml:41
+#: main.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Carregue com o botão do meio para desactivar o Modo de Avião"
 
-#: contents/ui/main.qml:43
+#: main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Carregue com o botão do meio para activar o Modo de Avião"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
+#: main.qml:71 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activar o Wi-Fi"
 
-#: contents/ui/main.qml:82
+#: main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "Activar a Rede Móvel"
 
-#: contents/ui/main.qml:94
+#: main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Activar o Modo de Avião"
 
-#: contents/ui/main.qml:106
+#: main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Abrir a Página de Autenticação na Rede…"
 
-#: contents/ui/main.qml:116
+#: main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configurar as Ligações de Rede…"
 
-#: contents/ui/PopupDialog.qml:51
+#: PopupDialog.qml:51
 #, fuzzy, kde-format
 #| msgid "&Configure Network Connections…"
 msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "&Configurar as Ligações de Rede…"
 
-#: contents/ui/ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:123
+#: Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "Activar a rede móvel"
 
-#: contents/ui/Toolbar.qml:148
+#: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Desactiva o modo de avião<nl/><nl/>Isto irá activar o Wi-Fi e o Bluetooth"
 
-#: contents/ui/Toolbar.qml:149
+#: Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Activa o modo de avião<nl/><nl/>Isto irá desactivar o Wi-Fi e o Bluetooth"
 
-#: contents/ui/Toolbar.qml:162
+#: Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "Ponto de Acesso"
 
-#: contents/ui/Toolbar.qml:179
+#: Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:181
+#: Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -226,36 +226,36 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:183
+#: Toolbar.qml:183
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Desactivar o Ponto de Acesso"
 
-#: contents/ui/Toolbar.qml:185
+#: Toolbar.qml:185
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Criar um Ponto de Acesso"
 
-#: contents/ui/Toolbar.qml:219
+#: Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configurar as ligações de rede…"
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:111
+#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
 msgstr "/s"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr "Enviar"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr "Obter"

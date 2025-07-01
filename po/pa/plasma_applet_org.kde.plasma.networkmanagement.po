@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:44+0000\n"
+"POT-Creation-Date: 2025-07-01 00:43+0000\n"
 "PO-Revision-Date: 2023-12-26 09:17-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -17,37 +17,37 @@ msgstr ""
 "X-Generator: Lokalize 23.08.4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: contents/ui/ConnectionItem.qml:59
+#: ConnectionItem.qml:59
 #, kde-format
 msgid "Connect"
 msgstr "ਕਨੈਕਟ"
 
-#: contents/ui/ConnectionItem.qml:59
+#: ConnectionItem.qml:59
 #, kde-format
 msgid "Disconnect"
 msgstr "ਡਿਸ-ਕਨੈਕਟ"
 
-#: contents/ui/ConnectionItem.qml:84
+#: ConnectionItem.qml:84
 #, kde-format
 msgid "Show Network's QR Code"
 msgstr "ਨੈੱਟਵਰਕ ਦਾ QR ਕੋਡ ਵੇਖਾਓ"
 
-#: contents/ui/ConnectionItem.qml:90
+#: ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
 msgstr "…ਸੰਰਚਨਾ"
 
-#: contents/ui/ConnectionItem.qml:130
+#: ConnectionItem.qml:130
 #, kde-format
 msgid "Speed"
 msgstr "ਸਪੀਡ"
 
-#: contents/ui/ConnectionItem.qml:135
+#: ConnectionItem.qml:135
 #, kde-format
 msgid "Details"
 msgstr "ਵੇਰਵੇ"
 
-#: contents/ui/ConnectionItem.qml:182
+#: ConnectionItem.qml:182
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57,147 +57,147 @@ msgstr ""
 "ਮੌਜੂਦਾ ਡਾਊਨਲੋਡ ਸਪੀਡ %1 ਕਿਬੀਬਾਈਟ ਪ੍ਰਤੀ ਸਕਿੰਟ ਹੈ; ਮੌਜੂਦਾ ਅੱਪਲੋਡ ਸਪੀਡ %2 ਕਿਬੀਬਾਈਟ ਪ੍ਰਤੀ "
 "ਸਕਿੰਟ ਹੈ"
 
-#: contents/ui/ConnectionItem.qml:292
+#: ConnectionItem.qml:292
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
 msgstr "ਕਨੈਕਟ ਹੈ, ⬇ %1/s, ⬆ %2/s"
 
-#: contents/ui/ConnectionListPage.qml:33
+#: ConnectionListPage.qml:33
 #, kde-format
 msgid "You need to log in to this network"
 msgstr "ਇਸ ਨੈੱਟਵਰਕ ਲਈ ਤੁਹਾਨੂੰ ਲਾਗਇਨ ਕਰਨਾ ਪਵੇਗਾ"
 
-#: contents/ui/ConnectionListPage.qml:37
+#: ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
 msgstr "ਲਾਗ ਇਨ"
 
-#: contents/ui/ConnectionListPage.qml:117
+#: ConnectionListPage.qml:117
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "ਏਅਰਪਲਾਨ ਢੰਗ ਸਮਰੱਥ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:121
+#: ConnectionListPage.qml:121
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
 msgstr "ਬੇਤਾਰ ਅਤੇ ਬੇਤਾਰ ਨੈੱਟਵਰਕ ਨਾ-ਸਰਗਰਮ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:123
+#: ConnectionListPage.qml:123
 #, kde-format
 msgid "Wireless is deactivated"
 msgstr "ਬੇਤਾਰ ਨਾ-ਸਰਗਰਮ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:126
+#: ConnectionListPage.qml:126
 #, fuzzy, kde-format
 #| msgid "Rescan wireless networks"
 msgid "Looking for wireless networks"
 msgstr "ਬੇਤਾਰ ਨੈੱਟਵਰਕਾਂ ਦੀ ਮੁੜ-ਜਾਂਚ ਕਰੋ"
 
-#: contents/ui/ConnectionListPage.qml:129
+#: ConnectionListPage.qml:129
 #, kde-format
 msgid "Mobile network is deactivated"
 msgstr "ਮੋਬਾਈਲ ਨੈੱਟਵਰਕ ਨਾ-ਸਰਗਰਮ ਹੈ"
 
-#: contents/ui/ConnectionListPage.qml:132
+#: ConnectionListPage.qml:132
 #, kde-format
 msgid "No matches"
 msgstr "ਕੋਈ ਮੇਲ ਨਹੀਂ"
 
-#: contents/ui/ConnectionListPage.qml:135
+#: ConnectionListPage.qml:135
 #, kde-format
 msgid "No available connections"
 msgstr "ਕੋਈ ਕਨੈਕਸ਼ਨ ਉਪਲਬਧ ਨਹੀਂ ਹਨ"
 
-#: contents/ui/DetailsText.qml:49
+#: DetailsText.qml:49
 #, kde-format
 msgid "Copy"
 msgstr "ਕਾਪੀ ਕਰੋ"
 
-#: contents/ui/main.qml:32
+#: main.qml:32
 #, kde-format
 msgid "Networks"
 msgstr "ਨੈੱਟਵਰਕ"
 
-#: contents/ui/main.qml:41
+#: main.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "ਏਅਰ-ਪਲੇਨ ਮੋਡ ਨੂੰ ਬੰਦ ਕਰਨ ਲਈ ਮਿਡਲ-ਕਲਿੱਕ ਕਰੋ"
 
-#: contents/ui/main.qml:43
+#: main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "ਏਅਰ-ਪਲੇਨ ਮੋਡ ਨੂੰ ਚਾਲੂ ਕਰਨ ਲਈ ਮਿਡਲ-ਕਲਿੱਕ ਕਰੋ"
 
-#: contents/ui/main.qml:71 contents/ui/Toolbar.qml:74
+#: main.qml:71 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "ਵਾਈ-ਫਾਈ ਸਮਰੱਥ ਕਰੋ"
 
-#: contents/ui/main.qml:82
+#: main.qml:82
 #, kde-format
 msgid "Enable Mobile Network"
 msgstr "ਮੋਬਾਈਲ ਨੈੱਟਵਰਕ ਸਮਰੱਥ ਕਰੋ"
 
-#: contents/ui/main.qml:94
+#: main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "ਏਅਰਪਲੇਨ ਮੋਡ ਸਮਰੱਥ ਕਰੋ"
 
-#: contents/ui/main.qml:106
+#: main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "ਨੈੱਟਵਰਕ ਲਾਗਇਨ ਸਫ਼ਾ ਖੋਲ੍ਹੋ…"
 
-#: contents/ui/main.qml:116
+#: main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "…ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਦੀ ਸੰਰਚਨਾ(&C)"
 
-#: contents/ui/PopupDialog.qml:51
+#: PopupDialog.qml:51
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਉੱਤੇ ਵਾਪਸ ਜਾਓ"
 
-#: contents/ui/ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "ਹੋਰ ਡਿਵਾਈਸ ਤੋਂ \"%1\" ਨੈੱਟਵਰਕ ਨਾਲ ਕਨੈਕਟ ਕਰਨ ਲਈ ਇਹ QR ਕੋਡ ਸਕੈਨ ਕਰੋ।"
 
-#: contents/ui/Toolbar.qml:123
+#: Toolbar.qml:123
 #, kde-format
 msgid "Enable mobile network"
 msgstr "ਮੋਬਾਈਲ ਨੈੱਟਵਰਕ ਸਮਰੱਥ ਕਰੋ"
 
-#: contents/ui/Toolbar.qml:148
+#: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "ਏਅਰਪਲੇਨ ਢੰਗ ਅਸਮਰੱਥ ਹੈ<nl/><nl/>ਇਹ ਵਾਈ-ਫਾਈ ਅਤੇ ਬਲੂਟੁੱਥ ਸਮਰੱਥ ਹੋਣਗੇ"
 
-#: contents/ui/Toolbar.qml:149
+#: Toolbar.qml:149
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "ਏਅਰਪਲੇਨ ਢੰਗ ਸਮਰੱਥ ਹੈ<nl/><nl/>ਇਹ ਵਾਈ-ਫਾਈ ਅਤੇ ਬਲੂਟੁੱਥ ਅਸਮਰੱਥ ਹੋਣਗੇ"
 
-#: contents/ui/Toolbar.qml:162
+#: Toolbar.qml:162
 #, kde-format
 msgid "Hotspot"
 msgstr "ਹਾਟਸਪਾਟ"
 
-#: contents/ui/Toolbar.qml:179
+#: Toolbar.qml:179
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:181
+#: Toolbar.qml:181
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -205,36 +205,36 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: contents/ui/Toolbar.qml:183
+#: Toolbar.qml:183
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "ਹਾਟਸਪਾਟ ਅਸਮਰੱਥ ਕਰੋ"
 
-#: contents/ui/Toolbar.qml:185
+#: Toolbar.qml:185
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "ਹਾਟ-ਸਪਾਟ ਬਣਾਓ"
 
-#: contents/ui/Toolbar.qml:219
+#: Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
 msgstr "…ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਦੀ ਸੰਰਚਨਾ"
 
-#: contents/ui/TrafficMonitor.qml:37 contents/ui/TrafficMonitor.qml:111
+#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
 #, kde-format
 msgid "/s"
 msgstr "/ਸ"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: TrafficMonitor.qml:89
 #, kde-format
 msgid "Upload"
 msgstr "ਅੱਪਲੋਡ"
 
-#: contents/ui/TrafficMonitor.qml:89
+#: TrafficMonitor.qml:89
 #, kde-format
 msgid "Download"
 msgstr "ਡਾਊਨਲੋਡ"

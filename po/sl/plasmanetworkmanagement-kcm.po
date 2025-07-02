@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:44+0000\n"
+"POT-Creation-Date: 2025-07-02 07:07+0000\n"
 "PO-Revision-Date: 2025-06-10 06:48+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -161,32 +161,32 @@ msgstr ""
 "naslednjega:<ul><li>Natančno 5 ali 13 poljubnih znakov</li><li>Natančno 10 "
 "ali 26 šestnajstiških znakov:<br/>abcdef, ABCDEF ali 0- 9</li></ul>"
 
-#: qml/ConnectionItem.qml:70
+#: qml/ConnectionItem.qml:71
 msgid "Connect"
 msgstr "Poveži se"
 
-#: qml/ConnectionItem.qml:70
+#: qml/ConnectionItem.qml:71
 msgid "Disconnect"
 msgstr "Prekini povezavo"
 
-#: qml/ConnectionItem.qml:81
+#: qml/ConnectionItem.qml:82
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "S tem omrežjem se ni mogoče povezati, ker ni bilo zaznano."
 
-#: qml/ConnectionItem.qml:86
+#: qml/ConnectionItem.qml:87
 msgid "Delete"
 msgstr "Izbriši"
 
-#: qml/ConnectionItem.qml:96
+#: qml/ConnectionItem.qml:97
 msgid "Export"
 msgstr "Izvozi"
 
-#: qml/ConnectionItem.qml:106
+#: qml/ConnectionItem.qml:111
 msgid "Connected"
 msgstr "Povezano"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:113
 msgid "Connecting"
 msgstr "Povezovanje"
 

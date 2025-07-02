@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:44+0000\n"
+"POT-Creation-Date: 2025-07-02 07:07+0000\n"
 "PO-Revision-Date: 2025-06-10 09:11+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -161,33 +161,33 @@ msgstr ""
 "<ul><li>Складатися з 5 або 13 довільних символів</li><li>Складатися з 10 або "
 "26 шістнадцяткових цифр:<br/>abcdef, ABCDEF або 0-9</li></ul>"
 
-#: qml/ConnectionItem.qml:70
+#: qml/ConnectionItem.qml:71
 msgid "Connect"
 msgstr "З’єднатися"
 
-#: qml/ConnectionItem.qml:70
+#: qml/ConnectionItem.qml:71
 msgid "Disconnect"
 msgstr "Роз’єднати"
 
-#: qml/ConnectionItem.qml:81
+#: qml/ConnectionItem.qml:82
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr ""
 "Неможливо встановити з'єднання з цією мережею, оскільки її не було виявлено."
 
-#: qml/ConnectionItem.qml:86
+#: qml/ConnectionItem.qml:87
 msgid "Delete"
 msgstr "Вилучити"
 
-#: qml/ConnectionItem.qml:96
+#: qml/ConnectionItem.qml:97
 msgid "Export"
 msgstr "Експортувати"
 
-#: qml/ConnectionItem.qml:106
+#: qml/ConnectionItem.qml:111
 msgid "Connected"
 msgstr "З’єднано"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:113
 msgid "Connecting"
 msgstr "Встановлюємо з’єднатися"
 

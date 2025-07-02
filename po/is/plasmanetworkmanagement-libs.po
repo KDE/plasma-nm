@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:44+0000\n"
+"POT-Creation-Date: 2025-07-02 07:07+0000\n"
 "PO-Revision-Date: 2025-04-18 13:17+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -2075,7 +2075,7 @@ msgstr "Fjarlægja þennan jafningja"
 msgid "%1 (%2 MHz)"
 msgstr "%1 (%2 MHz)"
 
-#: editor/settings/wireguardpeerwidget.cpp:71
+#: editor/settings/wireguardpeerwidget.cpp:72
 #: editor/settings/wireguardtabwidget.cpp:59
 #, kde-format
 msgctxt "@title: window wireguard peers properties"

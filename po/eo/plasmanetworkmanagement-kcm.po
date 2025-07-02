@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:44+0000\n"
+"POT-Creation-Date: 2025-07-02 07:07+0000\n"
 "PO-Revision-Date: 2024-12-28 17:41+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -159,32 +159,32 @@ msgstr ""
 "<ul><li>Ekzakte 5 aŭ 13 de ajn signoj</li><li>Ekzakte 10 aŭ 26 deksesumaj "
 "signoj:<br/>abcdef, ABCDEF aŭ 0-9</li></ul>"
 
-#: qml/ConnectionItem.qml:70
+#: qml/ConnectionItem.qml:71
 msgid "Connect"
 msgstr "Konekti"
 
-#: qml/ConnectionItem.qml:70
+#: qml/ConnectionItem.qml:71
 msgid "Disconnect"
 msgstr "Malkonekti"
 
-#: qml/ConnectionItem.qml:81
+#: qml/ConnectionItem.qml:82
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr ""
 
-#: qml/ConnectionItem.qml:86
+#: qml/ConnectionItem.qml:87
 msgid "Delete"
 msgstr "Forigi"
 
-#: qml/ConnectionItem.qml:96
+#: qml/ConnectionItem.qml:97
 msgid "Export"
 msgstr "Eksporto"
 
-#: qml/ConnectionItem.qml:106
+#: qml/ConnectionItem.qml:111
 msgid "Connected"
 msgstr "Konektis"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:113
 msgid "Connecting"
 msgstr "Konektante"
 

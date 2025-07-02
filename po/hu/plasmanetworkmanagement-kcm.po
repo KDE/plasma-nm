@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:44+0000\n"
+"POT-Creation-Date: 2025-07-02 07:07+0000\n"
 "PO-Revision-Date: 2025-01-26 21:07+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -159,32 +159,32 @@ msgstr ""
 "<ul><li>Pontosan 5 vagy 13 karakter</li><li>Pontosan 10 vagy 26 "
 "hexadecimális karakter:<br/>abcdef, ABCDEF vagy 0-9</li></ul>"
 
-#: qml/ConnectionItem.qml:70
+#: qml/ConnectionItem.qml:71
 msgid "Connect"
 msgstr "Csatlakozás"
 
-#: qml/ConnectionItem.qml:70
+#: qml/ConnectionItem.qml:71
 msgid "Disconnect"
 msgstr "Lecsatlakozás"
 
-#: qml/ConnectionItem.qml:81
+#: qml/ConnectionItem.qml:82
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr ""
 
-#: qml/ConnectionItem.qml:86
+#: qml/ConnectionItem.qml:87
 msgid "Delete"
 msgstr "Törlés"
 
-#: qml/ConnectionItem.qml:96
+#: qml/ConnectionItem.qml:97
 msgid "Export"
 msgstr "Exportálás"
 
-#: qml/ConnectionItem.qml:106
+#: qml/ConnectionItem.qml:111
 msgid "Connected"
 msgstr "Kapcsolódva"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:113
 msgid "Connecting"
 msgstr "Kapcsolódás"
 

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-10 00:44+0000\n"
+"POT-Creation-Date: 2025-07-02 07:07+0000\n"
 "PO-Revision-Date: 2025-06-10 12:27+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -159,32 +159,32 @@ msgstr ""
 "siguientes:<ul><li>Exactamente 5 o 13 caracteres</li><li>Exactamente 10 o 26 "
 "caracteres hexadecimales:<br/>abcdef, ABCDEF o 0123456789</li></ul>"
 
-#: qml/ConnectionItem.qml:70
+#: qml/ConnectionItem.qml:71
 msgid "Connect"
 msgstr "Conectar"
 
-#: qml/ConnectionItem.qml:70
+#: qml/ConnectionItem.qml:71
 msgid "Disconnect"
 msgstr "Desconectar"
 
-#: qml/ConnectionItem.qml:81
+#: qml/ConnectionItem.qml:82
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "No se puede conectar a esta red porque no ha sido detectada."
 
-#: qml/ConnectionItem.qml:86
+#: qml/ConnectionItem.qml:87
 msgid "Delete"
 msgstr "Borrar"
 
-#: qml/ConnectionItem.qml:96
+#: qml/ConnectionItem.qml:97
 msgid "Export"
 msgstr "Exportar"
 
-#: qml/ConnectionItem.qml:106
+#: qml/ConnectionItem.qml:111
 msgid "Connected"
 msgstr "Conectado"
 
-#: qml/ConnectionItem.qml:108
+#: qml/ConnectionItem.qml:113
 msgid "Connecting"
 msgstr "Conectando"
 

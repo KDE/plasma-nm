@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-06-24 00:44+0000\n"
+"POT-Creation-Date: 2025-07-02 07:07+0000\n"
 "PO-Revision-Date: 2025-06-24 06:06+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -2063,7 +2063,7 @@ msgstr "הסרת העמית הזה"
 msgid "%1 (%2 MHz)"
 msgstr "%1 (%2 מה״ץ)"
 
-#: editor/settings/wireguardpeerwidget.cpp:71
+#: editor/settings/wireguardpeerwidget.cpp:72
 #: editor/settings/wireguardtabwidget.cpp:59
 #, kde-format
 msgctxt "@title: window wireguard peers properties"

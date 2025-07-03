@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 07:07+0000\n"
+"POT-Creation-Date: 2025-07-03 06:58+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -279,20 +279,20 @@ msgctxt "Header text for IPv4 gateway"
 msgid "Gateway"
 msgstr "द्वारम्"
 
-#: editor/settings/ipv4widget.cpp:271 editor/settings/ipv6widget.cpp:262
+#: editor/settings/ipv4widget.cpp:267 editor/settings/ipv6widget.cpp:258
 #, kde-format
 msgid "Other DNS Servers:"
 msgstr "अन्ये DNS सर्वराः :"
 
-#: editor/settings/ipv4widget.cpp:283 editor/settings/ipv4widget.cpp:295
-#: editor/settings/ipv4widget.cpp:307 editor/settings/ipv4widget.cpp:319
-#: editor/settings/ipv6widget.cpp:274 editor/settings/ipv6widget.cpp:286
-#: editor/settings/ipv6widget.cpp:298 editor/settings/ipv6widget.cpp:310
+#: editor/settings/ipv4widget.cpp:280 editor/settings/ipv4widget.cpp:293
+#: editor/settings/ipv4widget.cpp:306 editor/settings/ipv4widget.cpp:319
+#: editor/settings/ipv6widget.cpp:271 editor/settings/ipv6widget.cpp:284
+#: editor/settings/ipv6widget.cpp:297 editor/settings/ipv6widget.cpp:310
 #, kde-format
 msgid "DNS Servers:"
 msgstr "DNS सर्वरः :"
 
-#: editor/settings/ipv4widget.cpp:420
+#: editor/settings/ipv4widget.cpp:421
 #, kde-format
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
@@ -304,39 +304,39 @@ msgstr ""
 "developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome."
 "org/NetworkManager/stable/ch01.htmlnm-सेटिंग्स्-nmcli.html इति</a></qt>"
 
-#: editor/settings/ipv4widget.cpp:430
+#: editor/settings/ipv4widget.cpp:431
 #, kde-format
 msgid "Send hostname:"
 msgstr "होस्टनाम प्रेषयन्तु :"
 
-#: editor/settings/ipv4widget.cpp:435
+#: editor/settings/ipv4widget.cpp:436
 #, kde-format
 msgid "DHCP hostname:"
 msgstr "DHCP होस्टनाम: 1.1."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:194
+#: editor/settings/ipv4widget.cpp:441 editor/settings/ui/ipv6.ui:194
 #, kde-format
 msgid "Default"
 msgstr "मूलभूतम्‌"
 
-#: editor/settings/ipv4widget.cpp:441
+#: editor/settings/ipv4widget.cpp:442
 #, kde-format
 msgctxt "Milliseconds"
 msgid " ms"
 msgstr " ms"
 
-#: editor/settings/ipv4widget.cpp:444
+#: editor/settings/ipv4widget.cpp:445
 #, kde-format
 msgid "DAD timeout:"
 msgstr "DAD समयसमाप्तिः :"
 
-#: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:405
+#: editor/settings/ipv4widget.cpp:466 editor/settings/ipv6widget.cpp:406
 #, kde-format
 msgid "Edit DNS servers"
 msgstr "DNS सर्वर सम्पादयन्तु"
 
-#: editor/settings/ipv4widget.cpp:490 editor/settings/ipv6widget.cpp:430
+#: editor/settings/ipv4widget.cpp:491 editor/settings/ipv6widget.cpp:431
 #, kde-format
 msgid "Edit DNS search domains"
 msgstr "DNS अन्वेषणक्षेत्राणि सम्पादयन्तु"
@@ -854,7 +854,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:306
+#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:354
 #, kde-format
 msgid "Advanced…"
 msgstr "उन्नतं…"
@@ -1104,20 +1104,40 @@ msgstr ""
 "स्थानीययन्त्रं चिन्तयितुं यत् DHCP सर्वरः DHCP अनुकूलनार्थं उपयोक्तुं शक्नोति\n"
 "पट्टे विकल्पाः च।"
 
+#. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
+#: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
+#, fuzzy, kde-format
+#| msgctxt "Header text for IPv4 route metric"
+#| msgid "Metric"
+msgid "Route Metric:"
+msgstr "मेट्रिक"
+
+#. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
+#: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
+#, kde-format
+msgid ""
+"A score that helps choose the best path for data packets to reach their "
+"destination,\n"
+"based on factors like distance, delay, and reliability.\n"
+"\n"
+"Default value -1 means that NetworkManager gets to choose and manage the "
+"actual metric of the route."
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
-#: editor/settings/ui/ipv4.ui:213 editor/settings/ui/ipv6.ui:97
+#: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97
 #, kde-format
 msgid "Remove"
 msgstr "अपाकरोति"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/ipv4.ui:223 editor/settings/ui/ipv6.ui:107
+#: editor/settings/ui/ipv4.ui:271 editor/settings/ui/ipv6.ui:107
 #, kde-format
 msgid "Add"
 msgstr "संयोजयति"
 
 #. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
-#: editor/settings/ui/ipv4.ui:240 editor/settings/ui/ipv6.ui:124
+#: editor/settings/ui/ipv4.ui:288 editor/settings/ui/ipv6.ui:124
 #: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
 #, kde-format
 msgid ""
@@ -1129,7 +1149,7 @@ msgstr ""
 "एकं IP-सङ्केतं"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:278
+#: editor/settings/ui/ipv4.ui:326
 #, kde-format
 msgid ""
 "Allows the connection to complete if IPv4 configuration fails\n"
@@ -1139,13 +1159,13 @@ msgstr ""
 "परन्तु IPv6 विन्यासः सफलः भवति"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:281
+#: editor/settings/ui/ipv4.ui:329
 #, kde-format
 msgid "IPv4 is required for this connection"
 msgstr "अस्य संयोजनस्य कृते IPv4 आवश्यकम् अस्ति"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
-#: editor/settings/ui/ipv4.ui:331 editor/settings/ui/ipv6.ui:316
+#: editor/settings/ui/ipv4.ui:379 editor/settings/ui/ipv6.ui:316
 #, kde-format
 msgid "Routes…"
 msgstr "मार्गाः..."

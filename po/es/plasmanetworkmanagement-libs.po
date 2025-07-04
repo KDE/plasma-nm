@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:58+0000\n"
-"PO-Revision-Date: 2025-06-25 02:00+0100\n"
+"PO-Revision-Date: 2025-07-03 12:37+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1109,11 +1109,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Métrico"
+msgstr "Métrica de la ruta:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -1126,6 +1124,13 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Una marca que ayuda a escoger la mejor ruta para que los paquetes de datos "
+"lleguen a\n"
+"su destino, basada en factores como la distancia, la demora y la "
+"fiabilidad.\n"
+"\n"
+"El valor predeterminado -1 indica que NetworkManager puede elegir y "
+"gestionar la métrica real de la ruta."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:58+0000\n"
-"PO-Revision-Date: 2025-06-24 12:00+0200\n"
+"PO-Revision-Date: 2025-07-03 13:49+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -1107,11 +1107,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Metrisch"
+msgstr "Metrische route:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -1124,6 +1122,12 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Een score die helpt bij het kiezen van het beste pad voor gegevenspakketten "
+"om hun bestemming te bereiken,\n"
+"gebaseerd op factoren zoals afstand, vertraging en betrouwbaarheid.\n"
+"\n"
+"Standaard waarde -1 betekent dat NetworkManager de actuele metriek van de "
+"route mag kiezen en beheren."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97

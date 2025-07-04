@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:58+0000\n"
-"PO-Revision-Date: 2025-06-24 11:56+0200\n"
+"PO-Revision-Date: 2025-07-03 16:18+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -1114,11 +1114,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Mètrica"
+msgstr "Mètrica d'encaminament:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -1131,6 +1129,12 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Una puntuació que ajuda a triar el camí millor perquè els paquets de dades "
+"arriben a la seua destinació,\n"
+"basat en factors com la distància, el retard i la fiabilitat.\n"
+"\n"
+"El valor predeterminat -1 significa que NetworkManager pot triar i gestionar "
+"la mètrica real del camí."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97
@@ -1906,8 +1910,7 @@ msgid ""
 msgstr ""
 "Opcional.\n"
 "Si no s'especifica, la MTU es determina automàticament\n"
-"a partir de l'adreça del punt final o de la ruta predeterminada del "
-"sistema,\n"
+"a partir de l'adreça del punt final o del camí predeterminat del sistema,\n"
 "que normalment és una elecció correcta. Tanmateix, per a especificar\n"
 "manualment una MTU i superposar este descobriment automàtic,\n"
 "este valor es pot especificar explícitament."
@@ -1916,7 +1919,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:108
 #, kde-format
 msgid "Autoroute peers:"
-msgstr "Parells de les rutes automàtiques:"
+msgstr "Parells dels camins automàtics:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:116
@@ -1925,7 +1928,7 @@ msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
 msgstr ""
-"Si cal afegir automàticament rutes per als intervals de les «AllowedIP»\n"
+"Si cal afegir automàticament camins per als intervals de les «AllowedIP»\n"
 "dels parells."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)

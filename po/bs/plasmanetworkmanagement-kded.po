@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2015-02-16 12:48+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -608,6 +608,18 @@ msgstr "Molim dajte lozinku za aktiviranje konekcije '%1'"
 msgid "VPN secrets (%1) dialog"
 msgstr "VPN tajne (%1)"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
+#: passworddialog.ui:26
+#, kde-format
+msgid "Password dialog"
+msgstr "Dijalog za lozinku"
+
+#. i18n: ectx: property (text), widget (QLabel, labelPass)
+#: passworddialog.ui:92
+#, kde-format
+msgid "Password:"
+msgstr "Šifra:"
+
 #: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
@@ -666,7 +678,8 @@ msgstr ""
 msgid "%1 code:"
 msgstr "%1 koda:"
 
-#: pindialog.cpp:85
+#. i18n: ectx: property (text), widget (QLabel, pinLabel)
+#: pindialog.cpp:85 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "Novi PIN kod:"
@@ -676,7 +689,8 @@ msgstr "Novi PIN kod:"
 msgid "Re-enter new PIN code:"
 msgstr "Ponovo unesite novi PIN kod:"
 
-#: pindialog.cpp:87
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: pindialog.cpp:87 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "Prikaži PIN/PUK kod"
@@ -746,34 +760,40 @@ msgstr "PUK kod je prekratak. Treba biti barem 8 cifara."
 msgid "Unknown Error"
 msgstr "Nepoznata Greška"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
+#. i18n: ectx: property (text), widget (QLabel, title)
+#: pinwidget.ui:14 pinwidget.ui:47
+#, kde-format
+msgid "SIM PIN unlock required"
+msgstr "Potrebno je otključati SIM PIN"
+
+#. i18n: ectx: property (text), widget (QLabel, prompt)
+#: pinwidget.ui:76
+#, no-c-format, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr ""
+"Mobilni širokopojasni uređaj '%1' zahtijeva SIM PIN kod prije nego se može "
+"koristiti."
+
+#. i18n: ectx: property (text), widget (QLabel, pukLabel)
+#: pinwidget.ui:133
+#, fuzzy, kde-format
+msgid "PUK code:"
+msgstr "PUK kod:"
+
+#. i18n: ectx: property (text), widget (QLabel, pin2Label)
+#: pinwidget.ui:173
+#, kde-format
+msgid "Re-enter PIN code:"
+msgstr "Ponovo unesi PIN kod:"
+
 #: secretagent.cpp:406
 #, fuzzy, kde-format
 #| msgid "Authentication to the VPN server failed."
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Autentifikacija na VPN serveru nije uspjela."
-
-#~ msgid "Password dialog"
-#~ msgstr "Dijalog za lozinku"
-
-#~ msgid "Password:"
-#~ msgstr "Šifra:"
-
-#~ msgid "SIM PIN unlock required"
-#~ msgstr "Potrebno je otključati SIM PIN"
-
-#~ msgid ""
-#~ "The mobile broadband device '%1' requires a SIM PIN code before it can be "
-#~ "used."
-#~ msgstr ""
-#~ "Mobilni širokopojasni uređaj '%1' zahtijeva SIM PIN kod prije nego se "
-#~ "može koristiti."
-
-#, fuzzy
-#~ msgid "PUK code:"
-#~ msgstr "PUK kod:"
-
-#~ msgid "Re-enter PIN code:"
-#~ msgstr "Ponovo unesi PIN kod:"
 
 #~ msgid "VPN connection '%1' failed."
 #~ msgstr "VPN konekcija '%1' neuspješna."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2022-12-30 03:35+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -581,6 +581,18 @@ msgstr "შეიყვანეთ პაროლი VPN შეერთებ
 msgid "VPN secrets (%1) dialog"
 msgstr "VPN-ის პაროლების (%1) ფანჯარა"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
+#: passworddialog.ui:26
+#, kde-format
+msgid "Password dialog"
+msgstr "პაროლის ფანჯარა"
+
+#. i18n: ectx: property (text), widget (QLabel, labelPass)
+#: passworddialog.ui:92
+#, kde-format
+msgid "Password:"
+msgstr "პაროლი:"
+
 #: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
@@ -638,7 +650,8 @@ msgstr ""
 msgid "%1 code:"
 msgstr "%1 კოდი:"
 
-#: pindialog.cpp:85
+#. i18n: ectx: property (text), widget (QLabel, pinLabel)
+#: pindialog.cpp:85 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "ახალი PIN კოდი:"
@@ -648,7 +661,8 @@ msgstr "ახალი PIN კოდი:"
 msgid "Re-enter new PIN code:"
 msgstr "ახალი PIN კოდი ხელახლა:"
 
-#: pindialog.cpp:87
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: pindialog.cpp:87 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "PIN/PUK კოდის ჩვენება"
@@ -718,29 +732,35 @@ msgstr "PUK კოდი ძალიან მოკლეა. ის 8 ცი�
 msgid "Unknown Error"
 msgstr "უცნობი შეცდომა"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
+#. i18n: ectx: property (text), widget (QLabel, title)
+#: pinwidget.ui:14 pinwidget.ui:47
+#, kde-format
+msgid "SIM PIN unlock required"
+msgstr "საჭიროა SIM PIN-ის განბლოკვა"
+
+#. i18n: ectx: property (text), widget (QLabel, prompt)
+#: pinwidget.ui:76
+#, no-c-format, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr ""
+"მობილური ინტერნეტის მოწყობილობას \"%1\" გამოყენებამდე სჭირდება SIM PIN კოდი."
+
+#. i18n: ectx: property (text), widget (QLabel, pukLabel)
+#: pinwidget.ui:133
+#, kde-format
+msgid "PUK code:"
+msgstr "PUK კოდი:"
+
+#. i18n: ectx: property (text), widget (QLabel, pin2Label)
+#: pinwidget.ui:173
+#, kde-format
+msgid "Re-enter PIN code:"
+msgstr "ახალი PUK კოდი ხელახლა:"
+
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1-ზე ავთენტიკაციის პრობლემა. პაროლი შეგეშალათ?"
-
-#~ msgid "Password dialog"
-#~ msgstr "პაროლის ფანჯარა"
-
-#~ msgid "Password:"
-#~ msgstr "პაროლი:"
-
-#~ msgid "SIM PIN unlock required"
-#~ msgstr "საჭიროა SIM PIN-ის განბლოკვა"
-
-#~ msgid ""
-#~ "The mobile broadband device '%1' requires a SIM PIN code before it can be "
-#~ "used."
-#~ msgstr ""
-#~ "მობილური ინტერნეტის მოწყობილობას \"%1\" გამოყენებამდე სჭირდება SIM PIN "
-#~ "კოდი."
-
-#~ msgid "PUK code:"
-#~ msgstr "PUK კოდი:"
-
-#~ msgid "Re-enter PIN code:"
-#~ msgstr "ახალი PUK კოდი ხელახლა:"

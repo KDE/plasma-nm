@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2024-03-30 19:46\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -44,74 +44,149 @@ msgid ""
 "running."
 msgstr "配置使用 ssh-agent 进行身份验证，但没有发现正在运行的 ssh-agent。"
 
-#~ msgid "Strong Swan VPN"
-#~ msgstr "Strong Swan VPN"
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
+#: strongswanauth.ui:14 strongswanprop.ui:14
+#, kde-format
+msgid "Strong Swan VPN"
+msgstr "Strong Swan VPN"
 
-#~ msgid "Password: "
-#~ msgstr "密码："
+#. i18n: ectx: property (text), widget (QLabel, passwordLabel)
+#: strongswanauth.ui:32
+#, kde-format
+msgid "Password: "
+msgstr "密码："
 
-#~ msgid "Gateway"
-#~ msgstr "网关"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: strongswanprop.ui:20
+#, kde-format
+msgid "Gateway"
+msgstr "网关"
 
-#~ msgid "Gateway:"
-#~ msgstr "网关："
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: strongswanprop.ui:29
+#, kde-format
+msgid "Gateway:"
+msgstr "网关："
 
-#~ msgid "Certificate:"
-#~ msgstr "证书："
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: strongswanprop.ui:49 strongswanprop.ui:120 strongswanprop.ui:165
+#, kde-format
+msgid "Certificate:"
+msgstr "证书："
 
-#~ msgid "Authentication"
-#~ msgstr "身份验证"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: strongswanprop.ui:62
+#, kde-format
+msgid "Authentication"
+msgstr "身份验证"
 
-#~ msgid "Certificate/private key"
-#~ msgstr "证书/私钥"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:78
+#, kde-format
+msgid "Certificate/private key"
+msgstr "证书/私钥"
 
-#~ msgid "Certificate/ssh-agent"
-#~ msgstr "证书/ssh-agent"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:83
+#, kde-format
+msgid "Certificate/ssh-agent"
+msgstr "证书/ssh-agent"
 
-#~ msgid "Smartcard"
-#~ msgstr "智能卡"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:88
+#, kde-format
+msgid "Smartcard"
+msgstr "智能卡"
 
-#~ msgid "EAP"
-#~ msgstr "EAP"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:93
+#, kde-format
+msgid "EAP"
+msgstr "EAP"
 
-#~ msgid "Private key:"
-#~ msgstr "私钥："
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: strongswanprop.ui:130
+#, kde-format
+msgid "Private key:"
+msgstr "私钥："
 
-#~ msgid "Private Key Password:"
-#~ msgstr "私钥密码："
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: strongswanprop.ui:140
+#, kde-format
+msgid "Private Key Password:"
+msgstr "私钥密码："
 
-#~ msgid "PIN:"
-#~ msgstr "PIN："
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: strongswanprop.ui:182
+#, kde-format
+msgid "PIN:"
+msgstr "PIN："
 
-#~ msgid "Username:"
-#~ msgstr "用户名："
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: strongswanprop.ui:210
+#, kde-format
+msgid "Username:"
+msgstr "用户名："
 
-#~ msgid "User Password:"
-#~ msgstr "用户密码："
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: strongswanprop.ui:238
+#, kde-format
+msgid "User Password:"
+msgstr "用户密码："
 
-#~ msgid "Options"
-#~ msgstr "选项"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: strongswanprop.ui:255
+#, kde-format
+msgid "Options"
+msgstr "选项"
 
-#~ msgid "Request an inner IP address"
-#~ msgstr "请求内部 IP 地址"
+#. i18n: ectx: property (text), widget (QCheckBox, innerIP)
+#: strongswanprop.ui:264
+#, kde-format
+msgid "Request an inner IP address"
+msgstr "请求内部 IP 地址"
 
-#~ msgid "Enforce UDP encapsulation"
-#~ msgstr "强制 UDP 封装"
+#. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
+#: strongswanprop.ui:277
+#, kde-format
+msgid "Enforce UDP encapsulation"
+msgstr "强制 UDP 封装"
 
-#~ msgid "Use IP compression"
-#~ msgstr "使用 IP 压缩"
+#. i18n: ectx: property (text), widget (QCheckBox, ipComp)
+#: strongswanprop.ui:284
+#, kde-format
+msgid "Use IP compression"
+msgstr "使用 IP 压缩"
 
-#~ msgid "Enable Custom Cipher Proposals"
-#~ msgstr "启用自定义加密算法建议"
+#. i18n: ectx: property (title), widget (QGroupBox, proposal)
+#: strongswanprop.ui:294
+#, kde-format
+msgid "Enable Custom Cipher Proposals"
+msgstr "启用自定义加密算法建议"
 
-#~ msgid "IKE:"
-#~ msgstr "IKE："
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: strongswanprop.ui:308
+#, kde-format
+msgid "IKE:"
+msgstr "IKE："
 
-#~ msgid "A list of proposals for IKE separated by \";\""
-#~ msgstr "IKE 建议列表，以半角分号“;”区隔"
+#. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
+#: strongswanprop.ui:315
+#, kde-format
+msgid "A list of proposals for IKE separated by \";\""
+msgstr "IKE 建议列表，以半角分号“;”区隔"
 
-#~ msgid "ESP:"
-#~ msgstr "ESP："
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: strongswanprop.ui:322
+#, kde-format
+msgid "ESP:"
+msgstr "ESP："
 
-#~ msgid "A list of proposals for ESP separated by \";\""
-#~ msgstr "ESP 建议列表，以半角分号“;”区隔"
+#. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
+#: strongswanprop.ui:329
+#, kde-format
+msgid "A list of proposals for ESP separated by \";\""
+msgstr "ESP 建议列表，以半角分号“;”区隔"

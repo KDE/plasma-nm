@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2023-12-11 18:02+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -241,6 +241,12 @@ msgstr "Úprava pripojenia \"%1\""
 msgid "New %1 connection"
 msgstr "Nové pripojenie %1"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/connectioneditortabwidget.ui:20
+#, kde-format
+msgid "Connection name:"
+msgstr "Názov pripojenia:"
+
 #: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
 #: editor/settings/teamwidget.cpp:36
 #, kde-format
@@ -399,7 +405,8 @@ msgstr "Odoslať názov hostiteľa:"
 msgid "DHCP hostname:"
 msgstr "Názov hostiteľa servera DHCP:"
 
-#: editor/settings/ipv4widget.cpp:440
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
 #, kde-format
 msgid "Default"
 msgstr "Predvolené"
@@ -468,6 +475,1667 @@ msgstr "Pripojiť iba na tieto servery"
 #, kde-format
 msgid "Select file to import"
 msgstr "Výber súboru na import"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
+#, kde-format
+msgid "Authentication:"
+msgstr "Overenie totožnosti:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
+#: editor/settings/ui/802-1x.ui:38 editor/settings/ui/802-1x.ui:675
+#, kde-format
+msgid "MD5"
+msgstr "MD5"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:43
+#, kde-format
+msgid "TLS"
+msgstr "TLS"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
+#, kde-format
+msgid "LEAP"
+msgstr "LEAP"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:53
+#, kde-format
+msgid "PWD"
+msgstr "PWD"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:58
+#, kde-format
+msgid "FAST"
+msgstr "RÝCHLE"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:63
+#, kde-format
+msgid "Tunneled TLS (TTLS)"
+msgstr "Tunelované TLS (TTLS)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:68
+#, kde-format
+msgid "Protected EAP (PEAP)"
+msgstr "Chránené EAP (PEAP)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_33)
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: ectx: property (text), widget (QLabel, label_17)
+#. i18n: ectx: property (text), widget (QLabel, label_25)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: editor/settings/ui/802-1x.ui:83 editor/settings/ui/802-1x.ui:277
+#: editor/settings/ui/802-1x.ui:311 editor/settings/ui/802-1x.ui:440
+#: editor/settings/ui/802-1x.ui:544 editor/settings/ui/802-1x.ui:688
+#: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
+#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
+#, kde-format
+msgid "Username:"
+msgstr "Meno používateľa:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#. i18n: ectx: property (text), widget (QLabel, label_34)
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#. i18n: ectx: property (text), widget (QLabel, label_18)
+#. i18n: ectx: property (text), widget (QLabel, label_21)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: editor/settings/ui/802-1x.ui:96 editor/settings/ui/802-1x.ui:290
+#: editor/settings/ui/802-1x.ui:324 editor/settings/ui/802-1x.ui:453
+#: editor/settings/ui/802-1x.ui:557 editor/settings/ui/802-1x.ui:701
+#: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
+#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:207
+#: editor/settings/ui/wifisecurity.ui:231
+#, kde-format
+msgid "Password:"
+msgstr "Heslo:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/802-1x.ui:117
+#, kde-format
+msgid "Identity:"
+msgstr "Identita:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_32)
+#. i18n: ectx: property (text), widget (QLabel, label_30)
+#. i18n: ectx: property (text), widget (QLabel, label_31)
+#: editor/settings/ui/802-1x.ui:130 editor/settings/ui/802-1x.ui:574
+#: editor/settings/ui/802-1x.ui:718
+#, kde-format
+msgid "Domain:"
+msgstr "Doména:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: editor/settings/ui/802-1x.ui:140
+#, kde-format
+msgid "User certificate:"
+msgstr "Užívateľský certifikát:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label_20)
+#. i18n: ectx: property (text), widget (QLabel, label_23)
+#: editor/settings/ui/802-1x.ui:157 editor/settings/ui/802-1x.ui:487
+#: editor/settings/ui/802-1x.ui:601
+#, kde-format
+msgid "CA certificate:"
+msgstr "CA certifikát:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_27)
+#: editor/settings/ui/802-1x.ui:174
+#, kde-format
+msgid "Subject match:"
+msgstr "Zhoda predmetu:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_28)
+#: editor/settings/ui/802-1x.ui:191
+#, kde-format
+msgid "Alternative subject matches:"
+msgstr "Alternatívne zhody predmetu:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
+#. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
+#: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
+#, kde-format
+msgid "…"
+msgstr "..."
+
+#. i18n: ectx: property (text), widget (QLabel, label_29)
+#: editor/settings/ui/802-1x.ui:215
+#, kde-format
+msgid "Connect to these servers:"
+msgstr "Pripojiť na tieto servery:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
+#: editor/settings/ui/802-1x.ui:239
+#: editor/settings/ui/wireguardinterfacewidget.ui:26
+#, kde-format
+msgid "Private key:"
+msgstr "Súkromný kľúč:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: editor/settings/ui/802-1x.ui:256
+#, kde-format
+msgid "Private key password:"
+msgstr "Heslo súkromného kľúča:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#. i18n: ectx: property (text), widget (QLabel, label_19)
+#. i18n: ectx: property (text), widget (QLabel, label_24)
+#: editor/settings/ui/802-1x.ui:345 editor/settings/ui/802-1x.ui:474
+#: editor/settings/ui/802-1x.ui:588
+#, kde-format
+msgid "Anonymous identity:"
+msgstr "Anonymná identita:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
+#: editor/settings/ui/802-1x.ui:358
+#, kde-format
+msgid "Automatic PAC provisioning"
+msgstr "Automatický PAC provisioning"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
+#: editor/settings/ui/802-1x.ui:375
+#, kde-format
+msgid "Anonymous"
+msgstr "Anonym"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
+#: editor/settings/ui/802-1x.ui:380
+#, kde-format
+msgid "Authenticated"
+msgstr "Totožnosť overená"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
+#: editor/settings/ui/802-1x.ui:385
+#, kde-format
+msgid "Both"
+msgstr "Obe"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: editor/settings/ui/802-1x.ui:393
+#, kde-format
+msgid "PAC file:"
+msgstr "Súbor PAC:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#. i18n: ectx: property (text), widget (QLabel, label_16)
+#. i18n: ectx: property (text), widget (QLabel, label_22)
+#: editor/settings/ui/802-1x.ui:410 editor/settings/ui/802-1x.ui:504
+#: editor/settings/ui/802-1x.ui:653
+#, kde-format
+msgid "Inner authentication:"
+msgstr "Vnútorné overenie totožnosti:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
+#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
+#: editor/settings/ui/802-1x.ui:427 editor/settings/ui/802-1x.ui:680
+#, kde-format
+msgid "GTC"
+msgstr "GTC"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
+#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
+#: editor/settings/ui/802-1x.ui:432 editor/settings/ui/802-1x.ui:531
+#: editor/settings/ui/802-1x.ui:670 editor/settings/ui/ppp.ui:68
+#, kde-format
+msgid "MSCHAPv2"
+msgstr "MSCHAPv2"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pap)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#: editor/settings/ui/802-1x.ui:521 editor/settings/ui/ppp.ui:58
+#, kde-format
+msgid "PAP"
+msgstr "PAP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mschap)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#: editor/settings/ui/802-1x.ui:526 editor/settings/ui/ppp.ui:48
+#, kde-format
+msgid "MSCHAP"
+msgstr "MSCHAP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chap)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#: editor/settings/ui/802-1x.ui:536 editor/settings/ui/ppp.ui:78
+#, kde-format
+msgid "CHAP"
+msgstr "CHAP"
+
+#. i18n: ectx: property (text), widget (QLabel, label_26)
+#: editor/settings/ui/802-1x.ui:618
+#, kde-format
+msgid "PEAP version:"
+msgstr "Verzia PEAP:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
+#: editor/settings/ui/802-1x.ui:635
+#, kde-format
+msgctxt "PEAP version"
+msgid "Automatic"
+msgstr "Automaticky"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
+#: editor/settings/ui/802-1x.ui:640
+#, kde-format
+msgid "Version 0"
+msgstr "Verzia 0"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
+#: editor/settings/ui/802-1x.ui:645
+#, kde-format
+msgid "Version 1"
+msgstr "Verzia 1"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/bond.ui:21 editor/settings/ui/bridge.ui:18
+#: editor/settings/ui/team.ui:18
+#, kde-format
+msgid "Interface name:"
+msgstr "Názov rozhrania:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/bond.ui:34
+#, kde-format
+msgid "Bonded connections:"
+msgstr "Previazané pripojenia:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
+#: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
+#: editor/settings/ui/team.ui:56
+#, kde-format
+msgid "Add…"
+msgstr "Pridať…"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnEdit)
+#: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
+#: editor/settings/ui/team.ui:71
+#, kde-format
+msgid "Edit…"
+msgstr "Upraviť…"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnDelete)
+#: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
+#: editor/settings/ui/team.ui:86
+#, kde-format
+msgid "Delete"
+msgstr "Odstrániť"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, modeLabel)
+#: editor/settings/ui/bond.ui:113 editor/settings/ui/wificonnectionwidget.ui:43
+#, kde-format
+msgid "Mode:"
+msgstr "Režim:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/bond.ui:133
+#, kde-format
+msgid "Link monitoring:"
+msgstr "Monitorovanie linky:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: editor/settings/ui/bond.ui:153
+#, kde-format
+msgid "Monitoring frequency:"
+msgstr "Frekvencia monitorovania:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
+#. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
+#. i18n: ectx: property (suffix), widget (QSpinBox, downDelay)
+#: editor/settings/ui/bond.ui:163 editor/settings/ui/bond.ui:205
+#: editor/settings/ui/bond.ui:225
+#, kde-format
+msgid " ms"
+msgstr " ms"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: editor/settings/ui/bond.ui:195
+#, kde-format
+msgid "Link up delay:"
+msgstr "Čas pripojenej linky:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/bond.ui:215
+#, kde-format
+msgid "Link down delay:"
+msgstr "Čas odpojenej linky:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: editor/settings/ui/bond.ui:242
+#, kde-format
+msgid "ARP targets:"
+msgstr "Ciele ARP:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
+#: editor/settings/ui/bond.ui:252
+#, kde-format
+msgid "An IP address or comma-separated list of addresses."
+msgstr "IP adresa alebo čiarkou oddelený zoznam adries."
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/bridge.ui:31
+#, kde-format
+msgid "Bridged connections:"
+msgstr "Premostené pripojenia:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/bridge.ui:110
+#, kde-format
+msgid "Aging time:"
+msgstr "Čas starnutia:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, agingTime)
+#. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
+#. i18n: ectx: property (suffix), widget (QSpinBox, helloTime)
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxAge)
+#: editor/settings/ui/bridge.ui:126 editor/settings/ui/bridge.ui:193
+#: editor/settings/ui/bridge.ui:222 editor/settings/ui/bridge.ui:251
+#, kde-format
+msgctxt "seconds"
+msgid " s"
+msgstr " s"
+
+#. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
+#: editor/settings/ui/bridge.ui:139
+#, kde-format
+msgid "Enable STP (Spanning Tree Protocol)"
+msgstr "Povoliť STP (Spanning Tree Protocol)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: editor/settings/ui/bridge.ui:151
+#, kde-format
+msgid "Priority:"
+msgstr "Priorita:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/bridge.ui:177
+#, kde-format
+msgid "Forward delay:"
+msgstr "Oneskorenie presmerovania:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: editor/settings/ui/bridge.ui:206
+#, kde-format
+msgid "Hello time:"
+msgstr "Čas hello:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: editor/settings/ui/bridge.ui:235
+#, kde-format
+msgid "Max age:"
+msgstr "Maximálny vek:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/bt.ui:21
+#, kde-format
+msgid "Address of the device:"
+msgstr "Adresa zariadenia:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/bt.ui:41
+#, kde-format
+msgid "Connection type:"
+msgstr "Typ pripojenia:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/cdma.ui:20 editor/settings/ui/gsm.ui:24
+#, kde-format
+msgid "Number:"
+msgstr "Číslo:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
+#: editor/settings/ui/connectionwidget.ui:17
+#, kde-format
+msgid "Connect automatically with priority"
+msgstr "Pripojiť automaticky s prioritou"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
+#: editor/settings/ui/connectionwidget.ui:38
+#, kde-format
+msgid ""
+"If the connection is set to autoconnect, connections with higher priority "
+"will be preferred. Defaults to 0.\n"
+"The higher number means higher priority. An negative number can be used to "
+"indicate priority lower than the default.\n"
+"           "
+msgstr ""
+"Ak pripojenie je nastavené na automatické, uprednostní sa pripojenie s "
+"vyššou prioritou. Predvolené je 0.\n"
+"Vyššie číslo znamená vyššiu prioritu. Záporné číslo sa dá použiť na "
+"indikáciu priority nižšej ako predvolená.\n"
+"           "
+
+#. i18n: ectx: property (text), widget (QCheckBox, allUsers)
+#: editor/settings/ui/connectionwidget.ui:48
+#, kde-format
+msgid "All users may connect to this network"
+msgstr "K tejto sieti sa môžu pripojiť všetci používatelia"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
+#: editor/settings/ui/connectionwidget.ui:64
+#, kde-format
+msgid "Edit advanced permissions for this connection"
+msgstr "Upraviť pokročilé oprávnenia pre toto pripojenie"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
+#: editor/settings/ui/connectionwidget.ui:67
+#, kde-format
+msgid ""
+"Fine-grained permissions editor for this connection. It lets you choose "
+"which users can activate/modify/delete this connection."
+msgstr ""
+"Jemnozrnný editor oprávnení pre toto pripojenie. Umožní vám vybrať, ktorí "
+"používatelia môžu aktivovať/meniť/odstrániť toto pripojenie."
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
+#, kde-format
+msgid "Advanced…"
+msgstr "Pokročilé…"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
+#: editor/settings/ui/connectionwidget.ui:81
+#, kde-format
+msgid "Automatically connect to VPN"
+msgstr "Automaticky sa pripojiť k VPN"
+
+#. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
+#: editor/settings/ui/connectionwidget.ui:101
+#, kde-format
+msgid "Firewall zone:"
+msgstr "Zóna brány firewall:"
+
+#. i18n: ectx: property (text), widget (QLabel, meteredLabel)
+#: editor/settings/ui/connectionwidget.ui:130
+#, kde-format
+msgid "Metered:"
+msgstr "Merané podľa objemu dát:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:150
+#, kde-format
+msgid ""
+"NetworkManager indicates to applications whether the connection is metered "
+"and therefore\n"
+"data usage should be restricted."
+msgstr ""
+"NetworkManager indikuje aplikáciam, či je pripojenie merané podľa objemu dát "
+"a teda\n"
+"používanie dát má byť obmedzené."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:160
+#, kde-format
+msgctxt "Item in the Metered: list"
+msgid "Automatic"
+msgstr "Automaticky"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:165
+#, kde-format
+msgid "Yes"
+msgstr "Áno"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:170
+#, kde-format
+msgid "No"
+msgstr "Nie"
+
+#. i18n: ectx: property (title), widget (QGroupBox, basicGroup)
+#: editor/settings/ui/gsm.ui:18
+#, kde-format
+msgid "Basic"
+msgstr "Základné"
+
+#. i18n: ectx: property (title), widget (QGroupBox, advGroup)
+#: editor/settings/ui/gsm.ui:84
+#, kde-format
+msgid "Advanced"
+msgstr "Pokročilé"
+
+#. i18n: ectx: property (text), widget (QCheckBox, roaming)
+#: editor/settings/ui/gsm.ui:93
+#, kde-format
+msgid "Allow roaming if home network is not available"
+msgstr "Povoliť roaming ak domáca sieť nie je dostupná"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/gsm.ui:100
+#, kde-format
+msgid "APN:"
+msgstr "APN:"
+
+#. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
+#: editor/settings/ui/gsm.ui:110
+#, kde-format
+msgid "Network ID:"
+msgstr "Identifikátor siete:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/gsm.ui:130
+#, kde-format
+msgid "PIN:"
+msgstr "PIN:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/infiniband.ui:21
+#, kde-format
+msgid "Transport mode:"
+msgstr "Prenosový režim:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/infiniband.ui:41
+#: editor/settings/ui/wificonnectionwidget.ui:186
+#: editor/settings/ui/wiredconnectionwidget.ui:23
+#, kde-format
+msgid "Restrict to device:"
+msgstr "Obmedziť na zariadenie:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, mtuLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/infiniband.ui:61
+#: editor/settings/ui/wificonnectionwidget.ui:249
+#: editor/settings/ui/wiredconnectionwidget.ui:89
+#: editor/settings/ui/wireguardinterfacewidget.ui:74
+#, kde-format
+msgid "MTU:"
+msgstr "MTU:"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
+#: editor/settings/ui/infiniband.ui:80
+#: editor/settings/ui/wificonnectionwidget.ui:271
+#: editor/settings/ui/wiredconnectionwidget.ui:112
+#, kde-format
+msgctxt "MTU:"
+msgid "Automatic"
+msgstr "Automaticky"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
+#: editor/settings/ui/infiniband.ui:83
+#: editor/settings/ui/wificonnectionwidget.ui:274
+#: editor/settings/ui/wiredconnectionwidget.ui:115
+#, kde-format
+msgid " bytes"
+msgstr " bajty/bajtov"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, IPv6Widget)
+#. i18n: ectx: property (toolTip), widget (QWidget, IPv4Widget)
+#: editor/settings/ui/ipv4.ui:17 editor/settings/ui/ipv6.ui:20
+#, kde-format
+msgid "Advanced IP settings"
+msgstr "Pokročilé nastavenia IP"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
+#, kde-format
+msgid "Method:"
+msgstr "Metóda:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:227
+#, kde-format
+msgctxt "Method:"
+msgid "Automatic"
+msgstr "Automaticky"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
+#, kde-format
+msgid "Automatic (Only addresses)"
+msgstr "Automaticky (iba adresy)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
+#, kde-format
+msgid "Link-Local"
+msgstr "Link-Local"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
+#, kde-format
+msgctxt "like in use Manual configuration"
+msgid "Manual"
+msgstr "Ručne"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:69
+#, kde-format
+msgid "Shared to other computers"
+msgstr "Zdieľané pre iné počítače"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:74
+#, kde-format
+msgctxt "like in this setting is Disabled"
+msgid "Disabled"
+msgstr "Zakázané"
+
+#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
+#: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:170
+#, kde-format
+msgctxt "@info"
+msgid "DNS Servers:"
+msgstr "Servery DNS:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
+#: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
+#, kde-format
+msgid ""
+"Use this field to specify the IP address(es) of one or more DNS servers. Use "
+"',' to separate entries."
+msgstr ""
+"Použite toto pole na zadanie IP adresy pre jeden alebo viacero DNS serverov. "
+"Položky oddeľte čiarkou ','."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
+#: editor/settings/ui/ipv4.ui:125
+#, kde-format
+msgid "Edit DNS the list of servers"
+msgstr "Upraviť zoznam DNS serverov"
+
+#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
+#: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
+#, kde-format
+msgctxt "@info"
+msgid "Search Domains:"
+msgstr "Prehľadávané domény:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
+#: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
+#, kde-format
+msgid ""
+"Use this field to specify one or more DNS domains to search. Use ',' to "
+"separate entries."
+msgstr ""
+"Použite toto pole na určenie jednej alebo viacerých DNS domén na "
+"prehľadanie. Použite ',' na oddelenie položiek."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
+#: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
+#, kde-format
+msgid "Edit the list of DNS domains being searched"
+msgstr "Upraviť zoznam prehľadávaných DNS domén"
+
+#. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
+#: editor/settings/ui/ipv4.ui:191
+#, kde-format
+msgid "DHCP Client ID:"
+msgstr "Identifikátor klienta servera DHCP:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
+#: editor/settings/ui/ipv4.ui:206
+#, kde-format
+msgid ""
+"Use this field to specify the DHCP client ID which is a string sent to the "
+"DHCP server\n"
+"to identify the local machine that the DHCP server may use to customize the "
+"DHCP\n"
+"lease and options."
+msgstr ""
+"Použite toto pole na určenie ID DHCP klienta, čo je reťazec poslaný na DHCP "
+"server\n"
+"na identifikáciu miestneho stroja, ktorý DHCP server môže použiť na úpravu "
+"DHCP\\ prenájmu a možností."
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
+#: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
+#, kde-format
+msgid "Remove"
+msgstr "Odstrániť"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
+#: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:109
+#, kde-format
+msgid "Add"
+msgstr "Pridať"
+
+#. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
+#: editor/settings/ui/ipv4.ui:244 editor/settings/ui/ipv6.ui:127
+#: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
+#, kde-format
+msgid ""
+"IP addresses identify your computer on the network. Click the \"Add\" button "
+"to add\n"
+"an IP address"
+msgstr ""
+"IP adresy identifikujú váš počítač na sieti. Kliknite na tlačidlo \"pridať\" "
+"na pridanie\n"
+"IP adresy"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
+#: editor/settings/ui/ipv4.ui:282
+#, kde-format
+msgid ""
+"Allows the connection to complete if IPv4 configuration fails\n"
+"but IPv6 configuration succeeds"
+msgstr ""
+"Pri pripájaní do siete IPv6 povolí pripojenie na ukončenie, ak\n"
+"IPv4 nastavenie zlyhá, ale IPv6 nastavenie uspeje"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
+#: editor/settings/ui/ipv4.ui:285
+#, kde-format
+msgid "IPv4 is required for this connection"
+msgstr "Pre toto pripojenie sa vyžaduje IPv4"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
+#: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
+#, kde-format
+msgid "Routes…"
+msgstr "Smerovania..."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
+#: editor/settings/ui/ipv6.ui:30
+#, kde-format
+msgid ""
+"When connecting to IPv4-capable networks, allows the connection to complete "
+"if\n"
+"IPv6 configuration fails but IPv4 configuration succeeds"
+msgstr ""
+"Pri pripájaní do siete IPv4 povolí pripojenie na ukončenie, ak\n"
+"IPv6 nastavenie zlyhá, ale IPv4 nastavenie uspeje"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
+#: editor/settings/ui/ipv6.ui:33
+#, kde-format
+msgid "IPv6 is required for this connection"
+msgstr "Pre toto pripojenie sa vyžaduje IPv6"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
+#: editor/settings/ui/ipv6.ui:83
+#, kde-format
+msgid "Edit the list of DNS servers"
+msgstr "Upraviť zoznam DNS serverov"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:193
+#, kde-format
+msgid ""
+"Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
+"enabled, it makes the kernel generate\n"
+"a temporary IPv6 address in addition to the public one generated from MAC "
+"address via modified EUI-64."
+msgstr ""
+"Nastaviť rozšírenia súkromia IPv6 pre SLAAC, popísané v RFC4941. Ak je "
+"povolené, jadro vygeneruje\n"
+"dočasnú IPv6 adresu navyše k verejnej, vygenerovanej z MAC adresy cez "
+"zmenené EUI-64."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:202
+#, kde-format
+msgctxt "privacy disabled"
+msgid "Disabled"
+msgstr "Zakázané"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:207
+#, kde-format
+msgid "Enabled (prefer public address)"
+msgstr "Povolené (preferovať verejnú adresu)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:212
+#, kde-format
+msgid "Enabled (prefer temporary addresses)"
+msgstr "Povolené (preferovať dočasné adresy)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:237
+#, kde-format
+msgid "Automatic (Only DHCP)"
+msgstr "Automaticky (iba DHCP)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:252
+#, kde-format
+msgctxt "like in this setting is Disabled"
+msgid "Ignored"
+msgstr "Ignorované"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:257
+#, kde-format
+msgid "Disabled"
+msgstr "Zakázané"
+
+#. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
+#: editor/settings/ui/ipv6.ui:335
+#, kde-format
+msgid "Privacy:"
+msgstr "Súkromie:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, authGroup)
+#: editor/settings/ui/ppp.ui:23
+#, kde-format
+msgid "Authentication"
+msgstr "Overenie totožnosti"
+
+#. i18n: ectx: property (text), widget (QCheckBox, eap)
+#: editor/settings/ui/ppp.ui:38
+#, kde-format
+msgid "EAP"
+msgstr "EAP"
+
+#. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
+#: editor/settings/ui/ppp.ui:91
+#, kde-format
+msgid "Compression"
+msgstr "Kompresia"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mppe)
+#: editor/settings/ui/ppp.ui:109
+#, kde-format
+msgid "Use point-to-point encryption (MPPE)"
+msgstr "Použiť šifrovanie point-to-point (MPPE)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, bsdComp)
+#: editor/settings/ui/ppp.ui:116
+#, kde-format
+msgid "Use BSD data compression"
+msgstr "Použiť kompresiu dát BSD"
+
+#. i18n: ectx: property (text), widget (QCheckBox, deflateComp)
+#: editor/settings/ui/ppp.ui:126
+#, kde-format
+msgid "Use Deflate data compression"
+msgstr "Použiť kompresiu dát Deflate"
+
+#. i18n: ectx: property (text), widget (QCheckBox, tcpComp)
+#: editor/settings/ui/ppp.ui:136
+#, kde-format
+msgid "Use TCP header compression"
+msgstr "Použiť kompresiu hlavičky TCP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mppe128)
+#: editor/settings/ui/ppp.ui:152
+#, kde-format
+msgid "Require 128-bit encryption"
+msgstr "Vyžadovať 128-bitové šifrovanie"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mppeStateful)
+#: editor/settings/ui/ppp.ui:165
+#, kde-format
+msgid "Use stateful MPPE"
+msgstr "Použiť stavové MPPE"
+
+#. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
+#: editor/settings/ui/ppp.ui:175
+#, kde-format
+msgid "Echo"
+msgstr "Odozva"
+
+#. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
+#: editor/settings/ui/ppp.ui:184
+#, kde-format
+msgid "Send PPP echo packets"
+msgstr "Odosielať pakety s odozvou pre PPP"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/pppoe.ui:20
+#, kde-format
+msgid "Service:"
+msgstr "Služba:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, service)
+#: editor/settings/ui/pppoe.ui:30
+#, kde-format
+msgid ""
+"If specified, instruct PPPoE to only initiate sessions with access "
+"concentrators that provide the specified service. For most providers, this "
+"should be left blank. It is only required if there are multiple access "
+"concentrators or a specific service is known to be required."
+msgstr ""
+"Ak je určené, nariadi PPPeE, aby iba inicializoval sedenia s prístupom "
+"koncentrátorov, ktoré poskytujú určenú službu. Pre väčšinu poskytovateľov by "
+"to malo ostať prázdne. Vyžaduje sa to iba ak je viacero koncentrátorov "
+"prístupu alebo je známe, že sa vyžaduje určená služba."
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/team.ui:31
+#, kde-format
+msgid "Teamed connections:"
+msgstr "Tímové pripojenia:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/team.ui:113
+#, kde-format
+msgid "JSON config:"
+msgstr "Nastavenie JSON:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnImport)
+#: editor/settings/ui/team.ui:123
+#, kde-format
+msgid "Import configuration from file…"
+msgstr "Importovať nastavenie zo súboru..."
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/vlan.ui:18
+#, kde-format
+msgid "Parent interface:"
+msgstr "Nadradené rozhranie:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/vlan.ui:41
+#, kde-format
+msgid "VLAN id:"
+msgstr "Identifikátor VLAN:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: editor/settings/ui/vlan.ui:64
+#, kde-format
+msgid "VLAN interface name:"
+msgstr "Názov rozhrania VLAN:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, reorderHeaders)
+#: editor/settings/ui/vlan.ui:77
+#, kde-format
+msgid "Output packet headers reordering"
+msgstr "Preusporiadanie hlavičiek výstupných paketov"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, gvrp)
+#: editor/settings/ui/vlan.ui:84
+#, kde-format
+msgid "GARP VLAN Registration Protocol"
+msgstr "Registračný protokol GARP VLAN"
+
+#. i18n: ectx: property (text), widget (QCheckBox, gvrp)
+#: editor/settings/ui/vlan.ui:87
+#, kde-format
+msgid "GVRP"
+msgstr "GVRP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
+#: editor/settings/ui/vlan.ui:94
+#, kde-format
+msgid "Loose binding"
+msgstr "Uvoľnená väzba"
+
+#. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:17
+#, kde-format
+msgid "SSID:"
+msgstr "SSID:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
+#: editor/settings/ui/wificonnectionwidget.ui:63
+#, kde-format
+msgid "Infrastructure"
+msgstr "Infraštruktúra"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
+#: editor/settings/ui/wificonnectionwidget.ui:68
+#, kde-format
+msgid "Ad-hoc"
+msgstr "Ad-hoc"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
+#: editor/settings/ui/wificonnectionwidget.ui:73
+#, kde-format
+msgid "Access Point"
+msgstr "Prístupový bod"
+
+#. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:81
+#, kde-format
+msgid "BSSID:"
+msgstr "BSSID:"
+
+#. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
+#: editor/settings/ui/wificonnectionwidget.ui:101
+#, kde-format
+msgid ""
+"This option locks this connection to the Wi-Fi access point (AP) specified "
+"by the\n"
+" BSSID entered here. Example: 00:11:22:33:44:55"
+msgstr ""
+"Táto voľba zamkne toto pripojenie k Wi-Fi prístupovému bodu (AP) určené\n"
+" sem zadaným BSSID. Príklad: 00:11:22:33:44:55"
+
+#. i18n: ectx: property (text), widget (QLabel, bandLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:117
+#, kde-format
+msgid "Band:"
+msgstr "Pásmo:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:137
+#, kde-format
+msgid ""
+"This option locks the connection to the Wi-Fi network associated to the "
+"specified band. This setting depends\n"
+" on specific driver capability and may not work with all drivers"
+msgstr ""
+"Táto voľba zamkne pripojenie k Wi-Fi sieti prepojenej k danému pásmu. Toto "
+"nastavenie závisí\n"
+" na schopnosti určitého ovládača a nemusí fungovať so všetkými ovládačmi"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:141
+#, kde-format
+msgctxt "Band:"
+msgid "Automatic"
+msgstr "Automaticky"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:146
+#, kde-format
+msgid "A (5 GHz)"
+msgstr "A (5 GHz)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:151
+#, kde-format
+msgid "B/G (2.4 GHz)"
+msgstr "B/G (2.4 GHz)"
+
+#. i18n: ectx: property (text), widget (QLabel, channelLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:159
+#, kde-format
+msgid "Channel:"
+msgstr "Kanál:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, channel)
+#: editor/settings/ui/wificonnectionwidget.ui:179
+#, kde-format
+msgid ""
+"Wireless channel to use for the Wi-Fi connection. The device will only join "
+"(or create for Ad-Hoc networks)\n"
+"a Wi-Fi network on the specified channel"
+msgstr ""
+"Bezdrôtový kanál pre Wi-Fi pripojenie. Zariadenie sa pripojí iba k (alebo "
+"vytvorí pre Ad-Hoc siete)\n"
+"Wi-Fi sieti na určenom kanáli"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/wificonnectionwidget.ui:209
+#: editor/settings/ui/wiredconnectionwidget.ui:47
+#, kde-format
+msgid "Cloned MAC address:"
+msgstr "Klonovaná adresa MAC:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
+#: editor/settings/ui/wificonnectionwidget.ui:240
+#, kde-format
+msgid "Random…"
+msgstr "Náhodná..."
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_4)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
+#: editor/settings/ui/wificonnectionwidget.ui:287
+#: editor/settings/ui/wificonnectionwidget.ui:303
+#, kde-format
+msgid "Mark this if you want to create a connection for a hidden network"
+msgstr "Označte toto, ak chcete vytvoriť pripojenie pre skrytú sieť"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/wificonnectionwidget.ui:290
+#, kde-format
+msgid "Visibility:"
+msgstr "Viditeľnosť:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
+#: editor/settings/ui/wificonnectionwidget.ui:306
+#, kde-format
+msgid "Hidden network"
+msgstr "Skrytá sieť"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
+#: editor/settings/ui/wifisecurity.ui:15
+#, kde-format
+msgid "Wifi Security"
+msgstr "Bezpečnosť Wifi"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:28
+#, kde-format
+msgctxt "no security"
+msgid "None"
+msgstr "Žiadne"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:33
+#, kde-format
+msgid "WEP key 40/128 bits (Hex or ASCII)"
+msgstr "WEP kľúč 40/128 bitov (Hex alebo ASCII)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:38
+#, kde-format
+msgid "WEP key 128 bits"
+msgstr "WEP kľúč 128 bitov"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:48
+#, kde-format
+msgid "Dynamic WEP (802.1x)"
+msgstr "Dynamický WEP (802.1x)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:53
+#, kde-format
+msgid "WPA/WPA2 Personal"
+msgstr "WPA/WPA2 Personal"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:58
+#, kde-format
+msgid "WPA/WPA2 Enterprise"
+msgstr "WPA/WPA2 Enterprise"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:63
+#, kde-format
+msgid "WPA3 Personal"
+msgstr "WPA3 Personal"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:68
+#, kde-format
+msgid "WPA3 Enterprise 192-bit"
+msgstr "WPA3 Enterprise 192-bit"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/wifisecurity.ui:76
+#, kde-format
+msgid "Security:"
+msgstr "Zabezpečenie:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/wifisecurity.ui:97
+#, kde-format
+msgid "Key:"
+msgstr "Kľúč:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: editor/settings/ui/wifisecurity.ui:117
+#, kde-format
+msgid "WEP index:"
+msgstr "WEP index:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:134
+#, kde-format
+msgid "1 (default)"
+msgstr "1 (predvolené)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:139
+#, kde-format
+msgid "2"
+msgstr "2"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:144
+#, kde-format
+msgid "3"
+msgstr "3"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:149
+#, kde-format
+msgid "4"
+msgstr "4"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
+#: editor/settings/ui/wifisecurity.ui:174
+#, kde-format
+msgid "Open System"
+msgstr "Otvorený systém"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
+#: editor/settings/ui/wifisecurity.ui:179
+#, kde-format
+msgid "Shared Key"
+msgstr "Zdieľaný kľúč"
+
+#. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
+#: editor/settings/ui/wiredconnectionwidget.ui:40
+#, kde-format
+msgid ""
+"This option locks this connection to the network device specified by its\n"
+"permanent MAC address entered here. Example: 00:11:22:33:44:55"
+msgstr ""
+"Táto voľba zamkne toto pripojenie k sieťovému zariadeniu určenému jeho\n"
+"permanentnou MAC adresou zadanou sem. Príklad: 00:11:22:33:44:55"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
+#: editor/settings/ui/wiredconnectionwidget.ui:67
+#, kde-format
+msgid ""
+"The MAC address entered here will be used as hardware address for the\n"
+"network device this connection is activated on. This feature is known as "
+"MAC\n"
+"cloning or spoofing. Example 11:22:33:44:55"
+msgstr ""
+"Sem zadaná adresa MAC sa použije ako hardvérová adresa pre\n"
+"sieťové zariadenie, na ktorom je aktivované toto pripojenie. Táto funkcia je "
+"známa ako MAC\n"
+"klonovanie alebo spoofing. Príklad 11:22:33:44:55"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
+#: editor/settings/ui/wiredconnectionwidget.ui:80
+#, kde-format
+msgid "Random"
+msgstr "Náhodná"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
+#: editor/settings/ui/wiredconnectionwidget.ui:106
+#, kde-format
+msgid ""
+"Only transmit packets of the specified size or smaller, breaking larger "
+"packets up\n"
+"into multiple Ethernet frames"
+msgstr ""
+"Prenášať iba pakety určenej veľkosti alebo menšie, rozdelením väčších "
+"paketov\n"
+"do viacerých Ethernetových rámcov"
+
+#. i18n: ectx: property (text), widget (QLabel, speedLabel)
+#: editor/settings/ui/wiredconnectionwidget.ui:125
+#, kde-format
+msgid "Speed:"
+msgstr "Rýchlosť:"
+
+#. i18n: ectx: property (text), widget (QLabel, duplexLabel)
+#: editor/settings/ui/wiredconnectionwidget.ui:132
+#, kde-format
+msgid "Duplex:"
+msgstr "Duplex:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
+#: editor/settings/ui/wiredconnectionwidget.ui:151
+#, kde-format
+msgid ""
+"Request that the device use the specified duplex mode. Either \"half\" or "
+"\"full\""
+msgstr ""
+"Vyžiadať, že zariadenie použije určený duplexný režim. Buď \"polovičný\" "
+"alebo \"plný\""
+
+#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
+#: editor/settings/ui/wiredconnectionwidget.ui:158
+#, kde-format
+msgid "Half"
+msgstr "Polovičný"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
+#: editor/settings/ui/wiredconnectionwidget.ui:163
+#, kde-format
+msgid "Full"
+msgstr "Plné"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/wiredconnectionwidget.ui:174
+#, kde-format
+msgid "Link negotiation:"
+msgstr "Vyjednávanie linky:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:188
+#, kde-format
+msgid ""
+"Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
+"will be forced without checking\n"
+"the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
+msgstr ""
+"Vyjednávanie linky zariadenia. Ak vyberiete možnosť „Ručne“, hodnoty "
+"„Rýchlosť“ a „Duplex“ budú vynútené bez kontroly\n"
+" kompatibility zariadenia. Ak si nie ste istí, nechajte voľbu „Ignorovať“ "
+"alebo vyberte „Automaticky“."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:192
+#, kde-format
+msgid "Ignore"
+msgstr "Ignorovať"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:197
+#, kde-format
+msgctxt "Link negotiation:"
+msgid "Automatic"
+msgstr "Automaticky"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:202
+#, kde-format
+msgid "Manual"
+msgstr "Ručne"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:219
+#, kde-format
+msgid "Request that the device use only the specified speed."
+msgstr "Požadovať aby zariadenie používalo iba určenú rýchlosť."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:226
+#, kde-format
+msgid "10 Mb/s"
+msgstr "10 Mb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:231
+#, kde-format
+msgid "100 Mb/s"
+msgstr "100 Mb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:236
+#, kde-format
+msgid "1 Gb/s"
+msgstr "1 Gb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:241
+#, kde-format
+msgid "2.5 Gb/s"
+msgstr "2.5 Gb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:246
+#, kde-format
+msgid "5 Gb/s"
+msgstr "5 Gb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:251
+#, kde-format
+msgid "10 Gb/s"
+msgstr "10 Gb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:256
+#, kde-format
+msgid "40 Gb/s"
+msgstr "40 Gb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:261
+#, kde-format
+msgid "100 Gb/s"
+msgstr "100 Gb/s"
+
+#. i18n: ectx: property (text), widget (QCheckBox, use8021X)
+#: editor/settings/ui/wiredsecurity.ui:17
+#, kde-format
+msgid "Use 802.1x security for this connection"
+msgstr "Použiť zabezpečenie 802.1x pre toto pripojenie"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
+#: editor/settings/ui/wireguardinterfacewidget.ui:14
+#, kde-format
+msgid "WireGuard Settings"
+msgstr "Nastavenia pripojenia WireGuard"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: editor/settings/ui/wireguardinterfacewidget.ui:20
+#, kde-format
+msgid "Interface"
+msgstr "Rozhranie"
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:34
+#, kde-format
+msgid ""
+"Required.\n"
+"A base64 private key generated by wg genkey."
+msgstr ""
+"Povinné.\n"
+"Súkromný kľúč base64 vygenerovaný pomocou wg genkey."
+
+#. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
+#: editor/settings/ui/wireguardinterfacewidget.ui:41
+#, kde-format
+msgid "Listen port:"
+msgstr "Načúvací port:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:49
+#, kde-format
+msgid ""
+"Optional.\n"
+"Listen port number. Chosen randomly if left as 'Automatic'."
+msgstr ""
+"Voliteľné.\n"
+"Číslo načúvacieho portu. Vybraný náhodne, ak necháte 'Automaticky'."
+
+#. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
+#: editor/settings/ui/wireguardinterfacewidget.ui:57
+#, kde-format
+msgid "fwmark:"
+msgstr "fwmark:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:67
+#, kde-format
+msgid ""
+"Optional.\n"
+"An fwmark for outgoing packets. If set to 0 or 'off', this\n"
+"option is disabled. May be specified in hexadecimal by\n"
+"prepending '0x'."
+msgstr ""
+"Voliteľné.\n"
+"Fwmark pre odchádzajúce pakety. Ak je nastvavené 0\n"
+" alebo 'vypnuté', táto voľba je zakázaná. Môže sa určiť\n"
+"hexadecimálne začínajúc na '0x'."
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:86
+#, kde-format
+msgid ""
+"Optional.\n"
+"If not specified, the MTU is automatically determined\n"
+"from the endpoint addresses or the system default route,\n"
+"which is usually a sane choice. However, to manually\n"
+"specify an MTU and to override this automatic discovery,\n"
+"this value may be specified explicitly."
+msgstr ""
+"Voliteľné.\n"
+"Ak nie je určené, MTU sa automaticky určí z adresy endpointu\n"
+"alebo predvolenej systémovej cesty, čo je obyčajne dobrá voľba.\n"
+"Avšak, na ručné nastavenie MTU a prepísanie automatického\n"
+"nastavenia, táto hodnota sa dá určiť explicitne."
+
+#. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
+#: editor/settings/ui/wireguardinterfacewidget.ui:93
+#, kde-format
+msgid "Autoroute peers:"
+msgstr "Automaticky smerovať účastníkov:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
+#: editor/settings/ui/wireguardinterfacewidget.ui:101
+#, kde-format
+msgid ""
+"Whether to automatically add routes for the AllowedIPs ranges\n"
+"of the peers."
+msgstr "Či automaticky pridávať trasy pre rozsahy povolených IP účastníkov."
+
+#. i18n: ectx: property (text), widget (QPushButton, btnPeers)
+#: editor/settings/ui/wireguardinterfacewidget.ui:126
+#, kde-format
+msgid "Peers…"
+msgstr "Účastníci..."
+
+#. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:17
+#, kde-format
+msgid "Public key:"
+msgstr "Verejný kľúč:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, publicKeyLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:27
+#, kde-format
+msgid ""
+"Required.\n"
+"            A base64 public key calculated by wg pubkey \n"
+"            from a private key, and usually transmitted \n"
+"            out of band to the author of the configuration file."
+msgstr ""
+"Vyžadované.\n"
+"Verejný kľúč base64 vypočítaný pomocou wg pubkey \n"
+"zo súkromného kľúča, a zvyčajne prenesený zo skupiny \n"
+" autorovi konfiguračného súboru."
+
+#. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:34
+#, kde-format
+msgid "Allowed IPs:"
+msgstr "Povolené adresy IP:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, allowedIPsLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:47
+#, kde-format
+msgid ""
+"Required.\n"
+"            A comma-separated list of IP (v4 or v6) addresses \n"
+"            with CIDR masks from which incoming traffic for \n"
+"            this peer is allowed and to which outgoing traffic \n"
+"            for this peer is directed. The catch-all 0.0.0.0/0 \n"
+"            may be specified for matching all IPv4 addresses, \n"
+"            and ::/0 may be specified for matching all IPv6 addresses."
+msgstr ""
+"Povinné.\n"
+"Čiarkou oddelený zoznam IP (v4 alebo v6) adries\n"
+"s CIDR maskami z ktorých je povolená prichádzajúca\n"
+"komunikácia a kam smeruje odchádzajúca\n"
+"komunikácia. Dá sa nastaviť hodnota 0.0.0.0/0\n"
+"na určenie všetkých IPv4 adries a ::/0 pre všetky IPV6 adresy."
+
+#. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:55
+#, kde-format
+msgid "Endpoint address:"
+msgstr "Adresa koncového bodu:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:66
+#, kde-format
+msgid ""
+"Optional.\n"
+"            An endpoint for the connection. Can be an\n"
+"            IPv4 address, IPv6 address, or FQDN (fully\n"
+"            qualified domain name such as abc.com). If\n"
+"            present, Endpoint port must also be set."
+msgstr ""
+"Voliteľné.\n"
+"Endpoint pre pripojenie. Môže byť\n"
+"IPv4 adresa, IPv6 adresa, FQDN\n"
+"(fully qualified domain name ako abc.com).\n"
+"Ak je nastavené, treba nastaviť aj endpoint."
+
+#. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:74
+#, kde-format
+msgid "Endpoint port:"
+msgstr "Port koncového bodu:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:83
+#, kde-format
+msgid ""
+"Optional.\n"
+"            The port number of an endpoint. If present Endpoint\n"
+"            Address must also be set."
+msgstr ""
+"Voliteľné.\n"
+"Číslo portu endpointu. Ak je dostupný endpoint.\n"
+"Adresa musí byť tiež nastavená."
+
+#. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:91
+#, kde-format
+msgid "Preshared key:"
+msgstr "Predzdieľaný kľúč:"
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:102
+#, kde-format
+msgid ""
+"Optional.\n"
+"            A base64 preshared key generated by wg genpsk.\n"
+"            This option adds an additional layer of symmetric-key\n"
+"            cryptography to be mixed into the already existing\n"
+"            public-key cryptography, for post-quantum resistance."
+msgstr ""
+"Voliteľné.\n"
+"Base64 preshared key vygenerovaný wg genpsk.\n"
+"Táto voľba pridá dodatočnú vrstvu symetrického kľúča\n"
+"kryptografia, ktorá sa má zamiešať do existujúceho\n"
+"verejného kľúča kryptografia, pre postkvantovú rezistenciu."
+
+#. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:109
+#, kde-format
+msgid "Persistent keepalive:"
+msgstr "Trvalé zachovanie spojenia:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:127
+#, kde-format
+msgid ""
+"Optional.\n"
+"            A seconds interval, between 1 and 65535 inclusive, of\n"
+"            how often to send an authenticated empty packet to\n"
+"            the peer for the purpose of keeping a stateful firewall\n"
+"            or NAT mapping valid persistently. For example, if the\n"
+"            interface very rarely sends traffic, but it might at\n"
+"            anytime receive traffic from a peer, and it is behind\n"
+"            NAT, the interface might benefit from having a\n"
+"            persistent keepalive interval of 25 seconds. If set to\n"
+"            0 or \"off\", this option is disabled. By default or\n"
+"            when unspecified, this option is off. Most users will not\n"
+"            need this."
+msgstr ""
+"Voliteľné.\n"
+"Interval v sekundách, medzi 1 a 65535 vrátane,\n"
+"ako často posielať overený prázdny paket pre\n"
+"klienta z dôvodu zachovania stavového firewallu\n"
+"alebo NAT mapovania platného perzistentne. Napríklad\n"
+"ak rozhranie veľmi zriedkavo posiela komunikáciu, ale\n"
+"môže hocikedy prijať komunikáciu od klienta a je za\n"
+"NAT, rozhranie môže mať výhodu z existencie\n"
+"perzistentného keepalive intervalu 25 sekúnd.\n"
+"Ak je nastavené na 0 alebo \"vypnuté\", táto voľba\n"
+"je zakázaná. Predvolene alebo ak nie je určené,\n"
+"táto voľba je vypnutá. Väčšina používateľov to nepotrebuje."
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: editor/settings/ui/wireguardtabwidget.ui:24
+#, kde-format
+msgid "Peer 1"
+msgstr "Účastník č. 1"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
+#: editor/settings/ui/wireguardtabwidget.ui:37
+#, kde-format
+msgid "Add new Peer"
+msgstr "Pridať nového účastníka"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
+#: editor/settings/ui/wireguardtabwidget.ui:44
+#, kde-format
+msgid "Remove this Peer"
+msgstr "Odstrániť tohto účastníka"
 
 #: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
@@ -1555,6 +3223,100 @@ msgstr ""
 "Bezpečnosť: Nezabezpečené\n"
 "Frekvencia: %3 Mhz"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/widgets/ui/advancedpermissionswidget.ui:33
+#, kde-format
+msgid "Available Users"
+msgstr "Dostupní používatelia"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
+#: editor/widgets/ui/advancedpermissionswidget.ui:83
+#: editor/widgets/ui/advancedpermissionswidget.ui:213
+#, kde-format
+msgid "Real Name"
+msgstr "Skutočné meno"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
+#: editor/widgets/ui/advancedpermissionswidget.ui:88
+#: editor/widgets/ui/advancedpermissionswidget.ui:218
+#, kde-format
+msgctxt "like in Username for athentication"
+msgid "Username"
+msgstr "Používateľské meno"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/widgets/ui/advancedpermissionswidget.ui:160
+#, kde-format
+msgid "Users allowed to activate the connection"
+msgstr "Používatelia s povolením aktivovať pripojenie"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
+#: editor/widgets/ui/ipv4routes.ui:20
+#, kde-format
+msgid "Edit IPv4 Routes"
+msgstr "Úprava trás IPv4"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
+#: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
+#, kde-format
+msgid ""
+"If enabled, this connection will never be used as the default network "
+"connection"
+msgstr ""
+"Ak je povolené, toto pripojenie sa nikdy nepoužije ako predvolené sieťové "
+"pripojenie."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
+#: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
+#, kde-format
+msgid "Use only for resources on this connection"
+msgstr "Použiť iba pre sieťové prostriedky tohto pripojenia"
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#: editor/widgets/ui/ipv4routes.ui:74
+#, kde-format
+msgctxt "Remove a selected row"
+msgid "Remove"
+msgstr "Odstrániť"
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#: editor/widgets/ui/ipv4routes.ui:124 editor/widgets/ui/ipv6routes.ui:77
+#, kde-format
+msgctxt "Insert a row"
+msgid "Add"
+msgstr "Pridať"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbIgnoreAutoRoutes)
+#: editor/widgets/ui/ipv4routes.ui:136 editor/widgets/ui/ipv6routes.ui:120
+#, kde-format
+msgid ""
+"If enabled, automatically configured routes are ignored and only routes "
+"specified above are used"
+msgstr ""
+"Ak je povolené, automaticky nastavené cesty sa ignorujú a použijú sa iba "
+"trasy tu určené"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
+#: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
+#, kde-format
+msgid "Ignore automatically obtained routes"
+msgstr "Ignorovať automaticky získané smerovania"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
+#: editor/widgets/ui/ipv6routes.ui:20
+#, kde-format
+msgid "Edit IPv6 Routes"
+msgstr "Úprava trás IPv6"
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#: editor/widgets/ui/ipv6routes.ui:92
+#, kde-format
+msgctxt "Remove a selected row"
+msgid "R&emove"
+msgstr "O&dstrániť"
+
 #: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
@@ -1981,967 +3743,6 @@ msgstr "Adsl"
 #, kde-format
 msgid "Device"
 msgstr "Zariadenie"
-
-#~ msgid "Connection name:"
-#~ msgstr "Názov pripojenia:"
-
-#~ msgid "Authentication:"
-#~ msgstr "Overenie totožnosti:"
-
-#~ msgid "MD5"
-#~ msgstr "MD5"
-
-#~ msgid "TLS"
-#~ msgstr "TLS"
-
-#~ msgid "LEAP"
-#~ msgstr "LEAP"
-
-#~ msgid "PWD"
-#~ msgstr "PWD"
-
-#~ msgid "FAST"
-#~ msgstr "RÝCHLE"
-
-#~ msgid "Tunneled TLS (TTLS)"
-#~ msgstr "Tunelované TLS (TTLS)"
-
-#~ msgid "Protected EAP (PEAP)"
-#~ msgstr "Chránené EAP (PEAP)"
-
-#~ msgid "Username:"
-#~ msgstr "Meno používateľa:"
-
-#~ msgid "Password:"
-#~ msgstr "Heslo:"
-
-#~ msgid "Identity:"
-#~ msgstr "Identita:"
-
-#~ msgid "Domain:"
-#~ msgstr "Doména:"
-
-#~ msgid "User certificate:"
-#~ msgstr "Užívateľský certifikát:"
-
-#~ msgid "CA certificate:"
-#~ msgstr "CA certifikát:"
-
-#~ msgid "Subject match:"
-#~ msgstr "Zhoda predmetu:"
-
-#~ msgid "Alternative subject matches:"
-#~ msgstr "Alternatívne zhody predmetu:"
-
-#~ msgid "…"
-#~ msgstr "..."
-
-#~ msgid "Connect to these servers:"
-#~ msgstr "Pripojiť na tieto servery:"
-
-#~ msgid "Private key:"
-#~ msgstr "Súkromný kľúč:"
-
-#~ msgid "Private key password:"
-#~ msgstr "Heslo súkromného kľúča:"
-
-#~ msgid "Anonymous identity:"
-#~ msgstr "Anonymná identita:"
-
-#~ msgid "Automatic PAC provisioning"
-#~ msgstr "Automatický PAC provisioning"
-
-#~ msgid "Anonymous"
-#~ msgstr "Anonym"
-
-#~ msgid "Authenticated"
-#~ msgstr "Totožnosť overená"
-
-#~ msgid "Both"
-#~ msgstr "Obe"
-
-#~ msgid "PAC file:"
-#~ msgstr "Súbor PAC:"
-
-#~ msgid "Inner authentication:"
-#~ msgstr "Vnútorné overenie totožnosti:"
-
-#~ msgid "GTC"
-#~ msgstr "GTC"
-
-#~ msgid "MSCHAPv2"
-#~ msgstr "MSCHAPv2"
-
-#~ msgid "PAP"
-#~ msgstr "PAP"
-
-#~ msgid "MSCHAP"
-#~ msgstr "MSCHAP"
-
-#~ msgid "CHAP"
-#~ msgstr "CHAP"
-
-#~ msgid "PEAP version:"
-#~ msgstr "Verzia PEAP:"
-
-#~ msgctxt "PEAP version"
-#~ msgid "Automatic"
-#~ msgstr "Automaticky"
-
-#~ msgid "Version 0"
-#~ msgstr "Verzia 0"
-
-#~ msgid "Version 1"
-#~ msgstr "Verzia 1"
-
-#~ msgid "Interface name:"
-#~ msgstr "Názov rozhrania:"
-
-#~ msgid "Bonded connections:"
-#~ msgstr "Previazané pripojenia:"
-
-#~ msgid "Add…"
-#~ msgstr "Pridať…"
-
-#~ msgid "Edit…"
-#~ msgstr "Upraviť…"
-
-#~ msgid "Delete"
-#~ msgstr "Odstrániť"
-
-#~ msgid "Mode:"
-#~ msgstr "Režim:"
-
-#~ msgid "Link monitoring:"
-#~ msgstr "Monitorovanie linky:"
-
-#~ msgid "Monitoring frequency:"
-#~ msgstr "Frekvencia monitorovania:"
-
-#~ msgid " ms"
-#~ msgstr " ms"
-
-#~ msgid "Link up delay:"
-#~ msgstr "Čas pripojenej linky:"
-
-#~ msgid "Link down delay:"
-#~ msgstr "Čas odpojenej linky:"
-
-#~ msgid "ARP targets:"
-#~ msgstr "Ciele ARP:"
-
-#~ msgid "An IP address or comma-separated list of addresses."
-#~ msgstr "IP adresa alebo čiarkou oddelený zoznam adries."
-
-#~ msgid "Bridged connections:"
-#~ msgstr "Premostené pripojenia:"
-
-#~ msgid "Aging time:"
-#~ msgstr "Čas starnutia:"
-
-#~ msgctxt "seconds"
-#~ msgid " s"
-#~ msgstr " s"
-
-#~ msgid "Enable STP (Spanning Tree Protocol)"
-#~ msgstr "Povoliť STP (Spanning Tree Protocol)"
-
-#~ msgid "Priority:"
-#~ msgstr "Priorita:"
-
-#~ msgid "Forward delay:"
-#~ msgstr "Oneskorenie presmerovania:"
-
-#~ msgid "Hello time:"
-#~ msgstr "Čas hello:"
-
-#~ msgid "Max age:"
-#~ msgstr "Maximálny vek:"
-
-#~ msgid "Address of the device:"
-#~ msgstr "Adresa zariadenia:"
-
-#~ msgid "Connection type:"
-#~ msgstr "Typ pripojenia:"
-
-#~ msgid "Number:"
-#~ msgstr "Číslo:"
-
-#~ msgid "Connect automatically with priority"
-#~ msgstr "Pripojiť automaticky s prioritou"
-
-#~ msgid ""
-#~ "If the connection is set to autoconnect, connections with higher priority "
-#~ "will be preferred. Defaults to 0.\n"
-#~ "The higher number means higher priority. An negative number can be used "
-#~ "to indicate priority lower than the default.\n"
-#~ "           "
-#~ msgstr ""
-#~ "Ak pripojenie je nastavené na automatické, uprednostní sa pripojenie s "
-#~ "vyššou prioritou. Predvolené je 0.\n"
-#~ "Vyššie číslo znamená vyššiu prioritu. Záporné číslo sa dá použiť na "
-#~ "indikáciu priority nižšej ako predvolená.\n"
-#~ "           "
-
-#~ msgid "All users may connect to this network"
-#~ msgstr "K tejto sieti sa môžu pripojiť všetci používatelia"
-
-#~ msgid "Edit advanced permissions for this connection"
-#~ msgstr "Upraviť pokročilé oprávnenia pre toto pripojenie"
-
-#~ msgid ""
-#~ "Fine-grained permissions editor for this connection. It lets you choose "
-#~ "which users can activate/modify/delete this connection."
-#~ msgstr ""
-#~ "Jemnozrnný editor oprávnení pre toto pripojenie. Umožní vám vybrať, ktorí "
-#~ "používatelia môžu aktivovať/meniť/odstrániť toto pripojenie."
-
-#~ msgid "Advanced…"
-#~ msgstr "Pokročilé…"
-
-#~ msgid "Automatically connect to VPN"
-#~ msgstr "Automaticky sa pripojiť k VPN"
-
-#~ msgid "Firewall zone:"
-#~ msgstr "Zóna brány firewall:"
-
-#~ msgid "Metered:"
-#~ msgstr "Merané podľa objemu dát:"
-
-#~ msgid ""
-#~ "NetworkManager indicates to applications whether the connection is "
-#~ "metered and therefore\n"
-#~ "data usage should be restricted."
-#~ msgstr ""
-#~ "NetworkManager indikuje aplikáciam, či je pripojenie merané podľa objemu "
-#~ "dát a teda\n"
-#~ "používanie dát má byť obmedzené."
-
-#~ msgctxt "Item in the Metered: list"
-#~ msgid "Automatic"
-#~ msgstr "Automaticky"
-
-#~ msgid "Yes"
-#~ msgstr "Áno"
-
-#~ msgid "No"
-#~ msgstr "Nie"
-
-#~ msgid "Basic"
-#~ msgstr "Základné"
-
-#~ msgid "Advanced"
-#~ msgstr "Pokročilé"
-
-#~ msgid "Allow roaming if home network is not available"
-#~ msgstr "Povoliť roaming ak domáca sieť nie je dostupná"
-
-#~ msgid "APN:"
-#~ msgstr "APN:"
-
-#~ msgid "Network ID:"
-#~ msgstr "Identifikátor siete:"
-
-#~ msgid "PIN:"
-#~ msgstr "PIN:"
-
-#~ msgid "Transport mode:"
-#~ msgstr "Prenosový režim:"
-
-#~ msgid "Restrict to device:"
-#~ msgstr "Obmedziť na zariadenie:"
-
-#~ msgid "MTU:"
-#~ msgstr "MTU:"
-
-#~ msgctxt "MTU:"
-#~ msgid "Automatic"
-#~ msgstr "Automaticky"
-
-#~ msgid " bytes"
-#~ msgstr " bajty/bajtov"
-
-#~ msgid "Advanced IP settings"
-#~ msgstr "Pokročilé nastavenia IP"
-
-#~ msgid "Method:"
-#~ msgstr "Metóda:"
-
-#~ msgctxt "Method:"
-#~ msgid "Automatic"
-#~ msgstr "Automaticky"
-
-#~ msgid "Automatic (Only addresses)"
-#~ msgstr "Automaticky (iba adresy)"
-
-#~ msgid "Link-Local"
-#~ msgstr "Link-Local"
-
-#~ msgctxt "like in use Manual configuration"
-#~ msgid "Manual"
-#~ msgstr "Ručne"
-
-#~ msgid "Shared to other computers"
-#~ msgstr "Zdieľané pre iné počítače"
-
-#~ msgctxt "like in this setting is Disabled"
-#~ msgid "Disabled"
-#~ msgstr "Zakázané"
-
-#~ msgctxt "@info"
-#~ msgid "DNS Servers:"
-#~ msgstr "Servery DNS:"
-
-#~ msgid ""
-#~ "Use this field to specify the IP address(es) of one or more DNS servers. "
-#~ "Use ',' to separate entries."
-#~ msgstr ""
-#~ "Použite toto pole na zadanie IP adresy pre jeden alebo viacero DNS "
-#~ "serverov. Položky oddeľte čiarkou ','."
-
-#~ msgid "Edit DNS the list of servers"
-#~ msgstr "Upraviť zoznam DNS serverov"
-
-#~ msgctxt "@info"
-#~ msgid "Search Domains:"
-#~ msgstr "Prehľadávané domény:"
-
-#~ msgid ""
-#~ "Use this field to specify one or more DNS domains to search. Use ',' to "
-#~ "separate entries."
-#~ msgstr ""
-#~ "Použite toto pole na určenie jednej alebo viacerých DNS domén na "
-#~ "prehľadanie. Použite ',' na oddelenie položiek."
-
-#~ msgid "Edit the list of DNS domains being searched"
-#~ msgstr "Upraviť zoznam prehľadávaných DNS domén"
-
-#~ msgid "DHCP Client ID:"
-#~ msgstr "Identifikátor klienta servera DHCP:"
-
-#~ msgid ""
-#~ "Use this field to specify the DHCP client ID which is a string sent to "
-#~ "the DHCP server\n"
-#~ "to identify the local machine that the DHCP server may use to customize "
-#~ "the DHCP\n"
-#~ "lease and options."
-#~ msgstr ""
-#~ "Použite toto pole na určenie ID DHCP klienta, čo je reťazec poslaný na "
-#~ "DHCP server\n"
-#~ "na identifikáciu miestneho stroja, ktorý DHCP server môže použiť na "
-#~ "úpravu DHCP\\ prenájmu a možností."
-
-#~ msgid "Remove"
-#~ msgstr "Odstrániť"
-
-#~ msgid "Add"
-#~ msgstr "Pridať"
-
-#~ msgid ""
-#~ "IP addresses identify your computer on the network. Click the \"Add\" "
-#~ "button to add\n"
-#~ "an IP address"
-#~ msgstr ""
-#~ "IP adresy identifikujú váš počítač na sieti. Kliknite na tlačidlo \"pridať"
-#~ "\" na pridanie\n"
-#~ "IP adresy"
-
-#~ msgid ""
-#~ "Allows the connection to complete if IPv4 configuration fails\n"
-#~ "but IPv6 configuration succeeds"
-#~ msgstr ""
-#~ "Pri pripájaní do siete IPv6 povolí pripojenie na ukončenie, ak\n"
-#~ "IPv4 nastavenie zlyhá, ale IPv6 nastavenie uspeje"
-
-#~ msgid "IPv4 is required for this connection"
-#~ msgstr "Pre toto pripojenie sa vyžaduje IPv4"
-
-#~ msgid "Routes…"
-#~ msgstr "Smerovania..."
-
-#~ msgid ""
-#~ "When connecting to IPv4-capable networks, allows the connection to "
-#~ "complete if\n"
-#~ "IPv6 configuration fails but IPv4 configuration succeeds"
-#~ msgstr ""
-#~ "Pri pripájaní do siete IPv4 povolí pripojenie na ukončenie, ak\n"
-#~ "IPv6 nastavenie zlyhá, ale IPv4 nastavenie uspeje"
-
-#~ msgid "IPv6 is required for this connection"
-#~ msgstr "Pre toto pripojenie sa vyžaduje IPv6"
-
-#~ msgid "Edit the list of DNS servers"
-#~ msgstr "Upraviť zoznam DNS serverov"
-
-#~ msgid ""
-#~ "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-#~ "enabled, it makes the kernel generate\n"
-#~ "a temporary IPv6 address in addition to the public one generated from MAC "
-#~ "address via modified EUI-64."
-#~ msgstr ""
-#~ "Nastaviť rozšírenia súkromia IPv6 pre SLAAC, popísané v RFC4941. Ak je "
-#~ "povolené, jadro vygeneruje\n"
-#~ "dočasnú IPv6 adresu navyše k verejnej, vygenerovanej z MAC adresy cez "
-#~ "zmenené EUI-64."
-
-#~ msgctxt "privacy disabled"
-#~ msgid "Disabled"
-#~ msgstr "Zakázané"
-
-#~ msgid "Enabled (prefer public address)"
-#~ msgstr "Povolené (preferovať verejnú adresu)"
-
-#~ msgid "Enabled (prefer temporary addresses)"
-#~ msgstr "Povolené (preferovať dočasné adresy)"
-
-#~ msgid "Automatic (Only DHCP)"
-#~ msgstr "Automaticky (iba DHCP)"
-
-#~ msgctxt "like in this setting is Disabled"
-#~ msgid "Ignored"
-#~ msgstr "Ignorované"
-
-#~ msgid "Disabled"
-#~ msgstr "Zakázané"
-
-#~ msgid "Privacy:"
-#~ msgstr "Súkromie:"
-
-#~ msgid "Authentication"
-#~ msgstr "Overenie totožnosti"
-
-#~ msgid "EAP"
-#~ msgstr "EAP"
-
-#~ msgid "Compression"
-#~ msgstr "Kompresia"
-
-#~ msgid "Use point-to-point encryption (MPPE)"
-#~ msgstr "Použiť šifrovanie point-to-point (MPPE)"
-
-#~ msgid "Use BSD data compression"
-#~ msgstr "Použiť kompresiu dát BSD"
-
-#~ msgid "Use Deflate data compression"
-#~ msgstr "Použiť kompresiu dát Deflate"
-
-#~ msgid "Use TCP header compression"
-#~ msgstr "Použiť kompresiu hlavičky TCP"
-
-#~ msgid "Require 128-bit encryption"
-#~ msgstr "Vyžadovať 128-bitové šifrovanie"
-
-#~ msgid "Use stateful MPPE"
-#~ msgstr "Použiť stavové MPPE"
-
-#~ msgid "Echo"
-#~ msgstr "Odozva"
-
-#~ msgid "Send PPP echo packets"
-#~ msgstr "Odosielať pakety s odozvou pre PPP"
-
-#~ msgid "Service:"
-#~ msgstr "Služba:"
-
-#~ msgid ""
-#~ "If specified, instruct PPPoE to only initiate sessions with access "
-#~ "concentrators that provide the specified service. For most providers, "
-#~ "this should be left blank. It is only required if there are multiple "
-#~ "access concentrators or a specific service is known to be required."
-#~ msgstr ""
-#~ "Ak je určené, nariadi PPPeE, aby iba inicializoval sedenia s prístupom "
-#~ "koncentrátorov, ktoré poskytujú určenú službu. Pre väčšinu poskytovateľov "
-#~ "by to malo ostať prázdne. Vyžaduje sa to iba ak je viacero koncentrátorov "
-#~ "prístupu alebo je známe, že sa vyžaduje určená služba."
-
-#~ msgid "Teamed connections:"
-#~ msgstr "Tímové pripojenia:"
-
-#~ msgid "JSON config:"
-#~ msgstr "Nastavenie JSON:"
-
-#~ msgid "Import configuration from file…"
-#~ msgstr "Importovať nastavenie zo súboru..."
-
-#~ msgid "Parent interface:"
-#~ msgstr "Nadradené rozhranie:"
-
-#~ msgid "VLAN id:"
-#~ msgstr "Identifikátor VLAN:"
-
-#~ msgid "VLAN interface name:"
-#~ msgstr "Názov rozhrania VLAN:"
-
-#~ msgid "Output packet headers reordering"
-#~ msgstr "Preusporiadanie hlavičiek výstupných paketov"
-
-#~ msgid "GARP VLAN Registration Protocol"
-#~ msgstr "Registračný protokol GARP VLAN"
-
-#~ msgid "GVRP"
-#~ msgstr "GVRP"
-
-#~ msgid "Loose binding"
-#~ msgstr "Uvoľnená väzba"
-
-#~ msgid "SSID:"
-#~ msgstr "SSID:"
-
-#~ msgid "Infrastructure"
-#~ msgstr "Infraštruktúra"
-
-#~ msgid "Ad-hoc"
-#~ msgstr "Ad-hoc"
-
-#~ msgid "Access Point"
-#~ msgstr "Prístupový bod"
-
-#~ msgid "BSSID:"
-#~ msgstr "BSSID:"
-
-#~ msgid ""
-#~ "This option locks this connection to the Wi-Fi access point (AP) "
-#~ "specified by the\n"
-#~ " BSSID entered here. Example: 00:11:22:33:44:55"
-#~ msgstr ""
-#~ "Táto voľba zamkne toto pripojenie k Wi-Fi prístupovému bodu (AP) určené\n"
-#~ " sem zadaným BSSID. Príklad: 00:11:22:33:44:55"
-
-#~ msgid "Band:"
-#~ msgstr "Pásmo:"
-
-#~ msgid ""
-#~ "This option locks the connection to the Wi-Fi network associated to the "
-#~ "specified band. This setting depends\n"
-#~ " on specific driver capability and may not work with all drivers"
-#~ msgstr ""
-#~ "Táto voľba zamkne pripojenie k Wi-Fi sieti prepojenej k danému pásmu. "
-#~ "Toto nastavenie závisí\n"
-#~ " na schopnosti určitého ovládača a nemusí fungovať so všetkými ovládačmi"
-
-#~ msgctxt "Band:"
-#~ msgid "Automatic"
-#~ msgstr "Automaticky"
-
-#~ msgid "A (5 GHz)"
-#~ msgstr "A (5 GHz)"
-
-#~ msgid "B/G (2.4 GHz)"
-#~ msgstr "B/G (2.4 GHz)"
-
-#~ msgid "Channel:"
-#~ msgstr "Kanál:"
-
-#~ msgid ""
-#~ "Wireless channel to use for the Wi-Fi connection. The device will only "
-#~ "join (or create for Ad-Hoc networks)\n"
-#~ "a Wi-Fi network on the specified channel"
-#~ msgstr ""
-#~ "Bezdrôtový kanál pre Wi-Fi pripojenie. Zariadenie sa pripojí iba k (alebo "
-#~ "vytvorí pre Ad-Hoc siete)\n"
-#~ "Wi-Fi sieti na určenom kanáli"
-
-#~ msgid "Cloned MAC address:"
-#~ msgstr "Klonovaná adresa MAC:"
-
-#~ msgid "Random…"
-#~ msgstr "Náhodná..."
-
-#~ msgid "Mark this if you want to create a connection for a hidden network"
-#~ msgstr "Označte toto, ak chcete vytvoriť pripojenie pre skrytú sieť"
-
-#~ msgid "Visibility:"
-#~ msgstr "Viditeľnosť:"
-
-#~ msgid "Hidden network"
-#~ msgstr "Skrytá sieť"
-
-#~ msgid "Wifi Security"
-#~ msgstr "Bezpečnosť Wifi"
-
-#~ msgctxt "no security"
-#~ msgid "None"
-#~ msgstr "Žiadne"
-
-#~ msgid "WEP key 40/128 bits (Hex or ASCII)"
-#~ msgstr "WEP kľúč 40/128 bitov (Hex alebo ASCII)"
-
-#~ msgid "WEP key 128 bits"
-#~ msgstr "WEP kľúč 128 bitov"
-
-#~ msgid "Dynamic WEP (802.1x)"
-#~ msgstr "Dynamický WEP (802.1x)"
-
-#~ msgid "WPA/WPA2 Personal"
-#~ msgstr "WPA/WPA2 Personal"
-
-#~ msgid "WPA/WPA2 Enterprise"
-#~ msgstr "WPA/WPA2 Enterprise"
-
-#~ msgid "WPA3 Personal"
-#~ msgstr "WPA3 Personal"
-
-#~ msgid "WPA3 Enterprise 192-bit"
-#~ msgstr "WPA3 Enterprise 192-bit"
-
-#~ msgid "Security:"
-#~ msgstr "Zabezpečenie:"
-
-#~ msgid "Key:"
-#~ msgstr "Kľúč:"
-
-#~ msgid "WEP index:"
-#~ msgstr "WEP index:"
-
-#~ msgid "1 (default)"
-#~ msgstr "1 (predvolené)"
-
-#~ msgid "2"
-#~ msgstr "2"
-
-#~ msgid "3"
-#~ msgstr "3"
-
-#~ msgid "4"
-#~ msgstr "4"
-
-#~ msgid "Open System"
-#~ msgstr "Otvorený systém"
-
-#~ msgid "Shared Key"
-#~ msgstr "Zdieľaný kľúč"
-
-#~ msgid ""
-#~ "This option locks this connection to the network device specified by its\n"
-#~ "permanent MAC address entered here. Example: 00:11:22:33:44:55"
-#~ msgstr ""
-#~ "Táto voľba zamkne toto pripojenie k sieťovému zariadeniu určenému jeho\n"
-#~ "permanentnou MAC adresou zadanou sem. Príklad: 00:11:22:33:44:55"
-
-#~ msgid ""
-#~ "The MAC address entered here will be used as hardware address for the\n"
-#~ "network device this connection is activated on. This feature is known as "
-#~ "MAC\n"
-#~ "cloning or spoofing. Example 11:22:33:44:55"
-#~ msgstr ""
-#~ "Sem zadaná adresa MAC sa použije ako hardvérová adresa pre\n"
-#~ "sieťové zariadenie, na ktorom je aktivované toto pripojenie. Táto funkcia "
-#~ "je známa ako MAC\n"
-#~ "klonovanie alebo spoofing. Príklad 11:22:33:44:55"
-
-#~ msgid "Random"
-#~ msgstr "Náhodná"
-
-#~ msgid ""
-#~ "Only transmit packets of the specified size or smaller, breaking larger "
-#~ "packets up\n"
-#~ "into multiple Ethernet frames"
-#~ msgstr ""
-#~ "Prenášať iba pakety určenej veľkosti alebo menšie, rozdelením väčších "
-#~ "paketov\n"
-#~ "do viacerých Ethernetových rámcov"
-
-#~ msgid "Speed:"
-#~ msgstr "Rýchlosť:"
-
-#~ msgid "Duplex:"
-#~ msgstr "Duplex:"
-
-#~ msgid ""
-#~ "Request that the device use the specified duplex mode. Either \"half\" or "
-#~ "\"full\""
-#~ msgstr ""
-#~ "Vyžiadať, že zariadenie použije určený duplexný režim. Buď \"polovičný\" "
-#~ "alebo \"plný\""
-
-#~ msgid "Half"
-#~ msgstr "Polovičný"
-
-#~ msgid "Full"
-#~ msgstr "Plné"
-
-#~ msgid "Link negotiation:"
-#~ msgstr "Vyjednávanie linky:"
-
-#~ msgid ""
-#~ "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#~ "values will be forced without checking\n"
-#~ "the device compatibility. If unsure, leave here “Ignore” or pick "
-#~ "“Automatic”."
-#~ msgstr ""
-#~ "Vyjednávanie linky zariadenia. Ak vyberiete možnosť „Ručne“, hodnoty "
-#~ "„Rýchlosť“ a „Duplex“ budú vynútené bez kontroly\n"
-#~ " kompatibility zariadenia. Ak si nie ste istí, nechajte voľbu „Ignorovať“ "
-#~ "alebo vyberte „Automaticky“."
-
-#~ msgid "Ignore"
-#~ msgstr "Ignorovať"
-
-#~ msgctxt "Link negotiation:"
-#~ msgid "Automatic"
-#~ msgstr "Automaticky"
-
-#~ msgid "Manual"
-#~ msgstr "Ručne"
-
-#~ msgid "Request that the device use only the specified speed."
-#~ msgstr "Požadovať aby zariadenie používalo iba určenú rýchlosť."
-
-#~ msgid "10 Mb/s"
-#~ msgstr "10 Mb/s"
-
-#~ msgid "100 Mb/s"
-#~ msgstr "100 Mb/s"
-
-#~ msgid "1 Gb/s"
-#~ msgstr "1 Gb/s"
-
-#~ msgid "2.5 Gb/s"
-#~ msgstr "2.5 Gb/s"
-
-#~ msgid "5 Gb/s"
-#~ msgstr "5 Gb/s"
-
-#~ msgid "10 Gb/s"
-#~ msgstr "10 Gb/s"
-
-#~ msgid "40 Gb/s"
-#~ msgstr "40 Gb/s"
-
-#~ msgid "100 Gb/s"
-#~ msgstr "100 Gb/s"
-
-#~ msgid "Use 802.1x security for this connection"
-#~ msgstr "Použiť zabezpečenie 802.1x pre toto pripojenie"
-
-#~ msgid "WireGuard Settings"
-#~ msgstr "Nastavenia pripojenia WireGuard"
-
-#~ msgid "Interface"
-#~ msgstr "Rozhranie"
-
-#~ msgid ""
-#~ "Required.\n"
-#~ "A base64 private key generated by wg genkey."
-#~ msgstr ""
-#~ "Povinné.\n"
-#~ "Súkromný kľúč base64 vygenerovaný pomocou wg genkey."
-
-#~ msgid "Listen port:"
-#~ msgstr "Načúvací port:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "Listen port number. Chosen randomly if left as 'Automatic'."
-#~ msgstr ""
-#~ "Voliteľné.\n"
-#~ "Číslo načúvacieho portu. Vybraný náhodne, ak necháte 'Automaticky'."
-
-#~ msgid "fwmark:"
-#~ msgstr "fwmark:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "An fwmark for outgoing packets. If set to 0 or 'off', this\n"
-#~ "option is disabled. May be specified in hexadecimal by\n"
-#~ "prepending '0x'."
-#~ msgstr ""
-#~ "Voliteľné.\n"
-#~ "Fwmark pre odchádzajúce pakety. Ak je nastvavené 0\n"
-#~ " alebo 'vypnuté', táto voľba je zakázaná. Môže sa určiť\n"
-#~ "hexadecimálne začínajúc na '0x'."
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "If not specified, the MTU is automatically determined\n"
-#~ "from the endpoint addresses or the system default route,\n"
-#~ "which is usually a sane choice. However, to manually\n"
-#~ "specify an MTU and to override this automatic discovery,\n"
-#~ "this value may be specified explicitly."
-#~ msgstr ""
-#~ "Voliteľné.\n"
-#~ "Ak nie je určené, MTU sa automaticky určí z adresy endpointu\n"
-#~ "alebo predvolenej systémovej cesty, čo je obyčajne dobrá voľba.\n"
-#~ "Avšak, na ručné nastavenie MTU a prepísanie automatického\n"
-#~ "nastavenia, táto hodnota sa dá určiť explicitne."
-
-#~ msgid "Autoroute peers:"
-#~ msgstr "Automaticky smerovať účastníkov:"
-
-#~ msgid ""
-#~ "Whether to automatically add routes for the AllowedIPs ranges\n"
-#~ "of the peers."
-#~ msgstr "Či automaticky pridávať trasy pre rozsahy povolených IP účastníkov."
-
-#~ msgid "Peers…"
-#~ msgstr "Účastníci..."
-
-#~ msgid "Public key:"
-#~ msgstr "Verejný kľúč:"
-
-#~ msgid ""
-#~ "Required.\n"
-#~ "            A base64 public key calculated by wg pubkey \n"
-#~ "            from a private key, and usually transmitted \n"
-#~ "            out of band to the author of the configuration file."
-#~ msgstr ""
-#~ "Vyžadované.\n"
-#~ "Verejný kľúč base64 vypočítaný pomocou wg pubkey \n"
-#~ "zo súkromného kľúča, a zvyčajne prenesený zo skupiny \n"
-#~ " autorovi konfiguračného súboru."
-
-#~ msgid "Allowed IPs:"
-#~ msgstr "Povolené adresy IP:"
-
-#~ msgid ""
-#~ "Required.\n"
-#~ "            A comma-separated list of IP (v4 or v6) addresses \n"
-#~ "            with CIDR masks from which incoming traffic for \n"
-#~ "            this peer is allowed and to which outgoing traffic \n"
-#~ "            for this peer is directed. The catch-all 0.0.0.0/0 \n"
-#~ "            may be specified for matching all IPv4 addresses, \n"
-#~ "            and ::/0 may be specified for matching all IPv6 addresses."
-#~ msgstr ""
-#~ "Povinné.\n"
-#~ "Čiarkou oddelený zoznam IP (v4 alebo v6) adries\n"
-#~ "s CIDR maskami z ktorých je povolená prichádzajúca\n"
-#~ "komunikácia a kam smeruje odchádzajúca\n"
-#~ "komunikácia. Dá sa nastaviť hodnota 0.0.0.0/0\n"
-#~ "na určenie všetkých IPv4 adries a ::/0 pre všetky IPV6 adresy."
-
-#~ msgid "Endpoint address:"
-#~ msgstr "Adresa koncového bodu:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            An endpoint for the connection. Can be an\n"
-#~ "            IPv4 address, IPv6 address, or FQDN (fully\n"
-#~ "            qualified domain name such as abc.com). If\n"
-#~ "            present, Endpoint port must also be set."
-#~ msgstr ""
-#~ "Voliteľné.\n"
-#~ "Endpoint pre pripojenie. Môže byť\n"
-#~ "IPv4 adresa, IPv6 adresa, FQDN\n"
-#~ "(fully qualified domain name ako abc.com).\n"
-#~ "Ak je nastavené, treba nastaviť aj endpoint."
-
-#~ msgid "Endpoint port:"
-#~ msgstr "Port koncového bodu:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            The port number of an endpoint. If present Endpoint\n"
-#~ "            Address must also be set."
-#~ msgstr ""
-#~ "Voliteľné.\n"
-#~ "Číslo portu endpointu. Ak je dostupný endpoint.\n"
-#~ "Adresa musí byť tiež nastavená."
-
-#~ msgid "Preshared key:"
-#~ msgstr "Predzdieľaný kľúč:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            A base64 preshared key generated by wg genpsk.\n"
-#~ "            This option adds an additional layer of symmetric-key\n"
-#~ "            cryptography to be mixed into the already existing\n"
-#~ "            public-key cryptography, for post-quantum resistance."
-#~ msgstr ""
-#~ "Voliteľné.\n"
-#~ "Base64 preshared key vygenerovaný wg genpsk.\n"
-#~ "Táto voľba pridá dodatočnú vrstvu symetrického kľúča\n"
-#~ "kryptografia, ktorá sa má zamiešať do existujúceho\n"
-#~ "verejného kľúča kryptografia, pre postkvantovú rezistenciu."
-
-#~ msgid "Persistent keepalive:"
-#~ msgstr "Trvalé zachovanie spojenia:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            A seconds interval, between 1 and 65535 inclusive, of\n"
-#~ "            how often to send an authenticated empty packet to\n"
-#~ "            the peer for the purpose of keeping a stateful firewall\n"
-#~ "            or NAT mapping valid persistently. For example, if the\n"
-#~ "            interface very rarely sends traffic, but it might at\n"
-#~ "            anytime receive traffic from a peer, and it is behind\n"
-#~ "            NAT, the interface might benefit from having a\n"
-#~ "            persistent keepalive interval of 25 seconds. If set to\n"
-#~ "            0 or \"off\", this option is disabled. By default or\n"
-#~ "            when unspecified, this option is off. Most users will not\n"
-#~ "            need this."
-#~ msgstr ""
-#~ "Voliteľné.\n"
-#~ "Interval v sekundách, medzi 1 a 65535 vrátane,\n"
-#~ "ako často posielať overený prázdny paket pre\n"
-#~ "klienta z dôvodu zachovania stavového firewallu\n"
-#~ "alebo NAT mapovania platného perzistentne. Napríklad\n"
-#~ "ak rozhranie veľmi zriedkavo posiela komunikáciu, ale\n"
-#~ "môže hocikedy prijať komunikáciu od klienta a je za\n"
-#~ "NAT, rozhranie môže mať výhodu z existencie\n"
-#~ "perzistentného keepalive intervalu 25 sekúnd.\n"
-#~ "Ak je nastavené na 0 alebo \"vypnuté\", táto voľba\n"
-#~ "je zakázaná. Predvolene alebo ak nie je určené,\n"
-#~ "táto voľba je vypnutá. Väčšina používateľov to nepotrebuje."
-
-#~ msgid "Peer 1"
-#~ msgstr "Účastník č. 1"
-
-#~ msgid "Add new Peer"
-#~ msgstr "Pridať nového účastníka"
-
-#~ msgid "Remove this Peer"
-#~ msgstr "Odstrániť tohto účastníka"
-
-#~ msgid "Available Users"
-#~ msgstr "Dostupní používatelia"
-
-#~ msgid "Real Name"
-#~ msgstr "Skutočné meno"
-
-#~ msgctxt "like in Username for athentication"
-#~ msgid "Username"
-#~ msgstr "Používateľské meno"
-
-#~ msgid "Users allowed to activate the connection"
-#~ msgstr "Používatelia s povolením aktivovať pripojenie"
-
-#~ msgid "Edit IPv4 Routes"
-#~ msgstr "Úprava trás IPv4"
-
-#~ msgid ""
-#~ "If enabled, this connection will never be used as the default network "
-#~ "connection"
-#~ msgstr ""
-#~ "Ak je povolené, toto pripojenie sa nikdy nepoužije ako predvolené sieťové "
-#~ "pripojenie."
-
-#~ msgid "Use only for resources on this connection"
-#~ msgstr "Použiť iba pre sieťové prostriedky tohto pripojenia"
-
-#~ msgctxt "Remove a selected row"
-#~ msgid "Remove"
-#~ msgstr "Odstrániť"
-
-#~ msgctxt "Insert a row"
-#~ msgid "Add"
-#~ msgstr "Pridať"
-
-#~ msgid ""
-#~ "If enabled, automatically configured routes are ignored and only routes "
-#~ "specified above are used"
-#~ msgstr ""
-#~ "Ak je povolené, automaticky nastavené cesty sa ignorujú a použijú sa iba "
-#~ "trasy tu určené"
-
-#~ msgid "Ignore automatically obtained routes"
-#~ msgstr "Ignorovať automaticky získané smerovania"
-
-#~ msgid "Edit IPv6 Routes"
-#~ msgstr "Úprava trás IPv6"
-
-#~ msgctxt "Remove a selected row"
-#~ msgid "R&emove"
-#~ msgstr "O&dstrániť"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "

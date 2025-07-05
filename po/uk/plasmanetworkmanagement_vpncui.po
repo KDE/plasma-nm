@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2023-03-15 08:01+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -39,6 +39,229 @@ msgstr "У NetworkManager не реалізовано підтримку сум�
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: не вдалося створити файл"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpnc.ui:18
+#, kde-format
+msgid "Gateway:"
+msgstr "Шлюз:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
+#: vpnc.ui:31
+#, kde-format
+msgid "IP/hostname of IPsec gateway."
+msgstr "IP-адреса або назва вузла шлюзу IPsec."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpnc.ui:38
+#, kde-format
+msgid "User name:"
+msgstr "Ім’я користувача:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, leUserName)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, user)
+#: vpnc.ui:51 vpncauth.ui:97
+#, kde-format
+msgid "User name for the connection."
+msgstr "Ім’я користувача для встановлення з’єднання."
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpnc.ui:58
+#, kde-format
+msgid "User password:"
+msgstr "Пароль користувача:"
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, leUserPassword)
+#. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
+#: vpnc.ui:79 vpncauth.ui:58
+#, kde-format
+msgid "User password for the connection."
+msgstr "Пароль користувача для встановлення з’єднання."
+
+#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpnc.ui:91 vpncauth.ui:124
+#, kde-format
+msgid "Group name:"
+msgstr "Назва групи:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, group)
+#: vpnc.ui:104
+#, kde-format
+msgid "Group name"
+msgstr "Назва групи"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpnc.ui:111
+#, kde-format
+msgid "Group password:"
+msgstr "Пароль групи:"
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
+#. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
+#: vpnc.ui:129 vpncauth.ui:84
+#, kde-format
+msgid "Group password."
+msgstr "Пароль групи."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useHybridAuth)
+#: vpnc.ui:141
+#, kde-format
+msgid ""
+"Enable hybrid authentication, i.e. use certificate in addition to password."
+msgstr ""
+"Увімкнути гібридне розпізнавання, тобто використовувати на додачу до пароля "
+"сертифікат."
+
+#. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
+#: vpnc.ui:144
+#, kde-format
+msgid "Use hybrid authentication"
+msgstr "Використовувати гібридне розпізнавання"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpnc.ui:154
+#, kde-format
+msgid "CA file:"
+msgstr "Файл CA:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, caFile)
+#: vpnc.ui:167
+#, kde-format
+msgid "CA certificate in PEM format."
+msgstr "Сертифікат служби сертифікації у форматі PEM."
+
+#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
+#: vpnc.ui:170
+#, kde-format
+msgid "*.pem *.crt *.cer"
+msgstr "*.pem *.crt *.cer"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: vpnc.ui:192
+#, kde-format
+msgid "Advanced…"
+msgstr "Додатково…"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: vpncadvanced.ui:18
+#, kde-format
+msgid "Identification"
+msgstr "Ідентифікація"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpncadvanced.ui:27
+#, kde-format
+msgid "Domain:"
+msgstr "Домен:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
+#: vpncadvanced.ui:37
+#, kde-format
+msgid "(NT-)Domain name for authentication."
+msgstr "Назва домену NT для розпізнавання."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpncadvanced.ui:44
+#, kde-format
+msgid "Vendor:"
+msgstr "Виробник:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
+#: vpncadvanced.ui:60
+#, kde-format
+msgid "Vendor of your IPsec gateway."
+msgstr "Виробник вашого шлюзу IPsec."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: vpncadvanced.ui:70
+#, kde-format
+msgid "Transport and Security"
+msgstr "Передавання даних і захист"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpncadvanced.ui:82
+#, kde-format
+msgid "Encryption method:"
+msgstr "Метод шифрування:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, encryption)
+#: vpncadvanced.ui:98
+#, kde-format
+msgid "Encryption method."
+msgstr "Метод шифрування."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpncadvanced.ui:105
+#, kde-format
+msgid "NAT traversal:"
+msgstr "Обхід NAT:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, nat)
+#: vpncadvanced.ui:121
+#, kde-format
+msgid "NAT traversal method to use."
+msgstr "Метод обходу NAT, яким слід скористатися."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpncadvanced.ui:128
+#, kde-format
+msgid "IKE DH Group:"
+msgstr "IKE група ДГ:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, dhGroup)
+#: vpncadvanced.ui:144
+#, kde-format
+msgid "Name of the IKE DH group."
+msgstr "Назва групи ДГ IKE."
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpncadvanced.ui:151
+#, kde-format
+msgid "Perfect Forward Secrecy:"
+msgstr "Відмінна упереджувальна секретність:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
+#: vpncadvanced.ui:167
+#, kde-format
+msgid "Diffie-Hellman group to use for PFS."
+msgstr "Група Діффі-Геллмана, яку слід використовувати для PFS."
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: vpncadvanced.ui:174
+#, kde-format
+msgid "Local Port:"
+msgstr "Локальний порт:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, localport)
+#: vpncadvanced.ui:190
+#, kde-format
+msgid ""
+"Local port to use (0-65535). 0 (default value) means random port. 500 is "
+"vpnc's default."
+msgstr ""
+"Локальний порт, який слід використовувати (у діапазоні від 0 до 65535). 0 "
+"(типове значення) означає, що слід використовувати випадковий порт. Типовим "
+"для VPN є порт 500."
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
+#: vpncadvanced.ui:193
+#, kde-format
+msgid "Random"
+msgstr "Випадковий"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, deadPeer)
+#: vpncadvanced.ui:209
+#, kde-format
+msgid "Disable sending DPD packets (set timeout to 0)."
+msgstr ""
+"Вимкнути надсилання пакетів DPD (встановити для часу очікування значення 0)."
+
+#. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
+#: vpncadvanced.ui:212
+#, kde-format
+msgid "Disable dead peer detection"
+msgstr "Вимкнути виявлення непрацездатних вузлів"
 
 #: vpncadvancedwidget.cpp:20
 #, kde-format
@@ -147,136 +370,35 @@ msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
 msgstr "Група ДГ 5"
 
-#~ msgid "Gateway:"
-#~ msgstr "Шлюз:"
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
+#: vpncauth.ui:14
+#, kde-format
+msgid "VPNCAuthentication"
+msgstr "VPNCAuthentication"
 
-#~ msgid "IP/hostname of IPsec gateway."
-#~ msgstr "IP-адреса або назва вузла шлюзу IPsec."
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#: vpncauth.ui:32
+#, kde-format
+msgid "User Password:"
+msgstr "Пароль користувача:"
 
-#~ msgid "User name:"
-#~ msgstr "Ім’я користувача:"
+#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
+#: vpncauth.ui:45
+#, kde-format
+msgid "Group Password:"
+msgstr "Пароль групи:"
 
-#~ msgid "User name for the connection."
-#~ msgstr "Ім’я користувача для встановлення з’єднання."
+#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
+#: vpncauth.ui:104
+#, kde-format
+msgid "Username:"
+msgstr "Користувач:"
 
-#~ msgid "User password:"
-#~ msgstr "Пароль користувача:"
-
-#~ msgid "User password for the connection."
-#~ msgstr "Пароль користувача для встановлення з’єднання."
-
-#~ msgid "Group name:"
-#~ msgstr "Назва групи:"
-
-#~ msgid "Group name"
-#~ msgstr "Назва групи"
-
-#~ msgid "Group password:"
-#~ msgstr "Пароль групи:"
-
-#~ msgid "Group password."
-#~ msgstr "Пароль групи."
-
-#~ msgid ""
-#~ "Enable hybrid authentication, i.e. use certificate in addition to "
-#~ "password."
-#~ msgstr ""
-#~ "Увімкнути гібридне розпізнавання, тобто використовувати на додачу до "
-#~ "пароля сертифікат."
-
-#~ msgid "Use hybrid authentication"
-#~ msgstr "Використовувати гібридне розпізнавання"
-
-#~ msgid "CA file:"
-#~ msgstr "Файл CA:"
-
-#~ msgid "CA certificate in PEM format."
-#~ msgstr "Сертифікат служби сертифікації у форматі PEM."
-
-#~ msgid "*.pem *.crt *.cer"
-#~ msgstr "*.pem *.crt *.cer"
-
-#~ msgid "Advanced…"
-#~ msgstr "Додатково…"
-
-#~ msgid "Identification"
-#~ msgstr "Ідентифікація"
-
-#~ msgid "Domain:"
-#~ msgstr "Домен:"
-
-#~ msgid "(NT-)Domain name for authentication."
-#~ msgstr "Назва домену NT для розпізнавання."
-
-#~ msgid "Vendor:"
-#~ msgstr "Виробник:"
-
-#~ msgid "Vendor of your IPsec gateway."
-#~ msgstr "Виробник вашого шлюзу IPsec."
-
-#~ msgid "Transport and Security"
-#~ msgstr "Передавання даних і захист"
-
-#~ msgid "Encryption method:"
-#~ msgstr "Метод шифрування:"
-
-#~ msgid "Encryption method."
-#~ msgstr "Метод шифрування."
-
-#~ msgid "NAT traversal:"
-#~ msgstr "Обхід NAT:"
-
-#~ msgid "NAT traversal method to use."
-#~ msgstr "Метод обходу NAT, яким слід скористатися."
-
-#~ msgid "IKE DH Group:"
-#~ msgstr "IKE група ДГ:"
-
-#~ msgid "Name of the IKE DH group."
-#~ msgstr "Назва групи ДГ IKE."
-
-#~ msgid "Perfect Forward Secrecy:"
-#~ msgstr "Відмінна упереджувальна секретність:"
-
-#~ msgid "Diffie-Hellman group to use for PFS."
-#~ msgstr "Група Діффі-Геллмана, яку слід використовувати для PFS."
-
-#~ msgid "Local Port:"
-#~ msgstr "Локальний порт:"
-
-#~ msgid ""
-#~ "Local port to use (0-65535). 0 (default value) means random port. 500 is "
-#~ "vpnc's default."
-#~ msgstr ""
-#~ "Локальний порт, який слід використовувати (у діапазоні від 0 до 65535). 0 "
-#~ "(типове значення) означає, що слід використовувати випадковий порт. "
-#~ "Типовим для VPN є порт 500."
-
-#~ msgid "Random"
-#~ msgstr "Випадковий"
-
-#~ msgid "Disable sending DPD packets (set timeout to 0)."
-#~ msgstr ""
-#~ "Вимкнути надсилання пакетів DPD (встановити для часу очікування значення "
-#~ "0)."
-
-#~ msgid "Disable dead peer detection"
-#~ msgstr "Вимкнути виявлення непрацездатних вузлів"
-
-#~ msgid "VPNCAuthentication"
-#~ msgstr "VPNCAuthentication"
-
-#~ msgid "User Password:"
-#~ msgstr "Пароль користувача:"
-
-#~ msgid "Group Password:"
-#~ msgstr "Пароль групи:"
-
-#~ msgid "Username:"
-#~ msgstr "Користувач:"
-
-#~ msgid "Group name."
-#~ msgstr "Назва групи."
+#. i18n: ectx: property (toolTip), widget (QLineEdit, leGroupName)
+#: vpncauth.ui:117
+#, kde-format
+msgid "Group name."
+msgstr "Назва групи."
 
 #~ msgid "Wrong file extension"
 #~ msgstr "Помилковий суфікс назви файла"

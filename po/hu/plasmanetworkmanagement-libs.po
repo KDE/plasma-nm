@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2024-03-14 11:55+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -243,6 +243,12 @@ msgstr "Kapcsolat szerkesztése: „%1”"
 msgid "New %1 connection"
 msgstr "Új %1 kapcsolat"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/connectioneditortabwidget.ui:20
+#, kde-format
+msgid "Connection name:"
+msgstr "A kapcsolat neve:"
+
 #: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
 #: editor/settings/teamwidget.cpp:36
 #, kde-format
@@ -402,7 +408,8 @@ msgstr "Eszköznév küldése:"
 msgid "DHCP hostname:"
 msgstr "DHCP eszköznév:"
 
-#: editor/settings/ipv4widget.cpp:440
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
 #, kde-format
 msgid "Default"
 msgstr "Alapértelmezett"
@@ -471,6 +478,1675 @@ msgstr "Kapcsolódás csak ezekhez a kiszolgálókhoz"
 #, kde-format
 msgid "Select file to import"
 msgstr "Importálandó fájl kiválasztása"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
+#, kde-format
+msgid "Authentication:"
+msgstr "Hitelesítés:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
+#: editor/settings/ui/802-1x.ui:38 editor/settings/ui/802-1x.ui:675
+#, kde-format
+msgid "MD5"
+msgstr "MD5"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:43
+#, kde-format
+msgid "TLS"
+msgstr "TLS"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
+#, kde-format
+msgid "LEAP"
+msgstr "LEAP"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:53
+#, kde-format
+msgid "PWD"
+msgstr "PWD"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:58
+#, kde-format
+msgid "FAST"
+msgstr "Gyors"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:63
+#, kde-format
+msgid "Tunneled TLS (TTLS)"
+msgstr "Alagútazott TLS (TTLS)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:68
+#, kde-format
+msgid "Protected EAP (PEAP)"
+msgstr "Védett EAP (PEAP)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_33)
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: ectx: property (text), widget (QLabel, label_17)
+#. i18n: ectx: property (text), widget (QLabel, label_25)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: editor/settings/ui/802-1x.ui:83 editor/settings/ui/802-1x.ui:277
+#: editor/settings/ui/802-1x.ui:311 editor/settings/ui/802-1x.ui:440
+#: editor/settings/ui/802-1x.ui:544 editor/settings/ui/802-1x.ui:688
+#: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
+#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
+#, kde-format
+msgid "Username:"
+msgstr "Felhasználónév:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#. i18n: ectx: property (text), widget (QLabel, label_34)
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#. i18n: ectx: property (text), widget (QLabel, label_18)
+#. i18n: ectx: property (text), widget (QLabel, label_21)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: editor/settings/ui/802-1x.ui:96 editor/settings/ui/802-1x.ui:290
+#: editor/settings/ui/802-1x.ui:324 editor/settings/ui/802-1x.ui:453
+#: editor/settings/ui/802-1x.ui:557 editor/settings/ui/802-1x.ui:701
+#: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
+#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:207
+#: editor/settings/ui/wifisecurity.ui:231
+#, kde-format
+msgid "Password:"
+msgstr "Jelszó:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/802-1x.ui:117
+#, kde-format
+msgid "Identity:"
+msgstr "Azonosító:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_32)
+#. i18n: ectx: property (text), widget (QLabel, label_30)
+#. i18n: ectx: property (text), widget (QLabel, label_31)
+#: editor/settings/ui/802-1x.ui:130 editor/settings/ui/802-1x.ui:574
+#: editor/settings/ui/802-1x.ui:718
+#, kde-format
+msgid "Domain:"
+msgstr "Tartomány:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: editor/settings/ui/802-1x.ui:140
+#, kde-format
+msgid "User certificate:"
+msgstr "Felhasználói tanúsítvány:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label_20)
+#. i18n: ectx: property (text), widget (QLabel, label_23)
+#: editor/settings/ui/802-1x.ui:157 editor/settings/ui/802-1x.ui:487
+#: editor/settings/ui/802-1x.ui:601
+#, kde-format
+msgid "CA certificate:"
+msgstr "CA tanúsítvány:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_27)
+#: editor/settings/ui/802-1x.ui:174
+#, kde-format
+msgid "Subject match:"
+msgstr "Tulajdonosnév egyezés:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_28)
+#: editor/settings/ui/802-1x.ui:191
+#, kde-format
+msgid "Alternative subject matches:"
+msgstr "Alternatív tulajdonosnevek egyeztetése:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
+#. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
+#: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
+#, kde-format
+msgid "…"
+msgstr "…"
+
+#. i18n: ectx: property (text), widget (QLabel, label_29)
+#: editor/settings/ui/802-1x.ui:215
+#, kde-format
+msgid "Connect to these servers:"
+msgstr "Kapcsolódás ezekhez a kiszolgálókhoz:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
+#: editor/settings/ui/802-1x.ui:239
+#: editor/settings/ui/wireguardinterfacewidget.ui:26
+#, kde-format
+msgid "Private key:"
+msgstr "Privát kulcs:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: editor/settings/ui/802-1x.ui:256
+#, kde-format
+msgid "Private key password:"
+msgstr "Privát kulcs jelszava:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#. i18n: ectx: property (text), widget (QLabel, label_19)
+#. i18n: ectx: property (text), widget (QLabel, label_24)
+#: editor/settings/ui/802-1x.ui:345 editor/settings/ui/802-1x.ui:474
+#: editor/settings/ui/802-1x.ui:588
+#, kde-format
+msgid "Anonymous identity:"
+msgstr "Névtelen azonosító:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
+#: editor/settings/ui/802-1x.ui:358
+#, kde-format
+msgid "Automatic PAC provisioning"
+msgstr "Automatikus PAC kiosztás"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
+#: editor/settings/ui/802-1x.ui:375
+#, kde-format
+msgid "Anonymous"
+msgstr "Névtelen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
+#: editor/settings/ui/802-1x.ui:380
+#, kde-format
+msgid "Authenticated"
+msgstr "Hitelesítve"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
+#: editor/settings/ui/802-1x.ui:385
+#, kde-format
+msgid "Both"
+msgstr "Mindkettő"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: editor/settings/ui/802-1x.ui:393
+#, kde-format
+msgid "PAC file:"
+msgstr "PAC-fájl:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#. i18n: ectx: property (text), widget (QLabel, label_16)
+#. i18n: ectx: property (text), widget (QLabel, label_22)
+#: editor/settings/ui/802-1x.ui:410 editor/settings/ui/802-1x.ui:504
+#: editor/settings/ui/802-1x.ui:653
+#, kde-format
+msgid "Inner authentication:"
+msgstr "Belső hitelesítés:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
+#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
+#: editor/settings/ui/802-1x.ui:427 editor/settings/ui/802-1x.ui:680
+#, kde-format
+msgid "GTC"
+msgstr "GTC"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
+#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
+#: editor/settings/ui/802-1x.ui:432 editor/settings/ui/802-1x.ui:531
+#: editor/settings/ui/802-1x.ui:670 editor/settings/ui/ppp.ui:68
+#, kde-format
+msgid "MSCHAPv2"
+msgstr "MSCHAPv2"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pap)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#: editor/settings/ui/802-1x.ui:521 editor/settings/ui/ppp.ui:58
+#, kde-format
+msgid "PAP"
+msgstr "PAP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mschap)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#: editor/settings/ui/802-1x.ui:526 editor/settings/ui/ppp.ui:48
+#, kde-format
+msgid "MSCHAP"
+msgstr "MSCHAP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chap)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#: editor/settings/ui/802-1x.ui:536 editor/settings/ui/ppp.ui:78
+#, kde-format
+msgid "CHAP"
+msgstr "CHAP"
+
+#. i18n: ectx: property (text), widget (QLabel, label_26)
+#: editor/settings/ui/802-1x.ui:618
+#, kde-format
+msgid "PEAP version:"
+msgstr "PEAP verzió:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
+#: editor/settings/ui/802-1x.ui:635
+#, kde-format
+msgctxt "PEAP version"
+msgid "Automatic"
+msgstr "Automatikus"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
+#: editor/settings/ui/802-1x.ui:640
+#, kde-format
+msgid "Version 0"
+msgstr "0. verzió"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
+#: editor/settings/ui/802-1x.ui:645
+#, kde-format
+msgid "Version 1"
+msgstr "1. verzió"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/bond.ui:21 editor/settings/ui/bridge.ui:18
+#: editor/settings/ui/team.ui:18
+#, kde-format
+msgid "Interface name:"
+msgstr "Csatoló neve:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/bond.ui:34
+#, kde-format
+msgid "Bonded connections:"
+msgstr "Csatolt kapcsolatok:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
+#: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
+#: editor/settings/ui/team.ui:56
+#, kde-format
+msgid "Add…"
+msgstr "Hozzáadás…"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnEdit)
+#: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
+#: editor/settings/ui/team.ui:71
+#, kde-format
+msgid "Edit…"
+msgstr "Szerkesztés…"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnDelete)
+#: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
+#: editor/settings/ui/team.ui:86
+#, kde-format
+msgid "Delete"
+msgstr "Törlés"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, modeLabel)
+#: editor/settings/ui/bond.ui:113 editor/settings/ui/wificonnectionwidget.ui:43
+#, kde-format
+msgid "Mode:"
+msgstr "Mód:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/bond.ui:133
+#, kde-format
+msgid "Link monitoring:"
+msgstr "Kapcsolat figyelés:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: editor/settings/ui/bond.ui:153
+#, kde-format
+msgid "Monitoring frequency:"
+msgstr "Figyelés gyakorisága:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
+#. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
+#. i18n: ectx: property (suffix), widget (QSpinBox, downDelay)
+#: editor/settings/ui/bond.ui:163 editor/settings/ui/bond.ui:205
+#: editor/settings/ui/bond.ui:225
+#, kde-format
+msgid " ms"
+msgstr " ms"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: editor/settings/ui/bond.ui:195
+#, kde-format
+msgid "Link up delay:"
+msgstr "Csatlakozás késleltetése:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/bond.ui:215
+#, kde-format
+msgid "Link down delay:"
+msgstr "Szétválasztás késleltetése:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: editor/settings/ui/bond.ui:242
+#, kde-format
+msgid "ARP targets:"
+msgstr "ARP célok:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
+#: editor/settings/ui/bond.ui:252
+#, kde-format
+msgid "An IP address or comma-separated list of addresses."
+msgstr "Egy IP-cím vagy címek vesszővel elválasztott listája."
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/bridge.ui:31
+#, kde-format
+msgid "Bridged connections:"
+msgstr "Áthidalt kapcsolatok:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/bridge.ui:110
+#, kde-format
+msgid "Aging time:"
+msgstr "Öregedési idő:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, agingTime)
+#. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
+#. i18n: ectx: property (suffix), widget (QSpinBox, helloTime)
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxAge)
+#: editor/settings/ui/bridge.ui:126 editor/settings/ui/bridge.ui:193
+#: editor/settings/ui/bridge.ui:222 editor/settings/ui/bridge.ui:251
+#, kde-format
+msgctxt "seconds"
+msgid " s"
+msgstr " mp"
+
+#. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
+#: editor/settings/ui/bridge.ui:139
+#, kde-format
+msgid "Enable STP (Spanning Tree Protocol)"
+msgstr "STP (Spanning Tree Protocol) engedélyezése"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: editor/settings/ui/bridge.ui:151
+#, kde-format
+msgid "Priority:"
+msgstr "Prioritás:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/bridge.ui:177
+#, kde-format
+msgid "Forward delay:"
+msgstr "Továbbítási késleltetés:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: editor/settings/ui/bridge.ui:206
+#, kde-format
+msgid "Hello time:"
+msgstr "Hello idő:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: editor/settings/ui/bridge.ui:235
+#, kde-format
+msgid "Max age:"
+msgstr "Maximális élettartam:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/bt.ui:21
+#, kde-format
+msgid "Address of the device:"
+msgstr "Az eszköz címe:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/bt.ui:41
+#, kde-format
+msgid "Connection type:"
+msgstr "Kapcsolat típusa:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/cdma.ui:20 editor/settings/ui/gsm.ui:24
+#, kde-format
+msgid "Number:"
+msgstr "Szám:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
+#: editor/settings/ui/connectionwidget.ui:17
+#, kde-format
+msgid "Connect automatically with priority"
+msgstr "Automatikus csatlakozás prioritással"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
+#: editor/settings/ui/connectionwidget.ui:38
+#, kde-format
+msgid ""
+"If the connection is set to autoconnect, connections with higher priority "
+"will be preferred. Defaults to 0.\n"
+"The higher number means higher priority. An negative number can be used to "
+"indicate priority lower than the default.\n"
+"           "
+msgstr ""
+"Ha a kapcsolat automatikus csatlakozásra van állítva, a magasabb prioritású "
+"kapcsolatok lesznek előnyben részesítve. Az alapértelmezett érték 0.\n"
+"A magasabb szám magasabb prioritást jelent. A negatív érték az "
+"alapértelmezettnél alacsonyabb prioritás jelzésére használható.\n"
+"           "
+
+#. i18n: ectx: property (text), widget (QCheckBox, allUsers)
+#: editor/settings/ui/connectionwidget.ui:48
+#, kde-format
+msgid "All users may connect to this network"
+msgstr "Minden felhasználó kapcsolódhat ehhez a hálózathoz"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
+#: editor/settings/ui/connectionwidget.ui:64
+#, kde-format
+msgid "Edit advanced permissions for this connection"
+msgstr "A kapcsolat speciális jogosultságainak szerkesztése"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
+#: editor/settings/ui/connectionwidget.ui:67
+#, kde-format
+msgid ""
+"Fine-grained permissions editor for this connection. It lets you choose "
+"which users can activate/modify/delete this connection."
+msgstr ""
+"Részletes jogosultság szerkesztő ehhez a kapcsolathoz. Lehetővé teszi annak "
+"kiválasztását, hogy mely felhasználók aktiválhatják/módosíthatják/törölhetik "
+"ezt a kapcsolatot."
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
+#, kde-format
+msgid "Advanced…"
+msgstr "Speciális…-"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
+#: editor/settings/ui/connectionwidget.ui:81
+#, kde-format
+msgid "Automatically connect to VPN"
+msgstr "Automatikus csatlakozás VPN-hez"
+
+#. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
+#: editor/settings/ui/connectionwidget.ui:101
+#, kde-format
+msgid "Firewall zone:"
+msgstr "Tűzfal zóna:"
+
+#. i18n: ectx: property (text), widget (QLabel, meteredLabel)
+#: editor/settings/ui/connectionwidget.ui:130
+#, kde-format
+msgid "Metered:"
+msgstr "Forgalmi díjas:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:150
+#, kde-format
+msgid ""
+"NetworkManager indicates to applications whether the connection is metered "
+"and therefore\n"
+"data usage should be restricted."
+msgstr ""
+"A NetworkManager jelzi az alkalmazásoknak, hogy a kapcsolat forgalmi díjas-"
+"e, és kell-e\n"
+"korlátozni az adathasználatot vagy sem."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:160
+#, kde-format
+msgctxt "Item in the Metered: list"
+msgid "Automatic"
+msgstr "Automatikus"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:165
+#, kde-format
+msgid "Yes"
+msgstr "Igen"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:170
+#, kde-format
+msgid "No"
+msgstr "Nem"
+
+#. i18n: ectx: property (title), widget (QGroupBox, basicGroup)
+#: editor/settings/ui/gsm.ui:18
+#, kde-format
+msgid "Basic"
+msgstr "Alap"
+
+#. i18n: ectx: property (title), widget (QGroupBox, advGroup)
+#: editor/settings/ui/gsm.ui:84
+#, kde-format
+msgid "Advanced"
+msgstr "Speciális"
+
+#. i18n: ectx: property (text), widget (QCheckBox, roaming)
+#: editor/settings/ui/gsm.ui:93
+#, kde-format
+msgid "Allow roaming if home network is not available"
+msgstr "Barangolás engedélyezése, ha nem érhető el hazai hálózat"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/gsm.ui:100
+#, kde-format
+msgid "APN:"
+msgstr "APN:"
+
+#. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
+#: editor/settings/ui/gsm.ui:110
+#, kde-format
+msgid "Network ID:"
+msgstr "Hálózatazonosító:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/gsm.ui:130
+#, kde-format
+msgid "PIN:"
+msgstr "PIN:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/infiniband.ui:21
+#, kde-format
+msgid "Transport mode:"
+msgstr "Továbbítási mód:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/infiniband.ui:41
+#: editor/settings/ui/wificonnectionwidget.ui:186
+#: editor/settings/ui/wiredconnectionwidget.ui:23
+#, kde-format
+msgid "Restrict to device:"
+msgstr "Korlátozás eszközre:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, mtuLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/infiniband.ui:61
+#: editor/settings/ui/wificonnectionwidget.ui:249
+#: editor/settings/ui/wiredconnectionwidget.ui:89
+#: editor/settings/ui/wireguardinterfacewidget.ui:74
+#, kde-format
+msgid "MTU:"
+msgstr "MTU:"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
+#: editor/settings/ui/infiniband.ui:80
+#: editor/settings/ui/wificonnectionwidget.ui:271
+#: editor/settings/ui/wiredconnectionwidget.ui:112
+#, kde-format
+msgctxt "MTU:"
+msgid "Automatic"
+msgstr "Automatikus"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
+#: editor/settings/ui/infiniband.ui:83
+#: editor/settings/ui/wificonnectionwidget.ui:274
+#: editor/settings/ui/wiredconnectionwidget.ui:115
+#, kde-format
+msgid " bytes"
+msgstr " bájt"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, IPv6Widget)
+#. i18n: ectx: property (toolTip), widget (QWidget, IPv4Widget)
+#: editor/settings/ui/ipv4.ui:17 editor/settings/ui/ipv6.ui:20
+#, kde-format
+msgid "Advanced IP settings"
+msgstr "Speciális IP-beállítások"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
+#, kde-format
+msgid "Method:"
+msgstr "Módszer:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:227
+#, kde-format
+msgctxt "Method:"
+msgid "Automatic"
+msgstr "Automatikus"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
+#, kde-format
+msgid "Automatic (Only addresses)"
+msgstr "Automatikus (csak címek)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
+#, kde-format
+msgid "Link-Local"
+msgstr "Kapcsolatszintű"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
+#, kde-format
+msgctxt "like in use Manual configuration"
+msgid "Manual"
+msgstr "Kézi"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:69
+#, kde-format
+msgid "Shared to other computers"
+msgstr "Megosztva más számítógépekkel"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:74
+#, kde-format
+msgctxt "like in this setting is Disabled"
+msgid "Disabled"
+msgstr "Letiltva"
+
+#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
+#: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:170
+#, kde-format
+msgctxt "@info"
+msgid "DNS Servers:"
+msgstr "DNS-kiszolgálók:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
+#: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
+#, kde-format
+msgid ""
+"Use this field to specify the IP address(es) of one or more DNS servers. Use "
+"',' to separate entries."
+msgstr ""
+"Ezzel a mezővel adhatja meg egy vagy több DNS-kiszolgáló IP címét. Használja "
+"a ',' karaktert a bejegyzések elválasztásához."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
+#: editor/settings/ui/ipv4.ui:125
+#, kde-format
+msgid "Edit DNS the list of servers"
+msgstr " "
+
+#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
+#: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
+#, kde-format
+msgctxt "@info"
+msgid "Search Domains:"
+msgstr "Keresési tartományok:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
+#: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
+#, kde-format
+msgid ""
+"Use this field to specify one or more DNS domains to search. Use ',' to "
+"separate entries."
+msgstr ""
+"Ezzel a mezővel adhat meg egy vagy több DNS keresési tartományt. Használja a "
+"',' karaktert a bejegyzések elválasztásához."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
+#: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
+#, kde-format
+msgid "Edit the list of DNS domains being searched"
+msgstr "A DNS keresési tartományok listájának szerkesztése"
+
+#. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
+#: editor/settings/ui/ipv4.ui:191
+#, kde-format
+msgid "DHCP Client ID:"
+msgstr "DHCP kliensazonosító:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
+#: editor/settings/ui/ipv4.ui:206
+#, kde-format
+msgid ""
+"Use this field to specify the DHCP client ID which is a string sent to the "
+"DHCP server\n"
+"to identify the local machine that the DHCP server may use to customize the "
+"DHCP\n"
+"lease and options."
+msgstr ""
+"Használja ezt a mezőt a DHCP kliens azonosítójának megadásához, amely a DHCP "
+"kiszolgálónak\n"
+"elküldött karakterlánc és annak a helyi gép azonosítására szolgál, amelyet a "
+"DHCP kiszolgáló használhat a DHCP\n"
+"kiosztás és beállítások testre szabásához."
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
+#: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
+#, kde-format
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
+#: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:109
+#, kde-format
+msgid "Add"
+msgstr "Hozzáadás"
+
+#. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
+#: editor/settings/ui/ipv4.ui:244 editor/settings/ui/ipv6.ui:127
+#: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
+#, kde-format
+msgid ""
+"IP addresses identify your computer on the network. Click the \"Add\" button "
+"to add\n"
+"an IP address"
+msgstr ""
+"Az IP-cím azonosítja a számítógépét a hálózaton. Kattintson a „Hozzáadás” "
+"gombra\n"
+"IP-cím hozzáadásához"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
+#: editor/settings/ui/ipv4.ui:282
+#, kde-format
+msgid ""
+"Allows the connection to complete if IPv4 configuration fails\n"
+"but IPv6 configuration succeeds"
+msgstr ""
+"Lehetővé teszi a kapcsolódás befejezését akkor is, ha az IPv4-beállítás "
+"sikertelen\n"
+"de az IPv6-beállítás sikeres"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
+#: editor/settings/ui/ipv4.ui:285
+#, kde-format
+msgid "IPv4 is required for this connection"
+msgstr "IPv4 szükséges ehhez a kapcsolathoz"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
+#: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
+#, kde-format
+msgid "Routes…"
+msgstr "Utak…"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
+#: editor/settings/ui/ipv6.ui:30
+#, kde-format
+msgid ""
+"When connecting to IPv4-capable networks, allows the connection to complete "
+"if\n"
+"IPv6 configuration fails but IPv4 configuration succeeds"
+msgstr ""
+"IPv4 képes hálózathoz csatlakozáskor lehetővé teszi a kapcsolódás "
+"befejezését\n"
+"ha az IPv6-beállítás sikertelen, de az IPv4-beállítás sikeres"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
+#: editor/settings/ui/ipv6.ui:33
+#, kde-format
+msgid "IPv6 is required for this connection"
+msgstr "IPv6 szükséges ehhez a kapcsolathoz"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
+#: editor/settings/ui/ipv6.ui:83
+#, kde-format
+msgid "Edit the list of DNS servers"
+msgstr "A DNS-kiszolgálók listájának szerkesztése "
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:193
+#, kde-format
+msgid ""
+"Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
+"enabled, it makes the kernel generate\n"
+"a temporary IPv6 address in addition to the public one generated from MAC "
+"address via modified EUI-64."
+msgstr ""
+"Az RFC4941-ben leírt IPv6 adatvédelmi kiterjesztések beállítása SLAAC-hoz. "
+"Ha be van kapcsolva, a kernel egy ideiglenes\n"
+"IPv6-címet generál a MAC-címből generált nyilvános mellé, EUI-64-gyel."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:202
+#, kde-format
+msgctxt "privacy disabled"
+msgid "Disabled"
+msgstr "Letiltva"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:207
+#, kde-format
+msgid "Enabled (prefer public address)"
+msgstr "Engedélyezve (nyilvános cím előnyben részesítve)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:212
+#, kde-format
+msgid "Enabled (prefer temporary addresses)"
+msgstr "Engedélyezve (átmeneti címek előnyben részesítve)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:237
+#, kde-format
+msgid "Automatic (Only DHCP)"
+msgstr "Automatikus (csak DHCP)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:252
+#, kde-format
+msgctxt "like in this setting is Disabled"
+msgid "Ignored"
+msgstr "Mellőzött"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:257
+#, kde-format
+msgid "Disabled"
+msgstr "Letiltva"
+
+#. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
+#: editor/settings/ui/ipv6.ui:335
+#, kde-format
+msgid "Privacy:"
+msgstr "Adatvédelem:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, authGroup)
+#: editor/settings/ui/ppp.ui:23
+#, kde-format
+msgid "Authentication"
+msgstr "Hitelesítés"
+
+#. i18n: ectx: property (text), widget (QCheckBox, eap)
+#: editor/settings/ui/ppp.ui:38
+#, kde-format
+msgid "EAP"
+msgstr "EAP"
+
+#. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
+#: editor/settings/ui/ppp.ui:91
+#, kde-format
+msgid "Compression"
+msgstr "Tömörítés"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mppe)
+#: editor/settings/ui/ppp.ui:109
+#, kde-format
+msgid "Use point-to-point encryption (MPPE)"
+msgstr "Pont-pont titkosítás (MPPE) használata"
+
+#. i18n: ectx: property (text), widget (QCheckBox, bsdComp)
+#: editor/settings/ui/ppp.ui:116
+#, kde-format
+msgid "Use BSD data compression"
+msgstr "BSD adattömörítés használata"
+
+#. i18n: ectx: property (text), widget (QCheckBox, deflateComp)
+#: editor/settings/ui/ppp.ui:126
+#, kde-format
+msgid "Use Deflate data compression"
+msgstr "Deflate adattömörítés használata"
+
+#. i18n: ectx: property (text), widget (QCheckBox, tcpComp)
+#: editor/settings/ui/ppp.ui:136
+#, kde-format
+msgid "Use TCP header compression"
+msgstr "TCP fejléctömörítés használata"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mppe128)
+#: editor/settings/ui/ppp.ui:152
+#, kde-format
+msgid "Require 128-bit encryption"
+msgstr "128 bites titkosítás szükséges"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mppeStateful)
+#: editor/settings/ui/ppp.ui:165
+#, kde-format
+msgid "Use stateful MPPE"
+msgstr "Állapottartó MPPE használata"
+
+#. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
+#: editor/settings/ui/ppp.ui:175
+#, kde-format
+msgid "Echo"
+msgstr "Visszhang"
+
+#. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
+#: editor/settings/ui/ppp.ui:184
+#, kde-format
+msgid "Send PPP echo packets"
+msgstr "PPP visszhangcsomagok küldése"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/pppoe.ui:20
+#, kde-format
+msgid "Service:"
+msgstr "Szolgáltatás:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, service)
+#: editor/settings/ui/pppoe.ui:30
+#, kde-format
+msgid ""
+"If specified, instruct PPPoE to only initiate sessions with access "
+"concentrators that provide the specified service. For most providers, this "
+"should be left blank. It is only required if there are multiple access "
+"concentrators or a specific service is known to be required."
+msgstr ""
+"Ha meg van adva, a PPPoE csak olyan elérési koncentrátorokkal kezdeményez "
+"munkamenetet, amelyek biztosítják a megadott szolgáltatást. A legtöbb "
+"szolgáltatónál ezt üresen kell hagyni. Csak akkor szükséges, ha több elérési "
+"koncentrátor van, vagy egy adott szolgáltatásra szükség van."
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/team.ui:31
+#, kde-format
+msgid "Teamed connections:"
+msgstr "Csoportos kapcsolatok:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/team.ui:113
+#, kde-format
+msgid "JSON config:"
+msgstr "JSON beállítás:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnImport)
+#: editor/settings/ui/team.ui:123
+#, kde-format
+msgid "Import configuration from file…"
+msgstr "Beállítás importálása fájlból…"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/vlan.ui:18
+#, kde-format
+msgid "Parent interface:"
+msgstr "Szülő csatoló:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/vlan.ui:41
+#, kde-format
+msgid "VLAN id:"
+msgstr "VLAN azonosító:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: editor/settings/ui/vlan.ui:64
+#, kde-format
+msgid "VLAN interface name:"
+msgstr "VLAN csatoló neve:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, reorderHeaders)
+#: editor/settings/ui/vlan.ui:77
+#, kde-format
+msgid "Output packet headers reordering"
+msgstr "Kimeneti csomag fejléceinek újrarendezése"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, gvrp)
+#: editor/settings/ui/vlan.ui:84
+#, kde-format
+msgid "GARP VLAN Registration Protocol"
+msgstr "GARP VLAN regisztrációs protokoll"
+
+#. i18n: ectx: property (text), widget (QCheckBox, gvrp)
+#: editor/settings/ui/vlan.ui:87
+#, kde-format
+msgid "GVRP"
+msgstr "GVRP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
+#: editor/settings/ui/vlan.ui:94
+#, kde-format
+msgid "Loose binding"
+msgstr "Loose binding"
+
+#. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:17
+#, kde-format
+msgid "SSID:"
+msgstr "SSID:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
+#: editor/settings/ui/wificonnectionwidget.ui:63
+#, kde-format
+msgid "Infrastructure"
+msgstr "Infrastruktúra"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
+#: editor/settings/ui/wificonnectionwidget.ui:68
+#, kde-format
+msgid "Ad-hoc"
+msgstr "Ad-hoc"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
+#: editor/settings/ui/wificonnectionwidget.ui:73
+#, kde-format
+msgid "Access Point"
+msgstr "Hozzáférési pont"
+
+#. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:81
+#, kde-format
+msgid "BSSID:"
+msgstr "BSSID:"
+
+#. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
+#: editor/settings/ui/wificonnectionwidget.ui:101
+#, kde-format
+msgid ""
+"This option locks this connection to the Wi-Fi access point (AP) specified "
+"by the\n"
+" BSSID entered here. Example: 00:11:22:33:44:55"
+msgstr ""
+"Ez a beállítás rögzíti ezt  kapcsolatot a BSSID-vel megadott WiFi "
+"hozzáférési\n"
+"ponthoz (AP). Például: 00:11:22:33:44:55"
+
+#. i18n: ectx: property (text), widget (QLabel, bandLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:117
+#, kde-format
+msgid "Band:"
+msgstr "Sáv:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:137
+#, kde-format
+msgid ""
+"This option locks the connection to the Wi-Fi network associated to the "
+"specified band. This setting depends\n"
+" on specific driver capability and may not work with all drivers"
+msgstr ""
+"Ez a beállítás rögzíti a kapcsolatot a sávhoz társított WiFi hálózathoz. A "
+"beállítás egy adott illesztőprogram-képességtől\n"
+" függ, és valószínűleg nem működik minden illesztőprogrammal"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:141
+#, kde-format
+msgctxt "Band:"
+msgid "Automatic"
+msgstr "Automatikus"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:146
+#, kde-format
+msgid "A (5 GHz)"
+msgstr "A (5 GHz)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:151
+#, kde-format
+msgid "B/G (2.4 GHz)"
+msgstr "B/G (2.4 GHz)"
+
+#. i18n: ectx: property (text), widget (QLabel, channelLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:159
+#, kde-format
+msgid "Channel:"
+msgstr "Csatorna:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, channel)
+#: editor/settings/ui/wificonnectionwidget.ui:179
+#, kde-format
+msgid ""
+"Wireless channel to use for the Wi-Fi connection. The device will only join "
+"(or create for Ad-Hoc networks)\n"
+"a Wi-Fi network on the specified channel"
+msgstr ""
+"A WiFi kapcsolathoz használandó csatorna. Az eszköz csak a megadott "
+"csatornán található WiFi hálózatokhoz\n"
+"fog csatlakozni (vagy létrehozni ad hoc hálózatot)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/wificonnectionwidget.ui:209
+#: editor/settings/ui/wiredconnectionwidget.ui:47
+#, kde-format
+msgid "Cloned MAC address:"
+msgstr "Klónozott MAC-cím:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
+#: editor/settings/ui/wificonnectionwidget.ui:240
+#, kde-format
+msgid "Random…"
+msgstr "Véletlenszerűen…"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_4)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
+#: editor/settings/ui/wificonnectionwidget.ui:287
+#: editor/settings/ui/wificonnectionwidget.ui:303
+#, kde-format
+msgid "Mark this if you want to create a connection for a hidden network"
+msgstr ""
+"Jelölje be ezt, ha szeretne kapcsolatot létrehozni egy rejtett hálózathoz"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/wificonnectionwidget.ui:290
+#, kde-format
+msgid "Visibility:"
+msgstr "Láthatóság:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
+#: editor/settings/ui/wificonnectionwidget.ui:306
+#, kde-format
+msgid "Hidden network"
+msgstr "Rejtett hálózat"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
+#: editor/settings/ui/wifisecurity.ui:15
+#, kde-format
+msgid "Wifi Security"
+msgstr "WiFi biztonság"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:28
+#, kde-format
+msgctxt "no security"
+msgid "None"
+msgstr "Nincs"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:33
+#, kde-format
+msgid "WEP key 40/128 bits (Hex or ASCII)"
+msgstr "WEP kulcs 40/128 bit (Hex vagy ASCII)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:38
+#, kde-format
+msgid "WEP key 128 bits"
+msgstr "WEP kulcs 128 bit"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:48
+#, kde-format
+msgid "Dynamic WEP (802.1x)"
+msgstr "Dinamikus WEP (802.1x)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:53
+#, kde-format
+msgid "WPA/WPA2 Personal"
+msgstr "WPA/WPA2 Personal"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:58
+#, kde-format
+msgid "WPA/WPA2 Enterprise"
+msgstr "WPA/WPA2 Enterprise"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:63
+#, kde-format
+msgid "WPA3 Personal"
+msgstr "WPA3 Personal"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:68
+#, kde-format
+msgid "WPA3 Enterprise 192-bit"
+msgstr "WPA3 Enterprise 192 bites"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/wifisecurity.ui:76
+#, kde-format
+msgid "Security:"
+msgstr "Biztonság:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/wifisecurity.ui:97
+#, kde-format
+msgid "Key:"
+msgstr "Kulcs:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: editor/settings/ui/wifisecurity.ui:117
+#, kde-format
+msgid "WEP index:"
+msgstr "WEP index:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:134
+#, kde-format
+msgid "1 (default)"
+msgstr "1 (alapértelmezett)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:139
+#, kde-format
+msgid "2"
+msgstr "2"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:144
+#, kde-format
+msgid "3"
+msgstr "3"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:149
+#, kde-format
+msgid "4"
+msgstr "4"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
+#: editor/settings/ui/wifisecurity.ui:174
+#, kde-format
+msgid "Open System"
+msgstr "Nyílt rendszer"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
+#: editor/settings/ui/wifisecurity.ui:179
+#, kde-format
+msgid "Shared Key"
+msgstr "Megosztott kulcs"
+
+#. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
+#: editor/settings/ui/wiredconnectionwidget.ui:40
+#, kde-format
+msgid ""
+"This option locks this connection to the network device specified by its\n"
+"permanent MAC address entered here. Example: 00:11:22:33:44:55"
+msgstr ""
+"Ez a beállítás rögzíti ezt a kapcsolatot az állandó MAC-címével megadott\n"
+"hálózati eszközhöz. Például: 00:11:22:33:44:55"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
+#: editor/settings/ui/wiredconnectionwidget.ui:67
+#, kde-format
+msgid ""
+"The MAC address entered here will be used as hardware address for the\n"
+"network device this connection is activated on. This feature is known as "
+"MAC\n"
+"cloning or spoofing. Example 11:22:33:44:55"
+msgstr ""
+"Az itt megadott MAC-cím lesz használva hardvercímként annál a hálózat\n"
+" eszköznél, amelyen ez a kapcsolat aktiválva van. Ez a funkció MAC-cím\n"
+"klónozás vagy hamisítás néven ismert. Példa: 11:22:33:44:55"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
+#: editor/settings/ui/wiredconnectionwidget.ui:80
+#, kde-format
+msgid "Random"
+msgstr "Véletlenszerűen"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
+#: editor/settings/ui/wiredconnectionwidget.ui:106
+#, kde-format
+msgid ""
+"Only transmit packets of the specified size or smaller, breaking larger "
+"packets up\n"
+"into multiple Ethernet frames"
+msgstr ""
+"Csak a megadott méretű, vagy annál kisebb csomagok küldése, a nagyobb "
+"csomagokat\n"
+"szétdarabolva több Ethernet keretbe"
+
+#. i18n: ectx: property (text), widget (QLabel, speedLabel)
+#: editor/settings/ui/wiredconnectionwidget.ui:125
+#, kde-format
+msgid "Speed:"
+msgstr "Sebesség:"
+
+#. i18n: ectx: property (text), widget (QLabel, duplexLabel)
+#: editor/settings/ui/wiredconnectionwidget.ui:132
+#, kde-format
+msgid "Duplex:"
+msgstr "Kétirányúság:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
+#: editor/settings/ui/wiredconnectionwidget.ui:151
+#, kde-format
+msgid ""
+"Request that the device use the specified duplex mode. Either \"half\" or "
+"\"full\""
+msgstr ""
+"Az eszköz használja a megadott kétirányú módot. Vagy „fél”, vagy „teljes”"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
+#: editor/settings/ui/wiredconnectionwidget.ui:158
+#, kde-format
+msgid "Half"
+msgstr "Fél"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
+#: editor/settings/ui/wiredconnectionwidget.ui:163
+#, kde-format
+msgid "Full"
+msgstr "Teljes"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/wiredconnectionwidget.ui:174
+#, kde-format
+msgid "Link negotiation:"
+msgstr "Kapcsolategyeztetés:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:188
+#, kde-format
+msgid ""
+"Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
+"will be forced without checking\n"
+"the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
+msgstr ""
+"Eszköz kapcsolategyeztetés. Ha a „Kézi” van kiválasztva, a „Sebesség” és "
+"„Kétirányúság” értékek kényszerítve lesznek\n"
+"az eszköz kompatibilitásának ellenőrzése nélkül. Ha bizonytalan, válassza a "
+"„Mellőzés” opciót, vagy válassza az „Automatikus” módot."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:192
+#, kde-format
+msgid "Ignore"
+msgstr "Mellőzés"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:197
+#, kde-format
+msgctxt "Link negotiation:"
+msgid "Automatic"
+msgstr "Automatikus"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:202
+#, kde-format
+msgid "Manual"
+msgstr "Kézi"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:219
+#, kde-format
+msgid "Request that the device use only the specified speed."
+msgstr "Az eszköz csak a megadott sebességet használja."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:226
+#, kde-format
+msgid "10 Mb/s"
+msgstr "10 Mb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:231
+#, kde-format
+msgid "100 Mb/s"
+msgstr "100 Mb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:236
+#, kde-format
+msgid "1 Gb/s"
+msgstr "1 Gb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:241
+#, kde-format
+msgid "2.5 Gb/s"
+msgstr "2.5 Gb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:246
+#, kde-format
+msgid "5 Gb/s"
+msgstr "5 Gb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:251
+#, kde-format
+msgid "10 Gb/s"
+msgstr "10 Gb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:256
+#, kde-format
+msgid "40 Gb/s"
+msgstr " 10 Gb/s"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:261
+#, kde-format
+msgid "100 Gb/s"
+msgstr "100 Gb/s"
+
+#. i18n: ectx: property (text), widget (QCheckBox, use8021X)
+#: editor/settings/ui/wiredsecurity.ui:17
+#, kde-format
+msgid "Use 802.1x security for this connection"
+msgstr "802.1x biztonság használata ehhez a kapcsolathoz"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
+#: editor/settings/ui/wireguardinterfacewidget.ui:14
+#, kde-format
+msgid "WireGuard Settings"
+msgstr "WireGuard beállítások"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: editor/settings/ui/wireguardinterfacewidget.ui:20
+#, kde-format
+msgid "Interface"
+msgstr "Interfész"
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:34
+#, kde-format
+msgid ""
+"Required.\n"
+"A base64 private key generated by wg genkey."
+msgstr ""
+"Kötelező.\n"
+"Egy base64-es privát kulcs a wg genkey-jel generálva."
+
+#. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
+#: editor/settings/ui/wireguardinterfacewidget.ui:41
+#, kde-format
+msgid "Listen port:"
+msgstr "Figyelőport:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:49
+#, kde-format
+msgid ""
+"Optional.\n"
+"Listen port number. Chosen randomly if left as 'Automatic'."
+msgstr ""
+"Opcionális.\n"
+"A figyelőport száma. Véletlenszerűen választott „Automatikus” beállítás "
+"esetén."
+
+#. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
+#: editor/settings/ui/wireguardinterfacewidget.ui:57
+#, kde-format
+msgid "fwmark:"
+msgstr "fwmark:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:67
+#, kde-format
+msgid ""
+"Optional.\n"
+"An fwmark for outgoing packets. If set to 0 or 'off', this\n"
+"option is disabled. May be specified in hexadecimal by\n"
+"prepending '0x'."
+msgstr ""
+"Opcionális.\n"
+"Egy fwmark a kimenő csomagokhoz. Ha 0 vagy „off” a\n"
+"beállítás ki van kapcsolva. Megadható hexadecimálisan is a\n"
+"„0x” előtaggal."
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:86
+#, kde-format
+msgid ""
+"Optional.\n"
+"If not specified, the MTU is automatically determined\n"
+"from the endpoint addresses or the system default route,\n"
+"which is usually a sane choice. However, to manually\n"
+"specify an MTU and to override this automatic discovery,\n"
+"this value may be specified explicitly."
+msgstr ""
+"Opcionális.\n"
+"Ha nincs megadva, az MTU a végponti címből vagy a rendszer\n"
+"alapértelmezett útvonalából lesz meghatározva, ami általában\n"
+"egy elfogadható választás. Az MTU kézi megadásához és az automatikus\n"
+"beállítás felülírásához az érték expliciten is megadható."
+
+#. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
+#: editor/settings/ui/wireguardinterfacewidget.ui:93
+#, kde-format
+msgid "Autoroute peers:"
+msgstr "Automatikus partnerútvonalak:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
+#: editor/settings/ui/wireguardinterfacewidget.ui:101
+#, kde-format
+msgid ""
+"Whether to automatically add routes for the AllowedIPs ranges\n"
+"of the peers."
+msgstr ""
+"Legyenek-e automatikusan hozzáadott útvonalak a partnerek AllowedIP\n"
+"tartományaihoz."
+
+#. i18n: ectx: property (text), widget (QPushButton, btnPeers)
+#: editor/settings/ui/wireguardinterfacewidget.ui:126
+#, kde-format
+msgid "Peers…"
+msgstr "Partnerek…"
+
+#. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:17
+#, kde-format
+msgid "Public key:"
+msgstr "Publikus kulcs:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, publicKeyLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:27
+#, kde-format
+msgid ""
+"Required.\n"
+"            A base64 public key calculated by wg pubkey \n"
+"            from a private key, and usually transmitted \n"
+"            out of band to the author of the configuration file."
+msgstr ""
+"Kötelező.\n"
+"            Egy base64 nyilvános kulcs a wg pubkey-jel kiszámolva \n"
+"            a titkos kulcsból, és általában kézzel elküldve \n"
+"            a konfigurációs fájl szerzőjének."
+
+#. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:34
+#, kde-format
+msgid "Allowed IPs:"
+msgstr "Engedélyezett IP-címek:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, allowedIPsLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:47
+#, kde-format
+msgid ""
+"Required.\n"
+"            A comma-separated list of IP (v4 or v6) addresses \n"
+"            with CIDR masks from which incoming traffic for \n"
+"            this peer is allowed and to which outgoing traffic \n"
+"            for this peer is directed. The catch-all 0.0.0.0/0 \n"
+"            may be specified for matching all IPv4 addresses, \n"
+"            and ::/0 may be specified for matching all IPv6 addresses."
+msgstr ""
+"Kötelező.\n"
+"            Azon CIDR maszkos IP-címek (v4 vagy v6) vesszővel elválasztott \n"
+"            listája, amelyekről ettől a partnertől engedélyezett \n"
+"            a bejövő forgalom és amelyre a partner felé menő forgalom \n"
+"            irányítva lesz. A mindent elkapó 0.0.0.0/0 \n"
+"            megadható az összes IPv4 címre illesztéshez, \n"
+"            a ::/0 pedig az összes IPv6 címre illesztéshez."
+
+#. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:55
+#, kde-format
+msgid "Endpoint address:"
+msgstr "Végpontcím:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:66
+#, kde-format
+msgid ""
+"Optional.\n"
+"            An endpoint for the connection. Can be an\n"
+"            IPv4 address, IPv6 address, or FQDN (fully\n"
+"            qualified domain name such as abc.com). If\n"
+"            present, Endpoint port must also be set."
+msgstr ""
+"Opcionális.\n"
+"            Végpont a kapcsolathoz. Lehet egy\n"
+"            IPv4 cím, IPv6 cím, vagy FQDN \n"
+"            például abc.com). Ha meg van adva,\n"
+"            a végponti portot is be kell állítani."
+
+#. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:74
+#, kde-format
+msgid "Endpoint port:"
+msgstr "Végponti port:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:83
+#, kde-format
+msgid ""
+"Optional.\n"
+"            The port number of an endpoint. If present Endpoint\n"
+"            Address must also be set."
+msgstr ""
+"Opcionális.\n"
+"            A végpont portszáma. ha a végpontcím meg van adva,\n"
+"            ezt is be kell állítani."
+
+#. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:91
+#, kde-format
+msgid "Preshared key:"
+msgstr "Előre megosztott kulcs:"
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:102
+#, kde-format
+msgid ""
+"Optional.\n"
+"            A base64 preshared key generated by wg genpsk.\n"
+"            This option adds an additional layer of symmetric-key\n"
+"            cryptography to be mixed into the already existing\n"
+"            public-key cryptography, for post-quantum resistance."
+msgstr ""
+"Opcionális.\n"
+"            A wg genpsk-val generált base64-es előre megosztott kulcs.\n"
+"            Ez a beállítás egy további, szimmetrikus kulcsú réteget\n"
+"            ad a már meglévő nyilvános kulcsú titkosításhoz,\n"
+"            a posztkvantum ellenállósághoz."
+
+#. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:109
+#, kde-format
+msgid "Persistent keepalive:"
+msgstr "Tartós fenntartás:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:127
+#, kde-format
+msgid ""
+"Optional.\n"
+"            A seconds interval, between 1 and 65535 inclusive, of\n"
+"            how often to send an authenticated empty packet to\n"
+"            the peer for the purpose of keeping a stateful firewall\n"
+"            or NAT mapping valid persistently. For example, if the\n"
+"            interface very rarely sends traffic, but it might at\n"
+"            anytime receive traffic from a peer, and it is behind\n"
+"            NAT, the interface might benefit from having a\n"
+"            persistent keepalive interval of 25 seconds. If set to\n"
+"            0 or \"off\", this option is disabled. By default or\n"
+"            when unspecified, this option is off. Most users will not\n"
+"            need this."
+msgstr ""
+"Opcionális.\n"
+"            Másodpercekben megadott időköz 1 és 65535 között a határokat\n"
+"            is beleértve, hogy milyen gyakran küldjön egy hitelesített\n"
+"            üres csomagot a partnernek az állapottartó tűzfal vagy a NAT\n"
+"            leképezés érvényességének megtartásához. Például ha egy\n"
+"            interfész ritkán küld forgalmat, de bármikor kaphat\n"
+"            forgalmat egy partnertől, és NAT mögött van, az interfészen\n"
+"            NAT, the interface might benefit from having a\n"
+"            érdemes egy 25 másodperces időközt beállítani. Ha\n"
+"            0 or „off”, a beállítás ki van kapcsolva. Alapértelmezés\n"
+"            szerint ha nincs megadva, a beállítás ki van kapcsolva. A "
+"legtöbb\n"
+"            felhasználónak nincs szüksége erre."
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: editor/settings/ui/wireguardtabwidget.ui:24
+#, kde-format
+msgid "Peer 1"
+msgstr "Partner 1"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
+#: editor/settings/ui/wireguardtabwidget.ui:37
+#, kde-format
+msgid "Add new Peer"
+msgstr "Új partner hozzáadása"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
+#: editor/settings/ui/wireguardtabwidget.ui:44
+#, kde-format
+msgid "Remove this Peer"
+msgstr "Partner eltávolítása"
 
 #: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
@@ -1552,6 +3228,100 @@ msgstr ""
 "Biztonság: nem biztonságos\n"
 "Frekvencia: %3 Mhz"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/widgets/ui/advancedpermissionswidget.ui:33
+#, kde-format
+msgid "Available Users"
+msgstr "Elérhető felhasználók"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
+#: editor/widgets/ui/advancedpermissionswidget.ui:83
+#: editor/widgets/ui/advancedpermissionswidget.ui:213
+#, kde-format
+msgid "Real Name"
+msgstr "Valódi név"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
+#: editor/widgets/ui/advancedpermissionswidget.ui:88
+#: editor/widgets/ui/advancedpermissionswidget.ui:218
+#, kde-format
+msgctxt "like in Username for athentication"
+msgid "Username"
+msgstr "Felhasználónév"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/widgets/ui/advancedpermissionswidget.ui:160
+#, kde-format
+msgid "Users allowed to activate the connection"
+msgstr "A felhasználók aktiválhatják ezt a kapcsolatot"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
+#: editor/widgets/ui/ipv4routes.ui:20
+#, kde-format
+msgid "Edit IPv4 Routes"
+msgstr "IPv4 utak szerkesztése"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
+#: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
+#, kde-format
+msgid ""
+"If enabled, this connection will never be used as the default network "
+"connection"
+msgstr ""
+"Ha be van kapcsolva, ez a kapcsolat soha nem lesz az alapértelmezett "
+"hálózati kapcsolat"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
+#: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
+#, kde-format
+msgid "Use only for resources on this connection"
+msgstr "Csak az erőforrásokhoz használja ebben a kapcsolatban"
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#: editor/widgets/ui/ipv4routes.ui:74
+#, kde-format
+msgctxt "Remove a selected row"
+msgid "Remove"
+msgstr "Eltávolítás"
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#: editor/widgets/ui/ipv4routes.ui:124 editor/widgets/ui/ipv6routes.ui:77
+#, kde-format
+msgctxt "Insert a row"
+msgid "Add"
+msgstr "Hozzáadás"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbIgnoreAutoRoutes)
+#: editor/widgets/ui/ipv4routes.ui:136 editor/widgets/ui/ipv6routes.ui:120
+#, kde-format
+msgid ""
+"If enabled, automatically configured routes are ignored and only routes "
+"specified above are used"
+msgstr ""
+"Ha be van kapcsolva, az automatikusan beállított útvonalak mellőzésre "
+"kerülnek, és csak a fent megadott útvonalak lesznek használva"
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
+#: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
+#, kde-format
+msgid "Ignore automatically obtained routes"
+msgstr "Automatikusan lekért utak mellőzése"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
+#: editor/widgets/ui/ipv6routes.ui:20
+#, kde-format
+msgid "Edit IPv6 Routes"
+msgstr "IPv6 utak szerkesztése"
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#: editor/widgets/ui/ipv6routes.ui:92
+#, kde-format
+msgctxt "Remove a selected row"
+msgid "R&emove"
+msgstr "&Eltávolítás"
+
 #: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
@@ -1978,977 +3748,6 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Eszköz"
-
-#~ msgid "Connection name:"
-#~ msgstr "A kapcsolat neve:"
-
-#~ msgid "Authentication:"
-#~ msgstr "Hitelesítés:"
-
-#~ msgid "MD5"
-#~ msgstr "MD5"
-
-#~ msgid "TLS"
-#~ msgstr "TLS"
-
-#~ msgid "LEAP"
-#~ msgstr "LEAP"
-
-#~ msgid "PWD"
-#~ msgstr "PWD"
-
-#~ msgid "FAST"
-#~ msgstr "Gyors"
-
-#~ msgid "Tunneled TLS (TTLS)"
-#~ msgstr "Alagútazott TLS (TTLS)"
-
-#~ msgid "Protected EAP (PEAP)"
-#~ msgstr "Védett EAP (PEAP)"
-
-#~ msgid "Username:"
-#~ msgstr "Felhasználónév:"
-
-#~ msgid "Password:"
-#~ msgstr "Jelszó:"
-
-#~ msgid "Identity:"
-#~ msgstr "Azonosító:"
-
-#~ msgid "Domain:"
-#~ msgstr "Tartomány:"
-
-#~ msgid "User certificate:"
-#~ msgstr "Felhasználói tanúsítvány:"
-
-#~ msgid "CA certificate:"
-#~ msgstr "CA tanúsítvány:"
-
-#~ msgid "Subject match:"
-#~ msgstr "Tulajdonosnév egyezés:"
-
-#~ msgid "Alternative subject matches:"
-#~ msgstr "Alternatív tulajdonosnevek egyeztetése:"
-
-#~ msgid "…"
-#~ msgstr "…"
-
-#~ msgid "Connect to these servers:"
-#~ msgstr "Kapcsolódás ezekhez a kiszolgálókhoz:"
-
-#~ msgid "Private key:"
-#~ msgstr "Privát kulcs:"
-
-#~ msgid "Private key password:"
-#~ msgstr "Privát kulcs jelszava:"
-
-#~ msgid "Anonymous identity:"
-#~ msgstr "Névtelen azonosító:"
-
-#~ msgid "Automatic PAC provisioning"
-#~ msgstr "Automatikus PAC kiosztás"
-
-#~ msgid "Anonymous"
-#~ msgstr "Névtelen"
-
-#~ msgid "Authenticated"
-#~ msgstr "Hitelesítve"
-
-#~ msgid "Both"
-#~ msgstr "Mindkettő"
-
-#~ msgid "PAC file:"
-#~ msgstr "PAC-fájl:"
-
-#~ msgid "Inner authentication:"
-#~ msgstr "Belső hitelesítés:"
-
-#~ msgid "GTC"
-#~ msgstr "GTC"
-
-#~ msgid "MSCHAPv2"
-#~ msgstr "MSCHAPv2"
-
-#~ msgid "PAP"
-#~ msgstr "PAP"
-
-#~ msgid "MSCHAP"
-#~ msgstr "MSCHAP"
-
-#~ msgid "CHAP"
-#~ msgstr "CHAP"
-
-#~ msgid "PEAP version:"
-#~ msgstr "PEAP verzió:"
-
-#~ msgctxt "PEAP version"
-#~ msgid "Automatic"
-#~ msgstr "Automatikus"
-
-#~ msgid "Version 0"
-#~ msgstr "0. verzió"
-
-#~ msgid "Version 1"
-#~ msgstr "1. verzió"
-
-#~ msgid "Interface name:"
-#~ msgstr "Csatoló neve:"
-
-#~ msgid "Bonded connections:"
-#~ msgstr "Csatolt kapcsolatok:"
-
-#~ msgid "Add…"
-#~ msgstr "Hozzáadás…"
-
-#~ msgid "Edit…"
-#~ msgstr "Szerkesztés…"
-
-#~ msgid "Delete"
-#~ msgstr "Törlés"
-
-#~ msgid "Mode:"
-#~ msgstr "Mód:"
-
-#~ msgid "Link monitoring:"
-#~ msgstr "Kapcsolat figyelés:"
-
-#~ msgid "Monitoring frequency:"
-#~ msgstr "Figyelés gyakorisága:"
-
-#~ msgid " ms"
-#~ msgstr " ms"
-
-#~ msgid "Link up delay:"
-#~ msgstr "Csatlakozás késleltetése:"
-
-#~ msgid "Link down delay:"
-#~ msgstr "Szétválasztás késleltetése:"
-
-#~ msgid "ARP targets:"
-#~ msgstr "ARP célok:"
-
-#~ msgid "An IP address or comma-separated list of addresses."
-#~ msgstr "Egy IP-cím vagy címek vesszővel elválasztott listája."
-
-#~ msgid "Bridged connections:"
-#~ msgstr "Áthidalt kapcsolatok:"
-
-#~ msgid "Aging time:"
-#~ msgstr "Öregedési idő:"
-
-#~ msgctxt "seconds"
-#~ msgid " s"
-#~ msgstr " mp"
-
-#~ msgid "Enable STP (Spanning Tree Protocol)"
-#~ msgstr "STP (Spanning Tree Protocol) engedélyezése"
-
-#~ msgid "Priority:"
-#~ msgstr "Prioritás:"
-
-#~ msgid "Forward delay:"
-#~ msgstr "Továbbítási késleltetés:"
-
-#~ msgid "Hello time:"
-#~ msgstr "Hello idő:"
-
-#~ msgid "Max age:"
-#~ msgstr "Maximális élettartam:"
-
-#~ msgid "Address of the device:"
-#~ msgstr "Az eszköz címe:"
-
-#~ msgid "Connection type:"
-#~ msgstr "Kapcsolat típusa:"
-
-#~ msgid "Number:"
-#~ msgstr "Szám:"
-
-#~ msgid "Connect automatically with priority"
-#~ msgstr "Automatikus csatlakozás prioritással"
-
-#~ msgid ""
-#~ "If the connection is set to autoconnect, connections with higher priority "
-#~ "will be preferred. Defaults to 0.\n"
-#~ "The higher number means higher priority. An negative number can be used "
-#~ "to indicate priority lower than the default.\n"
-#~ "           "
-#~ msgstr ""
-#~ "Ha a kapcsolat automatikus csatlakozásra van állítva, a magasabb "
-#~ "prioritású kapcsolatok lesznek előnyben részesítve. Az alapértelmezett "
-#~ "érték 0.\n"
-#~ "A magasabb szám magasabb prioritást jelent. A negatív érték az "
-#~ "alapértelmezettnél alacsonyabb prioritás jelzésére használható.\n"
-#~ "           "
-
-#~ msgid "All users may connect to this network"
-#~ msgstr "Minden felhasználó kapcsolódhat ehhez a hálózathoz"
-
-#~ msgid "Edit advanced permissions for this connection"
-#~ msgstr "A kapcsolat speciális jogosultságainak szerkesztése"
-
-#~ msgid ""
-#~ "Fine-grained permissions editor for this connection. It lets you choose "
-#~ "which users can activate/modify/delete this connection."
-#~ msgstr ""
-#~ "Részletes jogosultság szerkesztő ehhez a kapcsolathoz. Lehetővé teszi "
-#~ "annak kiválasztását, hogy mely felhasználók aktiválhatják/módosíthatják/"
-#~ "törölhetik ezt a kapcsolatot."
-
-#~ msgid "Advanced…"
-#~ msgstr "Speciális…-"
-
-#~ msgid "Automatically connect to VPN"
-#~ msgstr "Automatikus csatlakozás VPN-hez"
-
-#~ msgid "Firewall zone:"
-#~ msgstr "Tűzfal zóna:"
-
-#~ msgid "Metered:"
-#~ msgstr "Forgalmi díjas:"
-
-#~ msgid ""
-#~ "NetworkManager indicates to applications whether the connection is "
-#~ "metered and therefore\n"
-#~ "data usage should be restricted."
-#~ msgstr ""
-#~ "A NetworkManager jelzi az alkalmazásoknak, hogy a kapcsolat forgalmi "
-#~ "díjas-e, és kell-e\n"
-#~ "korlátozni az adathasználatot vagy sem."
-
-#~ msgctxt "Item in the Metered: list"
-#~ msgid "Automatic"
-#~ msgstr "Automatikus"
-
-#~ msgid "Yes"
-#~ msgstr "Igen"
-
-#~ msgid "No"
-#~ msgstr "Nem"
-
-#~ msgid "Basic"
-#~ msgstr "Alap"
-
-#~ msgid "Advanced"
-#~ msgstr "Speciális"
-
-#~ msgid "Allow roaming if home network is not available"
-#~ msgstr "Barangolás engedélyezése, ha nem érhető el hazai hálózat"
-
-#~ msgid "APN:"
-#~ msgstr "APN:"
-
-#~ msgid "Network ID:"
-#~ msgstr "Hálózatazonosító:"
-
-#~ msgid "PIN:"
-#~ msgstr "PIN:"
-
-#~ msgid "Transport mode:"
-#~ msgstr "Továbbítási mód:"
-
-#~ msgid "Restrict to device:"
-#~ msgstr "Korlátozás eszközre:"
-
-#~ msgid "MTU:"
-#~ msgstr "MTU:"
-
-#~ msgctxt "MTU:"
-#~ msgid "Automatic"
-#~ msgstr "Automatikus"
-
-#~ msgid " bytes"
-#~ msgstr " bájt"
-
-#~ msgid "Advanced IP settings"
-#~ msgstr "Speciális IP-beállítások"
-
-#~ msgid "Method:"
-#~ msgstr "Módszer:"
-
-#~ msgctxt "Method:"
-#~ msgid "Automatic"
-#~ msgstr "Automatikus"
-
-#~ msgid "Automatic (Only addresses)"
-#~ msgstr "Automatikus (csak címek)"
-
-#~ msgid "Link-Local"
-#~ msgstr "Kapcsolatszintű"
-
-#~ msgctxt "like in use Manual configuration"
-#~ msgid "Manual"
-#~ msgstr "Kézi"
-
-#~ msgid "Shared to other computers"
-#~ msgstr "Megosztva más számítógépekkel"
-
-#~ msgctxt "like in this setting is Disabled"
-#~ msgid "Disabled"
-#~ msgstr "Letiltva"
-
-#~ msgctxt "@info"
-#~ msgid "DNS Servers:"
-#~ msgstr "DNS-kiszolgálók:"
-
-#~ msgid ""
-#~ "Use this field to specify the IP address(es) of one or more DNS servers. "
-#~ "Use ',' to separate entries."
-#~ msgstr ""
-#~ "Ezzel a mezővel adhatja meg egy vagy több DNS-kiszolgáló IP címét. "
-#~ "Használja a ',' karaktert a bejegyzések elválasztásához."
-
-#~ msgid "Edit DNS the list of servers"
-#~ msgstr " "
-
-#~ msgctxt "@info"
-#~ msgid "Search Domains:"
-#~ msgstr "Keresési tartományok:"
-
-#~ msgid ""
-#~ "Use this field to specify one or more DNS domains to search. Use ',' to "
-#~ "separate entries."
-#~ msgstr ""
-#~ "Ezzel a mezővel adhat meg egy vagy több DNS keresési tartományt. "
-#~ "Használja a ',' karaktert a bejegyzések elválasztásához."
-
-#~ msgid "Edit the list of DNS domains being searched"
-#~ msgstr "A DNS keresési tartományok listájának szerkesztése"
-
-#~ msgid "DHCP Client ID:"
-#~ msgstr "DHCP kliensazonosító:"
-
-#~ msgid ""
-#~ "Use this field to specify the DHCP client ID which is a string sent to "
-#~ "the DHCP server\n"
-#~ "to identify the local machine that the DHCP server may use to customize "
-#~ "the DHCP\n"
-#~ "lease and options."
-#~ msgstr ""
-#~ "Használja ezt a mezőt a DHCP kliens azonosítójának megadásához, amely a "
-#~ "DHCP kiszolgálónak\n"
-#~ "elküldött karakterlánc és annak a helyi gép azonosítására szolgál, "
-#~ "amelyet a DHCP kiszolgáló használhat a DHCP\n"
-#~ "kiosztás és beállítások testre szabásához."
-
-#~ msgid "Remove"
-#~ msgstr "Eltávolítás"
-
-#~ msgid "Add"
-#~ msgstr "Hozzáadás"
-
-#~ msgid ""
-#~ "IP addresses identify your computer on the network. Click the \"Add\" "
-#~ "button to add\n"
-#~ "an IP address"
-#~ msgstr ""
-#~ "Az IP-cím azonosítja a számítógépét a hálózaton. Kattintson a „Hozzáadás” "
-#~ "gombra\n"
-#~ "IP-cím hozzáadásához"
-
-#~ msgid ""
-#~ "Allows the connection to complete if IPv4 configuration fails\n"
-#~ "but IPv6 configuration succeeds"
-#~ msgstr ""
-#~ "Lehetővé teszi a kapcsolódás befejezését akkor is, ha az IPv4-beállítás "
-#~ "sikertelen\n"
-#~ "de az IPv6-beállítás sikeres"
-
-#~ msgid "IPv4 is required for this connection"
-#~ msgstr "IPv4 szükséges ehhez a kapcsolathoz"
-
-#~ msgid "Routes…"
-#~ msgstr "Utak…"
-
-#~ msgid ""
-#~ "When connecting to IPv4-capable networks, allows the connection to "
-#~ "complete if\n"
-#~ "IPv6 configuration fails but IPv4 configuration succeeds"
-#~ msgstr ""
-#~ "IPv4 képes hálózathoz csatlakozáskor lehetővé teszi a kapcsolódás "
-#~ "befejezését\n"
-#~ "ha az IPv6-beállítás sikertelen, de az IPv4-beállítás sikeres"
-
-#~ msgid "IPv6 is required for this connection"
-#~ msgstr "IPv6 szükséges ehhez a kapcsolathoz"
-
-#~ msgid "Edit the list of DNS servers"
-#~ msgstr "A DNS-kiszolgálók listájának szerkesztése "
-
-#~ msgid ""
-#~ "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-#~ "enabled, it makes the kernel generate\n"
-#~ "a temporary IPv6 address in addition to the public one generated from MAC "
-#~ "address via modified EUI-64."
-#~ msgstr ""
-#~ "Az RFC4941-ben leírt IPv6 adatvédelmi kiterjesztések beállítása SLAAC-"
-#~ "hoz. Ha be van kapcsolva, a kernel egy ideiglenes\n"
-#~ "IPv6-címet generál a MAC-címből generált nyilvános mellé, EUI-64-gyel."
-
-#~ msgctxt "privacy disabled"
-#~ msgid "Disabled"
-#~ msgstr "Letiltva"
-
-#~ msgid "Enabled (prefer public address)"
-#~ msgstr "Engedélyezve (nyilvános cím előnyben részesítve)"
-
-#~ msgid "Enabled (prefer temporary addresses)"
-#~ msgstr "Engedélyezve (átmeneti címek előnyben részesítve)"
-
-#~ msgid "Automatic (Only DHCP)"
-#~ msgstr "Automatikus (csak DHCP)"
-
-#~ msgctxt "like in this setting is Disabled"
-#~ msgid "Ignored"
-#~ msgstr "Mellőzött"
-
-#~ msgid "Disabled"
-#~ msgstr "Letiltva"
-
-#~ msgid "Privacy:"
-#~ msgstr "Adatvédelem:"
-
-#~ msgid "Authentication"
-#~ msgstr "Hitelesítés"
-
-#~ msgid "EAP"
-#~ msgstr "EAP"
-
-#~ msgid "Compression"
-#~ msgstr "Tömörítés"
-
-#~ msgid "Use point-to-point encryption (MPPE)"
-#~ msgstr "Pont-pont titkosítás (MPPE) használata"
-
-#~ msgid "Use BSD data compression"
-#~ msgstr "BSD adattömörítés használata"
-
-#~ msgid "Use Deflate data compression"
-#~ msgstr "Deflate adattömörítés használata"
-
-#~ msgid "Use TCP header compression"
-#~ msgstr "TCP fejléctömörítés használata"
-
-#~ msgid "Require 128-bit encryption"
-#~ msgstr "128 bites titkosítás szükséges"
-
-#~ msgid "Use stateful MPPE"
-#~ msgstr "Állapottartó MPPE használata"
-
-#~ msgid "Echo"
-#~ msgstr "Visszhang"
-
-#~ msgid "Send PPP echo packets"
-#~ msgstr "PPP visszhangcsomagok küldése"
-
-#~ msgid "Service:"
-#~ msgstr "Szolgáltatás:"
-
-#~ msgid ""
-#~ "If specified, instruct PPPoE to only initiate sessions with access "
-#~ "concentrators that provide the specified service. For most providers, "
-#~ "this should be left blank. It is only required if there are multiple "
-#~ "access concentrators or a specific service is known to be required."
-#~ msgstr ""
-#~ "Ha meg van adva, a PPPoE csak olyan elérési koncentrátorokkal kezdeményez "
-#~ "munkamenetet, amelyek biztosítják a megadott szolgáltatást. A legtöbb "
-#~ "szolgáltatónál ezt üresen kell hagyni. Csak akkor szükséges, ha több "
-#~ "elérési koncentrátor van, vagy egy adott szolgáltatásra szükség van."
-
-#~ msgid "Teamed connections:"
-#~ msgstr "Csoportos kapcsolatok:"
-
-#~ msgid "JSON config:"
-#~ msgstr "JSON beállítás:"
-
-#~ msgid "Import configuration from file…"
-#~ msgstr "Beállítás importálása fájlból…"
-
-#~ msgid "Parent interface:"
-#~ msgstr "Szülő csatoló:"
-
-#~ msgid "VLAN id:"
-#~ msgstr "VLAN azonosító:"
-
-#~ msgid "VLAN interface name:"
-#~ msgstr "VLAN csatoló neve:"
-
-#~ msgid "Output packet headers reordering"
-#~ msgstr "Kimeneti csomag fejléceinek újrarendezése"
-
-#~ msgid "GARP VLAN Registration Protocol"
-#~ msgstr "GARP VLAN regisztrációs protokoll"
-
-#~ msgid "GVRP"
-#~ msgstr "GVRP"
-
-#~ msgid "Loose binding"
-#~ msgstr "Loose binding"
-
-#~ msgid "SSID:"
-#~ msgstr "SSID:"
-
-#~ msgid "Infrastructure"
-#~ msgstr "Infrastruktúra"
-
-#~ msgid "Ad-hoc"
-#~ msgstr "Ad-hoc"
-
-#~ msgid "Access Point"
-#~ msgstr "Hozzáférési pont"
-
-#~ msgid "BSSID:"
-#~ msgstr "BSSID:"
-
-#~ msgid ""
-#~ "This option locks this connection to the Wi-Fi access point (AP) "
-#~ "specified by the\n"
-#~ " BSSID entered here. Example: 00:11:22:33:44:55"
-#~ msgstr ""
-#~ "Ez a beállítás rögzíti ezt  kapcsolatot a BSSID-vel megadott WiFi "
-#~ "hozzáférési\n"
-#~ "ponthoz (AP). Például: 00:11:22:33:44:55"
-
-#~ msgid "Band:"
-#~ msgstr "Sáv:"
-
-#~ msgid ""
-#~ "This option locks the connection to the Wi-Fi network associated to the "
-#~ "specified band. This setting depends\n"
-#~ " on specific driver capability and may not work with all drivers"
-#~ msgstr ""
-#~ "Ez a beállítás rögzíti a kapcsolatot a sávhoz társított WiFi hálózathoz. "
-#~ "A beállítás egy adott illesztőprogram-képességtől\n"
-#~ " függ, és valószínűleg nem működik minden illesztőprogrammal"
-
-#~ msgctxt "Band:"
-#~ msgid "Automatic"
-#~ msgstr "Automatikus"
-
-#~ msgid "A (5 GHz)"
-#~ msgstr "A (5 GHz)"
-
-#~ msgid "B/G (2.4 GHz)"
-#~ msgstr "B/G (2.4 GHz)"
-
-#~ msgid "Channel:"
-#~ msgstr "Csatorna:"
-
-#~ msgid ""
-#~ "Wireless channel to use for the Wi-Fi connection. The device will only "
-#~ "join (or create for Ad-Hoc networks)\n"
-#~ "a Wi-Fi network on the specified channel"
-#~ msgstr ""
-#~ "A WiFi kapcsolathoz használandó csatorna. Az eszköz csak a megadott "
-#~ "csatornán található WiFi hálózatokhoz\n"
-#~ "fog csatlakozni (vagy létrehozni ad hoc hálózatot)"
-
-#~ msgid "Cloned MAC address:"
-#~ msgstr "Klónozott MAC-cím:"
-
-#~ msgid "Random…"
-#~ msgstr "Véletlenszerűen…"
-
-#~ msgid "Mark this if you want to create a connection for a hidden network"
-#~ msgstr ""
-#~ "Jelölje be ezt, ha szeretne kapcsolatot létrehozni egy rejtett hálózathoz"
-
-#~ msgid "Visibility:"
-#~ msgstr "Láthatóság:"
-
-#~ msgid "Hidden network"
-#~ msgstr "Rejtett hálózat"
-
-#~ msgid "Wifi Security"
-#~ msgstr "WiFi biztonság"
-
-#~ msgctxt "no security"
-#~ msgid "None"
-#~ msgstr "Nincs"
-
-#~ msgid "WEP key 40/128 bits (Hex or ASCII)"
-#~ msgstr "WEP kulcs 40/128 bit (Hex vagy ASCII)"
-
-#~ msgid "WEP key 128 bits"
-#~ msgstr "WEP kulcs 128 bit"
-
-#~ msgid "Dynamic WEP (802.1x)"
-#~ msgstr "Dinamikus WEP (802.1x)"
-
-#~ msgid "WPA/WPA2 Personal"
-#~ msgstr "WPA/WPA2 Personal"
-
-#~ msgid "WPA/WPA2 Enterprise"
-#~ msgstr "WPA/WPA2 Enterprise"
-
-#~ msgid "WPA3 Personal"
-#~ msgstr "WPA3 Personal"
-
-#~ msgid "WPA3 Enterprise 192-bit"
-#~ msgstr "WPA3 Enterprise 192 bites"
-
-#~ msgid "Security:"
-#~ msgstr "Biztonság:"
-
-#~ msgid "Key:"
-#~ msgstr "Kulcs:"
-
-#~ msgid "WEP index:"
-#~ msgstr "WEP index:"
-
-#~ msgid "1 (default)"
-#~ msgstr "1 (alapértelmezett)"
-
-#~ msgid "2"
-#~ msgstr "2"
-
-#~ msgid "3"
-#~ msgstr "3"
-
-#~ msgid "4"
-#~ msgstr "4"
-
-#~ msgid "Open System"
-#~ msgstr "Nyílt rendszer"
-
-#~ msgid "Shared Key"
-#~ msgstr "Megosztott kulcs"
-
-#~ msgid ""
-#~ "This option locks this connection to the network device specified by its\n"
-#~ "permanent MAC address entered here. Example: 00:11:22:33:44:55"
-#~ msgstr ""
-#~ "Ez a beállítás rögzíti ezt a kapcsolatot az állandó MAC-címével megadott\n"
-#~ "hálózati eszközhöz. Például: 00:11:22:33:44:55"
-
-#~ msgid ""
-#~ "The MAC address entered here will be used as hardware address for the\n"
-#~ "network device this connection is activated on. This feature is known as "
-#~ "MAC\n"
-#~ "cloning or spoofing. Example 11:22:33:44:55"
-#~ msgstr ""
-#~ "Az itt megadott MAC-cím lesz használva hardvercímként annál a hálózat\n"
-#~ " eszköznél, amelyen ez a kapcsolat aktiválva van. Ez a funkció MAC-cím\n"
-#~ "klónozás vagy hamisítás néven ismert. Példa: 11:22:33:44:55"
-
-#~ msgid "Random"
-#~ msgstr "Véletlenszerűen"
-
-#~ msgid ""
-#~ "Only transmit packets of the specified size or smaller, breaking larger "
-#~ "packets up\n"
-#~ "into multiple Ethernet frames"
-#~ msgstr ""
-#~ "Csak a megadott méretű, vagy annál kisebb csomagok küldése, a nagyobb "
-#~ "csomagokat\n"
-#~ "szétdarabolva több Ethernet keretbe"
-
-#~ msgid "Speed:"
-#~ msgstr "Sebesség:"
-
-#~ msgid "Duplex:"
-#~ msgstr "Kétirányúság:"
-
-#~ msgid ""
-#~ "Request that the device use the specified duplex mode. Either \"half\" or "
-#~ "\"full\""
-#~ msgstr ""
-#~ "Az eszköz használja a megadott kétirányú módot. Vagy „fél”, vagy „teljes”"
-
-#~ msgid "Half"
-#~ msgstr "Fél"
-
-#~ msgid "Full"
-#~ msgstr "Teljes"
-
-#~ msgid "Link negotiation:"
-#~ msgstr "Kapcsolategyeztetés:"
-
-#~ msgid ""
-#~ "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#~ "values will be forced without checking\n"
-#~ "the device compatibility. If unsure, leave here “Ignore” or pick "
-#~ "“Automatic”."
-#~ msgstr ""
-#~ "Eszköz kapcsolategyeztetés. Ha a „Kézi” van kiválasztva, a „Sebesség” és "
-#~ "„Kétirányúság” értékek kényszerítve lesznek\n"
-#~ "az eszköz kompatibilitásának ellenőrzése nélkül. Ha bizonytalan, válassza "
-#~ "a „Mellőzés” opciót, vagy válassza az „Automatikus” módot."
-
-#~ msgid "Ignore"
-#~ msgstr "Mellőzés"
-
-#~ msgctxt "Link negotiation:"
-#~ msgid "Automatic"
-#~ msgstr "Automatikus"
-
-#~ msgid "Manual"
-#~ msgstr "Kézi"
-
-#~ msgid "Request that the device use only the specified speed."
-#~ msgstr "Az eszköz csak a megadott sebességet használja."
-
-#~ msgid "10 Mb/s"
-#~ msgstr "10 Mb/s"
-
-#~ msgid "100 Mb/s"
-#~ msgstr "100 Mb/s"
-
-#~ msgid "1 Gb/s"
-#~ msgstr "1 Gb/s"
-
-#~ msgid "2.5 Gb/s"
-#~ msgstr "2.5 Gb/s"
-
-#~ msgid "5 Gb/s"
-#~ msgstr "5 Gb/s"
-
-#~ msgid "10 Gb/s"
-#~ msgstr "10 Gb/s"
-
-#~ msgid "40 Gb/s"
-#~ msgstr " 10 Gb/s"
-
-#~ msgid "100 Gb/s"
-#~ msgstr "100 Gb/s"
-
-#~ msgid "Use 802.1x security for this connection"
-#~ msgstr "802.1x biztonság használata ehhez a kapcsolathoz"
-
-#~ msgid "WireGuard Settings"
-#~ msgstr "WireGuard beállítások"
-
-#~ msgid "Interface"
-#~ msgstr "Interfész"
-
-#~ msgid ""
-#~ "Required.\n"
-#~ "A base64 private key generated by wg genkey."
-#~ msgstr ""
-#~ "Kötelező.\n"
-#~ "Egy base64-es privát kulcs a wg genkey-jel generálva."
-
-#~ msgid "Listen port:"
-#~ msgstr "Figyelőport:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "Listen port number. Chosen randomly if left as 'Automatic'."
-#~ msgstr ""
-#~ "Opcionális.\n"
-#~ "A figyelőport száma. Véletlenszerűen választott „Automatikus” beállítás "
-#~ "esetén."
-
-#~ msgid "fwmark:"
-#~ msgstr "fwmark:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "An fwmark for outgoing packets. If set to 0 or 'off', this\n"
-#~ "option is disabled. May be specified in hexadecimal by\n"
-#~ "prepending '0x'."
-#~ msgstr ""
-#~ "Opcionális.\n"
-#~ "Egy fwmark a kimenő csomagokhoz. Ha 0 vagy „off” a\n"
-#~ "beállítás ki van kapcsolva. Megadható hexadecimálisan is a\n"
-#~ "„0x” előtaggal."
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "If not specified, the MTU is automatically determined\n"
-#~ "from the endpoint addresses or the system default route,\n"
-#~ "which is usually a sane choice. However, to manually\n"
-#~ "specify an MTU and to override this automatic discovery,\n"
-#~ "this value may be specified explicitly."
-#~ msgstr ""
-#~ "Opcionális.\n"
-#~ "Ha nincs megadva, az MTU a végponti címből vagy a rendszer\n"
-#~ "alapértelmezett útvonalából lesz meghatározva, ami általában\n"
-#~ "egy elfogadható választás. Az MTU kézi megadásához és az automatikus\n"
-#~ "beállítás felülírásához az érték expliciten is megadható."
-
-#~ msgid "Autoroute peers:"
-#~ msgstr "Automatikus partnerútvonalak:"
-
-#~ msgid ""
-#~ "Whether to automatically add routes for the AllowedIPs ranges\n"
-#~ "of the peers."
-#~ msgstr ""
-#~ "Legyenek-e automatikusan hozzáadott útvonalak a partnerek AllowedIP\n"
-#~ "tartományaihoz."
-
-#~ msgid "Peers…"
-#~ msgstr "Partnerek…"
-
-#~ msgid "Public key:"
-#~ msgstr "Publikus kulcs:"
-
-#~ msgid ""
-#~ "Required.\n"
-#~ "            A base64 public key calculated by wg pubkey \n"
-#~ "            from a private key, and usually transmitted \n"
-#~ "            out of band to the author of the configuration file."
-#~ msgstr ""
-#~ "Kötelező.\n"
-#~ "            Egy base64 nyilvános kulcs a wg pubkey-jel kiszámolva \n"
-#~ "            a titkos kulcsból, és általában kézzel elküldve \n"
-#~ "            a konfigurációs fájl szerzőjének."
-
-#~ msgid "Allowed IPs:"
-#~ msgstr "Engedélyezett IP-címek:"
-
-#~ msgid ""
-#~ "Required.\n"
-#~ "            A comma-separated list of IP (v4 or v6) addresses \n"
-#~ "            with CIDR masks from which incoming traffic for \n"
-#~ "            this peer is allowed and to which outgoing traffic \n"
-#~ "            for this peer is directed. The catch-all 0.0.0.0/0 \n"
-#~ "            may be specified for matching all IPv4 addresses, \n"
-#~ "            and ::/0 may be specified for matching all IPv6 addresses."
-#~ msgstr ""
-#~ "Kötelező.\n"
-#~ "            Azon CIDR maszkos IP-címek (v4 vagy v6) vesszővel "
-#~ "elválasztott \n"
-#~ "            listája, amelyekről ettől a partnertől engedélyezett \n"
-#~ "            a bejövő forgalom és amelyre a partner felé menő forgalom \n"
-#~ "            irányítva lesz. A mindent elkapó 0.0.0.0/0 \n"
-#~ "            megadható az összes IPv4 címre illesztéshez, \n"
-#~ "            a ::/0 pedig az összes IPv6 címre illesztéshez."
-
-#~ msgid "Endpoint address:"
-#~ msgstr "Végpontcím:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            An endpoint for the connection. Can be an\n"
-#~ "            IPv4 address, IPv6 address, or FQDN (fully\n"
-#~ "            qualified domain name such as abc.com). If\n"
-#~ "            present, Endpoint port must also be set."
-#~ msgstr ""
-#~ "Opcionális.\n"
-#~ "            Végpont a kapcsolathoz. Lehet egy\n"
-#~ "            IPv4 cím, IPv6 cím, vagy FQDN \n"
-#~ "            például abc.com). Ha meg van adva,\n"
-#~ "            a végponti portot is be kell állítani."
-
-#~ msgid "Endpoint port:"
-#~ msgstr "Végponti port:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            The port number of an endpoint. If present Endpoint\n"
-#~ "            Address must also be set."
-#~ msgstr ""
-#~ "Opcionális.\n"
-#~ "            A végpont portszáma. ha a végpontcím meg van adva,\n"
-#~ "            ezt is be kell állítani."
-
-#~ msgid "Preshared key:"
-#~ msgstr "Előre megosztott kulcs:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            A base64 preshared key generated by wg genpsk.\n"
-#~ "            This option adds an additional layer of symmetric-key\n"
-#~ "            cryptography to be mixed into the already existing\n"
-#~ "            public-key cryptography, for post-quantum resistance."
-#~ msgstr ""
-#~ "Opcionális.\n"
-#~ "            A wg genpsk-val generált base64-es előre megosztott kulcs.\n"
-#~ "            Ez a beállítás egy további, szimmetrikus kulcsú réteget\n"
-#~ "            ad a már meglévő nyilvános kulcsú titkosításhoz,\n"
-#~ "            a posztkvantum ellenállósághoz."
-
-#~ msgid "Persistent keepalive:"
-#~ msgstr "Tartós fenntartás:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            A seconds interval, between 1 and 65535 inclusive, of\n"
-#~ "            how often to send an authenticated empty packet to\n"
-#~ "            the peer for the purpose of keeping a stateful firewall\n"
-#~ "            or NAT mapping valid persistently. For example, if the\n"
-#~ "            interface very rarely sends traffic, but it might at\n"
-#~ "            anytime receive traffic from a peer, and it is behind\n"
-#~ "            NAT, the interface might benefit from having a\n"
-#~ "            persistent keepalive interval of 25 seconds. If set to\n"
-#~ "            0 or \"off\", this option is disabled. By default or\n"
-#~ "            when unspecified, this option is off. Most users will not\n"
-#~ "            need this."
-#~ msgstr ""
-#~ "Opcionális.\n"
-#~ "            Másodpercekben megadott időköz 1 és 65535 között a határokat\n"
-#~ "            is beleértve, hogy milyen gyakran küldjön egy hitelesített\n"
-#~ "            üres csomagot a partnernek az állapottartó tűzfal vagy a NAT\n"
-#~ "            leképezés érvényességének megtartásához. Például ha egy\n"
-#~ "            interfész ritkán küld forgalmat, de bármikor kaphat\n"
-#~ "            forgalmat egy partnertől, és NAT mögött van, az interfészen\n"
-#~ "            NAT, the interface might benefit from having a\n"
-#~ "            érdemes egy 25 másodperces időközt beállítani. Ha\n"
-#~ "            0 or „off”, a beállítás ki van kapcsolva. Alapértelmezés\n"
-#~ "            szerint ha nincs megadva, a beállítás ki van kapcsolva. A "
-#~ "legtöbb\n"
-#~ "            felhasználónak nincs szüksége erre."
-
-#~ msgid "Peer 1"
-#~ msgstr "Partner 1"
-
-#~ msgid "Add new Peer"
-#~ msgstr "Új partner hozzáadása"
-
-#~ msgid "Remove this Peer"
-#~ msgstr "Partner eltávolítása"
-
-#~ msgid "Available Users"
-#~ msgstr "Elérhető felhasználók"
-
-#~ msgid "Real Name"
-#~ msgstr "Valódi név"
-
-#~ msgctxt "like in Username for athentication"
-#~ msgid "Username"
-#~ msgstr "Felhasználónév"
-
-#~ msgid "Users allowed to activate the connection"
-#~ msgstr "A felhasználók aktiválhatják ezt a kapcsolatot"
-
-#~ msgid "Edit IPv4 Routes"
-#~ msgstr "IPv4 utak szerkesztése"
-
-#~ msgid ""
-#~ "If enabled, this connection will never be used as the default network "
-#~ "connection"
-#~ msgstr ""
-#~ "Ha be van kapcsolva, ez a kapcsolat soha nem lesz az alapértelmezett "
-#~ "hálózati kapcsolat"
-
-#~ msgid "Use only for resources on this connection"
-#~ msgstr "Csak az erőforrásokhoz használja ebben a kapcsolatban"
-
-#~ msgctxt "Remove a selected row"
-#~ msgid "Remove"
-#~ msgstr "Eltávolítás"
-
-#~ msgctxt "Insert a row"
-#~ msgid "Add"
-#~ msgstr "Hozzáadás"
-
-#~ msgid ""
-#~ "If enabled, automatically configured routes are ignored and only routes "
-#~ "specified above are used"
-#~ msgstr ""
-#~ "Ha be van kapcsolva, az automatikusan beállított útvonalak mellőzésre "
-#~ "kerülnek, és csak a fent megadott útvonalak lesznek használva"
-
-#~ msgid "Ignore automatically obtained routes"
-#~ msgstr "Automatikusan lekért utak mellőzése"
-
-#~ msgid "Edit IPv6 Routes"
-#~ msgstr "IPv6 utak szerkesztése"
-
-#~ msgctxt "Remove a selected row"
-#~ msgid "R&emove"
-#~ msgstr "&Eltávolítás"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "

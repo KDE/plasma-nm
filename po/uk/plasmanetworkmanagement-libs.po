@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2022-12-24 08:46+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <kde-i18n-uk@kde.org>\n"
@@ -243,6 +243,12 @@ msgstr "Змінити параметри з'єднання «%1»"
 msgid "New %1 connection"
 msgstr "Нове з'єднання %1"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/connectioneditortabwidget.ui:20
+#, kde-format
+msgid "Connection name:"
+msgstr "Назва з'єднання:"
+
 #: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
 #: editor/settings/teamwidget.cpp:36
 #, kde-format
@@ -401,7 +407,8 @@ msgstr "Назва вузла надсилання:"
 msgid "DHCP hostname:"
 msgstr "Назва вузла DHCP:"
 
-#: editor/settings/ipv4widget.cpp:440
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
 #, kde-format
 msgid "Default"
 msgstr "Типовий"
@@ -470,6 +477,1678 @@ msgstr "З'єднатися лише з цими серверами"
 #, kde-format
 msgid "Select file to import"
 msgstr "Виберіть файл для імпортування"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
+#, kde-format
+msgid "Authentication:"
+msgstr "Розпізнавання:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
+#: editor/settings/ui/802-1x.ui:38 editor/settings/ui/802-1x.ui:675
+#, kde-format
+msgid "MD5"
+msgstr "MD5"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:43
+#, kde-format
+msgid "TLS"
+msgstr "TLS"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
+#, kde-format
+msgid "LEAP"
+msgstr "LEAP"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:53
+#, kde-format
+msgid "PWD"
+msgstr "PWD"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:58
+#, kde-format
+msgid "FAST"
+msgstr "FAST"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:63
+#, kde-format
+msgid "Tunneled TLS (TTLS)"
+msgstr "Тунельоване TLS (TTLS)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, auth)
+#: editor/settings/ui/802-1x.ui:68
+#, kde-format
+msgid "Protected EAP (PEAP)"
+msgstr "Захищений EAP (PEAP)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#. i18n: ectx: property (text), widget (QLabel, label_33)
+#. i18n: ectx: property (text), widget (QLabel, label_14)
+#. i18n: ectx: property (text), widget (QLabel, label_17)
+#. i18n: ectx: property (text), widget (QLabel, label_25)
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: editor/settings/ui/802-1x.ui:83 editor/settings/ui/802-1x.ui:277
+#: editor/settings/ui/802-1x.ui:311 editor/settings/ui/802-1x.ui:440
+#: editor/settings/ui/802-1x.ui:544 editor/settings/ui/802-1x.ui:688
+#: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
+#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
+#, kde-format
+msgid "Username:"
+msgstr "Користувач:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_10)
+#. i18n: ectx: property (text), widget (QLabel, label_34)
+#. i18n: ectx: property (text), widget (QLabel, label_15)
+#. i18n: ectx: property (text), widget (QLabel, label_18)
+#. i18n: ectx: property (text), widget (QLabel, label_21)
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: editor/settings/ui/802-1x.ui:96 editor/settings/ui/802-1x.ui:290
+#: editor/settings/ui/802-1x.ui:324 editor/settings/ui/802-1x.ui:453
+#: editor/settings/ui/802-1x.ui:557 editor/settings/ui/802-1x.ui:701
+#: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
+#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:207
+#: editor/settings/ui/wifisecurity.ui:231
+#, kde-format
+msgid "Password:"
+msgstr "Пароль:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/802-1x.ui:117
+#, kde-format
+msgid "Identity:"
+msgstr "Профіль:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_32)
+#. i18n: ectx: property (text), widget (QLabel, label_30)
+#. i18n: ectx: property (text), widget (QLabel, label_31)
+#: editor/settings/ui/802-1x.ui:130 editor/settings/ui/802-1x.ui:574
+#: editor/settings/ui/802-1x.ui:718
+#, kde-format
+msgid "Domain:"
+msgstr "Домен:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: editor/settings/ui/802-1x.ui:140
+#, kde-format
+msgid "User certificate:"
+msgstr "Сертифікат користувача:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#. i18n: ectx: property (text), widget (QLabel, label_20)
+#. i18n: ectx: property (text), widget (QLabel, label_23)
+#: editor/settings/ui/802-1x.ui:157 editor/settings/ui/802-1x.ui:487
+#: editor/settings/ui/802-1x.ui:601
+#, kde-format
+msgid "CA certificate:"
+msgstr "Сертифікат CA:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_27)
+#: editor/settings/ui/802-1x.ui:174
+#, kde-format
+msgid "Subject match:"
+msgstr "Відповідність призначення:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_28)
+#: editor/settings/ui/802-1x.ui:191
+#, kde-format
+msgid "Alternative subject matches:"
+msgstr "Альтернативні відповідності призначення:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
+#. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
+#: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
+#, kde-format
+msgid "…"
+msgstr "…"
+
+#. i18n: ectx: property (text), widget (QLabel, label_29)
+#: editor/settings/ui/802-1x.ui:215
+#, kde-format
+msgid "Connect to these servers:"
+msgstr "З'єднатися з цими серверами:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
+#: editor/settings/ui/802-1x.ui:239
+#: editor/settings/ui/wireguardinterfacewidget.ui:26
+#, kde-format
+msgid "Private key:"
+msgstr "Закритий ключ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: editor/settings/ui/802-1x.ui:256
+#, kde-format
+msgid "Private key password:"
+msgstr "Пароль закритого ключа:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_11)
+#. i18n: ectx: property (text), widget (QLabel, label_19)
+#. i18n: ectx: property (text), widget (QLabel, label_24)
+#: editor/settings/ui/802-1x.ui:345 editor/settings/ui/802-1x.ui:474
+#: editor/settings/ui/802-1x.ui:588
+#, kde-format
+msgid "Anonymous identity:"
+msgstr "Анонімний профіль:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
+#: editor/settings/ui/802-1x.ui:358
+#, kde-format
+msgid "Automatic PAC provisioning"
+msgstr "Автоматичне надання PAC"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
+#: editor/settings/ui/802-1x.ui:375
+#, kde-format
+msgid "Anonymous"
+msgstr "Анонімний"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
+#: editor/settings/ui/802-1x.ui:380
+#, kde-format
+msgid "Authenticated"
+msgstr "З розпізнаванням"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
+#: editor/settings/ui/802-1x.ui:385
+#, kde-format
+msgid "Both"
+msgstr "Обидва"
+
+#. i18n: ectx: property (text), widget (QLabel, label_12)
+#: editor/settings/ui/802-1x.ui:393
+#, kde-format
+msgid "PAC file:"
+msgstr "Файл PAC:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_13)
+#. i18n: ectx: property (text), widget (QLabel, label_16)
+#. i18n: ectx: property (text), widget (QLabel, label_22)
+#: editor/settings/ui/802-1x.ui:410 editor/settings/ui/802-1x.ui:504
+#: editor/settings/ui/802-1x.ui:653
+#, kde-format
+msgid "Inner authentication:"
+msgstr "Внутрішнє розпізнавання:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
+#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
+#: editor/settings/ui/802-1x.ui:427 editor/settings/ui/802-1x.ui:680
+#, kde-format
+msgid "GTC"
+msgstr "GTC"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
+#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
+#: editor/settings/ui/802-1x.ui:432 editor/settings/ui/802-1x.ui:531
+#: editor/settings/ui/802-1x.ui:670 editor/settings/ui/ppp.ui:68
+#, kde-format
+msgid "MSCHAPv2"
+msgstr "MSCHAPv2"
+
+#. i18n: ectx: property (text), widget (QCheckBox, pap)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#: editor/settings/ui/802-1x.ui:521 editor/settings/ui/ppp.ui:58
+#, kde-format
+msgid "PAP"
+msgstr "PAP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mschap)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#: editor/settings/ui/802-1x.ui:526 editor/settings/ui/ppp.ui:48
+#, kde-format
+msgid "MSCHAP"
+msgstr "MSCHAP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, chap)
+#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
+#: editor/settings/ui/802-1x.ui:536 editor/settings/ui/ppp.ui:78
+#, kde-format
+msgid "CHAP"
+msgstr "CHAP"
+
+#. i18n: ectx: property (text), widget (QLabel, label_26)
+#: editor/settings/ui/802-1x.ui:618
+#, kde-format
+msgid "PEAP version:"
+msgstr "Версія PEAP:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
+#: editor/settings/ui/802-1x.ui:635
+#, kde-format
+msgctxt "PEAP version"
+msgid "Automatic"
+msgstr "Автоматична"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
+#: editor/settings/ui/802-1x.ui:640
+#, kde-format
+msgid "Version 0"
+msgstr "Версія 0"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
+#: editor/settings/ui/802-1x.ui:645
+#, kde-format
+msgid "Version 1"
+msgstr "Версія 1"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/bond.ui:21 editor/settings/ui/bridge.ui:18
+#: editor/settings/ui/team.ui:18
+#, kde-format
+msgid "Interface name:"
+msgstr "Назва інтерфейсу:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/bond.ui:34
+#, kde-format
+msgid "Bonded connections:"
+msgstr "Зв'язані з'єднання:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
+#: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
+#: editor/settings/ui/team.ui:56
+#, kde-format
+msgid "Add…"
+msgstr "Додати…"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnEdit)
+#: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
+#: editor/settings/ui/team.ui:71
+#, kde-format
+msgid "Edit…"
+msgstr "Змінити…"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnDelete)
+#: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
+#: editor/settings/ui/team.ui:86
+#, kde-format
+msgid "Delete"
+msgstr "Вилучити"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, modeLabel)
+#: editor/settings/ui/bond.ui:113 editor/settings/ui/wificonnectionwidget.ui:43
+#, kde-format
+msgid "Mode:"
+msgstr "Режим:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/bond.ui:133
+#, kde-format
+msgid "Link monitoring:"
+msgstr "Спостереження за зв'язком:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: editor/settings/ui/bond.ui:153
+#, kde-format
+msgid "Monitoring frequency:"
+msgstr "Частота оновлення:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
+#. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
+#. i18n: ectx: property (suffix), widget (QSpinBox, downDelay)
+#: editor/settings/ui/bond.ui:163 editor/settings/ui/bond.ui:205
+#: editor/settings/ui/bond.ui:225
+#, kde-format
+msgid " ms"
+msgstr " мс"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: editor/settings/ui/bond.ui:195
+#, kde-format
+msgid "Link up delay:"
+msgstr "Затримка встановлення зв'язку:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/bond.ui:215
+#, kde-format
+msgid "Link down delay:"
+msgstr "Затримка розірвання зв'язку:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: editor/settings/ui/bond.ui:242
+#, kde-format
+msgid "ARP targets:"
+msgstr "Цілі ARP:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
+#: editor/settings/ui/bond.ui:252
+#, kde-format
+msgid "An IP address or comma-separated list of addresses."
+msgstr "Одна IP-адреса або список з декількох адрес, відокремлених комами."
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/bridge.ui:31
+#, kde-format
+msgid "Bridged connections:"
+msgstr "Зв'язані з'єднання:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/bridge.ui:110
+#, kde-format
+msgid "Aging time:"
+msgstr "Час застарівання:"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, agingTime)
+#. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
+#. i18n: ectx: property (suffix), widget (QSpinBox, helloTime)
+#. i18n: ectx: property (suffix), widget (QSpinBox, maxAge)
+#: editor/settings/ui/bridge.ui:126 editor/settings/ui/bridge.ui:193
+#: editor/settings/ui/bridge.ui:222 editor/settings/ui/bridge.ui:251
+#, kde-format
+msgctxt "seconds"
+msgid " s"
+msgstr " с"
+
+#. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
+#: editor/settings/ui/bridge.ui:139
+#, kde-format
+msgid "Enable STP (Spanning Tree Protocol)"
+msgstr "Увімкнути STP (протокол розподілу за деревом)"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: editor/settings/ui/bridge.ui:151
+#, kde-format
+msgid "Priority:"
+msgstr "Пріоритет:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/bridge.ui:177
+#, kde-format
+msgid "Forward delay:"
+msgstr "Затримка переспрямування:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: editor/settings/ui/bridge.ui:206
+#, kde-format
+msgid "Hello time:"
+msgstr "Час на вітання:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: editor/settings/ui/bridge.ui:235
+#, kde-format
+msgid "Max age:"
+msgstr "Макс. вік:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/bt.ui:21
+#, kde-format
+msgid "Address of the device:"
+msgstr "Адреса пристрою:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/bt.ui:41
+#, kde-format
+msgid "Connection type:"
+msgstr "Тип з'єднання:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/cdma.ui:20 editor/settings/ui/gsm.ui:24
+#, kde-format
+msgid "Number:"
+msgstr "Номер:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
+#: editor/settings/ui/connectionwidget.ui:17
+#, kde-format
+msgid "Connect automatically with priority"
+msgstr "З'єднувати автоматично із пріоритетністю"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
+#: editor/settings/ui/connectionwidget.ui:38
+#, kde-format
+msgid ""
+"If the connection is set to autoconnect, connections with higher priority "
+"will be preferred. Defaults to 0.\n"
+"The higher number means higher priority. An negative number can be used to "
+"indicate priority lower than the default.\n"
+"           "
+msgstr ""
+"Якщо для з'єднання встановлено автоматичне з'єднування, перевага "
+"надаватиметься з'єднанням із вищою пріоритетністю. Типовим значенням "
+"пріоритетності є 0.\n"
+"Більші значення означають вищу пріоритетність. Від'ємними значеннями можна "
+"скористатися для визначення пріоритетності, яка є нижчою за типову.\n"
+"           "
+
+#. i18n: ectx: property (text), widget (QCheckBox, allUsers)
+#: editor/settings/ui/connectionwidget.ui:48
+#, kde-format
+msgid "All users may connect to this network"
+msgstr "З цією мережею можуть з'єднуватися всі користувачі"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
+#: editor/settings/ui/connectionwidget.ui:64
+#, kde-format
+msgid "Edit advanced permissions for this connection"
+msgstr "Редагувати розширені права доступу для цього з'єднання"
+
+#. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
+#: editor/settings/ui/connectionwidget.ui:67
+#, kde-format
+msgid ""
+"Fine-grained permissions editor for this connection. It lets you choose "
+"which users can activate/modify/delete this connection."
+msgstr ""
+"Редактор точних параметрів цього з'єднання. За його допомогою ви можете "
+"вказати користувачів, які зможуть встановлювати, змінювати та розривати це "
+"з'єднання."
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
+#, kde-format
+msgid "Advanced…"
+msgstr "Додатково…"
+
+#. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
+#: editor/settings/ui/connectionwidget.ui:81
+#, kde-format
+msgid "Automatically connect to VPN"
+msgstr "Автоматично з'єднуватися з VPN"
+
+#. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
+#: editor/settings/ui/connectionwidget.ui:101
+#, kde-format
+msgid "Firewall zone:"
+msgstr "Зона брандмауера:"
+
+#. i18n: ectx: property (text), widget (QLabel, meteredLabel)
+#: editor/settings/ui/connectionwidget.ui:130
+#, kde-format
+msgid "Metered:"
+msgstr "Вимірювання:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:150
+#, kde-format
+msgid ""
+"NetworkManager indicates to applications whether the connection is metered "
+"and therefore\n"
+"data usage should be restricted."
+msgstr ""
+"NetworkManager вказує програмам, чи виконується вимірювання передавання "
+"даних з'єднанням,\n"
+"а отже, чи слід використовувати якісь обмеження."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:160
+#, kde-format
+msgctxt "Item in the Metered: list"
+msgid "Automatic"
+msgstr "Автоматичне"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:165
+#, kde-format
+msgid "Yes"
+msgstr "Так"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, metered)
+#: editor/settings/ui/connectionwidget.ui:170
+#, kde-format
+msgid "No"
+msgstr "Ні"
+
+#. i18n: ectx: property (title), widget (QGroupBox, basicGroup)
+#: editor/settings/ui/gsm.ui:18
+#, kde-format
+msgid "Basic"
+msgstr "Основні"
+
+#. i18n: ectx: property (title), widget (QGroupBox, advGroup)
+#: editor/settings/ui/gsm.ui:84
+#, kde-format
+msgid "Advanced"
+msgstr "Додатково"
+
+#. i18n: ectx: property (text), widget (QCheckBox, roaming)
+#: editor/settings/ui/gsm.ui:93
+#, kde-format
+msgid "Allow roaming if home network is not available"
+msgstr "Дозволити роумінг, якщо типова мережа недоступна"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/gsm.ui:100
+#, kde-format
+msgid "APN:"
+msgstr "APN:"
+
+#. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
+#: editor/settings/ui/gsm.ui:110
+#, kde-format
+msgid "Network ID:"
+msgstr "Ідентифікатор мережі:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/gsm.ui:130
+#, kde-format
+msgid "PIN:"
+msgstr "PIN:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/infiniband.ui:21
+#, kde-format
+msgid "Transport mode:"
+msgstr "Режим передавання:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/infiniband.ui:41
+#: editor/settings/ui/wificonnectionwidget.ui:186
+#: editor/settings/ui/wiredconnectionwidget.ui:23
+#, kde-format
+msgid "Restrict to device:"
+msgstr "Обмежити цим пристроєм:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, mtuLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/infiniband.ui:61
+#: editor/settings/ui/wificonnectionwidget.ui:249
+#: editor/settings/ui/wiredconnectionwidget.ui:89
+#: editor/settings/ui/wireguardinterfacewidget.ui:74
+#, kde-format
+msgid "MTU:"
+msgstr "MTU:"
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
+#: editor/settings/ui/infiniband.ui:80
+#: editor/settings/ui/wificonnectionwidget.ui:271
+#: editor/settings/ui/wiredconnectionwidget.ui:112
+#, kde-format
+msgctxt "MTU:"
+msgid "Automatic"
+msgstr "Автоматично"
+
+#. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
+#: editor/settings/ui/infiniband.ui:83
+#: editor/settings/ui/wificonnectionwidget.ui:274
+#: editor/settings/ui/wiredconnectionwidget.ui:115
+#, kde-format
+msgid " bytes"
+msgstr " байтів"
+
+#. i18n: ectx: property (toolTip), widget (QWidget, IPv6Widget)
+#. i18n: ectx: property (toolTip), widget (QWidget, IPv4Widget)
+#: editor/settings/ui/ipv4.ui:17 editor/settings/ui/ipv6.ui:20
+#, kde-format
+msgid "Advanced IP settings"
+msgstr "Додаткові параметри IP"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
+#, kde-format
+msgid "Method:"
+msgstr "Метод:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:227
+#, kde-format
+msgctxt "Method:"
+msgid "Automatic"
+msgstr "Автоматичний"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
+#, kde-format
+msgid "Automatic (Only addresses)"
+msgstr "Автоматично (лише адреси)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
+#, kde-format
+msgid "Link-Local"
+msgstr "Link-Local"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
+#, kde-format
+msgctxt "like in use Manual configuration"
+msgid "Manual"
+msgstr "Вручну"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:69
+#, kde-format
+msgid "Shared to other computers"
+msgstr "Спільне разом з іншими комп'ютерами"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:74
+#, kde-format
+msgctxt "like in this setting is Disabled"
+msgid "Disabled"
+msgstr "Вимкнено"
+
+#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
+#: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:170
+#, kde-format
+msgctxt "@info"
+msgid "DNS Servers:"
+msgstr "Сервери DNS:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
+#: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
+#, kde-format
+msgid ""
+"Use this field to specify the IP address(es) of one or more DNS servers. Use "
+"',' to separate entries."
+msgstr ""
+"У цьому полі слід вказати адресу IP одного або декількох серверів DNS. "
+"Адреси має бути відокремлено символом «,»."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
+#: editor/settings/ui/ipv4.ui:125
+#, kde-format
+msgid "Edit DNS the list of servers"
+msgstr "Редагувати список серверів DNS"
+
+#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
+#: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
+#, kde-format
+msgctxt "@info"
+msgid "Search Domains:"
+msgstr "Домени пошуку:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
+#: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
+#, kde-format
+msgid ""
+"Use this field to specify one or more DNS domains to search. Use ',' to "
+"separate entries."
+msgstr ""
+"Цим полем можна скористатися для визначення одного або декількох доменів DNS "
+"для пошуку. Записи слід відокремлювати комою («,»)."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
+#: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
+#, kde-format
+msgid "Edit the list of DNS domains being searched"
+msgstr "Редагувати список доменів DNS, на яких відбуватиметься пошук"
+
+#. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
+#: editor/settings/ui/ipv4.ui:191
+#, kde-format
+msgid "DHCP Client ID:"
+msgstr "Ідентифікатор клієнта DHCP:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
+#: editor/settings/ui/ipv4.ui:206
+#, kde-format
+msgid ""
+"Use this field to specify the DHCP client ID which is a string sent to the "
+"DHCP server\n"
+"to identify the local machine that the DHCP server may use to customize the "
+"DHCP\n"
+"lease and options."
+msgstr ""
+"Скористайтеся цим полем для визначення ідентифікатора клієнта DHCP, тобто \n"
+"рядка, який буде надіслано на сервер DHCP для ідентифікації локального \n"
+"комп'ютера. Сервер DHCP може скористатися результатами цієї ідентифікації \n"
+"для налаштування надання DHCP та зміни параметрів."
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
+#: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
+#, kde-format
+msgid "Remove"
+msgstr "Вилучити"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
+#: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:109
+#, kde-format
+msgid "Add"
+msgstr "Додати"
+
+#. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
+#: editor/settings/ui/ipv4.ui:244 editor/settings/ui/ipv6.ui:127
+#: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
+#, kde-format
+msgid ""
+"IP addresses identify your computer on the network. Click the \"Add\" button "
+"to add\n"
+"an IP address"
+msgstr ""
+"IP-адреси визначають місце комп'ютера у мережі. Натисніть кнопку «Додати», "
+"щоб додати IP-адресу."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
+#: editor/settings/ui/ipv4.ui:282
+#, kde-format
+msgid ""
+"Allows the connection to complete if IPv4 configuration fails\n"
+"but IPv6 configuration succeeds"
+msgstr ""
+"Надає змогу встановлювати з'єднання, якщо не вдасться використати\n"
+"налаштування IPv4, але налаштування IPv6 працюватимуть."
+
+#. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
+#: editor/settings/ui/ipv4.ui:285
+#, kde-format
+msgid "IPv4 is required for this connection"
+msgstr "Для встановлення цього з'єднання слід використовувати IPv4"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
+#: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
+#, kde-format
+msgid "Routes…"
+msgstr "Маршрути…"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
+#: editor/settings/ui/ipv6.ui:30
+#, kde-format
+msgid ""
+"When connecting to IPv4-capable networks, allows the connection to complete "
+"if\n"
+"IPv6 configuration fails but IPv4 configuration succeeds"
+msgstr ""
+"Під час встановлення з'єднання з мережами, де працює режим адресування IPv4, "
+"надає змогу встановлювати з'єднання, якщо\n"
+"не вдасться використати налаштування IPv6, але налаштування IPv4 "
+"працюватимуть."
+
+#. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
+#: editor/settings/ui/ipv6.ui:33
+#, kde-format
+msgid "IPv6 is required for this connection"
+msgstr "Для встановлення цього з'єднання слід використовувати IPv6"
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
+#: editor/settings/ui/ipv6.ui:83
+#, kde-format
+msgid "Edit the list of DNS servers"
+msgstr "Редагувати список серверів DNS"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:193
+#, kde-format
+msgid ""
+"Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
+"enabled, it makes the kernel generate\n"
+"a temporary IPv6 address in addition to the public one generated from MAC "
+"address via modified EUI-64."
+msgstr ""
+"Налаштувати використання розширень конфіденційності IPv6 для SLAAC, описаних "
+"у RFC4941. Якщо позначено, ядро\n"
+"створюватиме тимчасову адресу IPv6 на додачу до відкритої адреси, створеної "
+"на основі MAC-адреси за допомогою модифікованого EUI-64."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:202
+#, kde-format
+msgctxt "privacy disabled"
+msgid "Disabled"
+msgstr "Вимкнено"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:207
+#, kde-format
+msgid "Enabled (prefer public address)"
+msgstr "Увімкнено (адреса з відкритим доступом)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
+#: editor/settings/ui/ipv6.ui:212
+#, kde-format
+msgid "Enabled (prefer temporary addresses)"
+msgstr "Увімкнено (перевага тимчасових адрес)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:237
+#, kde-format
+msgid "Automatic (Only DHCP)"
+msgstr "Автоматично (лише DHCP)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:252
+#, kde-format
+msgctxt "like in this setting is Disabled"
+msgid "Ignored"
+msgstr "Ігнорується"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:257
+#, kde-format
+msgid "Disabled"
+msgstr "Вимкнено"
+
+#. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
+#: editor/settings/ui/ipv6.ui:335
+#, kde-format
+msgid "Privacy:"
+msgstr "Конфіденційність:"
+
+#. i18n: ectx: property (title), widget (QGroupBox, authGroup)
+#: editor/settings/ui/ppp.ui:23
+#, kde-format
+msgid "Authentication"
+msgstr "Розпізнавання"
+
+#. i18n: ectx: property (text), widget (QCheckBox, eap)
+#: editor/settings/ui/ppp.ui:38
+#, kde-format
+msgid "EAP"
+msgstr "EAP"
+
+#. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
+#: editor/settings/ui/ppp.ui:91
+#, kde-format
+msgid "Compression"
+msgstr "Стискання"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mppe)
+#: editor/settings/ui/ppp.ui:109
+#, kde-format
+msgid "Use point-to-point encryption (MPPE)"
+msgstr "Використовувати міжточкове шифрування (MPPE)"
+
+#. i18n: ectx: property (text), widget (QCheckBox, bsdComp)
+#: editor/settings/ui/ppp.ui:116
+#, kde-format
+msgid "Use BSD data compression"
+msgstr "Використовувати стискання даних BSD"
+
+#. i18n: ectx: property (text), widget (QCheckBox, deflateComp)
+#: editor/settings/ui/ppp.ui:126
+#, kde-format
+msgid "Use Deflate data compression"
+msgstr "Використовувати стискання даних Deflate"
+
+#. i18n: ectx: property (text), widget (QCheckBox, tcpComp)
+#: editor/settings/ui/ppp.ui:136
+#, kde-format
+msgid "Use TCP header compression"
+msgstr "Використовувати стискання заголовка TCP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mppe128)
+#: editor/settings/ui/ppp.ui:152
+#, kde-format
+msgid "Require 128-bit encryption"
+msgstr "Потрібне 128-бітове шифрування"
+
+#. i18n: ectx: property (text), widget (QCheckBox, mppeStateful)
+#: editor/settings/ui/ppp.ui:165
+#, kde-format
+msgid "Use stateful MPPE"
+msgstr "Використовувати MPPE зі збереженням стану"
+
+#. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
+#: editor/settings/ui/ppp.ui:175
+#, kde-format
+msgid "Echo"
+msgstr "Відлуння"
+
+#. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
+#: editor/settings/ui/ppp.ui:184
+#, kde-format
+msgid "Send PPP echo packets"
+msgstr "Надсилати PPP луна-пакети "
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/pppoe.ui:20
+#, kde-format
+msgid "Service:"
+msgstr "Служба:"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, service)
+#: editor/settings/ui/pppoe.ui:30
+#, kde-format
+msgid ""
+"If specified, instruct PPPoE to only initiate sessions with access "
+"concentrators that provide the specified service. For most providers, this "
+"should be left blank. It is only required if there are multiple access "
+"concentrators or a specific service is known to be required."
+msgstr ""
+"Якщо вказано, наказати PPPoE ініціалізувати сеанси лише з доступом до "
+"концентраторів, які надають відповідні послуги. Для більшості надавачів "
+"послуг зв'язку це поле слід залишити порожнім. Заповнювати його слід, лише "
+"якщо ви маєте справу із концентраторами із декількома способами доступу або "
+"відомо, що вказана служба є необхідною."
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: editor/settings/ui/team.ui:31
+#, kde-format
+msgid "Teamed connections:"
+msgstr "Командні з'єднання:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/team.ui:113
+#, kde-format
+msgid "JSON config:"
+msgstr "Налаштування JSON:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnImport)
+#: editor/settings/ui/team.ui:123
+#, kde-format
+msgid "Import configuration from file…"
+msgstr "Імпортувати налаштування з файла…"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/vlan.ui:18
+#, kde-format
+msgid "Parent interface:"
+msgstr "Батьківський інтерфейс:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/vlan.ui:41
+#, kde-format
+msgid "VLAN id:"
+msgstr "Ід. VLAN:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: editor/settings/ui/vlan.ui:64
+#, kde-format
+msgid "VLAN interface name:"
+msgstr "Назва інтерфейсу VLAN:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, reorderHeaders)
+#: editor/settings/ui/vlan.ui:77
+#, kde-format
+msgid "Output packet headers reordering"
+msgstr "Перевпорядовувати заголовки вихідних пакетів"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, gvrp)
+#: editor/settings/ui/vlan.ui:84
+#, kde-format
+msgid "GARP VLAN Registration Protocol"
+msgstr "Протокол реєстрації VLAN GARP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, gvrp)
+#: editor/settings/ui/vlan.ui:87
+#, kde-format
+msgid "GVRP"
+msgstr "GVRP"
+
+#. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
+#: editor/settings/ui/vlan.ui:94
+#, kde-format
+msgid "Loose binding"
+msgstr "Вільне прив'язування"
+
+#. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:17
+#, kde-format
+msgid "SSID:"
+msgstr "SSID:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
+#: editor/settings/ui/wificonnectionwidget.ui:63
+#, kde-format
+msgid "Infrastructure"
+msgstr "Інфраструктура"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
+#: editor/settings/ui/wificonnectionwidget.ui:68
+#, kde-format
+msgid "Ad-hoc"
+msgstr "Спеціальна"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
+#: editor/settings/ui/wificonnectionwidget.ui:73
+#, kde-format
+msgid "Access Point"
+msgstr "Точка доступу"
+
+#. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:81
+#, kde-format
+msgid "BSSID:"
+msgstr "BSSID:"
+
+#. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
+#: editor/settings/ui/wificonnectionwidget.ui:101
+#, kde-format
+msgid ""
+"This option locks this connection to the Wi-Fi access point (AP) specified "
+"by the\n"
+" BSSID entered here. Example: 00:11:22:33:44:55"
+msgstr ""
+"За допомогою цього пункту можна заблокувати з'єднання із точкою доступу Wi-"
+"Fi, вказаною за допомогою\n"
+" зазначеного тут BSSID. Приклад: 00:11:22:33:44:55"
+
+#. i18n: ectx: property (text), widget (QLabel, bandLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:117
+#, kde-format
+msgid "Band:"
+msgstr "Діапазон:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:137
+#, kde-format
+msgid ""
+"This option locks the connection to the Wi-Fi network associated to the "
+"specified band. This setting depends\n"
+" on specific driver capability and may not work with all drivers"
+msgstr ""
+"За допомогою цього пункту можна заблокувати з'єднання із мережею Wi-Fi, "
+"пов'язаною із вказаним діапазоном. Дієвість цього\n"
+" параметра залежить від можливостей драйвера."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:141
+#, kde-format
+msgctxt "Band:"
+msgid "Automatic"
+msgstr "Автоматичний"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:146
+#, kde-format
+msgid "A (5 GHz)"
+msgstr "A (5 ГГц)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, band)
+#: editor/settings/ui/wificonnectionwidget.ui:151
+#, kde-format
+msgid "B/G (2.4 GHz)"
+msgstr "B/G (2,4 ГГц)"
+
+#. i18n: ectx: property (text), widget (QLabel, channelLabel)
+#: editor/settings/ui/wificonnectionwidget.ui:159
+#, kde-format
+msgid "Channel:"
+msgstr "Канал:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, channel)
+#: editor/settings/ui/wificonnectionwidget.ui:179
+#, kde-format
+msgid ""
+"Wireless channel to use for the Wi-Fi connection. The device will only join "
+"(or create for Ad-Hoc networks)\n"
+"a Wi-Fi network on the specified channel"
+msgstr ""
+"Канал бездротового зв'язку, яким слід скористатися для встановлення "
+"з'єднання Wi-Fi. Пристрій долучатиметься до мереж Wi-Fi\n"
+"(або створюватиме ситуативні мережі) лише на вказаному каналі."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/wificonnectionwidget.ui:209
+#: editor/settings/ui/wiredconnectionwidget.ui:47
+#, kde-format
+msgid "Cloned MAC address:"
+msgstr "Клонована MAC-адреса:"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
+#: editor/settings/ui/wificonnectionwidget.ui:240
+#, kde-format
+msgid "Random…"
+msgstr "Випадковий…"
+
+#. i18n: ectx: property (toolTip), widget (QLabel, label_4)
+#. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
+#: editor/settings/ui/wificonnectionwidget.ui:287
+#: editor/settings/ui/wificonnectionwidget.ui:303
+#, kde-format
+msgid "Mark this if you want to create a connection for a hidden network"
+msgstr "Позначте, якщо вам потрібно створити з'єднання для прихованої мережі"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/wificonnectionwidget.ui:290
+#, kde-format
+msgid "Visibility:"
+msgstr "Видимість:"
+
+#. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
+#: editor/settings/ui/wificonnectionwidget.ui:306
+#, kde-format
+msgid "Hidden network"
+msgstr "Прихована мережа"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
+#: editor/settings/ui/wifisecurity.ui:15
+#, kde-format
+msgid "Wifi Security"
+msgstr "Захист Wifi"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:28
+#, kde-format
+msgctxt "no security"
+msgid "None"
+msgstr "Немає"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:33
+#, kde-format
+msgid "WEP key 40/128 bits (Hex or ASCII)"
+msgstr "40/128-бітовий ключ WEP (шістн. або ASCII)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:38
+#, kde-format
+msgid "WEP key 128 bits"
+msgstr "128-бітовий ключ WEP"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:48
+#, kde-format
+msgid "Dynamic WEP (802.1x)"
+msgstr "Динамічна WEP (802.1x)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:53
+#, kde-format
+msgid "WPA/WPA2 Personal"
+msgstr "Особиста WPA/WPA2"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:58
+#, kde-format
+msgid "WPA/WPA2 Enterprise"
+msgstr "Промислова WPA/WPA2"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:63
+#, kde-format
+msgid "WPA3 Personal"
+msgstr "Особиста WPA3"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
+#: editor/settings/ui/wifisecurity.ui:68
+#, kde-format
+msgid "WPA3 Enterprise 192-bit"
+msgstr "Промислова WPA3, 192-бітова"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/wifisecurity.ui:76
+#, kde-format
+msgid "Security:"
+msgstr "Захист:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/settings/ui/wifisecurity.ui:97
+#, kde-format
+msgid "Key:"
+msgstr "Ключ:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: editor/settings/ui/wifisecurity.ui:117
+#, kde-format
+msgid "WEP index:"
+msgstr "Індекс WEP:"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:134
+#, kde-format
+msgid "1 (default)"
+msgstr "1 (типовий)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:139
+#, kde-format
+msgid "2"
+msgstr "2"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:144
+#, kde-format
+msgid "3"
+msgstr "3"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
+#: editor/settings/ui/wifisecurity.ui:149
+#, kde-format
+msgid "4"
+msgstr "4"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
+#: editor/settings/ui/wifisecurity.ui:174
+#, kde-format
+msgid "Open System"
+msgstr "Відкрита система"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
+#: editor/settings/ui/wifisecurity.ui:179
+#, kde-format
+msgid "Shared Key"
+msgstr "Відкритий ключ"
+
+#. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
+#: editor/settings/ui/wiredconnectionwidget.ui:40
+#, kde-format
+msgid ""
+"This option locks this connection to the network device specified by its\n"
+"permanent MAC address entered here. Example: 00:11:22:33:44:55"
+msgstr ""
+"За допомогою цього пункту можна заблокувати з'єднання із пристроєм мережі, "
+"вказаним за\n"
+"його сталою MAC-адресою, зазначеною тут. Приклад: 00:11:22:33:44:55"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
+#: editor/settings/ui/wiredconnectionwidget.ui:67
+#, kde-format
+msgid ""
+"The MAC address entered here will be used as hardware address for the\n"
+"network device this connection is activated on. This feature is known as "
+"MAC\n"
+"cloning or spoofing. Example 11:22:33:44:55"
+msgstr ""
+"Вказану тут MAC-адресу буде використано як апаратну адресу для мережевого \n"
+"пристрою, для якого активовано це з'єднання. Ця можливість відома як \n"
+"клонування MAC-адреси або спуфінґ. Приклад: 11:22:33:44:55"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
+#: editor/settings/ui/wiredconnectionwidget.ui:80
+#, kde-format
+msgid "Random"
+msgstr "Випадковий"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
+#: editor/settings/ui/wiredconnectionwidget.ui:106
+#, kde-format
+msgid ""
+"Only transmit packets of the specified size or smaller, breaking larger "
+"packets up\n"
+"into multiple Ethernet frames"
+msgstr ""
+"Передавати пакети лише вказаного або меншого розміру, розбиваючи великі "
+"пакети\n"
+"на декілька кадрів Ethernet."
+
+#. i18n: ectx: property (text), widget (QLabel, speedLabel)
+#: editor/settings/ui/wiredconnectionwidget.ui:125
+#, kde-format
+msgid "Speed:"
+msgstr "Швидкість:"
+
+#. i18n: ectx: property (text), widget (QLabel, duplexLabel)
+#: editor/settings/ui/wiredconnectionwidget.ui:132
+#, kde-format
+msgid "Duplex:"
+msgstr "Дуплекс:"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
+#: editor/settings/ui/wiredconnectionwidget.ui:151
+#, kde-format
+msgid ""
+"Request that the device use the specified duplex mode. Either \"half\" or "
+"\"full\""
+msgstr ""
+"Вимагати, щоб пристроєм використовувався лише вказаний дуплексний режим. "
+"Можливі значення: «повний дуплекс» або «напівдуплекс»."
+
+#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
+#: editor/settings/ui/wiredconnectionwidget.ui:158
+#, kde-format
+msgid "Half"
+msgstr "напівдуплекс"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
+#: editor/settings/ui/wiredconnectionwidget.ui:163
+#, kde-format
+msgid "Full"
+msgstr "повний дуплекс"
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: editor/settings/ui/wiredconnectionwidget.ui:174
+#, kde-format
+msgid "Link negotiation:"
+msgstr "Узгодження зв'язку:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:188
+#, kde-format
+msgid ""
+"Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
+"will be forced without checking\n"
+"the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
+msgstr ""
+"Узгодження зв'язку із пристроєм. Якщо вибрано варіант «Вручну», значення "
+"«Швидкість» і «Двобічний» буде застосовано примусово, без\n"
+"перевірки сумісності із пристроєм. Якщо не певні, лишіть варіант "
+"«Ігнорувати» або виберіть варіант «Автоматично»."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:192
+#, kde-format
+msgid "Ignore"
+msgstr "Ігнорувати"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:197
+#, kde-format
+msgctxt "Link negotiation:"
+msgid "Automatic"
+msgstr "Автоматичне"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
+#: editor/settings/ui/wiredconnectionwidget.ui:202
+#, kde-format
+msgid "Manual"
+msgstr "Вручну"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:219
+#, kde-format
+msgid "Request that the device use only the specified speed."
+msgstr "Вимагати, щоб пристроєм використовувалася лише вказана швидкість."
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:226
+#, kde-format
+msgid "10 Mb/s"
+msgstr "10 Мбіт/с"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:231
+#, kde-format
+msgid "100 Mb/s"
+msgstr "100 Мбіт/с"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:236
+#, kde-format
+msgid "1 Gb/s"
+msgstr "1 Гбіт/с"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:241
+#, kde-format
+msgid "2.5 Gb/s"
+msgstr "2,5 Гбіт/с"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:246
+#, kde-format
+msgid "5 Gb/s"
+msgstr "5 Гбіт/с"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:251
+#, kde-format
+msgid "10 Gb/s"
+msgstr "10 Гбіт/с"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:256
+#, kde-format
+msgid "40 Gb/s"
+msgstr "40 Гбіт/с"
+
+#. i18n: ectx: property (text), item, widget (QComboBox, speed)
+#: editor/settings/ui/wiredconnectionwidget.ui:261
+#, kde-format
+msgid "100 Gb/s"
+msgstr "100 Гбіт/с"
+
+#. i18n: ectx: property (text), widget (QCheckBox, use8021X)
+#: editor/settings/ui/wiredsecurity.ui:17
+#, kde-format
+msgid "Use 802.1x security for this connection"
+msgstr "Використовувати для цього з'єднання захист 802.1x"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
+#: editor/settings/ui/wireguardinterfacewidget.ui:14
+#, kde-format
+msgid "WireGuard Settings"
+msgstr "Параметри WireGuard"
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: editor/settings/ui/wireguardinterfacewidget.ui:20
+#, kde-format
+msgid "Interface"
+msgstr "Інтерфейс"
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:34
+#, kde-format
+msgid ""
+"Required.\n"
+"A base64 private key generated by wg genkey."
+msgstr ""
+"Має бути вказано.\n"
+"Закритий ключ у форматі base64, створений за допомогою wg genkey."
+
+#. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
+#: editor/settings/ui/wireguardinterfacewidget.ui:41
+#, kde-format
+msgid "Listen port:"
+msgstr "Очікувати на порті:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:49
+#, kde-format
+msgid ""
+"Optional.\n"
+"Listen port number. Chosen randomly if left as 'Automatic'."
+msgstr ""
+"Необов'язковий параметр.\n"
+"Номер порту очікування. Вибирається випадково, якщо не змінювати типове "
+"значення «Автоматично»."
+
+#. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
+#: editor/settings/ui/wireguardinterfacewidget.ui:57
+#, kde-format
+msgid "fwmark:"
+msgstr "fwmark:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:67
+#, kde-format
+msgid ""
+"Optional.\n"
+"An fwmark for outgoing packets. If set to 0 or 'off', this\n"
+"option is disabled. May be specified in hexadecimal by\n"
+"prepending '0x'."
+msgstr ""
+"Необов'язковий параметр.\n"
+"fwmark для вихідних пакетів. Якщо встановлено значення 0\n"
+"або «off», додавання позначки буде вимкнено. Можна вказати\n"
+"у форматі шістнадцяткового значення, дописавши перед рядком «0x»."
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
+#: editor/settings/ui/wireguardinterfacewidget.ui:86
+#, kde-format
+msgid ""
+"Optional.\n"
+"If not specified, the MTU is automatically determined\n"
+"from the endpoint addresses or the system default route,\n"
+"which is usually a sane choice. However, to manually\n"
+"specify an MTU and to override this automatic discovery,\n"
+"this value may be specified explicitly."
+msgstr ""
+"Необов'язковий параметр.\n"
+"Якщо не вказано, MTU буде автоматично визначено на основі\n"
+"адрес кінцевих точок або типового маршруту системи.\n"
+"Зазвичай, обчислене значення є придатним. Втім, якщо\n"
+"потрібно, ви можете вказати MTU і перевизначити автоматично\n"
+"встановлене значення явним чином."
+
+#. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
+#: editor/settings/ui/wireguardinterfacewidget.ui:93
+#, kde-format
+msgid "Autoroute peers:"
+msgstr "Вузли автомаршрутизації:"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
+#: editor/settings/ui/wireguardinterfacewidget.ui:101
+#, kde-format
+msgid ""
+"Whether to automatically add routes for the AllowedIPs ranges\n"
+"of the peers."
+msgstr ""
+"Визначає, чи слід автоматично додавати маршрути до діапазонів AllowedIP\n"
+"вузлів."
+
+#. i18n: ectx: property (text), widget (QPushButton, btnPeers)
+#: editor/settings/ui/wireguardinterfacewidget.ui:126
+#, kde-format
+msgid "Peers…"
+msgstr "Вузли…"
+
+#. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:17
+#, kde-format
+msgid "Public key:"
+msgstr "Відкритий ключ:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, publicKeyLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:27
+#, kde-format
+msgid ""
+"Required.\n"
+"            A base64 public key calculated by wg pubkey \n"
+"            from a private key, and usually transmitted \n"
+"            out of band to the author of the configuration file."
+msgstr ""
+"Має бути вказано.\n"
+"Відкритий ключ у форматі base64, обчислений за допомогою wg pubkey \n"
+"на основі закритого ключа. Цей ключ, зазвичай, передається \n"
+"поза з'єднанням авторові файла налаштувань."
+
+#. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:34
+#, kde-format
+msgid "Allowed IPs:"
+msgstr "Дозволені IP:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, allowedIPsLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:47
+#, kde-format
+msgid ""
+"Required.\n"
+"            A comma-separated list of IP (v4 or v6) addresses \n"
+"            with CIDR masks from which incoming traffic for \n"
+"            this peer is allowed and to which outgoing traffic \n"
+"            for this peer is directed. The catch-all 0.0.0.0/0 \n"
+"            may be specified for matching all IPv4 addresses, \n"
+"            and ::/0 may be specified for matching all IPv6 addresses."
+msgstr ""
+"Має бути вказано.\n"
+"Список відокремлених комами IP-адрес (v4 або v6) із \n"
+"масками CIDR, з яких дозволено передавання вхідних даних \n"
+"до цього вузла, і до яких спрямовуватимуться вихідні дані \n"
+"для цього вузла мережі. Можна вказати універсальну адрес 0.0.0.0/0, \n"
+"яка відповідає усім можливим адресам IPv4, або адресу \n"
+"::/0, яка відповідає усім адресам IPv6."
+
+#. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:55
+#, kde-format
+msgid "Endpoint address:"
+msgstr "Адреса кінцевої точки:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:66
+#, kde-format
+msgid ""
+"Optional.\n"
+"            An endpoint for the connection. Can be an\n"
+"            IPv4 address, IPv6 address, or FQDN (fully\n"
+"            qualified domain name such as abc.com). If\n"
+"            present, Endpoint port must also be set."
+msgstr ""
+"Необов'язковий параметр.\n"
+"            Кінцева точка для з'єднання. Може бути визначено\n"
+"            адресою IPv4, адресою IPv6 або FQDN (повною\n"
+"            назвою домену, наприклад abc.com). Якщо вказано\n"
+"            має бути також вказано порт кінцевої точки."
+
+#. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:74
+#, kde-format
+msgid "Endpoint port:"
+msgstr "Порт кінцевої точки:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:83
+#, kde-format
+msgid ""
+"Optional.\n"
+"            The port number of an endpoint. If present Endpoint\n"
+"            Address must also be set."
+msgstr ""
+"Необов'язковий параметр.\n"
+"            Номер порту кінцевої точки. Якщо вказано, також\n"
+"            має бути вказано адресу кінцевої точки."
+
+#. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:91
+#, kde-format
+msgid "Preshared key:"
+msgstr "Попередньо поширений ключ:"
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:102
+#, kde-format
+msgid ""
+"Optional.\n"
+"            A base64 preshared key generated by wg genpsk.\n"
+"            This option adds an additional layer of symmetric-key\n"
+"            cryptography to be mixed into the already existing\n"
+"            public-key cryptography, for post-quantum resistance."
+msgstr ""
+"Необов'язковий параметр.\n"
+"Попередньо поширений ключ у форматі base64, який створено wg genpsk.\n"
+"За допомогою цього параметра можна додати шар шифрування симетричним\n"
+"ключем до вже наявного шифрування відкритим ключем для підвищення\n"
+"постквантового захисту."
+
+#. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
+#: editor/settings/ui/wireguardpeerwidget.ui:109
+#, kde-format
+msgid "Persistent keepalive:"
+msgstr "Постійна підтримка:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
+#: editor/settings/ui/wireguardpeerwidget.ui:127
+#, kde-format
+msgid ""
+"Optional.\n"
+"            A seconds interval, between 1 and 65535 inclusive, of\n"
+"            how often to send an authenticated empty packet to\n"
+"            the peer for the purpose of keeping a stateful firewall\n"
+"            or NAT mapping valid persistently. For example, if the\n"
+"            interface very rarely sends traffic, but it might at\n"
+"            anytime receive traffic from a peer, and it is behind\n"
+"            NAT, the interface might benefit from having a\n"
+"            persistent keepalive interval of 25 seconds. If set to\n"
+"            0 or \"off\", this option is disabled. By default or\n"
+"            when unspecified, this option is off. Most users will not\n"
+"            need this."
+msgstr ""
+"Необов'язковий параметр.\n"
+"Проміжок часу у секундах, значення від 1 до 65535 включно,\n"
+"яке визначає, наскільки часто вузол надсилатиме порожній\n"
+"розпізнавальний пакет для підтримання стану брандмауера\n"
+"або чинності прив'язки NAT. Наприклад, якщо інтерфейсом\n"
+"дуже нечасто надсилаються дані, але він може у будь-який\n"
+"момент отримати дані від вузла, перебуваючи за NAT,\n"
+"усе працюватиме краще, якщо встановити постійний інтервал\n"
+"підтримування зв'язку у 25 секунд. Якщо встановити значення\n"
+"0 або «off», підтримування зв'язку не використовуватиметься.\n"
+"Типово або якщо не встановлено значення, такий спосіб підтримання\n"
+"зв'язку буде вимкнено. Більшості користувачів він ніколи\n"
+"не знадобиться."
+
+#. i18n: ectx: attribute (title), widget (QWidget, tab)
+#: editor/settings/ui/wireguardtabwidget.ui:24
+#, kde-format
+msgid "Peer 1"
+msgstr "Вузол 1"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
+#: editor/settings/ui/wireguardtabwidget.ui:37
+#, kde-format
+msgid "Add new Peer"
+msgstr "Додати новий вузол"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
+#: editor/settings/ui/wireguardtabwidget.ui:44
+#, kde-format
+msgid "Remove this Peer"
+msgstr "Вилучити цей вузол"
 
 #: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
@@ -1559,6 +3238,100 @@ msgstr ""
 "Захист: не захищено\n"
 "Частота: %3 МГц"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/widgets/ui/advancedpermissionswidget.ui:33
+#, kde-format
+msgid "Available Users"
+msgstr "Можливі користувачі"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
+#: editor/widgets/ui/advancedpermissionswidget.ui:83
+#: editor/widgets/ui/advancedpermissionswidget.ui:213
+#, kde-format
+msgid "Real Name"
+msgstr "Справжнє ім'я"
+
+#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
+#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
+#: editor/widgets/ui/advancedpermissionswidget.ui:88
+#: editor/widgets/ui/advancedpermissionswidget.ui:218
+#, kde-format
+msgctxt "like in Username for athentication"
+msgid "Username"
+msgstr "Користувач"
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: editor/widgets/ui/advancedpermissionswidget.ui:160
+#, kde-format
+msgid "Users allowed to activate the connection"
+msgstr "Користувачі можуть активувати з'єднання"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
+#: editor/widgets/ui/ipv4routes.ui:20
+#, kde-format
+msgid "Edit IPv4 Routes"
+msgstr "Редагування маршрутів IPv4"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
+#: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
+#, kde-format
+msgid ""
+"If enabled, this connection will never be used as the default network "
+"connection"
+msgstr ""
+"Якщо позначено, це з'єднання ніколи не використовуватиметься як типове "
+"з'єднання."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
+#: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
+#, kde-format
+msgid "Use only for resources on this connection"
+msgstr "Використовувати лише для ресурсів на цьому з'єднанні"
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#: editor/widgets/ui/ipv4routes.ui:74
+#, kde-format
+msgctxt "Remove a selected row"
+msgid "Remove"
+msgstr "Вилучити"
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
+#: editor/widgets/ui/ipv4routes.ui:124 editor/widgets/ui/ipv6routes.ui:77
+#, kde-format
+msgctxt "Insert a row"
+msgid "Add"
+msgstr "Додати"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbIgnoreAutoRoutes)
+#: editor/widgets/ui/ipv4routes.ui:136 editor/widgets/ui/ipv6routes.ui:120
+#, kde-format
+msgid ""
+"If enabled, automatically configured routes are ignored and only routes "
+"specified above are used"
+msgstr ""
+"Якщо позначено, автоматично налаштовані маршрути буде проігноровано, — "
+"використовуватимуться лише вказані вище маршрути."
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
+#: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
+#, kde-format
+msgid "Ignore automatically obtained routes"
+msgstr "Ігнорувати автоматично отримані маршрути"
+
+#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
+#: editor/widgets/ui/ipv6routes.ui:20
+#, kde-format
+msgid "Edit IPv6 Routes"
+msgstr "Редагування маршрутів IPv6"
+
+#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
+#: editor/widgets/ui/ipv6routes.ui:92
+#, kde-format
+msgctxt "Remove a selected row"
+msgid "R&emove"
+msgstr "Ви&лучити"
+
 #: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
@@ -1985,983 +3758,6 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Пристрій"
-
-#~ msgid "Connection name:"
-#~ msgstr "Назва з'єднання:"
-
-#~ msgid "Authentication:"
-#~ msgstr "Розпізнавання:"
-
-#~ msgid "MD5"
-#~ msgstr "MD5"
-
-#~ msgid "TLS"
-#~ msgstr "TLS"
-
-#~ msgid "LEAP"
-#~ msgstr "LEAP"
-
-#~ msgid "PWD"
-#~ msgstr "PWD"
-
-#~ msgid "FAST"
-#~ msgstr "FAST"
-
-#~ msgid "Tunneled TLS (TTLS)"
-#~ msgstr "Тунельоване TLS (TTLS)"
-
-#~ msgid "Protected EAP (PEAP)"
-#~ msgstr "Захищений EAP (PEAP)"
-
-#~ msgid "Username:"
-#~ msgstr "Користувач:"
-
-#~ msgid "Password:"
-#~ msgstr "Пароль:"
-
-#~ msgid "Identity:"
-#~ msgstr "Профіль:"
-
-#~ msgid "Domain:"
-#~ msgstr "Домен:"
-
-#~ msgid "User certificate:"
-#~ msgstr "Сертифікат користувача:"
-
-#~ msgid "CA certificate:"
-#~ msgstr "Сертифікат CA:"
-
-#~ msgid "Subject match:"
-#~ msgstr "Відповідність призначення:"
-
-#~ msgid "Alternative subject matches:"
-#~ msgstr "Альтернативні відповідності призначення:"
-
-#~ msgid "…"
-#~ msgstr "…"
-
-#~ msgid "Connect to these servers:"
-#~ msgstr "З'єднатися з цими серверами:"
-
-#~ msgid "Private key:"
-#~ msgstr "Закритий ключ:"
-
-#~ msgid "Private key password:"
-#~ msgstr "Пароль закритого ключа:"
-
-#~ msgid "Anonymous identity:"
-#~ msgstr "Анонімний профіль:"
-
-#~ msgid "Automatic PAC provisioning"
-#~ msgstr "Автоматичне надання PAC"
-
-#~ msgid "Anonymous"
-#~ msgstr "Анонімний"
-
-#~ msgid "Authenticated"
-#~ msgstr "З розпізнаванням"
-
-#~ msgid "Both"
-#~ msgstr "Обидва"
-
-#~ msgid "PAC file:"
-#~ msgstr "Файл PAC:"
-
-#~ msgid "Inner authentication:"
-#~ msgstr "Внутрішнє розпізнавання:"
-
-#~ msgid "GTC"
-#~ msgstr "GTC"
-
-#~ msgid "MSCHAPv2"
-#~ msgstr "MSCHAPv2"
-
-#~ msgid "PAP"
-#~ msgstr "PAP"
-
-#~ msgid "MSCHAP"
-#~ msgstr "MSCHAP"
-
-#~ msgid "CHAP"
-#~ msgstr "CHAP"
-
-#~ msgid "PEAP version:"
-#~ msgstr "Версія PEAP:"
-
-#~ msgctxt "PEAP version"
-#~ msgid "Automatic"
-#~ msgstr "Автоматична"
-
-#~ msgid "Version 0"
-#~ msgstr "Версія 0"
-
-#~ msgid "Version 1"
-#~ msgstr "Версія 1"
-
-#~ msgid "Interface name:"
-#~ msgstr "Назва інтерфейсу:"
-
-#~ msgid "Bonded connections:"
-#~ msgstr "Зв'язані з'єднання:"
-
-#~ msgid "Add…"
-#~ msgstr "Додати…"
-
-#~ msgid "Edit…"
-#~ msgstr "Змінити…"
-
-#~ msgid "Delete"
-#~ msgstr "Вилучити"
-
-#~ msgid "Mode:"
-#~ msgstr "Режим:"
-
-#~ msgid "Link monitoring:"
-#~ msgstr "Спостереження за зв'язком:"
-
-#~ msgid "Monitoring frequency:"
-#~ msgstr "Частота оновлення:"
-
-#~ msgid " ms"
-#~ msgstr " мс"
-
-#~ msgid "Link up delay:"
-#~ msgstr "Затримка встановлення зв'язку:"
-
-#~ msgid "Link down delay:"
-#~ msgstr "Затримка розірвання зв'язку:"
-
-#~ msgid "ARP targets:"
-#~ msgstr "Цілі ARP:"
-
-#~ msgid "An IP address or comma-separated list of addresses."
-#~ msgstr "Одна IP-адреса або список з декількох адрес, відокремлених комами."
-
-#~ msgid "Bridged connections:"
-#~ msgstr "Зв'язані з'єднання:"
-
-#~ msgid "Aging time:"
-#~ msgstr "Час застарівання:"
-
-#~ msgctxt "seconds"
-#~ msgid " s"
-#~ msgstr " с"
-
-#~ msgid "Enable STP (Spanning Tree Protocol)"
-#~ msgstr "Увімкнути STP (протокол розподілу за деревом)"
-
-#~ msgid "Priority:"
-#~ msgstr "Пріоритет:"
-
-#~ msgid "Forward delay:"
-#~ msgstr "Затримка переспрямування:"
-
-#~ msgid "Hello time:"
-#~ msgstr "Час на вітання:"
-
-#~ msgid "Max age:"
-#~ msgstr "Макс. вік:"
-
-#~ msgid "Address of the device:"
-#~ msgstr "Адреса пристрою:"
-
-#~ msgid "Connection type:"
-#~ msgstr "Тип з'єднання:"
-
-#~ msgid "Number:"
-#~ msgstr "Номер:"
-
-#~ msgid "Connect automatically with priority"
-#~ msgstr "З'єднувати автоматично із пріоритетністю"
-
-#~ msgid ""
-#~ "If the connection is set to autoconnect, connections with higher priority "
-#~ "will be preferred. Defaults to 0.\n"
-#~ "The higher number means higher priority. An negative number can be used "
-#~ "to indicate priority lower than the default.\n"
-#~ "           "
-#~ msgstr ""
-#~ "Якщо для з'єднання встановлено автоматичне з'єднування, перевага "
-#~ "надаватиметься з'єднанням із вищою пріоритетністю. Типовим значенням "
-#~ "пріоритетності є 0.\n"
-#~ "Більші значення означають вищу пріоритетність. Від'ємними значеннями "
-#~ "можна скористатися для визначення пріоритетності, яка є нижчою за "
-#~ "типову.\n"
-#~ "           "
-
-#~ msgid "All users may connect to this network"
-#~ msgstr "З цією мережею можуть з'єднуватися всі користувачі"
-
-#~ msgid "Edit advanced permissions for this connection"
-#~ msgstr "Редагувати розширені права доступу для цього з'єднання"
-
-#~ msgid ""
-#~ "Fine-grained permissions editor for this connection. It lets you choose "
-#~ "which users can activate/modify/delete this connection."
-#~ msgstr ""
-#~ "Редактор точних параметрів цього з'єднання. За його допомогою ви можете "
-#~ "вказати користувачів, які зможуть встановлювати, змінювати та розривати "
-#~ "це з'єднання."
-
-#~ msgid "Advanced…"
-#~ msgstr "Додатково…"
-
-#~ msgid "Automatically connect to VPN"
-#~ msgstr "Автоматично з'єднуватися з VPN"
-
-#~ msgid "Firewall zone:"
-#~ msgstr "Зона брандмауера:"
-
-#~ msgid "Metered:"
-#~ msgstr "Вимірювання:"
-
-#~ msgid ""
-#~ "NetworkManager indicates to applications whether the connection is "
-#~ "metered and therefore\n"
-#~ "data usage should be restricted."
-#~ msgstr ""
-#~ "NetworkManager вказує програмам, чи виконується вимірювання передавання "
-#~ "даних з'єднанням,\n"
-#~ "а отже, чи слід використовувати якісь обмеження."
-
-#~ msgctxt "Item in the Metered: list"
-#~ msgid "Automatic"
-#~ msgstr "Автоматичне"
-
-#~ msgid "Yes"
-#~ msgstr "Так"
-
-#~ msgid "No"
-#~ msgstr "Ні"
-
-#~ msgid "Basic"
-#~ msgstr "Основні"
-
-#~ msgid "Advanced"
-#~ msgstr "Додатково"
-
-#~ msgid "Allow roaming if home network is not available"
-#~ msgstr "Дозволити роумінг, якщо типова мережа недоступна"
-
-#~ msgid "APN:"
-#~ msgstr "APN:"
-
-#~ msgid "Network ID:"
-#~ msgstr "Ідентифікатор мережі:"
-
-#~ msgid "PIN:"
-#~ msgstr "PIN:"
-
-#~ msgid "Transport mode:"
-#~ msgstr "Режим передавання:"
-
-#~ msgid "Restrict to device:"
-#~ msgstr "Обмежити цим пристроєм:"
-
-#~ msgid "MTU:"
-#~ msgstr "MTU:"
-
-#~ msgctxt "MTU:"
-#~ msgid "Automatic"
-#~ msgstr "Автоматично"
-
-#~ msgid " bytes"
-#~ msgstr " байтів"
-
-#~ msgid "Advanced IP settings"
-#~ msgstr "Додаткові параметри IP"
-
-#~ msgid "Method:"
-#~ msgstr "Метод:"
-
-#~ msgctxt "Method:"
-#~ msgid "Automatic"
-#~ msgstr "Автоматичний"
-
-#~ msgid "Automatic (Only addresses)"
-#~ msgstr "Автоматично (лише адреси)"
-
-#~ msgid "Link-Local"
-#~ msgstr "Link-Local"
-
-#~ msgctxt "like in use Manual configuration"
-#~ msgid "Manual"
-#~ msgstr "Вручну"
-
-#~ msgid "Shared to other computers"
-#~ msgstr "Спільне разом з іншими комп'ютерами"
-
-#~ msgctxt "like in this setting is Disabled"
-#~ msgid "Disabled"
-#~ msgstr "Вимкнено"
-
-#~ msgctxt "@info"
-#~ msgid "DNS Servers:"
-#~ msgstr "Сервери DNS:"
-
-#~ msgid ""
-#~ "Use this field to specify the IP address(es) of one or more DNS servers. "
-#~ "Use ',' to separate entries."
-#~ msgstr ""
-#~ "У цьому полі слід вказати адресу IP одного або декількох серверів DNS. "
-#~ "Адреси має бути відокремлено символом «,»."
-
-#~ msgid "Edit DNS the list of servers"
-#~ msgstr "Редагувати список серверів DNS"
-
-#~ msgctxt "@info"
-#~ msgid "Search Domains:"
-#~ msgstr "Домени пошуку:"
-
-#~ msgid ""
-#~ "Use this field to specify one or more DNS domains to search. Use ',' to "
-#~ "separate entries."
-#~ msgstr ""
-#~ "Цим полем можна скористатися для визначення одного або декількох доменів "
-#~ "DNS для пошуку. Записи слід відокремлювати комою («,»)."
-
-#~ msgid "Edit the list of DNS domains being searched"
-#~ msgstr "Редагувати список доменів DNS, на яких відбуватиметься пошук"
-
-#~ msgid "DHCP Client ID:"
-#~ msgstr "Ідентифікатор клієнта DHCP:"
-
-#~ msgid ""
-#~ "Use this field to specify the DHCP client ID which is a string sent to "
-#~ "the DHCP server\n"
-#~ "to identify the local machine that the DHCP server may use to customize "
-#~ "the DHCP\n"
-#~ "lease and options."
-#~ msgstr ""
-#~ "Скористайтеся цим полем для визначення ідентифікатора клієнта DHCP, "
-#~ "тобто \n"
-#~ "рядка, який буде надіслано на сервер DHCP для ідентифікації локального \n"
-#~ "комп'ютера. Сервер DHCP може скористатися результатами цієї "
-#~ "ідентифікації \n"
-#~ "для налаштування надання DHCP та зміни параметрів."
-
-#~ msgid "Remove"
-#~ msgstr "Вилучити"
-
-#~ msgid "Add"
-#~ msgstr "Додати"
-
-#~ msgid ""
-#~ "IP addresses identify your computer on the network. Click the \"Add\" "
-#~ "button to add\n"
-#~ "an IP address"
-#~ msgstr ""
-#~ "IP-адреси визначають місце комп'ютера у мережі. Натисніть кнопку "
-#~ "«Додати», щоб додати IP-адресу."
-
-#~ msgid ""
-#~ "Allows the connection to complete if IPv4 configuration fails\n"
-#~ "but IPv6 configuration succeeds"
-#~ msgstr ""
-#~ "Надає змогу встановлювати з'єднання, якщо не вдасться використати\n"
-#~ "налаштування IPv4, але налаштування IPv6 працюватимуть."
-
-#~ msgid "IPv4 is required for this connection"
-#~ msgstr "Для встановлення цього з'єднання слід використовувати IPv4"
-
-#~ msgid "Routes…"
-#~ msgstr "Маршрути…"
-
-#~ msgid ""
-#~ "When connecting to IPv4-capable networks, allows the connection to "
-#~ "complete if\n"
-#~ "IPv6 configuration fails but IPv4 configuration succeeds"
-#~ msgstr ""
-#~ "Під час встановлення з'єднання з мережами, де працює режим адресування "
-#~ "IPv4, надає змогу встановлювати з'єднання, якщо\n"
-#~ "не вдасться використати налаштування IPv6, але налаштування IPv4 "
-#~ "працюватимуть."
-
-#~ msgid "IPv6 is required for this connection"
-#~ msgstr "Для встановлення цього з'єднання слід використовувати IPv6"
-
-#~ msgid "Edit the list of DNS servers"
-#~ msgstr "Редагувати список серверів DNS"
-
-#~ msgid ""
-#~ "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-#~ "enabled, it makes the kernel generate\n"
-#~ "a temporary IPv6 address in addition to the public one generated from MAC "
-#~ "address via modified EUI-64."
-#~ msgstr ""
-#~ "Налаштувати використання розширень конфіденційності IPv6 для SLAAC, "
-#~ "описаних у RFC4941. Якщо позначено, ядро\n"
-#~ "створюватиме тимчасову адресу IPv6 на додачу до відкритої адреси, "
-#~ "створеної на основі MAC-адреси за допомогою модифікованого EUI-64."
-
-#~ msgctxt "privacy disabled"
-#~ msgid "Disabled"
-#~ msgstr "Вимкнено"
-
-#~ msgid "Enabled (prefer public address)"
-#~ msgstr "Увімкнено (адреса з відкритим доступом)"
-
-#~ msgid "Enabled (prefer temporary addresses)"
-#~ msgstr "Увімкнено (перевага тимчасових адрес)"
-
-#~ msgid "Automatic (Only DHCP)"
-#~ msgstr "Автоматично (лише DHCP)"
-
-#~ msgctxt "like in this setting is Disabled"
-#~ msgid "Ignored"
-#~ msgstr "Ігнорується"
-
-#~ msgid "Disabled"
-#~ msgstr "Вимкнено"
-
-#~ msgid "Privacy:"
-#~ msgstr "Конфіденційність:"
-
-#~ msgid "Authentication"
-#~ msgstr "Розпізнавання"
-
-#~ msgid "EAP"
-#~ msgstr "EAP"
-
-#~ msgid "Compression"
-#~ msgstr "Стискання"
-
-#~ msgid "Use point-to-point encryption (MPPE)"
-#~ msgstr "Використовувати міжточкове шифрування (MPPE)"
-
-#~ msgid "Use BSD data compression"
-#~ msgstr "Використовувати стискання даних BSD"
-
-#~ msgid "Use Deflate data compression"
-#~ msgstr "Використовувати стискання даних Deflate"
-
-#~ msgid "Use TCP header compression"
-#~ msgstr "Використовувати стискання заголовка TCP"
-
-#~ msgid "Require 128-bit encryption"
-#~ msgstr "Потрібне 128-бітове шифрування"
-
-#~ msgid "Use stateful MPPE"
-#~ msgstr "Використовувати MPPE зі збереженням стану"
-
-#~ msgid "Echo"
-#~ msgstr "Відлуння"
-
-#~ msgid "Send PPP echo packets"
-#~ msgstr "Надсилати PPP луна-пакети "
-
-#~ msgid "Service:"
-#~ msgstr "Служба:"
-
-#~ msgid ""
-#~ "If specified, instruct PPPoE to only initiate sessions with access "
-#~ "concentrators that provide the specified service. For most providers, "
-#~ "this should be left blank. It is only required if there are multiple "
-#~ "access concentrators or a specific service is known to be required."
-#~ msgstr ""
-#~ "Якщо вказано, наказати PPPoE ініціалізувати сеанси лише з доступом до "
-#~ "концентраторів, які надають відповідні послуги. Для більшості надавачів "
-#~ "послуг зв'язку це поле слід залишити порожнім. Заповнювати його слід, "
-#~ "лише якщо ви маєте справу із концентраторами із декількома способами "
-#~ "доступу або відомо, що вказана служба є необхідною."
-
-#~ msgid "Teamed connections:"
-#~ msgstr "Командні з'єднання:"
-
-#~ msgid "JSON config:"
-#~ msgstr "Налаштування JSON:"
-
-#~ msgid "Import configuration from file…"
-#~ msgstr "Імпортувати налаштування з файла…"
-
-#~ msgid "Parent interface:"
-#~ msgstr "Батьківський інтерфейс:"
-
-#~ msgid "VLAN id:"
-#~ msgstr "Ід. VLAN:"
-
-#~ msgid "VLAN interface name:"
-#~ msgstr "Назва інтерфейсу VLAN:"
-
-#~ msgid "Output packet headers reordering"
-#~ msgstr "Перевпорядовувати заголовки вихідних пакетів"
-
-#~ msgid "GARP VLAN Registration Protocol"
-#~ msgstr "Протокол реєстрації VLAN GARP"
-
-#~ msgid "GVRP"
-#~ msgstr "GVRP"
-
-#~ msgid "Loose binding"
-#~ msgstr "Вільне прив'язування"
-
-#~ msgid "SSID:"
-#~ msgstr "SSID:"
-
-#~ msgid "Infrastructure"
-#~ msgstr "Інфраструктура"
-
-#~ msgid "Ad-hoc"
-#~ msgstr "Спеціальна"
-
-#~ msgid "Access Point"
-#~ msgstr "Точка доступу"
-
-#~ msgid "BSSID:"
-#~ msgstr "BSSID:"
-
-#~ msgid ""
-#~ "This option locks this connection to the Wi-Fi access point (AP) "
-#~ "specified by the\n"
-#~ " BSSID entered here. Example: 00:11:22:33:44:55"
-#~ msgstr ""
-#~ "За допомогою цього пункту можна заблокувати з'єднання із точкою доступу "
-#~ "Wi-Fi, вказаною за допомогою\n"
-#~ " зазначеного тут BSSID. Приклад: 00:11:22:33:44:55"
-
-#~ msgid "Band:"
-#~ msgstr "Діапазон:"
-
-#~ msgid ""
-#~ "This option locks the connection to the Wi-Fi network associated to the "
-#~ "specified band. This setting depends\n"
-#~ " on specific driver capability and may not work with all drivers"
-#~ msgstr ""
-#~ "За допомогою цього пункту можна заблокувати з'єднання із мережею Wi-Fi, "
-#~ "пов'язаною із вказаним діапазоном. Дієвість цього\n"
-#~ " параметра залежить від можливостей драйвера."
-
-#~ msgctxt "Band:"
-#~ msgid "Automatic"
-#~ msgstr "Автоматичний"
-
-#~ msgid "A (5 GHz)"
-#~ msgstr "A (5 ГГц)"
-
-#~ msgid "B/G (2.4 GHz)"
-#~ msgstr "B/G (2,4 ГГц)"
-
-#~ msgid "Channel:"
-#~ msgstr "Канал:"
-
-#~ msgid ""
-#~ "Wireless channel to use for the Wi-Fi connection. The device will only "
-#~ "join (or create for Ad-Hoc networks)\n"
-#~ "a Wi-Fi network on the specified channel"
-#~ msgstr ""
-#~ "Канал бездротового зв'язку, яким слід скористатися для встановлення "
-#~ "з'єднання Wi-Fi. Пристрій долучатиметься до мереж Wi-Fi\n"
-#~ "(або створюватиме ситуативні мережі) лише на вказаному каналі."
-
-#~ msgid "Cloned MAC address:"
-#~ msgstr "Клонована MAC-адреса:"
-
-#~ msgid "Random…"
-#~ msgstr "Випадковий…"
-
-#~ msgid "Mark this if you want to create a connection for a hidden network"
-#~ msgstr ""
-#~ "Позначте, якщо вам потрібно створити з'єднання для прихованої мережі"
-
-#~ msgid "Visibility:"
-#~ msgstr "Видимість:"
-
-#~ msgid "Hidden network"
-#~ msgstr "Прихована мережа"
-
-#~ msgid "Wifi Security"
-#~ msgstr "Захист Wifi"
-
-#~ msgctxt "no security"
-#~ msgid "None"
-#~ msgstr "Немає"
-
-#~ msgid "WEP key 40/128 bits (Hex or ASCII)"
-#~ msgstr "40/128-бітовий ключ WEP (шістн. або ASCII)"
-
-#~ msgid "WEP key 128 bits"
-#~ msgstr "128-бітовий ключ WEP"
-
-#~ msgid "Dynamic WEP (802.1x)"
-#~ msgstr "Динамічна WEP (802.1x)"
-
-#~ msgid "WPA/WPA2 Personal"
-#~ msgstr "Особиста WPA/WPA2"
-
-#~ msgid "WPA/WPA2 Enterprise"
-#~ msgstr "Промислова WPA/WPA2"
-
-#~ msgid "WPA3 Personal"
-#~ msgstr "Особиста WPA3"
-
-#~ msgid "WPA3 Enterprise 192-bit"
-#~ msgstr "Промислова WPA3, 192-бітова"
-
-#~ msgid "Security:"
-#~ msgstr "Захист:"
-
-#~ msgid "Key:"
-#~ msgstr "Ключ:"
-
-#~ msgid "WEP index:"
-#~ msgstr "Індекс WEP:"
-
-#~ msgid "1 (default)"
-#~ msgstr "1 (типовий)"
-
-#~ msgid "2"
-#~ msgstr "2"
-
-#~ msgid "3"
-#~ msgstr "3"
-
-#~ msgid "4"
-#~ msgstr "4"
-
-#~ msgid "Open System"
-#~ msgstr "Відкрита система"
-
-#~ msgid "Shared Key"
-#~ msgstr "Відкритий ключ"
-
-#~ msgid ""
-#~ "This option locks this connection to the network device specified by its\n"
-#~ "permanent MAC address entered here. Example: 00:11:22:33:44:55"
-#~ msgstr ""
-#~ "За допомогою цього пункту можна заблокувати з'єднання із пристроєм "
-#~ "мережі, вказаним за\n"
-#~ "його сталою MAC-адресою, зазначеною тут. Приклад: 00:11:22:33:44:55"
-
-#~ msgid ""
-#~ "The MAC address entered here will be used as hardware address for the\n"
-#~ "network device this connection is activated on. This feature is known as "
-#~ "MAC\n"
-#~ "cloning or spoofing. Example 11:22:33:44:55"
-#~ msgstr ""
-#~ "Вказану тут MAC-адресу буде використано як апаратну адресу для "
-#~ "мережевого \n"
-#~ "пристрою, для якого активовано це з'єднання. Ця можливість відома як \n"
-#~ "клонування MAC-адреси або спуфінґ. Приклад: 11:22:33:44:55"
-
-#~ msgid "Random"
-#~ msgstr "Випадковий"
-
-#~ msgid ""
-#~ "Only transmit packets of the specified size or smaller, breaking larger "
-#~ "packets up\n"
-#~ "into multiple Ethernet frames"
-#~ msgstr ""
-#~ "Передавати пакети лише вказаного або меншого розміру, розбиваючи великі "
-#~ "пакети\n"
-#~ "на декілька кадрів Ethernet."
-
-#~ msgid "Speed:"
-#~ msgstr "Швидкість:"
-
-#~ msgid "Duplex:"
-#~ msgstr "Дуплекс:"
-
-#~ msgid ""
-#~ "Request that the device use the specified duplex mode. Either \"half\" or "
-#~ "\"full\""
-#~ msgstr ""
-#~ "Вимагати, щоб пристроєм використовувався лише вказаний дуплексний режим. "
-#~ "Можливі значення: «повний дуплекс» або «напівдуплекс»."
-
-#~ msgid "Half"
-#~ msgstr "напівдуплекс"
-
-#~ msgid "Full"
-#~ msgstr "повний дуплекс"
-
-#~ msgid "Link negotiation:"
-#~ msgstr "Узгодження зв'язку:"
-
-#~ msgid ""
-#~ "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#~ "values will be forced without checking\n"
-#~ "the device compatibility. If unsure, leave here “Ignore” or pick "
-#~ "“Automatic”."
-#~ msgstr ""
-#~ "Узгодження зв'язку із пристроєм. Якщо вибрано варіант «Вручну», значення "
-#~ "«Швидкість» і «Двобічний» буде застосовано примусово, без\n"
-#~ "перевірки сумісності із пристроєм. Якщо не певні, лишіть варіант "
-#~ "«Ігнорувати» або виберіть варіант «Автоматично»."
-
-#~ msgid "Ignore"
-#~ msgstr "Ігнорувати"
-
-#~ msgctxt "Link negotiation:"
-#~ msgid "Automatic"
-#~ msgstr "Автоматичне"
-
-#~ msgid "Manual"
-#~ msgstr "Вручну"
-
-#~ msgid "Request that the device use only the specified speed."
-#~ msgstr "Вимагати, щоб пристроєм використовувалася лише вказана швидкість."
-
-#~ msgid "10 Mb/s"
-#~ msgstr "10 Мбіт/с"
-
-#~ msgid "100 Mb/s"
-#~ msgstr "100 Мбіт/с"
-
-#~ msgid "1 Gb/s"
-#~ msgstr "1 Гбіт/с"
-
-#~ msgid "2.5 Gb/s"
-#~ msgstr "2,5 Гбіт/с"
-
-#~ msgid "5 Gb/s"
-#~ msgstr "5 Гбіт/с"
-
-#~ msgid "10 Gb/s"
-#~ msgstr "10 Гбіт/с"
-
-#~ msgid "40 Gb/s"
-#~ msgstr "40 Гбіт/с"
-
-#~ msgid "100 Gb/s"
-#~ msgstr "100 Гбіт/с"
-
-#~ msgid "Use 802.1x security for this connection"
-#~ msgstr "Використовувати для цього з'єднання захист 802.1x"
-
-#~ msgid "WireGuard Settings"
-#~ msgstr "Параметри WireGuard"
-
-#~ msgid "Interface"
-#~ msgstr "Інтерфейс"
-
-#~ msgid ""
-#~ "Required.\n"
-#~ "A base64 private key generated by wg genkey."
-#~ msgstr ""
-#~ "Має бути вказано.\n"
-#~ "Закритий ключ у форматі base64, створений за допомогою wg genkey."
-
-#~ msgid "Listen port:"
-#~ msgstr "Очікувати на порті:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "Listen port number. Chosen randomly if left as 'Automatic'."
-#~ msgstr ""
-#~ "Необов'язковий параметр.\n"
-#~ "Номер порту очікування. Вибирається випадково, якщо не змінювати типове "
-#~ "значення «Автоматично»."
-
-#~ msgid "fwmark:"
-#~ msgstr "fwmark:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "An fwmark for outgoing packets. If set to 0 or 'off', this\n"
-#~ "option is disabled. May be specified in hexadecimal by\n"
-#~ "prepending '0x'."
-#~ msgstr ""
-#~ "Необов'язковий параметр.\n"
-#~ "fwmark для вихідних пакетів. Якщо встановлено значення 0\n"
-#~ "або «off», додавання позначки буде вимкнено. Можна вказати\n"
-#~ "у форматі шістнадцяткового значення, дописавши перед рядком «0x»."
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "If not specified, the MTU is automatically determined\n"
-#~ "from the endpoint addresses or the system default route,\n"
-#~ "which is usually a sane choice. However, to manually\n"
-#~ "specify an MTU and to override this automatic discovery,\n"
-#~ "this value may be specified explicitly."
-#~ msgstr ""
-#~ "Необов'язковий параметр.\n"
-#~ "Якщо не вказано, MTU буде автоматично визначено на основі\n"
-#~ "адрес кінцевих точок або типового маршруту системи.\n"
-#~ "Зазвичай, обчислене значення є придатним. Втім, якщо\n"
-#~ "потрібно, ви можете вказати MTU і перевизначити автоматично\n"
-#~ "встановлене значення явним чином."
-
-#~ msgid "Autoroute peers:"
-#~ msgstr "Вузли автомаршрутизації:"
-
-#~ msgid ""
-#~ "Whether to automatically add routes for the AllowedIPs ranges\n"
-#~ "of the peers."
-#~ msgstr ""
-#~ "Визначає, чи слід автоматично додавати маршрути до діапазонів AllowedIP\n"
-#~ "вузлів."
-
-#~ msgid "Peers…"
-#~ msgstr "Вузли…"
-
-#~ msgid "Public key:"
-#~ msgstr "Відкритий ключ:"
-
-#~ msgid ""
-#~ "Required.\n"
-#~ "            A base64 public key calculated by wg pubkey \n"
-#~ "            from a private key, and usually transmitted \n"
-#~ "            out of band to the author of the configuration file."
-#~ msgstr ""
-#~ "Має бути вказано.\n"
-#~ "Відкритий ключ у форматі base64, обчислений за допомогою wg pubkey \n"
-#~ "на основі закритого ключа. Цей ключ, зазвичай, передається \n"
-#~ "поза з'єднанням авторові файла налаштувань."
-
-#~ msgid "Allowed IPs:"
-#~ msgstr "Дозволені IP:"
-
-#~ msgid ""
-#~ "Required.\n"
-#~ "            A comma-separated list of IP (v4 or v6) addresses \n"
-#~ "            with CIDR masks from which incoming traffic for \n"
-#~ "            this peer is allowed and to which outgoing traffic \n"
-#~ "            for this peer is directed. The catch-all 0.0.0.0/0 \n"
-#~ "            may be specified for matching all IPv4 addresses, \n"
-#~ "            and ::/0 may be specified for matching all IPv6 addresses."
-#~ msgstr ""
-#~ "Має бути вказано.\n"
-#~ "Список відокремлених комами IP-адрес (v4 або v6) із \n"
-#~ "масками CIDR, з яких дозволено передавання вхідних даних \n"
-#~ "до цього вузла, і до яких спрямовуватимуться вихідні дані \n"
-#~ "для цього вузла мережі. Можна вказати універсальну адрес 0.0.0.0/0, \n"
-#~ "яка відповідає усім можливим адресам IPv4, або адресу \n"
-#~ "::/0, яка відповідає усім адресам IPv6."
-
-#~ msgid "Endpoint address:"
-#~ msgstr "Адреса кінцевої точки:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            An endpoint for the connection. Can be an\n"
-#~ "            IPv4 address, IPv6 address, or FQDN (fully\n"
-#~ "            qualified domain name such as abc.com). If\n"
-#~ "            present, Endpoint port must also be set."
-#~ msgstr ""
-#~ "Необов'язковий параметр.\n"
-#~ "            Кінцева точка для з'єднання. Може бути визначено\n"
-#~ "            адресою IPv4, адресою IPv6 або FQDN (повною\n"
-#~ "            назвою домену, наприклад abc.com). Якщо вказано\n"
-#~ "            має бути також вказано порт кінцевої точки."
-
-#~ msgid "Endpoint port:"
-#~ msgstr "Порт кінцевої точки:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            The port number of an endpoint. If present Endpoint\n"
-#~ "            Address must also be set."
-#~ msgstr ""
-#~ "Необов'язковий параметр.\n"
-#~ "            Номер порту кінцевої точки. Якщо вказано, також\n"
-#~ "            має бути вказано адресу кінцевої точки."
-
-#~ msgid "Preshared key:"
-#~ msgstr "Попередньо поширений ключ:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            A base64 preshared key generated by wg genpsk.\n"
-#~ "            This option adds an additional layer of symmetric-key\n"
-#~ "            cryptography to be mixed into the already existing\n"
-#~ "            public-key cryptography, for post-quantum resistance."
-#~ msgstr ""
-#~ "Необов'язковий параметр.\n"
-#~ "Попередньо поширений ключ у форматі base64, який створено wg genpsk.\n"
-#~ "За допомогою цього параметра можна додати шар шифрування симетричним\n"
-#~ "ключем до вже наявного шифрування відкритим ключем для підвищення\n"
-#~ "постквантового захисту."
-
-#~ msgid "Persistent keepalive:"
-#~ msgstr "Постійна підтримка:"
-
-#~ msgid ""
-#~ "Optional.\n"
-#~ "            A seconds interval, between 1 and 65535 inclusive, of\n"
-#~ "            how often to send an authenticated empty packet to\n"
-#~ "            the peer for the purpose of keeping a stateful firewall\n"
-#~ "            or NAT mapping valid persistently. For example, if the\n"
-#~ "            interface very rarely sends traffic, but it might at\n"
-#~ "            anytime receive traffic from a peer, and it is behind\n"
-#~ "            NAT, the interface might benefit from having a\n"
-#~ "            persistent keepalive interval of 25 seconds. If set to\n"
-#~ "            0 or \"off\", this option is disabled. By default or\n"
-#~ "            when unspecified, this option is off. Most users will not\n"
-#~ "            need this."
-#~ msgstr ""
-#~ "Необов'язковий параметр.\n"
-#~ "Проміжок часу у секундах, значення від 1 до 65535 включно,\n"
-#~ "яке визначає, наскільки часто вузол надсилатиме порожній\n"
-#~ "розпізнавальний пакет для підтримання стану брандмауера\n"
-#~ "або чинності прив'язки NAT. Наприклад, якщо інтерфейсом\n"
-#~ "дуже нечасто надсилаються дані, але він може у будь-який\n"
-#~ "момент отримати дані від вузла, перебуваючи за NAT,\n"
-#~ "усе працюватиме краще, якщо встановити постійний інтервал\n"
-#~ "підтримування зв'язку у 25 секунд. Якщо встановити значення\n"
-#~ "0 або «off», підтримування зв'язку не використовуватиметься.\n"
-#~ "Типово або якщо не встановлено значення, такий спосіб підтримання\n"
-#~ "зв'язку буде вимкнено. Більшості користувачів він ніколи\n"
-#~ "не знадобиться."
-
-#~ msgid "Peer 1"
-#~ msgstr "Вузол 1"
-
-#~ msgid "Add new Peer"
-#~ msgstr "Додати новий вузол"
-
-#~ msgid "Remove this Peer"
-#~ msgstr "Вилучити цей вузол"
-
-#~ msgid "Available Users"
-#~ msgstr "Можливі користувачі"
-
-#~ msgid "Real Name"
-#~ msgstr "Справжнє ім'я"
-
-#~ msgctxt "like in Username for athentication"
-#~ msgid "Username"
-#~ msgstr "Користувач"
-
-#~ msgid "Users allowed to activate the connection"
-#~ msgstr "Користувачі можуть активувати з'єднання"
-
-#~ msgid "Edit IPv4 Routes"
-#~ msgstr "Редагування маршрутів IPv4"
-
-#~ msgid ""
-#~ "If enabled, this connection will never be used as the default network "
-#~ "connection"
-#~ msgstr ""
-#~ "Якщо позначено, це з'єднання ніколи не використовуватиметься як типове "
-#~ "з'єднання."
-
-#~ msgid "Use only for resources on this connection"
-#~ msgstr "Використовувати лише для ресурсів на цьому з'єднанні"
-
-#~ msgctxt "Remove a selected row"
-#~ msgid "Remove"
-#~ msgstr "Вилучити"
-
-#~ msgctxt "Insert a row"
-#~ msgid "Add"
-#~ msgstr "Додати"
-
-#~ msgid ""
-#~ "If enabled, automatically configured routes are ignored and only routes "
-#~ "specified above are used"
-#~ msgstr ""
-#~ "Якщо позначено, автоматично налаштовані маршрути буде проігноровано, — "
-#~ "використовуватимуться лише вказані вище маршрути."
-
-#~ msgid "Ignore automatically obtained routes"
-#~ msgstr "Ігнорувати автоматично отримані маршрути"
-
-#~ msgid "Edit IPv6 Routes"
-#~ msgstr "Редагування маршрутів IPv6"
-
-#~ msgctxt "Remove a selected row"
-#~ msgid "R&emove"
-#~ msgstr "Ви&лучити"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2020-12-25 13:11+0100\n"
 "Last-Translator: Kristóf Kiszel <kiszel.kristof@gmail.com>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -46,77 +46,152 @@ msgstr ""
 "A beállítás ssh-agentet használ hitelesítéshez, de nem található futó ssh-"
 "agent."
 
-#~ msgid "Strong Swan VPN"
-#~ msgstr "Erős Swan VPN"
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
+#: strongswanauth.ui:14 strongswanprop.ui:14
+#, kde-format
+msgid "Strong Swan VPN"
+msgstr "Erős Swan VPN"
 
-#~ msgid "Password: "
-#~ msgstr "Jelszó: "
+#. i18n: ectx: property (text), widget (QLabel, passwordLabel)
+#: strongswanauth.ui:32
+#, kde-format
+msgid "Password: "
+msgstr "Jelszó: "
 
-#~ msgid "Gateway"
-#~ msgstr "Átjáró"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: strongswanprop.ui:20
+#, kde-format
+msgid "Gateway"
+msgstr "Átjáró"
 
-#~ msgid "Gateway:"
-#~ msgstr "Átjáró:"
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: strongswanprop.ui:29
+#, kde-format
+msgid "Gateway:"
+msgstr "Átjáró:"
 
-#~ msgid "Certificate:"
-#~ msgstr "Tanúsítvány:"
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: strongswanprop.ui:49 strongswanprop.ui:120 strongswanprop.ui:165
+#, kde-format
+msgid "Certificate:"
+msgstr "Tanúsítvány:"
 
-#~ msgid "Authentication"
-#~ msgstr "Hitelesítés"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: strongswanprop.ui:62
+#, kde-format
+msgid "Authentication"
+msgstr "Hitelesítés"
 
-#~ msgid "Certificate/private key"
-#~ msgstr "Tanúsítvány/személyes kulcs"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:78
+#, kde-format
+msgid "Certificate/private key"
+msgstr "Tanúsítvány/személyes kulcs"
 
-#~ msgid "Certificate/ssh-agent"
-#~ msgstr "Tanúsítvány/ssh-agent"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:83
+#, kde-format
+msgid "Certificate/ssh-agent"
+msgstr "Tanúsítvány/ssh-agent"
 
-#~ msgid "Smartcard"
-#~ msgstr "Intelligens kártya"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:88
+#, kde-format
+msgid "Smartcard"
+msgstr "Intelligens kártya"
 
-#~ msgid "EAP"
-#~ msgstr "EAP"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:93
+#, kde-format
+msgid "EAP"
+msgstr "EAP"
 
-#~ msgid "Private key:"
-#~ msgstr "Személyes kulcs:"
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: strongswanprop.ui:130
+#, kde-format
+msgid "Private key:"
+msgstr "Személyes kulcs:"
 
-#~ msgid "Private Key Password:"
-#~ msgstr "Személyes kulcs jelszava:"
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: strongswanprop.ui:140
+#, kde-format
+msgid "Private Key Password:"
+msgstr "Személyes kulcs jelszava:"
 
-#~ msgid "PIN:"
-#~ msgstr "PIN:"
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: strongswanprop.ui:182
+#, kde-format
+msgid "PIN:"
+msgstr "PIN:"
 
-#~ msgid "Username:"
-#~ msgstr "Felhasználónév:"
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: strongswanprop.ui:210
+#, kde-format
+msgid "Username:"
+msgstr "Felhasználónév:"
 
-#~ msgid "User Password:"
-#~ msgstr "Felhasználó jelszava:"
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: strongswanprop.ui:238
+#, kde-format
+msgid "User Password:"
+msgstr "Felhasználó jelszava:"
 
-#~ msgid "Options"
-#~ msgstr "Beállítások"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: strongswanprop.ui:255
+#, kde-format
+msgid "Options"
+msgstr "Beállítások"
 
-#~ msgid "Request an inner IP address"
-#~ msgstr "Belső IP-cím kérése"
+#. i18n: ectx: property (text), widget (QCheckBox, innerIP)
+#: strongswanprop.ui:264
+#, kde-format
+msgid "Request an inner IP address"
+msgstr "Belső IP-cím kérése"
 
-#~ msgid "Enforce UDP encapsulation"
-#~ msgstr "UDP-beágyazás kényszerítése"
+#. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
+#: strongswanprop.ui:277
+#, kde-format
+msgid "Enforce UDP encapsulation"
+msgstr "UDP-beágyazás kényszerítése"
 
-#~ msgid "Use IP compression"
-#~ msgstr "IP-tömörítés használata"
+#. i18n: ectx: property (text), widget (QCheckBox, ipComp)
+#: strongswanprop.ui:284
+#, kde-format
+msgid "Use IP compression"
+msgstr "IP-tömörítés használata"
 
-#~ msgid "Enable Custom Cipher Proposals"
-#~ msgstr "Egyéni titkosítási javaslatok engedélyezése"
+#. i18n: ectx: property (title), widget (QGroupBox, proposal)
+#: strongswanprop.ui:294
+#, kde-format
+msgid "Enable Custom Cipher Proposals"
+msgstr "Egyéni titkosítási javaslatok engedélyezése"
 
-#~ msgid "IKE:"
-#~ msgstr "IKE:"
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: strongswanprop.ui:308
+#, kde-format
+msgid "IKE:"
+msgstr "IKE:"
 
-#~ msgid "A list of proposals for IKE separated by \";\""
-#~ msgstr "Javaslatok listája az IKE-hez, pontosvesszővel elválasztva"
+#. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
+#: strongswanprop.ui:315
+#, kde-format
+msgid "A list of proposals for IKE separated by \";\""
+msgstr "Javaslatok listája az IKE-hez, pontosvesszővel elválasztva"
 
-#~ msgid "ESP:"
-#~ msgstr "ESP:"
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: strongswanprop.ui:322
+#, kde-format
+msgid "ESP:"
+msgstr "ESP:"
 
-#~ msgid "A list of proposals for ESP separated by \";\""
-#~ msgstr "Javaslatok listája az ESP-hez, pontosvesszővel elválasztva"
+#. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
+#: strongswanprop.ui:329
+#, kde-format
+msgid "A list of proposals for ESP separated by \";\""
+msgstr "Javaslatok listája az ESP-hez, pontosvesszővel elválasztva"
 
 #~ msgid "Store"
 #~ msgstr "Tárolás"

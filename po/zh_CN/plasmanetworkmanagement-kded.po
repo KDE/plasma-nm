@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2024-03-30 19:46\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -576,6 +576,18 @@ msgstr "请提供 VPN 连接“%1”的密钥："
 msgid "VPN secrets (%1) dialog"
 msgstr "VPN 密钥 (%1) 对话框"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
+#: passworddialog.ui:26
+#, kde-format
+msgid "Password dialog"
+msgstr "密码对话框"
+
+#. i18n: ectx: property (text), widget (QLabel, labelPass)
+#: passworddialog.ui:92
+#, kde-format
+msgid "Password:"
+msgstr "密码："
+
 #: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
@@ -632,7 +644,8 @@ msgstr "移动宽带设备“%1”需要 %2 码才能使用。"
 msgid "%1 code:"
 msgstr "%1 码："
 
-#: pindialog.cpp:85
+#. i18n: ectx: property (text), widget (QLabel, pinLabel)
+#: pindialog.cpp:85 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "新 PIN 码："
@@ -642,7 +655,8 @@ msgstr "新 PIN 码："
 msgid "Re-enter new PIN code:"
 msgstr "再次输入新 PIN 码："
 
-#: pindialog.cpp:87
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: pindialog.cpp:87 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "显示 PIN/PUK 码"
@@ -712,27 +726,34 @@ msgstr "PUK 码太短，它应该是 8 位数字。"
 msgid "Unknown Error"
 msgstr "未知错误"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
+#. i18n: ectx: property (text), widget (QLabel, title)
+#: pinwidget.ui:14 pinwidget.ui:47
+#, kde-format
+msgid "SIM PIN unlock required"
+msgstr "需要解锁 SIM PIN"
+
+#. i18n: ectx: property (text), widget (QLabel, prompt)
+#: pinwidget.ui:76
+#, no-c-format, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr "移动宽带设备“%1”需要 SIM PIN 码才能使用。"
+
+#. i18n: ectx: property (text), widget (QLabel, pukLabel)
+#: pinwidget.ui:133
+#, kde-format
+msgid "PUK code:"
+msgstr "PUK 码："
+
+#. i18n: ectx: property (text), widget (QLabel, pin2Label)
+#: pinwidget.ui:173
+#, kde-format
+msgid "Re-enter PIN code:"
+msgstr "再次输入 PIN 码："
+
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1 的身份验证失败。您是否输入了错误的密码？"
-
-#~ msgid "Password dialog"
-#~ msgstr "密码对话框"
-
-#~ msgid "Password:"
-#~ msgstr "密码："
-
-#~ msgid "SIM PIN unlock required"
-#~ msgstr "需要解锁 SIM PIN"
-
-#~ msgid ""
-#~ "The mobile broadband device '%1' requires a SIM PIN code before it can be "
-#~ "used."
-#~ msgstr "移动宽带设备“%1”需要 SIM PIN 码才能使用。"
-
-#~ msgid "PUK code:"
-#~ msgstr "PUK 码："
-
-#~ msgid "Re-enter PIN code:"
-#~ msgstr "再次输入 PIN 码："

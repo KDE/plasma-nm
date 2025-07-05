@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2022-08-13 02:42+0200\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -51,143 +51,279 @@ msgstr ""
 msgid "Connection attempt was unsuccessful."
 msgstr "El intento de conexión no ha tenido éxito."
 
-#~ msgid "OpenConnect VPN Authentication"
-#~ msgstr "Autenticación VPN de OpenConnect"
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
+#: openconnectauth.ui:26
+#, kde-format
+msgid "OpenConnect VPN Authentication"
+msgstr "Autenticación VPN de OpenConnect"
 
-#~ msgid "VPN Host"
-#~ msgstr "Máquina VPN"
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectauth.ui:55
+#, kde-format
+msgid "VPN Host"
+msgstr "Máquina VPN"
 
-#~ msgid "Connect"
-#~ msgstr "Conectar"
+#. i18n: ectx: property (toolTip), widget (QPushButton, btnConnect)
+#: openconnectauth.ui:81
+#, kde-format
+msgid "Connect"
+msgstr "Conectar"
 
-#~ msgid "Automatically start connecting next time"
-#~ msgstr "Iniciar conexión automática la próxima vez"
+#. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
+#: openconnectauth.ui:102
+#, kde-format
+msgid "Automatically start connecting next time"
+msgstr "Iniciar conexión automática la próxima vez"
 
-#~ msgid "Store passwords"
-#~ msgstr "Guardar contraseñas"
+#. i18n: ectx: property (text), widget (QCheckBox, chkStorePasswords)
+#: openconnectauth.ui:109
+#, kde-format
+msgid "Store passwords"
+msgstr "Guardar contraseñas"
 
-#~ msgid "View Log"
-#~ msgstr "Ver el registro"
+#. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
+#: openconnectauth.ui:153
+#, kde-format
+msgid "View Log"
+msgstr "Ver el registro"
 
-#~ msgid "Log Level:"
-#~ msgstr "Nivel de registro:"
+#. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
+#: openconnectauth.ui:163
+#, kde-format
+msgid "Log Level:"
+msgstr "Nivel de registro:"
 
-#~ msgid "Error"
-#~ msgstr "Error"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:174
+#, kde-format
+msgid "Error"
+msgstr "Error"
 
-#~ msgid "Info"
-#~ msgstr "Información"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:179
+#, kde-format
+msgid "Info"
+msgstr "Información"
 
-#~ msgctxt "like in Debug log level"
-#~ msgid "Debug"
-#~ msgstr "Depurar"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:184
+#, kde-format
+msgctxt "like in Debug log level"
+msgid "Debug"
+msgstr "Depurar"
 
-#~ msgid "Trace"
-#~ msgstr "Seguimiento"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:189
+#, kde-format
+msgid "Trace"
+msgstr "Seguimiento"
 
-#~ msgid "OpenConnect Settings"
-#~ msgstr "Preferencias de OpenConnect"
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectProp)
+#: openconnectprop.ui:20
+#, kde-format
+msgid "OpenConnect Settings"
+msgstr "Preferencias de OpenConnect"
 
-#~ msgctxt "like in General settings"
-#~ msgid "General"
-#~ msgstr "General"
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#: openconnectprop.ui:26
+#, kde-format
+msgctxt "like in General settings"
+msgid "General"
+msgstr "General"
 
-#~ msgid "Gateway:"
-#~ msgstr "Puerta de enlace:"
+#. i18n: ectx: property (text), widget (QLabel, label_41)
+#: openconnectprop.ui:38
+#, kde-format
+msgid "Gateway:"
+msgstr "Puerta de enlace:"
 
-#~ msgid "CA Certificate:"
-#~ msgstr "Certificado de la AC:"
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: openconnectprop.ui:51
+#, kde-format
+msgid "CA Certificate:"
+msgstr "Certificado de la AC:"
 
-#~ msgid "*.pem *.crt *.key"
-#~ msgstr "*.pem *.crt *.key"
+#. i18n: ectx: property (filter), widget (KUrlRequester, leCaCertificate)
+#. i18n: ectx: property (filter), widget (KUrlRequester, leUserCert)
+#. i18n: ectx: property (filter), widget (KUrlRequester, leUserPrivateKey)
+#: openconnectprop.ui:61 openconnectprop.ui:240 openconnectprop.ui:257
+#, kde-format
+msgid "*.pem *.crt *.key"
+msgstr "*.pem *.crt *.key"
 
-#~ msgid "Proxy:"
-#~ msgstr "Proxy:"
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: openconnectprop.ui:68
+#, kde-format
+msgid "Proxy:"
+msgstr "Proxy:"
 
-#~ msgid "User Agent:"
-#~ msgstr "Agente de usuario:"
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectprop.ui:81
+#, kde-format
+msgid "User Agent:"
+msgstr "Agente de usuario:"
 
-#~ msgid "CSD Wrapper Script:"
-#~ msgstr "Script de envoltura CSD:"
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: openconnectprop.ui:94
+#, kde-format
+msgid "CSD Wrapper Script:"
+msgstr "Script de envoltura CSD:"
 
-#~ msgid "Allow Cisco Secure Desktop trojan"
-#~ msgstr "Permitir el troyano de escritorio seguro de Cisco"
+#. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
+#: openconnectprop.ui:104
+#, kde-format
+msgid "Allow Cisco Secure Desktop trojan"
+msgstr "Permitir el troyano de escritorio seguro de Cisco"
 
-#~ msgid "VPN Protocol:"
-#~ msgstr "Protocolo VPN:"
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: openconnectprop.ui:114
+#, kde-format
+msgid "VPN Protocol:"
+msgstr "Protocolo VPN:"
 
-#~ msgid "Cisco AnyConnect"
-#~ msgstr "Cisco AnyConnect"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:131
+#, kde-format
+msgid "Cisco AnyConnect"
+msgstr "Cisco AnyConnect"
 
-#~ msgid "Juniper Network Connect"
-#~ msgstr "Juniper Network Connect"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:136
+#, kde-format
+msgid "Juniper Network Connect"
+msgstr "Juniper Network Connect"
 
-#~ msgid "PAN Global Protect"
-#~ msgstr "PAN GlobalProtect"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:141
+#, kde-format
+msgid "PAN Global Protect"
+msgstr "PAN GlobalProtect"
 
-#~ msgid "Pulse Connect Secure"
-#~ msgstr "Pulse Connect Secure"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:146
+#, kde-format
+msgid "Pulse Connect Secure"
+msgstr "Pulse Connect Secure"
 
-#~ msgid "F5 BIG-IP SSL VPN"
-#~ msgstr "VPN SSL de F5 BIG-IP"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:151
+#, kde-format
+msgid "F5 BIG-IP SSL VPN"
+msgstr "VPN SSL de F5 BIG-IP"
 
-#~ msgid "Fortinet SSL VPN"
-#~ msgstr "VPN SSL de Fortinet"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:156
+#, kde-format
+msgid "Fortinet SSL VPN"
+msgstr "VPN SSL de Fortinet"
 
-#~ msgid "Array SSL VPN"
-#~ msgstr "VPN SSL de Array"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:161
+#, kde-format
+msgid "Array SSL VPN"
+msgstr "VPN SSL de Array"
 
-#~ msgid "Reported OS:"
-#~ msgstr "OS identificado:"
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: openconnectprop.ui:169
+#, kde-format
+msgid "Reported OS:"
+msgstr "OS identificado:"
 
-#~ msgid "GNU/Linux"
-#~ msgstr "GNU/Linux"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:188
+#, kde-format
+msgid "GNU/Linux"
+msgstr "GNU/Linux"
 
-#~ msgid "GNU/Linux 64-bit"
-#~ msgstr "GNU/Linux de 64 bits"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:193
+#, kde-format
+msgid "GNU/Linux 64-bit"
+msgstr "GNU/Linux de 64 bits"
 
-#~ msgid "Windows"
-#~ msgstr "Windows"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:198
+#, kde-format
+msgid "Windows"
+msgstr "Windows"
 
-#~ msgid "Mac OS X"
-#~ msgstr "Mac OS X"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:203
+#, kde-format
+msgid "Mac OS X"
+msgstr "Mac OS X"
 
-#~ msgid "Android"
-#~ msgstr "Android"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:208
+#, kde-format
+msgid "Android"
+msgstr "Android"
 
-#~ msgid "Apple iOS"
-#~ msgstr "Apple iOS"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:213
+#, kde-format
+msgid "Apple iOS"
+msgstr "Apple iOS"
 
-#~ msgid "Certificate Authentication"
-#~ msgstr "Autenticación del certificado"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: openconnectprop.ui:224
+#, kde-format
+msgid "Certificate Authentication"
+msgstr "Autenticación del certificado"
 
-#~ msgid "User Certificate:"
-#~ msgstr "Certificado del usuario:"
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: openconnectprop.ui:230
+#, kde-format
+msgid "User Certificate:"
+msgstr "Certificado del usuario:"
 
-#~ msgid "Private Key:"
-#~ msgstr "Clave privada:"
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openconnectprop.ui:247
+#, kde-format
+msgid "Private Key:"
+msgstr "Clave privada:"
 
-#~ msgid "Use FSID for key passphrase"
-#~ msgstr "Usar FSID para la frase de contraseña"
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: openconnectprop.ui:264
+#, kde-format
+msgid "Use FSID for key passphrase"
+msgstr "Usar FSID para la frase de contraseña"
 
-#~ msgid "Prevent user from manually accepting invalid certificates"
-#~ msgstr ""
-#~ "Impide que el usuario acepte certificados no válidos de forma manual"
+#. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
+#: openconnectprop.ui:271
+#, kde-format
+msgid "Prevent user from manually accepting invalid certificates"
+msgstr "Impide que el usuario acepte certificados no válidos de forma manual"
 
-#~ msgid "Token Authentication"
-#~ msgstr "Autenticación del token"
+#. i18n: ectx: property (text), widget (QPushButton, buTokens)
+#: openconnectprop.ui:297
+#, kde-format
+msgid "Token Authentication"
+msgstr "Autenticación del token"
 
-#~ msgid "OpenConnect OTP Tokens"
-#~ msgstr "Tokens OTP de OpenConnect"
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenConnectToken)
+#: openconnecttoken.ui:14
+#, kde-format
+msgid "OpenConnect OTP Tokens"
+msgstr "Tokens OTP de OpenConnect"
 
-#~ msgid "Software Token Authentication"
-#~ msgstr "Autenticación del token por software"
+#. i18n: ectx: property (title), widget (QGroupBox, gbToken)
+#: openconnecttoken.ui:20
+#, kde-format
+msgid "Software Token Authentication"
+msgstr "Autenticación del token por software"
 
-#~ msgid "Token Mode:"
-#~ msgstr "Modo del token:"
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: openconnecttoken.ui:26
+#, kde-format
+msgid "Token Mode:"
+msgstr "Modo del token:"
 
-#~ msgid "Token Secret:"
-#~ msgstr "Credencial del token:"
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: openconnecttoken.ui:43
+#, kde-format
+msgid "Token Secret:"
+msgstr "Credencial del token:"
 
 #~ msgid "&Show password"
 #~ msgstr "Mo&strar contraseña"

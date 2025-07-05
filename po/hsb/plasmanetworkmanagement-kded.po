@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2021-10-30 10:49+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -578,6 +578,18 @@ msgstr "Zapodajće potajnstwa za VPN-zwisk '%1':"
 msgid "VPN secrets (%1) dialog"
 msgstr "Dialog za VPN-potajnstwa (%1)"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
+#: passworddialog.ui:26
+#, kde-format
+msgid "Password dialog"
+msgstr "Dialog za hesło"
+
+#. i18n: ectx: property (text), widget (QLabel, labelPass)
+#: passworddialog.ui:92
+#, kde-format
+msgid "Password:"
+msgstr "Hesło:"
+
 #: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
@@ -635,7 +647,8 @@ msgstr ""
 msgid "%1 code:"
 msgstr "%1-kod:"
 
-#: pindialog.cpp:85
+#. i18n: ectx: property (text), widget (QLabel, pinLabel)
+#: pindialog.cpp:85 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "Nowy PIN:"
@@ -645,7 +658,8 @@ msgstr "Nowy PIN:"
 msgid "Re-enter new PIN code:"
 msgstr "Zapodajće nowy PIN hišće raz:"
 
-#: pindialog.cpp:87
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: pindialog.cpp:87 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "PIN/PUK pokazać"
@@ -715,13 +729,40 @@ msgstr ""
 msgid "Unknown Error"
 msgstr ""
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
+#. i18n: ectx: property (text), widget (QLabel, title)
+#: pinwidget.ui:14 pinwidget.ui:47
+#, fuzzy, kde-format
+#| msgid "%1 unlock required"
+msgid "SIM PIN unlock required"
+msgstr "Wotzamknjenje %1 trěbne"
+
+#. i18n: ectx: property (text), widget (QLabel, prompt)
+#: pinwidget.ui:76
+#, fuzzy, no-c-format, kde-format
+#| msgid ""
+#| "The mobile broadband device '%1' requires a %2 code before it can be used."
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr ""
+"Grat za mobilny broadband '%1' trjeba %2-kod, prjedy hač móže so wužiwać."
+
+#. i18n: ectx: property (text), widget (QLabel, pukLabel)
+#: pinwidget.ui:133
+#, fuzzy, kde-format
+#| msgid "%1 code:"
+msgid "PUK code:"
+msgstr "%1-kod:"
+
+#. i18n: ectx: property (text), widget (QLabel, pin2Label)
+#: pinwidget.ui:173
+#, fuzzy, kde-format
+#| msgid "Re-enter new PIN code:"
+msgid "Re-enter PIN code:"
+msgstr "Zapodajće nowy PIN hišće raz:"
+
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Awtentikacija za %1 so njeje poradźiła. Wopačne hesło?"
-
-#~ msgid "Password dialog"
-#~ msgstr "Dialog za hesło"
-
-#~ msgid "Password:"
-#~ msgstr "Hesło:"

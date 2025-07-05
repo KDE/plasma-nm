@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2022-08-13 15:10+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -49,140 +49,276 @@ msgstr ""
 msgid "Connection attempt was unsuccessful."
 msgstr "Опитът за връзка беше неуспешен."
 
-#~ msgid "OpenConnect VPN Authentication"
-#~ msgstr "OpenConnect VPN удостоверяване"
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectAuth)
+#: openconnectauth.ui:26
+#, kde-format
+msgid "OpenConnect VPN Authentication"
+msgstr "OpenConnect VPN удостоверяване"
 
-#~ msgid "VPN Host"
-#~ msgstr "VPN хост"
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectauth.ui:55
+#, kde-format
+msgid "VPN Host"
+msgstr "VPN хост"
 
-#~ msgid "Connect"
-#~ msgstr "Свързване"
+#. i18n: ectx: property (toolTip), widget (QPushButton, btnConnect)
+#: openconnectauth.ui:81
+#, kde-format
+msgid "Connect"
+msgstr "Свързване"
 
-#~ msgid "Automatically start connecting next time"
-#~ msgstr "Автоматично свързване следващия път"
+#. i18n: ectx: property (text), widget (QCheckBox, chkAutoconnect)
+#: openconnectauth.ui:102
+#, kde-format
+msgid "Automatically start connecting next time"
+msgstr "Автоматично свързване следващия път"
 
-#~ msgid "Store passwords"
-#~ msgstr "Съхраняване на пароли"
+#. i18n: ectx: property (text), widget (QCheckBox, chkStorePasswords)
+#: openconnectauth.ui:109
+#, kde-format
+msgid "Store passwords"
+msgstr "Съхраняване на пароли"
 
-#~ msgid "View Log"
-#~ msgstr "Преглед на дневника"
+#. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
+#: openconnectauth.ui:153
+#, kde-format
+msgid "View Log"
+msgstr "Преглед на дневника"
 
-#~ msgid "Log Level:"
-#~ msgstr "Ниво на регистрация:"
+#. i18n: ectx: property (text), widget (QLabel, lblLogLevel)
+#: openconnectauth.ui:163
+#, kde-format
+msgid "Log Level:"
+msgstr "Ниво на регистрация:"
 
-#~ msgid "Error"
-#~ msgstr "Грешка"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:174
+#, kde-format
+msgid "Error"
+msgstr "Грешка"
 
-#~ msgid "Info"
-#~ msgstr "Информация"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:179
+#, kde-format
+msgid "Info"
+msgstr "Информация"
 
-#~ msgctxt "like in Debug log level"
-#~ msgid "Debug"
-#~ msgstr "Отстраняване на грешки"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:184
+#, kde-format
+msgctxt "like in Debug log level"
+msgid "Debug"
+msgstr "Отстраняване на грешки"
 
-#~ msgid "Trace"
-#~ msgstr "Проследяване"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbLogLevel)
+#: openconnectauth.ui:189
+#, kde-format
+msgid "Trace"
+msgstr "Проследяване"
 
-#~ msgid "OpenConnect Settings"
-#~ msgstr "Настройки на OpenConnect"
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenconnectProp)
+#: openconnectprop.ui:20
+#, kde-format
+msgid "OpenConnect Settings"
+msgstr "Настройки на OpenConnect"
 
-#~ msgctxt "like in General settings"
-#~ msgid "General"
-#~ msgstr "Общи"
+#. i18n: ectx: property (title), widget (QGroupBox, grp_general)
+#: openconnectprop.ui:26
+#, kde-format
+msgctxt "like in General settings"
+msgid "General"
+msgstr "Общи"
 
-#~ msgid "Gateway:"
-#~ msgstr "Шлюз:"
+#. i18n: ectx: property (text), widget (QLabel, label_41)
+#: openconnectprop.ui:38
+#, kde-format
+msgid "Gateway:"
+msgstr "Шлюз:"
 
-#~ msgid "CA Certificate:"
-#~ msgstr "CA сертификат:"
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: openconnectprop.ui:51
+#, kde-format
+msgid "CA Certificate:"
+msgstr "CA сертификат:"
 
-#~ msgid "*.pem *.crt *.key"
-#~ msgstr "*.pem *.crt *.key"
+#. i18n: ectx: property (filter), widget (KUrlRequester, leCaCertificate)
+#. i18n: ectx: property (filter), widget (KUrlRequester, leUserCert)
+#. i18n: ectx: property (filter), widget (KUrlRequester, leUserPrivateKey)
+#: openconnectprop.ui:61 openconnectprop.ui:240 openconnectprop.ui:257
+#, kde-format
+msgid "*.pem *.crt *.key"
+msgstr "*.pem *.crt *.key"
 
-#~ msgid "Proxy:"
-#~ msgstr "Прокси:"
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: openconnectprop.ui:68
+#, kde-format
+msgid "Proxy:"
+msgstr "Прокси:"
 
-#~ msgid "User Agent:"
-#~ msgstr "User Agent:"
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: openconnectprop.ui:81
+#, kde-format
+msgid "User Agent:"
+msgstr "User Agent:"
 
-#~ msgid "CSD Wrapper Script:"
-#~ msgstr "CSD Wrapper Script:"
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: openconnectprop.ui:94
+#, kde-format
+msgid "CSD Wrapper Script:"
+msgstr "CSD Wrapper Script:"
 
-#~ msgid "Allow Cisco Secure Desktop trojan"
-#~ msgstr "Позволяване на  Cisco Secure Desktop trojan"
+#. i18n: ectx: property (text), widget (QCheckBox, chkAllowTrojan)
+#: openconnectprop.ui:104
+#, kde-format
+msgid "Allow Cisco Secure Desktop trojan"
+msgstr "Позволяване на  Cisco Secure Desktop trojan"
 
-#~ msgid "VPN Protocol:"
-#~ msgstr "VPN протокол:"
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: openconnectprop.ui:114
+#, kde-format
+msgid "VPN Protocol:"
+msgstr "VPN протокол:"
 
-#~ msgid "Cisco AnyConnect"
-#~ msgstr "Cisco AnyConnect"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:131
+#, kde-format
+msgid "Cisco AnyConnect"
+msgstr "Cisco AnyConnect"
 
-#~ msgid "Juniper Network Connect"
-#~ msgstr "Juniper Network Connect"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:136
+#, kde-format
+msgid "Juniper Network Connect"
+msgstr "Juniper Network Connect"
 
-#~ msgid "PAN Global Protect"
-#~ msgstr "PAN Global Protect"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:141
+#, kde-format
+msgid "PAN Global Protect"
+msgstr "PAN Global Protect"
 
-#~ msgid "Pulse Connect Secure"
-#~ msgstr "Pulse Connect Secure"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:146
+#, kde-format
+msgid "Pulse Connect Secure"
+msgstr "Pulse Connect Secure"
 
-#~ msgid "F5 BIG-IP SSL VPN"
-#~ msgstr "F5 BIG-IP SSL VPN"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:151
+#, kde-format
+msgid "F5 BIG-IP SSL VPN"
+msgstr "F5 BIG-IP SSL VPN"
 
-#~ msgid "Fortinet SSL VPN"
-#~ msgstr "Fortinet SSL VPN"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:156
+#, kde-format
+msgid "Fortinet SSL VPN"
+msgstr "Fortinet SSL VPN"
 
-#~ msgid "Array SSL VPN"
-#~ msgstr "Array SSL VPN"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
+#: openconnectprop.ui:161
+#, kde-format
+msgid "Array SSL VPN"
+msgstr "Array SSL VPN"
 
-#~ msgid "Reported OS:"
-#~ msgstr "Докладвана ОС:"
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: openconnectprop.ui:169
+#, kde-format
+msgid "Reported OS:"
+msgstr "Докладвана ОС:"
 
-#~ msgid "GNU/Linux"
-#~ msgstr "GNU/Linux"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:188
+#, kde-format
+msgid "GNU/Linux"
+msgstr "GNU/Linux"
 
-#~ msgid "GNU/Linux 64-bit"
-#~ msgstr "GNU/Linux 64-bit"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:193
+#, kde-format
+msgid "GNU/Linux 64-bit"
+msgstr "GNU/Linux 64-bit"
 
-#~ msgid "Windows"
-#~ msgstr "Прозорци"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:198
+#, kde-format
+msgid "Windows"
+msgstr "Прозорци"
 
-#~ msgid "Mac OS X"
-#~ msgstr "Mac OS X"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:203
+#, kde-format
+msgid "Mac OS X"
+msgstr "Mac OS X"
 
-#~ msgid "Android"
-#~ msgstr "Android"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:208
+#, kde-format
+msgid "Android"
+msgstr "Android"
 
-#~ msgid "Apple iOS"
-#~ msgstr "Apple iOS"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
+#: openconnectprop.ui:213
+#, kde-format
+msgid "Apple iOS"
+msgstr "Apple iOS"
 
-#~ msgid "Certificate Authentication"
-#~ msgstr "Удостоверяване на сертификат"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: openconnectprop.ui:224
+#, kde-format
+msgid "Certificate Authentication"
+msgstr "Удостоверяване на сертификат"
 
-#~ msgid "User Certificate:"
-#~ msgstr "Потребителски сертификат:"
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: openconnectprop.ui:230
+#, kde-format
+msgid "User Certificate:"
+msgstr "Потребителски сертификат:"
 
-#~ msgid "Private Key:"
-#~ msgstr "Частен ключ:"
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openconnectprop.ui:247
+#, kde-format
+msgid "Private Key:"
+msgstr "Частен ключ:"
 
-#~ msgid "Use FSID for key passphrase"
-#~ msgstr "Използване на  FSID за ключова парола"
+#. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
+#: openconnectprop.ui:264
+#, kde-format
+msgid "Use FSID for key passphrase"
+msgstr "Използване на  FSID за ключова парола"
 
-#~ msgid "Prevent user from manually accepting invalid certificates"
-#~ msgstr ""
-#~ "Предотвратяване на потребителя да приема ръчно невалидни сертификати"
+#. i18n: ectx: property (text), widget (QCheckBox, preventInvalidCert)
+#: openconnectprop.ui:271
+#, kde-format
+msgid "Prevent user from manually accepting invalid certificates"
+msgstr "Предотвратяване на потребителя да приема ръчно невалидни сертификати"
 
-#~ msgid "Token Authentication"
-#~ msgstr "Token Удостоверяване"
+#. i18n: ectx: property (text), widget (QPushButton, buTokens)
+#: openconnectprop.ui:297
+#, kde-format
+msgid "Token Authentication"
+msgstr "Token Удостоверяване"
 
-#~ msgid "OpenConnect OTP Tokens"
-#~ msgstr "OpenConnect OTP Tokens"
+#. i18n: ectx: property (windowTitle), widget (QWidget, OpenConnectToken)
+#: openconnecttoken.ui:14
+#, kde-format
+msgid "OpenConnect OTP Tokens"
+msgstr "OpenConnect OTP Tokens"
 
-#~ msgid "Software Token Authentication"
-#~ msgstr "Софтуерно  Token удостоверяване"
+#. i18n: ectx: property (title), widget (QGroupBox, gbToken)
+#: openconnecttoken.ui:20
+#, kde-format
+msgid "Software Token Authentication"
+msgstr "Софтуерно  Token удостоверяване"
 
-#~ msgid "Token Mode:"
-#~ msgstr "Режим Token:"
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: openconnecttoken.ui:26
+#, kde-format
+msgid "Token Mode:"
+msgstr "Режим Token:"
 
-#~ msgid "Token Secret:"
-#~ msgstr "Token Тайна:"
+#. i18n: ectx: property (text), widget (QLabel, label_9)
+#: openconnecttoken.ui:43
+#, kde-format
+msgid "Token Secret:"
+msgstr "Token Тайна:"

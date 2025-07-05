@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2024-03-14 11:55+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -583,6 +583,18 @@ msgstr "Adja meg a titkos kódot a(z) „%1” VPN kapcsolathoz:"
 msgid "VPN secrets (%1) dialog"
 msgstr "VPN titokbekérés (%1)"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
+#: passworddialog.ui:26
+#, kde-format
+msgid "Password dialog"
+msgstr "Jelszó párbeszédablak"
+
+#. i18n: ectx: property (text), widget (QLabel, labelPass)
+#: passworddialog.ui:92
+#, kde-format
+msgid "Password:"
+msgstr "Jelszó:"
+
 #: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
@@ -639,7 +651,8 @@ msgstr "A(z) „%1” mobil széles sávú eszköz használatához %2 kód szük
 msgid "%1 code:"
 msgstr "%1 kód:"
 
-#: pindialog.cpp:85
+#. i18n: ectx: property (text), widget (QLabel, pinLabel)
+#: pindialog.cpp:85 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "Új PIN-kód:"
@@ -649,7 +662,8 @@ msgstr "Új PIN-kód:"
 msgid "Re-enter new PIN code:"
 msgstr "Írja be újra az új PIN-kódot:"
 
-#: pindialog.cpp:87
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: pindialog.cpp:87 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "PIN/PUK-kód megjelenítése"
@@ -719,31 +733,38 @@ msgstr "A PUK-kód túl rövid. Legalább nyolc számjegyűnek kell lennie."
 msgid "Unknown Error"
 msgstr "Ismeretlen hiba"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
+#. i18n: ectx: property (text), widget (QLabel, title)
+#: pinwidget.ui:14 pinwidget.ui:47
+#, kde-format
+msgid "SIM PIN unlock required"
+msgstr "A SIM PIN feloldása szükséges"
+
+#. i18n: ectx: property (text), widget (QLabel, prompt)
+#: pinwidget.ui:76
+#, no-c-format, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr ""
+"A(z) „%1” mobil széles sávú eszköz használatához a SIM PIN-kód szükséges."
+
+#. i18n: ectx: property (text), widget (QLabel, pukLabel)
+#: pinwidget.ui:133
+#, kde-format
+msgid "PUK code:"
+msgstr "PUK-kód:"
+
+#. i18n: ectx: property (text), widget (QLabel, pin2Label)
+#: pinwidget.ui:173
+#, kde-format
+msgid "Re-enter PIN code:"
+msgstr "Írja be újra a PIN-kódot:"
+
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "A(z) %1 hitelesítése meghiúsult. Hibás a jelszó?"
-
-#~ msgid "Password dialog"
-#~ msgstr "Jelszó párbeszédablak"
-
-#~ msgid "Password:"
-#~ msgstr "Jelszó:"
-
-#~ msgid "SIM PIN unlock required"
-#~ msgstr "A SIM PIN feloldása szükséges"
-
-#~ msgid ""
-#~ "The mobile broadband device '%1' requires a SIM PIN code before it can be "
-#~ "used."
-#~ msgstr ""
-#~ "A(z) „%1” mobil széles sávú eszköz használatához a SIM PIN-kód szükséges."
-
-#~ msgid "PUK code:"
-#~ msgstr "PUK-kód:"
-
-#~ msgid "Re-enter PIN code:"
-#~ msgstr "Írja be újra a PIN-kódot:"
 
 #~ msgid "VPN connection '%1' failed."
 #~ msgstr "A(z) „%1” VPN kapcsolat meghiúsult."

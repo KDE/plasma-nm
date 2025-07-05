@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2022-04-07 22:23+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -36,6 +36,227 @@ msgstr ""
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: file tidak dapat diciptakan"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpnc.ui:18
+#, kde-format
+msgid "Gateway:"
+msgstr "Gateway:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
+#: vpnc.ui:31
+#, kde-format
+msgid "IP/hostname of IPsec gateway."
+msgstr "IP/hostname dari gateway IPsec."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpnc.ui:38
+#, kde-format
+msgid "User name:"
+msgstr "Nama pengguna:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, leUserName)
+#. i18n: ectx: property (toolTip), widget (QLineEdit, user)
+#: vpnc.ui:51 vpncauth.ui:97
+#, kde-format
+msgid "User name for the connection."
+msgstr "Nama pengguna untuk koneksi."
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpnc.ui:58
+#, kde-format
+msgid "User password:"
+msgstr "Sandi pengguna:"
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, leUserPassword)
+#. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
+#: vpnc.ui:79 vpncauth.ui:58
+#, kde-format
+msgid "User password for the connection."
+msgstr "Sandi pengguna untuk koneksi."
+
+#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpnc.ui:91 vpncauth.ui:124
+#, kde-format
+msgid "Group name:"
+msgstr "Nama grup:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, group)
+#: vpnc.ui:104
+#, kde-format
+msgid "Group name"
+msgstr "Nama grup"
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpnc.ui:111
+#, kde-format
+msgid "Group password:"
+msgstr "Sandi grup:"
+
+#. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
+#. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
+#: vpnc.ui:129 vpncauth.ui:84
+#, kde-format
+msgid "Group password."
+msgstr "Sandi grup."
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, useHybridAuth)
+#: vpnc.ui:141
+#, kde-format
+msgid ""
+"Enable hybrid authentication, i.e. use certificate in addition to password."
+msgstr ""
+"Fungsikan autentikasi hibrida, yaitu gunakan sertifikat sebagai tambahan "
+"sandi."
+
+#. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
+#: vpnc.ui:144
+#, kde-format
+msgid "Use hybrid authentication"
+msgstr "Gunakan autentikasi hibrida"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpnc.ui:154
+#, kde-format
+msgid "CA file:"
+msgstr "File CA:"
+
+#. i18n: ectx: property (toolTip), widget (KUrlRequester, caFile)
+#: vpnc.ui:167
+#, kde-format
+msgid "CA certificate in PEM format."
+msgstr "Sertifikat CA dalam format PEM."
+
+#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
+#: vpnc.ui:170
+#, kde-format
+msgid "*.pem *.crt *.cer"
+msgstr "*.pem *.crt *.cer"
+
+#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
+#: vpnc.ui:192
+#, kde-format
+msgid "Advanced…"
+msgstr "Tingkat lanjut..."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: vpncadvanced.ui:18
+#, kde-format
+msgid "Identification"
+msgstr "Identifikasi"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: vpncadvanced.ui:27
+#, kde-format
+msgid "Domain:"
+msgstr "Domain:"
+
+#. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
+#: vpncadvanced.ui:37
+#, kde-format
+msgid "(NT-)Domain name for authentication."
+msgstr "Nama (NT-)Domain untuk autentikasi."
+
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: vpncadvanced.ui:44
+#, kde-format
+msgid "Vendor:"
+msgstr "Vendor:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
+#: vpncadvanced.ui:60
+#, kde-format
+msgid "Vendor of your IPsec gateway."
+msgstr "Vendor gateway IPsec kamu."
+
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: vpncadvanced.ui:70
+#, kde-format
+msgid "Transport and Security"
+msgstr "Transport dan Keamanan"
+
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: vpncadvanced.ui:82
+#, kde-format
+msgid "Encryption method:"
+msgstr "Metode enkripsi:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, encryption)
+#: vpncadvanced.ui:98
+#, kde-format
+msgid "Encryption method."
+msgstr "Metode enkripsi."
+
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#: vpncadvanced.ui:105
+#, kde-format
+msgid "NAT traversal:"
+msgstr "Traversal NAT:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, nat)
+#: vpncadvanced.ui:121
+#, kde-format
+msgid "NAT traversal method to use."
+msgstr "Metode traversal NAT untuk penggunaan."
+
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: vpncadvanced.ui:128
+#, kde-format
+msgid "IKE DH Group:"
+msgstr "Grup IKE DH:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, dhGroup)
+#: vpncadvanced.ui:144
+#, kde-format
+msgid "Name of the IKE DH group."
+msgstr "Nama pada grup IKE DH."
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: vpncadvanced.ui:151
+#, kde-format
+msgid "Perfect Forward Secrecy:"
+msgstr "Perfect Forward Secrecy:"
+
+#. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
+#: vpncadvanced.ui:167
+#, kde-format
+msgid "Diffie-Hellman group to use for PFS."
+msgstr "Grup Diffie-Hellman yang digunakan untuk PFS"
+
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: vpncadvanced.ui:174
+#, kde-format
+msgid "Local Port:"
+msgstr "Port Lokal:"
+
+#. i18n: ectx: property (toolTip), widget (QSpinBox, localport)
+#: vpncadvanced.ui:190
+#, kde-format
+msgid ""
+"Local port to use (0-65535). 0 (default value) means random port. 500 is "
+"vpnc's default."
+msgstr ""
+"Port lokal yang digunakan (0-65535). 0 (nilai baku) berarti port acak. 500 "
+"adalah vpnc baku."
+
+#. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
+#: vpncadvanced.ui:193
+#, kde-format
+msgid "Random"
+msgstr "Acak"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, deadPeer)
+#: vpncadvanced.ui:209
+#, kde-format
+msgid "Disable sending DPD packets (set timeout to 0)."
+msgstr "Nonfungsikan pengiriman paket DPD (set timeout ke 0)."
+
+#. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
+#: vpncadvanced.ui:212
+#, kde-format
+msgid "Disable dead peer detection"
+msgstr "Nonfungsikan deteksi peer yang mati"
 
 #: vpncadvancedwidget.cpp:20
 #, kde-format
@@ -144,133 +365,35 @@ msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
 msgstr "DH Grup 5"
 
-#~ msgid "Gateway:"
-#~ msgstr "Gateway:"
+#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
+#: vpncauth.ui:14
+#, kde-format
+msgid "VPNCAuthentication"
+msgstr "VPNCAuthentication"
 
-#~ msgid "IP/hostname of IPsec gateway."
-#~ msgstr "IP/hostname dari gateway IPsec."
+#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
+#: vpncauth.ui:32
+#, kde-format
+msgid "User Password:"
+msgstr "Sandi Pengguna:"
 
-#~ msgid "User name:"
-#~ msgstr "Nama pengguna:"
+#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
+#: vpncauth.ui:45
+#, kde-format
+msgid "Group Password:"
+msgstr "Sandi Grup:"
 
-#~ msgid "User name for the connection."
-#~ msgstr "Nama pengguna untuk koneksi."
+#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
+#: vpncauth.ui:104
+#, kde-format
+msgid "Username:"
+msgstr "Nama-pengguna:"
 
-#~ msgid "User password:"
-#~ msgstr "Sandi pengguna:"
-
-#~ msgid "User password for the connection."
-#~ msgstr "Sandi pengguna untuk koneksi."
-
-#~ msgid "Group name:"
-#~ msgstr "Nama grup:"
-
-#~ msgid "Group name"
-#~ msgstr "Nama grup"
-
-#~ msgid "Group password:"
-#~ msgstr "Sandi grup:"
-
-#~ msgid "Group password."
-#~ msgstr "Sandi grup."
-
-#~ msgid ""
-#~ "Enable hybrid authentication, i.e. use certificate in addition to "
-#~ "password."
-#~ msgstr ""
-#~ "Fungsikan autentikasi hibrida, yaitu gunakan sertifikat sebagai tambahan "
-#~ "sandi."
-
-#~ msgid "Use hybrid authentication"
-#~ msgstr "Gunakan autentikasi hibrida"
-
-#~ msgid "CA file:"
-#~ msgstr "File CA:"
-
-#~ msgid "CA certificate in PEM format."
-#~ msgstr "Sertifikat CA dalam format PEM."
-
-#~ msgid "*.pem *.crt *.cer"
-#~ msgstr "*.pem *.crt *.cer"
-
-#~ msgid "Advanced…"
-#~ msgstr "Tingkat lanjut..."
-
-#~ msgid "Identification"
-#~ msgstr "Identifikasi"
-
-#~ msgid "Domain:"
-#~ msgstr "Domain:"
-
-#~ msgid "(NT-)Domain name for authentication."
-#~ msgstr "Nama (NT-)Domain untuk autentikasi."
-
-#~ msgid "Vendor:"
-#~ msgstr "Vendor:"
-
-#~ msgid "Vendor of your IPsec gateway."
-#~ msgstr "Vendor gateway IPsec kamu."
-
-#~ msgid "Transport and Security"
-#~ msgstr "Transport dan Keamanan"
-
-#~ msgid "Encryption method:"
-#~ msgstr "Metode enkripsi:"
-
-#~ msgid "Encryption method."
-#~ msgstr "Metode enkripsi."
-
-#~ msgid "NAT traversal:"
-#~ msgstr "Traversal NAT:"
-
-#~ msgid "NAT traversal method to use."
-#~ msgstr "Metode traversal NAT untuk penggunaan."
-
-#~ msgid "IKE DH Group:"
-#~ msgstr "Grup IKE DH:"
-
-#~ msgid "Name of the IKE DH group."
-#~ msgstr "Nama pada grup IKE DH."
-
-#~ msgid "Perfect Forward Secrecy:"
-#~ msgstr "Perfect Forward Secrecy:"
-
-#~ msgid "Diffie-Hellman group to use for PFS."
-#~ msgstr "Grup Diffie-Hellman yang digunakan untuk PFS"
-
-#~ msgid "Local Port:"
-#~ msgstr "Port Lokal:"
-
-#~ msgid ""
-#~ "Local port to use (0-65535). 0 (default value) means random port. 500 is "
-#~ "vpnc's default."
-#~ msgstr ""
-#~ "Port lokal yang digunakan (0-65535). 0 (nilai baku) berarti port acak. "
-#~ "500 adalah vpnc baku."
-
-#~ msgid "Random"
-#~ msgstr "Acak"
-
-#~ msgid "Disable sending DPD packets (set timeout to 0)."
-#~ msgstr "Nonfungsikan pengiriman paket DPD (set timeout ke 0)."
-
-#~ msgid "Disable dead peer detection"
-#~ msgstr "Nonfungsikan deteksi peer yang mati"
-
-#~ msgid "VPNCAuthentication"
-#~ msgstr "VPNCAuthentication"
-
-#~ msgid "User Password:"
-#~ msgstr "Sandi Pengguna:"
-
-#~ msgid "Group Password:"
-#~ msgstr "Sandi Grup:"
-
-#~ msgid "Username:"
-#~ msgstr "Nama-pengguna:"
-
-#~ msgid "Group name."
-#~ msgstr "Nama grup."
+#. i18n: ectx: property (toolTip), widget (QLineEdit, leGroupName)
+#: vpncauth.ui:117
+#, kde-format
+msgid "Group name."
+msgstr "Nama grup."
 
 #~ msgid "File %1 could not be opened."
 #~ msgstr "File %1 tidak dapat dibuka."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2022-05-14 17:15+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -596,6 +596,18 @@ msgstr "Angiv hemmeligheder for VPN-forbindelsen \"%1\":"
 msgid "VPN secrets (%1) dialog"
 msgstr "Dialog til VPN-hemmeligheder (%1)"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
+#: passworddialog.ui:26
+#, kde-format
+msgid "Password dialog"
+msgstr "Adgangskodedialog"
+
+#. i18n: ectx: property (text), widget (QLabel, labelPass)
+#: passworddialog.ui:92
+#, kde-format
+msgid "Password:"
+msgstr "Adgangskode:"
+
 #: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
@@ -653,7 +665,8 @@ msgstr ""
 msgid "%1 code:"
 msgstr "%1-kode:"
 
-#: pindialog.cpp:85
+#. i18n: ectx: property (text), widget (QLabel, pinLabel)
+#: pindialog.cpp:85 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
 msgstr "Ny PIN-kode:"
@@ -663,7 +676,8 @@ msgstr "Ny PIN-kode:"
 msgid "Re-enter new PIN code:"
 msgstr "Genindtast PIN-kode:"
 
-#: pindialog.cpp:87
+#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
+#: pindialog.cpp:87 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "Vis PIN-/PUK-kode"
@@ -733,32 +747,38 @@ msgstr "PUK-koden er for kort. Den skal være på 8 cifre."
 msgid "Unknown Error"
 msgstr "Ukendt fejl"
 
+#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
+#. i18n: ectx: property (text), widget (QLabel, title)
+#: pinwidget.ui:14 pinwidget.ui:47
+#, kde-format
+msgid "SIM PIN unlock required"
+msgstr "Oplåsning af SIM PIN kræves"
+
+#. i18n: ectx: property (text), widget (QLabel, prompt)
+#: pinwidget.ui:76
+#, no-c-format, kde-format
+msgid ""
+"The mobile broadband device '%1' requires a SIM PIN code before it can be "
+"used."
+msgstr ""
+"Enheden til mobilt bredbånd \"%1\" kræver en SIM PIN-kode før den kan bruges."
+
+#. i18n: ectx: property (text), widget (QLabel, pukLabel)
+#: pinwidget.ui:133
+#, kde-format
+msgid "PUK code:"
+msgstr "PUK-kode:"
+
+#. i18n: ectx: property (text), widget (QLabel, pin2Label)
+#: pinwidget.ui:173
+#, kde-format
+msgid "Re-enter PIN code:"
+msgstr "Angiv PIN-koden igen:"
+
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Autentificering til %1 mislykkedes. Forkert adgangskode?"
-
-#~ msgid "Password dialog"
-#~ msgstr "Adgangskodedialog"
-
-#~ msgid "Password:"
-#~ msgstr "Adgangskode:"
-
-#~ msgid "SIM PIN unlock required"
-#~ msgstr "Oplåsning af SIM PIN kræves"
-
-#~ msgid ""
-#~ "The mobile broadband device '%1' requires a SIM PIN code before it can be "
-#~ "used."
-#~ msgstr ""
-#~ "Enheden til mobilt bredbånd \"%1\" kræver en SIM PIN-kode før den kan "
-#~ "bruges."
-
-#~ msgid "PUK code:"
-#~ msgstr "PUK-kode:"
-
-#~ msgid "Re-enter PIN code:"
-#~ msgstr "Angiv PIN-koden igen:"
 
 #~ msgid "VPN connection '%1' failed."
 #~ msgstr "VPN-forbindelsen \"%1\" mislykkedes."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 03:22+0000\n"
+"POT-Creation-Date: 2025-07-05 05:54+0000\n"
 "PO-Revision-Date: 2019-10-30 18:56+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -45,74 +45,149 @@ msgstr ""
 "Seadistus kasutab autentimiseks ssh-agenti, aga ühtegi töötavat ssh-agenti "
 "ei leitud."
 
-#~ msgid "Strong Swan VPN"
-#~ msgstr "Strong Swan VPN"
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
+#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
+#: strongswanauth.ui:14 strongswanprop.ui:14
+#, kde-format
+msgid "Strong Swan VPN"
+msgstr "Strong Swan VPN"
 
-#~ msgid "Password: "
-#~ msgstr "Parool: "
+#. i18n: ectx: property (text), widget (QLabel, passwordLabel)
+#: strongswanauth.ui:32
+#, kde-format
+msgid "Password: "
+msgstr "Parool: "
 
-#~ msgid "Gateway"
-#~ msgstr "Lüüs"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
+#: strongswanprop.ui:20
+#, kde-format
+msgid "Gateway"
+msgstr "Lüüs"
 
-#~ msgid "Gateway:"
-#~ msgstr "Lüüs:"
+#. i18n: ectx: property (text), widget (QLabel, textLabel3)
+#: strongswanprop.ui:29
+#, kde-format
+msgid "Gateway:"
+msgstr "Lüüs:"
 
-#~ msgid "Certificate:"
-#~ msgstr "Sertifikaat:"
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#. i18n: ectx: property (text), widget (QLabel, label_4)
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: strongswanprop.ui:49 strongswanprop.ui:120 strongswanprop.ui:165
+#, kde-format
+msgid "Certificate:"
+msgstr "Sertifikaat:"
 
-#~ msgid "Authentication"
-#~ msgstr "Autentimine"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
+#: strongswanprop.ui:62
+#, kde-format
+msgid "Authentication"
+msgstr "Autentimine"
 
-#~ msgid "Certificate/private key"
-#~ msgstr "Sertifikaat/privaatvõti"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:78
+#, kde-format
+msgid "Certificate/private key"
+msgstr "Sertifikaat/privaatvõti"
 
-#~ msgid "Certificate/ssh-agent"
-#~ msgstr "Sertifikaat/ssh-agent"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:83
+#, kde-format
+msgid "Certificate/ssh-agent"
+msgstr "Sertifikaat/ssh-agent"
 
-#~ msgid "Smartcard"
-#~ msgstr "Kiipkaart"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:88
+#, kde-format
+msgid "Smartcard"
+msgstr "Kiipkaart"
 
-#~ msgid "EAP"
-#~ msgstr "EAP"
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:93
+#, kde-format
+msgid "EAP"
+msgstr "EAP"
 
-#~ msgid "Private key:"
-#~ msgstr "Privaatvõti:"
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: strongswanprop.ui:130
+#, kde-format
+msgid "Private key:"
+msgstr "Privaatvõti:"
 
-#~ msgid "Private Key Password:"
-#~ msgstr "Privaatvõtme parool:"
+#. i18n: ectx: property (text), widget (QLabel, label_7)
+#: strongswanprop.ui:140
+#, kde-format
+msgid "Private Key Password:"
+msgstr "Privaatvõtme parool:"
 
-#~ msgid "PIN:"
-#~ msgstr "PIN:"
+#. i18n: ectx: property (text), widget (QLabel, label_8)
+#: strongswanprop.ui:182
+#, kde-format
+msgid "PIN:"
+msgstr "PIN:"
 
-#~ msgid "Username:"
-#~ msgstr "Kasutajanimi:"
+#. i18n: ectx: property (text), widget (QLabel, label_5)
+#: strongswanprop.ui:210
+#, kde-format
+msgid "Username:"
+msgstr "Kasutajanimi:"
 
-#~ msgid "User Password:"
-#~ msgstr "Kasutaja parool:"
+#. i18n: ectx: property (text), widget (QLabel, label_2)
+#: strongswanprop.ui:238
+#, kde-format
+msgid "User Password:"
+msgstr "Kasutaja parool:"
 
-#~ msgid "Options"
-#~ msgstr "Valikud"
+#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
+#: strongswanprop.ui:255
+#, kde-format
+msgid "Options"
+msgstr "Valikud"
 
-#~ msgid "Request an inner IP address"
-#~ msgstr "Sisemise IP-aadressi nõudmine"
+#. i18n: ectx: property (text), widget (QCheckBox, innerIP)
+#: strongswanprop.ui:264
+#, kde-format
+msgid "Request an inner IP address"
+msgstr "Sisemise IP-aadressi nõudmine"
 
-#~ msgid "Enforce UDP encapsulation"
-#~ msgstr "UDP kapseldus jõuga"
+#. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
+#: strongswanprop.ui:277
+#, kde-format
+msgid "Enforce UDP encapsulation"
+msgstr "UDP kapseldus jõuga"
 
-#~ msgid "Use IP compression"
-#~ msgstr "IP tihenduse kasutamine"
+#. i18n: ectx: property (text), widget (QCheckBox, ipComp)
+#: strongswanprop.ui:284
+#, kde-format
+msgid "Use IP compression"
+msgstr "IP tihenduse kasutamine"
 
-#~ msgid "Enable Custom Cipher Proposals"
-#~ msgstr "Kohandatud šifriettepanekute lubamine"
+#. i18n: ectx: property (title), widget (QGroupBox, proposal)
+#: strongswanprop.ui:294
+#, kde-format
+msgid "Enable Custom Cipher Proposals"
+msgstr "Kohandatud šifriettepanekute lubamine"
 
-#~ msgid "IKE:"
-#~ msgstr "IKE:"
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: strongswanprop.ui:308
+#, kde-format
+msgid "IKE:"
+msgstr "IKE:"
 
-#~ msgid "A list of proposals for IKE separated by \";\""
-#~ msgstr "Semikooloniga eraldatud ettepanekute nimekiri IKE-le"
+#. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
+#: strongswanprop.ui:315
+#, kde-format
+msgid "A list of proposals for IKE separated by \";\""
+msgstr "Semikooloniga eraldatud ettepanekute nimekiri IKE-le"
 
-#~ msgid "ESP:"
-#~ msgstr "ESP:"
+#. i18n: ectx: property (text), widget (QLabel, label_3)
+#: strongswanprop.ui:322
+#, kde-format
+msgid "ESP:"
+msgstr "ESP:"
 
-#~ msgid "A list of proposals for ESP separated by \";\""
-#~ msgstr "Semikooloniga eraldatud ettepanekute nimekiri ESP-le"
+#. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
+#: strongswanprop.ui:329
+#, kde-format
+msgid "A list of proposals for ESP separated by \";\""
+msgstr "Semikooloniga eraldatud ettepanekute nimekiri ESP-le"

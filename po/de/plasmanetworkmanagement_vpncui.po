@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:54+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2023-04-26 20:13+0200\n"
 "Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -36,227 +36,6 @@ msgstr ""
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: Datei kann nicht erstellt werden"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: vpnc.ui:18
-#, kde-format
-msgid "Gateway:"
-msgstr "Gateway:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
-#: vpnc.ui:31
-#, kde-format
-msgid "IP/hostname of IPsec gateway."
-msgstr "IP/Rechnername des IPsec-Gateways."
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: vpnc.ui:38
-#, kde-format
-msgid "User name:"
-msgstr "Benutzername:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, leUserName)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, user)
-#: vpnc.ui:51 vpncauth.ui:97
-#, kde-format
-msgid "User name for the connection."
-msgstr "Benutzername für die Verbindung."
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: vpnc.ui:58
-#, kde-format
-msgid "User password:"
-msgstr "Benutzerpasswort:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, leUserPassword)
-#. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
-#: vpnc.ui:79 vpncauth.ui:58
-#, kde-format
-msgid "User password for the connection."
-msgstr "Benutzerpasswort für die Verbindung."
-
-#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: vpnc.ui:91 vpncauth.ui:124
-#, kde-format
-msgid "Group name:"
-msgstr "Gruppenname:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, group)
-#: vpnc.ui:104
-#, kde-format
-msgid "Group name"
-msgstr "Gruppenname:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: vpnc.ui:111
-#, kde-format
-msgid "Group password:"
-msgstr "Gruppenpasswort:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
-#. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
-#: vpnc.ui:129 vpncauth.ui:84
-#, kde-format
-msgid "Group password."
-msgstr "Gruppenpasswort:"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useHybridAuth)
-#: vpnc.ui:141
-#, kde-format
-msgid ""
-"Enable hybrid authentication, i.e. use certificate in addition to password."
-msgstr ""
-"Hybride Authentifizierung aktivieren, d. h. Zertifikat zusätzlich zum "
-"Passwort verwenden."
-
-#. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
-#: vpnc.ui:144
-#, kde-format
-msgid "Use hybrid authentication"
-msgstr "Hybride Authentifizierung verwenden"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: vpnc.ui:154
-#, kde-format
-msgid "CA file:"
-msgstr "CA-Datei:"
-
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, caFile)
-#: vpnc.ui:167
-#, kde-format
-msgid "CA certificate in PEM format."
-msgstr "CA-Zertifikat im PEM-Format."
-
-#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
-#: vpnc.ui:170
-#, kde-format
-msgid "*.pem *.crt *.cer"
-msgstr "*.pem *.crt *.cer"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: vpnc.ui:192
-#, kde-format
-msgid "Advanced…"
-msgstr "Erweitert ..."
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: vpncadvanced.ui:18
-#, kde-format
-msgid "Identification"
-msgstr "Kennung"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: vpncadvanced.ui:27
-#, kde-format
-msgid "Domain:"
-msgstr "Domäne:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
-#: vpncadvanced.ui:37
-#, kde-format
-msgid "(NT-)Domain name for authentication."
-msgstr "(NT-)Domain-Name für Authentisierung."
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: vpncadvanced.ui:44
-#, kde-format
-msgid "Vendor:"
-msgstr "Hersteller:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
-#: vpncadvanced.ui:60
-#, kde-format
-msgid "Vendor of your IPsec gateway."
-msgstr "Hersteller des IPsec-Gateways."
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: vpncadvanced.ui:70
-#, kde-format
-msgid "Transport and Security"
-msgstr "Transport und Sicherheit"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: vpncadvanced.ui:82
-#, kde-format
-msgid "Encryption method:"
-msgstr "Verschlüsselungsmethode:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, encryption)
-#: vpncadvanced.ui:98
-#, kde-format
-msgid "Encryption method."
-msgstr "Verschlüsselungsmethode"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: vpncadvanced.ui:105
-#, kde-format
-msgid "NAT traversal:"
-msgstr "NAT-Traversal:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, nat)
-#: vpncadvanced.ui:121
-#, kde-format
-msgid "NAT traversal method to use."
-msgstr "Zu verwendende NAT-Traversal-Methode."
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: vpncadvanced.ui:128
-#, kde-format
-msgid "IKE DH Group:"
-msgstr "IKE-DH-Gruppe:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, dhGroup)
-#: vpncadvanced.ui:144
-#, kde-format
-msgid "Name of the IKE DH group."
-msgstr "Name der IKE-DH-Gruppe."
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: vpncadvanced.ui:151
-#, kde-format
-msgid "Perfect Forward Secrecy:"
-msgstr "Folgenlosigkeit:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
-#: vpncadvanced.ui:167
-#, kde-format
-msgid "Diffie-Hellman group to use for PFS."
-msgstr "Diffie-Hellman-Gruppe zur Verwendung mit PFS."
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: vpncadvanced.ui:174
-#, kde-format
-msgid "Local Port:"
-msgstr "Lokaler Port:"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, localport)
-#: vpncadvanced.ui:190
-#, kde-format
-msgid ""
-"Local port to use (0-65535). 0 (default value) means random port. 500 is "
-"vpnc's default."
-msgstr ""
-"Zu verwendender lokaler Port (0-65535). Mit dem Standardwert 0 wird ein "
-"zufälliger Port benutzt. Port 500 ist VPNC-Standard."
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
-#: vpncadvanced.ui:193
-#, kde-format
-msgid "Random"
-msgstr "Zufällig"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, deadPeer)
-#: vpncadvanced.ui:209
-#, kde-format
-msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr "Keine DPD-Pakete senden (setzt Zeitüberschreitung auf 0)."
-
-#. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
-#: vpncadvanced.ui:212
-#, kde-format
-msgid "Disable dead peer detection"
-msgstr "„Dead Peer Detection“ deaktivieren"
 
 #: vpncadvancedwidget.cpp:20
 #, kde-format
@@ -365,35 +144,133 @@ msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
 msgstr "DH-Gruppe 5"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
-#: vpncauth.ui:14
-#, kde-format
-msgid "VPNCAuthentication"
-msgstr "VPNC-Authentifizierung"
+#~ msgid "Gateway:"
+#~ msgstr "Gateway:"
 
-#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
-#: vpncauth.ui:32
-#, kde-format
-msgid "User Password:"
-msgstr "Benutzerpasswort:"
+#~ msgid "IP/hostname of IPsec gateway."
+#~ msgstr "IP/Rechnername des IPsec-Gateways."
 
-#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
-#: vpncauth.ui:45
-#, kde-format
-msgid "Group Password:"
-msgstr "Gruppenpasswort:"
+#~ msgid "User name:"
+#~ msgstr "Benutzername:"
 
-#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
-#: vpncauth.ui:104
-#, kde-format
-msgid "Username:"
-msgstr "Benutzername:"
+#~ msgid "User name for the connection."
+#~ msgstr "Benutzername für die Verbindung."
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, leGroupName)
-#: vpncauth.ui:117
-#, kde-format
-msgid "Group name."
-msgstr "Gruppenname"
+#~ msgid "User password:"
+#~ msgstr "Benutzerpasswort:"
+
+#~ msgid "User password for the connection."
+#~ msgstr "Benutzerpasswort für die Verbindung."
+
+#~ msgid "Group name:"
+#~ msgstr "Gruppenname:"
+
+#~ msgid "Group name"
+#~ msgstr "Gruppenname:"
+
+#~ msgid "Group password:"
+#~ msgstr "Gruppenpasswort:"
+
+#~ msgid "Group password."
+#~ msgstr "Gruppenpasswort:"
+
+#~ msgid ""
+#~ "Enable hybrid authentication, i.e. use certificate in addition to "
+#~ "password."
+#~ msgstr ""
+#~ "Hybride Authentifizierung aktivieren, d. h. Zertifikat zusätzlich zum "
+#~ "Passwort verwenden."
+
+#~ msgid "Use hybrid authentication"
+#~ msgstr "Hybride Authentifizierung verwenden"
+
+#~ msgid "CA file:"
+#~ msgstr "CA-Datei:"
+
+#~ msgid "CA certificate in PEM format."
+#~ msgstr "CA-Zertifikat im PEM-Format."
+
+#~ msgid "*.pem *.crt *.cer"
+#~ msgstr "*.pem *.crt *.cer"
+
+#~ msgid "Advanced…"
+#~ msgstr "Erweitert ..."
+
+#~ msgid "Identification"
+#~ msgstr "Kennung"
+
+#~ msgid "Domain:"
+#~ msgstr "Domäne:"
+
+#~ msgid "(NT-)Domain name for authentication."
+#~ msgstr "(NT-)Domain-Name für Authentisierung."
+
+#~ msgid "Vendor:"
+#~ msgstr "Hersteller:"
+
+#~ msgid "Vendor of your IPsec gateway."
+#~ msgstr "Hersteller des IPsec-Gateways."
+
+#~ msgid "Transport and Security"
+#~ msgstr "Transport und Sicherheit"
+
+#~ msgid "Encryption method:"
+#~ msgstr "Verschlüsselungsmethode:"
+
+#~ msgid "Encryption method."
+#~ msgstr "Verschlüsselungsmethode"
+
+#~ msgid "NAT traversal:"
+#~ msgstr "NAT-Traversal:"
+
+#~ msgid "NAT traversal method to use."
+#~ msgstr "Zu verwendende NAT-Traversal-Methode."
+
+#~ msgid "IKE DH Group:"
+#~ msgstr "IKE-DH-Gruppe:"
+
+#~ msgid "Name of the IKE DH group."
+#~ msgstr "Name der IKE-DH-Gruppe."
+
+#~ msgid "Perfect Forward Secrecy:"
+#~ msgstr "Folgenlosigkeit:"
+
+#~ msgid "Diffie-Hellman group to use for PFS."
+#~ msgstr "Diffie-Hellman-Gruppe zur Verwendung mit PFS."
+
+#~ msgid "Local Port:"
+#~ msgstr "Lokaler Port:"
+
+#~ msgid ""
+#~ "Local port to use (0-65535). 0 (default value) means random port. 500 is "
+#~ "vpnc's default."
+#~ msgstr ""
+#~ "Zu verwendender lokaler Port (0-65535). Mit dem Standardwert 0 wird ein "
+#~ "zufälliger Port benutzt. Port 500 ist VPNC-Standard."
+
+#~ msgid "Random"
+#~ msgstr "Zufällig"
+
+#~ msgid "Disable sending DPD packets (set timeout to 0)."
+#~ msgstr "Keine DPD-Pakete senden (setzt Zeitüberschreitung auf 0)."
+
+#~ msgid "Disable dead peer detection"
+#~ msgstr "„Dead Peer Detection“ deaktivieren"
+
+#~ msgid "VPNCAuthentication"
+#~ msgstr "VPNC-Authentifizierung"
+
+#~ msgid "User Password:"
+#~ msgstr "Benutzerpasswort:"
+
+#~ msgid "Group Password:"
+#~ msgstr "Gruppenpasswort:"
+
+#~ msgid "Username:"
+#~ msgstr "Benutzername:"
+
+#~ msgid "Group name."
+#~ msgstr "Gruppenname"
 
 #~ msgid "File %1 could not be opened."
 #~ msgstr "Datei %1 lässt sich nicht öffnen."

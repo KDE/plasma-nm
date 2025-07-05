@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 02:36+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -576,18 +576,6 @@ msgstr ""
 msgid "VPN secrets (%1) dialog"
 msgstr ""
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
-#: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "ئىم سۆزلەشكۈسى"
-
-#. i18n: ectx: property (text), widget (QLabel, labelPass)
-#: passworddialog.ui:92
-#, kde-format
-msgid "Password:"
-msgstr "ئىم:"
-
 #: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
@@ -647,8 +635,7 @@ msgstr ""
 msgid "%1 code:"
 msgstr "PUK نومۇرى:"
 
-#. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:85 pinwidget.ui:153
+#: pindialog.cpp:85
 #, kde-format
 msgid "New PIN code:"
 msgstr "يېڭى PUK نومۇرى:"
@@ -658,8 +645,7 @@ msgstr "يېڭى PUK نومۇرى:"
 msgid "Re-enter new PIN code:"
 msgstr "يېڭى PUK نومۇرىنى يەنە كىرگۈزۈڭ:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:87 pinwidget.ui:193
+#: pindialog.cpp:87
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr ""
@@ -729,39 +715,29 @@ msgstr ""
 msgid "Unknown Error"
 msgstr "نامەلۇم خاتالىق"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
-#. i18n: ectx: property (text), widget (QLabel, title)
-#: pinwidget.ui:14 pinwidget.ui:47
-#, kde-format
-msgid "SIM PIN unlock required"
-msgstr "SIM PIN قۇلۇپسىزلاش كېرەك"
-
-#. i18n: ectx: property (text), widget (QLabel, prompt)
-#: pinwidget.ui:76
-#, no-c-format, kde-format
-msgid ""
-"The mobile broadband device '%1' requires a SIM PIN code before it can be "
-"used."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, pukLabel)
-#: pinwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "PUK code:"
-msgid "PUK code:"
-msgstr "PUK نومۇرى:"
-
-#. i18n: ectx: property (text), widget (QLabel, pin2Label)
-#: pinwidget.ui:173
-#, fuzzy, kde-format
-#| msgid "Re-enter new PIN code:"
-msgid "Re-enter PIN code:"
-msgstr "يېڭى PUK نومۇرىنى يەنە كىرگۈزۈڭ:"
-
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr ""
+
+#~ msgid "Password dialog"
+#~ msgstr "ئىم سۆزلەشكۈسى"
+
+#~ msgid "Password:"
+#~ msgstr "ئىم:"
+
+#~ msgid "SIM PIN unlock required"
+#~ msgstr "SIM PIN قۇلۇپسىزلاش كېرەك"
+
+#, fuzzy
+#~| msgid "PUK code:"
+#~ msgid "PUK code:"
+#~ msgstr "PUK نومۇرى:"
+
+#, fuzzy
+#~| msgid "Re-enter new PIN code:"
+#~ msgid "Re-enter PIN code:"
+#~ msgstr "يېڭى PUK نومۇرىنى يەنە كىرگۈزۈڭ:"
 
 #~ msgid "TextLabel"
 #~ msgstr "تېكىستلىك ئەن"

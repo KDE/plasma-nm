@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 02:36+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2022-11-16 21:41+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -583,18 +583,6 @@ msgstr "Pateikite paslaptis VPN ryšiui „%1“:"
 msgid "VPN secrets (%1) dialog"
 msgstr "VPN paslapčių (%1) dialogas"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
-#: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Slaptažodžio dialogas"
-
-#. i18n: ectx: property (text), widget (QLabel, labelPass)
-#: passworddialog.ui:92
-#, kde-format
-msgid "Password:"
-msgstr "Slaptažodis:"
-
 #: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
@@ -653,8 +641,7 @@ msgstr ""
 msgid "%1 code:"
 msgstr "%1 kodas:"
 
-#. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:85 pinwidget.ui:153
+#: pindialog.cpp:85
 #, kde-format
 msgid "New PIN code:"
 msgstr "Naujas PIN kodas:"
@@ -664,8 +651,7 @@ msgstr "Naujas PIN kodas:"
 msgid "Re-enter new PIN code:"
 msgstr "Dar kartą įveskite naują PIN kodą:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:87 pinwidget.ui:193
+#: pindialog.cpp:87
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "Rodyti PIN/PUK kodą"
@@ -735,39 +721,32 @@ msgstr "Per trumpas PUK kodas. Jis turi būti 8 skaitmenų ilgio."
 msgid "Unknown Error"
 msgstr "Nežinoma klaida"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
-#. i18n: ectx: property (text), widget (QLabel, title)
-#: pinwidget.ui:14 pinwidget.ui:47
-#, kde-format
-msgid "SIM PIN unlock required"
-msgstr "Reikalingas SIM PIN atrakinimas"
-
-#. i18n: ectx: property (text), widget (QLabel, prompt)
-#: pinwidget.ui:76
-#, no-c-format, kde-format
-msgid ""
-"The mobile broadband device '%1' requires a SIM PIN code before it can be "
-"used."
-msgstr ""
-"Mobiliojo plačiajuosčio tinklo įrenginiui „%1“ reikia SIM PIN kodo, kad būtų "
-"galima jį naudoti."
-
-#. i18n: ectx: property (text), widget (QLabel, pukLabel)
-#: pinwidget.ui:133
-#, kde-format
-msgid "PUK code:"
-msgstr "PUK kodas:"
-
-#. i18n: ectx: property (text), widget (QLabel, pin2Label)
-#: pinwidget.ui:173
-#, kde-format
-msgid "Re-enter PIN code:"
-msgstr "Dar kartą įveskite PIN kodą:"
-
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Tapatybės nustatymas ties %1 patyrė nesėkmę. Neteisingas slaptažodis?"
+
+#~ msgid "Password dialog"
+#~ msgstr "Slaptažodžio dialogas"
+
+#~ msgid "Password:"
+#~ msgstr "Slaptažodis:"
+
+#~ msgid "SIM PIN unlock required"
+#~ msgstr "Reikalingas SIM PIN atrakinimas"
+
+#~ msgid ""
+#~ "The mobile broadband device '%1' requires a SIM PIN code before it can be "
+#~ "used."
+#~ msgstr ""
+#~ "Mobiliojo plačiajuosčio tinklo įrenginiui „%1“ reikia SIM PIN kodo, kad "
+#~ "būtų galima jį naudoti."
+
+#~ msgid "PUK code:"
+#~ msgstr "PUK kodas:"
+
+#~ msgid "Re-enter PIN code:"
+#~ msgstr "Dar kartą įveskite PIN kodą:"
 
 #~ msgid "VPN connection '%1' failed."
 #~ msgstr "VPN ryšys „%1“ nepavyko."

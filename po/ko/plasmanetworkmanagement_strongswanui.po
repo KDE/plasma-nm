@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-08-28 00:19+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2021-12-08 00:28+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -44,152 +44,77 @@ msgid ""
 msgstr ""
 "ssh-agent 인증을 사용하도록 설정되어 있으나 실행 중인 ssh-agent가 없습니다."
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
-#. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
-#: strongswanauth.ui:14 strongswanprop.ui:14
-#, kde-format
-msgid "Strong Swan VPN"
-msgstr "Strong Swan VPN"
+#~ msgid "Strong Swan VPN"
+#~ msgstr "Strong Swan VPN"
 
-#. i18n: ectx: property (text), widget (QLabel, passwordLabel)
-#: strongswanauth.ui:32
-#, kde-format
-msgid "Password: "
-msgstr "암호:"
+#~ msgid "Password: "
+#~ msgstr "암호:"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: strongswanprop.ui:20
-#, kde-format
-msgid "Gateway"
-msgstr "게이트웨이"
+#~ msgid "Gateway"
+#~ msgstr "게이트웨이"
 
-#. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: strongswanprop.ui:29
-#, kde-format
-msgid "Gateway:"
-msgstr "게이트웨이:"
+#~ msgid "Gateway:"
+#~ msgstr "게이트웨이:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: strongswanprop.ui:49 strongswanprop.ui:120 strongswanprop.ui:165
-#, kde-format
-msgid "Certificate:"
-msgstr "인증서:"
+#~ msgid "Certificate:"
+#~ msgstr "인증서:"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: strongswanprop.ui:62
-#, kde-format
-msgid "Authentication"
-msgstr "인증"
+#~ msgid "Authentication"
+#~ msgstr "인증"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
-#: strongswanprop.ui:78
-#, kde-format
-msgid "Certificate/private key"
-msgstr "인증서/비밀 키"
+#~ msgid "Certificate/private key"
+#~ msgstr "인증서/비밀 키"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
-#: strongswanprop.ui:83
-#, kde-format
-msgid "Certificate/ssh-agent"
-msgstr "인증서/ssh-agent"
+#~ msgid "Certificate/ssh-agent"
+#~ msgstr "인증서/ssh-agent"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
-#: strongswanprop.ui:88
-#, kde-format
-msgid "Smartcard"
-msgstr "스마트카드"
+#~ msgid "Smartcard"
+#~ msgstr "스마트카드"
 
-#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
-#: strongswanprop.ui:93
-#, kde-format
-msgid "EAP"
-msgstr "EAP"
+#~ msgid "EAP"
+#~ msgstr "EAP"
 
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: strongswanprop.ui:130
-#, kde-format
-msgid "Private key:"
-msgstr "개인 키:"
+#~ msgid "Private key:"
+#~ msgstr "개인 키:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: strongswanprop.ui:140
-#, kde-format
-msgid "Private Key Password:"
-msgstr "개인 키 암호:"
+#~ msgid "Private Key Password:"
+#~ msgstr "개인 키 암호:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: strongswanprop.ui:182
-#, kde-format
-msgid "PIN:"
-msgstr "PIN:"
+#~ msgid "PIN:"
+#~ msgstr "PIN:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: strongswanprop.ui:210
-#, kde-format
-msgid "Username:"
-msgstr "사용자 이름:"
+#~ msgid "Username:"
+#~ msgstr "사용자 이름:"
 
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: strongswanprop.ui:238
-#, kde-format
-msgid "User Password:"
-msgstr "사용자 암호:"
+#~ msgid "User Password:"
+#~ msgstr "사용자 암호:"
 
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: strongswanprop.ui:255
-#, kde-format
-msgid "Options"
-msgstr "옵션"
+#~ msgid "Options"
+#~ msgstr "옵션"
 
-#. i18n: ectx: property (text), widget (QCheckBox, innerIP)
-#: strongswanprop.ui:264
-#, kde-format
-msgid "Request an inner IP address"
-msgstr "내부 IP 주소 요청"
+#~ msgid "Request an inner IP address"
+#~ msgstr "내부 IP 주소 요청"
 
-#. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
-#: strongswanprop.ui:277
-#, kde-format
-msgid "Enforce UDP encapsulation"
-msgstr "UDP 캡슐화 강제"
+#~ msgid "Enforce UDP encapsulation"
+#~ msgstr "UDP 캡슐화 강제"
 
-#. i18n: ectx: property (text), widget (QCheckBox, ipComp)
-#: strongswanprop.ui:284
-#, kde-format
-msgid "Use IP compression"
-msgstr "IP 압축 사용"
+#~ msgid "Use IP compression"
+#~ msgstr "IP 압축 사용"
 
-#. i18n: ectx: property (title), widget (QGroupBox, proposal)
-#: strongswanprop.ui:294
-#, kde-format
-msgid "Enable Custom Cipher Proposals"
-msgstr "사용자 정의 암호화 방식 제안 사용"
+#~ msgid "Enable Custom Cipher Proposals"
+#~ msgstr "사용자 정의 암호화 방식 제안 사용"
 
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: strongswanprop.ui:308
-#, kde-format
-msgid "IKE:"
-msgstr "IKE:"
+#~ msgid "IKE:"
+#~ msgstr "IKE:"
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
-#: strongswanprop.ui:315
-#, kde-format
-msgid "A list of proposals for IKE separated by \";\""
-msgstr "쌍반점(\";\")으로 구분한 IKE 제안 목록"
+#~ msgid "A list of proposals for IKE separated by \";\""
+#~ msgstr "쌍반점(\";\")으로 구분한 IKE 제안 목록"
 
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: strongswanprop.ui:322
-#, kde-format
-msgid "ESP:"
-msgstr "ESP:"
+#~ msgid "ESP:"
+#~ msgstr "ESP:"
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
-#: strongswanprop.ui:329
-#, kde-format
-msgid "A list of proposals for ESP separated by \";\""
-msgstr "쌍반점(\";\")으로 구분한 ESP 제안 목록"
+#~ msgid "A list of proposals for ESP separated by \";\""
+#~ msgstr "쌍반점(\";\")으로 구분한 ESP 제안 목록"
 
 #~ msgid "Store"
 #~ msgstr "저장"

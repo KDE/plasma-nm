@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:54+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2023-04-22 00:14+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -36,225 +36,6 @@ msgstr "NetworkManager에서 Cisco 호환 VPN을 지원하지 않음"
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: 파일을 만들 수 없음"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: vpnc.ui:18
-#, kde-format
-msgid "Gateway:"
-msgstr "게이트웨이:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
-#: vpnc.ui:31
-#, kde-format
-msgid "IP/hostname of IPsec gateway."
-msgstr "IPSec 게이트웨이의 IP 및 호스트 이름입니다."
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: vpnc.ui:38
-#, kde-format
-msgid "User name:"
-msgstr "사용자 이름:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, leUserName)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, user)
-#: vpnc.ui:51 vpncauth.ui:97
-#, kde-format
-msgid "User name for the connection."
-msgstr "연결에 사용할 사용자 이름입니다."
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: vpnc.ui:58
-#, kde-format
-msgid "User password:"
-msgstr "사용자 암호:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, leUserPassword)
-#. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
-#: vpnc.ui:79 vpncauth.ui:58
-#, kde-format
-msgid "User password for the connection."
-msgstr "연결에 사용할 암호입니다."
-
-#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: vpnc.ui:91 vpncauth.ui:124
-#, kde-format
-msgid "Group name:"
-msgstr "그룹 이름:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, group)
-#: vpnc.ui:104
-#, kde-format
-msgid "Group name"
-msgstr "그룹 이름"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: vpnc.ui:111
-#, kde-format
-msgid "Group password:"
-msgstr "그룹 암호:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
-#. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
-#: vpnc.ui:129 vpncauth.ui:84
-#, kde-format
-msgid "Group password."
-msgstr "그룹 암호입니다."
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useHybridAuth)
-#: vpnc.ui:141
-#, kde-format
-msgid ""
-"Enable hybrid authentication, i.e. use certificate in addition to password."
-msgstr "하이브리드 인증(예: 사용자 암호화 인증서)을 사용합니다."
-
-#. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
-#: vpnc.ui:144
-#, kde-format
-msgid "Use hybrid authentication"
-msgstr "하이브리드 인증 사용"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: vpnc.ui:154
-#, kde-format
-msgid "CA file:"
-msgstr "CA 파일:"
-
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, caFile)
-#: vpnc.ui:167
-#, kde-format
-msgid "CA certificate in PEM format."
-msgstr "PEM 형식 CA 인증서입니다."
-
-#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
-#: vpnc.ui:170
-#, kde-format
-msgid "*.pem *.crt *.cer"
-msgstr "*.pem *.crt *.cer"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: vpnc.ui:192
-#, kde-format
-msgid "Advanced…"
-msgstr "고급…"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: vpncadvanced.ui:18
-#, kde-format
-msgid "Identification"
-msgstr "식별"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: vpncadvanced.ui:27
-#, kde-format
-msgid "Domain:"
-msgstr "도메인:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
-#: vpncadvanced.ui:37
-#, kde-format
-msgid "(NT-)Domain name for authentication."
-msgstr "인증에 사용할 (NT) 도메인 이름입니다."
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: vpncadvanced.ui:44
-#, kde-format
-msgid "Vendor:"
-msgstr "제조사:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
-#: vpncadvanced.ui:60
-#, kde-format
-msgid "Vendor of your IPsec gateway."
-msgstr "IPSec 게이트웨이 제조사입니다."
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: vpncadvanced.ui:70
-#, kde-format
-msgid "Transport and Security"
-msgstr "전송과 암호화"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: vpncadvanced.ui:82
-#, kde-format
-msgid "Encryption method:"
-msgstr "암호화 방법:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, encryption)
-#: vpncadvanced.ui:98
-#, kde-format
-msgid "Encryption method."
-msgstr "암호화 방법입니다."
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: vpncadvanced.ui:105
-#, kde-format
-msgid "NAT traversal:"
-msgstr "NAT 탐색:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, nat)
-#: vpncadvanced.ui:121
-#, kde-format
-msgid "NAT traversal method to use."
-msgstr "사용할 NAT 탐색 방식입니다."
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: vpncadvanced.ui:128
-#, kde-format
-msgid "IKE DH Group:"
-msgstr "IKE DH 그룹:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, dhGroup)
-#: vpncadvanced.ui:144
-#, kde-format
-msgid "Name of the IKE DH group."
-msgstr "IKE DH 그룹 이름입니다."
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: vpncadvanced.ui:151
-#, kde-format
-msgid "Perfect Forward Secrecy:"
-msgstr "완전한 전방 암호화:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
-#: vpncadvanced.ui:167
-#, kde-format
-msgid "Diffie-Hellman group to use for PFS."
-msgstr "PFS에 사용할 Diffie-Hellman 그룹입니다."
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: vpncadvanced.ui:174
-#, kde-format
-msgid "Local Port:"
-msgstr "로컬 포트:"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, localport)
-#: vpncadvanced.ui:190
-#, kde-format
-msgid ""
-"Local port to use (0-65535). 0 (default value) means random port. 500 is "
-"vpnc's default."
-msgstr ""
-"사용할 로컬 포트입니다(0-65535). 0(기본값)은 무작위 포트 사용입니다. vpnc의 "
-"기본 포트는 500입니다."
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
-#: vpncadvanced.ui:193
-#, kde-format
-msgid "Random"
-msgstr "무작위"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, deadPeer)
-#: vpncadvanced.ui:209
-#, kde-format
-msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr "DPD 패킷을 보내지 않습니다(시간 제한을 0으로 설정)."
-
-#. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
-#: vpncadvanced.ui:212
-#, kde-format
-msgid "Disable dead peer detection"
-msgstr "죽은 피어 감지 비활성화"
 
 #: vpncadvancedwidget.cpp:20
 #, kde-format
@@ -363,35 +144,131 @@ msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
 msgstr "DH 그룹 5"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
-#: vpncauth.ui:14
-#, kde-format
-msgid "VPNCAuthentication"
-msgstr "VPNCAuthentication"
+#~ msgid "Gateway:"
+#~ msgstr "게이트웨이:"
 
-#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
-#: vpncauth.ui:32
-#, kde-format
-msgid "User Password:"
-msgstr "사용자 암호:"
+#~ msgid "IP/hostname of IPsec gateway."
+#~ msgstr "IPSec 게이트웨이의 IP 및 호스트 이름입니다."
 
-#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
-#: vpncauth.ui:45
-#, kde-format
-msgid "Group Password:"
-msgstr "그룹 암호:"
+#~ msgid "User name:"
+#~ msgstr "사용자 이름:"
 
-#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
-#: vpncauth.ui:104
-#, kde-format
-msgid "Username:"
-msgstr "사용자 이름:"
+#~ msgid "User name for the connection."
+#~ msgstr "연결에 사용할 사용자 이름입니다."
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, leGroupName)
-#: vpncauth.ui:117
-#, kde-format
-msgid "Group name."
-msgstr "그룹 이름입니다."
+#~ msgid "User password:"
+#~ msgstr "사용자 암호:"
+
+#~ msgid "User password for the connection."
+#~ msgstr "연결에 사용할 암호입니다."
+
+#~ msgid "Group name:"
+#~ msgstr "그룹 이름:"
+
+#~ msgid "Group name"
+#~ msgstr "그룹 이름"
+
+#~ msgid "Group password:"
+#~ msgstr "그룹 암호:"
+
+#~ msgid "Group password."
+#~ msgstr "그룹 암호입니다."
+
+#~ msgid ""
+#~ "Enable hybrid authentication, i.e. use certificate in addition to "
+#~ "password."
+#~ msgstr "하이브리드 인증(예: 사용자 암호화 인증서)을 사용합니다."
+
+#~ msgid "Use hybrid authentication"
+#~ msgstr "하이브리드 인증 사용"
+
+#~ msgid "CA file:"
+#~ msgstr "CA 파일:"
+
+#~ msgid "CA certificate in PEM format."
+#~ msgstr "PEM 형식 CA 인증서입니다."
+
+#~ msgid "*.pem *.crt *.cer"
+#~ msgstr "*.pem *.crt *.cer"
+
+#~ msgid "Advanced…"
+#~ msgstr "고급…"
+
+#~ msgid "Identification"
+#~ msgstr "식별"
+
+#~ msgid "Domain:"
+#~ msgstr "도메인:"
+
+#~ msgid "(NT-)Domain name for authentication."
+#~ msgstr "인증에 사용할 (NT) 도메인 이름입니다."
+
+#~ msgid "Vendor:"
+#~ msgstr "제조사:"
+
+#~ msgid "Vendor of your IPsec gateway."
+#~ msgstr "IPSec 게이트웨이 제조사입니다."
+
+#~ msgid "Transport and Security"
+#~ msgstr "전송과 암호화"
+
+#~ msgid "Encryption method:"
+#~ msgstr "암호화 방법:"
+
+#~ msgid "Encryption method."
+#~ msgstr "암호화 방법입니다."
+
+#~ msgid "NAT traversal:"
+#~ msgstr "NAT 탐색:"
+
+#~ msgid "NAT traversal method to use."
+#~ msgstr "사용할 NAT 탐색 방식입니다."
+
+#~ msgid "IKE DH Group:"
+#~ msgstr "IKE DH 그룹:"
+
+#~ msgid "Name of the IKE DH group."
+#~ msgstr "IKE DH 그룹 이름입니다."
+
+#~ msgid "Perfect Forward Secrecy:"
+#~ msgstr "완전한 전방 암호화:"
+
+#~ msgid "Diffie-Hellman group to use for PFS."
+#~ msgstr "PFS에 사용할 Diffie-Hellman 그룹입니다."
+
+#~ msgid "Local Port:"
+#~ msgstr "로컬 포트:"
+
+#~ msgid ""
+#~ "Local port to use (0-65535). 0 (default value) means random port. 500 is "
+#~ "vpnc's default."
+#~ msgstr ""
+#~ "사용할 로컬 포트입니다(0-65535). 0(기본값)은 무작위 포트 사용입니다. vpnc"
+#~ "의 기본 포트는 500입니다."
+
+#~ msgid "Random"
+#~ msgstr "무작위"
+
+#~ msgid "Disable sending DPD packets (set timeout to 0)."
+#~ msgstr "DPD 패킷을 보내지 않습니다(시간 제한을 0으로 설정)."
+
+#~ msgid "Disable dead peer detection"
+#~ msgstr "죽은 피어 감지 비활성화"
+
+#~ msgid "VPNCAuthentication"
+#~ msgstr "VPNCAuthentication"
+
+#~ msgid "User Password:"
+#~ msgstr "사용자 암호:"
+
+#~ msgid "Group Password:"
+#~ msgstr "그룹 암호:"
+
+#~ msgid "Username:"
+#~ msgstr "사용자 이름:"
+
+#~ msgid "Group name."
+#~ msgstr "그룹 이름입니다."
 
 #~ msgid "File %1 could not be opened."
 #~ msgstr "파일 %1을(를) 열 수 없습니다."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 02:36+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2024-02-08 17:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -242,12 +242,6 @@ msgstr "'%1' Bağlantısını Düzenle"
 msgid "New %1 connection"
 msgstr "Yeni %1 bağlantısı"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/connectioneditortabwidget.ui:20
-#, kde-format
-msgid "Connection name:"
-msgstr "Bağlantı adı:"
-
 #: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
 #: editor/settings/teamwidget.cpp:36
 #, kde-format
@@ -407,8 +401,7 @@ msgstr "Makine adını gönder:"
 msgid "DHCP hostname:"
 msgstr "DHCP makine adı:"
 
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
+#: editor/settings/ipv4widget.cpp:440
 #, kde-format
 msgid "Default"
 msgstr "Öntanımlı"
@@ -477,1673 +470,6 @@ msgstr "Yalnızca bu sunuculara bağlan"
 #, kde-format
 msgid "Select file to import"
 msgstr "İçe aktarmak için dosya seç"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
-#, kde-format
-msgid "Authentication:"
-msgstr "Kimlik doğrulama:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:38 editor/settings/ui/802-1x.ui:675
-#, kde-format
-msgid "MD5"
-msgstr "MD5"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:43
-#, kde-format
-msgid "TLS"
-msgstr "TLS"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
-#, kde-format
-msgid "LEAP"
-msgstr "LEAP"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:53
-#, kde-format
-msgid "PWD"
-msgstr "PWD"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:58
-#, kde-format
-msgid "FAST"
-msgstr "HIZLI"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:63
-#, kde-format
-msgid "Tunneled TLS (TTLS)"
-msgstr "Tünellenmiş TLS (TTLS)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:68
-#, kde-format
-msgid "Protected EAP (PEAP)"
-msgstr "Korunan EAP (PEAP)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_33)
-#. i18n: ectx: property (text), widget (QLabel, label_14)
-#. i18n: ectx: property (text), widget (QLabel, label_17)
-#. i18n: ectx: property (text), widget (QLabel, label_25)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/802-1x.ui:83 editor/settings/ui/802-1x.ui:277
-#: editor/settings/ui/802-1x.ui:311 editor/settings/ui/802-1x.ui:440
-#: editor/settings/ui/802-1x.ui:544 editor/settings/ui/802-1x.ui:688
-#: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
-#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
-#, kde-format
-msgid "Username:"
-msgstr "Kullanıcı adı:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_10)
-#. i18n: ectx: property (text), widget (QLabel, label_34)
-#. i18n: ectx: property (text), widget (QLabel, label_15)
-#. i18n: ectx: property (text), widget (QLabel, label_18)
-#. i18n: ectx: property (text), widget (QLabel, label_21)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#: editor/settings/ui/802-1x.ui:96 editor/settings/ui/802-1x.ui:290
-#: editor/settings/ui/802-1x.ui:324 editor/settings/ui/802-1x.ui:453
-#: editor/settings/ui/802-1x.ui:557 editor/settings/ui/802-1x.ui:701
-#: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
-#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:207
-#: editor/settings/ui/wifisecurity.ui:231
-#, kde-format
-msgid "Password:"
-msgstr "Parola:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:117
-#, kde-format
-msgid "Identity:"
-msgstr "Kimlik:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_32)
-#. i18n: ectx: property (text), widget (QLabel, label_30)
-#. i18n: ectx: property (text), widget (QLabel, label_31)
-#: editor/settings/ui/802-1x.ui:130 editor/settings/ui/802-1x.ui:574
-#: editor/settings/ui/802-1x.ui:718
-#, kde-format
-msgid "Domain:"
-msgstr "Alan adı:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: editor/settings/ui/802-1x.ui:140
-#, kde-format
-msgid "User certificate:"
-msgstr "Kullanıcı sertifikası:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#. i18n: ectx: property (text), widget (QLabel, label_20)
-#. i18n: ectx: property (text), widget (QLabel, label_23)
-#: editor/settings/ui/802-1x.ui:157 editor/settings/ui/802-1x.ui:487
-#: editor/settings/ui/802-1x.ui:601
-#, kde-format
-msgid "CA certificate:"
-msgstr "CA sertifikası:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_27)
-#: editor/settings/ui/802-1x.ui:174
-#, kde-format
-msgid "Subject match:"
-msgstr "Konu eşleşmesi:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_28)
-#: editor/settings/ui/802-1x.ui:191
-#, kde-format
-msgid "Alternative subject matches:"
-msgstr "Alternatif konu eşleşmeleri:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
-#. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
-#: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
-#, kde-format
-msgid "…"
-msgstr "…"
-
-#. i18n: ectx: property (text), widget (QLabel, label_29)
-#: editor/settings/ui/802-1x.ui:215
-#, kde-format
-msgid "Connect to these servers:"
-msgstr "Bu sunuculara bağlan:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
-#: editor/settings/ui/802-1x.ui:239
-#: editor/settings/ui/wireguardinterfacewidget.ui:26
-#, kde-format
-msgid "Private key:"
-msgstr "Gizli anahtar:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/802-1x.ui:256
-#, kde-format
-msgid "Private key password:"
-msgstr "Gizli anahtar parolası:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_11)
-#. i18n: ectx: property (text), widget (QLabel, label_19)
-#. i18n: ectx: property (text), widget (QLabel, label_24)
-#: editor/settings/ui/802-1x.ui:345 editor/settings/ui/802-1x.ui:474
-#: editor/settings/ui/802-1x.ui:588
-#, kde-format
-msgid "Anonymous identity:"
-msgstr "Anonim kimlik:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
-#: editor/settings/ui/802-1x.ui:358
-#, kde-format
-msgid "Automatic PAC provisioning"
-msgstr "Kendiliğinden PAC sağlama"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:375
-#, kde-format
-msgid "Anonymous"
-msgstr "Anonim"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:380
-#, kde-format
-msgid "Authenticated"
-msgstr "Onaylanmış"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:385
-#, kde-format
-msgid "Both"
-msgstr "Her ikisi de"
-
-#. i18n: ectx: property (text), widget (QLabel, label_12)
-#: editor/settings/ui/802-1x.ui:393
-#, kde-format
-msgid "PAC file:"
-msgstr "PAC dosyası:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_13)
-#. i18n: ectx: property (text), widget (QLabel, label_16)
-#. i18n: ectx: property (text), widget (QLabel, label_22)
-#: editor/settings/ui/802-1x.ui:410 editor/settings/ui/802-1x.ui:504
-#: editor/settings/ui/802-1x.ui:653
-#, kde-format
-msgid "Inner authentication:"
-msgstr "Dahili doğrulama:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
-#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:427 editor/settings/ui/802-1x.ui:680
-#, kde-format
-msgid "GTC"
-msgstr "GTC"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
-#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:432 editor/settings/ui/802-1x.ui:531
-#: editor/settings/ui/802-1x.ui:670 editor/settings/ui/ppp.ui:68
-#, kde-format
-msgid "MSCHAPv2"
-msgstr "MSCHAPv2"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pap)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:521 editor/settings/ui/ppp.ui:58
-#, kde-format
-msgid "PAP"
-msgstr "PAP"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mschap)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:526 editor/settings/ui/ppp.ui:48
-#, kde-format
-msgid "MSCHAP"
-msgstr "MSCHAP"
-
-#. i18n: ectx: property (text), widget (QCheckBox, chap)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:536 editor/settings/ui/ppp.ui:78
-#, kde-format
-msgid "CHAP"
-msgstr "CHAP"
-
-#. i18n: ectx: property (text), widget (QLabel, label_26)
-#: editor/settings/ui/802-1x.ui:618
-#, kde-format
-msgid "PEAP version:"
-msgstr "PEAP sürümü:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:635
-#, kde-format
-msgctxt "PEAP version"
-msgid "Automatic"
-msgstr "Kendiliğinden"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:640
-#, kde-format
-msgid "Version 0"
-msgstr "Sürüm 0"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:645
-#, kde-format
-msgid "Version 1"
-msgstr "Sürüm 1"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/bond.ui:21 editor/settings/ui/bridge.ui:18
-#: editor/settings/ui/team.ui:18
-#, kde-format
-msgid "Interface name:"
-msgstr "Arayüz adı:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bond.ui:34
-#, kde-format
-msgid "Bonded connections:"
-msgstr "Bağlanmış bağlantılar:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
-#: editor/settings/ui/team.ui:56
-#, kde-format
-msgid "Add…"
-msgstr "Ekle"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnEdit)
-#: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
-#: editor/settings/ui/team.ui:71
-#, kde-format
-msgid "Edit…"
-msgstr "Düzenle…"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnDelete)
-#: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
-#: editor/settings/ui/team.ui:86
-#, kde-format
-msgid "Delete"
-msgstr "Sil"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, modeLabel)
-#: editor/settings/ui/bond.ui:113 editor/settings/ui/wificonnectionwidget.ui:43
-#, kde-format
-msgid "Mode:"
-msgstr "Kip:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/bond.ui:133
-#, kde-format
-msgid "Link monitoring:"
-msgstr "Bağlantı izleme:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: editor/settings/ui/bond.ui:153
-#, kde-format
-msgid "Monitoring frequency:"
-msgstr "İzleme frekansı:"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
-#. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
-#. i18n: ectx: property (suffix), widget (QSpinBox, downDelay)
-#: editor/settings/ui/bond.ui:163 editor/settings/ui/bond.ui:205
-#: editor/settings/ui/bond.ui:225
-#, kde-format
-msgid " ms"
-msgstr " ms"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: editor/settings/ui/bond.ui:195
-#, kde-format
-msgid "Link up delay:"
-msgstr "Giden bağlantı gecikmesi:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/bond.ui:215
-#, kde-format
-msgid "Link down delay:"
-msgstr "Gelen bağlantı gecikmesi:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/bond.ui:242
-#, kde-format
-msgid "ARP targets:"
-msgstr "ARP hedefleri:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
-#: editor/settings/ui/bond.ui:252
-#, kde-format
-msgid "An IP address or comma-separated list of addresses."
-msgstr "Bir IP adresi veya adreslerin virgülle ayrılmış listesi."
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/bridge.ui:31
-#, kde-format
-msgid "Bridged connections:"
-msgstr "Köprülenmiş bağlantılar:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bridge.ui:110
-#, kde-format
-msgid "Aging time:"
-msgstr "Yaşlandırma zamanı:"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, agingTime)
-#. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
-#. i18n: ectx: property (suffix), widget (QSpinBox, helloTime)
-#. i18n: ectx: property (suffix), widget (QSpinBox, maxAge)
-#: editor/settings/ui/bridge.ui:126 editor/settings/ui/bridge.ui:193
-#: editor/settings/ui/bridge.ui:222 editor/settings/ui/bridge.ui:251
-#, kde-format
-msgctxt "seconds"
-msgid " s"
-msgstr " sn"
-
-#. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
-#: editor/settings/ui/bridge.ui:139
-#, kde-format
-msgid "Enable STP (Spanning Tree Protocol)"
-msgstr "STP'yi Etkinleştir (Yayılım Ağacı Protokolü)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/bridge.ui:151
-#, kde-format
-msgid "Priority:"
-msgstr "Öncelik:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/bridge.ui:177
-#, kde-format
-msgid "Forward delay:"
-msgstr "İletme gecikmesi:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: editor/settings/ui/bridge.ui:206
-#, kde-format
-msgid "Hello time:"
-msgstr "Merhaba zamanı:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: editor/settings/ui/bridge.ui:235
-#, kde-format
-msgid "Max age:"
-msgstr "En fazla yaş:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/bt.ui:21
-#, kde-format
-msgid "Address of the device:"
-msgstr "Aygıt adresi:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bt.ui:41
-#, kde-format
-msgid "Connection type:"
-msgstr "Bağlantı türü:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/cdma.ui:20 editor/settings/ui/gsm.ui:24
-#, kde-format
-msgid "Number:"
-msgstr "Sayı:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
-#: editor/settings/ui/connectionwidget.ui:17
-#, kde-format
-msgid "Connect automatically with priority"
-msgstr "Kendiliğinden öncelikli bağlan"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
-#: editor/settings/ui/connectionwidget.ui:38
-#, kde-format
-msgid ""
-"If the connection is set to autoconnect, connections with higher priority "
-"will be preferred. Defaults to 0.\n"
-"The higher number means higher priority. An negative number can be used to "
-"indicate priority lower than the default.\n"
-"           "
-msgstr ""
-"Eğer Kendiliğinden bağlantı ayarlanırsa daha yüksek öncelikli bağlantılar "
-"tercih edilir. Öntanımlı değer 0'dır.\n"
-"Daha yüksek sayı daha yüksek öncelik anlamına gelir. Negatif sayı kullanımı "
-"öntanımlıdan daha düşük önceliği tarif etmek için kullanılabilir.\n"
-"           "
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsers)
-#: editor/settings/ui/connectionwidget.ui:48
-#, kde-format
-msgid "All users may connect to this network"
-msgstr "Bu ağa tüm kullanıcılar bağlanabilir"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
-#: editor/settings/ui/connectionwidget.ui:64
-#, kde-format
-msgid "Edit advanced permissions for this connection"
-msgstr "Bu bağlantı için gelişmiş izinleri düzenle"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
-#: editor/settings/ui/connectionwidget.ui:67
-#, kde-format
-msgid ""
-"Fine-grained permissions editor for this connection. It lets you choose "
-"which users can activate/modify/delete this connection."
-msgstr ""
-"Bu bağlantı için iyileştirilmiş izin düzenleyicisi. Bu bağlantıyı hangi "
-"kullanıcıların etkinleştirme/düzenleme/silme işlemlerini yapabileceğini "
-"seçmenizi sağlar."
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
-#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
-#, kde-format
-msgid "Advanced…"
-msgstr "Gelişmiş…"
-
-#. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
-#: editor/settings/ui/connectionwidget.ui:81
-#, kde-format
-msgid "Automatically connect to VPN"
-msgstr "VPN'e kendiliğinden bağlan"
-
-#. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
-#: editor/settings/ui/connectionwidget.ui:101
-#, kde-format
-msgid "Firewall zone:"
-msgstr "Güvenlik duvarı alanı:"
-
-#. i18n: ectx: property (text), widget (QLabel, meteredLabel)
-#: editor/settings/ui/connectionwidget.ui:130
-#, kde-format
-msgid "Metered:"
-msgstr "Ölçülen:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:150
-#, kde-format
-msgid ""
-"NetworkManager indicates to applications whether the connection is metered "
-"and therefore\n"
-"data usage should be restricted."
-msgstr ""
-"NetworkManager, uygulamalara bağlantının ölçülüp ölçülmediğini ve "
-"dolayısıyla\n"
-"veri kullanımının sınırlandırılıp sınırlandırılmaması gerektiğini iletir."
-
-#. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:160
-#, kde-format
-msgctxt "Item in the Metered: list"
-msgid "Automatic"
-msgstr "Kendiliğinden"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:165
-#, kde-format
-msgid "Yes"
-msgstr "Evet"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:170
-#, kde-format
-msgid "No"
-msgstr "Hayır"
-
-#. i18n: ectx: property (title), widget (QGroupBox, basicGroup)
-#: editor/settings/ui/gsm.ui:18
-#, kde-format
-msgid "Basic"
-msgstr "Temel"
-
-#. i18n: ectx: property (title), widget (QGroupBox, advGroup)
-#: editor/settings/ui/gsm.ui:84
-#, kde-format
-msgid "Advanced"
-msgstr "Gelişmiş"
-
-#. i18n: ectx: property (text), widget (QCheckBox, roaming)
-#: editor/settings/ui/gsm.ui:93
-#, kde-format
-msgid "Allow roaming if home network is not available"
-msgstr "Eğer ev ağı kullanılamıyorsa dolaşıma izin ver"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/gsm.ui:100
-#, kde-format
-msgid "APN:"
-msgstr "Erişim noktası adı:"
-
-#. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
-#: editor/settings/ui/gsm.ui:110
-#, kde-format
-msgid "Network ID:"
-msgstr "Ağ kimliği:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/gsm.ui:130
-#, kde-format
-msgid "PIN:"
-msgstr "PIN:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/infiniband.ui:21
-#, kde-format
-msgid "Transport mode:"
-msgstr "Taşıma kipi:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/infiniband.ui:41
-#: editor/settings/ui/wificonnectionwidget.ui:186
-#: editor/settings/ui/wiredconnectionwidget.ui:23
-#, kde-format
-msgid "Restrict to device:"
-msgstr "Aygıta sınırla:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, mtuLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/infiniband.ui:61
-#: editor/settings/ui/wificonnectionwidget.ui:249
-#: editor/settings/ui/wiredconnectionwidget.ui:89
-#: editor/settings/ui/wireguardinterfacewidget.ui:74
-#, kde-format
-msgid "MTU:"
-msgstr "MTU:"
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
-#: editor/settings/ui/infiniband.ui:80
-#: editor/settings/ui/wificonnectionwidget.ui:271
-#: editor/settings/ui/wiredconnectionwidget.ui:112
-#, kde-format
-msgctxt "MTU:"
-msgid "Automatic"
-msgstr "Kendiliğinden"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
-#: editor/settings/ui/infiniband.ui:83
-#: editor/settings/ui/wificonnectionwidget.ui:274
-#: editor/settings/ui/wiredconnectionwidget.ui:115
-#, kde-format
-msgid " bytes"
-msgstr " bayt"
-
-#. i18n: ectx: property (toolTip), widget (QWidget, IPv6Widget)
-#. i18n: ectx: property (toolTip), widget (QWidget, IPv4Widget)
-#: editor/settings/ui/ipv4.ui:17 editor/settings/ui/ipv6.ui:20
-#, kde-format
-msgid "Advanced IP settings"
-msgstr "Gelişmiş IP ayarları"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
-#, kde-format
-msgid "Method:"
-msgstr "Yöntem:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:227
-#, kde-format
-msgctxt "Method:"
-msgid "Automatic"
-msgstr "Kendiliğinden"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
-#, kde-format
-msgid "Automatic (Only addresses)"
-msgstr "Kendiliğinden (Yalnızca adresler)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
-#, kde-format
-msgid "Link-Local"
-msgstr "Yalnızca Yerel Ağ"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
-#, kde-format
-msgctxt "like in use Manual configuration"
-msgid "Manual"
-msgstr "Elle"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:69
-#, kde-format
-msgid "Shared to other computers"
-msgstr "Diğer bilgisayarlarla paylaşılan"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:74
-#, kde-format
-msgctxt "like in this setting is Disabled"
-msgid "Disabled"
-msgstr "Devre dışı"
-
-#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
-#: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:170
-#, kde-format
-msgctxt "@info"
-msgid "DNS Servers:"
-msgstr "DNS Sunucuları:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
-#: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
-#, kde-format
-msgid ""
-"Use this field to specify the IP address(es) of one or more DNS servers. Use "
-"',' to separate entries."
-msgstr ""
-"Bir ya da daha fazla DNS sunucusunun IP adresini belirtmek için bu alanı "
-"kullanın. Girdileri ayırmak için ',' kullanabilirsiniz."
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:125
-#, kde-format
-msgid "Edit DNS the list of servers"
-msgstr "DNS sunucu listesini düzenle"
-
-#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
-#: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
-#, kde-format
-msgctxt "@info"
-msgid "Search Domains:"
-msgstr "Aranacak alan adları:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
-#: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
-#, kde-format
-msgid ""
-"Use this field to specify one or more DNS domains to search. Use ',' to "
-"separate entries."
-msgstr ""
-"Bu alanı kullanarak aranacak DNS alan adlarının bir veya daha fazlasını "
-"belirtin. Girdileri ayırmak için ',' kullanın."
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
-#: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
-#, kde-format
-msgid "Edit the list of DNS domains being searched"
-msgstr "Aranan DNS alan adlarının listesini düzenle"
-
-#. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
-#: editor/settings/ui/ipv4.ui:191
-#, kde-format
-msgid "DHCP Client ID:"
-msgstr "DHCP istemcisi kimliği:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
-#: editor/settings/ui/ipv4.ui:206
-#, kde-format
-msgid ""
-"Use this field to specify the DHCP client ID which is a string sent to the "
-"DHCP server\n"
-"to identify the local machine that the DHCP server may use to customize the "
-"DHCP\n"
-"lease and options."
-msgstr ""
-"DHCP istemci kimliği belirtmek için bu alanı kullanın. DHCP istemci kimliği, "
-"yerel makinelerin, DHCP kiralama vb. seçenekleri özelleştirmeleri için DHCP "
-"sunucuya kendilerini tanıtmalarında kullanılan bir bilgidir."
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
-#: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
-#, kde-format
-msgid "Remove"
-msgstr "Kaldır"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:109
-#, kde-format
-msgid "Add"
-msgstr "Ekle"
-
-#. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
-#: editor/settings/ui/ipv4.ui:244 editor/settings/ui/ipv6.ui:127
-#: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
-#, kde-format
-msgid ""
-"IP addresses identify your computer on the network. Click the \"Add\" button "
-"to add\n"
-"an IP address"
-msgstr ""
-"IP adresleri bilgisayarınızı ağ üzerinde tanımlayan özel adresledir. Bir IP "
-"adresi eklemek için\n"
-"\"Ekle\" düğmesine tıklayın"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:282
-#, kde-format
-msgid ""
-"Allows the connection to complete if IPv4 configuration fails\n"
-"but IPv6 configuration succeeds"
-msgstr ""
-"IPv4 yapılandırması başarısız ama IPv6 yapılandırması başarılı olduğunda\n"
-"bağlantının tamamlanmasına izin verir"
-
-#. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:285
-#, kde-format
-msgid "IPv4 is required for this connection"
-msgstr "Bu bağlantı için IPv4 gerekir"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
-#: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
-#, kde-format
-msgid "Routes…"
-msgstr "Rotalar…"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
-#: editor/settings/ui/ipv6.ui:30
-#, kde-format
-msgid ""
-"When connecting to IPv4-capable networks, allows the connection to complete "
-"if\n"
-"IPv6 configuration fails but IPv4 configuration succeeds"
-msgstr ""
-"IPv4 destekli ağlara bağlanırken, IPv6 yapılandırması başarısız olmasına "
-"rağmen\n"
-"IPv4 yapılandırması başarılı olduğunda, bağlantının kurulmasına olanak sağlar"
-
-#. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
-#: editor/settings/ui/ipv6.ui:33
-#, kde-format
-msgid "IPv6 is required for this connection"
-msgstr "Bu bağlantı için IPv6 gerekir"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv6.ui:83
-#, kde-format
-msgid "Edit the list of DNS servers"
-msgstr "DNS sunucu listesini düzenle"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:193
-#, kde-format
-msgid ""
-"Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-"enabled, it makes the kernel generate\n"
-"a temporary IPv6 address in addition to the public one generated from MAC "
-"address via modified EUI-64."
-msgstr ""
-"RFC4941 de tanımlandığı gibi SLAAC için IPv6 Gizlilik Eklentisini "
-"yapılandır. Etkinse, MAC adresinden değiştirilmiş EUI-64\n"
-"vasıtasıyla üretilen adrese ek olarak, kernele geçici bir IPv6 adresi "
-"aldırıacaktır."
-
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:202
-#, kde-format
-msgctxt "privacy disabled"
-msgid "Disabled"
-msgstr "Devre dışı"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:207
-#, kde-format
-msgid "Enabled (prefer public address)"
-msgstr "Etkin (genel adresi tercih et)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:212
-#, kde-format
-msgid "Enabled (prefer temporary addresses)"
-msgstr "Etkin (geçici adresleri tercih et)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:237
-#, kde-format
-msgid "Automatic (Only DHCP)"
-msgstr "Kendiliğinden (Yalnızca DHCP)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:252
-#, kde-format
-msgctxt "like in this setting is Disabled"
-msgid "Ignored"
-msgstr "Yok sayılmış"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:257
-#, kde-format
-msgid "Disabled"
-msgstr "Devre dışı"
-
-#. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
-#: editor/settings/ui/ipv6.ui:335
-#, kde-format
-msgid "Privacy:"
-msgstr "Gizlilik:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, authGroup)
-#: editor/settings/ui/ppp.ui:23
-#, kde-format
-msgid "Authentication"
-msgstr "Kimlik Doğrulama"
-
-#. i18n: ectx: property (text), widget (QCheckBox, eap)
-#: editor/settings/ui/ppp.ui:38
-#, kde-format
-msgid "EAP"
-msgstr "EAP"
-
-#. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
-#: editor/settings/ui/ppp.ui:91
-#, kde-format
-msgid "Compression"
-msgstr "Sıkıştırma"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mppe)
-#: editor/settings/ui/ppp.ui:109
-#, kde-format
-msgid "Use point-to-point encryption (MPPE)"
-msgstr "Noktadan Noktaya Şifreleme (MPPE) Kullan"
-
-#. i18n: ectx: property (text), widget (QCheckBox, bsdComp)
-#: editor/settings/ui/ppp.ui:116
-#, kde-format
-msgid "Use BSD data compression"
-msgstr "BSD veri sıkıştırması kullan"
-
-#. i18n: ectx: property (text), widget (QCheckBox, deflateComp)
-#: editor/settings/ui/ppp.ui:126
-#, kde-format
-msgid "Use Deflate data compression"
-msgstr "Yayılmış sıkıştırma kullan"
-
-#. i18n: ectx: property (text), widget (QCheckBox, tcpComp)
-#: editor/settings/ui/ppp.ui:136
-#, kde-format
-msgid "Use TCP header compression"
-msgstr "TCP başlık sıkıştırması kullan"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mppe128)
-#: editor/settings/ui/ppp.ui:152
-#, kde-format
-msgid "Require 128-bit encryption"
-msgstr "128 bit şifreleme gerektir"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mppeStateful)
-#: editor/settings/ui/ppp.ui:165
-#, kde-format
-msgid "Use stateful MPPE"
-msgstr "Durumlu MPPE kullan"
-
-#. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
-#: editor/settings/ui/ppp.ui:175
-#, kde-format
-msgid "Echo"
-msgstr "Yankı"
-
-#. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
-#: editor/settings/ui/ppp.ui:184
-#, kde-format
-msgid "Send PPP echo packets"
-msgstr "PPP yankı paketleri gönder"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/pppoe.ui:20
-#, kde-format
-msgid "Service:"
-msgstr "Hizmet:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, service)
-#: editor/settings/ui/pppoe.ui:30
-#, kde-format
-msgid ""
-"If specified, instruct PPPoE to only initiate sessions with access "
-"concentrators that provide the specified service. For most providers, this "
-"should be left blank. It is only required if there are multiple access "
-"concentrators or a specific service is known to be required."
-msgstr ""
-"Belirtilmişse PPPoE'ye, yalnızca belirtilen hizmetleri sağlayan erişim "
-"yoğunlaştırıcıları olan oturumları başlatması için talimat verir. Bir çok "
-"sağlayıcı için burasu boş bırakılmalıdır. Yalnızca birden çok erişim "
-"toplayıcısı varsa veya belirli bir hizmetin gerekli olduğu biliniyorsa "
-"kullanılır."
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/team.ui:31
-#, kde-format
-msgid "Teamed connections:"
-msgstr "Gruplanmış bağlantılar:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/team.ui:113
-#, kde-format
-msgid "JSON config:"
-msgstr "JSON yapılandırması:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnImport)
-#: editor/settings/ui/team.ui:123
-#, kde-format
-msgid "Import configuration from file…"
-msgstr "Dosyadan yapılandırmayı içe aktar…"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/vlan.ui:18
-#, kde-format
-msgid "Parent interface:"
-msgstr "Üst arayüz:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/vlan.ui:41
-#, kde-format
-msgid "VLAN id:"
-msgstr "VLAN kimliği:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/vlan.ui:64
-#, kde-format
-msgid "VLAN interface name:"
-msgstr "VLAN arayüz adı:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, reorderHeaders)
-#: editor/settings/ui/vlan.ui:77
-#, kde-format
-msgid "Output packet headers reordering"
-msgstr "Çıktı paket başlık yeniden sıralaması"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, gvrp)
-#: editor/settings/ui/vlan.ui:84
-#, kde-format
-msgid "GARP VLAN Registration Protocol"
-msgstr "GARP VLAN Kayıt Protokolü"
-
-#. i18n: ectx: property (text), widget (QCheckBox, gvrp)
-#: editor/settings/ui/vlan.ui:87
-#, kde-format
-msgid "GVRP"
-msgstr "GVRP"
-
-#. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
-#: editor/settings/ui/vlan.ui:94
-#, kde-format
-msgid "Loose binding"
-msgstr "Geniş bağlama"
-
-#. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:17
-#, kde-format
-msgid "SSID:"
-msgstr "SSID:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:63
-#, kde-format
-msgid "Infrastructure"
-msgstr "Altyapı"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:68
-#, kde-format
-msgid "Ad-hoc"
-msgstr "Ad-hoc"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:73
-#, kde-format
-msgid "Access Point"
-msgstr "Erişim Noktası"
-
-#. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:81
-#, kde-format
-msgid "BSSID:"
-msgstr "BSSID:"
-
-#. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
-#: editor/settings/ui/wificonnectionwidget.ui:101
-#, kde-format
-msgid ""
-"This option locks this connection to the Wi-Fi access point (AP) specified "
-"by the\n"
-" BSSID entered here. Example: 00:11:22:33:44:55"
-msgstr ""
-"Bu seçenek bu bağlantını mında kirsetilgen BSSID tarafından belirtilgen "
-"Telsiz-Vefa irişim noqtasına (AP) kilitler.\n"
-" Örnek: 00:11:22:33:44:55"
-
-#. i18n: ectx: property (text), widget (QLabel, bandLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:117
-#, kde-format
-msgid "Band:"
-msgstr "Bant:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:137
-#, kde-format
-msgid ""
-"This option locks the connection to the Wi-Fi network associated to the "
-"specified band. This setting depends\n"
-" on specific driver capability and may not work with all drivers"
-msgstr ""
-"Bu seçenek, belirtili bantta birleşmiş Wi-Fi ağ için bağlantı kilitlemek "
-"içindir. Bu ayar,\n"
-" belirli sürücü özelliklerin bağlıdır ve her sürücü tarafından desteklenmez"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:141
-#, kde-format
-msgctxt "Band:"
-msgid "Automatic"
-msgstr "Kendiliğinden"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:146
-#, kde-format
-msgid "A (5 GHz)"
-msgstr "A (5 GHz)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:151
-#, kde-format
-msgid "B/G (2.4 GHz)"
-msgstr "B/G (2,4 GHz)"
-
-#. i18n: ectx: property (text), widget (QLabel, channelLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:159
-#, kde-format
-msgid "Channel:"
-msgstr "Kanal:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, channel)
-#: editor/settings/ui/wificonnectionwidget.ui:179
-#, kde-format
-msgid ""
-"Wireless channel to use for the Wi-Fi connection. The device will only join "
-"(or create for Ad-Hoc networks)\n"
-"a Wi-Fi network on the specified channel"
-msgstr ""
-"Wi-Fi bağlantısı için kullanılacak kablosuz kanalı. Aygıt yalnızca "
-"belirtilen kanaldaki Wi-Fi ağına katılacaktır\n"
-"(veya Ad-Hoc ağlar için bağlantı oluşturacaktır)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wificonnectionwidget.ui:209
-#: editor/settings/ui/wiredconnectionwidget.ui:47
-#, kde-format
-msgid "Cloned MAC address:"
-msgstr "Klonlanmış MAC adresi:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
-#: editor/settings/ui/wificonnectionwidget.ui:240
-#, kde-format
-msgid "Random…"
-msgstr "Rastgele"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, label_4)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
-#: editor/settings/ui/wificonnectionwidget.ui:287
-#: editor/settings/ui/wificonnectionwidget.ui:303
-#, kde-format
-msgid "Mark this if you want to create a connection for a hidden network"
-msgstr "Eğer gizli bir ağ için bağlantı oluşturmak isterseniz bunu işaretleyin"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/wificonnectionwidget.ui:290
-#, kde-format
-msgid "Visibility:"
-msgstr "Görünürlük:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
-#: editor/settings/ui/wificonnectionwidget.ui:306
-#, kde-format
-msgid "Hidden network"
-msgstr "Gizli ağ"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
-#: editor/settings/ui/wifisecurity.ui:15
-#, kde-format
-msgid "Wifi Security"
-msgstr "Wi-Fi Güvenliği"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:28
-#, kde-format
-msgctxt "no security"
-msgid "None"
-msgstr "Hiçbiri"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:33
-#, kde-format
-msgid "WEP key 40/128 bits (Hex or ASCII)"
-msgstr "WEP anahtarı 40/128 bits (Onaltılık veya ASCII)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:38
-#, kde-format
-msgid "WEP key 128 bits"
-msgstr "WEP anahtarı 128 bit"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:48
-#, kde-format
-msgid "Dynamic WEP (802.1x)"
-msgstr "Dinamik WEP (802.1x)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:53
-#, kde-format
-msgid "WPA/WPA2 Personal"
-msgstr "WPA/WPA2 Kişisel"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:58
-#, kde-format
-msgid "WPA/WPA2 Enterprise"
-msgstr "WPA/WPA2 Kurumsal"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:63
-#, kde-format
-msgid "WPA3 Personal"
-msgstr "WPA3 Kişisel"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:68
-#, kde-format
-msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA3 Kurumsal 192 bit"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/wifisecurity.ui:76
-#, kde-format
-msgid "Security:"
-msgstr "Güvenlik:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wifisecurity.ui:97
-#, kde-format
-msgid "Key:"
-msgstr "Anahtar:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/wifisecurity.ui:117
-#, kde-format
-msgid "WEP index:"
-msgstr "WEP indeksi:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:134
-#, kde-format
-msgid "1 (default)"
-msgstr "1 (Öntanımlı)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:139
-#, kde-format
-msgid "2"
-msgstr "2"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:144
-#, kde-format
-msgid "3"
-msgstr "3"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:149
-#, kde-format
-msgid "4"
-msgstr "4"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:174
-#, kde-format
-msgid "Open System"
-msgstr "Açık Sistem"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:179
-#, kde-format
-msgid "Shared Key"
-msgstr "Paylaşılan Anahtar"
-
-#. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
-#: editor/settings/ui/wiredconnectionwidget.ui:40
-#, kde-format
-msgid ""
-"This option locks this connection to the network device specified by its\n"
-"permanent MAC address entered here. Example: 00:11:22:33:44:55"
-msgstr ""
-"Bu seçenek burada girilen kalıcı MAC adreslerine göre belirlenen ağ "
-"aygıtlarına\n"
-"olan bağlantıyı kilitler. Örneğin: 00:11:22:33:44:55"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
-#: editor/settings/ui/wiredconnectionwidget.ui:67
-#, kde-format
-msgid ""
-"The MAC address entered here will be used as hardware address for the\n"
-"network device this connection is activated on. This feature is known as "
-"MAC\n"
-"cloning or spoofing. Example 11:22:33:44:55"
-msgstr ""
-"Buraya girilen MAC adresi, bu bağlantı etkinleştirildiğinde donanım adresi\n"
-"olarak kullanılacak. Bu özellik MAC çoklama ya da aldatma olarak bilinir.\n"
-"Örneğin: 11:22:33:44:55"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
-#: editor/settings/ui/wiredconnectionwidget.ui:80
-#, kde-format
-msgid "Random"
-msgstr "Rastgele"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
-#: editor/settings/ui/wiredconnectionwidget.ui:106
-#, kde-format
-msgid ""
-"Only transmit packets of the specified size or smaller, breaking larger "
-"packets up\n"
-"into multiple Ethernet frames"
-msgstr ""
-"Yalnızca belirtilen boyutta veya daha küçük paketleri geçirir, daha büyük "
-"paketleri\n"
-"çoklu Ethernet çerçevelerine ayırır"
-
-#. i18n: ectx: property (text), widget (QLabel, speedLabel)
-#: editor/settings/ui/wiredconnectionwidget.ui:125
-#, kde-format
-msgid "Speed:"
-msgstr "Hız:"
-
-#. i18n: ectx: property (text), widget (QLabel, duplexLabel)
-#: editor/settings/ui/wiredconnectionwidget.ui:132
-#, kde-format
-msgid "Duplex:"
-msgstr "Çift yönlü:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
-#: editor/settings/ui/wiredconnectionwidget.ui:151
-#, kde-format
-msgid ""
-"Request that the device use the specified duplex mode. Either \"half\" or "
-"\"full\""
-msgstr ""
-"Aygıtın belirtilen dupleks kipinde çalışmasına izin verir. \"half\" veya "
-"\"full\" olabilir."
-
-#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
-#: editor/settings/ui/wiredconnectionwidget.ui:158
-#, kde-format
-msgid "Half"
-msgstr "Yarım"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
-#: editor/settings/ui/wiredconnectionwidget.ui:163
-#, kde-format
-msgid "Full"
-msgstr "Tam"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/wiredconnectionwidget.ui:174
-#, kde-format
-msgid "Link negotiation:"
-msgstr "Bağlantı pazarlığı:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:188
-#, kde-format
-msgid ""
-"Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
-"will be forced without checking\n"
-"the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
-msgstr ""
-"Aygıt bağlantı pazarlığı. Eğer 'Elle' seçilmişse 'Hız' ve 'Çift Yönlü' "
-"değerleri\n"
-"aygıt uyumluluğu denetlenmeden zorlanacaktır. Emin değilseniz 'Yok Say'ı\n"
-"bırakın ve 'Kendiliğinden'i seçin."
-
-#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:192
-#, kde-format
-msgid "Ignore"
-msgstr "Yok say"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:197
-#, kde-format
-msgctxt "Link negotiation:"
-msgid "Automatic"
-msgstr "Kendiliğinden"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:202
-#, kde-format
-msgid "Manual"
-msgstr "Elle"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:219
-#, kde-format
-msgid "Request that the device use only the specified speed."
-msgstr "Aygıtın yalnızca belirtilen hızı kullanmasını isteyin."
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:226
-#, kde-format
-msgid "10 Mb/s"
-msgstr "10 Mb/sn"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:231
-#, kde-format
-msgid "100 Mb/s"
-msgstr "100 Mb/sn"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:236
-#, kde-format
-msgid "1 Gb/s"
-msgstr "1 Gb/sn"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:241
-#, kde-format
-msgid "2.5 Gb/s"
-msgstr "2,5 Gb/sn"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:246
-#, kde-format
-msgid "5 Gb/s"
-msgstr "5 Gb/sn"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:251
-#, kde-format
-msgid "10 Gb/s"
-msgstr "10 Gb/sn"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:256
-#, kde-format
-msgid "40 Gb/s"
-msgstr "40 Gb/sn"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:261
-#, kde-format
-msgid "100 Gb/s"
-msgstr "100 Gb/sn"
-
-#. i18n: ectx: property (text), widget (QCheckBox, use8021X)
-#: editor/settings/ui/wiredsecurity.ui:17
-#, kde-format
-msgid "Use 802.1x security for this connection"
-msgstr "Bu bağlantı için 802.1x güvenliğini kullan"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
-#: editor/settings/ui/wireguardinterfacewidget.ui:14
-#, kde-format
-msgid "WireGuard Settings"
-msgstr "WireGuard Ayarları"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: editor/settings/ui/wireguardinterfacewidget.ui:20
-#, kde-format
-msgid "Interface"
-msgstr "Arayüz"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, kde-format
-msgid ""
-"Required.\n"
-"A base64 private key generated by wg genkey."
-msgstr ""
-"Zorunlu.\n"
-"wg genkey tarafından oluşturulan bir base64 özel anahtarı."
-
-#. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:41
-#, kde-format
-msgid "Listen port:"
-msgstr "Kapıyı dinle:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:49
-#, kde-format
-msgid ""
-"Optional.\n"
-"Listen port number. Chosen randomly if left as 'Automatic'."
-msgstr ""
-"İsteğe bağlı.\n"
-"Dinlenecek kapı numarası. 'Kendiliğinden' ise rastgele seçilir."
-
-#. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:57
-#, kde-format
-msgid "fwmark:"
-msgstr "fwmark:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:67
-#, kde-format
-msgid ""
-"Optional.\n"
-"An fwmark for outgoing packets. If set to 0 or 'off', this\n"
-"option is disabled. May be specified in hexadecimal by\n"
-"prepending '0x'."
-msgstr ""
-"İsteğe bağlı.\n"
-"Giden paketler için bir fwmark. 0 veya 'off' olarak ayarlanırsa\n"
-"bu seçenek devre dışı bırakılır. 0x ile öneklenirse onaltılık\n"
-"olarak da belirtilebilir."
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:86
-#, kde-format
-msgid ""
-"Optional.\n"
-"If not specified, the MTU is automatically determined\n"
-"from the endpoint addresses or the system default route,\n"
-"which is usually a sane choice. However, to manually\n"
-"specify an MTU and to override this automatic discovery,\n"
-"this value may be specified explicitly."
-msgstr ""
-"İsteğe bağlı.\n"
-"Belirtilmezse MTU son uç adreslerinden veya sistem öntanımlı\n"
-"rotasından oluşturulur; genelde de düzgün bir seçimdir. Ancak;\n"
-"bir MTU'yu elle belirtmek ve bu kendiliğinden keşfi devre dışı\n"
-"bırakmak için bu değer açıkça belirtilmelidir."
-
-#. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:93
-#, kde-format
-msgid "Autoroute peers:"
-msgstr "Kendiliğinden rota eşleri:"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
-#: editor/settings/ui/wireguardinterfacewidget.ui:101
-#, kde-format
-msgid ""
-"Whether to automatically add routes for the AllowedIPs ranges\n"
-"of the peers."
-msgstr ""
-"Eşlerin izin verilen IP erimleri için kendiliğinden olarak rota\n"
-"eklenip eklenmeyeceği."
-
-#. i18n: ectx: property (text), widget (QPushButton, btnPeers)
-#: editor/settings/ui/wireguardinterfacewidget.ui:126
-#, kde-format
-msgid "Peers…"
-msgstr "Eşler…"
-
-#. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:17
-#, kde-format
-msgid "Public key:"
-msgstr "Genel anahtar:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, publicKeyLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:27
-#, kde-format
-msgid ""
-"Required.\n"
-"            A base64 public key calculated by wg pubkey \n"
-"            from a private key, and usually transmitted \n"
-"            out of band to the author of the configuration file."
-msgstr ""
-"Zorunlu.\n"
-"            wg pubkey tarafından hesaplanan bir base64 genel \n"
-"            anahtar; genelde yapılandırma dosyasının yazarına \n"
-"            bant dışı olarak iletilir."
-
-#. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:34
-#, kde-format
-msgid "Allowed IPs:"
-msgstr "İzin verilen IP'ler:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, allowedIPsLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:47
-#, kde-format
-msgid ""
-"Required.\n"
-"            A comma-separated list of IP (v4 or v6) addresses \n"
-"            with CIDR masks from which incoming traffic for \n"
-"            this peer is allowed and to which outgoing traffic \n"
-"            for this peer is directed. The catch-all 0.0.0.0/0 \n"
-"            may be specified for matching all IPv4 addresses, \n"
-"            and ::/0 may be specified for matching all IPv6 addresses."
-msgstr ""
-"Zorunlu.\n"
-"            Bu eşten hangi gelen/giden trafiğe izin verildiğini yönetmek\n"
-"            için CIDR maskeli IP (v4 veya v6) adreslerinin virgülle "
-"ayrılmış\n"
-"            listesi. catch-all 0.0.0.0/0, tüm IPv4 adreslerini yakalamak "
-"için\n"
-"            belirtilebilir ve tüm IPv6 adresleriyle eşleşmek için ::/0\n"
-"            belirtilebilir."
-
-#. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:55
-#, kde-format
-msgid "Endpoint address:"
-msgstr "Son uç adresi:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:66
-#, kde-format
-msgid ""
-"Optional.\n"
-"            An endpoint for the connection. Can be an\n"
-"            IPv4 address, IPv6 address, or FQDN (fully\n"
-"            qualified domain name such as abc.com). If\n"
-"            present, Endpoint port must also be set."
-msgstr ""
-"İsteğe bağlı.\n"
-"            Bağlantı için bir son uç. Bir IPv4 veya IPv6\n"
-"            adresi veya bir FQDN (tam bir alan adı, örn.\n"
-"            abc.com) olabilir. Eğer varsa Son Uç Kapısı da\n"
-"            ayarlanmış olmalıdır."
-
-#. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:74
-#, kde-format
-msgid "Endpoint port:"
-msgstr "Son uç kapısı:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:83
-#, kde-format
-msgid ""
-"Optional.\n"
-"            The port number of an endpoint. If present Endpoint\n"
-"            Address must also be set."
-msgstr ""
-"İsteğe bağlı.\n"
-"            Bir son ucun kapı numarası. Varsa Son Uç Adresi de             "
-"ayarlanmalıdır."
-
-#. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:91
-#, kde-format
-msgid "Preshared key:"
-msgstr "Önden paylaşılan anahtar:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:102
-#, kde-format
-msgid ""
-"Optional.\n"
-"            A base64 preshared key generated by wg genpsk.\n"
-"            This option adds an additional layer of symmetric-key\n"
-"            cryptography to be mixed into the already existing\n"
-"            public-key cryptography, for post-quantum resistance."
-msgstr ""
-"İsteğe bağlı.\n"
-"            wg genpsk tarafından oluşturulan bir base64 ön\n"
-"            paylaşımlı anahtar. Bu seçenek, halihazırda var\n"
-"            olan genel anahtar şifrelemesine ek olarak ek bir\n"
-"            simetrik anahtar şifrelemesi ekler."
-
-#. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:109
-#, kde-format
-msgid "Persistent keepalive:"
-msgstr "Israrcı yaşama bağlı tutma:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:127
-#, kde-format
-msgid ""
-"Optional.\n"
-"            A seconds interval, between 1 and 65535 inclusive, of\n"
-"            how often to send an authenticated empty packet to\n"
-"            the peer for the purpose of keeping a stateful firewall\n"
-"            or NAT mapping valid persistently. For example, if the\n"
-"            interface very rarely sends traffic, but it might at\n"
-"            anytime receive traffic from a peer, and it is behind\n"
-"            NAT, the interface might benefit from having a\n"
-"            persistent keepalive interval of 25 seconds. If set to\n"
-"            0 or \"off\", this option is disabled. By default or\n"
-"            when unspecified, this option is off. Most users will not\n"
-"            need this."
-msgstr ""
-"İsteğe bağlı.\n"
-"            Bir NAT eşlemlemesini geçerli tutmak veya güvenlik duvarını\n"
-"            çalışır tutmak için gönderilecek kimlik doğrulanmış paketin\n"
-"            ne kadar aralıklarla gönderileceğini belirtmek için kullanılan\n"
-"            1 ve 65535 dahil olmak üzere saniye aralığı.\n"
-"            Örneğin, arabirim çok az trafik gönderiyorsa; ancak herhangi\n"
-"            bir zamanda bir eşten trafik alabilirse ve NAT arkasındaysa\n"
-"            arabirim 25 saniyelik düzenli bir yaşama bağlı tutma işleminden\n"
-"            yarar sağlayabilir. 0 veya \"off\" olarak ayarlanmışsa bu\n"
-"            seçenek devre dışıdır. Çoğu kullanıcı bu ayara gereksinim\n"
-"            duymayacaktır."
-
-#. i18n: ectx: attribute (title), widget (QWidget, tab)
-#: editor/settings/ui/wireguardtabwidget.ui:24
-#, kde-format
-msgid "Peer 1"
-msgstr "Eş 1"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/wireguardtabwidget.ui:37
-#, kde-format
-msgid "Add new Peer"
-msgstr "Yeni Eş EKle"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
-#: editor/settings/ui/wireguardtabwidget.ui:44
-#, kde-format
-msgid "Remove this Peer"
-msgstr "Bu Eşi Kaldır"
 
 #: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
@@ -3225,100 +1551,6 @@ msgstr ""
 "Güvenlik: Güvenli Değil\n"
 "Frekans: %3 Mhz"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/widgets/ui/advancedpermissionswidget.ui:33
-#, kde-format
-msgid "Available Users"
-msgstr "Uygun Kullanıcılar"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
-#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
-#: editor/widgets/ui/advancedpermissionswidget.ui:83
-#: editor/widgets/ui/advancedpermissionswidget.ui:213
-#, kde-format
-msgid "Real Name"
-msgstr "Gerçek Ad"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
-#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
-#: editor/widgets/ui/advancedpermissionswidget.ui:88
-#: editor/widgets/ui/advancedpermissionswidget.ui:218
-#, kde-format
-msgctxt "like in Username for athentication"
-msgid "Username"
-msgstr "Kullanıcı adı"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/widgets/ui/advancedpermissionswidget.ui:160
-#, kde-format
-msgid "Users allowed to activate the connection"
-msgstr "Bağlantıyı etkinleştirebilecek kullanıcılar"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
-#: editor/widgets/ui/ipv4routes.ui:20
-#, kde-format
-msgid "Edit IPv4 Routes"
-msgstr "IPv4 Rotalarını Düzenle"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
-#: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
-#, kde-format
-msgid ""
-"If enabled, this connection will never be used as the default network "
-"connection"
-msgstr ""
-"Etkinleştirilirse, bu bağlantı asla öntanımlı şebeke bağlantısı olarak "
-"kullanılamaz"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
-#: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
-#, kde-format
-msgid "Use only for resources on this connection"
-msgstr "Yalnızca bu bağlantıdaki özkaynaklar için kullan"
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
-#: editor/widgets/ui/ipv4routes.ui:74
-#, kde-format
-msgctxt "Remove a selected row"
-msgid "Remove"
-msgstr "Kaldır"
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
-#: editor/widgets/ui/ipv4routes.ui:124 editor/widgets/ui/ipv6routes.ui:77
-#, kde-format
-msgctxt "Insert a row"
-msgid "Add"
-msgstr "Ekle"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbIgnoreAutoRoutes)
-#: editor/widgets/ui/ipv4routes.ui:136 editor/widgets/ui/ipv6routes.ui:120
-#, kde-format
-msgid ""
-"If enabled, automatically configured routes are ignored and only routes "
-"specified above are used"
-msgstr ""
-"Etkinleştirilirse kendiliğinden yapılandırılan rotalar yerine yalnızca "
-"yukarıda belirtilen rotalar kullanılır"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
-#: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
-#, kde-format
-msgid "Ignore automatically obtained routes"
-msgstr "Kendiliğinden elde edilen rotaları yok say"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
-#: editor/widgets/ui/ipv6routes.ui:20
-#, kde-format
-msgid "Edit IPv6 Routes"
-msgstr "IPv6 Rotalarını Düzenle"
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
-#: editor/widgets/ui/ipv6routes.ui:92
-#, kde-format
-msgctxt "Remove a selected row"
-msgid "R&emove"
-msgstr "&Kaldır"
-
 #: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
@@ -3745,6 +1977,982 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "Aygıt"
+
+#~ msgid "Connection name:"
+#~ msgstr "Bağlantı adı:"
+
+#~ msgid "Authentication:"
+#~ msgstr "Kimlik doğrulama:"
+
+#~ msgid "MD5"
+#~ msgstr "MD5"
+
+#~ msgid "TLS"
+#~ msgstr "TLS"
+
+#~ msgid "LEAP"
+#~ msgstr "LEAP"
+
+#~ msgid "PWD"
+#~ msgstr "PWD"
+
+#~ msgid "FAST"
+#~ msgstr "HIZLI"
+
+#~ msgid "Tunneled TLS (TTLS)"
+#~ msgstr "Tünellenmiş TLS (TTLS)"
+
+#~ msgid "Protected EAP (PEAP)"
+#~ msgstr "Korunan EAP (PEAP)"
+
+#~ msgid "Username:"
+#~ msgstr "Kullanıcı adı:"
+
+#~ msgid "Password:"
+#~ msgstr "Parola:"
+
+#~ msgid "Identity:"
+#~ msgstr "Kimlik:"
+
+#~ msgid "Domain:"
+#~ msgstr "Alan adı:"
+
+#~ msgid "User certificate:"
+#~ msgstr "Kullanıcı sertifikası:"
+
+#~ msgid "CA certificate:"
+#~ msgstr "CA sertifikası:"
+
+#~ msgid "Subject match:"
+#~ msgstr "Konu eşleşmesi:"
+
+#~ msgid "Alternative subject matches:"
+#~ msgstr "Alternatif konu eşleşmeleri:"
+
+#~ msgid "…"
+#~ msgstr "…"
+
+#~ msgid "Connect to these servers:"
+#~ msgstr "Bu sunuculara bağlan:"
+
+#~ msgid "Private key:"
+#~ msgstr "Gizli anahtar:"
+
+#~ msgid "Private key password:"
+#~ msgstr "Gizli anahtar parolası:"
+
+#~ msgid "Anonymous identity:"
+#~ msgstr "Anonim kimlik:"
+
+#~ msgid "Automatic PAC provisioning"
+#~ msgstr "Kendiliğinden PAC sağlama"
+
+#~ msgid "Anonymous"
+#~ msgstr "Anonim"
+
+#~ msgid "Authenticated"
+#~ msgstr "Onaylanmış"
+
+#~ msgid "Both"
+#~ msgstr "Her ikisi de"
+
+#~ msgid "PAC file:"
+#~ msgstr "PAC dosyası:"
+
+#~ msgid "Inner authentication:"
+#~ msgstr "Dahili doğrulama:"
+
+#~ msgid "GTC"
+#~ msgstr "GTC"
+
+#~ msgid "MSCHAPv2"
+#~ msgstr "MSCHAPv2"
+
+#~ msgid "PAP"
+#~ msgstr "PAP"
+
+#~ msgid "MSCHAP"
+#~ msgstr "MSCHAP"
+
+#~ msgid "CHAP"
+#~ msgstr "CHAP"
+
+#~ msgid "PEAP version:"
+#~ msgstr "PEAP sürümü:"
+
+#~ msgctxt "PEAP version"
+#~ msgid "Automatic"
+#~ msgstr "Kendiliğinden"
+
+#~ msgid "Version 0"
+#~ msgstr "Sürüm 0"
+
+#~ msgid "Version 1"
+#~ msgstr "Sürüm 1"
+
+#~ msgid "Interface name:"
+#~ msgstr "Arayüz adı:"
+
+#~ msgid "Bonded connections:"
+#~ msgstr "Bağlanmış bağlantılar:"
+
+#~ msgid "Add…"
+#~ msgstr "Ekle"
+
+#~ msgid "Edit…"
+#~ msgstr "Düzenle…"
+
+#~ msgid "Delete"
+#~ msgstr "Sil"
+
+#~ msgid "Mode:"
+#~ msgstr "Kip:"
+
+#~ msgid "Link monitoring:"
+#~ msgstr "Bağlantı izleme:"
+
+#~ msgid "Monitoring frequency:"
+#~ msgstr "İzleme frekansı:"
+
+#~ msgid " ms"
+#~ msgstr " ms"
+
+#~ msgid "Link up delay:"
+#~ msgstr "Giden bağlantı gecikmesi:"
+
+#~ msgid "Link down delay:"
+#~ msgstr "Gelen bağlantı gecikmesi:"
+
+#~ msgid "ARP targets:"
+#~ msgstr "ARP hedefleri:"
+
+#~ msgid "An IP address or comma-separated list of addresses."
+#~ msgstr "Bir IP adresi veya adreslerin virgülle ayrılmış listesi."
+
+#~ msgid "Bridged connections:"
+#~ msgstr "Köprülenmiş bağlantılar:"
+
+#~ msgid "Aging time:"
+#~ msgstr "Yaşlandırma zamanı:"
+
+#~ msgctxt "seconds"
+#~ msgid " s"
+#~ msgstr " sn"
+
+#~ msgid "Enable STP (Spanning Tree Protocol)"
+#~ msgstr "STP'yi Etkinleştir (Yayılım Ağacı Protokolü)"
+
+#~ msgid "Priority:"
+#~ msgstr "Öncelik:"
+
+#~ msgid "Forward delay:"
+#~ msgstr "İletme gecikmesi:"
+
+#~ msgid "Hello time:"
+#~ msgstr "Merhaba zamanı:"
+
+#~ msgid "Max age:"
+#~ msgstr "En fazla yaş:"
+
+#~ msgid "Address of the device:"
+#~ msgstr "Aygıt adresi:"
+
+#~ msgid "Connection type:"
+#~ msgstr "Bağlantı türü:"
+
+#~ msgid "Number:"
+#~ msgstr "Sayı:"
+
+#~ msgid "Connect automatically with priority"
+#~ msgstr "Kendiliğinden öncelikli bağlan"
+
+#~ msgid ""
+#~ "If the connection is set to autoconnect, connections with higher priority "
+#~ "will be preferred. Defaults to 0.\n"
+#~ "The higher number means higher priority. An negative number can be used "
+#~ "to indicate priority lower than the default.\n"
+#~ "           "
+#~ msgstr ""
+#~ "Eğer Kendiliğinden bağlantı ayarlanırsa daha yüksek öncelikli bağlantılar "
+#~ "tercih edilir. Öntanımlı değer 0'dır.\n"
+#~ "Daha yüksek sayı daha yüksek öncelik anlamına gelir. Negatif sayı "
+#~ "kullanımı öntanımlıdan daha düşük önceliği tarif etmek için "
+#~ "kullanılabilir.\n"
+#~ "           "
+
+#~ msgid "All users may connect to this network"
+#~ msgstr "Bu ağa tüm kullanıcılar bağlanabilir"
+
+#~ msgid "Edit advanced permissions for this connection"
+#~ msgstr "Bu bağlantı için gelişmiş izinleri düzenle"
+
+#~ msgid ""
+#~ "Fine-grained permissions editor for this connection. It lets you choose "
+#~ "which users can activate/modify/delete this connection."
+#~ msgstr ""
+#~ "Bu bağlantı için iyileştirilmiş izin düzenleyicisi. Bu bağlantıyı hangi "
+#~ "kullanıcıların etkinleştirme/düzenleme/silme işlemlerini yapabileceğini "
+#~ "seçmenizi sağlar."
+
+#~ msgid "Advanced…"
+#~ msgstr "Gelişmiş…"
+
+#~ msgid "Automatically connect to VPN"
+#~ msgstr "VPN'e kendiliğinden bağlan"
+
+#~ msgid "Firewall zone:"
+#~ msgstr "Güvenlik duvarı alanı:"
+
+#~ msgid "Metered:"
+#~ msgstr "Ölçülen:"
+
+#~ msgid ""
+#~ "NetworkManager indicates to applications whether the connection is "
+#~ "metered and therefore\n"
+#~ "data usage should be restricted."
+#~ msgstr ""
+#~ "NetworkManager, uygulamalara bağlantının ölçülüp ölçülmediğini ve "
+#~ "dolayısıyla\n"
+#~ "veri kullanımının sınırlandırılıp sınırlandırılmaması gerektiğini iletir."
+
+#~ msgctxt "Item in the Metered: list"
+#~ msgid "Automatic"
+#~ msgstr "Kendiliğinden"
+
+#~ msgid "Yes"
+#~ msgstr "Evet"
+
+#~ msgid "No"
+#~ msgstr "Hayır"
+
+#~ msgid "Basic"
+#~ msgstr "Temel"
+
+#~ msgid "Advanced"
+#~ msgstr "Gelişmiş"
+
+#~ msgid "Allow roaming if home network is not available"
+#~ msgstr "Eğer ev ağı kullanılamıyorsa dolaşıma izin ver"
+
+#~ msgid "APN:"
+#~ msgstr "Erişim noktası adı:"
+
+#~ msgid "Network ID:"
+#~ msgstr "Ağ kimliği:"
+
+#~ msgid "PIN:"
+#~ msgstr "PIN:"
+
+#~ msgid "Transport mode:"
+#~ msgstr "Taşıma kipi:"
+
+#~ msgid "Restrict to device:"
+#~ msgstr "Aygıta sınırla:"
+
+#~ msgid "MTU:"
+#~ msgstr "MTU:"
+
+#~ msgctxt "MTU:"
+#~ msgid "Automatic"
+#~ msgstr "Kendiliğinden"
+
+#~ msgid " bytes"
+#~ msgstr " bayt"
+
+#~ msgid "Advanced IP settings"
+#~ msgstr "Gelişmiş IP ayarları"
+
+#~ msgid "Method:"
+#~ msgstr "Yöntem:"
+
+#~ msgctxt "Method:"
+#~ msgid "Automatic"
+#~ msgstr "Kendiliğinden"
+
+#~ msgid "Automatic (Only addresses)"
+#~ msgstr "Kendiliğinden (Yalnızca adresler)"
+
+#~ msgid "Link-Local"
+#~ msgstr "Yalnızca Yerel Ağ"
+
+#~ msgctxt "like in use Manual configuration"
+#~ msgid "Manual"
+#~ msgstr "Elle"
+
+#~ msgid "Shared to other computers"
+#~ msgstr "Diğer bilgisayarlarla paylaşılan"
+
+#~ msgctxt "like in this setting is Disabled"
+#~ msgid "Disabled"
+#~ msgstr "Devre dışı"
+
+#~ msgctxt "@info"
+#~ msgid "DNS Servers:"
+#~ msgstr "DNS Sunucuları:"
+
+#~ msgid ""
+#~ "Use this field to specify the IP address(es) of one or more DNS servers. "
+#~ "Use ',' to separate entries."
+#~ msgstr ""
+#~ "Bir ya da daha fazla DNS sunucusunun IP adresini belirtmek için bu alanı "
+#~ "kullanın. Girdileri ayırmak için ',' kullanabilirsiniz."
+
+#~ msgid "Edit DNS the list of servers"
+#~ msgstr "DNS sunucu listesini düzenle"
+
+#~ msgctxt "@info"
+#~ msgid "Search Domains:"
+#~ msgstr "Aranacak alan adları:"
+
+#~ msgid ""
+#~ "Use this field to specify one or more DNS domains to search. Use ',' to "
+#~ "separate entries."
+#~ msgstr ""
+#~ "Bu alanı kullanarak aranacak DNS alan adlarının bir veya daha fazlasını "
+#~ "belirtin. Girdileri ayırmak için ',' kullanın."
+
+#~ msgid "Edit the list of DNS domains being searched"
+#~ msgstr "Aranan DNS alan adlarının listesini düzenle"
+
+#~ msgid "DHCP Client ID:"
+#~ msgstr "DHCP istemcisi kimliği:"
+
+#~ msgid ""
+#~ "Use this field to specify the DHCP client ID which is a string sent to "
+#~ "the DHCP server\n"
+#~ "to identify the local machine that the DHCP server may use to customize "
+#~ "the DHCP\n"
+#~ "lease and options."
+#~ msgstr ""
+#~ "DHCP istemci kimliği belirtmek için bu alanı kullanın. DHCP istemci "
+#~ "kimliği, yerel makinelerin, DHCP kiralama vb. seçenekleri "
+#~ "özelleştirmeleri için DHCP sunucuya kendilerini tanıtmalarında kullanılan "
+#~ "bir bilgidir."
+
+#~ msgid "Remove"
+#~ msgstr "Kaldır"
+
+#~ msgid "Add"
+#~ msgstr "Ekle"
+
+#~ msgid ""
+#~ "IP addresses identify your computer on the network. Click the \"Add\" "
+#~ "button to add\n"
+#~ "an IP address"
+#~ msgstr ""
+#~ "IP adresleri bilgisayarınızı ağ üzerinde tanımlayan özel adresledir. Bir "
+#~ "IP adresi eklemek için\n"
+#~ "\"Ekle\" düğmesine tıklayın"
+
+#~ msgid ""
+#~ "Allows the connection to complete if IPv4 configuration fails\n"
+#~ "but IPv6 configuration succeeds"
+#~ msgstr ""
+#~ "IPv4 yapılandırması başarısız ama IPv6 yapılandırması başarılı olduğunda\n"
+#~ "bağlantının tamamlanmasına izin verir"
+
+#~ msgid "IPv4 is required for this connection"
+#~ msgstr "Bu bağlantı için IPv4 gerekir"
+
+#~ msgid "Routes…"
+#~ msgstr "Rotalar…"
+
+#~ msgid ""
+#~ "When connecting to IPv4-capable networks, allows the connection to "
+#~ "complete if\n"
+#~ "IPv6 configuration fails but IPv4 configuration succeeds"
+#~ msgstr ""
+#~ "IPv4 destekli ağlara bağlanırken, IPv6 yapılandırması başarısız olmasına "
+#~ "rağmen\n"
+#~ "IPv4 yapılandırması başarılı olduğunda, bağlantının kurulmasına olanak "
+#~ "sağlar"
+
+#~ msgid "IPv6 is required for this connection"
+#~ msgstr "Bu bağlantı için IPv6 gerekir"
+
+#~ msgid "Edit the list of DNS servers"
+#~ msgstr "DNS sunucu listesini düzenle"
+
+#~ msgid ""
+#~ "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
+#~ "enabled, it makes the kernel generate\n"
+#~ "a temporary IPv6 address in addition to the public one generated from MAC "
+#~ "address via modified EUI-64."
+#~ msgstr ""
+#~ "RFC4941 de tanımlandığı gibi SLAAC için IPv6 Gizlilik Eklentisini "
+#~ "yapılandır. Etkinse, MAC adresinden değiştirilmiş EUI-64\n"
+#~ "vasıtasıyla üretilen adrese ek olarak, kernele geçici bir IPv6 adresi "
+#~ "aldırıacaktır."
+
+#~ msgctxt "privacy disabled"
+#~ msgid "Disabled"
+#~ msgstr "Devre dışı"
+
+#~ msgid "Enabled (prefer public address)"
+#~ msgstr "Etkin (genel adresi tercih et)"
+
+#~ msgid "Enabled (prefer temporary addresses)"
+#~ msgstr "Etkin (geçici adresleri tercih et)"
+
+#~ msgid "Automatic (Only DHCP)"
+#~ msgstr "Kendiliğinden (Yalnızca DHCP)"
+
+#~ msgctxt "like in this setting is Disabled"
+#~ msgid "Ignored"
+#~ msgstr "Yok sayılmış"
+
+#~ msgid "Disabled"
+#~ msgstr "Devre dışı"
+
+#~ msgid "Privacy:"
+#~ msgstr "Gizlilik:"
+
+#~ msgid "Authentication"
+#~ msgstr "Kimlik Doğrulama"
+
+#~ msgid "EAP"
+#~ msgstr "EAP"
+
+#~ msgid "Compression"
+#~ msgstr "Sıkıştırma"
+
+#~ msgid "Use point-to-point encryption (MPPE)"
+#~ msgstr "Noktadan Noktaya Şifreleme (MPPE) Kullan"
+
+#~ msgid "Use BSD data compression"
+#~ msgstr "BSD veri sıkıştırması kullan"
+
+#~ msgid "Use Deflate data compression"
+#~ msgstr "Yayılmış sıkıştırma kullan"
+
+#~ msgid "Use TCP header compression"
+#~ msgstr "TCP başlık sıkıştırması kullan"
+
+#~ msgid "Require 128-bit encryption"
+#~ msgstr "128 bit şifreleme gerektir"
+
+#~ msgid "Use stateful MPPE"
+#~ msgstr "Durumlu MPPE kullan"
+
+#~ msgid "Echo"
+#~ msgstr "Yankı"
+
+#~ msgid "Send PPP echo packets"
+#~ msgstr "PPP yankı paketleri gönder"
+
+#~ msgid "Service:"
+#~ msgstr "Hizmet:"
+
+#~ msgid ""
+#~ "If specified, instruct PPPoE to only initiate sessions with access "
+#~ "concentrators that provide the specified service. For most providers, "
+#~ "this should be left blank. It is only required if there are multiple "
+#~ "access concentrators or a specific service is known to be required."
+#~ msgstr ""
+#~ "Belirtilmişse PPPoE'ye, yalnızca belirtilen hizmetleri sağlayan erişim "
+#~ "yoğunlaştırıcıları olan oturumları başlatması için talimat verir. Bir çok "
+#~ "sağlayıcı için burasu boş bırakılmalıdır. Yalnızca birden çok erişim "
+#~ "toplayıcısı varsa veya belirli bir hizmetin gerekli olduğu biliniyorsa "
+#~ "kullanılır."
+
+#~ msgid "Teamed connections:"
+#~ msgstr "Gruplanmış bağlantılar:"
+
+#~ msgid "JSON config:"
+#~ msgstr "JSON yapılandırması:"
+
+#~ msgid "Import configuration from file…"
+#~ msgstr "Dosyadan yapılandırmayı içe aktar…"
+
+#~ msgid "Parent interface:"
+#~ msgstr "Üst arayüz:"
+
+#~ msgid "VLAN id:"
+#~ msgstr "VLAN kimliği:"
+
+#~ msgid "VLAN interface name:"
+#~ msgstr "VLAN arayüz adı:"
+
+#~ msgid "Output packet headers reordering"
+#~ msgstr "Çıktı paket başlık yeniden sıralaması"
+
+#~ msgid "GARP VLAN Registration Protocol"
+#~ msgstr "GARP VLAN Kayıt Protokolü"
+
+#~ msgid "GVRP"
+#~ msgstr "GVRP"
+
+#~ msgid "Loose binding"
+#~ msgstr "Geniş bağlama"
+
+#~ msgid "SSID:"
+#~ msgstr "SSID:"
+
+#~ msgid "Infrastructure"
+#~ msgstr "Altyapı"
+
+#~ msgid "Ad-hoc"
+#~ msgstr "Ad-hoc"
+
+#~ msgid "Access Point"
+#~ msgstr "Erişim Noktası"
+
+#~ msgid "BSSID:"
+#~ msgstr "BSSID:"
+
+#~ msgid ""
+#~ "This option locks this connection to the Wi-Fi access point (AP) "
+#~ "specified by the\n"
+#~ " BSSID entered here. Example: 00:11:22:33:44:55"
+#~ msgstr ""
+#~ "Bu seçenek bu bağlantını mında kirsetilgen BSSID tarafından belirtilgen "
+#~ "Telsiz-Vefa irişim noqtasına (AP) kilitler.\n"
+#~ " Örnek: 00:11:22:33:44:55"
+
+#~ msgid "Band:"
+#~ msgstr "Bant:"
+
+#~ msgid ""
+#~ "This option locks the connection to the Wi-Fi network associated to the "
+#~ "specified band. This setting depends\n"
+#~ " on specific driver capability and may not work with all drivers"
+#~ msgstr ""
+#~ "Bu seçenek, belirtili bantta birleşmiş Wi-Fi ağ için bağlantı kilitlemek "
+#~ "içindir. Bu ayar,\n"
+#~ " belirli sürücü özelliklerin bağlıdır ve her sürücü tarafından "
+#~ "desteklenmez"
+
+#~ msgctxt "Band:"
+#~ msgid "Automatic"
+#~ msgstr "Kendiliğinden"
+
+#~ msgid "A (5 GHz)"
+#~ msgstr "A (5 GHz)"
+
+#~ msgid "B/G (2.4 GHz)"
+#~ msgstr "B/G (2,4 GHz)"
+
+#~ msgid "Channel:"
+#~ msgstr "Kanal:"
+
+#~ msgid ""
+#~ "Wireless channel to use for the Wi-Fi connection. The device will only "
+#~ "join (or create for Ad-Hoc networks)\n"
+#~ "a Wi-Fi network on the specified channel"
+#~ msgstr ""
+#~ "Wi-Fi bağlantısı için kullanılacak kablosuz kanalı. Aygıt yalnızca "
+#~ "belirtilen kanaldaki Wi-Fi ağına katılacaktır\n"
+#~ "(veya Ad-Hoc ağlar için bağlantı oluşturacaktır)"
+
+#~ msgid "Cloned MAC address:"
+#~ msgstr "Klonlanmış MAC adresi:"
+
+#~ msgid "Random…"
+#~ msgstr "Rastgele"
+
+#~ msgid "Mark this if you want to create a connection for a hidden network"
+#~ msgstr ""
+#~ "Eğer gizli bir ağ için bağlantı oluşturmak isterseniz bunu işaretleyin"
+
+#~ msgid "Visibility:"
+#~ msgstr "Görünürlük:"
+
+#~ msgid "Hidden network"
+#~ msgstr "Gizli ağ"
+
+#~ msgid "Wifi Security"
+#~ msgstr "Wi-Fi Güvenliği"
+
+#~ msgctxt "no security"
+#~ msgid "None"
+#~ msgstr "Hiçbiri"
+
+#~ msgid "WEP key 40/128 bits (Hex or ASCII)"
+#~ msgstr "WEP anahtarı 40/128 bits (Onaltılık veya ASCII)"
+
+#~ msgid "WEP key 128 bits"
+#~ msgstr "WEP anahtarı 128 bit"
+
+#~ msgid "Dynamic WEP (802.1x)"
+#~ msgstr "Dinamik WEP (802.1x)"
+
+#~ msgid "WPA/WPA2 Personal"
+#~ msgstr "WPA/WPA2 Kişisel"
+
+#~ msgid "WPA/WPA2 Enterprise"
+#~ msgstr "WPA/WPA2 Kurumsal"
+
+#~ msgid "WPA3 Personal"
+#~ msgstr "WPA3 Kişisel"
+
+#~ msgid "WPA3 Enterprise 192-bit"
+#~ msgstr "WPA3 Kurumsal 192 bit"
+
+#~ msgid "Security:"
+#~ msgstr "Güvenlik:"
+
+#~ msgid "Key:"
+#~ msgstr "Anahtar:"
+
+#~ msgid "WEP index:"
+#~ msgstr "WEP indeksi:"
+
+#~ msgid "1 (default)"
+#~ msgstr "1 (Öntanımlı)"
+
+#~ msgid "2"
+#~ msgstr "2"
+
+#~ msgid "3"
+#~ msgstr "3"
+
+#~ msgid "4"
+#~ msgstr "4"
+
+#~ msgid "Open System"
+#~ msgstr "Açık Sistem"
+
+#~ msgid "Shared Key"
+#~ msgstr "Paylaşılan Anahtar"
+
+#~ msgid ""
+#~ "This option locks this connection to the network device specified by its\n"
+#~ "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#~ msgstr ""
+#~ "Bu seçenek burada girilen kalıcı MAC adreslerine göre belirlenen ağ "
+#~ "aygıtlarına\n"
+#~ "olan bağlantıyı kilitler. Örneğin: 00:11:22:33:44:55"
+
+#~ msgid ""
+#~ "The MAC address entered here will be used as hardware address for the\n"
+#~ "network device this connection is activated on. This feature is known as "
+#~ "MAC\n"
+#~ "cloning or spoofing. Example 11:22:33:44:55"
+#~ msgstr ""
+#~ "Buraya girilen MAC adresi, bu bağlantı etkinleştirildiğinde donanım "
+#~ "adresi\n"
+#~ "olarak kullanılacak. Bu özellik MAC çoklama ya da aldatma olarak "
+#~ "bilinir.\n"
+#~ "Örneğin: 11:22:33:44:55"
+
+#~ msgid "Random"
+#~ msgstr "Rastgele"
+
+#~ msgid ""
+#~ "Only transmit packets of the specified size or smaller, breaking larger "
+#~ "packets up\n"
+#~ "into multiple Ethernet frames"
+#~ msgstr ""
+#~ "Yalnızca belirtilen boyutta veya daha küçük paketleri geçirir, daha büyük "
+#~ "paketleri\n"
+#~ "çoklu Ethernet çerçevelerine ayırır"
+
+#~ msgid "Speed:"
+#~ msgstr "Hız:"
+
+#~ msgid "Duplex:"
+#~ msgstr "Çift yönlü:"
+
+#~ msgid ""
+#~ "Request that the device use the specified duplex mode. Either \"half\" or "
+#~ "\"full\""
+#~ msgstr ""
+#~ "Aygıtın belirtilen dupleks kipinde çalışmasına izin verir. \"half\" veya "
+#~ "\"full\" olabilir."
+
+#~ msgid "Half"
+#~ msgstr "Yarım"
+
+#~ msgid "Full"
+#~ msgstr "Tam"
+
+#~ msgid "Link negotiation:"
+#~ msgstr "Bağlantı pazarlığı:"
+
+#~ msgid ""
+#~ "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
+#~ "values will be forced without checking\n"
+#~ "the device compatibility. If unsure, leave here “Ignore” or pick "
+#~ "“Automatic”."
+#~ msgstr ""
+#~ "Aygıt bağlantı pazarlığı. Eğer 'Elle' seçilmişse 'Hız' ve 'Çift Yönlü' "
+#~ "değerleri\n"
+#~ "aygıt uyumluluğu denetlenmeden zorlanacaktır. Emin değilseniz 'Yok Say'ı\n"
+#~ "bırakın ve 'Kendiliğinden'i seçin."
+
+#~ msgid "Ignore"
+#~ msgstr "Yok say"
+
+#~ msgctxt "Link negotiation:"
+#~ msgid "Automatic"
+#~ msgstr "Kendiliğinden"
+
+#~ msgid "Manual"
+#~ msgstr "Elle"
+
+#~ msgid "Request that the device use only the specified speed."
+#~ msgstr "Aygıtın yalnızca belirtilen hızı kullanmasını isteyin."
+
+#~ msgid "10 Mb/s"
+#~ msgstr "10 Mb/sn"
+
+#~ msgid "100 Mb/s"
+#~ msgstr "100 Mb/sn"
+
+#~ msgid "1 Gb/s"
+#~ msgstr "1 Gb/sn"
+
+#~ msgid "2.5 Gb/s"
+#~ msgstr "2,5 Gb/sn"
+
+#~ msgid "5 Gb/s"
+#~ msgstr "5 Gb/sn"
+
+#~ msgid "10 Gb/s"
+#~ msgstr "10 Gb/sn"
+
+#~ msgid "40 Gb/s"
+#~ msgstr "40 Gb/sn"
+
+#~ msgid "100 Gb/s"
+#~ msgstr "100 Gb/sn"
+
+#~ msgid "Use 802.1x security for this connection"
+#~ msgstr "Bu bağlantı için 802.1x güvenliğini kullan"
+
+#~ msgid "WireGuard Settings"
+#~ msgstr "WireGuard Ayarları"
+
+#~ msgid "Interface"
+#~ msgstr "Arayüz"
+
+#~ msgid ""
+#~ "Required.\n"
+#~ "A base64 private key generated by wg genkey."
+#~ msgstr ""
+#~ "Zorunlu.\n"
+#~ "wg genkey tarafından oluşturulan bir base64 özel anahtarı."
+
+#~ msgid "Listen port:"
+#~ msgstr "Kapıyı dinle:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "Listen port number. Chosen randomly if left as 'Automatic'."
+#~ msgstr ""
+#~ "İsteğe bağlı.\n"
+#~ "Dinlenecek kapı numarası. 'Kendiliğinden' ise rastgele seçilir."
+
+#~ msgid "fwmark:"
+#~ msgstr "fwmark:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "An fwmark for outgoing packets. If set to 0 or 'off', this\n"
+#~ "option is disabled. May be specified in hexadecimal by\n"
+#~ "prepending '0x'."
+#~ msgstr ""
+#~ "İsteğe bağlı.\n"
+#~ "Giden paketler için bir fwmark. 0 veya 'off' olarak ayarlanırsa\n"
+#~ "bu seçenek devre dışı bırakılır. 0x ile öneklenirse onaltılık\n"
+#~ "olarak da belirtilebilir."
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "If not specified, the MTU is automatically determined\n"
+#~ "from the endpoint addresses or the system default route,\n"
+#~ "which is usually a sane choice. However, to manually\n"
+#~ "specify an MTU and to override this automatic discovery,\n"
+#~ "this value may be specified explicitly."
+#~ msgstr ""
+#~ "İsteğe bağlı.\n"
+#~ "Belirtilmezse MTU son uç adreslerinden veya sistem öntanımlı\n"
+#~ "rotasından oluşturulur; genelde de düzgün bir seçimdir. Ancak;\n"
+#~ "bir MTU'yu elle belirtmek ve bu kendiliğinden keşfi devre dışı\n"
+#~ "bırakmak için bu değer açıkça belirtilmelidir."
+
+#~ msgid "Autoroute peers:"
+#~ msgstr "Kendiliğinden rota eşleri:"
+
+#~ msgid ""
+#~ "Whether to automatically add routes for the AllowedIPs ranges\n"
+#~ "of the peers."
+#~ msgstr ""
+#~ "Eşlerin izin verilen IP erimleri için kendiliğinden olarak rota\n"
+#~ "eklenip eklenmeyeceği."
+
+#~ msgid "Peers…"
+#~ msgstr "Eşler…"
+
+#~ msgid "Public key:"
+#~ msgstr "Genel anahtar:"
+
+#~ msgid ""
+#~ "Required.\n"
+#~ "            A base64 public key calculated by wg pubkey \n"
+#~ "            from a private key, and usually transmitted \n"
+#~ "            out of band to the author of the configuration file."
+#~ msgstr ""
+#~ "Zorunlu.\n"
+#~ "            wg pubkey tarafından hesaplanan bir base64 genel \n"
+#~ "            anahtar; genelde yapılandırma dosyasının yazarına \n"
+#~ "            bant dışı olarak iletilir."
+
+#~ msgid "Allowed IPs:"
+#~ msgstr "İzin verilen IP'ler:"
+
+#~ msgid ""
+#~ "Required.\n"
+#~ "            A comma-separated list of IP (v4 or v6) addresses \n"
+#~ "            with CIDR masks from which incoming traffic for \n"
+#~ "            this peer is allowed and to which outgoing traffic \n"
+#~ "            for this peer is directed. The catch-all 0.0.0.0/0 \n"
+#~ "            may be specified for matching all IPv4 addresses, \n"
+#~ "            and ::/0 may be specified for matching all IPv6 addresses."
+#~ msgstr ""
+#~ "Zorunlu.\n"
+#~ "            Bu eşten hangi gelen/giden trafiğe izin verildiğini yönetmek\n"
+#~ "            için CIDR maskeli IP (v4 veya v6) adreslerinin virgülle "
+#~ "ayrılmış\n"
+#~ "            listesi. catch-all 0.0.0.0/0, tüm IPv4 adreslerini yakalamak "
+#~ "için\n"
+#~ "            belirtilebilir ve tüm IPv6 adresleriyle eşleşmek için ::/0\n"
+#~ "            belirtilebilir."
+
+#~ msgid "Endpoint address:"
+#~ msgstr "Son uç adresi:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "            An endpoint for the connection. Can be an\n"
+#~ "            IPv4 address, IPv6 address, or FQDN (fully\n"
+#~ "            qualified domain name such as abc.com). If\n"
+#~ "            present, Endpoint port must also be set."
+#~ msgstr ""
+#~ "İsteğe bağlı.\n"
+#~ "            Bağlantı için bir son uç. Bir IPv4 veya IPv6\n"
+#~ "            adresi veya bir FQDN (tam bir alan adı, örn.\n"
+#~ "            abc.com) olabilir. Eğer varsa Son Uç Kapısı da\n"
+#~ "            ayarlanmış olmalıdır."
+
+#~ msgid "Endpoint port:"
+#~ msgstr "Son uç kapısı:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "            The port number of an endpoint. If present Endpoint\n"
+#~ "            Address must also be set."
+#~ msgstr ""
+#~ "İsteğe bağlı.\n"
+#~ "            Bir son ucun kapı numarası. Varsa Son Uç Adresi "
+#~ "de             ayarlanmalıdır."
+
+#~ msgid "Preshared key:"
+#~ msgstr "Önden paylaşılan anahtar:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "            A base64 preshared key generated by wg genpsk.\n"
+#~ "            This option adds an additional layer of symmetric-key\n"
+#~ "            cryptography to be mixed into the already existing\n"
+#~ "            public-key cryptography, for post-quantum resistance."
+#~ msgstr ""
+#~ "İsteğe bağlı.\n"
+#~ "            wg genpsk tarafından oluşturulan bir base64 ön\n"
+#~ "            paylaşımlı anahtar. Bu seçenek, halihazırda var\n"
+#~ "            olan genel anahtar şifrelemesine ek olarak ek bir\n"
+#~ "            simetrik anahtar şifrelemesi ekler."
+
+#~ msgid "Persistent keepalive:"
+#~ msgstr "Israrcı yaşama bağlı tutma:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "            A seconds interval, between 1 and 65535 inclusive, of\n"
+#~ "            how often to send an authenticated empty packet to\n"
+#~ "            the peer for the purpose of keeping a stateful firewall\n"
+#~ "            or NAT mapping valid persistently. For example, if the\n"
+#~ "            interface very rarely sends traffic, but it might at\n"
+#~ "            anytime receive traffic from a peer, and it is behind\n"
+#~ "            NAT, the interface might benefit from having a\n"
+#~ "            persistent keepalive interval of 25 seconds. If set to\n"
+#~ "            0 or \"off\", this option is disabled. By default or\n"
+#~ "            when unspecified, this option is off. Most users will not\n"
+#~ "            need this."
+#~ msgstr ""
+#~ "İsteğe bağlı.\n"
+#~ "            Bir NAT eşlemlemesini geçerli tutmak veya güvenlik duvarını\n"
+#~ "            çalışır tutmak için gönderilecek kimlik doğrulanmış paketin\n"
+#~ "            ne kadar aralıklarla gönderileceğini belirtmek için "
+#~ "kullanılan\n"
+#~ "            1 ve 65535 dahil olmak üzere saniye aralığı.\n"
+#~ "            Örneğin, arabirim çok az trafik gönderiyorsa; ancak herhangi\n"
+#~ "            bir zamanda bir eşten trafik alabilirse ve NAT arkasındaysa\n"
+#~ "            arabirim 25 saniyelik düzenli bir yaşama bağlı tutma "
+#~ "işleminden\n"
+#~ "            yarar sağlayabilir. 0 veya \"off\" olarak ayarlanmışsa bu\n"
+#~ "            seçenek devre dışıdır. Çoğu kullanıcı bu ayara gereksinim\n"
+#~ "            duymayacaktır."
+
+#~ msgid "Peer 1"
+#~ msgstr "Eş 1"
+
+#~ msgid "Add new Peer"
+#~ msgstr "Yeni Eş EKle"
+
+#~ msgid "Remove this Peer"
+#~ msgstr "Bu Eşi Kaldır"
+
+#~ msgid "Available Users"
+#~ msgstr "Uygun Kullanıcılar"
+
+#~ msgid "Real Name"
+#~ msgstr "Gerçek Ad"
+
+#~ msgctxt "like in Username for athentication"
+#~ msgid "Username"
+#~ msgstr "Kullanıcı adı"
+
+#~ msgid "Users allowed to activate the connection"
+#~ msgstr "Bağlantıyı etkinleştirebilecek kullanıcılar"
+
+#~ msgid "Edit IPv4 Routes"
+#~ msgstr "IPv4 Rotalarını Düzenle"
+
+#~ msgid ""
+#~ "If enabled, this connection will never be used as the default network "
+#~ "connection"
+#~ msgstr ""
+#~ "Etkinleştirilirse, bu bağlantı asla öntanımlı şebeke bağlantısı olarak "
+#~ "kullanılamaz"
+
+#~ msgid "Use only for resources on this connection"
+#~ msgstr "Yalnızca bu bağlantıdaki özkaynaklar için kullan"
+
+#~ msgctxt "Remove a selected row"
+#~ msgid "Remove"
+#~ msgstr "Kaldır"
+
+#~ msgctxt "Insert a row"
+#~ msgid "Add"
+#~ msgstr "Ekle"
+
+#~ msgid ""
+#~ "If enabled, automatically configured routes are ignored and only routes "
+#~ "specified above are used"
+#~ msgstr ""
+#~ "Etkinleştirilirse kendiliğinden yapılandırılan rotalar yerine yalnızca "
+#~ "yukarıda belirtilen rotalar kullanılır"
+
+#~ msgid "Ignore automatically obtained routes"
+#~ msgstr "Kendiliğinden elde edilen rotaları yok say"
+
+#~ msgid "Edit IPv6 Routes"
+#~ msgstr "IPv6 Rotalarını Düzenle"
+
+#~ msgctxt "Remove a selected row"
+#~ msgid "R&emove"
+#~ msgstr "&Kaldır"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "

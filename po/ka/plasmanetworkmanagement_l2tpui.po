@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2021-05-31 00:18+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2023-02-08 12:03+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -17,189 +17,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.2.2\n"
-
-#. i18n: ectx: property (text), widget (QLabel, labelGateway)
-#: l2tp.ui:19
-#, kde-format
-msgid "Gateway:"
-msgstr "ნაგულისხმები რაუტერი:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
-#: l2tp.ui:35
-#, kde-format
-msgid "L2TP server IP or name."
-msgstr "L2TP -ის სერვერის IP ან სახელი."
-
-#. i18n: ectx: property (text), widget (QLabel, labelAuthType)
-#: l2tp.ui:45
-#, kde-format
-msgid "Authentication type:"
-msgstr "ავთენტიფიკაციის ტიპი:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, cmbAuthType)
-#: l2tp.ui:67 l2tpipsec.ui:68
-#, kde-format
-msgid "Select an authentication mode."
-msgstr "აირჩიეთ ავთენტიკაციის რეჟიმი."
-
-#. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
-#: l2tp.ui:71
-#, kde-format
-msgid "Password"
-msgstr "Password"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
-#: l2tp.ui:76 l2tpipsec.ui:77
-#, kde-format
-msgid "Certificates (TLS)"
-msgstr "სერტიფიკატები (TLS)"
-
-#. i18n: ectx: property (text), widget (QLabel, Label_1)
-#: l2tp.ui:90
-#, kde-format
-msgctxt "like in Username for athentication"
-msgid "Username:"
-msgstr "მომხმარებელი:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, username)
-#: l2tp.ui:103
-#, kde-format
-msgid ""
-"<html><head/><body><p>Set the name used for authenticating the local system "
-"to the peer to &lt;name&gt;.</p></body></html>"
-msgstr ""
-"<html><head/><body><p>მიუთითეთ მოხმამრებელი, რომელიც ლოკალური სისტემის "
-"პარტნიორ &lt;სახელთან&gt; ავთენტიკაციისთვის გამოიყენება.</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QLabel, Label_2)
-#: l2tp.ui:113
-#, kde-format
-msgid "Password:"
-msgstr "პაროლი:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, password)
-#: l2tp.ui:128
-#, kde-format
-msgid ""
-"<html><head/><body><p>Password passed to PPPD when prompted for it.</p></"
-"body></html>"
-msgstr ""
-"<html><head/><body><p>PPPD -ს პაროლი გადაეცა, როცა ის მოითხოვა.</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), widget (QLabel, Label_3)
-#: l2tp.ui:140
-#, kde-format
-msgid "NT Domain:"
-msgstr "NT დომენი:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
-#: l2tp.ui:150
-#, kde-format
-msgid ""
-"<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
-"host name for</p><p>authentication purposes.</p></body></html>"
-msgstr ""
-"<html><head/><body><p>ავთენტიკაციისთვის </p><p>მიაწერეთ თქვენი დომენის "
-"სახელი &lt;domain&gt; ლოკალურ ჰოსტის სახელს</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: l2tp.ui:174 l2tpipsec.ui:199
-#, kde-format
-msgid "CA Certificate:"
-msgstr "CA სერტიფიკატი:"
-
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCA)
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, userCA)
-#: l2tp.ui:187 l2tpipsec.ui:119
-#, kde-format
-msgid ""
-"<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
-"cer or .p12 formats.</p></body></html>"
-msgstr ""
-"<html><head/><body><p>სერტიფიკატის გამომცემლის (CA) ფაილი .pem, .der, .crt, ."
-"cer ან .p12 ფორმატში.</p></body></html>"
-
-#. i18n: ectx: property (filter), widget (KUrlRequester, machineCA)
-#. i18n: ectx: property (filter), widget (KUrlRequester, machineCert)
-#. i18n: ectx: property (filter), widget (KUrlRequester, userCA)
-#. i18n: ectx: property (filter), widget (KUrlRequester, userCert)
-#: l2tp.ui:190 l2tp.ui:213 l2tpipsec.ui:122 l2tpipsec.ui:145
-#, kde-format
-msgid "*.pem *.der *.crt *.cer *.p12"
-msgstr "*.pem *.der *.crt *.cer *.p12"
-
-#. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
-#: l2tp.ui:197
-#, kde-format
-msgid "User Certificate:"
-msgstr "მომხმარებლის სერტიფიკატი:"
-
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, userCert)
-#: l2tp.ui:210
-#, kde-format
-msgid ""
-"<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
-"</p></body></html>"
-msgstr ""
-"<html><head/><body><p>სერტიფიკატი .pem, .der, .crt, .cer ან .p12 ფორმატებში."
-"</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: l2tp.ui:220 l2tpipsec.ui:152
-#, kde-format
-msgid "Private Key:"
-msgstr "პირადი გასაღები:"
-
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, machineKey)
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, userKey)
-#: l2tp.ui:233 l2tpipsec.ui:165
-#, kde-format
-msgid ""
-"<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
-"</p></body></html>"
-msgstr ""
-"<html><head/><body><p>პირადი გასაღები .pem, .der, .key, .pk8 ან .p12 "
-"ფორმატში.</p></body></html>"
-
-#. i18n: ectx: property (filter), widget (KUrlRequester, machineKey)
-#. i18n: ectx: property (filter), widget (KUrlRequester, userKey)
-#: l2tp.ui:236 l2tpipsec.ui:168
-#, kde-format
-msgid "*.pem *der *.key *.pk8 *.p12"
-msgstr "*.pem *der *.key *.pk8 *.p12"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: l2tp.ui:243 l2tpipsec.ui:175
-#, kde-format
-msgid "Private Key Password:"
-msgstr "პირადი გასაღების პაროლი:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, machineKeyPassword)
-#. i18n: ectx: property (toolTip), widget (PasswordField, userKeyPassword)
-#: l2tp.ui:255 l2tpipsec.ui:187
-#, kde-format
-msgid ""
-"<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
-"body></html>"
-msgstr ""
-"<html><head/><body><p>პაროლი პირადი გასაღებისთვის ან PKCS#12 სერტიფიკატი.</"
-"p></body></html>"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
-#: l2tp.ui:286
-#, kde-format
-msgid "IPsec Settings…"
-msgstr "IPsec -ის მორგება…"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnPPPSettings)
-#: l2tp.ui:293
-#, kde-format
-msgid "PPP Settings…"
-msgstr "PPP-ის მორგება…"
 
 #: l2tpauth.cpp:63
 #, kde-format
@@ -216,446 +33,368 @@ msgstr "მომხმარებლის სერტიფიკატი�
 msgid "Machine Certificate Password:"
 msgstr "მანქანის სერტიფიკატის პაროლი:"
 
-#. i18n: ectx: property (title), widget (QGroupBox, gbEnableTunnelToHost)
-#: l2tpipsec.ui:20
-#, kde-format
-msgid "Enable IPsec tunnel to L2TP host"
-msgstr "L2TP ჰოსტამდე IPsec გვირაბის ჩართვა"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbAuthentication)
-#: l2tpipsec.ui:38
-#, kde-format
-msgid "Machine Authentication"
-msgstr "მანქანის ავთენტიკაცია"
-
-#. i18n: ectx: property (text), widget (QLabel, labelAuthType)
-#: l2tpipsec.ui:46
-#, kde-format
-msgid "Type:"
-msgstr "ტიპი:"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
-#: l2tpipsec.ui:72
-#, kde-format
-msgid "Pre-shared Key (PSK)"
-msgstr "წინასწარ გაზიარებული გასაღები (PSK)"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: l2tpipsec.ui:91
-#, kde-format
-msgid "Pre-shared Key:"
-msgstr "წინასწარ გაზიარებული გასაღები:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
-#: l2tpipsec.ui:103
-#, kde-format
-msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
-msgstr ""
-"<html><head/><body><p>წინასწარ-გაზიარებული გასაღები (PSK).</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: l2tpipsec.ui:129
-#, kde-format
-msgid "Machine Certificate:"
-msgstr "მანქანის სერთიფიკატი:"
-
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCert)
-#: l2tpipsec.ui:142
-#, kde-format
-msgid ""
-"<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></body></"
-"html>"
-msgstr ""
-"<html><head/><body><p>სერტიფიკატი .pem, .der ან .p12 ფორმატში.</p></body></"
-"html>"
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbAdvanced)
-#: l2tpipsec.ui:219
-#, kde-format
-msgid "Advanced"
-msgstr "დამატებით"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: l2tpipsec.ui:225
-#, kde-format
-msgid "Phase1 Algorithms:"
-msgstr "პირველი ფაზის ალგორითმები:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: l2tpipsec.ui:235
-#, kde-format
-msgid "Phase2 Algorithms:"
-msgstr "მეორე ფაზის ალგორითმები:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
-#: l2tpipsec.ui:245
-#, kde-format
-msgid ""
-"<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
-"The format is “enc-integ,enc-integ, …”.</p></body></html>"
-msgstr ""
-"<html><head/><body><p>არასავალდებულო. შეთავაზებების სია ESP-სთვის - სწრაფი "
-"რეჟიმი. ფორმატია “enc-integ,enc-integ, …”.</p></body></html>"
-
-#. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
-#: l2tpipsec.ui:255
-#, kde-format
-msgid ""
-"<html><head/><body><p>How long the keying channel of a connection should "
-"last before being renegotiated.</p></body></html>"
-msgstr ""
-"<html><head/><body><p>რამდენ ხანს გაძლებს შეერთების ბრელოკის არხი, სანამ "
-"თავიდან დაიწყება.</p></body></html>"
-
-#. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
-#. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
-#: l2tpipsec.ui:258 l2tpipsec.ui:292
-#, kde-format
-msgid "hh:mm:ss"
-msgstr "სს:წთ:წმ"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbIkelifetime)
-#: l2tpipsec.ui:265
-#, kde-format
-msgid "Phase1 Lifetime:"
-msgstr "პირველი ფაზის სიცოცხლის დრო:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
-#: l2tpipsec.ui:272
-#, kde-format
-msgid ""
-"<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
-"format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
-msgstr ""
-"<html><head/><body><p>არასავალდებულო. შეთავაზებების სია IKE - მთავარი "
-"რეჟიმისთვის. ფორმატია is “enc-integ-group,enc-integ-group, …”.</p></body></"
-"html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
-#: l2tpipsec.ui:279
-#, kde-format
-msgid "Phase2 Lifetime:"
-msgstr "მეორე ფაზის სიცოცხლის დრო:"
-
-#. i18n: ectx: property (toolTip), widget (QTimeEdit, salifetime)
-#: l2tpipsec.ui:289
-#, kde-format
-msgid ""
-"<html><head/><body><p>How long a particular instance of a connection (a set "
-"of encryption/authentication keys for user packets) should last, from "
-"successful negotiation to expiry.</p></body></html>"
-msgstr ""
-"<html><head/><body><p>რამდენ ხანს უნდა გაძლოს მითითებულმა მიერთებამ "
-"(მომხმარებლის პაკეტებისთვის გამოყენებული დაშიფვრის სეტი/ავთენტიკაციის "
-"გასაღებების) მიერთებიდან ვადის გასვლამდე.</p></body></html>"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
-#: l2tpipsec.ui:299
-#, kde-format
-msgid ""
-"<html><head/><body><p>Optional. How the IPsec server should be identified "
-"for authentication. Sometimes referred to as Peer ID or Gateway ID, also "
-"referred to as rightid by strongSwan, Libreswan, Openswan and FreeS/WAN. See "
-"strongSwan or Libreswan documentation for leftid/rightid syntax and identity "
-"parsing.</p></body></html>"
-msgstr ""
-"<html><head/><body><p>არასავალდებულოა. როგორ უნდა ვიცნოთ IPSec სერვერი "
-"ავთენტიკაციისთვის. ხანდახან ეწოდება PeerID ან GatewayID, ასევე ეძახიან "
-"rightid-ს strongSwan, Libreswan, Openswan და FreeS/WAN-ში. leftid/rightid-ს "
-"სინტაქსისა და იდენტიფიკატორის დამუშავების შესახებ იხილეთ storngSwan/"
-"Libreswan-ის დოკუმენტაცია.</p></body></html>"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbIPComp)
-#: l2tpipsec.ui:306
-#, kde-format
-msgid ""
-"<html><head/><body><p>IPComp compresses raw IP packets before they get "
-"encrypted. This saves some bandwidth, but uses more processing power.</p></"
-"body></html>"
-msgstr ""
-"<html><head/><body><p>IPComp მანამდე შეკუმშავს დაუმუშავებელ IP პაკეტებს, "
-"სანამ ისინი დაიშიფრება. ეს დაზოგავს ტრაფიკს, მაგრამ მეტ პროცესორის დროს "
-"ხარჯავს.</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbIPComp)
-#: l2tpipsec.ui:309
-#, kde-format
-msgid "Use IP compression"
-msgstr "IP გამოიყენეთ IP შეკუმშვა"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
-#: l2tpipsec.ui:316
-#, kde-format
-msgid ""
-"<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
-"only if the server doesn’t support PFS.</p></body></html>"
-msgstr ""
-"<html><head/><body><p>PFS-ის გამორთვა. ეს პარამეტრი მხოლოდ მაშინ ჩართეთ, "
-"როცა სერვერს PFS-ის მხარდაჭერა არ გააჩნია.</p></body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
-#: l2tpipsec.ui:319
-#, kde-format
-msgid "Disable PFS"
-msgstr "PFS-ის გამორთვა"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbForceEncaps)
-#: l2tpipsec.ui:326
-#, kde-format
-msgid ""
-"<html><head/><body><p>Some firewalls block ESP traffic. Enforcing UDP "
-"encapsulation even if no NAT situation is detected might help in such cases."
-"</p></body></html>"
-msgstr ""
-"<html><head/><body><p>ზოგიერთი ბრანდმაუერი ბლოკავს ESP ტრაფიკს. პრობლემა "
-"შეიძლება UDP ენკაფსულაციით გადაჭრათ მაშინაც კი, როცა NAT-ს არ იყენებთ.</p></"
-"body></html>"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
-#: l2tpipsec.ui:329
-#, kde-format
-msgid "Enforce UDP encapsulation"
-msgstr "ნაძალადევი UDP ენკაპსულაცია"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: l2tpipsec.ui:339
-#, kde-format
-msgid "Remote ID:"
-msgstr "დაშორებულის ID:"
-
 #: l2tpipsecwidget.cpp:43
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr "L2TP IPsec -ის მორგება"
 
-#. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
-#: l2tpppp.ui:26
-#, kde-format
-msgid "Authentication"
-msgstr "ავთენტიფიკაცია"
-
-#. i18n: ectx: property (text), widget (QLabel, lblauth)
-#: l2tpppp.ui:35
-#, kde-format
-msgid "Allow following authentication methods:"
-msgstr "ავთენტიკაციის შესაძლო მეთოდები:"
-
-#. i18n: ectx: property (toolTip), widget (QListWidget, listWidget)
-#: l2tpppp.ui:45
-#, kde-format
-msgid "Allow/disable authentication methods"
-msgstr "ავთენტიკაციის შესაძლო მეთოდების ჩართ/გამორთ"
-
-#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
-#: l2tpppp.ui:49
-#, kde-format
-msgid "PAP"
-msgstr "PAP"
-
-#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
-#: l2tpppp.ui:57
-#, kde-format
-msgid "CHAP"
-msgstr "CHAP"
-
-#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
-#: l2tpppp.ui:65
-#, kde-format
-msgid "MSCHAP"
-msgstr "MSCHAP"
-
-#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
-#: l2tpppp.ui:73
-#, kde-format
-msgid "MSCHAPv2"
-msgstr "MSCHAPv2"
-
-#. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
-#: l2tpppp.ui:81
-#, kde-format
-msgid "EAP"
-msgstr "EAP"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
-#: l2tpppp.ui:95
-#, kde-format
-msgid "Compression"
-msgstr "შეკუმშვა"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbBSD)
-#: l2tpppp.ui:107
-#, kde-format
-msgid "Allow/disable BSD-Compress compression."
-msgstr "მონაცემების BSD შეკუმშვის ჩართ/გამორთ."
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbBSD)
-#: l2tpppp.ui:110
-#, kde-format
-msgid "Allow BSD compression"
-msgstr "BSD შეკუმშვის ჩართვა"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbdeflate)
-#: l2tpppp.ui:120
-#, kde-format
-msgid "Allow/disable Deflate compression."
-msgstr "მონაცემების Deflate შეკუმშვის ჩართ/გამორთ."
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbdeflate)
-#: l2tpppp.ui:123
-#, kde-format
-msgid "Allow Deflate compression"
-msgstr "Deflate შეკუმშვის ჩართვა"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbTCPheaders)
-#: l2tpppp.ui:134
-#, kde-format
-msgid ""
-"Allow/disable Van Jacobson style TCP/IP header compression in both the "
-"transmit\n"
-"and the receive directions."
-msgstr ""
-"Van Jacobson-ის სტილის TCP/IP თავსართების შეკუმშვის ჩართვა/გამორთვა\n"
-"ორივე, გადაცემისა და მიღების დროს."
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbTCPheaders)
-#: l2tpppp.ui:137
-#, kde-format
-msgid "Allow TCP header compression"
-msgstr "TCP თავსართების შეკუმშვის ჩართვა"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbCompressionNegotiation)
-#: l2tpppp.ui:148
-#, kde-format
-msgid ""
-"Allow protocol field compression negotiation in both the receive and the\n"
-" transmit directions."
-msgstr ""
-"პროტოკოლის ველის შეკუმშვის მოლაპარაკების ორივე, მიმღების და \n"
-"გამგზავნის მიმართულებით დაშვება."
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbCompressionNegotiation)
-#: l2tpppp.ui:151
-#, kde-format
-msgid "Use protocol field compression negotiation"
-msgstr "პროტოკოლის ველის შეკუმშვის მოლაპარაკების გამოყენება"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbAddressControlCompression)
-#: l2tpppp.ui:164
-#, kde-format
-msgid "Use Address/Control compression in both directions (send and receive)."
-msgstr ""
-"მისამართის/კონტროლის შეკუმშვის ორივე მხარეს (მიღების და გაგზავნისას) "
-"გამოყენება."
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbAddressControlCompression)
-#: l2tpppp.ui:167
-#, kde-format
-msgid "Use Address/Control compression"
-msgstr "მისამართის/კონროლის შეკუმშვის ჩართვა"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
-#: l2tpppp.ui:180
-#, kde-format
-msgid "Echo"
-msgstr "ექო"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbsendEcho)
-#: l2tpppp.ui:189
-#, kde-format
-msgid "Send LCP echo-requests to find out whether peer is alive."
-msgstr "პარტნიორის სიცოცხლის დასადგენად LCP echo-request-ის გამოყენება."
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbsendEcho)
-#: l2tpppp.ui:192
-#, kde-format
-msgid "Send PPP echo packets"
-msgstr "PPP ექოს გაგზავნა"
-
-#. i18n: ectx: property (title), widget (QGroupBox, grp_other)
-#: l2tpppp.ui:215
-#, kde-format
-msgid "Other Settings"
-msgstr "სხვა პარამეტრები"
-
-#. i18n: ectx: property (text), widget (QLabel, lbMRU)
-#: l2tpppp.ui:224
-#, kde-format
-msgid "MRU: "
-msgstr "MRU: "
-
-#. i18n: ectx: property (text), widget (QLabel, lbMTU)
-#: l2tpppp.ui:238
-#, kde-format
-msgid "MTU: "
-msgstr "MTU: "
-
-#. i18n: ectx: property (toolTip), widget (QGroupBox, gbMPPE)
-#: l2tpppp.ui:257
-#, kde-format
-msgid ""
-"Note: MPPE encryption is only available with MSCHAP authentication methods. "
-"To\n"
-"enable this checkbox, select one or more of the MSCHAP authentication\n"
-"methods: MSCHAP or MSCHAPv2."
-msgstr ""
-"შენიშვნა. MPPE დაშიფვრა მხოლოდ MSCHAP-ის ავთენტიკაციის მეთოდებთან ერთადაა "
-"ხელმისაწვდომი.\n"
-"ამ ველის ჩასართავად აირჩიეთ MSCHAP-ის ერთ-ერთი მეთოდი\n"
-"MSCHAP ან MSCHAPv2."
-
-#. i18n: ectx: property (title), widget (QGroupBox, gbMPPE)
-#: l2tpppp.ui:260
-#, kde-format
-msgid "Use MPPE Encryption"
-msgstr "MPPE დაშიფვრის ჩართვა"
-
-#. i18n: ectx: property (text), widget (QLabel, lblMMPEcrypto)
-#: l2tpppp.ui:281
-#, kde-format
-msgid "Crypto:"
-msgstr "კრიპტო:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, cbMPPECrypto)
-#: l2tpppp.ui:297
-#, kde-format
-msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr "MPPE-ის გამოყენების მოთხოვნა, 40/128-ბიტიანი დაშიფვრით, ან ყველა."
-
-#. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
-#: l2tpppp.ui:301
-#, kde-format
-msgctxt "like in use Any configuration"
-msgid "Any"
-msgstr "ნებისმიერი"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
-#: l2tpppp.ui:306
-#, kde-format
-msgid "128 bit"
-msgstr "128 ბიტი"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
-#: l2tpppp.ui:311
-#, kde-format
-msgid "40 bit"
-msgstr "40 ბიტი"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbstatefulEncryption)
-#: l2tpppp.ui:319
-#, kde-format
-msgid ""
-"Allow MPPE to use stateful mode. Stateless mode is still attempted first."
-msgstr ""
-"MPPE-სთვის stateful რეჟიმის გამოყენების ნების დართვა. პირველი მაინც "
-"Stateless რეჟიმი იქნება ნაცადი."
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbstatefulEncryption)
-#: l2tpppp.ui:322
-#, kde-format
-msgid "Use stateful encryption"
-msgstr "სრული მიერთების დაშიფვრის გამოყენება"
-
 #: l2tppppwidget.cpp:22
 #, kde-format
 msgid "L2TP PPP Options"
 msgstr "L2TP PPP -ის მორგება"
+
+#~ msgid "Gateway:"
+#~ msgstr "ნაგულისხმები რაუტერი:"
+
+#~ msgid "L2TP server IP or name."
+#~ msgstr "L2TP -ის სერვერის IP ან სახელი."
+
+#~ msgid "Authentication type:"
+#~ msgstr "ავთენტიფიკაციის ტიპი:"
+
+#~ msgid "Select an authentication mode."
+#~ msgstr "აირჩიეთ ავთენტიკაციის რეჟიმი."
+
+#~ msgid "Password"
+#~ msgstr "Password"
+
+#~ msgid "Certificates (TLS)"
+#~ msgstr "სერტიფიკატები (TLS)"
+
+#~ msgctxt "like in Username for athentication"
+#~ msgid "Username:"
+#~ msgstr "მომხმარებელი:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Set the name used for authenticating the local "
+#~ "system to the peer to &lt;name&gt;.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>მიუთითეთ მოხმამრებელი, რომელიც ლოკალური სისტემის "
+#~ "პარტნიორ &lt;სახელთან&gt; ავთენტიკაციისთვის გამოიყენება.</p></body></html>"
+
+#~ msgid "Password:"
+#~ msgstr "პაროლი:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Password passed to PPPD when prompted for it.</p></"
+#~ "body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>PPPD -ს პაროლი გადაეცა, როცა ის მოითხოვა.</p></"
+#~ "body></html>"
+
+#~ msgid "NT Domain:"
+#~ msgstr "NT დომენი:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
+#~ "host name for</p><p>authentication purposes.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>ავთენტიკაციისთვის </p><p>მიაწერეთ თქვენი დომენის "
+#~ "სახელი &lt;domain&gt; ლოკალურ ჰოსტის სახელს</p></body></html>"
+
+#~ msgid "CA Certificate:"
+#~ msgstr "CA სერტიფიკატი:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Certificate authority (CA) file in .pem, .der, ."
+#~ "crt, .cer or .p12 formats.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>სერტიფიკატის გამომცემლის (CA) ფაილი .pem, .der, ."
+#~ "crt, .cer ან .p12 ფორმატში.</p></body></html>"
+
+#~ msgid "*.pem *.der *.crt *.cer *.p12"
+#~ msgstr "*.pem *.der *.crt *.cer *.p12"
+
+#~ msgid "User Certificate:"
+#~ msgstr "მომხმარებლის სერტიფიკატი:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 "
+#~ "formats.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>სერტიფიკატი .pem, .der, .crt, .cer ან .p12 "
+#~ "ფორმატებში.</p></body></html>"
+
+#~ msgid "Private Key:"
+#~ msgstr "პირადი გასაღები:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 "
+#~ "formats.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>პირადი გასაღები .pem, .der, .key, .pk8 ან .p12 "
+#~ "ფორმატში.</p></body></html>"
+
+#~ msgid "*.pem *der *.key *.pk8 *.p12"
+#~ msgstr "*.pem *der *.key *.pk8 *.p12"
+
+#~ msgid "Private Key Password:"
+#~ msgstr "პირადი გასაღების პაროლი:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Password for private key or PKCS#12 certificate.</"
+#~ "p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>პაროლი პირადი გასაღებისთვის ან PKCS#12 სერტიფიკატი."
+#~ "</p></body></html>"
+
+#~ msgid "IPsec Settings…"
+#~ msgstr "IPsec -ის მორგება…"
+
+#~ msgid "PPP Settings…"
+#~ msgstr "PPP-ის მორგება…"
+
+#~ msgid "Enable IPsec tunnel to L2TP host"
+#~ msgstr "L2TP ჰოსტამდე IPsec გვირაბის ჩართვა"
+
+#~ msgid "Machine Authentication"
+#~ msgstr "მანქანის ავთენტიკაცია"
+
+#~ msgid "Type:"
+#~ msgstr "ტიპი:"
+
+#~ msgid "Pre-shared Key (PSK)"
+#~ msgstr "წინასწარ გაზიარებული გასაღები (PSK)"
+
+#~ msgid "Pre-shared Key:"
+#~ msgstr "წინასწარ გაზიარებული გასაღები:"
+
+#~ msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>წინასწარ-გაზიარებული გასაღები (PSK).</p></body></"
+#~ "html>"
+
+#~ msgid "Machine Certificate:"
+#~ msgstr "მანქანის სერთიფიკატი:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></"
+#~ "body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>სერტიფიკატი .pem, .der ან .p12 ფორმატში.</p></"
+#~ "body></html>"
+
+#~ msgid "Advanced"
+#~ msgstr "დამატებით"
+
+#~ msgid "Phase1 Algorithms:"
+#~ msgstr "პირველი ფაზის ალგორითმები:"
+
+#~ msgid "Phase2 Algorithms:"
+#~ msgstr "მეორე ფაზის ალგორითმები:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
+#~ "The format is “enc-integ,enc-integ, …”.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>არასავალდებულო. შეთავაზებების სია ESP-სთვის - "
+#~ "სწრაფი რეჟიმი. ფორმატია “enc-integ,enc-integ, …”.</p></body></html>"
+
+#~ msgid ""
+#~ "<html><head/><body><p>How long the keying channel of a connection should "
+#~ "last before being renegotiated.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>რამდენ ხანს გაძლებს შეერთების ბრელოკის არხი, სანამ "
+#~ "თავიდან დაიწყება.</p></body></html>"
+
+#~ msgid "hh:mm:ss"
+#~ msgstr "სს:წთ:წმ"
+
+#~ msgid "Phase1 Lifetime:"
+#~ msgstr "პირველი ფაზის სიცოცხლის დრო:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. "
+#~ "The format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>არასავალდებულო. შეთავაზებების სია IKE - მთავარი "
+#~ "რეჟიმისთვის. ფორმატია is “enc-integ-group,enc-integ-group, …”.</p></"
+#~ "body></html>"
+
+#~ msgid "Phase2 Lifetime:"
+#~ msgstr "მეორე ფაზის სიცოცხლის დრო:"
+
+#~ msgid ""
+#~ "<html><head/><body><p>How long a particular instance of a connection (a "
+#~ "set of encryption/authentication keys for user packets) should last, from "
+#~ "successful negotiation to expiry.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>რამდენ ხანს უნდა გაძლოს მითითებულმა მიერთებამ "
+#~ "(მომხმარებლის პაკეტებისთვის გამოყენებული დაშიფვრის სეტი/ავთენტიკაციის "
+#~ "გასაღებების) მიერთებიდან ვადის გასვლამდე.</p></body></html>"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Optional. How the IPsec server should be identified "
+#~ "for authentication. Sometimes referred to as Peer ID or Gateway ID, also "
+#~ "referred to as rightid by strongSwan, Libreswan, Openswan and FreeS/WAN. "
+#~ "See strongSwan or Libreswan documentation for leftid/rightid syntax and "
+#~ "identity parsing.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>არასავალდებულოა. როგორ უნდა ვიცნოთ IPSec სერვერი "
+#~ "ავთენტიკაციისთვის. ხანდახან ეწოდება PeerID ან GatewayID, ასევე ეძახიან "
+#~ "rightid-ს strongSwan, Libreswan, Openswan და FreeS/WAN-ში. leftid/rightid-"
+#~ "ს სინტაქსისა და იდენტიფიკატორის დამუშავების შესახებ იხილეთ storngSwan/"
+#~ "Libreswan-ის დოკუმენტაცია.</p></body></html>"
+
+#~ msgid ""
+#~ "<html><head/><body><p>IPComp compresses raw IP packets before they get "
+#~ "encrypted. This saves some bandwidth, but uses more processing power.</"
+#~ "p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>IPComp მანამდე შეკუმშავს დაუმუშავებელ IP პაკეტებს, "
+#~ "სანამ ისინი დაიშიფრება. ეს დაზოგავს ტრაფიკს, მაგრამ მეტ პროცესორის დროს "
+#~ "ხარჯავს.</p></body></html>"
+
+#~ msgid "Use IP compression"
+#~ msgstr "IP გამოიყენეთ IP შეკუმშვა"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
+#~ "only if the server doesn’t support PFS.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>PFS-ის გამორთვა. ეს პარამეტრი მხოლოდ მაშინ ჩართეთ, "
+#~ "როცა სერვერს PFS-ის მხარდაჭერა არ გააჩნია.</p></body></html>"
+
+#~ msgid "Disable PFS"
+#~ msgstr "PFS-ის გამორთვა"
+
+#~ msgid ""
+#~ "<html><head/><body><p>Some firewalls block ESP traffic. Enforcing UDP "
+#~ "encapsulation even if no NAT situation is detected might help in such "
+#~ "cases.</p></body></html>"
+#~ msgstr ""
+#~ "<html><head/><body><p>ზოგიერთი ბრანდმაუერი ბლოკავს ESP ტრაფიკს. პრობლემა "
+#~ "შეიძლება UDP ენკაფსულაციით გადაჭრათ მაშინაც კი, როცა NAT-ს არ იყენებთ.</"
+#~ "p></body></html>"
+
+#~ msgid "Enforce UDP encapsulation"
+#~ msgstr "ნაძალადევი UDP ენკაპსულაცია"
+
+#~ msgid "Remote ID:"
+#~ msgstr "დაშორებულის ID:"
+
+#~ msgid "Authentication"
+#~ msgstr "ავთენტიფიკაცია"
+
+#~ msgid "Allow following authentication methods:"
+#~ msgstr "ავთენტიკაციის შესაძლო მეთოდები:"
+
+#~ msgid "Allow/disable authentication methods"
+#~ msgstr "ავთენტიკაციის შესაძლო მეთოდების ჩართ/გამორთ"
+
+#~ msgid "PAP"
+#~ msgstr "PAP"
+
+#~ msgid "CHAP"
+#~ msgstr "CHAP"
+
+#~ msgid "MSCHAP"
+#~ msgstr "MSCHAP"
+
+#~ msgid "MSCHAPv2"
+#~ msgstr "MSCHAPv2"
+
+#~ msgid "EAP"
+#~ msgstr "EAP"
+
+#~ msgid "Compression"
+#~ msgstr "შეკუმშვა"
+
+#~ msgid "Allow/disable BSD-Compress compression."
+#~ msgstr "მონაცემების BSD შეკუმშვის ჩართ/გამორთ."
+
+#~ msgid "Allow BSD compression"
+#~ msgstr "BSD შეკუმშვის ჩართვა"
+
+#~ msgid "Allow/disable Deflate compression."
+#~ msgstr "მონაცემების Deflate შეკუმშვის ჩართ/გამორთ."
+
+#~ msgid "Allow Deflate compression"
+#~ msgstr "Deflate შეკუმშვის ჩართვა"
+
+#~ msgid ""
+#~ "Allow/disable Van Jacobson style TCP/IP header compression in both the "
+#~ "transmit\n"
+#~ "and the receive directions."
+#~ msgstr ""
+#~ "Van Jacobson-ის სტილის TCP/IP თავსართების შეკუმშვის ჩართვა/გამორთვა\n"
+#~ "ორივე, გადაცემისა და მიღების დროს."
+
+#~ msgid "Allow TCP header compression"
+#~ msgstr "TCP თავსართების შეკუმშვის ჩართვა"
+
+#~ msgid ""
+#~ "Allow protocol field compression negotiation in both the receive and the\n"
+#~ " transmit directions."
+#~ msgstr ""
+#~ "პროტოკოლის ველის შეკუმშვის მოლაპარაკების ორივე, მიმღების და \n"
+#~ "გამგზავნის მიმართულებით დაშვება."
+
+#~ msgid "Use protocol field compression negotiation"
+#~ msgstr "პროტოკოლის ველის შეკუმშვის მოლაპარაკების გამოყენება"
+
+#~ msgid ""
+#~ "Use Address/Control compression in both directions (send and receive)."
+#~ msgstr ""
+#~ "მისამართის/კონტროლის შეკუმშვის ორივე მხარეს (მიღების და გაგზავნისას) "
+#~ "გამოყენება."
+
+#~ msgid "Use Address/Control compression"
+#~ msgstr "მისამართის/კონროლის შეკუმშვის ჩართვა"
+
+#~ msgid "Echo"
+#~ msgstr "ექო"
+
+#~ msgid "Send LCP echo-requests to find out whether peer is alive."
+#~ msgstr "პარტნიორის სიცოცხლის დასადგენად LCP echo-request-ის გამოყენება."
+
+#~ msgid "Send PPP echo packets"
+#~ msgstr "PPP ექოს გაგზავნა"
+
+#~ msgid "Other Settings"
+#~ msgstr "სხვა პარამეტრები"
+
+#~ msgid "MRU: "
+#~ msgstr "MRU: "
+
+#~ msgid "MTU: "
+#~ msgstr "MTU: "
+
+#~ msgid ""
+#~ "Note: MPPE encryption is only available with MSCHAP authentication "
+#~ "methods. To\n"
+#~ "enable this checkbox, select one or more of the MSCHAP authentication\n"
+#~ "methods: MSCHAP or MSCHAPv2."
+#~ msgstr ""
+#~ "შენიშვნა. MPPE დაშიფვრა მხოლოდ MSCHAP-ის ავთენტიკაციის მეთოდებთან ერთადაა "
+#~ "ხელმისაწვდომი.\n"
+#~ "ამ ველის ჩასართავად აირჩიეთ MSCHAP-ის ერთ-ერთი მეთოდი\n"
+#~ "MSCHAP ან MSCHAPv2."
+
+#~ msgid "Use MPPE Encryption"
+#~ msgstr "MPPE დაშიფვრის ჩართვა"
+
+#~ msgid "Crypto:"
+#~ msgstr "კრიპტო:"
+
+#~ msgid "Require the use of MPPE, with 40/128-bit encryption or all."
+#~ msgstr "MPPE-ის გამოყენების მოთხოვნა, 40/128-ბიტიანი დაშიფვრით, ან ყველა."
+
+#~ msgctxt "like in use Any configuration"
+#~ msgid "Any"
+#~ msgstr "ნებისმიერი"
+
+#~ msgid "128 bit"
+#~ msgstr "128 ბიტი"
+
+#~ msgid "40 bit"
+#~ msgstr "40 ბიტი"
+
+#~ msgid ""
+#~ "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
+#~ msgstr ""
+#~ "MPPE-სთვის stateful რეჟიმის გამოყენების ნების დართვა. პირველი მაინც "
+#~ "Stateless რეჟიმი იქნება ნაცადი."
+
+#~ msgid "Use stateful encryption"
+#~ msgstr "სრული მიერთების დაშიფვრის გამოყენება"

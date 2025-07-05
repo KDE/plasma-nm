@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 02:36+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2024-02-06 00:24+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -577,18 +577,6 @@ msgstr "'%1' VPN 연결의 비밀 정보를 입력하십시오:"
 msgid "VPN secrets (%1) dialog"
 msgstr "VPN 인증 정보(%1) 대화 상자"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
-#: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "암호 대화 상자"
-
-#. i18n: ectx: property (text), widget (QLabel, labelPass)
-#: passworddialog.ui:92
-#, kde-format
-msgid "Password:"
-msgstr "암호:"
-
 #: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
@@ -645,8 +633,7 @@ msgstr "모바일 광대역 장치 '%1'을(를) 사용하려면 %2 코드가 필
 msgid "%1 code:"
 msgstr "%1 코드:"
 
-#. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:85 pinwidget.ui:153
+#: pindialog.cpp:85
 #, kde-format
 msgid "New PIN code:"
 msgstr "새 PIN 코드:"
@@ -656,8 +643,7 @@ msgstr "새 PIN 코드:"
 msgid "Re-enter new PIN code:"
 msgstr "새 PIN 코드 다시 입력:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:87 pinwidget.ui:193
+#: pindialog.cpp:87
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "PIN/PUK 코드 표시"
@@ -727,37 +713,30 @@ msgstr "PUK 코드가 너무 짧습니다. 최소 8자리 이상 입력해야 �
 msgid "Unknown Error"
 msgstr "알 수 없는 오류"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
-#. i18n: ectx: property (text), widget (QLabel, title)
-#: pinwidget.ui:14 pinwidget.ui:47
-#, kde-format
-msgid "SIM PIN unlock required"
-msgstr "SIM PIN 잠금 해제 필요함"
-
-#. i18n: ectx: property (text), widget (QLabel, prompt)
-#: pinwidget.ui:76
-#, no-c-format, kde-format
-msgid ""
-"The mobile broadband device '%1' requires a SIM PIN code before it can be "
-"used."
-msgstr "모바일 광대역 장치 '%1'을(를) 사용하려면 SIM PIN 코드가 필요합니다."
-
-#. i18n: ectx: property (text), widget (QLabel, pukLabel)
-#: pinwidget.ui:133
-#, kde-format
-msgid "PUK code:"
-msgstr "PUK 코드:"
-
-#. i18n: ectx: property (text), widget (QLabel, pin2Label)
-#: pinwidget.ui:173
-#, kde-format
-msgid "Re-enter PIN code:"
-msgstr "PIN 코드 다시 입력:"
-
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1 인증이 실패했습니다. 암호가 올바릅니까?"
+
+#~ msgid "Password dialog"
+#~ msgstr "암호 대화 상자"
+
+#~ msgid "Password:"
+#~ msgstr "암호:"
+
+#~ msgid "SIM PIN unlock required"
+#~ msgstr "SIM PIN 잠금 해제 필요함"
+
+#~ msgid ""
+#~ "The mobile broadband device '%1' requires a SIM PIN code before it can be "
+#~ "used."
+#~ msgstr "모바일 광대역 장치 '%1'을(를) 사용하려면 SIM PIN 코드가 필요합니다."
+
+#~ msgid "PUK code:"
+#~ msgstr "PUK 코드:"
+
+#~ msgid "Re-enter PIN code:"
+#~ msgstr "PIN 코드 다시 입력:"
 
 #~ msgid "VPN connection '%1' failed."
 #~ msgstr "VPN 연결 '%1'이(가) 실패함."

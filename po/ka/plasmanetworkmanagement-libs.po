@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 02:36+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2023-04-19 05:58+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -241,12 +241,6 @@ msgstr "შეერთების ჩასწორება (%1)"
 msgid "New %1 connection"
 msgstr "ახალი შეერთება (%1)"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/connectioneditortabwidget.ui:20
-#, kde-format
-msgid "Connection name:"
-msgstr "შეერთების სახელი:"
-
 #: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
 #: editor/settings/teamwidget.cpp:36
 #, kde-format
@@ -406,8 +400,7 @@ msgstr "ჰოსტის სახელის გაგზავნა:"
 msgid "DHCP hostname:"
 msgstr "DHCP-ის ჰოსტის სახელი:"
 
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
+#: editor/settings/ipv4widget.cpp:440
 #, kde-format
 msgid "Default"
 msgstr "ნაგულისხმები"
@@ -476,1673 +469,6 @@ msgstr "მხოლოდ ამ სერვერებთან მიერ
 #, kde-format
 msgid "Select file to import"
 msgstr "აირჩიეთ შემოსატანი ფაილი"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
-#, kde-format
-msgid "Authentication:"
-msgstr "ავთენტიფიკაცია:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:38 editor/settings/ui/802-1x.ui:675
-#, kde-format
-msgid "MD5"
-msgstr "MD5"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:43
-#, kde-format
-msgid "TLS"
-msgstr "TLS"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
-#, kde-format
-msgid "LEAP"
-msgstr "LEAP"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:53
-#, kde-format
-msgid "PWD"
-msgstr "PWD"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:58
-#, kde-format
-msgid "FAST"
-msgstr "FAST"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:63
-#, kde-format
-msgid "Tunneled TLS (TTLS)"
-msgstr "TLS გვირაბი (TTLS)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:68
-#, kde-format
-msgid "Protected EAP (PEAP)"
-msgstr "დაცული EAP (PEAP)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_33)
-#. i18n: ectx: property (text), widget (QLabel, label_14)
-#. i18n: ectx: property (text), widget (QLabel, label_17)
-#. i18n: ectx: property (text), widget (QLabel, label_25)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/802-1x.ui:83 editor/settings/ui/802-1x.ui:277
-#: editor/settings/ui/802-1x.ui:311 editor/settings/ui/802-1x.ui:440
-#: editor/settings/ui/802-1x.ui:544 editor/settings/ui/802-1x.ui:688
-#: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
-#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
-#, kde-format
-msgid "Username:"
-msgstr "მომხმარებელი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_10)
-#. i18n: ectx: property (text), widget (QLabel, label_34)
-#. i18n: ectx: property (text), widget (QLabel, label_15)
-#. i18n: ectx: property (text), widget (QLabel, label_18)
-#. i18n: ectx: property (text), widget (QLabel, label_21)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#: editor/settings/ui/802-1x.ui:96 editor/settings/ui/802-1x.ui:290
-#: editor/settings/ui/802-1x.ui:324 editor/settings/ui/802-1x.ui:453
-#: editor/settings/ui/802-1x.ui:557 editor/settings/ui/802-1x.ui:701
-#: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
-#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:207
-#: editor/settings/ui/wifisecurity.ui:231
-#, kde-format
-msgid "Password:"
-msgstr "პაროლი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:117
-#, kde-format
-msgid "Identity:"
-msgstr "იდენტიფიკაცია:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_32)
-#. i18n: ectx: property (text), widget (QLabel, label_30)
-#. i18n: ectx: property (text), widget (QLabel, label_31)
-#: editor/settings/ui/802-1x.ui:130 editor/settings/ui/802-1x.ui:574
-#: editor/settings/ui/802-1x.ui:718
-#, kde-format
-msgid "Domain:"
-msgstr "დომენი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: editor/settings/ui/802-1x.ui:140
-#, kde-format
-msgid "User certificate:"
-msgstr "მომხმარებლის სერტიფიკატი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#. i18n: ectx: property (text), widget (QLabel, label_20)
-#. i18n: ectx: property (text), widget (QLabel, label_23)
-#: editor/settings/ui/802-1x.ui:157 editor/settings/ui/802-1x.ui:487
-#: editor/settings/ui/802-1x.ui:601
-#, kde-format
-msgid "CA certificate:"
-msgstr "CA სერტიფიკატი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_27)
-#: editor/settings/ui/802-1x.ui:174
-#, kde-format
-msgid "Subject match:"
-msgstr "სათაურის დამთხვევა:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_28)
-#: editor/settings/ui/802-1x.ui:191
-#, kde-format
-msgid "Alternative subject matches:"
-msgstr "თემის სხვა დამთხვევები:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
-#. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
-#: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
-#, kde-format
-msgid "…"
-msgstr "…"
-
-#. i18n: ectx: property (text), widget (QLabel, label_29)
-#: editor/settings/ui/802-1x.ui:215
-#, kde-format
-msgid "Connect to these servers:"
-msgstr "მხოლოდ ამ სერვერებთან მიერთება:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
-#: editor/settings/ui/802-1x.ui:239
-#: editor/settings/ui/wireguardinterfacewidget.ui:26
-#, kde-format
-msgid "Private key:"
-msgstr "პირადი გასაღები:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/802-1x.ui:256
-#, kde-format
-msgid "Private key password:"
-msgstr "პირადი გასაღების პაროლი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_11)
-#. i18n: ectx: property (text), widget (QLabel, label_19)
-#. i18n: ectx: property (text), widget (QLabel, label_24)
-#: editor/settings/ui/802-1x.ui:345 editor/settings/ui/802-1x.ui:474
-#: editor/settings/ui/802-1x.ui:588
-#, kde-format
-msgid "Anonymous identity:"
-msgstr "ანონიმური იდენტიფიკაცია:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
-#: editor/settings/ui/802-1x.ui:358
-#, kde-format
-msgid "Automatic PAC provisioning"
-msgstr "PAC-ის ავტომატური გაშლა"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:375
-#, kde-format
-msgid "Anonymous"
-msgstr "ანონიმურად"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:380
-#, kde-format
-msgid "Authenticated"
-msgstr "ავთენტიფიცირებული"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:385
-#, kde-format
-msgid "Both"
-msgstr "ორივე"
-
-#. i18n: ectx: property (text), widget (QLabel, label_12)
-#: editor/settings/ui/802-1x.ui:393
-#, kde-format
-msgid "PAC file:"
-msgstr "PAC ფაილი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_13)
-#. i18n: ectx: property (text), widget (QLabel, label_16)
-#. i18n: ectx: property (text), widget (QLabel, label_22)
-#: editor/settings/ui/802-1x.ui:410 editor/settings/ui/802-1x.ui:504
-#: editor/settings/ui/802-1x.ui:653
-#, kde-format
-msgid "Inner authentication:"
-msgstr "შიდა ავთენტიკაცია:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
-#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:427 editor/settings/ui/802-1x.ui:680
-#, kde-format
-msgid "GTC"
-msgstr "GTC"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
-#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:432 editor/settings/ui/802-1x.ui:531
-#: editor/settings/ui/802-1x.ui:670 editor/settings/ui/ppp.ui:68
-#, kde-format
-msgid "MSCHAPv2"
-msgstr "MSCHAPv2"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pap)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:521 editor/settings/ui/ppp.ui:58
-#, kde-format
-msgid "PAP"
-msgstr "PAP"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mschap)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:526 editor/settings/ui/ppp.ui:48
-#, kde-format
-msgid "MSCHAP"
-msgstr "MSCHAP"
-
-#. i18n: ectx: property (text), widget (QCheckBox, chap)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:536 editor/settings/ui/ppp.ui:78
-#, kde-format
-msgid "CHAP"
-msgstr "CHAP"
-
-#. i18n: ectx: property (text), widget (QLabel, label_26)
-#: editor/settings/ui/802-1x.ui:618
-#, kde-format
-msgid "PEAP version:"
-msgstr "PEAP-ის ვერსია:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:635
-#, kde-format
-msgctxt "PEAP version"
-msgid "Automatic"
-msgstr "ავტომატური"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:640
-#, kde-format
-msgid "Version 0"
-msgstr "ვერსია 0"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:645
-#, kde-format
-msgid "Version 1"
-msgstr "ვერსია 1"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/bond.ui:21 editor/settings/ui/bridge.ui:18
-#: editor/settings/ui/team.ui:18
-#, kde-format
-msgid "Interface name:"
-msgstr "ინტერფეისის სახელი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bond.ui:34
-#, kde-format
-msgid "Bonded connections:"
-msgstr "გადაბმული ქსელის ინტერფეისები:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
-#: editor/settings/ui/team.ui:56
-#, kde-format
-msgid "Add…"
-msgstr "დამატება…"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnEdit)
-#: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
-#: editor/settings/ui/team.ui:71
-#, kde-format
-msgid "Edit…"
-msgstr "ჩასწორება…"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnDelete)
-#: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
-#: editor/settings/ui/team.ui:86
-#, kde-format
-msgid "Delete"
-msgstr "წაშლა"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, modeLabel)
-#: editor/settings/ui/bond.ui:113 editor/settings/ui/wificonnectionwidget.ui:43
-#, kde-format
-msgid "Mode:"
-msgstr "რეჟიმი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/bond.ui:133
-#, kde-format
-msgid "Link monitoring:"
-msgstr "შეერთების მონიტორინგი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: editor/settings/ui/bond.ui:153
-#, kde-format
-msgid "Monitoring frequency:"
-msgstr "მონიტორინგის სიხშირე:"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
-#. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
-#. i18n: ectx: property (suffix), widget (QSpinBox, downDelay)
-#: editor/settings/ui/bond.ui:163 editor/settings/ui/bond.ui:205
-#: editor/settings/ui/bond.ui:225
-#, kde-format
-msgid " ms"
-msgstr " მწმ"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: editor/settings/ui/bond.ui:195
-#, kde-format
-msgid "Link up delay:"
-msgstr "შეერთების ჩართვის დაყოვნება:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/bond.ui:215
-#, kde-format
-msgid "Link down delay:"
-msgstr "შეერთების გათიშვის დაყოვნება:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/bond.ui:242
-#, kde-format
-msgid "ARP targets:"
-msgstr "ARP სამიზნეები:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
-#: editor/settings/ui/bond.ui:252
-#, kde-format
-msgid "An IP address or comma-separated list of addresses."
-msgstr "IP მისამართი ან მძიმით დაშორებული სია."
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/bridge.ui:31
-#, kde-format
-msgid "Bridged connections:"
-msgstr "ხიდით შეერთებული ინტერფეისები:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bridge.ui:110
-#, kde-format
-msgid "Aging time:"
-msgstr "დაბერების დრო:"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, agingTime)
-#. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
-#. i18n: ectx: property (suffix), widget (QSpinBox, helloTime)
-#. i18n: ectx: property (suffix), widget (QSpinBox, maxAge)
-#: editor/settings/ui/bridge.ui:126 editor/settings/ui/bridge.ui:193
-#: editor/settings/ui/bridge.ui:222 editor/settings/ui/bridge.ui:251
-#, kde-format
-msgctxt "seconds"
-msgid " s"
-msgstr " წმ"
-
-#. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
-#: editor/settings/ui/bridge.ui:139
-#, kde-format
-msgid "Enable STP (Spanning Tree Protocol)"
-msgstr "STP-ის ჩართვა"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/bridge.ui:151
-#, kde-format
-msgid "Priority:"
-msgstr "პრიორიტეტი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/bridge.ui:177
-#, kde-format
-msgid "Forward delay:"
-msgstr "გადაგზავნის დაყოვნება:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: editor/settings/ui/bridge.ui:206
-#, kde-format
-msgid "Hello time:"
-msgstr "მისალმების დრო:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: editor/settings/ui/bridge.ui:235
-#, kde-format
-msgid "Max age:"
-msgstr "მაქს. ასაკი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/bt.ui:21
-#, kde-format
-msgid "Address of the device:"
-msgstr "მოწყობილობის მისამართი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bt.ui:41
-#, kde-format
-msgid "Connection type:"
-msgstr "შეერთების ტიპი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/cdma.ui:20 editor/settings/ui/gsm.ui:24
-#, kde-format
-msgid "Number:"
-msgstr "რიცხვი:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
-#: editor/settings/ui/connectionwidget.ui:17
-#, kde-format
-msgid "Connect automatically with priority"
-msgstr "ავტომატურად შეერთება პრიორიტეტის მიხედვით"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
-#: editor/settings/ui/connectionwidget.ui:38
-#, kde-format
-msgid ""
-"If the connection is set to autoconnect, connections with higher priority "
-"will be preferred. Defaults to 0.\n"
-"The higher number means higher priority. An negative number can be used to "
-"indicate priority lower than the default.\n"
-"           "
-msgstr ""
-"თუ ეს მიერთება ავტომატურად მიერთებაზე აყენია, უპირატესობა უფრო დიდი "
-"პრიორიტეტის მქონე მიერთებებს ექნებათ მინიჭებული. ნაგულისხმები მნიშვნელობაა "
-"0.\n"
-"რაც დიდია რიცხვი, მით დიდია პრიორიტეტი. უარყოფითი რიცხვი ნაგულისხმებზე "
-"ნაკლებ პრიორიტეტს ნიშნავს.\n"
-"            "
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsers)
-#: editor/settings/ui/connectionwidget.ui:48
-#, kde-format
-msgid "All users may connect to this network"
-msgstr "ამ ქსელის გამოყენება ყველა მომხმარებელს სეუძლია"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
-#: editor/settings/ui/connectionwidget.ui:64
-#, kde-format
-msgid "Edit advanced permissions for this connection"
-msgstr "ამ შეერთების დამატებითი პარამეტრების ჩასწორება"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
-#: editor/settings/ui/connectionwidget.ui:67
-#, kde-format
-msgid ""
-"Fine-grained permissions editor for this connection. It lets you choose "
-"which users can activate/modify/delete this connection."
-msgstr ""
-"ამ შეერთების დამატებითი წვდომების ჩასწორება. საშუალებას გაძლევთ მიუთითოთ, ამ "
-"შეერთებაზე რომელ მომხმარებელს რისი უფლება აქვს."
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
-#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
-#, kde-format
-msgid "Advanced…"
-msgstr "დამატებით…"
-
-#. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
-#: editor/settings/ui/connectionwidget.ui:81
-#, kde-format
-msgid "Automatically connect to VPN"
-msgstr "VPN-ზე ავტომატური მიერთბა"
-
-#. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
-#: editor/settings/ui/connectionwidget.ui:101
-#, kde-format
-msgid "Firewall zone:"
-msgstr "ბრანდმაუერის ზონა:"
-
-#. i18n: ectx: property (text), widget (QLabel, meteredLabel)
-#: editor/settings/ui/connectionwidget.ui:130
-#, kde-format
-msgid "Metered:"
-msgstr "დათვლადი:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:150
-#, kde-format
-msgid ""
-"NetworkManager indicates to applications whether the connection is metered "
-"and therefore\n"
-"data usage should be restricted."
-msgstr ""
-"NetworkManager-ი გადმოგვცემს, როდისაა შეერთება გაზომვადი ამიტომ\n"
-"როდის უნდა იქნას მონაცემების გადაცემის მიმოცვლა შეზღუდული."
-
-#. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:160
-#, kde-format
-msgctxt "Item in the Metered: list"
-msgid "Automatic"
-msgstr "ავტომატური"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:165
-#, kde-format
-msgid "Yes"
-msgstr "დიახ"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:170
-#, kde-format
-msgid "No"
-msgstr "არა"
-
-#. i18n: ectx: property (title), widget (QGroupBox, basicGroup)
-#: editor/settings/ui/gsm.ui:18
-#, kde-format
-msgid "Basic"
-msgstr "საწყისი"
-
-#. i18n: ectx: property (title), widget (QGroupBox, advGroup)
-#: editor/settings/ui/gsm.ui:84
-#, kde-format
-msgid "Advanced"
-msgstr "დამატებითი"
-
-#. i18n: ectx: property (text), widget (QCheckBox, roaming)
-#: editor/settings/ui/gsm.ui:93
-#, kde-format
-msgid "Allow roaming if home network is not available"
-msgstr "საწყისი ქსელის მიუწვდომლობის შემთხვევაში როუმინგის გამოყენება"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/gsm.ui:100
-#, kde-format
-msgid "APN:"
-msgstr "APN:"
-
-#. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
-#: editor/settings/ui/gsm.ui:110
-#, kde-format
-msgid "Network ID:"
-msgstr "ქსელის ID:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/gsm.ui:130
-#, kde-format
-msgid "PIN:"
-msgstr "PIN:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/infiniband.ui:21
-#, kde-format
-msgid "Transport mode:"
-msgstr "ტრანსპორტის რეჟიმი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/infiniband.ui:41
-#: editor/settings/ui/wificonnectionwidget.ui:186
-#: editor/settings/ui/wiredconnectionwidget.ui:23
-#, kde-format
-msgid "Restrict to device:"
-msgstr "მოწყობილობაზე შეზღუდვა:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, mtuLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/infiniband.ui:61
-#: editor/settings/ui/wificonnectionwidget.ui:249
-#: editor/settings/ui/wiredconnectionwidget.ui:89
-#: editor/settings/ui/wireguardinterfacewidget.ui:74
-#, kde-format
-msgid "MTU:"
-msgstr "MTU:"
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
-#: editor/settings/ui/infiniband.ui:80
-#: editor/settings/ui/wificonnectionwidget.ui:271
-#: editor/settings/ui/wiredconnectionwidget.ui:112
-#, kde-format
-msgctxt "MTU:"
-msgid "Automatic"
-msgstr "ავტომატური"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
-#: editor/settings/ui/infiniband.ui:83
-#: editor/settings/ui/wificonnectionwidget.ui:274
-#: editor/settings/ui/wiredconnectionwidget.ui:115
-#, kde-format
-msgid " bytes"
-msgstr " ბაიტი"
-
-#. i18n: ectx: property (toolTip), widget (QWidget, IPv6Widget)
-#. i18n: ectx: property (toolTip), widget (QWidget, IPv4Widget)
-#: editor/settings/ui/ipv4.ui:17 editor/settings/ui/ipv6.ui:20
-#, kde-format
-msgid "Advanced IP settings"
-msgstr "IP-ის დამატებითი პარამეტრები"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
-#, kde-format
-msgid "Method:"
-msgstr "მეთოდი:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:227
-#, kde-format
-msgctxt "Method:"
-msgid "Automatic"
-msgstr "ავტომატური"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
-#, kde-format
-msgid "Automatic (Only addresses)"
-msgstr "ავტომატური (მხოლოდ მისამართი)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
-#, kde-format
-msgid "Link-Local"
-msgstr "Link-Local"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
-#, kde-format
-msgctxt "like in use Manual configuration"
-msgid "Manual"
-msgstr "ხელით"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:69
-#, kde-format
-msgid "Shared to other computers"
-msgstr "გაზიარებული სხვა კომპიუტერებთან"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:74
-#, kde-format
-msgctxt "like in this setting is Disabled"
-msgid "Disabled"
-msgstr "გამორთულია"
-
-#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
-#: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:170
-#, kde-format
-msgctxt "@info"
-msgid "DNS Servers:"
-msgstr "DNS სერვერები:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
-#: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
-#, kde-format
-msgid ""
-"Use this field to specify the IP address(es) of one or more DNS servers. Use "
-"',' to separate entries."
-msgstr ""
-"გამოიყენეთ ეს ველი ერთი ან მეტი DNS სერვერის IP მისამართის მისათითებლად. "
-"ჩამოთვლის დროს გამყოფად გამოიყენეთ \",\"."
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:125
-#, kde-format
-msgid "Edit DNS the list of servers"
-msgstr "DNS სერვერების ჩასწორება"
-
-#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
-#: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
-#, kde-format
-msgctxt "@info"
-msgid "Search Domains:"
-msgstr "საძებნი დომენები:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
-#: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
-#, kde-format
-msgid ""
-"Use this field to specify one or more DNS domains to search. Use ',' to "
-"separate entries."
-msgstr ""
-"გამოიყენეთ ეს ველი ერთი ან მეტი საძებნი DNS დომენის მისათითებლად. გამყოფად "
-"გამოიყენეთ \",\"."
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
-#: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
-#, kde-format
-msgid "Edit the list of DNS domains being searched"
-msgstr "ძებნადი DNS დომენების სიის ჩასწორება"
-
-#. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
-#: editor/settings/ui/ipv4.ui:191
-#, kde-format
-msgid "DHCP Client ID:"
-msgstr "DHCP-ის კლიენტის :"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
-#: editor/settings/ui/ipv4.ui:206
-#, kde-format
-msgid ""
-"Use this field to specify the DHCP client ID which is a string sent to the "
-"DHCP server\n"
-"to identify the local machine that the DHCP server may use to customize the "
-"DHCP\n"
-"lease and options."
-msgstr ""
-"გამოიყენეთ ეს ველი DHCP-ის კლენტის ID-ის მისათითებლად. წარმოადგენს სტრიქონს, "
-"რომელიც\n"
-"DHCO სერვერს ეგზავნება, რათა DHCP სერვერს იჯარებისა და პარამეტრების მორგების "
-"საშუალება \n"
-"მისცეს."
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
-#: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
-#, kde-format
-msgid "Remove"
-msgstr "წაშლა"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:109
-#, kde-format
-msgid "Add"
-msgstr "დამატება"
-
-#. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
-#: editor/settings/ui/ipv4.ui:244 editor/settings/ui/ipv6.ui:127
-#: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
-#, kde-format
-msgid ""
-"IP addresses identify your computer on the network. Click the \"Add\" button "
-"to add\n"
-"an IP address"
-msgstr ""
-"IP მისამართები თქვენი კომპიუტერის იდენტიფიკაციას ახდენს ქსელში.\n"
-"IP მისამართის დასამატებლად დააჭირეთ ღილაკს \"დამატება\""
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:282
-#, kde-format
-msgid ""
-"Allows the connection to complete if IPv4 configuration fails\n"
-"but IPv6 configuration succeeds"
-msgstr ""
-"მიერთების დასრულება მაშინაც კი, თუ IPv4 კონფიგურაცია შეცდომით დასრულდება,\n"
-"მაგრამ IPv6-ის კონფიგურაცია წარმატებულია"
-
-#. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:285
-#, kde-format
-msgid "IPv4 is required for this connection"
-msgstr "ამ კავშირისთვის საჭიროა IPv4"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
-#: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
-#, kde-format
-msgid "Routes…"
-msgstr "რაუტები…"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
-#: editor/settings/ui/ipv6.ui:30
-#, kde-format
-msgid ""
-"When connecting to IPv4-capable networks, allows the connection to complete "
-"if\n"
-"IPv6 configuration fails but IPv4 configuration succeeds"
-msgstr ""
-"IPv4 ფუნქციონალის მქონე ქსელებთან მიერთებისას მიერთება წარმატებულია, თუ\n"
-"IPv6 კონფიგურაცია შეუძლებელია, IPv4 კი წარმატებული"
-
-#. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
-#: editor/settings/ui/ipv6.ui:33
-#, kde-format
-msgid "IPv6 is required for this connection"
-msgstr "ამ კავშირისთვის საჭიროა IPv6"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv6.ui:83
-#, kde-format
-msgid "Edit the list of DNS servers"
-msgstr "DNS სერვერების სიის ჩასწორება"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:193
-#, kde-format
-msgid ""
-"Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-"enabled, it makes the kernel generate\n"
-"a temporary IPv6 address in addition to the public one generated from MAC "
-"address via modified EUI-64."
-msgstr ""
-"მოირგეთ IPv6-ის კონფიდენციალობის გაფართოებები SLAAC-სთვის, როგორც ეს RFC4941-"
-"შია აღწერილი. თუ ჩართულია,\n"
-"ის ბირთვს აიძულებს MAC მისამართიდან შეცვლილი EUI-64-ით შექმნილი საჯარო "
-"მისამართის გარდა დროებითი IPv6 მისამართიც დააგენერიროს."
-
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:202
-#, kde-format
-msgctxt "privacy disabled"
-msgid "Disabled"
-msgstr "გამორთულია"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:207
-#, kde-format
-msgid "Enabled (prefer public address)"
-msgstr "ჩართულია (პრიორიტეტი გარე მისამართზე)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:212
-#, kde-format
-msgid "Enabled (prefer temporary addresses)"
-msgstr "ჩართულია (პრიორიტეტი დროებით მისამართზე)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:237
-#, kde-format
-msgid "Automatic (Only DHCP)"
-msgstr "ავტომატური (მხოლოდ DHCP)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:252
-#, kde-format
-msgctxt "like in this setting is Disabled"
-msgid "Ignored"
-msgstr "იგნორირებულია"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:257
-#, kde-format
-msgid "Disabled"
-msgstr "გამორთულია"
-
-#. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
-#: editor/settings/ui/ipv6.ui:335
-#, kde-format
-msgid "Privacy:"
-msgstr "პირადულბა:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, authGroup)
-#: editor/settings/ui/ppp.ui:23
-#, kde-format
-msgid "Authentication"
-msgstr "ავთენტიფიკაცია"
-
-#. i18n: ectx: property (text), widget (QCheckBox, eap)
-#: editor/settings/ui/ppp.ui:38
-#, kde-format
-msgid "EAP"
-msgstr "EAP"
-
-#. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
-#: editor/settings/ui/ppp.ui:91
-#, kde-format
-msgid "Compression"
-msgstr "შეკუმშვა"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mppe)
-#: editor/settings/ui/ppp.ui:109
-#, kde-format
-msgid "Use point-to-point encryption (MPPE)"
-msgstr "წერტილიდან წერტილამდე შიფრაცია (MPPE)"
-
-#. i18n: ectx: property (text), widget (QCheckBox, bsdComp)
-#: editor/settings/ui/ppp.ui:116
-#, kde-format
-msgid "Use BSD data compression"
-msgstr "მონაცემების BSD შეკუმშვა"
-
-#. i18n: ectx: property (text), widget (QCheckBox, deflateComp)
-#: editor/settings/ui/ppp.ui:126
-#, kde-format
-msgid "Use Deflate data compression"
-msgstr "მონაცემების Deflate შეკუმშვა"
-
-#. i18n: ectx: property (text), widget (QCheckBox, tcpComp)
-#: editor/settings/ui/ppp.ui:136
-#, kde-format
-msgid "Use TCP header compression"
-msgstr "TCP თავსართების შეკუმშვა"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mppe128)
-#: editor/settings/ui/ppp.ui:152
-#, kde-format
-msgid "Require 128-bit encryption"
-msgstr "128-ბიტიანი შიფრაცია"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mppeStateful)
-#: editor/settings/ui/ppp.ui:165
-#, kde-format
-msgid "Use stateful MPPE"
-msgstr "საიმედო MPPE-ის გამოყენება"
-
-#. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
-#: editor/settings/ui/ppp.ui:175
-#, kde-format
-msgid "Echo"
-msgstr "ექო"
-
-#. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
-#: editor/settings/ui/ppp.ui:184
-#, kde-format
-msgid "Send PPP echo packets"
-msgstr "PPP ექოს გაგზავნა"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/pppoe.ui:20
-#, kde-format
-msgid "Service:"
-msgstr "სერვისი:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, service)
-#: editor/settings/ui/pppoe.ui:30
-#, kde-format
-msgid ""
-"If specified, instruct PPPoE to only initiate sessions with access "
-"concentrators that provide the specified service. For most providers, this "
-"should be left blank. It is only required if there are multiple access "
-"concentrators or a specific service is known to be required."
-msgstr ""
-"თუ ჩართულია, PPPoE მხოლოდ იმ კონცენტრატორებს დაუკავშირდება, რომლებისაც "
-"მითითებული სერვისი გააჩნიათ. სერვისის მომწოდებლის უმრავლესობებისათვის ეს "
-"ველი ცარიელი უნდა იყოს. მხოლოდ საჭიროა მაშინ, თუ ხელმისაწვდომია ერთზე მეტი "
-"წვდომის კონცენტრატორი, ან სპეციფიკური სერვისია საჭირო."
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/team.ui:31
-#, kde-format
-msgid "Teamed connections:"
-msgstr "დაჯგუფებული ქსელის ინტერფეისები:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/team.ui:113
-#, kde-format
-msgid "JSON config:"
-msgstr "JSON კონფიგურაცია:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnImport)
-#: editor/settings/ui/team.ui:123
-#, kde-format
-msgid "Import configuration from file…"
-msgstr "კონფიგურაციის ფაილიდან შემოტანა…"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/vlan.ui:18
-#, kde-format
-msgid "Parent interface:"
-msgstr "მშობელი ინტერფეისი:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/vlan.ui:41
-#, kde-format
-msgid "VLAN id:"
-msgstr "Vlan ID:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/vlan.ui:64
-#, kde-format
-msgid "VLAN interface name:"
-msgstr "VLAN ინტერფეისის სახელი:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, reorderHeaders)
-#: editor/settings/ui/vlan.ui:77
-#, kde-format
-msgid "Output packet headers reordering"
-msgstr "გამავალი პაკეტების თავსართების გადალაგება"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, gvrp)
-#: editor/settings/ui/vlan.ui:84
-#, kde-format
-msgid "GARP VLAN Registration Protocol"
-msgstr "GARP VLAN-ის რეგისტრაციის პროტოკოლი"
-
-#. i18n: ectx: property (text), widget (QCheckBox, gvrp)
-#: editor/settings/ui/vlan.ui:87
-#, kde-format
-msgid "GVRP"
-msgstr "GVRP"
-
-#. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
-#: editor/settings/ui/vlan.ui:94
-#, kde-format
-msgid "Loose binding"
-msgstr "მაგრად მიბმა"
-
-#. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:17
-#, kde-format
-msgid "SSID:"
-msgstr "SSID:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:63
-#, kde-format
-msgid "Infrastructure"
-msgstr "ინფრასტრუქტურა"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:68
-#, kde-format
-msgid "Ad-hoc"
-msgstr "Ad-hoc"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:73
-#, kde-format
-msgid "Access Point"
-msgstr "წვდომის წერტილი"
-
-#. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:81
-#, kde-format
-msgid "BSSID:"
-msgstr "BSSID:"
-
-#. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
-#: editor/settings/ui/wificonnectionwidget.ui:101
-#, kde-format
-msgid ""
-"This option locks this connection to the Wi-Fi access point (AP) specified "
-"by the\n"
-" BSSID entered here. Example: 00:11:22:33:44:55"
-msgstr ""
-"ეს პარამეტრი ბლოკავს ამ შეერთებას Wi-Fi წვდომის წერტილთან, რომელიც\n"
-"აქ შეყვანილი BSSID-ითაა აღწერილი. მაგ: 00:11:22:33:44:55"
-
-#. i18n: ectx: property (text), widget (QLabel, bandLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:117
-#, kde-format
-msgid "Band:"
-msgstr "სიხშირე:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:137
-#, kde-format
-msgid ""
-"This option locks the connection to the Wi-Fi network associated to the "
-"specified band. This setting depends\n"
-" on specific driver capability and may not work with all drivers"
-msgstr ""
-"ეს პარამეტრი ბლოკავს მიერთებებს Wi-Fi ქსელებთან, რომლებიც მითითებულ სპექტრს "
-"იყენებენ. ეს პარამეტრი ეყრდნობა\n"
-"სპეციფიკური დრაივერის შესაძლებლობებს და ყველა დრაივერით შეიძლება არ იმუშაოს"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:141
-#, kde-format
-msgctxt "Band:"
-msgid "Automatic"
-msgstr "ავტომატური"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:146
-#, kde-format
-msgid "A (5 GHz)"
-msgstr "A (5 GHz)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:151
-#, kde-format
-msgid "B/G (2.4 GHz)"
-msgstr "B/G (2.4 GHz)"
-
-#. i18n: ectx: property (text), widget (QLabel, channelLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:159
-#, kde-format
-msgid "Channel:"
-msgstr "არხი:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, channel)
-#: editor/settings/ui/wificonnectionwidget.ui:179
-#, kde-format
-msgid ""
-"Wireless channel to use for the Wi-Fi connection. The device will only join "
-"(or create for Ad-Hoc networks)\n"
-"a Wi-Fi network on the specified channel"
-msgstr ""
-"Wi-Fi მიერთებისთვის გამოყენებული უსადენო არხი. ეს მოწყობილობა მხოლოდ "
-"მიერთდება (ან შექმნის Ad-Hoc ქსელებს)\n"
-"Wi-Fi ქსელებთან, როლებიც მითითებულ არხს იყენებენ"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wificonnectionwidget.ui:209
-#: editor/settings/ui/wiredconnectionwidget.ui:47
-#, kde-format
-msgid "Cloned MAC address:"
-msgstr "კლონირებული MAC მისამართი:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
-#: editor/settings/ui/wificonnectionwidget.ui:240
-#, kde-format
-msgid "Random…"
-msgstr "შემთხვევითი…"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, label_4)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
-#: editor/settings/ui/wificonnectionwidget.ui:287
-#: editor/settings/ui/wificonnectionwidget.ui:303
-#, kde-format
-msgid "Mark this if you want to create a connection for a hidden network"
-msgstr "ჩართეთ, თუ დამალული ქსელთან შეერთებას ქმნით"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/wificonnectionwidget.ui:290
-#, kde-format
-msgid "Visibility:"
-msgstr "ხილვადობა:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
-#: editor/settings/ui/wificonnectionwidget.ui:306
-#, kde-format
-msgid "Hidden network"
-msgstr "დამალული ქსელი"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
-#: editor/settings/ui/wifisecurity.ui:15
-#, kde-format
-msgid "Wifi Security"
-msgstr "Wifi-ის უსაფრთხოება"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:28
-#, kde-format
-msgctxt "no security"
-msgid "None"
-msgstr "არა"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:33
-#, kde-format
-msgid "WEP key 40/128 bits (Hex or ASCII)"
-msgstr "WEP გასაღები 40/128 ბიტი (Hex ან ASCII)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:38
-#, kde-format
-msgid "WEP key 128 bits"
-msgstr "WEP გასაღები 128 ბიტი"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:48
-#, kde-format
-msgid "Dynamic WEP (802.1x)"
-msgstr "დინამიკური WEP (802.1x)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:53
-#, kde-format
-msgid "WPA/WPA2 Personal"
-msgstr "WPA/WPA2 პერსონალური"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:58
-#, kde-format
-msgid "WPA/WPA2 Enterprise"
-msgstr "WPA/WPA2 საწარმოო"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:63
-#, kde-format
-msgid "WPA3 Personal"
-msgstr "WPA3 პერსონალური"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:68
-#, kde-format
-msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA3 საწარმოო 192-ბიტიანი"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/wifisecurity.ui:76
-#, kde-format
-msgid "Security:"
-msgstr "უსაფრთხოება:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wifisecurity.ui:97
-#, kde-format
-msgid "Key:"
-msgstr "გასაღები:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/wifisecurity.ui:117
-#, kde-format
-msgid "WEP index:"
-msgstr "WEP-ის ინდექსი:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:134
-#, kde-format
-msgid "1 (default)"
-msgstr "1 (ნაგულისხმები)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:139
-#, kde-format
-msgid "2"
-msgstr "2"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:144
-#, kde-format
-msgid "3"
-msgstr "3"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:149
-#, kde-format
-msgid "4"
-msgstr "4"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:174
-#, kde-format
-msgid "Open System"
-msgstr "ღია სისტემა"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:179
-#, kde-format
-msgid "Shared Key"
-msgstr "ზიარი გასაღები"
-
-#. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
-#: editor/settings/ui/wiredconnectionwidget.ui:40
-#, kde-format
-msgid ""
-"This option locks this connection to the network device specified by its\n"
-"permanent MAC address entered here. Example: 00:11:22:33:44:55"
-msgstr ""
-"ეს პარამეტრი ამ შეერთებას აქ მითითებული ქსელური\n"
-"მოწყობილობის MAC მისამართზე შეზღუდავს. მაგ: 00:11:22:33:44:55"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
-#: editor/settings/ui/wiredconnectionwidget.ui:67
-#, kde-format
-msgid ""
-"The MAC address entered here will be used as hardware address for the\n"
-"network device this connection is activated on. This feature is known as "
-"MAC\n"
-"cloning or spoofing. Example 11:22:33:44:55"
-msgstr ""
-"აქ მითითებული MAC მისამართი გამოყენებული იქნება როგორც აპარატურული\n"
-"მისამართი ქსელური მოწყობილობისა, რომელზეც ეს მიერთება აქტიურდება.\n"
-"ფუნქციას Mac cloning/spoofing ეწოდება. მაგ: 11:22:33:44:55"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
-#: editor/settings/ui/wiredconnectionwidget.ui:80
-#, kde-format
-msgid "Random"
-msgstr "შემთხვევითი"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
-#: editor/settings/ui/wiredconnectionwidget.ui:106
-#, kde-format
-msgid ""
-"Only transmit packets of the specified size or smaller, breaking larger "
-"packets up\n"
-"into multiple Ethernet frames"
-msgstr ""
-"მხოლოდ მითითებულზე ნაკლები ან ტოლი ზომის მქონე პაკეტების გადაცემა.\n"
-"უფრო დიდი პაკეტები Ethernet-ის Frame-ების მსგავსად დაიხლიჩება"
-
-#. i18n: ectx: property (text), widget (QLabel, speedLabel)
-#: editor/settings/ui/wiredconnectionwidget.ui:125
-#, kde-format
-msgid "Speed:"
-msgstr "სიჩქარე:"
-
-#. i18n: ectx: property (text), widget (QLabel, duplexLabel)
-#: editor/settings/ui/wiredconnectionwidget.ui:132
-#, kde-format
-msgid "Duplex:"
-msgstr "დუპლექსი:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
-#: editor/settings/ui/wiredconnectionwidget.ui:151
-#, kde-format
-msgid ""
-"Request that the device use the specified duplex mode. Either \"half\" or "
-"\"full\""
-msgstr ""
-"მოწყობილობისთვის მითითებული დუპლექსის რეჟიმის გამოყენების მოთხოვნა. \"half"
-"\" (ნახევარი) ან \"full\" (სრული)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
-#: editor/settings/ui/wiredconnectionwidget.ui:158
-#, kde-format
-msgid "Half"
-msgstr "ნახევარი"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
-#: editor/settings/ui/wiredconnectionwidget.ui:163
-#, kde-format
-msgid "Full"
-msgstr "სრული"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/wiredconnectionwidget.ui:174
-#, kde-format
-msgid "Link negotiation:"
-msgstr "კავშირის დამყარება:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:188
-#, kde-format
-msgid ""
-"Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
-"will be forced without checking\n"
-"the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
-msgstr ""
-"მოწყობილობის მიერთების მოლაპარაკება. თუ არჩეულია \"ხელით\", \"სიჩქარის\" და "
-"\"დუპლექსის\"\n"
-"მნიშვნელობები მოწყობილობასთან თავსებადობის შემოწმების გარეშე დადგება. თუ "
-"დარწმუნებული არ ბრძანდებით, დატოვეთ \"იგნორირება\" ან აირჩიეთ \"ავტომატური\"."
-
-#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:192
-#, kde-format
-msgid "Ignore"
-msgstr "იგნორი"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:197
-#, kde-format
-msgctxt "Link negotiation:"
-msgid "Automatic"
-msgstr "ავტომატური"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:202
-#, kde-format
-msgid "Manual"
-msgstr "ხელით"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:219
-#, kde-format
-msgid "Request that the device use only the specified speed."
-msgstr "ამ მოწყობილობისათვის მხოლოდ მითითებული სიჩქარის გამოთხოვა."
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:226
-#, kde-format
-msgid "10 Mb/s"
-msgstr "10 მბ/წმ"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:231
-#, kde-format
-msgid "100 Mb/s"
-msgstr "100 მბ/წმ"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:236
-#, kde-format
-msgid "1 Gb/s"
-msgstr "1 გბ/წმ"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:241
-#, kde-format
-msgid "2.5 Gb/s"
-msgstr "2.5 გბ/წმ"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:246
-#, kde-format
-msgid "5 Gb/s"
-msgstr "5 გბ/წმ"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:251
-#, kde-format
-msgid "10 Gb/s"
-msgstr "10 გბ/წმ"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:256
-#, kde-format
-msgid "40 Gb/s"
-msgstr "40 გბ/წმ"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:261
-#, kde-format
-msgid "100 Gb/s"
-msgstr "100 გბ/წმ"
-
-#. i18n: ectx: property (text), widget (QCheckBox, use8021X)
-#: editor/settings/ui/wiredsecurity.ui:17
-#, kde-format
-msgid "Use 802.1x security for this connection"
-msgstr "ამ შეერთებისთვის 802.1x დაცვის გამოყენება"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
-#: editor/settings/ui/wireguardinterfacewidget.ui:14
-#, kde-format
-msgid "WireGuard Settings"
-msgstr "WireGuard-ის მორგება"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: editor/settings/ui/wireguardinterfacewidget.ui:20
-#, kde-format
-msgid "Interface"
-msgstr "ინტერფეისი"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, kde-format
-msgid ""
-"Required.\n"
-"A base64 private key generated by wg genkey."
-msgstr ""
-"აუცილებელია.\n"
-"base64 პირადი გასაღები wg genkey-ის დაგენერირებულია."
-
-#. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:41
-#, kde-format
-msgid "Listen port:"
-msgstr "პორტის მოსმენა:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:49
-#, kde-format
-msgid ""
-"Optional.\n"
-"Listen port number. Chosen randomly if left as 'Automatic'."
-msgstr ""
-"არასავალდებულო. \n"
-"მოსასმენი პორტის ნომერი. ცარიელად დატოვების შემთხვევაში აირჩევა შემთხვევითად."
-
-#. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:57
-#, kde-format
-msgid "fwmark:"
-msgstr "fwmark:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:67
-#, kde-format
-msgid ""
-"Optional.\n"
-"An fwmark for outgoing packets. If set to 0 or 'off', this\n"
-"option is disabled. May be specified in hexadecimal by\n"
-"prepending '0x'."
-msgstr ""
-"არასავალდებულ.\n"
-"გამავალი პაკეტების fwmark. თუ დაყენებულია 0 ან \"გამორთული\",\n"
-"ეს პარამეტრი გამორთულია. შეიძლება მიუთითოთ თექვსმეტობითი რიცხვიც,\n"
-"თუ წინ '0x'-ს მიუწერთ."
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:86
-#, kde-format
-msgid ""
-"Optional.\n"
-"If not specified, the MTU is automatically determined\n"
-"from the endpoint addresses or the system default route,\n"
-"which is usually a sane choice. However, to manually\n"
-"specify an MTU and to override this automatic discovery,\n"
-"this value may be specified explicitly."
-msgstr ""
-"არასავალდებულო.\n"
-"თუ მითითებული არაა, MTU ავტომატურად იქნება განსაზღვრული ბოლო წერტილის \n"
-"მისამართის ან სისტემის ნაგულისხმები რაუტიდან, რომელიც,\n"
-"როგორც წესი, სწორი გადაწყვეტილებაა.\n"
-"მაგრამ თუ გნებავთ, MTU ხელით მიუთოთ და მისი ავტომატური \n"
-"განსაზღვრა გააუქმოთ, ეს მნიშვნელობა შეგიძლიათ პირდაპირაც მიუთითოთ."
-
-#. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:93
-#, kde-format
-msgid "Autoroute peers:"
-msgstr "ავტორაუტის პარტნიორები:"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
-#: editor/settings/ui/wireguardinterfacewidget.ui:101
-#, kde-format
-msgid ""
-"Whether to automatically add routes for the AllowedIPs ranges\n"
-"of the peers."
-msgstr ""
-"პარტნიორებს ავტომატურად დაემატება,\n"
-"თუ არა AllowedIP-ების დიაპაზონები."
-
-#. i18n: ectx: property (text), widget (QPushButton, btnPeers)
-#: editor/settings/ui/wireguardinterfacewidget.ui:126
-#, kde-format
-msgid "Peers…"
-msgstr "პარტნიორები…"
-
-#. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:17
-#, kde-format
-msgid "Public key:"
-msgstr "საჯარო გასაღები:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, publicKeyLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:27
-#, kde-format
-msgid ""
-"Required.\n"
-"            A base64 public key calculated by wg pubkey \n"
-"            from a private key, and usually transmitted \n"
-"            out of band to the author of the configuration file."
-msgstr ""
-"აუცილებელია.\n"
-"            Base64 საჯარო გასაღები, რომელიც wg pubkey-ის \n"
-"            მიერ პირადი გასაღებიდან ითვლება და \n"
-"            ჩვეულებრივ კონფიგურაციის ავტორს გადაეცემა."
-
-#. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:34
-#, kde-format
-msgid "Allowed IPs:"
-msgstr "დაშვებული IP-ები:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, allowedIPsLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:47
-#, kde-format
-msgid ""
-"Required.\n"
-"            A comma-separated list of IP (v4 or v6) addresses \n"
-"            with CIDR masks from which incoming traffic for \n"
-"            this peer is allowed and to which outgoing traffic \n"
-"            for this peer is directed. The catch-all 0.0.0.0/0 \n"
-"            may be specified for matching all IPv4 addresses, \n"
-"            and ::/0 may be specified for matching all IPv6 addresses."
-msgstr ""
-"აუცილებელია.\n"
-"            მძიმით დაშორებული IP (v4 ან v6) მისამართების სია CIDR\n"
-"            ნიღბით, რომლისთვისაც ამ პარტიორისთვის შემომავალი ტრაფიკი\n"
-"            დაშვებული იქნება და რომელზეც ხდება გამავალი ტრაფიკის გაგზავნა.\n"
-"            'დაიჭირე ყველა' 0.0.0.0/0 მისამართი\n"
-"            შეგიძლიათ ყველა IPv4 მისამართის დამთხვევისთვის\n"
-"            გამოიყენოთ, ::/0 კი ყველა IPv6 მისამართისთვის."
-
-#. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:55
-#, kde-format
-msgid "Endpoint address:"
-msgstr "ბოლო წერტილის მისამართი:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:66
-#, kde-format
-msgid ""
-"Optional.\n"
-"            An endpoint for the connection. Can be an\n"
-"            IPv4 address, IPv6 address, or FQDN (fully\n"
-"            qualified domain name such as abc.com). If\n"
-"            present, Endpoint port must also be set."
-msgstr ""
-"არასავალდებულო.\n"
-"            მიერთების ბოლო წერტილი. შეიძლება წარმოადგენდეს\n"
-"            IPv4/IPv6 მისამართს ან FQDN-ს. თუ დაყენებულია,\n"
-"            ბოლო წერტილის პორტიც აუცილებლად უნდა\n"
-"            მიუთითოთ."
-
-#. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:74
-#, kde-format
-msgid "Endpoint port:"
-msgstr "ბოლო წერტილის პორტი:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:83
-#, kde-format
-msgid ""
-"Optional.\n"
-"            The port number of an endpoint. If present Endpoint\n"
-"            Address must also be set."
-msgstr ""
-"არასავალდებულოა.\n"
-"            ბოლოწერტილის პორტის ნომერი. თუ მითითებულია, ასევე აუცილებელია\n"
-"            ბოლოწერტილის მისამართის დაყენებაც."
-
-#. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:91
-#, kde-format
-msgid "Preshared key:"
-msgstr "წინასწარ გაზიარებული გასაღები:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:102
-#, kde-format
-msgid ""
-"Optional.\n"
-"            A base64 preshared key generated by wg genpsk.\n"
-"            This option adds an additional layer of symmetric-key\n"
-"            cryptography to be mixed into the already existing\n"
-"            public-key cryptography, for post-quantum resistance."
-msgstr ""
-"არასავალდებულო.\n"
-"            genpsk-ის მიერ დაყენებული base64 წინასწარ გაზიარებული გასაღები.\n"
-"            ეს პარამეტრი სიმეტრიული გასაღების კრიპტოგრაფიას დამატებით ფენას "
-"ამატებს,\n"
-"            რომელიც შეგიძლიათ,უკვე არსებულ საჯარო-გასაღების "
-"კრიპტოგრაფიასთან\n"
-"            ერთად გამოიყენოთ, კვანტური გამძლეობისთვის."
-
-#. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:109
-#, kde-format
-msgid "Persistent keepalive:"
-msgstr "მუდმივად ჩართული მდგომარეობა:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:127
-#, kde-format
-msgid ""
-"Optional.\n"
-"            A seconds interval, between 1 and 65535 inclusive, of\n"
-"            how often to send an authenticated empty packet to\n"
-"            the peer for the purpose of keeping a stateful firewall\n"
-"            or NAT mapping valid persistently. For example, if the\n"
-"            interface very rarely sends traffic, but it might at\n"
-"            anytime receive traffic from a peer, and it is behind\n"
-"            NAT, the interface might benefit from having a\n"
-"            persistent keepalive interval of 25 seconds. If set to\n"
-"            0 or \"off\", this option is disabled. By default or\n"
-"            when unspecified, this option is off. Most users will not\n"
-"            need this."
-msgstr ""
-"სურვილისამებრ.\n"
-"            წამის ინტერვალი, 1-დან 65535-ის ჩათვლით,\n"
-"            რამდენად ხშირად უნდა გაგზავნოთ დამოწმებული ცარიელი პაკეტი\n"
-"            თანატოლი სახელმწიფო ბუხრის შენახვის მიზნით\n"
-"            ან NAT რუქა ძალაშია მუდმივად. მაგალითად, თუ\n"
-"            ინტერფეისი ძალიან იშვიათად აგზავნის ტრაფიკს, მაგრამ ეს შეიძლება "
-"იყოს\n"
-"            ნებისმიერ დროს მიიღეთ ტრაფიკი თანატოლისგან და ის უკან დგას\n"
-"            NAT, ინტერფეისმა შეიძლება ისარგებლოს ა\n"
-"            მუდმივი შენარჩუნება ინტერვალი 25 წამი. თუ მითითებულია\n"
-"            0 ან \"გამორთული\", ეს ვარიანტი გამორთულია. სტანდარტულად ან\n"
-"            როდესაც დაუზუსტებელია, ეს ვარიანტი გამორთულია. მომხმარებელთა "
-"უმეტესობა არ იქნება\n"
-"            ეს სჭირდება."
-
-#. i18n: ectx: attribute (title), widget (QWidget, tab)
-#: editor/settings/ui/wireguardtabwidget.ui:24
-#, kde-format
-msgid "Peer 1"
-msgstr "პირველი პარტნიორი"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/wireguardtabwidget.ui:37
-#, kde-format
-msgid "Add new Peer"
-msgstr "ახალი პარტნიორის დამატება"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
-#: editor/settings/ui/wireguardtabwidget.ui:44
-#, kde-format
-msgid "Remove this Peer"
-msgstr "პარტნიორის წაშლა"
 
 #: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
@@ -3219,99 +1545,6 @@ msgstr ""
 "უსაფრთხოება: დაუცველი\n"
 "სიხშირე: %3 Mhz"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/widgets/ui/advancedpermissionswidget.ui:33
-#, kde-format
-msgid "Available Users"
-msgstr "ხელმისაწვდომი მომხმარებლები"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
-#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
-#: editor/widgets/ui/advancedpermissionswidget.ui:83
-#: editor/widgets/ui/advancedpermissionswidget.ui:213
-#, kde-format
-msgid "Real Name"
-msgstr "ნამდვილი სახელი"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
-#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
-#: editor/widgets/ui/advancedpermissionswidget.ui:88
-#: editor/widgets/ui/advancedpermissionswidget.ui:218
-#, kde-format
-msgctxt "like in Username for athentication"
-msgid "Username"
-msgstr "მომხმარებლის სახელი"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/widgets/ui/advancedpermissionswidget.ui:160
-#, kde-format
-msgid "Users allowed to activate the connection"
-msgstr "მომხმარებლებს აქვთ უფლება ჩართონ ეს შეერთება"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
-#: editor/widgets/ui/ipv4routes.ui:20
-#, kde-format
-msgid "Edit IPv4 Routes"
-msgstr "IPv4 რაუტების ჩასწორება"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
-#: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
-#, kde-format
-msgid ""
-"If enabled, this connection will never be used as the default network "
-"connection"
-msgstr ""
-"თუ ჩართულია, ეს შეერთება არასდროს იქნება გამოყენებული, როგორც ნაგულისხმები"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
-#: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
-#, kde-format
-msgid "Use only for resources on this connection"
-msgstr "მხოლოდ ამ შეერთების რესურსებზე გამოყენება"
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
-#: editor/widgets/ui/ipv4routes.ui:74
-#, kde-format
-msgctxt "Remove a selected row"
-msgid "Remove"
-msgstr "წაშლა"
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
-#: editor/widgets/ui/ipv4routes.ui:124 editor/widgets/ui/ipv6routes.ui:77
-#, kde-format
-msgctxt "Insert a row"
-msgid "Add"
-msgstr "დამატება"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbIgnoreAutoRoutes)
-#: editor/widgets/ui/ipv4routes.ui:136 editor/widgets/ui/ipv6routes.ui:120
-#, kde-format
-msgid ""
-"If enabled, automatically configured routes are ignored and only routes "
-"specified above are used"
-msgstr ""
-"თუ ჩართულია, ავტომატურად მორგებული რაუტები იგნორირებულია და გამოიყენება "
-"მხოლოდ ზემოთ ჩამოთვლილი რაუტები"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
-#: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
-#, kde-format
-msgid "Ignore automatically obtained routes"
-msgstr "ავტომატურად მიღებული რაუტების იგნორი"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
-#: editor/widgets/ui/ipv6routes.ui:20
-#, kde-format
-msgid "Edit IPv6 Routes"
-msgstr "IPv6 რაუტების ჩასწორება"
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
-#: editor/widgets/ui/ipv6routes.ui:92
-#, kde-format
-msgctxt "Remove a selected row"
-msgid "R&emove"
-msgstr "&წაშლა"
-
 #: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
@@ -3738,6 +1971,979 @@ msgstr "ADSL"
 #, kde-format
 msgid "Device"
 msgstr "მოწყობილობა"
+
+#~ msgid "Connection name:"
+#~ msgstr "შეერთების სახელი:"
+
+#~ msgid "Authentication:"
+#~ msgstr "ავთენტიფიკაცია:"
+
+#~ msgid "MD5"
+#~ msgstr "MD5"
+
+#~ msgid "TLS"
+#~ msgstr "TLS"
+
+#~ msgid "LEAP"
+#~ msgstr "LEAP"
+
+#~ msgid "PWD"
+#~ msgstr "PWD"
+
+#~ msgid "FAST"
+#~ msgstr "FAST"
+
+#~ msgid "Tunneled TLS (TTLS)"
+#~ msgstr "TLS გვირაბი (TTLS)"
+
+#~ msgid "Protected EAP (PEAP)"
+#~ msgstr "დაცული EAP (PEAP)"
+
+#~ msgid "Username:"
+#~ msgstr "მომხმარებელი:"
+
+#~ msgid "Password:"
+#~ msgstr "პაროლი:"
+
+#~ msgid "Identity:"
+#~ msgstr "იდენტიფიკაცია:"
+
+#~ msgid "Domain:"
+#~ msgstr "დომენი:"
+
+#~ msgid "User certificate:"
+#~ msgstr "მომხმარებლის სერტიფიკატი:"
+
+#~ msgid "CA certificate:"
+#~ msgstr "CA სერტიფიკატი:"
+
+#~ msgid "Subject match:"
+#~ msgstr "სათაურის დამთხვევა:"
+
+#~ msgid "Alternative subject matches:"
+#~ msgstr "თემის სხვა დამთხვევები:"
+
+#~ msgid "…"
+#~ msgstr "…"
+
+#~ msgid "Connect to these servers:"
+#~ msgstr "მხოლოდ ამ სერვერებთან მიერთება:"
+
+#~ msgid "Private key:"
+#~ msgstr "პირადი გასაღები:"
+
+#~ msgid "Private key password:"
+#~ msgstr "პირადი გასაღების პაროლი:"
+
+#~ msgid "Anonymous identity:"
+#~ msgstr "ანონიმური იდენტიფიკაცია:"
+
+#~ msgid "Automatic PAC provisioning"
+#~ msgstr "PAC-ის ავტომატური გაშლა"
+
+#~ msgid "Anonymous"
+#~ msgstr "ანონიმურად"
+
+#~ msgid "Authenticated"
+#~ msgstr "ავთენტიფიცირებული"
+
+#~ msgid "Both"
+#~ msgstr "ორივე"
+
+#~ msgid "PAC file:"
+#~ msgstr "PAC ფაილი:"
+
+#~ msgid "Inner authentication:"
+#~ msgstr "შიდა ავთენტიკაცია:"
+
+#~ msgid "GTC"
+#~ msgstr "GTC"
+
+#~ msgid "MSCHAPv2"
+#~ msgstr "MSCHAPv2"
+
+#~ msgid "PAP"
+#~ msgstr "PAP"
+
+#~ msgid "MSCHAP"
+#~ msgstr "MSCHAP"
+
+#~ msgid "CHAP"
+#~ msgstr "CHAP"
+
+#~ msgid "PEAP version:"
+#~ msgstr "PEAP-ის ვერსია:"
+
+#~ msgctxt "PEAP version"
+#~ msgid "Automatic"
+#~ msgstr "ავტომატური"
+
+#~ msgid "Version 0"
+#~ msgstr "ვერსია 0"
+
+#~ msgid "Version 1"
+#~ msgstr "ვერსია 1"
+
+#~ msgid "Interface name:"
+#~ msgstr "ინტერფეისის სახელი:"
+
+#~ msgid "Bonded connections:"
+#~ msgstr "გადაბმული ქსელის ინტერფეისები:"
+
+#~ msgid "Add…"
+#~ msgstr "დამატება…"
+
+#~ msgid "Edit…"
+#~ msgstr "ჩასწორება…"
+
+#~ msgid "Delete"
+#~ msgstr "წაშლა"
+
+#~ msgid "Mode:"
+#~ msgstr "რეჟიმი:"
+
+#~ msgid "Link monitoring:"
+#~ msgstr "შეერთების მონიტორინგი:"
+
+#~ msgid "Monitoring frequency:"
+#~ msgstr "მონიტორინგის სიხშირე:"
+
+#~ msgid " ms"
+#~ msgstr " მწმ"
+
+#~ msgid "Link up delay:"
+#~ msgstr "შეერთების ჩართვის დაყოვნება:"
+
+#~ msgid "Link down delay:"
+#~ msgstr "შეერთების გათიშვის დაყოვნება:"
+
+#~ msgid "ARP targets:"
+#~ msgstr "ARP სამიზნეები:"
+
+#~ msgid "An IP address or comma-separated list of addresses."
+#~ msgstr "IP მისამართი ან მძიმით დაშორებული სია."
+
+#~ msgid "Bridged connections:"
+#~ msgstr "ხიდით შეერთებული ინტერფეისები:"
+
+#~ msgid "Aging time:"
+#~ msgstr "დაბერების დრო:"
+
+#~ msgctxt "seconds"
+#~ msgid " s"
+#~ msgstr " წმ"
+
+#~ msgid "Enable STP (Spanning Tree Protocol)"
+#~ msgstr "STP-ის ჩართვა"
+
+#~ msgid "Priority:"
+#~ msgstr "პრიორიტეტი:"
+
+#~ msgid "Forward delay:"
+#~ msgstr "გადაგზავნის დაყოვნება:"
+
+#~ msgid "Hello time:"
+#~ msgstr "მისალმების დრო:"
+
+#~ msgid "Max age:"
+#~ msgstr "მაქს. ასაკი:"
+
+#~ msgid "Address of the device:"
+#~ msgstr "მოწყობილობის მისამართი:"
+
+#~ msgid "Connection type:"
+#~ msgstr "შეერთების ტიპი:"
+
+#~ msgid "Number:"
+#~ msgstr "რიცხვი:"
+
+#~ msgid "Connect automatically with priority"
+#~ msgstr "ავტომატურად შეერთება პრიორიტეტის მიხედვით"
+
+#~ msgid ""
+#~ "If the connection is set to autoconnect, connections with higher priority "
+#~ "will be preferred. Defaults to 0.\n"
+#~ "The higher number means higher priority. An negative number can be used "
+#~ "to indicate priority lower than the default.\n"
+#~ "           "
+#~ msgstr ""
+#~ "თუ ეს მიერთება ავტომატურად მიერთებაზე აყენია, უპირატესობა უფრო დიდი "
+#~ "პრიორიტეტის მქონე მიერთებებს ექნებათ მინიჭებული. ნაგულისხმები "
+#~ "მნიშვნელობაა 0.\n"
+#~ "რაც დიდია რიცხვი, მით დიდია პრიორიტეტი. უარყოფითი რიცხვი ნაგულისხმებზე "
+#~ "ნაკლებ პრიორიტეტს ნიშნავს.\n"
+#~ "            "
+
+#~ msgid "All users may connect to this network"
+#~ msgstr "ამ ქსელის გამოყენება ყველა მომხმარებელს სეუძლია"
+
+#~ msgid "Edit advanced permissions for this connection"
+#~ msgstr "ამ შეერთების დამატებითი პარამეტრების ჩასწორება"
+
+#~ msgid ""
+#~ "Fine-grained permissions editor for this connection. It lets you choose "
+#~ "which users can activate/modify/delete this connection."
+#~ msgstr ""
+#~ "ამ შეერთების დამატებითი წვდომების ჩასწორება. საშუალებას გაძლევთ მიუთითოთ, "
+#~ "ამ შეერთებაზე რომელ მომხმარებელს რისი უფლება აქვს."
+
+#~ msgid "Advanced…"
+#~ msgstr "დამატებით…"
+
+#~ msgid "Automatically connect to VPN"
+#~ msgstr "VPN-ზე ავტომატური მიერთბა"
+
+#~ msgid "Firewall zone:"
+#~ msgstr "ბრანდმაუერის ზონა:"
+
+#~ msgid "Metered:"
+#~ msgstr "დათვლადი:"
+
+#~ msgid ""
+#~ "NetworkManager indicates to applications whether the connection is "
+#~ "metered and therefore\n"
+#~ "data usage should be restricted."
+#~ msgstr ""
+#~ "NetworkManager-ი გადმოგვცემს, როდისაა შეერთება გაზომვადი ამიტომ\n"
+#~ "როდის უნდა იქნას მონაცემების გადაცემის მიმოცვლა შეზღუდული."
+
+#~ msgctxt "Item in the Metered: list"
+#~ msgid "Automatic"
+#~ msgstr "ავტომატური"
+
+#~ msgid "Yes"
+#~ msgstr "დიახ"
+
+#~ msgid "No"
+#~ msgstr "არა"
+
+#~ msgid "Basic"
+#~ msgstr "საწყისი"
+
+#~ msgid "Advanced"
+#~ msgstr "დამატებითი"
+
+#~ msgid "Allow roaming if home network is not available"
+#~ msgstr "საწყისი ქსელის მიუწვდომლობის შემთხვევაში როუმინგის გამოყენება"
+
+#~ msgid "APN:"
+#~ msgstr "APN:"
+
+#~ msgid "Network ID:"
+#~ msgstr "ქსელის ID:"
+
+#~ msgid "PIN:"
+#~ msgstr "PIN:"
+
+#~ msgid "Transport mode:"
+#~ msgstr "ტრანსპორტის რეჟიმი:"
+
+#~ msgid "Restrict to device:"
+#~ msgstr "მოწყობილობაზე შეზღუდვა:"
+
+#~ msgid "MTU:"
+#~ msgstr "MTU:"
+
+#~ msgctxt "MTU:"
+#~ msgid "Automatic"
+#~ msgstr "ავტომატური"
+
+#~ msgid " bytes"
+#~ msgstr " ბაიტი"
+
+#~ msgid "Advanced IP settings"
+#~ msgstr "IP-ის დამატებითი პარამეტრები"
+
+#~ msgid "Method:"
+#~ msgstr "მეთოდი:"
+
+#~ msgctxt "Method:"
+#~ msgid "Automatic"
+#~ msgstr "ავტომატური"
+
+#~ msgid "Automatic (Only addresses)"
+#~ msgstr "ავტომატური (მხოლოდ მისამართი)"
+
+#~ msgid "Link-Local"
+#~ msgstr "Link-Local"
+
+#~ msgctxt "like in use Manual configuration"
+#~ msgid "Manual"
+#~ msgstr "ხელით"
+
+#~ msgid "Shared to other computers"
+#~ msgstr "გაზიარებული სხვა კომპიუტერებთან"
+
+#~ msgctxt "like in this setting is Disabled"
+#~ msgid "Disabled"
+#~ msgstr "გამორთულია"
+
+#~ msgctxt "@info"
+#~ msgid "DNS Servers:"
+#~ msgstr "DNS სერვერები:"
+
+#~ msgid ""
+#~ "Use this field to specify the IP address(es) of one or more DNS servers. "
+#~ "Use ',' to separate entries."
+#~ msgstr ""
+#~ "გამოიყენეთ ეს ველი ერთი ან მეტი DNS სერვერის IP მისამართის მისათითებლად. "
+#~ "ჩამოთვლის დროს გამყოფად გამოიყენეთ \",\"."
+
+#~ msgid "Edit DNS the list of servers"
+#~ msgstr "DNS სერვერების ჩასწორება"
+
+#~ msgctxt "@info"
+#~ msgid "Search Domains:"
+#~ msgstr "საძებნი დომენები:"
+
+#~ msgid ""
+#~ "Use this field to specify one or more DNS domains to search. Use ',' to "
+#~ "separate entries."
+#~ msgstr ""
+#~ "გამოიყენეთ ეს ველი ერთი ან მეტი საძებნი DNS დომენის მისათითებლად. "
+#~ "გამყოფად გამოიყენეთ \",\"."
+
+#~ msgid "Edit the list of DNS domains being searched"
+#~ msgstr "ძებნადი DNS დომენების სიის ჩასწორება"
+
+#~ msgid "DHCP Client ID:"
+#~ msgstr "DHCP-ის კლიენტის :"
+
+#~ msgid ""
+#~ "Use this field to specify the DHCP client ID which is a string sent to "
+#~ "the DHCP server\n"
+#~ "to identify the local machine that the DHCP server may use to customize "
+#~ "the DHCP\n"
+#~ "lease and options."
+#~ msgstr ""
+#~ "გამოიყენეთ ეს ველი DHCP-ის კლენტის ID-ის მისათითებლად. წარმოადგენს "
+#~ "სტრიქონს, რომელიც\n"
+#~ "DHCO სერვერს ეგზავნება, რათა DHCP სერვერს იჯარებისა და პარამეტრების "
+#~ "მორგების საშუალება \n"
+#~ "მისცეს."
+
+#~ msgid "Remove"
+#~ msgstr "წაშლა"
+
+#~ msgid "Add"
+#~ msgstr "დამატება"
+
+#~ msgid ""
+#~ "IP addresses identify your computer on the network. Click the \"Add\" "
+#~ "button to add\n"
+#~ "an IP address"
+#~ msgstr ""
+#~ "IP მისამართები თქვენი კომპიუტერის იდენტიფიკაციას ახდენს ქსელში.\n"
+#~ "IP მისამართის დასამატებლად დააჭირეთ ღილაკს \"დამატება\""
+
+#~ msgid ""
+#~ "Allows the connection to complete if IPv4 configuration fails\n"
+#~ "but IPv6 configuration succeeds"
+#~ msgstr ""
+#~ "მიერთების დასრულება მაშინაც კი, თუ IPv4 კონფიგურაცია შეცდომით "
+#~ "დასრულდება,\n"
+#~ "მაგრამ IPv6-ის კონფიგურაცია წარმატებულია"
+
+#~ msgid "IPv4 is required for this connection"
+#~ msgstr "ამ კავშირისთვის საჭიროა IPv4"
+
+#~ msgid "Routes…"
+#~ msgstr "რაუტები…"
+
+#~ msgid ""
+#~ "When connecting to IPv4-capable networks, allows the connection to "
+#~ "complete if\n"
+#~ "IPv6 configuration fails but IPv4 configuration succeeds"
+#~ msgstr ""
+#~ "IPv4 ფუნქციონალის მქონე ქსელებთან მიერთებისას მიერთება წარმატებულია, თუ\n"
+#~ "IPv6 კონფიგურაცია შეუძლებელია, IPv4 კი წარმატებული"
+
+#~ msgid "IPv6 is required for this connection"
+#~ msgstr "ამ კავშირისთვის საჭიროა IPv6"
+
+#~ msgid "Edit the list of DNS servers"
+#~ msgstr "DNS სერვერების სიის ჩასწორება"
+
+#~ msgid ""
+#~ "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
+#~ "enabled, it makes the kernel generate\n"
+#~ "a temporary IPv6 address in addition to the public one generated from MAC "
+#~ "address via modified EUI-64."
+#~ msgstr ""
+#~ "მოირგეთ IPv6-ის კონფიდენციალობის გაფართოებები SLAAC-სთვის, როგორც ეს "
+#~ "RFC4941-შია აღწერილი. თუ ჩართულია,\n"
+#~ "ის ბირთვს აიძულებს MAC მისამართიდან შეცვლილი EUI-64-ით შექმნილი საჯარო "
+#~ "მისამართის გარდა დროებითი IPv6 მისამართიც დააგენერიროს."
+
+#~ msgctxt "privacy disabled"
+#~ msgid "Disabled"
+#~ msgstr "გამორთულია"
+
+#~ msgid "Enabled (prefer public address)"
+#~ msgstr "ჩართულია (პრიორიტეტი გარე მისამართზე)"
+
+#~ msgid "Enabled (prefer temporary addresses)"
+#~ msgstr "ჩართულია (პრიორიტეტი დროებით მისამართზე)"
+
+#~ msgid "Automatic (Only DHCP)"
+#~ msgstr "ავტომატური (მხოლოდ DHCP)"
+
+#~ msgctxt "like in this setting is Disabled"
+#~ msgid "Ignored"
+#~ msgstr "იგნორირებულია"
+
+#~ msgid "Disabled"
+#~ msgstr "გამორთულია"
+
+#~ msgid "Privacy:"
+#~ msgstr "პირადულბა:"
+
+#~ msgid "Authentication"
+#~ msgstr "ავთენტიფიკაცია"
+
+#~ msgid "EAP"
+#~ msgstr "EAP"
+
+#~ msgid "Compression"
+#~ msgstr "შეკუმშვა"
+
+#~ msgid "Use point-to-point encryption (MPPE)"
+#~ msgstr "წერტილიდან წერტილამდე შიფრაცია (MPPE)"
+
+#~ msgid "Use BSD data compression"
+#~ msgstr "მონაცემების BSD შეკუმშვა"
+
+#~ msgid "Use Deflate data compression"
+#~ msgstr "მონაცემების Deflate შეკუმშვა"
+
+#~ msgid "Use TCP header compression"
+#~ msgstr "TCP თავსართების შეკუმშვა"
+
+#~ msgid "Require 128-bit encryption"
+#~ msgstr "128-ბიტიანი შიფრაცია"
+
+#~ msgid "Use stateful MPPE"
+#~ msgstr "საიმედო MPPE-ის გამოყენება"
+
+#~ msgid "Echo"
+#~ msgstr "ექო"
+
+#~ msgid "Send PPP echo packets"
+#~ msgstr "PPP ექოს გაგზავნა"
+
+#~ msgid "Service:"
+#~ msgstr "სერვისი:"
+
+#~ msgid ""
+#~ "If specified, instruct PPPoE to only initiate sessions with access "
+#~ "concentrators that provide the specified service. For most providers, "
+#~ "this should be left blank. It is only required if there are multiple "
+#~ "access concentrators or a specific service is known to be required."
+#~ msgstr ""
+#~ "თუ ჩართულია, PPPoE მხოლოდ იმ კონცენტრატორებს დაუკავშირდება, რომლებისაც "
+#~ "მითითებული სერვისი გააჩნიათ. სერვისის მომწოდებლის უმრავლესობებისათვის ეს "
+#~ "ველი ცარიელი უნდა იყოს. მხოლოდ საჭიროა მაშინ, თუ ხელმისაწვდომია ერთზე "
+#~ "მეტი წვდომის კონცენტრატორი, ან სპეციფიკური სერვისია საჭირო."
+
+#~ msgid "Teamed connections:"
+#~ msgstr "დაჯგუფებული ქსელის ინტერფეისები:"
+
+#~ msgid "JSON config:"
+#~ msgstr "JSON კონფიგურაცია:"
+
+#~ msgid "Import configuration from file…"
+#~ msgstr "კონფიგურაციის ფაილიდან შემოტანა…"
+
+#~ msgid "Parent interface:"
+#~ msgstr "მშობელი ინტერფეისი:"
+
+#~ msgid "VLAN id:"
+#~ msgstr "Vlan ID:"
+
+#~ msgid "VLAN interface name:"
+#~ msgstr "VLAN ინტერფეისის სახელი:"
+
+#~ msgid "Output packet headers reordering"
+#~ msgstr "გამავალი პაკეტების თავსართების გადალაგება"
+
+#~ msgid "GARP VLAN Registration Protocol"
+#~ msgstr "GARP VLAN-ის რეგისტრაციის პროტოკოლი"
+
+#~ msgid "GVRP"
+#~ msgstr "GVRP"
+
+#~ msgid "Loose binding"
+#~ msgstr "მაგრად მიბმა"
+
+#~ msgid "SSID:"
+#~ msgstr "SSID:"
+
+#~ msgid "Infrastructure"
+#~ msgstr "ინფრასტრუქტურა"
+
+#~ msgid "Ad-hoc"
+#~ msgstr "Ad-hoc"
+
+#~ msgid "Access Point"
+#~ msgstr "წვდომის წერტილი"
+
+#~ msgid "BSSID:"
+#~ msgstr "BSSID:"
+
+#~ msgid ""
+#~ "This option locks this connection to the Wi-Fi access point (AP) "
+#~ "specified by the\n"
+#~ " BSSID entered here. Example: 00:11:22:33:44:55"
+#~ msgstr ""
+#~ "ეს პარამეტრი ბლოკავს ამ შეერთებას Wi-Fi წვდომის წერტილთან, რომელიც\n"
+#~ "აქ შეყვანილი BSSID-ითაა აღწერილი. მაგ: 00:11:22:33:44:55"
+
+#~ msgid "Band:"
+#~ msgstr "სიხშირე:"
+
+#~ msgid ""
+#~ "This option locks the connection to the Wi-Fi network associated to the "
+#~ "specified band. This setting depends\n"
+#~ " on specific driver capability and may not work with all drivers"
+#~ msgstr ""
+#~ "ეს პარამეტრი ბლოკავს მიერთებებს Wi-Fi ქსელებთან, რომლებიც მითითებულ "
+#~ "სპექტრს იყენებენ. ეს პარამეტრი ეყრდნობა\n"
+#~ "სპეციფიკური დრაივერის შესაძლებლობებს და ყველა დრაივერით შეიძლება არ "
+#~ "იმუშაოს"
+
+#~ msgctxt "Band:"
+#~ msgid "Automatic"
+#~ msgstr "ავტომატური"
+
+#~ msgid "A (5 GHz)"
+#~ msgstr "A (5 GHz)"
+
+#~ msgid "B/G (2.4 GHz)"
+#~ msgstr "B/G (2.4 GHz)"
+
+#~ msgid "Channel:"
+#~ msgstr "არხი:"
+
+#~ msgid ""
+#~ "Wireless channel to use for the Wi-Fi connection. The device will only "
+#~ "join (or create for Ad-Hoc networks)\n"
+#~ "a Wi-Fi network on the specified channel"
+#~ msgstr ""
+#~ "Wi-Fi მიერთებისთვის გამოყენებული უსადენო არხი. ეს მოწყობილობა მხოლოდ "
+#~ "მიერთდება (ან შექმნის Ad-Hoc ქსელებს)\n"
+#~ "Wi-Fi ქსელებთან, როლებიც მითითებულ არხს იყენებენ"
+
+#~ msgid "Cloned MAC address:"
+#~ msgstr "კლონირებული MAC მისამართი:"
+
+#~ msgid "Random…"
+#~ msgstr "შემთხვევითი…"
+
+#~ msgid "Mark this if you want to create a connection for a hidden network"
+#~ msgstr "ჩართეთ, თუ დამალული ქსელთან შეერთებას ქმნით"
+
+#~ msgid "Visibility:"
+#~ msgstr "ხილვადობა:"
+
+#~ msgid "Hidden network"
+#~ msgstr "დამალული ქსელი"
+
+#~ msgid "Wifi Security"
+#~ msgstr "Wifi-ის უსაფრთხოება"
+
+#~ msgctxt "no security"
+#~ msgid "None"
+#~ msgstr "არა"
+
+#~ msgid "WEP key 40/128 bits (Hex or ASCII)"
+#~ msgstr "WEP გასაღები 40/128 ბიტი (Hex ან ASCII)"
+
+#~ msgid "WEP key 128 bits"
+#~ msgstr "WEP გასაღები 128 ბიტი"
+
+#~ msgid "Dynamic WEP (802.1x)"
+#~ msgstr "დინამიკური WEP (802.1x)"
+
+#~ msgid "WPA/WPA2 Personal"
+#~ msgstr "WPA/WPA2 პერსონალური"
+
+#~ msgid "WPA/WPA2 Enterprise"
+#~ msgstr "WPA/WPA2 საწარმოო"
+
+#~ msgid "WPA3 Personal"
+#~ msgstr "WPA3 პერსონალური"
+
+#~ msgid "WPA3 Enterprise 192-bit"
+#~ msgstr "WPA3 საწარმოო 192-ბიტიანი"
+
+#~ msgid "Security:"
+#~ msgstr "უსაფრთხოება:"
+
+#~ msgid "Key:"
+#~ msgstr "გასაღები:"
+
+#~ msgid "WEP index:"
+#~ msgstr "WEP-ის ინდექსი:"
+
+#~ msgid "1 (default)"
+#~ msgstr "1 (ნაგულისხმები)"
+
+#~ msgid "2"
+#~ msgstr "2"
+
+#~ msgid "3"
+#~ msgstr "3"
+
+#~ msgid "4"
+#~ msgstr "4"
+
+#~ msgid "Open System"
+#~ msgstr "ღია სისტემა"
+
+#~ msgid "Shared Key"
+#~ msgstr "ზიარი გასაღები"
+
+#~ msgid ""
+#~ "This option locks this connection to the network device specified by its\n"
+#~ "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#~ msgstr ""
+#~ "ეს პარამეტრი ამ შეერთებას აქ მითითებული ქსელური\n"
+#~ "მოწყობილობის MAC მისამართზე შეზღუდავს. მაგ: 00:11:22:33:44:55"
+
+#~ msgid ""
+#~ "The MAC address entered here will be used as hardware address for the\n"
+#~ "network device this connection is activated on. This feature is known as "
+#~ "MAC\n"
+#~ "cloning or spoofing. Example 11:22:33:44:55"
+#~ msgstr ""
+#~ "აქ მითითებული MAC მისამართი გამოყენებული იქნება როგორც აპარატურული\n"
+#~ "მისამართი ქსელური მოწყობილობისა, რომელზეც ეს მიერთება აქტიურდება.\n"
+#~ "ფუნქციას Mac cloning/spoofing ეწოდება. მაგ: 11:22:33:44:55"
+
+#~ msgid "Random"
+#~ msgstr "შემთხვევითი"
+
+#~ msgid ""
+#~ "Only transmit packets of the specified size or smaller, breaking larger "
+#~ "packets up\n"
+#~ "into multiple Ethernet frames"
+#~ msgstr ""
+#~ "მხოლოდ მითითებულზე ნაკლები ან ტოლი ზომის მქონე პაკეტების გადაცემა.\n"
+#~ "უფრო დიდი პაკეტები Ethernet-ის Frame-ების მსგავსად დაიხლიჩება"
+
+#~ msgid "Speed:"
+#~ msgstr "სიჩქარე:"
+
+#~ msgid "Duplex:"
+#~ msgstr "დუპლექსი:"
+
+#~ msgid ""
+#~ "Request that the device use the specified duplex mode. Either \"half\" or "
+#~ "\"full\""
+#~ msgstr ""
+#~ "მოწყობილობისთვის მითითებული დუპლექსის რეჟიმის გამოყენების მოთხოვნა. \"half"
+#~ "\" (ნახევარი) ან \"full\" (სრული)"
+
+#~ msgid "Half"
+#~ msgstr "ნახევარი"
+
+#~ msgid "Full"
+#~ msgstr "სრული"
+
+#~ msgid "Link negotiation:"
+#~ msgstr "კავშირის დამყარება:"
+
+#~ msgid ""
+#~ "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
+#~ "values will be forced without checking\n"
+#~ "the device compatibility. If unsure, leave here “Ignore” or pick "
+#~ "“Automatic”."
+#~ msgstr ""
+#~ "მოწყობილობის მიერთების მოლაპარაკება. თუ არჩეულია \"ხელით\", \"სიჩქარის\" "
+#~ "და \"დუპლექსის\"\n"
+#~ "მნიშვნელობები მოწყობილობასთან თავსებადობის შემოწმების გარეშე დადგება. თუ "
+#~ "დარწმუნებული არ ბრძანდებით, დატოვეთ \"იგნორირება\" ან აირჩიეთ \"ავტომატური"
+#~ "\"."
+
+#~ msgid "Ignore"
+#~ msgstr "იგნორი"
+
+#~ msgctxt "Link negotiation:"
+#~ msgid "Automatic"
+#~ msgstr "ავტომატური"
+
+#~ msgid "Manual"
+#~ msgstr "ხელით"
+
+#~ msgid "Request that the device use only the specified speed."
+#~ msgstr "ამ მოწყობილობისათვის მხოლოდ მითითებული სიჩქარის გამოთხოვა."
+
+#~ msgid "10 Mb/s"
+#~ msgstr "10 მბ/წმ"
+
+#~ msgid "100 Mb/s"
+#~ msgstr "100 მბ/წმ"
+
+#~ msgid "1 Gb/s"
+#~ msgstr "1 გბ/წმ"
+
+#~ msgid "2.5 Gb/s"
+#~ msgstr "2.5 გბ/წმ"
+
+#~ msgid "5 Gb/s"
+#~ msgstr "5 გბ/წმ"
+
+#~ msgid "10 Gb/s"
+#~ msgstr "10 გბ/წმ"
+
+#~ msgid "40 Gb/s"
+#~ msgstr "40 გბ/წმ"
+
+#~ msgid "100 Gb/s"
+#~ msgstr "100 გბ/წმ"
+
+#~ msgid "Use 802.1x security for this connection"
+#~ msgstr "ამ შეერთებისთვის 802.1x დაცვის გამოყენება"
+
+#~ msgid "WireGuard Settings"
+#~ msgstr "WireGuard-ის მორგება"
+
+#~ msgid "Interface"
+#~ msgstr "ინტერფეისი"
+
+#~ msgid ""
+#~ "Required.\n"
+#~ "A base64 private key generated by wg genkey."
+#~ msgstr ""
+#~ "აუცილებელია.\n"
+#~ "base64 პირადი გასაღები wg genkey-ის დაგენერირებულია."
+
+#~ msgid "Listen port:"
+#~ msgstr "პორტის მოსმენა:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "Listen port number. Chosen randomly if left as 'Automatic'."
+#~ msgstr ""
+#~ "არასავალდებულო. \n"
+#~ "მოსასმენი პორტის ნომერი. ცარიელად დატოვების შემთხვევაში აირჩევა "
+#~ "შემთხვევითად."
+
+#~ msgid "fwmark:"
+#~ msgstr "fwmark:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "An fwmark for outgoing packets. If set to 0 or 'off', this\n"
+#~ "option is disabled. May be specified in hexadecimal by\n"
+#~ "prepending '0x'."
+#~ msgstr ""
+#~ "არასავალდებულ.\n"
+#~ "გამავალი პაკეტების fwmark. თუ დაყენებულია 0 ან \"გამორთული\",\n"
+#~ "ეს პარამეტრი გამორთულია. შეიძლება მიუთითოთ თექვსმეტობითი რიცხვიც,\n"
+#~ "თუ წინ '0x'-ს მიუწერთ."
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "If not specified, the MTU is automatically determined\n"
+#~ "from the endpoint addresses or the system default route,\n"
+#~ "which is usually a sane choice. However, to manually\n"
+#~ "specify an MTU and to override this automatic discovery,\n"
+#~ "this value may be specified explicitly."
+#~ msgstr ""
+#~ "არასავალდებულო.\n"
+#~ "თუ მითითებული არაა, MTU ავტომატურად იქნება განსაზღვრული ბოლო წერტილის \n"
+#~ "მისამართის ან სისტემის ნაგულისხმები რაუტიდან, რომელიც,\n"
+#~ "როგორც წესი, სწორი გადაწყვეტილებაა.\n"
+#~ "მაგრამ თუ გნებავთ, MTU ხელით მიუთოთ და მისი ავტომატური \n"
+#~ "განსაზღვრა გააუქმოთ, ეს მნიშვნელობა შეგიძლიათ პირდაპირაც მიუთითოთ."
+
+#~ msgid "Autoroute peers:"
+#~ msgstr "ავტორაუტის პარტნიორები:"
+
+#~ msgid ""
+#~ "Whether to automatically add routes for the AllowedIPs ranges\n"
+#~ "of the peers."
+#~ msgstr ""
+#~ "პარტნიორებს ავტომატურად დაემატება,\n"
+#~ "თუ არა AllowedIP-ების დიაპაზონები."
+
+#~ msgid "Peers…"
+#~ msgstr "პარტნიორები…"
+
+#~ msgid "Public key:"
+#~ msgstr "საჯარო გასაღები:"
+
+#~ msgid ""
+#~ "Required.\n"
+#~ "            A base64 public key calculated by wg pubkey \n"
+#~ "            from a private key, and usually transmitted \n"
+#~ "            out of band to the author of the configuration file."
+#~ msgstr ""
+#~ "აუცილებელია.\n"
+#~ "            Base64 საჯარო გასაღები, რომელიც wg pubkey-ის \n"
+#~ "            მიერ პირადი გასაღებიდან ითვლება და \n"
+#~ "            ჩვეულებრივ კონფიგურაციის ავტორს გადაეცემა."
+
+#~ msgid "Allowed IPs:"
+#~ msgstr "დაშვებული IP-ები:"
+
+#~ msgid ""
+#~ "Required.\n"
+#~ "            A comma-separated list of IP (v4 or v6) addresses \n"
+#~ "            with CIDR masks from which incoming traffic for \n"
+#~ "            this peer is allowed and to which outgoing traffic \n"
+#~ "            for this peer is directed. The catch-all 0.0.0.0/0 \n"
+#~ "            may be specified for matching all IPv4 addresses, \n"
+#~ "            and ::/0 may be specified for matching all IPv6 addresses."
+#~ msgstr ""
+#~ "აუცილებელია.\n"
+#~ "            მძიმით დაშორებული IP (v4 ან v6) მისამართების სია CIDR\n"
+#~ "            ნიღბით, რომლისთვისაც ამ პარტიორისთვის შემომავალი ტრაფიკი\n"
+#~ "            დაშვებული იქნება და რომელზეც ხდება გამავალი ტრაფიკის "
+#~ "გაგზავნა.\n"
+#~ "            'დაიჭირე ყველა' 0.0.0.0/0 მისამართი\n"
+#~ "            შეგიძლიათ ყველა IPv4 მისამართის დამთხვევისთვის\n"
+#~ "            გამოიყენოთ, ::/0 კი ყველა IPv6 მისამართისთვის."
+
+#~ msgid "Endpoint address:"
+#~ msgstr "ბოლო წერტილის მისამართი:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "            An endpoint for the connection. Can be an\n"
+#~ "            IPv4 address, IPv6 address, or FQDN (fully\n"
+#~ "            qualified domain name such as abc.com). If\n"
+#~ "            present, Endpoint port must also be set."
+#~ msgstr ""
+#~ "არასავალდებულო.\n"
+#~ "            მიერთების ბოლო წერტილი. შეიძლება წარმოადგენდეს\n"
+#~ "            IPv4/IPv6 მისამართს ან FQDN-ს. თუ დაყენებულია,\n"
+#~ "            ბოლო წერტილის პორტიც აუცილებლად უნდა\n"
+#~ "            მიუთითოთ."
+
+#~ msgid "Endpoint port:"
+#~ msgstr "ბოლო წერტილის პორტი:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "            The port number of an endpoint. If present Endpoint\n"
+#~ "            Address must also be set."
+#~ msgstr ""
+#~ "არასავალდებულოა.\n"
+#~ "            ბოლოწერტილის პორტის ნომერი. თუ მითითებულია, ასევე "
+#~ "აუცილებელია\n"
+#~ "            ბოლოწერტილის მისამართის დაყენებაც."
+
+#~ msgid "Preshared key:"
+#~ msgstr "წინასწარ გაზიარებული გასაღები:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "            A base64 preshared key generated by wg genpsk.\n"
+#~ "            This option adds an additional layer of symmetric-key\n"
+#~ "            cryptography to be mixed into the already existing\n"
+#~ "            public-key cryptography, for post-quantum resistance."
+#~ msgstr ""
+#~ "არასავალდებულო.\n"
+#~ "            genpsk-ის მიერ დაყენებული base64 წინასწარ გაზიარებული "
+#~ "გასაღები.\n"
+#~ "            ეს პარამეტრი სიმეტრიული გასაღების კრიპტოგრაფიას დამატებით "
+#~ "ფენას ამატებს,\n"
+#~ "            რომელიც შეგიძლიათ,უკვე არსებულ საჯარო-გასაღების "
+#~ "კრიპტოგრაფიასთან\n"
+#~ "            ერთად გამოიყენოთ, კვანტური გამძლეობისთვის."
+
+#~ msgid "Persistent keepalive:"
+#~ msgstr "მუდმივად ჩართული მდგომარეობა:"
+
+#~ msgid ""
+#~ "Optional.\n"
+#~ "            A seconds interval, between 1 and 65535 inclusive, of\n"
+#~ "            how often to send an authenticated empty packet to\n"
+#~ "            the peer for the purpose of keeping a stateful firewall\n"
+#~ "            or NAT mapping valid persistently. For example, if the\n"
+#~ "            interface very rarely sends traffic, but it might at\n"
+#~ "            anytime receive traffic from a peer, and it is behind\n"
+#~ "            NAT, the interface might benefit from having a\n"
+#~ "            persistent keepalive interval of 25 seconds. If set to\n"
+#~ "            0 or \"off\", this option is disabled. By default or\n"
+#~ "            when unspecified, this option is off. Most users will not\n"
+#~ "            need this."
+#~ msgstr ""
+#~ "სურვილისამებრ.\n"
+#~ "            წამის ინტერვალი, 1-დან 65535-ის ჩათვლით,\n"
+#~ "            რამდენად ხშირად უნდა გაგზავნოთ დამოწმებული ცარიელი პაკეტი\n"
+#~ "            თანატოლი სახელმწიფო ბუხრის შენახვის მიზნით\n"
+#~ "            ან NAT რუქა ძალაშია მუდმივად. მაგალითად, თუ\n"
+#~ "            ინტერფეისი ძალიან იშვიათად აგზავნის ტრაფიკს, მაგრამ ეს "
+#~ "შეიძლება იყოს\n"
+#~ "            ნებისმიერ დროს მიიღეთ ტრაფიკი თანატოლისგან და ის უკან დგას\n"
+#~ "            NAT, ინტერფეისმა შეიძლება ისარგებლოს ა\n"
+#~ "            მუდმივი შენარჩუნება ინტერვალი 25 წამი. თუ მითითებულია\n"
+#~ "            0 ან \"გამორთული\", ეს ვარიანტი გამორთულია. სტანდარტულად ან\n"
+#~ "            როდესაც დაუზუსტებელია, ეს ვარიანტი გამორთულია. მომხმარებელთა "
+#~ "უმეტესობა არ იქნება\n"
+#~ "            ეს სჭირდება."
+
+#~ msgid "Peer 1"
+#~ msgstr "პირველი პარტნიორი"
+
+#~ msgid "Add new Peer"
+#~ msgstr "ახალი პარტნიორის დამატება"
+
+#~ msgid "Remove this Peer"
+#~ msgstr "პარტნიორის წაშლა"
+
+#~ msgid "Available Users"
+#~ msgstr "ხელმისაწვდომი მომხმარებლები"
+
+#~ msgid "Real Name"
+#~ msgstr "ნამდვილი სახელი"
+
+#~ msgctxt "like in Username for athentication"
+#~ msgid "Username"
+#~ msgstr "მომხმარებლის სახელი"
+
+#~ msgid "Users allowed to activate the connection"
+#~ msgstr "მომხმარებლებს აქვთ უფლება ჩართონ ეს შეერთება"
+
+#~ msgid "Edit IPv4 Routes"
+#~ msgstr "IPv4 რაუტების ჩასწორება"
+
+#~ msgid ""
+#~ "If enabled, this connection will never be used as the default network "
+#~ "connection"
+#~ msgstr ""
+#~ "თუ ჩართულია, ეს შეერთება არასდროს იქნება გამოყენებული, როგორც ნაგულისხმები"
+
+#~ msgid "Use only for resources on this connection"
+#~ msgstr "მხოლოდ ამ შეერთების რესურსებზე გამოყენება"
+
+#~ msgctxt "Remove a selected row"
+#~ msgid "Remove"
+#~ msgstr "წაშლა"
+
+#~ msgctxt "Insert a row"
+#~ msgid "Add"
+#~ msgstr "დამატება"
+
+#~ msgid ""
+#~ "If enabled, automatically configured routes are ignored and only routes "
+#~ "specified above are used"
+#~ msgstr ""
+#~ "თუ ჩართულია, ავტომატურად მორგებული რაუტები იგნორირებულია და გამოიყენება "
+#~ "მხოლოდ ზემოთ ჩამოთვლილი რაუტები"
+
+#~ msgid "Ignore automatically obtained routes"
+#~ msgstr "ავტომატურად მიღებული რაუტების იგნორი"
+
+#~ msgid "Edit IPv6 Routes"
+#~ msgstr "IPv6 რაუტების ჩასწორება"
+
+#~ msgctxt "Remove a selected row"
+#~ msgid "R&emove"
+#~ msgstr "&წაშლა"
 
 #~ msgid ""
 #~ "Plasma is missing support for '%1' VPN connections. Please report this to "

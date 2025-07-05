@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:54+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2023-03-14 04:53+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -37,226 +37,6 @@ msgstr "NetworkManager-ს Cisco-სთან თავსებადი VPN-�
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: ფაილის შექმნის შეცდომა"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: vpnc.ui:18
-#, kde-format
-msgid "Gateway:"
-msgstr "ნაგულისხმები რაუტერი:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
-#: vpnc.ui:31
-#, kde-format
-msgid "IP/hostname of IPsec gateway."
-msgstr "IPSec ნაგულისხმები რაუტერის IP/ჰოსტის სახელი."
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: vpnc.ui:38
-#, kde-format
-msgid "User name:"
-msgstr "მომხმარებელი:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, leUserName)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, user)
-#: vpnc.ui:51 vpncauth.ui:97
-#, kde-format
-msgid "User name for the connection."
-msgstr "ამ შეერთების მომხმარებლის სახელი."
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: vpnc.ui:58
-#, kde-format
-msgid "User password:"
-msgstr "მომხმარებლის პაროლი:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, leUserPassword)
-#. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
-#: vpnc.ui:79 vpncauth.ui:58
-#, kde-format
-msgid "User password for the connection."
-msgstr "ამ შეერთების მომხმარებლის პაროლი."
-
-#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: vpnc.ui:91 vpncauth.ui:124
-#, kde-format
-msgid "Group name:"
-msgstr "ჯგუფის სახელი:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, group)
-#: vpnc.ui:104
-#, kde-format
-msgid "Group name"
-msgstr "ჯგუფის სახელი"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: vpnc.ui:111
-#, kde-format
-msgid "Group password:"
-msgstr "ჯგუფის პაროლი:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
-#. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
-#: vpnc.ui:129 vpncauth.ui:84
-#, kde-format
-msgid "Group password."
-msgstr "ჯგუფის პაროლი."
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useHybridAuth)
-#: vpnc.ui:141
-#, kde-format
-msgid ""
-"Enable hybrid authentication, i.e. use certificate in addition to password."
-msgstr ""
-"ჰიბრიდული ავთენტიკაციის ჩართვა. მაგ: პაროლთან ერთად სერტიფიკატის გამოყენება."
-
-#. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
-#: vpnc.ui:144
-#, kde-format
-msgid "Use hybrid authentication"
-msgstr "ჰიბრიდული ავთენტიკაციის გამოყენება"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: vpnc.ui:154
-#, kde-format
-msgid "CA file:"
-msgstr "CA ფაილი:"
-
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, caFile)
-#: vpnc.ui:167
-#, kde-format
-msgid "CA certificate in PEM format."
-msgstr "CA სერთიფიკატი PEM ფორმატში."
-
-#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
-#: vpnc.ui:170
-#, kde-format
-msgid "*.pem *.crt *.cer"
-msgstr "*.pem *.crt *.cer"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: vpnc.ui:192
-#, kde-format
-msgid "Advanced…"
-msgstr "დამატებით…"
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: vpncadvanced.ui:18
-#, kde-format
-msgid "Identification"
-msgstr "იდენტიფიკაცია"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: vpncadvanced.ui:27
-#, kde-format
-msgid "Domain:"
-msgstr "დომენი:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
-#: vpncadvanced.ui:37
-#, kde-format
-msgid "(NT-)Domain name for authentication."
-msgstr "(NT-) დომენის სახელი ავთენტიკაციისთვის."
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: vpncadvanced.ui:44
-#, kde-format
-msgid "Vendor:"
-msgstr "მომწოდებელი:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
-#: vpncadvanced.ui:60
-#, kde-format
-msgid "Vendor of your IPsec gateway."
-msgstr "თქვენი IPsec კონცენტრატორის მომწოდებელი."
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: vpncadvanced.ui:70
-#, kde-format
-msgid "Transport and Security"
-msgstr "ტრანსპორტი და უსაფრთხოება"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: vpncadvanced.ui:82
-#, kde-format
-msgid "Encryption method:"
-msgstr "დაშიფვრის მეთოდი:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, encryption)
-#: vpncadvanced.ui:98
-#, kde-format
-msgid "Encryption method."
-msgstr "დაშიფვრის მეთოდი."
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: vpncadvanced.ui:105
-#, kde-format
-msgid "NAT traversal:"
-msgstr "NAT-ში გავლა:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, nat)
-#: vpncadvanced.ui:121
-#, kde-format
-msgid "NAT traversal method to use."
-msgstr "NAT-ში გავლის მეთოდი."
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: vpncadvanced.ui:128
-#, kde-format
-msgid "IKE DH Group:"
-msgstr "IKE DH ჯგუფი:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, dhGroup)
-#: vpncadvanced.ui:144
-#, kde-format
-msgid "Name of the IKE DH group."
-msgstr "IKE DH ჯგუფის სახელი."
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: vpncadvanced.ui:151
-#, kde-format
-msgid "Perfect Forward Secrecy:"
-msgstr "შესანიშნავი გადამისამართების საიდუმლოება:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
-#: vpncadvanced.ui:167
-#, kde-format
-msgid "Diffie-Hellman group to use for PFS."
-msgstr "დიფი-ჰელმანის ჯგუფი PFS-სთვის."
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: vpncadvanced.ui:174
-#, kde-format
-msgid "Local Port:"
-msgstr "ლოკალური პორტი:"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, localport)
-#: vpncadvanced.ui:190
-#, kde-format
-msgid ""
-"Local port to use (0-65535). 0 (default value) means random port. 500 is "
-"vpnc's default."
-msgstr ""
-"ლოკალური პორტი (0-65535). 0 (ნაგულისხმები) ნიშნავს შემთხვევით პორტს. 500 "
-"vpnc-ის ნაგულისხმები მნიშვნელობაა."
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
-#: vpncadvanced.ui:193
-#, kde-format
-msgid "Random"
-msgstr "შემთხვევით"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, deadPeer)
-#: vpncadvanced.ui:209
-#, kde-format
-msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr "DPD პაკეტების გაგზავნის გათიშვა (ტაიმაუტის განულება)."
-
-#. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
-#: vpncadvanced.ui:212
-#, kde-format
-msgid "Disable dead peer detection"
-msgstr "მკვდარი პარტნიორის გამოვლენის გამორთვა"
 
 #: vpncadvancedwidget.cpp:20
 #, kde-format
@@ -365,35 +145,133 @@ msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
 msgstr "DH ჯგუფი 5"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
-#: vpncauth.ui:14
-#, kde-format
-msgid "VPNCAuthentication"
-msgstr "VPNCAuthentication"
+#~ msgid "Gateway:"
+#~ msgstr "ნაგულისხმები რაუტერი:"
 
-#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
-#: vpncauth.ui:32
-#, kde-format
-msgid "User Password:"
-msgstr "მომხმარებლის პაროლი:"
+#~ msgid "IP/hostname of IPsec gateway."
+#~ msgstr "IPSec ნაგულისხმები რაუტერის IP/ჰოსტის სახელი."
 
-#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
-#: vpncauth.ui:45
-#, kde-format
-msgid "Group Password:"
-msgstr "ჯგუფის პაროლი:"
+#~ msgid "User name:"
+#~ msgstr "მომხმარებელი:"
 
-#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
-#: vpncauth.ui:104
-#, kde-format
-msgid "Username:"
-msgstr "მომხმარებელი:"
+#~ msgid "User name for the connection."
+#~ msgstr "ამ შეერთების მომხმარებლის სახელი."
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, leGroupName)
-#: vpncauth.ui:117
-#, kde-format
-msgid "Group name."
-msgstr "ჯგუფის სახელი."
+#~ msgid "User password:"
+#~ msgstr "მომხმარებლის პაროლი:"
+
+#~ msgid "User password for the connection."
+#~ msgstr "ამ შეერთების მომხმარებლის პაროლი."
+
+#~ msgid "Group name:"
+#~ msgstr "ჯგუფის სახელი:"
+
+#~ msgid "Group name"
+#~ msgstr "ჯგუფის სახელი"
+
+#~ msgid "Group password:"
+#~ msgstr "ჯგუფის პაროლი:"
+
+#~ msgid "Group password."
+#~ msgstr "ჯგუფის პაროლი."
+
+#~ msgid ""
+#~ "Enable hybrid authentication, i.e. use certificate in addition to "
+#~ "password."
+#~ msgstr ""
+#~ "ჰიბრიდული ავთენტიკაციის ჩართვა. მაგ: პაროლთან ერთად სერტიფიკატის "
+#~ "გამოყენება."
+
+#~ msgid "Use hybrid authentication"
+#~ msgstr "ჰიბრიდული ავთენტიკაციის გამოყენება"
+
+#~ msgid "CA file:"
+#~ msgstr "CA ფაილი:"
+
+#~ msgid "CA certificate in PEM format."
+#~ msgstr "CA სერთიფიკატი PEM ფორმატში."
+
+#~ msgid "*.pem *.crt *.cer"
+#~ msgstr "*.pem *.crt *.cer"
+
+#~ msgid "Advanced…"
+#~ msgstr "დამატებით…"
+
+#~ msgid "Identification"
+#~ msgstr "იდენტიფიკაცია"
+
+#~ msgid "Domain:"
+#~ msgstr "დომენი:"
+
+#~ msgid "(NT-)Domain name for authentication."
+#~ msgstr "(NT-) დომენის სახელი ავთენტიკაციისთვის."
+
+#~ msgid "Vendor:"
+#~ msgstr "მომწოდებელი:"
+
+#~ msgid "Vendor of your IPsec gateway."
+#~ msgstr "თქვენი IPsec კონცენტრატორის მომწოდებელი."
+
+#~ msgid "Transport and Security"
+#~ msgstr "ტრანსპორტი და უსაფრთხოება"
+
+#~ msgid "Encryption method:"
+#~ msgstr "დაშიფვრის მეთოდი:"
+
+#~ msgid "Encryption method."
+#~ msgstr "დაშიფვრის მეთოდი."
+
+#~ msgid "NAT traversal:"
+#~ msgstr "NAT-ში გავლა:"
+
+#~ msgid "NAT traversal method to use."
+#~ msgstr "NAT-ში გავლის მეთოდი."
+
+#~ msgid "IKE DH Group:"
+#~ msgstr "IKE DH ჯგუფი:"
+
+#~ msgid "Name of the IKE DH group."
+#~ msgstr "IKE DH ჯგუფის სახელი."
+
+#~ msgid "Perfect Forward Secrecy:"
+#~ msgstr "შესანიშნავი გადამისამართების საიდუმლოება:"
+
+#~ msgid "Diffie-Hellman group to use for PFS."
+#~ msgstr "დიფი-ჰელმანის ჯგუფი PFS-სთვის."
+
+#~ msgid "Local Port:"
+#~ msgstr "ლოკალური პორტი:"
+
+#~ msgid ""
+#~ "Local port to use (0-65535). 0 (default value) means random port. 500 is "
+#~ "vpnc's default."
+#~ msgstr ""
+#~ "ლოკალური პორტი (0-65535). 0 (ნაგულისხმები) ნიშნავს შემთხვევით პორტს. 500 "
+#~ "vpnc-ის ნაგულისხმები მნიშვნელობაა."
+
+#~ msgid "Random"
+#~ msgstr "შემთხვევით"
+
+#~ msgid "Disable sending DPD packets (set timeout to 0)."
+#~ msgstr "DPD პაკეტების გაგზავნის გათიშვა (ტაიმაუტის განულება)."
+
+#~ msgid "Disable dead peer detection"
+#~ msgstr "მკვდარი პარტნიორის გამოვლენის გამორთვა"
+
+#~ msgid "VPNCAuthentication"
+#~ msgstr "VPNCAuthentication"
+
+#~ msgid "User Password:"
+#~ msgstr "მომხმარებლის პაროლი:"
+
+#~ msgid "Group Password:"
+#~ msgstr "ჯგუფის პაროლი:"
+
+#~ msgid "Username:"
+#~ msgstr "მომხმარებელი:"
+
+#~ msgid "Group name."
+#~ msgstr "ჯგუფის სახელი."
 
 #~ msgid "Wrong file extension"
 #~ msgstr "ფაილის არასწორი გაფართოება"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 02:36+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2017-09-08 16:16+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -245,12 +245,6 @@ msgstr "Επεξεργασία σύνδεσης '%1'"
 msgid "New %1 connection"
 msgstr "Νέα σύνδεση %1"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/connectioneditortabwidget.ui:20
-#, kde-format
-msgid "Connection name:"
-msgstr "Όνομα σύνδεσης:"
-
 #: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
 #: editor/settings/teamwidget.cpp:36
 #, kde-format
@@ -406,8 +400,7 @@ msgstr ""
 msgid "DHCP hostname:"
 msgstr ""
 
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
+#: editor/settings/ipv4widget.cpp:440
 #, kde-format
 msgid "Default"
 msgstr "Προκαθορισμένο"
@@ -482,1645 +475,6 @@ msgstr "Σύνδεση μόνο σε αυτούς τους εξυπηρετητ�
 #, kde-format
 msgid "Select file to import"
 msgstr "Επιλογή αρχείου για εισαγωγή"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
-#, kde-format
-msgid "Authentication:"
-msgstr "Ταυτοποίηση:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:38 editor/settings/ui/802-1x.ui:675
-#, kde-format
-msgid "MD5"
-msgstr "MD5"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:43
-#, kde-format
-msgid "TLS"
-msgstr "TLS"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
-#, kde-format
-msgid "LEAP"
-msgstr "LEAP"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:53
-#, kde-format
-msgid "PWD"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:58
-#, kde-format
-msgid "FAST"
-msgstr "FAST"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:63
-#, kde-format
-msgid "Tunneled TLS (TTLS)"
-msgstr "Διοχετευόμενο TLS (TTLS)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, auth)
-#: editor/settings/ui/802-1x.ui:68
-#, kde-format
-msgid "Protected EAP (PEAP)"
-msgstr "Προστατευμένο EAP (PEAP)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#. i18n: ectx: property (text), widget (QLabel, label_33)
-#. i18n: ectx: property (text), widget (QLabel, label_14)
-#. i18n: ectx: property (text), widget (QLabel, label_17)
-#. i18n: ectx: property (text), widget (QLabel, label_25)
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/802-1x.ui:83 editor/settings/ui/802-1x.ui:277
-#: editor/settings/ui/802-1x.ui:311 editor/settings/ui/802-1x.ui:440
-#: editor/settings/ui/802-1x.ui:544 editor/settings/ui/802-1x.ui:688
-#: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
-#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
-#, kde-format
-msgid "Username:"
-msgstr "Όνομα χρήστη:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, label_10)
-#. i18n: ectx: property (text), widget (QLabel, label_34)
-#. i18n: ectx: property (text), widget (QLabel, label_15)
-#. i18n: ectx: property (text), widget (QLabel, label_18)
-#. i18n: ectx: property (text), widget (QLabel, label_21)
-#. i18n: ectx: property (text), widget (QLabel, label_9)
-#: editor/settings/ui/802-1x.ui:96 editor/settings/ui/802-1x.ui:290
-#: editor/settings/ui/802-1x.ui:324 editor/settings/ui/802-1x.ui:453
-#: editor/settings/ui/802-1x.ui:557 editor/settings/ui/802-1x.ui:701
-#: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
-#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:207
-#: editor/settings/ui/wifisecurity.ui:231
-#, kde-format
-msgid "Password:"
-msgstr "Κωδικός πρόσβασης:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:117
-#, kde-format
-msgid "Identity:"
-msgstr "Ταυτότητα:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_32)
-#. i18n: ectx: property (text), widget (QLabel, label_30)
-#. i18n: ectx: property (text), widget (QLabel, label_31)
-#: editor/settings/ui/802-1x.ui:130 editor/settings/ui/802-1x.ui:574
-#: editor/settings/ui/802-1x.ui:718
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
-msgid "Domain:"
-msgstr "Τομείς αναζήτησης:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: editor/settings/ui/802-1x.ui:140
-#, kde-format
-msgid "User certificate:"
-msgstr "Πιστοποιητικό χρήστη:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#. i18n: ectx: property (text), widget (QLabel, label_20)
-#. i18n: ectx: property (text), widget (QLabel, label_23)
-#: editor/settings/ui/802-1x.ui:157 editor/settings/ui/802-1x.ui:487
-#: editor/settings/ui/802-1x.ui:601
-#, kde-format
-msgid "CA certificate:"
-msgstr "Πιστοποιητικό CA:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_27)
-#: editor/settings/ui/802-1x.ui:174
-#, kde-format
-msgid "Subject match:"
-msgstr "Ταίριασμα θέματος:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_28)
-#: editor/settings/ui/802-1x.ui:191
-#, kde-format
-msgid "Alternative subject matches:"
-msgstr "Εναλλακτικά ταιριάσματα θέματος:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
-#. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
-#: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
-#, kde-format
-msgid "…"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_29)
-#: editor/settings/ui/802-1x.ui:215
-#, kde-format
-msgid "Connect to these servers:"
-msgstr "Σύνδεση σε αυτούς τους εξυπηρετητές:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
-#: editor/settings/ui/802-1x.ui:239
-#: editor/settings/ui/wireguardinterfacewidget.ui:26
-#, kde-format
-msgid "Private key:"
-msgstr "Ιδιωτικό κλειδί:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/802-1x.ui:256
-#, kde-format
-msgid "Private key password:"
-msgstr "Κωδικός πρόσβασης ιδιωτικού κλειδιού:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_11)
-#. i18n: ectx: property (text), widget (QLabel, label_19)
-#. i18n: ectx: property (text), widget (QLabel, label_24)
-#: editor/settings/ui/802-1x.ui:345 editor/settings/ui/802-1x.ui:474
-#: editor/settings/ui/802-1x.ui:588
-#, kde-format
-msgid "Anonymous identity:"
-msgstr "Ανώνυμη ταυτότητα:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
-#: editor/settings/ui/802-1x.ui:358
-#, kde-format
-msgid "Automatic PAC provisioning"
-msgstr "Αυτόματη παροχή PAC"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:375
-#, kde-format
-msgid "Anonymous"
-msgstr "Ανώνυμος"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:380
-#, kde-format
-msgid "Authenticated"
-msgstr "Πιστοποιήθηκε"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
-#: editor/settings/ui/802-1x.ui:385
-#, kde-format
-msgid "Both"
-msgstr "Και τα δύο"
-
-#. i18n: ectx: property (text), widget (QLabel, label_12)
-#: editor/settings/ui/802-1x.ui:393
-#, kde-format
-msgid "PAC file:"
-msgstr "Αρχείο PAC:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_13)
-#. i18n: ectx: property (text), widget (QLabel, label_16)
-#. i18n: ectx: property (text), widget (QLabel, label_22)
-#: editor/settings/ui/802-1x.ui:410 editor/settings/ui/802-1x.ui:504
-#: editor/settings/ui/802-1x.ui:653
-#, kde-format
-msgid "Inner authentication:"
-msgstr "Εσωτερική ταυτοποίηση:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
-#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:427 editor/settings/ui/802-1x.ui:680
-#, kde-format
-msgid "GTC"
-msgstr "GTC"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
-#. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
-#: editor/settings/ui/802-1x.ui:432 editor/settings/ui/802-1x.ui:531
-#: editor/settings/ui/802-1x.ui:670 editor/settings/ui/ppp.ui:68
-#, kde-format
-msgid "MSCHAPv2"
-msgstr "MSCHAPv2"
-
-#. i18n: ectx: property (text), widget (QCheckBox, pap)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:521 editor/settings/ui/ppp.ui:58
-#, kde-format
-msgid "PAP"
-msgstr "PAP"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mschap)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:526 editor/settings/ui/ppp.ui:48
-#, kde-format
-msgid "MSCHAP"
-msgstr "MSCHAP"
-
-#. i18n: ectx: property (text), widget (QCheckBox, chap)
-#. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
-#: editor/settings/ui/802-1x.ui:536 editor/settings/ui/ppp.ui:78
-#, kde-format
-msgid "CHAP"
-msgstr "CHAP"
-
-#. i18n: ectx: property (text), widget (QLabel, label_26)
-#: editor/settings/ui/802-1x.ui:618
-#, kde-format
-msgid "PEAP version:"
-msgstr "Έκδοση PEAP:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:635
-#, fuzzy, kde-format
-#| msgid "Automatic"
-msgctxt "PEAP version"
-msgid "Automatic"
-msgstr "Αυτόματα"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:640
-#, kde-format
-msgid "Version 0"
-msgstr "Έκδοση 0"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
-#: editor/settings/ui/802-1x.ui:645
-#, kde-format
-msgid "Version 1"
-msgstr "Έκδοση 1"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/bond.ui:21 editor/settings/ui/bridge.ui:18
-#: editor/settings/ui/team.ui:18
-#, kde-format
-msgid "Interface name:"
-msgstr "Όνομα διεπαφής:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bond.ui:34
-#, kde-format
-msgid "Bonded connections:"
-msgstr "Δεσμικές συνδέσεις:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
-#: editor/settings/ui/team.ui:56
-#, kde-format
-msgid "Add…"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, btnEdit)
-#: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
-#: editor/settings/ui/team.ui:71
-#, kde-format
-msgid "Edit…"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, btnDelete)
-#: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
-#: editor/settings/ui/team.ui:86
-#, kde-format
-msgid "Delete"
-msgstr "Διαγραφή"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, modeLabel)
-#: editor/settings/ui/bond.ui:113 editor/settings/ui/wificonnectionwidget.ui:43
-#, kde-format
-msgid "Mode:"
-msgstr "Λειτουργία:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/bond.ui:133
-#, kde-format
-msgid "Link monitoring:"
-msgstr "Παρακολούθηση συνδέσμου:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: editor/settings/ui/bond.ui:153
-#, kde-format
-msgid "Monitoring frequency:"
-msgstr "Συχνότητα παρακολούθησης:"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
-#. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
-#. i18n: ectx: property (suffix), widget (QSpinBox, downDelay)
-#: editor/settings/ui/bond.ui:163 editor/settings/ui/bond.ui:205
-#: editor/settings/ui/bond.ui:225
-#, kde-format
-msgid " ms"
-msgstr " ms"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: editor/settings/ui/bond.ui:195
-#, kde-format
-msgid "Link up delay:"
-msgstr "Καθυστέρηση σύνδεσης:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/bond.ui:215
-#, kde-format
-msgid "Link down delay:"
-msgstr "Καθυστέρηση αποσύνδεσης:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_8)
-#: editor/settings/ui/bond.ui:242
-#, kde-format
-msgid "ARP targets:"
-msgstr "Προορισμοί ARP:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
-#: editor/settings/ui/bond.ui:252
-#, kde-format
-msgid "An IP address or comma-separated list of addresses."
-msgstr ""
-"Μια διεύθυνση IP, ή μια λίστα που ξεχωρίζεται με κόμμα των διευθύνσεων."
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/bridge.ui:31
-#, kde-format
-msgid "Bridged connections:"
-msgstr "Γεφυρικές συνδέσεις:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bridge.ui:110
-#, kde-format
-msgid "Aging time:"
-msgstr "Χρόνος ωρίμανσης:"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, agingTime)
-#. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
-#. i18n: ectx: property (suffix), widget (QSpinBox, helloTime)
-#. i18n: ectx: property (suffix), widget (QSpinBox, maxAge)
-#: editor/settings/ui/bridge.ui:126 editor/settings/ui/bridge.ui:193
-#: editor/settings/ui/bridge.ui:222 editor/settings/ui/bridge.ui:251
-#, kde-format
-msgctxt "seconds"
-msgid " s"
-msgstr " s"
-
-#. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
-#: editor/settings/ui/bridge.ui:139
-#, kde-format
-msgid "Enable STP (Spanning Tree Protocol)"
-msgstr "Ενεργοποίηση STP (πρωτόκολλο δένδρου κάλυψης)"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/bridge.ui:151
-#, kde-format
-msgid "Priority:"
-msgstr "Προτεραιότητά:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/bridge.ui:177
-#, kde-format
-msgid "Forward delay:"
-msgstr "Καθυστέρηση προώθησης:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: editor/settings/ui/bridge.ui:206
-#, kde-format
-msgid "Hello time:"
-msgstr "Χρόνος χαιρετισμού:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: editor/settings/ui/bridge.ui:235
-#, kde-format
-msgid "Max age:"
-msgstr "Μέγιστη ηλικία:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/bt.ui:21
-#, kde-format
-msgid "Address of the device:"
-msgstr "Διεύθυνση της συσκευής:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bt.ui:41
-#, kde-format
-msgid "Connection type:"
-msgstr "Τύπος σύνδεσης:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/cdma.ui:20 editor/settings/ui/gsm.ui:24
-#, kde-format
-msgid "Number:"
-msgstr "Αριθμός:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
-#: editor/settings/ui/connectionwidget.ui:17
-#, fuzzy, kde-format
-#| msgid "Ignore automatically obtained routes"
-msgid "Connect automatically with priority"
-msgstr "Αγνόησή αυτόματα ανακτημένων διαδρομών"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
-#: editor/settings/ui/connectionwidget.ui:38
-#, kde-format
-msgid ""
-"If the connection is set to autoconnect, connections with higher priority "
-"will be preferred. Defaults to 0.\n"
-"The higher number means higher priority. An negative number can be used to "
-"indicate priority lower than the default.\n"
-"           "
-msgstr ""
-"Αν η σύνδεση οριστεί ως 'αυτόματη σύνδεση', οι συνδέσεις με υψηλότερη \n"
-"προτεραιότητα  θα προτιμούνται. Προκαθορισμένα είναι 0\n"
-"Υψηλότερος αριθμός σημαίνει υψηλότερη προτεραιότητα. Μπορεί να "
-"χρησιμοποιηθεί αρνητικός αριθμός για να υποδηλώσει προτεραιότητά \n"
-"χαμηλότερη της προκαθορισμένης."
-
-#. i18n: ectx: property (text), widget (QCheckBox, allUsers)
-#: editor/settings/ui/connectionwidget.ui:48
-#, kde-format
-msgid "All users may connect to this network"
-msgstr "Όλοι οι χρήστες μπορούν να συνδεθούν σε αυτό το δίκτυο"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
-#: editor/settings/ui/connectionwidget.ui:64
-#, kde-format
-msgid "Edit advanced permissions for this connection"
-msgstr "Επεξεργασία προηγμένων δικαιωμάτων για αυτήν τη σύνδεση"
-
-#. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
-#: editor/settings/ui/connectionwidget.ui:67
-#, kde-format
-msgid ""
-"Fine-grained permissions editor for this connection. It lets you choose "
-"which users can activate/modify/delete this connection."
-msgstr ""
-"Επεξεργαστής λεπτομερειών δικαιωμάτων για αυτήν τη σύνδεση. Σας επιτρέπει να "
-"επιλέξετε ποιοι χρήστες μπορούν να ενεργοποιήσουν/τροποποιήσουν/διαγράψουν "
-"τη σύνδεση αυτή."
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
-#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
-#, fuzzy, kde-format
-#| msgid "Advanced"
-msgid "Advanced…"
-msgstr "Για προχωρημένους"
-
-#. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
-#: editor/settings/ui/connectionwidget.ui:81
-#, fuzzy, kde-format
-#| msgid "Automatically connect to VPN when using this connection"
-msgid "Automatically connect to VPN"
-msgstr "Αυτόματη σύνδεση με VPN όταν χρησιμοποιείται αυτή η σύνδεση"
-
-#. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
-#: editor/settings/ui/connectionwidget.ui:101
-#, kde-format
-msgid "Firewall zone:"
-msgstr "Ζώνη τείχους προστασίας:"
-
-#. i18n: ectx: property (text), widget (QLabel, meteredLabel)
-#: editor/settings/ui/connectionwidget.ui:130
-#, kde-format
-msgid "Metered:"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:150
-#, kde-format
-msgid ""
-"NetworkManager indicates to applications whether the connection is metered "
-"and therefore\n"
-"data usage should be restricted."
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:160
-#, fuzzy, kde-format
-#| msgid "Automatic"
-msgctxt "Item in the Metered: list"
-msgid "Automatic"
-msgstr "Αυτόματα"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:165
-#, kde-format
-msgid "Yes"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:170
-#, fuzzy, kde-format
-#| msgctxt "no security"
-#| msgid "None"
-msgid "No"
-msgstr "Καμία"
-
-#. i18n: ectx: property (title), widget (QGroupBox, basicGroup)
-#: editor/settings/ui/gsm.ui:18
-#, kde-format
-msgid "Basic"
-msgstr "Βασικό"
-
-#. i18n: ectx: property (title), widget (QGroupBox, advGroup)
-#: editor/settings/ui/gsm.ui:84
-#, kde-format
-msgid "Advanced"
-msgstr "Για προχωρημένους"
-
-#. i18n: ectx: property (text), widget (QCheckBox, roaming)
-#: editor/settings/ui/gsm.ui:93
-#, kde-format
-msgid "Allow roaming if home network is not available"
-msgstr "Να επιτρέπεται η περιαγωγή αν το οικιακό δίκτυο δεν είναι διαθέσιμο"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/gsm.ui:100
-#, kde-format
-msgid "APN:"
-msgstr "APN:"
-
-#. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
-#: editor/settings/ui/gsm.ui:110
-#, kde-format
-msgid "Network ID:"
-msgstr "Αναγνωριστικό δικτύου:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/gsm.ui:130
-#, kde-format
-msgid "PIN:"
-msgstr "PIN:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/infiniband.ui:21
-#, kde-format
-msgid "Transport mode:"
-msgstr "Λειτουργία μεταφοράς:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/infiniband.ui:41
-#: editor/settings/ui/wificonnectionwidget.ui:186
-#: editor/settings/ui/wiredconnectionwidget.ui:23
-#, kde-format
-msgid "Restrict to device:"
-msgstr "Περιορισμός στη συσκευή:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#. i18n: ectx: property (text), widget (QLabel, mtuLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/infiniband.ui:61
-#: editor/settings/ui/wificonnectionwidget.ui:249
-#: editor/settings/ui/wiredconnectionwidget.ui:89
-#: editor/settings/ui/wireguardinterfacewidget.ui:74
-#, kde-format
-msgid "MTU:"
-msgstr "ΜTU:"
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
-#: editor/settings/ui/infiniband.ui:80
-#: editor/settings/ui/wificonnectionwidget.ui:271
-#: editor/settings/ui/wiredconnectionwidget.ui:112
-#, fuzzy, kde-format
-#| msgid "Automatic"
-msgctxt "MTU:"
-msgid "Automatic"
-msgstr "Αυτόματα"
-
-#. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
-#: editor/settings/ui/infiniband.ui:83
-#: editor/settings/ui/wificonnectionwidget.ui:274
-#: editor/settings/ui/wiredconnectionwidget.ui:115
-#, kde-format
-msgid " bytes"
-msgstr " bytes"
-
-#. i18n: ectx: property (toolTip), widget (QWidget, IPv6Widget)
-#. i18n: ectx: property (toolTip), widget (QWidget, IPv4Widget)
-#: editor/settings/ui/ipv4.ui:17 editor/settings/ui/ipv6.ui:20
-#, kde-format
-msgid "Advanced IP settings"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
-#, kde-format
-msgid "Method:"
-msgstr "Μέθοδος:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:227
-#, fuzzy, kde-format
-#| msgid "Automatic"
-msgctxt "Method:"
-msgid "Automatic"
-msgstr "Αυτόματα"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
-#, kde-format
-msgid "Automatic (Only addresses)"
-msgstr "Αυτόματα (μόνο διευθύνσεις)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
-#, kde-format
-msgid "Link-Local"
-msgstr "Τοπική σύνδεση"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
-#, kde-format
-msgctxt "like in use Manual configuration"
-msgid "Manual"
-msgstr "Χειροκίνητα"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:69
-#, kde-format
-msgid "Shared to other computers"
-msgstr "Κοινή χρήση με άλλους υπολογιστές"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:74
-#, kde-format
-msgctxt "like in this setting is Disabled"
-msgid "Disabled"
-msgstr "Ανενεργή"
-
-#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
-#: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:170
-#, kde-format
-msgctxt "@info"
-msgid "DNS Servers:"
-msgstr "Εξυπηρετητές DNS:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
-#: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
-#, kde-format
-msgid ""
-"Use this field to specify the IP address(es) of one or more DNS servers. Use "
-"',' to separate entries."
-msgstr ""
-"Χρήση αυτού του πεδίου για προσδιορισμό των IP διευθύνσεων για έναν ή "
-"περισσότερους εξυπηρετητές DNS. Χρησιμοποιήστε ',' για να διαχωρίσετε τα "
-"δεδομένα εισόδου."
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:125
-#, kde-format
-msgid "Edit DNS the list of servers"
-msgstr "Επεξεργασία λίστας εξυπηρετητών DNS"
-
-#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
-#: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
-#, kde-format
-msgctxt "@info"
-msgid "Search Domains:"
-msgstr "Τομείς αναζήτησης:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
-#: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
-#, kde-format
-msgid ""
-"Use this field to specify one or more DNS domains to search. Use ',' to "
-"separate entries."
-msgstr ""
-"Χρήση αυτού του πεδίου για έναν ή περισσότερους εξυπηρετητές DNS για "
-"αναζήτηση. Χρησιμοποιήστε ',' για να διαχωρίσετε τα δεδομένα εισόδου."
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
-#: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
-#, kde-format
-msgid "Edit the list of DNS domains being searched"
-msgstr "Επεξεργασία της λίστας εξυπηρετητών DNS για αναζήτηση"
-
-#. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
-#: editor/settings/ui/ipv4.ui:191
-#, kde-format
-msgid "DHCP Client ID:"
-msgstr "Αναγνωριστικό πελάτη DHCP:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
-#: editor/settings/ui/ipv4.ui:206
-#, kde-format
-msgid ""
-"Use this field to specify the DHCP client ID which is a string sent to the "
-"DHCP server\n"
-"to identify the local machine that the DHCP server may use to customize the "
-"DHCP\n"
-"lease and options."
-msgstr ""
-"Χρησιμοποιήστε αυτό το πεδίο για τον προσδιορισμό του αναγνωριστικού πελάτη "
-"DHCP το οποίο είναι μια συμβολοσειρά προς τον εξυπηρετητή DHCP\n"
-"για την αναγνώριση του τοπικού μηχανήματος το οποίο ο εξυπηρετητής DHCP "
-"μπορεί να χρησιμοποιεί για να προσαρμόσει τη χρονική ισχύ του DHCP\n"
-"και τις επιλογές."
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
-#: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
-#, kde-format
-msgid "Remove"
-msgstr "Αφαίρεση"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:109
-#, kde-format
-msgid "Add"
-msgstr "Προσθήκη"
-
-#. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
-#: editor/settings/ui/ipv4.ui:244 editor/settings/ui/ipv6.ui:127
-#: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
-#, kde-format
-msgid ""
-"IP addresses identify your computer on the network. Click the \"Add\" button "
-"to add\n"
-"an IP address"
-msgstr ""
-"Η διεύθυνση IP αποτελεί το αναγνωριστικό του υπολογιστή σας στο δίκτυο. "
-"Κάντε κλικ στο κουμπί \"Προσθήκη\" \n"
-"για να προσθέσετε μια διεύθυνση IP"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:282
-#, kde-format
-msgid ""
-"Allows the connection to complete if IPv4 configuration fails\n"
-"but IPv6 configuration succeeds"
-msgstr ""
-"Eπιτρέπει την ολοκλήρωση της σύνδεσης \n"
-"αν η διαμόρφωση IPv4 αποτύχει αλλά η διαμόρφωση IPv6 επιτύχει"
-
-#. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:285
-#, kde-format
-msgid "IPv4 is required for this connection"
-msgstr "Το IPv4 απαιτείται για τη σύνδεση αυτή"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
-#: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
-#, fuzzy, kde-format
-#| msgid "Routes..."
-msgid "Routes…"
-msgstr "Διαδρομές δικτύου..."
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
-#: editor/settings/ui/ipv6.ui:30
-#, kde-format
-msgid ""
-"When connecting to IPv4-capable networks, allows the connection to complete "
-"if\n"
-"IPv6 configuration fails but IPv4 configuration succeeds"
-msgstr ""
-"Όταν συνδέεστε σε δίκτυα με δυνατότητες IPv4, επιτρέπει την ολοκλήρωση της "
-"σύνδεσης \n"
-"αν η διαμόρφωση IPv6 αποτύχει αλλά η IPv4 επιτύχει"
-
-#. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
-#: editor/settings/ui/ipv6.ui:33
-#, kde-format
-msgid "IPv6 is required for this connection"
-msgstr "Το IPv6 απαιτείται για τη σύνδεση αυτή"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv6.ui:83
-#, kde-format
-msgid "Edit the list of DNS servers"
-msgstr "Επεξεργασία λίστας εξυπηρετητών DNS"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:193
-#, kde-format
-msgid ""
-"Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-"enabled, it makes the kernel generate\n"
-"a temporary IPv6 address in addition to the public one generated from MAC "
-"address via modified EUI-64."
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:202
-#, kde-format
-msgctxt "privacy disabled"
-msgid "Disabled"
-msgstr "Ανενεργή"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:207
-#, kde-format
-msgid "Enabled (prefer public address)"
-msgstr "Ενεργή (να προτιμάται δημόσια διεύθυνση)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:212
-#, kde-format
-msgid "Enabled (prefer temporary addresses)"
-msgstr "Ενεργή (να προτιμάται προσωρινή διεύθυνση)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:237
-#, kde-format
-msgid "Automatic (Only DHCP)"
-msgstr "Αυτόματο (μόνο DHCP)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:252
-#, kde-format
-msgctxt "like in this setting is Disabled"
-msgid "Ignored"
-msgstr "Αγνόηση"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:257
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Disabled"
-msgid "Disabled"
-msgstr "Ανενεργή"
-
-#. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
-#: editor/settings/ui/ipv6.ui:335
-#, kde-format
-msgid "Privacy:"
-msgstr "Ιδιωτικότητα:"
-
-#. i18n: ectx: property (title), widget (QGroupBox, authGroup)
-#: editor/settings/ui/ppp.ui:23
-#, kde-format
-msgid "Authentication"
-msgstr "Ταυτοποίηση"
-
-#. i18n: ectx: property (text), widget (QCheckBox, eap)
-#: editor/settings/ui/ppp.ui:38
-#, kde-format
-msgid "EAP"
-msgstr "EAP"
-
-#. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
-#: editor/settings/ui/ppp.ui:91
-#, kde-format
-msgid "Compression"
-msgstr "Συμπίεση"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mppe)
-#: editor/settings/ui/ppp.ui:109
-#, kde-format
-msgid "Use point-to-point encryption (MPPE)"
-msgstr "Χρήση κρυπτογράφησης σημείο-προς-σημείο (MPPE)"
-
-#. i18n: ectx: property (text), widget (QCheckBox, bsdComp)
-#: editor/settings/ui/ppp.ui:116
-#, kde-format
-msgid "Use BSD data compression"
-msgstr "Χρήση συμπίεσης δεδομένων BSD"
-
-#. i18n: ectx: property (text), widget (QCheckBox, deflateComp)
-#: editor/settings/ui/ppp.ui:126
-#, kde-format
-msgid "Use Deflate data compression"
-msgstr "Χρήση συμπίεσης δεδομένων Deflate"
-
-#. i18n: ectx: property (text), widget (QCheckBox, tcpComp)
-#: editor/settings/ui/ppp.ui:136
-#, kde-format
-msgid "Use TCP header compression"
-msgstr "Χρήση συμπίεσης κεφαλίδας TCP"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mppe128)
-#: editor/settings/ui/ppp.ui:152
-#, kde-format
-msgid "Require 128-bit encryption"
-msgstr "Απαίτηση κρυπτογράφησης 128-bit"
-
-#. i18n: ectx: property (text), widget (QCheckBox, mppeStateful)
-#: editor/settings/ui/ppp.ui:165
-#, kde-format
-msgid "Use stateful MPPE"
-msgstr "Χρήση MPPE με μεταβλητές κατάστασης"
-
-#. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
-#: editor/settings/ui/ppp.ui:175
-#, kde-format
-msgid "Echo"
-msgstr "Echo"
-
-#. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
-#: editor/settings/ui/ppp.ui:184
-#, kde-format
-msgid "Send PPP echo packets"
-msgstr "Αποστολή πακέτων PPP echo"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/pppoe.ui:20
-#, kde-format
-msgid "Service:"
-msgstr "Υπηρεσία:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, service)
-#: editor/settings/ui/pppoe.ui:30
-#, kde-format
-msgid ""
-"If specified, instruct PPPoE to only initiate sessions with access "
-"concentrators that provide the specified service. For most providers, this "
-"should be left blank. It is only required if there are multiple access "
-"concentrators or a specific service is known to be required."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: editor/settings/ui/team.ui:31
-#, kde-format
-msgid "Teamed connections:"
-msgstr "Δεσμικές συνδέσεις:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/team.ui:113
-#, kde-format
-msgid "JSON config:"
-msgstr "JSON ρύθμιση:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnImport)
-#: editor/settings/ui/team.ui:123
-#, fuzzy, kde-format
-#| msgid "Import configuration from file..."
-msgid "Import configuration from file…"
-msgstr "Εισαγωγή ρύθμισης από αρχείο..."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/vlan.ui:18
-#, kde-format
-msgid "Parent interface:"
-msgstr "Γονική διεπαφή:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/vlan.ui:41
-#, kde-format
-msgid "VLAN id:"
-msgstr "Ταυτότητα VLAN:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/vlan.ui:64
-#, kde-format
-msgid "VLAN interface name:"
-msgstr "Όνομα διεπαφής VLAN:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, reorderHeaders)
-#: editor/settings/ui/vlan.ui:77
-#, kde-format
-msgid "Output packet headers reordering"
-msgstr "Αναταξινόμηση κεφαλίδων των εξερχόμενων πακέτων"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, gvrp)
-#: editor/settings/ui/vlan.ui:84
-#, kde-format
-msgid "GARP VLAN Registration Protocol"
-msgstr "Πρωτόκολλο εγγραφής GARP VLAN"
-
-#. i18n: ectx: property (text), widget (QCheckBox, gvrp)
-#: editor/settings/ui/vlan.ui:87
-#, kde-format
-msgid "GVRP"
-msgstr "GVRP"
-
-#. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
-#: editor/settings/ui/vlan.ui:94
-#, kde-format
-msgid "Loose binding"
-msgstr "Χαλαρός συνδυασμός"
-
-#. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:17
-#, kde-format
-msgid "SSID:"
-msgstr "SSID:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:63
-#, kde-format
-msgid "Infrastructure"
-msgstr "Υποδομή"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:68
-#, kde-format
-msgid "Ad-hoc"
-msgstr "Ad-hoc"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:73
-#, kde-format
-msgid "Access Point"
-msgstr "Σημείο πρόσβασης"
-
-#. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:81
-#, kde-format
-msgid "BSSID:"
-msgstr "BSSID:"
-
-#. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
-#: editor/settings/ui/wificonnectionwidget.ui:101
-#, kde-format
-msgid ""
-"This option locks this connection to the Wi-Fi access point (AP) specified "
-"by the\n"
-" BSSID entered here. Example: 00:11:22:33:44:55"
-msgstr ""
-"Η επιλογή αυτή κλειδώνει τη σύνδεση αυτή στο σημείο πρόσβασης Wi-Fi (AP) που "
-"καθορίζεται από \n"
-"το BSSID που καταχωρείται εδώ. Π.χ.: 00:11:22:33:44:55"
-
-#. i18n: ectx: property (text), widget (QLabel, bandLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:117
-#, kde-format
-msgid "Band:"
-msgstr "Ζώνη:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:137
-#, kde-format
-msgid ""
-"This option locks the connection to the Wi-Fi network associated to the "
-"specified band. This setting depends\n"
-" on specific driver capability and may not work with all drivers"
-msgstr ""
-"Η επιλογή αυτή κλειδώνει τη σύνδεση στο δίκτυο Wi-Fi που σχετίζεται με την "
-"καθορισμένη ζώνη. Η ρύθμιση αυτή\n"
-"εξαρτάται από τις δυνατότητες του συγκεκριμένου οδηγού και ενδέχεται να μη "
-"λειτουργεί με όλους τους οδηγούς"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:141
-#, fuzzy, kde-format
-#| msgid "Automatic"
-msgctxt "Band:"
-msgid "Automatic"
-msgstr "Αυτόματα"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:146
-#, kde-format
-msgid "A (5 GHz)"
-msgstr "A (5 GHz)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:151
-#, kde-format
-msgid "B/G (2.4 GHz)"
-msgstr "B/G (2.4 GHz)"
-
-#. i18n: ectx: property (text), widget (QLabel, channelLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:159
-#, kde-format
-msgid "Channel:"
-msgstr "Κανάλι:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, channel)
-#: editor/settings/ui/wificonnectionwidget.ui:179
-#, kde-format
-msgid ""
-"Wireless channel to use for the Wi-Fi connection. The device will only join "
-"(or create for Ad-Hoc networks)\n"
-"a Wi-Fi network on the specified channel"
-msgstr ""
-"Το ασύρματο κανάλι που θα χρησιμοποιηθεί για τη σύνδεση Wi-Fi. Η συσκευή θα "
-"συνδεθεί μόνο(ή θα δημιουργήσει δίκτυα Ad-Hoc)\n"
-"σε δίκτυα Wi-Fi στο συγκεκριμένο κανάλι"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wificonnectionwidget.ui:209
-#: editor/settings/ui/wiredconnectionwidget.ui:47
-#, kde-format
-msgid "Cloned MAC address:"
-msgstr "Κλώνος διεύθυνσης MAC:"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
-#: editor/settings/ui/wificonnectionwidget.ui:240
-#, fuzzy, kde-format
-#| msgid "Random"
-msgid "Random…"
-msgstr "Τυχαία"
-
-#. i18n: ectx: property (toolTip), widget (QLabel, label_4)
-#. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
-#: editor/settings/ui/wificonnectionwidget.ui:287
-#: editor/settings/ui/wificonnectionwidget.ui:303
-#, kde-format
-msgid "Mark this if you want to create a connection for a hidden network"
-msgstr ""
-"Σημειώστε το αν επιθυμείτε να δημιουργήσετε σύνδεση για ένα κρυφό δίκτυο"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/wificonnectionwidget.ui:290
-#, kde-format
-msgid "Visibility:"
-msgstr "Ορατότητα:"
-
-#. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
-#: editor/settings/ui/wificonnectionwidget.ui:306
-#, kde-format
-msgid "Hidden network"
-msgstr "Κρυφό δίκτυο"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
-#: editor/settings/ui/wifisecurity.ui:15
-#, kde-format
-msgid "Wifi Security"
-msgstr "Ασφάλεια Wifi"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:28
-#, kde-format
-msgctxt "no security"
-msgid "None"
-msgstr "Καμία"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:33
-#, kde-format
-msgid "WEP key 40/128 bits (Hex or ASCII)"
-msgstr "Κλειδί WEP 40/128 bits (Hex ή ASCII)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:38
-#, kde-format
-msgid "WEP key 128 bits"
-msgstr "Κλειδί WEP 128 bits"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:48
-#, kde-format
-msgid "Dynamic WEP (802.1x)"
-msgstr "Δυναμικό WEP (802.1x)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:53
-#, kde-format
-msgid "WPA/WPA2 Personal"
-msgstr "Προσωπικό WPA/WPA2"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:58
-#, kde-format
-msgid "WPA/WPA2 Enterprise"
-msgstr "Εταιρικό WPA/WPA2"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:63
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
-msgid "WPA3 Personal"
-msgstr "Προσωπικό WPA/WPA2"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
-msgid "WPA3 Enterprise 192-bit"
-msgstr "Εταιρικό WPA/WPA2"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/wifisecurity.ui:76
-#, kde-format
-msgid "Security:"
-msgstr "Ασφάλεια:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wifisecurity.ui:97
-#, kde-format
-msgid "Key:"
-msgstr "Κλειδί:"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/wifisecurity.ui:117
-#, kde-format
-msgid "WEP index:"
-msgstr "Δείκτης WEP:"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:134
-#, kde-format
-msgid "1 (default)"
-msgstr "1 (προκαθορισμένο)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:139
-#, kde-format
-msgid "2"
-msgstr "2"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:144
-#, kde-format
-msgid "3"
-msgstr "3"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:149
-#, kde-format
-msgid "4"
-msgstr "4"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:174
-#, kde-format
-msgid "Open System"
-msgstr "Ανοικτό σύστημα"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:179
-#, kde-format
-msgid "Shared Key"
-msgstr "Κοινόχρηστο κλειδί"
-
-#. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
-#: editor/settings/ui/wiredconnectionwidget.ui:40
-#, kde-format
-msgid ""
-"This option locks this connection to the network device specified by its\n"
-"permanent MAC address entered here. Example: 00:11:22:33:44:55"
-msgstr ""
-"Η επιλογή αυτή κλειδώνει τη σύνδεση αυτή στη δικτυακή συσκευή που "
-"καθορίζεται από τη \n"
-"μόνιμη διεύθυνση MAC που καταχωρείται εδώ. Π.χ. : 00:11:22:33:44:55"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
-#: editor/settings/ui/wiredconnectionwidget.ui:67
-#, kde-format
-msgid ""
-"The MAC address entered here will be used as hardware address for the\n"
-"network device this connection is activated on. This feature is known as "
-"MAC\n"
-"cloning or spoofing. Example 11:22:33:44:55"
-msgstr ""
-"Η διεύθυνση MAC που δόθηκε εδώ θα χρησιμοποιηθεί ως διεύθυνση υλικού για τη\n"
-" συσκευή δικτύωσης στην οποία η σύνδεση αυτή έχει ενεργοποιηθεί. Το "
-"χαρακτηριστικό αυτό είναι γνωστό\n"
-"ως κλωνοποίηση MAC ή μεταμφίεση (spoofing). Παράδειγμα 11:22:33:44:55"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
-#: editor/settings/ui/wiredconnectionwidget.ui:80
-#, kde-format
-msgid "Random"
-msgstr "Τυχαία"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
-#: editor/settings/ui/wiredconnectionwidget.ui:106
-#, kde-format
-msgid ""
-"Only transmit packets of the specified size or smaller, breaking larger "
-"packets up\n"
-"into multiple Ethernet frames"
-msgstr ""
-"Μεταδίδει πακέτα μόνο μικρότερα ή ίσα από ένα καθορισμένο μέγεθος, "
-"χωρίζοντάς τα \n"
-"μεγαλύτερα πακέτα σε πολλαπλά πλαίσια Ethernet"
-
-#. i18n: ectx: property (text), widget (QLabel, speedLabel)
-#: editor/settings/ui/wiredconnectionwidget.ui:125
-#, kde-format
-msgid "Speed:"
-msgstr "Ταχύτητα:"
-
-#. i18n: ectx: property (text), widget (QLabel, duplexLabel)
-#: editor/settings/ui/wiredconnectionwidget.ui:132
-#, kde-format
-msgid "Duplex:"
-msgstr "Αμφίδρομη:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
-#: editor/settings/ui/wiredconnectionwidget.ui:151
-#, kde-format
-msgid ""
-"Request that the device use the specified duplex mode. Either \"half\" or "
-"\"full\""
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
-#: editor/settings/ui/wiredconnectionwidget.ui:158
-#, kde-format
-msgid "Half"
-msgstr "Απλή"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, duplex)
-#: editor/settings/ui/wiredconnectionwidget.ui:163
-#, kde-format
-msgid "Full"
-msgstr "Πλήρης"
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/wiredconnectionwidget.ui:174
-#, fuzzy, kde-format
-#| msgid "Link monitoring:"
-msgid "Link negotiation:"
-msgstr "Παρακολούθηση συνδέσμου:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:188
-#, kde-format
-msgid ""
-"Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
-"will be forced without checking\n"
-"the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:192
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Ignored"
-msgid "Ignore"
-msgstr "Αγνόηση"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:197
-#, fuzzy, kde-format
-#| msgid "Automatic"
-msgctxt "Link negotiation:"
-msgid "Automatic"
-msgstr "Αυτόματα"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
-#: editor/settings/ui/wiredconnectionwidget.ui:202
-#, fuzzy, kde-format
-#| msgctxt "like in use Manual configuration"
-#| msgid "Manual"
-msgid "Manual"
-msgstr "Χειροκίνητα"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:219
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use only the specified speed. In MBit/s, example "
-#| "100 == 100Mbit/s"
-msgid "Request that the device use only the specified speed."
-msgstr ""
-"Να απαιτηθεί από τη συσκευή η χρήση της καθορισμένης ταχύτητας μόνο. Σε MBit/"
-"δ, παράδειγμα 100 == 100Mbit/δ"
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:226
-#, kde-format
-msgid "10 Mb/s"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:231
-#, kde-format
-msgid "100 Mb/s"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:236
-#, kde-format
-msgid "1 Gb/s"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:241
-#, kde-format
-msgid "2.5 Gb/s"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:246
-#, kde-format
-msgid "5 Gb/s"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:251
-#, kde-format
-msgid "10 Gb/s"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:256
-#, kde-format
-msgid "40 Gb/s"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (QComboBox, speed)
-#: editor/settings/ui/wiredconnectionwidget.ui:261
-#, kde-format
-msgid "100 Gb/s"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QCheckBox, use8021X)
-#: editor/settings/ui/wiredsecurity.ui:17
-#, kde-format
-msgid "Use 802.1x security for this connection"
-msgstr "Χρήση ασφάλειας 802.1x για αυτή τη σύνδεση"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
-#: editor/settings/ui/wireguardinterfacewidget.ui:14
-#, kde-format
-msgid "WireGuard Settings"
-msgstr ""
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: editor/settings/ui/wireguardinterfacewidget.ui:20
-#, fuzzy, kde-format
-#| msgid "Interface name:"
-msgid "Interface"
-msgstr "Όνομα διεπαφής:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, kde-format
-msgid ""
-"Required.\n"
-"A base64 private key generated by wg genkey."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:41
-#, kde-format
-msgid "Listen port:"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:49
-#, kde-format
-msgid ""
-"Optional.\n"
-"Listen port number. Chosen randomly if left as 'Automatic'."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:57
-#, kde-format
-msgid "fwmark:"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:67
-#, kde-format
-msgid ""
-"Optional.\n"
-"An fwmark for outgoing packets. If set to 0 or 'off', this\n"
-"option is disabled. May be specified in hexadecimal by\n"
-"prepending '0x'."
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
-#: editor/settings/ui/wireguardinterfacewidget.ui:86
-#, kde-format
-msgid ""
-"Optional.\n"
-"If not specified, the MTU is automatically determined\n"
-"from the endpoint addresses or the system default route,\n"
-"which is usually a sane choice. However, to manually\n"
-"specify an MTU and to override this automatic discovery,\n"
-"this value may be specified explicitly."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
-#: editor/settings/ui/wireguardinterfacewidget.ui:93
-#, kde-format
-msgid "Autoroute peers:"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
-#: editor/settings/ui/wireguardinterfacewidget.ui:101
-#, kde-format
-msgid ""
-"Whether to automatically add routes for the AllowedIPs ranges\n"
-"of the peers."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, btnPeers)
-#: editor/settings/ui/wireguardinterfacewidget.ui:126
-#, kde-format
-msgid "Peers…"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:17
-#, fuzzy, kde-format
-#| msgid "Private key:"
-msgid "Public key:"
-msgstr "Ιδιωτικό κλειδί:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, publicKeyLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:27
-#, kde-format
-msgid ""
-"Required.\n"
-"            A base64 public key calculated by wg pubkey \n"
-"            from a private key, and usually transmitted \n"
-"            out of band to the author of the configuration file."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:34
-#, kde-format
-msgid "Allowed IPs:"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, allowedIPsLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:47
-#, kde-format
-msgid ""
-"Required.\n"
-"            A comma-separated list of IP (v4 or v6) addresses \n"
-"            with CIDR masks from which incoming traffic for \n"
-"            this peer is allowed and to which outgoing traffic \n"
-"            for this peer is directed. The catch-all 0.0.0.0/0 \n"
-"            may be specified for matching all IPv4 addresses, \n"
-"            and ::/0 may be specified for matching all IPv6 addresses."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:55
-#, fuzzy, kde-format
-#| msgid "Cloned MAC address:"
-msgid "Endpoint address:"
-msgstr "Κλώνος διεύθυνσης MAC:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:66
-#, kde-format
-msgid ""
-"Optional.\n"
-"            An endpoint for the connection. Can be an\n"
-"            IPv4 address, IPv6 address, or FQDN (fully\n"
-"            qualified domain name such as abc.com). If\n"
-"            present, Endpoint port must also be set."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:74
-#, kde-format
-msgid "Endpoint port:"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:83
-#, kde-format
-msgid ""
-"Optional.\n"
-"            The port number of an endpoint. If present Endpoint\n"
-"            Address must also be set."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:91
-#, fuzzy, kde-format
-#| msgid "Private key:"
-msgid "Preshared key:"
-msgstr "Ιδιωτικό κλειδί:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:102
-#, kde-format
-msgid ""
-"Optional.\n"
-"            A base64 preshared key generated by wg genpsk.\n"
-"            This option adds an additional layer of symmetric-key\n"
-"            cryptography to be mixed into the already existing\n"
-"            public-key cryptography, for post-quantum resistance."
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
-#: editor/settings/ui/wireguardpeerwidget.ui:109
-#, kde-format
-msgid "Persistent keepalive:"
-msgstr ""
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
-#: editor/settings/ui/wireguardpeerwidget.ui:127
-#, kde-format
-msgid ""
-"Optional.\n"
-"            A seconds interval, between 1 and 65535 inclusive, of\n"
-"            how often to send an authenticated empty packet to\n"
-"            the peer for the purpose of keeping a stateful firewall\n"
-"            or NAT mapping valid persistently. For example, if the\n"
-"            interface very rarely sends traffic, but it might at\n"
-"            anytime receive traffic from a peer, and it is behind\n"
-"            NAT, the interface might benefit from having a\n"
-"            persistent keepalive interval of 25 seconds. If set to\n"
-"            0 or \"off\", this option is disabled. By default or\n"
-"            when unspecified, this option is off. Most users will not\n"
-"            need this."
-msgstr ""
-
-#. i18n: ectx: attribute (title), widget (QWidget, tab)
-#: editor/settings/ui/wireguardtabwidget.ui:24
-#, kde-format
-msgid "Peer 1"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/wireguardtabwidget.ui:37
-#, kde-format
-msgid "Add new Peer"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
-#: editor/settings/ui/wireguardtabwidget.ui:44
-#, kde-format
-msgid "Remove this Peer"
-msgstr ""
 
 #: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
@@ -3206,100 +1560,6 @@ msgstr ""
 "Ασφάλεια: Μη ασφαλές\n"
 "Συχνότητα: %3 Mhz"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/widgets/ui/advancedpermissionswidget.ui:33
-#, kde-format
-msgid "Available Users"
-msgstr "Διαθέσιμοι χρήστες"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
-#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
-#: editor/widgets/ui/advancedpermissionswidget.ui:83
-#: editor/widgets/ui/advancedpermissionswidget.ui:213
-#, kde-format
-msgid "Real Name"
-msgstr "Πραγματικό όνομα"
-
-#. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
-#. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
-#: editor/widgets/ui/advancedpermissionswidget.ui:88
-#: editor/widgets/ui/advancedpermissionswidget.ui:218
-#, kde-format
-msgctxt "like in Username for athentication"
-msgid "Username"
-msgstr "Όνομα χρήστη"
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/widgets/ui/advancedpermissionswidget.ui:160
-#, kde-format
-msgid "Users allowed to activate the connection"
-msgstr "Επιτρέπεται στους χρήστες να ενεργοποιήσουν τη σύνδεση"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
-#: editor/widgets/ui/ipv4routes.ui:20
-#, kde-format
-msgid "Edit IPv4 Routes"
-msgstr "Επεξεργασία των διαδρομών IPv4"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
-#: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
-#, kde-format
-msgid ""
-"If enabled, this connection will never be used as the default network "
-"connection"
-msgstr ""
-"Εφόσον ενεργοποιηθεί, αυτή η σύνδεση δε θα χρησιμοποιηθεί ποτέ ως "
-"προκαθορισμένη σύνδεση δικτύου"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
-#: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
-#, kde-format
-msgid "Use only for resources on this connection"
-msgstr "Να χρησιμοποιηθεί μόνο για πόρους στη σύνδεση αυτή"
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
-#: editor/widgets/ui/ipv4routes.ui:74
-#, kde-format
-msgctxt "Remove a selected row"
-msgid "Remove"
-msgstr "Αφαίρεση"
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
-#: editor/widgets/ui/ipv4routes.ui:124 editor/widgets/ui/ipv6routes.ui:77
-#, kde-format
-msgctxt "Insert a row"
-msgid "Add"
-msgstr "Προσθήκη"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbIgnoreAutoRoutes)
-#: editor/widgets/ui/ipv4routes.ui:136 editor/widgets/ui/ipv6routes.ui:120
-#, kde-format
-msgid ""
-"If enabled, automatically configured routes are ignored and only routes "
-"specified above are used"
-msgstr ""
-"Εφόσον ενεργοποιηθεί, οι αυτόματα διαμορφωμένες διαδρομές αγνοούνται και "
-"χρησιμοποιούνται μόνο οι καθορισμένες παραπάνω"
-
-#. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
-#: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
-#, kde-format
-msgid "Ignore automatically obtained routes"
-msgstr "Αγνόησή αυτόματα ανακτημένων διαδρομών"
-
-#. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
-#: editor/widgets/ui/ipv6routes.ui:20
-#, kde-format
-msgid "Edit IPv6 Routes"
-msgstr "Επεξεργασία των διαδρομών IPv6"
-
-#. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
-#: editor/widgets/ui/ipv6routes.ui:92
-#, kde-format
-msgctxt "Remove a selected row"
-msgid "R&emove"
-msgstr "Αφαίρ&εση"
-
 #: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
@@ -3745,6 +2005,776 @@ msgstr "Adsl"
 #| msgid "Service:"
 msgid "Device"
 msgstr "Υπηρεσία:"
+
+#~ msgid "Connection name:"
+#~ msgstr "Όνομα σύνδεσης:"
+
+#~ msgid "Authentication:"
+#~ msgstr "Ταυτοποίηση:"
+
+#~ msgid "MD5"
+#~ msgstr "MD5"
+
+#~ msgid "TLS"
+#~ msgstr "TLS"
+
+#~ msgid "LEAP"
+#~ msgstr "LEAP"
+
+#~ msgid "FAST"
+#~ msgstr "FAST"
+
+#~ msgid "Tunneled TLS (TTLS)"
+#~ msgstr "Διοχετευόμενο TLS (TTLS)"
+
+#~ msgid "Protected EAP (PEAP)"
+#~ msgstr "Προστατευμένο EAP (PEAP)"
+
+#~ msgid "Username:"
+#~ msgstr "Όνομα χρήστη:"
+
+#~ msgid "Password:"
+#~ msgstr "Κωδικός πρόσβασης:"
+
+#~ msgid "Identity:"
+#~ msgstr "Ταυτότητα:"
+
+#, fuzzy
+#~| msgctxt "@info"
+#~| msgid "Search Domains:"
+#~ msgid "Domain:"
+#~ msgstr "Τομείς αναζήτησης:"
+
+#~ msgid "User certificate:"
+#~ msgstr "Πιστοποιητικό χρήστη:"
+
+#~ msgid "CA certificate:"
+#~ msgstr "Πιστοποιητικό CA:"
+
+#~ msgid "Subject match:"
+#~ msgstr "Ταίριασμα θέματος:"
+
+#~ msgid "Alternative subject matches:"
+#~ msgstr "Εναλλακτικά ταιριάσματα θέματος:"
+
+#~ msgid "Connect to these servers:"
+#~ msgstr "Σύνδεση σε αυτούς τους εξυπηρετητές:"
+
+#~ msgid "Private key:"
+#~ msgstr "Ιδιωτικό κλειδί:"
+
+#~ msgid "Private key password:"
+#~ msgstr "Κωδικός πρόσβασης ιδιωτικού κλειδιού:"
+
+#~ msgid "Anonymous identity:"
+#~ msgstr "Ανώνυμη ταυτότητα:"
+
+#~ msgid "Automatic PAC provisioning"
+#~ msgstr "Αυτόματη παροχή PAC"
+
+#~ msgid "Anonymous"
+#~ msgstr "Ανώνυμος"
+
+#~ msgid "Authenticated"
+#~ msgstr "Πιστοποιήθηκε"
+
+#~ msgid "Both"
+#~ msgstr "Και τα δύο"
+
+#~ msgid "PAC file:"
+#~ msgstr "Αρχείο PAC:"
+
+#~ msgid "Inner authentication:"
+#~ msgstr "Εσωτερική ταυτοποίηση:"
+
+#~ msgid "GTC"
+#~ msgstr "GTC"
+
+#~ msgid "MSCHAPv2"
+#~ msgstr "MSCHAPv2"
+
+#~ msgid "PAP"
+#~ msgstr "PAP"
+
+#~ msgid "MSCHAP"
+#~ msgstr "MSCHAP"
+
+#~ msgid "CHAP"
+#~ msgstr "CHAP"
+
+#~ msgid "PEAP version:"
+#~ msgstr "Έκδοση PEAP:"
+
+#, fuzzy
+#~| msgid "Automatic"
+#~ msgctxt "PEAP version"
+#~ msgid "Automatic"
+#~ msgstr "Αυτόματα"
+
+#~ msgid "Version 0"
+#~ msgstr "Έκδοση 0"
+
+#~ msgid "Version 1"
+#~ msgstr "Έκδοση 1"
+
+#~ msgid "Interface name:"
+#~ msgstr "Όνομα διεπαφής:"
+
+#~ msgid "Bonded connections:"
+#~ msgstr "Δεσμικές συνδέσεις:"
+
+#~ msgid "Delete"
+#~ msgstr "Διαγραφή"
+
+#~ msgid "Mode:"
+#~ msgstr "Λειτουργία:"
+
+#~ msgid "Link monitoring:"
+#~ msgstr "Παρακολούθηση συνδέσμου:"
+
+#~ msgid "Monitoring frequency:"
+#~ msgstr "Συχνότητα παρακολούθησης:"
+
+#~ msgid " ms"
+#~ msgstr " ms"
+
+#~ msgid "Link up delay:"
+#~ msgstr "Καθυστέρηση σύνδεσης:"
+
+#~ msgid "Link down delay:"
+#~ msgstr "Καθυστέρηση αποσύνδεσης:"
+
+#~ msgid "ARP targets:"
+#~ msgstr "Προορισμοί ARP:"
+
+#~ msgid "An IP address or comma-separated list of addresses."
+#~ msgstr ""
+#~ "Μια διεύθυνση IP, ή μια λίστα που ξεχωρίζεται με κόμμα των διευθύνσεων."
+
+#~ msgid "Bridged connections:"
+#~ msgstr "Γεφυρικές συνδέσεις:"
+
+#~ msgid "Aging time:"
+#~ msgstr "Χρόνος ωρίμανσης:"
+
+#~ msgctxt "seconds"
+#~ msgid " s"
+#~ msgstr " s"
+
+#~ msgid "Enable STP (Spanning Tree Protocol)"
+#~ msgstr "Ενεργοποίηση STP (πρωτόκολλο δένδρου κάλυψης)"
+
+#~ msgid "Priority:"
+#~ msgstr "Προτεραιότητά:"
+
+#~ msgid "Forward delay:"
+#~ msgstr "Καθυστέρηση προώθησης:"
+
+#~ msgid "Hello time:"
+#~ msgstr "Χρόνος χαιρετισμού:"
+
+#~ msgid "Max age:"
+#~ msgstr "Μέγιστη ηλικία:"
+
+#~ msgid "Address of the device:"
+#~ msgstr "Διεύθυνση της συσκευής:"
+
+#~ msgid "Connection type:"
+#~ msgstr "Τύπος σύνδεσης:"
+
+#~ msgid "Number:"
+#~ msgstr "Αριθμός:"
+
+#, fuzzy
+#~| msgid "Ignore automatically obtained routes"
+#~ msgid "Connect automatically with priority"
+#~ msgstr "Αγνόησή αυτόματα ανακτημένων διαδρομών"
+
+#~ msgid ""
+#~ "If the connection is set to autoconnect, connections with higher priority "
+#~ "will be preferred. Defaults to 0.\n"
+#~ "The higher number means higher priority. An negative number can be used "
+#~ "to indicate priority lower than the default.\n"
+#~ "           "
+#~ msgstr ""
+#~ "Αν η σύνδεση οριστεί ως 'αυτόματη σύνδεση', οι συνδέσεις με υψηλότερη \n"
+#~ "προτεραιότητα  θα προτιμούνται. Προκαθορισμένα είναι 0\n"
+#~ "Υψηλότερος αριθμός σημαίνει υψηλότερη προτεραιότητα. Μπορεί να "
+#~ "χρησιμοποιηθεί αρνητικός αριθμός για να υποδηλώσει προτεραιότητά \n"
+#~ "χαμηλότερη της προκαθορισμένης."
+
+#~ msgid "All users may connect to this network"
+#~ msgstr "Όλοι οι χρήστες μπορούν να συνδεθούν σε αυτό το δίκτυο"
+
+#~ msgid "Edit advanced permissions for this connection"
+#~ msgstr "Επεξεργασία προηγμένων δικαιωμάτων για αυτήν τη σύνδεση"
+
+#~ msgid ""
+#~ "Fine-grained permissions editor for this connection. It lets you choose "
+#~ "which users can activate/modify/delete this connection."
+#~ msgstr ""
+#~ "Επεξεργαστής λεπτομερειών δικαιωμάτων για αυτήν τη σύνδεση. Σας επιτρέπει "
+#~ "να επιλέξετε ποιοι χρήστες μπορούν να ενεργοποιήσουν/τροποποιήσουν/"
+#~ "διαγράψουν τη σύνδεση αυτή."
+
+#, fuzzy
+#~| msgid "Advanced"
+#~ msgid "Advanced…"
+#~ msgstr "Για προχωρημένους"
+
+#, fuzzy
+#~| msgid "Automatically connect to VPN when using this connection"
+#~ msgid "Automatically connect to VPN"
+#~ msgstr "Αυτόματη σύνδεση με VPN όταν χρησιμοποιείται αυτή η σύνδεση"
+
+#~ msgid "Firewall zone:"
+#~ msgstr "Ζώνη τείχους προστασίας:"
+
+#, fuzzy
+#~| msgid "Automatic"
+#~ msgctxt "Item in the Metered: list"
+#~ msgid "Automatic"
+#~ msgstr "Αυτόματα"
+
+#, fuzzy
+#~| msgctxt "no security"
+#~| msgid "None"
+#~ msgid "No"
+#~ msgstr "Καμία"
+
+#~ msgid "Basic"
+#~ msgstr "Βασικό"
+
+#~ msgid "Advanced"
+#~ msgstr "Για προχωρημένους"
+
+#~ msgid "Allow roaming if home network is not available"
+#~ msgstr "Να επιτρέπεται η περιαγωγή αν το οικιακό δίκτυο δεν είναι διαθέσιμο"
+
+#~ msgid "APN:"
+#~ msgstr "APN:"
+
+#~ msgid "Network ID:"
+#~ msgstr "Αναγνωριστικό δικτύου:"
+
+#~ msgid "PIN:"
+#~ msgstr "PIN:"
+
+#~ msgid "Transport mode:"
+#~ msgstr "Λειτουργία μεταφοράς:"
+
+#~ msgid "Restrict to device:"
+#~ msgstr "Περιορισμός στη συσκευή:"
+
+#~ msgid "MTU:"
+#~ msgstr "ΜTU:"
+
+#, fuzzy
+#~| msgid "Automatic"
+#~ msgctxt "MTU:"
+#~ msgid "Automatic"
+#~ msgstr "Αυτόματα"
+
+#~ msgid " bytes"
+#~ msgstr " bytes"
+
+#~ msgid "Method:"
+#~ msgstr "Μέθοδος:"
+
+#, fuzzy
+#~| msgid "Automatic"
+#~ msgctxt "Method:"
+#~ msgid "Automatic"
+#~ msgstr "Αυτόματα"
+
+#~ msgid "Automatic (Only addresses)"
+#~ msgstr "Αυτόματα (μόνο διευθύνσεις)"
+
+#~ msgid "Link-Local"
+#~ msgstr "Τοπική σύνδεση"
+
+#~ msgctxt "like in use Manual configuration"
+#~ msgid "Manual"
+#~ msgstr "Χειροκίνητα"
+
+#~ msgid "Shared to other computers"
+#~ msgstr "Κοινή χρήση με άλλους υπολογιστές"
+
+#~ msgctxt "like in this setting is Disabled"
+#~ msgid "Disabled"
+#~ msgstr "Ανενεργή"
+
+#~ msgctxt "@info"
+#~ msgid "DNS Servers:"
+#~ msgstr "Εξυπηρετητές DNS:"
+
+#~ msgid ""
+#~ "Use this field to specify the IP address(es) of one or more DNS servers. "
+#~ "Use ',' to separate entries."
+#~ msgstr ""
+#~ "Χρήση αυτού του πεδίου για προσδιορισμό των IP διευθύνσεων για έναν ή "
+#~ "περισσότερους εξυπηρετητές DNS. Χρησιμοποιήστε ',' για να διαχωρίσετε τα "
+#~ "δεδομένα εισόδου."
+
+#~ msgid "Edit DNS the list of servers"
+#~ msgstr "Επεξεργασία λίστας εξυπηρετητών DNS"
+
+#~ msgctxt "@info"
+#~ msgid "Search Domains:"
+#~ msgstr "Τομείς αναζήτησης:"
+
+#~ msgid ""
+#~ "Use this field to specify one or more DNS domains to search. Use ',' to "
+#~ "separate entries."
+#~ msgstr ""
+#~ "Χρήση αυτού του πεδίου για έναν ή περισσότερους εξυπηρετητές DNS για "
+#~ "αναζήτηση. Χρησιμοποιήστε ',' για να διαχωρίσετε τα δεδομένα εισόδου."
+
+#~ msgid "Edit the list of DNS domains being searched"
+#~ msgstr "Επεξεργασία της λίστας εξυπηρετητών DNS για αναζήτηση"
+
+#~ msgid "DHCP Client ID:"
+#~ msgstr "Αναγνωριστικό πελάτη DHCP:"
+
+#~ msgid ""
+#~ "Use this field to specify the DHCP client ID which is a string sent to "
+#~ "the DHCP server\n"
+#~ "to identify the local machine that the DHCP server may use to customize "
+#~ "the DHCP\n"
+#~ "lease and options."
+#~ msgstr ""
+#~ "Χρησιμοποιήστε αυτό το πεδίο για τον προσδιορισμό του αναγνωριστικού "
+#~ "πελάτη DHCP το οποίο είναι μια συμβολοσειρά προς τον εξυπηρετητή DHCP\n"
+#~ "για την αναγνώριση του τοπικού μηχανήματος το οποίο ο εξυπηρετητής DHCP "
+#~ "μπορεί να χρησιμοποιεί για να προσαρμόσει τη χρονική ισχύ του DHCP\n"
+#~ "και τις επιλογές."
+
+#~ msgid "Remove"
+#~ msgstr "Αφαίρεση"
+
+#~ msgid "Add"
+#~ msgstr "Προσθήκη"
+
+#~ msgid ""
+#~ "IP addresses identify your computer on the network. Click the \"Add\" "
+#~ "button to add\n"
+#~ "an IP address"
+#~ msgstr ""
+#~ "Η διεύθυνση IP αποτελεί το αναγνωριστικό του υπολογιστή σας στο δίκτυο. "
+#~ "Κάντε κλικ στο κουμπί \"Προσθήκη\" \n"
+#~ "για να προσθέσετε μια διεύθυνση IP"
+
+#~ msgid ""
+#~ "Allows the connection to complete if IPv4 configuration fails\n"
+#~ "but IPv6 configuration succeeds"
+#~ msgstr ""
+#~ "Eπιτρέπει την ολοκλήρωση της σύνδεσης \n"
+#~ "αν η διαμόρφωση IPv4 αποτύχει αλλά η διαμόρφωση IPv6 επιτύχει"
+
+#~ msgid "IPv4 is required for this connection"
+#~ msgstr "Το IPv4 απαιτείται για τη σύνδεση αυτή"
+
+#, fuzzy
+#~| msgid "Routes..."
+#~ msgid "Routes…"
+#~ msgstr "Διαδρομές δικτύου..."
+
+#~ msgid ""
+#~ "When connecting to IPv4-capable networks, allows the connection to "
+#~ "complete if\n"
+#~ "IPv6 configuration fails but IPv4 configuration succeeds"
+#~ msgstr ""
+#~ "Όταν συνδέεστε σε δίκτυα με δυνατότητες IPv4, επιτρέπει την ολοκλήρωση "
+#~ "της σύνδεσης \n"
+#~ "αν η διαμόρφωση IPv6 αποτύχει αλλά η IPv4 επιτύχει"
+
+#~ msgid "IPv6 is required for this connection"
+#~ msgstr "Το IPv6 απαιτείται για τη σύνδεση αυτή"
+
+#~ msgid "Edit the list of DNS servers"
+#~ msgstr "Επεξεργασία λίστας εξυπηρετητών DNS"
+
+#~ msgctxt "privacy disabled"
+#~ msgid "Disabled"
+#~ msgstr "Ανενεργή"
+
+#~ msgid "Enabled (prefer public address)"
+#~ msgstr "Ενεργή (να προτιμάται δημόσια διεύθυνση)"
+
+#~ msgid "Enabled (prefer temporary addresses)"
+#~ msgstr "Ενεργή (να προτιμάται προσωρινή διεύθυνση)"
+
+#~ msgid "Automatic (Only DHCP)"
+#~ msgstr "Αυτόματο (μόνο DHCP)"
+
+#~ msgctxt "like in this setting is Disabled"
+#~ msgid "Ignored"
+#~ msgstr "Αγνόηση"
+
+#, fuzzy
+#~| msgctxt "like in this setting is Disabled"
+#~| msgid "Disabled"
+#~ msgid "Disabled"
+#~ msgstr "Ανενεργή"
+
+#~ msgid "Privacy:"
+#~ msgstr "Ιδιωτικότητα:"
+
+#~ msgid "Authentication"
+#~ msgstr "Ταυτοποίηση"
+
+#~ msgid "EAP"
+#~ msgstr "EAP"
+
+#~ msgid "Compression"
+#~ msgstr "Συμπίεση"
+
+#~ msgid "Use point-to-point encryption (MPPE)"
+#~ msgstr "Χρήση κρυπτογράφησης σημείο-προς-σημείο (MPPE)"
+
+#~ msgid "Use BSD data compression"
+#~ msgstr "Χρήση συμπίεσης δεδομένων BSD"
+
+#~ msgid "Use Deflate data compression"
+#~ msgstr "Χρήση συμπίεσης δεδομένων Deflate"
+
+#~ msgid "Use TCP header compression"
+#~ msgstr "Χρήση συμπίεσης κεφαλίδας TCP"
+
+#~ msgid "Require 128-bit encryption"
+#~ msgstr "Απαίτηση κρυπτογράφησης 128-bit"
+
+#~ msgid "Use stateful MPPE"
+#~ msgstr "Χρήση MPPE με μεταβλητές κατάστασης"
+
+#~ msgid "Echo"
+#~ msgstr "Echo"
+
+#~ msgid "Send PPP echo packets"
+#~ msgstr "Αποστολή πακέτων PPP echo"
+
+#~ msgid "Service:"
+#~ msgstr "Υπηρεσία:"
+
+#~ msgid "Teamed connections:"
+#~ msgstr "Δεσμικές συνδέσεις:"
+
+#~ msgid "JSON config:"
+#~ msgstr "JSON ρύθμιση:"
+
+#, fuzzy
+#~| msgid "Import configuration from file..."
+#~ msgid "Import configuration from file…"
+#~ msgstr "Εισαγωγή ρύθμισης από αρχείο..."
+
+#~ msgid "Parent interface:"
+#~ msgstr "Γονική διεπαφή:"
+
+#~ msgid "VLAN id:"
+#~ msgstr "Ταυτότητα VLAN:"
+
+#~ msgid "VLAN interface name:"
+#~ msgstr "Όνομα διεπαφής VLAN:"
+
+#~ msgid "Output packet headers reordering"
+#~ msgstr "Αναταξινόμηση κεφαλίδων των εξερχόμενων πακέτων"
+
+#~ msgid "GARP VLAN Registration Protocol"
+#~ msgstr "Πρωτόκολλο εγγραφής GARP VLAN"
+
+#~ msgid "GVRP"
+#~ msgstr "GVRP"
+
+#~ msgid "Loose binding"
+#~ msgstr "Χαλαρός συνδυασμός"
+
+#~ msgid "SSID:"
+#~ msgstr "SSID:"
+
+#~ msgid "Infrastructure"
+#~ msgstr "Υποδομή"
+
+#~ msgid "Ad-hoc"
+#~ msgstr "Ad-hoc"
+
+#~ msgid "Access Point"
+#~ msgstr "Σημείο πρόσβασης"
+
+#~ msgid "BSSID:"
+#~ msgstr "BSSID:"
+
+#~ msgid ""
+#~ "This option locks this connection to the Wi-Fi access point (AP) "
+#~ "specified by the\n"
+#~ " BSSID entered here. Example: 00:11:22:33:44:55"
+#~ msgstr ""
+#~ "Η επιλογή αυτή κλειδώνει τη σύνδεση αυτή στο σημείο πρόσβασης Wi-Fi (AP) "
+#~ "που καθορίζεται από \n"
+#~ "το BSSID που καταχωρείται εδώ. Π.χ.: 00:11:22:33:44:55"
+
+#~ msgid "Band:"
+#~ msgstr "Ζώνη:"
+
+#~ msgid ""
+#~ "This option locks the connection to the Wi-Fi network associated to the "
+#~ "specified band. This setting depends\n"
+#~ " on specific driver capability and may not work with all drivers"
+#~ msgstr ""
+#~ "Η επιλογή αυτή κλειδώνει τη σύνδεση στο δίκτυο Wi-Fi που σχετίζεται με "
+#~ "την καθορισμένη ζώνη. Η ρύθμιση αυτή\n"
+#~ "εξαρτάται από τις δυνατότητες του συγκεκριμένου οδηγού και ενδέχεται να "
+#~ "μη λειτουργεί με όλους τους οδηγούς"
+
+#, fuzzy
+#~| msgid "Automatic"
+#~ msgctxt "Band:"
+#~ msgid "Automatic"
+#~ msgstr "Αυτόματα"
+
+#~ msgid "A (5 GHz)"
+#~ msgstr "A (5 GHz)"
+
+#~ msgid "B/G (2.4 GHz)"
+#~ msgstr "B/G (2.4 GHz)"
+
+#~ msgid "Channel:"
+#~ msgstr "Κανάλι:"
+
+#~ msgid ""
+#~ "Wireless channel to use for the Wi-Fi connection. The device will only "
+#~ "join (or create for Ad-Hoc networks)\n"
+#~ "a Wi-Fi network on the specified channel"
+#~ msgstr ""
+#~ "Το ασύρματο κανάλι που θα χρησιμοποιηθεί για τη σύνδεση Wi-Fi. Η συσκευή "
+#~ "θα συνδεθεί μόνο(ή θα δημιουργήσει δίκτυα Ad-Hoc)\n"
+#~ "σε δίκτυα Wi-Fi στο συγκεκριμένο κανάλι"
+
+#~ msgid "Cloned MAC address:"
+#~ msgstr "Κλώνος διεύθυνσης MAC:"
+
+#, fuzzy
+#~| msgid "Random"
+#~ msgid "Random…"
+#~ msgstr "Τυχαία"
+
+#~ msgid "Mark this if you want to create a connection for a hidden network"
+#~ msgstr ""
+#~ "Σημειώστε το αν επιθυμείτε να δημιουργήσετε σύνδεση για ένα κρυφό δίκτυο"
+
+#~ msgid "Visibility:"
+#~ msgstr "Ορατότητα:"
+
+#~ msgid "Hidden network"
+#~ msgstr "Κρυφό δίκτυο"
+
+#~ msgid "Wifi Security"
+#~ msgstr "Ασφάλεια Wifi"
+
+#~ msgctxt "no security"
+#~ msgid "None"
+#~ msgstr "Καμία"
+
+#~ msgid "WEP key 40/128 bits (Hex or ASCII)"
+#~ msgstr "Κλειδί WEP 40/128 bits (Hex ή ASCII)"
+
+#~ msgid "WEP key 128 bits"
+#~ msgstr "Κλειδί WEP 128 bits"
+
+#~ msgid "Dynamic WEP (802.1x)"
+#~ msgstr "Δυναμικό WEP (802.1x)"
+
+#~ msgid "WPA/WPA2 Personal"
+#~ msgstr "Προσωπικό WPA/WPA2"
+
+#~ msgid "WPA/WPA2 Enterprise"
+#~ msgstr "Εταιρικό WPA/WPA2"
+
+#, fuzzy
+#~| msgid "WPA/WPA2 Personal"
+#~ msgid "WPA3 Personal"
+#~ msgstr "Προσωπικό WPA/WPA2"
+
+#, fuzzy
+#~| msgid "WPA/WPA2 Enterprise"
+#~ msgid "WPA3 Enterprise 192-bit"
+#~ msgstr "Εταιρικό WPA/WPA2"
+
+#~ msgid "Security:"
+#~ msgstr "Ασφάλεια:"
+
+#~ msgid "Key:"
+#~ msgstr "Κλειδί:"
+
+#~ msgid "WEP index:"
+#~ msgstr "Δείκτης WEP:"
+
+#~ msgid "1 (default)"
+#~ msgstr "1 (προκαθορισμένο)"
+
+#~ msgid "2"
+#~ msgstr "2"
+
+#~ msgid "3"
+#~ msgstr "3"
+
+#~ msgid "4"
+#~ msgstr "4"
+
+#~ msgid "Open System"
+#~ msgstr "Ανοικτό σύστημα"
+
+#~ msgid "Shared Key"
+#~ msgstr "Κοινόχρηστο κλειδί"
+
+#~ msgid ""
+#~ "This option locks this connection to the network device specified by its\n"
+#~ "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#~ msgstr ""
+#~ "Η επιλογή αυτή κλειδώνει τη σύνδεση αυτή στη δικτυακή συσκευή που "
+#~ "καθορίζεται από τη \n"
+#~ "μόνιμη διεύθυνση MAC που καταχωρείται εδώ. Π.χ. : 00:11:22:33:44:55"
+
+#~ msgid ""
+#~ "The MAC address entered here will be used as hardware address for the\n"
+#~ "network device this connection is activated on. This feature is known as "
+#~ "MAC\n"
+#~ "cloning or spoofing. Example 11:22:33:44:55"
+#~ msgstr ""
+#~ "Η διεύθυνση MAC που δόθηκε εδώ θα χρησιμοποιηθεί ως διεύθυνση υλικού για "
+#~ "τη\n"
+#~ " συσκευή δικτύωσης στην οποία η σύνδεση αυτή έχει ενεργοποιηθεί. Το "
+#~ "χαρακτηριστικό αυτό είναι γνωστό\n"
+#~ "ως κλωνοποίηση MAC ή μεταμφίεση (spoofing). Παράδειγμα 11:22:33:44:55"
+
+#~ msgid "Random"
+#~ msgstr "Τυχαία"
+
+#~ msgid ""
+#~ "Only transmit packets of the specified size or smaller, breaking larger "
+#~ "packets up\n"
+#~ "into multiple Ethernet frames"
+#~ msgstr ""
+#~ "Μεταδίδει πακέτα μόνο μικρότερα ή ίσα από ένα καθορισμένο μέγεθος, "
+#~ "χωρίζοντάς τα \n"
+#~ "μεγαλύτερα πακέτα σε πολλαπλά πλαίσια Ethernet"
+
+#~ msgid "Speed:"
+#~ msgstr "Ταχύτητα:"
+
+#~ msgid "Duplex:"
+#~ msgstr "Αμφίδρομη:"
+
+#~ msgid "Half"
+#~ msgstr "Απλή"
+
+#~ msgid "Full"
+#~ msgstr "Πλήρης"
+
+#, fuzzy
+#~| msgid "Link monitoring:"
+#~ msgid "Link negotiation:"
+#~ msgstr "Παρακολούθηση συνδέσμου:"
+
+#, fuzzy
+#~| msgctxt "like in this setting is Disabled"
+#~| msgid "Ignored"
+#~ msgid "Ignore"
+#~ msgstr "Αγνόηση"
+
+#, fuzzy
+#~| msgid "Automatic"
+#~ msgctxt "Link negotiation:"
+#~ msgid "Automatic"
+#~ msgstr "Αυτόματα"
+
+#, fuzzy
+#~| msgctxt "like in use Manual configuration"
+#~| msgid "Manual"
+#~ msgid "Manual"
+#~ msgstr "Χειροκίνητα"
+
+#, fuzzy
+#~| msgid ""
+#~| "Request that the device use only the specified speed. In MBit/s, example "
+#~| "100 == 100Mbit/s"
+#~ msgid "Request that the device use only the specified speed."
+#~ msgstr ""
+#~ "Να απαιτηθεί από τη συσκευή η χρήση της καθορισμένης ταχύτητας μόνο. Σε "
+#~ "MBit/δ, παράδειγμα 100 == 100Mbit/δ"
+
+#~ msgid "Use 802.1x security for this connection"
+#~ msgstr "Χρήση ασφάλειας 802.1x για αυτή τη σύνδεση"
+
+#, fuzzy
+#~| msgid "Interface name:"
+#~ msgid "Interface"
+#~ msgstr "Όνομα διεπαφής:"
+
+#, fuzzy
+#~| msgid "Private key:"
+#~ msgid "Public key:"
+#~ msgstr "Ιδιωτικό κλειδί:"
+
+#, fuzzy
+#~| msgid "Cloned MAC address:"
+#~ msgid "Endpoint address:"
+#~ msgstr "Κλώνος διεύθυνσης MAC:"
+
+#, fuzzy
+#~| msgid "Private key:"
+#~ msgid "Preshared key:"
+#~ msgstr "Ιδιωτικό κλειδί:"
+
+#~ msgid "Available Users"
+#~ msgstr "Διαθέσιμοι χρήστες"
+
+#~ msgid "Real Name"
+#~ msgstr "Πραγματικό όνομα"
+
+#~ msgctxt "like in Username for athentication"
+#~ msgid "Username"
+#~ msgstr "Όνομα χρήστη"
+
+#~ msgid "Users allowed to activate the connection"
+#~ msgstr "Επιτρέπεται στους χρήστες να ενεργοποιήσουν τη σύνδεση"
+
+#~ msgid "Edit IPv4 Routes"
+#~ msgstr "Επεξεργασία των διαδρομών IPv4"
+
+#~ msgid ""
+#~ "If enabled, this connection will never be used as the default network "
+#~ "connection"
+#~ msgstr ""
+#~ "Εφόσον ενεργοποιηθεί, αυτή η σύνδεση δε θα χρησιμοποιηθεί ποτέ ως "
+#~ "προκαθορισμένη σύνδεση δικτύου"
+
+#~ msgid "Use only for resources on this connection"
+#~ msgstr "Να χρησιμοποιηθεί μόνο για πόρους στη σύνδεση αυτή"
+
+#~ msgctxt "Remove a selected row"
+#~ msgid "Remove"
+#~ msgstr "Αφαίρεση"
+
+#~ msgctxt "Insert a row"
+#~ msgid "Add"
+#~ msgstr "Προσθήκη"
+
+#~ msgid ""
+#~ "If enabled, automatically configured routes are ignored and only routes "
+#~ "specified above are used"
+#~ msgstr ""
+#~ "Εφόσον ενεργοποιηθεί, οι αυτόματα διαμορφωμένες διαδρομές αγνοούνται και "
+#~ "χρησιμοποιούνται μόνο οι καθορισμένες παραπάνω"
+
+#~ msgid "Ignore automatically obtained routes"
+#~ msgstr "Αγνόησή αυτόματα ανακτημένων διαδρομών"
+
+#~ msgid "Edit IPv6 Routes"
+#~ msgstr "Επεξεργασία των διαδρομών IPv6"
+
+#~ msgctxt "Remove a selected row"
+#~ msgid "R&emove"
+#~ msgstr "Αφαίρ&εση"
 
 #~ msgctxt "Error message in VPN import/export dialog"
 #~ msgid "Operation not supported for this VPN type."

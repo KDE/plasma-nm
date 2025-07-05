@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-03-14 02:54+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2023-12-11 18:02+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -36,226 +36,6 @@ msgstr "NetworkManager nemá podporu pre VPN kompatibilnú s Cisco"
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: súbor nie je možné vytvoriť"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: vpnc.ui:18
-#, kde-format
-msgid "Gateway:"
-msgstr "Brána:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
-#: vpnc.ui:31
-#, kde-format
-msgid "IP/hostname of IPsec gateway."
-msgstr "IP/názov hostiteľa brány IPsec."
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: vpnc.ui:38
-#, kde-format
-msgid "User name:"
-msgstr "Meno používateľa:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, leUserName)
-#. i18n: ectx: property (toolTip), widget (QLineEdit, user)
-#: vpnc.ui:51 vpncauth.ui:97
-#, kde-format
-msgid "User name for the connection."
-msgstr "Meno používateľa pre pripojenie."
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: vpnc.ui:58
-#, kde-format
-msgid "User password:"
-msgstr "Heslo používateľa:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, leUserPassword)
-#. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
-#: vpnc.ui:79 vpncauth.ui:58
-#, kde-format
-msgid "User password for the connection."
-msgstr "Heslo používateľa pre pripojenie."
-
-#. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: vpnc.ui:91 vpncauth.ui:124
-#, kde-format
-msgid "Group name:"
-msgstr "Názov skupiny:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, group)
-#: vpnc.ui:104
-#, kde-format
-msgid "Group name"
-msgstr "Názov skupiny"
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: vpnc.ui:111
-#, kde-format
-msgid "Group password:"
-msgstr "Heslo skupiny:"
-
-#. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
-#. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
-#: vpnc.ui:129 vpncauth.ui:84
-#, kde-format
-msgid "Group password."
-msgstr "Heslo skupiny."
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, useHybridAuth)
-#: vpnc.ui:141
-#, kde-format
-msgid ""
-"Enable hybrid authentication, i.e. use certificate in addition to password."
-msgstr ""
-"Povoliť hybridnú autentifikáciu, teda použiť certifikát spolu s heslom."
-
-#. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
-#: vpnc.ui:144
-#, kde-format
-msgid "Use hybrid authentication"
-msgstr "Použiť hybridnú autentifikáciu"
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: vpnc.ui:154
-#, kde-format
-msgid "CA file:"
-msgstr "Súbor CA:"
-
-#. i18n: ectx: property (toolTip), widget (KUrlRequester, caFile)
-#: vpnc.ui:167
-#, kde-format
-msgid "CA certificate in PEM format."
-msgstr "Certifikát CA vo formáte PEM."
-
-#. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
-#: vpnc.ui:170
-#, kde-format
-msgid "*.pem *.crt *.cer"
-msgstr "*.pem *.crt *.cer"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: vpnc.ui:192
-#, kde-format
-msgid "Advanced…"
-msgstr "Pokročilé..."
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: vpncadvanced.ui:18
-#, kde-format
-msgid "Identification"
-msgstr "Identifikácia"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: vpncadvanced.ui:27
-#, kde-format
-msgid "Domain:"
-msgstr "Doména:"
-
-#. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
-#: vpncadvanced.ui:37
-#, kde-format
-msgid "(NT-)Domain name for authentication."
-msgstr "(NT-)doménový názov pre overenie."
-
-#. i18n: ectx: property (text), widget (QLabel, label_2)
-#: vpncadvanced.ui:44
-#, kde-format
-msgid "Vendor:"
-msgstr "Výrobca:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
-#: vpncadvanced.ui:60
-#, kde-format
-msgid "Vendor of your IPsec gateway."
-msgstr "Výrobca vašej brány IPsec."
-
-#. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: vpncadvanced.ui:70
-#, kde-format
-msgid "Transport and Security"
-msgstr "Prenos a bezpečnosť"
-
-#. i18n: ectx: property (text), widget (QLabel, label_3)
-#: vpncadvanced.ui:82
-#, kde-format
-msgid "Encryption method:"
-msgstr "Spôsob šifrovania:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, encryption)
-#: vpncadvanced.ui:98
-#, kde-format
-msgid "Encryption method."
-msgstr "Spôsob šifrovania."
-
-#. i18n: ectx: property (text), widget (QLabel, label_4)
-#: vpncadvanced.ui:105
-#, kde-format
-msgid "NAT traversal:"
-msgstr "Prechod cez NAT:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, nat)
-#: vpncadvanced.ui:121
-#, kde-format
-msgid "NAT traversal method to use."
-msgstr "Spôsob prechodu cez NAT."
-
-#. i18n: ectx: property (text), widget (QLabel, label_5)
-#: vpncadvanced.ui:128
-#, kde-format
-msgid "IKE DH Group:"
-msgstr "Skupina IKE DH:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, dhGroup)
-#: vpncadvanced.ui:144
-#, kde-format
-msgid "Name of the IKE DH group."
-msgstr "Názov skupiny IKE DH."
-
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: vpncadvanced.ui:151
-#, kde-format
-msgid "Perfect Forward Secrecy:"
-msgstr "Dokonalá tajnosť presmerovania:"
-
-#. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
-#: vpncadvanced.ui:167
-#, kde-format
-msgid "Diffie-Hellman group to use for PFS."
-msgstr "Skupina Diffie-Hellman na použitie s PFS."
-
-#. i18n: ectx: property (text), widget (QLabel, label_7)
-#: vpncadvanced.ui:174
-#, kde-format
-msgid "Local Port:"
-msgstr "Miestny port:"
-
-#. i18n: ectx: property (toolTip), widget (QSpinBox, localport)
-#: vpncadvanced.ui:190
-#, kde-format
-msgid ""
-"Local port to use (0-65535). 0 (default value) means random port. 500 is "
-"vpnc's default."
-msgstr ""
-"Miestny port, ktorý sa použije (0-65535). 0 (predvolená hodnota) znamená "
-"náhodný port. 500 je predvolený port vpnc."
-
-#. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
-#: vpncadvanced.ui:193
-#, kde-format
-msgid "Random"
-msgstr "Náhodný"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, deadPeer)
-#: vpncadvanced.ui:209
-#, kde-format
-msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr "Zakázať posielanie DPD paketov (nastaví timeout na 0)."
-
-#. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
-#: vpncadvanced.ui:212
-#, kde-format
-msgid "Disable dead peer detection"
-msgstr "Zakázať zisťovanie mŕtvych účastníkov"
 
 #: vpncadvancedwidget.cpp:20
 #, kde-format
@@ -364,35 +144,132 @@ msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
 msgstr "Skupina DH 5"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, VpncAuth)
-#: vpncauth.ui:14
-#, kde-format
-msgid "VPNCAuthentication"
-msgstr "Overovanie VPNC"
+#~ msgid "Gateway:"
+#~ msgstr "Brána:"
 
-#. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
-#: vpncauth.ui:32
-#, kde-format
-msgid "User Password:"
-msgstr "Heslo používateľa:"
+#~ msgid "IP/hostname of IPsec gateway."
+#~ msgstr "IP/názov hostiteľa brány IPsec."
 
-#. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
-#: vpncauth.ui:45
-#, kde-format
-msgid "Group Password:"
-msgstr "Heslo skupiny:"
+#~ msgid "User name:"
+#~ msgstr "Meno používateľa:"
 
-#. i18n: ectx: property (text), widget (QLabel, userNameLabel)
-#: vpncauth.ui:104
-#, kde-format
-msgid "Username:"
-msgstr "Meno používateľa:"
+#~ msgid "User name for the connection."
+#~ msgstr "Meno používateľa pre pripojenie."
 
-#. i18n: ectx: property (toolTip), widget (QLineEdit, leGroupName)
-#: vpncauth.ui:117
-#, kde-format
-msgid "Group name."
-msgstr "Názov skupiny."
+#~ msgid "User password:"
+#~ msgstr "Heslo používateľa:"
+
+#~ msgid "User password for the connection."
+#~ msgstr "Heslo používateľa pre pripojenie."
+
+#~ msgid "Group name:"
+#~ msgstr "Názov skupiny:"
+
+#~ msgid "Group name"
+#~ msgstr "Názov skupiny"
+
+#~ msgid "Group password:"
+#~ msgstr "Heslo skupiny:"
+
+#~ msgid "Group password."
+#~ msgstr "Heslo skupiny."
+
+#~ msgid ""
+#~ "Enable hybrid authentication, i.e. use certificate in addition to "
+#~ "password."
+#~ msgstr ""
+#~ "Povoliť hybridnú autentifikáciu, teda použiť certifikát spolu s heslom."
+
+#~ msgid "Use hybrid authentication"
+#~ msgstr "Použiť hybridnú autentifikáciu"
+
+#~ msgid "CA file:"
+#~ msgstr "Súbor CA:"
+
+#~ msgid "CA certificate in PEM format."
+#~ msgstr "Certifikát CA vo formáte PEM."
+
+#~ msgid "*.pem *.crt *.cer"
+#~ msgstr "*.pem *.crt *.cer"
+
+#~ msgid "Advanced…"
+#~ msgstr "Pokročilé..."
+
+#~ msgid "Identification"
+#~ msgstr "Identifikácia"
+
+#~ msgid "Domain:"
+#~ msgstr "Doména:"
+
+#~ msgid "(NT-)Domain name for authentication."
+#~ msgstr "(NT-)doménový názov pre overenie."
+
+#~ msgid "Vendor:"
+#~ msgstr "Výrobca:"
+
+#~ msgid "Vendor of your IPsec gateway."
+#~ msgstr "Výrobca vašej brány IPsec."
+
+#~ msgid "Transport and Security"
+#~ msgstr "Prenos a bezpečnosť"
+
+#~ msgid "Encryption method:"
+#~ msgstr "Spôsob šifrovania:"
+
+#~ msgid "Encryption method."
+#~ msgstr "Spôsob šifrovania."
+
+#~ msgid "NAT traversal:"
+#~ msgstr "Prechod cez NAT:"
+
+#~ msgid "NAT traversal method to use."
+#~ msgstr "Spôsob prechodu cez NAT."
+
+#~ msgid "IKE DH Group:"
+#~ msgstr "Skupina IKE DH:"
+
+#~ msgid "Name of the IKE DH group."
+#~ msgstr "Názov skupiny IKE DH."
+
+#~ msgid "Perfect Forward Secrecy:"
+#~ msgstr "Dokonalá tajnosť presmerovania:"
+
+#~ msgid "Diffie-Hellman group to use for PFS."
+#~ msgstr "Skupina Diffie-Hellman na použitie s PFS."
+
+#~ msgid "Local Port:"
+#~ msgstr "Miestny port:"
+
+#~ msgid ""
+#~ "Local port to use (0-65535). 0 (default value) means random port. 500 is "
+#~ "vpnc's default."
+#~ msgstr ""
+#~ "Miestny port, ktorý sa použije (0-65535). 0 (predvolená hodnota) znamená "
+#~ "náhodný port. 500 je predvolený port vpnc."
+
+#~ msgid "Random"
+#~ msgstr "Náhodný"
+
+#~ msgid "Disable sending DPD packets (set timeout to 0)."
+#~ msgstr "Zakázať posielanie DPD paketov (nastaví timeout na 0)."
+
+#~ msgid "Disable dead peer detection"
+#~ msgstr "Zakázať zisťovanie mŕtvych účastníkov"
+
+#~ msgid "VPNCAuthentication"
+#~ msgstr "Overovanie VPNC"
+
+#~ msgid "User Password:"
+#~ msgstr "Heslo používateľa:"
+
+#~ msgid "Group Password:"
+#~ msgstr "Heslo skupiny:"
+
+#~ msgid "Username:"
+#~ msgstr "Meno používateľa:"
+
+#~ msgid "Group name."
+#~ msgstr "Názov skupiny."
 
 #~ msgid "File %1 could not be opened."
 #~ msgstr "Súbor %1 nie je možné otvoriť."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 02:36+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2025-04-21 18:07+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -580,18 +580,6 @@ msgstr "وفّر كلمة سر لتفعيل اتصال '%1':"
 msgid "VPN secrets (%1) dialog"
 msgstr "حواري أسرار شبكات الشخصية الافتراضية ‏(%1)"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
-#: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "حواري كلمة السر"
-
-#. i18n: ectx: property (text), widget (QLabel, labelPass)
-#: passworddialog.ui:92
-#, kde-format
-msgid "Password:"
-msgstr "كلمة السر:"
-
 #: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
@@ -648,8 +636,7 @@ msgstr "يحتاج جهاز الاتصال بشبكة المحمول '%1' لشِ
 msgid "%1 code:"
 msgstr "شِفرة %1:"
 
-#. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:85 pinwidget.ui:153
+#: pindialog.cpp:85
 #, kde-format
 msgid "New PIN code:"
 msgstr "رقم التعريفي الشخصي الجديد:"
@@ -659,8 +646,7 @@ msgstr "رقم التعريفي الشخصي الجديد:"
 msgid "Re-enter new PIN code:"
 msgstr "أعد رقم التعريفي الشخصي الجديد:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:87 pinwidget.ui:193
+#: pindialog.cpp:87
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "أظهر شِفرة رمز PIN/PUK"
@@ -730,39 +716,32 @@ msgstr "شِفرة رمز PUK قصيرة جدًا. يجب أن تكون 8 أرق
 msgid "Unknown Error"
 msgstr "خطأ مجهول"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
-#. i18n: ectx: property (text), widget (QLabel, title)
-#: pinwidget.ui:14 pinwidget.ui:47
-#, kde-format
-msgid "SIM PIN unlock required"
-msgstr "يلزم فتح قفل البطاقة باستخدام رقم التعريف الشخصي"
-
-#. i18n: ectx: property (text), widget (QLabel, prompt)
-#: pinwidget.ui:76
-#, no-c-format, kde-format
-msgid ""
-"The mobile broadband device '%1' requires a SIM PIN code before it can be "
-"used."
-msgstr ""
-"يحتاج جهاز الاتصال بشبكة المحمول '%1' لرقم التعريف الشخصي للشريحة قبل "
-"استخدامه."
-
-#. i18n: ectx: property (text), widget (QLabel, pukLabel)
-#: pinwidget.ui:133
-#, kde-format
-msgid "PUK code:"
-msgstr "شِفرة PUK:"
-
-#. i18n: ectx: property (text), widget (QLabel, pin2Label)
-#: pinwidget.ui:173
-#, kde-format
-msgid "Re-enter PIN code:"
-msgstr "أعد إدخال رقم التعريفي الشخصي:"
-
 #: secretagent.cpp:406
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "فشل استيثاق %1. هل كلمة السر خاطئة؟"
+
+#~ msgid "Password dialog"
+#~ msgstr "حواري كلمة السر"
+
+#~ msgid "Password:"
+#~ msgstr "كلمة السر:"
+
+#~ msgid "SIM PIN unlock required"
+#~ msgstr "يلزم فتح قفل البطاقة باستخدام رقم التعريف الشخصي"
+
+#~ msgid ""
+#~ "The mobile broadband device '%1' requires a SIM PIN code before it can be "
+#~ "used."
+#~ msgstr ""
+#~ "يحتاج جهاز الاتصال بشبكة المحمول '%1' لرقم التعريف الشخصي للشريحة قبل "
+#~ "استخدامه."
+
+#~ msgid "PUK code:"
+#~ msgstr "شِفرة PUK:"
+
+#~ msgid "Re-enter PIN code:"
+#~ msgstr "أعد إدخال رقم التعريفي الشخصي:"
 
 #~ msgid "VPN connection '%1' failed."
 #~ msgstr "فشل اتصال VPN ‏'%1'."

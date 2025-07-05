@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-10-21 02:36+0000\n"
+"POT-Creation-Date: 2025-07-05 03:22+0000\n"
 "PO-Revision-Date: 2022-02-16 14:58+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -605,18 +605,6 @@ msgstr "Furnizați o parolă mai jos"
 msgid "VPN secrets (%1) dialog"
 msgstr "Secrete VPN (%1)"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
-#: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Dialog de introducere a parolei"
-
-#. i18n: ectx: property (text), widget (QLabel, labelPass)
-#: passworddialog.ui:92
-#, kde-format
-msgid "Password:"
-msgstr "Parolă:"
-
 #: pindialog.cpp:66
 #, kde-format
 msgid "SIM PUK"
@@ -678,8 +666,7 @@ msgstr ""
 msgid "%1 code:"
 msgstr "Cod %1:"
 
-#. i18n: ectx: property (text), widget (QLabel, pinLabel)
-#: pindialog.cpp:85 pinwidget.ui:153
+#: pindialog.cpp:85
 #, kde-format
 msgid "New PIN code:"
 msgstr "Cod PIN nou:"
@@ -689,8 +676,7 @@ msgstr "Cod PIN nou:"
 msgid "Re-enter new PIN code:"
 msgstr "Re-introduceți noul cod PIN:"
 
-#. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
-#: pindialog.cpp:87 pinwidget.ui:193
+#: pindialog.cpp:87
 #, kde-format
 msgid "Show PIN/PUK code"
 msgstr "Arată codul PIN/PUK"
@@ -760,41 +746,35 @@ msgstr "Codul PUK este prea scurt. Ar trebui să conțină 8 cifre."
 msgid "Unknown Error"
 msgstr "Eroare necunoscută"
 
-#. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
-#. i18n: ectx: property (text), widget (QLabel, title)
-#: pinwidget.ui:14 pinwidget.ui:47
-#, kde-format
-msgid "SIM PIN unlock required"
-msgstr "Este necesară deblocarea SIM PIN"
-
-#. i18n: ectx: property (text), widget (QLabel, prompt)
-#: pinwidget.ui:76
-#, no-c-format, kde-format
-msgid ""
-"The mobile broadband device '%1' requires a SIM PIN code before it can be "
-"used."
-msgstr ""
-"Dispozitivul mobil de bandă largă „%1” necesită deblocarea SIM PIN înainte "
-"să poată fi folosit."
-
-#. i18n: ectx: property (text), widget (QLabel, pukLabel)
-#: pinwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "PUK code:"
-msgid "PUK code:"
-msgstr "Cod PUK:"
-
-#. i18n: ectx: property (text), widget (QLabel, pin2Label)
-#: pinwidget.ui:173
-#, kde-format
-msgid "Re-enter PIN code:"
-msgstr "Reintroduceți codul PIN:"
-
 #: secretagent.cpp:406
 #, fuzzy, kde-format
 #| msgid "Authentication to the VPN server failed."
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Autentificarea la serverul VPN a eșuat."
+
+#~ msgid "Password dialog"
+#~ msgstr "Dialog de introducere a parolei"
+
+#~ msgid "Password:"
+#~ msgstr "Parolă:"
+
+#~ msgid "SIM PIN unlock required"
+#~ msgstr "Este necesară deblocarea SIM PIN"
+
+#~ msgid ""
+#~ "The mobile broadband device '%1' requires a SIM PIN code before it can be "
+#~ "used."
+#~ msgstr ""
+#~ "Dispozitivul mobil de bandă largă „%1” necesită deblocarea SIM PIN "
+#~ "înainte să poată fi folosit."
+
+#, fuzzy
+#~| msgid "PUK code:"
+#~ msgid "PUK code:"
+#~ msgstr "Cod PUK:"
+
+#~ msgid "Re-enter PIN code:"
+#~ msgstr "Reintroduceți codul PIN:"
 
 #~ msgid "VPN connection '%1' failed."
 #~ msgstr "Conexiunea VPN „%1” a eșuat."

@@ -52,6 +52,8 @@
 // 10 seconds
 #define NM_REQUESTSCAN_LIMIT_RATE 10000
 
+static const QString KEY_802_11_WIRELESS_SECURITY = QStringLiteral("802-11-wireless-security");
+
 Handler::Handler(QObject *parent)
     : QObject(parent)
     , m_tmpWirelessEnabled(NetworkManager::isWirelessEnabled())
@@ -247,14 +249,12 @@ void Handler::requestWifiCode(const QString &connectionPath, const QString &ssid
         return;
     }
 
-    const auto key = QStringLiteral("802-11-wireless-security");
-    auto reply = connection->secrets(key);
+    auto reply = connection->secrets(KEY_802_11_WIRELESS_SECURITY);
     m_requestWifiCodeWatcher = new QDBusPendingCallWatcher(reply, this);
-    m_requestWifiCodeWatcher->setProperty("key", key);
-    m_requestWifiCodeWatcher->setProperty("ret", ret);
-    m_requestWifiCodeWatcher->setProperty("securityType", static_cast<int>(securityType));
-    m_requestWifiCodeWatcher->setProperty("ssid", ssid);
-    connect(m_requestWifiCodeWatcher, &QDBusPendingCallWatcher::finished, this, &Handler::slotRequestWifiCode);
+    connect(m_requestWifiCodeWatcher, &QDBusPendingCallWatcher::finished, this, [=, this](QDBusPendingCallWatcher *watcher) mutable {
+        // ret needs to stay mutable, so move it.  But ssid can be const.
+        onWiFiCodeResponse(watcher, std::move(ret), ssid, securityType);
+    });
 }
 
 void Handler::addAndActivateConnection(const QString &device, const QString &specificParameter, const QString &password)
@@ -1014,21 +1014,18 @@ void Handler::unlockRequiredChanged(MMModemLock modemLock)
     }
 }
 
-void Handler::slotRequestWifiCode(QDBusPendingCallWatcher *watcher)
+void Handler::onWiFiCodeResponse(QDBusPendingCallWatcher *watcher, QString &&ret, const QString &ssid, NetworkManager::WirelessSecurityType securityType)
 {
     watcher->deleteLater();
-
-    QString ret = watcher->property("ret").toString();
-    const QString ssid = watcher->property("ssid").toString();
     QDBusPendingReply<NMVariantMapMap> reply = *watcher;
     if (!reply.isValid() || reply.isError()) {
         Q_EMIT wifiCodeReceived(ret % QLatin1Char(';'), ssid);
         return;
     }
 
-    const auto secret = reply.argumentAt<0>()[watcher->property("key").toString()];
+    const auto secret = reply.argumentAt<0>()[KEY_802_11_WIRELESS_SECURITY];
     QString pass;
-    switch (static_cast<NetworkManager::WirelessSecurityType>(watcher->property("securityType").toInt())) {
+    switch (securityType) {
     case NetworkManager::NoneSecurity:
     case NetworkManager::OWE:
         break;

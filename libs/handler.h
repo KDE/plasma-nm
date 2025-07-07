@@ -135,7 +135,6 @@ private Q_SLOTS:
     void primaryConnectionTypeChanged(NetworkManager::ConnectionSettings::ConnectionType type);
     void wirelessEnabledChanged(bool wirelessEnabled);
     void unlockRequiredChanged(MMModemLock modemLock);
-    void slotRequestWifiCode(QDBusPendingCallWatcher *watcher);
 
 Q_SIGNALS:
     void connectionActivationFailed(const QString &connectionPath, const QString &message);
@@ -172,6 +171,7 @@ private:
     void scheduleRequestScan(const QString &interface, int timeout);
     void incrementScansCount();
     void decrementScansCount();
+    void onWiFiCodeResponse(QDBusPendingCallWatcher *watcher, QString &&ret, const QString &ssid, NetworkManager::WirelessSecurityType securityType);
 
     QPointer<QDBusPendingCallWatcher> m_requestWifiCodeWatcher;
 };

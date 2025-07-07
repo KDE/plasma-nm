@@ -1,17 +1,17 @@
 # Translation of plasmanetworkmanagement-kded.po to Catalan
-# Copyright (C) 2014-2022 This_file_is_part_of_KDE
+# Copyright (C) 2014-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2017, 2020, 2022.
-# Josep M. Ferrer <txemaq@gmail.com>, 2015, 2016, 2017, 2019, 2020, 2021, 2022.
+# Josep M. Ferrer <txemaq@gmail.com>, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2022-12-07 14:51+0100\n"
-"Last-Translator: Antoni Bella <antonibella5@yahoo.com>\n"
+"PO-Revision-Date: 2025-07-06 11:41+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
 "MIME-Version: 1.0\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Kate 22.08.3\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -588,16 +588,15 @@ msgstr "Diàleg de secrets de VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, fuzzy, kde-format
-#| msgid "%1 password dialog"
+#, kde-format
 msgid "Password dialog"
-msgstr "Diàleg de contrasenya %1"
+msgstr "Diàleg de contrasenya"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
 #, kde-format
 msgid "Password:"
-msgstr ""
+msgstr "Contrasenya:"
 
 #: pindialog.cpp:66
 #, kde-format
@@ -742,36 +741,31 @@ msgstr "Error desconegut"
 #. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
 #. i18n: ectx: property (text), widget (QLabel, title)
 #: pinwidget.ui:14 pinwidget.ui:47
-#, fuzzy, kde-format
-#| msgid "%1 unlock required"
+#, kde-format
 msgid "SIM PIN unlock required"
-msgstr "%1 requereix desbloqueig"
+msgstr "Es requereix el desbloqueig PIN de la SIM"
 
 #. i18n: ectx: property (text), widget (QLabel, prompt)
 #: pinwidget.ui:76
-#, fuzzy, no-c-format, kde-format
-#| msgid ""
-#| "The mobile broadband device '%1' requires a %2 code before it can be used."
+#, no-c-format, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a SIM PIN code before it can be "
 "used."
 msgstr ""
-"El dispositiu mòbil de banda ampla «%1» requereix el codi %2 abans de poder-"
-"se usar."
+"El dispositiu mòbil de banda ampla «%1» requereix el codi PIN de la SIM "
+"abans de poder-se usar."
 
 #. i18n: ectx: property (text), widget (QLabel, pukLabel)
 #: pinwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "%1 code:"
+#, kde-format
 msgid "PUK code:"
-msgstr "Codi %1:"
+msgstr "Codi PUK:"
 
 #. i18n: ectx: property (text), widget (QLabel, pin2Label)
 #: pinwidget.ui:173
-#, fuzzy, kde-format
-#| msgid "Re-enter new PIN code:"
+#, kde-format
 msgid "Re-enter PIN code:"
-msgstr "Torneu a introduir el codi PIN nou:"
+msgstr "Torneu a introduir el codi PIN:"
 
 #: secretagent.cpp:406
 #, kde-format

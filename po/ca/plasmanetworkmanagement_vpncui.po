@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement_vpncui.po to Catalan
-# Copyright (C) 2014-2023 This_file_is_part_of_KDE
+# Copyright (C) 2014-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015.
-# Josep M. Ferrer <txemaq@gmail.com>, 2015, 2016, 2018, 2020, 2021, 2022, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2015, 2016, 2018, 2020, 2021, 2022, 2023, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2023-03-14 09:51+0100\n"
+"PO-Revision-Date: 2025-07-06 11:41+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: vpnc.cpp:73
 #, kde-format
@@ -45,65 +45,65 @@ msgstr "%1: No s'ha pogut crear el fitxer"
 #: vpnc.ui:18
 #, kde-format
 msgid "Gateway:"
-msgstr ""
+msgstr "Passarel·la:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: vpnc.ui:31
 #, kde-format
 msgid "IP/hostname of IPsec gateway."
-msgstr ""
+msgstr "IP/nom de màquina de la passarel·la IPsec."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnc.ui:38
 #, kde-format
 msgid "User name:"
-msgstr ""
+msgstr "Nom d'usuari:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leUserName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, user)
 #: vpnc.ui:51 vpncauth.ui:97
 #, kde-format
 msgid "User name for the connection."
-msgstr ""
+msgstr "Nom d'usuari per a la connexió."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnc.ui:58
 #, kde-format
 msgid "User password:"
-msgstr ""
+msgstr "Contrasenya d'usuari:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, leUserPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
 #: vpnc.ui:79 vpncauth.ui:58
 #, kde-format
 msgid "User password for the connection."
-msgstr ""
+msgstr "Contrasenya de l'usuari per a la connexió."
 
 #. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpnc.ui:91 vpncauth.ui:124
 #, kde-format
 msgid "Group name:"
-msgstr ""
+msgstr "Nom del grup:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, group)
 #: vpnc.ui:104
 #, kde-format
 msgid "Group name"
-msgstr ""
+msgstr "Nom del grup"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: vpnc.ui:111
 #, kde-format
 msgid "Group password:"
-msgstr ""
+msgstr "Contrasenya del grup:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, leGroupPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, groupPassword)
 #: vpnc.ui:129 vpncauth.ui:84
 #, kde-format
 msgid "Group password."
-msgstr ""
+msgstr "Contrasenya del grup."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useHybridAuth)
 #: vpnc.ui:141
@@ -111,128 +111,128 @@ msgstr ""
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
 msgstr ""
+"Activa l'autenticació híbrida, és a dir, el certificat d'ús a més\n"
+"de la contrasenya."
 
 #. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
 #: vpnc.ui:144
 #, kde-format
 msgid "Use hybrid authentication"
-msgstr ""
+msgstr "Usa l'autenticació híbrida"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpnc.ui:154
 #, kde-format
 msgid "CA file:"
-msgstr ""
+msgstr "Fitxer de la CA:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, caFile)
 #: vpnc.ui:167
 #, kde-format
 msgid "CA certificate in PEM format."
-msgstr ""
+msgstr "Certificat de la CA en el format PEM."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, caFile)
 #: vpnc.ui:170
 #, kde-format
 msgid "*.pem *.crt *.cer"
-msgstr ""
+msgstr "*.pem *.crt *.cer"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:192
 #, kde-format
 msgid "Advanced…"
-msgstr ""
+msgstr "Avançat…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpncadvanced.ui:18
 #, kde-format
 msgid "Identification"
-msgstr ""
+msgstr "Identificació"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: vpncadvanced.ui:27
 #, kde-format
 msgid "Domain:"
-msgstr ""
+msgstr "Domini:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
 #: vpncadvanced.ui:37
 #, kde-format
 msgid "(NT-)Domain name for authentication."
-msgstr ""
+msgstr "Nom de domini (NT) per a l'autenticació."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpncadvanced.ui:44
 #, kde-format
 msgid "Vendor:"
-msgstr ""
+msgstr "Fabricant:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
 #: vpncadvanced.ui:60
 #, kde-format
 msgid "Vendor of your IPsec gateway."
-msgstr ""
+msgstr "Fabricant de la vostra passarel·la IPSec."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: vpncadvanced.ui:70
 #, kde-format
 msgid "Transport and Security"
-msgstr ""
+msgstr "Transport i seguretat"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpncadvanced.ui:82
 #, kde-format
 msgid "Encryption method:"
-msgstr ""
+msgstr "Mètode d'encriptatge:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, encryption)
 #: vpncadvanced.ui:98
 #, kde-format
 msgid "Encryption method."
-msgstr ""
+msgstr "Mètode d'encriptatge."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpncadvanced.ui:105
 #, kde-format
 msgid "NAT traversal:"
-msgstr ""
+msgstr "Travessada de NAT:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, nat)
 #: vpncadvanced.ui:121
 #, kde-format
 msgid "NAT traversal method to use."
-msgstr ""
+msgstr "Mètode de travessada de NAT a usar."
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: vpncadvanced.ui:128
-#, fuzzy, kde-format
-#| msgctxt "IKE DH group"
-#| msgid "DH Group 1"
+#, kde-format
 msgid "IKE DH Group:"
-msgstr "Grup DH 1"
+msgstr "Grup DH d'IKE:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, dhGroup)
 #: vpncadvanced.ui:144
 #, kde-format
 msgid "Name of the IKE DH group."
-msgstr ""
+msgstr "Nom del grup DH d'IKE."
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: vpncadvanced.ui:151
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr ""
+msgstr "Secret de redirecció perfecte (PFS):"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
 #: vpncadvanced.ui:167
 #, kde-format
 msgid "Diffie-Hellman group to use for PFS."
-msgstr ""
+msgstr "El grup Diffie-Hellman que s'usarà per al PFS."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: vpncadvanced.ui:174
 #, kde-format
 msgid "Local Port:"
-msgstr ""
+msgstr "Port local:"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, localport)
 #: vpncadvanced.ui:190
@@ -241,24 +241,27 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
+"El port local a usar (0-65535). 0 (valor per omissió) vol dir port aleatori. "
+"Per omissió, als vpnc és 500."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193
 #, kde-format
 msgid "Random"
-msgstr ""
+msgstr "Aleatori"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, deadPeer)
 #: vpncadvanced.ui:209
 #, kde-format
 msgid "Disable sending DPD packets (set timeout to 0)."
 msgstr ""
+"Desactiva l'enviament de paquets DPD (estableix el temps d'espera a 0)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
 #: vpncadvanced.ui:212
 #, kde-format
 msgid "Disable dead peer detection"
-msgstr ""
+msgstr "Desactiva la detecció de la pèrdua dels parells"
 
 #: vpncadvancedwidget.cpp:20
 #, kde-format
@@ -371,28 +374,28 @@ msgstr "Grup DH 5"
 #: vpncauth.ui:14
 #, kde-format
 msgid "VPNCAuthentication"
-msgstr ""
+msgstr "Autenticació del VPNC"
 
 #. i18n: ectx: property (text), widget (QLabel, userPasswordLabel)
 #: vpncauth.ui:32
 #, kde-format
 msgid "User Password:"
-msgstr ""
+msgstr "Contrasenya d'usuari:"
 
 #. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
 #: vpncauth.ui:45
 #, kde-format
 msgid "Group Password:"
-msgstr ""
+msgstr "Contrasenya del grup:"
 
 #. i18n: ectx: property (text), widget (QLabel, userNameLabel)
 #: vpncauth.ui:104
 #, kde-format
 msgid "Username:"
-msgstr ""
+msgstr "Nom d'usuari:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leGroupName)
 #: vpncauth.ui:117
 #, kde-format
 msgid "Group name."
-msgstr ""
+msgstr "Nom del grup."

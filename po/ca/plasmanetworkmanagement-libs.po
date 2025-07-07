@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement-libs.po to Catalan
-# Copyright (C) 2014-2024 This_file_is_part_of_KDE
+# Copyright (C) 2014-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2017, 2018, 2020.
-# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024.
+# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2024-07-05 19:18+0200\n"
+"PO-Revision-Date: 2025-07-06 11:41+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -246,11 +246,9 @@ msgstr "Connexió nova %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/connectioneditortabwidget.ui:20
-#, fuzzy, kde-format
-#| msgctxt "network interface connection failed state label"
-#| msgid "Connection Failed"
+#, kde-format
 msgid "Connection name:"
-msgstr "Ha fallat la connexió"
+msgstr "Nom de la connexió:"
 
 #: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
 #: editor/settings/teamwidget.cpp:36
@@ -488,27 +486,25 @@ msgstr "Trieu el fitxer a importar"
 #: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:157
 #, kde-format
 msgid "Authentication:"
-msgstr ""
+msgstr "Autenticació:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
 #: editor/settings/ui/802-1x.ui:38 editor/settings/ui/802-1x.ui:675
 #, kde-format
 msgid "MD5"
-msgstr ""
+msgstr "MD5"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:43
 #, kde-format
 msgid "TLS"
-msgstr ""
+msgstr "TLS"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
-#, fuzzy, kde-format
-#| msgctxt "@label LEAP security"
-#| msgid "LEAP"
+#, kde-format
 msgid "LEAP"
 msgstr "LEAP"
 
@@ -516,25 +512,25 @@ msgstr "LEAP"
 #: editor/settings/ui/802-1x.ui:53
 #, kde-format
 msgid "PWD"
-msgstr ""
+msgstr "CONTRASENYA"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:58
 #, kde-format
 msgid "FAST"
-msgstr ""
+msgstr "RÀPID"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:63
 #, kde-format
 msgid "Tunneled TLS (TTLS)"
-msgstr ""
+msgstr "TLS en túnel (TTLS)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:68
 #, kde-format
 msgid "Protected EAP (PEAP)"
-msgstr ""
+msgstr "EAP protegit (PEAP)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_9)
@@ -550,7 +546,7 @@ msgstr ""
 #: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:194
 #, kde-format
 msgid "Username:"
-msgstr ""
+msgstr "Nom d'usuari:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_10)
@@ -567,13 +563,13 @@ msgstr ""
 #: editor/settings/ui/wifisecurity.ui:231
 #, kde-format
 msgid "Password:"
-msgstr ""
+msgstr "Contrasenya:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/802-1x.ui:117
 #, kde-format
 msgid "Identity:"
-msgstr ""
+msgstr "Identitat:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_32)
 #. i18n: ectx: property (text), widget (QLabel, label_30)
@@ -582,13 +578,13 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:718
 #, kde-format
 msgid "Domain:"
-msgstr ""
+msgstr "Domini:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/802-1x.ui:140
 #, kde-format
 msgid "User certificate:"
-msgstr ""
+msgstr "Certificat de l'usuari:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_20)
@@ -597,34 +593,32 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:601
 #, kde-format
 msgid "CA certificate:"
-msgstr ""
+msgstr "Certificat de la CA:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_27)
 #: editor/settings/ui/802-1x.ui:174
 #, kde-format
 msgid "Subject match:"
-msgstr ""
+msgstr "Coincidència d'assumpte:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:191
-#, fuzzy, kde-format
-#| msgid "Alternative Subject Matches"
+#, kde-format
 msgid "Alternative subject matches:"
-msgstr "Coincidències d'assumpte alternatives"
+msgstr "Coincidències d'assumpte alternatives:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
 #: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:215
-#, fuzzy, kde-format
-#| msgid "Connect to these servers only"
+#, kde-format
 msgid "Connect to these servers:"
-msgstr "Connecta només a aquests servidors"
+msgstr "Connecta a aquests servidors:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
@@ -632,13 +626,13 @@ msgstr "Connecta només a aquests servidors"
 #: editor/settings/ui/wireguardinterfacewidget.ui:26
 #, kde-format
 msgid "Private key:"
-msgstr ""
+msgstr "Clau privada:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/802-1x.ui:256
 #, kde-format
 msgid "Private key password:"
-msgstr ""
+msgstr "Contrasenya de la clau privada:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #. i18n: ectx: property (text), widget (QLabel, label_19)
@@ -647,39 +641,37 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:588
 #, kde-format
 msgid "Anonymous identity:"
-msgstr ""
+msgstr "Identitat anònima:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
 #: editor/settings/ui/802-1x.ui:358
 #, kde-format
 msgid "Automatic PAC provisioning"
-msgstr ""
+msgstr "Aprovisionament automàtic de PAC"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:375
 #, kde-format
 msgid "Anonymous"
-msgstr ""
+msgstr "Anònim"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:380
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is active"
-#| msgid "Activated"
+#, kde-format
 msgid "Authenticated"
-msgstr "Activada"
+msgstr "Autenticat"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:385
 #, kde-format
 msgid "Both"
-msgstr ""
+msgstr "Ambdós"
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: editor/settings/ui/802-1x.ui:393
 #, kde-format
 msgid "PAC file:"
-msgstr ""
+msgstr "Fitxer PAC:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #. i18n: ectx: property (text), widget (QLabel, label_16)
@@ -688,14 +680,14 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:653
 #, kde-format
 msgid "Inner authentication:"
-msgstr ""
+msgstr "Autenticació interna:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
 #: editor/settings/ui/802-1x.ui:427 editor/settings/ui/802-1x.ui:680
 #, kde-format
 msgid "GTC"
-msgstr ""
+msgstr "GTC"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
 #. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
@@ -705,117 +697,113 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:670 editor/settings/ui/ppp.ui:68
 #, kde-format
 msgid "MSCHAPv2"
-msgstr ""
+msgstr "MSCHAPv2"
 
 #. i18n: ectx: property (text), widget (QCheckBox, pap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:521 editor/settings/ui/ppp.ui:58
-#, fuzzy, kde-format
-#| msgid "PPP"
+#, kde-format
 msgid "PAP"
-msgstr "PPP"
+msgstr "PAP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mschap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:526 editor/settings/ui/ppp.ui:48
 #, kde-format
 msgid "MSCHAP"
-msgstr ""
+msgstr "MSCHAP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:536 editor/settings/ui/ppp.ui:78
 #, kde-format
 msgid "CHAP"
-msgstr ""
+msgstr "CHAP"
 
 #. i18n: ectx: property (text), widget (QLabel, label_26)
 #: editor/settings/ui/802-1x.ui:618
 #, kde-format
 msgid "PEAP version:"
-msgstr ""
+msgstr "Versió del PEAP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:635
 #, kde-format
 msgctxt "PEAP version"
 msgid "Automatic"
-msgstr ""
+msgstr "Automàtica"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:640
 #, kde-format
 msgid "Version 0"
-msgstr ""
+msgstr "Versió 0"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:645
 #, kde-format
 msgid "Version 1"
-msgstr ""
+msgstr "Versió 1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/bond.ui:21 editor/settings/ui/bridge.ui:18
 #: editor/settings/ui/team.ui:18
 #, kde-format
 msgid "Interface name:"
-msgstr ""
+msgstr "Nom de la interfície:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bond.ui:34
-#, fuzzy, kde-format
-#| msgid "VPN connections"
+#, kde-format
 msgid "Bonded connections:"
-msgstr "Connexions VPN"
+msgstr "Connexions vinculades:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
 #: editor/settings/ui/team.ui:56
 #, kde-format
 msgid "Add…"
-msgstr ""
+msgstr "Afegeix…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnEdit)
 #: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
 #: editor/settings/ui/team.ui:71
 #, kde-format
 msgid "Edit…"
-msgstr ""
+msgstr "Edita…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
 #: editor/settings/ui/team.ui:86
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Suprimeix"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #: editor/settings/ui/bond.ui:113 editor/settings/ui/wificonnectionwidget.ui:43
 #, kde-format
 msgid "Mode:"
-msgstr ""
+msgstr "Mode:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/bond.ui:133
 #, kde-format
 msgid "Link monitoring:"
-msgstr ""
+msgstr "Monitoratge de l'enllaç:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bond.ui:153
 #, kde-format
 msgid "Monitoring frequency:"
-msgstr ""
+msgstr "Freqüència del monitoratge:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
 #. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
 #. i18n: ectx: property (suffix), widget (QSpinBox, downDelay)
 #: editor/settings/ui/bond.ui:163 editor/settings/ui/bond.ui:205
 #: editor/settings/ui/bond.ui:225
-#, fuzzy, kde-format
-#| msgctxt "Milliseconds"
-#| msgid " ms"
+#, kde-format
 msgid " ms"
 msgstr " ms"
 
@@ -823,39 +811,37 @@ msgstr " ms"
 #: editor/settings/ui/bond.ui:195
 #, kde-format
 msgid "Link up delay:"
-msgstr ""
+msgstr "Retard en la connexió de l'enllaç:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/bond.ui:215
 #, kde-format
 msgid "Link down delay:"
-msgstr ""
+msgstr "Retard en la desconnexió de l'enllaç:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/bond.ui:242
 #, kde-format
 msgid "ARP targets:"
-msgstr ""
+msgstr "Objectius ARP:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
 #: editor/settings/ui/bond.ui:252
 #, kde-format
 msgid "An IP address or comma-separated list of addresses."
-msgstr ""
+msgstr "Una adreça IP o llista separada per comes de les adreces."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/bridge.ui:31
-#, fuzzy, kde-format
-#| msgid "Hardware based connections"
+#, kde-format
 msgid "Bridged connections:"
-msgstr "Connexions basades en maquinari"
+msgstr "Connexions en pont:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bridge.ui:110
-#, fuzzy, kde-format
-#| msgid "DAD timeout:"
+#, kde-format
 msgid "Aging time:"
-msgstr "Temps d'espera del DAD:"
+msgstr "Temps de vida:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, agingTime)
 #. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
@@ -863,67 +849,64 @@ msgstr "Temps d'espera del DAD:"
 #. i18n: ectx: property (suffix), widget (QSpinBox, maxAge)
 #: editor/settings/ui/bridge.ui:126 editor/settings/ui/bridge.ui:193
 #: editor/settings/ui/bridge.ui:222 editor/settings/ui/bridge.ui:251
-#, fuzzy, kde-format
-#| msgctxt "Milliseconds"
-#| msgid " ms"
+#, kde-format
 msgctxt "seconds"
 msgid " s"
-msgstr " ms"
+msgstr " s"
 
 #. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
 #: editor/settings/ui/bridge.ui:139
 #, kde-format
 msgid "Enable STP (Spanning Tree Protocol)"
-msgstr ""
+msgstr "Activa STP (Protocol «Spanning Tree»)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/bridge.ui:151
 #, kde-format
 msgid "Priority:"
-msgstr ""
+msgstr "Prioritat:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/bridge.ui:177
 #, kde-format
 msgid "Forward delay:"
-msgstr ""
+msgstr "Retard de reenviament:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bridge.ui:206
 #, kde-format
 msgid "Hello time:"
-msgstr ""
+msgstr "Temps de «HELLO»:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: editor/settings/ui/bridge.ui:235
 #, kde-format
 msgid "Max age:"
-msgstr ""
+msgstr "Durada màx.:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/bt.ui:21
 #, kde-format
 msgid "Address of the device:"
-msgstr ""
+msgstr "Adreça del dispositiu:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bt.ui:41
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection type:"
-msgstr "Velocitat de la connexió"
+msgstr "Tipus de connexió:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/cdma.ui:20 editor/settings/ui/gsm.ui:24
 #, kde-format
 msgid "Number:"
-msgstr ""
+msgstr "Número:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
 #: editor/settings/ui/connectionwidget.ui:17
 #, kde-format
 msgid "Connect automatically with priority"
-msgstr ""
+msgstr "Connecta automàticament amb prioritat"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
@@ -935,20 +918,23 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
+"Si la connexió està definida com «autoconnecta», es preferiran les "
+"connexions amb la prioritat més alta. La predeterminada és 0.\n"
+"Com més gran el nombre, més gran la prioritat. Es pot usar un nombre negatiu "
+"per a indicar una prioritat més baixa que la predeterminada.\n"
+"           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:48
 #, kde-format
 msgid "All users may connect to this network"
-msgstr ""
+msgstr "Tots els usuaris poden connectar-se a aquesta xarxa"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:64
-#, fuzzy, kde-format
-#| msgctxt "@title:window advanced permissions editor"
-#| msgid "Advanced Permissions Editor"
+#, kde-format
 msgid "Edit advanced permissions for this connection"
-msgstr "Editor de permisos avançat"
+msgstr "Edita els permisos avançats per a aquesta connexió"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:67
@@ -957,31 +943,33 @@ msgid ""
 "Fine-grained permissions editor for this connection. It lets you choose "
 "which users can activate/modify/delete this connection."
 msgstr ""
+"Editor de permisos detallats per a aquesta connexió. Us permet triar quins "
+"usuaris poden activar/modificar/suprimir aquesta connexió."
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
 #, kde-format
 msgid "Advanced…"
-msgstr ""
+msgstr "Avançat…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:81
 #, kde-format
 msgid "Automatically connect to VPN"
-msgstr ""
+msgstr "Connecta automàticament a la VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:101
 #, kde-format
 msgid "Firewall zone:"
-msgstr ""
+msgstr "Zona del tallafoc:"
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:130
 #, kde-format
 msgid "Metered:"
-msgstr ""
+msgstr "Ús mesurat:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:150
@@ -991,70 +979,70 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
+"El NetworkManager indica a les aplicacions si la connexió té un ús mesurat "
+"i, per tant,\n"
+"cal restringir l'ús de les dades."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:160
 #, kde-format
 msgctxt "Item in the Metered: list"
 msgid "Automatic"
-msgstr ""
+msgstr "Automàtica"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:165
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Sí"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:170
 #, kde-format
 msgid "No"
-msgstr ""
+msgstr "No"
 
 #. i18n: ectx: property (title), widget (QGroupBox, basicGroup)
 #: editor/settings/ui/gsm.ui:18
 #, kde-format
 msgid "Basic"
-msgstr ""
+msgstr "Bàsic"
 
 #. i18n: ectx: property (title), widget (QGroupBox, advGroup)
 #: editor/settings/ui/gsm.ui:84
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "Avançat"
 
 #. i18n: ectx: property (text), widget (QCheckBox, roaming)
 #: editor/settings/ui/gsm.ui:93
 #, kde-format
 msgid "Allow roaming if home network is not available"
-msgstr ""
+msgstr "Permetre la itinerància si la xarxa domèstica no està disponible"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/gsm.ui:100
-#, fuzzy, kde-format
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "APN: %1"
+#, kde-format
 msgid "APN:"
-msgstr "APN: %1"
+msgstr "APN:"
 
 #. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
 #: editor/settings/ui/gsm.ui:110
-#, fuzzy, kde-format
-#| msgid "Network ID"
+#, kde-format
 msgid "Network ID:"
-msgstr "ID de la xarxa"
+msgstr "ID de la xarxa:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/gsm.ui:130
 #, kde-format
 msgid "PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/infiniband.ui:21
 #, kde-format
 msgid "Transport mode:"
-msgstr ""
+msgstr "Mode de transport:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -1063,7 +1051,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:23
 #, kde-format
 msgid "Restrict to device:"
-msgstr ""
+msgstr "Restringeix al dispositiu:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, mtuLabel)
@@ -1074,7 +1062,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:74
 #, kde-format
 msgid "MTU:"
-msgstr ""
+msgstr "MTU:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:80
@@ -1083,7 +1071,7 @@ msgstr ""
 #, kde-format
 msgctxt "MTU:"
 msgid "Automatic"
-msgstr ""
+msgstr "Automàtica"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:83
@@ -1091,64 +1079,63 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:115
 #, kde-format
 msgid " bytes"
-msgstr ""
+msgstr " bytes"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, IPv6Widget)
 #. i18n: ectx: property (toolTip), widget (QWidget, IPv4Widget)
 #: editor/settings/ui/ipv4.ui:17 editor/settings/ui/ipv6.ui:20
 #, kde-format
 msgid "Advanced IP settings"
-msgstr ""
+msgstr "Configuració avançada de la IP"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
 #, kde-format
 msgid "Method:"
-msgstr ""
+msgstr "Mètode:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:227
 #, kde-format
 msgctxt "Method:"
 msgid "Automatic"
-msgstr ""
+msgstr "Automàtic"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
 #, kde-format
 msgid "Automatic (Only addresses)"
-msgstr ""
+msgstr "Automàtic (només adreces)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
 #, kde-format
 msgid "Link-Local"
-msgstr ""
+msgstr "Enllaç local"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
 #, kde-format
 msgctxt "like in use Manual configuration"
 msgid "Manual"
-msgstr ""
+msgstr "Manual"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:69
 #, kde-format
 msgid "Shared to other computers"
-msgstr ""
+msgstr "Comparteix amb altres ordinadors"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:74
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Disabled"
-msgstr ""
+msgstr "Desactivat"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:170
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgctxt "@info"
 msgid "DNS Servers:"
 msgstr "Servidors de DNS:"
@@ -1160,21 +1147,21 @@ msgid ""
 "Use this field to specify the IP address(es) of one or more DNS servers. Use "
 "',' to separate entries."
 msgstr ""
+"Useu aquest camp per a especificar l'adreça IP d'un o més servidors de DNS. "
+"Useu «,» per a separar les entrades."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv4.ui:125
-#, fuzzy, kde-format
-#| msgid "Edit DNS servers"
+#, kde-format
 msgid "Edit DNS the list of servers"
-msgstr "Edita els servidors de DNS"
+msgstr "Edita la llista de servidors de DNS"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
-#, fuzzy, kde-format
-#| msgid "Edit DNS search domains"
+#, kde-format
 msgctxt "@info"
 msgid "Search Domains:"
-msgstr "Edita els dominis de la cerca de DNS"
+msgstr "Dominis de cerca:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
 #: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
@@ -1183,18 +1170,20 @@ msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
 "separate entries."
 msgstr ""
+"Useu aquest camp per a especificar un o més dominis de DNS a cercar. Useu "
+"«,» per a separar les entrades."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
-msgstr ""
+msgstr "Edita la llista de dominis DNS on se cercarà"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
 #: editor/settings/ui/ipv4.ui:191
 #, kde-format
 msgid "DHCP Client ID:"
-msgstr ""
+msgstr "ID del client DHCP:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
 #: editor/settings/ui/ipv4.ui:206
@@ -1206,18 +1195,22 @@ msgid ""
 "DHCP\n"
 "lease and options."
 msgstr ""
+"Useu aquest camp per a especificar l'identificador del client DHCP, el qual\n"
+"és una cadena que s'envia al servidor DHCP per a identificar la màquina\n"
+"local que el servidor usarà per a personalitzar el contracte i les opcions\n"
+"del DHCP."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
 #, kde-format
 msgid "Remove"
-msgstr ""
+msgstr "Elimina"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:109
 #, kde-format
 msgid "Add"
-msgstr ""
+msgstr "Afegeix"
 
 #. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
 #: editor/settings/ui/ipv4.ui:244 editor/settings/ui/ipv6.ui:127
@@ -1228,6 +1221,8 @@ msgid ""
 "to add\n"
 "an IP address"
 msgstr ""
+"Les adreces IP identifiquen el vostre ordinador a la xarxa.\n"
+"Feu clic al botó «Afegeix» per a afegir-ne una"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:282
@@ -1236,18 +1231,20 @@ msgid ""
 "Allows the connection to complete if IPv4 configuration fails\n"
 "but IPv6 configuration succeeds"
 msgstr ""
+"Permet completar la connexió si la configuració IPv4 falla,\n"
+"però la configuració IPv6 té èxit"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:285
 #, kde-format
 msgid "IPv4 is required for this connection"
-msgstr ""
+msgstr "Es requereix IPv4 per a aquesta connexió"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
 #: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
 #, kde-format
 msgid "Routes…"
-msgstr ""
+msgstr "Camins…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:30
@@ -1257,19 +1254,20 @@ msgid ""
 "if\n"
 "IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
+"Quan es connecta amb les xarxes que admeten IPv4, permet completar la\n"
+"connexió si la configuració IPv6 falla, però la configuració IPv4 té èxit"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:33
 #, kde-format
 msgid "IPv6 is required for this connection"
-msgstr ""
+msgstr "Es requereix IPv6 per a aquesta connexió"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv6.ui:83
-#, fuzzy, kde-format
-#| msgid "Edit DNS servers"
+#, kde-format
 msgid "Edit the list of DNS servers"
-msgstr "Edita els servidors de DNS"
+msgstr "Edita la llista de servidors de DNS"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:193
@@ -1280,125 +1278,126 @@ msgid ""
 "a temporary IPv6 address in addition to the public one generated from MAC "
 "address via modified EUI-64."
 msgstr ""
+"Configura les extensions de privadesa IPv6 per a SLAAC, descrit a la "
+"RFC4941. Si s'activa, fa que el nucli generi una adreça IPv6\n"
+"temporal, a més de la pública generada a partir de l'adreça MAC amb l'EUI-64 "
+"modificat."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:202
 #, kde-format
 msgctxt "privacy disabled"
 msgid "Disabled"
-msgstr ""
+msgstr "Desactivada"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:207
 #, kde-format
 msgid "Enabled (prefer public address)"
-msgstr ""
+msgstr "Activada (es prefereix adreça pública)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:212
 #, kde-format
 msgid "Enabled (prefer temporary addresses)"
-msgstr ""
+msgstr "Activada (es prefereix adreça temporal)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:237
 #, kde-format
 msgid "Automatic (Only DHCP)"
-msgstr ""
+msgstr "Automàtic (només DHCP)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:252
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
-msgstr ""
+msgstr "Ignorat"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:257
 #, kde-format
 msgid "Disabled"
-msgstr ""
+msgstr "Desactivat"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
 #: editor/settings/ui/ipv6.ui:335
 #, kde-format
 msgid "Privacy:"
-msgstr ""
+msgstr "Privadesa:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, authGroup)
 #: editor/settings/ui/ppp.ui:23
 #, kde-format
 msgid "Authentication"
-msgstr ""
+msgstr "Autenticació"
 
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
 #: editor/settings/ui/ppp.ui:38
-#, fuzzy, kde-format
-#| msgctxt "@label LEAP security"
-#| msgid "LEAP"
+#, kde-format
 msgid "EAP"
-msgstr "LEAP"
+msgstr "EAP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
 #: editor/settings/ui/ppp.ui:91
 #, kde-format
 msgid "Compression"
-msgstr ""
+msgstr "Compressió"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppe)
 #: editor/settings/ui/ppp.ui:109
 #, kde-format
 msgid "Use point-to-point encryption (MPPE)"
-msgstr ""
+msgstr "Usa l'encriptatge Punt-a-Punt (MPPE)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, bsdComp)
 #: editor/settings/ui/ppp.ui:116
 #, kde-format
 msgid "Use BSD data compression"
-msgstr ""
+msgstr "Usa la compressió de les dades de BSD"
 
 #. i18n: ectx: property (text), widget (QCheckBox, deflateComp)
 #: editor/settings/ui/ppp.ui:126
 #, kde-format
 msgid "Use Deflate data compression"
-msgstr ""
+msgstr "Usa la compressió de les dades per desinflat"
 
 #. i18n: ectx: property (text), widget (QCheckBox, tcpComp)
 #: editor/settings/ui/ppp.ui:136
 #, kde-format
 msgid "Use TCP header compression"
-msgstr ""
+msgstr "Usa la compressió de la capçalera TCP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppe128)
 #: editor/settings/ui/ppp.ui:152
 #, kde-format
 msgid "Require 128-bit encryption"
-msgstr ""
+msgstr "Requereix encriptatge de 128 bits"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppeStateful)
 #: editor/settings/ui/ppp.ui:165
 #, kde-format
 msgid "Use stateful MPPE"
-msgstr ""
+msgstr "Usa MPPE amb estat"
 
 #. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
 #: editor/settings/ui/ppp.ui:175
 #, kde-format
 msgid "Echo"
-msgstr ""
+msgstr "Eco"
 
 #. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
 #: editor/settings/ui/ppp.ui:184
 #, kde-format
 msgid "Send PPP echo packets"
-msgstr ""
+msgstr "Envia paquets d'eco PPP"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/pppoe.ui:20
-#, fuzzy, kde-format
-#| msgid "Device"
+#, kde-format
 msgid "Service:"
-msgstr "Dispositiu"
+msgstr "Servei:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, service)
 #: editor/settings/ui/pppoe.ui:30
@@ -1409,84 +1408,81 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
+"Si s'especifica, instrueix al PPPoE a què només iniciï sessions amb "
+"concentradors d'accés que proporcionin el servei especificat. Per a la "
+"majoria dels proveïdors, això s'ha de deixar en blanc. Només es requereix si "
+"hi ha diversos concentradors d'accés o es coneix un servei específic que ho "
+"requereixi."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31
-#, fuzzy, kde-format
-#| msgid "Remove Connection"
+#, kde-format
 msgid "Teamed connections:"
-msgstr "Elimina la connexió"
+msgstr "Connexions vinculades:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/team.ui:113
 #, kde-format
 msgid "JSON config:"
-msgstr ""
+msgstr "Configuració de JSON:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnImport)
 #: editor/settings/ui/team.ui:123
-#, fuzzy, kde-format
-#| msgid "Import a saved configuration file"
+#, kde-format
 msgid "Import configuration from file…"
-msgstr "Importa un fitxer de configuració desat"
+msgstr "Importa la configuració des del fitxer…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
-#, fuzzy, kde-format
-#| msgctxt "description of configuring hardware network interface state"
-#| msgid "Configuring interface"
+#, kde-format
 msgid "Parent interface:"
-msgstr "S'està configurant la interfície"
+msgstr "Interfície pare:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/vlan.ui:41
-#, fuzzy, kde-format
-#| msgid "VLAN"
+#, kde-format
 msgid "VLAN id:"
-msgstr "VLAN"
+msgstr "ID de la VLAN:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/vlan.ui:64
 #, kde-format
 msgid "VLAN interface name:"
-msgstr ""
+msgstr "Nom de la interfície VLAN:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, reorderHeaders)
 #: editor/settings/ui/vlan.ui:77
 #, kde-format
 msgid "Output packet headers reordering"
-msgstr ""
+msgstr "Reordena les capçaleres dels paquets de sortida"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, gvrp)
 #: editor/settings/ui/vlan.ui:84
 #, kde-format
 msgid "GARP VLAN Registration Protocol"
-msgstr ""
+msgstr "Protocol de registre GARP de la VLAN"
 
 #. i18n: ectx: property (text), widget (QCheckBox, gvrp)
 #: editor/settings/ui/vlan.ui:87
 #, kde-format
 msgid "GVRP"
-msgstr ""
+msgstr "GVRP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
 #: editor/settings/ui/vlan.ui:94
 #, kde-format
 msgid "Loose binding"
-msgstr ""
+msgstr "Enllaç flexible"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:17
-#, fuzzy, kde-format
-#| msgid "BSSID"
+#, kde-format
 msgid "SSID:"
-msgstr "BSSID"
+msgstr "SSID:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:63
-#, fuzzy, kde-format
-#| msgctxt "wireless network operation mode"
-#| msgid "Infrastructure"
+#, kde-format
 msgid "Infrastructure"
 msgstr "Infraestructura"
 
@@ -1494,22 +1490,19 @@ msgstr "Infraestructura"
 #: editor/settings/ui/wificonnectionwidget.ui:68
 #, kde-format
 msgid "Ad-hoc"
-msgstr ""
+msgstr "Ad-hoc"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:73
-#, fuzzy, kde-format
-#| msgctxt "wireless network operation mode"
-#| msgid "Access point"
+#, kde-format
 msgid "Access Point"
 msgstr "Punt d'accés"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:81
-#, fuzzy, kde-format
-#| msgid "BSSID"
+#, kde-format
 msgid "BSSID:"
-msgstr "BSSID"
+msgstr "BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:101
@@ -1519,12 +1512,14 @@ msgid ""
 "by the\n"
 " BSSID entered here. Example: 00:11:22:33:44:55"
 msgstr ""
+"Aquesta opció bloqueja aquesta connexió al punt d'accés Wi-Fi (AP)\n"
+"especificat pel BSSID introduït aquí. Exemple: 00:11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:117
 #, kde-format
 msgid "Band:"
-msgstr ""
+msgstr "Banda:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:137
@@ -1534,31 +1529,34 @@ msgid ""
 "specified band. This setting depends\n"
 " on specific driver capability and may not work with all drivers"
 msgstr ""
+"Aquesta opció bloqueja la connexió a la xarxa Wi-Fi associada a la\n"
+"banda especificada. Aquesta opció depèn de la capacitat\n"
+"específica del controlador i podria no funcionar amb tots els controladors"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:141
 #, kde-format
 msgctxt "Band:"
 msgid "Automatic"
-msgstr ""
+msgstr "Automàtica"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:146
 #, kde-format
 msgid "A (5 GHz)"
-msgstr ""
+msgstr "A (5 GHz)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:151
 #, kde-format
 msgid "B/G (2.4 GHz)"
-msgstr ""
+msgstr "B/G (2.4 GHz)"
 
 #. i18n: ectx: property (text), widget (QLabel, channelLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:159
 #, kde-format
 msgid "Channel:"
-msgstr ""
+msgstr "Canal:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, channel)
 #: editor/settings/ui/wificonnectionwidget.ui:179
@@ -1568,20 +1566,22 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
+"El canal sense fil que s'usarà per a la connexió Wi-Fi.\n"
+"El dispositiu només s'unirà (o crearà xarxes Ad-Hoc)\n"
+"a una xarxa Wi-Fi al canal especificat"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:209
 #: editor/settings/ui/wiredconnectionwidget.ui:47
-#, fuzzy, kde-format
-#| msgid "MAC Address"
+#, kde-format
 msgid "Cloned MAC address:"
-msgstr "Adreça MAC"
+msgstr "Adreça MAC clonada:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:240
 #, kde-format
 msgid "Random…"
-msgstr ""
+msgstr "Aleatòria…"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -1590,23 +1590,23 @@ msgstr ""
 #, kde-format
 msgid "Mark this if you want to create a connection for a hidden network"
 msgstr ""
+"Marqueu aquesta opció si voleu crear una connexió per a una xarxa oculta"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:290
 #, kde-format
 msgid "Visibility:"
-msgstr ""
+msgstr "Visibilitat:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:306
 #, kde-format
 msgid "Hidden network"
-msgstr ""
+msgstr "Xarxa oculta"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
 #: editor/settings/ui/wifisecurity.ui:15
-#, fuzzy, kde-format
-#| msgid "Wi-Fi Security"
+#, kde-format
 msgid "Wifi Security"
 msgstr "Seguretat Wi-Fi"
 
@@ -1615,107 +1615,103 @@ msgstr "Seguretat Wi-Fi"
 #, kde-format
 msgctxt "no security"
 msgid "None"
-msgstr ""
+msgstr "Cap"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:33
 #, kde-format
 msgid "WEP key 40/128 bits (Hex or ASCII)"
-msgstr ""
+msgstr "Clau WEP de 40/128 bits (Hex o ASCII)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:38
 #, kde-format
 msgid "WEP key 128 bits"
-msgstr ""
+msgstr "Clau WEP de 128 bits"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:48
-#, fuzzy, kde-format
-#| msgctxt "@label Dynamic WEP security"
-#| msgid "Dynamic WEP"
+#, kde-format
 msgid "Dynamic WEP (802.1x)"
-msgstr "WEP dinàmica"
+msgstr "WEP dinàmica (802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:53
 #, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr ""
+msgstr "WPA/WPA2 personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:58
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr ""
+msgstr "WPA/WPA2 corporativa"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:63
 #, kde-format
 msgid "WPA3 Personal"
-msgstr ""
+msgstr "WPA3 personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
 #, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr ""
+msgstr "WPA3 corporativa de 192-bits"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security:"
-msgstr "Tipus de seguretat"
+msgstr "Seguretat:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wifisecurity.ui:97
 #, kde-format
 msgid "Key:"
-msgstr ""
+msgstr "Clau:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/wifisecurity.ui:117
 #, kde-format
 msgid "WEP index:"
-msgstr ""
+msgstr "Índex WEP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:134
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgid "1 (default)"
-msgstr "Per omissió"
+msgstr "1 (predeterminat)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:139
 #, kde-format
 msgid "2"
-msgstr ""
+msgstr "2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:144
 #, kde-format
 msgid "3"
-msgstr ""
+msgstr "3"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:149
 #, kde-format
 msgid "4"
-msgstr ""
+msgstr "4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
 #: editor/settings/ui/wifisecurity.ui:174
 #, kde-format
 msgid "Open System"
-msgstr ""
+msgstr "Sistema obert"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
 #: editor/settings/ui/wifisecurity.ui:179
 #, kde-format
 msgid "Shared Key"
-msgstr ""
+msgstr "Clau compartida"
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:40
@@ -1724,6 +1720,9 @@ msgid ""
 "This option locks this connection to the network device specified by its\n"
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
+"Aquesta opció bloqueja aquesta connexió al dispositiu de xarxa\n"
+"especificat per la seva adreça MAC permanent introduïda aquí.\n"
+"Exemple: 00:11:22:33:44:55"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:67
@@ -1734,12 +1733,16 @@ msgid ""
 "MAC\n"
 "cloning or spoofing. Example 11:22:33:44:55"
 msgstr ""
+"L'adreça MAC introduïda aquí s'usarà com a adreça de maquinari del\n"
+"dispositiu de xarxa per al que s'ha activat aquesta connexió. Aquesta\n"
+"funcionalitat es coneix com a clonatge o falsejament de la identitat MAC.\n"
+"Exemple 11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wiredconnectionwidget.ui:80
 #, kde-format
 msgid "Random"
-msgstr ""
+msgstr "Aleatòria"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
 #: editor/settings/ui/wiredconnectionwidget.ui:106
@@ -1749,18 +1752,20 @@ msgid ""
 "packets up\n"
 "into multiple Ethernet frames"
 msgstr ""
+"Només transmet paquets de la mida especificada o més petita, trencant\n"
+"els paquets més grans en múltiples trames d'Ethernet"
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
 #, kde-format
 msgid "Speed:"
-msgstr ""
+msgstr "Velocitat:"
 
 #. i18n: ectx: property (text), widget (QLabel, duplexLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:132
 #, kde-format
 msgid "Duplex:"
-msgstr ""
+msgstr "Dúplex:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:151
@@ -1769,24 +1774,26 @@ msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
 msgstr ""
+"Requereix que el dispositiu usi el mode dúplex especificat.\n"
+"Sigui «half -mig-» o «full -complet-»"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158
 #, kde-format
 msgid "Half"
-msgstr ""
+msgstr "Mig"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:163
 #, kde-format
 msgid "Full"
-msgstr ""
+msgstr "Complet"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174
 #, kde-format
 msgid "Link negotiation:"
-msgstr ""
+msgstr "Negociació de l'enllaç:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:188
@@ -1796,99 +1803,100 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
+"Negociació de l'enllaç del dispositiu. Si es tria «Manual», es forçaran els "
+"valors de «Velocitat» i «Dúplex» sense verificar la compatibilitat del "
+"dispositiu. Si no esteu segur, deixeu «Ignora» o seleccioneu «Automàtic»."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
 #, kde-format
 msgid "Ignore"
-msgstr ""
+msgstr "Ignora"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:197
 #, kde-format
 msgctxt "Link negotiation:"
 msgid "Automatic"
-msgstr ""
+msgstr "Automàtic"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:202
 #, kde-format
 msgid "Manual"
-msgstr ""
+msgstr "Manual"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:219
 #, kde-format
 msgid "Request that the device use only the specified speed."
-msgstr ""
+msgstr "Requereix que el dispositiu només usi la velocitat especificada."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:226
 #, kde-format
 msgid "10 Mb/s"
-msgstr ""
+msgstr "10 Mb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:231
 #, kde-format
 msgid "100 Mb/s"
-msgstr ""
+msgstr "100 Mb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:236
 #, kde-format
 msgid "1 Gb/s"
-msgstr ""
+msgstr "1 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:241
 #, kde-format
 msgid "2.5 Gb/s"
-msgstr ""
+msgstr "2,5 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:246
 #, kde-format
 msgid "5 Gb/s"
-msgstr ""
+msgstr "5 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:251
 #, kde-format
 msgid "10 Gb/s"
-msgstr ""
+msgstr "10 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:256
 #, kde-format
 msgid "40 Gb/s"
-msgstr ""
+msgstr "40 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:261
 #, kde-format
 msgid "100 Gb/s"
-msgstr ""
+msgstr "100 Gb/s"
 
 #. i18n: ectx: property (text), widget (QCheckBox, use8021X)
 #: editor/settings/ui/wiredsecurity.ui:17
 #, kde-format
 msgid "Use 802.1x security for this connection"
-msgstr ""
+msgstr "Usa la seguretat 802.1x per a aquesta connexió"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
 #: editor/settings/ui/wireguardinterfacewidget.ui:14
-#, fuzzy, kde-format
-#| msgid "WireGuard"
+#, kde-format
 msgid "WireGuard Settings"
-msgstr "WireGuard"
+msgstr "Configuració del WireGuard"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:20
-#, fuzzy, kde-format
-#| msgid "WireGuard Interface"
+#, kde-format
 msgid "Interface"
-msgstr "Interfície del WireGuard"
+msgstr "Interfície"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
@@ -1897,12 +1905,14 @@ msgid ""
 "Required.\n"
 "A base64 private key generated by wg genkey."
 msgstr ""
+"Requerida.\n"
+"Una clau privada en base64 generada per «wg genkey»."
 
 #. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:41
 #, kde-format
 msgid "Listen port:"
-msgstr ""
+msgstr "Port d'escolta:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -1911,12 +1921,15 @@ msgid ""
 "Optional.\n"
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
+"Opcional.\n"
+"Número del port d'escolta. Es tria aleatòriament si es deixa com a "
+"«Automàtic»."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:57
 #, kde-format
 msgid "fwmark:"
-msgstr ""
+msgstr "FwMark:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:67
@@ -1927,6 +1940,10 @@ msgid ""
 "option is disabled. May be specified in hexadecimal by\n"
 "prepending '0x'."
 msgstr ""
+"Opcional.\n"
+"Una marca «fwmark» per als paquets que surten. Si s'estableix a 0 o\n"
+"«off», es desactiva aquesta opció. Es pot especificar en hexadecimal\n"
+"prefixant-ho amb «0x»."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:86
@@ -1939,12 +1956,18 @@ msgid ""
 "specify an MTU and to override this automatic discovery,\n"
 "this value may be specified explicitly."
 msgstr ""
+"Opcional.\n"
+"Si no s'especifica, la MTU es determina automàticament\n"
+"a partir de l'adreça del punt final o del camí predeterminat del sistema,\n"
+"que normalment és una elecció correcta. Tanmateix, per a especificar\n"
+"manualment una MTU i superposar aquest descobriment automàtic,\n"
+"aquest valor es pot especificar explícitament."
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:93
 #, kde-format
 msgid "Autoroute peers:"
-msgstr ""
+msgstr "Parells dels camins automàtics:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:101
@@ -1953,18 +1976,20 @@ msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
 msgstr ""
+"Si cal afegir automàticament camins per als intervals de les «AllowedIP»\n"
+"dels parells."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
 #: editor/settings/ui/wireguardinterfacewidget.ui:126
 #, kde-format
 msgid "Peers…"
-msgstr ""
+msgstr "Parells…"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
 #, kde-format
 msgid "Public key:"
-msgstr ""
+msgstr "Clau pública:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, publicKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:27
@@ -1975,12 +2000,16 @@ msgid ""
 "            from a private key, and usually transmitted \n"
 "            out of band to the author of the configuration file."
 msgstr ""
+"Requerida.\n"
+"            Una clau privada en base64 generada per «wg genkey»\n"
+"            a partir d'una clau privada, i transmesa normalment\n"
+"            per un canal alternatiu a l'autor del fitxer de configuració."
 
 #. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:34
 #, kde-format
 msgid "Allowed IPs:"
-msgstr ""
+msgstr "IP permeses:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, allowedIPsLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:47
@@ -1994,12 +2023,22 @@ msgid ""
 "            may be specified for matching all IPv4 addresses, \n"
 "            and ::/0 may be specified for matching all IPv6 addresses."
 msgstr ""
+"Requerit.\n"
+"            Una llista separada per comes d'adreces IP (v4 o v6)\n"
+"            amb màscares CIDR per a les quals el trànsit entrant per\n"
+"            a aquest parell està permès i per a les quals el trànsit "
+"sortint\n"
+"            per a aquest parell està dirigit. Es pot especificar la "
+"0.0.0.0/0\n"
+"            que l'enxampa tot per a concordar amb totes les adreces IPv4,\n"
+"            i es pot especificar ::/0 per a concordar amb totes les adreces "
+"IPv6."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55
 #, kde-format
 msgid "Endpoint address:"
-msgstr ""
+msgstr "Adreça del punt final:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:66
@@ -2011,12 +2050,18 @@ msgid ""
 "            qualified domain name such as abc.com). If\n"
 "            present, Endpoint port must also be set."
 msgstr ""
+"Opcional.\n"
+"            Un punt final per a la connexió. Pot ser una\n"
+"            adreça IPv4, una adreça IPv6, o un FQDN («fully\n"
+"            qualified domain name» o nom de domini \n"
+"            completament qualificat, com abc.com). Si\n"
+"            és present, també cal definir el port del punt final."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
 #, kde-format
 msgid "Endpoint port:"
-msgstr ""
+msgstr "Port del punt final:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:83
@@ -2026,12 +2071,15 @@ msgid ""
 "            The port number of an endpoint. If present Endpoint\n"
 "            Address must also be set."
 msgstr ""
+"Opcional.\n"
+"            El número de port number del punt final. Si és present,\n"
+"            també cal definir l'adreça del punt final."
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
 #, kde-format
 msgid "Preshared key:"
-msgstr ""
+msgstr "Clau precompartida:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:102
@@ -2043,12 +2091,18 @@ msgid ""
 "            cryptography to be mixed into the already existing\n"
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
+"Opcional.\n"
+"            Una clau precompartida en base64 generada per «wg genpsk».\n"
+"            Aquesta opció afegeix una capa addicional de criptografia de\n"
+"            clau simètrica per a barrejar amb la criptografia de clau "
+"pública\n"
+"            ja existent, per a una resistència postquàntica."
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
 #, kde-format
 msgid "Persistent keepalive:"
-msgstr ""
+msgstr "Manteniment de l'activitat persistent:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:127
@@ -2067,24 +2121,36 @@ msgid ""
 "            when unspecified, this option is off. Most users will not\n"
 "            need this."
 msgstr ""
+"Opcional.\n"
+"            Un interval en segons, entre 1 i 65535 inclosos, de\n"
+"            com de sovint cal enviar un paquet buit autenticat al\n"
+"            parell amb l'objectiu de mantenir un mapatge persistent vàlid\n"
+"            d'estats de tallafoc o NAT. Per exemple, si la\n"
+"            interfície envia trànsit molt rarament, però pot rebre\n"
+"            trànsit d'un parell en qualsevol moment, i està darrere d'un\n"
+"            NAT, la interfície podria beneficiar-se de tenir un interval\n"
+"            de manteniment persistent de l'activitat de 25 segons. Si\n"
+"            s'estableix a 0 o «off», aquesta opció es desactiva. De manera\n"
+"            predeterminada o si no s'especifica, aquesta opció és «off».\n"
+"            La majoria dels usuaris no necessiten això."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: editor/settings/ui/wireguardtabwidget.ui:24
 #, kde-format
 msgid "Peer 1"
-msgstr ""
+msgstr "Parell 1"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/wireguardtabwidget.ui:37
 #, kde-format
 msgid "Add new Peer"
-msgstr ""
+msgstr "Afegeix un parell nou"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/wireguardtabwidget.ui:44
 #, kde-format
 msgid "Remove this Peer"
-msgstr ""
+msgstr "Elimina aquest parell"
 
 #: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
@@ -3169,20 +3235,17 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/widgets/ui/advancedpermissionswidget.ui:33
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip real user name is not available"
-#| msgid "Not Available"
+#, kde-format
 msgid "Available Users"
-msgstr "No disponible"
+msgstr "Usuaris disponibles"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
 #: editor/widgets/ui/advancedpermissionswidget.ui:83
 #: editor/widgets/ui/advancedpermissionswidget.ui:213
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Real Name"
-msgstr "Nom"
+msgstr "Nom real"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
@@ -3191,20 +3254,19 @@ msgstr "Nom"
 #, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username"
-msgstr ""
+msgstr "Nom d'usuari"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/widgets/ui/advancedpermissionswidget.ui:160
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgid "Users allowed to activate the connection"
-msgstr "Ha fallat en actualitzar la connexió %1"
+msgstr "Usuaris permesos a activar la connexió"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
 #: editor/widgets/ui/ipv4routes.ui:20
 #, kde-format
 msgid "Edit IPv4 Routes"
-msgstr ""
+msgstr "Edita els camins IPv4"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
@@ -3213,26 +3275,28 @@ msgid ""
 "If enabled, this connection will never be used as the default network "
 "connection"
 msgstr ""
+"Si està activada, aquesta connexió mai es farà servir com la\n"
+"connexió de xarxa per omissió"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
 #, kde-format
 msgid "Use only for resources on this connection"
-msgstr ""
+msgstr "Usa només per als recursos en aquesta connexió"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv4routes.ui:74
 #, kde-format
 msgctxt "Remove a selected row"
 msgid "Remove"
-msgstr ""
+msgstr "Elimina"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonAdd)
 #: editor/widgets/ui/ipv4routes.ui:124 editor/widgets/ui/ipv6routes.ui:77
 #, kde-format
 msgctxt "Insert a row"
 msgid "Add"
-msgstr ""
+msgstr "Afegeix"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:136 editor/widgets/ui/ipv6routes.ui:120
@@ -3241,25 +3305,27 @@ msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
 "specified above are used"
 msgstr ""
+"Si està activada, els camins configurats de forma automàtica seran\n"
+"ignorats i només s'usaran els camins especificats anteriorment"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
 #, kde-format
 msgid "Ignore automatically obtained routes"
-msgstr ""
+msgstr "Ignora els camins obtinguts automàticament"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
 #: editor/widgets/ui/ipv6routes.ui:20
 #, kde-format
 msgid "Edit IPv6 Routes"
-msgstr ""
+msgstr "Edita els camins IPv6"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv6routes.ui:92
 #, kde-format
 msgctxt "Remove a selected row"
 msgid "R&emove"
-msgstr ""
+msgstr "&Elimina"
 
 #: handler.cpp:111
 #, kde-format

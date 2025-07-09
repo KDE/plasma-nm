@@ -81,7 +81,7 @@ PlasmaExtras.ExpandableListItem {
     contextualActions: [
         Action {
             enabled: connectionItem.model.Uuid && connectionItem.model.Type === PlasmaNM.Enums.Wireless && connectionItem.passwordIsStatic
-            text: i18n("Show Network's QR Code")
+            text: i18nc("Share Wi-Fi network's password or QR code", "Share")
             icon.name: "view-barcode-qr"
             onTriggered: handler.requestWifiCode(connectionItem.model.ConnectionPath, connectionItem.model.Ssid, connectionItem.model.SecurityType);
         },

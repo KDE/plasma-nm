@@ -8,20 +8,22 @@ import QtQuick
 import QtQuick.Layouts 1.2
 
 import org.kde.plasma.components 3.0 as PlasmaComponents3
-import org.kde.kirigami 2.20 as Kirigami
+import org.kde.kirigami as Kirigami
 
 import org.kde.prison 1.0 as Prison
 
 ColumnLayout {
     id: page
 
-    property string ssid
     property alias content: barcode.content
+    property string ssid
+    property string password
 
+    readonly property real verticalPadding: Kirigami.Units.largeSpacing
     spacing: Kirigami.Units.smallSpacing
 
     PlasmaComponents3.Label {
-        Layout.topMargin: page.spacing
+        Layout.topMargin: page.verticalPadding
         Layout.alignment: Qt.AlignHCenter
         Layout.minimumWidth: barcode.height
         Layout.maximumWidth: barcode.width - page.spacing * 2
@@ -77,6 +79,43 @@ ColumnLayout {
             color: barcode.backgroundColor
             radius: Kirigami.Units.cornerRadius
             z: -1
+        }
+    }
+
+    // Try to keep them centered, but keep the label visible and wrap the password if needed
+    GridLayout {
+        id: passwordLayout
+
+        readonly property real implicitContentWidth: passwordLabel.implicitWidth + passwordSelectable.implicitWidth + columnSpacing
+        state: implicitContentWidth <= width ? "inline" : "wrap"
+
+        visible: page.password !== ""
+        columns: passwordLayout.state === "inline" ? 2 : 1
+        columnSpacing: Kirigami.Units.largeSpacing
+        rowSpacing: 0
+        Layout.bottomMargin: page.verticalPadding
+        Layout.alignment: Qt.AlignHCenter
+        Layout.maximumWidth: barcode.width - page.spacing * 2
+
+        PlasmaComponents3.Label {
+            id: passwordLabel
+            Layout.alignment: Qt.AlignVCenter | Qt.AlignRight
+            Layout.fillWidth: passwordLayout.state === "wrap"
+            Layout.preferredWidth: implicitWidth + (passwordLayout.width - passwordLayout.implicitContentWidth) / 2
+            horizontalAlignment: passwordLayout.state === "inline" ? Text.AlignRight : Text.AlignLeft
+            wrapMode: Text.NoWrap
+            textFormat: Text.PlainText
+            text: i18n("Wi-Fi password:")
+        }
+
+        Kirigami.SelectableLabel {
+            id: passwordSelectable
+            Layout.fillWidth: true
+            horizontalAlignment: Text.AlignLeft
+            textFormat: Text.PlainText
+            wrapMode: TextEdit.Wrap
+            font.family: "monospace"
+            text: page.password
         }
     }
 }

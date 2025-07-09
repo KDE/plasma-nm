@@ -64,7 +64,7 @@ PlasmaExtras.Representation {
 
     Connections {
         target: full.nmHandler
-        function onWifiCodeReceived(data, ssid) {
+        function onWifiCodeReceived(data, ssid, password) {
             if (data.length === 0) {
                 console.error("Cannot create QR code component: Unsupported connection");
                 return;
@@ -79,7 +79,8 @@ PlasmaExtras.Representation {
             mainWindow.expanded = true; // just in case.
             stack.push(showQRComponent, {
                 content: data,
-                ssid
+                ssid,
+                password,
             });
         }
     }

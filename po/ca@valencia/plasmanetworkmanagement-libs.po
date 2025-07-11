@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement-libs.po to Catalan (Valencian)
-# Copyright (C) 2014-2024 This_file_is_part_of_KDE
+# Copyright (C) 2014-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2017, 2018, 2020.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-04 00:42+0000\n"
-"PO-Revision-Date: 2024-12-14 08:15+0100\n"
+"PO-Revision-Date: 2025-07-03 16:18+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -1886,8 +1886,7 @@ msgid ""
 msgstr ""
 "Opcional.\n"
 "Si no s'especifica, la MTU es determina automàticament\n"
-"a partir de l'adreça del punt final o de la ruta predeterminada del "
-"sistema,\n"
+"a partir de l'adreça del punt final o del camí predeterminat del sistema,\n"
 "que normalment és una elecció correcta. Tanmateix, per a especificar\n"
 "manualment una MTU i superposar este descobriment automàtic,\n"
 "este valor es pot especificar explícitament."
@@ -1896,7 +1895,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:108
 #, kde-format
 msgid "Autoroute peers:"
-msgstr "Parells de les rutes automàtiques:"
+msgstr "Parells dels camins automàtics:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:116
@@ -1905,7 +1904,7 @@ msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
 msgstr ""
-"Si cal afegir automàticament rutes per als intervals de les «AllowedIP»\n"
+"Si cal afegir automàticament camins per als intervals de les «AllowedIP»\n"
 "dels parells."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
@@ -3197,7 +3196,7 @@ msgid ""
 "connection"
 msgstr ""
 "Si està marcada, esta connexió mai es farà servir com la\n"
-"connexió de xarxa per defecte"
+"connexió de xarxa predeterminada"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133

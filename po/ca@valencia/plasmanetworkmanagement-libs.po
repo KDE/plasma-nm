@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement-libs.po to Catalan (Valencian)
-# Copyright (C) 2014-2024 This_file_is_part_of_KDE
+# Copyright (C) 2014-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2017, 2018, 2020.
-# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024.
+# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2024-07-05 19:18+0200\n"
+"PO-Revision-Date: 2025-07-06 11:41+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -882,7 +882,7 @@ msgstr "Temps de «HELLO»:"
 #: editor/settings/ui/bridge.ui:235
 #, kde-format
 msgid "Max age:"
-msgstr "Duració màx:"
+msgstr "Duració màx.:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/bt.ui:21
@@ -979,7 +979,7 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager indica a les aplicacions si la connexió té un ús mesurat, i "
+"NetworkManager indica a les aplicacions si la connexió té un ús mesurat i, "
 "per tant,\n"
 "cal restringir l'ús de les dades."
 
@@ -1805,7 +1805,7 @@ msgid ""
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
 "Negociació de l'enllaç del dispositiu. Si es tria «Manual», es forçaran els "
-"valors de «Velocitat» i «Duplex» sense verificar la compatibilitat del "
+"valors de «Velocitat» i «Dúplex» sense verificar la compatibilitat del "
 "dispositiu. Si no esteu segur, deixeu «Ignora» o seleccioneu «Automàtic»."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
@@ -1924,7 +1924,7 @@ msgid ""
 msgstr ""
 "Opcional.\n"
 "Número del port d'escolta. Es tria aleatòriament si es deixa com a "
-"«Automatic»."
+"«Automàtic»."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:57
@@ -1959,8 +1959,7 @@ msgid ""
 msgstr ""
 "Opcional.\n"
 "Si no s'especifica, la MTU es determina automàticament\n"
-"a partir de l'adreça del punt final o de la ruta predeterminada del "
-"sistema,\n"
+"a partir de l'adreça del punt final o del camí predeterminat del sistema,\n"
 "que normalment és una elecció correcta. Tanmateix, per a especificar\n"
 "manualment una MTU i superposar este descobriment automàtic,\n"
 "este valor es pot especificar explícitament."
@@ -1969,7 +1968,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:93
 #, kde-format
 msgid "Autoroute peers:"
-msgstr "Parells de les rutes automàtiques:"
+msgstr "Parells dels camins automàtics:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:101
@@ -1978,7 +1977,7 @@ msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
 msgstr ""
-"Si cal afegir automàticament rutes per als intervals de les «AllowedIP»\n"
+"Si cal afegir automàticament camins per als intervals de les «AllowedIP»\n"
 "dels parells."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
@@ -3277,7 +3276,7 @@ msgid ""
 "connection"
 msgstr ""
 "Si està marcada, esta connexió mai es farà servir com la\n"
-"connexió de xarxa per defecte"
+"connexió de xarxa predeterminada"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133

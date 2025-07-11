@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement_openvpnui.po to Catalan (Valencian)
-# Copyright (C) 2014-2023 This_file_is_part_of_KDE
+# Copyright (C) 2014-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014, 2015, 2016, 2020.
-# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2017, 2020, 2021, 2022, 2023.
+# Josep M. Ferrer <txemaq@gmail.com>, 2014, 2015, 2016, 2017, 2020, 2021, 2022, 2023, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2023-03-14 10:23+0100\n"
+"PO-Revision-Date: 2025-07-06 11:40+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 22.12.3\n"
 
 #: openvpn.cpp:183
 #, kde-format
@@ -602,7 +602,7 @@ msgstr ""
 "float» quan s'especifica amb «--remote»\n"
 "permet que una sessió d'OpenVPN connecte inicialment amb un parell d'una "
 "adreça coneguda,\n"
-"tanmateix si els paquets arriben des d'una adreça nova i passen totes les "
+"tanmateix, si els paquets arriben des d'una adreça nova i passen totes les "
 "proves d'autenticació, l'adreça\n"
 "nova prendrà el control de la sessió. Açò és útil quan esteu connectant\n"
 "amb un parell que té una adreça dinàmica com un usuari de telèfon o un "
@@ -647,9 +647,9 @@ msgid ""
 "Cipher\n"
 "Block Chaining mode)."
 msgstr ""
-"Encripta els paquets amb un algoritme de xifrat donat.\n"
+"Encripta els paquets amb un algoritme de xifratge.\n"
 "L'opció predeterminada és el BF-CBC (Blowfish amb el\n"
-"mode d'encadenament de blocs del xifrat)."
+"mode d'encadenament de blocs del xifratge)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openvpnadvanced.ui:486
@@ -671,14 +671,14 @@ msgid ""
 "Set cipher key size to a custom value. If unspecified, it defaults to cipher-"
 "specific size."
 msgstr ""
-"Establix la mida de la clau de xifrat a un valor personalitzat. Si no "
-"s'especifica, s'utilitzarà el valor predeterminat del xifrat emprat."
+"Establix la mida de la clau de xifratge a un valor personalitzat. Si no "
+"s'especifica, s'utilitzarà el valor predeterminat emprat del xifratge."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomCipherKey)
 #: openvpnadvanced.ui:531
 #, kde-format
 msgid "Use custom size of cipher key:"
-msgstr "Utilitza una mida personalitzada per a la clau de xifrat:"
+msgstr "Utilitza una mida personalitzada per a la clau de xifratge:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboHmac)

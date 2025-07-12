@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
-"PO-Revision-Date: 2025-05-25 10:14+0300\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
+"PO-Revision-Date: 2025-07-10 19:45+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -31,8 +31,9 @@ msgstr "Katkaise yhteys"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "Näytä verkon QR-koodi"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -58,11 +59,10 @@ msgid ""
 msgstr "Nykyinen latausnopeus on %1 KB/s, nykyinen lähetysnopeus on %2 KB/s"
 
 #: ConnectionItem.qml:292
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Yhdistetty, ⬇ %1/s, ⬆ %2/s"
+msgstr "⬇ %1/s, ⬆ %2/s"
 
 #: ConnectionListPage.qml:33
 #, kde-format
@@ -91,10 +91,9 @@ msgid "Wireless is deactivated"
 msgstr "Langaton verkko on passivoitu"
 
 #: ConnectionListPage.qml:126
-#, fuzzy, kde-format
-#| msgid "Rescan wireless networks"
+#, kde-format
 msgid "Looking for wireless networks"
-msgstr "Etsi langattomat verkot uudelleen"
+msgstr "Etsitään langattomia verkkoja"
 
 #: ConnectionListPage.qml:129
 #, kde-format
@@ -164,10 +163,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Palaa verkkoyhteyksiin"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "Yhdistä verkkoon ”%1” lukemalla toisella laitteella tämä QR-koodi."
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Show password"
+msgid "Wi-Fi password:"
+msgstr "Näytä salasana"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -199,7 +204,7 @@ msgstr "Tukiasema"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "Tukiasemaa ei voi luoda, koska langaton verkko on poistettu käytöstä."
 
 #: Toolbar.qml:181
 #, kde-format
@@ -242,6 +247,9 @@ msgstr "Lähetys"
 #, kde-format
 msgid "Download"
 msgstr "Lataus"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Näytä verkon QR-koodi"
 
 #~ msgid "Connected"
 #~ msgstr "Yhdistetty"
@@ -344,9 +352,6 @@ msgstr "Lataus"
 
 #~ msgid "Show virtual connections"
 #~ msgstr "Näytä virtuaaliyhteydet"
-
-#~ msgid "Show password"
-#~ msgstr "Näytä salasana"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

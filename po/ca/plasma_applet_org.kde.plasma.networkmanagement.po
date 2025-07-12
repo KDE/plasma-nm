@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2025-06-24 11:56+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -34,8 +34,9 @@ msgstr "Desconnecta"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "Mostra el codi QR de la xarxa"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -167,12 +168,17 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Torna a les connexions de xarxa"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 "Escanegeu aquest codi QR amb un altre dispositiu per a connectar a la xarxa "
 "«%1»."
+
+#: ShareNetworkQrCodePage.qml:108
+#, kde-format
+msgid "Wi-Fi password:"
+msgstr ""
 
 #: Toolbar.qml:123
 #, kde-format
@@ -244,3 +250,6 @@ msgstr "Puja"
 #, kde-format
 msgid "Download"
 msgstr "Baixa"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Mostra el codi QR de la xarxa"

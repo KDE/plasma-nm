@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2011-06-27 14:57+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -35,9 +35,11 @@ msgid "Disconnect"
 msgstr "Koristi TCP vezu"
 
 #: ConnectionItem.qml:84
-#, kde-format
-msgid "Show Network's QR Code"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Shared"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "Dijeljena"
 
 #: ConnectionItem.qml:90
 #, fuzzy, kde-format
@@ -181,10 +183,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Uredi mrežnu vezu"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgid "Wi-Fi password:"
+msgstr "Zaporka:"
 
 #: Toolbar.qml:123
 #, fuzzy, kde-format
@@ -1960,11 +1968,6 @@ msgstr ""
 #~ msgid "&Key:"
 #~ msgstr "&Ključ:"
 
-#, fuzzy
-#~| msgid "Password:"
-#~ msgid "Key password:"
-#~ msgstr "Zaporka:"
-
 #~ msgid "Shared Key"
 #~ msgstr "Dijeljeni ključ"
 
@@ -2633,9 +2636,6 @@ msgstr ""
 
 #~ msgid "Manual"
 #~ msgstr "Ručno"
-
-#~ msgid "Shared"
-#~ msgstr "Dijeljena"
 
 #~ msgid "&IP Address:"
 #~ msgstr "&IP adresa:"

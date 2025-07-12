@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2010-07-30 21:29+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -30,8 +30,9 @@ msgstr "Tersambung"
 
 #: ConnectionItem.qml:84
 #, fuzzy, kde-format
-msgid "Show Network's QR Code"
-msgstr "Sambungan Gagal"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "Kongsi"
 
 #: ConnectionItem.qml:90
 #, fuzzy, kde-format
@@ -161,10 +162,15 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Sambungan"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+msgid "Wi-Fi password:"
+msgstr "Katalaluan:"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -233,6 +239,10 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Sambungan Gagal"
 
 #, fuzzy
 #~ msgid "Connected"
@@ -1008,10 +1018,6 @@ msgstr ""
 #~ msgstr "Manual"
 
 #, fuzzy
-#~ msgid "Shared"
-#~ msgstr "Kongsi"
-
-#, fuzzy
 #~ msgctxt "like in this setting is Disabled"
 #~ msgid "Disabled"
 #~ msgstr "Dimatikan"
@@ -1431,10 +1437,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "&Certificate:"
 #~ msgstr "Sijil"
-
-#, fuzzy
-#~ msgid "Key password:"
-#~ msgstr "Katalaluan:"
 
 #, fuzzy
 #~ msgctxt "like in None setting selected"

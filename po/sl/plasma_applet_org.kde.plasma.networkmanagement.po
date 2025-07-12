@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2025-06-24 07:04+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -32,8 +32,9 @@ msgstr "Prekini povezavo"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "Prikaži omrežno kodo QR"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -165,10 +166,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Vrni se na omrežne povezave"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "Skenirajte to kodo QR z drugo napravo za priklop na \"%1\" omrežje."
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Show password"
+msgid "Wi-Fi password:"
+msgstr "Pokaži geslo"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -240,6 +247,9 @@ msgstr "Pošiljanje"
 #, kde-format
 msgid "Download"
 msgstr "Prejemanje"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Prikaži omrežno kodo QR"
 
 #~ msgid "Connected"
 #~ msgstr "Povezano"
@@ -344,6 +354,3 @@ msgstr "Prejemanje"
 #~| msgid "Show and configure virtual connections"
 #~ msgid "Show virtual connections"
 #~ msgstr "Pokaži in nastavi navidezne povezave"
-
-#~ msgid "Show password"
-#~ msgstr "Pokaži geslo"

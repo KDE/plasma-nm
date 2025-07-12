@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2023-08-15 02:00+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -34,9 +34,11 @@ msgid "Disconnect"
 msgstr "Αποσύνδεση"
 
 #: ConnectionItem.qml:84
-#, kde-format
-msgid "Show Network's QR Code"
-msgstr "Εμφάνιση κωδικού QR του δικτύου"
+#, fuzzy, kde-format
+#| msgid "Shared"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "Κοινόχρηστο"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -170,12 +172,18 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Επιστροφή στις Συνδέσεις Δικτύου"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 "Σαρώστε αυτόν τον κωδικό QR με μια άλλη συσκευή για να συνδεθείτε στο δίκτυο "
 "\"%1\"."
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Key password:"
+msgid "Wi-Fi password:"
+msgstr "Κλειδί κωδικού πρόσβασης:"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -250,6 +258,9 @@ msgstr "Αποστολή"
 #, kde-format
 msgid "Download"
 msgstr "Λήψη"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Εμφάνιση κωδικού QR του δικτύου"
 
 #~ msgid "Connected"
 #~ msgstr "Συνδέθηκε"
@@ -2930,9 +2941,6 @@ msgstr "Λήψη"
 #~ msgid "Link-Local"
 #~ msgstr "Τοπικός βρόχος"
 
-#~ msgid "Shared"
-#~ msgstr "Κοινόχρηστο"
-
 #~ msgctxt "like in this setting is Disabled"
 #~ msgid "Disabled"
 #~ msgstr "Ανενεργή"
@@ -4056,9 +4064,6 @@ msgstr "Λήψη"
 
 #~ msgid "&Certificate:"
 #~ msgstr "Π&ιστοποιητικό:"
-
-#~ msgid "Key password:"
-#~ msgstr "Κλειδί κωδικού πρόσβασης:"
 
 #~ msgid "Local IP"
 #~ msgstr "Τοπική IP"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2023-11-11 15:36+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -30,8 +30,9 @@ msgstr "Odpojiť"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "Zobraziť QR kód siete"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -165,12 +166,18 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Návrat na sieťové pripojenia"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 "Naskenujte tento QR kód pomocou iného zariadenia a pripojte sa k sieti "
 "\"%1\"."
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Show password"
+msgid "Wi-Fi password:"
+msgstr "Zobraziť heslo"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -241,6 +248,9 @@ msgstr "Odosielanie"
 #, kde-format
 msgid "Download"
 msgstr "Preberanie"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Zobraziť QR kód siete"
 
 #~ msgid "Connected"
 #~ msgstr "Pripojené"
@@ -351,9 +361,6 @@ msgstr "Preberanie"
 
 #~ msgid "Show virtual connections"
 #~ msgstr "Zobraziť virtuálne pripojenia"
-
-#~ msgid "Show password"
-#~ msgstr "Zobraziť heslo"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

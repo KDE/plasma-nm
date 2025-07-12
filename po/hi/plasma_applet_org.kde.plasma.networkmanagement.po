@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -29,8 +29,9 @@ msgstr "डिस्कनेक्ट"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "नेटवर्क का क्यूआर कोड दिखाएं"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -163,10 +164,15 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "नेटवर्क कनेक्शन पर वापस लौटें"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "\"%1\" नेटवर्क से कनेक्ट करने के लिए इस QR कोड को किसी अन्य डिवाइस से स्कैन करें।"
+
+#: ShareNetworkQrCodePage.qml:108
+#, kde-format
+msgid "Wi-Fi password:"
+msgstr ""
 
 #: Toolbar.qml:123
 #, kde-format
@@ -237,6 +243,9 @@ msgstr "अपलोड करें"
 #, kde-format
 msgid "Download"
 msgstr "डाउनलोड करना"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "नेटवर्क का क्यूआर कोड दिखाएं"
 
 #~ msgid "Connected"
 #~ msgstr "जुड़े हुए"

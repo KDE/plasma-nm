@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2020-09-28 13:41+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -31,9 +31,10 @@ msgstr "Katkesta ühendus"
 
 #: ConnectionItem.qml:84
 #, fuzzy, kde-format
-#| msgid "Show network's QR code"
-msgid "Show Network's QR Code"
-msgstr "Võrgu QR-koodi näitamine"
+#| msgid "Shared"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "Jagatud"
 
 #: ConnectionItem.qml:90
 #, fuzzy, kde-format
@@ -173,10 +174,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Võrguühenduse muutmine"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Key password:"
+msgid "Wi-Fi password:"
+msgstr "Võtme parool:"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -250,6 +257,11 @@ msgstr "Üleslaadimine"
 #, kde-format
 msgid "Download"
 msgstr "Allalaadimine"
+
+#, fuzzy
+#~| msgid "Show network's QR code"
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Võrgu QR-koodi näitamine"
 
 #~ msgid "Connected"
 #~ msgstr "Ühendatud"
@@ -2785,9 +2797,6 @@ msgstr "Allalaadimine"
 #~ msgid "Link-Local"
 #~ msgstr "Link-Local"
 
-#~ msgid "Shared"
-#~ msgstr "Jagatud"
-
 #~ msgctxt "like in this setting is Disabled"
 #~ msgid "Disabled"
 #~ msgstr "Keelatud"
@@ -3890,9 +3899,6 @@ msgstr "Allalaadimine"
 
 #~ msgid "&Certificate:"
 #~ msgstr "&Sertifikaat:"
-
-#~ msgid "Key password:"
-#~ msgstr "Võtme parool:"
 
 #~ msgid "Local IP"
 #~ msgstr "Kohalik IP"

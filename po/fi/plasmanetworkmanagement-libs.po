@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:58+0000\n"
-"PO-Revision-Date: 2025-01-12 17:08+0200\n"
+"PO-Revision-Date: 2025-07-10 19:46+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -3537,20 +3537,16 @@ msgid "The connection type is WireGuard"
 msgstr "Yhteyden tyyppi on WireGuard"
 
 #: models/networkmodelitem.cpp:347
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip real user name is not available"
-#| msgid "Not Available"
+#, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr "Ei saatavilla"
+msgstr "Saatavilla"
 
 #: models/networkmodelitem.cpp:353
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
-msgstr "Yhteydellinen"
+msgstr "Yhdistetty"
 
 #: models/networkmodelitem.cpp:591
 #, kde-format
@@ -3786,11 +3782,10 @@ msgid "Connected to %1"
 msgstr "Yhteydessä verkkoon %1"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "NetworkManager ei ole käynnissä"
+msgstr "NetworkManager-palvelu ei ole käynnissä"
 
 #: networkstatus.cpp:261
 #, kde-format

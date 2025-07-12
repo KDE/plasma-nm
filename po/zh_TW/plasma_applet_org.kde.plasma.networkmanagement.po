@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2025-07-01 19:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -34,8 +34,9 @@ msgstr "斷線"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "顯示網路的 QR 碼"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -165,10 +166,15 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "回到網路連線"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "用另一個裝置掃描這個 QR 碼來連線到「%1」網路。"
+
+#: ShareNetworkQrCodePage.qml:108
+#, kde-format
+msgid "Wi-Fi password:"
+msgstr ""
 
 #: Toolbar.qml:123
 #, kde-format
@@ -239,6 +245,9 @@ msgstr "上傳"
 #, kde-format
 msgid "Download"
 msgstr "下載"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "顯示網路的 QR 碼"
 
 #~ msgid "Connected"
 #~ msgstr "已連線"

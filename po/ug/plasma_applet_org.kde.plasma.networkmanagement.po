@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -28,9 +28,11 @@ msgid "Disconnect"
 msgstr "ئۈز"
 
 #: ConnectionItem.qml:84
-#, kde-format
-msgid "Show Network's QR Code"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Shared"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "ھەمبەھىرلەنگەن"
 
 #: ConnectionItem.qml:90
 #, fuzzy, kde-format
@@ -169,10 +171,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "ئۇقتۇرۇشلارنى سەپلە"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Key password:"
+msgid "Wi-Fi password:"
+msgstr "ئىم:"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -1505,9 +1513,6 @@ msgstr ""
 #~ msgid "Link-Local"
 #~ msgstr "ئۇلانما-يەرلىك"
 
-#~ msgid "Shared"
-#~ msgstr "ھەمبەھىرلەنگەن"
-
 #~ msgctxt "like in this setting is Disabled"
 #~ msgid "Disabled"
 #~ msgstr "چەكلەنگەن"
@@ -2038,10 +2043,6 @@ msgstr ""
 #~| msgid "Certificate:"
 #~ msgid "&Certificate:"
 #~ msgstr "گۇۋاھنامە:"
-
-#~| msgid "Password:"
-#~ msgid "Key password:"
-#~ msgstr "ئىم:"
 
 #~ msgctxt "like in None setting selected"
 #~ msgid "None"

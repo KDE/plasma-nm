@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2025-06-19 09:52+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -35,9 +35,11 @@ msgid "Disconnect"
 msgstr "Desconectar"
 
 #: ConnectionItem.qml:84
-#, kde-format
-msgid "Show Network's QR Code"
-msgstr "Amosar o código QR da rede"
+#, fuzzy, kde-format
+#| msgid "Shared"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "Compartida"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -170,11 +172,17 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Volver ás conexións de rede"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 "Escanee este código QR con outro dispositivo para conectarse á rede «%1»."
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Key password:"
+msgid "Wi-Fi password:"
+msgstr "Contrasinal da chave:"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -247,6 +255,9 @@ msgstr "Enviar"
 #, kde-format
 msgid "Download"
 msgstr "Descargar"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Amosar o código QR da rede"
 
 #~ msgid "Connected"
 #~ msgstr "Conectado."
@@ -2790,9 +2801,6 @@ msgstr "Descargar"
 #~ msgid "Link-Local"
 #~ msgstr "Ligazón-Local"
 
-#~ msgid "Shared"
-#~ msgstr "Compartida"
-
 #~ msgctxt "like in this setting is Disabled"
 #~ msgid "Disabled"
 #~ msgstr "Desactivado"
@@ -3911,9 +3919,6 @@ msgstr "Descargar"
 
 #~ msgid "&Certificate:"
 #~ msgstr "&Certificado:"
-
-#~ msgid "Key password:"
-#~ msgstr "Contrasinal da chave:"
 
 #~ msgid "Local IP"
 #~ msgstr "IP local"

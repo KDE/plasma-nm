@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2025-04-18 13:11+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -33,9 +33,11 @@ msgid "Disconnect"
 msgstr "Aftengjast"
 
 #: ConnectionItem.qml:84
-#, kde-format
-msgid "Show Network's QR Code"
-msgstr "Sýna QR-kóða nets"
+#, fuzzy, kde-format
+#| msgid "Shared Key"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "Netprentari"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -169,10 +171,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Snúa aftur í nettengingar"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "Skannaðu þennan QR-kóða með öðru tæki til að tengjast netinu \"%1\"."
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgid "Wi-Fi password:"
+msgstr "Lykilorð:"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -243,6 +251,9 @@ msgstr "Upphleðsla"
 #, kde-format
 msgid "Download"
 msgstr "Niðurhal"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Sýna QR-kóða nets"
 
 #~ msgid "Connected"
 #~ msgstr "Tengt"
@@ -1944,11 +1955,6 @@ msgstr "Niðurhal"
 #~ msgstr "Handvirkt"
 
 #, fuzzy
-#~| msgid "Shared Key"
-#~ msgid "Shared"
-#~ msgstr "Netprentari"
-
-#, fuzzy
 #~| msgid "Disabled"
 #~ msgctxt "like in this setting is Disabled"
 #~ msgid "Disabled"
@@ -2855,11 +2861,6 @@ msgstr "Niðurhal"
 
 #~ msgid "&Certificate:"
 #~ msgstr "&Skilríki:"
-
-#, fuzzy
-#~| msgid "Password:"
-#~ msgid "Key password:"
-#~ msgstr "Lykilorð:"
 
 #~ msgid "Local IP"
 #~ msgstr "Staðvært IP vistfang"

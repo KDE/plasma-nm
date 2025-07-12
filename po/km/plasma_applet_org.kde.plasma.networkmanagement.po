@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -31,9 +31,10 @@ msgstr "បាន​តភ្ជាប់​​"
 
 #: ConnectionItem.qml:84
 #, fuzzy, kde-format
-#| msgid "Show network speed in:"
-msgid "Show Network's QR Code"
-msgstr "បង្ហាញ​​ល្បឿន​បណ្ដាញ​នៅ​ក្នុង​ ៖​"
+#| msgid "Shared"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "បាន​ចែក​រំលែក​"
 
 #: ConnectionItem.qml:90
 #, fuzzy, kde-format
@@ -175,10 +176,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "កែសម្រួល​ការ​តភ្ជាប់​បណ្ដាញ​"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Key password:"
+msgid "Wi-Fi password:"
+msgstr "ពាក្យ​សម្ងាត់​សោ ៖"
 
 #: Toolbar.qml:123
 #, fuzzy, kde-format
@@ -252,6 +259,11 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Show network speed in:"
+#~ msgid "Show Network's QR Code"
+#~ msgstr "បង្ហាញ​​ល្បឿន​បណ្ដាញ​នៅ​ក្នុង​ ៖​"
 
 #, fuzzy
 #~ msgid "Connected"
@@ -2704,9 +2716,6 @@ msgstr ""
 #~ msgid "Link-Local"
 #~ msgstr "មូលដ្ឋាន​ភ្ជាប់​"
 
-#~ msgid "Shared"
-#~ msgstr "បាន​ចែក​រំលែក​"
-
 #~ msgctxt "like in this setting is Disabled"
 #~ msgid "Disabled"
 #~ msgstr "បាន​បិទ"
@@ -3773,9 +3782,6 @@ msgstr ""
 
 #~ msgid "&Certificate:"
 #~ msgstr "វិញ្ញាបនប័ត្រ​"
-
-#~ msgid "Key password:"
-#~ msgstr "ពាក្យ​សម្ងាត់​សោ ៖"
 
 #~ msgid "Local IP"
 #~ msgstr "IP មូលដ្ឋាន"

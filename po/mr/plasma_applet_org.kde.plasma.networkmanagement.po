@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2014-10-28 10:24+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -28,10 +28,10 @@ msgid "Disconnect"
 msgstr "तोडा"
 
 #: ConnectionItem.qml:84
-#, fuzzy, kde-format
-#| msgid "Connection speed:"
-msgid "Show Network's QR Code"
-msgstr "जुळवणी वेग :"
+#, kde-format
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -168,10 +168,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "जुळवण्या संपादित करा..."
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Show password"
+msgid "Wi-Fi password:"
+msgstr "गुप्तशब्द दर्शवा"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -241,6 +247,11 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Connection speed:"
+#~ msgid "Show Network's QR Code"
+#~ msgstr "जुळवणी वेग :"
 
 #~ msgid "Connected"
 #~ msgstr "जुळलेले"
@@ -335,9 +346,6 @@ msgstr ""
 #~| msgid "Edit connections..."
 #~ msgid "Show virtual connections"
 #~ msgstr "जुळवण्या संपादित करा..."
-
-#~ msgid "Show password"
-#~ msgstr "गुप्तशब्द दर्शवा"
 
 #, fuzzy
 #~| msgid "Edit connections..."

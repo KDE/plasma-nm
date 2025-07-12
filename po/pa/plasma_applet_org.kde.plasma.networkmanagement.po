@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2023-12-26 09:17-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -28,9 +28,11 @@ msgid "Disconnect"
 msgstr "ਡਿਸ-ਕਨੈਕਟ"
 
 #: ConnectionItem.qml:84
-#, kde-format
-msgid "Show Network's QR Code"
-msgstr "ਨੈੱਟਵਰਕ ਦਾ QR ਕੋਡ ਵੇਖਾਓ"
+#, fuzzy, kde-format
+#| msgid "Shared"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "ਸਾਂਝੀ"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -164,10 +166,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਉੱਤੇ ਵਾਪਸ ਜਾਓ"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "ਹੋਰ ਡਿਵਾਈਸ ਤੋਂ \"%1\" ਨੈੱਟਵਰਕ ਨਾਲ ਕਨੈਕਟ ਕਰਨ ਲਈ ਇਹ QR ਕੋਡ ਸਕੈਨ ਕਰੋ।"
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Key password:"
+msgid "Wi-Fi password:"
+msgstr "ਕੁੰਜੀ ਪਾਸਵਰਡ:"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -238,6 +246,9 @@ msgstr "ਅੱਪਲੋਡ"
 #, kde-format
 msgid "Download"
 msgstr "ਡਾਊਨਲੋਡ"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "ਨੈੱਟਵਰਕ ਦਾ QR ਕੋਡ ਵੇਖਾਓ"
 
 #~ msgid "Connected"
 #~ msgstr "ਕਨੈਕਟ ਹੈ"
@@ -2553,9 +2564,6 @@ msgstr "ਡਾਊਨਲੋਡ"
 #~ msgid "Link-Local"
 #~ msgstr "ਲਿੰਕ-ਲੋਕਲ"
 
-#~ msgid "Shared"
-#~ msgstr "ਸਾਂਝੀ"
-
 #~ msgctxt "like in this setting is Disabled"
 #~ msgid "Disabled"
 #~ msgstr "ਬੰਦ ਹੈ"
@@ -3430,9 +3438,6 @@ msgstr "ਡਾਊਨਲੋਡ"
 
 #~ msgid "&Certificate:"
 #~ msgstr "ਸਰਟੀਫਿਕੇਟ(&C):"
-
-#~ msgid "Key password:"
-#~ msgstr "ਕੁੰਜੀ ਪਾਸਵਰਡ:"
 
 #~ msgid "Local IP"
 #~ msgstr "ਲੋਕਲ IP"

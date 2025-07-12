@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2024-10-19 12:55+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -29,8 +29,9 @@ msgstr "Rozłącz"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "Pokaż kod QR sieci"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -164,10 +165,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Wróć do połączeń sieciowych"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "Zeskanuj kod QR innym urządzeniem, aby podłączyć się do sieci \"%1\"."
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Show password"
+msgid "Wi-Fi password:"
+msgstr "Pokaż hasło"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -238,6 +245,9 @@ msgstr "Wysyłanie"
 #, kde-format
 msgid "Download"
 msgstr "Pobieranie"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Pokaż kod QR sieci"
 
 #~ msgid "Connected"
 #~ msgstr "Połączony"
@@ -340,9 +350,6 @@ msgstr "Pobieranie"
 
 #~ msgid "Show virtual connections"
 #~ msgstr "Pokaż wirtualne połączenia"
-
-#~ msgid "Show password"
-#~ msgstr "Pokaż hasło"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

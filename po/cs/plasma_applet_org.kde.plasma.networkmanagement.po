@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2023-08-07 16:45+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -32,8 +32,9 @@ msgstr "Odpojit se"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "Zobrazit QR kód sítě"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -165,11 +166,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Vrátit se k síťovým připojením"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 "Přečtěte tento QR kód pomocí jiného zařízení pro připojení k síti \"%1\"."
+
+#: ShareNetworkQrCodePage.qml:108
+#, kde-format
+msgid "Wi-Fi password:"
+msgstr ""
 
 #: Toolbar.qml:123
 #, kde-format
@@ -240,6 +246,9 @@ msgstr "Odesílání"
 #, kde-format
 msgid "Download"
 msgstr "Stahování"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Zobrazit QR kód sítě"
 
 #~ msgid "Connected"
 #~ msgstr "Připojen"

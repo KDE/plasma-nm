@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2024-02-24 18:38+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -31,9 +31,11 @@ msgid "Disconnect"
 msgstr "Deconectează"
 
 #: ConnectionItem.qml:84
-#, kde-format
-msgid "Show Network's QR Code"
-msgstr "Arată codul QR al rețelei"
+#, fuzzy, kde-format
+#| msgid "Shared"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "Partajat"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -167,11 +169,17 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Înapoi la conexiuni de rețea"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 "Scanați acest cod QR cu alt dispozitiv pentru a-l conecta la rețeaua „%1”."
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Key password:"
+msgid "Wi-Fi password:"
+msgstr "Parola cheii:"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -244,6 +252,9 @@ msgstr "Încărcare"
 #, kde-format
 msgid "Download"
 msgstr "Descărcare"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Arată codul QR al rețelei"
 
 #~ msgid "Connected"
 #~ msgstr "Conectat"
@@ -2832,9 +2843,6 @@ msgstr "Descărcare"
 #~ msgid "Link-Local"
 #~ msgstr "Legătură locală"
 
-#~ msgid "Shared"
-#~ msgstr "Partajat"
-
 #~ msgctxt "like in this setting is Disabled"
 #~ msgid "Disabled"
 #~ msgstr "Dezactivat"
@@ -3790,9 +3798,6 @@ msgstr "Descărcare"
 
 #~ msgid "&Certificate:"
 #~ msgstr "&Certificat:"
-
-#~ msgid "Key password:"
-#~ msgstr "Parola cheii:"
 
 #~ msgid "Local IP"
 #~ msgstr "IP local"

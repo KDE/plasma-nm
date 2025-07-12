@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2019-12-29 06:50+0000\n"
 "Last-Translator: Subin Siby <subins2000@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -29,10 +29,10 @@ msgid "Disconnect"
 msgstr "വിഛേദിക്കുക"
 
 #: ConnectionItem.qml:84
-#, fuzzy, kde-format
-#| msgid "Show network's QR code"
-msgid "Show Network's QR Code"
-msgstr "ശൃംഖലയുടെ QR കോഡ് കാണിക്കുക"
+#, kde-format
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, fuzzy, kde-format
@@ -167,9 +167,14 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "ശൃംഖലയുടെ ബന്ധങ്ങള്‍ ക്രമീകരിക്കുക..."
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
+msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, kde-format
+msgid "Wi-Fi password:"
 msgstr ""
 
 #: Toolbar.qml:123
@@ -240,6 +245,11 @@ msgstr "അപ്‌ലോഡ്"
 #, kde-format
 msgid "Download"
 msgstr "ഡൗൺലോഡ്"
+
+#, fuzzy
+#~| msgid "Show network's QR code"
+#~ msgid "Show Network's QR Code"
+#~ msgstr "ശൃംഖലയുടെ QR കോഡ് കാണിക്കുക"
 
 #~ msgid "Connected"
 #~ msgstr "ബന്ധിപ്പിച്ചു"

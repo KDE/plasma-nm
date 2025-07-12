@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-03 06:58+0000\n"
-"PO-Revision-Date: 2025-06-24 12:39+0200\n"
+"PO-Revision-Date: 2025-07-11 20:35+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -889,7 +889,7 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"«NetworkManager» sare-kudeatzaileak aplikazioei konexioa tarifatua den eta "
+"NetworkManager sare-kudeatzaileak aplikazioei konexioa tarifatua den eta "
 "ondorioz datuen\n"
 "erabilera mugatu beharko litzatekeen adierazten die."
 
@@ -1113,11 +1113,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Metrikoa"
+msgstr "Bidearen metrika:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -1130,6 +1128,12 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Datu-paketeak helmugara iristeko biderik onena aukeratzen laguntzen\n"
+"duen puntuazioa,\n"
+"distantzia, atzerapena eta fidagarritasuna bezalako faktoreetan oinarritua.\n"
+"\n"
+"Balio lehenetsiak, -1, esan nahi du NetworkManager sare-kudeatzaileak "
+"bidearen benetako metrika aukeratzen eta kudeatzen duela."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97
@@ -3284,7 +3288,7 @@ msgstr "Eman errorearen berri"
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
-"«NetworkManager» sare-kudeatzaileari '%1' VPN konexioen euskarria falta zaio."
+"NetworkManager sare-kudeatzaileari '%1' VPN konexioen euskarria falta zaio."
 
 #: handler.cpp:155
 #, kde-format
@@ -3808,12 +3812,12 @@ msgstr "%1(e)ra konektatuta"
 #, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "NetworkManager zerbitzua ez dago martxan"
+msgstr "NetworkManager sare-kudeatzaile zerbitzua ez dago martxan"
 
 #: networkstatus.cpp:261
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
-msgstr "«NetworkManager» 0.9.8 behar da, %1 aurkitu da."
+msgstr "NetworkManager 0.9.8 behar da, %1 aurkitu da."
 
 #: networkstatus.cpp:264
 #, kde-format

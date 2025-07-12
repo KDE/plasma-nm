@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2014-09-18 16:10+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -29,7 +29,8 @@ msgstr "Afkoppeln"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
 msgstr ""
 
 #: ConnectionItem.qml:90
@@ -169,10 +170,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Dat gifft keen aktive Nettwarkverbinnen"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Show password"
+msgid "Wi-Fi password:"
+msgstr "Passwoort wiesen"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -338,9 +345,6 @@ msgstr ""
 #~| msgid "There is no active network connection"
 #~ msgid "Show virtual connections"
 #~ msgstr "Dat gifft keen aktive Nettwarkverbinnen"
-
-#~ msgid "Show password"
-#~ msgstr "Passwoort wiesen"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

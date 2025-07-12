@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2021-11-19 10:47+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -28,10 +28,10 @@ msgid "Disconnect"
 msgstr "Wotwjazać"
 
 #: ConnectionItem.qml:84
-#, fuzzy, kde-format
-#| msgid "Show network's QR code"
-msgid "Show Network's QR Code"
-msgstr "QR-kod syće pokazać"
+#, kde-format
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -164,9 +164,14 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Syćowe zwiski &připrawić..."
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
+msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, kde-format
+msgid "Wi-Fi password:"
 msgstr ""
 
 #: Toolbar.qml:123
@@ -238,6 +243,11 @@ msgstr "Na serwer pósłać"
 #, kde-format
 msgid "Download"
 msgstr "Sćahnyć"
+
+#, fuzzy
+#~| msgid "Show network's QR code"
+#~ msgid "Show Network's QR Code"
+#~ msgstr "QR-kod syće pokazać"
 
 #~ msgid "Connected"
 #~ msgstr "Zwjazany"

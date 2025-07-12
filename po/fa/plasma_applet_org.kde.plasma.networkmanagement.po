@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2012-02-29 00:25+0330\n"
 "Last-Translator: Mohammad Reza Mirdamadi <mohi@ubuntu.ir>\n"
 "Language-Team: Farsi (Persian) <kde-i18n-fa@kde.org>\n"
@@ -29,8 +29,10 @@ msgstr "متصل‌شده"
 
 #: ConnectionItem.qml:84
 #, fuzzy, kde-format
-msgid "Show Network's QR Code"
-msgstr "خرابی در اتصال"
+#| msgid "Shared"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "مشترک"
 
 #: ConnectionItem.qml:90
 #, fuzzy, kde-format
@@ -164,10 +166,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "پیکربندی اخطارها..."
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgid "Wi-Fi password:"
+msgstr "اسم رمز:"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -237,6 +245,10 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Show Network's QR Code"
+#~ msgstr "خرابی در اتصال"
 
 #, fuzzy
 #~ msgid "Connected"
@@ -1123,9 +1135,6 @@ msgstr ""
 #~ msgid "Manual"
 #~ msgstr "دستی"
 
-#~ msgid "Shared"
-#~ msgstr "مشترک"
-
 #, fuzzy
 #~ msgctxt "like in this setting is Disabled"
 #~ msgid "Disabled"
@@ -1547,11 +1556,6 @@ msgstr ""
 #, fuzzy
 #~ msgid "&Certificate:"
 #~ msgstr "گواهی‌نامه"
-
-#, fuzzy
-#~| msgid "Password:"
-#~ msgid "Key password:"
-#~ msgstr "اسم رمز:"
 
 #, fuzzy
 #~ msgctxt "like in None setting selected"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2025-06-24 15:10+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -29,8 +29,9 @@ msgstr "Disconnetti"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "Mostra il codice QR della rete"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -163,12 +164,18 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Torna a Connessioni di rete"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 "Esegui la scansione di questo codice QR con un altro dispositivo per "
 "connetterti alla rete «%1»."
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Show password"
+msgid "Wi-Fi password:"
+msgstr "Mostra la password"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -242,6 +249,9 @@ msgstr "Invio"
 #, kde-format
 msgid "Download"
 msgstr "Scaricamento"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "Mostra il codice QR della rete"
 
 #~ msgid "Connected"
 #~ msgstr "Connesso"
@@ -344,9 +354,6 @@ msgstr "Scaricamento"
 
 #~ msgid "Show virtual connections"
 #~ msgstr "Mostra le connessioni virtuali"
-
-#~ msgid "Show password"
-#~ msgstr "Mostra la password"
 
 #~ msgctxt "NAME OF TRANSLATORS"
 #~ msgid "Your names"

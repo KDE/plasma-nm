@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bosnianuniversetranslation\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2015-02-15 13:02+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -32,7 +32,8 @@ msgstr "Prekini vezu"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
 msgstr ""
 
 #: ConnectionItem.qml:90
@@ -166,10 +167,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "Dostupne konekcije"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Show password"
+msgid "Wi-Fi password:"
+msgstr "Prikaži lozinku"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -266,6 +273,3 @@ msgstr ""
 #~| msgid "Available connections"
 #~ msgid "Show virtual connections"
 #~ msgstr "Dostupne konekcije"
-
-#~ msgid "Show password"
-#~ msgstr "Prikaži lozinku"

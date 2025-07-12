@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2010-12-17 15:28+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -32,9 +32,10 @@ msgstr "เชื่อมต่อแล้ว"
 
 #: ConnectionItem.qml:84
 #, fuzzy, kde-format
-#| msgid "Show network interfaces using:"
-msgid "Show Network's QR Code"
-msgstr "แสดงอินเทอร์เฟซเครือข่ายที่ใช้:"
+#| msgid "Shared"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "ใช้งานร่วมกัน"
 
 #: ConnectionItem.qml:90
 #, fuzzy, kde-format
@@ -175,10 +176,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "แก้ไขการเชื่อมต่อเครือข่าย"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgid "Wi-Fi password:"
+msgstr "รหัสผ่าน:"
 
 #: Toolbar.qml:123
 #, fuzzy, kde-format
@@ -250,6 +257,11 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Show network interfaces using:"
+#~ msgid "Show Network's QR Code"
+#~ msgstr "แสดงอินเทอร์เฟซเครือข่ายที่ใช้:"
 
 #, fuzzy
 #~ msgid "Connected"
@@ -2243,9 +2255,6 @@ msgstr ""
 #~ msgid "Manual"
 #~ msgstr "ปรับเลือกเอง"
 
-#~ msgid "Shared"
-#~ msgstr "ใช้งานร่วมกัน"
-
 #, fuzzy
 #~| msgid "Disabled"
 #~ msgctxt "like in this setting is Disabled"
@@ -3025,11 +3034,6 @@ msgstr ""
 
 #~ msgid "&Certificate:"
 #~ msgstr "ใ&บรับรอง:"
-
-#, fuzzy
-#~| msgid "Password:"
-#~ msgid "Key password:"
-#~ msgstr "รหัสผ่าน:"
 
 #~ msgid "Local IP"
 #~ msgstr "เลขไอพีภายใน"

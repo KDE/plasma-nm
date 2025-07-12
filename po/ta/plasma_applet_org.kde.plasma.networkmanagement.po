@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2023-07-30 12:10+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -29,8 +29,9 @@ msgstr "இணைப்பை துண்டி"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "பிணையத்தின் QR குறிமுறையைக் காட்டு"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -163,10 +164,15 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "பிணைய இணைப்புகளுக்கு திரும்பசெல்"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "\"%1\" பிணையத்தில் இன்னொரு சாதனத்தை இணைக்க இப்படத்தை அச்சாதனத்தில் வருடவும்."
+
+#: ShareNetworkQrCodePage.qml:108
+#, kde-format
+msgid "Wi-Fi password:"
+msgstr ""
 
 #: Toolbar.qml:123
 #, kde-format
@@ -237,6 +243,9 @@ msgstr "பதிவேற்றம்"
 #, kde-format
 msgid "Download"
 msgstr "பதிவிறக்கம்"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "பிணையத்தின் QR குறிமுறையைக் காட்டு"
 
 #~ msgid "Connected"
 #~ msgstr "இணைந்துள்ளது"

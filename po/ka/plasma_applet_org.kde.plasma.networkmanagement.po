@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2025-06-24 05:42+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -30,8 +30,9 @@ msgstr "გათიშვა"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "ქსელის QR კოდის ჩვენება"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -163,11 +164,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "ქსელურ შეერთებებზე დაბრუნებ"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
 "\"%1\" ქსელთან მისაერთებლად ეს QR კოდი შესაბამისი მოწყობილობით დაასკანერეთ."
+
+#: ShareNetworkQrCodePage.qml:108
+#, kde-format
+msgid "Wi-Fi password:"
+msgstr ""
 
 #: Toolbar.qml:123
 #, kde-format
@@ -241,6 +247,9 @@ msgstr "ატვირთვა"
 #, kde-format
 msgid "Download"
 msgstr "ჩამოტვირთვა"
+
+#~ msgid "Show Network's QR Code"
+#~ msgstr "ქსელის QR კოდის ჩვენება"
 
 #~ msgid "Connected"
 #~ msgstr "შეერთებული"

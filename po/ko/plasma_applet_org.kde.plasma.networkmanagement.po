@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2025-06-10 22:38+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -29,8 +29,9 @@ msgstr "연결 해제"
 
 #: ConnectionItem.qml:84
 #, kde-format
-msgid "Show Network's QR Code"
-msgstr "네트워크의 QR 코드 표시"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr ""
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -162,10 +163,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "네트워크 연결로 돌아가기"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "다른 장치에서 \"%1\" 네트워크에 연결하려면 이 QR 코드를 스캔하십시오."
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Show password"
+msgid "Wi-Fi password:"
+msgstr "암호 보이기"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -237,6 +244,9 @@ msgstr "업로드"
 msgid "Download"
 msgstr "다운로드"
 
+#~ msgid "Show Network's QR Code"
+#~ msgstr "네트워크의 QR 코드 표시"
+
 #~ msgid "Connected"
 #~ msgstr "연결됨"
 
@@ -286,6 +296,3 @@ msgstr "다운로드"
 
 #~ msgid "Show virtual connections"
 #~ msgstr "가상 연결 표시"
-
-#~ msgid "Show password"
-#~ msgstr "암호 보이기"

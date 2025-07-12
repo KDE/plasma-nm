@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-01 00:43+0000\n"
+"POT-Creation-Date: 2025-07-12 00:44+0000\n"
 "PO-Revision-Date: 2010-09-08 12:33+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -32,8 +32,10 @@ msgstr "संबंधित"
 
 #: ConnectionItem.qml:84
 #, fuzzy, kde-format
-msgid "Show Network's QR Code"
-msgstr "कनेक्शनसभ"
+#| msgid "Shared"
+msgctxt "Share Wi-Fi network's password or QR code"
+msgid "Share"
+msgstr "साझा"
 
 #: ConnectionItem.qml:90
 #, fuzzy, kde-format
@@ -166,10 +168,16 @@ msgctxt "@action:button"
 msgid "Return to Network Connections"
 msgstr "कनेक्शनसभ"
 
-#: ShareNetworkQrCodePage.qml:31
+#: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+
+#: ShareNetworkQrCodePage.qml:108
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgid "Wi-Fi password:"
+msgstr "कूटशब्द: "
 
 #: Toolbar.qml:123
 #, kde-format
@@ -240,6 +248,10 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~ msgid "Show Network's QR Code"
+#~ msgstr "कनेक्शनसभ"
 
 #, fuzzy
 #~ msgid "Connected"
@@ -1112,9 +1124,6 @@ msgstr ""
 #~ msgid "Manual"
 #~ msgstr "दस्ती"
 
-#~ msgid "Shared"
-#~ msgstr "साझा"
-
 #, fuzzy
 #~| msgid "Disabled"
 #~ msgctxt "like in this setting is Disabled"
@@ -1590,11 +1599,6 @@ msgstr ""
 #~| msgid "Certificate"
 #~ msgid "&Certificate:"
 #~ msgstr "प्रमाणपत्र"
-
-#, fuzzy
-#~| msgid "Password:"
-#~ msgid "Key password:"
-#~ msgstr "कूटशब्द: "
 
 #, fuzzy
 #~| msgid "None"

@@ -1,7 +1,7 @@
 # Translation for plasmanetworkmanagement-libs.po to Euskara/Basque (eu).
 # Copyright (C) 2017-2024 This file is copyright:
 # This file is distributed under the same license as plasma-nm package.
-# SPDX-FileCopyrightText: 2024 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2024, 2025 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Osoitz <oelkoro@gmail.com>, 2017.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-03-04 00:42+0000\n"
-"PO-Revision-Date: 2024-12-15 10:48+0100\n"
+"PO-Revision-Date: 2025-07-11 20:32+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -889,7 +889,7 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"«NetworkManager» sare-kudeatzaileak aplikazioei konexioa tarifatua den eta "
+"NetworkManager sare-kudeatzaileak aplikazioei konexioa tarifatua den eta "
 "ondorioz datuen\n"
 "erabilera mugatu beharko litzatekeen adierazten die."
 
@@ -3264,7 +3264,7 @@ msgstr "Eman errorearen berri"
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
-"«NetworkManager» sare-kudeatzaileari '%1' VPN konexioen euskarria falta zaio."
+"NetworkManager sare-kudeatzaileari '%1' VPN konexioen euskarria falta zaio."
 
 #: handler.cpp:146
 #, kde-format
@@ -3780,7 +3780,7 @@ msgstr "«NetworkManager» ez dabil"
 #: networkstatus.cpp:261
 #, kde-format
 msgid "NetworkManager 0.9.8 required, found %1."
-msgstr "«NetworkManager» 0.9.8 behar da, %1 aurkitu da."
+msgstr "NetworkManager 0.9.8 behar da, %1 aurkitu da."
 
 #: networkstatus.cpp:264
 #, kde-format

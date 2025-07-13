@@ -245,6 +245,3 @@ msgstr "Opplasting"
 #, kde-format
 msgid "Download"
 msgstr "Nedlasting"
-
-#~ msgid "Show Network's QR Code"
-#~ msgstr "Vis QR-kode for nettverket"

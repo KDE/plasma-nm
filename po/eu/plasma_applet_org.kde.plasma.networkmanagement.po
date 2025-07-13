@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-12 00:44+0000\n"
-"PO-Revision-Date: 2025-06-24 12:39+0200\n"
+"PO-Revision-Date: 2025-07-12 09:58+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: ConnectionItem.qml:59
 #, kde-format
@@ -34,7 +34,7 @@ msgstr "Deskonektatu"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "Partekatu"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -174,7 +174,7 @@ msgstr "Eskaneatu QR kode hori beste gailu batekin \"%1\" sarera konektatzeko."
 #: ShareNetworkQrCodePage.qml:108
 #, kde-format
 msgid "Wi-Fi password:"
-msgstr ""
+msgstr "Wi-Fi pasahitza:"
 
 #: Toolbar.qml:123
 #, kde-format

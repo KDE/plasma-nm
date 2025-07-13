@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-12 00:44+0000\n"
-"PO-Revision-Date: 2025-06-24 11:33+0300\n"
+"PO-Revision-Date: 2025-07-12 08:56+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -34,7 +34,7 @@ msgstr "Від'єднатися"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "Оприлюднити"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -174,10 +174,9 @@ msgstr ""
 "з'єднання з мережею «%1»."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "Показувати пароль"
+msgstr "Пароль до Wi-Fi:"
 
 #: Toolbar.qml:123
 #, kde-format

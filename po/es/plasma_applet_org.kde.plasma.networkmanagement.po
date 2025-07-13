@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-12 00:44+0000\n"
-"PO-Revision-Date: 2025-06-25 01:59+0100\n"
+"PO-Revision-Date: 2025-07-12 21:16+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: ConnectionItem.qml:59
 #, kde-format
@@ -33,7 +33,7 @@ msgstr "Desconectar"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "Compartir"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -174,7 +174,7 @@ msgstr ""
 #: ShareNetworkQrCodePage.qml:108
 #, kde-format
 msgid "Wi-Fi password:"
-msgstr ""
+msgstr "Contraseña wifi:"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -246,6 +246,3 @@ msgstr "Enviar"
 #, kde-format
 msgid "Download"
 msgstr "Descargar"
-
-#~ msgid "Show Network's QR Code"
-#~ msgstr "Mostrar el código QR de la red"

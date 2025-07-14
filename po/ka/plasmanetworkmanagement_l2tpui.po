@@ -22,7 +22,7 @@ msgstr ""
 #: l2tp.ui:19
 #, kde-format
 msgid "Gateway:"
-msgstr "ნაგულისხმები რაუტერი:"
+msgstr "ნაგულისხმევი რაუტერი:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: l2tp.ui:35

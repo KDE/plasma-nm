@@ -42,13 +42,13 @@ msgstr "%1: ფაილის შექმნის შეცდომა"
 #: vpnc.ui:18
 #, kde-format
 msgid "Gateway:"
-msgstr "ნაგულისხმები რაუტერი:"
+msgstr "ნაგულისხმევი რაუტერი:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: vpnc.ui:31
 #, kde-format
 msgid "IP/hostname of IPsec gateway."
-msgstr "IPSec ნაგულისხმები რაუტერის IP/ჰოსტის სახელი."
+msgstr "IPSec ნაგულისხმევი რაუტერის IP/ჰოსტის სახელი."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnc.ui:38
@@ -231,8 +231,8 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
-"ლოკალური პორტი (0-65535). 0 (ნაგულისხმები) ნიშნავს შემთხვევით პორტს. 500 "
-"vpnc-ის ნაგულისხმები მნიშვნელობაა."
+"ლოკალური პორტი (0-65535). 0 (ნაგულისხმევი) ნიშნავს შემთხვევით პორტს. 500 "
+"vpnc-ის ნაგულისხმევი მნიშვნელობაა."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193
@@ -273,7 +273,7 @@ msgstr "Netscreen"
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
-msgstr "დაცული (ნაგულისხმები)"
+msgstr "დაცული (ნაგულისხმევი)"
 
 #: vpncadvancedwidget.cpp:28
 #, kde-format
@@ -291,7 +291,7 @@ msgstr "არცერთი (საერთოდ დაუცველი)"
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr "NAT-T როცა ხელმისაწვდომია (ნაგულისხმები)"
+msgstr "NAT-T როცა ხელმისაწვდომია (ნაგულისხმევი)"
 
 #: vpncadvancedwidget.cpp:33
 #, kde-format
@@ -321,7 +321,7 @@ msgstr "DH ჯგუფი 1"
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 2 (default)"
-msgstr "DH ჯგუფი 2 (ნაგულისხმები)"
+msgstr "DH ჯგუფი 2 (ნაგულისხმევი)"
 
 #: vpncadvancedwidget.cpp:40
 #, kde-format
@@ -333,7 +333,7 @@ msgstr "DH ჯგუფი 5"
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
-msgstr "სერვერი (ნაგულისხმები)"
+msgstr "სერვერი (ნაგულისხმევი)"
 
 #: vpncadvancedwidget.cpp:44
 #, kde-format

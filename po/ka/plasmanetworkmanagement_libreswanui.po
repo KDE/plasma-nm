@@ -22,7 +22,7 @@ msgstr ""
 #: libreswan.ui:20
 #, kde-format
 msgid "Gateway:"
-msgstr "ნაგულისხმები რაუტერი:"
+msgstr "ნაგულისხმევი რაუტერი:"
 
 #. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_2)

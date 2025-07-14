@@ -140,7 +140,7 @@ msgstr "მთავარი"
 #: openconnectprop.ui:38
 #, kde-format
 msgid "Gateway:"
-msgstr "ნაგულისხმები რაუტერი:"
+msgstr "ნაგულისხმევი რაუტერი:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: openconnectprop.ui:51

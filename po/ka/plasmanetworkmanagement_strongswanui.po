@@ -63,13 +63,13 @@ msgstr "პაროლი: "
 #: strongswanprop.ui:20
 #, kde-format
 msgid "Gateway"
-msgstr "ნაგულისხმები რაუტერი"
+msgstr "ნაგულისხმევი რაუტერი"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: strongswanprop.ui:29
 #, kde-format
 msgid "Gateway:"
-msgstr "ნაგულისხმები რაუტერი:"
+msgstr "ნაგულისხმევი რაუტერი:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_4)

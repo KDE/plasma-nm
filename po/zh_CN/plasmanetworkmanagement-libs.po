@@ -1098,7 +1098,7 @@ msgstr ""
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
 #, kde-format
 msgid "Route Metric:"
-msgstr ""
+msgstr "路由跃点数："
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -1111,6 +1111,10 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"系统用于选择数据包到达目的地的最佳路径的评分，\n"
+"分值根据距离、延迟和可靠性等因素决定。\n"
+"\n"
+"默认值 -1 意味着由 NetworkManager 来选择并管理该路由的实际跃点数。"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97

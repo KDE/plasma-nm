@@ -34,7 +34,7 @@ msgstr "საერთო"
 #: fortisslvpn.ui:64
 #, kde-format
 msgid "Gateway:"
-msgstr "ნაგულისხმები რაუტერი:"
+msgstr "ნაგულისხმევი რაუტერი:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, gateway)
 #: fortisslvpn.ui:74

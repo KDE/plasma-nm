@@ -234,7 +234,7 @@ msgstr "ძირითადი"
 #: pptpprop.ui:34
 #, kde-format
 msgid "Gateway:"
-msgstr "ნაგულისხმები რაუტერი:"
+msgstr "ნაგულისხმევი რაუტერი:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_gateway)
 #: pptpprop.ui:47

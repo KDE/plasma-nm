@@ -241,6 +241,3 @@ msgstr "上传"
 #, kde-format
 msgid "Download"
 msgstr "下载"
-
-#~ msgid "Show Network's QR Code"
-#~ msgstr "显示网络的二维码"

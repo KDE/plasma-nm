@@ -216,7 +216,7 @@ msgstr "პაროლი: "
 #: sstpwidget.ui:25
 #, kde-format
 msgid "Gateway:"
-msgstr "ნაგულისხმები რაუტერი:"
+msgstr "ნაგულისხმევი რაუტერი:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btn_advancedOption)
 #: sstpwidget.ui:58

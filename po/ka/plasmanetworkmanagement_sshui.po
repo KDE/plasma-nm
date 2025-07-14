@@ -58,7 +58,7 @@ msgstr "დაშორებული მომხმარებლის ს�
 #: sshadvanced.ui:132
 #, kde-format
 msgid "Do not replace default route"
-msgstr "ნაგულისხმები რაუტის არ შეცვლა"
+msgstr "ნაგულისხმევი რაუტის არ შეცვლა"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SshAuth)
 #: sshauth.ui:14
@@ -82,7 +82,7 @@ msgstr "ძირითადი"
 #: sshwidget.ui:55
 #, kde-format
 msgid "Gateway:"
-msgstr "ნაგულისხმები რაუტერი:"
+msgstr "ნაგულისხმევი რაუტერი:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: sshwidget.ui:73

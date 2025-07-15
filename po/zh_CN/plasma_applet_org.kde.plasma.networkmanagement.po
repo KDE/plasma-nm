@@ -32,7 +32,7 @@ msgstr "断开"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "分享"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -170,7 +170,7 @@ msgstr "使用另一个设备扫描此二维码以连接到“%1”网络。"
 #: ShareNetworkQrCodePage.qml:108
 #, kde-format
 msgid "Wi-Fi password:"
-msgstr ""
+msgstr "Wi-Fi 密码："
 
 #: Toolbar.qml:123
 #, kde-format

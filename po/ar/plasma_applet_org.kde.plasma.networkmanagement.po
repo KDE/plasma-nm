@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-12 00:44+0000\n"
-"PO-Revision-Date: 2025-06-26 10:17+0400\n"
+"PO-Revision-Date: 2025-07-14 20:12+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -33,7 +33,7 @@ msgstr "اقطع الاتصال"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "شارك"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -171,10 +171,9 @@ msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "امسح رمز QR هذا ضوئيًا باستخدام جهاز آخر للاتصال بالشبكة \"%1\"."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "أظهر كلمة المرور"
+msgstr "كلمة سر واي-فاي:"
 
 #: Toolbar.qml:123
 #, kde-format

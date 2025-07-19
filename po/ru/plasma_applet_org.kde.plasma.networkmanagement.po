@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-12 00:44+0000\n"
-"PO-Revision-Date: 2025-05-22 18:27+0300\n"
+"PO-Revision-Date: 2025-07-04 18:10+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.3\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -72,11 +72,10 @@ msgid ""
 msgstr "Текущая скорость приёма: %1 КиБ/с, скорость отдачи: %2 КиБ/с"
 
 #: ConnectionItem.qml:292
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Подключено, ↓ %1/с, ↑ %2/с"
+msgstr "↓ %1/s, ↑ %2/s"
 
 #: ConnectionListPage.qml:33
 #, kde-format
@@ -105,10 +104,9 @@ msgid "Wireless is deactivated"
 msgstr "Беспроводная сеть отключена"
 
 #: ConnectionListPage.qml:126
-#, fuzzy, kde-format
-#| msgid "Rescan wireless networks"
+#, kde-format
 msgid "Looking for wireless networks"
-msgstr "Заново просканировать беспроводные сети"
+msgstr "Поиск беспроводных сетей"
 
 #: ConnectionListPage.qml:129
 #, kde-format

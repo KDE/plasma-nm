@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Kishore G <kishore96@gmail.com>, 2021, 2022, 2023.
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2025 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-12 00:44+0000\n"
-"PO-Revision-Date: 2023-07-30 12:10+0530\n"
+"PO-Revision-Date: 2025-07-19 15:44+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.04.3\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: ConnectionItem.qml:59
 #, kde-format
@@ -31,7 +31,7 @@ msgstr "இணைப்பை துண்டி"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "பகிர்"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -59,11 +59,10 @@ msgstr ""
 "நொடிக்கு %2 கிபிபைட்டுகள் ஆகும்"
 
 #: ConnectionItem.qml:292
-#, fuzzy, kde-format
-#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "இணைந்துள்ளது, ⬇ %1/s, ⬆ %2/s"
+msgstr "↓%1/s, ↑ %2/s"
 
 #: ConnectionListPage.qml:33
 #, kde-format
@@ -94,7 +93,7 @@ msgstr "அருகலை முடங்கியுள்ளது"
 #: ConnectionListPage.qml:126
 #, kde-format
 msgid "Looking for wireless networks"
-msgstr ""
+msgstr "அருகலை பிணையங்கள் கண்டுபிடிக்கப்படுகின்றன"
 
 #: ConnectionListPage.qml:129
 #, kde-format
@@ -172,7 +171,7 @@ msgstr "\"%1\" பிணையத்தில் இன்னொரு சாத
 #: ShareNetworkQrCodePage.qml:108
 #, kde-format
 msgid "Wi-Fi password:"
-msgstr ""
+msgstr "அருகலை கடவுச்சொல்:"
 
 #: Toolbar.qml:123
 #, kde-format
@@ -200,7 +199,7 @@ msgstr "ஹாட்ஸ்பாட்"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "அருகலை முடக்கப்பட்டுள்ளதால் ஹாட்ஸ்பாட்டை உருவாக்க முடியாது."
 
 #: Toolbar.qml:181
 #, kde-format
@@ -209,17 +208,18 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"அனைத்து அருகலை வானொலிச்சாதனங்களும் பயனில் உள்ளதால் ஹாட்ஸ்பாட்டை உருவாக்க முடியாது. "
+"தற்போதைய அருகலை பிணையத்திலிருந்து வெளியேறவும், அல்லது இன்னோரு வானொலிச்சாதனத்தை "
+"இணைக்கவும்."
 
 #: Toolbar.qml:183
-#, fuzzy, kde-format
-#| msgid "Disable Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "ஹாட்ஸ்பாட்டை முடக்கு"
 
 #: Toolbar.qml:185
-#, fuzzy, kde-format
-#| msgid "Create Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "ஹாட்ஸ்பாட்டை உருவாக்கு"

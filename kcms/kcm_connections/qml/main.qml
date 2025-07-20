@@ -217,7 +217,7 @@ QQC2.Page {
         }
     }
 
-    MessageDialog {
+    Kirigami.PromptDialog {
         id: deleteConfirmationDialog
 
         property string connectionName
@@ -234,23 +234,19 @@ QQC2.Page {
             });
         }
 
-        parentWindow: root.Window.window
-        buttons: MessageDialog.Ok | MessageDialog.Cancel
+        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
         title: i18nc("@title:window", "Remove Connection")
-        text: i18n("Do you want to remove the connection '%1'?", toHtmlEscaped(connectionName))
+        subtitle: i18n("Do you want to remove the connection '%1'?", toHtmlEscaped(connectionName))
 
         // QTBUG-122770 accepted signal isn't emitted for Ok button.
-        onButtonClicked: (button, role) => {
-            if (role === MessageDialog.AcceptRole) {
-                if (connectionPath === connectionView.currentConnectionPath) {
-                    // Deselect now non-existing connection
-                    root.deselectConnections()
-                }
-                handler.removeConnection(connectionPath)
+        onAccepted: {
+            if (connectionPath === connectionView.currentConnectionPath) {
+                // Deselect now non-existing connection
+                root.deselectConnections()
             }
+            handler.removeConnection(connectionPath)
         }
     }
-
     AddConnectionDialog {
         id: addNewConnectionDialog
 

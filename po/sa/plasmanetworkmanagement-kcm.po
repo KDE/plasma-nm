@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 07:07+0000\n"
+"POT-Creation-Date: 2025-07-21 00:44+0000\n"
 "PO-Revision-Date: 2024-12-13 19:10+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -198,11 +198,11 @@ msgstr "चयनितं संयोजनं निष्कासयन्�
 msgid "Export selected connection"
 msgstr "चयनितं संयोजनं निर्यातयन्तु"
 
-#: qml/main.qml:239
+#: qml/main.qml:238
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "संयोजनं निष्कासयन्तु"
 
-#: qml/main.qml:240
+#: qml/main.qml:239
 msgid "Do you want to remove the connection '%1'?"
 msgstr "किं भवान् '%1' इति संयोजनं हर्तुं इच्छति?"

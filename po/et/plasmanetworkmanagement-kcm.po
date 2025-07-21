@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 07:07+0000\n"
+"POT-Creation-Date: 2025-07-21 00:44+0000\n"
 "PO-Revision-Date: 2020-01-16 11:07+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -201,12 +201,12 @@ msgstr "Eemalda valitud ühendus"
 msgid "Export selected connection"
 msgstr "Ekspordi valitud ühendus"
 
-#: qml/main.qml:239
+#: qml/main.qml:238
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Ühenduse eemaldamine"
 
-#: qml/main.qml:240
+#: qml/main.qml:239
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Kas eemaldada ühendus '%1'?"
 

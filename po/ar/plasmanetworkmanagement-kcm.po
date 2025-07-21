@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 07:07+0000\n"
+"POT-Creation-Date: 2025-07-21 00:44+0000\n"
 "PO-Revision-Date: 2025-06-12 12:02+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -200,11 +200,11 @@ msgstr "أزل الاتصال المحدد"
 msgid "Export selected connection"
 msgstr "صدر الاتصال المحدد"
 
-#: qml/main.qml:239
+#: qml/main.qml:238
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "أزل الاتصال"
 
-#: qml/main.qml:240
+#: qml/main.qml:239
 msgid "Do you want to remove the connection '%1'?"
 msgstr "أتريد إزالة الاتصال '%1'؟"

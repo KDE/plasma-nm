@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-02 07:07+0000\n"
+"POT-Creation-Date: 2025-07-21 00:44+0000\n"
 "PO-Revision-Date: 2025-06-10 12:27+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -200,11 +200,11 @@ msgstr "Eliminar la conexión seleccionada"
 msgid "Export selected connection"
 msgstr "Exportar la conexión seleccionada"
 
-#: qml/main.qml:239
+#: qml/main.qml:238
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Eliminar conexión"
 
-#: qml/main.qml:240
+#: qml/main.qml:239
 msgid "Do you want to remove the connection '%1'?"
 msgstr "¿Desea eliminar la conexión «%1»?"

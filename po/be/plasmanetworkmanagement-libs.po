@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:58+0000\n"
+"POT-Creation-Date: 2025-07-22 00:44+0000\n"
 "PO-Revision-Date: 2024-10-24 08:20\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -3255,27 +3255,27 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "В&ыдаліць"
 
-#: handler.cpp:126
+#: handler.cpp:128
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma не падтрымлівае VPN-злучэнні \"%1\"."
 
-#: handler.cpp:129
+#: handler.cpp:131
 #, kde-format
 msgid "Report Bug"
 msgstr "Паведаміць пра хібу"
 
-#: handler.cpp:152
+#: handler.cpp:154
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager не падтрымлівае VPN-злучэнні \"%1\"."
 
-#: handler.cpp:155
+#: handler.cpp:157
 #, kde-format
 msgid "Install"
 msgstr "Усталяваць"
 
-#: handler.cpp:201
+#: handler.cpp:203
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Не ўдалося актываваць \"%1\""

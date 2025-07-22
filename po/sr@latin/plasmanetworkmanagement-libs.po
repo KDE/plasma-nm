@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:58+0000\n"
+"POT-Creation-Date: 2025-07-22 00:44+0000\n"
 "PO-Revision-Date: 2017-12-17 18:01+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -3267,27 +3267,27 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Ukloni"
 
-#: handler.cpp:126
+#: handler.cpp:128
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:129
+#: handler.cpp:131
 #, kde-format
 msgid "Report Bug"
 msgstr ""
 
-#: handler.cpp:152
+#: handler.cpp:154
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:155
+#: handler.cpp:157
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:201
+#: handler.cpp:203
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Ne mogu da aktiviram %1"

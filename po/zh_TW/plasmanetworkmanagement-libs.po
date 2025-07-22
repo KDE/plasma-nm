@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:58+0000\n"
+"POT-Creation-Date: 2025-07-22 00:44+0000\n"
 "PO-Revision-Date: 2025-07-03 23:53+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3212,27 +3212,27 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "移除(&E)"
 
-#: handler.cpp:126
+#: handler.cpp:128
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma 目前缺乏對「%1」VPN 連線的支援。"
 
-#: handler.cpp:129
+#: handler.cpp:131
 #, kde-format
 msgid "Report Bug"
 msgstr "回報問題"
 
-#: handler.cpp:152
+#: handler.cpp:154
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager 目前缺乏對「%1」VPN 連線的支援。"
 
-#: handler.cpp:155
+#: handler.cpp:157
 #, kde-format
 msgid "Install"
 msgstr "安裝"
 
-#: handler.cpp:201
+#: handler.cpp:203
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "啟動 %1 失敗"

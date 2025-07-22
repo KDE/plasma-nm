@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-03 06:58+0000\n"
+"POT-Creation-Date: 2025-07-22 00:44+0000\n"
 "PO-Revision-Date: 2023-02-21 09:35+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -3277,7 +3277,7 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Hapus"
 
-#: handler.cpp:126
+#: handler.cpp:128
 #, fuzzy, kde-format
 #| msgid ""
 #| "NetworkManager is missing support for '%1' VPN connections. Please use "
@@ -3287,12 +3287,12 @@ msgstr ""
 "NetworkManager kehilangan dukungan koneksi VPN '%1'. Mohon gunakan manajer "
 "paket untuk menginstalnya."
 
-#: handler.cpp:129
+#: handler.cpp:131
 #, kde-format
 msgid "Report Bug"
 msgstr ""
 
-#: handler.cpp:152
+#: handler.cpp:154
 #, fuzzy, kde-format
 #| msgid ""
 #| "NetworkManager is missing support for '%1' VPN connections. Please use "
@@ -3302,12 +3302,12 @@ msgstr ""
 "NetworkManager kehilangan dukungan koneksi VPN '%1'. Mohon gunakan manajer "
 "paket untuk menginstalnya."
 
-#: handler.cpp:155
+#: handler.cpp:157
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:201
+#: handler.cpp:203
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Gagal mengaktifkan %1"

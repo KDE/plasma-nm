@@ -98,6 +98,9 @@ ColumnLayout {
                 visible: status === Loader.Ready
                 sourceComponent: PlasmaExtras.PlaceholderMessage {
                     iconName: {
+                        if (toolbar.searchTextField.text.length > 0) {
+                            return "edit-none"
+                        }
                         if (toolbar.displayplaneModeMessage) {
                             return "network-flightmode-on"
                         }
@@ -113,6 +116,9 @@ ColumnLayout {
                         return "edit-none"
                     }
                     text: {
+                        if (toolbar.searchTextField.text.length > 0) {
+                            return i18n("No matches")
+                        }
                         if (toolbar.displayplaneModeMessage) {
                             return i18n("Airplane mode is enabled")
                         }
@@ -127,9 +133,6 @@ ColumnLayout {
                         }
                         if (toolbar.displayWwanMessage) {
                             return i18n("Mobile network is deactivated")
-                        }
-                        if (toolbar.searchTextField.text.length > 0) {
-                            return i18n("No matches")
                         }
                         if (connectionListPage.nmStatus.connectivity === NMQt.NetworkManager.Full) {
                             return i18n("No available connections")

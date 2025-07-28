@@ -17,7 +17,7 @@ RowLayout {
     id: toolbar
 
     readonly property var displayWifiOffMessage: !wifiSwitchButton.checked && wifiSwitchButton.visible
-    readonly property var displayWifiConnectingMessage: wifiSwitchButton.checked && wifiSwitchButton.visible
+    readonly property var displayWifiConnectingMessage: wifiSwitchButton.checked && wifiSwitchButton.visible && searchTextField.text.length === 0
     readonly property var displayWwanMessage: !wwanSwitchButton.checked && wwanSwitchButton.visible
     readonly property var displayplaneModeMessage: planeModeSwitchButton.checked && planeModeSwitchButton.visible
 

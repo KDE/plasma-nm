@@ -96,9 +96,9 @@ void PasswordDialog::initializeUi()
         if (wifi && (connectionType == Setting::WirelessSecurity || connectionType == Setting::Security8021x)) {
             const QString ssid = QString::fromUtf8(wifi->ssid());
             if (m_flags & NetworkManager::SecretAgent::RequestNew) {
-                m_ui->labelText->setText(i18n("Incorrect password for the wireless network \"%1\". Please try again.", ssid));
+                m_ui->labelText->setText(i18n("Incorrect password for the Wi-Fi network \"%1\". Please try again.", ssid));
             } else {
-                m_ui->labelText->setText(i18n("Enter the password for the wireless network \"%1\":", ssid));
+                m_ui->labelText->setText(i18n("Enter the password for the Wi-Fi network \"%1\":", ssid));
             }
         } else {
             if (m_flags & NetworkManager::SecretAgent::RequestNew) {

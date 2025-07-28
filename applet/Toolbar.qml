@@ -120,7 +120,7 @@ RowLayout {
             onToggled: handler.enableWwan(checked);
 
             PlasmaComponents3.ToolTip {
-                text: i18n("Enable mobile network")
+                text: i18n("Enable mobile data")
             }
         }
 

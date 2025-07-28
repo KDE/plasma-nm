@@ -118,15 +118,15 @@ ColumnLayout {
                         }
                         if (toolbar.displayWifiOffMessage) {
                             if (toolbar.displayWwanMessage) {
-                                return i18n("Wireless and mobile networks are deactivated")
+                                return i18n("Wi-Fi and mobile data are deactivated")
                             }
-                            return i18n("Wireless is deactivated")
+                            return i18n("Wi-Fi is deactivated")
                         }
                         if (toolbar.displayWifiConnectingMessage) {
-                            return i18n("Looking for wireless networks")
+                            return i18n("Looking for Wi-Fi networks")
                         }
                         if (toolbar.displayWwanMessage) {
-                            return i18n("Mobile network is deactivated")
+                            return i18n("Mobile data is deactivated")
                         }
                         if (toolbar.searchTextField.text.length > 0) {
                             return i18n("No matches")

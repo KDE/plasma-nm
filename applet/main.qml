@@ -79,7 +79,7 @@ PlasmoidItem {
             onTriggered: checked => {handler.enableWireless(checked)}
         },
         PlasmaCore.Action {
-            text: i18n("Enable Mobile Network")
+            text: i18n("Enable Mobile Data")
             icon.name: "network-mobile-on"
             priority: PlasmaCore.Action.LowPriority
             checkable: true

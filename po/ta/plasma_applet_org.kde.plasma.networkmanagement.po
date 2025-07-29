@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-12 00:44+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2025-07-19 15:44+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -81,23 +81,27 @@ msgid "Airplane mode is enabled"
 msgstr "விமான பயன்முறை இயங்குகிறது"
 
 #: ConnectionListPage.qml:121
-#, kde-format
-msgid "Wireless and mobile networks are deactivated"
+#, fuzzy, kde-format
+#| msgid "Wireless and mobile networks are deactivated"
+msgid "Wi-Fi and mobile data are deactivated"
 msgstr "அருகலை மற்றும் கைபேசி பிணையங்கள் முடங்கியுள்ளன"
 
 #: ConnectionListPage.qml:123
-#, kde-format
-msgid "Wireless is deactivated"
+#, fuzzy, kde-format
+#| msgid "Wireless is deactivated"
+msgid "Wi-Fi is deactivated"
 msgstr "அருகலை முடங்கியுள்ளது"
 
 #: ConnectionListPage.qml:126
-#, kde-format
-msgid "Looking for wireless networks"
+#, fuzzy, kde-format
+#| msgid "Looking for wireless networks"
+msgid "Looking for Wi-Fi networks"
 msgstr "அருகலை பிணையங்கள் கண்டுபிடிக்கப்படுகின்றன"
 
 #: ConnectionListPage.qml:129
-#, kde-format
-msgid "Mobile network is deactivated"
+#, fuzzy, kde-format
+#| msgid "Mobile network is deactivated"
+msgid "Mobile data is deactivated"
 msgstr "கைபேசி பிணையம் முடங்கியுள்ளது"
 
 #: ConnectionListPage.qml:132
@@ -109,6 +113,30 @@ msgstr "பொருத்தங்கள் இல்லை"
 #, kde-format
 msgid "No available connections"
 msgstr "பிணையங்கள் எதுவும் இல்லை"
+
+#: ConnectionListPage.qml:144
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn off airplane mode to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:148
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi or mobile data to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:150
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:153
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on mobile data to search for networks"
+msgstr ""
 
 #: DetailsText.qml:49
 #, kde-format
@@ -138,8 +166,9 @@ msgid "Enable Wi-Fi"
 msgstr "அருகலையை இயக்கு"
 
 #: main.qml:82
-#, kde-format
-msgid "Enable Mobile Network"
+#, fuzzy, kde-format
+#| msgid "Enable Mobile Network"
+msgid "Enable Mobile Data"
 msgstr "கைபேசி பிணையத்தை இயக்கு"
 
 #: main.qml:94
@@ -174,8 +203,9 @@ msgid "Wi-Fi password:"
 msgstr "அருகலை கடவுச்சொல்:"
 
 #: Toolbar.qml:123
-#, kde-format
-msgid "Enable mobile network"
+#, fuzzy, kde-format
+#| msgid "Enable mobile network"
+msgid "Enable mobile data"
 msgstr "கைபேசி பிணையத்தை இயக்கு"
 
 #: Toolbar.qml:148

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-12 00:44+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2025-07-13 10:19+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -81,23 +81,27 @@ msgid "Airplane mode is enabled"
 msgstr "La modalità aereo è abilitata"
 
 #: ConnectionListPage.qml:121
-#, kde-format
-msgid "Wireless and mobile networks are deactivated"
+#, fuzzy, kde-format
+#| msgid "Wireless and mobile networks are deactivated"
+msgid "Wi-Fi and mobile data are deactivated"
 msgstr "Le reti senza fili e mobili sono disattivate"
 
 #: ConnectionListPage.qml:123
-#, kde-format
-msgid "Wireless is deactivated"
+#, fuzzy, kde-format
+#| msgid "Wireless is deactivated"
+msgid "Wi-Fi is deactivated"
 msgstr "La rete senza fili è disattivata"
 
 #: ConnectionListPage.qml:126
-#, kde-format
-msgid "Looking for wireless networks"
+#, fuzzy, kde-format
+#| msgid "Looking for wireless networks"
+msgid "Looking for Wi-Fi networks"
 msgstr "Alla ricerca di reti senza fili"
 
 #: ConnectionListPage.qml:129
-#, kde-format
-msgid "Mobile network is deactivated"
+#, fuzzy, kde-format
+#| msgid "Mobile network is deactivated"
+msgid "Mobile data is deactivated"
 msgstr "La rete mobile è disattivata"
 
 #: ConnectionListPage.qml:132
@@ -109,6 +113,30 @@ msgstr "Nessuna corrispondenza"
 #, kde-format
 msgid "No available connections"
 msgstr "Nessuna connessione disponibile"
+
+#: ConnectionListPage.qml:144
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn off airplane mode to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:148
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi or mobile data to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:150
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:153
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on mobile data to search for networks"
+msgstr ""
 
 #: DetailsText.qml:49
 #, kde-format
@@ -139,8 +167,9 @@ msgid "Enable Wi-Fi"
 msgstr "Abilita Wi-Fi"
 
 #: main.qml:82
-#, kde-format
-msgid "Enable Mobile Network"
+#, fuzzy, kde-format
+#| msgid "Enable Mobile Network"
+msgid "Enable Mobile Data"
 msgstr "Abilita rete mobile"
 
 #: main.qml:94
@@ -177,9 +206,11 @@ msgid "Wi-Fi password:"
 msgstr "Password Wi-Fi:"
 
 #: Toolbar.qml:123
-#, kde-format
-msgid "Enable mobile network"
-msgstr "Abilita rete mobile"
+#, fuzzy, kde-format
+#| msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
+#| msgid "Enable mobile broadband"
+msgid "Enable mobile data"
+msgstr "Abilita banda larga mobile"
 
 #: Toolbar.qml:148
 #, kde-kuit-format
@@ -248,6 +279,9 @@ msgstr "Invio"
 #, kde-format
 msgid "Download"
 msgstr "Scaricamento"
+
+#~ msgid "Enable mobile network"
+#~ msgstr "Abilita rete mobile"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "Mostra il codice QR della rete"
@@ -1900,10 +1934,6 @@ msgstr "Scaricamento"
 #~ msgctxt "@info:tooltip"
 #~ msgid "Shared Connections"
 #~ msgstr "Connessioni condivise"
-
-#~ msgctxt "CheckBox to enable or disable wwan (mobile broadband) interface)"
-#~ msgid "Enable mobile broadband"
-#~ msgstr "Abilita banda larga mobile"
 
 #~ msgctxt "settings button in applet's popup window"
 #~ msgid "Settings..."

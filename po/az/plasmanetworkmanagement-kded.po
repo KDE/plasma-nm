@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2025-05-06 12:02+0400\n"
 "Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -553,13 +553,16 @@ msgid "No secrets were requested"
 msgstr "Təhlükəsiz qoşulmalar üçün məlumat tələb olunmayıb"
 
 #: passworddialog.cpp:99
-#, kde-format
-msgid "Incorrect password for the wireless network \"%1\". Please try again."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Incorrect password for the wireless network \"%1\". Please try again."
+msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
 msgstr "\"%1\" simsiz şəbəkəsi üçün şifrə yalnışdır. Yenidən cəhd edin."
 
 #: passworddialog.cpp:101
-#, kde-format
-msgid "Enter the password for the wireless network \"%1\":"
+#, fuzzy, kde-format
+#| msgid "Enter the password for the wireless network \"%1\":"
+msgid "Enter the password for the Wi-Fi network \"%1\":"
 msgstr "\"%1\" simsiz şəbəkəsi üçün şifrə daxil edin:"
 
 #: passworddialog.cpp:105

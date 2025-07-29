@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2024-08-08 12:36+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -562,14 +562,17 @@ msgid "No secrets were requested"
 msgstr "No s'han sol·licitat secrets"
 
 #: passworddialog.cpp:99
-#, kde-format
-msgid "Incorrect password for the wireless network \"%1\". Please try again."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Incorrect password for the wireless network \"%1\". Please try again."
+msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
 msgstr ""
 "Contrasenya incorrecta per a la xarxa sense fil «%1». Torneu-ho a provar."
 
 #: passworddialog.cpp:101
-#, kde-format
-msgid "Enter the password for the wireless network \"%1\":"
+#, fuzzy, kde-format
+#| msgid "Enter the password for the wireless network \"%1\":"
+msgid "Enter the password for the Wi-Fi network \"%1\":"
 msgstr "Introduïu la contrasenya per a la xarxa sense fil «%1»:"
 
 #: passworddialog.cpp:105

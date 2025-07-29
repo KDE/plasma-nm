@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-12 00:44+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2025-07-01 19:34+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -84,23 +84,27 @@ msgid "Airplane mode is enabled"
 msgstr "已啟用飛航模式"
 
 #: ConnectionListPage.qml:121
-#, kde-format
-msgid "Wireless and mobile networks are deactivated"
+#, fuzzy, kde-format
+#| msgid "Wireless and mobile networks are deactivated"
+msgid "Wi-Fi and mobile data are deactivated"
 msgstr "已停用無線及行動網路"
 
 #: ConnectionListPage.qml:123
-#, kde-format
-msgid "Wireless is deactivated"
+#, fuzzy, kde-format
+#| msgid "Wireless is deactivated"
+msgid "Wi-Fi is deactivated"
 msgstr "已停用無線網路"
 
 #: ConnectionListPage.qml:126
-#, kde-format
-msgid "Looking for wireless networks"
+#, fuzzy, kde-format
+#| msgid "Looking for wireless networks"
+msgid "Looking for Wi-Fi networks"
 msgstr "正在尋找無線網路"
 
 #: ConnectionListPage.qml:129
-#, kde-format
-msgid "Mobile network is deactivated"
+#, fuzzy, kde-format
+#| msgid "Mobile network is deactivated"
+msgid "Mobile data is deactivated"
 msgstr "已停用行動網路"
 
 #: ConnectionListPage.qml:132
@@ -112,6 +116,30 @@ msgstr "無相符項目"
 #, kde-format
 msgid "No available connections"
 msgstr "沒有可用連線"
+
+#: ConnectionListPage.qml:144
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn off airplane mode to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:148
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi or mobile data to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:150
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:153
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on mobile data to search for networks"
+msgstr ""
 
 #: DetailsText.qml:49
 #, kde-format
@@ -141,8 +169,9 @@ msgid "Enable Wi-Fi"
 msgstr "啟用 Wi-Fi"
 
 #: main.qml:82
-#, kde-format
-msgid "Enable Mobile Network"
+#, fuzzy, kde-format
+#| msgid "Enable Mobile Network"
+msgid "Enable Mobile Data"
 msgstr "啟用行動網路"
 
 #: main.qml:94
@@ -177,8 +206,9 @@ msgid "Wi-Fi password:"
 msgstr ""
 
 #: Toolbar.qml:123
-#, kde-format
-msgid "Enable mobile network"
+#, fuzzy, kde-format
+#| msgid "Enable mobile network"
+msgid "Enable mobile data"
 msgstr "啟用行動網路"
 
 #: Toolbar.qml:148

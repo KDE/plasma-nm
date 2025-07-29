@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: bosnianuniversetranslation\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-12 00:44+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2015-02-15 13:02+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: Bosnian <bs@li.org>\n"
@@ -84,22 +84,22 @@ msgstr ""
 
 #: ConnectionListPage.qml:121
 #, kde-format
-msgid "Wireless and mobile networks are deactivated"
+msgid "Wi-Fi and mobile data are deactivated"
 msgstr ""
 
 #: ConnectionListPage.qml:123
 #, kde-format
-msgid "Wireless is deactivated"
+msgid "Wi-Fi is deactivated"
 msgstr ""
 
 #: ConnectionListPage.qml:126
 #, kde-format
-msgid "Looking for wireless networks"
+msgid "Looking for Wi-Fi networks"
 msgstr ""
 
 #: ConnectionListPage.qml:129
 #, kde-format
-msgid "Mobile network is deactivated"
+msgid "Mobile data is deactivated"
 msgstr ""
 
 #: ConnectionListPage.qml:132
@@ -112,6 +112,30 @@ msgstr ""
 #| msgid "Available connections"
 msgid "No available connections"
 msgstr "Dostupne konekcije"
+
+#: ConnectionListPage.qml:144
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn off airplane mode to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:148
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi or mobile data to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:150
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:153
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on mobile data to search for networks"
+msgstr ""
 
 #: DetailsText.qml:49
 #, kde-format
@@ -142,7 +166,7 @@ msgstr ""
 
 #: main.qml:82
 #, kde-format
-msgid "Enable Mobile Network"
+msgid "Enable Mobile Data"
 msgstr ""
 
 #: main.qml:94
@@ -180,7 +204,7 @@ msgstr "Prikaži lozinku"
 
 #: Toolbar.qml:123
 #, kde-format
-msgid "Enable mobile network"
+msgid "Enable mobile data"
 msgstr ""
 
 #: Toolbar.qml:148

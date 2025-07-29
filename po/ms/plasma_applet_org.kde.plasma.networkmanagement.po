@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-12 00:44+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2010-07-30 21:29+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -81,23 +81,23 @@ msgstr "Tanpa wayar"
 
 #: ConnectionListPage.qml:121
 #, kde-format
-msgid "Wireless and mobile networks are deactivated"
+msgid "Wi-Fi and mobile data are deactivated"
 msgstr ""
 
 #: ConnectionListPage.qml:123
 #, fuzzy, kde-format
-msgid "Wireless is deactivated"
+msgid "Wi-Fi is deactivated"
 msgstr "Tanpa wayar"
 
 #: ConnectionListPage.qml:126
 #, kde-format
-msgid "Looking for wireless networks"
+msgid "Looking for Wi-Fi networks"
 msgstr ""
 
 #: ConnectionListPage.qml:129
-#, kde-format
-msgid "Mobile network is deactivated"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Mobile data is deactivated"
+msgstr "Tanpa wayar"
 
 #: ConnectionListPage.qml:132
 #, kde-format
@@ -108,6 +108,30 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "Sambungan"
+
+#: ConnectionListPage.qml:144
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn off airplane mode to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:148
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi or mobile data to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:150
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:153
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on mobile data to search for networks"
+msgstr ""
 
 #: DetailsText.qml:49
 #, kde-format
@@ -138,7 +162,7 @@ msgstr ""
 
 #: main.qml:82
 #, kde-format
-msgid "Enable Mobile Network"
+msgid "Enable Mobile Data"
 msgstr ""
 
 #: main.qml:94
@@ -173,9 +197,9 @@ msgid "Wi-Fi password:"
 msgstr "Katalaluan:"
 
 #: Toolbar.qml:123
-#, kde-format
-msgid "Enable mobile network"
-msgstr ""
+#, fuzzy, kde-format
+msgid "Enable mobile data"
+msgstr "Tanpa wayar"
 
 #: Toolbar.qml:148
 #, kde-kuit-format

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-12 00:44+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2011-06-27 14:57+0200\n"
 "Last-Translator: Marko Dimjašević <marko@dimjasevic.net>\n"
 "Language-Team: Croatian <kde-croatia-list@lists.sourceforge.net>\n"
@@ -93,25 +93,25 @@ msgstr "Hardver za bežičnu vezu omogućen"
 #| msgctxt ""
 #| "@info:status Notification text when a single wireless network disappeared"
 #| msgid "Wireless network %1 disappeared"
-msgid "Wireless and mobile networks are deactivated"
+msgid "Wi-Fi and mobile data are deactivated"
 msgstr "Bežična mreža %1 je nestala"
 
 #: ConnectionListPage.qml:123
 #, fuzzy, kde-format
-msgid "Wireless is deactivated"
+msgid "Wi-Fi is deactivated"
 msgstr "Hardver za bežičnu vezu omogućen"
 
 #: ConnectionListPage.qml:126
 #, fuzzy, kde-format
 #| msgid "The name of the wireless network"
-msgid "Looking for wireless networks"
+msgid "Looking for Wi-Fi networks"
 msgstr "Ime bežićne mreže"
 
 #: ConnectionListPage.qml:129
 #, fuzzy, kde-format
 #| msgctxt "@item:inlistbox"
 #| msgid "Wired network interfaces"
-msgid "Mobile network is deactivated"
+msgid "Mobile data is deactivated"
 msgstr "Žičana mrežna sučelja"
 
 #: ConnectionListPage.qml:132
@@ -123,6 +123,30 @@ msgstr ""
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "&Sistemska veza"
+
+#: ConnectionListPage.qml:144
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn off airplane mode to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:148
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi or mobile data to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:150
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:153
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on mobile data to search for networks"
+msgstr ""
 
 #: DetailsText.qml:49
 #, kde-format
@@ -155,7 +179,7 @@ msgstr ""
 #: main.qml:82
 #, fuzzy, kde-format
 #| msgid "User name on this network"
-msgid "Enable Mobile Network"
+msgid "Enable Mobile Data"
 msgstr "Korisničko ime na ovoj mreži"
 
 #: main.qml:94
@@ -197,7 +221,7 @@ msgstr "Zaporka:"
 #: Toolbar.qml:123
 #, fuzzy, kde-format
 #| msgid "User name on this network"
-msgid "Enable mobile network"
+msgid "Enable mobile data"
 msgstr "Korisničko ime na ovoj mreži"
 
 #: Toolbar.qml:148

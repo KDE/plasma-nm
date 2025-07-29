@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-12 00:44+0000\n"
-"PO-Revision-Date: 2025-06-28 20:13+0200\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
+"PO-Revision-Date: 2025-07-28 18:38+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.1\n"
+"X-Generator: Lokalize 25.04.2\n"
 
 #: ConnectionItem.qml:59
 #, kde-format
@@ -31,7 +31,7 @@ msgstr "Koppla ner"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "Dela"
 
 #: ConnectionItem.qml:90
 #, kde-format
@@ -81,23 +81,27 @@ msgid "Airplane mode is enabled"
 msgstr "Flygplansläge är aktiverat"
 
 #: ConnectionListPage.qml:121
-#, kde-format
-msgid "Wireless and mobile networks are deactivated"
+#, fuzzy, kde-format
+#| msgid "Wireless and mobile networks are deactivated"
+msgid "Wi-Fi and mobile data are deactivated"
 msgstr "Trådlöst och mobilt nätverk är inaktiverat"
 
 #: ConnectionListPage.qml:123
-#, kde-format
-msgid "Wireless is deactivated"
+#, fuzzy, kde-format
+#| msgid "Wireless is deactivated"
+msgid "Wi-Fi is deactivated"
 msgstr "Trådlöst nätverk är inaktiverat"
 
 #: ConnectionListPage.qml:126
-#, kde-format
-msgid "Looking for wireless networks"
+#, fuzzy, kde-format
+#| msgid "Looking for wireless networks"
+msgid "Looking for Wi-Fi networks"
 msgstr "Söker efter trådlösa nätverk"
 
 #: ConnectionListPage.qml:129
-#, kde-format
-msgid "Mobile network is deactivated"
+#, fuzzy, kde-format
+#| msgid "Mobile network is deactivated"
+msgid "Mobile data is deactivated"
 msgstr "Mobilt nätverk är inaktiverat"
 
 #: ConnectionListPage.qml:132
@@ -109,6 +113,30 @@ msgstr "Inga träffar"
 #, kde-format
 msgid "No available connections"
 msgstr "Inga tillgängliga anslutningar"
+
+#: ConnectionListPage.qml:144
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn off airplane mode to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:148
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi or mobile data to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:150
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:153
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on mobile data to search for networks"
+msgstr ""
 
 #: DetailsText.qml:49
 #, kde-format
@@ -138,8 +166,9 @@ msgid "Enable Wi-Fi"
 msgstr "Aktivera WIFI"
 
 #: main.qml:82
-#, kde-format
-msgid "Enable Mobile Network"
+#, fuzzy, kde-format
+#| msgid "Enable Mobile Network"
+msgid "Enable Mobile Data"
 msgstr "Aktivera mobilt nätverk"
 
 #: main.qml:94
@@ -169,14 +198,14 @@ msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "Läs QR-koden med en annan enhet för att ansluta till nätverket \"%1\"."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "Visa lösenord"
+msgstr "WIFI-lösenord:"
 
 #: Toolbar.qml:123
-#, kde-format
-msgid "Enable mobile network"
+#, fuzzy, kde-format
+#| msgid "Enable mobile network"
+msgid "Enable mobile data"
 msgstr "Aktivera mobilt nätverk"
 
 #: Toolbar.qml:148

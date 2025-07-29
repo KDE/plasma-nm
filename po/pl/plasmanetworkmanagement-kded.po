@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2024-08-10 12:45+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -557,13 +557,16 @@ msgid "No secrets were requested"
 msgstr "Nie zapytano o żadne dane dostępowe"
 
 #: passworddialog.cpp:99
-#, kde-format
-msgid "Incorrect password for the wireless network \"%1\". Please try again."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Incorrect password for the wireless network \"%1\". Please try again."
+msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
 msgstr "Niepoprawne hasło do sieci bezprzewodowej \"%1\". Spróbuj ponownie."
 
 #: passworddialog.cpp:101
-#, kde-format
-msgid "Enter the password for the wireless network \"%1\":"
+#, fuzzy, kde-format
+#| msgid "Enter the password for the wireless network \"%1\":"
+msgid "Enter the password for the Wi-Fi network \"%1\":"
 msgstr "Wpisz hasło do sieci bezprzewodowej \"%1\":"
 
 #: passworddialog.cpp:105

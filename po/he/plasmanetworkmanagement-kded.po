@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2024-08-08 08:47+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -553,13 +553,16 @@ msgid "No secrets were requested"
 msgstr "לא התבקשו סודות"
 
 #: passworddialog.cpp:99
-#, kde-format
-msgid "Incorrect password for the wireless network \"%1\". Please try again."
+#, fuzzy, kde-format
+#| msgid ""
+#| "Incorrect password for the wireless network \"%1\". Please try again."
+msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
 msgstr "הסיסמה של הרשת האלחוטית „%1” שגויה. נא לנסות שוב."
 
 #: passworddialog.cpp:101
-#, kde-format
-msgid "Enter the password for the wireless network \"%1\":"
+#, fuzzy, kde-format
+#| msgid "Enter the password for the wireless network \"%1\":"
+msgid "Enter the password for the Wi-Fi network \"%1\":"
 msgstr "נא לספק סיסמה לרשת האלחוטית „%1”:"
 
 #: passworddialog.cpp:105

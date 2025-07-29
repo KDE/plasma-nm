@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2014-08-13 22:07+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -584,13 +584,13 @@ msgstr "Keen Anmellinformatschonen praatstellt"
 #: passworddialog.cpp:99
 #, fuzzy, kde-format
 #| msgid "Please provide the password for activating connection '%1'"
-msgid "Incorrect password for the wireless network \"%1\". Please try again."
+msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
 msgstr "Giff bitte dat Passwoort för't Anmaken vun de Verbinnen „%1“ in"
 
 #: passworddialog.cpp:101
 #, fuzzy, kde-format
 #| msgid "Please provide the password for activating connection '%1'"
-msgid "Enter the password for the wireless network \"%1\":"
+msgid "Enter the password for the Wi-Fi network \"%1\":"
 msgstr "Giff bitte dat Passwoort för't Anmaken vun de Verbinnen „%1“ in"
 
 #: passworddialog.cpp:105

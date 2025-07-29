@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-12 00:44+0000\n"
+"POT-Creation-Date: 2025-07-29 00:43+0000\n"
 "PO-Revision-Date: 2014-09-18 16:10+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -80,25 +80,26 @@ msgid "Airplane mode is enabled"
 msgstr ""
 
 #: ConnectionListPage.qml:121
-#, kde-format
-msgid "Wireless and mobile networks are deactivated"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Failed to deactivate %1"
+msgid "Wi-Fi and mobile data are deactivated"
+msgstr "Verbinnen „%1“ lett sik nich utmaken"
 
 #: ConnectionListPage.qml:123
 #, fuzzy, kde-format
 #| msgid "Failed to deactivate %1"
-msgid "Wireless is deactivated"
+msgid "Wi-Fi is deactivated"
 msgstr "Verbinnen „%1“ lett sik nich utmaken"
 
 #: ConnectionListPage.qml:126
 #, kde-format
-msgid "Looking for wireless networks"
+msgid "Looking for Wi-Fi networks"
 msgstr ""
 
 #: ConnectionListPage.qml:129
 #, fuzzy, kde-format
 #| msgid "Failed to deactivate %1"
-msgid "Mobile network is deactivated"
+msgid "Mobile data is deactivated"
 msgstr "Verbinnen „%1“ lett sik nich utmaken"
 
 #: ConnectionListPage.qml:132
@@ -111,6 +112,30 @@ msgstr ""
 #| msgid "Available connections"
 msgid "No available connections"
 msgstr "Verföögbor Verbinnen"
+
+#: ConnectionListPage.qml:144
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn off airplane mode to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:148
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi or mobile data to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:150
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on Wi-Fi to search for networks"
+msgstr ""
+
+#: ConnectionListPage.qml:153
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "Turn on mobile data to search for networks"
+msgstr ""
 
 #: DetailsText.qml:49
 #, kde-format
@@ -141,7 +166,7 @@ msgstr ""
 
 #: main.qml:82
 #, kde-format
-msgid "Enable Mobile Network"
+msgid "Enable Mobile Data"
 msgstr ""
 
 #: main.qml:94
@@ -182,9 +207,10 @@ msgid "Wi-Fi password:"
 msgstr "Passwoort wiesen"
 
 #: Toolbar.qml:123
-#, kde-format
-msgid "Enable mobile network"
-msgstr ""
+#, fuzzy, kde-format
+#| msgid "Wireless"
+msgid "Enable mobile data"
+msgstr "Funk"
 
 #: Toolbar.qml:148
 #, kde-kuit-format

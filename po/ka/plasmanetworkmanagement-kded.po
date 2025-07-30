@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-29 00:43+0000\n"
-"PO-Revision-Date: 2024-08-08 05:56+0200\n"
+"PO-Revision-Date: 2025-07-29 05:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -557,17 +557,14 @@ msgid "No secrets were requested"
 msgstr "საიდუმლო კოდები არ მოთხოვნილა"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
 msgstr "არასწორი პაროლი უსადენო შეერთებისთვის \"%1\". თავიდან სცადეთ."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "შეიყვანეთ პაროლი უსადენო შეერთებისთვის \"%1\":"
+msgstr "შეიყვანეთ პაროლი უსადენო ქსელისთვის \"%1\":"
 
 #: passworddialog.cpp:105
 #, kde-format

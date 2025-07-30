@@ -1,20 +1,20 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2023, 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-29 00:43+0000\n"
-"PO-Revision-Date: 2024-08-08 08:47+0300\n"
+"PO-Revision-Date: 2025-07-29 08:24+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -553,15 +553,12 @@ msgid "No secrets were requested"
 msgstr "לא התבקשו סודות"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
 msgstr "הסיסמה של הרשת האלחוטית „%1” שגויה. נא לנסות שוב."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
 msgstr "נא לספק סיסמה לרשת האלחוטית „%1”:"
 

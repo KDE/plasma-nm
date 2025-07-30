@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-29 00:43+0000\n"
-"PO-Revision-Date: 2025-07-13 08:00+0300\n"
+"PO-Revision-Date: 2025-07-29 08:27+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -84,28 +84,24 @@ msgid "Airplane mode is enabled"
 msgstr "מצב טיסה פעיל"
 
 #: ConnectionListPage.qml:121
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "רשתות אלחוטיות וניידות מושבתות"
+msgstr "רשתות אלחוטיות ונתונים סלולריים מושבתים"
 
 #: ConnectionListPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "הרשת האלחוטית מושבתת"
 
 #: ConnectionListPage.qml:126
-#, fuzzy, kde-format
-#| msgid "Looking for wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
 msgstr "מתבצע חיפוש אחר רשתות אלחוטיות"
 
 #: ConnectionListPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "הרשת הניידת מושבתת"
+msgstr "נתונים סלולריים מושבתים"
 
 #: ConnectionListPage.qml:132
 #, kde-format
@@ -121,25 +117,25 @@ msgstr "אין חיבורים זמינים"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "יש לכבות מצב טיסה כדי לחפש רשתות"
 
 #: ConnectionListPage.qml:148
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "יש להפעיל רשת אלחוטית או נתונים סלולריים כדי לחפש רשתות"
 
 #: ConnectionListPage.qml:150
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "יש להפעיל רשת אלחוטית כדי לחפש רשתות"
 
 #: ConnectionListPage.qml:153
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "יש להפעיל נתונים סלולריים כדי לחפש רשתות"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -169,10 +165,9 @@ msgid "Enable Wi-Fi"
 msgstr "הפעלת רשת אלחוטית"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "הפעלת רשת ניידת"
+msgstr "הפעלת נתונים סלולריים"
 
 #: main.qml:94
 #, kde-format
@@ -206,10 +201,9 @@ msgid "Wi-Fi password:"
 msgstr "סיסמת רשת אלחוטית:"
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "הפעלת רשת ניידת"
+msgstr "הפעלת נתונים סלולריים"
 
 #: Toolbar.qml:148
 #, kde-kuit-format

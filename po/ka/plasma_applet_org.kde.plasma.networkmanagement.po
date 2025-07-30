@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-29 00:43+0000\n"
-"PO-Revision-Date: 2025-07-12 03:58+0200\n"
+"PO-Revision-Date: 2025-07-29 05:20+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -82,28 +82,24 @@ msgid "Airplane mode is enabled"
 msgstr "თვითმფრინავის რეჟიმი ჩართულია"
 
 #: ConnectionListPage.qml:121
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr "უსადენო და მობილური ქსელები გამორთულია"
 
 #: ConnectionListPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "უსადენო ქსელი დეაქტივირებულია"
 
 #: ConnectionListPage.qml:126
-#, fuzzy, kde-format
-#| msgid "Looking for wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
 msgstr "უსადენო ქსელების ძებნა"
 
 #: ConnectionListPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "მობილური ქსელი გამორთულია"
+msgstr "მობილური ინტერნეტი დეაქტივირებულია"
 
 #: ConnectionListPage.qml:132
 #, kde-format
@@ -119,25 +115,25 @@ msgstr "გამოყენებადი შეერთებების �
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "ქსელების მოსაძებნად გამორთეთ თვითმფრინავის რეჟიმი"
 
 #: ConnectionListPage.qml:148
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "ქსელების მოსაძებნად ჩართეთ Wi-Fi ან მობილური ინტერნეტი"
 
 #: ConnectionListPage.qml:150
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "ქსელების მოსაძებნად ჩართეთ Wi-Fi"
 
 #: ConnectionListPage.qml:153
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "ქსელების მოსაძებნად ჩართეთ მობილური ინტერნეტი"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -167,10 +163,9 @@ msgid "Enable Wi-Fi"
 msgstr "Wi-Fi-ს ჩართვა"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "მობილური ქსელის ჩართვა"
+msgstr "მობილური ინტერნეტის ჩართვა"
 
 #: main.qml:94
 #, kde-format
@@ -205,10 +200,9 @@ msgid "Wi-Fi password:"
 msgstr "Wi-Fi-ის პაროლი:"
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "მობილური ქსელის ჩართვა"
+msgstr "მობილური ინტერნეტის ჩართვა"
 
 #: Toolbar.qml:148
 #, kde-kuit-format

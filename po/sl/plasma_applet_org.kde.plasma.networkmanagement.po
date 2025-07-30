@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-29 00:43+0000\n"
-"PO-Revision-Date: 2025-07-12 07:51+0200\n"
+"PO-Revision-Date: 2025-07-29 06:30+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -84,28 +84,24 @@ msgid "Airplane mode is enabled"
 msgstr "Način Na letalu je omogočen"
 
 #: ConnectionListPage.qml:121
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Brezžična in mobilna omrežja so izklopljena"
+msgstr "Wi-Fi in mobilna omrežja so deaktivirana"
 
 #: ConnectionListPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "Brezžično omrežje izklopljeno"
+msgstr "Wi-Fi omrežje deaktivirano"
 
 #: ConnectionListPage.qml:126
-#, fuzzy, kde-format
-#| msgid "Looking for wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr "Iskanje brezžičnih omrežij"
+msgstr "Iskanje Wi-Fi omrežij"
 
 #: ConnectionListPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "Mobilno omrežje izklopljeno"
+msgstr "Mobilno omrežje deaktivirano"
 
 #: ConnectionListPage.qml:132
 #, kde-format
@@ -121,25 +117,25 @@ msgstr "Ni razpoložljivih povezav"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "Izklopi letalski način za iskanje omrežij"
 
 #: ConnectionListPage.qml:148
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "Vklopi Wi-Fi ali mobilne podatke za iskanje omrežij"
 
 #: ConnectionListPage.qml:150
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "Vklopi Wi-Fi za iskanje omrežij"
 
 #: ConnectionListPage.qml:153
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "Vklopi mobilne podatke za iskanje omrežij"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -169,8 +165,7 @@ msgid "Enable Wi-Fi"
 msgstr "Omogoči Wi-Fi"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
 msgstr "Omogoči mobilno omrežje"
 
@@ -206,10 +201,9 @@ msgid "Wi-Fi password:"
 msgstr "Wi-Fi geslo:"
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "Omogoči mobilno omrežje"
+msgstr "Omogoči mobilne podatke"
 
 #: Toolbar.qml:148
 #, kde-kuit-format

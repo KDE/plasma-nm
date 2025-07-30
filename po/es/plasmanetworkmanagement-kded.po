@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-29 00:43+0000\n"
-"PO-Revision-Date: 2025-06-04 19:15+0100\n"
+"PO-Revision-Date: 2025-07-29 13:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -562,18 +562,14 @@ msgid "No secrets were requested"
 msgstr "No se ha solicitado ninguna credencial"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr ""
-"Contraseña incorrecta para la red inalámbrica «%1». Vuelva a intentarlo."
+msgstr "Contraseña incorrecta para la red wifi «%1». Vuelva a intentarlo."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "Introduzca la contraseña para la red inalámbrica «%1»:"
+msgstr "Introduzca la contraseña para la red wifi «%1»:"
 
 #: passworddialog.cpp:105
 #, kde-format

@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2022, 2023, 2024 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-29 00:43+0000\n"
-"PO-Revision-Date: 2024-11-09 20:04+0100\n"
+"PO-Revision-Date: 2025-07-29 21:45+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -556,15 +556,12 @@ msgid "No secrets were requested"
 msgstr "Не бяха изисквани тайни"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
 msgstr "Грешна парола за безжичната мрежа „%1“ Моля, опитайте отново."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
 msgstr "Въведете паролата за безжичната мрежа „%1“:"
 

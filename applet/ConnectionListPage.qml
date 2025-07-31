@@ -86,6 +86,7 @@ ColumnLayout {
             highlightMoveDuration: Kirigami.Units.shortDuration
             highlightResizeDuration: Kirigami.Units.shortDuration
             delegate: ConnectionItem {
+                listView: connectionView
                 width: connectionView.width - Kirigami.Units.smallSpacing * 4
             }
 
@@ -152,6 +153,18 @@ ColumnLayout {
                         if (toolbar.displayWwanMessage) {
                             return i18nc("@info:placeholder", "Turn on mobile data to search for networks")
                         }
+                    }
+                }
+            }
+
+            function newIndexSelected(index) {
+                for (let i = 0; i < connectionView.count; i++) {
+                    if (i === index)
+                        continue
+
+                    let item = connectionView.itemAtIndex(i)
+                    if (item && item.expanded && item.customExpandedViewContent === item.passwordDialogComponent) {
+                        item.collapse()
                     }
                 }
             }

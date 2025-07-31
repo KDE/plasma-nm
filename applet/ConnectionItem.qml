@@ -24,6 +24,7 @@ PlasmaExtras.ExpandableListItem {
     id: connectionItem
 
     required property var model
+    required property var listView
     required property int index
 
     property bool activating: model.ConnectionState === PlasmaNM.Enums.Activating
@@ -35,6 +36,8 @@ PlasmaExtras.ExpandableListItem {
 
     property real rxSpeed: 0
     property real txSpeed: 0
+
+    property alias passwordDialogComponent: passwordDialogComponent
 
     icon: model.ConnectionIcon
     title: model.ItemUniqueName
@@ -57,7 +60,10 @@ PlasmaExtras.ExpandableListItem {
 
         icon.name: isDeactivated ? "network-connect" : "network-disconnect"
         text: isDeactivated ? i18n("Connect") : i18n("Disconnect")
-        onTriggered: connectionItem.changeState()
+        onTriggered: {
+            connectionItem.changeState()
+            listView.newIndexSelected(index)
+        }
     }
     showDefaultActionButtonWhenBusy: true
 
@@ -314,6 +320,7 @@ PlasmaExtras.ExpandableListItem {
         connectionItem.customExpandedViewContent = detailsComponent;
         setDelayModelUpdates(false);
     }
+
     Component.onDestruction: {
         setDelayModelUpdates(false);
     }

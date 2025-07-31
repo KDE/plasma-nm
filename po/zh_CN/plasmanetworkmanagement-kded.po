@@ -552,17 +552,14 @@ msgid "No secrets were requested"
 msgstr "没有请求密码"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr "无线网络“%1”的密码不正确。请重新输入。"
+msgstr ""
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "请输入无线网络“%1”的密码："
+msgstr ""
 
 #: passworddialog.cpp:105
 #, kde-format

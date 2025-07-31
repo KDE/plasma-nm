@@ -80,28 +80,24 @@ msgid "Airplane mode is enabled"
 msgstr "飞行模式已启用"
 
 #: ConnectionListPage.qml:121
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "无线网络和移动网络已被禁用"
+msgstr ""
 
 #: ConnectionListPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "无线网络已被禁用"
+msgstr ""
 
 #: ConnectionListPage.qml:126
-#, fuzzy, kde-format
-#| msgid "Looking for wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr "正在寻找无线网络"
+msgstr ""
 
 #: ConnectionListPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "移动网络已被禁用"
+msgstr ""
 
 #: ConnectionListPage.qml:132
 #, kde-format
@@ -165,10 +161,9 @@ msgid "Enable Wi-Fi"
 msgstr "启用 Wi-Fi"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "启用移动网络"
+msgstr ""
 
 #: main.qml:94
 #, kde-format
@@ -202,10 +197,9 @@ msgid "Wi-Fi password:"
 msgstr "Wi-Fi 密码："
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "启用移动网络"
+msgstr ""
 
 #: Toolbar.qml:148
 #, kde-kuit-format

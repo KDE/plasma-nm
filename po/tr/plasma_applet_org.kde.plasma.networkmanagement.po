@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-29 00:43+0000\n"
-"PO-Revision-Date: 2025-07-14 13:50+0300\n"
+"PO-Revision-Date: 2025-07-30 17:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
 "Language: tr\n"
@@ -86,28 +86,24 @@ msgid "Airplane mode is enabled"
 msgstr "Uçak Kipi etkin"
 
 #: ConnectionListPage.qml:121
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Kablosuz ve mobil ağlar devre dışı bırakıldı"
+msgstr "Wi-Fi ve mobil veri devre dışı bırakıldı"
 
 #: ConnectionListPage.qml:123
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "Kablosuz devre dışı"
+msgstr "Wi-Fi devre dışı bırakıldı"
 
 #: ConnectionListPage.qml:126
-#, fuzzy, kde-format
-#| msgid "Looking for wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr "Kablosuz ağlar aranıyor…"
+msgstr "Wi-Fi ağları aranıyor…"
 
 #: ConnectionListPage.qml:129
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "Mobil ağ devre dışı bırakıldı"
+msgstr "Mobil veri devre dışı bırakıldı"
 
 #: ConnectionListPage.qml:132
 #, kde-format
@@ -123,25 +119,25 @@ msgstr "Kullanılabilir bağlantı yok"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "Ağları aramak için uçak kipini devre dışı bırakın"
 
 #: ConnectionListPage.qml:148
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "Ağları aramak için Wi-Fi’yi veya mobil veriyi açın"
 
 #: ConnectionListPage.qml:150
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "Ağları aramak için Wi-Fi’yi açın"
 
 #: ConnectionListPage.qml:153
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "Ağları aramak için mobil veriyi açın"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -168,18 +164,17 @@ msgstr "Uçak Kipi’ni açmak için orta tıklayın"
 #: main.qml:71 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
-msgstr "Wi-Fi’yi etkinleştir"
+msgstr "Wi-Fi’yi Etkinleştir"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "Hücresel ağı etkinleştir"
+msgstr "Mobil Veriyi Etkinleştir"
 
 #: main.qml:94
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr "Uçak Kipi’ni etkinleştir"
+msgstr "Uçak Kipi’ni Etkinleştir"
 
 #: main.qml:106
 #, kde-format
@@ -208,10 +203,9 @@ msgid "Wi-Fi password:"
 msgstr "Wi-Fi parolası:"
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "Hücresel ağı etkinleştir"
+msgstr "Mobil veriyi etkinleştir"
 
 #: Toolbar.qml:148
 #, kde-kuit-format

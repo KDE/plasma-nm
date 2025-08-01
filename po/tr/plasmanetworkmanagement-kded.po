@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-29 00:43+0000\n"
-"PO-Revision-Date: 2025-02-04 18:17+0300\n"
+"PO-Revision-Date: 2025-07-31 19:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-POOTLE-MTIME: 1413102232.000000\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -556,18 +556,14 @@ msgid "No secrets were requested"
 msgstr "İstenen giz yok."
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr ""
-"“%1” kablosuz ağı için girdiğiniz parola yanlış. Lütfen yeniden deneyin."
+msgstr "“%1” Wi-Fi ağı için girdiğiniz parola yanlış. Lütfen yeniden deneyin."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "“%1” kablosuz ağının parolasını gir:"
+msgstr "“%1” Wi-Fi ağının parolasını gir:"
 
 #: passworddialog.cpp:105
 #, kde-format

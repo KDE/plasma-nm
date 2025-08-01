@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 00:43+0000\n"
+"POT-Creation-Date: 2025-08-01 00:45+0000\n"
 "PO-Revision-Date: 2025-07-29 05:20+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -18,38 +18,38 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.6\n"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Connect"
 msgstr "დაკავშირება"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Disconnect"
 msgstr "გათიშვა"
 
-#: ConnectionItem.qml:84
+#: ConnectionItem.qml:90
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr "გაზიარება"
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "მორგება…"
 
-#: ConnectionItem.qml:130
+#: ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "სიჩქარე"
 
-#: ConnectionItem.qml:135
+#: ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "დეტალები"
 
-#: ConnectionItem.qml:182
+#: ConnectionItem.qml:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59,7 +59,7 @@ msgstr ""
 "გადმოწერის მიმდინარე სიჩქარეა %1 კიბიბაიტი წამში. მიმდინარე ატვირთვის "
 "სიჩქარეა %2 კიბიბაიტი წამში"
 
-#: ConnectionItem.qml:292
+#: ConnectionItem.qml:298
 #, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
@@ -76,60 +76,60 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "შესვლა"
 
-#: ConnectionListPage.qml:117
+#: ConnectionListPage.qml:118
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "თვითმფრინავის რეჟიმი ჩართულია"
 
-#: ConnectionListPage.qml:121
+#: ConnectionListPage.qml:122
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr "უსადენო და მობილური ქსელები გამორთულია"
 
-#: ConnectionListPage.qml:123
+#: ConnectionListPage.qml:124
 #, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "უსადენო ქსელი დეაქტივირებულია"
 
-#: ConnectionListPage.qml:126
+#: ConnectionListPage.qml:127
 #, kde-format
 msgid "Looking for Wi-Fi networks"
 msgstr "უსადენო ქსელების ძებნა"
 
-#: ConnectionListPage.qml:129
+#: ConnectionListPage.qml:130
 #, kde-format
 msgid "Mobile data is deactivated"
 msgstr "მობილური ინტერნეტი დეაქტივირებულია"
 
-#: ConnectionListPage.qml:132
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
 msgstr "დათხვევა არ არსებობს"
 
-#: ConnectionListPage.qml:135
+#: ConnectionListPage.qml:136
 #, kde-format
 msgid "No available connections"
 msgstr "გამოყენებადი შეერთებების გარეშე"
 
-#: ConnectionListPage.qml:144
+#: ConnectionListPage.qml:145
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr "ქსელების მოსაძებნად გამორთეთ თვითმფრინავის რეჟიმი"
 
-#: ConnectionListPage.qml:148
+#: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr "ქსელების მოსაძებნად ჩართეთ Wi-Fi ან მობილური ინტერნეტი"
 
-#: ConnectionListPage.qml:150
+#: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr "ქსელების მოსაძებნად ჩართეთ Wi-Fi"
 
-#: ConnectionListPage.qml:153
+#: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

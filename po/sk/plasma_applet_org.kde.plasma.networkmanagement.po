@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 00:43+0000\n"
+"POT-Creation-Date: 2025-08-01 00:45+0000\n"
 "PO-Revision-Date: 2023-11-11 15:36+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -18,38 +18,38 @@ msgstr ""
 "X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Connect"
 msgstr "Pripojiť"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Disconnect"
 msgstr "Odpojiť"
 
-#: ConnectionItem.qml:84
+#: ConnectionItem.qml:90
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr ""
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "Nastaviť..."
 
-#: ConnectionItem.qml:130
+#: ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "Rýchlosť"
 
-#: ConnectionItem.qml:135
+#: ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: ConnectionItem.qml:182
+#: ConnectionItem.qml:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -59,7 +59,7 @@ msgstr ""
 "Aktuálna rýchlosť sťahovania je %1 kibibajtov za sekundu; aktuálna rýchlosť "
 "odosielania je %2 kibibajtov za sekundu"
 
-#: ConnectionItem.qml:292
+#: ConnectionItem.qml:298
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgctxt "Download and upload rates in some unit per second"
@@ -77,64 +77,64 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Prihlásiť sa"
 
-#: ConnectionListPage.qml:117
+#: ConnectionListPage.qml:118
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Režim v lietadle je povolený"
 
-#: ConnectionListPage.qml:121
+#: ConnectionListPage.qml:122
 #, fuzzy, kde-format
 #| msgid "Wireless and mobile networks are deactivated"
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr "Bezdrôtové a mobilné siete sú vypnuté"
 
-#: ConnectionListPage.qml:123
+#: ConnectionListPage.qml:124
 #, fuzzy, kde-format
 #| msgid "Wireless is deactivated"
 msgid "Wi-Fi is deactivated"
 msgstr "Bezdrôtové siete sú vypnuté"
 
-#: ConnectionListPage.qml:126
+#: ConnectionListPage.qml:127
 #, fuzzy, kde-format
 #| msgid "Rescan wireless networks"
 msgid "Looking for Wi-Fi networks"
 msgstr "Prehľadať bezdrôtové siete"
 
-#: ConnectionListPage.qml:129
+#: ConnectionListPage.qml:130
 #, fuzzy, kde-format
 #| msgid "Mobile network is deactivated"
 msgid "Mobile data is deactivated"
 msgstr "Mobilná sieť je vypnutá"
 
-#: ConnectionListPage.qml:132
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
 msgstr "Žiadne zhody"
 
-#: ConnectionListPage.qml:135
+#: ConnectionListPage.qml:136
 #, kde-format
 msgid "No available connections"
 msgstr "Žiadne dostupné pripojenia"
 
-#: ConnectionListPage.qml:144
+#: ConnectionListPage.qml:145
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:148
+#: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:150
+#: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:153
+#: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 00:43+0000\n"
+"POT-Creation-Date: 2025-08-01 00:45+0000\n"
 "PO-Revision-Date: 2025-07-29 09:41+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -22,38 +22,38 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Connect"
 msgstr "Connecta"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Disconnect"
 msgstr "Desconnecta"
 
-#: ConnectionItem.qml:84
+#: ConnectionItem.qml:90
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr "Comparteix"
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "Configura…"
 
-#: ConnectionItem.qml:130
+#: ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "Velocitat"
 
-#: ConnectionItem.qml:135
+#: ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "Detalls"
 
-#: ConnectionItem.qml:182
+#: ConnectionItem.qml:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -63,7 +63,7 @@ msgstr ""
 "La velocitat actual de baixada és de %1 kibibytes per segon; la velocitat "
 "actual de pujada és de %2 kibibytes per segon"
 
-#: ConnectionItem.qml:292
+#: ConnectionItem.qml:298
 #, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
@@ -80,60 +80,60 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Inicia la sessió"
 
-#: ConnectionListPage.qml:117
+#: ConnectionListPage.qml:118
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "S'ha activat el mode avió"
 
-#: ConnectionListPage.qml:121
+#: ConnectionListPage.qml:122
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr "S'ha desactivat la xarxa Wi-Fi i les dades mòbils"
 
-#: ConnectionListPage.qml:123
+#: ConnectionListPage.qml:124
 #, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "S'ha desactivat la xarxa Wi-Fi"
 
-#: ConnectionListPage.qml:126
+#: ConnectionListPage.qml:127
 #, kde-format
 msgid "Looking for Wi-Fi networks"
 msgstr "S'estan cercant xarxes Wi-Fi"
 
-#: ConnectionListPage.qml:129
+#: ConnectionListPage.qml:130
 #, kde-format
 msgid "Mobile data is deactivated"
 msgstr "S'han desactivat les dades mòbils"
 
-#: ConnectionListPage.qml:132
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
 msgstr "Sense coincidències"
 
-#: ConnectionListPage.qml:135
+#: ConnectionListPage.qml:136
 #, kde-format
 msgid "No available connections"
 msgstr "No hi ha cap connexió disponible"
 
-#: ConnectionListPage.qml:144
+#: ConnectionListPage.qml:145
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr "Desactiveu el mode avió per a cercar xarxes"
 
-#: ConnectionListPage.qml:148
+#: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr "Activeu la Wi-Fi o les dades mòbils per a cercar xarxes"
 
-#: ConnectionListPage.qml:150
+#: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr "Activeu la Wi-Fi per a cercar xarxes"
 
-#: ConnectionListPage.qml:153
+#: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

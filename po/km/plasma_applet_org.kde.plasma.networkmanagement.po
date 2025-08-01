@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 00:43+0000\n"
+"POT-Creation-Date: 2025-08-01 00:45+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -19,40 +19,40 @@ msgstr ""
 "X-Generator: KBabel 1.11.4\n"
 "X-Language: km-KH\n"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Connect"
 msgstr "តភ្ជាប់​​"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, fuzzy, kde-format
 msgid "Disconnect"
 msgstr "បាន​តភ្ជាប់​​"
 
-#: ConnectionItem.qml:84
+#: ConnectionItem.qml:90
 #, fuzzy, kde-format
 #| msgid "Shared"
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr "បាន​ចែក​រំលែក​"
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:96
 #, fuzzy, kde-format
 #| msgid "Confirm Delete"
 msgid "Configure…"
 msgstr "អះអាង​ការ​លុប"
 
-#: ConnectionItem.qml:130
+#: ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "ល្បឿន"
 
-#: ConnectionItem.qml:135
+#: ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "សេចក្ដី​លម្អិត"
 
-#: ConnectionItem.qml:182
+#: ConnectionItem.qml:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -60,7 +60,7 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: ConnectionItem.qml:292
+#: ConnectionItem.qml:298
 #, fuzzy, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
@@ -78,12 +78,12 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr ""
 
-#: ConnectionListPage.qml:117
+#: ConnectionListPage.qml:118
 #, fuzzy, kde-format
 msgid "Airplane mode is enabled"
 msgstr "បើក​ផ្នែក​រឹង​ឥត​ខ្សែ​ "
 
-#: ConnectionListPage.qml:121
+#: ConnectionListPage.qml:122
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:status Notification text when a single wireless network disappeared"
@@ -91,51 +91,51 @@ msgstr "បើក​ផ្នែក​រឹង​ឥត​ខ្សែ​ "
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr "បាន​បាត់​បណ្ដាញ​ឥត​ខ្សែ​​ %1 ​​"
 
-#: ConnectionListPage.qml:123
+#: ConnectionListPage.qml:124
 #, fuzzy, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "បើក​ផ្នែក​រឹង​ឥត​ខ្សែ​ "
 
-#: ConnectionListPage.qml:126
+#: ConnectionListPage.qml:127
 #, fuzzy, kde-format
 #| msgid "Connect to a hidden wireless network"
 msgid "Looking for Wi-Fi networks"
 msgstr "តភ្ជាប់​ទៅកាន់​បណ្ដាញ​ឥត​ខ្សែ​ដែល​លាក់​​"
 
-#: ConnectionListPage.qml:129
+#: ConnectionListPage.qml:130
 #, fuzzy, kde-format
 msgid "Mobile data is deactivated"
 msgstr "បើក​ផ្នែក​រឹង​ឥត​ខ្សែ​ "
 
-#: ConnectionListPage.qml:132
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: ConnectionListPage.qml:135
+#: ConnectionListPage.qml:136
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "ធ្វើឲ្យ​ការ​តភ្ជាប់​​អសកម្ម"
 
-#: ConnectionListPage.qml:144
+#: ConnectionListPage.qml:145
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:148
+#: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:150
+#: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:153
+#: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 00:43+0000\n"
+"POT-Creation-Date: 2025-08-01 00:45+0000\n"
 "PO-Revision-Date: 2010-07-30 21:29+0800\n"
 "Last-Translator: Sharuzzaman Ahmat Raslan <sharuzzaman@gmail.com>\n"
 "Language-Team: Malay <kedidiemas@yahoogroups.com>\n"
@@ -18,38 +18,38 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=1;\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, fuzzy, kde-format
 msgid "Connect"
 msgstr "Tersambung"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, fuzzy, kde-format
 msgid "Disconnect"
 msgstr "Tersambung"
 
-#: ConnectionItem.qml:84
+#: ConnectionItem.qml:90
 #, fuzzy, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr "Kongsi"
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:96
 #, fuzzy, kde-format
 msgid "Configure…"
 msgstr "Sahkan Hapus"
 
-#: ConnectionItem.qml:130
+#: ConnectionItem.qml:136
 #, fuzzy, kde-format
 msgid "Speed"
 msgstr "Kelajuan"
 
-#: ConnectionItem.qml:135
+#: ConnectionItem.qml:141
 #, fuzzy, kde-format
 msgid "Details"
 msgstr "Terperinci"
 
-#: ConnectionItem.qml:182
+#: ConnectionItem.qml:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -57,7 +57,7 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: ConnectionItem.qml:292
+#: ConnectionItem.qml:298
 #, fuzzy, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
@@ -74,60 +74,60 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr ""
 
-#: ConnectionListPage.qml:117
+#: ConnectionListPage.qml:118
 #, fuzzy, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Tanpa wayar"
 
-#: ConnectionListPage.qml:121
+#: ConnectionListPage.qml:122
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr ""
 
-#: ConnectionListPage.qml:123
+#: ConnectionListPage.qml:124
 #, fuzzy, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "Tanpa wayar"
 
-#: ConnectionListPage.qml:126
+#: ConnectionListPage.qml:127
 #, kde-format
 msgid "Looking for Wi-Fi networks"
 msgstr ""
 
-#: ConnectionListPage.qml:129
+#: ConnectionListPage.qml:130
 #, fuzzy, kde-format
 msgid "Mobile data is deactivated"
 msgstr "Tanpa wayar"
 
-#: ConnectionListPage.qml:132
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: ConnectionListPage.qml:135
+#: ConnectionListPage.qml:136
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "Sambungan"
 
-#: ConnectionListPage.qml:144
+#: ConnectionListPage.qml:145
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:148
+#: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:150
+#: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:153
+#: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

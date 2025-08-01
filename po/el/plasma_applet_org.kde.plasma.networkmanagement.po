@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 00:43+0000\n"
+"POT-Creation-Date: 2025-08-01 00:45+0000\n"
 "PO-Revision-Date: 2023-08-15 02:00+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -23,39 +23,39 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Connect"
 msgstr "Σύνδεση"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Disconnect"
 msgstr "Αποσύνδεση"
 
-#: ConnectionItem.qml:84
+#: ConnectionItem.qml:90
 #, fuzzy, kde-format
 #| msgid "Shared"
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr "Κοινόχρηστο"
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "Διαμόρφωση…"
 
-#: ConnectionItem.qml:130
+#: ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "Ταχύτητα"
 
-#: ConnectionItem.qml:135
+#: ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "Λεπτομέρειες"
 
-#: ConnectionItem.qml:182
+#: ConnectionItem.qml:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -65,7 +65,7 @@ msgstr ""
 "Η τρέχουσα ταχύτητα λήψης είναι %1 kibibytes το δευτερόλεπτο, η τρέχουσα "
 "ταχύτητα αποστολής είναι %2 kibibytes το δευτερόλεπτο"
 
-#: ConnectionItem.qml:292
+#: ConnectionItem.qml:298
 #, fuzzy, kde-format
 #| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
 msgctxt "Download and upload rates in some unit per second"
@@ -83,64 +83,64 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Είσοδος"
 
-#: ConnectionListPage.qml:117
+#: ConnectionListPage.qml:118
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Η λειτουργία πτήσης είναι ενεργοποιημένη"
 
-#: ConnectionListPage.qml:121
+#: ConnectionListPage.qml:122
 #, fuzzy, kde-format
 #| msgid "Wireless and mobile networks are deactivated"
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr "Ασύρματα και κινητά δίκτυα είναι απενεργοποιημένα"
 
-#: ConnectionListPage.qml:123
+#: ConnectionListPage.qml:124
 #, fuzzy, kde-format
 #| msgid "Wireless is deactivated"
 msgid "Wi-Fi is deactivated"
 msgstr "Το ασύρματο είναι απενεργοποιημένο"
 
-#: ConnectionListPage.qml:126
+#: ConnectionListPage.qml:127
 #, fuzzy, kde-format
 #| msgid "Rescan wireless networks"
 msgid "Looking for Wi-Fi networks"
 msgstr "Επανασάρωση ασυρμάτων δικτύων"
 
-#: ConnectionListPage.qml:129
+#: ConnectionListPage.qml:130
 #, fuzzy, kde-format
 #| msgid "Mobile network is deactivated"
 msgid "Mobile data is deactivated"
 msgstr "Τα κινητά δίκτυα είναι απενεργοποιημένα"
 
-#: ConnectionListPage.qml:132
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
 msgstr "Χωρίς αποτέλεσμα"
 
-#: ConnectionListPage.qml:135
+#: ConnectionListPage.qml:136
 #, kde-format
 msgid "No available connections"
 msgstr "Μη διαθέσιμες συνδέσεις"
 
-#: ConnectionListPage.qml:144
+#: ConnectionListPage.qml:145
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:148
+#: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:150
+#: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:153
+#: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

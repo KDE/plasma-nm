@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 00:43+0000\n"
+"POT-Creation-Date: 2025-08-01 00:45+0000\n"
 "PO-Revision-Date: 2025-07-29 09:59+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -20,38 +20,38 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Connect"
 msgstr "З'єднатися"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Disconnect"
 msgstr "Від'єднатися"
 
-#: ConnectionItem.qml:84
+#: ConnectionItem.qml:90
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr "Оприлюднити"
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "Налаштувати…"
 
-#: ConnectionItem.qml:130
+#: ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "Швидкість"
 
-#: ConnectionItem.qml:135
+#: ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "Параметри"
 
-#: ConnectionItem.qml:182
+#: ConnectionItem.qml:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -61,7 +61,7 @@ msgstr ""
 "Поточна швидкість отримання даних — %1 кібібайтів за секунду; поточна "
 "швидкість вивантаження даних — %2 кібібайтів за секунду"
 
-#: ConnectionItem.qml:292
+#: ConnectionItem.qml:298
 #, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
@@ -78,61 +78,61 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Увійти"
 
-#: ConnectionListPage.qml:117
+#: ConnectionListPage.qml:118
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Увімкнено режим польоту"
 
-#: ConnectionListPage.qml:121
+#: ConnectionListPage.qml:122
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr "Wi-Fi і передавання даних мобільним вимкнено"
 
-#: ConnectionListPage.qml:123
+#: ConnectionListPage.qml:124
 #, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "Wi-Fi вимкнено"
 
-#: ConnectionListPage.qml:126
+#: ConnectionListPage.qml:127
 #, kde-format
 msgid "Looking for Wi-Fi networks"
 msgstr "Шукаємо мережі Wi-Fi"
 
-#: ConnectionListPage.qml:129
+#: ConnectionListPage.qml:130
 #, kde-format
 msgid "Mobile data is deactivated"
 msgstr "Передавання даних мобільним вимкнено"
 
-#: ConnectionListPage.qml:132
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
 msgstr "Немає відповідників"
 
-#: ConnectionListPage.qml:135
+#: ConnectionListPage.qml:136
 #, kde-format
 msgid "No available connections"
 msgstr "Немає доступних з'єднань"
 
-#: ConnectionListPage.qml:144
+#: ConnectionListPage.qml:145
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr "Вимкнути режим польоту для пошуку мереж"
 
-#: ConnectionListPage.qml:148
+#: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr ""
 "Увімкнути Wi-Fi або передавання даних мобільним зв'язком для пошуку мереж"
 
-#: ConnectionListPage.qml:150
+#: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr "Увімкнути Wi-Fi для пошуку мереж"
 
-#: ConnectionListPage.qml:153
+#: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

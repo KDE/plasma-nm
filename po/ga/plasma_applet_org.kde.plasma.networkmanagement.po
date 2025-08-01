@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 00:43+0000\n"
+"POT-Creation-Date: 2025-08-01 00:45+0000\n"
 "PO-Revision-Date: 2009-02-05 06:35-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -17,40 +17,40 @@ msgstr ""
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Connect"
 msgstr "Ceangail"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, fuzzy, kde-format
 msgid "Disconnect"
 msgstr "Ceangailte"
 
-#: ConnectionItem.qml:84
+#: ConnectionItem.qml:90
 #, fuzzy, kde-format
 #| msgid "Shared"
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr "Comhroinnte"
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:96
 #, fuzzy, kde-format
 #| msgid "Confirm Delete"
 msgid "Configure…"
 msgstr "Dearbhaigh an Scriosadh"
 
-#: ConnectionItem.qml:130
+#: ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "Luas"
 
-#: ConnectionItem.qml:135
+#: ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "Mionsonraí"
 
-#: ConnectionItem.qml:182
+#: ConnectionItem.qml:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -58,7 +58,7 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: ConnectionItem.qml:292
+#: ConnectionItem.qml:298
 #, fuzzy, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
@@ -76,61 +76,61 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr ""
 
-#: ConnectionListPage.qml:117
+#: ConnectionListPage.qml:118
 #, fuzzy, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Díchumasaíodh crua-earraí gan sreang"
 
-#: ConnectionListPage.qml:121
+#: ConnectionListPage.qml:122
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr ""
 
-#: ConnectionListPage.qml:123
+#: ConnectionListPage.qml:124
 #, fuzzy, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "Díchumasaíodh crua-earraí gan sreang"
 
-#: ConnectionListPage.qml:126
+#: ConnectionListPage.qml:127
 #, fuzzy, kde-format
 #| msgid "The name of the wireless network"
 msgid "Looking for Wi-Fi networks"
 msgstr "Ainm an líonra gan sreang"
 
-#: ConnectionListPage.qml:129
+#: ConnectionListPage.qml:130
 #, fuzzy, kde-format
 msgid "Mobile data is deactivated"
 msgstr "Díchumasaíodh crua-earraí gan sreang"
 
-#: ConnectionListPage.qml:132
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: ConnectionListPage.qml:135
+#: ConnectionListPage.qml:136
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "Ceangal córai&s"
 
-#: ConnectionListPage.qml:144
+#: ConnectionListPage.qml:145
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:148
+#: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:150
+#: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:153
+#: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

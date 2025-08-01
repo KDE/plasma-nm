@@ -554,12 +554,12 @@ msgstr "没有请求密码"
 #: passworddialog.cpp:99
 #, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr ""
+msgstr "Wi-Fi 网络“%1”的密码不正确。请重新输入。"
 
 #: passworddialog.cpp:101
 #, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr ""
+msgstr "请输入 Wi-Fi 网络“%1”的密码："
 
 #: passworddialog.cpp:105
 #, kde-format

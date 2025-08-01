@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 00:43+0000\n"
+"POT-Creation-Date: 2025-08-01 00:45+0000\n"
 "PO-Revision-Date: 2025-07-29 08:27+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -20,38 +20,38 @@ msgstr ""
 "n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 25.04.3\n"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Connect"
 msgstr "חיבור"
 
-#: ConnectionItem.qml:59
+#: ConnectionItem.qml:62
 #, kde-format
 msgid "Disconnect"
 msgstr "ניתוק"
 
-#: ConnectionItem.qml:84
+#: ConnectionItem.qml:90
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr "שיתוף"
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:96
 #, kde-format
 msgid "Configure…"
 msgstr "הגדרה…"
 
-#: ConnectionItem.qml:130
+#: ConnectionItem.qml:136
 #, kde-format
 msgid "Speed"
 msgstr "מהירות"
 
-#: ConnectionItem.qml:135
+#: ConnectionItem.qml:141
 #, kde-format
 msgid "Details"
 msgstr "פרטים"
 
-#: ConnectionItem.qml:182
+#: ConnectionItem.qml:188
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -61,7 +61,7 @@ msgstr ""
 "מהירות ההורדה הנוכחית היא %1 קיביבתים לשנייה, מהירות ההעלאה הנוכחית היא %2 "
 "קיביבתים לשנייה"
 
-#: ConnectionItem.qml:292
+#: ConnectionItem.qml:298
 #, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
@@ -78,60 +78,60 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "כניסה"
 
-#: ConnectionListPage.qml:117
+#: ConnectionListPage.qml:118
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "מצב טיסה פעיל"
 
-#: ConnectionListPage.qml:121
+#: ConnectionListPage.qml:122
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr "רשתות אלחוטיות ונתונים סלולריים מושבתים"
 
-#: ConnectionListPage.qml:123
+#: ConnectionListPage.qml:124
 #, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "הרשת האלחוטית מושבתת"
 
-#: ConnectionListPage.qml:126
+#: ConnectionListPage.qml:127
 #, kde-format
 msgid "Looking for Wi-Fi networks"
 msgstr "מתבצע חיפוש אחר רשתות אלחוטיות"
 
-#: ConnectionListPage.qml:129
+#: ConnectionListPage.qml:130
 #, kde-format
 msgid "Mobile data is deactivated"
 msgstr "נתונים סלולריים מושבתים"
 
-#: ConnectionListPage.qml:132
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
 msgstr "אין התאמות"
 
-#: ConnectionListPage.qml:135
+#: ConnectionListPage.qml:136
 #, kde-format
 msgid "No available connections"
 msgstr "אין חיבורים זמינים"
 
-#: ConnectionListPage.qml:144
+#: ConnectionListPage.qml:145
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr "יש לכבות מצב טיסה כדי לחפש רשתות"
 
-#: ConnectionListPage.qml:148
+#: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr "יש להפעיל רשת אלחוטית או נתונים סלולריים כדי לחפש רשתות"
 
-#: ConnectionListPage.qml:150
+#: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr "יש להפעיל רשת אלחוטית כדי לחפש רשתות"
 
-#: ConnectionListPage.qml:153
+#: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

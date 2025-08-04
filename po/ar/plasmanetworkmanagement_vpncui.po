@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2025-04-19 13:51+0400\n"
+"PO-Revision-Date: 2025-08-03 15:44+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -23,7 +23,7 @@ msgstr ""
 #: vpnc.cpp:73
 #, kde-format
 msgid "Error decrypting the obfuscated password"
-msgstr "حدث خطأ أثناء فك تشفير كلمة المرور المشوشة"
+msgstr "حدث خطأ أثناء فك تعمية كلمة السر المشوشة"
 
 #: vpnc.cpp:73
 #, kde-format
@@ -71,7 +71,7 @@ msgstr "اسم المستخدم للاتصال."
 #: vpnc.ui:58
 #, kde-format
 msgid "User password:"
-msgstr "كلمة المرور للمستخدم:"
+msgstr "كلمة السر للمستخدم:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, leUserPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userPassword)
@@ -183,13 +183,13 @@ msgstr "النقل والآمان"
 #: vpncadvanced.ui:82
 #, kde-format
 msgid "Encryption method:"
-msgstr "طريقة التشفير:"
+msgstr "طريقة التعمية:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, encryption)
 #: vpncadvanced.ui:98
 #, kde-format
 msgid "Encryption method."
-msgstr "طريقة التشفير."
+msgstr "طريقة التعمية."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpncadvanced.ui:105
@@ -288,13 +288,13 @@ msgstr "مؤمّن (افتراضي)"
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Weak (DES encryption, use with caution)"
-msgstr "ضعيف (تشفير DES، استخدمه مع أخذ الحيطة)"
+msgstr "ضعيف (تعمية DES، استخدمه مع أخذ الحيطة)"
 
 #: vpncadvancedwidget.cpp:29
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
-msgstr "بدون (غير آمن إطلاقًا)"
+msgstr "لا شيء (غير آمن إطلاقًا)"
 
 #: vpncadvancedwidget.cpp:32
 #, kde-format
@@ -348,7 +348,7 @@ msgstr "الخادم (افتراضي)"
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "None"
-msgstr "بدون"
+msgstr "لا شيء"
 
 #: vpncadvancedwidget.cpp:45
 #, kde-format

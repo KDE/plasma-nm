@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2025-04-19 18:11+0400\n"
+"PO-Revision-Date: 2025-08-03 15:43+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -592,7 +592,7 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"ملاحظة: تشفير MPPE متاح فقط مع طرق مصادقة MSCHAP.\n"
+"ملاحظة: تعمية MPPE متاح فقط مع طرق مصادقة MSCHAP.\n"
 " لتفعيل هذا الخيار، حدد طريقة أو أكثر من طرق مصادقة\n"
 " MSCHAP: MSCHAP أو MSCHAPv2."
 
@@ -606,13 +606,13 @@ msgstr "استخدم تعمية MPPE"
 #: l2tpppp.ui:281
 #, kde-format
 msgid "Crypto:"
-msgstr "التشفير:"
+msgstr "التعمية:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbMPPECrypto)
 #: l2tpppp.ui:297
 #, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr "يتطلب استخدام MPPE، مع تشفير 40/128 بت أو كليهما."
+msgstr "يتطلب استخدام MPPE، مع تعمية 40/128 بت أو كليهما."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
 #: l2tpppp.ui:301

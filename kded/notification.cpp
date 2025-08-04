@@ -395,6 +395,8 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         notify->setProperty("uni", connectionId);
         notify->setComponentName(QStringLiteral("networkmanagement"));
         m_notifications[connectionId] = notify;
+    } else {
+        notify->setEventId(eventId);
     }
 
     if (!iconName.isEmpty()) {

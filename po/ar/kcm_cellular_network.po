@@ -530,7 +530,7 @@ msgstr "المشغل الحالي: %1"
 #: ui/AvailableNetworks.qml:43
 #, kde-format
 msgid "Scan For Networks"
-msgstr "امسح الشبكات"
+msgstr "امحُ الشبكات"
 
 #: ui/EditProfilePage.qml:15
 #, kde-format

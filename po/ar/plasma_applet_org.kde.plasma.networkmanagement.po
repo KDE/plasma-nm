@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-05-04 00:44+0000\n"
-"PO-Revision-Date: 2025-06-12 12:00+0400\n"
+"PO-Revision-Date: 2025-08-03 08:02+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -166,7 +166,7 @@ msgstr "ارجع إلى اتّصالات الشّبكة"
 #: contents/ui/ShareNetworkQrCodePage.qml:31
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
-msgstr "امسح رمز QR هذا ضوئيًا باستخدام جهاز آخر للاتصال بالشبكة \"%1\"."
+msgstr "امحُ رمز QR هذا ضوئيًا باستخدام جهاز آخر للاتصال بالشبكة \"%1\"."
 
 #: contents/ui/Toolbar.qml:122
 #, kde-format

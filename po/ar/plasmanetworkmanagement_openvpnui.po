@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-24 00:43+0000\n"
-"PO-Revision-Date: 2025-04-19 18:32+0400\n"
+"PO-Revision-Date: 2025-08-03 15:41+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -159,7 +159,7 @@ msgstr "المفتاح الثابت:"
 #: openvpn.ui:230
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
-msgstr "ملف مشترك مسبقًا لوضع تشفير المفتاح الثابت (غير TLS)."
+msgstr "ملف مشترك مسبقًا لوضع تعمية المفتاح الثابت (غير TLS)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_16)
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
@@ -172,7 +172,7 @@ msgstr "توجيه المفتاح:"
 #: openvpn.ui:255
 #, kde-format
 msgid "Direction for Static Key encryption mode (non-TLS)."
-msgstr "الاتجاه لوضع تشفير المفتاح الثابت (غير TLS)."
+msgstr "الاتجاه لوضع تعمية المفتاح الثابت (غير TLS)."
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:258
@@ -266,7 +266,7 @@ msgstr "كلمة السر:"
 #: openvpn.ui:439 openvpn.ui:599
 #, kde-format
 msgid "Password passed to OpenVPN when prompted for it."
-msgstr "كلمة السر المرور إلى OpenVPN عندما يُطلب منه ذلك."
+msgstr "كلمة السر السر إلى OpenVPN عندما يُطلب منه ذلك."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: openvpn.ui:643
@@ -606,7 +606,7 @@ msgid ""
 "Block Chaining mode)."
 msgstr ""
 "عَمِّي الحزم باستخدام خوارزمية المُعمِّي. الإعداد المبدئي هو BF-CBC (Blowfish \n"
-"في وضع التشفير Block Chaining)."
+"في وضع التعمية Block Chaining)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openvpnadvanced.ui:486
@@ -1022,7 +1022,7 @@ msgstr "اسم مستخدم الوسيط:"
 #: openvpnadvanced.ui:1135 openvpnadvanced.ui:1150
 #, kde-format
 msgid "HTTP/SOCKS proxy password passed to OpenVPN when prompted for it."
-msgstr "مُررت كلمة المرور لوكيلHTTP/SOCKS إلى OpenVPN عند المطالبة به."
+msgstr "مُررت كلمة السر لوكيلHTTP/SOCKS إلى OpenVPN عند المطالبة به."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
 #: openvpnadvanced.ui:1138 openvpnauth.cpp:84 openvpnauth.cpp:121

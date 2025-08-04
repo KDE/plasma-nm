@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-29 00:43+0000\n"
-"PO-Revision-Date: 2025-04-21 18:07+0400\n"
+"PO-Revision-Date: 2025-08-03 07:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -556,17 +556,14 @@ msgid "No secrets were requested"
 msgstr "لم يُطلب أي أسرار"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr "كلمة السر غير صحيحة للشبكة اللاسلكية ”%1“. الرجاء المحاولة مرة أخرى."
+msgstr "كلمة السر غير صحيحة لشبكة واي فاي ”%1“. الرجاء المحاولة مرة أخرى."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "أدخل كلمة سر لتفعيل الاتصال اللاسلكي '\"%1':"
+msgstr "أدخل كلمة سر لشبكة واي فاي ”%1“:"
 
 #: passworddialog.cpp:105
 #, kde-format

@@ -5,13 +5,14 @@
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2014, 2015, 2016, 2019, 2020.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # SPDX-FileCopyrightText: 2024, 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-22 00:44+0000\n"
-"PO-Revision-Date: 2025-07-23 01:11-0300\n"
-"Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
+"PO-Revision-Date: 2025-08-03 08:05-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -1111,7 +1112,7 @@ msgstr ""
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
 #, kde-format
 msgid "Route Metric:"
-msgstr "Métrica da rota:"
+msgstr "Métrica de rota:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -1126,7 +1127,7 @@ msgid ""
 msgstr ""
 "Uma pontuação que ajuda a escolher o melhor caminho para os pacotes de dados "
 "chegarem ao seu destino,\n"
-" com base em fatores como distância, atraso e confiabilidade.\n"
+"com base em fatores como distância, atraso e confiabilidade.\n"
 "\n"
 "O valor padrão -1 significa que o NetworkManager pode escolher e gerenciar a "
 "métrica real da rota."
@@ -3808,7 +3809,7 @@ msgstr "Conectado a %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "O serviço NetworkManager não está em execução"
+msgstr "O NetworkManager não está em execução"
 
 #: networkstatus.cpp:261
 #, kde-format

@@ -799,7 +799,7 @@ msgid ""
 "Unable to autodetect connection settings for your carrier. Please find your "
 "carrier's APN settings by either contacting support or searching online."
 msgstr ""
-"تعذر الكشف التلقائي عن إعدادات الاتصال لمشغل شبكة الجوال. يُرجى العثور على "
+"تعذر الكشف الآليّ عن إعدادات الاتصال لمشغل شبكة الجوال. يُرجى العثور على "
 "إعدادات اسم نقطة الوصول APN لمشغل شبكة الجوال بالتواصل مع الدعم أو البحث عبر "
 "الإنترنت."
 
@@ -821,7 +821,7 @@ msgstr "أضف اسم نقطة الوصول APN"
 #: ui/ProfileList.qml:115
 #, kde-format
 msgid "Automatically detect APN"
-msgstr "اكتشاف اسم نقطة الوصول APN آليًا"
+msgstr "اكتشاف اسم نقطة الوصول APN آليًّا"
 
 #: ui/SimLockPage.qml:19 ui/SimPage.qml:94
 #, kde-format

@@ -64,7 +64,7 @@ msgstr "هل تريد استبدال الطريق المبدئي؟"
 #: sshauth.ui:14
 #, kde-format
 msgid "SSH VPN"
-msgstr "شبكة خاصة افتراضية اس اس اتش"
+msgstr "شبكة خاصة مبدئية اس اس اتش"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: sshauth.ui:32

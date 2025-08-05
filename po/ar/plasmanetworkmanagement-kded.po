@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-19 00:42+0000\n"
-"PO-Revision-Date: 2025-04-21 18:07+0400\n"
+"PO-Revision-Date: 2025-08-04 12:15+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -187,21 +187,21 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AutoIpStartFailedReason"
 msgid "The auto IP service failed to start"
-msgstr "فشل بدء خدمة IP الآلية"
+msgstr "فشل بدء خدمة IP الآليّة"
 
 #: notification.cpp:149
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpErrorReason"
 msgid "The auto IP service reported an error"
-msgstr "أبلغت خدمة IP الآلية عن خطأ"
+msgstr "أبلغت خدمة IP الآليّة عن خطأ"
 
 #: notification.cpp:152
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpFailedReason"
 msgid "The auto IP service failed"
-msgstr "فشلت خدمة IP الآلية"
+msgstr "فشلت خدمة IP الآليّة"
 
 #: notification.cpp:155
 #, kde-format
@@ -312,7 +312,7 @@ msgstr "أُزيل الجهاز"
 msgctxt ""
 "@info:status Notification when the device failed due to SleepingReason"
 msgid "The networking system is now sleeping"
-msgstr "نظام الشبكات نائم الآن"
+msgstr "نظام الشبكات معلّق الآن"
 
 #: notification.cpp:200
 #, kde-format
@@ -584,17 +584,17 @@ msgstr "حواري كلمة سر %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr "إعدادات الشبكة الافتراضية الخاصة مفقودة"
+msgstr "إعدادات الشبكة المبدئية الخاصة مفقودة"
 
 #: passworddialog.cpp:134
 #, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "وفّر الأسرار الخاصة باتصال الشبكة الافتراضية الخاصة ”%1“:"
+msgstr "وفّر الأسرار الخاصة باتصال الشبكة المبدئية الخاصة ”%1“:"
 
 #: passworddialog.cpp:135
 #, kde-format
 msgid "VPN secrets (%1) dialog"
-msgstr "حواري أسرار شبكات الشخصية الافتراضية ‏(%1)"
+msgstr "حواري أسرار شبكات الشخصية المبدئية ‏(%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26

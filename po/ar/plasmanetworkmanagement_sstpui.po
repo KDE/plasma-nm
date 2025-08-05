@@ -204,7 +204,7 @@ msgstr "كلمة السر:"
 #: sstpauth.ui:14
 #, kde-format
 msgid "SSH VPN"
-msgstr "شبكة خاصة افتراضية اس اس اتش"
+msgstr "شبكة خاصة مبدئية اس اس اتش"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: sstpauth.ui:32

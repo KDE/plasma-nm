@@ -193,7 +193,7 @@ msgstr "إعدادات عنوان الإنترنت"
 #: ui/NetworkSettings.qml:180
 #, kde-format
 msgid "Automatic"
-msgstr "تلقائي"
+msgstr "آليّ"
 
 #: ui/NetworkSettings.qml:180
 #, kde-format

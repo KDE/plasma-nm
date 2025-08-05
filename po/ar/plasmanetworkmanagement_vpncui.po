@@ -34,8 +34,8 @@ msgstr "خطأ"
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr ""
-"يفتقد مدير الشبكة NetworkManager دعم شبكة الشبكات الخاصة الافتراضية "
-"المتوافقة مع سيسكو"
+"يفتقد مدير الشبكة NetworkManager دعم شبكة الشبكات الخاصة المبدئية المتوافقة "
+"مع سيسكو"
 
 #: vpnc.cpp:146
 #, kde-format
@@ -240,8 +240,8 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
-"المنفذ المحلي المراد استخدامه (0-65535). 0 (القيمة الافتراضية) تعني منفذ "
-"عشوائي. 500 هي القيمة الافتراضية لـ vpnc."
+"المنفذ المحلي المراد استخدامه (0-65535). 0 (القيمة المبدئية) تعني منفذ "
+"عشوائي. 500 هي القيمة المبدئية لـ vpnc."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193
@@ -282,7 +282,7 @@ msgstr "نت سكرين"
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
-msgstr "مؤمّن (افتراضي)"
+msgstr "مؤمّن (مبدئي)"
 
 #: vpncadvancedwidget.cpp:28
 #, kde-format
@@ -342,7 +342,7 @@ msgstr "مجموعة DH الخامسة"
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
-msgstr "الخادم (افتراضي)"
+msgstr "الخادم (مبدئي)"
 
 #: vpncadvancedwidget.cpp:44
 #, kde-format

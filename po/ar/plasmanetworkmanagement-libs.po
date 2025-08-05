@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2025-06-12 12:05+0400\n"
+"PO-Revision-Date: 2025-08-04 20:13+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -643,7 +643,7 @@ msgstr "معرّف مجهول:"
 #: editor/settings/ui/802-1x.ui:358
 #, kde-format
 msgid "Automatic PAC provisioning"
-msgstr "التوفير الآلي لبيانات اعتماد الوصول المحمي PAC"
+msgstr "التوفير الآليّ لبيانات اعتماد الوصول المحمي PAC"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:375
@@ -902,7 +902,7 @@ msgstr "الرقم:"
 #: editor/settings/ui/connectionwidget.ui:17
 #, kde-format
 msgid "Connect automatically with priority"
-msgstr "وصل آليا بالأولوية"
+msgstr "وصل آليّا بالأولوية"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
@@ -914,7 +914,7 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
-"إذا عُيِّن الاتصال على الاتصال الآلي، فسيُفضل الاتصال ذو الأولوية الأعلى. "
+"إذا عُيِّن الاتصال على الاتصال الآليّ، فسيُفضل الاتصال ذو الأولوية الأعلى. "
 "الإعداد المبدئي هو 0.\n"
 "الرقم الأعلى يعني أولوية أعلى. يمكن استخدام رقم سالب للإشارة إلى أولوية أقل "
 "من الأولوية المبدئية.            "
@@ -952,7 +952,7 @@ msgstr "متقدّم…"
 #: editor/settings/ui/connectionwidget.ui:81
 #, kde-format
 msgid "Automatically connect to VPN"
-msgstr "اتّصل آليًا بشبكة خاصة افتراضية"
+msgstr "اتّصل آليًّا بشبكة خاصة افتراضية"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:101
@@ -1099,7 +1099,7 @@ msgstr "آليّ"
 #: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:232
 #, kde-format
 msgid "Automatic (Only addresses)"
-msgstr "آليًا (العناوين فقط)"
+msgstr "آليًّا (العناوين فقط)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
@@ -1298,7 +1298,7 @@ msgstr "ممكّنة (فضّل عناوين مؤقّتة)"
 #: editor/settings/ui/ipv6.ui:237
 #, kde-format
 msgid "Automatic (Only DHCP)"
-msgstr "آلي (DHCP فقط)"
+msgstr "آليّ (DHCP فقط)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:252
@@ -1791,7 +1791,7 @@ msgid ""
 msgstr ""
 "تفاوض ارتباط الجهاز. إذا اخترت ”يدوي“، فسوف تُفرض قيم ’السرعة‘ و”الازدواج“ "
 "دون \n"
-"التحقق من توافق الجهاز. إذا لم تكن متأكداً، اترك هنا ”تجاهل“ أو اختر ”تلقائي“."
+"التحقق من توافق الجهاز. إذا لم تكن متأكداً، اترك هنا ”تجاهل“ أو اختر ”آليّ“."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -1908,7 +1908,7 @@ msgid ""
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
 "اختياري.\n"
-"رقم المنفذ الذي يستمع إليه. يُحدد عشوائيًا إذا تم تركه على \"تلقائي\"."
+"رقم المنفذ الذي يستمع إليه. يُحدد عشوائيًا إذا تم تركه على \"آليّ\"."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:57
@@ -1942,10 +1942,10 @@ msgid ""
 "this value may be specified explicitly."
 msgstr ""
 "اختياري.\n"
-"إذا لم تحدده، سيحدد وحدة الإرسال القصوى تلقائيًا\n"
-"من عناوين نقطة النهاية أو مسار النظام الافتراضي،\n"
+"إذا لم تحدده، سيحدد وحدة الإرسال القصوى آليًّا\n"
+"من عناوين نقطة النهاية أو مسار النظام المبدئي،\n"
 "وهو خيار سليم عادةً. ومع ذلك، لتحديد وحدة الإرسال القصوى يدويًا وتجاوز هذا "
-"الاكتشاف التلقائي،\n"
+"الاكتشاف الآليّ،\n"
 "يمكن تحديد هذه القيمة صراحةً."
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
@@ -1961,7 +1961,7 @@ msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
 msgstr ""
-"ما إذا كان سيتم إضافة المسارات تلقائياً لنطاقات \n"
+"ما إذا كان سيتم إضافة المسارات آليّاً لنطاقات \n"
 "عناوين IP المسموح بها للأقران."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
@@ -3001,7 +3001,7 @@ msgstr "موفّر مجهول"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Default"
-msgstr "الافتراضي"
+msgstr "المبدئي"
 
 #: editor/widgets/mobileconnectionwizard.cpp:183
 #: editor/widgets/mobileconnectionwizard.cpp:191
@@ -3263,7 +3263,7 @@ msgstr "حرّر سُبُل IPv4"
 msgid ""
 "If enabled, this connection will never be used as the default network "
 "connection"
-msgstr "في حالة تمكينه، لن يستخدم هذا الاتصال مطلقًا كاتصال شبكة مبدئي"
+msgstr "في حالة تمكينه، لن يستخدم هذا الاتصال مطلقًا كاتصال شبكة افتراضي"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
@@ -3292,14 +3292,14 @@ msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
 "specified above are used"
 msgstr ""
-"في حالة التمكين، تُتجاهل المسارات المضبوطة تلقائيًا وتُستخدم المسارات المحددة "
+"في حالة التمكين، تُتجاهل المسارات المضبوطة آليًّا وتُستخدم المسارات المحددة "
 "أعلاه فقط"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
 #, kde-format
 msgid "Ignore automatically obtained routes"
-msgstr "تجاهل السُبُل المُضافة آليًا"
+msgstr "تجاهل السُبُل المُضافة آليًّا"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
 #: editor/widgets/ui/ipv6routes.ui:20
@@ -3604,7 +3604,7 @@ msgstr "عنوان IPv4"
 #: models/networkmodelitem.cpp:591
 #, kde-format
 msgid "IPv4 Default Gateway"
-msgstr "بوابة IPv4 المبدئية"
+msgstr "بوابة IPv4 الافتراضية"
 
 #: models/networkmodelitem.cpp:598
 #, kde-format
@@ -3629,7 +3629,7 @@ msgstr "عنوان IPv6 ULA"
 #: models/networkmodelitem.cpp:620
 #, kde-format
 msgid "IPv6 Default Gateway"
-msgstr "بوابة IPv6 المبدئية"
+msgstr "بوابة IPv6 الافتراضية"
 
 #: models/networkmodelitem.cpp:627
 #, kde-format

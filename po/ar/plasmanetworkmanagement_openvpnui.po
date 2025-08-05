@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2025-08-03 15:41+0400\n"
+"PO-Revision-Date: 2025-08-04 20:57+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -327,7 +327,7 @@ msgstr "استخدام منفذ بوابة مخصص:"
 #, kde-format
 msgctxt "like in use Automatic configuration"
 msgid "Automatic"
-msgstr "آلي"
+msgstr "آليّ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomReneg)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomReneg)
@@ -390,7 +390,7 @@ msgstr "متكيف"
 #: openvpnadvanced.ui:138 openvpnadvanced.ui:216
 #, kde-format
 msgid "Automatic"
-msgstr "آلي"
+msgstr "آليّ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:148
@@ -669,8 +669,7 @@ msgid ""
 "Authenticate packets with HMAC using message digest algorithm. The default "
 "is SHA1."
 msgstr ""
-"مصادقة الحزم باستخدام HMAC باستخدام خوارزمية تلخيص الرسائل. الافتراضي هو "
-"SHA1."
+"مصادقة الحزم باستخدام HMAC باستخدام خوارزمية تلخيص الرسائل. المبدئي هو SHA1."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openvpnadvanced.ui:564

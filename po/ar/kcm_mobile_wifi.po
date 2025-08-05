@@ -166,7 +166,7 @@ msgstr "إعدادات عنوان الإنترنت"
 #: package/contents/ui/NetworkSettings.qml:136
 #, kde-format
 msgid "Automatic"
-msgstr "تلقائي"
+msgstr "آليّ"
 
 #: package/contents/ui/NetworkSettings.qml:136
 #, kde-format

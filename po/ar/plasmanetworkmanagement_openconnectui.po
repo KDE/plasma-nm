@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2025-04-19 18:27+0400\n"
+"PO-Revision-Date: 2025-04-21 17:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -42,7 +42,7 @@ msgid ""
 "Reason: %2\n"
 "Accept it anyway?"
 msgstr ""
-"فشل فحص الشّهادة من خادوم الشبكة الخاصة الافتراضية ‏\"%1\".\n"
+"فشل فحص الشّهادة من خادوم الشبكة الخاصة المبدئية ‏\"%1\".\n"
 "السّبب: %2\n"
 "أأقبلها بأيّ حال؟"
 
@@ -61,7 +61,7 @@ msgstr "استيثاق OpenConnect VPN"
 #: openconnectauth.ui:55
 #, kde-format
 msgid "VPN Host"
-msgstr "مضيف الشبكة الخاصة الافتراضية"
+msgstr "مضيف الشبكة الخاصة المبدئية"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, btnConnect)
 #: openconnectauth.ui:81
@@ -179,7 +179,7 @@ msgstr "السماح لحصان طروادة Cisco Secure Desktop الآمن ل�
 #: openconnectprop.ui:114
 #, kde-format
 msgid "VPN Protocol:"
-msgstr "ميفاق الشبكة الخاصة الافتراضية:"
+msgstr "ميفاق الشبكة الخاصة المبدئية:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:131

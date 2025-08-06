@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-22 00:44+0000\n"
-"PO-Revision-Date: 2025-08-04 20:13+0400\n"
+"PO-Revision-Date: 2025-08-05 19:56+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -1435,7 +1435,7 @@ msgid ""
 " BSSID entered here. Example: 00:11:22:33:44:55"
 msgstr ""
 "يقوم هذا الخيار بتأمين هذا الاتصال بنقطة وصول واي فاي (AP) المحددة \n"
-"بواسطة BSSID الذي تم إدخاله هنا. مثال: 00:00:11:22:33:44:55"
+"بواسطة BSSID المدخل هنا. مثال: 00:00:11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:117
@@ -1855,7 +1855,7 @@ msgid ""
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
 "اختياري.\n"
-"رقم المنفذ الذي يستمع إليه. يُحدد عشوائيًا إذا تم تركه على \"آليّ\"."
+"رقم المنفذ الذي يستمع إليه. يُحدد عشوائيًا إذا تُرك على \"آليّ\"."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:72
@@ -1908,8 +1908,8 @@ msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
 msgstr ""
-"ما إذا كان سيتم إضافة المسارات آليّاً لنطاقات \n"
-"عناوين IP المسموح بها للأقران."
+"ما إذا كان ستضاف المسارات آليّاً لنطاقات \n"
+"عناوين الإنترنت IP المسموح بها للأقران."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
 #: editor/settings/ui/wireguardinterfacewidget.ui:141
@@ -1933,8 +1933,8 @@ msgid ""
 "            out of band to the author of the configuration file."
 msgstr ""
 "مطلوب.\n"
-"            مفتاح عام base64 يتم حسابه بواسطة wg pubkey \n"
-"            من مفتاح خاص، ويتم إرساله عادةً \n"
+"            مفتاح عام base64 يُحسب بواسطة wg pubkey \n"
+"            من مفتاح خاص، ويُرسل عادةً \n"
 "            خارج النطاق إلى مؤلف ملف الضبط."
 
 #. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
@@ -1958,7 +1958,7 @@ msgstr ""
 "مطلوب.\n"
 "            قائمة منفصلة بفواصل من عناوين IP (v4 أو v6) \n"
 "            مع أقنعة CIDR التي يُسمح من خلالها بحركة المرور الواردة إلى \n"
-"            هذا النظير والتي يتم توجيه حركة المرور الصادرة إليها \n"
+"            هذا النظير والتي يُوجه حركة المرور الصادرة إليها \n"
 "            لهذا النظير. يمكن تحديد 0.0.0.0/0 \n"
 "            لمطابقة جميع عناوين IPv4، \n"
 "            ويمكن تحديد ::/0 لمطابقة جميع عناوين IPv6."
@@ -3195,7 +3195,7 @@ msgstr "حرّر سُبُل IPv4"
 msgid ""
 "If enabled, this connection will never be used as the default network "
 "connection"
-msgstr "في حالة تمكينه، لن يستخدم هذا الاتصال مطلقًا كاتصال شبكة افتراضي"
+msgstr "في حالة تمكينه، لن يستخدم هذا الاتصال مطلقًا كاتصال شبكة مبدئي"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133

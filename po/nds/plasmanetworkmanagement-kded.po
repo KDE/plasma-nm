@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-29 00:43+0000\n"
+"POT-Creation-Date: 2025-08-06 00:46+0000\n"
 "PO-Revision-Date: 2014-08-13 22:07+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -473,24 +473,24 @@ msgstr "Verbinnen „%1“ anmaakt"
 msgid "Connection '%1' deactivated."
 msgstr "Verbinnen „%1“ utmaakt"
 
-#: notification.cpp:424
+#: notification.cpp:426
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "VPN-Verbinnen „%1“ anmaakt"
 
-#: notification.cpp:427
+#: notification.cpp:429
 #, fuzzy, kde-format
 #| msgid "VPN connection '%1' activated."
 msgid "VPN connection '%1' failed to activate."
 msgstr "VPN-Verbinnen „%1“ anmaakt"
 
-#: notification.cpp:430 notification.cpp:438
+#: notification.cpp:432 notification.cpp:440
 #, fuzzy, kde-format
 #| msgid "VPN connection '%1' activated."
 msgid "VPN connection '%1' deactivated."
 msgstr "VPN-Verbinnen „%1“ anmaakt"
 
-#: notification.cpp:441
+#: notification.cpp:443
 #, fuzzy, kde-format
 #| msgid ""
 #| "The VPN connection changed state because the device it was using was "
@@ -502,24 +502,24 @@ msgstr ""
 "De VPN-Verbinnen hett ehr Tostand ännert, ehr bruukt Reedschap wöör "
 "afkoppelt."
 
-#: notification.cpp:444
+#: notification.cpp:446
 #, fuzzy, kde-format
 #| msgid "The service providing the VPN connection was stopped."
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "De Deenst, de de VPN-Verbinnen praatstellt, wöör anhollen."
 
-#: notification.cpp:447
+#: notification.cpp:449
 #, fuzzy, kde-format
 #| msgid "The IP config of the VPN connection was invalid."
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "De VPN-Verbinnen ehr IP-Instellen sünd leeg"
 
-#: notification.cpp:450
+#: notification.cpp:452
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "Bi't Tokoppeln na den VPN-Deenst is de Tiet aflopen"
 
-#: notification.cpp:453
+#: notification.cpp:455
 #, fuzzy, kde-format
 #| msgid ""
 #| "A timeout occurred while starting the service providing the VPN "
@@ -531,24 +531,24 @@ msgstr ""
 "Bi't Starten vun den Deenst, de de VPN-Verbinnen praatstellt, is de Tiet "
 "aflopen"
 
-#: notification.cpp:456
+#: notification.cpp:458
 #, fuzzy, kde-format
 #| msgid "Starting the service providing the VPN connection failed."
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "Starten vun den Deenst, de de VPN-Verbinnen praatstellt, is fehlslaan"
 
-#: notification.cpp:459
+#: notification.cpp:461
 #, fuzzy, kde-format
 #| msgid "Necessary secrets for the VPN connection were not provided."
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "De nödigen Anmelldaten för de VPN-Verbinnen wöörn nich praatstellt"
 
-#: notification.cpp:462
+#: notification.cpp:464
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "Identiteetprööv op den VPN-Server is fehlslaan"
 
-#: notification.cpp:465
+#: notification.cpp:467
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:status Notification when the device failed due to "
@@ -557,12 +557,12 @@ msgstr "Identiteetprööv op den VPN-Server is fehlslaan"
 msgid "The connection was deleted."
 msgstr "De Verbinnen wöör wegmaakt"
 
-#: notification.cpp:551
+#: notification.cpp:553
 #, kde-format
 msgid "No Network Connection"
 msgstr ""
 
-#: notification.cpp:552
+#: notification.cpp:554
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr ""

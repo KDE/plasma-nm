@@ -210,7 +210,7 @@ msgstr "شبكة خاصة مبدئية اس اس اتش"
 #: sstpauth.ui:32
 #, kde-format
 msgid "Password: "
-msgstr "كلمة السّرّ: "
+msgstr "كلمة السر: "
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_gateway)
 #: sstpwidget.ui:25

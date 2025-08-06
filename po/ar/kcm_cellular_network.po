@@ -560,7 +560,7 @@ msgstr "اسم المستخدم"
 #: ui/EditProfilePage.qml:54
 #, kde-format
 msgid "Password"
-msgstr "كلمة السّرّ"
+msgstr "كلمة السر"
 
 #: ui/EditProfilePage.qml:62
 #, kde-format

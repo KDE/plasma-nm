@@ -24,7 +24,6 @@ public:
 
     enum KcmItemRole {
         KcmConnectionIconRole = Qt::UserRole + 100,
-        KcmConnectionTypeRole,
         KcmVpnConnectionExportable,
     };
 

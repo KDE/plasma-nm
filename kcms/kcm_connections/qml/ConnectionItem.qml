@@ -19,17 +19,28 @@ QQC2.ItemDelegate {
 
     icon.name: model.KcmConnectionIcon
 
+    property bool passwordIsStatic: (model.SecurityType === PlasmaNM.Enums.StaticWep || model.SecurityType == PlasmaNM.Enums.WpaPsk ||
+                                     model.SecurityType === PlasmaNM.Enums.Wpa2Psk || model.SecurityType == PlasmaNM.Enums.SAE)
+    property bool predictableWirelessPassword: !model.Uuid && model.Type === PlasmaNM.Enums.Wireless && passwordIsStatic
+    property bool isUnknownNewConnection: model.ItemType !== PlasmaNM.NetworkModelItem.UnavailableConnection && delegate.isConnectionDeactivated() && !model.ConnectionPath
+
     text: model.Name
     property string subtitle: itemText()
     Accessible.description: subtitle
 
-    checked: model.ConnectionPath === currentConnectionPath
+    checked: model.ConnectionPath && model.ConnectionPath === currentConnectionPath
     highlighted: checked || pressed
 
     signal aboutToChangeConnection(bool exportable, string name, string path)
     signal aboutToRemoveConnection(string name, string path)
 
-    onClicked: aboutToChangeConnection(model.KcmVpnConnectionExportable, model.Name, model.ConnectionPath)
+    onClicked: {
+        if (isUnknownNewConnection) {
+            changeState()
+        } else {
+            aboutToChangeConnection(model.KcmVpnConnectionExportable, model.Name, model.ConnectionPath)
+        }
+    }
     Keys.onSpacePressed: aboutToChangeConnection(model.KcmVpnConnectionExportable, model.Name, model.ConnectionPath)
 
     TapHandler {
@@ -69,14 +80,8 @@ QQC2.ItemDelegate {
         QQC2.MenuItem {
             icon.name: delegate.isConnectionDeactivated() ? "network-connect-symbolic" : "network-disconnect-symbolic"
             text: delegate.isConnectionDeactivated() ? i18n("Connect") : i18n("Disconnect")
-            enabled: model.ItemType === PlasmaNM.NetworkModelItem.AvailableConnection
-            onTriggered: {
-                if (delegate.isConnectionDeactivated()) {
-                    handler.activateConnection(model.ConnectionPath, model.DevicePath, model.SpecificPath);
-                } else {
-                    handler.deactivateConnection(model.ConnectionPath, model.DevicePath);
-                }
-            }
+            enabled: model.ItemType === PlasmaNM.NetworkModelItem.AvailableConnection || model.ItemType === PlasmaNM.NetworkModelItem.AvailableAccessPoint
+            onTriggered: changeState()
             QQC2.ToolTip.visible: !enabled && hovered
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             QQC2.ToolTip.text: i18nc("@info:tooltip", "Cannot connect to this network because it was not detected.")
@@ -85,6 +90,7 @@ QQC2.ItemDelegate {
         QQC2.MenuItem {
             icon.name: "list-remove-symbolic"
             text: i18n("Delete");
+            visible: !delegate.isUnknownNewConnection
 
             onTriggered: {
                 delegate.aboutToRemoveConnection(delegate.model.Name, delegate.model.ConnectionPath)
@@ -111,8 +117,24 @@ QQC2.ItemDelegate {
             return i18n("Connected")
         } else if (model.ConnectionState === PlasmaNM.Enums.Activating) {
             return i18n("Connecting")
+        } else if (model.ItemType === PlasmaNM.NetworkModelItem.AvailableAccessPoint) {
+            return i18nc("@title:column Available networks", "Available")
         } else {
             return model.LastUsed
+        }
+    }
+
+    function changeState() {
+        if (!predictableWirelessPassword && (model.ConnectionState == PlasmaNM.Enums.Deactivated || model.ConnectionState === PlasmaNM.Enums.Deactivating)) {
+            if (!predictableWirelessPassword && !model.Uuid) {
+                handler.addAndActivateConnection(model.DevicePath, model.SpecificPath)
+            } else {
+                handler.activateConnection(model.ConnectionPath, model.DevicePath, model.SpecificPath)
+            }
+        } else if (!predictableWirelessPassword) {
+            handler.deactivateConnection(model.ConnectionPath, model.DevicePath)
+        } else if (predictableWirelessPassword) {
+            root.activateConnectionWithDialog(model.ItemUniqueName, model.DevicePath, model.SpecificPath, model.SecurityType)
         }
     }
 }

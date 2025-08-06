@@ -6,6 +6,7 @@
 
 import QtQuick
 import QtQuick.Dialogs
+import QtQuick.Layouts
 import QtQuick.Controls as QQC2
 import org.kde.plasma.networkmanagement as PlasmaNM
 import org.kde.kirigami 2.15 as Kirigami
@@ -95,7 +96,7 @@ QQC2.Page {
             model: editorProxyModel
             currentIndex: -1
             boundsBehavior: Flickable.StopAtBounds
-            section.property: "KcmConnectionType"
+            section.property: "Section"
             section.delegate: Kirigami.ListSectionHeader {
                 text: section
                 width: ListView.view.width
@@ -247,6 +248,68 @@ QQC2.Page {
             handler.removeConnection(connectionPath)
         }
     }
+
+    QQC2.Dialog {
+        id: passwordPrompt
+
+        property string uniqueName
+        property string devicePath
+        property string specificPath
+        property int securityType
+
+        footer: QQC2.DialogButtonBox {
+            QQC2.Button {
+                text: i18nc("@action:button Connect to network", "Connect")
+                icon.name: "network-connect"
+                enabled: passwordField.acceptableInput
+                QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.AcceptRole
+            }
+            QQC2.Button {
+                text: i18nc("@action:button Cancel connecting to network", "Cancel")
+                icon.name: "dialog-cancel"
+                QQC2.DialogButtonBox.buttonRole: QQC2.DialogButtonBox.RejectRole
+            }
+        }
+
+        title: i18nc("@title:window", "Enter Password")
+
+        contentItem: ColumnLayout {
+            QQC2.Label {
+                Layout.fillWidth: true
+                wrapMode: Text.Wrap
+                text: i18nc("@label %1 is the name of the network the user is connecting to", "Network: %1", passwordPrompt.uniqueName)
+            }
+            Kirigami.PasswordField {
+                id: passwordField
+
+                Layout.fillWidth: true
+                validator: RegularExpressionValidator {
+                    regularExpression: (passwordPrompt.securityType === PlasmaNM.Enums.StaticWep)
+                        ? /^(?:.{5}|[0-9a-fA-F]{10}|.{13}|[0-9a-fA-F]{26})$/
+                        : /^(?:.{8,64})$/
+                }
+                onAccepted: passwordPrompt.accept()
+            }
+
+            Kirigami.InlineMessage {
+                id: errorMessage
+
+                Layout.fillWidth: true
+                visible: !passwordField.acceptableInput
+                text: (passwordPrompt.securityType === PlasmaNM.Enums.StaticWep)
+                    ? i18nc("@label key is a passcode", "Password must be a valid WEP key")
+                    : i18nc("@label password invalid length message", "Password must be between 8 and 64 characters")
+            }
+        }
+
+        onAccepted: {
+            handler.addAndActivateConnection(passwordPrompt.devicePath, passwordPrompt.specificPath, passwordField.text)
+            passwordField.clear()
+        }
+
+        onRejected: passwordField.clear()
+    }
+
     AddConnectionDialog {
         id: addNewConnectionDialog
 
@@ -274,5 +337,13 @@ QQC2.Page {
     function selectConnection(connectionName, connectionPath) {
         connectionView.currentConnectionName = connectionName
         connectionView.currentConnectionPath = connectionPath
+    }
+
+    function activateConnectionWithDialog(uniqueName, devicePath, specificPath, securityType) {
+        passwordPrompt.uniqueName = uniqueName
+        passwordPrompt.devicePath = devicePath
+        passwordPrompt.specificPath = specificPath
+        passwordPrompt.securityType = securityType
+        passwordPrompt.open()
     }
 }

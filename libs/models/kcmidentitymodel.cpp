@@ -41,7 +41,6 @@ QHash<int, QByteArray> KcmIdentityModel::roleNames() const
 {
     QHash<int, QByteArray> roles = QIdentityProxyModel::roleNames();
     roles[KcmConnectionIconRole] = "KcmConnectionIcon";
-    roles[KcmConnectionTypeRole] = "KcmConnectionType";
     roles[KcmVpnConnectionExportable] = "KcmVpnConnectionExportable";
 
     return roles;
@@ -67,11 +66,6 @@ QVariant KcmIdentityModel::data(const QModelIndex &index, int role) const
 
     if (role == KcmConnectionIconRole) {
         return iconName;
-    } else if (role == KcmConnectionTypeRole) {
-        if (type == NetworkManager::ConnectionSettings::Vpn && vpnSetting) {
-            return QStringLiteral("%1 (%2)").arg(tooltip, vpnSetting->serviceType().section(QLatin1Char('.'), -1));
-        }
-        return tooltip;
     } else if (role == KcmVpnConnectionExportable) {
         if (type == NetworkManager::ConnectionSettings::Vpn && vpnSetting) {
             return (vpnSetting->serviceType().endsWith(QLatin1String("vpnc")) //

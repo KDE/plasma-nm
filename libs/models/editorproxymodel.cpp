@@ -40,29 +40,38 @@ bool EditorProxyModel::filterAcceptsRow(int source_row, const QModelIndex &sourc
         return false;
     }
 
-    NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
-    if (itemType == NetworkModelItem::AvailableAccessPoint) {
-        return false;
-    }
-
     return QSortFilterProxyModel::filterAcceptsRow(source_row, source_parent);
 }
 
 bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &right) const
 {
-    const bool leftConnected = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const bool leftDeactivated = sourceModel()->data(left, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Deactivated;
+    const auto leftAvailable = sourceModel()->data(left, NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::UnavailableConnection;
     const QString leftName = sourceModel()->data(left, NetworkModel::NameRole).toString();
     const UiUtils::SortedConnectionType leftType =
         UiUtils::connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType)sourceModel()->data(left, NetworkModel::TypeRole).toUInt());
     const QString leftVpnType = sourceModel()->data(left, NetworkModel::VpnType).toString();
     const QDateTime leftDate = sourceModel()->data(left, NetworkModel::TimeStampRole).toDateTime();
 
-    const bool rightConnected = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Activated;
+    const bool rightDeactivated = sourceModel()->data(right, NetworkModel::ConnectionStateRole).toUInt() == NetworkManager::ActiveConnection::Deactivated;
+    const auto rightAvailable = sourceModel()->data(right, NetworkModel::ItemTypeRole).toUInt() == NetworkModelItem::UnavailableConnection;
     const QString rightName = sourceModel()->data(right, NetworkModel::NameRole).toString();
     const UiUtils::SortedConnectionType rightType =
         UiUtils::connectionTypeToSortedType((NetworkManager::ConnectionSettings::ConnectionType)sourceModel()->data(right, NetworkModel::TypeRole).toUInt());
     const QString rightVpnType = sourceModel()->data(right, NetworkModel::VpnType).toString();
     const QDateTime rightDate = sourceModel()->data(right, NetworkModel::TimeStampRole).toDateTime();
+
+    if (leftAvailable < rightAvailable) {
+        return false;
+    } else if (leftAvailable > rightAvailable) {
+        return true;
+    }
+
+    if (leftDeactivated < rightDeactivated) {
+        return false;
+    } else if (leftDeactivated > rightDeactivated) {
+        return true;
+    }
 
     if (leftType < rightType) {
         return false;
@@ -76,12 +85,6 @@ bool EditorProxyModel::lessThan(const QModelIndex &left, const QModelIndex &righ
         } else if (QString::localeAwareCompare(leftVpnType, rightVpnType) > 0) {
             return true;
         }
-    }
-
-    if (leftConnected < rightConnected) {
-        return true;
-    } else if (leftConnected > rightConnected) {
-        return false;
     }
 
     if (leftDate > rightDate) {

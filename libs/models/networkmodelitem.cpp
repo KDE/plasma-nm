@@ -294,6 +294,7 @@ NetworkModelItem::ItemType NetworkModelItem::itemType() const
         || m_type == NetworkManager::ConnectionSettings::Bridge //
         || m_type == NetworkManager::ConnectionSettings::Vlan //
         || m_type == NetworkManager::ConnectionSettings::Team //
+        || m_type == NetworkManager::ConnectionSettings::Loopback //
         || ((NetworkManager::status() == NetworkManager::Connected //
              || NetworkManager::status() == NetworkManager::ConnectedLinkLocal //
              || NetworkManager::status() == NetworkManager::ConnectedSiteOnly)
@@ -343,7 +344,7 @@ QString NetworkModelItem::originalName() const
 
 QString NetworkModelItem::sectionType() const
 {
-    if (m_connectionState == NetworkManager::ActiveConnection::Deactivated) {
+    if (m_connectionState == NetworkManager::ActiveConnection::Deactivated && itemType() != NetworkModelItem::UnavailableConnection) {
         return i18nc("@title:column header for list of available network connections", "Available");
         // clang-format off
     } else if (m_connectionState == NetworkManager::ActiveConnection::Activating
@@ -351,6 +352,8 @@ QString NetworkModelItem::sectionType() const
             || m_connectionState == NetworkManager::ActiveConnection::Deactivating) {
         // clang-format on
         return i18nc("@title:column header for list of connected network connections", "Connected");
+    } else if (itemType() == NetworkModelItem::UnavailableConnection) {
+        return i18nc("@title:column header for list of previously connected network connections", "Previously Used, Unavailable");
     } else {
         return {};
     }

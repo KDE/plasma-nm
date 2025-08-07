@@ -3,20 +3,21 @@
 #
 # Elkana Bardugo <ttv200@gmail.com>, 2016.
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2017-05-16 06:57-0400\n"
-"Last-Translator: Copied by Zanata <copied-by-zanata@zanata.org>\n"
-"Language-Team: Hebrew <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2025-08-07 21:17+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -71,10 +72,9 @@ msgstr "VPN"
 
 #: declarative/networkstatus.cpp:194 models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256
-#, fuzzy, kde-format
-#| msgid "Wired"
+#, kde-format
 msgid "WireGuard"
-msgstr "קווי"
+msgstr "WireGuard"
 
 #: declarative/networkstatus.cpp:200
 #, kde-format
@@ -82,21 +82,19 @@ msgid "Connecting to %1"
 msgstr "מתחבר ל־%1"
 
 #: declarative/networkstatus.cpp:204
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgid "Connected to %1 (no connectivity)"
-msgstr "מחובר ל־%1"
+msgstr "מחובר אל %1 (אין קישוריות)"
 
 #: declarative/networkstatus.cpp:207
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
-msgstr ""
+msgstr "מחובר אל %1 (חיבוריות מוגבלת)"
 
 #: declarative/networkstatus.cpp:210
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgid "Connected to %1 (log in required)"
-msgstr "מחובר ל־%1"
+msgstr "מחובר אל %1 (נדרשת כניסה)"
 
 #: declarative/networkstatus.cpp:213
 #, kde-format
@@ -106,7 +104,7 @@ msgstr "מחובר ל־%1"
 #: declarative/networkstatus.cpp:238
 #, kde-format
 msgid "NetworkManager not running"
-msgstr "מנהל הרשתות אינו פעול"
+msgstr "מנהל הרשתות אינו פעיל"
 
 #: declarative/networkstatus.cpp:243
 #, kde-format
@@ -140,12 +138,12 @@ msgstr "אבטחת 802.1x"
 #: models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr "רשת אלחוטית"
 
 #: editor/connectioneditorbase.cpp:215
 #, kde-format
 msgid "Wi-Fi Security"
-msgstr "אבטחת Wi-Fi"
+msgstr "אבטחת רשת אלחוטית"
 
 #: editor/connectioneditorbase.cpp:220 editor/uiutils.cpp:192
 #: models/creatableconnectionsmodel.cpp:135
@@ -156,12 +154,12 @@ msgstr "DSL"
 #: editor/connectioneditorbase.cpp:225 editor/connectioneditorbase.cpp:228
 #, kde-format
 msgid "Mobile Broadband (%1)"
-msgstr "פס רחב סוללרי (%1)"
+msgstr "פס רחב נייד (%1)"
 
 #: editor/connectioneditorbase.cpp:231 editor/uiutils.cpp:196
 #, kde-format
 msgid "Bluetooth"
-msgstr "בלוטוס"
+msgstr "בלוטות׳"
 
 #: editor/connectioneditorbase.cpp:236
 #, kde-format
@@ -184,7 +182,7 @@ msgstr "אינפיניבנד"
 #: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:719
 #, kde-format
 msgid "Bond"
-msgstr ""
+msgstr "מאגד"
 
 #: editor/connectioneditorbase.cpp:248 editor/uiutils.cpp:203
 #: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:725
@@ -202,12 +200,12 @@ msgstr "Vlan"
 #: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:740
 #, kde-format
 msgid "Team"
-msgstr "קבוצה"
+msgstr "ציוות"
 
 #: editor/connectioneditorbase.cpp:257
 #, kde-format
 msgid "WireGuard Interface"
-msgstr ""
+msgstr "ממשק WireGuard"
 
 #: editor/connectioneditorbase.cpp:270
 #, kde-format
@@ -227,7 +225,7 @@ msgstr "IPv6"
 #: editor/connectioneditorbase.cpp:487
 #, kde-format
 msgid "Failed to get secrets for %1"
-msgstr ""
+msgstr "קבלת סודות עבור %1 נכשלה"
 
 #: editor/connectioneditordialog.cpp:33
 #, kde-format
@@ -237,7 +235,7 @@ msgstr "חיבור חדש (%1)"
 #: editor/connectioneditordialog.cpp:35
 #, kde-format
 msgid "Edit Connection '%1'"
-msgstr "ערוך חיבור \"%1\""
+msgstr "עריכת החיבור „%1”"
 
 #: editor/connectioneditortabwidget.cpp:47
 #, kde-format
@@ -254,18 +252,18 @@ msgstr "שם החיבור:"
 #: editor/settings/teamwidget.cpp:36
 #, kde-format
 msgid "Ethernet"
-msgstr "Ethernet"
+msgstr "רשת קווית"
 
 #: editor/settings/bondwidget.cpp:39
 #, kde-format
 msgid "InfiniBand"
-msgstr "InfiniBand"
+msgstr "אינפיניבנד"
 
 #: editor/settings/bondwidget.cpp:48
 #, kde-format
 msgctxt "bond mode"
 msgid "Round-robin"
-msgstr ""
+msgstr "בסבב לפי תור"
 
 #: editor/settings/bondwidget.cpp:49
 #, kde-format
@@ -277,77 +275,77 @@ msgstr "גיבוי פעיל"
 #, kde-format
 msgctxt "bond mode"
 msgid "Broadcast"
-msgstr ""
+msgstr "שידור"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format
 msgctxt "bond mode"
 msgid "802.3ad"
-msgstr ""
+msgstr "802.3ad"
 
 #: editor/settings/bondwidget.cpp:52
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive transmit load balancing"
-msgstr ""
+msgstr "איזון עומס תמסורת מסתגל"
 
 #: editor/settings/bondwidget.cpp:53
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive load balancing"
-msgstr ""
+msgstr "איזון עומס מסתגל"
 
 #: editor/settings/bondwidget.cpp:56
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "MII (recommended)"
-msgstr ""
+msgstr "MII (מומלץ)"
 
 #: editor/settings/bondwidget.cpp:57
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "ARP"
-msgstr ""
+msgstr "ARP"
 
 #: editor/settings/bondwidget.cpp:248 editor/settings/bridgewidget.cpp:198
 #: editor/settings/teamwidget.cpp:187
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
-msgstr "להסיר את החיבור '%1'?"
+msgstr "להסיר את החיבור ‚%1’?"
 
 #: editor/settings/bondwidget.cpp:249 editor/settings/bridgewidget.cpp:199
 #: editor/settings/teamwidget.cpp:188
 #, kde-format
 msgid "Remove Connection"
-msgstr "הסר חיבור"
+msgstr "הסרת חיבור"
 
 #: editor/settings/bridgewidget.cpp:36 editor/settings/teamwidget.cpp:45
 #: editor/uiutils.cpp:217
 #, kde-format
 msgid "VLAN"
-msgstr ""
+msgstr "VLAN"
 
 #: editor/settings/btwidget.cpp:20
 #, kde-format
 msgid "DUN (dial up networking)"
-msgstr ""
+msgstr "DUN (רשת בחיוג)"
 
 #: editor/settings/btwidget.cpp:21
 #, kde-format
 msgid "PAN (personal area network)"
-msgstr ""
+msgstr "PAN (רשת מרחב מיידי)"
 
 #: editor/settings/connectionwidget.cpp:158
 #, kde-format
 msgctxt "@title:window advanced permissions editor"
 msgid "Advanced Permissions Editor"
-msgstr ""
+msgstr "עורך הרשאות מתקדם"
 
 #: editor/settings/infinibandwidget.cpp:22
 #, kde-format
 msgctxt "infiniband transport mode"
 msgid "Datagram"
-msgstr ""
+msgstr "Datagram"
 
 #: editor/settings/infinibandwidget.cpp:23
 #, kde-format
@@ -365,7 +363,7 @@ msgstr "כתובת"
 #, kde-format
 msgctxt "Header text for IPv4 netmask"
 msgid "Netmask"
-msgstr "מסיכת רשת"
+msgstr "מסכת רשת"
 
 #: editor/settings/ipv4widget.cpp:60 editor/widgets/ipv4routeswidget.cpp:29
 #, kde-format
@@ -376,7 +374,7 @@ msgstr "שער גישה"
 #: editor/settings/ipv4widget.cpp:271 editor/settings/ipv6widget.cpp:262
 #, kde-format
 msgid "Other DNS Servers:"
-msgstr "שרתי DNS אחרים:"
+msgstr "שרתי DNS נוספים:"
 
 #: editor/settings/ipv4widget.cpp:283 editor/settings/ipv4widget.cpp:295
 #: editor/settings/ipv4widget.cpp:307 editor/settings/ipv4widget.cpp:319
@@ -394,44 +392,46 @@ msgid ""
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 msgstr ""
+"<qt>אפשר למצוא מידע נוסף על הערכים האלה כאן:<br/><a href='https://developer."
+"gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome.org/"
+"NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
-msgstr ""
+msgstr "שליחת שם מארח:"
 
 #: editor/settings/ipv4widget.cpp:435
 #, kde-format
 msgid "DHCP hostname:"
-msgstr ""
+msgstr "שם מארח ב־DHCP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
 #, kde-format
 msgid "Default"
-msgstr "ברירת־מחדל"
+msgstr "ברירת מחדל"
 
 #: editor/settings/ipv4widget.cpp:441
-#, fuzzy, kde-format
-#| msgid " ms"
+#, kde-format
 msgctxt "Milliseconds"
 msgid " ms"
-msgstr " מילישניות"
+msgstr " מ״ש"
 
 #: editor/settings/ipv4widget.cpp:444
 #, kde-format
 msgid "DAD timeout:"
-msgstr ""
+msgstr "תום־זמן זיהוי כתובות כפולות:"
 
 #: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:405
 #, kde-format
 msgid "Edit DNS servers"
-msgstr "ערוך שרתי DNS"
+msgstr "עריכת שרתי DNS"
 
 #: editor/settings/ipv4widget.cpp:490 editor/settings/ipv6widget.cpp:430
 #, kde-format
 msgid "Edit DNS search domains"
-msgstr ""
+msgstr "עריכת שמות תחום לחיפוש DNS"
 
 #: editor/settings/ipv6widget.cpp:42 editor/widgets/ipv6routeswidget.cpp:26
 #, kde-format
@@ -443,7 +443,7 @@ msgstr "כתובת"
 #, kde-format
 msgctxt "Header text for IPv6 prefix"
 msgid "Prefix"
-msgstr ""
+msgstr "קידומת"
 
 #: editor/settings/ipv6widget.cpp:46 editor/widgets/ipv6routeswidget.cpp:30
 #, kde-format
@@ -454,7 +454,7 @@ msgstr "שער גישה"
 #: editor/settings/security802-1x.cpp:504
 #, kde-format
 msgid "Alternative Subject Matches"
-msgstr ""
+msgstr "התאמות נושא חלופיות"
 
 #: editor/settings/security802-1x.cpp:506
 #, kde-format
@@ -463,16 +463,19 @@ msgid ""
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://www.kde."
 "org&gt;</li></ul></qt>"
 msgstr ""
+"<qt>הרשומה הזאת צריכה להיות אחת מאלה:<ul><li>DNS: &lt;שם או כתובת IP&gt;</"
+"li><li>דוא״ל: &lt;דוא״ל&gt;</li><li>כתובת מלאה: &lt;uri, למשל: https://www."
+"kde.org&gt;</li></ul></qt>"
 
 #: editor/settings/security802-1x.cpp:523
 #, kde-format
 msgid "Connect to these servers only"
-msgstr "התחבר לשרת זה בלבד"
+msgstr "התחברות לשרתים אלו בלבד"
 
 #: editor/settings/teamwidget.cpp:228
 #, kde-format
 msgid "Select file to import"
-msgstr "בחר קובץ ליבוא"
+msgstr "בחירת קובץ לייבוא"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -505,7 +508,7 @@ msgstr "LEAP"
 #: editor/settings/ui/802-1x.ui:53
 #, kde-format
 msgid "PWD"
-msgstr ""
+msgstr "PWD (סיסמה)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:58
@@ -517,13 +520,13 @@ msgstr "FAST"
 #: editor/settings/ui/802-1x.ui:63
 #, kde-format
 msgid "Tunneled TLS (TTLS)"
-msgstr ""
+msgstr "TLS מתועל (TTLS)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:68
 #, kde-format
 msgid "Protected EAP (PEAP)"
-msgstr ""
+msgstr "EAP מאובטח (PEAP)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label_9)
@@ -571,13 +574,13 @@ msgstr "זהות:"
 #: editor/settings/ui/802-1x.ui:718
 #, kde-format
 msgid "Domain:"
-msgstr ""
+msgstr "שם תחום:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/802-1x.ui:140
 #, kde-format
 msgid "User certificate:"
-msgstr "תעודת משתמש:"
+msgstr "אישור משתמש:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #. i18n: ectx: property (text), widget (QLabel, label_20)
@@ -586,32 +589,32 @@ msgstr "תעודת משתמש:"
 #: editor/settings/ui/802-1x.ui:601
 #, kde-format
 msgid "CA certificate:"
-msgstr "תעודת CA:"
+msgstr "אישור רשות אישורים (CA):"
 
 #. i18n: ectx: property (text), widget (QLabel, label_27)
 #: editor/settings/ui/802-1x.ui:174
 #, kde-format
 msgid "Subject match:"
-msgstr ""
+msgstr "התאמת נושא:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:191
 #, kde-format
 msgid "Alternative subject matches:"
-msgstr ""
+msgstr "התאמת נושא חלופית:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
 #: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:215
 #, kde-format
 msgid "Connect to these servers:"
-msgstr "מתחבר לשרתים אלו:"
+msgstr "התחברות לשרתים אלו:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
@@ -634,19 +637,19 @@ msgstr "סיסמת מפתח פרטי:"
 #: editor/settings/ui/802-1x.ui:588
 #, kde-format
 msgid "Anonymous identity:"
-msgstr "זהות אנונימית"
+msgstr "זהות אלמונית:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
 #: editor/settings/ui/802-1x.ui:358
 #, kde-format
 msgid "Automatic PAC provisioning"
-msgstr ""
+msgstr "אספקת PAC (הגדרות מתווך אוטומטיות) אוטומטית"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:375
 #, kde-format
 msgid "Anonymous"
-msgstr "אנונימי"
+msgstr "אלמוני"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:380
@@ -671,10 +674,9 @@ msgstr "קובץ PAC:"
 #. i18n: ectx: property (text), widget (QLabel, label_22)
 #: editor/settings/ui/802-1x.ui:410 editor/settings/ui/802-1x.ui:504
 #: editor/settings/ui/802-1x.ui:653
-#, fuzzy, kde-format
-#| msgid "Authentication:"
+#, kde-format
 msgid "Inner authentication:"
-msgstr "אימות:"
+msgstr "אימות פנימי:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
@@ -722,8 +724,7 @@ msgstr "גרסת PEAP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:635
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "PEAP version"
 msgid "Automatic"
 msgstr "אוטומטית"
@@ -749,23 +750,23 @@ msgstr "שם ממשק:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bond.ui:34
-#, fuzzy, kde-format
+#, kde-format
 msgid "Bonded connections:"
-msgstr "חיבור %1 חדש"
+msgstr "חיבורים מאוגדים:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
 #: editor/settings/ui/team.ui:56
 #, kde-format
 msgid "Add…"
-msgstr ""
+msgstr "הוספה…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnEdit)
 #: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
 #: editor/settings/ui/team.ui:71
 #, kde-format
 msgid "Edit…"
-msgstr ""
+msgstr "עריכה…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
@@ -783,15 +784,15 @@ msgstr "מצב:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/bond.ui:133
-#, fuzzy, kde-format
+#, kde-format
 msgid "Link monitoring:"
-msgstr "אימות"
+msgstr "מעקב אחר קישוריות:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bond.ui:153
 #, kde-format
 msgid "Monitoring frequency:"
-msgstr ""
+msgstr "תדירות מעקב:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, monitorFreq)
 #. i18n: ectx: property (suffix), widget (QSpinBox, upDelay)
@@ -800,44 +801,43 @@ msgstr ""
 #: editor/settings/ui/bond.ui:225
 #, kde-format
 msgid " ms"
-msgstr " מילישניות"
+msgstr " מ״ש"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: editor/settings/ui/bond.ui:195
 #, kde-format
 msgid "Link up delay:"
-msgstr ""
+msgstr "השהיית קישוריות פעילה:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/bond.ui:215
 #, kde-format
 msgid "Link down delay:"
-msgstr ""
+msgstr "השהיית קישוריות מנותקת:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/bond.ui:242
 #, kde-format
 msgid "ARP targets:"
-msgstr ""
+msgstr "יעדי ARP (פרוטוקול פתרון כתובות)"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, arpTargets)
 #: editor/settings/ui/bond.ui:252
 #, kde-format
 msgid "An IP address or comma-separated list of addresses."
-msgstr ""
+msgstr "כתובת IP או רשימה של כתובות מופרדות בפסיקים."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/bridge.ui:31
-#, fuzzy, kde-format
-#| msgid "Active connections"
+#, kde-format
 msgid "Bridged connections:"
-msgstr "חיבורים פעילים"
+msgstr "חיבורים מגושרים:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bridge.ui:110
 #, kde-format
 msgid "Aging time:"
-msgstr ""
+msgstr "זמן התיישנות:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, agingTime)
 #. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
@@ -848,13 +848,13 @@ msgstr ""
 #, kde-format
 msgctxt "seconds"
 msgid " s"
-msgstr "ש'"
+msgstr " שנ׳"
 
 #. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
 #: editor/settings/ui/bridge.ui:139
 #, kde-format
 msgid "Enable STP (Spanning Tree Protocol)"
-msgstr ""
+msgstr "הפעלת STP (פרוטוקול העץ הפורס)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/bridge.ui:151
@@ -866,25 +866,25 @@ msgstr "עדיפות:"
 #: editor/settings/ui/bridge.ui:177
 #, kde-format
 msgid "Forward delay:"
-msgstr ""
+msgstr "השהיית הפנייה:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bridge.ui:206
 #, kde-format
 msgid "Hello time:"
-msgstr ""
+msgstr "זמן שלום (Hello):"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: editor/settings/ui/bridge.ui:235
 #, kde-format
 msgid "Max age:"
-msgstr "גיל מירבי"
+msgstr "גיל מרבי:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/bt.ui:21
 #, kde-format
 msgid "Address of the device:"
-msgstr ""
+msgstr "כתובת המכשיר:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bt.ui:41
@@ -902,7 +902,7 @@ msgstr "מספר:"
 #: editor/settings/ui/connectionwidget.ui:17
 #, kde-format
 msgid "Connect automatically with priority"
-msgstr ""
+msgstr "להתחבר אוטומטית עם עדיפות"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:38
@@ -914,6 +914,11 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
+"אם החיבור מוגדר להתחברות אוטומטית, תהיה העדפה עם עדיפות גבוהה יותר. ברירת "
+"המחדל היא 0.\n"
+"מספר גבוה יותר מציין עדיפות גבוהה יותר. אפשר להשתמש במספר שלילי כדי לציין "
+"עדיפות מתחת לברירת המחדל.\n"
+"           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:48
@@ -925,7 +930,7 @@ msgstr "כל המשתמשים יכולים להתחבר לרשת זו"
 #: editor/settings/ui/connectionwidget.ui:64
 #, kde-format
 msgid "Edit advanced permissions for this connection"
-msgstr "ערוך הרשאות מתקדמות לחיבור זה"
+msgstr "עריכת הרשאות מתקדמות לחיבור זה"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:67
@@ -934,33 +939,33 @@ msgid ""
 "Fine-grained permissions editor for this connection. It lets you choose "
 "which users can activate/modify/delete this connection."
 msgstr ""
+"עורך הרשאות מדויקות לחיבור הזה. מאפשר לך לבחור אילו משתמשים יכולים "
+"להפעיל/לערוך/למחוק את החיבור הזה."
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
-#, fuzzy, kde-format
-#| msgid "Advanced"
+#, kde-format
 msgid "Advanced…"
-msgstr "מתקדם"
+msgstr "מתקדם…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:81
-#, fuzzy, kde-format
-#| msgid "Automatically connect to VPN when using this connection"
+#, kde-format
 msgid "Automatically connect to VPN"
-msgstr "התחבר אוטומטית ל־VPN שמשתמשים בחיבור זה"
+msgstr "התחברות ל־VPN אוטומטית"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:101
 #, kde-format
 msgid "Firewall zone:"
-msgstr "איזור חומת אש:"
+msgstr "אזור חומת אש:"
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:130
 #, kde-format
 msgid "Metered:"
-msgstr ""
+msgstr "מדוד:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:150
@@ -970,26 +975,25 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
+"NetworkManager מודע ליישומים האם החיבור מדוד ולכן ניצולת התעבורה\n"
+"תוגבל."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:160
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "Item in the Metered: list"
 msgid "Automatic"
-msgstr "אוטומטית"
+msgstr "אוטומטי"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:165
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "כן"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:170
-#, fuzzy, kde-format
-#| msgctxt "no security"
-#| msgid "None"
+#, kde-format
 msgid "No"
 msgstr "ללא"
 
@@ -1009,13 +1013,13 @@ msgstr "מתקדם"
 #: editor/settings/ui/gsm.ui:93
 #, kde-format
 msgid "Allow roaming if home network is not available"
-msgstr "אפשר נדידה אם רשת הבית אינה זמינה"
+msgstr "לאפשר נדידה אם רשת הבית אינה זמינה"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/gsm.ui:100
 #, kde-format
 msgid "APN:"
-msgstr "APN:"
+msgstr "נקודת גישה (APN):"
 
 #. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
 #: editor/settings/ui/gsm.ui:110
@@ -1027,13 +1031,13 @@ msgstr "מזהה רשת:"
 #: editor/settings/ui/gsm.ui:130
 #, kde-format
 msgid "PIN:"
-msgstr "קוד PIN:"
+msgstr "קוד אישי (PIN):"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/infiniband.ui:21
 #, kde-format
 msgid "Transport mode:"
-msgstr ""
+msgstr "מצב תעבורה:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -1042,7 +1046,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:23
 #, kde-format
 msgid "Restrict to device:"
-msgstr ""
+msgstr "הגבלה להתקן:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, mtuLabel)
@@ -1053,14 +1057,13 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:74
 #, kde-format
 msgid "MTU:"
-msgstr ""
+msgstr "‏MTU (גודל מרבי להתמסרות):"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:80
 #: editor/settings/ui/wificonnectionwidget.ui:271
 #: editor/settings/ui/wiredconnectionwidget.ui:112
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "MTU:"
 msgid "Automatic"
 msgstr "אוטומטית"
@@ -1071,14 +1074,14 @@ msgstr "אוטומטית"
 #: editor/settings/ui/wiredconnectionwidget.ui:115
 #, kde-format
 msgid " bytes"
-msgstr "בתים"
+msgstr " בתים"
 
 #. i18n: ectx: property (toolTip), widget (QWidget, IPv6Widget)
 #. i18n: ectx: property (toolTip), widget (QWidget, IPv4Widget)
 #: editor/settings/ui/ipv4.ui:17 editor/settings/ui/ipv6.ui:20
 #, kde-format
 msgid "Advanced IP settings"
-msgstr ""
+msgstr "הגדרות IP מתקדמות"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
@@ -1088,8 +1091,7 @@ msgstr "שיטה:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:227
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "Method:"
 msgid "Automatic"
 msgstr "אוטומטית"
@@ -1104,7 +1106,7 @@ msgstr "אוטומטית (רק כתובות)"
 #: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:242
 #, kde-format
 msgid "Link-Local"
-msgstr ""
+msgstr "קישוריות מקומית"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:247
@@ -1117,14 +1119,14 @@ msgstr "ידנית"
 #: editor/settings/ui/ipv4.ui:69
 #, kde-format
 msgid "Shared to other computers"
-msgstr "שתף למחשבים אחרים"
+msgstr "שיתוף למחשבים אחרים"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:74
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Disabled"
-msgstr "מבוטל"
+msgstr "מושבת"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:170
@@ -1140,19 +1142,21 @@ msgid ""
 "Use this field to specify the IP address(es) of one or more DNS servers. Use "
 "',' to separate entries."
 msgstr ""
+"יש להשתמש בשדה זה כדי לציין את כתובות ה־IP של DNS אחד או יותר. יש להפריד בין "
+"הרשומות ב־‚,’."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv4.ui:125
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit DNS the list of servers"
-msgstr "ערוך שרתי DNS"
+msgstr "עריכת רשימת שרתי ה־DNS"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
 #: editor/settings/ui/ipv4.ui:144 editor/settings/ui/ipv6.ui:354
 #, kde-format
 msgctxt "@info"
 msgid "Search Domains:"
-msgstr ""
+msgstr "שמות תחום לחיפוש:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
 #: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
@@ -1161,18 +1165,20 @@ msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
 "separate entries."
 msgstr ""
+"יש להשתמש בשדה זה כדי לציין שמות תחום DNS נוספות לחיפוש. יש להפריד בין "
+"הרשומות ב־‚,’."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit the list of DNS domains being searched"
-msgstr "ערוך שרתי DNS"
+msgstr "עריכת רשימת שמות תחום DNS לחיפוש"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
 #: editor/settings/ui/ipv4.ui:191
 #, kde-format
 msgid "DHCP Client ID:"
-msgstr ""
+msgstr "מזהה לקוח DHCP:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
 #: editor/settings/ui/ipv4.ui:206
@@ -1184,18 +1190,21 @@ msgid ""
 "DHCP\n"
 "lease and options."
 msgstr ""
+"יש להשתמש בשדה זה כדי לציין את מזהה לקוח ה־DHCP שהיא מחרוזת שנשלחת\n"
+"לשרת ה־DHCP כדי לזהות את המכונה המקומית בה עשוי להשתמש שרת ה־DHCP\n"
+"כדי לכוון את זמן חכירת הכתובת מה־DHCP ואפשרויות נוספות."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
 #, kde-format
 msgid "Remove"
-msgstr "הסר"
+msgstr "הסרה"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:109
 #, kde-format
 msgid "Add"
-msgstr "הוסף"
+msgstr "הוספה"
 
 #. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
 #: editor/settings/ui/ipv4.ui:244 editor/settings/ui/ipv6.ui:127
@@ -1206,7 +1215,8 @@ msgid ""
 "to add\n"
 "an IP address"
 msgstr ""
-"כתובת IP משתמש לזיהוי המחשב שלך ברשת. לחץ על כפתור \"הוסף\" כדי להוסיף\n"
+"כתובת IP משמשת לזיהוי המחשב שלך ברשת. אפשר ללחוץ על כפתור „הוספה” כדי "
+"להוסיף\n"
 "כתובת IP"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
@@ -1216,18 +1226,20 @@ msgid ""
 "Allows the connection to complete if IPv4 configuration fails\n"
 "but IPv6 configuration succeeds"
 msgstr ""
+"מאפשר את השלמת החיבור עם הגדרת IPv4 נכשלת\n"
+"אך הגדרת IPv6 מצליחה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:285
 #, kde-format
 msgid "IPv4 is required for this connection"
-msgstr "כתובת מסוג IPv4 נדרשת לחיבור זה"
+msgstr "IPv4 נדרש לחיבור הזה"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
 #: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
 #, kde-format
 msgid "Routes…"
-msgstr ""
+msgstr "נתיבים…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:30
@@ -1237,19 +1249,20 @@ msgid ""
 "if\n"
 "IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
+"בעת התחברות לרשתות תומכות IPv4, החיבור יוכל להתבצע\n"
+"גם אם הגדרת IPv6 נכשלת אך הגדרת IPv4 מצליחה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:33
-#, fuzzy, kde-format
-#| msgid "IPv4 is required for this connection"
+#, kde-format
 msgid "IPv6 is required for this connection"
-msgstr "כתובת מסוג IPv4 נדרשת לחיבור זה"
+msgstr "דרוש IPv6 לחיבור הזה"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv6.ui:83
-#, fuzzy, kde-format
+#, kde-format
 msgid "Edit the list of DNS servers"
-msgstr "ערוך שרתי DNS"
+msgstr "עריכת רשימת שרתי ה־DNS"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:193
@@ -1260,13 +1273,16 @@ msgid ""
 "a temporary IPv6 address in addition to the public one generated from MAC "
 "address via modified EUI-64."
 msgstr ""
+"הגדרת הרחבות פרטיות ל־IPv6 עבור SLAAC, מתוארות ב־RFC4941. אם הן פעילות, היא "
+"גורמת לליבה לייצר\n"
+"כתובת IPv6 זמנית בנוסף לציבורית שנוצרת לפי כתובת ה־MAC דרך EUI-64 שעבר שינוי."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:202
 #, kde-format
 msgctxt "privacy disabled"
 msgid "Disabled"
-msgstr "מבוטל"
+msgstr "מושבת"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:207
@@ -1291,15 +1307,13 @@ msgstr "אוטומטית (רק DHCP)"
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
-msgstr "התעלם"
+msgstr "נפסח"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:257
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Disabled"
+#, kde-format
 msgid "Disabled"
-msgstr "מבוטל"
+msgstr "מושבת"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
 #: editor/settings/ui/ipv6.ui:335
@@ -1329,49 +1343,49 @@ msgstr "דחיסה"
 #: editor/settings/ui/ppp.ui:109
 #, kde-format
 msgid "Use point-to-point encryption (MPPE)"
-msgstr "השתמש בהצפנת נקודה לנקודה (MPPE)"
+msgstr "להשתמש בהצפנת נקודה לנקודה (MPPE)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, bsdComp)
 #: editor/settings/ui/ppp.ui:116
 #, kde-format
 msgid "Use BSD data compression"
-msgstr "השתמש בדחיסת נתונים BSD"
+msgstr "להשתמש בדחיסת נתונים BSD"
 
 #. i18n: ectx: property (text), widget (QCheckBox, deflateComp)
 #: editor/settings/ui/ppp.ui:126
 #, kde-format
 msgid "Use Deflate data compression"
-msgstr "השתמש בדחיסת נתונים Deflate"
+msgstr "להשתמש בדחיסת נתונים Deflate"
 
 #. i18n: ectx: property (text), widget (QCheckBox, tcpComp)
 #: editor/settings/ui/ppp.ui:136
 #, kde-format
 msgid "Use TCP header compression"
-msgstr "השתמש בדחיסת כותרות TCP"
+msgstr "להשתמש בדחיסת כותרות TCP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppe128)
 #: editor/settings/ui/ppp.ui:152
 #, kde-format
 msgid "Require 128-bit encryption"
-msgstr "דרוש הצפנת 128 ביט"
+msgstr "לדרוש הצפנת 128 סיביות"
 
 #. i18n: ectx: property (text), widget (QCheckBox, mppeStateful)
 #: editor/settings/ui/ppp.ui:165
 #, kde-format
 msgid "Use stateful MPPE"
-msgstr ""
+msgstr "להשתמש ב־MPPE בר־עבר (stateful)"
 
 #. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
 #: editor/settings/ui/ppp.ui:175
 #, kde-format
 msgid "Echo"
-msgstr ""
+msgstr "הד (Echo)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
 #: editor/settings/ui/ppp.ui:184
 #, kde-format
 msgid "Send PPP echo packets"
-msgstr ""
+msgstr "לשלוח מנות PPP של הד (echo)"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/pppoe.ui:20
@@ -1388,75 +1402,75 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
+"אם צוין, יש להנחות את PPPoE להקים רק קישורים עם מרכזי גישה שמספקים את השירות "
+"שצוין. לרוב הספקים, יש להשאיר את זה ריק. זה דרוש רק אם יש מגוון מרכזי גישה "
+"או שידוע ששירות מסוים נחוץ."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31
-#, fuzzy, kde-format
-#| msgid "Remove Connection"
+#, kde-format
 msgid "Teamed connections:"
-msgstr "הסר חיבור"
+msgstr "חיבורים מצוותים:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/team.ui:113
 #, kde-format
 msgid "JSON config:"
-msgstr ""
+msgstr "הגדרות JSON:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnImport)
 #: editor/settings/ui/team.ui:123
 #, kde-format
 msgid "Import configuration from file…"
-msgstr ""
+msgstr "ייבוא הגדרות מקובץ…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
-#, fuzzy, kde-format
-#| msgid "Interface name:"
+#, kde-format
 msgid "Parent interface:"
-msgstr "שם ממשק:"
+msgstr "ממשק הורה:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/vlan.ui:41
 #, kde-format
 msgid "VLAN id:"
-msgstr ""
+msgstr "מזהה VLAN:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: editor/settings/ui/vlan.ui:64
-#, fuzzy, kde-format
-#| msgid "Interface name:"
+#, kde-format
 msgid "VLAN interface name:"
-msgstr "שם ממשק:"
+msgstr "שם ממשק VLAN:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, reorderHeaders)
 #: editor/settings/ui/vlan.ui:77
 #, kde-format
 msgid "Output packet headers reordering"
-msgstr ""
+msgstr "סידור מחדש של כותרות חבילות פלט"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, gvrp)
 #: editor/settings/ui/vlan.ui:84
 #, kde-format
 msgid "GARP VLAN Registration Protocol"
-msgstr ""
+msgstr "פרוטוקול רישום GARP VLAN"
 
 #. i18n: ectx: property (text), widget (QCheckBox, gvrp)
 #: editor/settings/ui/vlan.ui:87
 #, kde-format
 msgid "GVRP"
-msgstr ""
+msgstr "GVRP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
 #: editor/settings/ui/vlan.ui:94
 #, kde-format
 msgid "Loose binding"
-msgstr ""
+msgstr "איגוד רופף"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:17
 #, kde-format
 msgid "SSID:"
-msgstr "SSID:"
+msgstr "שם רשת אלחוטית:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:63
@@ -1468,7 +1482,7 @@ msgstr "תשתית"
 #: editor/settings/ui/wificonnectionwidget.ui:68
 #, kde-format
 msgid "Ad-hoc"
-msgstr "אד הוק"
+msgstr "קצה לקצה"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:73
@@ -1480,7 +1494,7 @@ msgstr "נקודת גישה"
 #: editor/settings/ui/wificonnectionwidget.ui:81
 #, kde-format
 msgid "BSSID:"
-msgstr "BSSID:"
+msgstr "שם רשת נסתרת:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:101
@@ -1489,13 +1503,13 @@ msgid ""
 "This option locks this connection to the Wi-Fi access point (AP) specified "
 "by the\n"
 " BSSID entered here. Example: 00:11:22:33:44:55"
-msgstr ""
+msgstr "אפשרות זו נועלת את החיבור הזה לנקודת הגישה האלחוטית (AP) שצוינה"
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:117
 #, kde-format
 msgid "Band:"
-msgstr ""
+msgstr "רצועה:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:137
@@ -1505,26 +1519,28 @@ msgid ""
 "specified band. This setting depends\n"
 " on specific driver capability and may not work with all drivers"
 msgstr ""
+"אפשרות זו נועלת את החיבור לרשת האלחוטית שמשויכת לרצועה המסוימת. הגדרה זו "
+"תלויה\n"
+"ביכולות המסוימות של מנהל ההתקן ויכול להיות שלא תעבוד עם כל מנהלי ההתקנים"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:141
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "Band:"
 msgid "Automatic"
-msgstr "אוטומטית"
+msgstr "אוטומטי"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:146
 #, kde-format
 msgid "A (5 GHz)"
-msgstr "A (5 GHz)"
+msgstr "A (5 גה״ץ)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:151
 #, kde-format
 msgid "B/G (2.4 GHz)"
-msgstr "B/G (2.4 GHz)"
+msgstr "B/G (2.4 גה״ץ)"
 
 #. i18n: ectx: property (text), widget (QLabel, channelLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:159
@@ -1540,20 +1556,22 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
+"ערוץ אלחוטי לשימוש לחיבור הרשת האלחוטית. ההתקן יצטרף (או יצור רשתות קצה "
+"לקצה)\n"
+"לרשת אלחוטית בערוץ שצוין"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:209
 #: editor/settings/ui/wiredconnectionwidget.ui:47
-#, fuzzy, kde-format
-#| msgid "MAC Address"
+#, kde-format
 msgid "Cloned MAC address:"
-msgstr "כתובת MAC"
+msgstr "כתובת MAC (חומרה) משוכפלת:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:240
-#, fuzzy, kde-format
+#, kde-format
 msgid "Random…"
-msgstr "אקראי..."
+msgstr "אקראי…"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -1561,25 +1579,25 @@ msgstr "אקראי..."
 #: editor/settings/ui/wificonnectionwidget.ui:303
 #, kde-format
 msgid "Mark this if you want to create a connection for a hidden network"
-msgstr ""
+msgstr "יש לסמן את האפשרות הזאת כדי ליצור חיבור לרשת אלחוטית"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:290
 #, kde-format
 msgid "Visibility:"
-msgstr ""
+msgstr "חשיפה:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:306
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hidden network"
-msgstr "רשת מוסתרת:"
+msgstr "רשת מוסתרת"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
 #: editor/settings/ui/wifisecurity.ui:15
 #, kde-format
 msgid "Wifi Security"
-msgstr "אבטחת Wifi"
+msgstr "אבטחת רשת אלחוטית"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:28
@@ -1592,43 +1610,43 @@ msgstr "ללא"
 #: editor/settings/ui/wifisecurity.ui:33
 #, kde-format
 msgid "WEP key 40/128 bits (Hex or ASCII)"
-msgstr "מפתח WEP ‏40/128 ביט (Hex או ASCII)"
+msgstr "מפתח WEP ‏40/128 סיביות (Hex או ASCII)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:38
 #, kde-format
 msgid "WEP key 128 bits"
-msgstr "מפתח WEB ‏128 ביט"
+msgstr "מפתח WEB ‏128 סיביות"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:48
 #, kde-format
 msgid "Dynamic WEP (802.1x)"
-msgstr ""
+msgstr "WEP דינמי (802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:53
-#, fuzzy, kde-format
+#, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr "WPA & WPA2 אישי"
+msgstr "WPA/WPA2 אישי"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:58
-#, fuzzy, kde-format
+#, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr "WPA & WPA2 ארגוני"
+msgstr "WPA/WPA2 מסחרי"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:63
-#, fuzzy, kde-format
+#, kde-format
 msgid "WPA3 Personal"
-msgstr "WPA & WPA2 אישי"
+msgstr "WPA3 אישי"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA & WPA2 ארגוני"
+msgstr "WPA3 ארגוני של 192 סיביות"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -1646,13 +1664,13 @@ msgstr "מפתח:"
 #: editor/settings/ui/wifisecurity.ui:117
 #, kde-format
 msgid "WEP index:"
-msgstr "WEP אינקס:"
+msgstr "מפתח WEP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:134
 #, kde-format
 msgid "1 (default)"
-msgstr "1 (ברירת־מחדל)"
+msgstr "1 (ברירת מחדל)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:139
@@ -1676,13 +1694,13 @@ msgstr "4"
 #: editor/settings/ui/wifisecurity.ui:174
 #, kde-format
 msgid "Open System"
-msgstr ""
+msgstr "מערכת פתוחה"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
 #: editor/settings/ui/wifisecurity.ui:179
 #, kde-format
 msgid "Shared Key"
-msgstr "מפתח  משותף"
+msgstr "מפתח משותף"
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:40
@@ -1691,6 +1709,8 @@ msgid ""
 "This option locks this connection to the network device specified by its\n"
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
+"אפשרות זו נועלת את החיבור להתקן התקשורת שמצוין לפי כתובת\n"
+"החומרה (MAC) הקבועה שלו שנבחרת כאן. למשל: 00:11:22:33:44:55"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:67
@@ -1701,12 +1721,15 @@ msgid ""
 "MAC\n"
 "cloning or spoofing. Example 11:22:33:44:55"
 msgstr ""
+"כתובת החומרה (MAC) שמצוינת כאן תשמש ככתובת החומרה להתקן הרשת עליו מופעל\n"
+"החיבור הזה. יכולת זו ידועה בתור שכפול/שיבוט או זיוף כתובת חומרה (MAC).\n"
+"למשל: 11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wiredconnectionwidget.ui:80
-#, fuzzy, kde-format
+#, kde-format
 msgid "Random"
-msgstr "אקראי..."
+msgstr "אקראי"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
 #: editor/settings/ui/wiredconnectionwidget.ui:106
@@ -1716,6 +1739,8 @@ msgid ""
 "packets up\n"
 "into multiple Ethernet frames"
 msgstr ""
+"להעביר רק חבילות בגודל שצוין או פחות, חבילות גדולות יותר יפורקו\n"
+"למגוון מסגרות (פריימים) של אתרנט (רשת קווית)"
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
@@ -1727,7 +1752,7 @@ msgstr "מהירות:"
 #: editor/settings/ui/wiredconnectionwidget.ui:132
 #, kde-format
 msgid "Duplex:"
-msgstr ""
+msgstr "דו־סטריות:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:151
@@ -1736,6 +1761,8 @@ msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
 msgstr ""
+"לבקש מההתקן להשתמש במצב דו־סטריות מסוים. יכול להיות „חצי” (half) או "
+"„מלא” (full)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158
@@ -1747,13 +1774,13 @@ msgstr "חצי"
 #: editor/settings/ui/wiredconnectionwidget.ui:163
 #, kde-format
 msgid "Full"
-msgstr "מלא"
+msgstr "מלאה"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174
-#, fuzzy, kde-format
+#, kde-format
 msgid "Link negotiation:"
-msgstr "אימות"
+msgstr "משא ומתן על קישוריות:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:188
@@ -1763,105 +1790,101 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
+"משא ומתן על קישוריות התקן. אם נבחרה האפשרות „ידנית”, הערכים „מהירות” ו„דו־"
+"סטריות” יאולצו מבלי לבדוק\n"
+"את תאימות ההתקן. במקרה של חוסר ודאות, להשאיר כאן על „התעלמות” או לבחור "
+"ב„אוטומטית”."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Ignored"
+#, kde-format
 msgid "Ignore"
-msgstr "התעלם"
+msgstr "התעלמות"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:197
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "Link negotiation:"
 msgid "Automatic"
-msgstr "אוטומטית"
+msgstr "אוטומטי"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:202
-#, fuzzy, kde-format
-#| msgctxt "like in use Manual configuration"
-#| msgid "Manual"
+#, kde-format
 msgid "Manual"
-msgstr "ידנית"
+msgstr "ידני"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:219
 #, kde-format
 msgid "Request that the device use only the specified speed."
-msgstr ""
+msgstr "לבקש שההתקן הזה ישתמש רק במהירות שצוינה."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:226
 #, kde-format
 msgid "10 Mb/s"
-msgstr ""
+msgstr "10 מ״ב לשנייה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:231
 #, kde-format
 msgid "100 Mb/s"
-msgstr ""
+msgstr "100 מ״ב לשנייה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:236
 #, kde-format
 msgid "1 Gb/s"
-msgstr ""
+msgstr "ג״ב לשנייה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:241
 #, kde-format
 msgid "2.5 Gb/s"
-msgstr ""
+msgstr "2.5 ג״ב לשנייה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:246
 #, kde-format
 msgid "5 Gb/s"
-msgstr ""
+msgstr "5 ג״ב לשנייה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:251
 #, kde-format
 msgid "10 Gb/s"
-msgstr ""
+msgstr "10 ג״ב לשנייה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:256
 #, kde-format
 msgid "40 Gb/s"
-msgstr ""
+msgstr "40 ג״ב לשנייה"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:261
 #, kde-format
 msgid "100 Gb/s"
-msgstr ""
+msgstr "100 ג״ב לשנייה"
 
 #. i18n: ectx: property (text), widget (QCheckBox, use8021X)
 #: editor/settings/ui/wiredsecurity.ui:17
-#, fuzzy, kde-format
-#| msgid "IPv4 is required for this connection"
+#, kde-format
 msgid "Use 802.1x security for this connection"
-msgstr "כתובת מסוג IPv4 נדרשת לחיבור זה"
+msgstr "להשתמש באבטחת 802.1x לחיבור הזה"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
 #: editor/settings/ui/wireguardinterfacewidget.ui:14
-#, fuzzy, kde-format
-#| msgid "Wired"
+#, kde-format
 msgid "WireGuard Settings"
-msgstr "קווי"
+msgstr "הגדרות WireGuard"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:20
-#, fuzzy, kde-format
-#| msgid "Interface name:"
+#, kde-format
 msgid "Interface"
-msgstr "שם ממשק:"
+msgstr "ממשק"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
@@ -1870,12 +1893,14 @@ msgid ""
 "Required.\n"
 "A base64 private key generated by wg genkey."
 msgstr ""
+"נחוץ.\n"
+"מפתח פרטי במבנה base64 שנוצר על ידי wg genkey."
 
 #. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:41
 #, kde-format
 msgid "Listen port:"
-msgstr ""
+msgstr "פתחת האזנה:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -1884,12 +1909,14 @@ msgid ""
 "Optional.\n"
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
+"רשות.\n"
+"מספר פתחה להאזנה. תיבחר אקראית אם נשארה ‚אוטומטית’."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:57
 #, kde-format
 msgid "fwmark:"
-msgstr ""
+msgstr "סימון בחומת האש (fwmark):"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:67
@@ -1900,6 +1927,10 @@ msgid ""
 "option is disabled. May be specified in hexadecimal by\n"
 "prepending '0x'."
 msgstr ""
+"רשות.\n"
+"סימון חומת אש (fwmark) לחבילות היוצאות. אם מוגדר ל־‚0’ או ‚כבוי’/off,\n"
+"אפשרות זו מושבתת. אפשר לציין ערכים הקסדצימליים על ידי הוספת\n"
+"‚0x’ בהתחלה."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:86
@@ -1912,12 +1943,17 @@ msgid ""
 "specify an MTU and to override this automatic discovery,\n"
 "this value may be specified explicitly."
 msgstr ""
+"רשות.\n"
+"אם לא צוין, הגודל המרבי להתמסרות (MTU) ייקבע מכתובות\n"
+"נקודות הקצה או מנתיב ברירת המחדל של המערכת, שזו\n"
+"בדרך כלל בחירה די שפויה. עם זאת, כדי לציין MTU ידנית וכדי\n"
+"לדרוס את הגילוי האוטומטי הזה, יש לציין את הערך הזה במפורש."
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:93
 #, kde-format
 msgid "Autoroute peers:"
-msgstr ""
+msgstr "עמיתי ניתוב אוטומטי:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:101
@@ -1926,19 +1962,20 @@ msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
 msgstr ""
+"האם להוסיף אוטומטית נתיבים לטווחי כתובת ה־IP המורשות של\n"
+"של העמיתים."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
 #: editor/settings/ui/wireguardinterfacewidget.ui:126
 #, kde-format
 msgid "Peers…"
-msgstr ""
+msgstr "עמיתים…"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Public key:"
-msgstr "מפתח פרטי:"
+msgstr "מפתח ציבורי:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, publicKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:27
@@ -1949,12 +1986,16 @@ msgid ""
 "            from a private key, and usually transmitted \n"
 "            out of band to the author of the configuration file."
 msgstr ""
+"נחוץ.\n"
+"            מפתח ציבורי במבנה base64 שחושב על ידי wg pubkey\n"
+"            ממפתח פרטי ובדרך כלל מועבר בערוץ עקיף\n"
+"            ליוצר קובץ ההגדרות."
 
 #. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:34
 #, kde-format
 msgid "Allowed IPs:"
-msgstr ""
+msgstr "כתובת IP מורשות:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, allowedIPsLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:47
@@ -1968,12 +2009,19 @@ msgid ""
 "            may be specified for matching all IPv4 addresses, \n"
 "            and ::/0 may be specified for matching all IPv6 addresses."
 msgstr ""
+"נחוץ.\n"
+"            רשימה של כתובת IP (v4 או v6) עם מסכות\n"
+"            CIDR מהן יכולה להגיע תעבורה נכנסת לעמית הזה\n"
+"            ושאליהן מופנית תעבורה יוצאת לעמית הזה.\n"
+"            אפשר לציין את הכתובת שתופסת הכול 0.0.0.0/0\n"
+"            להתאמת כל כתובות ה־IPv4 באשר הן, וב־‎::/0 להתאמת\n"
+"            כל כתובות ה־IPv6 באשר הן."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55
 #, kde-format
 msgid "Endpoint address:"
-msgstr ""
+msgstr "כתובות נקודות קצה:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:66
@@ -1985,12 +2033,16 @@ msgid ""
 "            qualified domain name such as abc.com). If\n"
 "            present, Endpoint port must also be set."
 msgstr ""
+"רשות.\n"
+"            נקודת קצה לחיבור. יכולה להיות כתובת IPv4,\n"
+"            IPv6, או FQDN (שם תחום תקף לחלוטין כגון abc.com). אם\n"
+"            קיים, יש להגדיר גם פתחת נקודת קצה."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
 #, kde-format
 msgid "Endpoint port:"
-msgstr ""
+msgstr "פתחת נקודת קצה:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:83
@@ -2000,13 +2052,15 @@ msgid ""
 "            The port number of an endpoint. If present Endpoint\n"
 "            Address must also be set."
 msgstr ""
+"רשות.\n"
+"            מספר הפתחה של נקודת הקצה. אם קיים חייבת להיות\n"
+"            מוגדרת גם כתובת נקודת קצה."
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Preshared key:"
-msgstr "מפתח פרטי:"
+msgstr "מפתח ששותף מראש:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:102
@@ -2018,12 +2072,17 @@ msgid ""
 "            cryptography to be mixed into the already existing\n"
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
+"רשות.\n"
+"            מפתח ששותף מראש במבנה base64 שנוצר על ידי wg genpsk.\n"
+"            אפשרות זו מוסיפה שכבה נוספת של קריפטוגרפיה של מפתח סימטרי\n"
+"            שתעורבב לתוך הקריפטוגרפיה הקיימת של מפתח ציבורי לעמידות\n"
+"            בפני פיצוח קוונטי."
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
 #, kde-format
 msgid "Persistent keepalive:"
-msgstr ""
+msgstr "בדיקת דופק קבועה:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:127
@@ -2042,167 +2101,178 @@ msgid ""
 "            when unspecified, this option is off. Most users will not\n"
 "            need this."
 msgstr ""
+"רשות.\n"
+"            הפרש בשניות, בין 1 ל־65535 כולל, שמציין כל\n"
+"            כמה זמן לשלוח חבילה מאומתת ריקה לעמית\n"
+"            כדי לשמור על מיפוי תקף קבוע של פענוח כתובות\n"
+"            רשת (NAT). למשל, אם הממשק בקושי שולח תעבורה\n"
+"            אבל עשוי מתישהו לקבל תעבורה מעמית, והוא מאחורי\n"
+"            כNAT, הממשק יכול להפיק תועלת מכך שיהיה הפרש\n"
+"            בדיקת דופק (keepalive) של 25 שניות. אם מוגדר ל־0\n"
+"            או „כבוי”, אפשרות זו מושבתת. כברירת מחדל או כשלא צוין\n"
+"            אפשרות זו כבוי. רוב המשתמשים לא צריכים את\n"
+"            האפשרות הזאת."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: editor/settings/ui/wireguardtabwidget.ui:24
 #, kde-format
 msgid "Peer 1"
-msgstr ""
+msgstr "עמית 1"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/wireguardtabwidget.ui:37
 #, kde-format
 msgid "Add new Peer"
-msgstr ""
+msgstr "הוספת עמית חדש"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/wireguardtabwidget.ui:44
 #, kde-format
 msgid "Remove this Peer"
-msgstr ""
+msgstr "הסרת העמית הזה"
 
 #: editor/settings/wificonnectionwidget.cpp:181
 #, kde-format
 msgid "%1 (%2 MHz)"
-msgstr ""
+msgstr "%1 (%2 מה״ץ)"
 
 #: editor/settings/wireguardpeerwidget.cpp:71
 #: editor/settings/wireguardtabwidget.cpp:59
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
-msgstr ""
+msgstr "מאפייני עמיתי WireGuard"
 
 #: editor/uiutils.cpp:133
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wi-Fi"
-msgstr ""
+msgstr "רשת אלחוטית"
 
 #: editor/uiutils.cpp:136
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Bluetooth"
-msgstr "בלוטוס"
+msgstr "בלוטות׳"
 
 #: editor/uiutils.cpp:139
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Infiniband"
-msgstr ""
+msgstr "אינפיניבנד"
 
 #: editor/uiutils.cpp:142
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "ADSL"
-msgstr ""
+msgstr "ADSL"
 
 #: editor/uiutils.cpp:145
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bond)"
-msgstr ""
+msgstr "וירטואלי (מאגד)"
 
 #: editor/uiutils.cpp:148
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (bridge)"
-msgstr ""
+msgstr "וירטואלי (גשר)"
 
 #: editor/uiutils.cpp:151
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (vlan)"
-msgstr ""
+msgstr "וירטואלי (vlan)"
 
 #: editor/uiutils.cpp:154
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Virtual (team)"
-msgstr ""
+msgstr "וירטואלי (ציוות)"
 
 #: editor/uiutils.cpp:161
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Serial Modem"
-msgstr ""
+msgstr "מודם טורי"
 
 #: editor/uiutils.cpp:166
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Mobile Broadband"
-msgstr ""
+msgstr "רשת פס־רחב ניידת"
 
 #: editor/uiutils.cpp:176
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wired Ethernet"
-msgstr ""
+msgstr "רשת קווית"
 
 #: editor/uiutils.cpp:188
 #, kde-format
 msgid "ADSL"
-msgstr ""
+msgstr "ADSL"
 
 #: editor/uiutils.cpp:207
 #, kde-format
 msgid "Mobile broadband"
-msgstr ""
+msgstr "רשת פס־רחב ניידת"
 
 #: editor/uiutils.cpp:214
 #, kde-format
 msgid "Olpc mesh"
-msgstr ""
+msgstr "Mesh של OLPC"
 
 #: editor/uiutils.cpp:224 models/creatableconnectionsmodel.cpp:156
 #, kde-format
 msgid "Wired Ethernet"
-msgstr ""
+msgstr "רשת קווית"
 
 #: editor/uiutils.cpp:235
 #, kde-format
 msgid "WireGuard VPN"
-msgstr ""
+msgstr "VPN עם WireGuard"
 
 #: editor/uiutils.cpp:239
 #, kde-format
 msgid "Unknown connection type"
-msgstr "סוג חיבור שאינו ידוע"
+msgstr "סוג חיבור לא ידוע"
 
 #: editor/uiutils.cpp:251
 #, kde-format
 msgid "Wireless Interface (%1)"
-msgstr ""
+msgstr "ממשק אלחוטי (%1)"
 
 #: editor/uiutils.cpp:254
 #, kde-format
 msgid "Wired Interface (%1)"
-msgstr ""
+msgstr "ממשק קווי (%1)"
 
 #: editor/uiutils.cpp:257
 #, kde-format
 msgid "Bluetooth (%1)"
-msgstr ""
+msgstr "בלוטות׳ (%1)"
 
 #: editor/uiutils.cpp:260
 #, kde-format
 msgid "Modem (%1)"
-msgstr ""
+msgstr "מודם (%1)"
 
 #: editor/uiutils.cpp:263
 #, kde-format
 msgid "ADSL (%1)"
-msgstr ""
+msgstr "ADSL (%1)"
 
 #: editor/uiutils.cpp:266
 #, kde-format
 msgid "VLan (%1)"
-msgstr ""
+msgstr "VLan (%1)"
 
 #: editor/uiutils.cpp:269
 #, kde-format
 msgid "Bridge (%1)"
-msgstr ""
+msgstr "גשר (%1)"
 
 #: editor/uiutils.cpp:282
 #, kde-format
@@ -2214,7 +2284,7 @@ msgstr "לא ידוע"
 #, kde-format
 msgctxt "description of unmanaged network interface state"
 msgid "Unmanaged"
-msgstr ""
+msgstr "לא מנוהל"
 
 #: editor/uiutils.cpp:288
 #, kde-format
@@ -2232,31 +2302,31 @@ msgstr "לא מחובר"
 #, kde-format
 msgctxt "description of preparing to connect network interface state"
 msgid "Preparing to connect"
-msgstr "מתכונן להתחברות"
+msgstr "בהכנה להתחברות"
 
 #: editor/uiutils.cpp:297
 #, kde-format
 msgctxt "description of configuring hardware network interface state"
 msgid "Configuring interface"
-msgstr ""
+msgstr "הממשק מוגדר"
 
 #: editor/uiutils.cpp:300
 #, kde-format
 msgctxt "description of waiting for authentication network interface state"
 msgid "Waiting for authorization"
-msgstr "ממתין לאישור"
+msgstr "בהמתנה לאימות"
 
 #: editor/uiutils.cpp:303
 #, kde-format
 msgctxt "network interface doing dhcp request in most cases"
 msgid "Setting network address"
-msgstr "מגדיר כתובת רשת"
+msgstr "כתובת רשת מוגדרת"
 
 #: editor/uiutils.cpp:306
 #, kde-format
 msgctxt "is other action required to fully connect? captive portals, etc."
 msgid "Checking further connectivity"
-msgstr "בודק חיבורים נוספים"
+msgstr "חיבורים נוספים נבדקים"
 
 #: editor/uiutils.cpp:309
 #, kde-format
@@ -2281,7 +2351,7 @@ msgstr "מחובר ל־%1"
 #, kde-format
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
-msgstr "ביטול חיבור"
+msgstr "החיבור מושבת"
 
 #: editor/uiutils.cpp:322
 #, kde-format
@@ -2305,7 +2375,7 @@ msgstr "לא ידוע"
 #, kde-format
 msgctxt "The VPN connection is preparing to connect"
 msgid "Preparing to connect"
-msgstr "מתכונן להתחברות"
+msgstr "בהכנה להתחברות"
 
 #: editor/uiutils.cpp:341
 #, kde-format
@@ -2323,7 +2393,7 @@ msgstr "מתחבר"
 #, kde-format
 msgctxt "The VPN connection is getting an IP address"
 msgid "Setting network address"
-msgstr "מקבל כתובת רשת"
+msgstr "כתובת רשת מוגדרת"
 
 #: editor/uiutils.cpp:350
 #, kde-format
@@ -2353,229 +2423,229 @@ msgstr "לא ידוע"
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Adhoc"
-msgstr ""
+msgstr "קצה לקצה"
 
 #: editor/uiutils.cpp:375
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Infrastructure"
-msgstr ""
+msgstr "תשתית"
 
 #: editor/uiutils.cpp:378
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Access point"
-msgstr ""
+msgstr "נקודת גישה"
 
 #: editor/uiutils.cpp:403
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise WEP40"
-msgstr ""
+msgstr "WEP40 בזוגות"
 
 #: editor/uiutils.cpp:405
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise WEP104"
-msgstr ""
+msgstr "WEP104 בזוגות"
 
 #: editor/uiutils.cpp:407
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise TKIP"
-msgstr ""
+msgstr "TKIP בזוגות"
 
 #: editor/uiutils.cpp:409
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise CCMP"
-msgstr ""
+msgstr "CCMP בזוגות"
 
 #: editor/uiutils.cpp:411
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group WEP40"
-msgstr ""
+msgstr "WEP40 קבוצתי"
 
 #: editor/uiutils.cpp:413
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group WEP104"
-msgstr ""
+msgstr "WEP104 קבוצתי"
 
 #: editor/uiutils.cpp:415
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group TKIP"
-msgstr ""
+msgstr "TKIP קבוצתי"
 
 #: editor/uiutils.cpp:417
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Group CCMP"
-msgstr ""
+msgstr "CCMP קבוצתי"
 
 #: editor/uiutils.cpp:419
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "PSK"
-msgstr ""
+msgstr "PSK"
 
 #: editor/uiutils.cpp:421
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "802.1x"
-msgstr ""
+msgstr "802.1x"
 
 #: editor/uiutils.cpp:430
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 Bit/s"
-msgstr ""
+msgstr "%1 סיביות לשנייה"
 
 #: editor/uiutils.cpp:432
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 MBit/s"
-msgstr ""
+msgstr "%1 מסל״ש"
 
 #: editor/uiutils.cpp:434
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 GBit/s"
-msgstr ""
+msgstr "%1 גסל״ש"
 
 #: editor/uiutils.cpp:458
 #, kde-format
 msgctxt "Wireless connection frequency"
 msgid "%1 GHz"
-msgstr ""
+msgstr "%1 גה״ץ"
 
 #: editor/uiutils.cpp:464
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "LTE"
-msgstr ""
+msgstr "LTE"
 
 #: editor/uiutils.cpp:466
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "UMTS/HSxPA"
-msgstr ""
+msgstr "UMTS/HSxPA"
 
 #: editor/uiutils.cpp:468
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GPRS/EDGE"
-msgstr ""
+msgstr "GPRS/EDGE"
 
 #: editor/uiutils.cpp:470
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GSM"
-msgstr ""
+msgstr "GSM"
 
 #: editor/uiutils.cpp:472 editor/uiutils.cpp:475
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "Any"
-msgstr ""
+msgstr "כלשהו"
 
 #: editor/uiutils.cpp:482
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:486
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "LTE"
-msgstr ""
+msgstr "LTE"
 
 #: editor/uiutils.cpp:488
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision B"
-msgstr ""
+msgstr "CDMA2000 EVDO מהדורה B"
 
 #: editor/uiutils.cpp:490
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision A"
-msgstr ""
+msgstr "CDMA2000 EVDO מהדורה A"
 
 #: editor/uiutils.cpp:492
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 EVDO revision 0"
-msgstr ""
+msgstr "CDMA2000 EVDO מהדורה 0"
 
 #: editor/uiutils.cpp:494
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 1xRTT"
-msgstr ""
+msgstr "CDMA2000 1xRTT"
 
 #: editor/uiutils.cpp:496
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA+"
-msgstr ""
+msgstr "HSPA+‎"
 
 #: editor/uiutils.cpp:498
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA"
-msgstr ""
+msgstr "HSPA"
 
 #: editor/uiutils.cpp:500
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSUPA"
-msgstr ""
+msgstr "HSUPA"
 
 #: editor/uiutils.cpp:502
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSDPA"
-msgstr ""
+msgstr "HSDPA"
 
 #: editor/uiutils.cpp:504
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "UMTS"
-msgstr ""
+msgstr "UMTS"
 
 #: editor/uiutils.cpp:506
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "EDGE"
-msgstr ""
+msgstr "EDGE"
 
 #: editor/uiutils.cpp:508
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "GPRS"
-msgstr ""
+msgstr "GPRS"
 
 #: editor/uiutils.cpp:510
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "Compact GSM"
-msgstr ""
+msgstr "GSM חסכוני"
 
 #: editor/uiutils.cpp:512
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "GSM"
-msgstr ""
+msgstr "GSM"
 
 #: editor/uiutils.cpp:514
 #, kde-format
 msgctxt "Analog wireline modem"
 msgid "Analog"
-msgstr ""
+msgstr "ספרתי"
 
 #: editor/uiutils.cpp:516 editor/uiutils.cpp:521
 #, kde-format
@@ -2587,175 +2657,175 @@ msgstr "לא ידוע"
 #, kde-format
 msgctxt "Any cellular access technology"
 msgid "Any"
-msgstr ""
+msgstr "כלשהי"
 
 #: editor/uiutils.cpp:528
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem is unlocked."
-msgstr ""
+msgstr "המודם לא נעול."
 
 #: editor/uiutils.cpp:530
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN code."
-msgstr ""
+msgstr "ה־SIM דורש קוד אישי (PIN)."
 
 #: editor/uiutils.cpp:532
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PIN2 code."
-msgstr ""
+msgstr "ה־SIM דורש קוד אישי (PIN2)."
 
 #: editor/uiutils.cpp:534
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK code."
-msgstr ""
+msgstr "ה־SIM דורש קוד שחרור אישי (PUK)."
 
 #: editor/uiutils.cpp:536
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "SIM requires the PUK2 code."
-msgstr ""
+msgstr "ה־SIM דורש קוד שחרור אישי (PUK2)."
 
 #: editor/uiutils.cpp:538
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PIN code."
-msgstr ""
+msgstr "המודם דורש את הקוד האישי (PIN) של הספק."
 
 #: editor/uiutils.cpp:540
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PUK code."
-msgstr ""
+msgstr "המודם דורש את קוד השחרור האישי (PUK) של הספק."
 
 #: editor/uiutils.cpp:542
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PIN code."
-msgstr ""
+msgstr "המודם דורש את הקוד האישי (PIN) של הרשת."
 
 #: editor/uiutils.cpp:544
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network PUK code."
-msgstr ""
+msgstr "המודם דורש את קוד השחרור האישי (PUK) של הרשת."
 
 #: editor/uiutils.cpp:546
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PIN code."
-msgstr ""
+msgstr "המודם דורש את הקוד האישי (PIN)."
 
 #: editor/uiutils.cpp:548
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PIN code."
-msgstr ""
+msgstr "המודם דורש את הקוד האישי (PIN) של החברה."
 
 #: editor/uiutils.cpp:550
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PUK code."
-msgstr ""
+msgstr "המודם דורש את קוד השחרור האישי (PIN) של החברה."
 
 #: editor/uiutils.cpp:552
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PIN code."
-msgstr ""
+msgstr "המודם דורש את הקוד האישי (PIN) מסוג PH-FSIM."
 
 #: editor/uiutils.cpp:554
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PUK code."
-msgstr ""
+msgstr "המודם דורש את קוד השחרור האישי (PUK) מסוג PH-FSIM."
 
 #: editor/uiutils.cpp:556
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PIN code."
-msgstr ""
+msgstr "המודם דורש את הקוד האישי (PIN) של תת הרשת."
 
 #: editor/uiutils.cpp:558
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PUK code."
-msgstr ""
+msgstr "המודם דורש את קוד השחרור האישי (PUK) של תת הרשת."
 
 #: editor/uiutils.cpp:561
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Lock reason unknown."
-msgstr ""
+msgstr "סיבת הנעילה לא ידועה."
 
 #: editor/uiutils.cpp:584
 #, kde-format
 msgctxt "@label no security"
 msgid "Insecure"
-msgstr ""
+msgstr "לא מאובטח"
 
 #: editor/uiutils.cpp:587
 #, kde-format
 msgctxt "@label WEP security"
 msgid "WEP"
-msgstr ""
+msgstr "WEP"
 
 #: editor/uiutils.cpp:590
 #, kde-format
 msgctxt "@label LEAP security"
 msgid "LEAP"
-msgstr ""
+msgstr "LEAP"
 
 #: editor/uiutils.cpp:593
 #, kde-format
 msgctxt "@label Dynamic WEP security"
 msgid "Dynamic WEP"
-msgstr ""
+msgstr "WEP דינמי"
 
 #: editor/uiutils.cpp:596
 #, kde-format
 msgctxt "@label WPA-PSK security"
 msgid "WPA-PSK"
-msgstr ""
+msgstr "WPA-PSK"
 
 #: editor/uiutils.cpp:599
 #, kde-format
 msgctxt "@label WPA-EAP security"
 msgid "WPA-EAP"
-msgstr ""
+msgstr "WPA-EAP"
 
 #: editor/uiutils.cpp:602
 #, kde-format
 msgctxt "@label WPA2-PSK security"
 msgid "WPA2-PSK"
-msgstr ""
+msgstr "WPA2-PSK"
 
 #: editor/uiutils.cpp:605
 #, kde-format
 msgctxt "@label WPA2-EAP security"
 msgid "WPA2-EAP"
-msgstr ""
+msgstr "WPA2-EAP"
 
 #: editor/uiutils.cpp:608
 #, kde-format
 msgctxt "@label WPA3-SAE security"
 msgid "WPA3-SAE"
-msgstr ""
+msgstr "WPA3-SAE"
 
 #: editor/uiutils.cpp:611
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:614
 #, kde-format
 msgctxt "@label unknown security"
 msgid "Unknown security type"
-msgstr ""
+msgstr "סוג האבטחה לא ידוע"
 
 #: editor/uiutils.cpp:630
 #, kde-format
@@ -2828,39 +2898,39 @@ msgstr "שימוש אחרון ב־%1"
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never used"
-msgstr "אף פעם לא היה בשימוש"
+msgstr "אף פעם לא הייתה בשימוש"
 
 #: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
-msgstr ""
+msgstr "לא נמצא תוסף VPN לסוג %1"
 
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "ייבוא סוג ה־VPN הזה לא ממומש"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "לא ממומש"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
 msgctxt "@item:intable shortcut for Not Available"
 msgid "N/A"
-msgstr "לא זמין"
+msgstr "לא זמינה"
 
 #: editor/widgets/advancedpermissionswidget.cpp:87
 #, kde-format
 msgctxt "@info:tooltip real user name is not available"
 msgid "Not Available"
-msgstr "לא זמין"
+msgstr "לא זמינה"
 
 #: editor/widgets/bssidcombobox.cpp:122
 #, kde-format
 msgid "First select the SSID"
-msgstr "בתחלה בחר את ה־SSID"
+msgstr "קודם יש לבחור את שם הרשת האלחוטית"
 
 #: editor/widgets/bssidcombobox.cpp:131
 #, kde-format
@@ -2869,12 +2939,15 @@ msgid ""
 "Frequency: %3 Mhz\n"
 "Channel: %4"
 msgstr ""
+"%1 (%2%)\n"
+"תדירות: %3 מה״ץ\n"
+"ערוץ: %4"
 
 #: editor/widgets/ipv4routeswidget.cpp:31
 #, kde-format
 msgctxt "Header text for IPv4 route metric"
 msgid "Metric"
-msgstr ""
+msgstr "עדיפות"
 
 #: editor/widgets/ipv6routeswidget.cpp:28
 #, kde-format
@@ -2886,13 +2959,13 @@ msgstr "מסיכת רשת"
 #, kde-format
 msgctxt "Header text for IPv6 route metric"
 msgid "Metric"
-msgstr ""
+msgstr "עדיפות"
 
 #: editor/widgets/mobileconnectionwizard.cpp:39
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "New Mobile Broadband Connection"
-msgstr ""
+msgstr "חיבור רשת פס רחב ניידת חדש"
 
 #: editor/widgets/mobileconnectionwizard.cpp:135
 #: editor/widgets/mobileconnectionwizard.cpp:153
@@ -2901,7 +2974,7 @@ msgstr ""
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My plan is not listed…"
-msgstr ""
+msgstr "התוכנית שלי לא מופיעה…"
 
 #: editor/widgets/mobileconnectionwizard.cpp:138
 #, kde-format
@@ -2913,20 +2986,20 @@ msgstr "ספק לא ידוע"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Default"
-msgstr "ברירת־מחדל"
+msgstr "ברירת מחדל"
 
 #: editor/widgets/mobileconnectionwizard.cpp:183
 #: editor/widgets/mobileconnectionwizard.cpp:191
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "APN: %1"
-msgstr "APN: %1"
+msgstr "נקודת גישה (APN): %1"
 
 #: editor/widgets/mobileconnectionwizard.cpp:236
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Set up a Mobile Broadband Connection"
-msgstr ""
+msgstr "הקמת חיבור רשת פס־רחב ניידת"
 
 #: editor/widgets/mobileconnectionwizard.cpp:240
 #, kde-format
@@ -2935,116 +3008,118 @@ msgid ""
 "This assistant helps you easily set up a mobile broadband connection to a "
 "cellular (3G) network."
 msgstr ""
+"התוכנית המסייעת הזאת תסייע לך להקים חיבור פס רחב סלולרי לרשת סלולרית (דור "
+"שלוש)."
 
 #: editor/widgets/mobileconnectionwizard.cpp:244
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "You will need the following information:"
-msgstr ""
+msgstr "הפרטים הבאים נחוצים לך:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:248
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband provider's name"
-msgstr ""
+msgstr "שם ספק חיבור הפס הרחב שלך"
 
 #: editor/widgets/mobileconnectionwizard.cpp:249
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband billing plan name"
-msgstr ""
+msgstr "שם תוכנית חיוב חיבור הפס הרחב שלך"
 
 #: editor/widgets/mobileconnectionwizard.cpp:250
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
-msgstr ""
+msgstr "(בחלק מהמקרים) שם נקודת הגישה (APN) של תוכנית חיוב חיבור הפס הרחב שלך"
 
 #: editor/widgets/mobileconnectionwizard.cpp:254
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Create a connection for &this mobile broadband device:"
-msgstr ""
+msgstr "יצירת &חיבור להתקן פס רחב נייד זה:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:258
 #: editor/widgets/mobileconnectionwizard.cpp:385
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Any GSM device"
-msgstr ""
+msgstr "כל התקן GSM שהוא"
 
 #: editor/widgets/mobileconnectionwizard.cpp:260
 #: editor/widgets/mobileconnectionwizard.cpp:387
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Any CDMA device"
-msgstr ""
+msgstr "כל התקן CDMA שהוא"
 
 #: editor/widgets/mobileconnectionwizard.cpp:311
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Installed GSM device"
-msgstr ""
+msgstr "התקן GSM מותקן"
 
 #: editor/widgets/mobileconnectionwizard.cpp:315
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Installed CDMA device"
-msgstr ""
+msgstr "התקן CDMA מותקן"
 
 #: editor/widgets/mobileconnectionwizard.cpp:400
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider's Country"
-msgstr ""
+msgstr "נא לבחור את מדינת הספק שלך"
 
 #: editor/widgets/mobileconnectionwizard.cpp:403
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Country List:"
-msgstr ""
+msgstr "רשימת מדינות:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:407
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My country is not listed"
-msgstr ""
+msgstr "הרשימה שלי לא מופיעה"
 
 #: editor/widgets/mobileconnectionwizard.cpp:423
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider"
-msgstr ""
+msgstr "נא לבחור את הספק שלך"
 
 #: editor/widgets/mobileconnectionwizard.cpp:426
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Select your provider from a &list:"
-msgstr ""
+msgstr "&בחירת הספק שלך מרשימה:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:435
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "I cannot find my provider and I wish to enter it &manually:"
-msgstr ""
+msgstr "הספק שלי לא נמצא וארצה למלא את הפרטים י&דנית:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:477
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Billing Plan"
-msgstr ""
+msgstr "נא לבחור את תוכנית החיוב שלך"
 
 #: editor/widgets/mobileconnectionwizard.cpp:480
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "&Select your plan:"
-msgstr ""
+msgstr "בחירת ה&תוכנית שלך:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:487
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Selected plan &APN (Access Point Name):"
-msgstr ""
+msgstr "שם &נקודת הגישה (APN) של תוכנית החיוב:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:500
 #, kde-format
@@ -3055,56 +3130,61 @@ msgid ""
 "\n"
 "If you are unsure of your plan please ask your provider for your plan's APN."
 msgstr ""
+"אזהרה: בחירת תוכנית שגויה עשויה להוביל לבעיות בחיוב מול חשבון הפס הרחב הנייד "
+"שלך או תמנע את החיבור.\n"
+"\n"
+"במקרה של ספק בנוגע לתוכנית שלך, מוטב לבקש מהספק שלך את שם נקודת הגישה (APN) "
+"של התוכנית שלך."
 
 #: editor/widgets/mobileconnectionwizard.cpp:540
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Confirm Mobile Broadband Settings"
-msgstr ""
+msgstr "אישור הגדרות פס רחב נייד"
 
 #: editor/widgets/mobileconnectionwizard.cpp:543
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid ""
 "Your mobile broadband connection is configured with the following settings:"
-msgstr ""
+msgstr "חיבור הפס הרחב הנייד שלך מוגדר עם ההגדרות הבאות:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:547
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your Provider:"
-msgstr ""
+msgstr "הספק שלך:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:552
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your Plan:"
-msgstr ""
+msgstr "התוכנית שלך:"
 
 #: editor/widgets/passwordfield.cpp:32
 #, kde-format
 msgid "Change the visibility of the password"
-msgstr ""
+msgstr "החלפת מצב חשיפת הסיסמה"
 
 #: editor/widgets/passwordfield.cpp:41
 #, kde-format
 msgid "Store password for this user only (encrypted)"
-msgstr ""
+msgstr "אחסון סיסמה למשתמש זה בלבד (מוצפנת)"
 
 #: editor/widgets/passwordfield.cpp:43
-#, fuzzy, kde-format
+#, kde-format
 msgid "Store password for all users (not encrypted)"
-msgstr "שמור סיסמה והנגש אותה לכל המשתמשים (אחסון ללא הצפנה)"
+msgstr "אחסון הסיסמה לכל המשתמשים (לא מוצפנת)"
 
 #: editor/widgets/passwordfield.cpp:45 editor/widgets/passwordfield.cpp:91
 #, kde-format
 msgid "Ask for this password every time"
-msgstr ""
+msgstr "לבקש את הסיסמה כל פעם מחדש"
 
 #: editor/widgets/passwordfield.cpp:106
 #, kde-format
 msgid "This password is not required"
-msgstr ""
+msgstr "הסיסמה הזאת לא נחוצה"
 
 #: editor/widgets/ssidcombobox.cpp:131
 #, kde-format
@@ -3113,6 +3193,9 @@ msgid ""
 "Security: %3\n"
 "Frequency: %4 Mhz"
 msgstr ""
+"%1 (%2%)\n"
+"אבטחה: %3\n"
+"תדר: %4 מה״ץ"
 
 #: editor/widgets/ssidcombobox.cpp:139
 #, kde-format
@@ -3121,6 +3204,9 @@ msgid ""
 "Security: Insecure\n"
 "Frequency: %3 Mhz"
 msgstr ""
+"%1 (%2%)\n"
+"אבטחה: מפוקפקת\n"
+"תדר: %3 מה״ץ"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/widgets/ui/advancedpermissionswidget.ui:33
@@ -3132,33 +3218,30 @@ msgstr "משתמשים זמינים"
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
 #: editor/widgets/ui/advancedpermissionswidget.ui:83
 #: editor/widgets/ui/advancedpermissionswidget.ui:213
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Real Name"
-msgstr "שם"
+msgstr "שם אמיתי"
 
 #. i18n: ectx: property (text), widget (QTreeWidget, availUsers)
 #. i18n: ectx: property (text), widget (QTreeWidget, currentUsers)
 #: editor/widgets/ui/advancedpermissionswidget.ui:88
 #: editor/widgets/ui/advancedpermissionswidget.ui:218
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username"
-msgstr "שם משתמש:"
+msgstr "שם משתמש"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/widgets/ui/advancedpermissionswidget.ui:160
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgid "Users allowed to activate the connection"
-msgstr "עדכון החיבור %1 נכשל"
+msgstr "משתמשים שמורשים להפעיל את החיבור"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
 #: editor/widgets/ui/ipv4routes.ui:20
 #, kde-format
 msgid "Edit IPv4 Routes"
-msgstr ""
+msgstr "עריכת ניתובי IPv4"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
@@ -3166,14 +3249,13 @@ msgstr ""
 msgid ""
 "If enabled, this connection will never be used as the default network "
 "connection"
-msgstr ""
+msgstr "אם האפשרות פעילה, החיבור הזה לעולם לא ישמש כחיבור ברירת המחדל לרשת"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
-#, fuzzy, kde-format
-#| msgid "IPv4 is required for this connection"
+#, kde-format
 msgid "Use only for resources on this connection"
-msgstr "כתובת מסוג IPv4 נדרשת לחיבור זה"
+msgstr "להשתמש רק עבור משאבים בחיבור הזה"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv4routes.ui:74
@@ -3196,45 +3278,47 @@ msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
 "specified above are used"
 msgstr ""
+"אם האפשרות פעילה, ניתובים שמוגדרים אוטומטית לא יהיו תקפים ורק הניתובים "
+"שיוגדרו להלן יהיו תקפים"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
 #, kde-format
 msgid "Ignore automatically obtained routes"
-msgstr ""
+msgstr "התעלמות מניתובים שנמשכו אוטומטית"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
 #: editor/widgets/ui/ipv6routes.ui:20
 #, kde-format
 msgid "Edit IPv6 Routes"
-msgstr ""
+msgstr "עריכת ניתובי IPv6"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv6routes.ui:92
 #, kde-format
 msgctxt "Remove a selected row"
 msgid "R&emove"
-msgstr "הסרה"
+msgstr "הס&רה"
 
 #: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "לפלזמה חסרה תמיכה בחיבורי VPN מסוג ‚%1’."
 
 #: handler.cpp:113
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "דיווח על תקלה"
 
 #: handler.cpp:136
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "ב־NetworkManager חסרה תמיכה בחיבורי VPN מסוג ‚%1’."
 
 #: handler.cpp:138
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "התקנה"
 
 #: handler.cpp:353 handler.cpp:846
 #, kde-format
@@ -3264,7 +3348,7 @@ msgstr "ביטול %1 נכשל"
 #: handler.cpp:854
 #, kde-format
 msgid "Failed to remove %1"
-msgstr "הסרת %1 נכשל"
+msgstr "הסרת %1 נכשלה"
 
 #: handler.cpp:858
 #, kde-format
@@ -3272,10 +3356,9 @@ msgid "Failed to update connection %1"
 msgstr "עדכון החיבור %1 נכשל"
 
 #: handler.cpp:869
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgid "Failed to create hotspot %1"
-msgstr "הפעלת %1 נכשלה"
+msgstr "יצירת הנקודה החמה %1 נכשלה"
 
 #: handler.cpp:892
 #, kde-format
@@ -3294,224 +3377,210 @@ msgstr "החיבור %1 עודכן"
 #: models/creatableconnectionsmodel.cpp:164
 #: models/creatableconnectionsmodel.cpp:174
 #: models/creatableconnectionsmodel.cpp:181
-#, fuzzy, kde-format
+#, kde-format
 msgid "Hardware based connections"
-msgstr "חיבורים זמינים"
+msgstr "חיבורים מבוססי חומרה"
 
 #: models/creatableconnectionsmodel.cpp:137
 #, kde-format
 msgid "Some DSL description"
-msgstr ""
+msgstr "תיאור כלשהו על ה־DSL"
 
 #: models/creatableconnectionsmodel.cpp:144
 #, kde-format
 msgid "Some infiniband description"
-msgstr ""
+msgstr "תיאור כלשהו על האינפיניבנד"
 
 #: models/creatableconnectionsmodel.cpp:149
-#, fuzzy, kde-format
+#, kde-format
 msgid "Mobile Broadband"
-msgstr "פס רחב סוללרי (%1)"
+msgstr "רשת פס־רחב ניידת"
 
 #: models/creatableconnectionsmodel.cpp:151
 #, kde-format
 msgid "Some mobile broadband description"
-msgstr ""
+msgstr "תיאור כלשהו על הרשת הניידת"
 
 #: models/creatableconnectionsmodel.cpp:158
 #: models/creatableconnectionsmodel.cpp:165
 #, kde-format
 msgid "Some wired ethernet description"
-msgstr ""
+msgstr "תיאור כלשהו על הרשת הקווית"
 
 #: models/creatableconnectionsmodel.cpp:163
 #, kde-format
 msgid "Wired Ethernet (shared)"
-msgstr ""
+msgstr "רשת קווית (משותפת)"
 
 #: models/creatableconnectionsmodel.cpp:175
 #: models/creatableconnectionsmodel.cpp:182
 #, kde-format
 msgid "Some wi-fi description"
-msgstr ""
+msgstr "תיאור כלשהו לרשת אלחוטית"
 
 #: models/creatableconnectionsmodel.cpp:180
 #, kde-format
 msgid "Wi-Fi (shared)"
-msgstr ""
+msgstr "רשת אלחוטית (משותפת)"
 
 #: models/creatableconnectionsmodel.cpp:191
 #: models/creatableconnectionsmodel.cpp:201
 #: models/creatableconnectionsmodel.cpp:211
 #: models/creatableconnectionsmodel.cpp:221
-#, fuzzy, kde-format
+#, kde-format
 msgid "Virtual connections"
-msgstr "חיבור %1 חדש"
+msgstr "חיבורים וירטואליים"
 
 #: models/creatableconnectionsmodel.cpp:192
 #: models/creatableconnectionsmodel.cpp:202
 #, kde-format
 msgid "Some bond description"
-msgstr ""
+msgstr "תיאור כלשהו על המאגד"
 
 #: models/creatableconnectionsmodel.cpp:212
 #, kde-format
 msgid "Some team description"
-msgstr ""
+msgstr "תיאור כלשהו על הציוות"
 
 #: models/creatableconnectionsmodel.cpp:222
 #, kde-format
 msgid "Some vlan description"
-msgstr ""
+msgstr "תיאור כלשהו ל־vlan"
 
 #: models/creatableconnectionsmodel.cpp:242
 #: models/creatableconnectionsmodel.cpp:255
-#, fuzzy, kde-format
+#, kde-format
 msgid "VPN connections"
-msgstr "חיבור %1 חדש"
+msgstr "חיבורי VPN‏"
 
 #: models/creatableconnectionsmodel.cpp:266
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import VPN connection…"
-msgstr "חיבור %1 חדש"
+msgstr "ייבוא חיבור VPN…"
 
 #: models/creatableconnectionsmodel.cpp:267
-#, fuzzy, kde-format
+#, kde-format
 msgid "Other"
-msgstr "Ethernet"
+msgstr "אחר"
 
 #: models/creatableconnectionsmodel.cpp:268
 #, kde-format
 msgid "Import a saved configuration file"
-msgstr ""
+msgstr "ייבוא קובץ הגדרות שנשמר"
 
 #: models/networkmodelitem.cpp:42
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור לא ידוע"
 
 #: models/networkmodelitem.cpp:43
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא ADSL"
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr ""
+msgstr "סוג החיבור הוא בלוטות׳"
 
 #: models/networkmodelitem.cpp:45
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא גישור"
 
 #: models/networkmodelitem.cpp:46
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא CDMA"
 
 #: models/networkmodelitem.cpp:47
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא GSM"
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr ""
+msgstr "סוג החיבור הוא Infiniband"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
-msgstr ""
+msgstr "סוג החיבור הוא Mesh של OLPC"
 
 #: models/networkmodelitem.cpp:50
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא PPOE"
 
 #: models/networkmodelitem.cpp:51
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא VLAN"
 
 #: models/networkmodelitem.cpp:52
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא VPN"
 
 #: models/networkmodelitem.cpp:53
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא Wimax"
 
 #: models/networkmodelitem.cpp:54
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא קווי"
 
 #: models/networkmodelitem.cpp:55
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא אלחוטי"
 
 #: models/networkmodelitem.cpp:56
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא ציוות"
 
 #: models/networkmodelitem.cpp:57
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא כללי"
 
 #: models/networkmodelitem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Connection type"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr "סוג החיבור"
+msgstr "סוג החיבור הוא תעלה"
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr ""
+msgstr "סוג החיבור הוא תעלת IP"
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
-msgstr ""
+msgstr "סוג החיבור הוא WireGuard"
 
 #: models/networkmodelitem.cpp:585
 #, kde-format
@@ -3521,17 +3590,17 @@ msgstr "כתובת IPv4"
 #: models/networkmodelitem.cpp:591
 #, kde-format
 msgid "IPv4 Default Gateway"
-msgstr ""
+msgstr "שער ברירת מחדל ב־IPv4"
 
 #: models/networkmodelitem.cpp:598
 #, kde-format
 msgid "IPv4 Primary Nameserver"
-msgstr ""
+msgstr "שרת שמות עיקרי ב־IPv4"
 
 #: models/networkmodelitem.cpp:602
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
-msgstr ""
+msgstr "שרת שמות משני ב־IPv4"
 
 #: models/networkmodelitem.cpp:612
 #, kde-format
@@ -3539,25 +3608,24 @@ msgid "IPv6 Address"
 msgstr "כתובת IPv6"
 
 #: models/networkmodelitem.cpp:614
-#, fuzzy, kde-format
-#| msgid "IPv6 Address"
+#, kde-format
 msgid "IPv6 ULA Address"
-msgstr "כתובת IPv6"
+msgstr "כתובת IPv6 מקומית יחודית (ULA)"
 
 #: models/networkmodelitem.cpp:620
 #, kde-format
 msgid "IPv6 Default Gateway"
-msgstr ""
+msgstr "שער ברירת מחדל ב־IPv6"
 
 #: models/networkmodelitem.cpp:627
 #, kde-format
 msgid "IPv6 Primary Nameserver"
-msgstr ""
+msgstr "שרת שמות עיקרי ב־IPv6"
 
 #: models/networkmodelitem.cpp:631
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
-msgstr ""
+msgstr "שרת שמות משני ב־IPv6"
 
 #: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
 #, kde-format
@@ -3570,12 +3638,12 @@ msgstr "מהירות החיבור"
 #: models/networkmodelitem.cpp:734 models/networkmodelitem.cpp:742
 #, kde-format
 msgid "MAC Address"
-msgstr "כתובת MAC"
+msgstr "כתובת MAC (חומרה)"
 
 #: models/networkmodelitem.cpp:646
 #, kde-format
 msgid "Access point (SSID)"
-msgstr "נקודת גישה (SSID)"
+msgstr "נקודת גישה (שם רשת)"
 
 #: models/networkmodelitem.cpp:648
 #, kde-format
@@ -3590,13 +3658,12 @@ msgstr "סוג אבטחה"
 #: models/networkmodelitem.cpp:657
 #, kde-format
 msgid "Frequency"
-msgstr ""
+msgstr "תדירות"
 
 #: models/networkmodelitem.cpp:658
-#, fuzzy, kde-format
-#| msgid "BSSID:"
+#, kde-format
 msgid "BSSID"
-msgstr "BSSID:"
+msgstr "שם רשת נסתרת"
 
 #: models/networkmodelitem.cpp:672
 #, kde-format
@@ -3616,7 +3683,7 @@ msgstr "איכות חיבור"
 #: models/networkmodelitem.cpp:681
 #, kde-format
 msgid "Access Technology"
-msgstr "טכנולוגית גישה"
+msgstr "טכנולוגיית גישה"
 
 #: models/networkmodelitem.cpp:686
 #, kde-format
@@ -3626,7 +3693,7 @@ msgstr "תוסף VPN"
 #: models/networkmodelitem.cpp:697
 #, kde-format
 msgid "Banner"
-msgstr ""
+msgstr "כרזה"
 
 #: models/networkmodelitem.cpp:703
 #, kde-format
@@ -3648,7 +3715,7 @@ msgstr "סוג"
 #: models/networkmodelitem.cpp:733
 #, kde-format
 msgid "Vlan ID"
-msgstr ""
+msgstr "מזהה Vlan"
 
 #: models/networkmodelitem.cpp:737
 #, kde-format
@@ -3656,10 +3723,9 @@ msgid "Adsl"
 msgstr "ADSL"
 
 #: models/networkmodelitem.cpp:747
-#, fuzzy, kde-format
-#| msgid "Service:"
+#, kde-format
 msgid "Device"
-msgstr "שירות:"
+msgstr "התקן"
 
 #~ msgid "Missing VPN plugin"
 #~ msgstr "תוסף VPN חסר"

@@ -1,24 +1,24 @@
 # Elkana Bardugo <ttv200@gmail.com>, 2017. #zanata
+# SPDX-FileCopyrightText: 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-07-26 02:31+0000\n"
-"PO-Revision-Date: 2017-05-23 09:10-0400\n"
-"Last-Translator: Elkana Bardugo <ttv200@gmail.com>\n"
-"Language-Team: Hebrew\n"
+"PO-Revision-Date: 2025-08-07 20:59+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Zanata 3.9.6\n"
+"X-Generator: Lokalize 25.04.3\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: kcm.cpp:288
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "ייבא חיבור VPN"
+msgstr "ייבוא חיבור VPN נכשל: %1"
 
 #: kcm.cpp:358
 #, kde-format
@@ -31,44 +31,40 @@ msgid "Export VPN Connection"
 msgstr "ייצוא חיבור VPN"
 
 #: kcm.cpp:455
-#, fuzzy, kde-format
-#| msgid "Do you want to remove the connection '%1'"
+#, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
-msgstr "להסיר את החיבור \"%1\"?"
+msgstr "לשמור את השינויים שנערכו בחיבור ‚%1’?"
 
 #: kcm.cpp:456
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
-msgstr ""
+msgstr "שמירת השינויים"
 
 #: kcm.cpp:555
 #, kde-format
 msgid "Import VPN Connection"
-msgstr "ייבא חיבור VPN"
+msgstr "ייבוא חיבור VPN"
 
 #: kcm.cpp:555
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
-msgstr "ייצוא חיבור VPN"
+msgstr "חיבורי VPN‏ (%1)"
 
 #: kcm.cpp:558
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "לא סופק קובץ"
 
 #: kcm.cpp:619
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "סוג ה־VPN לא ידוע"
 
 #: qml/AddConnectionDialog.qml:15
-#, fuzzy
-#| msgid "Choose a connection type"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr "בחירת סוג חיבור"
+msgstr "נא לבחור סוג חיבור"
 
 #: qml/AddConnectionDialog.qml:163
 msgid "Create"
@@ -76,50 +72,48 @@ msgstr "יצירה"
 
 #: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
 msgid "Cancel"
-msgstr ""
+msgstr "ביטול"
 
 #: qml/AddConnectionDialog.qml:191 qml/main.qml:193
 msgid "Configuration"
-msgstr ""
+msgstr "הגדרות"
 
 #: qml/ConfigurationDialog.qml:16
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr ""
+msgstr "הגדרות"
 
 #: qml/ConfigurationDialog.qml:37
 msgid "General"
-msgstr ""
+msgstr "כללי"
 
 #: qml/ConfigurationDialog.qml:42
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "לבקש קוד אישי עם זיהוי מודם"
 
 #: qml/ConfigurationDialog.qml:49
-#, fuzzy
-#| msgid "Export selected connection"
 msgid "Show virtual connections"
-msgstr "ייצוא חיבורים נבחרים"
+msgstr "הצגת חיבורים וירטואליים"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Hotspot"
-msgstr ""
+msgstr "נקודה חמה"
 
 #: qml/ConfigurationDialog.qml:63
 msgid "Hotspot name:"
-msgstr ""
+msgstr "שם נקודה חמה:"
 
 #: qml/ConfigurationDialog.qml:73
 msgid "Hotspot password:"
-msgstr ""
+msgstr "סיסמת הנקודה החמה:"
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "אישור"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"
-msgstr "התחבר"
+msgstr "התחברות"
 
 #: qml/ConnectionItem.qml:108
 msgid "Disconnect"
@@ -154,17 +148,13 @@ msgid "Export selected connection"
 msgstr "ייצוא חיבורים נבחרים"
 
 #: qml/main.qml:221
-#, fuzzy
-#| msgid "Remove connection"
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "הסרת חיבור"
 
 #: qml/main.qml:222
-#, fuzzy
-#| msgid "Do you want to remove the connection '%1'"
 msgid "Do you want to remove the connection '%1'?"
-msgstr "להסיר את החיבור \"%1\"?"
+msgstr "להסיר את החיבור ‚%1’?"
 
 #~ msgid "Type here to search connections..."
 #~ msgstr "הקלד כאן לחיפוש חיבורים..."

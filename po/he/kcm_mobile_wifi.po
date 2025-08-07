@@ -1,0 +1,208 @@
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+#
+# SPDX-FileCopyrightText: 2025 Yaron Shahrabani <sh.yaron@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2023-01-01 01:00+0000\n"
+"PO-Revision-Date: 2025-08-07 21:18+0300\n"
+"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
+"Language-Team: צוות התרגום של KDE ישראל\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.3\n"
+
+#, kde-format
+msgctxt "NAME OF TRANSLATORS"
+msgid "Your names"
+msgstr "צוות התרגום של KDE ישראל"
+
+#, kde-format
+msgctxt "EMAIL OF TRANSLATORS"
+msgid "Your emails"
+msgstr "kde-l10n-he@kde.org"
+
+#: package/contents/ui/ConnectDialog.qml:136
+#, kde-format
+msgid "Invalid input."
+msgstr "קלט שגוי."
+
+#: package/contents/ui/ConnectionItemDelegate.qml:108
+#, kde-format
+msgid "Connect to"
+msgstr "התחברות אל"
+
+#: package/contents/ui/main.qml:82
+#, kde-format
+msgid "Wi-Fi is disabled"
+msgstr "רשת אלחוטית מושבתת"
+
+#: package/contents/ui/main.qml:86
+#, kde-format
+msgid "Enable"
+msgstr "הפעלה"
+
+#: package/contents/ui/main.qml:96
+#, kde-format
+msgid "Disable Wi-Fi"
+msgstr "השבתת רשת אלחוטית"
+
+#: package/contents/ui/main.qml:102
+#, kde-format
+msgid "Add Custom Connection"
+msgstr "הוספת חיבור מותאם אישית"
+
+#: package/contents/ui/main.qml:108
+#, kde-format
+msgid "Show Saved Connections"
+msgstr "הצגת חיבורים שמורים"
+
+#: package/contents/ui/NetworkSettings.qml:14
+#, kde-format
+msgid "Add new Connection"
+msgstr "הוספת חיבור חדש"
+
+#: package/contents/ui/NetworkSettings.qml:34
+#, kde-format
+msgid "Save"
+msgstr "שמירה"
+
+#: package/contents/ui/NetworkSettings.qml:44
+#, kde-format
+msgid "General"
+msgstr "כללי"
+
+#: package/contents/ui/NetworkSettings.qml:49
+#, kde-format
+msgid "SSID:"
+msgstr "שם רשת אלחוטית:"
+
+#: package/contents/ui/NetworkSettings.qml:58
+#, kde-format
+msgid "Hidden Network:"
+msgstr "רשת מוסתרת:"
+
+#: package/contents/ui/NetworkSettings.qml:64
+#, kde-format
+msgid "Security"
+msgstr "אבטחה"
+
+#: package/contents/ui/NetworkSettings.qml:70
+#, kde-format
+msgid "Security type:"
+msgstr "סוג אבטחה:"
+
+#: package/contents/ui/NetworkSettings.qml:79
+#, kde-format
+msgid "None"
+msgstr "אין"
+
+#: package/contents/ui/NetworkSettings.qml:80
+#, kde-format
+msgid "WEP Key"
+msgstr "מפתח WEP"
+
+#: package/contents/ui/NetworkSettings.qml:81
+#, kde-format
+msgid "Dynamic WEP"
+msgstr "WEP דינמי"
+
+#: package/contents/ui/NetworkSettings.qml:82
+#, kde-format
+msgid "WPA/WPA2 Personal"
+msgstr "WPA/WPA2 אישי"
+
+#: package/contents/ui/NetworkSettings.qml:83
+#, kde-format
+msgid "WPA/WPA2 Enterprise"
+msgstr "WPA/WPA2 מסחרי"
+
+#: package/contents/ui/NetworkSettings.qml:108
+#, kde-format
+msgid "Password:"
+msgstr "סיסמה:"
+
+#: package/contents/ui/NetworkSettings.qml:116
+#, kde-format
+msgid "Authentication:"
+msgstr "אימות:"
+
+#: package/contents/ui/NetworkSettings.qml:119
+#, kde-format
+msgid "TLS"
+msgstr "TLS"
+
+#: package/contents/ui/NetworkSettings.qml:119
+#, kde-format
+msgid "LEAP"
+msgstr "LEAP"
+
+#: package/contents/ui/NetworkSettings.qml:119
+#, kde-format
+msgid "FAST"
+msgstr "FAST"
+
+#: package/contents/ui/NetworkSettings.qml:120
+#, kde-format
+msgid "Tunneled TLS"
+msgstr "TLS מתועל"
+
+#: package/contents/ui/NetworkSettings.qml:121
+#, kde-format
+msgid "Protected EAP"
+msgstr "EAP מוגן"
+
+#: package/contents/ui/NetworkSettings.qml:130
+#, kde-format
+msgid "IP settings"
+msgstr "הגדרות IP"
+
+#: package/contents/ui/NetworkSettings.qml:136
+#, kde-format
+msgid "Automatic"
+msgstr "אוטומטי"
+
+#: package/contents/ui/NetworkSettings.qml:136
+#, kde-format
+msgid "Manual"
+msgstr "ידני"
+
+#: package/contents/ui/NetworkSettings.qml:146
+#, kde-format
+msgid "IP Address:"
+msgstr "כתובת IP:"
+
+#: package/contents/ui/NetworkSettings.qml:158
+#, kde-format
+msgid "Gateway:"
+msgstr "שער גישה:"
+
+#: package/contents/ui/NetworkSettings.qml:170
+#, kde-format
+msgid "Network prefix length:"
+msgstr "אורך קידומת רשת:"
+
+#: package/contents/ui/NetworkSettings.qml:183
+#, kde-format
+msgid "DNS:"
+msgstr "DNS:"
+
+#: package/contents/ui/PasswordField.qml:13
+#, kde-format
+msgid "Password…"
+msgstr "סיסמה…"
+
+#: wifisettings.cpp:32
+#, kde-format
+msgid "Wi-Fi networks"
+msgstr "רשתות אלחוטיות"
+
+#: wifisettings.cpp:33
+#, kde-format
+msgid "Martin Kacej"
+msgstr "מרטין קאסיי"

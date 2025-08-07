@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-06-10 05:48+0200\n"
+"PO-Revision-Date: 2025-08-07 04:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -189,7 +189,7 @@ msgstr "დაკავშირება"
 #: qml/ConnectionItem.qml:121
 msgctxt "@title:column Available networks"
 msgid "Available"
-msgstr ""
+msgstr "ხელმისაწვდომია"
 
 #: qml/main.qml:151
 msgid "Add new connection"
@@ -213,41 +213,34 @@ msgid "Do you want to remove the connection '%1'?"
 msgstr "გნებავთ შეერთების წაშლა? (%1)"
 
 #: qml/main.qml:262
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "დაკავშირება"
 
 #: qml/main.qml:268
-#, fuzzy
-#| msgid "Cancel"
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "გაუქმება"
 
 #: qml/main.qml:274
-#, fuzzy
-#| msgctxt "@label Hotspot password"
-#| msgid "Password:"
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "პაროლი:"
+msgstr "შეიყვანეთ პაროლი"
 
 #: qml/main.qml:280
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "ქსელი: %1"
 
 #: qml/main.qml:300
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "პაროლი სწორი WEP გასაღები უნდა იყოს"
 
 #: qml/main.qml:301
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "პაროლი 8-დან 64-მდე სიმბოლოს უნდა შეიცავდეს"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "ჰოტსპოტის სახელი:"

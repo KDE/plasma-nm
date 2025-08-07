@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-21 00:44+0000\n"
+"POT-Creation-Date: 2025-08-07 00:44+0000\n"
 "PO-Revision-Date: 2025-06-20 22:55+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -100,7 +100,7 @@ msgstr "Sortu"
 msgid "Cancel"
 msgstr "Utzi"
 
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:211
+#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
 msgid "Configuration"
 msgstr "Konfigurazioa"
 
@@ -161,55 +161,97 @@ msgstr ""
 "behar du:<ul><li>5 edo 13 karaktere doi-doi</li><li>10 edo 26 karaktere "
 "hamaseitar doi-doi:<br/>abcde, ABCDE edo 0-9</li></ul>"
 
-#: qml/ConnectionItem.qml:71
+#: qml/ConnectionItem.qml:82
 msgid "Connect"
 msgstr "Konektatu"
 
-#: qml/ConnectionItem.qml:71
+#: qml/ConnectionItem.qml:82
 msgid "Disconnect"
 msgstr "Deskonektatu"
 
-#: qml/ConnectionItem.qml:82
+#: qml/ConnectionItem.qml:87
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "Ezin da sare honetara konektatu, ez baita detektatu."
 
-#: qml/ConnectionItem.qml:87
+#: qml/ConnectionItem.qml:92
 msgid "Delete"
 msgstr "Ezabatu"
 
-#: qml/ConnectionItem.qml:97
+#: qml/ConnectionItem.qml:103
 msgid "Export"
 msgstr "Esportatu"
 
-#: qml/ConnectionItem.qml:111
+#: qml/ConnectionItem.qml:117
 msgid "Connected"
 msgstr "Konektatuta"
 
-#: qml/ConnectionItem.qml:113
+#: qml/ConnectionItem.qml:119
 msgid "Connecting"
 msgstr "Konektatzen"
 
-#: qml/main.qml:150
+#: qml/ConnectionItem.qml:121
+msgctxt "@title:column Available networks"
+msgid "Available"
+msgstr ""
+
+#: qml/main.qml:151
 msgid "Add new connection"
 msgstr "Gehitu konexio berria"
 
-#: qml/main.qml:168
+#: qml/main.qml:169
 msgid "Remove selected connection"
 msgstr "Kendu hautatutako konexioa"
 
-#: qml/main.qml:186
+#: qml/main.qml:187
 msgid "Export selected connection"
 msgstr "Esportatu hautatutako konexioa"
 
-#: qml/main.qml:238
+#: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Kendu konexioa"
 
-#: qml/main.qml:239
+#: qml/main.qml:240
 msgid "Do you want to remove the connection '%1'?"
 msgstr "'%1' konexioa kendu nahi duzu?"
+
+#: qml/main.qml:262
+#, fuzzy
+#| msgid "Connect"
+msgctxt "@action:button Connect to network"
+msgid "Connect"
+msgstr "Konektatu"
+
+#: qml/main.qml:268
+#, fuzzy
+#| msgid "Cancel"
+msgctxt "@action:button Cancel connecting to network"
+msgid "Cancel"
+msgstr "Utzi"
+
+#: qml/main.qml:274
+#, fuzzy
+#| msgctxt "@label Hotspot password"
+#| msgid "Password:"
+msgctxt "@title:window"
+msgid "Enter Password"
+msgstr "Pasahitza:"
+
+#: qml/main.qml:280
+msgctxt "@label %1 is the name of the network the user is connecting to"
+msgid "Network: %1"
+msgstr ""
+
+#: qml/main.qml:300
+msgctxt "@label key is a passcode"
+msgid "Password must be a valid WEP key"
+msgstr ""
+
+#: qml/main.qml:301
+msgctxt "@label password invalid length message"
+msgid "Password must be between 8 and 64 characters"
+msgstr ""
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Berogunearen izena:"

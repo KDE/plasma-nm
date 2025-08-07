@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-21 00:44+0000\n"
+"POT-Creation-Date: 2025-08-07 00:44+0000\n"
 "PO-Revision-Date: 2023-02-25 14:51-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -102,7 +102,7 @@ msgstr "作成"
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:211
+#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
 msgid "Configuration"
 msgstr "設定"
 
@@ -160,52 +160,93 @@ msgid ""
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
 
-#: qml/ConnectionItem.qml:71
+#: qml/ConnectionItem.qml:82
 msgid "Connect"
 msgstr "接続"
 
-#: qml/ConnectionItem.qml:71
+#: qml/ConnectionItem.qml:82
 msgid "Disconnect"
 msgstr "切断"
 
-#: qml/ConnectionItem.qml:82
+#: qml/ConnectionItem.qml:87
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr ""
 
-#: qml/ConnectionItem.qml:87
+#: qml/ConnectionItem.qml:92
 msgid "Delete"
 msgstr "削除"
 
-#: qml/ConnectionItem.qml:97
+#: qml/ConnectionItem.qml:103
 msgid "Export"
 msgstr "エクスポート"
 
-#: qml/ConnectionItem.qml:111
+#: qml/ConnectionItem.qml:117
 msgid "Connected"
 msgstr "接続済み"
 
-#: qml/ConnectionItem.qml:113
+#: qml/ConnectionItem.qml:119
 msgid "Connecting"
 msgstr "接続中"
 
-#: qml/main.qml:150
+#: qml/ConnectionItem.qml:121
+msgctxt "@title:column Available networks"
+msgid "Available"
+msgstr ""
+
+#: qml/main.qml:151
 msgid "Add new connection"
 msgstr "新しい接続を追加"
 
-#: qml/main.qml:168
+#: qml/main.qml:169
 msgid "Remove selected connection"
 msgstr "選択された接続を削除"
 
-#: qml/main.qml:186
+#: qml/main.qml:187
 msgid "Export selected connection"
 msgstr "選択された接続をエクスポート"
 
-#: qml/main.qml:238
+#: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "接続を削除"
 
-#: qml/main.qml:239
+#: qml/main.qml:240
 msgid "Do you want to remove the connection '%1'?"
 msgstr "接続'%1'を削除しますか？"
+
+#: qml/main.qml:262
+#, fuzzy
+#| msgid "Connect"
+msgctxt "@action:button Connect to network"
+msgid "Connect"
+msgstr "接続"
+
+#: qml/main.qml:268
+#, fuzzy
+#| msgid "Cancel"
+msgctxt "@action:button Cancel connecting to network"
+msgid "Cancel"
+msgstr "キャンセル"
+
+#: qml/main.qml:274
+#, fuzzy
+#| msgid "Hotspot password:"
+msgctxt "@title:window"
+msgid "Enter Password"
+msgstr "ホットスポットのパスワード:"
+
+#: qml/main.qml:280
+msgctxt "@label %1 is the name of the network the user is connecting to"
+msgid "Network: %1"
+msgstr ""
+
+#: qml/main.qml:300
+msgctxt "@label key is a passcode"
+msgid "Password must be a valid WEP key"
+msgstr ""
+
+#: qml/main.qml:301
+msgctxt "@label password invalid length message"
+msgid "Password must be between 8 and 64 characters"
+msgstr ""

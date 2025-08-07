@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-22 00:44+0000\n"
+"POT-Creation-Date: 2025-08-07 00:44+0000\n"
 "PO-Revision-Date: 2024-10-24 08:20\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -78,31 +78,31 @@ msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
-#: models/networkmodelitem.cpp:730
+#: models/networkmodelitem.cpp:733
 #, kde-format
 msgid "Infiniband"
 msgstr "Infiniband"
 
 #: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:198
-#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:736
+#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:739
 #, kde-format
 msgid "Bond"
 msgstr "Bond"
 
 #: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:201
-#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:742
+#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:745
 #, kde-format
 msgid "Bridge"
 msgstr "Мост"
 
 #: editor/connectioneditorbase.cpp:256 models/creatableconnectionsmodel.cpp:220
-#: models/networkmodelitem.cpp:748
+#: models/networkmodelitem.cpp:751
 #, kde-format
 msgid "Vlan"
 msgstr "Vlan"
 
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:230
-#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:757
+#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:760
 #, kde-format
 msgid "Team"
 msgstr "Каманда"
@@ -3543,7 +3543,7 @@ msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
 msgstr "Тып злучэння: WireGuard"
 
-#: models/networkmodelitem.cpp:347
+#: models/networkmodelitem.cpp:348
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip real user name is not available"
 #| msgid "Not Available"
@@ -3551,7 +3551,7 @@ msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "Недаступна"
 
-#: models/networkmodelitem.cpp:353
+#: models/networkmodelitem.cpp:354
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3559,164 +3559,171 @@ msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Падлучана"
 
-#: models/networkmodelitem.cpp:591
+#: models/networkmodelitem.cpp:356
+#, kde-format
+msgctxt ""
+"@title:column header for list of previously connected network connections"
+msgid "Previously Used, Unavailable"
+msgstr ""
+
+#: models/networkmodelitem.cpp:594
 #, kde-format
 msgid "IPv4 Address"
 msgstr "Адрас IPv4"
 
-#: models/networkmodelitem.cpp:597
+#: models/networkmodelitem.cpp:600
 #, kde-format
 msgid "IPv4 Default Gateway"
 msgstr "Прадвызначаны шлюз IPv4"
 
-#: models/networkmodelitem.cpp:604
+#: models/networkmodelitem.cpp:607
 #, kde-format
 msgid "IPv4 Primary Nameserver"
 msgstr "Першасная назва сервера IPv4"
 
-#: models/networkmodelitem.cpp:608
+#: models/networkmodelitem.cpp:611
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
 msgstr "Другасная назва сервера IPv4"
 
-#: models/networkmodelitem.cpp:618
+#: models/networkmodelitem.cpp:621
 #, kde-format
 msgid "IPv6 Address"
 msgstr "Адрас IPv6"
 
-#: models/networkmodelitem.cpp:620
+#: models/networkmodelitem.cpp:623
 #, kde-format
 msgid "IPv6 ULA Address"
 msgstr "ULA-адрас IPv6"
 
-#: models/networkmodelitem.cpp:626
+#: models/networkmodelitem.cpp:629
 #, kde-format
 msgid "IPv6 Default Gateway"
 msgstr "Прадвызначаны шлюз IPv6"
 
-#: models/networkmodelitem.cpp:633
+#: models/networkmodelitem.cpp:636
 #, kde-format
 msgid "IPv6 Primary Nameserver"
 msgstr "Першасная назва сервера IPv6"
 
-#: models/networkmodelitem.cpp:637
+#: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
 msgstr "Другасная назва сервера IPv6"
 
-#: models/networkmodelitem.cpp:646
+#: models/networkmodelitem.cpp:649
 #, kde-format
 msgid "Connection speed"
 msgstr "Хуткасць злучэння"
 
-#: models/networkmodelitem.cpp:648 models/networkmodelitem.cpp:673
-#: models/networkmodelitem.cpp:726 models/networkmodelitem.cpp:732
-#: models/networkmodelitem.cpp:738 models/networkmodelitem.cpp:744
-#: models/networkmodelitem.cpp:751 models/networkmodelitem.cpp:759
+#: models/networkmodelitem.cpp:651 models/networkmodelitem.cpp:676
+#: models/networkmodelitem.cpp:729 models/networkmodelitem.cpp:735
+#: models/networkmodelitem.cpp:741 models/networkmodelitem.cpp:747
+#: models/networkmodelitem.cpp:754 models/networkmodelitem.cpp:762
 #, kde-format
 msgid "MAC Address"
 msgstr "MAC-адрас"
 
-#: models/networkmodelitem.cpp:652
+#: models/networkmodelitem.cpp:655
 #, kde-format
 msgid "Access Point (SSID)"
 msgstr "Пункт доступу (SSID)"
 
-#: models/networkmodelitem.cpp:654
+#: models/networkmodelitem.cpp:657
 #, kde-format
 msgid "Signal Strength"
 msgstr "Магутнасць сігналу"
 
-#: models/networkmodelitem.cpp:654
+#: models/networkmodelitem.cpp:657
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
 
-#: models/networkmodelitem.cpp:656
+#: models/networkmodelitem.cpp:659
 #, kde-format
 msgid "Security Type"
 msgstr "Тып бяспекі"
 
-#: models/networkmodelitem.cpp:659
+#: models/networkmodelitem.cpp:662
 #, kde-format
 msgid "Connection Speed"
 msgstr "Хуткасць злучэння"
 
-#: models/networkmodelitem.cpp:665
+#: models/networkmodelitem.cpp:668
 #, kde-format
 msgid "Frequency"
 msgstr "Частата"
 
-#: models/networkmodelitem.cpp:667
+#: models/networkmodelitem.cpp:670
 #, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
 msgstr "%1 (канал %2)"
 
-#: models/networkmodelitem.cpp:671
+#: models/networkmodelitem.cpp:674
 #, kde-format
 msgid "BSSID"
 msgstr "BSSID"
 
-#: models/networkmodelitem.cpp:685
+#: models/networkmodelitem.cpp:688
 #, kde-format
 msgid "Operator"
 msgstr "Аператар"
 
-#: models/networkmodelitem.cpp:689
+#: models/networkmodelitem.cpp:692
 #, kde-format
 msgid "Network ID"
 msgstr "Ідэнтыфікатар сеткі"
 
-#: models/networkmodelitem.cpp:693
+#: models/networkmodelitem.cpp:696
 #, kde-format
 msgid "Signal Quality"
 msgstr "Якасць сігналу"
 
-#: models/networkmodelitem.cpp:694
+#: models/networkmodelitem.cpp:697
 #, kde-format
 msgid "Access Technology"
 msgstr "Тэхналогія доступу"
 
-#: models/networkmodelitem.cpp:699 models/networkmodelitem.cpp:716
+#: models/networkmodelitem.cpp:702 models/networkmodelitem.cpp:719
 #, kde-format
 msgid "VPN Plugin"
 msgstr "Убудова VPN"
 
-#: models/networkmodelitem.cpp:710
+#: models/networkmodelitem.cpp:713
 #, kde-format
 msgid "Banner"
 msgstr "Банер"
 
-#: models/networkmodelitem.cpp:720
+#: models/networkmodelitem.cpp:723
 #, kde-format
 msgid "Name"
 msgstr "Назва"
 
-#: models/networkmodelitem.cpp:722 models/networkmodelitem.cpp:724
+#: models/networkmodelitem.cpp:725 models/networkmodelitem.cpp:727
 #, kde-format
 msgid "Capabilities"
 msgstr "Магчымасці"
 
-#: models/networkmodelitem.cpp:730 models/networkmodelitem.cpp:736
-#: models/networkmodelitem.cpp:742 models/networkmodelitem.cpp:748
-#: models/networkmodelitem.cpp:754 models/networkmodelitem.cpp:757
+#: models/networkmodelitem.cpp:733 models/networkmodelitem.cpp:739
+#: models/networkmodelitem.cpp:745 models/networkmodelitem.cpp:751
+#: models/networkmodelitem.cpp:757 models/networkmodelitem.cpp:760
 #, kde-format
 msgid "Type"
 msgstr "Тып"
 
-#: models/networkmodelitem.cpp:750
+#: models/networkmodelitem.cpp:753
 #, kde-format
 msgid "Vlan ID"
 msgstr "Vlan ID"
 
-#: models/networkmodelitem.cpp:754
+#: models/networkmodelitem.cpp:757
 #, kde-format
 msgid "Adsl"
 msgstr "Adsl"
 
-#: models/networkmodelitem.cpp:764
+#: models/networkmodelitem.cpp:767
 #, kde-format
 msgid "Device"
 msgstr "Прылада"

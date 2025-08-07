@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-21 00:44+0000\n"
+"POT-Creation-Date: 2025-08-07 00:44+0000\n"
 "PO-Revision-Date: 2024-12-02 18:40+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -98,7 +98,7 @@ msgstr "Izveidot"
 msgid "Cancel"
 msgstr "Atcelt"
 
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:211
+#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
 msgid "Configuration"
 msgstr "Konfigurācija"
 
@@ -157,52 +157,94 @@ msgstr ""
 "rakstzīmes</li><li>Tieši 10 vai 26 heksadecimālas rakstzīmes:<br/>abcdef, "
 "ABCDEF vai 0—9</li></ul>"
 
-#: qml/ConnectionItem.qml:71
+#: qml/ConnectionItem.qml:82
 msgid "Connect"
 msgstr "Savienoties"
 
-#: qml/ConnectionItem.qml:71
+#: qml/ConnectionItem.qml:82
 msgid "Disconnect"
 msgstr "Atvienoties"
 
-#: qml/ConnectionItem.qml:82
+#: qml/ConnectionItem.qml:87
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr ""
 
-#: qml/ConnectionItem.qml:87
+#: qml/ConnectionItem.qml:92
 msgid "Delete"
 msgstr "Dzēst"
 
-#: qml/ConnectionItem.qml:97
+#: qml/ConnectionItem.qml:103
 msgid "Export"
 msgstr "Eksportēt"
 
-#: qml/ConnectionItem.qml:111
+#: qml/ConnectionItem.qml:117
 msgid "Connected"
 msgstr "Savienots"
 
-#: qml/ConnectionItem.qml:113
+#: qml/ConnectionItem.qml:119
 msgid "Connecting"
 msgstr "Savienojas"
 
-#: qml/main.qml:150
+#: qml/ConnectionItem.qml:121
+msgctxt "@title:column Available networks"
+msgid "Available"
+msgstr ""
+
+#: qml/main.qml:151
 msgid "Add new connection"
 msgstr "Pievienot jaunu savienojumu"
 
-#: qml/main.qml:168
+#: qml/main.qml:169
 msgid "Remove selected connection"
 msgstr "Noņemt atlasīto savienojumu"
 
-#: qml/main.qml:186
+#: qml/main.qml:187
 msgid "Export selected connection"
 msgstr "Eksportēt atlasīto savienojumu"
 
-#: qml/main.qml:238
+#: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Noņemt savienojumu"
 
-#: qml/main.qml:239
+#: qml/main.qml:240
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Vai vēlaties noņemt savienojumu „%1“?"
+
+#: qml/main.qml:262
+#, fuzzy
+#| msgid "Connect"
+msgctxt "@action:button Connect to network"
+msgid "Connect"
+msgstr "Savienoties"
+
+#: qml/main.qml:268
+#, fuzzy
+#| msgid "Cancel"
+msgctxt "@action:button Cancel connecting to network"
+msgid "Cancel"
+msgstr "Atcelt"
+
+#: qml/main.qml:274
+#, fuzzy
+#| msgctxt "@label Hotspot password"
+#| msgid "Password:"
+msgctxt "@title:window"
+msgid "Enter Password"
+msgstr "Parole:"
+
+#: qml/main.qml:280
+msgctxt "@label %1 is the name of the network the user is connecting to"
+msgid "Network: %1"
+msgstr ""
+
+#: qml/main.qml:300
+msgctxt "@label key is a passcode"
+msgid "Password must be a valid WEP key"
+msgstr ""
+
+#: qml/main.qml:301
+msgctxt "@label password invalid length message"
+msgid "Password must be between 8 and 64 characters"
+msgstr ""

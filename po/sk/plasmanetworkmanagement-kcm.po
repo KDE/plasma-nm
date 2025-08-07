@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-21 00:44+0000\n"
+"POT-Creation-Date: 2025-08-07 00:44+0000\n"
 "PO-Revision-Date: 2023-11-11 15:35+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -102,7 +102,7 @@ msgstr "Vytvoriť"
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:211
+#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
 msgid "Configuration"
 msgstr "Nastavenia"
 
@@ -162,55 +162,97 @@ msgstr ""
 "li><li>Presne 10 alebo 26 hexadecimálnych znakov: <br/>abcdef, ABCDEF or "
 "0-9</li></ul>"
 
-#: qml/ConnectionItem.qml:71
+#: qml/ConnectionItem.qml:82
 msgid "Connect"
 msgstr "Pripojiť"
 
-#: qml/ConnectionItem.qml:71
+#: qml/ConnectionItem.qml:82
 msgid "Disconnect"
 msgstr "Odpojiť"
 
-#: qml/ConnectionItem.qml:82
+#: qml/ConnectionItem.qml:87
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr ""
 
-#: qml/ConnectionItem.qml:87
+#: qml/ConnectionItem.qml:92
 msgid "Delete"
 msgstr "Odstrániť"
 
-#: qml/ConnectionItem.qml:97
+#: qml/ConnectionItem.qml:103
 msgid "Export"
 msgstr "Exportovať"
 
-#: qml/ConnectionItem.qml:111
+#: qml/ConnectionItem.qml:117
 msgid "Connected"
 msgstr "Pripojené"
 
-#: qml/ConnectionItem.qml:113
+#: qml/ConnectionItem.qml:119
 msgid "Connecting"
 msgstr "Pripája sa"
 
-#: qml/main.qml:150
+#: qml/ConnectionItem.qml:121
+msgctxt "@title:column Available networks"
+msgid "Available"
+msgstr ""
+
+#: qml/main.qml:151
 msgid "Add new connection"
 msgstr "Pridať nové pripojenie"
 
-#: qml/main.qml:168
+#: qml/main.qml:169
 msgid "Remove selected connection"
 msgstr "Odstrániť vybrané pripojenie"
 
-#: qml/main.qml:186
+#: qml/main.qml:187
 msgid "Export selected connection"
 msgstr "Exportovať vybrané pripojenie"
 
-#: qml/main.qml:238
+#: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Odstránenie pripojenia"
 
-#: qml/main.qml:239
+#: qml/main.qml:240
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Chcete odstrániť pripojenie \"%1\"?"
+
+#: qml/main.qml:262
+#, fuzzy
+#| msgid "Connect"
+msgctxt "@action:button Connect to network"
+msgid "Connect"
+msgstr "Pripojiť"
+
+#: qml/main.qml:268
+#, fuzzy
+#| msgid "Cancel"
+msgctxt "@action:button Cancel connecting to network"
+msgid "Cancel"
+msgstr "Zrušiť"
+
+#: qml/main.qml:274
+#, fuzzy
+#| msgctxt "@label Hotspot password"
+#| msgid "Password:"
+msgctxt "@title:window"
+msgid "Enter Password"
+msgstr "Heslo:"
+
+#: qml/main.qml:280
+msgctxt "@label %1 is the name of the network the user is connecting to"
+msgid "Network: %1"
+msgstr ""
+
+#: qml/main.qml:300
+msgctxt "@label key is a passcode"
+msgid "Password must be a valid WEP key"
+msgstr ""
+
+#: qml/main.qml:301
+msgctxt "@label password invalid length message"
+msgid "Password must be between 8 and 64 characters"
+msgstr ""
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Názov aktívneho bodu:"

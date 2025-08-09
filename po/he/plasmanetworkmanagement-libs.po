@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-08-07 09:35+0300\n"
+"PO-Revision-Date: 2025-08-07 21:16+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && n "
-"% 10 == 0) ? 2 : 3));\n"
+"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
+"n % 10 == 0) ? 2 : 3));\n"
 "X-Generator: Lokalize 25.04.3\n"
 
 #: editor/connectioneditorbase.cpp:203
@@ -283,7 +283,7 @@ msgstr "שער גישה"
 #: editor/settings/ipv4widget.cpp:267 editor/settings/ipv6widget.cpp:258
 #, kde-format
 msgid "Other DNS Servers:"
-msgstr "שרתי DNS אחרים:"
+msgstr "שרתי DNS נוספים:"
 
 #: editor/settings/ipv4widget.cpp:280 editor/settings/ipv4widget.cpp:293
 #: editor/settings/ipv4widget.cpp:306 editor/settings/ipv4widget.cpp:319
@@ -319,7 +319,7 @@ msgstr "שם מארח ב־DHCP:"
 #: editor/settings/ipv4widget.cpp:441 editor/settings/ui/ipv6.ui:194
 #, kde-format
 msgid "Default"
-msgstr "ברירת־מחדל"
+msgstr "ברירת מחדל"
 
 #: editor/settings/ipv4widget.cpp:442
 #, kde-format
@@ -1531,7 +1531,7 @@ msgstr "רשת מוסתרת"
 #: editor/settings/ui/wifisecurity.ui:15
 #, kde-format
 msgid "Wifi Security"
-msgstr "אבטחת Wifi"
+msgstr "אבטחת רשת אלחוטית"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:28
@@ -1610,7 +1610,7 @@ msgstr "מפתח WEP:"
 #: editor/settings/ui/wifisecurity.ui:139
 #, kde-format
 msgid "1 (default)"
-msgstr "1 (ברירת־מחדל)"
+msgstr "1 (ברירת מחדל)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:144
@@ -2322,7 +2322,7 @@ msgstr "מחובר ל־%1"
 #, kde-format
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
-msgstr "ביטול חיבור"
+msgstr "החיבור מושבת"
 
 #: editor/uiutils.cpp:326
 #, kde-format
@@ -2845,7 +2845,7 @@ msgstr "שימוש אחרון ב־%1"
 msgctxt ""
 "Label for last used time for a network connection that has never been used"
 msgid "Never used"
-msgstr "אף פעם לא היה בשימוש"
+msgstr "אף פעם לא הייתה בשימוש"
 
 #: editor/vpnuiplugin.cpp:42
 #, kde-format
@@ -2866,13 +2866,13 @@ msgstr "לא ממומש"
 #, kde-format
 msgctxt "@item:intable shortcut for Not Available"
 msgid "N/A"
-msgstr "לא זמין"
+msgstr "לא זמינה"
 
 #: editor/widgets/advancedpermissionswidget.cpp:87
 #, kde-format
 msgctxt "@info:tooltip real user name is not available"
 msgid "Not Available"
-msgstr "לא זמין"
+msgstr "לא זמינה"
 
 #: editor/widgets/bssidcombobox.cpp:122
 #, kde-format
@@ -2933,14 +2933,14 @@ msgstr "ספק לא ידוע"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Default"
-msgstr "ברירת־מחדל"
+msgstr "ברירת מחדל"
 
 #: editor/widgets/mobileconnectionwizard.cpp:183
 #: editor/widgets/mobileconnectionwizard.cpp:191
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "APN: %1"
-msgstr "APN: %1"
+msgstr "נקודת גישה (APN): %1"
 
 #: editor/widgets/mobileconnectionwizard.cpp:236
 #, kde-format
@@ -3672,7 +3672,7 @@ msgstr "איכות חיבור"
 #: models/networkmodelitem.cpp:697
 #, kde-format
 msgid "Access Technology"
-msgstr "טכנולוגית גישה"
+msgstr "טכנולוגיית גישה"
 
 #: models/networkmodelitem.cpp:702 models/networkmodelitem.cpp:719
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2025-08-04 20:57+0400\n"
+"PO-Revision-Date: 2025-08-09 21:24+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -152,7 +152,7 @@ msgstr "المفتاح الخاص للنظير المحلي بتنسيق .pem."
 #: openvpn.ui:173 openvpn.ui:527
 #, kde-format
 msgid "Private Key Password:"
-msgstr "كلمة مرور المفتاح الخاص:"
+msgstr "كلمة سر المفتاح الخاص:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509KeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509PassKeyPassword)
@@ -972,7 +972,7 @@ msgstr "نوع الوكيل: HTTP أو SOCKS"
 #: openvpnadvanced.ui:995
 #, kde-format
 msgid "Proxy Type:"
-msgstr "نوع الوسيط:"
+msgstr "نوع الوكيل:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProxyType)
 #: openvpnadvanced.ui:1021
@@ -1038,7 +1038,7 @@ msgstr "مُرر اسم مستخدم لوكيل HTTP/SOCKS  إلى OpenVPN عن�
 #: openvpnadvanced.ui:1115
 #, kde-format
 msgid "Proxy Username:"
-msgstr "اسم مستخدم الوسيط:"
+msgstr "اسم مستخدم الوكيل:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_15)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyPassword)
@@ -1051,7 +1051,7 @@ msgstr "مُررت كلمة السر لوكيلHTTP/SOCKS إلى OpenVPN عند 
 #: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
 #, kde-format
 msgid "Proxy Password:"
-msgstr "كملة سر الوسيط:"
+msgstr "كملة سر الوكيل:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkProxyRetry)
 #: openvpnadvanced.ui:1162

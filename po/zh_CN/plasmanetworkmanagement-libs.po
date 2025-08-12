@@ -3524,7 +3524,7 @@ msgstr "已连接"
 msgctxt ""
 "@title:column header for list of previously connected network connections"
 msgid "Previously Used, Unavailable"
-msgstr ""
+msgstr "曾经连接过，当前不可用"
 
 #: models/networkmodelitem.cpp:594
 #, kde-format

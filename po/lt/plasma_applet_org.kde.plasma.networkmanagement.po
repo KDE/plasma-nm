@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-01 00:45+0000\n"
-"PO-Revision-Date: 2025-01-06 22:28+0200\n"
+"PO-Revision-Date: 2025-08-11 21:22+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -37,7 +37,7 @@ msgstr "Atsijungti"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "Bendrinti"
 
 #: ConnectionItem.qml:96
 #, kde-format
@@ -65,11 +65,10 @@ msgstr ""
 "išsiuntimo greitis yra %2 kibibaitų per sekundę"
 
 #: ConnectionItem.qml:298
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Prisijungta, ↓ %1/sek., ↑ %2/sek."
+msgstr "↓ %1/sek., ↑ %2/sek."
 
 #: ConnectionListPage.qml:33
 #, kde-format
@@ -88,28 +87,24 @@ msgid "Airplane mode is enabled"
 msgstr "Lėktuvo veiksena yra įjungta"
 
 #: ConnectionListPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Belaidis ir mobilusis tinklas yra pasyvinti"
+msgstr "Belaidis ryšys (Wi-Fi) ir mobilieji duomenys yra pasyvinti"
 
 #: ConnectionListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "Belaidis yra pasyvintas"
+msgstr "Belaidis ryšys (Wi-Fi) yra pasyvintas"
 
 #: ConnectionListPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Rescan wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr "Perskenuoti bevielius tinklus"
+msgstr "Ieškoma belaidžių (Wi-Fi) tinklų"
 
 #: ConnectionListPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "Mobilusis tinklas yra pasyvintas"
+msgstr "Mobilieji duomenys yra pasyvinti"
 
 #: ConnectionListPage.qml:133
 #, kde-format
@@ -125,25 +120,27 @@ msgstr "Nėra prieinamų ryšių"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "Norėdami ieškoti tinklų išjunkite lėktuvo veikseną"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr ""
+"Norėdami ieškoti tinklų įjunkite belaidį ryšį (Wi-Fi) ar mobiliuosius "
+"duomenis"
 
 #: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "Norėdami ieškoti tinklų įjunkite belaidį ryšį (Wi-Fi)"
 
 #: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "Norėdami ieškoti tinklų įjunkite mobiliuosius duomenis"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -175,10 +172,9 @@ msgid "Enable Wi-Fi"
 msgstr "Įjungti belaidį (Wi-Fi)"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "Įjungti mobilųjį tinklą"
+msgstr "Įjungti mobiliuosius duomenis"
 
 #: main.qml:94
 #, kde-format
@@ -209,16 +205,14 @@ msgstr ""
 "„%1“ tinklo."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "Rodyti slaptažodį"
+msgstr "Belaidžio tinklo (Wi-Fi) slaptažodis:"
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "Įjungti mobilųjį tinklą"
+msgstr "Įjungti mobiliuosius duomenis"
 
 #: Toolbar.qml:148
 #, kde-kuit-format
@@ -244,6 +238,8 @@ msgstr "Viešosios prieigos taškas"
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
+"Nepavyksta sukurti viešosios prieigos tašką, nes išjungtas belaidis ryšys "
+"(Wi-Fi)."
 
 #: Toolbar.qml:181
 #, kde-format
@@ -252,17 +248,18 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"Nepavyksta sukurti viešosios prieigos tašką, nes yra naudojami visi radijo "
+"imtuvai. Atsijunkite nuo dabartinio belaidžio tinklo (Wi-Fi) arba prijunkite "
+"kitą belaidį radijo imtuvą."
 
 #: Toolbar.qml:183
-#, fuzzy, kde-format
-#| msgid "Disable Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Išjungti viešosios prieigos tašką"
 
 #: Toolbar.qml:185
-#, fuzzy, kde-format
-#| msgid "Create Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Sukurti viešosios prieigos tašką"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-01-06 22:27+0200\n"
+"PO-Revision-Date: 2025-08-11 21:29+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -1111,11 +1111,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Metrika"
+msgstr "Maršruto metrika:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -1128,6 +1126,13 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Įvertinimas, kuris, remiantis tokiais veiksniais kaip atstumas, delsa ir "
+"patikimumas,\n"
+"padeda parinkti duomenų paketams geriausią kelią, skirtą pasiekti paskirties "
+"vietą.\n"
+"\n"
+"Numatytoji reikšmė „-1“ reiškia, kad NetworkManager bus leista parinkti ir "
+"tvarkyti faktinę maršruto metriką."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97
@@ -3557,17 +3562,13 @@ msgid "The connection type is WireGuard"
 msgstr "Ryšio tipas yra „WireGuard“"
 
 #: models/networkmodelitem.cpp:348
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip real user name is not available"
-#| msgid "Not Available"
+#, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr "Neprieinamas"
+msgstr "Prieinamas"
 
 #: models/networkmodelitem.cpp:354
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Prisijungta"
@@ -3577,7 +3578,7 @@ msgstr "Prisijungta"
 msgctxt ""
 "@title:column header for list of previously connected network connections"
 msgid "Previously Used, Unavailable"
-msgstr ""
+msgstr "Anksčiau naudotas, neprieinamas"
 
 #: models/networkmodelitem.cpp:594
 #, kde-format
@@ -3813,11 +3814,10 @@ msgid "Connected to %1"
 msgstr "Prisijungta prie %1"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "NetworkManager neveikia"
+msgstr "NetworkManager tarnyba neveikia"
 
 #: networkstatus.cpp:261
 #, kde-format

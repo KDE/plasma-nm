@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-06 00:46+0000\n"
-"PO-Revision-Date: 2024-08-12 16:10+0300\n"
+"PO-Revision-Date: 2025-08-11 21:08+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.6\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -559,17 +559,15 @@ msgid "No secrets were requested"
 msgstr "Nebuvo užklausta jokių paslapčių"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr "Neteisingas belaidžio ryšio „%1“ slaptažodis. Bandykite dar kartą."
+msgstr ""
+"Neteisingas belaidžio tinklo (Wi-Fi) „%1“ slaptažodis. Bandykite dar kartą."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "Įveskite belaidžio ryšio „%1“ slaptažodį:"
+msgstr "Įveskite belaidžio tinklo (Wi-Fi) „%1“ slaptažodį:"
 
 #: passworddialog.cpp:105
 #, kde-format

@@ -188,7 +188,7 @@ msgstr "正在连接"
 #: qml/ConnectionItem.qml:121
 msgctxt "@title:column Available networks"
 msgid "Available"
-msgstr ""
+msgstr "可用"
 
 #: qml/main.qml:151
 msgid "Add new connection"
@@ -224,19 +224,19 @@ msgstr "取消"
 #: qml/main.qml:274
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr ""
+msgstr "输入密码"
 
 #: qml/main.qml:280
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "网络：%1"
 
 #: qml/main.qml:300
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "密码必须是有效的 WEP 密钥"
 
 #: qml/main.qml:301
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "密码长度必须在 8 至 64 个字符之间"

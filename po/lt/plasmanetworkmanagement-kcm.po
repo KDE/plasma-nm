@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-01-06 22:29+0200\n"
+"PO-Revision-Date: 2025-08-11 21:10+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -172,7 +172,7 @@ msgstr "Atsijungti"
 #: qml/ConnectionItem.qml:87
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
-msgstr ""
+msgstr "Nepavyksta prisijungti prie šio tinklo, nes jis nebuvo aptiktas."
 
 #: qml/ConnectionItem.qml:92
 msgid "Delete"
@@ -193,7 +193,7 @@ msgstr "Jungiamasi"
 #: qml/ConnectionItem.qml:121
 msgctxt "@title:column Available networks"
 msgid "Available"
-msgstr ""
+msgstr "Prieinamas"
 
 #: qml/main.qml:151
 msgid "Add new connection"
@@ -217,41 +217,34 @@ msgid "Do you want to remove the connection '%1'?"
 msgstr "Ar tikrai norite pašalinti ryšį \"%1\"?"
 
 #: qml/main.qml:262
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Prisijungti"
 
 #: qml/main.qml:268
-#, fuzzy
-#| msgid "Cancel"
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Atsisakyti"
 
 #: qml/main.qml:274
-#, fuzzy
-#| msgctxt "@label Hotspot password"
-#| msgid "Password:"
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "Slaptažodis:"
+msgstr "Įveskite slaptažodį"
 
 #: qml/main.qml:280
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "Tinklas: %1"
 
 #: qml/main.qml:300
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "Slaptažodis privalo būti tinkamas WEP raktas"
 
 #: qml/main.qml:301
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "Slaptažodyje privalo būti nuo 8 iki 64 simbolių"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Viešosios prieigos taško pavadinimas:"

@@ -37,8 +37,9 @@ public:
     ~NetworkModel() override;
 
     enum ItemRole {
+        NameRole = Qt::DisplayRole,
+        ConnectionIconRole = Qt::DecorationRole,
         ConnectionDetailsRole = Qt::UserRole + 1,
-        ConnectionIconRole,
         ConnectionPathRole,
         ConnectionStateRole,
         DeviceName,
@@ -48,7 +49,6 @@ public:
         ItemUniqueNameRole,
         ItemTypeRole,
         LastUsedRole,
-        NameRole,
         SecurityTypeRole,
         SecurityTypeStringRole,
         SectionRole,

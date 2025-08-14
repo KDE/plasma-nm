@@ -322,12 +322,12 @@ msgstr "مسجل على شبكة التجوال."
 #: modemdetails.cpp:328
 #, kde-format
 msgid "Registered for \"SMS only\", on home network."
-msgstr "مسجل لـ\"للرسائل النصية فقط\" ، على شبكة منزلية."
+msgstr "مسجل لـ\"للرسائل النصية فقط\"، على شبكة منزلية."
 
 #: modemdetails.cpp:330
 #, kde-format
 msgid "Registered for \"SMS only\", roaming network."
-msgstr "مسجل لـ\"للرسائل النصية فقط\" ، على شبكة التجوال."
+msgstr "مسجل لـ\"للرسائل النصية فقط\"، على شبكة التجوال."
 
 #: modemdetails.cpp:332
 #, kde-format

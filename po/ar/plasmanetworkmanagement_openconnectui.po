@@ -447,8 +447,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times."
 "To unlock it, remove and reinsert it."
 msgstr ""
-"مفتاح الأمان مغلق بسبب إدخال رقم تعريف شخصي خاطئ عدة مرات ، ولإلغاء القفل، "
-"قم بإزالته وإعادة إدخاله."
+"مفتاح الأمان مغلق بسبب إدخال رقم تعريف شخصي خاطئ عدة مرات، ولإلغاء القفل، قم "
+"بإزالته وإعادة إدخاله."
 
 #: openconnectwebauthdialog.cpp:262
 #, kde-format

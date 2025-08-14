@@ -98,7 +98,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantDisconnectReason"
 msgid "Authorization supplicant disconnected"
-msgstr "انفصل مقدم طلب التصريح"
+msgstr "انفصل مقدم طلب الإذن"
 
 #: notification.cpp:113
 #, kde-format
@@ -106,7 +106,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantConfigFailedReason"
 msgid "Authorization supplicant's configuration failed"
-msgstr "فشل ضبط مقدم طلب التصريح"
+msgstr "فشل ضبط مقدم طلب الإذن"
 
 #: notification.cpp:116
 #, kde-format
@@ -114,7 +114,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantFailedReason"
 msgid "Authorization supplicant failed"
-msgstr "فشل مقدم طلب التصريح"
+msgstr "فشل مقدم طلب الإذن"
 
 #: notification.cpp:119
 #, kde-format
@@ -122,7 +122,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantTimeoutReason"
 msgid "Authorization supplicant timed out"
-msgstr "انتهت مهلة مقدم طلب التصريح"
+msgstr "انتهت مهلة مقدم طلب الإذن"
 
 #: notification.cpp:122
 #, kde-format

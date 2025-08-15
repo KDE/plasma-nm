@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-19 00:42+0000\n"
-"PO-Revision-Date: 2025-08-05 20:40+0400\n"
+"PO-Revision-Date: 2025-08-14 13:16+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -439,7 +439,7 @@ msgstr "المفتاح غير مسجّل"
 #: openconnectwebauthdialog.cpp:250
 #, kde-format
 msgid "You already registered this device.Try again with device"
-msgstr "لقد قمت بتسجيل هذا الجهاز فعلًا. حاول مرة أخرى باستخدام الجهاز"
+msgstr "لقد سجلت هذا الجهاز فعلًا. حاول مرة أخرى باستخدام الجهاز"
 
 #: openconnectwebauthdialog.cpp:256
 #, kde-format
@@ -447,8 +447,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times."
 "To unlock it, remove and reinsert it."
 msgstr ""
-"مفتاح الأمان مغلق بسبب إدخال رقم تعريف شخصي خاطئ عدة مرات، ولإلغاء القفل، قم "
-"بإزالته وإعادة إدخاله."
+"مفتاح الأمان مغلق بسبب إدخال رقم تعريف شخصي خاطئ عدة مرات، ولإلغاء القفل، "
+"أزله وأعد إدخاله."
 
 #: openconnectwebauthdialog.cpp:262
 #, kde-format

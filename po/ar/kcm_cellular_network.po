@@ -875,7 +875,7 @@ msgstr "غيّر رقم التعريف الشخصي"
 #: ui/SimLockPage.qml:92
 #, kde-format
 msgid "Change the passcode set on the SIM."
-msgstr "قم بتغيير رمز المرور على من الشريحة."
+msgstr "غيّر رمز المرور على من الشريحة."
 
 #: ui/SimLockPage.qml:106
 #, kde-format

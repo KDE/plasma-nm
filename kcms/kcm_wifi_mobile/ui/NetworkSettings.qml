@@ -176,7 +176,7 @@ Kirigami.ScrollablePage {
         FormCard.FormCard {
             FormCard.FormComboBoxDelegate {
                 id: ipMethodCombobox
-                text: i18n('Method')
+                text: i18n("Method")
                 model: [i18n("Automatic"), i18n("Manual")]
                 currentIndex: ipSettings["method"] === "manual" ? 1 : 0
                 property var manualIp: currentIndex === 1

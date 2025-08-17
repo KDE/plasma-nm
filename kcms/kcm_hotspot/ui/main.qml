@@ -49,14 +49,14 @@ SimpleKCM {
 
             ColumnLayout {
                 Controls.Label {
-                    text: i18n('Hotspot SSID:')
+                    text: i18n("Hotspot SSID:")
                 }
                 Controls.TextField {
                     Layout.fillWidth: true
                     id: hotspotSsidField
                 }
                 Controls.Label {
-                    text: i18n('Hotspot Password:')
+                    text: i18n("Hotspot Password:")
                 }
                 Controls.TextField {
                     Layout.fillWidth: true
@@ -114,7 +114,7 @@ SimpleKCM {
 
             FormCard.FormButtonDelegate {
                 enabled: !hotspotToggle.checked
-                text: i18n('Configure')
+                text: i18n("Configure")
                 onClicked: hotspotDialog.open()
             }
         }

@@ -1,21 +1,22 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 #
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-01 00:45+0000\n"
-"PO-Revision-Date: 2024-10-19 12:55+0200\n"
+"PO-Revision-Date: 2025-08-16 07:38+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
-"Language-Team: Polish <kde-i18n-doc@kde.org>\n"
+"Language-Team: pl\n"
 "Language: pl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -31,12 +32,12 @@ msgstr "Rozłącz"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "Udostępnij"
 
 #: ConnectionItem.qml:96
 #, kde-format
 msgid "Configure…"
-msgstr "Ustawienia..."
+msgstr "Ustawienia…"
 
 #: ConnectionItem.qml:136
 #, kde-format
@@ -59,11 +60,10 @@ msgstr ""
 "wysyłania to %2 kibibajtów na sekundę"
 
 #: ConnectionItem.qml:298
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Połączony, ↓ %1/s, ↑ %2/s"
+msgstr "↓ %1/s, ↑ %2/s"
 
 #: ConnectionListPage.qml:33
 #, kde-format
@@ -82,26 +82,22 @@ msgid "Airplane mode is enabled"
 msgstr "Tryb samolotowy jest włączony"
 
 #: ConnectionListPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Sieci bezprzewodowe i komórkowe są wyłączone"
+msgstr "Sieci Wi-Fi i komórkowe są wyłączone"
 
 #: ConnectionListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "Sieć bezprzewodowa jest wyłączona"
+msgstr "Sieć Wi-Fi jest wyłączona"
 
 #: ConnectionListPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Rescan wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr "Przeszukaj sieci bezprzewodowe ponownie"
+msgstr "Szukanie sieci Wi-Fi"
 
 #: ConnectionListPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
 msgstr "Sieć komórkowa jest wyłączona"
 
@@ -119,25 +115,25 @@ msgstr "Brak dostępnych połączeń"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "Wyłącz tryb samolotowy, aby poszukać sieci"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "Włącz Wi-Fi lub dane komórkowe, aby poszukać sieci"
 
 #: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "Włącz Wi-Fi, aby poszukać sieci"
 
 #: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "Włącz dane komórkowe, aby poszukać sieci"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -167,10 +163,9 @@ msgid "Enable Wi-Fi"
 msgstr "Włącz Wi-Fi"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "Włącz sieć komórkową"
+msgstr "Włącz dane komórkowe"
 
 #: main.qml:94
 #, kde-format
@@ -180,12 +175,12 @@ msgstr "Włącz tryb samolotowy"
 #: main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
-msgstr "Otwórz stronę logowania do sieci..."
+msgstr "Otwórz stronę logowania do sieci…"
 
 #: main.qml:116
 #, kde-format
 msgid "&Configure Network Connections…"
-msgstr "Ustawienia połą&czeń sieciowych..."
+msgstr "Ustawienia połą&czeń sieciowych…"
 
 #: PopupDialog.qml:51
 #, kde-format
@@ -199,16 +194,14 @@ msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "Zeskanuj kod QR innym urządzeniem, aby podłączyć się do sieci \"%1\"."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "Pokaż hasło"
+msgstr "Hasło Wi-Fi:"
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "Włącz sieć komórkową"
+msgstr "Włącz dane komórkowe"
 
 #: Toolbar.qml:148
 #, kde-kuit-format
@@ -231,7 +224,7 @@ msgstr "Hotspot"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "Nie można utworzyć hotspota, bo Wi-Fi jest wyłączone."
 
 #: Toolbar.qml:181
 #, kde-format
@@ -240,17 +233,18 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"Nie można utworzyć hotspota, bo wszystkie radia bezprzewodowe są w użyciu. "
+"Zerwij połączenie z bieżącą siecią Wi-Fi lub podłącz inne radio "
+"bezprzewodowe."
 
 #: Toolbar.qml:183
-#, fuzzy, kde-format
-#| msgid "Disable Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Wyłącz Hotspot"
 
 #: Toolbar.qml:185
-#, fuzzy, kde-format
-#| msgid "Create Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Utwórz Hotspot"
@@ -258,7 +252,7 @@ msgstr "Utwórz Hotspot"
 #: Toolbar.qml:219
 #, kde-format
 msgid "Configure network connections…"
-msgstr "Ustawienia połączeń sieciowych..."
+msgstr "Ustawienia połączeń sieciowych…"
 
 #: TrafficMonitor.qml:37 TrafficMonitor.qml:111
 #, kde-format

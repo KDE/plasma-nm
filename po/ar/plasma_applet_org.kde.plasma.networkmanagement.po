@@ -42,7 +42,7 @@ msgstr "اضبط…"
 #: contents/ui/ConnectionItem.qml:121
 #, kde-format
 msgid "Speed"
-msgstr "السّرعة"
+msgstr "السرعة"
 
 #: contents/ui/ConnectionItem.qml:126
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2025-04-21 18:04+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -22,6 +22,18 @@ msgstr ""
 #, kde-format
 msgid "Configure Hotspot"
 msgstr "اضبط نقطة الاتصال"
+
+#: ui/main.qml:52
+#, fuzzy, kde-format
+#| msgid "Hotspot SSID"
+msgid "Hotspot SSID:"
+msgstr "معرف نقطة الاتصال SSID"
+
+#: ui/main.qml:59
+#, fuzzy, kde-format
+#| msgid "Hotspot Password"
+msgid "Hotspot Password:"
+msgstr "كلمة سر نقطة الاتصال"
 
 #: ui/main.qml:77
 #, kde-format
@@ -47,3 +59,9 @@ msgstr "معرف نقطة الاتصال SSID"
 #, kde-format
 msgid "Hotspot Password"
 msgstr "كلمة سر نقطة الاتصال"
+
+#: ui/main.qml:117
+#, fuzzy, kde-format
+#| msgid "Configure Hotspot"
+msgid "Configure"
+msgstr "اضبط نقطة الاتصال"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2024-06-10 22:33+0200\n"
 "Last-Translator: Julian Groß <julian.g@posteo.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -48,6 +48,28 @@ msgstr ""
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Verbindungsname"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect"
+msgstr "Verbinden mit"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Disconnect"
+msgstr "Verbinden mit"
+
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr "Einrichten"
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr "Löschen"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -201,6 +223,11 @@ msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP-Einstellungen"
 
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
+
 #: ui/NetworkSettings.qml:180
 #, kde-format
 msgid "Automatic"
@@ -300,9 +327,6 @@ msgstr ""
 #~ msgid "Wi-Fi Hotspot"
 #~ msgstr "Wi-Fi-Hotspot"
 
-#~ msgid "Configure"
-#~ msgstr "Einrichten"
-
 #~ msgid "My Hotspot"
 #~ msgstr "Mein Hotspot"
 
@@ -341,9 +365,6 @@ msgstr ""
 
 #~ msgid "Delete connection %1 from device?"
 #~ msgstr "Verbindung %1 von diesem Gerät löschen?"
-
-#~ msgid "Delete"
-#~ msgstr "Löschen"
 
 #~ msgid "Wi-fi"
 #~ msgstr "Wi-Fi"

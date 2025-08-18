@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2025-02-07 23:05+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -45,6 +45,28 @@ msgstr "已連線，↓ %1/秒, ↑ %2/秒"
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "連線詳情"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect"
+msgstr "連線到"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Disconnect"
+msgstr "連線到"
+
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr "設定"
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr "刪除"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -195,6 +217,11 @@ msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP 設定"
 
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
+
 #: ui/NetworkSettings.qml:180
 #, kde-format
 msgid "Automatic"
@@ -289,9 +316,6 @@ msgstr "下載"
 #~ msgid "Wi-Fi Hotspot"
 #~ msgstr "Wi-Fi 熱點"
 
-#~ msgid "Configure"
-#~ msgstr "設定"
-
 #~ msgid "My Hotspot"
 #~ msgstr "我的熱點"
 
@@ -330,6 +354,3 @@ msgstr "下載"
 
 #~ msgid "Delete connection %1 from device?"
 #~ msgstr "從裝置刪除 %1 連線？"
-
-#~ msgid "Delete"
-#~ msgstr "刪除"

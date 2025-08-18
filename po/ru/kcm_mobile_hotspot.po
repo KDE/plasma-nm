@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2024-09-23 10:26+0300\n"
 "Last-Translator: Olesya Gerasimenko <translation-team@basealt.ru>\n"
 "Language-Team: Basealt Translation Team\n"
@@ -23,6 +23,18 @@ msgstr ""
 #, kde-format
 msgid "Configure Hotspot"
 msgstr "Настройка точки доступа Wi-Fi"
+
+#: ui/main.qml:52
+#, fuzzy, kde-format
+#| msgid "Hotspot SSID"
+msgid "Hotspot SSID:"
+msgstr "SSID точки доступа"
+
+#: ui/main.qml:59
+#, fuzzy, kde-format
+#| msgid "Hotspot Password"
+msgid "Hotspot Password:"
+msgstr "Пароль точки доступа"
 
 #: ui/main.qml:77
 #, kde-format
@@ -50,6 +62,12 @@ msgstr "SSID точки доступа"
 #, kde-format
 msgid "Hotspot Password"
 msgstr "Пароль точки доступа"
+
+#: ui/main.qml:117
+#, fuzzy, kde-format
+#| msgid "Configure Hotspot"
+msgid "Configure"
+msgstr "Настройка точки доступа Wi-Fi"
 
 #~ msgid "Enabled:"
 #~ msgstr "Включено:"

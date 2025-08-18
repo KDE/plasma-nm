@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2025-04-18 13:11+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -45,6 +45,28 @@ msgstr "Tengt, ↓ %1/s, ↑ %2/s"
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Upplýsingar um tengingu"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect"
+msgstr "Tengjast við"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Disconnect"
+msgstr "Tengjast við"
+
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr ""
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr ""
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -189,6 +211,11 @@ msgstr "Protected EAP"
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "Stillingar IP-tölu"
+
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
 
 #: ui/NetworkSettings.qml:180
 #, kde-format

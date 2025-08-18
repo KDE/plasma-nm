@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2025-01-04 05:13+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -45,6 +45,28 @@ msgstr "დაკავშირებულია, ↓ %1/s, ↑ %2/s"
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "კავშირის დეტალები"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect"
+msgstr "დაკავშირება"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Disconnect"
+msgstr "დაკავშირება"
+
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr ""
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr ""
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -189,6 +211,11 @@ msgstr "დაცული EAP"
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP-ის მორგება"
+
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
 
 #: ui/NetworkSettings.qml:180
 #, kde-format

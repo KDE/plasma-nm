@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2025-02-18 18:59+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -45,6 +45,28 @@ msgstr "Savienots, ↓ %1/s, ↑ %2/s"
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Savienojuma informācija"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect"
+msgstr "Savienoties ar"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Disconnect"
+msgstr "Savienoties ar"
+
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr ""
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr ""
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -189,6 +211,11 @@ msgstr "Aizsargāts EAP"
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP iestatījumi"
+
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
 
 #: ui/NetworkSettings.qml:180
 #, kde-format

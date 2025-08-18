@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2025-02-13 11:55+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -47,6 +47,29 @@ msgstr "Подключено, ↓ %1/с, ↓ %2/с"
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Подробные сведения"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect"
+msgstr "Подключение к"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Disconnect"
+msgstr "Подключение к"
+
+# BUGME: please add ellipsis --aspotashev
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr "Настроить..."
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr "Удалить"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -192,6 +215,11 @@ msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "Параметры IP"
 
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
+
 #: ui/NetworkSettings.qml:180
 #, kde-format
 msgid "Automatic"
@@ -291,10 +319,6 @@ msgstr "Приём"
 #~ msgid "Wi-Fi Hotspot"
 #~ msgstr "Точка доступа Wi-Fi"
 
-# BUGME: please add ellipsis --aspotashev
-#~ msgid "Configure"
-#~ msgstr "Настроить..."
-
 #~ msgid "My Hotspot"
 #~ msgstr "Моя точка доступа"
 
@@ -333,9 +357,6 @@ msgstr "Приём"
 
 #~ msgid "Delete connection %1 from device?"
 #~ msgstr "Удалить соединение %1?"
-
-#~ msgid "Delete"
-#~ msgstr "Удалить"
 
 #~ msgid "Wi-fi"
 #~ msgstr "Wi-Fi"

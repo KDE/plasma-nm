@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2021-07-27 16:17+0200\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -45,6 +45,28 @@ msgstr ""
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Názov pripojenia"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect"
+msgstr "Pripojiť k"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Disconnect"
+msgstr "Pripojiť k"
+
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr "Nastaviť"
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr "Vymazať"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -201,6 +223,11 @@ msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "Nastavenia IP"
 
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
+
 #: ui/NetworkSettings.qml:180
 #, kde-format
 msgid "Automatic"
@@ -303,9 +330,6 @@ msgstr ""
 #~ msgid "Wi-Fi Hotspot"
 #~ msgstr "Wi-fi hotspot"
 
-#~ msgid "Configure"
-#~ msgstr "Nastaviť"
-
 #~ msgid "My Hotspot"
 #~ msgstr "Môj Hotspot"
 
@@ -344,9 +368,6 @@ msgstr ""
 
 #~ msgid "Delete connection %1 from device?"
 #~ msgstr "Vymazať pripojenie %1 zo zariadenia?"
-
-#~ msgid "Delete"
-#~ msgstr "Vymazať"
 
 #~ msgid "Wi-fi"
 #~ msgstr "Wi-Fi"

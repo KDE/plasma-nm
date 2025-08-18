@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2020-04-15 12:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -45,6 +45,28 @@ msgstr ""
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Ühenduse nimi"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connection Editor"
+msgid "Connect"
+msgstr "Ühenduste redaktor"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connection Editor"
+msgid "Disconnect"
+msgstr "Ühenduste redaktor"
+
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr "Seadista"
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr ""
 
 #: ui/ConnectionItemDelegate.qml:147
 #, fuzzy, kde-format
@@ -203,6 +225,11 @@ msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP seadistused"
 
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
+
 #: ui/NetworkSettings.qml:180
 #, kde-format
 msgid "Automatic"
@@ -302,9 +329,6 @@ msgstr ""
 
 #~ msgid "Wi-Fi Hotspot"
 #~ msgstr "Wi-Fi pääsupunkt"
-
-#~ msgid "Configure"
-#~ msgstr "Seadista"
 
 #~ msgid "My Hotspot"
 #~ msgstr "Minu pääsupunkt"

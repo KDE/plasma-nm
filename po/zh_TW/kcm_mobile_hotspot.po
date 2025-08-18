@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2023-12-22 05:51+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -24,6 +24,18 @@ msgstr ""
 #, kde-format
 msgid "Configure Hotspot"
 msgstr "設定熱點"
+
+#: ui/main.qml:52
+#, fuzzy, kde-format
+#| msgid "Hotspot SSID"
+msgid "Hotspot SSID:"
+msgstr "熱點 SSID"
+
+#: ui/main.qml:59
+#, fuzzy, kde-format
+#| msgid "Hotspot Password"
+msgid "Hotspot Password:"
+msgstr "熱點密碼"
 
 #: ui/main.qml:77
 #, kde-format
@@ -49,6 +61,12 @@ msgstr "熱點 SSID"
 #, kde-format
 msgid "Hotspot Password"
 msgstr "熱點密碼"
+
+#: ui/main.qml:117
+#, fuzzy, kde-format
+#| msgid "Configure Hotspot"
+msgid "Configure"
+msgstr "設定熱點"
 
 #~ msgid "Whether the wireless hotspot is enabled."
 #~ msgstr "無線熱點是否啟用。"

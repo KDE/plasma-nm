@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2025-01-11 12:28+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -44,6 +44,28 @@ msgstr "Ansluten, ↓ %1/s, ↑ %2/s"
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Anslutningsinformation"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect"
+msgstr "Anslut till"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Disconnect"
+msgstr "Anslut till"
+
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr "Anpassa"
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr "Ta bort"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -189,6 +211,11 @@ msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP-inställningar"
 
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
+
 #: ui/NetworkSettings.qml:180
 #, kde-format
 msgid "Automatic"
@@ -288,9 +315,6 @@ msgstr "Nerladdning"
 #~ msgid "Wi-Fi Hotspot"
 #~ msgstr "WIFI-accesspunkt"
 
-#~ msgid "Configure"
-#~ msgstr "Anpassa"
-
 #~ msgid "My Hotspot"
 #~ msgstr "Min accesspunkt"
 
@@ -329,9 +353,6 @@ msgstr "Nerladdning"
 
 #~ msgid "Delete connection %1 from device?"
 #~ msgstr "Ta bort anslutning %1 från enheten?"
-
-#~ msgid "Delete"
-#~ msgstr "Ta bort"
 
 #~ msgid "Wi-fi"
 #~ msgstr "WIFI"

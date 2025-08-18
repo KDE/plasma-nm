@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2025-01-04 10:48+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -47,6 +47,28 @@ msgstr "З'єднано, ↓ %1/с, ↑ %2/с"
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Параметри з'єднання"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect"
+msgstr "З'єднатися з"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Disconnect"
+msgstr "З'єднатися з"
+
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr "Налаштувати"
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr "Вилучити"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -192,6 +214,11 @@ msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "Параметри IP"
 
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
+
 #: ui/NetworkSettings.qml:180
 #, kde-format
 msgid "Automatic"
@@ -291,9 +318,6 @@ msgstr "Отримання"
 #~ msgid "Wi-Fi Hotspot"
 #~ msgstr "Хот-спот Wi-fi"
 
-#~ msgid "Configure"
-#~ msgstr "Налаштувати"
-
 #~ msgid "My Hotspot"
 #~ msgstr "Ваш хот-спот"
 
@@ -332,9 +356,6 @@ msgstr "Отримання"
 
 #~ msgid "Delete connection %1 from device?"
 #~ msgstr "Вилучити з'єднання %1 з пристрою?"
-
-#~ msgid "Delete"
-#~ msgstr "Вилучити"
 
 #~ msgid "Wi-fi"
 #~ msgstr "Wi-Fi"

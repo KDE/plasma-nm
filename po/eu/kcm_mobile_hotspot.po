@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2023-12-18 21:56+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -24,6 +24,18 @@ msgstr ""
 #, kde-format
 msgid "Configure Hotspot"
 msgstr "Konfiguratu berogunea"
+
+#: ui/main.qml:52
+#, fuzzy, kde-format
+#| msgid "Hotspot SSID"
+msgid "Hotspot SSID:"
+msgstr "Berogunearen SSID"
+
+#: ui/main.qml:59
+#, fuzzy, kde-format
+#| msgid "Hotspot Password"
+msgid "Hotspot Password:"
+msgstr "Berogunearen pasahitza"
 
 #: ui/main.qml:77
 #, kde-format
@@ -50,6 +62,12 @@ msgstr "Berogunearen SSID"
 #, kde-format
 msgid "Hotspot Password"
 msgstr "Berogunearen pasahitza"
+
+#: ui/main.qml:117
+#, fuzzy, kde-format
+#| msgid "Configure Hotspot"
+msgid "Configure"
+msgstr "Konfiguratu berogunea"
 
 #~ msgid "Whether the wireless hotspot is enabled."
 #~ msgstr "Haririk gabeko berogunea gaituta dagoen ala ez."

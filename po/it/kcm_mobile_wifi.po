@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2025-01-04 22:14+0100\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -44,6 +44,28 @@ msgstr "Connesso, ↓ %1/s, ↑ %2/s"
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Dettagli della connessione"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect"
+msgstr "Connetti a"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Disconnect"
+msgstr "Connetti a"
+
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr "Configura"
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr "Elimina"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -189,6 +211,11 @@ msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "Impostazioni IP"
 
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
+
 #: ui/NetworkSettings.qml:180
 #, kde-format
 msgid "Automatic"
@@ -288,9 +315,6 @@ msgstr "Scaricamento"
 #~ msgid "Wi-Fi Hotspot"
 #~ msgstr "Hotspot Wi-Fi"
 
-#~ msgid "Configure"
-#~ msgstr "Configura"
-
 #~ msgid "My Hotspot"
 #~ msgstr "Il mio hotspot"
 
@@ -329,9 +353,6 @@ msgstr "Scaricamento"
 
 #~ msgid "Delete connection %1 from device?"
 #~ msgstr "Elimina la connessione %1 dal dispositivo?"
-
-#~ msgid "Delete"
-#~ msgstr "Elimina"
 
 #~ msgid "Wi-fi"
 #~ msgstr "Wi-fi"

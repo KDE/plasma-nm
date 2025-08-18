@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2025-04-07 00:23+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -44,6 +44,28 @@ msgstr "연결됨, ↓ %1/초, ↑ %2/초"
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "연결 정보"
+
+#: ui/ConnectionItemDelegate.qml:97
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect"
+msgstr "다음에 연결"
+
+#: ui/ConnectionItemDelegate.qml:104
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Disconnect"
+msgstr "다음에 연결"
+
+#: ui/ConnectionItemDelegate.qml:111
+#, kde-format
+msgid "Configure"
+msgstr "설정"
+
+#: ui/ConnectionItemDelegate.qml:120
+#, kde-format
+msgid "Delete"
+msgstr "삭제"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -189,6 +211,11 @@ msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP 설정"
 
+#: ui/NetworkSettings.qml:179
+#, kde-format
+msgid "Method"
+msgstr ""
+
 #: ui/NetworkSettings.qml:180
 #, kde-format
 msgid "Automatic"
@@ -288,9 +315,6 @@ msgstr "다운로드"
 #~ msgid "Wi-Fi Hotspot"
 #~ msgstr "Wi-Fi 핫스팟"
 
-#~ msgid "Configure"
-#~ msgstr "설정"
-
 #~ msgid "My Hotspot"
 #~ msgstr "내 핫스팟"
 
@@ -329,9 +353,6 @@ msgstr "다운로드"
 
 #~ msgid "Delete connection %1 from device?"
 #~ msgstr "장치에서 연결 %1을(를) 삭제하시겠습니까?"
-
-#~ msgid "Delete"
-#~ msgstr "삭제"
 
 #~ msgid "Wi-fi"
 #~ msgstr "Wi-Fi"

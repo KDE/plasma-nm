@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2024-01-29 21:56+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -20,6 +20,18 @@ msgstr ""
 #, kde-format
 msgid "Configure Hotspot"
 msgstr "Aseta tukiasema"
+
+#: ui/main.qml:52
+#, fuzzy, kde-format
+#| msgid "Hotspot SSID"
+msgid "Hotspot SSID:"
+msgstr "Tukiaseman SSID"
+
+#: ui/main.qml:59
+#, fuzzy, kde-format
+#| msgid "Hotspot Password"
+msgid "Hotspot Password:"
+msgstr "Tukiaseman salasana"
 
 #: ui/main.qml:77
 #, kde-format
@@ -45,6 +57,12 @@ msgstr "Tukiaseman SSID"
 #, kde-format
 msgid "Hotspot Password"
 msgstr "Tukiaseman salasana"
+
+#: ui/main.qml:117
+#, fuzzy, kde-format
+#| msgid "Configure Hotspot"
+msgid "Configure"
+msgstr "Aseta tukiasema"
 
 #~ msgid "Whether the wireless hotspot is enabled."
 #~ msgstr "Onko langaton tukiasema käytössä."

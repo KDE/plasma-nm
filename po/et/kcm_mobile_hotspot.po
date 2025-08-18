@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-26 00:43+0000\n"
+"POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2020-04-22 12:47+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -21,6 +21,18 @@ msgstr ""
 #, kde-format
 msgid "Configure Hotspot"
 msgstr ""
+
+#: ui/main.qml:52
+#, fuzzy, kde-format
+#| msgid "Hotspot"
+msgid "Hotspot SSID:"
+msgstr "Pääsupunkt"
+
+#: ui/main.qml:59
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgid "Hotspot Password:"
+msgstr "Parool:"
 
 #: ui/main.qml:77
 #, kde-format
@@ -48,6 +60,11 @@ msgstr "Pääsupunkt"
 #| msgid "Password:"
 msgid "Hotspot Password"
 msgstr "Parool:"
+
+#: ui/main.qml:117
+#, kde-format
+msgid "Configure"
+msgstr ""
 
 #~ msgid "Enabled:"
 #~ msgstr "Lubatud:"

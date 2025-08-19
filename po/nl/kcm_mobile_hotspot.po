@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2020, 2023 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2020, 2023, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
-"PO-Revision-Date: 2023-12-18 10:32+0100\n"
+"PO-Revision-Date: 2025-08-18 13:34+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: ui/main.qml:33
 #, kde-format
@@ -23,16 +23,14 @@ msgid "Configure Hotspot"
 msgstr "Hotspot configureren"
 
 #: ui/main.qml:52
-#, fuzzy, kde-format
-#| msgid "Hotspot SSID"
+#, kde-format
 msgid "Hotspot SSID:"
-msgstr "SSID van hotspot"
+msgstr "SSID van hotspot:"
 
 #: ui/main.qml:59
-#, fuzzy, kde-format
-#| msgid "Hotspot Password"
+#, kde-format
 msgid "Hotspot Password:"
-msgstr "Hotspotwachtwoord"
+msgstr "Wachtwoord van Hotspot"
 
 #: ui/main.qml:77
 #, kde-format
@@ -61,10 +59,9 @@ msgid "Hotspot Password"
 msgstr "Hotspotwachtwoord"
 
 #: ui/main.qml:117
-#, fuzzy, kde-format
-#| msgid "Configure Hotspot"
+#, kde-format
 msgid "Configure"
-msgstr "Hotspot configureren"
+msgstr "Configureren"
 
 #~ msgid "Whether the wireless hotspot is enabled."
 #~ msgstr "Of de draadloze hotspot is ingeschakeld."

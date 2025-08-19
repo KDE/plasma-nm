@@ -46,16 +46,14 @@ msgid "Connection Details"
 msgstr "连接详情"
 
 #: ui/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Connect"
-msgstr "连接到"
+msgstr ""
 
 #: ui/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Disconnect"
-msgstr "连接到"
+msgstr ""
 
 #: ui/ConnectionItemDelegate.qml:111
 #, kde-format

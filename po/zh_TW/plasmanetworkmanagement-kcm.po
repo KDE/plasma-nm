@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-06-10 12:36+0900\n"
+"PO-Revision-Date: 2025-08-19 05:25+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -190,7 +190,7 @@ msgstr "連線中"
 #: qml/ConnectionItem.qml:121
 msgctxt "@title:column Available networks"
 msgid "Available"
-msgstr ""
+msgstr "可用"
 
 #: qml/main.qml:151
 msgid "Add new connection"
@@ -214,41 +214,34 @@ msgid "Do you want to remove the connection '%1'?"
 msgstr "您確定要移除連線「%1」嗎？"
 
 #: qml/main.qml:262
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "連線"
 
 #: qml/main.qml:268
-#, fuzzy
-#| msgid "Cancel"
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "取消"
 
 #: qml/main.qml:274
-#, fuzzy
-#| msgctxt "@label Hotspot password"
-#| msgid "Password:"
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "密碼："
+msgstr "輸入密碼"
 
 #: qml/main.qml:280
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "網路：%1"
 
 #: qml/main.qml:300
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "密碼必須是有效的 WEP 金鑰"
 
 #: qml/main.qml:301
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "密碼必須在 8 到 64 個字元之間"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "熱點名稱："

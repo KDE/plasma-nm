@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
-"PO-Revision-Date: 2025-01-04 10:48+0200\n"
+"PO-Revision-Date: 2025-08-18 21:23+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -49,16 +49,14 @@ msgid "Connection Details"
 msgstr "Параметри з'єднання"
 
 #: ui/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Connect"
-msgstr "З'єднатися з"
+msgstr "З'єднатися"
 
 #: ui/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Disconnect"
-msgstr "З'єднатися з"
+msgstr "Від’єднатися"
 
 #: ui/ConnectionItemDelegate.qml:111
 #, kde-format
@@ -217,7 +215,7 @@ msgstr "Параметри IP"
 #: ui/NetworkSettings.qml:179
 #, kde-format
 msgid "Method"
-msgstr ""
+msgstr "Спосіб"
 
 #: ui/NetworkSettings.qml:180
 #, kde-format

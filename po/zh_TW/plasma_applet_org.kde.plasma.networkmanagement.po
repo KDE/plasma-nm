@@ -12,14 +12,14 @@ msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-01 00:45+0000\n"
-"PO-Revision-Date: 2025-07-01 19:34+0900\n"
+"PO-Revision-Date: 2025-08-19 05:27+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.11.70\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ConnectionItem.qml:62
@@ -36,7 +36,7 @@ msgstr "斷線"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "分享"
 
 #: ConnectionItem.qml:96
 #, kde-format
@@ -84,28 +84,24 @@ msgid "Airplane mode is enabled"
 msgstr "已啟用飛航模式"
 
 #: ConnectionListPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "已停用無線及行動網路"
+msgstr "Wi-Fi 與行動數據已停用"
 
 #: ConnectionListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "已停用無線網路"
+msgstr "Wi-Fi 已停用"
 
 #: ConnectionListPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Looking for wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr "正在尋找無線網路"
+msgstr "正在尋找 Wi-Fi 網路"
 
 #: ConnectionListPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "已停用行動網路"
+msgstr "行動數據已停用"
 
 #: ConnectionListPage.qml:133
 #, kde-format
@@ -121,25 +117,25 @@ msgstr "沒有可用連線"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "請先關閉飛航模式再搜尋網路"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "請開啟 Wi-Fi 或行動數據再搜尋網路"
 
 #: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "請開啟 Wi-Fi 再搜尋網路"
 
 #: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "請開啟行動數據再搜尋網路"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -169,10 +165,9 @@ msgid "Enable Wi-Fi"
 msgstr "啟用 Wi-Fi"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "啟用行動網路"
+msgstr "啟用行動數據"
 
 #: main.qml:94
 #, kde-format
@@ -203,13 +198,12 @@ msgstr "用另一個裝置掃描這個 QR 碼來連線到「%1」網路。"
 #: ShareNetworkQrCodePage.qml:108
 #, kde-format
 msgid "Wi-Fi password:"
-msgstr ""
+msgstr "Wi-Fi 密碼："
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "啟用行動網路"
+msgstr "啟用行動數據"
 
 #: Toolbar.qml:148
 #, kde-kuit-format

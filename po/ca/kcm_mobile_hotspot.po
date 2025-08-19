@@ -1,15 +1,15 @@
 # Translation of kcm_mobile_hotspot.po to Catalan
-# Copyright (C) 2020-2023 This_file_is_part_of_KDE
+# Copyright (C) 2020-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Josep M. Ferrer <txemaq@gmail.com>, 2020, 2023.
+# SPDX-FileCopyrightText: 2020, 2023, 2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
-"PO-Revision-Date: 2023-12-18 10:38+0100\n"
+"PO-Revision-Date: 2025-08-18 09:36+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: ui/main.qml:33
 #, kde-format
@@ -26,16 +26,14 @@ msgid "Configure Hotspot"
 msgstr "Configura un punt d'accés"
 
 #: ui/main.qml:52
-#, fuzzy, kde-format
-#| msgid "Hotspot SSID"
+#, kde-format
 msgid "Hotspot SSID:"
-msgstr "SSID del punt d'accés"
+msgstr "SSID del punt d'accés:"
 
 #: ui/main.qml:59
-#, fuzzy, kde-format
-#| msgid "Hotspot Password"
+#, kde-format
 msgid "Hotspot Password:"
-msgstr "Contrasenya del punt d'accés"
+msgstr "Contrasenya del punt d'accés:"
 
 #: ui/main.qml:77
 #, kde-format
@@ -65,7 +63,6 @@ msgid "Hotspot Password"
 msgstr "Contrasenya del punt d'accés"
 
 #: ui/main.qml:117
-#, fuzzy, kde-format
-#| msgid "Configure Hotspot"
+#, kde-format
 msgid "Configure"
-msgstr "Configura un punt d'accés"
+msgstr "Configura"

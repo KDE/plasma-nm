@@ -25,12 +25,12 @@ msgstr "配置热点"
 #: ui/main.qml:52
 #, kde-format
 msgid "Hotspot SSID:"
-msgstr ""
+msgstr "无线热点 SSID："
 
 #: ui/main.qml:59
 #, kde-format
 msgid "Hotspot Password:"
-msgstr ""
+msgstr "无线热点密码："
 
 #: ui/main.qml:77
 #, kde-format
@@ -60,4 +60,4 @@ msgstr "无线热点密码"
 #: ui/main.qml:117
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "配置"

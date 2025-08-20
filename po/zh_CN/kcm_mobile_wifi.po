@@ -48,22 +48,22 @@ msgstr "连接详情"
 #: ui/ConnectionItemDelegate.qml:97
 #, kde-format
 msgid "Connect"
-msgstr ""
+msgstr "连接"
 
 #: ui/ConnectionItemDelegate.qml:104
 #, kde-format
 msgid "Disconnect"
-msgstr ""
+msgstr "断开"
 
 #: ui/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "配置"
 
 #: ui/ConnectionItemDelegate.qml:120
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "删除"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -212,7 +212,7 @@ msgstr "IP 设置"
 #: ui/NetworkSettings.qml:179
 #, kde-format
 msgid "Method"
-msgstr ""
+msgstr "方法"
 
 #: ui/NetworkSettings.qml:180
 #, kde-format

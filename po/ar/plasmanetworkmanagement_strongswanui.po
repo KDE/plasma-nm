@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-18 00:39+0000\n"
-"PO-Revision-Date: 2025-08-09 21:23+0400\n"
+"PO-Revision-Date: 2025-08-20 21:39+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -42,7 +42,7 @@ msgctxt "@label:textbox error message while saving configuration"
 msgid ""
 "Configuration uses ssh-agent for authentication, but no ssh-agent found "
 "running."
-msgstr "يستخدم ضبط وكيل ssh للمصادقة، ولكن لم يعثر على وكيل ssh قيد التشغيل."
+msgstr "يستخدم ضبط وكيل ssh للاستيثاق، ولكن لم يعثر على وكيل ssh قيد التشغيل."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)
@@ -111,7 +111,7 @@ msgstr "البطاقة الذكية"
 #: strongswanprop.ui:113
 #, kde-format
 msgid "EAP"
-msgstr "ميفاق المصادقة الموسعة EAP"
+msgstr "ميفاق الاستيثاق الموسع EAP"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: strongswanprop.ui:150
@@ -171,7 +171,7 @@ msgstr "استخدام ضغط ميفاق الإنترنت"
 #: strongswanprop.ui:314
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
-msgstr "تمكين مقترحات التشفير المخصصة"
+msgstr "مكّن مقترحات المُعمِّي المخصصة"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: strongswanprop.ui:328

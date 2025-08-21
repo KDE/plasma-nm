@@ -62,7 +62,7 @@ msgstr "Kopla til"
 #: ui/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Set opp"
 
 #: ui/ConnectionItemDelegate.qml:120
 #, kde-format

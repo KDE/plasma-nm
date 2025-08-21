@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2023-12-23 01:46+0000\n"
-"PO-Revision-Date: 2025-08-03 15:44+0400\n"
+"PO-Revision-Date: 2025-08-20 20:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -111,7 +111,7 @@ msgstr "كلمة سر المجموعة."
 #, kde-format
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
-msgstr "تمكين المصادقة المختلطة، أي استخدام الشهادة بالإضافة إلى كلمة السر."
+msgstr "تمكين الاستيثاق هجينًا، أي استخدام الشهادة بالإضافة إلى كلمة السر."
 
 #. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)
 #: vpnc.ui:144
@@ -129,7 +129,7 @@ msgstr "ملف CA:"
 #: vpnc.ui:167
 #, kde-format
 msgid "CA certificate in PEM format."
-msgstr "شهادة المرجع المصدق (CA) بتنسيق PEM."
+msgstr "شهادة المرجع المُوثّق (CA) بتنسيق PEM."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:194
@@ -153,7 +153,7 @@ msgstr "المجال:"
 #: vpncadvanced.ui:37
 #, kde-format
 msgid "(NT-)Domain name for authentication."
-msgstr "اسم المجال (NT-) للمصادقة."
+msgstr "اسم المجال (NT-) للاستيثاق."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpncadvanced.ui:44

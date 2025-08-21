@@ -1051,7 +1051,7 @@ msgid ""
 "Use this field to specify the IP address(es) of one or more DNS servers. Use "
 "',' to separate entries."
 msgstr ""
-"استخدم هذا الحقل لتحديد عنوان/عناوين IP لخادوم DNS واحد أو أكثر. استخدم ',' "
+"استخدم هذا الحقل لتحديد عنوان/عناوين IP لخادم DNS واحد أو أكثر. استخدم ',' "
 "لفصل المُدخلات."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
@@ -1098,8 +1098,8 @@ msgid ""
 "DHCP\n"
 "lease and options."
 msgstr ""
-"استخدم هذا الحقل لتحديد معرّف عميل DHCP وهو سلسلة تُرسَل إلى خادوم DHCP \n"
-" لتعريف الآلة المحليّة التي يمكن لخادوم DHCP \n"
+"استخدم هذا الحقل لتحديد معرّف عميل DHCP وهو سلسلة تُرسَل إلى خادم DHCP \n"
+" لتعريف الآلة المحليّة التي يمكن لخادم DHCP \n"
 "استخدامها لتخصيص خيارات إيجار DHCP."
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
@@ -3566,12 +3566,12 @@ msgstr "بوابة IPv4 الافتراضية"
 #: models/networkmodelitem.cpp:607
 #, kde-format
 msgid "IPv4 Primary Nameserver"
-msgstr "خادوم النطاقات IPv4 الأساسي"
+msgstr "خادم النطاقات IPv4 الأساسي"
 
 #: models/networkmodelitem.cpp:611
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
-msgstr "خادوم النطاقات IPv4 الثانوي"
+msgstr "خادم النطاقات IPv4 الثانوي"
 
 #: models/networkmodelitem.cpp:621
 #, kde-format
@@ -3591,12 +3591,12 @@ msgstr "بوابة IPv6 الافتراضية"
 #: models/networkmodelitem.cpp:636
 #, kde-format
 msgid "IPv6 Primary Nameserver"
-msgstr "خادوم النطاقات IPv6 الأساسي"
+msgstr "خادم النطاقات IPv6 الأساسي"
 
 #: models/networkmodelitem.cpp:640
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
-msgstr "خادوم النطاقات IPv6 الثانوي"
+msgstr "خادم النطاقات IPv6 الثانوي"
 
 #: models/networkmodelitem.cpp:649
 #, kde-format

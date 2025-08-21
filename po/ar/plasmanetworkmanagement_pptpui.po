@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2021-05-31 00:18+0000\n"
-"PO-Revision-Date: 2025-08-09 21:59+0400\n"
+"PO-Revision-Date: 2025-08-20 20:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -75,8 +75,8 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"ملاحظة: تعمية MPPE متاح فقط مع طرق مصادقة MSCHAP.\n"
-" لتفعيل هذا الخيار، حدد طريقة أو أكثر من طرق مصادقة\n"
+"ملاحظة: تعمية MPPE متاح فقط مع طرق استيثاق MSCHAP.\n"
+" لتفعيل هذا الخيار، حدد طريقة أو أكثر من طرق استيثاق\n"
 " MSCHAP: MSCHAP أو MSCHAPv2."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
@@ -200,7 +200,7 @@ msgstr "أرسل حزم صدى ميفاق الربط بين نقطتين PPP "
 #: pptpauth.ui:14
 #, kde-format
 msgid "PPTPAuthentication"
-msgstr "مصادقة PPTP"
+msgstr "استيثاق PPTP"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
@@ -259,7 +259,7 @@ msgstr "لِج:"
 #, kde-format
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
-msgstr "عيِّن الاسم المستخدم لمصادقة النظام المحلي إلى النظير إلى <name>."
+msgstr "عيِّن الاسم المستخدم لاستيثاق النظام المحلي إلى النظير إلى <name>."
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_ntdomain)
 #: pptpprop.ui:153
@@ -273,7 +273,7 @@ msgstr "مجال NT:"
 msgid ""
 "Append the domain name <domain> to the local host name for\n"
 "authenticating purposes."
-msgstr "أضف اسم النطاق <domain> إلى اسم المضيف المحلي لأغراض المصادقة."
+msgstr "أضف اسم النطاق <domain> إلى اسم المضيف المحلي لأغراض الاستيثاق."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: pptpprop.ui:192

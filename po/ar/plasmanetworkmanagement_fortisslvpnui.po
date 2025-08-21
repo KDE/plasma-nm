@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2020-10-30 02:41+0100\n"
-"PO-Revision-Date: 2025-04-18 21:27+0400\n"
+"PO-Revision-Date: 2025-08-20 21:01+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -60,7 +60,7 @@ msgstr "اسم المستخدم:"
 #, kde-format
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
-msgstr "عيِّن الاسم المستخدم لمصادقة النظام المحلي إلى النظير إلى <name>."
+msgstr "عيِّن الاسم المستخدم لاستيثاق النظام المحلي إلى النظير إلى <name>."
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: fortisslvpn.ui:109 fortisslvpnauth.ui:26
@@ -102,7 +102,7 @@ msgstr "استخدم كلمة سر لمرة واحدة"
 #: fortisslvpnadvanced.ui:50
 #, kde-format
 msgid "2FA"
-msgstr "المصادقة الثنائية"
+msgstr "الاستيثاق الثنائي"
 
 #. i18n: ectx: property (text), widget (QLabel, realmLabel)
 #: fortisslvpnadvanced.ui:68

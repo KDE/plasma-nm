@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2025-08-09 21:24+0400\n"
+"PO-Revision-Date: 2025-08-20 20:52+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -22,7 +22,7 @@ msgstr ""
 #: openvpn.cpp:183
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
-msgstr "يفتقد NetworkManager دعم OpenVPN"
+msgstr "يفتقد NetworkManager توفير التعامل OpenVPN"
 
 #: openvpn.cpp:208
 #, kde-format
@@ -57,13 +57,13 @@ msgstr ""
 #: openvpn.ui:46
 #, kde-format
 msgid "Connection type:"
-msgstr "نوع الإتصال:"
+msgstr "نوع الاتصال:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:68
 #, kde-format
 msgid "Select an authentication mode."
-msgstr "حدد وضع المصادقة."
+msgstr "حدد وضع الاستيثاق."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:72
@@ -95,7 +95,7 @@ msgstr "كلمة السر مع الشهادات (TLS)"
 #: openvpn.ui:104 openvpn.ui:362 openvpn.ui:458
 #, kde-format
 msgid "CA Certificate:"
-msgstr "شهادة المرجع المصدق (CA):"
+msgstr "شهادة المرجع المُوثّق (CA):"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, passCaFile)
@@ -103,7 +103,7 @@ msgstr "شهادة المرجع المصدق (CA):"
 #: openvpn.ui:117 openvpn.ui:378 openvpn.ui:471
 #, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr "ملف المرجع المصدق (CA) بتنسيق .pem."
+msgstr "ملف المرجع المُوثّق (CA) بتنسيق .pem."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509Cert)
@@ -588,18 +588,19 @@ msgstr ""
 "مع DHCP (هذا هو الإعداد المبدئي في حال عدم استخدام --remote). عند \n"
 "تحديد --float مع --remote، يسمح لجلسة OpenVPN بالاتصال مبدئيًا \n"
 "بنظير على عنوان معروف، ولكن إذا وصلت الحزم من عنوان جديد واجتازت \n"
-"جميع اختبارات المصادقة، فسيتولى العنوان الجديد إدارة الجلسة. يُعد هذا مفيدًا \n"
+"جميع اختبارات الاستيثاق، فسيتولى العنوان الجديد إدارة الجلسة. يُعد هذا "
+"مفيدًا \n"
 "عند الاتصال بنظير يحمل عنوانًا ديناميكيًا، مثل مستخدم اتصال أو عميل DHCP.\n"
 "\n"
 "\n"
-"بشكل أساسي، يُخبر --float OpenVPN بقبول الحزم المُصادق عليها من أي عنوان، \n"
+"بشكل أساسي، يُخبر --float OpenVPN بقبول الحزم المتوثق منها من أي عنوان، \n"
 "وليس فقط العنوان المُحدد في خيار --remote."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAcceptAuthenticatedPackets)
 #: openvpnadvanced.ui:423
 #, kde-format
 msgid "Accept authenticated packets from any address (Float)"
-msgstr "اقبل حزم المصادقة من أي عنوان (تعويم)"
+msgstr "اقبل حزم الاستيثاق من أي عنوان (تعويم)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMaxRoutes)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMaxRoutes)
@@ -669,13 +670,13 @@ msgid ""
 "Authenticate packets with HMAC using message digest algorithm. The default "
 "is SHA1."
 msgstr ""
-"مصادقة الحزم باستخدام HMAC باستخدام خوارزمية تلخيص الرسائل. المبدئي هو SHA1."
+"استوثق الحزم باستخدام HMAC باستخدام خوارزمية تلخيص الرسائل. المبدئي هو SHA1."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openvpnadvanced.ui:564
 #, kde-format
 msgid "HMAC Authentication:"
-msgstr "مصادقة HMAC:"
+msgstr "استيثاق HMAC:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:587
@@ -892,7 +893,7 @@ msgstr "تسمية شهادة النظير البعيد nsCert:"
 #: openvpnadvanced.ui:853
 #, kde-format
 msgid "Add an additional layer of HMAC authentication."
-msgstr "أضف طبقة إضافية من مصادقة HMAC."
+msgstr "أضف طبقة إضافية من استيثاق HMAC."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: openvpnadvanced.ui:868
@@ -927,7 +928,7 @@ msgid ""
 "channel\n"
 "to protect against DoS attacks."
 msgstr ""
-"أضف طبقة إضافية من مصادقة HMAC فوق قناة \n"
+"أضف طبقة إضافية من استيثاق HMAC فوق قناة \n"
 "التحكم TLS للحماية من هجمات الحرمان من الخدمة."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
@@ -947,7 +948,7 @@ msgstr "معلمة الاتجاه لوضع المفتاح الثابت."
 #: openvpnadvanced.ui:950
 #, kde-format
 msgid "Server (0)"
-msgstr "خادوم (0)"
+msgstr "خادم (0)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
 #: openvpnadvanced.ui:955
@@ -1103,7 +1104,7 @@ msgstr "كلمة سر لمرة واحدة"
 #: openvpnauth.cpp:86
 #, kde-format
 msgid "authenticator"
-msgstr "مصادق"
+msgstr "المُوثّق"
 
 #: openvpnauth.cpp:86
 #, kde-format

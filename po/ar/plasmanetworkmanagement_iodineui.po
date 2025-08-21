@@ -27,7 +27,7 @@ msgstr "نطاق المستوى الأعلى:"
 #: iodine.ui:27
 #, kde-format
 msgid "Nameserver:"
-msgstr "خادوم النطاقات:"
+msgstr "خادم النطاقات:"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_password)
 #: iodine.ui:40 iodineauth.ui:20

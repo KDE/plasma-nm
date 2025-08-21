@@ -533,7 +533,7 @@ msgstr "الأسرار المطلوبة لاتصال الشبكة الشخصية
 #: notification.cpp:461
 #, kde-format
 msgid "Authentication to the VPN server failed."
-msgstr "فشل استيثاق خادوم الشبكة الشخصية الخاصة."
+msgstr "فشل استيثاق خادم الشبكة الشخصية الخاصة."
 
 #: notification.cpp:464
 #, kde-format

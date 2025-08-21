@@ -31,3 +31,4 @@ Dependencies:
 Options:
  require-passing-tests-on: ['Linux', 'FreeBSD']
  cmake-options: ' -DBUILD_MOBILE=ON'
+ run-qmllint: true

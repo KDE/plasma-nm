@@ -55,7 +55,7 @@
         ],
         "Category": "VPNService",
         "Description": "Compatible with the OpenVPN server",
-        "Description[ar]": "متوافق مع خادوم OpenVPN",
+        "Description[ar]": "متوافق مع خادم OpenVPN",
         "Description[az]": "OpenVPN serveri ilə uyğun",
         "Description[be]": "Сумяшчальна з серверам OpenVPN",
         "Description[bg]": "Съвместим с OpenVPN сървъра",

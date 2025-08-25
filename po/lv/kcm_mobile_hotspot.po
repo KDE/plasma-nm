@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-mobile package.
 #
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2025 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
-"PO-Revision-Date: 2024-11-06 20:43+0200\n"
+"PO-Revision-Date: 2025-08-22 15:11+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: ui/main.qml:33
 #, kde-format
@@ -24,16 +24,14 @@ msgid "Configure Hotspot"
 msgstr "Konfigurēt tīklāju"
 
 #: ui/main.qml:52
-#, fuzzy, kde-format
-#| msgid "Hotspot SSID"
+#, kde-format
 msgid "Hotspot SSID:"
-msgstr "Tīklāja SSID"
+msgstr "Tīklāja SSID:"
 
 #: ui/main.qml:59
-#, fuzzy, kde-format
-#| msgid "Hotspot Password"
+#, kde-format
 msgid "Hotspot Password:"
-msgstr "Tīklāja parole"
+msgstr "Tīklāja parole:"
 
 #: ui/main.qml:77
 #, kde-format
@@ -63,7 +61,6 @@ msgid "Hotspot Password"
 msgstr "Tīklāja parole"
 
 #: ui/main.qml:117
-#, fuzzy, kde-format
-#| msgid "Configure Hotspot"
+#, kde-format
 msgid "Configure"
-msgstr "Konfigurēt tīklāju"
+msgstr "Konfigurēt"

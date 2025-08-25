@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
-"PO-Revision-Date: 2025-02-18 18:59+0200\n"
+"PO-Revision-Date: 2025-08-22 15:11+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: ui/ConnectDialog.qml:57
 #, kde-format
@@ -47,26 +47,24 @@ msgid "Connection Details"
 msgstr "Savienojuma informācija"
 
 #: ui/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Connect"
-msgstr "Savienoties ar"
+msgstr "Savienoties"
 
 #: ui/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Disconnect"
-msgstr "Savienoties ar"
+msgstr "Atvienoties"
 
 #: ui/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Konfigurēt"
 
 #: ui/ConnectionItemDelegate.qml:120
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Dzēst"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -215,7 +213,7 @@ msgstr "IP iestatījumi"
 #: ui/NetworkSettings.qml:179
 #, kde-format
 msgid "Method"
-msgstr ""
+msgstr "Metode"
 
 #: ui/NetworkSettings.qml:180
 #, kde-format

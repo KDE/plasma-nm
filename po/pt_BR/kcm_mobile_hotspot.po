@@ -3,20 +3,21 @@
 #
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2020, 2023, 2024.
 # SPDX-FileCopyrightText: 2024 Geraldo Simiao <geraldosimiao@fedoraproject.org>
+# SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
-"PO-Revision-Date: 2024-07-19 23:38-0300\n"
-"Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
+"PO-Revision-Date: 2025-08-24 10:45-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: ui/main.qml:33
 #, kde-format
@@ -24,16 +25,14 @@ msgid "Configure Hotspot"
 msgstr "Configurar ponto de acesso"
 
 #: ui/main.qml:52
-#, fuzzy, kde-format
-#| msgid "Hotspot SSID"
+#, kde-format
 msgid "Hotspot SSID:"
-msgstr "SSID do ponto de acesso"
+msgstr "SSID do ponto de acesso:"
 
 #: ui/main.qml:59
-#, fuzzy, kde-format
-#| msgid "Hotspot Password"
+#, kde-format
 msgid "Hotspot Password:"
-msgstr "Senha do ponto de acesso"
+msgstr "Senha do ponto de acesso:"
 
 #: ui/main.qml:77
 #, kde-format
@@ -63,10 +62,9 @@ msgid "Hotspot Password"
 msgstr "Senha do ponto de acesso"
 
 #: ui/main.qml:117
-#, fuzzy, kde-format
-#| msgid "Configure Hotspot"
+#, kde-format
 msgid "Configure"
-msgstr "Configurar ponto de acesso"
+msgstr "Configurar"
 
 #~ msgid "Whether the wireless hotspot is enabled."
 #~ msgstr "Se o ponto de acesso sem fio está ativado."

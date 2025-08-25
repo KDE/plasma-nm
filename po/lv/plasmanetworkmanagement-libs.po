@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-01-03 16:55+0200\n"
+"PO-Revision-Date: 2025-08-22 15:42+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -1106,11 +1106,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Metrika"
+msgstr "Maršruta metrika:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -1123,6 +1121,12 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Punktu skaits, kas palīdz izvēlēties labāko ceļu datu pakešu mērķa "
+"sasniegšanai,\n"
+"kam pamatā ir tādi faktori kā attālums, aizture un uzticamība.\n"
+"\n"
+"Noklusējuma vērtība −1 nozīmē, ka „NetworkManager“ ir tiesības izvēlēties un "
+"pārvaldīt faktisko maršruta metriku."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97
@@ -3541,27 +3545,23 @@ msgid "The connection type is WireGuard"
 msgstr "Savienojuma tips ir „WireGuard“"
 
 #: models/networkmodelitem.cpp:348
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip real user name is not available"
-#| msgid "Not Available"
+#, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr "Nav pieejams"
+msgstr "Pieejamie"
 
 #: models/networkmodelitem.cpp:354
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
-msgstr "Savienots"
+msgstr "Savienotie"
 
 #: models/networkmodelitem.cpp:356
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"
 msgid "Previously Used, Unavailable"
-msgstr ""
+msgstr "Iepriekš izmantotie, nepieejamie"
 
 #: models/networkmodelitem.cpp:594
 #, kde-format
@@ -3797,11 +3797,10 @@ msgid "Connected to %1"
 msgstr "Savienots ar „%1“"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "Tīkla pārvaldnieks nav palaists"
+msgstr "„NetworkManager“ serviss nav palaists"
 
 #: networkstatus.cpp:261
 #, kde-format

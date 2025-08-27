@@ -42,8 +42,7 @@
         "Description[zh_TW]": "無線網路設定",
         "FormFactors": [
             "handset",
-            "tablet",
-            "mediacenter"
+            "tablet"
         ],
         "Icon": "network-wireless-symbolic",
         "Name": "Wi-Fi",

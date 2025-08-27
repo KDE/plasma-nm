@@ -86,8 +86,7 @@
         "EnabledByDefault": true,
         "FormFactors": [
             "handset",
-            "tablet",
-            "mediacenter"
+            "tablet"
         ],
         "Icon": "network-wireless-hotspot",
         "License": "GPL",

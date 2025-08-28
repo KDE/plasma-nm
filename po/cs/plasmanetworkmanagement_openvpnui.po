@@ -404,10 +404,9 @@ msgstr "Použít spojení TCP"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseVirtualDeviceType)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:160 openvpnadvanced.ui:173
-#, fuzzy, kde-format
-#| msgid "Set virtual device type:"
+#, kde-format
 msgid "Explicitly set virtual device type (TUN/TAP)."
-msgstr "Nastavit typ virtuálního zařízení:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceType)
 #: openvpnadvanced.ui:163
@@ -474,10 +473,9 @@ msgstr "Použít vlastní velikost fragmentu UDP:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:294
-#, fuzzy, kde-format
-#| msgid "Restrict TCP maximum segment size (MSS)"
+#, kde-format
 msgid "Restrict tunnel TCP maximum segment size."
-msgstr "Omezit maximální velikost segmentu TCP (MSS)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:297
@@ -841,12 +839,11 @@ msgstr "Klient"
 #. i18n: ectx: property (toolTip), widget (QLabel, lblNsCertType)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbNsCertType)
 #: openvpnadvanced.ui:806 openvpnadvanced.ui:821 openvpnadvanced.ui:834
-#, fuzzy, kde-format
-#| msgid "Remote peer certificate nsCert designation:"
+#, kde-format
 msgid ""
 "Require that peer certificate was signed with an explicit nsCertType "
 "designation."
-msgstr "Určení certifikátu nsCert vzdáleného protějšku:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkNsCertType)
 #: openvpnadvanced.ui:809

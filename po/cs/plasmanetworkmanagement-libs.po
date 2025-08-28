@@ -594,10 +594,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:191
-#, fuzzy, kde-format
-#| msgid "Alternative Subject Matches"
+#, kde-format
 msgid "Alternative subject matches:"
-msgstr "Alternativní shody předmětu"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
@@ -1147,23 +1146,17 @@ msgstr "Hledat domény:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
 #: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use this field to specify the IP address(es) of one or more DNS servers. "
-#| "Use ',' to separate entries."
+#, kde-format
 msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
 "separate entries."
 msgstr ""
-"Použijte toto pole pro upřesnění IP adres DNS serverů. Použijte ';' pro "
-"oddělení záznamů."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
-#, fuzzy, kde-format
-#| msgid "Edit the list of DNS servers"
+#, kde-format
 msgid "Edit the list of DNS domains being searched"
-msgstr "Upravit seznam DNS serverů"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
 #: editor/settings/ui/ipv4.ui:191
@@ -1718,12 +1711,11 @@ msgstr "Duplex:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:151
-#, fuzzy, kde-format
-#| msgid "Request that the device use only the specified speed."
+#, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
-msgstr "Požádat ať zařízení použije pouze zadanou rychlost."
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158

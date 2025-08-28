@@ -64,16 +64,11 @@ msgstr "Uživatelské jméno:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, username)
 #: l2tp.ui:103
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></"
-#| "body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>Set the name used for authenticating the local system "
 "to the peer to &lt;name&gt;.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Certifikát ve frmátech.pem, .der nebo .p12 .</p></"
-"body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_2)
 #: l2tp.ui:113
@@ -83,13 +78,11 @@ msgstr "Heslo:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, password)
 #: l2tp.ui:128
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>Password passed to PPPD when prompted for it.</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body><p>Heslo pro předsdílený klíč (PSK).</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_3)
 #: l2tp.ui:140
@@ -115,16 +108,11 @@ msgstr "Certifikát CA:"
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCA)
 #: l2tp.ui:187 l2tpipsec.ui:119
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></"
-#| "body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
 "cer or .p12 formats.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Certifikát ve frmátech.pem, .der nebo .p12 .</p></"
-"body></html>"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCert)
@@ -143,16 +131,11 @@ msgstr "Certifikát uživatele:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCert)
 #: l2tp.ui:210
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></"
-#| "body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
 "</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Certifikát ve frmátech.pem, .der nebo .p12 .</p></"
-"body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
@@ -164,16 +147,11 @@ msgstr "Soukromý klíč:"
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineKey)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userKey)
 #: l2tp.ui:233 l2tpipsec.ui:165
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></"
-#| "body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
 "</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Certifikát ve frmátech.pem, .der nebo .p12 .</p></"
-"body></html>"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineKey)
 #. i18n: ectx: property (filter), widget (KUrlRequester, userKey)
@@ -192,13 +170,11 @@ msgstr "Heslo soukromého klíče:"
 #. i18n: ectx: property (toolTip), widget (PasswordField, machineKeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userKeyPassword)
 #: l2tp.ui:255 l2tpipsec.ui:187
-#, fuzzy, kde-format
-#| msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body><p>Heslo pro předsdílený klíč (PSK).</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:286
@@ -323,10 +299,9 @@ msgstr "hh:mm:ss"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIkelifetime)
 #: l2tpipsec.ui:265
-#, fuzzy, kde-format
-#| msgid "Phase1 Algorithms:"
+#, kde-format
 msgid "Phase1 Lifetime:"
-msgstr "Algoritmy Phase1:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: l2tpipsec.ui:272
@@ -338,10 +313,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:279
-#, fuzzy, kde-format
-#| msgid "Phase2 Algorithms:"
+#, kde-format
 msgid "Phase2 Lifetime:"
-msgstr "Algoritmy Phase2:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:289
@@ -533,10 +507,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:167
-#, fuzzy, kde-format
-#| msgid "Use IP compression"
+#, kde-format
 msgid "Use Address/Control compression"
-msgstr "Použít kompresi IP"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
 #: l2tpppp.ui:180

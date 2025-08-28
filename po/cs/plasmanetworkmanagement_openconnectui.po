@@ -309,10 +309,9 @@ msgstr "Tokeny OTP OpenConnect"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbToken)
 #: openconnecttoken.ui:20
-#, fuzzy, kde-format
-#| msgid "Token Authentication"
+#, kde-format
 msgid "Software Token Authentication"
-msgstr "Ověření tokenu"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnecttoken.ui:26

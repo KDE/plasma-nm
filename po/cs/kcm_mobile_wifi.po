@@ -46,26 +46,24 @@ msgid "Connection Details"
 msgstr ""
 
 #: ui/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Connect"
-msgstr "Připojit se k"
+msgstr "Připojit se"
 
 #: ui/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Disconnect"
-msgstr "Připojit se k"
+msgstr "Odpojit"
 
 #: ui/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Nastavit"
 
 #: ui/ConnectionItemDelegate.qml:120
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Smazat"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -214,7 +212,7 @@ msgstr "Nastavení IP"
 #: ui/NetworkSettings.qml:179
 #, kde-format
 msgid "Method"
-msgstr ""
+msgstr "Metoda"
 
 #: ui/NetworkSettings.qml:180
 #, kde-format

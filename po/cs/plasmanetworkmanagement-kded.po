@@ -558,17 +558,14 @@ msgid "No secrets were requested"
 msgstr "Nebyla poskytnuta žádná hesla"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr "Neplatné heslo pro bezdrátovou síť \"%1\". Prosím, zkuste to znovu."
+msgstr ""
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "Zadejte heslo pro bezdrátovou síť \"%1\":"
+msgstr ""
 
 #: passworddialog.cpp:105
 #, kde-format

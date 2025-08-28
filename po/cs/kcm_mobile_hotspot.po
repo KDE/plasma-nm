@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
 "PO-Revision-Date: 2024-02-27 10:59+0100\n"
-"Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
+"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -23,16 +23,14 @@ msgid "Configure Hotspot"
 msgstr "Nastavit hotspot"
 
 #: ui/main.qml:52
-#, fuzzy, kde-format
-#| msgid "Hotspot SSID"
+#, kde-format
 msgid "Hotspot SSID:"
-msgstr "SSID hotspotu"
+msgstr ""
 
 #: ui/main.qml:59
-#, fuzzy, kde-format
-#| msgid "Hotspot Password"
+#, kde-format
 msgid "Hotspot Password:"
-msgstr "Heslo hotspotu"
+msgstr ""
 
 #: ui/main.qml:77
 #, kde-format
@@ -60,7 +58,6 @@ msgid "Hotspot Password"
 msgstr "Heslo hotspotu"
 
 #: ui/main.qml:117
-#, fuzzy, kde-format
-#| msgid "Configure Hotspot"
+#, kde-format
 msgid "Configure"
-msgstr "Nastavit hotspot"
+msgstr "Nastavit"

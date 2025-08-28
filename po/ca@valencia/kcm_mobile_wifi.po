@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
-"PO-Revision-Date: 2025-01-04 10:08+0100\n"
+"PO-Revision-Date: 2025-08-18 09:36+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.08.0\n"
 
 #: ui/ConnectDialog.qml:57
 #, kde-format
@@ -50,26 +50,24 @@ msgid "Connection Details"
 msgstr "Detalls de la connexió"
 
 #: ui/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Connect"
-msgstr "Connecta a"
+msgstr "Connecta"
 
 #: ui/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Disconnect"
-msgstr "Connecta a"
+msgstr "Desconnecta"
 
 #: ui/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Configura"
 
 #: ui/ConnectionItemDelegate.qml:120
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Suprimix"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -218,7 +216,7 @@ msgstr "Configuració IP"
 #: ui/NetworkSettings.qml:179
 #, kde-format
 msgid "Method"
-msgstr ""
+msgstr "Mètode"
 
 #: ui/NetworkSettings.qml:180
 #, kde-format

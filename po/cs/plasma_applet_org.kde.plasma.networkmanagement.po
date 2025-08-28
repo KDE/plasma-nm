@@ -84,16 +84,14 @@ msgid "Airplane mode is enabled"
 msgstr "Režim V letadle je povolen"
 
 #: ConnectionListPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Bezdrátová a mobilní síť byly deaktivovány"
+msgstr ""
 
 #: ConnectionListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "Bezdrátová síť je deaktivována"
+msgstr ""
 
 #: ConnectionListPage.qml:127
 #, kde-format
@@ -101,10 +99,9 @@ msgid "Looking for Wi-Fi networks"
 msgstr ""
 
 #: ConnectionListPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "Mobilní síť je deaktivována"
+msgstr ""
 
 #: ConnectionListPage.qml:133
 #, kde-format
@@ -168,10 +165,9 @@ msgid "Enable Wi-Fi"
 msgstr "Povolit Wi-Fi"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "Povolit mobilní síť"
+msgstr ""
 
 #: main.qml:94
 #, kde-format
@@ -206,10 +202,9 @@ msgid "Wi-Fi password:"
 msgstr ""
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "Zapnout mobilní síť"
+msgstr ""
 
 #: Toolbar.qml:148
 #, kde-kuit-format
@@ -243,18 +238,16 @@ msgid ""
 msgstr ""
 
 #: Toolbar.qml:183
-#, fuzzy, kde-format
-#| msgid "Disable Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
-msgstr "Zakázat hotspot"
+msgstr ""
 
 #: Toolbar.qml:185
-#, fuzzy, kde-format
-#| msgid "Create Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
-msgstr "Vytvořit hotspot"
+msgstr ""
 
 #: Toolbar.qml:219
 #, kde-format
@@ -275,9 +268,3 @@ msgstr "Odesílání"
 #, kde-format
 msgid "Download"
 msgstr "Stahování"
-
-#~ msgid "Show Network's QR Code"
-#~ msgstr "Zobrazit QR kód sítě"
-
-#~ msgid "Connected"
-#~ msgstr "Připojen"

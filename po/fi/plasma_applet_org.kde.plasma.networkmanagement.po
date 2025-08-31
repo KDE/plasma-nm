@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-01 00:45+0000\n"
-"PO-Revision-Date: 2025-07-10 19:45+0300\n"
+"PO-Revision-Date: 2025-07-31 10:03+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -33,7 +33,7 @@ msgstr "Katkaise yhteys"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "Jaa"
 
 #: ConnectionItem.qml:96
 #, kde-format
@@ -81,28 +81,24 @@ msgid "Airplane mode is enabled"
 msgstr "Lentokonetila on käytössä"
 
 #: ConnectionListPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Langattomat ja mobiiliverkot on passivoitu"
+msgstr "Langaton verkko ja mobiilidata on passivoitu"
 
 #: ConnectionListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "Langaton verkko on passivoitu"
 
 #: ConnectionListPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Looking for wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
 msgstr "Etsitään langattomia verkkoja"
 
 #: ConnectionListPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "Mobiiliverkko on passivoitu"
+msgstr "Mobiilidata on passivoitu"
 
 #: ConnectionListPage.qml:133
 #, kde-format
@@ -118,25 +114,25 @@ msgstr "Ei käytettävissä olevia yhteyksiä"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "Poistu lentokonetilasta verkkojen etsimiseksi"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "Ota langaton tai mobiiliverkko käyttöön verkkojen etsimiseksi"
 
 #: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "Ota langaton verkko käyttöön verkkojen etsimiseksi"
 
 #: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "Ota mobiilidata käyttöön verkkojen etsimiseksi"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -166,10 +162,9 @@ msgid "Enable Wi-Fi"
 msgstr "Käytä langatonta verkkoa"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "Käytä mobiiliverkkoa"
+msgstr "Ota mobiilidata käyttöön"
 
 #: main.qml:94
 #, kde-format
@@ -198,16 +193,14 @@ msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "Yhdistä verkkoon ”%1” lukemalla toisella laitteella tämä QR-koodi."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "Näytä salasana"
+msgstr "Langattoman verkon salasana:"
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "Käytä mobiiliverkkoa"
+msgstr "Ota mobiilidata käyttöön"
 
 #: Toolbar.qml:148
 #, kde-kuit-format

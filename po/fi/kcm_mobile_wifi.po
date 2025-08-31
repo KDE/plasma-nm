@@ -58,12 +58,14 @@ msgid "Disconnect"
 msgstr "Yhdistä"
 
 #: ui/ConnectionItemDelegate.qml:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure"
 msgid "Configure"
 msgstr "Aseta"
 
 #: ui/ConnectionItemDelegate.qml:120
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Delete"
 msgid "Delete"
 msgstr "Poista"
 

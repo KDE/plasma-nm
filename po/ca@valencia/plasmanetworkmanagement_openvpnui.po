@@ -66,7 +66,7 @@ msgstr "Tipus de connexió:"
 #: openvpn.ui:68
 #, kde-format
 msgid "Select an authentication mode."
-msgstr "Selecciona un mode d'autenticació."
+msgstr "Tria un mode d'autenticació."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:72
@@ -1028,7 +1028,7 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
-"Seleccioneu esta opció si la vostra organització requerix l'ús d'un servidor "
+"Trieu esta opció si la vostra organització requerix l'ús d'un servidor "
 "intermediari per a accedir a Internet."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_12)

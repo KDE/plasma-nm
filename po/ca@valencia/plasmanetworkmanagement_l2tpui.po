@@ -43,7 +43,7 @@ msgstr "Tipus d'autenticació:"
 #: l2tp.ui:67 l2tpipsec.ui:68
 #, kde-format
 msgid "Select an authentication mode."
-msgstr "Selecciona un mode d'autenticació."
+msgstr "Tria un mode d'autenticació."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: l2tp.ui:71

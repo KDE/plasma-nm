@@ -387,7 +387,7 @@ msgstr "Connecta només a estos servidors"
 #: editor/settings/teamwidget.cpp:219
 #, kde-format
 msgid "Select file to import"
-msgstr "Seleccioneu el fitxer que s'ha d'importar"
+msgstr "Trieu el fitxer que s'ha d'importar"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
@@ -1723,7 +1723,7 @@ msgid ""
 msgstr ""
 "Negociació de l'enllaç del dispositiu. Si es tria «Manual», es forçaran els "
 "valors de «Velocitat» i «Dúplex» sense verificar la compatibilitat del "
-"dispositiu. Si no esteu segur, deixeu «Ignora» o seleccioneu «Automàtic»."
+"dispositiu. Si no esteu segur, deixeu «Ignora» o trieu «Automàtic»."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -3038,7 +3038,7 @@ msgstr "Trieu el vostre proveïdor"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Select your provider from a &list:"
-msgstr "Seleccioneu el vostre proveïdor des d'una &llista:"
+msgstr "Trieu el vostre proveïdor des d'una &llista:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:435
 #, kde-format
@@ -3056,7 +3056,7 @@ msgstr "Trieu el vostre pla de facturació"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "&Select your plan:"
-msgstr "&Seleccioneu el pla:"
+msgstr "&Trieu el pla:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:487
 #, kde-format

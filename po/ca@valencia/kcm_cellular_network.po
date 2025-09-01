@@ -976,7 +976,7 @@ msgstr "Xarxes"
 #: ui/SimPage.qml:84
 #, kde-format
 msgid "Select a network operator."
-msgstr "Seleccioneu un operador de xarxa."
+msgstr "Trieu un operador de xarxa."
 
 #: ui/SimPage.qml:95
 #, kde-format

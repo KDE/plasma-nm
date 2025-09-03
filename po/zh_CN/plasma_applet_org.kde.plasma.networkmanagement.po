@@ -100,7 +100,7 @@ msgstr "移动网络已被禁用"
 #: contents/ui/ConnectionListPage.qml:128
 #, kde-format
 msgid "No matches"
-msgstr "无匹配项"
+msgstr "没有匹配的内容"
 
 #: contents/ui/ConnectionListPage.qml:130
 #, kde-format

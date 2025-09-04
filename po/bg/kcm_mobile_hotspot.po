@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
-"PO-Revision-Date: 2025-03-06 20:10+0100\n"
+"PO-Revision-Date: 2025-09-03 19:57+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.07.70\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ui/main.qml:33
@@ -23,16 +23,14 @@ msgid "Configure Hotspot"
 msgstr "Настройване на активна точка"
 
 #: ui/main.qml:52
-#, fuzzy, kde-format
-#| msgid "Hotspot SSID"
+#, kde-format
 msgid "Hotspot SSID:"
-msgstr "SSID на точка за достъп"
+msgstr "SSID на точка за достъп:"
 
 #: ui/main.qml:59
-#, fuzzy, kde-format
-#| msgid "Hotspot Password"
+#, kde-format
 msgid "Hotspot Password:"
-msgstr "Парола на точка на достъп"
+msgstr "Парола на точка на достъп:"
 
 #: ui/main.qml:77
 #, kde-format
@@ -60,7 +58,6 @@ msgid "Hotspot Password"
 msgstr "Парола на точка на достъп"
 
 #: ui/main.qml:117
-#, fuzzy, kde-format
-#| msgid "Configure Hotspot"
+#, kde-format
 msgid "Configure"
-msgstr "Настройване на активна точка"
+msgstr "Настройване"

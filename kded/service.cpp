@@ -64,6 +64,11 @@ void NetworkManagementService::init()
 
     if (!d->connectivityMonitor) {
         d->connectivityMonitor = new ConnectivityMonitor(this);
+
+        connect(d->notification,
+                &Notification::connectionDeactivatedPreparingForSleep,
+                d->connectivityMonitor,
+                &ConnectivityMonitor::cancelLimitedConnectivityNotificationTimer);
     }
 }
 

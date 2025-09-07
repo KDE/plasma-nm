@@ -24,6 +24,9 @@ class Notification : public QObject
 public:
     explicit Notification(QObject *parent = nullptr);
 
+Q_SIGNALS:
+    void connectionDeactivatedPreparingForSleep();
+
 private Q_SLOTS:
     void deviceAdded(const QString &uni);
     void addDevice(const NetworkManager::Device::Ptr &device);

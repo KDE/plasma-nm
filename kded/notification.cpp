@@ -359,6 +359,7 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
     } else if (state == NetworkManager::ActiveConnection::Deactivated) {
         if (m_preparingForSleep) {
             qCDebug(PLASMA_NM_KDED_LOG) << "Not emitting connection deactivated notification as we're about to suspend";
+            Q_EMIT connectionDeactivatedPreparingForSleep();
             return;
         }
 

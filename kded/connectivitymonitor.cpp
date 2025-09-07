@@ -81,6 +81,11 @@ void ConnectivityMonitor::connectivityChanged(NetworkManager::Connectivity conne
     }
 }
 
+void ConnectivityMonitor::cancelLimitedConnectivityNotificationTimer()
+{
+    m_limitedConnectivityTimer.stop();
+}
+
 void ConnectivityMonitor::showLimitedConnectivityNotification()
 {
     if (m_notification) {

@@ -24,6 +24,8 @@ public:
     explicit ConnectivityMonitor(QObject *parent);
     ~ConnectivityMonitor() override;
 
+    void cancelLimitedConnectivityNotificationTimer();
+
 private Q_SLOTS:
     void connectivityChanged(NetworkManager::Connectivity connectivity);
     QCoro::Task<> checkConnectivity();

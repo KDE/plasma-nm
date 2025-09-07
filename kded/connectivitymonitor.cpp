@@ -49,9 +49,7 @@ void ConnectivityMonitor::connectivityChanged(NetworkManager::Connectivity conne
 
     if (connectivity == NetworkManager::Limited) {
         qCDebug(PLASMA_NM_KDED_LOG) << "Network connectivity limited, scheduling notification";
-        if (!m_limitedConnectivityTimer.isActive()) {
-            m_limitedConnectivityTimer.start();
-        }
+        m_limitedConnectivityTimer.start();
     } else {
         m_limitedConnectivityTimer.stop();
 

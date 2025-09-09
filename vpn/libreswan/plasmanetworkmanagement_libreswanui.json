@@ -46,7 +46,6 @@
                 "Name[ta]": "ஜான் குரூலிச்",
                 "Name[tr]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
-                "Name[x-test]": "xxJan Grulichxx",
                 "Name[zh_CN]": "Jan Grulich",
                 "Name[zh_TW]": "Jan Grulich"
             }
@@ -94,7 +93,6 @@
         "Description[sv]": "IPsec, IKEv1, IKEv2-baserad VPN",
         "Description[tr]": "IPsec, IKEv1, IKEv2 tabanlı VPN",
         "Description[uk]": "VPN на основі IPsec, IKEv1, IKEv2",
-        "Description[x-test]": "xxIPsec, IKEv1, IKEv2 based VPNxx",
         "Description[zh_CN]": "基于 IPsec、IKEv1、IKEv2 的 VPN",
         "Description[zh_TW]": "基於 IPsec, IKEv1, IKEv2 的 VPN",
         "EnabledByDefault": false,
@@ -142,7 +140,6 @@
         "Name[sv]": "IPsec-baserad VPN (libreswan)",
         "Name[tr]": "IPsec tabanlı VPN (libreswan)",
         "Name[uk]": "VPN на основі IPsec (libreswan)",
-        "Name[x-test]": "xxIPsec based VPN (libreswan)xx",
         "Name[zh_CN]": "基于 IPsec 的 VPN (libreswan)",
         "Name[zh_TW]": "基於 IPsec 的 VPN (libreswan)",
         "Version": "0.1",

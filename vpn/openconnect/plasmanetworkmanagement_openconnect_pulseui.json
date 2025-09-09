@@ -46,7 +46,6 @@
                 "Name[ta]": "ஜான் குரூலிச்",
                 "Name[tr]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
-                "Name[x-test]": "xxJan Grulichxx",
                 "Name[zh_CN]": "Jan Grulich",
                 "Name[zh_TW]": "Jan Grulich"
             }
@@ -94,7 +93,6 @@
         "Description[sv]": "Kompatibel med Pulse Connect Secure SSL VPN",
         "Description[tr]": "Pulse Connect Secure SSL VPN ile uyumlu",
         "Description[uk]": "Сумісний із VPN SSL Pulse Connect Secure",
-        "Description[x-test]": "xxCompatible with Pulse Connect Secure SSL VPNxx",
         "Description[zh_CN]": "兼容 Pulse Connect Secure SSL VPN",
         "Description[zh_TW]": "與 Pulse Connect Secure SSL VPN 相容",
         "EnabledByDefault": false,
@@ -142,7 +140,6 @@
         "Name[sv]": "Pulse Connect Secure (openconnect)",
         "Name[tr]": "Pulse Connect Secure (openconnect)",
         "Name[uk]": "Pulse Connect Secure (openconnect)",
-        "Name[x-test]": "xxPulse Connect Secure (openconnect)xx",
         "Name[zh_CN]": "Pulse Connect Secure (openconnect)",
         "Name[zh_TW]": "Pulse Connect Secure (openconnect)",
         "Version": "0.1",

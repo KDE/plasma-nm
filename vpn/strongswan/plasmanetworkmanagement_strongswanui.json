@@ -40,7 +40,6 @@
                 "Name[ta]": "லூக்காஸ் டிங்க்குள்",
                 "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
-                "Name[x-test]": "xxLukáš Tinklxx",
                 "Name[zh_CN]": "Lukáš Tinkl",
                 "Name[zh_TW]": "Lukáš Tinkl"
             }
@@ -81,7 +80,6 @@
         "Description[sv]": "IPsec, IKEv1, IKEv2-baserad VPN",
         "Description[tr]": "IPsec, IKEv1, IKEv2 tabanlı VPN",
         "Description[uk]": "VPN на основі IPsec, IKEv1, IKEv2",
-        "Description[x-test]": "xxIPsec, IKEv1, IKEv2 based VPNxx",
         "Description[zh_CN]": "基于 IPsec、IKEv1、IKEv2 的 VPN",
         "Description[zh_TW]": "基於 IPsec, IKEv1, IKEv2 的 VPN",
         "EnabledByDefault": false,
@@ -133,7 +131,6 @@
         "Name[sv]": "IPsec-baserad VPN (strongswan)",
         "Name[tr]": "IPsec tabanlı VPN (strongswan)",
         "Name[uk]": "VPN на основі IPsec (strongswan)",
-        "Name[x-test]": "xxIPsec based VPN (strongswan)xx",
         "Name[zh_CN]": "基于 IPsec 的 VPN (strongswan)",
         "Name[zh_TW]": "以 IPsec 為底的 VPN (strongswan)",
         "Version": "0.1",

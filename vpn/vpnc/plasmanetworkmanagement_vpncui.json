@@ -40,7 +40,6 @@
                 "Name[ta]": "லூக்காஸ் டிங்க்குள்",
                 "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
-                "Name[x-test]": "xxLukáš Tinklxx",
                 "Name[zh_CN]": "Lukáš Tinkl",
                 "Name[zh_TW]": "Lukáš Tinkl"
             }
@@ -81,7 +80,6 @@
         "Description[sv]": "Kompatibel med olika Cisco, Juniper, Netscreen och Sonicwall IPsec-baserade VPN-förmedlingsnoder",
         "Description[tr]": "Çeşitli Cisco, Juniper, Netscreen ve Sonicwall IPsec tabanlı VPN ağ geçitleri ile uyumlu",
         "Description[uk]": "Сумісний із різноманітними шлюзами VPN Cisco, Juniper, Netscreen та Sonicwall на основі IPsec",
-        "Description[x-test]": "xxCompatible with various Cisco, Juniper, Netscreen and Sonicwall IPsec-based VPN gatewaysxx",
         "Description[zh_CN]": "兼容多种 Cisco、Juniper、Netscreen 和 Sonicwall 基于 IPsec 的 VPN 网关",
         "Description[zh_TW]": "與多種 Cisco, Juniper, Netscreen 與 Sonicwall IPsec 為基底的 VPN 閘道相容",
         "EnabledByDefault": false,
@@ -133,7 +131,6 @@
         "Name[sv]": "Cisco-kompatibel VPN (vpnc)",
         "Name[tr]": "Cisco Uyumlu VPN (vpnc)",
         "Name[uk]": "Сумісний із Cisco VPN (vpnc)",
-        "Name[x-test]": "xxCisco Compatible VPN (vpnc)xx",
         "Name[zh_CN]": "Cisco 兼容 VPN (vpnc)",
         "Name[zh_TW]": "Cisco 相容 VPN (vpnc)",
         "Version": "0.1",

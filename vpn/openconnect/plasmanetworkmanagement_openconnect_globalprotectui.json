@@ -40,7 +40,6 @@
                 "Name[ta]": "ஜான் குரூலிச்",
                 "Name[tr]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
-                "Name[x-test]": "xxJan Grulichxx",
                 "Name[zh_CN]": "Jan Grulich",
                 "Name[zh_TW]": "Jan Grulich"
             }
@@ -81,7 +80,6 @@
         "Description[sv]": "Kompatibel med PAN GlobalProtect SSL VPN",
         "Description[tr]": "PAN GlobalProtect SSL VPN ile uyumlu",
         "Description[uk]": "Сумісний із VPN SSL PAN GlobalProtect",
-        "Description[x-test]": "xxCompatible with PAN GlobalProtect SSL VPNxx",
         "Description[zh_CN]": "兼容 PAN GlobalProtect SSL VPN",
         "Description[zh_TW]": "與 PAN GlobalProtect SSL VPN 相容",
         "EnabledByDefault": false,
@@ -127,7 +125,6 @@
         "Name[sv]": "PAN Global Protect (openconnect)",
         "Name[tr]": "PAN küresel koruma (openconnect)",
         "Name[uk]": "Загальний захист PAN (openconnect)",
-        "Name[x-test]": "xxPAN Global Protect (openconnect)xx",
         "Name[zh_CN]": "PAN Global Protect (openconnect)",
         "Name[zh_TW]": "PAN Global Protect 全域保護 (openconnect)",
         "Version": "0.1",

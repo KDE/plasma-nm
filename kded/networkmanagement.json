@@ -37,7 +37,6 @@
         "Description[ta]": "NetworkManager பின்னணி சேவைக்கு கடவுச்சொற்களை வழங்கும்",
         "Description[tr]": "AğYönetici ardalan sürecine gizleri sağlar",
         "Description[uk]": "Надає реєстраційні дані фоновій службі NetworkManager",
-        "Description[x-test]": "xxProvides secrets to the NetworkManager daemonxx",
         "Description[zh_CN]": "为 NetworkManager 守护程序提供密码",
         "Description[zh_TW]": "提供秘密予 NetworkManager 伺服程式",
         "Name": "Plasma Network Management module",
@@ -83,7 +82,6 @@
         "Name[ta]": "பிளாஸ்மா பிணைய மேலாண்மை கூறு",
         "Name[tr]": "Plasma Ağ Yönetim Modülü",
         "Name[uk]": "Модуль керування мережею Плазми",
-        "Name[x-test]": "xxPlasma Network Management modulexx",
         "Name[zh_CN]": "Plasma 网络管理模块",
         "Name[zh_TW]": "Plasma 網路管理模組"
     },

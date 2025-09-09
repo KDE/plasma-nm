@@ -40,7 +40,6 @@
                 "Name[ta]": "ஜான் குரூலிச்",
                 "Name[tr]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
-                "Name[x-test]": "xxJan Grulichxx",
                 "Name[zh_CN]": "Jan Grulich",
                 "Name[zh_TW]": "Jan Grulich"
             }
@@ -81,7 +80,6 @@
         "Description[sv]": "Kompatibel med Juniper Network Connect",
         "Description[tr]": "Juniper Network Connect ile uyumlu",
         "Description[uk]": "Сумісний із Juniper Network Connect",
-        "Description[x-test]": "xxCompatible with Juniper Network Connectxx",
         "Description[zh_CN]": "兼容 Juniper Network Connect",
         "Description[zh_TW]": "與 Juniper Network Connect 相容",
         "EnabledByDefault": false,
@@ -124,7 +122,6 @@
         "Name[sv]": "Juniper SSL VPN (openconnect)",
         "Name[tr]": "Juniper SSL VPN (openconnect)",
         "Name[uk]": "Juniper SSL VPN (openconnect)",
-        "Name[x-test]": "xxJuniper SSL VPN (openconnect)xx",
         "Name[zh_CN]": "Juniper SSL VPN (openconnect)",
         "Name[zh_TW]": "Juniper SSL VPN (openconnect)",
         "Version": "0.1",

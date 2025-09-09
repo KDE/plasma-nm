@@ -40,7 +40,6 @@
                 "Name[ta]": "லூக்காஸ் டிங்க்குள்",
                 "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
-                "Name[x-test]": "xxLukáš Tinklxx",
                 "Name[zh_CN]": "Lukáš Tinkl",
                 "Name[zh_TW]": "Lukáš Tinkl"
             }
@@ -81,7 +80,6 @@
         "Description[sv]": "Kompatibel med Microsoft och andra PPTP VPN-servrar",
         "Description[tr]": "Microsoft ve diğer PPTP VPN sunucuları ile uyumlu",
         "Description[uk]": "Сумісні з Microsoft та іншими серверами VPN PPTP",
-        "Description[x-test]": "xxCompatible with Microsoft and other PPTP VPN serversxx",
         "Description[zh_CN]": "兼容 Microsoft 和其他 PPTP VPN 服务器",
         "Description[zh_TW]": "與微軟和其他 PPTP VPN 伺服器相容",
         "EnabledByDefault": false,
@@ -133,7 +131,6 @@
         "Name[sv]": "Punkt-till-punkt tunnelprotkoll (PPTP)",
         "Name[tr]": "Noktadan Noktaya Tünel Protokolü (PPTP)",
         "Name[uk]": "Протокол тунелювання точка-до-точки (PPTP)",
-        "Name[x-test]": "xxPoint-to-Point Tunneling Protocol (PPTP)xx",
         "Name[zh_CN]": "点对点隧道协议 (PPTP)",
         "Name[zh_TW]": "點對點通道協定 (PPTP)",
         "Version": "0.1",

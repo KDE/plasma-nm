@@ -40,7 +40,6 @@
                 "Name[ta]": "டோபியாஸ் ஃபெல்லா",
                 "Name[tr]": "Tobias Fella",
                 "Name[uk]": "Tobias Fella",
-                "Name[x-test]": "xxTobias Fellaxx",
                 "Name[zh_CN]": "Tobias Fella",
                 "Name[zh_TW]": "Tobias Fella"
             }
@@ -82,7 +81,6 @@
         "Description[ta]": "அருகலை ஹாட்ஸ்பாட்டு",
         "Description[tr]": "Wi-Fi Kişisel Erişim Noktası",
         "Description[uk]": "Хот-спот Wi-Fi",
-        "Description[x-test]": "xxWi-Fi Hotspotxx",
         "Description[zh_CN]": "Wi-Fi 热点",
         "EnabledByDefault": true,
         "FormFactors": [
@@ -135,7 +133,6 @@
         "Name[ta]": "ஹாட்ஸ்பாட்",
         "Name[tr]": "Kişisel Erişim Noktası",
         "Name[uk]": "Хот-спот",
-        "Name[x-test]": "xxHotspotxx",
         "Name[zh_CN]": "热点",
         "Name[zh_TW]": "熱點",
         "ServiceTypes": [

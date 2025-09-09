@@ -40,7 +40,6 @@
                 "Name[ta]": "ஜான் குரூலிச், லூக்காஸ் டிங்க்குள்",
                 "Name[tr]": "Jan Grulich,Lukáš Tinkl",
                 "Name[uk]": "Jan Grulich, Lukáš Tinkl",
-                "Name[x-test]": "xxJan Grulich,Lukáš Tinklxx",
                 "Name[zh_CN]": "Jan Grulich,Lukáš Tinkl",
                 "Name[zh_TW]": "Jan Grulich,Lukáš Tinkl"
             }
@@ -84,7 +83,6 @@
         "Description[ta]": "பிணைய நிலை மற்றும் கட்டுப்பாடு",
         "Description[tr]": "Ağ denetim ve durum izleme",
         "Description[uk]": "Стеження за станом і керування мережею",
-        "Description[x-test]": "xxNetwork status and controlxx",
         "Description[zh_CN]": "网络状态和控制",
         "Description[zh_TW]": "網路狀態與控制",
         "EnabledByDefault": true,
@@ -146,7 +144,6 @@
         "Name[tg]": "Шабакаҳо",
         "Name[tr]": "Ağlar",
         "Name[uk]": "Мережі",
-        "Name[x-test]": "xxNetworksxx",
         "Name[zh_CN]": "网络",
         "Name[zh_TW]": "網路",
         "ServiceTypes": [
@@ -178,7 +175,6 @@
     "X-KDE-Keywords[sl]": "omrežje,internet,ethernet,brezžično,wifi,wlan,vpn",
     "X-KDE-Keywords[sv]": "nätverk,internet,ethernet,trådlös,wifi,wlan,vpn",
     "X-KDE-Keywords[uk]": "network,internet,ethernet,wireless,wifi,wlan,vpn,мережа,інтернет,езернет,бездротова,вайфай,влан,віпіен",
-    "X-KDE-Keywords[x-test]": "xxnetworkxx,xxinternetxx,xxethernetxx,xxwirelessxx,xxwifixx,xxwlanxx,xxvpnxx",
     "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-DBusActivationService": "org.freedesktop.NetworkManager",
     "X-Plasma-MainScript": "ui/main.qml",

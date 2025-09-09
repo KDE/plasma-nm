@@ -39,7 +39,6 @@
                 "Name[ta]": "கே.டீ.யீ. பிளாஸ்மா",
                 "Name[tr]": "KDE Plasma",
                 "Name[uk]": "Плазма KDE",
-                "Name[x-test]": "xxKDE plasmaxx",
                 "Name[zh_CN]": "KDE plasma"
             }
         ],
@@ -79,7 +78,6 @@
         "Description[sv]": "Kompatibel med F5 BIG-IP SSL VPN",
         "Description[tr]": "F5 BIG-IP SSL VPN ile uyumlu",
         "Description[uk]": "Сумісний із F5 BIG-IP SSL VPN",
-        "Description[x-test]": "xxCompatible with F5 BIG-IP SSL VPNxx",
         "Description[zh_CN]": "兼容 F5 BIG-IP SSL VPN ",
         "EnabledByDefault": false,
         "Icon": "",
@@ -120,7 +118,6 @@
         "Name[sv]": "F5 BIG-IP-kompatibel VPN (openconnect)",
         "Name[tr]": "F5 BIG-IP Uyumlu VPN (openconnect)",
         "Name[uk]": "VPN, сумісний з F5 BIG-IP (openconnect)",
-        "Name[x-test]": "xxF5 BIG-IP Compatible VPN (openconnect)xx",
         "Name[zh_CN]": "F5 BIG-IP 兼容 VPN (openconnect)",
         "Version": "0.1",
         "Website": ""

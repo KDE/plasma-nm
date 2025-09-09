@@ -40,7 +40,6 @@
                 "Name[ta]": "லூக்காஸ் டிங்க்குள்",
                 "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
-                "Name[x-test]": "xxLukáš Tinklxx",
                 "Name[zh_CN]": "Lukáš Tinkl",
                 "Name[zh_TW]": "Lukáš Tinkl"
             }
@@ -81,7 +80,6 @@
         "Description[sv]": "Kompatibel med OpenVPN-server",
         "Description[tr]": "OpenVPN sunucusuyla uyumlu",
         "Description[uk]": "Сумісний із сервером OpenVPN",
-        "Description[x-test]": "xxCompatible with the OpenVPN serverxx",
         "Description[zh_CN]": "兼容 OpenVPN 服务器",
         "Description[zh_TW]": "與 OpenVPN 伺服器相容",
         "EnabledByDefault": false,
@@ -138,7 +136,6 @@
         "Name[tr]": "OpenVPN",
         "Name[ug]": "OpenVPN",
         "Name[uk]": "OpenVPN",
-        "Name[x-test]": "xxOpenVPNxx",
         "Name[zh_CN]": "OpenVPN",
         "Name[zh_TW]": "OpenVPN",
         "Version": "0.1",

@@ -38,7 +38,6 @@
         "Description[ta]": "உங்கள் பிணைய இணைப்புகளை திருத்துங்கள்",
         "Description[tr]": "Ağ Bağlantılarınızı düzenleyin",
         "Description[uk]": "Редагування ваших записів з’єднань з мережею",
-        "Description[x-test]": "xxEdit your Network Connectionsxx",
         "Description[zh_CN]": "编辑您的网络连接",
         "Description[zh_TW]": "編輯您的網路連線",
         "Icon": "preferences-system-network",
@@ -91,7 +90,6 @@
         "Name[tg]": "Пайвастҳо",
         "Name[tr]": "Bağlantılar",
         "Name[uk]": "З’єднання",
-        "Name[x-test]": "xxConnectionsxx",
         "Name[zh_CN]": "连接",
         "Name[zh_TW]": "連線",
         "ServiceTypes": [
@@ -125,7 +123,6 @@
     "X-KDE-Keywords[sl]": "omrežha,wifi,wi-fi,ethernet,mobilna,cdma,gsm,lte,wimax,apn,nosilec,2g,3g,4g,5g,5ge,široko pasovni,internet,promet,povezave,spletišča,splet,DSL,infiniband,ožičena,brezžična,bssid,ipv4,ipv6,mac naslov,ip,dostopna točka,dns,prehod,wep,leap,wpa,wpa2,wpa3,dhcp,skupna omrežja,zasebno omrežje,javno omrežje,vpn,openvpn,wireguard,fortinet,juniper,l2tp,pptp,sstp,ssh,iodine,ipsec,anyconnect,openconnect",
     "X-KDE-Keywords[sv]": "nätverk,wifi,wi-fi,ethernet,mobil,cdma,gsm,lte,wimax,apn,operatör,2g,3g,4g,5g,5ge,bredband,internet,trafik,anslutningar,webbplatser,webb,DSL,infiniband,trådbunden,trådlös,bssid,ipv4,ipv6,mac adress,ip,åtkomstpunkt,dns,förmedlingsnod,wep,leap,wpa,wpa2,wpa3,dhcp,delat nätverk,privat nätverk,öppet nätverk,vpn,openvpn,wireguard,fortinet,juniper,l2tp,pptp,sstp,ssh,iodine,ipsec,anyconnect,openconnect",
     "X-KDE-Keywords[uk]": "networks,wifi,wi-fi,ethernet,mobile,cdma,gsm,lte,wimax,apn,carrier,2g,3g,4g,5g,5ge,broadband,internet,traffic,connections,websites,web,DSL,infiniband,wired,wireless,bssid,ipv4,ipv6,mac address,ip,access point,dns,gateway,wep,leap,wpa,wpa2,wpa3,dhcp,shared network,private network,public network,vpn,openvpn,wireguard,fortinet,juniper,l2tp,pptp,sstp,ssh,iodine,ipsec,anyconnect,openconnect,мережі,вайфай,вай-фай,езернет,мобільна,сідіемей,цдма,жсм,лте,лтє,ваймакс,апн,носій,2ж,3ж,4ж,5ж,5жє,5же,широкосмугова,інтернет,трафік,з'єднання,вебсайти,веб,деесель,дсл,інфінібенд,дротова,бездротова,бссід,іпв4,іпв6,айпів4,айпів6,мак-адреса,айпі,іп,точка доступу,днс,шлюз,веп,леап,впа,впа2,впа3,діейчсіпі,дхсп,спільна мережа,приватна мережа,загальнодоступна мережа,публічна мережа,вепеен,впн,оупенвпн,опенвпан,вайргард,вірегвард,фортінет,джуніпер,л2тп,пптп,сстп,есесейч,ссх,іодіне,айпісек,іпсек,еніконект,оупенконект,опенконект",
-    "X-KDE-Keywords[x-test]": "xxnetworksxx,xxwifixx,xxwi-fixx,xxethernetxx,xxmobilexx,xxcdmaxx,xxgsmxx,xxltexx,xxwimaxxx,xxapnxx,xxcarrierxx,xx2gxx,xx3gxx,xx4gxx,xx5gxx,xx5gexx,xxbroadbandxx,xxinternetxx,xxtrafficxx,xxconnectionsxx,xxwebsitesxx,xxwebxx,xxDSLxx,xxinfinibandxx,xxwiredxx,xxwirelessxx,xxbssidxx,xxipv4xx,xxipv6xx,xxmac addressxx,xxipxx,xxaccess pointxx,xxdnsxx,xxgatewayxx,xxwepxx,xxleapxx,xxwpaxx,xxwpa2xx,xxwpa3xx,xxdhcpxx,xxshared networkxx,xxprivate networkxx,xxpublic networkxx,xxvpnxx,xxopenvpnxx,xxwireguardxx,xxfortinetxx,xxjuniperxx,xxl2tpxx,xxpptpxx,xxsstpxx,xxsshxx,xxiodinexx,xxipsecxx,xxanyconnectxx,xxopenconnectxx",
     "X-KDE-ParentApp": "kcontrol",
     "X-KDE-System-Settings-Parent-Category": "network",
     "X-KDE-Weight": 40

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:46+0000\n"
+"POT-Creation-Date: 2025-09-09 01:00+0000\n"
 "PO-Revision-Date: 2017-05-07 21:01+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -39,12 +39,12 @@ msgstr "Morate da se prijavite na ovu mrežu"
 msgid "Log in"
 msgstr "Prijavi me"
 
-#: connectivitymonitor.cpp:92
+#: connectivitymonitor.cpp:97
 #, kde-format
 msgid "Limited Connectivity"
 msgstr ""
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:98
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
@@ -466,29 +466,29 @@ msgstr "Upravljanje roditeljem uređaja promenjeno."
 msgid "Connection '%1' activated."
 msgstr "Veza „%1“ aktivirana."
 
-#: notification.cpp:371
+#: notification.cpp:372
 #, kde-format
 msgid "Connection '%1' deactivated."
 msgstr "Veza „%1“ deaktivirana."
 
-#: notification.cpp:426
+#: notification.cpp:427
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "VPN veza „%1“ aktivirana."
 
-#: notification.cpp:429
+#: notification.cpp:430
 #, fuzzy, kde-format
 #| msgid "VPN connection '%1' activated."
 msgid "VPN connection '%1' failed to activate."
 msgstr "VPN veza „%1“ aktivirana."
 
-#: notification.cpp:432 notification.cpp:440
+#: notification.cpp:433 notification.cpp:441
 #, fuzzy, kde-format
 #| msgid "VPN connection '%1' activated."
 msgid "VPN connection '%1' deactivated."
 msgstr "VPN veza „%1“ aktivirana."
 
-#: notification.cpp:443
+#: notification.cpp:444
 #, fuzzy, kde-format
 #| msgid ""
 #| "The VPN connection changed state because the device it was using was "
@@ -498,25 +498,25 @@ msgid ""
 "disconnected."
 msgstr "Stanje VPN veze promenjeno jer je uređaj koji je koristila nestao."
 
-#: notification.cpp:446
+#: notification.cpp:447
 #, fuzzy, kde-format
 #| msgid "The service providing the VPN connection was stopped."
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "Zaustavljen je servis koji pruža VPN vezu."
 
-#: notification.cpp:449
+#: notification.cpp:450
 #, fuzzy, kde-format
 #| msgid "The IP config of the VPN connection was invalid."
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "IP postava VPN veze nije dobra."
 
 # rewrite-msgid: /timed out/timeout/
-#: notification.cpp:452
+#: notification.cpp:453
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "Prekovreme u pokušaju povezivanja sa VPN servisom."
 
-#: notification.cpp:455
+#: notification.cpp:456
 #, fuzzy, kde-format
 #| msgid ""
 #| "A timeout occurred while starting the service providing the VPN "
@@ -526,24 +526,24 @@ msgid ""
 "'%1'."
 msgstr "Prekovreme u pokretanju servisa koji pruža VPN vezu."
 
-#: notification.cpp:458
+#: notification.cpp:459
 #, fuzzy, kde-format
 #| msgid "Starting the service providing the VPN connection failed."
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "Propalo pokretanje servisa koji pruža VPN vezu."
 
-#: notification.cpp:461
+#: notification.cpp:462
 #, fuzzy, kde-format
 #| msgid "Necessary secrets for the VPN connection were not provided."
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "Neophodne tajne za VPN vezu nisu zadate."
 
-#: notification.cpp:464
+#: notification.cpp:465
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "Autentifikacija na VPN serveru propala."
 
-#: notification.cpp:467
+#: notification.cpp:468
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:status Notification when the device failed due to "
@@ -552,12 +552,12 @@ msgstr "Autentifikacija na VPN serveru propala."
 msgid "The connection was deleted."
 msgstr "Veza je uklonjena."
 
-#: notification.cpp:553
+#: notification.cpp:554
 #, kde-format
 msgid "No Network Connection"
 msgstr "Nema mrežne veze"
 
-#: notification.cpp:554
+#: notification.cpp:555
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Više niste povezani na mrežu."

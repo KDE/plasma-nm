@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:46+0000\n"
+"POT-Creation-Date: 2025-09-09 01:00+0000\n"
 "PO-Revision-Date: 2025-04-18 13:16+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -37,12 +37,12 @@ msgstr "Þú þarft að skrá þig inn á þetta net"
 msgid "Log in"
 msgstr "Skrá inn"
 
-#: connectivitymonitor.cpp:92
+#: connectivitymonitor.cpp:97
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "Takmörkuð tengigeta"
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:98
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
@@ -460,27 +460,27 @@ msgstr "Stjórnun á móðurtæki tækisins breyttist"
 msgid "Connection '%1' activated."
 msgstr "Tenging '%1' virkjuð."
 
-#: notification.cpp:371
+#: notification.cpp:372
 #, kde-format
 msgid "Connection '%1' deactivated."
 msgstr "Tenging '%1' afvirkjuð."
 
-#: notification.cpp:426
+#: notification.cpp:427
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "VPN-tenging '%1' virkjuð."
 
-#: notification.cpp:429
+#: notification.cpp:430
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
 msgstr "Mistókst að virkja VPN-tengingu '%1'."
 
-#: notification.cpp:432 notification.cpp:440
+#: notification.cpp:433 notification.cpp:441
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "VPN-tenging '%1' afvirkjuð."
 
-#: notification.cpp:443
+#: notification.cpp:444
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -489,22 +489,22 @@ msgstr ""
 "VPN-tengingin '%1' var afvirkjuð þar sem tækið sem notaði hana var tekið úr "
 "sambandi."
 
-#: notification.cpp:446
+#: notification.cpp:447
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "Þjónustan sem bauð upp á VPN-tenginguna '%1' var stöðvuð"
 
-#: notification.cpp:449
+#: notification.cpp:450
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "IP-grunnstilling VPN-tengingarinna '%1' var ógild."
 
-#: notification.cpp:452
+#: notification.cpp:453
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "Tilraunin til að tengjast VPN-þjónustunni rann út á tíma."
 
-#: notification.cpp:455
+#: notification.cpp:456
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
@@ -513,32 +513,32 @@ msgstr ""
 "Tímalokun kom upp þegar reynt var að ræsa þjónustuna sem útvegar VPN-"
 "tenginguna '%1'."
 
-#: notification.cpp:458
+#: notification.cpp:459
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "Mistókst að ræsa þjónustuna sem útvegar VPN-tenginguna '%1'."
 
-#: notification.cpp:461
+#: notification.cpp:462
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "Nauðsynleg leyndarmál fyrir VPN-tenginguna '%1' voru ekki gefin upp."
 
-#: notification.cpp:464
+#: notification.cpp:465
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "Auðkenning á VPN-þjóninn mistókst."
 
-#: notification.cpp:467
+#: notification.cpp:468
 #, kde-format
 msgid "The connection was deleted."
 msgstr "Tengingunni var eytt."
 
-#: notification.cpp:553
+#: notification.cpp:554
 #, kde-format
 msgid "No Network Connection"
 msgstr "Engin nettenging"
 
-#: notification.cpp:554
+#: notification.cpp:555
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Þú ert ekki lengur með nettengingu."

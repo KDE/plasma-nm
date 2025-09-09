@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:46+0000\n"
+"POT-Creation-Date: 2025-09-09 01:00+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -38,12 +38,12 @@ msgstr "您需要登录到此网络"
 msgid "Log in"
 msgstr "登录"
 
-#: connectivitymonitor.cpp:92
+#: connectivitymonitor.cpp:97
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "网络连接受限"
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:98
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
@@ -461,81 +461,81 @@ msgstr "设备的上级设备的管理已被更改"
 msgid "Connection '%1' activated."
 msgstr "连接“%1”已激活。"
 
-#: notification.cpp:371
+#: notification.cpp:372
 #, kde-format
 msgid "Connection '%1' deactivated."
 msgstr "连接“%1”已禁用。"
 
-#: notification.cpp:426
+#: notification.cpp:427
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "VPN 连接“%1”已激活。"
 
-#: notification.cpp:429
+#: notification.cpp:430
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
 msgstr "VPN 连接“%1”激活失败。"
 
-#: notification.cpp:432 notification.cpp:440
+#: notification.cpp:433 notification.cpp:441
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "VPN 连接“%1”已禁用。"
 
-#: notification.cpp:443
+#: notification.cpp:444
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
 msgstr "VPN 连接“%1”已禁用，因为它使用的设备已断开。"
 
-#: notification.cpp:446
+#: notification.cpp:447
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "提供 VPN 连接“%1”的服务已停止。"
 
-#: notification.cpp:449
+#: notification.cpp:450
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "VPN 连接“%1”的 IP 配置无效。"
 
-#: notification.cpp:452
+#: notification.cpp:453
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "连接尝试的 VPN 服务超时"
 
-#: notification.cpp:455
+#: notification.cpp:456
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
 msgstr "启动提供 VPN 连接“%1”的服务时超时。"
 
-#: notification.cpp:458
+#: notification.cpp:459
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "启动提供 VPN 连接“%1”的服务失败。"
 
-#: notification.cpp:461
+#: notification.cpp:462
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "没有提供 VPN 连接“%1”需要的密码。"
 
-#: notification.cpp:464
+#: notification.cpp:465
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "到 VPN 服务器的身份验证失败。"
 
-#: notification.cpp:467
+#: notification.cpp:468
 #, kde-format
 msgid "The connection was deleted."
 msgstr "连接已被删除。"
 
-#: notification.cpp:553
+#: notification.cpp:554
 #, kde-format
 msgid "No Network Connection"
 msgstr "没有网络连接"
 
-#: notification.cpp:554
+#: notification.cpp:555
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "您已不再连接到网络。"

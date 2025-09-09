@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:46+0000\n"
+"POT-Creation-Date: 2025-09-09 01:00+0000\n"
 "PO-Revision-Date: 2025-07-29 13:59+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -39,12 +39,12 @@ msgstr "Debe iniciar sesión en esta red"
 msgid "Log in"
 msgstr "Iniciar sesión"
 
-#: connectivitymonitor.cpp:92
+#: connectivitymonitor.cpp:97
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "Conectividad limitada"
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:98
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
@@ -464,27 +464,27 @@ msgstr "La gestión del padre del dispositivo ha cambiado"
 msgid "Connection '%1' activated."
 msgstr "Conexión «%1» activada."
 
-#: notification.cpp:371
+#: notification.cpp:372
 #, kde-format
 msgid "Connection '%1' deactivated."
 msgstr "Conexión «%1» desactivada."
 
-#: notification.cpp:426
+#: notification.cpp:427
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "Se ha activado la conexión VPN «%1»."
 
-#: notification.cpp:429
+#: notification.cpp:430
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
 msgstr "No se ha podido activar la conexión VPN «%1»."
 
-#: notification.cpp:432 notification.cpp:440
+#: notification.cpp:433 notification.cpp:441
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "Se ha desactivado la conexión VPN «%1»."
 
-#: notification.cpp:443
+#: notification.cpp:444
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -493,22 +493,22 @@ msgstr ""
 "La conexión VPN «%1» se ha desactivado porque se ha desconectado el "
 "dispositivo que la estaba usando."
 
-#: notification.cpp:446
+#: notification.cpp:447
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "Se ha detenido el servicio que proporcionaba la conexión VPN «%1»."
 
-#: notification.cpp:449
+#: notification.cpp:450
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "La configuración IP de la conexión VPN «%1» no es válida."
 
-#: notification.cpp:452
+#: notification.cpp:453
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "Se ha agotado el tiempo del intento de conexión con el servicio VPN."
 
-#: notification.cpp:455
+#: notification.cpp:456
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
@@ -517,35 +517,35 @@ msgstr ""
 "Se ha agotado el tiempo durante el inicio del servicio que proporciona la "
 "conexión VPN «%1»."
 
-#: notification.cpp:458
+#: notification.cpp:459
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr ""
 "Ha fallado el inicio del servicio que proporciona la conexión VPN «%1»."
 
-#: notification.cpp:461
+#: notification.cpp:462
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr ""
 "No se han proporcionado las credenciales necesarias para la conexión VPN "
 "«%1»."
 
-#: notification.cpp:464
+#: notification.cpp:465
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "La autenticación con el servidor VPN ha fallado."
 
-#: notification.cpp:467
+#: notification.cpp:468
 #, kde-format
 msgid "The connection was deleted."
 msgstr "Se ha borrado la conexión."
 
-#: notification.cpp:553
+#: notification.cpp:554
 #, kde-format
 msgid "No Network Connection"
 msgstr "Sin conexión de red"
 
-#: notification.cpp:554
+#: notification.cpp:555
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Ya no está conectado a una red."

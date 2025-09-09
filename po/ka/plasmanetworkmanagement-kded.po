@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:46+0000\n"
+"POT-Creation-Date: 2025-09-09 01:00+0000\n"
 "PO-Revision-Date: 2025-07-29 05:21+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -38,12 +38,12 @@ msgstr "ამ ქსელში ავთენტიკაცია გჭი
 msgid "Log in"
 msgstr "შესვლა"
 
-#: connectivitymonitor.cpp:92
+#: connectivitymonitor.cpp:97
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "შეზღუდული შეერთება"
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:98
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
@@ -463,27 +463,27 @@ msgstr "შეიცვალა მშობელი მოწყობილ�
 msgid "Connection '%1' activated."
 msgstr "შეერთება %1 გააქტიურდა."
 
-#: notification.cpp:371
+#: notification.cpp:372
 #, kde-format
 msgid "Connection '%1' deactivated."
 msgstr "შეერთება %1-ის დეაქტივაცია დასრულდა."
 
-#: notification.cpp:426
+#: notification.cpp:427
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "VPN შეერთება %1 გააქტიურდა."
 
-#: notification.cpp:429
+#: notification.cpp:430
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
 msgstr "VPN შეერთების %1 აქტივაციის შეცდომა."
 
-#: notification.cpp:432 notification.cpp:440
+#: notification.cpp:433 notification.cpp:441
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "VPN შეერთება %1 დეაქტივირებულია."
 
-#: notification.cpp:443
+#: notification.cpp:444
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -492,22 +492,22 @@ msgstr ""
 "VPN შეერთება %1 დეაქტივირებულია იმიტომ, რომ გაითიშა მოწყობილობა, რომელსაც ის "
 "იყენებდა."
 
-#: notification.cpp:446
+#: notification.cpp:447
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "სერვისი, რომელიც მოგვაწოდებდა VPN შეერთებას \"%1\", გაჩერებულია."
 
-#: notification.cpp:449
+#: notification.cpp:450
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "VPN შეერთება \"%1\"-ის IP კონფიგურაცია არასწორია."
 
-#: notification.cpp:452
+#: notification.cpp:453
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "VPN სერვისთან მიერთების დრო გავიდა."
 
-#: notification.cpp:455
+#: notification.cpp:456
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
@@ -515,32 +515,32 @@ msgid ""
 msgstr ""
 "სერვისის, რომელიც მოგვაწოდებს VPN შეერთებას \"%1\", გაშვების ვადა გავიდა."
 
-#: notification.cpp:458
+#: notification.cpp:459
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "სერვისის, რომელიც მოგვაწოდებს VPN შეერთებას \"%1\", გაშვების შეცდომა."
 
-#: notification.cpp:461
+#: notification.cpp:462
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "VPN შეერთება \"%1\"-სთვის საჭირო პაროლები მითითებული არაა."
 
-#: notification.cpp:464
+#: notification.cpp:465
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "VPN სერვერზე ავთენტიკაციის შეცდომა."
 
-#: notification.cpp:467
+#: notification.cpp:468
 #, kde-format
 msgid "The connection was deleted."
 msgstr "შეერთება წაშლილია."
 
-#: notification.cpp:553
+#: notification.cpp:554
 #, kde-format
 msgid "No Network Connection"
 msgstr "ქსელური შეერთებების გარეშე"
 
-#: notification.cpp:554
+#: notification.cpp:555
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "ქსელთან მიერთებული აღარ ბრძანდებით."

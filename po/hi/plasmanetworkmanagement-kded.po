@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-06 00:46+0000\n"
+"POT-Creation-Date: 2025-09-09 01:00+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -37,12 +37,12 @@ msgstr "आपको इस नेटवर्क में लॉग इन क
 msgid "Log in"
 msgstr "लॉग इन करें"
 
-#: connectivitymonitor.cpp:92
+#: connectivitymonitor.cpp:97
 #, kde-format
 msgid "Limited Connectivity"
 msgstr "सीमित कनेक्टिविटी"
 
-#: connectivitymonitor.cpp:93
+#: connectivitymonitor.cpp:98
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
@@ -461,27 +461,27 @@ msgstr "डिवाइस पैरेंट का प्रबंधन ब�
 msgid "Connection '%1' activated."
 msgstr "कनेक्शन '%1' सक्रिय."
 
-#: notification.cpp:371
+#: notification.cpp:372
 #, kde-format
 msgid "Connection '%1' deactivated."
 msgstr "कनेक्शन '%1' निष्क्रिय."
 
-#: notification.cpp:426
+#: notification.cpp:427
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "VPN कनेक्शन '%1' सक्रिय."
 
-#: notification.cpp:429
+#: notification.cpp:430
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
 msgstr "VPN कनेक्शन '%1' सक्रिय करने में विफल."
 
-#: notification.cpp:432 notification.cpp:440
+#: notification.cpp:433 notification.cpp:441
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "VPN कनेक्शन '%1' निष्क्रिय."
 
-#: notification.cpp:443
+#: notification.cpp:444
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -490,54 +490,54 @@ msgstr ""
 "VPN कनेक्शन '%1' निष्क्रिय कर दिया गया क्योंकि जिस डिवाइस का वह उपयोग कर रहा था वह "
 "डिस्कनेक्ट हो गया था।"
 
-#: notification.cpp:446
+#: notification.cpp:447
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "VPN कनेक्शन '%1' प्रदान करने वाली सेवा बंद कर दी गई।"
 
-#: notification.cpp:449
+#: notification.cpp:450
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "VPN कनेक्शन '%1' का IP कॉन्फ़िगरेशन अमान्य था."
 
-#: notification.cpp:452
+#: notification.cpp:453
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "VPN सेवा से कनेक्शन का प्रयास समय समाप्त हो गया।"
 
-#: notification.cpp:455
+#: notification.cpp:456
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
 msgstr "VPN कनेक्शन '%1' प्रदान करने वाली सेवा प्रारंभ करते समय समय समाप्त हो गया।"
 
-#: notification.cpp:458
+#: notification.cpp:459
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "VPN कनेक्शन '%1' प्रदान करने वाली सेवा प्रारंभ करने में विफलता।"
 
-#: notification.cpp:461
+#: notification.cpp:462
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "VPN कनेक्शन '%1' के लिए आवश्यक गोपनीय जानकारी उपलब्ध नहीं कराई गई।"
 
-#: notification.cpp:464
+#: notification.cpp:465
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "VPN सर्वर का प्रमाणीकरण विफल हुआ."
 
-#: notification.cpp:467
+#: notification.cpp:468
 #, kde-format
 msgid "The connection was deleted."
 msgstr "कनेक्शन हटा दिया गया."
 
-#: notification.cpp:553
+#: notification.cpp:554
 #, kde-format
 msgid "No Network Connection"
 msgstr "कोई नेटवर्क कनेक्शन नहीं है"
 
-#: notification.cpp:554
+#: notification.cpp:555
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "अब आप किसी नेटवर्क से कनेक्ट नहीं हैं."

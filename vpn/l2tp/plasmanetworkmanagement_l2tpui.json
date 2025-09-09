@@ -46,7 +46,6 @@
                 "Name[ta]": "ஜான் குரூலிச்",
                 "Name[tr]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
-                "Name[x-test]": "xxJan Grulichxx",
                 "Name[zh_CN]": "Jan Grulich",
                 "Name[zh_TW]": "Jan Grulich"
             }
@@ -94,7 +93,6 @@
         "Description[sv]": "Kompatibel med L2TP VPN-servrar",
         "Description[tr]": "L2TP VPN sunucuları ile uyumlu",
         "Description[uk]": "Сумісні з L2TP сервери VPN",
-        "Description[x-test]": "xxCompatible with L2TP VPN serversxx",
         "Description[zh_CN]": "兼容 L2TP VPN 服务器",
         "Description[zh_TW]": "與 L2TP VPN 伺服器相容",
         "EnabledByDefault": false,
@@ -149,7 +147,6 @@
         "Name[sv]": "Lager-2 tunnelprotokoll (L2TP)",
         "Name[tr]": "Katman 2 Tünel Protokolü (L2TP)",
         "Name[uk]": "Протокол тунелювання, шар 2 (L2TP)",
-        "Name[x-test]": "xxLayer 2 Tunneling Protocol (L2TP)xx",
         "Name[zh_CN]": "第二层隧道协议 (L2TP)",
         "Name[zh_TW]": "第二層通道協定（L2TP）",
         "Version": "0.1",

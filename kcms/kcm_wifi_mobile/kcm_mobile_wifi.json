@@ -37,7 +37,6 @@
         "Description[ta]": "கம்பியில்லா பிணையத்திற்கான அமைப்பு",
         "Description[tr]": "Kablosuz ağ ayarları",
         "Description[uk]": "Налаштовування бездротової мережі",
-        "Description[x-test]": "xxWireless network settingxx",
         "Description[zh_CN]": "无线网络设置",
         "Description[zh_TW]": "無線網路設定",
         "FormFactors": [
@@ -88,7 +87,6 @@
         "Name[tg]": "Wi-Fi",
         "Name[tr]": "Wi-Fi",
         "Name[uk]": "Wi-Fi",
-        "Name[x-test]": "xxWi-Fixx",
         "Name[zh_CN]": "Wi-Fi",
         "Name[zh_TW]": "Wi-Fi"
     },
@@ -133,7 +131,6 @@
     "X-KDE-Keywords[tg]": "wifi,шабака",
     "X-KDE-Keywords[tr]": "wifi,kablosuz,wi-fi,ağ",
     "X-KDE-Keywords[uk]": "wifi,network,вайфай,мережа",
-    "X-KDE-Keywords[x-test]": "xxwifixx,xxnetworkxx",
     "X-KDE-Keywords[zh_CN]": "wifi,network,wangluo,wuxian,网络,无线",
     "X-KDE-Keywords[zh_TW]": "wifi,network,網路,無線網路",
     "X-KDE-System-Settings-Parent-Category": "network",

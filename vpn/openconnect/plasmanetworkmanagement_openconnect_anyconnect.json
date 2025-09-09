@@ -48,7 +48,6 @@
                 "Name[ta]": "லூக்காஸ் டிங்க்குள்",
                 "Name[tr]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
-                "Name[x-test]": "xxLukáš Tinklxx",
                 "Name[zh_CN]": "Lukáš Tinkl",
                 "Name[zh_TW]": "Lukáš Tinkl"
             }
@@ -96,7 +95,6 @@
         "Description[sv]": "Kompatibel med Cisco AnyConnect SSL VPN",
         "Description[tr]": "Cisco AnyConnect SSL VPN ile uyumlu",
         "Description[uk]": "VPN, сумісний з Cisco AnyConnect SSL",
-        "Description[x-test]": "xxCompatible with Cisco AnyConnect SSL VPNxx",
         "Description[zh_CN]": "兼容 Cisco AnyConnect SSL VPN",
         "Description[zh_TW]": "與 Cisco AnyConnect SSL VPN 相容",
         "EnabledByDefault": false,
@@ -150,7 +148,6 @@
         "Name[sv]": "Cisco AnyConnect-kompatibel VPN (openconnect)",
         "Name[tr]": "Cisco AnyConnect Uyumlu VPN (openconnect)",
         "Name[uk]": "VPN, сумісний з Cisco AnyConnect (openconnect)",
-        "Name[x-test]": "xxCisco AnyConnect Compatible VPN (openconnect)xx",
         "Name[zh_CN]": "Cisco AnyConnect 兼容 VPN (openconnect)",
         "Name[zh_TW]": "與 Cisco AnyConnect 相容的 VPN (openconnect)",
         "Version": "0.1",

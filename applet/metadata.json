@@ -46,7 +46,6 @@
                 "Name[ta]": "ஜான் குரூலிச், லூக்காஸ் டிங்க்குள்",
                 "Name[tr]": "Jan Grulich,Lukáš Tinkl",
                 "Name[uk]": "Jan Grulich, Lukáš Tinkl",
-                "Name[x-test]": "xxJan Grulich,Lukáš Tinklxx",
                 "Name[zh_CN]": "Jan Grulich,Lukáš Tinkl",
                 "Name[zh_TW]": "Jan Grulich,Lukáš Tinkl"
             }
@@ -97,7 +96,6 @@
         "Description[ta]": "பிணைய நிலை மற்றும் கட்டுப்பாடு",
         "Description[tr]": "Ağ denetim ve durum izleme",
         "Description[uk]": "Стеження за станом і керування мережею",
-        "Description[x-test]": "xxNetwork status and controlxx",
         "Description[zh_CN]": "网络状态和控制",
         "Description[zh_TW]": "網路狀態與控制",
         "EnabledByDefault": true,
@@ -163,7 +161,6 @@
         "Name[tg]": "Шабакаҳо",
         "Name[tr]": "Ağlar",
         "Name[uk]": "Мережі",
-        "Name[x-test]": "xxNetworksxx",
         "Name[zh_CN]": "网络",
         "Name[zh_TW]": "網路",
         "Website": "https://projects.kde.org/projects/kde/workspace/plasma-nm"
@@ -204,7 +201,6 @@
     "X-KDE-Keywords[ta]": "network,internet,ethernet,wireless,wifi,wlan,vpn, பிணையம், இணையம், வலைதளம், அருகலை, வைஃபை",
     "X-KDE-Keywords[tr]": "ağ,internet,ethernet,kablosuz,wireless,wifi,wi-fi,wlan,vpn",
     "X-KDE-Keywords[uk]": "network,internet,ethernet,wireless,wifi,wlan,vpn,мережа,інтернет,езернет,бездротова,вайфай,влан,віпіен",
-    "X-KDE-Keywords[x-test]": "xxnetworkxx,xxinternetxx,xxethernetxx,xxwirelessxx,xxwifixx,xxwlanxx,xxvpnxx",
     "X-KDE-Keywords[zh_CN]": "network,internet,ethernet,wireless,wifi,wlan,vpn,wangluo,hulianwang,yitaiwang,juyuwang,wuxianwangluo,xunizhuanyongwangluo,网络,互联网,以太网,局域网,无线网络,虚拟专用网络",
     "X-KDE-Keywords[zh_TW]": "網路,網絡,網際網路,乙太網路,以太網路,無線",
     "X-Plasma-API-Minimum-Version": "6.0",

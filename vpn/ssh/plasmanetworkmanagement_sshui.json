@@ -46,7 +46,6 @@
                 "Name[ta]": "ஜான் குரூலிச்",
                 "Name[tr]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
-                "Name[x-test]": "xxJan Grulichxx",
                 "Name[zh_CN]": "Jan Grulich",
                 "Name[zh_TW]": "Jan Grulich"
             }
@@ -96,7 +95,6 @@
         "Description[ta]": "SSH சேவையகத்துடன் ஒத்தியங்கக்கூடியது",
         "Description[tr]": "SSH sunucusuyla uyumlu",
         "Description[uk]": "Сумісний з сервером SSH",
-        "Description[x-test]": "xxCompatible with the SSH serverxx",
         "Description[zh_CN]": "兼容 SSH 服务器",
         "Description[zh_TW]": "與 SSH 伺服器相容",
         "EnabledByDefault": false,
@@ -156,7 +154,6 @@
         "Name[tg]": "SSH",
         "Name[tr]": "SSH",
         "Name[uk]": "SSH",
-        "Name[x-test]": "xxSSHxx",
         "Name[zh_CN]": "SSH",
         "Name[zh_TW]": "SSH",
         "Version": "0.1",

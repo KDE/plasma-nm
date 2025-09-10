@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
-"PO-Revision-Date: 2025-03-10 00:00+0200\n"
+"PO-Revision-Date: 2025-09-10 02:05+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: ui/ConnectDialog.qml:57
 #, kde-format
@@ -48,16 +48,14 @@ msgid "Connection Details"
 msgstr "Išsamiau apie ryšį"
 
 #: ui/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Connect"
-msgstr "Prisijungti prie"
+msgstr "Prisijungti"
 
 #: ui/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Disconnect"
-msgstr "Prisijungti prie"
+msgstr "Atsijungti"
 
 #: ui/ConnectionItemDelegate.qml:111
 #, kde-format
@@ -216,7 +214,7 @@ msgstr "IP nuostatos"
 #: ui/NetworkSettings.qml:179
 #, kde-format
 msgid "Method"
-msgstr ""
+msgstr "Metodas"
 
 #: ui/NetworkSettings.qml:180
 #, kde-format

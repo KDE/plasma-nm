@@ -203,10 +203,10 @@ bool Configuration::systemConnectionsByDefault() const
     KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        return grp.readEntry(QStringLiteral("SystemConnectionsByDefault"), false);
+        return grp.readEntry(QStringLiteral("SystemConnectionsByDefault"), true);
     }
 
-    return false;
+    return true;
 }
 
 void Configuration::setSystemConnectionsByDefault(bool opt)

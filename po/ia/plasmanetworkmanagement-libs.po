@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2014, 2020, 2021, 2022, 2023, 2024 Giovanni Sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2014, 2020, 2021, 2022, 2023, 2024, 2025 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2024-12-18 18:08+0100\n"
+"PO-Revision-Date: 2025-09-12 12:38+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -125,7 +125,7 @@ msgstr "IPv4"
 #: editor/connectioneditorbase.cpp:493
 #, kde-format
 msgid "Failed to get secrets for %1"
-msgstr "Il falleva a btener secretos per %1"
+msgstr "Il falleva a obtener secretos per %1"
 
 #: editor/connectioneditordialog.cpp:33
 #, kde-format
@@ -1106,11 +1106,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Metric"
+msgstr "Route Metric:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -3549,17 +3547,13 @@ msgid "The connection type is WireGuard"
 msgstr "Le typo de connexion es WireGuard"
 
 #: models/networkmodelitem.cpp:348
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip real user name is not available"
-#| msgid "Not Available"
+#, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr "Non disponibile"
+msgstr "Disponibile"
 
 #: models/networkmodelitem.cpp:354
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Connectite"
@@ -3569,7 +3563,7 @@ msgstr "Connectite"
 msgctxt ""
 "@title:column header for list of previously connected network connections"
 msgid "Previously Used, Unavailable"
-msgstr ""
+msgstr "Previemente usate, Non disponibile"
 
 #: models/networkmodelitem.cpp:594
 #, kde-format
@@ -3805,11 +3799,10 @@ msgid "Connected to %1"
 msgstr "Connectite a %1"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "Le gerente de rete NetworkManager non es executante"
+msgstr "Le servicio NetworkManager non es executante"
 
 #: networkstatus.cpp:261
 #, kde-format

@@ -1,0 +1,16 @@
+{
+    "Categories": "Qt;KDE;X-KDE-settings-system;",
+    "KPlugin": {
+        "Description": "Wired network settings",
+        "FormFactors": [
+            "handset",
+            "tablet",
+            "mediacenter"
+        ],
+        "Icon": "network-wired-symbolic",
+        "Name": "Wired Network"
+    },
+    "X-KDE-Keywords": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking",
+    "X-KDE-System-Settings-Parent-Category": "network",
+    "X-KDE-Weight": 70
+}

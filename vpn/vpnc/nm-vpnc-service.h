@@ -49,5 +49,6 @@
 
 #define NM_VPNC_VENDOR_CISCO "cisco"
 #define NM_VPNC_VENDOR_NETSCREEN "netscreen"
+#define NM_VPNC_VENDOR_FORTIGATE "fortigate"
 
 #endif /* NM_VPNC_SERVICE_H */

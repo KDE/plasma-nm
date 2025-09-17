@@ -22,6 +22,7 @@ VpncAdvancedWidget::VpncAdvancedWidget(const NetworkManager::VpnSetting::Ptr &se
     // vendor
     m_ui->vendor->addItem(i18nc("VPNC vendor name", "Cisco"), NM_VPNC_VENDOR_CISCO);
     m_ui->vendor->addItem(i18nc("VPNC vendor name", "Netscreen"), NM_VPNC_VENDOR_NETSCREEN);
+    m_ui->vendor->addItem(i18nc("VPNC vendor name", "Fortigate"), NM_VPNC_VENDOR_FORTIGATE);
 
     // encryption
     m_ui->encryption->addItem(i18nc("VPNC encryption method", "Secure (default)"));

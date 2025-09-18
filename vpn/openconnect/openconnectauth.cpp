@@ -971,14 +971,13 @@ void OpenconnectAuthWidget::viewServerLogToggled(bool toggled)
     d->ui.lblLogLevel->setVisible(toggled);
     d->ui.cmbLogLevel->setVisible(toggled);
     if (toggled) {
-        delete d->ui.verticalLayout->takeAt(5);
+        d->ui.bottomSpacer->changeSize(0, 0, QSizePolicy::Minimum, QSizePolicy::Minimum);
         QSizePolicy policy = d->ui.serverLogBox->sizePolicy();
         policy.setVerticalPolicy(QSizePolicy::Expanding);
         d->ui.serverLogBox->setSizePolicy(policy);
         d->ui.serverLog->setVisible(true);
     } else {
-        auto verticalSpacer = new QSpacerItem(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
-        d->ui.verticalLayout->addItem(verticalSpacer);
+        d->ui.bottomSpacer->changeSize(0, 0, QSizePolicy::Minimum, QSizePolicy::Expanding);
         d->ui.serverLog->setVisible(false);
         QSizePolicy policy = d->ui.serverLogBox->sizePolicy();
         policy.setVerticalPolicy(QSizePolicy::Fixed);

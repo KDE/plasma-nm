@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
-"PO-Revision-Date: 2025-04-18 13:11+0000\n"
+"PO-Revision-Date: 2025-09-17 00:03+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: ui/ConnectDialog.qml:57
 #, kde-format
@@ -47,26 +47,24 @@ msgid "Connection Details"
 msgstr "Upplýsingar um tengingu"
 
 #: ui/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Connect"
-msgstr "Tengjast við"
+msgstr "Tengjast"
 
 #: ui/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Disconnect"
-msgstr "Tengjast við"
+msgstr "Aftengjast"
 
 #: ui/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Grunnstilla"
 
 #: ui/ConnectionItemDelegate.qml:120
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Eyða"
 
 #: ui/ConnectionItemDelegate.qml:147
 #, kde-format
@@ -215,7 +213,7 @@ msgstr "Stillingar IP-tölu"
 #: ui/NetworkSettings.qml:179
 #, kde-format
 msgid "Method"
-msgstr ""
+msgstr "Aðferð"
 
 #: ui/NetworkSettings.qml:180
 #, kde-format

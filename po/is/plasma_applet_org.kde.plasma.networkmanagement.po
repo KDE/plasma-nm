@@ -9,14 +9,14 @@ msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-01 00:45+0000\n"
-"PO-Revision-Date: 2025-04-18 13:11+0000\n"
+"PO-Revision-Date: 2025-09-17 11:23+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.3\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "\n"
 "\n"
@@ -33,11 +33,10 @@ msgid "Disconnect"
 msgstr "Aftengjast"
 
 #: ConnectionItem.qml:90
-#, fuzzy, kde-format
-#| msgid "Shared Key"
+#, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr "Netprentari"
+msgstr "Deila"
 
 #: ConnectionItem.qml:96
 #, kde-format
@@ -65,11 +64,10 @@ msgstr ""
 "er %2 kibibæti á sekúndu"
 
 #: ConnectionItem.qml:298
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Tengt, ↓ %1/s, ↑ %2/s"
+msgstr "↓ %1/s, ↑ %2/s"
 
 #: ConnectionListPage.qml:33
 #, kde-format
@@ -88,26 +86,22 @@ msgid "Airplane mode is enabled"
 msgstr "Flugstilling er virk"
 
 #: ConnectionListPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Slökkt er á þráðlausu neti og farsímaneti"
+msgstr "Slökkt er á Wi-Fi neti og farsímaneti"
 
 #: ConnectionListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "Slökkt er á þráðlausu neti"
+msgstr "Slökkt er á Wi-Fi neti"
 
 #: ConnectionListPage.qml:127
-#, fuzzy, kde-format
-#| msgid "The name of the wireless network"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr "Heiti þráðlausu tengingarinnar"
+msgstr "Leita að Wi-Fi neti"
 
 #: ConnectionListPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
 msgstr "Slökkt er á farsímaneti"
 
@@ -125,25 +119,25 @@ msgstr "Engar tiltækar tengingar"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "Slökktu á flugstillingu til að leita að netum"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "Kveiktu á Wi-Fi neti eða farsímagögnum til að leita að netum"
 
 #: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "Kveiktu á Wi-Fi til að leita að netum"
 
 #: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "Kveiktu á farsímagögnum til að leita að netum"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -173,8 +167,7 @@ msgid "Enable Wi-Fi"
 msgstr "Kveikja á Wi-Fi"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
 msgstr "Kveikja á farsímaneti"
 
@@ -205,14 +198,12 @@ msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr "Skannaðu þennan QR-kóða með öðru tæki til að tengjast netinu \"%1\"."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "Lykilorð:"
+msgstr "Wi-Fi lykilorð:"
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
 msgstr "Kveikja á farsímaneti"
 
@@ -237,7 +228,7 @@ msgstr "Aðgangsstaður"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "Get ekki búið til aðgangsstað því Wi-Fi er óvirkt."
 
 #: Toolbar.qml:181
 #, kde-format
@@ -246,17 +237,17 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"Get ekki búið til aðgangsstað því allir þráðlausir sendar eru í notkun. "
+"Aftengdu þig frá núverandi Wi-Fi neti eða tengstu við annan þráðlausan sendi."
 
 #: Toolbar.qml:183
-#, fuzzy, kde-format
-#| msgid "Disable Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Gera aðgangsstað óvirkan"
 
 #: Toolbar.qml:185
-#, fuzzy, kde-format
-#| msgid "Create Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Búa til aðgangsstað"

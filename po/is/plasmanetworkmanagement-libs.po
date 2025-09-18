@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-04-18 13:17+0000\n"
+"PO-Revision-Date: 2025-09-17 12:38+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
 "Language: is\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.3\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -1108,11 +1108,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Mælikvarði (metric)"
+msgstr "Leiðarmæligildi:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -1125,6 +1123,12 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Stigatala sem auðveldar kerfinu að finna bestu leiðina til að gagnapakkar "
+"komist á áfangastað,\n"
+"út frá þáttum eins og fjarlægð, töfum og áreiðanleika.\n"
+"\n"
+"Sjálfgefna gildið -1 þýðir að NetworkManager velur sjálfur og hefur umsjón "
+"með mæligildi leiðarinnar."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97
@@ -3540,17 +3544,13 @@ msgid "The connection type is WireGuard"
 msgstr "Tegund tengingarinnar er WireGuard"
 
 #: models/networkmodelitem.cpp:348
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip real user name is not available"
-#| msgid "Not Available"
+#, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr "Ekki tiltækt"
+msgstr "Tiltækt"
 
 #: models/networkmodelitem.cpp:354
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Tengt"
@@ -3560,7 +3560,7 @@ msgstr "Tengt"
 msgctxt ""
 "@title:column header for list of previously connected network connections"
 msgid "Previously Used, Unavailable"
-msgstr ""
+msgstr "Notað áður, ekki tiltækt"
 
 #: models/networkmodelitem.cpp:594
 #, kde-format
@@ -3796,11 +3796,10 @@ msgid "Connected to %1"
 msgstr "Tengt við %1"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "NetworkManager er ekki í gangi"
+msgstr "NetworkManager-þjónusta er ekki í gangi"
 
 #: networkstatus.cpp:261
 #, kde-format

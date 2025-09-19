@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2023-12-23 01:46+0000\n"
+"POT-Creation-Date: 2025-09-19 00:44+0000\n"
 "PO-Revision-Date: 2024-02-07 11:37+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -277,91 +277,97 @@ msgctxt "VPNC vendor name"
 msgid "Netscreen"
 msgstr "Netscreen"
 
-#: vpncadvancedwidget.cpp:27
+#: vpncadvancedwidget.cpp:25
+#, kde-format
+msgctxt "VPNC vendor name"
+msgid "Fortigate"
+msgstr ""
+
+#: vpncadvancedwidget.cpp:28
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
 msgstr "Защищённое (по умолчанию)"
 
-#: vpncadvancedwidget.cpp:28
+#: vpncadvancedwidget.cpp:29
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Weak (DES encryption, use with caution)"
 msgstr "Слабое (шифрование DES, использовать с осторожностью)"
 
-#: vpncadvancedwidget.cpp:29
+#: vpncadvancedwidget.cpp:30
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
 msgstr "Нет (полностью небезопасно)"
 
-#: vpncadvancedwidget.cpp:32
+#: vpncadvancedwidget.cpp:33
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
 msgstr "NAT-T если доступен (по умолчанию)"
 
-#: vpncadvancedwidget.cpp:33
+#: vpncadvancedwidget.cpp:34
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
 msgstr "Всегда NAT-T"
 
-#: vpncadvancedwidget.cpp:34
+#: vpncadvancedwidget.cpp:35
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "Cisco UDP"
 msgstr "Cisco UDP"
 
-#: vpncadvancedwidget.cpp:35
+#: vpncadvancedwidget.cpp:36
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "Disabled"
 msgstr "Отключено"
 
-#: vpncadvancedwidget.cpp:38
+#: vpncadvancedwidget.cpp:39
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 1"
 msgstr "Группа DH 1"
 
-#: vpncadvancedwidget.cpp:39
+#: vpncadvancedwidget.cpp:40
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 2 (default)"
 msgstr "Группа DH 2 (по умолчанию)"
 
-#: vpncadvancedwidget.cpp:40
+#: vpncadvancedwidget.cpp:41
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 5"
 msgstr "Группа DH 5"
 
-#: vpncadvancedwidget.cpp:43
+#: vpncadvancedwidget.cpp:44
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
 msgstr "Сервер (по умолчанию)"
 
-#: vpncadvancedwidget.cpp:44
+#: vpncadvancedwidget.cpp:45
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "None"
 msgstr "Нет"
 
-#: vpncadvancedwidget.cpp:45
+#: vpncadvancedwidget.cpp:46
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 1"
 msgstr "Группа DH 1"
 
-#: vpncadvancedwidget.cpp:46
+#: vpncadvancedwidget.cpp:47
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 2"
 msgstr "Группа DH 2"
 
-#: vpncadvancedwidget.cpp:47
+#: vpncadvancedwidget.cpp:48
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"

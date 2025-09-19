@@ -188,17 +188,17 @@ void OpenconnectWebAuthDialog::setupCollectPinUI()
         errorDetails = i18n("Internal User Verification Locked");
         break;
     case QWebEngineWebAuthUxRequest::PinEntryError::WrongPin:
-        errorDetails = i18n("Wrong PIN. %1 attempts remaining.", pinRequestInfo.remainingAttempts);
+        errorDetails = i18np("Wrong PIN. %1 attempt remaining.", "Wrong PIN. %1 attempts remaining.", pinRequestInfo.remainingAttempts);
         break;
     case QWebEngineWebAuthUxRequest::PinEntryError::TooShort:
-        errorDetails = i18n("Too Short. %1 attempts remaining.", pinRequestInfo.remainingAttempts);
+        errorDetails = i18np("Too Short. %1 attempt remaining.", "Too Short. %1 attempts remaining.", pinRequestInfo.remainingAttempts);
         break;
     case QWebEngineWebAuthUxRequest::PinEntryError::InvalidCharacters:
-        errorDetails = i18n("Invalid Characters. %1 attempts remaining.", pinRequestInfo.remainingAttempts);
+        errorDetails = i18np("Invalid Characters. %1 attempt remaining.", "Invalid Characters. %1 attempts remaining.", pinRequestInfo.remainingAttempts);
         ;
         break;
     case QWebEngineWebAuthUxRequest::PinEntryError::SameAsCurrentPin:
-        errorDetails = i18n("Same as current PIN. %1 attempts remaining.", pinRequestInfo.remainingAttempts);
+        errorDetails = i18np("Same as current PIN. %1 attempt remaining.", "Same as current PIN. %1 attempts remaining.", pinRequestInfo.remainingAttempts);
         break;
     }
 

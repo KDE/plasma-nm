@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-09-20 00:44+0000\n"
 "PO-Revision-Date: 2025-02-04 16:06-0300\n"
 "Last-Translator: Geraldo Simiao <geraldosimiao@fedoraproject.org>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -403,24 +403,36 @@ msgid "Internal User Verification Locked"
 msgstr "Verificação interna do usuário bloqueada"
 
 #: openconnectwebauthdialog.cpp:191
-#, kde-format
-msgid "Wrong PIN. %1 attempts remaining."
-msgstr "PIN incorreto. Restam %1 tentativas."
+#, fuzzy, kde-format
+#| msgid "Wrong PIN. %1 attempts remaining."
+msgid "Wrong PIN. %1 attempt remaining."
+msgid_plural "Wrong PIN. %1 attempts remaining."
+msgstr[0] "PIN incorreto. Restam %1 tentativas."
+msgstr[1] "PIN incorreto. Restam %1 tentativas."
 
 #: openconnectwebauthdialog.cpp:194
-#, kde-format
-msgid "Too Short. %1 attempts remaining."
-msgstr "Muito curto. Restam %1 tentativas."
+#, fuzzy, kde-format
+#| msgid "Too Short. %1 attempts remaining."
+msgid "Too Short. %1 attempt remaining."
+msgid_plural "Too Short. %1 attempts remaining."
+msgstr[0] "Muito curto. Restam %1 tentativas."
+msgstr[1] "Muito curto. Restam %1 tentativas."
 
 #: openconnectwebauthdialog.cpp:197
-#, kde-format
-msgid "Invalid Characters. %1 attempts remaining."
-msgstr "Caracteres inválidos. Restam %1 tentativas."
+#, fuzzy, kde-format
+#| msgid "Invalid Characters. %1 attempts remaining."
+msgid "Invalid Characters. %1 attempt remaining."
+msgid_plural "Invalid Characters. %1 attempts remaining."
+msgstr[0] "Caracteres inválidos. Restam %1 tentativas."
+msgstr[1] "Caracteres inválidos. Restam %1 tentativas."
 
 #: openconnectwebauthdialog.cpp:201
-#, kde-format
-msgid "Same as current PIN. %1 attempts remaining."
-msgstr "O mesmo que o PIN atual. Restam %1 tentativas."
+#, fuzzy, kde-format
+#| msgid "Same as current PIN. %1 attempts remaining."
+msgid "Same as current PIN. %1 attempt remaining."
+msgid_plural "Same as current PIN. %1 attempts remaining."
+msgstr[0] "O mesmo que o PIN atual. Restam %1 tentativas."
+msgstr[1] "O mesmo que o PIN atual. Restam %1 tentativas."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

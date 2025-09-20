@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-09-20 00:44+0000\n"
 "PO-Revision-Date: 2024-12-02 18:40+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -402,24 +402,40 @@ msgid "Internal User Verification Locked"
 msgstr "Iekšējā lietotāja verifikācija ir slēgta"
 
 #: openconnectwebauthdialog.cpp:191
-#, kde-format
-msgid "Wrong PIN. %1 attempts remaining."
-msgstr "Nepareizs PIN. Atlikuši %1 mēģinājumi."
+#, fuzzy, kde-format
+#| msgid "Wrong PIN. %1 attempts remaining."
+msgid "Wrong PIN. %1 attempt remaining."
+msgid_plural "Wrong PIN. %1 attempts remaining."
+msgstr[0] "Nepareizs PIN. Atlikuši %1 mēģinājumi."
+msgstr[1] "Nepareizs PIN. Atlikuši %1 mēģinājumi."
+msgstr[2] "Nepareizs PIN. Atlikuši %1 mēģinājumi."
 
 #: openconnectwebauthdialog.cpp:194
-#, kde-format
-msgid "Too Short. %1 attempts remaining."
-msgstr "Pārāk īss. Atlikuši %1 mēģinājumi."
+#, fuzzy, kde-format
+#| msgid "Too Short. %1 attempts remaining."
+msgid "Too Short. %1 attempt remaining."
+msgid_plural "Too Short. %1 attempts remaining."
+msgstr[0] "Pārāk īss. Atlikuši %1 mēģinājumi."
+msgstr[1] "Pārāk īss. Atlikuši %1 mēģinājumi."
+msgstr[2] "Pārāk īss. Atlikuši %1 mēģinājumi."
 
 #: openconnectwebauthdialog.cpp:197
-#, kde-format
-msgid "Invalid Characters. %1 attempts remaining."
-msgstr "Nederīgas rakstzīmes. Atlikuši %1 mēģinājumi."
+#, fuzzy, kde-format
+#| msgid "Invalid Characters. %1 attempts remaining."
+msgid "Invalid Characters. %1 attempt remaining."
+msgid_plural "Invalid Characters. %1 attempts remaining."
+msgstr[0] "Nederīgas rakstzīmes. Atlikuši %1 mēģinājumi."
+msgstr[1] "Nederīgas rakstzīmes. Atlikuši %1 mēģinājumi."
+msgstr[2] "Nederīgas rakstzīmes. Atlikuši %1 mēģinājumi."
 
 #: openconnectwebauthdialog.cpp:201
-#, kde-format
-msgid "Same as current PIN. %1 attempts remaining."
-msgstr "Tāds pats, kāds pašreizējais PIN. Atlikuši %1 mēģinājumi."
+#, fuzzy, kde-format
+#| msgid "Same as current PIN. %1 attempts remaining."
+msgid "Same as current PIN. %1 attempt remaining."
+msgid_plural "Same as current PIN. %1 attempts remaining."
+msgstr[0] "Tāds pats, kāds pašreizējais PIN. Atlikuši %1 mēģinājumi."
+msgstr[1] "Tāds pats, kāds pašreizējais PIN. Atlikuši %1 mēģinājumi."
+msgstr[2] "Tāds pats, kāds pašreizējais PIN. Atlikuši %1 mēģinājumi."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

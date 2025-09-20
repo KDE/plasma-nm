@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-09-20 00:44+0000\n"
 "PO-Revision-Date: 2024-07-13 21:39+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -402,24 +402,36 @@ msgid "Internal User Verification Locked"
 msgstr "Intern brukarstadfesting låst"
 
 #: openconnectwebauthdialog.cpp:191
-#, kde-format
-msgid "Wrong PIN. %1 attempts remaining."
-msgstr "Feil PIN-kode – %1 forsøk att."
+#, fuzzy, kde-format
+#| msgid "Wrong PIN. %1 attempts remaining."
+msgid "Wrong PIN. %1 attempt remaining."
+msgid_plural "Wrong PIN. %1 attempts remaining."
+msgstr[0] "Feil PIN-kode – %1 forsøk att."
+msgstr[1] "Feil PIN-kode – %1 forsøk att."
 
 #: openconnectwebauthdialog.cpp:194
-#, kde-format
-msgid "Too Short. %1 attempts remaining."
-msgstr "For kort – %1 forsøk att."
+#, fuzzy, kde-format
+#| msgid "Too Short. %1 attempts remaining."
+msgid "Too Short. %1 attempt remaining."
+msgid_plural "Too Short. %1 attempts remaining."
+msgstr[0] "For kort – %1 forsøk att."
+msgstr[1] "For kort – %1 forsøk att."
 
 #: openconnectwebauthdialog.cpp:197
-#, kde-format
-msgid "Invalid Characters. %1 attempts remaining."
-msgstr "Ugyldige teikn – %1 forsøk att."
+#, fuzzy, kde-format
+#| msgid "Invalid Characters. %1 attempts remaining."
+msgid "Invalid Characters. %1 attempt remaining."
+msgid_plural "Invalid Characters. %1 attempts remaining."
+msgstr[0] "Ugyldige teikn – %1 forsøk att."
+msgstr[1] "Ugyldige teikn – %1 forsøk att."
 
 #: openconnectwebauthdialog.cpp:201
-#, kde-format
-msgid "Same as current PIN. %1 attempts remaining."
-msgstr "Koden er lik den gamle PIN-koden – %1 forsøk att."
+#, fuzzy, kde-format
+#| msgid "Same as current PIN. %1 attempts remaining."
+msgid "Same as current PIN. %1 attempt remaining."
+msgid_plural "Same as current PIN. %1 attempts remaining."
+msgstr[0] "Koden er lik den gamle PIN-koden – %1 forsøk att."
+msgstr[1] "Koden er lik den gamle PIN-koden – %1 forsøk att."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-09-20 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -401,24 +401,32 @@ msgid "Internal User Verification Locked"
 msgstr "内部用户验证被锁定"
 
 #: openconnectwebauthdialog.cpp:191
-#, kde-format
-msgid "Wrong PIN. %1 attempts remaining."
-msgstr "PIN 码错误。还剩下 %1 次尝试的机会。"
+#, fuzzy, kde-format
+#| msgid "Wrong PIN. %1 attempts remaining."
+msgid "Wrong PIN. %1 attempt remaining."
+msgid_plural "Wrong PIN. %1 attempts remaining."
+msgstr[0] "PIN 码错误。还剩下 %1 次尝试的机会。"
 
 #: openconnectwebauthdialog.cpp:194
-#, kde-format
-msgid "Too Short. %1 attempts remaining."
-msgstr "PIN 码太短。还剩下 %1 次尝试的机会。"
+#, fuzzy, kde-format
+#| msgid "Too Short. %1 attempts remaining."
+msgid "Too Short. %1 attempt remaining."
+msgid_plural "Too Short. %1 attempts remaining."
+msgstr[0] "PIN 码太短。还剩下 %1 次尝试的机会。"
 
 #: openconnectwebauthdialog.cpp:197
-#, kde-format
-msgid "Invalid Characters. %1 attempts remaining."
-msgstr "无效字符。还剩下 %1 次尝试的机会。"
+#, fuzzy, kde-format
+#| msgid "Invalid Characters. %1 attempts remaining."
+msgid "Invalid Characters. %1 attempt remaining."
+msgid_plural "Invalid Characters. %1 attempts remaining."
+msgstr[0] "无效字符。还剩下 %1 次尝试的机会。"
 
 #: openconnectwebauthdialog.cpp:201
-#, kde-format
-msgid "Same as current PIN. %1 attempts remaining."
-msgstr "新 PIN 码与当前 PIN 码相同。还剩下 %1 次尝试的机会。"
+#, fuzzy, kde-format
+#| msgid "Same as current PIN. %1 attempts remaining."
+msgid "Same as current PIN. %1 attempt remaining."
+msgid_plural "Same as current PIN. %1 attempts remaining."
+msgstr[0] "新 PIN 码与当前 PIN 码相同。还剩下 %1 次尝试的机会。"
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

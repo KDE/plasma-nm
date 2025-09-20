@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-09-20 00:44+0000\n"
 "PO-Revision-Date: 2025-08-14 13:16+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -402,24 +402,52 @@ msgid "Internal User Verification Locked"
 msgstr "التحقق من المستخدم الداخلي مغلق"
 
 #: openconnectwebauthdialog.cpp:191
-#, kde-format
-msgid "Wrong PIN. %1 attempts remaining."
-msgstr "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
+#, fuzzy, kde-format
+#| msgid "Wrong PIN. %1 attempts remaining."
+msgid "Wrong PIN. %1 attempt remaining."
+msgid_plural "Wrong PIN. %1 attempts remaining."
+msgstr[0] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
+msgstr[1] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
+msgstr[2] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
+msgstr[3] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
+msgstr[4] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
+msgstr[5] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
 
 #: openconnectwebauthdialog.cpp:194
-#, kde-format
-msgid "Too Short. %1 attempts remaining."
-msgstr "قصير جدًا. تبقى %1 محاولة."
+#, fuzzy, kde-format
+#| msgid "Too Short. %1 attempts remaining."
+msgid "Too Short. %1 attempt remaining."
+msgid_plural "Too Short. %1 attempts remaining."
+msgstr[0] "قصير جدًا. تبقى %1 محاولة."
+msgstr[1] "قصير جدًا. تبقى %1 محاولة."
+msgstr[2] "قصير جدًا. تبقى %1 محاولة."
+msgstr[3] "قصير جدًا. تبقى %1 محاولة."
+msgstr[4] "قصير جدًا. تبقى %1 محاولة."
+msgstr[5] "قصير جدًا. تبقى %1 محاولة."
 
 #: openconnectwebauthdialog.cpp:197
-#, kde-format
-msgid "Invalid Characters. %1 attempts remaining."
-msgstr "أحرف غير صالحة. تبقى %1 محاولة."
+#, fuzzy, kde-format
+#| msgid "Invalid Characters. %1 attempts remaining."
+msgid "Invalid Characters. %1 attempt remaining."
+msgid_plural "Invalid Characters. %1 attempts remaining."
+msgstr[0] "أحرف غير صالحة. تبقى %1 محاولة."
+msgstr[1] "أحرف غير صالحة. تبقى %1 محاولة."
+msgstr[2] "أحرف غير صالحة. تبقى %1 محاولة."
+msgstr[3] "أحرف غير صالحة. تبقى %1 محاولة."
+msgstr[4] "أحرف غير صالحة. تبقى %1 محاولة."
+msgstr[5] "أحرف غير صالحة. تبقى %1 محاولة."
 
 #: openconnectwebauthdialog.cpp:201
-#, kde-format
-msgid "Same as current PIN. %1 attempts remaining."
-msgstr "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
+#, fuzzy, kde-format
+#| msgid "Same as current PIN. %1 attempts remaining."
+msgid "Same as current PIN. %1 attempt remaining."
+msgid_plural "Same as current PIN. %1 attempts remaining."
+msgstr[0] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
+msgstr[1] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
+msgstr[2] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
+msgstr[3] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
+msgstr[4] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
+msgstr[5] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

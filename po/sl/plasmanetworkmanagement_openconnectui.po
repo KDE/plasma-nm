@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-09-20 00:44+0000\n"
 "PO-Revision-Date: 2024-10-27 07:29+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -404,24 +404,44 @@ msgid "Internal User Verification Locked"
 msgstr "Notranje preverjanje uporabnika zaklenjeno"
 
 #: openconnectwebauthdialog.cpp:191
-#, kde-format
-msgid "Wrong PIN. %1 attempts remaining."
-msgstr "Napačen PIN. %1 poskusov še preostaja."
+#, fuzzy, kde-format
+#| msgid "Wrong PIN. %1 attempts remaining."
+msgid "Wrong PIN. %1 attempt remaining."
+msgid_plural "Wrong PIN. %1 attempts remaining."
+msgstr[0] "Napačen PIN. %1 poskusov še preostaja."
+msgstr[1] "Napačen PIN. %1 poskusov še preostaja."
+msgstr[2] "Napačen PIN. %1 poskusov še preostaja."
+msgstr[3] "Napačen PIN. %1 poskusov še preostaja."
 
 #: openconnectwebauthdialog.cpp:194
-#, kde-format
-msgid "Too Short. %1 attempts remaining."
-msgstr "Prekratko. %1 poskusov še preostaja."
+#, fuzzy, kde-format
+#| msgid "Too Short. %1 attempts remaining."
+msgid "Too Short. %1 attempt remaining."
+msgid_plural "Too Short. %1 attempts remaining."
+msgstr[0] "Prekratko. %1 poskusov še preostaja."
+msgstr[1] "Prekratko. %1 poskusov še preostaja."
+msgstr[2] "Prekratko. %1 poskusov še preostaja."
+msgstr[3] "Prekratko. %1 poskusov še preostaja."
 
 #: openconnectwebauthdialog.cpp:197
-#, kde-format
-msgid "Invalid Characters. %1 attempts remaining."
-msgstr "Neveljavni znaki. %1 poskusov še preostaja."
+#, fuzzy, kde-format
+#| msgid "Invalid Characters. %1 attempts remaining."
+msgid "Invalid Characters. %1 attempt remaining."
+msgid_plural "Invalid Characters. %1 attempts remaining."
+msgstr[0] "Neveljavni znaki. %1 poskusov še preostaja."
+msgstr[1] "Neveljavni znaki. %1 poskusov še preostaja."
+msgstr[2] "Neveljavni znaki. %1 poskusov še preostaja."
+msgstr[3] "Neveljavni znaki. %1 poskusov še preostaja."
 
 #: openconnectwebauthdialog.cpp:201
-#, kde-format
-msgid "Same as current PIN. %1 attempts remaining."
-msgstr "Enako kot trenutni PIN. %1 poskusov še preostaja."
+#, fuzzy, kde-format
+#| msgid "Same as current PIN. %1 attempts remaining."
+msgid "Same as current PIN. %1 attempt remaining."
+msgid_plural "Same as current PIN. %1 attempts remaining."
+msgstr[0] "Enako kot trenutni PIN. %1 poskusov še preostaja."
+msgstr[1] "Enako kot trenutni PIN. %1 poskusov še preostaja."
+msgstr[2] "Enako kot trenutni PIN. %1 poskusov še preostaja."
+msgstr[3] "Enako kot trenutni PIN. %1 poskusov še preostaja."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

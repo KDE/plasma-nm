@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-09-20 00:44+0000\n"
 "PO-Revision-Date: 2024-11-07 17:19+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -402,24 +402,36 @@ msgid "Internal User Verification Locked"
 msgstr "Sisäinen käyttäjätodennus lukittu"
 
 #: openconnectwebauthdialog.cpp:191
-#, kde-format
-msgid "Wrong PIN. %1 attempts remaining."
-msgstr "Väärä PIN. %1 yritystä jäljellä."
+#, fuzzy, kde-format
+#| msgid "Wrong PIN. %1 attempts remaining."
+msgid "Wrong PIN. %1 attempt remaining."
+msgid_plural "Wrong PIN. %1 attempts remaining."
+msgstr[0] "Väärä PIN. %1 yritystä jäljellä."
+msgstr[1] "Väärä PIN. %1 yritystä jäljellä."
 
 #: openconnectwebauthdialog.cpp:194
-#, kde-format
-msgid "Too Short. %1 attempts remaining."
-msgstr "Liian lyhyt. %1 yritystä jäljellä."
+#, fuzzy, kde-format
+#| msgid "Too Short. %1 attempts remaining."
+msgid "Too Short. %1 attempt remaining."
+msgid_plural "Too Short. %1 attempts remaining."
+msgstr[0] "Liian lyhyt. %1 yritystä jäljellä."
+msgstr[1] "Liian lyhyt. %1 yritystä jäljellä."
 
 #: openconnectwebauthdialog.cpp:197
-#, kde-format
-msgid "Invalid Characters. %1 attempts remaining."
-msgstr "Virheellisiä merkkejä. %1 yritystä jäljellä."
+#, fuzzy, kde-format
+#| msgid "Invalid Characters. %1 attempts remaining."
+msgid "Invalid Characters. %1 attempt remaining."
+msgid_plural "Invalid Characters. %1 attempts remaining."
+msgstr[0] "Virheellisiä merkkejä. %1 yritystä jäljellä."
+msgstr[1] "Virheellisiä merkkejä. %1 yritystä jäljellä."
 
 #: openconnectwebauthdialog.cpp:201
-#, kde-format
-msgid "Same as current PIN. %1 attempts remaining."
-msgstr "Sama kuin nykyinen PIN. %1 yritystä jäljellä."
+#, fuzzy, kde-format
+#| msgid "Same as current PIN. %1 attempts remaining."
+msgid "Same as current PIN. %1 attempt remaining."
+msgid_plural "Same as current PIN. %1 attempts remaining."
+msgstr[0] "Sama kuin nykyinen PIN. %1 yritystä jäljellä."
+msgstr[1] "Sama kuin nykyinen PIN. %1 yritystä jäljellä."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

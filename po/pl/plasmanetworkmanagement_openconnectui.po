@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-09-20 00:44+0000\n"
 "PO-Revision-Date: 2024-11-23 13:48+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: Polish <kde-i18n-doc@kde.org>\n"
@@ -401,24 +401,40 @@ msgid "Internal User Verification Locked"
 msgstr "Zablokowano wewnętrzne sprawdzanie użytkowników"
 
 #: openconnectwebauthdialog.cpp:191
-#, kde-format
-msgid "Wrong PIN. %1 attempts remaining."
-msgstr "Zły numer PIN. Pozostało %1 prób."
+#, fuzzy, kde-format
+#| msgid "Wrong PIN. %1 attempts remaining."
+msgid "Wrong PIN. %1 attempt remaining."
+msgid_plural "Wrong PIN. %1 attempts remaining."
+msgstr[0] "Zły numer PIN. Pozostało %1 prób."
+msgstr[1] "Zły numer PIN. Pozostało %1 prób."
+msgstr[2] "Zły numer PIN. Pozostało %1 prób."
 
 #: openconnectwebauthdialog.cpp:194
-#, kde-format
-msgid "Too Short. %1 attempts remaining."
-msgstr "Zbyt krótki. Pozostało %1 prób."
+#, fuzzy, kde-format
+#| msgid "Too Short. %1 attempts remaining."
+msgid "Too Short. %1 attempt remaining."
+msgid_plural "Too Short. %1 attempts remaining."
+msgstr[0] "Zbyt krótki. Pozostało %1 prób."
+msgstr[1] "Zbyt krótki. Pozostało %1 prób."
+msgstr[2] "Zbyt krótki. Pozostało %1 prób."
 
 #: openconnectwebauthdialog.cpp:197
-#, kde-format
-msgid "Invalid Characters. %1 attempts remaining."
-msgstr "Nieprawidłowe znaki. Pozostało %1 prób."
+#, fuzzy, kde-format
+#| msgid "Invalid Characters. %1 attempts remaining."
+msgid "Invalid Characters. %1 attempt remaining."
+msgid_plural "Invalid Characters. %1 attempts remaining."
+msgstr[0] "Nieprawidłowe znaki. Pozostało %1 prób."
+msgstr[1] "Nieprawidłowe znaki. Pozostało %1 prób."
+msgstr[2] "Nieprawidłowe znaki. Pozostało %1 prób."
 
 #: openconnectwebauthdialog.cpp:201
-#, kde-format
-msgid "Same as current PIN. %1 attempts remaining."
-msgstr "Taki sam jak obecny numer PIN. Pozostało %1 prób."
+#, fuzzy, kde-format
+#| msgid "Same as current PIN. %1 attempts remaining."
+msgid "Same as current PIN. %1 attempt remaining."
+msgid_plural "Same as current PIN. %1 attempts remaining."
+msgstr[0] "Taki sam jak obecny numer PIN. Pozostało %1 prób."
+msgstr[1] "Taki sam jak obecny numer PIN. Pozostało %1 prób."
+msgstr[2] "Taki sam jak obecny numer PIN. Pozostało %1 prób."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-09-20 00:44+0000\n"
 "PO-Revision-Date: 2024-10-27 03:44+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -402,24 +402,36 @@ msgid "Internal User Verification Locked"
 msgstr "შიდა მომხმარებლის გადამოწმება დაბლოკლია"
 
 #: openconnectwebauthdialog.cpp:191
-#, kde-format
-msgid "Wrong PIN. %1 attempts remaining."
-msgstr "არასწორი PIN-კოდი. დარჩენილია %1 ცდა."
+#, fuzzy, kde-format
+#| msgid "Wrong PIN. %1 attempts remaining."
+msgid "Wrong PIN. %1 attempt remaining."
+msgid_plural "Wrong PIN. %1 attempts remaining."
+msgstr[0] "არასწორი PIN-კოდი. დარჩენილია %1 ცდა."
+msgstr[1] "არასწორი PIN-კოდი. დარჩენილია %1 ცდა."
 
 #: openconnectwebauthdialog.cpp:194
-#, kde-format
-msgid "Too Short. %1 attempts remaining."
-msgstr "მეტისმეტად მოკლეა. დარჩენილია %1 ცდა."
+#, fuzzy, kde-format
+#| msgid "Too Short. %1 attempts remaining."
+msgid "Too Short. %1 attempt remaining."
+msgid_plural "Too Short. %1 attempts remaining."
+msgstr[0] "მეტისმეტად მოკლეა. დარჩენილია %1 ცდა."
+msgstr[1] "მეტისმეტად მოკლეა. დარჩენილია %1 ცდა."
 
 #: openconnectwebauthdialog.cpp:197
-#, kde-format
-msgid "Invalid Characters. %1 attempts remaining."
-msgstr "არასწორი სიმბოლოები. დარჩენილია %1 ცდა."
+#, fuzzy, kde-format
+#| msgid "Invalid Characters. %1 attempts remaining."
+msgid "Invalid Characters. %1 attempt remaining."
+msgid_plural "Invalid Characters. %1 attempts remaining."
+msgstr[0] "არასწორი სიმბოლოები. დარჩენილია %1 ცდა."
+msgstr[1] "არასწორი სიმბოლოები. დარჩენილია %1 ცდა."
 
 #: openconnectwebauthdialog.cpp:201
-#, kde-format
-msgid "Same as current PIN. %1 attempts remaining."
-msgstr "იგივეა, რაც მიმდინარე PIN-კოდი. დარჩენილია %1 ცდა."
+#, fuzzy, kde-format
+#| msgid "Same as current PIN. %1 attempts remaining."
+msgid "Same as current PIN. %1 attempt remaining."
+msgid_plural "Same as current PIN. %1 attempts remaining."
+msgstr[0] "იგივეა, რაც მიმდინარე PIN-კოდი. დარჩენილია %1 ცდა."
+msgstr[1] "იგივეა, რაც მიმდინარე PIN-კოდი. დარჩენილია %1 ცდა."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

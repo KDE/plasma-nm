@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-09-20 00:44+0000\n"
 "PO-Revision-Date: 2023-12-18 02:57+0100\n"
 "Last-Translator: Johannes Obermayr <johannesobermayr@gmx.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -402,23 +402,31 @@ msgstr ""
 
 #: openconnectwebauthdialog.cpp:191
 #, kde-format
-msgid "Wrong PIN. %1 attempts remaining."
-msgstr ""
+msgid "Wrong PIN. %1 attempt remaining."
+msgid_plural "Wrong PIN. %1 attempts remaining."
+msgstr[0] ""
+msgstr[1] ""
 
 #: openconnectwebauthdialog.cpp:194
 #, kde-format
-msgid "Too Short. %1 attempts remaining."
-msgstr ""
+msgid "Too Short. %1 attempt remaining."
+msgid_plural "Too Short. %1 attempts remaining."
+msgstr[0] ""
+msgstr[1] ""
 
 #: openconnectwebauthdialog.cpp:197
 #, kde-format
-msgid "Invalid Characters. %1 attempts remaining."
-msgstr ""
+msgid "Invalid Characters. %1 attempt remaining."
+msgid_plural "Invalid Characters. %1 attempts remaining."
+msgstr[0] ""
+msgstr[1] ""
 
 #: openconnectwebauthdialog.cpp:201
 #, kde-format
-msgid "Same as current PIN. %1 attempts remaining."
-msgstr ""
+msgid "Same as current PIN. %1 attempt remaining."
+msgid_plural "Same as current PIN. %1 attempts remaining."
+msgstr[0] ""
+msgstr[1] ""
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

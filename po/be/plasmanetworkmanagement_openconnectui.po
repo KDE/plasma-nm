@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-01-19 00:42+0000\n"
+"POT-Creation-Date: 2025-09-20 00:44+0000\n"
 "PO-Revision-Date: 2024-10-25 20:20\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -405,24 +405,44 @@ msgid "Internal User Verification Locked"
 msgstr "Унутранае правяранне карыстальніка заблакавана"
 
 #: openconnectwebauthdialog.cpp:191
-#, kde-format
-msgid "Wrong PIN. %1 attempts remaining."
-msgstr "Няправільны PIN-код. Засталося спробаў: %1."
+#, fuzzy, kde-format
+#| msgid "Wrong PIN. %1 attempts remaining."
+msgid "Wrong PIN. %1 attempt remaining."
+msgid_plural "Wrong PIN. %1 attempts remaining."
+msgstr[0] "Няправільны PIN-код. Засталося спробаў: %1."
+msgstr[1] "Няправільны PIN-код. Засталося спробаў: %1."
+msgstr[2] "Няправільны PIN-код. Засталося спробаў: %1."
+msgstr[3] "Няправільны PIN-код. Засталося спробаў: %1."
 
 #: openconnectwebauthdialog.cpp:194
-#, kde-format
-msgid "Too Short. %1 attempts remaining."
-msgstr "Занадта кароткі. Засталося спробаў: %1."
+#, fuzzy, kde-format
+#| msgid "Too Short. %1 attempts remaining."
+msgid "Too Short. %1 attempt remaining."
+msgid_plural "Too Short. %1 attempts remaining."
+msgstr[0] "Занадта кароткі. Засталося спробаў: %1."
+msgstr[1] "Занадта кароткі. Засталося спробаў: %1."
+msgstr[2] "Занадта кароткі. Засталося спробаў: %1."
+msgstr[3] "Занадта кароткі. Засталося спробаў: %1."
 
 #: openconnectwebauthdialog.cpp:197
-#, kde-format
-msgid "Invalid Characters. %1 attempts remaining."
-msgstr "Хібныя знакі. Засталося спробаў: %1."
+#, fuzzy, kde-format
+#| msgid "Invalid Characters. %1 attempts remaining."
+msgid "Invalid Characters. %1 attempt remaining."
+msgid_plural "Invalid Characters. %1 attempts remaining."
+msgstr[0] "Хібныя знакі. Засталося спробаў: %1."
+msgstr[1] "Хібныя знакі. Засталося спробаў: %1."
+msgstr[2] "Хібныя знакі. Засталося спробаў: %1."
+msgstr[3] "Хібныя знакі. Засталося спробаў: %1."
 
 #: openconnectwebauthdialog.cpp:201
-#, kde-format
-msgid "Same as current PIN. %1 attempts remaining."
-msgstr "Зараз такі самы PIN-код. Засталося спробаў: %1."
+#, fuzzy, kde-format
+#| msgid "Same as current PIN. %1 attempts remaining."
+msgid "Same as current PIN. %1 attempt remaining."
+msgid_plural "Same as current PIN. %1 attempts remaining."
+msgstr[0] "Зараз такі самы PIN-код. Засталося спробаў: %1."
+msgstr[1] "Зараз такі самы PIN-код. Засталося спробаў: %1."
+msgstr[2] "Зараз такі самы PIN-код. Засталося спробаў: %1."
+msgstr[3] "Зараз такі самы PIN-код. Засталося спробаў: %1."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

@@ -1,18 +1,18 @@
 # Translation for plasmanetworkmanagement_openconnectui.po to Euskara/Basque (eu).
-# Copyright (C) 2017-2024 This file is copyright:
+# Copyright (C) 2017-2025 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# SPDX-FileCopyrightText: 2024 KDE Euskaratzeko proiektuko arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2024, 2025 KDE Euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Osoitz <oelkoro@gmail.com>, 2017.
 # Ander Elortondo <ander.elor@gmail.com>, 2017.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2019, 2020, 2021, 2022, 2023, 2024.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-20 00:44+0000\n"
-"PO-Revision-Date: 2024-10-27 07:12+0100\n"
+"PO-Revision-Date: 2025-09-21 02:24+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: openconnectauth.cpp:346
 #, kde-format
@@ -405,35 +405,31 @@ msgid "Internal User Verification Locked"
 msgstr "Erabiltzaileen barneko egiaztatzea giltzatuta"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] "PIN okerra. %1 saiakera geratzen dira."
+msgstr[0] "PIN okerra. Saiakera %1 geratzen da."
 msgstr[1] "PIN okerra. %1 saiakera geratzen dira."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] "Laburregia. %1 saiakera geratzen dira."
+msgstr[0] "Laburregia. Saiakera %1 geratzen da."
 msgstr[1] "Laburregia. %1 saiakera geratzen dira."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] "Karaktere baliogabeak. %1 saiakera gelditzen dira."
-msgstr[1] "Karaktere baliogabeak. %1 saiakera gelditzen dira."
+msgstr[0] "Karaktere baliogabeak. Saiakera %1 geratzen da."
+msgstr[1] "Karaktere baliogabeak. %1 saiakera geratzen dira."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] "Uneko PIN bera. %1 saiakera geratzen dira."
+msgstr[0] "Uneko PIN bera. Saiakera %1 geratzen da."
 msgstr[1] "Uneko PIN bera. %1 saiakera geratzen dira."
 
 #: openconnectwebauthdialog.cpp:239

@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2015, 2017, 2019, 2020, 2021, 2022, 2023, 2024.
+# Yuri Chornoivan <yurchor@ukr.net>, 2013, 2015, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-20 00:44+0000\n"
-"PO-Revision-Date: 2024-10-27 13:04+0200\n"
+"PO-Revision-Date: 2025-09-20 15:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -403,44 +403,40 @@ msgid "Internal User Verification Locked"
 msgstr "Заблоковано внутрішню перевірку користувача"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] "Помилковий PIN код. Лишилося %1 спроб."
-msgstr[1] "Помилковий PIN код. Лишилося %1 спроб."
+msgstr[0] "Помилковий PIN код. Лишилася %1 спроба."
+msgstr[1] "Помилковий PIN код. Лишилося %1 спроби."
 msgstr[2] "Помилковий PIN код. Лишилося %1 спроб."
-msgstr[3] "Помилковий PIN код. Лишилося %1 спроб."
+msgstr[3] "Помилковий PIN код. Лишилася %1 спроба."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] "Надто короткий. Лишилося %1 спроб."
-msgstr[1] "Надто короткий. Лишилося %1 спроб."
+msgstr[0] "Надто короткий. Лишилася %1 спроба."
+msgstr[1] "Надто короткий. Лишилося %1 спроби."
 msgstr[2] "Надто короткий. Лишилося %1 спроб."
-msgstr[3] "Надто короткий. Лишилося %1 спроб."
+msgstr[3] "Надто короткий. Лишилася %1 спроба."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] "Некоректні символи. Лишилося %1 спроб."
-msgstr[1] "Некоректні символи. Лишилося %1 спроб."
+msgstr[0] "Некоректні символи. Лишилася %1 спроба."
+msgstr[1] "Некоректні символи. Лишилося %1 спроби."
 msgstr[2] "Некоректні символи. Лишилося %1 спроб."
-msgstr[3] "Некоректні символи. Лишилося %1 спроб."
+msgstr[3] "Некоректні символи. Лишилася %1 спроба."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] "Такий самий, як поточний PIN-код. Лишилося %1 спроб."
-msgstr[1] "Такий самий, як поточний PIN-код. Лишилося %1 спроб."
+msgstr[0] "Такий самий, як поточний PIN-код. Лишилася %1 спроба."
+msgstr[1] "Такий самий, як поточний PIN-код. Лишилося %1 спроби."
 msgstr[2] "Такий самий, як поточний PIN-код. Лишилося %1 спроб."
-msgstr[3] "Такий самий, як поточний PIN-код. Лишилося %1 спроб."
+msgstr[3] "Такий самий, як поточний PIN-код. Лишилася %1 спроба."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

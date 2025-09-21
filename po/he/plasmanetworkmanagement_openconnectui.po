@@ -1,20 +1,20 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2024 Yaron Shahrabani <sh.yaron@gmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Yaron Shahrabani <sh.yaron@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-20 00:44+0000\n"
-"PO-Revision-Date: 2024-10-27 07:57+0200\n"
+"PO-Revision-Date: 2025-09-20 12:46+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 24.05.2\n"
+"X-Generator: Lokalize 25.08.0\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -401,42 +401,38 @@ msgid "Internal User Verification Locked"
 msgstr "אימות משתמש פנימי נעול"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] "קוד אישי (PIN) שגוי. נותרו %1 ניסיונות."
-msgstr[1] "קוד אישי (PIN) שגוי. נותרו %1 ניסיונות."
+msgstr[0] "קוד אישי (PIN) שגוי. נותר ניסיון אחד."
+msgstr[1] "קוד אישי (PIN) שגוי. נותרו שני ניסיונות."
 msgstr[2] "קוד אישי (PIN) שגוי. נותרו %1 ניסיונות."
 msgstr[3] "קוד אישי (PIN) שגוי. נותרו %1 ניסיונות."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] "קצר מדי. נותרו %1 ניסיונות."
-msgstr[1] "קצר מדי. נותרו %1 ניסיונות."
+msgstr[0] "קצר מדי. נותר ניסיון אחד."
+msgstr[1] "קצר מדי. נותרו שני ניסיונות."
 msgstr[2] "קצר מדי. נותרו %1 ניסיונות."
 msgstr[3] "קצר מדי. נותרו %1 ניסיונות."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] "תווים שגויים. נותרו %1 ניסיונות."
-msgstr[1] "תווים שגויים. נותרו %1 ניסיונות."
+msgstr[0] "תווים שגויים. נותר ניסיון אחד."
+msgstr[1] "תווים שגויים. נותרו שני ניסיונות."
 msgstr[2] "תווים שגויים. נותרו %1 ניסיונות."
 msgstr[3] "תווים שגויים. נותרו %1 ניסיונות."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] "כמו הקוד האישי (PIN) הנוכחי. נותרו %1 ניסיונות."
-msgstr[1] "כמו הקוד האישי (PIN) הנוכחי. נותרו %1 ניסיונות."
+msgstr[0] "כמו הקוד האישי (PIN) הנוכחי. נותר ניסיון אחד."
+msgstr[1] "כמו הקוד האישי (PIN) הנוכחי. נותרו שני ניסיונות."
 msgstr[2] "כמו הקוד האישי (PIN) הנוכחי. נותרו %1 ניסיונות."
 msgstr[3] "כמו הקוד האישי (PIN) הנוכחי. נותרו %1 ניסיונות."
 

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2014, 2015, 2017, 2019, 2020, 2021, 2022, 2023, 2024 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2014, 2015, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-20 00:44+0000\n"
-"PO-Revision-Date: 2024-10-27 16:17+0100\n"
+"PO-Revision-Date: 2025-09-20 12:10+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: openconnectauth.cpp:346
 #, kde-format
@@ -400,35 +400,31 @@ msgid "Internal User Verification Locked"
 msgstr "Interne verificatie van gebruiker is vergrendeld"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] "Verkeerde PIN. %1 pogingen resteren."
+msgstr[0] "Verkeerde PIN. %1 poging resteren."
 msgstr[1] "Verkeerde PIN. %1 pogingen resteren."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] "Te kort. %1 pogingen resteren."
+msgstr[0] "Te kort. %1 poging resteert."
 msgstr[1] "Te kort. %1 pogingen resteren."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] "Ongeldige tekens. %1 pogingen resteren"
-msgstr[1] "Ongeldige tekens. %1 pogingen resteren"
+msgstr[0] "Ongeldige tekens. %1 poging resteert."
+msgstr[1] "Ongeldige tekens. %1 pogingen resteren."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] "Zelfde als huidige PIN. %1 pogingen resteren."
+msgstr[0] "Zelfde als huidige PIN. %1 poging resteert."
 msgstr[1] "Zelfde als huidige PIN. %1 pogingen resteren."
 
 #: openconnectwebauthdialog.cpp:239

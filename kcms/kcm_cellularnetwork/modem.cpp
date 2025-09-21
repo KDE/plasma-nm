@@ -9,8 +9,6 @@
 #include <KUser>
 #include <QDBusReply>
 
-#include <QCoroDBusPendingReply>
-
 Modem::Modem(QObject *parent)
     : QObject{parent}
 {

@@ -4,13 +4,13 @@
 # Franklin, 2014, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2019.
-# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-20 00:44+0000\n"
-"PO-Revision-Date: 2024-11-11 16:21+0900\n"
+"PO-Revision-Date: 2025-09-22 03:47+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: openconnectauth.cpp:346
 #, kde-format
@@ -403,32 +403,28 @@ msgid "Internal User Verification Locked"
 msgstr "內部使用者驗證已鎖定"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] "錯誤 PIN 碼。剩餘 %1 次嘗試機會。"
+msgstr[0] "錯誤 PIN 碼。剩下 %1 次嘗試機會。"
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] "太短。剩餘 %1 次嘗試機會。"
+msgstr[0] "太短。剩下 %1 次嘗試機會。"
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] "無效字元。剩餘 %1 次嘗試機會。"
+msgstr[0] "無效字元。剩下 %1 次嘗試機會。"
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] "與目前 PIN 碼相同。剩餘 %1 次嘗試機會。"
+msgstr[0] "與目前 PIN 碼相同。剩下 %1 次嘗試機會。"
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

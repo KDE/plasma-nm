@@ -4,20 +4,21 @@
 # Franklin, 2014, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2018, 2019, 2020.
+# SPDX-FileCopyrightText: 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2022-03-17 23:11+0800\n"
-"Last-Translator: Chaoting Liu <brli@chakralinux.org>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2025-09-22 06:35+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -385,12 +386,7 @@ msgid "DNS Servers:"
 msgstr "域名伺服器："
 
 #: editor/settings/ipv4widget.cpp:420
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>You can find more information about these values here:<br/><a "
-#| "href='https://developer.gnome.org/NetworkManager/stable/nm-settings."
-#| "html'>https://developer.gnome.org/NetworkManager/stable/nm-settings.html</"
-#| "a></qt>"
+#, kde-format
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
 "href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
@@ -398,8 +394,8 @@ msgid ""
 "a></qt>"
 msgstr ""
 "<qt>你可以在下述位置找到關於這些數值的更多資訊：<br/><a href='https://"
-"developer.gnome.org/NetworkManager/stable/nm-settings.html'>https://"
-"developer.gnome.org/NetworkManager/stable/nm-settings.html</a></qt>"
+"developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome."
+"org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format
@@ -1637,10 +1633,9 @@ msgstr "WPA3 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA/WPA2 Enterprise"
+msgstr "WPA3 Enterprise 192-bit"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -1781,6 +1776,8 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
+"裝置連結協商。若選取「手動」，則「速度」與「雙工」的值會直接強制設定而不會檢"
+"查裝置相容性。若不確定，請使用「忽略」或是選取「自動」。"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -1929,6 +1926,10 @@ msgid ""
 "specify an MTU and to override this automatic discovery,\n"
 "this value may be specified explicitly."
 msgstr ""
+"選用。\n"
+"若未指定，MTU 值會自動從端點位址或系統預設路由決定，而\n"
+"這個自動的值通常是合理的。不過，要手動指定 MTU 並覆寫\n"
+"這個自動發現的過程，這個數值可以明確指定。"
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:93
@@ -1965,6 +1966,10 @@ msgid ""
 "            from a private key, and usually transmitted \n"
 "            out of band to the author of the configuration file."
 msgstr ""
+"必要。\n"
+"            一個 base64 公鑰。由 wg pubkey 從私鑰計算，\n"
+"            通常是在別的地方（帶外，out of band）傳輸給\n"
+"            設定檔案的作者。"
 
 #. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:34
@@ -1984,6 +1989,11 @@ msgid ""
 "            may be specified for matching all IPv4 addresses, \n"
 "            and ::/0 may be specified for matching all IPv6 addresses."
 msgstr ""
+"必要。\n"
+"            包含 CIDR 遮罩的 IP 位址清單 (IPv4 或 IPv6)，以逗號\n"
+"            分隔。這個對等連線會允許來自這些位址的封包，且\n"
+"            將外傳封包導向它們。要符合所有 IPv4 位址可以\n"
+"            使用 0.0.0.0/0；要符合所有 IPv6 位址則可使用 ::/0。"
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55
@@ -2001,6 +2011,11 @@ msgid ""
 "            qualified domain name such as abc.com). If\n"
 "            present, Endpoint port must also be set."
 msgstr ""
+"選用。\n"
+"            連線用的一個端點。可以是 IPv4 位址、\n"
+"            IPv6 位址，或是完整網域名稱（FQDN，\n"
+"            像是 abc.com）。如果指定此選項，\n"
+"            也需要設定端點連線埠。"
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
@@ -2036,6 +2051,10 @@ msgid ""
 "            cryptography to be mixed into the already existing\n"
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
+"選用。\n"
+"            以 base64 編碼的預先分享金鑰，用 wg genpsk 所產生。\n"
+"            這個選項在現存的公鑰加密方式上再加上一層對稱加密，\n"
+"            來為未來可能的量子電腦解密做準備。"
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
@@ -2060,6 +2079,18 @@ msgid ""
 "            when unspecified, this option is off. Most users will not\n"
 "            need this."
 msgstr ""
+"選用。\n"
+"            要多經常傳送已認證的空白封包給對等連線，來長期將有狀態的防火牆或 "
+"NAT\n"
+"            映射維持有效。數值為以秒為單位的時間間隔，可用範圍為 1 ~ 65535。"
+"舉例\n"
+"            來說，如果介面很不經常傳送封包，但任何時候都可能收到來自對等連線"
+"的封\n"
+"            包，且它位於 NAT 後方，介面可能適合使用 25 秒的長期維持有效間隔。"
+"若\n"
+"            設為 0 或 \"off\"（關閉），或是未指定時，此選項將會停用。此選項預"
+"設也\n"
+"            是停用。大部分使用者不會需要使用此選項。"
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: editor/settings/ui/wireguardtabwidget.ui:24
@@ -2467,7 +2498,7 @@ msgstr "%1 GBit/s"
 #, kde-format
 msgctxt "Wireless connection frequency"
 msgid "%1 GHz"
-msgstr ""
+msgstr "%1 GHz"
 
 #: editor/uiutils.cpp:464
 #, kde-format
@@ -2503,7 +2534,7 @@ msgstr "任何"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:486
 #, kde-format
@@ -2767,7 +2798,7 @@ msgstr "WPA3-SAE"
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:614
 #, kde-format
@@ -2852,12 +2883,12 @@ msgstr "沒有支援 %1 技術的 VPN 外掛元件"
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "尚未實裝匯入這個類型的 VPN 的功能"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "尚未實裝"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3239,32 +3270,24 @@ msgid "R&emove"
 msgstr "移除(&E)"
 
 #: handler.cpp:111
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
-"網路管理員目前無法支援 %1 技術的 VPN 連線，請使用套件管理員安裝相關外掛元件。"
+msgstr "Plasma 目前缺乏對「%1」VPN 連線的支援。"
 
 #: handler.cpp:113
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "回報問題"
 
 #: handler.cpp:136
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager is missing support for '%1' VPN connections. Please use "
-#| "the package manager to install it."
+#, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
-"網路管理員目前無法支援 %1 技術的 VPN 連線，請使用套件管理員安裝相關外掛元件。"
+msgstr "NetworkManager 目前缺乏對「%1」VPN 連線的支援。"
 
 #: handler.cpp:138
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "安裝"
 
 #: handler.cpp:353 handler.cpp:846
 #, kde-format
@@ -3415,131 +3438,118 @@ msgid "Import a saved configuration file"
 msgstr "匯入已儲存的設定檔"
 
 #: models/networkmodelitem.cpp:42
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "連線類型："
+msgstr "連線類型是未知"
 
 #: models/networkmodelitem.cpp:43
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "連線類型："
+msgstr "連線類型是 ADSL"
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr ""
+msgstr "連線類型是藍牙"
 
 #: models/networkmodelitem.cpp:45
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "連線類型："
+msgstr "連線類型是 Bridge"
 
 #: models/networkmodelitem.cpp:46
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "連線類型："
+msgstr "連線類型是 CDMA"
 
 #: models/networkmodelitem.cpp:47
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "連線類型："
+msgstr "連線類型是 GSM"
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr ""
+msgstr "連線類型是 Infiniband"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is OLPC Mesh"
-msgstr ""
+msgstr "連線類型是 OLPC Mesh"
 
 #: models/networkmodelitem.cpp:50
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr "連線類型："
+msgstr "連線類型是 PPOPE"
 
 #: models/networkmodelitem.cpp:51
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "連線類型："
+msgstr "連線類型是 VLAN"
 
 #: models/networkmodelitem.cpp:52
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "連線類型："
+msgstr "連線類型是 VPN"
 
 #: models/networkmodelitem.cpp:53
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "連線類型："
+msgstr "連線類型是 Wimax"
 
 #: models/networkmodelitem.cpp:54
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "連線類型："
+msgstr "連線類型是有線"
 
 #: models/networkmodelitem.cpp:55
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr ""
+msgstr "連線類型是無線"
 
 #: models/networkmodelitem.cpp:56
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Team"
-msgstr "連線類型："
+msgstr "連線類型是 Team"
 
 #: models/networkmodelitem.cpp:57
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Generic"
-msgstr "連線類型："
+msgstr "連線類型是 Generic"
 
 #: models/networkmodelitem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr "連線類型："
+msgstr "連線類型是 Tunnel"
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr ""
+msgstr "連線類型是 IP Tunnel"
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
-msgstr ""
+msgstr "連線類型是 WireGuard"
 
 #: models/networkmodelitem.cpp:585
 #, kde-format
@@ -3617,13 +3627,12 @@ msgstr "安全性型態"
 #: models/networkmodelitem.cpp:657
 #, kde-format
 msgid "Frequency"
-msgstr ""
+msgstr "頻率"
 
 #: models/networkmodelitem.cpp:658
-#, fuzzy, kde-format
-#| msgid "BSSID:"
+#, kde-format
 msgid "BSSID"
-msgstr "BSSID："
+msgstr "BSSID"
 
 #: models/networkmodelitem.cpp:672
 #, kde-format

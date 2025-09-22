@@ -1,15 +1,15 @@
 # Spanish translations for plasmanetworkmanagement_vpncui.po package.
-# Copyright (C) 2014 This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Copyright (C) 2014-2025 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
 # Automatically generated, 2014.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2014, 2015, 2016, 2021, 2022, 2023.
+#
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2021, 2022, 2023, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2023-03-14 13:25+0100\n"
+"PO-Revision-Date: 2025-09-22 01:35+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -140,7 +140,7 @@ msgstr "*.pem *.crt *.cer"
 #: vpnc.ui:192
 #, kde-format
 msgid "Advanced…"
-msgstr "Avanzado..."
+msgstr "Avanzado…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpncadvanced.ui:18
@@ -396,43 +396,3 @@ msgstr "Nombre de usuario:"
 #, kde-format
 msgid "Group name."
 msgstr "Nombre de grupo."
-
-#~ msgid "Wrong file extension"
-#~ msgstr "Extensión de archivo incorrecta"
-
-#~ msgid "File %1 could not be opened."
-#~ msgstr "No se puede abrir el archivo %1."
-
-#~ msgid "Needed executable cisco-decrypt could not be found."
-#~ msgstr "No se puede encontrar el ejecutable necesario «cisco-decrypt»."
-
-#~ msgid ""
-#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-#~ "through TCP which is currently not supported in the vpnc software.\n"
-#~ "\n"
-#~ "The connection can still be created, with TCP tunneling disabled, however "
-#~ "it may not work as expected."
-#~ msgstr ""
-#~ "El archivo preferencias de VPN «%1» indica que el tráfico VPN debe usar "
-#~ "un túnel TCP que todavía no está implementado en el software vpnc.\n"
-#~ "\n"
-#~ "Aún así, la conexión se puede crear con el túnel TCP desactivado, pero es "
-#~ "posible que no funcione como se esperaba."
-
-#~ msgid "Not supported"
-#~ msgstr "No permitido"
-
-#~ msgid "%1: file format error."
-#~ msgstr "%1: error de formato de archivo."
-
-#~ msgid "Store"
-#~ msgstr "Almacenar"
-
-#~ msgid "Always Ask"
-#~ msgstr "Preguntar siempre"
-
-#~ msgid "Not Required"
-#~ msgstr "No es necesaria"
-
-#~ msgid "Show passwords"
-#~ msgstr "Mostrar contraseñas"

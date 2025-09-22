@@ -4,20 +4,21 @@
 # Franklin, 2014, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2019, 2020.
+# SPDX-FileCopyrightText: 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2020-03-13 22:12+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2025-09-22 06:35+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -35,22 +36,21 @@ msgid "Log in"
 msgstr " 登入"
 
 #: connectivitymonitor.cpp:71
-#, fuzzy, kde-format
-#| msgid "You need to log in to this network"
+#, kde-format
 msgid "You need to log into this network"
 msgstr "您需要登入到此網路"
 
 #: connectivitymonitor.cpp:91
 #, kde-format
 msgid "Limited Connectivity"
-msgstr ""
+msgstr "受限的網路"
 
 #: connectivitymonitor.cpp:92
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "internet."
-msgstr ""
+msgstr "這個裝置有連線到一個網路，但無法存取網際網路。"
 
 #: modemmonitor.cpp:181
 #, kde-format
@@ -480,38 +480,31 @@ msgid "VPN connection '%1' activated."
 msgstr "VPN 連線 '%1' 已啟動。"
 
 #: notification.cpp:426
-#, fuzzy, kde-format
-#| msgid "VPN connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "VPN 連線 '%1' 已啟動。"
+msgstr "VPN 連線 '%1' 啟動失敗。"
 
 #: notification.cpp:429 notification.cpp:437
-#, fuzzy, kde-format
-#| msgid "VPN connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "VPN 連線 '%1' 已啟動。"
+msgstr "VPN 連線 '%1' 已關閉。"
 
 #: notification.cpp:440
-#, fuzzy, kde-format
-#| msgid ""
-#| "The VPN connection changed state because the device it was using was "
-#| "disconnected."
+#, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
-msgstr "VPN 連線變更了狀態，因為使用的裝置中斷了連線。"
+msgstr "VPN 連線 '%1' 已關閉，因為它所使用的裝置已中斷連線。"
 
 #: notification.cpp:443
-#, fuzzy, kde-format
-#| msgid "The service providing the VPN connection was stopped."
+#, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "提供 VPN 連線的服務已停止。"
+msgstr "提供 VPN 連線 '%1' 的服務已被停止。"
 
 #: notification.cpp:446
-#, fuzzy, kde-format
-#| msgid "The IP config of the VPN connection was invalid."
+#, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "VPN 連線的 IP 設定不正確。"
+msgstr "VPN 連線 '%1' 的 IP 設定無效。"
 
 #: notification.cpp:449
 #, kde-format
@@ -519,26 +512,21 @@ msgid "The connection attempt to the VPN service timed out."
 msgstr "連線到 VPN 服務逾時。"
 
 #: notification.cpp:452
-#, fuzzy, kde-format
-#| msgid ""
-#| "A timeout occurred while starting the service providing the VPN "
-#| "connection."
+#, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
-msgstr "提供 VPN 連線的服務已逾時。"
+msgstr "提供 VPN 連線 '%1' 的服務已逾時。"
 
 #: notification.cpp:455
-#, fuzzy, kde-format
-#| msgid "Starting the service providing the VPN connection failed."
+#, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "啟動 VPN 連線的服務失敗。"
+msgstr "無法啟動提供 VPN 連線 '%1' 的服務。"
 
 #: notification.cpp:458
-#, fuzzy, kde-format
-#| msgid "Necessary secrets for the VPN connection were not provided."
+#, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
-msgstr "未提供連線 VPN 需要的密碼。"
+msgstr "未提供 VPN 連線 '%1' 所需要的密鑰。"
 
 #: notification.cpp:461
 #, kde-format
@@ -546,13 +534,9 @@ msgid "Authentication to the VPN server failed."
 msgstr "VPN 伺服器認證失敗。"
 
 #: notification.cpp:464
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "The connection was deleted."
-msgstr "連線已被移除"
+msgstr "連線已被刪除。"
 
 #: notification.cpp:550
 #, kde-format
@@ -570,16 +554,14 @@ msgid "Authenticate %1"
 msgstr "認證 %1"
 
 #: passworddialog.cpp:98
-#, fuzzy, kde-format
-#| msgid "Please provide the password for activating connection %1:"
+#, kde-format
 msgid "Provide the password for the wireless network '%1':"
-msgstr "請提供密碼以啟動 %1 連線："
+msgstr "請提供無線網路 '%1' 的密碼："
 
 #: passworddialog.cpp:100
-#, fuzzy, kde-format
-#| msgid "Please provide the password for activating connection %1:"
+#, kde-format
 msgid "Provide the password for the connection '%1':"
-msgstr "請提供密碼以啟動 %1 連線："
+msgstr "請提供連線 '%1' 的密碼："
 
 #: passworddialog.cpp:106
 #, kde-format
@@ -587,10 +569,9 @@ msgid "%1 password dialog"
 msgstr "%1 密碼對話框"
 
 #: passworddialog.cpp:126
-#, fuzzy, kde-format
-#| msgid "Please provide the password for activating connection %1:"
+#, kde-format
 msgid "Provide the secrets for the VPN connection '%1':"
-msgstr "請提供密碼以啟動 %1 連線："
+msgstr "請提供 VPN 連線 '%1' 的密鑰："
 
 #: passworddialog.cpp:127
 #, kde-format

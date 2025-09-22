@@ -1,15 +1,15 @@
 # Spanish translations for plasmanetworkmanagement_l2tpui.po package.
-# Copyright (C) 2014 This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Copyright (C) 2014-2025 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
 # Automatically generated, 2014.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2014, 2015, 2016, 2017, 2020, 2021.
+#
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2020, 2021, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2021-06-01 00:00+0200\n"
+"PO-Revision-Date: 2025-09-22 01:33+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -194,13 +194,13 @@ msgstr ""
 #: l2tp.ui:286
 #, kde-format
 msgid "IPsec Settings…"
-msgstr "Preferencias IPsec..."
+msgstr "Preferencias IPsec…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPPPSettings)
 #: l2tp.ui:293
 #, kde-format
 msgid "PPP Settings…"
-msgstr "Preferencias PPP..."
+msgstr "Preferencias PPP…"
 
 #: l2tpauth.cpp:63
 #, kde-format
@@ -665,33 +665,3 @@ msgstr "Usar cifrado con estados"
 #, kde-format
 msgid "L2TP PPP Options"
 msgstr "Opciones PPP de L2TP"
-
-#~ msgid "User name:"
-#~ msgstr "Nombre de usuario:"
-
-#~ msgid "Gateway ID:"
-#~ msgstr "ID de la puerta de enlace:"
-
-#~ msgid "Group Name:"
-#~ msgstr "Nombre de grupo:"
-
-#~ msgid "Store"
-#~ msgstr "Almacenar"
-
-#~ msgid "Always Ask"
-#~ msgstr "Preguntar siempre"
-
-#~ msgid "Not Required"
-#~ msgstr "No es necesaria"
-
-#~ msgid "Use Microsoft Point-to-Point Encryption"
-#~ msgstr "Usar el cifrado punto a punto de Microsoft"
-
-#~ msgid "Show password"
-#~ msgstr "Mostrar contraseña"
-
-#~ msgid "Userna&me:"
-#~ msgstr "No&mbre de usuario:"
-
-#~ msgid "Show passwords"
-#~ msgstr "Mostrar contraseñas"

@@ -1,15 +1,15 @@
 # Spanish translations for plasmanetworkmanagement_openconnectui.po package.
-# Copyright (C) 2014 This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Copyright (C) 2014-2025 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
 # Automatically generated, 2014.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2014, 2015, 2017, 2019, 2020, 2021, 2022.
+#
+# SPDX-FileCopyrightText: 2014, 2015, 2017, 2019, 2020, 2021, 2022, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2022-08-13 02:42+0200\n"
+"PO-Revision-Date: 2025-09-22 01:34+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -27,7 +27,7 @@ msgstr "No se ha podido inicializar el elemento de software: %1"
 #: openconnectauth.cpp:357
 #, kde-format
 msgid "Contacting host, please wait…"
-msgstr "Conectando con la máquina. Espere, por favor..."
+msgstr "Conectando con la máquina. Espere, por favor…"
 
 #: openconnectauth.cpp:596
 #, kde-format
@@ -324,6 +324,3 @@ msgstr "Modo del token:"
 #, kde-format
 msgid "Token Secret:"
 msgstr "Credencial del token:"
-
-#~ msgid "&Show password"
-#~ msgstr "Mo&strar contraseña"

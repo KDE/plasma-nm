@@ -1,15 +1,15 @@
 # Spanish translations for plasmanetworkmanagement_openvpnui.po package.
-# Copyright (C) 2014 This_file_is_part_of_KDE
-# This file is distributed under the same license as the PACKAGE package.
-#
+# Copyright (C) 2014-2025 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
 # Automatically generated, 2014.
-# Eloy Cuadra <ecuadra@eloihr.net>, 2014, 2015, 2016, 2017, 2020, 2021, 2022, 2023.
+#
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2020, 2021, 2022, 2023, 2025 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2023-03-14 13:24+0100\n"
+"PO-Revision-Date: 2025-09-22 01:34+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -302,7 +302,7 @@ msgstr "Contraseña pasada a OpenVPN cuando se le solicite una."
 #: openvpn.ui:627
 #, kde-format
 msgid "Advanced…"
-msgstr "Avanzado..."
+msgstr "Avanzado…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, generalTab)
 #: openvpnadvanced.ui:28
@@ -662,7 +662,7 @@ msgstr "Cifrado:"
 #: openvpnadvanced.ui:513
 #, kde-format
 msgid "Obtaining available ciphers…"
-msgstr "Obteniendo cifrados disponibles..."
+msgstr "Obteniendo cifrados disponibles…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -1155,120 +1155,3 @@ msgstr "token"
 #, kde-format
 msgid "one-time password"
 msgstr "contraseña de un solo uso"
-
-#~ msgid "Could not open file"
-#~ msgstr "No se ha podido abrir el archivo"
-
-#~ msgid "Do you want to copy your certificates to %1?"
-#~ msgstr "¿Desea copiar sus certificados en %1?"
-
-#~ msgid "Copy certificates"
-#~ msgstr "Copiar certificados"
-
-#~ msgid "Copy"
-#~ msgstr "Copiar"
-
-#~ msgid "Unknown option: %1"
-#~ msgstr "Opción desconocida: %1"
-
-#~ msgid "Invalid number of arguments (expected 1) in option: %1"
-#~ msgstr "Número incorrecto de argumentos (se esperaba 1) en la opción: %1"
-
-#~ msgid "Invalid size (should be between 0 and 0xFFFF) in option: %1"
-#~ msgstr "Tamaño incorrecto (debe estar entre 0 y 0xFFFF) en la opción: %1"
-
-#~ msgid "Invalid proxy option: %1"
-#~ msgstr "Proxy no válido en la opción: %1"
-
-#~ msgid "Invalid port (should be between 1 and 65535) in option: %1"
-#~ msgstr "Puerto no válido (debe estar entre 1 y 65535) en la opción: %1"
-
-#~ msgid "Invalid number of arguments (expected 2) in option: %1"
-#~ msgstr "Número incorrecto de argumentos (se esperaban 2) en la opción: %1"
-
-#~ msgid "Invalid argument in option: %1"
-#~ msgstr "Argumento no válido en la opción: %1"
-
-#~ msgid "File %1 is not a valid OpenVPN's client configuration file"
-#~ msgstr ""
-#~ "El archivo %1 no es un archivo de configuración válido del cliente OpenVPN"
-
-#~ msgid "File %1 is not a valid OpenVPN configuration (no remote)."
-#~ msgstr ""
-#~ "El archivo %1 no es una configuración válida de OpenVPN (no remoto)."
-
-#~ msgid "Could not open file for writing"
-#~ msgstr "No se ha podido abrir el archivo para escritura"
-
-#~ msgid "Use fast LZO compression."
-#~ msgstr "Usar compresión LZO rápida."
-
-#~ msgid "Yes"
-#~ msgstr "Sí"
-
-#~ msgid "Invalid size (should be between 0 and 604800) in option: %1"
-#~ msgstr "Tamaño incorrecto (debe estar entre 0 y 604800) en la opción: %1"
-
-#~ msgid "Use additional TLS authentication"
-#~ msgstr "Usar autenticación TLS adicional"
-
-#~ msgid "TCP/UDP port number for local-peer."
-#~ msgstr "Número de puerto TCP/UDP para la máquina local."
-
-#~ msgid "Custom tunnel MTU:"
-#~ msgstr "MTU personalizada del túnel:"
-
-#~ msgid ""
-#~ "Accept connections only from a host with X509 name or common name equal "
-#~ "to\n"
-#~ "the specified one."
-#~ msgstr ""
-#~ "Aceptar conexiones solo de una máquina con nombre X509 o con un nombre\n"
-#~ "común igual al indicado."
-
-#~ msgid ""
-#~ "Connect only to servers whose certificate matches the given subject.\n"
-#~ "Example: /CN=myvpn.company.com"
-#~ msgstr ""
-#~ "Conectarse solo a los servidores cuyo certificado coincida con el sujeto "
-#~ "indicado.\n"
-#~ "Ejemplo: /CN=mivpn.empresa.com"
-
-#~ msgid "No by default"
-#~ msgstr "No por omisión"
-
-#~ msgid "Store"
-#~ msgstr "Almacenar"
-
-#~ msgid "Always Ask"
-#~ msgstr "Preguntar siempre"
-
-#~ msgid "X.509 Certificates"
-#~ msgstr "Certificados X.509"
-
-#~ msgid "X.509 With Password"
-#~ msgstr "X.509 con contraseña"
-
-#~ msgid "CA file:"
-#~ msgstr "Archivo de la AC:"
-
-#~ msgid "Key:"
-#~ msgstr "Clave:"
-
-#~ msgid "Use TAP device"
-#~ msgstr "Usar dispositivo TAP"
-
-#~ msgid "Show Passwords"
-#~ msgstr "Mostrar contraseñas"
-
-#~ msgid "Show Password"
-#~ msgstr "Mostrar contraseña"
-
-#~ msgid "Show passwords"
-#~ msgstr "Mostrar contraseña"
-
-#~ msgid "&Key:"
-#~ msgstr "Cla&ve:"
-
-#~ msgid "OpenVPNAuthentication"
-#~ msgstr "OpenVPNAuthentication"

@@ -4,20 +4,21 @@
 # Franklin, 2014, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2019.
+# SPDX-FileCopyrightText: 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-07-05 05:54+0000\n"
-"PO-Revision-Date: 2019-05-24 23:10+0800\n"
-"Last-Translator: pan93412 <pan93412@gmail.com>\n"
-"Language-Team: Chinese <zh-l10n@lists.linux.org.tw>\n"
+"PO-Revision-Date: 2025-09-22 06:35+0900\n"
+"Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
+"Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 19.04.1\n"
+"X-Generator: Lokalize 25.07.70\n"
 
 #: openconnectauth.cpp:304
 #, kde-format
@@ -25,10 +26,9 @@ msgid "Failed to initialize software token: %1"
 msgstr "無法初始化軟體憑證：%1"
 
 #: openconnectauth.cpp:357
-#, fuzzy, kde-format
-#| msgid "Contacting host, please wait..."
+#, kde-format
 msgid "Contacting host, please wait…"
-msgstr "正在聯絡主機，請稍候……"
+msgstr "正在聯絡主機，請稍候…"
 
 #: openconnectauth.cpp:596
 #, kde-format
@@ -162,7 +162,7 @@ msgstr "代理伺服器："
 #: openconnectprop.ui:81
 #, kde-format
 msgid "User Agent:"
-msgstr ""
+msgstr "使用者代理："
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openconnectprop.ui:94
@@ -190,10 +190,9 @@ msgstr "Cisco AnyConnect"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:136
-#, fuzzy, kde-format
-#| msgid "Juniper/Pulse Network Connect"
+#, kde-format
 msgid "Juniper Network Connect"
-msgstr "Juniper/Pulse 網路連線"
+msgstr "Juniper 網路連線"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:141
@@ -205,67 +204,67 @@ msgstr "PAN Global Protect 全域保護"
 #: openconnectprop.ui:146
 #, kde-format
 msgid "Pulse Connect Secure"
-msgstr ""
+msgstr "Pulse Connect Secure"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:151
 #, kde-format
 msgid "F5 BIG-IP SSL VPN"
-msgstr ""
+msgstr "F5 BIG-IP SSL VPN"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:156
 #, kde-format
 msgid "Fortinet SSL VPN"
-msgstr ""
+msgstr "Fortinet SSL VPN"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:161
 #, kde-format
 msgid "Array SSL VPN"
-msgstr ""
+msgstr "Array SSL VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnectprop.ui:169
 #, kde-format
 msgid "Reported OS:"
-msgstr ""
+msgstr "回報的作業系統："
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:188
 #, kde-format
 msgid "GNU/Linux"
-msgstr ""
+msgstr "GNU/Linux"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:193
 #, kde-format
 msgid "GNU/Linux 64-bit"
-msgstr ""
+msgstr "GNU/Linux 64-bit"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:198
 #, kde-format
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:203
 #, kde-format
 msgid "Mac OS X"
-msgstr ""
+msgstr "Mac OS X"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:208
 #, kde-format
 msgid "Android"
-msgstr ""
+msgstr "Android"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:213
 #, kde-format
 msgid "Apple iOS"
-msgstr ""
+msgstr "Apple iOS"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: openconnectprop.ui:224

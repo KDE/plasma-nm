@@ -39,7 +39,8 @@
                 "Name[ta]": "கே.டீ.யீ. பிளாஸ்மா",
                 "Name[tr]": "KDE Plasma",
                 "Name[uk]": "Плазма KDE",
-                "Name[zh_CN]": "KDE plasma"
+                "Name[zh_CN]": "KDE plasma",
+                "Name[zh_TW]": "KDE plasma"
             }
         ],
         "Category": "VPNService",
@@ -79,6 +80,7 @@
         "Description[tr]": "Fortinet VPN ile uyumlu",
         "Description[uk]": "Сумісний із VPN Fortinet",
         "Description[zh_CN]": "兼容 Fortinet VPN ",
+        "Description[zh_TW]": "與 Fortinet VPN 相容",
         "EnabledByDefault": false,
         "Icon": "",
         "Id": "plasmanetworkmanagement_openconnect_fortinetui",
@@ -119,6 +121,7 @@
         "Name[tr]": "Fortinet Uyumlu VPN (openconnect)",
         "Name[uk]": "VPN, сумісний з Fortinet (openconnect)",
         "Name[zh_CN]": "Fortinet 兼容 VPN (openconnect)",
+        "Name[zh_TW]": "與 Fortinet 相容的 VPN (openconnect)",
         "Version": "0.1",
         "Website": ""
     },

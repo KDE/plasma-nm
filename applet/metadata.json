@@ -176,6 +176,7 @@
     "X-KDE-Keywords[sl]": "omrežje,internet,ethernet,brezžično,wifi,wlan,vpn",
     "X-KDE-Keywords[sv]": "nätverk,internet,ethernet,trådlös,wifi,wlan,vpn",
     "X-KDE-Keywords[uk]": "network,internet,ethernet,wireless,wifi,wlan,vpn,мережа,інтернет,езернет,бездротова,вайфай,влан,віпіен",
+    "X-KDE-Keywords[zh_TW]": "網路,網絡,網際網路,乙太網路,以太網路,無線",
     "X-Plasma-API": "declarativeappletscript",
     "X-Plasma-DBusActivationService": "org.freedesktop.NetworkManager",
     "X-Plasma-MainScript": "ui/main.qml",

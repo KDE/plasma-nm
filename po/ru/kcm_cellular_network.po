@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-27 00:42+0000\n"
+"POT-Creation-Date: 2025-09-23 00:45+0000\n"
 "PO-Revision-Date: 2025-05-22 18:28+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -19,93 +19,93 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 25.04.1\n"
 
-#: modem.cpp:130
+#: modem.cpp:128
 #, kde-format
 msgid "Error resetting the modem: %1"
 msgstr "Ошибка сброса модема: %1"
 
-#: modem.cpp:264 modem.cpp:436
+#: modem.cpp:262 modem.cpp:434
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
 msgstr "Не удалось обновить параметры соединения %1: %2"
 
-#: modem.cpp:342
+#: modem.cpp:340
 #, kde-format
 msgid "Error activating connection: %1"
 msgstr "Не удалось активировать соединение: %1"
 
-#: modem.cpp:380
+#: modem.cpp:378
 #, kde-format
 msgid "Error adding connection: %1"
 msgstr "Не удалось добавить соединение: %1"
 
-#: modem.cpp:397
+#: modem.cpp:395
 #, kde-format
 msgid "Error removing connection: %1"
 msgstr "Не удалось удалить соединение: %1"
 
-#: modem.cpp:522 modemdetails.cpp:118 modemdetails.cpp:220 modemdetails.cpp:252
+#: modem.cpp:520 modemdetails.cpp:118 modemdetails.cpp:220 modemdetails.cpp:252
 #: modemdetails.cpp:432 modemdetails.cpp:462
 #, kde-format
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: modem.cpp:524
+#: modem.cpp:522
 #, kde-format
 msgid "Unmanaged"
 msgstr "Не управляется"
 
-#: modem.cpp:526
+#: modem.cpp:524
 #, kde-format
 msgid "Unavailable"
 msgstr "Недоступно"
 
-#: modem.cpp:528
+#: modem.cpp:526
 #, kde-format
 msgid "Disconnected"
 msgstr "Отключено"
 
-#: modem.cpp:530
+#: modem.cpp:528
 #, kde-format
 msgid "Preparing"
 msgstr "Подготовка"
 
-#: modem.cpp:532
+#: modem.cpp:530
 #, kde-format
 msgid "ConfiguringHardware"
 msgstr "Настройка оборудования"
 
-#: modem.cpp:534
+#: modem.cpp:532
 #, kde-format
 msgid "NeedAuth"
 msgstr "Требуется аутентификация"
 
-#: modem.cpp:536
+#: modem.cpp:534
 #, kde-format
 msgid "ConfiguringIp"
 msgstr "Настройка IP"
 
-#: modem.cpp:538
+#: modem.cpp:536
 #, kde-format
 msgid "CheckingIp"
 msgstr "Проверка IP"
 
-#: modem.cpp:540
+#: modem.cpp:538
 #, kde-format
 msgid "WaitingForSecondaries"
 msgstr "Ожидание вторичных соединений"
 
-#: modem.cpp:542
+#: modem.cpp:540
 #, kde-format
 msgid "Activated"
 msgstr "Включено"
 
-#: modem.cpp:544
+#: modem.cpp:542
 #, kde-format
 msgid "Deactivating"
 msgstr "Отключено"
 
-#: modem.cpp:546 modemdetails.cpp:250
+#: modem.cpp:544 modemdetails.cpp:250
 #, kde-format
 msgid "Failed"
 msgstr "Ошибка"

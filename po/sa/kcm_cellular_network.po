@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-02-27 00:42+0000\n"
+"POT-Creation-Date: 2025-09-23 00:45+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -19,93 +19,93 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: modem.cpp:130
+#: modem.cpp:128
 #, kde-format
 msgid "Error resetting the modem: %1"
 msgstr "मोडेम् पुनः सेट् कर्तुं त्रुटिः: %1"
 
-#: modem.cpp:264 modem.cpp:436
+#: modem.cpp:262 modem.cpp:434
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
 msgstr "%1 कृते संयोजनसेटिंग्स् अद्यतनीकरणे त्रुटिः: %2."
 
-#: modem.cpp:342
+#: modem.cpp:340
 #, kde-format
 msgid "Error activating connection: %1"
 msgstr "संयोजनं सक्रियीकरणे त्रुटिः: %1"
 
-#: modem.cpp:380
+#: modem.cpp:378
 #, kde-format
 msgid "Error adding connection: %1"
 msgstr "संयोजनं योजयितुं त्रुटिः: %1"
 
-#: modem.cpp:397
+#: modem.cpp:395
 #, kde-format
 msgid "Error removing connection: %1"
 msgstr "संयोजनं निष्कासयितुं त्रुटिः: %1"
 
-#: modem.cpp:522 modemdetails.cpp:118 modemdetails.cpp:220 modemdetails.cpp:252
+#: modem.cpp:520 modemdetails.cpp:118 modemdetails.cpp:220 modemdetails.cpp:252
 #: modemdetails.cpp:432 modemdetails.cpp:462
 #, kde-format
 msgid "Unknown"
 msgstr "अज्ञात"
 
-#: modem.cpp:524
+#: modem.cpp:522
 #, kde-format
 msgid "Unmanaged"
 msgstr "अप्रबन्धितम्"
 
-#: modem.cpp:526
+#: modem.cpp:524
 #, kde-format
 msgid "Unavailable"
 msgstr "अनुपलब्धम्"
 
-#: modem.cpp:528
+#: modem.cpp:526
 #, kde-format
 msgid "Disconnected"
 msgstr "विच्छिन्नः"
 
-#: modem.cpp:530
+#: modem.cpp:528
 #, kde-format
 msgid "Preparing"
 msgstr "सज्जीकरणम्"
 
-#: modem.cpp:532
+#: modem.cpp:530
 #, kde-format
 msgid "ConfiguringHardware"
 msgstr "हार्डवेयर विन्यस्तम्"
 
-#: modem.cpp:534
+#: modem.cpp:532
 #, kde-format
 msgid "NeedAuth"
 msgstr "NeedAuth"
 
-#: modem.cpp:536
+#: modem.cpp:534
 #, kde-format
 msgid "ConfiguringIp"
 msgstr "विन्यस्तंIp"
 
-#: modem.cpp:538
+#: modem.cpp:536
 #, kde-format
 msgid "CheckingIp"
 msgstr "CheckingIp"
 
-#: modem.cpp:540
+#: modem.cpp:538
 #, kde-format
 msgid "WaitingForSecondaries"
 msgstr "WaitingForSecondaries इति"
 
-#: modem.cpp:542
+#: modem.cpp:540
 #, kde-format
 msgid "Activated"
 msgstr "सक्रियः"
 
-#: modem.cpp:544
+#: modem.cpp:542
 #, kde-format
 msgid "Deactivating"
 msgstr "निष्क्रियं कुर्वन्"
 
-#: modem.cpp:546 modemdetails.cpp:250
+#: modem.cpp:544 modemdetails.cpp:250
 #, kde-format
 msgid "Failed"
 msgstr "असफल"

@@ -14,12 +14,9 @@
 #include <QUrl>
 #include <QWaitCondition>
 
-extern "C" {
 #include <cerrno>
-#include <cstdlib>
-}
-
 #include <cstdarg>
+#include <cstdlib>
 
 class OpenconnectAuthStaticWrapper
 {

@@ -20,7 +20,6 @@
 #include <QDialog>
 #include <QDialogButtonBox>
 #include <QDomDocument>
-#include <QEventLoop>
 #include <QFile>
 #include <QFormLayout>
 #include <QIcon>
@@ -41,9 +40,9 @@
 #include "nm-openconnect-service.h"
 
 #include <cstdarg>
+#include <cstring>
 
 extern "C" {
-#include <cstring>
 #include <fcntl.h>
 #include <unistd.h>
 }

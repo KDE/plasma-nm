@@ -59,39 +59,40 @@ VpncAdvancedWidget::~VpncAdvancedWidget()
 
 void VpncAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
 {
-    m_ui->domain->setText(setting->data().value(NM_VPNC_KEY_DOMAIN));
+    const NMStringMap dataMap = setting->data();
+    m_ui->domain->setText(dataMap.value(NM_VPNC_KEY_DOMAIN));
 
-    const QString vendor = setting->data().value(NM_VPNC_KEY_VENDOR);
+    const QString vendor = dataMap.value(NM_VPNC_KEY_VENDOR);
     if (!vendor.isEmpty()) {
         m_ui->vendor->setCurrentIndex(m_ui->vendor->findData(vendor));
     }
 
-    if (setting->data().value(NM_VPNC_KEY_SINGLE_DES) == "yes") {
+    if (dataMap.value(NM_VPNC_KEY_SINGLE_DES) == "yes") {
         m_ui->encryption->setCurrentIndex(m_ui->encryption->findData(NM_VPNC_KEY_SINGLE_DES));
-    } else if (setting->data().value(NM_VPNC_KEY_NO_ENCRYPTION) == "yes") {
+    } else if (dataMap.value(NM_VPNC_KEY_NO_ENCRYPTION) == "yes") {
         m_ui->encryption->setCurrentIndex(m_ui->encryption->findData(NM_VPNC_KEY_NO_ENCRYPTION));
     }
 
-    const QString nat = setting->data().value(NM_VPNC_KEY_NAT_TRAVERSAL_MODE);
+    const QString nat = dataMap.value(NM_VPNC_KEY_NAT_TRAVERSAL_MODE);
     if (!nat.isEmpty()) {
         m_ui->nat->setCurrentIndex(m_ui->nat->findData(nat));
     }
 
-    const QString dhGroup = setting->data().value(NM_VPNC_KEY_DHGROUP);
+    const QString dhGroup = dataMap.value(NM_VPNC_KEY_DHGROUP);
     if (!dhGroup.isEmpty()) {
         m_ui->dhGroup->setCurrentIndex(m_ui->dhGroup->findData(dhGroup));
     } else {
         m_ui->dhGroup->setCurrentIndex(m_ui->dhGroup->findData(NM_VPNC_DHGROUP_DH2)); // default
     }
 
-    const QString pfs = setting->data().value(NM_VPNC_KEY_PERFECT_FORWARD);
+    const QString pfs = dataMap.value(NM_VPNC_KEY_PERFECT_FORWARD);
     if (!pfs.isEmpty()) {
         m_ui->pfs->setCurrentIndex(m_ui->pfs->findData(pfs));
     }
 
     bool ok = false;
 
-    const QString localport = setting->data().value(NM_VPNC_KEY_LOCAL_PORT);
+    const QString localport = dataMap.value(NM_VPNC_KEY_LOCAL_PORT);
     if (!localport.isEmpty()) {
         const uint localportNum = localport.toUInt(&ok);
         if (ok && localportNum <= 65535) {
@@ -99,7 +100,7 @@ void VpncAdvancedWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setti
         }
     }
 
-    const uint dpd = setting->data().value(NM_VPNC_KEY_DPD_IDLE_TIMEOUT).toUInt(&ok);
+    const uint dpd = dataMap.value(NM_VPNC_KEY_DPD_IDLE_TIMEOUT).toUInt(&ok);
     m_ui->deadPeer->setChecked(ok && dpd == 0);
 }
 

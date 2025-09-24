@@ -247,12 +247,9 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
         return VpnUiPlugin::ExportResult::fail("Could not open file for writing");
     }
 
-    NMStringMap dataMap;
-    NMStringMap secretData;
-
     NetworkManager::VpnSetting::Ptr vpnSetting = connection->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
-    dataMap = vpnSetting->data();
-    secretData = vpnSetting->secrets();
+    const NMStringMap dataMap = vpnSetting->data();
+    const NMStringMap secretData = vpnSetting->secrets();
 
     QString line;
     QString cacert, user_cert, private_key;
@@ -262,15 +259,16 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
     line = QString(REMOTE_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_REMOTE]
         + (dataMap[NM_OPENVPN_KEY_PORT].isEmpty() ? "\n" : (' ' + dataMap[NM_OPENVPN_KEY_PORT]) + '\n');
     expFile.write(line.toLatin1());
-    if (dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_TLS //
-        || dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD //
-        || dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
+    const QString connType = dataMap.value(NM_OPENVPN_KEY_CONNECTION_TYPE);
+    if (connType == NM_OPENVPN_CONTYPE_TLS //
+        || connType == NM_OPENVPN_CONTYPE_PASSWORD //
+        || connType == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
         if (!dataMap[NM_OPENVPN_KEY_CA].isEmpty()) {
             cacert = dataMap[NM_OPENVPN_KEY_CA];
         }
     }
-    if (dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_TLS //
-        || dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
+    if (connType == NM_OPENVPN_CONTYPE_TLS //
+        || connType == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
         if (!dataMap[NM_OPENVPN_KEY_CERT].isEmpty()) {
             user_cert = dataMap[NM_OPENVPN_KEY_CERT];
         }
@@ -296,10 +294,10 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
             expFile.write(line.toLatin1());
         }
     }
-    if (dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_TLS //
-        || dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_STATIC_KEY //
-        || dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD //
-        || dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
+    if (connType == NM_OPENVPN_CONTYPE_TLS //
+        || connType == NM_OPENVPN_CONTYPE_STATIC_KEY //
+        || connType == NM_OPENVPN_CONTYPE_PASSWORD //
+        || connType == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
         line = QString(AUTH_USER_PASS_TAG) + '\n';
         expFile.write(line.toLatin1());
         if (!dataMap[NM_OPENVPN_KEY_TLS_REMOTE].isEmpty()) {
@@ -312,12 +310,12 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
             expFile.write(line.toLatin1());
         }
     }
-    if (dataMap[NM_OPENVPN_KEY_CONNECTION_TYPE] == NM_OPENVPN_CONTYPE_STATIC_KEY) {
+    if (connType == NM_OPENVPN_CONTYPE_STATIC_KEY) {
         line = QString(SECRET_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_STATIC_KEY] + '\"'
             + (dataMap[NM_OPENVPN_KEY_STATIC_KEY_DIRECTION].isEmpty() ? "\n" : (' ' + dataMap[NM_OPENVPN_KEY_STATIC_KEY_DIRECTION]) + '\n');
         expFile.write(line.toLatin1());
     }
-    if (dataMap.contains(NM_OPENVPN_KEY_RENEG_SECONDS) && !dataMap[NM_OPENVPN_KEY_RENEG_SECONDS].isEmpty()) {
+    if (!dataMap[NM_OPENVPN_KEY_RENEG_SECONDS].isEmpty()) {
         line = QString(RENEG_SEC_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_RENEG_SECONDS] + '\n';
         expFile.write(line.toLatin1());
     }
@@ -329,20 +327,9 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
         line = QString(COMP_TAG) + " adaptive\n";
         expFile.write(line.toLatin1());
     }
-    if (dataMap[NM_OPENVPN_KEY_COMPRESS] == "yes") {
-        line = QString(COMPRESS_TAG) + " yes\n";
-        expFile.write(line.toLatin1());
-    }
-    if (dataMap[NM_OPENVPN_KEY_COMPRESS] == "lzo") {
-        line = QString(COMPRESS_TAG) + " lzo\n";
-        expFile.write(line.toLatin1());
-    }
-    if (dataMap[NM_OPENVPN_KEY_COMPRESS] == "lz4") {
-        line = QString(COMPRESS_TAG) + " lz4\n";
-        expFile.write(line.toLatin1());
-    }
-    if (dataMap[NM_OPENVPN_KEY_COMPRESS] == "lz4-v2") {
-        line = QString(COMPRESS_TAG) + " lz4-v2\n";
+    if (const QString c = dataMap.value(NM_OPENVPN_KEY_COMPRESS); //
+        c == "yes" || c == "lzo" || c == "lz4" || c == "lz4-v2") {
+        line = QString("%1 %2\n").arg(COMPRESS_TAG, c);
         expFile.write(line.toLatin1());
     }
     if (dataMap[NM_OPENVPN_KEY_MSSFIX] == "yes") {

@@ -62,13 +62,13 @@ static int updateToken(void *, const char *);
 
 // name/address: IP/domain name of the host (OpenConnect accepts both, so no difference here)
 // group: user group on the server
-using VPNHost = struct {
+struct VPNHost {
     QString name;
     QString group;
     QString address;
 };
 
-using Token = struct {
+struct Token {
     oc_token_mode_t tokenMode;
     QByteArray tokenSecret;
 };

@@ -29,7 +29,7 @@
 #define openconnect_has_yubioath_support() 0
 #endif
 
-using Token = struct {
+struct Token {
     int tokenIndex;
     QString tokenSecret;
 };

@@ -35,20 +35,13 @@ Window {
 
     QQC2.ScrollView {
         id: scrollView
-        anchors {
-            bottom: buttonRow.top
-            bottomMargin: Math.round(Kirigami.Units.gridUnit / 2)
-            left: parent.left
-            right: parent.right
-            top: parent.top
-        }
+        anchors.fill: parent
 
         QQC2.ScrollBar.horizontal.policy: QQC2.ScrollBar.AlwaysOff
 
         ListView {
             id: view
 
-            property int currentlySelectedIndex: -1
             property bool connectionShared
             property string connectionSpecificType
             property int connectionType
@@ -80,21 +73,11 @@ Window {
                 property string subtitle: model.ConnectionType === PlasmaNM.Enums.Vpn ? delegate.model.ConnectionDescription : null
 
                 width: view.width
-                checked: view.currentlySelectedIndex === index
                 icon.name: model.ConnectionIcon
 
                 onClicked: {
-                    createButton.enabled = true
-                    view.currentlySelectedIndex = index
-                    view.connectionSpecificType = model.ConnectionSpecificType
-                    view.connectionShared = model.ConnectionShared
-                    view.connectionType = model.ConnectionType
-                    view.connectionVpnType = model.ConnectionVpnType
-                }
-
-                onDoubleClicked: {
                     dialog.close()
-                    kcm.onRequestCreateConnection(view.connectionType, view.connectionVpnType, view.connectionSpecificType, view.connectionShared)
+                    kcm.onRequestCreateConnection(model.ConnectionType, model.ConnectionVpnType, model.ConnectionSpecificType, model.ConnectionShared)
                 }
 
                 contentItem: Kirigami.IconTitleSubtitle {
@@ -104,55 +87,6 @@ Window {
                     selected: delegate.highlighted
                 }
             }
-        }
-    }
-
-    Row {
-        id: buttonRow
-        anchors {
-            bottom: parent.bottom
-            right: parent.right
-            margins: Math.round(Kirigami.Units.gridUnit / 2)
-        }
-        spacing: Kirigami.Units.mediumSpacing
-
-        QQC2.Button {
-            id: createButton
-            icon.name: "list-add"
-            enabled: false
-            text: i18n("Create")
-
-            onClicked: {
-                dialog.close()
-                kcm.onRequestCreateConnection(view.connectionType, view.connectionVpnType, view.connectionSpecificType, view.connectionShared)
-            }
-        }
-
-        QQC2.Button {
-            id: cancelButton
-            icon.name: "dialog-cancel"
-            text: i18n("Cancel")
-
-            onClicked: {
-                dialog.close()
-            }
-        }
-    }
-
-    QQC2.ToolButton {
-        id: configureButton
-        anchors {
-            bottom: parent.bottom
-            left: parent.left
-            margins: Math.round(Kirigami.Units.gridUnit / 2)
-        }
-        icon.name: "configure"
-
-        QQC2.ToolTip.text: i18n("Configuration")
-        QQC2.ToolTip.visible: hovered
-
-        onClicked: {
-            dialog.configurationDialogRequested();
         }
     }
 }

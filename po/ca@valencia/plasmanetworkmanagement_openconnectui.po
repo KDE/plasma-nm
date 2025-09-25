@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-20 00:44+0000\n"
+"POT-Creation-Date: 2025-09-25 00:44+0000\n"
 "PO-Revision-Date: 2024-10-27 10:16+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -21,23 +21,23 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: openconnectauth.cpp:346
+#: openconnectauth.cpp:345
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "No s'ha pogut restablir el testimoni de programari: %1"
 
-#: openconnectauth.cpp:399
+#: openconnectauth.cpp:398
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "S'està connectant amb la màquina, espereu…"
 
-#: openconnectauth.cpp:787
+#: openconnectauth.cpp:786
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Entrada"
 
-#: openconnectauth.cpp:849
+#: openconnectauth.cpp:848
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -48,7 +48,7 @@ msgstr ""
 "Motiu: %2\n"
 "L'accepte malgrat tot?"
 
-#: openconnectauth.cpp:944
+#: openconnectauth.cpp:943
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "L'intent de connexió ha sigut infructuós."

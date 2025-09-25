@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-20 00:44+0000\n"
+"POT-Creation-Date: 2025-09-25 00:44+0000\n"
 "PO-Revision-Date: 2025-09-20 15:39+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -20,23 +20,23 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: openconnectauth.cpp:346
+#: openconnectauth.cpp:345
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Не вдалося ініціалізувати програмний ключ: %1"
 
-#: openconnectauth.cpp:399
+#: openconnectauth.cpp:398
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Встановлення зв’язку з вузлом, будь ласка, зачекайте…"
 
-#: openconnectauth.cpp:787
+#: openconnectauth.cpp:786
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Увійти"
 
-#: openconnectauth.cpp:849
+#: openconnectauth.cpp:848
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -47,7 +47,7 @@ msgstr ""
 "Причина: %2\n"
 "Прийняти сертифікат попри це?"
 
-#: openconnectauth.cpp:944
+#: openconnectauth.cpp:943
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Спроба встановлення з’єднання зазнала невдачі."

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-20 00:44+0000\n"
+"POT-Creation-Date: 2025-09-25 00:44+0000\n"
 "PO-Revision-Date: 2025-09-20 12:10+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,23 +17,23 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.08.1\n"
 
-#: openconnectauth.cpp:346
+#: openconnectauth.cpp:345
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Softwaretoken initialiseren is mislukt: %1"
 
-#: openconnectauth.cpp:399
+#: openconnectauth.cpp:398
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Contact maken met de host, even geduld a.u.b…"
 
-#: openconnectauth.cpp:787
+#: openconnectauth.cpp:786
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Aanmelden"
 
-#: openconnectauth.cpp:849
+#: openconnectauth.cpp:848
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -44,7 +44,7 @@ msgstr ""
 "Reden: %2\n"
 "Toch accepteren?"
 
-#: openconnectauth.cpp:944
+#: openconnectauth.cpp:943
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Verbindingspoging was zonder succes."

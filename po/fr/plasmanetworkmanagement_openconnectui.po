@@ -10,8 +10,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-20 00:44+0000\n"
-"PO-Revision-Date: 2025-04-23 18:03+0200\n"
+"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"PO-Revision-Date: 2025-09-21 09:25+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -21,26 +21,26 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 "X-Text-Markup: kde4\n"
 
-#: openconnectauth.cpp:346
+#: openconnectauth.cpp:345
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr "Impossible d'initialiser le jeton logiciel : %1"
 
-#: openconnectauth.cpp:399
+#: openconnectauth.cpp:398
 #, kde-format
 msgid "Contacting host, please wait…"
 msgstr "Contact en cours avec l'hôte, veuillez patienter..."
 
-#: openconnectauth.cpp:787
+#: openconnectauth.cpp:786
 #, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Identifiant de connexion"
 
-#: openconnectauth.cpp:849
+#: openconnectauth.cpp:848
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -52,7 +52,7 @@ msgstr ""
 "Raison : %2\n"
 "Accepter quoi qu'il en soit ?"
 
-#: openconnectauth.cpp:944
+#: openconnectauth.cpp:943
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "La tentative de connexion a réussi."
@@ -409,35 +409,31 @@ msgid "Internal User Verification Locked"
 msgstr "La vérification interne de l'utilisateur a été verrouillée."
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] "Code « PIN » incorrect. %1 tentatives restantes."
+msgstr[0] "Code « PIN » incorrect. Il reste %1 tentatives."
 msgstr[1] "Code « PIN » incorrect. %1 tentatives restantes."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] "Trop court. %1 tentatives restantes."
+msgstr[0] "Trop court. Il reste %1 tentatives."
 msgstr[1] "Trop court. %1 tentatives restantes."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] "Caractères non valables. %1 tentatives restantes."
+msgstr[0] "Caractères non valables. Il reste %1 tentatives."
 msgstr[1] "Caractères non valables. %1 tentatives restantes."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] "Identique au code « PIN » courant. %1 tentatives restantes."
+msgstr[0] "Identique au code « PIN » courant. Il reste %1 tentatives."
 msgstr[1] "Identique au code « PIN » courant. %1 tentatives restantes."
 
 #: openconnectwebauthdialog.cpp:239

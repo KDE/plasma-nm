@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openconnect\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-20 00:44+0000\n"
+"POT-Creation-Date: 2025-09-25 00:44+0000\n"
 "PO-Revision-Date: 2015-02-04 16:06+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -20,25 +20,25 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: openconnectauth.cpp:346
+#: openconnectauth.cpp:345
 #, kde-format
 msgid "Failed to initialize software token: %1"
 msgstr ""
 
-#: openconnectauth.cpp:399
+#: openconnectauth.cpp:398
 #, fuzzy, kde-format
 #| msgid "Contacting host, please wait..."
 msgid "Contacting host, please wait…"
 msgstr "Kontaktiram domacina, molim sačekajte..."
 
-#: openconnectauth.cpp:787
+#: openconnectauth.cpp:786
 #, fuzzy, kde-format
 #| msgid "Login"
 msgctxt "Verb, to proceed with login"
 msgid "Login"
 msgstr "Prijava"
 
-#: openconnectauth.cpp:849
+#: openconnectauth.cpp:848
 #, kde-format
 msgid ""
 "Check failed for certificate from VPN server \"%1\".\n"
@@ -49,7 +49,7 @@ msgstr ""
 "Razlog: %2\n"
 "Ipak prihvati?"
 
-#: openconnectauth.cpp:944
+#: openconnectauth.cpp:943
 #, kde-format
 msgid "Connection attempt was unsuccessful."
 msgstr "Pokušaj spajanja je bio neuspješan."

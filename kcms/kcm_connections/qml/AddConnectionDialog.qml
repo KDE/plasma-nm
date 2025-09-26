@@ -69,6 +69,8 @@ Window {
                 required property int index
                 required property var model
 
+                highlighted: delegate.pressed || delegate.down || delegate.index === view.currentIndex
+
                 text: model.ConnectionTypeName
                 property string subtitle: model.ConnectionType === PlasmaNM.Enums.Vpn ? delegate.model.ConnectionDescription : null
 

@@ -48,6 +48,8 @@ Kirigami.ScrollablePage {
     rightPadding: 0
 
     ColumnLayout {
+
+/*
         FormCard.FormHeader {
             title: i18nc("@title:group", "General")
         }
@@ -168,7 +170,7 @@ Kirigami.ScrollablePage {
                 color: "red"
             }
         }
-
+*/
         FormCard.FormHeader {
             title: i18nc("@title:group", "IP Settings")
         }

@@ -18,10 +18,10 @@ FormCard.AbstractFormDelegate {
     property bool editMode
     property var map : []
     property bool predictableWirelessPassword: !Uuid && Type == PlasmaNM.Enums.Wireless &&
-                                                    (SecurityType == PlasmaNM.Enums.StaticWep ||
-                                                     SecurityType == PlasmaNM.Enums.WpaPsk ||
-                                                     SecurityType == PlasmaNM.Enums.Wpa2Psk ||
-                                                     SecurityType == PlasmaNM.Enums.SAE)
+    (SecurityType == PlasmaNM.Enums.StaticWep ||
+    SecurityType == PlasmaNM.Enums.WpaPsk ||
+    SecurityType == PlasmaNM.Enums.Wpa2Psk ||
+    SecurityType == PlasmaNM.Enums.SAE)
     property real rxSpeed: 0
     property real txSpeed: 0
 
@@ -139,8 +139,8 @@ FormCard.AbstractFormDelegate {
                 }
             } else {
                 kcm.push("ConnectionInfo.qml", {details: ConnectionDetails,
-                                                connectionName: ItemUniqueName,
-                                                delegate: root})
+                    connectionName: ItemUniqueName,
+                    delegate: root})
 
             }
         } else if (predictableWirelessPassword) {

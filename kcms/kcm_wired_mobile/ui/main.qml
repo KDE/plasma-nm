@@ -14,12 +14,27 @@ import org.kde.kirigamiaddons.formcard 1 as FormCard
 SimpleKCM {
     id: root
 
+    property bool editMode: true
+
     topPadding: Kirigami.Units.gridUnit
     bottomPadding: Kirigami.Units.gridUnit
     leftPadding: 0
     rightPadding: 0
 
+    PlasmaNM.Handler {
+        id: handler
+    }
 
+    PlasmaNM.NetworkModel {
+        id: connectionModel
+    }
+
+    PlasmaNM.MobileProxyModel {
+        id: mobileProxyModel
+        sourceModel: connectionModel
+        showSavedMode: false
+        wired: true
+    }
 
     ColumnLayout {
 
@@ -38,25 +53,25 @@ SimpleKCM {
             }
         }
 
-        FormCard.FormCard {
-            FormCard.FormSwitchDelegate {
-                id: wifiSwitch
-                text: i18n("Wired")
-                checked: enabledConnections.wirelessEnabled
-                onCheckedChanged: {
-                    handler.enableWireless(checked);
-                    checked = Qt.binding(() => enabledConnections.wirelessEnabled);
-                }
-            }
-        }
+        // FormCard.FormCard {
+        //     FormCard.FormSwitchDelegate {
+        //         id: wifiSwitch
+        //         text: i18n("Wired")
+        //         checked: enabledConnections.wirelessEnabled
+        //         onCheckedChanged: {
+        //             handler.enableWireless(checked);
+        //             checked = Qt.binding(() => enabledConnections.wirelessEnabled);
+        //         }
+        //     }
+        // }
 
         FormCard.FormHeader {
             visible: savedCard.visible
             title: i18nc("@title:group", "Wired Network Interfaces")
         }
-
+        /*
         FormCard.FormCard {
-            id: savedCard
+            id: interfacesCard
             //visible: enabledConnections.wirelessEnabled && count > 0
 
             // number of visible entries
@@ -72,9 +87,10 @@ SimpleKCM {
             // }
 
             Repeater {
-                id: connectedRepeater
-                model: mobileProxyModel
+                id: interfacesRepeater
+                //model: kcm.interfaces
                 delegate: ConnectionItemDelegate {
+                    //activeConnection: ActiveConnectionPlasmaNM
                     //editMode: root.editMode
 
                     // connected or saved
@@ -83,8 +99,49 @@ SimpleKCM {
 
                     // separate property for visible since visible is false when the whole card is not visible
                     //visible: shouldDisplay
+                    Component.onCompleted: {
+                        console.log("activeConnection: " + modelData);
+                    }
                 }
             }
+        }
+        */
+        FormCard.FormCard {
+            id: savedCard
+
+            // number of visible entries
+            property int count: 0
+            function updateCount() {
+                count = 0;
+                for (let i = 0; i < connectedRepeater.count; i++) {
+                    let item = connectedRepeater.itemAt(i);
+                    if (item && item.shouldDisplay) {
+                        count++;
+                    }
+                }
+            }
+
+            Repeater {
+                id: connectedRepeater
+                //visible: savedCard.count > 0
+
+                model: mobileProxyModel
+                delegate: ConnectionItemDelegate {
+                    editMode: root.editMode
+
+                    // connected or saved
+                    property bool shouldDisplay: (Uuid != "") || ConnectionState === PlasmaNM.Enums.Activated
+                    onShouldDisplayChanged: savedCard.updateCount()
+
+                    // separate property for visible since visible is false when the whole card is not visible
+                    visible: shouldDisplay
+                }
+            }
+
+            // Controls.Label {
+            //     visible: savedCard.count == 0
+            //     text: i18n("No wired connection available.")
+            // }
         }
     }
 }

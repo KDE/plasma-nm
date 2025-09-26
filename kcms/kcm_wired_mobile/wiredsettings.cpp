@@ -18,20 +18,102 @@
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/Utils>
-#include <NetworkManagerQt/WiredDevice>
 #include <NetworkManagerQt/WiredSetting>
 #include <NetworkManagerQt/WirelessDevice>
 #include <NetworkManagerQt/WirelessSetting>
 
-K_PLUGIN_CLASS_WITH_JSON(WifiSettings, "kcm_mobile_wired.json")
+K_PLUGIN_CLASS_WITH_JSON(WiredSettings, "kcm_mobile_wired.json")
 
-WifiSettings::WifiSettings(QObject *parent, const KPluginMetaData &metaData)
+WiredSettings::WiredSettings(QObject *parent, const KPluginMetaData &metaData)
     : KQuickConfigModule(parent, metaData)
 {
     setButtons({});
+
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
+        if (device->type() == NetworkManager::Device::Ethernet) {
+            qDebug() << "(init) new device" << device;
+            NetworkManager::WiredDevice::Ptr wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
+            m_interfaces.append(wiredDevice.data());
+            qDebug() << "   (init) interfaceName:" << device->interfaceName() << device->activeConnection();
+            Q_EMIT interfacesChanged();
+        }
+
+    }
+
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::deviceAdded, this, &WiredSettings::deviceAdded);
+    connect(NetworkManager::notifier(), &NetworkManager::Notifier::deviceRemoved, this, &WiredSettings::deviceRemoved);
+
 }
 
-QVariantMap WifiSettings::getConnectionSettings(const QString &connection, const QString &type)
+
+void WiredSettings::deviceAdded(const QString &dev)
+{
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(dev);
+
+    if (device) {
+        if (device->type() == NetworkManager::Device::Ethernet) {
+            qDebug() << "new device" << dev << device;
+            NetworkManager::WiredDevice::Ptr wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
+            m_interfaces.append(wiredDevice.data());
+            qDebug() << "   interfaceName:" << device->interfaceName();
+            Q_EMIT interfacesChanged();
+        }
+    }
+}
+
+void WiredSettings::deviceRemoved(const QString &dev)
+{
+    qDebug() << "device removed" << dev;
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(dev);
+
+    if (device && device->type() == NetworkManager::Device::Ethernet) {
+        NetworkManager::WiredDevice::Ptr wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
+        //m_interfaces.append(wiredDevice);
+        m_interfaces.removeAll(wiredDevice.data());
+        Q_EMIT interfacesChanged();
+    }
+    /*
+    bool wired = false;
+    bool wireless = false;
+    bool modem = false;
+    bool bluetooth = false;
+
+    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
+        if (device->type() == NetworkManager::Device::Modem) {
+            modem = true;
+        } else if (device->type() == NetworkManager::Device::Wifi) {
+            wireless = true;
+        } else if (device->type() == NetworkManager::Device::Ethernet) {
+            wired = true;
+        } else if (device->type() == NetworkManager::Device::Bluetooth) {
+            bluetooth = true;
+        }
+    }
+
+    if (!wired && m_wiredDeviceAvailable) {
+        m_wiredDeviceAvailable = false;
+        Q_EMIT wiredDeviceAvailableChanged(false);
+    }
+
+    if (!wireless && m_wirelessDeviceAvailable) {
+        m_wirelessDeviceAvailable = false;
+        Q_EMIT wirelessDeviceAvailableChanged(false);
+    }
+
+    if (!modem && m_modemDeviceAvailable) {
+        m_modemDeviceAvailable = false;
+        Q_EMIT modemDeviceAvailableChanged(false);
+    }
+
+    if (!bluetooth && m_bluetoothDeviceAvailable) {
+        m_bluetoothDeviceAvailable = false;
+        Q_EMIT bluetoothDeviceAvailableChanged(false);
+    }
+    */
+}
+
+
+QVariantMap WiredSettings::getConnectionSettings(const QString &connection, const QString &type)
 {
     if (type.isEmpty())
         return QVariantMap();
@@ -63,7 +145,7 @@ QVariantMap WifiSettings::getConnectionSettings(const QString &connection, const
     return map;
 }
 
-void WifiSettings::addConnectionFromQML(const QVariantMap &QMLmap)
+void WiredSettings::addConnectionFromQML(const QVariantMap &QMLmap)
 {
     if (QMLmap.isEmpty())
         return;
@@ -147,7 +229,7 @@ void WifiSettings::addConnectionFromQML(const QVariantMap &QMLmap)
     NetworkManager::addConnection(map);
 }
 
-void WifiSettings::updateConnectionFromQML(const QString &path, const QVariantMap &map)
+void WiredSettings::updateConnectionFromQML(const QString &path, const QVariantMap &map)
 {
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(path);
     if (!con)
@@ -177,6 +259,7 @@ void WifiSettings::updateConnectionFromQML(const QString &path, const QVariantMa
         toUpdateMap.insert("ipv4", ipSetting->toMap());
     }
 
+    /*
     NetworkManager::WirelessSetting::Ptr wirelessSetting =
         con->settings()->setting(NetworkManager::Setting::Wireless).staticCast<NetworkManager::WirelessSetting>();
     if (map.contains("hidden")) {
@@ -225,6 +308,7 @@ void WifiSettings::updateConnectionFromQML(const QString &path, const QVariantMa
 
         toUpdateMap.insert("802-11-wireless-security", securitySetting->toMap());
     }
+    */
     qWarning() << toUpdateMap;
     con->update(toUpdateMap);
 }

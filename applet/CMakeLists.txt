@@ -8,7 +8,6 @@ plasma_add_applet(org.kde.plasma.networkmanagement
         PopupDialog.qml
         ShareNetworkQrCodePage.qml
         Toolbar.qml
-        TrafficMonitor.qml
     RESOURCES
         main.xml
     GENERATE_APPLET_CLASS

@@ -198,7 +198,7 @@ PlasmaExtras.ExpandableListItem {
                     }
                 }
 
-                TrafficMonitor {
+                PlasmaNM.TrafficMonitor {
                     id: trafficMonitorGraph
                     width: parent.width
                     downloadSpeed: connectionItem.rxSpeed

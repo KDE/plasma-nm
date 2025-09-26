@@ -7,6 +7,7 @@ import QtQuick.Controls as Controls
 import org.kde.coreaddons as KCoreAddons
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard as FormCard
+import org.kde.plasma.networkmanagement as PlasmaNM
 
 
 FormCard.FormCardPage {
@@ -24,7 +25,7 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         padding: Math.round(Kirigami.Units.gridUnit / 2)
 
-        TrafficMonitor {
+        PlasmaNM.TrafficMonitor {
             id: trafficMonitorGraph
             width: parent.width
             downloadSpeed: delegate.rxSpeed

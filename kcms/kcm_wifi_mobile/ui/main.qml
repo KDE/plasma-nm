@@ -117,7 +117,7 @@ SimpleKCM {
             Repeater {
                 id: connectedRepeater
                 model: mobileProxyModel
-                delegate: ConnectionItemDelegate {
+                delegate: PlasmaNM.ConnectionItemDelegate {
                     editMode: root.editMode
 
                     // connected or saved
@@ -154,7 +154,7 @@ SimpleKCM {
             Repeater {
                 id: availableRepeater
                 model: mobileProxyModel
-                delegate: ConnectionItemDelegate {
+                delegate: PlasmaNM.ConnectionItemDelegate {
                     editMode: root.editMode
 
                     property bool shouldDisplay: !((Uuid != "") || ConnectionState === PlasmaNM.Enums.Activated)

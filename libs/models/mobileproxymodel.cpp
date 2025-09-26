@@ -1,5 +1,5 @@
 /*
-    Mobile proxy model - model for displaying netwoks in mobile kcm
+    Mobile proxy model - model for displaying networks in mobile kcm
     SPDX-FileCopyrightText: 2017 Martin Kacej <m.kacej@atlas.sk>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
@@ -31,6 +31,18 @@ bool MobileProxyModel::showSavedMode() const
     return m_showSavedMode;
 }
 
+void MobileProxyModel::setWired(bool _wired)
+{
+    m_wired = _wired;
+    Q_EMIT wiredChanged();
+    invalidate();
+}
+
+bool MobileProxyModel::wired() const
+{
+    return m_wired;
+}
+
 bool MobileProxyModel::filterAcceptsRow(int source_row, const QModelIndex &source_parent) const
 {
     const QModelIndex index = sourceModel()->index(source_row, 0, source_parent);
@@ -44,12 +56,25 @@ bool MobileProxyModel::filterAcceptsRow(int source_row, const QModelIndex &sourc
 
     const NetworkManager::ConnectionSettings::ConnectionType type =
         (NetworkManager::ConnectionSettings::ConnectionType)sourceModel()->data(index, NetworkModel::TypeRole).toUInt();
-    if (type == NetworkManager::ConnectionSettings::Wireless) {
-        NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
-        if (showSavedMode()) {
-            return itemType == NetworkModelItem::UnavailableConnection;
-        } else {
-            return itemType >= NetworkModelItem::AvailableConnection;
+    if (!m_wired) {
+        // model is used to list wireless connections
+        if (type == NetworkManager::ConnectionSettings::Wireless) {
+            NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
+            if (showSavedMode()) {
+                return itemType == NetworkModelItem::UnavailableConnection;
+            } else {
+                return itemType >= NetworkModelItem::AvailableConnection;
+            }
+        }
+    } else {
+        // model is used to list wired connections
+        if (type == NetworkManager::ConnectionSettings::Wired) {
+            NetworkModelItem::ItemType itemType = (NetworkModelItem::ItemType)sourceModel()->data(index, NetworkModel::ItemTypeRole).toUInt();
+            if (showSavedMode()) {
+                return itemType == NetworkModelItem::UnavailableConnection;
+            } else {
+                return itemType >= NetworkModelItem::AvailableConnection;
+            }
         }
     }
     return false;

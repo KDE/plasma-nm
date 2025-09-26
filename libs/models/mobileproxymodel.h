@@ -3,11 +3,9 @@
     SPDX-FileCopyrightText: 2017 Martin Kacej <m.kacej@atlas.sk>
 
     SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted-GPL
-
 */
 
-#ifndef PLASMA_NM_MOBILE_PROXY_MODEL_H
-#define PLASMA_NM_MOBILE_PROXY_MODEL_H
+#pragma once
 
 #include "plasmanm_internal_export.h"
 
@@ -21,20 +19,24 @@ class PLASMANM_INTERNAL_EXPORT MobileProxyModel : public QSortFilterProxyModel
     QML_ELEMENT
     Q_PROPERTY(QAbstractItemModel *sourceModel READ sourceModel WRITE setSourceModel)
     Q_PROPERTY(bool showSavedMode READ showSavedMode WRITE setShowSavedMode NOTIFY showSavedModeChanged)
+    Q_PROPERTY(bool wired READ wired WRITE setWired NOTIFY wiredChanged)
 public:
     explicit MobileProxyModel(QObject *parent = nullptr);
     ~MobileProxyModel() override;
     void setShowSavedMode(bool mode);
     bool showSavedMode() const;
-signals:
+    void setWired(bool _wired);
+    bool wired() const;
+
+Q_SIGNALS:
     void showSavedModeChanged(bool mode);
+    void wiredChanged();
 
 protected:
     bool filterAcceptsRow(int source_row, const QModelIndex &source_parent) const Q_DECL_OVERRIDE;
     bool lessThan(const QModelIndex &left, const QModelIndex &right) const Q_DECL_OVERRIDE;
 
 private:
-    bool m_showSavedMode = false;
+    bool m_showSavedMode { false };
+    bool m_wired { false };
 };
-
-#endif // PLASMA_NM_MOBILE_PROXY_MODEL_H

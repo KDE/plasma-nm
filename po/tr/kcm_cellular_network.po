@@ -604,7 +604,7 @@ msgstr "Modem kullanılamıyor"
 #: ui/main.qml:71
 #, kde-format
 msgid "Mobile data"
-msgstr "Taşınabilir veri"
+msgstr "Hücresel veri"
 
 #: ui/main.qml:76
 #, kde-format
@@ -614,19 +614,19 @@ msgstr "Takılı SIM yok."
 #: ui/main.qml:78
 #, kde-format
 msgid "Mobile data is not available with this modem."
-msgstr "Bu modemle taşınabilir veri kullanılamıyor."
+msgstr "Bu modemle hücresel veri kullanılamıyor."
 
 #: ui/main.qml:80
 #, kde-format
 msgid "An APN needs to be configured to have mobile data."
 msgstr ""
-"Taşınabilir veri olması için bir erişim noktası adının yapılandırılması "
-"gerekiyor."
+"Hücresel verinin kullanılabilmesi için bir erişim noktasının yapılandırılmış "
+"olması gerekiyor."
 
 #: ui/main.qml:82
 #, kde-format
 msgid "Whether mobile data is enabled."
-msgstr "Taşınabilir verinin etkinleştirilip etkinleştirilmediği."
+msgstr "Hücresel verinin etkinleştirilip etkinleştirilmediği."
 
 #: ui/main.qml:113
 #, kde-format
@@ -636,7 +636,7 @@ msgstr "Veri Kullanımı"
 #: ui/main.qml:114
 #, kde-format
 msgid "View data usage."
-msgstr "Veri kullanımını görüntüle."
+msgstr "Veri kullanımını görüntüleyin."
 
 #: ui/main.qml:122
 #, kde-format
@@ -846,7 +846,7 @@ msgid ""
 "You can lock your SIM to require a set PIN code for phone calls and mobile "
 "data."
 msgstr ""
-"Telefon aramaları ve taşınabilir veri için SIM’inizin bir PIN kodu "
+"Telefon aramaları ve hücresel veri için SIM’inizin bir PIN kodu "
 "gerektirmesini sağlayabilirsiniz."
 
 #: ui/SimLockPage.qml:66

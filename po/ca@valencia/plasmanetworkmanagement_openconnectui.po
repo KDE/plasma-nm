@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement_openconnectui.po to Catalan (Valencian)
-# Copyright (C) 2014-2024 This_file_is_part_of_KDE
+# Copyright (C) 2014-2025 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # Antoni Bella Pérez <antonibella5@yahoo.com>, 2014.
-# SPDX-FileCopyrightText: 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2015, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-25 00:44+0000\n"
-"PO-Revision-Date: 2024-10-27 10:16+0100\n"
+"PO-Revision-Date: 2025-09-20 12:39+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: openconnectauth.cpp:345
 #, kde-format
@@ -342,7 +342,7 @@ msgstr "Secret del testimoni:"
 #: openconnectwebauthdialog.cpp:111
 #, kde-format
 msgid "Choose a Passkey"
-msgstr "Seleccioneu una clau de pas"
+msgstr "Trieu una clau de pas"
 
 #: openconnectwebauthdialog.cpp:112
 #, kde-format
@@ -406,35 +406,31 @@ msgid "Internal User Verification Locked"
 msgstr "Bloqueig intern de verificació d'usuari"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] "PIN incorrecte. Resten %1 intents."
+msgstr[0] "PIN incorrecte. Resta %1 intent."
 msgstr[1] "PIN incorrecte. Resten %1 intents."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] "Massa curt. Resten %1 intents."
+msgstr[0] "Massa curt. Resta %1 intent."
 msgstr[1] "Massa curt. Resten %1 intents."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] "Caràcters no vàlids. Resten %1 intents."
+msgstr[0] "Caràcters no vàlids. Resta %1 intent."
 msgstr[1] "Caràcters no vàlids. Resten %1 intents."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] "És el mateix que el PIN actual. Resten %1 intents."
+msgstr[0] "És el mateix que el PIN actual. Resta %1 intent."
 msgstr[1] "És el mateix que el PIN actual. Resten %1 intents."
 
 #: openconnectwebauthdialog.cpp:239

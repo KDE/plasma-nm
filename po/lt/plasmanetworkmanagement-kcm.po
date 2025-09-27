@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2025-08-11 21:10+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt\n"
@@ -90,18 +90,6 @@ msgstr "Nežinomas VPN tipas"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Pasirinkite ryšio tipą"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Sukurti"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Atsisakyti"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Konfigūracija"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -207,6 +195,10 @@ msgstr "Šalinti pasirinktą ryšį"
 msgid "Export selected connection"
 msgstr "Eksportuoti pasirinktą ryšį"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Konfigūracija"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -245,6 +237,12 @@ msgstr "Slaptažodis privalo būti tinkamas WEP raktas"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Slaptažodyje privalo būti nuo 8 iki 64 simbolių"
+
+#~ msgid "Create"
+#~ msgstr "Sukurti"
+
+#~ msgid "Cancel"
+#~ msgstr "Atsisakyti"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Viešosios prieigos taško pavadinimas:"

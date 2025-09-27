@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2025-01-26 21:07+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -89,18 +89,6 @@ msgstr "Ismeretlen VPN típus"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Válassza ki a kapcsolat típusát"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Létrehozás"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Mégsem"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Beállítás"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -205,6 +193,10 @@ msgstr "Kiválasztott kapcsolat eltávolítása"
 msgid "Export selected connection"
 msgstr "Kiválasztott kapcsolat exportálása"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Beállítás"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -250,6 +242,12 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "Létrehozás"
+
+#~ msgid "Cancel"
+#~ msgstr "Mégsem"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Hotspot neve:"

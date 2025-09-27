@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2025-08-07 20:59+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -87,18 +87,6 @@ msgstr "סוג ה־VPN לא ידוע"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "נא לבחור סוג חיבור"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "יצירה"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "ביטול"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "הגדרות"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -202,6 +190,10 @@ msgstr "הסרת חיבורים נבחרים"
 msgid "Export selected connection"
 msgstr "ייצוא חיבורים נבחרים"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "הגדרות"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -240,6 +232,12 @@ msgstr "הסיסמה חייבת להיות מפתח WEP תקף"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "אורך הסיסמה חייב להיות בין 8 ל־64 תווים"
+
+#~ msgid "Create"
+#~ msgstr "יצירה"
+
+#~ msgid "Cancel"
+#~ msgstr "ביטול"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "שם נקודה חמה:"

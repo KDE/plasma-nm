@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2017-01-19 19:33+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -94,18 +94,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Επιλέξτε έναν τύπο σύνδεσης"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Δημιουργία"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr ""
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr ""
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -207,6 +195,10 @@ msgstr "Αφαίρεση επιλεγμένης σύνδεσης"
 msgid "Export selected connection"
 msgstr "Εξαγωγή επιλεγμένης σύνδεσης"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr ""
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -247,6 +239,9 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "Δημιουργία"
 
 #~ msgid "Type here to search connections..."
 #~ msgstr "Πληκτρολογήστε εδώ για αναζήτηση συνδέσεων..."

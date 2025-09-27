@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2025-08-07 04:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -89,18 +89,6 @@ msgstr "VPN-ის უცნობი ტიპი"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "აირჩიეთ შეერთების ტიპი"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "შექმნა"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "გაუქმება"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "გამართვა"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -203,6 +191,10 @@ msgstr "მონიშნული შეერთების წაშლა"
 msgid "Export selected connection"
 msgstr "მონიშნული შეერთების გატანა"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "გამართვა"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -241,6 +233,12 @@ msgstr "პაროლი სწორი WEP გასაღები უნ�
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "პაროლი 8-დან 64-მდე სიმბოლოს უნდა შეიცავდეს"
+
+#~ msgid "Create"
+#~ msgstr "შექმნა"
+
+#~ msgid "Cancel"
+#~ msgstr "გაუქმება"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "ჰოტსპოტის სახელი:"

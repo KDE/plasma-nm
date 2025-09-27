@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2025-08-07 08:24+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -91,18 +91,6 @@ msgstr "Невідомий тип VPN"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Виберіть тип з’єднання"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Створити"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Скасувати"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Налаштування"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -208,6 +196,10 @@ msgstr "Вилучити позначене з’єднання"
 msgid "Export selected connection"
 msgstr "Експортувати позначене з’єднання"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Налаштування"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -246,6 +238,12 @@ msgstr "Пароль має бути коректним ключем WEP"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Довжина пароля має бути від 8 до 64 символів"
+
+#~ msgid "Create"
+#~ msgstr "Створити"
+
+#~ msgid "Cancel"
+#~ msgstr "Скасувати"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Назва хот-споту:"

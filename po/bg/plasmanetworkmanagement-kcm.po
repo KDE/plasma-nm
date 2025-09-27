@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2025-08-16 22:31+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -88,18 +88,6 @@ msgstr "Неизвестен тип VPN"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Изберете тип връзка"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Създаване"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Отказ"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Конфигурация"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -205,6 +193,10 @@ msgstr "Премахване на избраната връзка"
 msgid "Export selected connection"
 msgstr "Експортиране на избраната връзка"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Конфигурация"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -243,3 +235,9 @@ msgstr "Паролата трябва да бъде валиден WEP ключ"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Паролата трябва да бъде между 8 и 64 знака"
+
+#~ msgid "Create"
+#~ msgstr "Създаване"
+
+#~ msgid "Cancel"
+#~ msgstr "Отказ"

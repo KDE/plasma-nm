@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2017-10-30 23:08+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -101,18 +101,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Izbor tipa veze"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Napravi"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Odustani"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr ""
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -216,6 +204,10 @@ msgstr "Ukloni izabranu vezu"
 msgid "Export selected connection"
 msgstr "Izvezi izabranu vezu"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr ""
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -258,3 +250,9 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "Napravi"
+
+#~ msgid "Cancel"
+#~ msgstr "Odustani"

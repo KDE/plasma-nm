@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2020-01-16 11:07+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -93,18 +93,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Ühenduse tüübi valimine"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Loo"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Loobu"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Seadistamine"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -206,6 +194,10 @@ msgstr "Eemalda valitud ühendus"
 msgid "Export selected connection"
 msgstr "Ekspordi valitud ühendus"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Seadistamine"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -250,6 +242,12 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "Loo"
+
+#~ msgid "Cancel"
+#~ msgstr "Loobu"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Pääsupunkti nimi:"

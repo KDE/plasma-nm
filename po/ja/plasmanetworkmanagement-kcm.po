@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2023-02-25 14:51-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -93,18 +93,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "接続のタイプを選択"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "作成"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "キャンセル"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "設定"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -206,6 +194,10 @@ msgstr "選択された接続を削除"
 msgid "Export selected connection"
 msgstr "選択された接続をエクスポート"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "設定"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -250,3 +242,9 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "作成"
+
+#~ msgid "Cancel"
+#~ msgstr "キャンセル"

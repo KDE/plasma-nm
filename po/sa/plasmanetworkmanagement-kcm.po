@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2024-12-13 19:10+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -88,18 +88,6 @@ msgstr "अज्ञात VPN प्रकार"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "एकं Connection Type चिनोतु"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "निर्मियताम्"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "निरसयतु"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "विन्यासः"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -203,6 +191,10 @@ msgstr "चयनितं संयोजनं निष्कासयन्�
 msgid "Export selected connection"
 msgstr "चयनितं संयोजनं निर्यातयन्तु"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "विन्यासः"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -248,3 +240,9 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "निर्मियताम्"
+
+#~ msgid "Cancel"
+#~ msgstr "निरसयतु"

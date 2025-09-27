@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2024-10-21 11:27+0200\n"
 "Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -89,18 +89,6 @@ msgstr "Ukendt VPN-type"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Vælg forbindelsestype"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Opret"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Annullér"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Konfiguration"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -205,6 +193,10 @@ msgstr "Fjern den markerede forbindelse"
 msgid "Export selected connection"
 msgstr "Eksportér valgt forbindelse"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Konfiguration"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -250,6 +242,12 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "Opret"
+
+#~ msgid "Cancel"
+#~ msgstr "Annullér"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Navn på delt internet:"

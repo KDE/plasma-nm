@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2025-08-09 22:35+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -88,18 +88,6 @@ msgstr "Okänd VPN-typ"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Välj en anslutningstyp"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Skapa"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Avbryt"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Inställning"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -204,6 +192,10 @@ msgstr "Ta bort markerad anslutning"
 msgid "Export selected connection"
 msgstr "Exportera markerad anslutning"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Inställning"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -242,6 +234,12 @@ msgstr "Lösenordet måste vara en giltig WEP-nyckel"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Lösenordet måste vara mellan 8 och 64 tecken långt"
+
+#~ msgid "Create"
+#~ msgstr "Skapa"
+
+#~ msgid "Cancel"
+#~ msgstr "Avbryt"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Accesspunktsnamn:"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -88,18 +88,6 @@ msgstr "अज्ञात VPN प्रकार"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "कनेक्शन प्रकार चुनें"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "बनाएं"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "रद्द करना"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "विन्यास"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -202,6 +190,10 @@ msgstr "चयनित कनेक्शन हटाएं"
 msgid "Export selected connection"
 msgstr "चयनित कनेक्शन निर्यात करें"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "विन्यास"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -247,3 +239,9 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "बनाएं"
+
+#~ msgid "Cancel"
+#~ msgstr "रद्द करना"

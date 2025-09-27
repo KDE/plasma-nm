@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 02:39+0000\n"
 "PO-Revision-Date: 2025-06-19 09:51+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.gal>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -88,18 +88,6 @@ msgstr "Tipo de VPN descoñecido"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Escolla un tipo de conexión"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Crear"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Cancelar"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Configuración"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -205,6 +193,10 @@ msgstr "Retirar a conexión seleccionada"
 msgid "Export selected connection"
 msgstr "Exportar a conexión seleccionada"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Configuración"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -250,6 +242,12 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "Crear"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancelar"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Nome do punto de acceso:"

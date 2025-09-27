@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2025-08-07 09:06+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -91,18 +91,6 @@ msgstr "Tipus desconegut de VPN"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Trieu un tipus de connexió"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Crea"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Cancel·la"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Configuració"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -208,6 +196,10 @@ msgstr "Elimina la connexió seleccionada"
 msgid "Export selected connection"
 msgstr "Exporta la connexió seleccionada"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Configuració"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -246,3 +238,9 @@ msgstr "La contrasenya cal que sigui una clau WEP vàlida"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "La contrasenya cal que tingui entre 8 i 64 caràcters"
+
+#~ msgid "Create"
+#~ msgstr "Crea"
+
+#~ msgid "Cancel"
+#~ msgstr "Cancel·la"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2025-09-03 18:29+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -89,18 +89,6 @@ msgstr "Tuntematon VPN-tyyppi"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Valitse yhteystyyppi"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Luo"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Peru"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Asetus"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -203,6 +191,10 @@ msgstr "Poista valittu yhteys"
 msgid "Export selected connection"
 msgstr "Vie valittu yhteys"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Asetus"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -241,6 +233,12 @@ msgstr "Salasanan on oltava kelvollinen WEP-avain"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Salasanan pituuden on oltava 8–64 merkkiä"
+
+#~ msgid "Create"
+#~ msgstr "Luo"
+
+#~ msgid "Cancel"
+#~ msgstr "Peru"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Tukiaseman nimi:"

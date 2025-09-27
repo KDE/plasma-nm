@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2024-10-30 15:05+0100\n"
 "Last-Translator: Flori G <Renner03@protonmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -92,18 +92,6 @@ msgstr "Unbekannter VPN-Typ"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Wählen Sie eine Verbindungsart"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Erstellen"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Abbrechen"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Einrichtung"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -208,6 +196,10 @@ msgstr "Ausgewählte Verbindung entfernen"
 msgid "Export selected connection"
 msgstr "Ausgewählte Verbindung exportieren"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Einrichtung"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -253,6 +245,12 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "Erstellen"
+
+#~ msgid "Cancel"
+#~ msgstr "Abbrechen"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Hotspot-Name:"

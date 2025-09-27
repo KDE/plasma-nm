@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2025-08-10 19:43+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -88,18 +88,6 @@ msgstr "தெரியாத வகையான VPN"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "இணைப்பின் வகையை தேர்ந்தெடுத்தல்"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "உருவாக்கு"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "ரத்து செய்"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "அமைப்பு"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -205,6 +193,10 @@ msgstr "தேர்ந்தெடுத்த இணைப்பை நீக�
 msgid "Export selected connection"
 msgstr "தேர்ந்தெடுத்த இணைப்பை ஏற்றுமதி செய்"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "அமைப்பு"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -243,6 +235,12 @@ msgstr "கடவுச்சொல் முறையான WEP சாவிய
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "கடவுச்சொல்லின் நீளம் 8-இலிருந்து 64 எழுத்துகளுக்குள் இருக்க வேண்டும்"
+
+#~ msgid "Create"
+#~ msgstr "உருவாக்கு"
+
+#~ msgid "Cancel"
+#~ msgstr "ரத்து செய்"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "ஹாட்ஸ்பாட்டின் பெயர்:"

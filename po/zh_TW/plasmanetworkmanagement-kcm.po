@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2025-08-19 05:25+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -90,18 +90,6 @@ msgstr "未知的 VPN 類型"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "選擇連線型態"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "建立"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "取消"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "設定"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -204,6 +192,10 @@ msgstr "移除選取的連線"
 msgid "Export selected connection"
 msgstr "匯入選取的連線"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "設定"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -242,6 +234,12 @@ msgstr "密碼必須是有效的 WEP 金鑰"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "密碼必須在 8 到 64 個字元之間"
+
+#~ msgid "Create"
+#~ msgstr "建立"
+
+#~ msgid "Cancel"
+#~ msgstr "取消"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "熱點名稱："

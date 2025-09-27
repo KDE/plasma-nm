@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2025-08-07 22:26+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -90,18 +90,6 @@ msgstr "Bilinmeyen VPN türü"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Bağlantı Türü Seç"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Oluştur"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "İptal"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Yapılandırma"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -204,6 +192,10 @@ msgstr "Seçili bağlantıyı kaldır"
 msgid "Export selected connection"
 msgstr "Seçili bağlantıyı dışa aktar"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Yapılandırma"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -242,6 +234,12 @@ msgstr "Parola, geçerli bir WEP anahtarı olmalıdır"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Parola, 8 ila 64 karakter arasında olmalıdır"
+
+#~ msgid "Create"
+#~ msgstr "Oluştur"
+
+#~ msgid "Cancel"
+#~ msgstr "İptal"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Erişim Noktası adı:"

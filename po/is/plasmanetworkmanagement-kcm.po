@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2025-09-17 11:24+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -88,18 +88,6 @@ msgstr "Óþekkt VPN-gerð"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Velja gerð tengingar"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Búa til"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Hætta við"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Grunnstilling"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -204,6 +192,10 @@ msgstr "Fjarlægja völdu tenginguna"
 msgid "Export selected connection"
 msgstr "Flytja út völdu tenginguna"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Grunnstilling"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -242,3 +234,9 @@ msgstr "Lykilorð verður að vera gildur WEP-lykill"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Lykilorð verður að innihalda 8 til 64 stafi"
+
+#~ msgid "Create"
+#~ msgstr "Búa til"
+
+#~ msgid "Cancel"
+#~ msgstr "Hætta við"

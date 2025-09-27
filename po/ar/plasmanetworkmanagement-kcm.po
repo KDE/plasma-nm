@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2025-08-10 22:01+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -89,18 +89,6 @@ msgstr "نوع في بي ان مجهول"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "اختر نوع الاتصال"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "أنشئ"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "ألغِ"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "الضّبط"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -205,6 +193,10 @@ msgstr "أزل الاتصال المحدد"
 msgid "Export selected connection"
 msgstr "صدر الاتصال المحدد"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "الضّبط"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -243,3 +235,9 @@ msgstr "يجب أن تكون كلمة السر مفتاح WEP صالحًا"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "يجب أن تتكون كلمة السر من 8 إلى 64 حرفًا"
+
+#~ msgid "Create"
+#~ msgstr "أنشئ"
+
+#~ msgid "Cancel"
+#~ msgstr "ألغِ"

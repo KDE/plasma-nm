@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2025-05-22 16:17+0400\n"
 "Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -90,18 +90,6 @@ msgstr "Bilinməyən VPN növü"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Bağlantı növünü seçmək"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Yaratmaq"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "İmtina"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Tənzimləmə"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -206,6 +194,10 @@ msgstr "Seçilmiş bağlantını silmək"
 msgid "Export selected connection"
 msgstr "Seçilmiş bağlantını ixrac etmək"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Tənzimləmə"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -251,6 +243,12 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "Yaratmaq"
+
+#~ msgid "Cancel"
+#~ msgstr "İmtina"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Qoşulma nöqtəsi adı:"

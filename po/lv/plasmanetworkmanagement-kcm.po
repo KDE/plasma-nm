@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2025-08-22 15:20+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -89,18 +89,6 @@ msgstr "Nezināms VPN tips"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Izvēlieties savienojuma tips"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Izveidot"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Atcelt"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Konfigurācija"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -203,6 +191,10 @@ msgstr "Noņemt atlasīto savienojumu"
 msgid "Export selected connection"
 msgstr "Eksportēt atlasīto savienojumu"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Konfigurācija"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -241,3 +233,9 @@ msgstr "Parolei jābūt derīgai WEP atslēgai"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Paroles garumam jābūt starp 8 un 64 rakstzīmēm"
+
+#~ msgid "Create"
+#~ msgstr "Izveidot"
+
+#~ msgid "Cancel"
+#~ msgstr "Atcelt"

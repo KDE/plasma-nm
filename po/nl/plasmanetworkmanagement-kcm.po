@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2025-08-07 13:18+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -88,18 +88,6 @@ msgstr "Onbekend type VPN"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Een verbindingstype kiezen"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Aanmaken"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Annuleren"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Configuratie"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -204,6 +192,10 @@ msgstr "Geselecteerde verbinding verwijderen"
 msgid "Export selected connection"
 msgstr "Geselecteerde verbinding exporteren"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Configuratie"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -242,6 +234,12 @@ msgstr "Wachtwoord moet een geldige WEP-sleutel zijn"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Wachtwoord moet tussen 8 en 64 tekens zijn"
+
+#~ msgid "Create"
+#~ msgstr "Aanmaken"
+
+#~ msgid "Cancel"
+#~ msgstr "Annuleren"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Hotspotnaam:"

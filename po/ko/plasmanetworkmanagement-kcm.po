@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2025-06-10 22:24+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -88,18 +88,6 @@ msgstr "알 수 없는 VPN 형식"
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "연결 종류 선택"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "만들기"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "취소"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "설정"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -202,6 +190,10 @@ msgstr "선택한 연결 삭제"
 msgid "Export selected connection"
 msgstr "선택한 연결 내보내기"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "설정"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -247,6 +239,12 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "만들기"
+
+#~ msgid "Cancel"
+#~ msgstr "취소"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "핫스팟 이름:"

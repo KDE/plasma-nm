@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2019-12-12 22:22+0000\n"
 "Last-Translator: Sabu Siyad <ssiyad@tuta.io>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -88,18 +88,6 @@ msgstr ""
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr ""
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr ""
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr ""
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
 msgstr ""
 
 #: qml/ConfigurationDialog.qml:20
@@ -198,6 +186,10 @@ msgstr ""
 
 #: qml/main.qml:187
 msgid "Export selected connection"
+msgstr ""
+
+#: qml/main.qml:212
+msgid "Configuration"
 msgstr ""
 
 #: qml/main.qml:239

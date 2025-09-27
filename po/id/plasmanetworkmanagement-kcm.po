@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2022-03-03 12:25+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -93,18 +93,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Pilihlah sebuah Tipe Koneksi"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Ciptakan"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Batal"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Konfigurasi"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -206,6 +194,10 @@ msgstr "Hapus koneksi terpilih"
 msgid "Export selected connection"
 msgstr "Expor koneksi terpilih"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Konfigurasi"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -250,6 +242,12 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "Ciptakan"
+
+#~ msgid "Cancel"
+#~ msgstr "Batal"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Nama hotspot:"

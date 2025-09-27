@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-07 00:44+0000\n"
+"POT-Creation-Date: 2025-09-27 00:44+0000\n"
 "PO-Revision-Date: 2021-07-25 12:42+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -94,18 +94,6 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Alegeți tipul conexiunii"
-
-#: qml/AddConnectionDialog.qml:123
-msgid "Create"
-msgstr "Creează"
-
-#: qml/AddConnectionDialog.qml:134
-msgid "Cancel"
-msgstr "Renunță"
-
-#: qml/AddConnectionDialog.qml:151 qml/main.qml:212
-msgid "Configuration"
-msgstr "Configurări"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -207,6 +195,10 @@ msgstr "Elimină conexiunea aleasă"
 msgid "Export selected connection"
 msgstr "Exportă conexiunea aleasă"
 
+#: qml/main.qml:212
+msgid "Configuration"
+msgstr "Configurări"
+
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
@@ -251,6 +243,12 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#~ msgid "Create"
+#~ msgstr "Creează"
+
+#~ msgid "Cancel"
+#~ msgstr "Renunță"
 
 #~ msgid "Hotspot name:"
 #~ msgstr "Denumire Hotspot:"

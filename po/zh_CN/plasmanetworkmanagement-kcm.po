@@ -232,9 +232,3 @@ msgstr "密码必须是有效的 WEP 密钥"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "密码长度必须在 8 至 64 个字符之间"
-
-#~ msgid "Create"
-#~ msgstr "创建"
-
-#~ msgid "Cancel"
-#~ msgstr "取消"

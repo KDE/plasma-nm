@@ -62,7 +62,7 @@ msgstr "Conectează la"
 #: ui/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Configurează"
 
 #: ui/ConnectionItemDelegate.qml:120
 #, kde-format
@@ -121,10 +121,9 @@ msgid "General"
 msgstr "Generale"
 
 #: ui/NetworkSettings.qml:58
-#, fuzzy, kde-format
-#| msgid "SSID:"
+#, kde-format
 msgid "SSID"
-msgstr "SSID:"
+msgstr "SSID"
 
 #: ui/NetworkSettings.qml:73
 #, fuzzy, kde-format

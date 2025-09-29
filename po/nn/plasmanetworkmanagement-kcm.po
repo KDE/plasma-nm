@@ -241,9 +241,3 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
-
-#~ msgid "Create"
-#~ msgstr "Legg til"
-
-#~ msgid "Cancel"
-#~ msgstr "Avbryt"

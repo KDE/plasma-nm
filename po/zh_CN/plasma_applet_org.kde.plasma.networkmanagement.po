@@ -102,7 +102,7 @@ msgstr "移动数据已禁用"
 #: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
-msgstr "无匹配项"
+msgstr "没有匹配的内容"
 
 #: ConnectionListPage.qml:136
 #, kde-format

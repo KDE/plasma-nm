@@ -2865,7 +2865,7 @@ msgid ""
 msgstr ""
 "%1 (%2%)\n"
 "频率：%3 Mhz\n"
-"频道：%4"
+"信道：%4"
 
 #: editor/widgets/ipv4routeswidget.cpp:31
 #, kde-format

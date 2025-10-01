@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-25 00:44+0000\n"
-"PO-Revision-Date: 2025-01-06 22:29+0200\n"
+"PO-Revision-Date: 2025-09-30 14:09+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.5\n"
+"X-Generator: Poedit 3.6\n"
 
 #: openconnectauth.cpp:345
 #, kde-format
@@ -403,44 +403,40 @@ msgid "Internal User Verification Locked"
 msgstr "Vidinis naudotojo patikrinimas užrakintas"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] "Neteisingas PIN kodas. Liko bandymų: %1."
-msgstr[1] "Neteisingas PIN kodas. Liko bandymų: %1."
-msgstr[2] "Neteisingas PIN kodas. Liko bandymų: %1."
-msgstr[3] "Neteisingas PIN kodas. Liko bandymų: %1."
+msgstr[0] "Neteisingas PIN kodas. Liko %1 bandymas."
+msgstr[1] "Neteisingas PIN kodas. Liko %1 bandymai."
+msgstr[2] "Neteisingas PIN kodas. Liko %1 bandymų."
+msgstr[3] "Neteisingas PIN kodas. Liko %1 bandymas."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] "Per trumpas. Liko bandymų: %1."
-msgstr[1] "Per trumpas. Liko bandymų: %1."
-msgstr[2] "Per trumpas. Liko bandymų: %1."
-msgstr[3] "Per trumpas. Liko bandymų: %1."
+msgstr[0] "Per trumpas. Liko %1 bandymas."
+msgstr[1] "Per trumpas. Liko %1 bandymai."
+msgstr[2] "Per trumpas. Liko %1 bandymų."
+msgstr[3] "Per trumpas. Liko %1 bandymas."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] "Neteisingi simboliai. Liko bandymų: %1."
-msgstr[1] "Neteisingi simboliai. Liko bandymų: %1."
-msgstr[2] "Neteisingi simboliai. Liko bandymų: %1."
-msgstr[3] "Neteisingi simboliai. Liko bandymų: %1."
+msgstr[0] "Neteisingi simboliai. Liko %1 bandymas."
+msgstr[1] "Neteisingi simboliai. Liko %1 bandymai."
+msgstr[2] "Neteisingi simboliai. Liko %1 bandymų."
+msgstr[3] "Neteisingi simboliai. Liko %1 bandymas."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] "Toks pats kaip dabartinis PIN kodas. Liko bandymų: %1."
-msgstr[1] "Toks pats kaip dabartinis PIN kodas. Liko bandymų: %1."
-msgstr[2] "Toks pats kaip dabartinis PIN kodas. Liko bandymų: %1."
-msgstr[3] "Toks pats kaip dabartinis PIN kodas. Liko bandymų: %1."
+msgstr[0] "Toks pats kaip dabartinis PIN kodas. Liko %1 bandymas."
+msgstr[1] "Toks pats kaip dabartinis PIN kodas. Liko %1 bandymai."
+msgstr[2] "Toks pats kaip dabartinis PIN kodas. Liko %1 bandymų."
+msgstr[3] "Toks pats kaip dabartinis PIN kodas. Liko %1 bandymas."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

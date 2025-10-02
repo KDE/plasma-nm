@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-27 00:42+0000\n"
-"PO-Revision-Date: 2022-10-24 00:50+0000\n"
+"PO-Revision-Date: 2025-10-01 19:01+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
 "Language: lt\n"
@@ -17,779 +17,787 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
+"X-Generator: Poedit 3.6\n"
 
 #: modem.cpp:130
 #, kde-format
 msgid "Error resetting the modem: %1"
-msgstr ""
+msgstr "Klaida atstatant modemą: %1"
 
 #: modem.cpp:264 modem.cpp:436
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
-msgstr ""
+msgstr "Klaida atnaujinant ryšio nuostatas, skirtas %1: %2."
 
 #: modem.cpp:342
 #, kde-format
 msgid "Error activating connection: %1"
-msgstr ""
+msgstr "Klaida aktyvuojant ryšį: %1"
 
 #: modem.cpp:380
 #, kde-format
 msgid "Error adding connection: %1"
-msgstr ""
+msgstr "Klaida pridedant ryšį: %1"
 
 #: modem.cpp:397
 #, kde-format
 msgid "Error removing connection: %1"
-msgstr ""
+msgstr "Klaida šalinant ryšį: %1"
 
 #: modem.cpp:522 modemdetails.cpp:118 modemdetails.cpp:220 modemdetails.cpp:252
 #: modemdetails.cpp:432 modemdetails.cpp:462
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "Nežinomas"
 
 #: modem.cpp:524
 #, kde-format
 msgid "Unmanaged"
-msgstr ""
+msgstr "Nevaldomas"
 
 #: modem.cpp:526
 #, kde-format
 msgid "Unavailable"
-msgstr ""
+msgstr "Neprieinamas"
 
 #: modem.cpp:528
 #, kde-format
 msgid "Disconnected"
-msgstr ""
+msgstr "Atsijungta"
 
 #: modem.cpp:530
 #, kde-format
 msgid "Preparing"
-msgstr ""
+msgstr "Ruošiama"
 
 #: modem.cpp:532
 #, kde-format
 msgid "ConfiguringHardware"
-msgstr ""
+msgstr "ConfiguringHardware"
 
 #: modem.cpp:534
 #, kde-format
 msgid "NeedAuth"
-msgstr ""
+msgstr "NeedAuth"
 
 #: modem.cpp:536
 #, kde-format
 msgid "ConfiguringIp"
-msgstr ""
+msgstr "ConfiguringIp"
 
 #: modem.cpp:538
 #, kde-format
 msgid "CheckingIp"
-msgstr ""
+msgstr "CheckingIp"
 
 #: modem.cpp:540
 #, kde-format
 msgid "WaitingForSecondaries"
-msgstr ""
+msgstr "WaitingForSecondaries"
 
 #: modem.cpp:542
 #, kde-format
 msgid "Activated"
-msgstr ""
+msgstr "Aktyvuotas"
 
 #: modem.cpp:544
 #, kde-format
 msgid "Deactivating"
-msgstr ""
+msgstr "Pasyvinama"
 
 #: modem.cpp:546 modemdetails.cpp:250
 #, kde-format
 msgid "Failed"
-msgstr ""
+msgstr "Patyrė nesėkmę"
 
 #: modemdetails.cpp:121 modemdetails.cpp:465
 #, kde-format
 msgid "POTS"
-msgstr ""
+msgstr "POTS"
 
 #: modemdetails.cpp:124
 #, kde-format
 msgid "GSM"
-msgstr ""
+msgstr "GSM"
 
 #: modemdetails.cpp:127
 #, kde-format
 msgid "GSM Compact"
-msgstr ""
+msgstr "GSM Compact"
 
 #: modemdetails.cpp:130
 #, kde-format
 msgid "GPRS"
-msgstr ""
+msgstr "GPRS"
 
 #: modemdetails.cpp:133
 #, kde-format
 msgid "EDGE"
-msgstr ""
+msgstr "EDGE"
 
 #: modemdetails.cpp:136
 #, kde-format
 msgid "UMTS"
-msgstr ""
+msgstr "UMTS"
 
 #: modemdetails.cpp:139
 #, kde-format
 msgid "HSDPA"
-msgstr ""
+msgstr "HSDPA"
 
 #: modemdetails.cpp:142
 #, kde-format
 msgid "HSUPA"
-msgstr ""
+msgstr "HSUPA"
 
 #: modemdetails.cpp:145
 #, kde-format
 msgid "HSPA"
-msgstr ""
+msgstr "HSPA"
 
 #: modemdetails.cpp:148
 #, kde-format
 msgid "HSPA+"
-msgstr ""
+msgstr "HSPA+"
 
 #: modemdetails.cpp:151
 #, kde-format
 msgid "CDMA2000 1xRTT"
-msgstr ""
+msgstr "CDMA2000 1xRTT"
 
 #: modemdetails.cpp:154
 #, kde-format
 msgid "CDMA2000 EVDO-0"
-msgstr ""
+msgstr "CDMA2000 EVDO-0"
 
 #: modemdetails.cpp:157
 #, kde-format
 msgid "CDMA2000 EVDO-A"
-msgstr ""
+msgstr "CDMA2000 EVDO-A"
 
 #: modemdetails.cpp:160
 #, kde-format
 msgid "CDMA2000 EVDO-B"
-msgstr ""
+msgstr "CDMA2000 EVDO-B"
 
 #: modemdetails.cpp:163
 #, kde-format
 msgid "LTE"
-msgstr ""
+msgstr "LTE"
 
 #: modemdetails.cpp:166
 #, kde-format
 msgid "5GNR"
-msgstr ""
+msgstr "5GNR"
 
 #: modemdetails.cpp:222
 #, kde-format
 msgid "Off"
-msgstr ""
+msgstr "Išjungta"
 
 #: modemdetails.cpp:224
 #, kde-format
 msgid "Low-power mode"
-msgstr ""
+msgstr "Mažos galios veiksena"
 
 #: modemdetails.cpp:226
 #, kde-format
 msgid "Full power mode"
-msgstr ""
+msgstr "Visos galios veiksena"
 
 #: modemdetails.cpp:254
 #, kde-format
 msgid "Initializing"
-msgstr ""
+msgstr "Inicijuojama"
 
 #: modemdetails.cpp:256 ui/SimPage.qml:118
 #, kde-format
 msgid "Locked"
-msgstr ""
+msgstr "Užrakinta"
 
 #: modemdetails.cpp:258
 #, kde-format
 msgid "Disabled"
-msgstr ""
+msgstr "Išjungta"
 
 #: modemdetails.cpp:260
 #, kde-format
 msgid "Disabling"
-msgstr ""
+msgstr "Išjungiama"
 
 #: modemdetails.cpp:262
 #, kde-format
 msgid "Enabling"
-msgstr ""
+msgstr "Įjungiama"
 
 #: modemdetails.cpp:264 ui/ModemPage.qml:83
 #, kde-format
 msgid "Enabled"
-msgstr ""
+msgstr "Įjungta"
 
 #: modemdetails.cpp:266
 #, kde-format
 msgid "Searching for network provider"
-msgstr ""
+msgstr "Ieškoma tinklo teikėjo"
 
 #: modemdetails.cpp:268
 #, kde-format
 msgid "Registered with network provider"
-msgstr ""
+msgstr "Prisiregistruota prie tinklo teikėjo"
 
 #: modemdetails.cpp:270
 #, kde-format
 msgid "Disconnecting"
-msgstr ""
+msgstr "Atsijungiama"
 
 #: modemdetails.cpp:272
 #, kde-format
 msgid "Connecting"
-msgstr ""
+msgstr "Jungiamasi"
 
 #: modemdetails.cpp:274
 #, kde-format
 msgid "Connected"
-msgstr ""
+msgstr "Prisijungta"
 
 #: modemdetails.cpp:283
 #, kde-format
 msgid "No error."
-msgstr ""
+msgstr "Nėra klaidos."
 
 #: modemdetails.cpp:285
 #, kde-format
 msgid "Unknown error."
-msgstr ""
+msgstr "Nežinoma klaida."
 
 #: modemdetails.cpp:287
 #, kde-format
 msgid "SIM is required but missing."
-msgstr ""
+msgstr "Reikalinga SIM kortelė, bet jos nėra."
 
 #: modemdetails.cpp:289
 #, kde-format
 msgid "SIM is available but unusable."
-msgstr ""
+msgstr "SIM kortelė prieinama, bet netinkama naudoti."
 
 #: modemdetails.cpp:291
 #, kde-format
 msgid "Unknown modem capabilities."
-msgstr ""
+msgstr "Nežinomos modemo galimybės."
 
 #: modemdetails.cpp:293
 #, kde-format
 msgid "eSIM is not initialized."
-msgstr ""
+msgstr "eSIM kortelė nėra inicijuota."
 
 #: modemdetails.cpp:316
 #, kde-format
 msgid "Not registered, not searching for new operator to register."
 msgstr ""
+"Neprisiregistruota, neieškoma naujo operatoriaus, prie kurio galima būtų "
+"prisiregistruoti."
 
 #: modemdetails.cpp:318
 #, kde-format
 msgid "Registered on home network."
-msgstr ""
+msgstr "Prisiregistruota savajame tinkle."
 
 #: modemdetails.cpp:320
 #, kde-format
 msgid "Not registered, searching for new operator to register with."
 msgstr ""
+"Neprisiregistruota, ieškoma naujo operatoriaus, prie kurio galima būtų "
+"prisiregistruoti."
 
 #: modemdetails.cpp:322
 #, kde-format
 msgid "Registration denied."
-msgstr ""
+msgstr "Registracija nepriimta."
 
 #: modemdetails.cpp:324
 #, kde-format
 msgid "Unknown registration status."
-msgstr ""
+msgstr "Nežinoma registracijos būsena."
 
 #: modemdetails.cpp:326
 #, kde-format
 msgid "Registered on a roaming network."
-msgstr ""
+msgstr "Prisiregistruota tarptinkliniame tinkle."
 
 #: modemdetails.cpp:328
 #, kde-format
 msgid "Registered for \"SMS only\", on home network."
-msgstr ""
+msgstr "Prisiregistruota „Tik SMS“ tikslams, savajame tinkle."
 
 #: modemdetails.cpp:330
 #, kde-format
 msgid "Registered for \"SMS only\", roaming network."
-msgstr ""
+msgstr "Prisiregistruota „Tik SMS“ tikslams, tarptinkliniame tinkle."
 
 #: modemdetails.cpp:332
 #, kde-format
 msgid "Emergency services only."
-msgstr ""
+msgstr "Tik skubios pagalbos paslaugos."
 
 #: modemdetails.cpp:334
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", home network."
-msgstr ""
+msgstr "Prisiregistruota „CSFB nepageidaujama“ tikslams, savajame tinkle."
 
 #: modemdetails.cpp:336
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", roaming network."
 msgstr ""
+"Prisiregistruota „CSFB nepageidaujama“ tikslams, tarptinkliniame tinkle."
 
 #: modemdetails.cpp:338
 #, kde-format
 msgid "Attached for access to Restricted Local Operator Services."
-msgstr ""
+msgstr "Pridėta prieigai prie apribotų vietinio operatoriaus paslaugų."
 
 #: modemdetails.cpp:377
 #, kde-format
 msgid "Scanning networks failed: %1"
-msgstr ""
+msgstr "Nepavyko peržiūrėti tinklų: %1"
 
 #: modemdetails.cpp:434 ui/ModemPage.qml:176 ui/SimPage.qml:119
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Taip"
 
 #: modemdetails.cpp:436 ui/ModemPage.qml:176 ui/SimPage.qml:119
 #, kde-format
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 #: modemdetails.cpp:438
 #, kde-format
 msgid "GuessYes"
-msgstr ""
+msgstr "GuessYes"
 
 #: modemdetails.cpp:440
 #, kde-format
 msgid "GuessNo"
-msgstr ""
+msgstr "GuessNo"
 
 #: modemdetails.cpp:468 modemdetails.cpp:471 modemdetails.cpp:474
 #: modemdetails.cpp:477 ui/EditProfilePage.qml:63
 #, kde-format
 msgid "2G"
-msgstr ""
+msgstr "2G"
 
 #: modemdetails.cpp:480 modemdetails.cpp:483 modemdetails.cpp:486
 #: modemdetails.cpp:489 modemdetails.cpp:492 modemdetails.cpp:495
 #: modemdetails.cpp:498 modemdetails.cpp:501 modemdetails.cpp:504
 #, kde-format
 msgid "3G"
-msgstr ""
+msgstr "3G"
 
 #: modemdetails.cpp:507 modemdetails.cpp:516 modemdetails.cpp:519
 #, kde-format
 msgid "4G"
-msgstr ""
+msgstr "4G"
 
 #: modemdetails.cpp:510
 #, kde-format
 msgid "5G"
-msgstr ""
+msgstr "5G"
 
 #: modemdetails.cpp:513 ui/EditProfilePage.qml:63
 #, kde-format
 msgid "Any"
-msgstr ""
+msgstr "Bet kuris"
 
 #: sim.cpp:74
 #, kde-format
 msgid "Lock reason unknown."
-msgstr ""
+msgstr "Užrakinimo priežastis nežinoma."
 
 #: sim.cpp:76
 #, kde-format
 msgid "Modem is unlocked."
-msgstr ""
+msgstr "Modemas yra atrakintas."
 
 #: sim.cpp:78
 #, kde-format
 msgid "SIM requires the PIN code."
-msgstr ""
+msgstr "SIM kortelė reikalauja PIN kodo."
 
 #: sim.cpp:80
 #, kde-format
 msgid "SIM requires the PIN2 code."
-msgstr ""
+msgstr "SIM kortelė reikalauja PIN2 kodo."
 
 #: sim.cpp:82
 #, kde-format
 msgid "SIM requires the PUK code."
-msgstr ""
+msgstr "SIM kortelė reikalauja PUK kodo."
 
 #: sim.cpp:84
 #, kde-format
 msgid "SIM requires the PUK2 code."
-msgstr ""
+msgstr "SIM kortelė reikalauja PUK2 kodo."
 
 #: sim.cpp:86
 #, kde-format
 msgid "Modem requires the service provider PIN code."
-msgstr ""
+msgstr "Modemas reikalauja paslaugų teikėjo PIN kodo."
 
 #: sim.cpp:88
 #, kde-format
 msgid "Modem requires the service provider PUK code."
-msgstr ""
+msgstr "Modemas reikalauja paslaugų teikėjo PUK kodo."
 
 #: sim.cpp:90
 #, kde-format
 msgid "Modem requires the network PIN code."
-msgstr ""
+msgstr "Modemas reikalauja tinklo PIN kodo."
 
 #: sim.cpp:92
 #, kde-format
 msgid "Modem requires the network PUK code."
-msgstr ""
+msgstr "Modemas reikalauja tinklo PUK kodo."
 
 #: sim.cpp:94
 #, kde-format
 msgid "Modem requires the PIN code."
-msgstr ""
+msgstr "Modemas reikalauja PIN kodo."
 
 #: sim.cpp:96
 #, kde-format
 msgid "Modem requires the corporate PIN code."
-msgstr ""
+msgstr "Modemas reikalauja įmonės PIN kodo."
 
 #: sim.cpp:98
 #, kde-format
 msgid "Modem requires the corporate PUK code."
-msgstr ""
+msgstr "Modemas reikalauja įmonės PUK kodo."
 
 #: sim.cpp:100
 #, kde-format
 msgid "Modem requires the PH-FSIM PIN code."
-msgstr ""
+msgstr "Modemas reikalauja PH-FSIM PIN kodo."
 
 #: sim.cpp:102
 #, kde-format
 msgid "Modem requires the PH-FSIM PUK code."
-msgstr ""
+msgstr "Modemas reikalauja PH-FSIM PUK kodo."
 
 #: sim.cpp:104
 #, kde-format
 msgid "Modem requires the network subset PIN code."
-msgstr ""
+msgstr "Modemas reikalauja tinklo poaibio PIN kodo."
 
 #: sim.cpp:106
 #, kde-format
 msgid "Modem requires the network subset PUK code."
-msgstr ""
+msgstr "Modemas reikalauja tinklo poaibio PUK kodo."
 
 #: sim.cpp:150
 #, kde-format
 msgid "(empty)"
-msgstr ""
+msgstr "(tuščia)"
 
 #: sim.cpp:164
 #, kde-format
 msgid "Error toggling SIM lock: %1"
-msgstr ""
+msgstr "Klaida perjungiant SIM užraktą: %1"
 
 #: sim.cpp:173
 #, kde-format
 msgid "Error changing the PIN: %1"
-msgstr ""
+msgstr "Klaida keičiant PIN kodą: %1"
 
 #: sim.cpp:186
 #, kde-format
 msgid "Error sending the PIN: %1"
-msgstr ""
+msgstr "Klaida siunčiant PIN kodą: %1"
 
 #: sim.cpp:199
 #, kde-format
 msgid "Error sending the PUK: %1"
-msgstr ""
+msgstr "Klaida siunčiant PUK kodą: %1"
 
 #: ui/AvailableNetworks.qml:16
 #, kde-format
 msgid "Available Networks"
-msgstr ""
+msgstr "Prieinami tinklai"
 
 #: ui/AvailableNetworks.qml:40
 #, kde-format
 msgid "none"
-msgstr ""
+msgstr "nėra"
 
 #: ui/AvailableNetworks.qml:40
 #, kde-format
 msgid "Current operator: %1"
-msgstr ""
+msgstr "Dabartinis operatorius: %1"
 
 #: ui/AvailableNetworks.qml:43
 #, kde-format
 msgid "Scan For Networks"
-msgstr ""
+msgstr "Peržiūrėti tinklus"
 
 #: ui/EditProfilePage.qml:15
 #, kde-format
 msgid "Edit APN"
-msgstr ""
+msgstr "Taisyti prieigos taško pavadinimą (APN)"
 
 #: ui/EditProfilePage.qml:15
 #, kde-format
 msgid "New APN"
-msgstr ""
+msgstr "Naujas prieigos taško pavadinimas (APN)"
 
 #: ui/EditProfilePage.qml:30
 #, kde-format
 msgid "Name"
-msgstr ""
+msgstr "Pavadinimas"
 
 #: ui/EditProfilePage.qml:38
 #, kde-format
 msgid "APN"
-msgstr ""
+msgstr "Prieigos taško pavadinimas (APN)"
 
 #: ui/EditProfilePage.qml:46
 #, kde-format
 msgid "Username"
-msgstr ""
+msgstr "Naudotojo vardas"
 
 #: ui/EditProfilePage.qml:54
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "Slaptažodis"
 
 #: ui/EditProfilePage.qml:62
 #, kde-format
 msgid "Network type"
-msgstr ""
+msgstr "Tinklo tipas"
 
 #: ui/EditProfilePage.qml:63
 #, kde-format
 msgid "4G/3G/2G"
-msgstr ""
+msgstr "4G/3G/2G"
 
 #: ui/EditProfilePage.qml:63
 #, kde-format
 msgid "3G/2G"
-msgstr ""
+msgstr "3G/2G"
 
 #: ui/EditProfilePage.qml:63
 #, kde-format
 msgid "Only 4G"
-msgstr ""
+msgstr "Tik 4G"
 
 #: ui/EditProfilePage.qml:63
 #, kde-format
 msgid "Only 3G"
-msgstr ""
+msgstr "Tik 3G"
 
 #: ui/EditProfilePage.qml:63
 #, kde-format
 msgid "Only 2G"
-msgstr ""
+msgstr "Tik 2G"
 
 #: ui/EditProfilePage.qml:75
 #, kde-format
 msgid "Save profile"
-msgstr ""
+msgstr "Įrašyti profilį"
 
 #: ui/main.qml:52
 #, kde-format
 msgid "Modem not available"
-msgstr ""
+msgstr "Modemas neprieinamas"
 
 #: ui/main.qml:71
 #, kde-format
 msgid "Mobile data"
-msgstr ""
+msgstr "Mobilieji duomenys"
 
 #: ui/main.qml:76
 #, kde-format
 msgid "No SIM is inserted."
-msgstr ""
+msgstr "Neįdėta SIM kortelė."
 
 #: ui/main.qml:78
 #, kde-format
 msgid "Mobile data is not available with this modem."
-msgstr ""
+msgstr "Mobilieji duomenys nėra prieinami naudojant šį modemą."
 
 #: ui/main.qml:80
 #, kde-format
 msgid "An APN needs to be configured to have mobile data."
 msgstr ""
+"Turi būti sukonfigūruotas prieigos taško pavadinimas (APN), kad būtų "
+"galimybė naudotis mobiliaisiais duomenimis."
 
 #: ui/main.qml:82
 #, kde-format
 msgid "Whether mobile data is enabled."
-msgstr ""
+msgstr "Ar mobilieji duomenys yra įjungti."
 
 #: ui/main.qml:113
 #, kde-format
 msgid "Data Usage"
-msgstr ""
+msgstr "Duomenų naudojimas"
 
 #: ui/main.qml:114
 #, kde-format
 msgid "View data usage."
-msgstr ""
+msgstr "Rodyti duomenų naudojimą."
 
 #: ui/main.qml:122
 #, kde-format
 msgid "SIM"
 msgid_plural "SIMs"
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "SIM kortelė"
+msgstr[1] "SIM kortelės"
+msgstr[2] "SIM kortelės"
+msgstr[3] "SIM kortelės"
 
 #: ui/main.qml:143
 #, kde-format
 msgid "SIM %1"
-msgstr ""
+msgstr "SIM kortelė %1"
 
 #: ui/main.qml:144
 #, kde-format
 msgid "View SIM %1 details."
-msgstr ""
+msgstr "Rodyti išsamiau apie SIM kortelę %1."
 
 #: ui/ModemPage.qml:20
 #, kde-format
 msgid "Modem %1"
-msgstr ""
+msgstr "Modemas %1"
 
 #: ui/ModemPage.qml:30
 #, kde-format
 msgid "Modem Control"
-msgstr ""
+msgstr "Modemo valdymas"
 
 #: ui/ModemPage.qml:36
 #, kde-format
 msgid "Force Modem Restart"
-msgstr ""
+msgstr "Priverstinai paleisti modemą iš naujo"
 
 #: ui/ModemPage.qml:42 ui/SimPage.qml:105
 #, kde-format
 msgid "Modem Details"
-msgstr ""
+msgstr "Išsamiau apie modemą"
 
 #: ui/ModemPage.qml:55
 #, kde-format
 msgid "Access Technologies"
-msgstr ""
+msgstr "Prieigos technologijos"
 
 #: ui/ModemPage.qml:75
 #, kde-format
 msgid "IMEI"
-msgstr ""
+msgstr "IMEI"
 
 #: ui/ModemPage.qml:91
 #, kde-format
 msgid "Manufacturer"
-msgstr ""
+msgstr "Gamintojas"
 
 #: ui/ModemPage.qml:99
 #, kde-format
 msgid "Model"
-msgstr ""
+msgstr "Modelis"
 
 #: ui/ModemPage.qml:114
 #, kde-format
 msgid "Owned Numbers:"
-msgstr ""
+msgstr "Priklausantys numeriai:"
 
 #: ui/ModemPage.qml:135
 #, kde-format
 msgid "Revision"
-msgstr ""
+msgstr "Poversijis"
 
 #: ui/ModemPage.qml:143
 #, kde-format
 msgid "Signal Quality"
-msgstr ""
+msgstr "Signalo kokybė"
 
 #: ui/ModemPage.qml:151
 #, kde-format
 msgid "State"
-msgstr ""
+msgstr "Būsena"
 
 #: ui/ModemPage.qml:159
 #, kde-format
 msgid "Failure Reason"
-msgstr ""
+msgstr "Nesėkmės priežastis"
 
 #: ui/ModemPage.qml:167
 #, kde-format
 msgid "Registration State"
-msgstr ""
+msgstr "Registracijos būsena"
 
 #: ui/ModemPage.qml:175
 #, kde-format
 msgid "Roaming"
-msgstr ""
+msgstr "Tarptinklinis ryšys"
 
 #: ui/ModemPage.qml:183
 #, kde-format
 msgid "Firmware Version"
-msgstr ""
+msgstr "Programinės aparatinės įrangos versija"
 
 #: ui/ModemPage.qml:191
 #, kde-format
 msgid "Interface Name"
-msgstr ""
+msgstr "Sąsajos pavadinimas"
 
 #: ui/ModemPage.qml:199
 #, kde-format
 msgid "Metered"
-msgstr ""
+msgstr "Ribotų duomenų"
 
 #: ui/ModemPage.qml:207
 #, kde-format
 msgid "Active NetworkManager Connection"
-msgstr ""
+msgstr "Aktyvus NetworkManager ryšys"
 
 #: ui/ModemPage.qml:215
 #, kde-format
 msgid "Device"
-msgstr ""
+msgstr "Įrenginys"
 
 #: ui/ModemPage.qml:223
 #, kde-format
 msgid "Device ID"
-msgstr ""
+msgstr "Įrenginio ID"
 
 #: ui/ModemPage.qml:238
 #, kde-format
 msgid "Drivers:"
-msgstr ""
+msgstr "Tvarkyklės:"
 
 #: ui/ModemPage.qml:258
 #, kde-format
 msgid "Plugin"
-msgstr ""
+msgstr "Įskiepis"
 
 #: ui/ModemPage.qml:266
 #, kde-format
 msgid "Power State"
-msgstr ""
+msgstr "Maitinimo būsena"
 
 #: ui/ModemPage.qml:274
 #, kde-format
 msgid "SIM Path"
-msgstr ""
+msgstr "SIM kortelės kelias"
 
 #: ui/ProfileList.qml:23
 #, kde-format
 msgid "APNs"
-msgstr ""
+msgstr "Prieigos taškų pavadinimai (APN)"
 
 #: ui/ProfileList.qml:26 ui/ProfileList.qml:88
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "Taisyti"
 
 #: ui/ProfileList.qml:53
 #, kde-format
@@ -797,46 +805,50 @@ msgid ""
 "Unable to autodetect connection settings for your carrier. Please find your "
 "carrier's APN settings by either contacting support or searching online."
 msgstr ""
+"Nepavyko automatiškai aptikti jūsų mobiliojo ryšio operatoriaus ryšio "
+"nuostatų. Suraskite savo mobiliojo ryšio operatoriaus prieigos taško "
+"pavadinimo (APN) nuostatas susisiekdami su mobiliojo ryšio pagalbos centru "
+"arba atlikdami paiešką internete."
 
 #: ui/ProfileList.qml:64
 #, kde-format
 msgid "APN List"
-msgstr ""
+msgstr "Prieigos taškų pavadinimų (APN) sąrašas"
 
 #: ui/ProfileList.qml:98
 #, kde-format
 msgid "Delete"
-msgstr ""
+msgstr "Ištrinti"
 
 #: ui/ProfileList.qml:107
 #, kde-format
 msgid "Add APN"
-msgstr ""
+msgstr "Pridėti prieigos taško pavadinimą (APN)"
 
 #: ui/ProfileList.qml:115
 #, kde-format
 msgid "Automatically detect APN"
-msgstr ""
+msgstr "Automatiškai aptikti prieigos taško pavadinimą (APN)"
 
 #: ui/SimLockPage.qml:19 ui/SimPage.qml:94
 #, kde-format
 msgid "SIM Lock"
-msgstr ""
+msgstr "SIM kortelės užraktas"
 
 #: ui/SimLockPage.qml:38
 #, kde-format
 msgid "SIM is locked"
-msgstr ""
+msgstr "SIM kortelė užrakinta"
 
 #: ui/SimLockPage.qml:39
 #, kde-format
 msgid "In order to use this SIM, you must first unlock it."
-msgstr ""
+msgstr "Norėdami naudoti šią SIM kortelę, iš pradžių, privalote ją atrakinti."
 
 #: ui/SimLockPage.qml:61
 #, kde-format
 msgid "SIM is not locked"
-msgstr ""
+msgstr "SIM kortelė nėra užrakinta"
 
 #: ui/SimLockPage.qml:62
 #, kde-format
@@ -844,92 +856,95 @@ msgid ""
 "You can lock your SIM to require a set PIN code for phone calls and mobile "
 "data."
 msgstr ""
+"Galite užrakinti SIM kortelę, kad, norint skambinti ar naudotis "
+"mobiliaisiais duomenimis, ji reikalautų PIN kodo."
 
 #: ui/SimLockPage.qml:66
 #, kde-format
 msgid "Lock SIM"
-msgstr ""
+msgstr "Užrakinti SIM kortelę"
 
 #: ui/SimLockPage.qml:78
 #, kde-format
 msgid "Disable SIM Lock"
-msgstr ""
+msgstr "Išjungti SIM kortelės užraktą"
 
 #: ui/SimLockPage.qml:79
 #, kde-format
 msgid "Disable the SIM lock feature and remove the passcode on the SIM."
 msgstr ""
+"Išjungti SIM užrakto ypatybę ir pašalinti SIM kortelėje esantį slaptažodį."
 
 #: ui/SimLockPage.qml:91
 #, kde-format
 msgid "Change PIN"
-msgstr ""
+msgstr "Keisti PIN kodą"
 
 #: ui/SimLockPage.qml:92
 #, kde-format
 msgid "Change the passcode set on the SIM."
-msgstr ""
+msgstr "Keisti SIM kortelėje nustatytą slaptažodį."
 
 #: ui/SimLockPage.qml:106
 #, kde-format
 msgid "Unlock SIM"
-msgstr ""
+msgstr "Atrakinti SIM kortelę"
 
 #: ui/SimLockPage.qml:114
 #, kde-format
 msgid "Attempts left: %1"
-msgstr ""
+msgstr "Liko bandymų: %1"
 
 #: ui/SimLockPage.qml:118
 #, kde-format
 msgid "Enter PIN"
-msgstr ""
+msgstr "Įveskite PIN kodą"
 
 #: ui/SimLockPage.qml:126
 #, kde-format
 msgid "Change SIM PIN"
-msgstr ""
+msgstr "Keisti SIM kortelės PIN kodą"
 
 #: ui/SimLockPage.qml:145 ui/SimLockPage.qml:210
 #, kde-format
 msgid "PINs don't match!"
-msgstr ""
+msgstr "PIN kodai nesutampa!"
 
 #: ui/SimLockPage.qml:151 ui/SimLockPage.qml:216
 #, kde-format
 msgid "PINs must be between 4 and 8 digits!"
-msgstr ""
+msgstr "PIN kodai privalo būti nuo 4 iki 8 skaitmenų ilgio!"
 
 #: ui/SimLockPage.qml:156 ui/SimLockPage.qml:183
 #, kde-format
 msgid "Current PIN"
-msgstr ""
+msgstr "Dabartinis PIN kodas"
 
 #: ui/SimLockPage.qml:161 ui/SimLockPage.qml:221
 #, kde-format
 msgid "New PIN"
-msgstr ""
+msgstr "Naujas PIN kodas"
 
 #: ui/SimLockPage.qml:166 ui/SimLockPage.qml:226
 #, kde-format
 msgid "Confirm PIN"
-msgstr ""
+msgstr "Pakartokite PIN kodą"
 
 #: ui/SimLockPage.qml:174
 #, kde-format
 msgid "Remove SIM PIN"
-msgstr ""
+msgstr "Šalinti SIM kortelės PIN kodą"
 
 #: ui/SimLockPage.qml:191
 #, kde-format
 msgid "Add SIM PIN"
-msgstr ""
+msgstr "Pridėti SIM kortelės PIN kodą"
 
 #: ui/SimPage.qml:35
 #, kde-format
 msgctxt "@title"
 msgid "SIM %1"
-msgstr ""
+msgstr "SIM kortelė %1"
 
 #: ui/SimPage.qml:45
 #, kde-format
@@ -937,88 +952,94 @@ msgid ""
 "This SIM slot is empty, a SIM card needs to be inserted in order for it to "
 "be used."
 msgstr ""
+"Šis SIM kortelės lizdas yra tuščias, turi būti įkišta SIM kortelė, kad ją "
+"galima būtų naudoti."
 
 #: ui/SimPage.qml:60
 #, kde-format
 msgid "Data Roaming"
-msgstr ""
+msgstr "Tarptinklinis duomenų ryšys"
 
 #: ui/SimPage.qml:61
 #, kde-format
 msgid "Allow your device to use networks other than your carrier."
 msgstr ""
+"Leisti įrenginiui naudoti ne tik jūsų mobiliojo ryšio operatoriaus tinklą, "
+"bet ir kitus tinklus."
 
 #: ui/SimPage.qml:72
 #, kde-format
 msgid "Modify APNs"
-msgstr ""
+msgstr "Modifikuoti prieigos taškų pavadinimus (APN)"
 
 #: ui/SimPage.qml:73
 #, kde-format
 msgid "Configure access point names for your carrier."
-msgstr ""
+msgstr "Konfigūruoti mobiliojo ryšio operatoriaus prieigos taškų pavadinimus."
 
 #: ui/SimPage.qml:83
 #, kde-format
 msgid "Networks"
-msgstr ""
+msgstr "Tinklai"
 
 #: ui/SimPage.qml:84
 #, kde-format
 msgid "Select a network operator."
-msgstr ""
+msgstr "Pasirinkite tinklo operatorių."
 
 #: ui/SimPage.qml:95
 #, kde-format
 msgid "Modify SIM lock settings."
-msgstr ""
+msgstr "Modifikuokite SIM kortelės užrakto nuostatas."
 
 #: ui/SimPage.qml:106
 #, kde-format
 msgid "View the details of the modem this SIM is connected to."
 msgstr ""
+"Rodyti išsamesnę informaciją apie modemą, prie kurio prisijungusi ši SIM "
+"kortelė."
 
 #: ui/SimPage.qml:112
 #, kde-format
 msgid "SIM Details"
-msgstr ""
+msgstr "Išsamiau apie SIM kortelę"
 
 #: ui/SimPage.qml:126
 #, kde-format
 msgid "IMSI"
-msgstr ""
+msgstr "IMSI"
 
 #: ui/SimPage.qml:134
 #, kde-format
 msgid "EID"
-msgstr ""
+msgstr "EID"
 
 #: ui/SimPage.qml:142
 #, kde-format
 msgid "Operator Code (modem)"
-msgstr ""
+msgstr "Operatoriaus kodas (modemas)"
 
 #: ui/SimPage.qml:150
 #, kde-format
 msgid "Operator Name (modem)"
-msgstr ""
+msgstr "Operatoriaus pavadinimas (modemas)"
 
 #: ui/SimPage.qml:158
 #, kde-format
 msgid "Operator Code (provided by SIM)"
-msgstr ""
+msgstr "Operatoriaus kodas (teikia SIM kortelė)"
 
 #: ui/SimPage.qml:166
 #, kde-format
 msgid "Operator Name (provided by SIM)"
-msgstr ""
+msgstr "Operatoriaus pavadinimas (teikia SIM kortelė)"
 
 #: ui/SimPage.qml:174
 #, kde-format
 msgid "SIM ID"
-msgstr ""
+msgstr "SIM kortelės ID"
 
 #: ui/SimPage.qml:190
 #, kde-format
 msgid "Emergency Numbers"
-msgstr ""
+msgstr "Skubios pagalbos numeriai"

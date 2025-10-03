@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Vít Pelčák <vit@pelcak.org>, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2024-06-21 13:40+0200\n"
+"PO-Revision-Date: 2025-10-01 17:47+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 25.08.1\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -178,7 +178,7 @@ msgstr "Aktivní záloha"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format
@@ -3423,13 +3423,13 @@ msgstr "Typ připojení je WireGuard"
 #, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr ""
+msgstr "Dostupný"
 
 #: models/networkmodelitem.cpp:354
 #, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
-msgstr ""
+msgstr "Připojen"
 
 #: models/networkmodelitem.cpp:356
 #, kde-format
@@ -3675,7 +3675,7 @@ msgstr "Připojen k %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr ""
+msgstr "Služba NetworkManager neběží"
 
 #: networkstatus.cpp:261
 #, kde-format

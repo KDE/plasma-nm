@@ -193,41 +193,36 @@ void OpenconnectSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &se
     // General settings
     const NMStringMap dataMap = setting.staticCast<NetworkManager::VpnSetting>()->data();
 
-    int cmbProtocolIndex;
-    // No value corresponds to "anyconnect", matching GNOME and the openconnect binary itself.
-    if (!dataMap.contains(NM_OPENCONNECT_KEY_PROTOCOL) || dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("anyconnect")) {
-        cmbProtocolIndex = 0;
-    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("nc")) {
-        cmbProtocolIndex = 1;
-    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("gp")) {
-        cmbProtocolIndex = 2;
-    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("pulse")) {
-        cmbProtocolIndex = 3; // pulse, Pulse Connect Secure
-    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("f5")) {
+    int cmbProtocolIndex = 0; // No value corresponds to "anyconnect", matching GNOME and the openconnect binary itself.
+    QString protocol = dataMap.value(QLatin1String(NM_OPENCONNECT_KEY_PROTOCOL));
+    if (protocol == QLatin1String("nc")) {
+        cmbProtocolIndex = 1; // Juniper Network Connect
+    } else if (protocol == QLatin1String("gp")) {
+        cmbProtocolIndex = 2; // PAN Global Protect
+    } else if (protocol == QLatin1String("pulse")) {
+        cmbProtocolIndex = 3; // Pulse Connect Secure
+    } else if (protocol == QLatin1String("f5")) {
         cmbProtocolIndex = 4; // F5 BIG-IP SSL VPN
-    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("fortinet")) {
+    } else if (protocol == QLatin1String("fortinet")) {
         cmbProtocolIndex = 5; // Fortinet SSL VPN
-    } else if (dataMap[NM_OPENCONNECT_KEY_PROTOCOL] == QLatin1String("array")) {
+    } else if (protocol == QLatin1String("array")) {
         cmbProtocolIndex = 6; // Array SSL VPN
-    } else {
-        cmbProtocolIndex = 3; // pulse, Pulse Connect Secure is the default
     }
 
-    int cmbReportedOsIndex;
-    if (!dataMap.contains(NM_OPENCONNECT_KEY_REPORTED_OS)) {
-        cmbReportedOsIndex = 0;
-    } else if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QLatin1String("linux")) {
+    int cmbReportedOsIndex = 0;
+    QString reportedOs = dataMap.value(QLatin1String(NM_OPENCONNECT_KEY_REPORTED_OS));
+    if (reportedOs == QLatin1String("linux")) {
         cmbReportedOsIndex = 1;
-    } else if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QLatin1String("linux-64")) {
+    } else if (reportedOs == QLatin1String("linux-64")) {
         cmbReportedOsIndex = 2;
-    } else if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QLatin1String("win")) {
+    } else if (reportedOs == QLatin1String("win")) {
         cmbReportedOsIndex = 3;
-    } else if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QLatin1String("mac-intel")) {
+    } else if (reportedOs == QLatin1String("mac-intel")) {
         cmbReportedOsIndex = 4;
-    } else if (dataMap[NM_OPENCONNECT_KEY_REPORTED_OS] == QLatin1String("android")) {
+    } else if (reportedOs == QLatin1String("android")) {
         cmbReportedOsIndex = 5;
-    } else {
-        cmbReportedOsIndex = 6; // apple-ios
+    } else if (reportedOs == QLatin1String("apple-ios")) {
+        cmbReportedOsIndex = 6;
     }
 
     d->ui.cmbProtocol->setCurrentIndex(cmbProtocolIndex);
@@ -355,7 +350,9 @@ QVariantMap OpenconnectSettingWidget::setting() const
     if (!d->ui.leVersionString->text().isEmpty()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_VERSION_STRING), d->ui.leVersionString->text());
     }
-    data.insert(NM_OPENCONNECT_KEY_REPORTED_OS, reportedOs);
+    if (!reportedOs.isEmpty()) {
+        data.insert(NM_OPENCONNECT_KEY_REPORTED_OS, reportedOs);
+    }
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_CSD_ENABLE), d->ui.chkAllowTrojan->isChecked() ? "yes" : "no");
     if (d->ui.leCsdWrapperScript->url().isValid()) {
         data.insert(QLatin1String(NM_OPENCONNECT_KEY_CSD_WRAPPER), d->ui.leCsdWrapperScript->url().toLocalFile());

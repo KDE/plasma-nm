@@ -1,19 +1,20 @@
 # translation of kcm_cellular_network.po to Slovak
 # Roman Paholík <wizzardsk@gmail.com>, 2021.
 # Ferdinand Galko <galko.ferdinand@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2025 Lucia Mrenica <lucia.mrenica@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_cellular_network\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-02-27 00:42+0000\n"
-"PO-Revision-Date: 2023-08-14 17:25+0200\n"
-"Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
-"Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
+"PO-Revision-Date: 2025-10-03 16:06+0200\n"
+"Last-Translator: Lucia Mrenica <lucia.mrenica@gmail.com>\n"
+"Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: modem.cpp:130
@@ -280,13 +281,12 @@ msgstr "SIM je dostupná, ale nepoužiteľná."
 #: modemdetails.cpp:291
 #, kde-format
 msgid "Unknown modem capabilities."
-msgstr ""
+msgstr "Neznáme možnosti modemu."
 
 #: modemdetails.cpp:293
-#, fuzzy, kde-format
-#| msgid "SIM is not locked"
+#, kde-format
 msgid "eSIM is not initialized."
-msgstr "SIM nie je uzamknutá"
+msgstr "eSIM nie je inicializovaná."
 
 #: modemdetails.cpp:316
 #, kde-format
@@ -537,10 +537,9 @@ msgid "Edit APN"
 msgstr "Upraviť APN"
 
 #: ui/EditProfilePage.qml:15
-#, fuzzy, kde-format
-#| msgid "New PIN"
+#, kde-format
 msgid "New APN"
-msgstr "Nový PIN"
+msgstr "Nové APN"
 
 #: ui/EditProfilePage.qml:30
 #, kde-format
@@ -595,7 +594,7 @@ msgstr "Iba 2G"
 #: ui/EditProfilePage.qml:75
 #, kde-format
 msgid "Save profile"
-msgstr ""
+msgstr "Uložiť profil"
 
 #: ui/main.qml:52
 #, kde-format
@@ -638,8 +637,7 @@ msgid "View data usage."
 msgstr "Zobraziť využívanie dát."
 
 #: ui/main.qml:122
-#, fuzzy, kde-format
-#| msgid "SIM"
+#, kde-format
 msgid "SIM"
 msgid_plural "SIMs"
 msgstr[0] "SIM"
@@ -797,11 +795,14 @@ msgid ""
 "Unable to autodetect connection settings for your carrier. Please find your "
 "carrier's APN settings by either contacting support or searching online."
 msgstr ""
+"Nie je možné automaticky zistiť nastavenia pripojenia pre vášho operátora."
+"Nastavenia APN vášho operátora zistíte tak, že kontaktujete podporu alebo "
+"ich vyhľadáte na internete."
 
 #: ui/ProfileList.qml:64
 #, kde-format
 msgid "APN List"
-msgstr ""
+msgstr "Zoznam APN"
 
 #: ui/ProfileList.qml:98
 #, kde-format
@@ -814,8 +815,7 @@ msgid "Add APN"
 msgstr "Pridať APN"
 
 #: ui/ProfileList.qml:115
-#, fuzzy, kde-format
-#| msgid "Autodetect APN"
+#, kde-format
 msgid "Automatically detect APN"
 msgstr "Automatické zisťovanie APN"
 
@@ -929,8 +929,7 @@ msgid "Add SIM PIN"
 msgstr "Pridať PIN pre SIM"
 
 #: ui/SimPage.qml:35
-#, fuzzy, kde-format
-#| msgid "SIM %1"
+#, kde-format
 msgctxt "@title"
 msgid "SIM %1"
 msgstr "SIM %1"
@@ -941,6 +940,8 @@ msgid ""
 "This SIM slot is empty, a SIM card needs to be inserted in order for it to "
 "be used."
 msgstr ""
+"Tento slot na SIM kartu je prázdny, na jeho použitie je potrebné vložiť "
+"kartu SIM."
 
 #: ui/SimPage.qml:60
 #, kde-format

@@ -50,6 +50,7 @@ private Q_SLOTS:
 
 private:
     void loadConfig(const NetworkManager::VpnSetting::Ptr &setting);
+    void loadSecrets(const NetworkManager::VpnSetting::Ptr &setting);
     Ui::L2tpIpsecWidget *const m_ui;
     static IpsecDaemonType m_ipsecDaemonType;
 };

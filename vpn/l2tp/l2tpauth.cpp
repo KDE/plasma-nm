@@ -57,6 +57,7 @@ void L2tpAuthWidget::readSecrets()
     NetworkManager::Setting::SecretFlags passType = (NetworkManager::Setting::SecretFlags)dataMap[NM_L2TP_KEY_PASSWORD "-flags"].toInt();
     NetworkManager::Setting::SecretFlags userCertType = (NetworkManager::Setting::SecretFlags)dataMap[NM_L2TP_KEY_USER_CERTPASS "-flags"].toInt();
     NetworkManager::Setting::SecretFlags machineCertType = (NetworkManager::Setting::SecretFlags)dataMap[NM_L2TP_KEY_MACHINE_CERTPASS "-flags"].toInt();
+    NetworkManager::Setting::SecretFlags pskType = (NetworkManager::Setting::SecretFlags)dataMap[NM_L2TP_KEY_IPSEC_PSK "-flags"].toInt();
 
     if ((userAType.isEmpty() || userAType == QLatin1String(NM_L2TP_AUTHTYPE_PASSWORD)) && !(passType.testFlag(NetworkManager::Setting::NotRequired))) {
         label = new QLabel(this);
@@ -84,6 +85,16 @@ void L2tpAuthWidget::readSecrets()
             lineEdit->setPasswordModeEnabled(true);
             lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_L2TP_KEY_MACHINE_CERTPASS));
             lineEdit->setText(secrets.value(QLatin1String(NM_L2TP_KEY_MACHINE_CERTPASS)));
+            d->layout->addRow(label, lineEdit);
+        }
+    } else if (machineAType == QLatin1String(NM_L2TP_AUTHTYPE_PSK)) {
+        if (!(pskType.testFlag(NetworkManager::Setting::NotRequired))) {
+            label = new QLabel(this);
+            label->setText(i18n("Pre-shared Key:"));
+            lineEdit = new PasswordField(this);
+            lineEdit->setPasswordModeEnabled(true);
+            lineEdit->setProperty("nm_secrets_key", QLatin1String(NM_L2TP_KEY_IPSEC_PSK));
+            lineEdit->setText(secrets.value(QLatin1String(NM_L2TP_KEY_IPSEC_PSK)));
             d->layout->addRow(label, lineEdit);
         }
     }

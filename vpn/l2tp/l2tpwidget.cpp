@@ -247,11 +247,13 @@ void L2tpWidget::showIpsec()
     ipsec->setAttribute(Qt::WA_DeleteOnClose);
     connect(ipsec.data(), &L2tpIpsecWidget::accepted, [ipsec, this]() {
         NMStringMap ipsecData = ipsec->setting();
+        NMStringMap ipsecSecrets = ipsec->secrets();
         if (!ipsecData.isEmpty()) {
             if (m_tmpIpsecSetting.isNull()) {
                 m_tmpIpsecSetting = NetworkManager::VpnSetting::Ptr(new NetworkManager::VpnSetting);
             }
             m_tmpIpsecSetting->setData(ipsecData);
+            m_tmpIpsecSetting->setSecrets(ipsecSecrets);
         }
     });
     ipsec->setModal(true);

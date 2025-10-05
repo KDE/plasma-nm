@@ -28,6 +28,8 @@ L2tpIpsecWidget::L2tpIpsecWidget(const NetworkManager::VpnSetting::Ptr &setting,
     m_ui->setupUi(this);
     m_ui->machineKeyPassword->setPasswordOptionsEnabled(true);
     m_ui->machineKeyPassword->setPasswordNotRequiredEnabled(true);
+    m_ui->presharedKey->setPasswordOptionsEnabled(true);
+    m_ui->presharedKey->setPasswordNotRequiredEnabled(true);
 
     // use requesters' urlSelected signals to set other requester's startDirs to save clicking
     // around the filesystem, also if it is a .p12 file,  set the other URLs to that .p12 file.
@@ -73,14 +75,28 @@ void L2tpIpsecWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
             m_ui->cmbAuthType->setCurrentIndex(AuthType::PSK);
             m_ui->stackedWidget->setCurrentIndex(AuthType::PSK);
 
-            // *SWAN support Base64 encoded PSKs that are prefixed with "0s"
+            // Note this setting has been replaced with a secret of the same name
+            // If present, the secret loaded in loadSecrets() will override this value
+            // On saving, only the secret will be saved, not the setting
             QString psk = dataMap[NM_L2TP_KEY_IPSEC_PSK];
             if (psk.length() > 2 && psk.startsWith(QLatin1String("0s"))) {
+                // *SWAN support Base64 encoded PSKs that are prefixed with "0s"
                 m_ui->presharedKey->setText(QByteArray::fromBase64(psk.mid(2).toUtf8()));
             } else {
                 m_ui->presharedKey->setText(psk);
             }
 
+            const NetworkManager::Setting::SecretFlags pskType =
+                static_cast<NetworkManager::Setting::SecretFlags>(dataMap[NM_L2TP_KEY_IPSEC_PSK "-flags"].toInt());
+            if (pskType.testFlag(NetworkManager::Setting::None)) {
+                m_ui->presharedKey->setPasswordOption(PasswordField::StoreForAllUsers);
+            } else if (pskType.testFlag(NetworkManager::Setting::AgentOwned)) {
+                m_ui->presharedKey->setPasswordOption(PasswordField::StoreForUser);
+            } else if (pskType.testFlag(NetworkManager::Setting::NotSaved)) {
+                m_ui->presharedKey->setPasswordOption(PasswordField::AlwaysAsk);
+            } else if (pskType.testFlag(NetworkManager::Setting::NotRequired)) {
+                m_ui->presharedKey->setPasswordOption(PasswordField::NotRequired);
+            }
         } else { // NM_L2TP_AUTHTYPE_TLS
             m_ui->cmbAuthType->setCurrentIndex(AuthType::TLS);
             m_ui->stackedWidget->setCurrentIndex(AuthType::TLS);
@@ -161,6 +177,21 @@ void L2tpIpsecWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
             m_ui->cbPFS->setToolTip("");
         }
     }
+
+    loadSecrets(setting);
+}
+
+void L2tpIpsecWidget::loadSecrets(const NetworkManager::VpnSetting::Ptr &setting)
+{
+    const NMStringMap secrets = setting->secrets();
+
+    QString psk = secrets[NM_L2TP_KEY_IPSEC_PSK];
+    if (psk.length() > 2 && psk.startsWith(QLatin1String("0s"))) {
+        // *SWAN support Base64 encoded PSKs that are prefixed with "0s"
+        m_ui->presharedKey->setText(QByteArray::fromBase64(psk.mid(2).toUtf8()));
+    } else if (!psk.isEmpty()) {
+        m_ui->presharedKey->setText(psk);
+    }
 }
 
 NMStringMap L2tpIpsecWidget::setting() const
@@ -173,17 +204,22 @@ NMStringMap L2tpIpsecWidget::setting() const
         result.insert(NM_L2TP_KEY_IPSEC_ENABLE, yesString);
 
         if (m_ui->cmbAuthType->currentIndex() == AuthType::PSK) {
-            // NetworkManager-l2tp < 1.2.12 does not support Base64 PSK
-            // For backwards compatibility don't use Base64 PSK for now.
-            if (!m_ui->presharedKey->text().isEmpty()) {
-                result.insert(NM_L2TP_KEY_IPSEC_PSK, m_ui->presharedKey->text());
-                // *SWAN support Base64 encoded PSKs that are prefixed with "0s"
-                /*
-                QString psk = QLatin1String("0s");
-                psk.append(m_ui->presharedKey->text().toUtf8().toBase64());
-                result.insert(NM_L2TP_KEY_IPSEC_PSK, psk);
-                */
-            }
+            result.insert(NM_L2TP_KEY_MACHINE_AUTH_TYPE, NM_L2TP_AUTHTYPE_PSK);
+
+            switch (m_ui->presharedKey->passwordOption()) {
+            case PasswordField::StoreForAllUsers:
+                result.insert(NM_L2TP_KEY_IPSEC_PSK "-flags", QString::number(NetworkManager::Setting::None));
+                break;
+            case PasswordField::StoreForUser:
+                result.insert(NM_L2TP_KEY_IPSEC_PSK "-flags", QString::number(NetworkManager::Setting::AgentOwned));
+                break;
+            case PasswordField::AlwaysAsk:
+                result.insert(NM_L2TP_KEY_IPSEC_PSK "-flags", QString::number(NetworkManager::Setting::NotSaved));
+                break;
+            case PasswordField::NotRequired:
+                result.insert(NM_L2TP_KEY_IPSEC_PSK "-flags", QString::number(NetworkManager::Setting::NotRequired));
+                break;
+            };
         } else { // AuthType::TLS
 
             result.insert(NM_L2TP_KEY_MACHINE_AUTH_TYPE, NM_L2TP_AUTHTYPE_TLS);
@@ -262,6 +298,12 @@ NMStringMap L2tpIpsecWidget::secrets() const
             // private key password
             if (!m_ui->machineKeyPassword->text().isEmpty()) {
                 result.insert(NM_L2TP_KEY_MACHINE_CERTPASS, m_ui->machineKeyPassword->text());
+            }
+        } else if (m_ui->cmbAuthType->currentIndex() == AuthType::PSK) {
+            // NetworkManager-l2tp < 1.2.12 does not support Base64 PSK
+            // For backwards compatibility don't use Base64 PSK for now.
+            if (!m_ui->presharedKey->text().isEmpty()) {
+                result.insert(NM_L2TP_KEY_IPSEC_PSK, m_ui->presharedKey->text());
             }
         }
     }

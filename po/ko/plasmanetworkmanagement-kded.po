@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2023, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-09 01:00+0000\n"
-"PO-Revision-Date: 2024-08-21 00:22+0200\n"
+"PO-Revision-Date: 2025-10-09 01:23+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -553,17 +553,14 @@ msgid "No secrets were requested"
 msgstr "요청된 서비스가 없음"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr "\"%1\" 무선 네트워크의 암호가 잘못되었습니다. 다시 시도하십시오."
+msgstr "\"%1\" Wi-Fi 네트워크의 암호가 잘못되었습니다. 다시 시도하십시오."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "\"%1\" 무선 네트워크의 암호를 입력하십시오:"
+msgstr "\"%1\" Wi-Fi 네트워크의 암호를 입력하십시오:"
 
 #: passworddialog.cpp:105
 #, kde-format

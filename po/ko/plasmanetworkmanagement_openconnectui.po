@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2014, 2015, 2017, 2019, 2021, 2022, 2023, 2024 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2014, 2015, 2017, 2019, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-25 00:44+0000\n"
-"PO-Revision-Date: 2024-11-29 00:09+0100\n"
+"PO-Revision-Date: 2025-10-09 01:22+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 24.12.3\n"
 
 #: openconnectauth.cpp:345
 #, kde-format
@@ -400,29 +400,25 @@ msgid "Internal User Verification Locked"
 msgstr "내부 사용자 확인 잠김"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
 msgstr[0] "PIN이 잘못되었습니다. %1회 남았습니다."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
 msgstr[0] "너무 짧습니다. %1회 남았습니다."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
 msgstr[0] "잘못된 문자입니다. %1회 남았습니다."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
 msgstr[0] "현재 PIN과 같습니다. %1회 남았습니다."

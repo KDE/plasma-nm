@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-01 00:45+0000\n"
-"PO-Revision-Date: 2025-07-20 01:26+0200\n"
+"PO-Revision-Date: 2025-10-09 01:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -79,28 +79,24 @@ msgid "Airplane mode is enabled"
 msgstr "비행기 모드가 활성화됨"
 
 #: ConnectionListPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "무선 및 모바일 네트워크가 비활성화됨"
+msgstr "Wi-Fi 및 모바일 데이터가 비활성화됨"
 
 #: ConnectionListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "무선 네트워크가 비활성화됨"
+msgstr "Wi-Fi가 비활성화됨"
 
 #: ConnectionListPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Looking for wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr "무선 네트워크 검색 중"
+msgstr "Wi-Fi 네트워크 검색 중"
 
 #: ConnectionListPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "모바일 네트워크가 비활성화됨"
+msgstr "모바일 데이터가 비활성화됨"
 
 #: ConnectionListPage.qml:133
 #, kde-format
@@ -116,25 +112,25 @@ msgstr "사용 가능한 연결 없음"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "네트워크를 검색하려면 비행기 탑승 모드를 해제하십시오"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "네트워크를 검색하려면 Wi-Fi나 모바일 데이터를 활성화하십시오"
 
 #: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "네트워크를 검색하려면 Wi-Fi를 활성화하십시오"
 
 #: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "네트워크를 검색하려면 모바일 데이터를 활성화하십시오"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -164,10 +160,9 @@ msgid "Enable Wi-Fi"
 msgstr "Wi-Fi 활성화"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "모바일 네트워크 활성화"
+msgstr "모바일 데이터 활성화"
 
 #: main.qml:94
 #, kde-format
@@ -201,10 +196,9 @@ msgid "Wi-Fi password:"
 msgstr "Wi-Fi 암호:"
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "모바일 네트워크 사용"
+msgstr "모바일 데이터 활성화"
 
 #: Toolbar.qml:148
 #, kde-kuit-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-27 00:44+0000\n"
-"PO-Revision-Date: 2025-06-10 22:24+0200\n"
+"PO-Revision-Date: 2025-10-09 01:23+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -176,7 +176,7 @@ msgstr "연결 중"
 #: qml/ConnectionItem.qml:121
 msgctxt "@title:column Available networks"
 msgid "Available"
-msgstr ""
+msgstr "사용 가능"
 
 #: qml/main.qml:151
 msgid "Add new connection"
@@ -204,41 +204,34 @@ msgid "Do you want to remove the connection '%1'?"
 msgstr "연결 '%1'을(를) 삭제하시겠습니까?"
 
 #: qml/main.qml:262
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "연결"
 
 #: qml/main.qml:268
-#, fuzzy
-#| msgid "Cancel"
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "취소"
 
 #: qml/main.qml:274
-#, fuzzy
-#| msgctxt "@label Hotspot password"
-#| msgid "Password:"
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "암호:"
+msgstr "암호 입력"
 
 #: qml/main.qml:280
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "네트워크: %1"
 
 #: qml/main.qml:300
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "암호는 올바른 WEP 키여야 함"
 
 #: qml/main.qml:301
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "암호는 8-64글자 사이여야 함"
 
 #~ msgid "Create"
 #~ msgstr "만들기"

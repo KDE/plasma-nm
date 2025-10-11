@@ -1,4 +1,4 @@
-# Burkhard Lück <lueck@hube-lueck.de>, 2015, 2016, 2017, 2021.
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2021 Burkhard Lück <lueck@hube-lueck.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_sstpui\n"

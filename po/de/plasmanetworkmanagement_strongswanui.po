@@ -1,6 +1,6 @@
 # SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
-# Burkhard Lück <lueck@hube-lueck.de>, 2013, 2014, 2015, 2017, 2019, 2021.
-# Jannick Kuhr <kde-dev@kuhr.org>, 2023.
+# SPDX-FileCopyrightText: 2013, 2014, 2015, 2017, 2019, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_strongswanui\n"

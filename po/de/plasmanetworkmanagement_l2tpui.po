@@ -1,6 +1,6 @@
-# Burkhard Lück <lueck@hube-lueck.de>, 2013, 2014, 2015, 2016, 2017, 2020, 2021.
-# Frederik Schwarzer <schwarzer@kde.org>, 2016.
-# Jannick Kuhr <kde-dev@kuhr.org>, 2023.
+# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2016 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_l2tpui\n"

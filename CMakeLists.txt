@@ -15,7 +15,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 ################# set KDE specific information #################
 
 find_package(ECM ${KF6_MIN_VERSION} REQUIRED NO_MODULE)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${ECM_MODULE_PATH})
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} ${CMAKE_CURRENT_SOURCE_DIR}/cmake ${ECM_MODULE_PATH})
 
 option(BUILD_OPENCONNECT "Build OpenConnect VPN plugin" ON)
 
@@ -96,6 +96,8 @@ set_package_properties(KF6Prison PROPERTIES DESCRIPTION "Prison library"
                        TYPE RUNTIME
                        PURPOSE "Needed to create mobile barcodes for WiFi networks"
                       )
+
+find_package(ModemManager 1.20 REQUIRED)
 
 pkg_check_modules(NETWORKMANAGER IMPORTED_TARGET libnm>1.4.0 REQUIRED)
 pkg_check_modules(MOBILEBROADBANDPROVIDERINFO mobile-broadband-provider-info)

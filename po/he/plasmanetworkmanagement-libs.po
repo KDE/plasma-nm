@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-10-05 12:39+0300\n"
+"PO-Revision-Date: 2025-10-09 13:17+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -777,7 +777,7 @@ msgstr "עדיפות:"
 #: editor/settings/ui/bridge.ui:174
 #, kde-format
 msgid "Forward delay:"
-msgstr "השהיית הפנייה:"
+msgstr "השהיית הפניה:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bridge.ui:203

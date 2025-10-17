@@ -44,6 +44,7 @@ Kirigami.PromptDialog {
     ColumnLayout {
         id: column
         spacing: Kirigami.Units.largeSpacing
+        Layout.minimumWidth: Kirigami.Units.gridUnit * 16
 
         PasswordField {
             id: passwordField

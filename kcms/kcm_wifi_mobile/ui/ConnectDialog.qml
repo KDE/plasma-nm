@@ -44,6 +44,7 @@ Kirigami.PromptDialog {
     ColumnLayout {
         id: column
         spacing: Kirigami.Units.largeSpacing
+        Layout.minimumWidth: Math.round(wifiSwitch.width * 0.8)
 
         PasswordField {
             id: passwordField

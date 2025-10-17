@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-27 00:44+0000\n"
-"PO-Revision-Date: 2025-08-07 08:24+0300\n"
+"PO-Revision-Date: 2025-10-16 09:05+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -177,7 +177,7 @@ msgstr "З’єднано"
 
 #: qml/ConnectionItem.qml:119
 msgid "Connecting"
-msgstr "Встановлюємо з’єднатися"
+msgstr "Встановлюємо з’єднання"
 
 #: qml/ConnectionItem.qml:121
 msgctxt "@title:column Available networks"

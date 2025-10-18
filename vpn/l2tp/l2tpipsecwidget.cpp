@@ -185,6 +185,8 @@ void L2tpIpsecWidget::loadSecrets(const NetworkManager::VpnSetting::Ptr &setting
 {
     const NMStringMap secrets = setting->secrets();
 
+    m_ui->machineKeyPassword->setText(secrets[NM_L2TP_KEY_MACHINE_CERTPASS]);
+
     QString psk = secrets[NM_L2TP_KEY_IPSEC_PSK];
     if (psk.length() > 2 && psk.startsWith(QLatin1String("0s"))) {
         // *SWAN support Base64 encoded PSKs that are prefixed with "0s"

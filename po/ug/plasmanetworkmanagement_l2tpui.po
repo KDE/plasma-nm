@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-10 00:40+0000\n"
+"POT-Creation-Date: 2025-10-18 00:44+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -174,21 +174,27 @@ msgstr ""
 msgid "PPP Settings…"
 msgstr ""
 
-#: l2tpauth.cpp:63
+#: l2tpauth.cpp:64
 #, fuzzy, kde-format
 #| msgid "Password:"
 msgid "User Password:"
 msgstr "ئىم:"
 
-#: l2tpauth.cpp:71
+#: l2tpauth.cpp:72
 #, fuzzy, kde-format
 #| msgid "Password:"
 msgid "User Certificate Password:"
 msgstr "ئىم:"
 
-#: l2tpauth.cpp:82
+#: l2tpauth.cpp:83
 #, kde-format
 msgid "Machine Certificate Password:"
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: l2tpauth.cpp:93 l2tpipsec.ui:91
+#, kde-format
+msgid "Pre-shared Key:"
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbEnableTunnelToHost)
@@ -214,12 +220,6 @@ msgstr ""
 #: l2tpipsec.ui:72
 #, kde-format
 msgid "Pre-shared Key (PSK)"
-msgstr ""
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: l2tpipsec.ui:91
-#, kde-format
-msgid "Pre-shared Key:"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
@@ -374,7 +374,7 @@ msgstr ""
 msgid "Remote ID:"
 msgstr ""
 
-#: l2tpipsecwidget.cpp:44
+#: l2tpipsecwidget.cpp:46
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr ""

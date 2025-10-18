@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-10 00:40+0000\n"
+"POT-Creation-Date: 2025-10-18 00:44+0000\n"
 "PO-Revision-Date: 2024-04-24 17:38+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -185,20 +185,26 @@ msgstr "„IPsec“ iestatījumi…"
 msgid "PPP Settings…"
 msgstr "PPP iestatījumi…"
 
-#: l2tpauth.cpp:63
+#: l2tpauth.cpp:64
 #, kde-format
 msgid "User Password:"
 msgstr "Lietotāja parole:"
 
-#: l2tpauth.cpp:71
+#: l2tpauth.cpp:72
 #, kde-format
 msgid "User Certificate Password:"
 msgstr "Lietotāja sertifikāta parole:"
 
-#: l2tpauth.cpp:82
+#: l2tpauth.cpp:83
 #, kde-format
 msgid "Machine Certificate Password:"
 msgstr "Mašīnas sertifikāta parole:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: l2tpauth.cpp:93 l2tpipsec.ui:91
+#, kde-format
+msgid "Pre-shared Key:"
+msgstr "Iepriekš kopīgota atslēga:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbEnableTunnelToHost)
 #: l2tpipsec.ui:20
@@ -223,12 +229,6 @@ msgstr "Tips:"
 #, kde-format
 msgid "Pre-shared Key (PSK)"
 msgstr "Iepriekš kopīgota atslēga (PSK)"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: l2tpipsec.ui:91
-#, kde-format
-msgid "Pre-shared Key:"
-msgstr "Iepriekš kopīgota atslēga:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
 #: l2tpipsec.ui:103
@@ -407,7 +407,7 @@ msgstr "Piespiest UDP iekapsulēšanu"
 msgid "Remote ID:"
 msgstr "Attālinātais ID:"
 
-#: l2tpipsecwidget.cpp:44
+#: l2tpipsecwidget.cpp:46
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr "L2TP „IPsec“ opcijas"

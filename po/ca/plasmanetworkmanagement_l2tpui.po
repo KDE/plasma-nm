@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-10 00:40+0000\n"
+"POT-Creation-Date: 2025-10-18 00:44+0000\n"
 "PO-Revision-Date: 2023-12-22 08:12+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -188,20 +188,26 @@ msgstr "Configuració IPsec…"
 msgid "PPP Settings…"
 msgstr "Configuració PPP…"
 
-#: l2tpauth.cpp:63
+#: l2tpauth.cpp:64
 #, kde-format
 msgid "User Password:"
 msgstr "Contrasenya d'usuari:"
 
-#: l2tpauth.cpp:71
+#: l2tpauth.cpp:72
 #, kde-format
 msgid "User Certificate Password:"
 msgstr "Contrasenya del certificat d'usuari:"
 
-#: l2tpauth.cpp:82
+#: l2tpauth.cpp:83
 #, kde-format
 msgid "Machine Certificate Password:"
 msgstr "Contrasenya del certificat de màquina:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: l2tpauth.cpp:93 l2tpipsec.ui:91
+#, kde-format
+msgid "Pre-shared Key:"
+msgstr "Clau precompartida:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbEnableTunnelToHost)
 #: l2tpipsec.ui:20
@@ -226,12 +232,6 @@ msgstr "Tipus:"
 #, kde-format
 msgid "Pre-shared Key (PSK)"
 msgstr "Clau precompartida (PSK)"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: l2tpipsec.ui:91
-#, kde-format
-msgid "Pre-shared Key:"
-msgstr "Clau precompartida:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
 #: l2tpipsec.ui:103
@@ -412,7 +412,7 @@ msgstr "Força l'encapsulat UDP"
 msgid "Remote ID:"
 msgstr "ID remot:"
 
-#: l2tpipsecwidget.cpp:44
+#: l2tpipsecwidget.cpp:46
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr "Opcions d'IPsec del L2TP"

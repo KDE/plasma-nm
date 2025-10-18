@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-10 00:40+0000\n"
+"POT-Creation-Date: 2025-10-18 00:44+0000\n"
 "PO-Revision-Date: 2015-02-04 16:14+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -181,21 +181,27 @@ msgstr "IPSec postavke..."
 msgid "PPP Settings…"
 msgstr "PPP postavke..."
 
-#: l2tpauth.cpp:63
+#: l2tpauth.cpp:64
 #, kde-format
 msgid "User Password:"
 msgstr "Korisnička lozinka:"
 
-#: l2tpauth.cpp:71
+#: l2tpauth.cpp:72
 #, fuzzy, kde-format
 #| msgid "User Password:"
 msgid "User Certificate Password:"
 msgstr "Korisnička lozinka:"
 
-#: l2tpauth.cpp:82
+#: l2tpauth.cpp:83
 #, kde-format
 msgid "Machine Certificate Password:"
 msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: l2tpauth.cpp:93 l2tpipsec.ui:91
+#, kde-format
+msgid "Pre-shared Key:"
+msgstr "Već dijeljeni kljuc:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbEnableTunnelToHost)
 #: l2tpipsec.ui:20
@@ -221,12 +227,6 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Pre-shared Key:"
 msgid "Pre-shared Key (PSK)"
-msgstr "Već dijeljeni kljuc:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: l2tpipsec.ui:91
-#, kde-format
-msgid "Pre-shared Key:"
 msgstr "Već dijeljeni kljuc:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
@@ -381,7 +381,7 @@ msgstr ""
 msgid "Remote ID:"
 msgstr ""
 
-#: l2tpipsecwidget.cpp:44
+#: l2tpipsecwidget.cpp:46
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr "L2TP IPsec Opcije"

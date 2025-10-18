@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-10 00:40+0000\n"
+"POT-Creation-Date: 2025-10-18 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -186,20 +186,26 @@ msgstr "IPsec सेटिंग्स्..."
 msgid "PPP Settings…"
 msgstr "पीपीपी सेटिंग्स्..."
 
-#: l2tpauth.cpp:63
+#: l2tpauth.cpp:64
 #, kde-format
 msgid "User Password:"
 msgstr "उपयोक्तृगुप्तशब्दः :"
 
-#: l2tpauth.cpp:71
+#: l2tpauth.cpp:72
 #, kde-format
 msgid "User Certificate Password:"
 msgstr "उपयोक्तृप्रमाणपत्रगुप्तशब्दः :"
 
-#: l2tpauth.cpp:82
+#: l2tpauth.cpp:83
 #, kde-format
 msgid "Machine Certificate Password:"
 msgstr "यन्त्रप्रमाणपत्रगुप्तशब्दः :"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: l2tpauth.cpp:93 l2tpipsec.ui:91
+#, kde-format
+msgid "Pre-shared Key:"
+msgstr "पूर्वसाझा कुञ्जी :"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbEnableTunnelToHost)
 #: l2tpipsec.ui:20
@@ -224,12 +230,6 @@ msgstr "प्रकारः:"
 #, kde-format
 msgid "Pre-shared Key (PSK)"
 msgstr "पूर्वसाझा कुञ्जी (PSK) 1.1."
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: l2tpipsec.ui:91
-#, kde-format
-msgid "Pre-shared Key:"
-msgstr "पूर्वसाझा कुञ्जी :"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
 #: l2tpipsec.ui:103
@@ -406,7 +406,7 @@ msgstr "UDP एनकैप्सुलेशनं प्रवर्तयन�
 msgid "Remote ID:"
 msgstr "दूरस्थः आईडी :"
 
-#: l2tpipsecwidget.cpp:44
+#: l2tpipsecwidget.cpp:46
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr "L2TP IPsec विकल्पाः"

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2024-06-10 00:40+0000\n"
+"POT-Creation-Date: 2025-10-18 00:44+0000\n"
 "PO-Revision-Date: 2017-10-30 23:08+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -188,21 +188,27 @@ msgstr "ИПсек поставке..."
 msgid "PPP Settings…"
 msgstr "ППП поставке..."
 
-#: l2tpauth.cpp:63
+#: l2tpauth.cpp:64
 #, kde-format
 msgid "User Password:"
 msgstr "Корисничка лозинка:"
 
-#: l2tpauth.cpp:71
+#: l2tpauth.cpp:72
 #, fuzzy, kde-format
 #| msgid "Use Certificate"
 msgid "User Certificate Password:"
 msgstr "Користи сертификат"
 
-#: l2tpauth.cpp:82
+#: l2tpauth.cpp:83
 #, kde-format
 msgid "Machine Certificate Password:"
 msgstr ""
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: l2tpauth.cpp:93 l2tpipsec.ui:91
+#, kde-format
+msgid "Pre-shared Key:"
+msgstr "Претподељени кључ:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbEnableTunnelToHost)
 #: l2tpipsec.ui:20
@@ -228,12 +234,6 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Pre-shared Key:"
 msgid "Pre-shared Key (PSK)"
-msgstr "Претподељени кључ:"
-
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: l2tpipsec.ui:91
-#, kde-format
-msgid "Pre-shared Key:"
 msgstr "Претподељени кључ:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
@@ -393,7 +393,7 @@ msgstr "Наметни УДП енкапсулацију"
 msgid "Remote ID:"
 msgstr ""
 
-#: l2tpipsecwidget.cpp:44
+#: l2tpipsecwidget.cpp:46
 #, kde-format
 msgid "L2TP IPsec Options"
 msgstr "Опције Л2ТП‑а/ИПсека"

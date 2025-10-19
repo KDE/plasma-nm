@@ -23,6 +23,8 @@ L2tpPPPWidget::L2tpPPPWidget(const NetworkManager::VpnSetting::Ptr &setting, QWi
 
     KAcceleratorManager::manage(this);
 
+    connect(m_ui->cbMRRU, &QCheckBox::toggled, m_ui->sbMRRU, &QSpinBox::setEnabled);
+
     loadConfig(setting);
 }
 
@@ -98,6 +100,14 @@ void L2tpPPPWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
     // Echo
     const int lcp_echo_interval = QString(dataMap[NM_L2TP_KEY_LCP_ECHO_INTERVAL]).toInt();
     m_ui->cbsendEcho->setChecked(lcp_echo_interval > 0);
+
+    if (dataMap.contains(QLatin1String(NM_L2TP_KEY_MRRU))) {
+        m_ui->cbMRRU->setChecked(true);
+        m_ui->sbMRRU->setValue(QString(dataMap[NM_L2TP_KEY_MRRU]).toInt());
+    } else {
+        m_ui->cbMRRU->setChecked(false);
+    }
+    m_ui->sbMRRU->setEnabled(m_ui->cbMRRU->isChecked());
 
     if (dataMap.contains(QLatin1String(NM_L2TP_KEY_MTU))) {
         m_ui->sbMTU->setValue(QString(dataMap[NM_L2TP_KEY_MTU]).toInt());
@@ -181,6 +191,10 @@ NMStringMap L2tpPPPWidget::setting() const
     if (m_ui->cbsendEcho->isChecked()) {
         result.insert(NM_L2TP_KEY_LCP_ECHO_FAILURE, "5");
         result.insert(NM_L2TP_KEY_LCP_ECHO_INTERVAL, "30");
+    }
+
+    if (m_ui->cbMRRU->isChecked()) {
+        result.insert(NM_L2TP_KEY_MRRU, QString::number(m_ui->sbMRRU->value()));
     }
 
     if (m_ui->sbMTU->value() != 0) {

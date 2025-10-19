@@ -28,6 +28,7 @@
 #define NM_L2TP_KEY_USER_CERT "user-cert"
 #define NM_L2TP_KEY_USER_KEY "user-key"
 #define NM_L2TP_KEY_USER_CERTPASS "user-certpass"
+#define NM_L2TP_KEY_MRRU "mrru"
 #define NM_L2TP_KEY_MTU "mtu"
 #define NM_L2TP_KEY_MRU "mru"
 #define NM_L2TP_KEY_REFUSE_EAP "refuse-eap"

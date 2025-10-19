@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>538</width>
-    <height>660</height>
+    <height>722</height>
    </rect>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
@@ -317,6 +317,13 @@
           </widget>
          </item>
          <item row="7" column="0" colspan="2">
+          <widget class="QCheckBox" name="cbIKEv2">
+           <property name="text">
+            <string>Use IKEv2 key exchange</string>
+           </property>
+          </widget>
+         </item>
+         <item row="8" column="0" colspan="2">
           <widget class="QCheckBox" name="cbPFS">
            <property name="toolTip">
             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Disable perfect forward secrecy. Enable this option only if the server doesn’t support PFS.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -393,12 +400,24 @@
   </customwidget>
  </customwidgets>
  <tabstops>
+  <tabstop>gbEnableTunnelToHost</tabstop>
   <tabstop>cmbAuthType</tabstop>
   <tabstop>presharedKey</tabstop>
   <tabstop>machineCA</tabstop>
   <tabstop>machineCert</tabstop>
   <tabstop>machineKey</tabstop>
   <tabstop>machineKeyPassword</tabstop>
+  <tabstop>remoteId</tabstop>
+  <tabstop>ike</tabstop>
+  <tabstop>esp</tabstop>
+  <tabstop>cbIkelifetime</tabstop>
+  <tabstop>ikelifetime</tabstop>
+  <tabstop>cbSalifetime</tabstop>
+  <tabstop>salifetime</tabstop>
+  <tabstop>cbForceEncaps</tabstop>
+  <tabstop>cbIPComp</tabstop>
+  <tabstop>cbIKEv2</tabstop>
+  <tabstop>cbPFS</tabstop>
  </tabstops>
  <resources/>
  <connections>

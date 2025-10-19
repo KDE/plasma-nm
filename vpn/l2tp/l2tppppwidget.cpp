@@ -103,7 +103,7 @@ void L2tpPPPWidget::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
         m_ui->sbMTU->setValue(QString(dataMap[NM_L2TP_KEY_MTU]).toInt());
     }
 
-    if (dataMap.contains(QLatin1String(NM_L2TP_KEY_MTU))) {
+    if (dataMap.contains(QLatin1String(NM_L2TP_KEY_MRU))) {
         m_ui->sbMRU->setValue(QString(dataMap[NM_L2TP_KEY_MRU]).toInt());
     }
 }

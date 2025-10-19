@@ -110,6 +110,8 @@ void L2tpWidget::loadConfig(const NetworkManager::Setting::Ptr &setting)
         }
     }
 
+    m_ui->cbEphemeralSourcePort->setChecked(dataMap[NM_L2TP_KEY_EPHEMERAL_PORT] == QLatin1String("yes"));
+
     loadSecrets(setting);
 }
 
@@ -216,6 +218,8 @@ QVariantMap L2tpWidget::setting() const
             break;
         };
     }
+
+    data.insert(NM_L2TP_KEY_EPHEMERAL_PORT, QLatin1String(m_ui->cbEphemeralSourcePort->isChecked() ? "yes" : "no"));
 
     setting.setData(data);
     setting.setSecrets(secrets);

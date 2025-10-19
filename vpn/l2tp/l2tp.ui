@@ -151,19 +151,6 @@
          </property>
         </widget>
        </item>
-       <item row="4" column="0" colspan="2">
-        <spacer name="verticalSpace">
-         <property name="orientation">
-          <enum>Qt::Vertical</enum>
-         </property>
-         <property name="sizeHint" stdset="0">
-          <size>
-           <width>347</width>
-           <height>200</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="page_1">
@@ -272,6 +259,35 @@
     </widget>
    </item>
    <item>
+    <widget class="QCheckBox" name="cbEphemeralSourcePort">
+     <property name="toolTip">
+      <string>Do not use UDP port 1701 for L2TP source port even if it is free.
+An ephemeral (random) high port number will be used instead.
+
+May be required to allow multiple L2TP clients behind the same NAT.</string>
+     </property>
+     <property name="text">
+      <string>Use L2TP ephemeral source port</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeType">
+      <enum>QSizePolicy::Expanding</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer">
@@ -327,6 +343,7 @@
   <tabstop>userCert</tabstop>
   <tabstop>userKey</tabstop>
   <tabstop>userKeyPassword</tabstop>
+  <tabstop>cbEphemeralSourcePort</tabstop>
   <tabstop>btnIPSecSettings</tabstop>
   <tabstop>btnPPPSettings</tabstop>
  </tabstops>

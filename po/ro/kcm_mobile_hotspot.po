@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# Sergiu Bivol <sergiu@cip.md>, 2020, 2023.
+# SPDX-FileCopyrightText: 2020, 2023, 2025 Sergiu Bivol <sergiu@cip.md>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-18 00:44+0000\n"
-"PO-Revision-Date: 2023-04-10 19:12+0100\n"
+"PO-Revision-Date: 2025-10-19 21:46+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -16,24 +16,22 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: ui/main.qml:33
 #, kde-format
 msgid "Configure Hotspot"
-msgstr ""
+msgstr "Configurează hotspot"
 
 #: ui/main.qml:52
-#, fuzzy, kde-format
-#| msgid "Hotspot SSID"
+#, kde-format
 msgid "Hotspot SSID:"
-msgstr "SSID hotspot"
+msgstr "SSID hotspot:"
 
 #: ui/main.qml:59
-#, fuzzy, kde-format
-#| msgid "Hotspot Password"
+#, kde-format
 msgid "Hotspot Password:"
-msgstr "Parolă hotspot"
+msgstr "Parolă hotspot:"
 
 #: ui/main.qml:77
 #, kde-format
@@ -44,11 +42,12 @@ msgstr "Hotspot"
 #, kde-format
 msgid "Share your internet connection with other devices as a Wi-Fi network."
 msgstr ""
+"Partajați-vă conexiunea la Internet cu alte dispozitive ca rețea Wi-Fi."
 
 #: ui/main.qml:93
 #, kde-format
 msgid "Settings"
-msgstr ""
+msgstr "Configurări"
 
 #: ui/main.qml:100
 #, kde-format
@@ -63,7 +62,7 @@ msgstr "Parolă hotspot"
 #: ui/main.qml:117
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Configurează"
 
 #~ msgid "Enabled:"
 #~ msgstr "Activat:"

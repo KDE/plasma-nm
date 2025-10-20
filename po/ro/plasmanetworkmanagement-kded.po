@@ -1,22 +1,22 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Sergiu Bivol <sergiu@cip.md>, 2013, 2014, 2022.
+# SPDX-FileCopyrightText: 2013, 2014, 2022, 2025 Sergiu Bivol <sergiu@cip.md>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-09 01:00+0000\n"
-"PO-Revision-Date: 2022-02-16 14:58+0000\n"
+"PO-Revision-Date: 2025-10-19 21:45+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
-"Language-Team: Romanian\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.12.2\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: bluetoothmonitor.cpp:67
 #, fuzzy, kde-format
@@ -27,22 +27,22 @@ msgstr "Susținem numai serviciile „dun” și „nap”."
 #: connectivitymonitor.cpp:61
 #, kde-format
 msgid "Network authentication"
-msgstr ""
+msgstr "Autentificare în rețea"
 
 #: connectivitymonitor.cpp:70
 #, kde-format
 msgid "You need to log into this network"
-msgstr ""
+msgstr "Trebuie să vă autentificați în această rețea"
 
 #: connectivitymonitor.cpp:72
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "Autentificare"
 
 #: connectivitymonitor.cpp:97
 #, kde-format
 msgid "Limited Connectivity"
-msgstr ""
+msgstr "Conectivitate limitată"
 
 #: connectivitymonitor.cpp:98
 #, kde-format
@@ -68,7 +68,7 @@ msgstr "Eroare de deblocare PIN/PUK"
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigFailedReason"
 msgid "The device could not be configured"
-msgstr ""
+msgstr "Dispozitivul nu a putut fi configurat"
 
 #: notification.cpp:100
 #, kde-format
@@ -76,7 +76,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConfigUnavailableReason"
 msgid "IP configuration was unavailable"
-msgstr ""
+msgstr "Configurația IP nu a fost disponibilă"
 
 #: notification.cpp:103
 #, kde-format
@@ -98,7 +98,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantDisconnectReason"
 msgid "Authorization supplicant disconnected"
-msgstr ""
+msgstr "Solicitatorul de autorizări s-a deconectat"
 
 #: notification.cpp:113
 #, kde-format
@@ -106,7 +106,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantConfigFailedReason"
 msgid "Authorization supplicant's configuration failed"
-msgstr ""
+msgstr "Configurarea solicitatorului de autorizări a eșuat"
 
 #: notification.cpp:116
 #, kde-format
@@ -114,7 +114,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantFailedReason"
 msgid "Authorization supplicant failed"
-msgstr ""
+msgstr "Solicitatorul de autorizări a eșuat"
 
 #: notification.cpp:119
 #, kde-format
@@ -122,7 +122,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantTimeoutReason"
 msgid "Authorization supplicant timed out"
-msgstr ""
+msgstr "Solicitatorul de autorizări a expirat"
 
 #: notification.cpp:122
 #, kde-format
@@ -187,21 +187,21 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AutoIpStartFailedReason"
 msgid "The auto IP service failed to start"
-msgstr ""
+msgstr "Pornirea serviciului de IP automat a eșuat"
 
 #: notification.cpp:149
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpErrorReason"
 msgid "The auto IP service reported an error"
-msgstr ""
+msgstr "Serviciul de IP automat a raportat o eroare"
 
 #: notification.cpp:152
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpFailedReason"
 msgid "The auto IP service failed"
-msgstr ""
+msgstr "Serviciul de IP automat a eșuat"
 
 #: notification.cpp:155
 #, kde-format
@@ -222,7 +222,7 @@ msgstr "Modemul nu are ton de apel"
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoCarrierReason"
 msgid "The modem shows no carrier"
-msgstr ""
+msgstr "Modemul arată lipsa rețelei"
 
 #: notification.cpp:164
 #, kde-format
@@ -422,21 +422,21 @@ msgstr ""
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
-msgstr ""
+msgstr "Modemul a eșuat sau nu mai e disponibil"
 
 #: notification.cpp:256
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemAvailable"
 msgid "Modem now ready and available"
-msgstr ""
+msgstr "Modemul e acum pregătit și disponibil"
 
 #: notification.cpp:259
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SimPinIncorrect"
 msgid "The SIM PIN was incorrect"
-msgstr ""
+msgstr "PIN-ul cartelei SIM a fost incorect"
 
 #: notification.cpp:262
 #, fuzzy, kde-format
@@ -481,16 +481,14 @@ msgid "VPN connection '%1' activated."
 msgstr "Conexiune VPN „%1” activată."
 
 #: notification.cpp:430
-#, fuzzy, kde-format
-#| msgid "VPN connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "Conexiune VPN „%1” activată."
+msgstr "Activarea conexiunii VPN „%1” a eșuat."
 
 #: notification.cpp:433 notification.cpp:441
-#, fuzzy, kde-format
-#| msgid "VPN connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "Conexiune VPN „%1” activată."
+msgstr "Conexiune VPN „%1” dezactivată."
 
 #: notification.cpp:444
 #, fuzzy, kde-format
@@ -612,7 +610,7 @@ msgstr "Dialog de introducere a parolei"
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "Lipsesc configurările VPN"
 
 #: passworddialog.cpp:134
 #, fuzzy, kde-format

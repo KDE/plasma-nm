@@ -29,6 +29,12 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting,
     m_8021xWidget = new Security8021x(setting8021x, Security8021x::WirelessWpaEap, this); // Dynamic WEP
     m_WPA2Widget = new Security8021x(setting8021x, Security8021x::WirelessWpaEap, this); // WPA(2) Enterprise
     m_WPA3SuiteB192Widget = new Security8021x(setting8021x, Security8021x::WirelessWpaEapSuiteB192, this); // WPA3 Enterprise Suite B 192
+
+    // Always default enterprise connections to per-user.
+    m_8021xWidget->setPasswordOption(PasswordField::StoreForUser);
+    m_WPA2Widget->setPasswordOption(PasswordField::StoreForUser);
+    m_WPA3SuiteB192Widget->setPasswordOption(PasswordField::StoreForUser);
+
     m_ui->stackedWidget->insertWidget(3, m_8021xWidget);
     m_ui->stackedWidget->insertWidget(5, m_WPA2Widget);
     m_ui->stackedWidget->insertWidget(6, m_WPA3SuiteB192Widget);

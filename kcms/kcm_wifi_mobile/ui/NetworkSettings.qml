@@ -48,6 +48,8 @@ Kirigami.ScrollablePage {
     rightPadding: 0
 
     ColumnLayout {
+        spacing: 0
+
         FormCard.FormHeader {
             title: i18nc("@title:group", "General")
         }

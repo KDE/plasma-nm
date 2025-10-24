@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-08-19 05:27+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -255,20 +255,14 @@ msgstr "建立熱點"
 msgid "Configure network connections…"
 msgstr "設定網路連線…"
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/秒"
+#~ msgid "/s"
+#~ msgstr "/秒"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "上傳"
+#~ msgid "Upload"
+#~ msgstr "上傳"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "下載"
+#~ msgid "Download"
+#~ msgstr "下載"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "顯示網路的 QR 碼"

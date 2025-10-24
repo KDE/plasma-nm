@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -251,17 +251,11 @@ msgstr "创建热点"
 msgid "Configure network connections…"
 msgstr "配置网络连接…"
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "/s"
+#~ msgstr "/s"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "上传"
+#~ msgid "Upload"
+#~ msgstr "上传"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "下载"
+#~ msgid "Download"
+#~ msgstr "下载"

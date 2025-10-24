@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2017-09-25 19:53+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -255,20 +255,11 @@ msgstr ""
 msgid "Configure network connections…"
 msgstr "Подеси мрежне везе..."
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr ""
+#~ msgid "Upload"
+#~ msgstr "Отпремање"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Отпремање"
-
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Преузимање"
+#~ msgid "Download"
+#~ msgstr "Преузимање"
 
 #~ msgid "Connected"
 #~ msgstr "Повезан"

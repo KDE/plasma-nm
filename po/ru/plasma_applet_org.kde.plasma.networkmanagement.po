@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-07-04 18:10+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -274,20 +274,14 @@ msgstr "Создать точку доступа"
 msgid "Configure network connections…"
 msgstr "Настроить сетевые соединения..."
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/с"
+#~ msgid "/s"
+#~ msgstr "/с"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Передача"
+#~ msgid "Upload"
+#~ msgstr "Передача"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Приём"
+#~ msgid "Download"
+#~ msgstr "Приём"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "Показать QR-код сети"

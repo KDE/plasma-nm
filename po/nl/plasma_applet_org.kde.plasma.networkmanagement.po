@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-07-29 12:23+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -257,20 +257,14 @@ msgstr "Hotspot aanmaken"
 msgid "Configure network connections…"
 msgstr "Netwerkverbindingen configureren…"
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "/s"
+#~ msgstr "/s"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Uploaden"
+#~ msgid "Upload"
+#~ msgstr "Uploaden"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Downloaden"
+#~ msgid "Download"
+#~ msgstr "Downloaden"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "QR code van netwerk tonen"

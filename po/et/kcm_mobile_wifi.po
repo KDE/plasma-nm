@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 00:44+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2020-04-15 12:12+0300\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -22,57 +22,29 @@ msgstr ""
 msgid "Invalid input."
 msgstr ""
 
-#: ui/ConnectionInfo.qml:14
+#: ui/ConnectionInfo.qml:15
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
 msgstr ""
 
-#: ui/ConnectionInfo.qml:21
+#: ui/ConnectionInfo.qml:22
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
 msgstr ""
 
-#: ui/ConnectionInfo.qml:37
+#: ui/ConnectionInfo.qml:38
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr ""
 
-#: ui/ConnectionInfo.qml:44
+#: ui/ConnectionInfo.qml:45
 #, fuzzy, kde-format
 #| msgid "Connection Name"
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Ühenduse nimi"
-
-#: ui/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connection Editor"
-msgid "Connect"
-msgstr "Ühenduste redaktor"
-
-#: ui/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Connection Editor"
-msgid "Disconnect"
-msgstr "Ühenduste redaktor"
-
-#: ui/ConnectionItemDelegate.qml:111
-#, kde-format
-msgid "Configure"
-msgstr "Seadista"
-
-#: ui/ConnectionItemDelegate.qml:120
-#, kde-format
-msgid "Delete"
-msgstr ""
-
-#: ui/ConnectionItemDelegate.qml:147
-#, fuzzy, kde-format
-#| msgid "Connection Editor"
-msgid "Connect to"
-msgstr "Ühenduste redaktor"
 
 #: ui/main.qml:26
 #, kde-format
@@ -114,151 +86,151 @@ msgstr "Lisa uus ühendus"
 msgid "Save"
 msgstr "Salvesta"
 
-#: ui/NetworkSettings.qml:52
+#: ui/NetworkSettings.qml:54
 #, fuzzy, kde-format
 #| msgid "General"
 msgctxt "@title:group"
 msgid "General"
 msgstr "Üldine"
 
-#: ui/NetworkSettings.qml:58
+#: ui/NetworkSettings.qml:60
 #, kde-format
 msgid "SSID"
 msgstr "SSID"
 
-#: ui/NetworkSettings.qml:73
+#: ui/NetworkSettings.qml:75
 #, fuzzy, kde-format
 #| msgid "Hidden Network:"
 msgid "Hidden Network"
 msgstr "Varjatud võrk:"
 
-#: ui/NetworkSettings.qml:80
+#: ui/NetworkSettings.qml:82
 #, fuzzy, kde-format
 #| msgid "Security"
 msgctxt "@title:group"
 msgid "Security"
 msgstr "Turvalisus"
 
-#: ui/NetworkSettings.qml:87
+#: ui/NetworkSettings.qml:89
 #, fuzzy, kde-format
 #| msgid "Security type:"
 msgid "Security type"
 msgstr "Turbetüüp:"
 
-#: ui/NetworkSettings.qml:96
+#: ui/NetworkSettings.qml:98
 #, kde-format
 msgid "None"
 msgstr "Puudub"
 
-#: ui/NetworkSettings.qml:97
+#: ui/NetworkSettings.qml:99
 #, kde-format
 msgid "WEP Key"
 msgstr "WEP võti"
 
-#: ui/NetworkSettings.qml:98
+#: ui/NetworkSettings.qml:100
 #, kde-format
 msgid "Dynamic WEP"
 msgstr "Dünaamiline WEP"
 
-#: ui/NetworkSettings.qml:99
+#: ui/NetworkSettings.qml:101
 #, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr "WPA/WPA2 Personal"
 
-#: ui/NetworkSettings.qml:100
+#: ui/NetworkSettings.qml:102
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
-#: ui/NetworkSettings.qml:101
+#: ui/NetworkSettings.qml:103
 #, fuzzy, kde-format
 #| msgid "WPA/WPA2 Personal"
 msgid "WPA3 Personal"
 msgstr "WPA/WPA2 Personal"
 
-#: ui/NetworkSettings.qml:102
+#: ui/NetworkSettings.qml:104
 #, fuzzy, kde-format
 #| msgid "WPA/WPA2 Enterprise"
 msgid "WPA3 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
-#: ui/NetworkSettings.qml:140
+#: ui/NetworkSettings.qml:142
 #, fuzzy, kde-format
 #| msgid "Password:"
 msgid "Password"
 msgstr "Parool:"
 
-#: ui/NetworkSettings.qml:156
+#: ui/NetworkSettings.qml:158
 #, kde-format
 msgid "Authentication:"
 msgstr "Autentimine:"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "TLS"
 msgstr "TLS"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "LEAP"
 msgstr "LEAP"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "FAST"
 msgstr "FAST"
 
-#: ui/NetworkSettings.qml:161
+#: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "Tunneled TLS"
 msgstr "Tunneldatud TLS"
 
-#: ui/NetworkSettings.qml:162
+#: ui/NetworkSettings.qml:164
 #, kde-format
 msgid "Protected EAP"
 msgstr "Kaitstud EAP"
 
-#: ui/NetworkSettings.qml:173
+#: ui/NetworkSettings.qml:175
 #, fuzzy, kde-format
 #| msgid "IP settings"
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP seadistused"
 
-#: ui/NetworkSettings.qml:179
+#: ui/NetworkSettings.qml:181
 #, kde-format
 msgid "Method"
 msgstr ""
 
-#: ui/NetworkSettings.qml:180
+#: ui/NetworkSettings.qml:182
 #, kde-format
 msgid "Automatic"
 msgstr "Automaatne"
 
-#: ui/NetworkSettings.qml:180
+#: ui/NetworkSettings.qml:182
 #, kde-format
 msgid "Manual"
 msgstr "Käsitsi"
 
-#: ui/NetworkSettings.qml:196
+#: ui/NetworkSettings.qml:198
 #, fuzzy, kde-format
 #| msgid "IP Address:"
 msgid "IP Address"
 msgstr "IP-aadress:"
 
-#: ui/NetworkSettings.qml:214
+#: ui/NetworkSettings.qml:216
 #, fuzzy, kde-format
 #| msgid "Gateway:"
 msgid "Gateway"
 msgstr "Lüüs:"
 
-#: ui/NetworkSettings.qml:232
+#: ui/NetworkSettings.qml:234
 #, fuzzy, kde-format
 #| msgid "Network prefix length:"
 msgid "Network prefix length"
 msgstr "Võrguprefiksi pikkus:"
 
-#: ui/NetworkSettings.qml:251
+#: ui/NetworkSettings.qml:253
 #, fuzzy, kde-format
 #| msgid "DNS:"
 msgid "DNS"
@@ -270,20 +242,23 @@ msgstr "DNS:"
 msgid "Password…"
 msgstr "Parool:"
 
-#: ui/TrafficMonitor.qml:37 ui/TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr ""
+#, fuzzy
+#~| msgid "Connection Editor"
+#~ msgid "Connect"
+#~ msgstr "Ühenduste redaktor"
 
-#: ui/TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr ""
+#, fuzzy
+#~| msgid "Connection Editor"
+#~ msgid "Disconnect"
+#~ msgstr "Ühenduste redaktor"
 
-#: ui/TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr ""
+#~ msgid "Configure"
+#~ msgstr "Seadista"
+
+#, fuzzy
+#~| msgid "Connection Editor"
+#~ msgid "Connect to"
+#~ msgstr "Ühenduste redaktor"
 
 #, fuzzy
 #~| msgid "Enable Wi-Fi"

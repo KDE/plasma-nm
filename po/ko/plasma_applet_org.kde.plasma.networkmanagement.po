@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-10-09 01:21+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -250,20 +250,14 @@ msgstr "핫스팟 만들기"
 msgid "Configure network connections…"
 msgstr "네트워크 연결 설정…"
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "/s"
+#~ msgstr "/s"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "업로드"
+#~ msgid "Upload"
+#~ msgstr "업로드"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "다운로드"
+#~ msgid "Download"
+#~ msgstr "다운로드"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "네트워크의 QR 코드 표시"

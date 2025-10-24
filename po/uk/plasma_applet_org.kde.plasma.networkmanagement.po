@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-07-29 09:59+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -259,20 +259,14 @@ msgstr "Створити хот-спот"
 msgid "Configure network connections…"
 msgstr "Налаштувати з'єднання мережі…"
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/с"
+#~ msgid "/s"
+#~ msgstr "/с"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Вивантаження"
+#~ msgid "Upload"
+#~ msgstr "Вивантаження"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Отримання"
+#~ msgid "Download"
+#~ msgstr "Отримання"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "Показувати код QR мережі"

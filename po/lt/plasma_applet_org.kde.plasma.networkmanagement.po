@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-08-11 21:22+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -269,20 +269,14 @@ msgstr "Sukurti viešosios prieigos tašką"
 msgid "Configure network connections…"
 msgstr "Konfigūruoti tinklo ryšius…"
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/sek."
+#~ msgid "/s"
+#~ msgstr "/sek."
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Išsiuntimas"
+#~ msgid "Upload"
+#~ msgstr "Išsiuntimas"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Atsiuntimas"
+#~ msgid "Download"
+#~ msgstr "Atsiuntimas"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "Rodyti tinklo QR kodą"

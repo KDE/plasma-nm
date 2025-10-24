@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 00:44+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-10-09 01:20+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -22,53 +22,28 @@ msgstr ""
 msgid "Invalid input."
 msgstr "잘못 입력했습니다."
 
-#: ui/ConnectionInfo.qml:14
+#: ui/ConnectionInfo.qml:15
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
 msgstr "\"%1\"의 연결 정보"
 
-#: ui/ConnectionInfo.qml:21
+#: ui/ConnectionInfo.qml:22
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
 msgstr "전송률"
 
-#: ui/ConnectionInfo.qml:37
+#: ui/ConnectionInfo.qml:38
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "연결됨, ↓ %1/초, ↑ %2/초"
 
-#: ui/ConnectionInfo.qml:44
+#: ui/ConnectionInfo.qml:45
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "연결 정보"
-
-#: ui/ConnectionItemDelegate.qml:97
-#, kde-format
-msgid "Connect"
-msgstr "연결"
-
-#: ui/ConnectionItemDelegate.qml:104
-#, kde-format
-msgid "Disconnect"
-msgstr "연결 해제"
-
-#: ui/ConnectionItemDelegate.qml:111
-#, kde-format
-msgid "Configure"
-msgstr "설정"
-
-#: ui/ConnectionItemDelegate.qml:120
-#, kde-format
-msgid "Delete"
-msgstr "삭제"
-
-#: ui/ConnectionItemDelegate.qml:147
-#, kde-format
-msgid "Connect to"
-msgstr "다음에 연결"
 
 #: ui/main.qml:26
 #, kde-format
@@ -106,140 +81,140 @@ msgstr "새 연결 추가"
 msgid "Save"
 msgstr "저장"
 
-#: ui/NetworkSettings.qml:52
+#: ui/NetworkSettings.qml:54
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "일반"
 
-#: ui/NetworkSettings.qml:58
+#: ui/NetworkSettings.qml:60
 #, kde-format
 msgid "SSID"
 msgstr "SSID"
 
-#: ui/NetworkSettings.qml:73
+#: ui/NetworkSettings.qml:75
 #, kde-format
 msgid "Hidden Network"
 msgstr "숨은 네트워크"
 
-#: ui/NetworkSettings.qml:80
+#: ui/NetworkSettings.qml:82
 #, kde-format
 msgctxt "@title:group"
 msgid "Security"
 msgstr "보안"
 
-#: ui/NetworkSettings.qml:87
+#: ui/NetworkSettings.qml:89
 #, kde-format
 msgid "Security type"
 msgstr "보안 종류"
 
-#: ui/NetworkSettings.qml:96
+#: ui/NetworkSettings.qml:98
 #, kde-format
 msgid "None"
 msgstr "없음"
 
-#: ui/NetworkSettings.qml:97
+#: ui/NetworkSettings.qml:99
 #, kde-format
 msgid "WEP Key"
 msgstr "WEP 키"
 
-#: ui/NetworkSettings.qml:98
+#: ui/NetworkSettings.qml:100
 #, kde-format
 msgid "Dynamic WEP"
 msgstr "동적 WEP"
 
-#: ui/NetworkSettings.qml:99
+#: ui/NetworkSettings.qml:101
 #, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr "WPA/WPA2 Personal"
 
-#: ui/NetworkSettings.qml:100
+#: ui/NetworkSettings.qml:102
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
-#: ui/NetworkSettings.qml:101
+#: ui/NetworkSettings.qml:103
 #, kde-format
 msgid "WPA3 Personal"
 msgstr "WPA3 Personal"
 
-#: ui/NetworkSettings.qml:102
+#: ui/NetworkSettings.qml:104
 #, kde-format
 msgid "WPA3 Enterprise"
 msgstr "WPA3 Enterprise"
 
-#: ui/NetworkSettings.qml:140
+#: ui/NetworkSettings.qml:142
 #, kde-format
 msgid "Password"
 msgstr "암호"
 
-#: ui/NetworkSettings.qml:156
+#: ui/NetworkSettings.qml:158
 #, kde-format
 msgid "Authentication:"
 msgstr "인증:"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "TLS"
 msgstr "TLS"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "LEAP"
 msgstr "LEAP"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "FAST"
 msgstr "FAST"
 
-#: ui/NetworkSettings.qml:161
+#: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "Tunneled TLS"
 msgstr "터널된 TLS(TTLS)"
 
-#: ui/NetworkSettings.qml:162
+#: ui/NetworkSettings.qml:164
 #, kde-format
 msgid "Protected EAP"
 msgstr "보호된 EAP(PEAP)"
 
-#: ui/NetworkSettings.qml:173
+#: ui/NetworkSettings.qml:175
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP 설정"
 
-#: ui/NetworkSettings.qml:179
+#: ui/NetworkSettings.qml:181
 #, kde-format
 msgid "Method"
 msgstr "방법"
 
-#: ui/NetworkSettings.qml:180
+#: ui/NetworkSettings.qml:182
 #, kde-format
 msgid "Automatic"
 msgstr "자동"
 
-#: ui/NetworkSettings.qml:180
+#: ui/NetworkSettings.qml:182
 #, kde-format
 msgid "Manual"
 msgstr "수동"
 
-#: ui/NetworkSettings.qml:196
+#: ui/NetworkSettings.qml:198
 #, kde-format
 msgid "IP Address"
 msgstr "IP 주소"
 
-#: ui/NetworkSettings.qml:214
+#: ui/NetworkSettings.qml:216
 #, kde-format
 msgid "Gateway"
 msgstr "게이트웨이"
 
-#: ui/NetworkSettings.qml:232
+#: ui/NetworkSettings.qml:234
 #, kde-format
 msgid "Network prefix length"
 msgstr "네트워크 접두사 길이"
 
-#: ui/NetworkSettings.qml:251
+#: ui/NetworkSettings.qml:253
 #, kde-format
 msgid "DNS"
 msgstr "DNS"
@@ -249,20 +224,29 @@ msgstr "DNS"
 msgid "Password…"
 msgstr "암호…"
 
-#: ui/TrafficMonitor.qml:37 ui/TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/초"
+#~ msgid "Connect"
+#~ msgstr "연결"
 
-#: ui/TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "업로드"
+#~ msgid "Disconnect"
+#~ msgstr "연결 해제"
 
-#: ui/TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "다운로드"
+#~ msgid "Configure"
+#~ msgstr "설정"
+
+#~ msgid "Delete"
+#~ msgstr "삭제"
+
+#~ msgid "Connect to"
+#~ msgstr "다음에 연결"
+
+#~ msgid "/s"
+#~ msgstr "/초"
+
+#~ msgid "Upload"
+#~ msgstr "업로드"
+
+#~ msgid "Download"
+#~ msgstr "다운로드"
 
 #~ msgid "Wi-Fi is disabled"
 #~ msgstr "Wi-Fi가 비활성화됨"

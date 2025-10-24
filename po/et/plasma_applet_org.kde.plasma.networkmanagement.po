@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2020-09-28 13:41+0200\n"
 "Last-Translator: Mihkel Tõnnov <mihhkel@gmail.com>\n"
 "Language-Team: Estonian <>\n"
@@ -271,20 +271,14 @@ msgstr "Loo pääsupunkt"
 msgid "Configure network connections…"
 msgstr "Seadista võrguühendusi ..."
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "/s"
+#~ msgstr "/s"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Üleslaadimine"
+#~ msgid "Upload"
+#~ msgstr "Üleslaadimine"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Allalaadimine"
+#~ msgid "Download"
+#~ msgstr "Allalaadimine"
 
 #, fuzzy
 #~| msgid "Show network's QR code"

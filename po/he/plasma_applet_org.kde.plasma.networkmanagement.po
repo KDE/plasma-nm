@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-08-07 21:00+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -255,20 +255,14 @@ msgstr "יצירת נקודה חמה"
 msgid "Configure network connections…"
 msgstr "הגדרת חיבורי רשת…"
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr " לשנייה"
+#~ msgid "/s"
+#~ msgstr " לשנייה"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "העלאה"
+#~ msgid "Upload"
+#~ msgstr "העלאה"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "הורדה"
+#~ msgid "Download"
+#~ msgstr "הורדה"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "הצגת קוד ה־QR של הרשת"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2024-11-13 22:25+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -267,20 +267,14 @@ msgstr "Hotspot létrehozása"
 msgid "Configure network connections…"
 msgstr "Hálózati kapcsolatok szerkesztése…"
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "/s"
+#~ msgstr "/s"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Feltöltés"
+#~ msgid "Upload"
+#~ msgstr "Feltöltés"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Letöltés"
+#~ msgid "Download"
+#~ msgstr "Letöltés"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "A hálózat QR-kódjának megjelenítése"

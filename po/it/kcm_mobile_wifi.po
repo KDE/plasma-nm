@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 00:44+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-08-18 14:38+0200\n"
 "Last-Translator: Paolo Zamponi <feus73@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -22,53 +22,28 @@ msgstr ""
 msgid "Invalid input."
 msgstr "Input non valido."
 
-#: ui/ConnectionInfo.qml:14
+#: ui/ConnectionInfo.qml:15
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
 msgstr "Informazioni sulla connessione «%1»"
 
-#: ui/ConnectionInfo.qml:21
+#: ui/ConnectionInfo.qml:22
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
 msgstr "Velocità di trasferimento"
 
-#: ui/ConnectionInfo.qml:37
+#: ui/ConnectionInfo.qml:38
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Connesso, ↓ %1/s, ↑ %2/s"
 
-#: ui/ConnectionInfo.qml:44
+#: ui/ConnectionInfo.qml:45
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Dettagli della connessione"
-
-#: ui/ConnectionItemDelegate.qml:97
-#, kde-format
-msgid "Connect"
-msgstr "Connetti"
-
-#: ui/ConnectionItemDelegate.qml:104
-#, kde-format
-msgid "Disconnect"
-msgstr "Disconnetti"
-
-#: ui/ConnectionItemDelegate.qml:111
-#, kde-format
-msgid "Configure"
-msgstr "Configura"
-
-#: ui/ConnectionItemDelegate.qml:120
-#, kde-format
-msgid "Delete"
-msgstr "Elimina"
-
-#: ui/ConnectionItemDelegate.qml:147
-#, kde-format
-msgid "Connect to"
-msgstr "Connetti a"
 
 #: ui/main.qml:26
 #, kde-format
@@ -106,140 +81,140 @@ msgstr "Aggiungi nuova connessione"
 msgid "Save"
 msgstr "Salva"
 
-#: ui/NetworkSettings.qml:52
+#: ui/NetworkSettings.qml:54
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Generale"
 
-#: ui/NetworkSettings.qml:58
+#: ui/NetworkSettings.qml:60
 #, kde-format
 msgid "SSID"
 msgstr "SSID"
 
-#: ui/NetworkSettings.qml:73
+#: ui/NetworkSettings.qml:75
 #, kde-format
 msgid "Hidden Network"
 msgstr "Rete nascosta"
 
-#: ui/NetworkSettings.qml:80
+#: ui/NetworkSettings.qml:82
 #, kde-format
 msgctxt "@title:group"
 msgid "Security"
 msgstr "Sicurezza"
 
-#: ui/NetworkSettings.qml:87
+#: ui/NetworkSettings.qml:89
 #, kde-format
 msgid "Security type"
 msgstr "Tipo di protezione"
 
-#: ui/NetworkSettings.qml:96
+#: ui/NetworkSettings.qml:98
 #, kde-format
 msgid "None"
 msgstr "Nessuno"
 
-#: ui/NetworkSettings.qml:97
+#: ui/NetworkSettings.qml:99
 #, kde-format
 msgid "WEP Key"
 msgstr "Chiave WEP"
 
-#: ui/NetworkSettings.qml:98
+#: ui/NetworkSettings.qml:100
 #, kde-format
 msgid "Dynamic WEP"
 msgstr "WEP dinamico"
 
-#: ui/NetworkSettings.qml:99
+#: ui/NetworkSettings.qml:101
 #, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr "WPA/WPA2 Personal"
 
-#: ui/NetworkSettings.qml:100
+#: ui/NetworkSettings.qml:102
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
-#: ui/NetworkSettings.qml:101
+#: ui/NetworkSettings.qml:103
 #, kde-format
 msgid "WPA3 Personal"
 msgstr "WPA3 Personal"
 
-#: ui/NetworkSettings.qml:102
+#: ui/NetworkSettings.qml:104
 #, kde-format
 msgid "WPA3 Enterprise"
 msgstr "WPA3 Enterprise"
 
-#: ui/NetworkSettings.qml:140
+#: ui/NetworkSettings.qml:142
 #, kde-format
 msgid "Password"
 msgstr "Password"
 
-#: ui/NetworkSettings.qml:156
+#: ui/NetworkSettings.qml:158
 #, kde-format
 msgid "Authentication:"
 msgstr "Autenticazione:"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "TLS"
 msgstr "TLS"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "LEAP"
 msgstr "LEAP"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "FAST"
 msgstr "FAST"
 
-#: ui/NetworkSettings.qml:161
+#: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "Tunneled TLS"
 msgstr "TLS con tunnel"
 
-#: ui/NetworkSettings.qml:162
+#: ui/NetworkSettings.qml:164
 #, kde-format
 msgid "Protected EAP"
 msgstr "EAP protetto"
 
-#: ui/NetworkSettings.qml:173
+#: ui/NetworkSettings.qml:175
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "Impostazioni IP"
 
-#: ui/NetworkSettings.qml:179
+#: ui/NetworkSettings.qml:181
 #, kde-format
 msgid "Method"
 msgstr "Metodo"
 
-#: ui/NetworkSettings.qml:180
+#: ui/NetworkSettings.qml:182
 #, kde-format
 msgid "Automatic"
 msgstr "Automatico"
 
-#: ui/NetworkSettings.qml:180
+#: ui/NetworkSettings.qml:182
 #, kde-format
 msgid "Manual"
 msgstr "Manuale"
 
-#: ui/NetworkSettings.qml:196
+#: ui/NetworkSettings.qml:198
 #, kde-format
 msgid "IP Address"
 msgstr "Indirizzo IP"
 
-#: ui/NetworkSettings.qml:214
+#: ui/NetworkSettings.qml:216
 #, kde-format
 msgid "Gateway"
 msgstr "Gateway"
 
-#: ui/NetworkSettings.qml:232
+#: ui/NetworkSettings.qml:234
 #, kde-format
 msgid "Network prefix length"
 msgstr "Lunghezza del prefisso di rete"
 
-#: ui/NetworkSettings.qml:251
+#: ui/NetworkSettings.qml:253
 #, kde-format
 msgid "DNS"
 msgstr "DNS"
@@ -249,20 +224,29 @@ msgstr "DNS"
 msgid "Password…"
 msgstr "Password…"
 
-#: ui/TrafficMonitor.qml:37 ui/TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "Connect"
+#~ msgstr "Connetti"
 
-#: ui/TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Invio"
+#~ msgid "Disconnect"
+#~ msgstr "Disconnetti"
 
-#: ui/TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Scaricamento"
+#~ msgid "Configure"
+#~ msgstr "Configura"
+
+#~ msgid "Delete"
+#~ msgstr "Elimina"
+
+#~ msgid "Connect to"
+#~ msgstr "Connetti a"
+
+#~ msgid "/s"
+#~ msgstr "/s"
+
+#~ msgid "Upload"
+#~ msgstr "Invio"
+
+#~ msgid "Download"
+#~ msgstr "Scaricamento"
 
 #~ msgid "Wi-Fi is disabled"
 #~ msgstr "Il Wi-Fi è disabilitato"

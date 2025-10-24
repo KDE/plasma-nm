@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-07-29 11:30+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -258,20 +258,14 @@ msgstr "Sortu berogunea"
 msgid "Configure network connections…"
 msgstr "Konfiguratu sare-konexioak..."
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "/s"
+#~ msgstr "/s"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Igo"
+#~ msgid "Upload"
+#~ msgstr "Igo"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Jaitsi"
+#~ msgid "Download"
+#~ msgstr "Jaitsi"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "Erakutsi sarearen QR kodea"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2010-12-17 15:28+0700\n"
 "Last-Translator: Thanomsub Noppaburana <donga.nb@gmail.com>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
@@ -266,21 +266,6 @@ msgstr "การเชื่อมต่อ"
 #, fuzzy, kde-format
 msgid "Configure network connections…"
 msgstr "การเชื่อมต่อ"
-
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr ""
-
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr ""
-
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr ""
 
 #, fuzzy
 #~| msgid "Show network interfaces using:"

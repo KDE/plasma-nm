@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2023-12-26 09:17-0600\n"
 "Last-Translator: A S Alam <aalam@punlinux.org>\n"
 "Language-Team: Punjabi <kde-i18n-doc@kde.org>\n"
@@ -261,20 +261,14 @@ msgstr "ਹਾਟ-ਸਪਾਟ ਬਣਾਓ"
 msgid "Configure network connections…"
 msgstr "…ਨੈੱਟਵਰਕ ਕਨੈਕਸ਼ਨਾਂ ਦੀ ਸੰਰਚਨਾ"
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/ਸ"
+#~ msgid "/s"
+#~ msgstr "/ਸ"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "ਅੱਪਲੋਡ"
+#~ msgid "Upload"
+#~ msgstr "ਅੱਪਲੋਡ"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "ਡਾਊਨਲੋਡ"
+#~ msgid "Download"
+#~ msgstr "ਡਾਊਨਲੋਡ"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "ਨੈੱਟਵਰਕ ਦਾ QR ਕੋਡ ਵੇਖਾਓ"

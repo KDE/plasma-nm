@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2024-10-30 15:28+0100\n"
 "Last-Translator: Flori G <Renner03@protonmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -267,20 +267,14 @@ msgstr "Hotspot erstellen"
 msgid "Configure network connections…"
 msgstr "Netzwerkverbindungen bearbeiten ..."
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "/s"
+#~ msgstr "/s"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Hochgeladen"
+#~ msgid "Upload"
+#~ msgstr "Hochgeladen"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Heruntergeladen"
+#~ msgid "Download"
+#~ msgstr "Heruntergeladen"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "QR-Code des Netzwerks anzeigen"

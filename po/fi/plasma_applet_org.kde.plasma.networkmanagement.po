@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-07-31 10:03+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -256,20 +256,14 @@ msgstr "Luo tukiasema"
 msgid "Configure network connections…"
 msgstr "Muokkaa verkkoyhteyksiä…"
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "/s"
+#~ msgstr "/s"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Lähetys"
+#~ msgid "Upload"
+#~ msgstr "Lähetys"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Lataus"
+#~ msgid "Download"
+#~ msgstr "Lataus"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "Näytä verkon QR-koodi"

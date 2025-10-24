@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2023-03-03 09:54+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -263,20 +263,14 @@ msgstr "Buat Hotspot"
 msgid "Configure network connections…"
 msgstr "Konfigurasikan koneksi jaringan..."
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/dtk"
+#~ msgid "/s"
+#~ msgstr "/dtk"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Unggah"
+#~ msgid "Upload"
+#~ msgstr "Unggah"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Unduh"
+#~ msgid "Download"
+#~ msgstr "Unduh"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "Tampilkan Kode QR Jaringan"

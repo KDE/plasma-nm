@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-08-03 12:16+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -253,20 +253,14 @@ msgstr "ஹாட்ஸ்பாட்டை உருவாக்கு"
 msgid "Configure network connections…"
 msgstr "பிணைய இணைப்புகளை அமை..."
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "/s"
+#~ msgstr "/s"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "பதிவேற்றம்"
+#~ msgid "Upload"
+#~ msgstr "பதிவேற்றம்"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "பதிவிறக்கம்"
+#~ msgid "Download"
+#~ msgstr "பதிவிறக்கம்"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "பிணையத்தின் QR குறிமுறையைக் காட்டு"

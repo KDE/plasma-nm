@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-21 00:44+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-10-02 09:43+0200\n"
 "Last-Translator: Vit Pelcak <vpelcak@suse.cz>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -22,53 +22,28 @@ msgstr ""
 msgid "Invalid input."
 msgstr "Neplatný vstup."
 
-#: ui/ConnectionInfo.qml:14
+#: ui/ConnectionInfo.qml:15
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
 msgstr "Informace o připojení pro \"%1\""
 
-#: ui/ConnectionInfo.qml:21
+#: ui/ConnectionInfo.qml:22
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
 msgstr "Přenosové rychlosti"
 
-#: ui/ConnectionInfo.qml:37
+#: ui/ConnectionInfo.qml:38
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Připojen, ↓ %1/s, ↑ %2/s"
 
-#: ui/ConnectionInfo.qml:44
+#: ui/ConnectionInfo.qml:45
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Podrobnosti spojení"
-
-#: ui/ConnectionItemDelegate.qml:97
-#, kde-format
-msgid "Connect"
-msgstr "Připojit se"
-
-#: ui/ConnectionItemDelegate.qml:104
-#, kde-format
-msgid "Disconnect"
-msgstr "Odpojit"
-
-#: ui/ConnectionItemDelegate.qml:111
-#, kde-format
-msgid "Configure"
-msgstr "Nastavit"
-
-#: ui/ConnectionItemDelegate.qml:120
-#, kde-format
-msgid "Delete"
-msgstr "Smazat"
-
-#: ui/ConnectionItemDelegate.qml:147
-#, kde-format
-msgid "Connect to"
-msgstr "Připojit se k"
 
 #: ui/main.qml:26
 #, kde-format
@@ -106,140 +81,140 @@ msgstr "Přidat nové připojení"
 msgid "Save"
 msgstr "Uložit"
 
-#: ui/NetworkSettings.qml:52
+#: ui/NetworkSettings.qml:54
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Obecné"
 
-#: ui/NetworkSettings.qml:58
+#: ui/NetworkSettings.qml:60
 #, kde-format
 msgid "SSID"
 msgstr "SSID"
 
-#: ui/NetworkSettings.qml:73
+#: ui/NetworkSettings.qml:75
 #, kde-format
 msgid "Hidden Network"
 msgstr "Skrytá síť"
 
-#: ui/NetworkSettings.qml:80
+#: ui/NetworkSettings.qml:82
 #, kde-format
 msgctxt "@title:group"
 msgid "Security"
 msgstr "Bezpečnost"
 
-#: ui/NetworkSettings.qml:87
+#: ui/NetworkSettings.qml:89
 #, kde-format
 msgid "Security type"
 msgstr "Typ zabezpečení"
 
-#: ui/NetworkSettings.qml:96
+#: ui/NetworkSettings.qml:98
 #, kde-format
 msgid "None"
 msgstr "Nic"
 
-#: ui/NetworkSettings.qml:97
+#: ui/NetworkSettings.qml:99
 #, kde-format
 msgid "WEP Key"
 msgstr "WEP klíč"
 
-#: ui/NetworkSettings.qml:98
+#: ui/NetworkSettings.qml:100
 #, kde-format
 msgid "Dynamic WEP"
 msgstr "Dynamický WEP"
 
-#: ui/NetworkSettings.qml:99
+#: ui/NetworkSettings.qml:101
 #, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr "WPA/WPA2 Personal"
 
-#: ui/NetworkSettings.qml:100
+#: ui/NetworkSettings.qml:102
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
-#: ui/NetworkSettings.qml:101
+#: ui/NetworkSettings.qml:103
 #, kde-format
 msgid "WPA3 Personal"
 msgstr "WPA3 Personal"
 
-#: ui/NetworkSettings.qml:102
+#: ui/NetworkSettings.qml:104
 #, kde-format
 msgid "WPA3 Enterprise"
 msgstr "WPA3 Enterprise"
 
-#: ui/NetworkSettings.qml:140
+#: ui/NetworkSettings.qml:142
 #, kde-format
 msgid "Password"
 msgstr "Heslo"
 
-#: ui/NetworkSettings.qml:156
+#: ui/NetworkSettings.qml:158
 #, kde-format
 msgid "Authentication:"
 msgstr "Ověření:"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "TLS"
 msgstr "TLS"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "LEAP"
 msgstr "LEAP"
 
-#: ui/NetworkSettings.qml:160
+#: ui/NetworkSettings.qml:162
 #, kde-format
 msgid "FAST"
 msgstr "FAST"
 
-#: ui/NetworkSettings.qml:161
+#: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "Tunneled TLS"
 msgstr "Tunelované TLS"
 
-#: ui/NetworkSettings.qml:162
+#: ui/NetworkSettings.qml:164
 #, kde-format
 msgid "Protected EAP"
 msgstr "Chráněný EAP"
 
-#: ui/NetworkSettings.qml:173
+#: ui/NetworkSettings.qml:175
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "Nastavení IP"
 
-#: ui/NetworkSettings.qml:179
+#: ui/NetworkSettings.qml:181
 #, kde-format
 msgid "Method"
 msgstr "Metoda"
 
-#: ui/NetworkSettings.qml:180
+#: ui/NetworkSettings.qml:182
 #, kde-format
 msgid "Automatic"
 msgstr "Automaticky"
 
-#: ui/NetworkSettings.qml:180
+#: ui/NetworkSettings.qml:182
 #, kde-format
 msgid "Manual"
 msgstr "Manuálně"
 
-#: ui/NetworkSettings.qml:196
+#: ui/NetworkSettings.qml:198
 #, kde-format
 msgid "IP Address"
 msgstr "IP adresa"
 
-#: ui/NetworkSettings.qml:214
+#: ui/NetworkSettings.qml:216
 #, kde-format
 msgid "Gateway"
 msgstr "Brána"
 
-#: ui/NetworkSettings.qml:232
+#: ui/NetworkSettings.qml:234
 #, kde-format
 msgid "Network prefix length"
 msgstr "Délka prefixu sítě"
 
-#: ui/NetworkSettings.qml:251
+#: ui/NetworkSettings.qml:253
 #, kde-format
 msgid "DNS"
 msgstr "DNS"
@@ -249,17 +224,26 @@ msgstr "DNS"
 msgid "Password…"
 msgstr "Heslo…"
 
-#: ui/TrafficMonitor.qml:37 ui/TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "Connect"
+#~ msgstr "Připojit se"
 
-#: ui/TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Odeslat"
+#~ msgid "Disconnect"
+#~ msgstr "Odpojit"
 
-#: ui/TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Stáhnout"
+#~ msgid "Configure"
+#~ msgstr "Nastavit"
+
+#~ msgid "Delete"
+#~ msgstr "Smazat"
+
+#~ msgid "Connect to"
+#~ msgstr "Připojit se k"
+
+#~ msgid "/s"
+#~ msgstr "/s"
+
+#~ msgid "Upload"
+#~ msgstr "Odeslat"
+
+#~ msgid "Download"
+#~ msgstr "Stáhnout"

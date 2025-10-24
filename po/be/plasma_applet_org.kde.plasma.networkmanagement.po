@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2024-10-17 02:10\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -264,20 +264,14 @@ msgstr "Стварыць пункт доступу"
 msgid "Configure network connections…"
 msgstr "Наладжванне сеткавых злучэнняў…"
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/с"
+#~ msgid "/s"
+#~ msgstr "/с"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Запампаваць"
+#~ msgid "Upload"
+#~ msgstr "Запампаваць"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Спампаваць"
+#~ msgid "Download"
+#~ msgstr "Спампаваць"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "Паказаць QR-код сеткі"

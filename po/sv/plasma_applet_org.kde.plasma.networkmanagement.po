@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-07-29 12:22+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -253,20 +253,14 @@ msgstr "Skapa accesspunkt"
 msgid "Configure network connections…"
 msgstr "Anpassa nätverksanslutningar..."
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "/s"
+#~ msgstr "/s"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Ladda upp"
+#~ msgid "Upload"
+#~ msgstr "Ladda upp"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Ladda ner"
+#~ msgid "Download"
+#~ msgstr "Ladda ner"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "Visa nätverkets QR-kod"

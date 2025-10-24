@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-08-01 00:45+0000\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
 "PO-Revision-Date: 2025-08-22 15:18+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -259,20 +259,14 @@ msgstr "Izveidot tīklāju"
 msgid "Configure network connections…"
 msgstr "Konfigurēt tīkla savienojumus..."
 
-#: TrafficMonitor.qml:37 TrafficMonitor.qml:111
-#, kde-format
-msgid "/s"
-msgstr "/s"
+#~ msgid "/s"
+#~ msgstr "/s"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Upload"
-msgstr "Augšupielāde"
+#~ msgid "Upload"
+#~ msgstr "Augšupielāde"
 
-#: TrafficMonitor.qml:89
-#, kde-format
-msgid "Download"
-msgstr "Lejupielāde"
+#~ msgid "Download"
+#~ msgstr "Lejupielāde"
 
 #~ msgid "Show Network's QR Code"
 #~ msgstr "Rādīt tīkla kvadrātkodu"

@@ -38,9 +38,11 @@ https://community.kde.org/Get_Involved/development#Iterating_on_a_single_project
 
 BUGS:
 -----
-Submit bugs and feature requests to KDE bugzilla, product plasma-nm:
+Submit bugs and feature requests to KDE bugzilla:
 
-https://bugs.kde.org/describecomponents.cgi?product=plasma-nm
+- [Plasma widget UI](https://bugs.kde.org/enter_bug.cgi?product=plasmashell&component=Networks%20widget)
+- [System Settings page UI](https://bugs.kde.org/enter_bug.cgi?product=systemsettings&component=kcm_networkmanagement)
+- [Anything else](https://bugs.kde.org/enter_bug.cgi?product=plasmashell&component=Networking%20in%20general)
 
 
 NetworkManager specification:

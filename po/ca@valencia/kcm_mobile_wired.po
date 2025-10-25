@@ -1,0 +1,110 @@
+# Translation of kcm_mobile_wired.po to Catalan (Valencian)
+# Copyright (C) 2025 This_file_is_part_of_KDE
+# This file is distributed under the license LGPL version 2.1 or
+# version 3 or later versions approved by the membership of KDE e.V.
+#
+# SPDX-FileCopyrightText: 2025 Josep M. Ferrer <txemaq@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
+"PO-Revision-Date: 2025-10-24 10:56+0200\n"
+"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
+"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
+"Language: ca@valencia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.0\n"
+
+#: ui/ConnectDialog.qml:57
+#, kde-format
+msgid "Invalid input."
+msgstr "Entrada no vàlida."
+
+#: ui/ConnectionInfo.qml:15
+#, kde-format
+msgctxt "kcm page title"
+msgid "Connection Info for \"%1\""
+msgstr "Informació de la connexió per a «%1»"
+
+#: ui/ConnectionInfo.qml:22
+#, kde-format
+msgctxt "@title:group"
+msgid "Transfer Rates"
+msgstr "Velocitats de transferència"
+
+#: ui/ConnectionInfo.qml:38
+#, kde-format
+msgid "Connected, ↓ %1/s, ↑ %2/s"
+msgstr "Connectat, ↓ %1/s, ↑ %2/s"
+
+#: ui/ConnectionInfo.qml:45
+#, kde-format
+msgctxt "@title:group"
+msgid "Connection Details"
+msgstr "Detalls de la connexió"
+
+#: ui/main.qml:59
+#, kde-format
+msgctxt "@title:group"
+msgid "Wired Network Connections"
+msgstr "Connexions de xarxa per cable"
+
+#: ui/main.qml:117
+#, kde-format
+msgid "No wired connection available."
+msgstr "No hi ha cap connexió per cable disponible."
+
+#: ui/NetworkSettings.qml:16
+#, kde-format
+msgid "Add New Connection"
+msgstr "Afig una connexió nova"
+
+#: ui/NetworkSettings.qml:31
+#, kde-format
+msgid "Save"
+msgstr "Guarda"
+
+#: ui/NetworkSettings.qml:49
+#, kde-format
+msgctxt "@title:group"
+msgid "IP Settings"
+msgstr "Configuració IP"
+
+#: ui/NetworkSettings.qml:55
+#, kde-format
+msgid "Method"
+msgstr "Mètode"
+
+#: ui/NetworkSettings.qml:56
+#, kde-format
+msgid "Automatic"
+msgstr "Automàtic"
+
+#: ui/NetworkSettings.qml:56
+#, kde-format
+msgid "Manual"
+msgstr "Manual"
+
+#: ui/NetworkSettings.qml:72
+#, kde-format
+msgid "IP Address"
+msgstr "Adreça IP"
+
+#: ui/NetworkSettings.qml:90
+#, kde-format
+msgid "Gateway"
+msgstr "Passarel·la"
+
+#: ui/NetworkSettings.qml:108
+#, kde-format
+msgid "Network prefix length"
+msgstr "Llargària del prefix de xarxa"
+
+#: ui/NetworkSettings.qml:127
+#, kde-format
+msgid "DNS"
+msgstr "DNS"

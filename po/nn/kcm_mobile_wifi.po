@@ -225,19 +225,3 @@ msgstr "DNS"
 #, kde-format
 msgid "Password…"
 msgstr "Passord …"
-
-#, fuzzy
-#~| msgid "Connect to"
-#~ msgid "Connect"
-#~ msgstr "Kopla til"
-
-#, fuzzy
-#~| msgid "Connect to"
-#~ msgid "Disconnect"
-#~ msgstr "Kopla til"
-
-#~ msgid "Configure"
-#~ msgstr "Set opp"
-
-#~ msgid "Connect to"
-#~ msgstr "Kopla til"

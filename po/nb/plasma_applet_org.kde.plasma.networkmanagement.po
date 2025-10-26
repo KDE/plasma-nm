@@ -249,6 +249,3 @@ msgstr ""
 #, kde-format
 msgid "Configure network connections…"
 msgstr ""
-
-#~ msgid "Download"
-#~ msgstr "Last ned"

@@ -259,12 +259,3 @@ msgstr "Opprett trådlaussone"
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Set opp nettverkstilkoplingar …"
-
-#~ msgid "/s"
-#~ msgstr "/s"
-
-#~ msgid "Upload"
-#~ msgstr "Opplasting"
-
-#~ msgid "Download"
-#~ msgstr "Nedlasting"

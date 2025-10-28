@@ -13,6 +13,7 @@
         "Description[pl]": "Ustawienia sieci przewodowej",
         "Description[pt_BR]": "Configurações da rede com fio",
         "Description[sl]": "Nastavitve žičnega omrežja",
+        "Description[sv]": "Trådbundna nätverksinställningar",
         "Description[tr]": "Kablolu ağ ayarları",
         "Description[uk]": "Налаштовування дротової мережі",
         "FormFactors": [
@@ -33,6 +34,7 @@
         "Name[pl]": "Sieci przewodowe",
         "Name[pt_BR]": "Rede com fio",
         "Name[sl]": "Ožičeno omrežje",
+        "Name[sv]": "Trådbundet nätverk",
         "Name[tr]": "Kablolu Ağ",
         "Name[uk]": "Дротова мережа "
     },
@@ -48,6 +50,7 @@
     "X-KDE-Keywords[pl]": "przewodowe,sieć,ethernet,cat5,cat6,IP,adres,DHCP,połączenie,kabel,sieć",
     "X-KDE-Keywords[pt_BR]": "com fio,rede,ethernet,cat5,cat6,IP,endereço,DHCP,conexão,cabo,rede",
     "X-KDE-Keywords[sl]": "ožičeno,omrežje,ethernet,cat5,cat6,IP,naslov,DHCP,povezava,kabel,mreženje",
+    "X-KDE-Keywords[sv]": "trådbundet,nätverk,ethernet,cat5,cat6,IP,adress,DHCP,anslutning,kabel",
     "X-KDE-Keywords[tr]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking,kablolu,ağ,adres,bağlantı,kablo",
     "X-KDE-Keywords[uk]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking,дротова,мережа,езернет,айпі,адреса,діейчсіпі,з'єднання,кабель,мережевий",
     "X-KDE-System-Settings-Parent-Category": "network",

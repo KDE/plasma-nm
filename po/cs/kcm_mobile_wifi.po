@@ -223,27 +223,3 @@ msgstr "DNS"
 #, kde-format
 msgid "Password…"
 msgstr "Heslo…"
-
-#~ msgid "Connect"
-#~ msgstr "Připojit se"
-
-#~ msgid "Disconnect"
-#~ msgstr "Odpojit"
-
-#~ msgid "Configure"
-#~ msgstr "Nastavit"
-
-#~ msgid "Delete"
-#~ msgstr "Smazat"
-
-#~ msgid "Connect to"
-#~ msgstr "Připojit se k"
-
-#~ msgid "/s"
-#~ msgstr "/s"
-
-#~ msgid "Upload"
-#~ msgstr "Odeslat"
-
-#~ msgid "Download"
-#~ msgstr "Stáhnout"

@@ -253,12 +253,3 @@ msgstr ""
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Nastavit síťová spojení…"
-
-#~ msgid "/s"
-#~ msgstr "/s"
-
-#~ msgid "Upload"
-#~ msgstr "Odesílání"
-
-#~ msgid "Download"
-#~ msgstr "Stahování"

@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2024 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2019, 2020, 2021, 2022, 2024, 2025 Alexander Yavorsky <kekcuha@gmail.com>
 # Victor Ryzhykh <victorr2007@yandex.ru>, 2014.
 # Alexander Lakhin <exclusion@gmail.com>, 2014.
 # Alexander Potashev <aspotashev@gmail.com>, 2014, 2015, 2016, 2017, 2018, 2019.
@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-08-07 00:44+0000\n"
-"PO-Revision-Date: 2025-02-13 12:28+0300\n"
+"PO-Revision-Date: 2025-10-28 20:01+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -1111,11 +1111,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Метрика"
+msgstr "Метрика маршрута:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -1128,6 +1126,12 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Показатель, помогающий выбрать оптимальный путь для передачи пакетов данных "
+"к назначению,\n"
+"с учётом таких факторов, как расстояние, задержка и надёжность.\n"
+"\n"
+"Значение по умолчанию -1 означает, что NetworkManager выбирает и управляет "
+"фактической метрикой маршрута."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97
@@ -3557,17 +3561,13 @@ msgid "The connection type is WireGuard"
 msgstr "Тип подключения: WireGuard"
 
 #: models/networkmodelitem.cpp:348
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip real user name is not available"
-#| msgid "Not Available"
+#, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr "Недоступно"
+msgstr "Доступно"
 
 #: models/networkmodelitem.cpp:354
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Подключено"
@@ -3577,7 +3577,7 @@ msgstr "Подключено"
 msgctxt ""
 "@title:column header for list of previously connected network connections"
 msgid "Previously Used, Unavailable"
-msgstr ""
+msgstr "Ранее использовалось, недоступно"
 
 #: models/networkmodelitem.cpp:594
 #, kde-format
@@ -3813,11 +3813,10 @@ msgid "Connected to %1"
 msgstr "Подключено к %1"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "NetworkManager не запущен."
+msgstr "Служба NetworkManager не запущена."
 
 #: networkstatus.cpp:261
 #, kde-format

@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-24 00:44+0000\n"
-"PO-Revision-Date: 2025-07-04 18:10+0300\n"
+"PO-Revision-Date: 2025-10-28 19:58+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -27,7 +27,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.2\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
@@ -46,7 +46,7 @@ msgstr "Отключить"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "Поделиться"
 
 #: ConnectionItem.qml:96
 #, kde-format
@@ -94,28 +94,24 @@ msgid "Airplane mode is enabled"
 msgstr "Режим полёта активен"
 
 #: ConnectionListPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Беспроводные и мобильные сети отключены"
+msgstr "Wi-Fi и мобильные сети отключены"
 
 #: ConnectionListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "Беспроводная сеть отключена"
+msgstr "Сеть Wi-Fi отключена"
 
 #: ConnectionListPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Looking for wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr "Поиск беспроводных сетей"
+msgstr "Поиск сетей Wi-Fi"
 
 #: ConnectionListPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "Мобильная сеть отключена"
+msgstr "Передача данных по мобильной сети обильная сеть отключена"
 
 #: ConnectionListPage.qml:133
 #, kde-format
@@ -131,25 +127,28 @@ msgstr "Нет доступных соединений"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "Чтобы выполнить поиск сетей, отключите режим «в полёте»"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr ""
+"Чтобы выполнить поиск сетей, включите Wi-Fi или передачу данных по мобильной "
+"сети"
 
 #: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "Чтобы выполнить поиск сетей, включите Wi-Fi"
 
 #: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
 msgstr ""
+"Чтобы выполнить поиск сетей, включите передачу данных по мобильной сети"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -179,10 +178,9 @@ msgid "Enable Wi-Fi"
 msgstr "Включить Wi-Fi"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "Включить мобильную сеть"
+msgstr "Включить передачу данных по мобильной сети"
 
 #: main.qml:94
 #, kde-format
@@ -212,16 +210,14 @@ msgstr ""
 "Используйте этот QR-код чтобы подключиться к сети «%1» с другого устройства."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "Показать пароль"
+msgstr "Пароль Wi-Fi:"
 
 #: Toolbar.qml:123
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "Мобильные сети"
+msgstr "Включить передачу данных по мобильной сети"
 
 #: Toolbar.qml:148
 #, kde-kuit-format
@@ -244,7 +240,7 @@ msgstr "Точка доступа Wi-Fi"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "Не удалось создать точку доступа: Wi-Fi отключён"
 
 #: Toolbar.qml:181
 #, kde-format

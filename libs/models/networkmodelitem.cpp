@@ -294,7 +294,6 @@ NetworkModelItem::ItemType NetworkModelItem::itemType() const
         || m_type == NetworkManager::ConnectionSettings::Bridge //
         || m_type == NetworkManager::ConnectionSettings::Vlan //
         || m_type == NetworkManager::ConnectionSettings::Team //
-        || m_type == NetworkManager::ConnectionSettings::Loopback //
         || ((NetworkManager::status() == NetworkManager::Connected //
              || NetworkManager::status() == NetworkManager::ConnectedLinkLocal //
              || NetworkManager::status() == NetworkManager::ConnectedSiteOnly)

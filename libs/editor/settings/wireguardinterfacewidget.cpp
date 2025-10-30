@@ -69,9 +69,6 @@ public:
     Ui_WireGuardInterfaceProp ui;
     NetworkManager::WireGuardSetting::Ptr setting;
     NetworkManager::ConnectionSettings::Ptr connectionSettings;
-    KSharedConfigPtr config;
-    QPalette warningPalette;
-    QPalette normalPalette;
     WireGuardKeyValidator *keyValidator;
     QRegularExpressionValidator *fwmarkValidator;
     QIntValidator *mtuValidator;
@@ -100,13 +97,6 @@ WireGuardInterfaceWidget::WireGuardInterfaceWidget(const NetworkManager::Connect
     d->ui.setupUi(this);
     d->connectionSettings = connectionSettings;
     d->setting = setting.staticCast<NetworkManager::WireGuardSetting>();
-    d->config = KSharedConfig::openConfig();
-    d->warningPalette = KColorScheme::createApplicationPalette(d->config);
-    d->normalPalette = KColorScheme::createApplicationPalette(d->config);
-    KColorScheme::adjustBackground(d->warningPalette, KColorScheme::NegativeBackground, QPalette::Base, KColorScheme::ColorSet::View, d->config);
-
-    KColorScheme::adjustBackground(d->normalPalette, KColorScheme::NormalBackground, QPalette::Base, KColorScheme::ColorSet::View, d->config);
-
     connect(d->ui.interfaceNameLineEdit, &QLineEdit::textChanged, this, &WireGuardInterfaceWidget::checkInterfaceNameValid);
     connect(d->ui.privateKeyLineEdit, &PasswordField::textChanged, this, &WireGuardInterfaceWidget::checkPrivateKeyValid);
     connect(d->ui.privateKeyLineEdit, &PasswordField::passwordOptionChanged, this, &WireGuardInterfaceWidget::checkPrivateKeyValid);
@@ -352,10 +342,15 @@ void WireGuardInterfaceWidget::checkListenPortValid()
 
 void WireGuardInterfaceWidget::setBackground(QWidget *w, bool result) const
 {
-    if (result)
-        w->setPalette(d->normalPalette);
-    else
-        w->setPalette(d->warningPalette);
+    if (result) {
+        QPalette p = w->palette();
+        KColorScheme::adjustBackground(p, KColorScheme::NormalBackground, QPalette::Base, KColorScheme::ColorSet::View);
+        w->setPalette(p);
+    } else {
+        QPalette p = w->palette();
+        KColorScheme::adjustBackground(p, KColorScheme::NegativeBackground, QPalette::Base, KColorScheme::ColorSet::View);
+        w->setPalette(p);
+    }
 }
 
 QString WireGuardInterfaceWidget::supportedFileExtensions()

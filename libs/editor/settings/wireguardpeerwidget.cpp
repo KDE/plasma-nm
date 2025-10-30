@@ -43,9 +43,6 @@ public:
 
     Ui_WireGuardPeersProp ui;
     NetworkManager::WireGuardSetting::Ptr setting;
-    KSharedConfigPtr config;
-    QPalette warningPalette;
-    QPalette normalPalette;
     QVariantMap peerData;
     bool publicKeyValid = false;
     bool allowedIPsValid = false;
@@ -61,13 +58,6 @@ WireGuardPeerWidget::WireGuardPeerWidget(const QVariantMap &peerData, QWidget *p
 {
     d->ui.setupUi(this);
     d->peerData = peerData;
-
-    d->config = KSharedConfig::openConfig();
-    d->warningPalette = KColorScheme::createApplicationPalette(d->config);
-    d->normalPalette = KColorScheme::createApplicationPalette(d->config);
-    KColorScheme::adjustBackground(d->warningPalette, KColorScheme::NegativeBackground, QPalette::Base, KColorScheme::ColorSet::View, d->config);
-
-    KColorScheme::adjustBackground(d->normalPalette, KColorScheme::NormalBackground, QPalette::Base, KColorScheme::ColorSet::View, d->config);
 
     setWindowTitle(i18nc("@title: window wireguard peers properties", "WireGuard peers properties"));
     connect(d->ui.publicKeyLineEdit, &QLineEdit::textChanged, this, &WireGuardPeerWidget::checkPublicKeyValid);
@@ -270,10 +260,15 @@ void WireGuardPeerWidget::saveKeyFlags()
 
 void WireGuardPeerWidget::setBackground(QWidget *w, bool result) const
 {
-    if (result)
-        w->setPalette(d->normalPalette);
-    else
-        w->setPalette(d->warningPalette);
+    if (result) {
+        QPalette p = w->palette();
+        KColorScheme::adjustBackground(p, KColorScheme::NormalBackground, QPalette::Base, KColorScheme::ColorSet::View);
+        w->setPalette(p);
+    } else {
+        QPalette p = w->palette();
+        KColorScheme::adjustBackground(p, KColorScheme::NegativeBackground, QPalette::Base, KColorScheme::ColorSet::View);
+        w->setPalette(p);
+    }
 }
 
 void WireGuardPeerWidget::updatePeerWidgets()

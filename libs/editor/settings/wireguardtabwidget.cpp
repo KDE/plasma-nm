@@ -11,7 +11,6 @@
 #include <QStandardItemModel>
 
 #include <KAcceleratorManager>
-#include <KColorScheme>
 #include <KConfig>
 #include <KConfigGroup>
 #include <NetworkManagerQt/Ipv4Setting>
@@ -39,7 +38,6 @@ public:
 
     Ui_WireGuardTabWidget ui;
     NetworkManager::WireGuardSetting::Ptr setting;
-    KSharedConfigPtr config;
     int currentIndex;
     bool currentPeerValid;
     bool otherPeersValid;
@@ -55,7 +53,6 @@ WireGuardTabWidget::WireGuardTabWidget(const NMVariantMapList &peerData, QWidget
 {
     d->ui.setupUi(this);
 
-    d->config = KSharedConfig::openConfig();
     setWindowTitle(i18nc("@title: window wireguard peers properties", "WireGuard peers properties"));
     connect(d->ui.btnAdd, &QPushButton::clicked, this, &WireGuardTabWidget::slotAddPeer);
     connect(d->ui.btnRemove, &QPushButton::clicked, this, &WireGuardTabWidget::slotRemovePeer);

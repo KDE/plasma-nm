@@ -538,6 +538,11 @@ void Notification::onCheckActiveConnectionOnResume()
 
     const auto ac = NetworkManager::activeConnections();
     if (std::any_of(ac.constBegin(), ac.constEnd(), [](const auto &connection) {
+            if (connection->type() == NetworkManager::ConnectionSettings::Bond || connection->type() == NetworkManager::ConnectionSettings::Bridge
+                || connection->type() == NetworkManager::ConnectionSettings::Vlan || connection->type() == NetworkManager::ConnectionSettings::Loopback) {
+                return false;
+            }
+
             return connection->state() == NetworkManager::ActiveConnection::State::Activated
                 || connection->state() == NetworkManager::ActiveConnection::State::Activating;
         })) {

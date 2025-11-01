@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-09 01:00+0000\n"
+"POT-Creation-Date: 2025-11-01 00:48+0000\n"
 "PO-Revision-Date: 2025-10-09 01:23+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -531,12 +531,12 @@ msgstr "VPN 서버 인증이 실패했습니다."
 msgid "The connection was deleted."
 msgstr "연결이 삭제되었습니다."
 
-#: notification.cpp:554
+#: notification.cpp:559
 #, kde-format
 msgid "No Network Connection"
 msgstr "네트워크 연결 없음"
 
-#: notification.cpp:555
+#: notification.cpp:560
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "더 이상 네트워크에 연결되어 있지 않습니다."

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:44+0000\n"
+"POT-Creation-Date: 2025-11-01 00:48+0000\n"
 "PO-Revision-Date: 2024-10-24 08:20\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -2094,8 +2094,8 @@ msgstr "Выдаліць гэты аднарангавы вузел"
 msgid "%1 (%2 MHz)"
 msgstr "%1 (%2 МГц)"
 
-#: editor/settings/wireguardpeerwidget.cpp:72
-#: editor/settings/wireguardtabwidget.cpp:59
+#: editor/settings/wireguardpeerwidget.cpp:62
+#: editor/settings/wireguardtabwidget.cpp:56
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"

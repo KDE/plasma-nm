@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:44+0000\n"
+"POT-Creation-Date: 2025-11-01 00:48+0000\n"
 "PO-Revision-Date: 2025-08-11 21:29+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -2108,8 +2108,8 @@ msgstr "Šalinti šį lygiarangį"
 msgid "%1 (%2 MHz)"
 msgstr "%1 (%2 MHz)"
 
-#: editor/settings/wireguardpeerwidget.cpp:72
-#: editor/settings/wireguardtabwidget.cpp:59
+#: editor/settings/wireguardpeerwidget.cpp:62
+#: editor/settings/wireguardtabwidget.cpp:56
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"

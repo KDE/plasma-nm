@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:44+0000\n"
+"POT-Creation-Date: 2025-11-01 00:48+0000\n"
 "PO-Revision-Date: 2014-10-29 11:38+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
@@ -1973,8 +1973,8 @@ msgstr ""
 msgid "%1 (%2 MHz)"
 msgstr ""
 
-#: editor/settings/wireguardpeerwidget.cpp:72
-#: editor/settings/wireguardtabwidget.cpp:59
+#: editor/settings/wireguardpeerwidget.cpp:62
+#: editor/settings/wireguardtabwidget.cpp:56
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"

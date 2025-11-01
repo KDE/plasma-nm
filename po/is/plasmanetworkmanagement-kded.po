@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-09 01:00+0000\n"
+"POT-Creation-Date: 2025-11-01 00:48+0000\n"
 "PO-Revision-Date: 2025-09-17 00:04+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -533,12 +533,12 @@ msgstr "Auðkenning á VPN-þjóninn mistókst."
 msgid "The connection was deleted."
 msgstr "Tengingunni var eytt."
 
-#: notification.cpp:554
+#: notification.cpp:559
 #, kde-format
 msgid "No Network Connection"
 msgstr "Engin nettenging"
 
-#: notification.cpp:555
+#: notification.cpp:560
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Þú ert ekki lengur með nettengingu."

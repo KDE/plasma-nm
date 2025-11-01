@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-30 00:44+0000\n"
+"POT-Creation-Date: 2025-11-01 00:48+0000\n"
 "PO-Revision-Date: 2025-08-07 04:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -2099,8 +2099,8 @@ msgstr "პარტნიორის წაშლა"
 msgid "%1 (%2 MHz)"
 msgstr "%1 (%2 მჰც)"
 
-#: editor/settings/wireguardpeerwidget.cpp:72
-#: editor/settings/wireguardtabwidget.cpp:59
+#: editor/settings/wireguardpeerwidget.cpp:62
+#: editor/settings/wireguardtabwidget.cpp:56
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"

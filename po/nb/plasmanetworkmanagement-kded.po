@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-09 01:00+0000\n"
+"POT-Creation-Date: 2025-11-01 00:48+0000\n"
 "PO-Revision-Date: 2015-04-29 08:46+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -531,12 +531,12 @@ msgstr "Autentisering til VPN-tjeneren mislyktes."
 msgid "The connection was deleted."
 msgstr ""
 
-#: notification.cpp:554
+#: notification.cpp:559
 #, kde-format
 msgid "No Network Connection"
 msgstr ""
 
-#: notification.cpp:555
+#: notification.cpp:560
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr ""

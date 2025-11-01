@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-09 01:00+0000\n"
+"POT-Creation-Date: 2025-11-01 00:48+0000\n"
 "PO-Revision-Date: 2017-05-07 21:01+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -552,12 +552,12 @@ msgstr "Autentifikacija na VPN serveru propala."
 msgid "The connection was deleted."
 msgstr "Veza je uklonjena."
 
-#: notification.cpp:554
+#: notification.cpp:559
 #, kde-format
 msgid "No Network Connection"
 msgstr "Nema mrežne veze"
 
-#: notification.cpp:555
+#: notification.cpp:560
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Više niste povezani na mrežu."

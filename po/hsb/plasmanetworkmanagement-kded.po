@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-09 01:00+0000\n"
+"POT-Creation-Date: 2025-11-01 00:48+0000\n"
 "PO-Revision-Date: 2021-10-30 10:49+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -535,12 +535,12 @@ msgstr ""
 msgid "The connection was deleted."
 msgstr "Zwisk bě so wumazał."
 
-#: notification.cpp:554
+#: notification.cpp:559
 #, kde-format
 msgid "No Network Connection"
 msgstr "Žadyn zwisk k syći"
 
-#: notification.cpp:555
+#: notification.cpp:560
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Kompjuter njeje hižo ze syću zwjazany."

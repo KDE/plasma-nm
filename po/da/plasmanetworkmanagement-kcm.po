@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Martin Schlander <mschlander@opensuse.org>, 2017, 2018, 2019, 2020.
-# SPDX-FileCopyrightText: 2024 rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>
+# SPDX-FileCopyrightText: 2024, 2025 rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-27 00:44+0000\n"
-"PO-Revision-Date: 2024-10-21 11:27+0200\n"
-"Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
+"PO-Revision-Date: 2025-10-31 22:56+0100\n"
+"Last-Translator: Rasmus Rosendahl-Kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -109,7 +109,7 @@ msgstr "Vis virtuelle forbindelser"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "Opret nye forbindelser som systemforbindelser"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
@@ -158,7 +158,7 @@ msgstr "Afbryd forbindelse"
 #: qml/ConnectionItem.qml:87
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
-msgstr ""
+msgstr "Kan ikke forbinde til dette netværk fordi det ikke blev fundet."
 
 #: qml/ConnectionItem.qml:92
 msgid "Delete"
@@ -179,7 +179,7 @@ msgstr "Forbinder"
 #: qml/ConnectionItem.qml:121
 msgctxt "@title:column Available networks"
 msgid "Available"
-msgstr ""
+msgstr "Tilgængelig"
 
 #: qml/main.qml:151
 msgid "Add new connection"
@@ -207,41 +207,34 @@ msgid "Do you want to remove the connection '%1'?"
 msgstr "Vil du fjerne forbindelsen \"%1\"?"
 
 #: qml/main.qml:262
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Forbind"
 
 #: qml/main.qml:268
-#, fuzzy
-#| msgid "Cancel"
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Annullér"
 
 #: qml/main.qml:274
-#, fuzzy
-#| msgctxt "@label Hotspot password"
-#| msgid "Password:"
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "Adgangskode:"
+msgstr "Angiv adgangskode"
 
 #: qml/main.qml:280
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "Netværk: %1"
 
 #: qml/main.qml:300
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "Adgangskode skal være en gyldig WEP-nøgle"
 
 #: qml/main.qml:301
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "Adgangskode skal være mellem 8 og 64 karakterer"
 
 #~ msgid "Create"
 #~ msgstr "Opret"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-09 01:00+0000\n"
+"POT-Creation-Date: 2025-11-01 00:48+0000\n"
 "PO-Revision-Date: 2025-02-28 10:21-0600\n"
 "Last-Translator: A S Alam <aman@punlinux.org>\n"
 "Language-Team: pa\n"
@@ -533,12 +533,12 @@ msgstr "VPN ਸਰਵਰ ਨਾਲ ਪਰਮਾਣਕਿਤਾ ਫੇਲ੍ਹ �
 msgid "The connection was deleted."
 msgstr "ਕਨੈਕਸ਼ਨ ਨੂੰ ਹਟਾਇਆ ਗਿਆ।"
 
-#: notification.cpp:554
+#: notification.cpp:559
 #, kde-format
 msgid "No Network Connection"
 msgstr "ਕੋਈ ਨੈੱਟਵਰਕ ਨਹੀਂ ਹੈ"
 
-#: notification.cpp:555
+#: notification.cpp:560
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "ਤੁਸੀਂ ਹੁਣ ਕਿਸੇ ਨੈੱਟਵਰਕ ਨਾਲ ਕਨੈਕਟ ਨਹੀਂ ਰਹੇ ਹੋ।"

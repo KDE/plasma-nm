@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-10-30 02:41+0000\n"
-"PO-Revision-Date: 2025-08-16 07:43+0200\n"
+"PO-Revision-Date: 2025-11-01 09:55+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -2959,7 +2959,7 @@ msgstr "APN: %1"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Set up a Mobile Broadband Connection"
-msgstr "Ustaw przenośnego połączenie szerokopasmowe"
+msgstr "Ustaw komórkowe połączenie szerokopasmowe"
 
 #: editor/widgets/mobileconnectionwizard.cpp:240
 #, kde-format
@@ -2968,8 +2968,8 @@ msgid ""
 "This assistant helps you easily set up a mobile broadband connection to a "
 "cellular (3G) network."
 msgstr ""
-"Ten pomocnik pomoże ci łatwo ustawić połączenie przenośnej sieci "
-"szerokopasmowej do komórkowej sieci (3G)."
+"Ten pomocnik pomoże ci łatwo ustawić połączenie komórkowej sieci "
+"szerokopasmowej (3G)."
 
 #: editor/widgets/mobileconnectionwizard.cpp:244
 #, kde-format
@@ -2987,15 +2987,15 @@ msgstr "Nazwa dostawcy internetu szerokopasmowego"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband billing plan name"
-msgstr "Nazwa planu bilingowego twojego dostawcy internetu szerokopasmowego"
+msgstr "Nazwa abonamentu twojego dostawcy internetu szerokopasmowego"
 
 #: editor/widgets/mobileconnectionwizard.cpp:250
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
 msgstr ""
-"(w niektórych przypadkach) APN (Nazwa Punktu Dostępowego) planu bilingowego "
-"twojego dostawcy internetu szerokopasmowego "
+"(w niektórych przypadkach) APN (Nazwa Punktu Dostępowego) abonamentu twojego "
+"dostawcy internetu szerokopasmowego"
 
 #: editor/widgets/mobileconnectionwizard.cpp:254
 #, kde-format

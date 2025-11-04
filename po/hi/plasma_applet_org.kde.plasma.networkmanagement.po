@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-24 00:44+0000\n"
+"POT-Creation-Date: 2025-11-04 00:44+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -160,7 +160,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "एयरप्लेन मोड चालू करने के लिए मध्य-क्लिक करें"
 
-#: main.qml:71 Toolbar.qml:74
+#: main.qml:71 Toolbar.qml:78
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "वाई-फाई सक्षम करें"
@@ -202,36 +202,36 @@ msgstr "\"%1\" नेटवर्क से कनेक्ट करने क�
 msgid "Wi-Fi password:"
 msgstr ""
 
-#: Toolbar.qml:123
+#: Toolbar.qml:127
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable mobile data"
 msgstr "मोबाइल नेटवर्क सक्षम करें"
 
-#: Toolbar.qml:148
+#: Toolbar.qml:152
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "एयरप्लेन मोड अक्षम करें<nl/><nl/>इससे वाई-फाई और ब्लूटूथ सक्षम हो जाएगा"
 
-#: Toolbar.qml:149
+#: Toolbar.qml:153
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "एयरप्लेन मोड सक्षम करें<nl/><nl/>इससे वाई-फाई और ब्लूटूथ अक्षम हो जाएगा"
 
-#: Toolbar.qml:162
+#: Toolbar.qml:166
 #, kde-format
 msgid "Hotspot"
 msgstr "हॉटस्पॉट"
 
-#: Toolbar.qml:179
+#: Toolbar.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: Toolbar.qml:181
+#: Toolbar.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -239,21 +239,43 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: Toolbar.qml:183
+#: Toolbar.qml:187
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "हॉटस्पॉट अक्षम करें"
 
-#: Toolbar.qml:185
+#: Toolbar.qml:189
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "हॉटस्पॉट बनाएं"
 
-#: Toolbar.qml:219
+#: Toolbar.qml:217
+#, kde-format
+msgctxt "@action:button"
+msgid "Scan Wifi QR Code"
+msgstr ""
+
+#: Toolbar.qml:222
+#, fuzzy, kde-format
+#| msgid ""
+#| "Scan this QR code with another device to connect to the \"%1\" network."
+msgctxt "@info:tooltip"
+msgid "Scan QR Code to connect to a Wifi network"
+msgstr "\"%1\" नेटवर्क से कनेक्ट करने के लिए इस QR कोड को किसी अन्य डिवाइस से स्कैन करें।"
+
+#: Toolbar.qml:224
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
+"network"
+msgstr ""
+
+#: Toolbar.qml:243
 #, kde-format
 msgid "Configure network connections…"
 msgstr "नेटवर्क कनेक्शन कॉन्फ़िगर करें…"

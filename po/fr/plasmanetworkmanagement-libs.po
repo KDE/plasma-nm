@@ -1112,7 +1112,7 @@ msgid ""
 "lease and options."
 msgstr ""
 "Utiliser ce champ pour spécifier l'identifiant de client DHCP qui est une "
-"chaîne envoyée au serveur DHCP\n"
+"chaine envoyée au serveur DHCP\n"
 "pour identifier la machine locale, que le serveur DHCP peut utiliser pour "
 "personnaliser le bail DHCP et ses options."
 

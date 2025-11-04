@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-10-24 00:44+0000\n"
+"POT-Creation-Date: 2025-11-04 00:44+0000\n"
 "PO-Revision-Date: 2025-07-29 12:23+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -156,7 +156,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Midden-klik om vliegtuigmodus in te schakelen"
 
-#: main.qml:71 Toolbar.qml:74
+#: main.qml:71 Toolbar.qml:78
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi inschakelen"
@@ -199,37 +199,37 @@ msgstr ""
 msgid "Wi-Fi password:"
 msgstr "Wi-Fi-wachtwoord:"
 
-#: Toolbar.qml:123
+#: Toolbar.qml:127
 #, kde-format
 msgid "Enable mobile data"
 msgstr "Mobiele gegevens inschakelen"
 
-#: Toolbar.qml:148
+#: Toolbar.qml:152
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Vliegtuigmodus uitschakelen<nl/><nl/>Dit zal Wi-Fi en Bluetooth inschakelen"
 
-#: Toolbar.qml:149
+#: Toolbar.qml:153
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Vliegtuigmodus inschakelen<nl/><nl/>Dit zal Wi-Fi en Bluetooth uitschakelen"
 
-#: Toolbar.qml:162
+#: Toolbar.qml:166
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: Toolbar.qml:179
+#: Toolbar.qml:183
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "Kan geen hotspot aanmaken omdat Wi-Fi is uitgeschakeld."
 
-#: Toolbar.qml:181
+#: Toolbar.qml:185
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -240,19 +240,43 @@ msgstr ""
 "Verbreek de huidige Wi-Fi verbinding met het netwerk of verbind een andere "
 "draadloze radio."
 
-#: Toolbar.qml:183
+#: Toolbar.qml:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Hotspot uitschakelen"
 
-#: Toolbar.qml:185
+#: Toolbar.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Hotspot aanmaken"
 
-#: Toolbar.qml:219
+#: Toolbar.qml:217
+#, kde-format
+msgctxt "@action:button"
+msgid "Scan Wifi QR Code"
+msgstr ""
+
+#: Toolbar.qml:222
+#, fuzzy, kde-format
+#| msgid ""
+#| "Scan this QR code with another device to connect to the \"%1\" network."
+msgctxt "@info:tooltip"
+msgid "Scan QR Code to connect to a Wifi network"
+msgstr ""
+"Deze QR-code scannen met een ander apparaat om te verbinden met het network "
+"\"%1\"."
+
+#: Toolbar.qml:224
+#, kde-format
+msgctxt "@info:tooltip"
+msgid ""
+"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
+"network"
+msgstr ""
+
+#: Toolbar.qml:243
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Netwerkverbindingen configureren…"

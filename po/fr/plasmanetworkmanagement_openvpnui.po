@@ -656,7 +656,7 @@ msgid ""
 "Block Chaining mode)."
 msgstr ""
 "Chiffrer les paquets avec un algorithme de chiffrement. L'algorithme par "
-"défaut est « BF-CBC » (Blowfish en mode enchaînement du bloc de chiffrement)."
+"défaut est « BF-CBC » (Blowfish en mode enchainement du bloc de chiffrement)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openvpnadvanced.ui:486

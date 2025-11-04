@@ -275,7 +275,7 @@ void OpenconnectWebAuthDialog::setupErrorUI()
         errorDescription = i18n("Authenticator missing Large Blob support");
         break;
     case QWebEngineWebAuthUxRequest::RequestFailureReason::NoCommonAlgorithms:
-        errorDescription = i18n("No common algorithms");
+        errorDescription = i18n("The security token does not support the server’s required authentication method.");
         break;
     case QWebEngineWebAuthUxRequest::RequestFailureReason::StorageFull:
         errorDescription = i18n("Storage Full");

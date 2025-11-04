@@ -15,6 +15,7 @@
         "Description[pt_BR]": "Configurações da rede com fio",
         "Description[sl]": "Nastavitve žičnega omrežja",
         "Description[sv]": "Trådbundna nätverksinställningar",
+        "Description[ta]": "கம்பி பிணையத்திற்கான அமைப்புகள்",
         "Description[tr]": "Kablolu ağ ayarları",
         "Description[uk]": "Налаштовування дротової мережі",
         "FormFactors": [
@@ -37,6 +38,7 @@
         "Name[pt_BR]": "Rede com fio",
         "Name[sl]": "Ožičeno omrežje",
         "Name[sv]": "Trådbundet nätverk",
+        "Name[ta]": "கம்பி இணைப்பு",
         "Name[tr]": "Kablolu Ağ",
         "Name[uk]": "Дротова мережа "
     },
@@ -54,6 +56,7 @@
     "X-KDE-Keywords[pt_BR]": "com fio,rede,ethernet,cat5,cat6,IP,endereço,DHCP,conexão,cabo,rede",
     "X-KDE-Keywords[sl]": "ožičeno,omrežje,ethernet,cat5,cat6,IP,naslov,DHCP,povezava,kabel,mreženje",
     "X-KDE-Keywords[sv]": "trådbundet,nätverk,ethernet,cat5,cat6,IP,adress,DHCP,anslutning,kabel",
+    "X-KDE-Keywords[ta]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking, கம்பி, பிணையம், இணையம், முகவரி, இணைப்பு, பிணையமாக்கம், இணையமாக்கம்",
     "X-KDE-Keywords[tr]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking,kablolu,ağ,adres,bağlantı,kablo",
     "X-KDE-Keywords[uk]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking,дротова,мережа,езернет,айпі,адреса,діейчсіпі,з'єднання,кабель,мережевий",
     "X-KDE-System-Settings-Parent-Category": "network",

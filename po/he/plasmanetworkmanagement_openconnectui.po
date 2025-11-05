@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"POT-Creation-Date: 2025-11-05 00:46+0000\n"
 "PO-Revision-Date: 2025-09-20 12:46+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -497,8 +497,10 @@ msgstr "למאמת חסרה תמיכה ב־Large Blob (מקטעי נתונים �
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
-msgid "No common algorithms"
-msgstr "אין אלגוריתמים משותפים"
+msgid ""
+"The security token does not support the server’s required authentication "
+"method."
+msgstr ""
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -555,6 +557,9 @@ msgstr "אישור קוד אישי (PIN)"
 #, kde-format
 msgid "TextLabel"
 msgstr "תווית טקסט"
+
+#~ msgid "No common algorithms"
+#~ msgstr "אין אלגוריתמים משותפים"
 
 #~ msgid "*.pem *.crt *.key"
 #~ msgstr "‎*.pem‏ ‎*.crt‏ ‎*.key"

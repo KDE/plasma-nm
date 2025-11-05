@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"POT-Creation-Date: 2025-11-05 00:46+0000\n"
 "PO-Revision-Date: 2025-09-20 08:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -502,8 +502,10 @@ msgstr "Avtentikatorju manjka podpora za velike blobe"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
-msgid "No common algorithms"
-msgstr "Ni skupnih algoritmov"
+msgid ""
+"The security token does not support the server’s required authentication "
+"method."
+msgstr ""
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -560,6 +562,9 @@ msgstr "Potrdite PIN"
 #, kde-format
 msgid "TextLabel"
 msgstr "TextLabel"
+
+#~ msgid "No common algorithms"
+#~ msgstr "Ni skupnih algoritmov"
 
 #~ msgid "*.pem *.crt *.key"
 #~ msgstr "*.pem *.crt *.key"

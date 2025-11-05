@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-04 00:44+0000\n"
-"PO-Revision-Date: 2025-07-29 05:20+0200\n"
+"PO-Revision-Date: 2025-11-04 03:09+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -256,16 +256,13 @@ msgstr "ჰოტსპოტის შექმნა"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wifi QR Code"
-msgstr ""
+msgstr "WiFi-ის QR-კოდის სკანირება"
 
 #: Toolbar.qml:222
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wifi network"
-msgstr ""
-"\"%1\" ქსელთან მისაერთებლად ეს QR კოდი შესაბამისი მოწყობილობით დაასკანერეთ."
+msgstr "დაასკანირეთ QR კოდი Wifi ქსელთან დასაკავშირებლად"
 
 #: Toolbar.qml:224
 #, kde-format
@@ -274,6 +271,8 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
 "network"
 msgstr ""
+"დააყენეთ QRCA ბარკოდის სკანერი, რომ შეძლოთ QR კოდის სკანირება, რომელიც WiFi "
+"ქსელთან დაგაკავშირებთ"
 
 #: Toolbar.qml:243
 #, kde-format

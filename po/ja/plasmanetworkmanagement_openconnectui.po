@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"POT-Creation-Date: 2025-11-05 00:46+0000\n"
 "PO-Revision-Date: 2013-06-14 04:26-0700\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -474,7 +474,9 @@ msgstr ""
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
-msgid "No common algorithms"
+msgid ""
+"The security token does not support the server’s required authentication "
+"method."
 msgstr ""
 
 #: openconnectwebauthdialog.cpp:281

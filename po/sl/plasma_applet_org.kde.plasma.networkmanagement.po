@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-04 00:44+0000\n"
-"PO-Revision-Date: 2025-07-29 06:30+0200\n"
+"PO-Revision-Date: 2025-11-04 06:57+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -255,15 +255,13 @@ msgstr "Ustvari vročo točko"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wifi QR Code"
-msgstr ""
+msgstr "Skeniraj kodo QR"
 
 #: Toolbar.qml:222
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wifi network"
-msgstr "Skenirajte to kodo QR z drugo napravo za priklop na \"%1\" omrežje."
+msgstr "Skenirajte to kodo QR za priklop na Wifi omrežje"
 
 #: Toolbar.qml:224
 #, kde-format
@@ -272,6 +270,8 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
 "network"
 msgstr ""
+"Namestite QRCA Barcode Scanner za skeniranje kode QR za povezavo na Wifi "
+"omrežje"
 
 #: Toolbar.qml:243
 #, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"POT-Creation-Date: 2025-11-05 00:46+0000\n"
 "PO-Revision-Date: 2025-09-20 15:13+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -495,8 +495,10 @@ msgstr "El autenticador no permite usar bloques de almacenamiento grandes"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
-msgid "No common algorithms"
-msgstr "No hay algoritmos comunes"
+msgid ""
+"The security token does not support the server’s required authentication "
+"method."
+msgstr ""
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -553,3 +555,6 @@ msgstr "Confirmar PIN"
 #, kde-format
 msgid "TextLabel"
 msgstr "Etiqueta de texto"
+
+#~ msgid "No common algorithms"
+#~ msgstr "No hay algoritmos comunes"

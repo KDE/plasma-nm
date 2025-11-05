@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"POT-Creation-Date: 2025-11-05 00:46+0000\n"
 "PO-Revision-Date: 2024-12-02 18:40+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -500,8 +500,10 @@ msgstr "Autentificētājam trūkst „Large Blob“ atbalsta"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
-msgid "No common algorithms"
-msgstr "Nav kopīgu algoritmu"
+msgid ""
+"The security token does not support the server’s required authentication "
+"method."
+msgstr ""
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -558,3 +560,6 @@ msgstr "Apstiprināt PIN"
 #, kde-format
 msgid "TextLabel"
 msgstr "Teksta etiķete"
+
+#~ msgid "No common algorithms"
+#~ msgstr "Nav kopīgu algoritmu"

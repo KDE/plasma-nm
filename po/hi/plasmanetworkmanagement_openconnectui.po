@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"POT-Creation-Date: 2025-11-05 00:46+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -494,8 +494,10 @@ msgstr "प्रमाणक में बड़े ब्लॉब का स�
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
-msgid "No common algorithms"
-msgstr "कोई सामान्य एल्गोरिदम नहीं"
+msgid ""
+"The security token does not support the server’s required authentication "
+"method."
+msgstr ""
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -552,3 +554,6 @@ msgstr "पिन की पुष्टि करें"
 #, kde-format
 msgid "TextLabel"
 msgstr "पाठलेबल"
+
+#~ msgid "No common algorithms"
+#~ msgstr "कोई सामान्य एल्गोरिदम नहीं"

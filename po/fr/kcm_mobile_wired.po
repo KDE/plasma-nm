@@ -1,0 +1,106 @@
+#
+# SPDX-FileCopyrightText: 2025 Xavier Besnard <xavier.besnard@kde.org>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-10-24 00:44+0000\n"
+"PO-Revision-Date: 2025-10-25 16:45+0200\n"
+"Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
+"Language-Team: French <French <kde-francophone@kde.org>>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 25.08.2\n"
+
+#: ui/ConnectDialog.qml:57
+#, kde-format
+msgid "Invalid input."
+msgstr "Entrée non valable."
+
+#: ui/ConnectionInfo.qml:15
+#, kde-format
+msgctxt "kcm page title"
+msgid "Connection Info for \"%1\""
+msgstr "Informations de connexion pour « %1 »"
+
+#: ui/ConnectionInfo.qml:22
+#, kde-format
+msgctxt "@title:group"
+msgid "Transfer Rates"
+msgstr "Taux de transferts"
+
+#: ui/ConnectionInfo.qml:38
+#, kde-format
+msgid "Connected, ↓ %1/s, ↑ %2/s"
+msgstr "Connecté, ↓ %1 / s, ↑ %2 / s"
+
+#: ui/ConnectionInfo.qml:45
+#, kde-format
+msgctxt "@title:group"
+msgid "Connection Details"
+msgstr "Détails de la connexion"
+
+#: ui/main.qml:59
+#, kde-format
+msgctxt "@title:group"
+msgid "Wired Network Connections"
+msgstr "Connexions sur réseaux filaires"
+
+#: ui/main.qml:117
+#, kde-format
+msgid "No wired connection available."
+msgstr "Aucune connexion filaire disponible."
+
+#: ui/NetworkSettings.qml:16
+#, kde-format
+msgid "Add New Connection"
+msgstr "Ajouter une nouvelle connexion"
+
+#: ui/NetworkSettings.qml:31
+#, kde-format
+msgid "Save"
+msgstr "Enregistrer"
+
+#: ui/NetworkSettings.qml:49
+#, kde-format
+msgctxt "@title:group"
+msgid "IP Settings"
+msgstr "Configuration IP"
+
+#: ui/NetworkSettings.qml:55
+#, kde-format
+msgid "Method"
+msgstr "Méthode"
+
+#: ui/NetworkSettings.qml:56
+#, kde-format
+msgid "Automatic"
+msgstr "Automatique"
+
+#: ui/NetworkSettings.qml:56
+#, kde-format
+msgid "Manual"
+msgstr "Manuel"
+
+#: ui/NetworkSettings.qml:72
+#, kde-format
+msgid "IP Address"
+msgstr "Adresse IP"
+
+#: ui/NetworkSettings.qml:90
+#, kde-format
+msgid "Gateway"
+msgstr "Passerelle"
+
+#: ui/NetworkSettings.qml:108
+#, kde-format
+msgid "Network prefix length"
+msgstr "Longueur du préfixe de réseau"
+
+#: ui/NetworkSettings.qml:127
+#, kde-format
+msgid "DNS"
+msgstr "DNS"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"POT-Creation-Date: 2025-11-05 00:46+0000\n"
 "PO-Revision-Date: 2025-09-20 06:35+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -493,8 +493,10 @@ msgstr "ავთენტიკატორს დიდი ბლობებ�
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
-msgid "No common algorithms"
-msgstr "საერთო ალგორითმების გარეშე"
+msgid ""
+"The security token does not support the server’s required authentication "
+"method."
+msgstr ""
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -551,6 +553,9 @@ msgstr "დაადასტურეთ PIN-კოდი"
 #, kde-format
 msgid "TextLabel"
 msgstr "ტექსტური ჭდე"
+
+#~ msgid "No common algorithms"
+#~ msgstr "საერთო ალგორითმების გარეშე"
 
 #~ msgid "*.pem *.crt *.key"
 #~ msgstr "*.pem *.crt *.key"

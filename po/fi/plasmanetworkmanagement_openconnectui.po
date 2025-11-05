@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"POT-Creation-Date: 2025-11-05 00:46+0000\n"
 "PO-Revision-Date: 2025-10-15 19:26+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -492,8 +492,10 @@ msgstr "Todennuslaitteelta puuttuu suurten BLOBien tuki"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
-msgid "No common algorithms"
-msgstr "Ei yhteisiä algoritmeja"
+msgid ""
+"The security token does not support the server’s required authentication "
+"method."
+msgstr ""
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -550,6 +552,9 @@ msgstr "Vahvista PIN"
 #, kde-format
 msgid "TextLabel"
 msgstr "Tekstiselite"
+
+#~ msgid "No common algorithms"
+#~ msgstr "Ei yhteisiä algoritmeja"
 
 #~ msgid "*.pem *.crt *.key"
 #~ msgstr "*.pem *.crt *.key"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"POT-Creation-Date: 2025-11-05 00:46+0000\n"
 "PO-Revision-Date: 2025-09-20 10:02+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -490,8 +490,10 @@ msgstr "Behörighetskontrollverktyget saknar stöd för stor binärdata"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
-msgid "No common algorithms"
-msgstr "Inga vanliga algoritmer"
+msgid ""
+"The security token does not support the server’s required authentication "
+"method."
+msgstr ""
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -548,6 +550,9 @@ msgstr "Bekräfta PIN-kod"
 #, kde-format
 msgid "TextLabel"
 msgstr "Textetikett"
+
+#~ msgid "No common algorithms"
+#~ msgstr "Inga vanliga algoritmer"
 
 #~ msgid "*.pem *.crt *.key"
 #~ msgstr "*.pem *.crt *.key"

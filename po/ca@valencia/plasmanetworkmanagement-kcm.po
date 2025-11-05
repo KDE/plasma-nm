@@ -238,9 +238,3 @@ msgstr "La contrasenya cal que siga una clau WEP vàlida"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "La contrasenya cal que tinga entre 8 i 64 caràcters"
-
-#~ msgid "Create"
-#~ msgstr "Crea"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"

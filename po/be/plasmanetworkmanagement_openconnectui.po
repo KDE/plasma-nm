@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-09-25 00:44+0000\n"
+"POT-Creation-Date: 2025-11-05 00:46+0000\n"
 "PO-Revision-Date: 2024-10-25 20:20\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -507,8 +507,10 @@ msgstr "Аўтэнтыфікатар не падтрымлівае Large Blob"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
-msgid "No common algorithms"
-msgstr "Няма агульных алгарытмаў"
+msgid ""
+"The security token does not support the server’s required authentication "
+"method."
+msgstr ""
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -565,3 +567,6 @@ msgstr "Пацвердзіце PIN-код"
 #, kde-format
 msgid "TextLabel"
 msgstr "Тэкст"
+
+#~ msgid "No common algorithms"
+#~ msgstr "Няма агульных алгарытмаў"

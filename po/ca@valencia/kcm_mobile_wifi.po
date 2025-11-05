@@ -227,27 +227,3 @@ msgstr "DNS"
 #, kde-format
 msgid "Password…"
 msgstr "Contrasenya…"
-
-#~ msgid "Connect"
-#~ msgstr "Connecta"
-
-#~ msgid "Disconnect"
-#~ msgstr "Desconnecta"
-
-#~ msgid "Configure"
-#~ msgstr "Configura"
-
-#~ msgid "Delete"
-#~ msgstr "Suprimix"
-
-#~ msgid "Connect to"
-#~ msgstr "Connecta a"
-
-#~ msgid "/s"
-#~ msgstr "/s"
-
-#~ msgid "Upload"
-#~ msgstr "Pujada"
-
-#~ msgid "Download"
-#~ msgstr "Baixada"

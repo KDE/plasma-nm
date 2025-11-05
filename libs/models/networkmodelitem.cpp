@@ -651,6 +651,7 @@ void NetworkModelItem::updateDetails() const
         }
     } else if (m_type == NetworkManager::ConnectionSettings::Wireless) {
         NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
+        m_details << i18n("Access Point (SSID)") << m_ssid;
         if (m_mode == NetworkManager::WirelessSetting::Infrastructure) {
             m_details << i18n("Signal Strength") << i18nc("WiFi signal strength percentage indicator", "%1%", m_signal);
         }

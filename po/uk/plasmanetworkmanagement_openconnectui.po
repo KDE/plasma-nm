@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 00:46+0000\n"
-"PO-Revision-Date: 2025-09-20 15:39+0300\n"
+"PO-Revision-Date: 2025-11-06 15:57+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -505,6 +505,8 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"У жетоні захисту не передбачено підтримки способу розпізнавання, який "
+"потребує сервер."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format

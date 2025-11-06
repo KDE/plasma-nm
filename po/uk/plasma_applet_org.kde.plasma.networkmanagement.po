@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-04 00:44+0000\n"
-"PO-Revision-Date: 2025-07-29 09:59+0300\n"
+"PO-Revision-Date: 2025-11-04 09:27+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -258,17 +258,14 @@ msgstr "Створити хот-спот"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wifi QR Code"
-msgstr ""
+msgstr "Сканувати QR-код Wifi"
 
 #: Toolbar.qml:222
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wifi network"
 msgstr ""
-"Виконайте сканування цього QR-коду на іншому пристрої, щоб встановити "
-"з'єднання з мережею «%1»."
+"Виконайте сканування цього QR-коду, щоб встановити з'єднання з мережею Wifi"
 
 #: Toolbar.qml:224
 #, kde-format
@@ -277,6 +274,8 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
 "network"
 msgstr ""
+"Встановіть програму для сканування штрих-кодів QRCA для сканування QR-коду, "
+"за допомогою якого ви зможете встановити з'єднання з мережею Wifi"
 
 #: Toolbar.qml:243
 #, kde-format

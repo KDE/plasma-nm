@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 00:46+0000\n"
-"PO-Revision-Date: 2025-09-20 15:13+0100\n"
+"PO-Revision-Date: 2025-11-06 01:56+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: openconnectauth.cpp:345
 #, kde-format
@@ -499,6 +499,8 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"El token de seguridad no es compatible con el método de autenticación "
+"requerido por el servidor."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -555,6 +557,3 @@ msgstr "Confirmar PIN"
 #, kde-format
 msgid "TextLabel"
 msgstr "Etiqueta de texto"
-
-#~ msgid "No common algorithms"
-#~ msgstr "No hay algoritmos comunes"

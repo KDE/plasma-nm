@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-05 00:46+0000\n"
+"POT-Creation-Date: 2025-11-06 08:07+0000\n"
 "PO-Revision-Date: 2024-09-19 17:05+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -74,31 +74,31 @@ msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
-#: models/networkmodelitem.cpp:731
+#: models/networkmodelitem.cpp:732
 #, kde-format
 msgid "Infiniband"
 msgstr "Infiniband"
 
 #: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:198
-#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:737
+#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:738
 #, kde-format
 msgid "Bond"
 msgstr "Δεσμός"
 
 #: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:201
-#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:743
+#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:744
 #, kde-format
 msgid "Bridge"
 msgstr "Γέφυρα"
 
 #: editor/connectioneditorbase.cpp:256 models/creatableconnectionsmodel.cpp:220
-#: models/networkmodelitem.cpp:749
+#: models/networkmodelitem.cpp:750
 #, kde-format
 msgid "Vlan"
 msgstr "VLAN"
 
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:230
-#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:758
+#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:759
 #, kde-format
 msgid "Team"
 msgstr "Team"
@@ -3603,20 +3603,25 @@ msgstr ""
 msgid "Connection speed"
 msgstr "Ταχύτητα σύνδεσης"
 
-#: models/networkmodelitem.cpp:650 models/networkmodelitem.cpp:674
-#: models/networkmodelitem.cpp:727 models/networkmodelitem.cpp:733
-#: models/networkmodelitem.cpp:739 models/networkmodelitem.cpp:745
-#: models/networkmodelitem.cpp:752 models/networkmodelitem.cpp:760
+#: models/networkmodelitem.cpp:650 models/networkmodelitem.cpp:675
+#: models/networkmodelitem.cpp:728 models/networkmodelitem.cpp:734
+#: models/networkmodelitem.cpp:740 models/networkmodelitem.cpp:746
+#: models/networkmodelitem.cpp:753 models/networkmodelitem.cpp:761
 #, kde-format
 msgid "MAC Address"
 msgstr "Διεύθυνση MAC"
 
-#: models/networkmodelitem.cpp:655
+#: models/networkmodelitem.cpp:654
+#, kde-format
+msgid "Access Point (SSID)"
+msgstr "Σημείο πρόσβασης (SSID)"
+
+#: models/networkmodelitem.cpp:656
 #, kde-format
 msgid "Signal Strength"
 msgstr "Ισχύς σήματος"
 
-#: models/networkmodelitem.cpp:655
+#: models/networkmodelitem.cpp:656
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "traffic, e.g. n KB/s\n"
@@ -3626,91 +3631,91 @@ msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1 %2"
 
-#: models/networkmodelitem.cpp:657
+#: models/networkmodelitem.cpp:658
 #, kde-format
 msgid "Security Type"
 msgstr "Τύπος ασφάλειας"
 
-#: models/networkmodelitem.cpp:660
+#: models/networkmodelitem.cpp:661
 #, kde-format
 msgid "Connection Speed"
 msgstr "Ταχύτητα σύνδεσης"
 
-#: models/networkmodelitem.cpp:666
+#: models/networkmodelitem.cpp:667
 #, kde-format
 msgid "Frequency"
 msgstr ""
 
-#: models/networkmodelitem.cpp:668
+#: models/networkmodelitem.cpp:669
 #, fuzzy, kde-format
 #| msgid "Channel:"
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
 msgstr "Κανάλι:"
 
-#: models/networkmodelitem.cpp:672
+#: models/networkmodelitem.cpp:673
 #, kde-format
 msgid "BSSID"
 msgstr "BSSID"
 
-#: models/networkmodelitem.cpp:686
+#: models/networkmodelitem.cpp:687
 #, kde-format
 msgid "Operator"
 msgstr ""
 
-#: models/networkmodelitem.cpp:690
+#: models/networkmodelitem.cpp:691
 #, kde-format
 msgid "Network ID"
 msgstr "Αναγνωριστικό δικτύου"
 
-#: models/networkmodelitem.cpp:694
+#: models/networkmodelitem.cpp:695
 #, kde-format
 msgid "Signal Quality"
 msgstr "Ποιότητα σήματος"
 
-#: models/networkmodelitem.cpp:695
+#: models/networkmodelitem.cpp:696
 #, kde-format
 msgid "Access Technology"
 msgstr "Τεχνολογία πρόσβασης"
 
-#: models/networkmodelitem.cpp:700 models/networkmodelitem.cpp:717
+#: models/networkmodelitem.cpp:701 models/networkmodelitem.cpp:718
 #, kde-format
 msgid "VPN Plugin"
 msgstr "Πρόσθετο VPN"
 
-#: models/networkmodelitem.cpp:711
+#: models/networkmodelitem.cpp:712
 #, kde-format
 msgid "Banner"
 msgstr ""
 
-#: models/networkmodelitem.cpp:721
+#: models/networkmodelitem.cpp:722
 #, kde-format
 msgid "Name"
 msgstr "Όνομα"
 
-#: models/networkmodelitem.cpp:723 models/networkmodelitem.cpp:725
+#: models/networkmodelitem.cpp:724 models/networkmodelitem.cpp:726
 #, kde-format
 msgid "Capabilities"
 msgstr "Δυνατότητες"
 
-#: models/networkmodelitem.cpp:731 models/networkmodelitem.cpp:737
-#: models/networkmodelitem.cpp:743 models/networkmodelitem.cpp:749
-#: models/networkmodelitem.cpp:755 models/networkmodelitem.cpp:758
+#: models/networkmodelitem.cpp:732 models/networkmodelitem.cpp:738
+#: models/networkmodelitem.cpp:744 models/networkmodelitem.cpp:750
+#: models/networkmodelitem.cpp:756 models/networkmodelitem.cpp:759
 #, kde-format
 msgid "Type"
 msgstr "Τύπος"
 
-#: models/networkmodelitem.cpp:751
+#: models/networkmodelitem.cpp:752
 #, kde-format
 msgid "Vlan ID"
 msgstr "Αναγνωριστικό VLAN"
 
-#: models/networkmodelitem.cpp:755
+#: models/networkmodelitem.cpp:756
 #, kde-format
 msgid "Adsl"
 msgstr "Adsl"
 
-#: models/networkmodelitem.cpp:765
+#: models/networkmodelitem.cpp:766
 #, fuzzy, kde-format
 #| msgid "Service:"
 msgid "Device"
@@ -3806,9 +3811,6 @@ msgstr "Απαιτείται η έκδοση 0.9.8 του NetworkManager, βρέ
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Άγνωστη"
-
-#~ msgid "Access Point (SSID)"
-#~ msgstr "Σημείο πρόσβασης (SSID)"
 
 #~ msgctxt ""
 #~ "Label for last used time for a network connection used in the last hour, "

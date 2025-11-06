@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-04 00:44+0000\n"
-"PO-Revision-Date: 2025-08-03 08:02+0400\n"
+"PO-Revision-Date: 2025-11-05 18:24+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -253,15 +253,13 @@ msgstr "أنشئ نقطة اتصال"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wifi QR Code"
-msgstr ""
+msgstr "امسح شفرة شبكة لا سلكية"
 
 #: Toolbar.qml:222
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wifi network"
-msgstr "امحُ رمز QR هذا ضوئيًا باستخدام جهاز آخر للاتصال بالشبكة \"%1\"."
+msgstr "امسح رمز الاستجابة السريعة للاتصال بشبكة واي فاي"
 
 #: Toolbar.qml:224
 #, kde-format
@@ -270,6 +268,7 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
 "network"
 msgstr ""
+"ثبّت ماسح الرمز QRCA لمسح رمز الاستجابة السريعة الذي يتصل بشبكة واي فاي."
 
 #: Toolbar.qml:243
 #, kde-format

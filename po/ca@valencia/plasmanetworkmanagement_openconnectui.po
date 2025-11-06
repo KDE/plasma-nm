@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 00:46+0000\n"
-"PO-Revision-Date: 2025-09-20 12:39+0200\n"
+"PO-Revision-Date: 2025-11-05 09:35+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -500,6 +500,8 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"El testimoni de seguretat no admet el mètode d'autenticació requerit pel "
+"servidor."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -556,6 +558,3 @@ msgstr "Confirmeu el PIN"
 #, kde-format
 msgid "TextLabel"
 msgstr "EtiquetaDeText"
-
-#~ msgid "No common algorithms"
-#~ msgstr "Sense algorismes comuns"

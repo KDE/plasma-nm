@@ -11,15 +11,15 @@ msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-04 00:44+0000\n"
-"PO-Revision-Date: 2025-07-30 17:26+0300\n"
-"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
-"Language-Team: Turkish <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2025-11-05 19:20+0300\n"
+"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
+"Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 25.08.2\n"
 "X-POOTLE-MTIME: 1413102242.000000\n"
 
 #: ConnectionItem.qml:62
@@ -261,15 +261,13 @@ msgstr "Erişim noktası oluştur"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wifi QR Code"
-msgstr ""
+msgstr "Wi-Fi Kare Kodunu Tara"
 
 #: Toolbar.qml:222
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wifi network"
-msgstr "“%1” ağına bağlanmak için bu kare kodu başka bir aygıtla tarayın."
+msgstr "Bir Wi-Fi ağına bağlanmak için kare kodu taratın."
 
 #: Toolbar.qml:224
 #, kde-format
@@ -278,6 +276,8 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
 "network"
 msgstr ""
+"Bir Wi-Fi ağına bağlanan bir kare kodu okutmak için QRCA Barkod Tarayıcısı "
+"uygulamasını kurun."
 
 #: Toolbar.qml:243
 #, kde-format

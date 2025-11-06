@@ -7,14 +7,14 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 00:46+0000\n"
-"PO-Revision-Date: 2025-09-20 12:46+0300\n"
+"PO-Revision-Date: 2025-11-05 08:54+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.2\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
 
@@ -500,7 +500,7 @@ msgstr "למאמת חסרה תמיכה ב־Large Blob (מקטעי נתונים �
 msgid ""
 "The security token does not support the server’s required authentication "
 "method."
-msgstr ""
+msgstr "אסימון האבטחה לא תומך בשיטת האימות שדורש השרת."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format

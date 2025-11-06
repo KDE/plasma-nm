@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 00:46+0000\n"
-"PO-Revision-Date: 2025-09-21 19:05+0300\n"
+"PO-Revision-Date: 2025-11-05 19:19+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: openconnectauth.cpp:345
 #, kde-format
@@ -495,6 +495,7 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"Güvenlik jetonu, sunucunun gereken kimlik doğrulama yöntemini desteklemiyor."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format

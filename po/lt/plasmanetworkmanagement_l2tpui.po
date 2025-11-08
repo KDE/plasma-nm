@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-10 00:40+0000\n"
-"PO-Revision-Date: 2021-06-15 23:27+0300\n"
+"PO-Revision-Date: 2025-11-07 21:53+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.8\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -283,7 +283,7 @@ msgid ""
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Nebūtina. Pasiūlymų sąrašas, skirtas ESP - greitajai "
-"veiksenai. Formatas yra \"enc-integ,enc-integ, …\".</p></body></html>"
+"veiksenai. Formatas yra „enc-integ,enc-integ, …“.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:261
@@ -316,7 +316,7 @@ msgid ""
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Nebūtina. Pasiūlymų sąrašas skirtas IKE - pagrindinei "
-"veiksenai. Formatas yra \"enc-integ-group,enc-integ-group, …\".</p></body></"
+"veiksenai. Formatas yra „enc-integ-group,enc-integ-group, …“.</p></body></"
 "html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)

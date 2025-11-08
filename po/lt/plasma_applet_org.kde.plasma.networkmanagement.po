@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-04 00:44+0000\n"
-"PO-Revision-Date: 2025-08-11 21:22+0300\n"
+"PO-Revision-Date: 2025-11-07 21:34+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -268,17 +268,13 @@ msgstr "Sukurti viešosios prieigos tašką"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wifi QR Code"
-msgstr ""
+msgstr "Skenuoti belaidžio tinklo QR kodą"
 
 #: Toolbar.qml:222
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wifi network"
-msgstr ""
-"Nuskenuokite šį QR kodą naudodami kitą įrenginį, kad prisijungtumėte prie "
-"„%1“ tinklo."
+msgstr "Skenuoti QR kodą, kad būtų prisijungta prie belaidžio (Wi-Fi) tinklo"
 
 #: Toolbar.qml:224
 #, kde-format
@@ -287,6 +283,8 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
 "network"
 msgstr ""
+"Įsidiekite QRCA brūkšninių kodų skaitytuvą, kad nuskenuotumėte QR kodą, "
+"kuris prijungia prie belaidžio (Wi-Fi) tinklo"
 
 #: Toolbar.qml:243
 #, kde-format

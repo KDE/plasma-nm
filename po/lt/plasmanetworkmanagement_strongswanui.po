@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-02-18 00:39+0000\n"
-"PO-Revision-Date: 2024-04-06 01:11+0300\n"
+"PO-Revision-Date: 2025-11-07 21:39+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.4.2\n"
+"X-Generator: Poedit 3.8\n"
 
 #: strongswanauth.cpp:59
 #, kde-format
@@ -187,7 +187,7 @@ msgstr "IKE:"
 #: strongswanprop.ui:335
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
-msgstr "Sąrašas pasiūlymų, skirtų IKE, atskirtas \";\""
+msgstr "Sąrašas pasiūlymų, skirtų IKE, atskirtas „;“"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: strongswanprop.ui:342
@@ -199,7 +199,7 @@ msgstr "ESP:"
 #: strongswanprop.ui:349
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr "Sąrašas pasiūlymų, skirtų ESP, atskirtas \";\""
+msgstr "Sąrašas pasiūlymų, skirtų ESP, atskirtas „;“"
 
 #~ msgid "Store"
 #~ msgstr "Saugoti"

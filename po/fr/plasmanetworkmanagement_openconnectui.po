@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 00:46+0000\n"
-"PO-Revision-Date: 2025-09-21 09:25+0200\n"
+"PO-Revision-Date: 2025-11-06 17:31+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
 "Language: fr\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.2\n"
 "X-Text-Markup: kde4\n"
 
 #: openconnectauth.cpp:345
@@ -507,6 +507,8 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"Le jeton de sécurité ne prend pas en charge la méthode d'authentification "
+"requise par le serveur."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format

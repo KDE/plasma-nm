@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-04 00:44+0000\n"
-"PO-Revision-Date: 2025-07-29 21:52+0200\n"
+"PO-Revision-Date: 2025-11-07 22:24+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -259,16 +259,13 @@ msgstr "Създаване на точка за достъп"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wifi QR Code"
-msgstr ""
+msgstr "Сканиране на код за Wifi"
 
 #: Toolbar.qml:222
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wifi network"
-msgstr ""
-"Сканирайте този QR код с друго устройство, за да се свържете с мрежата „%1“."
+msgstr "Сканирайте QR кода, за да се свържете с WiFi мрежата"
 
 #: Toolbar.qml:224
 #, kde-format
@@ -277,6 +274,8 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
 "network"
 msgstr ""
+"Инсталиране на QRCA Баркод скенер за сканиране за QR код, който се свързва с "
+"WiFi мрежа"
 
 #: Toolbar.qml:243
 #, kde-format

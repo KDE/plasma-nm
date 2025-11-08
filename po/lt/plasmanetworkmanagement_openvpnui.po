@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-24 00:43+0000\n"
-"PO-Revision-Date: 2024-01-11 16:29+0200\n"
+"PO-Revision-Date: 2025-11-07 21:58+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.8\n"
 
 #: openvpn.cpp:183
 #, kde-format
@@ -242,9 +242,9 @@ msgid ""
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
 "Jei naudojama rakto kryptis, ji privalo būti priešinga nei ta, kuri "
-"naudojama VPN lygiarangyje. Pavyzdžiui, jei lygiarangis naudoja \"1\", "
-"tuomet šis ryšys privalo naudoti \"0\". Jei nesate tikri kokią reikšmę "
-"naudoti, susisiekite su savo sistemos administratoriumi."
+"naudojama VPN lygiarangyje. Pavyzdžiui, jei lygiarangis naudoja „1“, tuomet "
+"šis ryšys privalo naudoti „0“. Jei nesate tikri kokią reikšmę naudoti, "
+"susisiekite su savo sistemos administratoriumi."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
@@ -424,7 +424,7 @@ msgid ""
 "\"tap\")."
 msgstr ""
 "Naudoti TUN/TAP virtualiam įrenginiui tinkintą pavadinimą (vietoj numatytojo "
-"\"tun\" ar \"tap\")."
+"„tun“ ar „tap“)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceName)
 #: openvpnadvanced.ui:197

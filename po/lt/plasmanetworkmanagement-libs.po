@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-06 08:07+0000\n"
-"PO-Revision-Date: 2025-08-11 21:29+0300\n"
+"PO-Revision-Date: 2025-11-07 21:49+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -878,7 +878,7 @@ msgstr "Užkardos zona:"
 #: editor/settings/ui/connectionwidget.ui:129
 #, kde-format
 msgid "Metered:"
-msgstr "Matuojamas:"
+msgstr "Ribotų duomenų:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:149
@@ -888,7 +888,7 @@ msgid ""
 "and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager nurodo programoms ar ryšys yra matuojamas ir todėl,\n"
+"NetworkManager nurodo programoms ar ryšys yra ribotų duomenų ir todėl,\n"
 "duomenų naudojimas turėtų būti apribotas."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
@@ -1056,7 +1056,7 @@ msgid ""
 "',' to separate entries."
 msgstr ""
 "Naudokite šį lauką, norėdami nurodyti vieno ar daugiau DNS serverių IP "
-"adresą(-us). Įrašų atskyrimui, naudokite \",\"."
+"adresą(-us). Įrašų atskyrimui, naudokite „,“."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv4.ui:125
@@ -1157,7 +1157,7 @@ msgid ""
 msgstr ""
 "IP adresai identifikuoja jūsų kompiuterį tinkle. Norėdami pridėti IP "
 "adresą,\n"
-"spustelėkite mygtuką \"Pridėti\""
+"spustelėkite mygtuką „Pridėti“"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:326
@@ -1708,7 +1708,7 @@ msgstr "Greitis:"
 #: editor/settings/ui/wiredconnectionwidget.ui:132
 #, kde-format
 msgid "Duplex:"
-msgstr "Abipusė:"
+msgstr "Abipusis:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:151
@@ -1717,20 +1717,20 @@ msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
 msgstr ""
-"Užklausti, kad įrenginys naudotų nurodytą abipusę veikseną. Arba \"Pilną\", "
-"arba \"Pusinę\""
+"Užklausti, kad įrenginys naudotų nurodytą abipusę veikseną. Arba „Visą“, "
+"arba „Dalinę“"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158
 #, kde-format
 msgid "Half"
-msgstr "Pusinė"
+msgstr "Dalinis"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:163
 #, kde-format
 msgid "Full"
-msgstr "Pilna"
+msgstr "Visas"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174
@@ -1746,10 +1746,10 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
-"Įrenginio saito derėjimasis. Jei pasirinkta \"Rankinė\", tuomet reikšmės "
-"\"Greitis\" ir \"Abipusė\" bus naudojamos priverstinai,\n"
+"Įrenginio saito derėjimasis. Jei pasirinkta „Rankinė“, tuomet reikšmės "
+"„Greitis“ ir „Abipusis“ bus naudojamos priverstinai,\n"
 "netikrinant įrenginio suderinamumo. Jei nesate tikri, palikite čia "
-"\"Nepaisyti\" arba pasirinkite \"Automatinis\"."
+"„Nepaisyti“ arba pasirinkite „Automatinis“."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -1876,7 +1876,7 @@ msgid ""
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
 "Nebūtina.\n"
-"Klausymosi prievado numeris. Jei palikta \"Automatinis\", bus parenkamas "
+"Klausymosi prievado numeris. Jei palikta „Automatinis“, bus parenkamas "
 "atsitiktinis prievadas."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
@@ -1895,9 +1895,9 @@ msgid ""
 "prepending '0x'."
 msgstr ""
 "Nebūtina.\n"
-"Išsiunčiamų paketų fwmark. Jei nustatyta 0 ar \"išjungta\", ši\n"
+"Išsiunčiamų paketų fwmark. Jei nustatyta 0 ar „išjungta“, ši\n"
 "parinktis bus išjungta. Gali būti nurodyta šešioliktainiais, prieš\n"
-"reikšmę pridedant \"0x\"."
+"reikšmę pridedant „0x“."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:101
@@ -2080,8 +2080,7 @@ msgstr ""
 "            gauti srautą iš lygiarangio ir, ji yra už NAT ribų,\n"
 "            tuomet sąsajai gali būti naudinga turėti pastovų\n"
 "            25 sekundžių palaikymo intervalą. Jei nustatyta\n"
-"            0 ar \"išjungta\", ši parinktis bus išjungta. Pagal numatymą "
-"arba\n"
+"            0 ar „išjungta“, ši parinktis bus išjungta. Pagal numatymą arba\n"
 "            nenurodžius, ši parinktis yra išjungta. Daugumai naudotojų šios\n"
 "            parinkties neprireiks."
 

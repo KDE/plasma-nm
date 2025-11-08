@@ -44,13 +44,17 @@ RowLayout {
         id: qrca
     }
 
-    spacing: Kirigami.Units.smallSpacing * 3
+    spacing: Kirigami.Units.smallSpacing
 
     RowLayout {
         // Add margin before switches for consistency with other applets
         Layout.leftMargin: Kirigami.Units.smallSpacing
 
-        spacing: parent.spacing
+        // Add margin after them to visually separate them from everything else
+        Layout.rightMargin: spacing - parent.spacing
+
+        // Larger than average to make it clear which icon belongs to which switch
+        spacing: Kirigami.Units.largeSpacing * 2
 
         // Only show when switches are visible (and avoid parent spacing otherwise)
         visible: availableDevices.wirelessDeviceAvailable || availableDevices.modemDeviceAvailable

@@ -214,14 +214,14 @@ RowLayout {
 
     PlasmaComponents3.ToolButton {
         icon.name: "view-barcode-qr"
-        text: i18nc("@action:button", "Scan Wifi QR Code")
+        text: i18nc("@action:button", "Scan Wi-Fi QR Code")
         enabled: qrca.available
         display: PlasmaComponents3.ToolButton.IconOnly
         Accessible.description: {
             if (qrca.available) {
-                return i18nc("@info:tooltip", "Scan QR Code to connect to a Wifi network");
+                return i18nc("@info:tooltip", "Scan QR Code to connect to a Wi-Fi network");
             } else {
-                return i18nc("@info:tooltip", "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi network")
+                return i18nc("@info:tooltip", "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi network")
             }
         }
 

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"POT-Creation-Date: 2025-11-09 00:44+0000\n"
 "PO-Revision-Date: 2025-11-07 21:34+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -166,7 +166,7 @@ msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 "Spustelėkite viduriniuoju pelės mygtuku, kad įjungtumėte lėktuvo veikseną"
 
-#: main.qml:71 Toolbar.qml:78
+#: main.qml:71 Toolbar.qml:82
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Įjungti belaidį (Wi-Fi)"
@@ -209,31 +209,31 @@ msgstr ""
 msgid "Wi-Fi password:"
 msgstr "Belaidžio tinklo (Wi-Fi) slaptažodis:"
 
-#: Toolbar.qml:127
+#: Toolbar.qml:131
 #, kde-format
 msgid "Enable mobile data"
 msgstr "Įjungti mobiliuosius duomenis"
 
-#: Toolbar.qml:152
+#: Toolbar.qml:156
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Išjungti lėktuvo veikseną<nl/><nl/>Tai įjungs belaidį (Wi-Fi) ir Bluetooth"
 
-#: Toolbar.qml:153
+#: Toolbar.qml:157
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Įjungti lėktuvo veikseną<nl/><nl/>Tai išjungs belaidį (Wi-Fi) ir Bluetooth"
 
-#: Toolbar.qml:166
+#: Toolbar.qml:170
 #, kde-format
 msgid "Hotspot"
 msgstr "Viešosios prieigos taškas"
 
-#: Toolbar.qml:183
+#: Toolbar.qml:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
@@ -241,7 +241,7 @@ msgstr ""
 "Nepavyksta sukurti viešosios prieigos tašką, nes išjungtas belaidis ryšys "
 "(Wi-Fi)."
 
-#: Toolbar.qml:185
+#: Toolbar.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -252,41 +252,49 @@ msgstr ""
 "imtuvai. Atsijunkite nuo dabartinio belaidžio tinklo (Wi-Fi) arba prijunkite "
 "kitą belaidį radijo imtuvą."
 
-#: Toolbar.qml:187
+#: Toolbar.qml:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Išjungti viešosios prieigos tašką"
 
-#: Toolbar.qml:189
+#: Toolbar.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Sukurti viešosios prieigos tašką"
 
-#: Toolbar.qml:217
-#, kde-format
+#: Toolbar.qml:221
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Scan Wifi QR Code"
 msgctxt "@action:button"
-msgid "Scan Wifi QR Code"
+msgid "Scan Wi-Fi QR Code"
 msgstr "Skenuoti belaidžio tinklo QR kodą"
 
-#: Toolbar.qml:222
-#, kde-format
+#: Toolbar.qml:226
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Scan QR Code to connect to a Wifi network"
 msgctxt "@info:tooltip"
-msgid "Scan QR Code to connect to a Wifi network"
+msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Skenuoti QR kodą, kad būtų prisijungta prie belaidžio (Wi-Fi) tinklo"
 
-#: Toolbar.qml:224
-#, kde-format
+#: Toolbar.qml:228
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Install QRCA Barcode Scanner to scan for a QR Code that connects to a "
+#| "Wifi network"
 msgctxt "@info:tooltip"
 msgid ""
-"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
+"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
 "Įsidiekite QRCA brūkšninių kodų skaitytuvą, kad nuskenuotumėte QR kodą, "
 "kuris prijungia prie belaidžio (Wi-Fi) tinklo"
 
-#: Toolbar.qml:243
+#: Toolbar.qml:247
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Konfigūruoti tinklo ryšius…"

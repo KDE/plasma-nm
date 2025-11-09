@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"POT-Creation-Date: 2025-11-09 00:44+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -164,7 +164,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: main.qml:71 Toolbar.qml:78
+#: main.qml:71 Toolbar.qml:82
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
@@ -211,36 +211,36 @@ msgstr ""
 msgid "Wi-Fi password:"
 msgstr "ពាក្យ​សម្ងាត់​សោ ៖"
 
-#: Toolbar.qml:127
+#: Toolbar.qml:131
 #, fuzzy, kde-format
 #| msgid "Username on this network"
 msgid "Enable mobile data"
 msgstr "ឈ្មោះ​អ្នក​ប្រើ​នៅ​លើ​បណ្ដាញ​នេះ"
 
-#: Toolbar.qml:152
+#: Toolbar.qml:156
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: Toolbar.qml:153
+#: Toolbar.qml:157
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 
-#: Toolbar.qml:166
+#: Toolbar.qml:170
 #, kde-format
 msgid "Hotspot"
 msgstr ""
 
-#: Toolbar.qml:183
+#: Toolbar.qml:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: Toolbar.qml:185
+#: Toolbar.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -248,14 +248,14 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: Toolbar.qml:187
+#: Toolbar.qml:191
 #, fuzzy, kde-format
 #| msgid "Disable &split tunnel"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "បិទ​ធ្យូនែល​ពុះ​"
 
-#: Toolbar.qml:189
+#: Toolbar.qml:193
 #, fuzzy, kde-format
 #| msgctxt "@action"
 #| msgid "Create Connection"
@@ -263,27 +263,27 @@ msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "ធ្វើ​ការ​តភ្ជាប់​"
 
-#: Toolbar.qml:217
+#: Toolbar.qml:221
 #, kde-format
 msgctxt "@action:button"
-msgid "Scan Wifi QR Code"
+msgid "Scan Wi-Fi QR Code"
 msgstr ""
 
-#: Toolbar.qml:222
+#: Toolbar.qml:226
 #, kde-format
 msgctxt "@info:tooltip"
-msgid "Scan QR Code to connect to a Wifi network"
+msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr ""
 
-#: Toolbar.qml:224
+#: Toolbar.qml:228
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
-"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
+"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
 
-#: Toolbar.qml:243
+#: Toolbar.qml:247
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgid "Configure network connections…"

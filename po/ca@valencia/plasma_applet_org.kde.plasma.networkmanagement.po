@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"POT-Creation-Date: 2025-11-09 00:44+0000\n"
 "PO-Revision-Date: 2025-11-04 13:02+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -161,7 +161,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Clic del mig per a activar el mode avió"
 
-#: main.qml:71 Toolbar.qml:78
+#: main.qml:71 Toolbar.qml:82
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activa la Wi-Fi"
@@ -204,35 +204,35 @@ msgstr ""
 msgid "Wi-Fi password:"
 msgstr "Contrasenya Wi-Fi:"
 
-#: Toolbar.qml:127
+#: Toolbar.qml:131
 #, kde-format
 msgid "Enable mobile data"
 msgstr "Activa les dades mòbils"
 
-#: Toolbar.qml:152
+#: Toolbar.qml:156
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Desactiva el mode avió<nl/><nl/>Açò activarà la Wi-Fi i Bluetooth"
 
-#: Toolbar.qml:153
+#: Toolbar.qml:157
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Activa el mode avió<nl/><nl/>Açò desactivarà la Wi-Fi i Bluetooth"
 
-#: Toolbar.qml:166
+#: Toolbar.qml:170
 #, kde-format
 msgid "Hotspot"
 msgstr "Punt d'accés"
 
-#: Toolbar.qml:183
+#: Toolbar.qml:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "No s'ha pogut crear un punt d'accés perquè la Wi-Fi està desactivada."
 
-#: Toolbar.qml:185
+#: Toolbar.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -243,41 +243,49 @@ msgstr ""
 "en ús. Desconnecteu de la xarxa Wi-Fi actual o connecteu una altra ràdio "
 "sense fil."
 
-#: Toolbar.qml:187
+#: Toolbar.qml:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Desactiva el punt d'accés"
 
-#: Toolbar.qml:189
+#: Toolbar.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Crea un punt d'accés"
 
-#: Toolbar.qml:217
-#, kde-format
+#: Toolbar.qml:221
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Scan Wifi QR Code"
 msgctxt "@action:button"
-msgid "Scan Wifi QR Code"
+msgid "Scan Wi-Fi QR Code"
 msgstr "Escaneja un codi QR de wifi"
 
-#: Toolbar.qml:222
-#, kde-format
+#: Toolbar.qml:226
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Scan QR Code to connect to a Wifi network"
 msgctxt "@info:tooltip"
-msgid "Scan QR Code to connect to a Wifi network"
+msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Escanegeu un codi QR per a connectar amb la xarxa wifi"
 
-#: Toolbar.qml:224
-#, kde-format
+#: Toolbar.qml:228
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Install QRCA Barcode Scanner to scan for a QR Code that connects to a "
+#| "Wifi network"
 msgctxt "@info:tooltip"
 msgid ""
-"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
+"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
 "Instal·leu l'escàner de codis de barres QRCA per a escanejar un codi QR que "
 "connecta amb una xarxa wifi"
 
-#: Toolbar.qml:243
+#: Toolbar.qml:247
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configura les connexions de xarxa…"

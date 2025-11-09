@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"POT-Creation-Date: 2025-11-09 00:44+0000\n"
 "PO-Revision-Date: 2025-11-05 18:24+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -158,7 +158,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "انقر بالزر الأوسط تفعيل نمط الطيران"
 
-#: main.qml:71 Toolbar.qml:78
+#: main.qml:71 Toolbar.qml:82
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "مكّن واي فاي"
@@ -199,35 +199,35 @@ msgstr "امحُ رمز QR هذا ضوئيًا باستخدام جهاز آخر 
 msgid "Wi-Fi password:"
 msgstr "كلمة سر واي-فاي:"
 
-#: Toolbar.qml:127
+#: Toolbar.qml:131
 #, kde-format
 msgid "Enable mobile data"
 msgstr "مكّن بيانات الجوال"
 
-#: Toolbar.qml:152
+#: Toolbar.qml:156
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "عطل وضع الطيران <nl/><nl/> هذا سيمكن الواي فاي و البلوتوث"
 
-#: Toolbar.qml:153
+#: Toolbar.qml:157
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "مكن وضع الطيران <nl/><nl/> هذا سيعطل الواي فاي و البلوتوث"
 
-#: Toolbar.qml:166
+#: Toolbar.qml:170
 #, kde-format
 msgid "Hotspot"
 msgstr "نقطة اتصال"
 
-#: Toolbar.qml:183
+#: Toolbar.qml:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "لا يمكن إنشاء نقطة اتصال لأن شبكة واي فاي معطلة."
 
-#: Toolbar.qml:185
+#: Toolbar.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -237,40 +237,48 @@ msgstr ""
 "لا يمكن إنشاء نقطة اتصال لأن جميع أجهزة الراديو اللاسلكية في الاستخدام. افصل "
 "شبكة واي فاي الحالية أو صِل راديو لاسلكي آخر."
 
-#: Toolbar.qml:187
+#: Toolbar.qml:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "عطّل نقطة الاتصال"
 
-#: Toolbar.qml:189
+#: Toolbar.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "أنشئ نقطة اتصال"
 
-#: Toolbar.qml:217
-#, kde-format
+#: Toolbar.qml:221
+#, fuzzy, kde-format
+#| msgctxt "@action:button"
+#| msgid "Scan Wifi QR Code"
 msgctxt "@action:button"
-msgid "Scan Wifi QR Code"
+msgid "Scan Wi-Fi QR Code"
 msgstr "امسح شفرة شبكة لا سلكية"
 
-#: Toolbar.qml:222
-#, kde-format
+#: Toolbar.qml:226
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Scan QR Code to connect to a Wifi network"
 msgctxt "@info:tooltip"
-msgid "Scan QR Code to connect to a Wifi network"
+msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "امسح رمز الاستجابة السريعة للاتصال بشبكة واي فاي"
 
-#: Toolbar.qml:224
-#, kde-format
+#: Toolbar.qml:228
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Install QRCA Barcode Scanner to scan for a QR Code that connects to a "
+#| "Wifi network"
 msgctxt "@info:tooltip"
 msgid ""
-"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
+"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
 "ثبّت ماسح الرمز QRCA لمسح رمز الاستجابة السريعة الذي يتصل بشبكة واي فاي."
 
-#: Toolbar.qml:243
+#: Toolbar.qml:247
 #, kde-format
 msgid "Configure network connections…"
 msgstr "اضبط اتّصالات الشّبكة..."

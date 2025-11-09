@@ -6,13 +6,14 @@
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2017, 2019, 2020, 2021, 2022, 2023.
 # SPDX-FileCopyrightText: 2024, 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
 # SPDX-FileCopyrightText: 2025 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-05 00:46+0000\n"
-"PO-Revision-Date: 2025-11-05 07:41-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
+"PO-Revision-Date: 2025-11-08 21:10-0300\n"
+"Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +30,7 @@ msgstr "Não foi possível inicializar o token do software: %1"
 #: openconnectauth.cpp:398
 #, kde-format
 msgid "Contacting host, please wait…"
-msgstr "Contactando a máquina, aguarde..."
+msgstr "Contactando a máquina, aguarde…"
 
 #: openconnectauth.cpp:786
 #, kde-format

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-01-24 00:43+0000\n"
-"PO-Revision-Date: 2025-02-27 20:06-0300\n"
+"PO-Revision-Date: 2025-11-08 21:10-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: openvpn.cpp:183
 #, kde-format
@@ -281,7 +281,7 @@ msgstr "Senha passada ao OpenVPN, quando for solicitada."
 #: openvpn.ui:643
 #, kde-format
 msgid "Advanced…"
-msgstr "Avançado..."
+msgstr "Avançado…"
 
 #. i18n: ectx: attribute (title), widget (QWidget, generalTab)
 #: openvpnadvanced.ui:28
@@ -641,7 +641,7 @@ msgstr "Cifra:"
 #: openvpnadvanced.ui:513
 #, kde-format
 msgid "Obtaining available ciphers…"
-msgstr "Obtendo cifras disponíveis..."
+msgstr "Obtendo cifras disponíveis…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
+"POT-Creation-Date: 2025-11-09 00:44+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -155,7 +155,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "中键单击以启用飞行模式"
 
-#: main.qml:71 Toolbar.qml:78
+#: main.qml:71 Toolbar.qml:82
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "启用 Wi-Fi"
@@ -196,35 +196,35 @@ msgstr "使用另一个设备扫描此二维码以连接到“%1”网络。"
 msgid "Wi-Fi password:"
 msgstr "Wi-Fi 密码："
 
-#: Toolbar.qml:127
+#: Toolbar.qml:131
 #, kde-format
 msgid "Enable mobile data"
 msgstr "启用移动数据"
 
-#: Toolbar.qml:152
+#: Toolbar.qml:156
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "禁用飞行模式<nl/><nl/>这将启用 Wi-Fi 和蓝牙"
 
-#: Toolbar.qml:153
+#: Toolbar.qml:157
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "启用飞行模式<nl/><nl/>这将禁用 Wi-Fi 和蓝牙"
 
-#: Toolbar.qml:166
+#: Toolbar.qml:170
 #, kde-format
 msgid "Hotspot"
 msgstr "热点"
 
-#: Toolbar.qml:183
+#: Toolbar.qml:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "无法创建热点，因为 Wi-Fi 已被禁用。"
 
-#: Toolbar.qml:185
+#: Toolbar.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -234,50 +234,47 @@ msgstr ""
 "无法创建热点，因为所有无线网卡都在使用中。请断开当前 Wi-Fi 网络或插入另一块无"
 "线网卡。"
 
-#: Toolbar.qml:187
+#: Toolbar.qml:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "禁用热点"
 
-#: Toolbar.qml:189
+#: Toolbar.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "创建热点"
 
-#: Toolbar.qml:217
-#, kde-format
-msgctxt "@action:button"
-msgid "Scan Wifi QR Code"
-msgstr ""
-
-#: Toolbar.qml:222
+#: Toolbar.qml:221
 #, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
-msgctxt "@info:tooltip"
-msgid "Scan QR Code to connect to a Wifi network"
-msgstr "使用另一个设备扫描此二维码以连接到“%1”网络。"
+#| msgctxt "@action:button"
+#| msgid "Scan Wifi QR Code"
+msgctxt "@action:button"
+msgid "Scan Wi-Fi QR Code"
+msgstr "扫描 WiFi 二维码"
 
-#: Toolbar.qml:224
-#, kde-format
+#: Toolbar.qml:226
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Scan QR Code to connect to a Wifi network"
+msgctxt "@info:tooltip"
+msgid "Scan QR Code to connect to a Wi-Fi network"
+msgstr "扫描二维码以连接到 WiFi 网络"
+
+#: Toolbar.qml:228
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Install QRCA Barcode Scanner to scan for a QR Code that connects to a "
+#| "Wifi network"
 msgctxt "@info:tooltip"
 msgid ""
-"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
+"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
-msgstr ""
+msgstr "安装 QRCA 条码扫描器以扫描用于连接 WiFi 网络的二维码"
 
-#: Toolbar.qml:243
+#: Toolbar.qml:247
 #, kde-format
 msgid "Configure network connections…"
 msgstr "配置网络连接…"
-
-#~ msgid "/s"
-#~ msgstr "/s"
-
-#~ msgid "Upload"
-#~ msgstr "上传"
-
-#~ msgid "Download"
-#~ msgstr "下载"

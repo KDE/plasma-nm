@@ -486,7 +486,7 @@ msgstr "身份验证设备缺少大数据块支持"
 msgid ""
 "The security token does not support the server’s required authentication "
 "method."
-msgstr ""
+msgstr "此安全令牌不支持服务器要求的身份验证方法。"
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
@@ -543,6 +543,3 @@ msgstr "确认 PIN 码"
 #, kde-format
 msgid "TextLabel"
 msgstr "文本标签"
-
-#~ msgid "No common algorithms"
-#~ msgstr "没有常用算法"

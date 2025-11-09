@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-04 00:44+0000\n"
-"PO-Revision-Date: 2025-08-16 07:38+0200\n"
+"POT-Creation-Date: 2025-11-09 00:44+0000\n"
+"PO-Revision-Date: 2025-11-08 09:20+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -157,7 +157,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Kliknij środkowym, aby włączyć tryb samolotowy"
 
-#: main.qml:71 Toolbar.qml:78
+#: main.qml:71 Toolbar.qml:82
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Włącz Wi-Fi"
@@ -198,35 +198,35 @@ msgstr "Zeskanuj kod QR innym urządzeniem, aby podłączyć się do sieci \"%1\
 msgid "Wi-Fi password:"
 msgstr "Hasło Wi-Fi:"
 
-#: Toolbar.qml:127
+#: Toolbar.qml:131
 #, kde-format
 msgid "Enable mobile data"
 msgstr "Włącz dane komórkowe"
 
-#: Toolbar.qml:152
+#: Toolbar.qml:156
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Wyłącz tryb samolotowy<nl/><nl/>Wi-Fi i Bluetooth zostanie włączony"
 
-#: Toolbar.qml:153
+#: Toolbar.qml:157
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Włącz tryb samolotowy<nl/><nl/>Wi-Fi i Bluetooth zostanie wyłączony"
 
-#: Toolbar.qml:166
+#: Toolbar.qml:170
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: Toolbar.qml:183
+#: Toolbar.qml:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "Nie można utworzyć hotspota, bo Wi-Fi jest wyłączone."
 
-#: Toolbar.qml:185
+#: Toolbar.qml:189
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -237,41 +237,49 @@ msgstr ""
 "Zerwij połączenie z bieżącą siecią Wi-Fi lub podłącz inne radio "
 "bezprzewodowe."
 
-#: Toolbar.qml:187
+#: Toolbar.qml:191
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Wyłącz Hotspot"
 
-#: Toolbar.qml:189
+#: Toolbar.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Utwórz Hotspot"
 
-#: Toolbar.qml:217
-#, kde-format
-msgctxt "@action:button"
-msgid "Scan Wifi QR Code"
-msgstr ""
-
-#: Toolbar.qml:222
+#: Toolbar.qml:221
 #, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
-msgctxt "@info:tooltip"
-msgid "Scan QR Code to connect to a Wifi network"
-msgstr "Zeskanuj kod QR innym urządzeniem, aby podłączyć się do sieci \"%1\"."
+#| msgctxt "@action:button"
+#| msgid "Scan Wifi QR Code"
+msgctxt "@action:button"
+msgid "Scan Wi-Fi QR Code"
+msgstr "Zeskanuj kod QR WiFi"
 
-#: Toolbar.qml:224
-#, kde-format
+#: Toolbar.qml:226
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid "Scan QR Code to connect to a Wifi network"
+msgctxt "@info:tooltip"
+msgid "Scan QR Code to connect to a Wi-Fi network"
+msgstr "Zeskanuj kod QR, aby podłączyć się do sieci WiFi"
+
+#: Toolbar.qml:228
+#, fuzzy, kde-format
+#| msgctxt "@info:tooltip"
+#| msgid ""
+#| "Install QRCA Barcode Scanner to scan for a QR Code that connects to a "
+#| "Wifi network"
 msgctxt "@info:tooltip"
 msgid ""
-"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wifi "
+"Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
+"Wgraj skaner kodów kreskowych QRCA, aby zeskanować kod QR, który umożliwi "
+"połączenie do sieci WiFi"
 
-#: Toolbar.qml:243
+#: Toolbar.qml:247
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Ustawienia połączeń sieciowych…"

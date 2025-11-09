@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2024-06-10 00:40+0000\n"
-"PO-Revision-Date: 2025-02-27 20:09-0300\n"
+"PO-Revision-Date: 2025-11-08 21:17-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 24.12.2\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -180,13 +180,13 @@ msgstr ""
 #: l2tp.ui:292
 #, kde-format
 msgid "IPsec Settings…"
-msgstr "Configuração do IPsec..."
+msgstr "Configuração do IPsec…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPPPSettings)
 #: l2tp.ui:299
 #, kde-format
 msgid "PPP Settings…"
-msgstr "Configuração do PPP..."
+msgstr "Configuração do PPP…"
 
 #: l2tpauth.cpp:63
 #, kde-format

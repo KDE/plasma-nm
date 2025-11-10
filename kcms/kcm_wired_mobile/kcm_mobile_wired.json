@@ -20,6 +20,7 @@
         "Description[ta]": "கம்பி பிணையத்திற்கான அமைப்புகள்",
         "Description[tr]": "Kablolu ağ ayarları",
         "Description[uk]": "Налаштовування дротової мережі",
+        "Description[zh_CN]": "有线网络设置",
         "FormFactors": [
             "handset",
             "tablet",
@@ -44,7 +45,8 @@
         "Name[sv]": "Trådbundet nätverk",
         "Name[ta]": "கம்பி இணைப்பு",
         "Name[tr]": "Kablolu Ağ",
-        "Name[uk]": "Дротова мережа "
+        "Name[uk]": "Дротова мережа ",
+        "Name[zh_CN]": "有线网络"
     },
     "X-KDE-Keywords": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking",
     "X-KDE-Keywords[ar]": "سلكي,شبكة,إيثرنت,cat5,cat6,IP,عنوان,DHCP,اتصال,كابل,شبكات",
@@ -65,6 +67,7 @@
     "X-KDE-Keywords[ta]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking, கம்பி, பிணையம், இணையம், முகவரி, இணைப்பு, பிணையமாக்கம், இணையமாக்கம்",
     "X-KDE-Keywords[tr]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking,kablolu,ağ,adres,bağlantı,kablo",
     "X-KDE-Keywords[uk]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking,дротова,мережа,езернет,айпі,адреса,діейчсіпі,з'єднання,кабель,мережевий",
+    "X-KDE-Keywords[zh_CN]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking,youxian,wangluo,juyuwang,yitaiwang,wulei,liulei,dizhi,zidonghuoqu,lianjie,wangxian,lianwang,有线,网络,局域网,以太网,五类,六类,地址,自动获取,连接,网线,联网",
     "X-KDE-System-Settings-Parent-Category": "network",
     "X-KDE-Weight": 70
 }

@@ -552,6 +552,3 @@ msgstr "Потвърдете PIN"
 #, kde-format
 msgid "TextLabel"
 msgstr "Текстов етикет"
-
-#~ msgid "No common algorithms"
-#~ msgstr "Няма общи алгоритми"

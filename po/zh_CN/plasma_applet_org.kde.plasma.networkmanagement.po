@@ -247,32 +247,24 @@ msgid "Create Hotspot"
 msgstr "创建热点"
 
 #: Toolbar.qml:221
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Scan Wifi QR Code"
+#, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr "扫描 WiFi 二维码"
+msgstr ""
 
 #: Toolbar.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Scan QR Code to connect to a Wifi network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr "扫描二维码以连接到 WiFi 网络"
+msgstr ""
 
 #: Toolbar.qml:228
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Install QRCA Barcode Scanner to scan for a QR Code that connects to a "
-#| "Wifi network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
-msgstr "安装 QRCA 条码扫描器以扫描用于连接 WiFi 网络的二维码"
+msgstr ""
 
 #: Toolbar.qml:247
 #, kde-format

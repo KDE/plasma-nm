@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-09 00:44+0000\n"
-"PO-Revision-Date: 2025-11-07 22:24+0100\n"
+"PO-Revision-Date: 2025-11-09 14:00+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -256,48 +256,28 @@ msgid "Create Hotspot"
 msgstr "Създаване на точка за достъп"
 
 #: Toolbar.qml:221
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Scan Wifi QR Code"
+#, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr "Сканиране на код за Wifi"
+msgstr "Сканиране на код за Wi-Fi"
 
 #: Toolbar.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Scan QR Code to connect to a Wifi network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr "Сканирайте QR кода, за да се свържете с WiFi мрежата"
+msgstr "Сканирайте QR кода, за да се свържете с Wi-Fi мрежата"
 
 #: Toolbar.qml:228
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Install QRCA Barcode Scanner to scan for a QR Code that connects to a "
-#| "Wifi network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
 "Инсталиране на QRCA Баркод скенер за сканиране за QR код, който се свързва с "
-"WiFi мрежа"
+"Wi-Fi мрежа"
 
 #: Toolbar.qml:247
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Конфигуриране на мрежови връзки…"
-
-#~ msgid "/s"
-#~ msgstr "/s"
-
-#~ msgid "Upload"
-#~ msgstr "Качване"
-
-#~ msgid "Download"
-#~ msgstr "Изтегляне"
-
-#~ msgid "Show Network's QR Code"
-#~ msgstr "Показване на QR кода на мрежата"

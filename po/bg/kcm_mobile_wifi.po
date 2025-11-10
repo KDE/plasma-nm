@@ -223,27 +223,3 @@ msgstr "DNS"
 #, kde-format
 msgid "Password…"
 msgstr "Парола…"
-
-#~ msgid "Connect"
-#~ msgstr "Свързване"
-
-#~ msgid "Disconnect"
-#~ msgstr "Прекъсване"
-
-#~ msgid "Configure"
-#~ msgstr "Настройване"
-
-#~ msgid "Delete"
-#~ msgstr "Изтриване"
-
-#~ msgid "Connect to"
-#~ msgstr "Свързване с"
-
-#~ msgid "/s"
-#~ msgstr "/s"
-
-#~ msgid "Upload"
-#~ msgstr "Качване"
-
-#~ msgid "Download"
-#~ msgstr "Изтегляне"

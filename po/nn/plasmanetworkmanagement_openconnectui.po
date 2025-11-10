@@ -555,6 +555,3 @@ msgstr "Stadfest PIN-kode"
 #, kde-format
 msgid "TextLabel"
 msgstr "Tekstmerkelapp"
-
-#~ msgid "No common algorithms"
-#~ msgstr "Ingen felles algoritmar"

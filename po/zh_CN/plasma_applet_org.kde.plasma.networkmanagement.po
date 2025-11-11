@@ -250,13 +250,13 @@ msgstr "创建热点"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr ""
+msgstr "扫描 Wi-Fi 二维码"
 
 #: Toolbar.qml:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr ""
+msgstr "扫描二维码以连接到 Wi-Fi 网络"
 
 #: Toolbar.qml:228
 #, kde-format
@@ -264,7 +264,7 @@ msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
-msgstr ""
+msgstr "安装 QRCA 条码扫描器以扫描用于连接 Wi-Fi 网络的二维码"
 
 #: Toolbar.qml:247
 #, kde-format

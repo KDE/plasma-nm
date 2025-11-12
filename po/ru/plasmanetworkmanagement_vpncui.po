@@ -4,13 +4,13 @@
 # Victor Ryzhykh <victorr2007@yandex.ru>, 2014.
 # Alexander Lakhin <exclusion@gmail.com>, 2014.
 # Alexander Potashev <aspotashev@gmail.com>, 2014, 2016, 2018.
-# SPDX-FileCopyrightText: 2021, 2023, 2024 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2023, 2024, 2025 Alexander Yavorsky <kekcuha@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-09-19 00:44+0000\n"
-"PO-Revision-Date: 2024-02-07 11:37+0300\n"
+"PO-Revision-Date: 2025-10-30 19:58+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 25.08.2\n"
 
 #: vpnc.cpp:73
 #, kde-format
@@ -281,7 +281,7 @@ msgstr "Netscreen"
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Fortigate"
-msgstr ""
+msgstr "Fortigate"
 
 #: vpncadvancedwidget.cpp:28
 #, kde-format

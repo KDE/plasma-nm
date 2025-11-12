@@ -24,8 +24,8 @@ QQC2.ItemDelegate {
     property bool predictableWirelessPassword: !model.Uuid && model.Type === PlasmaNM.Enums.Wireless && passwordIsStatic
     property bool isUnknownNewConnection: model.ItemType !== PlasmaNM.NetworkModelItem.UnavailableConnection && delegate.isConnectionDeactivated() && !model.ConnectionPath
 
-    // QQC2.ItemDelegate exposes the label text property, but not textFormat, it's possible for model.Name to contain unescaped HTML
-    // therefore we need to escape it manually, going via i18n is a way to use something pre-exposed to QML
+    // QQC2.ItemDelegate exposes the label text property, but not textFormat, so it's possible for model.Name to contain unescaped HTML.
+    // Therefore we need to escape it manually. Going via i18n is a way to use something pre-exposed to QML.
     text: xi18nc("@label/rich", "%1", model.Name)
 
     property string subtitle: itemText()

@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-09 00:44+0000\n"
-"PO-Revision-Date: 2025-11-04 13:02+0100\n"
+"PO-Revision-Date: 2025-11-09 09:42+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -256,34 +256,26 @@ msgid "Create Hotspot"
 msgstr "Crea un punt d'accés"
 
 #: Toolbar.qml:221
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Scan Wifi QR Code"
+#, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr "Escaneja un codi QR de wifi"
+msgstr "Escaneja un codi QR de Wi-Fi"
 
 #: Toolbar.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Scan QR Code to connect to a Wifi network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr "Escanegeu un codi QR per a connectar amb la xarxa wifi"
+msgstr "Escanegeu un codi QR per a connectar amb la xarxa Wi-Fi"
 
 #: Toolbar.qml:228
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Install QRCA Barcode Scanner to scan for a QR Code that connects to a "
-#| "Wifi network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
 "Instal·leu l'escàner de codis de barres QRCA per a escanejar un codi QR que "
-"connecta amb una xarxa wifi"
+"connecta amb una xarxa Wi-Fi"
 
 #: Toolbar.qml:247
 #, kde-format

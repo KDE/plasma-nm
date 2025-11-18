@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-18 00:45+0000\n"
 "PO-Revision-Date: 2017-10-30 23:08+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -156,38 +156,44 @@ msgid ""
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
 
-#: qml/ConnectionItem.qml:82
+#. i18n is a way to use something pre-exposed to QML.
+#: qml/ConnectionItem.qml:29
+msgctxt "@label/rich"
+msgid "%1"
+msgstr ""
+
+#: qml/ConnectionItem.qml:85
 msgid "Connect"
 msgstr "Poveži se"
 
-#: qml/ConnectionItem.qml:82
+#: qml/ConnectionItem.qml:85
 msgid "Disconnect"
 msgstr "Prekini vezu"
 
-#: qml/ConnectionItem.qml:87
+#: qml/ConnectionItem.qml:90
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr ""
 
-#: qml/ConnectionItem.qml:92
+#: qml/ConnectionItem.qml:95
 msgid "Delete"
 msgstr "Obriši"
 
-#: qml/ConnectionItem.qml:103
+#: qml/ConnectionItem.qml:106
 msgid "Export"
 msgstr "Izvezi"
 
 # >> @item
-#: qml/ConnectionItem.qml:117
+#: qml/ConnectionItem.qml:120
 msgid "Connected"
 msgstr "povezan"
 
 # >> @item
-#: qml/ConnectionItem.qml:119
+#: qml/ConnectionItem.qml:122
 msgid "Connecting"
 msgstr "u povezivanju"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:124
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr ""

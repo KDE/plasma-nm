@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-18 00:45+0000\n"
 "PO-Revision-Date: 2025-08-19 05:25+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -146,36 +146,42 @@ msgstr ""
 "</li><li>長度為剛好 10 或 26 個 16 進位字元，亦即：<br/>abcdef、ABCDEF 或 "
 "0-9</li></ul>"
 
-#: qml/ConnectionItem.qml:82
+#. i18n is a way to use something pre-exposed to QML.
+#: qml/ConnectionItem.qml:29
+msgctxt "@label/rich"
+msgid "%1"
+msgstr ""
+
+#: qml/ConnectionItem.qml:85
 msgid "Connect"
 msgstr "連線"
 
-#: qml/ConnectionItem.qml:82
+#: qml/ConnectionItem.qml:85
 msgid "Disconnect"
 msgstr "斷線"
 
-#: qml/ConnectionItem.qml:87
+#: qml/ConnectionItem.qml:90
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "無法連線到此網路，因為它未被偵測到。"
 
-#: qml/ConnectionItem.qml:92
+#: qml/ConnectionItem.qml:95
 msgid "Delete"
 msgstr "刪除"
 
-#: qml/ConnectionItem.qml:103
+#: qml/ConnectionItem.qml:106
 msgid "Export"
 msgstr "匯出"
 
-#: qml/ConnectionItem.qml:117
+#: qml/ConnectionItem.qml:120
 msgid "Connected"
 msgstr "已連線"
 
-#: qml/ConnectionItem.qml:119
+#: qml/ConnectionItem.qml:122
 msgid "Connecting"
 msgstr "連線中"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:124
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "可用"

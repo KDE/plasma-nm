@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-18 00:45+0000\n"
 "PO-Revision-Date: 2025-08-10 22:01+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -147,36 +147,42 @@ msgstr ""
 "<ul><li>5 محارف أو 13 بالضبط</li><li> 10 أو 26 بالضبط محرف سداسي عشر:<br/"
 ">abcdef أو ABCDEF أو 0-9</li></ul>"
 
-#: qml/ConnectionItem.qml:82
+#. i18n is a way to use something pre-exposed to QML.
+#: qml/ConnectionItem.qml:29
+msgctxt "@label/rich"
+msgid "%1"
+msgstr ""
+
+#: qml/ConnectionItem.qml:85
 msgid "Connect"
 msgstr "اتّصل"
 
-#: qml/ConnectionItem.qml:82
+#: qml/ConnectionItem.qml:85
 msgid "Disconnect"
 msgstr "اقطع الاتصال"
 
-#: qml/ConnectionItem.qml:87
+#: qml/ConnectionItem.qml:90
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "يتعذر الاتصال بهذه الشبكة لأنه لم يجدها."
 
-#: qml/ConnectionItem.qml:92
+#: qml/ConnectionItem.qml:95
 msgid "Delete"
 msgstr "احذف"
 
-#: qml/ConnectionItem.qml:103
+#: qml/ConnectionItem.qml:106
 msgid "Export"
 msgstr "صدّر"
 
-#: qml/ConnectionItem.qml:117
+#: qml/ConnectionItem.qml:120
 msgid "Connected"
 msgstr "متّصل"
 
-#: qml/ConnectionItem.qml:119
+#: qml/ConnectionItem.qml:122
 msgid "Connecting"
 msgstr "يتّصل"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:124
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "متوفّرة"

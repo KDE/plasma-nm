@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-18 00:45+0000\n"
 "PO-Revision-Date: 2025-08-07 09:06+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -150,36 +150,42 @@ msgstr ""
 "li><li>Exactament 10 o 26 caràcters hexadecimals:<br/>abcdef, ABCDEF o 0-9</"
 "li></ul>"
 
-#: qml/ConnectionItem.qml:82
+#. i18n is a way to use something pre-exposed to QML.
+#: qml/ConnectionItem.qml:29
+msgctxt "@label/rich"
+msgid "%1"
+msgstr ""
+
+#: qml/ConnectionItem.qml:85
 msgid "Connect"
 msgstr "Connecta"
 
-#: qml/ConnectionItem.qml:82
+#: qml/ConnectionItem.qml:85
 msgid "Disconnect"
 msgstr "Desconnecta"
 
-#: qml/ConnectionItem.qml:87
+#: qml/ConnectionItem.qml:90
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "No s'ha pogut connectar a aquesta xarxa perquè no s'ha detectat."
 
-#: qml/ConnectionItem.qml:92
+#: qml/ConnectionItem.qml:95
 msgid "Delete"
 msgstr "Suprimeix"
 
-#: qml/ConnectionItem.qml:103
+#: qml/ConnectionItem.qml:106
 msgid "Export"
 msgstr "Exporta"
 
-#: qml/ConnectionItem.qml:117
+#: qml/ConnectionItem.qml:120
 msgid "Connected"
 msgstr "Connectat"
 
-#: qml/ConnectionItem.qml:119
+#: qml/ConnectionItem.qml:122
 msgid "Connecting"
 msgstr "Connectant"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:124
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Disponible"

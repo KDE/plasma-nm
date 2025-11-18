@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-18 00:45+0000\n"
 "PO-Revision-Date: 2025-09-03 18:29+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -145,36 +145,42 @@ msgstr ""
 "13 mitä tahansa merkkiä</li><li>tasan 10–26 heksadesimaalinumeroa:<br/"
 ">abcdef, ABCDEF tai 0–0</li></ul>"
 
-#: qml/ConnectionItem.qml:82
+#. i18n is a way to use something pre-exposed to QML.
+#: qml/ConnectionItem.qml:29
+msgctxt "@label/rich"
+msgid "%1"
+msgstr ""
+
+#: qml/ConnectionItem.qml:85
 msgid "Connect"
 msgstr "Yhdistä"
 
-#: qml/ConnectionItem.qml:82
+#: qml/ConnectionItem.qml:85
 msgid "Disconnect"
 msgstr "Katkaise yhteys"
 
-#: qml/ConnectionItem.qml:87
+#: qml/ConnectionItem.qml:90
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "Tähän verkkoon ei voi yhdistää, koska sitä ei havaittu."
 
-#: qml/ConnectionItem.qml:92
+#: qml/ConnectionItem.qml:95
 msgid "Delete"
 msgstr "Poista"
 
-#: qml/ConnectionItem.qml:103
+#: qml/ConnectionItem.qml:106
 msgid "Export"
 msgstr "Vie"
 
-#: qml/ConnectionItem.qml:117
+#: qml/ConnectionItem.qml:120
 msgid "Connected"
 msgstr "Yhteydessä"
 
-#: qml/ConnectionItem.qml:119
+#: qml/ConnectionItem.qml:122
 msgid "Connecting"
 msgstr "Yhdistetään"
 
-#: qml/ConnectionItem.qml:121
+#: qml/ConnectionItem.qml:124
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Käytettävissä"

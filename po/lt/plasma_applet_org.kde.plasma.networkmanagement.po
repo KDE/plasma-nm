@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-11-07 21:34+0200\n"
+"PO-Revision-Date: 2025-11-19 20:20+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -265,27 +265,19 @@ msgid "Create Hotspot"
 msgstr "Sukurti viešosios prieigos tašką"
 
 #: Toolbar.qml:221
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Scan Wifi QR Code"
+#, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr "Skenuoti belaidžio tinklo QR kodą"
+msgstr "Skenuoti belaidžio tinklo (Wi-Fi) QR kodą"
 
 #: Toolbar.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Scan QR Code to connect to a Wifi network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Skenuoti QR kodą, kad būtų prisijungta prie belaidžio (Wi-Fi) tinklo"
 
 #: Toolbar.qml:228
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Install QRCA Barcode Scanner to scan for a QR Code that connects to a "
-#| "Wifi network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "

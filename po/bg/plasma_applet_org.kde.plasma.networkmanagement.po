@@ -274,6 +274,3 @@ msgstr "Качване"
 #, kde-format
 msgid "Download"
 msgstr "Изтегляне"
-
-#~ msgid "Show Network's QR Code"
-#~ msgstr "Показване на QR кода на мрежата"

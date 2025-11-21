@@ -235,9 +235,3 @@ msgstr "Паролата трябва да бъде валиден WEP ключ"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Паролата трябва да бъде между 8 и 64 знака"
-
-#~ msgid "Create"
-#~ msgstr "Създаване"
-
-#~ msgid "Cancel"
-#~ msgstr "Отказ"

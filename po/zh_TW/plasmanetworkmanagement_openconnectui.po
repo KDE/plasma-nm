@@ -4,13 +4,13 @@
 # Franklin, 2014, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2019.
-# SPDX-FileCopyrightText: 2023, 2024 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:42+0000\n"
-"PO-Revision-Date: 2024-11-11 16:21+0900\n"
+"PO-Revision-Date: 2025-11-20 21:14+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #: openconnectauth.cpp:346
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr "無法初始化軟體憑證：%1"
+msgstr "無法初始化軟體權杖：%1"
 
 #: openconnectauth.cpp:399
 #, kde-format
@@ -311,31 +311,31 @@ msgstr "不允許使用者手動接受無效憑證"
 #: openconnectprop.ui:351
 #, kde-format
 msgid "Token Authentication"
-msgstr "憑證認證"
+msgstr "權杖認證"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenConnectToken)
 #: openconnecttoken.ui:14
 #, kde-format
 msgid "OpenConnect OTP Tokens"
-msgstr "OpenConnect OTP 憑證"
+msgstr "OpenConnect OTP 權杖"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbToken)
 #: openconnecttoken.ui:20
 #, kde-format
 msgid "Software Token Authentication"
-msgstr "軟體憑證認證"
+msgstr "軟體權杖認證"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnecttoken.ui:26
 #, kde-format
 msgid "Token Mode:"
-msgstr "憑證模式："
+msgstr "權杖模式："
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnecttoken.ui:43
 #, kde-format
 msgid "Token Secret:"
-msgstr "憑證密碼："
+msgstr "權杖密碼："
 
 #: openconnectwebauthdialog.cpp:111
 #, kde-format

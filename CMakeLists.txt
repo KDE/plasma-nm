@@ -98,6 +98,10 @@ set_package_properties(KF6Prison PROPERTIES DESCRIPTION "Prison library"
                        PURPOSE "Needed to create mobile barcodes for WiFi networks"
                       )
 
+find_package(KF6QuickCharts ${KF6_MIN_VERSION} CONFIG)
+set_package_properties(KF6QuickCharts PROPERTIES
+                       TYPE RUNTIME)
+
 pkg_check_modules(NETWORKMANAGER IMPORTED_TARGET libnm>1.4.0 REQUIRED)
 pkg_check_modules(MOBILEBROADBANDPROVIDERINFO mobile-broadband-provider-info)
 pkg_get_variable(BROADBANDPROVIDER_DATABASE mobile-broadband-provider-info database)

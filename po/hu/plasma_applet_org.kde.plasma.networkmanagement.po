@@ -3,13 +3,13 @@
 #
 # Balázs Úr <urbalazs@gmail.com>, 2013, 2014.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2014, 2019, 2020.
-# SPDX-FileCopyrightText: 2021, 2023, 2024 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2023, 2024, 2025 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2024-11-13 22:25+0100\n"
+"PO-Revision-Date: 2025-11-21 21:37+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.3\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -33,7 +33,7 @@ msgstr "Kapcsolat bontása"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "Megosztás"
 
 #: ConnectionItem.qml:96
 #, kde-format
@@ -61,11 +61,10 @@ msgstr ""
 "feltöltési sebesség %2 kibibájt másodpercenként"
 
 #: ConnectionItem.qml:298
-#, fuzzy, kde-format
-#| msgid "Connected, ↓ %1/s, ↑ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Kapcsolódva, ↓ %1/s, ↑ %2/s"
+msgstr "↓ %1/s, ↑ %2/s"
 
 #: ConnectionListPage.qml:33
 #, kde-format
@@ -84,27 +83,24 @@ msgid "Airplane mode is enabled"
 msgstr "Repülős üzemmód bekapcsolva"
 
 #: ConnectionListPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Vezeték nélküli és mobilhálózatok deaktiválva"
+msgstr "Wi-Fi és mobil adatkapcsolat deaktiválva"
 
 #: ConnectionListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "Vezeték nélküli deaktiválva"
+msgstr "Wi-Fi deaktiválva"
 
 #: ConnectionListPage.qml:127
 #, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr ""
+msgstr "Wi-Fi hálózatok keresése"
 
 #: ConnectionListPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "Mobilhálózat deaktiválva"
+msgstr "Mobil adatkapcsolat deaktiválva"
 
 #: ConnectionListPage.qml:133
 #, kde-format
@@ -120,25 +116,26 @@ msgstr "Nincsenek elérhető kapcsolatok"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "Hálózatok kereséséhez kapcsolja ki a repülő üzemmódot"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr ""
+"Hálózatok kereséséhez kapcsolja be a Wi-Fit vagy a mobil adatkapcsolatot"
 
 #: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "Hálózatok kereséséhez kapcsolja be a Wi-Fit"
 
 #: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "Hálózatok kereséséhez kapcsolja be a mobil adatkapcsolatot"
 
 #: DetailsText.qml:49
 #, kde-format
@@ -168,8 +165,7 @@ msgid "Enable Wi-Fi"
 msgstr "Wi-Fi bekapcsolása"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
 msgstr "Mobil adatkapcsolat bekapcsolása"
 
@@ -202,14 +198,12 @@ msgstr ""
 "kapcsolódáshoz."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "Jelszó megjelenítése"
+msgstr "Wi-Fi jelszó:"
 
 #: Toolbar.qml:131
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
 msgstr "Mobil adatkapcsolat bekapcsolása"
 
@@ -238,7 +232,7 @@ msgstr "Hotspot"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "Nem lehet létrehozni hotspotot, mivel a Wi-Fi ki van kapcsolva."
 
 #: Toolbar.qml:189
 #, kde-format
@@ -247,17 +241,18 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"Nem lehet létrehozni hotspotot, mert minden vezeték nélküli rádió "
+"használatban van. Csatlakozzon le a jelenlegi Wi-Fi hálózatról, vagy "
+"csatlakoztasson másik vezeték nélküli rádiót."
 
 #: Toolbar.qml:191
-#, fuzzy, kde-format
-#| msgid "Disable Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Hotspot kikapcsolása"
 
 #: Toolbar.qml:193
-#, fuzzy, kde-format
-#| msgid "Create Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Hotspot létrehozása"

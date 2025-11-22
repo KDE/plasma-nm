@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:42+0000\n"
-"PO-Revision-Date: 2025-01-26 21:07+0100\n"
+"PO-Revision-Date: 2025-11-21 21:46+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: editor/connectioneditorbase.cpp:203
 #, kde-format
@@ -1112,11 +1112,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Metrika"
+msgstr "Útvonalmetrika:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
@@ -1129,6 +1127,11 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Egy pontszám, amely segít kiválasztani a legjobb útvonalat az adatcsomagok "
+"célállomásának eléréséhez,\n"
+"olyan tényezők alapján, mint a távolság, a késleltetés és a megbízhatóság.\n"
+"Az alapértelmezett -1 érték azt jelenti, hogy a NetworkManager választhatja "
+"ki és kezelheti az útvonal tényleges mérőszámát."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97
@@ -3550,17 +3553,13 @@ msgid "The connection type is WireGuard"
 msgstr "A kapcsolat típusa WireGuard"
 
 #: models/networkmodelitem.cpp:347
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip real user name is not available"
-#| msgid "Not Available"
+#, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr "Nem érhető el"
+msgstr "Elérhető"
 
 #: models/networkmodelitem.cpp:353
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Kapcsolódva"
@@ -3570,7 +3569,7 @@ msgstr "Kapcsolódva"
 msgctxt ""
 "@title:column header for list of previously connected network connections"
 msgid "Previously Used, Unavailable"
-msgstr ""
+msgstr "Korábban használt, nem érhető el"
 
 #: models/networkmodelitem.cpp:593
 #, kde-format
@@ -3806,11 +3805,10 @@ msgid "Connected to %1"
 msgstr "Kapcsolódva ehhez: %1"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "A NetworkManager nem fut"
+msgstr "A NetworkManager szolgáltatás nem fut"
 
 #: networkstatus.cpp:261
 #, kde-format

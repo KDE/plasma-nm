@@ -2,14 +2,15 @@
 # This file is distributed under the same license as the plasma-nm package.
 #
 # SPDX-FileCopyrightText: 2024, 2025 Gummi <gudmundure@gmail.com>
+# SPDX-FileCopyrightText: 2025 Sveinn í Felli <sv1@fellsnet.is>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-04-18 13:15+0000\n"
-"Last-Translator: Gummi <gudmundure@gmail.com>\n"
-"Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2025-11-22 10:11+0000\n"
+"Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
+"Language-Team: Icelandic\n"
 "Language: is\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -20,7 +21,7 @@ msgstr ""
 #: openconnectauth.cpp:345
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr "Mistókst að frumstilla hugbúnaðartóka (software token): %1"
+msgstr "Mistókst að frumstilla hugbúnaðarteikn (software token): %1"
 
 #: openconnectauth.cpp:398
 #, kde-format
@@ -308,31 +309,31 @@ msgstr "Koma í veg fyrir að notandi samþykki handvirkt ógild vottorð"
 #: openconnectprop.ui:351
 #, kde-format
 msgid "Token Authentication"
-msgstr "Auðkenning tóka"
+msgstr "Auðkenning teikns"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenConnectToken)
 #: openconnecttoken.ui:14
 #, kde-format
 msgid "OpenConnect OTP Tokens"
-msgstr "OpenConnect OTP-tókar"
+msgstr "OpenConnect OTP-teikn"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbToken)
 #: openconnecttoken.ui:20
 #, kde-format
 msgid "Software Token Authentication"
-msgstr "Hugbúnaðartókasannvottun"
+msgstr "Hugbúnaðarsannvottun teikns"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnecttoken.ui:26
 #, kde-format
 msgid "Token Mode:"
-msgstr "Tókasnið:"
+msgstr "Snið teikns:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnecttoken.ui:43
 #, kde-format
 msgid "Token Secret:"
-msgstr "Tókaleyndarmál:"
+msgstr "Leynikóði teikns:"
 
 #: openconnectwebauthdialog.cpp:111
 #, kde-format
@@ -400,35 +401,31 @@ msgid "Internal User Verification Locked"
 msgstr "Innri sannprófun notanda læst"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] "Rangt PIN-númer. %1 tilraunir eftir."
+msgstr[0] "Rangt PIN-númer. %1 tilraun eftir."
 msgstr[1] "Rangt PIN-númer. %1 tilraunir eftir."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] "Of stutt. %1 tilraunir eftir."
+msgstr[0] "Of stutt. %1 tilraun eftir."
 msgstr[1] "Of stutt. %1 tilraunir eftir."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] "Ógildir stafir. %1 tilraunir eftir."
+msgstr[0] "Ógildir stafir. %1 tilraun eftir."
 msgstr[1] "Ógildir stafir. %1 tilraunir eftir."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] "Sama og núverandi PIN-númer. %1 tilraunir eftir."
+msgstr[0] "Sama og núverandi PIN-númer. %1 tilraun eftir."
 msgstr[1] "Sama og núverandi PIN-númer. %1 tilraunir eftir."
 
 #: openconnectwebauthdialog.cpp:239
@@ -497,7 +494,7 @@ msgstr "Auðkenningarhlut vantar Large Blob-stuðning"
 msgid ""
 "The security token does not support the server’s required authentication "
 "method."
-msgstr ""
+msgstr "Öryggisteiknið styður ekki auðkenningarmáta þjónsins."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format

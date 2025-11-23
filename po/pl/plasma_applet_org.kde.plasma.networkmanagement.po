@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-11-08 09:20+0100\n"
+"PO-Revision-Date: 2025-11-22 21:19+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -250,34 +250,26 @@ msgid "Create Hotspot"
 msgstr "Utwórz Hotspot"
 
 #: Toolbar.qml:221
-#, fuzzy, kde-format
-#| msgctxt "@action:button"
-#| msgid "Scan Wifi QR Code"
+#, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr "Zeskanuj kod QR WiFi"
+msgstr "Zeskanuj kod QR Wi-Fi"
 
 #: Toolbar.qml:226
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid "Scan QR Code to connect to a Wifi network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr "Zeskanuj kod QR, aby podłączyć się do sieci WiFi"
+msgstr "Zeskanuj kod QR, aby podłączyć się do sieci Wi-Fi"
 
 #: Toolbar.qml:228
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip"
-#| msgid ""
-#| "Install QRCA Barcode Scanner to scan for a QR Code that connects to a "
-#| "Wifi network"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
 "Wgraj skaner kodów kreskowych QRCA, aby zeskanować kod QR, który umożliwi "
-"połączenie do sieci WiFi"
+"połączenie do sieci Wi-Fi"
 
 #: Toolbar.qml:247
 #, kde-format

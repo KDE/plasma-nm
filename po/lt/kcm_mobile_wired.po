@@ -1,0 +1,110 @@
+# Lithuanian translations for plasma-nm package.
+# Copyright (C) 2025 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+# Automatically generated, 2025.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"PO-Revision-Date: 2025-11-23 00:55+0200\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: lt\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && (n%100<11 || n%100>19) ? 0 : n"
+"%10>=2 && n%10<=9 && (n%100<11 || n%100>19) ? 1 : 2);\n"
+"X-Generator: Poedit 3.8\n"
+
+#: ui/ConnectDialog.qml:57
+#, kde-format
+msgid "Invalid input."
+msgstr "Neteisinga įvestis."
+
+#: ui/ConnectionInfo.qml:15
+#, kde-format
+msgctxt "kcm page title"
+msgid "Connection Info for \"%1\""
+msgstr "„%1“ ryšio informacija"
+
+#: ui/ConnectionInfo.qml:22
+#, kde-format
+msgctxt "@title:group"
+msgid "Transfer Rates"
+msgstr "Perdavimo spartos"
+
+#: ui/ConnectionInfo.qml:38
+#, kde-format
+msgid "Connected, ↓ %1/s, ↑ %2/s"
+msgstr "Prisijungta, ↓ %1/sek., ↑ %2/sek."
+
+#: ui/ConnectionInfo.qml:45
+#, kde-format
+msgctxt "@title:group"
+msgid "Connection Details"
+msgstr "Išsamiau apie ryšį"
+
+#: ui/main.qml:59
+#, kde-format
+msgctxt "@title:group"
+msgid "Wired Network Connections"
+msgstr "Laidinio tinklo ryšiai"
+
+#: ui/main.qml:117
+#, kde-format
+msgid "No wired connection available."
+msgstr "Nėra prieinamo laidinio ryšio."
+
+#: ui/NetworkSettings.qml:16
+#, kde-format
+msgid "Add New Connection"
+msgstr "Pridėti naują ryšį"
+
+#: ui/NetworkSettings.qml:31
+#, kde-format
+msgid "Save"
+msgstr "Įrašyti"
+
+#: ui/NetworkSettings.qml:49
+#, kde-format
+msgctxt "@title:group"
+msgid "IP Settings"
+msgstr "IP nuostatos"
+
+#: ui/NetworkSettings.qml:55
+#, kde-format
+msgid "Method"
+msgstr "Metodas"
+
+#: ui/NetworkSettings.qml:56
+#, kde-format
+msgid "Automatic"
+msgstr "Automatinis"
+
+#: ui/NetworkSettings.qml:56
+#, kde-format
+msgid "Manual"
+msgstr "Rankinis"
+
+#: ui/NetworkSettings.qml:72
+#, kde-format
+msgid "IP Address"
+msgstr "IP adresas"
+
+#: ui/NetworkSettings.qml:90
+#, kde-format
+msgid "Gateway"
+msgstr "Tinklų sietuvas"
+
+#: ui/NetworkSettings.qml:108
+#, kde-format
+msgid "Network prefix length"
+msgstr "Tinklo priešdėlio ilgis"
+
+#: ui/NetworkSettings.qml:127
+#, kde-format
+msgid "DNS"
+msgstr "DNS"

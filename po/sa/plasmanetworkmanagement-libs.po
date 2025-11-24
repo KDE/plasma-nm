@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-24 00:45+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -387,7 +387,7 @@ msgstr "आयातार्थं सञ्चिकां चिनोतु"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:162
+#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:153
 #, kde-format
 msgid "Authentication:"
 msgstr "प्रमाणीकरणम् :"
@@ -407,7 +407,7 @@ msgstr "TLS"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
+#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:55
 #, kde-format
 msgid "LEAP"
 msgstr "प्लुति"
@@ -447,7 +447,7 @@ msgstr "संरक्षित ईएपी (PEAP) 1.1."
 #: editor/settings/ui/802-1x.ui:317 editor/settings/ui/802-1x.ui:448
 #: editor/settings/ui/802-1x.ui:554 editor/settings/ui/802-1x.ui:700
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
-#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:199
+#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:183
 #, kde-format
 msgid "Username:"
 msgstr "उपयोक्तृनाम :"
@@ -463,8 +463,8 @@ msgstr "उपयोक्तृनाम :"
 #: editor/settings/ui/802-1x.ui:330 editor/settings/ui/802-1x.ui:461
 #: editor/settings/ui/802-1x.ui:567 editor/settings/ui/802-1x.ui:713
 #: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
-#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:212
-#: editor/settings/ui/wifisecurity.ui:236
+#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:196
+#: editor/settings/ui/wifisecurity.ui:213
 #, kde-format
 msgid "Password:"
 msgstr "समाभाष्:"
@@ -1530,111 +1530,111 @@ msgstr "गुप्तजालम्"
 msgid "Wifi Security"
 msgstr "Wifi सुरक्षा"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/wifisecurity.ui:23
+#, kde-format
+msgid "Security:"
+msgstr "सुरक्षा:"
+
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:28
+#: editor/settings/ui/wifisecurity.ui:40
 #, kde-format
 msgctxt "no security"
 msgid "None"
 msgstr "न कश्चित्"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:33
+#: editor/settings/ui/wifisecurity.ui:45
 #, kde-format
 msgid "WEP key 40/128 bits (Hex or ASCII)"
 msgstr "WEP कील 40/128 बिट् (Hex अथवा ASCII) ."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:38
+#: editor/settings/ui/wifisecurity.ui:50
 #, kde-format
 msgid "WEP key 128 bits"
 msgstr "WEP कील 128 बिट्"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:48
+#: editor/settings/ui/wifisecurity.ui:60
 #, kde-format
 msgid "Dynamic WEP (802.1x)"
 msgstr "गतिशील WEP (802.1x) 1.1."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:53
+#: editor/settings/ui/wifisecurity.ui:65
 #, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr "WPA/WPA2 व्यक्तिगत"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:58
+#: editor/settings/ui/wifisecurity.ui:70
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 उद्यमः"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:63
+#: editor/settings/ui/wifisecurity.ui:75
 #, kde-format
 msgid "WPA3 Personal"
 msgstr "WPA3 व्यक्तिगत"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:68
+#: editor/settings/ui/wifisecurity.ui:80
 #, kde-format
 msgid "WPA3 Enterprise 192-bit"
 msgstr "WPA3 उद्यम 192-बिट"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:73
+#: editor/settings/ui/wifisecurity.ui:85
 #, kde-format
 msgid "Enhanced Open (OWE)"
 msgstr "वर्धितं मुक्तं (OWE) 1.1."
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/wifisecurity.ui:81
-#, kde-format
-msgid "Security:"
-msgstr "सुरक्षा:"
-
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wifisecurity.ui:102
+#: editor/settings/ui/wifisecurity.ui:93
 #, kde-format
 msgid "Key:"
 msgstr "कुंजी:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/wifisecurity.ui:122
+#: editor/settings/ui/wifisecurity.ui:113
 #, kde-format
 msgid "WEP index:"
 msgstr "WEP अनुक्रमणिका :"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:139
+#: editor/settings/ui/wifisecurity.ui:130
 #, kde-format
 msgid "1 (default)"
 msgstr "१ (पूर्वनिर्धारितम्)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:144
+#: editor/settings/ui/wifisecurity.ui:135
 #, kde-format
 msgid "2"
 msgstr "२"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:149
+#: editor/settings/ui/wifisecurity.ui:140
 #, kde-format
 msgid "3"
 msgstr "३"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:154
+#: editor/settings/ui/wifisecurity.ui:145
 #, kde-format
 msgid "4"
 msgstr "४"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:179
+#: editor/settings/ui/wifisecurity.ui:170
 #, kde-format
 msgid "Open System"
 msgstr "Open System इति"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:184
+#: editor/settings/ui/wifisecurity.ui:175
 #, kde-format
 msgid "Shared Key"
 msgstr "साझा कुञ्जी"

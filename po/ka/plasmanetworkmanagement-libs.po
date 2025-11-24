@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-24 00:45+0000\n"
 "PO-Revision-Date: 2025-08-07 04:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -387,7 +387,7 @@ msgstr "აირჩიეთ შემოსატანი ფაილი"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:162
+#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:153
 #, kde-format
 msgid "Authentication:"
 msgstr "ავთენტიფიკაცია:"
@@ -407,7 +407,7 @@ msgstr "TLS"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
+#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:55
 #, kde-format
 msgid "LEAP"
 msgstr "LEAP"
@@ -447,7 +447,7 @@ msgstr "დაცული EAP (PEAP)"
 #: editor/settings/ui/802-1x.ui:317 editor/settings/ui/802-1x.ui:448
 #: editor/settings/ui/802-1x.ui:554 editor/settings/ui/802-1x.ui:700
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
-#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:199
+#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:183
 #, kde-format
 msgid "Username:"
 msgstr "მომხმარებელი:"
@@ -463,8 +463,8 @@ msgstr "მომხმარებელი:"
 #: editor/settings/ui/802-1x.ui:330 editor/settings/ui/802-1x.ui:461
 #: editor/settings/ui/802-1x.ui:567 editor/settings/ui/802-1x.ui:713
 #: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
-#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:212
-#: editor/settings/ui/wifisecurity.ui:236
+#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:196
+#: editor/settings/ui/wifisecurity.ui:213
 #, kde-format
 msgid "Password:"
 msgstr "პაროლი:"
@@ -1539,111 +1539,111 @@ msgstr "დამალული ქსელი"
 msgid "Wifi Security"
 msgstr "Wifi-ის უსაფრთხოება"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/wifisecurity.ui:23
+#, kde-format
+msgid "Security:"
+msgstr "უსაფრთხოება:"
+
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:28
+#: editor/settings/ui/wifisecurity.ui:40
 #, kde-format
 msgctxt "no security"
 msgid "None"
 msgstr "არა"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:33
+#: editor/settings/ui/wifisecurity.ui:45
 #, kde-format
 msgid "WEP key 40/128 bits (Hex or ASCII)"
 msgstr "WEP გასაღები 40/128 ბიტი (Hex ან ASCII)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:38
+#: editor/settings/ui/wifisecurity.ui:50
 #, kde-format
 msgid "WEP key 128 bits"
 msgstr "WEP გასაღები 128 ბიტი"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:48
+#: editor/settings/ui/wifisecurity.ui:60
 #, kde-format
 msgid "Dynamic WEP (802.1x)"
 msgstr "დინამიკური WEP (802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:53
+#: editor/settings/ui/wifisecurity.ui:65
 #, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr "WPA/WPA2 პერსონალური"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:58
+#: editor/settings/ui/wifisecurity.ui:70
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 საწარმოო"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:63
+#: editor/settings/ui/wifisecurity.ui:75
 #, kde-format
 msgid "WPA3 Personal"
 msgstr "WPA3 პერსონალური"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:68
+#: editor/settings/ui/wifisecurity.ui:80
 #, kde-format
 msgid "WPA3 Enterprise 192-bit"
 msgstr "WPA3 საწარმოო 192-ბიტიანი"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:73
+#: editor/settings/ui/wifisecurity.ui:85
 #, kde-format
 msgid "Enhanced Open (OWE)"
 msgstr "დამატებითი გახსნა (OWE)"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/wifisecurity.ui:81
-#, kde-format
-msgid "Security:"
-msgstr "უსაფრთხოება:"
-
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wifisecurity.ui:102
+#: editor/settings/ui/wifisecurity.ui:93
 #, kde-format
 msgid "Key:"
 msgstr "გასაღები:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/wifisecurity.ui:122
+#: editor/settings/ui/wifisecurity.ui:113
 #, kde-format
 msgid "WEP index:"
 msgstr "WEP-ის ინდექსი:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:139
+#: editor/settings/ui/wifisecurity.ui:130
 #, kde-format
 msgid "1 (default)"
 msgstr "1 (ნაგულისხმევი)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:144
+#: editor/settings/ui/wifisecurity.ui:135
 #, kde-format
 msgid "2"
 msgstr "2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:149
+#: editor/settings/ui/wifisecurity.ui:140
 #, kde-format
 msgid "3"
 msgstr "3"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:154
+#: editor/settings/ui/wifisecurity.ui:145
 #, kde-format
 msgid "4"
 msgstr "4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:179
+#: editor/settings/ui/wifisecurity.ui:170
 #, kde-format
 msgid "Open System"
 msgstr "ღია სისტემა"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:184
+#: editor/settings/ui/wifisecurity.ui:175
 #, kde-format
 msgid "Shared Key"
 msgstr "ზიარი გასაღები"

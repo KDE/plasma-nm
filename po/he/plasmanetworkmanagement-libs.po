@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-24 00:45+0000\n"
 "PO-Revision-Date: 2025-10-09 13:17+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -388,7 +388,7 @@ msgstr "בחירת קובץ לייבוא"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:162
+#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:153
 #, kde-format
 msgid "Authentication:"
 msgstr "אימות:"
@@ -408,7 +408,7 @@ msgstr "TLS"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
+#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:55
 #, kde-format
 msgid "LEAP"
 msgstr "LEAP"
@@ -448,7 +448,7 @@ msgstr "EAP מאובטח (PEAP)"
 #: editor/settings/ui/802-1x.ui:317 editor/settings/ui/802-1x.ui:448
 #: editor/settings/ui/802-1x.ui:554 editor/settings/ui/802-1x.ui:700
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
-#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:199
+#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:183
 #, kde-format
 msgid "Username:"
 msgstr "שם משתמש:"
@@ -464,8 +464,8 @@ msgstr "שם משתמש:"
 #: editor/settings/ui/802-1x.ui:330 editor/settings/ui/802-1x.ui:461
 #: editor/settings/ui/802-1x.ui:567 editor/settings/ui/802-1x.ui:713
 #: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
-#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:212
-#: editor/settings/ui/wifisecurity.ui:236
+#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:196
+#: editor/settings/ui/wifisecurity.ui:213
 #, kde-format
 msgid "Password:"
 msgstr "סיסמה:"
@@ -1533,111 +1533,111 @@ msgstr "רשת מוסתרת"
 msgid "Wifi Security"
 msgstr "אבטחת רשת אלחוטית"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/wifisecurity.ui:23
+#, kde-format
+msgid "Security:"
+msgstr "אבטחה:"
+
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:28
+#: editor/settings/ui/wifisecurity.ui:40
 #, kde-format
 msgctxt "no security"
 msgid "None"
 msgstr "ללא"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:33
+#: editor/settings/ui/wifisecurity.ui:45
 #, kde-format
 msgid "WEP key 40/128 bits (Hex or ASCII)"
 msgstr "מפתח WEP ‏40/128 סיביות (Hex או ASCII)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:38
+#: editor/settings/ui/wifisecurity.ui:50
 #, kde-format
 msgid "WEP key 128 bits"
 msgstr "מפתח WEB ‏128 סיביות"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:48
+#: editor/settings/ui/wifisecurity.ui:60
 #, kde-format
 msgid "Dynamic WEP (802.1x)"
 msgstr "WEP דינמי (802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:53
+#: editor/settings/ui/wifisecurity.ui:65
 #, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr "WPA/WPA2 אישי"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:58
+#: editor/settings/ui/wifisecurity.ui:70
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 ארגוני"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:63
+#: editor/settings/ui/wifisecurity.ui:75
 #, kde-format
 msgid "WPA3 Personal"
 msgstr "WPA3 אישי"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:68
+#: editor/settings/ui/wifisecurity.ui:80
 #, kde-format
 msgid "WPA3 Enterprise 192-bit"
 msgstr "WPA3 ארגוני של 192 סיביות"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:73
+#: editor/settings/ui/wifisecurity.ui:85
 #, kde-format
 msgid "Enhanced Open (OWE)"
 msgstr "פתוח מורחב (OWE)"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/wifisecurity.ui:81
-#, kde-format
-msgid "Security:"
-msgstr "אבטחה:"
-
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wifisecurity.ui:102
+#: editor/settings/ui/wifisecurity.ui:93
 #, kde-format
 msgid "Key:"
 msgstr "מפתח:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/wifisecurity.ui:122
+#: editor/settings/ui/wifisecurity.ui:113
 #, kde-format
 msgid "WEP index:"
 msgstr "מפתח WEP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:139
+#: editor/settings/ui/wifisecurity.ui:130
 #, kde-format
 msgid "1 (default)"
 msgstr "1 (ברירת מחדל)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:144
+#: editor/settings/ui/wifisecurity.ui:135
 #, kde-format
 msgid "2"
 msgstr "2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:149
+#: editor/settings/ui/wifisecurity.ui:140
 #, kde-format
 msgid "3"
 msgstr "3"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:154
+#: editor/settings/ui/wifisecurity.ui:145
 #, kde-format
 msgid "4"
 msgstr "4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:179
+#: editor/settings/ui/wifisecurity.ui:170
 #, kde-format
 msgid "Open System"
 msgstr "מערכת פתוחה"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:184
+#: editor/settings/ui/wifisecurity.ui:175
 #, kde-format
 msgid "Shared Key"
 msgstr "מפתח משותף"

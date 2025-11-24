@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-11-24 00:45+0000\n"
 "PO-Revision-Date: 2025-08-19 05:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -388,7 +388,7 @@ msgstr "選擇要匯入的檔案"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:162
+#: editor/settings/ui/802-1x.ui:18 editor/settings/ui/wifisecurity.ui:153
 #, kde-format
 msgid "Authentication:"
 msgstr "認證："
@@ -408,7 +408,7 @@ msgstr "TLS"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:43
+#: editor/settings/ui/802-1x.ui:48 editor/settings/ui/wifisecurity.ui:55
 #, kde-format
 msgid "LEAP"
 msgstr "LEAP"
@@ -448,7 +448,7 @@ msgstr "保護模式 EAP (PEAP)"
 #: editor/settings/ui/802-1x.ui:317 editor/settings/ui/802-1x.ui:448
 #: editor/settings/ui/802-1x.ui:554 editor/settings/ui/802-1x.ui:700
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
-#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:199
+#: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:183
 #, kde-format
 msgid "Username:"
 msgstr "使用者名稱："
@@ -464,8 +464,8 @@ msgstr "使用者名稱："
 #: editor/settings/ui/802-1x.ui:330 editor/settings/ui/802-1x.ui:461
 #: editor/settings/ui/802-1x.ui:567 editor/settings/ui/802-1x.ui:713
 #: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
-#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:212
-#: editor/settings/ui/wifisecurity.ui:236
+#: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:196
+#: editor/settings/ui/wifisecurity.ui:213
 #, kde-format
 msgid "Password:"
 msgstr "密碼："
@@ -1520,111 +1520,111 @@ msgstr "隱藏網路"
 msgid "Wifi Security"
 msgstr "Wifi 安全性"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/wifisecurity.ui:23
+#, kde-format
+msgid "Security:"
+msgstr "安全性："
+
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:28
+#: editor/settings/ui/wifisecurity.ui:40
 #, kde-format
 msgctxt "no security"
 msgid "None"
 msgstr "無"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:33
+#: editor/settings/ui/wifisecurity.ui:45
 #, kde-format
 msgid "WEP key 40/128 bits (Hex or ASCII)"
 msgstr "WEP 金鑰 40/128 位元（十六進位值或 ASCII 碼）"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:38
+#: editor/settings/ui/wifisecurity.ui:50
 #, kde-format
 msgid "WEP key 128 bits"
 msgstr "WEP 金鑰 128 位元"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:48
+#: editor/settings/ui/wifisecurity.ui:60
 #, kde-format
 msgid "Dynamic WEP (802.1x)"
 msgstr "動態 WEP（802.1x）"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:53
+#: editor/settings/ui/wifisecurity.ui:65
 #, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr "WPA/WPA2 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:58
+#: editor/settings/ui/wifisecurity.ui:70
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:63
+#: editor/settings/ui/wifisecurity.ui:75
 #, kde-format
 msgid "WPA3 Personal"
 msgstr "WPA3 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:68
+#: editor/settings/ui/wifisecurity.ui:80
 #, kde-format
 msgid "WPA3 Enterprise 192-bit"
 msgstr "WPA3 Enterprise 192-bit"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
-#: editor/settings/ui/wifisecurity.ui:73
+#: editor/settings/ui/wifisecurity.ui:85
 #, kde-format
 msgid "Enhanced Open (OWE)"
 msgstr "增強性開放 (OWE)"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/wifisecurity.ui:81
-#, kde-format
-msgid "Security:"
-msgstr "安全性："
-
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wifisecurity.ui:102
+#: editor/settings/ui/wifisecurity.ui:93
 #, kde-format
 msgid "Key:"
 msgstr "金鑰："
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: editor/settings/ui/wifisecurity.ui:122
+#: editor/settings/ui/wifisecurity.ui:113
 #, kde-format
 msgid "WEP index:"
 msgstr "WEP 索引："
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:139
+#: editor/settings/ui/wifisecurity.ui:130
 #, kde-format
 msgid "1 (default)"
 msgstr "1 (預設)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:144
+#: editor/settings/ui/wifisecurity.ui:135
 #, kde-format
 msgid "2"
 msgstr "2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:149
+#: editor/settings/ui/wifisecurity.ui:140
 #, kde-format
 msgid "3"
 msgstr "3"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
-#: editor/settings/ui/wifisecurity.ui:154
+#: editor/settings/ui/wifisecurity.ui:145
 #, kde-format
 msgid "4"
 msgstr "4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:179
+#: editor/settings/ui/wifisecurity.ui:170
 #, kde-format
 msgid "Open System"
 msgstr "開放系統"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
-#: editor/settings/ui/wifisecurity.ui:184
+#: editor/settings/ui/wifisecurity.ui:175
 #, kde-format
 msgid "Shared Key"
 msgstr "共享金鑰"

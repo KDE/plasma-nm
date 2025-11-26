@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-11-22 12:04+0000\n"
+"PO-Revision-Date: 2025-11-25 10:16+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -291,7 +291,7 @@ msgstr "eSIM er ekki frumstillt."
 #: modemdetails.cpp:316
 #, kde-format
 msgid "Not registered, not searching for new operator to register."
-msgstr ""
+msgstr "Ekki skráð, er ekki að leita að nýju símafyrirtæki til skráningar."
 
 #: modemdetails.cpp:318
 #, kde-format
@@ -301,7 +301,7 @@ msgstr "Skráð á heimaneti."
 #: modemdetails.cpp:320
 #, kde-format
 msgid "Not registered, searching for new operator to register with."
-msgstr ""
+msgstr "Ekki skráð, er að leita að nýju símafyrirtæki til skráningar."
 
 #: modemdetails.cpp:322
 #, kde-format
@@ -404,7 +404,7 @@ msgstr "Hvað sem er"
 #: sim.cpp:74
 #, kde-format
 msgid "Lock reason unknown."
-msgstr ""
+msgstr "Óþekkt ástæða læsingar."
 
 #: sim.cpp:76
 #, kde-format
@@ -424,12 +424,12 @@ msgstr "SIM krefst PIN2-kóða."
 #: sim.cpp:82
 #, kde-format
 msgid "SIM requires the PUK code."
-msgstr ""
+msgstr "SIM krefst PUK-kóðans."
 
 #: sim.cpp:84
 #, kde-format
 msgid "SIM requires the PUK2 code."
-msgstr ""
+msgstr "SIM krefst PUK2-kóðans."
 
 #: sim.cpp:86
 #, kde-format
@@ -439,7 +439,7 @@ msgstr "Mótald krefst PIN-kóða þjónustuveitu."
 #: sim.cpp:88
 #, kde-format
 msgid "Modem requires the service provider PUK code."
-msgstr ""
+msgstr "Mótald krefst PUK-kóða þjónustuveitu."
 
 #: sim.cpp:90
 #, kde-format
@@ -449,7 +449,7 @@ msgstr "Mótald krefst PIN-kóða netkerfis."
 #: sim.cpp:92
 #, kde-format
 msgid "Modem requires the network PUK code."
-msgstr ""
+msgstr "Mótald krefst PUK-kóða netkerfis."
 
 #: sim.cpp:94
 #, kde-format
@@ -464,7 +464,7 @@ msgstr "Mótald krefst PIN-kóða fyrirtækis."
 #: sim.cpp:98
 #, kde-format
 msgid "Modem requires the corporate PUK code."
-msgstr ""
+msgstr "Mótald krefst PUK-kóða fyrirtækis."
 
 #: sim.cpp:100
 #, kde-format
@@ -474,7 +474,7 @@ msgstr "Mótald krefst PH-FSIM PIN-kóða."
 #: sim.cpp:102
 #, kde-format
 msgid "Modem requires the PH-FSIM PUK code."
-msgstr ""
+msgstr "Mótald krefst PH-FSIM PUK-kóða."
 
 #: sim.cpp:104
 #, kde-format
@@ -484,7 +484,7 @@ msgstr "Mótald krefst PIN-kóða undirnetkerfis."
 #: sim.cpp:106
 #, kde-format
 msgid "Modem requires the network subset PUK code."
-msgstr ""
+msgstr "Mótald krefst PUK-kóða undirnetkerfis."
 
 #: sim.cpp:150
 #, kde-format
@@ -494,7 +494,7 @@ msgstr "(tómt)"
 #: sim.cpp:164
 #, kde-format
 msgid "Error toggling SIM lock: %1"
-msgstr ""
+msgstr "Villa við að víxla af/á læsingu SIM-korts: %1"
 
 #: sim.cpp:173
 #, kde-format
@@ -509,7 +509,7 @@ msgstr "Villa við að senda PIN-kóða: %1"
 #: sim.cpp:199
 #, kde-format
 msgid "Error sending the PUK: %1"
-msgstr ""
+msgstr "Villa við að senda PUK-kóða: %1"
 
 #: ui/AvailableNetworks.qml:16
 #, kde-format
@@ -614,12 +614,13 @@ msgstr "SIM-kort ekki til staðar."
 #: ui/main.qml:78
 #, kde-format
 msgid "Mobile data is not available with this modem."
-msgstr ""
+msgstr "Farsímagögn eru ekki tiltæk með þessu mótaldi."
 
 #: ui/main.qml:80
 #, kde-format
 msgid "An APN needs to be configured to have mobile data."
 msgstr ""
+"Það þarf að grunnstilla APN í stillingunum til að geta notað farsímagögn."
 
 #: ui/main.qml:82
 #, kde-format
@@ -666,7 +667,7 @@ msgstr "Stýring mótalds"
 #: ui/ModemPage.qml:36
 #, kde-format
 msgid "Force Modem Restart"
-msgstr ""
+msgstr "Þvinga endurræsingu mótalds"
 
 #: ui/ModemPage.qml:42 ui/SimPage.qml:105
 #, kde-format
@@ -696,7 +697,7 @@ msgstr "Gerð"
 #: ui/ModemPage.qml:114
 #, kde-format
 msgid "Owned Numbers:"
-msgstr ""
+msgstr "Eignuð númer:"
 
 #: ui/ModemPage.qml:135
 #, kde-format
@@ -776,7 +777,7 @@ msgstr "Orkustaða"
 #: ui/ModemPage.qml:274
 #, kde-format
 msgid "SIM Path"
-msgstr ""
+msgstr "SIM-slóð"
 
 #: ui/ProfileList.qml:23
 #, kde-format
@@ -828,7 +829,7 @@ msgstr "SIM-kort er læst"
 #: ui/SimLockPage.qml:39
 #, kde-format
 msgid "In order to use this SIM, you must first unlock it."
-msgstr ""
+msgstr "Til að nota þetta SIM-kort þarftu fyrst að aflæsa því."
 
 #: ui/SimLockPage.qml:61
 #, kde-format
@@ -850,12 +851,14 @@ msgstr "Læsa SIM"
 #: ui/SimLockPage.qml:78
 #, kde-format
 msgid "Disable SIM Lock"
-msgstr ""
+msgstr "Gera læsingu SIM-korts óvirka"
 
 #: ui/SimLockPage.qml:79
 #, kde-format
 msgid "Disable the SIM lock feature and remove the passcode on the SIM."
 msgstr ""
+"Gera eiginleikann til að læsa SIM-korti óvirkan og fjarlægja lykilkóðann af "
+"SIM-kortinu."
 
 #: ui/SimLockPage.qml:91
 #, kde-format
@@ -865,7 +868,7 @@ msgstr "Breyta PIN-kóða"
 #: ui/SimLockPage.qml:92
 #, kde-format
 msgid "Change the passcode set on the SIM."
-msgstr ""
+msgstr "Breyta lykilkóðanum á SIM-kortinu."
 
 #: ui/SimLockPage.qml:106
 #, kde-format
@@ -933,7 +936,7 @@ msgstr "SIM %1"
 msgid ""
 "This SIM slot is empty, a SIM card needs to be inserted in order for it to "
 "be used."
-msgstr ""
+msgstr "Þetta SIM-hólf er tómt, setja þarf inn SIM-kort til að geta notað það."
 
 #: ui/SimPage.qml:60
 #, kde-format
@@ -943,7 +946,7 @@ msgstr "Gagnareiki"
 #: ui/SimPage.qml:61
 #, kde-format
 msgid "Allow your device to use networks other than your carrier."
-msgstr ""
+msgstr "Leyfa tækinu þínu að nota önnur netkerfi en hjá símafyrirtækinu þínu."
 
 #: ui/SimPage.qml:72
 #, kde-format
@@ -968,12 +971,12 @@ msgstr "Veldu netkerfisþjónustu."
 #: ui/SimPage.qml:95
 #, kde-format
 msgid "Modify SIM lock settings."
-msgstr ""
+msgstr "Breyta stillingum læsingar SIM-korts."
 
 #: ui/SimPage.qml:106
 #, kde-format
 msgid "View the details of the modem this SIM is connected to."
-msgstr ""
+msgstr "Skoða nánari upplýsingar um mótaldið sem þetta SIM-kort tengist."
 
 #: ui/SimPage.qml:112
 #, kde-format
@@ -993,22 +996,22 @@ msgstr "EID"
 #: ui/SimPage.qml:142
 #, kde-format
 msgid "Operator Code (modem)"
-msgstr ""
+msgstr "Kóði símafyrirtækis (mótald)"
 
 #: ui/SimPage.qml:150
 #, kde-format
 msgid "Operator Name (modem)"
-msgstr ""
+msgstr "Heiti símafyrirtækis (mótald)"
 
 #: ui/SimPage.qml:158
 #, kde-format
 msgid "Operator Code (provided by SIM)"
-msgstr ""
+msgstr "Kóði símafyrirtækis (frá SIM-korti)"
 
 #: ui/SimPage.qml:166
 #, kde-format
 msgid "Operator Name (provided by SIM)"
-msgstr ""
+msgstr "Heiti símafyrirtækis (frá SIM-korti)"
 
 #: ui/SimPage.qml:174
 #, kde-format
@@ -1018,4 +1021,4 @@ msgstr "SIM-auðkenni"
 #: ui/SimPage.qml:190
 #, kde-format
 msgid "Emergency Numbers"
-msgstr ""
+msgstr "Neyðarnúmer"

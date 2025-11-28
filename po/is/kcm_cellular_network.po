@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-11-25 10:16+0000\n"
+"PO-Revision-Date: 2025-11-27 07:24+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
 "Language: is\n"
@@ -321,12 +321,12 @@ msgstr "Skráð á reikineti."
 #: modemdetails.cpp:328
 #, kde-format
 msgid "Registered for \"SMS only\", on home network."
-msgstr ""
+msgstr "Skráð fyrir \"Aðeins SMS\", á heimaneti."
 
 #: modemdetails.cpp:330
 #, kde-format
 msgid "Registered for \"SMS only\", roaming network."
-msgstr ""
+msgstr "Skráð fyrir \"Aðeins SMS\", á reikineti."
 
 #: modemdetails.cpp:332
 #, kde-format
@@ -336,17 +336,19 @@ msgstr "Aðeins neyðarþjónustur."
 #: modemdetails.cpp:334
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", home network."
-msgstr ""
+msgstr "Skráð fyrir \"CSFB ekki ákjósanlegt\", á heimaneti."
 
 #: modemdetails.cpp:336
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", roaming network."
-msgstr ""
+msgstr "Skráð fyrir \"CSFB ekki ákjósanlegt\", á reikineti."
 
 #: modemdetails.cpp:338
 #, kde-format
 msgid "Attached for access to Restricted Local Operator Services."
 msgstr ""
+"Tengt fyrir aðgang að takmörkuðum staðarþjónustum (Restricted Local Operator "
+"Services)."
 
 #: modemdetails.cpp:377
 #, kde-format
@@ -677,7 +679,7 @@ msgstr "Nánar um mótald"
 #: ui/ModemPage.qml:55
 #, kde-format
 msgid "Access Technologies"
-msgstr ""
+msgstr "Aðgangstækni"
 
 #: ui/ModemPage.qml:75
 #, kde-format
@@ -737,7 +739,7 @@ msgstr "Útgáfa grunnhugbúnaðar (firmware)"
 #: ui/ModemPage.qml:191
 #, kde-format
 msgid "Interface Name"
-msgstr ""
+msgstr "Heiti netkorts"
 
 #: ui/ModemPage.qml:199
 #, kde-format
@@ -747,7 +749,7 @@ msgstr "Gjaldfært"
 #: ui/ModemPage.qml:207
 #, kde-format
 msgid "Active NetworkManager Connection"
-msgstr ""
+msgstr "Virk NetworkManager-tenging"
 
 #: ui/ModemPage.qml:215
 #, kde-format
@@ -795,6 +797,9 @@ msgid ""
 "Unable to autodetect connection settings for your carrier. Please find your "
 "carrier's APN settings by either contacting support or searching online."
 msgstr ""
+"Tekst ekki að finna sjálfkrafa tengistillingar fyrir símaþjónustuna þína. "
+"Reyndu að finna APN-stillingar símaþjónustunnar með því að hafa samband við "
+"þjónustuver eða leita á netinu."
 
 #: ui/ProfileList.qml:64
 #, kde-format
@@ -842,6 +847,8 @@ msgid ""
 "You can lock your SIM to require a set PIN code for phone calls and mobile "
 "data."
 msgstr ""
+"Þú getur læst SIM-kortinu þínu þannig að krafist sé PIN-kóða fyrir símtöl og "
+"farsímagögn."
 
 #: ui/SimLockPage.qml:66
 #, kde-format
@@ -956,7 +963,7 @@ msgstr "Breyta APNum"
 #: ui/SimPage.qml:73
 #, kde-format
 msgid "Configure access point names for your carrier."
-msgstr ""
+msgstr "Stilltu heiti aðgangsstaða fyrir símaþjónustuna þína."
 
 #: ui/SimPage.qml:83
 #, kde-format

@@ -62,20 +62,48 @@ MouseArea {
         Repeater {
             id: repeater
 
-            model: root.details.length
+            model: root.details
 
-            PlasmaComponents3.Label {
+            delegate: Item {
+                required property var modelData
+
+                readonly property string label: modelData.label || ""
+                readonly property string value: modelData.value || ""
+                readonly property bool isEmpty: !label || label.length === 0
+
                 Layout.fillWidth: true
+                Layout.columnSpan: 2
+                Layout.preferredHeight: isEmpty ? Kirigami.Units.gridUnit : labelItem.implicitHeight
 
-                required property int index
-                readonly property bool isContent: index % 2
+                PlasmaComponents3.Label {
+                    id: labelItem
+                    anchors.left: parent.left
+                    anchors.right: parent.horizontalCenter
+                    anchors.rightMargin: detailsGrid.columnSpacing / 2
 
-                elide: isContent ? Text.ElideRight : Text.ElideNone
-                font: Kirigami.Theme.smallFont
-                horizontalAlignment: isContent ? Text.AlignLeft : Text.AlignRight
-                text: isContent ? root.details[index] : `${root.details[index]}:`
-                textFormat: Text.PlainText
-                opacity: isContent ? 1 : 0.6
+                    visible: !modelData.isEmpty
+                    elide: Text.ElideNone
+                    font: Kirigami.Theme.smallFont
+                    horizontalAlignment: Text.AlignRight
+                    text: `${modelData.label}:`
+                    textFormat: Text.PlainText
+                    opacity: 0.6
+                }
+
+                PlasmaComponents3.Label {
+                    anchors.left: parent.horizontalCenter
+                    anchors.leftMargin: detailsGrid.columnSpacing / 2
+                    anchors.right: parent.right
+
+                    visible: !modelData.isEmpty
+                    elide: Text.ElideRight
+                    font: Kirigami.Theme.smallFont
+                    horizontalAlignment: Text.AlignLeft
+                    text: modelData.value
+                    textFormat: Text.PlainText
+                    opacity: 1
+                    readonly property bool isContent: true
+                }
             }
         }
     }

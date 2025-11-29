@@ -45,7 +45,7 @@ public:
     NetworkManager::ActiveConnection::State connectionState() const;
     void setConnectionState(NetworkManager::ActiveConnection::State state);
 
-    QStringList details() const;
+    QVariantList details() const;
 
     QString deviceName() const;
     void setDeviceName(const QString &name);
@@ -144,7 +144,7 @@ private:
     QString m_devicePath;
     QString m_deviceName;
     NetworkManager::Device::State m_deviceState;
-    mutable QStringList m_details;
+    mutable QVariantList m_details;
     mutable bool m_detailsValid;
     bool m_delayModelUpdates;
     bool m_duplicate;

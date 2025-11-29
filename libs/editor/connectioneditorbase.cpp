@@ -12,6 +12,7 @@
 #include "settings/bridgewidget.h"
 #include "settings/btwidget.h"
 #include "settings/cdmawidget.h"
+#include "settings/connectionstatuswidget.h"
 #include "settings/connectionwidget.h"
 #include "settings/gsmwidget.h"
 #include "settings/infinibandwidget.h"
@@ -197,6 +198,11 @@ void ConnectionEditorBase::initialize()
     if (emptyConnection) {
         UiUtils::setConnectionDefaultPermissions(m_connection);
     }
+
+    // Status tab showing connection details (first tab)
+    m_statusWidget = new ConnectionStatusWidget(m_connection->uuid());
+    addWidget(m_statusWidget, i18nc("@title:tab Connection status and details", "Status"));
+    updateStatusWidget();
 
     // General configuration common to all connection types
     auto connectionWidget = new ConnectionWidget(m_connection);
@@ -532,6 +538,46 @@ void ConnectionEditorBase::onAllUsersChanged()
 
     auto allUsers = m_connectionWidget->allUsers();
     m_wifiSecurity->setStoreSecretsSystemWide(allUsers);
+}
+
+void ConnectionEditorBase::updateStatusWidget()
+{
+    if (!m_statusWidget || !m_connection) {
+        return;
+    }
+
+    // Find the NetworkManager connection object
+    NetworkManager::Connection::Ptr nmConnection = NetworkManager::findConnectionByUuid(m_connection->uuid());
+    if (!nmConnection) {
+        return; // Connection not found in NetworkManager
+    }
+
+    // Find active connection with matching UUID
+    NetworkManager::ActiveConnection::Ptr activeConnection;
+    for (const NetworkManager::ActiveConnection::Ptr &active : NetworkManager::activeConnections()) {
+        if (active->uuid() == m_connection->uuid()) {
+            activeConnection = active;
+            break;
+        }
+    }
+
+    if (!activeConnection) {
+        return; // Connection is not active, status widget will show "activate to view details"
+    }
+
+    // Get the device for this active connection
+    NetworkManager::Device::Ptr device;
+    const QStringList devicePaths = activeConnection->devices();
+    if (!devicePaths.isEmpty()) {
+        device = NetworkManager::findNetworkInterface(devicePaths.first());
+    }
+
+    if (!device) {
+        return; // No device, can't get details
+    }
+
+    // Pass connection and device to status widget
+    m_statusWidget->setConnectionAndDevice(nmConnection, device);
 }
 
 #include "moc_connectioneditorbase.cpp"

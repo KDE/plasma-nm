@@ -23,6 +23,9 @@ ConnectionEditorTabWidget::ConnectionEditorTabWidget(const NetworkManager::Conne
 
 void ConnectionEditorTabWidget::setConnection(const NetworkManager::ConnectionSettings::Ptr &connection)
 {
+    // Clear all existing tabs before re-initializing
+    m_ui->tabWidget->clear();
+
     // Init tabs first as we need to set current tab after that
     ConnectionEditorBase::setConnection(connection);
 

@@ -20,6 +20,8 @@ set(plasmanm_editor_SRCS
     settings/cdmawidget.h
     settings/connectionwidget.cpp
     settings/connectionwidget.h
+    settings/connectionstatuswidget.cpp
+    settings/connectionstatuswidget.h
     settings/gsmwidget.cpp
     settings/gsmwidget.h
     settings/infinibandwidget.cpp

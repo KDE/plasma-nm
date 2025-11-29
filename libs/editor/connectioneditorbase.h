@@ -18,6 +18,8 @@ class ConnectionWidget;
 class SettingWidget;
 class WifiSecurity;
 
+class ConnectionStatusWidget;
+
 class PLASMANM_EDITOR_EXPORT ConnectionEditorBase : public QWidget
 {
     Q_OBJECT
@@ -66,11 +68,13 @@ private:
     int m_pendingReplies;
     NetworkManager::ConnectionSettings::Ptr m_connection;
     ConnectionWidget *m_connectionWidget = nullptr;
+    ConnectionStatusWidget *m_statusWidget = nullptr;
     QList<SettingWidget *> m_settingWidgets;
     WifiSecurity *m_wifiSecurity = nullptr;
 
     void addConnectionWidget(ConnectionWidget *widget, const QString &text);
     void addSettingWidget(SettingWidget *widget, const QString &text);
+    void updateStatusWidget();
 };
 
 #endif // PLASMA_NM_CONNECTION_EDITOR_BASE_H

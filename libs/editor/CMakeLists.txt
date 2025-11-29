@@ -1,6 +1,7 @@
 set(plasmanm_editor_SRCS
     configuration.cpp configuration.h
     uiutils.cpp uiutils.h
+    connectiondetails.cpp connectiondetails.h
     connectioneditorbase.cpp
     connectioneditorbase.h
     connectioneditordialog.cpp
@@ -136,6 +137,7 @@ generate_export_header(plasmanm_editor)
 target_include_directories(plasmanm_editor
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/widgets
+        ${CMAKE_CURRENT_SOURCE_DIR}
     PRIVATE
         ${CMAKE_SOURCE_DIR}/libs
 )

@@ -16,6 +16,7 @@
 
 #include <NetworkManagerQt/GenericDevice>
 #include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/Manager>
 
 NetworkModel::NetworkModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -202,7 +203,7 @@ void NetworkModel::initialize()
 {
     // Initialize existing connections
     for (const NetworkManager::Connection::Ptr &connection : NetworkManager::listConnections()) {
-        addConnection(connection);
+        addConnection(connection, nullptr);
     }
 
     // Initialize existing devices
@@ -438,7 +439,7 @@ void NetworkModel::addAvailableConnection(const QString &connection, const Netwo
     }
 }
 
-void NetworkModel::addConnection(const NetworkManager::Connection::Ptr &connection)
+void NetworkModel::addConnection(const NetworkManager::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device)
 {
     // Can't add a connection without name or uuid
     if (connection->name().isEmpty() || connection->uuid().isEmpty()) {
@@ -462,13 +463,23 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr &connecti
         return;
     }
 
-    auto item = new NetworkModelItem();
+    auto item = new NetworkModelItem(this);
     item->setConnectionPath(connection->path());
     item->setName(settings->id());
     item->setTimestamp(settings->timestamp());
     item->setType(settings->connectionType());
     item->setUuid(settings->uuid());
     item->setSlave(settings->isSlave());
+
+    // Set device info if device is provided
+    if (device) {
+        if (device->ipInterfaceName().isEmpty()) {
+            item->setDeviceName(device->interfaceName());
+        } else {
+            item->setDeviceName(device->ipInterfaceName());
+        }
+        item->setDevicePath(device->uni());
+    }
 
     if (item->type() == NetworkManager::ConnectionSettings::Vpn) {
         item->setVpnType(vpnSetting->serviceType().section('.', -1));

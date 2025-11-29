@@ -123,7 +123,7 @@ private:
 
     void addActiveConnection(const NetworkManager::ActiveConnection::Ptr &activeConnection);
     void addAvailableConnection(const QString &connection, const NetworkManager::Device::Ptr &device);
-    void addConnection(const NetworkManager::Connection::Ptr &connection);
+    void addConnection(const NetworkManager::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device = nullptr);
     void addDevice(const NetworkManager::Device::Ptr &device);
     void addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr &network, const NetworkManager::WirelessDevice::Ptr &device);
     void checkAndCreateDuplicate(const QString &connection, const QString &deviceUni);

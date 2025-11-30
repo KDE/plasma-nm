@@ -9,6 +9,7 @@
 
 #include <KLocalizedString>
 #include <QFormLayout>
+#include <QHBoxLayout>
 #include <QLabel>
 #include <QMetaObject>
 #include <QSizePolicy>
@@ -21,15 +22,23 @@ ConnectionStatusWidget::ConnectionStatusWidget(const QString &connectionUuid, QW
     : QWidget(parent, f)
     , m_connectionUuid(connectionUuid)
 {
-    auto *layout = new QVBoxLayout(this);
+    auto *mainLayout = new QVBoxLayout(this);
+
+    // Create horizontal layout to center the form
+    auto *hLayout = new QHBoxLayout();
+    hLayout->addStretch(1);
 
     // Create QFormLayout for connection details
     m_detailsLayout = new QFormLayout();
-    m_detailsLayout->setFieldGrowthPolicy(QFormLayout::ExpandingFieldsGrow);
-    m_detailsLayout->setFormAlignment(Qt::AlignHCenter | Qt::AlignTop);
+    m_detailsLayout->setFieldGrowthPolicy(QFormLayout::FieldsStayAtSizeHint);
+    m_detailsLayout->setFormAlignment(Qt::AlignLeft | Qt::AlignTop);
     m_detailsLayout->setLabelAlignment(Qt::AlignRight);
-    layout->addLayout(m_detailsLayout);
-    layout->addStretch(1);
+    hLayout->addLayout(m_detailsLayout);
+
+    hLayout->addStretch(1);
+
+    mainLayout->addLayout(hLayout);
+    mainLayout->addStretch(1);
 
     updateConnectionDetails();
 }
@@ -107,6 +116,28 @@ void ConnectionStatusWidget::updateConnectionDetails()
         QVariantMap map = item.toMap();
         QString label = map.value(QStringLiteral("label")).toString();
         QString value = map.value(QStringLiteral("value")).toString();
+
+        // Check if this is a section header
+        if (label == QLatin1String("__section__")) {
+            // Add some spacing before the section (except for first section)
+            if (m_detailsLayout->rowCount() > 0) {
+                m_detailsLayout->addItem(new QSpacerItem(0, 12, QSizePolicy::Minimum, QSizePolicy::Fixed));
+            }
+
+            QLabel *sectionLabel = new QLabel(value, this);
+            QFont sectionFont = sectionLabel->font();
+            sectionFont.setBold(true);
+            sectionFont.setPointSize(sectionFont.pointSize() + 1);
+            sectionLabel->setFont(sectionFont);
+            sectionLabel->setAlignment(Qt::AlignHCenter);
+
+            // Add as two-column spanning row
+            m_detailsLayout->addRow(sectionLabel);
+
+            // Add small spacing after section header
+            m_detailsLayout->addItem(new QSpacerItem(0, 4, QSizePolicy::Minimum, QSizePolicy::Fixed));
+            continue;
+        }
 
         // Check if this is a spacer (empty label and value)
         if (label.isEmpty() && value.isEmpty()) {

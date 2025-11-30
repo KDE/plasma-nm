@@ -63,6 +63,7 @@ QVariantList getConnectionDetails(const NetworkManager::Connection::Ptr &connect
 
     // Get IPv[46]Address and related nameservers + IPv[46] default gateway
     if (device && device->ipV4Config().isValid() && isActive) {
+        details << QStringLiteral("__section__") << i18n("IPv4");
         if (!device->ipV4Config().addresses().isEmpty()) {
             QHostAddress addr = device->ipV4Config().addresses().first().ip();
             if (!addr.isNull() && addr.isGlobal()) {
@@ -90,6 +91,7 @@ QVariantList getConnectionDetails(const NetworkManager::Connection::Ptr &connect
     }
 
     if (device && device->ipV6Config().isValid() && isActive) {
+        details << QStringLiteral("__section__") << i18n("IPv6");
         if (!device->ipV6Config().addresses().isEmpty()) {
             QHostAddress addr = device->ipV6Config().addresses().first().ip();
             if (!addr.isNull() && addr.isGlobal() && !addr.isUniqueLocalUnicast()) {
@@ -118,6 +120,7 @@ QVariantList getConnectionDetails(const NetworkManager::Connection::Ptr &connect
         }
     }
     if (type == NetworkManager::ConnectionSettings::Wired) {
+        details << QStringLiteral("__section__") << i18n("Hardware");
         NetworkManager::WiredDevice::Ptr wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
         if (wiredDevice) {
             if (isActive) {
@@ -126,6 +129,7 @@ QVariantList getConnectionDetails(const NetworkManager::Connection::Ptr &connect
             details << i18n("MAC Address") << wiredDevice->hardwareAddress();
         }
     } else if (type == NetworkManager::ConnectionSettings::Wireless) {
+        details << QStringLiteral("__section__") << i18n("Wi-Fi");
         NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
         NetworkManager::WirelessSetting::Ptr wirelessSetting =
             settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
@@ -165,6 +169,7 @@ QVariantList getConnectionDetails(const NetworkManager::Connection::Ptr &connect
             details << i18n("MAC Address") << wirelessDevice->hardwareAddress();
         }
     } else if (type == NetworkManager::ConnectionSettings::Gsm || type == NetworkManager::ConnectionSettings::Cdma) {
+        details << QStringLiteral("__section__") << i18n("Mobile Broadband");
         NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
         if (modemDevice) {
             ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(modemDevice->udi());
@@ -188,6 +193,7 @@ QVariantList getConnectionDetails(const NetworkManager::Connection::Ptr &connect
             }
         }
     } else if (type == NetworkManager::ConnectionSettings::Vpn) {
+        details << QStringLiteral("__section__") << i18n("VPN");
         // Get VPN plugin type from VPN setting
         NetworkManager::VpnSetting::Ptr vpnSetting = settings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
         QString vpnType;
@@ -214,6 +220,7 @@ QVariantList getConnectionDetails(const NetworkManager::Connection::Ptr &connect
         // so there are no specific VpnConnection settings to be fetched.
         details << i18n("VPN Plugin") << "WireGuard";
     } else if (type == NetworkManager::ConnectionSettings::Bluetooth) {
+        details << QStringLiteral("__section__") << i18n("Bluetooth");
         NetworkManager::BluetoothDevice::Ptr bluetoothDevice = device.objectCast<NetworkManager::BluetoothDevice>();
         if (bluetoothDevice) {
             details << i18n("Name") << bluetoothDevice->name();

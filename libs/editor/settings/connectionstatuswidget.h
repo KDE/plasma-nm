@@ -14,11 +14,12 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Device>
 
+#include <QStackedLayout>
+
 class QFormLayout;
-class QHBoxLayout;
 class QObject;
 class QVBoxLayout;
-class QSpacerItem;
+class QLabel;
 
 class ConnectionStatusWidget : public QWidget
 {
@@ -31,7 +32,7 @@ public:
     void setConnectionUuid(const QString &uuid);
 
     // Set a NetworkModelItem that provides connection details (used by applet)
-    // The KCM can call this with the actual NetworkModelItem pointer
+    // The KCM can call this with the actual NetworkModel-Item pointer
     // We use QObject* to avoid including NetworkModelItem header (avoid circular dependency)
     void setDetailsSource(QObject *networkModelItem);
 
@@ -45,10 +46,13 @@ private:
     QVariantList getConnectionDetails() const;
 
     QString m_connectionUuid;
-    QVBoxLayout *m_mainLayout = nullptr;
-    QHBoxLayout *m_hLayout = nullptr;
+
+    QStackedLayout *m_stackedLayout = nullptr;
+    QWidget *m_formContainer = nullptr;
+    QVBoxLayout *m_containerLayout = nullptr;
     QFormLayout *m_detailsLayout = nullptr;
-    QSpacerItem *m_topSpacer = nullptr;
+    QLabel *m_disconnectedLabel = nullptr;
+
     QPointer<QObject> m_detailsSource;  // Actually a NetworkModelItem*, but using QObject* to avoid dependency
     NetworkManager::Connection::Ptr m_connection;
     NetworkManager::Device::Ptr m_device;

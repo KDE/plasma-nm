@@ -12,8 +12,9 @@
 #include <QHBoxLayout>
 #include <QLabel>
 #include <QMetaObject>
-#include <QSizePolicy>
+#include <QStackedLayout>
 #include <QVBoxLayout>
+#include <QVariant>
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Device>
@@ -22,22 +23,43 @@ ConnectionStatusWidget::ConnectionStatusWidget(const QString &connectionUuid, QW
     : QWidget(parent, f)
     , m_connectionUuid(connectionUuid)
 {
-    m_mainLayout = new QVBoxLayout(this);
+    m_stackedLayout = new QStackedLayout(this);
+    m_stackedLayout->setSizeConstraint(QLayout::SetMinimumSize);
+    m_stackedLayout->setContentsMargins(0, 0, 0, 0);
 
+    // Page 0: Disconnected state
+    auto *disconnectedPage = new QWidget(this);
+    auto *disconnectedLayout = new QVBoxLayout(disconnectedPage);
+    m_disconnectedLabel = new QLabel(i18n("Disconnected"), this);
+    disconnectedLayout->addStretch(1);
+    disconnectedLayout->addWidget(m_disconnectedLabel, 0, Qt::AlignHCenter);
+    disconnectedLayout->addStretch(1);
+    m_stackedLayout->addWidget(disconnectedPage);
+
+    // Page 1: Details state
+    auto *detailsPage = new QWidget(this);
     // Create horizontal layout to center the form
-    m_hLayout = new QHBoxLayout();
-    m_hLayout->addStretch(1);
+    auto *detailsPageLayout = new QHBoxLayout(detailsPage);
+    detailsPageLayout->addStretch(1);
+
+    m_formContainer = new QWidget(this);
+    m_formContainer->setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
+
+    m_containerLayout = new QVBoxLayout(m_formContainer);
+    m_containerLayout->setContentsMargins(0, 0, 0, 0);
 
     // Create QFormLayout for connection details
     m_detailsLayout = new QFormLayout();
     m_detailsLayout->setFieldGrowthPolicy(QFormLayout::FieldsStayAtSizeHint);
     m_detailsLayout->setFormAlignment(Qt::AlignLeft | Qt::AlignTop);
     m_detailsLayout->setLabelAlignment(Qt::AlignRight);
-    m_hLayout->addLayout(m_detailsLayout);
+    m_containerLayout->addLayout(m_detailsLayout);
+    m_containerLayout->setAlignment(Qt::AlignTop);
 
-    m_hLayout->addStretch(1);
+    detailsPageLayout->addWidget(m_formContainer);
+    detailsPageLayout->addStretch(1);
 
-    m_mainLayout->addLayout(m_hLayout, 0); // Stretch factor 0 initially (for details state)
+    m_stackedLayout->addWidget(detailsPage);
 
     updateConnectionDetails();
 }
@@ -73,14 +95,7 @@ QVariantList ConnectionStatusWidget::getConnectionDetails() const
     // If a details source was set (NetworkModelItem from applet), call its details() method
     if (m_detailsSource) {
         QVariantList result;
-        // Call: QVariantList details() const
-        bool success = QMetaObject::invokeMethod(
-            m_detailsSource,
-            "details",
-            Qt::DirectConnection,
-            Q_RETURN_ARG(QVariantList, result)
-        );
-
+        bool success = QMetaObject::invokeMethod(m_detailsSource, "details", Qt::DirectConnection, Q_RETURN_ARG(QVariantList, result));
         if (success) {
             return result;
         }
@@ -97,74 +112,52 @@ QVariantList ConnectionStatusWidget::getConnectionDetails() const
 
 void ConnectionStatusWidget::updateConnectionDetails()
 {
-    // Clear existing form rows
+    // Clear existing form rows before populating
     while (m_detailsLayout->rowCount() > 0) {
         m_detailsLayout->removeRow(0);
     }
 
-    QVariantList details = getConnectionDetails();
+    const QVariantList details = getConnectionDetails();
 
     if (details.isEmpty()) {
-        // Make the horizontal layout expand vertically to center the content
-        m_mainLayout->setStretchFactor(m_hLayout, 1);
+        m_stackedLayout->setCurrentIndex(0); // Show "Disconnected" label
+    } else {
+        // Populate the details form
+        // Add each detail as a form row
+        for (const QVariant &item : details) {
+            QVariantMap map = item.toMap();
+            QString label = map.value(QStringLiteral("label")).toString();
+            QString value = map.value(QStringLiteral("value")).toString();
 
-        // Change form alignment to center for empty state
-        m_detailsLayout->setFormAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
-
-        // Show a centered "Disconnected" message
-        QLabel *emptyLabel = new QLabel(i18n("Disconnected"), this);
-        emptyLabel->setAlignment(Qt::AlignHCenter);
-        m_detailsLayout->addRow(emptyLabel);
-        return;
-    }
-
-    // Remove stretch from horizontal layout (let it use natural size)
-    m_mainLayout->setStretchFactor(m_hLayout, 0);
-
-    // Reset form alignment to top-left for details
-    m_detailsLayout->setFormAlignment(Qt::AlignLeft | Qt::AlignTop);
-
-    // Add each detail as a form row
-    for (const QVariant &item : details) {
-        QVariantMap map = item.toMap();
-        QString label = map.value(QStringLiteral("label")).toString();
-        QString value = map.value(QStringLiteral("value")).toString();
-
-        // Check if this is a section header
-        if (label == QLatin1String("__section__")) {
-            // Add some spacing before the section (except for first section)
-            if (m_detailsLayout->rowCount() > 0) {
-                m_detailsLayout->addItem(new QSpacerItem(0, 12, QSizePolicy::Minimum, QSizePolicy::Fixed));
+            // Check if this is a section header
+            if (label == QLatin1String("__section__")) {
+                // Add some spacing before the section (except for first section)
+                if (m_detailsLayout->rowCount() > 0) {
+                    m_detailsLayout->addItem(new QSpacerItem(0, 12, QSizePolicy::Minimum, QSizePolicy::Fixed));
+                }
+                QLabel *sectionLabel = new QLabel(value, this);
+                QFont sectionFont = sectionLabel->font();
+                sectionFont.setBold(true);
+                sectionFont.setPointSize(sectionFont.pointSize() + 1);
+                sectionLabel->setFont(sectionFont);
+                sectionLabel->setAlignment(Qt::AlignHCenter);
+                // Add as two-column spanning row
+                m_detailsLayout->addRow(sectionLabel);
+                // Add small spacing after section header
+                m_detailsLayout->addItem(new QSpacerItem(0, 4, QSizePolicy::Minimum, QSizePolicy::Fixed));
+            // Check if this is a spacer (empty label and value)
+            } else if (label.isEmpty() && value.isEmpty()) {
+                // Add vertical spacing
+                m_detailsLayout->addItem(new QSpacerItem(0, 10, QSizePolicy::Minimum, QSizePolicy::Fixed));
+            } else {
+                // Create value label widget
+                QLabel *valueLabel = new QLabel(value, this);
+                valueLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
+                // Add row with label text and value widget
+                m_detailsLayout->addRow(label + QLatin1Char(':'), valueLabel);
             }
-
-            QLabel *sectionLabel = new QLabel(value, this);
-            QFont sectionFont = sectionLabel->font();
-            sectionFont.setBold(true);
-            sectionFont.setPointSize(sectionFont.pointSize() + 1);
-            sectionLabel->setFont(sectionFont);
-            sectionLabel->setAlignment(Qt::AlignHCenter);
-
-            // Add as two-column spanning row
-            m_detailsLayout->addRow(sectionLabel);
-
-            // Add small spacing after section header
-            m_detailsLayout->addItem(new QSpacerItem(0, 4, QSizePolicy::Minimum, QSizePolicy::Fixed));
-            continue;
         }
-
-        // Check if this is a spacer (empty label and value)
-        if (label.isEmpty() && value.isEmpty()) {
-            // Add vertical spacing
-            m_detailsLayout->addItem(new QSpacerItem(0, 10, QSizePolicy::Minimum, QSizePolicy::Fixed));
-            continue;
-        }
-
-        // Create value label widget
-        QLabel *valueLabel = new QLabel(value, this);
-        valueLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
-
-        // Add row with label text and value widget
-        m_detailsLayout->addRow(label + QLatin1Char(':'), valueLabel);
+        m_stackedLayout->setCurrentIndex(1); // Show details form
     }
 }
 

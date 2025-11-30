@@ -52,8 +52,8 @@ void ConnectionEditorTabWidget::initializeTabWidget(const NetworkManager::Connec
         m_ui->connectionName->setText(connection->id());
     }
 
-    // Set current tab to the connection specific configuration
-    m_ui->tabWidget->setCurrentIndex(1);
+    // Set current tab to "Status"
+    m_ui->tabWidget->setCurrentIndex(0);
 }
 
 #include "moc_connectioneditortabwidget.cpp"

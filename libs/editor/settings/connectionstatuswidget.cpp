@@ -22,23 +22,22 @@ ConnectionStatusWidget::ConnectionStatusWidget(const QString &connectionUuid, QW
     : QWidget(parent, f)
     , m_connectionUuid(connectionUuid)
 {
-    auto *mainLayout = new QVBoxLayout(this);
+    m_mainLayout = new QVBoxLayout(this);
 
     // Create horizontal layout to center the form
-    auto *hLayout = new QHBoxLayout();
-    hLayout->addStretch(1);
+    m_hLayout = new QHBoxLayout();
+    m_hLayout->addStretch(1);
 
     // Create QFormLayout for connection details
     m_detailsLayout = new QFormLayout();
     m_detailsLayout->setFieldGrowthPolicy(QFormLayout::FieldsStayAtSizeHint);
     m_detailsLayout->setFormAlignment(Qt::AlignLeft | Qt::AlignTop);
     m_detailsLayout->setLabelAlignment(Qt::AlignRight);
-    hLayout->addLayout(m_detailsLayout);
+    m_hLayout->addLayout(m_detailsLayout);
 
-    hLayout->addStretch(1);
+    m_hLayout->addStretch(1);
 
-    mainLayout->addLayout(hLayout);
-    mainLayout->addStretch(1);
+    m_mainLayout->addLayout(m_hLayout, 0); // Stretch factor 0 initially (for details state)
 
     updateConnectionDetails();
 }
@@ -93,9 +92,7 @@ QVariantList ConnectionStatusWidget::getConnectionDetails() const
     }
 
     // Fallback: no details source or connection/device
-    QVariantList details;
-    details << QVariantMap{{QStringLiteral("label"), i18n("Status")}, {QStringLiteral("value"), i18n("Activate this connection to view details")}};
-    return details;
+    return QVariantList();
 }
 
 void ConnectionStatusWidget::updateConnectionDetails()
@@ -108,8 +105,24 @@ void ConnectionStatusWidget::updateConnectionDetails()
     QVariantList details = getConnectionDetails();
 
     if (details.isEmpty()) {
+        // Make the horizontal layout expand vertically to center the content
+        m_mainLayout->setStretchFactor(m_hLayout, 1);
+
+        // Change form alignment to center for empty state
+        m_detailsLayout->setFormAlignment(Qt::AlignHCenter | Qt::AlignVCenter);
+
+        // Show a centered "Disconnected" message
+        QLabel *emptyLabel = new QLabel(i18n("Disconnected"), this);
+        emptyLabel->setAlignment(Qt::AlignHCenter);
+        m_detailsLayout->addRow(emptyLabel);
         return;
     }
+
+    // Remove stretch from horizontal layout (let it use natural size)
+    m_mainLayout->setStretchFactor(m_hLayout, 0);
+
+    // Reset form alignment to top-left for details
+    m_detailsLayout->setFormAlignment(Qt::AlignLeft | Qt::AlignTop);
 
     // Add each detail as a form row
     for (const QVariant &item : details) {

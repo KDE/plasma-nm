@@ -15,7 +15,10 @@
 #include <NetworkManagerQt/Device>
 
 class QFormLayout;
+class QHBoxLayout;
 class QObject;
+class QVBoxLayout;
+class QSpacerItem;
 
 class ConnectionStatusWidget : public QWidget
 {
@@ -42,7 +45,10 @@ private:
     QVariantList getConnectionDetails() const;
 
     QString m_connectionUuid;
+    QVBoxLayout *m_mainLayout = nullptr;
+    QHBoxLayout *m_hLayout = nullptr;
     QFormLayout *m_detailsLayout = nullptr;
+    QSpacerItem *m_topSpacer = nullptr;
     QPointer<QObject> m_detailsSource;  // Actually a NetworkModelItem*, but using QObject* to avoid dependency
     NetworkManager::Connection::Ptr m_connection;
     NetworkManager::Device::Ptr m_device;

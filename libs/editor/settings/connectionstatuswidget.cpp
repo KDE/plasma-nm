@@ -26,7 +26,7 @@ ConnectionStatusWidget::ConnectionStatusWidget(const QString &connectionUuid, QW
     // Create QFormLayout for connection details
     m_detailsLayout = new QFormLayout();
     m_detailsLayout->setFieldGrowthPolicy(QFormLayout::ExpandingFieldsGrow);
-    m_detailsLayout->setFormAlignment(Qt::AlignLeft | Qt::AlignTop);
+    m_detailsLayout->setFormAlignment(Qt::AlignHCenter | Qt::AlignTop);
     m_detailsLayout->setLabelAlignment(Qt::AlignRight);
     layout->addLayout(m_detailsLayout);
     layout->addStretch(1);

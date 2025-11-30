@@ -148,7 +148,7 @@ msgstr ""
 #: qml/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: qml/ConnectionItem.qml:85
 msgid "Connect"

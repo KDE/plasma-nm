@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-27 02:38+0000\n"
-"PO-Revision-Date: 2025-08-07 14:20+0200\n"
+"PO-Revision-Date: 2025-11-19 09:23+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -150,7 +150,7 @@ msgstr ""
 #: qml/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: qml/ConnectionItem.qml:85
 msgid "Connect"

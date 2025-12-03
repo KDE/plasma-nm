@@ -24,7 +24,7 @@ msgstr ""
 #: vpnc.cpp:73
 #, kde-format
 msgid "Error decrypting the obfuscated password"
-msgstr "S'ha produït un error en desencriptar la contrasenya ofuscada"
+msgstr "S'ha produït un error mentre es desencriptava la contrasenya ofuscada"
 
 #: vpnc.cpp:73
 #, kde-format

@@ -29,12 +29,12 @@ msgstr "Falta la implementació d'OpenVPN en NetworkManager"
 #: openvpn.cpp:208
 #, kde-format
 msgid "Error saving file %1: %2"
-msgstr "S'ha produït un error en guardar el fitxer %1: %2"
+msgstr "S'ha produït un error mentre es guardava el fitxer %1: %2"
 
 #: openvpn.cpp:236
 #, kde-format
 msgid "Error copying certificate to %1: %2"
-msgstr "S'ha produït un error en copiar el certificat a %1: %2"
+msgstr "S'ha produït un error mentre es copiava el certificat a %1: %2"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19

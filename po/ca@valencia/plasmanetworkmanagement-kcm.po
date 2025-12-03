@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-27 02:38+0000\n"
-"PO-Revision-Date: 2025-08-07 09:06+0200\n"
+"PO-Revision-Date: 2025-11-27 09:27+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -39,7 +39,7 @@ msgstr "Importa"
 #: kcm.cpp:278 kcm.cpp:351
 #, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "No s'ha pogut importar la connexió VPN: %1"
+msgstr "Ha fallat mentre s'importava la connexió VPN: %1"
 
 #: kcm.cpp:281 kcm.cpp:354
 #, kde-format
@@ -154,7 +154,7 @@ msgstr ""
 #: qml/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: qml/ConnectionItem.qml:85
 msgid "Connect"
@@ -244,9 +244,3 @@ msgstr "La contrasenya cal que siga una clau WEP vàlida"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "La contrasenya cal que tinga entre 8 i 64 caràcters"
-
-#~ msgid "Create"
-#~ msgstr "Crea"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"

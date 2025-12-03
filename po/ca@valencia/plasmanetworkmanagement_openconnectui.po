@@ -24,7 +24,7 @@ msgstr ""
 #: openconnectauth.cpp:346
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr "No s'ha pogut restablir el testimoni de programari: %1"
+msgstr "Ha fallat mentre es restablia el testimoni de programari: %1"
 
 #: openconnectauth.cpp:399
 #, kde-format

@@ -65,15 +65,18 @@ MouseArea {
             model: root.details
 
             delegate: Item {
+                id: delegateItem
                 required property var modelData
 
                 readonly property string label: modelData.label || ""
                 readonly property string value: modelData.value || ""
-                readonly property bool isEmpty: !label || label.length === 0
+                readonly property bool isSection: modelData.label === "__section__"
+                // isEmpty handles defensive case where modelData.label is null/undefined
+                readonly property bool isEmpty: !(modelData.label) || modelData.label.length === 0
 
                 Layout.fillWidth: true
                 Layout.columnSpan: 2
-                Layout.preferredHeight: isEmpty ? Kirigami.Units.gridUnit : labelItem.implicitHeight
+                Layout.preferredHeight: (delegateItem.isEmpty || delegateItem.isSection) ? 0 : labelItem.implicitHeight
 
                 PlasmaComponents3.Label {
                     id: labelItem
@@ -81,11 +84,11 @@ MouseArea {
                     anchors.right: parent.horizontalCenter
                     anchors.rightMargin: detailsGrid.columnSpacing / 2
 
-                    visible: !modelData.isEmpty
+                    visible: !delegateItem.isEmpty && !delegateItem.isSection
                     elide: Text.ElideNone
                     font: Kirigami.Theme.smallFont
                     horizontalAlignment: Text.AlignRight
-                    text: `${modelData.label}:`
+                    text: `${delegateItem.label}:`
                     textFormat: Text.PlainText
                     opacity: 0.6
                 }
@@ -95,11 +98,11 @@ MouseArea {
                     anchors.leftMargin: detailsGrid.columnSpacing / 2
                     anchors.right: parent.right
 
-                    visible: !modelData.isEmpty
+                    visible: !delegateItem.isEmpty && !delegateItem.isSection
                     elide: Text.ElideRight
                     font: Kirigami.Theme.smallFont
                     horizontalAlignment: Text.AlignLeft
-                    text: modelData.value
+                    text: delegateItem.value
                     textFormat: Text.PlainText
                     opacity: 1
                     readonly property bool isContent: true

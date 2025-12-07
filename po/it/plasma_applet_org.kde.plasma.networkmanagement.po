@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma_applet_networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 14:42+0000\n"
-"PO-Revision-Date: 2025-07-30 08:57+0200\n"
+"PO-Revision-Date: 2025-12-06 15:45+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -148,14 +148,13 @@ msgstr "Reti"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
-"Clic con il pulsante centrale del mouse per disattivare la modalità aereo"
+msgstr "Clic centrale per disattivare la modalità aereo"
 
 #: main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "Clic con il pulsante centrale del mouse per attivare la modalità aereo"
+msgstr "Clic centrale per attivare la modalità aereo"
 
 #: main.qml:71 Toolbar.qml:74
 #, kde-format

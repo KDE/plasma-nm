@@ -1,20 +1,21 @@
 # SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2014, 2016, 2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2023-04-26 20:13+0200\n"
-"Last-Translator: Frederik Schwarzer <schwarzer@kde.org>\n"
+"PO-Revision-Date: 2025-11-29 17:39+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 22.07.70\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: vpnc.cpp:73
 #, kde-format
@@ -138,7 +139,7 @@ msgstr "*.pem *.crt *.cer"
 #: vpnc.ui:192
 #, kde-format
 msgid "Advanced…"
-msgstr "Erweitert ..."
+msgstr "Erweitert …"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpncadvanced.ui:18
@@ -237,7 +238,7 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
-"Zu verwendender lokaler Port (0-65535). Mit dem Standardwert 0 wird ein "
+"Zu verwendender lokaler Port (0–65535). Mit dem Standardwert 0 wird ein "
 "zufälliger Port benutzt. Port 500 ist VPNC-Standard."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)

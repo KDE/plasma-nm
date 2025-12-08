@@ -1,24 +1,25 @@
-# SPDX-FileCopyrightText: 2022, 2024 Alois Spitzbart <spitz234@hotmail.com>
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
-# SPDX-FileCopyrightText: 2013 Markus Slopianka <kamikazow@web.de>
 # SPDX-FileCopyrightText: 2013 Benjamin Weis <benjamin.weis@gmx.com>
+# SPDX-FileCopyrightText: 2013 Markus Slopianka <kamikazow@web.de>
+# SPDX-FileCopyrightText: 2013, 2014, 2015, 2017, 2018, 2019, 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2016, 2017, 2020, 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2022, 2024 Alois Spitzbart <spitz234@hotmail.com>
 # SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
 # SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2024-01-14 20:05+0100\n"
-"Last-Translator: Flori G <Renner03@protonmail.com>\n"
+"PO-Revision-Date: 2025-11-29 17:27+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.08.2\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -38,7 +39,7 @@ msgstr "QR-Code des Netzwerks anzeigen"
 #: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
-msgstr "Einrichten ..."
+msgstr "Einrichten …"
 
 #: contents/ui/ConnectionItem.qml:121
 #, kde-format
@@ -110,12 +111,12 @@ msgstr "Flugmodus aktivieren"
 #: contents/ui/main.qml:97
 #, kde-format
 msgid "Open Network Login Page…"
-msgstr "Anmeldungsseite des Netzwerks öffnen ..."
+msgstr "Anmeldeseite des Netzwerks öffnen …"
 
 #: contents/ui/main.qml:102
 #, kde-format
 msgid "&Configure Network Connections…"
-msgstr "Netzwerkverbindungen einri&chten ..."
+msgstr "Netzwerkverbindungen einri&chten …"
 
 #: contents/ui/main.qml:139
 #, kde-format
@@ -126,7 +127,7 @@ msgstr "QR-Code für %1"
 #: contents/ui/PasswordField.qml:16
 #, kde-format
 msgid "Password…"
-msgstr "Passwort ..."
+msgstr "Passwort …"
 
 #: contents/ui/PopupDialog.qml:102
 #, kde-format
@@ -136,17 +137,17 @@ msgstr "Flugmodus ist aktiviert"
 #: contents/ui/PopupDialog.qml:106
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
-msgstr "Dratlose und mobile Netze sind deaktiviert"
+msgstr "Drahtlose und mobile Netze sind deaktiviert"
 
 #: contents/ui/PopupDialog.qml:108
 #, kde-format
 msgid "Wireless is deactivated"
-msgstr "Drahtloses Netzwerk ist abgeschaltet"
+msgstr "Drahtloses Netzwerk ist deaktiviert"
 
 #: contents/ui/PopupDialog.qml:111
 #, kde-format
 msgid "Mobile network is deactivated"
-msgstr "Mobiles Netzwerk ist abgeschaltet"
+msgstr "Mobiles Netzwerk ist deaktiviert"
 
 #: contents/ui/PopupDialog.qml:114
 #, kde-format
@@ -195,7 +196,7 @@ msgstr "Hotspot erstellen"
 #: contents/ui/Toolbar.qml:221
 #, kde-format
 msgid "Configure network connections…"
-msgstr "Netzwerkverbindungen bearbeiten ..."
+msgstr "Netzwerkverbindungen bearbeiten …"
 
 #: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:106
 #, kde-format

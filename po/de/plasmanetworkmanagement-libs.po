@@ -1,26 +1,27 @@
-# SPDX-FileCopyrightText: 2024, 2025 Flori G <Renner03@protonmail.com>
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
-# SPDX-FileCopyrightText: 2013 Markus Slopianka <kamikazow@web.de>
 # SPDX-FileCopyrightText: 2013 Benjamin Weis <benjamin.weis@gmx.com>
+# SPDX-FileCopyrightText: 2013 Markus Slopianka <kamikazow@web.de>
+# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2014, 2016, 2018, 2020, 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2022, 2025 Alois Spitzbart <spitz234@hotmail.com>
 # SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
 # SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
+# SPDX-FileCopyrightText: 2024, 2025 Flori G <Renner03@protonmail.com>
 # SPDX-FileCopyrightText: 2025 Frank Steinmetzger <dev-kde@felsenfleischer.de>
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2025-06-11 23:04+0200\n"
-"Last-Translator: Frank Steinmetzger <dev-kde@felsenfleischer.de>\n"
+"PO-Revision-Date: 2025-12-01 19:44+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -611,7 +612,7 @@ msgstr "Alternative Betreff-Übereinstimmungen:"
 #: editor/settings/ui/802-1x.ui:206 editor/settings/ui/802-1x.ui:230
 #, kde-format
 msgid "…"
-msgstr "..."
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:215
@@ -762,14 +763,14 @@ msgstr "Gebündelte Verbindungen:"
 #: editor/settings/ui/team.ui:56
 #, kde-format
 msgid "Add…"
-msgstr "Hinzufügen …"
+msgstr "Hinzufügen …"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnEdit)
 #: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
 #: editor/settings/ui/team.ui:71
 #, kde-format
 msgid "Edit…"
-msgstr "Bearbeiten …"
+msgstr "Bearbeiten …"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
@@ -952,7 +953,7 @@ msgstr ""
 #: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:310
 #, kde-format
 msgid "Advanced…"
-msgstr "Erweitert …"
+msgstr "Erweitert …"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:81
@@ -1246,7 +1247,7 @@ msgstr "Diese Verbindung benötigt IPv4"
 #: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
 #, kde-format
 msgid "Routes…"
-msgstr "Routen …"
+msgstr "Routen …"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:30
@@ -1431,7 +1432,7 @@ msgstr "JSON-Konfiguration:"
 #: editor/settings/ui/team.ui:123
 #, kde-format
 msgid "Import configuration from file…"
-msgstr "Einstellungen aus Datei werden geladen …"
+msgstr "Einstellungen aus Datei laden …"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
@@ -1596,7 +1597,7 @@ msgstr "Geklonte MAC-Adresse:"
 #: editor/settings/ui/wificonnectionwidget.ui:240
 #, kde-format
 msgid "Random…"
-msgstr "Zufällig …"
+msgstr "Zufällig …"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -1999,7 +2000,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:126
 #, kde-format
 msgid "Peers…"
-msgstr "Gegenstellen …"
+msgstr "Gegenstellen …"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
@@ -3004,7 +3005,7 @@ msgstr "Neue mobile Breitbandverbindung"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My plan is not listed…"
-msgstr "Der Tarif ist nicht aufgelistet …"
+msgstr "Mein Tarif ist nicht aufgelistet …"
 
 #: editor/widgets/mobileconnectionwizard.cpp:138
 #, kde-format
@@ -3490,7 +3491,7 @@ msgstr "VPN-Verbindungen"
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
-msgstr "VPN-Verbindung importieren …"
+msgstr "VPN-Verbindung importieren …"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format

@@ -6,20 +6,21 @@
 # SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
 # SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
 # SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-18 00:45+0000\n"
-"PO-Revision-Date: 2025-09-17 16:32+0200\n"
-"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
+"PO-Revision-Date: 2025-11-29 17:45+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -154,7 +155,7 @@ msgstr ""
 #: qml/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: qml/ConnectionItem.qml:85
 msgid "Connect"
@@ -168,6 +169,8 @@ msgstr "Verbindung trennen"
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr ""
+"Die Verbindung zu diesem Netzwerk kann nicht hergestellt werden, da es nicht "
+"erkannt wurde."
 
 #: qml/ConnectionItem.qml:95
 msgid "Delete"
@@ -188,7 +191,7 @@ msgstr "Verbindung wird aufgebaut"
 #: qml/ConnectionItem.qml:124
 msgctxt "@title:column Available networks"
 msgid "Available"
-msgstr ""
+msgstr "Verfügbar"
 
 #: qml/main.qml:151
 msgid "Add new connection"
@@ -216,41 +219,34 @@ msgid "Do you want to remove the connection '%1'?"
 msgstr "Möchten Sie die Verbindung „'%1“ entfernen?"
 
 #: qml/main.qml:262
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Verbinden"
 
 #: qml/main.qml:268
-#, fuzzy
-#| msgid "Cancel"
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Abbrechen"
 
 #: qml/main.qml:274
-#, fuzzy
-#| msgctxt "@label Hotspot password"
-#| msgid "Password:"
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "Passwort:"
+msgstr "Passwort eingeben"
 
 #: qml/main.qml:280
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "Netzwerk: %1"
 
 #: qml/main.qml:300
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "Passwort muss ein gültiger WEP-Schlüssel sein"
 
 #: qml/main.qml:301
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "Passwort muss zwischen 8 und 64 Zeichen lang sein"
 
 #~ msgid "Create"
 #~ msgstr "Erstellen"

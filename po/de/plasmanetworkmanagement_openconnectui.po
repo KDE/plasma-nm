@@ -1,21 +1,22 @@
-# SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
 # SPDX-FileCopyrightText: 2013, 2014, 2015, 2017, 2019, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2020 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
+# SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
+# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-09-19 17:31+0200\n"
-"Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
+"PO-Revision-Date: 2025-11-29 17:35+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: openconnectauth.cpp:345
 #, kde-format
@@ -25,7 +26,7 @@ msgstr "Fehler beim Initialisieren des Software-Tokens: %1"
 #: openconnectauth.cpp:398
 #, kde-format
 msgid "Contacting host, please wait…"
-msgstr "Verbindung zum Rechner wird hergestellt, bitte warten ..."
+msgstr "Verbindung zum Rechner wird hergestellt, bitte warten …"
 
 #: openconnectauth.cpp:786
 #, kde-format
@@ -405,29 +406,29 @@ msgstr "Interne Benutzerverifikation gesperrt"
 #, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Falsche PIN. %1 Versuch verbleibend."
+msgstr[1] "Falsche PIN. %1 Versuche verbleibend."
 
 #: openconnectwebauthdialog.cpp:194
 #, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Zu kurz. %1 Versuch verbleibend."
+msgstr[1] "Zu kurz. %1 Versuche verbleibend."
 
 #: openconnectwebauthdialog.cpp:197
 #, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ungültige Zeichen. %1 Versuch verbleibend."
+msgstr[1] "Ungültige Zeichen. %1 Versuche verbleibend."
 
 #: openconnectwebauthdialog.cpp:201
 #, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Identisch zur aktuellen PIN. %1 Versuch verbleibend."
+msgstr[1] "Identisch zur aktuellen PIN. %1 Versuche verbleibend."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format

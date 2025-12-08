@@ -1,107 +1,109 @@
-# German translations for plasma-nm package
-# German messages for plasma-nm.
+# Translation for kcm_mobile_wired.po to Euskara/Basque (eu).
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>.
+#
+# Translators:
+# SPDX-FileCopyrightText: 2025 Iñigo Salvador Azurmendi <xalba@ni.eus>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-11-29 16:56+0100\n"
-"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
-"Language-Team: German <kde-i18n-de@kde.org>\n"
-"Language: de\n"
+"PO-Revision-Date: 2025-12-07 22:20+0100\n"
+"Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
+"Language-Team: Basque <kde-i18n-eu@kde.org>\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.08.3\n"
 
 #: ui/ConnectDialog.qml:57
 #, kde-format
 msgid "Invalid input."
-msgstr "Ungültige Eingabe."
+msgstr "Sarrera baliogabea."
 
 #: ui/ConnectionInfo.qml:15
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
-msgstr "Verbindungsinformationen für „%1“"
+msgstr "\"%1\"(e)(r)en konexio informazioa"
 
 #: ui/ConnectionInfo.qml:22
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
-msgstr "Übertragungsraten"
+msgstr "Transferentzia emariak"
 
 #: ui/ConnectionInfo.qml:38
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr "Verbunden, ↓ %1/s, ↑ %2/s"
+msgstr "Konektatuta, ↓ %1/s, ↑ %2/s"
 
 #: ui/ConnectionInfo.qml:45
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
-msgstr "Verbindungsdetails"
+msgstr "Konexioaren xehetasunak"
 
 #: ui/main.qml:59
 #, kde-format
 msgctxt "@title:group"
 msgid "Wired Network Connections"
-msgstr "Kabelgebundene Netzwerkverbindungen"
+msgstr "Haridun sare konexioak"
 
 #: ui/main.qml:117
 #, kde-format
 msgid "No wired connection available."
-msgstr "Keine kabelgebundene Netzwerkverbindung verfügbar."
+msgstr "Ez dago haridun sare konexiorik erabilgarri."
 
 #: ui/NetworkSettings.qml:16
 #, kde-format
 msgid "Add New Connection"
-msgstr "Neue Verbindung hinzufügen"
+msgstr "Gehitu konexioa berria"
 
 #: ui/NetworkSettings.qml:31
 #, kde-format
 msgid "Save"
-msgstr "Speichern"
+msgstr "Gorde"
 
 #: ui/NetworkSettings.qml:49
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
-msgstr "IP-Einstellungen"
+msgstr "IP ezarpenak"
 
 #: ui/NetworkSettings.qml:55
 #, kde-format
 msgid "Method"
-msgstr "Methode"
+msgstr "Metodoa"
 
 #: ui/NetworkSettings.qml:56
 #, kde-format
 msgid "Automatic"
-msgstr "Automatisch"
+msgstr "Automatikoa"
 
 #: ui/NetworkSettings.qml:56
 #, kde-format
 msgid "Manual"
-msgstr "Manuell"
+msgstr "Eskuz"
 
 #: ui/NetworkSettings.qml:72
 #, kde-format
 msgid "IP Address"
-msgstr "IP-Adresse"
+msgstr "IP helbidea"
 
 #: ui/NetworkSettings.qml:90
 #, kde-format
 msgid "Gateway"
-msgstr "Gateway"
+msgstr "Atebidea"
 
 #: ui/NetworkSettings.qml:108
 #, kde-format
 msgid "Network prefix length"
-msgstr "Länge des Netzwerkpräfixes"
+msgstr "Sareko aurrizkiaren luzera"
 
 #: ui/NetworkSettings.qml:127
 #, kde-format

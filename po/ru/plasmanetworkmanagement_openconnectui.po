@@ -1,7 +1,7 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2019, 2021, 2022, 2024 Alexander Yavorsky <kekcuha@gmail.com>
+# SPDX-FileCopyrightText: 2019, 2021, 2022, 2024, 2025 Alexander Yavorsky <kekcuha@gmail.com>
 # SPDX-FileCopyrightText: 2024 Olesya Gerasimenko <translation-team@basealt.ru>
 # Victor Ryzhykh <victorr2007@yandex.ru>, 2014.
 # Alexander Lakhin <exclusion@gmail.com>, 2014.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-02-13 12:29+0300\n"
+"PO-Revision-Date: 2025-12-11 19:24+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 25.11.90\n"
 
 #: openconnectauth.cpp:345
 #, kde-format
@@ -406,8 +406,7 @@ msgid "Internal User Verification Locked"
 msgstr "Внутренняя проверка подлинности пользователя заблокирована"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
 msgstr[0] "Неверный PIN-код. Осталось попыток: %1."
@@ -416,8 +415,7 @@ msgstr[2] "Неверный PIN-код. Осталось попыток: %1."
 msgstr[3] "Неверный PIN-код. Осталось попыток: %1."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
 msgstr[0] "Слишком мало символов. Осталось попыток: %1."
@@ -426,8 +424,7 @@ msgstr[2] "Слишком мало символов. Осталось попыт
 msgstr[3] "Слишком мало символов. Осталось попыток: %1."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
 msgstr[0] "Некорректные символы. Осталось попыток: %1."
@@ -436,8 +433,7 @@ msgstr[2] "Некорректные символы. Осталось попыт�
 msgstr[3] "Некорректные символы. Осталось попыток: %1."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
 msgstr[0] "Совпадает с текущим PIN-кодом. Осталось попыток: %1."
@@ -512,6 +508,8 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"Токен безопасности не поддерживает запрошенный сервером способ проверки "
+"подлинности."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format

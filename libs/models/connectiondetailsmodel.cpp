@@ -7,6 +7,8 @@
 #include "connectiondetailsmodel.h"
 #include "connectiondetails.h"
 
+#include <QStringList>
+
 ConnectionDetailsModel::ConnectionDetailsModel(QObject *parent)
     : QAbstractListModel(parent)
 {
@@ -67,4 +69,21 @@ void ConnectionDetailsModel::setDetailsList(const QList<ConnectionDetails::Conne
         }
     }
     endResetModel();
+}
+
+QString ConnectionDetailsModel::accessibilityDescription() const
+{
+    QStringList parts;
+
+    for (const Item &item : m_items) {
+        if (item.isSection) {
+            // Skip section headers for accessibility - they're just organizational
+            continue;
+        } else if (!item.label.isEmpty() && !item.value.isEmpty()) {
+            // Format as "Label: Value"
+            parts.append(QString("%1: %2").arg(item.label, item.value));
+        }
+    }
+
+    return parts.join(", ");
 }

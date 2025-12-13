@@ -42,6 +42,8 @@ public:
 
     void setDetailsList(const QList<ConnectionDetails::ConnectionDetailSection> &detailsList);
 
+    Q_INVOKABLE QString accessibilityDescription() const;
+
 private:
     struct Item {
         bool isSection;

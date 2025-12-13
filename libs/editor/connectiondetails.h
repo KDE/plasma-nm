@@ -13,18 +13,20 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Device>
 
-#include <QVariantList>
+#include <QMap>
+#include <QString>
 
 namespace ConnectionDetails
 {
 /**
- * Extracts detailed information about an active network connection
- * @param connection The NetworkManager connection
- * @param device The network device
- * @return List of QVariantMaps with "label" and "value" keys
+ * Extracts detailed information about an active network connection.
+ * @param connection The NetworkManager connection.
+ * @param device The network device.
+ * @return A map where the key is the section name (e.g., "IPv4")
+ *         and the value is another map of label-value pairs for that section.
  */
-PLASMANM_EDITOR_EXPORT QVariantList getConnectionDetails(const NetworkManager::Connection::Ptr &connection,
-                                                          const NetworkManager::Device::Ptr &device);
+PLASMANM_EDITOR_EXPORT QMap<QString, QMap<QString, QString>>
+getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device);
 
 }
 

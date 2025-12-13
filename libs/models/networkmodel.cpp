@@ -36,8 +36,8 @@ QVariant NetworkModel::data(const QModelIndex &index, int role) const
         NetworkModelItem *item = m_list.itemAt(row);
 
         switch (role) {
-        case ConnectionDetailsRole:
-            return item->details();
+        case ConnectionDetailsModelRole:
+            return QVariant::fromValue(item->detailsModel());
         case ConnectionIconRole:
             return item->icon();
         case ConnectionPathRole:
@@ -131,7 +131,7 @@ int NetworkModel::rowCount(const QModelIndex &parent) const
 QHash<int, QByteArray> NetworkModel::roleNames() const
 {
     QHash<int, QByteArray> roles = QAbstractListModel::roleNames();
-    roles[ConnectionDetailsRole] = "ConnectionDetails";
+    roles[ConnectionDetailsModelRole] = "ConnectionDetailsModel";
     roles[ConnectionIconRole] = "ConnectionIcon";
     roles[ConnectionPathRole] = "ConnectionPath";
     roles[ConnectionStateRole] = "ConnectionState";
@@ -489,7 +489,7 @@ void NetworkModel::addConnection(const NetworkManager::Connection::Ptr &connecti
         item->setSsid(QString::fromUtf8(wirelessSetting->ssid()));
     }
 
-    item->invalidateDetails();
+    item->updateConnectionDetailsModel();
 
     insertItem(item);
     qCDebug(PLASMA_NM_LIBS_LOG) << "New connection" << item->name() << "added";
@@ -585,7 +585,7 @@ void NetworkModel::addWirelessNetwork(const NetworkManager::WirelessNetwork::Ptr
     item->setSsid(network->ssid());
     item->setType(NetworkManager::ConnectionSettings::Wireless);
     item->setSecurityType(securityType);
-    item->invalidateDetails();
+    item->updateConnectionDetailsModel();
 
     insertItem(item);
     qCDebug(PLASMA_NM_LIBS_LOG) << "New wireless network" << item->name() << "added";
@@ -609,7 +609,7 @@ void NetworkModel::checkAndCreateDuplicate(const QString &connection, const QStr
 
     if (createDuplicate) {
         auto duplicatedItem = new NetworkModelItem(originalItem);
-        duplicatedItem->invalidateDetails();
+        duplicatedItem->updateConnectionDetailsModel();
 
         insertItem(duplicatedItem);
     }
@@ -672,7 +672,7 @@ void NetworkModel::updateItem(NetworkModelItem *item)
 
     const int row = m_list.indexOf(item);
     if (row != -1) {
-        item->invalidateDetails();
+        item->updateConnectionDetailsModel();
         QModelIndex index = createIndex(row, 0);
         Q_EMIT dataChanged(index, index, item->changedRoles());
         item->clearChangedRoles();

@@ -13,13 +13,14 @@ import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
 import org.kde.kirigami 2.20 as Kirigami
 import org.kde.plasma.extras 2.0 as PlasmaExtras
 import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.plasma.networkmanagement as PlasmaNM
 
 MouseArea {
     id: root
 
     height: detailsGrid.implicitHeight
 
-    property var details: []
+    property PlasmaNM.ConnectionDetailsModel detailsModel: null
 
     acceptedButtons: Qt.RightButton
 
@@ -62,47 +63,67 @@ MouseArea {
         Repeater {
             id: repeater
 
-            model: root.details
+            model: root.detailsModel
 
             delegate: Item {
                 id: delegateItem
-                required property var modelData
 
-                readonly property string label: modelData.label || ""
-                readonly property string value: modelData.value || ""
-                readonly property bool isSection: modelData.label === "__section__"
-                // isEmpty handles defensive case where modelData.label is null/undefined
-                readonly property bool isEmpty: !(modelData.label) || modelData.label.length === 0
+                // Required properties from ConnectionDetailsModel
+                required property bool isSection
+                required property string sectionTitle
+                required property string detailLabel
+                required property string detailValue
 
                 Layout.fillWidth: true
                 Layout.columnSpan: 2
-                Layout.preferredHeight: (delegateItem.isEmpty || delegateItem.isSection) ? 0 : labelItem.implicitHeight
+                Layout.preferredHeight: {
+                    if (delegateItem.isSection) {
+                        return sectionTitleLabel.implicitHeight * 1.2; // Add some padding for sections
+                    } else if (delegateItem.detailLabel || delegateItem.detailValue) {
+                        return detailLabelItem.implicitHeight;
+                    }
+                    return 0; // Hide empty items
+                }
 
+                // Section Title Label
                 PlasmaComponents3.Label {
-                    id: labelItem
+                    id: sectionTitleLabel
+                    anchors.fill: parent
+                    visible: delegateItem.isSection
+                    elide: Text.ElideNone
+                    font: Kirigami.Theme.smallFont
+                    horizontalAlignment: Text.AlignHCenter
+                    text: delegateItem.sectionTitle
+                    textFormat: Text.PlainText
+                }
+
+                // Detail Label
+                PlasmaComponents3.Label {
+                    id: detailLabelItem // Renamed from labelItem
                     anchors.left: parent.left
                     anchors.right: parent.horizontalCenter
                     anchors.rightMargin: detailsGrid.columnSpacing / 2
 
-                    visible: !delegateItem.isEmpty && !delegateItem.isSection
+                    visible: !delegateItem.isSection && (delegateItem.detailLabel || delegateItem.detailValue)
                     elide: Text.ElideNone
                     font: Kirigami.Theme.smallFont
                     horizontalAlignment: Text.AlignRight
-                    text: `${delegateItem.label}:`
+                    text: `${delegateItem.detailLabel}:`
                     textFormat: Text.PlainText
                     opacity: 0.6
                 }
 
+                // Detail Value
                 PlasmaComponents3.Label {
                     anchors.left: parent.horizontalCenter
                     anchors.leftMargin: detailsGrid.columnSpacing / 2
                     anchors.right: parent.right
 
-                    visible: !delegateItem.isEmpty && !delegateItem.isSection
+                    visible: !delegateItem.isSection && (delegateItem.detailLabel || delegateItem.detailValue)
                     elide: Text.ElideRight
                     font: Kirigami.Theme.smallFont
                     horizontalAlignment: Text.AlignLeft
-                    text: delegateItem.value
+                    text: delegateItem.detailValue
                     textFormat: Text.PlainText
                     opacity: 1
                     readonly property bool isContent: true

@@ -158,10 +158,10 @@ PlasmaExtras.ExpandableListItem {
                 width: parent.width
                 visible: detailsTabBar.currentIndex === 1
 
-                activeFocusOnTab: details.length > 0
-                details: connectionItem.model.ConnectionDetails
+                activeFocusOnTab: detailsModel && detailsModel.rowCount() > 0
+                detailsModel: model.ConnectionDetailsModel
 
-                Accessible.description: details.join(" ")
+                Accessible.description: ""
 
                 Loader {
                     anchors.fill: parent

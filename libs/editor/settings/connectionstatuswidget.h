@@ -8,7 +8,8 @@
 #define PLASMA_NM_CONNECTION_STATUS_WIDGET_H
 
 #include <QWidget>
-#include <QVariantList>
+#include <QMap>
+#include <QString>
 #include <QPointer>
 
 #include <NetworkManagerQt/Connection>
@@ -43,7 +44,7 @@ private Q_SLOTS:
     void updateConnectionDetails();
 
 private:
-    QVariantList getConnectionDetails() const;
+    QMap<QString, QMap<QString, QString>> getConnectionDetails() const;
 
     QString m_connectionUuid;
 

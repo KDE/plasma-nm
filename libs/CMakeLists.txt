@@ -16,6 +16,7 @@ target_sources(plasmanm_internal PRIVATE
     models/networkitemslist.cpp
     models/networkmodel.cpp
     models/networkmodelitem.cpp
+    models/connectiondetailsmodel.cpp
     configurationproxy.cpp
     handler.cpp
     models/appletproxymodel.h
@@ -26,6 +27,7 @@ target_sources(plasmanm_internal PRIVATE
     models/networkitemslist.h
     models/networkmodel.h
     models/networkmodelitem.h
+    models/connectiondetailsmodel.h
     configurationproxy.h
     handler.h
     availabledevices.cpp

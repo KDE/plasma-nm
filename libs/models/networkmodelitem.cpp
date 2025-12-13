@@ -15,44 +15,69 @@
 
 NetworkModelItem::NetworkModelItem(QObject *parent)
     : QObject(parent)
+    , m_activeConnectionPath()
+    , m_connectionPath()
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
+    , m_devicePath()
+    , m_deviceName()
     , m_deviceState(NetworkManager::Device::UnknownState)
-    , m_detailsValid(false)
     , m_delayModelUpdates(false)
     , m_duplicate(false)
     , m_mode(NetworkManager::WirelessSetting::Infrastructure)
+    , m_name()
+    , m_connectionDetailsModel(new ConnectionDetailsModel(this))
     , m_securityType(NetworkManager::NoneSecurity)
     , m_signal(0)
     , m_slave(false)
+    , m_specificPath()
+    , m_ssid()
+    , m_timestamp()
     , m_type(NetworkManager::ConnectionSettings::Unknown)
+    , m_accessibleDescription()
+    , m_uuid()
+    , m_vpnType()
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
     , m_rxBytes(0)
     , m_txBytes(0)
-    , m_icon(QStringLiteral("network-wired"))
+    , m_icon(computeIcon())
+    , m_changedRoles()
 {
-    m_icon = computeIcon();
 }
 
 NetworkModelItem::NetworkModelItem(const NetworkModelItem *item, QObject *parent)
     : QObject(parent)
+    , m_activeConnectionPath()
     , m_connectionPath(item->connectionPath())
     , m_connectionState(NetworkManager::ActiveConnection::Deactivated)
-    , m_detailsValid(false)
+    , m_devicePath()
+    , m_deviceName()
+    , m_deviceState(NetworkManager::Device::UnknownState)
     , m_delayModelUpdates(item->delayModelUpdates())
     , m_duplicate(true)
     , m_mode(item->mode())
     , m_name(item->name())
+    , m_connectionDetailsModel(new ConnectionDetailsModel(this))
     , m_securityType(item->securityType())
+    , m_signal(0)
     , m_slave(item->slave())
+    , m_specificPath()
     , m_ssid(item->ssid())
     , m_timestamp(item->timestamp())
     , m_type(item->type())
+    , m_accessibleDescription()
     , m_uuid(item->uuid())
+    , m_vpnType()
     , m_vpnState(NetworkManager::VpnConnection::Unknown)
     , m_rxBytes(0)
     , m_txBytes(0)
     , m_icon(item->icon())
+    , m_changedRoles()
 {
+}
+
+ConnectionDetailsModel *NetworkModelItem::detailsModel() const
+{
+    return m_connectionDetailsModel;
 }
 
 NetworkModelItem::~NetworkModelItem() = default;
@@ -94,12 +119,16 @@ void NetworkModelItem::setConnectionState(NetworkManager::ActiveConnection::Stat
     }
 }
 
-QVariantList NetworkModelItem::details() const
+
+QMap<QString, QMap<QString, QString>> NetworkModelItem::detailsMap() const
 {
-    if (!m_detailsValid) {
-        updateDetails();
+    if (itemType() == NetworkModelItem::UnavailableConnection) {
+        return {};
     }
-    return m_details;
+
+    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(m_uuid);
+    return ConnectionDetails::getConnectionDetails(connection, device);
 }
 
 QString NetworkModelItem::devicePath() const
@@ -511,28 +540,12 @@ bool NetworkModelItem::operator==(const NetworkModelItem *item) const
             return true;
         }
     }
-
     return false;
 }
 
-void NetworkModelItem::invalidateDetails()
+void NetworkModelItem::updateConnectionDetailsModel()
 {
-    m_detailsValid = false;
-    m_changedRoles << NetworkModel::ConnectionDetailsRole;
-}
-
-void NetworkModelItem::updateDetails() const
-{
-    m_detailsValid = true;
-    m_details.clear();
-
-    if (itemType() == NetworkModelItem::UnavailableConnection) {
-        return;
-    }
-
-    NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
-    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(m_uuid);
-    m_details = ConnectionDetails::getConnectionDetails(connection, device);
+    m_connectionDetailsModel->setDetailsMap(detailsMap());
 }
 
 #include "moc_networkmodelitem.cpp"

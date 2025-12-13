@@ -39,7 +39,7 @@ public:
     enum ItemRole {
         NameRole = Qt::DisplayRole,
         ConnectionIconRole = Qt::DecorationRole,
-        ConnectionDetailsRole = Qt::UserRole + 1,
+        ConnectionDetailsModelRole = Qt::UserRole + 1,
         ConnectionPathRole,
         ConnectionStateRole,
         DeviceName,
@@ -67,7 +67,7 @@ public:
         // writable roles
         DelayModelUpdatesRole,
     };
-    Q_ENUMS(ItemRole)
+    Q_ENUM(ItemRole)
 
     enum ModelChangeType {
         ItemAdded,

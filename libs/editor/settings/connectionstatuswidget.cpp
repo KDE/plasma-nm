@@ -90,14 +90,14 @@ void ConnectionStatusWidget::setConnectionAndDevice(const NetworkManager::Connec
     updateConnectionDetails();
 }
 
-QVariantList ConnectionStatusWidget::getConnectionDetails() const
+QMap<QString, QMap<QString, QString>> ConnectionStatusWidget::getConnectionDetails() const
 {
     // If a details source was set (NetworkModelItem from applet), call its details() method
     if (m_detailsSource) {
-        QVariantList result;
-        bool success = QMetaObject::invokeMethod(m_detailsSource, "details", Qt::DirectConnection, Q_RETURN_ARG(QVariantList, result));
-        if (success) {
-            return result;
+        QVariant result;
+        bool success = QMetaObject::invokeMethod(m_detailsSource, "detailsMap", Qt::DirectConnection, Q_RETURN_ARG(QVariant, result));
+        if (success && result.canConvert<QMap<QString, QMap<QString, QString>>>()) {
+            return result.value<QMap<QString, QMap<QString, QString>>>();
         }
     }
 
@@ -107,7 +107,7 @@ QVariantList ConnectionStatusWidget::getConnectionDetails() const
     }
 
     // Fallback: no details source or connection/device
-    return QVariantList();
+    return {};
 }
 
 void ConnectionStatusWidget::updateConnectionDetails()
@@ -117,39 +117,37 @@ void ConnectionStatusWidget::updateConnectionDetails()
         m_detailsLayout->removeRow(0);
     }
 
-    const QVariantList details = getConnectionDetails();
+    const auto detailsMap = getConnectionDetails();
 
-    if (details.isEmpty()) {
+    if (detailsMap.isEmpty()) {
         m_stackedLayout->setCurrentIndex(0); // Show "Disconnected" label
     } else {
+        bool firstSection = true;
         // Populate the details form
-        // Add each detail as a form row
-        for (const QVariant &item : details) {
-            QVariantMap map = item.toMap();
-            QString label = map.value(QStringLiteral("label")).toString();
-            QString value = map.value(QStringLiteral("value")).toString();
+        for (auto it = detailsMap.constBegin(); it != detailsMap.constEnd(); ++it) {
+            const QString &sectionName = it.key();
+            const QMap<QString, QString> &items = it.value();
 
-            // Check if this is a section header
-            if (label == QLatin1String("__section__")) {
-                // Add some spacing before the section (except for first section)
-                if (m_detailsLayout->rowCount() > 0) {
-                    m_detailsLayout->addItem(new QSpacerItem(0, 12, QSizePolicy::Minimum, QSizePolicy::Fixed));
-                }
-                QLabel *sectionLabel = new QLabel(value, this);
-                QFont sectionFont = sectionLabel->font();
-                sectionFont.setBold(true);
-                sectionFont.setPointSize(sectionFont.pointSize() + 1);
-                sectionLabel->setFont(sectionFont);
-                sectionLabel->setAlignment(Qt::AlignHCenter);
-                // Add as two-column spanning row
-                m_detailsLayout->addRow(sectionLabel);
-                // Add small spacing after section header
-                m_detailsLayout->addItem(new QSpacerItem(0, 4, QSizePolicy::Minimum, QSizePolicy::Fixed));
-            // Check if this is a spacer (empty label and value)
-            } else if (label.isEmpty() && value.isEmpty()) {
-                // Add vertical spacing
-                m_detailsLayout->addItem(new QSpacerItem(0, 10, QSizePolicy::Minimum, QSizePolicy::Fixed));
-            } else {
+            // Add some spacing before the section (except for first section)
+            if (!firstSection) {
+                m_detailsLayout->addItem(new QSpacerItem(0, 12, QSizePolicy::Minimum, QSizePolicy::Fixed));
+            }
+            firstSection = false;
+
+            QLabel *sectionLabel = new QLabel(sectionName, this);
+            QFont sectionFont = sectionLabel->font();
+            sectionFont.setBold(true);
+            sectionFont.setPointSize(sectionFont.pointSize() + 1);
+            sectionLabel->setFont(sectionFont);
+            sectionLabel->setAlignment(Qt::AlignHCenter);
+            // Add as two-column spanning row
+            m_detailsLayout->addRow(sectionLabel);
+            // Add small spacing after section header
+            m_detailsLayout->addItem(new QSpacerItem(0, 4, QSizePolicy::Minimum, QSizePolicy::Fixed));
+
+            for (auto itemIt = items.constBegin(); itemIt != items.constEnd(); ++itemIt) {
+                const QString &label = itemIt.key();
+                const QString &value = itemIt.value();
                 // Create value label widget
                 QLabel *valueLabel = new QLabel(value, this);
                 valueLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
@@ -160,5 +158,3 @@ void ConnectionStatusWidget::updateConnectionDetails()
         m_stackedLayout->setCurrentIndex(1); // Show details form
     }
 }
-
-#include "moc_connectionstatuswidget.cpp"

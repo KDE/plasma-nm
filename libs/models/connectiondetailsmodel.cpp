@@ -5,6 +5,7 @@
 */
 
 #include "connectiondetailsmodel.h"
+#include "connectiondetails.h"
 
 ConnectionDetailsModel::ConnectionDetailsModel(QObject *parent)
     : QAbstractListModel(parent)
@@ -51,19 +52,18 @@ QHash<int, QByteArray> ConnectionDetailsModel::roleNames() const
     return roles;
 }
 
-void ConnectionDetailsModel::setDetailsMap(const QMap<QString, QMap<QString, QString>> &detailsMap)
+void ConnectionDetailsModel::setDetailsList(const QList<ConnectionDetails::ConnectionDetailSection> &detailsList)
 {
     beginResetModel();
     m_items.clear();
 
-    for (auto it = detailsMap.constBegin(); it != detailsMap.constEnd(); ++it) {
+    for (const auto &section : detailsList) {
         // Add section header
-        m_items.append({true, it.key(), {}, {}}); // isSection, sectionTitle, label, value
+        m_items.append({true, section.title, {}, {}}); // isSection, sectionTitle, label, value
 
-        const QMap<QString, QString> &innerMap = it.value();
-        for (auto innerIt = innerMap.constBegin(); innerIt != innerMap.constEnd(); ++innerIt) {
-            // Add detail row
-            m_items.append({false, {}, innerIt.key(), innerIt.value()}); // isSection, sectionTitle, label, value
+        // Add detail rows
+        for (const auto &[label, value] : section.details) {
+            m_items.append({false, {}, label, value}); // isSection, sectionTitle, label, value
         }
     }
     endResetModel();

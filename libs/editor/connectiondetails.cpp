@@ -43,11 +43,10 @@
 namespace ConnectionDetails
 {
 
-QMap<QString, QMap<QString, QString>>
+QList<ConnectionDetailSection>
 getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device)
 {
-    QMap<QString, QMap<QString, QString>> sections;
-    QString currentSection;
+    QList<ConnectionDetailSection> sections;
 
     if (!connection || !device) {
         return sections;
@@ -61,76 +60,21 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
     const bool isActive = (device->state() == NetworkManager::Device::Activated);
     const NetworkManager::ConnectionSettings::ConnectionType type = settings->connectionType();
 
-    // Get IPv[46]Address and related nameservers + IPv[46] default gateway
-    if (device && device->ipV4Config().isValid() && isActive) {
-        currentSection = i18n("IPv4");
-        if (!device->ipV4Config().addresses().isEmpty()) {
-            QHostAddress addr = device->ipV4Config().addresses().first().ip();
-            if (!addr.isNull() && addr.isGlobal()) {
-                sections[currentSection].insert(i18n("IPv4 Address"), addr.toString());
-            }
-        }
-        if (!device->ipV4Config().gateway().isEmpty()) {
-            QString addr = device->ipV4Config().gateway();
-            if (!addr.isNull()) {
-                sections[currentSection].insert(i18n("IPv4 Default Gateway"), addr);
-            }
-        }
-        if (!device->ipV4Config().nameservers().isEmpty()) {
-            QHostAddress addr1 = device->ipV4Config().nameservers().first();
-            QHostAddress addr2 = device->ipV4Config().nameservers().last();
-            if (!addr1.isNull()) {
-                sections[currentSection].insert(i18n("IPv4 Primary Nameserver"), addr1.toString());
-            }
-            if (!addr2.isNull() && !addr1.isNull()) {
-                if (addr2 != addr1) {
-                    sections[currentSection].insert(i18n("IPv4 Secondary Nameserver"), addr2.toString());
-                }
-            }
-        }
-    }
-
-    if (device && device->ipV6Config().isValid() && isActive) {
-        currentSection = i18n("IPv6");
-        if (!device->ipV6Config().addresses().isEmpty()) {
-            QHostAddress addr = device->ipV6Config().addresses().first().ip();
-            if (!addr.isNull() && addr.isGlobal() && !addr.isUniqueLocalUnicast()) {
-                sections[currentSection].insert(i18n("IPv6 Address"), addr.toString());
-            } else if (!addr.isNull() && addr.isGlobal() && addr.isUniqueLocalUnicast()) {
-                sections[currentSection].insert(i18n("IPv6 ULA Address"), addr.toString());
-            }
-        }
-        if (!device->ipV6Config().gateway().isEmpty()) {
-            QString addr = device->ipV6Config().gateway();
-            if (!addr.isNull()) {
-                sections[currentSection].insert(i18n("IPv6 Default Gateway"), addr);
-            }
-        }
-        if (!device->ipV6Config().nameservers().isEmpty()) {
-            QHostAddress addr1 = device->ipV6Config().nameservers().first();
-            QHostAddress addr2 = device->ipV6Config().nameservers().last();
-            if (!addr1.isNull()) {
-                sections[currentSection].insert(i18n("IPv6 Primary Nameserver"), addr1.toString());
-            }
-            if (!addr2.isNull() && !addr1.isNull()) {
-                if (addr2 != addr1) {
-                    sections[currentSection].insert(i18n("IPv6 Secondary Nameserver"), addr2.toString());
-                }
-            }
-        }
-    }
-
+    // Hardware/Connection type specific details
     if (type == NetworkManager::ConnectionSettings::Wired) {
-        currentSection = i18n("Hardware");
+        QList<QPair<QString, QString>> details;
         NetworkManager::WiredDevice::Ptr wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
         if (wiredDevice) {
             if (isActive) {
-                sections[currentSection].insert(i18n("Connection speed"), UiUtils::connectionSpeed(wiredDevice->bitRate()));
+                details.append({i18n("Connection speed"), UiUtils::connectionSpeed(wiredDevice->bitRate())});
             }
-            sections[currentSection].insert(i18n("MAC Address"), wiredDevice->hardwareAddress());
+            details.append({i18n("MAC Address"), wiredDevice->hardwareAddress()});
+        }
+        if (!details.isEmpty()) {
+            sections.append({i18n("Hardware"), details});
         }
     } else if (type == NetworkManager::ConnectionSettings::Wireless) {
-        currentSection = i18n("Wi-Fi");
+        QList<QPair<QString, QString>> details;
         NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
         NetworkManager::WirelessSetting::Ptr wirelessSetting =
             settings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
@@ -140,20 +84,20 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
             ssid = wirelessSetting->ssid();
             mode = wirelessSetting->mode();
         }
-        sections[currentSection].insert(i18n("Access Point (SSID)"), ssid);
+        details.append({i18n("Access Point (SSID)"), ssid});
         if (mode == NetworkManager::WirelessSetting::Infrastructure) {
             if (wirelessDevice) {
                 NetworkManager::AccessPoint::Ptr ap = wirelessDevice->activeAccessPoint();
                 if (ap) {
-                    sections[currentSection].insert(i18n("Signal Strength"), i18nc("WiFi signal strength percentage indicator", "%1%", ap->signalStrength()));
+                    details.append({i18n("Signal Strength"), i18nc("WiFi signal strength percentage indicator", "%1%", ap->signalStrength())});
                 }
             }
         }
-        sections[currentSection].insert(i18n("Security Type"),
-                                        UiUtils::labelFromWirelessSecurity(NetworkManager::securityTypeFromConnectionSetting(settings)));
+        details.append({i18n("Security Type"),
+                        UiUtils::labelFromWirelessSecurity(NetworkManager::securityTypeFromConnectionSetting(settings))});
         if (wirelessDevice) {
             if (isActive) {
-                sections[currentSection].insert(i18n("Connection Speed"), UiUtils::connectionSpeed(wirelessDevice->bitRate()));
+                details.append({i18n("Connection Speed"), UiUtils::connectionSpeed(wirelessDevice->bitRate())});
             }
             const NetworkManager::AccessPoint::Ptr accessPoint = wirelessDevice->activeAccessPoint();
 
@@ -161,16 +105,19 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
                 const int channel = NetworkManager::findChannel(accessPoint->frequency());
                 const QString frequencyString = UiUtils::wirelessFrequencyToString(accessPoint->frequency());
                 if (channel > 0) {
-                    sections[currentSection].insert(i18n("Frequency"), i18nc("Frequency (Channel)", "%1 (Channel %2)", frequencyString, channel));
+                    details.append({i18n("Frequency"), i18nc("Frequency (Channel)", "%1 (Channel %2)", frequencyString, channel)});
                 } else {
-                    sections[currentSection].insert(i18n("Frequency"), frequencyString);
+                    details.append({i18n("Frequency"), frequencyString});
                 }
-                sections[currentSection].insert(i18n("BSSID"), accessPoint->hardwareAddress());
+                details.append({i18n("BSSID"), accessPoint->hardwareAddress()});
             }
-            sections[currentSection].insert(i18n("MAC Address"), wirelessDevice->hardwareAddress());
+            details.append({i18n("MAC Address"), wirelessDevice->hardwareAddress()});
+        }
+        if (!details.isEmpty()) {
+            sections.append({i18n("Wi-Fi"), details});
         }
     } else if (type == NetworkManager::ConnectionSettings::Gsm || type == NetworkManager::ConnectionSettings::Cdma) {
-        currentSection = i18n("Mobile Broadband");
+        QList<QPair<QString, QString>> details;
         NetworkManager::ModemDevice::Ptr modemDevice = device.objectCast<NetworkManager::ModemDevice>();
         if (modemDevice) {
             ModemManager::ModemDevice::Ptr modem = ModemManager::findModemDevice(modemDevice->udi());
@@ -182,23 +129,26 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
                     ModemManager::Modem3gpp::Ptr gsmNet =
                         modem->interface(ModemManager::ModemDevice::GsmInterface).objectCast<ModemManager::Modem3gpp>();
                     if (gsmNet) {
-                        sections[currentSection].insert(i18n("Operator"), gsmNet->operatorName());
+                        details.append({i18n("Operator"), gsmNet->operatorName()});
                     }
                 } else {
                     ModemManager::ModemCdma::Ptr cdmaNet =
                         modem->interface(ModemManager::ModemDevice::CdmaInterface).objectCast<ModemManager::ModemCdma>();
-                    sections[currentSection].insert(i18n("Network ID"), QStringLiteral("%1").arg(cdmaNet->nid()));
+                    details.append({i18n("Network ID"), QStringLiteral("%1").arg(cdmaNet->nid())});
                 }
 
                 if (modemNetwork) {
-                    sections[currentSection].insert(i18n("Signal Quality"), QStringLiteral("%1%").arg(modemNetwork->signalQuality().signal));
-                    sections[currentSection].insert(i18n("Access Technology"),
-                                                    UiUtils::convertAccessTechnologyToString(modemNetwork->accessTechnologies()));
+                    details.append({i18n("Signal Quality"), QStringLiteral("%1%").arg(modemNetwork->signalQuality().signal)});
+                    details.append({i18n("Access Technology"),
+                                    UiUtils::convertAccessTechnologyToString(modemNetwork->accessTechnologies())});
                 }
             }
         }
+        if (!details.isEmpty()) {
+            sections.append({i18n("Mobile Broadband"), details});
+        }
     } else if (type == NetworkManager::ConnectionSettings::Vpn) {
-        currentSection = i18n("VPN");
+        QList<QPair<QString, QString>> details;
         // Get VPN plugin type from VPN setting
         NetworkManager::VpnSetting::Ptr vpnSetting = settings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
         QString vpnType;
@@ -206,7 +156,7 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
             vpnType = vpnSetting->serviceType();
         }
 
-        sections[currentSection].insert(i18n("VPN Plugin"), vpnType);
+        details.append({i18n("VPN Plugin"), vpnType});
 
         if (isActive) {
             NetworkManager::ActiveConnection::Ptr active = device->activeConnection();
@@ -217,72 +167,164 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
             }
 
             if (vpnConnection && !vpnConnection->banner().isEmpty()) {
-                sections[currentSection].insert(i18n("Banner"), vpnConnection->banner().simplified());
+                details.append({i18n("Banner"), vpnConnection->banner().simplified()});
             }
+        }
+        if (!details.isEmpty()) {
+            sections.append({i18n("VPN"), details});
         }
     } else if (type == NetworkManager::ConnectionSettings::WireGuard) {
         // From NetworkManager perspective, WireGuard is not a VPN connection,
         // so there are no specific VpnConnection settings to be fetched.
-        sections[i18n("VPN")].insert(i18n("VPN Plugin"), i18n("WireGuard"));
+        QList<QPair<QString, QString>> details;
+        details.append({i18n("VPN Plugin"), i18n("WireGuard")});
+        sections.append({i18n("VPN"), details});
     } else if (type == NetworkManager::ConnectionSettings::Bluetooth) {
-        currentSection = i18n("Bluetooth");
+        QList<QPair<QString, QString>> details;
         NetworkManager::BluetoothDevice::Ptr bluetoothDevice = device.objectCast<NetworkManager::BluetoothDevice>();
         if (bluetoothDevice) {
-            sections[currentSection].insert(i18n("Name"), bluetoothDevice->name());
+            details.append({i18n("Name"), bluetoothDevice->name()});
             if (bluetoothDevice->bluetoothCapabilities() == NetworkManager::BluetoothDevice::Pan) {
-                sections[currentSection].insert(i18n("Capabilities"), QStringLiteral("PAN"));
+                details.append({i18n("Capabilities"), QStringLiteral("PAN")});
             } else if (bluetoothDevice->bluetoothCapabilities() == NetworkManager::BluetoothDevice::Dun) {
-                sections[currentSection].insert(i18n("Capabilities"), QStringLiteral("DUN"));
+                details.append({i18n("Capabilities"), QStringLiteral("DUN")});
             }
-            sections[currentSection].insert(i18n("MAC Address"), bluetoothDevice->hardwareAddress());
+            details.append({i18n("MAC Address"), bluetoothDevice->hardwareAddress()});
+        }
+        if (!details.isEmpty()) {
+            sections.append({i18n("Bluetooth"), details});
         }
     } else if (type == NetworkManager::ConnectionSettings::Infiniband) {
-        currentSection = i18n("Infiniband");
+        QList<QPair<QString, QString>> details;
         NetworkManager::InfinibandDevice::Ptr infinibandDevice = device.objectCast<NetworkManager::InfinibandDevice>();
-        sections[currentSection].insert(i18n("Type"), i18n("Infiniband"));
+        details.append({i18n("Type"), i18n("Infiniband")});
         if (infinibandDevice) {
-            sections[currentSection].insert(i18n("MAC Address"), infinibandDevice->hwAddress());
+            details.append({i18n("MAC Address"), infinibandDevice->hwAddress()});
+        }
+        if (!details.isEmpty()) {
+            sections.append({i18n("Infiniband"), details});
         }
     } else if (type == NetworkManager::ConnectionSettings::Bond) {
-        currentSection = i18n("Bond");
+        QList<QPair<QString, QString>> details;
         NetworkManager::BondDevice::Ptr bondDevice = device.objectCast<NetworkManager::BondDevice>();
-        sections[currentSection].insert(i18n("Type"), i18n("Bond"));
+        details.append({i18n("Type"), i18n("Bond")});
         if (bondDevice) {
-            sections[currentSection].insert(i18n("MAC Address"), bondDevice->hwAddress());
+            details.append({i18n("MAC Address"), bondDevice->hwAddress()});
+        }
+        if (!details.isEmpty()) {
+            sections.append({i18n("Bond"), details});
         }
     } else if (type == NetworkManager::ConnectionSettings::Bridge) {
-        currentSection = i18n("Bridge");
+        QList<QPair<QString, QString>> details;
         NetworkManager::BridgeDevice::Ptr bridgeDevice = device.objectCast<NetworkManager::BridgeDevice>();
-        sections[currentSection].insert(i18n("Type"), i18n("Bridge"));
+        details.append({i18n("Type"), i18n("Bridge")});
         if (bridgeDevice) {
-            sections[currentSection].insert(i18n("MAC Address"), bridgeDevice->hwAddress());
+            details.append({i18n("MAC Address"), bridgeDevice->hwAddress()});
+        }
+        if (!details.isEmpty()) {
+            sections.append({i18n("Bridge"), details});
         }
     } else if (type == NetworkManager::ConnectionSettings::Vlan) {
-        currentSection = i18n("Vlan");
+        QList<QPair<QString, QString>> details;
         NetworkManager::VlanDevice::Ptr vlanDevice = device.objectCast<NetworkManager::VlanDevice>();
-        sections[currentSection].insert(i18n("Type"), i18n("Vlan"));
+        details.append({i18n("Type"), i18n("Vlan")});
         if (vlanDevice) {
-            sections[currentSection].insert(i18n("Vlan ID"), QString("%1").arg(vlanDevice->vlanId()));
-            sections[currentSection].insert(i18n("MAC Address"), vlanDevice->hwAddress());
+            details.append({i18n("Vlan ID"), QString("%1").arg(vlanDevice->vlanId())});
+            details.append({i18n("MAC Address"), vlanDevice->hwAddress()});
+        }
+        if (!details.isEmpty()) {
+            sections.append({i18n("Vlan"), details});
         }
     } else if (type == NetworkManager::ConnectionSettings::Adsl) {
-        currentSection = i18n("Adsl");
-        sections[currentSection].insert(i18n("Type"), i18n("Adsl"));
+        QList<QPair<QString, QString>> details;
+        details.append({i18n("Type"), i18n("Adsl")});
+        sections.append({i18n("Adsl"), details});
     } else if (type == NetworkManager::ConnectionSettings::Team) {
-        currentSection = i18n("Team");
+        QList<QPair<QString, QString>> details;
         NetworkManager::TeamDevice::Ptr teamDevice = device.objectCast<NetworkManager::TeamDevice>();
-        sections[currentSection].insert(i18n("Type"), i18n("Team"));
+        details.append({i18n("Type"), i18n("Team")});
         if (teamDevice) {
-            sections[currentSection].insert(i18n("MAC Address"), teamDevice->hwAddress());
+            details.append({i18n("MAC Address"), teamDevice->hwAddress()});
+        }
+        if (!details.isEmpty()) {
+            sections.append({i18n("Team"), details});
         }
     }
 
-    if (device && isActive) {
-        if (currentSection.isEmpty()) {
-            // Can happen for WireGuard
-            currentSection = i18n("General");
+    // Add device interface name to the last section if active
+    if (device && isActive && !sections.isEmpty()) {
+        sections.last().details.append({i18n("Device"), device->interfaceName()});
+    } else if (device && isActive && sections.isEmpty()) {
+        // WireGuard or other types might not have created a section yet
+        QList<QPair<QString, QString>> details;
+        details.append({i18n("Device"), device->interfaceName()});
+        sections.append({i18n("General"), details});
+    }
+
+    // Get IPv4 Address and related nameservers + IPv4 default gateway
+    if (device && device->ipV4Config().isValid() && isActive) {
+        QList<QPair<QString, QString>> details;
+        if (!device->ipV4Config().addresses().isEmpty()) {
+            QHostAddress addr = device->ipV4Config().addresses().first().ip();
+            if (!addr.isNull() && addr.isGlobal()) {
+                details.append({i18n("IPv4 Address"), addr.toString()});
+            }
         }
-        sections[currentSection].insert(i18n("Device"), device->interfaceName());
+        if (!device->ipV4Config().gateway().isEmpty()) {
+            QString addr = device->ipV4Config().gateway();
+            if (!addr.isNull()) {
+                details.append({i18n("IPv4 Default Gateway"), addr});
+            }
+        }
+        if (!device->ipV4Config().nameservers().isEmpty()) {
+            QHostAddress addr1 = device->ipV4Config().nameservers().first();
+            QHostAddress addr2 = device->ipV4Config().nameservers().last();
+            if (!addr1.isNull()) {
+                details.append({i18n("IPv4 Primary Nameserver"), addr1.toString()});
+            }
+            if (!addr2.isNull() && !addr1.isNull()) {
+                if (addr2 != addr1) {
+                    details.append({i18n("IPv4 Secondary Nameserver"), addr2.toString()});
+                }
+            }
+        }
+        if (!details.isEmpty()) {
+            sections.append({i18n("IPv4"), details});
+        }
+    }
+
+    // Get IPv6 Address and related nameservers + IPv6 default gateway
+    if (device && device->ipV6Config().isValid() && isActive) {
+        QList<QPair<QString, QString>> details;
+        if (!device->ipV6Config().addresses().isEmpty()) {
+            QHostAddress addr = device->ipV6Config().addresses().first().ip();
+            if (!addr.isNull() && addr.isGlobal() && !addr.isUniqueLocalUnicast()) {
+                details.append({i18n("IPv6 Address"), addr.toString()});
+            } else if (!addr.isNull() && addr.isGlobal() && addr.isUniqueLocalUnicast()) {
+                details.append({i18n("IPv6 ULA Address"), addr.toString()});
+            }
+        }
+        if (!device->ipV6Config().gateway().isEmpty()) {
+            QString addr = device->ipV6Config().gateway();
+            if (!addr.isNull()) {
+                details.append({i18n("IPv6 Default Gateway"), addr});
+            }
+        }
+        if (!device->ipV6Config().nameservers().isEmpty()) {
+            QHostAddress addr1 = device->ipV6Config().nameservers().first();
+            QHostAddress addr2 = device->ipV6Config().nameservers().last();
+            if (!addr1.isNull()) {
+                details.append({i18n("IPv6 Primary Nameserver"), addr1.toString()});
+            }
+            if (!addr2.isNull() && !addr1.isNull()) {
+                if (addr2 != addr1) {
+                    details.append({i18n("IPv6 Secondary Nameserver"), addr2.toString()});
+                }
+            }
+        }
+        if (!details.isEmpty()) {
+            sections.append({i18n("IPv6"), details});
+        }
     }
 
     return sections;

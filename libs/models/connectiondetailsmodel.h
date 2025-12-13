@@ -10,10 +10,15 @@
 #include "plasmanm_internal_export.h"
 
 #include <QAbstractListModel>
-#include <QMap>
 #include <QString>
 
 #include <qqmlregistration.h>
+
+// Forward declaration
+namespace ConnectionDetails
+{
+struct ConnectionDetailSection;
+}
 
 class PLASMANM_INTERNAL_EXPORT ConnectionDetailsModel : public QAbstractListModel
 {
@@ -35,7 +40,7 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    void setDetailsMap(const QMap<QString, QMap<QString, QString>> &detailsMap);
+    void setDetailsList(const QList<ConnectionDetails::ConnectionDetailSection> &detailsList);
 
 private:
     struct Item {

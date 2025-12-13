@@ -8,7 +8,8 @@
 #define PLASMA_NM_CONNECTION_STATUS_WIDGET_H
 
 #include <QWidget>
-#include <QMap>
+#include <QList>
+#include <QPair>
 #include <QString>
 #include <QPointer>
 
@@ -21,6 +22,11 @@ class QFormLayout;
 class QObject;
 class QVBoxLayout;
 class QLabel;
+
+namespace ConnectionDetails
+{
+struct ConnectionDetailSection;
+}
 
 class ConnectionStatusWidget : public QWidget
 {
@@ -44,7 +50,7 @@ private Q_SLOTS:
     void updateConnectionDetails();
 
 private:
-    QMap<QString, QMap<QString, QString>> getConnectionDetails() const;
+    QList<ConnectionDetails::ConnectionDetailSection> getConnectionDetails() const;
 
     QString m_connectionUuid;
 

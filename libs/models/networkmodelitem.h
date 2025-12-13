@@ -18,10 +18,17 @@
 
 #include <qqmlregistration.h>
 
-#include <QMap>
+#include <QList>
+#include <QPair>
 #include <QString>
 
 #include "connectiondetailsmodel.h"
+
+// Forward declaration
+namespace ConnectionDetails
+{
+struct ConnectionDetailSection;
+}
 
 
 class PLASMANM_INTERNAL_EXPORT NetworkModelItem : public QObject
@@ -51,7 +58,7 @@ public:
     NetworkManager::ActiveConnection::State connectionState() const;
     void setConnectionState(NetworkManager::ActiveConnection::State state);
 
-    Q_INVOKABLE QMap<QString, QMap<QString, QString>> detailsMap() const;
+    Q_INVOKABLE QList<ConnectionDetails::ConnectionDetailSection> detailsList() const;
 
     Q_PROPERTY(ConnectionDetailsModel* detailsModel READ detailsModel CONSTANT)
     ConnectionDetailsModel *detailsModel() const;

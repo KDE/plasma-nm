@@ -90,14 +90,14 @@ void ConnectionStatusWidget::setConnectionAndDevice(const NetworkManager::Connec
     updateConnectionDetails();
 }
 
-QMap<QString, QMap<QString, QString>> ConnectionStatusWidget::getConnectionDetails() const
+QList<ConnectionDetails::ConnectionDetailSection> ConnectionStatusWidget::getConnectionDetails() const
 {
-    // If a details source was set (NetworkModelItem from applet), call its details() method
+    // If a details source was set (NetworkModelItem from applet), call its detailsList() method
     if (m_detailsSource) {
         QVariant result;
-        bool success = QMetaObject::invokeMethod(m_detailsSource, "detailsMap", Qt::DirectConnection, Q_RETURN_ARG(QVariant, result));
-        if (success && result.canConvert<QMap<QString, QMap<QString, QString>>>()) {
-            return result.value<QMap<QString, QMap<QString, QString>>>();
+        bool success = QMetaObject::invokeMethod(m_detailsSource, "detailsList", Qt::DirectConnection, Q_RETURN_ARG(QVariant, result));
+        if (success && result.canConvert<QList<ConnectionDetails::ConnectionDetailSection>>()) {
+            return result.value<QList<ConnectionDetails::ConnectionDetailSection>>();
         }
     }
 
@@ -117,16 +117,16 @@ void ConnectionStatusWidget::updateConnectionDetails()
         m_detailsLayout->removeRow(0);
     }
 
-    const auto detailsMap = getConnectionDetails();
+    const auto detailsList = getConnectionDetails();
 
-    if (detailsMap.isEmpty()) {
+    if (detailsList.isEmpty()) {
         m_stackedLayout->setCurrentIndex(0); // Show "Disconnected" label
     } else {
         bool firstSection = true;
         // Populate the details form
-        for (auto it = detailsMap.constBegin(); it != detailsMap.constEnd(); ++it) {
-            const QString &sectionName = it.key();
-            const QMap<QString, QString> &items = it.value();
+        for (const auto &section : detailsList) {
+            const QString &sectionName = section.title;
+            const auto &items = section.details;
 
             // Add some spacing before the section (except for first section)
             if (!firstSection) {
@@ -145,9 +145,7 @@ void ConnectionStatusWidget::updateConnectionDetails()
             // Add small spacing after section header
             m_detailsLayout->addItem(new QSpacerItem(0, 4, QSizePolicy::Minimum, QSizePolicy::Fixed));
 
-            for (auto itemIt = items.constBegin(); itemIt != items.constEnd(); ++itemIt) {
-                const QString &label = itemIt.key();
-                const QString &value = itemIt.value();
+            for (const auto &[label, value] : items) {
                 // Create value label widget
                 QLabel *valueLabel = new QLabel(value, this);
                 valueLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);

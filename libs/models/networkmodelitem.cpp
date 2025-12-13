@@ -120,7 +120,7 @@ void NetworkModelItem::setConnectionState(NetworkManager::ActiveConnection::Stat
 }
 
 
-QMap<QString, QMap<QString, QString>> NetworkModelItem::detailsMap() const
+QList<ConnectionDetails::ConnectionDetailSection> NetworkModelItem::detailsList() const
 {
     if (itemType() == NetworkModelItem::UnavailableConnection) {
         return {};
@@ -545,7 +545,7 @@ bool NetworkModelItem::operator==(const NetworkModelItem *item) const
 
 void NetworkModelItem::updateConnectionDetailsModel()
 {
-    m_connectionDetailsModel->setDetailsMap(detailsMap());
+    m_connectionDetailsModel->setDetailsList(detailsList());
 }
 
 #include "moc_networkmodelitem.cpp"

@@ -17,7 +17,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-12-15 00:44+0000\n"
 "PO-Revision-Date: 2025-12-11 19:30+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -150,7 +150,7 @@ msgid "Turn on mobile data to search for networks"
 msgstr ""
 "Чтобы выполнить поиск сетей, включите передачу данных по мобильной сети"
 
-#: DetailsText.qml:49
+#: DetailsText.qml:50
 #, kde-format
 msgid "Copy"
 msgstr "Копировать"

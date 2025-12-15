@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-24 00:45+0000\n"
+"POT-Creation-Date: 2025-12-15 00:44+0000\n"
 "PO-Revision-Date: 2024-12-20 22:01+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -19,112 +19,313 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 "X-Generator: Lokalize 24.08.2\n"
 
-#: editor/connectioneditorbase.cpp:203
+#: editor/connectiondetails.cpp:69
+#, kde-format
+msgid "Connection speed"
+msgstr "संयोजनवेगः"
+
+#: editor/connectiondetails.cpp:71 editor/connectiondetails.cpp:114
+#: editor/connectiondetails.cpp:192 editor/connectiondetails.cpp:202
+#: editor/connectiondetails.cpp:212 editor/connectiondetails.cpp:222
+#: editor/connectiondetails.cpp:233 editor/connectiondetails.cpp:247
+#, kde-format
+msgid "MAC Address"
+msgstr "MAC Address इति"
+
+#: editor/connectiondetails.cpp:74
+#, kde-format
+msgid "Hardware"
+msgstr ""
+
+#: editor/connectiondetails.cpp:87
+#, kde-format
+msgid "Access Point (SSID)"
+msgstr "अभिगमनबिन्दु (SSID)"
+
+#: editor/connectiondetails.cpp:92
+#, kde-format
+msgid "Signal Strength"
+msgstr "संकेतबलम्"
+
+#: editor/connectiondetails.cpp:92
+#, kde-format
+msgctxt "WiFi signal strength percentage indicator"
+msgid "%1%"
+msgstr "%1%"
+
+#: editor/connectiondetails.cpp:96
+#, kde-format
+msgid "Security Type"
+msgstr "सुरक्षाप्रकारः"
+
+#: editor/connectiondetails.cpp:100
+#, kde-format
+msgid "Connection Speed"
+msgstr "संयोजनवेगः"
+
+#: editor/connectiondetails.cpp:108 editor/connectiondetails.cpp:110
+#, kde-format
+msgid "Frequency"
+msgstr "आवृत्ती"
+
+#: editor/connectiondetails.cpp:108
+#, kde-format
+msgctxt "Frequency (Channel)"
+msgid "%1 (Channel %2)"
+msgstr "%1 (चैनल %2)"
+
+#: editor/connectiondetails.cpp:112
+#, kde-format
+msgid "BSSID"
+msgstr "BSSID"
+
+#: editor/connectiondetails.cpp:117 editor/connectioneditorbase.cpp:222
+#: editor/settings/bridgewidget.cpp:39 editor/settings/teamwidget.cpp:42
+#: editor/uiutils.cpp:226 models/creatableconnectionsmodel.cpp:173
+#, kde-format
+msgid "Wi-Fi"
+msgstr "वाई-फाई"
+
+#: editor/connectiondetails.cpp:132
+#, kde-format
+msgid "Operator"
+msgstr "संचालकः"
+
+#: editor/connectiondetails.cpp:137
+#, kde-format
+msgid "Network ID"
+msgstr "संजाल ID"
+
+#: editor/connectiondetails.cpp:141
+#, kde-format
+msgid "Signal Quality"
+msgstr "संकेत गुणवत्ता"
+
+#: editor/connectiondetails.cpp:142
+#, kde-format
+msgid "Access Technology"
+msgstr "अभिगम प्रौद्योगिकी"
+
+#: editor/connectiondetails.cpp:148 models/creatableconnectionsmodel.cpp:149
+#, kde-format
+msgid "Mobile Broadband"
+msgstr "मोबाईल ब्रॉडबैण्ड"
+
+#: editor/connectiondetails.cpp:159 editor/connectiondetails.cpp:180
+#, kde-format
+msgid "VPN Plugin"
+msgstr "वीपीएन प्लगइन"
+
+#: editor/connectiondetails.cpp:170
+#, kde-format
+msgid "Banner"
+msgstr "बैनर"
+
+#: editor/connectiondetails.cpp:174 editor/connectiondetails.cpp:181
+#: editor/uiutils.cpp:218 networkstatus.cpp:190
+#, kde-format
+msgid "VPN"
+msgstr "वीपीएन"
+
+#: editor/connectiondetails.cpp:180 models/creatableconnectionsmodel.cpp:254
+#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
+#, kde-format
+msgid "WireGuard"
+msgstr "ताररक्षक"
+
+#: editor/connectiondetails.cpp:186
+#, kde-format
+msgid "Name"
+msgstr "नामः"
+
+#: editor/connectiondetails.cpp:188 editor/connectiondetails.cpp:190
+#, kde-format
+msgid "Capabilities"
+msgstr "क्षमता"
+
+#: editor/connectiondetails.cpp:195 editor/connectioneditorbase.cpp:242
+#: editor/uiutils.cpp:194
+#, kde-format
+msgid "Bluetooth"
+msgstr "ब्लूटूथ"
+
+#: editor/connectiondetails.cpp:200 editor/connectiondetails.cpp:210
+#: editor/connectiondetails.cpp:220 editor/connectiondetails.cpp:230
+#: editor/connectiondetails.cpp:240 editor/connectiondetails.cpp:245
+#, kde-format
+msgid "Type"
+msgstr "प्रकारः"
+
+#: editor/connectiondetails.cpp:200 editor/connectiondetails.cpp:205
+#: editor/connectioneditorbase.cpp:253 editor/settings/teamwidget.cpp:39
+#: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
+#, kde-format
+msgid "Infiniband"
+msgstr "इन्फिनिबैण्ड"
+
+#: editor/connectiondetails.cpp:210 editor/connectiondetails.cpp:215
+#: editor/connectioneditorbase.cpp:256 editor/uiutils.cpp:198
+#: models/creatableconnectionsmodel.cpp:190
+#, kde-format
+msgid "Bond"
+msgstr "बन्ध"
+
+#: editor/connectiondetails.cpp:220 editor/connectiondetails.cpp:225
+#: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:201
+#: models/creatableconnectionsmodel.cpp:200
+#, kde-format
+msgid "Bridge"
+msgstr "सेतु"
+
+#: editor/connectiondetails.cpp:230 editor/connectiondetails.cpp:236
+#: editor/connectioneditorbase.cpp:262 models/creatableconnectionsmodel.cpp:220
+#, kde-format
+msgid "Vlan"
+msgstr "व्लान्"
+
+#: editor/connectiondetails.cpp:232
+#, kde-format
+msgid "Vlan ID"
+msgstr "व्लान् आईडी"
+
+#: editor/connectiondetails.cpp:240 editor/connectiondetails.cpp:241
+#, kde-format
+msgid "Adsl"
+msgstr "Adsl"
+
+#: editor/connectiondetails.cpp:245 editor/connectiondetails.cpp:250
+#: editor/connectioneditorbase.cpp:265 editor/uiutils.cpp:230
+#: models/creatableconnectionsmodel.cpp:210
+#, kde-format
+msgid "Team"
+msgstr "दल"
+
+#: editor/connectiondetails.cpp:256 editor/connectiondetails.cpp:260
+#, kde-format
+msgid "Device"
+msgstr "उपकरणम्‌"
+
+#: editor/connectiondetails.cpp:261
+#, fuzzy, kde-format
+#| msgctxt "@title:tab General configuration"
+#| msgid "General"
+msgid "General"
+msgstr "सामान्य"
+
+#: editor/connectiondetails.cpp:270
+#, kde-format
+msgid "IPv4 Address"
+msgstr "IPv4 पता"
+
+#: editor/connectiondetails.cpp:276
+#, kde-format
+msgid "IPv4 Default Gateway"
+msgstr "IPv4 पूर्वनिर्धारितद्वारम्"
+
+#: editor/connectiondetails.cpp:283
+#, kde-format
+msgid "IPv4 Primary Nameserver"
+msgstr "IPv4 प्राथमिक नामसर्वरः"
+
+#: editor/connectiondetails.cpp:287
+#, kde-format
+msgid "IPv4 Secondary Nameserver"
+msgstr "IPv4 द्वितीयक नामसर्वरः"
+
+#: editor/connectiondetails.cpp:292 editor/connectioneditorbase.cpp:298
+#, kde-format
+msgid "IPv4"
+msgstr "IPv4"
+
+#: editor/connectiondetails.cpp:302
+#, kde-format
+msgid "IPv6 Address"
+msgstr "IPv6 पता"
+
+#: editor/connectiondetails.cpp:304
+#, kde-format
+msgid "IPv6 ULA Address"
+msgstr "IPv6 ULA पता"
+
+#: editor/connectiondetails.cpp:310
+#, kde-format
+msgid "IPv6 Default Gateway"
+msgstr "IPv6 पूर्वनिर्धारितद्वारम्"
+
+#: editor/connectiondetails.cpp:317
+#, kde-format
+msgid "IPv6 Primary Nameserver"
+msgstr "IPv6 प्राथमिक नामसर्वरः"
+
+#: editor/connectiondetails.cpp:321
+#, kde-format
+msgid "IPv6 Secondary Nameserver"
+msgstr "IPv6 द्वितीयक नामसर्वरः"
+
+#: editor/connectiondetails.cpp:326 editor/connectioneditorbase.cpp:316
+#, kde-format
+msgid "IPv6"
+msgstr "IPv6"
+
+#: editor/connectioneditorbase.cpp:204
+#, kde-format
+msgctxt "@title:tab Connection status and details"
+msgid "Status"
+msgstr ""
+
+#: editor/connectioneditorbase.cpp:209
 #, kde-format
 msgctxt "@title:tab General configuration"
 msgid "General"
 msgstr "सामान्य"
 
-#: editor/connectioneditorbase.cpp:210 editor/connectioneditorbase.cpp:227
+#: editor/connectioneditorbase.cpp:216 editor/connectioneditorbase.cpp:233
 #, kde-format
 msgid "Wired"
 msgstr "तारयुक्तम्"
 
-#: editor/connectioneditorbase.cpp:213
+#: editor/connectioneditorbase.cpp:219
 #, kde-format
 msgid "802.1x Security"
 msgstr "८०२.१x सुरक्षा"
 
-#: editor/connectioneditorbase.cpp:216 editor/settings/bridgewidget.cpp:39
-#: editor/settings/teamwidget.cpp:42 editor/uiutils.cpp:226
-#: models/creatableconnectionsmodel.cpp:173
-#, kde-format
-msgid "Wi-Fi"
-msgstr "वाई-फाई"
-
-#: editor/connectioneditorbase.cpp:220
+#: editor/connectioneditorbase.cpp:226
 #, kde-format
 msgid "Wi-Fi Security"
 msgstr "वाई-फाई सुरक्षा"
 
-#: editor/connectioneditorbase.cpp:225 editor/uiutils.cpp:190
+#: editor/connectioneditorbase.cpp:231 editor/uiutils.cpp:190
 #: models/creatableconnectionsmodel.cpp:135
 #, kde-format
 msgid "DSL"
 msgstr "DSL"
 
-#: editor/connectioneditorbase.cpp:230 editor/connectioneditorbase.cpp:233
+#: editor/connectioneditorbase.cpp:236 editor/connectioneditorbase.cpp:239
 #, kde-format
 msgid "Mobile Broadband (%1)"
 msgstr "मोबाईल ब्रॉडबैण्ड (%1) 1.1."
 
-#: editor/connectioneditorbase.cpp:236 editor/uiutils.cpp:194
-#, kde-format
-msgid "Bluetooth"
-msgstr "ब्लूटूथ"
-
-#: editor/connectioneditorbase.cpp:241
+#: editor/connectioneditorbase.cpp:247
 #, kde-format
 msgid "GSM"
 msgstr "जीएसएम"
 
-#: editor/connectioneditorbase.cpp:243 editor/connectioneditorbase.cpp:286
+#: editor/connectioneditorbase.cpp:249 editor/connectioneditorbase.cpp:292
 #, kde-format
 msgid "PPP"
 msgstr "पी.पी.पी"
 
-#: editor/connectioneditorbase.cpp:247 editor/settings/teamwidget.cpp:39
-#: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
-#: models/networkmodelitem.cpp:732
-#, kde-format
-msgid "Infiniband"
-msgstr "इन्फिनिबैण्ड"
-
-#: editor/connectioneditorbase.cpp:250 editor/uiutils.cpp:198
-#: models/creatableconnectionsmodel.cpp:190 models/networkmodelitem.cpp:738
-#, kde-format
-msgid "Bond"
-msgstr "बन्ध"
-
-#: editor/connectioneditorbase.cpp:253 editor/uiutils.cpp:201
-#: models/creatableconnectionsmodel.cpp:200 models/networkmodelitem.cpp:744
-#, kde-format
-msgid "Bridge"
-msgstr "सेतु"
-
-#: editor/connectioneditorbase.cpp:256 models/creatableconnectionsmodel.cpp:220
-#: models/networkmodelitem.cpp:750
-#, kde-format
-msgid "Vlan"
-msgstr "व्लान्"
-
-#: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:230
-#: models/creatableconnectionsmodel.cpp:210 models/networkmodelitem.cpp:759
-#, kde-format
-msgid "Team"
-msgstr "दल"
-
-#: editor/connectioneditorbase.cpp:262
+#: editor/connectioneditorbase.cpp:268
 #, kde-format
 msgid "WireGuard Interface"
 msgstr "WireGuard अन्तरफलक"
 
-#: editor/connectioneditorbase.cpp:275
+#: editor/connectioneditorbase.cpp:281
 #, kde-format
 msgid "VPN (%1)"
 msgstr "वीपीएन (%1)"
 
-#: editor/connectioneditorbase.cpp:292
-#, kde-format
-msgid "IPv4"
-msgstr "IPv4"
-
-#: editor/connectioneditorbase.cpp:310
-#, kde-format
-msgid "IPv6"
-msgstr "IPv6"
-
-#: editor/connectioneditorbase.cpp:493
+#: editor/connectioneditorbase.cpp:499
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "%1 कृते रहस्यं प्राप्तुं असफलम्"
@@ -139,7 +340,7 @@ msgstr "नवीनसंयोजनम् (%1) ."
 msgid "Edit Connection '%1'"
 msgstr "सम्पादनं संयोजनम् '%1'."
 
-#: editor/connectioneditortabwidget.cpp:47
+#: editor/connectioneditortabwidget.cpp:50
 #, kde-format
 msgid "New %1 connection"
 msgstr "नवीनं %1 संयोजनम्"
@@ -242,6 +443,13 @@ msgstr "DUN (डायल अप नेटवर्किंग्)"
 #, kde-format
 msgid "PAN (personal area network)"
 msgstr "PAN (व्यक्तिगत क्षेत्रजालम्)"
+
+#: editor/settings/connectionstatuswidget.cpp:33
+#, fuzzy, kde-format
+#| msgctxt "There is no active network connection"
+#| msgid "Disconnected"
+msgid "Disconnected"
+msgstr "विच्छिन्नः"
 
 #: editor/settings/connectionwidget.cpp:158
 #, kde-format
@@ -2180,11 +2388,6 @@ msgstr "मोबाईल ब्रॉडबैण्ड"
 msgid "Olpc mesh"
 msgstr "ओल्प्च मेष"
 
-#: editor/uiutils.cpp:218 networkstatus.cpp:190
-#, kde-format
-msgid "VPN"
-msgstr "वीपीएन"
-
 #: editor/uiutils.cpp:222 models/creatableconnectionsmodel.cpp:156
 #, kde-format
 msgid "Wired Ethernet"
@@ -3334,11 +3537,6 @@ msgstr "किञ्चित् DSL वर्णनम्"
 msgid "Some infiniband description"
 msgstr "किञ्चित् इन्फिनबैण्ड् वर्णनम्"
 
-#: models/creatableconnectionsmodel.cpp:149
-#, kde-format
-msgid "Mobile Broadband"
-msgstr "मोबाईल ब्रॉडबैण्ड"
-
 #: models/creatableconnectionsmodel.cpp:151
 #, kde-format
 msgid "Some mobile broadband description"
@@ -3396,12 +3594,6 @@ msgstr "किञ्चित् व्लान् वर्णनम्"
 msgid "VPN connections"
 msgstr "VPN संयोजनानि"
 
-#: models/creatableconnectionsmodel.cpp:254
-#: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
-#, kde-format
-msgid "WireGuard"
-msgstr "ताररक्षक"
-
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
@@ -3417,121 +3609,7 @@ msgstr "इतर"
 msgid "Import a saved configuration file"
 msgstr "रक्षितां विन्याससञ्चिकां आयातयन्तु"
 
-#: models/networkmodelitem.cpp:42
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Unknown"
-msgstr "संयोजनप्रकारः अज्ञातः अस्ति"
-
-#: models/networkmodelitem.cpp:43
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is ADSL"
-msgstr "संयोजनप्रकारः ADSL अस्ति"
-
-#: models/networkmodelitem.cpp:44
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bluetooth"
-msgstr "संयोजनप्रकारः ब्लूटूथ् अस्ति"
-
-#: models/networkmodelitem.cpp:45
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Bridge"
-msgstr "संयोजनप्रकारः Bridge इति"
-
-#: models/networkmodelitem.cpp:46
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is CDMA"
-msgstr "संयोजनप्रकारः CDMA अस्ति"
-
-#: models/networkmodelitem.cpp:47
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is GSM"
-msgstr "संयोजनप्रकारः GSM अस्ति"
-
-#: models/networkmodelitem.cpp:48
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Infiniband"
-msgstr "संयोजनप्रकारः Infiniband इति"
-
-#: models/networkmodelitem.cpp:49
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is OLPC Mesh"
-msgstr "संयोजनप्रकारः OLPC Mesh इति"
-
-#: models/networkmodelitem.cpp:50
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is PPOPE"
-msgstr "संयोजनप्रकारः PPOPE इति"
-
-#: models/networkmodelitem.cpp:51
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VLAN"
-msgstr "संयोजनप्रकारः VLAN अस्ति"
-
-#: models/networkmodelitem.cpp:52
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is VPN"
-msgstr "संयोजनप्रकारः VPN अस्ति"
-
-#: models/networkmodelitem.cpp:53
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wimax"
-msgstr "संयोजनप्रकारः Wimax अस्ति"
-
-#: models/networkmodelitem.cpp:54
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wired"
-msgstr "संयोजनप्रकारः Wired इति"
-
-#: models/networkmodelitem.cpp:55
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Wireless"
-msgstr "संयोजनप्रकारः Wireless अस्ति"
-
-#: models/networkmodelitem.cpp:56
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Team"
-msgstr "संयोजनप्रकारः Team इति"
-
-#: models/networkmodelitem.cpp:57
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Generic"
-msgstr "संयोजनप्रकारः Generic अस्ति"
-
-#: models/networkmodelitem.cpp:58
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is Tunnel"
-msgstr "संयोजनप्रकारः Tunnel इति"
-
-#: models/networkmodelitem.cpp:59
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is IP Tunnel"
-msgstr "संयोजनप्रकारः IP Tunnel इति"
-
-#: models/networkmodelitem.cpp:60
-#, kde-format
-msgctxt "@info:tooltip"
-msgid "The connection type is WireGuard"
-msgstr "संयोजनप्रकारः WireGuard इति"
-
-#: models/networkmodelitem.cpp:347
+#: models/networkmodelitem.cpp:328
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip real user name is not available"
 #| msgid "Not Available"
@@ -3539,7 +3617,7 @@ msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "न उपलब्धम्"
 
-#: models/networkmodelitem.cpp:353
+#: models/networkmodelitem.cpp:334
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3547,174 +3625,12 @@ msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "संबद्धः"
 
-#: models/networkmodelitem.cpp:355
+#: models/networkmodelitem.cpp:336
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"
 msgid "Previously Used, Unavailable"
 msgstr ""
-
-#: models/networkmodelitem.cpp:593
-#, kde-format
-msgid "IPv4 Address"
-msgstr "IPv4 पता"
-
-#: models/networkmodelitem.cpp:599
-#, kde-format
-msgid "IPv4 Default Gateway"
-msgstr "IPv4 पूर्वनिर्धारितद्वारम्"
-
-#: models/networkmodelitem.cpp:606
-#, kde-format
-msgid "IPv4 Primary Nameserver"
-msgstr "IPv4 प्राथमिक नामसर्वरः"
-
-#: models/networkmodelitem.cpp:610
-#, kde-format
-msgid "IPv4 Secondary Nameserver"
-msgstr "IPv4 द्वितीयक नामसर्वरः"
-
-#: models/networkmodelitem.cpp:620
-#, kde-format
-msgid "IPv6 Address"
-msgstr "IPv6 पता"
-
-#: models/networkmodelitem.cpp:622
-#, kde-format
-msgid "IPv6 ULA Address"
-msgstr "IPv6 ULA पता"
-
-#: models/networkmodelitem.cpp:628
-#, kde-format
-msgid "IPv6 Default Gateway"
-msgstr "IPv6 पूर्वनिर्धारितद्वारम्"
-
-#: models/networkmodelitem.cpp:635
-#, kde-format
-msgid "IPv6 Primary Nameserver"
-msgstr "IPv6 प्राथमिक नामसर्वरः"
-
-#: models/networkmodelitem.cpp:639
-#, kde-format
-msgid "IPv6 Secondary Nameserver"
-msgstr "IPv6 द्वितीयक नामसर्वरः"
-
-#: models/networkmodelitem.cpp:648
-#, kde-format
-msgid "Connection speed"
-msgstr "संयोजनवेगः"
-
-#: models/networkmodelitem.cpp:650 models/networkmodelitem.cpp:675
-#: models/networkmodelitem.cpp:728 models/networkmodelitem.cpp:734
-#: models/networkmodelitem.cpp:740 models/networkmodelitem.cpp:746
-#: models/networkmodelitem.cpp:753 models/networkmodelitem.cpp:761
-#, kde-format
-msgid "MAC Address"
-msgstr "MAC Address इति"
-
-#: models/networkmodelitem.cpp:654
-#, kde-format
-msgid "Access Point (SSID)"
-msgstr "अभिगमनबिन्दु (SSID)"
-
-#: models/networkmodelitem.cpp:656
-#, kde-format
-msgid "Signal Strength"
-msgstr "संकेतबलम्"
-
-#: models/networkmodelitem.cpp:656
-#, kde-format
-msgctxt "WiFi signal strength percentage indicator"
-msgid "%1%"
-msgstr "%1%"
-
-#: models/networkmodelitem.cpp:658
-#, kde-format
-msgid "Security Type"
-msgstr "सुरक्षाप्रकारः"
-
-#: models/networkmodelitem.cpp:661
-#, kde-format
-msgid "Connection Speed"
-msgstr "संयोजनवेगः"
-
-#: models/networkmodelitem.cpp:667
-#, kde-format
-msgid "Frequency"
-msgstr "आवृत्ती"
-
-#: models/networkmodelitem.cpp:669
-#, kde-format
-msgctxt "Frequency (Channel)"
-msgid "%1 (Channel %2)"
-msgstr "%1 (चैनल %2)"
-
-#: models/networkmodelitem.cpp:673
-#, kde-format
-msgid "BSSID"
-msgstr "BSSID"
-
-#: models/networkmodelitem.cpp:687
-#, kde-format
-msgid "Operator"
-msgstr "संचालकः"
-
-#: models/networkmodelitem.cpp:691
-#, kde-format
-msgid "Network ID"
-msgstr "संजाल ID"
-
-#: models/networkmodelitem.cpp:695
-#, kde-format
-msgid "Signal Quality"
-msgstr "संकेत गुणवत्ता"
-
-#: models/networkmodelitem.cpp:696
-#, kde-format
-msgid "Access Technology"
-msgstr "अभिगम प्रौद्योगिकी"
-
-#: models/networkmodelitem.cpp:701 models/networkmodelitem.cpp:718
-#, kde-format
-msgid "VPN Plugin"
-msgstr "वीपीएन प्लगइन"
-
-#: models/networkmodelitem.cpp:712
-#, kde-format
-msgid "Banner"
-msgstr "बैनर"
-
-#: models/networkmodelitem.cpp:722
-#, kde-format
-msgid "Name"
-msgstr "नामः"
-
-#: models/networkmodelitem.cpp:724 models/networkmodelitem.cpp:726
-#, kde-format
-msgid "Capabilities"
-msgstr "क्षमता"
-
-#: models/networkmodelitem.cpp:732 models/networkmodelitem.cpp:738
-#: models/networkmodelitem.cpp:744 models/networkmodelitem.cpp:750
-#: models/networkmodelitem.cpp:756 models/networkmodelitem.cpp:759
-#, kde-format
-msgid "Type"
-msgstr "प्रकारः"
-
-#: models/networkmodelitem.cpp:752
-#, kde-format
-msgid "Vlan ID"
-msgstr "व्लान् आईडी"
-
-#: models/networkmodelitem.cpp:756
-#, kde-format
-msgid "Adsl"
-msgstr "Adsl"
-
-#: models/networkmodelitem.cpp:766
-#, kde-format
-msgid "Device"
-msgstr "उपकरणम्‌"
 
 #: networkstatus.cpp:126
 #, kde-format
@@ -3804,6 +3720,82 @@ msgstr "NetworkManager 0.9.8 आवश्यकम्, %1 प्राप्त�
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "अज्ञात"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Unknown"
+#~ msgstr "संयोजनप्रकारः अज्ञातः अस्ति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is ADSL"
+#~ msgstr "संयोजनप्रकारः ADSL अस्ति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bluetooth"
+#~ msgstr "संयोजनप्रकारः ब्लूटूथ् अस्ति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Bridge"
+#~ msgstr "संयोजनप्रकारः Bridge इति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is CDMA"
+#~ msgstr "संयोजनप्रकारः CDMA अस्ति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is GSM"
+#~ msgstr "संयोजनप्रकारः GSM अस्ति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Infiniband"
+#~ msgstr "संयोजनप्रकारः Infiniband इति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is OLPC Mesh"
+#~ msgstr "संयोजनप्रकारः OLPC Mesh इति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is PPOPE"
+#~ msgstr "संयोजनप्रकारः PPOPE इति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VLAN"
+#~ msgstr "संयोजनप्रकारः VLAN अस्ति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is VPN"
+#~ msgstr "संयोजनप्रकारः VPN अस्ति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wimax"
+#~ msgstr "संयोजनप्रकारः Wimax अस्ति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wired"
+#~ msgstr "संयोजनप्रकारः Wired इति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Wireless"
+#~ msgstr "संयोजनप्रकारः Wireless अस्ति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Team"
+#~ msgstr "संयोजनप्रकारः Team इति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Generic"
+#~ msgstr "संयोजनप्रकारः Generic अस्ति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is Tunnel"
+#~ msgstr "संयोजनप्रकारः Tunnel इति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is IP Tunnel"
+#~ msgstr "संयोजनप्रकारः IP Tunnel इति"
+
+#~ msgctxt "@info:tooltip"
+#~ msgid "The connection type is WireGuard"
+#~ msgstr "संयोजनप्रकारः WireGuard इति"
 
 #~ msgctxt ""
 #~ "Label for last used time for a network connection used in the last hour, "

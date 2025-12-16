@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-27 02:38+0000\n"
-"PO-Revision-Date: 2025-08-07 04:40+0200\n"
+"PO-Revision-Date: 2025-12-16 06:36+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.8\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -149,7 +149,7 @@ msgstr ""
 #: qml/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: qml/ConnectionItem.qml:85
 msgid "Connect"

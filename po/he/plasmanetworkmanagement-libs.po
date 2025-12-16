@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-15 00:44+0000\n"
-"PO-Revision-Date: 2025-10-09 13:17+0300\n"
+"PO-Revision-Date: 2025-12-15 04:46+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: editor/connectiondetails.cpp:69
 #, kde-format
@@ -36,7 +36,7 @@ msgstr "כתובת חומרה (MAC)"
 #: editor/connectiondetails.cpp:74
 #, kde-format
 msgid "Hardware"
-msgstr ""
+msgstr "חומרה"
 
 #: editor/connectiondetails.cpp:87
 #, kde-format
@@ -207,9 +207,7 @@ msgid "Device"
 msgstr "התקן"
 
 #: editor/connectiondetails.cpp:261
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "כללי"
 
@@ -272,7 +270,7 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "מצב"
 
 #: editor/connectioneditorbase.cpp:209
 #, kde-format
@@ -446,9 +444,7 @@ msgid "PAN (personal area network)"
 msgstr "PAN (רשת מרחב מיידי)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
 msgstr "מנותק"
 

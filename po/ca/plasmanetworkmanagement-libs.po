@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-15 00:44+0000\n"
-"PO-Revision-Date: 2025-08-07 08:41+0200\n"
+"PO-Revision-Date: 2025-12-15 10:39+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: editor/connectiondetails.cpp:69
 #, kde-format
@@ -37,7 +37,7 @@ msgstr "Adreça MAC"
 #: editor/connectiondetails.cpp:74
 #, kde-format
 msgid "Hardware"
-msgstr ""
+msgstr "Maquinari"
 
 #: editor/connectiondetails.cpp:87
 #, kde-format
@@ -208,9 +208,7 @@ msgid "Device"
 msgstr "Dispositiu"
 
 #: editor/connectiondetails.cpp:261
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "General"
 
@@ -273,7 +271,7 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "Estat"
 
 #: editor/connectioneditorbase.cpp:209
 #, kde-format
@@ -448,9 +446,7 @@ msgid "PAN (personal area network)"
 msgstr "PAN (xarxa d'àrea personal)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
 msgstr "Desconnectat"
 

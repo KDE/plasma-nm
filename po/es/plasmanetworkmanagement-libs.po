@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-15 00:44+0000\n"
-"PO-Revision-Date: 2025-08-07 12:37+0100\n"
+"PO-Revision-Date: 2025-12-15 03:44+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: editor/connectiondetails.cpp:69
 #, kde-format
@@ -35,7 +35,7 @@ msgstr "Dirección MAC"
 #: editor/connectiondetails.cpp:74
 #, kde-format
 msgid "Hardware"
-msgstr ""
+msgstr "Hardware"
 
 #: editor/connectiondetails.cpp:87
 #, kde-format
@@ -206,9 +206,7 @@ msgid "Device"
 msgstr "Dispositivo"
 
 #: editor/connectiondetails.cpp:261
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "General"
 
@@ -271,7 +269,7 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #: editor/connectioneditorbase.cpp:209
 #, kde-format
@@ -445,9 +443,7 @@ msgid "PAN (personal area network)"
 msgstr "PAN (red de área personal)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
 msgstr "Desconectado"
 
@@ -3741,79 +3737,3 @@ msgstr "Se necesita NetworkManager 0.9.8; se ha encontrado %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconocido"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Unknown"
-#~ msgstr "Se desconoce el tipo de conexión"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is ADSL"
-#~ msgstr "El tipo de conexión es ADSL"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Bluetooth"
-#~ msgstr "El tipo de conexión es Bluetooth"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Bridge"
-#~ msgstr "El tipo de conexión es Puente de red"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is CDMA"
-#~ msgstr "El tipo de conexión es CDMA"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is GSM"
-#~ msgstr "El tipo de conexión es GSM"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Infiniband"
-#~ msgstr "El tipo de conexión es Infiniband"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is OLPC Mesh"
-#~ msgstr "El tipo de conexión es Malla OLPC"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is PPOPE"
-#~ msgstr "El tipo de conexión es PPOPE"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VLAN"
-#~ msgstr "El tipo de conexión es VLAN"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VPN"
-#~ msgstr "El tipo de conexión es VPN"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wimax"
-#~ msgstr "El tipo de conexión es Wimax"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wired"
-#~ msgstr "El tipo de conexión es Cableada"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wireless"
-#~ msgstr "El tipo de conexión es Inalámbrica"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Team"
-#~ msgstr "El tipo de conexión es Team"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Generic"
-#~ msgstr "El tipo de conexión es Genérica"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Tunnel"
-#~ msgstr "El tipo de conexión es Túnel"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is IP Tunnel"
-#~ msgstr "El tipo de conexión es Túnel IP"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is WireGuard"
-#~ msgstr "El tipo de conexión es WireGuard"

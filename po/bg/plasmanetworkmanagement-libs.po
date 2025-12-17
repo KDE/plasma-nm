@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-15 00:44+0000\n"
-"PO-Revision-Date: 2025-10-24 21:50+0200\n"
+"PO-Revision-Date: 2025-12-16 21:46+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -35,7 +35,7 @@ msgstr "MAC адрес"
 #: editor/connectiondetails.cpp:74
 #, kde-format
 msgid "Hardware"
-msgstr ""
+msgstr "Хардуер"
 
 #: editor/connectiondetails.cpp:87
 #, kde-format
@@ -206,9 +206,7 @@ msgid "Device"
 msgstr "Устройство"
 
 #: editor/connectiondetails.cpp:261
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Общи"
 
@@ -271,7 +269,7 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "Състояние"
 
 #: editor/connectioneditorbase.cpp:209
 #, kde-format
@@ -445,9 +443,7 @@ msgid "PAN (personal area network)"
 msgstr "PAN (personal area network)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
 msgstr "Прекъснат"
 

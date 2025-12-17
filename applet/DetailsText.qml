@@ -78,22 +78,26 @@ MouseArea {
                 Layout.columnSpan: 2
                 Layout.preferredHeight: {
                     if (delegateItem.isSection) {
-                        return sectionTitleLabel.implicitHeight * 1.2; // Add some padding for sections
+                        return Math.round(sectionTitleLabel.implicitHeight * 1.2); // Add some padding for sections
                     } else if (delegateItem.detailLabel || delegateItem.detailValue) {
                         return detailLabelItem.implicitHeight;
                     }
                     return 0; // Hide empty items
                 }
 
-                // Section Title Label
-                PlasmaComponents3.Label {
+                // Basically ListSectionHeader but centered and without the line.
+                Kirigami.Heading {
                     id: sectionTitleLabel
                     anchors.fill: parent
                     visible: delegateItem.isSection
-                    elide: Text.ElideNone
-                    font: Kirigami.Theme.smallFont
                     horizontalAlignment: Text.AlignHCenter
+                    verticalAlignment: Text.AlignBottom
+                    elide: Text.ElideRight
+                    opacity: 0.75
+                    level: 5
+                    type: Kirigami.Heading.Primary
                     text: delegateItem.sectionTitle
+                    font.weight: Font.Bold
                     textFormat: Text.PlainText
                 }
 

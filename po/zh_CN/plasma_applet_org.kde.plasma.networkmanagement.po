@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:44+0000\n"
+"POT-Creation-Date: 2025-12-18 00:45+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -133,7 +133,7 @@ msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
 msgstr "打开移动数据以搜索网络"
 
-#: DetailsText.qml:50
+#: DetailsText.qml:40
 #, kde-format
 msgid "Copy"
 msgstr "复制"

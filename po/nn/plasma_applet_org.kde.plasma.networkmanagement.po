@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:44+0000\n"
+"POT-Creation-Date: 2025-12-18 00:45+0000\n"
 "PO-Revision-Date: 2024-10-27 14:47+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -139,7 +139,7 @@ msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
 msgstr ""
 
-#: DetailsText.qml:50
+#: DetailsText.qml:40
 #, kde-format
 msgid "Copy"
 msgstr "Kopier"

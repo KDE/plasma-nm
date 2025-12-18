@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:44+0000\n"
+"POT-Creation-Date: 2025-12-18 00:45+0000\n"
 "PO-Revision-Date: 2025-11-20 21:38+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -137,7 +137,7 @@ msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
 msgstr "請開啟行動數據再搜尋網路"
 
-#: DetailsText.qml:50
+#: DetailsText.qml:40
 #, kde-format
 msgid "Copy"
 msgstr "複製"

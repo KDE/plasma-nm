@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:44+0000\n"
+"POT-Creation-Date: 2025-12-18 00:45+0000\n"
 "PO-Revision-Date: 2025-11-22 10:07+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -139,7 +139,7 @@ msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
 msgstr "Kveiktu á farsímagögnum til að leita að netum"
 
-#: DetailsText.qml:50
+#: DetailsText.qml:40
 #, kde-format
 msgid "Copy"
 msgstr "Afrita"

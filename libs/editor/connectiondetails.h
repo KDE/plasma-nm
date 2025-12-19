@@ -26,15 +26,15 @@ struct ConnectionDetailSection {
 };
 
 /**
- * Extracts detailed information about an active network connection.
+ * Extracts detailed information about a network connection.
  * @param connection The NetworkManager connection.
  * @param device The network device.
+ * @param accessPointPath Optional access point path for disconnected Wi-Fi networks.
  * @return A list of sections, each containing a title and an ordered list of label-value pairs.
  *         The order of sections and details within each section is preserved as defined.
  */
 PLASMANM_EDITOR_EXPORT QList<ConnectionDetailSection>
-getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device);
-
+getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device, const QString &accessPointPath = QString());
 }
 
 #endif // PLASMA_NM_CONNECTION_DETAILS_H

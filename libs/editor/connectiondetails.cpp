@@ -44,11 +44,51 @@ namespace ConnectionDetails
 {
 
 QList<ConnectionDetailSection>
-getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device)
+getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device, const QString &accessPointPath)
 {
     QList<ConnectionDetailSection> sections;
 
-    if (!connection || !device) {
+    if (!device) {
+        return sections;
+    }
+
+    // Handle case where we have no stored connection (e.g., visible Wi-Fi network never connected to)
+    if (!connection && !accessPointPath.isEmpty()) {
+        // Show basic info for disconnected Wi-Fi networks
+        NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
+        if (wirelessDevice) {
+            NetworkManager::AccessPoint::Ptr ap = wirelessDevice->findAccessPoint(accessPointPath);
+            if (ap) {
+                QList<QPair<QString, QString>> details;
+                details.append({i18n("Access Point (SSID)"), ap->ssid()});
+                details.append({i18n("Signal Strength"), i18nc("Wi-Fi signal strength percentage indicator", "%1%", ap->signalStrength())});
+
+                // Determine security type from access point capabilities
+                NetworkManager::WirelessSecurityType securityType = NetworkManager::findBestWirelessSecurity(wirelessDevice->wirelessCapabilities(),
+                                                                                                             true,
+                                                                                                             (ap->mode() == NetworkManager::AccessPoint::Adhoc),
+                                                                                                             ap->capabilities(),
+                                                                                                             ap->wpaFlags(),
+                                                                                                             ap->rsnFlags());
+                details.append({i18n("Security Type"), UiUtils::labelFromWirelessSecurity(securityType)});
+
+                const int channel = NetworkManager::findChannel(ap->frequency());
+                const QString frequencyString = UiUtils::wirelessFrequencyToString(ap->frequency());
+                if (channel > 0) {
+                    details.append({i18n("Frequency"), i18nc("Frequency (Channel)", "%1 (Channel %2)", frequencyString, channel)});
+                } else {
+                    details.append({i18n("Frequency"), frequencyString});
+                }
+                details.append({i18n("BSSID"), ap->hardwareAddress()});
+                details.append({i18n("MAC Address"), wirelessDevice->hardwareAddress()});
+
+                sections.append({i18n("Wi-Fi"), details});
+            }
+        }
+        return sections;
+    }
+
+    if (!connection) {
         return sections;
     }
 
@@ -57,7 +97,13 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
         return sections;
     }
 
-    const bool isActive = (device->state() == NetworkManager::Device::Activated);
+    // Check if this specific connection is active, not just if the device is activated
+    bool isConnectionActive = false;
+    NetworkManager::ActiveConnection::Ptr activeConn = device->activeConnection();
+    if (activeConn && activeConn->connection() && connection) {
+        isConnectionActive = (activeConn->connection()->path() == connection->path());
+    }
+
     const NetworkManager::ConnectionSettings::ConnectionType type = settings->connectionType();
 
     // Hardware/Connection type specific details
@@ -65,7 +111,7 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
         QList<QPair<QString, QString>> details;
         NetworkManager::WiredDevice::Ptr wiredDevice = device.objectCast<NetworkManager::WiredDevice>();
         if (wiredDevice) {
-            if (isActive) {
+            if (isConnectionActive) {
                 details.append({i18n("Connection speed"), UiUtils::connectionSpeed(wiredDevice->bitRate())});
             }
             details.append({i18n("MAC Address"), wiredDevice->hardwareAddress()});
@@ -87,19 +133,31 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
         details.append({i18n("Access Point (SSID)"), ssid});
         if (mode == NetworkManager::WirelessSetting::Infrastructure) {
             if (wirelessDevice) {
+                // For active connections, use activeAccessPoint
+                // For disconnected networks, use the provided accessPointPath to find the AP
                 NetworkManager::AccessPoint::Ptr ap = wirelessDevice->activeAccessPoint();
+
+                if (!ap && !accessPointPath.isEmpty()) {
+                    ap = wirelessDevice->findAccessPoint(accessPointPath);
+                }
                 if (ap) {
-                    details.append({i18n("Signal Strength"), i18nc("WiFi signal strength percentage indicator", "%1%", ap->signalStrength())});
+                    details.append({i18n("Signal Strength"), i18nc("Wi-Fi signal strength percentage indicator", "%1%", ap->signalStrength())});
                 }
             }
         }
         details.append({i18n("Security Type"),
                         UiUtils::labelFromWirelessSecurity(NetworkManager::securityTypeFromConnectionSetting(settings))});
         if (wirelessDevice) {
-            if (isActive) {
+            if (isConnectionActive) {
                 details.append({i18n("Connection Speed"), UiUtils::connectionSpeed(wirelessDevice->bitRate())});
             }
-            const NetworkManager::AccessPoint::Ptr accessPoint = wirelessDevice->activeAccessPoint();
+            // For active connections, use activeAccessPoint
+            // For disconnected networks, use the provided accessPointPath to find the AP
+            NetworkManager::AccessPoint::Ptr accessPoint = wirelessDevice->activeAccessPoint();
+
+            if (!accessPoint && !accessPointPath.isEmpty()) {
+                accessPoint = wirelessDevice->findAccessPoint(accessPointPath);
+            }
 
             if (accessPoint) {
                 const int channel = NetworkManager::findChannel(accessPoint->frequency());
@@ -158,7 +216,7 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
 
         details.append({i18n("VPN Plugin"), vpnType});
 
-        if (isActive) {
+        if (isConnectionActive) {
             NetworkManager::ActiveConnection::Ptr active = device->activeConnection();
             NetworkManager::VpnConnection::Ptr vpnConnection;
 
@@ -252,9 +310,9 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
     }
 
     // Add device interface name to the last section if active
-    if (device && isActive && !sections.isEmpty()) {
+    if (device && isConnectionActive && !sections.isEmpty()) {
         sections.last().details.append({i18n("Device"), device->interfaceName()});
-    } else if (device && isActive && sections.isEmpty()) {
+    } else if (device && isConnectionActive && sections.isEmpty()) {
         // WireGuard or other types might not have created a section yet
         QList<QPair<QString, QString>> details;
         details.append({i18n("Device"), device->interfaceName()});
@@ -262,7 +320,7 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
     }
 
     // Get IPv4 Address and related nameservers + IPv4 default gateway
-    if (device && device->ipV4Config().isValid() && isActive) {
+    if (device && device->ipV4Config().isValid() && isConnectionActive) {
         QList<QPair<QString, QString>> details;
         if (!device->ipV4Config().addresses().isEmpty()) {
             QHostAddress addr = device->ipV4Config().addresses().first().ip();
@@ -294,7 +352,7 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
     }
 
     // Get IPv6 Address and related nameservers + IPv6 default gateway
-    if (device && device->ipV6Config().isValid() && isActive) {
+    if (device && device->ipV6Config().isValid() && isConnectionActive) {
         QList<QPair<QString, QString>> details;
         if (!device->ipV6Config().addresses().isEmpty()) {
             QHostAddress addr = device->ipV6Config().addresses().first().ip();

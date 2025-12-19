@@ -128,7 +128,14 @@ QList<ConnectionDetails::ConnectionDetailSection> NetworkModelItem::detailsList(
 
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(m_uuid);
-    return ConnectionDetails::getConnectionDetails(connection, device);
+
+    // For Wi-Fi networks, pass the specific access point path for disconnected networks
+    QString accessPointPath;
+    if (m_type == NetworkManager::ConnectionSettings::Wireless && !m_specificPath.isEmpty()) {
+        accessPointPath = m_specificPath;
+    }
+
+    return ConnectionDetails::getConnectionDetails(connection, device, accessPointPath);
 }
 
 QString NetworkModelItem::devicePath() const

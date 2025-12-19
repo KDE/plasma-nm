@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-15 00:44+0000\n"
-"PO-Revision-Date: 2025-10-15 20:39+0400\n"
+"PO-Revision-Date: 2025-12-18 10:13+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -35,7 +35,7 @@ msgstr "عنوان ماك (MAC)"
 #: editor/connectiondetails.cpp:74
 #, kde-format
 msgid "Hardware"
-msgstr ""
+msgstr "العتاد"
 
 #: editor/connectiondetails.cpp:87
 #, kde-format
@@ -206,9 +206,7 @@ msgid "Device"
 msgstr "الجهاز"
 
 #: editor/connectiondetails.cpp:261
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "عامّ"
 
@@ -271,7 +269,7 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "الحالة"
 
 #: editor/connectioneditorbase.cpp:209
 #, kde-format
@@ -445,11 +443,9 @@ msgid "PAN (personal area network)"
 msgstr "PAN (منطقة شبكة شخصية)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
-msgstr "قطع الاتصال"
+msgstr "غير متصل"
 
 #: editor/settings/connectionwidget.cpp:158
 #, kde-format

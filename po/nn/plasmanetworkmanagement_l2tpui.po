@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-07-05 05:54+0000\n"
+"POT-Creation-Date: 2025-11-17 16:19+0000\n"
 "PO-Revision-Date: 2021-09-18 20:18+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -117,11 +117,11 @@ msgstr "CA-sertifikat:"
 #: l2tp.ui:187 l2tpipsec.ui:119
 #, kde-format
 msgid ""
-"<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
-"cer or .p12 formats.</p></body></html>"
+"<html><head/><body><p>Certificate authority (CA) file "
+"in .pem, .der, .crt, .cer or .p12 formats.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Sertifiseringsinstans-fil (CA) i .pem-, .der-, .crt-, ."
-"cer- eller .p12-format.</p></body></html>"
+"<html><head/><body><p>Sertifiseringsinstans-fil (CA) "
+"i .pem-, .der-, .crt-, .cer- eller .p12-format.</p></body></html>"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCert)

@@ -561,23 +561,83 @@ void ConnectionEditorBase::updateStatusWidget()
         }
     }
 
-    if (!activeConnection) {
-        return; // Connection is not active, status widget will show "activate to view details"
-    }
-
-    // Get the device for this active connection
+    // Get the device for this connection
     NetworkManager::Device::Ptr device;
-    const QStringList devicePaths = activeConnection->devices();
-    if (!devicePaths.isEmpty()) {
-        device = NetworkManager::findNetworkInterface(devicePaths.first());
+    QString accessPointPath;
+
+    if (activeConnection) {
+        // For active connections, get device from active connection
+        const QStringList devicePaths = activeConnection->devices();
+        if (!devicePaths.isEmpty()) {
+            device = NetworkManager::findNetworkInterface(devicePaths.first());
+        }
+    } else {
+        // For inactive connections, try to find the appropriate device
+        // For WiFi, find the device that matches the connection's interface name
+        const QString interfaceName = nmConnection->settings()->interfaceName();
+        if (!interfaceName.isEmpty()) {
+            for (const NetworkManager::Device::Ptr &dev : NetworkManager::networkInterfaces()) {
+                if (dev->interfaceName() == interfaceName) {
+                    device = dev;
+                    break;
+                }
+            }
+        }
+
+        // If no specific interface, find first device matching the connection type
+        if (!device) {
+            NetworkManager::ConnectionSettings::ConnectionType type = nmConnection->settings()->connectionType();
+            for (const NetworkManager::Device::Ptr &dev : NetworkManager::networkInterfaces()) {
+                if (type == NetworkManager::ConnectionSettings::Wireless && dev->type() == NetworkManager::Device::Wifi) {
+                    device = dev;
+                    break;
+                } else if (type == NetworkManager::ConnectionSettings::Wired && dev->type() == NetworkManager::Device::Ethernet) {
+                    device = dev;
+                    break;
+                }
+            }
+        }
+
+        // For WiFi connections, try to find the access point
+        if (device && device->type() == NetworkManager::Device::Wifi) {
+            NetworkManager::WirelessDevice::Ptr wirelessDevice = device.objectCast<NetworkManager::WirelessDevice>();
+            if (wirelessDevice) {
+                NetworkManager::WirelessSetting::Ptr wirelessSetting =
+                    nmConnection->settings()->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
+                if (wirelessSetting) {
+                    const QString bssid = wirelessSetting->bssid();
+                    const QString ssid = wirelessSetting->ssid();
+
+                    // Find access point matching BSSID if specified, otherwise match by SSID
+                    for (const QString &apPath : wirelessDevice->accessPoints()) {
+                        NetworkManager::AccessPoint::Ptr ap = wirelessDevice->findAccessPoint(apPath);
+                        if (!ap) {
+                            continue;
+                        }
+
+                        // Prefer matching by BSSID (MAC address) for exact AP identification
+                        if (!bssid.isEmpty()) {
+                            if (ap->hardwareAddress().toLower() == bssid.toLower()) {
+                                accessPointPath = apPath;
+                                break;
+                            }
+                        } else if (ap->ssid() == ssid) {
+                            // Fallback to SSID match (may not be the exact AP if multiple with same SSID)
+                            accessPointPath = apPath;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
     }
 
     if (!device) {
         return; // No device, can't get details
     }
 
-    // Pass connection and device to status widget
-    m_statusWidget->setConnectionAndDevice(nmConnection, device);
+    // Pass connection, device, and access point path to status widget
+    m_statusWidget->setConnectionAndDevice(nmConnection, device, accessPointPath);
 }
 
 #include "moc_connectioneditorbase.cpp"

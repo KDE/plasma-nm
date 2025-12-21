@@ -44,7 +44,9 @@ public:
     void setDetailsSource(QObject *networkModelItem);
 
     // Set connection and device directly (used by KCM)
-    void setConnectionAndDevice(const NetworkManager::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device);
+    void setConnectionAndDevice(const NetworkManager::Connection::Ptr &connection,
+                                const NetworkManager::Device::Ptr &device,
+                                const QString &accessPointPath = QString());
 
 private Q_SLOTS:
     void updateConnectionDetails();
@@ -63,6 +65,7 @@ private:
     QPointer<QObject> m_detailsSource;  // Actually a NetworkModelItem*, but using QObject* to avoid dependency
     NetworkManager::Connection::Ptr m_connection;
     NetworkManager::Device::Ptr m_device;
+    QString m_accessPointPath;
 };
 
 #endif // PLASMA_NM_CONNECTION_STATUS_WIDGET_H

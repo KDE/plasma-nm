@@ -82,10 +82,13 @@ void ConnectionStatusWidget::setDetailsSource(QObject *networkModelItem)
     updateConnectionDetails();
 }
 
-void ConnectionStatusWidget::setConnectionAndDevice(const NetworkManager::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device)
+void ConnectionStatusWidget::setConnectionAndDevice(const NetworkManager::Connection::Ptr &connection,
+                                                    const NetworkManager::Device::Ptr &device,
+                                                    const QString &accessPointPath)
 {
     m_connection = connection;
     m_device = device;
+    m_accessPointPath = accessPointPath;
     m_detailsSource = nullptr;
     updateConnectionDetails();
 }
@@ -102,8 +105,8 @@ QList<ConnectionDetails::ConnectionDetailSection> ConnectionStatusWidget::getCon
     }
 
     // If connection and device were set directly (KCM), use ConnectionDetails helper
-    if (m_connection && m_device) {
-        return ConnectionDetails::getConnectionDetails(m_connection, m_device);
+    if (m_device) {
+        return ConnectionDetails::getConnectionDetails(m_connection, m_device, m_accessPointPath);
     }
 
     // Fallback: no details source or connection/device

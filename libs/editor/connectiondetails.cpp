@@ -94,7 +94,7 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
             details.append({i18n("MAC Address"), wiredDevice->hardwareAddress()});
         }
         if (!details.isEmpty()) {
-            sections.append({i18n("Hardware"), details});
+            sections.append({i18n("Ethernet"), details});
         }
     } else if (type == NetworkManager::ConnectionSettings::Wireless) {
         QList<QPair<QString, QString>> details;
@@ -115,8 +115,11 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
         // Get access point for signal strength and other details
         NetworkManager::AccessPoint::Ptr accessPoint;
         if (wirelessDevice) {
-            accessPoint = wirelessDevice->activeAccessPoint();
-            if (!accessPoint && !accessPointPath.isEmpty()) {
+            // For active connections, use the active access point
+            // For inactive connections, use the provided accessPointPath to find the specific AP
+            if (isConnectionActive) {
+                accessPoint = wirelessDevice->activeAccessPoint();
+            } else if (!accessPointPath.isEmpty()) {
                 accessPoint = wirelessDevice->findAccessPoint(accessPointPath);
             }
         }

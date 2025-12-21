@@ -50,6 +50,8 @@ private:
         QString sectionTitle; // Only valid if isSection is true
         QString label;        // Only valid if isSection is false
         QString value;        // Only valid if isSection is false
+
+        bool operator==(const Item &) const noexcept = default;
     };
 
     QList<Item> m_items;

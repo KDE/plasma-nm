@@ -56,19 +56,34 @@ QHash<int, QByteArray> ConnectionDetailsModel::roleNames() const
 
 void ConnectionDetailsModel::setDetailsList(const QList<ConnectionDetails::ConnectionDetailSection> &detailsList)
 {
-    beginResetModel();
-    m_items.clear();
-
+    QList<Item> items;
     for (const auto &section : detailsList) {
         // Add section header
-        m_items.append({true, section.title, {}, {}}); // isSection, sectionTitle, label, value
+        items.append({true, section.title, {}, {}}); // isSection, sectionTitle, label, value
 
         // Add detail rows
         for (const auto &[label, value] : section.details) {
-            m_items.append({false, {}, label, value}); // isSection, sectionTitle, label, value
+            items.append({false, {}, label, value}); // isSection, sectionTitle, label, value
         }
     }
-    endResetModel();
+
+    // Same number of items, signal dataChanged for the ones that changed.
+    if (items.size() == m_items.size()) {
+        for (qsizetype i = 0; i < items.size(); ++i) {
+            auto &currentItem = m_items[i];
+            const auto &newItem = items.at(i);
+            if (currentItem != newItem) {
+                currentItem = newItem;
+                const QModelIndex itemIndex = index(i, 0);
+                Q_EMIT dataChanged(itemIndex, itemIndex);
+            }
+        }
+        // Just reset the model (could optimized with insert/removeRows...)
+    } else {
+        beginResetModel();
+        m_items = items;
+        endResetModel();
+    }
 }
 
 QString ConnectionDetailsModel::accessibilityDescription() const

@@ -34,7 +34,7 @@ msgstr "MAC 地址"
 #: editor/connectiondetails.cpp:74
 #, kde-format
 msgid "Hardware"
-msgstr ""
+msgstr "硬件"
 
 #: editor/connectiondetails.cpp:87
 #, kde-format
@@ -205,9 +205,7 @@ msgid "Device"
 msgstr "设备"
 
 #: editor/connectiondetails.cpp:261
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "常规"
 
@@ -270,7 +268,7 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "状态"
 
 #: editor/connectioneditorbase.cpp:209
 #, kde-format
@@ -444,11 +442,9 @@ msgid "PAN (personal area network)"
 msgstr "PAN (个人区域网络)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
-msgstr "已断开连接"
+msgstr "已断开"
 
 #: editor/settings/connectionwidget.cpp:158
 #, kde-format
@@ -3691,79 +3687,3 @@ msgstr "需要 NetworkManager 0.9.8，找到了 %1。"
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "未知"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Unknown"
-#~ msgstr "连接类型未知"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is ADSL"
-#~ msgstr "连接类型为 ADSL"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Bluetooth"
-#~ msgstr "连接类型为蓝牙"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Bridge"
-#~ msgstr "连接类型为桥接 (Bridge)"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is CDMA"
-#~ msgstr "连接类型为 CDMA"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is GSM"
-#~ msgstr "连接类型为 GSM"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Infiniband"
-#~ msgstr "连接类型为 InfiniBand"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is OLPC Mesh"
-#~ msgstr "连接类型为 OLPC 网格"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is PPOPE"
-#~ msgstr "连接类型为 PPPoE"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VLAN"
-#~ msgstr "连接类型为虚拟局域网 (VLAN)"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VPN"
-#~ msgstr "连接类型为 VPN"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wimax"
-#~ msgstr "连接类型为 Wimax"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wired"
-#~ msgstr "连接类型为有线网络"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wireless"
-#~ msgstr "连接类型为无线网络"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Team"
-#~ msgstr "连接类型为网络组 (Team)"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Generic"
-#~ msgstr "连接类型为常规"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Tunnel"
-#~ msgstr "连接类型为隧道"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is IP Tunnel"
-#~ msgstr "连接类型为 IP 隧道"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is WireGuard"
-#~ msgstr "连接类型为 WireGuard"

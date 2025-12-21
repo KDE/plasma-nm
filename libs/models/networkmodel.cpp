@@ -672,7 +672,15 @@ void NetworkModel::updateItem(NetworkModelItem *item)
 
     const int row = m_list.indexOf(item);
     if (row != -1) {
-        item->updateConnectionDetailsModel();
+        QList<int> detailsChangedRoles = item->changedRoles();
+        // Ignore roles that are not relevant for the details model.
+        detailsChangedRoles.removeOne(ItemRole::ConnectionIconRole);
+        detailsChangedRoles.removeOne(ItemRole::TxBytesRole);
+        detailsChangedRoles.removeOne(ItemRole::RxBytesRole);
+        if (!detailsChangedRoles.isEmpty()) {
+            item->updateConnectionDetailsModel();
+        }
+
         QModelIndex index = createIndex(row, 0);
         Q_EMIT dataChanged(index, index, item->changedRoles());
         item->clearChangedRoles();

@@ -25,7 +25,7 @@ NetworkModelItem::NetworkModelItem(QObject *parent)
     , m_duplicate(false)
     , m_mode(NetworkManager::WirelessSetting::Infrastructure)
     , m_name()
-    , m_connectionDetailsModel(new ConnectionDetailsModel(this))
+    , m_connectionDetailsModel(nullptr)
     , m_securityType(NetworkManager::NoneSecurity)
     , m_signal(0)
     , m_slave(false)
@@ -56,7 +56,7 @@ NetworkModelItem::NetworkModelItem(const NetworkModelItem *item, QObject *parent
     , m_duplicate(true)
     , m_mode(item->mode())
     , m_name(item->name())
-    , m_connectionDetailsModel(new ConnectionDetailsModel(this))
+    , m_connectionDetailsModel(nullptr)
     , m_securityType(item->securityType())
     , m_signal(0)
     , m_slave(item->slave())
@@ -75,8 +75,12 @@ NetworkModelItem::NetworkModelItem(const NetworkModelItem *item, QObject *parent
 {
 }
 
-ConnectionDetailsModel *NetworkModelItem::detailsModel() const
+ConnectionDetailsModel *NetworkModelItem::detailsModel()
 {
+    if (!m_connectionDetailsModel) {
+        m_connectionDetailsModel = new ConnectionDetailsModel(this);
+        updateConnectionDetailsModel();
+    }
     return m_connectionDetailsModel;
 }
 
@@ -552,7 +556,9 @@ bool NetworkModelItem::operator==(const NetworkModelItem *item) const
 
 void NetworkModelItem::updateConnectionDetailsModel()
 {
-    m_connectionDetailsModel->setDetailsList(detailsList());
+    if (m_connectionDetailsModel) {
+        m_connectionDetailsModel->setDetailsList(detailsList());
+    }
 }
 
 #include "moc_networkmodelitem.cpp"

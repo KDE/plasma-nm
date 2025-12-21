@@ -61,8 +61,8 @@ public:
     Q_INVOKABLE QList<ConnectionDetails::ConnectionDetailSection> detailsList() const;
 
     Q_PROPERTY(ConnectionDetailsModel* detailsModel READ detailsModel CONSTANT)
-    ConnectionDetailsModel *detailsModel() const;
-    
+    ConnectionDetailsModel *detailsModel();
+
     QString deviceName() const;
     void setDeviceName(const QString &name);
 

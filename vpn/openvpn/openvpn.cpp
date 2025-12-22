@@ -17,7 +17,6 @@
 #include <KLocalizedString>
 #include <KMessageBox>
 #include <KPluginFactory>
-#include <QRegularExpression>
 #include <kwidgetsaddons_version.h>
 
 #include <NetworkManagerQt/Connection>

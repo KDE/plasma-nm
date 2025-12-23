@@ -54,6 +54,17 @@
 
 static const QString KEY_802_11_WIRELESS_SECURITY = QStringLiteral("802-11-wireless-security");
 
+const QString escapeSpecialCharacters(const QString &text)
+{
+    QString result = text;
+    result.replace(u'\\', QStringLiteral("\\\\"))
+        .replace(u';', QStringLiteral("\\;"))
+        .replace(u',', QStringLiteral("\\,"))
+        .replace(u'"', QStringLiteral("\\\""))
+        .replace(u':', QStringLiteral("\\:"));
+    return result;
+}
+
 Handler::Handler(QObject *parent)
     : QObject(parent)
     , m_tmpWirelessEnabled(NetworkManager::isWirelessEnabled())
@@ -216,7 +227,7 @@ void Handler::requestWifiCode(const QString &connectionPath, const QString &ssid
 
     auto securityType = static_cast<NetworkManager::WirelessSecurityType>(_securityType);
 
-    QString ret = QStringLiteral("WIFI:S:") + ssid + QLatin1Char(';');
+    QString ret = QStringLiteral("WIFI:S:") + escapeSpecialCharacters(ssid) + QLatin1Char(';');
     if (securityType != NetworkManager::NoneSecurity) {
         switch (securityType) {
         case NetworkManager::NoneSecurity:
@@ -1039,7 +1050,7 @@ void Handler::onWiFiCodeResponse(QDBusPendingCallWatcher *watcher, QString &&ret
         return;
     }
     if (!pass.isEmpty()) {
-        ret += QStringLiteral("P:") % pass % QLatin1Char(';');
+        ret += QStringLiteral("P:") % escapeSpecialCharacters(pass) % QLatin1Char(';');
     }
 
     Q_EMIT wifiCodeReceived(ret % QLatin1Char(';'), ssid, pass);

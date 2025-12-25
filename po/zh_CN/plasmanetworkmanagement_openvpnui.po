@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-12-25 00:45+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,17 +18,17 @@ msgstr ""
 "plasmanetworkmanagement_openvpnui.pot\n"
 "X-Crowdin-File-ID: 43161\n"
 
-#: openvpn.cpp:183
+#: openvpn.cpp:182
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
 msgstr "NetworkManager 缺少对 OpenVPN 的支持"
 
-#: openvpn.cpp:208
+#: openvpn.cpp:207
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "保存文件 %1 时出错：%2"
 
-#: openvpn.cpp:236
+#: openvpn.cpp:235
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "复制证书到 %1 时出错：%2"

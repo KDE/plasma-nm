@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-12-25 00:45+0000\n"
 "PO-Revision-Date: 2023-04-02 17:09+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -18,17 +18,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: openvpn.cpp:183
+#: openvpn.cpp:182
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
 msgstr "NetworkManagerista puuttuu OpenVPN-tuki"
 
-#: openvpn.cpp:208
+#: openvpn.cpp:207
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr "Virhe tallennettaessa tiedostoa %1: %2"
 
-#: openvpn.cpp:236
+#: openvpn.cpp:235
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr "Virhe kopioitaessa varmennetta kohteeseen %1: %2"

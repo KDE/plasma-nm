@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2025-12-25 00:45+0000\n"
 "PO-Revision-Date: 2019-03-28 03:38+0100\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -18,17 +18,17 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: openvpn.cpp:183
+#: openvpn.cpp:182
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
 msgstr ""
 
-#: openvpn.cpp:208
+#: openvpn.cpp:207
 #, kde-format
 msgid "Error saving file %1: %2"
 msgstr ""
 
-#: openvpn.cpp:236
+#: openvpn.cpp:235
 #, kde-format
 msgid "Error copying certificate to %1: %2"
 msgstr ""

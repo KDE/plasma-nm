@@ -1,0 +1,159 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2025-11-17 16:19+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: kcm.cpp:288
+#, kde-format
+msgid "Failed to import VPN connection: %1"
+msgstr ""
+
+#: kcm.cpp:358
+#, kde-format
+msgid "my_shared_connection"
+msgstr ""
+
+#: kcm.cpp:430
+#, kde-format
+msgid "Export VPN Connection"
+msgstr ""
+
+#: kcm.cpp:455
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr ""
+
+#: kcm.cpp:456
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr ""
+
+#: kcm.cpp:555
+#, kde-format
+msgid "Import VPN Connection"
+msgstr ""
+
+#: kcm.cpp:555
+#, kde-format
+msgid "VPN connections (%1)"
+msgstr ""
+
+#: kcm.cpp:558
+#, kde-format
+msgid "No file was provided"
+msgstr ""
+
+#: kcm.cpp:619
+#, kde-format
+msgid "Unknown VPN type"
+msgstr ""
+
+#: qml/AddConnectionDialog.qml:15
+msgctxt "@title:window"
+msgid "Choose a Connection Type"
+msgstr ""
+
+#: qml/AddConnectionDialog.qml:163
+msgid "Create"
+msgstr ""
+
+#: qml/AddConnectionDialog.qml:174 qml/ConfigurationDialog.qml:112
+msgid "Cancel"
+msgstr ""
+
+#: qml/AddConnectionDialog.qml:191 qml/main.qml:193
+msgid "Configuration"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:16
+msgctxt "@title:window"
+msgid "Configuration"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:37
+msgid "General"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:42
+msgid "Ask for PIN on modem detection"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:49
+msgid "Show virtual connections"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:57
+msgid "Hotspot"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:63
+msgid "Hotspot name:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:73
+msgid "Hotspot password:"
+msgstr ""
+
+#: qml/ConfigurationDialog.qml:102
+msgid "OK"
+msgstr ""
+
+#: qml/ConnectionItem.qml:108
+msgid "Connect"
+msgstr ""
+
+#: qml/ConnectionItem.qml:108
+msgid "Disconnect"
+msgstr ""
+
+#: qml/ConnectionItem.qml:121
+msgid "Delete"
+msgstr ""
+
+#: qml/ConnectionItem.qml:131
+msgid "Export"
+msgstr ""
+
+#: qml/ConnectionItem.qml:141
+msgid "Connected"
+msgstr ""
+
+#: qml/ConnectionItem.qml:143
+msgid "Connecting"
+msgstr ""
+
+#: qml/main.qml:139
+msgid "Add new connection"
+msgstr ""
+
+#: qml/main.qml:153
+msgid "Remove selected connection"
+msgstr ""
+
+#: qml/main.qml:169
+msgid "Export selected connection"
+msgstr ""
+
+#: qml/main.qml:221
+msgctxt "@title:window"
+msgid "Remove Connection"
+msgstr ""
+
+#: qml/main.qml:222
+msgid "Do you want to remove the connection '%1'?"
+msgstr ""

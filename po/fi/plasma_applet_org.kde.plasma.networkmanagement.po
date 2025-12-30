@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-18 00:45+0000\n"
-"PO-Revision-Date: 2025-07-31 10:03+0300\n"
+"PO-Revision-Date: 2025-11-30 15:45+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -255,25 +255,23 @@ msgstr "Luo tukiasema"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr ""
+msgstr "Lue langattoman verkon QR-koodi"
 
 #: Toolbar.qml:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr "Yhdistä verkkoon ”%1” lukemalla toisella laitteella tämä QR-koodi."
+msgstr "Lue langattomaan verkkoon yhdistävä QR-koodi"
 
 #: Toolbar.qml:228
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
-msgstr "Yhdistä verkkoon ”%1” lukemalla toisella laitteella tämä QR-koodi."
+msgstr ""
+"Asenna QRCA-viivakoodinlukija, jotta langattomaan verkkoon yhdistävän QR-"
+"koodin voisi lukea"
 
 #: Toolbar.qml:247
 #, kde-format

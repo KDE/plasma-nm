@@ -25,7 +25,7 @@ PlasmaExtras.ExpandableListItem {
 
     required property var model
     required property var listView
-    required property int index
+    required index
 
     property bool activating: model.ConnectionState === PlasmaNM.Enums.Activating
     property bool deactivated: model.ConnectionState === PlasmaNM.Enums.Deactivated

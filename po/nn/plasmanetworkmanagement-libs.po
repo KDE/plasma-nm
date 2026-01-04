@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:42+0000\n"
+"POT-Creation-Date: 2026-01-04 02:55+0000\n"
 "PO-Revision-Date: 2024-07-07 14:51+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -3257,72 +3257,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Fjern"
 
-#: handler.cpp:128
+#: handler.cpp:140
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma manglar støtte for «%1»-VPN-tilkoplingar."
 
-#: handler.cpp:131
+#: handler.cpp:143
 #, kde-format
 msgid "Report Bug"
 msgstr "Meld frå om feil"
 
-#: handler.cpp:154
+#: handler.cpp:166
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager manglar støtte for «%1»-VPN-tilkoplingar."
 
-#: handler.cpp:157
+#: handler.cpp:169
 #, kde-format
 msgid "Install"
 msgstr "Installer"
 
-#: handler.cpp:203
+#: handler.cpp:215
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Klarte ikkje å aktivera %1"
 
-#: handler.cpp:379 handler.cpp:408
+#: handler.cpp:391 handler.cpp:420
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Klarte ikkje leggja til tilkoplinga %1"
 
-#: handler.cpp:386 handler.cpp:417
+#: handler.cpp:398 handler.cpp:429
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Tilkoplinga %1 er no lagd til"
 
-#: handler.cpp:456
+#: handler.cpp:468
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Klarte ikkje leggja til %1"
 
-#: handler.cpp:496
+#: handler.cpp:508
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Klarte ikkje deaktivera %1"
 
-#: handler.cpp:634
+#: handler.cpp:646
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Klarte ikkje fjerna %1"
 
-#: handler.cpp:641
+#: handler.cpp:653
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Tilkoplinga %1 er no fjerna"
 
-#: handler.cpp:660
+#: handler.cpp:672
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Klarte ikkje oppdatera tilkoplinga %1"
 
-#: handler.cpp:667
+#: handler.cpp:679
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Tilkoplinga %1 er no oppdatert"
 
-#: handler.cpp:851
+#: handler.cpp:863
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Klarte ikkje oppretta trådlaussona %1"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:42+0000\n"
+"POT-Creation-Date: 2026-01-04 02:55+0000\n"
 "PO-Revision-Date: 2025-08-10 19:39+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -3124,72 +3124,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&நீக்கு"
 
-#: handler.cpp:128
+#: handler.cpp:140
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "'%1' VPN இணைப்புகளை பிளாஸ்மா ஆதரிக்கவில்லை."
 
-#: handler.cpp:131
+#: handler.cpp:143
 #, kde-format
 msgid "Report Bug"
 msgstr "பிழையை தெரிவி"
 
-#: handler.cpp:154
+#: handler.cpp:166
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "'%1' VPN இணைப்புகளை NetworkManager ஆதரிக்கவில்லை."
 
-#: handler.cpp:157
+#: handler.cpp:169
 #, kde-format
 msgid "Install"
 msgstr "நிறுவு"
 
-#: handler.cpp:203
+#: handler.cpp:215
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "%1 என்பதை இயக்குதல் தோல்வியடைந்தது"
 
-#: handler.cpp:379 handler.cpp:408
+#: handler.cpp:391 handler.cpp:420
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "%1 என்ற இணைப்பை சேர்த்தல் தோல்வியடைந்தது"
 
-#: handler.cpp:386 handler.cpp:417
+#: handler.cpp:398 handler.cpp:429
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "%1 என்ற இணைப்பு சேர்க்கப்பட்டது"
 
-#: handler.cpp:456
+#: handler.cpp:468
 #, kde-format
 msgid "Failed to add %1"
 msgstr "%1 என்பதை சேர்த்தல் தோல்வியடைந்தது"
 
-#: handler.cpp:496
+#: handler.cpp:508
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "%1 என்பதை முடக்குதல் தோல்வியடைந்தது"
 
-#: handler.cpp:634
+#: handler.cpp:646
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "%1 என்பதை நீக்குதல் தோல்வியடைந்தது"
 
-#: handler.cpp:641
+#: handler.cpp:653
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "%1 என்ற இணைப்பு நீக்கப்பட்டது"
 
-#: handler.cpp:660
+#: handler.cpp:672
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "%1 என்ற இணைப்பை புதுப்பித்தல் தோல்வியடைந்தது"
 
-#: handler.cpp:667
+#: handler.cpp:679
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "%1 என்ற இணைப்பு புதுப்பிக்கப்பட்டது"
 
-#: handler.cpp:851
+#: handler.cpp:863
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "%1 என்ற ஹாட்ஸ்பாட்டை உருவாக்குதல் தோல்வியடைந்தது"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 14:42+0000\n"
+"POT-Creation-Date: 2026-01-04 02:55+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -3219,72 +3219,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "移除(&E)"
 
-#: handler.cpp:128
+#: handler.cpp:140
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma 缺少对“%1”VPN 连接的支持。"
 
-#: handler.cpp:131
+#: handler.cpp:143
 #, kde-format
 msgid "Report Bug"
 msgstr "报告程序缺陷"
 
-#: handler.cpp:154
+#: handler.cpp:166
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager 缺少对“%1”VPN 连接的支持。"
 
-#: handler.cpp:157
+#: handler.cpp:169
 #, kde-format
 msgid "Install"
 msgstr "安装"
 
-#: handler.cpp:203
+#: handler.cpp:215
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "激活 %1 失败"
 
-#: handler.cpp:379 handler.cpp:408
+#: handler.cpp:391 handler.cpp:420
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "添加连接 %1 失败"
 
-#: handler.cpp:386 handler.cpp:417
+#: handler.cpp:398 handler.cpp:429
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "连接 %1 已被添加"
 
-#: handler.cpp:456
+#: handler.cpp:468
 #, kde-format
 msgid "Failed to add %1"
 msgstr "添加 %1 失败"
 
-#: handler.cpp:496
+#: handler.cpp:508
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "禁用 %1 失败"
 
-#: handler.cpp:634
+#: handler.cpp:646
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "移除 %1 失败"
 
-#: handler.cpp:641
+#: handler.cpp:653
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "连接 %1 已被移除"
 
-#: handler.cpp:660
+#: handler.cpp:672
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "更新连接 %1 失败"
 
-#: handler.cpp:667
+#: handler.cpp:679
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "连接 %1 已被更新"
 
-#: handler.cpp:851
+#: handler.cpp:863
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "创建热点 %1 失败"

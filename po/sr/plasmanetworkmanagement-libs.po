@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:44+0000\n"
+"POT-Creation-Date: 2026-01-04 00:46+0000\n"
 "PO-Revision-Date: 2017-12-17 18:01+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -18,258 +18,259 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: editor/connectiondetails.cpp:69
+#: editor/connectiondetails.cpp:92
 #, kde-format
 msgid "Connection speed"
 msgstr "Брзина везе"
 
-#: editor/connectiondetails.cpp:71 editor/connectiondetails.cpp:114
-#: editor/connectiondetails.cpp:192 editor/connectiondetails.cpp:202
-#: editor/connectiondetails.cpp:212 editor/connectiondetails.cpp:222
-#: editor/connectiondetails.cpp:233 editor/connectiondetails.cpp:247
+#: editor/connectiondetails.cpp:94 editor/connectiondetails.cpp:169
+#: editor/connectiondetails.cpp:247 editor/connectiondetails.cpp:257
+#: editor/connectiondetails.cpp:267 editor/connectiondetails.cpp:277
+#: editor/connectiondetails.cpp:288 editor/connectiondetails.cpp:302
 #, kde-format
 msgid "MAC Address"
 msgstr "МАЦ адреса"
 
-#: editor/connectiondetails.cpp:74
+#: editor/connectiondetails.cpp:97 editor/settings/bondwidget.cpp:36
+#: editor/settings/bridgewidget.cpp:33 editor/settings/teamwidget.cpp:36
 #, kde-format
-msgid "Hardware"
-msgstr ""
+msgid "Ethernet"
+msgstr "Етернет"
 
-#: editor/connectiondetails.cpp:87
+#: editor/connectiondetails.cpp:132
 #, fuzzy, kde-format
 #| msgid "Access point (SSID)"
 msgid "Access Point (SSID)"
 msgstr "Приступна тачка (ССИД)"
 
-#: editor/connectiondetails.cpp:92
+#: editor/connectiondetails.cpp:136
 #, fuzzy, kde-format
 #| msgid "Signal strength"
 msgid "Signal Strength"
 msgstr "Јачина сигнала"
 
-#: editor/connectiondetails.cpp:92
+#: editor/connectiondetails.cpp:136
 #, kde-format
-msgctxt "WiFi signal strength percentage indicator"
+msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr ""
 
-#: editor/connectiondetails.cpp:96
+#: editor/connectiondetails.cpp:141 editor/connectiondetails.cpp:151
 #, fuzzy, kde-format
 #| msgid "Security type"
 msgid "Security Type"
 msgstr "Тип безбедности"
 
-#: editor/connectiondetails.cpp:100
+#: editor/connectiondetails.cpp:156
 #, fuzzy, kde-format
 #| msgid "Connection speed"
 msgid "Connection Speed"
 msgstr "Брзина везе"
 
-#: editor/connectiondetails.cpp:108 editor/connectiondetails.cpp:110
+#: editor/connectiondetails.cpp:163 editor/connectiondetails.cpp:165
 #, kde-format
 msgid "Frequency"
 msgstr ""
 
-#: editor/connectiondetails.cpp:108
+#: editor/connectiondetails.cpp:163
 #, fuzzy, kde-format
 #| msgid "Channel:"
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
 msgstr "Канал:"
 
-#: editor/connectiondetails.cpp:112
+#: editor/connectiondetails.cpp:167
 #, fuzzy, kde-format
 #| msgid "BSSID:"
 msgid "BSSID"
 msgstr "БССИД:"
 
-#: editor/connectiondetails.cpp:117 editor/connectioneditorbase.cpp:222
+#: editor/connectiondetails.cpp:172 editor/connectioneditorbase.cpp:222
 #: editor/settings/bridgewidget.cpp:39 editor/settings/teamwidget.cpp:42
 #: editor/uiutils.cpp:226 models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
 msgstr "Вај‑фај"
 
-#: editor/connectiondetails.cpp:132
+#: editor/connectiondetails.cpp:187
 #, kde-format
 msgid "Operator"
 msgstr "Оператер"
 
-#: editor/connectiondetails.cpp:137
+#: editor/connectiondetails.cpp:192
 #, kde-format
 msgid "Network ID"
 msgstr "ИД мреже"
 
-#: editor/connectiondetails.cpp:141
+#: editor/connectiondetails.cpp:196
 #, kde-format
 msgid "Signal Quality"
 msgstr "Квалитет сигнала"
 
-#: editor/connectiondetails.cpp:142
+#: editor/connectiondetails.cpp:197
 #, kde-format
 msgid "Access Technology"
 msgstr "Технологија приступа"
 
-#: editor/connectiondetails.cpp:148 models/creatableconnectionsmodel.cpp:149
+#: editor/connectiondetails.cpp:203 models/creatableconnectionsmodel.cpp:149
 #, kde-format
 msgid "Mobile Broadband"
 msgstr "Мобилна широкопојасна"
 
-#: editor/connectiondetails.cpp:159 editor/connectiondetails.cpp:180
+#: editor/connectiondetails.cpp:214 editor/connectiondetails.cpp:235
 #, fuzzy, kde-format
 #| msgid "VPN plugin"
 msgid "VPN Plugin"
 msgstr "ВПН прикључак"
 
-#: editor/connectiondetails.cpp:170
+#: editor/connectiondetails.cpp:225
 #, kde-format
 msgid "Banner"
 msgstr "Барјак"
 
-#: editor/connectiondetails.cpp:174 editor/connectiondetails.cpp:181
+#: editor/connectiondetails.cpp:229 editor/connectiondetails.cpp:236
 #: editor/uiutils.cpp:218 networkstatus.cpp:190
 #, kde-format
 msgid "VPN"
 msgstr "ВПН"
 
-#: editor/connectiondetails.cpp:180 models/creatableconnectionsmodel.cpp:254
+#: editor/connectiondetails.cpp:235 models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
 #, fuzzy, kde-format
 #| msgid "Wired"
 msgid "WireGuard"
 msgstr "Жичана"
 
-#: editor/connectiondetails.cpp:186
+#: editor/connectiondetails.cpp:241
 #, kde-format
 msgid "Name"
 msgstr "Име"
 
-#: editor/connectiondetails.cpp:188 editor/connectiondetails.cpp:190
+#: editor/connectiondetails.cpp:243 editor/connectiondetails.cpp:245
 #, kde-format
 msgid "Capabilities"
 msgstr "Способности"
 
-#: editor/connectiondetails.cpp:195 editor/connectioneditorbase.cpp:242
+#: editor/connectiondetails.cpp:250 editor/connectioneditorbase.cpp:242
 #: editor/uiutils.cpp:194
 #, kde-format
 msgid "Bluetooth"
 msgstr "Блутут"
 
-#: editor/connectiondetails.cpp:200 editor/connectiondetails.cpp:210
-#: editor/connectiondetails.cpp:220 editor/connectiondetails.cpp:230
-#: editor/connectiondetails.cpp:240 editor/connectiondetails.cpp:245
+#: editor/connectiondetails.cpp:255 editor/connectiondetails.cpp:265
+#: editor/connectiondetails.cpp:275 editor/connectiondetails.cpp:285
+#: editor/connectiondetails.cpp:295 editor/connectiondetails.cpp:300
 #, kde-format
 msgid "Type"
 msgstr "Тип"
 
-#: editor/connectiondetails.cpp:200 editor/connectiondetails.cpp:205
+#: editor/connectiondetails.cpp:255 editor/connectiondetails.cpp:260
 #: editor/connectioneditorbase.cpp:253 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
 #, kde-format
 msgid "Infiniband"
 msgstr "Инфинибанд"
 
-#: editor/connectiondetails.cpp:210 editor/connectiondetails.cpp:215
+#: editor/connectiondetails.cpp:265 editor/connectiondetails.cpp:270
 #: editor/connectioneditorbase.cpp:256 editor/uiutils.cpp:198
 #: models/creatableconnectionsmodel.cpp:190
 #, kde-format
 msgid "Bond"
 msgstr "Спој"
 
-#: editor/connectiondetails.cpp:220 editor/connectiondetails.cpp:225
+#: editor/connectiondetails.cpp:275 editor/connectiondetails.cpp:280
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:201
 #: models/creatableconnectionsmodel.cpp:200
 #, kde-format
 msgid "Bridge"
 msgstr "Мост"
 
-#: editor/connectiondetails.cpp:230 editor/connectiondetails.cpp:236
+#: editor/connectiondetails.cpp:285 editor/connectiondetails.cpp:291
 #: editor/connectioneditorbase.cpp:262 models/creatableconnectionsmodel.cpp:220
 #, kde-format
 msgid "Vlan"
 msgstr "ВЛАН"
 
-#: editor/connectiondetails.cpp:232
+#: editor/connectiondetails.cpp:287
 #, kde-format
 msgid "Vlan ID"
 msgstr "ВЛАН ИД"
 
-#: editor/connectiondetails.cpp:240 editor/connectiondetails.cpp:241
+#: editor/connectiondetails.cpp:295 editor/connectiondetails.cpp:296
 #, kde-format
 msgid "Adsl"
 msgstr "АДСЛ"
 
-#: editor/connectiondetails.cpp:245 editor/connectiondetails.cpp:250
+#: editor/connectiondetails.cpp:300 editor/connectiondetails.cpp:305
 #: editor/connectioneditorbase.cpp:265 editor/uiutils.cpp:230
 #: models/creatableconnectionsmodel.cpp:210
 #, kde-format
 msgid "Team"
 msgstr "Удружена"
 
-#: editor/connectiondetails.cpp:256 editor/connectiondetails.cpp:260
+#: editor/connectiondetails.cpp:311 editor/connectiondetails.cpp:315
 #, fuzzy, kde-format
 #| msgid "Service:"
 msgid "Device"
 msgstr "Сервис:"
 
-#: editor/connectiondetails.cpp:261
+#: editor/connectiondetails.cpp:316
 #, kde-format
 msgid "General"
 msgstr ""
 
-#: editor/connectiondetails.cpp:270
+#: editor/connectiondetails.cpp:325
 #, kde-format
 msgid "IPv4 Address"
 msgstr "ИПв4 адресе"
 
-#: editor/connectiondetails.cpp:276
+#: editor/connectiondetails.cpp:331
 #, kde-format
 msgid "IPv4 Default Gateway"
 msgstr ""
 
-#: editor/connectiondetails.cpp:283
+#: editor/connectiondetails.cpp:338
 #, kde-format
 msgid "IPv4 Primary Nameserver"
 msgstr ""
 
-#: editor/connectiondetails.cpp:287
+#: editor/connectiondetails.cpp:342
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
 msgstr ""
 
-#: editor/connectiondetails.cpp:292 editor/connectioneditorbase.cpp:298
+#: editor/connectiondetails.cpp:347 editor/connectioneditorbase.cpp:298
 #, kde-format
 msgid "IPv4"
 msgstr "ИПв4"
 
-#: editor/connectiondetails.cpp:302
+#: editor/connectiondetails.cpp:357
 #, kde-format
 msgid "IPv6 Address"
 msgstr "ИПв6 адресе"
 
-#: editor/connectiondetails.cpp:304
+#: editor/connectiondetails.cpp:359
 #, fuzzy, kde-format
 #| msgid "IPv6 Address"
 msgid "IPv6 ULA Address"
 msgstr "ИПв6 адресе"
 
-#: editor/connectiondetails.cpp:310
+#: editor/connectiondetails.cpp:365
 #, kde-format
 msgid "IPv6 Default Gateway"
 msgstr ""
 
-#: editor/connectiondetails.cpp:317
+#: editor/connectiondetails.cpp:372
 #, kde-format
 msgid "IPv6 Primary Nameserver"
 msgstr ""
 
-#: editor/connectiondetails.cpp:321
+#: editor/connectiondetails.cpp:376
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
 msgstr ""
 
-#: editor/connectiondetails.cpp:326 editor/connectioneditorbase.cpp:316
+#: editor/connectiondetails.cpp:381 editor/connectioneditorbase.cpp:316
 #, kde-format
 msgid "IPv6"
 msgstr "ИПв6"
@@ -360,12 +361,6 @@ msgstr "Нова %1 веза"
 #, kde-format
 msgid "Connection name:"
 msgstr "Име везе:"
-
-#: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
-#: editor/settings/teamwidget.cpp:36
-#, kde-format
-msgid "Ethernet"
-msgstr "Етернет"
 
 #: editor/settings/bondwidget.cpp:39
 #, kde-format
@@ -3477,72 +3472,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Уклони"
 
-#: handler.cpp:128
+#: handler.cpp:140
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:131
+#: handler.cpp:143
 #, kde-format
 msgid "Report Bug"
 msgstr ""
 
-#: handler.cpp:154
+#: handler.cpp:166
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:157
+#: handler.cpp:169
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:203
+#: handler.cpp:215
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Не могу да активирам %1"
 
-#: handler.cpp:379 handler.cpp:408
+#: handler.cpp:391 handler.cpp:420
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Не могу да додам везу %1"
 
-#: handler.cpp:386 handler.cpp:417
+#: handler.cpp:398 handler.cpp:429
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Веза %1 додата"
 
-#: handler.cpp:456
+#: handler.cpp:468
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Не могу да додам %1"
 
-#: handler.cpp:496
+#: handler.cpp:508
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Не могу да деактивирам %1"
 
-#: handler.cpp:634
+#: handler.cpp:646
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Не могу да уклоним %1"
 
-#: handler.cpp:641
+#: handler.cpp:653
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Веза %1 уклоњена"
 
-#: handler.cpp:660
+#: handler.cpp:672
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Не могу да ажурирам везу %1"
 
-#: handler.cpp:667
+#: handler.cpp:679
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Веза %1 ажурирана"
 
-#: handler.cpp:851
+#: handler.cpp:863
 #, fuzzy, kde-format
 #| msgid "Failed to activate %1"
 msgid "Failed to create hotspot %1"
@@ -3642,7 +3637,7 @@ msgstr "Друго"
 msgid "Import a saved configuration file"
 msgstr "Увези сачувани поставни фајл"
 
-#: models/networkmodelitem.cpp:328
+#: models/networkmodelitem.cpp:335
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip real user name is not available"
 #| msgid "Not Available"
@@ -3650,7 +3645,7 @@ msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "Није доступно"
 
-#: models/networkmodelitem.cpp:334
+#: models/networkmodelitem.cpp:341
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3658,7 +3653,7 @@ msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "повезано"
 
-#: models/networkmodelitem.cpp:336
+#: models/networkmodelitem.cpp:343
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"

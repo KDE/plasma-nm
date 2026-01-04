@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:44+0000\n"
+"POT-Creation-Date: 2026-01-04 00:46+0000\n"
 "PO-Revision-Date: 2025-11-21 21:46+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -20,250 +20,253 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.08.3\n"
 
-#: editor/connectiondetails.cpp:69
+#: editor/connectiondetails.cpp:92
 #, kde-format
 msgid "Connection speed"
 msgstr "Kapcsolat sebessége"
 
-#: editor/connectiondetails.cpp:71 editor/connectiondetails.cpp:114
-#: editor/connectiondetails.cpp:192 editor/connectiondetails.cpp:202
-#: editor/connectiondetails.cpp:212 editor/connectiondetails.cpp:222
-#: editor/connectiondetails.cpp:233 editor/connectiondetails.cpp:247
+#: editor/connectiondetails.cpp:94 editor/connectiondetails.cpp:169
+#: editor/connectiondetails.cpp:247 editor/connectiondetails.cpp:257
+#: editor/connectiondetails.cpp:267 editor/connectiondetails.cpp:277
+#: editor/connectiondetails.cpp:288 editor/connectiondetails.cpp:302
 #, kde-format
 msgid "MAC Address"
 msgstr "MAC-cím"
 
-#: editor/connectiondetails.cpp:74
+#: editor/connectiondetails.cpp:97 editor/settings/bondwidget.cpp:36
+#: editor/settings/bridgewidget.cpp:33 editor/settings/teamwidget.cpp:36
 #, kde-format
-msgid "Hardware"
-msgstr ""
+msgid "Ethernet"
+msgstr "Ethernet"
 
-#: editor/connectiondetails.cpp:87
+#: editor/connectiondetails.cpp:132
 #, kde-format
 msgid "Access Point (SSID)"
 msgstr "Hozzáférési pont (SSID)"
 
-#: editor/connectiondetails.cpp:92
+#: editor/connectiondetails.cpp:136
 #, kde-format
 msgid "Signal Strength"
 msgstr "Jelerősség"
 
-#: editor/connectiondetails.cpp:92
-#, kde-format
-msgctxt "WiFi signal strength percentage indicator"
+#: editor/connectiondetails.cpp:136
+#, fuzzy, kde-format
+#| msgctxt "WiFi signal strength percentage indicator"
+#| msgid "%1%"
+msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
 
-#: editor/connectiondetails.cpp:96
+#: editor/connectiondetails.cpp:141 editor/connectiondetails.cpp:151
 #, kde-format
 msgid "Security Type"
 msgstr "Biztonságtípus"
 
-#: editor/connectiondetails.cpp:100
+#: editor/connectiondetails.cpp:156
 #, kde-format
 msgid "Connection Speed"
 msgstr "Kapcsolat sebessége"
 
-#: editor/connectiondetails.cpp:108 editor/connectiondetails.cpp:110
+#: editor/connectiondetails.cpp:163 editor/connectiondetails.cpp:165
 #, kde-format
 msgid "Frequency"
 msgstr "Frekvencia"
 
-#: editor/connectiondetails.cpp:108
+#: editor/connectiondetails.cpp:163
 #, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
 msgstr "%1 (%2. csatorna)"
 
-#: editor/connectiondetails.cpp:112
+#: editor/connectiondetails.cpp:167
 #, kde-format
 msgid "BSSID"
 msgstr "BSSID"
 
-#: editor/connectiondetails.cpp:117 editor/connectioneditorbase.cpp:222
+#: editor/connectiondetails.cpp:172 editor/connectioneditorbase.cpp:222
 #: editor/settings/bridgewidget.cpp:39 editor/settings/teamwidget.cpp:42
 #: editor/uiutils.cpp:226 models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
-#: editor/connectiondetails.cpp:132
+#: editor/connectiondetails.cpp:187
 #, kde-format
 msgid "Operator"
 msgstr "Operátor"
 
-#: editor/connectiondetails.cpp:137
+#: editor/connectiondetails.cpp:192
 #, kde-format
 msgid "Network ID"
 msgstr "Hálózatazonosító"
 
-#: editor/connectiondetails.cpp:141
+#: editor/connectiondetails.cpp:196
 #, kde-format
 msgid "Signal Quality"
 msgstr "Jelminőség"
 
-#: editor/connectiondetails.cpp:142
+#: editor/connectiondetails.cpp:197
 #, kde-format
 msgid "Access Technology"
 msgstr "Hozzáférési technológia"
 
-#: editor/connectiondetails.cpp:148 models/creatableconnectionsmodel.cpp:149
+#: editor/connectiondetails.cpp:203 models/creatableconnectionsmodel.cpp:149
 #, kde-format
 msgid "Mobile Broadband"
 msgstr "Mobil széles sáv"
 
-#: editor/connectiondetails.cpp:159 editor/connectiondetails.cpp:180
+#: editor/connectiondetails.cpp:214 editor/connectiondetails.cpp:235
 #, kde-format
 msgid "VPN Plugin"
 msgstr "VPN bővítmény"
 
-#: editor/connectiondetails.cpp:170
+#: editor/connectiondetails.cpp:225
 #, kde-format
 msgid "Banner"
 msgstr "Banner"
 
-#: editor/connectiondetails.cpp:174 editor/connectiondetails.cpp:181
+#: editor/connectiondetails.cpp:229 editor/connectiondetails.cpp:236
 #: editor/uiutils.cpp:218 networkstatus.cpp:190
 #, kde-format
 msgid "VPN"
 msgstr "VPN"
 
-#: editor/connectiondetails.cpp:180 models/creatableconnectionsmodel.cpp:254
+#: editor/connectiondetails.cpp:235 models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
 #, kde-format
 msgid "WireGuard"
 msgstr "WireGuard"
 
-#: editor/connectiondetails.cpp:186
+#: editor/connectiondetails.cpp:241
 #, kde-format
 msgid "Name"
 msgstr "Név"
 
-#: editor/connectiondetails.cpp:188 editor/connectiondetails.cpp:190
+#: editor/connectiondetails.cpp:243 editor/connectiondetails.cpp:245
 #, kde-format
 msgid "Capabilities"
 msgstr "Képességek"
 
-#: editor/connectiondetails.cpp:195 editor/connectioneditorbase.cpp:242
+#: editor/connectiondetails.cpp:250 editor/connectioneditorbase.cpp:242
 #: editor/uiutils.cpp:194
 #, kde-format
 msgid "Bluetooth"
 msgstr "Bluetooth"
 
-#: editor/connectiondetails.cpp:200 editor/connectiondetails.cpp:210
-#: editor/connectiondetails.cpp:220 editor/connectiondetails.cpp:230
-#: editor/connectiondetails.cpp:240 editor/connectiondetails.cpp:245
+#: editor/connectiondetails.cpp:255 editor/connectiondetails.cpp:265
+#: editor/connectiondetails.cpp:275 editor/connectiondetails.cpp:285
+#: editor/connectiondetails.cpp:295 editor/connectiondetails.cpp:300
 #, kde-format
 msgid "Type"
 msgstr "Típus"
 
-#: editor/connectiondetails.cpp:200 editor/connectiondetails.cpp:205
+#: editor/connectiondetails.cpp:255 editor/connectiondetails.cpp:260
 #: editor/connectioneditorbase.cpp:253 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
 #, kde-format
 msgid "Infiniband"
 msgstr "InfiniBand"
 
-#: editor/connectiondetails.cpp:210 editor/connectiondetails.cpp:215
+#: editor/connectiondetails.cpp:265 editor/connectiondetails.cpp:270
 #: editor/connectioneditorbase.cpp:256 editor/uiutils.cpp:198
 #: models/creatableconnectionsmodel.cpp:190
 #, kde-format
 msgid "Bond"
 msgstr "Csatolás"
 
-#: editor/connectiondetails.cpp:220 editor/connectiondetails.cpp:225
+#: editor/connectiondetails.cpp:275 editor/connectiondetails.cpp:280
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:201
 #: models/creatableconnectionsmodel.cpp:200
 #, kde-format
 msgid "Bridge"
 msgstr "Híd"
 
-#: editor/connectiondetails.cpp:230 editor/connectiondetails.cpp:236
+#: editor/connectiondetails.cpp:285 editor/connectiondetails.cpp:291
 #: editor/connectioneditorbase.cpp:262 models/creatableconnectionsmodel.cpp:220
 #, kde-format
 msgid "Vlan"
 msgstr "Vlan"
 
-#: editor/connectiondetails.cpp:232
+#: editor/connectiondetails.cpp:287
 #, kde-format
 msgid "Vlan ID"
 msgstr "VLAN azonosító"
 
-#: editor/connectiondetails.cpp:240 editor/connectiondetails.cpp:241
+#: editor/connectiondetails.cpp:295 editor/connectiondetails.cpp:296
 #, kde-format
 msgid "Adsl"
 msgstr "ADSL"
 
-#: editor/connectiondetails.cpp:245 editor/connectiondetails.cpp:250
+#: editor/connectiondetails.cpp:300 editor/connectiondetails.cpp:305
 #: editor/connectioneditorbase.cpp:265 editor/uiutils.cpp:230
 #: models/creatableconnectionsmodel.cpp:210
 #, kde-format
 msgid "Team"
 msgstr "Team"
 
-#: editor/connectiondetails.cpp:256 editor/connectiondetails.cpp:260
+#: editor/connectiondetails.cpp:311 editor/connectiondetails.cpp:315
 #, kde-format
 msgid "Device"
 msgstr "Eszköz"
 
-#: editor/connectiondetails.cpp:261
+#: editor/connectiondetails.cpp:316
 #, fuzzy, kde-format
 #| msgctxt "@title:tab General configuration"
 #| msgid "General"
 msgid "General"
 msgstr "Általános"
 
-#: editor/connectiondetails.cpp:270
+#: editor/connectiondetails.cpp:325
 #, kde-format
 msgid "IPv4 Address"
 msgstr "IPv4 cím"
 
-#: editor/connectiondetails.cpp:276
+#: editor/connectiondetails.cpp:331
 #, kde-format
 msgid "IPv4 Default Gateway"
 msgstr "IPv4 alapértelmezett átjáró"
 
-#: editor/connectiondetails.cpp:283
+#: editor/connectiondetails.cpp:338
 #, kde-format
 msgid "IPv4 Primary Nameserver"
 msgstr "IPv4 elsődleges névkiszolgáló"
 
-#: editor/connectiondetails.cpp:287
+#: editor/connectiondetails.cpp:342
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
 msgstr "IPv4 másodlagos névkiszolgáló"
 
-#: editor/connectiondetails.cpp:292 editor/connectioneditorbase.cpp:298
+#: editor/connectiondetails.cpp:347 editor/connectioneditorbase.cpp:298
 #, kde-format
 msgid "IPv4"
 msgstr "IPv4"
 
-#: editor/connectiondetails.cpp:302
+#: editor/connectiondetails.cpp:357
 #, kde-format
 msgid "IPv6 Address"
 msgstr "IPv6 cím"
 
-#: editor/connectiondetails.cpp:304
+#: editor/connectiondetails.cpp:359
 #, kde-format
 msgid "IPv6 ULA Address"
 msgstr "IPv6 ULA cím"
 
-#: editor/connectiondetails.cpp:310
+#: editor/connectiondetails.cpp:365
 #, kde-format
 msgid "IPv6 Default Gateway"
 msgstr "IPv6 alapértelmezett átjáró"
 
-#: editor/connectiondetails.cpp:317
+#: editor/connectiondetails.cpp:372
 #, kde-format
 msgid "IPv6 Primary Nameserver"
 msgstr "IPv6 elsődleges névkiszolgáló"
 
-#: editor/connectiondetails.cpp:321
+#: editor/connectiondetails.cpp:376
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
 msgstr "IPv6 másodlagos névkiszolgáló"
 
-#: editor/connectiondetails.cpp:326 editor/connectioneditorbase.cpp:316
+#: editor/connectiondetails.cpp:381 editor/connectioneditorbase.cpp:316
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
@@ -351,12 +354,6 @@ msgstr "Új %1 kapcsolat"
 #, kde-format
 msgid "Connection name:"
 msgstr "A kapcsolat neve:"
-
-#: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
-#: editor/settings/teamwidget.cpp:36
-#, kde-format
-msgid "Ethernet"
-msgstr "Ethernet"
 
 #: editor/settings/bondwidget.cpp:39
 #, kde-format
@@ -3467,72 +3464,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "&Eltávolítás"
 
-#: handler.cpp:128
+#: handler.cpp:140
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "A Plasmából hiányzik a(z) „%1” VPN-kapcsolatok támogatása."
 
-#: handler.cpp:131
+#: handler.cpp:143
 #, kde-format
 msgid "Report Bug"
 msgstr "Hibabejelentés"
 
-#: handler.cpp:154
+#: handler.cpp:166
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "A NetworkManagerből hiányzik a(z) „%1” VPN-kapcsolatok támogatása."
 
-#: handler.cpp:157
+#: handler.cpp:169
 #, kde-format
 msgid "Install"
 msgstr "Telepítés"
 
-#: handler.cpp:203
+#: handler.cpp:215
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Nem sikerült aktiválni: %1"
 
-#: handler.cpp:379 handler.cpp:408
+#: handler.cpp:391 handler.cpp:420
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Nem sikerült hozzáadni a(z) %1 kapcsolatot"
 
-#: handler.cpp:386 handler.cpp:417
+#: handler.cpp:398 handler.cpp:429
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "A(z) %1 kapcsolat sikeresen hozzáadva"
 
-#: handler.cpp:456
+#: handler.cpp:468
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Nem sikerült hozzáadni: %1"
 
-#: handler.cpp:496
+#: handler.cpp:508
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Nem sikerült deaktiválni: %1"
 
-#: handler.cpp:634
+#: handler.cpp:646
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Nem sikerült eltávolítani: %1"
 
-#: handler.cpp:641
+#: handler.cpp:653
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "A(z) %1 kapcsolat eltávolításra került"
 
-#: handler.cpp:660
+#: handler.cpp:672
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Nem sikerült frissíteni a(z) %1 kapcsolatot"
 
-#: handler.cpp:667
+#: handler.cpp:679
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "A(z) %1 kapcsolat frissült"
 
-#: handler.cpp:851
+#: handler.cpp:863
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "A(z) %1 hotspot létrehozása meghiúsult"
@@ -3630,19 +3627,19 @@ msgstr "Egyéb"
 msgid "Import a saved configuration file"
 msgstr "Importálás mentett beállítófájlból"
 
-#: models/networkmodelitem.cpp:328
+#: models/networkmodelitem.cpp:335
 #, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "Elérhető"
 
-#: models/networkmodelitem.cpp:334
+#: models/networkmodelitem.cpp:341
 #, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Kapcsolódva"
 
-#: models/networkmodelitem.cpp:336
+#: models/networkmodelitem.cpp:343
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"

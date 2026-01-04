@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-15 00:44+0000\n"
+"POT-Creation-Date: 2026-01-04 00:46+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,248 +18,251 @@ msgstr ""
 "pot\n"
 "X-Crowdin-File-ID: 42533\n"
 
-#: editor/connectiondetails.cpp:69
+#: editor/connectiondetails.cpp:92
 #, kde-format
 msgid "Connection speed"
 msgstr "连接速度"
 
-#: editor/connectiondetails.cpp:71 editor/connectiondetails.cpp:114
-#: editor/connectiondetails.cpp:192 editor/connectiondetails.cpp:202
-#: editor/connectiondetails.cpp:212 editor/connectiondetails.cpp:222
-#: editor/connectiondetails.cpp:233 editor/connectiondetails.cpp:247
+#: editor/connectiondetails.cpp:94 editor/connectiondetails.cpp:169
+#: editor/connectiondetails.cpp:247 editor/connectiondetails.cpp:257
+#: editor/connectiondetails.cpp:267 editor/connectiondetails.cpp:277
+#: editor/connectiondetails.cpp:288 editor/connectiondetails.cpp:302
 #, kde-format
 msgid "MAC Address"
 msgstr "MAC 地址"
 
-#: editor/connectiondetails.cpp:74
+#: editor/connectiondetails.cpp:97 editor/settings/bondwidget.cpp:36
+#: editor/settings/bridgewidget.cpp:33 editor/settings/teamwidget.cpp:36
 #, kde-format
-msgid "Hardware"
-msgstr "硬件"
+msgid "Ethernet"
+msgstr "以太网"
 
-#: editor/connectiondetails.cpp:87
+#: editor/connectiondetails.cpp:132
 #, kde-format
 msgid "Access Point (SSID)"
 msgstr "接入点 (SSID)"
 
-#: editor/connectiondetails.cpp:92
+#: editor/connectiondetails.cpp:136
 #, kde-format
 msgid "Signal Strength"
 msgstr "信号强度"
 
-#: editor/connectiondetails.cpp:92
-#, kde-format
-msgctxt "WiFi signal strength percentage indicator"
+#: editor/connectiondetails.cpp:136
+#, fuzzy, kde-format
+#| msgctxt "WiFi signal strength percentage indicator"
+#| msgid "%1%"
+msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
 
-#: editor/connectiondetails.cpp:96
+#: editor/connectiondetails.cpp:141 editor/connectiondetails.cpp:151
 #, kde-format
 msgid "Security Type"
 msgstr "安全性类型"
 
-#: editor/connectiondetails.cpp:100
+#: editor/connectiondetails.cpp:156
 #, kde-format
 msgid "Connection Speed"
 msgstr "连接速度"
 
-#: editor/connectiondetails.cpp:108 editor/connectiondetails.cpp:110
+#: editor/connectiondetails.cpp:163 editor/connectiondetails.cpp:165
 #, kde-format
 msgid "Frequency"
 msgstr "频段"
 
-#: editor/connectiondetails.cpp:108
+#: editor/connectiondetails.cpp:163
 #, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
 msgstr "%1 (频道 %2)"
 
-#: editor/connectiondetails.cpp:112
+#: editor/connectiondetails.cpp:167
 #, kde-format
 msgid "BSSID"
 msgstr "BSSID"
 
-#: editor/connectiondetails.cpp:117 editor/connectioneditorbase.cpp:222
+#: editor/connectiondetails.cpp:172 editor/connectioneditorbase.cpp:222
 #: editor/settings/bridgewidget.cpp:39 editor/settings/teamwidget.cpp:42
 #: editor/uiutils.cpp:226 models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
-#: editor/connectiondetails.cpp:132
+#: editor/connectiondetails.cpp:187
 #, kde-format
 msgid "Operator"
 msgstr "运营商"
 
-#: editor/connectiondetails.cpp:137
+#: editor/connectiondetails.cpp:192
 #, kde-format
 msgid "Network ID"
 msgstr "网络 ID"
 
-#: editor/connectiondetails.cpp:141
+#: editor/connectiondetails.cpp:196
 #, kde-format
 msgid "Signal Quality"
 msgstr "信号质量"
 
-#: editor/connectiondetails.cpp:142
+#: editor/connectiondetails.cpp:197
 #, kde-format
 msgid "Access Technology"
 msgstr "接入技术"
 
-#: editor/connectiondetails.cpp:148 models/creatableconnectionsmodel.cpp:149
+#: editor/connectiondetails.cpp:203 models/creatableconnectionsmodel.cpp:149
 #, kde-format
 msgid "Mobile Broadband"
 msgstr "移动宽带"
 
-#: editor/connectiondetails.cpp:159 editor/connectiondetails.cpp:180
+#: editor/connectiondetails.cpp:214 editor/connectiondetails.cpp:235
 #, kde-format
 msgid "VPN Plugin"
 msgstr "VPN 插件"
 
-#: editor/connectiondetails.cpp:170
+#: editor/connectiondetails.cpp:225
 #, kde-format
 msgid "Banner"
 msgstr "横幅"
 
-#: editor/connectiondetails.cpp:174 editor/connectiondetails.cpp:181
+#: editor/connectiondetails.cpp:229 editor/connectiondetails.cpp:236
 #: editor/uiutils.cpp:218 networkstatus.cpp:190
 #, kde-format
 msgid "VPN"
 msgstr "VPN"
 
-#: editor/connectiondetails.cpp:180 models/creatableconnectionsmodel.cpp:254
+#: editor/connectiondetails.cpp:235 models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
 #, kde-format
 msgid "WireGuard"
 msgstr "WireGuard"
 
-#: editor/connectiondetails.cpp:186
+#: editor/connectiondetails.cpp:241
 #, kde-format
 msgid "Name"
 msgstr "名称"
 
-#: editor/connectiondetails.cpp:188 editor/connectiondetails.cpp:190
+#: editor/connectiondetails.cpp:243 editor/connectiondetails.cpp:245
 #, kde-format
 msgid "Capabilities"
 msgstr "功能"
 
-#: editor/connectiondetails.cpp:195 editor/connectioneditorbase.cpp:242
+#: editor/connectiondetails.cpp:250 editor/connectioneditorbase.cpp:242
 #: editor/uiutils.cpp:194
 #, kde-format
 msgid "Bluetooth"
 msgstr "蓝牙"
 
-#: editor/connectiondetails.cpp:200 editor/connectiondetails.cpp:210
-#: editor/connectiondetails.cpp:220 editor/connectiondetails.cpp:230
-#: editor/connectiondetails.cpp:240 editor/connectiondetails.cpp:245
+#: editor/connectiondetails.cpp:255 editor/connectiondetails.cpp:265
+#: editor/connectiondetails.cpp:275 editor/connectiondetails.cpp:285
+#: editor/connectiondetails.cpp:295 editor/connectiondetails.cpp:300
 #, kde-format
 msgid "Type"
 msgstr "类型"
 
-#: editor/connectiondetails.cpp:200 editor/connectiondetails.cpp:205
+#: editor/connectiondetails.cpp:255 editor/connectiondetails.cpp:260
 #: editor/connectioneditorbase.cpp:253 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
 #, kde-format
 msgid "Infiniband"
 msgstr "Infiniband"
 
-#: editor/connectiondetails.cpp:210 editor/connectiondetails.cpp:215
+#: editor/connectiondetails.cpp:265 editor/connectiondetails.cpp:270
 #: editor/connectioneditorbase.cpp:256 editor/uiutils.cpp:198
 #: models/creatableconnectionsmodel.cpp:190
 #, kde-format
 msgid "Bond"
 msgstr "多网卡绑定 (Bond)"
 
-#: editor/connectiondetails.cpp:220 editor/connectiondetails.cpp:225
+#: editor/connectiondetails.cpp:275 editor/connectiondetails.cpp:280
 #: editor/connectioneditorbase.cpp:259 editor/uiutils.cpp:201
 #: models/creatableconnectionsmodel.cpp:200
 #, kde-format
 msgid "Bridge"
 msgstr "桥接 (Bridge)"
 
-#: editor/connectiondetails.cpp:230 editor/connectiondetails.cpp:236
+#: editor/connectiondetails.cpp:285 editor/connectiondetails.cpp:291
 #: editor/connectioneditorbase.cpp:262 models/creatableconnectionsmodel.cpp:220
 #, kde-format
 msgid "Vlan"
 msgstr "虚拟局域网 (Vlan)"
 
-#: editor/connectiondetails.cpp:232
+#: editor/connectiondetails.cpp:287
 #, kde-format
 msgid "Vlan ID"
 msgstr "VLAN ID"
 
-#: editor/connectiondetails.cpp:240 editor/connectiondetails.cpp:241
+#: editor/connectiondetails.cpp:295 editor/connectiondetails.cpp:296
 #, kde-format
 msgid "Adsl"
 msgstr "ADSL"
 
-#: editor/connectiondetails.cpp:245 editor/connectiondetails.cpp:250
+#: editor/connectiondetails.cpp:300 editor/connectiondetails.cpp:305
 #: editor/connectioneditorbase.cpp:265 editor/uiutils.cpp:230
 #: models/creatableconnectionsmodel.cpp:210
 #, kde-format
 msgid "Team"
 msgstr "网络组 (Team)"
 
-#: editor/connectiondetails.cpp:256 editor/connectiondetails.cpp:260
+#: editor/connectiondetails.cpp:311 editor/connectiondetails.cpp:315
 #, kde-format
 msgid "Device"
 msgstr "设备"
 
-#: editor/connectiondetails.cpp:261
+#: editor/connectiondetails.cpp:316
 #, kde-format
 msgid "General"
 msgstr "常规"
 
-#: editor/connectiondetails.cpp:270
+#: editor/connectiondetails.cpp:325
 #, kde-format
 msgid "IPv4 Address"
 msgstr "IPv4 地址"
 
-#: editor/connectiondetails.cpp:276
+#: editor/connectiondetails.cpp:331
 #, kde-format
 msgid "IPv4 Default Gateway"
 msgstr "IPv4 默认网关"
 
-#: editor/connectiondetails.cpp:283
+#: editor/connectiondetails.cpp:338
 #, kde-format
 msgid "IPv4 Primary Nameserver"
 msgstr "IPv4 主域名服务器"
 
-#: editor/connectiondetails.cpp:287
+#: editor/connectiondetails.cpp:342
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
 msgstr "IPv4 副域名服务器"
 
-#: editor/connectiondetails.cpp:292 editor/connectioneditorbase.cpp:298
+#: editor/connectiondetails.cpp:347 editor/connectioneditorbase.cpp:298
 #, kde-format
 msgid "IPv4"
 msgstr "IPv4"
 
-#: editor/connectiondetails.cpp:302
+#: editor/connectiondetails.cpp:357
 #, kde-format
 msgid "IPv6 Address"
 msgstr "IPv6 地址"
 
-#: editor/connectiondetails.cpp:304
+#: editor/connectiondetails.cpp:359
 #, kde-format
 msgid "IPv6 ULA Address"
 msgstr "IPv6 ULA 地址"
 
-#: editor/connectiondetails.cpp:310
+#: editor/connectiondetails.cpp:365
 #, kde-format
 msgid "IPv6 Default Gateway"
 msgstr "IPv6 默认网关"
 
-#: editor/connectiondetails.cpp:317
+#: editor/connectiondetails.cpp:372
 #, kde-format
 msgid "IPv6 Primary Nameserver"
 msgstr "IPv6 主域名服务器"
 
-#: editor/connectiondetails.cpp:321
+#: editor/connectiondetails.cpp:376
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
 msgstr "IPv6 副域名服务器"
 
-#: editor/connectiondetails.cpp:326 editor/connectioneditorbase.cpp:316
+#: editor/connectiondetails.cpp:381 editor/connectioneditorbase.cpp:316
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
@@ -347,12 +350,6 @@ msgstr "新建 %1 连接"
 #, kde-format
 msgid "Connection name:"
 msgstr "连接名称："
-
-#: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
-#: editor/settings/teamwidget.cpp:36
-#, kde-format
-msgid "Ethernet"
-msgstr "以太网"
 
 #: editor/settings/bondwidget.cpp:39
 #, kde-format
@@ -3418,72 +3415,72 @@ msgctxt "Remove a selected row"
 msgid "R&emove"
 msgstr "移除(&E)"
 
-#: handler.cpp:128
+#: handler.cpp:140
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma 缺少对“%1”VPN 连接的支持。"
 
-#: handler.cpp:131
+#: handler.cpp:143
 #, kde-format
 msgid "Report Bug"
 msgstr "报告程序缺陷"
 
-#: handler.cpp:154
+#: handler.cpp:166
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager 缺少对“%1”VPN 连接的支持。"
 
-#: handler.cpp:157
+#: handler.cpp:169
 #, kde-format
 msgid "Install"
 msgstr "安装"
 
-#: handler.cpp:203
+#: handler.cpp:215
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "激活 %1 失败"
 
-#: handler.cpp:379 handler.cpp:408
+#: handler.cpp:391 handler.cpp:420
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "添加连接 %1 失败"
 
-#: handler.cpp:386 handler.cpp:417
+#: handler.cpp:398 handler.cpp:429
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "连接 %1 已被添加"
 
-#: handler.cpp:456
+#: handler.cpp:468
 #, kde-format
 msgid "Failed to add %1"
 msgstr "添加 %1 失败"
 
-#: handler.cpp:496
+#: handler.cpp:508
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "禁用 %1 失败"
 
-#: handler.cpp:634
+#: handler.cpp:646
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "移除 %1 失败"
 
-#: handler.cpp:641
+#: handler.cpp:653
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "连接 %1 已被移除"
 
-#: handler.cpp:660
+#: handler.cpp:672
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "更新连接 %1 失败"
 
-#: handler.cpp:667
+#: handler.cpp:679
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "连接 %1 已被更新"
 
-#: handler.cpp:851
+#: handler.cpp:863
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "创建热点 %1 失败"
@@ -3581,19 +3578,19 @@ msgstr "其他"
 msgid "Import a saved configuration file"
 msgstr "导入保存的配置文件"
 
-#: models/networkmodelitem.cpp:328
+#: models/networkmodelitem.cpp:335
 #, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "可用"
 
-#: models/networkmodelitem.cpp:334
+#: models/networkmodelitem.cpp:341
 #, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "已连接"
 
-#: models/networkmodelitem.cpp:336
+#: models/networkmodelitem.cpp:343
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"
@@ -3687,3 +3684,6 @@ msgstr "需要 NetworkManager 0.9.8，找到了 %1。"
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "未知"
+
+#~ msgid "Hardware"
+#~ msgstr "硬件"

@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement-libs.po to Catalan (Valencian)
-# Copyright (C) 2014-2025 This_file_is_part_of_KDE
+# Copyright (C) 2014-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2020 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-04 00:46+0000\n"
-"PO-Revision-Date: 2025-12-15 10:39+0100\n"
+"PO-Revision-Date: 2026-01-04 08:40+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.0\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -51,9 +51,7 @@ msgid "Signal Strength"
 msgstr "Potència del senyal"
 
 #: editor/connectiondetails.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "WiFi signal strength percentage indicator"
-#| msgid "%1%"
+#, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
@@ -3737,6 +3735,3 @@ msgstr "Es requerix NetworkManager 0.9.8, però s'ha trobat %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconeguda"
-
-#~ msgid "Hardware"
-#~ msgstr "Maquinari"

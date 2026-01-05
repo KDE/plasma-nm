@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025, 2026 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-04 00:46+0000\n"
-"PO-Revision-Date: 2025-08-10 19:39+0530\n"
+"PO-Revision-Date: 2026-01-04 15:31+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -47,9 +47,7 @@ msgid "Signal Strength"
 msgstr "குறிப்பலையின் வலிமை"
 
 #: editor/connectiondetails.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "WiFi signal strength percentage indicator"
-#| msgid "%1%"
+#, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
@@ -90,7 +88,7 @@ msgstr "அருகலை"
 #: editor/connectiondetails.cpp:187
 #, kde-format
 msgid "Operator"
-msgstr ""
+msgstr "இயக்குபவர்"
 
 #: editor/connectiondetails.cpp:192
 #, kde-format
@@ -207,9 +205,7 @@ msgid "Device"
 msgstr "சாதனம்"
 
 #: editor/connectiondetails.cpp:316
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "பொதுவானவை"
 
@@ -272,7 +268,7 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "நிலை"
 
 #: editor/connectioneditorbase.cpp:209
 #, kde-format

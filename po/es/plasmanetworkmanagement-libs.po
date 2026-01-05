@@ -1,15 +1,15 @@
 # Spanish translations for plasmanetworkmanagement-libs.po package.
-# Copyright (C) 2014-2025 This file is copyright:
+# Copyright (C) 2014-2026 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 # Automatically generated, 2014.
 #
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-04 00:46+0000\n"
-"PO-Revision-Date: 2025-12-15 03:44+0100\n"
+"PO-Revision-Date: 2026-01-05 00:29+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.0\n"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -49,9 +49,7 @@ msgid "Signal Strength"
 msgstr "Potencia de la señal"
 
 #: editor/connectiondetails.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "WiFi signal strength percentage indicator"
-#| msgid "%1%"
+#, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1 %"
@@ -3734,6 +3732,3 @@ msgstr "Se necesita NetworkManager 0.9.8; se ha encontrado %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconocido"
-
-#~ msgid "Hardware"
-#~ msgstr "Hardware"

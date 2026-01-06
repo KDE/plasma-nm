@@ -3598,7 +3598,7 @@ msgstr "信号强度"
 #, kde-format
 msgctxt "WiFi signal strength percentage indicator"
 msgid "%1%"
-msgstr "%1%"
+msgstr ""
 
 #: models/networkmodelitem.cpp:658
 #, kde-format

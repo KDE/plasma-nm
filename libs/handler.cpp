@@ -239,10 +239,8 @@ void Handler::requestWifiCode(const QString &connectionPath, const QString &ssid
             break;
         case NetworkManager::WpaPsk:
         case NetworkManager::Wpa2Psk:
-            ret += QStringLiteral("T:WPA;");
-            break;
         case NetworkManager::SAE:
-            ret += QStringLiteral("T:SAE;");
+            ret += QStringLiteral("T:WPA;");
             break;
         default:
         case NetworkManager::DynamicWep:

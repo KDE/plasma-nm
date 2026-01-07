@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-04 00:46+0000\n"
+"POT-Creation-Date: 2026-01-07 00:46+0000\n"
 "PO-Revision-Date: 2025-12-16 21:46+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -3486,47 +3486,47 @@ msgstr "Инсталиране"
 msgid "Failed to activate %1"
 msgstr "Активирането на %1 е неуспешно"
 
-#: handler.cpp:391 handler.cpp:420
+#: handler.cpp:389 handler.cpp:418
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Неуспешно добавяне на връзка %1"
 
-#: handler.cpp:398 handler.cpp:429
+#: handler.cpp:396 handler.cpp:427
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Добавена е връзка %1"
 
-#: handler.cpp:468
+#: handler.cpp:466
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Неуспешно добавяне на %1"
 
-#: handler.cpp:508
+#: handler.cpp:506
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Неуспешно деактивиране на %1"
 
-#: handler.cpp:646
+#: handler.cpp:644
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Премахването на %1 е неуспешно"
 
-#: handler.cpp:653
+#: handler.cpp:651
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Връзката %1 е премахната"
 
-#: handler.cpp:672
+#: handler.cpp:670
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Актуализирането на връзката %1 е неуспешно"
 
-#: handler.cpp:679
+#: handler.cpp:677
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Връзката %1 е актуализирана"
 
-#: handler.cpp:863
+#: handler.cpp:861
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Създаването на точка за достъп %1 е неуспешно"

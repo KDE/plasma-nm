@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-04 00:46+0000\n"
+"POT-Creation-Date: 2026-01-07 00:46+0000\n"
 "PO-Revision-Date: 2025-12-24 16:43+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -3487,47 +3487,47 @@ msgstr "Wgraj"
 msgid "Failed to activate %1"
 msgstr "Nieudane włączanie %1"
 
-#: handler.cpp:391 handler.cpp:420
+#: handler.cpp:389 handler.cpp:418
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Nie udało się dodać połączenia %1"
 
-#: handler.cpp:398 handler.cpp:429
+#: handler.cpp:396 handler.cpp:427
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Połączenie %1 zostało dodane"
 
-#: handler.cpp:468
+#: handler.cpp:466
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Nieudane dodawanie %1"
 
-#: handler.cpp:508
+#: handler.cpp:506
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Nieudane wyłączanie %1"
 
-#: handler.cpp:646
+#: handler.cpp:644
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Nieudane usuwanie %1"
 
-#: handler.cpp:653
+#: handler.cpp:651
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Połączenie %1 zostało usunięte"
 
-#: handler.cpp:672
+#: handler.cpp:670
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Nieudane uaktualnianie połączenia %1"
 
-#: handler.cpp:679
+#: handler.cpp:677
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Połączenie %1 zostało uaktualnione"
 
-#: handler.cpp:863
+#: handler.cpp:861
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Nie udało utworzyć hotspota %1"

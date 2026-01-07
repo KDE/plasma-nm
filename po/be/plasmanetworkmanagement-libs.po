@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-04 00:46+0000\n"
+"POT-Creation-Date: 2026-01-07 00:46+0000\n"
 "PO-Revision-Date: 2024-10-24 08:20\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -3478,47 +3478,47 @@ msgstr "Усталяваць"
 msgid "Failed to activate %1"
 msgstr "Не ўдалося актываваць \"%1\""
 
-#: handler.cpp:391 handler.cpp:420
+#: handler.cpp:389 handler.cpp:418
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Не ўдалося дадаць злучэнне \"%1\""
 
-#: handler.cpp:398 handler.cpp:429
+#: handler.cpp:396 handler.cpp:427
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Злучэнне \"%1\" дададзена"
 
-#: handler.cpp:468
+#: handler.cpp:466
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Не ўдалося дадаць \"%1\""
 
-#: handler.cpp:508
+#: handler.cpp:506
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Не ўдалося актываваць \"%1\""
 
-#: handler.cpp:646
+#: handler.cpp:644
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Не ўдалося выдаліць \"%1\""
 
-#: handler.cpp:653
+#: handler.cpp:651
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Злучэнне \"%1\" выдалена"
 
-#: handler.cpp:672
+#: handler.cpp:670
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Не ўдалося абнавіць злучэнне \"%1\""
 
-#: handler.cpp:679
+#: handler.cpp:677
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Злучэнне \"%1\" абноўлена"
 
-#: handler.cpp:863
+#: handler.cpp:861
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Не ўдалося стварыць пункт доступу \"%1\""

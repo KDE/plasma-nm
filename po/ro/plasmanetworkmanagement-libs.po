@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-04 00:46+0000\n"
+"POT-Creation-Date: 2026-01-07 00:46+0000\n"
 "PO-Revision-Date: 2025-10-19 10:46+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -3398,47 +3398,47 @@ msgstr ""
 msgid "Failed to activate %1"
 msgstr "Activarea %1 a eșuat"
 
-#: handler.cpp:391 handler.cpp:420
+#: handler.cpp:389 handler.cpp:418
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Adăugarea conexiunii %1 a eșuat"
 
-#: handler.cpp:398 handler.cpp:429
+#: handler.cpp:396 handler.cpp:427
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Conexiunea %1 a fost adăugată"
 
-#: handler.cpp:468
+#: handler.cpp:466
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Adăugarea %1 a eșuat"
 
-#: handler.cpp:508
+#: handler.cpp:506
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Dezactivarea conexiunii %1 a eșuat"
 
-#: handler.cpp:646
+#: handler.cpp:644
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Eliminarea conexiunii %1 a eșuat"
 
-#: handler.cpp:653
+#: handler.cpp:651
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Conexiunea %1 a fost eliminată"
 
-#: handler.cpp:672
+#: handler.cpp:670
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Actualizarea conexiunii %1 a eșuat"
 
-#: handler.cpp:679
+#: handler.cpp:677
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Conexiunea %1 a fost actualizată"
 
-#: handler.cpp:863
+#: handler.cpp:861
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Crearea hotspot-ului %1 a eșuat"

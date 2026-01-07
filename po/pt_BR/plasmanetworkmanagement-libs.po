@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-04 00:46+0000\n"
+"POT-Creation-Date: 2026-01-07 00:46+0000\n"
 "PO-Revision-Date: 2026-01-04 06:11-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -3487,52 +3487,52 @@ msgid "Failed to activate %1"
 msgstr "Falha ao ativar a %1"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:391 handler.cpp:420
+#: handler.cpp:389 handler.cpp:418
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Falha ao adicionar a conexão %1"
 
-#: handler.cpp:398 handler.cpp:429
+#: handler.cpp:396 handler.cpp:427
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "A conexão %1 foi adicionada"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:468
+#: handler.cpp:466
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Falha ao adicionar a %1"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:508
+#: handler.cpp:506
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Falha ao desativar a %1"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:646
+#: handler.cpp:644
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Falha ao remover a %1"
 
-#: handler.cpp:653
+#: handler.cpp:651
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "A conexão %1 foi removida"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:672
+#: handler.cpp:670
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Falha ao atualizar a conexão %1"
 
-#: handler.cpp:679
+#: handler.cpp:677
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "A conexão %1 foi atualizada"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
-#: handler.cpp:863
+#: handler.cpp:861
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Falha ao criar o ponto de acesso %1"

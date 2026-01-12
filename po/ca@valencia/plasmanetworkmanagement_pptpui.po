@@ -281,7 +281,7 @@ msgid ""
 "Append the domain name <domain> to the local host name for\n"
 "authenticating purposes."
 msgstr ""
-"Afig el nom de domini <domini> al nom de la màquina local,\n"
+"Afig el nom de domini <domini> al nom de l'amfitrió local,\n"
 "amb la finalitat d'autenticació."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)

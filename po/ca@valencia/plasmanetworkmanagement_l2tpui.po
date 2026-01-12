@@ -103,8 +103,8 @@ msgid ""
 "<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
 "host name for</p><p>authentication purposes.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Afig el nom de domini &lt;domini&gt; al nom de la "
-"màquina local</p><p>amb la finalitat d'autenticació.</p></body></html>"
+"<html><head/><body><p>Afig el nom de domini &lt;domini&gt; al nom de "
+"l'amfitrió local</p><p>amb la finalitat d'autenticació.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -223,7 +223,7 @@ msgstr "Contrasenya del certificat de màquina:"
 #: l2tpipsec.ui:20
 #, kde-format
 msgid "Enable IPsec tunnel to L2TP host"
-msgstr "Habilita un túnel IPsec per a la màquina L2TP"
+msgstr "Habilita un túnel IPsec per a l'amfitrió L2TP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAuthentication)
 #: l2tpipsec.ui:38

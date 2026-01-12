@@ -59,7 +59,7 @@ msgstr ""
 #, kde-format
 msgctxt "Text in GSM PIN/PUK unlock error dialog"
 msgid "Error unlocking modem: %1"
-msgstr "S'ha produït un error en desbloquejar el mòdem: %1"
+msgstr "S'ha produït un error mentre es desbloquejava el mòdem: %1"
 
 #: modemmonitor.cpp:182
 #, kde-format
@@ -133,7 +133,7 @@ msgstr "El sol·licitant d'autorització ha expirat"
 msgctxt ""
 "@info:status Notification when the device failed due to PppStartFailedReason"
 msgid "PPP failed to start"
-msgstr "PPP ha fallat en iniciar"
+msgstr "PPP ha fallat mentre s'iniciava"
 
 #: notification.cpp:125
 #, kde-format
@@ -154,7 +154,7 @@ msgstr "PPP ha fallat"
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpStartFailedReason"
 msgid "DHCP failed to start"
-msgstr "DHCP ha fallat en iniciar"
+msgstr "DHCP ha fallat mentre s'iniciava"
 
 #: notification.cpp:134
 #, kde-format
@@ -176,7 +176,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "SharedStartFailedReason"
 msgid "The shared service failed to start"
-msgstr "El servei compartit ha fallat en iniciar"
+msgstr "El servei compartit ha fallat mentre s'iniciava"
 
 #: notification.cpp:143
 #, kde-format
@@ -191,7 +191,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AutoIpStartFailedReason"
 msgid "The auto IP service failed to start"
-msgstr "El servei d'IP automàtica ha fallat en iniciar"
+msgstr "El servei d'IP automàtica ha fallat mentre s'iniciava"
 
 #: notification.cpp:149
 #, kde-format
@@ -485,7 +485,7 @@ msgstr "Connexió VPN «%1» activada."
 #: notification.cpp:426
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "La connexió VPN «%1» ha fallat en activar-se."
+msgstr "La connexió VPN «%1» ha fallat mentre s'activava."
 
 #: notification.cpp:429 notification.cpp:437
 #, kde-format

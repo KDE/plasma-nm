@@ -227,7 +227,7 @@ msgstr "IPv6"
 #: editor/connectioneditorbase.cpp:487
 #, kde-format
 msgid "Failed to get secrets for %1"
-msgstr "No s'han pogut obtindre els secrets per a %1"
+msgstr "Ha fallat mentre s'obtenien els secrets per a %1"
 
 #: editor/connectioneditordialog.cpp:33
 #, kde-format
@@ -403,12 +403,12 @@ msgstr ""
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
-msgstr "Envia el nom del servidor:"
+msgstr "Envia el nom de l'amfitrió:"
 
 #: editor/settings/ipv4widget.cpp:435
 #, kde-format
 msgid "DHCP hostname:"
-msgstr "Nom del servidor DHCP:"
+msgstr "Nom de l'amfitrió DHCP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
@@ -3351,7 +3351,7 @@ msgstr "Instal·la"
 #: handler.cpp:353 handler.cpp:846
 #, kde-format
 msgid "Failed to add connection %1"
-msgstr "No s'ha pogut afegir la connexió %1"
+msgstr "Ha fallat mentre s'afegia la connexió %1"
 
 #: handler.cpp:362 handler.cpp:888
 #, kde-format
@@ -3361,32 +3361,32 @@ msgstr "S'ha afegit la connexió %1"
 #: handler.cpp:838
 #, kde-format
 msgid "Failed to activate %1"
-msgstr "No s'ha pogut activar %1"
+msgstr "Ha fallat mentre s'activava %1"
 
 #: handler.cpp:842
 #, kde-format
 msgid "Failed to add %1"
-msgstr "No s'ha pogut afegir %1"
+msgstr "Ha fallat mentre s'afegia %1"
 
 #: handler.cpp:850
 #, kde-format
 msgid "Failed to deactivate %1"
-msgstr "No s'ha pogut desactivar %1"
+msgstr "Ha fallat mentre es desactivava %1"
 
 #: handler.cpp:854
 #, kde-format
 msgid "Failed to remove %1"
-msgstr "No s'ha pogut eliminar %1"
+msgstr "Ha fallat mentre s'eliminava %1"
 
 #: handler.cpp:858
 #, kde-format
 msgid "Failed to update connection %1"
-msgstr "No s'ha pogut actualitzar la connexió %1"
+msgstr "Ha fallat mentre s'actualitzava la connexió %1"
 
 #: handler.cpp:869
 #, kde-format
 msgid "Failed to create hotspot %1"
-msgstr "No s'ha pogut crear el punt d'accés %1"
+msgstr "Ha fallat mentre es creava el punt d'accés %1"
 
 #: handler.cpp:892
 #, kde-format

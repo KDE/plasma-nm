@@ -24,7 +24,7 @@ msgstr ""
 #: vpnc.cpp:73
 #, kde-format
 msgid "Error decrypting the obfuscated password"
-msgstr "S'ha produït un error en desencriptar la contrasenya ofuscada"
+msgstr "S'ha produït un error mentre es desencriptava la contrasenya ofuscada"
 
 #: vpnc.cpp:73
 #, kde-format
@@ -51,7 +51,7 @@ msgstr "Passarel·la:"
 #: vpnc.ui:31
 #, kde-format
 msgid "IP/hostname of IPsec gateway."
-msgstr "IP/nom de màquina de la passarel·la IPsec."
+msgstr "IP/nom d'amfitrió de la passarel·la IPsec."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: vpnc.ui:38

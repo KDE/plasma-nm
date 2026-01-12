@@ -29,12 +29,12 @@ msgstr "Falta la implementació d'OpenVPN en NetworkManager"
 #: openvpn.cpp:208
 #, kde-format
 msgid "Error saving file %1: %2"
-msgstr "S'ha produït un error en guardar el fitxer %1: %2"
+msgstr "S'ha produït un error mentre es guardava el fitxer %1: %2"
 
 #: openvpn.cpp:236
 #, kde-format
 msgid "Error copying certificate to %1: %2"
-msgstr "S'ha produït un error en copiar el certificat a %1: %2"
+msgstr "S'ha produït un error mentre es copiava el certificat a %1: %2"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19
@@ -53,7 +53,7 @@ msgid ""
 msgstr ""
 "Les passarel·les remotes, amb un port i protocol opcional\n"
 "(p. ex., ovpn.empresa.com:1234:tcp).\n"
-"Podeu especificar múltiples màquines per a la redundància\n"
+"Podeu especificar múltiples amfitrions per a la redundància\n"
 "(utilitzeu comes o espais com a separadors)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
@@ -407,7 +407,7 @@ msgstr "Automàtic"
 #: openvpnadvanced.ui:148
 #, kde-format
 msgid "Use TCP for communicating with remote host."
-msgstr "Utilitza TCP per a comunicar-se amb la màquina remota."
+msgstr "Utilitza TCP per a comunicar-se amb l'amfitrió remot."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:151
@@ -513,7 +513,7 @@ msgstr ""
 #: openvpnadvanced.ui:308
 #, kde-format
 msgid "Randomize remote hosts"
-msgstr "Fes aleatòries les màquines remotes"
+msgstr "Fes aleatoris els amfitrions remots"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:315
@@ -1037,7 +1037,7 @@ msgstr ""
 #, kde-format
 msgid "Connect to remote host through a proxy with this address."
 msgstr ""
-"Connecta amb la màquina remota a través d'un servidor intermediari amb esta "
+"Connecta amb l'amfitrió remot a través d'un servidor intermediari amb esta "
 "adreça."
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
@@ -1052,7 +1052,7 @@ msgstr "Adreça del servidor:"
 #, kde-format
 msgid "Connect to remote host through a proxy with this port."
 msgstr ""
-"Connecta amb la màquina remota a través d'un servidor intermediari amb este "
+"Connecta amb l'amfitrió remot a través d'un servidor intermediari amb este "
 "port."
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)

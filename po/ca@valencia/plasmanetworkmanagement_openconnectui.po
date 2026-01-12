@@ -24,12 +24,12 @@ msgstr ""
 #: openconnectauth.cpp:345
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr "No s'ha pogut restablir el testimoni de programari: %1"
+msgstr "Ha fallat mentre es restablia el testimoni de programari: %1"
 
 #: openconnectauth.cpp:398
 #, kde-format
 msgid "Contacting host, please wait…"
-msgstr "S'està connectant amb la màquina, espereu…"
+msgstr "S'està connectant amb l'amfitrió, espereu…"
 
 #: openconnectauth.cpp:786
 #, kde-format
@@ -63,7 +63,7 @@ msgstr "Autenticació VPN amb OpenConnect"
 #: openconnectauth.ui:55
 #, kde-format
 msgid "VPN Host"
-msgstr "Màquina VPN"
+msgstr "Amfitrió VPN"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, btnConnect)
 #: openconnectauth.ui:81

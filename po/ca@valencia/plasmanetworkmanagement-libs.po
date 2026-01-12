@@ -510,12 +510,12 @@ msgstr ""
 #: editor/settings/ipv4widget.cpp:431
 #, kde-format
 msgid "Send hostname:"
-msgstr "Envia el nom del servidor:"
+msgstr "Envia el nom de l'amfitrió:"
 
 #: editor/settings/ipv4widget.cpp:436
 #, kde-format
 msgid "DHCP hostname:"
-msgstr "Nom del servidor DHCP:"
+msgstr "Nom de l'amfitrió DHCP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ipv4widget.cpp:441 editor/settings/ui/ipv6.ui:194

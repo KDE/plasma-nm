@@ -1,143 +1,138 @@
-# Translation of plasmanetworkmanagement-kcm.po to Catalan (Valencian)
-# Copyright (C) 2017-2025 This_file_is_part_of_KDE
-# This file is distributed under the license LGPL version 2.1 or
-# version 3 or later versions approved by the membership of KDE e.V.
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# SPDX-FileCopyrightText: 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-18 00:45+0000\n"
-"PO-Revision-Date: 2025-11-18 17:45+0100\n"
-"Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
-"Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
-"Language: ca@valencia\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.0\n"
 
 #: kcm.cpp:269
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr "Voleu importar la configuració de la VPN des de «%1»?"
+msgstr ""
 
 #: kcm.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "Importació de configuració de VPN"
+msgstr ""
 
 #: kcm.cpp:271
 #, kde-format
 msgid "Import"
-msgstr "Importa"
+msgstr ""
 
 #: kcm.cpp:278 kcm.cpp:351
 #, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Ha fallat mentre s'importava la connexió VPN: %1"
+msgstr ""
 
 #: kcm.cpp:281 kcm.cpp:354
 #, kde-format
 msgid "Connection imported."
-msgstr "Connexió importada."
+msgstr ""
 
 #: kcm.cpp:423
 #, kde-format
 msgid "my_shared_connection"
-msgstr "la_meva_connexió_compartida"
+msgstr ""
 
 #: kcm.cpp:495
 #, kde-format
 msgid "Export VPN Connection"
-msgstr "Exporteu la connexió VPN"
+msgstr ""
 
 #: kcm.cpp:515
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
-msgstr "Voleu guardar els canvis efectuats a la connexió «%1»?"
+msgstr ""
 
 #: kcm.cpp:516
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
-msgstr "Guarda els canvis"
+msgstr ""
 
 #: kcm.cpp:611
 #, kde-format
 msgid "Import VPN Connection"
-msgstr "Importeu una connexió VPN"
+msgstr ""
 
 #: kcm.cpp:613
 #, kde-format
 msgid "VPN connections (%1)"
-msgstr "Connexions VPN (%1)"
+msgstr ""
 
 #: kcm.cpp:616
 #, kde-format
 msgid "No file was provided"
-msgstr "No s'ha proporcionat cap fitxer"
+msgstr ""
 
 #: kcm.cpp:684
 #, kde-format
 msgid "Unknown VPN type"
-msgstr "Tipus desconegut de VPN"
+msgstr ""
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr "Trieu un tipus de connexió"
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr "Configuració"
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:35
 msgid "General"
-msgstr "General"
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:43
 msgid "Ask for PIN on modem detection"
-msgstr "Demana un PIN en detectar un mòdem"
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:50
 msgid "Show virtual connections"
-msgstr "Mostra les connexions virtuals"
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr "Crea les connexions noves com a connexions del sistema"
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
-msgstr "Punt d'accés"
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:70
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr "Nom:"
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:76
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr "Contrasenya:"
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:95
 msgid "Hotspot name must not be empty"
-msgstr "El nom del punt d'accés no ha d'estar buit"
+msgstr ""
 
 #: qml/ConfigurationDialog.qml:105
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
-"La contrasenya del punt d'accés ha d'estar buida o estar formada per entre 8 "
-"i 64 caràcters"
 
 #: qml/ConfigurationDialog.qml:106
 msgid ""
@@ -145,102 +140,98 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
-"La contrasenya del punt d'accés ha d'estar buida o estar formada per una de "
-"les següents:<ul><li>Exactament 5 o 13 caràcters qualssevol</"
-"li><li>Exactament 10 o 26 caràcters hexadecimals:<br/>abcdef, ABCDEF o 0-9</"
-"li></ul>"
 
 #. i18n is a way to use something pre-exposed to QML.
 #: qml/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
-msgstr "%1"
+msgstr ""
 
 #: qml/ConnectionItem.qml:85
 msgid "Connect"
-msgstr "Connecta"
+msgstr ""
 
 #: qml/ConnectionItem.qml:85
 msgid "Disconnect"
-msgstr "Desconnecta"
+msgstr ""
 
 #: qml/ConnectionItem.qml:90
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
-msgstr "No s'ha pogut connectar a esta xarxa perquè no s'ha detectat."
+msgstr ""
 
 #: qml/ConnectionItem.qml:95
 msgid "Delete"
-msgstr "Suprimix"
+msgstr ""
 
 #: qml/ConnectionItem.qml:106
 msgid "Export"
-msgstr "Exporta"
+msgstr ""
 
 #: qml/ConnectionItem.qml:120
 msgid "Connected"
-msgstr "Connectat"
+msgstr ""
 
 #: qml/ConnectionItem.qml:122
 msgid "Connecting"
-msgstr "Connectant"
+msgstr ""
 
 #: qml/ConnectionItem.qml:124
 msgctxt "@title:column Available networks"
 msgid "Available"
-msgstr "Disponible"
+msgstr ""
 
 #: qml/main.qml:151
 msgid "Add new connection"
-msgstr "Afig una connexió nova"
+msgstr ""
 
 #: qml/main.qml:169
 msgid "Remove selected connection"
-msgstr "Elimina la connexió seleccionada"
+msgstr ""
 
 #: qml/main.qml:187
 msgid "Export selected connection"
-msgstr "Exporta la connexió seleccionada"
+msgstr ""
 
 #: qml/main.qml:212
 msgid "Configuration"
-msgstr "Configuració"
+msgstr ""
 
 #: qml/main.qml:239
 msgctxt "@title:window"
 msgid "Remove Connection"
-msgstr "Elimina la connexió"
+msgstr ""
 
 #: qml/main.qml:240
 msgid "Do you want to remove the connection '%1'?"
-msgstr "Voleu eliminar la connexió «%1»?"
+msgstr ""
 
 #: qml/main.qml:262
 msgctxt "@action:button Connect to network"
 msgid "Connect"
-msgstr "Connecta"
+msgstr ""
 
 #: qml/main.qml:268
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
-msgstr "Cancel·la"
+msgstr ""
 
 #: qml/main.qml:274
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "Introduïu la contrasenya"
+msgstr ""
 
 #: qml/main.qml:280
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr "Xarxa: %1"
+msgstr ""
 
 #: qml/main.qml:300
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr "La contrasenya cal que siga una clau WEP vàlida"
+msgstr ""
 
 #: qml/main.qml:301
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr "La contrasenya cal que tinga entre 8 i 64 caràcters"
+msgstr ""

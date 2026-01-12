@@ -22,29 +22,29 @@ msgstr ""
 #: modem.cpp:130
 #, kde-format
 msgid "Error resetting the modem: %1"
-msgstr "S'ha produït un error en reiniciar el mòdem: %1"
+msgstr "S'ha produït un error mentre es reiniciava el mòdem: %1"
 
 #: modem.cpp:264 modem.cpp:436
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
 msgstr ""
-"S'ha produït un error durant l'actualització dels paràmetres de connexió de "
+"S'ha produït un error mentre s'actualitzaven els paràmetres de connexió de "
 "%1: %2."
 
 #: modem.cpp:342
 #, kde-format
 msgid "Error activating connection: %1"
-msgstr "S'ha produït un error en activar la connexió: %1"
+msgstr "S'ha produït un error mentre s'activava la connexió: %1"
 
 #: modem.cpp:380
 #, kde-format
 msgid "Error adding connection: %1"
-msgstr "S'ha produït un error en afegir la connexió: %1"
+msgstr "S'ha produït un error mentre s'afegia la connexió: %1"
 
 #: modem.cpp:397
 #, kde-format
 msgid "Error removing connection: %1"
-msgstr "S'ha produït un error en eliminar la connexió: %1"
+msgstr "S'ha produït un error mentre s'eliminava la connexió: %1"
 
 #: modem.cpp:522 modemdetails.cpp:118 modemdetails.cpp:220 modemdetails.cpp:252
 #: modemdetails.cpp:432 modemdetails.cpp:462
@@ -498,22 +498,22 @@ msgstr "(buit)"
 #: sim.cpp:164
 #, kde-format
 msgid "Error toggling SIM lock: %1"
-msgstr "S'ha produït un error en canviar el bloqueig de la SIM: %1"
+msgstr "S'ha produït un error mentre es canviava el bloqueig de la SIM: %1"
 
 #: sim.cpp:173
 #, kde-format
 msgid "Error changing the PIN: %1"
-msgstr "S'ha produït un error en canviar el PIN: %1"
+msgstr "S'ha produït un error mentre es canviava el PIN: %1"
 
 #: sim.cpp:186
 #, kde-format
 msgid "Error sending the PIN: %1"
-msgstr "S'ha produït un error en enviar el PIN: %1"
+msgstr "S'ha produït un error mentre s'enviava el PIN: %1"
 
 #: sim.cpp:199
 #, kde-format
 msgid "Error sending the PUK: %1"
-msgstr "S'ha produït un error en enviar el PUK: %1"
+msgstr "S'ha produït un error mentre s'enviava el PUK: %1"
 
 #: ui/AvailableNetworks.qml:16
 #, kde-format

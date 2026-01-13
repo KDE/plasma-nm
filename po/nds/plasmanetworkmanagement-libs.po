@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:46+0000\n"
+"POT-Creation-Date: 2026-01-13 08:43+0000\n"
 "PO-Revision-Date: 2014-09-18 16:04+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -3583,7 +3583,7 @@ msgstr "Ethernet"
 msgid "Import a saved configuration file"
 msgstr "Instellen ut Datei importeren..."
 
-#: models/networkmodelitem.cpp:335
+#: models/networkmodelitem.cpp:339
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip real user name is not available"
 #| msgid "Not Available"
@@ -3591,7 +3591,7 @@ msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "Nich verföögbor"
 
-#: models/networkmodelitem.cpp:341
+#: models/networkmodelitem.cpp:345
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3599,7 +3599,7 @@ msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Tokoppelt"
 
-#: models/networkmodelitem.cpp:343
+#: models/networkmodelitem.cpp:347
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"

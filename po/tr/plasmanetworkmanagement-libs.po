@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:46+0000\n"
+"POT-Creation-Date: 2026-01-13 08:43+0000\n"
 "PO-Revision-Date: 2026-01-07 20:18+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3616,19 +3616,19 @@ msgstr "Diğer"
 msgid "Import a saved configuration file"
 msgstr "Kayıtlı bir yapılandırma dosyasını içe aktar"
 
-#: models/networkmodelitem.cpp:335
+#: models/networkmodelitem.cpp:339
 #, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "Kullanılabilir"
 
-#: models/networkmodelitem.cpp:341
+#: models/networkmodelitem.cpp:345
 #, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Bağlı"
 
-#: models/networkmodelitem.cpp:343
+#: models/networkmodelitem.cpp:347
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"

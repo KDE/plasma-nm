@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:46+0000\n"
+"POT-Creation-Date: 2026-01-13 08:43+0000\n"
 "PO-Revision-Date: 2020-08-27 11:36+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -3475,14 +3475,14 @@ msgstr ""
 msgid "Import a saved configuration file"
 msgstr ""
 
-#: models/networkmodelitem.cpp:335
+#: models/networkmodelitem.cpp:339
 #, fuzzy, kde-format
 #| msgid "Available connections"
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "Пайвастҳои дастрас"
 
-#: models/networkmodelitem.cpp:341
+#: models/networkmodelitem.cpp:345
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3490,7 +3490,7 @@ msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Пайваст шуд"
 
-#: models/networkmodelitem.cpp:343
+#: models/networkmodelitem.cpp:347
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"

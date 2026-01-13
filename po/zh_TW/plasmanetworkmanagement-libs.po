@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:46+0000\n"
+"POT-Creation-Date: 2026-01-13 08:43+0000\n"
 "PO-Revision-Date: 2026-01-05 01:13+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -3569,19 +3569,19 @@ msgstr "其他"
 msgid "Import a saved configuration file"
 msgstr "匯入已儲存的設定檔"
 
-#: models/networkmodelitem.cpp:335
+#: models/networkmodelitem.cpp:339
 #, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "可使用"
 
-#: models/networkmodelitem.cpp:341
+#: models/networkmodelitem.cpp:345
 #, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "已連線"
 
-#: models/networkmodelitem.cpp:343
+#: models/networkmodelitem.cpp:347
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"

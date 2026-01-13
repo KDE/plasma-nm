@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:46+0000\n"
+"POT-Creation-Date: 2026-01-13 08:43+0000\n"
 "PO-Revision-Date: 2025-02-28 10:21-0600\n"
 "Last-Translator: A S Alam <aman@punlinux.org>\n"
 "Language-Team: pa\n"
@@ -3505,7 +3505,7 @@ msgstr "ਹੋਰ"
 msgid "Import a saved configuration file"
 msgstr "ਸੰਭਾਲੀ ਹੋਈ ਸੰਰਚਨਾ ਫਾਇਲ ਇੰਪੋਰਟ ਕਰੋ"
 
-#: models/networkmodelitem.cpp:335
+#: models/networkmodelitem.cpp:339
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip real user name is not available"
 #| msgid "Not Available"
@@ -3513,7 +3513,7 @@ msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "ਉਪਲੱਬਧ ਨਹੀਂ"
 
-#: models/networkmodelitem.cpp:341
+#: models/networkmodelitem.cpp:345
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3521,7 +3521,7 @@ msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "ਕਨੈਕਟ ਹੈ"
 
-#: models/networkmodelitem.cpp:343
+#: models/networkmodelitem.cpp:347
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:46+0000\n"
+"POT-Creation-Date: 2026-01-13 08:43+0000\n"
 "PO-Revision-Date: 2024-10-24 08:20\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -3616,7 +3616,7 @@ msgstr "Іншае"
 msgid "Import a saved configuration file"
 msgstr "Імпартаванне захаванага файла канфігурацыі"
 
-#: models/networkmodelitem.cpp:335
+#: models/networkmodelitem.cpp:339
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip real user name is not available"
 #| msgid "Not Available"
@@ -3624,7 +3624,7 @@ msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "Недаступна"
 
-#: models/networkmodelitem.cpp:341
+#: models/networkmodelitem.cpp:345
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3632,7 +3632,7 @@ msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Падлучана"
 
-#: models/networkmodelitem.cpp:343
+#: models/networkmodelitem.cpp:347
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"

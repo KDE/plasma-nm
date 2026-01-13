@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-07 00:46+0000\n"
+"POT-Creation-Date: 2026-01-13 08:43+0000\n"
 "PO-Revision-Date: 2023-04-07 23:51-0700\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -3486,7 +3486,7 @@ msgstr "その他"
 msgid "Import a saved configuration file"
 msgstr "保存された設定ファイルをインポート"
 
-#: models/networkmodelitem.cpp:335
+#: models/networkmodelitem.cpp:339
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip real user name is not available"
 #| msgid "Not Available"
@@ -3494,7 +3494,7 @@ msgctxt "@title:column header for list of available network connections"
 msgid "Available"
 msgstr "利用できません"
 
-#: models/networkmodelitem.cpp:341
+#: models/networkmodelitem.cpp:345
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -3502,7 +3502,7 @@ msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "接続済み"
 
-#: models/networkmodelitem.cpp:343
+#: models/networkmodelitem.cpp:347
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"

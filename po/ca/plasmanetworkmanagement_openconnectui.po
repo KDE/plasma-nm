@@ -559,9 +559,3 @@ msgstr "Confirmació del PIN"
 #, kde-format
 msgid "TextLabel"
 msgstr "EtiquetaDeText"
-
-#~ msgid "No common algorithms"
-#~ msgstr "Sense algorismes comuns"
-
-#~ msgid "*.pem *.crt *.key"
-#~ msgstr "*.pem *.crt *.key"

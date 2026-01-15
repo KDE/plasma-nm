@@ -281,12 +281,3 @@ msgstr ""
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configura les connexions de xarxa…"
-
-#~ msgid "/s"
-#~ msgstr "/s"
-
-#~ msgid "Upload"
-#~ msgstr "Puja"
-
-#~ msgid "Download"
-#~ msgstr "Baixa"

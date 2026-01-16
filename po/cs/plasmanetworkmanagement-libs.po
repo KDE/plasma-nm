@@ -50,12 +50,10 @@ msgid "Signal Strength"
 msgstr "Síla signálu"
 
 #: editor/connectiondetails.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "WiFi signal strength percentage indicator"
-#| msgid "%1%"
+#, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
-msgstr "%1%"
+msgstr ""
 
 #: editor/connectiondetails.cpp:141 editor/connectiondetails.cpp:151
 #, kde-format
@@ -3596,6 +3594,3 @@ msgstr "Je potřeba NetworkManager 0.9.8, nalezena verze %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Neznámý"
-
-#~ msgid "Hardware"
-#~ msgstr "Hardware"

@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/plasma-nm/plasmanetworkmanagement-kcm."
+"X-Crowdin-File: /kf6-stable/messages/plasma-nm/plasmanetworkmanagement-kcm."
 "pot\n"
-"X-Crowdin-File-ID: 43205\n"
+"X-Crowdin-File-ID: 50580\n"
 
 #: kcm.cpp:269
 #, kde-format

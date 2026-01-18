@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-18 00:45+0000\n"
-"PO-Revision-Date: 2025-07-29 12:22+0200\n"
+"PO-Revision-Date: 2026-01-17 16:55+0100\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.08.3\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -252,25 +252,23 @@ msgstr "Skapa accesspunkt"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr ""
+msgstr "Läs WIFI QR-koden"
 
 #: Toolbar.qml:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr "Läs QR-koden med en annan enhet för att ansluta till nätverket \"%1\"."
+msgstr "Läs QR-koden för att ansluta till ett WIFI-nätverk"
 
 #: Toolbar.qml:228
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
-msgstr "Läs QR-koden med en annan enhet för att ansluta till nätverket \"%1\"."
+msgstr ""
+"Installera QRCA streckkodsläsare för att söka efter en QR-kod som ansluter "
+"till ett WIFI-nätverk"
 
 #: Toolbar.qml:247
 #, kde-format

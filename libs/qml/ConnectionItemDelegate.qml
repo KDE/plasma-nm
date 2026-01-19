@@ -31,7 +31,7 @@ FormCard.AbstractFormDelegate {
         id: timer
         repeat: true
         interval: 2000
-        running: ConnectionState === PlasmaNM.Enums.Activated
+        running: model.ConnectionState === PlasmaNM.Enums.Activated
         triggeredOnStart: true
         // property int can overflow with the amount of bytes.
         property double prevRxBytes: 0
@@ -55,14 +55,14 @@ FormCard.AbstractFormDelegate {
             Kirigami.Icon {
                 implicitWidth: Kirigami.Units.iconSizes.smallMedium
                 implicitHeight: Kirigami.Units.iconSizes.smallMedium
-                visible: ConnectionState !== PlasmaNM.Enums.Activating
+                visible: model.ConnectionState !== PlasmaNM.Enums.Activating
                 anchors.centerIn: parent
-                source: mobileProxyModel.showSavedMode ? "network-wireless-connected-100" : ConnectionIcon
+                source: mobileProxyModel.showSavedMode ? "network-wireless-connected-100" : model.ConnectionIcon
             }
 
             Controls.BusyIndicator {
                 anchors.fill: parent
-                running: ConnectionState === PlasmaNM.Enums.Activating
+                running: model.ConnectionState === PlasmaNM.Enums.Activating
             }
         }
 
@@ -71,7 +71,7 @@ FormCard.AbstractFormDelegate {
             Layout.fillWidth: true
             text: ItemUniqueName
             elide: Text.ElideRight
-            font.bold: ConnectionState === PlasmaNM.Enums.Activated
+            font.bold: model.ConnectionState === PlasmaNM.Enums.Activated
             Accessible.ignored: true // base class sets this text on root already
         }
 
@@ -80,7 +80,7 @@ FormCard.AbstractFormDelegate {
                 Layout.alignment: Qt.AlignVCenter
                 Layout.preferredWidth: Kirigami.Units.iconSizes.smallMedium
                 Layout.preferredHeight: Kirigami.Units.iconSizes.smallMedium
-                visible: ConnectionState === PlasmaNM.Enums.Activated
+                visible: model.ConnectionState === PlasmaNM.Enums.Activated
                 source: 'checkmark'
             }
 
@@ -95,16 +95,16 @@ FormCard.AbstractFormDelegate {
             Controls.ToolButton {
                 icon.name: "network-connect"
                 text: i18n("Connect")
-                visible: ConnectionState != PlasmaNM.Enums.Activated && root.editMode
+                visible: model.ConnectionState != PlasmaNM.Enums.Activated && root.editMode
                 display: Controls.ToolButton.IconOnly
                 onClicked: changeState()
             }
             Controls.ToolButton {
                 icon.name: "network-disconnect"
                 text: i18n("Disconnect")
-                visible: ConnectionState == PlasmaNM.Enums.Activated && root.editMode
+                visible: model.ConnectionState == PlasmaNM.Enums.Activated && root.editMode
                 display: Controls.ToolButton.IconOnly
-                onClicked: handler.deactivateConnection(ConnectionPath, DevicePath)
+                onClicked: handler.deactivateConnection(model.ConnectionPath, DevicePath)
             }
             Controls.ToolButton {
                 icon.name: "configure"
@@ -112,7 +112,7 @@ FormCard.AbstractFormDelegate {
                 visible: (Uuid != "") && root.editMode
                 display: Controls.ToolButton.IconOnly
                 onClicked: {
-                    kcm.push("NetworkSettings.qml", {path: ConnectionPath})
+                    kcm.push("NetworkSettings.qml", {path: model.ConnectionPath})
                 }
             }
             Controls.ToolButton {
@@ -120,7 +120,7 @@ FormCard.AbstractFormDelegate {
                 text: i18n("Delete")
                 visible: (Uuid != "") && root.editMode
                 display: Controls.ToolButton.IconOnly
-                onClicked: handler.removeConnection(ConnectionPath)
+                onClicked: handler.removeConnection(model.ConnectionPath)
             }
         }
     }
@@ -131,14 +131,14 @@ FormCard.AbstractFormDelegate {
 
     function changeState() {
         if (Uuid || !predictableWirelessPassword) {
-            if (ConnectionState == PlasmaNM.Enums.Deactivated) {
+            if (model.ConnectionState == PlasmaNM.Enums.Deactivated) {
                 if (!predictableWirelessPassword && !Uuid) {
                     handler.addAndActivateConnection(DevicePath, SpecificPath);
                 } else {
-                    handler.activateConnection(ConnectionPath, DevicePath, SpecificPath);
+                    handler.activateConnection(model.ConnectionPath, DevicePath, SpecificPath);
                 }
             } else {
-                kcm.push("ConnectionInfo.qml", {details: ConnectionDetails,
+                kcm.push("ConnectionInfo.qml", {details: model.ConnectionDetails,
                                                 connectionName: ItemUniqueName,
                                                 delegate: root})
 

@@ -6,14 +6,14 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2014-09-22 19:17+0200\n"
-"Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
+"PO-Revision-Date: 2026-01-19 14:19+0100\n"
+"Last-Translator: Martin Hansen <mh306602@gmail.com>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
 "Language: nb\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.5\n"
+"X-Generator: Lokalize 25.12.1\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
@@ -32,17 +32,17 @@ msgstr "Koble fra"
 #: contents/ui/ConnectionItem.qml:85
 #, kde-format
 msgid "Show Network's QR Code"
-msgstr ""
+msgstr "Vis QR-kode for nettverket"
 
 #: contents/ui/ConnectionItem.qml:90
 #, kde-format
 msgid "Configure…"
-msgstr ""
+msgstr "Sett opp …"
 
 #: contents/ui/ConnectionItem.qml:121
 #, kde-format
 msgid "Speed"
-msgstr ""
+msgstr "Fart"
 
 #: contents/ui/ConnectionItem.qml:126
 #, kde-format
@@ -56,11 +56,12 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
+"Gjeldende nedlastingsfart er %1 KiB/s og gjeldende opplastingsfart %2 KiB/s"
 
 #: contents/ui/ConnectionItem.qml:286
 #, kde-format
 msgid "Connected, ⬇ %1/s, ⬆ %2/s"
-msgstr ""
+msgstr "Tilkoblet – ↓ %1/s, ↑ %2/s"
 
 #: contents/ui/ConnectionItem.qml:290
 #, kde-format
@@ -70,7 +71,7 @@ msgstr "Tilkoblet"
 #: contents/ui/DetailsText.qml:45
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "Kopier"
 
 #: contents/ui/main.qml:23
 #, kde-format
@@ -81,128 +82,128 @@ msgstr "Nettverk"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Midtklikk for å slå av flymodus"
 
 #: contents/ui/main.qml:34
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "Midtklikk for å slå på flymodus"
 
 #: contents/ui/main.qml:75 contents/ui/Toolbar.qml:69
 #, kde-format
 msgid "Enable Wi-Fi"
-msgstr ""
+msgstr "Slå på Wi-Fi"
 
 #: contents/ui/main.qml:83
 #, kde-format
 msgid "Enable Mobile Network"
-msgstr ""
+msgstr "Slå på mobilnettverk"
 
 #: contents/ui/main.qml:91
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr ""
+msgstr "Slå på flymodus"
 
 #: contents/ui/main.qml:97
 #, kde-format
 msgid "Open Network Login Page…"
-msgstr ""
+msgstr "Åpne innloggingsside for nettverk …"
 
 #: contents/ui/main.qml:102
 #, kde-format
 msgid "&Configure Network Connections…"
-msgstr ""
+msgstr "&Sett opp nettverkstilkoblinger …"
 
 #: contents/ui/main.qml:139
 #, kde-format
 msgctxt "@title:window"
 msgid "QR Code for %1"
-msgstr ""
+msgstr "QR-kode for %1"
 
 #: contents/ui/PasswordField.qml:16
 #, kde-format
 msgid "Password…"
-msgstr ""
+msgstr "Passord …"
 
 #: contents/ui/PopupDialog.qml:102
 #, kde-format
 msgid "Airplane mode is enabled"
-msgstr ""
+msgstr "Flymodus er på"
 
 #: contents/ui/PopupDialog.qml:106
 #, kde-format
 msgid "Wireless and mobile networks are deactivated"
-msgstr ""
+msgstr "Trådløs- og mobilnettverk er slått av"
 
 #: contents/ui/PopupDialog.qml:108
 #, kde-format
 msgid "Wireless is deactivated"
-msgstr ""
+msgstr "Trådløst nettverk er slått av"
 
 #: contents/ui/PopupDialog.qml:111
 #, kde-format
 msgid "Mobile network is deactivated"
-msgstr ""
+msgstr "Mobilnettverk er slått av"
 
 #: contents/ui/PopupDialog.qml:114
 #, kde-format
 msgid "No matches"
-msgstr ""
+msgstr "Ingen treff"
 
 #: contents/ui/PopupDialog.qml:116
 #, kde-format
 msgid "No available connections"
-msgstr ""
+msgstr "Ingen tilgjengelige tilkoblinger"
 
 #: contents/ui/Toolbar.qml:118
 #, kde-format
 msgid "Enable mobile network"
-msgstr ""
+msgstr "Slå på mobilnettverk"
 
 #: contents/ui/Toolbar.qml:143
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
-msgstr ""
+msgstr "Slå av flymodus<nl/><nl/>Dette vil slå på Wi-Fi og Bluetooth"
 
 #: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
-msgstr ""
+msgstr "Slå på flymodus<nl/><nl/>Dette vil slå av Wi-Fi og Bluetooth"
 
 #: contents/ui/Toolbar.qml:154
 #, kde-format
 msgid "Hotspot"
-msgstr ""
+msgstr "Trådløssone"
 
 #: contents/ui/Toolbar.qml:178 contents/ui/Toolbar.qml:189
 #, kde-format
 msgid "Disable Hotspot"
-msgstr ""
+msgstr "Slå av trådløssone"
 
 #: contents/ui/Toolbar.qml:183 contents/ui/Toolbar.qml:189
 #, kde-format
 msgid "Create Hotspot"
-msgstr ""
+msgstr "Opprett trådløssone"
 
 #: contents/ui/Toolbar.qml:221
 #, kde-format
 msgid "Configure network connections…"
-msgstr ""
+msgstr "Sett opp nettverkstilkoblinger …"
 
 #: contents/ui/TrafficMonitor.qml:36 contents/ui/TrafficMonitor.qml:106
 #, kde-format
 msgid "/s"
-msgstr ""
+msgstr "/s"
 
 #: contents/ui/TrafficMonitor.qml:88
 #, kde-format
 msgid "Upload"
-msgstr ""
+msgstr "Opplasting"
 
 #: contents/ui/TrafficMonitor.qml:88
 #, kde-format
 msgid "Download"
-msgstr "Last ned"
+msgstr "Nedlasting"

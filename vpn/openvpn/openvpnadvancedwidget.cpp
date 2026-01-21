@@ -506,6 +506,10 @@ void OpenVpnAdvancedWidget::loadConfig()
         }
     }
 
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_EXTRA_CERTS))) {
+        m_ui->kurlExtraCerts->setUrl(QUrl::fromLocalFile(dataMap.value(QLatin1String(NM_OPENVPN_KEY_EXTRA_CERTS))));
+    }
+
     // CRL verify file/dir
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_CRL_VERIFY_FILE))) {
         m_ui->kurlCrlVerifyFile->setUrl(QUrl::fromLocalFile(dataMap.value(QLatin1String(NM_OPENVPN_KEY_CRL_VERIFY_FILE))));
@@ -734,6 +738,12 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         if (!tlsCryptV2KeyUrl.isEmpty()) {
             data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT_V2), tlsCryptV2KeyUrl.path());
         }
+    }
+
+    // Extra certificates file
+    const QUrl extraCertsUrl = m_ui->kurlExtraCerts->url();
+    if (!extraCertsUrl.isEmpty() && !extraCertsUrl.toLocalFile().isEmpty()) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_EXTRA_CERTS), extraCertsUrl.toLocalFile());
     }
 
     const QUrl crlFileUrl = m_ui->kurlCrlVerifyFile->url();

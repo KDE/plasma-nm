@@ -89,13 +89,13 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     connect(m_ui->cbCertCheck, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::certCheckTypeChanged);
     connect(m_ui->cmbProxyType, QOverload<int>::of(&QComboBox::currentIndexChanged), this, &OpenVpnAdvancedWidget::proxyTypeChanged);
     connect(m_ui->cboTLSMode, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [this](int index) {
-        if (index == 0) {
+        if (index == 0) { // None
             m_ui->kurlTlsAuthKey->setDisabled(true);
             m_ui->cboDirection->setDisabled(true);
         } else if (index == 1) { // TLS-Auth
             m_ui->kurlTlsAuthKey->setEnabled(true);
             m_ui->cboDirection->setEnabled(true);
-        } else { // TLS-Crypt
+        } else if (index == 2 || index == 3) { // TLS-Crypt or TLS-Crypt v2
             m_ui->kurlTlsAuthKey->setEnabled(true);
             m_ui->cboDirection->setDisabled(true);
         }
@@ -445,8 +445,12 @@ void OpenVpnAdvancedWidget::loadConfig()
 
     const QString openvpnKeyTa = dataMap[QLatin1String(NM_OPENVPN_KEY_TA)];
     const QString openvpnKeyTlsCrypt = dataMap[QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT)];
+    const QString openvpnKeyTlsCryptV2 = dataMap[QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT_V2)];
 
-    if (!openvpnKeyTlsCrypt.isEmpty()) {
+    if (!openvpnKeyTlsCryptV2.isEmpty()) {
+        m_ui->cboTLSMode->setCurrentIndex(3); // TLS-Crypt v2
+        m_ui->kurlTlsAuthKey->setUrl(QUrl::fromLocalFile(openvpnKeyTlsCryptV2));
+    } else if (!openvpnKeyTlsCrypt.isEmpty()) {
         m_ui->cboTLSMode->setCurrentIndex(2); // TLS-Crypt
         m_ui->kurlTlsAuthKey->setUrl(QUrl::fromLocalFile(openvpnKeyTlsCrypt));
     } else if (!openvpnKeyTa.isEmpty()) {
@@ -661,6 +665,11 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         QUrl tlsCryptKeyUrl = m_ui->kurlTlsAuthKey->url();
         if (!tlsCryptKeyUrl.isEmpty()) {
             data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT), tlsCryptKeyUrl.path());
+        }
+    } else if (m_ui->cboTLSMode->currentIndex() == 3) { // TLS-Crypt v2
+        QUrl tlsCryptV2KeyUrl = m_ui->kurlTlsAuthKey->url();
+        if (!tlsCryptV2KeyUrl.isEmpty()) {
+            data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT_V2), tlsCryptV2KeyUrl.path());
         }
     }
 

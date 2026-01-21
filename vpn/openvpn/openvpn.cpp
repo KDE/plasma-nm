@@ -58,6 +58,7 @@ K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.jso
 #define SECRET_TAG "secret"
 #define TLS_AUTH_TAG "tls-auth"
 #define TLS_CRYPT_TAG "tls-crypt"
+#define TLS_CRYPT_V2_TAG "tls-crypt-v2"
 #define TLS_CLIENT_TAG "tls-client"
 #define TLS_REMOTE_TAG "tls-remote"
 #define TUNMTU_TAG "tun-mtu"
@@ -304,7 +305,13 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
             line = QString(TLS_REMOTE_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_TLS_REMOTE] + "\"\n";
             expFile.write(line.toLatin1());
         }
-        if (!dataMap[NM_OPENVPN_KEY_TA].isEmpty()) {
+        if (!dataMap[NM_OPENVPN_KEY_TLS_CRYPT_V2].isEmpty()) {
+            line = QString(TLS_CRYPT_V2_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_TLS_CRYPT_V2] + "\"\n";
+            expFile.write(line.toLatin1());
+        } else if (!dataMap[NM_OPENVPN_KEY_TLS_CRYPT].isEmpty()) {
+            line = QString(TLS_CRYPT_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_TLS_CRYPT] + "\"\n";
+            expFile.write(line.toLatin1());
+        } else if (!dataMap[NM_OPENVPN_KEY_TA].isEmpty()) {
             line = QString(TLS_AUTH_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_TA] + '\"'
                 + (dataMap[NM_OPENVPN_KEY_TA_DIR].isEmpty() ? "\n" : (' ' + dataMap[NM_OPENVPN_KEY_TA_DIR]) + '\n');
             expFile.write(line.toLatin1());

@@ -62,6 +62,7 @@ K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.jso
 #define TLS_REMOTE_TAG "tls-remote"
 #define TUNMTU_TAG "tun-mtu"
 #define KEY_DIRECTION_TAG "key-direction"
+#define ALLOW_PULL_FQDN_TAG "allow-pull-fqdn"
 
 #define BEGIN_KEY_CA_TAG "<ca>"
 #define END_KEY_CA_TAG "</ca>"
@@ -347,6 +348,10 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
     expFile.write(line.toLatin1());
     line = QString(PROTO_TAG) + (dataMap[NM_OPENVPN_KEY_PROTO_TCP] == "yes" ? " tcp\n" : " udp\n");
     expFile.write(line.toLatin1());
+    if (dataMap[NM_OPENVPN_KEY_ALLOW_PULL_FQDN] == QLatin1String("yes")) {
+        line = QString(ALLOW_PULL_FQDN_TAG) + QLatin1Char('\n');
+        expFile.write(line.toLatin1());
+    }
     // Proxy stuff
     if (!dataMap[NM_OPENVPN_KEY_PROXY_TYPE].isEmpty()) {
         QString proxy_port = dataMap[NM_OPENVPN_KEY_PROXY_PORT];

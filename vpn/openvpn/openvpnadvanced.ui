@@ -299,16 +299,26 @@
         </widget>
        </item>
        <item>
-        <widget class="QCheckBox" name="chkRandRemHosts">
+       <widget class="QCheckBox" name="chkRandRemHosts">
          <property name="toolTip">
           <string>Randomize the order of gateways list (remote) as a kind of basic load-
 balancing measure.</string>
-         </property>
-         <property name="text">
+        </property>
+        <property name="text">
           <string>Randomize remote hosts</string>
-         </property>
-        </widget>
-       </item>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="chkAllowPullFqdn">
+        <property name="toolTip">
+         <string>Allow pulling of peer DNS names (FQDN) sent by the server.</string>
+        </property>
+        <property name="text">
+         <string>Allow pull of peer DNS names (FQDN)</string>
+        </property>
+       </widget>
+      </item>
        <item>
         <widget class="QCheckBox" name="chkIpv6TunLink">
          <property name="toolTip">

@@ -29,8 +29,7 @@
         "Description[zh_TW]": "有線網路設定",
         "FormFactors": [
             "handset",
-            "tablet",
-            "mediacenter"
+            "tablet"
         ],
         "Icon": "network-wired-symbolic",
         "Name": "Wired Network",

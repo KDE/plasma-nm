@@ -1038,6 +1038,29 @@ to protect against DoS attacks.</string>
            </widget>
           </item>
           <item row="2" column="0">
+           <widget class="QLabel" name="label_extraCerts">
+            <property name="toolTip">
+             <string>Additional local certificate file to help verify the peer certificate chain.</string>
+            </property>
+            <property name="text">
+             <string>Extra certificates file:</string>
+            </property>
+            <property name="buddy">
+             <cstring>kurlExtraCerts</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="KUrlRequester" name="kurlExtraCerts">
+            <property name="toolTip">
+             <string>Additional local certificate file to help verify the peer certificate chain.</string>
+            </property>
+            <property name="mode">
+             <set>KFile::File|KFile::ExistingOnly|KFile::LocalOnly</set>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
            <widget class="QLabel" name="textLabel1">
             <property name="toolTip">
              <string>Direction parameter for static key mode.</string>
@@ -1053,7 +1076,7 @@ to protect against DoS attacks.</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="1">
+          <item row="3" column="1">
            <widget class="QComboBox" name="cboDirection">
             <property name="enabled">
              <bool>false</bool>
@@ -1078,7 +1101,7 @@ to protect against DoS attacks.</string>
             </item>
            </widget>
           </item>
-          <item row="3" column="1">
+          <item row="4" column="1">
            <spacer name="verticalSpacer">
             <property name="orientation">
              <enum>Qt::Orientation::Vertical</enum>
@@ -1091,8 +1114,8 @@ to protect against DoS attacks.</string>
             </property>
            </spacer>
           </item>
-        </layout>
-       </widget>
+         </layout>
+        </widget>
       </item>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_crlFile">
@@ -1384,6 +1407,7 @@ to protect against DoS attacks.</string>
   <tabstop>cmbRemoteCertTls</tabstop>
   <tabstop>useExtraTlsAuth</tabstop>
   <tabstop>kurlTlsAuthKey</tabstop>
+  <tabstop>kurlExtraCerts</tabstop>
   <tabstop>cboDirection</tabstop>
   <tabstop>kurlCrlVerifyFile</tabstop>
   <tabstop>kurlCrlVerifyDir</tabstop>

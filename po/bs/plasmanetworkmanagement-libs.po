@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:43+0000\n"
+"POT-Creation-Date: 2026-01-21 00:47+0000\n"
 "PO-Revision-Date: 2015-02-04 14:10+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -1775,14 +1775,14 @@ msgstr "Dinamički WEP (802.1x)"
 #: editor/settings/ui/wifisecurity.ui:65
 #, fuzzy, kde-format
 #| msgid "WPA & WPA2 Personal"
-msgid "WPA/WPA2 Personal"
+msgid "WPA2/WPA3 Personal"
 msgstr "Lični WPA & WPA2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:70
 #, fuzzy, kde-format
 #| msgid "WPA & WPA2 Enterprise"
-msgid "WPA/WPA2 Enterprise"
+msgid "WPA2/WPA3 Enterprise"
 msgstr "Poslovni WPA & WPA2"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)

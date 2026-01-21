@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-13 08:43+0000\n"
+"POT-Creation-Date: 2026-01-21 00:47+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -1770,14 +1770,14 @@ msgstr "دىنامىكىلىق WEP (802.1x)"
 #: editor/settings/ui/wifisecurity.ui:65
 #, fuzzy, kde-format
 #| msgid "WPA & WPA2 Personal"
-msgid "WPA/WPA2 Personal"
+msgid "WPA2/WPA3 Personal"
 msgstr "WPA ۋە WPA2 كىشىلىك نۇسخىسى"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:70
 #, fuzzy, kde-format
 #| msgid "WPA & WPA2 Enterprise"
-msgid "WPA/WPA2 Enterprise"
+msgid "WPA2/WPA3 Enterprise"
 msgstr "WPA ۋە WPA2 كارخانا نۇسخىسى"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)

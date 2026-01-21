@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>626</width>
-    <height>624</height>
+    <width>664</width>
+    <height>705</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="2" column="0">
     <widget class="QDialogButtonBox" name="buttonBox">
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::StandardButton::Cancel|QDialogButtonBox::StandardButton::Ok</set>
      </property>
     </widget>
    </item>
@@ -299,26 +299,68 @@
         </widget>
        </item>
        <item>
-       <widget class="QCheckBox" name="chkRandRemHosts">
+        <widget class="QCheckBox" name="chkRandRemHosts">
          <property name="toolTip">
           <string>Randomize the order of gateways list (remote) as a kind of basic load-
 balancing measure.</string>
-        </property>
-        <property name="text">
+         </property>
+         <property name="text">
           <string>Randomize remote hosts</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chkAllowPullFqdn">
-        <property name="toolTip">
-         <string>Allow pulling of peer DNS names (FQDN) sent by the server.</string>
-        </property>
-        <property name="text">
-         <string>Allow pull of peer DNS names (FQDN)</string>
-        </property>
-       </widget>
-      </item>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_connectTimeout">
+         <item>
+          <widget class="QLabel" name="lblConnectTimeout">
+           <property name="toolTip">
+            <string>Time in seconds to wait for the initial connection before failing.</string>
+           </property>
+           <property name="text">
+            <string>Connect timeout:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+           <property name="buddy">
+            <cstring>sbConnectTimeout</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="sbConnectTimeout">
+           <property name="toolTip">
+            <string>Time in seconds to wait for the initial connection before failing.</string>
+           </property>
+           <property name="specialValueText">
+            <string>None</string>
+           </property>
+           <property name="suffix">
+            <string extracomment="short for seconds">s</string>
+           </property>
+           <property name="minimum">
+            <number>0</number>
+           </property>
+           <property name="maximum">
+            <number>1000000</number>
+           </property>
+           <property name="value">
+            <number>0</number>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkAllowPullFqdn">
+         <property name="toolTip">
+          <string>Allow pulling of peer DNS names (FQDN) sent by the server.</string>
+         </property>
+         <property name="text">
+          <string>Allow pull of peer DNS names (FQDN)</string>
+         </property>
+        </widget>
+       </item>
        <item>
         <widget class="QCheckBox" name="chkIpv6TunLink">
          <property name="toolTip">
@@ -467,7 +509,7 @@ not only the address which was specified in the --remote option.</string>
        <item>
         <spacer name="verticalSpacer_5">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Orientation::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -496,7 +538,7 @@ Block Chaining mode).</string>
             <string>Cipher:</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
            <property name="buddy">
             <cstring>cboCipher</cstring>
@@ -535,7 +577,7 @@ Block Chaining mode).</string>
             <string>Set cipher key size to a custom value. If unspecified, it defaults to cipher-specific size.</string>
            </property>
            <property name="layoutDirection">
-            <enum>Qt::LeftToRight</enum>
+            <enum>Qt::LayoutDirection::LeftToRight</enum>
            </property>
            <property name="text">
             <string>Use custom size of cipher key:</string>
@@ -574,7 +616,7 @@ Block Chaining mode).</string>
             <string>HMAC Authentication:</string>
            </property>
            <property name="alignment">
-            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
            </property>
            <property name="buddy">
             <cstring>cboHmac</cstring>
@@ -649,7 +691,7 @@ Block Chaining mode).</string>
        <item>
         <spacer name="verticalSpacer_6">
          <property name="orientation">
-          <enum>Qt::Vertical</enum>
+          <enum>Qt::Orientation::Vertical</enum>
          </property>
          <property name="sizeHint" stdset="0">
           <size>
@@ -880,29 +922,29 @@ key usage based on RFC3280 TLS rules.</string>
            </widget>
           </item>
           <item row="0" column="1">
-          <widget class="QComboBox" name="cboTLSMode">
-           <item>
-            <property name="text">
-             <string>None</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>TLS-Auth</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>TLS-Crypt</string>
-            </property>
-           </item>
-           <item>
-            <property name="text">
-             <string>TLS-Crypt v2</string>
-            </property>
-           </item>
-          </widget>
-         </item>
+           <widget class="QComboBox" name="cboTLSMode">
+            <item>
+             <property name="text">
+              <string>None</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TLS-Auth</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TLS-Crypt</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>TLS-Crypt v2</string>
+             </property>
+            </item>
+           </widget>
+          </item>
           <item row="1" column="0">
            <widget class="QLabel" name="textLabel4_3">
             <property name="toolTip">
@@ -975,7 +1017,7 @@ to protect against DoS attacks.</string>
           <item row="3" column="1">
            <spacer name="verticalSpacer">
             <property name="orientation">
-             <enum>Qt::Vertical</enum>
+             <enum>Qt::Orientation::Vertical</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -996,7 +1038,7 @@ to protect against DoS attacks.</string>
       </attribute>
       <layout class="QFormLayout" name="formLayout_2">
        <property name="fieldGrowthPolicy">
-        <enum>QFormLayout::ExpandingFieldsGrow</enum>
+        <enum>QFormLayout::FieldGrowthPolicy::ExpandingFieldsGrow</enum>
        </property>
        <property name="verticalSpacing">
         <number>6</number>

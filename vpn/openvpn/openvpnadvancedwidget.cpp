@@ -347,6 +347,13 @@ void OpenVpnAdvancedWidget::loadConfig()
 
     m_ui->chkIpv6TunLink->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_TUN_IPV6)] == QLatin1String("yes"));
 
+    // Connect timeout (seconds); 0 means not set/Automatic
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_CONNECT_TIMEOUT))) {
+        m_ui->sbConnectTimeout->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_CONNECT_TIMEOUT)].toInt());
+    } else {
+        m_ui->sbConnectTimeout->setValue(0);
+    }
+
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_PING))) {
         m_ui->chkPingInterval->setChecked(true);
         m_ui->sbPingInterval->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_PING)].toInt());
@@ -559,6 +566,11 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
 
     if (m_ui->chkPingInterval->isChecked()) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_PING), QString::number(m_ui->sbPingInterval->value()));
+    }
+
+    // Connect timeout; omit when value is 0 (Automatic)
+    if (m_ui->sbConnectTimeout->value() > 0) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_CONNECT_TIMEOUT), QString::number(m_ui->sbConnectTimeout->value()));
     }
 
     if (m_ui->chkSpecifyExitRestartPing->isChecked()) {

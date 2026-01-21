@@ -36,8 +36,7 @@
         "Description[zh_TW]": "行動網路的管理",
         "FormFactors": [
             "handset",
-            "tablet",
-            "mediacenter"
+            "tablet"
         ],
         "Icon": "smartphone",
         "Name": "Cellular Network",

@@ -880,24 +880,29 @@ key usage based on RFC3280 TLS rules.</string>
            </widget>
           </item>
           <item row="0" column="1">
-           <widget class="QComboBox" name="cboTLSMode">
-            <item>
-             <property name="text">
-              <string>None</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>TLS-Auth</string>
-             </property>
-            </item>
-            <item>
-             <property name="text">
-              <string>TLS-Crypt</string>
-             </property>
-            </item>
-           </widget>
-          </item>
+          <widget class="QComboBox" name="cboTLSMode">
+           <item>
+            <property name="text">
+             <string>None</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TLS-Auth</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TLS-Crypt</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>TLS-Crypt v2</string>
+            </property>
+           </item>
+          </widget>
+         </item>
           <item row="1" column="0">
            <widget class="QLabel" name="textLabel4_3">
             <property name="toolTip">

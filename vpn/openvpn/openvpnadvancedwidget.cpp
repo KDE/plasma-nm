@@ -11,6 +11,7 @@
 #include "ui_openvpnadvanced.h"
 
 #include <QComboBox>
+#include <QFileInfo>
 #include <QStandardPaths>
 #include <QUrl>
 
@@ -124,6 +125,9 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
 
     connect(m_ui->buttonBox, &QDialogButtonBox::accepted, this, &OpenVpnAdvancedWidget::accept);
     connect(m_ui->buttonBox, &QDialogButtonBox::rejected, this, &OpenVpnAdvancedWidget::reject);
+
+    connect(m_ui->kurlCrlVerifyFile, &KUrlRequester::urlSelected, m_ui->kurlCrlVerifyDir, &KUrlRequester::clear);
+    connect(m_ui->kurlCrlVerifyDir, &KUrlRequester::urlSelected, m_ui->kurlCrlVerifyFile, &KUrlRequester::clear);
 
     KAcceleratorManager::manage(this);
 
@@ -469,6 +473,14 @@ void OpenVpnAdvancedWidget::loadConfig()
         }
     }
 
+    // CRL verify file/dir
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_CRL_VERIFY_FILE))) {
+        m_ui->kurlCrlVerifyFile->setUrl(QUrl::fromLocalFile(dataMap.value(QLatin1String(NM_OPENVPN_KEY_CRL_VERIFY_FILE))));
+    }
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_CRL_VERIFY_DIR))) {
+        m_ui->kurlCrlVerifyDir->setUrl(QUrl::fromLocalFile(dataMap.value(QLatin1String(NM_OPENVPN_KEY_CRL_VERIFY_DIR))));
+    }
+
     // Proxies
     if (dataMap[QLatin1String(NM_OPENVPN_KEY_PROXY_TYPE)] == QLatin1String("http")) {
         m_ui->cmbProxyType->setCurrentIndex(Private::EnumProxyType::HTTP);
@@ -683,6 +695,14 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         if (!tlsCryptV2KeyUrl.isEmpty()) {
             data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT_V2), tlsCryptV2KeyUrl.path());
         }
+    }
+
+    const QUrl crlFileUrl = m_ui->kurlCrlVerifyFile->url();
+    const QUrl crlDirUrl = m_ui->kurlCrlVerifyDir->url();
+    if (!crlFileUrl.isEmpty()) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_CRL_VERIFY_FILE), crlFileUrl.toLocalFile());
+    } else if (!crlDirUrl.isEmpty()) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_CRL_VERIFY_DIR), crlDirUrl.toLocalFile());
     }
 
     // Proxies

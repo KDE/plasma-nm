@@ -898,9 +898,9 @@ key usage based on RFC3280 TLS rules.</string>
           </widget>
          </item>
         </layout>
-       </item>
-       <item>
-        <widget class="QGroupBox" name="useExtraTlsAuth">
+      </item>
+      <item>
+       <widget class="QGroupBox" name="useExtraTlsAuth">
          <property name="toolTip">
           <string>Add an additional layer of HMAC authentication.</string>
          </property>
@@ -1027,11 +1027,65 @@ to protect against DoS attacks.</string>
             </property>
            </spacer>
           </item>
-         </layout>
-        </widget>
-       </item>
-      </layout>
-     </widget>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_crlFile">
+        <item>
+         <widget class="QLabel" name="lblCrlVerifyFile">
+          <property name="text">
+           <string>CRL verify file:</string>
+          </property>
+          <property name="toolTip">
+           <string>Path to a local Certificate Revocation List (CRL) file to verify peer certificates.</string>
+          </property>
+          <property name="buddy">
+           <cstring>kurlCrlVerifyFile</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="KUrlRequester" name="kurlCrlVerifyFile">
+          <property name="toolTip">
+           <string>Path to a local Certificate Revocation List (CRL) file to verify peer certificates.</string>
+          </property>
+          <property name="mode">
+           <set>KFile::File|KFile::ExistingOnly|KFile::LocalOnly</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_crlDir">
+        <item>
+         <widget class="QLabel" name="lblCrlVerifyDir">
+          <property name="text">
+           <string>CRL verify directory:</string>
+          </property>
+          <property name="toolTip">
+           <string>Path to a local directory containing Certificate Revocation List (CRL) files.</string>
+          </property>
+          <property name="buddy">
+           <cstring>kurlCrlVerifyDir</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="KUrlRequester" name="kurlCrlVerifyDir">
+          <property name="toolTip">
+           <string>Path to a local directory containing Certificate Revocation List (CRL) files.</string>
+          </property>
+          <property name="mode">
+           <set>KFile::Directory|KFile::ExistingOnly|KFile::LocalOnly</set>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
      <widget class="QWidget" name="proxyTab">
       <attribute name="title">
        <string>Proxies</string>
@@ -1265,6 +1319,8 @@ to protect against DoS attacks.</string>
   <tabstop>useExtraTlsAuth</tabstop>
   <tabstop>kurlTlsAuthKey</tabstop>
   <tabstop>cboDirection</tabstop>
+  <tabstop>kurlCrlVerifyFile</tabstop>
+  <tabstop>kurlCrlVerifyDir</tabstop>
   <tabstop>cmbProxyType</tabstop>
   <tabstop>proxyServerAddress</tabstop>
   <tabstop>sbProxyPort</tabstop>

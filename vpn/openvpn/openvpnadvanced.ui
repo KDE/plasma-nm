@@ -567,10 +567,74 @@ Block Chaining mode).</string>
            </item>
           </widget>
          </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" name="horizontalLayout_6">
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_dataCiphers">
+        <item>
+         <widget class="QLabel" name="labelDataCiphers">
+          <property name="toolTip">
+           <string>Data channel cipher list to negotiate (OpenVPN 2.5+).</string>
+          </property>
+          <property name="text">
+           <string>Data Ciphers:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="buddy">
+           <cstring>cboDataCiphers</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="cboDataCiphers">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>Obtaining available ciphers…</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_dataCiphersFallback">
+        <item>
+         <widget class="QLabel" name="labelDataCiphersFallback">
+          <property name="toolTip">
+           <string>Fallback data cipher if negotiation fails (OpenVPN 2.5+).</string>
+          </property>
+          <property name="text">
+           <string>Data Ciphers Fallback:</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+          <property name="buddy">
+           <cstring>cboDataCiphersFallback</cstring>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="cboDataCiphersFallback">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>Obtaining available ciphers…</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
           <widget class="QCheckBox" name="chkUseCustomCipherKey">
            <property name="toolTip">
@@ -1313,6 +1377,8 @@ to protect against DoS attacks.</string>
   <tabstop>chkUseCustomCipherKey</tabstop>
   <tabstop>sbCustomCipherKey</tabstop>
   <tabstop>cboHmac</tabstop>
+  <tabstop>cboDataCiphers</tabstop>
+  <tabstop>cboDataCiphersFallback</tabstop>
   <tabstop>subjectMatch</tabstop>
   <tabstop>chkRemoteCertTls</tabstop>
   <tabstop>cmbRemoteCertTls</tabstop>

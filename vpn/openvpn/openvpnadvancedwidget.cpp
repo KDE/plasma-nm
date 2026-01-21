@@ -156,13 +156,21 @@ void OpenVpnAdvancedWidget::openVpnCipherError(QProcess::ProcessError)
 {
     m_ui->cboCipher->removeItem(0);
     m_ui->cboCipher->addItem(i18nc("@item:inlistbox Item added when OpenVPN cipher lookup failed", "OpenVPN cipher lookup failed"));
+    m_ui->cboDataCiphers->removeItem(0);
+    m_ui->cboDataCiphers->addItem(i18nc("@item:inlistbox Item added when OpenVPN cipher lookup failed", "OpenVPN cipher lookup failed"));
+    m_ui->cboDataCiphersFallback->removeItem(0);
+    m_ui->cboDataCiphersFallback->addItem(i18nc("@item:inlistbox Item added when OpenVPN cipher lookup failed", "OpenVPN cipher lookup failed"));
 }
 
 void OpenVpnAdvancedWidget::openVpnCipherFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
     m_ui->cboCipher->removeItem(0);
+    m_ui->cboDataCiphers->removeItem(0);
+    m_ui->cboDataCiphersFallback->removeItem(0);
     if (!exitCode && exitStatus == QProcess::NormalExit) {
         m_ui->cboCipher->addItem(i18nc("@item::inlist Default openvpn cipher item", "Default"));
+        m_ui->cboDataCiphers->addItem(i18nc("@item::inlist Default openvpn cipher item", "Default"));
+        m_ui->cboDataCiphersFallback->addItem(i18nc("@item::inlist Default openvpn cipher item", "Default"));
         const QList<QByteArray> rawOutputLines = d->openvpnCiphers.split('\n');
         bool foundFirstSpace = false;
         for (const QByteArray &cipher : rawOutputLines) {
@@ -173,18 +181,29 @@ void OpenVpnAdvancedWidget::openVpnCipherFinished(int exitCode, QProcess::ExitSt
                 const auto match = cipherRe.match(cipher);
 
                 if (match.hasMatch()) {
-                    m_ui->cboCipher->addItem(match.captured(1));
+                    const QString c = match.captured(1);
+                    m_ui->cboCipher->addItem(c);
+                    m_ui->cboDataCiphers->addItem(c);
+                    m_ui->cboDataCiphersFallback->addItem(c);
                 }
             }
         }
 
         if (m_ui->cboCipher->count()) {
             m_ui->cboCipher->setEnabled(true);
+            m_ui->cboDataCiphers->setEnabled(true);
+            m_ui->cboDataCiphersFallback->setEnabled(true);
         } else {
-            m_ui->cboCipher->addItem(i18nc("@item:inlistbox Item added when OpenVPN cipher lookup failed", "No OpenVPN ciphers found"));
+            const QString noCiphers = i18nc("@item:inlistbox Item added when OpenVPN cipher lookup failed", "No OpenVPN ciphers found");
+            m_ui->cboCipher->addItem(noCiphers);
+            m_ui->cboDataCiphers->addItem(noCiphers);
+            m_ui->cboDataCiphersFallback->addItem(noCiphers);
         }
     } else {
-        m_ui->cboCipher->addItem(i18nc("@item:inlistbox Item added when OpenVPN cipher lookup failed", "OpenVPN cipher lookup failed"));
+        const QString err = i18nc("@item:inlistbox Item added when OpenVPN cipher lookup failed", "OpenVPN cipher lookup failed");
+        m_ui->cboCipher->addItem(err);
+        m_ui->cboDataCiphers->addItem(err);
+        m_ui->cboDataCiphersFallback->addItem(err);
     }
     delete d->openvpnCipherProcess;
     d->openvpnCipherProcess = nullptr;
@@ -195,6 +214,12 @@ void OpenVpnAdvancedWidget::openVpnCipherFinished(int exitCode, QProcess::ExitSt
         const NMStringMap dataMap = d->setting->data();
         if (dataMap.contains(NM_OPENVPN_KEY_CIPHER)) {
             m_ui->cboCipher->setCurrentIndex(m_ui->cboCipher->findText(dataMap.value(NM_OPENVPN_KEY_CIPHER)));
+        }
+        if (dataMap.contains(NM_OPENVPN_KEY_DATA_CIPHERS)) {
+            m_ui->cboDataCiphers->setCurrentIndex(m_ui->cboDataCiphers->findText(dataMap.value(NM_OPENVPN_KEY_DATA_CIPHERS)));
+        }
+        if (dataMap.contains(NM_OPENVPN_KEY_DATA_CIPHERS_FALLBACK)) {
+            m_ui->cboDataCiphersFallback->setCurrentIndex(m_ui->cboDataCiphersFallback->findText(dataMap.value(NM_OPENVPN_KEY_DATA_CIPHERS_FALLBACK)));
         }
     }
 }
@@ -411,8 +436,16 @@ void OpenVpnAdvancedWidget::loadConfig()
     }
 
     // ciphers populated above?
-    if (d->gotOpenVpnCiphers && dataMap.contains(QLatin1String(NM_OPENVPN_KEY_CIPHER))) {
-        m_ui->cboCipher->setCurrentIndex(m_ui->cboCipher->findText(dataMap[QLatin1String(NM_OPENVPN_KEY_CIPHER)]));
+    if (d->gotOpenVpnCiphers) {
+        if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_CIPHER))) {
+            m_ui->cboCipher->setCurrentIndex(m_ui->cboCipher->findText(dataMap[QLatin1String(NM_OPENVPN_KEY_CIPHER)]));
+        }
+        if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_DATA_CIPHERS))) {
+            m_ui->cboDataCiphers->setCurrentIndex(m_ui->cboDataCiphers->findText(dataMap[QLatin1String(NM_OPENVPN_KEY_DATA_CIPHERS)]));
+        }
+        if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_DATA_CIPHERS_FALLBACK))) {
+            m_ui->cboDataCiphersFallback->setCurrentIndex(m_ui->cboDataCiphersFallback->findText(dataMap[QLatin1String(NM_OPENVPN_KEY_DATA_CIPHERS_FALLBACK)]));
+        }
     }
 
     // Optional TLS
@@ -638,6 +671,12 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
 
     if (m_ui->cboCipher->currentIndex() != 0) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_CIPHER), m_ui->cboCipher->currentText());
+    }
+    if (m_ui->cboDataCiphers->currentIndex() != 0) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_DATA_CIPHERS), m_ui->cboDataCiphers->currentText());
+    }
+    if (m_ui->cboDataCiphersFallback->currentIndex() != 0) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_DATA_CIPHERS_FALLBACK), m_ui->cboDataCiphersFallback->currentText());
     }
 
     // optional tls authentication

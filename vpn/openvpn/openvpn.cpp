@@ -68,6 +68,7 @@ K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.jso
 #define TUNMTU_TAG "tun-mtu"
 #define KEY_DIRECTION_TAG "key-direction"
 #define ALLOW_PULL_FQDN_TAG "allow-pull-fqdn"
+#define MTU_DISC_TAG "mtu-disc"
 
 #define BEGIN_KEY_CA_TAG "<ca>"
 #define END_KEY_CA_TAG "</ca>"
@@ -373,6 +374,10 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
     }
     if (!dataMap[NM_OPENVPN_KEY_FRAGMENT_SIZE].isEmpty()) {
         line = QString(FRAGMENT_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_FRAGMENT_SIZE] + '\n';
+        expFile.write(line.toLatin1());
+    }
+    if (!dataMap[NM_OPENVPN_KEY_MTU_DISC].isEmpty()) {
+        line = QString(MTU_DISC_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_MTU_DISC] + '\n';
         expFile.write(line.toLatin1());
     }
     line = QString(DEV_TAG) + (dataMap[NM_OPENVPN_KEY_TAP_DEV] == "yes" ? " tap\n" : " tun\n");

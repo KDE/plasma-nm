@@ -59,6 +59,8 @@ K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.jso
 #define TLS_AUTH_TAG "tls-auth"
 #define TLS_CRYPT_TAG "tls-crypt"
 #define TLS_CRYPT_V2_TAG "tls-crypt-v2"
+#define TLS_VERSION_MIN_TAG "tls-version-min"
+#define TLS_VERSION_MAX_TAG "tls-version-max"
 #define TLS_CLIENT_TAG "tls-client"
 #define TLS_REMOTE_TAG "tls-remote"
 #define TUNMTU_TAG "tun-mtu"
@@ -314,6 +316,18 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
         } else if (!dataMap[NM_OPENVPN_KEY_TA].isEmpty()) {
             line = QString(TLS_AUTH_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_TA] + '\"'
                 + (dataMap[NM_OPENVPN_KEY_TA_DIR].isEmpty() ? "\n" : (' ' + dataMap[NM_OPENVPN_KEY_TA_DIR]) + '\n');
+            expFile.write(line.toLatin1());
+        }
+        if (!dataMap[NM_OPENVPN_KEY_TLS_VERSION_MIN].isEmpty()) {
+            line = QString(TLS_VERSION_MIN_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_TLS_VERSION_MIN];
+            if (dataMap[NM_OPENVPN_KEY_TLS_VERSION_MIN_OR_HIGHEST] == QLatin1String("yes")) {
+                line += QLatin1String(" or-highest");
+            }
+            line += QLatin1Char('\n');
+            expFile.write(line.toLatin1());
+        }
+        if (!dataMap[NM_OPENVPN_KEY_TLS_VERSION_MAX].isEmpty()) {
+            line = QString(TLS_VERSION_MAX_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_TLS_VERSION_MAX] + QLatin1Char('\n');
             expFile.write(line.toLatin1());
         }
     }

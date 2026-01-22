@@ -1101,7 +1101,67 @@ to protect against DoS attacks.</string>
             </item>
            </widget>
           </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="lblTlsVersionMin">
+            <property name="text">
+             <string>TLS version minimum:</string>
+            </property>
+            <property name="toolTip">
+             <string>Minimum TLS version (e.g. 1.2). Optional.</string>
+            </property>
+            <property name="buddy">
+             <cstring>leTlsVersionMin</cstring>
+            </property>
+           </widget>
+          </item>
           <item row="4" column="1">
+           <layout class="QHBoxLayout" name="horizontalLayout_tlsMin">
+            <item>
+             <widget class="QLineEdit" name="leTlsVersionMin">
+              <property name="toolTip">
+               <string>Minimum TLS version (e.g. 1.2). Leave empty for default.</string>
+              </property>
+              <property name="clearButtonEnabled">
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="chkTlsVersionMinOrHighest">
+              <property name="text">
+               <string>or highest</string>
+              </property>
+              <property name="toolTip">
+               <string>Allow negotiating higher TLS version than the minimum.</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="5" column="0">
+           <widget class="QLabel" name="lblTlsVersionMax">
+            <property name="text">
+             <string>TLS version maximum:</string>
+            </property>
+            <property name="toolTip">
+             <string>Maximum TLS version (e.g. 1.3). Optional.</string>
+            </property>
+            <property name="buddy">
+             <cstring>leTlsVersionMax</cstring>
+            </property>
+           </widget>
+          </item>
+          <item row="5" column="1">
+           <widget class="QLineEdit" name="leTlsVersionMax">
+            <property name="toolTip">
+             <string>Maximum TLS version (e.g. 1.3). Leave empty for default.</string>
+            </property>
+            <property name="clearButtonEnabled">
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="6" column="1">
            <spacer name="verticalSpacer">
             <property name="orientation">
              <enum>Qt::Orientation::Vertical</enum>
@@ -1109,7 +1169,7 @@ to protect against DoS attacks.</string>
             <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
-              <height>137</height>
+              <height>100</height>
              </size>
             </property>
            </spacer>
@@ -1409,6 +1469,9 @@ to protect against DoS attacks.</string>
   <tabstop>kurlTlsAuthKey</tabstop>
   <tabstop>kurlExtraCerts</tabstop>
   <tabstop>cboDirection</tabstop>
+  <tabstop>leTlsVersionMin</tabstop>
+  <tabstop>chkTlsVersionMinOrHighest</tabstop>
+  <tabstop>leTlsVersionMax</tabstop>
   <tabstop>kurlCrlVerifyFile</tabstop>
   <tabstop>kurlCrlVerifyDir</tabstop>
   <tabstop>cmbProxyType</tabstop>

@@ -349,20 +349,30 @@ balancing measure.</string>
            </property>
           </widget>
          </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="chkAllowPullFqdn">
+       </layout>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="chkAllowPullFqdn">
          <property name="toolTip">
           <string>Allow pulling of peer DNS names (FQDN) sent by the server.</string>
          </property>
          <property name="text">
           <string>Allow pull of peer DNS names (FQDN)</string>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="chkIpv6TunLink">
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="chkPushPeerInfo">
+        <property name="toolTip">
+         <string>Push client information to the server for diagnostics.</string>
+        </property>
+        <property name="text">
+         <string>push peer info</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="chkIpv6TunLink">
          <property name="toolTip">
           <string>Build a tun link capable of forwarding IPv6 traffic.</string>
          </property>
@@ -1452,7 +1462,7 @@ to protect against DoS attacks.</string>
    <header>passwordfield.h</header>
   </customwidget>
  </customwidgets>
- <tabstops>
+  <tabstops>
   <tabstop>sbCustomPort</tabstop>
   <tabstop>sbMtu</tabstop>
   <tabstop>sbCustomFragmentSize</tabstop>
@@ -1466,6 +1476,7 @@ to protect against DoS attacks.</string>
   <tabstop>chkUseTCP</tabstop>
   <tabstop>chkMssRestrict</tabstop>
   <tabstop>chkRandRemHosts</tabstop>
+  <tabstop>chkPushPeerInfo</tabstop>
   <tabstop>cboCipher</tabstop>
   <tabstop>chkUseCustomCipherKey</tabstop>
   <tabstop>sbCustomCipherKey</tabstop>

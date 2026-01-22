@@ -518,6 +518,18 @@ void OpenVpnAdvancedWidget::loadConfig()
         m_ui->kurlCrlVerifyDir->setUrl(QUrl::fromLocalFile(dataMap.value(QLatin1String(NM_OPENVPN_KEY_CRL_VERIFY_DIR))));
     }
 
+    // TLS version min/max and "or highest"
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TLS_VERSION_MIN))) {
+        m_ui->leTlsVersionMin->setText(dataMap.value(QLatin1String(NM_OPENVPN_KEY_TLS_VERSION_MIN)));
+    }
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TLS_VERSION_MIN_OR_HIGHEST))) {
+        const QString v = dataMap.value(QLatin1String(NM_OPENVPN_KEY_TLS_VERSION_MIN_OR_HIGHEST));
+        m_ui->chkTlsVersionMinOrHighest->setChecked(v == QLatin1String("yes") || v.isEmpty());
+    }
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TLS_VERSION_MAX))) {
+        m_ui->leTlsVersionMax->setText(dataMap.value(QLatin1String(NM_OPENVPN_KEY_TLS_VERSION_MAX)));
+    }
+
     // Proxies
     if (dataMap[QLatin1String(NM_OPENVPN_KEY_PROXY_TYPE)] == QLatin1String("http")) {
         m_ui->cmbProxyType->setCurrentIndex(Private::EnumProxyType::HTTP);
@@ -738,6 +750,17 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         if (!tlsCryptV2KeyUrl.isEmpty()) {
             data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_CRYPT_V2), tlsCryptV2KeyUrl.path());
         }
+    }
+
+    // TLS version min/max and "or highest"
+    if (!m_ui->leTlsVersionMin->text().trimmed().isEmpty()) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_VERSION_MIN), m_ui->leTlsVersionMin->text().trimmed());
+    }
+    if (m_ui->chkTlsVersionMinOrHighest->isChecked()) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_VERSION_MIN_OR_HIGHEST), QLatin1String("yes"));
+    }
+    if (!m_ui->leTlsVersionMax->text().trimmed().isEmpty()) {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_TLS_VERSION_MAX), m_ui->leTlsVersionMax->text().trimmed());
     }
 
     // Extra certificates file

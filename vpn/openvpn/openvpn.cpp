@@ -64,6 +64,7 @@ K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.jso
 #define TLS_VERSION_MAX_TAG "tls-version-max"
 #define TLS_CLIENT_TAG "tls-client"
 #define TLS_REMOTE_TAG "tls-remote"
+#define REMOTE_RANDOM_HOSTNAME_TAG "remote-random-hostname"
 #define TUNMTU_TAG "tun-mtu"
 #define KEY_DIRECTION_TAG "key-direction"
 #define ALLOW_PULL_FQDN_TAG "allow-pull-fqdn"
@@ -263,6 +264,10 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
     line = QString(REMOTE_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_REMOTE]
         + (dataMap[NM_OPENVPN_KEY_PORT].isEmpty() ? "\n" : (' ' + dataMap[NM_OPENVPN_KEY_PORT]) + '\n');
     expFile.write(line.toLatin1());
+    if (dataMap[NM_OPENVPN_KEY_REMOTE_RANDOM_HOSTNAME] == QLatin1String("yes")) {
+        line = QString(REMOTE_RANDOM_HOSTNAME_TAG) + QLatin1Char('\n');
+        expFile.write(line.toLatin1());
+    }
     const QString connType = dataMap.value(NM_OPENVPN_KEY_CONNECTION_TYPE);
     if (connType == NM_OPENVPN_CONTYPE_TLS //
         || connType == NM_OPENVPN_CONTYPE_PASSWORD //

@@ -142,6 +142,7 @@ void OpenVpnSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
     }
 
     d->ui.gateway->setText(dataMap[NM_OPENVPN_KEY_REMOTE]);
+    d->ui.chkRandRemHostname->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_REMOTE_RANDOM_HOSTNAME)] == QLatin1String("yes"));
 
     NetworkManager::Setting::SecretFlags type;
 
@@ -188,6 +189,7 @@ QVariantMap OpenVpnSettingWidget::setting() const
     setting.setServiceType(QLatin1String(NM_DBUS_SERVICE_OPENVPN));
     // required settings
     data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE), d->ui.gateway->text());
+    data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_RANDOM_HOSTNAME), d->ui.chkRandRemHostname->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
 
     QString contype;
 

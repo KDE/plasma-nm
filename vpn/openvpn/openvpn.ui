@@ -87,10 +87,20 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
          <string>Password with Certificates (TLS)</string>
         </property>
        </item>
-      </widget>
-     </item>
-    </layout>
-   </item>
+     </widget>
+    </item>
+    <item row="2" column="0" colspan="2">
+     <widget class="QCheckBox" name="chkRandRemHostname">
+      <property name="toolTip">
+       <string>Add a random string to remote hostnames to randomize DNS responses.</string>
+      </property>
+      <property name="text">
+       <string>Randomize remote hosts</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </item>
    <item>
     <widget class="QStackedWidget" name="stackedWidget">
      <property name="currentIndex">
@@ -664,6 +674,7 @@ You can specify multiple hosts for redundancy (use commas or spaces as delimiter
  <tabstops>
   <tabstop>gateway</tabstop>
   <tabstop>cmbConnectionType</tabstop>
+  <tabstop>chkRandRemHostname</tabstop>
   <tabstop>x509CaFile</tabstop>
   <tabstop>x509Cert</tabstop>
   <tabstop>x509Key</tabstop>

@@ -59,6 +59,7 @@ K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.jso
 #define TLS_AUTH_TAG "tls-auth"
 #define TLS_CRYPT_TAG "tls-crypt"
 #define TLS_CRYPT_V2_TAG "tls-crypt-v2"
+#define NCP_DISABLE_TAG "ncp-disable"
 #define TLS_VERSION_MIN_TAG "tls-version-min"
 #define TLS_VERSION_MAX_TAG "tls-version-max"
 #define TLS_CLIENT_TAG "tls-client"
@@ -342,6 +343,10 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
     }
     if (!dataMap[NM_OPENVPN_KEY_CIPHER].isEmpty()) {
         line = QString(CIPHER_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_CIPHER] + '\n';
+        expFile.write(line.toLatin1());
+    }
+    if (dataMap[NM_OPENVPN_KEY_NCP_DISABLE] == QLatin1String("yes")) {
+        line = QString(NCP_DISABLE_TAG) + QLatin1Char('\n');
         expFile.write(line.toLatin1());
     }
     if (dataMap[NM_OPENVPN_KEY_COMP_LZO] == "adaptive") {

@@ -44,6 +44,15 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="toolTip">
+      <string>How to configure the IPv4 address:
+• Automatic: obtain address and DNS automatically via DHCP
+• Automatic (Only addresses): obtain address via DHCP but configure DNS manually
+• Link-Local: use automatic link-local addressing (169.254.x.x)
+• Manual: enter a static IP address
+• Shared: turn this computer into a router to share internet with other devices
+• Disabled: turn off IPv4</string>
+     </property>
      <item>
       <property name="text">
        <string comment="Method:">Automatic</string>

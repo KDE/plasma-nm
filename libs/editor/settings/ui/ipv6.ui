@@ -219,6 +219,16 @@ a temporary IPv6 address in addition to the public one generated from MAC addres
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="toolTip">
+      <string>How to configure the IPv6 address:
+• Automatic: obtain address and DNS automatically (via SLAAC and/or DHCPv6)
+• Automatic (Only addresses): obtain address automatically but configure DNS manually
+• Automatic (Only DHCP): obtain address and DNS via DHCPv6 only (ignore SLAAC)
+• Link-Local: use automatic link-local addressing (fe80::/10)
+• Manual: enter a static IP address
+• Ignored: skip IPv6 configuration but allow connection
+• Disabled: turn off IPv6 completely</string>
+     </property>
      <item>
       <property name="text">
        <string comment="Method:">Automatic</string>

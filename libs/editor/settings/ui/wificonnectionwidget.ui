@@ -35,6 +35,9 @@
      <property name="sizeAdjustPolicy">
       <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
      </property>
+     <property name="toolTip">
+      <string>The name of the Wi-Fi network to connect to</string>
+     </property>
     </widget>
    </item>
    <item row="1" column="0">
@@ -58,6 +61,12 @@
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="toolTip">
+      <string>Wi-Fi network mode:
+• Infrastructure: connect to a Wi-Fi router (normal mode)
+• Ad-hoc: create a direct peer-to-peer network
+• Access Point: turn this computer into a Wi-Fi hotspot</string>
+     </property>
      <item>
       <property name="text">
        <string>Infrastructure</string>
@@ -78,7 +87,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="BSSIDLabel">
      <property name="text">
-      <string>BSSID:</string>
+      <string>Restrict to BSSID:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -97,8 +106,7 @@
       </sizepolicy>
      </property>
      <property name="toolTip">
-      <string>This option locks this connection to the Wi-Fi access point (AP) specified by the
- BSSID entered here. Example: 00:11:22:33:44:55</string>
+      <string>Lock this connection to a specific access point. Enter the BSSID (MAC address) of the access point.</string>
      </property>
      <property name="sizeAdjustPolicy">
       <enum>QComboBox::AdjustToContentsOnFirstShow</enum>
@@ -183,7 +191,7 @@ a Wi-Fi network on the specified channel</string>
    <item row="5" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>Restrict to device:</string>
+      <string>Restrict to network adapter:</string>
      </property>
      <property name="alignment">
       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -200,6 +208,9 @@ a Wi-Fi network on the specified channel</string>
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
+     </property>
+     <property name="toolTip">
+      <string>Lock this connection to a particular network adapter by specifying its MAC address.</string>
      </property>
     </widget>
    </item>
@@ -231,6 +242,9 @@ a Wi-Fi network on the specified channel</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+       <property name="toolTip">
+        <string>Use a different MAC address instead of your network adapter's real address.</string>
        </property>
       </widget>
      </item>
@@ -279,12 +293,15 @@ a Wi-Fi network on the specified channel</string>
      <property name="maximum">
       <number>10000</number>
      </property>
+     <property name="toolTip">
+      <string>Maximum Transmission Unit: the largest packet size that can be sent without fragmentation. Larger packets will be broken into smaller frames.</string>
+     </property>
     </widget>
    </item>
    <item row="8" column="0">
     <widget class="QLabel" name="label_4">
      <property name="toolTip">
-      <string>Mark this if you want to create a connection for a hidden network</string>
+      <string>Create a connection for a hidden network</string>
      </property>
      <property name="text">
       <string>Visibility:</string>
@@ -300,7 +317,7 @@ a Wi-Fi network on the specified channel</string>
    <item row="8" column="1">
     <widget class="QCheckBox" name="hiddenNetwork">
      <property name="toolTip">
-      <string>Mark this if you want to create a connection for a hidden network</string>
+      <string>Create a connection for a hidden network</string>
      </property>
      <property name="text">
       <string>Hidden network</string>

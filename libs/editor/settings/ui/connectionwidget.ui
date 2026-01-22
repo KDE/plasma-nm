@@ -34,8 +34,7 @@
      </property>
      <property name="toolTip">
       <string>If the connection is set to autoconnect, connections with higher priority will be preferred. Defaults to 0.
-The higher number means higher priority. A negative number can be used to indicate priority lower than the default.
-           </string>
+The higher number means higher priority. A negative number can be used to indicate priority lower than the default.</string>
      </property>
      <property name="minimum">
       <number>-100</number>
@@ -92,6 +91,9 @@ The higher number means higher priority. A negative number can be used to indica
        <verstretch>0</verstretch>
       </sizepolicy>
      </property>
+     <property name="toolTip">
+      <string>Choose which VPN connection to automatically activate when this connection is established</string>
+     </property>
     </widget>
    </item>
    <item row="3" column="0">
@@ -121,6 +123,9 @@ The higher number means higher priority. A negative number can be used to indica
      <property name="insertPolicy">
       <enum>QComboBox::InsertAlphabetically</enum>
      </property>
+     <property name="toolTip">
+      <string>Assign this connection to a firewall zone to control network access and security rules</string>
+     </property>
     </widget>
    </item>
    <item row="4" column="0">
@@ -145,7 +150,7 @@ The higher number means higher priority. A negative number can be used to indica
       </sizepolicy>
      </property>
      <property name="toolTip">
-      <string>NetworkManager indicates to applications whether the connection is metered and therefore
+      <string>Indicates to applications whether the connection is metered and therefore
 data usage should be restricted.</string>
      </property>
      <property name="editable">

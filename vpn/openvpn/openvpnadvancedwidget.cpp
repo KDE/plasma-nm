@@ -398,6 +398,7 @@ void OpenVpnAdvancedWidget::loadConfig()
     }
     m_ui->chkMssRestrict->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_MSSFIX)] == QLatin1String("yes"));
     m_ui->chkRandRemHosts->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_REMOTE_RANDOM)] == QLatin1String("yes"));
+    m_ui->chkRandRemHostname->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_REMOTE_RANDOM_HOSTNAME)] == QLatin1String("yes"));
     m_ui->chkPushPeerInfo->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_PUSH_PEER_INFO)] == QLatin1String("yes"));
     m_ui->chkAllowPullFqdn->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_ALLOW_PULL_FQDN)] == QLatin1String("yes"));
 
@@ -674,6 +675,7 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
         }
     }
     data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_RANDOM), m_ui->chkRandRemHosts->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
+    data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_RANDOM_HOSTNAME), m_ui->chkRandRemHostname->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
     data.insert(QLatin1String(NM_OPENVPN_KEY_PUSH_PEER_INFO), m_ui->chkPushPeerInfo->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
     data.insert(QLatin1String(NM_OPENVPN_KEY_ALLOW_PULL_FQDN), m_ui->chkAllowPullFqdn->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
     data.insert(QLatin1String(NM_OPENVPN_KEY_TUN_IPV6), m_ui->chkIpv6TunLink->isChecked() ? QLatin1String("yes") : QLatin1String("no"));

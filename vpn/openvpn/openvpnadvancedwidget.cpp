@@ -325,6 +325,22 @@ void OpenVpnAdvancedWidget::loadConfig()
         m_ui->sbCustomFragmentSize->setValue(1300);
     }
 
+    // Path MTU discovery
+    if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_MTU_DISC))) {
+        const QString v = dataMap.value(QLatin1String(NM_OPENVPN_KEY_MTU_DISC));
+        m_ui->chkMtuDisc->setChecked(true);
+        if (v == QLatin1String("no")) {
+            m_ui->cmbMtuDisc->setCurrentIndex(0);
+        } else if (v == QLatin1String("maybe")) {
+            m_ui->cmbMtuDisc->setCurrentIndex(1);
+        } else if (v == QLatin1String("yes")) {
+            m_ui->cmbMtuDisc->setCurrentIndex(2);
+        }
+    } else {
+        m_ui->chkMtuDisc->setChecked(false);
+        m_ui->cmbMtuDisc->setCurrentIndex(0);
+    }
+
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_RENEG_SECONDS))) {
         m_ui->chkUseCustomReneg->setChecked(true);
         m_ui->sbCustomReneg->setValue(dataMap[QLatin1String(NM_OPENVPN_KEY_RENEG_SECONDS)].toUInt());
@@ -623,6 +639,23 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     }
 
     data.insert(QLatin1String(NM_OPENVPN_KEY_MSSFIX), m_ui->chkMssRestrict->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
+    if (m_ui->chkMtuDisc->isChecked()) {
+        QString mtuDiscVal;
+        switch (m_ui->cmbMtuDisc->currentIndex()) {
+        case 0:
+            mtuDiscVal = QLatin1String("no");
+            break;
+        case 1:
+            mtuDiscVal = QLatin1String("maybe");
+            break;
+        case 2:
+            mtuDiscVal = QLatin1String("yes");
+            break;
+        }
+        if (!mtuDiscVal.isEmpty()) {
+            data.insert(QLatin1String(NM_OPENVPN_KEY_MTU_DISC), mtuDiscVal);
+        }
+    }
     data.insert(QLatin1String(NM_OPENVPN_KEY_REMOTE_RANDOM), m_ui->chkRandRemHosts->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
     data.insert(QLatin1String(NM_OPENVPN_KEY_PUSH_PEER_INFO), m_ui->chkPushPeerInfo->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
     data.insert(QLatin1String(NM_OPENVPN_KEY_ALLOW_PULL_FQDN), m_ui->chkAllowPullFqdn->isChecked() ? QLatin1String("yes") : QLatin1String("no"));

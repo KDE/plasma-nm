@@ -286,20 +286,56 @@
            </property>
           </widget>
          </item>
-        </layout>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="chkMssRestrict">
+       </layout>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="chkMssRestrict">
          <property name="toolTip">
           <string>Restrict tunnel TCP maximum segment size.</string>
          </property>
          <property name="text">
           <string>Restrict TCP maximum segment size (MSS)</string>
          </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QCheckBox" name="chkRandRemHosts">
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout_mtuDisc">
+        <item>
+         <widget class="QCheckBox" name="chkMtuDisc">
+          <property name="toolTip">
+           <string>Control Path MTU discovery behavior.</string>
+          </property>
+          <property name="text">
+           <string>Specify Path MTU discovery:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="cmbMtuDisc">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <item>
+           <property name="text">
+            <string>No</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Maybe</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Yes</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="chkRandRemHosts">
          <property name="toolTip">
           <string>Randomize the order of gateways list (remote) as a kind of basic load-
 balancing measure.</string>
@@ -1475,6 +1511,8 @@ to protect against DoS attacks.</string>
   <tabstop>chkUseCompression</tabstop>
   <tabstop>chkUseTCP</tabstop>
   <tabstop>chkMssRestrict</tabstop>
+  <tabstop>chkMtuDisc</tabstop>
+  <tabstop>cmbMtuDisc</tabstop>
   <tabstop>chkRandRemHosts</tabstop>
   <tabstop>chkPushPeerInfo</tabstop>
   <tabstop>cboCipher</tabstop>
@@ -1726,6 +1764,22 @@ to protect against DoS attacks.</string>
     <hint type="destinationlabel">
      <x>408</x>
      <y>58</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkMtuDisc</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>cmbMtuDisc</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>145</x>
+     <y>0</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>408</x>
+     <y>0</y>
     </hint>
    </hints>
   </connection>

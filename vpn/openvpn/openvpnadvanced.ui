@@ -634,6 +634,16 @@ Block Chaining mode).</string>
        </layout>
       </item>
       <item>
+       <widget class="QCheckBox" name="chkDisableCipherNegotiation">
+        <property name="text">
+         <string>Disable cipher negotiation</string>
+        </property>
+        <property name="toolTip">
+         <string>Disable OpenVPN NCP (cipher negotiation). Requires OpenVPN 2.4+.</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
           <widget class="QCheckBox" name="chkUseCustomCipherKey">
@@ -1462,6 +1472,7 @@ to protect against DoS attacks.</string>
   <tabstop>cboHmac</tabstop>
   <tabstop>cboDataCiphers</tabstop>
   <tabstop>cboDataCiphersFallback</tabstop>
+  <tabstop>chkDisableCipherNegotiation</tabstop>
   <tabstop>subjectMatch</tabstop>
   <tabstop>chkRemoteCertTls</tabstop>
   <tabstop>cmbRemoteCertTls</tabstop>

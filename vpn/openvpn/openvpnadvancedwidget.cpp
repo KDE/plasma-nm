@@ -447,6 +447,7 @@ void OpenVpnAdvancedWidget::loadConfig()
             m_ui->cboDataCiphersFallback->setCurrentIndex(m_ui->cboDataCiphersFallback->findText(dataMap[QLatin1String(NM_OPENVPN_KEY_DATA_CIPHERS_FALLBACK)]));
         }
     }
+    m_ui->chkDisableCipherNegotiation->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_NCP_DISABLE)] == QLatin1String("yes"));
 
     // Optional TLS
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_TLS_REMOTE))) {
@@ -694,6 +695,7 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
     if (m_ui->cboDataCiphersFallback->currentIndex() != 0) {
         data.insert(QLatin1String(NM_OPENVPN_KEY_DATA_CIPHERS_FALLBACK), m_ui->cboDataCiphersFallback->currentText());
     }
+    data.insert(QLatin1String(NM_OPENVPN_KEY_NCP_DISABLE), m_ui->chkDisableCipherNegotiation->isChecked() ? QLatin1String("yes") : QLatin1String("no"));
 
     // optional tls authentication
     switch (m_ui->cbCertCheck->currentIndex()) {

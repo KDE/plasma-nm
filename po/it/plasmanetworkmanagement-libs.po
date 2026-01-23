@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-21 00:47+0000\n"
-"PO-Revision-Date: 2026-01-04 09:52+0100\n"
+"POT-Creation-Date: 2026-01-23 00:45+0000\n"
+"PO-Revision-Date: 2026-01-21 11:43+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.0\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -885,7 +885,7 @@ msgstr "Elimina"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
-#: editor/settings/ui/bond.ui:110 editor/settings/ui/wificonnectionwidget.ui:43
+#: editor/settings/ui/bond.ui:110 editor/settings/ui/wificonnectionwidget.ui:46
 #, kde-format
 msgid "Mode:"
 msgstr "Modalità:"
@@ -1013,14 +1013,19 @@ msgid "Connect automatically with priority"
 msgstr "Connettiti automaticamente con priorità"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
-#: editor/settings/ui/connectionwidget.ui:38
-#, kde-format
+#: editor/settings/ui/connectionwidget.ui:37
+#, fuzzy, kde-format
+#| msgid ""
+#| "If the connection is set to autoconnect, connections with higher priority "
+#| "will be preferred. Defaults to 0.\n"
+#| "The higher number means higher priority. A negative number can be used to "
+#| "indicate priority lower than the default.\n"
+#| "           "
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
 "The higher number means higher priority. A negative number can be used to "
-"indicate priority lower than the default.\n"
-"           "
+"indicate priority lower than the default."
 msgstr ""
 "Se la connessione è impostata a connessione automatica, le connessioni con "
 "priorità più alta saranno preferite. Il valore predefinito è 0.\n"
@@ -1030,19 +1035,19 @@ msgstr ""
 "           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
-#: editor/settings/ui/connectionwidget.ui:48
+#: editor/settings/ui/connectionwidget.ui:47
 #, kde-format
 msgid "All users may connect to this network"
 msgstr "Tutti gli utenti possono connettersi a questa rete"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
-#: editor/settings/ui/connectionwidget.ui:64
+#: editor/settings/ui/connectionwidget.ui:63
 #, kde-format
 msgid "Edit advanced permissions for this connection"
 msgstr "Modifica i permessi avanzati per questa connessione"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
-#: editor/settings/ui/connectionwidget.ui:67
+#: editor/settings/ui/connectionwidget.ui:66
 #, kde-format
 msgid ""
 "Fine-grained permissions editor for this connection. It lets you choose "
@@ -1054,35 +1059,54 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:354
+#: editor/settings/ui/connectionwidget.ui:69 editor/settings/ui/ipv4.ui:363
 #, kde-format
 msgid "Advanced…"
 msgstr "Avanzate…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
-#: editor/settings/ui/connectionwidget.ui:80
+#: editor/settings/ui/connectionwidget.ui:79
 #, kde-format
 msgid "Automatically connect to VPN"
 msgstr "Connettiti automaticamente alla VPN"
 
+#. i18n: ectx: property (toolTip), widget (KComboBox, vpnCombobox)
+#: editor/settings/ui/connectionwidget.ui:95
+#, kde-format
+msgid ""
+"Choose which VPN connection to automatically activate when this connection "
+"is established"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
-#: editor/settings/ui/connectionwidget.ui:100
+#: editor/settings/ui/connectionwidget.ui:102
 #, kde-format
 msgid "Firewall zone:"
 msgstr "Zona del firewall:"
 
+#. i18n: ectx: property (toolTip), widget (KComboBox, firewallZone)
+#: editor/settings/ui/connectionwidget.ui:127
+#, kde-format
+msgid ""
+"Assign this connection to a firewall zone to control network access and "
+"security rules"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
-#: editor/settings/ui/connectionwidget.ui:129
+#: editor/settings/ui/connectionwidget.ui:134
 #, kde-format
 msgid "Metered:"
 msgstr "A consumo:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:149
-#, kde-format
+#: editor/settings/ui/connectionwidget.ui:154
+#, fuzzy, kde-format
+#| msgid ""
+#| "NetworkManager indicates to applications whether the connection is "
+#| "metered and therefore\n"
+#| "data usage should be restricted."
 msgid ""
-"NetworkManager indicates to applications whether the connection is metered "
-"and therefore\n"
+"Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr ""
 "NetworkManager indica alle applicazioni se la connessione è misurata e "
@@ -1090,20 +1114,20 @@ msgstr ""
 "dei dati dovrebbe essere limitato."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:159
+#: editor/settings/ui/connectionwidget.ui:164
 #, kde-format
 msgctxt "Item in the Metered: list"
 msgid "Automatic"
 msgstr "Automatico"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:164
+#: editor/settings/ui/connectionwidget.ui:169
 #, kde-format
 msgid "Yes"
 msgstr "Sì"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:169
+#: editor/settings/ui/connectionwidget.ui:174
 #, kde-format
 msgid "No"
 msgstr "No"
@@ -1153,7 +1177,6 @@ msgstr "Modalità di trasporto:"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/infiniband.ui:41
-#: editor/settings/ui/wificonnectionwidget.ui:186
 #: editor/settings/ui/wiredconnectionwidget.ui:23
 #, kde-format
 msgid "Restrict to device:"
@@ -1163,7 +1186,7 @@ msgstr "Limita al dispositivo:"
 #. i18n: ectx: property (text), widget (QLabel, mtuLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/infiniband.ui:61
-#: editor/settings/ui/wificonnectionwidget.ui:249
+#: editor/settings/ui/wificonnectionwidget.ui:263
 #: editor/settings/ui/wiredconnectionwidget.ui:89
 #: editor/settings/ui/wireguardinterfacewidget.ui:89
 #, kde-format
@@ -1172,7 +1195,7 @@ msgstr "MTU:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:80
-#: editor/settings/ui/wificonnectionwidget.ui:271
+#: editor/settings/ui/wificonnectionwidget.ui:285
 #: editor/settings/ui/wiredconnectionwidget.ui:112
 #, kde-format
 msgctxt "MTU:"
@@ -1181,7 +1204,7 @@ msgstr "Automatica"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:83
-#: editor/settings/ui/wificonnectionwidget.ui:274
+#: editor/settings/ui/wificonnectionwidget.ui:288
 #: editor/settings/ui/wiredconnectionwidget.ui:115
 #, kde-format
 msgid " bytes"
@@ -1200,54 +1223,69 @@ msgstr "Impostazioni IP avanzate"
 msgid "Method:"
 msgstr "Metodo:"
 
+#. i18n: ectx: property (toolTip), widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:54
+#, kde-format
+msgid ""
+"How to configure the IPv4 address:\n"
+"• Automatic: obtain address and DNS automatically via DHCP\n"
+"• Automatic (Only addresses): obtain address via DHCP but configure DNS "
+"manually\n"
+"• Link-Local: use automatic link-local addressing (169.254.x.x)\n"
+"• Manual: enter a static IP address\n"
+"• Shared: turn this computer into a router to share internet with other "
+"devices\n"
+"• Disabled: turn off IPv4"
+msgstr ""
+
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:224
+#: editor/settings/ui/ipv4.ui:58 editor/settings/ui/ipv6.ui:234
 #, kde-format
 msgctxt "Method:"
 msgid "Automatic"
 msgstr "Automatico"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:229
+#: editor/settings/ui/ipv4.ui:63 editor/settings/ui/ipv6.ui:239
 #, kde-format
 msgid "Automatic (Only addresses)"
 msgstr "Automatico (solo indirizzi)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:239
+#: editor/settings/ui/ipv4.ui:68 editor/settings/ui/ipv6.ui:249
 #, kde-format
 msgid "Link-Local"
 msgstr "Collegamento locale"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:244
+#: editor/settings/ui/ipv4.ui:73 editor/settings/ui/ipv6.ui:254
 #, kde-format
 msgctxt "like in use Manual configuration"
 msgid "Manual"
 msgstr "Manuale"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:69
+#: editor/settings/ui/ipv4.ui:78
 #, kde-format
 msgid "Shared to other computers"
 msgstr "Condivisa con altri computer"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:74
+#: editor/settings/ui/ipv4.ui:83
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Disabled"
 msgstr "Disabilitato"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
-#: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:167
+#: editor/settings/ui/ipv4.ui:97 editor/settings/ui/ipv6.ui:167
 #, kde-format
 msgctxt "@info"
 msgid "DNS Servers:"
 msgstr "Server DNS:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
-#: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
+#: editor/settings/ui/ipv4.ui:127 editor/settings/ui/ipv6.ui:76
 #, kde-format
 msgid ""
 "Use this field to specify the IP address(es) of one or more DNS servers. Use "
@@ -1257,20 +1295,20 @@ msgstr ""
 "DNS. Usa ',' per separare le voci."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:125
+#: editor/settings/ui/ipv4.ui:134
 #, kde-format
 msgid "Edit DNS the list of servers"
 msgstr "Modifica l'elenco dei server DNS"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
-#: editor/settings/ui/ipv4.ui:143 editor/settings/ui/ipv6.ui:350
+#: editor/settings/ui/ipv4.ui:152 editor/settings/ui/ipv6.ui:360
 #, kde-format
 msgctxt "@info"
 msgid "Search Domains:"
 msgstr "Domini di ricerca:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
-#: editor/settings/ui/ipv4.ui:164 editor/settings/ui/ipv6.ui:270
+#: editor/settings/ui/ipv4.ui:173 editor/settings/ui/ipv6.ui:280
 #, kde-format
 msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
@@ -1280,19 +1318,19 @@ msgstr ""
 "',' per separare le voci."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
-#: editor/settings/ui/ipv4.ui:171 editor/settings/ui/ipv6.ui:277
+#: editor/settings/ui/ipv4.ui:180 editor/settings/ui/ipv6.ui:287
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
 msgstr "Modifica l'elenco dei domini DNS di ricerca"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
-#: editor/settings/ui/ipv4.ui:189
+#: editor/settings/ui/ipv4.ui:198
 #, kde-format
 msgid "DHCP Client ID:"
 msgstr "ID client DHCP:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
-#: editor/settings/ui/ipv4.ui:204
+#: editor/settings/ui/ipv4.ui:213
 #, kde-format
 msgid ""
 "Use this field to specify the DHCP client ID which is a string sent to the "
@@ -1308,13 +1346,13 @@ msgstr ""
 "lease e opzioni DHCP."
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
-#: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
+#: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:379
 #, kde-format
 msgid "Route Metric:"
 msgstr "Metrica rotta:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
-#: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
+#: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:414
 #, kde-format
 msgid ""
 "A score that helps choose the best path for data packets to reach their "
@@ -1332,19 +1370,19 @@ msgstr ""
 "la metrica effettiva della rotta."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
-#: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97
+#: editor/settings/ui/ipv4.ui:270 editor/settings/ui/ipv6.ui:97
 #, kde-format
 msgid "Remove"
 msgstr "Rimuovi"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/ipv4.ui:271 editor/settings/ui/ipv6.ui:107
+#: editor/settings/ui/ipv4.ui:280 editor/settings/ui/ipv6.ui:107
 #, kde-format
 msgid "Add"
 msgstr "Aggiungi"
 
 #. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
-#: editor/settings/ui/ipv4.ui:288 editor/settings/ui/ipv6.ui:124
+#: editor/settings/ui/ipv4.ui:297 editor/settings/ui/ipv6.ui:124
 #: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
 #, kde-format
 msgid ""
@@ -1357,7 +1395,7 @@ msgstr ""
 "un indirizzo IP"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:326
+#: editor/settings/ui/ipv4.ui:335
 #, kde-format
 msgid ""
 "Allows the connection to complete if IPv4 configuration fails\n"
@@ -1368,13 +1406,13 @@ msgstr ""
 "ma la configurazione IPv6 avviene correttamente"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:329
+#: editor/settings/ui/ipv4.ui:338
 #, kde-format
 msgid "IPv4 is required for this connection"
 msgstr "IPv4 è richiesto per questa connessione"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
-#: editor/settings/ui/ipv4.ui:379 editor/settings/ui/ipv6.ui:316
+#: editor/settings/ui/ipv4.ui:388 editor/settings/ui/ipv6.ui:326
 #, kde-format
 msgid "Routes…"
 msgstr "Rotte..."
@@ -1437,27 +1475,43 @@ msgstr "Abilitato (preferisci indirizzi pubblici)"
 msgid "Enabled (prefer temporary addresses)"
 msgstr "Abilitato (preferisci indirizzi temporanei)"
 
+#. i18n: ectx: property (toolTip), widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:230
+#, kde-format
+msgid ""
+"How to configure the IPv6 address:\n"
+"• Automatic: obtain address and DNS automatically (via SLAAC and/or DHCPv6)\n"
+"• Automatic (Only addresses): obtain address automatically but configure DNS "
+"manually\n"
+"• Automatic (Only DHCP): obtain address and DNS via DHCPv6 only (ignore "
+"SLAAC)\n"
+"• Link-Local: use automatic link-local addressing (fe80::/10)\n"
+"• Manual: enter a static IP address\n"
+"• Ignored: skip IPv6 configuration but allow connection\n"
+"• Disabled: turn off IPv6 completely"
+msgstr ""
+
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:234
+#: editor/settings/ui/ipv6.ui:244
 #, kde-format
 msgid "Automatic (Only DHCP)"
 msgstr "Automatico (solo DHCP)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:249
+#: editor/settings/ui/ipv6.ui:259
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
 msgstr "Ignorato"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:254
+#: editor/settings/ui/ipv6.ui:264
 #, kde-format
 msgid "Disabled"
 msgstr "Disabilitato"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
-#: editor/settings/ui/ipv6.ui:331
+#: editor/settings/ui/ipv6.ui:341
 #, kde-format
 msgid "Privacy:"
 msgstr "Riservatezza:"
@@ -1614,50 +1668,64 @@ msgstr "Collegamento lento"
 msgid "SSID:"
 msgstr "SSID:"
 
+#. i18n: ectx: property (toolTip), widget (SsidComboBox, SSIDCombo)
+#: editor/settings/ui/wificonnectionwidget.ui:39
+#, fuzzy, kde-format
+#| msgid "Users allowed to activate the connection"
+msgid "The name of the Wi-Fi network to connect to"
+msgstr "Utenti che possono attivare la connessione"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, modeComboBox)
+#: editor/settings/ui/wificonnectionwidget.ui:68
+#, kde-format
+msgid ""
+"Wi-Fi network mode:\n"
+"• Infrastructure: connect to a Wi-Fi router (normal mode)\n"
+"• Ad-hoc: create a direct peer-to-peer network\n"
+"• Access Point: turn this computer into a Wi-Fi hotspot"
+msgstr ""
+
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:63
+#: editor/settings/ui/wificonnectionwidget.ui:72
 #, kde-format
 msgid "Infrastructure"
 msgstr "Infrastruttura"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:68
+#: editor/settings/ui/wificonnectionwidget.ui:77
 #, kde-format
 msgid "Ad-hoc"
 msgstr "Ad-hoc"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:73
+#: editor/settings/ui/wificonnectionwidget.ui:82
 #, kde-format
 msgid "Access Point"
 msgstr "Punto di accesso"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:81
-#, kde-format
-msgid "BSSID:"
-msgstr "BSSID:"
+#: editor/settings/ui/wificonnectionwidget.ui:90
+#, fuzzy, kde-format
+#| msgid "Restrict to device:"
+msgid "Restrict to BSSID:"
+msgstr "Limita al dispositivo:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
-#: editor/settings/ui/wificonnectionwidget.ui:101
+#: editor/settings/ui/wificonnectionwidget.ui:109
 #, kde-format
 msgid ""
-"This option locks this connection to the Wi-Fi access point (AP) specified "
-"by the\n"
-" BSSID entered here. Example: 00:11:22:33:44:55"
+"Lock this connection to a specific access point. Enter the BSSID (MAC "
+"address) of the access point."
 msgstr ""
-"Questa opzione blocca la connessione al punto di accesso Wi-Fi (AP) "
-"specificata dal\n"
-"BSSID digitato qui. Esempio: 00:11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:117
+#: editor/settings/ui/wificonnectionwidget.ui:125
 #, kde-format
 msgid "Band:"
 msgstr "Banda:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:137
+#: editor/settings/ui/wificonnectionwidget.ui:145
 #, kde-format
 msgid ""
 "This option locks the connection to the Wi-Fi network associated to the "
@@ -1670,32 +1738,32 @@ msgstr ""
 "driver"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:141
+#: editor/settings/ui/wificonnectionwidget.ui:149
 #, kde-format
 msgctxt "Band:"
 msgid "Automatic"
 msgstr "Automatica"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:146
+#: editor/settings/ui/wificonnectionwidget.ui:154
 #, kde-format
 msgid "A (5 GHz)"
 msgstr "A (5 GHz)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:151
+#: editor/settings/ui/wificonnectionwidget.ui:159
 #, kde-format
 msgid "B/G (2.4 GHz)"
 msgstr "B/G (2.4 GHz)"
 
 #. i18n: ectx: property (text), widget (QLabel, channelLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:159
+#: editor/settings/ui/wificonnectionwidget.ui:167
 #, kde-format
 msgid "Channel:"
 msgstr "Canale:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, channel)
-#: editor/settings/ui/wificonnectionwidget.ui:179
+#: editor/settings/ui/wificonnectionwidget.ui:187
 #, kde-format
 msgid ""
 "Wireless channel to use for the Wi-Fi connection. The device will only join "
@@ -1706,35 +1774,66 @@ msgstr ""
 "unirà solo (o creerà in caso di reti ad-hoc)\n"
 "a una rete Wi-Fi sul canale specificato"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/wificonnectionwidget.ui:194
+#, fuzzy, kde-format
+#| msgid "Restrict to device:"
+msgid "Restrict to network adapter:"
+msgstr "Limita al dispositivo:"
+
+#. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
+#: editor/settings/ui/wificonnectionwidget.ui:213
+#, kde-format
+msgid ""
+"Lock this connection to a particular network adapter by specifying its MAC "
+"address."
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wificonnectionwidget.ui:209
+#: editor/settings/ui/wificonnectionwidget.ui:220
 #: editor/settings/ui/wiredconnectionwidget.ui:47
 #, kde-format
 msgid "Cloned MAC address:"
 msgstr "Indirizzo MAC clonato:"
 
+#. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
+#: editor/settings/ui/wificonnectionwidget.ui:247
+#, kde-format
+msgid ""
+"Use a different MAC address instead of your network adapter's real address."
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
-#: editor/settings/ui/wificonnectionwidget.ui:240
+#: editor/settings/ui/wificonnectionwidget.ui:254
 #, kde-format
 msgid "Random…"
 msgstr "Casuale…"
 
+#. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
+#: editor/settings/ui/wificonnectionwidget.ui:297
+#, kde-format
+msgid ""
+"Maximum Transmission Unit: the largest packet size that can be sent without "
+"fragmentation. Larger packets will be broken into smaller frames."
+msgstr ""
+
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
-#: editor/settings/ui/wificonnectionwidget.ui:287
-#: editor/settings/ui/wificonnectionwidget.ui:303
-#, kde-format
-msgid "Mark this if you want to create a connection for a hidden network"
+#: editor/settings/ui/wificonnectionwidget.ui:304
+#: editor/settings/ui/wificonnectionwidget.ui:320
+#, fuzzy, kde-format
+#| msgid "Mark this if you want to create a connection for a hidden network"
+msgid "Create a connection for a hidden network"
 msgstr "Marcala se vuoi creare una connessione per una rete nascosta"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/wificonnectionwidget.ui:290
+#: editor/settings/ui/wificonnectionwidget.ui:307
 #, kde-format
 msgid "Visibility:"
 msgstr "Visibilità:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
-#: editor/settings/ui/wificonnectionwidget.ui:306
+#: editor/settings/ui/wificonnectionwidget.ui:323
 #, kde-format
 msgid "Hidden network"
 msgstr "Rete nascosta"
@@ -1778,17 +1877,15 @@ msgstr "WEP dinamico (802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:65
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA2/WPA3 Personal"
-msgstr "WPA/WPA2 Personal"
+msgstr "WPA2/WPA3 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:70
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA2/WPA3 Enterprise"
-msgstr "WPA/WPA2 Enterprise"
+msgstr "WPA2/WPA3 Enterprise"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:75
@@ -3743,6 +3840,18 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Sconosciuto"
 
+#~ msgid "BSSID:"
+#~ msgstr "BSSID:"
+
+#~ msgid ""
+#~ "This option locks this connection to the Wi-Fi access point (AP) "
+#~ "specified by the\n"
+#~ " BSSID entered here. Example: 00:11:22:33:44:55"
+#~ msgstr ""
+#~ "Questa opzione blocca la connessione al punto di accesso Wi-Fi (AP) "
+#~ "specificata dal\n"
+#~ "BSSID digitato qui. Esempio: 00:11:22:33:44:55"
+
 #~ msgid "Hardware"
 #~ msgstr "Hardware"
 
@@ -4066,12 +4175,6 @@ msgstr "Sconosciuto"
 #~ msgctxt "title of the interface widget in nm's popup"
 #~ msgid "Wireless 802.11"
 #~ msgstr "Senza fili"
-
-#, fuzzy
-#~| msgid "Users allowed to activate the connection"
-#~ msgctxt "Disconnected"
-#~ msgid "There is no active network connection"
-#~ msgstr "Utenti che possono attivare la connessione"
 
 #~ msgid "my_shared_connection"
 #~ msgstr "la_mia_connessione_condivisa"

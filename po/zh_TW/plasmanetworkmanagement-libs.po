@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-21 00:47+0000\n"
-"PO-Revision-Date: 2026-01-05 01:13+0900\n"
+"POT-Creation-Date: 2026-01-23 00:45+0000\n"
+"PO-Revision-Date: 2026-01-23 05:03+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 25.11.70\n"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -887,7 +887,7 @@ msgstr "刪除"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
-#: editor/settings/ui/bond.ui:110 editor/settings/ui/wificonnectionwidget.ui:43
+#: editor/settings/ui/bond.ui:110 editor/settings/ui/wificonnectionwidget.ui:46
 #, kde-format
 msgid "Mode:"
 msgstr "模式："
@@ -1015,33 +1015,38 @@ msgid "Connect automatically with priority"
 msgstr "優先考慮自動連線"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
-#: editor/settings/ui/connectionwidget.ui:38
-#, kde-format
+#: editor/settings/ui/connectionwidget.ui:37
+#, fuzzy, kde-format
+#| msgid ""
+#| "If the connection is set to autoconnect, connections with higher priority "
+#| "will be preferred. Defaults to 0.\n"
+#| "The higher number means higher priority. A negative number can be used to "
+#| "indicate priority lower than the default.\n"
+#| "           "
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
 "The higher number means higher priority. A negative number can be used to "
-"indicate priority lower than the default.\n"
-"           "
+"indicate priority lower than the default."
 msgstr ""
 "若連線設定為自動連線，其將會偏好有較高優先級的連線。預設為 0。\n"
 "較大的數字意位著較高的優先級。負數則可用於指示其優先級低於預設值。\n"
 "           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
-#: editor/settings/ui/connectionwidget.ui:48
+#: editor/settings/ui/connectionwidget.ui:47
 #, kde-format
 msgid "All users may connect to this network"
 msgstr "所有使用者都能連到此網路"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, pushButtonPermissions)
-#: editor/settings/ui/connectionwidget.ui:64
+#: editor/settings/ui/connectionwidget.ui:63
 #, kde-format
 msgid "Edit advanced permissions for this connection"
 msgstr "編輯此連線的進階存取權限"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
-#: editor/settings/ui/connectionwidget.ui:67
+#: editor/settings/ui/connectionwidget.ui:66
 #, kde-format
 msgid ""
 "Fine-grained permissions editor for this connection. It lets you choose "
@@ -1051,53 +1056,72 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:354
+#: editor/settings/ui/connectionwidget.ui:69 editor/settings/ui/ipv4.ui:363
 #, kde-format
 msgid "Advanced…"
 msgstr "進階…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
-#: editor/settings/ui/connectionwidget.ui:80
+#: editor/settings/ui/connectionwidget.ui:79
 #, kde-format
 msgid "Automatically connect to VPN"
 msgstr "自動連線到 VPN"
 
+#. i18n: ectx: property (toolTip), widget (KComboBox, vpnCombobox)
+#: editor/settings/ui/connectionwidget.ui:95
+#, kde-format
+msgid ""
+"Choose which VPN connection to automatically activate when this connection "
+"is established"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
-#: editor/settings/ui/connectionwidget.ui:100
+#: editor/settings/ui/connectionwidget.ui:102
 #, kde-format
 msgid "Firewall zone:"
 msgstr "防火牆區："
 
+#. i18n: ectx: property (toolTip), widget (KComboBox, firewallZone)
+#: editor/settings/ui/connectionwidget.ui:127
+#, kde-format
+msgid ""
+"Assign this connection to a firewall zone to control network access and "
+"security rules"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
-#: editor/settings/ui/connectionwidget.ui:129
+#: editor/settings/ui/connectionwidget.ui:134
 #, kde-format
 msgid "Metered:"
 msgstr "計量："
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:149
-#, kde-format
+#: editor/settings/ui/connectionwidget.ui:154
+#, fuzzy, kde-format
+#| msgid ""
+#| "NetworkManager indicates to applications whether the connection is "
+#| "metered and therefore\n"
+#| "data usage should be restricted."
 msgid ""
-"NetworkManager indicates to applications whether the connection is metered "
-"and therefore\n"
+"Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr "NetworkManager 標示應用程式連線是否有計量和是否要因此限制資料用量。"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:159
+#: editor/settings/ui/connectionwidget.ui:164
 #, kde-format
 msgctxt "Item in the Metered: list"
 msgid "Automatic"
 msgstr "自動"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:164
+#: editor/settings/ui/connectionwidget.ui:169
 #, kde-format
 msgid "Yes"
 msgstr "是"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:169
+#: editor/settings/ui/connectionwidget.ui:174
 #, kde-format
 msgid "No"
 msgstr "否"
@@ -1147,7 +1171,6 @@ msgstr "傳輸模式："
 #. i18n: ectx: property (text), widget (QLabel, label)
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/infiniband.ui:41
-#: editor/settings/ui/wificonnectionwidget.ui:186
 #: editor/settings/ui/wiredconnectionwidget.ui:23
 #, kde-format
 msgid "Restrict to device:"
@@ -1157,7 +1180,7 @@ msgstr "限制裝置："
 #. i18n: ectx: property (text), widget (QLabel, mtuLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/infiniband.ui:61
-#: editor/settings/ui/wificonnectionwidget.ui:249
+#: editor/settings/ui/wificonnectionwidget.ui:263
 #: editor/settings/ui/wiredconnectionwidget.ui:89
 #: editor/settings/ui/wireguardinterfacewidget.ui:89
 #, kde-format
@@ -1166,7 +1189,7 @@ msgstr "MTU:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:80
-#: editor/settings/ui/wificonnectionwidget.ui:271
+#: editor/settings/ui/wificonnectionwidget.ui:285
 #: editor/settings/ui/wiredconnectionwidget.ui:112
 #, kde-format
 msgctxt "MTU:"
@@ -1175,7 +1198,7 @@ msgstr "自動"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:83
-#: editor/settings/ui/wificonnectionwidget.ui:274
+#: editor/settings/ui/wificonnectionwidget.ui:288
 #: editor/settings/ui/wiredconnectionwidget.ui:115
 #, kde-format
 msgid " bytes"
@@ -1194,54 +1217,69 @@ msgstr "進階 IP 設定"
 msgid "Method:"
 msgstr "方法："
 
+#. i18n: ectx: property (toolTip), widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:54
+#, kde-format
+msgid ""
+"How to configure the IPv4 address:\n"
+"• Automatic: obtain address and DNS automatically via DHCP\n"
+"• Automatic (Only addresses): obtain address via DHCP but configure DNS "
+"manually\n"
+"• Link-Local: use automatic link-local addressing (169.254.x.x)\n"
+"• Manual: enter a static IP address\n"
+"• Shared: turn this computer into a router to share internet with other "
+"devices\n"
+"• Disabled: turn off IPv4"
+msgstr ""
+
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:49 editor/settings/ui/ipv6.ui:224
+#: editor/settings/ui/ipv4.ui:58 editor/settings/ui/ipv6.ui:234
 #, kde-format
 msgctxt "Method:"
 msgid "Automatic"
 msgstr "自動"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:54 editor/settings/ui/ipv6.ui:229
+#: editor/settings/ui/ipv4.ui:63 editor/settings/ui/ipv6.ui:239
 #, kde-format
 msgid "Automatic (Only addresses)"
 msgstr "自動（只有位址）"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:239
+#: editor/settings/ui/ipv4.ui:68 editor/settings/ui/ipv6.ui:249
 #, kde-format
 msgid "Link-Local"
 msgstr "連結本地端"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:244
+#: editor/settings/ui/ipv4.ui:73 editor/settings/ui/ipv6.ui:254
 #, kde-format
 msgctxt "like in use Manual configuration"
 msgid "Manual"
 msgstr "手動"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:69
+#: editor/settings/ui/ipv4.ui:78
 #, kde-format
 msgid "Shared to other computers"
 msgstr "分享給其他電腦"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:74
+#: editor/settings/ui/ipv4.ui:83
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Disabled"
 msgstr "已關閉"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
-#: editor/settings/ui/ipv4.ui:88 editor/settings/ui/ipv6.ui:167
+#: editor/settings/ui/ipv4.ui:97 editor/settings/ui/ipv6.ui:167
 #, kde-format
 msgctxt "@info"
 msgid "DNS Servers:"
 msgstr "域名伺服器："
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
-#: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
+#: editor/settings/ui/ipv4.ui:127 editor/settings/ui/ipv6.ui:76
 #, kde-format
 msgid ""
 "Use this field to specify the IP address(es) of one or more DNS servers. Use "
@@ -1250,20 +1288,20 @@ msgstr ""
 "使用此欄位指定一個以上的 DNS 伺服器的 IP 位址。用逗號 ',' 分隔多個位址。"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:125
+#: editor/settings/ui/ipv4.ui:134
 #, kde-format
 msgid "Edit DNS the list of servers"
 msgstr "編輯域名伺服器清單"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
-#: editor/settings/ui/ipv4.ui:143 editor/settings/ui/ipv6.ui:350
+#: editor/settings/ui/ipv4.ui:152 editor/settings/ui/ipv6.ui:360
 #, kde-format
 msgctxt "@info"
 msgid "Search Domains:"
 msgstr "搜尋網域："
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
-#: editor/settings/ui/ipv4.ui:164 editor/settings/ui/ipv6.ui:270
+#: editor/settings/ui/ipv4.ui:173 editor/settings/ui/ipv6.ui:280
 #, kde-format
 msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
@@ -1271,19 +1309,19 @@ msgid ""
 msgstr "使用此欄位指定一個以上要搜尋的 DNS 網域。用逗號 ',' 分隔多個位址。"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
-#: editor/settings/ui/ipv4.ui:171 editor/settings/ui/ipv6.ui:277
+#: editor/settings/ui/ipv4.ui:180 editor/settings/ui/ipv6.ui:287
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
 msgstr "編輯域名伺服器搜尋網域清單"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
-#: editor/settings/ui/ipv4.ui:189
+#: editor/settings/ui/ipv4.ui:198
 #, kde-format
 msgid "DHCP Client ID:"
 msgstr "DHCP 用戶端代碼："
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
-#: editor/settings/ui/ipv4.ui:204
+#: editor/settings/ui/ipv4.ui:213
 #, kde-format
 msgid ""
 "Use this field to specify the DHCP client ID which is a string sent to the "
@@ -1296,13 +1334,13 @@ msgstr ""
 "來辨識本地端機器，用來自訂 DHCP 的 lease 與選項。"
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
-#: editor/settings/ui/ipv4.ui:217 editor/settings/ui/ipv6.ui:369
+#: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:379
 #, kde-format
 msgid "Route Metric:"
 msgstr "路由權值："
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
-#: editor/settings/ui/ipv4.ui:252 editor/settings/ui/ipv6.ui:404
+#: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:414
 #, kde-format
 msgid ""
 "A score that helps choose the best path for data packets to reach their "
@@ -1318,19 +1356,19 @@ msgstr ""
 "預設值 -1 代表 NetworkManager 可以負責選擇並管理路由實際的權值。"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
-#: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97
+#: editor/settings/ui/ipv4.ui:270 editor/settings/ui/ipv6.ui:97
 #, kde-format
 msgid "Remove"
 msgstr "移除"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/ipv4.ui:271 editor/settings/ui/ipv6.ui:107
+#: editor/settings/ui/ipv4.ui:280 editor/settings/ui/ipv6.ui:107
 #, kde-format
 msgid "Add"
 msgstr "新增"
 
 #. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
-#: editor/settings/ui/ipv4.ui:288 editor/settings/ui/ipv6.ui:124
+#: editor/settings/ui/ipv4.ui:297 editor/settings/ui/ipv6.ui:124
 #: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
 #, kde-format
 msgid ""
@@ -1340,7 +1378,7 @@ msgid ""
 msgstr "IP 位址可以讓網路辨識您的電腦。點選「新增」按鍵來新增 IP 位址"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:326
+#: editor/settings/ui/ipv4.ui:335
 #, kde-format
 msgid ""
 "Allows the connection to complete if IPv4 configuration fails\n"
@@ -1350,13 +1388,13 @@ msgstr ""
 "線成功"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:329
+#: editor/settings/ui/ipv4.ui:338
 #, kde-format
 msgid "IPv4 is required for this connection"
 msgstr "此連線需要 IPv4"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
-#: editor/settings/ui/ipv4.ui:379 editor/settings/ui/ipv6.ui:316
+#: editor/settings/ui/ipv4.ui:388 editor/settings/ui/ipv6.ui:326
 #, kde-format
 msgid "Routes…"
 msgstr "路由…"
@@ -1416,27 +1454,43 @@ msgstr "已開啟（預設使用公開位址）"
 msgid "Enabled (prefer temporary addresses)"
 msgstr "已開啟（預設使用暫時位址）"
 
+#. i18n: ectx: property (toolTip), widget (KComboBox, method)
+#: editor/settings/ui/ipv6.ui:230
+#, kde-format
+msgid ""
+"How to configure the IPv6 address:\n"
+"• Automatic: obtain address and DNS automatically (via SLAAC and/or DHCPv6)\n"
+"• Automatic (Only addresses): obtain address automatically but configure DNS "
+"manually\n"
+"• Automatic (Only DHCP): obtain address and DNS via DHCPv6 only (ignore "
+"SLAAC)\n"
+"• Link-Local: use automatic link-local addressing (fe80::/10)\n"
+"• Manual: enter a static IP address\n"
+"• Ignored: skip IPv6 configuration but allow connection\n"
+"• Disabled: turn off IPv6 completely"
+msgstr ""
+
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:234
+#: editor/settings/ui/ipv6.ui:244
 #, kde-format
 msgid "Automatic (Only DHCP)"
 msgstr "自動（只用 DHCP）"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:249
+#: editor/settings/ui/ipv6.ui:259
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
 msgstr "已忽略"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:254
+#: editor/settings/ui/ipv6.ui:264
 #, kde-format
 msgid "Disabled"
 msgstr "已關閉"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
-#: editor/settings/ui/ipv6.ui:331
+#: editor/settings/ui/ipv6.ui:341
 #, kde-format
 msgid "Privacy:"
 msgstr "隱私："
@@ -1592,49 +1646,63 @@ msgstr "Loose binding"
 msgid "SSID:"
 msgstr "SSID："
 
+#. i18n: ectx: property (toolTip), widget (SsidComboBox, SSIDCombo)
+#: editor/settings/ui/wificonnectionwidget.ui:39
+#, kde-format
+msgid "The name of the Wi-Fi network to connect to"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, modeComboBox)
+#: editor/settings/ui/wificonnectionwidget.ui:68
+#, kde-format
+msgid ""
+"Wi-Fi network mode:\n"
+"• Infrastructure: connect to a Wi-Fi router (normal mode)\n"
+"• Ad-hoc: create a direct peer-to-peer network\n"
+"• Access Point: turn this computer into a Wi-Fi hotspot"
+msgstr ""
+
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:63
+#: editor/settings/ui/wificonnectionwidget.ui:72
 #, kde-format
 msgid "Infrastructure"
 msgstr "基礎結構"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:68
+#: editor/settings/ui/wificonnectionwidget.ui:77
 #, kde-format
 msgid "Ad-hoc"
 msgstr "Ad-hoc"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
-#: editor/settings/ui/wificonnectionwidget.ui:73
+#: editor/settings/ui/wificonnectionwidget.ui:82
 #, kde-format
 msgid "Access Point"
 msgstr "存取點（AP）"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:81
-#, kde-format
-msgid "BSSID:"
-msgstr "BSSID："
+#: editor/settings/ui/wificonnectionwidget.ui:90
+#, fuzzy, kde-format
+#| msgid "Restrict to device:"
+msgid "Restrict to BSSID:"
+msgstr "限制裝置："
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
-#: editor/settings/ui/wificonnectionwidget.ui:101
+#: editor/settings/ui/wificonnectionwidget.ui:109
 #, kde-format
 msgid ""
-"This option locks this connection to the Wi-Fi access point (AP) specified "
-"by the\n"
-" BSSID entered here. Example: 00:11:22:33:44:55"
+"Lock this connection to a specific access point. Enter the BSSID (MAC "
+"address) of the access point."
 msgstr ""
-"此選項會將連線使用的 Wi-Fi AP 綁定在此輸入的特定 BSSID。\n"
-"例如：00:11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:117
+#: editor/settings/ui/wificonnectionwidget.ui:125
 #, kde-format
 msgid "Band:"
 msgstr "頻帶："
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:137
+#: editor/settings/ui/wificonnectionwidget.ui:145
 #, kde-format
 msgid ""
 "This option locks the connection to the Wi-Fi network associated to the "
@@ -1645,32 +1713,32 @@ msgstr ""
 "這個設定會與特定的驅動程式相依，可能在其他驅動程式無法運作"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:141
+#: editor/settings/ui/wificonnectionwidget.ui:149
 #, kde-format
 msgctxt "Band:"
 msgid "Automatic"
 msgstr "自動"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:146
+#: editor/settings/ui/wificonnectionwidget.ui:154
 #, kde-format
 msgid "A (5 GHz)"
 msgstr "A (5 GHz)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
-#: editor/settings/ui/wificonnectionwidget.ui:151
+#: editor/settings/ui/wificonnectionwidget.ui:159
 #, kde-format
 msgid "B/G (2.4 GHz)"
 msgstr "B/G (2.4 GHz)"
 
 #. i18n: ectx: property (text), widget (QLabel, channelLabel)
-#: editor/settings/ui/wificonnectionwidget.ui:159
+#: editor/settings/ui/wificonnectionwidget.ui:167
 #, kde-format
 msgid "Channel:"
 msgstr "頻道："
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, channel)
-#: editor/settings/ui/wificonnectionwidget.ui:179
+#: editor/settings/ui/wificonnectionwidget.ui:187
 #, kde-format
 msgid ""
 "Wireless channel to use for the Wi-Fi connection. The device will only join "
@@ -1680,35 +1748,66 @@ msgstr ""
 "連線 Wi-Fi 使用的無線網路頻道。裝置只會在特定頻道中加入（或在 Ad-Hoc 網路中建"
 "立）Wi-Fi 網路"
 
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/wificonnectionwidget.ui:194
+#, fuzzy, kde-format
+#| msgid "Restrict to device:"
+msgid "Restrict to network adapter:"
+msgstr "限制裝置："
+
+#. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
+#: editor/settings/ui/wificonnectionwidget.ui:213
+#, kde-format
+msgid ""
+"Lock this connection to a particular network adapter by specifying its MAC "
+"address."
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/wificonnectionwidget.ui:209
+#: editor/settings/ui/wificonnectionwidget.ui:220
 #: editor/settings/ui/wiredconnectionwidget.ui:47
 #, kde-format
 msgid "Cloned MAC address:"
 msgstr "複製硬體 Mac 位址："
 
+#. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
+#: editor/settings/ui/wificonnectionwidget.ui:247
+#, kde-format
+msgid ""
+"Use a different MAC address instead of your network adapter's real address."
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
-#: editor/settings/ui/wificonnectionwidget.ui:240
+#: editor/settings/ui/wificonnectionwidget.ui:254
 #, kde-format
 msgid "Random…"
 msgstr "隨機…"
 
+#. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
+#: editor/settings/ui/wificonnectionwidget.ui:297
+#, kde-format
+msgid ""
+"Maximum Transmission Unit: the largest packet size that can be sent without "
+"fragmentation. Larger packets will be broken into smaller frames."
+msgstr ""
+
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
-#: editor/settings/ui/wificonnectionwidget.ui:287
-#: editor/settings/ui/wificonnectionwidget.ui:303
-#, kde-format
-msgid "Mark this if you want to create a connection for a hidden network"
+#: editor/settings/ui/wificonnectionwidget.ui:304
+#: editor/settings/ui/wificonnectionwidget.ui:320
+#, fuzzy, kde-format
+#| msgid "Mark this if you want to create a connection for a hidden network"
+msgid "Create a connection for a hidden network"
 msgstr "若您要建立一個隱藏網路的連線，請標記於此"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
-#: editor/settings/ui/wificonnectionwidget.ui:290
+#: editor/settings/ui/wificonnectionwidget.ui:307
 #, kde-format
 msgid "Visibility:"
 msgstr "能見度："
 
 #. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
-#: editor/settings/ui/wificonnectionwidget.ui:306
+#: editor/settings/ui/wificonnectionwidget.ui:323
 #, kde-format
 msgid "Hidden network"
 msgstr "隱藏網路"
@@ -1752,17 +1851,15 @@ msgstr "動態 WEP（802.1x）"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:65
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA2/WPA3 Personal"
-msgstr "WPA/WPA2 Personal"
+msgstr "WPA2/WPA3 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:70
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA2/WPA3 Enterprise"
-msgstr "WPA/WPA2 Enterprise"
+msgstr "WPA2/WPA3 Enterprise"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:75
@@ -3677,6 +3774,17 @@ msgstr "需要 NetworkManager 0.9.8，找到的版本是 %1。"
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "未知"
+
+#~ msgid "BSSID:"
+#~ msgstr "BSSID："
+
+#~ msgid ""
+#~ "This option locks this connection to the Wi-Fi access point (AP) "
+#~ "specified by the\n"
+#~ " BSSID entered here. Example: 00:11:22:33:44:55"
+#~ msgstr ""
+#~ "此選項會將連線使用的 Wi-Fi AP 綁定在此輸入的特定 BSSID。\n"
+#~ "例如：00:11:22:33:44:55"
 
 #~ msgid "Hardware"
 #~ msgstr "硬體"

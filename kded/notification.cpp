@@ -431,6 +431,8 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
     } else if (state == NetworkManager::VpnConnection::Disconnected) {
         eventId = QStringLiteral("ConnectionDeactivated");
         text = i18n("VPN connection '%1' deactivated.", vpnName);
+    } else if (state == NetworkManager::VpnConnection::NeedAuth) {
+        // Silence warning, handled by kded secret agent.
     } else {
         qCWarning(PLASMA_NM_KDED_LOG) << "Unhandled VPN connection state change: " << state;
         return;

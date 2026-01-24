@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-23 00:45+0000\n"
-"PO-Revision-Date: 2026-01-21 07:06+0100\n"
+"PO-Revision-Date: 2026-01-23 06:55+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -1016,13 +1016,7 @@ msgstr "Samodejno se poveži s prednostjo"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. A negative number can be used to "
-#| "indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -1032,8 +1026,7 @@ msgstr ""
 "Če je za povezavo vklopljeno samodejno povezovanje, bodo imele prednost "
 "povezave z višjo prednostjo. Privzeta prednost ima vrednost 0.\n"
 "Višja številka pomeni višjo prednost. Z uporabo negativne vrednosti lahko "
-"znižate prednost pod privzeto.\n"
-"           "
+"znižate prednost pod privzeto."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1077,12 +1070,14 @@ msgid ""
 "Choose which VPN connection to automatically activate when this connection "
 "is established"
 msgstr ""
+"Izberite, katera VPN povezava se bo samodejno aktivirala, ko bo ta povezava "
+"vzpostavljena"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:102
 #, kde-format
 msgid "Firewall zone:"
-msgstr "Območje požarnega zidu:"
+msgstr "Območje vdorobrana:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, firewallZone)
 #: editor/settings/ui/connectionwidget.ui:127
@@ -1091,6 +1086,8 @@ msgid ""
 "Assign this connection to a firewall zone to control network access and "
 "security rules"
 msgstr ""
+"Dodeli to povezavo območju vdorobrana za nadzor dostopa do omrežja in "
+"varnostnih pravil"
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:134
@@ -1100,17 +1097,13 @@ msgstr "Merjeno:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager indicates to applications whether the connection is "
-#| "metered and therefore\n"
-#| "data usage should be restricted."
+#, kde-format
 msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager pove programom, če je povezava merjenain je zato\n"
-"treba omejiti uporabo podatkov."
+"Označuje aplikacijam, ali je povezava merjena in\n"
+"je zato treba omejiti uporabo podatkov."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:164
@@ -1236,6 +1229,16 @@ msgid ""
 "devices\n"
 "• Disabled: turn off IPv4"
 msgstr ""
+"Kako konfigurirati naslov IPv4:\n"
+"• Samodejno: samodejno pridobi naslov in DNS prek DHCP-ja\n"
+"• Samodejno (samo naslovi): pridobi naslov prek DHCP-ja, vendar ročno "
+"konfiguriraj DNS\n"
+"• Lokalna povezava: uporabi samodejno naslavljanje lokalne povezave (169.254."
+"x.x)\n"
+"• Ročno: vnesi statični naslov IP\n"
+"• V skupni rabi: ta računalnik spremeni v usmerjevalnik za skupno rabo "
+"interneta z drugimi napravami\n"
+"• Onemogočeno: izklopi IPv4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:58 editor/settings/ui/ipv6.ui:234
@@ -1485,6 +1488,17 @@ msgid ""
 "• Ignored: skip IPv6 configuration but allow connection\n"
 "• Disabled: turn off IPv6 completely"
 msgstr ""
+"Kako konfigurirati naslov IPv6:\n"
+"• Samodejno: samodejno pridobi naslov in DNS (prek SLAAC in/ali DHCPv6)\n"
+"• Samodejno (samo naslovi): samodejno pridobi naslov, vendar ročno "
+"konfiguriraj DNS\n"
+"• Samodejno (samo DHCP): naslov in DNS pridobi samo prek DHCPv6 (prezri "
+"SLAAC)\n"
+"• Lokalna povezava: uporabi samodejno naslavljanje lokalne povezave "
+"(fe80::/10)\n"
+"• Ročno: vnesi statični naslov IP\n"
+"• Prezrto: preskoči konfiguracijo IPv6, vendar dovoli povezavo\n"
+"• Onemogočeno: popolnoma izklopi IPv6"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:244
@@ -1665,11 +1679,9 @@ msgstr "SSID:"
 
 #. i18n: ectx: property (toolTip), widget (SsidComboBox, SSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:39
-#, fuzzy, kde-format
-#| msgctxt "Disconnected"
-#| msgid "There is no active network connection"
+#, kde-format
 msgid "The name of the Wi-Fi network to connect to"
-msgstr "Ni dejavne omrežne povezave"
+msgstr "Ime omrežja Wi-Fi, s katerim se želite povezati"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:68
@@ -1680,6 +1692,10 @@ msgid ""
 "• Ad-hoc: create a direct peer-to-peer network\n"
 "• Access Point: turn this computer into a Wi-Fi hotspot"
 msgstr ""
+"Način omrežja Wi-Fi:\n"
+"• Infrastruktura: povezava z usmerjevalnikom Wi-Fi (običajni način)\n"
+"• Ad-hoc: ustvari neposredno omrežje peer-to-peer\n"
+"• Dostopna točka: pretvori ta računalnik v dostopno točko Wi-Fi"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:72
@@ -1701,10 +1717,9 @@ msgstr "Dostopna točka"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:90
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to BSSID:"
-msgstr "Omeji na napravo:"
+msgstr "Omeji na BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:109
@@ -1713,6 +1728,8 @@ msgid ""
 "Lock this connection to a specific access point. Enter the BSSID (MAC "
 "address) of the access point."
 msgstr ""
+"Zakleni to povezavo na določeno dostopno točko. Vnesite BSSID (MAC naslov) "
+"dostopne točke."
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:125
@@ -1771,10 +1788,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to network adapter:"
-msgstr "Omeji na napravo:"
+msgstr "Omeji na omrežni adapter:"
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wificonnectionwidget.ui:213
@@ -1783,13 +1799,15 @@ msgid ""
 "Lock this connection to a particular network adapter by specifying its MAC "
 "address."
 msgstr ""
+"To povezavo zakleni na določen omrežni adapter tako, da navedete njegov MAC "
+"naslov."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:220
 #: editor/settings/ui/wiredconnectionwidget.ui:47
 #, kde-format
 msgid "Cloned MAC address:"
-msgstr "Podvojen strojni naslov:"
+msgstr "Kloniran naslov MAC:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
 #: editor/settings/ui/wificonnectionwidget.ui:247
@@ -1797,6 +1815,7 @@ msgstr "Podvojen strojni naslov:"
 msgid ""
 "Use a different MAC address instead of your network adapter's real address."
 msgstr ""
+"Uporabi drug MAC naslov namesto dejanskega naslova omrežnega adapterja."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:254
@@ -1811,15 +1830,16 @@ msgid ""
 "Maximum Transmission Unit: the largest packet size that can be sent without "
 "fragmentation. Larger packets will be broken into smaller frames."
 msgstr ""
+"Največja prenosna enota: največja velikost paketa, ki ga je mogoče poslati "
+"brez fragmentacije. Večji paketi bodo razdeljeni na manjše okvirje."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:304
 #: editor/settings/ui/wificonnectionwidget.ui:320
-#, fuzzy, kde-format
-#| msgid "Mark this if you want to create a connection for a hidden network"
+#, kde-format
 msgid "Create a connection for a hidden network"
-msgstr "Označite to, če želite ustvariti povezavo za skrito omrežje"
+msgstr "Ustvari povezavo za skrito omrežje"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:307

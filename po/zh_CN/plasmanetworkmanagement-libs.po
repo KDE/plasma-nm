@@ -1014,22 +1014,13 @@ msgstr "自动连接，优先级为"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. A negative number can be used to "
-#| "indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
 "The higher number means higher priority. A negative number can be used to "
 "indicate priority lower than the default."
 msgstr ""
-"设置为自动连接时，优先级较高的连接将优先使用。默认值为 0。\n"
-"数字越大，优先级越高。负值可以用于指定比默认值更低的优先级。\n"
-"           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1095,16 +1086,11 @@ msgstr "按流量计费："
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager indicates to applications whether the connection is "
-#| "metered and therefore\n"
-#| "data usage should be restricted."
+#, kde-format
 msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager 会告知应用程序此连接是否按流量计费，以便据此限制使用流量。"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:164
@@ -1682,10 +1668,9 @@ msgstr "接入点/无线 AP (Access Point)"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:90
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to BSSID:"
-msgstr "仅限使用此设备："
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:109
@@ -1750,10 +1735,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to network adapter:"
-msgstr "仅限使用此设备："
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wificonnectionwidget.ui:213
@@ -1795,10 +1779,9 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:304
 #: editor/settings/ui/wificonnectionwidget.ui:320
-#, fuzzy, kde-format
-#| msgid "Mark this if you want to create a connection for a hidden network"
+#, kde-format
 msgid "Create a connection for a hidden network"
-msgstr "如果您想要为隐藏的网络创建连接，请勾选此项"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:307
@@ -1853,13 +1836,13 @@ msgstr "动态 WEP (802.1x)"
 #: editor/settings/ui/wifisecurity.ui:65
 #, kde-format
 msgid "WPA2/WPA3 Personal"
-msgstr ""
+msgstr "WPA2/WPA3 个人版"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:70
 #, kde-format
 msgid "WPA2/WPA3 Enterprise"
-msgstr ""
+msgstr "WPA2/WPA3 企业版"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:75
@@ -3781,14 +3764,3 @@ msgstr "需要 NetworkManager 0.9.8，找到了 %1。"
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "未知"
-
-#~ msgid "BSSID:"
-#~ msgstr "BSSID："
-
-#~ msgid ""
-#~ "This option locks this connection to the Wi-Fi access point (AP) "
-#~ "specified by the\n"
-#~ " BSSID entered here. Example: 00:11:22:33:44:55"
-#~ msgstr ""
-#~ "此连接将只会使用在此输入的 BSSID 所指定的无线接入点 (AP)。\n"
-#~ "示例：00:11:22:33:44:55"

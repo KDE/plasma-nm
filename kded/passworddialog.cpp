@@ -129,6 +129,7 @@ void PasswordDialog::initializeUi()
                 NMStringMap data = vpnSetting->data();
                 m_vpnWidget = vpnUiPlugin->askUser(vpnSetting, m_hints, this);
                 auto layout = new QVBoxLayout();
+                layout->setContentsMargins(0, 0, 0, 0);
                 layout->addWidget(m_vpnWidget);
                 m_ui->vpnWidget->setLayout(layout);
                 m_ui->labelText->setText(i18n("Provide the secrets for the VPN connection \"%1\":", m_connectionSettings->id()));

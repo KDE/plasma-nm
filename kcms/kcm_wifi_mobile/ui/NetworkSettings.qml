@@ -87,6 +87,7 @@ Kirigami.ScrollablePage {
                 id: securityCombobox
                 currentIndex: 0
                 text: i18n("Security type")
+                textRole: "text"
                 model: ListModel {
                     id: securityTypesModel
                     // FIXME just placeholder element to set "text" property as default

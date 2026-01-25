@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2025-10-15 20:39+0400\n"
+"PO-Revision-Date: 2026-01-24 13:27+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -3683,7 +3683,7 @@ msgstr "BSSID"
 #: models/networkmodelitem.cpp:672
 #, kde-format
 msgid "Operator"
-msgstr "المُعامِل"
+msgstr "المشغّل"
 
 #: models/networkmodelitem.cpp:676
 #, kde-format
@@ -3703,7 +3703,7 @@ msgstr "تقنيّة الوصول"
 #: models/networkmodelitem.cpp:686
 #, kde-format
 msgid "VPN plugin"
-msgstr "ملحقة شبكة افتراضية خاصة"
+msgstr "ملحقة شبكة خاصة افتراضية"
 
 #: models/networkmodelitem.cpp:697
 #, kde-format

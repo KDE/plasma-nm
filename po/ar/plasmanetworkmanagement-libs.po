@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-13 08:43+0000\n"
-"PO-Revision-Date: 2026-01-07 18:46+0400\n"
+"PO-Revision-Date: 2026-01-24 13:27+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -90,7 +90,7 @@ msgstr "واي فاي"
 #: editor/connectiondetails.cpp:187
 #, kde-format
 msgid "Operator"
-msgstr "المُعامِل"
+msgstr "المشغّل"
 
 #: editor/connectiondetails.cpp:192
 #, kde-format
@@ -115,7 +115,7 @@ msgstr "شبكة هاتف محمول"
 #: editor/connectiondetails.cpp:214 editor/connectiondetails.cpp:235
 #, kde-format
 msgid "VPN Plugin"
-msgstr "ملحقة شبكة افتراضية خاصة"
+msgstr "ملحقة شبكة خاصة افتراضية"
 
 #: editor/connectiondetails.cpp:225
 #, kde-format

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-25 00:46+0000\n"
 "PO-Revision-Date: 2017-05-07 21:01+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -612,13 +612,13 @@ msgctxt "@info:status"
 msgid "VPN settings are missing"
 msgstr ""
 
-#: passworddialog.cpp:134
+#: passworddialog.cpp:135
 #, fuzzy, kde-format
 #| msgid "Please provide the password for activating connection <b>%1</b>:"
 msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Unesite lozinku za aktiviranje veze <b>%1</b>:"
 
-#: passworddialog.cpp:135
+#: passworddialog.cpp:136
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr "Dijalog za VPN tajne (%1)"

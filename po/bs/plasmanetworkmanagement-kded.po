@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-25 00:46+0000\n"
 "PO-Revision-Date: 2015-02-16 12:48+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -617,13 +617,13 @@ msgctxt "@info:status"
 msgid "VPN settings are missing"
 msgstr ""
 
-#: passworddialog.cpp:134
+#: passworddialog.cpp:135
 #, fuzzy, kde-format
 #| msgid "Please provide the password for activating connection '%1'"
 msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Molim dajte lozinku za aktiviranje konekcije '%1'"
 
-#: passworddialog.cpp:135
+#: passworddialog.cpp:136
 #, fuzzy, kde-format
 #| msgid "VPN secrets (%1)"
 msgid "VPN secrets (%1) dialog"

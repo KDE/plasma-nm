@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-25 00:46+0000\n"
 "PO-Revision-Date: 2025-10-09 01:23+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -583,12 +583,12 @@ msgctxt "@info:status"
 msgid "VPN settings are missing"
 msgstr "VPN 설정이 없음"
 
-#: passworddialog.cpp:134
+#: passworddialog.cpp:135
 #, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "\"%1\" VPN 연결의 비밀 정보를 입력하십시오:"
 
-#: passworddialog.cpp:135
+#: passworddialog.cpp:136
 #, kde-format
 msgid "VPN secrets (%1) dialog"
 msgstr "VPN 인증 정보(%1) 대화 상자"

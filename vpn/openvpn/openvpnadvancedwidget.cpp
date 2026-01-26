@@ -129,6 +129,11 @@ OpenVpnAdvancedWidget::OpenVpnAdvancedWidget(const NetworkManager::VpnSetting::P
     connect(m_ui->kurlCrlVerifyFile, &KUrlRequester::urlSelected, m_ui->kurlCrlVerifyDir, &KUrlRequester::clear);
     connect(m_ui->kurlCrlVerifyDir, &KUrlRequester::urlSelected, m_ui->kurlCrlVerifyFile, &KUrlRequester::clear);
 
+    connect(m_ui->chkUseCompression, &QCheckBox::checkStateChanged, this, [this]() {
+        const bool compressionEnabled = m_ui->chkUseCompression->isChecked();
+        m_ui->chkUseAsymCompression->setEnabled(compressionEnabled);
+    });
+
     KAcceleratorManager::manage(this);
 
     if (d->setting) {
@@ -375,6 +380,11 @@ void OpenVpnAdvancedWidget::loadConfig()
         }
         m_ui->chkUseCompression->setChecked(true);
     }
+    m_ui->chkUseAsymCompression->setEnabled(m_ui->chkUseCompression->isChecked());
+    if (dataMap.value(QLatin1String(NM_OPENVPN_KEY_ALLOW_COMPRESSION)) == QLatin1String("asym")) {
+        m_ui->chkUseAsymCompression->setChecked(true);
+    }
+
     m_ui->chkUseTCP->setChecked(dataMap[QLatin1String(NM_OPENVPN_KEY_PROTO_TCP)] == QLatin1String("yes"));
     if (dataMap.contains(QLatin1String(NM_OPENVPN_KEY_DEV_TYPE))) {
         m_ui->chkUseVirtualDeviceType->setChecked(true);
@@ -629,6 +639,13 @@ NetworkManager::VpnSetting::Ptr OpenVpnAdvancedWidget::setting() const
             data.insert(QLatin1String(NM_OPENVPN_KEY_COMPRESS), QLatin1String("yes"));
             break;
         }
+        if (m_ui->chkUseAsymCompression) {
+            data.insert(QLatin1String(NM_OPENVPN_KEY_ALLOW_COMPRESSION), QLatin1String("asym"));
+        } else {
+            data.insert(QLatin1String(NM_OPENVPN_KEY_ALLOW_COMPRESSION), QLatin1String("yes"));
+        }
+    } else {
+        data.insert(QLatin1String(NM_OPENVPN_KEY_ALLOW_COMPRESSION), QLatin1String("no"));
     }
 
     if (m_ui->chkUseVirtualDeviceType->isChecked()) {

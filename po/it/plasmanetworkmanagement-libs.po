@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-13 08:43+0000\n"
-"PO-Revision-Date: 2026-01-04 09:52+0100\n"
+"PO-Revision-Date: 2026-01-25 09:12+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1217,7 +1217,7 @@ msgstr "Automatico (solo indirizzi)"
 #: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:239
 #, kde-format
 msgid "Link-Local"
-msgstr "Collegamento locale"
+msgstr "Link-Local"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:244

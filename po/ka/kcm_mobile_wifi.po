@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-26 02:36+0000\n"
 "PO-Revision-Date: 2025-08-18 08:46+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -109,113 +109,113 @@ msgstr "უსაფრთხოება"
 msgid "Security type"
 msgstr "უსაფრთხოების ტიპი"
 
-#: ui/NetworkSettings.qml:98
+#: ui/NetworkSettings.qml:99
 #, kde-format
 msgid "None"
 msgstr "არაფერი"
 
-#: ui/NetworkSettings.qml:99
+#: ui/NetworkSettings.qml:100
 #, kde-format
 msgid "WEP Key"
 msgstr "WEP გასაღები"
 
-#: ui/NetworkSettings.qml:100
+#: ui/NetworkSettings.qml:101
 #, kde-format
 msgid "Dynamic WEP"
 msgstr "დინამიკური WEP"
 
-#: ui/NetworkSettings.qml:101
+#: ui/NetworkSettings.qml:102
 #, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr "WPA/WPA2 პერსონალური"
 
-#: ui/NetworkSettings.qml:102
+#: ui/NetworkSettings.qml:103
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 საწარმოო"
 
-#: ui/NetworkSettings.qml:103
+#: ui/NetworkSettings.qml:104
 #, kde-format
 msgid "WPA3 Personal"
 msgstr "WPA3 პერსონალური"
 
-#: ui/NetworkSettings.qml:104
+#: ui/NetworkSettings.qml:105
 #, kde-format
 msgid "WPA3 Enterprise"
 msgstr "WPA3 საწარმოო"
 
-#: ui/NetworkSettings.qml:142
+#: ui/NetworkSettings.qml:143
 #, kde-format
 msgid "Password"
 msgstr "პაროლი"
 
-#: ui/NetworkSettings.qml:158
+#: ui/NetworkSettings.qml:159
 #, kde-format
 msgid "Authentication:"
 msgstr "ავთენტიკაცია:"
 
-#: ui/NetworkSettings.qml:162
+#: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "TLS"
 msgstr "TLS"
 
-#: ui/NetworkSettings.qml:162
+#: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "LEAP"
 msgstr "LEAP"
 
-#: ui/NetworkSettings.qml:162
+#: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "FAST"
 msgstr "FAST"
 
-#: ui/NetworkSettings.qml:163
+#: ui/NetworkSettings.qml:164
 #, kde-format
 msgid "Tunneled TLS"
 msgstr "TLS გვირაბი (TTLS)"
 
-#: ui/NetworkSettings.qml:164
+#: ui/NetworkSettings.qml:165
 #, kde-format
 msgid "Protected EAP"
 msgstr "დაცული EAP"
 
-#: ui/NetworkSettings.qml:175
+#: ui/NetworkSettings.qml:176
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP-ის მორგება"
 
-#: ui/NetworkSettings.qml:181
+#: ui/NetworkSettings.qml:182
 #, kde-format
 msgid "Method"
 msgstr "მეთოდი"
 
-#: ui/NetworkSettings.qml:182
+#: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Automatic"
 msgstr "ავტომატური"
 
-#: ui/NetworkSettings.qml:182
+#: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Manual"
 msgstr "ხელით"
 
-#: ui/NetworkSettings.qml:198
+#: ui/NetworkSettings.qml:199
 #, kde-format
 msgid "IP Address"
 msgstr "IP მისამართი"
 
-#: ui/NetworkSettings.qml:216
+#: ui/NetworkSettings.qml:217
 #, kde-format
 msgid "Gateway"
 msgstr "ნაგულისხმევი რაუტერი"
 
-#: ui/NetworkSettings.qml:234
+#: ui/NetworkSettings.qml:235
 #, kde-format
 msgid "Network prefix length"
 msgstr "ქსელის პრეფიქსის სიგრძე"
 
-#: ui/NetworkSettings.qml:253
+#: ui/NetworkSettings.qml:254
 #, kde-format
 msgid "DNS"
 msgstr "DNS"

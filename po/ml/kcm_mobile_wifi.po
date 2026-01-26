@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-26 02:36+0000\n"
 "PO-Revision-Date: 2019-12-12 22:31+0000\n"
 "Last-Translator: Vivek KJ Pazhedath <vivekkj2004@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -109,113 +109,113 @@ msgstr ""
 msgid "Security type"
 msgstr ""
 
-#: ui/NetworkSettings.qml:98
+#: ui/NetworkSettings.qml:99
 #, kde-format
 msgid "None"
 msgstr ""
 
-#: ui/NetworkSettings.qml:99
+#: ui/NetworkSettings.qml:100
 #, kde-format
 msgid "WEP Key"
 msgstr ""
 
-#: ui/NetworkSettings.qml:100
+#: ui/NetworkSettings.qml:101
 #, kde-format
 msgid "Dynamic WEP"
 msgstr ""
 
-#: ui/NetworkSettings.qml:101
+#: ui/NetworkSettings.qml:102
 #, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr ""
 
-#: ui/NetworkSettings.qml:102
+#: ui/NetworkSettings.qml:103
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr ""
 
-#: ui/NetworkSettings.qml:103
+#: ui/NetworkSettings.qml:104
 #, kde-format
 msgid "WPA3 Personal"
 msgstr ""
 
-#: ui/NetworkSettings.qml:104
+#: ui/NetworkSettings.qml:105
 #, kde-format
 msgid "WPA3 Enterprise"
 msgstr ""
 
-#: ui/NetworkSettings.qml:142
+#: ui/NetworkSettings.qml:143
 #, kde-format
 msgid "Password"
 msgstr ""
 
-#: ui/NetworkSettings.qml:158
+#: ui/NetworkSettings.qml:159
 #, kde-format
 msgid "Authentication:"
 msgstr ""
 
-#: ui/NetworkSettings.qml:162
+#: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "TLS"
 msgstr ""
 
-#: ui/NetworkSettings.qml:162
+#: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "LEAP"
 msgstr ""
 
-#: ui/NetworkSettings.qml:162
+#: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "FAST"
 msgstr ""
 
-#: ui/NetworkSettings.qml:163
+#: ui/NetworkSettings.qml:164
 #, kde-format
 msgid "Tunneled TLS"
 msgstr ""
 
-#: ui/NetworkSettings.qml:164
+#: ui/NetworkSettings.qml:165
 #, kde-format
 msgid "Protected EAP"
 msgstr ""
 
-#: ui/NetworkSettings.qml:175
+#: ui/NetworkSettings.qml:176
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr ""
 
-#: ui/NetworkSettings.qml:181
+#: ui/NetworkSettings.qml:182
 #, kde-format
 msgid "Method"
 msgstr ""
 
-#: ui/NetworkSettings.qml:182
+#: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Automatic"
 msgstr ""
 
-#: ui/NetworkSettings.qml:182
+#: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Manual"
 msgstr ""
 
-#: ui/NetworkSettings.qml:198
+#: ui/NetworkSettings.qml:199
 #, kde-format
 msgid "IP Address"
 msgstr ""
 
-#: ui/NetworkSettings.qml:216
+#: ui/NetworkSettings.qml:217
 #, kde-format
 msgid "Gateway"
 msgstr ""
 
-#: ui/NetworkSettings.qml:234
+#: ui/NetworkSettings.qml:235
 #, kde-format
 msgid "Network prefix length"
 msgstr ""
 
-#: ui/NetworkSettings.qml:253
+#: ui/NetworkSettings.qml:254
 #, kde-format
 msgid "DNS"
 msgstr ""

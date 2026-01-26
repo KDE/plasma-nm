@@ -56,6 +56,7 @@ Kirigami.PromptDialog {
             id: warning
             text: i18n("Invalid input.")
             visible: false
+            textFormat: Text.PlainText
         }
     }
 }

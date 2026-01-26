@@ -112,6 +112,7 @@ FormCard.FormCardPage {
             ColumnLayout {
                 Controls.Label {
                     text: i18n("Attempts left: %1", sim.unlockRetriesLeft)
+                    textFormat: Text.PlainText
                 }
                 Kirigami.PasswordField {
                     id: unlockPinCurPin

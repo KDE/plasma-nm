@@ -115,6 +115,7 @@ SimpleKCM {
                 visible: savedCard.count == 0
                 padding: Kirigami.Units.gridUnit
                 text: i18n("No wired connection available.")
+                textFormat: Text.PlainText
             }
         }
     }

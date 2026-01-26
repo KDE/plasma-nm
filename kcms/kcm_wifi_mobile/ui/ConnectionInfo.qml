@@ -38,6 +38,7 @@ FormCard.FormCardPage {
             text: i18n("Connected, ↓ %1/s, ↑ %2/s",
                 KCoreAddons.Format.formatByteSize(delegate.rxSpeed),
                 KCoreAddons.Format.formatByteSize(delegate.txSpeed))
+            textFormat: Text.PlainText
         }
     }
 

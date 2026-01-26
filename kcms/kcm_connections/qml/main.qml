@@ -278,6 +278,7 @@ QQC2.Page {
                 Layout.fillWidth: true
                 wrapMode: Text.Wrap
                 text: i18nc("@label %1 is the name of the network the user is connecting to", "Network: %1", passwordPrompt.uniqueName)
+                textFormat: Text.PlainText
             }
             Kirigami.PasswordField {
                 id: passwordField

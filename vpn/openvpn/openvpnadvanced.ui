@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>664</width>
-    <height>705</height>
+    <width>703</width>
+    <height>838</height>
    </rect>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -138,6 +138,20 @@
              <string>Automatic</string>
             </property>
            </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_19">
+         <item>
+          <widget class="QCheckBox" name="chkUseAsymCompression">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <property name="text">
+            <string>Use asymetric compression</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -286,56 +300,56 @@
            </property>
           </widget>
          </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chkMssRestrict">
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkMssRestrict">
          <property name="toolTip">
           <string>Restrict tunnel TCP maximum segment size.</string>
          </property>
          <property name="text">
           <string>Restrict TCP maximum segment size (MSS)</string>
          </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_mtuDisc">
-        <item>
-         <widget class="QCheckBox" name="chkMtuDisc">
-          <property name="toolTip">
-           <string>Control Path MTU discovery behavior.</string>
-          </property>
-          <property name="text">
-           <string>Specify Path MTU discovery:</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="cmbMtuDisc">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <item>
-           <property name="text">
-            <string>No</string>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_mtuDisc">
+         <item>
+          <widget class="QCheckBox" name="chkMtuDisc">
+           <property name="toolTip">
+            <string>Control Path MTU discovery behavior.</string>
            </property>
-          </item>
-          <item>
            <property name="text">
-            <string>Maybe</string>
+            <string>Specify Path MTU discovery:</string>
            </property>
-          </item>
-          <item>
-           <property name="text">
-            <string>Yes</string>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cmbMtuDisc">
+           <property name="enabled">
+            <bool>false</bool>
            </property>
-          </item>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chkRandRemHosts">
+           <item>
+            <property name="text">
+             <string>No</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Maybe</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>Yes</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkRandRemHosts">
          <property name="toolTip">
           <string>Randomize the order of gateways list (remote) as a kind of basic load-
 balancing measure.</string>
@@ -385,30 +399,30 @@ balancing measure.</string>
            </property>
           </widget>
          </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chkAllowPullFqdn">
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkAllowPullFqdn">
          <property name="toolTip">
           <string>Allow pulling of peer DNS names (FQDN) sent by the server.</string>
          </property>
          <property name="text">
           <string>Allow pull of peer DNS names (FQDN)</string>
          </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chkPushPeerInfo">
-        <property name="toolTip">
-         <string>Push client information to the server for diagnostics.</string>
-        </property>
-        <property name="text">
-         <string>push peer info</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chkIpv6TunLink">
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkPushPeerInfo">
+         <property name="toolTip">
+          <string>Push client information to the server for diagnostics.</string>
+         </property>
+         <property name="text">
+          <string>push peer info</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkIpv6TunLink">
          <property name="toolTip">
           <string>Build a tun link capable of forwarding IPv6 traffic.</string>
          </property>
@@ -613,84 +627,84 @@ Block Chaining mode).</string>
            </item>
           </widget>
          </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_dataCiphers">
-        <item>
-         <widget class="QLabel" name="labelDataCiphers">
-          <property name="toolTip">
-           <string>Data channel cipher list to negotiate (OpenVPN 2.5+).</string>
-          </property>
-          <property name="text">
-           <string>Data Ciphers:</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-          <property name="buddy">
-           <cstring>cboDataCiphers</cstring>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="cboDataCiphers">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <item>
-           <property name="text">
-            <string>Obtaining available ciphers…</string>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_dataCiphers">
+         <item>
+          <widget class="QLabel" name="labelDataCiphers">
+           <property name="toolTip">
+            <string>Data channel cipher list to negotiate (OpenVPN 2.5+).</string>
            </property>
-          </item>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_dataCiphersFallback">
-        <item>
-         <widget class="QLabel" name="labelDataCiphersFallback">
-          <property name="toolTip">
-           <string>Fallback data cipher if negotiation fails (OpenVPN 2.5+).</string>
-          </property>
-          <property name="text">
-           <string>Data Ciphers Fallback:</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-          </property>
-          <property name="buddy">
-           <cstring>cboDataCiphersFallback</cstring>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QComboBox" name="cboDataCiphersFallback">
-          <property name="enabled">
-           <bool>false</bool>
-          </property>
-          <item>
            <property name="text">
-            <string>Obtaining available ciphers…</string>
+            <string>Data Ciphers:</string>
            </property>
-          </item>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chkDisableCipherNegotiation">
-        <property name="text">
-         <string>Disable cipher negotiation</string>
-        </property>
-        <property name="toolTip">
-         <string>Disable OpenVPN NCP (cipher negotiation). Requires OpenVPN 2.4+.</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+           <property name="buddy">
+            <cstring>cboDataCiphers</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cboDataCiphers">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Obtaining available ciphers…</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_dataCiphersFallback">
+         <item>
+          <widget class="QLabel" name="labelDataCiphersFallback">
+           <property name="toolTip">
+            <string>Fallback data cipher if negotiation fails (OpenVPN 2.5+).</string>
+           </property>
+           <property name="text">
+            <string>Data Ciphers Fallback:</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+           </property>
+           <property name="buddy">
+            <cstring>cboDataCiphersFallback</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QComboBox" name="cboDataCiphersFallback">
+           <property name="enabled">
+            <bool>false</bool>
+           </property>
+           <item>
+            <property name="text">
+             <string>Obtaining available ciphers…</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkDisableCipherNegotiation">
+         <property name="toolTip">
+          <string>Disable OpenVPN NCP (cipher negotiation). Requires OpenVPN 2.4+.</string>
+         </property>
+         <property name="text">
+          <string>Disable cipher negotiation</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
          <item>
           <widget class="QCheckBox" name="chkUseCustomCipherKey">
            <property name="toolTip">
@@ -1018,9 +1032,9 @@ key usage based on RFC3280 TLS rules.</string>
           </widget>
          </item>
         </layout>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="useExtraTlsAuth">
+       </item>
+       <item>
+        <widget class="QGroupBox" name="useExtraTlsAuth">
          <property name="toolTip">
           <string>Add an additional layer of HMAC authentication.</string>
          </property>
@@ -1112,7 +1126,7 @@ to protect against DoS attacks.</string>
              <string>Additional local certificate file to help verify the peer certificate chain.</string>
             </property>
             <property name="mode">
-             <set>KFile::File|KFile::ExistingOnly|KFile::LocalOnly</set>
+             <set>KFile::Mode::ExistingOnly|KFile::Mode::File|KFile::Mode::LocalOnly</set>
             </property>
            </widget>
           </item>
@@ -1159,11 +1173,11 @@ to protect against DoS attacks.</string>
           </item>
           <item row="4" column="0">
            <widget class="QLabel" name="lblTlsVersionMin">
-            <property name="text">
-             <string>TLS version minimum:</string>
-            </property>
             <property name="toolTip">
              <string>Minimum TLS version (e.g. 1.2). Optional.</string>
+            </property>
+            <property name="text">
+             <string>TLS version minimum:</string>
             </property>
             <property name="buddy">
              <cstring>leTlsVersionMin</cstring>
@@ -1184,11 +1198,11 @@ to protect against DoS attacks.</string>
             </item>
             <item>
              <widget class="QCheckBox" name="chkTlsVersionMinOrHighest">
-              <property name="text">
-               <string>or highest</string>
-              </property>
               <property name="toolTip">
                <string>Allow negotiating higher TLS version than the minimum.</string>
+              </property>
+              <property name="text">
+               <string>or highest</string>
               </property>
              </widget>
             </item>
@@ -1196,11 +1210,11 @@ to protect against DoS attacks.</string>
           </item>
           <item row="5" column="0">
            <widget class="QLabel" name="lblTlsVersionMax">
-            <property name="text">
-             <string>TLS version maximum:</string>
-            </property>
             <property name="toolTip">
              <string>Maximum TLS version (e.g. 1.3). Optional.</string>
+            </property>
+            <property name="text">
+             <string>TLS version maximum:</string>
             </property>
             <property name="buddy">
              <cstring>leTlsVersionMax</cstring>
@@ -1232,63 +1246,63 @@ to protect against DoS attacks.</string>
           </item>
          </layout>
         </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_crlFile">
-        <item>
-         <widget class="QLabel" name="lblCrlVerifyFile">
-          <property name="text">
-           <string>CRL verify file:</string>
-          </property>
-          <property name="toolTip">
-           <string>Path to a local Certificate Revocation List (CRL) file to verify peer certificates.</string>
-          </property>
-          <property name="buddy">
-           <cstring>kurlCrlVerifyFile</cstring>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="KUrlRequester" name="kurlCrlVerifyFile">
-          <property name="toolTip">
-           <string>Path to a local Certificate Revocation List (CRL) file to verify peer certificates.</string>
-          </property>
-          <property name="mode">
-           <set>KFile::File|KFile::ExistingOnly|KFile::LocalOnly</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" name="horizontalLayout_crlDir">
-        <item>
-         <widget class="QLabel" name="lblCrlVerifyDir">
-          <property name="text">
-           <string>CRL verify directory:</string>
-          </property>
-          <property name="toolTip">
-           <string>Path to a local directory containing Certificate Revocation List (CRL) files.</string>
-          </property>
-          <property name="buddy">
-           <cstring>kurlCrlVerifyDir</cstring>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="KUrlRequester" name="kurlCrlVerifyDir">
-          <property name="toolTip">
-           <string>Path to a local directory containing Certificate Revocation List (CRL) files.</string>
-          </property>
-          <property name="mode">
-           <set>KFile::Directory|KFile::ExistingOnly|KFile::LocalOnly</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_crlFile">
+         <item>
+          <widget class="QLabel" name="lblCrlVerifyFile">
+           <property name="toolTip">
+            <string>Path to a local Certificate Revocation List (CRL) file to verify peer certificates.</string>
+           </property>
+           <property name="text">
+            <string>CRL verify file:</string>
+           </property>
+           <property name="buddy">
+            <cstring>kurlCrlVerifyFile</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="KUrlRequester" name="kurlCrlVerifyFile">
+           <property name="toolTip">
+            <string>Path to a local Certificate Revocation List (CRL) file to verify peer certificates.</string>
+           </property>
+           <property name="mode">
+            <set>KFile::Mode::ExistingOnly|KFile::Mode::File|KFile::Mode::LocalOnly</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_crlDir">
+         <item>
+          <widget class="QLabel" name="lblCrlVerifyDir">
+           <property name="toolTip">
+            <string>Path to a local directory containing Certificate Revocation List (CRL) files.</string>
+           </property>
+           <property name="text">
+            <string>CRL verify directory:</string>
+           </property>
+           <property name="buddy">
+            <cstring>kurlCrlVerifyDir</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="KUrlRequester" name="kurlCrlVerifyDir">
+           <property name="toolTip">
+            <string>Path to a local directory containing Certificate Revocation List (CRL) files.</string>
+           </property>
+           <property name="mode">
+            <set>KFile::Mode::Directory|KFile::Mode::ExistingOnly|KFile::Mode::LocalOnly</set>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
      <widget class="QWidget" name="proxyTab">
       <attribute name="title">
        <string>Proxies</string>
@@ -1498,7 +1512,7 @@ to protect against DoS attacks.</string>
    <header>passwordfield.h</header>
   </customwidget>
  </customwidgets>
-  <tabstops>
+ <tabstops>
   <tabstop>sbCustomPort</tabstop>
   <tabstop>sbMtu</tabstop>
   <tabstop>sbCustomFragmentSize</tabstop>

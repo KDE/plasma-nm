@@ -197,12 +197,12 @@ void ConnectionEditorBase::initialize()
 
     if (emptyConnection) {
         UiUtils::setConnectionDefaultPermissions(m_connection);
+    } else {
+        // Status tab showing connection details (first tab)
+        m_statusWidget = new ConnectionStatusWidget(m_connection->uuid());
+        addWidget(m_statusWidget, i18nc("@title:tab Connection status and details", "Status"));
+        updateStatusWidget();
     }
-
-    // Status tab showing connection details (first tab)
-    m_statusWidget = new ConnectionStatusWidget(m_connection->uuid());
-    addWidget(m_statusWidget, i18nc("@title:tab Connection status and details", "Status"));
-    updateStatusWidget();
 
     // General configuration common to all connection types
     auto connectionWidget = new ConnectionWidget(m_connection);

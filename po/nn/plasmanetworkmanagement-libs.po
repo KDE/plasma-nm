@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-23 00:45+0000\n"
+"POT-Creation-Date: 2026-01-28 00:46+0000\n"
 "PO-Revision-Date: 2024-07-07 14:51+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -268,7 +268,7 @@ msgstr "IPv6-namnetenar (sekundær)"
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:204
+#: editor/connectioneditorbase.cpp:203
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
@@ -3832,14 +3832,3 @@ msgstr "Krev NetworkManager 0.9.8. Fann %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Ukjend"
-
-#~ msgid "BSSID:"
-#~ msgstr "BSSID:"
-
-#~ msgid ""
-#~ "This option locks this connection to the Wi-Fi access point (AP) "
-#~ "specified by the\n"
-#~ " BSSID entered here. Example: 00:11:22:33:44:55"
-#~ msgstr ""
-#~ "Dette valet låsar tilkoplinga til Wi-Fi-tilgangspunktet (AP) definert\n"
-#~ " av BSSID-en du skriv inn her. Eksempel: 00:11:22:33:44:55"

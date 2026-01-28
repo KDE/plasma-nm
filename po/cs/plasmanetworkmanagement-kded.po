@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-25 00:46+0000\n"
+"POT-Creation-Date: 2026-01-28 00:46+0000\n"
 "PO-Revision-Date: 2024-08-14 09:04+0200\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -480,12 +480,12 @@ msgstr "VPN spojení '%1' aktivováno."
 msgid "VPN connection '%1' failed to activate."
 msgstr "VPN spojení '%1' se nepovedlo aktivovat."
 
-#: notification.cpp:433 notification.cpp:441
+#: notification.cpp:433 notification.cpp:443
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "VPN spojení '%1' bylo deaktivováno."
 
-#: notification.cpp:444
+#: notification.cpp:446
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -494,54 +494,54 @@ msgstr ""
 "VPN spojení '%1' bylo deaktivováno protože zařízení, které bylo používáno "
 "bylo odpojeno."
 
-#: notification.cpp:447
+#: notification.cpp:449
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "Služba poskytující VPN spojení '%1' byla zastavena."
 
-#: notification.cpp:450
+#: notification.cpp:452
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "IP konfigurace VPN spojení '%1' byla neplatná."
 
-#: notification.cpp:453
+#: notification.cpp:455
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "Vypršel časový limit při pokusu o navázání spojení s VPN službou."
 
-#: notification.cpp:456
+#: notification.cpp:458
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
 msgstr "Vypršel časový limit pro spuštění služby poskytující spojení VPN '%1'."
 
-#: notification.cpp:459
+#: notification.cpp:461
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "Spuštění služby poskytující spojení VPN '%1' selhalo."
 
-#: notification.cpp:462
+#: notification.cpp:464
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "Požadovaná hesla pro VPN připojení '%1' nebyla zadána."
 
-#: notification.cpp:465
+#: notification.cpp:467
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "Autentizace na VPN serveru selhala."
 
-#: notification.cpp:468
+#: notification.cpp:470
 #, kde-format
 msgid "The connection was deleted."
 msgstr "Spojení bylo odstraněno."
 
-#: notification.cpp:559
+#: notification.cpp:561
 #, kde-format
 msgid "No Network Connection"
 msgstr "Žádné síťové připojení"
 
-#: notification.cpp:560
+#: notification.cpp:562
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Již nejste připojeni k síti."

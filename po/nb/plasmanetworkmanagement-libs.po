@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-23 00:45+0000\n"
+"POT-Creation-Date: 2026-01-28 00:46+0000\n"
 "PO-Revision-Date: 2015-04-29 08:44+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -266,7 +266,7 @@ msgstr ""
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:204
+#: editor/connectioneditorbase.cpp:203
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
@@ -3701,6 +3701,3 @@ msgstr "NetworkManager 0.9.8 kreves, fant %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Ukjent"
-
-#~ msgid "BSSID:"
-#~ msgstr "BSSID:"

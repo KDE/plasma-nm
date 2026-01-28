@@ -54,6 +54,7 @@ FormCard.FormCardPage {
                     Layout.fillWidth: true
                     text: i18n("Access Technologies")
                     elide: Text.ElideRight
+                    textFormat: Text.PlainText
                 }
                 Repeater {
                     model: modem.details.accessTechnologies
@@ -63,6 +64,7 @@ FormCard.FormCardPage {
                         color: Kirigami.Theme.disabledTextColor
                         font: Kirigami.Theme.smallFont
                         elide: Text.ElideRight
+                        textFormat: Text.PlainText
                     }
                 }
             }
@@ -113,6 +115,7 @@ FormCard.FormCardPage {
                     Layout.fillWidth: true
                     text: i18n("Owned Numbers:")
                     elide: Text.ElideRight
+                    textFormat: Text.PlainText
                 }
 
                 Repeater {
@@ -123,6 +126,7 @@ FormCard.FormCardPage {
                         color: Kirigami.Theme.disabledTextColor
                         font: Kirigami.Theme.smallFont
                         elide: Text.ElideRight
+                        textFormat: Text.PlainText
                     }
                 }
             }
@@ -237,6 +241,7 @@ FormCard.FormCardPage {
                     Layout.fillWidth: true
                     text: i18n("Drivers:")
                     elide: Text.ElideRight
+                    textFormat: Text.PlainText
                 }
                 Repeater {
                     model: modem.details.drivers
@@ -246,6 +251,7 @@ FormCard.FormCardPage {
                         color: Kirigami.Theme.disabledTextColor
                         font: Kirigami.Theme.smallFont
                         elide: Text.ElideRight
+                        textFormat: Text.PlainText
                     }
                 }
             }

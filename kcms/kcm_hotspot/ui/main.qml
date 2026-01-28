@@ -50,6 +50,7 @@ SimpleKCM {
             ColumnLayout {
                 Controls.Label {
                     text: i18n("Hotspot SSID:")
+                    textFormat: Text.PlainText
                 }
                 Controls.TextField {
                     Layout.fillWidth: true
@@ -57,6 +58,7 @@ SimpleKCM {
                 }
                 Controls.Label {
                     text: i18n("Hotspot Password:")
+                    textFormat: Text.PlainText
                 }
                 Controls.TextField {
                     Layout.fillWidth: true

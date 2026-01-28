@@ -36,6 +36,7 @@ ColumnLayout {
             delegate: PlasmaComponents3.Label {
                 text: KCoreAddons.Format.formatByteSize(QuickChartsControls.AxisLabels.label) + i18n("/s")
                 font: metricsLabel.font
+                textFormat: Text.PlainText
             }
             source: QuickCharts.ChartAxisSource {
                 chart: plotter
@@ -109,6 +110,7 @@ ColumnLayout {
             font: Kirigami.Theme.smallFont
             // Measure 888.8 KiB/s
             text: KCoreAddons.Format.formatByteSize(910131) + i18n("/s")
+            textFormat: Text.PlainText
         }
     }
     QuickChartsControls.Legend {
@@ -130,6 +132,7 @@ ColumnLayout {
                 id: legendLabel
                 font: Kirigami.Theme.smallFont
                 text: model.name
+                textFormat: Text.PlainText
             }
         }
     }

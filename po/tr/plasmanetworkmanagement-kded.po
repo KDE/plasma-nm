@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-28 02:43+0000\n"
 "PO-Revision-Date: 2025-07-31 19:51+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -477,12 +477,12 @@ msgstr "“%1” VPN bağlantısı etkinleştirildi."
 msgid "VPN connection '%1' failed to activate."
 msgstr "“%1” VPN bağlantısı etkinleştirilemedi."
 
-#: notification.cpp:433 notification.cpp:441
+#: notification.cpp:433 notification.cpp:443
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "“%1” VPN bağlantısı devre dışı bırakıldı."
 
-#: notification.cpp:444
+#: notification.cpp:446
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -491,22 +491,22 @@ msgstr ""
 "“%1” VPN bağlantısı, kullandığı aygıtın bağlantısı kesildiği için devre dışı "
 "bırakıldı."
 
-#: notification.cpp:447
+#: notification.cpp:449
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "“%1” VPN bağlantısını sağlayan hizmet durduruldu."
 
-#: notification.cpp:450
+#: notification.cpp:452
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "“%1” VPN bağlantısının IP yapılandırması geçersiz."
 
-#: notification.cpp:453
+#: notification.cpp:455
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "VPN hizmetine bağlantı girişimi zaman aşımına uğradı."
 
-#: notification.cpp:456
+#: notification.cpp:458
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
@@ -514,32 +514,32 @@ msgid ""
 msgstr ""
 "“%1” VPN bağlantısını sağlayan hizmet başlatılırken bir zaman aşımı oluştu."
 
-#: notification.cpp:459
+#: notification.cpp:461
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "“%1” VPN bağlantısını başlatma hizmeti sağlama başarısız oldu."
 
-#: notification.cpp:462
+#: notification.cpp:464
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "“%1” VPN bağlantısı için gerekli gizler sağlanmadı."
 
-#: notification.cpp:465
+#: notification.cpp:467
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "VPN sunucusuna kimlik doğrulama başarısız oldu."
 
-#: notification.cpp:468
+#: notification.cpp:470
 #, kde-format
 msgid "The connection was deleted."
 msgstr "Bağlantı silindi."
 
-#: notification.cpp:559
+#: notification.cpp:561
 #, kde-format
 msgid "No Network Connection"
 msgstr "Ağ Bağlantısı Yok"
 
-#: notification.cpp:560
+#: notification.cpp:562
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Artık bir ağa bağlı değilsiniz."

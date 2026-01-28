@@ -241,7 +241,7 @@ msgstr "GNU/Linux"
 #: openconnectprop.ui:193
 #, kde-format
 msgid "GNU/Linux 64-bit"
-msgstr "GNU/Linux 64-bits"
+msgstr "GNU/Linux 64 bits"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:198

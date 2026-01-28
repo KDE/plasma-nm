@@ -28,56 +28,7 @@
 
 #include <arpa/inet.h>
 
-#include "nm-openvpn-service.h"
-
 K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.json")
-
-#define AUTH_TAG "auth"
-#define AUTH_USER_PASS_TAG "auth-user-pass"
-#define CA_TAG "ca"
-#define CERT_TAG "cert"
-#define CIPHER_TAG "cipher"
-#define CLIENT_TAG "client"
-#define COMPRESS_TAG "compress"
-#define COMP_TAG "comp-lzo"
-#define DEV_TAG "dev"
-#define FRAGMENT_TAG "fragment"
-#define IFCONFIG_TAG "ifconfig"
-#define KEY_TAG "key"
-#define MSSFIX_TAG "mssfix"
-#define PKCS12_TAG "pkcs12"
-#define PORT_TAG "port"
-#define PROTO_TAG "proto"
-#define HTTP_PROXY_TAG "http-proxy"
-#define HTTP_PROXY_RETRY_TAG "http-proxy-retry"
-#define SOCKS_PROXY_TAG "socks-proxy"
-#define SOCKS_PROXY_RETRY_TAG "socks-proxy-retry"
-#define REMOTE_TAG "remote"
-#define RENEG_SEC_TAG "reneg-sec"
-#define RPORT_TAG "rport"
-#define SECRET_TAG "secret"
-#define TLS_AUTH_TAG "tls-auth"
-#define TLS_CRYPT_TAG "tls-crypt"
-#define TLS_CLIENT_TAG "tls-client"
-#define TLS_REMOTE_TAG "tls-remote"
-#define TUNMTU_TAG "tun-mtu"
-#define KEY_DIRECTION_TAG "key-direction"
-
-#define BEGIN_KEY_CA_TAG "<ca>"
-#define END_KEY_CA_TAG "</ca>"
-#define BEGIN_KEY_CERT_TAG "<cert>"
-#define END_KEY_CERT_TAG "</cert>"
-#define BEGIN_KEY_KEY_TAG "<key>"
-#define END_KEY_KEY_TAG "</key>"
-#define BEGIN_KEY_SECRET_TAG "<secret>"
-#define END_KEY_SECRET_TAG "</secret>"
-#define BEGIN_TLS_AUTH_TAG "<tls-auth>"
-#define END_TLS_AUTH_TAG "</tls-auth>"
-#define BEGIN_TLS_CRYPT_TAG "<tls-crypt>"
-#define END_TLS_CRYPT_TAG "</tls-crypt>"
-
-#define PROC_TYPE_TAG "Proc-Type: 4,ENCRYPTED"
-#define PKCS8_TAG "-----BEGIN ENCRYPTED PRIVATE KEY-----"
 
 OpenVpnUiPlugin::OpenVpnUiPlugin(QObject *parent, const QVariantList &)
     : VpnUiPlugin(parent)
@@ -140,167 +91,40 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
         return VpnUiPlugin::ExportResult::fail("Could not open file for writing");
     }
 
-    NetworkManager::VpnSetting::Ptr vpnSetting = connection->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
-    const NMStringMap dataMap = vpnSetting->data();
-    const NMStringMap secretData = vpnSetting->secrets();
+    NMClient *client = nm_client_new(NULL, NULL);
+    const GPtrArray *connections = nm_client_get_connections(client);
+    NMConnection *found = NULL;
 
-    QString line;
-    QString cacert, user_cert, private_key;
-
-    line = QString(CLIENT_TAG) + '\n';
-    expFile.write(line.toLatin1());
-    line = QString(REMOTE_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_REMOTE]
-        + (dataMap[NM_OPENVPN_KEY_PORT].isEmpty() ? "\n" : (' ' + dataMap[NM_OPENVPN_KEY_PORT]) + '\n');
-    expFile.write(line.toLatin1());
-    const QString connType = dataMap.value(NM_OPENVPN_KEY_CONNECTION_TYPE);
-    if (connType == NM_OPENVPN_CONTYPE_TLS //
-        || connType == NM_OPENVPN_CONTYPE_PASSWORD //
-        || connType == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
-        if (!dataMap[NM_OPENVPN_KEY_CA].isEmpty()) {
-            cacert = dataMap[NM_OPENVPN_KEY_CA];
-        }
-    }
-    if (connType == NM_OPENVPN_CONTYPE_TLS //
-        || connType == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
-        if (!dataMap[NM_OPENVPN_KEY_CERT].isEmpty()) {
-            user_cert = dataMap[NM_OPENVPN_KEY_CERT];
-        }
-        if (!dataMap[NM_OPENVPN_KEY_KEY].isEmpty()) {
-            private_key = dataMap[NM_OPENVPN_KEY_KEY];
-        }
-    }
-    // Handle PKCS#12 (all certs are the same file)
-    if (!cacert.isEmpty() && !user_cert.isEmpty() && !private_key.isEmpty() && cacert == user_cert && cacert == private_key) {
-        line = QString("%1 \"%2\"\n").arg(PKCS12_TAG, cacert);
-        expFile.write(line.toLatin1());
-    } else {
-        if (!cacert.isEmpty()) {
-            line = QString("%1 \"%2\"\n").arg(CA_TAG, cacert);
-            expFile.write(line.toLatin1());
-        }
-        if (!user_cert.isEmpty()) {
-            line = QString("%1 \"%2\"\n").arg(CERT_TAG, user_cert);
-            expFile.write(line.toLatin1());
-        }
-        if (!private_key.isEmpty()) {
-            line = QString("%1 \"%2\"\n").arg(KEY_TAG, private_key);
-            expFile.write(line.toLatin1());
-        }
-    }
-    if (connType == NM_OPENVPN_CONTYPE_TLS //
-        || connType == NM_OPENVPN_CONTYPE_STATIC_KEY //
-        || connType == NM_OPENVPN_CONTYPE_PASSWORD //
-        || connType == NM_OPENVPN_CONTYPE_PASSWORD_TLS) {
-        line = QString(AUTH_USER_PASS_TAG) + '\n';
-        expFile.write(line.toLatin1());
-        if (!dataMap[NM_OPENVPN_KEY_TLS_REMOTE].isEmpty()) {
-            line = QString(TLS_REMOTE_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_TLS_REMOTE] + "\"\n";
-            expFile.write(line.toLatin1());
-        }
-        if (!dataMap[NM_OPENVPN_KEY_TA].isEmpty()) {
-            line = QString(TLS_AUTH_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_TA] + '\"'
-                + (dataMap[NM_OPENVPN_KEY_TA_DIR].isEmpty() ? "\n" : (' ' + dataMap[NM_OPENVPN_KEY_TA_DIR]) + '\n');
-            expFile.write(line.toLatin1());
-        }
-    }
-    if (connType == NM_OPENVPN_CONTYPE_STATIC_KEY) {
-        line = QString(SECRET_TAG) + " \"" + dataMap[NM_OPENVPN_KEY_STATIC_KEY] + '\"'
-            + (dataMap[NM_OPENVPN_KEY_STATIC_KEY_DIRECTION].isEmpty() ? "\n" : (' ' + dataMap[NM_OPENVPN_KEY_STATIC_KEY_DIRECTION]) + '\n');
-        expFile.write(line.toLatin1());
-    }
-    if (!dataMap[NM_OPENVPN_KEY_RENEG_SECONDS].isEmpty()) {
-        line = QString(RENEG_SEC_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_RENEG_SECONDS] + '\n';
-        expFile.write(line.toLatin1());
-    }
-    if (!dataMap[NM_OPENVPN_KEY_CIPHER].isEmpty()) {
-        line = QString(CIPHER_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_CIPHER] + '\n';
-        expFile.write(line.toLatin1());
-    }
-    if (dataMap[NM_OPENVPN_KEY_COMP_LZO] == "adaptive") {
-        line = QString(COMP_TAG) + " adaptive\n";
-        expFile.write(line.toLatin1());
-    }
-    if (const QString c = dataMap.value(NM_OPENVPN_KEY_COMPRESS); //
-        c == "yes" || c == "lzo" || c == "lz4" || c == "lz4-v2") {
-        line = QString("%1 %2\n").arg(COMPRESS_TAG, c);
-        expFile.write(line.toLatin1());
-    }
-    if (dataMap[NM_OPENVPN_KEY_MSSFIX] == "yes") {
-        line = QString(MSSFIX_TAG) + '\n';
-        expFile.write(line.toLatin1());
-    }
-    if (!dataMap[NM_OPENVPN_KEY_TUNNEL_MTU].isEmpty()) {
-        line = QString(TUNMTU_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_TUNNEL_MTU] + '\n';
-        expFile.write(line.toLatin1());
-    }
-    if (!dataMap[NM_OPENVPN_KEY_FRAGMENT_SIZE].isEmpty()) {
-        line = QString(FRAGMENT_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_FRAGMENT_SIZE] + '\n';
-        expFile.write(line.toLatin1());
-    }
-    line = QString(DEV_TAG) + (dataMap[NM_OPENVPN_KEY_TAP_DEV] == "yes" ? " tap\n" : " tun\n");
-    expFile.write(line.toLatin1());
-    line = QString(PROTO_TAG) + (dataMap[NM_OPENVPN_KEY_PROTO_TCP] == "yes" ? " tcp\n" : " udp\n");
-    expFile.write(line.toLatin1());
-    // Proxy stuff
-    if (!dataMap[NM_OPENVPN_KEY_PROXY_TYPE].isEmpty()) {
-        QString proxy_port = dataMap[NM_OPENVPN_KEY_PROXY_PORT];
-        if (dataMap[NM_OPENVPN_KEY_PROXY_TYPE] == "http" && !dataMap[NM_OPENVPN_KEY_PROXY_SERVER].isEmpty() && dataMap.contains(NM_OPENVPN_KEY_PROXY_PORT)) {
-            if (proxy_port.toInt() == 0) {
-                proxy_port = "8080";
-            }
-            line = QString(HTTP_PROXY_TAG) + ' ' + dataMap[NM_OPENVPN_KEY_PROXY_SERVER] + ' ' + proxy_port
-                + (dataMap[NM_OPENVPN_KEY_HTTP_PROXY_USERNAME].isEmpty() ? "\n" : (' ' + fileName + "-httpauthfile") + '\n');
-            expFile.write(line.toLatin1());
-            if (dataMap[NM_OPENVPN_KEY_PROXY_RETRY] == "yes") {
-                line = QString(HTTP_PROXY_RETRY_TAG) + '\n';
-                expFile.write(line.toLatin1());
-            }
-            // If there is a username, need to write an authfile
-            if (!dataMap[NM_OPENVPN_KEY_HTTP_PROXY_USERNAME].isEmpty()) {
-                QFile authFile(fileName + "-httpauthfile");
-                if (authFile.open(QFile::WriteOnly | QFile::Text)) {
-                    line = dataMap[NM_OPENVPN_KEY_HTTP_PROXY_USERNAME]
-                        + (dataMap[NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD].isEmpty() ? "\n" : (dataMap[NM_OPENVPN_KEY_HTTP_PROXY_PASSWORD] + '\n'));
-                    authFile.write(line.toLatin1());
-                    authFile.close();
-                }
-            }
-        } else if (dataMap[NM_OPENVPN_KEY_PROXY_TYPE] == "socks" && !dataMap[NM_OPENVPN_KEY_PROXY_SERVER].isEmpty()
-                   && dataMap.contains(NM_OPENVPN_KEY_PROXY_PORT)) {
-            if (proxy_port.toInt() == 0) {
-                proxy_port = "1080";
-            }
-            line = QString(SOCKS_PROXY_TAG) + dataMap[NM_OPENVPN_KEY_PROXY_SERVER] + ' ' + proxy_port + '\n';
-            expFile.write(line.toLatin1());
-            if (dataMap[NM_OPENVPN_KEY_PROXY_RETRY] == "yes") {
-                line = QString(SOCKS_PROXY_RETRY_TAG) + '\n';
-                expFile.write(line.toLatin1());
-            }
+    for (uint i = 0; i < connections->len; i++) {
+        auto conn = static_cast<NMConnection *>(g_ptr_array_index(connections, i));
+        if (nm_connection_get_id(conn) == connection->id()) {
+            found = conn;
+            break;
         }
     }
 
-    NetworkManager::Ipv4Setting::Ptr ipv4Setting = connection->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
-    // Export X-NM-Routes
-    if (!ipv4Setting->routes().isEmpty()) {
-        QString routes;
-        for (const NetworkManager::IpRoute &route : ipv4Setting->routes()) {
-            routes += route.ip().toString() % QLatin1Char('/') % QString::number(route.prefixLength()) % QLatin1Char(' ');
-        }
-        if (!routes.isEmpty()) {
-            routes = "X-NM-Routes " + routes.trimmed();
-            expFile.write(routes.toLatin1() + '\n');
-        }
+    if (!found) {
+        qWarning() << "Could not find connection to export";
+        return VpnUiPlugin::ExportResult::fail(i18n("An unexpected error has occurred"));
     }
-    // Add hard-coded stuff
-    expFile.write(
-        "nobind\n"
-        "auth-nocache\n"
-        "script-security 2\n"
-        "persist-key\n"
-        "persist-tun\n"
-        "user nobody\n"
-        "group nobody\n");
-    expFile.close();
+
+    GError *error = nullptr;
+    GSList *plugins = nm_vpn_plugin_info_list_load();
+    NMVpnPluginInfo *plugin_info = nm_vpn_plugin_info_list_find_by_service(plugins, "org.freedesktop.NetworkManager.openvpn");
+    if (!plugin_info) {
+        return VpnUiPlugin::ExportResult::fail(i18n("NetworkManager is missing support for OpenVPN"));
+    }
+
+    NMVpnEditorPlugin *plugin = nm_vpn_plugin_info_load_editor_plugin(plugin_info, &error);
+
+    nm_vpn_editor_plugin_export(plugin, fileName.toUtf8().constData(), found, &error);
+    if (!connection) {
+        const QString errorMessage = QString::fromUtf8(error->message);
+        g_error_free(error);
+
+        return VpnUiPlugin::ExportResult::fail(errorMessage);
+    }
+
     return VpnUiPlugin::ExportResult::pass();
 }
 

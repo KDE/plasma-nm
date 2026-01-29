@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2024-12-15 15:58+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -27,37 +27,37 @@ msgstr ""
 msgid "Hotspot SSID:"
 msgstr ""
 
-#: ui/main.qml:59
+#: ui/main.qml:60
 #, kde-format
 msgid "Hotspot Password:"
 msgstr ""
 
-#: ui/main.qml:77
+#: ui/main.qml:79
 #, kde-format
 msgid "Hotspot"
 msgstr ""
 
-#: ui/main.qml:78
+#: ui/main.qml:80
 #, kde-format
 msgid "Share your internet connection with other devices as a Wi-Fi network."
 msgstr ""
 
-#: ui/main.qml:93
+#: ui/main.qml:95
 #, kde-format
 msgid "Settings"
 msgstr ""
 
-#: ui/main.qml:100
+#: ui/main.qml:102
 #, kde-format
 msgid "Hotspot SSID"
 msgstr ""
 
-#: ui/main.qml:109
+#: ui/main.qml:111
 #, kde-format
 msgid "Hotspot Password"
 msgstr ""
 
-#: ui/main.qml:117
+#: ui/main.qml:119
 #, kde-format
 msgid "Configure"
 msgstr ""

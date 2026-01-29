@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2025-08-19 16:45+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -28,37 +28,37 @@ msgstr "Erişim Noktasını Yapılandır"
 msgid "Hotspot SSID:"
 msgstr "Erişim noktası SSID’si:"
 
-#: ui/main.qml:59
+#: ui/main.qml:60
 #, kde-format
 msgid "Hotspot Password:"
 msgstr "Erişim noktası parolası:"
 
-#: ui/main.qml:77
+#: ui/main.qml:79
 #, kde-format
 msgid "Hotspot"
 msgstr "Erişim Noktası"
 
-#: ui/main.qml:78
+#: ui/main.qml:80
 #, kde-format
 msgid "Share your internet connection with other devices as a Wi-Fi network."
 msgstr "İnternet bağlantınızı başka aygıtlarla bir Wi-Fi ağı olarak paylaşın."
 
-#: ui/main.qml:93
+#: ui/main.qml:95
 #, kde-format
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: ui/main.qml:100
+#: ui/main.qml:102
 #, kde-format
 msgid "Hotspot SSID"
 msgstr "Erişim Noktası SSID’si"
 
-#: ui/main.qml:109
+#: ui/main.qml:111
 #, kde-format
 msgid "Hotspot Password"
 msgstr "Erişim Noktası Parolası"
 
-#: ui/main.qml:117
+#: ui/main.qml:119
 #, kde-format
 msgid "Configure"
 msgstr "Yapılandır"

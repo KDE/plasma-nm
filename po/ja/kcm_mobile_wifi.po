@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-26 02:36+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2018-11-20 23:16-0800\n"
 "Last-Translator: Japanese KDE translation team <kde-jp@kde.org>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -36,7 +36,7 @@ msgstr ""
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr ""
 
-#: ui/ConnectionInfo.qml:45
+#: ui/ConnectionInfo.qml:46
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
@@ -175,43 +175,43 @@ msgstr ""
 msgid "Protected EAP"
 msgstr ""
 
-#: ui/NetworkSettings.qml:176
+#: ui/NetworkSettings.qml:177
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr ""
 
-#: ui/NetworkSettings.qml:182
+#: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Method"
 msgstr ""
 
-#: ui/NetworkSettings.qml:183
+#: ui/NetworkSettings.qml:184
 #, kde-format
 msgid "Automatic"
 msgstr ""
 
-#: ui/NetworkSettings.qml:183
+#: ui/NetworkSettings.qml:184
 #, kde-format
 msgid "Manual"
 msgstr ""
 
-#: ui/NetworkSettings.qml:199
+#: ui/NetworkSettings.qml:200
 #, kde-format
 msgid "IP Address"
 msgstr ""
 
-#: ui/NetworkSettings.qml:217
+#: ui/NetworkSettings.qml:218
 #, kde-format
 msgid "Gateway"
 msgstr ""
 
-#: ui/NetworkSettings.qml:235
+#: ui/NetworkSettings.qml:236
 #, kde-format
 msgid "Network prefix length"
 msgstr ""
 
-#: ui/NetworkSettings.qml:254
+#: ui/NetworkSettings.qml:255
 #, kde-format
 msgid "DNS"
 msgstr ""

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 02:43+0000\n"
-"PO-Revision-Date: 2026-01-05 01:13+0900\n"
+"PO-Revision-Date: 2026-01-28 21:20+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -31,7 +31,7 @@ msgstr "連線速度"
 #: editor/connectiondetails.cpp:288 editor/connectiondetails.cpp:302
 #, kde-format
 msgid "MAC Address"
-msgstr "硬體位址"
+msgstr "MAC 位址"
 
 #: editor/connectiondetails.cpp:97 editor/settings/bondwidget.cpp:36
 #: editor/settings/bridgewidget.cpp:33 editor/settings/teamwidget.cpp:36
@@ -1685,7 +1685,7 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:47
 #, kde-format
 msgid "Cloned MAC address:"
-msgstr "複製硬體 Mac 位址："
+msgstr "複製硬體 MAC 位址："
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:240

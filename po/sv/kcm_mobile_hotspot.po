@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2025-08-18 13:22+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -27,37 +27,37 @@ msgstr "Anpassa accesspunkt"
 msgid "Hotspot SSID:"
 msgstr "SSID för accesspunkt:"
 
-#: ui/main.qml:59
+#: ui/main.qml:60
 #, kde-format
 msgid "Hotspot Password:"
 msgstr "Lösenord för accesspunkt:"
 
-#: ui/main.qml:77
+#: ui/main.qml:79
 #, kde-format
 msgid "Hotspot"
 msgstr "Accesspunkt"
 
-#: ui/main.qml:78
+#: ui/main.qml:80
 #, kde-format
 msgid "Share your internet connection with other devices as a Wi-Fi network."
 msgstr "Dela Internetanslutning med andra enheter som ett WIFI-nätverk."
 
-#: ui/main.qml:93
+#: ui/main.qml:95
 #, kde-format
 msgid "Settings"
 msgstr "Inställningar"
 
-#: ui/main.qml:100
+#: ui/main.qml:102
 #, kde-format
 msgid "Hotspot SSID"
 msgstr "SSID för accesspunkt"
 
-#: ui/main.qml:109
+#: ui/main.qml:111
 #, kde-format
 msgid "Hotspot Password"
 msgstr "Lösenord för accesspunkt"
 
-#: ui/main.qml:117
+#: ui/main.qml:119
 #, kde-format
 msgid "Configure"
 msgstr "Anpassa"

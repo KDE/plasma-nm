@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2025-08-19 08:53+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: French <French <kde-francophone@kde.org>>\n"
@@ -25,39 +25,39 @@ msgstr "Configurer un point d'accès"
 msgid "Hotspot SSID:"
 msgstr "Paramètre « SSID » du point d'accès :"
 
-#: ui/main.qml:59
+#: ui/main.qml:60
 #, kde-format
 msgid "Hotspot Password:"
 msgstr "Mot de passe du point d'accès :"
 
-#: ui/main.qml:77
+#: ui/main.qml:79
 #, kde-format
 msgid "Hotspot"
 msgstr "Point d'accès"
 
-#: ui/main.qml:78
+#: ui/main.qml:80
 #, kde-format
 msgid "Share your internet connection with other devices as a Wi-Fi network."
 msgstr ""
 "Partager votre connexion à Internet avec d'autres périphériques au sein d'un "
 "réseau Wifi."
 
-#: ui/main.qml:93
+#: ui/main.qml:95
 #, kde-format
 msgid "Settings"
 msgstr "Configuration"
 
-#: ui/main.qml:100
+#: ui/main.qml:102
 #, kde-format
 msgid "Hotspot SSID"
 msgstr "Paramètre « SSID » du point d'accès"
 
-#: ui/main.qml:109
+#: ui/main.qml:111
 #, kde-format
 msgid "Hotspot Password"
 msgstr "Mot de passe du point d'accès"
 
-#: ui/main.qml:117
+#: ui/main.qml:119
 #, kde-format
 msgid "Configure"
 msgstr "Configurer"

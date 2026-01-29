@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-26 02:36+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2025-11-08 21:10-0300\n"
 "Last-Translator: Guilherme Marçal Silva <guimarcalsilva@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -44,7 +44,7 @@ msgstr "Taxas de transferência"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Conectado, ↓ %1/s, ↑ %2/s"
 
-#: ui/ConnectionInfo.qml:45
+#: ui/ConnectionInfo.qml:46
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
@@ -183,43 +183,43 @@ msgstr "TLS encapsulado"
 msgid "Protected EAP"
 msgstr "EAP protegido"
 
-#: ui/NetworkSettings.qml:176
+#: ui/NetworkSettings.qml:177
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "Configurações de IP"
 
-#: ui/NetworkSettings.qml:182
+#: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Method"
 msgstr "Método"
 
-#: ui/NetworkSettings.qml:183
+#: ui/NetworkSettings.qml:184
 #, kde-format
 msgid "Automatic"
 msgstr "Automático"
 
-#: ui/NetworkSettings.qml:183
+#: ui/NetworkSettings.qml:184
 #, kde-format
 msgid "Manual"
 msgstr "Manual"
 
-#: ui/NetworkSettings.qml:199
+#: ui/NetworkSettings.qml:200
 #, kde-format
 msgid "IP Address"
 msgstr "Endereço IP"
 
-#: ui/NetworkSettings.qml:217
+#: ui/NetworkSettings.qml:218
 #, kde-format
 msgid "Gateway"
 msgstr "Gateway"
 
-#: ui/NetworkSettings.qml:235
+#: ui/NetworkSettings.qml:236
 #, kde-format
 msgid "Network prefix length"
 msgstr "Comprimento do prefixo de rede"
 
-#: ui/NetworkSettings.qml:254
+#: ui/NetworkSettings.qml:255
 #, kde-format
 msgid "DNS"
 msgstr "DNS"

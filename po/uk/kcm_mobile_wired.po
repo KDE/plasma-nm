@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2025-10-24 13:19+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -40,7 +40,7 @@ msgstr "Швидкості передавання"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "З'єднано, ↓ %1/с, ↑ %2/с"
 
-#: ui/ConnectionInfo.qml:45
+#: ui/ConnectionInfo.qml:46
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"

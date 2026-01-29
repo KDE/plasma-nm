@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-26 02:36+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2025-09-26 20:24+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -42,7 +42,7 @@ msgstr "Скорость передачи"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Подключено, ↓ %1/с, ↓ %2/с"
 
-#: ui/ConnectionInfo.qml:45
+#: ui/ConnectionInfo.qml:46
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
@@ -181,43 +181,43 @@ msgstr "Туннельный TLS (TTLS)"
 msgid "Protected EAP"
 msgstr "Защищённый EAP (PEAP)"
 
-#: ui/NetworkSettings.qml:176
+#: ui/NetworkSettings.qml:177
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "Параметры IP"
 
-#: ui/NetworkSettings.qml:182
+#: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Method"
 msgstr "Способ"
 
-#: ui/NetworkSettings.qml:183
+#: ui/NetworkSettings.qml:184
 #, kde-format
 msgid "Automatic"
 msgstr "Автоматически"
 
-#: ui/NetworkSettings.qml:183
+#: ui/NetworkSettings.qml:184
 #, kde-format
 msgid "Manual"
 msgstr "Вручную"
 
-#: ui/NetworkSettings.qml:199
+#: ui/NetworkSettings.qml:200
 #, kde-format
 msgid "IP Address"
 msgstr "IP-адрес"
 
-#: ui/NetworkSettings.qml:217
+#: ui/NetworkSettings.qml:218
 #, kde-format
 msgid "Gateway"
 msgstr "Шлюз"
 
-#: ui/NetworkSettings.qml:235
+#: ui/NetworkSettings.qml:236
 #, kde-format
 msgid "Network prefix length"
 msgstr "Длина префикса сети"
 
-#: ui/NetworkSettings.qml:254
+#: ui/NetworkSettings.qml:255
 #, kde-format
 msgid "DNS"
 msgstr "DNS"

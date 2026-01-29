@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -230,7 +230,7 @@ msgstr "अक्षमीकरणम्"
 msgid "Enabling"
 msgstr "सक्षमीकरणम्"
 
-#: modemdetails.cpp:264 ui/ModemPage.qml:83
+#: modemdetails.cpp:264 ui/ModemPage.qml:85
 #, kde-format
 msgid "Enabled"
 msgstr "सक्षमम्"
@@ -355,12 +355,12 @@ msgstr "प्रतिबन्धितस्थानीयसञ्चाल
 msgid "Scanning networks failed: %1"
 msgstr "संजालस्य स्कैनिङ्गं विफलम्: %1"
 
-#: modemdetails.cpp:434 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:434 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "Yes"
 msgstr "आम्‌"
 
-#: modemdetails.cpp:436 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:436 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "No"
 msgstr "नहि"
@@ -680,102 +680,102 @@ msgstr "मोडेम विवरण"
 msgid "Access Technologies"
 msgstr "अभिगम प्रौद्योगिकी"
 
-#: ui/ModemPage.qml:75
+#: ui/ModemPage.qml:77
 #, kde-format
 msgid "IMEI"
 msgstr "इमेइ"
 
-#: ui/ModemPage.qml:91
+#: ui/ModemPage.qml:93
 #, kde-format
 msgid "Manufacturer"
 msgstr "निर्माता"
 
-#: ui/ModemPage.qml:99
+#: ui/ModemPage.qml:101
 #, kde-format
 msgid "Model"
 msgstr "प्रतिकृति"
 
-#: ui/ModemPage.qml:114
+#: ui/ModemPage.qml:116
 #, kde-format
 msgid "Owned Numbers:"
 msgstr "स्वामित्व संख्याः :"
 
-#: ui/ModemPage.qml:135
+#: ui/ModemPage.qml:139
 #, kde-format
 msgid "Revision"
 msgstr "कार्यदर्शन"
 
-#: ui/ModemPage.qml:143
+#: ui/ModemPage.qml:147
 #, kde-format
 msgid "Signal Quality"
 msgstr "संकेत गुणवत्ता"
 
-#: ui/ModemPage.qml:151
+#: ui/ModemPage.qml:155
 #, kde-format
 msgid "State"
 msgstr "राज्यम्‌"
 
-#: ui/ModemPage.qml:159
+#: ui/ModemPage.qml:163
 #, kde-format
 msgid "Failure Reason"
 msgstr "असफलता कारणम्"
 
-#: ui/ModemPage.qml:167
+#: ui/ModemPage.qml:171
 #, kde-format
 msgid "Registration State"
 msgstr "पञ्जीकरण राज्य"
 
-#: ui/ModemPage.qml:175
+#: ui/ModemPage.qml:179
 #, kde-format
 msgid "Roaming"
 msgstr "भ्रमणम्"
 
-#: ui/ModemPage.qml:183
+#: ui/ModemPage.qml:187
 #, kde-format
 msgid "Firmware Version"
 msgstr "फर्मवेयर संस्करणम्"
 
-#: ui/ModemPage.qml:191
+#: ui/ModemPage.qml:195
 #, kde-format
 msgid "Interface Name"
 msgstr "अन्तरफलकस्य नाम"
 
-#: ui/ModemPage.qml:199
+#: ui/ModemPage.qml:203
 #, kde-format
 msgid "Metered"
 msgstr "मीटर् कृतः"
 
-#: ui/ModemPage.qml:207
+#: ui/ModemPage.qml:211
 #, kde-format
 msgid "Active NetworkManager Connection"
 msgstr "सक्रिय NetworkManager संयोजन"
 
-#: ui/ModemPage.qml:215
+#: ui/ModemPage.qml:219
 #, kde-format
 msgid "Device"
 msgstr "उपकरणम्‌"
 
-#: ui/ModemPage.qml:223
+#: ui/ModemPage.qml:227
 #, kde-format
 msgid "Device ID"
 msgstr "डिवाइस आईडी"
 
-#: ui/ModemPage.qml:238
+#: ui/ModemPage.qml:242
 #, kde-format
 msgid "Drivers:"
 msgstr "चालकाः :"
 
-#: ui/ModemPage.qml:258
+#: ui/ModemPage.qml:264
 #, kde-format
 msgid "Plugin"
 msgstr "प्लगइन"
 
-#: ui/ModemPage.qml:266
+#: ui/ModemPage.qml:272
 #, kde-format
 msgid "Power State"
 msgstr "शक्ति राज्य"
 
-#: ui/ModemPage.qml:274
+#: ui/ModemPage.qml:280
 #, kde-format
 msgid "SIM Path"
 msgstr "सिम पथ"
@@ -883,47 +883,47 @@ msgstr "सिम अनलॉक करू"
 msgid "Attempts left: %1"
 msgstr "प्रयत्नाः अवशिष्टाः: %1"
 
-#: ui/SimLockPage.qml:118
+#: ui/SimLockPage.qml:119
 #, kde-format
 msgid "Enter PIN"
 msgstr "पिन प्रविष्टं कुर्वन्तु"
 
-#: ui/SimLockPage.qml:126
+#: ui/SimLockPage.qml:127
 #, kde-format
 msgid "Change SIM PIN"
 msgstr "सिम पिन परिवर्तयन्तु"
 
-#: ui/SimLockPage.qml:145 ui/SimLockPage.qml:210
+#: ui/SimLockPage.qml:146 ui/SimLockPage.qml:211
 #, kde-format
 msgid "PINs don't match!"
 msgstr "पिनः न मेलति!"
 
-#: ui/SimLockPage.qml:151 ui/SimLockPage.qml:216
+#: ui/SimLockPage.qml:152 ui/SimLockPage.qml:217
 #, kde-format
 msgid "PINs must be between 4 and 8 digits!"
 msgstr "पिन ४ तः ८ अङ्कानां मध्ये भवितुमर्हति!"
 
-#: ui/SimLockPage.qml:156 ui/SimLockPage.qml:183
+#: ui/SimLockPage.qml:157 ui/SimLockPage.qml:184
 #, kde-format
 msgid "Current PIN"
 msgstr "वर्तमान पिन"
 
-#: ui/SimLockPage.qml:161 ui/SimLockPage.qml:221
+#: ui/SimLockPage.qml:162 ui/SimLockPage.qml:222
 #, kde-format
 msgid "New PIN"
 msgstr "नवीन पिन"
 
-#: ui/SimLockPage.qml:166 ui/SimLockPage.qml:226
+#: ui/SimLockPage.qml:167 ui/SimLockPage.qml:227
 #, kde-format
 msgid "Confirm PIN"
 msgstr "पिन पुष्टि करें"
 
-#: ui/SimLockPage.qml:174
+#: ui/SimLockPage.qml:175
 #, kde-format
 msgid "Remove SIM PIN"
 msgstr "SIM PIN निष्कासयन्तु"
 
-#: ui/SimLockPage.qml:191
+#: ui/SimLockPage.qml:192
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "सिम पिन योजयन्तु"

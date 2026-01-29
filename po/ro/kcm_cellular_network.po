@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# SPDX-FileCopyrightText: 2025 Sergiu Bivol <sergiu@cip.md>
+# SPDX-FileCopyrightText: 2025, 2026 Sergiu Bivol <sergiu@cip.md>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2025-10-19 21:36+0100\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
+"PO-Revision-Date: 2026-01-28 21:36+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -21,22 +21,22 @@ msgstr ""
 #: modem.cpp:128
 #, kde-format
 msgid "Error resetting the modem: %1"
-msgstr ""
+msgstr "Eroare la reinițializarea modemului: %1"
 
 #: modem.cpp:262 modem.cpp:434
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
-msgstr ""
+msgstr "Eroare la actualizarea configurărilor conexiunii pentru %1: %2."
 
 #: modem.cpp:340
 #, kde-format
 msgid "Error activating connection: %1"
-msgstr ""
+msgstr "Eroare la activarea conexiunii: %1"
 
 #: modem.cpp:378
 #, kde-format
 msgid "Error adding connection: %1"
-msgstr ""
+msgstr "Eroare la adăugarea conexiunii: %1"
 
 #: modem.cpp:395
 #, kde-format
@@ -72,27 +72,27 @@ msgstr "Se pregătește"
 #: modem.cpp:530
 #, kde-format
 msgid "ConfiguringHardware"
-msgstr ""
+msgstr "ConfigurareEchipament"
 
 #: modem.cpp:532
 #, kde-format
 msgid "NeedAuth"
-msgstr ""
+msgstr "TrebuieAutentificare"
 
 #: modem.cpp:534
 #, kde-format
 msgid "ConfiguringIp"
-msgstr ""
+msgstr "ConfigurareIp"
 
 #: modem.cpp:536
 #, kde-format
 msgid "CheckingIp"
-msgstr ""
+msgstr "VerificareIp"
 
 #: modem.cpp:538
 #, kde-format
 msgid "WaitingForSecondaries"
-msgstr ""
+msgstr "SeAșteaptăSecundarele"
 
 #: modem.cpp:540
 #, kde-format
@@ -229,7 +229,7 @@ msgstr "Se dezactivează"
 msgid "Enabling"
 msgstr "Se activează"
 
-#: modemdetails.cpp:264 ui/ModemPage.qml:83
+#: modemdetails.cpp:264 ui/ModemPage.qml:85
 #, kde-format
 msgid "Enabled"
 msgstr "Activat"
@@ -292,7 +292,7 @@ msgstr "eSIM nu e inițializat."
 #: modemdetails.cpp:316
 #, kde-format
 msgid "Not registered, not searching for new operator to register."
-msgstr ""
+msgstr "Neînregistrat, nu se caută operator nou pentru înregistrare."
 
 #: modemdetails.cpp:318
 #, kde-format
@@ -354,12 +354,12 @@ msgstr ""
 msgid "Scanning networks failed: %1"
 msgstr "Căutarea rețelelor a eșuat: %1"
 
-#: modemdetails.cpp:434 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:434 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "Yes"
 msgstr "Da"
 
-#: modemdetails.cpp:436 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:436 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "No"
 msgstr "Nu"
@@ -653,7 +653,7 @@ msgstr "SIM %1"
 #: ui/main.qml:144
 #, kde-format
 msgid "View SIM %1 details."
-msgstr ""
+msgstr "Vezi detalii pentru SIM %1."
 
 #: ui/ModemPage.qml:20
 #, kde-format
@@ -680,102 +680,102 @@ msgstr "Detalii modem"
 msgid "Access Technologies"
 msgstr "Tehnologii de acces"
 
-#: ui/ModemPage.qml:75
+#: ui/ModemPage.qml:77
 #, kde-format
 msgid "IMEI"
 msgstr "IMEI"
 
-#: ui/ModemPage.qml:91
+#: ui/ModemPage.qml:93
 #, kde-format
 msgid "Manufacturer"
 msgstr "Producător"
 
-#: ui/ModemPage.qml:99
+#: ui/ModemPage.qml:101
 #, kde-format
 msgid "Model"
 msgstr "Model"
 
-#: ui/ModemPage.qml:114
+#: ui/ModemPage.qml:116
 #, kde-format
 msgid "Owned Numbers:"
 msgstr "Numere deținute:"
 
-#: ui/ModemPage.qml:135
+#: ui/ModemPage.qml:139
 #, kde-format
 msgid "Revision"
 msgstr "Revizie"
 
-#: ui/ModemPage.qml:143
+#: ui/ModemPage.qml:147
 #, kde-format
 msgid "Signal Quality"
 msgstr "Calitate semnal"
 
-#: ui/ModemPage.qml:151
+#: ui/ModemPage.qml:155
 #, kde-format
 msgid "State"
 msgstr "Stare"
 
-#: ui/ModemPage.qml:159
+#: ui/ModemPage.qml:163
 #, kde-format
 msgid "Failure Reason"
 msgstr "Motivul eșecului"
 
-#: ui/ModemPage.qml:167
+#: ui/ModemPage.qml:171
 #, kde-format
 msgid "Registration State"
 msgstr "Starea înregistrării"
 
-#: ui/ModemPage.qml:175
+#: ui/ModemPage.qml:179
 #, kde-format
 msgid "Roaming"
 msgstr "Roaming"
 
-#: ui/ModemPage.qml:183
+#: ui/ModemPage.qml:187
 #, kde-format
 msgid "Firmware Version"
 msgstr "Versiune microcod"
 
-#: ui/ModemPage.qml:191
+#: ui/ModemPage.qml:195
 #, kde-format
 msgid "Interface Name"
 msgstr "Denumire interfață"
 
-#: ui/ModemPage.qml:199
+#: ui/ModemPage.qml:203
 #, kde-format
 msgid "Metered"
 msgstr "Contorizată"
 
-#: ui/ModemPage.qml:207
+#: ui/ModemPage.qml:211
 #, kde-format
 msgid "Active NetworkManager Connection"
-msgstr ""
+msgstr "Conexiune NetworkManager activă"
 
-#: ui/ModemPage.qml:215
+#: ui/ModemPage.qml:219
 #, kde-format
 msgid "Device"
 msgstr "Dispozitiv"
 
-#: ui/ModemPage.qml:223
+#: ui/ModemPage.qml:227
 #, kde-format
 msgid "Device ID"
 msgstr "ID dispozitiv"
 
-#: ui/ModemPage.qml:238
+#: ui/ModemPage.qml:242
 #, kde-format
 msgid "Drivers:"
 msgstr "Driver-e:"
 
-#: ui/ModemPage.qml:258
+#: ui/ModemPage.qml:264
 #, kde-format
 msgid "Plugin"
 msgstr "Extensie"
 
-#: ui/ModemPage.qml:266
+#: ui/ModemPage.qml:272
 #, kde-format
 msgid "Power State"
 msgstr "Starea alimentării"
 
-#: ui/ModemPage.qml:274
+#: ui/ModemPage.qml:280
 #, kde-format
 msgid "SIM Path"
 msgstr "Cale SIM"
@@ -879,47 +879,47 @@ msgstr "Deblochează SIM"
 msgid "Attempts left: %1"
 msgstr "Încercări rămase: %1"
 
-#: ui/SimLockPage.qml:118
+#: ui/SimLockPage.qml:119
 #, kde-format
 msgid "Enter PIN"
 msgstr "Introduceți PIN-ul"
 
-#: ui/SimLockPage.qml:126
+#: ui/SimLockPage.qml:127
 #, kde-format
 msgid "Change SIM PIN"
 msgstr "Schimbă PIN-ul SIM-ului"
 
-#: ui/SimLockPage.qml:145 ui/SimLockPage.qml:210
+#: ui/SimLockPage.qml:146 ui/SimLockPage.qml:211
 #, kde-format
 msgid "PINs don't match!"
 msgstr "PIN-urile nu se potrivesc!"
 
-#: ui/SimLockPage.qml:151 ui/SimLockPage.qml:216
+#: ui/SimLockPage.qml:152 ui/SimLockPage.qml:217
 #, kde-format
 msgid "PINs must be between 4 and 8 digits!"
 msgstr "PIN-ul trebuie să aibă între 4 și 8 cifre!"
 
-#: ui/SimLockPage.qml:156 ui/SimLockPage.qml:183
+#: ui/SimLockPage.qml:157 ui/SimLockPage.qml:184
 #, kde-format
 msgid "Current PIN"
 msgstr "PIN actual"
 
-#: ui/SimLockPage.qml:161 ui/SimLockPage.qml:221
+#: ui/SimLockPage.qml:162 ui/SimLockPage.qml:222
 #, kde-format
 msgid "New PIN"
 msgstr "PIN nou"
 
-#: ui/SimLockPage.qml:166 ui/SimLockPage.qml:226
+#: ui/SimLockPage.qml:167 ui/SimLockPage.qml:227
 #, kde-format
 msgid "Confirm PIN"
 msgstr "Confirmare PIN"
 
-#: ui/SimLockPage.qml:174
+#: ui/SimLockPage.qml:175
 #, kde-format
 msgid "Remove SIM PIN"
 msgstr "Elimină PIN SIM"
 
-#: ui/SimLockPage.qml:191
+#: ui/SimLockPage.qml:192
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "Adaugă PIN SIM"
@@ -997,29 +997,29 @@ msgstr "EID"
 #: ui/SimPage.qml:142
 #, kde-format
 msgid "Operator Code (modem)"
-msgstr ""
+msgstr "Cod operator (modem)"
 
 #: ui/SimPage.qml:150
 #, kde-format
 msgid "Operator Name (modem)"
-msgstr ""
+msgstr "Denumire operator (modem)"
 
 #: ui/SimPage.qml:158
 #, kde-format
 msgid "Operator Code (provided by SIM)"
-msgstr ""
+msgstr "Cod operator (furnizat de SIM)"
 
 #: ui/SimPage.qml:166
 #, kde-format
 msgid "Operator Name (provided by SIM)"
-msgstr ""
+msgstr "Denumire operator (furnizată de SIM)"
 
 #: ui/SimPage.qml:174
 #, kde-format
 msgid "SIM ID"
-msgstr ""
+msgstr "Identificator SIM"
 
 #: ui/SimPage.qml:190
 #, kde-format
 msgid "Emergency Numbers"
-msgstr ""
+msgstr "Numere de urgență"

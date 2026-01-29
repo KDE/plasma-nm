@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2025-02-27 23:06+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -228,7 +228,7 @@ msgstr "Uitschakelen"
 msgid "Enabling"
 msgstr "Activeren"
 
-#: modemdetails.cpp:264 ui/ModemPage.qml:83
+#: modemdetails.cpp:264 ui/ModemPage.qml:85
 #, kde-format
 msgid "Enabled"
 msgstr "Ingeschakeld"
@@ -353,12 +353,12 @@ msgstr "Aangekoppeld voor toegang tot beperkte lokale operatorservices."
 msgid "Scanning networks failed: %1"
 msgstr "Scannen van netwerken is mislukt: %1"
 
-#: modemdetails.cpp:434 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:434 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "Yes"
 msgstr "Ja"
 
-#: modemdetails.cpp:436 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:436 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "No"
 msgstr "Nee"
@@ -678,102 +678,102 @@ msgstr "Modemdetails"
 msgid "Access Technologies"
 msgstr "Toegangstechnologieën"
 
-#: ui/ModemPage.qml:75
+#: ui/ModemPage.qml:77
 #, kde-format
 msgid "IMEI"
 msgstr "IMEI"
 
-#: ui/ModemPage.qml:91
+#: ui/ModemPage.qml:93
 #, kde-format
 msgid "Manufacturer"
 msgstr "Fabrikant"
 
-#: ui/ModemPage.qml:99
+#: ui/ModemPage.qml:101
 #, kde-format
 msgid "Model"
 msgstr "Model"
 
-#: ui/ModemPage.qml:114
+#: ui/ModemPage.qml:116
 #, kde-format
 msgid "Owned Numbers:"
 msgstr "Nummers in bezit:"
 
-#: ui/ModemPage.qml:135
+#: ui/ModemPage.qml:139
 #, kde-format
 msgid "Revision"
 msgstr "Revisie"
 
-#: ui/ModemPage.qml:143
+#: ui/ModemPage.qml:147
 #, kde-format
 msgid "Signal Quality"
 msgstr "Signaalkwaliteit"
 
-#: ui/ModemPage.qml:151
+#: ui/ModemPage.qml:155
 #, kde-format
 msgid "State"
 msgstr "Status"
 
-#: ui/ModemPage.qml:159
+#: ui/ModemPage.qml:163
 #, kde-format
 msgid "Failure Reason"
 msgstr "Reden van mislukken"
 
-#: ui/ModemPage.qml:167
+#: ui/ModemPage.qml:171
 #, kde-format
 msgid "Registration State"
 msgstr "Registratiestatus"
 
-#: ui/ModemPage.qml:175
+#: ui/ModemPage.qml:179
 #, kde-format
 msgid "Roaming"
 msgstr "Roaming"
 
-#: ui/ModemPage.qml:183
+#: ui/ModemPage.qml:187
 #, kde-format
 msgid "Firmware Version"
 msgstr "Firmwareversie"
 
-#: ui/ModemPage.qml:191
+#: ui/ModemPage.qml:195
 #, kde-format
 msgid "Interface Name"
 msgstr "Interfacenaam:"
 
-#: ui/ModemPage.qml:199
+#: ui/ModemPage.qml:203
 #, kde-format
 msgid "Metered"
 msgstr "Wordt gemeten"
 
-#: ui/ModemPage.qml:207
+#: ui/ModemPage.qml:211
 #, kde-format
 msgid "Active NetworkManager Connection"
 msgstr "Actieve verbinding via NetworkManager"
 
-#: ui/ModemPage.qml:215
+#: ui/ModemPage.qml:219
 #, kde-format
 msgid "Device"
 msgstr "Apparaat"
 
-#: ui/ModemPage.qml:223
+#: ui/ModemPage.qml:227
 #, kde-format
 msgid "Device ID"
 msgstr "Apparaat-id"
 
-#: ui/ModemPage.qml:238
+#: ui/ModemPage.qml:242
 #, kde-format
 msgid "Drivers:"
 msgstr "Stuurprogramma's:"
 
-#: ui/ModemPage.qml:258
+#: ui/ModemPage.qml:264
 #, kde-format
 msgid "Plugin"
 msgstr "Plug-in"
 
-#: ui/ModemPage.qml:266
+#: ui/ModemPage.qml:272
 #, kde-format
 msgid "Power State"
 msgstr "Energiestatus"
 
-#: ui/ModemPage.qml:274
+#: ui/ModemPage.qml:280
 #, kde-format
 msgid "SIM Path"
 msgstr "Pad van SIM"
@@ -884,47 +884,47 @@ msgstr "SIM ontgrendelen"
 msgid "Attempts left: %1"
 msgstr "Nog %1 pogingen over"
 
-#: ui/SimLockPage.qml:118
+#: ui/SimLockPage.qml:119
 #, kde-format
 msgid "Enter PIN"
 msgstr "PIN invoeren"
 
-#: ui/SimLockPage.qml:126
+#: ui/SimLockPage.qml:127
 #, kde-format
 msgid "Change SIM PIN"
 msgstr "PIN van SIM wijzigen"
 
-#: ui/SimLockPage.qml:145 ui/SimLockPage.qml:210
+#: ui/SimLockPage.qml:146 ui/SimLockPage.qml:211
 #, kde-format
 msgid "PINs don't match!"
 msgstr "PINnen komen niet overeen!"
 
-#: ui/SimLockPage.qml:151 ui/SimLockPage.qml:216
+#: ui/SimLockPage.qml:152 ui/SimLockPage.qml:217
 #, kde-format
 msgid "PINs must be between 4 and 8 digits!"
 msgstr "PINnen moeten tussen 4 en 8 cijfers hebben!"
 
-#: ui/SimLockPage.qml:156 ui/SimLockPage.qml:183
+#: ui/SimLockPage.qml:157 ui/SimLockPage.qml:184
 #, kde-format
 msgid "Current PIN"
 msgstr "Huidige PIN"
 
-#: ui/SimLockPage.qml:161 ui/SimLockPage.qml:221
+#: ui/SimLockPage.qml:162 ui/SimLockPage.qml:222
 #, kde-format
 msgid "New PIN"
 msgstr "Nieuwe PIN"
 
-#: ui/SimLockPage.qml:166 ui/SimLockPage.qml:226
+#: ui/SimLockPage.qml:167 ui/SimLockPage.qml:227
 #, kde-format
 msgid "Confirm PIN"
 msgstr "PIN bevestigen"
 
-#: ui/SimLockPage.qml:174
+#: ui/SimLockPage.qml:175
 #, kde-format
 msgid "Remove SIM PIN"
 msgstr "PIN van SIM verwijderen"
 
-#: ui/SimLockPage.qml:191
+#: ui/SimLockPage.qml:192
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "PIN van SIM toevoegen"

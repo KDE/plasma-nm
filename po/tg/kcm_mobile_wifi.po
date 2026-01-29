@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-26 02:36+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2019-11-12 21:55+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -39,7 +39,7 @@ msgstr ""
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr ""
 
-#: ui/ConnectionInfo.qml:45
+#: ui/ConnectionInfo.qml:46
 #, fuzzy, kde-format
 #| msgid "Connection Name"
 msgctxt "@title:group"
@@ -189,47 +189,47 @@ msgstr "TLS-и ниҳонӣ"
 msgid "Protected EAP"
 msgstr "EAP-и ҳифзшуда"
 
-#: ui/NetworkSettings.qml:176
+#: ui/NetworkSettings.qml:177
 #, fuzzy, kde-format
 #| msgid "IP settings"
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "Танзимоти IP"
 
-#: ui/NetworkSettings.qml:182
+#: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Method"
 msgstr ""
 
-#: ui/NetworkSettings.qml:183
+#: ui/NetworkSettings.qml:184
 #, kde-format
 msgid "Automatic"
 msgstr "Худкор"
 
-#: ui/NetworkSettings.qml:183
+#: ui/NetworkSettings.qml:184
 #, kde-format
 msgid "Manual"
 msgstr "Дастӣ"
 
-#: ui/NetworkSettings.qml:199
+#: ui/NetworkSettings.qml:200
 #, fuzzy, kde-format
 #| msgid "IP Address:"
 msgid "IP Address"
 msgstr "Нишонии IP:"
 
-#: ui/NetworkSettings.qml:217
+#: ui/NetworkSettings.qml:218
 #, fuzzy, kde-format
 #| msgid "Gateway:"
 msgid "Gateway"
 msgstr "Нишонии асосӣ:"
 
-#: ui/NetworkSettings.qml:235
+#: ui/NetworkSettings.qml:236
 #, fuzzy, kde-format
 #| msgid "Network prefix length:"
 msgid "Network prefix length"
 msgstr "Дарозии пешванди шабака:"
 
-#: ui/NetworkSettings.qml:254
+#: ui/NetworkSettings.qml:255
 #, fuzzy, kde-format
 #| msgid "DNS:"
 msgid "DNS"

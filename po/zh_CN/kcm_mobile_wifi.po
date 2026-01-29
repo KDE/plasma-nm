@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-26 02:36+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -39,7 +39,7 @@ msgstr "传输速率"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "已连接，↓ %1/秒，↑ %2/秒"
 
-#: ui/ConnectionInfo.qml:45
+#: ui/ConnectionInfo.qml:46
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
@@ -178,43 +178,43 @@ msgstr "基于隧道的 TLS"
 msgid "Protected EAP"
 msgstr "受保护的 EAP"
 
-#: ui/NetworkSettings.qml:176
+#: ui/NetworkSettings.qml:177
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "IP 设置"
 
-#: ui/NetworkSettings.qml:182
+#: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Method"
 msgstr "方法"
 
-#: ui/NetworkSettings.qml:183
+#: ui/NetworkSettings.qml:184
 #, kde-format
 msgid "Automatic"
 msgstr "自动"
 
-#: ui/NetworkSettings.qml:183
+#: ui/NetworkSettings.qml:184
 #, kde-format
 msgid "Manual"
 msgstr "手动"
 
-#: ui/NetworkSettings.qml:199
+#: ui/NetworkSettings.qml:200
 #, kde-format
 msgid "IP Address"
 msgstr "IP 地址"
 
-#: ui/NetworkSettings.qml:217
+#: ui/NetworkSettings.qml:218
 #, kde-format
 msgid "Gateway"
 msgstr "网关"
 
-#: ui/NetworkSettings.qml:235
+#: ui/NetworkSettings.qml:236
 #, kde-format
 msgid "Network prefix length"
 msgstr "网络前缀长度"
 
-#: ui/NetworkSettings.qml:254
+#: ui/NetworkSettings.qml:255
 #, kde-format
 msgid "DNS"
 msgstr "DNS"

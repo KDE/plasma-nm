@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2023-12-19 08:09+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -28,39 +28,39 @@ msgstr "Configurar un punto de acceso"
 msgid "Hotspot SSID:"
 msgstr "SSID do punto de acceso"
 
-#: ui/main.qml:59
+#: ui/main.qml:60
 #, fuzzy, kde-format
 #| msgid "Hotspot Password"
 msgid "Hotspot Password:"
 msgstr "Contrasinal do punto de acceso"
 
-#: ui/main.qml:77
+#: ui/main.qml:79
 #, kde-format
 msgid "Hotspot"
 msgstr "Punto de acceso"
 
-#: ui/main.qml:78
+#: ui/main.qml:80
 #, kde-format
 msgid "Share your internet connection with other devices as a Wi-Fi network."
 msgstr ""
 "Compartir a conexión de Internet con outros dispositivos como rede sen fíos."
 
-#: ui/main.qml:93
+#: ui/main.qml:95
 #, kde-format
 msgid "Settings"
 msgstr "Configuración"
 
-#: ui/main.qml:100
+#: ui/main.qml:102
 #, kde-format
 msgid "Hotspot SSID"
 msgstr "SSID do punto de acceso"
 
-#: ui/main.qml:109
+#: ui/main.qml:111
 #, kde-format
 msgid "Hotspot Password"
 msgstr "Contrasinal do punto de acceso"
 
-#: ui/main.qml:117
+#: ui/main.qml:119
 #, fuzzy, kde-format
 #| msgid "Configure Hotspot"
 msgid "Configure"

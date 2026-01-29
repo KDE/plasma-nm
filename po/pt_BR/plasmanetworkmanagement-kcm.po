@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-18 00:45+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2025-11-18 07:08-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -236,12 +236,12 @@ msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "Rede: %1"
 
-#: qml/main.qml:300
+#: qml/main.qml:301
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "A senha deve ser uma chave WEP válida"
 
-#: qml/main.qml:301
+#: qml/main.qml:302
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "A senha deve ter entre 8 e 64 caracteres"

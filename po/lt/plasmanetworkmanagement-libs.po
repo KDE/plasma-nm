@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 02:43+0000\n"
-"PO-Revision-Date: 2026-01-08 22:00+0200\n"
+"PO-Revision-Date: 2026-01-28 15:45+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -1218,14 +1218,14 @@ msgstr "Automatinis (tik adresai)"
 #: editor/settings/ui/ipv4.ui:59 editor/settings/ui/ipv6.ui:239
 #, kde-format
 msgid "Link-Local"
-msgstr "Tik vietinis (link-local)"
+msgstr "Tik vietinis (Link-Local)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:64 editor/settings/ui/ipv6.ui:244
 #, kde-format
 msgctxt "like in use Manual configuration"
 msgid "Manual"
-msgstr "Rankinė"
+msgstr "Rankinis"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:69
@@ -1623,7 +1623,7 @@ msgstr "Infrastruktūra"
 #: editor/settings/ui/wificonnectionwidget.ui:68
 #, kde-format
 msgid "Ad-hoc"
-msgstr "Ad-hoc"
+msgstr "Laikinasis (Ad-hoc)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:73
@@ -1701,9 +1701,10 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
-"Belaidžiam (Wi-Fi) ryšiui naudojamas belaidis kanalas. Įrenginys sukurs (Ad-"
-"Hoc tinklų atveju) arba\n"
-"prisijungs prie belaidžio tinklo nurodytame kanale"
+"Belaidžiam (Wi-Fi) ryšiui naudojamas belaidis kanalas. Įrenginys tik "
+"prisijungs\n"
+"prie belaidžio tinklo nurodytame kanale (o laikinųjų (Ad-Hoc) tinklų atveju "
+"– jį sukurs)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:209
@@ -1945,7 +1946,7 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
-"Įrenginio saito derėjimasis. Jei pasirinkta „Rankinė“, tuomet reikšmės "
+"Įrenginio saito derėjimasis. Jei pasirinkta „Rankinis“, tuomet reikšmės "
 "„Greitis“ ir „Abipusis“ bus naudojamos priverstinai,\n"
 "netikrinant įrenginio suderinamumo. Jei nesate tikri, palikite čia "
 "„Nepaisyti“ arba pasirinkite „Automatinis“."
@@ -1967,7 +1968,7 @@ msgstr "Automatinis"
 #: editor/settings/ui/wiredconnectionwidget.ui:202
 #, kde-format
 msgid "Manual"
-msgstr "Rankinė"
+msgstr "Rankinis"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:219
@@ -2609,7 +2610,7 @@ msgstr "Nežinomas"
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Adhoc"
-msgstr "Adhoc"
+msgstr "Laikinasis (Adhoc)"
 
 #: editor/uiutils.cpp:379
 #, kde-format

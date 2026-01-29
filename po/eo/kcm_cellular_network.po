@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2025-03-01 17:55+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -229,7 +229,7 @@ msgstr "Malebligado"
 msgid "Enabling"
 msgstr "Ebligante"
 
-#: modemdetails.cpp:264 ui/ModemPage.qml:83
+#: modemdetails.cpp:264 ui/ModemPage.qml:85
 #, kde-format
 msgid "Enabled"
 msgstr "Ebligita"
@@ -354,12 +354,12 @@ msgstr "Alkroĉite por aliro al Restriktitaj Lokaj Operaciistservoj."
 msgid "Scanning networks failed: %1"
 msgstr "Skanado de retoj malsukcesis: %1"
 
-#: modemdetails.cpp:434 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:434 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "Yes"
 msgstr "Jes"
 
-#: modemdetails.cpp:436 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:436 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "No"
 msgstr "Ne"
@@ -679,102 +679,102 @@ msgstr "Modemaj Detaloj"
 msgid "Access Technologies"
 msgstr "Alirteknologioj"
 
-#: ui/ModemPage.qml:75
+#: ui/ModemPage.qml:77
 #, kde-format
 msgid "IMEI"
 msgstr "IMEI"
 
-#: ui/ModemPage.qml:91
+#: ui/ModemPage.qml:93
 #, kde-format
 msgid "Manufacturer"
 msgstr "Fabrikisto"
 
-#: ui/ModemPage.qml:99
+#: ui/ModemPage.qml:101
 #, kde-format
 msgid "Model"
 msgstr "Modelo"
 
-#: ui/ModemPage.qml:114
+#: ui/ModemPage.qml:116
 #, kde-format
 msgid "Owned Numbers:"
 msgstr "Posedataj Nombroj:"
 
-#: ui/ModemPage.qml:135
+#: ui/ModemPage.qml:139
 #, kde-format
 msgid "Revision"
 msgstr "Revizio"
 
-#: ui/ModemPage.qml:143
+#: ui/ModemPage.qml:147
 #, kde-format
 msgid "Signal Quality"
 msgstr "Signala Kvalito"
 
-#: ui/ModemPage.qml:151
+#: ui/ModemPage.qml:155
 #, kde-format
 msgid "State"
 msgstr "Stato"
 
-#: ui/ModemPage.qml:159
+#: ui/ModemPage.qml:163
 #, kde-format
 msgid "Failure Reason"
 msgstr "Fiasko Kialo"
 
-#: ui/ModemPage.qml:167
+#: ui/ModemPage.qml:171
 #, kde-format
 msgid "Registration State"
 msgstr "Registrada Stato"
 
-#: ui/ModemPage.qml:175
+#: ui/ModemPage.qml:179
 #, kde-format
 msgid "Roaming"
 msgstr "Vagado"
 
-#: ui/ModemPage.qml:183
+#: ui/ModemPage.qml:187
 #, kde-format
 msgid "Firmware Version"
 msgstr "Firmware Versio"
 
-#: ui/ModemPage.qml:191
+#: ui/ModemPage.qml:195
 #, kde-format
 msgid "Interface Name"
 msgstr "Interfaco Nomo"
 
-#: ui/ModemPage.qml:199
+#: ui/ModemPage.qml:203
 #, kde-format
 msgid "Metered"
 msgstr "Mezurita"
 
-#: ui/ModemPage.qml:207
+#: ui/ModemPage.qml:211
 #, kde-format
 msgid "Active NetworkManager Connection"
 msgstr "Aktiva NetworkManager-Konekto"
 
-#: ui/ModemPage.qml:215
+#: ui/ModemPage.qml:219
 #, kde-format
 msgid "Device"
 msgstr "Aparato"
 
-#: ui/ModemPage.qml:223
+#: ui/ModemPage.qml:227
 #, kde-format
 msgid "Device ID"
 msgstr "Aparato ID"
 
-#: ui/ModemPage.qml:238
+#: ui/ModemPage.qml:242
 #, kde-format
 msgid "Drivers:"
 msgstr "Peliloj:"
 
-#: ui/ModemPage.qml:258
+#: ui/ModemPage.qml:264
 #, kde-format
 msgid "Plugin"
 msgstr "Konekti"
 
-#: ui/ModemPage.qml:266
+#: ui/ModemPage.qml:272
 #, kde-format
 msgid "Power State"
 msgstr "Potenca Stato"
 
-#: ui/ModemPage.qml:274
+#: ui/ModemPage.qml:280
 #, kde-format
 msgid "SIM Path"
 msgstr "SIM Vojo"
@@ -883,47 +883,47 @@ msgstr "Malŝlosi SIM"
 msgid "Attempts left: %1"
 msgstr "Restas provoj: %1"
 
-#: ui/SimLockPage.qml:118
+#: ui/SimLockPage.qml:119
 #, kde-format
 msgid "Enter PIN"
 msgstr "Enigi PIN"
 
-#: ui/SimLockPage.qml:126
+#: ui/SimLockPage.qml:127
 #, kde-format
 msgid "Change SIM PIN"
 msgstr "Ŝanĝi SIM PIN"
 
-#: ui/SimLockPage.qml:145 ui/SimLockPage.qml:210
+#: ui/SimLockPage.qml:146 ui/SimLockPage.qml:211
 #, kde-format
 msgid "PINs don't match!"
 msgstr "PIN-oj ne kongruas!"
 
-#: ui/SimLockPage.qml:151 ui/SimLockPage.qml:216
+#: ui/SimLockPage.qml:152 ui/SimLockPage.qml:217
 #, kde-format
 msgid "PINs must be between 4 and 8 digits!"
 msgstr "PIN-oj devas esti inter 4 kaj 8 ciferoj!"
 
-#: ui/SimLockPage.qml:156 ui/SimLockPage.qml:183
+#: ui/SimLockPage.qml:157 ui/SimLockPage.qml:184
 #, kde-format
 msgid "Current PIN"
 msgstr "Nuna PIN"
 
-#: ui/SimLockPage.qml:161 ui/SimLockPage.qml:221
+#: ui/SimLockPage.qml:162 ui/SimLockPage.qml:222
 #, kde-format
 msgid "New PIN"
 msgstr "Nova PIN"
 
-#: ui/SimLockPage.qml:166 ui/SimLockPage.qml:226
+#: ui/SimLockPage.qml:167 ui/SimLockPage.qml:227
 #, kde-format
 msgid "Confirm PIN"
 msgstr "Konfirmi PIN"
 
-#: ui/SimLockPage.qml:174
+#: ui/SimLockPage.qml:175
 #, kde-format
 msgid "Remove SIM PIN"
 msgstr "Forigi SIM PIN"
 
-#: ui/SimLockPage.qml:191
+#: ui/SimLockPage.qml:192
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "Aldoni SIM PIN"

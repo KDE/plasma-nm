@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2025-05-20 21:02+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -228,7 +228,7 @@ msgstr "Изключване"
 msgid "Enabling"
 msgstr "Включване"
 
-#: modemdetails.cpp:264 ui/ModemPage.qml:83
+#: modemdetails.cpp:264 ui/ModemPage.qml:85
 #, kde-format
 msgid "Enabled"
 msgstr "Активиран"
@@ -353,12 +353,12 @@ msgstr "Приложено за достъп до ограничени услу�
 msgid "Scanning networks failed: %1"
 msgstr "Сканирането на мрежи не бе успешно: %1"
 
-#: modemdetails.cpp:434 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:434 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "Yes"
 msgstr "Да"
 
-#: modemdetails.cpp:436 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:436 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "No"
 msgstr "Не"
@@ -678,102 +678,102 @@ msgstr "Детайли за модема"
 msgid "Access Technologies"
 msgstr "Технологии за достъп"
 
-#: ui/ModemPage.qml:75
+#: ui/ModemPage.qml:77
 #, kde-format
 msgid "IMEI"
 msgstr "IMEI"
 
-#: ui/ModemPage.qml:91
+#: ui/ModemPage.qml:93
 #, kde-format
 msgid "Manufacturer"
 msgstr "Производител"
 
-#: ui/ModemPage.qml:99
+#: ui/ModemPage.qml:101
 #, kde-format
 msgid "Model"
 msgstr "Модел"
 
-#: ui/ModemPage.qml:114
+#: ui/ModemPage.qml:116
 #, kde-format
 msgid "Owned Numbers:"
 msgstr "Притежавани номера:"
 
-#: ui/ModemPage.qml:135
+#: ui/ModemPage.qml:139
 #, kde-format
 msgid "Revision"
 msgstr "Ревизия"
 
-#: ui/ModemPage.qml:143
+#: ui/ModemPage.qml:147
 #, kde-format
 msgid "Signal Quality"
 msgstr "Качество на сигнала"
 
-#: ui/ModemPage.qml:151
+#: ui/ModemPage.qml:155
 #, kde-format
 msgid "State"
 msgstr "Състояние"
 
-#: ui/ModemPage.qml:159
+#: ui/ModemPage.qml:163
 #, kde-format
 msgid "Failure Reason"
 msgstr "Причина за неуспех"
 
-#: ui/ModemPage.qml:167
+#: ui/ModemPage.qml:171
 #, kde-format
 msgid "Registration State"
 msgstr "Щат на регистрация"
 
-#: ui/ModemPage.qml:175
+#: ui/ModemPage.qml:179
 #, kde-format
 msgid "Roaming"
 msgstr "Роуминг"
 
-#: ui/ModemPage.qml:183
+#: ui/ModemPage.qml:187
 #, kde-format
 msgid "Firmware Version"
 msgstr "Версия на фърмуера"
 
-#: ui/ModemPage.qml:191
+#: ui/ModemPage.qml:195
 #, kde-format
 msgid "Interface Name"
 msgstr "Име на интерфейса"
 
-#: ui/ModemPage.qml:199
+#: ui/ModemPage.qml:203
 #, kde-format
 msgid "Metered"
 msgstr "Измервана"
 
-#: ui/ModemPage.qml:207
+#: ui/ModemPage.qml:211
 #, kde-format
 msgid "Active NetworkManager Connection"
 msgstr "Активна връзка с NetworkManager"
 
-#: ui/ModemPage.qml:215
+#: ui/ModemPage.qml:219
 #, kde-format
 msgid "Device"
 msgstr "Устройство"
 
-#: ui/ModemPage.qml:223
+#: ui/ModemPage.qml:227
 #, kde-format
 msgid "Device ID"
 msgstr "Идент. № на устройство"
 
-#: ui/ModemPage.qml:238
+#: ui/ModemPage.qml:242
 #, kde-format
 msgid "Drivers:"
 msgstr "Драйвери:"
 
-#: ui/ModemPage.qml:258
+#: ui/ModemPage.qml:264
 #, kde-format
 msgid "Plugin"
 msgstr "Приставка"
 
-#: ui/ModemPage.qml:266
+#: ui/ModemPage.qml:272
 #, kde-format
 msgid "Power State"
 msgstr "Състояние на захранването"
 
-#: ui/ModemPage.qml:274
+#: ui/ModemPage.qml:280
 #, kde-format
 msgid "SIM Path"
 msgstr "Път на SIM картата"
@@ -884,47 +884,47 @@ msgstr "Отключване на SIM картата"
 msgid "Attempts left: %1"
 msgstr "Оставащи опити: %1"
 
-#: ui/SimLockPage.qml:118
+#: ui/SimLockPage.qml:119
 #, kde-format
 msgid "Enter PIN"
 msgstr "Въведете ПИН код"
 
-#: ui/SimLockPage.qml:126
+#: ui/SimLockPage.qml:127
 #, kde-format
 msgid "Change SIM PIN"
 msgstr "Промяна на ПИН кода на SIM картата"
 
-#: ui/SimLockPage.qml:145 ui/SimLockPage.qml:210
+#: ui/SimLockPage.qml:146 ui/SimLockPage.qml:211
 #, kde-format
 msgid "PINs don't match!"
 msgstr "ПИН кодовете не съвпадат!"
 
-#: ui/SimLockPage.qml:151 ui/SimLockPage.qml:216
+#: ui/SimLockPage.qml:152 ui/SimLockPage.qml:217
 #, kde-format
 msgid "PINs must be between 4 and 8 digits!"
 msgstr "ПИН кодовете трябва да са между 4 и 8 цифри!"
 
-#: ui/SimLockPage.qml:156 ui/SimLockPage.qml:183
+#: ui/SimLockPage.qml:157 ui/SimLockPage.qml:184
 #, kde-format
 msgid "Current PIN"
 msgstr "Текущ ПИН код"
 
-#: ui/SimLockPage.qml:161 ui/SimLockPage.qml:221
+#: ui/SimLockPage.qml:162 ui/SimLockPage.qml:222
 #, kde-format
 msgid "New PIN"
 msgstr "Нов ПИН код"
 
-#: ui/SimLockPage.qml:166 ui/SimLockPage.qml:226
+#: ui/SimLockPage.qml:167 ui/SimLockPage.qml:227
 #, kde-format
 msgid "Confirm PIN"
 msgstr "Потвърждаване на ПИН"
 
-#: ui/SimLockPage.qml:174
+#: ui/SimLockPage.qml:175
 #, kde-format
 msgid "Remove SIM PIN"
 msgstr "Премахване на ПИН кода на SIM картата"
 
-#: ui/SimLockPage.qml:191
+#: ui/SimLockPage.qml:192
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "Добавяне на ПИН код за SIM карта"

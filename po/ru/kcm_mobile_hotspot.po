@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 03:06+0000\n"
 "PO-Revision-Date: 2025-09-26 20:27+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -29,39 +29,39 @@ msgstr "Настройка точки доступа Wi-Fi"
 msgid "Hotspot SSID:"
 msgstr "SSID точки доступа:"
 
-#: ui/main.qml:59
+#: ui/main.qml:60
 #, kde-format
 msgid "Hotspot Password:"
 msgstr "Пароль точки доступа:"
 
-#: ui/main.qml:77
+#: ui/main.qml:79
 #, kde-format
 msgid "Hotspot"
 msgstr "Точка доступа Wi-Fi"
 
-#: ui/main.qml:78
+#: ui/main.qml:80
 #, kde-format
 msgid "Share your internet connection with other devices as a Wi-Fi network."
 msgstr ""
 "Предоставление своего подключения к Интернету другим устройствам с помощью "
 "сети Wi-Fi."
 
-#: ui/main.qml:93
+#: ui/main.qml:95
 #, kde-format
 msgid "Settings"
 msgstr "Параметры"
 
-#: ui/main.qml:100
+#: ui/main.qml:102
 #, kde-format
 msgid "Hotspot SSID"
 msgstr "SSID точки доступа"
 
-#: ui/main.qml:109
+#: ui/main.qml:111
 #, kde-format
 msgid "Hotspot Password"
 msgstr "Пароль точки доступа"
 
-#: ui/main.qml:117
+#: ui/main.qml:119
 #, kde-format
 msgid "Configure"
 msgstr "Настроить"

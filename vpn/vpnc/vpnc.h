@@ -17,22 +17,6 @@
 #include <KConfigGroup>
 #include <KProcess>
 
-class VpncUiPluginPrivate : public QObject
-{
-    Q_OBJECT
-public:
-    VpncUiPluginPrivate();
-    ~VpncUiPluginPrivate() override;
-    QString readStringKeyValue(const KConfigGroup &configGroup, const QString &key);
-    KProcess *ciscoDecrypt = nullptr;
-    QString decryptedPasswd;
-
-public Q_SLOTS:
-    void gotCiscoDecryptOutput();
-    void ciscoDecryptError(QProcess::ProcessError pError);
-    void ciscoDecryptFinished(int exitCode, QProcess::ExitStatus exitStatus);
-};
-
 class Q_DECL_EXPORT VpncUiPlugin : public VpnUiPlugin
 {
     Q_OBJECT

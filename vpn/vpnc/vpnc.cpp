@@ -29,54 +29,6 @@
 #include "vpncauth.h"
 #include "vpncwidget.h"
 
-VpncUiPluginPrivate::VpncUiPluginPrivate()
-{
-    decryptedPasswd.clear();
-    ciscoDecrypt = nullptr;
-}
-
-VpncUiPluginPrivate::~VpncUiPluginPrivate() = default;
-
-QString VpncUiPluginPrivate::readStringKeyValue(const KConfigGroup &configGroup, const QString &key)
-{
-    const QString retValue = configGroup.readEntry(key);
-    if (retValue.isEmpty()) {
-        // String key can also start with "!" in CISCO pcf file.
-        return configGroup.readEntry('!' + key);
-    } else {
-        return retValue;
-    }
-}
-
-void VpncUiPluginPrivate::gotCiscoDecryptOutput()
-{
-    QByteArray output = ciscoDecrypt->readAll();
-    if (!output.isEmpty()) {
-        const QList<QByteArray> lines = output.split('\n');
-        if (!lines.isEmpty()) {
-            decryptedPasswd = QString::fromUtf8(lines.first());
-        }
-    }
-}
-
-void VpncUiPluginPrivate::ciscoDecryptFinished(int exitCode, QProcess::ExitStatus exitStatus)
-{
-    if (exitCode || exitStatus != QProcess::NormalExit) {
-        decryptedPasswd.clear();
-    }
-}
-
-void VpncUiPluginPrivate::ciscoDecryptError(QProcess::ProcessError pError)
-{
-    if (!pError) {
-        qCWarning(PLASMA_NM_VPNC_LOG) << "Error in executing cisco-decrypt";
-        KMessageBox::error(nullptr, i18n("Error decrypting the obfuscated password"), i18n("Error"), KMessageBox::Notify);
-    }
-    decryptedPasswd.clear();
-}
-
-#define NM_VPNC_LOCAL_PORT_DEFAULT 500
-
 K_PLUGIN_CLASS_WITH_JSON(VpncUiPlugin, "plasmanetworkmanagement_vpncui.json")
 
 VpncUiPlugin::VpncUiPlugin(QObject *parent, const QVariantList &)

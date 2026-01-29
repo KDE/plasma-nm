@@ -9,24 +9,15 @@
 
 #include "openvpn.h"
 
-#include <QLatin1Char>
-#include <QRegularExpression>
-#include <QStandardPaths>
-#include <QStringBuilder>
-
 #include <KLocalizedString>
-#include <KMessageBox>
 #include <KPluginFactory>
 #include <kwidgetsaddons_version.h>
 
 #include <NetworkManagerQt/Connection>
-#include <NetworkManagerQt/Ipv4Setting>
 #include <NetworkManagerQt/VpnSetting>
 
 #include "openvpnauth.h"
 #include "openvpnwidget.h"
-
-#include <arpa/inet.h>
 
 K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.json")
 

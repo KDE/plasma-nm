@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 00:46+0000\n"
 "PO-Revision-Date: 2021-07-25 13:16+0100\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian\n"
@@ -99,14 +99,14 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
-#: l2tp.ui:174 l2tpipsec.ui:205
+#: l2tp.ui:161 l2tpipsec.ui:205
 #, kde-format
 msgid "CA Certificate:"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCA)
-#: l2tp.ui:187 l2tpipsec.ui:119
+#: l2tp.ui:174 l2tpipsec.ui:119
 #, kde-format
 msgid ""
 "<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
@@ -114,13 +114,13 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
-#: l2tp.ui:199
+#: l2tp.ui:186
 #, kde-format
 msgid "User Certificate:"
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCert)
-#: l2tp.ui:212
+#: l2tp.ui:199
 #, kde-format
 msgid ""
 "<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
@@ -129,14 +129,14 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
-#: l2tp.ui:224 l2tpipsec.ui:156
+#: l2tp.ui:211 l2tpipsec.ui:156
 #, kde-format
 msgid "Private Key:"
 msgstr "Cheie privată:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineKey)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userKey)
-#: l2tp.ui:237 l2tpipsec.ui:169
+#: l2tp.ui:224 l2tpipsec.ui:169
 #, kde-format
 msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
@@ -145,28 +145,44 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: l2tp.ui:249 l2tpipsec.ui:181
+#: l2tp.ui:236 l2tpipsec.ui:181
 #, kde-format
 msgid "Private Key Password:"
 msgstr "Parola cheii private:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, machineKeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userKeyPassword)
-#: l2tp.ui:261 l2tpipsec.ui:193
+#: l2tp.ui:248 l2tpipsec.ui:193
 #, kde-format
 msgid ""
 "<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
 "body></html>"
 msgstr ""
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbEphemeralSourcePort)
+#: l2tp.ui:267
+#, kde-format
+msgid ""
+"Do not use UDP port 1701 for L2TP source port even if it is free.\n"
+"An ephemeral (random) high port number will be used instead.\n"
+"\n"
+"May be required to allow multiple L2TP clients behind the same NAT."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbEphemeralSourcePort)
+#: l2tp.ui:270
+#, kde-format
+msgid "Use L2TP ephemeral source port"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
-#: l2tp.ui:292
+#: l2tp.ui:308
 #, kde-format
 msgid "IPsec Settings…"
 msgstr "Configurări IPsec…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPPPSettings)
-#: l2tp.ui:299
+#: l2tp.ui:315
 #, kde-format
 msgid "PPP Settings…"
 msgstr "Configurări PPP…"
@@ -332,8 +348,14 @@ msgstr ""
 msgid "Use IP compression"
 msgstr "Folosește compresie IP"
 
-#. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
+#. i18n: ectx: property (text), widget (QCheckBox, cbIKEv2)
 #: l2tpipsec.ui:322
+#, kde-format
+msgid "Use IKEv2 key exchange"
+msgstr ""
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
+#: l2tpipsec.ui:329
 #, kde-format
 msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
@@ -341,13 +363,13 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
-#: l2tpipsec.ui:325
+#: l2tpipsec.ui:332
 #, kde-format
 msgid "Disable PFS"
 msgstr "Dezactivează PFS"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbForceEncaps)
-#: l2tpipsec.ui:332
+#: l2tpipsec.ui:339
 #, kde-format
 msgid ""
 "<html><head/><body><p>Some firewalls block ESP traffic. Enforcing UDP "
@@ -356,13 +378,13 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
-#: l2tpipsec.ui:335
+#: l2tpipsec.ui:342
 #, kde-format
 msgid "Enforce UDP encapsulation"
 msgstr "Impune încapsularea UDP"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: l2tpipsec.ui:345
+#: l2tpipsec.ui:352
 #, kde-format
 msgid "Remote ID:"
 msgstr "ID distant:"
@@ -518,20 +540,33 @@ msgstr "Trimite pachete de ecou PPP"
 msgid "Other Settings"
 msgstr "Alte configurări"
 
+#. i18n: ectx: property (toolTip), widget (QCheckBox, cbMRRU)
+#. i18n: ectx: property (toolTip), widget (QSpinBox, sbMRRU)
+#: l2tpppp.ui:224 l2tpppp.ui:234
+#, kde-format
+msgid "Try to negotiate a PPP Multilink on a single connection."
+msgstr ""
+
+#. i18n: ectx: property (text), widget (QCheckBox, cbMRRU)
+#: l2tpppp.ui:227
+#, kde-format
+msgid "Multilink PPP MRRU: "
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, lbMRU)
-#: l2tpppp.ui:224
+#: l2tpppp.ui:250
 #, kde-format
 msgid "MRU: "
 msgstr "MRU: "
 
 #. i18n: ectx: property (text), widget (QLabel, lbMTU)
-#: l2tpppp.ui:238
+#: l2tpppp.ui:264
 #, kde-format
 msgid "MTU: "
 msgstr "MTU: "
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, gbMPPE)
-#: l2tpppp.ui:257
+#: l2tpppp.ui:283
 #, kde-format
 msgid ""
 "Note: MPPE encryption is only available with MSCHAP authentication methods. "
@@ -541,51 +576,51 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMPPE)
-#: l2tpppp.ui:260
+#: l2tpppp.ui:286
 #, kde-format
 msgid "Use MPPE Encryption"
 msgstr "Utilizează criptare MPPE"
 
 #. i18n: ectx: property (text), widget (QLabel, lblMMPEcrypto)
-#: l2tpppp.ui:281
+#: l2tpppp.ui:307
 #, kde-format
 msgid "Crypto:"
 msgstr "Criptografie:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbMPPECrypto)
-#: l2tpppp.ui:297
+#: l2tpppp.ui:323
 #, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
-#: l2tpppp.ui:301
+#: l2tpppp.ui:327
 #, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
 msgstr "Oricare"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
-#: l2tpppp.ui:306
+#: l2tpppp.ui:332
 #, kde-format
 msgid "128 bit"
 msgstr "128 de biți"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
-#: l2tpppp.ui:311
+#: l2tpppp.ui:337
 #, kde-format
 msgid "40 bit"
 msgstr "40 de biți"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbstatefulEncryption)
-#: l2tpppp.ui:319
+#: l2tpppp.ui:345
 #, kde-format
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbstatefulEncryption)
-#: l2tpppp.ui:322
+#: l2tpppp.ui:348
 #, kde-format
 msgid "Use stateful encryption"
 msgstr "Folosește criptografie cu stare"

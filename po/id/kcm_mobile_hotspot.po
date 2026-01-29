@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 00:46+0000\n"
 "PO-Revision-Date: 2020-04-23 18:41+0700\n"
 "Last-Translator: Wantoyo <wantoyek@gmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -27,40 +27,40 @@ msgstr ""
 msgid "Hotspot SSID:"
 msgstr "Hotspot"
 
-#: ui/main.qml:59
+#: ui/main.qml:60
 #, fuzzy, kde-format
 #| msgid "Password:"
 msgid "Hotspot Password:"
 msgstr "Kata sandi:"
 
-#: ui/main.qml:77
+#: ui/main.qml:79
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: ui/main.qml:78
+#: ui/main.qml:80
 #, kde-format
 msgid "Share your internet connection with other devices as a Wi-Fi network."
 msgstr ""
 
-#: ui/main.qml:93
+#: ui/main.qml:95
 #, kde-format
 msgid "Settings"
 msgstr ""
 
-#: ui/main.qml:100
+#: ui/main.qml:102
 #, fuzzy, kde-format
 #| msgid "Hotspot"
 msgid "Hotspot SSID"
 msgstr "Hotspot"
 
-#: ui/main.qml:109
+#: ui/main.qml:111
 #, fuzzy, kde-format
 #| msgid "Password:"
 msgid "Hotspot Password"
 msgstr "Kata sandi:"
 
-#: ui/main.qml:117
+#: ui/main.qml:119
 #, kde-format
 msgid "Configure"
 msgstr ""

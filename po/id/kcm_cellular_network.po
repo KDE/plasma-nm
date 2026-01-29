@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 00:46+0000\n"
 "PO-Revision-Date: 2022-04-07 22:24+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -228,7 +228,7 @@ msgstr "Menonfungsikan"
 msgid "Enabling"
 msgstr "Memfungsikan"
 
-#: modemdetails.cpp:264 ui/ModemPage.qml:83
+#: modemdetails.cpp:264 ui/ModemPage.qml:85
 #, kde-format
 msgid "Enabled"
 msgstr "Difungsikan"
@@ -354,12 +354,12 @@ msgstr "Lampiran untuk mengakses ke Layanan Operator Lokal Terbatas."
 msgid "Scanning networks failed: %1"
 msgstr "Pemindaian jaringan, gagal: %1"
 
-#: modemdetails.cpp:434 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:434 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "Yes"
 msgstr "Ya"
 
-#: modemdetails.cpp:436 ui/ModemPage.qml:176 ui/SimPage.qml:119
+#: modemdetails.cpp:436 ui/ModemPage.qml:180 ui/SimPage.qml:119
 #, kde-format
 msgid "No"
 msgstr "Tidak"
@@ -688,119 +688,119 @@ msgstr "Detail Modem"
 msgid "Access Technologies"
 msgstr "Teknologi Akses:"
 
-#: ui/ModemPage.qml:75
+#: ui/ModemPage.qml:77
 #, fuzzy, kde-format
 #| msgid "IMEI:"
 msgid "IMEI"
 msgstr "IMEI:"
 
-#: ui/ModemPage.qml:91
+#: ui/ModemPage.qml:93
 #, fuzzy, kde-format
 #| msgid "Manufacturer:"
 msgid "Manufacturer"
 msgstr "Manufaktur:"
 
-#: ui/ModemPage.qml:99
+#: ui/ModemPage.qml:101
 #, fuzzy, kde-format
 #| msgid "Model:"
 msgid "Model"
 msgstr "Model:"
 
-#: ui/ModemPage.qml:114
+#: ui/ModemPage.qml:116
 #, kde-format
 msgid "Owned Numbers:"
 msgstr "Nomor Pemlik:"
 
-#: ui/ModemPage.qml:135
+#: ui/ModemPage.qml:139
 #, fuzzy, kde-format
 #| msgid "Revision:"
 msgid "Revision"
 msgstr "Revisi:"
 
-#: ui/ModemPage.qml:143
+#: ui/ModemPage.qml:147
 #, fuzzy, kde-format
 #| msgid "Signal Quality:"
 msgid "Signal Quality"
 msgstr "Kualitas Sinyal:"
 
-#: ui/ModemPage.qml:151
+#: ui/ModemPage.qml:155
 #, fuzzy, kde-format
 #| msgid "State:"
 msgid "State"
 msgstr "Keadaan:"
 
-#: ui/ModemPage.qml:159
+#: ui/ModemPage.qml:163
 #, fuzzy, kde-format
 #| msgid "Failure Reason:"
 msgid "Failure Reason"
 msgstr "Alasan Kegagalan:"
 
-#: ui/ModemPage.qml:167
+#: ui/ModemPage.qml:171
 #, fuzzy, kde-format
 #| msgid "Registration State:"
 msgid "Registration State"
 msgstr "Keadaan Registrasi:"
 
-#: ui/ModemPage.qml:175
+#: ui/ModemPage.qml:179
 #, fuzzy, kde-format
 #| msgid "Roaming:"
 msgid "Roaming"
 msgstr "Roaming:"
 
-#: ui/ModemPage.qml:183
+#: ui/ModemPage.qml:187
 #, fuzzy, kde-format
 #| msgid "Firmware Version:"
 msgid "Firmware Version"
 msgstr "Versi Firmware:"
 
-#: ui/ModemPage.qml:191
+#: ui/ModemPage.qml:195
 #, fuzzy, kde-format
 #| msgid "Interface Name:"
 msgid "Interface Name"
 msgstr "Nama Antarmuka:"
 
-#: ui/ModemPage.qml:199
+#: ui/ModemPage.qml:203
 #, fuzzy, kde-format
 #| msgid "Metered:"
 msgid "Metered"
 msgstr "Diukur:"
 
-#: ui/ModemPage.qml:207
+#: ui/ModemPage.qml:211
 #, fuzzy, kde-format
 #| msgid "Active NetworkManager Connection:"
 msgid "Active NetworkManager Connection"
 msgstr "Aktifkan Koneksi NetworkManager:"
 
-#: ui/ModemPage.qml:215
+#: ui/ModemPage.qml:219
 #, fuzzy, kde-format
 #| msgid "Device:"
 msgid "Device"
 msgstr "Perangkat:"
 
-#: ui/ModemPage.qml:223
+#: ui/ModemPage.qml:227
 #, fuzzy, kde-format
 #| msgid "Device ID:"
 msgid "Device ID"
 msgstr "ID Perangkat:"
 
-#: ui/ModemPage.qml:238
+#: ui/ModemPage.qml:242
 #, kde-format
 msgid "Drivers:"
 msgstr "Driver:"
 
-#: ui/ModemPage.qml:258
+#: ui/ModemPage.qml:264
 #, fuzzy, kde-format
 #| msgid "Plugin:"
 msgid "Plugin"
 msgstr "Plugin:"
 
-#: ui/ModemPage.qml:266
+#: ui/ModemPage.qml:272
 #, fuzzy, kde-format
 #| msgid "Power State:"
 msgid "Power State"
 msgstr "Kondisi Daya:"
 
-#: ui/ModemPage.qml:274
+#: ui/ModemPage.qml:280
 #, fuzzy, kde-format
 #| msgid "SIM Path:"
 msgid "SIM Path"
@@ -909,47 +909,47 @@ msgstr "Lepas Kunci SIM"
 msgid "Attempts left: %1"
 msgstr "Mencoba tinggal: %1"
 
-#: ui/SimLockPage.qml:118
+#: ui/SimLockPage.qml:119
 #, kde-format
 msgid "Enter PIN"
 msgstr "Masukksan PIN"
 
-#: ui/SimLockPage.qml:126
+#: ui/SimLockPage.qml:127
 #, kde-format
 msgid "Change SIM PIN"
 msgstr "Ubah PIN SIM"
 
-#: ui/SimLockPage.qml:145 ui/SimLockPage.qml:210
+#: ui/SimLockPage.qml:146 ui/SimLockPage.qml:211
 #, kde-format
 msgid "PINs don't match!"
 msgstr "PIN tidak cocok!"
 
-#: ui/SimLockPage.qml:151 ui/SimLockPage.qml:216
+#: ui/SimLockPage.qml:152 ui/SimLockPage.qml:217
 #, kde-format
 msgid "PINs must be between 4 and 8 digits!"
 msgstr "PIN harus terdiri dari antara 4 dan 8 digit!"
 
-#: ui/SimLockPage.qml:156 ui/SimLockPage.qml:183
+#: ui/SimLockPage.qml:157 ui/SimLockPage.qml:184
 #, kde-format
 msgid "Current PIN"
 msgstr "PIN saat ini"
 
-#: ui/SimLockPage.qml:161 ui/SimLockPage.qml:221
+#: ui/SimLockPage.qml:162 ui/SimLockPage.qml:222
 #, kde-format
 msgid "New PIN"
 msgstr "PIN baru"
 
-#: ui/SimLockPage.qml:166 ui/SimLockPage.qml:226
+#: ui/SimLockPage.qml:167 ui/SimLockPage.qml:227
 #, kde-format
 msgid "Confirm PIN"
 msgstr "Konfirmasi PIN"
 
-#: ui/SimLockPage.qml:174
+#: ui/SimLockPage.qml:175
 #, kde-format
 msgid "Remove SIM PIN"
 msgstr "Hapus PIN SIM"
 
-#: ui/SimLockPage.qml:191
+#: ui/SimLockPage.qml:192
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "Tambahkan PIN SIM"

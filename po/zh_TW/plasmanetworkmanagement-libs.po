@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 00:46+0000\n"
-"PO-Revision-Date: 2026-01-23 05:03+0900\n"
+"PO-Revision-Date: 2026-01-28 21:27+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -31,7 +31,7 @@ msgstr "連線速度"
 #: editor/connectiondetails.cpp:288 editor/connectiondetails.cpp:302
 #, kde-format
 msgid "MAC Address"
-msgstr "硬體位址"
+msgstr "MAC 位址"
 
 #: editor/connectiondetails.cpp:97 editor/settings/bondwidget.cpp:36
 #: editor/settings/bridgewidget.cpp:33 editor/settings/teamwidget.cpp:36
@@ -1016,13 +1016,7 @@ msgstr "優先考慮自動連線"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. A negative number can be used to "
-#| "indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -1030,8 +1024,7 @@ msgid ""
 "indicate priority lower than the default."
 msgstr ""
 "若連線設定為自動連線，其將會偏好有較高優先級的連線。預設為 0。\n"
-"較大的數字意位著較高的優先級。負數則可用於指示其優先級低於預設值。\n"
-"           "
+"較大的數字意位著較高的優先級。負數則可用於指示其優先級低於預設值。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1097,15 +1090,11 @@ msgstr "計量："
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager indicates to applications whether the connection is "
-#| "metered and therefore\n"
-#| "data usage should be restricted."
+#, kde-format
 msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
-msgstr "NetworkManager 標示應用程式連線是否有計量和是否要因此限制資料用量。"
+msgstr "告訴應用程式這個連線是否為計量連線而應限制資料用量。"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:164
@@ -1231,6 +1220,13 @@ msgid ""
 "devices\n"
 "• Disabled: turn off IPv4"
 msgstr ""
+"如何設定 IPv4 位址：\n"
+"• 自動：透過 DHCP 自動取得位址與 DNS\n"
+"• 自動（只有位址）：透過 DHCP 自動取得位址，但手動設定 DNS\n"
+"• 連結本地端：使用自動 link-local 位址 (169.254.x.x)\n"
+"• 手動：輸入固定 IP 位址\n"
+"• 分享：讓這台電腦變成路由器，分享網際網路連線給其他裝置\n"
+"• 已關閉：停用 IPv4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:58 editor/settings/ui/ipv6.ui:234
@@ -1469,6 +1465,14 @@ msgid ""
 "• Ignored: skip IPv6 configuration but allow connection\n"
 "• Disabled: turn off IPv6 completely"
 msgstr ""
+"如何設定 IPv6 位址：\n"
+"• 自動：透過 SLAAC 或/和 DHCPv6 自動取得位址與 DNS\n"
+"• 自動（只有位址）：自動取得位址，但手動設定 DNS\n"
+"• 自動（只用 DHCP）：只透過 DHCPv6 自動取得位址與 DNS（忽略 SLAAC）\n"
+"• 連結本地端：使用自動 link-local 位址 (fe80::/10)\n"
+"• 手動：輸入固定 IP 位址\n"
+"• 已忽略：跳過 IPv6 設定但允許連線\n"
+"• 已關閉：完全停用 IPv6"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:244
@@ -1650,7 +1654,7 @@ msgstr "SSID："
 #: editor/settings/ui/wificonnectionwidget.ui:39
 #, kde-format
 msgid "The name of the Wi-Fi network to connect to"
-msgstr ""
+msgstr "要連線到的 Wi-Fi 網路的名稱"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:68
@@ -1661,6 +1665,10 @@ msgid ""
 "• Ad-hoc: create a direct peer-to-peer network\n"
 "• Access Point: turn this computer into a Wi-Fi hotspot"
 msgstr ""
+"Wi-Fi 網路模式：\n"
+"• 基礎建設：連線到 Wi-Fi 路由器（普通模式）\n"
+"• Ad-hoc：建立直接的端對端網路\n"
+"• 存取點：將此電腦作為 Wi-Fi 熱點使用"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:72
@@ -1682,10 +1690,9 @@ msgstr "存取點（AP）"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:90
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to BSSID:"
-msgstr "限制裝置："
+msgstr "限制 BSSID："
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:109
@@ -1693,7 +1700,7 @@ msgstr "限制裝置："
 msgid ""
 "Lock this connection to a specific access point. Enter the BSSID (MAC "
 "address) of the access point."
-msgstr ""
+msgstr "將此連線鎖定至特定存取點。請輸入該存取點的 BSSID（MAC 位址）。"
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:125
@@ -1750,10 +1757,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to network adapter:"
-msgstr "限制裝置："
+msgstr "限制網路轉接器："
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wificonnectionwidget.ui:213
@@ -1761,21 +1767,21 @@ msgstr "限制裝置："
 msgid ""
 "Lock this connection to a particular network adapter by specifying its MAC "
 "address."
-msgstr ""
+msgstr "指定特定網路轉接器的 MAC 位址來將此連線鎖定至該網路轉接器。"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:220
 #: editor/settings/ui/wiredconnectionwidget.ui:47
 #, kde-format
 msgid "Cloned MAC address:"
-msgstr "複製硬體 Mac 位址："
+msgstr "複製硬體 MAC 位址："
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
 #: editor/settings/ui/wificonnectionwidget.ui:247
 #, kde-format
 msgid ""
 "Use a different MAC address instead of your network adapter's real address."
-msgstr ""
+msgstr "使用別的 MAC 位址而非您的網路轉接器的真正位址。"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:254
@@ -1795,10 +1801,9 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:304
 #: editor/settings/ui/wificonnectionwidget.ui:320
-#, fuzzy, kde-format
-#| msgid "Mark this if you want to create a connection for a hidden network"
+#, kde-format
 msgid "Create a connection for a hidden network"
-msgstr "若您要建立一個隱藏網路的連線，請標記於此"
+msgstr "為隱藏網路建立連線"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:307

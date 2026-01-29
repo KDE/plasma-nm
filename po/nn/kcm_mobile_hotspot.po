@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-01-29 00:46+0000\n"
 "PO-Revision-Date: 2024-03-17 11:08+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -29,38 +29,38 @@ msgstr "Set opp trådlaussone"
 msgid "Hotspot SSID:"
 msgstr "Trådlaussone-SSID"
 
-#: ui/main.qml:59
+#: ui/main.qml:60
 #, fuzzy, kde-format
 #| msgid "Hotspot Password"
 msgid "Hotspot Password:"
 msgstr "Passord for trådlaussone"
 
-#: ui/main.qml:77
+#: ui/main.qml:79
 #, kde-format
 msgid "Hotspot"
 msgstr "Trådlaussone"
 
-#: ui/main.qml:78
+#: ui/main.qml:80
 #, kde-format
 msgid "Share your internet connection with other devices as a Wi-Fi network."
 msgstr "Del Internett-tilkoplinga med andre einingar som eit Wi-Fi-nettverk."
 
-#: ui/main.qml:93
+#: ui/main.qml:95
 #, kde-format
 msgid "Settings"
 msgstr "Innstillingar"
 
-#: ui/main.qml:100
+#: ui/main.qml:102
 #, kde-format
 msgid "Hotspot SSID"
 msgstr "Trådlaussone-SSID"
 
-#: ui/main.qml:109
+#: ui/main.qml:111
 #, kde-format
 msgid "Hotspot Password"
 msgstr "Passord for trådlaussone"
 
-#: ui/main.qml:117
+#: ui/main.qml:119
 #, fuzzy, kde-format
 #| msgid "Configure Hotspot"
 msgid "Configure"

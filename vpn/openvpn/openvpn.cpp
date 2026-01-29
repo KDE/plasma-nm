@@ -79,69 +79,6 @@ K_PLUGIN_CLASS_WITH_JSON(OpenVpnUiPlugin, "plasmanetworkmanagement_openvpnui.jso
 #define PROC_TYPE_TAG "Proc-Type: 4,ENCRYPTED"
 #define PKCS8_TAG "-----BEGIN ENCRYPTED PRIVATE KEY-----"
 
-QString localCertPath()
-{
-    return QStandardPaths::writableLocation(QStandardPaths::GenericDataLocation) + QLatin1String("/networkmanagement/certificates/");
-}
-
-QString unQuote(QString &certVal, const QString &fileName)
-{
-    /* Unquote according to openvpn rules
-     * Unquoted filename is returned, and @certVal is modified
-     * to the leftover string
-     */
-    int nextSep;
-    QString certFile = certVal.trimmed();
-    if (certFile.startsWith('"') || certFile.startsWith('\'')) { // Quoted
-        certFile.remove(0, 1); // Remove the starting quote
-        nextSep = 0;
-        while ((nextSep = certFile.indexOf(QRegularExpression(QStringLiteral("\"|'")), nextSep)) != -1) {
-            if (nextSep > 0 && certFile.at(nextSep - 1) != '\\') { // Quote not escaped
-                certVal = certFile.right(certFile.length() - nextSep - 1); // Leftover string
-                certFile.truncate(nextSep); // Quoted string
-                break;
-            }
-        }
-    } else {
-        nextSep = certFile.indexOf(QRegularExpression(QStringLiteral("\\s"))); // First whitespace
-        if (nextSep != -1) {
-            certVal = certFile.right(certFile.length() - nextSep - 1); // Leftover
-            certFile = certFile.left(nextSep); // value
-        } else {
-            certVal.clear();
-        }
-    }
-    certFile.replace("\\\\", "\\"); // Replace '\\' with '\'
-    certFile.replace("\\ ", " "); // Replace escaped space with space
-    if (QFileInfo(certFile).isRelative()) {
-        certFile = QFileInfo(fileName).dir().absolutePath() + QLatin1Char('/') + certFile;
-    }
-    return certFile;
-}
-
-bool isEncrypted(const QString &fileName)
-{
-    bool encrypted = false;
-    // TODO: if is_pkcs12(fileName) return true;
-    // NOTE: will have to use SEC_PKCS12DecoderStart and friends from <p12.h>, which will
-    //       build a new dependency on nss-devel. See NetworkManager/libnm-util/crypto_nss.c+453
-
-    QFile inFile(fileName);
-    if (!inFile.open(QFile::ReadOnly)) {
-        return false;
-    }
-    QTextStream in(&inFile);
-    while (!in.atEnd()) {
-        const QString line = in.readLine();
-        if (!line.isEmpty() && (line.startsWith(PROC_TYPE_TAG) || line.startsWith(PKCS8_TAG))) {
-            encrypted = true;
-            break;
-        }
-    }
-    inFile.close();
-    return encrypted;
-}
-
 OpenVpnUiPlugin::OpenVpnUiPlugin(QObject *parent, const QVariantList &)
     : VpnUiPlugin(parent)
 {
@@ -194,49 +131,6 @@ VpnUiPlugin::ImportResult OpenVpnUiPlugin::importConnectionSettings(const QStrin
     }
 
     return VpnUiPlugin::ImportResult::pass(connection);
-}
-
-QString OpenVpnUiPlugin::saveFile(QTextStream &in, const QString &endTag, const QString &connectionName, const QString &fileName)
-{
-    const QString certificatesDirectory = localCertPath() + connectionName;
-    const QString absoluteFilePath = certificatesDirectory + '/' + fileName;
-    QFile outFile(absoluteFilePath);
-
-    QDir().mkpath(certificatesDirectory);
-    if (!outFile.open(QFile::WriteOnly | QFile::Text)) {
-        KMessageBox::information(nullptr, i18n("Error saving file %1: %2", absoluteFilePath, outFile.errorString()));
-        return {};
-    }
-
-    QTextStream out(&outFile);
-    while (!in.atEnd()) {
-        const QString line = in.readLine();
-
-        if (line.indexOf(endTag) >= 0) {
-            break;
-        }
-
-        out << line << "\n";
-    }
-
-    outFile.close();
-    return absoluteFilePath;
-}
-
-QString OpenVpnUiPlugin::tryToCopyToCertificatesDirectory(const QString &connectionName, const QString &sourceFilePath)
-{
-    const QString certificatesDirectory = localCertPath();
-    const QString absoluteFilePath = certificatesDirectory + connectionName + '_' + QFileInfo(sourceFilePath).fileName();
-
-    QFile sourceFile(sourceFilePath);
-
-    QDir().mkpath(certificatesDirectory);
-    if (!sourceFile.copy(absoluteFilePath)) {
-        KMessageBox::information(nullptr, i18n("Error copying certificate to %1: %2", absoluteFilePath, sourceFile.errorString()));
-        return sourceFilePath;
-    }
-
-    return absoluteFilePath;
 }
 
 VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connection, const QString &fileName)

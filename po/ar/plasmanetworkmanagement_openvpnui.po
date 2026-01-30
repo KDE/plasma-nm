@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-25 00:45+0000\n"
+"POT-Creation-Date: 2026-01-30 00:46+0000\n"
 "PO-Revision-Date: 2025-08-20 20:52+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -19,20 +19,15 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: openvpn.cpp:182
+#: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
 msgstr "يفتقد NetworkManager توفير التعامل OpenVPN"
 
-#: openvpn.cpp:207
+#: openvpn.cpp:99
 #, kde-format
-msgid "Error saving file %1: %2"
-msgstr "خطأ في حفظ الملفّ %1: %2"
-
-#: openvpn.cpp:235
-#, kde-format
-msgid "Error copying certificate to %1: %2"
-msgstr "خطأ في نسخ شهادة إلى %1: %2"
+msgid "An unexpected error has occurred"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19
@@ -1096,6 +1091,12 @@ msgstr "رمز"
 #, kde-format
 msgid "one-time password"
 msgstr "كلمة سر لمرة واحدة"
+
+#~ msgid "Error saving file %1: %2"
+#~ msgstr "خطأ في حفظ الملفّ %1: %2"
+
+#~ msgid "Error copying certificate to %1: %2"
+#~ msgstr "خطأ في نسخ شهادة إلى %1: %2"
 
 #~ msgid "Could not open file"
 #~ msgstr "تعذّر فتح الملف"

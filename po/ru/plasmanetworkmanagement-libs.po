@@ -11,8 +11,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 00:46+0000\n"
-"PO-Revision-Date: 2026-01-22 19:08+0300\n"
-"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
+"PO-Revision-Date: 2026-01-29 21:49+0200\n"
+"Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -1020,13 +1020,7 @@ msgstr "Подключаться автоматически с приорите�
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. A negative number can be used to "
-#| "indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -1035,8 +1029,9 @@ msgid ""
 msgstr ""
 "При включении автоматического подключения для нескольких соединений в первую "
 "очередь будет установлено соединение, которому назначен наибольший "
-"приоритет. Значение по умолчанию — 0. Отрицательные значения служат для "
-"задания приоритета, меньшего чем приоритет по умолчанию."
+"приоритет. Значение по умолчанию — 0. \n"
+"Отрицательные значения служат для задания приоритета, меньшего чем приоритет "
+"по умолчанию."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1080,6 +1075,8 @@ msgid ""
 "Choose which VPN connection to automatically activate when this connection "
 "is established"
 msgstr ""
+"Выберите, какое VPN-подключение автоматически активировать при установке "
+"этого соединения."
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:102
@@ -1094,6 +1091,8 @@ msgid ""
 "Assign this connection to a firewall zone to control network access and "
 "security rules"
 msgstr ""
+"Назначьте это подключение зоне брандмауэра для управления сетевым доступом и "
+"правилами безопасности."
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:134
@@ -1103,18 +1102,13 @@ msgstr "Тарифицируемое:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager indicates to applications whether the connection is "
-#| "metered and therefore\n"
-#| "data usage should be restricted."
+#, kde-format
 msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager сообщит приложениям, учитывается ли трафик на этом "
-"соединении,\n"
-"и следует ли его экономить."
+"Указывать приложениям, является ли соединение тарифицируемым, и следует ли "
+"ограничивать его трафик."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:164
@@ -1240,6 +1234,13 @@ msgid ""
 "devices\n"
 "• Disabled: turn off IPv4"
 msgstr ""
+"Метод настройки адреса IPv4:• Автоматически: получать адрес и DNS "
+"автоматически через DHCP• Автоматически (только адреса): получать адрес "
+"через DHCP, но настроить DNS вручную• Локальная связь: использовать "
+"автоматическую локальную адресацию (169.254.x.x)• Вручную: ввести "
+"статический IP-адрес• Общий доступ: сделать этот компьютер маршрутизатором "
+"для совместного использования интернета с другими устройствами• Отключено: "
+"выключить IPv4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:58 editor/settings/ui/ipv6.ui:234
@@ -1488,6 +1489,13 @@ msgid ""
 "• Ignored: skip IPv6 configuration but allow connection\n"
 "• Disabled: turn off IPv6 completely"
 msgstr ""
+"Как настроить адрес IPv6:• Автоматически: получать адрес и DNS автоматически "
+"(через SLAAC и/или DHCPv6)• Автоматически (только адреса): получать адрес "
+"автоматически, но настроить DNS вручную• Автоматически (только DHCP): "
+"получать адрес и DNS только через DHCPv6 (игнорировать SLAAC)• Локальная "
+"связь: использовать автоматическую локальную адресацию (fe80::/10)• Вручную: "
+"ввести статический IP-адрес• Игнорировать: пропустить настройку IPv6, но "
+"разрешить подключение• Отключено: полностью выключить IPv6"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:244
@@ -1671,7 +1679,7 @@ msgstr "SSID:"
 #: editor/settings/ui/wificonnectionwidget.ui:39
 #, kde-format
 msgid "The name of the Wi-Fi network to connect to"
-msgstr ""
+msgstr "Имя сети Wi‑Fi для подключения."
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:68
@@ -1682,6 +1690,9 @@ msgid ""
 "• Ad-hoc: create a direct peer-to-peer network\n"
 "• Access Point: turn this computer into a Wi-Fi hotspot"
 msgstr ""
+"Режим сети Wi‑Fi:• Инфраструктура: подключение к Wi‑Fi маршрутизатору "
+"(обычный режим)• Одноранговый: создание одноранговой сети• Точка доступа: "
+"превратить этот компьютер в точку доступа Wi‑Fi"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:72
@@ -1703,10 +1714,9 @@ msgstr "Точка доступа"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:90
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to BSSID:"
-msgstr "Только для устройства:"
+msgstr "Ограничить по BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:109
@@ -1715,6 +1725,8 @@ msgid ""
 "Lock this connection to a specific access point. Enter the BSSID (MAC "
 "address) of the access point."
 msgstr ""
+"Закрепить это подключение за определённой точкой доступа. Введите BSSID (MAC-"
+"адрес) точки доступа."
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:125
@@ -1772,10 +1784,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to network adapter:"
-msgstr "Только для устройства:"
+msgstr "Ограничить по сетевому адаптеру:"
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wificonnectionwidget.ui:213
@@ -1784,6 +1795,8 @@ msgid ""
 "Lock this connection to a particular network adapter by specifying its MAC "
 "address."
 msgstr ""
+"Закрепить это подключение за определённым сетевым адаптером, указав его MAC-"
+"адрес."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:220
@@ -1798,12 +1811,14 @@ msgstr "Клонированный MAC-адрес:"
 msgid ""
 "Use a different MAC address instead of your network adapter's real address."
 msgstr ""
+"Использовать другой MAC-адрес вместо реального адреса вашего сетевого "
+"адаптера."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:254
 #, kde-format
 msgid "Random…"
-msgstr "Случайный..."
+msgstr "Случайный…"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, mtu)
 #: editor/settings/ui/wificonnectionwidget.ui:297
@@ -1812,15 +1827,17 @@ msgid ""
 "Maximum Transmission Unit: the largest packet size that can be sent without "
 "fragmentation. Larger packets will be broken into smaller frames."
 msgstr ""
+"Максимальный размер пакета (MTU): наибольший размер пакета, который можно "
+"отправить без фрагментации. Пакеты большего размера будут разбиты на меньшие "
+"кадры."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:304
 #: editor/settings/ui/wificonnectionwidget.ui:320
-#, fuzzy, kde-format
-#| msgid "Mark this if you want to create a connection for a hidden network"
+#, kde-format
 msgid "Create a connection for a hidden network"
-msgstr "Отметьте это, если хотите создать соединение для скрытой сети"
+msgstr "Создать соединение для скрытой сети"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:307
@@ -1873,17 +1890,15 @@ msgstr "Динамический WEP (802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:65
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA2/WPA3 Personal"
-msgstr "WPA/WPA2 Personal"
+msgstr "WPA2/WPA3 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:70
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA2/WPA3 Enterprise"
-msgstr "WPA/WPA2 Enterprise"
+msgstr "WPA2/WPA3 Enterprise"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:75

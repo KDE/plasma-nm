@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-25 00:45+0000\n"
+"POT-Creation-Date: 2026-01-30 00:46+0000\n"
 "PO-Revision-Date: 2024-04-26 14:03+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -18,20 +18,15 @@ msgstr ""
 "2);\n"
 "X-Generator: Lokalize 24.02.1\n"
 
-#: openvpn.cpp:182
+#: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
 msgstr "„NetworkManager“ trūkst „OpenVPN“ atbalsta"
 
-#: openvpn.cpp:207
+#: openvpn.cpp:99
 #, kde-format
-msgid "Error saving file %1: %2"
-msgstr "Kļūda, saglabājot datni „%1“: %2"
-
-#: openvpn.cpp:235
-#, kde-format
-msgid "Error copying certificate to %1: %2"
-msgstr "Kļūda, kopējot sertifikātu uz „%1“: %2"
+msgid "An unexpected error has occurred"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19
@@ -1122,3 +1117,9 @@ msgstr "žetons"
 #, kde-format
 msgid "one-time password"
 msgstr "vienreizēja parole"
+
+#~ msgid "Error saving file %1: %2"
+#~ msgstr "Kļūda, saglabājot datni „%1“: %2"
+
+#~ msgid "Error copying certificate to %1: %2"
+#~ msgstr "Kļūda, kopējot sertifikātu uz „%1“: %2"

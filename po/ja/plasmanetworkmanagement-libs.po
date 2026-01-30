@@ -1,14 +1,14 @@
+# SPDX-FileCopyrightText: 2023, 2026 Ryuichi Yamada <ryuichi_ya220@outlook.jp>
 # Fuminobu TAKEYAMA <ftake@geeko.jp>, 2015, 2019.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020, 2021.
-# Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 00:46+0000\n"
-"PO-Revision-Date: 2023-04-07 23:51-0700\n"
-"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
+"PO-Revision-Date: 2026-01-26 21:16+0900\n"
+"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -39,14 +39,12 @@ msgid "Ethernet"
 msgstr "イーサネット"
 
 #: editor/connectiondetails.cpp:132
-#, fuzzy, kde-format
-#| msgid "Access point (SSID)"
+#, kde-format
 msgid "Access Point (SSID)"
 msgstr "アクセスポイント (SSID)"
 
 #: editor/connectiondetails.cpp:136
-#, fuzzy, kde-format
-#| msgid "Signal strength"
+#, kde-format
 msgid "Signal Strength"
 msgstr "信号強度"
 
@@ -54,17 +52,15 @@ msgstr "信号強度"
 #, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: editor/connectiondetails.cpp:141 editor/connectiondetails.cpp:151
-#, fuzzy, kde-format
-#| msgid "Security type"
+#, kde-format
 msgid "Security Type"
 msgstr "セキュリティタイプ"
 
 #: editor/connectiondetails.cpp:156
-#, fuzzy, kde-format
-#| msgid "Connection speed"
+#, kde-format
 msgid "Connection Speed"
 msgstr "接続速度"
 
@@ -74,11 +70,10 @@ msgid "Frequency"
 msgstr "周波数"
 
 #: editor/connectiondetails.cpp:163
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "チャンネル:"
+msgstr "%1 (チャンネル %2)"
 
 #: editor/connectiondetails.cpp:167
 #, kde-format
@@ -95,7 +90,7 @@ msgstr "Wi-Fi"
 #: editor/connectiondetails.cpp:187
 #, kde-format
 msgid "Operator"
-msgstr ""
+msgstr "事業者"
 
 #: editor/connectiondetails.cpp:192
 #, kde-format
@@ -105,7 +100,7 @@ msgstr "ネットワーク ID"
 #: editor/connectiondetails.cpp:196
 #, kde-format
 msgid "Signal Quality"
-msgstr ""
+msgstr "信号品質"
 
 #: editor/connectiondetails.cpp:197
 #, kde-format
@@ -115,11 +110,10 @@ msgstr ""
 #: editor/connectiondetails.cpp:203 models/creatableconnectionsmodel.cpp:149
 #, kde-format
 msgid "Mobile Broadband"
-msgstr ""
+msgstr "モバイルブロードバンド"
 
 #: editor/connectiondetails.cpp:214 editor/connectiondetails.cpp:235
-#, fuzzy, kde-format
-#| msgid "VPN plugin"
+#, kde-format
 msgid "VPN Plugin"
 msgstr "VPN プラグイン"
 
@@ -215,7 +209,7 @@ msgstr "デバイス"
 #: editor/connectiondetails.cpp:316
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "全般"
 
 #: editor/connectiondetails.cpp:325
 #, kde-format
@@ -276,13 +270,13 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "状態"
 
 #: editor/connectioneditorbase.cpp:209
 #, kde-format
 msgctxt "@title:tab General configuration"
 msgid "General"
-msgstr ""
+msgstr "全般"
 
 #: editor/connectioneditorbase.cpp:216 editor/connectioneditorbase.cpp:233
 #, kde-format
@@ -308,7 +302,7 @@ msgstr "DSL"
 #: editor/connectioneditorbase.cpp:236 editor/connectioneditorbase.cpp:239
 #, kde-format
 msgid "Mobile Broadband (%1)"
-msgstr ""
+msgstr "モバイルブロードバンド (%1)"
 
 #: editor/connectioneditorbase.cpp:247
 #, kde-format
@@ -328,7 +322,7 @@ msgstr "WireGuard インターフェース"
 #: editor/connectioneditorbase.cpp:281
 #, kde-format
 msgid "VPN (%1)"
-msgstr ""
+msgstr "VPN (%1)"
 
 #: editor/connectioneditorbase.cpp:499
 #, kde-format
@@ -343,7 +337,7 @@ msgstr "新しい接続 (%1)"
 #: editor/connectioneditordialog.cpp:35
 #, kde-format
 msgid "Edit Connection '%1'"
-msgstr "接続'%1'を編集"
+msgstr "接続 '%1' を編集"
 
 #: editor/connectioneditortabwidget.cpp:50
 #, kde-format
@@ -419,7 +413,7 @@ msgstr ""
 #: editor/settings/teamwidget.cpp:182
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
-msgstr "接続'%1'を削除しますか？"
+msgstr "接続 '%1' を削除しますか？"
 
 #: editor/settings/bondwidget.cpp:245 editor/settings/bridgewidget.cpp:194
 #: editor/settings/teamwidget.cpp:183
@@ -444,9 +438,7 @@ msgid "PAN (personal area network)"
 msgstr "PAN (パーソナルエリアネットワーク)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
 msgstr "切断済み"
 
@@ -558,7 +550,7 @@ msgstr "アドレス"
 #, kde-format
 msgctxt "Header text for IPv6 prefix"
 msgid "Prefix"
-msgstr ""
+msgstr "プレフィックス"
 
 #: editor/settings/ipv6widget.cpp:46 editor/widgets/ipv6routeswidget.cpp:30
 #, kde-format
@@ -873,14 +865,14 @@ msgstr ""
 #: editor/settings/ui/team.ui:56
 #, kde-format
 msgid "Add…"
-msgstr ""
+msgstr "追加…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnEdit)
 #: editor/settings/ui/bond.ui:72 editor/settings/ui/bridge.ui:69
 #: editor/settings/ui/team.ui:71
 #, kde-format
 msgid "Edit…"
-msgstr ""
+msgstr "*編集..."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:85 editor/settings/ui/bridge.ui:82
@@ -2358,7 +2350,7 @@ msgstr ""
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wired Ethernet"
-msgstr "有線接続"
+msgstr "有線イーサネット"
 
 #: editor/uiutils.cpp:186
 #, kde-format
@@ -2378,7 +2370,7 @@ msgstr ""
 #: editor/uiutils.cpp:222 models/creatableconnectionsmodel.cpp:156
 #, kde-format
 msgid "Wired Ethernet"
-msgstr "有線接続"
+msgstr "有線イーサネット"
 
 #: editor/uiutils.cpp:233
 #, kde-format
@@ -2431,10 +2423,9 @@ msgid "Bridge (%1)"
 msgstr ""
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "有線インターフェース (%1)"
+msgstr "ループバックインターフェース (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format
@@ -3580,17 +3571,13 @@ msgid "Import a saved configuration file"
 msgstr "保存された設定ファイルをインポート"
 
 #: models/networkmodelitem.cpp:339
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip real user name is not available"
-#| msgid "Not Available"
+#, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr "利用できません"
+msgstr "利用可能"
 
 #: models/networkmodelitem.cpp:345
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "接続済み"
@@ -3674,11 +3661,10 @@ msgid "Connected to %1"
 msgstr "%1 に接続済み"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "NetworkManager は実行されていません"
+msgstr "NetworkManager サービスは実行されていません"
 
 #: networkstatus.cpp:261
 #, kde-format
@@ -3690,109 +3676,3 @@ msgstr "NetworkManager 0.9.8 が必要です、%1が見つかりました。"
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "不明"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Unknown"
-#~ msgstr "不明な接続タイプ"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is ADSL"
-#~ msgstr "不明な接続タイプ"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Bridge"
-#~ msgstr "不明な接続タイプ"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is CDMA"
-#~ msgstr "不明な接続タイプ"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is GSM"
-#~ msgstr "不明な接続タイプ"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is PPOPE"
-#~ msgstr "不明な接続タイプ"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VLAN"
-#~ msgstr "不明な接続タイプ"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VPN"
-#~ msgstr "不明な接続タイプ"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wimax"
-#~ msgstr "不明な接続タイプ"
-
-#, fuzzy
-#~| msgid "Connection speed"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wired"
-#~ msgstr "接続速度"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Team"
-#~ msgstr "不明な接続タイプ"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Generic"
-#~ msgstr "不明な接続タイプ"
-
-#, fuzzy
-#~| msgid "Unknown connection type"
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Tunnel"
-#~ msgstr "不明な接続タイプ"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used in the last hour, "
-#~ "as the number of minutes since usage"
-#~ msgid "One minute ago"
-#~ msgid_plural "%1 minutes ago"
-#~ msgstr[0] "%1分前"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used in the last day, "
-#~ "as the number of hours since usage"
-#~ msgid "One hour ago"
-#~ msgid_plural "%1 hours ago"
-#~ msgstr[0] "%1時間前"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used the previous day"
-#~ msgid "Yesterday"
-#~ msgstr "昨日"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection that has never been used"
-#~ msgid "Never"
-#~ msgstr "未使用"
-
-#~ msgctxt "General"
-#~ msgid "General configuration"
-#~ msgstr "一般設定"

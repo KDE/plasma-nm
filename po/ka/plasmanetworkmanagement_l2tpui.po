@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2023-12-22 05:06+0100\n"
+"PO-Revision-Date: 2026-01-29 03:11+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.8\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -68,7 +68,7 @@ msgid ""
 "<html><head/><body><p>Set the name used for authenticating the local system "
 "to the peer to &lt;name&gt;.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>მიუთითეთ მოხმამრებელი, რომელიც ლოკალური სისტემის "
+"<html><head/><body><p>მიუთითეთ მომხმარებელი, რომელიც ლოკალური სისტემის "
 "პარტნიორ &lt;სახელთან&gt; ავთენტიკაციისთვის გამოიყენება.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_2)
@@ -182,12 +182,18 @@ msgid ""
 "\n"
 "May be required to allow multiple L2TP clients behind the same NAT."
 msgstr ""
+"არ გამოიყენოთ UDP/1701 L2TP-ის წყაროს პორტად მაშინაც კი, როცა ის "
+"თავისუფალია.\n"
+"ის გამოიყენებს ეფემერულ პორტს (შემთხვევით მაღალი ნომრის მქონე პორტს).\n"
+"\n"
+"ეს შეიძლება იგივე NAT-ის მიღმა რამდენიმე L2TP კლიენტის გასაშვებად გახდეს "
+"საჭირო."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:270
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "L2TP ეფემერული წყარო პორტის გამოყენება"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:308
@@ -387,7 +393,7 @@ msgstr "IP გამოიყენეთ IP შეკუმშვა"
 #: l2tpipsec.ui:322
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "IKEv2 გასაღებების მიმოცვლის გამოყენება"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
@@ -588,13 +594,13 @@ msgstr "სხვა პარამეტრები"
 #: l2tpppp.ui:224 l2tpppp.ui:234
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "PPP Multilink-ის 1 მიერთებაზე მოლაპარაკება."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMRRU)
 #: l2tpppp.ui:227
 #, kde-format
 msgid "Multilink PPP MRRU: "
-msgstr ""
+msgstr "მრავალმიერთებიანი PPP MRRU: "
 
 #. i18n: ectx: property (text), widget (QLabel, lbMRU)
 #: l2tpppp.ui:250

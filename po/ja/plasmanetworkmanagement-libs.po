@@ -1,14 +1,14 @@
+# SPDX-FileCopyrightText: 2023, 2026 Ryuichi Yamada <ryuichi_ya220@outlook.jp>
 # Fuminobu TAKEYAMA <ftake@geeko.jp>, 2015, 2019.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020, 2021.
-# Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2021, 2023.
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2023-04-07 23:51-0700\n"
-"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
+"PO-Revision-Date: 2026-01-26 21:16+0900\n"
+"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -121,7 +121,7 @@ msgstr "不明"
 #, kde-format
 msgctxt "General"
 msgid "General configuration"
-msgstr "一般設定"
+msgstr "全般設定"
 
 #: editor/connectioneditorbase.cpp:205 editor/connectioneditorbase.cpp:222
 #, kde-format
@@ -154,7 +154,7 @@ msgstr "DSL"
 #: editor/connectioneditorbase.cpp:225 editor/connectioneditorbase.cpp:228
 #, kde-format
 msgid "Mobile Broadband (%1)"
-msgstr ""
+msgstr "モバイルブロードバンド (%1)"
 
 #: editor/connectioneditorbase.cpp:231 editor/uiutils.cpp:196
 #, kde-format
@@ -210,7 +210,7 @@ msgstr "WireGuard インターフェース"
 #: editor/connectioneditorbase.cpp:270
 #, kde-format
 msgid "VPN (%1)"
-msgstr ""
+msgstr "VPN (%1)"
 
 #: editor/connectioneditorbase.cpp:287
 #, kde-format
@@ -235,7 +235,7 @@ msgstr "新しい接続 (%1)"
 #: editor/connectioneditordialog.cpp:35
 #, kde-format
 msgid "Edit Connection '%1'"
-msgstr "接続'%1'を編集"
+msgstr "接続 '%1' を編集"
 
 #: editor/connectioneditortabwidget.cpp:47
 #, kde-format
@@ -311,7 +311,7 @@ msgstr ""
 #: editor/settings/teamwidget.cpp:187
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
-msgstr "接続'%1'を削除しますか？"
+msgstr "接続 '%1' を削除しますか？"
 
 #: editor/settings/bondwidget.cpp:249 editor/settings/bridgewidget.cpp:199
 #: editor/settings/teamwidget.cpp:188
@@ -443,7 +443,7 @@ msgstr "アドレス"
 #, kde-format
 msgctxt "Header text for IPv6 prefix"
 msgid "Prefix"
-msgstr ""
+msgstr "プレフィックス"
 
 #: editor/settings/ipv6widget.cpp:46 editor/widgets/ipv6routeswidget.cpp:30
 #, kde-format
@@ -759,14 +759,14 @@ msgstr "VPN 接続"
 #: editor/settings/ui/team.ui:56
 #, kde-format
 msgid "Add…"
-msgstr ""
+msgstr "追加…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnEdit)
 #: editor/settings/ui/bond.ui:73 editor/settings/ui/bridge.ui:70
 #: editor/settings/ui/team.ui:71
 #, kde-format
 msgid "Edit…"
-msgstr ""
+msgstr "*編集..."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:87 editor/settings/ui/bridge.ui:84
@@ -2136,7 +2136,7 @@ msgstr ""
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wired Ethernet"
-msgstr "有線接続"
+msgstr "有線イーサネット"
 
 #: editor/uiutils.cpp:188
 #, kde-format
@@ -2156,7 +2156,7 @@ msgstr ""
 #: editor/uiutils.cpp:224 models/creatableconnectionsmodel.cpp:156
 #, kde-format
 msgid "Wired Ethernet"
-msgstr "有線接続"
+msgstr "有線イーサネット"
 
 #: editor/uiutils.cpp:235
 #, kde-format
@@ -3303,7 +3303,7 @@ msgstr ""
 #: models/creatableconnectionsmodel.cpp:149
 #, kde-format
 msgid "Mobile Broadband"
-msgstr ""
+msgstr "モバイルブロードバンド"
 
 #: models/creatableconnectionsmodel.cpp:151
 #, kde-format
@@ -3590,7 +3590,7 @@ msgstr "BSSID"
 #: models/networkmodelitem.cpp:672
 #, kde-format
 msgid "Operator"
-msgstr ""
+msgstr "事業者"
 
 #: models/networkmodelitem.cpp:676
 #, kde-format
@@ -3600,7 +3600,7 @@ msgstr "ネットワーク ID"
 #: models/networkmodelitem.cpp:680
 #, kde-format
 msgid "Signal Quality"
-msgstr ""
+msgstr "信号品質"
 
 #: models/networkmodelitem.cpp:681
 #, kde-format

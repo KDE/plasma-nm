@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2014, 2020, 2021, 2023, 2024 Giovanni Sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2014, 2020, 2021, 2023, 2024, 2026 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 00:46+0000\n"
-"PO-Revision-Date: 2024-09-03 11:58+0200\n"
+"PO-Revision-Date: 2026-01-30 11:48+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -557,19 +557,16 @@ msgid "No secrets were requested"
 msgstr "Necun secreto esseva requirite"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
 msgstr ""
-"Incorrecte contrasigno per le rete sin cablos \"%1\":Pro favor tu essaya "
+"Incorrecte contrasigno per le rete Wi-Fi \"%1\": Pro favor tu essaya "
 "novemente."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "Inserta le contrasigno per rete sin cablos \"%1\":"
+msgstr "Inserta le contrasigno per le rete Wi-Fi  \"%1\":"
 
 #: passworddialog.cpp:105
 #, kde-format

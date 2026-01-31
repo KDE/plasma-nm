@@ -1,13 +1,13 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2020, 2023.
+# SPDX-FileCopyrightText: 2020, 2023, 2026 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2023-12-18 09:14+0100\n"
+"PO-Revision-Date: 2026-01-30 11:23+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: ui/main.qml:33
 #, kde-format
@@ -23,16 +23,14 @@ msgid "Configure Hotspot"
 msgstr "Configura Hotspot"
 
 #: ui/main.qml:52
-#, fuzzy, kde-format
-#| msgid "Hotspot SSID"
+#, kde-format
 msgid "Hotspot SSID:"
-msgstr "SSID de Hotspot"
+msgstr "SSID de Hotspot:"
 
 #: ui/main.qml:60
-#, fuzzy, kde-format
-#| msgid "Hotspot Password"
+#, kde-format
 msgid "Hotspot Password:"
-msgstr "Contrasigno de Hotspot"
+msgstr "Contrasigno de Hotspot:"
 
 #: ui/main.qml:79
 #, kde-format
@@ -62,10 +60,9 @@ msgid "Hotspot Password"
 msgstr "Contrasigno de Hotspot"
 
 #: ui/main.qml:119
-#, fuzzy, kde-format
-#| msgid "Configure Hotspot"
+#, kde-format
 msgid "Configure"
-msgstr "Configura Hotspot"
+msgstr "Configura"
 
 #~ msgid "Whether the wireless hotspot is enabled."
 #~ msgstr "Si le hotspot wireless (sin cablo) es habilitate."

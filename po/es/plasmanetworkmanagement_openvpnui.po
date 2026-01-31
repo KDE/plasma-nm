@@ -1,15 +1,15 @@
 # Spanish translations for plasmanetworkmanagement_openvpnui.po package.
-# Copyright (C) 2014-2025 This file is copyright:
+# Copyright (C) 2014-2026 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 # Automatically generated, 2014.
 #
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2020, 2021, 2022, 2023, 2025 Eloy Cuadra <ecuadra@eloihr.net>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2020, 2021, 2022, 2023, 2025, 2026 Eloy Cuadra <ecuadra@eloihr.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-30 00:46+0000\n"
-"PO-Revision-Date: 2025-06-04 19:16+0100\n"
+"PO-Revision-Date: 2026-01-30 12:10+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
@@ -27,7 +27,7 @@ msgstr "NetworkManager carece de soporte lógico para OpenVPN"
 #: openvpn.cpp:99
 #, kde-format
 msgid "An unexpected error has occurred"
-msgstr ""
+msgstr "Ha ocurrido un error no esperado"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19
@@ -1126,9 +1126,3 @@ msgstr "token"
 #, kde-format
 msgid "one-time password"
 msgstr "contraseña de un solo uso"
-
-#~ msgid "Error saving file %1: %2"
-#~ msgstr "Error al guardar el archivo %1: %2"
-
-#~ msgid "Error copying certificate to %1: %2"
-#~ msgstr "Error al copiar certificado en %1: %2"

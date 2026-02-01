@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2023-04-11 21:39+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -18,22 +18,12 @@ msgstr ""
 "X-Generator: translate-po (https://github.com/zcribe/translate-po)\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Eraro deĉifri la malklarigitan pasvorton"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Eraro"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "NetworkManager mankas subteno por Cisco Compatible VPN"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: dosiero ne povis esti kreita"
@@ -393,6 +383,12 @@ msgstr "Uzantnomo:"
 #, kde-format
 msgid "Group name."
 msgstr "Grupnomo."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Eraro deĉifri la malklarigitan pasvorton"
+
+#~ msgid "Error"
+#~ msgstr "Eraro"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

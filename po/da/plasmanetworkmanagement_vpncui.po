@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2024-07-17 15:01+0200\n"
 "Last-Translator: rasmus rosendahl-kaa <rasmus@rosendahl-kaa.name>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -18,22 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 24.05.2\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Fejl ved dekryptering af den maskerede adgangskode"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Fejl"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "NetworkManager manger understøttelse for Cisco-kompatibel VPN"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: Filen kunne ikke oprettes"
@@ -394,6 +384,12 @@ msgstr "Brugernavn:"
 #, kde-format
 msgid "Group name."
 msgstr "Gruppenavn."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Fejl ved dekryptering af den maskerede adgangskode"
+
+#~ msgid "Error"
+#~ msgstr "Fejl"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

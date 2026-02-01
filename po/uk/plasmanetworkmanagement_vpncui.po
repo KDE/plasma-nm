@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-09-19 20:26+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -20,22 +20,12 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.04.3\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Помилка під час спроби розшифрування зашифрованого пароля"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Помилка"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "У NetworkManager не реалізовано підтримку сумісних із Cisco VPN"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: не вдалося створити файл"
@@ -399,6 +389,12 @@ msgstr "Користувач:"
 #, kde-format
 msgid "Group name."
 msgstr "Назва групи."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Помилка під час спроби розшифрування зашифрованого пароля"
+
+#~ msgid "Error"
+#~ msgstr "Помилка"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

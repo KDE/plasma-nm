@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2024-04-27 11:21+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -18,22 +18,12 @@ msgstr ""
 "2);\n"
 "X-Generator: Lokalize 24.02.1\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Kļūda, atšifrējot pieslēptu paroli"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Kļūda"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "„NetworkManager“ trūkst „Cisco“ saderīga VPN atbalsta"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: datni nevar izveidot"
@@ -395,3 +385,9 @@ msgstr "Lietotājvārds:"
 #, kde-format
 msgid "Group name."
 msgstr "Grupas nosaukums."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Kļūda, atšifrējot pieslēptu paroli"
+
+#~ msgid "Error"
+#~ msgstr "Kļūda"

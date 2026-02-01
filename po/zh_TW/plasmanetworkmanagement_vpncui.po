@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-09-22 03:46+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -19,22 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 25.07.70\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "解開混淆密碼時發生錯誤"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "錯誤"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "NetworkManager 目前缺乏對 Cisco 相容 VPN 的支援"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1：無法建立檔案"
@@ -394,6 +384,12 @@ msgstr "使用者名稱："
 #, kde-format
 msgid "Group name."
 msgstr "群組名稱。"
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "解開混淆密碼時發生錯誤"
+
+#~ msgid "Error"
+#~ msgstr "錯誤"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

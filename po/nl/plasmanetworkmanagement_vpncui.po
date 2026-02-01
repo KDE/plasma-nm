@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-09-19 10:52+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
@@ -17,23 +17,13 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.08.1\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Fout bij het decoderen van het verhaspelde wachtwoord"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Fout"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr ""
 "Er ontbreekt in NetworkManager ondersteuning voor Cisco compatibele VPN"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: bestand kon niet worden aangemaakt."
@@ -395,6 +385,12 @@ msgstr "Gebruikersnaam:"
 #, kde-format
 msgid "Group name."
 msgstr "Groepsnaam."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Fout bij het decoderen van het verhaspelde wachtwoord"
+
+#~ msgid "Error"
+#~ msgstr "Fout"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

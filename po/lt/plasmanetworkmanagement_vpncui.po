@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-09-30 14:01+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -21,22 +21,12 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.6\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Klaida iššifruojant užslaptintą slaptažodį"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Klaida"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "NetworkManager trūksta palaikymo, skirto su Cisco suderinamam VPN"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: nepavyko sukurti failo"
@@ -398,6 +388,12 @@ msgstr "Naudotojo vardas:"
 #, kde-format
 msgid "Group name."
 msgstr "Grupės pavadinimas."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Klaida iššifruojant užslaptintą slaptažodį"
+
+#~ msgid "Error"
+#~ msgstr "Klaida"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-11-21 21:38+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -20,22 +20,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.08.3\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Hiba történt a rejtjelezett jelszó visszafejtésekor"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Hiba"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "A NetworkManagerből hiányzik a Cisco Compatible VPN támogatás"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: a fájl nem hozható létre"
@@ -397,6 +387,12 @@ msgstr "Felhasználónév:"
 #, kde-format
 msgid "Group name."
 msgstr "Csoportnév."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Hiba történt a rejtjelezett jelszó visszafejtésekor"
+
+#~ msgid "Error"
+#~ msgstr "Hiba"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

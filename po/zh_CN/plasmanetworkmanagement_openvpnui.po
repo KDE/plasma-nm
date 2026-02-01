@@ -1072,9 +1072,3 @@ msgstr "令牌"
 #, kde-format
 msgid "one-time password"
 msgstr "一次性密码"
-
-#~ msgid "Error saving file %1: %2"
-#~ msgstr "保存文件 %1 时出错：%2"
-
-#~ msgid "Error copying certificate to %1: %2"
-#~ msgstr "复制证书到 %1 时出错：%2"

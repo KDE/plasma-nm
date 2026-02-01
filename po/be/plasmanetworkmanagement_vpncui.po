@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2024-10-28 19:13\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -22,22 +22,12 @@ msgstr ""
 "plasmanetworkmanagement_vpncui.po\n"
 "X-Crowdin-File-ID: 18095\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Не ўдалося расшыфраваць заблытаны пароль"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Памылка"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "NetworkManager не падтрымлівае Cisco Compatible VPN"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: не ўдалося стварыць файл"
@@ -399,3 +389,9 @@ msgstr "Імя карыстальніка:"
 #, kde-format
 msgid "Group name."
 msgstr "Назва групы."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Не ўдалося расшыфраваць заблытаны пароль"
+
+#~ msgid "Error"
+#~ msgstr "Памылка"

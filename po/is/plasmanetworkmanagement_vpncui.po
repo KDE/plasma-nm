@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-11-22 10:07+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -18,22 +18,12 @@ msgstr ""
 "Plural-Forms: Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Villa við að afkóða ruglað lykilorð"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Villa"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "NetworkManager er ekki með stuðning við Cisco Compatible VPN"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: ekki tókst að búa til skrána"
@@ -393,3 +383,9 @@ msgstr "Notandanafn:"
 #, kde-format
 msgid "Group name."
 msgstr "Heiti hóps."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Villa við að afkóða ruglað lykilorð"
+
+#~ msgid "Error"
+#~ msgstr "Villa"

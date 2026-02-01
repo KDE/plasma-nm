@@ -5,15 +5,15 @@
 # Alexander Lakhin <exclusion@gmail.com>, 2014.
 # Alexander Potashev <aspotashev@gmail.com>, 2014, 2016, 2017, 2018.
 # Artem Grinev <agrinev98@gmail.com>, 2016.
-# Alexander Yavorsky <kekcuha@gmail.com>, 2020, 2021.
+# SPDX-FileCopyrightText: 2020, 2021, 2026 Alexander Yavorsky <kekcuha@gmail.com>
 # Мария Шикунова <translation-team@basealt.ru>, 2022.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2022-02-14 16:14+0300\n"
-"Last-Translator: Мария Шикунова <translation-team@basealt.ru>\n"
+"PO-Revision-Date: 2026-01-31 11:29+0300\n"
+"Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.08.3\n"
+"X-Generator: Lokalize 25.12.1\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -187,12 +187,16 @@ msgid ""
 "\n"
 "May be required to allow multiple L2TP clients behind the same NAT."
 msgstr ""
+"Не использовать UDP-порт 1701 в качестве исходного порта для L2TP, даже если "
+"он свободен.\n"
+"Вместо этого будет использован случайный порт с большим номером.\n"
+"Это может потребоваться для работы нескольких клиентов L2TP за одним NAT."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:270
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "Использовать высокий номер порта"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:308
@@ -396,7 +400,7 @@ msgstr "Использовать сжатие IP"
 #: l2tpipsec.ui:322
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "Использовать обмен ключами IKEv2"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
@@ -600,13 +604,13 @@ msgstr "Другие параметры"
 #: l2tpppp.ui:224 l2tpppp.ui:234
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "Пытаться согласовать многоканальный PPP в рамках одного соединения."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMRRU)
 #: l2tpppp.ui:227
 #, kde-format
 msgid "Multilink PPP MRRU: "
-msgstr ""
+msgstr "MMRU многоканального соединения PPP:"
 
 #. i18n: ectx: property (text), widget (QLabel, lbMRU)
 #: l2tpppp.ui:250

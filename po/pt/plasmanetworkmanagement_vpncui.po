@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2022-12-14 09:39+0000\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -15,22 +15,12 @@ msgstr ""
 "X-POFile-SpellExtra: VPN Gateway DES Hellman PEM PFS DPD Diffie IPsec NT\n"
 "X-POFile-SpellExtra: gateway IPSec\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Ocorreu um erro ao descodificar a senha escondida"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Erro"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr ""
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: não foi possível criar o ficheiro"
@@ -391,6 +381,12 @@ msgstr "Utilizador:"
 #, kde-format
 msgid "Group name."
 msgstr "Nome do grupo."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Ocorreu um erro ao descodificar a senha escondida"
+
+#~ msgid "Error"
+#~ msgstr "Erro"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

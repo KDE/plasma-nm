@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-10-30 19:58+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -21,24 +21,14 @@ msgstr ""
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 "X-Generator: Lokalize 25.08.2\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Ошибка расшифровки сложного пароля"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Ошибка"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr ""
 "Не установлен модуль для работы NetworkManager с Cisco-совместимым "
 "протоколом VPN"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: не удалось создать файл"
@@ -402,6 +392,12 @@ msgstr "Имя пользователя:"
 #, kde-format
 msgid "Group name."
 msgstr "Имя группы"
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Ошибка расшифровки сложного пароля"
+
+#~ msgid "Error"
+#~ msgstr "Ошибка"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

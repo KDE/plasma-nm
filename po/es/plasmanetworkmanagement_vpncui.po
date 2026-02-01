@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-09-19 13:57+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,22 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.08.1\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Error al descifrar la contraseña ofuscada"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Error"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "NetworkManager carece de soporte lógico para VPN compatibles con Cisco"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: no se puede crear el archivo"
@@ -396,3 +386,9 @@ msgstr "Nombre de usuario:"
 #, kde-format
 msgid "Group name."
 msgstr "Nombre de grupo."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Error al descifrar la contraseña ofuscada"
+
+#~ msgid "Error"
+#~ msgstr "Error"

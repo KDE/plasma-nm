@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-09-20 22:15+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -17,22 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.07.70\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Грешка при дешифрирането на скритата парола"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Грешка"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "NetworkManager няма поддръжка за Cisco съвместими VPN"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: файлът не може да бъде създаден"
@@ -396,3 +386,9 @@ msgstr "Потребителско име:"
 #, kde-format
 msgid "Group name."
 msgstr "Име на група."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Грешка при дешифрирането на скритата парола"
+
+#~ msgid "Error"
+#~ msgstr "Грешка"

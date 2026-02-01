@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,22 +18,12 @@ msgstr ""
 "pot\n"
 "X-Crowdin-File-ID: 43677\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "解密混淆密码时出错"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "错误"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "NetworkManager 缺少对 Cisco 兼容 VPN 的支持"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1：无法创建文件"
@@ -392,3 +382,9 @@ msgstr "用户名："
 #, kde-format
 msgid "Group name."
 msgstr "组名称。"
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "解密混淆密码时出错"
+
+#~ msgid "Error"
+#~ msgstr "错误"

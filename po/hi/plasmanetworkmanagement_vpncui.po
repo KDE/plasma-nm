@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -17,22 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "अस्पष्ट पासवर्ड को डिक्रिप्ट करने में त्रुटि"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "गलती"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "NetworkManager में Cisco संगत VPN के लिए समर्थन नहीं है"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: फ़ाइल नहीं बनाई जा सकी"
@@ -393,3 +383,9 @@ msgstr "उपयोगकर्ता नाम:"
 #, kde-format
 msgid "Group name."
 msgstr "समूह नाम।"
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "अस्पष्ट पासवर्ड को डिक्रिप्ट करने में त्रुटि"
+
+#~ msgid "Error"
+#~ msgstr "गलती"

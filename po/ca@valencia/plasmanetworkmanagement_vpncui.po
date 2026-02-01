@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-09-19 09:45+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -21,22 +21,12 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "S'ha produït un error mentre es desencriptava la contrasenya ofuscada"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "S'ha produït un error"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "Falta la implementació de la VPN Cisco Compatible en NetworkManager"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: No s'ha pogut crear el fitxer"
@@ -398,3 +388,10 @@ msgstr "Nom d'usuari:"
 #, kde-format
 msgid "Group name."
 msgstr "Nom del grup."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr ""
+#~ "S'ha produït un error mentre es desencriptava la contrasenya ofuscada"
+
+#~ msgid "Error"
+#~ msgstr "S'ha produït un error"

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-09-20 20:26+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -20,24 +20,14 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "حدث خطأ أثناء فك تعمية كلمة السر المشوشة"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "خطأ"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr ""
 "يفتقد مدير الشبكة NetworkManager دعم شبكة الشبكات الخاصة المبدئية المتوافقة "
 "مع سيسكو"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: لا يمكن إنشاء الملف"
@@ -397,6 +387,12 @@ msgstr "اسم المستخدم:"
 #, kde-format
 msgid "Group name."
 msgstr "اسم المجموعة."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "حدث خطأ أثناء فك تعمية كلمة السر المشوشة"
+
+#~ msgid "Error"
+#~ msgstr "خطأ"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

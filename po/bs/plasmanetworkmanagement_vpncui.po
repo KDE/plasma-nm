@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vpn\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2015-02-14 03:53+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -20,22 +20,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Greška u dekriptovanju zašifrovane šifre"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Greška"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr ""
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: datoteka se ne može napraviti"
@@ -405,6 +395,12 @@ msgstr "Korisničko ime:"
 #| msgid "Group name:"
 msgid "Group name."
 msgstr "Naziv grupe:"
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Greška u dekriptovanju zašifrovane šifre"
+
+#~ msgid "Error"
+#~ msgstr "Greška"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

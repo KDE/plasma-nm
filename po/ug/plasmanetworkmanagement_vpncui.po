@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2013-09-08 07:05+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -17,22 +17,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr ""
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "خاتالىق"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr ""
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr ""
@@ -403,6 +393,9 @@ msgstr "ئىشلەتكۈچى ئاتى:"
 #| msgid "Group name:"
 msgid "Group name."
 msgstr "گۇرۇپپا ئاتى:"
+
+#~ msgid "Error"
+#~ msgstr "خاتالىق"
 
 #~ msgid "File %1 could not be opened."
 #~ msgstr "ھۆججەت %1 نى ئاچقىلى بولمىدى."

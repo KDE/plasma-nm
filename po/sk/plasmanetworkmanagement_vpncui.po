@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2023-03-25 14:05+0100\n"
 "Last-Translator: Ferdinand Galko <galko.ferdinand@gmail.com>\n"
 "Language-Team: Slovak <opensuse-translation@opensuse.org>\n"
@@ -18,22 +18,12 @@ msgstr ""
 "X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Chyba dešifrovania popleteného hesla"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Chyba"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "NetworkManager nemá podporu pre VPN kompatibilnú s Cisco"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: súbor nie je možné vytvoriť"
@@ -394,6 +384,12 @@ msgstr "Meno používateľa:"
 #, kde-format
 msgid "Group name."
 msgstr "Názov skupiny."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Chyba dešifrovania popleteného hesla"
+
+#~ msgid "Error"
+#~ msgstr "Chyba"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

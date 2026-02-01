@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-02-01 00:45+0000\n"
 "PO-Revision-Date: 2025-09-19 09:50+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -19,22 +19,12 @@ msgstr ""
 "X-Generator: Lokalize 25.08.1\n"
 "X-POOTLE-MTIME: 1413102233.000000\n"
 
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error decrypting the obfuscated password"
-msgstr "Karartılmış parolanın çözülmesi sırasında hata"
-
-#: vpnc.cpp:73
-#, kde-format
-msgid "Error"
-msgstr "Hata"
-
-#: vpnc.cpp:118
+#: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
 msgstr "Ağ yöneticisinde Cisco uyumlu VPN desteği henüz yok"
 
-#: vpnc.cpp:146
+#: vpnc.cpp:98
 #, kde-format
 msgid "%1: file could not be created"
 msgstr "%1: Dosya oluşturulamadı"
@@ -396,6 +386,12 @@ msgstr "Kullanıcı adı:"
 #, kde-format
 msgid "Group name."
 msgstr "Grup adı."
+
+#~ msgid "Error decrypting the obfuscated password"
+#~ msgstr "Karartılmış parolanın çözülmesi sırasında hata"
+
+#~ msgid "Error"
+#~ msgstr "Hata"
 
 #~ msgid "*.pem *.crt *.cer"
 #~ msgstr "*.pem *.crt *.cer"

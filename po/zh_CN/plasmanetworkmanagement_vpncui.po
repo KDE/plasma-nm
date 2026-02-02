@@ -382,9 +382,3 @@ msgstr "用户名："
 #, kde-format
 msgid "Group name."
 msgstr "组名称。"
-
-#~ msgid "Error decrypting the obfuscated password"
-#~ msgstr "解密混淆密码时出错"
-
-#~ msgid "Error"
-#~ msgstr "错误"

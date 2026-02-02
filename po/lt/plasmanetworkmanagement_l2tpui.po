@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2025-11-07 21:53+0200\n"
+"PO-Revision-Date: 2026-02-01 20:23+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -185,12 +185,19 @@ msgid ""
 "\n"
 "May be required to allow multiple L2TP clients behind the same NAT."
 msgstr ""
+"L2TP šaltinio prievadui nenaudokite UDP prievado 1701, netgi tuo atveju, "
+"jeigu laisvas.\n"
+"Vietoj jo, bus naudojamas trumpalaikis (atsitiktinis) didelio skaičiaus "
+"prievado numeris.\n"
+"\n"
+"Gali prireikti leisti kelis L2TP klientus už to paties tinklo adresų keitimo "
+"(NAT)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:270
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "Naudoti L2TP trumpalaikį šaltinio prievadą"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:308
@@ -392,7 +399,7 @@ msgstr "Naudoti IP glaudinimą"
 #: l2tpipsec.ui:322
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "Naudoti IKEv2 raktų mainus"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
@@ -593,13 +600,13 @@ msgstr "Kitos nuostatos"
 #: l2tpppp.ui:224 l2tpppp.ui:234
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "Bandyti viename ryšyje užmegzti PPP daugianarį (Multilink)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMRRU)
 #: l2tpppp.ui:227
 #, kde-format
 msgid "Multilink PPP MRRU: "
-msgstr ""
+msgstr "Daugianaris (Multilink) PPP MRRU: "
 
 #. i18n: ectx: property (text), widget (QLabel, lbMRU)
 #: l2tpppp.ui:250

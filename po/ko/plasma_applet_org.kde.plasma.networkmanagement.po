@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 # JungHee Lee <daemu72@gmail.com>, 2019.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-18 00:45+0000\n"
-"PO-Revision-Date: 2025-10-09 01:21+0200\n"
+"PO-Revision-Date: 2026-02-03 22:06+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -249,25 +249,23 @@ msgstr "핫스팟 만들기"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr ""
+msgstr "Wi-Fi QR 코드 스캔"
 
 #: Toolbar.qml:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr "다른 장치에서 \"%1\" 네트워크에 연결하려면 이 QR 코드를 스캔하십시오."
+msgstr "Wi-Fi 네트워크에 연결하려면 QR 코드를 스캔하십시오"
 
 #: Toolbar.qml:228
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
-msgstr "다른 장치에서 \"%1\" 네트워크에 연결하려면 이 QR 코드를 스캔하십시오."
+msgstr ""
+"Wi-Fi 네트워크에 연결하기 위한 QR 코드를 스캔하려면 QRCA 바코드 스캐너를 설치"
+"하십시오"
 
 #: Toolbar.qml:247
 #, kde-format

@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 02:43+0000\n"
-"PO-Revision-Date: 2025-10-09 01:23+0200\n"
+"PO-Revision-Date: 2026-02-03 22:16+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -47,9 +47,7 @@ msgid "Signal Strength"
 msgstr "신호 강도"
 
 #: editor/connectiondetails.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "WiFi signal strength percentage indicator"
-#| msgid "%1%"
+#, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
@@ -207,9 +205,7 @@ msgid "Device"
 msgstr "장치"
 
 #: editor/connectiondetails.cpp:316
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "일반"
 
@@ -272,7 +268,7 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "상태"
 
 #: editor/connectioneditorbase.cpp:209
 #, kde-format
@@ -440,9 +436,7 @@ msgid "PAN (personal area network)"
 msgstr "PAN(개인 영역 네트워크)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
 msgstr "연결 끊김"
 

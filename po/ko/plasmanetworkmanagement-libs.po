@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Shinjo Park <kde@peremen.name>
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Shinjo Park <kde@peremen.name>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 00:46+0000\n"
-"PO-Revision-Date: 2025-10-09 01:23+0200\n"
+"PO-Revision-Date: 2026-02-03 22:16+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 24.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -47,9 +47,7 @@ msgid "Signal Strength"
 msgstr "신호 강도"
 
 #: editor/connectiondetails.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "WiFi signal strength percentage indicator"
-#| msgid "%1%"
+#, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
@@ -207,9 +205,7 @@ msgid "Device"
 msgstr "장치"
 
 #: editor/connectiondetails.cpp:316
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "일반"
 
@@ -272,7 +268,7 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "상태"
 
 #: editor/connectioneditorbase.cpp:209
 #, kde-format
@@ -440,9 +436,7 @@ msgid "PAN (personal area network)"
 msgstr "PAN(개인 영역 네트워크)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
 msgstr "연결 끊김"
 
@@ -1020,13 +1014,7 @@ msgstr "우선 순위대로 자동으로 연결"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. A negative number can be used to "
-#| "indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -1036,8 +1024,7 @@ msgstr ""
 "자동으로 연결을 사용하도록 설정했다면 높은 우선 순위를 가진 연결부터 시도합니"
 "다. 기본값은 0입니다.\n"
 "숫자가 높을수록 우선 순위가 높습니다. 기본값보다 낮은 우선 순위를 지정하려면 "
-"음수를 사용하십시오.\n"
-"           "
+"음수를 사용하십시오."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1080,7 +1067,7 @@ msgstr "자동으로 VPN 연결"
 msgid ""
 "Choose which VPN connection to automatically activate when this connection "
 "is established"
-msgstr ""
+msgstr "이 연결이 수립되었을 때 자동으로 활성화할 VPN 연결을 선택하십시오"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:102
@@ -1094,7 +1081,7 @@ msgstr "방화벽 구역:"
 msgid ""
 "Assign this connection to a firewall zone to control network access and "
 "security rules"
-msgstr ""
+msgstr "네트워크 접근과 보안 규칙을 관리하는 방화벽 구역에 이 연결을 할당함"
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:134
@@ -1104,16 +1091,12 @@ msgstr "종량제:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager indicates to applications whether the connection is "
-#| "metered and therefore\n"
-#| "data usage should be restricted."
+#, kde-format
 msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager는 앱에 현재 연결의 종량제 여부를 알려 주어서\n"
+"앱에 현재 연결의 종량제 여부를 알려 주어서\n"
 "데이터 사용량을 제어합니다."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
@@ -1240,6 +1223,14 @@ msgid ""
 "devices\n"
 "• Disabled: turn off IPv4"
 msgstr ""
+"IPv4 주소를 설정할 방법:\n"
+"• 자동: DHCP를 사용하여 IP 주소와 DNS를 자동으로 구성\n"
+"• 자동(주소만): DHCP를 사용하여 IP 주소를 자동으로 구성하지만 DNS는 수동으로 "
+"설정\n"
+"• 링크로컬: 자동 링크로컬 주소 사용(169.254.x.x)\n"
+"• 수동: 수동으로 IP 주소 입력\n"
+"• 공유됨: 이 컴퓨터를 다른 장치와 인터넷 연결을 공유하는 라우터로 설정\n"
+"• 사용 안 함: IPv4 비활성화"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:58 editor/settings/ui/ipv6.ui:234
@@ -1485,6 +1476,14 @@ msgid ""
 "• Ignored: skip IPv6 configuration but allow connection\n"
 "• Disabled: turn off IPv6 completely"
 msgstr ""
+"IPv6 주소를 설정할 방법:\n"
+"• 자동: SLAAC나 DHCPv6을 사용하여 IP 주소와 DNS를 자동으로 구성\n"
+"• 자동(주소만): IP 주소를 자동으로 구성하지만 DNS는 수동으로 설정\n"
+"• 자동(DHCP만): DHCPv6을 사용하여 IP 주소와 DNS를 자동으로 구성(SLAAC 무시)\n"
+"• 링크로컬: 자동 링크로컬 주소 사용(fe80::/10)\n"
+"• 수동: 수동으로 IP 주소 입력\n"
+"• 무시됨: IPv6 구성을 건너뛰지만 연결은 허용함\n"
+"• 사용 안 함: IPv6 비활성화"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:244
@@ -1666,7 +1665,7 @@ msgstr "SSID:"
 #: editor/settings/ui/wificonnectionwidget.ui:39
 #, kde-format
 msgid "The name of the Wi-Fi network to connect to"
-msgstr ""
+msgstr "연결할 Wi-Fi 네트워크의 이름"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:68
@@ -1677,6 +1676,10 @@ msgid ""
 "• Ad-hoc: create a direct peer-to-peer network\n"
 "• Access Point: turn this computer into a Wi-Fi hotspot"
 msgstr ""
+"Wi-Fi 네트워크 모드:\n"
+"• Infrastructure: Wi-Fi 라우터에 연결(일반 모드)\n"
+"• Ad-hoc: 직접 피어투피어 네트워크 생성\n"
+"• 액세스 포인트: 이 컴퓨터를 Wi-Fi 핫스팟으로 설정"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:72
@@ -1698,10 +1701,9 @@ msgstr "액세스 포인트"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:90
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to BSSID:"
-msgstr "다음 장치로 제한:"
+msgstr "BSSID로 제한:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:109
@@ -1710,6 +1712,8 @@ msgid ""
 "Lock this connection to a specific access point. Enter the BSSID (MAC "
 "address) of the access point."
 msgstr ""
+"이 연결을 지정한 액세스 포인트로 잠급니다. 액세스 포인트의 BSSID(MAC 주소)를 "
+"입력하십시오."
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:125
@@ -1766,10 +1770,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to network adapter:"
-msgstr "다음 장치로 제한:"
+msgstr "네트워크 어댑터로 제한:"
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wificonnectionwidget.ui:213
@@ -1777,7 +1780,7 @@ msgstr "다음 장치로 제한:"
 msgid ""
 "Lock this connection to a particular network adapter by specifying its MAC "
 "address."
-msgstr ""
+msgstr "이 연결을 MAC 주소로 지정된 특정한 네트워크 어댑터로 잠급니다."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:220
@@ -1791,7 +1794,7 @@ msgstr "복제된 MAC 주소:"
 #, kde-format
 msgid ""
 "Use a different MAC address instead of your network adapter's real address."
-msgstr ""
+msgstr "네트워크 어댑터의 실제 주소 대신 다른 MAC 주소를 사용합니다."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:254
@@ -1806,15 +1809,16 @@ msgid ""
 "Maximum Transmission Unit: the largest packet size that can be sent without "
 "fragmentation. Larger packets will be broken into smaller frames."
 msgstr ""
+"최대 전송 단위(MTU): 분할 없이 전송 가능한 최대 패킷 크기입니다. 더 큰 패킷"
+"은 작은 프레임으로 분할됩니다."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:304
 #: editor/settings/ui/wificonnectionwidget.ui:320
-#, fuzzy, kde-format
-#| msgid "Mark this if you want to create a connection for a hidden network"
+#, kde-format
 msgid "Create a connection for a hidden network"
-msgstr "숨은 네트워크 연결을 생성하려면 선택하십시오"
+msgstr "숨은 네트워크 연결 생성"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:307
@@ -1867,17 +1871,15 @@ msgstr "동적 WEP(802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:65
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA2/WPA3 Personal"
-msgstr "WPA/WPA2 Personal"
+msgstr "WPA2/WPA3 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:70
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA2/WPA3 Enterprise"
-msgstr "WPA/WPA2 Enterprise"
+msgstr "WPA2/WPA3 Enterprise"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:75

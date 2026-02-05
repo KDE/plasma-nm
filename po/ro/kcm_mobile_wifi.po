@@ -1,22 +1,22 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# Sergiu Bivol <sergiu@cip.md>, 2020, 2021.
+# SPDX-FileCopyrightText: 2020, 2021, 2026 Sergiu Bivol <sergiu@cip.md>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2021-07-25 13:11+0100\n"
+"PO-Revision-Date: 2026-02-04 14:56+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
-"Language-Team: Romanian\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -27,48 +27,45 @@ msgstr "Date de intrare nevalide."
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
-msgstr ""
+msgstr "Informații de conexiune pentru „%1”"
 
 #: ui/ConnectionInfo.qml:22
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
-msgstr ""
+msgstr "Rate de transfer"
 
 #: ui/ConnectionInfo.qml:38
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr ""
+msgstr "Conectat, ↓ %1/s, ↑ %2/s"
 
 #: ui/ConnectionInfo.qml:46
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
-msgstr "Conectează la"
+msgstr "Detaliile conexiunii"
 
 #: ui/main.qml:26
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "Modifică"
 
 #: ui/main.qml:87
 #, kde-format
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: ui/main.qml:98
-#, fuzzy, kde-format
-#| msgid "Hidden Network:"
+#, kde-format
 msgctxt "@title:group"
 msgid "Saved Networks"
-msgstr "Rețea ascunsă:"
+msgstr "Rețele salvate"
 
 #: ui/main.qml:135
-#, fuzzy, kde-format
-#| msgid "Hidden Network:"
+#, kde-format
 msgid "Available Networks"
-msgstr "Rețea ascunsă:"
+msgstr "Rețele disponibile"
 
 #: ui/main.qml:169
 #, kde-format
@@ -76,8 +73,7 @@ msgid "Add Custom Connection"
 msgstr "Adaugă conexiune personalizată"
 
 #: ui/NetworkSettings.qml:15
-#, fuzzy, kde-format
-#| msgid "Add new Connection"
+#, kde-format
 msgid "Add New Connection"
 msgstr "Adaugă conexiune nouă"
 
@@ -87,8 +83,7 @@ msgid "Save"
 msgstr "Salvează"
 
 #: ui/NetworkSettings.qml:54
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title:group"
 msgid "General"
 msgstr "Generale"
@@ -99,23 +94,20 @@ msgid "SSID"
 msgstr "SSID"
 
 #: ui/NetworkSettings.qml:75
-#, fuzzy, kde-format
-#| msgid "Hidden Network:"
+#, kde-format
 msgid "Hidden Network"
-msgstr "Rețea ascunsă:"
+msgstr "Rețea ascunsă"
 
 #: ui/NetworkSettings.qml:82
-#, fuzzy, kde-format
-#| msgid "Security"
+#, kde-format
 msgctxt "@title:group"
 msgid "Security"
 msgstr "Securitate"
 
 #: ui/NetworkSettings.qml:89
-#, fuzzy, kde-format
-#| msgid "Security type:"
+#, kde-format
 msgid "Security type"
-msgstr "Tip de securitate:"
+msgstr "Tip de securitate"
 
 #: ui/NetworkSettings.qml:99
 #, kde-format
@@ -143,22 +135,19 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
 #: ui/NetworkSettings.qml:104
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA3 Personal"
-msgstr "WPA/WPA2 Personal"
+msgstr "WPA3 Personal"
 
 #: ui/NetworkSettings.qml:105
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise"
-msgstr "WPA/WPA2 Enterprise"
+msgstr "WPA3 Enterprise"
 
 #: ui/NetworkSettings.qml:143
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password"
-msgstr "Parolă:"
+msgstr "Parolă"
 
 #: ui/NetworkSettings.qml:159
 #, kde-format
@@ -191,8 +180,7 @@ msgid "Protected EAP"
 msgstr "EAP protejat"
 
 #: ui/NetworkSettings.qml:177
-#, fuzzy, kde-format
-#| msgid "IP settings"
+#, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
 msgstr "Configurări IP"
@@ -200,7 +188,7 @@ msgstr "Configurări IP"
 #: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Method"
-msgstr ""
+msgstr "Metodă"
 
 #: ui/NetworkSettings.qml:184
 #, kde-format
@@ -213,28 +201,24 @@ msgid "Manual"
 msgstr "Manual"
 
 #: ui/NetworkSettings.qml:200
-#, fuzzy, kde-format
-#| msgid "IP Address:"
+#, kde-format
 msgid "IP Address"
-msgstr "Adresă IP:"
+msgstr "Adresă IP"
 
 #: ui/NetworkSettings.qml:218
-#, fuzzy, kde-format
-#| msgid "Gateway:"
+#, kde-format
 msgid "Gateway"
-msgstr "Gateway:"
+msgstr "Poartă"
 
 #: ui/NetworkSettings.qml:236
-#, fuzzy, kde-format
-#| msgid "Network prefix length:"
+#, kde-format
 msgid "Network prefix length"
-msgstr "Lungime prefix de rețea:"
+msgstr "Lungime prefix de rețea"
 
 #: ui/NetworkSettings.qml:255
-#, fuzzy, kde-format
-#| msgid "DNS:"
+#, kde-format
 msgid "DNS"
-msgstr "DNS:"
+msgstr "DNS"
 
 #: ui/PasswordField.qml:13
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 00:46+0000\n"
-"PO-Revision-Date: 2026-01-30 11:54+0100\n"
+"PO-Revision-Date: 2026-02-05 12:15+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -1227,6 +1227,16 @@ msgid ""
 "devices\n"
 "• Disabled: turn off IPv4"
 msgstr ""
+"Como configurar le adresse de IPv4:\n"
+"• Automatic: obtene adresse e DNS automaticamente via DHCP\n"
+"• Automatic (solmente adresses): obtene adresse via DHCP ma configura DNS "
+"manualmente\n"
+"• Link-Local (ligamine local): usa adressar automatic de link-local (169.254."
+"x.x)\n"
+"• Manual: inserta un adresse de IP static\n"
+"• Shared (compartite): commuta iste computator in un router per compartir  "
+"internet con altere dispositivo\n"
+"• Dishabilitate: extingue IPv4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:58 editor/settings/ui/ipv6.ui:234
@@ -1351,6 +1361,12 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Un punctuage que adjuta a seliger le percurso melior porque pacchettos de "
+"datos attinge lor destination,\n"
+"basate sur factores como distatia, retardo, e credibilitate.\n"
+"\n"
+"Valor predefinite -1 significa que NetworkManager obtene seliger e gerer le "
+"metric actual del route."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:270 editor/settings/ui/ipv6.ui:97
@@ -1470,6 +1486,17 @@ msgid ""
 "• Ignored: skip IPv6 configuration but allow connection\n"
 "• Disabled: turn off IPv6 completely"
 msgstr ""
+"Como configurar leadresse de IPv6:\n"
+"• Automatic: obtene adresse e DNS automaticamente (via SLAAC e/o DHCPv6)\n"
+"• Automatic (Solmente adresses): obtene adresse automaticamente ma configura "
+"DNS manualmente\n"
+"• Automatic (Solmente DHCP): obtene adress e DNS solmente via DHCPv6  "
+"(ignora  SLAAC)\n"
+"• Link-Local (ligamine-local): use adressar automatic de link-local  "
+"(fe80::/10)\n"
+"• Manual: inserta un adresse static de IP\n"
+"• Ignorate: salta configuration de IPv6 ma permitte connexion\n"
+"• Dishabilitate: extingue IPv6 completemente"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:244
@@ -1664,6 +1691,11 @@ msgid ""
 "• Ad-hoc: create a direct peer-to-peer network\n"
 "• Access Point: turn this computer into a Wi-Fi hotspot"
 msgstr ""
+"Modo de rete Wi-Fi :\n"
+"• Infrastructura: connecte a un router Wi-Fi  (modo normal)\n"
+"• Ad-hoc: crea un rete directe par-a-par\n"
+"• Access Point (Puncto de Accesso): commuta iste computator in un hotspot Wi-"
+"Fi "
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:72
@@ -1696,6 +1728,8 @@ msgid ""
 "Lock this connection to a specific access point. Enter the BSSID (MAC "
 "address) of the access point."
 msgstr ""
+"Serra iste connexion aunpuncto de accesso (access point) specific. Inserta "
+"le BSSID (adresse MAC ) del punco de accesso."
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:125
@@ -1766,6 +1800,8 @@ msgid ""
 "Lock this connection to a particular network adapter by specifying its MAC "
 "address."
 msgstr ""
+"Serra iste connexion a un particular adaptator de rete per specificar su "
+"adresse MAC."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:220
@@ -1780,6 +1816,8 @@ msgstr "Adresse MAC clonate"
 msgid ""
 "Use a different MAC address instead of your network adapter's real address."
 msgstr ""
+"Usa un differente adresse MAC in loco del adresse real de tu adaptator de "
+"rete."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:254
@@ -1794,6 +1832,9 @@ msgid ""
 "Maximum Transmission Unit: the largest packet size that can be sent without "
 "fragmentation. Larger packets will be broken into smaller frames."
 msgstr ""
+"Maximum Transmission Unit (Maxime Unitate de Transmission): le pluis grande "
+"dimension de pacchetto que pote esser inviate sinfragmentation.Pacchettos "
+"plus grande essera rumpite in quadros (frames)  plus parve."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)

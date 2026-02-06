@@ -382,9 +382,3 @@ msgstr "Brukernavn:"
 #, kde-format
 msgid "Group name."
 msgstr ""
-
-#~ msgid "Error decrypting the obfuscated password"
-#~ msgstr "Feil ved dekryptering av tåkelagt passord"
-
-#~ msgid "Error"
-#~ msgstr "Feil"

@@ -1048,9 +1048,3 @@ msgstr ""
 #, kde-format
 msgid "one-time password"
 msgstr ""
-
-#~ msgid "Error saving file %1: %2"
-#~ msgstr "Feil ved lagring av fil %1: %2"
-
-#~ msgid "Error copying certificate to %1: %2"
-#~ msgstr "Feil ved kopiering av sertifikat til %1: %2"

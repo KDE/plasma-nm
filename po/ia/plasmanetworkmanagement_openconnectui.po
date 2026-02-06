@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2017, 2020, 2021, 2022, 2023, 2024 giovanni <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2017, 2020, 2021, 2022, 2023, 2024, 2026 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2024-10-28 11:16+0100\n"
+"PO-Revision-Date: 2026-02-05 16:49+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -400,35 +400,31 @@ msgid "Internal User Verification Locked"
 msgstr "Verificatio de Usator Interne Blocate"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
 msgstr[0] "PIN errate. %1 tentativas remanente."
 msgstr[1] "PIN errate. %1 tentativas remanente."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] "Troppo curte. %1 tentativas remanente."
+msgstr[0] "Troppo curte. %1 tentativa remanente."
 msgstr[1] "Troppo curte. %1 tentativas remanente."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] "Characteres Invalide. %1 tentativas remanente."
+msgstr[0] "Characteres Invalide. %1 tentativa remanente."
 msgstr[1] "Characteres Invalide. %1 tentativas remanente."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] "Mesme que le PIN currente. %1 tentativas remanente."
+msgstr[0] "Mesme que le PIN currente. %1 tentativa remanente."
 msgstr[1] "Mesme que le PIN currente. %1 tentativas remanente."
 
 #: openconnectwebauthdialog.cpp:239
@@ -498,6 +494,8 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"Le indicio de secutitatenon supporta le methodo de authentication del "
+"servitor"
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format

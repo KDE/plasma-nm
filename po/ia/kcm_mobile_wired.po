@@ -1,109 +1,108 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+# SPDX-FileCopyrightText: 2026 giovanni <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 03:06+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
-"Language: ga\n"
+"PO-Revision-Date: 2026-02-05 16:48+0100\n"
+"Last-Translator: giovanni <g.sora@tiscali.it>\n"
+"Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
+"Language: ia\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
-"3 : 4\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: ui/ConnectDialog.qml:57
 #, kde-format
 msgid "Invalid input."
-msgstr ""
+msgstr "Entrata invalide."
 
 #: ui/ConnectionInfo.qml:15
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
-msgstr ""
+msgstr "Info de connexion per \"%1\""
 
 #: ui/ConnectionInfo.qml:22
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
-msgstr ""
+msgstr "Ratas de transferentia"
 
 #: ui/ConnectionInfo.qml:38
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr ""
+msgstr "Connectite, ↓ %1/s, ↑ %2/s"
 
 #: ui/ConnectionInfo.qml:46
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
-msgstr ""
+msgstr "Detalios de connexion"
 
 #: ui/main.qml:59
 #, kde-format
 msgctxt "@title:group"
 msgid "Wired Network Connections"
-msgstr ""
+msgstr "Connexiones de Rete con cablo"
 
 #: ui/main.qml:117
 #, kde-format
 msgid "No wired connection available."
-msgstr ""
+msgstr "Necun connexion de rete con cablo disponibile."
 
 #: ui/NetworkSettings.qml:16
 #, kde-format
 msgid "Add New Connection"
-msgstr ""
+msgstr "Adde nove connexion"
 
 #: ui/NetworkSettings.qml:31
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "Salveguarda"
 
 #: ui/NetworkSettings.qml:49
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
-msgstr ""
+msgstr "Preferentias de IP"
 
 #: ui/NetworkSettings.qml:55
 #, kde-format
 msgid "Method"
-msgstr ""
+msgstr "Methodo"
 
 #: ui/NetworkSettings.qml:56
 #, kde-format
 msgid "Automatic"
-msgstr ""
+msgstr "Automatic"
 
 #: ui/NetworkSettings.qml:56
 #, kde-format
 msgid "Manual"
-msgstr ""
+msgstr "Manual"
 
 #: ui/NetworkSettings.qml:72
 #, kde-format
 msgid "IP Address"
-msgstr ""
+msgstr "Adresse IP"
 
 #: ui/NetworkSettings.qml:90
 #, kde-format
 msgid "Gateway"
-msgstr ""
+msgstr "Gateway"
 
 #: ui/NetworkSettings.qml:108
 #, kde-format
 msgid "Network prefix length"
-msgstr ""
+msgstr "Longitude de prefixo de rete"
 
 #: ui/NetworkSettings.qml:127
 #, kde-format
 msgid "DNS"
-msgstr ""
+msgstr "DNS"

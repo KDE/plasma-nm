@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2014, 2020, 2021, 2022, 2023, 2024, 2025 Giovanni Sora <g.sora@tiscali.it>
+# SPDX-FileCopyrightText: 2014, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 02:43+0000\n"
-"PO-Revision-Date: 2025-09-12 12:38+0200\n"
+"PO-Revision-Date: 2026-02-05 16:51+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -47,9 +47,7 @@ msgid "Signal Strength"
 msgstr "Fortia de signal"
 
 #: editor/connectiondetails.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "WiFi signal strength percentage indicator"
-#| msgid "%1%"
+#, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
@@ -207,9 +205,7 @@ msgid "Device"
 msgstr "Dispositivo"
 
 #: editor/connectiondetails.cpp:316
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "General"
 
@@ -272,7 +268,7 @@ msgstr "IPv4"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "Stato"
 
 #: editor/connectioneditorbase.cpp:209
 #, kde-format
@@ -440,9 +436,7 @@ msgid "PAN (personal area network)"
 msgstr "PAN (personal area network - rete de area personal)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
 msgstr "Disconnectite"
 
@@ -1326,6 +1320,12 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Un punctuage que adjuta a seliger le percurso melior porque pacchettos de "
+"datos attinge lor destination,\n"
+"basate sur factores como distatia, retardo, e credibilitate.\n"
+"\n"
+"Valor predefinite -1 significa que NetworkManager obtene seliger e gerer le "
+"metric actual del route."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97

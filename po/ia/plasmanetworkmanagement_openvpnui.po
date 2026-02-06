@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Giovanni Sora <g.sora@tiscali.it>, 2014, 2020, 2021, 2023.
+# SPDX-FileCopyrightText: 2014, 2020, 2021, 2023, 2026 Giovanni Sora <g.sora@tiscali.it>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:45+0000\n"
-"PO-Revision-Date: 2023-03-16 11:28+0100\n"
+"PO-Revision-Date: 2026-02-05 18:24+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 21.12.1\n"
+"X-Generator: Lokalize 23.08.5\n"
 
 #: openvpn.cpp:182
 #, kde-format
@@ -1003,7 +1003,7 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
-"Selige iste option sii tu organisation require le uso de un servitor proxy "
+"Selige iste option si tu organisation require le uso de un servitor proxy "
 "per acceder a Internet."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_12)

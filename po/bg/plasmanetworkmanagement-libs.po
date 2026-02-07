@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 00:46+0000\n"
-"PO-Revision-Date: 2026-01-10 22:20+0100\n"
+"PO-Revision-Date: 2026-01-29 23:32+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -1016,13 +1016,7 @@ msgstr "Автоматично свързване с приоритет"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. A negative number can be used to "
-#| "indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -1032,8 +1026,7 @@ msgstr ""
 "Ако връзката е настроена на автоматично свързване, връзки с по-висок "
 "приоритет ще бъдат предпочитани. По подразбиране е 0. \n"
 "По-голямото число означава по-висок приоритет. Отрицателно число може да се "
-"използва, за да се зададе приоритет по-нисък от стандартния.\n"
-"           "
+"използва, за да се зададе приоритет по-нисък от стандартния."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1100,17 +1093,12 @@ msgstr "Измервана:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager indicates to applications whether the connection is "
-#| "metered and therefore\n"
-#| "data usage should be restricted."
+#, kde-format
 msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager показва на приложенията, дали връзката е измервана и "
-"следователно \n"
+"Показва на приложенията, дали връзката е измервана и следователно \n"
 "използването на данни трябва да бъде ограничено."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
@@ -1702,10 +1690,9 @@ msgstr "Access Point"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:90
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to BSSID:"
-msgstr "Ограничаване до устройство:"
+msgstr "Ограничаване до BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:109
@@ -1771,10 +1758,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:194
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to network adapter:"
-msgstr "Ограничаване до устройство:"
+msgstr "Ограничаване до мрежово устройство:"
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wificonnectionwidget.ui:213
@@ -1797,6 +1783,8 @@ msgstr "Клониран MAC адрес:"
 msgid ""
 "Use a different MAC address instead of your network adapter's real address."
 msgstr ""
+"Използване на различен MAC адрес вместо реалния адрес на вашия мрежов "
+"адаптер."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:254
@@ -1811,15 +1799,17 @@ msgid ""
 "Maximum Transmission Unit: the largest packet size that can be sent without "
 "fragmentation. Larger packets will be broken into smaller frames."
 msgstr ""
+"Maximum Transmission Unit: (Максимална единица за предаване) : най-големият "
+"размер на пакета, който може да бъде изпратен без фрагментиране. По-големите "
+"пакети ще бъдат разделени на по-малки фреймове."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:304
 #: editor/settings/ui/wificonnectionwidget.ui:320
-#, fuzzy, kde-format
-#| msgid "Mark this if you want to create a connection for a hidden network"
+#, kde-format
 msgid "Create a connection for a hidden network"
-msgstr "Маркирайте това, ако искате да създадете връзка за скрита мрежа"
+msgstr "Създаване на връзка за скрита мрежа"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:307
@@ -1872,17 +1862,15 @@ msgstr "Dynamic WEP (802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:65
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA2/WPA3 Personal"
-msgstr "WPA/WPA2 Personal"
+msgstr "WPA2/WPA3 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:70
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA2/WPA3 Enterprise"
-msgstr "WPA/WPA2 Enterprise"
+msgstr "WPA2/WPA3 Enterprise"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:75

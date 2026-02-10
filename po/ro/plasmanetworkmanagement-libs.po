@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2013, 2014, 2020, 2021, 2022, 2025 Sergiu Bivol <sergiu@cip.md>
+# SPDX-FileCopyrightText: 2013, 2014, 2020, 2021, 2022, 2025, 2026 Sergiu Bivol <sergiu@cip.md>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2025-10-19 10:46+0100\n"
+"PO-Revision-Date: 2026-01-28 21:50+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
@@ -807,13 +807,13 @@ msgstr " ms"
 #: editor/settings/ui/bond.ui:195
 #, kde-format
 msgid "Link up delay:"
-msgstr ""
+msgstr "Întârzie activarea legăturii:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/bond.ui:215
 #, kde-format
 msgid "Link down delay:"
-msgstr ""
+msgstr "Întârzie dezactivarea legăturii:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/bond.ui:242
@@ -1557,7 +1557,7 @@ msgstr "Aleatoare…"
 #: editor/settings/ui/wificonnectionwidget.ui:303
 #, kde-format
 msgid "Mark this if you want to create a connection for a hidden network"
-msgstr ""
+msgstr "Bifați aici dacă doriți să creați o conexiune pentru o rețea ascunsă"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:290
@@ -1622,10 +1622,9 @@ msgstr "WPA3 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:68
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA/WPA2 Enterprise"
+msgstr "WPA3 Enterprise cu 192 de biți"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wifisecurity.ui:76
@@ -2060,7 +2059,7 @@ msgstr "%1 (%2 MHz)"
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
-msgstr ""
+msgstr "Proprietățile partenerilor WireGuard"
 
 #: editor/uiutils.cpp:133
 #, kde-format
@@ -2438,7 +2437,7 @@ msgstr "%1 Gbiți/s"
 #, kde-format
 msgctxt "Wireless connection frequency"
 msgid "%1 GHz"
-msgstr ""
+msgstr "%1 GHz"
 
 #: editor/uiutils.cpp:464
 #, kde-format
@@ -2474,7 +2473,7 @@ msgstr "Oricare"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:486
 #, kde-format
@@ -2552,7 +2551,7 @@ msgstr "GPRS"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "Compact GSM"
-msgstr ""
+msgstr "Compact GSM"
 
 #: editor/uiutils.cpp:512
 #, kde-format
@@ -2836,7 +2835,7 @@ msgstr ""
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "Neimplementat"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -3231,22 +3230,22 @@ msgstr "&Elimină"
 #: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "Plasma nu are suport pentru conexiuni VPN „%1”."
 
 #: handler.cpp:113
 #, kde-format
 msgid "Report Bug"
-msgstr ""
+msgstr "Raportează defect"
 
 #: handler.cpp:136
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "NetworkManager nu are suport pentru conexiuni VPN „%1”."
 
 #: handler.cpp:138
 #, kde-format
 msgid "Install"
-msgstr ""
+msgstr "Instalează"
 
 #: handler.cpp:353 handler.cpp:846
 #, kde-format
@@ -3401,51 +3400,46 @@ msgid "Import a saved configuration file"
 msgstr "Importă fișier cu configurări salvat"
 
 #: models/networkmodelitem.cpp:42
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Unknown"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e necunoscut"
 
 #: models/networkmodelitem.cpp:43
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is ADSL"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e ADSL"
 
 #: models/networkmodelitem.cpp:44
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bluetooth"
-msgstr ""
+msgstr "Tipul conexiunii e Bluetooth"
 
 #: models/networkmodelitem.cpp:45
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Bridge"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e punte"
 
 #: models/networkmodelitem.cpp:46
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is CDMA"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e CDMA"
 
 #: models/networkmodelitem.cpp:47
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is GSM"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e GSM"
 
 #: models/networkmodelitem.cpp:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Infiniband"
-msgstr ""
+msgstr "Tipul conexiunii e Infiniband"
 
 #: models/networkmodelitem.cpp:49
 #, kde-format
@@ -3454,46 +3448,40 @@ msgid "The connection type is OLPC Mesh"
 msgstr ""
 
 #: models/networkmodelitem.cpp:50
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is PPOPE"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e PPOPE"
 
 #: models/networkmodelitem.cpp:51
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VLAN"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e VLAN"
 
 #: models/networkmodelitem.cpp:52
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is VPN"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e VPN"
 
 #: models/networkmodelitem.cpp:53
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wimax"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e Wimax"
 
 #: models/networkmodelitem.cpp:54
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wired"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e cu fir"
 
 #: models/networkmodelitem.cpp:55
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Wireless"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e fără fir"
 
 #: models/networkmodelitem.cpp:56
 #, fuzzy, kde-format
@@ -3510,23 +3498,22 @@ msgid "The connection type is Generic"
 msgstr "Tip de conexiune:"
 
 #: models/networkmodelitem.cpp:58
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is Tunnel"
-msgstr "Tip de conexiune:"
+msgstr "Tipul conexiunii e tunel"
 
 #: models/networkmodelitem.cpp:59
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is IP Tunnel"
-msgstr ""
+msgstr "Tipul conexiunii e tunel IP"
 
 #: models/networkmodelitem.cpp:60
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "The connection type is WireGuard"
-msgstr ""
+msgstr "Tipul conexiunii e WireGuard"
 
 #: models/networkmodelitem.cpp:585
 #, kde-format
@@ -3539,16 +3526,14 @@ msgid "IPv4 Default Gateway"
 msgstr "Poartă implicită IPv4"
 
 #: models/networkmodelitem.cpp:598
-#, fuzzy, kde-format
-#| msgid "IPv4 Nameserver"
+#, kde-format
 msgid "IPv4 Primary Nameserver"
-msgstr "Server de nume IPv4"
+msgstr "Server de nume primar IPv4"
 
 #: models/networkmodelitem.cpp:602
-#, fuzzy, kde-format
-#| msgid "IPv4 Nameserver"
+#, kde-format
 msgid "IPv4 Secondary Nameserver"
-msgstr "Server de nume IPv4"
+msgstr "Server de nume secundar IPv4"
 
 #: models/networkmodelitem.cpp:612
 #, kde-format
@@ -3556,28 +3541,24 @@ msgid "IPv6 Address"
 msgstr "Adresă IPv6"
 
 #: models/networkmodelitem.cpp:614
-#, fuzzy, kde-format
-#| msgid "IPv6 Address"
+#, kde-format
 msgid "IPv6 ULA Address"
-msgstr "Adresă IPv6"
+msgstr "Adresă ULA IPv6"
 
 #: models/networkmodelitem.cpp:620
-#, fuzzy, kde-format
-#| msgid "IPv4 Default Gateway"
+#, kde-format
 msgid "IPv6 Default Gateway"
-msgstr "Poartă implicită IPv4"
+msgstr "Poartă implicită IPv6"
 
 #: models/networkmodelitem.cpp:627
-#, fuzzy, kde-format
-#| msgid "IPv6 Nameserver"
+#, kde-format
 msgid "IPv6 Primary Nameserver"
-msgstr "Server de nume IPv6"
+msgstr "Server de nume primar IPv6"
 
 #: models/networkmodelitem.cpp:631
-#, fuzzy, kde-format
-#| msgid "IPv6 Nameserver"
+#, kde-format
 msgid "IPv6 Secondary Nameserver"
-msgstr "Server de nume IPv6"
+msgstr "Server de nume secundar IPv6"
 
 #: models/networkmodelitem.cpp:640 models/networkmodelitem.cpp:653
 #, kde-format
@@ -3610,13 +3591,12 @@ msgstr "Tip de securitate"
 #: models/networkmodelitem.cpp:657
 #, kde-format
 msgid "Frequency"
-msgstr ""
+msgstr "Frecvență"
 
 #: models/networkmodelitem.cpp:658
-#, fuzzy, kde-format
-#| msgid "BSSID:"
+#, kde-format
 msgid "BSSID"
-msgstr "BSSID:"
+msgstr "BSSID"
 
 #: models/networkmodelitem.cpp:672
 #, kde-format

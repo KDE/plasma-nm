@@ -1,28 +1,27 @@
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# Sergiu Bivol <sergiu@cip.md>, 2020, 2021.
+# SPDX-FileCopyrightText: 2020, 2021, 2026 Sergiu Bivol <sergiu@cip.md>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2021-07-25 12:42+0100\n"
+"PO-Revision-Date: 2026-01-28 21:54+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
-"Language-Team: Romanian\n"
+"Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
 "20)) ? 1 : 2;\n"
-"X-Generator: Lokalize 19.12.3\n"
+"X-Generator: Lokalize 25.08.1\n"
 
 #: kcm.cpp:288
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Importă conexiune VPN"
+msgstr "Importul conexiunii VPN a eșuat: %1"
 
 #: kcm.cpp:358
 #, kde-format
@@ -51,20 +50,19 @@ msgid "Import VPN Connection"
 msgstr "Importă conexiune VPN"
 
 #: kcm.cpp:555
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
-msgstr "Exportă conexiune VPN"
+msgstr "Conexiuni VPN (%1)"
 
 #: kcm.cpp:558
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Nu a fost furnizat niciun fișier"
 
 #: kcm.cpp:619
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Tip de VPN necunoscut"
 
 #: qml/AddConnectionDialog.qml:15
 msgctxt "@title:window"
@@ -114,7 +112,7 @@ msgstr "Parolă Hotspot:"
 
 #: qml/ConfigurationDialog.qml:102
 msgid "OK"
-msgstr ""
+msgstr "Bine"
 
 #: qml/ConnectionItem.qml:108
 msgid "Connect"

@@ -6,6 +6,7 @@ import QtQuick.Layouts
 import QtQuick.Controls as Controls
 
 import org.kde.plasma.networkmanagement as PlasmaNM
+import org.kde.plasma.networkmanagement.cellular as Cellular
 import org.kde.kcmutils
 import org.kde.kirigami as Kirigami
 import org.kde.kirigamiaddons.formcard 1 as FormCard
@@ -16,12 +17,10 @@ import cellularnetworkkcm 1.0
 FormCard.FormCardPage {
     id: simPage
 
-    property Sim sim: null
+    property Cellular.CellularSim sim: null
 
     property string displayId: sim ? sim.displayId : ""
     property bool simEnabled: sim ? sim.enabled : false
-    property bool isRoaming: sim ? (sim.modem ? sim.modem.isRoaming : false) : false
-
     property bool simLocked: sim ? sim.locked : false
     property string simImsi: sim ? sim.imsi : ""
     property string simEid: sim ? sim.eid : ""
@@ -56,15 +55,23 @@ FormCard.FormCardPage {
         Layout.topMargin: Kirigami.Units.gridUnit
 
         FormCard.FormSwitchDelegate {
-            id: dataRoamingCheckBox
-            text: i18n("Data Roaming")
-            description: i18n("Allow your device to use networks other than your carrier.")
-            enabled: simEnabled
-            checked: isRoaming
-            onCheckedChanged: sim.modem.isRoaming = checked
+            id: roamingSwitch
+            text: i18n("Roaming")
+            description: i18n("Allow mobile data when on a roaming network.")
+
+            property Cellular.CellularModem modem: sim ? sim.modem : null
+            property int activeProfileIndex: modem ? modem.profiles.indexOfConnection(modem.activeConnectionUni) : -1
+            property bool shouldBeChecked: activeProfileIndex >= 0 ? modem.profiles.roamingAllowedForConnection(modem.activeConnectionUni) : false
+
+            enabled: modem && modem.mobileDataEnabled && activeProfileIndex >= 0
+            checked: shouldBeChecked
+
+            onToggled: {
+                modem.profiles.setRoamingAllowed(activeProfileIndex, checked);
+            }
         }
 
-        FormCard.FormDelegateSeparator { above: dataRoamingCheckBox; below: apnButton }
+        FormCard.FormDelegateSeparator { above: roamingSwitch; below: apnButton }
 
         FormCard.FormButtonDelegate {
             id: apnButton

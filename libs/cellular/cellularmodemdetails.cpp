@@ -1,119 +1,112 @@
-// SPDX-FileCopyrightText: 2021 Devin Lin <devin@kde.org>
-// SPDX-License-Identifier: GPL-2.0-or-later
+/*
+    SPDX-FileCopyrightText: 2021-2026 Devin Lin <devin@kde.org>
 
-#include "modemdetails.h"
+    SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
+*/
+
+#include "cellularmodemdetails.h"
+#include "cellularmodem.h"
+#include "plasma_nm_cellular.h"
 
 #include <KLocalizedString>
-
 #include <QDBusPendingCallWatcher>
 
-ModemDetails::ModemDetails(QObject *parent, Modem *modem)
+using namespace Qt::Literals::StringLiterals;
+
+CellularModemDetails::CellularModemDetails(QObject *parent, CellularModem *modem)
     : QObject{parent}
     , m_modem{modem}
     , m_scanNetworkWatcher{nullptr}
     , m_isScanningNetworks{false}
     , m_cachedScannedNetworks{}
 {
-    auto mmInterfacePointer = m_modem->m_mmInterface.data();
-    connect(mmInterfacePointer, &ModemManager::Modem::accessTechnologiesChanged, this, [this]() -> void {
+    auto mmInterfacePointer = m_modem->mmModemInterface().data();
+    connect(mmInterfacePointer, &ModemManager::Modem::accessTechnologiesChanged, this, [this]() {
         Q_EMIT accessTechnologiesChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::deviceChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::deviceChanged, this, [this]() {
         Q_EMIT deviceChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::deviceIdentifierChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::deviceIdentifierChanged, this, [this]() {
         Q_EMIT deviceIdentifierChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::driversChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::driversChanged, this, [this]() {
         Q_EMIT driversChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::equipmentIdentifierChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::equipmentIdentifierChanged, this, [this]() {
         Q_EMIT equipmentIdentifierChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::manufacturerChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::manufacturerChanged, this, [this]() {
         Q_EMIT manufacturerChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::modelChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::modelChanged, this, [this]() {
         Q_EMIT modelChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::ownNumbersChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::ownNumbersChanged, this, [this]() {
         Q_EMIT ownNumbersChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::pluginChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::pluginChanged, this, [this]() {
         Q_EMIT pluginChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::powerStateChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::powerStateChanged, this, [this]() {
         Q_EMIT powerStateChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::revisionChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::revisionChanged, this, [this]() {
         Q_EMIT revisionChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::signalQualityChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::signalQualityChanged, this, [this]() {
         Q_EMIT signalQualityChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::simPathChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::simPathChanged, this, [this]() {
         Q_EMIT simPathChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::stateChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::stateChanged, this, [this]() {
         Q_EMIT stateChanged();
     });
-    connect(mmInterfacePointer, &ModemManager::Modem::stateFailedReasonChanged, this, [this]() -> void {
+    connect(mmInterfacePointer, &ModemManager::Modem::stateFailedReasonChanged, this, [this]() {
         Q_EMIT stateFailedReasonChanged();
     });
 
-    if (m_modem->m_mm3gppDevice) {
-        connect(m_modem->m_mm3gppDevice.data(), &ModemManager::Modem3gpp::operatorCodeChanged, this, [this]() -> void {
+    auto mm3gpp = m_modem->mm3gppDevice();
+    if (mm3gpp) {
+        connect(mm3gpp.data(), &ModemManager::Modem3gpp::operatorCodeChanged, this, [this]() {
             Q_EMIT operatorCodeChanged();
         });
-        connect(m_modem->m_mm3gppDevice.data(), &ModemManager::Modem3gpp::operatorNameChanged, this, [this]() -> void {
+        connect(mm3gpp.data(), &ModemManager::Modem3gpp::operatorNameChanged, this, [this]() {
             Q_EMIT operatorNameChanged();
         });
-        connect(m_modem->m_mm3gppDevice.data(), &ModemManager::Modem3gpp::registrationStateChanged, this, [this]() -> void {
+        connect(mm3gpp.data(), &ModemManager::Modem3gpp::registrationStateChanged, this, [this]() {
             Q_EMIT registrationStateChanged();
-            Q_EMIT m_modem->isRoamingChanged();
         });
     } else {
-        qWarning() << QStringLiteral("3gpp device not found!");
+        qCWarning(PLASMA_NM_CELLULAR_LOG) << "3gpp device not found!";
     }
 
-    // m_modem->m_nmModem may be nullptr, listen for updates
-    connect(m_modem, &Modem::nmModemChanged, this, &ModemDetails::updateNMSignals);
+    // m_modem->nmModemDevice() may be nullptr, listen for updates
+    connect(m_modem, &CellularModem::nmModemChanged, this, &CellularModemDetails::updateNMSignals);
     updateNMSignals();
 }
 
-void ModemDetails::updateNMSignals()
+void CellularModemDetails::updateNMSignals()
 {
-    if (m_modem->m_nmModem) {
-        connect(m_modem->m_nmModem.data(), &NetworkManager::ModemDevice::firmwareVersionChanged, this, [this]() -> void {
+    auto nmModem = m_modem->nmModemDevice();
+    if (nmModem) {
+        connect(nmModem.data(), &NetworkManager::ModemDevice::firmwareVersionChanged, this, [this]() {
             Q_EMIT firmwareVersionChanged();
         });
-        connect(m_modem->m_nmModem.data(), &NetworkManager::ModemDevice::interfaceNameChanged, this, [this]() -> void {
+        connect(nmModem.data(), &NetworkManager::ModemDevice::interfaceNameChanged, this, [this]() {
             Q_EMIT interfaceNameChanged();
         });
-        connect(m_modem->m_nmModem.data(), &NetworkManager::ModemDevice::meteredChanged, this, [this]() -> void {
+        connect(nmModem.data(), &NetworkManager::ModemDevice::meteredChanged, this, [this]() {
             Q_EMIT meteredChanged();
         });
     }
 }
 
-ModemDetails &ModemDetails::operator=(ModemDetails &&other)
-{
-    swap(other);
-    return *this;
-}
-
-void ModemDetails::swap(ModemDetails &other)
-{
-    std::swap(m_modem, other.m_modem);
-    std::swap(m_cachedScannedNetworks, other.m_cachedScannedNetworks);
-    std::swap(m_isScanningNetworks, other.m_isScanningNetworks);
-    std::swap(m_scanNetworkWatcher, other.m_scanNetworkWatcher);
-}
-
-QStringList ModemDetails::accessTechnologies()
+QStringList CellularModemDetails::accessTechnologies()
 {
     QStringList list;
-    auto flags = m_modem->m_mmInterface->accessTechnologies();
+    auto flags = m_modem->mmModemInterface()->accessTechnologies();
     if (flags & MM_MODEM_ACCESS_TECHNOLOGY_UNKNOWN) {
         list.push_back(i18n("Unknown"));
     }
@@ -168,54 +161,54 @@ QStringList ModemDetails::accessTechnologies()
     return list;
 }
 
-QString ModemDetails::device()
+QString CellularModemDetails::device()
 {
-    return m_modem->m_mmInterface->device();
+    return m_modem->mmModemInterface()->device();
 }
 
-QString ModemDetails::deviceIdentifier()
+QString CellularModemDetails::deviceIdentifier()
 {
-    return m_modem->m_mmInterface->deviceIdentifier();
+    return m_modem->mmModemInterface()->deviceIdentifier();
 }
 
-QStringList ModemDetails::drivers()
+QStringList CellularModemDetails::drivers()
 {
-    return m_modem->m_mmInterface->drivers();
+    return m_modem->mmModemInterface()->drivers();
 }
 
-QString ModemDetails::equipmentIdentifier()
+QString CellularModemDetails::equipmentIdentifier()
 {
-    return m_modem->m_mmInterface->equipmentIdentifier();
+    return m_modem->mmModemInterface()->equipmentIdentifier();
 }
 
-bool ModemDetails::isEnabled()
+bool CellularModemDetails::isEnabled()
 {
-    return m_modem->m_mmInterface->isEnabled();
+    return m_modem->mmModemInterface()->isEnabled();
 }
 
-QString ModemDetails::manufacturer()
+QString CellularModemDetails::manufacturer()
 {
-    return m_modem->m_mmInterface->manufacturer();
+    return m_modem->mmModemInterface()->manufacturer();
 }
 
-QString ModemDetails::model()
+QString CellularModemDetails::model()
 {
-    return m_modem->m_mmInterface->model();
+    return m_modem->mmModemInterface()->model();
 }
 
-QStringList ModemDetails::ownNumbers()
+QStringList CellularModemDetails::ownNumbers()
 {
-    return m_modem->m_mmInterface->ownNumbers();
+    return m_modem->mmModemInterface()->ownNumbers();
 }
 
-QString ModemDetails::plugin()
+QString CellularModemDetails::plugin()
 {
-    return m_modem->m_mmInterface->plugin();
+    return m_modem->mmModemInterface()->plugin();
 }
 
-QString ModemDetails::powerState()
+QString CellularModemDetails::powerState()
 {
-    switch (m_modem->m_mmInterface->powerState()) {
+    switch (m_modem->mmModemInterface()->powerState()) {
     case MM_MODEM_POWER_STATE_UNKNOWN:
         return i18n("Unknown");
     case MM_MODEM_POWER_STATE_OFF:
@@ -228,24 +221,24 @@ QString ModemDetails::powerState()
     return {};
 }
 
-QString ModemDetails::revision()
+QString CellularModemDetails::revision()
 {
-    return m_modem->m_mmInterface->revision();
+    return m_modem->mmModemInterface()->revision();
 }
 
-uint ModemDetails::signalQuality()
+uint CellularModemDetails::signalQuality()
 {
-    return m_modem->m_mmInterface->signalQuality().signal;
+    return m_modem->mmModemInterface()->signalQuality().signal;
 }
 
-QString ModemDetails::simPath()
+QString CellularModemDetails::simPath()
 {
-    return m_modem->m_mmInterface->simPath();
+    return m_modem->mmModemInterface()->simPath();
 }
 
-QString ModemDetails::state()
+QString CellularModemDetails::state()
 {
-    switch (m_modem->m_mmInterface->state()) {
+    switch (m_modem->mmModemInterface()->state()) {
     case MM_MODEM_STATE_FAILED:
         return i18n("Failed");
     case MM_MODEM_STATE_UNKNOWN:
@@ -276,9 +269,9 @@ QString ModemDetails::state()
     return {};
 }
 
-QString ModemDetails::stateFailedReason()
+QString CellularModemDetails::stateFailedReason()
 {
-    switch (m_modem->m_mmInterface->stateFailedReason()) {
+    switch (m_modem->mmModemInterface()->stateFailedReason()) {
     case MM_MODEM_STATE_FAILED_REASON_NONE:
         return i18n("No error.");
     case MM_MODEM_STATE_FAILED_REASON_UNKNOWN:
@@ -295,23 +288,26 @@ QString ModemDetails::stateFailedReason()
     return {};
 }
 
-QString ModemDetails::operatorCode()
+QString CellularModemDetails::operatorCode()
 {
-    return m_modem->m_mm3gppDevice ? m_modem->m_mm3gppDevice->operatorCode() : QString{};
+    auto mm3gpp = m_modem->mm3gppDevice();
+    return mm3gpp ? mm3gpp->operatorCode() : QString{};
 }
 
-QString ModemDetails::operatorName()
+QString CellularModemDetails::operatorName()
 {
-    return m_modem->m_mm3gppDevice ? m_modem->m_mm3gppDevice->operatorName() : QString{};
+    auto mm3gpp = m_modem->mm3gppDevice();
+    return mm3gpp ? mm3gpp->operatorName() : QString{};
 }
 
-QString ModemDetails::registrationState()
+QString CellularModemDetails::registrationState()
 {
-    if (!m_modem->m_mm3gppDevice) {
+    auto mm3gpp = m_modem->mm3gppDevice();
+    if (!mm3gpp) {
         return QString{};
     }
 
-    switch (m_modem->m_mm3gppDevice->registrationState()) {
+    switch (mm3gpp->registrationState()) {
     case MM_MODEM_3GPP_REGISTRATION_STATE_IDLE:
         return i18n("Not registered, not searching for new operator to register.");
     case MM_MODEM_3GPP_REGISTRATION_STATE_HOME:
@@ -343,52 +339,54 @@ QString ModemDetails::registrationState()
 Q_DECLARE_METATYPE(MMModem3gppNetworkAvailability)
 Q_DECLARE_METATYPE(MMModemAccessTechnology)
 
-QList<AvailableNetwork *> ModemDetails::networks()
+QList<CellularAvailableNetwork *> CellularModemDetails::networks()
 {
     return m_cachedScannedNetworks;
 }
 
-Q_INVOKABLE void ModemDetails::scanNetworks()
+void CellularModemDetails::scanNetworks()
 {
     for (auto p : m_cachedScannedNetworks) {
         p->deleteLater();
     }
     m_cachedScannedNetworks.clear();
 
-    if (m_modem->m_mm3gppDevice) {
-        qDebug() << QStringLiteral("Scanning for available networks...");
+    auto mm3gpp = m_modem->mm3gppDevice();
+    if (mm3gpp) {
+        qCDebug(PLASMA_NM_CELLULAR_LOG) << "Scanning for available networks...";
 
-        QDBusPendingReply<ModemManager::QVariantMapList> reply = m_modem->m_mm3gppDevice->scan();
+        QDBusPendingReply<ModemManager::QVariantMapList> reply = mm3gpp->scan();
 
         m_isScanningNetworks = true;
         Q_EMIT isScanningNetworksChanged();
         m_scanNetworkWatcher = new QDBusPendingCallWatcher(reply, this);
-        connect(m_scanNetworkWatcher, &QDBusPendingCallWatcher::finished, this, &ModemDetails::scanNetworksFinished);
+        connect(m_scanNetworkWatcher, &QDBusPendingCallWatcher::finished, this, &CellularModemDetails::scanNetworksFinished);
     }
 
     Q_EMIT networksChanged();
 }
 
-void ModemDetails::scanNetworksFinished(QDBusPendingCallWatcher *call)
+void CellularModemDetails::scanNetworksFinished(QDBusPendingCallWatcher *call)
 {
     QDBusPendingReply<ModemManager::QVariantMapList> reply = *call;
     if (reply.isError()) {
-        qDebug() << QStringLiteral("Scanning failed:") << reply.error().message();
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Scanning networks failed: %1", reply.error().message()));
+        qCDebug(PLASMA_NM_CELLULAR_LOG) << "Scanning failed:" << reply.error().message();
+        Q_EMIT errorOccurred(i18n("Scanning networks failed: %1", reply.error().message()));
     } else {
+        auto mm3gpp = m_modem->mm3gppDevice();
         ModemManager::QVariantMapList list = reply.value();
 
         for (auto &var : list) {
-            auto status = var[QStringLiteral("status")].value<MMModem3gppNetworkAvailability>();
+            auto status = var[u"status"_s].value<MMModem3gppNetworkAvailability>();
 
             if (status == MM_MODEM_3GPP_NETWORK_AVAILABILITY_CURRENT || status == MM_MODEM_3GPP_NETWORK_AVAILABILITY_AVAILABLE) {
-                auto network = new AvailableNetwork{this,
-                                                    m_modem->m_mm3gppDevice,
-                                                    status == MM_MODEM_3GPP_NETWORK_AVAILABILITY_CURRENT,
-                                                    var[QStringLiteral("operator-long")].toString(),
-                                                    var[QStringLiteral("operator-short")].toString(),
-                                                    var[QStringLiteral("operator-code")].toString(),
-                                                    var[QStringLiteral("access-technology")].value<MMModemAccessTechnology>()};
+                auto network = new CellularAvailableNetwork{this,
+                                                            mm3gpp,
+                                                            status == MM_MODEM_3GPP_NETWORK_AVAILABILITY_CURRENT,
+                                                            var[u"operator-long"_s].toString(),
+                                                            var[u"operator-short"_s].toString(),
+                                                            var[u"operator-code"_s].toString(),
+                                                            var[u"access-technology"_s].value<MMModemAccessTechnology>()};
                 m_cachedScannedNetworks.push_back(network);
             }
         }
@@ -400,34 +398,37 @@ void ModemDetails::scanNetworksFinished(QDBusPendingCallWatcher *call)
     call->deleteLater();
 }
 
-bool ModemDetails::isScanningNetworks()
+bool CellularModemDetails::isScanningNetworks()
 {
     return m_isScanningNetworks;
 }
 
-QString ModemDetails::firmwareVersion()
+QString CellularModemDetails::firmwareVersion()
 {
-    if (!m_modem->m_nmModem) {
+    auto nmModem = m_modem->nmModemDevice();
+    if (!nmModem) {
         return QString{};
     }
-    return m_modem->m_nmModem->firmwareVersion();
+    return nmModem->firmwareVersion();
 }
 
-QString ModemDetails::interfaceName()
+QString CellularModemDetails::interfaceName()
 {
-    if (!m_modem->m_nmModem) {
+    auto nmModem = m_modem->nmModemDevice();
+    if (!nmModem) {
         return QString{};
     }
-    return m_modem->m_nmModem->interfaceName();
+    return nmModem->interfaceName();
 }
 
-QString ModemDetails::metered()
+QString CellularModemDetails::metered()
 {
-    if (!m_modem->m_nmModem) {
+    auto nmModem = m_modem->nmModemDevice();
+    if (!nmModem) {
         return QString{};
     }
 
-    switch (m_modem->m_nmModem->metered()) {
+    switch (nmModem->metered()) {
     case NetworkManager::Device::MeteredStatus::UnknownStatus:
         return i18n("Unknown");
     case NetworkManager::Device::MeteredStatus::Yes:
@@ -442,13 +443,15 @@ QString ModemDetails::metered()
     return QString{};
 }
 
-AvailableNetwork::AvailableNetwork(QObject *parent,
-                                   ModemManager::Modem3gpp::Ptr mm3gppDevice,
-                                   bool isCurrentlyUsed,
-                                   QString operatorLong,
-                                   QString operatorShort,
-                                   QString operatorCode,
-                                   MMModemAccessTechnology accessTechnology)
+// CellularAvailableNetwork implementation
+
+CellularAvailableNetwork::CellularAvailableNetwork(QObject *parent,
+                                                   ModemManager::Modem3gpp::Ptr mm3gppDevice,
+                                                   bool isCurrentlyUsed,
+                                                   QString operatorLong,
+                                                   QString operatorShort,
+                                                   QString operatorCode,
+                                                   MMModemAccessTechnology accessTechnology)
     : QObject{parent}
     , m_isCurrentlyUsed{isCurrentlyUsed}
     , m_operatorLong{operatorLong}
@@ -465,45 +468,25 @@ AvailableNetwork::AvailableNetwork(QObject *parent,
         m_accessTechnology = i18n("POTS");
         break;
     case MM_MODEM_ACCESS_TECHNOLOGY_GSM:
-        m_accessTechnology = i18n("2G");
-        break;
     case MM_MODEM_ACCESS_TECHNOLOGY_GSM_COMPACT:
-        m_accessTechnology = i18n("2G");
-        break;
     case MM_MODEM_ACCESS_TECHNOLOGY_GPRS:
-        m_accessTechnology = i18n("2G");
-        break;
     case MM_MODEM_ACCESS_TECHNOLOGY_EDGE:
         m_accessTechnology = i18n("2G");
         break;
     case MM_MODEM_ACCESS_TECHNOLOGY_UMTS:
-        m_accessTechnology = i18n("3G");
-        break;
     case MM_MODEM_ACCESS_TECHNOLOGY_HSDPA:
-        m_accessTechnology = i18n("3G");
-        break;
     case MM_MODEM_ACCESS_TECHNOLOGY_HSUPA:
-        m_accessTechnology = i18n("3G");
-        break;
     case MM_MODEM_ACCESS_TECHNOLOGY_HSPA:
-        m_accessTechnology = i18n("3G");
-        break;
     case MM_MODEM_ACCESS_TECHNOLOGY_HSPA_PLUS:
-        m_accessTechnology = i18n("3G");
-        break;
     case MM_MODEM_ACCESS_TECHNOLOGY_1XRTT:
-        m_accessTechnology = i18n("3G");
-        break;
     case MM_MODEM_ACCESS_TECHNOLOGY_EVDO0:
-        m_accessTechnology = i18n("3G");
-        break;
     case MM_MODEM_ACCESS_TECHNOLOGY_EVDOA:
-        m_accessTechnology = i18n("3G");
-        break;
     case MM_MODEM_ACCESS_TECHNOLOGY_EVDOB:
         m_accessTechnology = i18n("3G");
         break;
     case MM_MODEM_ACCESS_TECHNOLOGY_LTE:
+    case MM_MODEM_ACCESS_TECHNOLOGY_LTE_CAT_M:
+    case MM_MODEM_ACCESS_TECHNOLOGY_LTE_NB_IOT:
         m_accessTechnology = i18n("4G");
         break;
     case MM_MODEM_ACCESS_TECHNOLOGY_5GNR:
@@ -512,41 +495,35 @@ AvailableNetwork::AvailableNetwork(QObject *parent,
     case MM_MODEM_ACCESS_TECHNOLOGY_ANY:
         m_accessTechnology = i18n("Any");
         break;
-    case MM_MODEM_ACCESS_TECHNOLOGY_LTE_CAT_M:
-        m_accessTechnology = i18n("4G");
-        break;
-    case MM_MODEM_ACCESS_TECHNOLOGY_LTE_NB_IOT:
-        m_accessTechnology = i18n("4G");
-        break;
     }
 }
 
-bool AvailableNetwork::isCurrentlyUsed()
+bool CellularAvailableNetwork::isCurrentlyUsed()
 {
     return m_isCurrentlyUsed;
 }
 
-QString AvailableNetwork::operatorLong()
+QString CellularAvailableNetwork::operatorLong()
 {
     return m_operatorLong;
 }
 
-QString AvailableNetwork::operatorShort()
+QString CellularAvailableNetwork::operatorShort()
 {
     return m_operatorShort;
 }
 
-QString AvailableNetwork::operatorCode()
+QString CellularAvailableNetwork::operatorCode()
 {
     return m_operatorCode;
 }
 
-QString AvailableNetwork::accessTechnology()
+QString CellularAvailableNetwork::accessTechnology()
 {
     return m_accessTechnology;
 }
 
-void AvailableNetwork::registerToNetwork()
+void CellularAvailableNetwork::registerToNetwork()
 {
     if (!m_isCurrentlyUsed && m_mm3gppDevice) {
         m_mm3gppDevice->registerToNetwork(m_operatorCode);

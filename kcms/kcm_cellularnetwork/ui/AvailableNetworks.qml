@@ -9,14 +9,16 @@ import org.kde.kirigami as Kirigami
 import org.kde.kcmutils
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 
+import org.kde.plasma.networkmanagement.cellular as Cellular
+
 import cellularnetworkkcm 1.0
 
 Kirigami.ScrollablePage {
     id: root
     title: i18n("Available Networks")
 
-    property Modem modem
-    property Sim sim
+    property Cellular.CellularModem modem
+    property Cellular.CellularSim sim
 
     ListView {
         id: listView
@@ -71,5 +73,3 @@ Kirigami.ScrollablePage {
         }
     }
 }
-
-

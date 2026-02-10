@@ -1,13 +1,22 @@
-// SPDX-FileCopyrightText: 2021 Devin Lin <devin@kde.org>
-// SPDX-License-Identifier: GPL-2.0-or-later
+/*
+    SPDX-FileCopyrightText: 2021-2026 Devin Lin <devin@kde.org>
 
-#include "sim.h"
+    SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
+*/
+
+#include "cellularsim.h"
+#include "plasma_nm_cellular.h"
 
 #include <KLocalizedString>
-
 #include <QDBusReply>
 
-Sim::Sim(QObject *parent, Modem *modem, ModemManager::Sim::Ptr mmSim, ModemManager::Modem::Ptr mmModem, ModemManager::Modem3gpp::Ptr mmModem3gpp)
+using namespace Qt::Literals::StringLiterals;
+
+CellularSim::CellularSim(QObject *parent,
+                         CellularModem *modem,
+                         ModemManager::Sim::Ptr mmSim,
+                         ModemManager::Modem::Ptr mmModem,
+                         ModemManager::Modem3gpp::Ptr mmModem3gpp)
     : QObject{parent}
     , m_modem{modem}
     , m_mmSim{mmSim}
@@ -15,55 +24,55 @@ Sim::Sim(QObject *parent, Modem *modem, ModemManager::Sim::Ptr mmSim, ModemManag
     , m_mmModem3gpp{mmModem3gpp}
 {
     if (m_mmSim) {
-        connect(m_mmSim.data(), &ModemManager::Sim::imsiChanged, this, [this]() -> void {
+        connect(m_mmSim.data(), &ModemManager::Sim::imsiChanged, this, [this]() {
             Q_EMIT imsiChanged();
         });
-        connect(m_mmSim.data(), &ModemManager::Sim::operatorIdentifierChanged, this, [this]() -> void {
+        connect(m_mmSim.data(), &ModemManager::Sim::operatorIdentifierChanged, this, [this]() {
             Q_EMIT operatorIdentifierChanged();
         });
-        connect(m_mmSim.data(), &ModemManager::Sim::operatorNameChanged, this, [this]() -> void {
+        connect(m_mmSim.data(), &ModemManager::Sim::operatorNameChanged, this, [this]() {
             Q_EMIT operatorNameChanged();
         });
-        connect(m_mmSim.data(), &ModemManager::Sim::simIdentifierChanged, this, [this]() -> void {
+        connect(m_mmSim.data(), &ModemManager::Sim::simIdentifierChanged, this, [this]() {
             Q_EMIT simIdentifierChanged();
         });
     }
 
     if (m_mmModem) {
-        connect(m_mmModem.data(), &ModemManager::Modem::unlockRequiredChanged, this, [this]() -> void {
+        connect(m_mmModem.data(), &ModemManager::Modem::unlockRequiredChanged, this, [this]() {
             Q_EMIT lockedChanged();
             Q_EMIT lockedReasonChanged();
         });
     }
 
     if (m_mmModem3gpp) {
-        connect(m_mmModem3gpp.data(), &ModemManager::Modem3gpp::enabledFacilityLocksChanged, this, [this]() -> void {
+        connect(m_mmModem3gpp.data(), &ModemManager::Modem3gpp::enabledFacilityLocksChanged, this, [this]() {
             Q_EMIT pinEnabledChanged();
         });
     }
 }
 
-bool Sim::enabled()
+bool CellularSim::enabled()
 {
-    return uni() != QStringLiteral("/");
+    return uni() != u"/"_s;
 }
 
-bool Sim::pinEnabled()
+bool CellularSim::pinEnabled()
 {
     return m_mmModem3gpp && (m_mmModem3gpp->enabledFacilityLocks() & MM_MODEM_3GPP_FACILITY_SIM);
 }
 
-int Sim::unlockRetriesLeft()
+int CellularSim::unlockRetriesLeft()
 {
     return m_mmModem && m_mmModem->unlockRetries()[MM_MODEM_LOCK_SIM_PIN];
 }
 
-bool Sim::locked()
+bool CellularSim::locked()
 {
     return m_mmModem && m_mmModem->unlockRequired() == MM_MODEM_LOCK_SIM_PIN;
 }
 
-QString Sim::lockedReason()
+QString CellularSim::lockedReason()
 {
     if (!m_mmModem) {
         return {};
@@ -108,73 +117,72 @@ QString Sim::lockedReason()
     return {};
 }
 
-QString Sim::imsi()
+QString CellularSim::imsi()
 {
     return m_mmSim ? m_mmSim->imsi() : QString{};
 }
 
-QString Sim::eid()
+QString CellularSim::eid()
 {
     return {}; // TODO add in mm-qt
 }
 
-QString Sim::operatorIdentifier()
+QString CellularSim::operatorIdentifier()
 {
     return m_mmSim ? m_mmSim->operatorIdentifier() : QString{};
 }
 
-QString Sim::operatorName()
+QString CellularSim::operatorName()
 {
     return m_mmSim ? m_mmSim->operatorName() : QString{};
 }
 
-QString Sim::simIdentifier()
+QString CellularSim::simIdentifier()
 {
     return m_mmSim ? m_mmSim->simIdentifier() : QString{};
 }
 
-QStringList Sim::emergencyNumbers()
+QStringList CellularSim::emergencyNumbers()
 {
     return {}; // TODO add in mm-qt
 }
 
-QString Sim::uni()
+QString CellularSim::uni()
 {
     return m_mmSim ? m_mmSim->uni() : QString{};
 }
 
-QString Sim::displayId()
+QString CellularSim::displayId()
 {
-    // in the form /org/freedesktop/ModemManager1/Sim/0
-    QStringList uniSplit = uni().split(QStringLiteral("/"));
-    return (uniSplit.count() == 0 || uni() == "/") ? i18n("(empty)") : QString(uniSplit[uniSplit.size() - 1]);
+    QStringList uniSplit = uni().split(u"/"_s);
+    return (uniSplit.count() == 0 || uni() == u"/"_s) ? i18n("(empty)") : QString(uniSplit[uniSplit.size() - 1]);
 }
 
-Modem *Sim::modem()
+CellularModem *CellularSim::modem()
 {
     return m_modem;
 }
 
-QCoro::Task<void> Sim::togglePinEnabled(const QString &pin)
+QCoro::Task<void> CellularSim::togglePinEnabled(const QString &pin)
 {
     bool isPinEnabled = pinEnabled();
     QDBusReply<void> reply = co_await m_mmSim->enablePin(pin, !isPinEnabled);
     if (!reply.isValid()) {
-        qWarning() << QStringLiteral("Error toggling SIM lock to") << isPinEnabled << QStringLiteral(":") << reply.error().message();
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error toggling SIM lock: %1", reply.error().message()));
+        qCWarning(PLASMA_NM_CELLULAR_LOG) << "Error toggling SIM lock to" << isPinEnabled << ":" << reply.error().message();
+        Q_EMIT errorOccurred(i18n("Error toggling SIM lock: %1", reply.error().message()));
     }
 }
 
-QCoro::Task<void> Sim::changePin(const QString &oldPin, const QString &newPin)
+QCoro::Task<void> CellularSim::changePin(const QString &oldPin, const QString &newPin)
 {
     QDBusReply<void> reply = co_await m_mmSim->changePin(oldPin, newPin);
     if (!reply.isValid()) {
-        qWarning() << QStringLiteral("Error changing the PIN:") << reply.error().message();
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error changing the PIN: %1", reply.error().message()));
+        qCWarning(PLASMA_NM_CELLULAR_LOG) << "Error changing the PIN:" << reply.error().message();
+        Q_EMIT errorOccurred(i18n("Error changing the PIN: %1", reply.error().message()));
     }
 }
 
-QCoro::Task<void> Sim::sendPin(const QString &pin)
+QCoro::Task<void> CellularSim::sendPin(const QString &pin)
 {
     if (!m_mmModem || !m_mmSim || m_mmModem->unlockRequired() == MM_MODEM_LOCK_NONE) {
         co_return;
@@ -182,20 +190,20 @@ QCoro::Task<void> Sim::sendPin(const QString &pin)
 
     QDBusReply<void> reply = co_await m_mmSim->sendPin(pin);
     if (!reply.isValid()) {
-        qWarning() << QStringLiteral("Error sending the PIN:") << reply.error().message();
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error sending the PIN: %1", reply.error().message()));
+        qCWarning(PLASMA_NM_CELLULAR_LOG) << "Error sending the PIN:" << reply.error().message();
+        Q_EMIT errorOccurred(i18n("Error sending the PIN: %1", reply.error().message()));
     }
 }
 
-QCoro::Task<void> Sim::sendPuk(const QString &pin, const QString &puk)
+QCoro::Task<void> CellularSim::sendPuk(const QString &pin, const QString &puk)
 {
-    if (!m_mmModem || !m_mmSim || m_mmModem->unlockRequired() != MM_MODEM_LOCK_NONE) {
+    if (!m_mmModem || !m_mmSim || m_mmModem->unlockRequired() != MM_MODEM_LOCK_SIM_PUK) {
         co_return;
     }
 
     QDBusReply<void> reply = co_await m_mmSim->sendPuk(pin, puk);
     if (!reply.isValid()) {
-        qWarning() << QStringLiteral("Error sending the PUK:") << reply.error().message();
-        CellularNetworkSettings::instance()->addMessage(InlineMessage::Error, i18n("Error sending the PUK: %1", reply.error().message()));
+        qCWarning(PLASMA_NM_CELLULAR_LOG) << "Error sending the PUK:" << reply.error().message();
+        Q_EMIT errorOccurred(i18n("Error sending the PUK: %1", reply.error().message()));
     }
 }

@@ -9,12 +9,14 @@ import org.kde.kirigami 2.19 as Kirigami
 import org.kde.kcmutils
 import org.kde.kirigamiaddons.formcard 1.0 as FormCard
 
+import org.kde.plasma.networkmanagement.cellular as Cellular
+
 import cellularnetworkkcm 1.0
 
 FormCard.FormCardPage {
     id: root
 
-    property Sim sim
+    property Cellular.CellularSim sim
 
     title: i18n("SIM Lock")
 
@@ -231,4 +233,3 @@ FormCard.FormCardPage {
         }
     ]
 }
-

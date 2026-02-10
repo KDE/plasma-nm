@@ -9,12 +9,14 @@ import org.kde.kirigami 2 as Kirigami
 import org.kde.kcmutils
 import org.kde.kirigamiaddons.formcard 1 as FormCard
 
-import cellularnetworkkcm
+import org.kde.plasma.networkmanagement.cellular as Cellular
+
+import cellularnetworkkcm 1.0
 
 FormCard.FormCardPage {
     id: modemPage
 
-    property Modem modem
+    property Cellular.CellularModem modem
     property bool showExtra: false
 
     title: i18n("Modem %1", modem.displayId)
@@ -175,14 +177,6 @@ FormCard.FormCardPage {
         FormCard.FormDelegateSeparator {}
 
         FormCard.FormTextDelegate {
-            id: roamingText
-            text: i18n("Roaming")
-            description: modem.isRoaming ? i18n("Yes") : i18n("No")
-        }
-
-        FormCard.FormDelegateSeparator {}
-
-        FormCard.FormTextDelegate {
             id: firmwareVersionText
             text: i18n("Firmware Version")
             description: modem.details.firmwareVersion
@@ -282,4 +276,3 @@ FormCard.FormCardPage {
         }
     }
 }
-

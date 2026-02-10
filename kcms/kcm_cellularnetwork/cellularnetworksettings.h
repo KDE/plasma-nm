@@ -7,29 +7,7 @@
 
 #pragma once
 
-#include <QSharedPointer>
-
 #include <KQuickConfigModule>
-
-#include "mobileproviders.h"
-#include "modem.h"
-#include "modemdetails.h"
-#include "sim.h"
-
-#include <NetworkManagerQt/CdmaSetting>
-#include <NetworkManagerQt/ConnectionSettings>
-#include <NetworkManagerQt/GsmSetting>
-#include <NetworkManagerQt/Manager>
-#include <NetworkManagerQt/ModemDevice>
-#include <NetworkManagerQt/Settings>
-
-#include <ModemManagerQt/GenericTypes>
-#include <ModemManagerQt/Manager>
-#include <ModemManagerQt/ModemDevice>
-
-class Sim;
-class Modem;
-class MobileProviders;
 
 class InlineMessage : public QObject
 {
@@ -44,8 +22,9 @@ public:
         Warning,
         Error,
     };
+    Q_ENUM(Type)
 
-    InlineMessage(QObject *parent = nullptr, Type type = Information, QString message = "");
+    InlineMessage(QObject *parent = nullptr, Type type = Information, QString message = QString());
 
     Type type();
     QString message();
@@ -62,40 +41,18 @@ private:
 class CellularNetworkSettings : public KQuickConfigModule
 {
     Q_OBJECT
-    Q_PROPERTY(bool modemFound READ modemFound NOTIFY modemFoundChanged)
-    Q_PROPERTY(Modem *selectedModem READ selectedModem NOTIFY selectedModemChanged)
-    Q_PROPERTY(QList<Sim *> sims READ sims NOTIFY simsChanged)
     Q_PROPERTY(QList<InlineMessage *> messages READ messages NOTIFY messagesChanged)
 
 public:
     CellularNetworkSettings(QObject *parent, const KPluginMetaData &metaData);
 
-    static CellularNetworkSettings *instance();
-
-    Modem *selectedModem();
-    QList<Modem *> modems();
-    QList<Sim *> sims();
-
-    bool modemFound();
-
     QList<InlineMessage *> messages();
-    void addMessage(InlineMessage::Type type, QString msg);
+    Q_INVOKABLE void addMessage(int type, const QString &msg);
     Q_INVOKABLE void removeMessage(int index);
 
 Q_SIGNALS:
-    void modemFoundChanged();
-    void selectedModemChanged();
-    void simsChanged();
     void messagesChanged();
 
 private:
-    void updateModemList();
-    void fillSims();
-
-    QList<Modem *> m_modemList;
-    QList<Sim *> m_simList;
-
     QList<InlineMessage *> m_messages;
-
-    static CellularNetworkSettings *staticInst;
 };

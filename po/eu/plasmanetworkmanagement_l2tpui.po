@@ -1,19 +1,19 @@
 # Translation for plasmanetworkmanagement_l2tpui.po to Euskara/Basque (eu).
 # Copyright (C) 2017-2018, Free Software Foundation.
-# Copyright (C) 2019-2021, This file is copyright.
+# Copyright (C) 2019-2026 This file is copyright.
 # This file is distributed under the same license as plasma-nm package.
-# SPDX-FileCopyrightText: 2026 KDE euskaraz proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Osoitz <oelkoro@gmail.com>, 2017.
 # Ander Elortondo <ander.elor@gmail.com>, 2017.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2018, 2020, 2021.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2018, 2020, 2021, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2026-01-25 13:45+0100\n"
+"PO-Revision-Date: 2026-02-11 21:09+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -187,12 +187,17 @@ msgid ""
 "\n"
 "May be required to allow multiple L2TP clients behind the same NAT."
 msgstr ""
+"Libre egonda ere, ez erabili 1701 UDP ataka L2TPren sorburu-ataka gisa.\n"
+"Horren ordez, (ausazko) ataka-zenbaki altu iragankor bat erabiliko da.\n"
+"\n"
+"Baliteke NAT beraren atzean hainbat L2TP bezero baimentzea beharrezkoa "
+"izatea."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:270
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "Erabili L2TP sorburu-ataka iragankorra"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:308
@@ -392,7 +397,7 @@ msgstr "Erabili IP konprimatzea"
 #: l2tpipsec.ui:322
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "Erabili IKEv2 gako trukea"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
@@ -592,13 +597,13 @@ msgstr "Beste ezarpen batzuk"
 #: l2tpppp.ui:224 l2tpppp.ui:234
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "Saiatu konexio bakarrean PPP lotura-anitza (Multilink) negoziatzen."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMRRU)
 #: l2tpppp.ui:227
 #, kde-format
 msgid "Multilink PPP MRRU: "
-msgstr ""
+msgstr "PPP lotura-anitza (Multilink) MRRU: "
 
 #. i18n: ectx: property (text), widget (QLabel, lbMRU)
 #: l2tpppp.ui:250

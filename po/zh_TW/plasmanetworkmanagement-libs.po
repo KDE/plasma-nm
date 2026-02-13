@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 00:46+0000\n"
-"PO-Revision-Date: 2026-01-28 21:27+0900\n"
+"PO-Revision-Date: 2026-02-12 16:32+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -1066,7 +1066,7 @@ msgstr "自動連線到 VPN"
 msgid ""
 "Choose which VPN connection to automatically activate when this connection "
 "is established"
-msgstr ""
+msgstr "選擇建立此連線時要自動啟動哪個 VPN 連線"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:102
@@ -1080,7 +1080,7 @@ msgstr "防火牆區："
 msgid ""
 "Assign this connection to a firewall zone to control network access and "
 "security rules"
-msgstr ""
+msgstr "將此連線指派到防火牆區域來控制網路存取與安全性規則"
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:134

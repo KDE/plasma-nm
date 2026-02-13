@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 00:46+0000\n"
-"PO-Revision-Date: 2026-02-11 21:54+0100\n"
+"PO-Revision-Date: 2026-02-12 07:37+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -1019,13 +1019,7 @@ msgstr "Konektatu automatikoki lehentasunarekin"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. A negative number can be used to "
-#| "indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -1034,9 +1028,8 @@ msgid ""
 msgstr ""
 "Konexioa automatikoki konektatzeko ezarrita badago, lehentasun handiagoko "
 "konexioak hobetsiko dira. Lehenetsitakoa 0 da.\n"
-"Zenbaki handiagoarekin lehentasun handiagoa. Zenbaki negatiboak erabili "
-"daitezke lehenetsitakoa baino lehentasun txikiagoa adierazteko.\n"
-"           "
+"Zenbaki handiagoarekin lehentasun handiagoa. Zenbaki negatibo bat erabil "
+"daiteke lehenetsitakoa baino lehentasun txikiagoa adierazteko."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1080,6 +1073,8 @@ msgid ""
 "Choose which VPN connection to automatically activate when this connection "
 "is established"
 msgstr ""
+"Aukeratu konexio hau ezartzen denean automatikoki aktibatu beharreko VPN "
+"konexioa"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:102
@@ -1094,6 +1089,8 @@ msgid ""
 "Assign this connection to a firewall zone to control network access and "
 "security rules"
 msgstr ""
+"Esleitu konexio hau suhesi-eremu batera sare-sarbidea eta segurtasun arauak "
+"kontrolatzeko"
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:134
@@ -1103,18 +1100,13 @@ msgstr "Tarifatua:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager indicates to applications whether the connection is "
-#| "metered and therefore\n"
-#| "data usage should be restricted."
+#, kde-format
 msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager sare-kudeatzaileak aplikazioei konexioa tarifatua den eta "
-"ondorioz datuen\n"
-"erabilera mugatu beharko litzatekeen adierazten die."
+"Aplikazioei konexioa tarifatua den eta ondorioz datuen erabilera mugatu\n"
+"behar den adierazten die."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:164

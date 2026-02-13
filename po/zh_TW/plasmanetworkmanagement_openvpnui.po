@@ -4,13 +4,13 @@
 # Franklin, 2014, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2018.
-# SPDX-FileCopyrightText: 2022, 2023, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2025, 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-30 00:46+0000\n"
-"PO-Revision-Date: 2025-11-20 21:38+0900\n"
+"PO-Revision-Date: 2026-02-12 16:31+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -28,7 +28,7 @@ msgstr "NetworkManager 目前缺乏對 OpenVPN 的支援"
 #: openvpn.cpp:99
 #, kde-format
 msgid "An unexpected error has occurred"
-msgstr ""
+msgstr "發生非預期的錯誤"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19

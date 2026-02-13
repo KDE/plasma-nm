@@ -234,6 +234,7 @@ void WifiConnectionWidget::modeChanged(int mode)
 void WifiConnectionWidget::bandChanged(int band)
 {
     m_ui->channel->clear();
+    m_ui->channel->addItem(i18nc("@action:inmenu automatic wireless channel selection", "Automatic"), 0);
 
     if (band == NetworkManager::WirelessSetting::Automatic) {
         m_ui->channel->setEnabled(false);

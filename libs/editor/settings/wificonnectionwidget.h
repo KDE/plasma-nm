@@ -11,9 +11,12 @@
 
 #include <QWidget>
 
+#include <NetworkManagerQt/Security8021xSetting>
 #include <NetworkManagerQt/WirelessSetting>
 
 #include "settingwidget.h"
+
+class WifiSecurity;
 
 namespace Ui
 {
@@ -25,14 +28,20 @@ class PLASMANM_EDITOR_EXPORT WifiConnectionWidget : public SettingWidget
     Q_OBJECT
 
 public:
-    explicit WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting = NetworkManager::Setting::Ptr(),
+    explicit WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting,
+                                  const NetworkManager::Setting::Ptr &securitySetting,
+                                  const NetworkManager::Security8021xSetting::Ptr &setting8021x,
                                   QWidget *parent = nullptr,
                                   Qt::WindowFlags f = {});
     ~WifiConnectionWidget() override;
 
     void loadConfig(const NetworkManager::Setting::Ptr &setting) override;
+    void loadSecrets(const NetworkManager::Setting::Ptr &setting) override;
 
     QVariantMap setting() const override;
+
+    // Access to embedded WifiSecurity widget
+    WifiSecurity *wifiSecurity() const;
 
     bool isValid() const override;
 
@@ -47,6 +56,7 @@ private Q_SLOTS:
 
 private:
     Ui::WifiConnectionWidget *const m_ui;
+    WifiSecurity *m_wifiSecurity = nullptr;
     void fillChannels(NetworkManager::WirelessSetting::FrequencyBand band);
 };
 

@@ -16,7 +16,7 @@
 
 class ConnectionWidget;
 class SettingWidget;
-class WifiSecurity;
+class WifiConnectionWidget;
 
 class ConnectionStatusWidget;
 
@@ -70,7 +70,7 @@ private:
     ConnectionWidget *m_connectionWidget = nullptr;
     ConnectionStatusWidget *m_statusWidget = nullptr;
     QList<SettingWidget *> m_settingWidgets;
-    WifiSecurity *m_wifiSecurity = nullptr;
+    WifiConnectionWidget *m_wifiConnectionWidget = nullptr;
 
     void addConnectionWidget(ConnectionWidget *widget, const QString &text);
     void addSettingWidget(SettingWidget *widget, const QString &text);

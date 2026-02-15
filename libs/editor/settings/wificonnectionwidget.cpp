@@ -7,16 +7,32 @@
 #include "wificonnectionwidget.h"
 #include "plasma_nm_editor.h"
 #include "ui_wificonnectionwidget.h"
+#include "wifisecurity.h"
 
 #include <KLocalizedString>
 #include <NetworkManagerQt/Utils>
 #include <QRandomGenerator>
 
-WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting, QWidget *parent, Qt::WindowFlags f)
+WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting,
+                                           const NetworkManager::Setting::Ptr &securitySetting,
+                                           const NetworkManager::Security8021xSetting::Ptr &setting8021x,
+                                           QWidget *parent,
+                                           Qt::WindowFlags f)
     : SettingWidget(setting, parent, f)
     , m_ui(new Ui::WifiConnectionWidget)
 {
     m_ui->setupUi(this);
+
+    // Create and embed the WifiSecurity widget
+    m_wifiSecurity = new WifiSecurity(securitySetting, setting8021x, this);
+    m_ui->securityWidgetLayout->addWidget(m_wifiSecurity);
+
+    // Connect SSID changes to security widget for auto-detection
+    connect(this, QOverload<const QString &>::of(&WifiConnectionWidget::ssidChanged), m_wifiSecurity, &WifiSecurity::onSsidChanged);
+
+    // Forward security widget signals
+    connect(m_wifiSecurity, &WifiSecurity::settingChanged, this, &WifiConnectionWidget::settingChanged);
+    connect(m_wifiSecurity, &WifiSecurity::validChanged, this, &WifiConnectionWidget::slotWidgetChanged);
 
     connect(m_ui->btnRandomMacAddr, &QPushButton::clicked, this, &WifiConnectionWidget::generateRandomClonedMac);
     connect(m_ui->SSIDCombo, &SsidComboBox::ssidChanged, this, QOverload<>::of(&WifiConnectionWidget::ssidChanged));
@@ -72,6 +88,13 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
 
     if (wifiSetting->hidden()) {
         m_ui->hiddenNetwork->setChecked(true);
+    }
+}
+
+void WifiConnectionWidget::loadSecrets(const NetworkManager::Setting::Ptr &setting)
+{
+    if (m_wifiSecurity) {
+        m_wifiSecurity->loadSecrets(setting);
     }
 }
 
@@ -182,9 +205,16 @@ void WifiConnectionWidget::fillChannels(NetworkManager::WirelessSetting::Frequen
     }
 }
 
+WifiSecurity *WifiConnectionWidget::wifiSecurity() const
+{
+    return m_wifiSecurity;
+}
+
 bool WifiConnectionWidget::isValid() const
 {
-    return !m_ui->SSIDCombo->currentText().isEmpty() && m_ui->macAddress->isValid() && m_ui->BSSIDCombo->isValid();
+    bool wifiValid = !m_ui->SSIDCombo->currentText().isEmpty() && m_ui->macAddress->isValid() && m_ui->BSSIDCombo->isValid();
+    bool securityValid = m_wifiSecurity ? m_wifiSecurity->isValid() : true;
+    return wifiValid && securityValid;
 }
 
 #include "moc_wificonnectionwidget.cpp"

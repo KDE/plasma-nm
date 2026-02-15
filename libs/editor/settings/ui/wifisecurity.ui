@@ -14,13 +14,28 @@
   <property name="windowTitle">
    <string>Wifi Security</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <layout class="QFormLayout" name="formLayout">
+  <layout class="QFormLayout" name="formLayout">
+     <property name="leftMargin">
+      <number>0</number>
+     </property>
+     <property name="topMargin">
+      <number>0</number>
+     </property>
+     <property name="rightMargin">
+      <number>0</number>
+     </property>
+     <property name="bottomMargin">
+      <number>0</number>
+     </property>     <property name="labelAlignment">
+      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+     </property>
      <item row="0" column="0">
       <widget class="QLabel" name="label">
        <property name="text">
         <string>Security:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
        <property name="buddy">
         <cstring>securityCombo</cstring>
@@ -92,6 +107,9 @@
        <property name="text">
         <string>Key:</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
        <property name="buddy">
         <cstring>wepKey</cstring>
        </property>
@@ -111,6 +129,9 @@
       <widget class="QLabel" name="label_3">
        <property name="text">
         <string>WEP index:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
        <property name="buddy">
         <cstring>wepIndex</cstring>
@@ -152,6 +173,9 @@
        <property name="text">
         <string>Authentication:</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
        <property name="buddy">
         <cstring>wepAuth</cstring>
        </property>
@@ -182,6 +206,9 @@
        <property name="text">
         <string>Username:</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
        <property name="buddy">
         <cstring>leapUsername</cstring>
        </property>
@@ -194,6 +221,9 @@
       <widget class="QLabel" name="label_9">
        <property name="text">
         <string>Password:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
        </property>
        <property name="buddy">
         <cstring>leapPassword</cstring>
@@ -212,6 +242,9 @@
        <property name="text">
         <string>Password:</string>
        </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
        <property name="buddy">
         <cstring>psk</cstring>
        </property>
@@ -224,47 +257,6 @@
        </property>
       </widget>
      </item>
-    </layout>
-   </item>
-   <item>
-    <widget class="QWidget" name="stackedWidgetContainer" native="true">
-     <layout class="QVBoxLayout" name="stackedLayout">
-      <property name="leftMargin">
-       <number>0</number>
-      </property>
-      <property name="topMargin">
-       <number>0</number>
-      </property>
-      <property name="rightMargin">
-       <number>0</number>
-      </property>
-      <property name="bottomMargin">
-       <number>0</number>
-      </property>
-      <item>
-       <widget class="QStackedWidget" name="stackedWidget">
-        <property name="currentIndex">
-         <number>0</number>
-        </property>
-        <widget class="QWidget" name="securityNone"/>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
-    <spacer name="verticalSpacer">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-     <property name="sizeHint" stdset="0">
-      <size>
-       <width>20</width>
-       <height>40</height>
-      </size>
-     </property>
-    </spacer>
-   </item>
   </layout>
  </widget>
  <customwidgets>

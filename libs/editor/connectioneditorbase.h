@@ -75,6 +75,10 @@ private:
     void addConnectionWidget(ConnectionWidget *widget, const QString &text);
     void addSettingWidget(SettingWidget *widget, const QString &text);
     void updateStatusWidget();
+    QWidget *wrapWithPreferredWidth(QWidget *content);
+
+    static constexpr int TAB_CONTENT_PREFERRED_WIDTH = 600;
+    static constexpr int TAB_CONTENT_MAX_WIDTH = 800;
 };
 
 #endif // PLASMA_NM_CONNECTION_EDITOR_BASE_H

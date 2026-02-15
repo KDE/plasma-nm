@@ -12,6 +12,7 @@
 #include <KAcceleratorManager>
 #include <KLocalizedString>
 
+#include <QFormLayout>
 #include <QtCrypto>
 
 Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, Type type, QWidget *parent, Qt::WindowFlags f)
@@ -31,7 +32,6 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, Type t
 
     if (type == WirelessWpaEap) {
         m_ui->auth->removeItem(0); // MD 5
-        m_ui->stackedWidget->removeWidget(m_ui->md5Page);
 
         m_ui->auth->setItemData(0, NetworkManager::Security8021xSetting::EapMethodTls);
         m_ui->auth->setItemData(1, NetworkManager::Security8021xSetting::EapMethodLeap);
@@ -47,17 +47,10 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, Type t
         m_ui->auth->removeItem(3); // PWD
         m_ui->auth->removeItem(2); // LEAP
         m_ui->auth->removeItem(0); // MD5
-        m_ui->stackedWidget->removeWidget(m_ui->peapPage);
-        m_ui->stackedWidget->removeWidget(m_ui->ttlsPage);
-        m_ui->stackedWidget->removeWidget(m_ui->fastPage);
-        m_ui->stackedWidget->removeWidget(m_ui->pwdPage);
-        m_ui->stackedWidget->removeWidget(m_ui->leapPage);
-        m_ui->stackedWidget->removeWidget(m_ui->md5Page);
 
         m_ui->auth->setItemData(0, NetworkManager::Security8021xSetting::EapMethodTls);
     } else {
         m_ui->auth->removeItem(2); // LEAP
-        m_ui->stackedWidget->removeWidget(m_ui->leapPage);
 
         m_ui->auth->setItemData(0, NetworkManager::Security8021xSetting::EapMethodMd5);
         m_ui->auth->setItemData(1, NetworkManager::Security8021xSetting::EapMethodTls);
@@ -112,7 +105,7 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, Type t
     connect(m_ui->peapPassword, &PasswordField::passwordOptionChanged, this, &Security8021x::slotWidgetChanged);
 
     KAcceleratorManager::manage(this);
-    connect(m_ui->stackedWidget, &QStackedWidget::currentChanged, this, &Security8021x::currentAuthChanged);
+    connect(m_ui->auth, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &Security8021x::currentAuthChanged);
 
     altSubjectValidator = new QRegularExpressionValidator(
         QRegularExpression(
@@ -127,6 +120,9 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, Type t
     auto serverListValidator = new ListValidator(this);
     serverListValidator->setInnerValidator(serversValidator);
     m_ui->leTlsConnectToServers->setValidator(serverListValidator);
+
+    // Initialize row visibility based on default authentication method
+    currentAuthChanged(0);
 
     if (setting) {
         loadConfig(setting);
@@ -609,7 +605,101 @@ bool Security8021x::isValid() const
 void Security8021x::currentAuthChanged(int index)
 {
     Q_UNUSED(index);
-    KAcceleratorManager::manage(m_ui->stackedWidget->currentWidget());
+
+    // Hide all authentication-specific fields first
+    // MD5
+    m_ui->formLayout_7->setRowVisible(m_ui->md5UserName, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->md5Password, false);
+
+    // TLS
+    m_ui->formLayout_7->setRowVisible(m_ui->tlsIdentity, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->tlsDomain, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->tlsUserCert, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->tlsCACert, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->tlsPrivateKey, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->tlsPrivateKeyPassword, false);
+
+    // LEAP
+    m_ui->formLayout_7->setRowVisible(m_ui->leapUsername, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->leapPassword, false);
+
+    // PWD
+    m_ui->formLayout_7->setRowVisible(m_ui->pwdUsername, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->pwdPassword, false);
+
+    // FAST
+    m_ui->formLayout_7->setRowVisible(m_ui->fastAnonIdentity, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->fastAllowPacProvisioning, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->pacFile, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->fastInnerAuth, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->fastUsername, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->fastPassword, false);
+
+    // TTLS
+    m_ui->formLayout_7->setRowVisible(m_ui->ttlsAnonIdentity, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->ttlsCACert, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->ttlsInnerAuth, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->ttlsUsername, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->ttlsPassword, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->ttlsDomain, false);
+
+    // PEAP
+    m_ui->formLayout_7->setRowVisible(m_ui->peapAnonIdentity, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->peapCACert, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->peapVersion, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->peapInnerAuth, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->peapUsername, false);
+    m_ui->formLayout_7->setRowVisible(m_ui->peapPassword, false);
+
+    // Show fields for selected authentication method
+    const int authIndex = m_ui->auth->currentData().toInt();
+
+    switch (authIndex) {
+    case NetworkManager::Security8021xSetting::EapMethodMd5:
+        m_ui->formLayout_7->setRowVisible(m_ui->md5UserName, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->md5Password, true);
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodTls:
+        m_ui->formLayout_7->setRowVisible(m_ui->tlsIdentity, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->tlsDomain, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->tlsUserCert, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->tlsCACert, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->tlsPrivateKey, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->tlsPrivateKeyPassword, true);
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodLeap:
+        m_ui->formLayout_7->setRowVisible(m_ui->leapUsername, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->leapPassword, true);
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodPwd:
+        m_ui->formLayout_7->setRowVisible(m_ui->pwdUsername, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->pwdPassword, true);
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodFast:
+        m_ui->formLayout_7->setRowVisible(m_ui->fastAnonIdentity, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->fastAllowPacProvisioning, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->pacFile, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->fastInnerAuth, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->fastUsername, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->fastPassword, true);
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodTtls:
+        m_ui->formLayout_7->setRowVisible(m_ui->ttlsAnonIdentity, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->ttlsCACert, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->ttlsInnerAuth, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->ttlsUsername, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->ttlsPassword, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->ttlsDomain, true);
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodPeap:
+        m_ui->formLayout_7->setRowVisible(m_ui->peapAnonIdentity, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->peapCACert, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->peapVersion, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->peapInnerAuth, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->peapUsername, true);
+        m_ui->formLayout_7->setRowVisible(m_ui->peapPassword, true);
+        break;
+    }
 }
 
 #include "moc_security802-1x.cpp"

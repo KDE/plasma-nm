@@ -11,7 +11,9 @@
 
 #include <KLocalizedString>
 #include <NetworkManagerQt/Utils>
+#include <QFormLayout>
 #include <QRandomGenerator>
+#include <QTimer>
 
 WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &setting,
                                            const NetworkManager::Setting::Ptr &securitySetting,
@@ -23,9 +25,29 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
 {
     m_ui->setupUi(this);
 
+    // Set font size for section headers to match Status tab style (base font + 1)
+    for (auto sectionLabel : {m_ui->connectionSectionLabel, m_ui->advancedSectionLabel, m_ui->securitySectionLabel}) {
+        QFont font = sectionLabel->font();
+        font.setPointSize(font.pointSize() + 1);
+        sectionLabel->setFont(font);
+    }
+
     // Create and embed the WifiSecurity widget
     m_wifiSecurity = new WifiSecurity(securitySetting, setting8021x, this);
-    m_ui->securityWidgetLayout->addWidget(m_wifiSecurity);
+
+    // Set vertical spacing to match parent for all nested form layouts
+    if (auto parentFormLayout = qobject_cast<QFormLayout *>(layout())) {
+        if (auto securityFormLayout = qobject_cast<QFormLayout *>(m_wifiSecurity->securityLayout())) {
+            securityFormLayout->setVerticalSpacing(parentFormLayout->verticalSpacing());
+        }
+        const auto nestedFormLayouts = m_wifiSecurity->findChildren<QFormLayout *>();
+        for (auto formLayout : nestedFormLayouts) {
+            formLayout->setVerticalSpacing(parentFormLayout->verticalSpacing());
+        }
+
+        // Insert the security widget at row 12 (after the Security header at row 11)
+        parentFormLayout->insertRow(12, m_wifiSecurity);
+    }
 
     // Connect SSID changes to security widget for auto-detection
     connect(this, QOverload<const QString &>::of(&WifiConnectionWidget::ssidChanged), m_wifiSecurity, &WifiSecurity::onSsidChanged);
@@ -51,6 +73,42 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
     if (setting) {
         loadConfig(setting);
     }
+
+    // Synchronize label widths after layouts are populated
+    QTimer::singleShot(0, this, [this]() {
+        QList<QFormLayout *> layouts;
+        if (auto mainLayout = findChild<QFormLayout *>(QStringLiteral("formLayout"))) {
+            layouts.append(mainLayout);
+        }
+        if (m_wifiSecurity) {
+            // Include all form layouts from wifisecurity and nested widgets (e.g., 802-1x)
+            const auto formLayouts = m_wifiSecurity->findChildren<QFormLayout *>();
+            layouts.append(formLayouts);
+        }
+
+        int maxWidth = 0;
+        for (auto layout : layouts) {
+            for (int row = 0; row < layout->rowCount(); ++row) {
+                if (auto item = layout->itemAt(row, QFormLayout::LabelRole)) {
+                    if (auto label = item->widget()) {
+                        maxWidth = std::max(maxWidth, label->sizeHint().width());
+                    }
+                }
+            }
+        }
+
+        if (maxWidth > 0) {
+            for (auto layout : layouts) {
+                for (int row = 0; row < layout->rowCount(); ++row) {
+                    if (auto item = layout->itemAt(row, QFormLayout::LabelRole)) {
+                        if (auto label = item->widget()) {
+                            label->setMinimumWidth(maxWidth);
+                        }
+                    }
+                }
+            }
+        }
+    });
 }
 
 WifiConnectionWidget::~WifiConnectionWidget()

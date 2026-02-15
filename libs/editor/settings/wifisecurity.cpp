@@ -26,12 +26,20 @@ WifiSecurity::WifiSecurity(const NetworkManager::Setting::Ptr &setting,
     m_ui->psk->setPasswordOptionsEnabled(true);
     m_ui->wepKey->setPasswordOptionsEnabled(true);
 
+    // Create enterprise security widgets
     m_8021xWidget = new Security8021x(setting8021x, Security8021x::WirelessWpaEap, this); // Dynamic WEP
     m_WPA2Widget = new Security8021x(setting8021x, Security8021x::WirelessWpaEap, this); // WPA(2) Enterprise
     m_WPA3SuiteB192Widget = new Security8021x(setting8021x, Security8021x::WirelessWpaEapSuiteB192, this); // WPA3 Enterprise Suite B 192
-    m_ui->stackedWidget->addWidget(m_8021xWidget);
-    m_ui->stackedWidget->addWidget(m_WPA2Widget);
-    m_ui->stackedWidget->addWidget(m_WPA3SuiteB192Widget);
+
+    // Add enterprise widgets as spanning rows in the form layout
+    m_ui->formLayout->addRow(m_8021xWidget);
+    m_ui->formLayout->addRow(m_WPA2Widget);
+    m_ui->formLayout->addRow(m_WPA3SuiteB192Widget);
+
+    // Hide all enterprise widgets by default
+    m_8021xWidget->hide();
+    m_WPA2Widget->hide();
+    m_WPA3SuiteB192Widget->hide();
 
     // WPA3 Enterprise is available in NM 1.30+
     if (!NetworkManager::checkVersion(1, 30, 0)) {
@@ -447,7 +455,11 @@ void WifiSecurity::securityChanged(int index)
     m_ui->formLayout->setRowVisible(m_ui->leapUsername, false);
     m_ui->formLayout->setRowVisible(m_ui->leapPassword, false);
     m_ui->formLayout->setRowVisible(m_ui->psk, false);
-    m_ui->stackedWidgetContainer->setVisible(false);
+
+    // Hide all enterprise widgets
+    m_8021xWidget->hide();
+    m_WPA2Widget->hide();
+    m_WPA3SuiteB192Widget->hide();
 
     // Show appropriate rows based on security type
     if (index == None || index == OWE) {
@@ -460,21 +472,22 @@ void WifiSecurity::securityChanged(int index)
         m_ui->formLayout->setRowVisible(m_ui->leapUsername, true);
         m_ui->formLayout->setRowVisible(m_ui->leapPassword, true);
     } else if (index == DynamicWep) {
-        m_ui->stackedWidgetContainer->setVisible(true);
-        m_ui->stackedWidget->setCurrentWidget(m_8021xWidget);
+        m_8021xWidget->show();
+        KAcceleratorManager::manage(m_8021xWidget);
     } else if (index == WpaPsk || index == SAE) {
         m_ui->formLayout->setRowVisible(m_ui->psk, true);
     } else if (index == WpaEap) {
-        m_ui->stackedWidgetContainer->setVisible(true);
-        m_ui->stackedWidget->setCurrentWidget(m_WPA2Widget);
+        m_WPA2Widget->show();
+        KAcceleratorManager::manage(m_WPA2Widget);
     } else if (index == Wpa3SuiteB192) {
-        m_ui->stackedWidgetContainer->setVisible(true);
-        m_ui->stackedWidget->setCurrentWidget(m_WPA3SuiteB192Widget);
+        m_WPA3SuiteB192Widget->show();
+        KAcceleratorManager::manage(m_WPA3SuiteB192Widget);
     }
+}
 
-    if (m_ui->stackedWidget->currentWidget()) {
-        KAcceleratorManager::manage(m_ui->stackedWidget->currentWidget());
-    }
+QLayout *WifiSecurity::securityLayout() const
+{
+    return layout();
 }
 
 #include "moc_wifisecurity.cpp"

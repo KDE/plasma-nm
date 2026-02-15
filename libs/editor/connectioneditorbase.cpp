@@ -48,6 +48,9 @@
 #include <KNotification>
 #include <KUser>
 
+#include <QHBoxLayout>
+#include <QScrollArea>
+
 ConnectionEditorBase::ConnectionEditorBase(const NetworkManager::ConnectionSettings::Ptr &connection, QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)
     , m_initialized(false)
@@ -181,7 +184,7 @@ void ConnectionEditorBase::addConnectionWidget(ConnectionWidget *widget, const Q
 
     connect(widget, &ConnectionWidget::settingChanged, this, &ConnectionEditorBase::settingChanged);
 
-    addWidget(widget, text);
+    addWidget(wrapWithPreferredWidth(widget), text);
 }
 
 void ConnectionEditorBase::addSettingWidget(SettingWidget *widget, const QString &text)
@@ -190,7 +193,7 @@ void ConnectionEditorBase::addSettingWidget(SettingWidget *widget, const QString
 
     connect(widget, &SettingWidget::settingChanged, this, &ConnectionEditorBase::settingChanged);
 
-    addWidget(widget, text);
+    addWidget(wrapWithPreferredWidth(widget), text);
 }
 
 void ConnectionEditorBase::initialize()
@@ -203,7 +206,7 @@ void ConnectionEditorBase::initialize()
     } else {
         // Status tab showing connection details (first tab)
         m_statusWidget = new ConnectionStatusWidget(m_connection->uuid());
-        addWidget(m_statusWidget, i18nc("@title:tab Connection status and details", "Status"));
+        addWidget(wrapWithPreferredWidth(m_statusWidget), i18nc("@title:tab Connection status and details", "Status"));
         updateStatusWidget();
     }
 
@@ -225,7 +228,18 @@ void ConnectionEditorBase::initialize()
                                                    m_connection->setting(NetworkManager::Setting::WirelessSecurity),
                                                    m_connection->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>(),
                                                    this);
-        addSettingWidget(wifiWidget, i18n("Wi-Fi"));
+        m_settingWidgets << wifiWidget;
+        connect(wifiWidget, &SettingWidget::settingChanged, this, &ConnectionEditorBase::settingChanged);
+
+        // Wrap in scroll area for vertical scrolling, allow horizontal when needed
+        auto scrollArea = new QScrollArea(this);
+        scrollArea->setWidget(wifiWidget);
+        scrollArea->setWidgetResizable(true);
+        scrollArea->setFrameShape(QFrame::NoFrame);
+        scrollArea->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+
+        addWidget(wrapWithPreferredWidth(scrollArea), i18n("Wi-Fi"));
         m_wifiConnectionWidget = wifiWidget;
     } else if (type == NetworkManager::ConnectionSettings::Pppoe) { // DSL
         auto pppoeWidget = new PppoeWidget(m_connection->setting(NetworkManager::Setting::Pppoe), this);
@@ -539,12 +553,17 @@ void ConnectionEditorBase::validChanged(bool valid)
 
 void ConnectionEditorBase::onAllUsersChanged()
 {
-    if (!m_wifiConnectionWidget || !m_wifiConnectionWidget->wifiSecurity()) {
+    if (!m_wifiConnectionWidget) {
+        return;
+    }
+
+    WifiSecurity *wifiSecurity = m_wifiConnectionWidget->wifiSecurity();
+    if (!wifiSecurity) {
         return;
     }
 
     auto allUsers = m_connectionWidget->allUsers();
-    m_wifiConnectionWidget->wifiSecurity()->setStoreSecretsSystemWide(allUsers);
+    wifiSecurity->setStoreSecretsSystemWide(allUsers);
 }
 
 void ConnectionEditorBase::updateStatusWidget()
@@ -645,6 +664,28 @@ void ConnectionEditorBase::updateStatusWidget()
 
     // Pass connection, device, and access point path to status widget
     m_statusWidget->setConnectionAndDevice(nmConnection, device, accessPointPath);
+}
+
+QWidget *ConnectionEditorBase::wrapWithPreferredWidth(QWidget *content)
+{
+    auto *container = new QWidget(this);
+    auto *layout = new QHBoxLayout(container);
+    layout->setContentsMargins(0, 0, 0, 0);
+
+    layout->addStretch(1);
+
+    // Set size constraints on content:
+    // - Preferred width: 600px for typical English labels
+    // - Maximum width: 800px to handle longer labels in other languages
+    // - Content can grow between preferred and max as needed
+    content->setMinimumWidth(TAB_CONTENT_PREFERRED_WIDTH);
+    content->setMaximumWidth(TAB_CONTENT_MAX_WIDTH);
+    content->setParent(container);
+    layout->addWidget(content);
+
+    layout->addStretch(1);
+
+    return container;
 }
 
 #include "moc_connectioneditorbase.cpp"

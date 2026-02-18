@@ -410,11 +410,11 @@ void ConnectionIcon::setDisconnectedIcon()
     }
 
     if (wired) {
-        setConnectionIcon(QStringLiteral("network-wired-available"));
+        setConnectionIcon(QStringLiteral("network-wired-disconnected"));
         setConnectionTooltipIcon(QStringLiteral("network-wired"));
         return;
     } else if (wireless) {
-        setConnectionIcon(QStringLiteral("network-wireless-available"));
+        setConnectionIcon(QStringLiteral("network-wireless-disconnected"));
         setConnectionTooltipIcon(QStringLiteral("network-wireless-connected-00"));
         return;
     } else if (modem) {

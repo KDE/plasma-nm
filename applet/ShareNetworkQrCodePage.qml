@@ -5,12 +5,12 @@
 */
 
 import QtQuick
-import QtQuick.Layouts 1.2
+import QtQuick.Layouts
 
-import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.plasma.components as PlasmaComponents3
 import org.kde.kirigami as Kirigami
 
-import org.kde.prison 1.0 as Prison
+import org.kde.prison as Prison
 
 ColumnLayout {
     id: page

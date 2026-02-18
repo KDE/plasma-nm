@@ -6,13 +6,13 @@
 
 pragma ComponentBehavior: Bound
 
-import QtQuick 2.2
-import QtQuick.Layouts 1.15
+import QtQuick
+import QtQuick.Layouts
 
-import org.kde.kquickcontrolsaddons 2.0 as KQuickControlsAddons
-import org.kde.kirigami 2.20 as Kirigami
-import org.kde.plasma.extras 2.0 as PlasmaExtras
-import org.kde.plasma.components 3.0 as PlasmaComponents3
+import org.kde.kquickcontrolsaddons as KQuickControlsAddons
+import org.kde.kirigami as Kirigami
+import org.kde.plasma.extras as PlasmaExtras
+import org.kde.plasma.components as PlasmaComponents3
 import org.kde.plasma.networkmanagement as PlasmaNM
 
 MouseArea {

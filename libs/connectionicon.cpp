@@ -401,14 +401,9 @@ void ConnectionIcon::setDisconnectedIcon()
                 wired = true;
             }
         } else if (device->type() == NetworkManager::Device::Wifi //
-                   && NetworkManager::isWirelessEnabled() //
                    && NetworkManager::isWirelessHardwareEnabled()) {
-            NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
-            if (!wifiDevice->accessPoints().isEmpty() || !wifiDevice->availableConnections().isEmpty()) {
-                wireless = true;
-            }
+            wireless = true;
         } else if (device->type() == NetworkManager::Device::Modem //
-                   && NetworkManager::isWwanEnabled() //
                    && NetworkManager::isWwanHardwareEnabled()) {
             modem = true;
         }

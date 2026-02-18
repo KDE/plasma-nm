@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-28 00:46+0000\n"
+"POT-Creation-Date: 2026-02-18 00:48+0000\n"
 "PO-Revision-Date: 2021-11-03 17:13+0100\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -16,6 +16,469 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n"
 "%100==4 ? 2 : 3;\n"
+
+#: cellular/cellularmodem.cpp:148
+#, kde-format
+msgid "Error resetting the modem: %1"
+msgstr ""
+
+#: cellular/cellularmodem.cpp:364
+#, fuzzy, kde-format
+#| msgctxt "network interface disconnecting state label"
+#| msgid "Deactivating connection"
+msgid "Error activating connection: %1"
+msgstr "Deaktiwizuju zwisk"
+
+#: cellular/cellularmodem.cpp:402
+#, fuzzy, kde-format
+#| msgid "Failed to add connection %1"
+msgid "Error adding connection: %1"
+msgstr "Njemóžach zwisk %1 dodać"
+
+#: cellular/cellularmodem.cpp:419
+#, fuzzy, kde-format
+#| msgctxt "network interface disconnecting state label"
+#| msgid "Deactivating connection"
+msgid "Error removing connection: %1"
+msgstr "Deaktiwizuju zwisk"
+
+#: cellular/cellularmodem.cpp:456
+#, kde-format
+msgid "Error updating connection settings for %1: %2."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:111 cellular/cellularmodemdetails.cpp:213
+#: cellular/cellularmodemdetails.cpp:245 cellular/cellularmodemdetails.cpp:433
+#: cellular/cellularmodemdetails.cpp:465
+#, fuzzy, kde-format
+#| msgctxt "description of unknown network interface state"
+#| msgid "Unknown"
+msgid "Unknown"
+msgstr "Njeznaty"
+
+#: cellular/cellularmodemdetails.cpp:114 cellular/cellularmodemdetails.cpp:468
+#, kde-format
+msgid "POTS"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:117 editor/connectioneditorbase.cpp:247
+#, kde-format
+msgid "GSM"
+msgstr "GSM"
+
+#: cellular/cellularmodemdetails.cpp:120
+#, kde-format
+msgid "GSM Compact"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:123
+#, kde-format
+msgid "GPRS"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:126
+#, kde-format
+msgid "EDGE"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:129
+#, kde-format
+msgid "UMTS"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:132
+#, kde-format
+msgid "HSDPA"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:135
+#, kde-format
+msgid "HSUPA"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:138
+#, kde-format
+msgid "HSPA"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:141
+#, kde-format
+msgid "HSPA+"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:144
+#, kde-format
+msgid "CDMA2000 1xRTT"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:147
+#, kde-format
+msgid "CDMA2000 EVDO-0"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:150
+#, kde-format
+msgid "CDMA2000 EVDO-A"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:153
+#, kde-format
+msgid "CDMA2000 EVDO-B"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:156
+#, kde-format
+msgid "LTE"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:159
+#, kde-format
+msgid "5GNR"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:215
+#, kde-format
+msgid "Off"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:217
+#, kde-format
+msgid "Low-power mode"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:219
+#, kde-format
+msgid "Full power mode"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:243
+#, fuzzy, kde-format
+#| msgctxt "The VPN connection failed"
+#| msgid "Failed"
+msgid "Failed"
+msgstr "Je so zwrěšćiło"
+
+#: cellular/cellularmodemdetails.cpp:247
+#, kde-format
+msgid "Initializing"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:249
+#, kde-format
+msgid "Locked"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: cellular/cellularmodemdetails.cpp:251 editor/settings/ui/ipv6.ui:264
+#, kde-format
+msgid "Disabled"
+msgstr "Njesteji k dispoziciji"
+
+#: cellular/cellularmodemdetails.cpp:253
+#, fuzzy, kde-format
+#| msgid "Disabled"
+msgid "Disabling"
+msgstr "Njesteji k dispoziciji"
+
+#: cellular/cellularmodemdetails.cpp:255
+#, kde-format
+msgid "Enabling"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:257
+#, fuzzy, kde-format
+#| msgid "Disabled"
+msgid "Enabled"
+msgstr "Njesteji k dispoziciji"
+
+#: cellular/cellularmodemdetails.cpp:259
+#, fuzzy, kde-format
+#| msgctxt "network interface doing dhcp request in most cases"
+#| msgid "Setting network address"
+msgid "Searching for network provider"
+msgstr "Postajam syćowu adresu"
+
+#: cellular/cellularmodemdetails.cpp:261
+#, kde-format
+msgid "Registered with network provider"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:263
+#, fuzzy, kde-format
+#| msgctxt "Network connections are being cleaned up"
+#| msgid "Disconnecting"
+msgid "Disconnecting"
+msgstr "Wowjazuju"
+
+#: cellular/cellularmodemdetails.cpp:265
+#, fuzzy, kde-format
+#| msgctxt "The VPN connection is being established"
+#| msgid "Connecting"
+msgid "Connecting"
+msgstr "Zwjazam"
+
+#: cellular/cellularmodemdetails.cpp:267
+#, fuzzy, kde-format
+#| msgctxt "infiniband transport mode"
+#| msgid "Connected"
+msgid "Connected"
+msgstr "Zwjazany"
+
+#: cellular/cellularmodemdetails.cpp:276
+#, kde-format
+msgid "No error."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:278
+#, fuzzy, kde-format
+#| msgctxt "description of unknown network interface state"
+#| msgid "Unknown"
+msgid "Unknown error."
+msgstr "Njeznaty"
+
+#: cellular/cellularmodemdetails.cpp:280
+#, kde-format
+msgid "SIM is required but missing."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:282
+#, kde-format
+msgid "SIM is available but unusable."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:284
+#, kde-format
+msgid "Unknown modem capabilities."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:286
+#, kde-format
+msgid "eSIM is not initialized."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:312
+#, kde-format
+msgid "Not registered, not searching for new operator to register."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:314
+#, kde-format
+msgid "Registered on home network."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:316
+#, kde-format
+msgid "Not registered, searching for new operator to register with."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:318
+#, kde-format
+msgid "Registration denied."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:320
+#, kde-format
+msgid "Unknown registration status."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:322
+#, kde-format
+msgid "Registered on a roaming network."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:324
+#, kde-format
+msgid "Registered for \"SMS only\", on home network."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:326
+#, kde-format
+msgid "Registered for \"SMS only\", roaming network."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:328
+#, kde-format
+msgid "Emergency services only."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:330
+#, kde-format
+msgid "Registered for \"CSFB not preferred\", home network."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:332
+#, kde-format
+msgid "Registered for \"CSFB not preferred\", roaming network."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:334
+#, kde-format
+msgid "Attached for access to Restricted Local Operator Services."
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:374
+#, kde-format
+msgid "Scanning networks failed: %1"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (KComboBox, metered)
+#: cellular/cellularmodemdetails.cpp:435
+#: editor/settings/ui/connectionwidget.ui:169
+#, kde-format
+msgid "Yes"
+msgstr "Haj"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, metered)
+#: cellular/cellularmodemdetails.cpp:437
+#: editor/settings/ui/connectionwidget.ui:174
+#, kde-format
+msgid "No"
+msgstr "Ně"
+
+#: cellular/cellularmodemdetails.cpp:439
+#, kde-format
+msgid "GuessYes"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:441
+#, kde-format
+msgid "GuessNo"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:474
+#, kde-format
+msgid "2G"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:485
+#, kde-format
+msgid "3G"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:490
+#, kde-format
+msgid "4G"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:493
+#, kde-format
+msgid "5G"
+msgstr ""
+
+#: cellular/cellularmodemdetails.cpp:496
+#, kde-format
+msgid "Any"
+msgstr ""
+
+#: cellular/cellularsim.cpp:83
+#, kde-format
+msgid "Lock reason unknown."
+msgstr ""
+
+#: cellular/cellularsim.cpp:85
+#, kde-format
+msgid "Modem is unlocked."
+msgstr ""
+
+#: cellular/cellularsim.cpp:87
+#, kde-format
+msgid "SIM requires the PIN code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:89
+#, kde-format
+msgid "SIM requires the PIN2 code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:91
+#, kde-format
+msgid "SIM requires the PUK code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:93
+#, kde-format
+msgid "SIM requires the PUK2 code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:95
+#, kde-format
+msgid "Modem requires the service provider PIN code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:97
+#, kde-format
+msgid "Modem requires the service provider PUK code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:99
+#, kde-format
+msgid "Modem requires the network PIN code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:101
+#, kde-format
+msgid "Modem requires the network PUK code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:103
+#, kde-format
+msgid "Modem requires the PIN code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:105
+#, kde-format
+msgid "Modem requires the corporate PIN code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:107
+#, kde-format
+msgid "Modem requires the corporate PUK code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:109
+#, kde-format
+msgid "Modem requires the PH-FSIM PIN code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:111
+#, kde-format
+msgid "Modem requires the PH-FSIM PUK code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:113
+#, kde-format
+msgid "Modem requires the network subset PIN code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:115
+#, kde-format
+msgid "Modem requires the network subset PUK code."
+msgstr ""
+
+#: cellular/cellularsim.cpp:158
+#, kde-format
+msgid "(empty)"
+msgstr ""
+
+#: cellular/cellularsim.cpp:172
+#, kde-format
+msgid "Error toggling SIM lock: %1"
+msgstr ""
+
+#: cellular/cellularsim.cpp:181
+#, kde-format
+msgid "Error changing the PIN: %1"
+msgstr ""
+
+#: cellular/cellularsim.cpp:194
+#, kde-format
+msgid "Error sending the PIN: %1"
+msgstr ""
+
+#: cellular/cellularsim.cpp:207
+#, kde-format
+msgid "Error sending the PUK: %1"
+msgstr ""
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -308,11 +771,6 @@ msgstr "DSL"
 #, kde-format
 msgid "Mobile Broadband (%1)"
 msgstr "Mobilny broadband (%1)"
-
-#: editor/connectioneditorbase.cpp:247
-#, kde-format
-msgid "GSM"
-msgstr "GSM"
 
 #: editor/connectioneditorbase.cpp:249 editor/connectioneditorbase.cpp:292
 #, kde-format
@@ -1103,18 +1561,6 @@ msgctxt "Item in the Metered: list"
 msgid "Automatic"
 msgstr ""
 
-#. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:169
-#, kde-format
-msgid "Yes"
-msgstr "Haj"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, metered)
-#: editor/settings/ui/connectionwidget.ui:174
-#, kde-format
-msgid "No"
-msgstr "Ně"
-
 #. i18n: ectx: property (title), widget (QGroupBox, basicGroup)
 #: editor/settings/ui/gsm.ui:18
 #, kde-format
@@ -1457,12 +1903,6 @@ msgstr ""
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
 msgstr "Ignoruje so"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:264
-#, kde-format
-msgid "Disabled"
-msgstr "Njesteji k dispoziciji"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
 #: editor/settings/ui/ipv6.ui:341

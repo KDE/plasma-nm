@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-02-18 00:48+0000\n"
 "PO-Revision-Date: 2025-04-26 17:58+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -18,626 +18,142 @@ msgstr ""
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Lokalize 23.08.5\n"
 
-#: modem.cpp:128
-#, kde-format
-msgid "Error resetting the modem: %1"
-msgstr "خطأ في تصفير المودم: %1"
-
-#: modem.cpp:262 modem.cpp:434
-#, kde-format
-msgid "Error updating connection settings for %1: %2."
-msgstr "خطأ في تحديث إعدادات الاتصال لـ%1: %2."
-
-#: modem.cpp:340
-#, kde-format
-msgid "Error activating connection: %1"
-msgstr "خطأ في تفعيل الاتصال: %1"
-
-#: modem.cpp:378
-#, kde-format
-msgid "Error adding connection: %1"
-msgstr "خطأ في إضافة الاتصال: %1"
-
-#: modem.cpp:395
-#, kde-format
-msgid "Error removing connection: %1"
-msgstr "خطأ في إزالة الاتصال: %1"
-
-#: modem.cpp:520 modemdetails.cpp:118 modemdetails.cpp:220 modemdetails.cpp:252
-#: modemdetails.cpp:432 modemdetails.cpp:462
-#, kde-format
-msgid "Unknown"
-msgstr "مجهول"
-
-#: modem.cpp:522
-#, kde-format
-msgid "Unmanaged"
-msgstr "غير مُدار"
-
-#: modem.cpp:524
-#, kde-format
-msgid "Unavailable"
-msgstr "غير متوفّر"
-
-#: modem.cpp:526
-#, kde-format
-msgid "Disconnected"
-msgstr "قطع الاتصال"
-
-#: modem.cpp:528
-#, kde-format
-msgid "Preparing"
-msgstr "يحضّر"
-
-#: modem.cpp:530
-#, kde-format
-msgid "ConfiguringHardware"
-msgstr "ضبط العتاد"
-
-#: modem.cpp:532
-#, kde-format
-msgid "NeedAuth"
-msgstr "يحتاج إلى استيثاق"
-
-#: modem.cpp:534
-#, kde-format
-msgid "ConfiguringIp"
-msgstr "ضبط عنوان الإنترنت"
-
-#: modem.cpp:536
-#, kde-format
-msgid "CheckingIp"
-msgstr "يتحقق من عنوان الإنترنت"
-
-#: modem.cpp:538
-#, kde-format
-msgid "WaitingForSecondaries"
-msgstr "في انتظار الثانويات"
-
-#: modem.cpp:540
-#, kde-format
-msgid "Activated"
-msgstr "مُنشط"
-
-#: modem.cpp:542
-#, kde-format
-msgid "Deactivating"
-msgstr "يعطّل الاتصال"
-
-#: modem.cpp:544 modemdetails.cpp:250
-#, kde-format
-msgid "Failed"
-msgstr "فشل"
-
-#: modemdetails.cpp:121 modemdetails.cpp:465
-#, kde-format
-msgid "POTS"
-msgstr "POTS"
-
-#: modemdetails.cpp:124
-#, kde-format
-msgid "GSM"
-msgstr "GSM"
-
-#: modemdetails.cpp:127
-#, kde-format
-msgid "GSM Compact"
-msgstr "GSM Compact"
-
-#: modemdetails.cpp:130
-#, kde-format
-msgid "GPRS"
-msgstr "GPRS"
-
-#: modemdetails.cpp:133
-#, kde-format
-msgid "EDGE"
-msgstr "EDGE"
-
-#: modemdetails.cpp:136
-#, kde-format
-msgid "UMTS"
-msgstr "UMTS"
-
-#: modemdetails.cpp:139
-#, kde-format
-msgid "HSDPA"
-msgstr "HSDPA"
-
-#: modemdetails.cpp:142
-#, kde-format
-msgid "HSUPA"
-msgstr "HSUPA"
-
-#: modemdetails.cpp:145
-#, kde-format
-msgid "HSPA"
-msgstr "HSPA"
-
-#: modemdetails.cpp:148
-#, kde-format
-msgid "HSPA+"
-msgstr "HSPA+"
-
-#: modemdetails.cpp:151
-#, kde-format
-msgid "CDMA2000 1xRTT"
-msgstr "CDMA2000 1xRTT"
-
-#: modemdetails.cpp:154
-#, kde-format
-msgid "CDMA2000 EVDO-0"
-msgstr "CDMA2000 EVDO-0"
-
-#: modemdetails.cpp:157
-#, kde-format
-msgid "CDMA2000 EVDO-A"
-msgstr "CDMA2000 EVDO-A"
-
-#: modemdetails.cpp:160
-#, kde-format
-msgid "CDMA2000 EVDO-B"
-msgstr "CDMA2000 EVDO-B"
-
-#: modemdetails.cpp:163
-#, kde-format
-msgid "LTE"
-msgstr "LTE"
-
-#: modemdetails.cpp:166
-#, kde-format
-msgid "5GNR"
-msgstr "5GNR"
-
-#: modemdetails.cpp:222
-#, kde-format
-msgid "Off"
-msgstr "مغلق"
-
-#: modemdetails.cpp:224
-#, kde-format
-msgid "Low-power mode"
-msgstr "وضع الطاقة المنخفضة"
-
-#: modemdetails.cpp:226
-#, kde-format
-msgid "Full power mode"
-msgstr "وضع الطاقة الكامل"
-
-#: modemdetails.cpp:254
-#, kde-format
-msgid "Initializing"
-msgstr "يهيّئ"
-
-#: modemdetails.cpp:256 ui/SimPage.qml:118
-#, kde-format
-msgid "Locked"
-msgstr "مقفل"
-
-#: modemdetails.cpp:258
-#, kde-format
-msgid "Disabled"
-msgstr "معطّل"
-
-#: modemdetails.cpp:260
-#, kde-format
-msgid "Disabling"
-msgstr "يعطل"
-
-#: modemdetails.cpp:262
-#, kde-format
-msgid "Enabling"
-msgstr "تمكين"
-
-#: modemdetails.cpp:264 ui/ModemPage.qml:85
-#, kde-format
-msgid "Enabled"
-msgstr "ممكّن"
-
-#: modemdetails.cpp:266
-#, kde-format
-msgid "Searching for network provider"
-msgstr "يبحث عن مزود الشبكة"
-
-#: modemdetails.cpp:268
-#, kde-format
-msgid "Registered with network provider"
-msgstr "مسجل مع مزود الشبكة"
-
-#: modemdetails.cpp:270
-#, kde-format
-msgid "Disconnecting"
-msgstr "يقطع الاتّصال"
-
-#: modemdetails.cpp:272
-#, kde-format
-msgid "Connecting"
-msgstr "يتّصل"
-
-#: modemdetails.cpp:274
-#, kde-format
-msgid "Connected"
-msgstr "متّصل"
-
-#: modemdetails.cpp:283
-#, kde-format
-msgid "No error."
-msgstr "لا أخطاء"
-
-#: modemdetails.cpp:285
-#, kde-format
-msgid "Unknown error."
-msgstr "خطأ مجهول."
-
-#: modemdetails.cpp:287
-#, kde-format
-msgid "SIM is required but missing."
-msgstr "الشريحة مطلوبة ولكنها مفقودة."
-
-#: modemdetails.cpp:289
-#, kde-format
-msgid "SIM is available but unusable."
-msgstr "الشريحة متاحة ولكن غير قابلة للاستخدام."
-
-#: modemdetails.cpp:291
-#, kde-format
-msgid "Unknown modem capabilities."
-msgstr "قدرات المودم غير معروفة."
-
-#: modemdetails.cpp:293
-#, kde-format
-msgid "eSIM is not initialized."
-msgstr "لم تهيئ الشريحة الإلكترونية."
-
-#: modemdetails.cpp:316
-#, kde-format
-msgid "Not registered, not searching for new operator to register."
-msgstr "غير مسجل، ولا يبحث عن مشغل جديد للتسجيل."
-
-#: modemdetails.cpp:318
-#, kde-format
-msgid "Registered on home network."
-msgstr "مسجل على شبكة منزلية."
-
-#: modemdetails.cpp:320
-#, kde-format
-msgid "Not registered, searching for new operator to register with."
-msgstr "غير مسجل، ويبحث عن مشغل جديد للتسجيل."
-
-#: modemdetails.cpp:322
-#, kde-format
-msgid "Registration denied."
-msgstr "رُفض التسجيل."
-
-#: modemdetails.cpp:324
-#, kde-format
-msgid "Unknown registration status."
-msgstr "حالة التسجيل غير معروفة."
-
-#: modemdetails.cpp:326
-#, kde-format
-msgid "Registered on a roaming network."
-msgstr "مسجل على شبكة التجوال."
-
-#: modemdetails.cpp:328
-#, kde-format
-msgid "Registered for \"SMS only\", on home network."
-msgstr "مسجل لـ\"للرسائل النصية فقط\"، على شبكة منزلية."
-
-#: modemdetails.cpp:330
-#, kde-format
-msgid "Registered for \"SMS only\", roaming network."
-msgstr "مسجل لـ\"للرسائل النصية فقط\"، على شبكة التجوال."
-
-#: modemdetails.cpp:332
-#, kde-format
-msgid "Emergency services only."
-msgstr "خدمات الطوارئ فقط."
-
-#: modemdetails.cpp:334
-#, kde-format
-msgid "Registered for \"CSFB not preferred\", home network."
-msgstr "مسجل لـ \"CSFB غير مفضل \"، على شبكة منزلية."
-
-#: modemdetails.cpp:336
-#, kde-format
-msgid "Registered for \"CSFB not preferred\", roaming network."
-msgstr "مسجل لـ \"CSFB غير مفضل \"، على شبكة تجوال."
-
-#: modemdetails.cpp:338
-#, kde-format
-msgid "Attached for access to Restricted Local Operator Services."
-msgstr "مرفق للوصول إلى خدمات المشغل المحلية المقيدة."
-
-#: modemdetails.cpp:377
-#, kde-format
-msgid "Scanning networks failed: %1"
-msgstr "فشل مسح الشبكات: %1"
-
-#: modemdetails.cpp:434 ui/ModemPage.qml:180 ui/SimPage.qml:119
-#, kde-format
-msgid "Yes"
-msgstr "نعم"
-
-#: modemdetails.cpp:436 ui/ModemPage.qml:180 ui/SimPage.qml:119
-#, kde-format
-msgid "No"
-msgstr "لا"
-
-#: modemdetails.cpp:438
-#, kde-format
-msgid "GuessYes"
-msgstr "تخمين_نعم"
-
-#: modemdetails.cpp:440
-#, kde-format
-msgid "GuessNo"
-msgstr "تخمين_لا"
-
-#: modemdetails.cpp:468 modemdetails.cpp:471 modemdetails.cpp:474
-#: modemdetails.cpp:477 ui/EditProfilePage.qml:63
-#, kde-format
-msgid "2G"
-msgstr "2G"
-
-#: modemdetails.cpp:480 modemdetails.cpp:483 modemdetails.cpp:486
-#: modemdetails.cpp:489 modemdetails.cpp:492 modemdetails.cpp:495
-#: modemdetails.cpp:498 modemdetails.cpp:501 modemdetails.cpp:504
-#, kde-format
-msgid "3G"
-msgstr "3G"
-
-#: modemdetails.cpp:507 modemdetails.cpp:516 modemdetails.cpp:519
-#, kde-format
-msgid "4G"
-msgstr "4G"
-
-#: modemdetails.cpp:510
-#, kde-format
-msgid "5G"
-msgstr "5G"
-
-#: modemdetails.cpp:513 ui/EditProfilePage.qml:63
-#, kde-format
-msgid "Any"
-msgstr "أيّ شيء"
-
-#: sim.cpp:74
-#, kde-format
-msgid "Lock reason unknown."
-msgstr "سبب القفل مجهول."
-
-#: sim.cpp:76
-#, kde-format
-msgid "Modem is unlocked."
-msgstr "المودم مُقفَل."
-
-#: sim.cpp:78
-#, kde-format
-msgid "SIM requires the PIN code."
-msgstr "شريحة الهاتف تطلب شِفرة PIN."
-
-#: sim.cpp:80
-#, kde-format
-msgid "SIM requires the PIN2 code."
-msgstr "شريحة الهاتف تطلب شِفرة PIN2."
-
-#: sim.cpp:82
-#, kde-format
-msgid "SIM requires the PUK code."
-msgstr "شريحة الهاتف تطلب شِفرة PUK."
-
-#: sim.cpp:84
-#, kde-format
-msgid "SIM requires the PUK2 code."
-msgstr "شريحة الهاتف تطلب شِفرة PUK2."
-
-#: sim.cpp:86
-#, kde-format
-msgid "Modem requires the service provider PIN code."
-msgstr "يطلب المودم شِفرة PIN لموفّر الخدمة."
-
-#: sim.cpp:88
-#, kde-format
-msgid "Modem requires the service provider PUK code."
-msgstr "يطلب المودم شِفرة PUK لموفّر الخدمة."
-
-#: sim.cpp:90
-#, kde-format
-msgid "Modem requires the network PIN code."
-msgstr "يطلب المودم شِفرة PIN للشبكة."
-
-#: sim.cpp:92
-#, kde-format
-msgid "Modem requires the network PUK code."
-msgstr "يطلب المودم شِفرة PUK للشبكة."
-
-#: sim.cpp:94
-#, kde-format
-msgid "Modem requires the PIN code."
-msgstr "يطلب المودم شِفرة PIN."
-
-#: sim.cpp:96
-#, kde-format
-msgid "Modem requires the corporate PIN code."
-msgstr "يطلب المودم شِفرة PIN للشركات."
-
-#: sim.cpp:98
-#, kde-format
-msgid "Modem requires the corporate PUK code."
-msgstr "يطلب المودم شِفرة PUK للشركات."
-
-#: sim.cpp:100
-#, kde-format
-msgid "Modem requires the PH-FSIM PIN code."
-msgstr "يطلب المودم شِفرة PIN لـ PH-FSIM."
-
-#: sim.cpp:102
-#, kde-format
-msgid "Modem requires the PH-FSIM PUK code."
-msgstr "يطلب المودم شِفرة PUK لـ PH-FSIM."
-
-#: sim.cpp:104
-#, kde-format
-msgid "Modem requires the network subset PIN code."
-msgstr "يطلب المودم شِفرة PIN للشبكة الفرعية."
-
-#: sim.cpp:106
-#, kde-format
-msgid "Modem requires the network subset PUK code."
-msgstr "يطلب المودم شِفرة PUK للشبكة الفرعية."
-
-#: sim.cpp:150
-#, kde-format
-msgid "(empty)"
-msgstr "(فارغة)"
-
-#: sim.cpp:164
-#, kde-format
-msgid "Error toggling SIM lock: %1"
-msgstr "خطأ تبديل قفل الشريحة: %1"
-
-#: sim.cpp:173
-#, kde-format
-msgid "Error changing the PIN: %1"
-msgstr "خطأ في تغيير رقم التعريف الشخصي: %1"
-
-#: sim.cpp:186
-#, kde-format
-msgid "Error sending the PIN: %1"
-msgstr "خطأ في إرسال رقم التعريف الشخصي: %1"
-
-#: sim.cpp:199
-#, kde-format
-msgid "Error sending the PUK: %1"
-msgstr "خطأ في إرسال PUK‏: %1"
-
-#: ui/AvailableNetworks.qml:16
+#: ui/AvailableNetworks.qml:18
 #, kde-format
 msgid "Available Networks"
 msgstr "الشبكات المتوفّرة"
 
-#: ui/AvailableNetworks.qml:40
+#: ui/AvailableNetworks.qml:42
 #, kde-format
 msgid "none"
 msgstr "لاشيء"
 
-#: ui/AvailableNetworks.qml:40
+#: ui/AvailableNetworks.qml:42
 #, kde-format
 msgid "Current operator: %1"
 msgstr "المشغل الحالي: %1"
 
-#: ui/AvailableNetworks.qml:43
+#: ui/AvailableNetworks.qml:45
 #, kde-format
 msgid "Scan For Networks"
 msgstr "امحُ الشبكات"
 
 #: ui/EditProfilePage.qml:15
 #, kde-format
-msgid "Edit APN"
-msgstr "حرّر اسم نقطة الوصول APN"
-
-#: ui/EditProfilePage.qml:15
-#, kde-format
 msgid "New APN"
 msgstr "اسم نقطة وصول جديدة"
 
-#: ui/EditProfilePage.qml:30
+#: ui/EditProfilePage.qml:15
+#, kde-format
+msgid "Edit APN"
+msgstr "حرّر اسم نقطة الوصول APN"
+
+#: ui/EditProfilePage.qml:37
 #, kde-format
 msgid "Name"
 msgstr "الاسم"
 
-#: ui/EditProfilePage.qml:38
+#: ui/EditProfilePage.qml:45
 #, kde-format
 msgid "APN"
 msgstr "اسم نقطة الوصول APN"
 
-#: ui/EditProfilePage.qml:46
+#: ui/EditProfilePage.qml:53
 #, kde-format
 msgid "Username"
 msgstr "اسم المستخدم"
 
-#: ui/EditProfilePage.qml:54
+#: ui/EditProfilePage.qml:61
 #, kde-format
 msgid "Password"
 msgstr "كلمة السر"
 
-#: ui/EditProfilePage.qml:62
+#: ui/EditProfilePage.qml:69
 #, kde-format
 msgid "Network type"
 msgstr "نوع الشبكة"
 
-#: ui/EditProfilePage.qml:63
+#: ui/EditProfilePage.qml:70
 #, kde-format
 msgid "4G/3G/2G"
 msgstr "4G/3G/2G"
 
-#: ui/EditProfilePage.qml:63
+#: ui/EditProfilePage.qml:70
 #, kde-format
 msgid "3G/2G"
 msgstr "3G/2G"
 
-#: ui/EditProfilePage.qml:63
+#: ui/EditProfilePage.qml:70
+#, kde-format
+msgid "2G"
+msgstr "2G"
+
+#: ui/EditProfilePage.qml:70
 #, kde-format
 msgid "Only 4G"
 msgstr "4G فقط"
 
-#: ui/EditProfilePage.qml:63
+#: ui/EditProfilePage.qml:70
 #, kde-format
 msgid "Only 3G"
 msgstr "3G فقط"
 
-#: ui/EditProfilePage.qml:63
+#: ui/EditProfilePage.qml:70
 #, kde-format
 msgid "Only 2G"
 msgstr "2G فقط"
 
-#: ui/EditProfilePage.qml:75
+#: ui/EditProfilePage.qml:70
+#, kde-format
+msgid "Any"
+msgstr "أيّ شيء"
+
+#: ui/EditProfilePage.qml:82
 #, kde-format
 msgid "Save profile"
 msgstr "احفظ التشكيلة"
 
-#: ui/main.qml:52
+#: ui/main.qml:68
 #, kde-format
 msgid "Modem not available"
 msgstr "المودم غير متوفر"
 
-#: ui/main.qml:71
+#: ui/main.qml:87
 #, kde-format
 msgid "Mobile data"
 msgstr "بيانات المحمول"
 
-#: ui/main.qml:76
+#: ui/main.qml:92
 #, kde-format
 msgid "No SIM is inserted."
 msgstr "لا توجد شريحة."
 
-#: ui/main.qml:78
+#: ui/main.qml:94
 #, kde-format
 msgid "Mobile data is not available with this modem."
 msgstr "بيانات الهاتف المحمول غير متوفرة مع هذا المودم."
 
-#: ui/main.qml:80
+#: ui/main.qml:96
 #, kde-format
 msgid "An APN needs to be configured to have mobile data."
 msgstr "يجب ضبط اسم نقط الوصول APN للحصول على بيانات الهاتف المحمول."
 
-#: ui/main.qml:82
+#: ui/main.qml:98
 #, kde-format
 msgid "Whether mobile data is enabled."
 msgstr "ما إذا مُكّنت بيانات الجوال."
 
-#: ui/main.qml:113
+#: ui/main.qml:129
 #, kde-format
 msgid "Data Usage"
 msgstr "استخدام البيانات"
 
-#: ui/main.qml:114
+#: ui/main.qml:130
 #, kde-format
 msgid "View data usage."
 msgstr "اعرض استخدام البيانات."
 
-#: ui/main.qml:122
+#: ui/main.qml:138
 #, kde-format
 msgid "SIM"
 msgid_plural "SIMs"
@@ -648,152 +164,152 @@ msgstr[3] "شرائح"
 msgstr[4] "شريحة"
 msgstr[5] "شريحة"
 
-#: ui/main.qml:143
+#: ui/main.qml:159
 #, kde-format
 msgid "SIM %1"
 msgstr "الشريحة %1"
 
-#: ui/main.qml:144
+#: ui/main.qml:160
 #, kde-format
 msgid "View SIM %1 details."
 msgstr "عرض تفاصيل شريحة %1."
 
-#: ui/ModemPage.qml:20
+#: ui/ModemPage.qml:22
 #, kde-format
 msgid "Modem %1"
 msgstr "المودم %1"
 
-#: ui/ModemPage.qml:30
+#: ui/ModemPage.qml:32
 #, kde-format
 msgid "Modem Control"
 msgstr "التحكم في المودم"
 
-#: ui/ModemPage.qml:36
+#: ui/ModemPage.qml:38
 #, kde-format
 msgid "Force Modem Restart"
 msgstr "إعادة تشغيل المودم بالقوة"
 
-#: ui/ModemPage.qml:42 ui/SimPage.qml:105
+#: ui/ModemPage.qml:44 ui/SimPage.qml:112
 #, kde-format
 msgid "Modem Details"
 msgstr "تفاصيل المودم"
 
-#: ui/ModemPage.qml:55
+#: ui/ModemPage.qml:57
 #, kde-format
 msgid "Access Technologies"
 msgstr "تقنيات النفاذ"
 
-#: ui/ModemPage.qml:77
+#: ui/ModemPage.qml:79
 #, kde-format
 msgid "IMEI"
 msgstr "رقم هوية IMEI"
 
-#: ui/ModemPage.qml:93
+#: ui/ModemPage.qml:87
+#, kde-format
+msgid "Enabled"
+msgstr "ممكّن"
+
+#: ui/ModemPage.qml:95
 #, kde-format
 msgid "Manufacturer"
 msgstr "المصنّع"
 
-#: ui/ModemPage.qml:101
+#: ui/ModemPage.qml:103
 #, kde-format
 msgid "Model"
 msgstr "الطّراز"
 
-#: ui/ModemPage.qml:116
+#: ui/ModemPage.qml:118
 #, kde-format
 msgid "Owned Numbers:"
 msgstr "الأرقام المملوكة:"
 
-#: ui/ModemPage.qml:139
+#: ui/ModemPage.qml:141
 #, kde-format
 msgid "Revision"
 msgstr "المراجعة"
 
-#: ui/ModemPage.qml:147
+#: ui/ModemPage.qml:149
 #, kde-format
 msgid "Signal Quality"
 msgstr "جودة الإشارة"
 
-#: ui/ModemPage.qml:155
+#: ui/ModemPage.qml:157
 #, kde-format
 msgid "State"
 msgstr "الحالة"
 
-#: ui/ModemPage.qml:163
+#: ui/ModemPage.qml:165
 #, kde-format
 msgid "Failure Reason"
 msgstr "سبب الفشل"
 
-#: ui/ModemPage.qml:171
+#: ui/ModemPage.qml:173
 #, kde-format
 msgid "Registration State"
 msgstr "حالة التسجيل"
 
-#: ui/ModemPage.qml:179
-#, kde-format
-msgid "Roaming"
-msgstr "التجوال"
-
-#: ui/ModemPage.qml:187
+#: ui/ModemPage.qml:181
 #, kde-format
 msgid "Firmware Version"
 msgstr "إصدار البرامج الثابتة"
 
-#: ui/ModemPage.qml:195
+#: ui/ModemPage.qml:189
 #, kde-format
 msgid "Interface Name"
 msgstr "اسم الواجهة:"
 
-#: ui/ModemPage.qml:203
+#: ui/ModemPage.qml:197
 #, kde-format
 msgid "Metered"
 msgstr "اتصال محدود"
 
-#: ui/ModemPage.qml:211
+#: ui/ModemPage.qml:205
 #, kde-format
 msgid "Active NetworkManager Connection"
 msgstr "اتصال مدير الشبكة النشط"
 
-#: ui/ModemPage.qml:219
+#: ui/ModemPage.qml:213
 #, kde-format
 msgid "Device"
 msgstr "الجهاز"
 
-#: ui/ModemPage.qml:227
+#: ui/ModemPage.qml:221
 #, kde-format
 msgid "Device ID"
 msgstr "معرّف الجهاز"
 
-#: ui/ModemPage.qml:242
+#: ui/ModemPage.qml:236
 #, kde-format
 msgid "Drivers:"
 msgstr "المشغّلات:"
 
-#: ui/ModemPage.qml:264
+#: ui/ModemPage.qml:258
 #, kde-format
 msgid "Plugin"
 msgstr "الملحقة"
 
-#: ui/ModemPage.qml:272
+#: ui/ModemPage.qml:266
 #, kde-format
 msgid "Power State"
 msgstr "حالة الطاقة"
 
-#: ui/ModemPage.qml:280
+#: ui/ModemPage.qml:274
 #, kde-format
 msgid "SIM Path"
 msgstr "مسار الشريحة"
 
-#: ui/ProfileList.qml:23
+#: ui/ProfileList.qml:25
 #, kde-format
 msgid "APNs"
 msgstr "أسماء نقاط الوصول"
 
-#: ui/ProfileList.qml:26 ui/ProfileList.qml:88
+#: ui/ProfileList.qml:28 ui/ProfileList.qml:99
 #, kde-format
 msgid "Edit"
 msgstr "حرّر"
 
-#: ui/ProfileList.qml:53
+#: ui/ProfileList.qml:55
 #, kde-format
 msgid ""
 "Unable to autodetect connection settings for your carrier. Please find your "
@@ -803,47 +319,47 @@ msgstr ""
 "إعدادات اسم نقطة الوصول APN لمشغل شبكة الجوال بالتواصل مع الدعم أو البحث عبر "
 "الإنترنت."
 
-#: ui/ProfileList.qml:64
+#: ui/ProfileList.qml:66
 #, kde-format
 msgid "APN List"
 msgstr "قائمة أسماء نقاط الوصول"
 
-#: ui/ProfileList.qml:98
+#: ui/ProfileList.qml:119
 #, kde-format
 msgid "Delete"
 msgstr "احذف"
 
-#: ui/ProfileList.qml:107
+#: ui/ProfileList.qml:128
 #, kde-format
 msgid "Add APN"
 msgstr "أضف اسم نقطة الوصول APN"
 
-#: ui/ProfileList.qml:115
+#: ui/ProfileList.qml:136
 #, kde-format
 msgid "Automatically detect APN"
 msgstr "اكتشاف اسم نقطة الوصول APN آليًّا"
 
-#: ui/SimLockPage.qml:19 ui/SimPage.qml:94
+#: ui/SimLockPage.qml:21 ui/SimPage.qml:101
 #, kde-format
 msgid "SIM Lock"
 msgstr "قفل الشريحة"
 
-#: ui/SimLockPage.qml:38
+#: ui/SimLockPage.qml:40
 #, kde-format
 msgid "SIM is locked"
 msgstr "الشريحة مقفلة"
 
-#: ui/SimLockPage.qml:39
+#: ui/SimLockPage.qml:41
 #, kde-format
 msgid "In order to use this SIM, you must first unlock it."
 msgstr "من أجل استخدام هذا الشريحة، يجب عليك أولاً فك قفلها."
 
-#: ui/SimLockPage.qml:61
+#: ui/SimLockPage.qml:63
 #, kde-format
 msgid "SIM is not locked"
 msgstr "الشريحة غير مقفلة"
 
-#: ui/SimLockPage.qml:62
+#: ui/SimLockPage.qml:64
 #, kde-format
 msgid ""
 "You can lock your SIM to require a set PIN code for phone calls and mobile "
@@ -852,183 +368,478 @@ msgstr ""
 "يمكنك قفل شريحتك لتطلب رمز التعريف الشخصي للمكالمات الهاتفية وبيانات الهاتف "
 "المحمول."
 
-#: ui/SimLockPage.qml:66
+#: ui/SimLockPage.qml:68
 #, kde-format
 msgid "Lock SIM"
 msgstr "اقفل الشريحة"
 
-#: ui/SimLockPage.qml:78
+#: ui/SimLockPage.qml:80
 #, kde-format
 msgid "Disable SIM Lock"
 msgstr "عطّل قفل الشريحة"
 
-#: ui/SimLockPage.qml:79
+#: ui/SimLockPage.qml:81
 #, kde-format
 msgid "Disable the SIM lock feature and remove the passcode on the SIM."
 msgstr "عطّل ميزة قفل الشريحة وأزل رمز المرور من على الشريحة."
 
-#: ui/SimLockPage.qml:91
+#: ui/SimLockPage.qml:93
 #, kde-format
 msgid "Change PIN"
 msgstr "غيّر رقم التعريف الشخصي"
 
-#: ui/SimLockPage.qml:92
+#: ui/SimLockPage.qml:94
 #, kde-format
 msgid "Change the passcode set on the SIM."
 msgstr "غيّر رمز المرور على من الشريحة."
 
-#: ui/SimLockPage.qml:106
+#: ui/SimLockPage.qml:108
 #, kde-format
 msgid "Unlock SIM"
 msgstr "فك قفل الشريحة"
 
-#: ui/SimLockPage.qml:114
+#: ui/SimLockPage.qml:116
 #, kde-format
 msgid "Attempts left: %1"
 msgstr "المحاولات المتبقية: %1"
 
-#: ui/SimLockPage.qml:119
+#: ui/SimLockPage.qml:121
 #, kde-format
 msgid "Enter PIN"
 msgstr "أدخل رقم التعريفي الشخصي"
 
-#: ui/SimLockPage.qml:127
+#: ui/SimLockPage.qml:129
 #, kde-format
 msgid "Change SIM PIN"
 msgstr "غيّر رقم التعريف الشخصي للشريحة"
 
-#: ui/SimLockPage.qml:146 ui/SimLockPage.qml:211
+#: ui/SimLockPage.qml:148 ui/SimLockPage.qml:213
 #, kde-format
 msgid "PINs don't match!"
 msgstr "أرقام التعريف الشخصي غير متطابقة!"
 
-#: ui/SimLockPage.qml:152 ui/SimLockPage.qml:217
+#: ui/SimLockPage.qml:154 ui/SimLockPage.qml:219
 #, kde-format
 msgid "PINs must be between 4 and 8 digits!"
 msgstr "يجب أن تكون أرقام التعريف الشخصي بين 4 و 8 خانات!"
 
-#: ui/SimLockPage.qml:157 ui/SimLockPage.qml:184
+#: ui/SimLockPage.qml:159 ui/SimLockPage.qml:186
 #, kde-format
 msgid "Current PIN"
 msgstr "رقم التعريفي الشخصي الحالي"
 
-#: ui/SimLockPage.qml:162 ui/SimLockPage.qml:222
+#: ui/SimLockPage.qml:164 ui/SimLockPage.qml:224
 #, kde-format
 msgid "New PIN"
 msgstr "رقم التعريفي الشخصي جديد"
 
-#: ui/SimLockPage.qml:167 ui/SimLockPage.qml:227
+#: ui/SimLockPage.qml:169 ui/SimLockPage.qml:229
 #, kde-format
 msgid "Confirm PIN"
 msgstr "أكد رقم التعريف الشخصي"
 
-#: ui/SimLockPage.qml:175
+#: ui/SimLockPage.qml:177
 #, kde-format
 msgid "Remove SIM PIN"
 msgstr "أزل رقم التعريفي الشخصي"
 
-#: ui/SimLockPage.qml:192
+#: ui/SimLockPage.qml:194
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "أضف رقم التعريف الشخصي للشريحة"
 
-#: ui/SimPage.qml:35
+#: ui/SimPage.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "SIM %1"
 msgstr "الشريحة %1"
 
-#: ui/SimPage.qml:45
+#: ui/SimPage.qml:44
 #, kde-format
 msgid ""
 "This SIM slot is empty, a SIM card needs to be inserted in order for it to "
 "be used."
 msgstr "مكان الشريحة فارغ، يجب إدخال شريحة لتتمكن من استخدامها."
 
+#: ui/SimPage.qml:59
+#, kde-format
+msgid "Roaming"
+msgstr "التجوال"
+
 #: ui/SimPage.qml:60
-#, kde-format
-msgid "Data Roaming"
-msgstr "تجوال البيانات"
+#, fuzzy, kde-format
+#| msgid "Registered on a roaming network."
+msgid "Allow mobile data when on a roaming network."
+msgstr "مسجل على شبكة التجوال."
 
-#: ui/SimPage.qml:61
-#, kde-format
-msgid "Allow your device to use networks other than your carrier."
-msgstr "اسمح لجهازك باستخدام شبكات أخرى غير شبكة مزود خدمتك."
-
-#: ui/SimPage.qml:72
+#: ui/SimPage.qml:79
 #, kde-format
 msgid "Modify APNs"
 msgstr "عدّل أسماء نقاط الوصول"
 
-#: ui/SimPage.qml:73
+#: ui/SimPage.qml:80
 #, kde-format
 msgid "Configure access point names for your carrier."
 msgstr "اضبط أسماء نقاط الوصول لناقلك."
 
-#: ui/SimPage.qml:83
+#: ui/SimPage.qml:90
 #, kde-format
 msgid "Networks"
 msgstr "الشّبكات"
 
-#: ui/SimPage.qml:84
+#: ui/SimPage.qml:91
 #, kde-format
 msgid "Select a network operator."
 msgstr "حدد مشغل شبكة."
 
-#: ui/SimPage.qml:95
+#: ui/SimPage.qml:102
 #, kde-format
 msgid "Modify SIM lock settings."
 msgstr "عدّل إعدادات قفل الشريحة."
 
-#: ui/SimPage.qml:106
+#: ui/SimPage.qml:113
 #, kde-format
 msgid "View the details of the modem this SIM is connected to."
 msgstr "اعرض تفاصيل المودم الذي تتصل به هذه الشريحة."
 
-#: ui/SimPage.qml:112
+#: ui/SimPage.qml:119
 #, kde-format
 msgid "SIM Details"
 msgstr "تفاصيل الشريحة"
 
+#: ui/SimPage.qml:125
+#, kde-format
+msgid "Locked"
+msgstr "مقفل"
+
 #: ui/SimPage.qml:126
+#, kde-format
+msgid "Yes"
+msgstr "نعم"
+
+#: ui/SimPage.qml:126
+#, kde-format
+msgid "No"
+msgstr "لا"
+
+#: ui/SimPage.qml:133
 #, kde-format
 msgid "IMSI"
 msgstr "الهوية الدولية لمشترك الجوال (IMSI)"
 
-#: ui/SimPage.qml:134
+#: ui/SimPage.qml:141
 #, kde-format
 msgid "EID"
 msgstr "EID"
 
-#: ui/SimPage.qml:142
+#: ui/SimPage.qml:149
 #, kde-format
 msgid "Operator Code (modem)"
 msgstr "رمز المشغل (المودم)"
 
-#: ui/SimPage.qml:150
+#: ui/SimPage.qml:157
 #, kde-format
 msgid "Operator Name (modem)"
 msgstr "اسم المشغل (المودم)"
 
-#: ui/SimPage.qml:158
+#: ui/SimPage.qml:165
 #, kde-format
 msgid "Operator Code (provided by SIM)"
 msgstr "رمز المشغل (المقدم من الشريحة)"
 
-#: ui/SimPage.qml:166
+#: ui/SimPage.qml:173
 #, kde-format
 msgid "Operator Name (provided by SIM)"
 msgstr "اسم المشغل (المقدم من الشريحة)"
 
-#: ui/SimPage.qml:174
+#: ui/SimPage.qml:181
 #, kde-format
 msgid "SIM ID"
 msgstr "معرف الشريحة"
 
-#: ui/SimPage.qml:190
+#: ui/SimPage.qml:197
 #, kde-format
 msgid "Emergency Numbers"
 msgstr "أرقام الطوارئ"
+
+#~ msgid "Error resetting the modem: %1"
+#~ msgstr "خطأ في تصفير المودم: %1"
+
+#~ msgid "Error updating connection settings for %1: %2."
+#~ msgstr "خطأ في تحديث إعدادات الاتصال لـ%1: %2."
+
+#~ msgid "Error activating connection: %1"
+#~ msgstr "خطأ في تفعيل الاتصال: %1"
+
+#~ msgid "Error adding connection: %1"
+#~ msgstr "خطأ في إضافة الاتصال: %1"
+
+#~ msgid "Error removing connection: %1"
+#~ msgstr "خطأ في إزالة الاتصال: %1"
+
+#~ msgid "Unknown"
+#~ msgstr "مجهول"
+
+#~ msgid "Unmanaged"
+#~ msgstr "غير مُدار"
+
+#~ msgid "Unavailable"
+#~ msgstr "غير متوفّر"
+
+#~ msgid "Disconnected"
+#~ msgstr "قطع الاتصال"
+
+#~ msgid "Preparing"
+#~ msgstr "يحضّر"
+
+#~ msgid "ConfiguringHardware"
+#~ msgstr "ضبط العتاد"
+
+#~ msgid "NeedAuth"
+#~ msgstr "يحتاج إلى استيثاق"
+
+#~ msgid "ConfiguringIp"
+#~ msgstr "ضبط عنوان الإنترنت"
+
+#~ msgid "CheckingIp"
+#~ msgstr "يتحقق من عنوان الإنترنت"
+
+#~ msgid "WaitingForSecondaries"
+#~ msgstr "في انتظار الثانويات"
+
+#~ msgid "Activated"
+#~ msgstr "مُنشط"
+
+#~ msgid "Deactivating"
+#~ msgstr "يعطّل الاتصال"
+
+#~ msgid "Failed"
+#~ msgstr "فشل"
+
+#~ msgid "POTS"
+#~ msgstr "POTS"
+
+#~ msgid "GSM"
+#~ msgstr "GSM"
+
+#~ msgid "GSM Compact"
+#~ msgstr "GSM Compact"
+
+#~ msgid "GPRS"
+#~ msgstr "GPRS"
+
+#~ msgid "EDGE"
+#~ msgstr "EDGE"
+
+#~ msgid "UMTS"
+#~ msgstr "UMTS"
+
+#~ msgid "HSDPA"
+#~ msgstr "HSDPA"
+
+#~ msgid "HSUPA"
+#~ msgstr "HSUPA"
+
+#~ msgid "HSPA"
+#~ msgstr "HSPA"
+
+#~ msgid "HSPA+"
+#~ msgstr "HSPA+"
+
+#~ msgid "CDMA2000 1xRTT"
+#~ msgstr "CDMA2000 1xRTT"
+
+#~ msgid "CDMA2000 EVDO-0"
+#~ msgstr "CDMA2000 EVDO-0"
+
+#~ msgid "CDMA2000 EVDO-A"
+#~ msgstr "CDMA2000 EVDO-A"
+
+#~ msgid "CDMA2000 EVDO-B"
+#~ msgstr "CDMA2000 EVDO-B"
+
+#~ msgid "LTE"
+#~ msgstr "LTE"
+
+#~ msgid "5GNR"
+#~ msgstr "5GNR"
+
+#~ msgid "Off"
+#~ msgstr "مغلق"
+
+#~ msgid "Low-power mode"
+#~ msgstr "وضع الطاقة المنخفضة"
+
+#~ msgid "Full power mode"
+#~ msgstr "وضع الطاقة الكامل"
+
+#~ msgid "Initializing"
+#~ msgstr "يهيّئ"
+
+#~ msgid "Disabled"
+#~ msgstr "معطّل"
+
+#~ msgid "Disabling"
+#~ msgstr "يعطل"
+
+#~ msgid "Enabling"
+#~ msgstr "تمكين"
+
+#~ msgid "Searching for network provider"
+#~ msgstr "يبحث عن مزود الشبكة"
+
+#~ msgid "Registered with network provider"
+#~ msgstr "مسجل مع مزود الشبكة"
+
+#~ msgid "Disconnecting"
+#~ msgstr "يقطع الاتّصال"
+
+#~ msgid "Connecting"
+#~ msgstr "يتّصل"
+
+#~ msgid "Connected"
+#~ msgstr "متّصل"
+
+#~ msgid "No error."
+#~ msgstr "لا أخطاء"
+
+#~ msgid "Unknown error."
+#~ msgstr "خطأ مجهول."
+
+#~ msgid "SIM is required but missing."
+#~ msgstr "الشريحة مطلوبة ولكنها مفقودة."
+
+#~ msgid "SIM is available but unusable."
+#~ msgstr "الشريحة متاحة ولكن غير قابلة للاستخدام."
+
+#~ msgid "Unknown modem capabilities."
+#~ msgstr "قدرات المودم غير معروفة."
+
+#~ msgid "eSIM is not initialized."
+#~ msgstr "لم تهيئ الشريحة الإلكترونية."
+
+#~ msgid "Not registered, not searching for new operator to register."
+#~ msgstr "غير مسجل، ولا يبحث عن مشغل جديد للتسجيل."
+
+#~ msgid "Registered on home network."
+#~ msgstr "مسجل على شبكة منزلية."
+
+#~ msgid "Not registered, searching for new operator to register with."
+#~ msgstr "غير مسجل، ويبحث عن مشغل جديد للتسجيل."
+
+#~ msgid "Registration denied."
+#~ msgstr "رُفض التسجيل."
+
+#~ msgid "Unknown registration status."
+#~ msgstr "حالة التسجيل غير معروفة."
+
+#~ msgid "Registered for \"SMS only\", on home network."
+#~ msgstr "مسجل لـ\"للرسائل النصية فقط\"، على شبكة منزلية."
+
+#~ msgid "Registered for \"SMS only\", roaming network."
+#~ msgstr "مسجل لـ\"للرسائل النصية فقط\"، على شبكة التجوال."
+
+#~ msgid "Emergency services only."
+#~ msgstr "خدمات الطوارئ فقط."
+
+#~ msgid "Registered for \"CSFB not preferred\", home network."
+#~ msgstr "مسجل لـ \"CSFB غير مفضل \"، على شبكة منزلية."
+
+#~ msgid "Registered for \"CSFB not preferred\", roaming network."
+#~ msgstr "مسجل لـ \"CSFB غير مفضل \"، على شبكة تجوال."
+
+#~ msgid "Attached for access to Restricted Local Operator Services."
+#~ msgstr "مرفق للوصول إلى خدمات المشغل المحلية المقيدة."
+
+#~ msgid "Scanning networks failed: %1"
+#~ msgstr "فشل مسح الشبكات: %1"
+
+#~ msgid "GuessYes"
+#~ msgstr "تخمين_نعم"
+
+#~ msgid "GuessNo"
+#~ msgstr "تخمين_لا"
+
+#~ msgid "3G"
+#~ msgstr "3G"
+
+#~ msgid "4G"
+#~ msgstr "4G"
+
+#~ msgid "5G"
+#~ msgstr "5G"
+
+#~ msgid "Lock reason unknown."
+#~ msgstr "سبب القفل مجهول."
+
+#~ msgid "Modem is unlocked."
+#~ msgstr "المودم مُقفَل."
+
+#~ msgid "SIM requires the PIN code."
+#~ msgstr "شريحة الهاتف تطلب شِفرة PIN."
+
+#~ msgid "SIM requires the PIN2 code."
+#~ msgstr "شريحة الهاتف تطلب شِفرة PIN2."
+
+#~ msgid "SIM requires the PUK code."
+#~ msgstr "شريحة الهاتف تطلب شِفرة PUK."
+
+#~ msgid "SIM requires the PUK2 code."
+#~ msgstr "شريحة الهاتف تطلب شِفرة PUK2."
+
+#~ msgid "Modem requires the service provider PIN code."
+#~ msgstr "يطلب المودم شِفرة PIN لموفّر الخدمة."
+
+#~ msgid "Modem requires the service provider PUK code."
+#~ msgstr "يطلب المودم شِفرة PUK لموفّر الخدمة."
+
+#~ msgid "Modem requires the network PIN code."
+#~ msgstr "يطلب المودم شِفرة PIN للشبكة."
+
+#~ msgid "Modem requires the network PUK code."
+#~ msgstr "يطلب المودم شِفرة PUK للشبكة."
+
+#~ msgid "Modem requires the PIN code."
+#~ msgstr "يطلب المودم شِفرة PIN."
+
+#~ msgid "Modem requires the corporate PIN code."
+#~ msgstr "يطلب المودم شِفرة PIN للشركات."
+
+#~ msgid "Modem requires the corporate PUK code."
+#~ msgstr "يطلب المودم شِفرة PUK للشركات."
+
+#~ msgid "Modem requires the PH-FSIM PIN code."
+#~ msgstr "يطلب المودم شِفرة PIN لـ PH-FSIM."
+
+#~ msgid "Modem requires the PH-FSIM PUK code."
+#~ msgstr "يطلب المودم شِفرة PUK لـ PH-FSIM."
+
+#~ msgid "Modem requires the network subset PIN code."
+#~ msgstr "يطلب المودم شِفرة PIN للشبكة الفرعية."
+
+#~ msgid "Modem requires the network subset PUK code."
+#~ msgstr "يطلب المودم شِفرة PUK للشبكة الفرعية."
+
+#~ msgid "(empty)"
+#~ msgstr "(فارغة)"
+
+#~ msgid "Error toggling SIM lock: %1"
+#~ msgstr "خطأ تبديل قفل الشريحة: %1"
+
+#~ msgid "Error changing the PIN: %1"
+#~ msgstr "خطأ في تغيير رقم التعريف الشخصي: %1"
+
+#~ msgid "Error sending the PIN: %1"
+#~ msgstr "خطأ في إرسال رقم التعريف الشخصي: %1"
+
+#~ msgid "Error sending the PUK: %1"
+#~ msgstr "خطأ في إرسال PUK‏: %1"
+
+#~ msgid "Data Roaming"
+#~ msgstr "تجوال البيانات"
+
+#~ msgid "Allow your device to use networks other than your carrier."
+#~ msgstr "اسمح لجهازك باستخدام شبكات أخرى غير شبكة مزود خدمتك."
 
 #~ msgid "Add Connection"
 #~ msgstr "أضف اتّصالًا..."

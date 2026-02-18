@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-02-18 00:48+0000\n"
 "PO-Revision-Date: 2025-05-20 21:02+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -17,778 +17,294 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 25.04.1\n"
 
-#: modem.cpp:128
-#, kde-format
-msgid "Error resetting the modem: %1"
-msgstr "Грешка при нулиране на модема: %1"
-
-#: modem.cpp:262 modem.cpp:434
-#, kde-format
-msgid "Error updating connection settings for %1: %2."
-msgstr "Грешка при актуализиране на настройките за връзка за %1: %2."
-
-#: modem.cpp:340
-#, kde-format
-msgid "Error activating connection: %1"
-msgstr "Грешка при активиране на връзката: %1"
-
-#: modem.cpp:378
-#, kde-format
-msgid "Error adding connection: %1"
-msgstr "Грешка при добавяне на връзка: %1"
-
-#: modem.cpp:395
-#, kde-format
-msgid "Error removing connection: %1"
-msgstr "Грешка при премахване на връзката: %1"
-
-#: modem.cpp:520 modemdetails.cpp:118 modemdetails.cpp:220 modemdetails.cpp:252
-#: modemdetails.cpp:432 modemdetails.cpp:462
-#, kde-format
-msgid "Unknown"
-msgstr "Неизвестно"
-
-#: modem.cpp:522
-#, kde-format
-msgid "Unmanaged"
-msgstr "Неподдържан"
-
-#: modem.cpp:524
-#, kde-format
-msgid "Unavailable"
-msgstr "Не е наличен"
-
-#: modem.cpp:526
-#, kde-format
-msgid "Disconnected"
-msgstr "Прекъснат"
-
-#: modem.cpp:528
-#, kde-format
-msgid "Preparing"
-msgstr "Подготвяне"
-
-#: modem.cpp:530
-#, kde-format
-msgid "ConfiguringHardware"
-msgstr "Конфигуриране на хардуер"
-
-#: modem.cpp:532
-#, kde-format
-msgid "NeedAuth"
-msgstr "NeedAuth"
-
-#: modem.cpp:534
-#, kde-format
-msgid "ConfiguringIp"
-msgstr "ConfiguringIp"
-
-#: modem.cpp:536
-#, kde-format
-msgid "CheckingIp"
-msgstr "CheckingIp"
-
-#: modem.cpp:538
-#, kde-format
-msgid "WaitingForSecondaries"
-msgstr "WaitingForSecondaries"
-
-#: modem.cpp:540
-#, kde-format
-msgid "Activated"
-msgstr "Активиран"
-
-#: modem.cpp:542
-#, kde-format
-msgid "Deactivating"
-msgstr "Деактивиране"
-
-#: modem.cpp:544 modemdetails.cpp:250
-#, kde-format
-msgid "Failed"
-msgstr "Неуспешно"
-
-#: modemdetails.cpp:121 modemdetails.cpp:465
-#, kde-format
-msgid "POTS"
-msgstr "POTS"
-
-#: modemdetails.cpp:124
-#, kde-format
-msgid "GSM"
-msgstr "GSM"
-
-#: modemdetails.cpp:127
-#, kde-format
-msgid "GSM Compact"
-msgstr "GSM Compact"
-
-#: modemdetails.cpp:130
-#, kde-format
-msgid "GPRS"
-msgstr "GPRS"
-
-#: modemdetails.cpp:133
-#, kde-format
-msgid "EDGE"
-msgstr "EDGE"
-
-#: modemdetails.cpp:136
-#, kde-format
-msgid "UMTS"
-msgstr "UMTS"
-
-#: modemdetails.cpp:139
-#, kde-format
-msgid "HSDPA"
-msgstr "HSDPA"
-
-#: modemdetails.cpp:142
-#, kde-format
-msgid "HSUPA"
-msgstr "HSUPA"
-
-#: modemdetails.cpp:145
-#, kde-format
-msgid "HSPA"
-msgstr "HSPA"
-
-#: modemdetails.cpp:148
-#, kde-format
-msgid "HSPA+"
-msgstr "HSPA +"
-
-#: modemdetails.cpp:151
-#, kde-format
-msgid "CDMA2000 1xRTT"
-msgstr "CDMA2000 1xRTT"
-
-#: modemdetails.cpp:154
-#, kde-format
-msgid "CDMA2000 EVDO-0"
-msgstr "CDMA2000 EVDO-0"
-
-#: modemdetails.cpp:157
-#, kde-format
-msgid "CDMA2000 EVDO-A"
-msgstr "CDMA2000 EVDO-A"
-
-#: modemdetails.cpp:160
-#, kde-format
-msgid "CDMA2000 EVDO-B"
-msgstr "CDMA2000 EVDO-B"
-
-#: modemdetails.cpp:163
-#, kde-format
-msgid "LTE"
-msgstr "LTE"
-
-#: modemdetails.cpp:166
-#, kde-format
-msgid "5GNR"
-msgstr "5GNR"
-
-#: modemdetails.cpp:222
-#, kde-format
-msgid "Off"
-msgstr "Изкл."
-
-#: modemdetails.cpp:224
-#, kde-format
-msgid "Low-power mode"
-msgstr "Режим на ниска мощност"
-
-#: modemdetails.cpp:226
-#, kde-format
-msgid "Full power mode"
-msgstr "Режим на пълна мощност"
-
-#: modemdetails.cpp:254
-#, kde-format
-msgid "Initializing"
-msgstr "Инициализиране…"
-
-#: modemdetails.cpp:256 ui/SimPage.qml:118
-#, kde-format
-msgid "Locked"
-msgstr "Заключена"
-
-#: modemdetails.cpp:258
-#, kde-format
-msgid "Disabled"
-msgstr "Деактивиран"
-
-#: modemdetails.cpp:260
-#, kde-format
-msgid "Disabling"
-msgstr "Изключване"
-
-#: modemdetails.cpp:262
-#, kde-format
-msgid "Enabling"
-msgstr "Включване"
-
-#: modemdetails.cpp:264 ui/ModemPage.qml:85
-#, kde-format
-msgid "Enabled"
-msgstr "Активиран"
-
-#: modemdetails.cpp:266
-#, kde-format
-msgid "Searching for network provider"
-msgstr "Търсене на мрежов доставчик"
-
-#: modemdetails.cpp:268
-#, kde-format
-msgid "Registered with network provider"
-msgstr "Регистриран при мрежовия доставчик"
-
-#: modemdetails.cpp:270
-#, kde-format
-msgid "Disconnecting"
-msgstr "Прекъсване на връзката"
-
-#: modemdetails.cpp:272
-#, kde-format
-msgid "Connecting"
-msgstr "Свързване"
-
-#: modemdetails.cpp:274
-#, kde-format
-msgid "Connected"
-msgstr "Свързан"
-
-#: modemdetails.cpp:283
-#, kde-format
-msgid "No error."
-msgstr "Без грешка."
-
-#: modemdetails.cpp:285
-#, kde-format
-msgid "Unknown error."
-msgstr "Непозната грешка."
-
-#: modemdetails.cpp:287
-#, kde-format
-msgid "SIM is required but missing."
-msgstr "SIM картата е необходима, но липсва."
-
-#: modemdetails.cpp:289
-#, kde-format
-msgid "SIM is available but unusable."
-msgstr "SIM картата е налична, но е неизползваема."
-
-#: modemdetails.cpp:291
-#, kde-format
-msgid "Unknown modem capabilities."
-msgstr "Неизвестни възможности на модема."
-
-#: modemdetails.cpp:293
-#, kde-format
-msgid "eSIM is not initialized."
-msgstr "eSIM картата не е инициализирана."
-
-#: modemdetails.cpp:316
-#, kde-format
-msgid "Not registered, not searching for new operator to register."
-msgstr "Нерегистриран, не се търси нов оператор за регистрация."
-
-#: modemdetails.cpp:318
-#, kde-format
-msgid "Registered on home network."
-msgstr "Регистриран в домашната мрежа."
-
-#: modemdetails.cpp:320
-#, kde-format
-msgid "Not registered, searching for new operator to register with."
-msgstr "Не съм регистриран, търся нов оператор, при който да се регистрирам."
-
-#: modemdetails.cpp:322
-#, kde-format
-msgid "Registration denied."
-msgstr "Регистрацията е отказана."
-
-#: modemdetails.cpp:324
-#, kde-format
-msgid "Unknown registration status."
-msgstr "Неизвестен статус на регистрация."
-
-#: modemdetails.cpp:326
-#, kde-format
-msgid "Registered on a roaming network."
-msgstr "Регистриран в роуминг мрежа."
-
-#: modemdetails.cpp:328
-#, kde-format
-msgid "Registered for \"SMS only\", on home network."
-msgstr "Регистриран за \"само SMS\" в домашната мрежа."
-
-#: modemdetails.cpp:330
-#, kde-format
-msgid "Registered for \"SMS only\", roaming network."
-msgstr "Регистриран за роуминг мрежа \"само SMS\"."
-
-#: modemdetails.cpp:332
-#, kde-format
-msgid "Emergency services only."
-msgstr "Само спешни служби."
-
-#: modemdetails.cpp:334
-#, kde-format
-msgid "Registered for \"CSFB not preferred\", home network."
-msgstr "Регистриран за домашна мрежа \"CSFB не е предпочитан\"."
-
-#: modemdetails.cpp:336
-#, kde-format
-msgid "Registered for \"CSFB not preferred\", roaming network."
-msgstr "Регистриран за роуминг мрежата \"CSFB not preferred\"."
-
-#: modemdetails.cpp:338
-#, kde-format
-msgid "Attached for access to Restricted Local Operator Services."
-msgstr "Приложено за достъп до ограничени услуги на местни оператори."
-
-#: modemdetails.cpp:377
-#, kde-format
-msgid "Scanning networks failed: %1"
-msgstr "Сканирането на мрежи не бе успешно: %1"
-
-#: modemdetails.cpp:434 ui/ModemPage.qml:180 ui/SimPage.qml:119
-#, kde-format
-msgid "Yes"
-msgstr "Да"
-
-#: modemdetails.cpp:436 ui/ModemPage.qml:180 ui/SimPage.qml:119
-#, kde-format
-msgid "No"
-msgstr "Не"
-
-#: modemdetails.cpp:438
-#, kde-format
-msgid "GuessYes"
-msgstr "Предполагащо Да"
-
-#: modemdetails.cpp:440
-#, kde-format
-msgid "GuessNo"
-msgstr "Предполагащо Не"
-
-#: modemdetails.cpp:468 modemdetails.cpp:471 modemdetails.cpp:474
-#: modemdetails.cpp:477 ui/EditProfilePage.qml:63
-#, kde-format
-msgid "2G"
-msgstr "2G"
-
-#: modemdetails.cpp:480 modemdetails.cpp:483 modemdetails.cpp:486
-#: modemdetails.cpp:489 modemdetails.cpp:492 modemdetails.cpp:495
-#: modemdetails.cpp:498 modemdetails.cpp:501 modemdetails.cpp:504
-#, kde-format
-msgid "3G"
-msgstr "3G"
-
-#: modemdetails.cpp:507 modemdetails.cpp:516 modemdetails.cpp:519
-#, kde-format
-msgid "4G"
-msgstr "4G"
-
-#: modemdetails.cpp:510
-#, kde-format
-msgid "5G"
-msgstr "5G"
-
-#: modemdetails.cpp:513 ui/EditProfilePage.qml:63
-#, kde-format
-msgid "Any"
-msgstr "Всяка"
-
-#: sim.cpp:74
-#, kde-format
-msgid "Lock reason unknown."
-msgstr "Причината за заключване е неизвестна."
-
-#: sim.cpp:76
-#, kde-format
-msgid "Modem is unlocked."
-msgstr "Модемът е отключен."
-
-#: sim.cpp:78
-#, kde-format
-msgid "SIM requires the PIN code."
-msgstr "SIM изисква ПИН код."
-
-#: sim.cpp:80
-#, kde-format
-msgid "SIM requires the PIN2 code."
-msgstr "SIM изисква PIN2 код."
-
-#: sim.cpp:82
-#, kde-format
-msgid "SIM requires the PUK code."
-msgstr "SIM изисква PUK код."
-
-#: sim.cpp:84
-#, kde-format
-msgid "SIM requires the PUK2 code."
-msgstr "SIM изисква PUK2 код."
-
-#: sim.cpp:86
-#, kde-format
-msgid "Modem requires the service provider PIN code."
-msgstr "Модемът изисква ПИН код на доставчика на услуги."
-
-#: sim.cpp:88
-#, kde-format
-msgid "Modem requires the service provider PUK code."
-msgstr "Модемът изисква PUK код на доставчика на услуги."
-
-#: sim.cpp:90
-#, kde-format
-msgid "Modem requires the network PIN code."
-msgstr "Модемът изисква мрежов ПИН код."
-
-#: sim.cpp:92
-#, kde-format
-msgid "Modem requires the network PUK code."
-msgstr "Модемът изисква мрежовия PUK код."
-
-#: sim.cpp:94
-#, kde-format
-msgid "Modem requires the PIN code."
-msgstr "Модемът изисква ПИН код."
-
-#: sim.cpp:96
-#, kde-format
-msgid "Modem requires the corporate PIN code."
-msgstr "Модемът изисква корпоративния ПИН код."
-
-#: sim.cpp:98
-#, kde-format
-msgid "Modem requires the corporate PUK code."
-msgstr "Модемът изисква корпоративния PUK код."
-
-#: sim.cpp:100
-#, kde-format
-msgid "Modem requires the PH-FSIM PIN code."
-msgstr "Модемът изисква PH-FSIM PIN код."
-
-#: sim.cpp:102
-#, kde-format
-msgid "Modem requires the PH-FSIM PUK code."
-msgstr "Модемът изисква PUK код на PH-FSIM."
-
-#: sim.cpp:104
-#, kde-format
-msgid "Modem requires the network subset PIN code."
-msgstr "Модемът изисква ПИН код на мрежовото подмножество."
-
-#: sim.cpp:106
-#, kde-format
-msgid "Modem requires the network subset PUK code."
-msgstr "Модемът изисква PUK код на мрежовото подмножество."
-
-#: sim.cpp:150
-#, kde-format
-msgid "(empty)"
-msgstr "(празно)"
-
-#: sim.cpp:164
-#, kde-format
-msgid "Error toggling SIM lock: %1"
-msgstr "Грешка при превключване на заключването на SIM картата: %1"
-
-#: sim.cpp:173
-#, kde-format
-msgid "Error changing the PIN: %1"
-msgstr "Грешка при промяна на ПИН кода: %1"
-
-#: sim.cpp:186
-#, kde-format
-msgid "Error sending the PIN: %1"
-msgstr "Грешка при изпращане на ПИН кода: %1"
-
-#: sim.cpp:199
-#, kde-format
-msgid "Error sending the PUK: %1"
-msgstr "Грешка при изпращане на PUK кода: %1"
-
-#: ui/AvailableNetworks.qml:16
+#: ui/AvailableNetworks.qml:18
 #, kde-format
 msgid "Available Networks"
 msgstr "Налични мрежи"
 
-#: ui/AvailableNetworks.qml:40
+#: ui/AvailableNetworks.qml:42
 #, kde-format
 msgid "none"
 msgstr "без"
 
-#: ui/AvailableNetworks.qml:40
+#: ui/AvailableNetworks.qml:42
 #, kde-format
 msgid "Current operator: %1"
 msgstr "Текущ оператор: %1"
 
-#: ui/AvailableNetworks.qml:43
+#: ui/AvailableNetworks.qml:45
 #, kde-format
 msgid "Scan For Networks"
 msgstr "Сканиране за мрежи"
 
 #: ui/EditProfilePage.qml:15
 #, kde-format
-msgid "Edit APN"
-msgstr "Редактиране на APN"
-
-#: ui/EditProfilePage.qml:15
-#, kde-format
 msgid "New APN"
 msgstr "Нова точка за достъп"
 
-#: ui/EditProfilePage.qml:30
+#: ui/EditProfilePage.qml:15
+#, kde-format
+msgid "Edit APN"
+msgstr "Редактиране на APN"
+
+#: ui/EditProfilePage.qml:37
 #, kde-format
 msgid "Name"
 msgstr "Име"
 
-#: ui/EditProfilePage.qml:38
+#: ui/EditProfilePage.qml:45
 #, kde-format
 msgid "APN"
 msgstr "APN"
 
-#: ui/EditProfilePage.qml:46
+#: ui/EditProfilePage.qml:53
 #, kde-format
 msgid "Username"
 msgstr "Потребителско име"
 
-#: ui/EditProfilePage.qml:54
+#: ui/EditProfilePage.qml:61
 #, kde-format
 msgid "Password"
 msgstr "Парола"
 
-#: ui/EditProfilePage.qml:62
+#: ui/EditProfilePage.qml:69
 #, kde-format
 msgid "Network type"
 msgstr "Тип мрежа"
 
-#: ui/EditProfilePage.qml:63
+#: ui/EditProfilePage.qml:70
 #, kde-format
 msgid "4G/3G/2G"
 msgstr "4G/3G/2G"
 
-#: ui/EditProfilePage.qml:63
+#: ui/EditProfilePage.qml:70
 #, kde-format
 msgid "3G/2G"
 msgstr "3G/2G"
 
-#: ui/EditProfilePage.qml:63
+#: ui/EditProfilePage.qml:70
+#, kde-format
+msgid "2G"
+msgstr "2G"
+
+#: ui/EditProfilePage.qml:70
 #, kde-format
 msgid "Only 4G"
 msgstr "Само 4G"
 
-#: ui/EditProfilePage.qml:63
+#: ui/EditProfilePage.qml:70
 #, kde-format
 msgid "Only 3G"
 msgstr "Само 3G"
 
-#: ui/EditProfilePage.qml:63
+#: ui/EditProfilePage.qml:70
 #, kde-format
 msgid "Only 2G"
 msgstr "Само 2G"
 
-#: ui/EditProfilePage.qml:75
+#: ui/EditProfilePage.qml:70
+#, kde-format
+msgid "Any"
+msgstr "Всяка"
+
+#: ui/EditProfilePage.qml:82
 #, kde-format
 msgid "Save profile"
 msgstr "Запазване на профил"
 
-#: ui/main.qml:52
+#: ui/main.qml:68
 #, kde-format
 msgid "Modem not available"
 msgstr "Модемът не е наличен"
 
-#: ui/main.qml:71
+#: ui/main.qml:87
 #, kde-format
 msgid "Mobile data"
 msgstr "Мобилни данни"
 
-#: ui/main.qml:76
+#: ui/main.qml:92
 #, kde-format
 msgid "No SIM is inserted."
 msgstr "Не е поставена SIM карта."
 
-#: ui/main.qml:78
+#: ui/main.qml:94
 #, kde-format
 msgid "Mobile data is not available with this modem."
 msgstr "Мобилните данни не са налични с този модем."
 
-#: ui/main.qml:80
+#: ui/main.qml:96
 #, kde-format
 msgid "An APN needs to be configured to have mobile data."
 msgstr "APN трябва да бъде конфигурирана за мобилни данни."
 
-#: ui/main.qml:82
+#: ui/main.qml:98
 #, kde-format
 msgid "Whether mobile data is enabled."
 msgstr "Дали мобилните данни са активирани."
 
-#: ui/main.qml:113
+#: ui/main.qml:129
 #, kde-format
 msgid "Data Usage"
 msgstr "Използване на данни"
 
-#: ui/main.qml:114
+#: ui/main.qml:130
 #, kde-format
 msgid "View data usage."
 msgstr "Преглед на използването на данни."
 
-#: ui/main.qml:122
+#: ui/main.qml:138
 #, kde-format
 msgid "SIM"
 msgid_plural "SIMs"
 msgstr[0] "SIM карта"
 msgstr[1] "SIM карти"
 
-#: ui/main.qml:143
+#: ui/main.qml:159
 #, kde-format
 msgid "SIM %1"
 msgstr "SIM %1"
 
-#: ui/main.qml:144
+#: ui/main.qml:160
 #, kde-format
 msgid "View SIM %1 details."
 msgstr "Вижте подробности за SIM картата %1."
 
-#: ui/ModemPage.qml:20
+#: ui/ModemPage.qml:22
 #, kde-format
 msgid "Modem %1"
 msgstr "Модем %1"
 
-#: ui/ModemPage.qml:30
+#: ui/ModemPage.qml:32
 #, kde-format
 msgid "Modem Control"
 msgstr "Управление на модема"
 
-#: ui/ModemPage.qml:36
+#: ui/ModemPage.qml:38
 #, kde-format
 msgid "Force Modem Restart"
 msgstr "Принудително рестартиране на модема"
 
-#: ui/ModemPage.qml:42 ui/SimPage.qml:105
+#: ui/ModemPage.qml:44 ui/SimPage.qml:112
 #, kde-format
 msgid "Modem Details"
 msgstr "Детайли за модема"
 
-#: ui/ModemPage.qml:55
+#: ui/ModemPage.qml:57
 #, kde-format
 msgid "Access Technologies"
 msgstr "Технологии за достъп"
 
-#: ui/ModemPage.qml:77
+#: ui/ModemPage.qml:79
 #, kde-format
 msgid "IMEI"
 msgstr "IMEI"
 
-#: ui/ModemPage.qml:93
+#: ui/ModemPage.qml:87
+#, kde-format
+msgid "Enabled"
+msgstr "Активиран"
+
+#: ui/ModemPage.qml:95
 #, kde-format
 msgid "Manufacturer"
 msgstr "Производител"
 
-#: ui/ModemPage.qml:101
+#: ui/ModemPage.qml:103
 #, kde-format
 msgid "Model"
 msgstr "Модел"
 
-#: ui/ModemPage.qml:116
+#: ui/ModemPage.qml:118
 #, kde-format
 msgid "Owned Numbers:"
 msgstr "Притежавани номера:"
 
-#: ui/ModemPage.qml:139
+#: ui/ModemPage.qml:141
 #, kde-format
 msgid "Revision"
 msgstr "Ревизия"
 
-#: ui/ModemPage.qml:147
+#: ui/ModemPage.qml:149
 #, kde-format
 msgid "Signal Quality"
 msgstr "Качество на сигнала"
 
-#: ui/ModemPage.qml:155
+#: ui/ModemPage.qml:157
 #, kde-format
 msgid "State"
 msgstr "Състояние"
 
-#: ui/ModemPage.qml:163
+#: ui/ModemPage.qml:165
 #, kde-format
 msgid "Failure Reason"
 msgstr "Причина за неуспех"
 
-#: ui/ModemPage.qml:171
+#: ui/ModemPage.qml:173
 #, kde-format
 msgid "Registration State"
 msgstr "Щат на регистрация"
 
-#: ui/ModemPage.qml:179
-#, kde-format
-msgid "Roaming"
-msgstr "Роуминг"
-
-#: ui/ModemPage.qml:187
+#: ui/ModemPage.qml:181
 #, kde-format
 msgid "Firmware Version"
 msgstr "Версия на фърмуера"
 
-#: ui/ModemPage.qml:195
+#: ui/ModemPage.qml:189
 #, kde-format
 msgid "Interface Name"
 msgstr "Име на интерфейса"
 
-#: ui/ModemPage.qml:203
+#: ui/ModemPage.qml:197
 #, kde-format
 msgid "Metered"
 msgstr "Измервана"
 
-#: ui/ModemPage.qml:211
+#: ui/ModemPage.qml:205
 #, kde-format
 msgid "Active NetworkManager Connection"
 msgstr "Активна връзка с NetworkManager"
 
-#: ui/ModemPage.qml:219
+#: ui/ModemPage.qml:213
 #, kde-format
 msgid "Device"
 msgstr "Устройство"
 
-#: ui/ModemPage.qml:227
+#: ui/ModemPage.qml:221
 #, kde-format
 msgid "Device ID"
 msgstr "Идент. № на устройство"
 
-#: ui/ModemPage.qml:242
+#: ui/ModemPage.qml:236
 #, kde-format
 msgid "Drivers:"
 msgstr "Драйвери:"
 
-#: ui/ModemPage.qml:264
+#: ui/ModemPage.qml:258
 #, kde-format
 msgid "Plugin"
 msgstr "Приставка"
 
-#: ui/ModemPage.qml:272
+#: ui/ModemPage.qml:266
 #, kde-format
 msgid "Power State"
 msgstr "Състояние на захранването"
 
-#: ui/ModemPage.qml:280
+#: ui/ModemPage.qml:274
 #, kde-format
 msgid "SIM Path"
 msgstr "Път на SIM картата"
 
-#: ui/ProfileList.qml:23
+#: ui/ProfileList.qml:25
 #, kde-format
 msgid "APNs"
 msgstr "APN"
 
-#: ui/ProfileList.qml:26 ui/ProfileList.qml:88
+#: ui/ProfileList.qml:28 ui/ProfileList.qml:99
 #, kde-format
 msgid "Edit"
 msgstr "Редактиране"
 
-#: ui/ProfileList.qml:53
+#: ui/ProfileList.qml:55
 #, kde-format
 msgid ""
 "Unable to autodetect connection settings for your carrier. Please find your "
@@ -798,47 +314,47 @@ msgstr ""
 "Моля, намерете настройките за APN на вашия оператор, като се свържете с "
 "екипа за поддръжка или потърсите онлайн."
 
-#: ui/ProfileList.qml:64
+#: ui/ProfileList.qml:66
 #, kde-format
 msgid "APN List"
 msgstr "Списък с точки за достъп"
 
-#: ui/ProfileList.qml:98
+#: ui/ProfileList.qml:119
 #, kde-format
 msgid "Delete"
 msgstr "Изтриване"
 
-#: ui/ProfileList.qml:107
+#: ui/ProfileList.qml:128
 #, kde-format
 msgid "Add APN"
 msgstr "Добавяне на APN"
 
-#: ui/ProfileList.qml:115
+#: ui/ProfileList.qml:136
 #, kde-format
 msgid "Automatically detect APN"
 msgstr "Автоматично откриване на APN"
 
-#: ui/SimLockPage.qml:19 ui/SimPage.qml:94
+#: ui/SimLockPage.qml:21 ui/SimPage.qml:101
 #, kde-format
 msgid "SIM Lock"
 msgstr "Заключване на SIM картата"
 
-#: ui/SimLockPage.qml:38
+#: ui/SimLockPage.qml:40
 #, kde-format
 msgid "SIM is locked"
 msgstr "SIM картата е заключена"
 
-#: ui/SimLockPage.qml:39
+#: ui/SimLockPage.qml:41
 #, kde-format
 msgid "In order to use this SIM, you must first unlock it."
 msgstr "За да използвате тази SIM карта, първо трябва да я отключите."
 
-#: ui/SimLockPage.qml:61
+#: ui/SimLockPage.qml:63
 #, kde-format
 msgid "SIM is not locked"
 msgstr "SIM картата не е заключена"
 
-#: ui/SimLockPage.qml:62
+#: ui/SimLockPage.qml:64
 #, kde-format
 msgid ""
 "You can lock your SIM to require a set PIN code for phone calls and mobile "
@@ -847,95 +363,95 @@ msgstr ""
 "Можете да заключите SIM картата си, за да изисквате ПИН код за телефонни "
 "разговори и мобилни данни."
 
-#: ui/SimLockPage.qml:66
+#: ui/SimLockPage.qml:68
 #, kde-format
 msgid "Lock SIM"
 msgstr "Заключване на SIM картата"
 
-#: ui/SimLockPage.qml:78
+#: ui/SimLockPage.qml:80
 #, kde-format
 msgid "Disable SIM Lock"
 msgstr "Деактивиране на заключването на SIM картата"
 
-#: ui/SimLockPage.qml:79
+#: ui/SimLockPage.qml:81
 #, kde-format
 msgid "Disable the SIM lock feature and remove the passcode on the SIM."
 msgstr ""
 "Деактивиране на функцията за заключване на SIM картата и премахване на "
 "паролата от нея."
 
-#: ui/SimLockPage.qml:91
+#: ui/SimLockPage.qml:93
 #, kde-format
 msgid "Change PIN"
 msgstr "Промяна на ПИН"
 
-#: ui/SimLockPage.qml:92
+#: ui/SimLockPage.qml:94
 #, kde-format
 msgid "Change the passcode set on the SIM."
 msgstr "Промяна на паролата, зададена на SIM картата."
 
-#: ui/SimLockPage.qml:106
+#: ui/SimLockPage.qml:108
 #, kde-format
 msgid "Unlock SIM"
 msgstr "Отключване на SIM картата"
 
-#: ui/SimLockPage.qml:114
+#: ui/SimLockPage.qml:116
 #, kde-format
 msgid "Attempts left: %1"
 msgstr "Оставащи опити: %1"
 
-#: ui/SimLockPage.qml:119
+#: ui/SimLockPage.qml:121
 #, kde-format
 msgid "Enter PIN"
 msgstr "Въведете ПИН код"
 
-#: ui/SimLockPage.qml:127
+#: ui/SimLockPage.qml:129
 #, kde-format
 msgid "Change SIM PIN"
 msgstr "Промяна на ПИН кода на SIM картата"
 
-#: ui/SimLockPage.qml:146 ui/SimLockPage.qml:211
+#: ui/SimLockPage.qml:148 ui/SimLockPage.qml:213
 #, kde-format
 msgid "PINs don't match!"
 msgstr "ПИН кодовете не съвпадат!"
 
-#: ui/SimLockPage.qml:152 ui/SimLockPage.qml:217
+#: ui/SimLockPage.qml:154 ui/SimLockPage.qml:219
 #, kde-format
 msgid "PINs must be between 4 and 8 digits!"
 msgstr "ПИН кодовете трябва да са между 4 и 8 цифри!"
 
-#: ui/SimLockPage.qml:157 ui/SimLockPage.qml:184
+#: ui/SimLockPage.qml:159 ui/SimLockPage.qml:186
 #, kde-format
 msgid "Current PIN"
 msgstr "Текущ ПИН код"
 
-#: ui/SimLockPage.qml:162 ui/SimLockPage.qml:222
+#: ui/SimLockPage.qml:164 ui/SimLockPage.qml:224
 #, kde-format
 msgid "New PIN"
 msgstr "Нов ПИН код"
 
-#: ui/SimLockPage.qml:167 ui/SimLockPage.qml:227
+#: ui/SimLockPage.qml:169 ui/SimLockPage.qml:229
 #, kde-format
 msgid "Confirm PIN"
 msgstr "Потвърждаване на ПИН"
 
-#: ui/SimLockPage.qml:175
+#: ui/SimLockPage.qml:177
 #, kde-format
 msgid "Remove SIM PIN"
 msgstr "Премахване на ПИН кода на SIM картата"
 
-#: ui/SimLockPage.qml:192
+#: ui/SimLockPage.qml:194
 #, kde-format
 msgid "Add SIM PIN"
 msgstr "Добавяне на ПИН код за SIM карта"
 
-#: ui/SimPage.qml:35
+#: ui/SimPage.qml:34
 #, kde-format
 msgctxt "@title"
 msgid "SIM %1"
 msgstr "SIM %1"
 
-#: ui/SimPage.qml:45
+#: ui/SimPage.qml:44
 #, kde-format
 msgid ""
 "This SIM slot is empty, a SIM card needs to be inserted in order for it to "
@@ -944,88 +460,385 @@ msgstr ""
 "Този слот за SIM карта е празен, трябва да се постави SIM карта, за да се "
 "използва."
 
+#: ui/SimPage.qml:59
+#, kde-format
+msgid "Roaming"
+msgstr "Роуминг"
+
 #: ui/SimPage.qml:60
-#, kde-format
-msgid "Data Roaming"
-msgstr "Роуминг на данни"
+#, fuzzy, kde-format
+#| msgid "Registered on a roaming network."
+msgid "Allow mobile data when on a roaming network."
+msgstr "Регистриран в роуминг мрежа."
 
-#: ui/SimPage.qml:61
-#, kde-format
-msgid "Allow your device to use networks other than your carrier."
-msgstr ""
-"Разрешете на устройството си да използва мрежи, различни от вашия оператор."
-
-#: ui/SimPage.qml:72
+#: ui/SimPage.qml:79
 #, kde-format
 msgid "Modify APNs"
 msgstr "Промяна на APN"
 
-#: ui/SimPage.qml:73
+#: ui/SimPage.qml:80
 #, kde-format
 msgid "Configure access point names for your carrier."
 msgstr "Конфигуриране на имената на точките за достъп за вашия оператор."
 
-#: ui/SimPage.qml:83
+#: ui/SimPage.qml:90
 #, kde-format
 msgid "Networks"
 msgstr "Мрежи"
 
-#: ui/SimPage.qml:84
+#: ui/SimPage.qml:91
 #, kde-format
 msgid "Select a network operator."
 msgstr "Изберете мрежов оператор."
 
-#: ui/SimPage.qml:95
+#: ui/SimPage.qml:102
 #, kde-format
 msgid "Modify SIM lock settings."
 msgstr "Променете настройките за заключване на SIM картата."
 
-#: ui/SimPage.qml:106
+#: ui/SimPage.qml:113
 #, kde-format
 msgid "View the details of the modem this SIM is connected to."
 msgstr "Вижте подробностите за модема, към който е свързана тази SIM карта."
 
-#: ui/SimPage.qml:112
+#: ui/SimPage.qml:119
 #, kde-format
 msgid "SIM Details"
 msgstr "Детайли за SIM картата"
 
+#: ui/SimPage.qml:125
+#, kde-format
+msgid "Locked"
+msgstr "Заключена"
+
 #: ui/SimPage.qml:126
+#, kde-format
+msgid "Yes"
+msgstr "Да"
+
+#: ui/SimPage.qml:126
+#, kde-format
+msgid "No"
+msgstr "Не"
+
+#: ui/SimPage.qml:133
 #, kde-format
 msgid "IMSI"
 msgstr "IMSI"
 
-#: ui/SimPage.qml:134
+#: ui/SimPage.qml:141
 #, kde-format
 msgid "EID"
 msgstr "Електронна идентификация"
 
-#: ui/SimPage.qml:142
+#: ui/SimPage.qml:149
 #, kde-format
 msgid "Operator Code (modem)"
 msgstr "Код на оператора (модем)"
 
-#: ui/SimPage.qml:150
+#: ui/SimPage.qml:157
 #, kde-format
 msgid "Operator Name (modem)"
 msgstr "Име на оператор (модем)"
 
-#: ui/SimPage.qml:158
+#: ui/SimPage.qml:165
 #, kde-format
 msgid "Operator Code (provided by SIM)"
 msgstr "Код на оператора (предоставен от SIM картата)"
 
-#: ui/SimPage.qml:166
+#: ui/SimPage.qml:173
 #, kde-format
 msgid "Operator Name (provided by SIM)"
 msgstr "Име на оператора (предоставено от SIM картата)"
 
-#: ui/SimPage.qml:174
+#: ui/SimPage.qml:181
 #, kde-format
 msgid "SIM ID"
 msgstr "Идент. номер SIM"
 
-#: ui/SimPage.qml:190
+#: ui/SimPage.qml:197
 #, kde-format
 msgid "Emergency Numbers"
 msgstr "Номера за спешни случаи"
+
+#~ msgid "Error resetting the modem: %1"
+#~ msgstr "Грешка при нулиране на модема: %1"
+
+#~ msgid "Error updating connection settings for %1: %2."
+#~ msgstr "Грешка при актуализиране на настройките за връзка за %1: %2."
+
+#~ msgid "Error activating connection: %1"
+#~ msgstr "Грешка при активиране на връзката: %1"
+
+#~ msgid "Error adding connection: %1"
+#~ msgstr "Грешка при добавяне на връзка: %1"
+
+#~ msgid "Error removing connection: %1"
+#~ msgstr "Грешка при премахване на връзката: %1"
+
+#~ msgid "Unknown"
+#~ msgstr "Неизвестно"
+
+#~ msgid "Unmanaged"
+#~ msgstr "Неподдържан"
+
+#~ msgid "Unavailable"
+#~ msgstr "Не е наличен"
+
+#~ msgid "Disconnected"
+#~ msgstr "Прекъснат"
+
+#~ msgid "Preparing"
+#~ msgstr "Подготвяне"
+
+#~ msgid "ConfiguringHardware"
+#~ msgstr "Конфигуриране на хардуер"
+
+#~ msgid "NeedAuth"
+#~ msgstr "NeedAuth"
+
+#~ msgid "ConfiguringIp"
+#~ msgstr "ConfiguringIp"
+
+#~ msgid "CheckingIp"
+#~ msgstr "CheckingIp"
+
+#~ msgid "WaitingForSecondaries"
+#~ msgstr "WaitingForSecondaries"
+
+#~ msgid "Activated"
+#~ msgstr "Активиран"
+
+#~ msgid "Deactivating"
+#~ msgstr "Деактивиране"
+
+#~ msgid "Failed"
+#~ msgstr "Неуспешно"
+
+#~ msgid "POTS"
+#~ msgstr "POTS"
+
+#~ msgid "GSM"
+#~ msgstr "GSM"
+
+#~ msgid "GSM Compact"
+#~ msgstr "GSM Compact"
+
+#~ msgid "GPRS"
+#~ msgstr "GPRS"
+
+#~ msgid "EDGE"
+#~ msgstr "EDGE"
+
+#~ msgid "UMTS"
+#~ msgstr "UMTS"
+
+#~ msgid "HSDPA"
+#~ msgstr "HSDPA"
+
+#~ msgid "HSUPA"
+#~ msgstr "HSUPA"
+
+#~ msgid "HSPA"
+#~ msgstr "HSPA"
+
+#~ msgid "HSPA+"
+#~ msgstr "HSPA +"
+
+#~ msgid "CDMA2000 1xRTT"
+#~ msgstr "CDMA2000 1xRTT"
+
+#~ msgid "CDMA2000 EVDO-0"
+#~ msgstr "CDMA2000 EVDO-0"
+
+#~ msgid "CDMA2000 EVDO-A"
+#~ msgstr "CDMA2000 EVDO-A"
+
+#~ msgid "CDMA2000 EVDO-B"
+#~ msgstr "CDMA2000 EVDO-B"
+
+#~ msgid "LTE"
+#~ msgstr "LTE"
+
+#~ msgid "5GNR"
+#~ msgstr "5GNR"
+
+#~ msgid "Off"
+#~ msgstr "Изкл."
+
+#~ msgid "Low-power mode"
+#~ msgstr "Режим на ниска мощност"
+
+#~ msgid "Full power mode"
+#~ msgstr "Режим на пълна мощност"
+
+#~ msgid "Initializing"
+#~ msgstr "Инициализиране…"
+
+#~ msgid "Disabled"
+#~ msgstr "Деактивиран"
+
+#~ msgid "Disabling"
+#~ msgstr "Изключване"
+
+#~ msgid "Enabling"
+#~ msgstr "Включване"
+
+#~ msgid "Searching for network provider"
+#~ msgstr "Търсене на мрежов доставчик"
+
+#~ msgid "Registered with network provider"
+#~ msgstr "Регистриран при мрежовия доставчик"
+
+#~ msgid "Disconnecting"
+#~ msgstr "Прекъсване на връзката"
+
+#~ msgid "Connecting"
+#~ msgstr "Свързване"
+
+#~ msgid "Connected"
+#~ msgstr "Свързан"
+
+#~ msgid "No error."
+#~ msgstr "Без грешка."
+
+#~ msgid "Unknown error."
+#~ msgstr "Непозната грешка."
+
+#~ msgid "SIM is required but missing."
+#~ msgstr "SIM картата е необходима, но липсва."
+
+#~ msgid "SIM is available but unusable."
+#~ msgstr "SIM картата е налична, но е неизползваема."
+
+#~ msgid "Unknown modem capabilities."
+#~ msgstr "Неизвестни възможности на модема."
+
+#~ msgid "eSIM is not initialized."
+#~ msgstr "eSIM картата не е инициализирана."
+
+#~ msgid "Not registered, not searching for new operator to register."
+#~ msgstr "Нерегистриран, не се търси нов оператор за регистрация."
+
+#~ msgid "Registered on home network."
+#~ msgstr "Регистриран в домашната мрежа."
+
+#~ msgid "Not registered, searching for new operator to register with."
+#~ msgstr ""
+#~ "Не съм регистриран, търся нов оператор, при който да се регистрирам."
+
+#~ msgid "Registration denied."
+#~ msgstr "Регистрацията е отказана."
+
+#~ msgid "Unknown registration status."
+#~ msgstr "Неизвестен статус на регистрация."
+
+#~ msgid "Registered for \"SMS only\", on home network."
+#~ msgstr "Регистриран за \"само SMS\" в домашната мрежа."
+
+#~ msgid "Registered for \"SMS only\", roaming network."
+#~ msgstr "Регистриран за роуминг мрежа \"само SMS\"."
+
+#~ msgid "Emergency services only."
+#~ msgstr "Само спешни служби."
+
+#~ msgid "Registered for \"CSFB not preferred\", home network."
+#~ msgstr "Регистриран за домашна мрежа \"CSFB не е предпочитан\"."
+
+#~ msgid "Registered for \"CSFB not preferred\", roaming network."
+#~ msgstr "Регистриран за роуминг мрежата \"CSFB not preferred\"."
+
+#~ msgid "Attached for access to Restricted Local Operator Services."
+#~ msgstr "Приложено за достъп до ограничени услуги на местни оператори."
+
+#~ msgid "Scanning networks failed: %1"
+#~ msgstr "Сканирането на мрежи не бе успешно: %1"
+
+#~ msgid "GuessYes"
+#~ msgstr "Предполагащо Да"
+
+#~ msgid "GuessNo"
+#~ msgstr "Предполагащо Не"
+
+#~ msgid "3G"
+#~ msgstr "3G"
+
+#~ msgid "4G"
+#~ msgstr "4G"
+
+#~ msgid "5G"
+#~ msgstr "5G"
+
+#~ msgid "Lock reason unknown."
+#~ msgstr "Причината за заключване е неизвестна."
+
+#~ msgid "Modem is unlocked."
+#~ msgstr "Модемът е отключен."
+
+#~ msgid "SIM requires the PIN code."
+#~ msgstr "SIM изисква ПИН код."
+
+#~ msgid "SIM requires the PIN2 code."
+#~ msgstr "SIM изисква PIN2 код."
+
+#~ msgid "SIM requires the PUK code."
+#~ msgstr "SIM изисква PUK код."
+
+#~ msgid "SIM requires the PUK2 code."
+#~ msgstr "SIM изисква PUK2 код."
+
+#~ msgid "Modem requires the service provider PIN code."
+#~ msgstr "Модемът изисква ПИН код на доставчика на услуги."
+
+#~ msgid "Modem requires the service provider PUK code."
+#~ msgstr "Модемът изисква PUK код на доставчика на услуги."
+
+#~ msgid "Modem requires the network PIN code."
+#~ msgstr "Модемът изисква мрежов ПИН код."
+
+#~ msgid "Modem requires the network PUK code."
+#~ msgstr "Модемът изисква мрежовия PUK код."
+
+#~ msgid "Modem requires the PIN code."
+#~ msgstr "Модемът изисква ПИН код."
+
+#~ msgid "Modem requires the corporate PIN code."
+#~ msgstr "Модемът изисква корпоративния ПИН код."
+
+#~ msgid "Modem requires the corporate PUK code."
+#~ msgstr "Модемът изисква корпоративния PUK код."
+
+#~ msgid "Modem requires the PH-FSIM PIN code."
+#~ msgstr "Модемът изисква PH-FSIM PIN код."
+
+#~ msgid "Modem requires the PH-FSIM PUK code."
+#~ msgstr "Модемът изисква PUK код на PH-FSIM."
+
+#~ msgid "Modem requires the network subset PIN code."
+#~ msgstr "Модемът изисква ПИН код на мрежовото подмножество."
+
+#~ msgid "Modem requires the network subset PUK code."
+#~ msgstr "Модемът изисква PUK код на мрежовото подмножество."
+
+#~ msgid "(empty)"
+#~ msgstr "(празно)"
+
+#~ msgid "Error toggling SIM lock: %1"
+#~ msgstr "Грешка при превключване на заключването на SIM картата: %1"
+
+#~ msgid "Error changing the PIN: %1"
+#~ msgstr "Грешка при промяна на ПИН кода: %1"
+
+#~ msgid "Error sending the PIN: %1"
+#~ msgstr "Грешка при изпращане на ПИН кода: %1"
+
+#~ msgid "Error sending the PUK: %1"
+#~ msgstr "Грешка при изпращане на PUK кода: %1"
+
+#~ msgid "Data Roaming"
+#~ msgstr "Роуминг на данни"
+
+#~ msgid "Allow your device to use networks other than your carrier."
+#~ msgstr ""
+#~ "Разрешете на устройството си да използва мрежи, различни от вашия "
+#~ "оператор."

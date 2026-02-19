@@ -9,6 +9,8 @@
 #include "networkmodelitem.h"
 #include "uiutils.h"
 
+#include "configuration.h"
+
 AppletProxyModel::AppletProxyModel(QObject *parent)
     : QSortFilterProxyModel(parent)
 {
@@ -16,6 +18,8 @@ AppletProxyModel::AppletProxyModel(QObject *parent)
     setFilterRole(NetworkModel::ItemUniqueNameRole);
     setFilterCaseSensitivity(Qt::CaseInsensitive);
     sort(0, Qt::DescendingOrder);
+
+    connect(&Configuration::self(), &Configuration::manageVirtualConnectionsChanged, this, &AppletProxyModel::onManageVirtualConnectionsChanged);
 }
 
 AppletProxyModel::~AppletProxyModel() = default;
@@ -118,6 +122,12 @@ bool AppletProxyModel::lessThan(const QModelIndex &left, const QModelIndex &righ
     } else {
         return false;
     }
+}
+
+void AppletProxyModel::onManageVirtualConnectionsChanged()
+{
+    beginFilterChange();
+    endFilterChange();
 }
 
 #include "moc_appletproxymodel.cpp"

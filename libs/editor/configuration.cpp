@@ -19,6 +19,7 @@ Configuration::Configuration()
 {
     // Add config watcher so that config is reparsed when changes happen externally
     m_configWatcher = KConfigWatcher::create(KSharedConfig::openConfig(QStringLiteral("plasma-nm")));
+    connect(m_configWatcher.get(), &KConfigWatcher::configChanged, this, &Configuration::onConfigChanged);
 }
 
 Configuration &Configuration::self()
@@ -216,6 +217,24 @@ void Configuration::setSystemConnectionsByDefault(bool opt)
 
     if (grp.isValid()) {
         grp.writeEntry(QStringLiteral("SystemConnectionsByDefault"), opt, KConfigBase::Notify);
+    }
+}
+
+void Configuration::onConfigChanged(const KConfigGroup &group, const QByteArrayList &names)
+{
+    if (group.name() != QStringLiteral("General")) {
+        return;
+    }
+
+    for (const auto &name : names) {
+        if (name == "AirplaneModeEnabled") {
+            Q_EMIT airplaneModeEnabledChanged();
+        }
+
+        if (name == "ManageVirtualConnections") {
+            propManageVirtualConnectionsInitialized = false;
+            Q_EMIT manageVirtualConnectionsChanged(manageVirtualConnections());
+        }
     }
 }
 

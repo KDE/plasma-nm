@@ -49,6 +49,8 @@ Q_SIGNALS:
 
 private:
     Configuration();
+    void onConfigChanged(const KConfigGroup &group, const QByteArrayList &names);
+
     static QMutex sMutex;
     KConfigWatcher::Ptr m_configWatcher;
 };

@@ -1,15 +1,15 @@
 # Translation of kcm_cellular_network.po to Catalan (Valencian)
-# Copyright (C) 2023-2025 This_file_is_part_of_KDE
+# Copyright (C) 2023-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-18 00:48+0000\n"
-"PO-Revision-Date: 2025-02-27 15:11+0100\n"
+"PO-Revision-Date: 2026-02-18 12:58+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: ui/AvailableNetworks.qml:18
 #, kde-format
@@ -468,10 +468,9 @@ msgid "Roaming"
 msgstr "Itinerància"
 
 #: ui/SimPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Registered on a roaming network."
+#, kde-format
 msgid "Allow mobile data when on a roaming network."
-msgstr "S'ha registrat en una xarxa d'itinerància."
+msgstr "Permet les dades mòbils en una xarxa d'itinerància."
 
 #: ui/SimPage.qml:79
 #, kde-format
@@ -562,286 +561,3 @@ msgstr "ID de la SIM"
 #, kde-format
 msgid "Emergency Numbers"
 msgstr "Números d'emergència"
-
-#~ msgid "Error resetting the modem: %1"
-#~ msgstr "S'ha produït un error mentre es reiniciava el mòdem: %1"
-
-#~ msgid "Error updating connection settings for %1: %2."
-#~ msgstr ""
-#~ "S'ha produït un error mentre s'actualitzaven els paràmetres de connexió "
-#~ "de %1: %2."
-
-#~ msgid "Error activating connection: %1"
-#~ msgstr "S'ha produït un error mentre s'activava la connexió: %1"
-
-#~ msgid "Error adding connection: %1"
-#~ msgstr "S'ha produït un error mentre s'afegia la connexió: %1"
-
-#~ msgid "Error removing connection: %1"
-#~ msgstr "S'ha produït un error mentre s'eliminava la connexió: %1"
-
-#~ msgid "Unknown"
-#~ msgstr "Desconegut"
-
-#~ msgid "Unmanaged"
-#~ msgstr "Sense gestionar"
-
-#~ msgid "Unavailable"
-#~ msgstr "No disponible"
-
-#~ msgid "Disconnected"
-#~ msgstr "Desconnectat"
-
-#~ msgid "Preparing"
-#~ msgstr "S'està preparant"
-
-#~ msgid "ConfiguringHardware"
-#~ msgstr "Configurant el maquinari"
-
-#~ msgid "NeedAuth"
-#~ msgstr "Cal autorització"
-
-#~ msgid "ConfiguringIp"
-#~ msgstr "Configureu la IP"
-
-#~ msgid "CheckingIp"
-#~ msgstr "Comprovació de la IP"
-
-#~ msgid "WaitingForSecondaries"
-#~ msgstr "En espera de secundaris"
-
-#~ msgid "Activated"
-#~ msgstr "Activat"
-
-#~ msgid "Deactivating"
-#~ msgstr "S'està desactivant"
-
-#~ msgid "Failed"
-#~ msgstr "No s'ha pogut"
-
-#~ msgid "POTS"
-#~ msgstr "POTS"
-
-#~ msgid "GSM"
-#~ msgstr "GSM"
-
-#~ msgid "GSM Compact"
-#~ msgstr "GSM Compact"
-
-#~ msgid "GPRS"
-#~ msgstr "GPRS"
-
-#~ msgid "EDGE"
-#~ msgstr "EDGE"
-
-#~ msgid "UMTS"
-#~ msgstr "UMTS"
-
-#~ msgid "HSDPA"
-#~ msgstr "HSDPA"
-
-#~ msgid "HSUPA"
-#~ msgstr "HSUPA"
-
-#~ msgid "HSPA"
-#~ msgstr "HSPA"
-
-#~ msgid "HSPA+"
-#~ msgstr "HSPA+"
-
-#~ msgid "CDMA2000 1xRTT"
-#~ msgstr "CDMA2000 1xRTT"
-
-#~ msgid "CDMA2000 EVDO-0"
-#~ msgstr "CDMA2000 EVDO-0"
-
-#~ msgid "CDMA2000 EVDO-A"
-#~ msgstr "CDMA2000 EVDO-A"
-
-#~ msgid "CDMA2000 EVDO-B"
-#~ msgstr "CDMA2000 EVDO-B"
-
-#~ msgid "LTE"
-#~ msgstr "LTE"
-
-#~ msgid "5GNR"
-#~ msgstr "5GNR"
-
-#~ msgid "Off"
-#~ msgstr "Apagat"
-
-#~ msgid "Low-power mode"
-#~ msgstr "Mode de baix consum"
-
-#~ msgid "Full power mode"
-#~ msgstr "Mode de tota potència"
-
-#~ msgid "Initializing"
-#~ msgstr "S'està inicialitzant"
-
-#~ msgid "Disabled"
-#~ msgstr "Desactivada"
-
-#~ msgid "Disabling"
-#~ msgstr "S'està desactivant"
-
-#~ msgid "Enabling"
-#~ msgstr "S'està activant"
-
-#~ msgid "Searching for network provider"
-#~ msgstr "S'està buscant un proveïdor de xarxa"
-
-#~ msgid "Registered with network provider"
-#~ msgstr "S'ha registrat amb el proveïdor de xarxa"
-
-#~ msgid "Disconnecting"
-#~ msgstr "S'està desconnectant"
-
-#~ msgid "Connecting"
-#~ msgstr "S'està connectant"
-
-#~ msgid "Connected"
-#~ msgstr "Connectat"
-
-#~ msgid "No error."
-#~ msgstr "Sense errors."
-
-#~ msgid "Unknown error."
-#~ msgstr "S'ha produït un error desconegut."
-
-#~ msgid "SIM is required but missing."
-#~ msgstr "Es requerix una SIM però falta."
-
-#~ msgid "SIM is available but unusable."
-#~ msgstr "La SIM està disponible, però no es pot utilitzar."
-
-#~ msgid "Unknown modem capabilities."
-#~ msgstr "Capacitats desconegudes del mòdem."
-
-#~ msgid "eSIM is not initialized."
-#~ msgstr "L'eSIM no està inicialitzada."
-
-#~ msgid "Not registered, not searching for new operator to register."
-#~ msgstr ""
-#~ "No registrat, no es busca cap operador nou amb el qual registrar-se."
-
-#~ msgid "Registered on home network."
-#~ msgstr "S'ha registrat en la xarxa domèstica."
-
-#~ msgid "Not registered, searching for new operator to register with."
-#~ msgstr "No registrat, es busca un operador nou amb el qual registrar-se."
-
-#~ msgid "Registration denied."
-#~ msgstr "S'ha denegat el registre."
-
-#~ msgid "Unknown registration status."
-#~ msgstr "Estat de registre desconegut."
-
-#~ msgid "Registered for \"SMS only\", on home network."
-#~ msgstr "S'ha registrat per a «només SMS», en la xarxa domèstica."
-
-#~ msgid "Registered for \"SMS only\", roaming network."
-#~ msgstr "S'ha registrat per a «només SMS», en la xarxa d'itinerància."
-
-#~ msgid "Emergency services only."
-#~ msgstr "Només serveis d'emergència."
-
-#~ msgid "Registered for \"CSFB not preferred\", home network."
-#~ msgstr "S'ha registrat per a «CSFB no preferit», en la xarxa domèstica."
-
-#~ msgid "Registered for \"CSFB not preferred\", roaming network."
-#~ msgstr "S'ha registrat per a «CSFB no preferit», en la xarxa d'itinerància."
-
-#~ msgid "Attached for access to Restricted Local Operator Services."
-#~ msgstr ""
-#~ "S'ha connectat per a accedir als serveis restringits d'operador local."
-
-#~ msgid "Scanning networks failed: %1"
-#~ msgstr "No s'ha pogut fer l'exploració de xarxes: %1"
-
-#~ msgid "GuessYes"
-#~ msgstr "Pareix que sí"
-
-#~ msgid "GuessNo"
-#~ msgstr "Pareix que no"
-
-#~ msgid "3G"
-#~ msgstr "3G"
-
-#~ msgid "4G"
-#~ msgstr "4G"
-
-#~ msgid "5G"
-#~ msgstr "5G"
-
-#~ msgid "Lock reason unknown."
-#~ msgstr "La raó del bloqueig és desconeguda."
-
-#~ msgid "Modem is unlocked."
-#~ msgstr "El mòdem està desblocat."
-
-#~ msgid "SIM requires the PIN code."
-#~ msgstr "La SIM requerix el codi PIN."
-
-#~ msgid "SIM requires the PIN2 code."
-#~ msgstr "La SIM requerix el codi PIN2."
-
-#~ msgid "SIM requires the PUK code."
-#~ msgstr "La SIM requerix el codi PUK."
-
-#~ msgid "SIM requires the PUK2 code."
-#~ msgstr "La SIM requerix el codi PUK2."
-
-#~ msgid "Modem requires the service provider PIN code."
-#~ msgstr "El mòdem requerix el codi PIN del proveïdor de serveis."
-
-#~ msgid "Modem requires the service provider PUK code."
-#~ msgstr "El mòdem requerix el codi PUK del proveïdor de serveis."
-
-#~ msgid "Modem requires the network PIN code."
-#~ msgstr "El mòdem requerix el codi PIN de la xarxa."
-
-#~ msgid "Modem requires the network PUK code."
-#~ msgstr "El mòdem requerix el codi PUK de la xarxa."
-
-#~ msgid "Modem requires the PIN code."
-#~ msgstr "El mòdem requerix el codi PIN."
-
-#~ msgid "Modem requires the corporate PIN code."
-#~ msgstr "El mòdem requerix el codi PIN de l'empresa."
-
-#~ msgid "Modem requires the corporate PUK code."
-#~ msgstr "El mòdem requerix el codi PUK de l'empresa."
-
-#~ msgid "Modem requires the PH-FSIM PIN code."
-#~ msgstr "El mòdem requerix el codi PIN de la PH-FSIM."
-
-#~ msgid "Modem requires the PH-FSIM PUK code."
-#~ msgstr "El mòdem requerix el codi PUK de la PH-FSIM."
-
-#~ msgid "Modem requires the network subset PIN code."
-#~ msgstr "El mòdem requerix el codi PIN del subsegment de xarxa."
-
-#~ msgid "Modem requires the network subset PUK code."
-#~ msgstr "El mòdem requerix el codi PUK del subsegment de xarxa."
-
-#~ msgid "(empty)"
-#~ msgstr "(buit)"
-
-#~ msgid "Error toggling SIM lock: %1"
-#~ msgstr "S'ha produït un error mentre es canviava el bloqueig de la SIM: %1"
-
-#~ msgid "Error changing the PIN: %1"
-#~ msgstr "S'ha produït un error mentre es canviava el PIN: %1"
-
-#~ msgid "Error sending the PIN: %1"
-#~ msgstr "S'ha produït un error mentre s'enviava el PIN: %1"
-
-#~ msgid "Error sending the PUK: %1"
-#~ msgstr "S'ha produït un error mentre s'enviava el PUK: %1"
-
-#~ msgid "Data Roaming"
-#~ msgstr "Itinerància de dades"
-
-#~ msgid "Allow your device to use networks other than your carrier."
-#~ msgstr "Permet que el dispositiu utilitze xarxes d'altres operadors."

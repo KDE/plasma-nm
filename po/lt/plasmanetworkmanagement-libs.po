@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 02:43+0000\n"
-"PO-Revision-Date: 2026-01-28 15:45+0200\n"
+"PO-Revision-Date: 2026-02-21 01:41+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -1543,7 +1543,7 @@ msgid ""
 "concentrators or a specific service is known to be required."
 msgstr ""
 "Jei apibrėžta, nurodyti PPPoE inicijuoti seansus tik su nurodytą paslaugą "
-"teikiančiais prieigos telktuvais. Daugumai tiekėjų, tai turėtų būti palikta "
+"teikiančiais prieigos telktuvais. Daugumai teikėjų, tai turėtų būti palikta "
 "tuščia. Tai yra reikalinga tik tuomet, jei yra keletas prieigos telktuvų "
 "arba, jei yra žinoma, kad reikia tam tikros paslaugos."
 
@@ -2880,13 +2880,13 @@ msgstr "SIM reikalauja PUK2 kodo."
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PIN code."
-msgstr "Modemas reikalauja paslaugų tiekėjo PIN kodo."
+msgstr "Modemas reikalauja paslaugų teikėjo PIN kodo."
 
 #: editor/uiutils.cpp:544
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the service provider PUK code."
-msgstr "Modemas reikalauja paslaugų tiekėjo PUK kodo."
+msgstr "Modemas reikalauja paslaugų teikėjo PUK kodo."
 
 #: editor/uiutils.cpp:546
 #, kde-format
@@ -3143,7 +3143,7 @@ msgstr "Mano plano sąraše nėra…"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Unknown Provider"
-msgstr "Nežinomas tiekėjas"
+msgstr "Nežinomas teikėjas"
 
 #: editor/widgets/mobileconnectionwizard.cpp:146
 #, kde-format
@@ -3184,7 +3184,7 @@ msgstr "Jums prireiks šios informacijos:"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your broadband provider's name"
-msgstr "Jūsų mobiliojo plačiajuosčio tinklo tiekėjo pavadinimas"
+msgstr "Jūsų mobiliojo plačiajuosčio tinklo teikėjo pavadinimas"
 
 #: editor/widgets/mobileconnectionwizard.cpp:249
 #, kde-format
@@ -3236,7 +3236,7 @@ msgstr "Įdiegtas CDMA įrenginys"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider's Country"
-msgstr "Pasirinkite savo tiekėjo šalį"
+msgstr "Pasirinkite savo teikėjo šalį"
 
 #: editor/widgets/mobileconnectionwizard.cpp:403
 #, kde-format
@@ -3254,19 +3254,19 @@ msgstr "Mano šalies nėra sąraše"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Choose your Provider"
-msgstr "Pasirinkite savo tiekėją"
+msgstr "Pasirinkite savo teikėją"
 
 #: editor/widgets/mobileconnectionwizard.cpp:426
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Select your provider from a &list:"
-msgstr "Pasirinkite savo tiekėją iš &sąrašo:"
+msgstr "Pasirinkite savo teikėją iš &sąrašo:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:435
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "I cannot find my provider and I wish to enter it &manually:"
-msgstr "Nerandu savo tiekėjo, todėl norėčiau jį įvesti &pats:"
+msgstr "Nerandu savo teikėjo, todėl norėčiau jį įvesti &pats:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:477
 #, kde-format
@@ -3298,7 +3298,7 @@ msgstr ""
 "Įspėjimas: Pasirinkus neteisingą planą gali kilti problemų su apmokėjimu už "
 "plačiajuosčio ryšio paskyrą arba apskritai gali nebūti jungiamumo.\n"
 "\n"
-"Jei nesate tikri dėl savo plano, paklauskite savo tiekėjo, koks yra jūsų "
+"Jei nesate tikri dėl savo plano, paklauskite savo teikėjo, koks yra jūsų "
 "plano APN."
 
 #: editor/widgets/mobileconnectionwizard.cpp:540
@@ -3319,7 +3319,7 @@ msgstr ""
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Your Provider:"
-msgstr "Jūsų tiekėjas:"
+msgstr "Jūsų teikėjas:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:552
 #, kde-format

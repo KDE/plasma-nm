@@ -219,4 +219,28 @@ void Configuration::setSystemConnectionsByDefault(bool opt)
     }
 }
 
+bool Configuration::connectionNotificationsEnabled() const
+{
+    KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
+    KConfigGroup grp(config, QStringLiteral("General"));
+
+    if (grp.isValid()) {
+        return grp.readEntry(QStringLiteral("ConnectionNotificationsEnabled"), true);
+    }
+
+    return true;
+}
+
+void Configuration::setConnectionNotificationsEnabled(bool enabled)
+{
+    KSharedConfigPtr config = KSharedConfig::openConfig(QStringLiteral("plasma-nm"));
+    KConfigGroup grp(config, QStringLiteral("General"));
+
+    if (grp.isValid()) {
+        grp.writeEntry(QStringLiteral("ConnectionNotificationsEnabled"), enabled, KConfigBase::Notify);
+        grp.sync();
+        Q_EMIT connectionNotificationsEnabledChanged(enabled);
+    }
+}
+
 #include "moc_configuration.cpp"

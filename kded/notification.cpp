@@ -10,6 +10,7 @@
 #include "notification.h"
 #include "plasma_nm_kded.h"
 
+#include <configuration.h>
 #include <uiutils.h>
 
 #include <NetworkManagerQt/Manager>
@@ -271,6 +272,10 @@ void Notification::stateChanged(NetworkManager::Device::State newstate,
         return;
     }
 
+    if (!Configuration::self().connectionNotificationsEnabled()) {
+        return;
+    }
+
     if (m_notifications.contains(device->uni())) {
         KNotification *notify = m_notifications.value(device->uni());
         notify->setText(text.toHtmlEscaped());
@@ -388,6 +393,10 @@ void Notification::onActiveConnectionStateChanged(NetworkManager::ActiveConnecti
         return;
     }
 
+    if (!Configuration::self().connectionNotificationsEnabled()) {
+        return;
+    }
+
     KNotification *notify = m_notifications.value(connectionId);
 
     if (!notify) {
@@ -475,6 +484,10 @@ void Notification::onVpnConnectionStateChanged(NetworkManager::VpnConnection::St
         break;
     }
 
+    if (!Configuration::self().connectionNotificationsEnabled()) {
+        return;
+    }
+
     auto notify = new KNotification(eventId, KNotification::CloseOnTimeout);
     connect(notify, &KNotification::closed, this, &Notification::notificationClosed);
     notify->setProperty("uni", connectionId);
@@ -549,6 +562,10 @@ void Notification::onCheckActiveConnectionOnResume()
                 || connection->state() == NetworkManager::ActiveConnection::State::Activating;
         })) {
         // we have an active or activating connection, don't tell the user we're no longer connected
+        return;
+    }
+
+    if (!Configuration::self().connectionNotificationsEnabled()) {
         return;
     }
 

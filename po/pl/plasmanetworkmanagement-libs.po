@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 02:43+0000\n"
-"PO-Revision-Date: 2026-01-18 15:25+0100\n"
+"PO-Revision-Date: 2026-02-21 08:38+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -1055,7 +1055,7 @@ msgstr ""
 #: editor/settings/ui/connectionwidget.ui:70 editor/settings/ui/ipv4.ui:354
 #, kde-format
 msgid "Advanced…"
-msgstr "Wybierz użytkowników..."
+msgstr "Rozszerzone…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:80
@@ -1084,7 +1084,7 @@ msgid ""
 "data usage should be restricted."
 msgstr ""
 "NetworkManager powiadamia aplikację, że w połączeniu płaci się za ilość "
-"przesłanych danych, tak, aby\n"
+"przesłanych danych, tak aby\n"
 "mogła ona ograniczyć przesył tych danych."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)

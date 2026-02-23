@@ -45,7 +45,7 @@ void Configuration::setUnlockModemOnDetection(bool unlock)
     KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        grp.writeEntry(QStringLiteral("UnlockModemOnDetection"), unlock);
+        grp.writeEntry(QStringLiteral("UnlockModemOnDetection"), unlock, KConfigBase::Notify);
     }
 }
 
@@ -78,7 +78,7 @@ void Configuration::setManageVirtualConnections(bool manage)
     if (grp.isValid()) {
         {
             QMutexLocker locker(&sMutex);
-            grp.writeEntry(QStringLiteral("ManageVirtualConnections"), manage);
+            grp.writeEntry(QStringLiteral("ManageVirtualConnections"), manage, KConfigBase::Notify);
             grp.sync();
             propManageVirtualConnections = manage;
         }
@@ -99,7 +99,7 @@ void Configuration::setAirplaneModeEnabled(bool enabled)
     KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        grp.writeEntry(QStringLiteral("AirplaneModeEnabled"), enabled);
+        grp.writeEntry(QStringLiteral("AirplaneModeEnabled"), enabled, KConfigBase::Notify);
         grp.sync();
         Q_EMIT airplaneModeEnabledChanged();
     }
@@ -145,7 +145,7 @@ QString Configuration::hotspotPassword() const
             for (int i = 0; i < 26; ++i) {
                 pwd += QString::number(QRandomGenerator::global()->bounded(base16), base16).toUpper();
             }
-            grp.writeEntry(QStringLiteral("HotspotPassword"), pwd);
+            grp.writeEntry(QStringLiteral("HotspotPassword"), pwd, KConfigBase::Notify);
         }
         return pwd;
     }
@@ -159,7 +159,7 @@ void Configuration::setHotspotPassword(const QString &password)
     KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        grp.writeEntry(QStringLiteral("HotspotPassword"), password);
+        grp.writeEntry(QStringLiteral("HotspotPassword"), password, KConfigBase::Notify);
     }
 }
 
@@ -181,7 +181,7 @@ void Configuration::setHotspotConnectionPath(const QString &path)
     KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        grp.writeEntry(QStringLiteral("HotspotConnectionPath"), path);
+        grp.writeEntry(QStringLiteral("HotspotConnectionPath"), path, KConfigBase::Notify);
     }
 }
 
@@ -215,7 +215,7 @@ void Configuration::setSystemConnectionsByDefault(bool opt)
     KConfigGroup grp(config, QStringLiteral("General"));
 
     if (grp.isValid()) {
-        grp.writeEntry(QStringLiteral("SystemConnectionsByDefault"), opt);
+        grp.writeEntry(QStringLiteral("SystemConnectionsByDefault"), opt, KConfigBase::Notify);
     }
 }
 

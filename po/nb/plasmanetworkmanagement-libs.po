@@ -4220,6 +4220,3 @@ msgstr "NetworkManager 0.9.8 kreves, fant %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Ukjent"
-
-#~ msgid "Wi-Fi Security"
-#~ msgstr "Wi-Fi-sikkerhet"

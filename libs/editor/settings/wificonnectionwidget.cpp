@@ -166,9 +166,11 @@ QVariantMap WifiConnectionWidget::setting() const
 
     wifiSetting.setBssid(NetworkManager::macAddressFromString(m_ui->BSSIDCombo->bssid()));
 
-    if (wifiSetting.mode() != NetworkManager::WirelessSetting::Infrastructure && m_ui->band->currentIndex() != 0) {
+    if (m_ui->band->currentIndex() != 0) {
         wifiSetting.setBand((NetworkManager::WirelessSetting::FrequencyBand)m_ui->band->currentIndex());
-        wifiSetting.setChannel(m_ui->channel->itemData(m_ui->channel->currentIndex()).toUInt());
+        if (wifiSetting.mode() != NetworkManager::WirelessSetting::Infrastructure) {
+            wifiSetting.setChannel(m_ui->channel->itemData(m_ui->channel->currentIndex()).toUInt());
+        }
     }
 
     wifiSetting.setMacAddress(NetworkManager::macAddressFromString(m_ui->macAddress->hwAddress()));
@@ -217,8 +219,6 @@ void WifiConnectionWidget::modeChanged(int mode)
     if (mode == NetworkManager::WirelessSetting::Infrastructure) {
         m_ui->BSSIDLabel->setVisible(true);
         m_ui->BSSIDCombo->setVisible(true);
-        m_ui->bandLabel->setVisible(false);
-        m_ui->band->setVisible(false);
         m_ui->channelLabel->setVisible(false);
         m_ui->channel->setVisible(false);
     } else {

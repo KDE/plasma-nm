@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-28 00:46+0000\n"
+"POT-Creation-Date: 2026-02-28 00:46+0000\n"
 "PO-Revision-Date: 2022-10-08 10:55+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -64,14 +64,14 @@ msgctxt "Title for GSM PIN/PUK unlock error dialog"
 msgid "PIN/PUK unlock error"
 msgstr "Erro de desbloqueio do PIN/PUK"
 
-#: notification.cpp:97
+#: notification.cpp:98
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigFailedReason"
 msgid "The device could not be configured"
 msgstr "Não foi possível configurar o dispositivo"
 
-#: notification.cpp:100
+#: notification.cpp:101
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -79,21 +79,21 @@ msgctxt ""
 msgid "IP configuration was unavailable"
 msgstr "A configuração do IP estava indisponível"
 
-#: notification.cpp:103
+#: notification.cpp:104
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigExpiredReason"
 msgid "IP configuration expired"
 msgstr "A configuração do IP expirou"
 
-#: notification.cpp:106
+#: notification.cpp:107
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to NoSecretsReason"
 msgid "No secrets were provided"
 msgstr "Não foram fornecidas senhas"
 
-#: notification.cpp:109
+#: notification.cpp:110
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -101,7 +101,7 @@ msgctxt ""
 msgid "Authorization supplicant disconnected"
 msgstr "O suplicante de autorização desligou-se"
 
-#: notification.cpp:113
+#: notification.cpp:114
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -109,7 +109,7 @@ msgctxt ""
 msgid "Authorization supplicant's configuration failed"
 msgstr "A configuração do suplicante de autorização foi mal-sucedida"
 
-#: notification.cpp:116
+#: notification.cpp:117
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -117,7 +117,7 @@ msgctxt ""
 msgid "Authorization supplicant failed"
 msgstr "O suplicante de autorização foi mal-sucedido"
 
-#: notification.cpp:119
+#: notification.cpp:120
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -125,49 +125,49 @@ msgctxt ""
 msgid "Authorization supplicant timed out"
 msgstr "O suplicante de autorização expirou o tempo-limite"
 
-#: notification.cpp:122
+#: notification.cpp:123
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppStartFailedReason"
 msgid "PPP failed to start"
 msgstr "Não foi possível iniciar o PPP"
 
-#: notification.cpp:125
+#: notification.cpp:126
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppDisconnectReason"
 msgid "PPP disconnected"
 msgstr "O PPP desligou-se"
 
-#: notification.cpp:128
+#: notification.cpp:129
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppFailedReason"
 msgid "PPP failed"
 msgstr "O PPP foi mal-sucedido"
 
-#: notification.cpp:131
+#: notification.cpp:132
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpStartFailedReason"
 msgid "DHCP failed to start"
 msgstr "Não foi possível iniciar o DHCP"
 
-#: notification.cpp:134
+#: notification.cpp:135
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpErrorReason"
 msgid "A DHCP error occurred"
 msgstr "Ocorreu um erro de DHCP"
 
-#: notification.cpp:137
+#: notification.cpp:138
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpFailedReason"
 msgid "DHCP failed "
 msgstr "O DHCP foi mal-sucedido"
 
-#: notification.cpp:140
+#: notification.cpp:141
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -175,14 +175,14 @@ msgctxt ""
 msgid "The shared service failed to start"
 msgstr "Não foi possível iniciar o serviço partilhado"
 
-#: notification.cpp:143
+#: notification.cpp:144
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SharedFailedReason"
 msgid "The shared service failed"
 msgstr "O serviço partilhado foi mal-sucedido"
 
-#: notification.cpp:146
+#: notification.cpp:147
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -190,42 +190,42 @@ msgctxt ""
 msgid "The auto IP service failed to start"
 msgstr "Não foi possível iniciar o serviço de IP automático"
 
-#: notification.cpp:149
+#: notification.cpp:150
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpErrorReason"
 msgid "The auto IP service reported an error"
 msgstr "O serviço de IP automático devolveu um erro"
 
-#: notification.cpp:152
+#: notification.cpp:153
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpFailedReason"
 msgid "The auto IP service failed"
 msgstr "O serviço de IP automático foi mal-sucedido"
 
-#: notification.cpp:155
+#: notification.cpp:156
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemBusyReason"
 msgid "The modem is busy"
 msgstr "O modem está ocupado"
 
-#: notification.cpp:158
+#: notification.cpp:159
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoDialToneReason"
 msgid "The modem has no dial tone"
 msgstr "O modem não tem toque de chamada"
 
-#: notification.cpp:161
+#: notification.cpp:162
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoCarrierReason"
 msgid "The modem shows no carrier"
 msgstr "O modem não detectou a portadora"
 
-#: notification.cpp:164
+#: notification.cpp:165
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -233,21 +233,21 @@ msgctxt ""
 msgid "The modem dial timed out"
 msgstr "A marcação do número no modem expirou o tempo-limite"
 
-#: notification.cpp:167
+#: notification.cpp:168
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemDialFailedReason"
 msgid "The modem dial failed"
 msgstr "A marcação do número no modem foi mal-sucedida"
 
-#: notification.cpp:170
+#: notification.cpp:171
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemInitFailedReason"
 msgid "The modem could not be initialized"
 msgstr "Não foi possível inicializar o modem"
 
-#: notification.cpp:173
+#: notification.cpp:174
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -255,14 +255,14 @@ msgctxt ""
 msgid "The GSM APN could not be selected"
 msgstr "Não foi possível seleccionar o APN de GSM"
 
-#: notification.cpp:176
+#: notification.cpp:177
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmNotSearchingReason"
 msgid "The GSM modem is not searching"
 msgstr "O modem de GSM não está a pesquisar"
 
-#: notification.cpp:179
+#: notification.cpp:180
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -270,7 +270,7 @@ msgctxt ""
 msgid "GSM network registration was denied"
 msgstr "Foi negado o registo na rede GSM"
 
-#: notification.cpp:182
+#: notification.cpp:183
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -278,7 +278,7 @@ msgctxt ""
 msgid "GSM network registration timed out"
 msgstr "Expirou o tempo de registo na rede GSM"
 
-#: notification.cpp:185
+#: notification.cpp:186
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -286,7 +286,7 @@ msgctxt ""
 msgid "GSM registration failed"
 msgstr "O registo de GSM foi mal-sucedido"
 
-#: notification.cpp:188
+#: notification.cpp:189
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -294,28 +294,28 @@ msgctxt ""
 msgid "The GSM PIN check failed"
 msgstr "A verificação do PIN de GSM foi mal-sucedida"
 
-#: notification.cpp:191
+#: notification.cpp:192
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to FirmwareMissingReason"
 msgid "Device firmware is missing"
 msgstr "Falta o 'firmware' do dispositivo"
 
-#: notification.cpp:194
+#: notification.cpp:195
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DeviceRemovedReason"
 msgid "The device was removed"
 msgstr "O dispositivo foi removido"
 
-#: notification.cpp:197
+#: notification.cpp:198
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SleepingReason"
 msgid "The networking system is now sleeping"
 msgstr "O sistema de rede está agora suspenso"
 
-#: notification.cpp:200
+#: notification.cpp:201
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -323,74 +323,74 @@ msgctxt ""
 msgid "The connection was removed"
 msgstr "A ligação foi removida"
 
-#: notification.cpp:205
+#: notification.cpp:206
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to CarrierReason"
 msgid "The cable was disconnected"
 msgstr "O cabo foi desligado"
 
-#: notification.cpp:211
+#: notification.cpp:212
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNotFoundReason"
 msgid "The modem could not be found"
 msgstr "Não foi possível encontrar o modem"
 
-#: notification.cpp:214
+#: notification.cpp:215
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to BluetoothFailedReason"
 msgid "The bluetooth connection failed or timed out"
 msgstr "A ligação por Bluetooth foi mal-sucedida ou expirou o tempo-limite"
 
-#: notification.cpp:217
+#: notification.cpp:218
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimNotInserted"
 msgid "GSM Modem's SIM Card not inserted"
 msgstr "O Cartão SIM do Modem de GSM não foi inserido"
 
-#: notification.cpp:220
+#: notification.cpp:221
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPinRequired"
 msgid "GSM Modem's SIM Pin required"
 msgstr "É necessário o PIN do Cartão SIM do Modem de GSM"
 
-#: notification.cpp:223
+#: notification.cpp:224
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPukRequired"
 msgid "GSM Modem's SIM Puk required"
 msgstr "É necessário o PUK do Cartão SIM do Modem de GSM"
 
-#: notification.cpp:226
+#: notification.cpp:227
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to GsmSimWrong"
 msgid "GSM Modem's SIM wrong"
 msgstr "O SIM do Modem de GSM é inválido"
 
-#: notification.cpp:229
+#: notification.cpp:230
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to InfiniBandMode"
 msgid "InfiniBand device does not support connected mode"
 msgstr "O dispositivo de InfiniBand não suporta o modo de ligação"
 
-#: notification.cpp:232
+#: notification.cpp:233
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DependencyFailed"
 msgid "A dependency of the connection failed"
 msgstr "Uma dependência da ligação foi mal-sucedida"
 
-#: notification.cpp:235
+#: notification.cpp:236
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to Br2684Failed"
 msgid "Problem with the RFC 2684 Ethernet over ADSL bridge"
 msgstr "Ocorreu um problema com a interface de RFC 2684 (Ethernet sobre ADSL)"
 
-#: notification.cpp:238
+#: notification.cpp:239
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -398,7 +398,7 @@ msgctxt ""
 msgid "ModemManager not running"
 msgstr "O ModemManager não está em execução"
 
-#: notification.cpp:244
+#: notification.cpp:245
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -406,84 +406,84 @@ msgctxt ""
 msgid "A secondary connection of the base connection failed"
 msgstr "A ligação secundária da ligação de base foi mal-sucedida"
 
-#: notification.cpp:247
+#: notification.cpp:248
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to DcbFcoeFailed"
 msgid "DCB or FCoE setup failed"
 msgstr "A configuração do DCB ou FCoE foi mal-sucedida"
 
-#: notification.cpp:250
+#: notification.cpp:251
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to TeamdControlFailed"
 msgid "teamd control failed"
 msgstr "O controlo do 'teamd' foi mal-sucedido"
 
-#: notification.cpp:253
+#: notification.cpp:254
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
 msgstr "O modem deixou de funcionar ou não está mais disponível"
 
-#: notification.cpp:256
+#: notification.cpp:257
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemAvailable"
 msgid "Modem now ready and available"
 msgstr "O modem está agora pronto e disponível"
 
-#: notification.cpp:259
+#: notification.cpp:260
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SimPinIncorrect"
 msgid "The SIM PIN was incorrect"
 msgstr "O PIN do SIM era incorrecto"
 
-#: notification.cpp:262
+#: notification.cpp:263
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to NewActivation"
 msgid "A new connection activation was enqueued"
 msgstr "Foi colocada em espera uma nova activação da ligação"
 
-#: notification.cpp:265
+#: notification.cpp:266
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ParentChanged"
 msgid "The device's parent changed"
 msgstr "O dispositivo-pai foi modificado"
 
-#: notification.cpp:268
+#: notification.cpp:269
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ParentManagedChanged"
 msgid "The device parent's management changed"
 msgstr "A gestão do dispositivo-pai foi modificada"
 
-#: notification.cpp:344
+#: notification.cpp:349
 #, kde-format
 msgid "Connection '%1' activated."
 msgstr "A ligação '%1' foi activada."
 
-#: notification.cpp:372
+#: notification.cpp:377
 #, kde-format
 msgid "Connection '%1' deactivated."
 msgstr "A ligação '%1' foi desactivada."
 
-#: notification.cpp:427
+#: notification.cpp:436
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "A ligação VPN '%1' foi activada."
 
-#: notification.cpp:430
+#: notification.cpp:439
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
 msgstr "Não foi possível activar a ligação VPN '%1'."
 
-#: notification.cpp:433 notification.cpp:443
+#: notification.cpp:442 notification.cpp:452
 #, kde-format
 msgid "VPN connection '%1' deactivated."
 msgstr "A ligação VPN '%1' foi desactivada."
 
-#: notification.cpp:446
+#: notification.cpp:455
 #, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
@@ -492,22 +492,22 @@ msgstr ""
 "A ligação VPN '%1' foi desactivada porque o dispositivo que a estava a usar "
 "foi desligado."
 
-#: notification.cpp:449
+#: notification.cpp:458
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "O serviço que oferecia a ligação VPN '%1' foi interrompido."
 
-#: notification.cpp:452
+#: notification.cpp:461
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "A configuração de IP da ligação VPN '%1' era inválida."
 
-#: notification.cpp:455
+#: notification.cpp:464
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "A tentativa de ligação ao serviço de VPN expirou o seu tempo-limite."
 
-#: notification.cpp:458
+#: notification.cpp:467
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
@@ -515,32 +515,32 @@ msgid ""
 msgstr ""
 "Expirou o tempo-limite para iniciar o serviço que oferece a ligação VPN '%1'."
 
-#: notification.cpp:461
+#: notification.cpp:470
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "Não foi possível iniciar o serviço que oferece a ligação VPN '%1'."
 
-#: notification.cpp:464
+#: notification.cpp:473
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "As senhas necessárias para a ligação VPN '%1' não foram indicadas."
 
-#: notification.cpp:467
+#: notification.cpp:476
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "A autenticação no servidor da VPN foi mal-sucedida."
 
-#: notification.cpp:470
+#: notification.cpp:479
 #, kde-format
 msgid "The connection was deleted."
 msgstr "A ligação foi removida."
 
-#: notification.cpp:561
+#: notification.cpp:578
 #, kde-format
 msgid "No Network Connection"
 msgstr "Sem Ligação à Rede"
 
-#: notification.cpp:562
+#: notification.cpp:579
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Não está mais ligado a nenhuma rede."

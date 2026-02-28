@@ -460,7 +460,7 @@ msgstr "数据漫游"
 #: ui/SimPage.qml:60
 #, kde-format
 msgid "Allow mobile data when on a roaming network."
-msgstr ""
+msgstr "允许在漫游网络上使用移动流量。"
 
 #: ui/SimPage.qml:79
 #, kde-format

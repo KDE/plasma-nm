@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-02-28 00:46+0000\n"
 "PO-Revision-Date: 2025-01-26 17:46+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
@@ -57,21 +57,37 @@ msgid "Wi-Fi"
 msgstr "அருகலை"
 
 #: ui/main.qml:98
+#, kde-format
+msgid "More"
+msgstr ""
+
+#: ui/main.qml:107
 #, fuzzy, kde-format
 #| msgid "Available Networks"
 msgctxt "@title:group"
 msgid "Saved Networks"
 msgstr "கிடைக்கிற பிணையங்கள்"
 
-#: ui/main.qml:135
+#: ui/main.qml:144
 #, kde-format
 msgid "Available Networks"
 msgstr "கிடைக்கிற பிணையங்கள்"
 
-#: ui/main.qml:169
+#: ui/main.qml:178
 #, kde-format
 msgid "Add Custom Connection"
 msgstr "விருப்ப இணைப்பை சேர்"
+
+#: ui/MorePage.qml:14
+#, fuzzy, kde-format
+#| msgid "IP settings"
+msgid "Wi-Fi Settings"
+msgstr "IP அமைப்பு"
+
+#: ui/MorePage.qml:21
+#, kde-format
+msgid "Notifications for connection changes"
+msgstr ""
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

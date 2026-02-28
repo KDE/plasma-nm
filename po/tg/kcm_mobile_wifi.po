@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-02-28 00:46+0000\n"
 "PO-Revision-Date: 2019-11-12 21:55+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -57,23 +57,39 @@ msgid "Wi-Fi"
 msgstr ""
 
 #: ui/main.qml:98
+#, kde-format
+msgid "More"
+msgstr ""
+
+#: ui/main.qml:107
 #, fuzzy, kde-format
 #| msgid "Hide this network"
 msgctxt "@title:group"
 msgid "Saved Networks"
 msgstr "Пинҳон кардани шабакаи ҷорӣ"
 
-#: ui/main.qml:135
+#: ui/main.qml:144
 #, fuzzy, kde-format
 #| msgid "Hide this network"
 msgid "Available Networks"
 msgstr "Пинҳон кардани шабакаи ҷорӣ"
 
-#: ui/main.qml:169
+#: ui/main.qml:178
 #, fuzzy, kde-format
 #| msgid "Add custom connection"
 msgid "Add Custom Connection"
 msgstr "Илова кардани пайвасти фармоишӣ"
+
+#: ui/MorePage.qml:14
+#, fuzzy, kde-format
+#| msgid "IP settings"
+msgid "Wi-Fi Settings"
+msgstr "Танзимоти IP"
+
+#: ui/MorePage.qml:21
+#, kde-format
+msgid "Notifications for connection changes"
+msgstr ""
 
 #: ui/NetworkSettings.qml:15
 #, fuzzy, kde-format

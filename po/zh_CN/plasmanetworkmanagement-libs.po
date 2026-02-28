@@ -21,39 +21,39 @@ msgstr ""
 #: cellular/cellularmodem.cpp:148
 #, kde-format
 msgid "Error resetting the modem: %1"
-msgstr ""
+msgstr "重置调制解调器时出错：%1"
 
 #: cellular/cellularmodem.cpp:364
 #, kde-format
 msgid "Error activating connection: %1"
-msgstr ""
+msgstr "激活连接时出错：%1"
 
 #: cellular/cellularmodem.cpp:402
 #, kde-format
 msgid "Error adding connection: %1"
-msgstr ""
+msgstr "添加连接时出错：%1"
 
 #: cellular/cellularmodem.cpp:419
 #, kde-format
 msgid "Error removing connection: %1"
-msgstr ""
+msgstr "移除连接时出错：%1"
 
 #: cellular/cellularmodem.cpp:456
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
-msgstr ""
+msgstr "更新 %1 的连接设置时出错：%2。"
 
 #: cellular/cellularmodemdetails.cpp:111 cellular/cellularmodemdetails.cpp:213
 #: cellular/cellularmodemdetails.cpp:245 cellular/cellularmodemdetails.cpp:433
 #: cellular/cellularmodemdetails.cpp:465
 #, kde-format
 msgid "Unknown"
-msgstr ""
+msgstr "未知"
 
 #: cellular/cellularmodemdetails.cpp:114 cellular/cellularmodemdetails.cpp:468
 #, kde-format
 msgid "POTS"
-msgstr ""
+msgstr "POTS"
 
 #: cellular/cellularmodemdetails.cpp:117 editor/connectioneditorbase.cpp:262
 #, kde-format
@@ -63,102 +63,102 @@ msgstr "GSM"
 #: cellular/cellularmodemdetails.cpp:120
 #, kde-format
 msgid "GSM Compact"
-msgstr ""
+msgstr "GSM Compact"
 
 #: cellular/cellularmodemdetails.cpp:123
 #, kde-format
 msgid "GPRS"
-msgstr ""
+msgstr "GPRS"
 
 #: cellular/cellularmodemdetails.cpp:126
 #, kde-format
 msgid "EDGE"
-msgstr ""
+msgstr "EDGE"
 
 #: cellular/cellularmodemdetails.cpp:129
 #, kde-format
 msgid "UMTS"
-msgstr ""
+msgstr "UMTS"
 
 #: cellular/cellularmodemdetails.cpp:132
 #, kde-format
 msgid "HSDPA"
-msgstr ""
+msgstr "HSDPA"
 
 #: cellular/cellularmodemdetails.cpp:135
 #, kde-format
 msgid "HSUPA"
-msgstr ""
+msgstr "HSUPA"
 
 #: cellular/cellularmodemdetails.cpp:138
 #, kde-format
 msgid "HSPA"
-msgstr ""
+msgstr "HSPA"
 
 #: cellular/cellularmodemdetails.cpp:141
 #, kde-format
 msgid "HSPA+"
-msgstr ""
+msgstr "HSPA+"
 
 #: cellular/cellularmodemdetails.cpp:144
 #, kde-format
 msgid "CDMA2000 1xRTT"
-msgstr ""
+msgstr "CDMA2000 1xRTT"
 
 #: cellular/cellularmodemdetails.cpp:147
 #, kde-format
 msgid "CDMA2000 EVDO-0"
-msgstr ""
+msgstr "CDMA2000 EVDO-0"
 
 #: cellular/cellularmodemdetails.cpp:150
 #, kde-format
 msgid "CDMA2000 EVDO-A"
-msgstr ""
+msgstr "CDMA2000 EVDO-A"
 
 #: cellular/cellularmodemdetails.cpp:153
 #, kde-format
 msgid "CDMA2000 EVDO-B"
-msgstr ""
+msgstr "CDMA2000 EVDO-B"
 
 #: cellular/cellularmodemdetails.cpp:156
 #, kde-format
 msgid "LTE"
-msgstr ""
+msgstr "LTE"
 
 #: cellular/cellularmodemdetails.cpp:159
 #, kde-format
 msgid "5GNR"
-msgstr ""
+msgstr "5GNR"
 
 #: cellular/cellularmodemdetails.cpp:215
 #, kde-format
 msgid "Off"
-msgstr ""
+msgstr "关闭"
 
 #: cellular/cellularmodemdetails.cpp:217
 #, kde-format
 msgid "Low-power mode"
-msgstr ""
+msgstr "低功率模式"
 
 #: cellular/cellularmodemdetails.cpp:219
 #, kde-format
 msgid "Full power mode"
-msgstr ""
+msgstr "全功率模式"
 
 #: cellular/cellularmodemdetails.cpp:243
 #, kde-format
 msgid "Failed"
-msgstr ""
+msgstr "失败"
 
 #: cellular/cellularmodemdetails.cpp:247
 #, kde-format
 msgid "Initializing"
-msgstr ""
+msgstr "正在初始化"
 
 #: cellular/cellularmodemdetails.cpp:249
 #, kde-format
 msgid "Locked"
-msgstr ""
+msgstr "已锁定"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: cellular/cellularmodemdetails.cpp:251 editor/settings/ui/ipv6.ui:264
@@ -169,137 +169,137 @@ msgstr "已禁用"
 #: cellular/cellularmodemdetails.cpp:253
 #, kde-format
 msgid "Disabling"
-msgstr ""
+msgstr "正在禁用"
 
 #: cellular/cellularmodemdetails.cpp:255
 #, kde-format
 msgid "Enabling"
-msgstr ""
+msgstr "正在启用"
 
 #: cellular/cellularmodemdetails.cpp:257
 #, kde-format
 msgid "Enabled"
-msgstr ""
+msgstr "已启用"
 
 #: cellular/cellularmodemdetails.cpp:259
 #, kde-format
 msgid "Searching for network provider"
-msgstr ""
+msgstr "正在搜索网络提供商"
 
 #: cellular/cellularmodemdetails.cpp:261
 #, kde-format
 msgid "Registered with network provider"
-msgstr ""
+msgstr "已注册到网络提供商"
 
 #: cellular/cellularmodemdetails.cpp:263
 #, kde-format
 msgid "Disconnecting"
-msgstr ""
+msgstr "正在断开连接"
 
 #: cellular/cellularmodemdetails.cpp:265
 #, kde-format
 msgid "Connecting"
-msgstr ""
+msgstr "正在连接"
 
 #: cellular/cellularmodemdetails.cpp:267
 #, kde-format
 msgid "Connected"
-msgstr ""
+msgstr "已连接"
 
 #: cellular/cellularmodemdetails.cpp:276
 #, kde-format
 msgid "No error."
-msgstr ""
+msgstr "无错误。"
 
 #: cellular/cellularmodemdetails.cpp:278
 #, kde-format
 msgid "Unknown error."
-msgstr ""
+msgstr "未知错误。"
 
 #: cellular/cellularmodemdetails.cpp:280
 #, kde-format
 msgid "SIM is required but missing."
-msgstr ""
+msgstr "SIM 卡是必需的，但缺失。"
 
 #: cellular/cellularmodemdetails.cpp:282
 #, kde-format
 msgid "SIM is available but unusable."
-msgstr ""
+msgstr "SIM 卡存在，但不可用。"
 
 #: cellular/cellularmodemdetails.cpp:284
 #, kde-format
 msgid "Unknown modem capabilities."
-msgstr ""
+msgstr "未知调制解调器功能。"
 
 #: cellular/cellularmodemdetails.cpp:286
 #, kde-format
 msgid "eSIM is not initialized."
-msgstr ""
+msgstr "eSIM 卡未初始化。"
 
 #: cellular/cellularmodemdetails.cpp:312
 #, kde-format
 msgid "Not registered, not searching for new operator to register."
-msgstr ""
+msgstr "未注册，未在搜索新的运营商进行注册。"
 
 #: cellular/cellularmodemdetails.cpp:314
 #, kde-format
 msgid "Registered on home network."
-msgstr ""
+msgstr "已注册到家庭网络。"
 
 #: cellular/cellularmodemdetails.cpp:316
 #, kde-format
 msgid "Not registered, searching for new operator to register with."
-msgstr ""
+msgstr "未注册，正在搜索新的运营商进行注册。"
 
 #: cellular/cellularmodemdetails.cpp:318
 #, kde-format
 msgid "Registration denied."
-msgstr ""
+msgstr "注册被拒绝。"
 
 #: cellular/cellularmodemdetails.cpp:320
 #, kde-format
 msgid "Unknown registration status."
-msgstr ""
+msgstr "未知注册状态。"
 
 #: cellular/cellularmodemdetails.cpp:322
 #, kde-format
 msgid "Registered on a roaming network."
-msgstr ""
+msgstr "已注册到漫游网络。"
 
 #: cellular/cellularmodemdetails.cpp:324
 #, kde-format
 msgid "Registered for \"SMS only\", on home network."
-msgstr ""
+msgstr "已作为“仅短信”模式注册到家庭网络。"
 
 #: cellular/cellularmodemdetails.cpp:326
 #, kde-format
 msgid "Registered for \"SMS only\", roaming network."
-msgstr ""
+msgstr "已作为“仅短信”模式注册到漫游网络。"
 
 #: cellular/cellularmodemdetails.cpp:328
 #, kde-format
 msgid "Emergency services only."
-msgstr ""
+msgstr "只提供紧急服务。"
 
 #: cellular/cellularmodemdetails.cpp:330
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", home network."
-msgstr ""
+msgstr "已作为“CSFB 非首选”模式注册到家庭网络。"
 
 #: cellular/cellularmodemdetails.cpp:332
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", roaming network."
-msgstr ""
+msgstr "已作为“CSFB 非首选”模式注册到漫游网络。"
 
 #: cellular/cellularmodemdetails.cpp:334
 #, kde-format
 msgid "Attached for access to Restricted Local Operator Services."
-msgstr ""
+msgstr "已附加以访问受限的本地运营商服务。"
 
 #: cellular/cellularmodemdetails.cpp:374
 #, kde-format
 msgid "Scanning networks failed: %1"
-msgstr ""
+msgstr "扫描网络失败：%1"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: cellular/cellularmodemdetails.cpp:435
@@ -318,147 +318,147 @@ msgstr "否"
 #: cellular/cellularmodemdetails.cpp:439
 #, kde-format
 msgid "GuessYes"
-msgstr ""
+msgstr "估计是"
 
 #: cellular/cellularmodemdetails.cpp:441
 #, kde-format
 msgid "GuessNo"
-msgstr ""
+msgstr "估计否"
 
 #: cellular/cellularmodemdetails.cpp:474
 #, kde-format
 msgid "2G"
-msgstr ""
+msgstr "2G"
 
 #: cellular/cellularmodemdetails.cpp:485
 #, kde-format
 msgid "3G"
-msgstr ""
+msgstr "3G"
 
 #: cellular/cellularmodemdetails.cpp:490
 #, kde-format
 msgid "4G"
-msgstr ""
+msgstr "4G"
 
 #: cellular/cellularmodemdetails.cpp:493
 #, kde-format
 msgid "5G"
-msgstr ""
+msgstr "5G"
 
 #: cellular/cellularmodemdetails.cpp:496
 #, kde-format
 msgid "Any"
-msgstr ""
+msgstr "任意"
 
 #: cellular/cellularsim.cpp:83
 #, kde-format
 msgid "Lock reason unknown."
-msgstr ""
+msgstr "锁定原因未知。"
 
 #: cellular/cellularsim.cpp:85
 #, kde-format
 msgid "Modem is unlocked."
-msgstr ""
+msgstr "调制解调器已解锁。"
 
 #: cellular/cellularsim.cpp:87
 #, kde-format
 msgid "SIM requires the PIN code."
-msgstr ""
+msgstr "SIM 卡需要 PIN 码。"
 
 #: cellular/cellularsim.cpp:89
 #, kde-format
 msgid "SIM requires the PIN2 code."
-msgstr ""
+msgstr "SIM 卡需要 PIN2 码。"
 
 #: cellular/cellularsim.cpp:91
 #, kde-format
 msgid "SIM requires the PUK code."
-msgstr ""
+msgstr "SIM 卡要求 PUK 码。"
 
 #: cellular/cellularsim.cpp:93
 #, kde-format
 msgid "SIM requires the PUK2 code."
-msgstr ""
+msgstr "SIM 卡需要 PUK2 码。"
 
 #: cellular/cellularsim.cpp:95
 #, kde-format
 msgid "Modem requires the service provider PIN code."
-msgstr ""
+msgstr "调制解调器需要运营商 PIN 码。"
 
 #: cellular/cellularsim.cpp:97
 #, kde-format
 msgid "Modem requires the service provider PUK code."
-msgstr ""
+msgstr "调制解调器需要运营商 PUK 码。"
 
 #: cellular/cellularsim.cpp:99
 #, kde-format
 msgid "Modem requires the network PIN code."
-msgstr ""
+msgstr "调制解调器需要网络 PIN 码。"
 
 #: cellular/cellularsim.cpp:101
 #, kde-format
 msgid "Modem requires the network PUK code."
-msgstr ""
+msgstr "调制解调器需要网络 PUK 码。"
 
 #: cellular/cellularsim.cpp:103
 #, kde-format
 msgid "Modem requires the PIN code."
-msgstr ""
+msgstr "调制解调器需要 PIN 码。"
 
 #: cellular/cellularsim.cpp:105
 #, kde-format
 msgid "Modem requires the corporate PIN code."
-msgstr ""
+msgstr "调制解调器需要企业 PIN 码。"
 
 #: cellular/cellularsim.cpp:107
 #, kde-format
 msgid "Modem requires the corporate PUK code."
-msgstr ""
+msgstr "调制解调器需要企业 PUK 码。"
 
 #: cellular/cellularsim.cpp:109
 #, kde-format
 msgid "Modem requires the PH-FSIM PIN code."
-msgstr ""
+msgstr "调制解调器需要 PH-FSIM PIN 码。"
 
 #: cellular/cellularsim.cpp:111
 #, kde-format
 msgid "Modem requires the PH-FSIM PUK code."
-msgstr ""
+msgstr "调制解调器需要 PH-FSIM PUK 码。"
 
 #: cellular/cellularsim.cpp:113
 #, kde-format
 msgid "Modem requires the network subset PIN code."
-msgstr ""
+msgstr "调制解调器需要网络子集 PIN 码。"
 
 #: cellular/cellularsim.cpp:115
 #, kde-format
 msgid "Modem requires the network subset PUK code."
-msgstr ""
+msgstr "调制解调器需要网络子集 PUK 码。"
 
 #: cellular/cellularsim.cpp:158
 #, kde-format
 msgid "(empty)"
-msgstr ""
+msgstr "(空)"
 
 #: cellular/cellularsim.cpp:172
 #, kde-format
 msgid "Error toggling SIM lock: %1"
-msgstr ""
+msgstr "锁定/解锁 SIM 卡时出错：%1"
 
 #: cellular/cellularsim.cpp:181
 #, kde-format
 msgid "Error changing the PIN: %1"
-msgstr ""
+msgstr "更改 PIN 码时出错：%1"
 
 #: cellular/cellularsim.cpp:194
 #, kde-format
 msgid "Error sending the PIN: %1"
-msgstr ""
+msgstr "发送 PIN 码时出错：%1"
 
 #: cellular/cellularsim.cpp:207
 #, kde-format
 msgid "Error sending the PUK: %1"
-msgstr ""
+msgstr "发送 PUK 码时出错：%1"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -2064,7 +2064,7 @@ msgstr "松散绑定"
 #: editor/settings/ui/wificonnectionwidget.ui:23
 #, kde-format
 msgid "Connection"
-msgstr ""
+msgstr "连接"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:39
@@ -2245,7 +2245,7 @@ msgstr "隐藏网络"
 #: editor/settings/ui/wificonnectionwidget.ui:368
 #, kde-format
 msgid "Security"
-msgstr ""
+msgstr "安全性"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
 #: editor/settings/ui/wifisecurity.ui:15

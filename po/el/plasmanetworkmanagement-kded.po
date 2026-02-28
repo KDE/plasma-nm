@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-28 00:46+0000\n"
+"POT-Creation-Date: 2026-02-28 00:46+0000\n"
 "PO-Revision-Date: 2017-06-12 16:38+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -63,14 +63,14 @@ msgctxt "Title for GSM PIN/PUK unlock error dialog"
 msgid "PIN/PUK unlock error"
 msgstr "Σφάλμα ξεκλειδώματος PIN/PUK"
 
-#: notification.cpp:97
+#: notification.cpp:98
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigFailedReason"
 msgid "The device could not be configured"
 msgstr "Η συσκευή δεν μπορεί να διαμορφωθεί"
 
-#: notification.cpp:100
+#: notification.cpp:101
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -78,21 +78,21 @@ msgctxt ""
 msgid "IP configuration was unavailable"
 msgstr "Η διαμόρφωση IP δεν είναι διαθέσιμη"
 
-#: notification.cpp:103
+#: notification.cpp:104
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigExpiredReason"
 msgid "IP configuration expired"
 msgstr "Η διαμόρφωση IP έχει λήξει"
 
-#: notification.cpp:106
+#: notification.cpp:107
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to NoSecretsReason"
 msgid "No secrets were provided"
 msgstr "Δε δόθηκαν οι κωδικοί ασφαλείας"
 
-#: notification.cpp:109
+#: notification.cpp:110
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -100,7 +100,7 @@ msgctxt ""
 msgid "Authorization supplicant disconnected"
 msgstr "Η παροχή εξουσιοδότησης αποσυνδέθηκε"
 
-#: notification.cpp:113
+#: notification.cpp:114
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -108,7 +108,7 @@ msgctxt ""
 msgid "Authorization supplicant's configuration failed"
 msgstr "Η διαμόρφωση παροχής εξουσιοδότησης απέτυχε"
 
-#: notification.cpp:116
+#: notification.cpp:117
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -116,7 +116,7 @@ msgctxt ""
 msgid "Authorization supplicant failed"
 msgstr "Η παροχή εξουσιοδότησης απέτυχε"
 
-#: notification.cpp:119
+#: notification.cpp:120
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -124,49 +124,49 @@ msgctxt ""
 msgid "Authorization supplicant timed out"
 msgstr "Το χρονικό διάστημα παροχής εξουσιοδότησης εξέπνευσε"
 
-#: notification.cpp:122
+#: notification.cpp:123
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppStartFailedReason"
 msgid "PPP failed to start"
 msgstr "Το PPP απέτυχε να ξεκινήσει"
 
-#: notification.cpp:125
+#: notification.cpp:126
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppDisconnectReason"
 msgid "PPP disconnected"
 msgstr "Το PPP αποσυνδέθηκε"
 
-#: notification.cpp:128
+#: notification.cpp:129
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppFailedReason"
 msgid "PPP failed"
 msgstr "Το PPP απέτυχε"
 
-#: notification.cpp:131
+#: notification.cpp:132
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpStartFailedReason"
 msgid "DHCP failed to start"
 msgstr "Το DHCP απέτυχε να ξεκινήσει"
 
-#: notification.cpp:134
+#: notification.cpp:135
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpErrorReason"
 msgid "A DHCP error occurred"
 msgstr "Παρουσιάστηκε σφάλμα στο DHCP"
 
-#: notification.cpp:137
+#: notification.cpp:138
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpFailedReason"
 msgid "DHCP failed "
 msgstr "Το DHCP απέτυχε"
 
-#: notification.cpp:140
+#: notification.cpp:141
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -174,14 +174,14 @@ msgctxt ""
 msgid "The shared service failed to start"
 msgstr "Η κοινόχρηστη υπηρεσία απέτυχε να ξεκινήσει"
 
-#: notification.cpp:143
+#: notification.cpp:144
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SharedFailedReason"
 msgid "The shared service failed"
 msgstr "Η κοινόχρηστη υπηρεσία απέτυχε"
 
-#: notification.cpp:146
+#: notification.cpp:147
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -189,42 +189,42 @@ msgctxt ""
 msgid "The auto IP service failed to start"
 msgstr "Η υπηρεσία αυτόματης απόδοσης IP απέτυχε να ξεκινήσει"
 
-#: notification.cpp:149
+#: notification.cpp:150
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpErrorReason"
 msgid "The auto IP service reported an error"
 msgstr "Η υπηρεσία αυτόματης απόδοσης IP ανάφερε σφάλμα"
 
-#: notification.cpp:152
+#: notification.cpp:153
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpFailedReason"
 msgid "The auto IP service failed"
 msgstr "Η υπηρεσία αυτόματης απόδοσης IP απέτυχε"
 
-#: notification.cpp:155
+#: notification.cpp:156
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemBusyReason"
 msgid "The modem is busy"
 msgstr "Το μόντεμ είναι απασχολημένο"
 
-#: notification.cpp:158
+#: notification.cpp:159
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoDialToneReason"
 msgid "The modem has no dial tone"
 msgstr "Το μόντεμ δεν έχει τονική κλήση"
 
-#: notification.cpp:161
+#: notification.cpp:162
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoCarrierReason"
 msgid "The modem shows no carrier"
 msgstr "Το μόντεμ δεν εμφανίζει πάροχο"
 
-#: notification.cpp:164
+#: notification.cpp:165
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -232,21 +232,21 @@ msgctxt ""
 msgid "The modem dial timed out"
 msgstr "Το χρονικό διάστημα κλήσης του μόντεμ εξέπνευσε"
 
-#: notification.cpp:167
+#: notification.cpp:168
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemDialFailedReason"
 msgid "The modem dial failed"
 msgstr "Η κλήση του μόντεμ απέτυχε"
 
-#: notification.cpp:170
+#: notification.cpp:171
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemInitFailedReason"
 msgid "The modem could not be initialized"
 msgstr "Το μόντεμ δεν μπορεί να αρχικοποιηθεί"
 
-#: notification.cpp:173
+#: notification.cpp:174
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -254,14 +254,14 @@ msgctxt ""
 msgid "The GSM APN could not be selected"
 msgstr "Το GSM APN δεν μπορεί να επιλεχθεί"
 
-#: notification.cpp:176
+#: notification.cpp:177
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmNotSearchingReason"
 msgid "The GSM modem is not searching"
 msgstr "Το GSM μόντεμ δεν εκτελεί αναζήτηση"
 
-#: notification.cpp:179
+#: notification.cpp:180
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -269,7 +269,7 @@ msgctxt ""
 msgid "GSM network registration was denied"
 msgstr "Η εγγραφή στο δίκτυο GSM απορρίφθηκε"
 
-#: notification.cpp:182
+#: notification.cpp:183
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -277,7 +277,7 @@ msgctxt ""
 msgid "GSM network registration timed out"
 msgstr "Το χρονικό διάστημα εγγραφής στο GSM δίκτυο εξέπνευσε"
 
-#: notification.cpp:185
+#: notification.cpp:186
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -285,7 +285,7 @@ msgctxt ""
 msgid "GSM registration failed"
 msgstr "Η εγγραφή στο GSM απέτυχε"
 
-#: notification.cpp:188
+#: notification.cpp:189
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -293,28 +293,28 @@ msgctxt ""
 msgid "The GSM PIN check failed"
 msgstr "Ο έλεγχος του GSM PIN απέτυχε"
 
-#: notification.cpp:191
+#: notification.cpp:192
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to FirmwareMissingReason"
 msgid "Device firmware is missing"
 msgstr "Το firmware λείπει"
 
-#: notification.cpp:194
+#: notification.cpp:195
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DeviceRemovedReason"
 msgid "The device was removed"
 msgstr "Η συσκευή αφαιρέθηκε"
 
-#: notification.cpp:197
+#: notification.cpp:198
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SleepingReason"
 msgid "The networking system is now sleeping"
 msgstr "Το σύστημα δικτύωσης τώρα είναι σε παύση"
 
-#: notification.cpp:200
+#: notification.cpp:201
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -322,74 +322,74 @@ msgctxt ""
 msgid "The connection was removed"
 msgstr "Η σύνδεση αφαιρέθηκε"
 
-#: notification.cpp:205
+#: notification.cpp:206
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to CarrierReason"
 msgid "The cable was disconnected"
 msgstr "Το καλώδιο ήταν αποσυνδεδεμένο"
 
-#: notification.cpp:211
+#: notification.cpp:212
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNotFoundReason"
 msgid "The modem could not be found"
 msgstr "Το μόντεμ δεν μπορεί να βρεθεί"
 
-#: notification.cpp:214
+#: notification.cpp:215
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to BluetoothFailedReason"
 msgid "The bluetooth connection failed or timed out"
 msgstr "Η σύνδεση bluetooth απέτυχε ή εξέπνευσε"
 
-#: notification.cpp:217
+#: notification.cpp:218
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimNotInserted"
 msgid "GSM Modem's SIM Card not inserted"
 msgstr "Η κάρτα SIM του GSM μόντεμ δεν έχει εισαχθεί"
 
-#: notification.cpp:220
+#: notification.cpp:221
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPinRequired"
 msgid "GSM Modem's SIM Pin required"
 msgstr "Απαιτείται ξεκλείδωμα του SIM PIN του GSM μόντεμ"
 
-#: notification.cpp:223
+#: notification.cpp:224
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPukRequired"
 msgid "GSM Modem's SIM Puk required"
 msgstr "Απαιτείται ξεκλείδωμα του SIM PUK του GSM μόντεμ"
 
-#: notification.cpp:226
+#: notification.cpp:227
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to GsmSimWrong"
 msgid "GSM Modem's SIM wrong"
 msgstr "Το SIM του GSM μόντεμ είναι λάθος"
 
-#: notification.cpp:229
+#: notification.cpp:230
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to InfiniBandMode"
 msgid "InfiniBand device does not support connected mode"
 msgstr "Η συσκευή InfiniBand δεν υποστηρίζει λειτουργία σύνδεσης"
 
-#: notification.cpp:232
+#: notification.cpp:233
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DependencyFailed"
 msgid "A dependency of the connection failed"
 msgstr "Μια εξάρτηση της σύνδεσης απέτυχε"
 
-#: notification.cpp:235
+#: notification.cpp:236
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to Br2684Failed"
 msgid "Problem with the RFC 2684 Ethernet over ADSL bridge"
 msgstr "Πρόβλημα με το RFC 2684 Ethernet μέσω γέφυρας ADSL"
 
-#: notification.cpp:238
+#: notification.cpp:239
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -397,7 +397,7 @@ msgctxt ""
 msgid "ModemManager not running"
 msgstr "Το ModemManager δεν εκτελείται"
 
-#: notification.cpp:244
+#: notification.cpp:245
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to "
@@ -405,86 +405,86 @@ msgctxt ""
 msgid "A secondary connection of the base connection failed"
 msgstr "Η δευτερεύουσα σύνδεση της βασικής σύνδεσης απέτυχε"
 
-#: notification.cpp:247
+#: notification.cpp:248
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to DcbFcoeFailed"
 msgid "DCB or FCoE setup failed"
 msgstr "Η ρύθμιση του DCB ή του FCoE απέτυχε"
 
-#: notification.cpp:250
+#: notification.cpp:251
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to TeamdControlFailed"
 msgid "teamd control failed"
 msgstr "Αποτυχία ελέγχου teamd"
 
-#: notification.cpp:253
+#: notification.cpp:254
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
 msgstr "Αποτυχία μόντεμ ή πλέον δεν είναι διαθέσιμο"
 
-#: notification.cpp:256
+#: notification.cpp:257
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemAvailable"
 msgid "Modem now ready and available"
 msgstr "Το μόντεμ είναι τώρα έτοιμο και διαθέσιμο"
 
-#: notification.cpp:259
+#: notification.cpp:260
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SimPinIncorrect"
 msgid "The SIM PIN was incorrect"
 msgstr "Το PIN της SIM ήταν εσφαλμένο"
 
-#: notification.cpp:262
+#: notification.cpp:263
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to NewActivation"
 msgid "A new connection activation was enqueued"
 msgstr "Μια νέα ενεργοποίηση σύνδεσης μπήκε στην ουρά"
 
-#: notification.cpp:265
+#: notification.cpp:266
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ParentChanged"
 msgid "The device's parent changed"
 msgstr "Ο γονέας της συσκευής έχει αλλάξει"
 
-#: notification.cpp:268
+#: notification.cpp:269
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ParentManagedChanged"
 msgid "The device parent's management changed"
 msgstr "Η γονική διαχείριση της συσκευής έχει αλλάξει"
 
-#: notification.cpp:344
+#: notification.cpp:349
 #, kde-format
 msgid "Connection '%1' activated."
 msgstr "Η σύνδεση '%1' ενεργοποιήθηκε."
 
-#: notification.cpp:372
+#: notification.cpp:377
 #, kde-format
 msgid "Connection '%1' deactivated."
 msgstr "Η σύνδεση '%1' απενεργοποιήθηκε."
 
-#: notification.cpp:427
+#: notification.cpp:436
 #, kde-format
 msgid "VPN connection '%1' activated."
 msgstr "Η σύνδεση VPN '%1' ενεργοποιήθηκε."
 
-#: notification.cpp:430
+#: notification.cpp:439
 #, fuzzy, kde-format
 #| msgid "VPN connection '%1' activated."
 msgid "VPN connection '%1' failed to activate."
 msgstr "Η σύνδεση VPN '%1' ενεργοποιήθηκε."
 
-#: notification.cpp:433 notification.cpp:443
+#: notification.cpp:442 notification.cpp:452
 #, fuzzy, kde-format
 #| msgid "VPN connection '%1' activated."
 msgid "VPN connection '%1' deactivated."
 msgstr "Η σύνδεση VPN '%1' ενεργοποιήθηκε."
 
-#: notification.cpp:446
+#: notification.cpp:455
 #, fuzzy, kde-format
 #| msgid ""
 #| "The VPN connection changed state because the device it was using was "
@@ -496,24 +496,24 @@ msgstr ""
 "Η σύνδεση VPN άλλαξε κατάσταση, γιατί η συσκευή που χρησιμοποιούσε "
 "αποσυνδέθηκε."
 
-#: notification.cpp:449
+#: notification.cpp:458
 #, fuzzy, kde-format
 #| msgid "The service providing the VPN connection was stopped."
 msgid "The service providing the VPN connection '%1' was stopped."
 msgstr "Η υπηρεσία που παρέχει τη σύνδεση VPN σταμάτησε."
 
-#: notification.cpp:452
+#: notification.cpp:461
 #, fuzzy, kde-format
 #| msgid "The IP config of the VPN connection was invalid."
 msgid "The IP config of the VPN connection '%1', was invalid."
 msgstr "Η διαμόρφωση IP της σύνδεσης VPN δεν ήταν έγκυρη."
 
-#: notification.cpp:455
+#: notification.cpp:464
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
 msgstr "Η προσπάθεια σύνδεσης στην υπηρεσία VPN εξέπνευσε."
 
-#: notification.cpp:458
+#: notification.cpp:467
 #, fuzzy, kde-format
 #| msgid ""
 #| "A timeout occurred while starting the service providing the VPN "
@@ -525,24 +525,24 @@ msgstr ""
 "Προέκυψε μια καθυστέρηση κατά την εκκίνηση της υπηρεσίας που παρέχει τη "
 "σύνδεση VPN."
 
-#: notification.cpp:461
+#: notification.cpp:470
 #, fuzzy, kde-format
 #| msgid "Starting the service providing the VPN connection failed."
 msgid "Starting the service providing the VPN connection '%1' failed."
 msgstr "Η εκκίνηση της υπηρεσίας που παρέχει τη σύνδεση VPN απέτυχε."
 
-#: notification.cpp:464
+#: notification.cpp:473
 #, fuzzy, kde-format
 #| msgid "Necessary secrets for the VPN connection were not provided."
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
 msgstr "Οι απαραίτητοι κωδικοί ασφαλείας για τη σύνδεση VPN δεν παρέχονται."
 
-#: notification.cpp:467
+#: notification.cpp:476
 #, kde-format
 msgid "Authentication to the VPN server failed."
 msgstr "Η ταυτοποίηση στον εξυπηρετητή VPN απέτυχε."
 
-#: notification.cpp:470
+#: notification.cpp:479
 #, fuzzy, kde-format
 #| msgctxt ""
 #| "@info:status Notification when the device failed due to "
@@ -551,12 +551,12 @@ msgstr "Η ταυτοποίηση στον εξυπηρετητή VPN απέτυ
 msgid "The connection was deleted."
 msgstr "Η σύνδεση αφαιρέθηκε"
 
-#: notification.cpp:561
+#: notification.cpp:578
 #, kde-format
 msgid "No Network Connection"
 msgstr "Χωρίς σύνδεση δικτύου"
 
-#: notification.cpp:562
+#: notification.cpp:579
 #, kde-format
 msgid "You are no longer connected to a network."
 msgstr "Δεν είστε πλέον συνδεδεμένοι σε κάποιο δίκτυο."

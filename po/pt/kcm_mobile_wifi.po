@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-02-28 00:46+0000\n"
 "PO-Revision-Date: 2021-06-21 19:45+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -53,22 +53,38 @@ msgid "Wi-Fi"
 msgstr ""
 
 #: ui/main.qml:98
+#, kde-format
+msgid "More"
+msgstr ""
+
+#: ui/main.qml:107
 #, fuzzy, kde-format
 #| msgid "Hidden Network:"
 msgctxt "@title:group"
 msgid "Saved Networks"
 msgstr "Rede Escondida:"
 
-#: ui/main.qml:135
+#: ui/main.qml:144
 #, fuzzy, kde-format
 #| msgid "Hidden Network:"
 msgid "Available Networks"
 msgstr "Rede Escondida:"
 
-#: ui/main.qml:169
+#: ui/main.qml:178
 #, kde-format
 msgid "Add Custom Connection"
 msgstr "Adicionar uma Ligação Personalizada"
+
+#: ui/MorePage.qml:14
+#, fuzzy, kde-format
+#| msgid "IP settings"
+msgid "Wi-Fi Settings"
+msgstr "Configuração do IP"
+
+#: ui/MorePage.qml:21
+#, kde-format
+msgid "Notifications for connection changes"
+msgstr ""
 
 #: ui/NetworkSettings.qml:15
 #, fuzzy, kde-format

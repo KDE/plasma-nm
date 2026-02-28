@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-25 00:49+0000\n"
-"PO-Revision-Date: 2026-01-31 18:33+0530\n"
+"PO-Revision-Date: 2026-02-27 21:31+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -23,36 +23,29 @@ msgid "Error resetting the modem: %1"
 msgstr ""
 
 #: cellular/cellularmodem.cpp:364
-#, fuzzy, kde-format
-#| msgctxt "network interface disconnecting state label"
-#| msgid "Deactivating connection"
+#, kde-format
 msgid "Error activating connection: %1"
-msgstr "இணைப்பு துண்டிக்கப்படுகிறது"
+msgstr "இணைப்பை செயற்படுத்துவதில் சிக்கல்: %1"
 
 #: cellular/cellularmodem.cpp:402
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgid "Error adding connection: %1"
-msgstr "%1 என்ற இணைப்பை சேர்த்தல் தோல்வியடைந்தது"
+msgstr "இணைப்பைச் சேர்ப்பதில் சிக்கல்: %1"
 
 #: cellular/cellularmodem.cpp:419
-#, fuzzy, kde-format
-#| msgctxt "network interface disconnecting state label"
-#| msgid "Deactivating connection"
+#, kde-format
 msgid "Error removing connection: %1"
-msgstr "இணைப்பு துண்டிக்கப்படுகிறது"
+msgstr "இணைப்பை நீக்குவதில் சிக்கல்: %1"
 
 #: cellular/cellularmodem.cpp:456
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
-msgstr ""
+msgstr "%1-க்கான அமைப்புகளை புதுப்பிப்பதில் சிக்கல்: %2"
 
 #: cellular/cellularmodemdetails.cpp:111 cellular/cellularmodemdetails.cpp:213
 #: cellular/cellularmodemdetails.cpp:245 cellular/cellularmodemdetails.cpp:433
 #: cellular/cellularmodemdetails.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "description of unknown network interface state"
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown"
 msgstr "தெரியாதது"
 
@@ -144,12 +137,12 @@ msgstr ""
 #: cellular/cellularmodemdetails.cpp:217
 #, kde-format
 msgid "Low-power mode"
-msgstr ""
+msgstr "குறைவாற்றல் பயன்முறை"
 
 #: cellular/cellularmodemdetails.cpp:219
 #, kde-format
 msgid "Full power mode"
-msgstr ""
+msgstr "முழுவாற்றல் பயன்முறை"
 
 #: cellular/cellularmodemdetails.cpp:243
 #, fuzzy, kde-format

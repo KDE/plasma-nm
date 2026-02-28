@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-02-28 00:46+0000\n"
 "PO-Revision-Date: 2020-07-22 20:30+0200\n"
 "Last-Translator: Martin Schlander <mschlander@opensuse.org>\n"
 "Language-Team: Danish <kde-i18n-doc@kde.org>\n"
@@ -57,23 +57,39 @@ msgid "Wi-Fi"
 msgstr ""
 
 #: ui/main.qml:98
+#, kde-format
+msgid "More"
+msgstr ""
+
+#: ui/main.qml:107
 #, fuzzy, kde-format
 #| msgid "Saved networks"
 msgctxt "@title:group"
 msgid "Saved Networks"
 msgstr "Gemte netværk"
 
-#: ui/main.qml:135
+#: ui/main.qml:144
 #, fuzzy, kde-format
 #| msgid "Available networks"
 msgid "Available Networks"
 msgstr "Tilgængelige netværk"
 
-#: ui/main.qml:169
+#: ui/main.qml:178
 #, fuzzy, kde-format
 #| msgid "Add custom connection"
 msgid "Add Custom Connection"
 msgstr "Tilføj tilpasset forbindelse"
+
+#: ui/MorePage.qml:14
+#, fuzzy, kde-format
+#| msgid "IP settings"
+msgid "Wi-Fi Settings"
+msgstr "IP-indstillinger"
+
+#: ui/MorePage.qml:21
+#, kde-format
+msgid "Notifications for connection changes"
+msgstr ""
 
 #: ui/NetworkSettings.qml:15
 #, fuzzy, kde-format

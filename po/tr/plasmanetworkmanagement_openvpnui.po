@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2017, 2019, 2021.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:45+0000\n"
-"PO-Revision-Date: 2025-01-09 16:00+0300\n"
+"PO-Revision-Date: 2026-02-28 10:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.03.70\n"
+"X-Generator: Lokalize 25.12.2\n"
 "X-POOTLE-MTIME: 1413106147.000000\n"
 
 #: openvpn.cpp:182
@@ -911,8 +911,8 @@ msgid ""
 "channel\n"
 "to protect against DoS attacks."
 msgstr ""
-"Dos ataklarından korunmak için TLS üzerine, ek HMAC\n"
-"doğrulaması katmanı ekle."
+"DoS ataklarından korunmak için TLS üzerine, ek HMAC\n"
+"doğrulaması katmanı ekleyin."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
 #: openvpnadvanced.ui:898

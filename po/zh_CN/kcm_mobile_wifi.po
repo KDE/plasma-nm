@@ -77,11 +77,9 @@ msgid "Add Custom Connection"
 msgstr "添加自定义连接"
 
 #: ui/MorePage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Wi-Fi Settings"
-msgstr "IP 设置"
+msgstr ""
 
 #: ui/MorePage.qml:21
 #, kde-format

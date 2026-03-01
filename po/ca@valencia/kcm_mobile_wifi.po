@@ -1,16 +1,16 @@
 # Translation of kcm_mobile_wifi.po to Catalan (Valencian)
-# Copyright (C) 2018-2025 This_file_is_part_of_KDE
+# Copyright (C) 2018-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2023, 2024, 2025, 2026 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2019 Empar Montoro Martín <montoro_mde@gva.es>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2025-08-18 09:36+0200\n"
+"PO-Revision-Date: 2026-02-28 08:21+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -62,7 +62,7 @@ msgstr "Wi-Fi"
 #: ui/main.qml:98
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Més"
 
 #: ui/main.qml:107
 #, kde-format
@@ -81,16 +81,14 @@ msgid "Add Custom Connection"
 msgstr "Afig una connexió personalitzada"
 
 #: ui/MorePage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Wi-Fi Settings"
-msgstr "Configuració IP"
+msgstr "Configuració Wi-Fi"
 
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr ""
+msgstr "Notificacions de canvis a la connexió"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

@@ -3,13 +3,13 @@
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# Yuri Chornoivan <yurchor@ukr.net>, 2018, 2019, 2020, 2021, 2023, 2024, 2025.
+# Yuri Chornoivan <yurchor@ukr.net>, 2018, 2019, 2020, 2021, 2023, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2025-08-18 21:23+0300\n"
+"PO-Revision-Date: 2026-02-28 16:37+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -61,7 +61,7 @@ msgstr "Wi-Fi"
 #: ui/main.qml:98
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Більше"
 
 #: ui/main.qml:107
 #, kde-format
@@ -80,16 +80,14 @@ msgid "Add Custom Connection"
 msgstr "Додати нетипове з'єднання"
 
 #: ui/MorePage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Wi-Fi Settings"
-msgstr "Параметри IP"
+msgstr "Параметри Wi-Fi"
 
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr ""
+msgstr "Сповіщення щодо змін у з'єднанні"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

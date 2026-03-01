@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-mobile package.
 #
-# SPDX-FileCopyrightText: 2023, 2024, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2023, 2024, 2025, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2025-08-18 13:35+0200\n"
+"PO-Revision-Date: 2026-02-28 12:42+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.0\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -58,7 +58,7 @@ msgstr "Wi-Fi"
 #: ui/main.qml:98
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Meer"
 
 #: ui/main.qml:107
 #, kde-format
@@ -77,16 +77,14 @@ msgid "Add Custom Connection"
 msgstr "Aangepaste verbinding toevoegen"
 
 #: ui/MorePage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Wi-Fi Settings"
-msgstr "IP-instellingen"
+msgstr "Wi-Fi-instellingen"
 
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr ""
+msgstr "Meldingen voor wijzigingen in verbinding"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

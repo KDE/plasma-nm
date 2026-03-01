@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-01-30 13:09+0100\n"
+"PO-Revision-Date: 2026-02-28 12:46+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
@@ -374,10 +374,9 @@ msgstr "Automatisch"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseAsymCompression)
 #: openvpnadvanced.ui:153
-#, fuzzy, kde-format
-#| msgid "Use fast LZO compression."
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "Snelle LZO-compressie gebruiken"
+msgstr "Asymmetrische compressie gebruiken"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:162
@@ -485,13 +484,13 @@ msgstr ""
 #: openvpnadvanced.ui:323
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "Pad voor MTU ontdekken specificeren:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:339
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Misschien"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:344
@@ -519,7 +518,7 @@ msgstr "Hosts op afstand willekeurig maken"
 #: openvpnadvanced.ui:365
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "Voorvoegsel van DNS-naam op afstand met willekeurige tekenreeks"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblConnectTimeout)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbConnectTimeout)
@@ -530,10 +529,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, lblConnectTimeout)
 #: openvpnadvanced.ui:377
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgid "Connect timeout:"
-msgstr "Verbindingstype:"
+msgstr "Tijdslimiet van verbinden:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbConnectTimeout)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
@@ -733,10 +731,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:647
-#, fuzzy, kde-format
-#| msgid "Cipher:"
+#, kde-format
 msgid "Data Ciphers:"
-msgstr "Cipher:"
+msgstr "Gegevensciphers:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:676
@@ -1043,10 +1040,9 @@ msgstr "TLS-Crypt"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1084
-#, fuzzy, kde-format
-#| msgid "TLS-Crypt"
+#, kde-format
 msgid "TLS-Crypt v2"
-msgstr "TLS-Crypt"
+msgstr "TLS-Crypt v2"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -1077,10 +1073,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1123
-#, fuzzy, kde-format
-#| msgid "Copy certificates"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "Certificaten kopiëren"
+msgstr "Extra certificatenbestand:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)

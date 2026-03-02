@@ -325,6 +325,10 @@ void ConnectionIcon::setIcons()
                         && (connection->type() != NetworkManager::ConnectionSettings::Wired))) {
                     connection = activeConnection;
                 }
+            } else if (type == NetworkManager::ConnectionSettings::Vlan) {
+                if (connection && connection->type() == NetworkManager::ConnectionSettings::Vlan) {
+                    connection = activeConnection;
+                }
             }
         }
     }
@@ -347,6 +351,10 @@ void ConnectionIcon::setIcons()
             } else if (type == NetworkManager::Device::Ethernet) {
                 setConnectionIcon(QStringLiteral("network-wired-activated"));
                 setConnectionTooltipIcon(QStringLiteral("network-wired-activated"));
+            } else if (type == NetworkManager::Device::Bridge) {
+                // TODO: use a not-yet created bridge-specific network icon here
+                setConnectionIcon(QStringLiteral("network-wired-activated"));
+                setConnectionTooltipIcon(QStringLiteral("network-wired-activated"));
             } else if (type == NetworkManager::Device::Modem) {
                 setModemIcon(device);
             } else if (type == NetworkManager::Device::Bluetooth) {
@@ -365,7 +373,7 @@ void ConnectionIcon::setIcons()
                 // do anything just because it has a device
                 // associated with it.
             } else {
-                // Ignore other devices (bond/bridge/team etc.)
+                // Ignore other devices (bond/team etc.)
                 setDisconnectedIcon();
             }
         }

@@ -6,13 +6,13 @@
 #
 # Translators:
 # Osoitz <oelkoro@gmail.com>, 2017.
-# Iñigo Salvador Azurmendi <xalba@euskalnet.net>, 2017, 2019, 2020.
+# SPDX-FileCopyrightText: 2017, 2019, 2020, 2026 Iñigo Salvador Azurmendi <xalba@euskalnet.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasman-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2020-12-21 21:23+0100\n"
+"PO-Revision-Date: 2026-03-01 12:57+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 20.12.0\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #. i18n: ectx: property (text), widget (QPushButton, advancedButton)
 #: fortisslvpn.ui:36
@@ -143,7 +143,7 @@ msgstr "Erabilera bakarreko pasahitza"
 #: fortisslvpnauth.ui:68
 #, kde-format
 msgid "Token:"
-msgstr "Token:"
+msgstr "Tokena:"
 
 #, fuzzy
 #~| msgid "Authentication"

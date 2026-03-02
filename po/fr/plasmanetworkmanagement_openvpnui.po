@@ -506,8 +506,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:344
-#, fuzzy, kde-format
-#| msgid "Yes"
+#, kde-format
 msgid "Yes"
 msgstr "Oui"
 

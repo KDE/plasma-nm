@@ -58,7 +58,7 @@ msgstr "Wi-Fi"
 #: ui/main.qml:98
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "更多"
 
 #: ui/main.qml:107
 #, kde-format
@@ -79,12 +79,12 @@ msgstr "添加自定义连接"
 #: ui/MorePage.qml:14
 #, kde-format
 msgid "Wi-Fi Settings"
-msgstr ""
+msgstr "Wi-Fi 设置"
 
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr ""
+msgstr "连接更改通知"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

@@ -364,7 +364,7 @@ msgstr "自动"
 #: openvpnadvanced.ui:153
 #, kde-format
 msgid "Use asymetric compression"
-msgstr ""
+msgstr "使用非对称压缩"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:162
@@ -462,25 +462,25 @@ msgstr "限制 TCP 最大报文段大小 (MSS)"
 #: openvpnadvanced.ui:320
 #, kde-format
 msgid "Control Path MTU discovery behavior."
-msgstr ""
+msgstr "控制路径最大传输单元 (MTU) 发现行为。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtuDisc)
 #: openvpnadvanced.ui:323
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "指定路径最大传输单元 (MTU) 发现："
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:339
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "也许是"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:344
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "是"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:355
@@ -502,20 +502,20 @@ msgstr "随机排序远程主机"
 #: openvpnadvanced.ui:365
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "在远程 DNS 名称前加上随机字符串"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblConnectTimeout)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbConnectTimeout)
 #: openvpnadvanced.ui:374 openvpnadvanced.ui:390
 #, kde-format
 msgid "Time in seconds to wait for the initial connection before failing."
-msgstr ""
+msgstr "在判定初始连接失败之前等待的秒数。"
 
 #. i18n: ectx: property (text), widget (QLabel, lblConnectTimeout)
 #: openvpnadvanced.ui:377
 #, kde-format
 msgid "Connect timeout:"
-msgstr ""
+msgstr "连接超时："
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbConnectTimeout)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
@@ -529,31 +529,31 @@ msgstr "无"
 #: openvpnadvanced.ui:396
 #, kde-format
 msgid "s"
-msgstr ""
+msgstr "秒"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:414
 #, kde-format
 msgid "Allow pulling of peer DNS names (FQDN) sent by the server."
-msgstr ""
+msgstr "允许拉取服务器发送的对等 DNS 名称 (完全限定域名)。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:417
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "允许拉取对等 DNS 名称 (完全限定域名)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:424
 #, kde-format
 msgid "Push client information to the server for diagnostics."
-msgstr ""
+msgstr "将客户端信息推送到服务器以进行诊断。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:427
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "推送节点信息"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:434
@@ -700,37 +700,37 @@ msgstr "正在获取可用的加密类型…"
 #: openvpnadvanced.ui:644
 #, kde-format
 msgid "Data channel cipher list to negotiate (OpenVPN 2.5+)."
-msgstr ""
+msgstr "用于协商的数据通道密码列表 (OpenVPN 2.5 及以上版本)。"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:647
 #, kde-format
 msgid "Data Ciphers:"
-msgstr ""
+msgstr "数据密码："
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:676
 #, kde-format
 msgid "Fallback data cipher if negotiation fails (OpenVPN 2.5+)."
-msgstr ""
+msgstr "协商失败时的备用数据加密方式 (OpenVPN 2.5 及更高版本)。"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:679
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "备用数据密码："
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:706
 #, kde-format
 msgid "Disable OpenVPN NCP (cipher negotiation). Requires OpenVPN 2.4+."
-msgstr ""
+msgstr "禁用 OpenVPN NCP (密码协商)。需要 OpenVPN 2.4 或更高版本。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:709
 #, kde-format
 msgid "Disable cipher negotiation"
-msgstr ""
+msgstr "禁用密码协商"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -999,7 +999,7 @@ msgstr "TLS-Crypt"
 #: openvpnadvanced.ui:1084
 #, kde-format
 msgid "TLS-Crypt v2"
-msgstr ""
+msgstr "TLS-Crypt v2"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -1023,13 +1023,13 @@ msgstr "密钥文件："
 #, kde-format
 msgid ""
 "Additional local certificate file to help verify the peer certificate chain."
-msgstr ""
+msgstr "用于辅助验证对等证书链的额外本地证书文件。"
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1123
 #, kde-format
 msgid "Extra certificates file:"
-msgstr ""
+msgstr "额外证书文件："
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)
@@ -1054,49 +1054,49 @@ msgstr "客户端 (1)"
 #: openvpnadvanced.ui:1184
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Optional."
-msgstr ""
+msgstr "最低 TLS 版本 (例如 1.2)。可选项。"
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMin)
 #: openvpnadvanced.ui:1187
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "TLS 版本下限："
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMin)
 #: openvpnadvanced.ui:1199
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Leave empty for default."
-msgstr ""
+msgstr "最低 TLS 版本 (例如 1.2)。留空则使用默认值。"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1209
 #, kde-format
 msgid "Allow negotiating higher TLS version than the minimum."
-msgstr ""
+msgstr "允许协商高于版本下限的 TLS 版本。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1212
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "或最高"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1221
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Optional."
-msgstr ""
+msgstr "最高 TLS 版本 (例如 1.3)。可选项。"
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1224
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "TLS 版本上限："
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMax)
 #: openvpnadvanced.ui:1234
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Leave empty for default."
-msgstr ""
+msgstr "最高 TLS 版本 (例如 1.3)。留空则使用默认值。"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyFile)
@@ -1105,13 +1105,13 @@ msgstr ""
 msgid ""
 "Path to a local Certificate Revocation List (CRL) file to verify peer "
 "certificates."
-msgstr ""
+msgstr "用于验证对等证书的本地证书吊销列表 (CRL) 文件的路径。"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyFile)
 #: openvpnadvanced.ui:1265
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "CRL 验证文件："
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyDir)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyDir)
@@ -1119,13 +1119,13 @@ msgstr ""
 #, kde-format
 msgid ""
 "Path to a local directory containing Certificate Revocation List (CRL) files."
-msgstr ""
+msgstr "包含证书吊销列表 (CRL) 文件的本地目录的路径。"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyDir)
 #: openvpnadvanced.ui:1292
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "CRL验证目录："
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: openvpnadvanced.ui:1315

@@ -141,6 +141,7 @@ FormCard.AbstractFormDelegate {
             } else {
                 kcm.push("ConnectionInfo.qml", {details: model.ConnectionDetails,
                                                 connectionName: ItemUniqueName,
+                                                connectionPath: ConnectionPath,
                                                 delegate: root})
 
             }

@@ -159,3 +159,4 @@ void ConnectionStatusWidget::updateConnectionDetails()
         m_stackedLayout->setCurrentIndex(1); // Show details form
     }
 }
+#include "moc_connectionstatuswidget.cpp"

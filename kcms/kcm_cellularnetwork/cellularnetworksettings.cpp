@@ -56,3 +56,5 @@ QString InlineMessage::message()
 }
 
 #include "cellularnetworksettings.moc"
+
+#include "moc_cellularnetworksettings.cpp"

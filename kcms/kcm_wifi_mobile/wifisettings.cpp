@@ -246,3 +246,5 @@ void WifiSettings::updateConnectionFromQML(const QString &path, const QVariantMa
 }
 
 #include "wifisettings.moc"
+
+#include "moc_wifisettings.cpp"

@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: plasmanm_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2025-01-08 12:00+0100\n"
+"PO-Revision-Date: 2026-03-01 10:36+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 "X-Text-Markup: kde4\n"
 
 #: openvpn.cpp:183
@@ -656,7 +656,7 @@ msgid ""
 "Block Chaining mode)."
 msgstr ""
 "Chiffrer les paquets avec un algorithme de chiffrement. L'algorithme par "
-"défaut est « BF-CBC » (Blowfish en mode enchainement du bloc de chiffrement)."
+"défaut est « BF-CBC » (Blowfish en mode enchaînement du bloc de chiffrement)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openvpnadvanced.ui:486
@@ -696,8 +696,8 @@ msgid ""
 "Authenticate packets with HMAC using message digest algorithm. The default "
 "is SHA1."
 msgstr ""
-"Authentifier les paquets grâce à « HMAC » en utilisant un algorithme "
-"« message diggest ». L'algorithme par défaut est « SHA1 »."
+"Authentifier les paquets grâce à « HMAC » en utilisant un algorithme de "
+"chiffrement de message. L'algorithme par défaut est « SHA1 »."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openvpnadvanced.ui:564

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-02-06 16:41+0100\n"
+"PO-Revision-Date: 2026-03-02 15:22+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -373,10 +373,9 @@ msgstr "Automatic"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseAsymCompression)
 #: openvpnadvanced.ui:153
-#, fuzzy, kde-format
-#| msgid "Use fast LZO compression."
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "Usa compression rapide LZO"
+msgstr "Usa compression asymetric"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:162
@@ -491,7 +490,7 @@ msgstr ""
 #: openvpnadvanced.ui:339
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Forsan"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:344
@@ -530,10 +529,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, lblConnectTimeout)
 #: openvpnadvanced.ui:377
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgid "Connect timeout:"
-msgstr "Typo de connexion:"
+msgstr "Tempore de expiration de connexion:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbConnectTimeout)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
@@ -547,7 +545,7 @@ msgstr "Necun"
 #: openvpnadvanced.ui:396
 #, kde-format
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:414
@@ -734,10 +732,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:647
-#, fuzzy, kde-format
-#| msgid "Cipher:"
+#, kde-format
 msgid "Data Ciphers:"
-msgstr "&Ciphra:"
+msgstr "Ciphraris de datos:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:676
@@ -1041,10 +1038,9 @@ msgstr "TLS-Crypt"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1084
-#, fuzzy, kde-format
-#| msgid "TLS-Crypt"
+#, kde-format
 msgid "TLS-Crypt v2"
-msgstr "TLS-Crypt"
+msgstr "TLS-Crypt v2"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -1075,10 +1071,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1123
-#, fuzzy, kde-format
-#| msgid "Copy certificates"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "Copia certificatos"
+msgstr "Files de certificatos Extra:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)
@@ -1103,19 +1098,19 @@ msgstr "Cliente (1)"
 #: openvpnadvanced.ui:1184
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Optional."
-msgstr ""
+msgstr "Minime version de TLS (p.ex. 1.2). Optional."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMin)
 #: openvpnadvanced.ui:1187
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "Minime Version de TLS:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMin)
 #: openvpnadvanced.ui:1199
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Leave empty for default."
-msgstr ""
+msgstr "Minime version de TLS (p.ex. 1.2). Lassa vacue per definition."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1209
@@ -1127,25 +1122,25 @@ msgstr ""
 #: openvpnadvanced.ui:1212
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "oplus alte "
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1221
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Optional."
-msgstr ""
+msgstr "Maxime version de TLS (p.ex. 1.3). Optional."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1224
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "Maxime Version de TLS:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMax)
 #: openvpnadvanced.ui:1234
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Leave empty for default."
-msgstr ""
+msgstr "Maxime version de TLS (p.ex. 1.3). Lassa vacue per definition."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyFile)
@@ -1155,12 +1150,14 @@ msgid ""
 "Path to a local Certificate Revocation List (CRL) file to verify peer "
 "certificates."
 msgstr ""
+"Percurso a un file local de  LIsta de Revocation de Certificato (CRL in "
+"anglese) per verificar certificatos associate (peer)."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyFile)
 #: openvpnadvanced.ui:1265
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "File de verificar CRL:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyDir)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyDir)
@@ -1169,12 +1166,14 @@ msgstr ""
 msgid ""
 "Path to a local directory containing Certificate Revocation List (CRL) files."
 msgstr ""
+"Percurso a un directorio locat continente files de  LIsta de Revocation de "
+"Certificato (CRL in anglese)."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyDir)
 #: openvpnadvanced.ui:1292
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "CRL verifica directorio:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: openvpnadvanced.ui:1315

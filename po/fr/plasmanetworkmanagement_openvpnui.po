@@ -14,7 +14,7 @@ msgstr ""
 "Project-Id-Version: plasmanm_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-01-31 09:19+0100\n"
+"PO-Revision-Date: 2026-03-01 10:36+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -24,7 +24,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 "X-Text-Markup: kde4\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
@@ -384,10 +384,9 @@ msgstr "Automatique"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseAsymCompression)
 #: openvpnadvanced.ui:153
-#, fuzzy, kde-format
-#| msgid "Use fast LZO compression."
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "Utiliser la compression LZO rapide."
+msgstr "Utiliser la compression asymétrique"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:162
@@ -490,19 +489,19 @@ msgstr "Restreindre la taille maximale du segment « TCP » (MSS)"
 #: openvpnadvanced.ui:320
 #, kde-format
 msgid "Control Path MTU discovery behavior."
-msgstr ""
+msgstr "Contrôler le comportement pour la découverte du MTU du chemin."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtuDisc)
 #: openvpnadvanced.ui:323
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "Spécifier la découverte de MTU sur le chemin :"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:339
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Peut-être"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:344
@@ -530,7 +529,7 @@ msgstr "Hôtes distants aléatoires"
 #: openvpnadvanced.ui:365
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "Préfixer le nom DNS distant avec une chaîne aléatoire"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblConnectTimeout)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbConnectTimeout)
@@ -538,13 +537,14 @@ msgstr ""
 #, kde-format
 msgid "Time in seconds to wait for the initial connection before failing."
 msgstr ""
+"Temps en secondes à attendre pour la connexion initiale avant de déclarer un "
+"échec."
 
 #. i18n: ectx: property (text), widget (QLabel, lblConnectTimeout)
 #: openvpnadvanced.ui:377
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgid "Connect timeout:"
-msgstr "Type de connexion :"
+msgstr "Délai maximal pour connexion :"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbConnectTimeout)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
@@ -558,31 +558,32 @@ msgstr "Aucun"
 #: openvpnadvanced.ui:396
 #, kde-format
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:414
 #, kde-format
 msgid "Allow pulling of peer DNS names (FQDN) sent by the server."
 msgstr ""
+"Autoriser l'extraction des noms DNS des pairs (FQDN) envoyés par le serveur."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:417
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "Autoriser la récupération des noms DNS des pairs (FQDN)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:424
 #, kde-format
 msgid "Push client information to the server for diagnostics."
-msgstr ""
+msgstr "Envoyez les informations du client au serveur pour des diagnostics."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:427
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "Pousser les informations de pair"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:434
@@ -717,7 +718,7 @@ msgid ""
 "Block Chaining mode)."
 msgstr ""
 "Chiffrer les paquets avec un algorithme de chiffrement. L'algorithme par "
-"défaut est « BF-CBC » (Blowfish en mode enchainement du bloc de chiffrement)."
+"défaut est « BF-CBC » (Blowfish en mode enchaînement du bloc de chiffrement)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openvpnadvanced.ui:605
@@ -738,37 +739,42 @@ msgstr "Obtention des chiffrements disponibles en cours..."
 #, kde-format
 msgid "Data channel cipher list to negotiate (OpenVPN 2.5+)."
 msgstr ""
+"Liste des chiffrements du canal de données à négocier (OpenVPN 2.5 ou "
+"supérieur)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:647
-#, fuzzy, kde-format
-#| msgid "Cipher:"
+#, kde-format
 msgid "Data Ciphers:"
-msgstr "Chiffrement :"
+msgstr "Chiffrements de données :"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:676
 #, kde-format
 msgid "Fallback data cipher if negotiation fails (OpenVPN 2.5+)."
 msgstr ""
+"Alternative aux chiffrements de données si la négociation échoue (OpenVPN "
+"2.5 ou supérieur)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:679
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "Alternative aux chiffrements de données :"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:706
 #, kde-format
 msgid "Disable OpenVPN NCP (cipher negotiation). Requires OpenVPN 2.4+."
 msgstr ""
+"Désactiver OpenVPN NCP (Négociation de chiffrement). Nécessite OpenVPN 2.4 "
+"ou supérieur."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:709
 #, kde-format
 msgid "Disable cipher negotiation"
-msgstr ""
+msgstr "Désactiver la négociation de chiffrement"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -796,8 +802,8 @@ msgid ""
 "Authenticate packets with HMAC using message digest algorithm. The default "
 "is SHA1."
 msgstr ""
-"Authentifier les paquets grâce à « HMAC » en utilisant un algorithme "
-"« message diggest ». L'algorithme par défaut est « SHA1 »."
+"Authentifier les paquets grâce à « HMAC » en utilisant un algorithme de "
+"chiffrement de message. L'algorithme par défaut est « SHA1 »."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openvpnadvanced.ui:757
@@ -1050,10 +1056,9 @@ msgstr "TLS-Crypt"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1084
-#, fuzzy, kde-format
-#| msgid "TLS-Crypt"
+#, kde-format
 msgid "TLS-Crypt v2"
-msgstr "TLS-Crypt"
+msgstr "TLS-Crypt v2"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -1080,13 +1085,14 @@ msgstr "Fichier de clé :"
 msgid ""
 "Additional local certificate file to help verify the peer certificate chain."
 msgstr ""
+"Fichier de certificat local supplémentaire pour aider à vérifier la chaîne "
+"de certificats du pair."
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1123
-#, fuzzy, kde-format
-#| msgid "Copy certificates"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "Copier les certificats"
+msgstr "Fichier de certificats supplémentaires :"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)
@@ -1111,49 +1117,53 @@ msgstr "Client (1)"
 #: openvpnadvanced.ui:1184
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Optional."
-msgstr ""
+msgstr "Version TLS minimale (Par exemple 1.2). Optionnelle."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMin)
 #: openvpnadvanced.ui:1187
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "Version minimale de TLS :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMin)
 #: openvpnadvanced.ui:1199
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Leave empty for default."
 msgstr ""
+"Version TLS minimale (Par exemple 1.2). Laisser vide comme valeur par défaut."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1209
 #, kde-format
 msgid "Allow negotiating higher TLS version than the minimum."
 msgstr ""
+"Autoriser la négociation avec une version TLS supérieure à la version "
+"minimale."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1212
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "ou supérieur"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1221
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Optional."
-msgstr ""
+msgstr "Version TLS maximale (Par exemple 1.3). Optionnelle."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1224
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "Version maximale de TLS :"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMax)
 #: openvpnadvanced.ui:1234
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Leave empty for default."
 msgstr ""
+"Version TLS maximale (Par exemple 1.3). Laisser vide comme valeur par défaut."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyFile)
@@ -1163,12 +1173,14 @@ msgid ""
 "Path to a local Certificate Revocation List (CRL) file to verify peer "
 "certificates."
 msgstr ""
+"Emplacement vers un fichier local de liste de révocation de certificats CRL "
+"(Certificate Revocation List) pour vérifier les certificats des pairs."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyFile)
 #: openvpnadvanced.ui:1265
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "Fichier « CRL » de vérification :"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyDir)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyDir)
@@ -1177,12 +1189,14 @@ msgstr ""
 msgid ""
 "Path to a local directory containing Certificate Revocation List (CRL) files."
 msgstr ""
+"Emplacement vers un dossier local contenant des fichiers de liste de "
+"révocation de certificats CRL (Certificate Revocation List)."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyDir)
 #: openvpnadvanced.ui:1292
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "Répertoire de vérification « CRL » :"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: openvpnadvanced.ui:1315

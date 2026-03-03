@@ -58,7 +58,7 @@ msgstr "Wi-Fi"
 #: ui/main.qml:98
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Více"
 
 #: ui/main.qml:107
 #, kde-format

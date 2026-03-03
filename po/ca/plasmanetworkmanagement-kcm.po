@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-03-03 00:49+0000\n"
 "PO-Revision-Date: 2025-11-18 17:45+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -190,57 +190,57 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Disponible"
 
-#: qml/main.qml:151
+#: qml/main.qml:147
 msgid "Add new connection"
 msgstr "Afegeix una connexió nova"
 
-#: qml/main.qml:169
+#: qml/main.qml:165
 msgid "Remove selected connection"
 msgstr "Elimina la connexió seleccionada"
 
-#: qml/main.qml:187
+#: qml/main.qml:183
 msgid "Export selected connection"
 msgstr "Exporta la connexió seleccionada"
 
-#: qml/main.qml:212
+#: qml/main.qml:208
 msgid "Configuration"
 msgstr "Configuració"
 
-#: qml/main.qml:239
+#: qml/main.qml:235
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Elimina la connexió"
 
-#: qml/main.qml:240
+#: qml/main.qml:236
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Voleu eliminar la connexió «%1»?"
 
-#: qml/main.qml:262
+#: qml/main.qml:258
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Connecta"
 
-#: qml/main.qml:268
+#: qml/main.qml:264
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: qml/main.qml:274
+#: qml/main.qml:270
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "Introduïu la contrasenya"
 
-#: qml/main.qml:280
+#: qml/main.qml:276
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "Xarxa: %1"
 
-#: qml/main.qml:301
+#: qml/main.qml:297
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "La contrasenya cal que sigui una clau WEP vàlida"
 
-#: qml/main.qml:302
+#: qml/main.qml:298
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "La contrasenya cal que tingui entre 8 i 64 caràcters"

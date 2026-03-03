@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-03-03 00:49+0000\n"
 "PO-Revision-Date: 2023-02-25 14:51-0800\n"
 "Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -188,63 +188,63 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr ""
 
-#: qml/main.qml:151
+#: qml/main.qml:147
 msgid "Add new connection"
 msgstr "新しい接続を追加"
 
-#: qml/main.qml:169
+#: qml/main.qml:165
 msgid "Remove selected connection"
 msgstr "選択された接続を削除"
 
-#: qml/main.qml:187
+#: qml/main.qml:183
 msgid "Export selected connection"
 msgstr "選択された接続をエクスポート"
 
-#: qml/main.qml:212
+#: qml/main.qml:208
 msgid "Configuration"
 msgstr "設定"
 
-#: qml/main.qml:239
+#: qml/main.qml:235
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "接続を削除"
 
-#: qml/main.qml:240
+#: qml/main.qml:236
 msgid "Do you want to remove the connection '%1'?"
 msgstr "接続'%1'を削除しますか？"
 
-#: qml/main.qml:262
+#: qml/main.qml:258
 #, fuzzy
 #| msgid "Connect"
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "接続"
 
-#: qml/main.qml:268
+#: qml/main.qml:264
 #, fuzzy
 #| msgid "Cancel"
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "キャンセル"
 
-#: qml/main.qml:274
+#: qml/main.qml:270
 #, fuzzy
 #| msgid "Hotspot password:"
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "ホットスポットのパスワード:"
 
-#: qml/main.qml:280
+#: qml/main.qml:276
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr ""
 
-#: qml/main.qml:301
+#: qml/main.qml:297
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr ""
 
-#: qml/main.qml:302
+#: qml/main.qml:298
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""

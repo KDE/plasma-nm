@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-03-03 00:49+0000\n"
 "PO-Revision-Date: 2026-01-03 17:58+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
@@ -190,57 +190,57 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Disponible"
 
-#: qml/main.qml:151
+#: qml/main.qml:147
 msgid "Add new connection"
 msgstr "Ajouter une nouvelle connexion"
 
-#: qml/main.qml:169
+#: qml/main.qml:165
 msgid "Remove selected connection"
 msgstr "Supprimer la connexion sélectionnée"
 
-#: qml/main.qml:187
+#: qml/main.qml:183
 msgid "Export selected connection"
 msgstr "Exporter la connexion sélectionnée"
 
-#: qml/main.qml:212
+#: qml/main.qml:208
 msgid "Configuration"
 msgstr "Configuration"
 
-#: qml/main.qml:239
+#: qml/main.qml:235
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Supprimer la connexion"
 
-#: qml/main.qml:240
+#: qml/main.qml:236
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Voulez-vous supprimer la connexion « %1 » ?"
 
-#: qml/main.qml:262
+#: qml/main.qml:258
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Se connecter"
 
-#: qml/main.qml:268
+#: qml/main.qml:264
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Annuler"
 
-#: qml/main.qml:274
+#: qml/main.qml:270
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "Veuillez saisir le mot de passe"
 
-#: qml/main.qml:280
+#: qml/main.qml:276
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "Réseau : %1"
 
-#: qml/main.qml:301
+#: qml/main.qml:297
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "Le mot de passe doit être une clé « WEP » valable"
 
-#: qml/main.qml:302
+#: qml/main.qml:298
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Le mot de passe doit comporter entre 8 et 64 caractères."

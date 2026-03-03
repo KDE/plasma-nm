@@ -484,7 +484,7 @@ msgstr ""
 #: openvpnadvanced.ui:344
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Ano"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:355
@@ -533,7 +533,7 @@ msgstr "Nic"
 #: openvpnadvanced.ui:396
 #, kde-format
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:414

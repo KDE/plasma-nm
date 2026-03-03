@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-03-03 00:49+0000\n"
 "PO-Revision-Date: 2026-02-03 22:08+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -184,57 +184,57 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "사용 가능"
 
-#: qml/main.qml:151
+#: qml/main.qml:147
 msgid "Add new connection"
 msgstr "새 연결 추가"
 
-#: qml/main.qml:169
+#: qml/main.qml:165
 msgid "Remove selected connection"
 msgstr "선택한 연결 삭제"
 
-#: qml/main.qml:187
+#: qml/main.qml:183
 msgid "Export selected connection"
 msgstr "선택한 연결 내보내기"
 
-#: qml/main.qml:212
+#: qml/main.qml:208
 msgid "Configuration"
 msgstr "설정"
 
-#: qml/main.qml:239
+#: qml/main.qml:235
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "연결 삭제"
 
-#: qml/main.qml:240
+#: qml/main.qml:236
 msgid "Do you want to remove the connection '%1'?"
 msgstr "연결 '%1'을(를) 삭제하시겠습니까?"
 
-#: qml/main.qml:262
+#: qml/main.qml:258
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "연결"
 
-#: qml/main.qml:268
+#: qml/main.qml:264
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "취소"
 
-#: qml/main.qml:274
+#: qml/main.qml:270
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "암호 입력"
 
-#: qml/main.qml:280
+#: qml/main.qml:276
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "네트워크: %1"
 
-#: qml/main.qml:301
+#: qml/main.qml:297
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "암호는 올바른 WEP 키여야 함"
 
-#: qml/main.qml:302
+#: qml/main.qml:298
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "암호는 8-64글자 사이여야 함"

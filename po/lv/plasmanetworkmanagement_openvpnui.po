@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2024 Toms Trasuns <toms.trasuns@posteo.net>
+# SPDX-FileCopyrightText: 2024, 2026 Toms Trasuns <toms.trasuns@posteo.net>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2024-04-26 14:03+0300\n"
+"PO-Revision-Date: 2026-03-03 19:19+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
 "Language: lv\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
-"X-Generator: Lokalize 24.02.1\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
@@ -26,7 +26,7 @@ msgstr "„NetworkManager“ trūkst „OpenVPN“ atbalsta"
 #: openvpn.cpp:99
 #, kde-format
 msgid "An unexpected error has occurred"
-msgstr ""
+msgstr "Notikusi neparedzēta kļūda"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19
@@ -372,10 +372,9 @@ msgstr "Automātisks"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseAsymCompression)
 #: openvpnadvanced.ui:153
-#, fuzzy, kde-format
-#| msgid "Use compression"
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "Izmantot saspiešanu"
+msgstr "Izmantot asimetrisku saspiešanu"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:162
@@ -476,25 +475,25 @@ msgstr "Ierobežot maksimālu TCP segmenta izmēru (MSS)"
 #: openvpnadvanced.ui:320
 #, kde-format
 msgid "Control Path MTU discovery behavior."
-msgstr ""
+msgstr "Kontroles ceļa MTU atklāšanas uzvedība."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtuDisc)
 #: openvpnadvanced.ui:323
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "Norādiet ceļa MTU mapi:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:339
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Varbūt"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:344
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Jā"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:355
@@ -503,7 +502,7 @@ msgid ""
 "Randomize the order of gateways list (remote) as a kind of basic load-\n"
 "balancing measure."
 msgstr ""
-"Jaukt vietām vārteju saraksta vārtejas (attālinātās), lai izlīdzināt slodzi."
+"Lai izlīdzinātu slodzi, jaukt vietām vārteju saraksta vārtejas (attālās)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:358
@@ -515,7 +514,7 @@ msgstr "Sajaukt vietām attālinātos resursdatorus"
 #: openvpnadvanced.ui:365
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "Attālajam DNS nosaukumam priekšā pievienot nejaušu virkni"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblConnectTimeout)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbConnectTimeout)
@@ -523,13 +522,13 @@ msgstr ""
 #, kde-format
 msgid "Time in seconds to wait for the initial connection before failing."
 msgstr ""
+"Laiks sekundēs, ko gaidīt, veicot sākotnējo pievienošanos, pirms atkāpties."
 
 #. i18n: ectx: property (text), widget (QLabel, lblConnectTimeout)
 #: openvpnadvanced.ui:377
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgid "Connect timeout:"
-msgstr "Savienojuma tips:"
+msgstr "Savienojuma noildze:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbConnectTimeout)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
@@ -543,31 +542,31 @@ msgstr "Nav"
 #: openvpnadvanced.ui:396
 #, kde-format
 msgid "s"
-msgstr ""
+msgstr "sek."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:414
 #, kde-format
 msgid "Allow pulling of peer DNS names (FQDN) sent by the server."
-msgstr ""
+msgstr "Atļaut izvilkt servera nosūtītos DNS nosaukumus (FQDN)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:417
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "Atļaut izvilkt DNS nosaukumus (FQDN)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:424
 #, kde-format
 msgid "Push client information to the server for diagnostics."
-msgstr ""
+msgstr "Sūtīt klienta informāciju uz serveri diagnostikai."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:427
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "sūtīt biedra informāciju"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:434
@@ -722,38 +721,38 @@ msgstr "Iegūst pieejamos šifrus..."
 #: openvpnadvanced.ui:644
 #, kde-format
 msgid "Data channel cipher list to negotiate (OpenVPN 2.5+)."
-msgstr ""
+msgstr "Datu kanāla šifru saraksts, par ko vienoties (OpenVPN 2.5+)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:647
-#, fuzzy, kde-format
-#| msgid "Cipher:"
+#, kde-format
 msgid "Data Ciphers:"
-msgstr "Šifrs:"
+msgstr "Datu šifri:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:676
 #, kde-format
 msgid "Fallback data cipher if negotiation fails (OpenVPN 2.5+)."
 msgstr ""
+"Atkāpšanās (rezerves) datu šifrs, ja vienošanās neizdodas (OpenVPN 2.5+)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:679
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "Datu šifru atkāpšanās:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:706
 #, kde-format
 msgid "Disable OpenVPN NCP (cipher negotiation). Requires OpenVPN 2.4+."
-msgstr ""
+msgstr "Izslēgt „OpenVPN“ NCP (šifru vienošanos). Nepieciešams „OpenVPN“ 2.4+."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:709
 #, kde-format
 msgid "Disable cipher negotiation"
-msgstr ""
+msgstr "Izslēgt šifru vienošanos"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -1032,10 +1031,9 @@ msgstr "TLS-Crypt"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1084
-#, fuzzy, kde-format
-#| msgid "TLS-Crypt"
+#, kde-format
 msgid "TLS-Crypt v2"
-msgstr "TLS-Crypt"
+msgstr "TLS-Crypt v2"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -1062,13 +1060,14 @@ msgstr "Atslēgas datne:"
 msgid ""
 "Additional local certificate file to help verify the peer certificate chain."
 msgstr ""
+"Papildu lokāla sertifikāta datne, lai palīdzētu verificēt biedra sertifikātu "
+"ķēdi."
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1123
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "Lietotāja sertifikāts:"
+msgstr "Papildu sertifikātu datne:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)
@@ -1093,49 +1092,49 @@ msgstr "Klients (1)"
 #: openvpnadvanced.ui:1184
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Optional."
-msgstr ""
+msgstr "Minimālā TLS versija (piemēram, 1.2). Nav obligāta."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMin)
 #: openvpnadvanced.ui:1187
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "Minimālā TLS versija:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMin)
 #: openvpnadvanced.ui:1199
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Leave empty for default."
-msgstr ""
+msgstr "Minimālā TLS versija (piemēram, 1.2). Atstājiet tukšu noklusējumam."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1209
 #, kde-format
 msgid "Allow negotiating higher TLS version than the minimum."
-msgstr ""
+msgstr "Atļaut vienoties ar augstāku TLS versiju nekā minimālā."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1212
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "vai augstāka"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1221
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Optional."
-msgstr ""
+msgstr "Maksimālā TLS versija (piemēram, 1.3). Nav obligāta."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1224
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "Maksimālā TLS versija:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMax)
 #: openvpnadvanced.ui:1234
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Leave empty for default."
-msgstr ""
+msgstr "Maksimālā TLS versija (piemēram, 1.3). Atstājiet tukšu noklusējumam."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyFile)
@@ -1145,12 +1144,14 @@ msgid ""
 "Path to a local Certificate Revocation List (CRL) file to verify peer "
 "certificates."
 msgstr ""
+"Ceļš uz lokālo sertifikātu atsaukšanas saraksta (VRL) datni, lai verificētu "
+"biedra sertifikātus."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyFile)
 #: openvpnadvanced.ui:1265
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "CRL verifikācijas datne:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyDir)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyDir)
@@ -1159,12 +1160,13 @@ msgstr ""
 msgid ""
 "Path to a local directory containing Certificate Revocation List (CRL) files."
 msgstr ""
+"Ceļš uz lokālu mapi, kas satur sertifikātu atsaukšanas saraksta (CRL) datnes."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyDir)
 #: openvpnadvanced.ui:1292
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "CRL verifikācijas mape:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: openvpnadvanced.ui:1315

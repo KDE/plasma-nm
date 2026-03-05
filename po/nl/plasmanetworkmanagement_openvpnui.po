@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-02-28 12:46+0100\n"
+"PO-Revision-Date: 2026-03-04 12:39+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -478,7 +478,7 @@ msgstr "Maximum TCP-segmentgrootte (MSS) gebruiken"
 #: openvpnadvanced.ui:320
 #, kde-format
 msgid "Control Path MTU discovery behavior."
-msgstr ""
+msgstr "Bestuur gedrag van ontdekken van pad voor MTU"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtuDisc)
 #: openvpnadvanced.ui:323
@@ -526,6 +526,8 @@ msgstr "Voorvoegsel van DNS-naam op afstand met willekeurige tekenreeks"
 #, kde-format
 msgid "Time in seconds to wait for the initial connection before failing."
 msgstr ""
+"De tijd in seconden die verstreken is voordat de eerste verbinding tot stand "
+"komt en de verbinding mislukt."
 
 #. i18n: ectx: property (text), widget (QLabel, lblConnectTimeout)
 #: openvpnadvanced.ui:377
@@ -545,19 +547,21 @@ msgstr "Geen"
 #: openvpnadvanced.ui:396
 #, kde-format
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:414
 #, kde-format
 msgid "Allow pulling of peer DNS names (FQDN) sent by the server."
 msgstr ""
+"Sta het ophalen van de DNS-namen (FQDN) van de peers toe, zoals verzonden "
+"door de server."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:417
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "Sta het ophalen van de DNS-namen (FQDN) van de peers toe"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:424

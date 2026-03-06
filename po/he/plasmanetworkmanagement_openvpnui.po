@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-03-01 19:10+0200\n"
+"PO-Revision-Date: 2026-03-02 09:51+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -469,13 +469,13 @@ msgstr "הגבלת גודל קטע מרבי ב־TCP‏ (MSS)"
 #: openvpnadvanced.ui:320
 #, kde-format
 msgid "Control Path MTU discovery behavior."
-msgstr ""
+msgstr "שליטה בהתנהגות גילוי MTU (גודל תעבורה מרבי) לנתיב."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtuDisc)
 #: openvpnadvanced.ui:323
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "בחירת גילוי MTU (גודל תעבורה מרבי) לנתיב:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:339
@@ -509,14 +509,14 @@ msgstr "בחירת מארחים מרוחקים באקראי"
 #: openvpnadvanced.ui:365
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "להוסיף קידומת מחרוזת אקראי לשמות DNS מרוחקים"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblConnectTimeout)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbConnectTimeout)
 #: openvpnadvanced.ui:374 openvpnadvanced.ui:390
 #, kde-format
 msgid "Time in seconds to wait for the initial connection before failing."
-msgstr ""
+msgstr "הזמן בשניות להמתנה לחיבור הראשוני לפני כשל."
 
 #. i18n: ectx: property (text), widget (QLabel, lblConnectTimeout)
 #: openvpnadvanced.ui:377
@@ -542,25 +542,25 @@ msgstr "שנ׳"
 #: openvpnadvanced.ui:414
 #, kde-format
 msgid "Allow pulling of peer DNS names (FQDN) sent by the server."
-msgstr ""
+msgstr "לאפשר משיכה של שמות DNS של עמיתים (FQDN) שנשלחו על ידי השרת."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:417
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "לאפשר משיכה של שמות DNS של עמיתים (FQDN)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:424
 #, kde-format
 msgid "Push client information to the server for diagnostics."
-msgstr ""
+msgstr "דחיפת פרטי הלקוח לשרת למטרות ניתוח."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:427
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "דחיפת פרטי עמית"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:434
@@ -711,7 +711,7 @@ msgstr "הצפנים הזמינים נמשכים…"
 #: openvpnadvanced.ui:644
 #, kde-format
 msgid "Data channel cipher list to negotiate (OpenVPN 2.5+)."
-msgstr ""
+msgstr "רשימת צפנים בערוץ הנתונים למשא ומתן (OpenVPN 2.5+‎)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:647
@@ -723,25 +723,25 @@ msgstr "צופני נתונים:"
 #: openvpnadvanced.ui:676
 #, kde-format
 msgid "Fallback data cipher if negotiation fails (OpenVPN 2.5+)."
-msgstr ""
+msgstr "צופן נתונים כגיבוי אם המשא והמתן נכשל (OpenVPN 2.5+‎)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:679
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "גיבוי צופני נתונים:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:706
 #, kde-format
 msgid "Disable OpenVPN NCP (cipher negotiation). Requires OpenVPN 2.4+."
-msgstr ""
+msgstr "השבתת NCP (משא ומתן על צפנים) ב־OpenVPN. דורשת את OpenVPN 2.4+‎."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:709
 #, kde-format
 msgid "Disable cipher negotiation"
-msgstr ""
+msgstr "השבתת משא ומתן על צופן"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -1041,7 +1041,7 @@ msgstr "קובץ מפתח:"
 #, kde-format
 msgid ""
 "Additional local certificate file to help verify the peer certificate chain."
-msgstr ""
+msgstr "קובץ אישור מקומי נוסף כדי לסייע באימות שרשרת אישור העמית."
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1123
@@ -1072,31 +1072,31 @@ msgstr "לקוח (1)"
 #: openvpnadvanced.ui:1184
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Optional."
-msgstr ""
+msgstr "גרסת TLS מזערית (למשל: 1.2). רשות."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMin)
 #: openvpnadvanced.ui:1187
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "גרסת TLS מזערית:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMin)
 #: openvpnadvanced.ui:1199
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Leave empty for default."
-msgstr ""
+msgstr "גרסת TLS מזערית (למשל: 1.2). יש להשאיר ריק לברירת מחדל."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1209
 #, kde-format
 msgid "Allow negotiating higher TLS version than the minimum."
-msgstr ""
+msgstr "לאפשר לשאת ולתת על גרסת TLS גבוהה יותר מהמזערית."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1212
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "או הגבוהה ביותר"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1221

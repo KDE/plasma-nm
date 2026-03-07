@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:46+0000\n"
+"POT-Creation-Date: 2026-03-07 00:46+0000\n"
 "PO-Revision-Date: 2025-10-09 01:20+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -22,28 +22,45 @@ msgstr ""
 msgid "Invalid input."
 msgstr "잘못 입력했습니다."
 
-#: ui/ConnectionInfo.qml:15
+#: ui/ConnectionInfo.qml:16
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
 msgstr "\"%1\"의 연결 정보"
 
-#: ui/ConnectionInfo.qml:22
+#: ui/ConnectionInfo.qml:55
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
 msgstr "전송률"
 
-#: ui/ConnectionInfo.qml:38
+#: ui/ConnectionInfo.qml:71
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "연결됨, ↓ %1/초, ↑ %2/초"
 
-#: ui/ConnectionInfo.qml:46
+#: ui/ConnectionInfo.qml:79
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "연결 정보"
+
+#: ui/ConnectionInfo.qml:100
+#, kde-format
+msgctxt "@title:group"
+msgid "Share"
+msgstr ""
+
+#: ui/ConnectionInfo.qml:107
+#, kde-format
+msgid "Share Wi-Fi via QR Code"
+msgstr ""
+
+#: ui/ConnectionInfo.qml:114
+#, fuzzy, kde-format
+#| msgid "Wi-Fi is disabled"
+msgid "Wi-Fi QR Code"
+msgstr "Wi-Fi가 비활성화됨"
 
 #: ui/main.qml:26
 #, kde-format
@@ -264,9 +281,6 @@ msgstr "암호…"
 
 #~ msgid "Download"
 #~ msgstr "다운로드"
-
-#~ msgid "Wi-Fi is disabled"
-#~ msgstr "Wi-Fi가 비활성화됨"
 
 #~ msgid "Enable"
 #~ msgstr "활성화"

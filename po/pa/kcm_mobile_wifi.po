@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:46+0000\n"
+"POT-Creation-Date: 2026-03-07 00:46+0000\n"
 "PO-Revision-Date: 2025-02-28 10:23-0600\n"
 "Last-Translator: A S Alam <aman@punlinux.org>\n"
 "Language-Team: pa\n"
@@ -22,28 +22,45 @@ msgstr ""
 msgid "Invalid input."
 msgstr "ਗਲਤ ਇੰਪੁੱਟ ਹੈ।"
 
-#: ui/ConnectionInfo.qml:15
+#: ui/ConnectionInfo.qml:16
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
 msgstr "\"%1\" ਲਈ ਕਨੈਕਸ਼ਨ ਜਾਣਕਾਰੀ"
 
-#: ui/ConnectionInfo.qml:22
+#: ui/ConnectionInfo.qml:55
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
 msgstr "ਟਰਾਂਸਫਰ ਰੇਟ"
 
-#: ui/ConnectionInfo.qml:38
+#: ui/ConnectionInfo.qml:71
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "ਕਨੈਕਟ ਹੈ, ↓ %1/s, ↑ %2/s"
 
-#: ui/ConnectionInfo.qml:46
+#: ui/ConnectionInfo.qml:79
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "ਕਨੈਕਸ਼ਨ ਦੇ ਵੇਰਵੇ"
+
+#: ui/ConnectionInfo.qml:100
+#, kde-format
+msgctxt "@title:group"
+msgid "Share"
+msgstr ""
+
+#: ui/ConnectionInfo.qml:107
+#, kde-format
+msgid "Share Wi-Fi via QR Code"
+msgstr ""
+
+#: ui/ConnectionInfo.qml:114
+#, fuzzy, kde-format
+#| msgid "Wi-Fi is disabled"
+msgid "Wi-Fi QR Code"
+msgstr "ਵਾਈ-ਫ਼ਾਈ ਅਸਮਰੱਥ ਹੈ"
 
 #: ui/main.qml:26
 #, kde-format
@@ -262,9 +279,6 @@ msgstr "…ਪਾਸਵਰਡ"
 
 #~ msgid "Download"
 #~ msgstr "ਡਾਊਨਲੋਡ"
-
-#~ msgid "Wi-Fi is disabled"
-#~ msgstr "ਵਾਈ-ਫ਼ਾਈ ਅਸਮਰੱਥ ਹੈ"
 
 #~ msgid "Enable"
 #~ msgstr "ਸਮਰੱਥ"

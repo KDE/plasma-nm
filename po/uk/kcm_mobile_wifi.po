@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:46+0000\n"
+"POT-Creation-Date: 2026-03-07 00:46+0000\n"
 "PO-Revision-Date: 2026-02-28 16:37+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -25,28 +25,45 @@ msgstr ""
 msgid "Invalid input."
 msgstr "Некоректні вхідні дані."
 
-#: ui/ConnectionInfo.qml:15
+#: ui/ConnectionInfo.qml:16
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
 msgstr "Дані щодо з'єднання для «%1»"
 
-#: ui/ConnectionInfo.qml:22
+#: ui/ConnectionInfo.qml:55
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
 msgstr "Швидкості передавання"
 
-#: ui/ConnectionInfo.qml:38
+#: ui/ConnectionInfo.qml:71
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "З'єднано, ↓ %1/с, ↑ %2/с"
 
-#: ui/ConnectionInfo.qml:46
+#: ui/ConnectionInfo.qml:79
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Параметри з'єднання"
+
+#: ui/ConnectionInfo.qml:100
+#, kde-format
+msgctxt "@title:group"
+msgid "Share"
+msgstr ""
+
+#: ui/ConnectionInfo.qml:107
+#, kde-format
+msgid "Share Wi-Fi via QR Code"
+msgstr ""
+
+#: ui/ConnectionInfo.qml:114
+#, fuzzy, kde-format
+#| msgid "Wi-Fi is disabled"
+msgid "Wi-Fi QR Code"
+msgstr "Wi-Fi вимкнено"
 
 #: ui/main.qml:26
 #, kde-format
@@ -265,9 +282,6 @@ msgstr "Пароль…"
 
 #~ msgid "Download"
 #~ msgstr "Отримання"
-
-#~ msgid "Wi-Fi is disabled"
-#~ msgstr "Wi-Fi вимкнено"
 
 #~ msgid "Enable"
 #~ msgstr "Увімкнути"

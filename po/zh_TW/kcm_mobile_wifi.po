@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:46+0000\n"
+"POT-Creation-Date: 2026-03-07 00:46+0000\n"
 "PO-Revision-Date: 2026-03-02 05:58+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -23,28 +23,45 @@ msgstr ""
 msgid "Invalid input."
 msgstr "無效輸入。"
 
-#: ui/ConnectionInfo.qml:15
+#: ui/ConnectionInfo.qml:16
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
 msgstr "「%1」的連線資訊"
 
-#: ui/ConnectionInfo.qml:22
+#: ui/ConnectionInfo.qml:55
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
 msgstr "傳輸速率"
 
-#: ui/ConnectionInfo.qml:38
+#: ui/ConnectionInfo.qml:71
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "已連線，↓ %1/秒, ↑ %2/秒"
 
-#: ui/ConnectionInfo.qml:46
+#: ui/ConnectionInfo.qml:79
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "連線詳情"
+
+#: ui/ConnectionInfo.qml:100
+#, kde-format
+msgctxt "@title:group"
+msgid "Share"
+msgstr ""
+
+#: ui/ConnectionInfo.qml:107
+#, kde-format
+msgid "Share Wi-Fi via QR Code"
+msgstr ""
+
+#: ui/ConnectionInfo.qml:114
+#, fuzzy, kde-format
+#| msgid "Wi-Fi is disabled"
+msgid "Wi-Fi QR Code"
+msgstr "Wi-Fi 已停用"
 
 #: ui/main.qml:26
 #, kde-format
@@ -268,9 +285,6 @@ msgstr "密碼…"
 
 #~ msgid "Download"
 #~ msgstr "下載"
-
-#~ msgid "Wi-Fi is disabled"
-#~ msgstr "Wi-Fi 已停用"
 
 #~ msgid "Enable"
 #~ msgstr "啟用"

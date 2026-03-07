@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:46+0000\n"
+"POT-Creation-Date: 2026-03-07 00:46+0000\n"
 "PO-Revision-Date: 2025-08-30 08:02+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -23,28 +23,45 @@ msgstr ""
 msgid "Invalid input."
 msgstr "Nieprawidłowe wejście."
 
-#: ui/ConnectionInfo.qml:15
+#: ui/ConnectionInfo.qml:16
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
 msgstr "Szczegóły połączenia dla \"%1\""
 
-#: ui/ConnectionInfo.qml:22
+#: ui/ConnectionInfo.qml:55
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
 msgstr "Szybkości przesyłania"
 
-#: ui/ConnectionInfo.qml:38
+#: ui/ConnectionInfo.qml:71
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Podłączony, ↓ %1/s, ↑ %2/s"
 
-#: ui/ConnectionInfo.qml:46
+#: ui/ConnectionInfo.qml:79
 #, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
 msgstr "Szczegóły połączenia"
+
+#: ui/ConnectionInfo.qml:100
+#, kde-format
+msgctxt "@title:group"
+msgid "Share"
+msgstr ""
+
+#: ui/ConnectionInfo.qml:107
+#, kde-format
+msgid "Share Wi-Fi via QR Code"
+msgstr ""
+
+#: ui/ConnectionInfo.qml:114
+#, fuzzy, kde-format
+#| msgid "Wi-Fi is disabled"
+msgid "Wi-Fi QR Code"
+msgstr "Wi-Fi jest wyłączone"
 
 #: ui/main.qml:26
 #, kde-format
@@ -265,9 +282,6 @@ msgstr "Hasło…"
 
 #~ msgid "Download"
 #~ msgstr "Pobieranie"
-
-#~ msgid "Wi-Fi is disabled"
-#~ msgstr "Wi-Fi jest wyłączone"
 
 #~ msgid "Enable"
 #~ msgstr "Włącz"

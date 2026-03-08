@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:46+0000\n"
-"PO-Revision-Date: 2026-02-28 06:53-0300\n"
+"PO-Revision-Date: 2026-03-07 09:39-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -54,18 +54,17 @@ msgstr "Detalhes da conexão"
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
-msgstr ""
+msgstr "Compartilhar"
 
 #: ui/ConnectionInfo.qml:107
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr ""
+msgstr "Compartilhar Wi-Fi via código QR"
 
 #: ui/ConnectionInfo.qml:114
-#, fuzzy, kde-format
-#| msgid "Wi-Fi is disabled"
+#, kde-format
 msgid "Wi-Fi QR Code"
-msgstr "Wi-Fi está desabilitado"
+msgstr "Código QR de Wi-Fi"
 
 #: ui/main.qml:26
 #, kde-format

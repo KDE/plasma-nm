@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-03-02 15:22+0100\n"
+"PO-Revision-Date: 2026-03-07 10:55+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -478,13 +478,13 @@ msgstr "Limita grandor de segmento maxime de TCP (MSS)"
 #: openvpnadvanced.ui:320
 #, kde-format
 msgid "Control Path MTU discovery behavior."
-msgstr ""
+msgstr "Controla comportamento de discoperi de Percurso MTU "
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtuDisc)
 #: openvpnadvanced.ui:323
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "Specifica discoperir Percurso MTU"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:339
@@ -518,14 +518,14 @@ msgstr "Pone aleatori hospites remote"
 #: openvpnadvanced.ui:365
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "Pone prefixo a nomine de DNS remote conncatena aleatori"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblConnectTimeout)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbConnectTimeout)
 #: openvpnadvanced.ui:374 openvpnadvanced.ui:390
 #, kde-format
 msgid "Time in seconds to wait for the initial connection before failing."
-msgstr ""
+msgstr "Tempore in secundas per attender le connexion initial ante faller."
 
 #. i18n: ectx: property (text), widget (QLabel, lblConnectTimeout)
 #: openvpnadvanced.ui:377

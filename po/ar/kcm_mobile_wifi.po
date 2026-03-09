@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:46+0000\n"
-"PO-Revision-Date: 2026-02-28 13:48+0400\n"
+"PO-Revision-Date: 2026-03-08 09:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -50,17 +50,17 @@ msgstr "تفاصيل الاتصال"
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
-msgstr ""
+msgstr "شارك"
 
 #: ui/ConnectionInfo.qml:107
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr ""
+msgstr "شارك الواي فاي برمز الاستجابة السريعة"
 
 #: ui/ConnectionInfo.qml:114
 #, kde-format
 msgid "Wi-Fi QR Code"
-msgstr ""
+msgstr "الاستجابة السريعة لواي فاي"
 
 #: ui/main.qml:26
 #, kde-format

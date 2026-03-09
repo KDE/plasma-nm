@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:46+0000\n"
-"PO-Revision-Date: 2026-02-28 12:42+0100\n"
+"PO-Revision-Date: 2026-03-08 16:42+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -49,18 +49,17 @@ msgstr "Verbindingsdetails"
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
-msgstr ""
+msgstr "Delen"
 
 #: ui/ConnectionInfo.qml:107
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr ""
+msgstr "Wi-Fi delen via QR-code"
 
 #: ui/ConnectionInfo.qml:114
-#, fuzzy, kde-format
-#| msgid "Wi-Fi is disabled"
+#, kde-format
 msgid "Wi-Fi QR Code"
-msgstr "Wi-Fi is uitgeschakeld"
+msgstr "Wi-Fi QR-code"
 
 #: ui/main.qml:26
 #, kde-format

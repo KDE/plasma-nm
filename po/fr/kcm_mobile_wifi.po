@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:46+0000\n"
-"PO-Revision-Date: 2026-03-01 10:21+0100\n"
+"PO-Revision-Date: 2026-03-07 20:16+0100\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: \n"
 "Language: fr\n"
@@ -50,18 +50,17 @@ msgstr "Détails de connexion"
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
-msgstr ""
+msgstr "Partager"
 
 #: ui/ConnectionInfo.qml:107
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr ""
+msgstr "Partager le Wifi grâce à un QR code"
 
 #: ui/ConnectionInfo.qml:114
-#, fuzzy, kde-format
-#| msgid "Wi-Fi is disabled"
+#, kde-format
 msgid "Wi-Fi QR Code"
-msgstr "L'interface Wifi est désactivée."
+msgstr "QR code pour le Wifi"
 
 #: ui/main.qml:26
 #, kde-format

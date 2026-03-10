@@ -49,17 +49,17 @@ msgstr "连接详情"
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
-msgstr ""
+msgstr "共享"
 
 #: ui/ConnectionInfo.qml:107
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr ""
+msgstr "通过二维码代码共享 Wi-Fi"
 
 #: ui/ConnectionInfo.qml:114
 #, kde-format
 msgid "Wi-Fi QR Code"
-msgstr ""
+msgstr "Wi-Fi 二维码"
 
 #: ui/main.qml:26
 #, kde-format

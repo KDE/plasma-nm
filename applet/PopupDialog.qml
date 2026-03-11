@@ -18,6 +18,12 @@ PlasmaExtras.Representation {
     required property PlasmaNM.Handler nmHandler
     required property PlasmaNM.NetworkStatus nmStatus
 
+    readonly property alias stackDepth: stack.depth
+
+    function popStack(): void {
+        stack.pop()
+    }
+
     collapseMarginsHint: true
 
     Component {
@@ -35,6 +41,8 @@ PlasmaExtras.Representation {
 
     header: PlasmaExtras.PlasmoidHeading {
         focus: true
+
+        visible: stack.depth === 1 || (stack.depth > 1 && Plasmoid.containment.pluginName !== "org.kde.plasma.systemtray")
         contentItem: RowLayout {
             Layout.fillWidth: true
 
@@ -48,15 +56,11 @@ PlasmaExtras.Representation {
             PlasmaComponents3.ToolButton {
                 icon.name: mirrored ? "go-next" : "go-previous"
                 text: i18nc("@action:button", "Return to Network Connections")
-                visible: stack.depth > 1
+                visible: stack.depth > 1 && Plasmoid.containment.pluginName !== "org.kde.plasma.systemtray"
+
                 onClicked: {
                     stack.pop()
                 }
-            }
-
-            Loader {
-                sourceComponent: stack.currentItem?.headerItems
-                visible: !!item
             }
         }
     }

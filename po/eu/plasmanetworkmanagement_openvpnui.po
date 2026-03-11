@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-02-11 21:11+0100\n"
+"PO-Revision-Date: 2026-03-10 22:14+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,12 +20,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
-msgstr "«NetworkManager»ek OpenVPNrako euskarria falta du"
+msgstr "NetworkManagerrek OpenVPNrako euskarria falta du"
 
 #: openvpn.cpp:99
 #, kde-format
@@ -377,10 +377,9 @@ msgstr "Automatikoa"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseAsymCompression)
 #: openvpnadvanced.ui:153
-#, fuzzy, kde-format
-#| msgid "Use fast LZO compression."
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "Erabili LZO konpresio azkarra."
+msgstr "Erabili konpresio asimetrikoa"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:162
@@ -483,25 +482,25 @@ msgstr "Mugatu TCP segmentuen gehienezko neurria (MSS)"
 #: openvpnadvanced.ui:320
 #, kde-format
 msgid "Control Path MTU discovery behavior."
-msgstr ""
+msgstr "Kontrolatu bidearen MTU aurkikuntzaren jokabidea."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtuDisc)
 #: openvpnadvanced.ui:323
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "Zehaztu bidearen MTU aurkikuntza:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:339
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Agian"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:344
 #, kde-format
 msgid "Yes"
-msgstr "bai"
+msgstr "Bai"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:355
@@ -523,7 +522,7 @@ msgstr "Ausaz banatu urruneko ostalariak"
 #: openvpnadvanced.ui:365
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "Gehitu ausazko kate bat urruneko DNS izenaren aurrean"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblConnectTimeout)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbConnectTimeout)
@@ -531,13 +530,13 @@ msgstr ""
 #, kde-format
 msgid "Time in seconds to wait for the initial connection before failing."
 msgstr ""
+"Huts egin aurretik hasierako konexioaren zain egoteko denbora, segundotan."
 
 #. i18n: ectx: property (text), widget (QLabel, lblConnectTimeout)
 #: openvpnadvanced.ui:377
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgid "Connect timeout:"
-msgstr "Konexio mota:"
+msgstr "Konexio denbora-muga:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbConnectTimeout)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
@@ -551,31 +550,32 @@ msgstr "Bat ere ez"
 #: openvpnadvanced.ui:396
 #, kde-format
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:414
 #, kde-format
 msgid "Allow pulling of peer DNS names (FQDN) sent by the server."
 msgstr ""
+"Baimendu zerbitzariak bidalitako parekoaren DNS izenak (FQDN) eskuratzea."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:417
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "Baimendu parekoaren DNS izenak (FQDN) eskuratzea"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:424
 #, kde-format
 msgid "Push client information to the server for diagnostics."
-msgstr ""
+msgstr "Bidali bezeroaren informazioa zerbitzarira diagnostikorako."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:427
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "bidali parekoaren informazioa"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:434
@@ -734,38 +734,40 @@ msgstr "Zifratze erabilgarriak eskuratzen..."
 #: openvpnadvanced.ui:644
 #, kde-format
 msgid "Data channel cipher list to negotiate (OpenVPN 2.5+)."
-msgstr ""
+msgstr "Datu-kanalerako negoziatu beharreko zifratze-zerrenda (OpenVPN 2.5+)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:647
-#, fuzzy, kde-format
-#| msgid "Cipher:"
+#, kde-format
 msgid "Data Ciphers:"
-msgstr "Zifratzea:"
+msgstr "Datu-kanalaren zifratzeak:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:676
 #, kde-format
 msgid "Fallback data cipher if negotiation fails (OpenVPN 2.5+)."
 msgstr ""
+"Negoziazioak huts egiten badu erabiliko den erreserbako datu-zifratzea "
+"(OpenVPN 2.5+)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:679
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "Erreserbako datu-zifratzea:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:706
 #, kde-format
 msgid "Disable OpenVPN NCP (cipher negotiation). Requires OpenVPN 2.4+."
 msgstr ""
+"Desgaitu OpenVPN NCP (zifratzearen negoziazioa). OpenVPN 2.4+ behar du."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:709
 #, kde-format
 msgid "Disable cipher negotiation"
-msgstr ""
+msgstr "Desgaitu zifratzearen negoziazioa"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -1046,10 +1048,9 @@ msgstr "TLS-Crypt"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1084
-#, fuzzy, kde-format
-#| msgid "TLS-Crypt"
+#, kde-format
 msgid "TLS-Crypt v2"
-msgstr "TLS-Crypt"
+msgstr "TLS-Crypt v2"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -1077,13 +1078,14 @@ msgstr "Gako-fitxategia:"
 msgid ""
 "Additional local certificate file to help verify the peer certificate chain."
 msgstr ""
+"Parekoaren ziurtagiri-katea egiaztatzen laguntzeko ziurtagiri-fitxategi "
+"lokal gehigarria."
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1123
-#, fuzzy, kde-format
-#| msgid "Copy certificates"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "Kopiatu ziurtagiriak"
+msgstr "Ziurtagiri gehigarrien fitxategia:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)
@@ -1108,49 +1110,49 @@ msgstr "Bezeroa (1)"
 #: openvpnadvanced.ui:1184
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Optional."
-msgstr ""
+msgstr "TLS bertsioa gutxienez (adib. 1.2). Aukerakoa."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMin)
 #: openvpnadvanced.ui:1187
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "TLS bertsioa gutxienez:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMin)
 #: openvpnadvanced.ui:1199
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Leave empty for default."
-msgstr ""
+msgstr "TLS bertsioa gutxienez (adib. 1.2). Hutsi utzi lehenetsirako."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1209
 #, kde-format
 msgid "Allow negotiating higher TLS version than the minimum."
-msgstr ""
+msgstr "Baimendu gutxienekoa baino TLS bertsio handiagoa negoziatzea."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1212
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "edo handiena"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1221
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Optional."
-msgstr ""
+msgstr "TLS bertsio gehienez (adib. 1.3). Aukerakoa."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1224
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "TLS bertsioa gehienez:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMax)
 #: openvpnadvanced.ui:1234
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Leave empty for default."
-msgstr ""
+msgstr "TLS bertsioa gehienez (adib. 1.3). Hutsi utzi lehenetsirako."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyFile)
@@ -1160,12 +1162,14 @@ msgid ""
 "Path to a local Certificate Revocation List (CRL) file to verify peer "
 "certificates."
 msgstr ""
+"Parekoaren ziurtagiriak egiaztatzeko Ziurtagiri Baliogabetuen Zerrenda (CRL) "
+"duen fitxategi lokal baterako bide-izena."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyFile)
 #: openvpnadvanced.ui:1265
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "CRL egiaztapen-fitxategia:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyDir)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyDir)
@@ -1174,12 +1178,14 @@ msgstr ""
 msgid ""
 "Path to a local directory containing Certificate Revocation List (CRL) files."
 msgstr ""
+"Ziurtagiri Baliogabetuen Zerrenda (CRL) fitxategiak dituen direktorio lokal "
+"baterako bide-izena."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyDir)
 #: openvpnadvanced.ui:1292
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "CRL egiaztatzeko direktorioa:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: openvpnadvanced.ui:1315

@@ -18,6 +18,12 @@ PlasmaExtras.Representation {
     required property PlasmaNM.Handler nmHandler
     required property PlasmaNM.NetworkStatus nmStatus
 
+    readonly property alias stackDepth: stack.depth
+
+    function popStack(): void {
+        stack.pop()
+    }
+
     collapseMarginsHint: true
 
     Component {
@@ -49,7 +55,8 @@ PlasmaExtras.Representation {
                 Layout.fillWidth: true
                 icon.name: mirrored ? "go-next" : "go-previous"
                 text: i18nc("@action:button", "Return to Network Connections")
-                visible: stack.depth > 1
+                visible: stack.depth > 1 && Plasmoid.containment.pluginName !== "org.kde.plasma.systemtray"
+
                 onClicked: {
                     stack.pop()
                 }

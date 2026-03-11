@@ -45,8 +45,7 @@ PlasmaExtras.Representation {
                 visible: stack.depth === 1
             }
 
-            PlasmaComponents3.Button {
-                Layout.fillWidth: true
+            PlasmaComponents3.ToolButton {
                 icon.name: mirrored ? "go-next" : "go-previous"
                 text: i18nc("@action:button", "Return to Network Connections")
                 visible: stack.depth > 1

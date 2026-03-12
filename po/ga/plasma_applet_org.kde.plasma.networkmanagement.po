@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:45+0000\n"
+"POT-Creation-Date: 2026-03-12 00:45+0000\n"
 "PO-Revision-Date: 2009-02-05 06:35-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -187,7 +187,7 @@ msgstr ""
 msgid "&Configure Network Connections…"
 msgstr "Cumraigh Fógairt..."
 
-#: PopupDialog.qml:51
+#: PopupDialog.qml:50
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgctxt "@action:button"

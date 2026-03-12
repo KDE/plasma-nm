@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-03-07 10:55+0100\n"
+"PO-Revision-Date: 2026-03-11 18:22+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -552,24 +552,26 @@ msgstr "s"
 #, kde-format
 msgid "Allow pulling of peer DNS names (FQDN) sent by the server."
 msgstr ""
+"Pemitte extraction de nomines de DNS (FQDN) de association (peer) inviate "
+"per le servitor. "
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:417
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "Pemitte extraction de nomines de DNS (FQDN) de association (peer)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:424
 #, kde-format
 msgid "Push client information to the server for diagnostics."
-msgstr ""
+msgstr "Invia information de cliente al sevitor per diagnostica."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:427
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "invia information de association (peer)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:434
@@ -728,7 +730,7 @@ msgstr "Obtenente cyphras disponibile..."
 #: openvpnadvanced.ui:644
 #, kde-format
 msgid "Data channel cipher list to negotiate (OpenVPN 2.5+)."
-msgstr ""
+msgstr "Lista de cifra de canale de datos a negotiar (OpenVPN 2.5+). "
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:647
@@ -740,25 +742,25 @@ msgstr "Ciphraris de datos:"
 #: openvpnadvanced.ui:676
 #, kde-format
 msgid "Fallback data cipher if negotiation fails (OpenVPN 2.5+)."
-msgstr ""
+msgstr "Cifra de datos alternative si negotiations falle  (OpenVPN 2.5+)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:679
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "Recurso de cifras de datos:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:706
 #, kde-format
 msgid "Disable OpenVPN NCP (cipher negotiation). Requires OpenVPN 2.4+."
-msgstr ""
+msgstr "Dishabilita OpenVPN NCP (negotiation de cifra), require OpenVPN 2.4+. "
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:709
 #, kde-format
 msgid "Disable cipher negotiation"
-msgstr ""
+msgstr "Dishabilita negotiation de cifra"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -1068,6 +1070,8 @@ msgstr "File de clave:"
 msgid ""
 "Additional local certificate file to help verify the peer certificate chain."
 msgstr ""
+"File de ceriìtificato local additional per adjutar a verificar le catena de "
+"certificato de association (peer)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1123
@@ -1116,7 +1120,7 @@ msgstr "Minime version de TLS (p.ex. 1.2). Lassa vacue per definition."
 #: openvpnadvanced.ui:1209
 #, kde-format
 msgid "Allow negotiating higher TLS version than the minimum."
-msgstr ""
+msgstr "Permitte negotiar version plus alte de TLS que le minime."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1212

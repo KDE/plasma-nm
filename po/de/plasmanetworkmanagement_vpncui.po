@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2013-2016, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2014, 2016, 2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
 # SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
@@ -223,7 +223,7 @@ msgid ""
 "vpnc's default."
 msgstr ""
 "Zu verwendender lokaler Port (0–65535). Mit dem Standardwert 0 wird ein "
-"zufälliger Port benutzt. Port 500 ist VPNC-Standard."
+"zufälliger Port verwendet. Port 500 ist VPNC-Standard."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193

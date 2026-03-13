@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-03-07 22:22+0200\n"
+"PO-Revision-Date: 2026-03-13 01:20+0200\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -1148,12 +1148,14 @@ msgid ""
 "Path to a local Certificate Revocation List (CRL) file to verify peer "
 "certificates."
 msgstr ""
+"Kelias į vietinį liudijimų panaikinimo sąrašo (CRL) failą, skirtą tikrinti "
+"lygiarangius liudijimus."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyFile)
 #: openvpnadvanced.ui:1265
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "CRL tikrinimo failas:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyDir)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyDir)
@@ -1162,12 +1164,14 @@ msgstr ""
 msgid ""
 "Path to a local directory containing Certificate Revocation List (CRL) files."
 msgstr ""
+"Kelias į vietinį katalogą, kuriame yra liudijimų panaikinimo sąrašo (CRL) "
+"failai."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyDir)
 #: openvpnadvanced.ui:1292
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "CRL tikrinimo katalogas:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: openvpnadvanced.ui:1315

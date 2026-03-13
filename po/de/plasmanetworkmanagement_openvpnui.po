@@ -1,13 +1,13 @@
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2018, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2013-2018, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2014, 2016, 2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025-2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2025-12-04 18:51+0100\n"
+"PO-Revision-Date: 2026-03-08 13:36+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
@@ -25,7 +25,7 @@ msgstr "NetworkManager fehlt die Unterstützung für OpenVPN-Verbindungen"
 #: openvpn.cpp:99
 #, kde-format
 msgid "An unexpected error has occurred"
-msgstr ""
+msgstr "Ein unerwarteter Fehler ist aufgetreten"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19
@@ -234,9 +234,9 @@ msgid ""
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
 "Wenn Schlüsselrichtung verwendet wird, muss das Gegenteil von der VPN-"
-"Gegenstelle benutzt werden. Wenn zum Beispiel die Gegenstelle „1“ verwendet, "
-"muss diese Verbindung „0“ verwenden. Bei Unklarheit über den zu verwendenden "
-"Wert fragen Sie den Systemverwalter."
+"Gegenstelle verwendet werden. Wenn zum Beispiel die Gegenstelle „1“ "
+"verwendet, muss diese Verbindung „0“ verwenden. Bei Unklarheit über den zu "
+"verwendenden Wert fragen Sie den Systemverwalter."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
@@ -374,10 +374,9 @@ msgstr "Automatisch"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseAsymCompression)
 #: openvpnadvanced.ui:153
-#, fuzzy, kde-format
-#| msgid "Use fast LZO compression."
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "Schnelle LZO-Komprimierung verwenden."
+msgstr "Asymetrische Komprimierung verwenden"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:162
@@ -491,7 +490,7 @@ msgstr ""
 #: openvpnadvanced.ui:339
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Vielleicht"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:344
@@ -545,7 +544,7 @@ msgstr "Keiner"
 #: openvpnadvanced.ui:396
 #, kde-format
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:414
@@ -563,13 +562,13 @@ msgstr ""
 #: openvpnadvanced.ui:424
 #, kde-format
 msgid "Push client information to the server for diagnostics."
-msgstr ""
+msgstr "Client-Informationen zu Diagnosezwecken auf den Server übertragen"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:427
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "Peer-Informationen übertragen"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:434
@@ -710,10 +709,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:647
-#, fuzzy, kde-format
-#| msgid "Cipher:"
+#, kde-format
 msgid "Data Ciphers:"
-msgstr "Chiffre:"
+msgstr "Daten-Chiffren:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:676
@@ -885,7 +883,7 @@ msgstr "Namen exakt überprüfen"
 #: openvpnadvanced.ui:898
 #, kde-format
 msgid "Verify name by prefix"
-msgstr ""
+msgstr "Name anhand des Präfixes überprüfen"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:903
@@ -1005,10 +1003,9 @@ msgstr "TLS-Crypt"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1084
-#, fuzzy, kde-format
-#| msgid "TLS-Crypt"
+#, kde-format
 msgid "TLS-Crypt v2"
-msgstr "TLS-Crypt"
+msgstr "TLS-Crypt v2"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -1036,10 +1033,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1123
-#, fuzzy, kde-format
-#| msgid "Copy certificates"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "Zertifikate kopieren"
+msgstr "Zusätzliche Zertifikatsdatei:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)
@@ -1070,13 +1066,13 @@ msgstr ""
 #: openvpnadvanced.ui:1187
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "Minimale TLS-Version:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMin)
 #: openvpnadvanced.ui:1199
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Leave empty for default."
-msgstr ""
+msgstr "Minimale TLS-Version (z. B. 1.2). Leer lassen für Standardwert."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1209
@@ -1088,25 +1084,25 @@ msgstr ""
 #: openvpnadvanced.ui:1212
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "oder höchste"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1221
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Optional."
-msgstr ""
+msgstr "Maximale TLS-Version (z. B. 1.3). Optional."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1224
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "Maximale TLS-Version:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMax)
 #: openvpnadvanced.ui:1234
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Leave empty for default."
-msgstr ""
+msgstr "Maximale TLS-Version (z. B. 1.3). Leer lassen für Standardwert."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyFile)
@@ -1288,10 +1284,9 @@ msgid "OTP"
 msgstr "OTP"
 
 #: openvpnauth.cpp:95
-#, fuzzy, kde-format
-#| msgid "HMAC Authentication:"
+#, kde-format
 msgid "authenticator"
-msgstr "HMAC-Authentifizierung:"
+msgstr "Authentifikator"
 
 #: openvpnauth.cpp:95
 #, kde-format
@@ -1301,7 +1296,7 @@ msgstr ""
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "token"
-msgstr ""
+msgstr "Token"
 
 #: openvpnauth.cpp:95
 #, kde-format

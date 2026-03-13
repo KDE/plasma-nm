@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2015-2017, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
@@ -152,7 +152,7 @@ msgstr "Verschiedenes"
 #: sstpadvanced.ui:252
 #, kde-format
 msgid "Use custom unit number:"
-msgstr "Benutzerdefinierte Einheitennummer benutzen:"
+msgstr "Benutzerdefinierte Einheitennummer verwenden:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: sstpadvanced.ui:285

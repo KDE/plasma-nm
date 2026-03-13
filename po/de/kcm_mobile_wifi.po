@@ -1,16 +1,16 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# SPDX-FileCopyrightText: 2018, 2019, 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2018-2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2022 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2024 Julian Groß <julian.g@posteo.de>
-# SPDX-FileCopyrightText: 2024, 2025 Alois Spitzbart <spitz234@hotmail.com>
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2024-2025 Alois Spitzbart <spitz234@hotmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:46+0000\n"
-"PO-Revision-Date: 2025-11-29 16:55+0100\n"
+"PO-Revision-Date: 2026-03-06 16:07+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -78,7 +78,7 @@ msgstr "WLAN"
 #: ui/main.qml:98
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Mehr"
 
 #: ui/main.qml:107
 #, kde-format
@@ -97,16 +97,14 @@ msgid "Add Custom Connection"
 msgstr "Benutzerdefinierte Verbindung hinzufügen"
 
 #: ui/MorePage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Wi-Fi Settings"
-msgstr "IP-Einstellungen"
+msgstr "WLAN-Einstellungen"
 
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr ""
+msgstr "Benachrichtigung bei Verbindungsänderungen"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

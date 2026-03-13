@@ -1,5 +1,5 @@
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2019, 2020 Burkhard Lück <lueck@hube-lueck.de>
-# SPDX-FileCopyrightText: 2016, 2020, 2021 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2013-2017, 2019-2020 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2016, 2020-2021 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2020 Alois Spitzbart <spitz234@hotmail.com>
 # SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
 # SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
@@ -10,8 +10,8 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2024-10-13 15:59+0200\n"
-"Last-Translator: Flori G <Renner03@protonmail.com>\n"
+"PO-Revision-Date: 2025-11-29 17:22+0100\n"
+"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
@@ -654,7 +654,7 @@ msgstr "Entsperren von %1 erforderlich"
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
 msgstr ""
-"Das mobile Breitbandgerät „%1“ benötigt einen %2-Code bevor es verwendet "
+"Das mobile Breitbandgerät „%1“ benötigt einen %2-Code, bevor es verwendet "
 "werden kann."
 
 #: pindialog.cpp:84 pindialog.cpp:116
@@ -758,7 +758,7 @@ msgid ""
 "The mobile broadband device '%1' requires a SIM PIN code before it can be "
 "used."
 msgstr ""
-"Das mobile Breitbandgerät „%1“ benötigt einen SIM-PIN-Code bevor es "
+"Das mobile Breitbandgerät „%1“ benötigt einen SIM-PIN-Code, bevor es "
 "verwendet werden kann."
 
 #. i18n: ectx: property (text), widget (QLabel, pukLabel)

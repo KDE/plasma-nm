@@ -1,19 +1,18 @@
 # SPDX-FileCopyrightText: 2013 Benjamin Weis <benjamin.weis@gmx.com>
 # SPDX-FileCopyrightText: 2013 Markus Slopianka <kamikazow@web.de>
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021 Burkhard Lück <lueck@hube-lueck.de>
-# SPDX-FileCopyrightText: 2014, 2016, 2018, 2020, 2022, 2023 Frederik Schwarzer <schwarzer@kde.org>
+# SPDX-FileCopyrightText: 2013-2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2014, 2016, 2018, 2020, 2022-2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2022, 2025 Alois Spitzbart <spitz234@hotmail.com>
 # SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
-# SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
-# SPDX-FileCopyrightText: 2024, 2025 Flori G <Renner03@protonmail.com>
+# SPDX-FileCopyrightText: 2024-2025 Flori G <Renner03@protonmail.com>
 # SPDX-FileCopyrightText: 2025 Frank Steinmetzger <dev-kde@felsenfleischer.de>
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025-2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2025-12-01 19:44+0100\n"
+"PO-Revision-Date: 2026-03-09 17:30+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -21,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -918,8 +917,8 @@ msgid ""
 "indicate priority lower than the default.\n"
 "           "
 msgstr ""
-"Wenn die Verbindung auf automatische Verbindung eingestellt ist, werden "
-"Verbindungen mit höherer Priorität bevorzugt werden. Standardwert ist 0.\n"
+"Wenn die Verbindung auf „automatische Verbindung“ eingestellt ist, werden "
+"Verbindungen mit höherer Priorität bevorzugt. Standardwert ist 0.\n"
 "Eine höhere Zahl bedeutet höhere Priorität. Eine negative Zahl kann "
 "verwendet werden, um eine Priorität niedriger als die Standardeinstellung "
 "anzugeben.\n"
@@ -1583,7 +1582,7 @@ msgid ""
 "a Wi-Fi network on the specified channel"
 msgstr ""
 "Funkkanal für die WLAN-Verbindung. Das Gerät wird nur ein WLAN-Netzwerk mit "
-"dem angegebenen Kanal benutzen oder ein Ad-hoc-Netzwerk mit diesem Kanal "
+"dem angegebenen Kanal verwenden oder ein Ad-hoc-Netzwerk mit diesem Kanal "
 "erstellen."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)

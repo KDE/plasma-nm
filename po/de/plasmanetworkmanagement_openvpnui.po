@@ -1,13 +1,13 @@
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2016, 2017, 2018, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2013-2018, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2014, 2016, 2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025-2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:45+0000\n"
-"PO-Revision-Date: 2025-12-04 18:51+0100\n"
+"PO-Revision-Date: 2026-03-08 13:36+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.2\n"
 
 #: openvpn.cpp:182
 #, kde-format
@@ -239,9 +239,9 @@ msgid ""
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
 "Wenn Schlüsselrichtung verwendet wird, muss das Gegenteil von der VPN-"
-"Gegenstelle benutzt werden. Wenn zum Beispiel die Gegenstelle „1“ verwendet, "
-"muss diese Verbindung „0“ verwenden. Bei Unklarheit über den zu verwendenden "
-"Wert fragen Sie den Systemverwalter."
+"Gegenstelle verwendet werden. Wenn zum Beispiel die Gegenstelle „1“ "
+"verwendet, muss diese Verbindung „0“ verwenden. Bei Unklarheit über den zu "
+"verwendenden Wert fragen Sie den Systemverwalter."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
@@ -761,7 +761,7 @@ msgstr "Namen exakt überprüfen"
 #: openvpnadvanced.ui:705
 #, kde-format
 msgid "Verify name by prefix"
-msgstr ""
+msgstr "Name anhand des Präfixes überprüfen"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:710
@@ -1069,10 +1069,9 @@ msgid "OTP"
 msgstr "OTP"
 
 #: openvpnauth.cpp:95
-#, fuzzy, kde-format
-#| msgid "HMAC Authentication:"
+#, kde-format
 msgid "authenticator"
-msgstr "HMAC-Authentifizierung:"
+msgstr "Authentifikator"
 
 #: openvpnauth.cpp:95
 #, kde-format
@@ -1082,7 +1081,7 @@ msgstr ""
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "token"
-msgstr ""
+msgstr "Token"
 
 #: openvpnauth.cpp:95
 #, kde-format

@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
-# SPDX-FileCopyrightText: 2013, 2014, 2015, 2017, 2019, 2021 Burkhard Lück <lueck@hube-lueck.de>
+# SPDX-FileCopyrightText: 2013-2015, 2017, 2019, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
+# SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_strongswanui\n"
@@ -41,8 +41,8 @@ msgid ""
 "Configuration uses ssh-agent for authentication, but no ssh-agent found "
 "running."
 msgstr ""
-"Die Einrichtung benutzt ssh-agent für die Authentifizierung, das Programm "
-"ssh-agent läuft aber nicht. "
+"Die Einrichtung verwendet „ssh-agent“ für die Authentifizierung, das "
+"Programm „ssh-agent“ läuft aber nicht."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)

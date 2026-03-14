@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# SPDX-FileCopyrightText: 2017, 2023, 2024 Vít Pelčák <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2017, 2023, 2024, 2026 Vít Pelčák <vit@pelcak.org>
 # Vit Pelcak <vit@pelcak.org>, 2017, 2020, 2021, 2023.
 #
 msgid ""
@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 03:06+0000\n"
-"PO-Revision-Date: 2024-09-03 08:40+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-03-13 11:55+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 24.08.0\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -109,7 +109,7 @@ msgstr "Zobrazit virtuální připojení"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "Vytvořit nové připojení jako systémové připojení"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
@@ -134,6 +134,7 @@ msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"Heslo hotspotu musí být buď prázdné, nebo musí obsahovat 8 až 64 znaků."
 
 #: qml/ConfigurationDialog.qml:106
 msgid ""
@@ -141,12 +142,16 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"Heslo hotspotu musí být buď prázdné, nebo se skládat z jednoho z "
+"následujících znaků:<ul><li>Přesně 5 nebo 13 libovolných znaků</"
+"li><li>Přesně 10 nebo 26 hexadecimálních znaků:<br/>abcdef, ABCDEF nebo 0-9</"
+"li></ul>"
 
 #. i18n is a way to use something pre-exposed to QML.
 #: qml/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: qml/ConnectionItem.qml:85
 msgid "Connect"
@@ -159,7 +164,7 @@ msgstr "Odpojit se"
 #: qml/ConnectionItem.qml:90
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
-msgstr ""
+msgstr "Nelze se připojit k této síti, protože nebyla detekována."
 
 #: qml/ConnectionItem.qml:95
 msgid "Delete"
@@ -180,7 +185,7 @@ msgstr "Připojuji se"
 #: qml/ConnectionItem.qml:124
 msgctxt "@title:column Available networks"
 msgid "Available"
-msgstr ""
+msgstr "Dostupné"
 
 #: qml/main.qml:151
 msgid "Add new connection"
@@ -210,29 +215,29 @@ msgstr "Opravdu si přejete smazat spojení '%1'?"
 #: qml/main.qml:262
 msgctxt "@action:button Connect to network"
 msgid "Connect"
-msgstr ""
+msgstr "Připojit se"
 
 #: qml/main.qml:268
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 #: qml/main.qml:274
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr ""
+msgstr "Vložit heslo"
 
 #: qml/main.qml:280
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "Síť: %1"
 
 #: qml/main.qml:301
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "Heslo musí být platný klíč WEP"
 
 #: qml/main.qml:302
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "Heslo musí mít délku 8 až 64 znaků"

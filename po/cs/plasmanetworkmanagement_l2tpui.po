@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Vit Pelcak <vit@pelcak.org>, 2013, 2014, 2016, 2020, 2021.
+# SPDX-FileCopyrightText: 2013, 2014, 2016, 2020, 2021, 2026 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2021-06-17 16:26+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-03-13 14:34+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.04.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -29,7 +29,7 @@ msgstr "Brána:"
 #: l2tp.ui:35
 #, kde-format
 msgid "L2TP server IP or name."
-msgstr ""
+msgstr "IP adresa nebo název serveru L2TP."
 
 #. i18n: ectx: property (text), widget (QLabel, labelAuthType)
 #: l2tp.ui:45
@@ -69,6 +69,8 @@ msgid ""
 "<html><head/><body><p>Set the name used for authenticating the local system "
 "to the peer to &lt;name&gt;.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Nastavte jméno používané pro ověřování lokálního "
+"systému na protistranu na &lt;name&gt;.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_2)
 #: l2tp.ui:113
@@ -83,6 +85,7 @@ msgid ""
 "<html><head/><body><p>Password passed to PPPD when prompted for it.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>Heslo předané PPPD po jeho vyžádání. </p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_3)
 #: l2tp.ui:140
@@ -97,6 +100,8 @@ msgid ""
 "<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
 "host name for</p><p>authentication purposes.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Připojit doménové jméno &lt;domain&gt; k názvu "
+"lokálního hosta</p><p>pro účely ověřování.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -113,6 +118,8 @@ msgid ""
 "<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
 "cer or .p12 formats.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Soubor certifikační autority (CA) ve formátu .pem, ."
+"der, .crt, .cer nebo .p12.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: l2tp.ui:199
@@ -127,6 +134,8 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Certifikát ve formátech .pem, .der, .crt, .cer nebo ."
+"p12.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
@@ -143,6 +152,8 @@ msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Soukromý klíč ve formátech .pem, .der, .key, .pk8 "
+"nebo .p12.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -159,6 +170,8 @@ msgid ""
 "<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>Heslo pro soukromý klíč nebo certifikát PKCS#12.</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:292
@@ -265,6 +278,8 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Volitelné. Seznam návrhů pro ESP – rychlý režim. "
+"Formát je „enc-integ,enc-integ, …“.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:261
@@ -273,6 +288,8 @@ msgid ""
 "<html><head/><body><p>How long the keying channel of a connection should "
 "last before being renegotiated.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Jak dlouho by měl klíčový kanál připojení trvat, než "
+"dojde k jeho renegociaci.</p></body></html>"
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
@@ -285,7 +302,7 @@ msgstr "hh:mm:ss"
 #: l2tpipsec.ui:271
 #, kde-format
 msgid "Phase1 Lifetime:"
-msgstr ""
+msgstr "Fáze 1 – životnost:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: l2tpipsec.ui:278
@@ -294,12 +311,14 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Volitelné. Seznam návrhů pro IKE – hlavní režim. "
+"Formát je „enc-integ-group,enc-integ-group, …“.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:285
 #, kde-format
 msgid "Phase2 Lifetime:"
-msgstr ""
+msgstr "Fáze 2 – životnost:"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:295
@@ -309,6 +328,9 @@ msgid ""
 "of encryption/authentication keys for user packets) should last, from "
 "successful negotiation to expiry.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Jak dlouho by měla trvat konkrétní instance připojení "
+"(sada šifrovacích/ověřovacích klíčů pro uživatelské pakety) od úspěšného "
+"vyjednání až po vypršení platnosti.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
 #: l2tpipsec.ui:305
@@ -320,6 +342,11 @@ msgid ""
 "strongSwan or Libreswan documentation for leftid/rightid syntax and identity "
 "parsing.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Volitelné. Jak by měl být IPsec server identifikován "
+"pro ověření. Někdy se označuje jako Peer ID nebo Gateway ID, také označované "
+"jako rightid v strongSwan, Libreswan, Openswan a FreeS/WAN. Viz dokumentace "
+"strongSwan nebo Libreswan pro syntaxi leftid/rightid a analýzu identity.</"
+"p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:312
@@ -329,6 +356,9 @@ msgid ""
 "encrypted. This saves some bandwidth, but uses more processing power.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>IPComp komprimuje surové IP pakety před jejich "
+"šifrováním. To šetří šířku pásma, ale vyžaduje větší výpočetní výkon.</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:315
@@ -343,6 +373,8 @@ msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
 "only if the server doesn’t support PFS.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Zakázat dokonalé utajení předávání. Tuto možnost "
+"povolte pouze v případě, že server nepodporuje PFS.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:325
@@ -358,6 +390,9 @@ msgid ""
 "encapsulation even if no NAT situation is detected might help in such cases."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Některé brány firewall blokují provoz ESP. V takových "
+"případech může pomoci vynucení zapouzdření do UDP, i když není detekována "
+"situace s NAT.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:335
@@ -462,6 +497,9 @@ msgid ""
 "transmit\n"
 "and the receive directions."
 msgstr ""
+"Povolit/zakázat kompresi hlavičky TCP/IP ve stylu Van Jacobson v obou "
+"směrech\n"
+"vysílání a příjmu."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbTCPheaders)
 #: l2tpppp.ui:137
@@ -476,24 +514,27 @@ msgid ""
 "Allow protocol field compression negotiation in both the receive and the\n"
 " transmit directions."
 msgstr ""
+"Povolit vyjednávání komprese pole protokolu v obou směrech,\n"
+"tj. při příjmu i vysílání."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbCompressionNegotiation)
 #: l2tpppp.ui:151
 #, kde-format
 msgid "Use protocol field compression negotiation"
-msgstr ""
+msgstr "Použít vyjednávání komprese pole protokolu"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:164
 #, kde-format
 msgid "Use Address/Control compression in both directions (send and receive)."
 msgstr ""
+"Použijte kompresi adresy/ovládání v obou směrech (odesílání i přijímání)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:167
 #, kde-format
 msgid "Use Address/Control compression"
-msgstr ""
+msgstr "Použít kompresi adresy/ovládání"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
 #: l2tpppp.ui:180
@@ -506,6 +547,7 @@ msgstr "Echo"
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
 msgstr ""
+"Odesílat echo-požadavky LCP, aby se zjistilo, zda je protistrana aktivní."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbsendEcho)
 #: l2tpppp.ui:192
@@ -529,7 +571,7 @@ msgstr "MRU: "
 #: l2tpppp.ui:238
 #, kde-format
 msgid "MTU: "
-msgstr ""
+msgstr "MTU: "
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, gbMPPE)
 #: l2tpppp.ui:257
@@ -540,6 +582,9 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
+"Poznámka: Šifrování MPPE je k dispozici pouze s metodami ověřování\n"
+"MSCHAP. Chcete-li toto políčko zaškrtnout, vyberte jednu nebo více\n"
+"metod ověřování MSCHAP: MSCHAP nebo MSCHAPv2."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMPPE)
 #: l2tpppp.ui:260
@@ -557,7 +602,7 @@ msgstr "Šifrování:"
 #: l2tpppp.ui:297
 #, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr ""
+msgstr "Vyžadujte použití MPPE s 40/128bitovým šifrováním nebo vše."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
 #: l2tpppp.ui:301
@@ -584,6 +629,8 @@ msgstr "40 bit"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
+"Povolit MPPE používat stavový režim. Nejprve se stále zkouší bezstavový "
+"režim."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbstatefulEncryption)
 #: l2tpppp.ui:322

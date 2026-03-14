@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Vít Pelčák <vit@pelcak.org>, 2014, 2015, 2016, 2017, 2018, 2019, 2020.
+# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2018, 2019, 2020, 2026 Vít Pelčák <vit@pelcak.org>
 # SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
@@ -8,29 +8,27 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-25 00:49+0000\n"
-"PO-Revision-Date: 2025-10-01 17:47+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-03-13 14:34+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
 msgid "Error resetting the modem: %1"
-msgstr ""
+msgstr "Chyba při resetování modemu: %1"
 
 #: cellular/cellularmodem.cpp:364
-#, fuzzy, kde-format
-#| msgctxt "network interface disconnecting state label"
-#| msgid "Deactivating connection"
+#, kde-format
 msgid "Error activating connection: %1"
-msgstr "Vypínání spojení"
+msgstr "Chyba při aktivaci připojení: %1"
 
 #: cellular/cellularmodem.cpp:402
 #, kde-format
@@ -38,23 +36,21 @@ msgid "Error adding connection: %1"
 msgstr "Chyba při přidávání spojení: %1"
 
 #: cellular/cellularmodem.cpp:419
-#, fuzzy, kde-format
-#| msgctxt "network interface disconnecting state label"
-#| msgid "Deactivating connection"
+#, kde-format
 msgid "Error removing connection: %1"
-msgstr "Vypínání spojení"
+msgstr "Chyba při odstraňování připojení: %1"
 
 #: cellular/cellularmodem.cpp:456
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
-msgstr ""
+msgstr "Chyba při aktualizaci nastavení připojení pro %1: %2."
 
 #: cellular/cellularmodemdetails.cpp:111 cellular/cellularmodemdetails.cpp:213
 #: cellular/cellularmodemdetails.cpp:245 cellular/cellularmodemdetails.cpp:433
 #: cellular/cellularmodemdetails.cpp:465
 #, kde-format
 msgid "Unknown"
-msgstr "Neznámý"
+msgstr "Neznámé"
 
 #: cellular/cellularmodemdetails.cpp:114 cellular/cellularmodemdetails.cpp:468
 #, kde-format
@@ -144,12 +140,12 @@ msgstr "Vypnuto"
 #: cellular/cellularmodemdetails.cpp:217
 #, kde-format
 msgid "Low-power mode"
-msgstr ""
+msgstr "Režim nízké spotřeby"
 
 #: cellular/cellularmodemdetails.cpp:219
 #, kde-format
 msgid "Full power mode"
-msgstr ""
+msgstr "Režim plného výkonu"
 
 #: cellular/cellularmodemdetails.cpp:243
 #, kde-format
@@ -188,17 +184,14 @@ msgid "Enabled"
 msgstr "Povoleno"
 
 #: cellular/cellularmodemdetails.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "network interface doing dhcp request in most cases"
-#| msgid "Setting network address"
+#, kde-format
 msgid "Searching for network provider"
-msgstr "Nastavuje se adresa sítě"
+msgstr "Hledání poskytovatele síťových služeb"
 
 #: cellular/cellularmodemdetails.cpp:261
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Registered with network provider"
-msgstr "Omezit na zařízení:"
+msgstr "Registrováno u poskytovatele síťových služeb"
 
 #: cellular/cellularmodemdetails.cpp:263
 #, kde-format
@@ -208,7 +201,7 @@ msgstr "Odpojuji"
 #: cellular/cellularmodemdetails.cpp:265
 #, kde-format
 msgid "Connecting"
-msgstr "Navazuji spojení"
+msgstr "Připojování"
 
 #: cellular/cellularmodemdetails.cpp:267
 #, kde-format
@@ -228,12 +221,12 @@ msgstr "Neznámá chyba."
 #: cellular/cellularmodemdetails.cpp:280
 #, kde-format
 msgid "SIM is required but missing."
-msgstr ""
+msgstr "SIM karta je vyžadována, ale chybí."
 
 #: cellular/cellularmodemdetails.cpp:282
 #, kde-format
 msgid "SIM is available but unusable."
-msgstr ""
+msgstr "SIM karta je k dispozici, ale nelze ji použít."
 
 #: cellular/cellularmodemdetails.cpp:284
 #, kde-format
@@ -248,67 +241,67 @@ msgstr "eSIM není inicializována."
 #: cellular/cellularmodemdetails.cpp:312
 #, kde-format
 msgid "Not registered, not searching for new operator to register."
-msgstr ""
+msgstr "Neregistrováno, nehledá se nový operátor pro registraci."
 
 #: cellular/cellularmodemdetails.cpp:314
 #, kde-format
 msgid "Registered on home network."
-msgstr ""
+msgstr "Registrováno v domácí síti."
 
 #: cellular/cellularmodemdetails.cpp:316
 #, kde-format
 msgid "Not registered, searching for new operator to register with."
-msgstr ""
+msgstr "Neregistrováno, hledání nového operátora pro registraci."
 
 #: cellular/cellularmodemdetails.cpp:318
 #, kde-format
 msgid "Registration denied."
-msgstr ""
+msgstr "Registrace zamítnuta."
 
 #: cellular/cellularmodemdetails.cpp:320
 #, kde-format
 msgid "Unknown registration status."
-msgstr ""
+msgstr "Neznámý stav registrace."
 
 #: cellular/cellularmodemdetails.cpp:322
 #, kde-format
 msgid "Registered on a roaming network."
-msgstr ""
+msgstr "Registrovano v roamingové síti."
 
 #: cellular/cellularmodemdetails.cpp:324
 #, kde-format
 msgid "Registered for \"SMS only\", on home network."
-msgstr ""
+msgstr "Registrováno pouze pro SMS, v domácí síti."
 
 #: cellular/cellularmodemdetails.cpp:326
 #, kde-format
 msgid "Registered for \"SMS only\", roaming network."
-msgstr ""
+msgstr "Registrováno pouze pro SMS, v roamingové síti."
 
 #: cellular/cellularmodemdetails.cpp:328
 #, kde-format
 msgid "Emergency services only."
-msgstr ""
+msgstr "Pouze pro tísňové služby."
 
 #: cellular/cellularmodemdetails.cpp:330
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", home network."
-msgstr ""
+msgstr "Registrováno pro „CSFB není preferováno“, domácí síť."
 
 #: cellular/cellularmodemdetails.cpp:332
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", roaming network."
-msgstr ""
+msgstr "Registrováno pro „CSFB není preferováno“, roamingová síť."
 
 #: cellular/cellularmodemdetails.cpp:334
 #, kde-format
 msgid "Attached for access to Restricted Local Operator Services."
-msgstr ""
+msgstr "Připojeno pro přístup k omezeným službám místního operátora."
 
 #: cellular/cellularmodemdetails.cpp:374
 #, kde-format
 msgid "Scanning networks failed: %1"
-msgstr ""
+msgstr "Skenování sítí selhalo: %1"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: cellular/cellularmodemdetails.cpp:435
@@ -327,12 +320,12 @@ msgstr "Ne"
 #: cellular/cellularmodemdetails.cpp:439
 #, kde-format
 msgid "GuessYes"
-msgstr ""
+msgstr "GuessYes"
 
 #: cellular/cellularmodemdetails.cpp:441
 #, kde-format
 msgid "GuessNo"
-msgstr ""
+msgstr "GuessNo"
 
 #: cellular/cellularmodemdetails.cpp:474
 #, kde-format
@@ -362,7 +355,7 @@ msgstr "Cokoliv"
 #: cellular/cellularsim.cpp:83
 #, kde-format
 msgid "Lock reason unknown."
-msgstr ""
+msgstr "Důvod uzamčení neznámý."
 
 #: cellular/cellularsim.cpp:85
 #, kde-format
@@ -435,18 +428,14 @@ msgid "Modem requires the PH-FSIM PUK code."
 msgstr "Modem vyžaduje kód PH-FSIM PUK."
 
 #: cellular/cellularsim.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network PIN code."
+#, kde-format
 msgid "Modem requires the network subset PIN code."
-msgstr "Modem vyžaduje kód sítě PIN."
+msgstr "Modem vyžaduje PIN kód podsítě."
 
 #: cellular/cellularsim.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network PUK code."
+#, kde-format
 msgid "Modem requires the network subset PUK code."
-msgstr "Modem vyžaduje kód sítě PUK."
+msgstr "Modem vyžaduje PUK kód podsítě."
 
 #: cellular/cellularsim.cpp:158
 #, kde-format
@@ -456,22 +445,22 @@ msgstr "(prázdný)"
 #: cellular/cellularsim.cpp:172
 #, kde-format
 msgid "Error toggling SIM lock: %1"
-msgstr ""
+msgstr "Chyba při přepínání zámku SIM karty: %1"
 
 #: cellular/cellularsim.cpp:181
 #, kde-format
 msgid "Error changing the PIN: %1"
-msgstr ""
+msgstr "Chyba při změně PIN kódu: %1"
 
 #: cellular/cellularsim.cpp:194
 #, kde-format
 msgid "Error sending the PIN: %1"
-msgstr ""
+msgstr "Chyba při odesílání PIN kódu: %1"
 
 #: cellular/cellularsim.cpp:207
 #, kde-format
 msgid "Error sending the PUK: %1"
-msgstr ""
+msgstr "Chyba při odesílání PUK kódu: %1"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -506,7 +495,7 @@ msgstr "Síla signálu"
 #, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
-msgstr ""
+msgstr "%1%"
 
 #: editor/connectiondetails.cpp:141 editor/connectiondetails.cpp:151
 #, kde-format
@@ -724,13 +713,13 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "Stav"
 
 #: editor/connectioneditorbase.cpp:215
 #, kde-format
 msgctxt "@title:tab General configuration"
 msgid "General"
-msgstr ""
+msgstr "Obecné"
 
 #: editor/connectioneditorbase.cpp:222 editor/connectioneditorbase.cpp:248
 #, kde-format
@@ -833,13 +822,13 @@ msgstr "802.3ad"
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive transmit load balancing"
-msgstr ""
+msgstr "Adaptivní vyrovnávání zatížení vysílání"
 
 #: editor/settings/bondwidget.cpp:54
 #, kde-format
 msgctxt "bond mode"
 msgid "Adaptive load balancing"
-msgstr ""
+msgstr "Adaptivní vyrovnávání zatížení"
 
 #: editor/settings/bondwidget.cpp:57
 #, kde-format
@@ -943,11 +932,14 @@ msgid ""
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 msgstr ""
+"<qt>Více informací o těchto hodnotách naleznete zde:<br/><a href='https://"
+"developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome."
+"org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
 
 #: editor/settings/ipv4widget.cpp:431
 #, kde-format
 msgid "Send hostname:"
-msgstr ""
+msgstr "Odeslat název hostitele:"
 
 #: editor/settings/ipv4widget.cpp:436
 #, kde-format
@@ -969,7 +961,7 @@ msgstr " ms"
 #: editor/settings/ipv4widget.cpp:445
 #, kde-format
 msgid "DAD timeout:"
-msgstr ""
+msgstr "Časový limit DAD:"
 
 #: editor/settings/ipv4widget.cpp:466 editor/settings/ipv6widget.cpp:406
 #, kde-format
@@ -1011,11 +1003,14 @@ msgid ""
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://www.kde."
 "org&gt;</li></ul></qt>"
 msgstr ""
+"<qt>Tento záznam musí být jedním z následujících: <ul><li>DNS: &lt;název "
+"nebo IP adresa&gt;</li> <li>EMAIL: &lt;e-mail&gt;</li> <li>URI: &lt;uri, "
+"např. https://www.kde.org&gt;</li></ul></qt>"
 
 #: editor/settings/security802-1x.cpp:522
 #, kde-format
 msgid "Connect to these servers only"
-msgstr ""
+msgstr "Připojit se pouze k těmto serverům"
 
 #: editor/settings/teamwidget.cpp:219
 #, kde-format
@@ -1140,13 +1135,13 @@ msgstr "CA Certifikát:"
 #: editor/settings/ui/802-1x.ui:182
 #, kde-format
 msgid "Subject match:"
-msgstr ""
+msgstr "Shoda předmětu:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:199
 #, kde-format
 msgid "Alternative subject matches:"
-msgstr ""
+msgstr "Alternativní shody předmětu:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
@@ -1159,7 +1154,7 @@ msgstr "…"
 #: editor/settings/ui/802-1x.ui:223
 #, kde-format
 msgid "Connect to these servers:"
-msgstr ""
+msgstr "Připojit se pouze k těmto serverům:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
@@ -1354,13 +1349,13 @@ msgstr " ms"
 #: editor/settings/ui/bond.ui:192
 #, kde-format
 msgid "Link up delay:"
-msgstr ""
+msgstr "Zpoždění připojení:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/bond.ui:212
 #, kde-format
 msgid "Link down delay:"
-msgstr ""
+msgstr "Zpoždění odpojení:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/bond.ui:239
@@ -1384,7 +1379,7 @@ msgstr "Přemostěná spojení:"
 #: editor/settings/ui/bridge.ui:107
 #, kde-format
 msgid "Aging time:"
-msgstr ""
+msgstr "Doba stárnutí:"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, agingTime)
 #. i18n: ectx: property (suffix), widget (QSpinBox, forwardDelay)
@@ -1413,13 +1408,13 @@ msgstr "Priorita:"
 #: editor/settings/ui/bridge.ui:174
 #, kde-format
 msgid "Forward delay:"
-msgstr ""
+msgstr "Zpoždění při předávání:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bridge.ui:203
 #, kde-format
 msgid "Hello time:"
-msgstr ""
+msgstr "Čas uvítání:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: editor/settings/ui/bridge.ui:232
@@ -1460,6 +1455,10 @@ msgid ""
 "The higher number means higher priority. A negative number can be used to "
 "indicate priority lower than the default."
 msgstr ""
+"Pokud je připojení nastaveno na automatické připojení, budou upřednostněna "
+"připojení s vyšší prioritou. Výchozí hodnota je 0.\n"
+"Čím vyšší číslo, tím vyšší priorita. Záporné číslo lze použít k označení "
+"priority nižší než výchozí."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1480,6 +1479,8 @@ msgid ""
 "Fine-grained permissions editor for this connection. It lets you choose "
 "which users can activate/modify/delete this connection."
 msgstr ""
+"Editor podrobných oprávnění pro toto připojení. Umožňuje vám vybrat, kteří "
+"uživatelé mohou toto připojení aktivovat/upravovat/smazat."
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
@@ -1529,6 +1530,8 @@ msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr ""
+"Signalizuje aplikacím, zda je připojení měřené, a proto\n"
+"by mělo být omezeno využívání dat."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:164
@@ -1720,12 +1723,14 @@ msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
 "separate entries."
 msgstr ""
+"V tomto poli zadejte jednu nebo více domén DNS, které chcete prohledat. "
+"Položky oddělte čárkou (,)."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:180 editor/settings/ui/ipv6.ui:287
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
-msgstr ""
+msgstr "Upravit seznam DNS domén, které se prohledávají"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
 #: editor/settings/ui/ipv4.ui:198
@@ -1743,12 +1748,15 @@ msgid ""
 "DHCP\n"
 "lease and options."
 msgstr ""
+"V tomto poli zadejte ID klienta DHCP, což je řetězec odeslaný na server\n"
+"DHCP k identifikaci místního počítače, který může server DHCP použít k\n"
+"přizpůsobení přidělování a možností DHCP."
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:379
 #, kde-format
 msgid "Route Metric:"
-msgstr ""
+msgstr "Metrika trasy:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:414
@@ -1761,6 +1769,12 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Skóre, které pomáhá vybrat nejlepší cestu pro datové pakety, aby dosáhly\n"
+"svého cíle, na základě faktorů, jako je vzdálenost, zpoždění a "
+"spolehlivost.\n"
+"\n"
+"Výchozí hodnota -1 znamená, že NetworkManager může vybrat a spravovat\n"
+"skutečnou metriku trasy."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:270 editor/settings/ui/ipv6.ui:97
@@ -1783,6 +1797,9 @@ msgid ""
 "to add\n"
 "an IP address"
 msgstr ""
+"IP adresy identifikují váš počítač v síti. Klikněte na tlačítko „Přidat“ "
+"pro\n"
+"přidání IP adresy"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:335
@@ -1791,6 +1808,8 @@ msgid ""
 "Allows the connection to complete if IPv4 configuration fails\n"
 "but IPv6 configuration succeeds"
 msgstr ""
+"Umožňuje dokončení připojení, pokud selže nastavení IPv4,\n"
+"ale nastavení IPv6 je úspěšné."
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:338
@@ -1812,6 +1831,8 @@ msgid ""
 "if\n"
 "IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
+"Při připojení k sítím podporujícím IPv4 umožňuje dokončení připojení, pokud\n"
+"nastavení IPv6 selže, ale nastavení IPv4 proběhne úspěšně."
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:33
@@ -1834,6 +1855,9 @@ msgid ""
 "a temporary IPv6 address in addition to the public one generated from MAC "
 "address via modified EUI-64."
 msgstr ""
+"Nastavení rozšíření ochrany soukromí IPv6 pro SLAAC, popsaná v RFC4941.\n"
+"Pokud je povoleno, jádro generuje dočasnou adresu IPv6 kromě veřejné\n"
+"adresy generované z adresy MAC prostřednictvím modifikovaného EUI-64."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:199
@@ -1970,6 +1994,11 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
+"Pokud je zadáno, nařídit PPPoE, aby iniciovalo pouze relace s přístupovými "
+"koncentrátory, které poskytují zadanou službu. U většiny poskytovatelů by "
+"toto pole mělo zůstat prázdné. Je vyžadováno pouze v případě, že existuje "
+"více přístupových koncentrátorů nebo je známo, že je vyžadována konkrétní "
+"služba."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31
@@ -2011,13 +2040,13 @@ msgstr "Název VLAN rozhraní:"
 #: editor/settings/ui/vlan.ui:77
 #, kde-format
 msgid "Output packet headers reordering"
-msgstr ""
+msgstr "Přeskupení hlaviček výstupních paketů"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, gvrp)
 #: editor/settings/ui/vlan.ui:84
 #, kde-format
 msgid "GARP VLAN Registration Protocol"
-msgstr ""
+msgstr "Protokol registrace GARP VLAN"
 
 #. i18n: ectx: property (text), widget (QCheckBox, gvrp)
 #: editor/settings/ui/vlan.ui:87
@@ -2029,7 +2058,7 @@ msgstr "GVRP"
 #: editor/settings/ui/vlan.ui:94
 #, kde-format
 msgid "Loose binding"
-msgstr ""
+msgstr "Volná vazba"
 
 #. i18n: ectx: property (text), widget (QLabel, connectionSectionLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:23
@@ -2106,6 +2135,9 @@ msgid ""
 "specified band. This setting depends\n"
 " on specific driver capability and may not work with all drivers"
 msgstr ""
+"Tato volba uzamkne připojení k síti Wi-Fi přidružené k určenému\n"
+"pásmu. Toto nastavení závisí na konkrétních možnostech ovladače\n"
+"a nemusí fungovat se všemi ovladači"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:187
@@ -2140,6 +2172,8 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
+"Bezdrátový kanál, který se použije pro připojení Wi-Fi. Zařízení se připojí\n"
+"(nebo vytvoří pro sítě Ad-Hoc) pouze k síti Wi-Fi na zadaném kanálu."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:232
@@ -2228,7 +2262,7 @@ msgstr "Zabezpečení:"
 #, kde-format
 msgctxt "no security"
 msgid "None"
-msgstr "Žádný"
+msgstr "Žádné"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:60
@@ -2250,17 +2284,15 @@ msgstr "Dynamický WEP (802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:80
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA2/WPA3 Personal"
-msgstr "WPA/WPA2 Personal"
+msgstr "WPA2/WPA3 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:85
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA2/WPA3 Enterprise"
-msgstr "WPA/WPA2 Enterprise"
+msgstr "WPA2/WPA3 Enterprise"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:90
@@ -2278,7 +2310,7 @@ msgstr "WPA3 Enterprise 192-bit"
 #: editor/settings/ui/wifisecurity.ui:100
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Vylepšené otevřené (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wifisecurity.ui:108
@@ -2335,6 +2367,8 @@ msgid ""
 "This option locks this connection to the network device specified by its\n"
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
+"Tato volba uzamkne toto připojení k síťovému zařízení specifikovanému\n"
+"jeho trvalou MAC adresou zadanou zde. Příklad: 00:11:22:33:44:55"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:67
@@ -2345,6 +2379,9 @@ msgid ""
 "MAC\n"
 "cloning or spoofing. Example 11:22:33:44:55"
 msgstr ""
+"Zde zadaná adresa MAC bude použita jako hardwarová adresa pro\n"
+"síťové zařízení, na kterém je toto připojení aktivováno. Tato funkce\n"
+"se nazývá klonování nebo podvržení adresy MAC. Příklad 11:22:33:44:55"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wiredconnectionwidget.ui:80
@@ -2360,6 +2397,8 @@ msgid ""
 "packets up\n"
 "into multiple Ethernet frames"
 msgstr ""
+"Přenos pouze paketů o zadané velikosti nebo menší, rozdělení\n"
+"větších paketů na více ethernetových paketů"
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
@@ -2380,6 +2419,8 @@ msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
 msgstr ""
+"Požádat zařízení, aby používalo zadaný režim duplexu. Buď "
+"„half“ (poloviční), nebo „full“ (plný)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158
@@ -2407,6 +2448,10 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
+"Vyjednávání propojení zařízení. Pokud zvolíte možnost „Ruční“, hodnoty\n"
+"„Rychlost“ a „Duplex“ budou vynuceny bez kontroly kompatibility\n"
+"zařízení. Pokud si nejste jisti, ponechte zde možnost „Ignorovat“ nebo\n"
+"vyberte možnost „Automaticky“."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -2516,6 +2561,8 @@ msgid ""
 "Required.\n"
 "A base64 private key generated by wg genkey."
 msgstr ""
+"Vyžadováno.\n"
+"Soukromý klíč base64 vygenerovaný příkazem wg genkey."
 
 #. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:56
@@ -2530,12 +2577,15 @@ msgid ""
 "Optional.\n"
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
+"Volitelné.\n"
+"Číslo portu pro naslouchání. Pokud je ponecháno jako „Automatické“, je "
+"vybráno náhodně."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:72
 #, kde-format
 msgid "fwmark:"
-msgstr ""
+msgstr "fwmark:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:82
@@ -2546,6 +2596,10 @@ msgid ""
 "option is disabled. May be specified in hexadecimal by\n"
 "prepending '0x'."
 msgstr ""
+"Volitelné.\n"
+"Fwmark pro odchozí pakety. Pokud je nastaveno na 0 nebo „vypnuto“,\n"
+"je tato možnost deaktivována. Lze zadat v hexadecimálním formátu\n"
+"předřazením „0x“."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:101
@@ -2558,12 +2612,18 @@ msgid ""
 "specify an MTU and to override this automatic discovery,\n"
 "this value may be specified explicitly."
 msgstr ""
+"Volitelné.\n"
+"Pokud není zadáno, MTU se automaticky určí\n"
+"z adres koncových bodů nebo výchozí trasy systému,\n"
+"což je obvykle rozumná volba. Chcete-li však ručně\n"
+"zadat MTU a přepsat toto automatické zjištění,\n"
+"lze tuto hodnotu zadat explicitně."
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:108
 #, kde-format
 msgid "Autoroute peers:"
-msgstr ""
+msgstr "Automatické trasy na protějšky:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:116
@@ -2572,6 +2632,8 @@ msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
 msgstr ""
+"Zda automaticky přidávat trasy pro rozsahy povolených IP adres\n"
+"protějšků."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
 #: editor/settings/ui/wireguardinterfacewidget.ui:141
@@ -2594,6 +2656,10 @@ msgid ""
 "            from a private key, and usually transmitted \n"
 "            out of band to the author of the configuration file."
 msgstr ""
+"Vyžadováno.\n"
+"            Veřejný klíč base64 vypočítaný pomocí wg pubkey\n"
+"            z privátního klíče a obvykle přenášený\n"
+"            mimo pásmo autorovi konfiguračního souboru."
 
 #. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:34
@@ -2613,6 +2679,15 @@ msgid ""
 "            may be specified for matching all IPv4 addresses, \n"
 "            and ::/0 may be specified for matching all IPv6 addresses."
 msgstr ""
+"Vyžadováno.\n"
+"            Seznam IP adres (v4 nebo v6) oddělených\n"
+"            čárkami s maskami CIDR, ze kterých je\n"
+"            povolen příchozí provoz pro tento protějšek\n"
+"            a na které je směrován odchozí provoz pro\n"
+"            tento protějšek. Pro shodu se všemi IPv4\n"
+"            adresami lze zadat univerzální 0.0.0.0/0\n"
+"            a pro shodu se všemi IPv6 adresami\n"
+"            lze zadat ::/0."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55
@@ -2630,6 +2705,12 @@ msgid ""
 "            qualified domain name such as abc.com). If\n"
 "            present, Endpoint port must also be set."
 msgstr ""
+"Volitelné.\n"
+"            Koncový bod pro připojení. Může to být adresa\n"
+"            IPv4, adresa IPv6 nebo FQDN (plně kvalifikovaný\n"
+"            název domény, například abc.com). Pokud je\n"
+"            zadán, musí být nastaven také port koncového\n"
+"            bodu."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
@@ -2645,6 +2726,9 @@ msgid ""
 "            The port number of an endpoint. If present Endpoint\n"
 "            Address must also be set."
 msgstr ""
+"Volitelné.\n"
+"Číslo portu koncového bodu. Pokud je zadáno, musí být\n"
+"nastavena také adresa koncového bodu."
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
@@ -2662,12 +2746,17 @@ msgid ""
 "            cryptography to be mixed into the already existing\n"
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
+"Volitelné.\n"
+"Předsdílený klíč base64 vygenerovaný příkazem wg genpsk.\n"
+"Tato volba přidává další vrstvu symetrické kryptografie, která\n"
+"se smíchá s již existující kryptografií veřejného klíče, aby se\n"
+"dosáhlo postkvantové odolnosti."
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
 #, kde-format
 msgid "Persistent keepalive:"
-msgstr ""
+msgstr "Trvalé udržování spojení:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:127
@@ -2686,6 +2775,17 @@ msgid ""
 "            when unspecified, this option is off. Most users will not\n"
 "            need this."
 msgstr ""
+"Volitelné.\n"
+"Interval v sekundách, v rozmezí od 1 do 65535 včetně,\n"
+"udávající, jak často se má odesílat ověřený prázdný paket\n"
+"protějšku za účelem trvalého udržování platnosti stavového\n"
+"firewallu nebo NAT mapování. Například pokud rozhraní\n"
+"velmi zřídka odesílá provoz, ale může kdykoli přijímat provoz\n"
+"od protějšku a je za NAT, může být pro rozhraní výhodné mít\n"
+"trvalý interval udržování spojení 25 sekund. Pokud je\n"
+"nastavena na 0 nebo „vypnuto“, je tato možnost deaktivována.\n"
+"Ve výchozím nastavení nebo pokud není specifikováno, je tato\n"
+"možnost vypnuta. Většina uživatelů ji nebude potřebovat."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: editor/settings/ui/wireguardtabwidget.ui:24
@@ -3313,43 +3413,43 @@ msgstr "Modem vyžaduje kód PIN."
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PIN code."
-msgstr ""
+msgstr "Modem vyžaduje firemní kód PIN."
 
 #: editor/uiutils.cpp:554
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the corporate PUK code."
-msgstr ""
+msgstr "Modem vyžaduje firemní kód PUK."
 
 #: editor/uiutils.cpp:556
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PIN code."
-msgstr ""
+msgstr "Modem vyžaduje kód PH-FSIM PIN."
 
 #: editor/uiutils.cpp:558
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the PH-FSIM PUK code."
-msgstr ""
+msgstr "Modem vyžaduje kód PH-FSIM PUK."
 
 #: editor/uiutils.cpp:560
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PIN code."
-msgstr ""
+msgstr "Modem vyžaduje PIN kód podsítě."
 
 #: editor/uiutils.cpp:562
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Modem requires the network subset PUK code."
-msgstr ""
+msgstr "Modem vyžaduje PUK kód podsítě."
 
 #: editor/uiutils.cpp:565
 #, kde-format
 msgctxt "possible SIM lock reason"
 msgid "Lock reason unknown."
-msgstr ""
+msgstr "Důvod uzamčení neznámý."
 
 #: editor/uiutils.cpp:588
 #, kde-format
@@ -3409,13 +3509,13 @@ msgstr "WPA3-SAE"
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:618
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Vylepšené otevřené (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format
@@ -3693,6 +3793,11 @@ msgid ""
 "\n"
 "If you are unsure of your plan please ask your provider for your plan's APN."
 msgstr ""
+"Upozornění: Výběr nesprávného tarifu může vést k problémům s fakturací "
+"vašeho širokopásmového účtu nebo může znemožnit připojení.\n"
+"\n"
+"Pokud si nejste jisti svým tarifem, požádejte svého poskytovatele o APN "
+"vašeho tarifu."
 
 #: editor/widgets/mobileconnectionwizard.cpp:540
 #, kde-format
@@ -3742,7 +3847,7 @@ msgstr "Vždy se dotázat na toto heslo"
 #: editor/widgets/passwordfield.cpp:106
 #, kde-format
 msgid "This password is not required"
-msgstr ""
+msgstr "Toto heslo není vyžadováno."
 
 #: editor/widgets/ssidcombobox.cpp:131
 #, kde-format
@@ -3808,6 +3913,8 @@ msgid ""
 "If enabled, this connection will never be used as the default network "
 "connection"
 msgstr ""
+"Pokud je tato možnost povolena, nebude toto připojení nikdy použito jako "
+"výchozí síťové připojení."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
@@ -3836,6 +3943,8 @@ msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
 "specified above are used"
 msgstr ""
+"Pokud je tato volba povolena, automaticky nakonfigurované trasy jsou "
+"ignorovány a používají se pouze trasy uvedené výše."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
@@ -3869,7 +3978,7 @@ msgstr "Nahlásit chybu"
 #: handler.cpp:166
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "NetworkManager nepodporuje připojení VPN typu '%1'."
 
 #: handler.cpp:169
 #, kde-format
@@ -3935,28 +4044,28 @@ msgstr "Nepovedlo se vytvořit hotspot %1"
 #: models/creatableconnectionsmodel.cpp:181
 #, kde-format
 msgid "Hardware based connections"
-msgstr ""
+msgstr "Hardwarová připojení"
 
 #: models/creatableconnectionsmodel.cpp:137
 #, kde-format
 msgid "Some DSL description"
-msgstr ""
+msgstr "Popis některé DSL"
 
 #: models/creatableconnectionsmodel.cpp:144
 #, kde-format
 msgid "Some infiniband description"
-msgstr ""
+msgstr "Popis nějakého infinibandu"
 
 #: models/creatableconnectionsmodel.cpp:151
 #, kde-format
 msgid "Some mobile broadband description"
-msgstr ""
+msgstr "Popis mobilního širokopásmového připojení"
 
 #: models/creatableconnectionsmodel.cpp:158
 #: models/creatableconnectionsmodel.cpp:165
 #, kde-format
 msgid "Some wired ethernet description"
-msgstr ""
+msgstr "Popis kabelového ethernetu"
 
 #: models/creatableconnectionsmodel.cpp:163
 #, kde-format
@@ -3986,17 +4095,17 @@ msgstr "Virtuální spojení"
 #: models/creatableconnectionsmodel.cpp:202
 #, kde-format
 msgid "Some bond description"
-msgstr ""
+msgstr "Popis některého bondu"
 
 #: models/creatableconnectionsmodel.cpp:212
 #, kde-format
 msgid "Some team description"
-msgstr ""
+msgstr "Popis některého týmu"
 
 #: models/creatableconnectionsmodel.cpp:222
 #, kde-format
 msgid "Some vlan description"
-msgstr ""
+msgstr "Popis některé vlan"
 
 #: models/creatableconnectionsmodel.cpp:242
 #: models/creatableconnectionsmodel.cpp:255
@@ -4023,40 +4132,40 @@ msgstr "Importovat uložený konfigurační soubor"
 #, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr "Dostupný"
+msgstr "Dostupné"
 
 #: models/networkmodelitem.cpp:345
 #, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
-msgstr "Připojen"
+msgstr "Připojeno"
 
 #: models/networkmodelitem.cpp:347
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"
 msgid "Previously Used, Unavailable"
-msgstr ""
+msgstr "Dříve použité, nedostupné"
 
 #: networkstatus.cpp:126
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
-msgstr "Připojen"
+msgstr "Připojeno"
 
 #: networkstatus.cpp:129
 #, kde-format
 msgctxt ""
 "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
-msgstr "Připojen"
+msgstr "Připojeno"
 
 #: networkstatus.cpp:132
 #, kde-format
 msgctxt "A network device is connected, with global network connectivity"
 msgid "Connected"
-msgstr "Připojen"
+msgstr "Připojeno"
 
 #: networkstatus.cpp:135
 #, kde-format
@@ -4068,13 +4177,13 @@ msgstr "Neaktivní"
 #, kde-format
 msgctxt "There is no active network connection"
 msgid "Disconnected"
-msgstr "Odpojen"
+msgstr "Odpojeno"
 
 #: networkstatus.cpp:141
 #, kde-format
 msgctxt "Network connections are being cleaned up"
 msgid "Disconnecting"
-msgstr "Odpojuji"
+msgstr "Odpojování"
 
 #: networkstatus.cpp:144
 #, kde-format
@@ -4087,27 +4196,27 @@ msgstr "Připojuji se"
 #: networkstatus.cpp:218
 #, kde-format
 msgid "Connecting to %1"
-msgstr "Připojuji se k %1"
+msgstr "Připojování k %1"
 
 #: networkstatus.cpp:222
 #, kde-format
 msgid "Connected to %1 (no connectivity)"
-msgstr "Připojen k %1 (bez spojení)"
+msgstr "Připojeno k %1 (bez spojení)"
 
 #: networkstatus.cpp:225
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
-msgstr "Připojen k %1 (omezené spojení)"
+msgstr "Připojeno k %1 (omezené spojení)"
 
 #: networkstatus.cpp:228
 #, kde-format
 msgid "Connected to %1 (log in required)"
-msgstr "Připojen k %1 (přihlášení není potřeba)"
+msgstr "Připojeno k %1 (přihlášení není potřeba)"
 
 #: networkstatus.cpp:231
 #, kde-format
 msgid "Connected to %1"
-msgstr "Připojen k %1"
+msgstr "Připojeno k %1"
 
 #: networkstatus.cpp:256
 #, kde-format
@@ -4124,7 +4233,7 @@ msgstr "Je potřeba NetworkManager 0.9.8, nalezena verze %1."
 #, kde-format
 msgctxt "global connection state"
 msgid "Unknown"
-msgstr "Neznámý"
+msgstr "Neznámé"
 
 #~ msgid "Wi-Fi Security"
 #~ msgstr "Zabezpečení Wi-Fi"

@@ -1,21 +1,21 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-settings package.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025, 2026 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-18 00:48+0000\n"
-"PO-Revision-Date: 2025-10-02 09:42+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-03-13 11:50+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: ui/AvailableNetworks.qml:18
 #, kde-format
@@ -30,12 +30,12 @@ msgstr "žádná"
 #: ui/AvailableNetworks.qml:42
 #, kde-format
 msgid "Current operator: %1"
-msgstr ""
+msgstr "Aktuální operátor: %1"
 
 #: ui/AvailableNetworks.qml:45
 #, kde-format
 msgid "Scan For Networks"
-msgstr ""
+msgstr "Vyhledat sítě"
 
 #: ui/EditProfilePage.qml:15
 #, kde-format
@@ -140,7 +140,7 @@ msgstr "APN potřebuje nastavení pro mobilní data."
 #: ui/main.qml:98
 #, kde-format
 msgid "Whether mobile data is enabled."
-msgstr ""
+msgstr "Zda jsou mobilní data povolena."
 
 #: ui/main.qml:129
 #, kde-format
@@ -150,7 +150,7 @@ msgstr "Využití dat"
 #: ui/main.qml:130
 #, kde-format
 msgid "View data usage."
-msgstr ""
+msgstr "Zobrazit využití dat."
 
 #: ui/main.qml:138
 #, kde-format
@@ -168,7 +168,7 @@ msgstr "SIM %1"
 #: ui/main.qml:160
 #, kde-format
 msgid "View SIM %1 details."
-msgstr ""
+msgstr "Zobrazit podrobnosti SIM %1."
 
 #: ui/ModemPage.qml:22
 #, kde-format
@@ -178,22 +178,22 @@ msgstr "Modem %1"
 #: ui/ModemPage.qml:32
 #, kde-format
 msgid "Modem Control"
-msgstr ""
+msgstr "Ovládání modemu"
 
 #: ui/ModemPage.qml:38
 #, kde-format
 msgid "Force Modem Restart"
-msgstr ""
+msgstr "Vynutit restart modemu"
 
 #: ui/ModemPage.qml:44 ui/SimPage.qml:112
 #, kde-format
 msgid "Modem Details"
-msgstr ""
+msgstr "Podrobnosti o modemu"
 
 #: ui/ModemPage.qml:57
 #, kde-format
 msgid "Access Technologies"
-msgstr ""
+msgstr "Technologie přístupu"
 
 #: ui/ModemPage.qml:79
 #, kde-format
@@ -218,7 +218,7 @@ msgstr "Model"
 #: ui/ModemPage.qml:118
 #, kde-format
 msgid "Owned Numbers:"
-msgstr ""
+msgstr "Vlastněná čísla:"
 
 #: ui/ModemPage.qml:141
 #, kde-format
@@ -243,7 +243,7 @@ msgstr "Důvod selhání"
 #: ui/ModemPage.qml:173
 #, kde-format
 msgid "Registration State"
-msgstr ""
+msgstr "Stav registrace"
 
 #: ui/ModemPage.qml:181
 #, kde-format
@@ -263,7 +263,7 @@ msgstr "Měřené"
 #: ui/ModemPage.qml:205
 #, kde-format
 msgid "Active NetworkManager Connection"
-msgstr ""
+msgstr "Aktivní připojení NetworkManageru"
 
 #: ui/ModemPage.qml:213
 #, kde-format
@@ -298,7 +298,7 @@ msgstr "Cesta k SIM"
 #: ui/ProfileList.qml:25
 #, kde-format
 msgid "APNs"
-msgstr ""
+msgstr "APN"
 
 #: ui/ProfileList.qml:28 ui/ProfileList.qml:99
 #, kde-format
@@ -311,6 +311,9 @@ msgid ""
 "Unable to autodetect connection settings for your carrier. Please find your "
 "carrier's APN settings by either contacting support or searching online."
 msgstr ""
+"Nelze automaticky detekovat nastavení připojení pro vašeho operátora. "
+"Nastavení APN vašeho operátora zjistíte buď kontaktováním podpory, nebo "
+"vyhledáním online."
 
 #: ui/ProfileList.qml:66
 #, kde-format
@@ -335,7 +338,7 @@ msgstr "Automaticky zjišťovat APN"
 #: ui/SimLockPage.qml:21 ui/SimPage.qml:101
 #, kde-format
 msgid "SIM Lock"
-msgstr ""
+msgstr "Zámek SIM"
 
 #: ui/SimLockPage.qml:40
 #, kde-format
@@ -345,7 +348,7 @@ msgstr "SIM je uzamčena"
 #: ui/SimLockPage.qml:41
 #, kde-format
 msgid "In order to use this SIM, you must first unlock it."
-msgstr ""
+msgstr "Abyste mohli tuto SIM kartu používat, musíte ji nejprve odemknout."
 
 #: ui/SimLockPage.qml:63
 #, kde-format
@@ -358,6 +361,8 @@ msgid ""
 "You can lock your SIM to require a set PIN code for phone calls and mobile "
 "data."
 msgstr ""
+"SIM kartu můžete uzamknout tak, aby pro telefonní hovory a mobilní data "
+"vyžadovala nastavený PIN kód."
 
 #: ui/SimLockPage.qml:68
 #, kde-format
@@ -367,12 +372,13 @@ msgstr "Uzamknout SIM"
 #: ui/SimLockPage.qml:80
 #, kde-format
 msgid "Disable SIM Lock"
-msgstr ""
+msgstr "Vypnout zámek SIM karty"
 
 #: ui/SimLockPage.qml:81
 #, kde-format
 msgid "Disable the SIM lock feature and remove the passcode on the SIM."
 msgstr ""
+"Deaktivovat funkci zámku SIM karty a odstranit přístupový kód na SIM kartě."
 
 #: ui/SimLockPage.qml:93
 #, kde-format
@@ -382,7 +388,7 @@ msgstr "Změnit PIN"
 #: ui/SimLockPage.qml:94
 #, kde-format
 msgid "Change the passcode set on the SIM."
-msgstr ""
+msgstr "Změnit přístupový kód nastavený na SIM kartě."
 
 #: ui/SimLockPage.qml:108
 #, kde-format
@@ -402,17 +408,17 @@ msgstr "Zadejte PIN"
 #: ui/SimLockPage.qml:129
 #, kde-format
 msgid "Change SIM PIN"
-msgstr ""
+msgstr "Změnit PIN kód SIM karty"
 
 #: ui/SimLockPage.qml:148 ui/SimLockPage.qml:213
 #, kde-format
 msgid "PINs don't match!"
-msgstr ""
+msgstr "PIN kódy se neshodují!"
 
 #: ui/SimLockPage.qml:154 ui/SimLockPage.qml:219
 #, kde-format
 msgid "PINs must be between 4 and 8 digits!"
-msgstr ""
+msgstr "PIN kódy musí mít 4 až 8 číslic!"
 
 #: ui/SimLockPage.qml:159 ui/SimLockPage.qml:186
 #, kde-format
@@ -451,6 +457,8 @@ msgid ""
 "This SIM slot is empty, a SIM card needs to be inserted in order for it to "
 "be used."
 msgstr ""
+"Tento slot pro SIM kartu je prázdný. Aby bylo možné jej používat, je třeba "
+"do něj vložit SIM kartu."
 
 #: ui/SimPage.qml:59
 #, kde-format
@@ -465,12 +473,12 @@ msgstr ""
 #: ui/SimPage.qml:79
 #, kde-format
 msgid "Modify APNs"
-msgstr ""
+msgstr "Změnit APN"
 
 #: ui/SimPage.qml:80
 #, kde-format
 msgid "Configure access point names for your carrier."
-msgstr ""
+msgstr "Nastavte názvy přístupových bodů pro svého operátora."
 
 #: ui/SimPage.qml:90
 #, kde-format
@@ -480,17 +488,17 @@ msgstr "Sítě"
 #: ui/SimPage.qml:91
 #, kde-format
 msgid "Select a network operator."
-msgstr ""
+msgstr "Vyberte síťového operátora."
 
 #: ui/SimPage.qml:102
 #, kde-format
 msgid "Modify SIM lock settings."
-msgstr ""
+msgstr "Upravit nastavení zámku SIM karty."
 
 #: ui/SimPage.qml:113
 #, kde-format
 msgid "View the details of the modem this SIM is connected to."
-msgstr ""
+msgstr "Zobrazit podrobnosti o modemu, ke kterému je tato SIM karta připojena."
 
 #: ui/SimPage.qml:119
 #, kde-format
@@ -525,22 +533,22 @@ msgstr "EID"
 #: ui/SimPage.qml:149
 #, kde-format
 msgid "Operator Code (modem)"
-msgstr ""
+msgstr "Kód operátora (modem)"
 
 #: ui/SimPage.qml:157
 #, kde-format
 msgid "Operator Name (modem)"
-msgstr ""
+msgstr "Název operátora (modem)"
 
 #: ui/SimPage.qml:165
 #, kde-format
 msgid "Operator Code (provided by SIM)"
-msgstr ""
+msgstr "Kód operátora (poskytnutý SIM kartou)"
 
 #: ui/SimPage.qml:173
 #, kde-format
 msgid "Operator Name (provided by SIM)"
-msgstr ""
+msgstr "Název operátora (poskytnutý SIM kartou)"
 
 #: ui/SimPage.qml:181
 #, kde-format
@@ -550,7 +558,7 @@ msgstr "ID SIM"
 #: ui/SimPage.qml:197
 #, kde-format
 msgid "Emergency Numbers"
-msgstr ""
+msgstr "Tísňová čísla"
 
 #~ msgid "Error adding connection: %1"
 #~ msgstr "Chyba při přidávání spojení: %1"

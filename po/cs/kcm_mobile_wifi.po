@@ -1,21 +1,21 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2024, 2025 Vit Pelcak <vit@pelcak.org>
+# SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2024, 2025, 2026 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:46+0000\n"
-"PO-Revision-Date: 2025-10-02 09:43+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-03-13 11:54+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -49,17 +49,17 @@ msgstr "Podrobnosti spojení"
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
-msgstr ""
+msgstr "Sdílet"
 
 #: ui/ConnectionInfo.qml:107
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr ""
+msgstr "Sdílet Wi-Fi přes kódy QR"
 
 #: ui/ConnectionInfo.qml:114
 #, kde-format
 msgid "Wi-Fi QR Code"
-msgstr ""
+msgstr "QR kódy Wi-Fi"
 
 #: ui/main.qml:26
 #, kde-format
@@ -93,16 +93,14 @@ msgid "Add Custom Connection"
 msgstr "Přidat vlastní spojení"
 
 #: ui/MorePage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Wi-Fi Settings"
-msgstr "Nastavení IP"
+msgstr "Nastavení Wi-Fi"
 
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr ""
+msgstr "Oznámení změn připojení"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Vít Pelčák <vit@pelcak.org>, 2015.
+# SPDX-FileCopyrightText: 2015, 2026 Vít Pelčák <vit@pelcak.org>
 # Vit Pelcak <vit@pelcak.org>, 2021.
 #
 msgid ""
@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2021-06-17 16:27+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-03-13 12:59+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.04.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomGatewayPort)
 #: sshadvanced.ui:19
@@ -34,31 +34,31 @@ msgstr "Použít vlastní Maximum Transmission Unit (MTU):"
 #: sshadvanced.ui:70
 #, kde-format
 msgid "Extra SSH options:"
-msgstr ""
+msgstr "Další možnosti SSH:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_remoteDeviceNumber)
 #: sshadvanced.ui:88
 #, kde-format
 msgid "Remote device number:"
-msgstr ""
+msgstr "Číslo vzdáleného zařízení:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_useTapDevice)
 #: sshadvanced.ui:107
 #, kde-format
 msgid "Use a TAP device"
-msgstr ""
+msgstr "Použít zařízení TAP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_remoteUsername)
 #: sshadvanced.ui:116
 #, kde-format
 msgid "Remote username"
-msgstr ""
+msgstr "Vzdálené uživatelské jméno"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_doNotReplaceDefaultRoute)
 #: sshadvanced.ui:132
 #, kde-format
 msgid "Do not replace default route"
-msgstr ""
+msgstr "Nevyměňovat výchozí trasu"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SshAuth)
 #: sshauth.ui:14
@@ -168,7 +168,7 @@ msgstr "Heslo"
 #: sshwidget.ui:259
 #, kde-format
 msgid "Key authentication"
-msgstr ""
+msgstr "Ověření klíče"
 
 #. i18n: ectx: property (text), widget (QPushButton, btn_advancedOption)
 #: sshwidget.ui:300

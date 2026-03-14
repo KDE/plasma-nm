@@ -1,6 +1,6 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Vít Pelčák <vit@pelcak.org>, 2017, 2019.
+# SPDX-FileCopyrightText: 2017, 2019, 2026 Vít Pelčák <vit@pelcak.org>
 # Vit Pelcak <vit@pelcak.org>, 2021.
 #
 msgid ""
@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2021-03-24 16:05+0100\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-03-13 12:00+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 20.12.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #. i18n: ectx: property (text), widget (QPushButton, advancedButton)
 #: fortisslvpn.ui:36
@@ -61,6 +61,8 @@ msgstr "Uživatelské jméno:"
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
 msgstr ""
+"Nastavit název používaný pro ověřování lokálního systému u protistrany na "
+"<name>."
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: fortisslvpn.ui:109 fortisslvpnauth.ui:26
@@ -72,7 +74,7 @@ msgstr "Heslo:"
 #: fortisslvpn.ui:119
 #, kde-format
 msgid "Password passed to SSLVPN when prompted for it."
-msgstr ""
+msgstr "Heslo zadané do SSLVPN po jeho vyžádání."
 
 #. i18n: ectx: property (text), widget (QLabel, caCertLabel)
 #: fortisslvpn.ui:129

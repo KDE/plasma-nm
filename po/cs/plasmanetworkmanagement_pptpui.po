@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
-# Vit Pelcak <vit@pelcak.org>, 2013, 2014, 2016, 2021.
+# SPDX-FileCopyrightText: 2013, 2014, 2016, 2021, 2026 Vit Pelcak <vit@pelcak.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2021-06-17 16:27+0200\n"
-"Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-03-13 12:58+0100\n"
+"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 21.04.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
 #: pptpadvanced.ui:17
@@ -74,6 +74,9 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
+"Poznámka: Šifrování MPPE je k dispozici pouze s metodami ověřování\n"
+"MSCHAP. Chcete-li toto políčko zaškrtnout, vyberte jednu nebo více\n"
+"metod ověřování MSCHAP: MSCHAP nebo MSCHAPv2."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
 #: pptpadvanced.ui:91
@@ -91,7 +94,7 @@ msgstr "Šifrování:"
 #: pptpadvanced.ui:128
 #, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr ""
+msgstr "Vyžadujte použití MPPE s 40/128bitovým šifrováním nebo vše."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: pptpadvanced.ui:132
@@ -118,6 +121,8 @@ msgstr "40 bit"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
+"Povolit MPPE používat stavový režim. Nejprve se stále zkouší bezstavový "
+"režim."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
 #: pptpadvanced.ui:153
@@ -163,6 +168,9 @@ msgid ""
 "transmit\n"
 " and the receive directions."
 msgstr ""
+"Povolit/zakázat kompresi hlavičky TCP/IP ve stylu Van Jacobson v obou "
+"směrech\n"
+"vysílání a příjmu."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
 #: pptpadvanced.ui:205
@@ -181,6 +189,7 @@ msgstr "Echo"
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
 msgstr ""
+"Odesílat echo-požadavky LCP, aby se zjistilo, zda je protistrana aktivní."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_sendEcho)
 #: pptpadvanced.ui:230
@@ -206,7 +215,7 @@ msgstr "Heslo:"
 #: pptpauth.ui:51 pptpprop.ui:131
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr ""
+msgstr "Heslo předané PPTP po vyžádání."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PptpProp)
 #: pptpprop.ui:14
@@ -231,7 +240,7 @@ msgstr "Brána:"
 #: pptpprop.ui:47
 #, kde-format
 msgid "PPTP server IP or name."
-msgstr ""
+msgstr "IP adresa nebo název serveru PPTP."
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_additional)
 #: pptpprop.ui:62
@@ -252,6 +261,8 @@ msgstr "Přihlášení:"
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
 msgstr ""
+"Nastavit název používaný pro ověřování lokálního systému u protistrany na "
+"<name>."
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_ntdomain)
 #: pptpprop.ui:153
@@ -266,6 +277,8 @@ msgid ""
 "Append the domain name <domain> to the local host name for\n"
 "authenticating purposes."
 msgstr ""
+"Připojit název domény <domain> k názvu místního hostitele\n"
+"pro účely ověřování."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: pptpprop.ui:192

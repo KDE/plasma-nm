@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2023-03-25 09:35+0100\n"
+"PO-Revision-Date: 2026-03-14 07:17+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -650,13 +650,13 @@ msgstr ""
 #: openvpnadvanced.ui:486
 #, kde-format
 msgid "Cipher:"
-msgstr "Szyfr:"
+msgstr "Szyfrowanie:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboCipher)
 #: openvpnadvanced.ui:513
 #, kde-format
 msgid "Obtaining available ciphers…"
-msgstr "Pobieranie listy dostępnych szyfrów..."
+msgstr "Pobieranie listy dostępnych szyfrowań…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)

@@ -40,12 +40,11 @@
 
 namespace
 {
-constexpr auto keychainService = "plasma-nm";
-const auto storagePrefix = QStringLiteral("Network Management/");
+constexpr auto keychainService = "Network Management";
 
 QString storageKey(const NetworkManager::ConnectionSettings &settings, const QString &settingName)
 {
-    return storagePrefix + QLatin1Char('{') + settings.uuid() + QLatin1Char('}') + QLatin1Char(';') + settingName;
+    return QLatin1Char('{') + settings.uuid() + QLatin1Char('}') + QLatin1Char(';') + settingName;
 }
 }
 

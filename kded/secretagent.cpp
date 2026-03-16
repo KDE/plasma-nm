@@ -25,20 +25,32 @@
 
 #include <QDBusConnection>
 #include <QDialog>
+#include <QEventLoop>
+#include <QJsonDocument>
+#include <QJsonObject>
 #include <QStringBuilder>
 
 #include <KConfig>
 #include <KConfigGroup>
 #include <KLocalizedString>
 #include <KPluginFactory>
-#include <KWallet>
 #include <KWindowSystem>
 #include <KX11Extras>
+#include <qt6keychain/keychain.h>
+
+namespace
+{
+constexpr auto keychainService = "plasma-nm";
+const auto storagePrefix = QStringLiteral("Network Management/");
+
+QString storageKey(const NetworkManager::ConnectionSettings &settings, const QString &settingName)
+{
+    return storagePrefix + QLatin1Char('{') + settings.uuid() + QLatin1Char('}') + QLatin1Char(';') + settingName;
+}
+}
 
 SecretAgent::SecretAgent(QObject *parent)
     : NetworkManager::SecretAgent(QStringLiteral("org.kde.plasma.networkmanagement"), NetworkManager::SecretAgent::Capability::VpnHints, parent)
-    , m_openWalletFailed(false)
-    , m_wallet(nullptr)
     , m_dialog(nullptr)
 {
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::serviceDisappeared, this, &SecretAgent::killDialogs);
@@ -292,27 +304,6 @@ void SecretAgent::killDialogs()
     }
 }
 
-void SecretAgent::walletOpened(bool success)
-{
-    if (!success) {
-        m_openWalletFailed = true;
-        m_wallet->deleteLater();
-        m_wallet = nullptr;
-    } else {
-        m_openWalletFailed = false;
-    }
-
-    processNext();
-}
-
-void SecretAgent::walletClosed()
-{
-    if (m_wallet) {
-        m_wallet->deleteLater();
-    }
-    m_wallet = nullptr;
-}
-
 void SecretAgent::processNext()
 {
     int i = 0;
@@ -380,15 +371,10 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
     }
 
     NMStringMap secretsMap;
-    if (!requestNew && useWallet()) {
-        if (m_wallet->isOpen()) {
-            if (m_wallet->hasFolder(QStringLiteral("Network Management")) && m_wallet->setFolder(QStringLiteral("Network Management"))) {
-                QString key = QLatin1Char('{') % connectionSettings->uuid() % QLatin1Char('}') % QLatin1Char(';') % request.setting_name;
-                m_wallet->readMap(key, secretsMap);
-            }
-        } else {
-            qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO << "Waiting for the wallet to open";
-            return false;
+    if (!requestNew && useSecureStorage()) {
+        const auto storedSecrets = readSecrets(storageKey(*connectionSettings, request.setting_name));
+        for (auto it = storedSecrets.cbegin(); it != storedSecrets.cend(); ++it) {
+            secretsMap.insert(it.key(), it.value().toString());
         }
     }
 
@@ -474,30 +460,20 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
 
 bool SecretAgent::processSaveSecrets(SecretsRequest &request) const
 {
-    if (useWallet()) {
-        if (m_wallet->isOpen()) {
-            NetworkManager::ConnectionSettings connectionSettings(request.connection);
-
-            if (!m_wallet->hasFolder(QStringLiteral("Network Management"))) {
-                m_wallet->createFolder(QStringLiteral("Network Management"));
+    if (useSecureStorage()) {
+        NetworkManager::ConnectionSettings connectionSettings(request.connection);
+        for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
+            const auto secretsMap = setting->secretsToStringMap();
+            QVariantMap secretsVariantMap;
+            for (auto it = secretsMap.cbegin(); it != secretsMap.cend(); ++it) {
+                secretsVariantMap.insert(it.key(), it.value());
             }
-
-            if (m_wallet->setFolder(QStringLiteral("Network Management"))) {
-                for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
-                    NMStringMap secretsMap = setting->secretsToStringMap();
-
-                    if (!secretsMap.isEmpty()) {
-                        QString entryName = QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name();
-                        m_wallet->writeMap(entryName, secretsMap);
-                    }
+            if (!secretsMap.isEmpty() && !writeSecrets(storageKey(connectionSettings, setting->name()), secretsVariantMap)) {
+                if (!request.saveSecretsWithoutReply) {
+                    sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in secure storage."), request.message);
+                    return true;
                 }
-            } else if (!request.saveSecretsWithoutReply) {
-                sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in the wallet."), request.message);
-                return true;
             }
-        } else {
-            qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO << "Waiting for the wallet to open";
-            return false;
         }
     }
 
@@ -513,22 +489,10 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request) const
 
 bool SecretAgent::processDeleteSecrets(SecretsRequest &request) const
 {
-    if (useWallet()) {
-        if (m_wallet->isOpen()) {
-            if (m_wallet->hasFolder(QStringLiteral("Network Management")) && m_wallet->setFolder(QStringLiteral("Network Management"))) {
-                NetworkManager::ConnectionSettings connectionSettings(request.connection);
-                for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
-                    QString entryName = QLatin1Char('{') % connectionSettings.uuid() % QLatin1Char('}') % QLatin1Char(';') % setting->name();
-                    for (const QString &entry : m_wallet->entryList()) {
-                        if (entry.startsWith(entryName)) {
-                            m_wallet->removeEntry(entryName);
-                        }
-                    }
-                }
-            }
-        } else {
-            qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO << "Waiting for the wallet to open";
-            return false;
+    if (useSecureStorage()) {
+        NetworkManager::ConnectionSettings connectionSettings(request.connection);
+        for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
+            deleteSecrets(storageKey(connectionSettings, setting->name()));
         }
     }
 
@@ -540,34 +504,53 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request) const
     return true;
 }
 
-bool SecretAgent::useWallet() const
+bool SecretAgent::useSecureStorage() const
 {
-    if (m_wallet) {
-        return true;
+    return QKeychain::isAvailable();
+}
+
+QVariantMap SecretAgent::readSecrets(const QString &key)
+{
+    QKeychain::ReadPasswordJob job(QString::fromLatin1(keychainService));
+    QEventLoop loop;
+    QObject::connect(&job, &QKeychain::Job::finished, &loop, &QEventLoop::quit);
+    job.setKey(key);
+    job.start();
+    loop.exec();
+
+    if (job.error() != QKeychain::NoError) {
+        return {};
     }
 
-    /* If opening of KWallet failed before, we should not try to open it again and
-     * we should return false instead */
-    if (m_openWalletFailed) {
-        m_openWalletFailed = false;
-        return false;
+    const auto document = QJsonDocument::fromJson(job.textData().toUtf8());
+    if (!document.isObject()) {
+        return {};
     }
 
-    if (KWallet::Wallet::isEnabled()) {
-        m_wallet = KWallet::Wallet::openWallet(KWallet::Wallet::LocalWallet(), 0, KWallet::Wallet::Asynchronous);
-        if (m_wallet) {
-            connect(m_wallet, &KWallet::Wallet::walletOpened, this, &SecretAgent::walletOpened);
-            connect(m_wallet, &KWallet::Wallet::walletClosed, this, &SecretAgent::walletClosed);
-            return true;
-        } else {
-            qCWarning(PLASMA_NM_KDED_LOG) << "Error opening kwallet.";
-        }
-    } else if (m_wallet) {
-        m_wallet->deleteLater();
-        m_wallet = nullptr;
-    }
+    return document.object().toVariantMap();
+}
 
-    return false;
+bool SecretAgent::writeSecrets(const QString &key, const QVariantMap &secrets)
+{
+    QKeychain::WritePasswordJob job(QString::fromLatin1(keychainService));
+    QEventLoop loop;
+    QObject::connect(&job, &QKeychain::Job::finished, &loop, &QEventLoop::quit);
+    job.setKey(key);
+    job.setTextData(QString::fromUtf8(QJsonDocument(QJsonObject::fromVariantMap(secrets)).toJson(QJsonDocument::Compact)));
+    job.start();
+    loop.exec();
+
+    return job.error() == QKeychain::NoError;
+}
+
+void SecretAgent::deleteSecrets(const QString &key)
+{
+    QKeychain::DeletePasswordJob job(QString::fromLatin1(keychainService));
+    QEventLoop loop;
+    QObject::connect(&job, &QKeychain::Job::finished, &loop, &QEventLoop::quit);
+    job.setKey(key);
+    job.start();
+    loop.exec();
 }
 
 bool SecretAgent::hasSecrets(const NMVariantMapMap &connection) const
@@ -603,7 +586,7 @@ void SecretAgent::importSecretsFromPlainTextFiles()
             NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(loadedUuid);
             if (connection) {
                 NetworkManager::Setting::SecretFlags secretFlags =
-                    KWallet::Wallet::isEnabled() ? NetworkManager::Setting::AgentOwned : NetworkManager::Setting::None;
+                    QKeychain::isAvailable() ? NetworkManager::Setting::AgentOwned : NetworkManager::Setting::None;
                 QMap<QString, QString> secrets = config.entryMap(groupName);
                 NMVariantMapMap settings = connection->settings()->toMap();
 
@@ -616,7 +599,7 @@ void SecretAgent::importSecretsFromPlainTextFiles()
                             vpnSetting->secretsFromStringMap(secrets);
 
                             NMStringMap vpnData = vpnSetting->data();
-                            // Reset flags, we can't save secrets to our secret agent when KWallet is not enabled, because
+                            // Reset flags, we can't save secrets to our secret agent when secure storage is unavailable, because
                             // we dropped support for plaintext files, therefore they need to be stored to NetworkManager
                             for (const QString &key : vpnData.keys()) {
                                 if (key.endsWith(QLatin1String("-flags"))) {
@@ -631,7 +614,7 @@ void SecretAgent::importSecretsFromPlainTextFiles()
                     } else {
                         if (setting == loadedSettingType) {
                             QVariantMap tmpSetting = settings.value(setting);
-                            // Reset flags, we can't save secrets to our secret agent when KWallet is not enabled, because
+                            // Reset flags, we can't save secrets to our secret agent when secure storage is unavailable, because
                             // we dropped support for plaintext files, therefore they need to be stored to NetworkManager
                             for (const QString &key : tmpSetting.keys()) {
                                 if (key.endsWith(QLatin1String("-flags"))) {

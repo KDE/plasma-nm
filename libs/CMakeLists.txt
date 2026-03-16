@@ -60,9 +60,9 @@ PRIVATE
     KF6::JobWidgets
     KF6::Notifications
     KF6::Service
-    KF6::Wallet
     KF6::WindowSystem
     KF6::KIOGui
+    Qt6Keychain::Qt6Keychain
     QCoro::DBus
 )
 

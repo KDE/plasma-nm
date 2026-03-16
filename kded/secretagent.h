@@ -9,12 +9,9 @@
 #ifndef PLASMA_NM_SECRET_AGENT_H
 #define PLASMA_NM_SECRET_AGENT_H
 
-#include <NetworkManagerQt/SecretAgent>
+#include <QVariantMap>
 
-namespace KWallet
-{
-class Wallet;
-}
+#include <NetworkManagerQt/SecretAgent>
 
 class PasswordDialog;
 
@@ -74,28 +71,24 @@ private Q_SLOTS:
     void dialogAccepted();
     void dialogRejected();
     void killDialogs();
-    void walletOpened(bool success);
-    void walletClosed();
 
 private:
     void processNext();
     /**
      * @brief processGetSecrets requests
      * @param request the request we are processing
-     * @param ignoreWallet true if the code should avoid Wallet
-     * normally if it failed to open
      * @return true if the item was processed
      */
     bool processGetSecrets(SecretsRequest &request) const;
     bool processSaveSecrets(SecretsRequest &request) const;
     bool processDeleteSecrets(SecretsRequest &request) const;
     /**
-     * @brief useWallet checks if the KWallet system is enabled
-     * and tries to open it async.
-     * @return return true if the method should use the wallet,
-     * the caller MUST always check if the wallet is opened.
+     * @brief useSecureStorage checks whether encrypted secret storage is available.
      */
-    bool useWallet() const;
+    bool useSecureStorage() const;
+    static QVariantMap readSecrets(const QString &key);
+    static bool writeSecrets(const QString &key, const QVariantMap &secrets);
+    static void deleteSecrets(const QString &key);
 
     /**
      * @brief hasSecrets verifies if the desired connection has secrets to store
@@ -105,8 +98,6 @@ private:
     bool hasSecrets(const NMVariantMapMap &connection) const;
     void sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message) const;
 
-    mutable bool m_openWalletFailed;
-    mutable KWallet::Wallet *m_wallet;
     mutable PasswordDialog *m_dialog;
     QList<SecretsRequest> m_calls;
 

@@ -16,7 +16,7 @@
 #include <KLocalizedString>
 #include <KSharedConfig>
 #include <KUser>
-#include <KWallet>
+#include <qt6keychain/keychain.h>
 
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Security8021xSetting>
@@ -693,7 +693,7 @@ void UiUtils::setConnectionDefaultPermissions(NetworkManager::ConnectionSettings
         return;
     }
 
-    if (Configuration::self().systemConnectionsByDefault() || !KWallet::Wallet::isEnabled() || isLiveImage()) {
+    if (Configuration::self().systemConnectionsByDefault() || !QKeychain::isAvailable() || isLiveImage()) {
         auto modifySystem = NetworkManager::permissions().value(QStringLiteral("org.freedesktop.NetworkManager.settings.modify.system"));
         if (modifySystem == QLatin1String("yes")) {
             wifiSecurity->setLeapPasswordFlags(NetworkManager::Setting::SecretFlagType::None);

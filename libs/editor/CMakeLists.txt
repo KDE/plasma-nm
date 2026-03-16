@@ -158,9 +158,9 @@ PRIVATE
     KF6::KIOWidgets
     KF6::Notifications
     KF6::Solid
-    KF6::Wallet
     Qt::DBus
     Qt::Network
+    Qt6Keychain::Qt6Keychain
     qca-qt6
 )
 

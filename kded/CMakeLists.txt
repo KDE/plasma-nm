@@ -42,10 +42,10 @@ target_link_libraries(kded_networkmanagement
     KF6::Notifications
     KF6::Service
     KF6::Solid
-    KF6::Wallet
     KF6::WindowSystem
     KF6::KIOGui
     KF6::ModemManagerQt
+    Qt6Keychain::Qt6Keychain
 )
 
 install(TARGETS kded_networkmanagement DESTINATION ${KDE_INSTALL_PLUGINDIR}/kf6/kded)

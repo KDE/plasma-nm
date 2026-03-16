@@ -376,7 +376,7 @@ QVariantMap OpenconnectSettingWidget::setting() const
     data.insert(QLatin1String(NM_OPENCONNECT_KEY_TOKEN_MODE), d->tokenUi.cmbTokenMode->itemData(index, Qt::UserRole).toString());
     secrets.insert(QLatin1String(NM_OPENCONNECT_KEY_TOKEN_SECRET), d->tokenUi.leTokenSecret->text());
 
-    // Restore previous flags, this is necessary for keeping secrets stored in KWallet
+    // Restore previous flags so previously stored secrets keep their storage mode.
     for (const QString &key : d->setting->data().keys()) {
         if (key.contains(QLatin1String("-flags"))) {
             data.insert(key, d->setting->data().value(key));

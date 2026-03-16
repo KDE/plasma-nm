@@ -158,10 +158,10 @@ PRIVATE
     KF6::KIOWidgets
     KF6::Notifications
     KF6::Solid
-    KF6::Wallet
     Qt::DBus
     Qt::Network
     OpenSSL::Crypto
+    Qt6Keychain::Qt6Keychain
 )
 
 target_compile_definitions(plasmanm_editor PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

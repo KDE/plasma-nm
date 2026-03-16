@@ -127,7 +127,7 @@ public:
      * This determines whether we should use system connections or user
      * connections by default and sets the default permissions accordingly.
      * System connections are preferred if either the preference for that is
-     * set, KWallet is not enabled or we're running in a live image. However, if
+     * set, secure storage is unavailable or we're running in a live image. However, if
      * we do not have permissions to create system connections, we fall back to
      * user connections.
      *

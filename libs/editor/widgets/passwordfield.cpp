@@ -11,7 +11,7 @@
 
 #include <KAuthorized>
 #include <KLocalizedString>
-#include <KWallet>
+#include <qt6keychain/keychain.h>
 
 PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)
@@ -46,7 +46,7 @@ PasswordField::PasswordField(QWidget *parent, Qt::WindowFlags f)
     // Do not add by default
     // m_passwordOptionsMenu->addItem(QIcon::fromTheme(QStringLiteral("document-close")), i18n("This password is not required"), NotRequired);
 
-    if (KWallet::Wallet::isEnabled()) {
+    if (QKeychain::isAvailable()) {
         m_passwordOptionsMenu->setCurrentIndex(0);
     } else {
         m_passwordOptionsMenu->setCurrentIndex(1);

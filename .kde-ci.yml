@@ -18,7 +18,7 @@ Dependencies:
     'frameworks/knotifications': '@latest-kf6'
     'frameworks/kpackage': '@latest-kf6'
     'frameworks/kservice': '@latest-kf6'
-    'frameworks/kwallet': '@latest-kf6'
+    'third-party/qtkeychain': '@latest'
     'frameworks/kwidgetsaddons': '@latest-kf6'
     'frameworks/kwindowsystem': '@latest-kf6'
     'frameworks/modemmanager-qt': '@latest-kf6'

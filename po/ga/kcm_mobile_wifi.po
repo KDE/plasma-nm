@@ -1,22 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SPDX-FileCopyrightText: 2026 charlotte <altronic25@protonmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2026-03-14 15:10+0000\n"
+"Last-Translator: charlotte <altronic25@protonmail.com>\n"
+"Language-Team: Irish\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #, kde-format
 msgctxt "NAME OF TRANSLATORS"
@@ -71,7 +71,7 @@ msgstr ""
 #: package/contents/ui/NetworkSettings.qml:34
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "Sábháil"
 
 #: package/contents/ui/NetworkSettings.qml:44
 #, kde-format
@@ -81,7 +81,7 @@ msgstr ""
 #: package/contents/ui/NetworkSettings.qml:49
 #, kde-format
 msgid "SSID:"
-msgstr ""
+msgstr "SSID:"
 
 #: package/contents/ui/NetworkSettings.qml:58
 #, kde-format
@@ -136,17 +136,17 @@ msgstr ""
 #: package/contents/ui/NetworkSettings.qml:119
 #, kde-format
 msgid "TLS"
-msgstr ""
+msgstr "TLS"
 
 #: package/contents/ui/NetworkSettings.qml:119
 #, kde-format
 msgid "LEAP"
-msgstr ""
+msgstr "LEAP"
 
 #: package/contents/ui/NetworkSettings.qml:119
 #, kde-format
 msgid "FAST"
-msgstr ""
+msgstr "FAST"
 
 #: package/contents/ui/NetworkSettings.qml:120
 #, kde-format
@@ -196,7 +196,7 @@ msgstr ""
 #: package/contents/ui/PasswordField.qml:13
 #, kde-format
 msgid "Password…"
-msgstr ""
+msgstr "Focal Faire..."
 
 #: wifisettings.cpp:32
 #, kde-format
@@ -206,4 +206,4 @@ msgstr ""
 #: wifisettings.cpp:33
 #, kde-format
 msgid "Martin Kacej"
-msgstr ""
+msgstr "Martin Kacej"

@@ -1,22 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR This file is copyright:
+# Copyright (C) 2026 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# SPDX-FileCopyrightText: 2026 charlotte <altronic25@protonmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:46+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Irish Gaelic <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2026-03-14 15:10+0000\n"
+"Last-Translator: charlotte <altronic25@protonmail.com>\n"
+"Language-Team: Irish\n"
 "Language: ga\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=5; plural=n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n < 11 ? "
 "3 : 4\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -38,7 +38,7 @@ msgstr ""
 #: ui/ConnectionInfo.qml:71
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr ""
+msgstr "Ceangailte, ↓ %1/s, ↑ %2/s"
 
 #: ui/ConnectionInfo.qml:79
 #, kde-format
@@ -60,17 +60,17 @@ msgstr ""
 #: ui/ConnectionInfo.qml:114
 #, kde-format
 msgid "Wi-Fi QR Code"
-msgstr ""
+msgstr "Wi-Fi QR Cód"
 
 #: ui/main.qml:26
 #, kde-format
 msgid "Edit"
-msgstr ""
+msgstr "Eagar"
 
 #: ui/main.qml:87
 #, kde-format
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: ui/main.qml:98
 #, kde-format
@@ -111,18 +111,18 @@ msgstr ""
 #: ui/NetworkSettings.qml:36
 #, kde-format
 msgid "Save"
-msgstr ""
+msgstr "Sábháil"
 
 #: ui/NetworkSettings.qml:54
 #, kde-format
 msgctxt "@title:group"
 msgid "General"
-msgstr ""
+msgstr "Ginearálta"
 
 #: ui/NetworkSettings.qml:60
 #, kde-format
 msgid "SSID"
-msgstr ""
+msgstr "SSID"
 
 #: ui/NetworkSettings.qml:75
 #, kde-format
@@ -188,17 +188,17 @@ msgstr ""
 #: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "TLS"
-msgstr ""
+msgstr "TLS"
 
 #: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "LEAP"
-msgstr ""
+msgstr "LEAP"
 
 #: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "FAST"
-msgstr ""
+msgstr "FAST"
 
 #: ui/NetworkSettings.qml:164
 #, kde-format
@@ -249,9 +249,9 @@ msgstr ""
 #: ui/NetworkSettings.qml:255
 #, kde-format
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: ui/PasswordField.qml:13
 #, kde-format
 msgid "Password…"
-msgstr ""
+msgstr "Focal Faire..."

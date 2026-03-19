@@ -105,7 +105,7 @@ PlasmaExtras.Representation {
         anchors.fill: parent
         initialItem: ConnectionListPage {
             id: connectionListPage
-            model: appletProxyModel
+            model: mainWindow.expanded ? appletProxyModel : null
             nmStatus: full.nmStatus
         }
     }

@@ -1,6 +1,6 @@
 include(ECMAddTests)
 
-find_package(Qt6 ${REQUIRED_QT_VERSION} NO_MODULE REQUIRED Test)
+find_package(Qt6 ${QT_MIN_VERSION} NO_MODULE REQUIRED Test)
 set_package_properties(Qt6Test PROPERTIES PURPOSE "Required for autotests")
 
 ecm_add_test(

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-25 00:49+0000\n"
+"POT-Creation-Date: 2026-03-24 00:45+0000\n"
 "PO-Revision-Date: 2026-02-25 10:57+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -3621,12 +3621,12 @@ msgctxt "@info:tooltip real user name is not available"
 msgid "Not Available"
 msgstr "Kullanılabilir Değil"
 
-#: editor/widgets/bssidcombobox.cpp:122
+#: editor/widgets/bssidcombobox.cpp:126
 #, kde-format
 msgid "First select the SSID"
 msgstr "İlk olarak SSID seçin"
 
-#: editor/widgets/bssidcombobox.cpp:131
+#: editor/widgets/bssidcombobox.cpp:135
 #, kde-format
 msgid ""
 "%1 (%2%)\n"

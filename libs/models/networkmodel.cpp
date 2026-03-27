@@ -724,7 +724,10 @@ void NetworkModel::activeConnectionAdded(const QString &activeConnection)
 
 void NetworkModel::activeConnectionRemoved(const QString &activeConnection)
 {
+    const QDateTime disconnectTime = QDateTime::currentDateTime();
+
     for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::ActiveConnection, activeConnection)) {
+        item->setTimestamp(disconnectTime);
         item->setActiveConnectionPath(QString());
         item->setConnectionState(NetworkManager::ActiveConnection::Deactivated);
         item->setVpnState(NetworkManager::VpnConnection::Disconnected);

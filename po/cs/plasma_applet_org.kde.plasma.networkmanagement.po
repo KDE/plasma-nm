@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-18 00:45+0000\n"
-"PO-Revision-Date: 2026-03-17 10:55+0100\n"
+"PO-Revision-Date: 2026-03-30 12:50+0200\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -236,6 +236,8 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"Nelze vytvořit hotspot, protože všechna bezdrátová rozhraní jsou obsazena. "
+"Odpojte se od aktuální sítě Wi-Fi nebo připojte jiné bezdrátové rozhraní."
 
 #: Toolbar.qml:191
 #, kde-format
@@ -268,6 +270,8 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
+"Nainstalujte si čtečku čárových kódů QRCA a naskenujte QR kód, pomocí "
+"kterého se připojíte k síti Wi-Fi"
 
 #: Toolbar.qml:247
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2026-03-13 14:34+0100\n"
+"PO-Revision-Date: 2026-03-30 12:50+0200\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -182,12 +182,16 @@ msgid ""
 "\n"
 "May be required to allow multiple L2TP clients behind the same NAT."
 msgstr ""
+"Nepoužívejte port UDP 1701 jako zdrojový port pro L2TP, i když je volný.\n"
+"Místo toho bude použito dočasné (náhodné) číslo s vysokým číslem portu.\n"
+"\n"
+"Může to být nutné, aby bylo možné povolit více klientů L2TP za stejným NAT."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:270
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "Použít dočasný zdrojový port L2TP"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:308
@@ -588,7 +592,7 @@ msgstr "Jiná nastavení"
 #: l2tpppp.ui:224 l2tpppp.ui:234
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "Zkuste na jednom připojení nastavit režim PPP Multilink."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMRRU)
 #: l2tpppp.ui:227

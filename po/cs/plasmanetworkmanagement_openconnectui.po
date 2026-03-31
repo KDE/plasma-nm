@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-03-13 12:56+0100\n"
+"PO-Revision-Date: 2026-03-30 12:50+0200\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -500,7 +500,7 @@ msgstr "Autentifikátor nepodporuje velké bloby"
 msgid ""
 "The security token does not support the server’s required authentication "
 "method."
-msgstr ""
+msgstr "Bezpečnostní token nepodporuje ověřovací metodu požadovanou serverem."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format

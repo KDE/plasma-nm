@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-18 00:48+0000\n"
-"PO-Revision-Date: 2026-03-13 11:50+0100\n"
+"PO-Revision-Date: 2026-03-30 12:50+0200\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -468,7 +468,7 @@ msgstr "Roaming"
 #: ui/SimPage.qml:60
 #, kde-format
 msgid "Allow mobile data when on a roaming network."
-msgstr ""
+msgstr "Povolit mobilní data při připojení k roamingové síti."
 
 #: ui/SimPage.qml:79
 #, kde-format

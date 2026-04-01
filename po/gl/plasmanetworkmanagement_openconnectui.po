@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-04-01 00:47+0000\n"
 "PO-Revision-Date: 2024-12-17 19:02+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -281,10 +281,10 @@ msgid "Machine Certificate:"
 msgstr "Certificado da máquina:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openconnectprop.ui:261 openconnectprop.ui:299
-#, kde-format
-msgid "Private Key:"
+#: openconnectprop.ui:261
+#, fuzzy, kde-format
+#| msgid "Private Key:"
+msgid "Machine Private Key:"
 msgstr "Chave privada:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -292,6 +292,13 @@ msgstr "Chave privada:"
 #, kde-format
 msgid "User Certificate:"
 msgstr "Certificado da persoa usuaria:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openconnectprop.ui:299
+#, fuzzy, kde-format
+#| msgid "Private Key:"
+msgid "User Private Key:"
+msgstr "Chave privada:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318

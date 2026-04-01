@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-04-01 00:47+0000\n"
 "PO-Revision-Date: 2025-12-11 19:24+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -286,10 +286,10 @@ msgid "Machine Certificate:"
 msgstr "Сертификат компьютера:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openconnectprop.ui:261 openconnectprop.ui:299
-#, kde-format
-msgid "Private Key:"
+#: openconnectprop.ui:261
+#, fuzzy, kde-format
+#| msgid "Private Key:"
+msgid "Machine Private Key:"
 msgstr "Личный ключ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -297,6 +297,13 @@ msgstr "Личный ключ:"
 #, kde-format
 msgid "User Certificate:"
 msgstr "Сертификат пользователя:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openconnectprop.ui:299
+#, fuzzy, kde-format
+#| msgid "Private Key:"
+msgid "User Private Key:"
+msgstr "Личный ключ:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318

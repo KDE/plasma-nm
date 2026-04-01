@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-04-01 00:47+0000\n"
 "PO-Revision-Date: 2026-01-12 10:38+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -285,10 +285,10 @@ msgid "Machine Certificate:"
 msgstr "Certificat de la màquina:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openconnectprop.ui:261 openconnectprop.ui:299
-#, kde-format
-msgid "Private Key:"
+#: openconnectprop.ui:261
+#, fuzzy, kde-format
+#| msgid "Private Key:"
+msgid "Machine Private Key:"
 msgstr "Clau privada:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -296,6 +296,13 @@ msgstr "Clau privada:"
 #, kde-format
 msgid "User Certificate:"
 msgstr "Certificat de l'usuari:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openconnectprop.ui:299
+#, fuzzy, kde-format
+#| msgid "Private Key:"
+msgid "User Private Key:"
+msgstr "Clau privada:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-04-01 00:47+0000\n"
 "PO-Revision-Date: 2022-08-13 17:12+0100\n"
 "Last-Translator: José Nuno Coelho Pires <zepires@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt@kde.org>\n"
@@ -280,10 +280,10 @@ msgid "Machine Certificate:"
 msgstr "Certificado do Utilizador:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
-#. i18n: ectx: property (text), widget (QLabel, label_6)
-#: openconnectprop.ui:261 openconnectprop.ui:299
-#, kde-format
-msgid "Private Key:"
+#: openconnectprop.ui:261
+#, fuzzy, kde-format
+#| msgid "Private Key:"
+msgid "Machine Private Key:"
 msgstr "Chave Privada:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
@@ -291,6 +291,13 @@ msgstr "Chave Privada:"
 #, kde-format
 msgid "User Certificate:"
 msgstr "Certificado do Utilizador:"
+
+#. i18n: ectx: property (text), widget (QLabel, label_6)
+#: openconnectprop.ui:299
+#, fuzzy, kde-format
+#| msgid "Private Key:"
+msgid "User Private Key:"
+msgstr "Chave Privada:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318

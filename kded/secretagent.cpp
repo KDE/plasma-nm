@@ -215,8 +215,7 @@ void SecretAgent::dialogAccepted()
                     requestOffline.saveSecretsWithoutReply = true;
                     m_calls << requestOffline;
                 }
-            } else if (request.saveSecretsWithoutReply && completeConnectionSettings->connectionType() == NetworkManager::ConnectionSettings::Vpn
-                       && !tmpOpenconnectSecrets.isEmpty()) {
+            } else if (completeConnectionSettings->connectionType() == NetworkManager::ConnectionSettings::Vpn && !tmpOpenconnectSecrets.isEmpty()) {
                 NetworkManager::VpnSetting::Ptr vpnSetting =
                     completeConnectionSettings->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
                 if (vpnSetting) {
@@ -228,10 +227,14 @@ void SecretAgent::dialogAccepted()
                         secrets.insert(qdbus_cast<NMStringMap>(connection.value(QStringLiteral("vpn")).value(QStringLiteral("secrets"))));
                     }
 
+                    const bool savePasswords = secrets.value(QStringLiteral("save_passwords")) == QLatin1String("yes");
+                    const bool allUsersConnection = completeConnectionSettings->permissions().isEmpty();
+
                     // Load temporary secrets from auth dialog which are not returned to NM
                     for (const QString &key : tmpOpenconnectSecrets.keys()) {
-                        if (secrets.contains(QStringLiteral("save_passwords")) && secrets.value(QStringLiteral("save_passwords")) == QLatin1String("yes")) {
-                            data.insert(key + QLatin1String("-flags"), QString::number(NetworkManager::Setting::AgentOwned));
+                        if (savePasswords) {
+                            const auto flag = allUsersConnection ? NetworkManager::Setting::None : NetworkManager::Setting::AgentOwned;
+                            data.insert(key + QLatin1String("-flags"), QString::number(flag));
                         } else {
                             data.insert(key + QLatin1String("-flags"), QString::number(NetworkManager::Setting::NotSaved));
                         }

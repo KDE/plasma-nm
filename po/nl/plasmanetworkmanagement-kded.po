@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:46+0000\n"
+"POT-Creation-Date: 2026-04-02 00:46+0000\n"
 "PO-Revision-Date: 2025-07-29 12:24+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -782,7 +782,7 @@ msgstr "PUK-code:"
 msgid "Re-enter PIN code:"
 msgstr "Voer PIN-code opnieuw in:"
 
-#: secretagent.cpp:408
+#: secretagent.cpp:411
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Authenticatie naar %1 is mislukt. Verkeerd wachtwoord?"

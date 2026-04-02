@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-28 00:46+0000\n"
+"POT-Creation-Date: 2026-04-02 00:46+0000\n"
 "PO-Revision-Date: 2024-08-09 17:49+0200\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -784,7 +784,7 @@ msgstr "Código PUK:"
 msgid "Re-enter PIN code:"
 msgstr "Volva inserir o PIN:"
 
-#: secretagent.cpp:408
+#: secretagent.cpp:411
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "A autenticación con %1 fallou. Contrasinal incorrecto?"

@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-12 00:45+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-04-01 09:36-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -28,17 +29,15 @@ msgid "Disconnect"
 msgstr "ئۈز"
 
 #: ConnectionItem.qml:90
-#, fuzzy, kde-format
-#| msgid "Shared"
+#, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr "ھەمبەھىرلەنگەن"
+msgstr "ھەمبەھىر"
 
 #: ConnectionItem.qml:96
-#, fuzzy, kde-format
-#| msgid "Confirm Delete"
+#, kde-format
 msgid "Configure…"
-msgstr "ئۆچۈرۈش جەزملە"
+msgstr "سەپلە…"
 
 #: ConnectionItem.qml:136
 #, kde-format
@@ -57,184 +56,177 @@ msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
 msgstr ""
+"نۆۋەتتىكى چۈشۈرۈش سۈرئىتى سېكۇنتىغا %1KiB؛ نۆۋەتتىكى يۈكلەش سۈرئىتى "
+"سېكۇنتىغا %2KiB"
 
 #: ConnectionItem.qml:298
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "%1 غا باغلاندى"
+msgstr "↓ %1/s، ↑ %2/s"
 
 #: ConnectionListPage.qml:33
 #, kde-format
 msgid "You need to log in to this network"
-msgstr ""
+msgstr "سىز بۇ تورغا تىزىمغا كىرىشىڭىز كېرەك"
 
 #: ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "تىزىمغا كىر"
 
 #: ConnectionListPage.qml:118
-#, fuzzy, kde-format
-#| msgid "Wireless"
+#, kde-format
 msgid "Airplane mode is enabled"
-msgstr "سىمسىز"
+msgstr "ئايروپىلان ھالىتى قوزغىتىلغان"
 
 #: ConnectionListPage.qml:122
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr ""
+msgstr "Wi-Fi ۋە كۆچمە تور سانلىق مەلۇماتى چەكلەندى"
 
 #: ConnectionListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Wireless"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "سىمسىز"
+msgstr "Wi-Fi ئاكتىپسىزلاندى"
 
 #: ConnectionListPage.qml:127
 #, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr ""
+msgstr "Wi-Fi تورىنى ئىزدەۋاتىدۇ"
 
 #: ConnectionListPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Wireless"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "سىمسىز"
+msgstr "كۆچمە سانلىق مەلۇمات ئاكتىپسىزلاندى"
 
 #: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
-msgstr ""
+msgstr "ماس كەلگىنى يوق"
 
 #: ConnectionListPage.qml:136
-#, fuzzy, kde-format
-#| msgid "Manage Connections"
+#, kde-format
 msgid "No available connections"
-msgstr "باغلىنىشلار"
+msgstr "ئىشلەتكىلى بولىدىغان باغلىنىش يوق"
 
 #: ConnectionListPage.qml:145
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "تور ئىزدەش ئۈچۈن ئايروپىلان ھالىتىنى تاقاش كېرەك"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "تور ئىزدەش ئۈچۈن Wi-Fi ياكى كۆچمە تور سانلىق مەلۇماتىنى ئېچىش كېرەك"
 
 #: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "تور ئىزدەش ئۈچۈن Wi-Fi تورىنى ئېچىش كېرەك"
 
 #: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "تور ئىزدەش ئۈچۈن كۆچمە تور سانلىق مەلۇماتىنى ئېچىش كېرەك"
 
 #: DetailsText.qml:40
 #, kde-format
 msgid "Copy"
-msgstr ""
+msgstr "كۆچۈر"
 
 #: main.qml:32
-#, fuzzy, kde-format
-#| msgid "Net&work:"
+#, kde-format
 msgid "Networks"
-msgstr "تور ئاتى"
+msgstr "تور"
 
 #: main.qml:41
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "ئوتتۇرا توپچە چېكىلسە ئايروپىلان ھالىتىنى تاقايدۇ"
 
 #: main.qml:43
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "ئوتتۇرا توپچە چېكىلسە ئايروپىلان ھالىتىنى ئاچىدۇ"
 
 #: main.qml:71 Toolbar.qml:82
 #, kde-format
 msgid "Enable Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi نى قوزغات"
 
 #: main.qml:82
 #, kde-format
 msgid "Enable Mobile Data"
-msgstr ""
+msgstr "كۆچمە سانلىق مەلۇماتنى قوزغات"
 
 #: main.qml:94
-#, fuzzy, kde-format
-#| msgid "Wireless"
+#, kde-format
 msgid "Enable Airplane Mode"
-msgstr "سىمسىز"
+msgstr "ئايروپىلان ھالىتىنى قوزغات"
 
 #: main.qml:106
 #, kde-format
 msgid "Open Network Login Page…"
-msgstr ""
+msgstr "تورنىڭ تىزىمغا كىرىش بېتىنى ئاچىدۇ…"
 
 #: main.qml:116
-#, fuzzy, kde-format
-#| msgid "Configure Notifications..."
+#, kde-format
 msgid "&Configure Network Connections…"
-msgstr "ئۇقتۇرۇشلارنى سەپلە"
+msgstr "تور باغلىنىشىنى سەپلەيدۇ(&C)…"
 
 #: PopupDialog.qml:50
-#, fuzzy, kde-format
-#| msgid "Configure Notifications..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "ئۇقتۇرۇشلارنى سەپلە"
+msgstr "تور باغلىنىشىغا قايتىدۇ"
 
 #: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
-msgstr ""
+msgstr "«%1» تورغا باغلىنىش ئۈچۈن باشقا بىر ئۈسكۈنىدە بۇ QR كودى تارىلىدۇ."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Key password:"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "ئىم:"
+msgstr "Wi-Fi ئىم:"
 
 #: Toolbar.qml:131
-#, fuzzy, kde-format
-#| msgid "Wireless"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "سىمسىز"
+msgstr "كۆچمە سانلىق مەلۇماتنى قوزغات"
 
 #: Toolbar.qml:156
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
+"ئايروپىلان ھالىتىنى چەكلە<nl/><nl/>بۇ مەشغۇلات Wi-Fi ۋە كۆكچىشنى قوزغىتىدۇ"
 
 #: Toolbar.qml:157
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
+"ئايروپىلان ھالىتىنى قوزغات<nl/><nl/>بۇ مەشغۇلات Wi-Fi ۋە كۆكچىشنى چەكلەيدۇ"
 
 #: Toolbar.qml:170
 #, kde-format
 msgid "Hotspot"
-msgstr ""
+msgstr "قىزىق نۇقتا"
 
 #: Toolbar.qml:187
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "قىزىق نۇقتا قۇرالمايدۇ چۈنكى Wi-Fi چەكلەنگەن."
 
 #: Toolbar.qml:189
 #, kde-format
@@ -243,32 +235,32 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"قىزىق نۇقتا قۇرالمايدۇ چۈنكى بارلىق سىمسىز تور كارتىسى ئىشلىتىلىۋاتىدۇ. "
+"نۆۋەتتىكى Wi-Fi تورىنى تاقاڭ ياكى باشقا بىر سىمسىز تور كارتىسىنى باغلاڭ."
 
 #: Toolbar.qml:191
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
-msgstr "چەكلەنگەن"
+msgstr "قىزىق نۇقتىنى چەكلەيدۇ"
 
 #: Toolbar.qml:193
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
-msgstr "چەكلەنگەن"
+msgstr "قىزىق نۇقتا قۇرىدۇ"
 
 #: Toolbar.qml:221
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr ""
+msgstr "Wi-Fi QR كودىنى تارا"
 
 #: Toolbar.qml:226
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr ""
+msgstr "Wi-Fi تورىغا باغلىنىش ئۈچۈن QR كودى تارىلىدۇ"
 
 #: Toolbar.qml:228
 #, kde-format
@@ -277,69 +269,60 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
+"Wi-Fi تورىغا باغلىنىش ئۈچۈن QRCA سىزىقلىق كود تارىغۇچنى ئورنىتىپ QR كودى "
+"تارىلىدۇ"
 
 #: Toolbar.qml:247
-#, fuzzy, kde-format
-#| msgid "Configure Notifications..."
+#, kde-format
 msgid "Configure network connections…"
-msgstr "ئۇقتۇرۇشلارنى سەپلە"
+msgstr "تور باغلىنىشىنى سەپلەيدۇ…"
 
 #~ msgid "Connected"
 #~ msgstr "باغلاندى"
 
-#, fuzzy
 #~| msgid "Password:"
 #~ msgid "Password…"
 #~ msgstr "ئىم:"
 
-#, fuzzy
 #~| msgid "Connected to %1"
 #~ msgctxt "@info:tooltip %1 is the name of a network connection"
 #~ msgid "Connect to %1"
 #~ msgstr "%1 غا باغلاندى"
 
-#, fuzzy
 #~| msgid "Disconnect"
 #~ msgctxt "@info:tooltip %1 is the name of a network connection"
 #~ msgid "Disconnect from %1"
 #~ msgstr "ئۈز"
 
-#, fuzzy
 #~| msgid "&Store connection secrets: "
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is GSM"
 #~ msgstr "باغلىنىشلار"
 
-#, fuzzy
 #~| msgid "&Store connection secrets: "
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is VPN"
 #~ msgstr "باغلىنىشلار"
 
-#, fuzzy
 #~| msgid "Connection Speed"
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is Wired"
 #~ msgstr "باغلىنىش تېزلىكى"
 
-#, fuzzy
 #~| msgid "Manage Connections"
 #~ msgctxt "button tooltip"
 #~ msgid "Search the connections"
 #~ msgstr "باغلىنىشلار"
 
-#, fuzzy
 #~| msgid "Manage Connections"
 #~ msgid "Available connections"
 #~ msgstr "باغلىنىشلار"
 
-#, fuzzy
 #~| msgctxt "like in General settings"
 #~| msgid "General"
 #~ msgid "General"
 #~ msgstr "ئادەتتىكى"
 
-#, fuzzy
 #~| msgid "Configure Notifications..."
 #~ msgid "Show virtual connections"
 #~ msgstr "ئۇقتۇرۇشلارنى سەپلە"
@@ -355,33 +338,27 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "Your emails"
 #~ msgstr "sahran.ug@gmail.com,  gheyret@gmail.com"
 
-#, fuzzy
 #~| msgid "Show tray icon"
 #~ msgid "Show sections"
 #~ msgstr "قونداق سىنبەلگىسىنى كۆرسىتىش"
 
-#, fuzzy
 #~| msgid "KBit/s"
 #~ msgid "KBits/s"
 #~ msgstr "KBit/s"
 
-#, fuzzy
 #~| msgctxt "network interface connection failed state label"
 #~| msgid "Connection Failed"
 #~ msgid "Connection Details"
 #~ msgstr "باغلىنىش مەغلۇپ بولدى"
 
-#, fuzzy
 #~| msgid "Mobile broadband"
 #~ msgid "Mobile broadband enabled"
 #~ msgstr "كۆچمە كەڭ بەلۋاغ"
 
-#, fuzzy
 #~| msgid "Mobile broadband"
 #~ msgid "Mobile broadband disabled"
 #~ msgstr "كۆچمە كەڭ بەلۋاغ"
 
-#, fuzzy
 #~| msgid "When Activating Connection"
 #~ msgctxt "Disconnected"
 #~ msgid "There is no active network connection"
@@ -423,12 +400,10 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "Transmitted"
 #~ msgstr "يوللانغىنى"
 
-#, fuzzy
 #~| msgid "&Connection name:"
 #~ msgid "Connection name"
 #~ msgstr "باغلىنىش مەغلۇپ بولدى"
 
-#, fuzzy
 #~| msgid "Last Used"
 #~ msgid "Last used"
 #~ msgstr "ئاخىرقى قېتىم ئىشلەتكەن"
@@ -437,7 +412,6 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "Bluetooth"
 #~ msgstr "كۆكچىش"
 
-#, fuzzy
 #~| msgid "WiMAX"
 #~ msgctxt "title of the interface widget in nm's popup"
 #~ msgid "WiMAX"
@@ -520,26 +494,22 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "Connection Failed"
 #~ msgstr "باغلىنىش مەغلۇپ بولدى"
 
-#, fuzzy
 #~| msgid "Unknown"
 #~ msgctxt "The state of the VPN connection is unknown"
 #~ msgid "Unknown"
 #~ msgstr "نامەلۇم"
 
-#, fuzzy
 #~| msgctxt "description of waiting for authentication network interface state"
 #~| msgid "Waiting for authorization"
 #~ msgctxt "The VPN connection needs authorization credentials"
 #~ msgid "Needs authorization"
 #~ msgstr "كىملىك دەلىللەشنى كۈتۈۋاتىدۇ"
 
-#, fuzzy
 #~| msgid "Connecting"
 #~ msgctxt "The VPN connection is being established"
 #~ msgid "Connecting"
 #~ msgstr "باغلىنىۋاتىدۇ"
 
-#, fuzzy
 #~| msgid "Activating"
 #~ msgctxt "The VPN connection is active"
 #~ msgid "Activated"
@@ -569,33 +539,28 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "802.1x"
 #~ msgstr "802.1x"
 
-#, fuzzy
 #~| msgctxt "Cellular access technology"
 #~| msgid "LTE"
 #~ msgctxt "Gsm modes (2G/3G/any)"
 #~ msgid "LTE"
 #~ msgstr "LTE"
 
-#, fuzzy
 #~| msgid "3G (UMTS/HSPA)"
 #~ msgctxt "Gsm modes (2G/3G/any)"
 #~ msgid "UMTS/HSxPA"
 #~ msgstr "3G (UMTS/HSPA)"
 
-#, fuzzy
 #~| msgid "2G (GPRS/EDGE)"
 #~ msgctxt "Gsm modes (2G/3G/any)"
 #~ msgid "GPRS/EDGE"
 #~ msgstr "2G (GPRS/EDGE)"
 
-#, fuzzy
 #~| msgctxt "Cellular access technology"
 #~| msgid "GSM"
 #~ msgctxt "Gsm modes (2G/3G/any)"
 #~ msgid "GSM"
 #~ msgstr "GSM"
 
-#, fuzzy
 #~| msgctxt "Any cellular frequency band"
 #~| msgid "Any"
 #~ msgctxt "Gsm modes (2G/3G/any)"
@@ -646,14 +611,12 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "Unknown"
 #~ msgstr "نامەلۇم"
 
-#, fuzzy
 #~| msgctxt "Any cellular frequency band"
 #~| msgid "Any"
 #~ msgctxt "Any cellular access technology"
 #~ msgid "Any"
 #~ msgstr "خالىغان"
 
-#, fuzzy
 #~| msgctxt "@label unknown security"
 #~| msgid "Unknown security type"
 #~ msgctxt "Unknown"
@@ -741,7 +704,6 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "Driver:"
 #~ msgstr "قوزغاتقۇچ:"
 
-#, fuzzy
 #~| msgid "Bluetooth"
 #~ msgctxt "Name"
 #~ msgid "Bluetooth name"
@@ -753,7 +715,6 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "Operator:"
 #~ msgstr "مەشغۇلاتچى:"
 
-#, fuzzy
 #~| msgid "Network ID"
 #~ msgid "Network ID:"
 #~ msgstr "تور ئاتى"
@@ -798,7 +759,6 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "Never"
 #~ msgstr "ھەرگىز"
 
-#, fuzzy
 #~| msgctxt ""
 #~| "Label for last used time for a network connection used in the last hour, "
 #~| "as the number of minutes since usage"
@@ -811,7 +771,6 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid_plural "Last used %1 minutes ago"
 #~ msgstr[0] "%1 مىنۇت بۇرۇن"
 
-#, fuzzy
 #~| msgctxt ""
 #~| "Label for last used time for a network connection used in the last day, "
 #~| "as the number of hours since usage"
@@ -824,19 +783,16 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid_plural "Last used %1 hours ago"
 #~ msgstr[0] "%1 سائەت بۇرۇن"
 
-#, fuzzy
 #~| msgid "Last used"
 #~ msgctxt ""
 #~ "Label for last used time for a network connection used the previous day"
 #~ msgid "Last used yesterday"
 #~ msgstr "ئاخىرقى قېتىم ئىشلەتكەن"
 
-#, fuzzy
 #~| msgid "Last used"
 #~ msgid "Last used on %1"
 #~ msgstr "ئاخىرقى قېتىم ئىشلەتكەن"
 
-#, fuzzy
 #~| msgctxt ""
 #~| "Label for last used time for a network connection that has never been "
 #~| "used"
@@ -870,12 +826,10 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "IPv6 Address"
 #~ msgstr "‍IPv6 ئادرېس"
 
-#, fuzzy
 #~| msgid "WiMAX"
 #~ msgid "WiMAX Bsid"
 #~ msgstr "WiMAX"
 
-#, fuzzy
 #~| msgid "WiMAX"
 #~ msgid "WiMAX NSP"
 #~ msgstr "WiMAX"
@@ -941,7 +895,6 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "Unknown"
 #~ msgstr "نامەلۇم"
 
-#, fuzzy
 #~| msgctxt "Cellular access technology"
 #~| msgid "GSM"
 #~ msgctxt "GSM cellular type"
@@ -1122,7 +1075,6 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "Your Plan:"
 #~ msgstr "پىلانىڭىز:"
 
-#, fuzzy
 #~| msgctxt "Cellular access technology"
 #~| msgid "GPRS"
 #~ msgctxt "Gsm modes (2G/3G/any)"
@@ -1137,7 +1089,6 @@ msgstr "ئۇقتۇرۇشلارنى سەپلە"
 #~ msgid "Cdma"
 #~ msgstr "Cdma"
 
-#, fuzzy
 #~| msgctxt ""
 #~| "Label for last used time for a network connection that has never been "
 #~| "used"

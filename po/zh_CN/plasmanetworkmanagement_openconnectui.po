@@ -284,7 +284,7 @@ msgstr "机器证书："
 #: openconnectprop.ui:261
 #, kde-format
 msgid "Machine Private Key:"
-msgstr ""
+msgstr "机器私钥："
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
@@ -296,7 +296,7 @@ msgstr "用户证书："
 #: openconnectprop.ui:299
 #, kde-format
 msgid "User Private Key:"
-msgstr ""
+msgstr "用户私钥："
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318

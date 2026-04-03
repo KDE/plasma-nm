@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: plasmanm_openswanui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-04-01 09:36-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: libreswan.ui:20
@@ -35,14 +36,14 @@ msgstr "گۇرۇپپا ئاتى:"
 #: libreswan.ui:40 libreswanauth.ui:40
 #, kde-format
 msgid "User password:"
-msgstr ""
+msgstr "ئىشلەتكۈچى ئىم:"
 
 #. i18n: ectx: property (text), widget (QLabel, groupPasswordLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: libreswan.ui:58 libreswanauth.ui:60
 #, kde-format
 msgid "Group password:"
-msgstr "گۇرۇپپا ئىمى:"
+msgstr "گۇرۇپپا ئىم:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: libreswan.ui:89
@@ -54,13 +55,13 @@ msgstr "ئىشلەتكۈچى ئاتى:"
 #: libreswan.ui:99
 #, kde-format
 msgid "Phase1 algorithms:"
-msgstr ""
+msgstr "1-باسقۇچلۇق ھېسابلاش ئۇسۇلى:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: libreswan.ui:109
 #, kde-format
 msgid "Phase2 algorithms:"
-msgstr ""
+msgstr "2-باسقۇچلۇق ھېسابلاش ئۇسۇلى:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: libreswan.ui:119
@@ -80,7 +81,6 @@ msgstr "دائىرە:"
 #~ msgid "Show passwords"
 #~ msgstr "ئىملارنى كۆرسەت"
 
-#, fuzzy
 #~| msgid "Group name:"
 #~ msgid "Group na&me:"
 #~ msgstr "گۇرۇپپا ئاتى:"

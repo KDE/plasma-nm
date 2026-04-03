@@ -8,19 +8,20 @@ msgstr ""
 "Project-Id-Version: plasmanm_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-04-01 09:37-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
-msgstr ""
+msgstr "NetworkManager نىڭ OpenVPN نى قوللىشى كەم"
 
 #: openvpn.cpp:99
 #, kde-format
@@ -42,31 +43,33 @@ msgid ""
 "You can specify multiple hosts for redundancy (use commas or spaces as "
 "delimiters)."
 msgstr ""
+"يىراقتىكى تور ئۆتكىلى، ئېغىز ۋە كېلىشىم (مەسىلەن، ovpn.corp.com:1234:tcp) "
+"تاللاشچان.\n"
+"كۆپ مۇلازىمېتىرنى بەلگىلىيەلەيسىز (پەش ياكى بوشلۇق بىلەن ئايرىلىدۇ)"
 
 #. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
 #: openvpn.ui:46
 #, kde-format
 msgid "Connection type:"
-msgstr "باغلىنىش تىپى:"
+msgstr "باغلىنىش تۈرى:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:68
 #, kde-format
 msgid "Select an authentication mode."
-msgstr ""
+msgstr "دەلىللەش ھالىتى تاللىنىدۇ."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:72
-#, fuzzy, kde-format
-#| msgid "Certificate:"
+#, kde-format
 msgid "Certificates (TLS)"
-msgstr "گۇۋاھنامە:"
+msgstr "گۇۋاھنامە (TLS)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:77
 #, kde-format
 msgid "Static Key"
-msgstr ""
+msgstr "تىنچ ئاچقۇچ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:82
@@ -78,16 +81,15 @@ msgstr "ئىم"
 #: openvpn.ui:87
 #, kde-format
 msgid "Password with Certificates (TLS)"
-msgstr ""
+msgstr "ئىم بار گۇۋاھنامە(TLS)"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel8)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2_2)
 #: openvpn.ui:104 openvpn.ui:370 openvpn.ui:468
-#, fuzzy, kde-format
-#| msgid "Certificate:"
+#, kde-format
 msgid "CA Certificate:"
-msgstr "گۇۋاھنامە:"
+msgstr "CA گۇۋاھنامە:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, passCaFile)
@@ -95,15 +97,14 @@ msgstr "گۇۋاھنامە:"
 #: openvpn.ui:117 openvpn.ui:386 openvpn.ui:481
 #, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr ""
+msgstr "گۇۋاھنامە تارقاتقۇچى (CA) ھۆججەت، پىچىمى .pem."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2_2)
 #: openvpn.ui:129 openvpn.ui:493
-#, fuzzy, kde-format
-#| msgid "Certificate:"
+#, kde-format
 msgid "User Certificate:"
-msgstr "گۇۋاھنامە:"
+msgstr "ئىشلەتكۈچى گۇۋاھنامىسى:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Cert)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassCert)
@@ -113,60 +114,63 @@ msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
 "Certificate)."
 msgstr ""
+"يەرلىك تورداشنىڭ ئىمزالىق گۇۋاھنامىسى، پىچىمى .pem (CA گۇۋاھنامىسىگە CA "
+"ئىمزا قويغان)."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
 #: openvpn.ui:154 openvpn.ui:518
 #, kde-format
 msgid "Private Key:"
-msgstr ""
+msgstr "شەخسىي ئاچقۇچ:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Key)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassKey)
 #: openvpn.ui:167 openvpn.ui:531
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr ""
+msgstr "يەرلىك تورداشنىڭ شەخسىي شىفىرلىق ئاچقۇچى، پىچىمى .pem."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: openvpn.ui:179 openvpn.ui:543
-#, fuzzy, kde-format
-#| msgid "Proxy Password:"
+#, kde-format
 msgid "Private Key Password:"
-msgstr "ۋاكالەتچى ئىمى:"
+msgstr "شەخسىي شىفىرلىق ئاچقۇچ ئىم:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509KeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, x509PassKeyPassword)
 #: openvpn.ui:188 openvpn.ui:552
 #, kde-format
 msgid "Password for private key."
-msgstr ""
+msgstr "شەخسىي شىفىرلىق ئاچقۇچ ئىمى."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel5)
 #: openvpn.ui:217
 #, kde-format
 msgid "Static Key:"
-msgstr ""
+msgstr "تىنچ ئاچقۇچ:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, pskSharedKey)
 #: openvpn.ui:230
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
 msgstr ""
+"تىنچ ئاچقۇچ شىفىرلاش ھالىتىگە ئىشلىتىدىغان ئالدىن ھەمبەھىرلەنگەن ھۆججەت "
+"(غەيرى TLS)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_16)
 #. i18n: ectx: property (text), widget (QLabel, textLabel1)
 #: openvpn.ui:242 openvpnadvanced.ui:1146
 #, kde-format
 msgid "Key Direction:"
-msgstr ""
+msgstr "ئاچقۇچ يۆنىلىشى:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:255
 #, kde-format
 msgid "Direction for Static Key encryption mode (non-TLS)."
-msgstr ""
+msgstr "تىنچ ئاچقۇچ شىفىرلاش ھالىتىنىڭ يۆنىلىشى (غەيرى TLS)"
 
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:258
@@ -175,12 +179,12 @@ msgid ""
 "If key direction is used, it must be the opposite of that used on the VPN "
 "peer."
 msgstr ""
+"ئەگەر شىفىرلىق ئاچقۇچ يۆنىلىش بەلگىلەنگەن بولسا، ئۇ چوقۇم VPN تورداش "
+"يۆنىلىشى بىلەن قارىمۇ-قارشى بولۇشى كېرەك."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:262
-#, fuzzy, kde-format
-#| msgctxt "like in None setting selected"
-#| msgid "None"
+#, kde-format
 msgctxt "No \"Key Direction\""
 msgid "None"
 msgstr "يوق"
@@ -201,26 +205,25 @@ msgstr "1"
 #: openvpn.ui:280
 #, kde-format
 msgid "Local IP Address:"
-msgstr ""
+msgstr "يەرلىك IP ئادرېس:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, pskLocalIp)
 #: openvpn.ui:293
 #, kde-format
 msgid "IP address of the remote VPN endpoint."
-msgstr ""
+msgstr "يىراقتىكى VPN ئاخىرلىشىش نۇقتىسىنىڭ IP ئادرېسى."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel7)
 #: openvpn.ui:303
-#, fuzzy, kde-format
-#| msgid "Server Address:"
+#, kde-format
 msgid "Remote IP Address:"
-msgstr "مۇلازىمېتىر ئادرېسى:"
+msgstr "يىراقتىكى IP ئادرېس:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, pskRemoteIp)
 #: openvpn.ui:316
 #, kde-format
 msgid "IP address of the local VPN endpoint."
-msgstr ""
+msgstr "يەرلىك VPN ئاخىرلىشىش نۇقتىسىنىڭ IP ئادرېسى."
 
 #. i18n: ectx: property (text), widget (QLabel, lblKeyDirection)
 #: openvpn.ui:350
@@ -230,13 +233,15 @@ msgid ""
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
+"ئەگەر شىفىرلىق ئاچقۇچ يۆنىلىش بەلگىلەنگەن بولسا، ئۇ چوقۇم VPN تورداش "
+"يۆنىلىشى بىلەن قارىمۇ-قارشى بولۇشى كېرەك. مەسىلەن، ئەگەر تورداش «1» نى "
+"ئىشلەتكەن بولسا باغلىنىش چوقۇم «0» نى ئىشلىتىشى كېرەك. ئەگەر قانداق قىممەت "
+"ئىشلىتىشنى بىلەلمىسىڭىز، سىستېما باشقۇرغۇچى بىلەن ئالاقىلىشىڭ."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel9)
 #. i18n: ectx: property (text), widget (QLabel, textLabel9_2)
 #: openvpn.ui:398 openvpn.ui:564
-#, fuzzy, kde-format
-#| msgctxt "like in Username for athentication"
-#| msgid "Username:"
+#, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username:"
 msgstr "ئىشلەتكۈچى ئاتى:"
@@ -246,7 +251,7 @@ msgstr "ئىشلەتكۈچى ئاتى:"
 #: openvpn.ui:414 openvpn.ui:577
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "OpenVPN غا يوللايدىغان ئىشلەتكۈچى ئاتى."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -261,12 +266,11 @@ msgstr "ئىم:"
 #: openvpn.ui:439 openvpn.ui:599
 #, kde-format
 msgid "Password passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "OpenVPN غا يوللايدىغان ئىم."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: openvpn.ui:643
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
 msgstr "ئالىي…"
 
@@ -284,13 +288,14 @@ msgid ""
 "TCP/UDP port number for peer. (Default value when there is no port for "
 "gateway)."
 msgstr ""
+"تورداشنىڭ TCP/UDP ئېغىز نومۇرى. (تور ئۆتكىلىنىڭ ئېغىزى بەلگىلەنمىگەندە "
+"ئىشلىتىدىغان كۆڭۈلدىكى قىممەت)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomPort)
 #: openvpnadvanced.ui:39
-#, fuzzy, kde-format
-#| msgid "Gateway:"
+#, kde-format
 msgid "Use custom gateway port:"
-msgstr "تور ئۆتكىلى:"
+msgstr "ئىختىيارى تور ئۆتكەل ئېغىزى ئىشلىتىدۇ:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbCustomPort)
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbMtu)
@@ -307,110 +312,109 @@ msgstr "ئاپتوماتىك"
 #, kde-format
 msgid "Renegotiate data channel key after the specified number of seconds."
 msgstr ""
+"بەلگىلەنگەن سېكۇنتتىن كېيىن، سانلىق مەلۇمات قانال شىفىرلىق ئاچقۇچىنى "
+"قايتىدىن كېلىشىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomReneg)
 #: openvpnadvanced.ui:75
 #, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr ""
+msgstr "ئىشلىتىدىغان ئىختىيارى قايتا كېلىشىش ۋاقىت ئارىلىقى:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCompression)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:96 openvpnadvanced.ui:109
 #, kde-format
 msgid "Use compression."
-msgstr ""
+msgstr "قىسىشنى ئىشلىتىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCompression)
 #: openvpnadvanced.ui:99
 #, kde-format
 msgid "Use compression"
-msgstr ""
+msgstr "قىسىشنى ئىشلىتىدۇ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:113 openvpnadvanced.ui:334
-#, fuzzy, kde-format
-#| msgctxt "like in None setting selected"
-#| msgid "None"
+#, kde-format
 msgid "No"
-msgstr "يوق"
+msgstr "ياق"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:118
 #, kde-format
 msgid "LZO"
-msgstr ""
+msgstr "LZO"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:123
 #, kde-format
 msgid "LZ4"
-msgstr ""
+msgstr "LZ4"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:128
 #, kde-format
 msgid "LZ4 v2"
-msgstr ""
+msgstr "LZ4 v2"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:133
 #, kde-format
 msgid "Adaptive"
-msgstr ""
+msgstr "ماسلىشىشچان"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, leVirtualDeviceName)
 #: openvpnadvanced.ui:138 openvpnadvanced.ui:230
-#, fuzzy, kde-format
-#| msgctxt "like in use Automatic configuration"
-#| msgid "Automatic"
+#, kde-format
 msgid "Automatic"
 msgstr "ئاپتوماتىك"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseAsymCompression)
 #: openvpnadvanced.ui:153
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Use compression"
 msgid "Use asymetric compression"
-msgstr ""
+msgstr "قىسىشنى ئىشلىتىدۇ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:162
 #, kde-format
 msgid "Use TCP for communicating with remote host."
-msgstr ""
+msgstr "TCP ئارقىلىق يىراقتىكى مۇلازىمېتىر بىلەن ئالاقىلىشىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:165
 #, kde-format
 msgid "Use a TCP connection"
-msgstr ""
+msgstr "TCP باغلىنىش ئىشلىتىدۇ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseVirtualDeviceType)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:174 openvpnadvanced.ui:187
 #, kde-format
 msgid "Explicitly set virtual device type (TUN/TAP)."
-msgstr ""
+msgstr "مەۋھۇم ئۈسكۈنە تۈرىنى ئېنىق تەڭشەيدۇ(TUN/TAP)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceType)
 #: openvpnadvanced.ui:177
 #, kde-format
 msgid "Set virtual device type:"
-msgstr ""
+msgstr "مەۋھۇم ئۈسكۈنە تۈرىنى تەڭشەيدۇ:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:191
 #, kde-format
 msgid "TUN"
-msgstr ""
+msgstr "TUN"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:196
 #, kde-format
 msgid "TAP"
-msgstr ""
+msgstr "TAP"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseVirtualDeviceName)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leVirtualDeviceName)
@@ -420,12 +424,14 @@ msgid ""
 "Use custom name for TUN/TAP virtual device (instead of default \"tun\" or "
 "\"tap\")."
 msgstr ""
+"TUN/TAP مەۋھۇم ئۈسكۈنىگە ئىختىيارى ئىسىم ئىشلىتىدۇ (كۆڭۈلدىكى «tun» ياكى "
+"«tap» نى ئىشلەتمەيدۇ)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceName)
 #: openvpnadvanced.ui:211
 #, kde-format
 msgid "Set virtual device name:"
-msgstr ""
+msgstr "مەۋھۇم ئۈسكۈنە ئاتىنى تەڭشەيدۇ:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMtu)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMtu)
@@ -435,12 +441,14 @@ msgid ""
 "Take the TUN device MTU to be specified value and derive the link MTU from "
 "it."
 msgstr ""
+"TUN ئۈسكۈنىنىڭ MTU نى بەلگىلەنگەن قىممىتى قىلىدۇ ۋە بۇ قىممەتكە ئاساسەن "
+"ئۇلىنىدىغان MTU نى كەلتۈرۈپ چىقىرىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtu)
 #: openvpnadvanced.ui:244
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr ""
+msgstr "ئىختىيارى قانالنىڭ ئەڭ يۇقىرى يەتكۈزۈش بۆلىكى (MTU) نى ئىشلىتىدۇ:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkCustomFragmentSize)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomFragmentSize)
@@ -448,24 +456,26 @@ msgstr ""
 #, kde-format
 msgid "Enable internal datagram fragmentation with this maximum size."
 msgstr ""
+"ئىچكى سانلىق مەلۇمات يوللانمىسىنىڭ پارچىسىنى قوزغىتىپ ئەڭ چوڭ پارچىسىنى "
+"مەزكۇر قىممەتكە تەڭشەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomFragmentSize)
 #: openvpnadvanced.ui:280
 #, kde-format
 msgid "Use custom UDP fragment size:"
-msgstr ""
+msgstr "ئىختىيارى UDP تارماق پارچە چوڭلۇقىنى ئىشلىتىدۇ:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:308
 #, kde-format
 msgid "Restrict tunnel TCP maximum segment size."
-msgstr ""
+msgstr "قانال TCP ئەڭ چوڭ يوللانما پارچىسىنىڭ چوڭلۇقىنى چەكلەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:311
 #, kde-format
 msgid "Restrict TCP maximum segment size (MSS)"
-msgstr ""
+msgstr "TCP ئەڭ چوڭ يوللانما پارچىسىنىڭ چوڭلۇقىنى چەكلەيدۇ(MSS)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMtuDisc)
 #: openvpnadvanced.ui:320
@@ -498,12 +508,14 @@ msgid ""
 "Randomize the order of gateways list (remote) as a kind of basic load-\n"
 "balancing measure."
 msgstr ""
+"تور ئۆتكىلى تىزىمى (يىراقتىكى) نىڭ تەرتىپىنى ئىختىيارىيلاشتۇرۇپ ئاددىي ئېقىم "
+"تەڭپۇڭلاشتۇرۇش ۋاسىتىسى سۈپىتىدە قوللىنىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:358
 #, kde-format
 msgid "Randomize remote hosts"
-msgstr ""
+msgstr "يىراقتىكى مۇلازىمېتىرنى ئىختىيارىيلاشتۇرىدۇ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRandRemHostname)
 #: openvpnadvanced.ui:365
@@ -523,14 +535,12 @@ msgstr ""
 #, fuzzy, kde-format
 #| msgid "Connection type:"
 msgid "Connect timeout:"
-msgstr "باغلىنىش تىپى:"
+msgstr "باغلىنىش تۈرى:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbConnectTimeout)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:393 openvpnadvanced.ui:1069
-#, fuzzy, kde-format
-#| msgctxt "like in None setting selected"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "يوق"
 
@@ -569,13 +579,13 @@ msgstr ""
 #: openvpnadvanced.ui:434
 #, kde-format
 msgid "Build a tun link capable of forwarding IPv6 traffic."
-msgstr ""
+msgstr "IPv6 ئېقىمىنى ئۇلاپ يوللىيالايدىغان tun ئۇلانمىسى قۇرىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:437
 #, kde-format
 msgid "IPv6 tun link"
-msgstr ""
+msgstr "IPv6 tun ئۇلانمىسى"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPingInterval)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbPingInterval)
@@ -585,12 +595,14 @@ msgid ""
 "Ping remote over the TCP/UDP control channel if no packets have been sent "
 "for at least n seconds."
 msgstr ""
+"ئەگەر n سېكۇنتتا سانلىق مەلۇمات بوغچىسى يوللانمىغان بولسا ئۇنداقتا TCP/UDP "
+"تىزگىن قانىلى ئارقىلىق يىراقتىكى نۇقتىنى Ping بىلەن تەكشۈرىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPingInterval)
 #: openvpnadvanced.ui:449
 #, kde-format
 msgid "Specify ping interval:"
-msgstr ""
+msgstr "Ping ۋاقىت ئارىلىقىنى بەلگىلەيدۇ:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkSpecifyExitRestartPing)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbSpecifyExitRestartPing)
@@ -601,24 +613,27 @@ msgid ""
 "Exit or restart after n seconds pass without reception of a ping or other "
 "packet from remote."
 msgstr ""
+"ئەگەر n سېكۇنت ئىچىدە يىراقتىكى نۇقتا ping ياكى باشقا سانلىق مەلۇمات "
+"بوغچىسىغا ئىنكاس قايتۇرمىسا ئۇنداقتا چېكىنىدۇ ياكى قايتا قوزغىتىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkSpecifyExitRestartPing)
 #: openvpnadvanced.ui:482
 #, kde-format
 msgid "Specify exit or restart ping:"
 msgstr ""
+"چېكىنىش ياكى قايتا قوزغىتىشتىن ئىلگىرىكى ping كۈتۈش ۋاقتىنى بەلگىلەيدۇ:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbSpecifyExitRestartPing)
 #: openvpnadvanced.ui:496
 #, kde-format
 msgid "ping-exit"
-msgstr ""
+msgstr "ping-چېكىنىش"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbSpecifyExitRestartPing)
 #: openvpnadvanced.ui:501
 #, kde-format
 msgid "ping-restart"
-msgstr ""
+msgstr "ping-قايتا قوزغىتىش"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAcceptAuthenticatedPackets)
 #: openvpnadvanced.ui:539
@@ -642,25 +657,42 @@ msgid ""
 "address,\n"
 "not only the address which was specified in the --remote option."
 msgstr ""
+"يىراقتىكى تورداشنىڭ IP ئادرېس ۋە ياكى ئېغىز نومۇرىنى ئۆزگەرتىشىگە يول "
+"قويىدۇ، مەسىلەن، DHCP يىراقتىكى تورداشنىڭ ھەرىكەتچان IP ئادرېسىنى "
+"ئۆزگەرتكەندە (‪«--remote»‬ نى ئىشلەتمىگەندە بۇ كۆڭۈلدىكى قىممەت).\n"
+"‪«--remote»‬ نى ئىشلەتكەندە، ‪«--float»‬ نىڭ OpenVPN سۆزلەشكۈنىڭ "
+"دەسلەپلەشتۈرۈلگەندە مەلۇملۇق ئادرېستىكى تورداشقا باغلىنىشىغا يول قويىدۇ.\n"
+"ئەمما ئەگەر قوبۇللىغان سانلىق مەلۇمات بوغچىسى يېڭى بىر ئادرېستىن كەلگەن "
+"بولسا ھەمدە بارلىق كىملىك تەكشۈرۈش سىنىقىدىن ئۆتكەن بولسا، مەزكۇر يېڭى "
+"ئادرېس شۇ سۆزلەشكۈنى ئۆتكۈزۈۋالىدۇ.\n"
+"ئەگەر باغلانغان تورداش ئىشلەتكەن ھەرىكەتچان ئادرېس، مەسىلەن نومۇر بۇراپ "
+"تورغا چىقىدىغان ئىشلەتكۈچى ياكى DHCP خېرىدارى، بۇ تاللانمىنى تاللىسا "
+"بولىدۇ.\n"
+"\n"
+"ماھىيەتتە، «--float» ى OpenVPN نىڭ ھەر قانداق ئادرېستىن كەلگەن كىملىك "
+"دەلىللەشتىن ئۆتكەن سانلىق مەلۇمات بوغچىسىنى قوبۇل قىلغۇزىدۇ، «--remote» "
+"ئارقىلىق بەلگىلەنگەن ئادرېس بىلەنلا چەكلەنمەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAcceptAuthenticatedPackets)
 #: openvpnadvanced.ui:542
 #, kde-format
 msgid "Accept authenticated packets from any address (Float)"
 msgstr ""
+"ھەر قانداق ئادرېستىن كەلگەن كىملىك دەلىللەشتىن ئۆتكەن سانلىق مەلۇمات "
+"بوغچىسىنى قوبۇل قىلىدۇ(Float)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMaxRoutes)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMaxRoutes)
 #: openvpnadvanced.ui:551 openvpnadvanced.ui:564
 #, kde-format
 msgid "Specify the maximum number of routes the server is allowed to specify."
-msgstr ""
+msgstr "مۇلازىمېتىرنىڭ تەڭشىيەلەيدىغان ئەڭ كۆپ يول تاللاش سانىنى بەلگىلەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMaxRoutes)
 #: openvpnadvanced.ui:554
 #, kde-format
 msgid "Specify max routes:"
-msgstr ""
+msgstr "ئەڭ كۆپ يول تاللاش سانىنى بەلگىلەش:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, securityTab)
 #: openvpnadvanced.ui:593
@@ -677,12 +709,14 @@ msgid ""
 "Cipher\n"
 "Block Chaining mode)."
 msgstr ""
+"شىفىر ھېسابلاش ئۇسۇلى ئارقىلىق بوغچىنى شىفىرلايدۇ. كۆڭۈلدىكى ئەھۋالدا BF-CBC "
+"(شىفىر بۆلەكلەش زەنجىر ھالىتىدە Blowfish شىفىرلاش) نى ئىشلىتىدۇ."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openvpnadvanced.ui:605
 #, kde-format
 msgid "Cipher:"
-msgstr ""
+msgstr "شىفىر:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboCipher)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDataCiphers)
@@ -690,7 +724,7 @@ msgstr ""
 #: openvpnadvanced.ui:632 openvpnadvanced.ui:664 openvpnadvanced.ui:696
 #, kde-format
 msgid "Obtaining available ciphers…"
-msgstr ""
+msgstr "ئىشلەتكىلى بولىدىغان شىفىرلاش ئۇسۇلىغا ئېرىشىۋاتىدۇ…"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:644
@@ -700,9 +734,10 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:647
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Cipher:"
 msgid "Data Ciphers:"
-msgstr ""
+msgstr "شىفىر:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:676
@@ -736,12 +771,14 @@ msgid ""
 "Set cipher key size to a custom value. If unspecified, it defaults to cipher-"
 "specific size."
 msgstr ""
+"ئاچقۇچ چوڭلۇقىنى ئىختىيارى قىممەتكە تەڭشەيدۇ. ئەگەر بەلگىلەنمىسە، كۆڭۈلدىكى "
+"ئەھۋالدا شىفىرلاش ئۇسۇلىنىڭ شىفىرلىق ئاچقۇچ چوڭلۇقىنى ئىشلىتىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomCipherKey)
 #: openvpnadvanced.ui:724
 #, kde-format
 msgid "Use custom size of cipher key:"
-msgstr ""
+msgstr "ئىختىيارى شىفىرلىق ئاچقۇچ چوڭلۇقىنى ئىشلىتىدۇ:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboHmac)
@@ -751,12 +788,14 @@ msgid ""
 "Authenticate packets with HMAC using message digest algorithm. The default "
 "is SHA1."
 msgstr ""
+"HMAC ئىشلەتكەن سانلىق مەلۇمات بوغچىسىغا كىملىك دەلىللەش ئېلىپ بارغاندىكى "
+"ئۇچۇر ئۈزۈندى ھېسابلاش ئۇسۇلى. كۆڭۈلدىكى ئەھۋالدا SHA1."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openvpnadvanced.ui:757
 #, kde-format
 msgid "HMAC Authentication:"
-msgstr ""
+msgstr "HMAC كىملىك دەلىللەش:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:780
@@ -777,7 +816,7 @@ msgstr "يوق"
 #: openvpnadvanced.ui:790
 #, kde-format
 msgid "MD-4"
-msgstr ""
+msgstr "MD-4"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:795
@@ -825,7 +864,7 @@ msgstr "RIPEMD-160"
 #: openvpnadvanced.ui:849
 #, kde-format
 msgid "TLS Settings"
-msgstr ""
+msgstr "TLS تەڭشەك"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCertCheck)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbCertCheck)
@@ -841,43 +880,50 @@ msgid ""
 "fields),\n"
 "or just the Common Name (CN field).\n"
 msgstr ""
+"مۇلازىمېتىر گۇۋاھنامىسىنىڭ كىملىكىنى دەلىللەيدۇ.\n"
+"\n"
+"قوزغىتىلغاندا، پەقەت مۇلازىمېتىر گۇۋاھنامىسىنىڭ مەلۇم خاسلىقى بىلەن "
+"ئارزۇدىكى قىممىتى بىردەك بولسىلا ئاندىن باغلىنىش مۇۋەپپەقىيەتلىك بولىدۇ.\n"
+"گۇۋاھنامە نىشانىنىڭ بارلىق بۆلەكلىرىنىڭ بىردەكلىكىنى تەكشۈرگىلى بولىدۇ،\n"
+"ياكى پەقەت ئاممىۋى ئىسمى (CN بۆلىكى) نىلا دەلىللەيدۇ.\n"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCertCheck)
 #: openvpnadvanced.ui:866
-#, fuzzy, kde-format
-#| msgid "Certificate:"
+#, kde-format
 msgid "Server Certificate Check:"
-msgstr "گۇۋاھنامە:"
+msgstr "مۇلازىمېتىر گۇۋاھنامىسىنى تەكشۈرۈش:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:883
 #, kde-format
 msgid "Don't verify certificate identification"
-msgstr ""
+msgstr "گۇۋاھنامە كىملىكىنى تەكشۈرمەيدۇ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:888
 #, kde-format
 msgid "Verify whole subject exactly"
-msgstr ""
+msgstr "نىشاندىكى بارلىق بۆلەكنىڭ بىردەكلىكىنى دەلىللەيدۇ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:893
 #, kde-format
 msgid "Verify name exactly"
-msgstr ""
+msgstr "ئىسىم بىردەكلىكىنىلا دەلىللەيدۇ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:898
 #, kde-format
 msgid "Verify name by prefix"
-msgstr ""
+msgstr "ئىسىم ئالدى قوشۇلغۇچىسىنىڭ بىردەكلىكىنى دەلىللەيدۇ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:903
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
 msgstr ""
+"نىشاننىڭ قىسمەن بۆلىكىنىڭ بىردەكلىكىنى دەلىللەيدۇ (كونا نەشرى ھالىتى، "
+"ئىشلىتىش كۈچلۈك تەۋسىيە قىلىنمايدۇ)"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lbSubjectMatch)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, subjectMatch)
@@ -886,12 +932,14 @@ msgstr ""
 msgid ""
 "Subject or Common Name to verify server certificate information against."
 msgstr ""
+"مۇلازىمېتىر گۇۋاھنامە ئۇچۇرىنىڭ نىشان ياكى ئاممىۋى ئىسمىنى دەلىللەشكە "
+"ئىشلىتىلىدۇ."
 
 #. i18n: ectx: property (text), widget (QLabel, lbSubjectMatch)
 #: openvpnadvanced.ui:921
 #, kde-format
 msgid "Subject Match:"
-msgstr ""
+msgstr "نىشان ماسلىشىشى:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, subjectMatch)
 #: openvpnadvanced.ui:937
@@ -900,6 +948,8 @@ msgid ""
 "Connect only to servers whose certificate matches the given subject. "
 "Example: /CN=myvpn.company.com"
 msgstr ""
+"پەقەت گۇۋاھنامە بىلەن بېرىلگەن نىشان بىردەك بولغان مۇلازىمېتىر بىلەنلا "
+"باغلىنىدۇ. مەسىلەن: /CN=myvpn.company.com"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRemoteCertTls)
 #. i18n: ectx: property (toolTip), widget (QLabel, labelRemoteCertTls)
@@ -911,32 +961,35 @@ msgid ""
 "extended\n"
 "key usage based on RFC3280 TLS rules."
 msgstr ""
+"تورداش گۇۋاھنامىسىنىڭ RFC 3280 TLS ئۆلچىمىگە ماس كېلىشىنى تەلەپ قىلىدۇ. "
+"شىفىرلىق ئاچقۇچ ئىشلىتىلىشى ۋە كېڭەيتىلگەن شىفىرلىق ئاچقۇچنىڭ ئىشلىتىلىشى ۋە "
+"ئىمزاسىنى ئېنىق بەلگىلەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkRemoteCertTls)
 #: openvpnadvanced.ui:953
 #, kde-format
 msgid "Verify peer (server) certificate usage signature"
-msgstr ""
+msgstr "تورداش (مۇلازىمېتىر) گۇۋاھنامىسىنىڭ ئىشلىتىلىشى ئىمزاسىنى دەلىللەيدۇ"
 
 #. i18n: ectx: property (text), widget (QLabel, labelRemoteCertTls)
 #: openvpnadvanced.ui:969
 #, kde-format
 msgid "Remote peer certificate TLS type:"
-msgstr ""
+msgstr "يىراقتىكى تورداش گۇۋاھنامىسىنىڭ TLS تۈرى:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbRemoteCertTls)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbNsCertType)
 #: openvpnadvanced.ui:984 openvpnadvanced.ui:1031
 #, kde-format
 msgid "Server"
-msgstr ""
+msgstr "مۇلازىمېتىر"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbRemoteCertTls)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbNsCertType)
 #: openvpnadvanced.ui:989 openvpnadvanced.ui:1036
 #, kde-format
 msgid "Client"
-msgstr ""
+msgstr "خېرىدار"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkNsCertType)
 #. i18n: ectx: property (toolTip), widget (QLabel, lblNsCertType)
@@ -947,48 +1000,51 @@ msgid ""
 "Require that peer certificate was signed with an explicit nsCertType "
 "designation."
 msgstr ""
+"تورداش گۇۋاھنامىسىنىڭ nsCertType لايىھەسى ۋە ئىمزاسىنى ئېنىق بەلگىلەشنى "
+"تەلەپ قىلىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkNsCertType)
 #: openvpnadvanced.ui:1002
 #, kde-format
 msgid "Verify peer (server) certificate nsCertType designation"
-msgstr ""
+msgstr "تورداش (مۇلازىمېتىر) گۇۋاھنامىسىنىڭ nsCertType لايىھەسىنى دەلىللەيدۇ"
 
 #. i18n: ectx: property (text), widget (QLabel, lblNsCertType)
 #: openvpnadvanced.ui:1017
 #, kde-format
 msgid "Remote peer certificate nsCert designation:"
-msgstr ""
+msgstr "يىراقتىكى تورداش گۇۋاھنامىسىنىڭ nsCert لايىھەسى:"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useExtraTlsAuth)
 #: openvpnadvanced.ui:1046
 #, kde-format
 msgid "Add an additional layer of HMAC authentication."
-msgstr ""
+msgstr "قوشۇمچە HMAC كىملىك دەلىللەش قەۋىتى قوشىدۇ."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: openvpnadvanced.ui:1061
 #, kde-format
 msgid "Mode:"
-msgstr ""
+msgstr "ئۇسۇلى:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1074
 #, kde-format
 msgid "TLS-Auth"
-msgstr ""
+msgstr "TLS دەلىللەش"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1079
 #, kde-format
 msgid "TLS-Crypt"
-msgstr ""
+msgstr "TLS شىفىرلاش"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1084
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "TLS-Crypt"
 msgid "TLS-Crypt v2"
-msgstr ""
+msgstr "TLS شىفىرلاش"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -999,12 +1055,14 @@ msgid ""
 "channel\n"
 "to protect against DoS attacks."
 msgstr ""
+"TLS تىزگىنلەش قەۋىتىگە قوشۇمچە HMAC كىملىك دەلىللەش قەۋىتى قوشۇپ DoS "
+"ھۇجۇمىنىڭ ئالدىنى ئالىدۇ."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_3)
 #: openvpnadvanced.ui:1096
 #, kde-format
 msgid "Key File:"
-msgstr ""
+msgstr "ئاچقۇچ ھۆججىتى:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_extraCerts)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlExtraCerts)
@@ -1017,7 +1075,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1123
 #, fuzzy, kde-format
-#| msgid "Certificate:"
+#| msgid "Copy certificates"
 msgid "Extra certificates file:"
 msgstr "گۇۋاھنامە:"
 
@@ -1026,19 +1084,19 @@ msgstr "گۇۋاھنامە:"
 #: openvpnadvanced.ui:1143 openvpnadvanced.ui:1162
 #, kde-format
 msgid "Direction parameter for static key mode."
-msgstr ""
+msgstr "تىنچ ئاچقۇچ ھالىتىنىڭ يۆنىلىش پارامېتىرى."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
 #: openvpnadvanced.ui:1171
 #, kde-format
 msgid "Server (0)"
-msgstr ""
+msgstr "مۇلازىمېتىر (0)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
 #: openvpnadvanced.ui:1176
 #, kde-format
 msgid "Client (1)"
-msgstr ""
+msgstr "خېرىدار (1)"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblTlsVersionMin)
 #: openvpnadvanced.ui:1184
@@ -1121,20 +1179,20 @@ msgstr ""
 #: openvpnadvanced.ui:1315
 #, kde-format
 msgid "Proxies"
-msgstr ""
+msgstr "ۋاكالەتچى"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_11)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbProxyType)
 #: openvpnadvanced.ui:1327 openvpnadvanced.ui:1352
 #, kde-format
 msgid "Proxy type: HTTP or SOCKS"
-msgstr ""
+msgstr "ۋاكالەتچى تۈرى: HTTP ياكى SOCKS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #: openvpnadvanced.ui:1330
 #, kde-format
 msgid "Proxy Type:"
-msgstr "ۋاكالەتچىنىڭ تىپى:"
+msgstr "ۋاكالەتچىنىڭ تۈرى:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProxyType)
 #: openvpnadvanced.ui:1356
@@ -1161,6 +1219,8 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
+"ئەگەر تەشكىلىڭىز ۋاكالەتچى مۇلازىمېتىر ئارقىلىق ئىنتېرنېتنى زىيارەت قىلىشنى "
+"تەلەپ قىلسا، بۇ تاللانمىنى تاللاڭ."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_12)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, proxyServerAddress)
@@ -1168,11 +1228,12 @@ msgstr ""
 #, kde-format
 msgid "Connect to remote host through a proxy with this address."
 msgstr ""
+"بۇ ئادرېس ئارقىلىق ۋاكالەتچى مۇلازىمېتىر ئىشلىتىپ يىراقتىكى مۇلازىمېتىرغا "
+"باغلىنىدۇ."
 
 #. i18n: ectx: property (text), widget (QLabel, label_12)
 #: openvpnadvanced.ui:1398
-#, fuzzy, kde-format
-#| msgid "Server Address:"
+#, kde-format
 msgid "Server Address:"
 msgstr "مۇلازىمېتىر ئادرېسى:"
 
@@ -1182,6 +1243,8 @@ msgstr "مۇلازىمېتىر ئادرېسى:"
 #, kde-format
 msgid "Connect to remote host through a proxy with this port."
 msgstr ""
+"بۇ ئېغىز ئارقىلىق ۋاكالەتچى مۇلازىمېتىر ئىشلىتىپ يىراقتىكى مۇلازىمېتىرغا "
+"باغلىنىدۇ."
 
 #. i18n: ectx: property (text), widget (QLabel, label_13)
 #: openvpnadvanced.ui:1421
@@ -1195,20 +1258,20 @@ msgstr "ئېغىز:"
 #, kde-format
 msgid "HTTP/SOCKS proxy username passed to OpenVPN when prompted for it."
 msgstr ""
+"OpenVPN غا يوللايدىغان HTTP/SOCKS ۋاكالەتچى مۇلازىمېتىر ئىشلەتكۈچى ئاتى."
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: openvpnadvanced.ui:1450
-#, fuzzy, kde-format
-#| msgid "Proxy Username:"
+#, kde-format
 msgid "Proxy Username:"
-msgstr "ۋاكالەتچىنىڭ ئىشلەتكۈچى ئاتى:"
+msgstr "ۋاكالەتچى مۇلازىمېتىرنىڭ ئىشلەتكۈچى ئاتى:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_15)
 #. i18n: ectx: property (toolTip), widget (PasswordField, proxyPassword)
 #: openvpnadvanced.ui:1470 openvpnadvanced.ui:1485
 #, kde-format
 msgid "HTTP/SOCKS proxy password passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "OpenVPN غا يوللايدىغان HTTP/SOCKS ۋاكالەتچى مۇلازىمېتىر ئىمى."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
 #: openvpnadvanced.ui:1473 openvpnauth.cpp:84 openvpnauth.cpp:121
@@ -1221,25 +1284,27 @@ msgstr "ۋاكالەتچى ئىمى:"
 #, kde-format
 msgid "Retry indefinitely on proxy errors. It simulates a SIGUSR1 reset."
 msgstr ""
+"ۋاكالەتچى مۇلازىمېتىردا خاتالىق كۆرۈلگەندە تەكرار سىنايدۇ. ئۇ SIGUSR1 "
+"ئەسلىگە قايتۇرۇشنى تەقلىدلەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkProxyRetry)
 #: openvpnadvanced.ui:1500
 #, kde-format
 msgid "Retry indefinitely when errors occur"
-msgstr ""
+msgstr "خاتالىق كۆرۈلگەندە تەكرار سىنايدۇ"
 
 #: openvpnadvancedwidget.cpp:83
 #, kde-format
 msgctxt "@title: window advanced openvpn properties"
 msgid "Advanced OpenVPN properties"
-msgstr ""
+msgstr "ئالىي OpenVPN خاسلىقى"
 
 #: openvpnadvancedwidget.cpp:163 openvpnadvancedwidget.cpp:165
 #: openvpnadvancedwidget.cpp:167 openvpnadvancedwidget.cpp:208
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
-msgstr ""
+msgstr "OpenVPN شىفىرلاشنى سۈرۈشتۈرەلمىدى"
 
 #: openvpnadvancedwidget.cpp:176 openvpnadvancedwidget.cpp:177
 #: openvpnadvancedwidget.cpp:178
@@ -1252,38 +1317,43 @@ msgstr "كۆڭۈلدىكى"
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
-msgstr ""
+msgstr "OpenVPN شىفىرى تېپىلمىدى"
 
 #: openvpnauth.cpp:82 openvpnauth.cpp:114
 #, kde-format
 msgid "Key Password:"
-msgstr ""
+msgstr "شىفىرلىق ئاچقۇچ ئىم:"
 
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "OTP"
-msgstr ""
+msgstr "بىر قېتىملىق ئىم"
 
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "authenticator"
-msgstr ""
+msgstr "كىملىك دەلىللىگۈچ"
 
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "code"
-msgstr ""
+msgstr "كودى"
 
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "token"
-msgstr ""
+msgstr "پەرمان تاختا"
 
 #: openvpnauth.cpp:95
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "one-time password"
-msgstr "ئىم:"
+msgstr "بىر قېتىملىق ئىم"
+
+#~ msgid "Error saving file %1: %2"
+#~ msgstr "%1 ھۆججەتنى ساقلاشتا خاتالىق كۆرۈلدى: %2"
+
+#~ msgid "Error copying certificate to %1: %2"
+#~ msgstr "گۇۋاھنامىنى %1 غا كۆچۈرۈشتە خاتالىق كۆرۈلدى: %2"
 
 #~ msgid "Could not open file"
 #~ msgstr "ھۆججەتنى ئاچقىلى بولمىدى"
@@ -1294,12 +1364,10 @@ msgstr "ئىم:"
 #~ msgid "Always Ask"
 #~ msgstr "دائىم سورا"
 
-#, fuzzy
 #~| msgid "Certificate:"
 #~ msgid "X.509 Certificates"
 #~ msgstr "گۇۋاھنامە:"
 
-#, fuzzy
 #~| msgid "Show Password"
 #~ msgid "X.509 With Password"
 #~ msgstr "ئىم كۆرسەت"
@@ -1307,7 +1375,6 @@ msgstr "ئىم:"
 #~ msgid "Key:"
 #~ msgstr "شىفىرلىق ئاچقۇچ:"
 
-#, fuzzy
 #~| msgid "Show Password"
 #~ msgid "Show Passwords"
 #~ msgstr "ئىم كۆرسەت"
@@ -1315,12 +1382,10 @@ msgstr "ئىم:"
 #~ msgid "Show Password"
 #~ msgstr "ئىم كۆرسەت"
 
-#, fuzzy
 #~| msgid "&Show password"
 #~ msgid "Show passwords"
 #~ msgstr "ئىم كۆرسەت(&S)"
 
-#, fuzzy
 #~| msgid "Key:"
 #~ msgid "&Key:"
 #~ msgstr "شىفىرلىق ئاچقۇچ:"

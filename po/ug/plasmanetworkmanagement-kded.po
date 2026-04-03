@@ -8,39 +8,40 @@ msgstr ""
 "Project-Id-Version: plasmanm-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-02 00:46+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-04-01 09:37-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
 msgid "Only 'dun' and 'nap' services are supported."
-msgstr ""
+msgstr "پەقەت «dun» ۋە «nap» مۇلازىمىتىنىلا قوللايدۇ."
 
 #: connectivitymonitor.cpp:61
 #, kde-format
 msgid "Network authentication"
-msgstr ""
+msgstr "تور دەلىللەش"
 
 #: connectivitymonitor.cpp:70
 #, kde-format
 msgid "You need to log into this network"
-msgstr ""
+msgstr "سىز بۇ تورغا تىزىمغا كىرىشىڭىز كېرەك"
 
 #: connectivitymonitor.cpp:72
 #, kde-format
 msgid "Log in"
-msgstr ""
+msgstr "تىزىمغا كىر"
 
 #: connectivitymonitor.cpp:97
 #, kde-format
 msgid "Limited Connectivity"
-msgstr ""
+msgstr "چەكلىمىلىك باغلىنىش"
 
 #: connectivitymonitor.cpp:98
 #, kde-format
@@ -48,25 +49,26 @@ msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."
 msgstr ""
+"بۇ ئۈسكۈنە تورغا باغلانغاندەك قىلىدۇ ئەمما ئىنتېرنېتنى زىيارەت قىلالمايدۇ."
 
 #: modemmonitor.cpp:182
 #, kde-format
 msgctxt "Text in GSM PIN/PUK unlock error dialog"
 msgid "Error unlocking modem: %1"
-msgstr ""
+msgstr "مودېمنىڭ قۇلۇپىنى ئېچىۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
 #: modemmonitor.cpp:183
 #, kde-format
 msgctxt "Title for GSM PIN/PUK unlock error dialog"
 msgid "PIN/PUK unlock error"
-msgstr ""
+msgstr "PIN/PUK قۇلۇپىنى ئېچىشتا خاتالىق كۆرۈلدى"
 
 #: notification.cpp:98
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ConfigFailedReason"
 msgid "The device could not be configured"
-msgstr ""
+msgstr "ئۈسكۈنىنى سەپلىگىلى بولمايدۇ"
 
 #: notification.cpp:101
 #, kde-format
@@ -74,7 +76,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConfigUnavailableReason"
 msgid "IP configuration was unavailable"
-msgstr ""
+msgstr "IP سەپلىمىسىنى ئىشلەتكىلى بولمايدۇ"
 
 #: notification.cpp:104
 #, kde-format
@@ -88,7 +90,7 @@ msgstr "IP سەپلەشنىڭ قەرەلى توشتى"
 msgctxt ""
 "@info:status Notification when the device failed due to NoSecretsReason"
 msgid "No secrets were provided"
-msgstr ""
+msgstr "ھېچقانداق بىخەتەرلىك ئاچقۇچى تەمىنلەنمىگەن"
 
 #: notification.cpp:110
 #, kde-format
@@ -96,7 +98,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantDisconnectReason"
 msgid "Authorization supplicant disconnected"
-msgstr ""
+msgstr "دەلىللەش ئىلتىماس قىلغۇچى باغلىنىشى ئۈزۈلدى"
 
 #: notification.cpp:114
 #, kde-format
@@ -104,7 +106,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantConfigFailedReason"
 msgid "Authorization supplicant's configuration failed"
-msgstr ""
+msgstr "دەلىللەش ئىلتىماس قىلغۇچىنىڭ سەپلىمىسى مەغلۇپ بولدى"
 
 #: notification.cpp:117
 #, kde-format
@@ -112,7 +114,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantFailedReason"
 msgid "Authorization supplicant failed"
-msgstr ""
+msgstr "دەلىللەش ئىلتىماس قىلغۇچى مەغلۇپ بولدى"
 
 #: notification.cpp:120
 #, kde-format
@@ -120,21 +122,21 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantTimeoutReason"
 msgid "Authorization supplicant timed out"
-msgstr ""
+msgstr "دەلىللەش ئىلتىماس قىلغۇچىنىڭ مۆھلىتى توشتى"
 
 #: notification.cpp:123
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppStartFailedReason"
 msgid "PPP failed to start"
-msgstr ""
+msgstr "PPP نى قوزغىتالمىدى"
 
 #: notification.cpp:126
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppDisconnectReason"
 msgid "PPP disconnected"
-msgstr ""
+msgstr "PPP ئۈزۈلدى"
 
 #: notification.cpp:129
 #, kde-format
@@ -148,21 +150,21 @@ msgstr "PPP مەغلۇپ بولدى"
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpStartFailedReason"
 msgid "DHCP failed to start"
-msgstr ""
+msgstr "DHCP نى قوزغىتالمىدى"
 
 #: notification.cpp:135
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpErrorReason"
 msgid "A DHCP error occurred"
-msgstr ""
+msgstr "DHCP خاتالىقى كۆرۈلدى"
 
 #: notification.cpp:138
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpFailedReason"
 msgid "DHCP failed "
-msgstr ""
+msgstr "DHCP مەغلۇپ بولدى "
 
 #: notification.cpp:141
 #, kde-format
@@ -170,14 +172,14 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "SharedStartFailedReason"
 msgid "The shared service failed to start"
-msgstr ""
+msgstr "ھەمبەھىر مۇلازىمىتىنى قوزغىتالمىدى"
 
 #: notification.cpp:144
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SharedFailedReason"
 msgid "The shared service failed"
-msgstr ""
+msgstr "ھەمبەھىر مۇلازىمىتى مەغلۇپ بولدى"
 
 #: notification.cpp:147
 #, kde-format
@@ -185,42 +187,42 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AutoIpStartFailedReason"
 msgid "The auto IP service failed to start"
-msgstr ""
+msgstr "ئاپتوماتىك IP مۇلازىمىتىنى قوزغىتالمىدى"
 
 #: notification.cpp:150
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpErrorReason"
 msgid "The auto IP service reported an error"
-msgstr ""
+msgstr "ئاپتوماتىك IP مۇلازىمىتىنى خاتالىقتىن بىرنى مەلۇم قىلدى"
 
 #: notification.cpp:153
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpFailedReason"
 msgid "The auto IP service failed"
-msgstr ""
+msgstr "ئاپتوماتىك IP مۇلازىمىتى مەغلۇپ بولدى"
 
 #: notification.cpp:156
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemBusyReason"
 msgid "The modem is busy"
-msgstr ""
+msgstr "مودېم ئالدىراش"
 
 #: notification.cpp:159
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoDialToneReason"
 msgid "The modem has no dial tone"
-msgstr ""
+msgstr "مودېمدا نومۇر باسقاندىكى ئاۋاز يوق"
 
 #: notification.cpp:162
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNoCarrierReason"
 msgid "The modem shows no carrier"
-msgstr ""
+msgstr "مودېمدا سىگنال يوق"
 
 #: notification.cpp:165
 #, kde-format
@@ -228,21 +230,21 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ModemDialTimeoutReason"
 msgid "The modem dial timed out"
-msgstr ""
+msgstr "مودېمنىڭ نومۇر بۇراش قەرەلى توشتى"
 
 #: notification.cpp:168
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemDialFailedReason"
 msgid "The modem dial failed"
-msgstr ""
+msgstr "مودېم نومۇر بۇرىيالمىدى"
 
 #: notification.cpp:171
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemInitFailedReason"
 msgid "The modem could not be initialized"
-msgstr ""
+msgstr "مودېمنى دەسلەپلەشتۈرەلمىدى"
 
 #: notification.cpp:174
 #, kde-format
@@ -250,14 +252,14 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmApnSelectFailedReason"
 msgid "The GSM APN could not be selected"
-msgstr ""
+msgstr "GSM APN نى تاللىيالمىدى"
 
 #: notification.cpp:177
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmNotSearchingReason"
 msgid "The GSM modem is not searching"
-msgstr ""
+msgstr "GSM مودېمنى ئىزدىمەيۋاتىدۇ"
 
 #: notification.cpp:180
 #, kde-format
@@ -265,7 +267,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmRegistrationDeniedReason"
 msgid "GSM network registration was denied"
-msgstr ""
+msgstr "GSM تورىغا خەتلىتىش رەت قىلىندى"
 
 #: notification.cpp:183
 #, kde-format
@@ -273,7 +275,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmRegistrationTimeoutReason"
 msgid "GSM network registration timed out"
-msgstr ""
+msgstr "GSM تورىغا خەتلىتىشنىڭ قەرەلى توشتى"
 
 #: notification.cpp:186
 #, kde-format
@@ -281,7 +283,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmRegistrationFailedReason"
 msgid "GSM registration failed"
-msgstr ""
+msgstr "GSM تورىغا خەتلىتەلمىدى"
 
 #: notification.cpp:189
 #, kde-format
@@ -289,28 +291,28 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmPinCheckFailedReason"
 msgid "The GSM PIN check failed"
-msgstr ""
+msgstr "GSM PIN نى تەكشۈرەلمىدى"
 
 #: notification.cpp:192
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to FirmwareMissingReason"
 msgid "Device firmware is missing"
-msgstr ""
+msgstr "ئۈسكۈنە مۇقىم دېتالى كەم"
 
 #: notification.cpp:195
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DeviceRemovedReason"
 msgid "The device was removed"
-msgstr ""
+msgstr "ئۈسكۈنە چىقىرىۋېتىلگەن"
 
 #: notification.cpp:198
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SleepingReason"
 msgid "The networking system is now sleeping"
-msgstr ""
+msgstr "تور سىستېمىسى ئۇخلاۋاتىدۇ"
 
 #: notification.cpp:201
 #, kde-format
@@ -318,54 +320,54 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConnectionRemovedReason"
 msgid "The connection was removed"
-msgstr ""
+msgstr "باغلىنىش چىقىرىۋېتىلگەن"
 
 #: notification.cpp:206
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to CarrierReason"
 msgid "The cable was disconnected"
-msgstr ""
+msgstr "تور سىمى ئۈزۈلگەن"
 
 #: notification.cpp:212
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemNotFoundReason"
 msgid "The modem could not be found"
-msgstr ""
+msgstr "مودېمنى تاپالمىدى"
 
 #: notification.cpp:215
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to BluetoothFailedReason"
 msgid "The bluetooth connection failed or timed out"
-msgstr ""
+msgstr "كۆكچىش باغلىنالمىدى ياكى قەرەلى توشتى"
 
 #: notification.cpp:218
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimNotInserted"
 msgid "GSM Modem's SIM Card not inserted"
-msgstr ""
+msgstr "GSM مودېمنىڭ SIM كارتىسى قىستۇرۇلمىغان"
 
 #: notification.cpp:221
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPinRequired"
 msgid "GSM Modem's SIM Pin required"
-msgstr ""
+msgstr "GSM مودېمنىڭ SIM Pin زۆرۈر"
 
 #: notification.cpp:224
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to GsmSimPukRequired"
 msgid "GSM Modem's SIM Puk required"
-msgstr ""
+msgstr "GSM مودېمنىڭ SIM Puk زۆرۈر"
 
 #: notification.cpp:227
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to GsmSimWrong"
 msgid "GSM Modem's SIM wrong"
-msgstr ""
+msgstr "GSM مودېمنىڭ SIM ى خاتا"
 
 #: notification.cpp:230
 #, kde-format
@@ -379,13 +381,13 @@ msgstr "InfiniBand ئۈسكۈنىسى باغلىنىش ھالىتىنى قولل
 msgctxt ""
 "@info:status Notification when the device failed due to DependencyFailed"
 msgid "A dependency of the connection failed"
-msgstr ""
+msgstr "باغلىنىش تايىنىشچانلىقى مەغلۇپ بولدى"
 
 #: notification.cpp:236
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to Br2684Failed"
 msgid "Problem with the RFC 2684 Ethernet over ADSL bridge"
-msgstr ""
+msgstr "ADSL كۆۋرۈكى ھالقىغان RFC 2684 دائىرىلىك توردا مەسىلە كۆرۈلدى"
 
 #: notification.cpp:239
 #, kde-format
@@ -393,7 +395,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ModemManagerUnavailable"
 msgid "ModemManager not running"
-msgstr ""
+msgstr "ModemManager ئىجرا قىلىنمايۋاتىدۇ"
 
 #: notification.cpp:245
 #, kde-format
@@ -401,84 +403,84 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "SecondaryConnectionFailed"
 msgid "A secondary connection of the base connection failed"
-msgstr ""
+msgstr "ئاساسىي باغلىنىشنىڭ ئىككىنچى باغلىنىشى مەغلۇپ بولدى"
 
 #: notification.cpp:248
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to DcbFcoeFailed"
 msgid "DCB or FCoE setup failed"
-msgstr ""
+msgstr "DCB ياكى FCoE تەڭشىكى مەغلۇپ بولدى"
 
 #: notification.cpp:251
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to TeamdControlFailed"
 msgid "teamd control failed"
-msgstr ""
+msgstr "teamd تىزگىنى مەغلۇپ بولدى"
 
 #: notification.cpp:254
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
-msgstr ""
+msgstr "مودېم مەغلۇپ بولدى ياكى ئەمدى ئىشلەتكىلى بولمايدۇ"
 
 #: notification.cpp:257
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemAvailable"
 msgid "Modem now ready and available"
-msgstr ""
+msgstr "ھازىر مودېم تەييار ۋە ئۇنى ئىشلەتكىلى بولىدۇ"
 
 #: notification.cpp:260
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SimPinIncorrect"
 msgid "The SIM PIN was incorrect"
-msgstr ""
+msgstr "SIM PIN خاتا"
 
 #: notification.cpp:263
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to NewActivation"
 msgid "A new connection activation was enqueued"
-msgstr ""
+msgstr "يېڭى باغلىنىشنى ئاكتىپلاش ئۆچرەتكە قوشۇلغان"
 
 #: notification.cpp:266
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ParentChanged"
 msgid "The device's parent changed"
-msgstr ""
+msgstr "ئۈسكۈنىنىڭ ئاتا ئۈسكۈنىسى ئۆزگەردى"
 
 #: notification.cpp:269
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ParentManagedChanged"
 msgid "The device parent's management changed"
-msgstr ""
+msgstr "ئۈسكۈنىنىڭ ئاتا ئۈسكۈنىسىنى باشقۇرۇش ئۆزگەردى"
 
 #: notification.cpp:349
 #, kde-format
 msgid "Connection '%1' activated."
-msgstr ""
+msgstr "«%1» باغلىنىش ئاكتىپلاندى."
 
 #: notification.cpp:377
 #, kde-format
 msgid "Connection '%1' deactivated."
-msgstr ""
+msgstr "«%1» باغلىنىش ئاكتىپسىزلاندى."
 
 #: notification.cpp:436
 #, kde-format
 msgid "VPN connection '%1' activated."
-msgstr ""
+msgstr "«%1» VPN باغلىنىشى ئاكتىپلاندى."
 
 #: notification.cpp:439
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr ""
+msgstr "«%1» VPN باغلىنىشىنى ئاكتىپلىيالمىدى."
 
 #: notification.cpp:442 notification.cpp:452
 #, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr ""
+msgstr "«%1» VPN باغلىنىشى ئاكتىپسىزلاندى."
 
 #: notification.cpp:455
 #, kde-format
@@ -486,111 +488,111 @@ msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
 msgstr ""
+"«%1» VPN باغلىنىشى ئاكتىپسىزلانغان چۈنكى ئۇ ئىشلىتىۋاتقان ئۈسكۈنە ئۈزۈلگەن."
 
 #: notification.cpp:458
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr ""
+msgstr "«%1» VPN باغلىنىشى تەمىنلىگۈچىنىڭ مۇلازىمىتى توختىغان."
 
 #: notification.cpp:461
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr ""
+msgstr "«%1» VPN باغلىنىشىنىڭ IP سەپلىمىسى ئىناۋەتسىز."
 
 #: notification.cpp:464
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
-msgstr ""
+msgstr "باغلىنىشنى سىناۋاتقان VPN مۇلازىمىتىنىڭ مۆھلىتى ئېشىپ كەتتى."
 
 #: notification.cpp:467
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
-msgstr ""
+msgstr "«%1» VPN باغلىنىش مۇلازىمىتىنى قوزغىتىۋاتقاندا مۆھلىتى ئېشىپ كەتتى."
 
 #: notification.cpp:470
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr ""
+msgstr "«%1» VPN باغلىنىش مۇلازىمىتىنى قوزغىتالمىدى."
 
 #: notification.cpp:473
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
-msgstr ""
+msgstr "«%1» VPN باغلىنىشقا زۆرۈر بىخەتەرلىك ئاچقۇچى تەمىنلەنمىگەن."
 
 #: notification.cpp:476
 #, kde-format
 msgid "Authentication to the VPN server failed."
-msgstr ""
+msgstr "VPN مۇلازىمېتىرىغا باغلىنىپ كىملىك دەلىللىيەلمىدى."
 
 #: notification.cpp:479
 #, kde-format
 msgid "The connection was deleted."
-msgstr ""
+msgstr "باغلىنىش ئۆچۈرۈلگەن."
 
 #: notification.cpp:578
 #, kde-format
 msgid "No Network Connection"
-msgstr ""
+msgstr "تور باغلىنىشى يوق"
 
 #: notification.cpp:579
 #, kde-format
 msgid "You are no longer connected to a network."
-msgstr ""
+msgstr "ئەمدى تورغا باغلىنالمايسىز."
 
 #: passworddialog.cpp:54
 #, kde-format
 msgid "Authenticate %1"
-msgstr ""
+msgstr "%1 كىملىك دەلىللە"
 
 #: passworddialog.cpp:90
 #, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr ""
+msgstr "ھېچقانداق بىخەتەرلىك ئاچقۇچى ئىلتىماس قىلىنمىغان"
 
 #: passworddialog.cpp:99
 #, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr ""
+msgstr "Wi-Fi تورى «%1» نىڭ ئىم خاتا. قايتا سىناڭ."
 
 #: passworddialog.cpp:101
 #, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr ""
+msgstr "Wi-Fi تورى «%1» ئۈچۈن ئىم كىرگۈزۈلىدۇ:"
 
 #: passworddialog.cpp:105
 #, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr ""
+msgstr "«%1» باغلىنىشنىڭ ئىم خاتا. قايتا سىناڭ."
 
 #: passworddialog.cpp:107
 #, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr ""
+msgstr "«%1» باغلىنىش ئۈچۈن ئىم كىرگۈزۈلىدۇ:"
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password dialog"
+#, kde-format
 msgid "%1 password dialog"
-msgstr "ئىم سۆزلەشكۈسى"
+msgstr "%1 ئىم سۆزلەشكۈسى"
 
 #: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "VPN تەڭشەك كەم"
 
 #: passworddialog.cpp:135
 #, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr ""
+msgstr "«%1» VPN باغلىنىشنىڭ بىخەتەرلىك ئاچقۇچى تەمىنلىنىدۇ:"
 
 #: passworddialog.cpp:136
 #, kde-format
 msgid "VPN secrets (%1) dialog"
-msgstr ""
+msgstr "VPN بىخەتەرلىك ئاچقۇچ (%1) سۆزلەشكۈسى"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
@@ -607,138 +609,135 @@ msgstr "ئىم:"
 #: pindialog.cpp:68
 #, kde-format
 msgid "SIM PUK"
-msgstr ""
+msgstr "SIM PUK"
 
 #: pindialog.cpp:70
 #, kde-format
 msgid "SIM PUK2"
-msgstr ""
+msgstr "SIM PUK2"
 
 #: pindialog.cpp:72
 #, kde-format
 msgid "Service provider PUK"
-msgstr ""
+msgstr "مۇلازىمەت تەمىنلىگۈچىنىڭ PUK كودى"
 
 #: pindialog.cpp:74
 #, kde-format
 msgid "Network PUK"
-msgstr ""
+msgstr "تور PUK كودى"
 
 #: pindialog.cpp:76
 #, kde-format
 msgid "Corporate PUK"
-msgstr ""
+msgstr "كارخانا PUK كودى"
 
 #: pindialog.cpp:78
 #, kde-format
 msgid "PH-FSIM PUK"
-msgstr ""
+msgstr "PH-FSIM PUK"
 
 #: pindialog.cpp:80
 #, kde-format
 msgid "Network Subset PUK"
-msgstr ""
+msgstr "تور تارماق توپلىمىنىڭ PUK"
 
 #: pindialog.cpp:83 pindialog.cpp:115
-#, fuzzy, kde-format
-#| msgid "SIM PUK unlock required"
+#, kde-format
 msgid "%1 unlock required"
-msgstr "SIM PUK قۇلۇپسىزلاش كېرەك"
+msgstr "%1 قۇلۇپىنى ئېچىش زۆرۈر"
 
 #: pindialog.cpp:84 pindialog.cpp:116
-#, fuzzy, kde-format
-#| msgid "SIM PUK Unlock Required"
+#, kde-format
 msgid "%1 Unlock Required"
-msgstr "SIM PUK قۇلۇپسىزلاش كېرەك"
+msgstr "%1 قۇلۇپىنى ئېچىش زۆرۈر"
 
 #: pindialog.cpp:85 pindialog.cpp:117
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
-msgstr ""
+msgstr "كۆچمە كەڭ بەلباغ ئۈسكۈنىسى «%1» نى ئىشلىتىش ئۈچۈن %2 كودى زۆرۈر."
 
 #: pindialog.cpp:86 pindialog.cpp:118
-#, fuzzy, kde-format
-#| msgid "PUK code:"
+#, kde-format
 msgid "%1 code:"
-msgstr "PUK نومۇرى:"
+msgstr "%1 كودى:"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
 #: pindialog.cpp:87 pinwidget.ui:153
 #, kde-format
 msgid "New PIN code:"
-msgstr "يېڭى PUK نومۇرى:"
+msgstr "يېڭى PIN كودى:"
 
 #: pindialog.cpp:88
 #, kde-format
 msgid "Re-enter new PIN code:"
-msgstr "يېڭى PUK نومۇرىنى يەنە كىرگۈزۈڭ:"
+msgstr "يېڭى PIN كودى قايتا كىرگۈزۈلىدۇ:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkShowPass)
 #: pindialog.cpp:89 pinwidget.ui:193
 #, kde-format
 msgid "Show PIN/PUK code"
-msgstr ""
+msgstr "PIN/PUK كودىنى كۆرسىتىدۇ"
 
 #: pindialog.cpp:99
 #, kde-format
 msgid "SIM PIN"
-msgstr ""
+msgstr "SIM PIN"
 
 #: pindialog.cpp:101
 #, kde-format
 msgid "SIM PIN2"
-msgstr ""
+msgstr "SIM PIN2"
 
 #: pindialog.cpp:103
 #, kde-format
 msgid "Service provider PIN"
-msgstr ""
+msgstr "مۇلازىمەت تەمىنلىگۈچىنىڭ PIN كودى"
 
 #: pindialog.cpp:105
 #, kde-format
 msgid "Network PIN"
-msgstr ""
+msgstr "تور PIN كودى"
 
 #: pindialog.cpp:107
 #, kde-format
 msgid "PIN"
-msgstr ""
+msgstr "PIN"
 
 #: pindialog.cpp:109
 #, kde-format
 msgid "Corporate PIN"
-msgstr ""
+msgstr "كارخانا PIN كودى"
 
 #: pindialog.cpp:111
 #, kde-format
 msgid "PH-FSIM PIN"
-msgstr ""
+msgstr "PH-FSIM PIN"
 
 #: pindialog.cpp:113
 #, kde-format
 msgid "Network Subset PIN"
-msgstr ""
+msgstr "تور تارماق توپلىمىنىڭ PIN"
 
 #: pindialog.cpp:119
 #, kde-format
 msgid "Show PIN code"
-msgstr "PIN نومۇرىنى كۆرسەت"
+msgstr "PIN كودىنى كۆرسىتىدۇ"
 
 #: pindialog.cpp:203
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
-msgstr ""
+msgstr "PIN كودى بەك قىسقا. ئاز دېگەندە 4 خانە سان بولۇشى كېرەك."
 
 #: pindialog.cpp:208
 #, kde-format
 msgid "The two PIN codes do not match"
-msgstr ""
+msgstr "ئىككى PIN كودى ماسلاشمىدى"
 
 #: pindialog.cpp:213
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
-msgstr ""
+msgstr "PUK كودى بەك قىسقا. ئاز دېگەندە 8 خانە سان بولۇشى كېرەك."
 
 #: pindialog.cpp:218
 #, kde-format
@@ -750,7 +749,7 @@ msgstr "نامەلۇم خاتالىق"
 #: pinwidget.ui:14 pinwidget.ui:47
 #, kde-format
 msgid "SIM PIN unlock required"
-msgstr "SIM PIN قۇلۇپسىزلاش كېرەك"
+msgstr "SIM PIN قۇلۇپىنى ئېچىش كېرەك"
 
 #. i18n: ectx: property (text), widget (QLabel, prompt)
 #: pinwidget.ui:76
@@ -759,35 +758,32 @@ msgid ""
 "The mobile broadband device '%1' requires a SIM PIN code before it can be "
 "used."
 msgstr ""
+"كۆچمە كەڭ بەلباغ ئۈسكۈنىسى «%1» نى ئىشلىتىلىشتىن ئىلگىرى SIM PIN كودى كېرەك."
 
 #. i18n: ectx: property (text), widget (QLabel, pukLabel)
 #: pinwidget.ui:133
-#, fuzzy, kde-format
-#| msgid "PUK code:"
+#, kde-format
 msgid "PUK code:"
-msgstr "PUK نومۇرى:"
+msgstr "PUK كودى:"
 
 #. i18n: ectx: property (text), widget (QLabel, pin2Label)
 #: pinwidget.ui:173
-#, fuzzy, kde-format
-#| msgid "Re-enter new PIN code:"
+#, kde-format
 msgid "Re-enter PIN code:"
-msgstr "يېڭى PUK نومۇرىنى يەنە كىرگۈزۈڭ:"
+msgstr "PIN كودى قايتا كىرگۈزۈلىدۇ:"
 
 #: secretagent.cpp:411
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
-msgstr ""
+msgstr "%1 نىڭ كىملىكىنى دەلىللىيەلمىدى، ئىم خاتامۇ؟"
 
 #~ msgid "TextLabel"
 #~ msgstr "تېكىستلىك ئەن"
 
-#, fuzzy
 #~| msgid "&Show password"
 #~ msgid "Show password"
 #~ msgstr "ئىم كۆرسەت(&S)"
 
-#, fuzzy
 #~| msgid "New PIN code:"
 #~ msgid "&New PIN code:"
 #~ msgstr "يېڭى PUK نومۇرى:"

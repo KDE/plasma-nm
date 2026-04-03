@@ -8,14 +8,15 @@ msgstr ""
 "Project-Id-Version: plasmanm_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2013-09-08 07:05+0900\n"
-"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
+"PO-Revision-Date: 2026-04-01 09:36-0400\n"
+"Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.8\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -27,38 +28,35 @@ msgstr "تور ئۆتكىلى:"
 #: l2tp.ui:35
 #, kde-format
 msgid "L2TP server IP or name."
-msgstr ""
+msgstr "L2TP مۇلازىمېتىر IP ئادرېسى ياكى ئىسمى."
 
 #. i18n: ectx: property (text), widget (QLabel, labelAuthType)
 #: l2tp.ui:45
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Authentication type:"
-msgstr "كىملىك دەلىللەش"
+msgstr "دەلىللەش تۈرى:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbAuthType)
 #: l2tp.ui:67 l2tpipsec.ui:68
 #, kde-format
 msgid "Select an authentication mode."
-msgstr ""
+msgstr "دەلىللەش ھالىتى تاللىنىدۇ."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: l2tp.ui:71
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password"
-msgstr "ئىم:"
+msgstr "ئىم"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: l2tp.ui:76 l2tpipsec.ui:77
 #, kde-format
 msgid "Certificates (TLS)"
-msgstr ""
+msgstr "گۇۋاھنامە (TLS)"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_1)
 #: l2tp.ui:90
-#, fuzzy, kde-format
-#| msgid "User name:"
+#, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username:"
 msgstr "ئىشلەتكۈچى ئاتى:"
@@ -70,6 +68,9 @@ msgid ""
 "<html><head/><body><p>Set the name used for authenticating the local system "
 "to the peer to &lt;name&gt;.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>\n"
+"يەرلىك سىستېمىدىن يىراقتىكى تورداشقىچە سالاھىيەت دەلىللەش ئىشلەتكۈچى ئاتىنى "
+"&lt;name&gt; غا تەڭشەيدۇ.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_2)
 #: l2tp.ui:113
@@ -84,6 +85,7 @@ msgid ""
 "<html><head/><body><p>Password passed to PPPD when prompted for it.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>PPPD ئىم سورىغاندا يوللايدىغان ئىم.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_3)
 #: l2tp.ui:140
@@ -98,13 +100,15 @@ msgid ""
 "<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
 "host name for</p><p>authentication purposes.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>«دائىرە ئاتى» نى يەرلىك مۇلازىمېتىر ئاتىغا قوشىدۇ،</"
+"p><p>سالاھىيەت دەلىللەشكە ئىشلىتىلىدۇ.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
 #: l2tp.ui:161 l2tpipsec.ui:205
 #, kde-format
 msgid "CA Certificate:"
-msgstr ""
+msgstr "CA گۇۋاھنامە:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCA)
@@ -114,12 +118,14 @@ msgid ""
 "<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
 "cer or .p12 formats.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>گۇۋاھنامە تارقاتقۇچى (CA) ھۆججىتىنىڭ پىچىمى in .pem، ."
+"der، .crt، .cer ياكى .p12.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: l2tp.ui:186
 #, kde-format
 msgid "User Certificate:"
-msgstr ""
+msgstr "ئىشلەتكۈچى گۇۋاھنامىسى:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCert)
 #: l2tp.ui:199
@@ -128,13 +134,15 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>گۇۋاھنامە پىچىمى .pem، .der، .crt، .cer ياكى .p12.</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #: l2tp.ui:211 l2tpipsec.ui:156
 #, kde-format
 msgid "Private Key:"
-msgstr ""
+msgstr "شەخسىي ئاچقۇچ:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineKey)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userKey)
@@ -144,14 +152,15 @@ msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>شەخسىي ئاچقۇچ پىچىمى .pem، .der، .key، .pk8 ياكى .p12."
+"</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: l2tp.ui:236 l2tpipsec.ui:181
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Private Key Password:"
-msgstr "ئىم:"
+msgstr "شەخسىي شىفىرلىق ئاچقۇچ ئىم:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, machineKeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userKeyPassword)
@@ -161,6 +170,8 @@ msgid ""
 "<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>شەخسىي شىفىرلىق ئاچقۇچ ياكى PKCS#12 گۇۋاھنامە ئىم.</"
+"p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:267
@@ -182,73 +193,72 @@ msgstr ""
 #: l2tp.ui:308
 #, kde-format
 msgid "IPsec Settings…"
-msgstr ""
+msgstr "IPsec تەڭشىكى…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPPPSettings)
 #: l2tp.ui:315
 #, kde-format
 msgid "PPP Settings…"
-msgstr ""
+msgstr "PPP تەڭشىكى…"
 
 #: l2tpauth.cpp:64
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "User Password:"
-msgstr "ئىم:"
+msgstr "ئىشلەتكۈچى ئىم:"
 
 #: l2tpauth.cpp:72
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "User Certificate Password:"
-msgstr "ئىم:"
+msgstr "ئىشلەتكۈچى گۇۋاھنامە ئىم:"
 
 #: l2tpauth.cpp:83
 #, kde-format
 msgid "Machine Certificate Password:"
-msgstr ""
+msgstr "ماشىنا گۇۋاھنامە ئىم:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: l2tpauth.cpp:93 l2tpipsec.ui:91
 #, kde-format
 msgid "Pre-shared Key:"
-msgstr ""
+msgstr "ئالدىن ھەمبەھىر شىفىرلىق ئاچقۇچى:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbEnableTunnelToHost)
 #: l2tpipsec.ui:20
 #, kde-format
 msgid "Enable IPsec tunnel to L2TP host"
-msgstr ""
+msgstr "L2TP مۇلازىمېتىرنىڭ IPsec قانىلىنى قوزغىتىدۇ"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAuthentication)
 #: l2tpipsec.ui:38
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Machine Authentication"
-msgstr "كىملىك دەلىللەش"
+msgstr "ماشىنا دەلىللەش"
 
 #. i18n: ectx: property (text), widget (QLabel, labelAuthType)
 #: l2tpipsec.ui:46
 #, kde-format
 msgid "Type:"
-msgstr ""
+msgstr "تۈرى:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: l2tpipsec.ui:72
 #, kde-format
 msgid "Pre-shared Key (PSK)"
-msgstr ""
+msgstr "ئالدىن ھەمبەھىر شىفىرلىق ئاچقۇچى(PSK):"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
 #: l2tpipsec.ui:103
 #, kde-format
 msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>ئالدىن ھەمبەھىر شىفىرلىق ئاچقۇچ(PSK) ئىم.</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: l2tpipsec.ui:131
 #, kde-format
 msgid "Machine Certificate:"
-msgstr ""
+msgstr "ماشىنا گۇۋاھنامىسى:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCert)
 #: l2tpipsec.ui:144
@@ -257,24 +267,26 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>گۇۋاھنامە پىچىمى .pem، .der ياكى .p12.</p></body></"
+"html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAdvanced)
 #: l2tpipsec.ui:225
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "ئالىي"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: l2tpipsec.ui:231
 #, kde-format
 msgid "Phase1 Algorithms:"
-msgstr ""
+msgstr "1-باسقۇچلۇق ھېسابلاش ئۇسۇلى:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: l2tpipsec.ui:241
 #, kde-format
 msgid "Phase2 Algorithms:"
-msgstr ""
+msgstr "2-باسقۇچلۇق ھېسابلاش ئۇسۇلى:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
 #: l2tpipsec.ui:251
@@ -283,6 +295,8 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>تاللاشچان ESP - تېز ھالەت. پىچىمى «enc-integ,enc-"
+"integ, …».</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:261
@@ -291,19 +305,21 @@ msgid ""
 "<html><head/><body><p>How long the keying channel of a connection should "
 "last before being renegotiated.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>شىفىرلىق ئاچقۇچ قانىلى قايتا كېلىشىشتىن ئىلگىرى "
+"قانچىلىك ۋاقىت داۋاملىشىدىغانلىقى.</p></body></html>"
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:264 l2tpipsec.ui:298
 #, kde-format
 msgid "hh:mm:ss"
-msgstr ""
+msgstr "hh:mm:ss"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIkelifetime)
 #: l2tpipsec.ui:271
 #, kde-format
 msgid "Phase1 Lifetime:"
-msgstr ""
+msgstr "1-باسقۇچ ئۆمرى:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: l2tpipsec.ui:278
@@ -312,12 +328,14 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>تاللاشچانIKE - ئاساسىي ھالەتنىڭ تەۋسىيە تىزىمى. پىچىمى "
+"«enc-integ-group,enc-integ-group, …».</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:285
 #, kde-format
 msgid "Phase2 Lifetime:"
-msgstr ""
+msgstr "2-باسقۇچ ئۆمرى:"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:295
@@ -327,6 +345,10 @@ msgid ""
 "of encryption/authentication keys for user packets) should last, from "
 "successful negotiation to expiry.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>بىر ئۇلانما ئەمەلىي مىسالى (بىر گۇرۇپپا ئىشلەتكۈچى "
+"سانلىق مەلۇمات بوغچىسىغا ئىشلىتىدىغان شىفىرلاش/سالاھىيەت دەلىللەش شىفىرلىق "
+"ئاچقۇچى) كېلىشىش مۇۋەپپەقىيەتلىك بولغاندىن تارتىپ ۋاقتى ئۆتۈشكىچە بولغان "
+"ئۆمرى.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
 #: l2tpipsec.ui:305
@@ -338,6 +360,11 @@ msgid ""
 "strongSwan or Libreswan documentation for leftid/rightid syntax and identity "
 "parsing.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>تاللاشچان. سالاھىيەت دەلىللەشتە بەلگىلىنىدىغان IPsec "
+"مۇلازىمېتىرنى قانداق پەرقلەندۈرۈش ئۇسۇلى.بەزىدە تورداش كىملىكى ياكى تور "
+"ئۆتكىلى كىملىكى دەپمۇ ئاتىلىدۇ، strongSwan، Libreswan، Openswan ۋە FreeS/WAN "
+"دا ئۇنى rightid دەپ ئاتايدۇ.strongSwan ياكى Libreswan نىڭ قوللانمىسىدىكى "
+"leftid/rightid تىلقۇرمىسى ۋە سالاھىيەت يېشىشتىن كۆرۈڭ.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:312
@@ -347,13 +374,15 @@ msgid ""
 "encrypted. This saves some bandwidth, but uses more processing power.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>IPComp ئەسلى IP بوغچىسى شىفىرلىنىشتىن ئىلگىرى ئۇنى "
+"قىسىدۇ. بۇ بىر قىسىم بەلباغ كەڭلىكىنى تېجەيدۇ ئەمما تېخىمۇ كۆپ ھېسابلاش "
+"كۈچىنى خورىتىدۇ.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:315
-#, fuzzy, kde-format
-#| msgid "Compression"
+#, kde-format
 msgid "Use IP compression"
-msgstr "پرېسلاش"
+msgstr "IP قىسىشنى ئىشلىتىدۇ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIKEv2)
 #: l2tpipsec.ui:322
@@ -368,12 +397,14 @@ msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
 "only if the server doesn’t support PFS.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>مۇكەممەل يەتكۈزۈش بىخەتەرلىكى (PFS) نى چەكلەيدۇ. ئەگەر "
+"مۇلازىمېتىر PFS نى قوللىمىسا بۇ تاللانما تاللىنىدۇ.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:332
 #, kde-format
 msgid "Disable PFS"
-msgstr ""
+msgstr "PFS نى چەكلە"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:339
@@ -383,23 +414,26 @@ msgid ""
 "encapsulation even if no NAT situation is detected might help in such cases."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>بەزى مۇداپىئە تېمى ESP ئېقىمىنى توسىدۇ. ئەگەر بۇ خىل "
+"ئەھۋالغا يولۇققاندا NAT ئەھۋالىنى بايقىمىغان تەقدىردىمۇ مەجبۇرىي UDP "
+"بولاقلاش ئىشلىتىلسە بەلكىم مەسىلە ھەل بولۇشى مۇمكىن.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:342
 #, kde-format
 msgid "Enforce UDP encapsulation"
-msgstr ""
+msgstr "مەجبۇرىي UDP بولاقلاش"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: l2tpipsec.ui:352
 #, kde-format
 msgid "Remote ID:"
-msgstr ""
+msgstr "يىراقتىكى كىملىك:"
 
 #: l2tpipsecwidget.cpp:46
 #, kde-format
 msgid "L2TP IPsec Options"
-msgstr ""
+msgstr "L2TP IPsec تاللانمىسى"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
 #: l2tpppp.ui:26
@@ -411,13 +445,13 @@ msgstr "كىملىك دەلىللەش"
 #: l2tpppp.ui:35
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr ""
+msgstr "تۆۋەندىكى كىملىك دەلىللەش ئۇسۇلىغا يول قويىدۇ:"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, listWidget)
 #: l2tpppp.ui:45
 #, kde-format
 msgid "Allow/disable authentication methods"
-msgstr ""
+msgstr "كىملىك دەلىللەش ئۇسۇلىغا يول قوي/چەكلە"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: l2tpppp.ui:49
@@ -453,34 +487,31 @@ msgstr "EAP"
 #: l2tpppp.ui:95
 #, kde-format
 msgid "Compression"
-msgstr "پرېسلاش"
+msgstr "قىسىش"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbBSD)
 #: l2tpppp.ui:107
-#, fuzzy, kde-format
-#| msgid "Allow BSD compression"
+#, kde-format
 msgid "Allow/disable BSD-Compress compression."
-msgstr "BSD پرېسلاشقا ئىجازەت"
+msgstr "BSD قىسىشقا يول قويىدۇ/چەكلەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbBSD)
 #: l2tpppp.ui:110
 #, kde-format
 msgid "Allow BSD compression"
-msgstr "BSD پرېسلاشقا ئىجازەت"
+msgstr "BSD قىسىشقا يول قويىدۇ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbdeflate)
 #: l2tpppp.ui:120
-#, fuzzy, kde-format
-#| msgid "Allow BSD compression"
+#, kde-format
 msgid "Allow/disable Deflate compression."
-msgstr "BSD پرېسلاشقا ئىجازەت"
+msgstr "Deflate قىسىشقا يول قويىدۇ/چەكلەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbdeflate)
 #: l2tpppp.ui:123
-#, fuzzy, kde-format
-#| msgid "Allow BSD compression"
+#, kde-format
 msgid "Allow Deflate compression"
-msgstr "BSD پرېسلاشقا ئىجازەت"
+msgstr "Deflate قىسىشقا يول قويىدۇ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbTCPheaders)
 #: l2tpppp.ui:134
@@ -490,13 +521,14 @@ msgid ""
 "transmit\n"
 "and the receive directions."
 msgstr ""
+"ئىككى يۆنىلىشتە يوللىغان ۋە قوبۇللىغاندا Van Jacobson ئۇسلۇبىدا TCP/IP "
+"سانلىق-مەلۇمات بوغچا بېشىنى قىسىشقا يول قويىدۇ/چەكلەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbTCPheaders)
 #: l2tpppp.ui:137
-#, fuzzy, kde-format
-#| msgid "Allow BSD compression"
+#, kde-format
 msgid "Allow TCP header compression"
-msgstr "BSD پرېسلاشقا ئىجازەت"
+msgstr "TCP ئۇچۇر باش قىسىشقا يول قويىدۇ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbCompressionNegotiation)
 #: l2tpppp.ui:148
@@ -505,24 +537,27 @@ msgid ""
 "Allow protocol field compression negotiation in both the receive and the\n"
 " transmit directions."
 msgstr ""
+"ئىككى يۆنىلىشتە يوللىغان ۋە قوبۇللىغاندا كېلىشىم بۆلىكىنى قىسىش كېلىشىشىگە "
+"يول قويىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbCompressionNegotiation)
 #: l2tpppp.ui:151
 #, kde-format
 msgid "Use protocol field compression negotiation"
-msgstr ""
+msgstr "كېلىشىم بۆلىكىنى قىسىش كېلىشىشىنى ئىشلىتىدۇ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:164
 #, kde-format
 msgid "Use Address/Control compression in both directions (send and receive)."
 msgstr ""
+"قوش يۆنىلىشتە يوللىغان ۋە قوبۇللىغاندا ئادرېس/تىزگىنلەش قىسىشنى ئىشلىتىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbAddressControlCompression)
 #: l2tpppp.ui:167
 #, kde-format
 msgid "Use Address/Control compression"
-msgstr ""
+msgstr "ئادرېس/تىزگىنلەش قىسىشنى ئىشلىتىدۇ"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
 #: l2tpppp.ui:180
@@ -535,19 +570,20 @@ msgstr "ئەكس سادا"
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
 msgstr ""
+"LCP ئەكس سادا ئىلتىماسى يوللاش ئارقىلىق تورداشنىڭ ھايات ئىكەنلىكىنى "
+"جەزملەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbsendEcho)
 #: l2tpppp.ui:192
-#, fuzzy, kde-format
-#| msgid "Send PPP echo packets "
+#, kde-format
 msgid "Send PPP echo packets"
-msgstr "PPPPP echo بوغچىلىرىنى يوللا "
+msgstr "PPP echo بوغچىلىرىنى يوللا"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_other)
 #: l2tpppp.ui:215
 #, kde-format
 msgid "Other Settings"
-msgstr ""
+msgstr "باشقا تەڭشەك"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbMRRU)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMRRU)
@@ -566,13 +602,13 @@ msgstr ""
 #: l2tpppp.ui:250
 #, kde-format
 msgid "MRU: "
-msgstr ""
+msgstr "MRU: "
 
 #. i18n: ectx: property (text), widget (QLabel, lbMTU)
 #: l2tpppp.ui:264
 #, kde-format
 msgid "MTU: "
-msgstr ""
+msgstr "MTU: "
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, gbMPPE)
 #: l2tpppp.ui:283
@@ -583,24 +619,29 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
+"دىققەت: MPPE شىفىرلاشنى پەقەت MSCHAP كىملىك دەلىللەش ئۇسۇلىغىلا ئىشلەتكىلى "
+"بولىدۇ. بۇ كۆپ تاللاش رامكىسى قوزغىتىلسا، بىر ياكى بىر قانچە MSCHAP كىملىك "
+"دەلىللەش ئۇسۇلىنى تاللىنىدۇ: MSCHAP  ياكى MSCHAPv2."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMPPE)
 #: l2tpppp.ui:286
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr ""
+msgstr "MPPE شىفىرلاش ئىشلەت"
 
 #. i18n: ectx: property (text), widget (QLabel, lblMMPEcrypto)
 #: l2tpppp.ui:307
 #, kde-format
 msgid "Crypto:"
-msgstr ""
+msgstr "شىفىرلاش:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbMPPECrypto)
 #: l2tpppp.ui:323
 #, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
 msgstr ""
+"MPPE نى ئىشلىتىشنى قوزغاتقاندىلا ئاندىن 40/128 بىت شىفىرلاش ياكى ھەممىسىنى "
+"ئىشلەتكىلى بولىدۇ."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbMPPECrypto)
 #: l2tpppp.ui:327
@@ -627,22 +668,23 @@ msgstr "40 بىت"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
+"MPPE ئىشلىتىش ھالىتىنى ساقلاش شەكلىگە يول قويىدۇ. ئەمما ھالىتى يوق شەكىلنى "
+"ئىشلىتىش ئالدىنقى ئورۇندا تۇرىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbstatefulEncryption)
 #: l2tpppp.ui:348
 #, kde-format
 msgid "Use stateful encryption"
-msgstr ""
+msgstr "ھالىتىنى ساقلاش شەكلىدە شىفىرلاشنى ئىشلىتىدۇ"
 
 #: l2tppppwidget.cpp:22
 #, kde-format
 msgid "L2TP PPP Options"
-msgstr ""
+msgstr "L2TP PPP تاللانما"
 
 #~ msgid "User name:"
 #~ msgstr "ئىشلەتكۈچى ئاتى:"
 
-#, fuzzy
 #~| msgid "Gateway:"
 #~ msgid "Gateway ID:"
 #~ msgstr "تور ئۆتكىلى:"
@@ -662,7 +704,6 @@ msgstr ""
 #~ msgid "Show password"
 #~ msgstr "ئىم كۆرسەت"
 
-#, fuzzy
 #~| msgid "Username:"
 #~ msgid "Userna&me:"
 #~ msgstr "ئىشلەتكۈچى ئاتى:"

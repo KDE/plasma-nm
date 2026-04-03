@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2022, 2025 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022, 2025, 2026 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:46+0000\n"
-"PO-Revision-Date: 2025-09-03 19:57+0200\n"
+"PO-Revision-Date: 2026-04-03 02:34+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.07.70\n"
+"X-Generator: Lokalize 26.03.70\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -49,17 +49,17 @@ msgstr "Данни за връзката"
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
-msgstr ""
+msgstr "Споделяне"
 
 #: ui/ConnectionInfo.qml:107
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr ""
+msgstr "Споделяне на Wi-Fi с QR код"
 
 #: ui/ConnectionInfo.qml:114
 #, kde-format
 msgid "Wi-Fi QR Code"
-msgstr ""
+msgstr "QR Code на Wi-Fi"
 
 #: ui/main.qml:26
 #, kde-format
@@ -74,7 +74,7 @@ msgstr "Wi-Fi"
 #: ui/main.qml:98
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Още"
 
 #: ui/main.qml:107
 #, kde-format
@@ -93,16 +93,14 @@ msgid "Add Custom Connection"
 msgstr "Добавяне на потребителска връзка"
 
 #: ui/MorePage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Wi-Fi Settings"
-msgstr "Настройки на IP"
+msgstr "Настройки на Wi-Fi"
 
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr ""
+msgstr "Известяване при промяна на връзката"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

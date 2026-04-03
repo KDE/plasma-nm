@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-02-12 20:59+0100\n"
+"PO-Revision-Date: 2026-04-03 02:37+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -372,10 +372,9 @@ msgstr "Автоматично"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseAsymCompression)
 #: openvpnadvanced.ui:153
-#, fuzzy, kde-format
-#| msgid "Use compression"
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "Използване на компресия"
+msgstr "Използване на асиметрична компресия"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:162
@@ -490,13 +489,13 @@ msgstr ""
 #: openvpnadvanced.ui:339
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Може би"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:344
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Да"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRandRemHosts)
 #: openvpnadvanced.ui:355
@@ -530,10 +529,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, lblConnectTimeout)
 #: openvpnadvanced.ui:377
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgid "Connect timeout:"
-msgstr "Вид на връзката:"
+msgstr "Време на изтичане на свързването:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbConnectTimeout)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
@@ -547,7 +545,7 @@ msgstr "Без"
 #: openvpnadvanced.ui:396
 #, kde-format
 msgid "s"
-msgstr ""
+msgstr "s"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:414
@@ -732,10 +730,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:647
-#, fuzzy, kde-format
-#| msgid "Cipher:"
+#, kde-format
 msgid "Data Ciphers:"
-msgstr "Шифър:"
+msgstr "Шифър на данните:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:676
@@ -1036,10 +1033,9 @@ msgstr "TLS-Crypt"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1084
-#, fuzzy, kde-format
-#| msgid "TLS-Crypt"
+#, kde-format
 msgid "TLS-Crypt v2"
-msgstr "TLS-Crypt"
+msgstr "TLS-Crypt v2"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -1070,10 +1066,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1123
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "Потребителски сертификат:"
+msgstr "Допълнителен файлов сертификат:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)

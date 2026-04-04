@@ -36,6 +36,7 @@
         "Description[sv]": "Trådlös nätverksinställning",
         "Description[ta]": "கம்பியில்லா பிணையத்திற்கான அமைப்பு",
         "Description[tr]": "Kablosuz ağ ayarları",
+        "Description[ug]": "سىمسىز تور تەڭشىكى",
         "Description[uk]": "Налаштовування бездротової мережі",
         "Description[zh_CN]": "无线网络设置",
         "Description[zh_TW]": "無線網路設定",
@@ -86,6 +87,7 @@
         "Name[ta]": "அருகலை",
         "Name[tg]": "Wi-Fi",
         "Name[tr]": "Wi-Fi",
+        "Name[ug]": "Wi-Fi",
         "Name[uk]": "Wi-Fi",
         "Name[zh_CN]": "Wi-Fi",
         "Name[zh_TW]": "Wi-Fi"
@@ -130,6 +132,7 @@
     "X-KDE-Keywords[ta]": "wifi,network,அருகலை,பிணையம்,வைஃபை,கம்பியில்லா",
     "X-KDE-Keywords[tg]": "wifi,шабака",
     "X-KDE-Keywords[tr]": "wifi,kablosuz,wi-fi,ağ",
+    "X-KDE-Keywords[ug]": "wifi,network,سىمسىز تور,تور",
     "X-KDE-Keywords[uk]": "wifi,network,вайфай,мережа",
     "X-KDE-Keywords[zh_CN]": "wifi,network,wangluo,wuxian,网络,无线",
     "X-KDE-Keywords[zh_TW]": "wifi,network,網路,無線網路",

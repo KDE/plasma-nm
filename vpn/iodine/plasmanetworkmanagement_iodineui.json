@@ -45,6 +45,7 @@
                 "Name[sv]": "Jan Grulich",
                 "Name[ta]": "ஜான் குரூலிச்",
                 "Name[tr]": "Jan Grulich",
+                "Name[ug]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
                 "Name[zh_CN]": "Jan Grulich",
                 "Name[zh_TW]": "Jan Grulich"
@@ -93,6 +94,7 @@
         "Description[sl]": "Tuneliranje povezav preko DNS",
         "Description[sv]": "Tunnelanslutningar via DNS",
         "Description[tr]": "DNS üzerinden tünel bağlantıları",
+        "Description[ug]": "DNS ئارقىلىق باغلانغان قانال باغلىنىشى",
         "Description[uk]": "Тунельоване з’єднання за допомогою DNS",
         "Description[zh_CN]": "通过 DNS 的隧道链接",
         "Description[zh_TW]": "透過 DNS 的通道連線",
@@ -148,6 +150,7 @@
         "Name[sr]": "Ајодинов ДНС тунеловање (Ајодин)",
         "Name[sv]": "Iodine DNS-tunnel (iodine)",
         "Name[tr]": "Iodine DNS tüneli (iodine)",
+        "Name[ug]": "Iodine DNS تونېلى (iodine)",
         "Name[uk]": "Тунель Iodine DNS (iodine)",
         "Name[zh_CN]": "Iodine DNS 隧道 (iodine)",
         "Name[zh_TW]": "Iodine DNS 通道 (iodine)",

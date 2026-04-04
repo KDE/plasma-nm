@@ -46,6 +46,7 @@
                 "Name[sv]": "KDE Plasma",
                 "Name[ta]": "கே.டீ.யீ. பிளாஸ்மா",
                 "Name[tr]": "KDE Plasma",
+                "Name[ug]": "KDE plasma",
                 "Name[uk]": "Плазма KDE",
                 "Name[zh_CN]": "KDE plasma",
                 "Name[zh_TW]": "KDE plasma"
@@ -94,6 +95,7 @@
         "Description[sl]": "Združljiv s poljem omrežij SSL VPN",
         "Description[sv]": "Kompatibel med Array Networks SSL VPN",
         "Description[tr]": "Array Networks SSL VPN ile uyumlu",
+        "Description[ug]": "Array Networks SSL VPN بىلەن ماسلىشىدۇ",
         "Description[uk]": "Сумісний із VPN Array Networks",
         "Description[zh_CN]": "兼容 Array Networks SSL VPN",
         "Description[zh_TW]": "與 Array Networks SSL VPN 相容",
@@ -142,6 +144,7 @@
         "Name[sl]": "Polje mrežno združljivih VPN (openconnect)",
         "Name[sv]": "Array Networks-kompatibel VPN (openconnect)",
         "Name[tr]": "Array Networks Uyumlu VPN (openconnect)",
+        "Name[ug]": "Array Networks بىلەن ماسلىشىدىغان VPN (openconnect)",
         "Name[uk]": "VPN, сумісний з Array Networks (openconnect)",
         "Name[zh_CN]": "Array Networks 兼容 VPN (openconnect)",
         "Name[zh_TW]": "與 Array Networks 相容的 VPN (openconnect)",

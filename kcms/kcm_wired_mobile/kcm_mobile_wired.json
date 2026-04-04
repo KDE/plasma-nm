@@ -29,6 +29,7 @@
         "Description[sv]": "Trådbundna nätverksinställningar",
         "Description[ta]": "கம்பி பிணையத்திற்கான அமைப்புகள்",
         "Description[tr]": "Kablolu ağ ayarları",
+        "Description[ug]": "سىملىق تور تەڭشىكى",
         "Description[uk]": "Налаштовування дротової мережі",
         "Description[zh_CN]": "有线网络设置",
         "Description[zh_TW]": "有線網路設定",
@@ -65,6 +66,7 @@
         "Name[sv]": "Trådbundet nätverk",
         "Name[ta]": "கம்பி இணைப்பு",
         "Name[tr]": "Kablolu Ağ",
+        "Name[ug]": "سىملىق تور",
         "Name[uk]": "Дротова мережа ",
         "Name[zh_CN]": "有线网络",
         "Name[zh_TW]": "有線網路"
@@ -96,6 +98,7 @@
     "X-KDE-Keywords[sv]": "trådbundet,nätverk,ethernet,cat5,cat6,IP,adress,DHCP,anslutning,kabel",
     "X-KDE-Keywords[ta]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking, கம்பி, பிணையம், இணையம், முகவரி, இணைப்பு, பிணையமாக்கம், இணையமாக்கம்",
     "X-KDE-Keywords[tr]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking,kablolu,ağ,adres,bağlantı,kablo",
+    "X-KDE-Keywords[ug]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking,ئىنتېرنېت كېلىشىمى,سىملىق,باغلىنىش,تور",
     "X-KDE-Keywords[uk]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking,дротова,мережа,езернет,айпі,адреса,діейчсіпі,з'єднання,кабель,мережевий",
     "X-KDE-Keywords[zh_CN]": "wired,network,ethernet,cat5,cat6,IP,address,DHCP,connection,cable,networking,youxian,wangluo,juyuwang,yitaiwang,wulei,liulei,dizhi,zidonghuoqu,lianjie,wangxian,lianwang,有线,网络,局域网,以太网,五类,六类,地址,自动获取,连接,网线,联网",
     "X-KDE-Keywords[zh_TW]": "有線,網路,以太,乙太,位址,連線,連接,網路",

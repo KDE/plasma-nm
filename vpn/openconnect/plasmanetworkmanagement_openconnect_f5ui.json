@@ -46,6 +46,7 @@
                 "Name[sv]": "KDE Plasma",
                 "Name[ta]": "கே.டீ.யீ. பிளாஸ்மா",
                 "Name[tr]": "KDE Plasma",
+                "Name[ug]": "KDE plasma",
                 "Name[uk]": "Плазма KDE",
                 "Name[zh_CN]": "KDE plasma",
                 "Name[zh_TW]": "KDE plasma"
@@ -94,6 +95,7 @@
         "Description[sl]": "Združljiv s F5 BIG-IP SSL VPN",
         "Description[sv]": "Kompatibel med F5 BIG-IP SSL VPN",
         "Description[tr]": "F5 BIG-IP SSL VPN ile uyumlu",
+        "Description[ug]": "F5 BIG-IP SSL VPN بىلەن ماسلىشىدۇ",
         "Description[uk]": "Сумісний із F5 BIG-IP SSL VPN",
         "Description[zh_CN]": "兼容 F5 BIG-IP SSL VPN ",
         "Description[zh_TW]": "與 F5 BIG-IP SSL VPN 相容",
@@ -142,6 +144,7 @@
         "Name[sl]": "F5 BIG-IP združljiv VPN (openconnect)",
         "Name[sv]": "F5 BIG-IP-kompatibel VPN (openconnect)",
         "Name[tr]": "F5 BIG-IP Uyumlu VPN (openconnect)",
+        "Name[ug]": "F5 BIG-IP بىلەن ماسلىشىدىغان VPN (openconnect)",
         "Name[uk]": "VPN, сумісний з F5 BIG-IP (openconnect)",
         "Name[zh_CN]": "F5 BIG-IP 兼容 VPN (openconnect)",
         "Name[zh_TW]": "與 F5 BIG-IP 相容的 VPN (openconnect)",

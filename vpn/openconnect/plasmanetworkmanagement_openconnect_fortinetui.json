@@ -46,6 +46,7 @@
                 "Name[sv]": "KDE Plasma",
                 "Name[ta]": "கே.டீ.யீ. பிளாஸ்மா",
                 "Name[tr]": "KDE Plasma",
+                "Name[ug]": "KDE plasma",
                 "Name[uk]": "Плазма KDE",
                 "Name[zh_CN]": "KDE plasma",
                 "Name[zh_TW]": "KDE plasma"
@@ -94,6 +95,7 @@
         "Description[sl]": "Združljiv s Fortinet VPN",
         "Description[sv]": "Kompatibel med Fortinet VPN",
         "Description[tr]": "Fortinet VPN ile uyumlu",
+        "Description[ug]": "Fortinet VPN بىلەن ماسلىشىدۇ",
         "Description[uk]": "Сумісний із VPN Fortinet",
         "Description[zh_CN]": "兼容 Fortinet VPN ",
         "Description[zh_TW]": "與 Fortinet VPN 相容",
@@ -142,6 +144,7 @@
         "Name[sl]": "Fortinet združljiv VPN (openconnect)",
         "Name[sv]": "Fortinet-kompatibel VPN (openconnect)",
         "Name[tr]": "Fortinet Uyumlu VPN (openconnect)",
+        "Name[ug]": "Fortinet بىلەن ماسلىشىدىغان VPN (openconnect)",
         "Name[uk]": "VPN, сумісний з Fortinet (openconnect)",
         "Name[zh_CN]": "Fortinet 兼容 VPN (openconnect)",
         "Name[zh_TW]": "與 Fortinet 相容的 VPN (openconnect)",

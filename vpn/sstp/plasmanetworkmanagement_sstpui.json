@@ -45,6 +45,7 @@
                 "Name[sv]": "Jan Grulich",
                 "Name[ta]": "ஜான் குரூலிச்",
                 "Name[tr]": "Jan Grulich",
+                "Name[ug]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
                 "Name[zh_CN]": "Jan Grulich",
                 "Name[zh_TW]": "Jan Grulich"
@@ -92,6 +93,7 @@
         "Description[sl]": "Združljiv z Microsoftovimi in drugimi SSTP strežniki VPN",
         "Description[sv]": "Kompatibelt med Microsoft och andra SSTP VPN-servrar",
         "Description[tr]": "Microsoft ve diğer SSTP VPN sunucuları ile uyumlu",
+        "Description[ug]": "Microsoft ۋە باشقا SSTP VPN مۇلازىمېتىرلىرى بىلەن ماسلىشىدۇ",
         "Description[uk]": "Сумісні з Microsoft та іншими серверами VPN SSTP",
         "Description[zh_CN]": "兼容 Microsoft 和其他 SSTP VPN 服务器",
         "Description[zh_TW]": "與微軟和其他 SSTP VPN 伺服器相容",
@@ -147,6 +149,7 @@
         "Name[sr]": "ССТП (безбедни сокетни тунелски протокол)",
         "Name[sv]": "Säkert uttagstunnelprotokoll (SSTP)",
         "Name[tr]": "Güvenli Yuva Tünel Protokolü (SSTP)",
+        "Name[ug]": "بىخەتەر ئۇلاق قانال كېلىشىمى(SSTP)",
         "Name[uk]": "Протокол тунелювання із безпечними сокетами (SSTP)",
         "Name[zh_CN]": "安全套接字隧道协议 (SSTP)",
         "Name[zh_TW]": "安全 Socket 通道協定 (SSTP)",

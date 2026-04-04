@@ -45,6 +45,7 @@
                 "Name[sv]": "Jan Grulich",
                 "Name[ta]": "ஜான் குரூலிச்",
                 "Name[tr]": "Jan Grulich",
+                "Name[ug]": "Jan Grulich",
                 "Name[uk]": "Jan Grulich",
                 "Name[zh_CN]": "Jan Grulich",
                 "Name[zh_TW]": "Jan Grulich"
@@ -93,6 +94,7 @@
         "Description[sl]": "Navidezna zasebna omrežja Fortinet SSLVPN",
         "Description[sv]": "Fortinet SSLVPN virtuella privata nätverk",
         "Description[tr]": "Fortinet SSLVPN sanal özel ağları",
+        "Description[ug]": "Fortinet SSLVPN مەۋھۇم خۇسۇسىي تور",
         "Description[uk]": "Віртуальні приватні мережі SSLVPN Fortinet",
         "Description[zh_CN]": "Fortinet SSLVPN 虛拟私有网络",
         "Description[zh_TW]": "Fortinet SSLVPN 虛擬私人網路",
@@ -148,6 +150,7 @@
         "Name[sr]": "Фортинетов ССЛ ВПН",
         "Name[sv]": "Fortinet SSLVPN (fortisslvpn)",
         "Name[tr]": "Fortinet SSLVPN (fortisslvpn)",
+        "Name[ug]": "Fortinet SSLVPN (fortisslvpn)",
         "Name[uk]": "Fortinet SSLVPN (fortisslvpn)",
         "Name[zh_CN]": "Fortinet SSLVPN (fortisslvpn)",
         "Name[zh_TW]": "Fortinet SSLVPN (fortisslvpn)",

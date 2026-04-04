@@ -47,6 +47,7 @@
                 "Name[sv]": "Lukáš Tinkl",
                 "Name[ta]": "லூக்காஸ் டிங்க்குள்",
                 "Name[tr]": "Lukáš Tinkl",
+                "Name[ug]": "Lukáš Tinkl",
                 "Name[uk]": "Lukáš Tinkl",
                 "Name[zh_CN]": "Lukáš Tinkl",
                 "Name[zh_TW]": "Lukáš Tinkl"
@@ -94,6 +95,7 @@
         "Description[sl]": "Združljiv s strežnikom OpenVPN",
         "Description[sv]": "Kompatibel med OpenVPN-server",
         "Description[tr]": "OpenVPN sunucusuyla uyumlu",
+        "Description[ug]": "OpenVPN مۇلازىمېتىرى بىلەن ماسلىشىدۇ",
         "Description[uk]": "Сумісний із сервером OpenVPN",
         "Description[zh_CN]": "兼容 OpenVPN 服务器",
         "Description[zh_TW]": "與 OpenVPN 伺服器相容",

@@ -25,7 +25,6 @@
 
 #include <QDBusConnection>
 #include <QDialog>
-#include <QEventLoop>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <QStringBuilder>
@@ -84,6 +83,7 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection,
 
     setDelayedReply(true);
     SecretsRequest request(SecretsRequest::GetSecrets);
+    request.requestId = m_nextRequestId++;
     request.callId = callId;
     request.connection = connection;
     request.connection_path = connection_path;
@@ -112,6 +112,7 @@ void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObje
         type = SecretsRequest::DeleteSecrets;
     }
     SecretsRequest request(type);
+    request.requestId = m_nextRequestId++;
     request.connection = connection;
     request.connection_path = connection_path;
     request.message = message();
@@ -128,6 +129,7 @@ void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusOb
 
     setDelayedReply(true);
     SecretsRequest request(SecretsRequest::DeleteSecrets);
+    request.requestId = m_nextRequestId++;
     request.connection = connection;
     request.connection_path = connection_path;
     request.message = message();
@@ -221,6 +223,7 @@ void SecretAgent::dialogAccepted()
 
                 if (requestOffline) {
                     SecretsRequest requestOffline(SecretsRequest::SaveSecrets);
+                    requestOffline.requestId = m_nextRequestId++;
                     requestOffline.connection = connection;
                     requestOffline.connection_path = request.connection_path;
                     requestOffline.saveSecretsWithoutReply = true;
@@ -332,7 +335,7 @@ void SecretAgent::processNext()
     }
 }
 
-bool SecretAgent::processGetSecrets(SecretsRequest &request) const
+bool SecretAgent::processGetSecrets(SecretsRequest &request)
 {
     if (m_dialog) {
         return false;
@@ -371,8 +374,14 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
 
     NMStringMap secretsMap;
     if (!requestNew && useSecureStorage()) {
-        const auto storedSecrets = readSecrets(storageKey(*connectionSettings, request.setting_name));
-        for (auto it = storedSecrets.cbegin(); it != storedSecrets.cend(); ++it) {
+        if (!request.storageReady) {
+            if (!request.storageJobStarted) {
+                startReadSecretsJob(request);
+            }
+            return false;
+        }
+
+        for (auto it = request.storedSecrets.cbegin(); it != request.storedSecrets.cend(); ++it) {
             secretsMap.insert(it.key(), it.value().toString());
         }
     }
@@ -457,22 +466,40 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request) const
     }
 }
 
-bool SecretAgent::processSaveSecrets(SecretsRequest &request) const
+bool SecretAgent::processSaveSecrets(SecretsRequest &request)
 {
     if (useSecureStorage()) {
-        NetworkManager::ConnectionSettings connectionSettings(request.connection);
-        for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
-            const auto secretsMap = setting->secretsToStringMap();
-            QVariantMap secretsVariantMap;
-            for (auto it = secretsMap.cbegin(); it != secretsMap.cend(); ++it) {
-                secretsVariantMap.insert(it.key(), it.value());
-            }
-            if (!secretsMap.isEmpty() && !writeSecrets(storageKey(connectionSettings, setting->name()), secretsVariantMap)) {
-                if (!request.saveSecretsWithoutReply) {
-                    sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in secure storage."), request.message);
-                    return true;
+        if (!request.storageReady) {
+            if (!request.storageJobStarted) {
+                NetworkManager::ConnectionSettings connectionSettings(request.connection);
+                for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
+                    const auto secretsMap = setting->secretsToStringMap();
+                    if (secretsMap.isEmpty()) {
+                        continue;
+                    }
+
+                    SecretStorageOperation operation;
+                    operation.key = storageKey(connectionSettings, setting->name());
+                    for (auto it = secretsMap.cbegin(); it != secretsMap.cend(); ++it) {
+                        operation.secrets.insert(it.key(), it.value());
+                    }
+                    request.storageOperations.append(operation);
                 }
+
+                if (request.storageOperations.isEmpty()) {
+                    request.storageReady = true;
+                } else {
+                    startStorageJob(request);
+                    return false;
+                }
+            } else {
+                return false;
             }
+        }
+
+        if (request.storageFailed && !request.saveSecretsWithoutReply) {
+            sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in secure storage."), request.message);
+            return true;
         }
     }
 
@@ -486,12 +513,27 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request) const
     return true;
 }
 
-bool SecretAgent::processDeleteSecrets(SecretsRequest &request) const
+bool SecretAgent::processDeleteSecrets(SecretsRequest &request)
 {
     if (useSecureStorage()) {
-        NetworkManager::ConnectionSettings connectionSettings(request.connection);
-        for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
-            deleteSecrets(storageKey(connectionSettings, setting->name()));
+        if (!request.storageReady) {
+            if (!request.storageJobStarted) {
+                NetworkManager::ConnectionSettings connectionSettings(request.connection);
+                for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
+                    SecretStorageOperation operation;
+                    operation.key = storageKey(connectionSettings, setting->name());
+                    request.storageOperations.append(operation);
+                }
+
+                if (request.storageOperations.isEmpty()) {
+                    request.storageReady = true;
+                } else {
+                    startStorageJob(request);
+                    return false;
+                }
+            } else {
+                return false;
+            }
         }
     }
 
@@ -508,48 +550,99 @@ bool SecretAgent::useSecureStorage() const
     return QKeychain::isAvailable();
 }
 
-QVariantMap SecretAgent::readSecrets(const QString &key)
+void SecretAgent::startReadSecretsJob(SecretsRequest &request)
 {
-    QKeychain::ReadPasswordJob job(QString::fromLatin1(keychainService));
-    QEventLoop loop;
-    QObject::connect(&job, &QKeychain::Job::finished, &loop, &QEventLoop::quit);
-    job.setKey(key);
-    job.start();
-    loop.exec();
+    request.storageJobStarted = true;
 
-    if (job.error() != QKeychain::NoError) {
-        return {};
+    auto *job = new QKeychain::ReadPasswordJob(QString::fromLatin1(keychainService), this);
+    job->setKey(storageKey(NetworkManager::ConnectionSettings(request.connection), request.setting_name));
+    connect(job, &QKeychain::Job::finished, this, [this, requestId = request.requestId](QKeychain::Job *baseJob) {
+        auto *job = qobject_cast<QKeychain::ReadPasswordJob *>(baseJob);
+        const int index = indexOfRequest(requestId);
+        if (index < 0) {
+            return;
+        }
+
+        auto &request = m_calls[index];
+        request.storageJobStarted = false;
+        request.storageReady = true;
+        request.storedSecrets.clear();
+        if (job && job->error() == QKeychain::NoError) {
+            request.storedSecrets = deserializeSecrets(job->textData());
+        }
+
+        processNext();
+    });
+    job->start();
+}
+
+void SecretAgent::startStorageJob(SecretsRequest &request)
+{
+    if (request.storageOperationIndex >= request.storageOperations.size()) {
+        request.storageJobStarted = false;
+        request.storageReady = true;
+        processNext();
+        return;
     }
 
-    const auto document = QJsonDocument::fromJson(job.textData().toUtf8());
+    request.storageJobStarted = true;
+    const auto operation = request.storageOperations.at(request.storageOperationIndex);
+
+    QKeychain::Job *job = nullptr;
+    if (request.type == SecretsRequest::SaveSecrets) {
+        auto *writeJob = new QKeychain::WritePasswordJob(QString::fromLatin1(keychainService), this);
+        writeJob->setKey(operation.key);
+        writeJob->setTextData(QString::fromUtf8(QJsonDocument(QJsonObject::fromVariantMap(operation.secrets)).toJson(QJsonDocument::Compact)));
+        job = writeJob;
+    } else {
+        auto *deleteJob = new QKeychain::DeletePasswordJob(QString::fromLatin1(keychainService), this);
+        deleteJob->setKey(operation.key);
+        job = deleteJob;
+    }
+
+    connect(job, &QKeychain::Job::finished, this, [this, requestId = request.requestId](QKeychain::Job *job) {
+        const int index = indexOfRequest(requestId);
+        if (index < 0) {
+            return;
+        }
+
+        auto &request = m_calls[index];
+        request.storageJobStarted = false;
+
+        if (request.type == SecretsRequest::SaveSecrets && job->error() != QKeychain::NoError) {
+            request.storageFailed = true;
+            if (!request.saveSecretsWithoutReply) {
+                request.storageReady = true;
+                processNext();
+                return;
+            }
+        }
+
+        ++request.storageOperationIndex;
+        startStorageJob(request);
+    });
+    job->start();
+}
+
+int SecretAgent::indexOfRequest(quint64 requestId) const
+{
+    for (int i = 0; i < m_calls.size(); ++i) {
+        if (m_calls.at(i).requestId == requestId) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+
+QVariantMap SecretAgent::deserializeSecrets(const QString &textData)
+{
+    const auto document = QJsonDocument::fromJson(textData.toUtf8());
     if (!document.isObject()) {
         return {};
     }
 
     return document.object().toVariantMap();
-}
-
-bool SecretAgent::writeSecrets(const QString &key, const QVariantMap &secrets)
-{
-    QKeychain::WritePasswordJob job(QString::fromLatin1(keychainService));
-    QEventLoop loop;
-    QObject::connect(&job, &QKeychain::Job::finished, &loop, &QEventLoop::quit);
-    job.setKey(key);
-    job.setTextData(QString::fromUtf8(QJsonDocument(QJsonObject::fromVariantMap(secrets)).toJson(QJsonDocument::Compact)));
-    job.start();
-    loop.exec();
-
-    return job.error() == QKeychain::NoError;
-}
-
-void SecretAgent::deleteSecrets(const QString &key)
-{
-    QKeychain::DeletePasswordJob job(QString::fromLatin1(keychainService));
-    QEventLoop loop;
-    QObject::connect(&job, &QKeychain::Job::finished, &loop, &QEventLoop::quit);
-    job.setKey(key);
-    job.start();
-    loop.exec();
 }
 
 bool SecretAgent::hasSecrets(const NMVariantMapMap &connection) const

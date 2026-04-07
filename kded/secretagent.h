@@ -9,11 +9,18 @@
 #ifndef PLASMA_NM_SECRET_AGENT_H
 #define PLASMA_NM_SECRET_AGENT_H
 
+#include <QList>
 #include <QVariantMap>
 
 #include <NetworkManagerQt/SecretAgent>
 
 class PasswordDialog;
+
+struct SecretStorageOperation
+{
+    QString key;
+    QVariantMap secrets;
+};
 
 class SecretsRequest
 {
@@ -47,6 +54,13 @@ public:
     bool saveSecretsWithoutReply = false;
     QDBusMessage message;
     PasswordDialog *dialog = nullptr;
+    quint64 requestId = 0;
+    bool storageJobStarted = false;
+    bool storageReady = false;
+    bool storageFailed = false;
+    QVariantMap storedSecrets;
+    QList<SecretStorageOperation> storageOperations;
+    qsizetype storageOperationIndex = 0;
 };
 
 class Q_DECL_EXPORT SecretAgent : public NetworkManager::SecretAgent
@@ -79,16 +93,17 @@ private:
      * @param request the request we are processing
      * @return true if the item was processed
      */
-    bool processGetSecrets(SecretsRequest &request) const;
-    bool processSaveSecrets(SecretsRequest &request) const;
-    bool processDeleteSecrets(SecretsRequest &request) const;
+    bool processGetSecrets(SecretsRequest &request);
+    bool processSaveSecrets(SecretsRequest &request);
+    bool processDeleteSecrets(SecretsRequest &request);
     /**
      * @brief useSecureStorage checks whether encrypted secret storage is available.
      */
     bool useSecureStorage() const;
-    static QVariantMap readSecrets(const QString &key);
-    static bool writeSecrets(const QString &key, const QVariantMap &secrets);
-    static void deleteSecrets(const QString &key);
+    void startReadSecretsJob(SecretsRequest &request);
+    void startStorageJob(SecretsRequest &request);
+    int indexOfRequest(quint64 requestId) const;
+    static QVariantMap deserializeSecrets(const QString &textData);
 
     /**
      * @brief hasSecrets verifies if the desired connection has secrets to store
@@ -100,6 +115,7 @@ private:
 
     mutable PasswordDialog *m_dialog;
     QList<SecretsRequest> m_calls;
+    quint64 m_nextRequestId = 1;
 
     void importSecretsFromPlainTextFiles();
 };

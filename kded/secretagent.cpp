@@ -299,6 +299,7 @@ void SecretAgent::killDialogs()
         if (request.type == SecretsRequest::GetSecrets) {
             delete request.dialog;
             m_calls.removeAt(i);
+            continue;
         }
 
         ++i;

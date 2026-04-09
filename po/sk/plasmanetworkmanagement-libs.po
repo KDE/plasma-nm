@@ -16,52 +16,45 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
 msgid "Error resetting the modem: %1"
-msgstr ""
+msgstr "Chyba pri resetovaní modemu: %1"
 
 #: cellular/cellularmodem.cpp:364
-#, fuzzy, kde-format
-#| msgctxt "network interface disconnecting state label"
-#| msgid "Deactivating connection"
+#, kde-format
 msgid "Error activating connection: %1"
-msgstr "Deaktivovanie pripojenia"
+msgstr "Chyba pri aktivácii pripojenia: %1"
 
 #: cellular/cellularmodem.cpp:402
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgid "Error adding connection: %1"
-msgstr "Zlyhalo pridanie pripojenia %1"
+msgstr "Chyba pri pridávaní pripojenia: %1"
 
 #: cellular/cellularmodem.cpp:419
-#, fuzzy, kde-format
-#| msgctxt "network interface disconnecting state label"
-#| msgid "Deactivating connection"
+#, kde-format
 msgid "Error removing connection: %1"
-msgstr "Deaktivovanie pripojenia"
+msgstr "Chyba pri odstraňovaní pripojenia: %1"
 
 #: cellular/cellularmodem.cpp:456
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
-msgstr ""
+msgstr "Chyba pri aktualizácii nastavení pripojenia pre %1: %2."
 
 #: cellular/cellularmodemdetails.cpp:111 cellular/cellularmodemdetails.cpp:213
 #: cellular/cellularmodemdetails.cpp:245 cellular/cellularmodemdetails.cpp:433
 #: cellular/cellularmodemdetails.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "description of unknown network interface state"
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown"
 msgstr "Neznáme"
 
 #: cellular/cellularmodemdetails.cpp:114 cellular/cellularmodemdetails.cpp:468
 #, kde-format
 msgid "POTS"
-msgstr ""
+msgstr "POTS"
 
 #: cellular/cellularmodemdetails.cpp:117 editor/connectioneditorbase.cpp:262
 #, kde-format
@@ -69,132 +62,104 @@ msgid "GSM"
 msgstr "GSM"
 
 #: cellular/cellularmodemdetails.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "Compact GSM"
+#, kde-format
 msgid "GSM Compact"
-msgstr "Kompaktné GSM"
+msgstr "GSM Compact"
 
 #: cellular/cellularmodemdetails.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "GPRS"
+#, kde-format
 msgid "GPRS"
 msgstr "GPRS"
 
 #: cellular/cellularmodemdetails.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "EDGE"
+#, kde-format
 msgid "EDGE"
 msgstr "EDGE"
 
 #: cellular/cellularmodemdetails.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "UMTS"
+#, kde-format
 msgid "UMTS"
 msgstr "UMTS"
 
 #: cellular/cellularmodemdetails.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSDPA"
+#, kde-format
 msgid "HSDPA"
 msgstr "HSDPA"
 
 #: cellular/cellularmodemdetails.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSUPA"
+#, kde-format
 msgid "HSUPA"
 msgstr "HSUPA"
 
 #: cellular/cellularmodemdetails.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSPA"
+#, kde-format
 msgid "HSPA"
 msgstr "HSPA"
 
 #: cellular/cellularmodemdetails.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSPA+"
+#, kde-format
 msgid "HSPA+"
 msgstr "HSPA+"
 
 #: cellular/cellularmodemdetails.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 1xRTT"
+#, kde-format
 msgid "CDMA2000 1xRTT"
 msgstr "CDMA2000 1xRTT"
 
 #: cellular/cellularmodemdetails.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 EVDO revision 0"
+#, kde-format
 msgid "CDMA2000 EVDO-0"
-msgstr "CDMA2000 EVDO revízia 0"
+msgstr "CDMA2000 EVDO-0"
 
 #: cellular/cellularmodemdetails.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 EVDO revision A"
+#, kde-format
 msgid "CDMA2000 EVDO-A"
-msgstr "CDMA2000 EVDO revízia A"
+msgstr "CDMA2000 EVDO-A"
 
 #: cellular/cellularmodemdetails.cpp:153
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 EVDO revision B"
+#, kde-format
 msgid "CDMA2000 EVDO-B"
-msgstr "CDMA2000 EVDO revízia B"
+msgstr "CDMA2000 EVDO-B"
 
 #: cellular/cellularmodemdetails.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "Gsm modes (2G/3G/any)"
-#| msgid "LTE"
+#, kde-format
 msgid "LTE"
 msgstr "LTE"
 
 #: cellular/cellularmodemdetails.cpp:159
 #, kde-format
 msgid "5GNR"
-msgstr ""
+msgstr "5GNR"
 
 #: cellular/cellularmodemdetails.cpp:215
 #, kde-format
 msgid "Off"
-msgstr ""
+msgstr "Vypnuté"
 
 #: cellular/cellularmodemdetails.cpp:217
 #, kde-format
 msgid "Low-power mode"
-msgstr ""
+msgstr "Režim nízkej spotreby"
 
 #: cellular/cellularmodemdetails.cpp:219
 #, kde-format
 msgid "Full power mode"
-msgstr ""
+msgstr "Režim plného výkonu"
 
 #: cellular/cellularmodemdetails.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection failed"
-#| msgid "Failed"
+#, kde-format
 msgid "Failed"
-msgstr "Zlyhalo"
+msgstr "Neúspešné"
 
 #: cellular/cellularmodemdetails.cpp:247
 #, kde-format
 msgid "Initializing"
-msgstr ""
+msgstr "Inicializuje sa"
 
 #: cellular/cellularmodemdetails.cpp:249
 #, kde-format
 msgid "Locked"
-msgstr ""
+msgstr "Zamknuté"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: cellular/cellularmodemdetails.cpp:251 editor/settings/ui/ipv6.ui:264
@@ -203,152 +168,139 @@ msgid "Disabled"
 msgstr "Zakázané"
 
 #: cellular/cellularmodemdetails.cpp:253
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Disabling"
-msgstr "Zakázané"
+msgstr "Zakazuje sa"
 
 #: cellular/cellularmodemdetails.cpp:255
 #, kde-format
 msgid "Enabling"
-msgstr ""
+msgstr "Povoľuje sa"
 
 #: cellular/cellularmodemdetails.cpp:257
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Enabled"
-msgstr "Zakázané"
+msgstr "Zapnuté"
 
 #: cellular/cellularmodemdetails.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "network interface doing dhcp request in most cases"
-#| msgid "Setting network address"
+#, kde-format
 msgid "Searching for network provider"
-msgstr "Nastavuje sa sieťová adresa"
+msgstr "Vyhľadávanie poskytovateľa siete"
 
 #: cellular/cellularmodemdetails.cpp:261
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Registered with network provider"
-msgstr "Obmedziť na zariadenie:"
+msgstr "Registrované u poskytovateľa siete"
 
 #: cellular/cellularmodemdetails.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "Network connections are being cleaned up"
-#| msgid "Disconnecting"
+#, kde-format
 msgid "Disconnecting"
 msgstr "Odpája sa"
 
 #: cellular/cellularmodemdetails.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is being established"
-#| msgid "Connecting"
+#, kde-format
 msgid "Connecting"
 msgstr "Pripájam"
 
 #: cellular/cellularmodemdetails.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgid "Connected"
 msgstr "Pripojené"
 
 #: cellular/cellularmodemdetails.cpp:276
 #, kde-format
 msgid "No error."
-msgstr ""
+msgstr "Žiadna chyba."
 
 #: cellular/cellularmodemdetails.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "Unknown Provider"
+#, kde-format
 msgid "Unknown error."
-msgstr "Neznámy poskytovateľ"
+msgstr "Neznáma chyba."
 
 #: cellular/cellularmodemdetails.cpp:280
 #, kde-format
 msgid "SIM is required but missing."
-msgstr ""
+msgstr "Vyžaduje sa SIM, ale chýba."
 
 #: cellular/cellularmodemdetails.cpp:282
 #, kde-format
 msgid "SIM is available but unusable."
-msgstr ""
+msgstr "SIM je dostupná, ale nepoužiteľná."
 
 #: cellular/cellularmodemdetails.cpp:284
 #, kde-format
 msgid "Unknown modem capabilities."
-msgstr ""
+msgstr "Neznáme možnosti modemu."
 
 #: cellular/cellularmodemdetails.cpp:286
 #, kde-format
 msgid "eSIM is not initialized."
-msgstr ""
+msgstr "eSIM nie je inicializovaná."
 
 #: cellular/cellularmodemdetails.cpp:312
 #, kde-format
 msgid "Not registered, not searching for new operator to register."
-msgstr ""
+msgstr "Nie je zaregistrované, nehľadá nového operátora na registráciu."
 
 #: cellular/cellularmodemdetails.cpp:314
 #, kde-format
 msgid "Registered on home network."
-msgstr ""
+msgstr "Registrované v domácej sieti."
 
 #: cellular/cellularmodemdetails.cpp:316
 #, kde-format
 msgid "Not registered, searching for new operator to register with."
-msgstr ""
+msgstr "Nie je zaregistrované, hľadá nového operátora na registráciu."
 
 #: cellular/cellularmodemdetails.cpp:318
 #, kde-format
 msgid "Registration denied."
-msgstr ""
+msgstr "Registrácia zamietnutá."
 
 #: cellular/cellularmodemdetails.cpp:320
 #, kde-format
 msgid "Unknown registration status."
-msgstr ""
+msgstr "Neznámy stav registrácie."
 
 #: cellular/cellularmodemdetails.cpp:322
 #, kde-format
 msgid "Registered on a roaming network."
-msgstr ""
+msgstr "Registrované v roamingovej sieti."
 
 #: cellular/cellularmodemdetails.cpp:324
 #, kde-format
 msgid "Registered for \"SMS only\", on home network."
-msgstr ""
+msgstr "Registrované pre \"iba SMS\", v domácej sieti."
 
 #: cellular/cellularmodemdetails.cpp:326
 #, kde-format
 msgid "Registered for \"SMS only\", roaming network."
-msgstr ""
+msgstr "Registrované pre \"iba SMS\", roamingová sieť."
 
 #: cellular/cellularmodemdetails.cpp:328
 #, kde-format
 msgid "Emergency services only."
-msgstr ""
+msgstr "Len núdzové služby."
 
 #: cellular/cellularmodemdetails.cpp:330
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", home network."
-msgstr ""
+msgstr "Registrované pre \"CSFB sa nepreferuje\", v domácej sieti."
 
 #: cellular/cellularmodemdetails.cpp:332
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", roaming network."
-msgstr ""
+msgstr "Registrované pre \"CSFB sa nepreferuje\", roamingová sieť."
 
 #: cellular/cellularmodemdetails.cpp:334
 #, kde-format
 msgid "Attached for access to Restricted Local Operator Services."
-msgstr ""
+msgstr "Pripojené pre prístup k službám obmedzeného lokálneho operátora."
 
 #: cellular/cellularmodemdetails.cpp:374
 #, kde-format
 msgid "Scanning networks failed: %1"
-msgstr ""
+msgstr "Skenovanie sietí zlyhalo: %1"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: cellular/cellularmodemdetails.cpp:435
@@ -367,186 +319,147 @@ msgstr "Nie"
 #: cellular/cellularmodemdetails.cpp:439
 #, kde-format
 msgid "GuessYes"
-msgstr ""
+msgstr "Hádam áno"
 
 #: cellular/cellularmodemdetails.cpp:441
 #, kde-format
 msgid "GuessNo"
-msgstr ""
+msgstr "Hádam nie"
 
 #: cellular/cellularmodemdetails.cpp:474
-#, fuzzy, kde-format
-#| msgid "2"
+#, kde-format
 msgid "2G"
-msgstr "2"
+msgstr "2G"
 
 #: cellular/cellularmodemdetails.cpp:485
-#, fuzzy, kde-format
-#| msgid "3"
+#, kde-format
 msgid "3G"
-msgstr "3"
+msgstr "3G"
 
 #: cellular/cellularmodemdetails.cpp:490
-#, fuzzy, kde-format
-#| msgid "4"
+#, kde-format
 msgid "4G"
-msgstr "4"
+msgstr "4G"
 
 #: cellular/cellularmodemdetails.cpp:493
 #, kde-format
 msgid "5G"
-msgstr ""
+msgstr "5G"
 
 #: cellular/cellularmodemdetails.cpp:496
-#, fuzzy, kde-format
-#| msgctxt "Gsm modes (2G/3G/any)"
-#| msgid "Any"
+#, kde-format
 msgid "Any"
-msgstr "Akýkoľvek"
+msgstr "Ľubovoľný"
 
 #: cellular/cellularsim.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Lock reason unknown."
+#, kde-format
 msgid "Lock reason unknown."
 msgstr "Dôvod zamknutia neznámy."
 
 #: cellular/cellularsim.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem is unlocked."
+#, kde-format
 msgid "Modem is unlocked."
 msgstr "Modem je odomknutý."
 
 #: cellular/cellularsim.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PIN code."
+#, kde-format
 msgid "SIM requires the PIN code."
 msgstr "SIM vyžaduje PIN kód."
 
 #: cellular/cellularsim.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PIN2 code."
+#, kde-format
 msgid "SIM requires the PIN2 code."
 msgstr "SIM vyžaduje PIN2 kód."
 
 #: cellular/cellularsim.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PUK code."
+#, kde-format
 msgid "SIM requires the PUK code."
 msgstr "SIM vyžaduje PUK kód."
 
 #: cellular/cellularsim.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PUK2 code."
+#, kde-format
 msgid "SIM requires the PUK2 code."
 msgstr "SIM vyžaduje PUK2 kód."
 
 #: cellular/cellularsim.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the service provider PIN code."
+#, kde-format
 msgid "Modem requires the service provider PIN code."
 msgstr "Modem vyžaduje PIN kód poskytovateľa služby."
 
 #: cellular/cellularsim.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the service provider PUK code."
+#, kde-format
 msgid "Modem requires the service provider PUK code."
 msgstr "Modem vyžaduje PUK kód poskytovateľa služby."
 
 #: cellular/cellularsim.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network PIN code."
+#, kde-format
 msgid "Modem requires the network PIN code."
 msgstr "Modem vyžaduje sieťový PIN kód."
 
 #: cellular/cellularsim.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network PUK code."
+#, kde-format
 msgid "Modem requires the network PUK code."
 msgstr "Modem vyžaduje sieťový PUK kód."
 
 #: cellular/cellularsim.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the PIN code."
+#, kde-format
 msgid "Modem requires the PIN code."
 msgstr "Modem vyžaduje PIN kód."
 
 #: cellular/cellularsim.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the corporate PIN code."
+#, kde-format
 msgid "Modem requires the corporate PIN code."
 msgstr "Modem vyžaduje korporátny PIN kód."
 
 #: cellular/cellularsim.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the corporate PUK code."
+#, kde-format
 msgid "Modem requires the corporate PUK code."
 msgstr "Modem vyžaduje korporátny PUK kód."
 
 #: cellular/cellularsim.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the PH-FSIM PIN code."
+#, kde-format
 msgid "Modem requires the PH-FSIM PIN code."
 msgstr "Modem vyžaduje PH-FSIM PIN kód."
 
 #: cellular/cellularsim.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the PH-FSIM PUK code."
+#, kde-format
 msgid "Modem requires the PH-FSIM PUK code."
 msgstr "Modem vyžaduje PH-FSIM PUK kód."
 
 #: cellular/cellularsim.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network subset PIN code."
+#, kde-format
 msgid "Modem requires the network subset PIN code."
 msgstr "Modem vyžaduje PIN kód sieťovej podmnožiny."
 
 #: cellular/cellularsim.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network subset PUK code."
+#, kde-format
 msgid "Modem requires the network subset PUK code."
 msgstr "Modem vyžaduje PUK kód sieťovej podmnožiny."
 
 #: cellular/cellularsim.cpp:158
 #, kde-format
 msgid "(empty)"
-msgstr ""
+msgstr "(prázdne)"
 
 #: cellular/cellularsim.cpp:172
 #, kde-format
 msgid "Error toggling SIM lock: %1"
-msgstr ""
+msgstr "Chyba pri prepínaní zámku SIM: %1"
 
 #: cellular/cellularsim.cpp:181
 #, kde-format
 msgid "Error changing the PIN: %1"
-msgstr ""
+msgstr "Chyba pri zmene PIN: %1"
 
 #: cellular/cellularsim.cpp:194
 #, kde-format
 msgid "Error sending the PIN: %1"
-msgstr ""
+msgstr "Chyba pri odosielaní PIN: %1"
 
 #: cellular/cellularsim.cpp:207
 #, kde-format
 msgid "Error sending the PUK: %1"
-msgstr ""
+msgstr "Chyba pri odosielaní PUK: %1"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -578,9 +491,7 @@ msgid "Signal Strength"
 msgstr "Sila signálu"
 
 #: editor/connectiondetails.cpp:136
-#, fuzzy, kde-format
-#| msgctxt "WiFi signal strength percentage indicator"
-#| msgid "%1%"
+#, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"
@@ -601,11 +512,10 @@ msgid "Frequency"
 msgstr "Frekvencia"
 
 #: editor/connectiondetails.cpp:163
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "Kanál:"
+msgstr "%1 (Kanál %2)"
 
 #: editor/connectiondetails.cpp:167
 #, kde-format
@@ -741,7 +651,7 @@ msgstr "Zariadenie"
 #: editor/connectiondetails.cpp:316
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Všeobecné"
 
 #: editor/connectiondetails.cpp:325
 #, kde-format
@@ -802,13 +712,13 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "Stav"
 
 #: editor/connectioneditorbase.cpp:215
 #, kde-format
 msgctxt "@title:tab General configuration"
 msgid "General"
-msgstr ""
+msgstr "Všeobecné"
 
 #: editor/connectioneditorbase.cpp:222 editor/connectioneditorbase.cpp:248
 #, kde-format
@@ -893,7 +803,7 @@ msgstr "Aktívna záloha"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format
@@ -960,9 +870,7 @@ msgid "PAN (personal area network)"
 msgstr "PAN (personal area network)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
 msgstr "Odpojené"
 
@@ -1539,13 +1447,7 @@ msgstr "Pripojiť automaticky s prioritou"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. An negative number can be used "
-#| "to indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -1623,11 +1525,7 @@ msgstr "Merané podľa objemu dát:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager indicates to applications whether the connection is "
-#| "metered and therefore\n"
-#| "data usage should be restricted."
+#, kde-format
 msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
@@ -1858,11 +1756,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:379
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Metrika"
+msgstr "Metrika trasy:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:414
@@ -1875,6 +1771,12 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"A score that helps choose the best path for data packets to reach their "
+"destination,\n"
+"na základe factors like distance, delay, and reliability.\n"
+"\n"
+"Default value -1 means that NetworkManager gets to choose and manage the "
+"actual metric of the route."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:270 editor/settings/ui/ipv6.ui:97
@@ -2162,11 +2064,9 @@ msgstr "Uvoľnená väzba"
 
 #. i18n: ectx: property (text), widget (QLabel, connectionSectionLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:23
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is being established"
-#| msgid "Connecting"
+#, kde-format
 msgid "Connection"
-msgstr "Pripájam"
+msgstr "Pripojenie"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:39
@@ -2176,9 +2076,7 @@ msgstr "SSID:"
 
 #. i18n: ectx: property (toolTip), widget (SsidComboBox, SSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:61
-#, fuzzy, kde-format
-#| msgctxt "Disconnected"
-#| msgid "There is no active network connection"
+#, kde-format
 msgid "The name of the Wi-Fi network to connect to"
 msgstr "Nie je žiadne aktívne sieťové pripojenie"
 
@@ -2212,8 +2110,7 @@ msgstr "Prístupový bod"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:128
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to BSSID:"
 msgstr "Obmedziť na zariadenie:"
 
@@ -2282,8 +2179,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:232
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to network adapter:"
 msgstr "Obmedziť na zariadenie:"
 
@@ -2327,8 +2223,7 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:342
 #: editor/settings/ui/wificonnectionwidget.ui:358
-#, fuzzy, kde-format
-#| msgid "Mark this if you want to create a connection for a hidden network"
+#, kde-format
 msgid "Create a connection for a hidden network"
 msgstr "Označte toto, ak chcete vytvoriť pripojenie pre skrytú sieť"
 
@@ -2346,10 +2241,9 @@ msgstr "Skrytá sieť"
 
 #. i18n: ectx: property (text), widget (QLabel, securitySectionLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:368
-#, fuzzy, kde-format
-#| msgid "Security:"
+#, kde-format
 msgid "Security"
-msgstr "Zabezpečenie:"
+msgstr "Bezpečnosť"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
 #: editor/settings/ui/wifisecurity.ui:15
@@ -2390,15 +2284,13 @@ msgstr "Dynamický WEP (802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:80
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA2/WPA3 Personal"
 msgstr "WPA/WPA2 Personal"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:85
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA2/WPA3 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
@@ -2418,7 +2310,7 @@ msgstr "WPA3 Enterprise 192-bit"
 #: editor/settings/ui/wifisecurity.ui:100
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Vylepšené otvorené (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wifisecurity.ui:108
@@ -2656,12 +2548,13 @@ msgstr "Rozhranie"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, fuzzy, kde-format
-#| msgid "VLAN interface name:"
+#, kde-format
 msgid ""
 "Required.\n"
 "Network interface name."
-msgstr "Názov rozhrania VLAN:"
+msgstr ""
+"Povinné.\n"
+"Názov sieťového rozhrania."
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -2983,7 +2876,7 @@ msgstr "Mobilné širokopásmové pripojenie"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -3019,7 +2912,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Loopback"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -3062,8 +2955,7 @@ msgid "Bridge (%1)"
 msgstr "Most (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
 msgstr "Drôtové rozhranie (%1)"
 
@@ -3618,7 +3510,7 @@ msgstr "WPA3-EAP-SUITE-B-192"
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Vylepšené otvorené (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format
@@ -4238,17 +4130,13 @@ msgid "Import a saved configuration file"
 msgstr "Importovať uložený konfiguračný súbor"
 
 #: models/networkmodelitem.cpp:339
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip real user name is not available"
-#| msgid "Not Available"
+#, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr "Nedostupné"
+msgstr "Dostupný"
 
 #: models/networkmodelitem.cpp:345
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Pripojené"
@@ -4258,7 +4146,7 @@ msgstr "Pripojené"
 msgctxt ""
 "@title:column header for list of previously connected network connections"
 msgid "Previously Used, Unavailable"
-msgstr ""
+msgstr "Predtým používané, nedostupné"
 
 #: networkstatus.cpp:126
 #, kde-format
@@ -4332,11 +4220,10 @@ msgid "Connected to %1"
 msgstr "Pripojené k sieti %1"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "Správca siete nie je spustený"
+msgstr "Služba správcu siete nie je spustená"
 
 #: networkstatus.cpp:261
 #, kde-format

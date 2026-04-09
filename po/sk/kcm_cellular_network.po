@@ -13,8 +13,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 21.12.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 21.12.3\n"
 
 #: ui/AvailableNetworks.qml:18
 #, kde-format
@@ -37,10 +37,9 @@ msgid "Scan For Networks"
 msgstr "Vyhľadávanie sietí"
 
 #: ui/EditProfilePage.qml:15
-#, fuzzy, kde-format
-#| msgid "New PIN"
+#, kde-format
 msgid "New APN"
-msgstr "Nový PIN"
+msgstr "Nové APN"
 
 #: ui/EditProfilePage.qml:15
 #, kde-format
@@ -110,7 +109,7 @@ msgstr "Čokoľvek"
 #: ui/EditProfilePage.qml:82
 #, kde-format
 msgid "Save profile"
-msgstr ""
+msgstr "Uložiť profil"
 
 #: ui/main.qml:68
 #, kde-format
@@ -153,8 +152,7 @@ msgid "View data usage."
 msgstr "Zobraziť využívanie dát."
 
 #: ui/main.qml:138
-#, fuzzy, kde-format
-#| msgid "SIM"
+#, kde-format
 msgid "SIM"
 msgid_plural "SIMs"
 msgstr[0] "SIM"
@@ -312,11 +310,14 @@ msgid ""
 "Unable to autodetect connection settings for your carrier. Please find your "
 "carrier's APN settings by either contacting support or searching online."
 msgstr ""
+"Nie je možné automaticky zistiť nastavenia pripojenia pre vášho operátora."
+"Nastavenia APN vášho operátora zistíte tak, že kontaktujete podporu alebo "
+"ich vyhľadáte na internete."
 
 #: ui/ProfileList.qml:66
 #, kde-format
 msgid "APN List"
-msgstr ""
+msgstr "Zoznam APN"
 
 #: ui/ProfileList.qml:119
 #, kde-format
@@ -329,8 +330,7 @@ msgid "Add APN"
 msgstr "Pridať APN"
 
 #: ui/ProfileList.qml:136
-#, fuzzy, kde-format
-#| msgid "Autodetect APN"
+#, kde-format
 msgid "Automatically detect APN"
 msgstr "Automatické zisťovanie APN"
 
@@ -444,8 +444,7 @@ msgid "Add SIM PIN"
 msgstr "Pridať PIN pre SIM"
 
 #: ui/SimPage.qml:34
-#, fuzzy, kde-format
-#| msgid "SIM %1"
+#, kde-format
 msgctxt "@title"
 msgid "SIM %1"
 msgstr "SIM %1"
@@ -456,6 +455,8 @@ msgid ""
 "This SIM slot is empty, a SIM card needs to be inserted in order for it to "
 "be used."
 msgstr ""
+"Tento slot na SIM kartu je prázdny, na jeho použitie je potrebné vložiť "
+"kartu SIM."
 
 #: ui/SimPage.qml:59
 #, kde-format
@@ -463,8 +464,7 @@ msgid "Roaming"
 msgstr "Roaming"
 
 #: ui/SimPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Registered on a roaming network."
+#, kde-format
 msgid "Allow mobile data when on a roaming network."
 msgstr "Registrované v roamingovej sieti."
 
@@ -709,7 +709,6 @@ msgstr "Čísla tiesňového volania"
 #~ msgstr "SIM je dostupná, ale nepoužiteľná."
 
 #, fuzzy
-#~| msgid "SIM is not locked"
 #~ msgid "eSIM is not initialized."
 #~ msgstr "SIM nie je uzamknutá"
 

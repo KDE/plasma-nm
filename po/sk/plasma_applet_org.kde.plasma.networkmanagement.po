@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -32,7 +32,7 @@ msgstr "Odpojiť"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "Zdieľať"
 
 #: ConnectionItem.qml:96
 #, kde-format
@@ -60,11 +60,10 @@ msgstr ""
 "odosielania je %2 kibibajtov za sekundu"
 
 #: ConnectionItem.qml:298
-#, fuzzy, kde-format
-#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Pripojené, ⬇ %1, ⬆ %2/s"
+msgstr "↓ %1/s, ↑ %2/s"
 
 #: ConnectionListPage.qml:33
 #, kde-format
@@ -83,28 +82,24 @@ msgid "Airplane mode is enabled"
 msgstr "Režim v lietadle je povolený"
 
 #: ConnectionListPage.qml:122
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Bezdrôtové a mobilné siete sú vypnuté"
+msgstr "Wi-Fi a mobilné dáta sú deaktivované"
 
 #: ConnectionListPage.qml:124
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "Bezdrôtové siete sú vypnuté"
+msgstr "Wi-Fi je deaktivované"
 
 #: ConnectionListPage.qml:127
-#, fuzzy, kde-format
-#| msgid "Rescan wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr "Prehľadať bezdrôtové siete"
+msgstr "Hľadanie Wi-Fi sietí"
 
 #: ConnectionListPage.qml:130
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "Mobilná sieť je vypnutá"
+msgstr "Mobilné dáta sú deaktivované"
 
 #: ConnectionListPage.qml:133
 #, kde-format
@@ -120,25 +115,25 @@ msgstr "Žiadne dostupné pripojenia"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "Vypnite režim lietadla, aby ste mohli vyhľadávať siete."
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "Zapnite Wi-Fi alebo mobilné dáta, aby ste mohli vyhľadávať siete."
 
 #: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "Zapnite Wi-Fi, aby ste vyhľadali siete"
 
 #: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "Zapnite mobilné dáta, aby ste mohli vyhľadávať siete."
 
 #: DetailsText.qml:40
 #, kde-format
@@ -168,10 +163,9 @@ msgid "Enable Wi-Fi"
 msgstr "Povoliť Wi-Fi"
 
 #: main.qml:82
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "Povoliť mobilnú sieť"
+msgstr "Povoliť mobilné dáta"
 
 #: main.qml:94
 #, kde-format
@@ -202,16 +196,14 @@ msgstr ""
 "\"%1\"."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "Zobraziť heslo"
+msgstr "Wi-Fi heslo:"
 
 #: Toolbar.qml:131
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "Povoliť mobilnú sieť"
+msgstr "Povoliť mobilné dáta"
 
 #: Toolbar.qml:156
 #, kde-kuit-format
@@ -234,7 +226,7 @@ msgstr "Prístupový bod"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "Nie je možné vytvoriť hotspot, pretože Wi-Fi je vypnuté."
 
 #: Toolbar.qml:189
 #, kde-format
@@ -243,17 +235,18 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"Nie je možné vytvoriť hotspot, pretože všetky bezdrôtové rádiové moduly sú v "
+"prevádzke. Odpojte sa od aktuálnej siete Wi-Fi alebo pripojte iný bezdrôtový "
+"rádiový modul."
 
 #: Toolbar.qml:191
-#, fuzzy, kde-format
-#| msgid "Disable Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Zakázať aktívny bod"
 
 #: Toolbar.qml:193
-#, fuzzy, kde-format
-#| msgid "Create Hotspot"
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Vytvoriť aktívny bod"
@@ -262,29 +255,23 @@ msgstr "Vytvoriť aktívny bod"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr ""
+msgstr "Naskenujte QR kód Wi-Fi"
 
 #: Toolbar.qml:226
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr ""
-"Naskenujte tento QR kód pomocou iného zariadenia a pripojte sa k sieti "
-"\"%1\"."
+msgstr "Naskenujte QR kód pre pripojenie k Wi-Fi sieti"
 
 #: Toolbar.qml:228
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
-"Naskenujte tento QR kód pomocou iného zariadenia a pripojte sa k sieti "
-"\"%1\"."
+"Nainštalujte si aplikáciu QRCA Barcode Scanner na skenovanie QR kódu, ktorý "
+"sa pripája k Wi-Fi sieti."
 
 #: Toolbar.qml:247
 #, kde-format
@@ -314,73 +301,61 @@ msgstr "Nastaviť sieťové pripojenia..."
 #~ msgstr "QR kód pre %1"
 
 #, fuzzy
-#~| msgid "Connected to %1"
 #~ msgctxt "@info:tooltip %1 is the name of a network connection"
 #~ msgid "Connect to %1"
 #~ msgstr "Pripojený k %1"
 
 #, fuzzy
-#~| msgid "Disconnect"
 #~ msgctxt "@info:tooltip %1 is the name of a network connection"
 #~ msgid "Disconnect from %1"
 #~ msgstr "Odpojiť"
 
 #, fuzzy
-#~| msgid "Unknown connection type"
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is ADSL"
 #~ msgstr "Neznámy typ pripojenia"
 
 #, fuzzy
-#~| msgid "Unknown connection type"
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is Bridge"
 #~ msgstr "Neznámy typ pripojenia"
 
 #, fuzzy
-#~| msgid "Unknown connection type"
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is CDMA"
 #~ msgstr "Neznámy typ pripojenia"
 
 #, fuzzy
-#~| msgid "Unknown connection type"
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is GSM"
 #~ msgstr "Neznámy typ pripojenia"
 
 #, fuzzy
-#~| msgid "Unknown connection type"
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is PPOPE"
 #~ msgstr "Neznámy typ pripojenia"
 
 #, fuzzy
-#~| msgid "Unknown connection type"
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is VLAN"
 #~ msgstr "Neznámy typ pripojenia"
 
 #, fuzzy
-#~| msgid "Unknown connection type"
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is VPN"
 #~ msgstr "Neznámy typ pripojenia"
 
 #, fuzzy
-#~| msgid "Unknown connection type"
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is Wimax"
 #~ msgstr "Neznámy typ pripojenia"
 
 #, fuzzy
-#~| msgid "Connection speed"
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is Wired"
 #~ msgstr "Rýchlosť pripojenia"
 
 #, fuzzy
-#~| msgid "Unknown connection type"
 #~ msgctxt "@info:tooltip"
 #~ msgid "The connection type is Unknown"
 #~ msgstr "Neznámy typ pripojenia"

@@ -15,8 +15,8 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 23.08.3\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Lokalize 23.08.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -44,10 +44,7 @@ msgid "Limited Connectivity"
 msgstr "Obmedzené pripojenie"
 
 #: connectivitymonitor.cpp:98
-#, fuzzy, kde-format
-#| msgid ""
-#| "This device appears to be connected to a network but is unable to reach "
-#| "the internet."
+#, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."
@@ -559,28 +556,24 @@ msgid "No secrets were requested"
 msgstr "Neboli poskytnuté žiadne tajnosti"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr "Zadajte heslo pre bezdrôtovú sieť '%1':"
+msgstr "Nesprávne heslo pre sieť Wi-Fi \"%1\". Skúste to znovu."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Provide the password for the wireless network '%1':"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "Zadajte heslo pre bezdrôtovú sieť '%1':"
+msgstr "Zadajte heslo pre sieť Wi-Fi \"%1\":"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Zadajte heslo pre pripojenie '%1':"
+msgstr "Nesprávne heslo pre pripojenie \"%1\". Skúste to znovu."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Provide the password for the connection '%1':"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Zadajte heslo pre pripojenie '%1':"
+msgstr "Zadajte heslo pre pripojenie \"%1\":"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -594,8 +587,7 @@ msgid "VPN settings are missing"
 msgstr "VPN nastavenia chýbajú"
 
 #: passworddialog.cpp:135
-#, fuzzy, kde-format
-#| msgid "Provide the secrets for the VPN connection '%1':"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
 msgstr "Zadajte heslo na pre VPN pripojenie '%1':"
 
@@ -790,13 +782,11 @@ msgstr "Znovu zadajte PIN kód:"
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Overenie pre %1 zlyhalo. Nesprávne heslo?"
 
-#~| msgid "Provide the password for the wireless network '%1':"
 #~ msgid ""
 #~ "The provided password seems incorrect. Provide the password for the "
 #~ "wireless network '%1':"
 #~ msgstr "Zadané heslo je nesprávne. Zadajte heslo pre bezdrôtovú sieť '%1':"
 
-#~| msgid "Provide the password for the connection '%1':"
 #~ msgid ""
 #~ "The provided password seems incorrect. Provide the password for the "
 #~ "connection '%1':"

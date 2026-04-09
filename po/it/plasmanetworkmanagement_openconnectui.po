@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the plasma-nm package.
-# SPDX-FileCopyrightText: 2014, 2015, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Vincenzo Reale <smart2128vr@gmail.com>
+# SPDX-FileCopyrightText: 2014, 2015, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Vincenzo Reale <smart2128vr@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-01 00:47+0000\n"
-"PO-Revision-Date: 2025-11-07 09:47+0100\n"
+"PO-Revision-Date: 2026-04-02 07:59+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: openconnectauth.cpp:345
 #, kde-format
@@ -281,10 +281,9 @@ msgstr "Certificato macchina:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #: openconnectprop.ui:261
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "Machine Private Key:"
-msgstr "Chiave privata:"
+msgstr "Chiave privata della macchina:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
@@ -294,10 +293,9 @@ msgstr "Certificato utente:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: openconnectprop.ui:299
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "User Private Key:"
-msgstr "Chiave privata:"
+msgstr "Chiave privata dell'utente:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318

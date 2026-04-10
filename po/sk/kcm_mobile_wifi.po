@@ -54,7 +54,7 @@ msgstr "Share"
 #: ui/ConnectionInfo.qml:107
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr ""
+msgstr "Zdieľať Wi-Fi cez QR kód"
 
 #: ui/ConnectionInfo.qml:114
 #, kde-format
@@ -100,7 +100,7 @@ msgstr "Nastavenia IP"
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr ""
+msgstr "Oznámenia o zmenách pripojenia"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

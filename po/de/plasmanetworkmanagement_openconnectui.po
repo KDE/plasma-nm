@@ -3,20 +3,21 @@
 # SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
 # SPDX-FileCopyrightText: 2025 Alois Spitzbart <spitz234@hotmail.com>
 # SPDX-FileCopyrightText: 2025-2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2026 Alexander Becker <alex-at-kde-l10n-de@freenet.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-01 00:47+0000\n"
-"PO-Revision-Date: 2026-03-06 16:06+0100\n"
-"Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
+"PO-Revision-Date: 2026-04-10 07:48+0200\n"
+"Last-Translator: Alexander Becker <alex-at-kde-l10n-de@freenet.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: openconnectauth.cpp:345
 #, kde-format
@@ -282,10 +283,9 @@ msgstr "Maschinenzertifikat:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #: openconnectprop.ui:261
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "Machine Private Key:"
-msgstr "Privater Schlüssel:"
+msgstr "Privater Schlüssel der Maschine:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
@@ -295,10 +295,9 @@ msgstr "Benutzerzertifikat:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: openconnectprop.ui:299
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "User Private Key:"
-msgstr "Privater Schlüssel:"
+msgstr "Privater Schlüssel des Benutzers:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318
@@ -489,7 +488,7 @@ msgstr ""
 #: openconnectwebauthdialog.cpp:269
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
+msgstr "Authentifikator unterstützt keine abgelegten Schlüssel"
 
 #: openconnectwebauthdialog.cpp:272
 #, kde-format
@@ -500,6 +499,7 @@ msgstr "Authentifikator hat keine Benutzerüberprüfung"
 #, kde-format
 msgid "Authenticator missing Large Blob support"
 msgstr ""
+"Authentifikator unterstützt keine großen Binärdatenobjekte (Large Blob)"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
@@ -507,6 +507,8 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"Das Sicherheitstoken unterstützt die vom Server benötigte "
+"Authentifizierungsmethode nicht."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format

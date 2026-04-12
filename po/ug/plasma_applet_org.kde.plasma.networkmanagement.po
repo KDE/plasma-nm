@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-12 00:45+0000\n"
-"PO-Revision-Date: 2026-04-01 09:36-0400\n"
+"PO-Revision-Date: 2026-04-09 12:37-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
 "Language: ug\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -186,7 +186,7 @@ msgstr "تور باغلىنىشىنى سەپلەيدۇ(&C)…"
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "تور باغلىنىشىغا قايتىدۇ"
+msgstr "تور باغلىنىشىغا قايت"
 
 #: ShareNetworkQrCodePage.qml:33
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-24 00:45+0000\n"
-"PO-Revision-Date: 2026-04-01 09:39-0400\n"
+"PO-Revision-Date: 2026-04-09 13:08-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -16,51 +16,44 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
 msgid "Error resetting the modem: %1"
-msgstr ""
+msgstr "مودېمنى قايتا تەڭشەۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
 #: cellular/cellularmodem.cpp:364
-#, fuzzy, kde-format
-#| msgctxt "network interface disconnecting state label"
-#| msgid "Deactivating connection"
+#, kde-format
 msgid "Error activating connection: %1"
-msgstr "باغلىنىشنى ئۈزۈۋاتىدۇ"
+msgstr "باغلىنىشنى ئاكتىپلاۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
 #: cellular/cellularmodem.cpp:402
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgid "Error adding connection: %1"
-msgstr "%1 باغلىنىشنى قوشالمىدى"
+msgstr "باغلىنىش قوشۇۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
 #: cellular/cellularmodem.cpp:419
-#, fuzzy, kde-format
-#| msgctxt "network interface disconnecting state label"
-#| msgid "Deactivating connection"
+#, kde-format
 msgid "Error removing connection: %1"
-msgstr "باغلىنىشنى ئۈزۈۋاتىدۇ"
+msgstr "باغلىنىشنى چىقىرىۋېتىۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
 #: cellular/cellularmodem.cpp:456
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
-msgstr ""
+msgstr "%1 نىڭ باغلىنىش تەڭشىكىنى يېڭىلاۋاتقاندا خاتالىق كۆرۈلدى: %2."
 
 #: cellular/cellularmodemdetails.cpp:111 cellular/cellularmodemdetails.cpp:213
 #: cellular/cellularmodemdetails.cpp:245 cellular/cellularmodemdetails.cpp:433
 #: cellular/cellularmodemdetails.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "description of unknown network interface state"
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown"
 msgstr "يوچۇن"
 
 #: cellular/cellularmodemdetails.cpp:114 cellular/cellularmodemdetails.cpp:468
 #, kde-format
 msgid "POTS"
-msgstr ""
+msgstr "POTS"
 
 #: cellular/cellularmodemdetails.cpp:117 editor/connectioneditorbase.cpp:262
 #, kde-format
@@ -68,132 +61,104 @@ msgid "GSM"
 msgstr "GSM"
 
 #: cellular/cellularmodemdetails.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "Compact GSM"
+#, kde-format
 msgid "GSM Compact"
-msgstr "ئىخچام GSM"
+msgstr "GSM ئىخچام"
 
 #: cellular/cellularmodemdetails.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "GPRS"
+#, kde-format
 msgid "GPRS"
 msgstr "GPRS"
 
 #: cellular/cellularmodemdetails.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "EDGE"
+#, kde-format
 msgid "EDGE"
 msgstr "EDGE"
 
 #: cellular/cellularmodemdetails.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "UMTS"
+#, kde-format
 msgid "UMTS"
 msgstr "UMTS"
 
 #: cellular/cellularmodemdetails.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSDPA"
+#, kde-format
 msgid "HSDPA"
 msgstr "HSDPA"
 
 #: cellular/cellularmodemdetails.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSUPA"
+#, kde-format
 msgid "HSUPA"
 msgstr "HSUPA"
 
 #: cellular/cellularmodemdetails.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSPA"
+#, kde-format
 msgid "HSPA"
 msgstr "HSPA"
 
 #: cellular/cellularmodemdetails.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSPA+"
+#, kde-format
 msgid "HSPA+"
 msgstr "HSPA+"
 
 #: cellular/cellularmodemdetails.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 1xRTT"
+#, kde-format
 msgid "CDMA2000 1xRTT"
 msgstr "CDMA2000 1xRTT"
 
 #: cellular/cellularmodemdetails.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 EVDO revision 0"
+#, kde-format
 msgid "CDMA2000 EVDO-0"
-msgstr "CDMA2000 EVDO تۈزىتىلگەن 0 نەشرى"
+msgstr "CDMA2000 EVDO-0"
 
 #: cellular/cellularmodemdetails.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 EVDO revision A"
+#, kde-format
 msgid "CDMA2000 EVDO-A"
-msgstr "CDMA2000 EVDO تۈزىتىلگەن A نەشرى"
+msgstr "CDMA2000 EVDO-A"
 
 #: cellular/cellularmodemdetails.cpp:153
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 EVDO revision B"
+#, kde-format
 msgid "CDMA2000 EVDO-B"
-msgstr "CDMA2000 EVDO تۈزىتىلگەن B نەشرى"
+msgstr "CDMA2000 EVDO-B"
 
 #: cellular/cellularmodemdetails.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "Gsm modes (2G/3G/any)"
-#| msgid "LTE"
+#, kde-format
 msgid "LTE"
 msgstr "LTE"
 
 #: cellular/cellularmodemdetails.cpp:159
 #, kde-format
 msgid "5GNR"
-msgstr ""
+msgstr "5GNR"
 
 #: cellular/cellularmodemdetails.cpp:215
 #, kde-format
 msgid "Off"
-msgstr ""
+msgstr "تاقاق"
 
 #: cellular/cellularmodemdetails.cpp:217
 #, kde-format
 msgid "Low-power mode"
-msgstr ""
+msgstr "تۆۋەن قۇۋۋەتلىك ھالەت"
 
 #: cellular/cellularmodemdetails.cpp:219
 #, kde-format
 msgid "Full power mode"
-msgstr ""
+msgstr "تولۇق قۇۋۋەتلىك ھالەت"
 
 #: cellular/cellularmodemdetails.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection failed"
-#| msgid "Failed"
+#, kde-format
 msgid "Failed"
 msgstr "مەغلۇپ بولدى"
 
 #: cellular/cellularmodemdetails.cpp:247
 #, kde-format
 msgid "Initializing"
-msgstr ""
+msgstr "دەسلەپلەشتۈرۈۋاتىدۇ"
 
 #: cellular/cellularmodemdetails.cpp:249
 #, kde-format
 msgid "Locked"
-msgstr ""
+msgstr "قۇلۇپلانغان"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: cellular/cellularmodemdetails.cpp:251 editor/settings/ui/ipv6.ui:264
@@ -202,151 +167,140 @@ msgid "Disabled"
 msgstr "چەكلەنگەن"
 
 #: cellular/cellularmodemdetails.cpp:253
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Disabling"
-msgstr "چەكلەنگەن"
+msgstr "چەكلەۋاتىدۇ"
 
 #: cellular/cellularmodemdetails.cpp:255
 #, kde-format
 msgid "Enabling"
-msgstr ""
+msgstr "قوزغىتىۋاتىدۇ"
 
 #: cellular/cellularmodemdetails.cpp:257
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Enabled"
-msgstr "چەكلەنگەن"
+msgstr "قوزغىتىلغان"
 
 #: cellular/cellularmodemdetails.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "network interface doing dhcp request in most cases"
-#| msgid "Setting network address"
+#, kde-format
 msgid "Searching for network provider"
-msgstr "تور ئادرېسىنى تەڭشەۋاتىدۇ"
+msgstr "تور تەمىنلىگۈچىنى ئىزدەۋاتىدۇ"
 
 #: cellular/cellularmodemdetails.cpp:261
 #, kde-format
 msgid "Registered with network provider"
-msgstr ""
+msgstr "تور تەمىنلىگۈچىگە تىزىملاتتى"
 
 #: cellular/cellularmodemdetails.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "Network connections are being cleaned up"
-#| msgid "Disconnecting"
+#, kde-format
 msgid "Disconnecting"
 msgstr "ئۈزۈۋاتىدۇ"
 
 #: cellular/cellularmodemdetails.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is being established"
-#| msgid "Connecting"
+#, kde-format
 msgid "Connecting"
 msgstr "باغلىنىۋاتىدۇ"
 
 #: cellular/cellularmodemdetails.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgid "Connected"
 msgstr "باغلاندى"
 
 #: cellular/cellularmodemdetails.cpp:276
 #, kde-format
 msgid "No error."
-msgstr ""
+msgstr "خاتالىق يوق."
 
 #: cellular/cellularmodemdetails.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "Unknown Provider"
+#, kde-format
 msgid "Unknown error."
-msgstr "يوچۇن تەمىنلىگۈچى"
+msgstr "نامەلۇم خاتالىق."
 
 #: cellular/cellularmodemdetails.cpp:280
 #, kde-format
 msgid "SIM is required but missing."
-msgstr ""
+msgstr "SIM كارتا زۆرۈر ئەمما يوق."
 
 #: cellular/cellularmodemdetails.cpp:282
 #, kde-format
 msgid "SIM is available but unusable."
-msgstr ""
+msgstr "SIM كارتا بار ئەمما ئىشلەتكىلى بولمايدۇ."
 
 #: cellular/cellularmodemdetails.cpp:284
 #, kde-format
 msgid "Unknown modem capabilities."
-msgstr ""
+msgstr "يوچۇن مودىم ئىقتىدارى."
 
 #: cellular/cellularmodemdetails.cpp:286
 #, kde-format
 msgid "eSIM is not initialized."
-msgstr ""
+msgstr "eSIM دەسلەپلەشتۈرۈلمىدى."
 
 #: cellular/cellularmodemdetails.cpp:312
 #, kde-format
 msgid "Not registered, not searching for new operator to register."
-msgstr ""
+msgstr "تىزىملاتمىدى، تىزىملىتىدىغان يېڭى تەمىنلىگۈچىنى ئىزدىمەيۋاتىدۇ."
 
 #: cellular/cellularmodemdetails.cpp:314
 #, kde-format
 msgid "Registered on home network."
-msgstr ""
+msgstr "ئائىلە تورىغا تىزىملاتتى."
 
 #: cellular/cellularmodemdetails.cpp:316
 #, kde-format
 msgid "Not registered, searching for new operator to register with."
 msgstr ""
+"تىزىملاتمىدى، تىزىملاتمىدى، تىزىملىتىىدغان يېڭى تەمىنلىگۈچىنى ئىزدەۋاتىدۇ."
 
 #: cellular/cellularmodemdetails.cpp:318
 #, kde-format
 msgid "Registration denied."
-msgstr ""
+msgstr "تىزىملىتىش رەت قىلىندى."
 
 #: cellular/cellularmodemdetails.cpp:320
 #, kde-format
 msgid "Unknown registration status."
-msgstr ""
+msgstr "يوچۇن تىزىملىتىش ھالىتى."
 
 #: cellular/cellularmodemdetails.cpp:322
 #, kde-format
 msgid "Registered on a roaming network."
-msgstr ""
+msgstr "كەزمە تورغا تىزىملاتتى."
 
 #: cellular/cellularmodemdetails.cpp:324
 #, kde-format
 msgid "Registered for \"SMS only\", on home network."
-msgstr ""
+msgstr "ئائىلە تورىغا «SMS لا» ھالىتىدە تىزىملاتتى."
 
 #: cellular/cellularmodemdetails.cpp:326
 #, kde-format
 msgid "Registered for \"SMS only\", roaming network."
-msgstr ""
+msgstr "كەزمە تورغا «SMS لا» ھالىتىدە تىزىملاتتى."
 
 #: cellular/cellularmodemdetails.cpp:328
 #, kde-format
 msgid "Emergency services only."
-msgstr ""
+msgstr "جىددىي قۇتقۇزۇش مۇلازىمىتى ئۈچۈنلا."
 
 #: cellular/cellularmodemdetails.cpp:330
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", home network."
-msgstr ""
+msgstr "ئائىلە تورىغا «CSFB مايىللىق ئەمەس» ھالىتىدە تىزىملاتتى."
 
 #: cellular/cellularmodemdetails.cpp:332
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", roaming network."
-msgstr ""
+msgstr "كەزمە تورغا «CSFB مايىللىق ئەمەس» ھالىتىدە تىزىملاتتى."
 
 #: cellular/cellularmodemdetails.cpp:334
 #, kde-format
 msgid "Attached for access to Restricted Local Operator Services."
-msgstr ""
+msgstr "چەكلىمىلىك يەرلىك تەمىنلىگۈچى مۇلازىمىتىنى زىيارەت قىلىشقا قوشۇلدى."
 
 #: cellular/cellularmodemdetails.cpp:374
 #, kde-format
 msgid "Scanning networks failed: %1"
-msgstr ""
+msgstr "تورنى تارىيالمىدى: %1"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: cellular/cellularmodemdetails.cpp:435
@@ -365,186 +319,147 @@ msgstr "ياق"
 #: cellular/cellularmodemdetails.cpp:439
 #, kde-format
 msgid "GuessYes"
-msgstr ""
+msgstr "بەلكىم ھەئە"
 
 #: cellular/cellularmodemdetails.cpp:441
 #, kde-format
 msgid "GuessNo"
-msgstr ""
+msgstr "بەلكىم ياق"
 
 #: cellular/cellularmodemdetails.cpp:474
-#, fuzzy, kde-format
-#| msgid "2"
+#, kde-format
 msgid "2G"
-msgstr "2"
+msgstr "2G"
 
 #: cellular/cellularmodemdetails.cpp:485
-#, fuzzy, kde-format
-#| msgid "3"
+#, kde-format
 msgid "3G"
-msgstr "3"
+msgstr "3G"
 
 #: cellular/cellularmodemdetails.cpp:490
-#, fuzzy, kde-format
-#| msgid "4"
+#, kde-format
 msgid "4G"
-msgstr "4"
+msgstr "4G"
 
 #: cellular/cellularmodemdetails.cpp:493
 #, kde-format
 msgid "5G"
-msgstr ""
+msgstr "5G"
 
 #: cellular/cellularmodemdetails.cpp:496
-#, fuzzy, kde-format
-#| msgctxt "Gsm modes (2G/3G/any)"
-#| msgid "Any"
+#, kde-format
 msgid "Any"
 msgstr "خالىغان"
 
 #: cellular/cellularsim.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Lock reason unknown."
+#, kde-format
 msgid "Lock reason unknown."
 msgstr "قۇلۇپلاش سەۋەبى نامەلۇم."
 
 #: cellular/cellularsim.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem is unlocked."
+#, kde-format
 msgid "Modem is unlocked."
 msgstr "مودېم قۇلۇپى ئوچۇق."
 
 #: cellular/cellularsim.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PIN code."
+#, kde-format
 msgid "SIM requires the PIN code."
 msgstr "SIM غا PIN كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PIN2 code."
+#, kde-format
 msgid "SIM requires the PIN2 code."
 msgstr "SIM غا PIN2 كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PUK code."
+#, kde-format
 msgid "SIM requires the PUK code."
 msgstr "SIM غا PUK كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PUK2 code."
+#, kde-format
 msgid "SIM requires the PUK2 code."
 msgstr "SIM غا PUK2 كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the service provider PIN code."
+#, kde-format
 msgid "Modem requires the service provider PIN code."
 msgstr "مودېمغا مۇلازىمەت تەمىنلىگۈچىنىڭ PIN كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the service provider PUK code."
+#, kde-format
 msgid "Modem requires the service provider PUK code."
 msgstr "مودېمغا مۇلازىمەت تەمىنلىگۈچىنىڭ PUK كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network PIN code."
+#, kde-format
 msgid "Modem requires the network PIN code."
 msgstr "مودېمغا تورنىڭ PIN كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network PUK code."
+#, kde-format
 msgid "Modem requires the network PUK code."
 msgstr "مودېمغا تورنىڭ PUK كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the PIN code."
+#, kde-format
 msgid "Modem requires the PIN code."
 msgstr "مودېمغا PIN كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the corporate PIN code."
+#, kde-format
 msgid "Modem requires the corporate PIN code."
 msgstr "مودېمغا شىركەتنىڭ PIN كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the corporate PUK code."
+#, kde-format
 msgid "Modem requires the corporate PUK code."
 msgstr "مودېمغا شىركەتنىڭ PUK كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the PH-FSIM PIN code."
+#, kde-format
 msgid "Modem requires the PH-FSIM PIN code."
 msgstr "مودېمغا PH-FSIM PIN كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the PH-FSIM PUK code."
+#, kde-format
 msgid "Modem requires the PH-FSIM PUK code."
 msgstr "مودېمغا PH-FSIM PUK كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network subset PIN code."
+#, kde-format
 msgid "Modem requires the network subset PIN code."
 msgstr "مودېمغا تور تارماق توپلىمىنىڭ PIN كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network subset PUK code."
+#, kde-format
 msgid "Modem requires the network subset PUK code."
 msgstr "مودېمغا تور تارماق توپلىمىنىڭ PUK كودى زۆرۈر."
 
 #: cellular/cellularsim.cpp:158
 #, kde-format
 msgid "(empty)"
-msgstr ""
+msgstr "(بوش)"
 
 #: cellular/cellularsim.cpp:172
 #, kde-format
 msgid "Error toggling SIM lock: %1"
-msgstr ""
+msgstr "SIM قۇلۇپىنى ئالماشتۇرۇۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
 #: cellular/cellularsim.cpp:181
 #, kde-format
 msgid "Error changing the PIN: %1"
-msgstr ""
+msgstr "PIN ئۆزگەرتىۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
 #: cellular/cellularsim.cpp:194
 #, kde-format
 msgid "Error sending the PIN: %1"
-msgstr ""
+msgstr "PIN يوللاۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
 #: cellular/cellularsim.cpp:207
 #, kde-format
 msgid "Error sending the PUK: %1"
-msgstr ""
+msgstr "PUK يوللاۋاتقاندا خاتالىق كۆرۈلدى: %1"
 
 #: editor/connectiondetails.cpp:92
 #, kde-format
@@ -1533,13 +1448,7 @@ msgstr "ئۆزلۈكىدىن باغلىنىش ئالدىن ئويلىشىلىد�
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. A negative number can be used to "
-#| "indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
@@ -1549,8 +1458,7 @@ msgstr ""
 "ئەگەر ئۆزلۈكىدىن باغلىنىشقا تەڭشەلسە، ئالدىنلىقى يۇقىرى باغلىنىش ئالدىن "
 "ئىشلىتىلىدۇ. كۆڭۈلدىكى قىممىتى 0. نومۇرى قانچە يۇقىرى بولسا، ئالدىنلىقى "
 "شۇنچە يۇقىرى بولىدۇ. مەنپى سان ئارقىلىق كۆڭۈلدىكى قىممەتتىنمۇ ئالدىنلىقنى "
-"بەلگىلىگىلى بولىدۇ.\n"
-"           "
+"بەلگىلىگىلى بولىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1595,6 +1503,8 @@ msgid ""
 "Choose which VPN connection to automatically activate when this connection "
 "is established"
 msgstr ""
+"بۇ باغلىنىش قۇرۇلغاندا قايسى VPN باغلىنىشىنى ئۆزلۈكىدىن ئاكتىپلايدىغانلىقى "
+"تاللىنىدۇ"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:102
@@ -1609,6 +1519,8 @@ msgid ""
 "Assign this connection to a firewall zone to control network access and "
 "security rules"
 msgstr ""
+"تور زىيارىتىنى تىزگىنلەش ۋە بىخەتەرلىك قائىدىسى ئۈچۈن بۇ باغلىنىشنى مۇداپىئە "
+"تام رايونىغا تەقسىملەيدۇ"
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:134
@@ -1618,18 +1530,14 @@ msgstr "ئېقىم بويىچە ھەق ھېسابلىنىدۇ:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:154
-#, fuzzy, kde-format
-#| msgid ""
-#| "NetworkManager indicates to applications whether the connection is "
-#| "metered and therefore\n"
-#| "data usage should be restricted."
+#, kde-format
 msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"NetworkManager پىروگراممىغا مەزكۇر باغلىنىشنىڭ ئېقىم بويىچە ھەق "
-"ھېسابلايدىغان ياكى ھېسابلىمايدىغانلىقىنى ئۇقتۇرۇپ، شۇنىڭغا ئاساسەن ئېقىم "
-"ئىشلىتىشكە چەكلىمە قويىدۇ."
+"پىروگراممىغا مەزكۇر باغلىنىشنىڭ ئېقىم بويىچە ھەق ھېسابلايدىغان ياكى "
+"ھېسابلىمايدىغانلىقىنى ئۇقتۇرۇپ، شۇنىڭغا ئاساسەن ئېقىم ئىشلىتىشكە چەكلىمە "
+"قويىدۇ."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:164
@@ -1744,6 +1652,16 @@ msgid ""
 "devices\n"
 "• Disabled: turn off IPv4"
 msgstr ""
+"IPv4 ئادرېسنى قانداق سەپلەيدۇ:\n"
+"• ئاپتوماتىك:  ئادرېس ۋە DNS كە DHCP ئارقىلىق ئۆزلۈكىدىن  ئېرىشىدۇ\n"
+"• ئاپتوماتىك (ئادرېسلا):  ئادرېسقا DHCP ئارقىلىق ئېرىشىدۇ ئەمما DNS قولدا "
+"سەپلىنىدۇ\n"
+"• يەرلىك باغلىنىش: يەرلىك ئادرېسقا ئۆزلۈكىدىن باغلىنىشنى ئىشلىتىدۇ (169.254."
+"x.x)\n"
+"• قولدا: مۇقىم IP ئادرېس قولدا كىرگۈزۈلىدۇ\n"
+"• ھەمبەھىرلەنگەن: مەزكۇر كومپيۇتېرنى يېتەكلىگۈچكە ئايلاندۇرۇپ باشقا "
+"ئۈسكۈنىلەرنىڭ ئىنتېرنېتقا باغلىنىشى ئۈچۈن ھەمبەھىرلەيدۇ\n"
+"• چەكلەنگەن: IPv4 نى تاقايدۇ"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:58 editor/settings/ui/ipv6.ui:234
@@ -1896,7 +1814,7 @@ msgid ""
 "an IP address"
 msgstr ""
 "IP ئادرېس كومپيۇتېرىڭىزنى توردا باشقىلاردىن پەرقلەندۈرىدۇ. «قوش» توپچەنى "
-"چېكىپ بىر IP ئادرېس قوشقىلى بولىدۇ"
+"چېكىپ بىر IP ئادرېس قوشقىلى بولىدۇ."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:335
@@ -1928,7 +1846,7 @@ msgid ""
 "if\n"
 "IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
-"IPv4 ماسلىشىدىغان تورغا باغلانغاندا، ئەگەر IPv6 سەپلەش مەغلۇپ بولۇپ IPv4 "
+" IPv4 ماسلىشىدىغان تورغا باغلانغاندا، ئەگەر IPv6 سەپلەش مەغلۇپ بولۇپ IPv4 "
 "سەپلەش مۇۋەپپەقىيەتلىك بولسا باغلىنىشنى تاماملاشقا يول قويىدۇ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
@@ -1991,6 +1909,18 @@ msgid ""
 "• Ignored: skip IPv6 configuration but allow connection\n"
 "• Disabled: turn off IPv6 completely"
 msgstr ""
+"IPv6 ئادرېسنى قانداق سەپلەيدۇ:\n"
+"• ئاپتوماتىك:  ئادرېس ۋە DNS كە DHCP ئارقىلىق ئۆزلۈكىدىن  ئېرىشىدۇ (SLAAC ۋە/"
+"ياكى  DHCPv6 ئارقىلىق)\n"
+"• ئاپتوماتىك (ئادرېسلا): ئادرېسقا ئۆزلۈكىدىن ئېرىشىدۇ ئەمما DNS قولدا "
+"سەپلىنىدۇ\n"
+"• ئاپتوماتىك (DHCP لا): ئادرېس ۋە DNS كە DHCPv6  ئارقىلىقلا ئېرىشىدۇ (SLAAC "
+"غا پەرۋا قىلمايدۇ)\n"
+"• يەرلىك باغلىنىش: يەرلىك ئادرېسقا ئۆزلۈكىدىن باغلىنىشنى ئىشلىتىدۇ "
+"(‏fe80::/10)\n"
+"• قولدا: مۇقىم IP ئادرېس قولدا كىرگۈزۈلىدۇ\n"
+"• پەرۋا قىلمايدۇ: IPv6 سەپلەشتىن ئاتلايدۇ ئەمما باغلىنىشقا يول قويىدۇ\n"
+"• چەكلەنگەن: IPv6 نى پۈتۈنلەي تاقايدۇ"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:244
@@ -2160,11 +2090,9 @@ msgstr "بوش باغ"
 
 #. i18n: ectx: property (text), widget (QLabel, connectionSectionLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:23
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is being established"
-#| msgid "Connecting"
+#, kde-format
 msgid "Connection"
-msgstr "باغلىنىۋاتىدۇ"
+msgstr "باغلىنىش"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:39
@@ -2176,7 +2104,7 @@ msgstr "SSID:"
 #: editor/settings/ui/wificonnectionwidget.ui:61
 #, kde-format
 msgid "The name of the Wi-Fi network to connect to"
-msgstr ""
+msgstr "باغلىنىدىغان Wi-Fi تورىنىڭ ئىسمى"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:90
@@ -2187,6 +2115,10 @@ msgid ""
 "• Ad-hoc: create a direct peer-to-peer network\n"
 "• Access Point: turn this computer into a Wi-Fi hotspot"
 msgstr ""
+"Wi-Fi تورىنىڭ ھالىتى:\n"
+"• قۇرۇلمىسى: Wi-Fi يېتەكلىگۈچكە باغلىنىدۇ (ئادەتتىكى ھالەت)\n"
+"• Ad-hoc: بىۋاسىتە نۇقتىدىن نۇقتىغا تور قۇرىدۇ\n"
+"• بۇ كومپيۇتېرنى Wi-Fi قىزىق نۇقتىغا ئۆزگەرتىدۇ"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:94
@@ -2208,10 +2140,9 @@ msgstr "زىيارەت نۇقتىسى"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:128
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to BSSID:"
-msgstr "ئۈسكۈنە چەكلىمىسى:"
+msgstr "BSSID چەكلىمىسى:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:147
@@ -2220,6 +2151,8 @@ msgid ""
 "Lock this connection to a specific access point. Enter the BSSID (MAC "
 "address) of the access point."
 msgstr ""
+"بۇ باغلىنىشنى بەلگىلەنگەن زىيارەت نۇقتىسىغا قۇلۇپلايدۇ. زىيارەت نۇقتىسىنىڭ "
+"BSSID (MAC ئادرېس) نى كىرگۈزۈش كېرەك."
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:163
@@ -2277,10 +2210,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:232
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to network adapter:"
-msgstr "ئۈسكۈنە چەكلىمىسى:"
+msgstr "تور ماسلاشتۇرغۇچ چەكلىمىسى:"
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wificonnectionwidget.ui:251
@@ -2289,6 +2221,8 @@ msgid ""
 "Lock this connection to a particular network adapter by specifying its MAC "
 "address."
 msgstr ""
+"MAC ئادرېسىنى بەلگىلەش ئارقىلىق بۇ باغلىنىشنى مۇئەييەن تور ماسلاشتۇرغۇچقا "
+"قۇلۇپلايدۇ."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:258
@@ -2303,6 +2237,7 @@ msgstr "نۇسخىلانغان MAC ئادرېس:"
 msgid ""
 "Use a different MAC address instead of your network adapter's real address."
 msgstr ""
+"تور ماسلاشتۇرغۇچنىڭ ھەقىقىي ئادرېسىنىڭ ئورنىغا پەرقلىق MAC ئادرېس ئىشلىتىدۇ."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:292
@@ -2317,15 +2252,16 @@ msgid ""
 "Maximum Transmission Unit: the largest packet size that can be sent without "
 "fragmentation. Larger packets will be broken into smaller frames."
 msgstr ""
+"ئەڭ يۇقىرى يەتكۈزۈش بىرلىكى: پارچىلىمايلا يوللىيالايدىغان ئەڭ چوڭ بوغچا "
+"چوڭلۇقى. چوڭراق بوغچىلار كىچىكرەك كاندۇققا پارچىلىنىدۇ."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:342
 #: editor/settings/ui/wificonnectionwidget.ui:358
-#, fuzzy, kde-format
-#| msgid "Mark this if you want to create a connection for a hidden network"
+#, kde-format
 msgid "Create a connection for a hidden network"
-msgstr "ئەگەر يوشۇرۇن تورغا باغلىنىش قۇرماقچى بولسىڭىز، بۇ تاللانمىنى تاللاڭ"
+msgstr "يوشۇرۇن تور ئۈچۈن باغلىنىش قۇرىدۇ"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:345
@@ -2341,10 +2277,9 @@ msgstr "يوشۇرۇن تور"
 
 #. i18n: ectx: property (text), widget (QLabel, securitySectionLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:368
-#, fuzzy, kde-format
-#| msgid "Security:"
+#, kde-format
 msgid "Security"
-msgstr "بىخەتەرلىك:"
+msgstr "بىخەتەرلىك"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
 #: editor/settings/ui/wifisecurity.ui:15
@@ -2511,7 +2446,7 @@ msgstr "سۈرئەت:"
 #: editor/settings/ui/wiredconnectionwidget.ui:132
 #, kde-format
 msgid "Duplex:"
-msgstr "قوش يۈز:"
+msgstr "قوش يۈز"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:151
@@ -2533,7 +2468,7 @@ msgstr "يېرىم"
 #: editor/settings/ui/wiredconnectionwidget.ui:163
 #, kde-format
 msgid "Full"
-msgstr "تولۇق"
+msgstr "تامامەن"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174
@@ -3635,7 +3570,7 @@ msgctxt ""
 "the number of hours since usage"
 msgid "Last used one hour ago"
 msgid_plural "Last used %1 hours ago"
-msgstr[0] "ئاخىرقى قېتىم %1 سائەت ئىلگىرى ئىشلىتىلگەن"
+msgstr[0] "ئاخىرقى قېتىم %1سائەت ئىلگىرى ئىشلىتىلگەن"
 
 #: editor/uiutils.cpp:648
 #, kde-format
@@ -3790,7 +3725,7 @@ msgstr "كەڭ بەلباغ ھەق تۆلەش پىلانىڭىزنىڭ ئاتى"
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
 msgstr ""
-"(بەزى ئەھۋالدا) كەڭ بەلباغ ھەق تۆلەش پىلانىڭىزنىڭ APN(زىيارەت نۇقتا ئاتى)"
+"(بەزى ئەھۋالدا) كەڭ بەلباغ ھەق تۆلەش پىلانىڭىزنىڭ APN(زىيارەت نۇقتا ئاتى) "
 
 #: editor/widgets/mobileconnectionwizard.cpp:254
 #, kde-format

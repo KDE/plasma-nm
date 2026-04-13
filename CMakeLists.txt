@@ -86,11 +86,6 @@ set_package_properties(KF6Kirigami PROPERTIES
     TYPE RUNTIME
 )
 
-find_package(Qca-qt6 2.1.0)
-set_package_properties(Qca-qt6 PROPERTIES DESCRIPTION "Support for encryption"
-                       URL "https://download.kde.org/stable/qca-qt5/"
-                       TYPE REQUIRED)
-
 find_package(KF6Prison ${KF6_MIN_VERSION})
 set_package_properties(KF6Prison PROPERTIES DESCRIPTION "Prison library"
                        URL "https://commits.kde.org/prison"
@@ -101,6 +96,8 @@ set_package_properties(KF6Prison PROPERTIES DESCRIPTION "Prison library"
 find_package(KF6QuickCharts ${KF6_MIN_VERSION} CONFIG)
 set_package_properties(KF6QuickCharts PROPERTIES
                        TYPE RUNTIME)
+
+find_package(OpenSSL REQUIRED)
 
 pkg_check_modules(NETWORKMANAGER IMPORTED_TARGET libnm>1.4.0 REQUIRED)
 pkg_check_modules(MOBILEBROADBANDPROVIDERINFO mobile-broadband-provider-info)

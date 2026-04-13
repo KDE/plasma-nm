@@ -161,7 +161,7 @@ PRIVATE
     KF6::Wallet
     Qt::DBus
     Qt::Network
-    qca-qt6
+    OpenSSL::Crypto
 )
 
 target_compile_definitions(plasmanm_editor PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

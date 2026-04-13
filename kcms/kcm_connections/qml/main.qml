@@ -68,6 +68,7 @@ QQC2.Page {
             bottomMargin: Kirigami.Units.smallSpacing
             left: parent.left
             right: parent.right
+            topMargin: Kirigami.Units.smallSpacing
             top: searchField.bottom
         }
 

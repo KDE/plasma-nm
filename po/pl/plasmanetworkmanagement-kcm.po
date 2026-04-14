@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-03 00:49+0000\n"
+"POT-Creation-Date: 2026-04-14 00:45+0000\n"
 "PO-Revision-Date: 2025-11-22 21:18+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -186,57 +186,57 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Dostępne"
 
-#: qml/main.qml:147
+#: qml/main.qml:148
 msgid "Add new connection"
 msgstr "Dodaj nowe połączenie"
 
-#: qml/main.qml:165
+#: qml/main.qml:166
 msgid "Remove selected connection"
 msgstr "Usuń wybrane połączenie"
 
-#: qml/main.qml:183
+#: qml/main.qml:184
 msgid "Export selected connection"
 msgstr "Wyeksportuj wybrane połączenie"
 
-#: qml/main.qml:208
+#: qml/main.qml:209
 msgid "Configuration"
 msgstr "Ustawienia"
 
-#: qml/main.qml:235
+#: qml/main.qml:236
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Usuń połączenie"
 
-#: qml/main.qml:236
+#: qml/main.qml:237
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Czy chcesz usunąć połączenie '%1?"
 
-#: qml/main.qml:258
+#: qml/main.qml:259
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Połącz"
 
-#: qml/main.qml:264
+#: qml/main.qml:265
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Anuluj"
 
-#: qml/main.qml:270
+#: qml/main.qml:271
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "Wpisz hasło"
 
-#: qml/main.qml:276
+#: qml/main.qml:277
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "Sieć: %1"
 
-#: qml/main.qml:297
+#: qml/main.qml:298
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "Hasło musi być prawidłowym kluczem WEP"
 
-#: qml/main.qml:298
+#: qml/main.qml:299
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Hasło musi zawierać od 8 do 64 znaków"

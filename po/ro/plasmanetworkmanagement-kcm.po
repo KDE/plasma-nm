@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-03 00:49+0000\n"
+"POT-Creation-Date: 2026-04-14 00:45+0000\n"
 "PO-Revision-Date: 2026-03-01 00:20+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -187,57 +187,57 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Disponibile"
 
-#: qml/main.qml:147
+#: qml/main.qml:148
 msgid "Add new connection"
 msgstr "Adaugă conexiune nouă"
 
-#: qml/main.qml:165
+#: qml/main.qml:166
 msgid "Remove selected connection"
 msgstr "Elimină conexiunea aleasă"
 
-#: qml/main.qml:183
+#: qml/main.qml:184
 msgid "Export selected connection"
 msgstr "Exportă conexiunea aleasă"
 
-#: qml/main.qml:208
+#: qml/main.qml:209
 msgid "Configuration"
 msgstr "Configurări"
 
-#: qml/main.qml:235
+#: qml/main.qml:236
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Elimină conexiunea"
 
-#: qml/main.qml:236
+#: qml/main.qml:237
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Doriți să eliminați conexiunea „%1”?"
 
-#: qml/main.qml:258
+#: qml/main.qml:259
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Conectează"
 
-#: qml/main.qml:264
+#: qml/main.qml:265
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Renunță"
 
-#: qml/main.qml:270
+#: qml/main.qml:271
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "Introduceți parola"
 
-#: qml/main.qml:276
+#: qml/main.qml:277
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "Rețea: %1"
 
-#: qml/main.qml:297
+#: qml/main.qml:298
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "Parola trebuie să fie o cheie WEP validă"
 
-#: qml/main.qml:298
+#: qml/main.qml:299
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Parola trebuie să aibă între 8 și 64 de caractere"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2026-03-14 15:10+0000\n"
+"PO-Revision-Date: 2026-03-17 00:46+0000\n"
 "Last-Translator: charlotte <altronic25@protonmail.com>\n"
 "Language-Team: Irish\n"
 "Language: ga\n"
@@ -76,7 +76,7 @@ msgstr "Sábháil"
 #: package/contents/ui/NetworkSettings.qml:44
 #, kde-format
 msgid "General"
-msgstr ""
+msgstr "Ginearálta"
 
 #: package/contents/ui/NetworkSettings.qml:49
 #, kde-format
@@ -91,7 +91,7 @@ msgstr ""
 #: package/contents/ui/NetworkSettings.qml:64
 #, kde-format
 msgid "Security"
-msgstr ""
+msgstr "Slándáil"
 
 #: package/contents/ui/NetworkSettings.qml:70
 #, kde-format
@@ -101,17 +101,17 @@ msgstr ""
 #: package/contents/ui/NetworkSettings.qml:79
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "Neamhní"
 
 #: package/contents/ui/NetworkSettings.qml:80
 #, kde-format
 msgid "WEP Key"
-msgstr ""
+msgstr "Eochair WEP"
 
 #: package/contents/ui/NetworkSettings.qml:81
 #, kde-format
 msgid "Dynamic WEP"
-msgstr ""
+msgstr "WEP Dinimiciúil"
 
 #: package/contents/ui/NetworkSettings.qml:82
 #, kde-format
@@ -126,7 +126,7 @@ msgstr ""
 #: package/contents/ui/NetworkSettings.qml:108
 #, kde-format
 msgid "Password:"
-msgstr ""
+msgstr "Focal Faire:"
 
 #: package/contents/ui/NetworkSettings.qml:116
 #, kde-format
@@ -161,7 +161,7 @@ msgstr ""
 #: package/contents/ui/NetworkSettings.qml:130
 #, kde-format
 msgid "IP settings"
-msgstr ""
+msgstr "Socruithe IP"
 
 #: package/contents/ui/NetworkSettings.qml:136
 #, kde-format
@@ -176,7 +176,7 @@ msgstr ""
 #: package/contents/ui/NetworkSettings.qml:146
 #, kde-format
 msgid "IP Address:"
-msgstr ""
+msgstr "Seoladh IP:"
 
 #: package/contents/ui/NetworkSettings.qml:158
 #, kde-format
@@ -191,7 +191,7 @@ msgstr ""
 #: package/contents/ui/NetworkSettings.qml:183
 #, kde-format
 msgid "DNS:"
-msgstr ""
+msgstr "DNS:"
 
 #: package/contents/ui/PasswordField.qml:13
 #, kde-format

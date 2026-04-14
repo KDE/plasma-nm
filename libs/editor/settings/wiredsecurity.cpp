@@ -15,6 +15,8 @@ WiredSecurity::WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &se
     m_ui->setupUi(this);
 
     m_8021xWidget = new Security8021x(m_8021xSetting, Security8021x::Ethernet, this);
+    connect(m_8021xWidget, &Security8021x::validChanged, this, &SettingWidget::validChanged);
+    connect(m_8021xWidget, &Security8021x::validChanged, this, &WiredSecurity::slotWidgetChanged);
     m_8021xWidget->setDisabled(true);
 
     m_ui->verticalLayout->addWidget(m_8021xWidget);
@@ -67,6 +69,11 @@ QVariantMap WiredSecurity::setting() const
     }
 
     return {};
+}
+
+bool WiredSecurity::isValid() const
+{
+    return !m_ui->use8021X || m_8021xWidget->isValid();
 }
 
 #include "moc_wiredsecurity.cpp"

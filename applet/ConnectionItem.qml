@@ -223,6 +223,10 @@ PlasmaExtras.ExpandableListItem {
                 Layout.leftMargin: Kirigami.Units.gridUnit
                 Layout.rightMargin: Kirigami.Units.gridUnit
 
+                onActiveFocusChanged: if (!activeFocus && focus && !Window.window.activeFocusItem?.focusReason) {
+                    forceActiveFocus();
+                }
+
                 securityType: connectionItem.model.SecurityType
 
                 onAccepted: {

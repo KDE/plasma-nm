@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-12-18 00:45+0000\n"
+"POT-Creation-Date: 2026-04-17 02:42+0000\n"
 "PO-Revision-Date: 2025-03-08 19:12+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -60,7 +60,7 @@ msgstr ""
 "現在のダウンロード速度は %1 KiB/秒です。現在のアップロード速度は %2 KiB/秒で"
 "す。"
 
-#: ConnectionItem.qml:298
+#: ConnectionItem.qml:302
 #, fuzzy, kde-format
 #| msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgctxt "Download and upload rates in some unit per second"

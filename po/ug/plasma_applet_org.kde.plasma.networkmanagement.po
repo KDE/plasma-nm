@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-12 00:45+0000\n"
+"POT-Creation-Date: 2026-04-17 00:46+0000\n"
 "PO-Revision-Date: 2026-04-09 12:37-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -59,7 +59,7 @@ msgstr ""
 "نۆۋەتتىكى چۈشۈرۈش سۈرئىتى سېكۇنتىغا %1KiB؛ نۆۋەتتىكى يۈكلەش سۈرئىتى "
 "سېكۇنتىغا %2KiB"
 
-#: ConnectionItem.qml:298
+#: ConnectionItem.qml:302
 #, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"

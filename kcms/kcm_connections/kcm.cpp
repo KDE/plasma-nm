@@ -697,6 +697,27 @@ void KCMNetworkmanagement::resetSelection()
     setNeedsSave(false);
 }
 
+void KCMNetworkmanagement::onRequestDuplicateConnection(const QString &connectionPath)
+{
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(connectionPath);
+    if (!connection) {
+        return;
+    }
+
+    NetworkManager::ConnectionSettings::Ptr connSettings = connection->settings();
+    if (!connSettings) {
+        return;
+    }
+
+    NetworkManager::ConnectionSettings::Ptr newSettings(new NetworkManager::ConnectionSettings(connSettings->connectionType()));
+    newSettings->fromMap(connSettings->toMap());
+
+    newSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+    newSettings->setId(connSettings->id() + i18nc("Suffix appended to the name of a duplicated connection", " (Copy)"));
+
+    addConnection(newSettings);
+}
+
 #include "kcm.moc"
 
 #include "moc_kcm.cpp"

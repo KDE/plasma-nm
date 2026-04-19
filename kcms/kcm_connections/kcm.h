@@ -26,6 +26,7 @@ public:
     Q_INVOKABLE void onSelectedConnectionChanged(const QString &connectionPath);
     Q_INVOKABLE void onRequestExportConnection(const QString &connectionPath);
     Q_INVOKABLE void onRequestToChangeConnection(const QString &connectionName, const QString &connectionPath);
+    Q_INVOKABLE void onRequestDuplicateConnection(const QString &connectionPath);
 
 public Q_SLOTS:
     void defaults() override;

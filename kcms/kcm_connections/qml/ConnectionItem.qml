@@ -89,6 +89,13 @@ QQC2.ItemDelegate {
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             QQC2.ToolTip.text: i18nc("@info:tooltip", "Cannot connect to this network because it was not detected.")
         }
+        QQC2.MenuItem {
+            icon.name: "edit-copy"
+            text: i18nc("@action:inmenu duplicate network connection", "Duplicate")
+            visible: !delegate.isUnknownNewConnection
+
+            onTriggered: kcm.onRequestDuplicateConnection(model.ConnectionPath)
+        }
 
         QQC2.MenuItem {
             icon.name: "list-remove-symbolic"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-14 00:45+0000\n"
+"POT-Creation-Date: 2026-04-20 00:49+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -85,6 +85,12 @@ msgstr "没有提供文件"
 msgid "Unknown VPN type"
 msgstr "未知的 VPN 类型"
 
+#: kcm.cpp:716
+#, kde-format
+msgctxt "Suffix appended to the name of a duplicated connection"
+msgid " (Copy)"
+msgstr ""
+
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
@@ -163,23 +169,28 @@ msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "无法连接到此网络，因为系统检测不到它。"
 
-#: qml/ConnectionItem.qml:95
+#: qml/ConnectionItem.qml:94
+msgctxt "@action:inmenu duplicate network connection"
+msgid "Duplicate"
+msgstr ""
+
+#: qml/ConnectionItem.qml:102
 msgid "Delete"
 msgstr "删除"
 
-#: qml/ConnectionItem.qml:106
+#: qml/ConnectionItem.qml:113
 msgid "Export"
 msgstr "导出"
 
-#: qml/ConnectionItem.qml:120
+#: qml/ConnectionItem.qml:127
 msgid "Connected"
 msgstr "已连接"
 
-#: qml/ConnectionItem.qml:122
+#: qml/ConnectionItem.qml:129
 msgid "Connecting"
 msgstr "正在连接"
 
-#: qml/ConnectionItem.qml:124
+#: qml/ConnectionItem.qml:131
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "可用"

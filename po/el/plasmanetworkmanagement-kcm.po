@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-14 00:45+0000\n"
+"POT-Creation-Date: 2026-04-20 00:49+0000\n"
 "PO-Revision-Date: 2017-01-19 19:33+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -90,6 +90,12 @@ msgstr ""
 msgid "Unknown VPN type"
 msgstr ""
 
+#: kcm.cpp:716
+#, kde-format
+msgctxt "Suffix appended to the name of a duplicated connection"
+msgid " (Copy)"
+msgstr ""
+
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
@@ -168,23 +174,28 @@ msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr ""
 
-#: qml/ConnectionItem.qml:95
+#: qml/ConnectionItem.qml:94
+msgctxt "@action:inmenu duplicate network connection"
+msgid "Duplicate"
+msgstr ""
+
+#: qml/ConnectionItem.qml:102
 msgid "Delete"
 msgstr "Διαγραφή"
 
-#: qml/ConnectionItem.qml:106
+#: qml/ConnectionItem.qml:113
 msgid "Export"
 msgstr "Εξαγωγή"
 
-#: qml/ConnectionItem.qml:120
+#: qml/ConnectionItem.qml:127
 msgid "Connected"
 msgstr "Συνδέθηκε"
 
-#: qml/ConnectionItem.qml:122
+#: qml/ConnectionItem.qml:129
 msgid "Connecting"
 msgstr "Συνδέεται"
 
-#: qml/ConnectionItem.qml:124
+#: qml/ConnectionItem.qml:131
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr ""

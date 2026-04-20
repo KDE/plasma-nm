@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-14 00:45+0000\n"
+"POT-Creation-Date: 2026-04-20 00:49+0000\n"
 "PO-Revision-Date: 2025-11-22 10:08+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -84,6 +84,12 @@ msgstr "Engin skrá gefin upp"
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Óþekkt VPN-gerð"
+
+#: kcm.cpp:716
+#, kde-format
+msgctxt "Suffix appended to the name of a duplicated connection"
+msgid " (Copy)"
+msgstr ""
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -166,23 +172,28 @@ msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "Get ekki tengst þessu neti því það fannst ekki."
 
-#: qml/ConnectionItem.qml:95
+#: qml/ConnectionItem.qml:94
+msgctxt "@action:inmenu duplicate network connection"
+msgid "Duplicate"
+msgstr ""
+
+#: qml/ConnectionItem.qml:102
 msgid "Delete"
 msgstr "Eyða"
 
-#: qml/ConnectionItem.qml:106
+#: qml/ConnectionItem.qml:113
 msgid "Export"
 msgstr "Flytja út"
 
-#: qml/ConnectionItem.qml:120
+#: qml/ConnectionItem.qml:127
 msgid "Connected"
 msgstr "Tengt"
 
-#: qml/ConnectionItem.qml:122
+#: qml/ConnectionItem.qml:129
 msgid "Connecting"
 msgstr "Tengist"
 
-#: qml/ConnectionItem.qml:124
+#: qml/ConnectionItem.qml:131
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Tiltækt"

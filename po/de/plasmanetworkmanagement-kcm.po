@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-14 00:45+0000\n"
+"POT-Creation-Date: 2026-04-20 00:49+0000\n"
 "PO-Revision-Date: 2025-11-29 17:45+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -88,6 +88,12 @@ msgstr "Es wurde keine Datei angegeben"
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Unbekannter VPN-Typ"
+
+#: kcm.cpp:716
+#, kde-format
+msgctxt "Suffix appended to the name of a duplicated connection"
+msgid " (Copy)"
+msgstr ""
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -172,23 +178,28 @@ msgstr ""
 "Die Verbindung zu diesem Netzwerk kann nicht hergestellt werden, da es nicht "
 "erkannt wurde."
 
-#: qml/ConnectionItem.qml:95
+#: qml/ConnectionItem.qml:94
+msgctxt "@action:inmenu duplicate network connection"
+msgid "Duplicate"
+msgstr ""
+
+#: qml/ConnectionItem.qml:102
 msgid "Delete"
 msgstr "Löschen"
 
-#: qml/ConnectionItem.qml:106
+#: qml/ConnectionItem.qml:113
 msgid "Export"
 msgstr "Exportieren"
 
-#: qml/ConnectionItem.qml:120
+#: qml/ConnectionItem.qml:127
 msgid "Connected"
 msgstr "Verbunden"
 
-#: qml/ConnectionItem.qml:122
+#: qml/ConnectionItem.qml:129
 msgid "Connecting"
 msgstr "Verbindung wird aufgebaut"
 
-#: qml/ConnectionItem.qml:124
+#: qml/ConnectionItem.qml:131
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Verfügbar"

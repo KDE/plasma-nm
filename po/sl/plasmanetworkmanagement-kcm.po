@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-20 00:49+0000\n"
-"PO-Revision-Date: 2025-11-20 07:30+0100\n"
+"PO-Revision-Date: 2026-04-20 08:34+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -91,7 +91,7 @@ msgstr "Neznana vrsta VPN"
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
-msgstr ""
+msgstr " (Kopiraj)"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -177,7 +177,7 @@ msgstr "S tem omrežjem se ni mogoče povezati, ker ni bilo zaznano."
 #: qml/ConnectionItem.qml:94
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
-msgstr ""
+msgstr "Dupliciraj"
 
 #: qml/ConnectionItem.qml:102
 msgid "Delete"

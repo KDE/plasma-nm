@@ -90,7 +90,7 @@ msgstr "Neznámy typ VPN"
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
-msgstr ""
+msgstr " (Kópia)"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -175,7 +175,7 @@ msgstr "Nie je možné sa pripojiť k tejto sieti, pretože nebola detegovaná."
 #: qml/ConnectionItem.qml:94
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
-msgstr ""
+msgstr "Duplikovať"
 
 #: qml/ConnectionItem.qml:102
 msgid "Delete"

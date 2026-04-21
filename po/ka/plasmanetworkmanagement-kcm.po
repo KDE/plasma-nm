@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-20 00:49+0000\n"
-"PO-Revision-Date: 2025-11-19 05:36+0100\n"
+"PO-Revision-Date: 2026-04-20 05:14+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -89,7 +89,7 @@ msgstr "VPN-ის უცნობი ტიპი"
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
-msgstr ""
+msgstr " (ასლი)"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -173,7 +173,7 @@ msgstr "ამ ქსელთან დაკავშირება შეუ
 #: qml/ConnectionItem.qml:94
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
-msgstr ""
+msgstr "დუბლირება"
 
 #: qml/ConnectionItem.qml:102
 msgid "Delete"

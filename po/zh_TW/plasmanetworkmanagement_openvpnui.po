@@ -4,13 +4,13 @@
 # Franklin, 2014, 2015.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2018.
-# SPDX-FileCopyrightText: 2022, 2023, 2025 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2022-2023, 2025-2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-12-25 00:45+0000\n"
-"PO-Revision-Date: 2025-11-20 21:38+0900\n"
+"PO-Revision-Date: 2026-04-22 22:24+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 26.07.70\n"
 
 #: openvpn.cpp:182
 #, kde-format
@@ -600,13 +600,13 @@ msgstr ""
 #: openvpnadvanced.ui:486
 #, kde-format
 msgid "Cipher:"
-msgstr "加密文字："
+msgstr "加密法："
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboCipher)
 #: openvpnadvanced.ui:513
 #, kde-format
 msgid "Obtaining available ciphers…"
-msgstr "取得可用的加密文字中…"
+msgstr "正在取得可用的加密法…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -1031,7 +1031,7 @@ msgstr "進階 OpenVPN 屬性"
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "OpenVPN cipher lookup failed"
-msgstr "OpenVPN 密碼搜尋失敗"
+msgstr "OpenVPN 加密法查詢失敗"
 
 #: openvpnadvancedwidget.cpp:161
 #, kde-format
@@ -1043,7 +1043,7 @@ msgstr "預設"
 #, kde-format
 msgctxt "@item:inlistbox Item added when OpenVPN cipher lookup failed"
 msgid "No OpenVPN ciphers found"
-msgstr "找不到 OpenVPN 密碼"
+msgstr "找不到 OpenVPN 加密法"
 
 #: openvpnauth.cpp:82 openvpnauth.cpp:114
 #, kde-format

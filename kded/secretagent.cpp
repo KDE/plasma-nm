@@ -375,7 +375,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
     if (!requestNew && useSecureStorage()) {
         if (!request.storageJobsStarted) {
             auto *job = new QKeychain::ReadPasswordJob(QString::fromLatin1(keychainService));
-            QObject::connect(
+            connect(
                 job,
                 &QKeychain::Job::finished,
                 this,
@@ -499,7 +499,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
             }
 
             auto *job = new QKeychain::WritePasswordJob(QString::fromLatin1(keychainService));
-            QObject::connect(
+            connect(
                 job,
                 &QKeychain::Job::finished,
                 this,
@@ -539,7 +539,7 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request)
         }
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
             QKeychain::DeletePasswordJob job(QString::fromLatin1(keychainService));
-            QObject::connect(&job, &QKeychain::Job::finished, this, [this, &request] {
+            connect(&job, &QKeychain::Job::finished, this, [this, &request] {
                 --request.storageJobsRunning;
                 processNext();
             });

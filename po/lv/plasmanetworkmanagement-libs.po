@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-24 00:45+0000\n"
+"POT-Creation-Date: 2026-04-24 00:45+0000\n"
 "PO-Revision-Date: 2026-03-03 19:18+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -989,12 +989,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Vārteja"
 
-#: editor/settings/security802-1x.cpp:503
+#: editor/settings/security802-1x.cpp:525
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Alternatīvās subjekta atbilstības"
 
-#: editor/settings/security802-1x.cpp:505
+#: editor/settings/security802-1x.cpp:527
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -1005,7 +1005,7 @@ msgstr ""
 "adrese&gt;</li><li>EMAIL: &lt;e-pasts&gt;</li><li>URI: &lt;uri, e.g. https://"
 "www.kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:522
+#: editor/settings/security802-1x.cpp:544
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Savienoties tikai ar šiem serveriem"

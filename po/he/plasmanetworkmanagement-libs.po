@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-24 00:45+0000\n"
-"PO-Revision-Date: 2026-02-26 08:54+0200\n"
+"POT-Creation-Date: 2026-04-24 00:45+0000\n"
+"PO-Revision-Date: 2026-04-21 14:08+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -991,12 +991,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "שער גישה"
 
-#: editor/settings/security802-1x.cpp:503
+#: editor/settings/security802-1x.cpp:525
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "התאמות נושא חלופיות"
 
-#: editor/settings/security802-1x.cpp:505
+#: editor/settings/security802-1x.cpp:527
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -1007,7 +1007,7 @@ msgstr ""
 "li><li>דוא״ל: &lt;דוא״ל&gt;</li><li>כתובת מלאה: &lt;uri, למשל: https://www."
 "kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:522
+#: editor/settings/security802-1x.cpp:544
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "התחברות לשרת זה בלבד"
@@ -2790,7 +2790,7 @@ msgstr ""
 "רשות.\n"
 "            הפרש בשניות, בין 1 ל־65535 כולל, שמציין כל\n"
 "            כמה זמן לשלוח חבילה מאומתת ריקה לעמית\n"
-"            כדי לשמור על מיפוי תקף קבוע של פענוח כתובות\n"
+"            כדי לשמור על מיפוי תקף קבוע של פיענוח כתובות\n"
 "            רשת (NAT). למשל, אם הממשק בקושי שולח תעבורה\n"
 "            אבל עשוי מתישהו לקבל תעבורה מעמית, והוא מאחורי\n"
 "            כ־NAT, הממשק יכול להפיק תועלת מכך שיהיה הפרש\n"

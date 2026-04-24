@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-24 00:45+0000\n"
+"POT-Creation-Date: 2026-04-24 00:45+0000\n"
 "PO-Revision-Date: 2026-03-30 12:51+0200\n"
 "Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -991,12 +991,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Brána"
 
-#: editor/settings/security802-1x.cpp:503
+#: editor/settings/security802-1x.cpp:525
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Alternativní shody předmětu"
 
-#: editor/settings/security802-1x.cpp:505
+#: editor/settings/security802-1x.cpp:527
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -1007,7 +1007,7 @@ msgstr ""
 "nebo IP adresa&gt;</li> <li>EMAIL: &lt;e-mail&gt;</li> <li>URI: &lt;uri, "
 "např. https://www.kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:522
+#: editor/settings/security802-1x.cpp:544
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Připojit se pouze k těmto serverům"

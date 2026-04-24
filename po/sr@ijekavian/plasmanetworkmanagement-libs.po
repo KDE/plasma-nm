@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-24 00:45+0000\n"
+"POT-Creation-Date: 2026-04-24 00:45+0000\n"
 "PO-Revision-Date: 2017-12-17 18:01+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -1111,12 +1111,12 @@ msgid "Gateway"
 msgstr "мрежни излаз"
 
 # >> @title:window
-#: editor/settings/security802-1x.cpp:503
+#: editor/settings/security802-1x.cpp:525
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Алтернативна поклапања теме"
 
-#: editor/settings/security802-1x.cpp:505
+#: editor/settings/security802-1x.cpp:527
 #, fuzzy, kde-format
 #| msgid ""
 #| "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -1131,7 +1131,7 @@ msgstr ""
 "li><li>EMAIL: &lt;е‑пошта&gt;</li><li>URI: &lt;УРИ, нпр. http://www.kde."
 "org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:522
+#: editor/settings/security802-1x.cpp:544
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Повезуј се само на ове сервере"

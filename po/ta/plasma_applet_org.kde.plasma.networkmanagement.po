@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:46+0000\n"
+"POT-Creation-Date: 2026-04-25 00:47+0000\n"
 "PO-Revision-Date: 2025-11-30 11:28+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -156,7 +156,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "விமானப் பயன்முறையை இயக்க நடு-கிளிக் செய்யுங்கள்"
 
-#: main.qml:71 Toolbar.qml:82
+#: main.qml:71 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "அருகலையை இயக்கு"
@@ -197,35 +197,35 @@ msgstr "\"%1\" பிணையத்தில் இன்னொரு சாத
 msgid "Wi-Fi password:"
 msgstr "அருகலை கடவுச்சொல்:"
 
-#: Toolbar.qml:131
+#: Toolbar.qml:124
 #, kde-format
 msgid "Enable mobile data"
 msgstr "கைபேசி இணையத்தை இயக்கு"
 
-#: Toolbar.qml:156
+#: Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "விமான பயன்முறையை முடக்கு<nl/><nl/>இது Bluetooth மற்றும் அருகலையை இயக்கும்"
 
-#: Toolbar.qml:157
+#: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "விமான பயன்முறையை இயக்கு<nl/><nl/>இது Bluetooth மற்றும் அருகலையை முடக்கும்"
 
-#: Toolbar.qml:170
+#: Toolbar.qml:176
 #, kde-format
 msgid "Hotspot"
 msgstr "ஹாட்ஸ்பாட்"
 
-#: Toolbar.qml:187
+#: Toolbar.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "அருகலை முடக்கப்பட்டுள்ளதால் ஹாட்ஸ்பாட்டை உருவாக்க முடியாது."
 
-#: Toolbar.qml:189
+#: Toolbar.qml:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -236,31 +236,31 @@ msgstr ""
 "தற்போதைய அருகலை பிணையத்திலிருந்து வெளியேறவும், அல்லது இன்னோரு வானொலிச்சாதனத்தை "
 "இணைக்கவும்."
 
-#: Toolbar.qml:191
+#: Toolbar.qml:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "ஹாட்ஸ்பாட்டை முடக்கு"
 
-#: Toolbar.qml:193
+#: Toolbar.qml:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "ஹாட்ஸ்பாட்டை உருவாக்கு"
 
-#: Toolbar.qml:221
+#: Toolbar.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "அருகலைக்கான QR குறியை வருடு"
 
-#: Toolbar.qml:226
+#: Toolbar.qml:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "ஓர் QR குறியை வருடி அதற்குரிய அருகலை பிணையத்தில் இணையலாம்"
 
-#: Toolbar.qml:228
+#: Toolbar.qml:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -270,7 +270,7 @@ msgstr ""
 "ஓர் QR குறியை வருடி அதற்குரிய அருகலை பிணையத்தில் இணையும் அம்சத்தைப் பயன்படுத்த Qrca "
 "எனும் செயலியை நிறுவவும்."
 
-#: Toolbar.qml:247
+#: Toolbar.qml:253
 #, kde-format
 msgid "Configure network connections…"
 msgstr "பிணைய இணைப்புகளை அமை..."

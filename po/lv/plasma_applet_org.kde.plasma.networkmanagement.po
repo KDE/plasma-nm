@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_networkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:46+0000\n"
+"POT-Creation-Date: 2026-04-25 00:47+0000\n"
 "PO-Revision-Date: 2026-03-03 18:34+0200\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -160,7 +160,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Lidmašīnas režīmu varat ieslēgt ar peles vidējo pogu"
 
-#: main.qml:71 Toolbar.qml:82
+#: main.qml:71 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Ieslēgt „Wi-Fi“"
@@ -201,37 +201,37 @@ msgstr "Skenējiet šo kvadrātkodu citā ierīcē, lai savienotos ar „%1“ t
 msgid "Wi-Fi password:"
 msgstr "„Wi-Fi“ parole:"
 
-#: Toolbar.qml:131
+#: Toolbar.qml:124
 #, kde-format
 msgid "Enable mobile data"
 msgstr "Ieslēgt mobilos datus"
 
-#: Toolbar.qml:156
+#: Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "Izslēgt lidmašīnas režīmu<nl/><nl/>Šī darbība ieslēgs „Wi-Fi“ un „Bluetooth“"
 
-#: Toolbar.qml:157
+#: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "Ieslēgt lidmašīnas režīmu<nl/><nl/>Šī darbība izslēgs „Wi-Fi“ un „Bluetooth“"
 
-#: Toolbar.qml:170
+#: Toolbar.qml:176
 #, kde-format
 msgid "Hotspot"
 msgstr "Tīklājs"
 
-#: Toolbar.qml:187
+#: Toolbar.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "Nevar izveidot tīklāju, jo „Wi-Fi“ ir izslēgts."
 
-#: Toolbar.qml:189
+#: Toolbar.qml:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -242,31 +242,31 @@ msgstr ""
 "Atvienojieties no pašreizējā „Wi-Fi“ tīkla vai ierīcei pievienojiet vēl kādu "
 "bezvadu raidītāju."
 
-#: Toolbar.qml:191
+#: Toolbar.qml:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Izslēgt tīklāju"
 
-#: Toolbar.qml:193
+#: Toolbar.qml:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Izveidot tīklāju"
 
-#: Toolbar.qml:221
+#: Toolbar.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "Skenēt „Wi-Fi“ kvadrātkodu"
 
-#: Toolbar.qml:226
+#: Toolbar.qml:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Skenēt kvadrātkodu, lai savienotos ar „Wi-Fi“ tīklu."
 
-#: Toolbar.qml:228
+#: Toolbar.qml:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -276,7 +276,7 @@ msgstr ""
 "Lai skenētu kvadrātkodu un savienotos ar „Wi-Fi“ tīklu, instalējiet QRCA "
 "svītrkodu skeneri"
 
-#: Toolbar.qml:247
+#: Toolbar.qml:253
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Konfigurēt tīkla savienojumus..."

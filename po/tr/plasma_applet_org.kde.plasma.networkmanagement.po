@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:46+0000\n"
+"POT-Creation-Date: 2026-04-25 00:47+0000\n"
 "PO-Revision-Date: 2025-11-09 21:59+0300\n"
 "Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -161,7 +161,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Uçak Kipi’ni açmak için orta tıklayın"
 
-#: main.qml:71 Toolbar.qml:82
+#: main.qml:71 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi’yi Etkinleştir"
@@ -202,12 +202,12 @@ msgstr "“%1” ağına bağlanmak için bu kare kodu başka bir aygıtla taray
 msgid "Wi-Fi password:"
 msgstr "Wi-Fi parolası:"
 
-#: Toolbar.qml:131
+#: Toolbar.qml:124
 #, kde-format
 msgid "Enable mobile data"
 msgstr "Mobil veriyi etkinleştir"
 
-#: Toolbar.qml:156
+#: Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
@@ -215,7 +215,7 @@ msgstr ""
 "Uçak Kipi’ni devre dışı bırak<nl/><nl/>Bu, Wi-Fi’yi ve Bluetooth’u "
 "etkinleştirir"
 
-#: Toolbar.qml:157
+#: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
@@ -223,18 +223,18 @@ msgstr ""
 "Uçak Kipi’ni etkinleştir<nl/><nl/>Bu, Wi-Fi’yi ve Bluetooth’u devre dışı "
 "bırakır"
 
-#: Toolbar.qml:170
+#: Toolbar.qml:176
 #, kde-format
 msgid "Hotspot"
 msgstr "Erişim Noktası"
 
-#: Toolbar.qml:187
+#: Toolbar.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "Wi-Fi devre dışı olduğundan bir erişim noktası oluşturulamıyor."
 
-#: Toolbar.qml:189
+#: Toolbar.qml:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -245,31 +245,31 @@ msgstr ""
 "anda bağlı olunan Wi-Fi ağından ayrılın veya başka bir kablosuz ağa/radyo "
 "ögesine bağlanın."
 
-#: Toolbar.qml:191
+#: Toolbar.qml:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Erişim noktasını devre dışı bırak"
 
-#: Toolbar.qml:193
+#: Toolbar.qml:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Erişim noktası oluştur"
 
-#: Toolbar.qml:221
+#: Toolbar.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "Wi-Fi Kare Kodunu Tara"
 
-#: Toolbar.qml:226
+#: Toolbar.qml:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Bir Wi-Fi ağına bağlanmak için kare kodu taratın."
 
-#: Toolbar.qml:228
+#: Toolbar.qml:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -279,7 +279,7 @@ msgstr ""
 "Bir Wi-Fi ağına bağlanan bir kare kodu okutmak için QRCA Barkod Tarayıcısı "
 "uygulamasını kurun."
 
-#: Toolbar.qml:247
+#: Toolbar.qml:253
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Ağ Bağlantılarını Yapılandır…"

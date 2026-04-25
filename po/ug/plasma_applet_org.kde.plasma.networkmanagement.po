@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 00:46+0000\n"
+"POT-Creation-Date: 2026-04-25 00:47+0000\n"
 "PO-Revision-Date: 2026-04-09 12:37-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -157,7 +157,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "ئوتتۇرا توپچە چېكىلسە ئايروپىلان ھالىتىنى ئاچىدۇ"
 
-#: main.qml:71 Toolbar.qml:82
+#: main.qml:71 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi نى قوزغات"
@@ -198,37 +198,37 @@ msgstr "«%1» تورغا باغلىنىش ئۈچۈن باشقا بىر ئۈسك
 msgid "Wi-Fi password:"
 msgstr "Wi-Fi ئىم:"
 
-#: Toolbar.qml:131
+#: Toolbar.qml:124
 #, kde-format
 msgid "Enable mobile data"
 msgstr "كۆچمە سانلىق مەلۇماتنى قوزغات"
 
-#: Toolbar.qml:156
+#: Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "ئايروپىلان ھالىتىنى چەكلە<nl/><nl/>بۇ مەشغۇلات Wi-Fi ۋە كۆكچىشنى قوزغىتىدۇ"
 
-#: Toolbar.qml:157
+#: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "ئايروپىلان ھالىتىنى قوزغات<nl/><nl/>بۇ مەشغۇلات Wi-Fi ۋە كۆكچىشنى چەكلەيدۇ"
 
-#: Toolbar.qml:170
+#: Toolbar.qml:176
 #, kde-format
 msgid "Hotspot"
 msgstr "قىزىق نۇقتا"
 
-#: Toolbar.qml:187
+#: Toolbar.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "قىزىق نۇقتا قۇرالمايدۇ چۈنكى Wi-Fi چەكلەنگەن."
 
-#: Toolbar.qml:189
+#: Toolbar.qml:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -238,31 +238,31 @@ msgstr ""
 "قىزىق نۇقتا قۇرالمايدۇ چۈنكى بارلىق سىمسىز تور كارتىسى ئىشلىتىلىۋاتىدۇ. "
 "نۆۋەتتىكى Wi-Fi تورىنى تاقاڭ ياكى باشقا بىر سىمسىز تور كارتىسىنى باغلاڭ."
 
-#: Toolbar.qml:191
+#: Toolbar.qml:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "قىزىق نۇقتىنى چەكلەيدۇ"
 
-#: Toolbar.qml:193
+#: Toolbar.qml:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "قىزىق نۇقتا قۇرىدۇ"
 
-#: Toolbar.qml:221
+#: Toolbar.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "Wi-Fi QR كودىنى تارا"
 
-#: Toolbar.qml:226
+#: Toolbar.qml:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Wi-Fi تورىغا باغلىنىش ئۈچۈن QR كودى تارىلىدۇ"
 
-#: Toolbar.qml:228
+#: Toolbar.qml:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -272,7 +272,7 @@ msgstr ""
 "Wi-Fi تورىغا باغلىنىش ئۈچۈن QRCA سىزىقلىق كود تارىغۇچنى ئورنىتىپ QR كودى "
 "تارىلىدۇ"
 
-#: Toolbar.qml:247
+#: Toolbar.qml:253
 #, kde-format
 msgid "Configure network connections…"
 msgstr "تور باغلىنىشىنى سەپلەيدۇ…"

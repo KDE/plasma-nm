@@ -89,7 +89,7 @@ msgstr "未知的 VPN 类型"
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
-msgstr ""
+msgstr " (复制)"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -172,7 +172,7 @@ msgstr "无法连接到此网络，因为系统检测不到它。"
 #: qml/ConnectionItem.qml:94
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
-msgstr ""
+msgstr "创建副本"
 
 #: qml/ConnectionItem.qml:102
 msgid "Delete"

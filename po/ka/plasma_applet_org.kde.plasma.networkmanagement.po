@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-17 02:42+0000\n"
+"POT-Creation-Date: 2026-04-25 02:45+0000\n"
 "PO-Revision-Date: 2025-11-12 07:02+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -157,7 +157,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "შუა წკაპი თვითმფრინავის რეჟიმის ჩასართავად"
 
-#: main.qml:71 Toolbar.qml:82
+#: main.qml:71 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi-ს ჩართვა"
@@ -199,37 +199,37 @@ msgstr ""
 msgid "Wi-Fi password:"
 msgstr "Wi-Fi-ის პაროლი:"
 
-#: Toolbar.qml:131
+#: Toolbar.qml:124
 #, kde-format
 msgid "Enable mobile data"
 msgstr "მობილური ინტერნეტის ჩართვა"
 
-#: Toolbar.qml:156
+#: Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "თვითმფრინავის რეჟიმის გამორთვა<nl/><nl/> ეს ჩართავს: Wi-Fi და Bluetooth"
 
-#: Toolbar.qml:157
+#: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr ""
 "თვითმფრინავის რეჟიმის ჩართვა<nl/><nl/> ეს გამორთავს: Wi-Fi და Bluetooth"
 
-#: Toolbar.qml:170
+#: Toolbar.qml:176
 #, kde-format
 msgid "Hotspot"
 msgstr "ჰოტსპოტი"
 
-#: Toolbar.qml:187
+#: Toolbar.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "ჰოტსპოტს ვერ შექმნით, რადგან Wi-Fi გამორთულია."
 
-#: Toolbar.qml:189
+#: Toolbar.qml:195
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -240,31 +240,31 @@ msgstr ""
 "გათიშეთ მიმდინარე Wi-Fi ქსელი, ან მიუერთეთ კომპიუტერს კიდევ ერთი უსადენო "
 "რადიო."
 
-#: Toolbar.qml:191
+#: Toolbar.qml:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "ჰოტსპოტის გამორთვა"
 
-#: Toolbar.qml:193
+#: Toolbar.qml:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "ჰოტსპოტის შექმნა"
 
-#: Toolbar.qml:221
+#: Toolbar.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "Wi-Fi QR-კოდის სკანირება"
 
-#: Toolbar.qml:226
+#: Toolbar.qml:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "დაასკანირეთ QR კოდი Wi-Fi ქსელთან დასაკავშირებლად"
 
-#: Toolbar.qml:228
+#: Toolbar.qml:234
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -274,7 +274,7 @@ msgstr ""
 "დააყენეთ QRCA ბარკოდის სკანერი, რომ შეძლოთ QR კოდის სკანირება, რომელიც Wi-Fi "
 "ქსელთან დაგაკავშირებთ"
 
-#: Toolbar.qml:247
+#: Toolbar.qml:253
 #, kde-format
 msgid "Configure network connections…"
 msgstr "ქსელური შეერთებების მართვა…"

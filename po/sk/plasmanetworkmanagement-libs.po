@@ -1935,7 +1935,7 @@ msgid ""
 "prepending '0x'."
 msgstr ""
 "Voliteľné.\n"
-"Fwmark pre odchádzajúce pakety. Ak je nastvavené 0\n"
+"Fwmark pre odchádzajúce pakety. Ak je nastavené 0\n"
 " alebo 'vypnuté', táto voľba je zakázaná. Môže sa určiť\n"
 "hexadecimálne začínajúc na '0x'."
 

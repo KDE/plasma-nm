@@ -146,7 +146,7 @@ msgstr "Súkromný kľúč:"
 #: openvpn.ui:163 openvpn.ui:517
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr "Súkromný kľúč miestneho klienta vo formáre .pem."
+msgstr "Súkromný kľúč miestneho klienta vo formáte .pem."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_6)

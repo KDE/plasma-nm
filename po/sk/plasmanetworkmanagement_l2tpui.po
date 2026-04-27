@@ -303,8 +303,8 @@ msgid ""
 "<html><head/><body><p>How long the keying channel of a connection should "
 "last before being renegotiated.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Ako dlho by mal mať kľúčovací kanál pripojeniatrvať "
-"pred opätovným prerokovaním.</p></body></html>"
+"<html><head/><body><p>Ako dlho by mal kľúčovací kanál pripojenia trvať pred "
+"opätovným prerokovaním.</p></body></html>"
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)

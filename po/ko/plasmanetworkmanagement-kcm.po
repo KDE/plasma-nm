@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-20 00:49+0000\n"
-"PO-Revision-Date: 2026-02-03 22:08+0100\n"
+"PO-Revision-Date: 2026-04-26 20:56+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -88,7 +88,7 @@ msgstr "알 수 없는 VPN 형식"
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
-msgstr ""
+msgstr "(사본)"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -172,7 +172,7 @@ msgstr "이 네트워크가 감지되지 않아서 연결할 수 없습니다."
 #: qml/ConnectionItem.qml:94
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
-msgstr ""
+msgstr "복제"
 
 #: qml/ConnectionItem.qml:102
 msgid "Delete"

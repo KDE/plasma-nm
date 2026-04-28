@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-02 00:46+0000\n"
+"POT-Creation-Date: 2026-04-28 00:47+0000\n"
 "PO-Revision-Date: 2025-07-29 15:55+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -780,7 +780,7 @@ msgstr "Codice PUK:"
 msgid "Re-enter PIN code:"
 msgstr "Digita di nuovo il codice PIN:"
 
-#: secretagent.cpp:411
+#: secretagent.cpp:416
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Autenticazione a %1 non riuscita. Password errata?"

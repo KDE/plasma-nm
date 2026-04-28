@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-02 00:46+0000\n"
+"POT-Creation-Date: 2026-04-28 00:47+0000\n"
 "PO-Revision-Date: 2015-04-29 08:46+0200\n"
 "Last-Translator: Bjørn Steensrud <bjornst@skogkatt.homelinux.org>\n"
 "Language-Team: Norwegian Bokmål <l10n-no@lister.huftis.org>\n"
@@ -771,7 +771,7 @@ msgstr "PUK kode:"
 msgid "Re-enter PIN code:"
 msgstr "Tast inn ny PIN-kode igjen:"
 
-#: secretagent.cpp:411
+#: secretagent.cpp:416
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr ""

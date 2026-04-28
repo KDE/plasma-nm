@@ -388,7 +388,7 @@ msgstr "New PIN Required"
 #: openconnectwebauthdialog.cpp:174
 #, kde-format
 msgid "Set new PIN for your security key"
-msgstr "Nastaviť new PIN for your security key"
+msgstr "Nastaviť nový PIN pre váš bezpečnostný kľúč"
 
 #: openconnectwebauthdialog.cpp:176
 #, kde-format

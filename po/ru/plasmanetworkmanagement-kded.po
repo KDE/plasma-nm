@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-02 00:46+0000\n"
+"POT-Creation-Date: 2026-04-28 00:47+0000\n"
 "PO-Revision-Date: 2025-10-28 19:59+0300\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -778,7 +778,7 @@ msgstr "PUK-код:"
 msgid "Re-enter PIN code:"
 msgstr "Повторите PIN-код:"
 
-#: secretagent.cpp:411
+#: secretagent.cpp:416
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Ошибка проверки подлинности %1."

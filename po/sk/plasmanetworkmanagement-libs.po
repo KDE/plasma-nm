@@ -1323,12 +1323,11 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
-"A score that helps choose the best path for data packets to reach their "
-"destination,\n"
-"na základe factors like distance, delay, and reliability.\n"
+"Hodnota, ktorá pomáha vybrať najlepšiu cestu pre dátové pakety k ich cieľu,\n"
+"na základe faktorov ako vzdialenosť, oneskorenie a spoľahlivosť.\n"
 "\n"
-"Default value -1 means that NetworkManager gets to choose and manage the "
-"actual metric of the route."
+"Predvolená hodnota -1 znamená, že NetworkManager si sám zvolí a spravuje "
+"skutočnú metriku trasy."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:97

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2021-06-15 23:26+0300\n"
+"PO-Revision-Date: 2026-04-29 00:53+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.0\n"
+"X-Generator: Poedit 3.8\n"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_authenfication)
 #: pptpadvanced.ui:17
@@ -272,7 +272,7 @@ msgstr ""
 #: pptpprop.ui:153
 #, kde-format
 msgid "NT Domain:"
-msgstr "NT sritis:"
+msgstr "NT domenas:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, edt_ntDomain)
 #: pptpprop.ui:167
@@ -281,7 +281,7 @@ msgid ""
 "Append the domain name <domain> to the local host name for\n"
 "authenticating purposes."
 msgstr ""
-"Tapatybės nustatymo sumetimais, pridėti srities pavadinimą <domain>\n"
+"Tapatybės nustatymo sumetimais, pridėti domeno pavadinimą <domain>\n"
 "į vietinio mazgo pavadinimą."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)

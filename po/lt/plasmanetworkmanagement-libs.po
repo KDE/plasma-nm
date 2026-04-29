@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-28 02:43+0000\n"
-"PO-Revision-Date: 2026-02-21 01:41+0200\n"
+"PO-Revision-Date: 2026-04-29 01:13+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -541,7 +541,7 @@ msgstr "Taisyti DNS serverius"
 #: editor/settings/ipv4widget.cpp:491 editor/settings/ipv6widget.cpp:431
 #, kde-format
 msgid "Edit DNS search domains"
-msgstr "Taisyti DNS paieškos sritis"
+msgstr "Taisyti DNS paieškos domenus"
 
 #: editor/settings/ipv6widget.cpp:42 editor/widgets/ipv6routeswidget.cpp:26
 #, kde-format
@@ -684,7 +684,7 @@ msgstr "Tapatybė:"
 #: editor/settings/ui/802-1x.ui:730
 #, kde-format
 msgid "Domain:"
-msgstr "Sritis:"
+msgstr "Domenas:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/802-1x.ui:140
@@ -1268,7 +1268,7 @@ msgstr "Taisyti DNS serverių sąrašą"
 #, kde-format
 msgctxt "@info"
 msgid "Search Domains:"
-msgstr "Ieškoti sričių:"
+msgstr "Ieškoti domenuose:"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
 #: editor/settings/ui/ipv4.ui:164 editor/settings/ui/ipv6.ui:270
@@ -1277,14 +1277,14 @@ msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
 "separate entries."
 msgstr ""
-"Naudokite šį lauką, norėdami nurodyti vieną ar daugiau DNS sričių, kuriose "
+"Naudokite šį lauką, norėdami nurodyti vieną ar daugiau DNS domenų, kuriuose "
 "bus atliekama paieška. Įrašų atskyrimui, naudokite „,“."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:171 editor/settings/ui/ipv6.ui:277
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
-msgstr "Taisyti DNS sričių, kuriose bus atliekama paieška, sąrašą"
+msgstr "Taisyti DNS domenų, kuriuose bus atliekama paieška, sąrašą"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
 #: editor/settings/ui/ipv4.ui:189
@@ -2203,7 +2203,7 @@ msgstr ""
 "Nebūtina.\n"
 "            Galutinis ryšio taškas. Gali būti\n"
 "            IPv4 adresas, IPv6 adresas, ar FQDN (visas\n"
-"            srities vardas, kaip pavyzdžiui abc.com). Jei nurodytas,\n"
+"            domeno vardas, kaip pavyzdžiui abc.com). Jei nurodytas,\n"
 "            taip pat privalo būti nustatytas galutinio taško prievadas."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)

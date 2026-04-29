@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:47+0000\n"
+"POT-Creation-Date: 2026-04-29 00:48+0000\n"
 "PO-Revision-Date: 2014-10-28 10:24+0530\n"
 "Last-Translator: Chetan Khona <chetan@kompkin.com>\n"
 "Language-Team: Marathi <kde-i18n-doc@kde.org>\n"
@@ -142,51 +142,51 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: main.qml:32
+#: main.qml:37
 #, kde-format
 msgid "Networks"
 msgstr "नेटवर्क्स"
 
-#: main.qml:41
+#: main.qml:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 
-#: main.qml:43
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: main.qml:71 Toolbar.qml:74
+#: main.qml:76 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: main.qml:82
+#: main.qml:87
 #, kde-format
 msgid "Enable Mobile Data"
 msgstr ""
 
-#: main.qml:94
+#: main.qml:99
 #, fuzzy, kde-format
 #| msgid "Wireless enabled"
 msgid "Enable Airplane Mode"
 msgstr "वायरलेस कार्यान्वित केले"
 
-#: main.qml:106
+#: main.qml:111
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: main.qml:116
+#: main.qml:121
 #, fuzzy, kde-format
 #| msgid "Edit connections..."
 msgid "&Configure Network Connections…"
 msgstr "जुळवण्या संपादित करा..."
 
-#: PopupDialog.qml:50
+#: PopupDialog.qml:58
 #, fuzzy, kde-format
 #| msgid "Edit connections..."
 msgctxt "@action:button"

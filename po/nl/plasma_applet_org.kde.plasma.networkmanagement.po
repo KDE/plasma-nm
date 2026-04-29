@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:47+0000\n"
+"POT-Creation-Date: 2026-04-29 00:48+0000\n"
 "PO-Revision-Date: 2025-11-11 00:33+0100\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -139,49 +139,49 @@ msgstr "Mobiele gegevens aanzetten om te zoeken naar netwerken"
 msgid "Copy"
 msgstr "Kopiëren"
 
-#: main.qml:32
+#: main.qml:37
 #, kde-format
 msgid "Networks"
 msgstr "Netwerken"
 
-#: main.qml:41
+#: main.qml:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Midden-klik om modus vliegtuigmodus uit te schakelen"
 
-#: main.qml:43
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Midden-klik om vliegtuigmodus in te schakelen"
 
-#: main.qml:71 Toolbar.qml:74
+#: main.qml:76 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi inschakelen"
 
-#: main.qml:82
+#: main.qml:87
 #, kde-format
 msgid "Enable Mobile Data"
 msgstr "Mobiele gegevens inschakelen"
 
-#: main.qml:94
+#: main.qml:99
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Vliegtuigmodus inschakelen"
 
-#: main.qml:106
+#: main.qml:111
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Netwerkaanmeldpagina openen…"
 
-#: main.qml:116
+#: main.qml:121
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Netwerkverbindingen &configureren…"
 
-#: PopupDialog.qml:50
+#: PopupDialog.qml:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"

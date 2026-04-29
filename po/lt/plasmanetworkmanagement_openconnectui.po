@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-01 00:47+0000\n"
-"PO-Revision-Date: 2025-11-19 20:18+0200\n"
+"PO-Revision-Date: 2026-04-29 00:47+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -284,10 +284,9 @@ msgstr "Mašinos liudijimas:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #: openconnectprop.ui:261
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "Machine Private Key:"
-msgstr "Privatusis raktas:"
+msgstr "Mašinos privatusis raktas:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
@@ -297,10 +296,9 @@ msgstr "Naudotojo liudijimas:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: openconnectprop.ui:299
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "User Private Key:"
-msgstr "Privatusis raktas:"
+msgstr "Naudotojo privatusis raktas:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:47+0000\n"
+"POT-Creation-Date: 2026-04-29 00:48+0000\n"
 "PO-Revision-Date: 2025-11-09 07:24-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -145,49 +145,49 @@ msgstr "Ativar a rede móvel para procurar por redes"
 msgid "Copy"
 msgstr "Copiar"
 
-#: main.qml:32
+#: main.qml:37
 #, kde-format
 msgid "Networks"
 msgstr "Redes"
 
-#: main.qml:41
+#: main.qml:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Clique do meio para desligar o modo avião"
 
-#: main.qml:43
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Clique do meio para ligar o modo avião"
 
-#: main.qml:71 Toolbar.qml:74
+#: main.qml:76 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Habilitar Wi-Fi"
 
-#: main.qml:82
+#: main.qml:87
 #, kde-format
 msgid "Enable Mobile Data"
 msgstr "Habilitar rede móvel"
 
-#: main.qml:94
+#: main.qml:99
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Habilitar modo avião"
 
-#: main.qml:106
+#: main.qml:111
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Abrir página de autenticação da rede…"
 
-#: main.qml:116
+#: main.qml:121
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configurar as conexões de rede…"
 
-#: PopupDialog.qml:50
+#: PopupDialog.qml:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"

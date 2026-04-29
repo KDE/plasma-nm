@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:47+0000\n"
+"POT-Creation-Date: 2026-04-29 00:48+0000\n"
 "PO-Revision-Date: 2026-04-09 12:37-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur Computer Science Association <UKIJ@yahoogroups.com>\n"
@@ -140,49 +140,49 @@ msgstr "تور ئىزدەش ئۈچۈن كۆچمە تور سانلىق مەلۇم
 msgid "Copy"
 msgstr "كۆچۈر"
 
-#: main.qml:32
+#: main.qml:37
 #, kde-format
 msgid "Networks"
 msgstr "تور"
 
-#: main.qml:41
+#: main.qml:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "ئوتتۇرا توپچە چېكىلسە ئايروپىلان ھالىتىنى تاقايدۇ"
 
-#: main.qml:43
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "ئوتتۇرا توپچە چېكىلسە ئايروپىلان ھالىتىنى ئاچىدۇ"
 
-#: main.qml:71 Toolbar.qml:74
+#: main.qml:76 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi نى قوزغات"
 
-#: main.qml:82
+#: main.qml:87
 #, kde-format
 msgid "Enable Mobile Data"
 msgstr "كۆچمە سانلىق مەلۇماتنى قوزغات"
 
-#: main.qml:94
+#: main.qml:99
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "ئايروپىلان ھالىتىنى قوزغات"
 
-#: main.qml:106
+#: main.qml:111
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "تورنىڭ تىزىمغا كىرىش بېتىنى ئاچىدۇ…"
 
-#: main.qml:116
+#: main.qml:121
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "تور باغلىنىشىنى سەپلەيدۇ(&C)…"
 
-#: PopupDialog.qml:50
+#: PopupDialog.qml:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"

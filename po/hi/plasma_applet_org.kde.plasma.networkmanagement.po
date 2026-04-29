@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:47+0000\n"
+"POT-Creation-Date: 2026-04-29 00:48+0000\n"
 "PO-Revision-Date: 2024-12-15 17:37+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Hindi <fedora-trans-hi@redhat.com>\n"
@@ -143,50 +143,50 @@ msgstr ""
 msgid "Copy"
 msgstr "प्रतिलिपि"
 
-#: main.qml:32
+#: main.qml:37
 #, kde-format
 msgid "Networks"
 msgstr "नेटवर्क"
 
-#: main.qml:41
+#: main.qml:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "एयरप्लेन मोड को बंद करने के लिए मध्य-क्लिक करें"
 
-#: main.qml:43
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "एयरप्लेन मोड चालू करने के लिए मध्य-क्लिक करें"
 
-#: main.qml:71 Toolbar.qml:74
+#: main.qml:76 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "वाई-फाई सक्षम करें"
 
-#: main.qml:82
+#: main.qml:87
 #, fuzzy, kde-format
 #| msgid "Enable Mobile Network"
 msgid "Enable Mobile Data"
 msgstr "मोबाइल नेटवर्क सक्षम करें"
 
-#: main.qml:94
+#: main.qml:99
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "हवाई जहाज मोड सक्षम करें"
 
-#: main.qml:106
+#: main.qml:111
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "नेटवर्क लॉगिन पेज खोलें…"
 
-#: main.qml:116
+#: main.qml:121
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&नेटवर्क कनेक्शन कॉन्फ़िगर करें…"
 
-#: PopupDialog.qml:50
+#: PopupDialog.qml:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"

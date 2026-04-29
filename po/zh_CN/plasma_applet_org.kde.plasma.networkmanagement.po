@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:47+0000\n"
+"POT-Creation-Date: 2026-04-29 00:48+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -138,49 +138,49 @@ msgstr "打开移动数据以搜索网络"
 msgid "Copy"
 msgstr "复制"
 
-#: main.qml:32
+#: main.qml:37
 #, kde-format
 msgid "Networks"
 msgstr "网络"
 
-#: main.qml:41
+#: main.qml:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "中键单击以关闭飞行模式"
 
-#: main.qml:43
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "中键单击以启用飞行模式"
 
-#: main.qml:71 Toolbar.qml:74
+#: main.qml:76 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "启用 Wi-Fi"
 
-#: main.qml:82
+#: main.qml:87
 #, kde-format
 msgid "Enable Mobile Data"
 msgstr "启用移动数据"
 
-#: main.qml:94
+#: main.qml:99
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "启用飞行模式"
 
-#: main.qml:106
+#: main.qml:111
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "打开网络登录页面…"
 
-#: main.qml:116
+#: main.qml:121
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "配置网络连接(&C)…"
 
-#: PopupDialog.qml:50
+#: PopupDialog.qml:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"

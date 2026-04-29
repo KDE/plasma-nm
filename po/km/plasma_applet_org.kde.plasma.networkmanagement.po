@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:47+0000\n"
+"POT-Creation-Date: 2026-04-29 00:48+0000\n"
 "PO-Revision-Date: 2012-07-09 11:08+0700\n"
 "Last-Translator: Khoem Sokhem <khoemsokhem@khmeros.info>\n"
 "Language-Team: Khmer <support@khmeros.info>\n"
@@ -146,53 +146,53 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: main.qml:32
+#: main.qml:37
 #, fuzzy, kde-format
 #| msgid "Net&work:"
 msgid "Networks"
 msgstr "បណ្ដាញ ៖"
 
-#: main.qml:41
+#: main.qml:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 
-#: main.qml:43
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: main.qml:71 Toolbar.qml:74
+#: main.qml:76 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: main.qml:82
+#: main.qml:87
 #, fuzzy, kde-format
 #| msgid "Username on this network"
 msgid "Enable Mobile Data"
 msgstr "ឈ្មោះ​អ្នក​ប្រើ​នៅ​លើ​បណ្ដាញ​នេះ"
 
-#: main.qml:94
+#: main.qml:99
 #, fuzzy, kde-format
 #| msgid "Wireless"
 msgid "Enable Airplane Mode"
 msgstr "ឥត​ខ្សែ"
 
-#: main.qml:106
+#: main.qml:111
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: main.qml:116
+#: main.qml:121
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgid "&Configure Network Connections…"
 msgstr "កំណត់​រចនា​សម្ព័ន្ធ​ការ​ជូនដំណឹង​...​"
 
-#: PopupDialog.qml:50
+#: PopupDialog.qml:58
 #, fuzzy, kde-format
 #| msgctxt "Edit connection dialog caption"
 #| msgid "Edit Network Connection"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui.po\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:47+0000\n"
+"POT-Creation-Date: 2026-04-29 00:48+0000\n"
 "PO-Revision-Date: 2009-02-05 06:35-0500\n"
 "Last-Translator: Kevin Scannell <kscanne@gmail.com>\n"
 "Language-Team: Irish <gaeilge-gnulinux@lists.sourceforge.net>\n"
@@ -141,53 +141,53 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: main.qml:32
+#: main.qml:37
 #, fuzzy, kde-format
 #| msgid "Network ID"
 msgid "Networks"
 msgstr "Aitheantas an Líonra"
 
-#: main.qml:41
+#: main.qml:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 
-#: main.qml:43
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: main.qml:71 Toolbar.qml:74
+#: main.qml:76 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: main.qml:82
+#: main.qml:87
 #, fuzzy, kde-format
 #| msgid "Username on this network"
 msgid "Enable Mobile Data"
 msgstr "Ainm úsáideora ar an líonra seo"
 
-#: main.qml:94
+#: main.qml:99
 #, fuzzy, kde-format
 #| msgid "Wireless"
 msgid "Enable Airplane Mode"
 msgstr "Gan Sreang"
 
-#: main.qml:106
+#: main.qml:111
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr ""
 
-#: main.qml:116
+#: main.qml:121
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgid "&Configure Network Connections…"
 msgstr "Cumraigh Fógairt..."
 
-#: PopupDialog.qml:50
+#: PopupDialog.qml:58
 #, fuzzy, kde-format
 #| msgid "Configure Notifications..."
 msgctxt "@action:button"

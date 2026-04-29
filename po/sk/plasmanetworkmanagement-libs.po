@@ -2014,10 +2014,10 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
-"Ak je určené, nariadi PPPeE, aby iba inicializoval sedenia s prístupom "
-"koncentrátorov, ktoré poskytujú určenú službu. Pre väčšinu poskytovateľov by "
-"to malo ostať prázdne. Vyžaduje sa to iba ak je viacero koncentrátorov "
-"prístupu alebo je známe, že sa vyžaduje určená služba."
+"Ak je určené, nariadi PPPoE, aby iba inicializoval sedenia s prístupovými "
+"koncentrátormi, ktoré poskytujú určenú službu. Pre väčšinu poskytovateľov by "
+"to malo ostať prázdne. Vyžaduje sa to iba ak je viacero prístupových "
+"koncentrátorov alebo je známe, že sa vyžaduje určená služba."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31

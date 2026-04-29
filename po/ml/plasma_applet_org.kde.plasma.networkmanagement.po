@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-25 00:47+0000\n"
+"POT-Creation-Date: 2026-04-29 00:48+0000\n"
 "PO-Revision-Date: 2019-12-29 06:50+0000\n"
 "Last-Translator: Subin Siby <subins2000@gmail.com>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -139,52 +139,52 @@ msgstr ""
 msgid "Copy"
 msgstr "പകര്‍ത്തുക"
 
-#: main.qml:32
+#: main.qml:37
 #, kde-format
 msgid "Networks"
 msgstr "ശൃംഖലകൾ"
 
-#: main.qml:41
+#: main.qml:46
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr ""
 
-#: main.qml:43
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr ""
 
-#: main.qml:71 Toolbar.qml:74
+#: main.qml:76 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr ""
 
-#: main.qml:82
+#: main.qml:87
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable Mobile Data"
 msgstr "മൊബൈൽ ശൃംഖല പ്രവര്‍ത്തനസജ്ജമാക്കുക"
 
-#: main.qml:94
+#: main.qml:99
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr ""
 
-#: main.qml:106
+#: main.qml:111
 #, fuzzy, kde-format
 #| msgid "Open Network Login Page..."
 msgid "Open Network Login Page…"
 msgstr "ശൃംഖലയുടെ പ്രവേശന താള്‍ തുറക്കുക..."
 
-#: main.qml:116
+#: main.qml:121
 #, fuzzy, kde-format
 #| msgid "Configure network connections..."
 msgid "&Configure Network Connections…"
 msgstr "ശൃംഖലയുടെ ബന്ധങ്ങള്‍ ക്രമീകരിക്കുക..."
 
-#: PopupDialog.qml:50
+#: PopupDialog.qml:58
 #, fuzzy, kde-format
 #| msgid "Configure network connections..."
 msgctxt "@action:button"

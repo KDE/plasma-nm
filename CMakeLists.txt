@@ -78,6 +78,7 @@ find_package(KF6 ${KF6_MIN_VERSION} REQUIRED
 find_package(Plasma ${PROJECT_DEP_VERSION} REQUIRED)
 
 ecm_find_qmlmodule(org.kde.prison 1.0)
+ecm_find_qmlmodule(org.kde.kirigamiaddons.formcard REQUIRED)
 
 find_package(KF6Kirigami ${KF6_MIN_VERSION} CONFIG)
 set_package_properties(KF6Kirigami PROPERTIES

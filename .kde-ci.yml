@@ -30,6 +30,7 @@ Dependencies:
     'frameworks/kquickcharts': '@latest-kf6'
     'third-party/qcoro': '@latest'
     'frameworks/ksvg': '@latest-kf6'
+    'libraries/kirigami-addons': '@latest-kf6'
     'plasma/libplasma': '@same'
 Options:
  require-passing-tests-on: ['Linux', 'FreeBSD']

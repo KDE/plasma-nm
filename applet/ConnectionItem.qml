@@ -58,7 +58,7 @@ PlasmaExtras.ExpandableListItem {
             return true;
         }
 
-        icon.name: isDeactivated ? "network-connect" : "network-disconnect"
+        icon.name: isDeactivated ? "network-connect-symbolic" : "network-disconnect-symbolic"
         text: isDeactivated ? i18n("Connect") : i18n("Disconnect")
         onTriggered: {
             connectionItem.changeState()

@@ -1,13 +1,13 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2021-2026 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-20 00:49+0000\n"
-"PO-Revision-Date: 2025-11-30 13:46+0530\n"
+"PO-Revision-Date: 2026-05-02 17:57+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 26.04.0\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -88,7 +88,7 @@ msgstr "தெரியாத வகையான VPN"
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
-msgstr ""
+msgstr "(நகல்)"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -175,7 +175,7 @@ msgstr "இப்பிணையத்தை தற்போது கண்ட�
 #: qml/ConnectionItem.qml:94
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
-msgstr ""
+msgstr "நகலெடு"
 
 #: qml/ConnectionItem.qml:102
 msgid "Delete"

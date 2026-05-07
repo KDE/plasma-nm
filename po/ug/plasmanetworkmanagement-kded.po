@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-28 00:47+0000\n"
+"POT-Creation-Date: 2026-05-07 00:46+0000\n"
 "PO-Revision-Date: 2026-04-09 12:41-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -772,7 +772,7 @@ msgstr "PUK كودى:"
 msgid "Re-enter PIN code:"
 msgstr "PIN كودى قايتا كىرگۈزۈلىدۇ:"
 
-#: secretagent.cpp:416
+#: secretagent.cpp:417
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1 نىڭ كىملىكىنى دەلىللىيەلمىدى، ئىم خاتامۇ؟"

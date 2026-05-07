@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-28 00:47+0000\n"
+"POT-Creation-Date: 2026-05-07 00:46+0000\n"
 "PO-Revision-Date: 2025-07-29 08:24+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -772,7 +772,7 @@ msgstr "קוד שחרור אישי (PUK):"
 msgid "Re-enter PIN code:"
 msgstr "נא למלא את הקוד האישי (PIN) מחדש:"
 
-#: secretagent.cpp:416
+#: secretagent.cpp:417
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "האימות מול %1 נכשל. סיסמה שגויה?"

@@ -32,6 +32,6 @@ Dependencies:
     'frameworks/ksvg': '@latest-kf6'
     'plasma/libplasma': '@same'
 Options:
- require-passing-tests-on: ['Linux', 'FreeBSD']
+ require-passing-tests-on: ['@all']
  cmake-options: ' -DBUILD_MOBILE=ON'
  run-qmllint: true

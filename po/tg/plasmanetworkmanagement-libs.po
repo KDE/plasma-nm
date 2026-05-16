@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-24 00:45+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2020-08-27 11:36+0500\n"
 "Last-Translator: Victor Ibragimov <victor.ibragimov@gmail.com>\n"
 "Language-Team: English <kde-i18n-doc@kde.org>\n"
@@ -2705,7 +2705,13 @@ msgstr ""
 msgid "Remove this Peer"
 msgstr ""
 
-#: editor/settings/wificonnectionwidget.cpp:262
+#: editor/settings/wificonnectionwidget.cpp:237
+#, kde-format
+msgctxt "@action:inmenu automatic wireless channel selection"
+msgid "Automatic"
+msgstr ""
+
+#: editor/settings/wificonnectionwidget.cpp:263
 #, kde-format
 msgid "%1 (%2 MHz)"
 msgstr ""

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-24 00:45+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2025-11-21 21:46+0100\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -2920,7 +2920,15 @@ msgstr "Új partner hozzáadása"
 msgid "Remove this Peer"
 msgstr "Partner eltávolítása"
 
-#: editor/settings/wificonnectionwidget.cpp:262
+#: editor/settings/wificonnectionwidget.cpp:237
+#, fuzzy, kde-format
+#| msgctxt "PEAP version"
+#| msgid "Automatic"
+msgctxt "@action:inmenu automatic wireless channel selection"
+msgid "Automatic"
+msgstr "Automatikus"
+
+#: editor/settings/wificonnectionwidget.cpp:263
 #, kde-format
 msgid "%1 (%2 MHz)"
 msgstr "%1 (%2 MHz)"

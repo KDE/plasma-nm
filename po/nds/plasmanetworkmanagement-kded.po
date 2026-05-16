@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2014-08-13 22:07+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -607,9 +607,10 @@ msgstr "Giff bitte dat Passwoort för't Anmaken vun de Verbinnen „%1“ in"
 
 #: passworddialog.cpp:114
 #, fuzzy, kde-format
-#| msgid "Password dialog"
-msgid "%1 password dialog"
-msgstr "Passwoort-Dialoog"
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Passwoort:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -631,9 +632,13 @@ msgstr "VPN-Anmelldaten (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Passwoort-Dialoog"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "De Verbinnen wöör wegmaakt"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -815,6 +820,14 @@ msgstr "PIN-Kode nochmaal ingeven:"
 #| msgid "Authentication to the VPN server failed."
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Identiteetprööv op den VPN-Server is fehlslaan"
+
+#, fuzzy
+#~| msgid "Password dialog"
+#~ msgid "%1 password dialog"
+#~ msgstr "Passwoort-Dialoog"
+
+#~ msgid "Password dialog"
+#~ msgstr "Passwoort-Dialoog"
 
 #, fuzzy
 #~| msgid "Please provide the password for activating connection '%1'"

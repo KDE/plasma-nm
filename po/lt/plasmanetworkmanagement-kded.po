@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2025-08-11 21:08+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -580,9 +580,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Įveskite ryšio „%1“ slaptažodį:"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "%1 slaptažodžio dialogas"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Slaptažodis:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -602,9 +604,13 @@ msgstr "VPN paslapčių (%1) dialogas"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Slaptažodžio dialogas"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "Ryšys buvo pašalintas"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -785,6 +791,12 @@ msgstr "Dar kartą įveskite PIN kodą:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Tapatybės nustatymas ties %1 patyrė nesėkmę. Neteisingas slaptažodis?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "%1 slaptažodžio dialogas"
+
+#~ msgid "Password dialog"
+#~ msgstr "Slaptažodžio dialogas"
 
 #, fuzzy
 #~| msgid "Provide the password for the wireless network '%1':"

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2023-02-18 14:52+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -588,9 +588,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Sediakan sandi untuk koneksi '%1':"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "Dialog sandi %1"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Kata sandi:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -611,9 +613,13 @@ msgstr "Dialog rahasia VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Dialog sandi"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "Koneksi telah dihapus"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -794,6 +800,12 @@ msgstr "Masukkan ulang kode PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Autentikasi terhadap %1, gagal. Apakah kata sandi salah?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "Dialog sandi %1"
+
+#~ msgid "Password dialog"
+#~ msgstr "Dialog sandi"
 
 #, fuzzy
 #~| msgid "Provide the password for the wireless network '%1':"

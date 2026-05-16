@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2025-08-03 08:04-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -585,9 +585,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Digite a senha para a conexão '%1':"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "Janela de senha %1"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Senha:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -607,9 +609,13 @@ msgstr "Janela das senhas da VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Janela de senha"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "A conexão foi removida"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -790,6 +796,12 @@ msgstr "Repita o código PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "A autenticação em %1 falhou. Senha errada?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "Janela de senha %1"
+
+#~ msgid "Password dialog"
+#~ msgstr "Janela de senha"
 
 #, fuzzy
 #~| msgid "Provide the password for the wireless network '%1':"

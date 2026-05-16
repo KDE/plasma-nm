@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2026-01-30 11:48+0100\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -581,9 +581,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Inserta le contrasigno per le connexion \"%1\":"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "%1 dialogo de contrasigno"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Contrasigno:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -603,9 +605,13 @@ msgstr "Dialogo de secretos de VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Dialogo de contrasigno"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "Le connexion esseva removite"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -786,6 +792,12 @@ msgstr "Reinserta codice PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Authentication a %1 falleva.  Contrasigno errate?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "%1 dialogo de contrasigno"
+
+#~ msgid "Password dialog"
+#~ msgstr "Dialogo de contrasigno"
 
 #, fuzzy
 #~| msgid "Provide the password for the wireless network '%1':"

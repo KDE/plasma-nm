@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2023-12-12 19:15+0100\n"
 "Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-sk@linux.sk>\n"
@@ -576,9 +576,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Zadajte heslo pre pripojenie \"%1\":"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "Dialógové okno s heslom %1"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Heslo:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -598,9 +600,13 @@ msgstr "Dialógové okno hesla pre VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Dialógové okno s heslom"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "Pripojenie bolo odstránené"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -781,6 +787,12 @@ msgstr "Znovu zadajte PIN kód:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Overenie pre %1 zlyhalo. Nesprávne heslo?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "Dialógové okno s heslom %1"
+
+#~ msgid "Password dialog"
+#~ msgstr "Dialógové okno s heslom"
 
 #~ msgid ""
 #~ "The provided password seems incorrect. Provide the password for the "

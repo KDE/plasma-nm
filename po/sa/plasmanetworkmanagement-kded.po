@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2024-12-20 21:53+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -576,9 +576,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "\"%1\" संयोजनस्य गुप्तशब्दं प्रविशतु:"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "%1 गुप्तशब्दसंवादः"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "समाभाष्:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -598,9 +600,13 @@ msgstr "VPN रहस्यानि (%1) संवादः"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "गुप्तशब्दसंवादः"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "संयोजनं निष्कासितम्"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -777,3 +783,9 @@ msgstr "पुनः पिन कोडं प्रविष्टं कु�
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1 प्रति प्रमाणीकरणं विफलम् । गलतगुप्तशब्दः ?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "%1 गुप्तशब्दसंवादः"
+
+#~ msgid "Password dialog"
+#~ msgstr "गुप्तशब्दसंवादः"

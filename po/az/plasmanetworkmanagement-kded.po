@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2025-05-06 12:02+0400\n"
 "Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -576,9 +576,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "\"%1\" bağlantısı üçün şifrə daxil edin:"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "%1 üçün şifrə daxil edilməsi"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Şifrə:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -598,9 +600,13 @@ msgstr "\"%1\" VPN bağlantısı üçün şifrə daxil edilməsi"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Şifrə daxil edilməsi dialoqu"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "Bağlantı silinib"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -781,6 +787,12 @@ msgstr "PİN kodu yenidən daxil edin:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1 doğrulaması alınmadı. Şifrə səhvdir?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "%1 üçün şifrə daxil edilməsi"
+
+#~ msgid "Password dialog"
+#~ msgstr "Şifrə daxil edilməsi dialoqu"
 
 #, fuzzy
 #~| msgid "Provide the password for the wireless network '%1':"

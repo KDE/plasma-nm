@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2025-08-16 07:40+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -578,9 +578,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Wpisz hasło do połączenia \"%1\":"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "Okno dialogowe hasła %1"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Hasło:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -600,9 +602,13 @@ msgstr "Okno dialogowe danych dostępowych VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Okno dialogowe hasła"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "Połączenie zostało usunięte"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -783,6 +789,12 @@ msgstr "Wpisz ponownie numer PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Nie udało się uwierzytelnienie do %1. Złe hasło?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "Okno dialogowe hasła %1"
+
+#~ msgid "Password dialog"
+#~ msgstr "Okno dialogowe hasła"
 
 #, fuzzy
 #~| msgid "Provide the password for the wireless network '%1':"

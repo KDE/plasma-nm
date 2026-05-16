@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2017-06-12 16:38+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -608,9 +608,11 @@ msgstr ""
 "b>:"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "Διάλογος κωδικού πρόσβασης %1"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Κωδικός πρόσβασης:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -633,9 +635,13 @@ msgstr "Διάλογος μυστικών VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Διάλογος κωδικού πρόσβασης"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "Η σύνδεση αφαιρέθηκε"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -816,6 +822,12 @@ msgstr "Επανεισαγωγή κωδικού PIN:"
 #| msgid "Authentication to the VPN server failed."
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Η ταυτοποίηση στον εξυπηρετητή VPN απέτυχε."
+
+#~ msgid "%1 password dialog"
+#~ msgstr "Διάλογος κωδικού πρόσβασης %1"
+
+#~ msgid "Password dialog"
+#~ msgstr "Διάλογος κωδικού πρόσβασης"
 
 #, fuzzy
 #~| msgid "Please provide the password for activating connection <b>%1</b>:"

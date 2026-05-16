@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2025-07-29 12:22+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -577,9 +577,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Ange lösenordet för anslutningen \"%1\":"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "Lösenordsdialogruta för %1"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Lösenord:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -599,9 +601,13 @@ msgstr "Dialogruta för VPN-hemligheter (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Lösenordsdialogruta"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "Anslutningen togs bort"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -781,6 +787,12 @@ msgstr "Mata in PIN-kod igen:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Behörighetskontroll för %1 misslyckades. Fel lösenord?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "Lösenordsdialogruta för %1"
+
+#~ msgid "Password dialog"
+#~ msgstr "Lösenordsdialogruta"
 
 #, fuzzy
 #~| msgid "Provide the password for the wireless network '%1':"

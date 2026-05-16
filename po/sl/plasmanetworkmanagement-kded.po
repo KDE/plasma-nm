@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2025-07-29 06:26+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -579,9 +579,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Vnesite geslo za povezavo \"%1\":"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "Pogovorno okno gesla za %1"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Geslo:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -601,9 +603,13 @@ msgstr "Pogovorno okno skrivnosti za VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Pogovorno okno gesla"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "Povezava je bila odstranjena"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -784,6 +790,12 @@ msgstr "Ponovno vnesite kodo PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Overitev na %1 je spodletela. Napačno geslo?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "Pogovorno okno gesla za %1"
+
+#~ msgid "Password dialog"
+#~ msgstr "Pogovorno okno gesla"
 
 #~ msgid ""
 #~ "The provided password seems incorrect. Provide the password for the "

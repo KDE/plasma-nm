@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2021-10-30 10:49+0200\n"
 "Last-Translator: Edward Wornar <edi.werner@gmx.de>\n"
 "Language-Team: Upper Sorbian <kde-i18n-doc@kde.org>\n"
@@ -584,9 +584,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Zapodajće hesło za zwisk '%1':"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "%1 - dialog za hesło"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Hesło:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -608,8 +610,8 @@ msgstr "Dialog za VPN-potajnstwa (%1)"
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
 #, kde-format
-msgid "Password dialog"
-msgstr "Dialog za hesło"
+msgid "Connection Password"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -787,6 +789,12 @@ msgstr ""
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Awtentikacija za %1 so njeje poradźiła. Wopačne hesło?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "%1 - dialog za hesło"
+
+#~ msgid "Password dialog"
+#~ msgstr "Dialog za hesło"
 
 #, fuzzy
 #~| msgid "Provide the password for the wireless network '%1':"

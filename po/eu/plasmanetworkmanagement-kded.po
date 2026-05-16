@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasman-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2025-07-29 11:24+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -582,9 +582,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Sartu \"%1\" konexiorako pasahitza:"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "%1 Pasahitzaren elkarrizketa-koadroa"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Pasahitza:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -604,9 +606,13 @@ msgstr "(%1) VPN isilpekoen elkarrizketa-koadroa"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Pasahitzaren elkarrizketa-koadroa"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "Konexioa kendu zen"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -787,6 +793,12 @@ msgstr "Sartu berriz PIN kodea:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1(r)ekin autentifikatzea huts egin du. Pasahitz okerra?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "%1 Pasahitzaren elkarrizketa-koadroa"
+
+#~ msgid "Password dialog"
+#~ msgstr "Pasahitzaren elkarrizketa-koadroa"
 
 #, fuzzy
 #~| msgid "Provide the password for the wireless network '%1':"

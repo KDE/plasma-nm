@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2025-10-09 01:23+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -573,9 +573,11 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "\"%1\" 연결의 암호를 입력하십시오:"
 
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "%1 암호 대화 상자"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "암호:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -595,9 +597,13 @@ msgstr "VPN 인증 정보(%1) 대화 상자"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "암호 대화 상자"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "연결이 삭제됨"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -774,6 +780,12 @@ msgstr "PIN 코드 다시 입력:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1 인증이 실패했습니다. 암호가 올바릅니까?"
+
+#~ msgid "%1 password dialog"
+#~ msgstr "%1 암호 대화 상자"
+
+#~ msgid "Password dialog"
+#~ msgstr "암호 대화 상자"
 
 #, fuzzy
 #~| msgid "Provide the password for the wireless network '%1':"

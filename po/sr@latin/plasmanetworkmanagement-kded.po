@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-07 00:46+0000\n"
+"POT-Creation-Date: 2026-05-16 00:45+0000\n"
 "PO-Revision-Date: 2017-05-07 21:01+0200\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -600,11 +600,12 @@ msgstr "Unesite lozinku za aktiviranje veze <b>%1</b>:"
 msgid "Enter the password for the connection \"%1\":"
 msgstr "Unesite lozinku za aktiviranje veze <b>%1</b>:"
 
-# >> @title:window
 #: passworddialog.cpp:114
-#, kde-format
-msgid "%1 password dialog"
-msgstr "%1 — dijalog za lozinku"
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
+msgid "%1 Password"
+msgstr "Lozinka:"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -625,9 +626,13 @@ msgstr "Dijalog za VPN tajne (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, kde-format
-msgid "Password dialog"
-msgstr "Dijalog za lozinku"
+#, fuzzy, kde-format
+#| msgctxt ""
+#| "@info:status Notification when the device failed due to "
+#| "ConnectionRemovedReason"
+#| msgid "The connection was removed"
+msgid "Connection Password"
+msgstr "Veza je uklonjena."
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -826,6 +831,13 @@ msgstr "Ponovite PIN kod:"
 #| msgid "Authentication to the VPN server failed."
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Autentifikacija na VPN serveru propala."
+
+# >> @title:window
+#~ msgid "%1 password dialog"
+#~ msgstr "%1 — dijalog za lozinku"
+
+#~ msgid "Password dialog"
+#~ msgstr "Dijalog za lozinku"
 
 #, fuzzy
 #~| msgid "Please provide the password for activating connection <b>%1</b>:"

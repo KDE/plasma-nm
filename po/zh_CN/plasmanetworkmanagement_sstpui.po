@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/plasma-nm/plasmanetworkmanagement_sstpui."
-"pot\n"
-"X-Crowdin-File-ID: 42973\n"
+"X-Crowdin-File: /kf6-stable/messages/plasma-nm/"
+"plasmanetworkmanagement_sstpui.pot\n"
+"X-Crowdin-File-ID: 49960\n"
 
 #. i18n: ectx: attribute (title), widget (QWidget, pptpTab)
 #: sstpadvanced.ui:39

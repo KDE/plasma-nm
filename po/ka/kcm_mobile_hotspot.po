@@ -62,26 +62,3 @@ msgstr "ჰოტსპოტის პაროლი"
 #, kde-format
 msgid "Configure"
 msgstr "მორგება"
-
-#~ msgid "Whether the wireless hotspot is enabled."
-#~ msgstr "ჩართულია ჰოტსპოტი, თუ არა."
-
-#~ msgid "Enabled:"
-#~ msgstr "ჩართულია:"
-
-#~ msgid "SSID:"
-#~ msgstr "SSID:"
-
-#~ msgid "Save"
-#~ msgstr "შენახვა"
-
-#~ msgctxt "NAME OF TRANSLATORS"
-#~ msgid "Your names"
-#~ msgstr "Temuri Doghonadze"
-
-#~ msgctxt "EMAIL OF TRANSLATORS"
-#~ msgid "Your emails"
-#~ msgstr "Temuri.doghonadze@gmail.com"
-
-#~ msgid "Tobias Fella"
-#~ msgstr "Tobias Fella"

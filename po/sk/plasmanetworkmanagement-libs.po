@@ -2832,9 +2832,7 @@ msgid "Remove this Peer"
 msgstr "Odstrániť tohto účastníka"
 
 #: editor/settings/wificonnectionwidget.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Automaticky"

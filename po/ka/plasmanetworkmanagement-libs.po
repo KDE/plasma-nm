@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2026-02-25 07:22+0100\n"
+"PO-Revision-Date: 2026-05-16 04:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -2845,9 +2845,7 @@ msgid "Remove this Peer"
 msgstr "პარტნიორის წაშლა"
 
 #: editor/settings/wificonnectionwidget.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
 msgstr "ავტომატური"
@@ -4277,146 +4275,3 @@ msgstr "NetworkManager-ის საჭირო ვერსიაა 0.9.8 , �
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "უცნობია"
-
-#~ msgid "Wi-Fi Security"
-#~ msgstr "Wi-Fi-ის დაცვა"
-
-#~ msgid "BSSID:"
-#~ msgstr "BSSID:"
-
-#~ msgid ""
-#~ "This option locks this connection to the Wi-Fi access point (AP) "
-#~ "specified by the\n"
-#~ " BSSID entered here. Example: 00:11:22:33:44:55"
-#~ msgstr ""
-#~ "ეს პარამეტრი ბლოკავს ამ შეერთებას Wi-Fi წვდომის წერტილთან, რომელიც\n"
-#~ "აქ შეყვანილი BSSID-ითაა აღწერილი. მაგ: 00:11:22:33:44:55"
-
-#~ msgid "Hardware"
-#~ msgstr "აპარატურა"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Unknown"
-#~ msgstr "შეერთების ტიპი უცნობია"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is ADSL"
-#~ msgstr "შეერთების ტიპი: ADSL"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Bluetooth"
-#~ msgstr "კავშირის ტიპია Bluetooth"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Bridge"
-#~ msgstr "კავშირის ტიპია Bridge"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is CDMA"
-#~ msgstr "კავშირის ტიპია CDMA"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is GSM"
-#~ msgstr "კავშირის ტიპია GSM"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Infiniband"
-#~ msgstr "კავშირის ტიპია Infiniband"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is OLPC Mesh"
-#~ msgstr "კავშირის ტიპია OLPC Mesh"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is PPOPE"
-#~ msgstr "კავშირის ტიპია PPOPE"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VLAN"
-#~ msgstr "კავშირის ტიპია VLAN"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VPN"
-#~ msgstr "კავშირის ტიპია VPN"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wimax"
-#~ msgstr "კავშირის ტიპი არის Wimax"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wired"
-#~ msgstr "კავშირის მავთულითაა"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wireless"
-#~ msgstr "კავშირის ტიპი უსადენოა"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Team"
-#~ msgstr "შეერთების ტიპია Team"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Generic"
-#~ msgstr "შეერთების ტიპია: ზოგადი"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Tunnel"
-#~ msgstr "შეერთების ტიპია გვირაბი"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is IP Tunnel"
-#~ msgstr "კავშირის ტიპია IP გვირაბი"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is WireGuard"
-#~ msgstr "კავშირის ტიპი არის WireGuard"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used in the last hour, "
-#~ "as the number of minutes since usage"
-#~ msgid "One minute ago"
-#~ msgid_plural "%1 minutes ago"
-#~ msgstr[0] "1 წუთის წინ"
-#~ msgstr[1] "%1 წუთის წინ"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used in the last day, "
-#~ "as the number of hours since usage"
-#~ msgid "One hour ago"
-#~ msgid_plural "%1 hours ago"
-#~ msgstr[0] "1 საათის წინ"
-#~ msgstr[1] "%1 საათის წინ"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection used the previous day"
-#~ msgid "Yesterday"
-#~ msgstr "გუშინ"
-
-#~ msgctxt ""
-#~ "Label for last used time for a network connection that has never been used"
-#~ msgid "Never"
-#~ msgstr "არასდროს"
-
-#~ msgctxt "General"
-#~ msgid "General configuration"
-#~ msgstr "ზოგადი კონფიგურაცია"
-
-#~ msgid "*.der *.pem *.crt *.cer"
-#~ msgstr "*.der *.pem *.crt *.cer"
-
-#~ msgid "*.der *.pem *.p12 *.key"
-#~ msgstr "*.der *.pem *.p12 *.key"
-
-#~ msgid "*.pac"
-#~ msgstr "*.pac"
-
-#~ msgid ""
-#~ "Plasma is missing support for '%1' VPN connections. Please report this to "
-#~ "your distribution."
-#~ msgstr ""
-#~ "Plasma-ს აკლია \"%1\" ტიპის VPN-ის მხარდაჭერა. შეატყობინეთ თქვენი "
-#~ "დისტრიბუტივის მხარდაჭერის გუნდს."
-
-#~ msgctxt "Error message in VPN import/export dialog"
-#~ msgid "Operation not supported for this VPN type."
-#~ msgstr "ოპერაცია მხარდაუჭერელია VPN-ის ამ ტიპისათვის."

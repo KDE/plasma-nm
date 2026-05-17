@@ -560,9 +560,3 @@ msgstr "დაადასტურეთ PIN-კოდი"
 #, kde-format
 msgid "TextLabel"
 msgstr "ტექსტური ჭდე"
-
-#~ msgid "No common algorithms"
-#~ msgstr "საერთო ალგორითმების გარეშე"
-
-#~ msgid "*.pem *.crt *.key"
-#~ msgstr "*.pem *.crt *.key"

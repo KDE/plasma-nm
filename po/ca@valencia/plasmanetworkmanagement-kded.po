@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement-kded.po to Catalan (Valencian)
-# Copyright (C) 2014-2025 This_file_is_part_of_KDE
+# Copyright (C) 2014-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2020, 2022, 2023 Antoni Bella Pérez <antonibella5@yahoo.com>
-# SPDX-FileCopyrightText: 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2015, 2016, 2017, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2025-07-29 09:38+0200\n"
+"PO-Revision-Date: 2026-05-16 11:48+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -582,11 +582,10 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Introduïu la contrasenya per a la connexió «%1»:"
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr "Contrasenya:"
+msgstr "Contrasenya de %1"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -606,13 +605,9 @@ msgstr "Diàleg de secrets de VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "Connection Password"
-msgstr "S'ha eliminat la connexió"
+msgstr "Contrasenya de connexió"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -793,9 +788,3 @@ msgstr "Torneu a introduir el codi PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "No s'ha pogut fer l'autenticació a %1. Contrasenya incorrecta?"
-
-#~ msgid "%1 password dialog"
-#~ msgstr "Diàleg de contrasenya %1"
-
-#~ msgid "Password dialog"
-#~ msgstr "Diàleg de contrasenya"

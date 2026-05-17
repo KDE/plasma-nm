@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2025-07-29 05:21+0200\n"
+"PO-Revision-Date: 2026-05-16 04:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.9\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -577,11 +577,10 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "შეიყვანეთ პაროლი შეერთებისთვის \"%1\":"
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr "პაროლი:"
+msgstr "%1-ის პაროლი"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -601,13 +600,9 @@ msgstr "VPN-ის პაროლების (%1) ფანჯარა"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "Connection Password"
-msgstr "შეერთება წაშლილია"
+msgstr "კავშირის პაროლი"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -786,28 +781,3 @@ msgstr "ახალი PUK კოდი ხელახლა:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1-ზე ავთენტიკაციის პრობლემა. პაროლი შეგეშალათ?"
-
-#~ msgid "%1 password dialog"
-#~ msgstr "%1 პაროლის ფანჯარა"
-
-#~ msgid "Password dialog"
-#~ msgstr "პაროლის ფანჯარა"
-
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "wireless network '%1':"
-#~ msgstr ""
-#~ "როგორც ჩანს, შეყვანილი პაროლი არასწორია. შეიყვანეთ პაროლი უსადენო "
-#~ "შეერთებისთვის '%1':"
-
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "connection '%1':"
-#~ msgstr ""
-#~ "როგორც ჩანს, შეყვანილი პაროლი არასწორია. შეიყვანეთ პაროლი შეერთებისთვის "
-#~ "'%1':"
-
-#~ msgctxt ""
-#~ "@info:status Notification when the device failed due to SsidNotFound"
-#~ msgid "The WiFi network could not be found"
-#~ msgstr "Wifi ქსელი ნაპოვნი არაა"

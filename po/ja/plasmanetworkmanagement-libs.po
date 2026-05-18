@@ -2,14 +2,15 @@
 # Fuminobu TAKEYAMA <ftake@geeko.jp>, 2015, 2019.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020, 2021.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2021, 2023.
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2026-01-26 21:16+0900\n"
-"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
-"Language-Team: Japanese <kde-jp@kde.org>\n"
+"PO-Revision-Date: 2026-05-10 18:39+0900\n"
+"Last-Translator: Mint <5602mint@gmail.com>\n"
+"Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
@@ -392,7 +393,7 @@ msgid ""
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 msgstr ""
-"<qt>これらの値についての詳細は次のページをご覧ください:<br/><a href='https://"
+"<qt>この設定項目の詳しい情報は以下をご覧ください。<br/><a href='https://"
 "developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome."
 "org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
 
@@ -592,13 +593,13 @@ msgstr "CA 証明書:"
 #: editor/settings/ui/802-1x.ui:174
 #, kde-format
 msgid "Subject match:"
-msgstr ""
+msgstr "サブジェクトマッチ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:191
 #, kde-format
 msgid "Alternative subject matches:"
-msgstr ""
+msgstr "代替サブジェクトマッチ:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
@@ -611,7 +612,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:215
 #, kde-format
 msgid "Connect to these servers:"
-msgstr "これらのサーバに接続:"
+msgstr "接続先サーバ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
@@ -632,10 +633,9 @@ msgstr "秘密鍵のパスワード:"
 #. i18n: ectx: property (text), widget (QLabel, label_24)
 #: editor/settings/ui/802-1x.ui:345 editor/settings/ui/802-1x.ui:474
 #: editor/settings/ui/802-1x.ui:588
-#, fuzzy, kde-format
-#| msgid "Anonymous"
+#, kde-format
 msgid "Anonymous identity:"
-msgstr "匿名"
+msgstr "匿名 ID:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
 #: editor/settings/ui/802-1x.ui:358
@@ -672,10 +672,9 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_22)
 #: editor/settings/ui/802-1x.ui:410 editor/settings/ui/802-1x.ui:504
 #: editor/settings/ui/802-1x.ui:653
-#, fuzzy, kde-format
-#| msgid "Authentication:"
+#, kde-format
 msgid "Inner authentication:"
-msgstr "認証:"
+msgstr "内部認証:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
@@ -719,7 +718,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:618
 #, kde-format
 msgid "PEAP version:"
-msgstr ""
+msgstr "PEAP バージョン:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:635
@@ -1756,10 +1755,9 @@ msgstr "全二重"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174
-#, fuzzy, kde-format
-#| msgid "Allow auto-negotiation"
+#, kde-format
 msgid "Link negotiation:"
-msgstr "オートネゴシエーションを許可"
+msgstr "オートネゴシエーション:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:188

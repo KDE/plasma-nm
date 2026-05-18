@@ -2,14 +2,15 @@
 # Fuminobu TAKEYAMA <ftake@geeko.jp>, 2015, 2019.
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019, 2020, 2021.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2021, 2023.
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-24 00:45+0000\n"
-"PO-Revision-Date: 2026-01-26 21:16+0900\n"
-"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
-"Language-Team: Japanese <kde-jp@kde.org>\n"
+"PO-Revision-Date: 2026-05-10 18:39+0900\n"
+"Last-Translator: Mint <5602mint@gmail.com>\n"
+"Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 25.12.1\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -955,7 +956,7 @@ msgid ""
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 msgstr ""
-"<qt>これらの値についての詳細は次のページをご覧ください:<br/><a href='https://"
+"<qt>この設定項目の詳しい情報は以下をご覧ください。<br/><a href='https://"
 "developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome."
 "org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
 
@@ -1155,13 +1156,13 @@ msgstr "CA 証明書:"
 #: editor/settings/ui/802-1x.ui:182
 #, kde-format
 msgid "Subject match:"
-msgstr ""
+msgstr "サブジェクトマッチ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:199
 #, kde-format
 msgid "Alternative subject matches:"
-msgstr ""
+msgstr "代替サブジェクトマッチ:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
@@ -1174,7 +1175,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:223
 #, kde-format
 msgid "Connect to these servers:"
-msgstr "これらのサーバに接続:"
+msgstr "接続先サーバ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
@@ -1197,7 +1198,7 @@ msgstr "秘密鍵のパスワード:"
 #: editor/settings/ui/802-1x.ui:582
 #, kde-format
 msgid "Anonymous identity:"
-msgstr ""
+msgstr "匿名 ID:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
 #: editor/settings/ui/802-1x.ui:356
@@ -1236,7 +1237,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:649
 #, kde-format
 msgid "Inner authentication:"
-msgstr ""
+msgstr "内部認証:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
@@ -1280,7 +1281,7 @@ msgstr ""
 #: editor/settings/ui/802-1x.ui:614
 #, kde-format
 msgid "PEAP version:"
-msgstr ""
+msgstr "PEAP バージョン:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:631
@@ -1759,11 +1760,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:379
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "メトリック"
+msgstr "経路メトリック:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
 #: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:414
@@ -2413,10 +2412,9 @@ msgstr "全二重"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174
-#, fuzzy, kde-format
-#| msgid "Allow auto-negotiation"
+#, kde-format
 msgid "Link negotiation:"
-msgstr "オートネゴシエーションを許可"
+msgstr "オートネゴシエーション:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:188
@@ -4130,6 +4128,3 @@ msgstr "NetworkManager 0.9.8 が必要です、%1が見つかりました。"
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "不明"
-
-#~ msgid "Wi-Fi Security"
-#~ msgstr "Wi-Fi セキュリティ"

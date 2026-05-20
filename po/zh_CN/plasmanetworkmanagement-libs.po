@@ -2798,12 +2798,10 @@ msgid "Remove this Peer"
 msgstr "移除此节点"
 
 #: editor/settings/wificonnectionwidget.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
-msgstr "自动"
+msgstr ""
 
 #: editor/settings/wificonnectionwidget.cpp:263
 #, kde-format

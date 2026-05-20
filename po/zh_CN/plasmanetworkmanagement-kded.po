@@ -572,11 +572,10 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "请输入网络连接“%1”的密码："
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr "密码："
+msgstr ""
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -596,13 +595,9 @@ msgstr "VPN 密钥 (%1) 对话框"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "Connection Password"
-msgstr "连接已被移除"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -779,9 +774,3 @@ msgstr "再次输入 PIN 码："
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1 的身份验证失败。您是否输入了错误的密码？"
-
-#~ msgid "%1 password dialog"
-#~ msgstr "%1 密码对话框"
-
-#~ msgid "Password dialog"
-#~ msgstr "密码对话框"

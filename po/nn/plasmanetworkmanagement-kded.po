@@ -788,9 +788,3 @@ msgstr "Tast inn ny PIN-kode igjen:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Feil ved autentisering til %1. Feil passord?"
-
-#~ msgid "%1 password dialog"
-#~ msgstr "Passordvindauge for %1"
-
-#~ msgid "Password dialog"
-#~ msgstr "Passordvindauge"

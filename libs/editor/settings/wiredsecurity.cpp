@@ -22,6 +22,7 @@ WiredSecurity::WiredSecurity(const NetworkManager::Security8021xSetting::Ptr &se
     m_ui->verticalLayout->addWidget(m_8021xWidget);
 
     connect(m_ui->use8021X, &QCheckBox::toggled, m_8021xWidget, &Security8021x::setEnabled);
+    connect(m_ui->use8021X, &QCheckBox::toggled, this, &SettingWidget::validChanged);
 
     // Connect for setting check
     watchChangedSetting();
@@ -73,7 +74,12 @@ QVariantMap WiredSecurity::setting() const
 
 bool WiredSecurity::isValid() const
 {
-    return !m_ui->use8021X || m_8021xWidget->isValid();
+    if (m_ui->use8021X && m_ui->use8021X->isChecked()) {
+        return m_8021xWidget->isValid();
+    } else {
+        // We are valid when this setting is off
+        return true;
+    }
 }
 
 #include "moc_wiredsecurity.cpp"

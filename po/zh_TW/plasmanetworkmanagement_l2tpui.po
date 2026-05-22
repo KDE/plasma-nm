@@ -4,13 +4,13 @@
 # Franklin, 2014.
 # Jeff Huang <s8321414@gmail.com>, 2016, 2017.
 # pan93412 <pan93412@gmail.com>, 2018, 2020.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
+# SPDX-FileCopyrightText: 2022-2024, 2026 Kisaragi Hiu <mail@kisaragi-hiu.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2026-03-02 05:56+0900\n"
+"PO-Revision-Date: 2026-05-21 22:04+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.11.70\n"
+"X-Generator: Lokalize 26.07.70\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -180,12 +180,16 @@ msgid ""
 "\n"
 "May be required to allow multiple L2TP clients behind the same NAT."
 msgstr ""
+"即使可用也不要使用 UDP 連接埠 1701 作為 L2TP 來源埠。\n"
+"會改用暫時性（隨機）的高連接埠值。\n"
+"\n"
+"可能需要使用此選項才能在同一個 NAT 後面使用多個 L2TP 用戶端。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:270
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "使用 L2TP 暫時性來源埠"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:308
@@ -573,13 +577,13 @@ msgstr "其他設定"
 #: l2tpppp.ui:224 l2tpppp.ui:234
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "試著在單一連線上協調 PPP 多重連結 (Multilink)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMRRU)
 #: l2tpppp.ui:227
 #, kde-format
 msgid "Multilink PPP MRRU: "
-msgstr ""
+msgstr "多重連結 PPP MRRU："
 
 #. i18n: ectx: property (text), widget (QLabel, lbMRU)
 #: l2tpppp.ui:250

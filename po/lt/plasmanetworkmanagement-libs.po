@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2026-04-29 01:13+0300\n"
+"PO-Revision-Date: 2026-05-21 21:58+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -2857,12 +2857,10 @@ msgid "Remove this Peer"
 msgstr "Šalinti šį lygiarangį"
 
 #: editor/settings/wificonnectionwidget.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
-msgstr "Automatinė"
+msgstr "Automatinis"
 
 #: editor/settings/wificonnectionwidget.cpp:263
 #, kde-format

@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
-# SPDX-FileCopyrightText: 2021, 2022, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2025-08-04 12:15+0400\n"
+"PO-Revision-Date: 2026-05-21 11:18+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -576,11 +576,10 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "أدخل كلمة السر للاتصال ”%1“:"
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr "كلمة السر:"
+msgstr "كلمة السر %1"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -600,13 +599,9 @@ msgstr "حواري أسرار شبكات الشخصية المبدئية ‏(%1)
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "Connection Password"
-msgstr "أُزيل الاتصال"
+msgstr "كلمة سر الاتصال"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92

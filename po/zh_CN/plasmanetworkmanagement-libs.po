@@ -2801,7 +2801,7 @@ msgstr "移除此节点"
 #, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
-msgstr ""
+msgstr "自动"
 
 #: editor/settings/wificonnectionwidget.cpp:263
 #, kde-format

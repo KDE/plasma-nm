@@ -575,7 +575,7 @@ msgstr "请输入网络连接“%1”的密码："
 #, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr ""
+msgstr "%1 密码"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -597,7 +597,7 @@ msgstr "VPN 密钥 (%1) 对话框"
 #: passworddialog.ui:26
 #, kde-format
 msgid "Connection Password"
-msgstr ""
+msgstr "连接密码"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92

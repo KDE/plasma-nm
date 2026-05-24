@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2026-03-06 16:07+0100\n"
+"PO-Revision-Date: 2026-05-21 14:29+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -293,8 +293,8 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Optional. Eine Liste von Vorschlägen für ESP - Quick "
-"Mode. Das Format ist „enc-integ,enc-integ, …“.</p></body></html>"
+"<html><head/><body><p>Optional. Eine Liste von Vorschlägen für ESP – "
+"Schnellmodus. Das Format ist „enc-integ,enc-integ, …“.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:261
@@ -324,8 +324,9 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Optional. Eine Liste von Vorschlägen für IKE - Main "
-"Mode. Das Format ist „enc-integ-group,enc-integ-group, …“.</p></body></html>"
+"<html><head/><body><p>Optional. Eine Liste von Vorschlägen für IKE – "
+"Hauptmodus. Das Format ist „enc-integ-group,enc-integ-group, …“.</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:285

@@ -1,13 +1,13 @@
 # SPDX-FileCopyrightText: 2013-2016, 2021 Burkhard Lück <lueck@hube-lueck.de>
 # SPDX-FileCopyrightText: 2014, 2016, 2023 Frederik Schwarzer <schwarzer@kde.org>
 # SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025-2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-01 00:45+0000\n"
-"PO-Revision-Date: 2025-11-29 17:39+0100\n"
+"PO-Revision-Date: 2026-05-17 17:20+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: vpnc.cpp:70
 #, kde-format
@@ -98,7 +98,7 @@ msgstr "Gruppenpasswort:"
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
 msgstr ""
-"Hybride Authentifizierung aktivieren, d. h. Zertifikat zusätzlich zum "
+"Hybride Authentifizierung aktivieren, d. h. Zertifikat zusätzlich zum "
 "Passwort verwenden."
 
 #. i18n: ectx: property (text), widget (QCheckBox, useHybridAuth)

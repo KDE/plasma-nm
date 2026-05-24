@@ -4,13 +4,13 @@
 # SPDX-FileCopyrightText: 2023 Jannick Kuhr <kde-dev@kuhr.org>
 # SPDX-FileCopyrightText: 2023 Johannes Obermayr <johannesobermayr@gmx.de>
 # SPDX-FileCopyrightText: 2024 Flori G <Renner03@protonmail.com>
-# SPDX-FileCopyrightText: 2025 Philipp Kiemle <l10n.daphipz@fastmail.de>
+# SPDX-FileCopyrightText: 2025-2026 Philipp Kiemle <l10n.daphipz@fastmail.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2025-11-29 17:22+0100\n"
+"PO-Revision-Date: 2026-05-17 17:14+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -591,11 +591,10 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Bitte geben Sie das Passwort für die Verbindung „%1“ ein:"
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr "Passwort:"
+msgstr "%1-Passwort"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -615,13 +614,9 @@ msgstr "VPN-Passwortdialog (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "Connection Password"
-msgstr "Die Verbindung wurde entfernt"
+msgstr "Verbindungspasswort"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92

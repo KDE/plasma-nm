@@ -43,6 +43,7 @@ private Q_SLOTS:
     void activeConnectionDestroyed();
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
     void carrierChanged(bool carrier);
+    bool hasEthernetCarrier() const;
     void deviceAdded(const QString &device);
     void deviceRemoved(const QString &device);
     void networkingEnabledChanged(bool enabled);

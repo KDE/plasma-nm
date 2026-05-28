@@ -34,6 +34,11 @@ Security8021x::Security8021x(const NetworkManager::Setting::Ptr &setting, Type t
     m_ui->tlsPrivateKeyPassword->setPasswordOptionsEnabled(true);
     m_ui->ttlsPassword->setPasswordOptionsEnabled(true);
 
+    // TLS might has a backing store that lives in a hardware token.
+    // in these cases, passwords may not be required if the token itself
+    // is not PIN protected.
+    m_ui->tlsPrivateKeyPassword->setPasswordNotRequiredEnabled(true);
+
     if (type == WirelessWpaEap) {
         m_ui->auth->removeItem(0); // MD 5
 
@@ -145,10 +150,20 @@ void Security8021x::loadConfig(const NetworkManager::Setting::Ptr &setting)
     const QList<NetworkManager::Security8021xSetting::EapMethod> eapMethods = securitySetting->eapMethods();
     const NetworkManager::Security8021xSetting::AuthMethod phase2AuthMethod = securitySetting->phase2AuthMethod();
 
-    if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::None)) {
+    auto flags = securitySetting->passwordFlags();
+
+    // when using TLS, there are no password flags as there is no password.
+    // The password is stored in the privateKeyPasswordFlags instead.
+    if ((eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTls))) {
+        flags = securitySetting->privateKeyPasswordFlags();
+    }
+
+    if (flags.testFlag(NetworkManager::Setting::None)) {
         setPasswordOption(PasswordField::StoreForAllUsers);
-    } else if (securitySetting->passwordFlags().testFlag(NetworkManager::Setting::AgentOwned)) {
+    } else if (flags.testFlag(NetworkManager::Setting::AgentOwned)) {
         setPasswordOption(PasswordField::StoreForUser);
+    } else if (flags.testFlag(NetworkManager::Setting::NotRequired) && eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTls)) {
+        setPasswordOption(PasswordField::NotRequired);
     } else {
         setPasswordOption(PasswordField::AlwaysAsk);
     }
@@ -352,6 +367,8 @@ QVariantMap Security8021x::setting() const
             setting.setPrivateKeyPasswordFlags(NetworkManager::Setting::None);
         } else if (m_ui->tlsPrivateKeyPassword->passwordOption() == PasswordField::StoreForUser) {
             setting.setPrivateKeyPasswordFlags(NetworkManager::Setting::AgentOwned);
+        } else if (m_ui->tlsPrivateKeyPassword->passwordOption() == PasswordField::NotRequired) {
+            setting.setPrivateKeyPasswordFlags(NetworkManager::Setting::NotRequired);
         } else {
             setting.setPrivateKeyPasswordFlags(NetworkManager::Setting::NotSaved);
         }

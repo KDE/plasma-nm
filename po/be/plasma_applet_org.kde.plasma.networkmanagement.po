@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-29 00:48+0000\n"
+"POT-Creation-Date: 2026-05-28 02:38+0000\n"
 "PO-Revision-Date: 2024-10-17 02:10\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -148,45 +148,45 @@ msgstr ""
 msgid "Copy"
 msgstr "Скапіяваць"
 
-#: main.qml:37
+#: main.qml:39
 #, kde-format
 msgid "Networks"
 msgstr "Сеткі"
 
-#: main.qml:46
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Каб выключыць рэжым палёту, пстрыкніце сярэдняй кнопкай мышы"
 
-#: main.qml:48
+#: main.qml:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Каб уключыць рэжым палёту, пстрыкніце сярэдняй кнопкай мышы"
 
-#: main.qml:76 Toolbar.qml:74
+#: main.qml:78 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Уключыць Wi-Fi"
 
-#: main.qml:87
+#: main.qml:89
 #, fuzzy, kde-format
 #| msgid "Enable Mobile Network"
 msgid "Enable Mobile Data"
 msgstr "Уключыць мабільную сетку"
 
-#: main.qml:99
+#: main.qml:101
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Уключыць рэжым палёту"
 
-#: main.qml:111
+#: main.qml:113
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Адкрыць старонку ўваходу ў сетку…"
 
-#: main.qml:121
+#: main.qml:123
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Наладжванне сеткавых злучэнняў…"

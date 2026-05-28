@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-29 00:48+0000\n"
+"POT-Creation-Date: 2026-05-28 02:38+0000\n"
 "PO-Revision-Date: 2024-10-27 14:47+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@lister.huftis.org>\n"
@@ -144,45 +144,45 @@ msgstr ""
 msgid "Copy"
 msgstr "Kopier"
 
-#: main.qml:37
+#: main.qml:39
 #, kde-format
 msgid "Networks"
 msgstr "Nettverk"
 
-#: main.qml:46
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Midtklikk for å slå av flymodus"
 
-#: main.qml:48
+#: main.qml:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Midtklikk for å slå på flymodus"
 
-#: main.qml:76 Toolbar.qml:74
+#: main.qml:78 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Slå på Wi-Fi"
 
-#: main.qml:87
+#: main.qml:89
 #, fuzzy, kde-format
 #| msgid "Enable Mobile Network"
 msgid "Enable Mobile Data"
 msgstr "Slå på mobilt nettverk"
 
-#: main.qml:99
+#: main.qml:101
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Slå på flymodus"
 
-#: main.qml:111
+#: main.qml:113
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Opna innloggingsside for nettverk …"
 
-#: main.qml:121
+#: main.qml:123
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Set opp nettverkstilkoplingar …"

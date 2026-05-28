@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-29 00:48+0000\n"
+"POT-Creation-Date: 2026-05-28 02:38+0000\n"
 "PO-Revision-Date: 2025-11-30 15:45+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -139,44 +139,44 @@ msgstr "Ota mobiilidata käyttöön verkkojen etsimiseksi"
 msgid "Copy"
 msgstr "Kopioi"
 
-#: main.qml:37
+#: main.qml:39
 #, kde-format
 msgid "Networks"
 msgstr "Verkot"
 
-#: main.qml:46
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Poistu lentokonetilasta keskinapsauttamalla"
 
-#: main.qml:48
+#: main.qml:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Siirry lentokonetilaan keskinapsauttamalla"
 
-#: main.qml:76 Toolbar.qml:74
+#: main.qml:78 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Käytä langatonta verkkoa"
 
-#: main.qml:87
+#: main.qml:89
 #, kde-format
 msgid "Enable Mobile Data"
 msgstr "Ota mobiilidata käyttöön"
 
-#: main.qml:99
+#: main.qml:101
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "Käytä lentokonetilaa"
 
-#: main.qml:111
+#: main.qml:113
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Avaa verkon kirjautumissivu…"
 
-#: main.qml:121
+#: main.qml:123
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "Muokkaa &verkkoyhteyksiä…"

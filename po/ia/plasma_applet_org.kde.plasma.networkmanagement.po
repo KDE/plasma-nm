@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-29 00:48+0000\n"
+"POT-Creation-Date: 2026-05-28 02:38+0000\n"
 "PO-Revision-Date: 2026-05-25 16:58+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-it@kde.org>\n"
@@ -139,44 +139,44 @@ msgstr "Activa datos de mobile per cercar retes"
 msgid "Copy"
 msgstr "Copia"
 
-#: main.qml:37
+#: main.qml:39
 #, kde-format
 msgid "Networks"
 msgstr "Retes"
 
-#: main.qml:46
+#: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
 msgstr "Pulsa in le medie per stoppar Modo de Aereoplano"
 
-#: main.qml:48
+#: main.qml:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Pulsa in le medie per activar Modo de Aereoplano"
 
-#: main.qml:76 Toolbar.qml:74
+#: main.qml:78 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Activar Wi-Fi"
 
-#: main.qml:87
+#: main.qml:89
 #, kde-format
 msgid "Enable Mobile Data"
 msgstr "Habilita datos de mobile"
 
-#: main.qml:99
+#: main.qml:101
 #, kde-format
 msgid "Enable Airplane Mode"
 msgstr "HAbilita Modo de Aeroplano"
 
-#: main.qml:111
+#: main.qml:113
 #, kde-format
 msgid "Open Network Login Page…"
 msgstr "Aperi pagina de accesso de rete..."
 
-#: main.qml:121
+#: main.qml:123
 #, kde-format
 msgid "&Configure Network Connections…"
 msgstr "&Configura Connexiones de Rete..."

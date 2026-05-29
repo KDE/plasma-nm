@@ -386,9 +386,3 @@ msgstr "Потребителско име:"
 #, kde-format
 msgid "Group name."
 msgstr "Име на група."
-
-#~ msgid "Error decrypting the obfuscated password"
-#~ msgstr "Грешка при дешифрирането на скритата парола"
-
-#~ msgid "Error"
-#~ msgstr "Грешка"

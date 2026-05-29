@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-24 00:45+0000\n"
+"POT-Creation-Date: 2026-05-29 02:43+0000\n"
 "PO-Revision-Date: 2026-05-21 14:25+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -999,12 +999,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Gateway"
 
-#: editor/settings/security802-1x.cpp:525
+#: editor/settings/security802-1x.cpp:542
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Alternative Betreff-Übereinstimmungen"
 
-#: editor/settings/security802-1x.cpp:527
+#: editor/settings/security802-1x.cpp:544
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -1015,7 +1015,7 @@ msgstr ""
 "Name oder IP-Adresse&gt;</li><li>EMAIL: &lt;E-Mail&gt;</li><li>URI: &lt;URI "
 "wie z. B. https://www.kde.org&gt;</li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:544
+#: editor/settings/security802-1x.cpp:561
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Nur mit diesen Servern verbinden"

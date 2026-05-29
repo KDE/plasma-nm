@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-24 00:45+0000\n"
+"POT-Creation-Date: 2026-05-29 02:43+0000\n"
 "PO-Revision-Date: 2026-02-25 20:03+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -991,12 +991,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Шлюз"
 
-#: editor/settings/security802-1x.cpp:525
+#: editor/settings/security802-1x.cpp:542
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Алтернативни обектни съвпадения"
 
-#: editor/settings/security802-1x.cpp:527
+#: editor/settings/security802-1x.cpp:544
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -1007,7 +1007,7 @@ msgstr ""
 "</li><li> Имейл: &lt; имейл &gt; </li><li> URI: &lt; uri, напр. https: //www."
 "kde.org &gt; </li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:544
+#: editor/settings/security802-1x.cpp:561
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Свързване само с тези сървъри"
@@ -4276,97 +4276,3 @@ msgstr "Необходим е NetworkManager 0.9.8, намерен %1."
 msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Неизвестно"
-
-#~ msgid "Wi-Fi Security"
-#~ msgstr "Wi-Fi сигурност"
-
-#~ msgid "BSSID:"
-#~ msgstr "BSSID:"
-
-#~ msgid ""
-#~ "This option locks this connection to the Wi-Fi access point (AP) "
-#~ "specified by the\n"
-#~ " BSSID entered here. Example: 00:11:22:33:44:55"
-#~ msgstr ""
-#~ "Тази опция заключва тази връзка с посочената точка за достъп до Wi-Fi "
-#~ "(AP)от \n"
-#~ " BSSID зададен тук. Пример: 00: 11: 22: 33: 44: 55"
-
-#~ msgid "Hardware"
-#~ msgstr "Хардуер"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Unknown"
-#~ msgstr "Видът на връзката е Неизвестен"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is ADSL"
-#~ msgstr "Видът на връзката е ADSL"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Bluetooth"
-#~ msgstr "Видът на връзката е Bluetooth"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Bridge"
-#~ msgstr "Видът на връзката е Bridge"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is CDMA"
-#~ msgstr "Видът на връзката е CDMA"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is GSM"
-#~ msgstr "Видът на връзката е GSM"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Infiniband"
-#~ msgstr "Видът на връзката е Infiniband"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is OLPC Mesh"
-#~ msgstr "Видът на връзката е OLPC Mesh"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is PPOPE"
-#~ msgstr "Видът на връзката е PPOPE"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VLAN"
-#~ msgstr "Видът на връзката е VLAN"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is VPN"
-#~ msgstr "Видът на връзката е VPN"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wimax"
-#~ msgstr "Видът на връзката е Wimax"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wired"
-#~ msgstr "Видът на връзката е кабелна"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Wireless"
-#~ msgstr "Видът на връзката е безжична"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Team"
-#~ msgstr "Видът на връзката е Team"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Generic"
-#~ msgstr "Вид на връзката e Generic"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is Tunnel"
-#~ msgstr "Видът на връзката е Tunnel"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is IP Tunnel"
-#~ msgstr "Видът на връзката е IP Tunnel"
-
-#~ msgctxt "@info:tooltip"
-#~ msgid "The connection type is WireGuard"
-#~ msgstr "Видът на връзката е WireGuard"

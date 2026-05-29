@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Svetoslav Stefanov <svetlisashkov@yahoo.com>, 2014.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025, 2026 Mincho Kondarev <mkondarev@yahoo.de>
+# SPDX-FileCopyrightText: 2022-2026 Mincho Kondarev <mkondarev@yahoo.de>
 msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2026-02-25 20:03+0100\n"
+"POT-Creation-Date: 2026-05-29 00:45+0000\n"
+"PO-Revision-Date: 2026-05-28 21:34+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Lokalize 26.03.70\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -991,12 +991,12 @@ msgctxt "Header text for IPv6 gateway"
 msgid "Gateway"
 msgstr "Шлюз"
 
-#: editor/settings/security802-1x.cpp:525
+#: editor/settings/security802-1x.cpp:542
 #, kde-format
 msgid "Alternative Subject Matches"
 msgstr "Алтернативни обектни съвпадения"
 
-#: editor/settings/security802-1x.cpp:527
+#: editor/settings/security802-1x.cpp:544
 #, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
@@ -1007,7 +1007,7 @@ msgstr ""
 "</li><li> Имейл: &lt; имейл &gt; </li><li> URI: &lt; uri, напр. https: //www."
 "kde.org &gt; </li></ul></qt>"
 
-#: editor/settings/security802-1x.cpp:544
+#: editor/settings/security802-1x.cpp:561
 #, kde-format
 msgid "Connect to these servers only"
 msgstr "Свързване само с тези сървъри"
@@ -2845,9 +2845,7 @@ msgid "Remove this Peer"
 msgstr "Премахване на този Peer"
 
 #: editor/settings/wificonnectionwidget.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Автоматично"

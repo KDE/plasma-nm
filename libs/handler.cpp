@@ -688,8 +688,11 @@ void Handler::requestScan(const QString &interface)
     requestScanInternal(interface);
 }
 
-QCoro::Task<> Handler::requestScanInternal(const QString &interface)
+QCoro::Task<> Handler::requestScanInternal(const QString &iface)
 {
+    // we can't keep a reference across a co_await
+    QString interface = iface;
+
     for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
         if (device->type() == NetworkManager::Device::Wifi) {
             NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();

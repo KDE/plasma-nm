@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 00:45+0000\n"
+"POT-Creation-Date: 2026-05-31 00:46+0000\n"
 "PO-Revision-Date: 2026-05-16 07:05+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -4073,7 +4073,7 @@ msgstr "Povezave %1 ni bilo mogoče posodobiti"
 msgid "Connection %1 has been updated"
 msgstr "Povezava %1 je bila posodobljena"
 
-#: handler.cpp:861
+#: handler.cpp:864
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Ni bilo mogoče ustvariti vroče točke %1"

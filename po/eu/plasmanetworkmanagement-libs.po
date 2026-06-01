@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 02:43+0000\n"
+"POT-Creation-Date: 2026-06-01 02:37+0000\n"
 "PO-Revision-Date: 2026-03-10 21:42+0100\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -4087,7 +4087,7 @@ msgstr "Huts egin du %1 konexioa eguneratzean"
 msgid "Connection %1 has been updated"
 msgstr "%1 konexioa eguneratu da"
 
-#: handler.cpp:861
+#: handler.cpp:864
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "%1 berogunea sortzea huts egin du"

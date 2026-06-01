@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-05-29 02:43+0000\n"
+"POT-Creation-Date: 2026-06-01 02:37+0000\n"
 "PO-Revision-Date: 2026-02-27 21:31+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -3922,7 +3922,7 @@ msgstr "%1 என்ற இணைப்பை புதுப்பித்த�
 msgid "Connection %1 has been updated"
 msgstr "%1 என்ற இணைப்பு புதுப்பிக்கப்பட்டது"
 
-#: handler.cpp:861
+#: handler.cpp:864
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "%1 என்ற ஹாட்ஸ்பாட்டை உருவாக்குதல் தோல்வியடைந்தது"

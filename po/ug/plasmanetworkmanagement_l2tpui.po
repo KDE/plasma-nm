@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanm_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2026-04-09 12:38-0400\n"
+"PO-Revision-Date: 2026-06-01 18:06-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -526,7 +526,7 @@ msgid ""
 "and the receive directions."
 msgstr ""
 "ئىككى يۆنىلىشتە يوللىغان ۋە قوبۇللىغاندا Van Jacobson ئۇسلۇبىدا TCP/IP "
-"سانلىق-مەلۇمات بوغچا بېشىنى قىسىشقا يول قويىدۇ/چەكلەيدۇ."
+"سانلىق مەلۇمات بوغچا بېشىنى قىسىشقا يول قويىدۇ/چەكلەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbTCPheaders)
 #: l2tpppp.ui:137

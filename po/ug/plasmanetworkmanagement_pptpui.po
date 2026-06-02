@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanm_pptpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-04-09 12:40-0400\n"
+"PO-Revision-Date: 2026-06-01 18:07-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -172,7 +172,7 @@ msgid ""
 " and the receive directions."
 msgstr ""
 "ئىككى يۆنىلىشتە يوللىغان ۋە قوبۇللىغاندا Van Jacobson ئۇسلۇبىدا TCP/IP "
-"سانلىق-مەلۇمات بوغچا بېشىنى قىسىشقا يول قويىدۇ/چەكلەيدۇ."
+"سانلىق مەلۇمات بوغچا بېشىنى قىسىشقا يول قويىدۇ/چەكلەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
 #: pptpadvanced.ui:205

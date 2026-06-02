@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanm_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-04-09 12:40-0400\n"
+"PO-Revision-Date: 2026-06-01 18:06-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -567,7 +567,7 @@ msgstr "تورداش DNS ئىسمى (FQDN) نى تارتىشقا يول قويى
 #: openvpnadvanced.ui:424
 #, kde-format
 msgid "Push client information to the server for diagnostics."
-msgstr "ئېنىقلاش ئۈچۈن خېرىدار ئۈچۇرىنى  مۇلازىمېتىرغا ئىتتىرىدۇ."
+msgstr "ئېنىقلاش ئۈچۈن خېرىدار ئۈچۇرىنى مۇلازىمېتىرغا ئىتتىرىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:427

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-31 00:46+0000\n"
-"PO-Revision-Date: 2026-04-09 13:08-0400\n"
+"PO-Revision-Date: 2026-06-01 18:08-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -532,7 +532,7 @@ msgstr "Wi-Fi"
 #: editor/connectiondetails.cpp:187
 #, kde-format
 msgid "Operator"
-msgstr "مەشغۇلاتچى"
+msgstr "ئەمەل بەلگىسى"
 
 #: editor/connectiondetails.cpp:192
 #, kde-format
@@ -1814,7 +1814,7 @@ msgid ""
 "an IP address"
 msgstr ""
 "IP ئادرېس كومپيۇتېرىڭىزنى توردا باشقىلاردىن پەرقلەندۈرىدۇ. «قوش» توپچەنى "
-"چېكىپ بىر IP ئادرېس قوشقىلى بولىدۇ."
+"چېكىپ بىر IP ئادرېس قوشقىلى بولىدۇ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:335
@@ -1846,7 +1846,7 @@ msgid ""
 "if\n"
 "IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
-" IPv4 ماسلىشىدىغان تورغا باغلانغاندا، ئەگەر IPv6 سەپلەش مەغلۇپ بولۇپ IPv4 "
+"IPv4 ماسلىشىدىغان تورغا باغلانغاندا، ئەگەر IPv6 سەپلەش مەغلۇپ بولۇپ IPv4 "
 "سەپلەش مۇۋەپپەقىيەتلىك بولسا باغلىنىشنى تاماملاشقا يول قويىدۇ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
@@ -2446,7 +2446,7 @@ msgstr "سۈرئەت:"
 #: editor/settings/ui/wiredconnectionwidget.ui:132
 #, kde-format
 msgid "Duplex:"
-msgstr "قوش يۈز"
+msgstr "قوش يۈز:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:151
@@ -2837,9 +2837,7 @@ msgid "Remove this Peer"
 msgstr "بۇ تورداشنى چىقىرىۋەت"
 
 #: editor/settings/wificonnectionwidget.cpp:237
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
 msgstr "ئاپتوماتىك"
@@ -3578,7 +3576,7 @@ msgctxt ""
 "the number of hours since usage"
 msgid "Last used one hour ago"
 msgid_plural "Last used %1 hours ago"
-msgstr[0] "ئاخىرقى قېتىم %1سائەت ئىلگىرى ئىشلىتىلگەن"
+msgstr[0] "ئاخىرقى قېتىم %1 سائەت ئىلگىرى ئىشلىتىلگەن"
 
 #: editor/uiutils.cpp:648
 #, kde-format
@@ -3733,7 +3731,7 @@ msgstr "كەڭ بەلباغ ھەق تۆلەش پىلانىڭىزنىڭ ئاتى"
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
 msgstr ""
-"(بەزى ئەھۋالدا) كەڭ بەلباغ ھەق تۆلەش پىلانىڭىزنىڭ APN(زىيارەت نۇقتا ئاتى) "
+"(بەزى ئەھۋالدا) كەڭ بەلباغ ھەق تۆلەش پىلانىڭىزنىڭ APN(زىيارەت نۇقتا ئاتى)"
 
 #: editor/widgets/mobileconnectionwizard.cpp:254
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanm-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2026-04-09 12:41-0400\n"
+"PO-Revision-Date: 2026-06-01 18:07-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -574,11 +574,10 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "«%1» باغلىنىش ئۈچۈن ئىم كىرگۈزۈلىدۇ:"
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr "ئىم:"
+msgstr ""
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -598,13 +597,9 @@ msgstr "VPN بىخەتەرلىك ئاچقۇچ (%1) سۆزلەشكۈسى"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "Connection Password"
-msgstr "باغلىنىش چىقىرىۋېتىلگەن"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -748,7 +743,7 @@ msgstr "PUK كودى بەك قىسقا. ئاز دېگەندە 8 خانە سان 
 #: pindialog.cpp:218
 #, kde-format
 msgid "Unknown Error"
-msgstr "نامەلۇم خاتالىق"
+msgstr "يوچۇن خاتالىق"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PinWidget)
 #. i18n: ectx: property (text), widget (QLabel, title)

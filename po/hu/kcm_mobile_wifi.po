@@ -2,13 +2,13 @@
 # This file is distributed under the same license as the plasma-nm package.
 #
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2019, 2020.
-# SPDX-FileCopyrightText: 2021, 2023, 2024, 2025 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2023-2026 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:46+0000\n"
-"PO-Revision-Date: 2025-11-21 21:33+0100\n"
+"PO-Revision-Date: 2026-06-02 22:55+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -50,18 +50,17 @@ msgstr "Kapcsolat részletei"
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
-msgstr ""
+msgstr "Megosztás"
 
 #: ui/ConnectionInfo.qml:107
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr ""
+msgstr "WiFi megosztás QR-kóddal"
 
 #: ui/ConnectionInfo.qml:114
-#, fuzzy, kde-format
-#| msgid "Wi-Fi is disabled"
+#, kde-format
 msgid "Wi-Fi QR Code"
-msgstr "A Wi-Fi ki van kapcsolva"
+msgstr "WiFi QR-kód"
 
 #: ui/main.qml:26
 #, kde-format
@@ -71,12 +70,12 @@ msgstr "Szerkesztés"
 #: ui/main.qml:87
 #, kde-format
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr "WiFi"
 
 #: ui/main.qml:98
 #, kde-format
 msgid "More"
-msgstr ""
+msgstr "Több"
 
 #: ui/main.qml:107
 #, kde-format
@@ -95,16 +94,14 @@ msgid "Add Custom Connection"
 msgstr "Saját kapcsolat hozzáadása"
 
 #: ui/MorePage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Wi-Fi Settings"
-msgstr "IP beállítások"
+msgstr "WiFi beállítások"
 
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr ""
+msgstr "Értesítések kapcsolatváltozásokról"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

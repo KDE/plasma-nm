@@ -10,6 +10,7 @@
 #include "service.h"
 
 #include <KPluginFactory>
+#include <KWindowSystem>
 
 #include "connectivitymonitor.h"
 #include "monitor.h"
@@ -69,6 +70,13 @@ void NetworkManagementService::init()
                 &Notification::connectionDeactivatedPreparingForSleep,
                 d->connectivityMonitor,
                 &ConnectivityMonitor::cancelLimitedConnectivityNotificationTimer);
+    }
+}
+
+void NetworkManagementService::setActivationToken(const QString &token)
+{
+    if (!token.isEmpty()) {
+        KWindowSystem::setCurrentXdgActivationToken(token);
     }
 }
 

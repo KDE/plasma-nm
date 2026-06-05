@@ -27,6 +27,7 @@
 #include <ModemManagerQt/ModemDevice>
 
 #include <QDBusError>
+#include <QDBusMessage>
 #include <QDBusMetaType>
 #include <QDBusPendingReply>
 #include <QDBusReply>
@@ -39,10 +40,12 @@
 #include <KNotification>
 #include <KOSRelease>
 #include <KPluginMetaData>
+#include <KWaylandExtras>
 #include <KWindowSystem>
 #include <KX11Extras>
 
 #include <QCoroDBus>
+#include <QCoroFuture>
 #include <nm-client.h>
 
 #define AGENT_SERVICE "org.kde.kded6"
@@ -103,13 +106,18 @@ Handler::Handler(QObject *parent)
 
 Handler::~Handler() = default;
 
-void Handler::activateConnection(const QString &connection, const QString &device, const QString &specificObject)
+void Handler::activateConnection(const QString &connection, const QString &device, const QString &specificObject, QWindow *window)
 {
-    activateConnectionInternal(connection, device, specificObject);
+    activateConnectionInternal(connection, device, specificObject, window);
 }
 
-QCoro::Task<> Handler::activateConnectionInternal(const QString &connection, const QString &device, const QString &specificObject)
+QCoro::Task<> Handler::activateConnectionInternal(const QString &conn, const QString &dev, const QString &obj, QWindow *window)
 {
+    // we can't keep a reference across a co_await
+    QString connection = conn;
+    QString device = dev;
+    QString specificObject = obj;
+    QPointer<QWindow> windowPtr(window);
     NetworkManager::Connection::Ptr con = NetworkManager::findConnection(connection);
 
     if (!con) {
@@ -204,6 +212,19 @@ QCoro::Task<> Handler::activateConnectionInternal(const QString &connection, con
     }
 
     QPointer<Handler> thisGuard(this);
+
+    if (windowPtr) {
+        const QString token = co_await KWaylandExtras::xdgActivationToken(windowPtr, QStringLiteral("org.kde.kded6"));
+
+        auto message = QDBusMessage::createMethodCall(AGENT_SERVICE, AGENT_PATH, AGENT_IFACE, QStringLiteral("setActivationToken"));
+        message.setArguments({token});
+        QDBusConnection::sessionBus().call(message, QDBus::NoBlock);
+
+        if (!thisGuard) {
+            co_return;
+        }
+    }
+
     QDBusReply<QDBusObjectPath> reply = co_await NetworkManager::activateConnection(connection, device, specificObject);
     if (!thisGuard) {
         co_return;

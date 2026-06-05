@@ -24,6 +24,8 @@
 
 #include <QCoroTask>
 
+class QWindow;
+
 class PLASMANM_INTERNAL_EXPORT Handler : public QObject
 {
     Q_OBJECT
@@ -64,7 +66,7 @@ public Q_SLOTS:
      * @device - d-bus path of the device where the connection should be activated
      * @specificParameter - d-bus path of the specific object you want to use for this activation, i.e access point
      */
-    void activateConnection(const QString &connection, const QString &device, const QString &specificParameter);
+    void activateConnection(const QString &connection, const QString &device, const QString &specificParameter, QWindow *window = nullptr);
     /**
      * Adds and activates a new wireless connection
      * @device - d-bus path of the wireless device where the connection should be activated
@@ -145,7 +147,7 @@ Q_SIGNALS:
 
 private:
     QCoro::Task<> addAndActivateConnectionDBus(const NMVariantMapMap &map, const QString &device, const QString &specificObject);
-    QCoro::Task<> activateConnectionInternal(const QString &connection, const QString &device, const QString &specificParameter);
+    QCoro::Task<> activateConnectionInternal(const QString &connection, const QString &device, const QString &specificParameter, QWindow *window);
     QCoro::Task<> addAndActivateConnectionInternal(const QString &device, const QString &specificParameter, const QString &password = QString());
     QCoro::Task<> deactivateConnectionInternal(const QString &connection, const QString &device);
     QCoro::Task<> removeConnectionInternal(const QString &connection);

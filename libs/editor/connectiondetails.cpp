@@ -210,6 +210,11 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
             vpnType = vpnSetting->serviceType();
         }
 
+        constexpr QLatin1String prefix{"org.freedesktop.NetworkManager."};
+        if (vpnType.startsWith(prefix)) {
+            vpnType = vpnType.mid(prefix.size());
+        }
+
         if (!vpnType.isEmpty()) {
             details.append({i18n("VPN Plugin"), vpnType});
         }

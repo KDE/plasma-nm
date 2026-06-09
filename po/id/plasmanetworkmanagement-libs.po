@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-01 02:37+0000\n"
+"POT-Creation-Date: 2026-06-09 02:39+0000\n"
 "PO-Revision-Date: 2023-02-21 09:35+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -547,12 +547,12 @@ msgstr ""
 msgid "Error sending the PUK: %1"
 msgstr ""
 
-#: editor/connectiondetails.cpp:92
+#: editor/connectiondetails.cpp:91
 #, kde-format
 msgid "Connection speed"
 msgstr "Kecepatan koneksi"
 
-#: editor/connectiondetails.cpp:94 editor/connectiondetails.cpp:169
+#: editor/connectiondetails.cpp:93 editor/connectiondetails.cpp:168
 #: editor/connectiondetails.cpp:247 editor/connectiondetails.cpp:257
 #: editor/connectiondetails.cpp:267 editor/connectiondetails.cpp:277
 #: editor/connectiondetails.cpp:288 editor/connectiondetails.cpp:302
@@ -560,88 +560,88 @@ msgstr "Kecepatan koneksi"
 msgid "MAC Address"
 msgstr "Alamat MAC"
 
-#: editor/connectiondetails.cpp:97 editor/settings/bondwidget.cpp:36
+#: editor/connectiondetails.cpp:96 editor/settings/bondwidget.cpp:36
 #: editor/settings/bridgewidget.cpp:33 editor/settings/teamwidget.cpp:36
 #, kde-format
 msgid "Ethernet"
 msgstr "Ethernet"
 
-#: editor/connectiondetails.cpp:132
+#: editor/connectiondetails.cpp:131
 #, fuzzy, kde-format
 #| msgid "Access point (SSID)"
 msgid "Access Point (SSID)"
 msgstr "Titik akses (SSID)"
 
-#: editor/connectiondetails.cpp:136
+#: editor/connectiondetails.cpp:135
 #, fuzzy, kde-format
 #| msgid "Signal strength"
 msgid "Signal Strength"
 msgstr "Kekuatan sinyal"
 
-#: editor/connectiondetails.cpp:136
+#: editor/connectiondetails.cpp:135
 #, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr ""
 
-#: editor/connectiondetails.cpp:141 editor/connectiondetails.cpp:151
+#: editor/connectiondetails.cpp:140 editor/connectiondetails.cpp:150
 #, fuzzy, kde-format
 #| msgid "Security type"
 msgid "Security Type"
 msgstr "Tipe keamanan"
 
-#: editor/connectiondetails.cpp:156
+#: editor/connectiondetails.cpp:155
 #, fuzzy, kde-format
 #| msgid "Connection speed"
 msgid "Connection Speed"
 msgstr "Kecepatan koneksi"
 
-#: editor/connectiondetails.cpp:163 editor/connectiondetails.cpp:165
+#: editor/connectiondetails.cpp:162 editor/connectiondetails.cpp:164
 #, kde-format
 msgid "Frequency"
 msgstr ""
 
-#: editor/connectiondetails.cpp:163
+#: editor/connectiondetails.cpp:162
 #, fuzzy, kde-format
 #| msgid "Channel:"
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
 msgstr "Channel:"
 
-#: editor/connectiondetails.cpp:167
+#: editor/connectiondetails.cpp:166
 #, fuzzy, kde-format
 #| msgid "BSSID:"
 msgid "BSSID"
 msgstr "BSSID:"
 
-#: editor/connectiondetails.cpp:172 editor/connectioneditorbase.cpp:242
+#: editor/connectiondetails.cpp:171 editor/connectioneditorbase.cpp:242
 #: editor/settings/bridgewidget.cpp:39 editor/settings/teamwidget.cpp:42
 #: editor/uiutils.cpp:226 models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
-#: editor/connectiondetails.cpp:187
+#: editor/connectiondetails.cpp:186
 #, kde-format
 msgid "Operator"
 msgstr "Operator"
 
-#: editor/connectiondetails.cpp:192
+#: editor/connectiondetails.cpp:191
 #, kde-format
 msgid "Network ID"
 msgstr "ID Jaringan"
 
-#: editor/connectiondetails.cpp:196
+#: editor/connectiondetails.cpp:195
 #, kde-format
 msgid "Signal Quality"
 msgstr "Kualitas Sinyal"
 
-#: editor/connectiondetails.cpp:197
+#: editor/connectiondetails.cpp:196
 #, kde-format
 msgid "Access Technology"
 msgstr "Teknologi Akses"
 
-#: editor/connectiondetails.cpp:203 models/creatableconnectionsmodel.cpp:149
+#: editor/connectiondetails.cpp:202 models/creatableconnectionsmodel.cpp:149
 #, kde-format
 msgid "Mobile Broadband"
 msgstr "Mobile Broadband"
@@ -864,7 +864,7 @@ msgstr "Koneksi Baru (%1)"
 msgid "Edit Connection '%1'"
 msgstr "Edit koneksi '%1'"
 
-#: editor/connectioneditortabwidget.cpp:50
+#: editor/connectioneditortabwidget.cpp:53
 #, kde-format
 msgid "New %1 connection"
 msgstr "Koneksi %1 baru"

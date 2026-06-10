@@ -3,13 +3,13 @@
 #
 # Balázs Úr <urbalazs@gmail.com>, 2013, 2014.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2014, 2019, 2020.
-# SPDX-FileCopyrightText: 2021, 2023, 2024, 2025 Kristof Kiszel <kiszel.kristof@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2023-2026 Kristof Kiszel <kiszel.kristof@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-28 02:38+0000\n"
-"PO-Revision-Date: 2025-11-21 21:37+0100\n"
+"PO-Revision-Date: 2026-06-09 21:40+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.08.3\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: ConnectionItem.qml:62
 #, kde-format
@@ -261,29 +261,23 @@ msgstr "Hotspot létrehozása"
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr ""
+msgstr "QR-kód beolvasása"
 
 #: Toolbar.qml:232
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr ""
-"Olvassa be ezt a QR-kódot egy másik eszközzel a(z) „%1” hálózathoz "
-"kapcsolódáshoz."
+msgstr "Olvassa be a QR-kódot a WiFi hálózathoz kapcsolódáshoz"
 
 #: Toolbar.qml:234
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
-"Olvassa be ezt a QR-kódot egy másik eszközzel a(z) „%1” hálózathoz "
-"kapcsolódáshoz."
+"Telepítse a QRCA vonalkódolvasó alkalmazást, hogy beolvassa azt a QR-kódot, "
+"amely egy Wi-Fi-hálózathoz csatlakozik"
 
 #: Toolbar.qml:253
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-09 00:46+0000\n"
+"POT-Creation-Date: 2026-06-12 00:45+0000\n"
 "PO-Revision-Date: 2026-05-25 22:01+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -465,9 +465,9 @@ msgid "Connection speed"
 msgstr "연결 속도"
 
 #: editor/connectiondetails.cpp:93 editor/connectiondetails.cpp:168
-#: editor/connectiondetails.cpp:247 editor/connectiondetails.cpp:257
-#: editor/connectiondetails.cpp:267 editor/connectiondetails.cpp:277
-#: editor/connectiondetails.cpp:288 editor/connectiondetails.cpp:302
+#: editor/connectiondetails.cpp:252 editor/connectiondetails.cpp:262
+#: editor/connectiondetails.cpp:272 editor/connectiondetails.cpp:282
+#: editor/connectiondetails.cpp:293 editor/connectiondetails.cpp:307
 #, kde-format
 msgid "MAC Address"
 msgstr "MAC 주소"
@@ -552,156 +552,156 @@ msgstr "접속 기술"
 msgid "Mobile Broadband"
 msgstr "모바일 광대역"
 
-#: editor/connectiondetails.cpp:214 editor/connectiondetails.cpp:235
+#: editor/connectiondetails.cpp:219 editor/connectiondetails.cpp:240
 #, kde-format
 msgid "VPN Plugin"
 msgstr "VPN 플러그인"
 
-#: editor/connectiondetails.cpp:225
+#: editor/connectiondetails.cpp:230
 #, kde-format
 msgid "Banner"
 msgstr "배너"
 
-#: editor/connectiondetails.cpp:229 editor/connectiondetails.cpp:236
+#: editor/connectiondetails.cpp:234 editor/connectiondetails.cpp:241
 #: editor/uiutils.cpp:218 networkstatus.cpp:190
 #, kde-format
 msgid "VPN"
 msgstr "VPN"
 
-#: editor/connectiondetails.cpp:235 models/creatableconnectionsmodel.cpp:254
+#: editor/connectiondetails.cpp:240 models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
 #, kde-format
 msgid "WireGuard"
 msgstr "WireGuard"
 
-#: editor/connectiondetails.cpp:241
+#: editor/connectiondetails.cpp:246
 #, kde-format
 msgid "Name"
 msgstr "이름"
 
-#: editor/connectiondetails.cpp:243 editor/connectiondetails.cpp:245
+#: editor/connectiondetails.cpp:248 editor/connectiondetails.cpp:250
 #, kde-format
 msgid "Capabilities"
 msgstr "사용 가능한 기능"
 
-#: editor/connectiondetails.cpp:250 editor/connectioneditorbase.cpp:257
+#: editor/connectiondetails.cpp:255 editor/connectioneditorbase.cpp:257
 #: editor/uiutils.cpp:194
 #, kde-format
 msgid "Bluetooth"
 msgstr "블루투스"
 
-#: editor/connectiondetails.cpp:255 editor/connectiondetails.cpp:265
-#: editor/connectiondetails.cpp:275 editor/connectiondetails.cpp:285
-#: editor/connectiondetails.cpp:295 editor/connectiondetails.cpp:300
+#: editor/connectiondetails.cpp:260 editor/connectiondetails.cpp:270
+#: editor/connectiondetails.cpp:280 editor/connectiondetails.cpp:290
+#: editor/connectiondetails.cpp:300 editor/connectiondetails.cpp:305
 #, kde-format
 msgid "Type"
 msgstr "종류"
 
-#: editor/connectiondetails.cpp:255 editor/connectiondetails.cpp:260
+#: editor/connectiondetails.cpp:260 editor/connectiondetails.cpp:265
 #: editor/connectioneditorbase.cpp:268 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
 #, kde-format
 msgid "Infiniband"
 msgstr "인피니밴드"
 
-#: editor/connectiondetails.cpp:265 editor/connectiondetails.cpp:270
+#: editor/connectiondetails.cpp:270 editor/connectiondetails.cpp:275
 #: editor/connectioneditorbase.cpp:271 editor/uiutils.cpp:198
 #: models/creatableconnectionsmodel.cpp:190
 #, kde-format
 msgid "Bond"
 msgstr "본드"
 
-#: editor/connectiondetails.cpp:275 editor/connectiondetails.cpp:280
+#: editor/connectiondetails.cpp:280 editor/connectiondetails.cpp:285
 #: editor/connectioneditorbase.cpp:274 editor/uiutils.cpp:201
 #: models/creatableconnectionsmodel.cpp:200
 #, kde-format
 msgid "Bridge"
 msgstr "브리지"
 
-#: editor/connectiondetails.cpp:285 editor/connectiondetails.cpp:291
+#: editor/connectiondetails.cpp:290 editor/connectiondetails.cpp:296
 #: editor/connectioneditorbase.cpp:277 models/creatableconnectionsmodel.cpp:220
 #, kde-format
 msgid "Vlan"
 msgstr "VLAN"
 
-#: editor/connectiondetails.cpp:287
+#: editor/connectiondetails.cpp:292
 #, kde-format
 msgid "Vlan ID"
 msgstr "VLAN ID"
 
-#: editor/connectiondetails.cpp:295 editor/connectiondetails.cpp:296
+#: editor/connectiondetails.cpp:300 editor/connectiondetails.cpp:301
 #, kde-format
 msgid "Adsl"
 msgstr "ADSL"
 
-#: editor/connectiondetails.cpp:300 editor/connectiondetails.cpp:305
+#: editor/connectiondetails.cpp:305 editor/connectiondetails.cpp:310
 #: editor/connectioneditorbase.cpp:280 editor/uiutils.cpp:230
 #: models/creatableconnectionsmodel.cpp:210
 #, kde-format
 msgid "Team"
 msgstr "팀"
 
-#: editor/connectiondetails.cpp:311 editor/connectiondetails.cpp:315
+#: editor/connectiondetails.cpp:316 editor/connectiondetails.cpp:320
 #, kde-format
 msgid "Device"
 msgstr "장치"
 
-#: editor/connectiondetails.cpp:316
+#: editor/connectiondetails.cpp:321
 #, kde-format
 msgid "General"
 msgstr "일반"
 
-#: editor/connectiondetails.cpp:325
+#: editor/connectiondetails.cpp:330
 #, kde-format
 msgid "IPv4 Address"
 msgstr "IPv4 주소"
 
-#: editor/connectiondetails.cpp:331
+#: editor/connectiondetails.cpp:336
 #, kde-format
 msgid "IPv4 Default Gateway"
 msgstr "IPv4 기본 게이트웨이"
 
-#: editor/connectiondetails.cpp:338
+#: editor/connectiondetails.cpp:343
 #, kde-format
 msgid "IPv4 Primary Nameserver"
 msgstr "IPv4 주 네임 서버"
 
-#: editor/connectiondetails.cpp:342
+#: editor/connectiondetails.cpp:347
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
 msgstr "IPv4 보조 네임 서버"
 
-#: editor/connectiondetails.cpp:347 editor/connectioneditorbase.cpp:313
+#: editor/connectiondetails.cpp:352 editor/connectioneditorbase.cpp:313
 #, kde-format
 msgid "IPv4"
 msgstr "IPv4"
 
-#: editor/connectiondetails.cpp:357
+#: editor/connectiondetails.cpp:362
 #, kde-format
 msgid "IPv6 Address"
 msgstr "IPv6 주소"
 
-#: editor/connectiondetails.cpp:359
+#: editor/connectiondetails.cpp:364
 #, kde-format
 msgid "IPv6 ULA Address"
 msgstr "IPv6 ULA 주소"
 
-#: editor/connectiondetails.cpp:365
+#: editor/connectiondetails.cpp:370
 #, kde-format
 msgid "IPv6 Default Gateway"
 msgstr "IPv6 기본 게이트웨이"
 
-#: editor/connectiondetails.cpp:372
+#: editor/connectiondetails.cpp:377
 #, kde-format
 msgid "IPv6 Primary Nameserver"
 msgstr "IPv6 주 네임 서버"
 
-#: editor/connectiondetails.cpp:376
+#: editor/connectiondetails.cpp:381
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
 msgstr "IPv6 보조 네임 서버"
 
-#: editor/connectiondetails.cpp:381 editor/connectioneditorbase.cpp:331
+#: editor/connectiondetails.cpp:386 editor/connectioneditorbase.cpp:331
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"

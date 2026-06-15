@@ -82,9 +82,9 @@ VpnUiPlugin::ExportResult OpenVpnUiPlugin::exportConnectionSettings(const Networ
         return VpnUiPlugin::ExportResult::fail("Could not open file for writing");
     }
 
-    NMClient *client = nm_client_new(NULL, NULL);
+    NMClient *client = nm_client_new(nullptr, nullptr);
     const GPtrArray *connections = nm_client_get_connections(client);
-    NMConnection *found = NULL;
+    NMConnection *found = nullptr;
 
     for (uint i = 0; i < connections->len; i++) {
         auto conn = static_cast<NMConnection *>(g_ptr_array_index(connections, i));

@@ -147,7 +147,7 @@ OpenconnectAuthWidget::OpenconnectAuthWidget(const NetworkManager::VpnSetting::P
     readSecrets();
 
 #if OPENCONNECT_CHECK_VER(3, 4)
-    openconnect_set_token_callbacks(d->vpninfo, &d->secrets, NULL, &updateToken);
+    openconnect_set_token_callbacks(d->vpninfo, &d->secrets, nullptr, &updateToken);
 #endif
 
     // This might be set by readSecrets() so don't connect it until now
@@ -322,7 +322,7 @@ void OpenconnectAuthWidget::readSecrets()
         if (d->tokenMode == QStringLiteral("manual") && !tokenSecret.isEmpty()) {
             ret = __openconnect_set_token_mode(d->vpninfo, OC_TOKEN_MODE_STOKEN, tokenSecret);
         } else if (d->tokenMode == QStringLiteral("stokenrc")) {
-            ret = __openconnect_set_token_mode(d->vpninfo, OC_TOKEN_MODE_STOKEN, NULL);
+            ret = __openconnect_set_token_mode(d->vpninfo, OC_TOKEN_MODE_STOKEN, nullptr);
         } else if (d->tokenMode == QStringLiteral("totp") && !tokenSecret.isEmpty()) {
             ret = __openconnect_set_token_mode(d->vpninfo, OC_TOKEN_MODE_TOTP, tokenSecret);
         }
@@ -534,7 +534,7 @@ void OpenconnectAuthWidget::handleWebEngineCookie(const QNetworkCookie &cookie)
     struct oc_webview_result res;
     res.headers = nullptr;
     res.cookies = cookiesArr;
-    // Hack due to lack of NULL pointer check in AnyConnect sso_detect_done
+    // Hack due to lack of nullptr check in AnyConnect sso_detect_done
     // logic in libopenconnect.
     res.uri = "";
     if (!openconnect_webview_load_changed(d->vpninfo, &res)) {
@@ -573,7 +573,7 @@ void OpenconnectAuthWidget::handleWebEngineLoad(const QWebEngineLoadingInfo &loa
 #if OPENCONNECT_CHECK_VER(5, 7)
     struct oc_webview_result res;
     res.headers = responseHeaderList.data();
-    // Hack due to lack of NULL pointer check in AnyConnect sso_detect_done
+    // Hack due to lack of nullptr check in AnyConnect sso_detect_done
     // logic in libopenconnect.
     res.cookies = cookiesArr;
     res.uri = "";
@@ -589,7 +589,7 @@ void OpenconnectAuthWidget::handleWebEngineLoad(const QWebEngineLoadingInfo &loa
 void OpenconnectAuthWidget::handleWebEngineUrl(const QUrl &url)
 {
     Q_D(OpenconnectAuthWidget);
-    // Hack due to lack of NULL pointer check in AnyConnect sso_detect_done
+    // Hack due to lack of nullptr check in AnyConnect sso_detect_done
     // logic in libopenconnect.
     const char *cookiesArr[1] = {nullptr};
     QByteArray urlByteArray = url.toString().toLocal8Bit();

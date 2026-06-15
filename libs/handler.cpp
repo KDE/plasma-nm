@@ -411,7 +411,7 @@ void add_connection_cb(GObject *client, GAsyncResult *result, gpointer user_data
     AddConnectionData *data = static_cast<AddConnectionData *>(user_data);
 
     GError *error = nullptr;
-    NMRemoteConnection *connection = nm_client_add_connection2_finish(NM_CLIENT(client), result, NULL, &error);
+    NMRemoteConnection *connection = nm_client_add_connection2_finish(NM_CLIENT(client), result, nullptr, &error);
 
     if (error) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToAddConnection"), KNotification::CloseOnTimeout, data->handler);

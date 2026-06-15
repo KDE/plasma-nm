@@ -605,7 +605,7 @@ bool Security8021x::isValid() const
 
         auto fp = fopen(m_ui->tlsPrivateKey->url().path().toUtf8().data(), "r");
         if (fp) {
-            auto pkey = PEM_read_PrivateKey(fp, NULL, NULL, m_ui->tlsPrivateKeyPassword->text().toUtf8().data());
+            auto pkey = PEM_read_PrivateKey(fp, nullptr, nullptr, m_ui->tlsPrivateKeyPassword->text().toUtf8().data());
             fclose(fp);
 
             if (pkey) {

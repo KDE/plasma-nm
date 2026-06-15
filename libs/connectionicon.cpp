@@ -364,8 +364,12 @@ void ConnectionIcon::setIcons()
             } else if (type == NetworkManager::Device::Ethernet) {
                 setConnectionIcon(QStringLiteral("network-wired-activated"));
                 setConnectionTooltipIcon(QStringLiteral("network-wired-activated"));
-            } else if (type == NetworkManager::Device::Bridge || type == NetworkManager::Device::OvsBridge) {
-                // TODO: use a not-yet created bridge-specific network icon here
+            } else if (type == NetworkManager::Device::Bond //
+                       || type == NetworkManager::Device::Bridge //
+                       || type == NetworkManager::Device::OvsBridge //
+                       || type == NetworkManager::Device::Team //
+                       || type == NetworkManager::Device::Vlan) {
+                // TODO: use not-yet-created virtual wired network icons here
                 if (hasEthernetCarrier()) {
                     setConnectionIcon(QStringLiteral("network-wired-activated"));
                     setConnectionTooltipIcon(QStringLiteral("network-wired-activated"));
@@ -390,7 +394,7 @@ void ConnectionIcon::setIcons()
                 // do anything just because it has a device
                 // associated with it.
             } else {
-                // Ignore other devices (bond/team etc.)
+                // Ignore other devices
                 setDisconnectedIcon();
             }
         }

@@ -62,7 +62,7 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
     bool isConnectionActive = false;
     NetworkManager::ActiveConnection::Ptr activeConn;
     if (device) {
-        device->activeConnection();
+        activeConn = device->activeConnection();
     }
     if (activeConn && activeConn->connection() && connection) {
         isConnectionActive = (activeConn->connection()->path() == connection->path());

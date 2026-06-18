@@ -76,9 +76,14 @@ file(GLOB_RECURSE _qml_sources
 )
 ecm_target_qml_sources(plasmanm_internal SOURCES ${_qml_sources})
 
-ecm_finalize_qml_module(plasmanm_internal)
 
 install(TARGETS plasmanm_internal ${KDE_INSTALL_TARGETS_DEFAULT_ARGS})
 
 add_subdirectory(editor)
 add_subdirectory(cellular)
+
+if(BUILD_EDITORQML)
+    add_subdirectory(editorqml)
+endif()
+
+ecm_finalize_qml_module(plasmanm_internal)

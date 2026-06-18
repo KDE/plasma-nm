@@ -4,13 +4,13 @@
 # Balázs Úr <urbalazs@gmail.com>, 2013.
 # Kristóf Kiszel <ulysses@kubuntu.org>, 2015, 2019.
 # SPDX-FileCopyrightText: 2017, 2020, 2021, 2023 Kiszel Kristóf <kiszel.kristof@gmail.com>
-# SPDX-FileCopyrightText: 2024, 2025 Kristof Kiszel <ulysses@fsf.hu>
+# SPDX-FileCopyrightText: 2024-2026 Kristof Kiszel <ulysses@fsf.hu>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-01 00:47+0000\n"
-"PO-Revision-Date: 2025-01-26 21:08+0100\n"
+"PO-Revision-Date: 2026-06-17 22:05+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
 "Language: hu\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: openconnectauth.cpp:345
 #, kde-format
@@ -285,10 +285,9 @@ msgstr "Géptanúsítvány:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #: openconnectprop.ui:261
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "Machine Private Key:"
-msgstr "Privát kulcs:"
+msgstr "A gép privát kulcsa:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
@@ -298,10 +297,9 @@ msgstr "Felhasználói tanúsítvány:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: openconnectprop.ui:299
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "User Private Key:"
-msgstr "Privát kulcs:"
+msgstr "A felhasználó privát kulcsa:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318
@@ -413,32 +411,28 @@ msgid "Internal User Verification Locked"
 msgstr "Belső felhasználóellenőrzés zárolva"
 
 #: openconnectwebauthdialog.cpp:191
-#, fuzzy, kde-format
-#| msgid "Wrong PIN. %1 attempts remaining."
+#, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
 msgstr[0] "Hibás PIN. %1 próbálkozás maradt."
 msgstr[1] "Hibás PIN. %1 próbálkozás maradt."
 
 #: openconnectwebauthdialog.cpp:194
-#, fuzzy, kde-format
-#| msgid "Too Short. %1 attempts remaining."
+#, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
 msgstr[0] "Túl rövid. %1 próbálkozás maradt."
 msgstr[1] "Túl rövid. %1 próbálkozás maradt."
 
 #: openconnectwebauthdialog.cpp:197
-#, fuzzy, kde-format
-#| msgid "Invalid Characters. %1 attempts remaining."
+#, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
 msgstr[0] "Érvénytelen karakterek. %1 próbálkozás maradt."
 msgstr[1] "Érvénytelen karakterek. %1 próbálkozás maradt."
 
 #: openconnectwebauthdialog.cpp:201
-#, fuzzy, kde-format
-#| msgid "Same as current PIN. %1 attempts remaining."
+#, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
 msgstr[0] "Ugyanaz, mint a jelenlegi PIN. %1 próbálkozás maradt."
@@ -511,6 +505,8 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"A biztonsági token nem támogatja a kiszolgáló által megkövetelt hitelesítési "
+"módot."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format

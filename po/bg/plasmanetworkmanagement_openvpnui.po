@@ -1349,9 +1349,3 @@ msgstr "token"
 #, kde-format
 msgid "one-time password"
 msgstr "еднократна парола"
-
-#~ msgid "Error saving file %1: %2"
-#~ msgstr "Грешка при запазване на файла %1: %2"
-
-#~ msgid "Error copying certificate to %1: %2"
-#~ msgstr "Грешка при копирането на сертификата в %1: %2"

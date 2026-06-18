@@ -782,9 +782,3 @@ msgstr "Въведете отново ПИН код:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Удостоверяването на %1 е неуспешно. Грешна парола?"
-
-#~ msgid "%1 password dialog"
-#~ msgstr "%1 диалогов прозорец за парола"
-
-#~ msgid "Password dialog"
-#~ msgstr "Прозорец за парола"

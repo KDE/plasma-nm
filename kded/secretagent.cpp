@@ -506,7 +506,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
                 this,
                 [this, job, &request]() {
                     --request.storageJobsRunning;
-                    if (job->error() != QKeychain::NoError) {
+                    if (job->error() != QKeychain::NoError && !request.saveSecretsWithoutReply) {
                         sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in secure storage."), request.message);
                     }
                     processNext();

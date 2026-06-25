@@ -1,0 +1,111 @@
+# Translation of kcm_mobile_wired to Norwegian Nynorsk
+#
+# SPDX-FileCopyrightText: 2026 Karl Ove Hufthammer <karl@huftis.org>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"PO-Revision-Date: 2026-06-24 20:44+0200\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.07.70\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: ui/ConnectDialog.qml:57
+#, kde-format
+msgid "Invalid input."
+msgstr "Ugyldige inndata."
+
+#: ui/ConnectionInfo.qml:15
+#, kde-format
+msgctxt "kcm page title"
+msgid "Connection Info for \"%1\""
+msgstr "Tilkoplingsinfo for «%1»"
+
+#: ui/ConnectionInfo.qml:22
+#, kde-format
+msgctxt "@title:group"
+msgid "Transfer Rates"
+msgstr "Overføringsfart"
+
+#: ui/ConnectionInfo.qml:38
+#, kde-format
+msgid "Connected, ↓ %1/s, ↑ %2/s"
+msgstr "Kopla til – ↓ %1/s, ↑ %2/s"
+
+#: ui/ConnectionInfo.qml:46
+#, kde-format
+msgctxt "@title:group"
+msgid "Connection Details"
+msgstr "Tilkoplingsdetaljar"
+
+#: ui/main.qml:59
+#, kde-format
+msgctxt "@title:group"
+msgid "Wired Network Connections"
+msgstr "Kabla nettverkstilkoplingar"
+
+#: ui/main.qml:117
+#, kde-format
+msgid "No wired connection available."
+msgstr "Inga kabla nettverkstilkopling tilgjengeleg."
+
+#: ui/NetworkSettings.qml:16
+#, kde-format
+msgid "Add New Connection"
+msgstr "Legg til ny tilkopling"
+
+#: ui/NetworkSettings.qml:31
+#, kde-format
+msgid "Save"
+msgstr "Lagra"
+
+#: ui/NetworkSettings.qml:49
+#, kde-format
+msgctxt "@title:group"
+msgid "IP Settings"
+msgstr "IP-innstillingar"
+
+#: ui/NetworkSettings.qml:55
+#, kde-format
+msgid "Method"
+msgstr "Metode"
+
+#: ui/NetworkSettings.qml:56
+#, kde-format
+msgid "Automatic"
+msgstr "Automatisk"
+
+#: ui/NetworkSettings.qml:56
+#, kde-format
+msgid "Manual"
+msgstr "Manuell"
+
+#: ui/NetworkSettings.qml:72
+#, kde-format
+msgid "IP Address"
+msgstr "IP-adresse"
+
+#: ui/NetworkSettings.qml:90
+#, kde-format
+msgid "Gateway"
+msgstr "Portnar"
+
+#: ui/NetworkSettings.qml:108
+#, kde-format
+msgid "Network prefix length"
+msgstr "Prefikslengd for nettverk"
+
+#: ui/NetworkSettings.qml:127
+#, kde-format
+msgid "DNS"
+msgstr "DNS"

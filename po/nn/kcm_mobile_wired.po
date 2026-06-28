@@ -1,6 +1,5 @@
 # Translation of kcm_mobile_wired to Norwegian Nynorsk
 #
-#
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"

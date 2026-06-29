@@ -41,7 +41,7 @@ find_package(Qt6 ${QT_MIN_VERSION} CONFIG REQUIRED COMPONENTS
     QuickWidgets
     Widgets
 )
-find_package(Qt6Keychain 0.15.0 CONFIG REQUIRED)
+find_package(Qt6Keychain 0.16.0 CONFIG REQUIRED)
 
 find_package(PkgConfig REQUIRED)
 

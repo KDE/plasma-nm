@@ -1,6 +1,8 @@
 set(SETTINGS_SRCS
-	settings/wifisecurities/security8021xsetting.cpp
-	settings/wifisecurities/security8021xsetting.h
+ 	settings/wifisecurities/security8021xsetting.cpp
+ 	settings/wifisecurities/security8021xsetting.h
+	settings/wifisecurities/wifisecuritysetting.cpp
+	settings/wifisecurities/wifisecuritysetting.h
 )
 
 

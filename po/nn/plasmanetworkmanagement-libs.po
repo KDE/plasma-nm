@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-09 02:39+0000\n"
-"PO-Revision-Date: 2024-07-07 14:51+0200\n"
+"PO-Revision-Date: 2026-06-27 15:52+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 24.05.1\n"
+"X-Generator: Lokalize 26.07.70\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -2722,7 +2722,7 @@ msgid ""
 msgstr ""
 "Valfritt.\n"
 "Viss ikkje definert, vert MTU-en fastsett automatisk basert\n"
-"på endepunkt­adressene eller standardruta for systemet,\n"
+"på endepunkts­adressene eller standardruta for systemet,\n"
 "noko som vanlegvis er fornuftig. Men du kan kan òg velja\n"
 "MTU manuelt for å overstyra dei automatiske innstillingane."
 
@@ -2821,7 +2821,7 @@ msgstr ""
 #: editor/settings/ui/wireguardpeerwidget.ui:74
 #, kde-format
 msgid "Endpoint port:"
-msgstr "Endepunktsport:"
+msgstr "Endepunkts-port:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:83

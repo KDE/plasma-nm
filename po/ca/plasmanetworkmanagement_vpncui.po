@@ -389,12 +389,3 @@ msgstr "Nom d'usuari:"
 #, kde-format
 msgid "Group name."
 msgstr "Nom del grup."
-
-#~ msgid "Error decrypting the obfuscated password"
-#~ msgstr "Error en desencriptar la contrasenya ofuscada"
-
-#~ msgid "Error"
-#~ msgstr "Error"
-
-#~ msgid "*.pem *.crt *.cer"
-#~ msgstr "*.pem *.crt *.cer"

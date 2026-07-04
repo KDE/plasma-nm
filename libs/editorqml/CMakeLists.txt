@@ -3,8 +3,34 @@ set(SETTINGS_SRCS
  	settings/wifisecurities/security8021xsetting.h
 	settings/wifisecurities/wifisecuritysetting.cpp
 	settings/wifisecurities/wifisecuritysetting.h
+  settings/stringlistmodel.cpp
+  settings/stringlistmodel.h
 )
 
+set(QML_SRCS
+  qml/wifisecurity/authentication/enterprise/eap/EapTls.qml
+  qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml
+  qml/wifisecurity/authentication/enterprise/eap/EapMd5.qml
+  qml/wifisecurity/authentication/enterprise/eap/EapLeap.qml
+  qml/wifisecurity/authentication/enterprise/eap/EapFast.qml
+  qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml
+  qml/wifisecurity/authentication/enterprise/eap/EapPwd.qml
+
+  qml/PasswordField.qml
+  qml/ConfigurationDialog.qml
+  qml/wifisecurity/WifiSecurityForm.qml
+  qml/wifisecurity/authentication/WpaPersonal.qml
+  qml/wifisecurity/authentication/WepKey.qml
+  qml/wifisecurity/authentication/Leap.qml
+  qml/wifisecurity/authentication/Owe.qml
+
+  qml/wifisecurity/authentication/enterprise/DynamicWep.qml
+  qml/wifisecurity/authentication/enterprise/WpaEnterprise.qml
+  qml/wifisecurity/authentication/enterprise/Wpa3Enterprise192.qml
+
+  qml/wifisecurity/DnsList.qml
+  qml/wifisecurity/AlternativeSubjectMatch.qml
+)
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})
 
@@ -17,6 +43,7 @@ ecm_add_qml_module(plasmanm_editorqml
       URI "org.kde.plasma.networkmanagement.editorqml"
       VERSION 1.0
       GENERATE_PLUGIN_SOURCE
+      QML_FILES ${QML_SRCS}
       DEPENDENCIES
           QtQuick
           QtQuick.Controls

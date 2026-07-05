@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# Stefan Asserhäll <stefan.asserhall@gmail.com>, 2013, 2014, 2015, 2016, 2017, 2020, 2021.
+# SPDX-FileCopyrightText: 2013-2017, 2020-2021, 2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2021-06-26 22:29+0200\n"
+"PO-Revision-Date: 2026-07-04 15:52+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 20.08.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -181,12 +181,16 @@ msgid ""
 "\n"
 "May be required to allow multiple L2TP clients behind the same NAT."
 msgstr ""
+"Använd inte UDP-port 1701 som L2TP-källport även om den är ledig.\n"
+"Ett kortlivat (slumpmässigt) högt portnummer kommer att användas istället.\n"
+"\n"
+"Kan krävas för att tillåta flera L2TP-klienter bakom samma NAT."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:270
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "Använd kortlivad L2TP-källport"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:308
@@ -386,7 +390,7 @@ msgstr "Använd IP-komprimering"
 #: l2tpipsec.ui:322
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "Använd IKEv2-nyckelutbyte"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
@@ -587,13 +591,13 @@ msgstr "Andra inställningar"
 #: l2tpppp.ui:224 l2tpppp.ui:234
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "Försök att förhandla fram en PPP-multilänk på en enda anslutning."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMRRU)
 #: l2tpppp.ui:227
 #, kde-format
 msgid "Multilink PPP MRRU: "
-msgstr ""
+msgstr "Multilink PPP MRRU:"
 
 #. i18n: ectx: property (text), widget (QLabel, lbMRU)
 #: l2tpppp.ui:250

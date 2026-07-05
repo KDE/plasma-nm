@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-settings package.
 #
-# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025 Stefan Asserhäll <stefan.asserhall@gmail.com>
+# SPDX-FileCopyrightText: 2021-2022, 2024-2026 Stefan Asserhäll <stefan.asserhall@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-18 00:48+0000\n"
-"PO-Revision-Date: 2025-02-28 19:45+0100\n"
+"PO-Revision-Date: 2026-07-04 09:50+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.0\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: ui/AvailableNetworks.qml:18
 #, kde-format
@@ -463,10 +463,9 @@ msgid "Roaming"
 msgstr "Roaming"
 
 #: ui/SimPage.qml:60
-#, fuzzy, kde-format
-#| msgid "Registered on a roaming network."
+#, kde-format
 msgid "Allow mobile data when on a roaming network."
-msgstr "Registrerad på roamingnätverk."
+msgstr "Tillåt mobildata på roamingnätverk."
 
 #: ui/SimPage.qml:79
 #, kde-format

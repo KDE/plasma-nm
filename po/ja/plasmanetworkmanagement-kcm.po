@@ -1,15 +1,15 @@
-# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
+# SPDX-FileCopyrightText: 2023, 2026 Ryuichi Yamada <ryuichi_ya220@outlook.jp>
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019.
-# Ryuichi Yamada <ryuichi_ya220@outlook.jp>, 2023.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2023.
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-04-20 00:49+0000\n"
-"PO-Revision-Date: 2026-05-10 12:15+0900\n"
-"Last-Translator: Mint <5602mint@gmail.com>\n"
-"Language-Team: Japanese <kde-i18n-doc@kde.org>\n"
+"PO-Revision-Date: 2026-07-06 23:18+0900\n"
+"Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
+"Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -17,37 +17,33 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: kcm.cpp:269
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "VPN 設定を \"%1\" からインポートしますか？"
 
 #: kcm.cpp:270
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "VPN 接続をインポート"
+msgstr "VPN 設定をインポート"
 
 #: kcm.cpp:271
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
-msgstr "エクスポート"
+msgstr "インポート"
 
 #: kcm.cpp:278 kcm.cpp:351
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "VPN 接続をインポート"
+msgstr "VPN 接続のインポートに失敗しました: %1"
 
 #: kcm.cpp:281 kcm.cpp:354
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "接続済み"
+msgstr "接続がインポートされました。"
 
 #: kcm.cpp:423
 #, kde-format
@@ -83,18 +79,18 @@ msgstr "VPN 接続 (%1)"
 #: kcm.cpp:616
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "ファイルが提供されませんでした"
 
 #: kcm.cpp:684
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "不明の VPN タイプ"
 
 #: kcm.cpp:716
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
-msgstr ""
+msgstr " (コピー)"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -138,13 +134,14 @@ msgstr "パスワード:"
 
 #: qml/ConfigurationDialog.qml:95
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "ホットスポットの名前を空にすることはできません"
 
 #: qml/ConfigurationDialog.qml:105
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"ホットスポットのパスワードは空か 8 文字以上 64 文字以下である必要があります"
 
 #: qml/ConfigurationDialog.qml:106
 msgid ""
@@ -152,12 +149,15 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"ホットスポットのパスワードは空か以下の内 1 つの条件を満たす必要があります:"
+"<ul><li>任意の 5 文字または 13 文字</li><li>10 文字もしくは 26 文字の 16 進数"
+"文字:<br/>abcdef, ABCDEF または 0 から 9</li></ul>"
 
 #. i18n is a way to use something pre-exposed to QML.
 #: qml/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: qml/ConnectionItem.qml:85
 msgid "Connect"
@@ -170,7 +170,7 @@ msgstr "切断"
 #: qml/ConnectionItem.qml:90
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
-msgstr ""
+msgstr "検出されなかったため、このネットワークに接続することはできません。"
 
 #: qml/ConnectionItem.qml:94
 msgctxt "@action:inmenu duplicate network connection"
@@ -196,7 +196,7 @@ msgstr "接続中"
 #: qml/ConnectionItem.qml:131
 msgctxt "@title:column Available networks"
 msgid "Available"
-msgstr ""
+msgstr "利用可能"
 
 #: qml/main.qml:148
 msgid "Add new connection"
@@ -224,37 +224,31 @@ msgid "Do you want to remove the connection '%1'?"
 msgstr "接続'%1'を削除しますか？"
 
 #: qml/main.qml:259
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "接続"
 
 #: qml/main.qml:265
-#, fuzzy
-#| msgid "Cancel"
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "キャンセル"
 
 #: qml/main.qml:271
-#, fuzzy
-#| msgid "Hotspot password:"
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "ホットスポットのパスワード:"
+msgstr "パスワードを入力"
 
 #: qml/main.qml:277
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "ネットワーク: %1"
 
 #: qml/main.qml:298
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "パスワードは有効な WEP キーである必要があります"
 
 #: qml/main.qml:299
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "パスワードは 8 文字以上 64 文字以下である必要があります"

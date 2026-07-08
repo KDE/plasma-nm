@@ -572,12 +572,6 @@ void ConnectionEditorBase::updateStatusWidget()
         return;
     }
 
-    // Find the NetworkManager connection object
-    NetworkManager::Connection::Ptr nmConnection = NetworkManager::findConnectionByUuid(m_connection->uuid());
-    if (!nmConnection) {
-        return; // Connection not found in NetworkManager
-    }
-
     // Find active connection with matching UUID
     NetworkManager::ActiveConnection::Ptr activeConnection;
     for (const NetworkManager::ActiveConnection::Ptr &active : NetworkManager::activeConnections()) {
@@ -585,6 +579,18 @@ void ConnectionEditorBase::updateStatusWidget()
             activeConnection = active;
             break;
         }
+    }
+
+    // Find the NetworkManager connection object
+    NetworkManager::Connection::Ptr nmConnection = NetworkManager::findConnectionByUuid(m_connection->uuid());
+
+    // Fallback - try to get the connection from active connection
+    if (!nmConnection && activeConnection) {
+        nmConnection = activeConnection->connection();
+    }
+
+    if (!nmConnection) {
+        return; // Connection not found in NetworkManager
     }
 
     // Get the device for this connection

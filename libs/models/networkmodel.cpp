@@ -258,6 +258,15 @@ void NetworkModel::initializeSignals(const NetworkManager::ActiveConnection::Ptr
                 &NetworkModel::activeConnectionStateChanged,
                 Qt::UniqueConnection);
     }
+
+    NetworkManager::Connection::Ptr connection = activeConnection->connection();
+    if (connection->name().isEmpty() || connection->uuid().isEmpty()) {
+        connect(activeConnection.data(), 
+                &NetworkManager::ActiveConnection::idChanged, 
+                this, 
+                &NetworkModel::activeConnectionIdChanged, 
+                Qt::UniqueConnection);
+    }
 }
 
 void NetworkModel::initializeSignals(const NetworkManager::Connection::Ptr &connection)
@@ -336,6 +345,12 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
 
     NetworkManager::Device::Ptr device;
     NetworkManager::Connection::Ptr connection = activeConnection->connection();
+    NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
+
+    // Can't add a connection without name or uuid
+    if (settings->id().isEmpty() || settings->uuid().isEmpty()) {
+        return;
+    }
 
     // Not necessary to have device for VPN connections
     if (activeConnection && !activeConnection->vpn() && !activeConnection->devices().isEmpty()) {
@@ -343,12 +358,12 @@ void NetworkModel::addActiveConnection(const NetworkManager::ActiveConnection::P
     }
 
     // Check whether we have a base connection
-    if (!m_list.contains(NetworkItemsList::Uuid, connection->uuid())) {
+    if (!m_list.contains(NetworkItemsList::Uuid, settings->uuid())) {
         // Active connection appeared before a base connection, so we have to add its base connection first
         addConnection(connection);
     }
 
-    for (const auto items = m_list.returnItems(NetworkItemsList::NetworkItemsList::Uuid, connection->uuid()); NetworkModelItem * item : items) {
+    for (const auto items = m_list.returnItems(NetworkItemsList::NetworkItemsList::Uuid, settings->uuid()); NetworkModelItem * item : items) {
         if (((device && device->uni() == item->devicePath()) || item->devicePath().isEmpty()) || item->type() == NetworkManager::ConnectionSettings::Vpn) {
             item->setActiveConnectionPath(activeConnection->path());
             item->setConnectionState(activeConnection->state());
@@ -416,8 +431,22 @@ void NetworkModel::addAvailableConnection(const QString &connection, const Netwo
         }
 
         if (item->type() == NetworkManager::ConnectionSettings::Wireless && item->mode() == NetworkManager::WirelessSetting::Infrastructure) {
+            NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+            QString ssid = item->ssid();
+
+            // Fallback - find ssid based on the active connection and its specific object
+            if (ssid.isEmpty()) {
+                const NetworkManager::ActiveConnection::Ptr activeConnection = device->activeConnection();
+                if (activeConnection && activeConnection->connection()->path() == item->connectionPath()) {
+                    NetworkManager::AccessPoint::Ptr ap = wifiDevice->findAccessPoint(activeConnection->specificObject());
+                    if (ap) {
+                        ssid = ap->ssid();
+                    }
+                }
+            }
+
             // Find an accesspoint which could be removed, because it will be merged with a connection
-            for (NetworkModelItem *secondItem : m_list.returnItems(NetworkItemsList::Ssid, item->ssid())) {
+            for (NetworkModelItem *secondItem : m_list.returnItems(NetworkItemsList::Ssid, ssid)) {
                 if (secondItem->itemType() == NetworkModelItem::AvailableAccessPoint && secondItem->devicePath() == item->devicePath()) {
                     removeItem(secondItem);
                     qCDebug(PLASMA_NM_LIBS_LOG).nospace() << "Access point " << secondItem->name() << ": merged to " << item->name() << " connection";
@@ -425,9 +454,8 @@ void NetworkModel::addAvailableConnection(const QString &connection, const Netwo
                 }
             }
 
-            NetworkManager::WirelessDevice::Ptr wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
             if (wifiDevice) {
-                NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(item->ssid());
+                NetworkManager::WirelessNetwork::Ptr wifiNetwork = wifiDevice->findNetwork(ssid);
                 if (wifiNetwork) {
                     updateFromWirelessNetwork(item, wifiNetwork, wifiDevice);
                 }
@@ -441,14 +469,28 @@ void NetworkModel::addAvailableConnection(const QString &connection, const Netwo
 
 void NetworkModel::addConnection(const NetworkManager::Connection::Ptr &connection, const NetworkManager::Device::Ptr &device)
 {
-    // Can't add a connection without name or uuid
+    NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
+
+    // Looks like that DBus `GetSettings` has returned empty connection.
+    // So, we need to get some public settings from active connection (if any).
     if (connection->name().isEmpty() || connection->uuid().isEmpty()) {
+        for (const NetworkManager::ActiveConnection::Ptr &activeConnection : NetworkManager::activeConnections()) {
+            if (activeConnection->connection()->path() == connection->path()) {
+                settings->setId(activeConnection->id());
+                settings->setUuid(activeConnection->uuid());
+                settings->setConnectionType(activeConnection->type());
+                break;
+            }
+        }
+    }
+
+    // Can't add a connection without name or uuid
+    if (settings->id().isEmpty() || settings->uuid().isEmpty()) {
         return;
     }
 
     initializeSignals(connection);
 
-    NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
     NetworkManager::VpnSetting::Ptr vpnSetting;
     NetworkManager::WirelessSetting::Ptr wirelessSetting;
 
@@ -751,6 +793,21 @@ void NetworkModel::activeConnectionStateChanged(NetworkManager::ActiveConnection
     }
 }
 
+void NetworkModel::activeConnectionIdChanged(const QString &id)
+{
+    auto activePtr = qobject_cast<NetworkManager::ActiveConnection *>(sender());
+
+    if (!activePtr) {
+        return;
+    }
+
+    for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::ActiveConnection, activePtr->path())) {
+        qCDebug(PLASMA_NM_LIBS_LOG) << "Item " << item->name() << ": active connection id changed to " << id;
+        item->setName(id);
+        updateItem(item);
+    }
+}
+
 void NetworkModel::activeVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason)
 {
     Q_UNUSED(reason)
@@ -901,6 +958,13 @@ void NetworkModel::connectionUpdated()
     }
 
     NetworkManager::ConnectionSettings::Ptr settings = connectionPtr->settings();
+
+    // Skip the empty connection to avoid resetting the info
+    // from active connection we set during initialization.
+    if (settings->id().isEmpty() || settings->uuid().isEmpty()) {
+        return;
+    }
+
     for (NetworkModelItem *item : m_list.returnItems(NetworkItemsList::Connection, connectionPtr->path())) {
         item->setConnectionPath(connectionPtr->path());
         item->setName(settings->id());
@@ -1228,6 +1292,10 @@ void NetworkModel::updateFromWirelessNetwork(NetworkModelItem *item,
             } else {
                 item->setSignal(network->signalStrength());
                 item->setSpecificPath(network->referenceAccessPoint()->uni());
+            }
+            if (wirelessSetting->ssid().isEmpty()) {
+                wirelessSetting->setSsid(network->ssid().toUtf8());
+                item->setSsid(network->ssid());
             }
         }
     }

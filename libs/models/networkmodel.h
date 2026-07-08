@@ -94,6 +94,7 @@ private Q_SLOTS:
     void activeConnectionAdded(const QString &activeConnection);
     void activeConnectionRemoved(const QString &activeConnection);
     void activeConnectionStateChanged(NetworkManager::ActiveConnection::State state);
+    void activeConnectionIdChanged(const QString &id);
     void activeVpnConnectionStateChanged(NetworkManager::VpnConnection::State state, NetworkManager::VpnConnection::StateChangeReason reason);
     void availableConnectionAppeared(const QString &connection);
     void availableConnectionDisappeared(const QString &connection);

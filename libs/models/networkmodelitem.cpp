@@ -131,7 +131,10 @@ QList<ConnectionDetails::ConnectionDetailSection> NetworkModelItem::detailsList(
     }
 
     NetworkManager::Device::Ptr device = NetworkManager::findNetworkInterface(m_devicePath);
-    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(m_uuid);
+    NetworkManager::Connection::Ptr connection;
+    if (!m_uuid.isEmpty()) {
+        connection = NetworkManager::findConnectionByUuid(m_uuid);
+    }
 
     // For Wi-Fi networks, pass the specific access point path for disconnected networks
     QString accessPointPath;

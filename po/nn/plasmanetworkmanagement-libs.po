@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-06-12 00:45+0000\n"
+"POT-Creation-Date: 2026-07-09 00:46+0000\n"
 "PO-Revision-Date: 2026-07-05 16:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -4246,7 +4246,7 @@ msgstr "Anna"
 msgid "Import a saved configuration file"
 msgstr "Importer ei lagra oppsettfil"
 
-#: models/networkmodelitem.cpp:339
+#: models/networkmodelitem.cpp:342
 #, fuzzy, kde-format
 #| msgctxt "@info:tooltip real user name is not available"
 #| msgid "Not Available"
@@ -4255,7 +4255,7 @@ msgid "Available"
 msgstr "Ikkje tilgjengeleg"
 
 # Er ein type overføringsmodus for Infiniband.
-#: models/networkmodelitem.cpp:345
+#: models/networkmodelitem.cpp:348
 #, fuzzy, kde-format
 #| msgctxt "infiniband transport mode"
 #| msgid "Connected"
@@ -4263,7 +4263,7 @@ msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
 msgstr "Tilkopla («Connected»)"
 
-#: models/networkmodelitem.cpp:347
+#: models/networkmodelitem.cpp:350
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"

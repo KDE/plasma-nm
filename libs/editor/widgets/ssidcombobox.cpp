@@ -44,12 +44,21 @@ void SsidComboBox::slotEditTextChanged(const QString &text)
     }
 }
 
-void SsidComboBox::slotCurrentIndexChanged(int)
+void SsidComboBox::slotCurrentIndexChanged(int index)
 {
-    setEditText(itemData(currentIndex()).toString());
+    // Only fires on a deliberate pick (connected to activated), not on typing.
+    // The security stored on the item travels with the selection, so it works
+    // even if the network has since dropped out of range.
+    const QString ssid = itemData(index).toString();
+    setEditText(ssid);
+
+    const QVariant security = itemData(index, SsidComboBox::NetworkSecurityRole);
+    const NetworkManager::WirelessSecurityType securityType =
+        security.isValid() ? static_cast<NetworkManager::WirelessSecurityType>(security.toInt()) : NetworkManager::UnknownSecurity;
+    Q_EMIT networkSelected(ssid, securityType);
 }
 
-void SsidComboBox::init(const QString &ssid)
+void SsidComboBox::init(const QString &ssid, NetworkManager::WirelessSecurityType savedSecurity)
 {
     m_initialSsid = ssid;
 
@@ -87,6 +96,10 @@ void SsidComboBox::init(const QString &ssid)
     int index = findData(m_initialSsid);
     if (index == -1) {
         insertItem(0, m_initialSsid, m_initialSsid);
+        // Keep the saved security on the item so re-selecting it doesn't reset to None.
+        if (savedSecurity != NetworkManager::UnknownSecurity) {
+            setItemData(0, static_cast<int>(savedSecurity), SsidComboBox::NetworkSecurityRole);
+        }
         setCurrentIndex(0);
     } else {
         setCurrentIndex(index);
@@ -139,6 +152,7 @@ void SsidComboBox::addSsidsToCombo(const QList<NetworkManager::WirelessNetwork::
                         i18n("%1 (%2%)\nSecurity: Insecure\nFrequency: %3 Mhz", accessPoint->ssid(), network->signalStrength(), accessPoint->frequency());
                     addItem(QIcon::fromTheme(QStringLiteral("object-unlocked")), text, accessPoint->ssid());
                 }
+                setItemData(count() - 1, static_cast<int>(security), SsidComboBox::NetworkSecurityRole);
             }
         }
     }

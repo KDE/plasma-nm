@@ -49,15 +49,16 @@ WifiConnectionWidget::WifiConnectionWidget(const NetworkManager::Setting::Ptr &s
         parentFormLayout->insertRow(12, m_wifiSecurity);
     }
 
-    // Connect SSID changes to security widget for auto-detection
-    connect(this, QOverload<const QString &>::of(&WifiConnectionWidget::ssidChanged), m_wifiSecurity, &WifiSecurity::onSsidChanged);
+    // Picking a network from the scan list pre-fills its security; typing an
+    // SSID by hand leaves the current security untouched.
+    connect(m_ui->SSIDCombo, &SsidComboBox::networkSelected, m_wifiSecurity, &WifiSecurity::onSsidChanged);
 
     // Forward security widget signals
     connect(m_wifiSecurity, &WifiSecurity::settingChanged, this, &WifiConnectionWidget::settingChanged);
     connect(m_wifiSecurity, &WifiSecurity::validChanged, this, &WifiConnectionWidget::slotWidgetChanged);
 
     connect(m_ui->btnRandomMacAddr, &QPushButton::clicked, this, &WifiConnectionWidget::generateRandomClonedMac);
-    connect(m_ui->SSIDCombo, &SsidComboBox::ssidChanged, this, QOverload<>::of(&WifiConnectionWidget::ssidChanged));
+    connect(m_ui->SSIDCombo, &SsidComboBox::ssidChanged, this, &WifiConnectionWidget::onSsidTextChanged);
     connect(m_ui->modeComboBox, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::modeChanged);
     connect(m_ui->band, QOverload<int>::of(&KComboBox::currentIndexChanged), this, &WifiConnectionWidget::bandChanged);
 
@@ -120,7 +121,7 @@ void WifiConnectionWidget::loadConfig(const NetworkManager::Setting::Ptr &settin
 {
     NetworkManager::WirelessSetting::Ptr wifiSetting = setting.staticCast<NetworkManager::WirelessSetting>();
 
-    m_ui->SSIDCombo->init(QString::fromUtf8(wifiSetting->ssid()));
+    m_ui->SSIDCombo->init(QString::fromUtf8(wifiSetting->ssid()), m_wifiSecurity ? m_wifiSecurity->currentSecurityType() : NetworkManager::UnknownSecurity);
 
     if (wifiSetting->mode() != NetworkManager::WirelessSetting::Infrastructure) {
         m_ui->modeComboBox->setCurrentIndex(wifiSetting->mode());
@@ -205,13 +206,10 @@ void WifiConnectionWidget::generateRandomClonedMac()
     m_ui->clonedMacAddress->setText(NetworkManager::macAddressAsString(mac));
 }
 
-void WifiConnectionWidget::ssidChanged()
+void WifiConnectionWidget::onSsidTextChanged()
 {
     m_ui->BSSIDCombo->init(m_ui->BSSIDCombo->bssid(), m_ui->SSIDCombo->ssid());
     slotWidgetChanged();
-
-    // Emit that SSID has changed so we can pre-configure wireless security
-    Q_EMIT ssidChanged(m_ui->SSIDCombo->ssid());
 }
 
 void WifiConnectionWidget::modeChanged(int mode)

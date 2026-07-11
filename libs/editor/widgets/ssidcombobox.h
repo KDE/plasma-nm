@@ -12,20 +12,28 @@
 
 #include <KComboBox>
 
+#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/WirelessNetwork>
 
 class PLASMANM_EDITOR_EXPORT SsidComboBox : public KComboBox
 {
     Q_OBJECT
 public:
+    // Detected WirelessSecurityType (stored as int); lets a selection keep its
+    // security after the network drops out of range.
+    static constexpr int NetworkSecurityRole = Qt::UserRole + 1;
+
     explicit SsidComboBox(QWidget *parent = nullptr);
 
-    void init(const QString &ssid);
+    // savedSecurity describes the initial SSID when it isn't currently in range.
+    void init(const QString &ssid, NetworkManager::WirelessSecurityType savedSecurity = NetworkManager::UnknownSecurity);
 
     QString ssid() const;
 
 Q_SIGNALS:
     void ssidChanged();
+    // UnknownSecurity means the picked network had no detected security.
+    void networkSelected(const QString &ssid, NetworkManager::WirelessSecurityType securityType);
 
 private Q_SLOTS:
     void slotEditTextChanged(const QString &text);

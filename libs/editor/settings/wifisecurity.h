@@ -12,6 +12,7 @@
 #include <QWidget>
 
 #include <NetworkManagerQt/Security8021xSetting>
+#include <NetworkManagerQt/Utils>
 #include <NetworkManagerQt/WirelessSecuritySetting>
 
 #include "security802-1x.h"
@@ -62,10 +63,14 @@ public:
     // Expose internal layout for parent to integrate
     QLayout *securityLayout() const;
 
+    // Current security selection, e.g. to describe a saved network that is out of range.
+    NetworkManager::WirelessSecurityType currentSecurityType() const;
+
     QWidget *focusUsernameField();
 
 public Q_SLOTS:
-    void onSsidChanged(const QString &ssid);
+    // UnknownSecurity leaves the current selection untouched.
+    void onSsidChanged(const QString &ssid, NetworkManager::WirelessSecurityType securityType);
 
 private Q_SLOTS:
     void securityChanged(int index);

@@ -371,66 +371,77 @@ QVariantMap WifiSecurity::setting8021x() const
     return {};
 }
 
-void WifiSecurity::onSsidChanged(const QString &ssid)
+void WifiSecurity::onSsidChanged(const QString &ssid, NetworkManager::WirelessSecurityType securityType)
 {
-    for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
-        if (device->type() == NetworkManager::Device::Wifi) {
-            NetworkManager::WirelessDevice::Ptr wifiDevice = device.staticCast<NetworkManager::WirelessDevice>();
-            if (wifiDevice) {
-                for (const NetworkManager::WirelessNetwork::Ptr &wifiNetwork : wifiDevice->networks()) {
-                    if (wifiNetwork && wifiNetwork->ssid() == ssid) {
-                        NetworkManager::AccessPoint::Ptr ap = wifiNetwork->referenceAccessPoint();
-                        NetworkManager::WirelessSecurityType securityType =
-                            NetworkManager::findBestWirelessSecurity(wifiDevice->wirelessCapabilities(),
-                                                                     true,
-                                                                     (wifiDevice->mode() == NetworkManager::WirelessDevice::Adhoc),
-                                                                     ap->capabilities(),
-                                                                     ap->wpaFlags(),
-                                                                     ap->rsnFlags());
-                        switch (securityType) {
-                        case NetworkManager::WirelessSecurityType::StaticWep:
-                            m_ui->securityCombo->setCurrentIndex(WepHex);
-                            break;
-                        case NetworkManager::WirelessSecurityType::DynamicWep:
-                            m_ui->securityCombo->setCurrentIndex(DynamicWep);
-                            break;
-                        case NetworkManager::WirelessSecurityType::Leap:
-                            m_ui->securityCombo->setCurrentIndex(Leap);
-                            break;
-                        case NetworkManager::WirelessSecurityType::WpaPsk:
-                            m_ui->securityCombo->setCurrentIndex(WpaPsk);
-                            break;
-                        case NetworkManager::WirelessSecurityType::Wpa2Psk:
-                            m_ui->securityCombo->setCurrentIndex(WpaPsk);
-                            break;
-                        case NetworkManager::WirelessSecurityType::WpaEap:
-                            m_ui->securityCombo->setCurrentIndex(WpaEap);
-                            break;
-                        case NetworkManager::WirelessSecurityType::Wpa2Eap:
-                            m_ui->securityCombo->setCurrentIndex(WpaEap);
-                            break;
-                        case NetworkManager::WirelessSecurityType::SAE:
-                            m_ui->securityCombo->setCurrentIndex(SAE);
-                            break;
-                        case NetworkManager::WirelessSecurityType::Wpa3SuiteB192:
-                            m_ui->securityCombo->setCurrentIndex(Wpa3SuiteB192);
-                            break;
-                        case NetworkManager::WirelessSecurityType::OWE:
-                            m_ui->securityCombo->setCurrentIndex(OWE);
-                            break;
-                        default:
-                            m_ui->securityCombo->setCurrentIndex(None);
-                        }
+    Q_UNUSED(ssid)
 
-                        return;
-                    }
-                }
-            }
-        }
+    // No detected security (out of range, or a saved connection): keep the
+    // current selection instead of resetting to None.
+    if (securityType == NetworkManager::UnknownSecurity) {
+        return;
     }
 
-    // Reset to none security if we don't find any AP or Wifi device
-    m_ui->securityCombo->setCurrentIndex(None);
+    switch (securityType) {
+    case NetworkManager::WirelessSecurityType::StaticWep:
+        m_ui->securityCombo->setCurrentIndex(WepHex);
+        break;
+    case NetworkManager::WirelessSecurityType::DynamicWep:
+        m_ui->securityCombo->setCurrentIndex(DynamicWep);
+        break;
+    case NetworkManager::WirelessSecurityType::Leap:
+        m_ui->securityCombo->setCurrentIndex(Leap);
+        break;
+    case NetworkManager::WirelessSecurityType::WpaPsk:
+        m_ui->securityCombo->setCurrentIndex(WpaPsk);
+        break;
+    case NetworkManager::WirelessSecurityType::Wpa2Psk:
+        m_ui->securityCombo->setCurrentIndex(WpaPsk);
+        break;
+    case NetworkManager::WirelessSecurityType::WpaEap:
+        m_ui->securityCombo->setCurrentIndex(WpaEap);
+        break;
+    case NetworkManager::WirelessSecurityType::Wpa2Eap:
+        m_ui->securityCombo->setCurrentIndex(WpaEap);
+        break;
+    case NetworkManager::WirelessSecurityType::SAE:
+        m_ui->securityCombo->setCurrentIndex(SAE);
+        break;
+    case NetworkManager::WirelessSecurityType::Wpa3SuiteB192:
+        m_ui->securityCombo->setCurrentIndex(Wpa3SuiteB192);
+        break;
+    case NetworkManager::WirelessSecurityType::OWE:
+        m_ui->securityCombo->setCurrentIndex(OWE);
+        break;
+    default:
+        m_ui->securityCombo->setCurrentIndex(None);
+    }
+}
+
+NetworkManager::WirelessSecurityType WifiSecurity::currentSecurityType() const
+{
+    // Maps the current combo selection back to a WirelessSecurityType.
+    switch (m_ui->securityCombo->currentIndex()) {
+    case WepHex:
+    case WepPassphrase:
+        return NetworkManager::WirelessSecurityType::StaticWep;
+    case Leap:
+        return NetworkManager::WirelessSecurityType::Leap;
+    case DynamicWep:
+        return NetworkManager::WirelessSecurityType::DynamicWep;
+    case WpaPsk:
+        return NetworkManager::WirelessSecurityType::WpaPsk;
+    case WpaEap:
+        return NetworkManager::WirelessSecurityType::WpaEap;
+    case SAE:
+        return NetworkManager::WirelessSecurityType::SAE;
+    case Wpa3SuiteB192:
+        return NetworkManager::WirelessSecurityType::Wpa3SuiteB192;
+    case OWE:
+        return NetworkManager::WirelessSecurityType::OWE;
+    case None:
+    default:
+        return NetworkManager::WirelessSecurityType::NoneSecurity;
+    }
 }
 
 void WifiSecurity::setWepKey(int keyIndex)

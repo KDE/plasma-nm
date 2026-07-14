@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014, 2016, 2017.
-# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2022, 2023, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-28 02:38+0000\n"
-"PO-Revision-Date: 2025-11-12 18:51+0400\n"
+"PO-Revision-Date: 2026-07-13 23:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -80,17 +80,17 @@ msgstr "لِج"
 #: ConnectionListPage.qml:118
 #, kde-format
 msgid "Airplane mode is enabled"
-msgstr "وضع الطائرة ممكن"
+msgstr "وضع الطائرة ممكّن"
 
 #: ConnectionListPage.qml:122
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "شبكة واي فاي والبيانات الجوال معطلة"
+msgstr "شبكة واي فاي والبيانات الجوال معطّلة"
 
 #: ConnectionListPage.qml:124
 #, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "شبكة واي فاي معطلة"
+msgstr "شبكة واي فاي معطّلة"
 
 #: ConnectionListPage.qml:127
 #, kde-format
@@ -100,7 +100,7 @@ msgstr "يبحث عن شبكات واي فاي"
 #: ConnectionListPage.qml:130
 #, kde-format
 msgid "Mobile data is deactivated"
-msgstr "البيانات الجوال معطلة"
+msgstr "البيانات الجوال معطّلة"
 
 #: ConnectionListPage.qml:133
 #, kde-format
@@ -116,13 +116,13 @@ msgstr "لا تتوفر اتصالات"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr "أوقف تشغيل وضع الطيران للبحث عن الشبكات"
+msgstr "أوقِف تشغيل وضع الطيران للبحث عن الشبكات"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr "شغّل شبكة واي فاي أو بيانات الجوال للبحث عن الشبكات"
+msgstr "شغّل شبكة واي فاي أو بيانات الجوّال للبحث عن الشبكات"
 
 #: ConnectionListPage.qml:151
 #, kde-format
@@ -134,7 +134,7 @@ msgstr "شغّل شبكة واي فاي للبحث عن الشبكات"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr "شغّل بيانات الجوال للبحث عن الشبكات"
+msgstr "شغّل بيانات الجوّال للبحث عن الشبكات"
 
 #: DetailsText.qml:40
 #, kde-format
@@ -150,13 +150,13 @@ msgstr "الشّبكات"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr "انقر بالزر الأوسط تعطيل نمط الطيران"
+msgstr "انقر بالزر الأوسط لتعطيل نمط الطيران"
 
 #: main.qml:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "انقر بالزر الأوسط تفعيل نمط الطيران"
+msgstr "انقر بالزر الأوسط لتفعيل نمط الطيران"
 
 #: main.qml:78 Toolbar.qml:74
 #, kde-format
@@ -166,7 +166,7 @@ msgstr "مكّن واي فاي"
 #: main.qml:89
 #, kde-format
 msgid "Enable Mobile Data"
-msgstr "مكّن بيانات الجوال"
+msgstr "مكّن بيانات الجوّال"
 
 #: main.qml:101
 #, kde-format
@@ -202,19 +202,19 @@ msgstr "كلمة سر واي-فاي:"
 #: Toolbar.qml:124
 #, kde-format
 msgid "Enable mobile data"
-msgstr "مكّن بيانات الجوال"
+msgstr "مكّن بيانات الجوّال"
 
 #: Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
-msgstr "عطل وضع الطيران <nl/><nl/> هذا سيمكن الواي فاي و البلوتوث"
+msgstr "عطّل وضع الطيران <nl/><nl/> هذا سيمكّن الواي فاي و البلوتوث"
 
 #: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
-msgstr "مكن وضع الطيران <nl/><nl/> هذا سيعطل الواي فاي و البلوتوث"
+msgstr "مكّن وضع الطيران <nl/><nl/> هذا سيعطّل الواي فاي و البلوتوث"
 
 #: Toolbar.qml:176
 #, kde-format
@@ -225,7 +225,7 @@ msgstr "نقطة اتصال"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr "لا يمكن إنشاء نقطة اتصال لأن شبكة واي فاي معطلة."
+msgstr "لا يمكن إنشاء نقطة اتصال لأن شبكة واي فاي معطّلة."
 
 #: Toolbar.qml:195
 #, kde-format
@@ -268,7 +268,7 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
-"ثبّت ماسح الرمز QRCA لمسح رمز الاستجابة السريعة الذي يتصل بشبكة واي فاي."
+"ثبّت ماسح رمز الشريط QRCA لمسح رمز الاستجابة السريعة الذي يتصل بشبكة واي فاي."
 
 #: Toolbar.qml:253
 #, kde-format

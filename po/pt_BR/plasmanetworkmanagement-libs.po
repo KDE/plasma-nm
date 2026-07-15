@@ -5,14 +5,14 @@
 # André Marcelo Alvarenga <alvarenga@kde.org>, 2014, 2015, 2016, 2019, 2020.
 # Luiz Fernando Ranghetti <elchevive@opensuse.org>, 2017, 2018, 2019, 2020, 2021, 2022, 2023.
 # SPDX-FileCopyrightText: 2024, 2025 Geraldo Simiao <geraldosimiao@fedoraproject.org>
-# SPDX-FileCopyrightText: 2025, 2026 Marcus Gama <marcus.gama@gmail.com>
+# SPDX-FileCopyrightText: 2025-2026 Marcus Gama <marcus.gama@gmail.com>
 # SPDX-FileCopyrightText: 2025 Guilherme Marçal Silva <guimarcalsilva@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-09 02:39+0000\n"
-"PO-Revision-Date: 2026-02-25 08:37-0300\n"
+"PO-Revision-Date: 2026-07-14 08:18-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -665,17 +665,17 @@ msgstr "Endereço IPv4"
 #: editor/connectiondetails.cpp:331
 #, kde-format
 msgid "IPv4 Default Gateway"
-msgstr "Gateway padrão IPv4"
+msgstr "Gateway IPv4 padrão"
 
 #: editor/connectiondetails.cpp:338
 #, kde-format
 msgid "IPv4 Primary Nameserver"
-msgstr "Nome de servidor IPv4 primário"
+msgstr "Servidor de nomes IPv4 primário"
 
 #: editor/connectiondetails.cpp:342
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
-msgstr "Nome de servidor IPv4 secundário"
+msgstr "Servidor de nomes IPv4 secundário"
 
 #: editor/connectiondetails.cpp:347 editor/connectioneditorbase.cpp:313
 #, kde-format
@@ -695,17 +695,17 @@ msgstr "Endereço ULA IPv6"
 #: editor/connectiondetails.cpp:365
 #, kde-format
 msgid "IPv6 Default Gateway"
-msgstr "Gateway padrão IPv6"
+msgstr "Gateway IPv6 padrão"
 
 #: editor/connectiondetails.cpp:372
 #, kde-format
 msgid "IPv6 Primary Nameserver"
-msgstr "Nome de servidor IPv6 primário"
+msgstr "Servidor de nomes IPv6 primário"
 
 #: editor/connectiondetails.cpp:376
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
-msgstr "Nome de servidor IPv6 secundário"
+msgstr "Servidor de nomes IPv6 secundário"
 
 #: editor/connectiondetails.cpp:381 editor/connectioneditorbase.cpp:331
 #, kde-format

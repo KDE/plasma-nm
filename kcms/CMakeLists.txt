@@ -1,6 +1,9 @@
 # SPDX-FileCopyrightText: 2025 Carl Schwan <carl@carlschwan.eu>
 # SPDX-License-Identifier: BSD-2-Clause
 
+if (BUILD_EDITORQML)
+  add_subdirectory(kcm_connections_qml)
+endif()
 add_subdirectory(kcm_cellularnetwork)
 add_subdirectory(kcm_hotspot)
 add_subdirectory(kcm_wifi_mobile)

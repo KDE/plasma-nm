@@ -1,4 +1,4 @@
 #! /usr/bin/env bash
 $EXTRACTRC `find . -name "*.ui" -o -name "*.rc"` >> rc.cpp
-$XGETTEXT `find . -name "*.cpp"` -o $podir/plasmanetworkmanagement-libs.pot
+$XGETTEXT `find . -name \*.cpp -o -name \*.qml` -o $podir/plasmanetworkmanagement-libs.pot
 rm -f rc.cpp

@@ -30,6 +30,12 @@ set(QML_SRCS
 
   qml/wifisecurity/DnsList.qml
   qml/wifisecurity/AlternativeSubjectMatch.qml
+
+  qml/components/Wireless.qml
+
+  qml/PasswordPromptDialog.qml
+
+  qml/AddConnectionDialog.qml
 )
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})

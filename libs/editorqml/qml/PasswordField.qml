@@ -27,7 +27,7 @@ Item {
     }
 
     property bool showPasswordOptions: false
-    property int passwordOption: PasswordOption.StoreForUser
+    property int passwordOption: PasswordField.PasswordOption.StoreForUser
 
     property bool showNotRequired: false
 
@@ -123,7 +123,7 @@ Item {
                 onActivated: {
                     root.passwordOption = currentIndex;
 
-                    if (currentIndex === PasswordOption.AlwaysAsk || currentIndex === PasswordOption.NotRequired) {
+                    if (currentIndex === PasswordField.PasswordOption.AlwaysAsk || currentIndex === PasswordField.PasswordOption.NotRequired) {
                         passwordField.clear();
                         root.password = "";
                     }

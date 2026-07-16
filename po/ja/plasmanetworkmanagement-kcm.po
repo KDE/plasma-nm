@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:49+0000\n"
+"POT-Creation-Date: 2026-07-16 00:46+0000\n"
 "PO-Revision-Date: 2026-07-06 23:18+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -154,72 +154,72 @@ msgstr ""
 "文字:<br/>abcdef, ABCDEF または 0 から 9</li></ul>"
 
 #. i18n is a way to use something pre-exposed to QML.
-#: qml/ConnectionItem.qml:29
+#: qml/ConnectionItem.qml:29 ui/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
 msgstr "%1"
 
-#: qml/ConnectionItem.qml:85
+#: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
 msgid "Connect"
 msgstr "接続"
 
-#: qml/ConnectionItem.qml:85
+#: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
 msgid "Disconnect"
 msgstr "切断"
 
-#: qml/ConnectionItem.qml:90
+#: qml/ConnectionItem.qml:90 ui/ConnectionItem.qml:86
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "検出されなかったため、このネットワークに接続することはできません。"
 
-#: qml/ConnectionItem.qml:94
+#: qml/ConnectionItem.qml:94 ui/ConnectionItem.qml:90
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
 msgstr "複製"
 
-#: qml/ConnectionItem.qml:102
+#: qml/ConnectionItem.qml:102 ui/ConnectionItem.qml:98
 msgid "Delete"
 msgstr "削除"
 
-#: qml/ConnectionItem.qml:113
+#: qml/ConnectionItem.qml:113 ui/ConnectionItem.qml:109
 msgid "Export"
 msgstr "エクスポート"
 
-#: qml/ConnectionItem.qml:127
+#: qml/ConnectionItem.qml:127 ui/ConnectionItem.qml:123
 msgid "Connected"
 msgstr "接続済み"
 
-#: qml/ConnectionItem.qml:129
+#: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
 msgid "Connecting"
 msgstr "接続中"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "利用可能"
 
-#: qml/main.qml:148
+#: qml/main.qml:148 ui/main.qml:207
 msgid "Add new connection"
 msgstr "新しい接続を追加"
 
-#: qml/main.qml:166
+#: qml/main.qml:166 ui/main.qml:225
 msgid "Remove selected connection"
 msgstr "選択された接続を削除"
 
-#: qml/main.qml:184
+#: qml/main.qml:184 ui/main.qml:243
 msgid "Export selected connection"
 msgstr "選択された接続をエクスポート"
 
-#: qml/main.qml:209
+#: qml/main.qml:209 ui/main.qml:179
 msgid "Configuration"
 msgstr "設定"
 
-#: qml/main.qml:236
+#: qml/main.qml:236 ui/main.qml:302
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "接続を削除"
 
-#: qml/main.qml:237
+#: qml/main.qml:237 ui/main.qml:303
 msgid "Do you want to remove the connection '%1'?"
 msgstr "接続'%1'を削除しますか？"
 
@@ -252,3 +252,15 @@ msgstr "パスワードは有効な WEP キーである必要があります"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "パスワードは 8 文字以上 64 文字以下である必要があります"
+
+#: ui/main.qml:36
+#, fuzzy
+#| msgid "Disconnect"
+msgid "Disconnected"
+msgstr "切断"
+
+#: ui/main.qml:267
+#, fuzzy
+#| msgid "Connection imported."
+msgid "Connection name:"
+msgstr "接続がインポートされました。"

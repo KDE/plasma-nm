@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:49+0000\n"
+"POT-Creation-Date: 2026-07-16 00:46+0000\n"
 "PO-Revision-Date: 2020-01-16 11:07+0200\n"
 "Last-Translator: Marek Laane <qiilaq69@gmail.com>\n"
 "Language-Team: Estonian <kde-et@lists.linux.ee>\n"
@@ -155,72 +155,72 @@ msgid ""
 msgstr ""
 
 #. i18n is a way to use something pre-exposed to QML.
-#: qml/ConnectionItem.qml:29
+#: qml/ConnectionItem.qml:29 ui/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
 msgstr ""
 
-#: qml/ConnectionItem.qml:85
+#: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
 msgid "Connect"
 msgstr "Ühenda"
 
-#: qml/ConnectionItem.qml:85
+#: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
 msgid "Disconnect"
 msgstr "Lahuta"
 
-#: qml/ConnectionItem.qml:90
+#: qml/ConnectionItem.qml:90 ui/ConnectionItem.qml:86
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr ""
 
-#: qml/ConnectionItem.qml:94
+#: qml/ConnectionItem.qml:94 ui/ConnectionItem.qml:90
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
 msgstr ""
 
-#: qml/ConnectionItem.qml:102
+#: qml/ConnectionItem.qml:102 ui/ConnectionItem.qml:98
 msgid "Delete"
 msgstr "Kustuta"
 
-#: qml/ConnectionItem.qml:113
+#: qml/ConnectionItem.qml:113 ui/ConnectionItem.qml:109
 msgid "Export"
 msgstr "Ekspordi"
 
-#: qml/ConnectionItem.qml:127
+#: qml/ConnectionItem.qml:127 ui/ConnectionItem.qml:123
 msgid "Connected"
 msgstr "Ühendatud"
 
-#: qml/ConnectionItem.qml:129
+#: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
 msgid "Connecting"
 msgstr "Ühendumine"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr ""
 
-#: qml/main.qml:148
+#: qml/main.qml:148 ui/main.qml:207
 msgid "Add new connection"
 msgstr "Lisa uus ühendus"
 
-#: qml/main.qml:166
+#: qml/main.qml:166 ui/main.qml:225
 msgid "Remove selected connection"
 msgstr "Eemalda valitud ühendus"
 
-#: qml/main.qml:184
+#: qml/main.qml:184 ui/main.qml:243
 msgid "Export selected connection"
 msgstr "Ekspordi valitud ühendus"
 
-#: qml/main.qml:209
+#: qml/main.qml:209 ui/main.qml:179
 msgid "Configuration"
 msgstr "Seadistamine"
 
-#: qml/main.qml:236
+#: qml/main.qml:236 ui/main.qml:302
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Ühenduse eemaldamine"
 
-#: qml/main.qml:237
+#: qml/main.qml:237 ui/main.qml:303
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Kas eemaldada ühendus '%1'?"
 
@@ -259,6 +259,18 @@ msgstr ""
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
+
+#: ui/main.qml:36
+#, fuzzy
+#| msgid "Disconnect"
+msgid "Disconnected"
+msgstr "Lahuta"
+
+#: ui/main.qml:267
+#, fuzzy
+#| msgid "Connected"
+msgid "Connection name:"
+msgstr "Ühendatud"
 
 #~ msgid "Create"
 #~ msgstr "Loo"

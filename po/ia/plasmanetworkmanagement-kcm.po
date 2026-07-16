@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:49+0000\n"
+"POT-Creation-Date: 2026-07-16 00:46+0000\n"
 "PO-Revision-Date: 2026-05-06 11:29+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -153,72 +153,72 @@ msgstr ""
 "characteres hexadecimal:<br/>abcdef, ABCDEF o 0-9</li></ul>"
 
 #. i18n is a way to use something pre-exposed to QML.
-#: qml/ConnectionItem.qml:29
+#: qml/ConnectionItem.qml:29 ui/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
 msgstr "%1"
 
-#: qml/ConnectionItem.qml:85
+#: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
 msgid "Connect"
 msgstr "Connecte"
 
-#: qml/ConnectionItem.qml:85
+#: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
 msgid "Disconnect"
 msgstr "Disconnecte"
 
-#: qml/ConnectionItem.qml:90
+#: qml/ConnectionItem.qml:90 ui/ConnectionItem.qml:86
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "Non pote connecter a iste rete proque illo non es discoperite."
 
-#: qml/ConnectionItem.qml:94
+#: qml/ConnectionItem.qml:94 ui/ConnectionItem.qml:90
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
 msgstr "Duplica"
 
-#: qml/ConnectionItem.qml:102
+#: qml/ConnectionItem.qml:102 ui/ConnectionItem.qml:98
 msgid "Delete"
 msgstr "Dele"
 
-#: qml/ConnectionItem.qml:113
+#: qml/ConnectionItem.qml:113 ui/ConnectionItem.qml:109
 msgid "Export"
 msgstr "Exporta"
 
-#: qml/ConnectionItem.qml:127
+#: qml/ConnectionItem.qml:127 ui/ConnectionItem.qml:123
 msgid "Connected"
 msgstr "Connectite"
 
-#: qml/ConnectionItem.qml:129
+#: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
 msgid "Connecting"
 msgstr "Il es connectente"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Disponibile"
 
-#: qml/main.qml:148
+#: qml/main.qml:148 ui/main.qml:207
 msgid "Add new connection"
 msgstr "Adde nove connexion"
 
-#: qml/main.qml:166
+#: qml/main.qml:166 ui/main.qml:225
 msgid "Remove selected connection"
 msgstr "Remove connexion seligite"
 
-#: qml/main.qml:184
+#: qml/main.qml:184 ui/main.qml:243
 msgid "Export selected connection"
 msgstr "Export connexion seligite"
 
-#: qml/main.qml:209
+#: qml/main.qml:209 ui/main.qml:179
 msgid "Configuration"
 msgstr "Configuration"
 
-#: qml/main.qml:236
+#: qml/main.qml:236 ui/main.qml:302
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Remove connexion"
 
-#: qml/main.qml:237
+#: qml/main.qml:237 ui/main.qml:303
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Tu  vole remover  le connexion '%1' ?"
 
@@ -251,6 +251,18 @@ msgstr "Contrasigno debe esser un valide clave WEP"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Contrasigno debe esser inter 8 e 64 characteres"
+
+#: ui/main.qml:36
+#, fuzzy
+#| msgid "Disconnect"
+msgid "Disconnected"
+msgstr "Disconnecte"
+
+#: ui/main.qml:267
+#, fuzzy
+#| msgid "Connection imported."
+msgid "Connection name:"
+msgstr "Connexion importate."
 
 #~ msgid "Create"
 #~ msgstr "Crea"

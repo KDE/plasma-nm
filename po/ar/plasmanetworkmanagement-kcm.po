@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-04-20 00:49+0000\n"
+"POT-Creation-Date: 2026-07-16 00:46+0000\n"
 "PO-Revision-Date: 2026-04-23 10:25+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -154,72 +154,72 @@ msgstr ""
 ">abcdef أو ABCDEF أو 0-9</li></ul>"
 
 #. i18n is a way to use something pre-exposed to QML.
-#: qml/ConnectionItem.qml:29
+#: qml/ConnectionItem.qml:29 ui/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
 msgstr "%1"
 
-#: qml/ConnectionItem.qml:85
+#: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
 msgid "Connect"
 msgstr "اتّصل"
 
-#: qml/ConnectionItem.qml:85
+#: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
 msgid "Disconnect"
 msgstr "اقطع الاتصال"
 
-#: qml/ConnectionItem.qml:90
+#: qml/ConnectionItem.qml:90 ui/ConnectionItem.qml:86
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "يتعذر الاتصال بهذه الشبكة لأنه لم يجدها."
 
-#: qml/ConnectionItem.qml:94
+#: qml/ConnectionItem.qml:94 ui/ConnectionItem.qml:90
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
 msgstr "كرّر"
 
-#: qml/ConnectionItem.qml:102
+#: qml/ConnectionItem.qml:102 ui/ConnectionItem.qml:98
 msgid "Delete"
 msgstr "احذف"
 
-#: qml/ConnectionItem.qml:113
+#: qml/ConnectionItem.qml:113 ui/ConnectionItem.qml:109
 msgid "Export"
 msgstr "صدّر"
 
-#: qml/ConnectionItem.qml:127
+#: qml/ConnectionItem.qml:127 ui/ConnectionItem.qml:123
 msgid "Connected"
 msgstr "متّصل"
 
-#: qml/ConnectionItem.qml:129
+#: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
 msgid "Connecting"
 msgstr "يتّصل"
 
-#: qml/ConnectionItem.qml:131
+#: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "متوفّرة"
 
-#: qml/main.qml:148
+#: qml/main.qml:148 ui/main.qml:207
 msgid "Add new connection"
 msgstr "أضف اتصالاً جديداً"
 
-#: qml/main.qml:166
+#: qml/main.qml:166 ui/main.qml:225
 msgid "Remove selected connection"
 msgstr "أزل الاتصال المحدد"
 
-#: qml/main.qml:184
+#: qml/main.qml:184 ui/main.qml:243
 msgid "Export selected connection"
 msgstr "صدر الاتصال المحدد"
 
-#: qml/main.qml:209
+#: qml/main.qml:209 ui/main.qml:179
 msgid "Configuration"
 msgstr "الضّبط"
 
-#: qml/main.qml:236
+#: qml/main.qml:236 ui/main.qml:302
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "أزل الاتصال"
 
-#: qml/main.qml:237
+#: qml/main.qml:237 ui/main.qml:303
 msgid "Do you want to remove the connection '%1'?"
 msgstr "أتريد إزالة الاتصال '%1'؟"
 
@@ -252,6 +252,18 @@ msgstr "يجب أن تكون كلمة السر مفتاح WEP صالحًا"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "يجب أن تتكون كلمة السر من 8 إلى 64 حرفًا"
+
+#: ui/main.qml:36
+#, fuzzy
+#| msgid "Disconnect"
+msgid "Disconnected"
+msgstr "اقطع الاتصال"
+
+#: ui/main.qml:267
+#, fuzzy
+#| msgid "Connection imported."
+msgid "Connection name:"
+msgstr "استورد الاتصال"
 
 #~ msgid "Create"
 #~ msgstr "أنشئ"

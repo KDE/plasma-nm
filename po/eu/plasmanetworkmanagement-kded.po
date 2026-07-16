@@ -1,18 +1,18 @@
 # Translation for plasmanetworkmanagement-kded.po to Euskara/Basque (eu).
-# Copyright (C) 2019-2025 This file is copyright:
+# Copyright (C) 2019-2026 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# SPDX-FileCopyrightText: 2023, 2024, 2025 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2023-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Osoitz <oelkoro@gmail.com>, 2017.
 # Ander Elortondo <ander.elor@gmail.com>, 2017.
-# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2019, 2020, 2022, 2023, 2024, 2025.
+# Iñigo Salvador Azurmendi <xalba@ni.eus>, 2017, 2019, 2020, 2022, 2023, 2024, 2025, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasman-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2025-07-29 11:24+0200\n"
+"PO-Revision-Date: 2026-07-15 22:39+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.04.3\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -582,11 +582,10 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Sartu \"%1\" konexiorako pasahitza:"
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr "Pasahitza:"
+msgstr "%1(a)ren pasahitza"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -606,13 +605,9 @@ msgstr "(%1) VPN isilpekoen elkarrizketa-koadroa"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "Connection Password"
-msgstr "Konexioa kendu zen"
+msgstr "Konexioaren pasahitza"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92

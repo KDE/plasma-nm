@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 00:46+0000\n"
-"PO-Revision-Date: 2026-04-20 05:14+0200\n"
+"PO-Revision-Date: 2026-07-16 06:06+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -252,13 +252,9 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "პაროლი 8-დან 64-მდე სიმბოლოს უნდა შეიცავდეს"
 
 #: ui/main.qml:36
-#, fuzzy
-#| msgid "Disconnect"
 msgid "Disconnected"
-msgstr "გათიშვა"
+msgstr "გათიშულია"
 
 #: ui/main.qml:267
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "მიერთება შემოტანილია."
+msgstr "შეერთების სახელი:"

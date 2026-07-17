@@ -255,13 +255,9 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "Heslo musí mít délku 8 až 64 znaků"
 
 #: ui/main.qml:36
-#, fuzzy
-#| msgid "Disconnect"
 msgid "Disconnected"
-msgstr "Odpojit se"
+msgstr "Odpojen"
 
 #: ui/main.qml:267
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "Nastavení bylo importováno."
+msgstr "Název spojení:"

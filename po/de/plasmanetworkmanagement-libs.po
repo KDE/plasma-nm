@@ -4278,16 +4278,14 @@ msgid "WEP 128-bit Passphrase"
 msgstr "WEP-Schlüssel oder -Kennsatz"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:28
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Personal"
+#, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr "WPA2/WPA3 Personal"
+msgstr "WPA/WPA2 Personal"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:29
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Enterprise"
+#, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr "WPA2/WPA3 Enterprise"
+msgstr "WPA/WPA2 Enterprise"
 
 #: handler.cpp:140
 #, kde-format

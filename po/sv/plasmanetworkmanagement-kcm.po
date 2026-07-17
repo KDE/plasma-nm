@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 00:46+0000\n"
-"PO-Revision-Date: 2026-07-07 22:32+0200\n"
+"PO-Revision-Date: 2026-07-16 07:14+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -253,16 +253,12 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "Lösenordet måste vara mellan 8 och 64 tecken långt"
 
 #: ui/main.qml:36
-#, fuzzy
-#| msgid "Disconnect"
 msgid "Disconnected"
-msgstr "Koppla ner"
+msgstr "Nerkopplad"
 
 #: ui/main.qml:267
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "Anslutning importerad."
+msgstr "Anslutningsnamn:"
 
 #~ msgid "Create"
 #~ msgstr "Skapa"

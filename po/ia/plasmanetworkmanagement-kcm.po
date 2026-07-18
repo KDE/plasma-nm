@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 00:46+0000\n"
-"PO-Revision-Date: 2026-05-06 11:29+0200\n"
+"PO-Revision-Date: 2026-07-17 16:11+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -253,16 +253,12 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "Contrasigno debe esser inter 8 e 64 characteres"
 
 #: ui/main.qml:36
-#, fuzzy
-#| msgid "Disconnect"
 msgid "Disconnected"
-msgstr "Disconnecte"
+msgstr "Disconnectite"
 
 #: ui/main.qml:267
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "Connexion importate."
+msgstr "Nomine de connexion:"
 
 #~ msgid "Create"
 #~ msgstr "Crea"

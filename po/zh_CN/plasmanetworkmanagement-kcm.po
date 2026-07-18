@@ -251,13 +251,9 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "密码长度必须在 8 至 64 个字符之间"
 
 #: ui/main.qml:36
-#, fuzzy
-#| msgid "Disconnect"
 msgid "Disconnected"
-msgstr "断开"
+msgstr ""
 
 #: ui/main.qml:267
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "连接已导入。"
+msgstr ""

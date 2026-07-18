@@ -4152,8 +4152,7 @@ msgid "Status"
 msgstr ""
 
 #: editorqml/qml/components/Wireless.qml:30
-#, fuzzy, kde-format
-#| msgid "Wifi Security"
+#, kde-format
 msgid "Wi-Fi Security"
 msgstr "Wi-Fi-tryggleik"
 
@@ -4366,14 +4365,12 @@ msgid "WEP 128-bit Passphrase"
 msgstr ""
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:28
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr "WPA/WPA2 personleg"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:29
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 firma"
 

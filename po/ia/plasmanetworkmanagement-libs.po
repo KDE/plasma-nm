@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 00:46+0000\n"
-"PO-Revision-Date: 2026-05-16 10:46+0200\n"
+"PO-Revision-Date: 2026-07-17 16:16+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -4071,16 +4071,13 @@ msgid "R&emove"
 msgstr "R&emove"
 
 #: editorqml/qml/AddConnectionDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr "Typo de connexion:"
+msgstr "Selige un typo de connexion"
 
 #: editorqml/qml/components/Wireless.qml:21
-#, fuzzy, kde-format
-#| msgctxt "@title:tab Connection status and details"
-#| msgid "Status"
+#, kde-format
 msgid "Status"
 msgstr "Stato"
 
@@ -4090,141 +4087,125 @@ msgid "Wi-Fi Security"
 msgstr "Securitate de rete sin cablos (Wi-Fi)"
 
 #: editorqml/qml/ConfigurationDialog.qml:19
-#, fuzzy, kde-format
-#| msgctxt "General"
-#| msgid "General configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr "Configuration general"
+msgstr "Configuration"
 
 #: editorqml/qml/ConfigurationDialog.qml:42
 #, kde-format
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "Demanda  PIN quando il releva modem"
 
 #: editorqml/qml/ConfigurationDialog.qml:49
-#, fuzzy, kde-format
-#| msgid "Virtual connections"
+#, kde-format
 msgid "Show virtual connections"
-msgstr "Connexiones virtual"
+msgstr "Monstra connexiones virtual"
 
 #: editorqml/qml/ConfigurationDialog.qml:55
-#, fuzzy, kde-format
-#| msgid "Create a connection for a hidden network"
+#, kde-format
 msgid "Create new connections as system connections"
-msgstr "Crea un connexion per un rete celate"
+msgstr "Crea nove connexiones como connexiones de systema"
 
 #: editorqml/qml/PasswordField.qml:95
-#, fuzzy, kde-format
-#| msgid "Always Ask"
+#, kde-format
 msgid "Always asked"
-msgstr "Demanda sempre"
+msgstr "Sempre demandate"
 
 #: editorqml/qml/PasswordField.qml:97
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Not required"
 msgstr "Non requirite"
 
 #: editorqml/qml/PasswordPromptDialog.qml:24
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgctxt "@action:button Connect to network"
 msgid "Connect"
-msgstr "Connectite"
+msgstr "Connecte"
 
 #: editorqml/qml/PasswordPromptDialog.qml:31
 #, kde-format
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
-msgstr ""
+msgstr "Cancella"
 
 #: editorqml/qml/PasswordPromptDialog.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "Contrasigno:"
+msgstr "Inserta contrasigno"
 
 #: editorqml/qml/PasswordPromptDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Network ID"
+#, kde-format
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr "ID de rete"
+msgstr "Rete: %1"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "Contrasigno debe esser un valide clave WEP"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "Contrasigno debe esser inter 8 e 64 characteres"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
-#, fuzzy, kde-format
-#| msgid "Alternative subject matches:"
+#, kde-format
 msgid "Alternative subject matches"
-msgstr "Subjecto alternative corresponde:"
+msgstr "Subjecto alternative corresponde"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:106
 #: editorqml/qml/wifisecurity/DnsList.qml:106
 #, kde-format
 msgid "Move Up"
-msgstr ""
+msgstr "Move in alto"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:119
 #: editorqml/qml/wifisecurity/DnsList.qml:119
 #, kde-format
 msgid "Move Down"
-msgstr ""
+msgstr "Move a basso "
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:26
-#, fuzzy, kde-format
-#| msgid "Anonymous identity:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Anonymous identity:"
 msgstr "Identitate anonyme"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
-#, fuzzy, kde-format
-#| msgid "Anonymous"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Anonymous"
 msgstr "Anonyme"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
-#, fuzzy, kde-format
-#| msgid "Authenticated"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Authenticated"
 msgstr "Authenticate"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
-#, fuzzy, kde-format
-#| msgid "Both"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Both"
 msgstr "Ambe"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:70
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt ""
 "@label PAC stands for Proxy Auto-Configuration and should not be translated"
 msgid "PAC file:"
 msgstr "File PAC:"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:119
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt "@item:filefilter"
 msgid "PAC files (*.pac)"
-msgstr "File PAC:"
+msgstr "Files PAC  (*.pac)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:45
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:39
@@ -4235,9 +4216,7 @@ msgid "*.der *.pem *.crt *.cer"
 msgstr "*.der *.pem *.crt *.cer"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:61
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgid "Automatic"
 msgstr "Automatic"
 
@@ -4245,10 +4224,9 @@ msgstr "Automatic"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:166
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:172
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:92
-#, fuzzy, kde-format
-#| msgid "*.der *.pem *.crt *.cer"
+#, kde-format
 msgid "Certificates (*.der *.pem *.crt *.cer)"
-msgstr "*.der *.pem *.crt *.cer"
+msgstr "Certificatos (*.der *.pem *.crt *.cer)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:139
 #, kde-format
@@ -4256,10 +4234,9 @@ msgid "*.der *.pem *.p12 *.key"
 msgstr "*.der *.pem *.p12 *.key"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:178
-#, fuzzy, kde-format
-#| msgid "*.der *.pem *.p12 *.key"
+#, kde-format
 msgid "Keys (*.der *.pem *.p12 *.key)"
-msgstr "*.der *.pem *.p12 *.key"
+msgstr "Claves (*.der *.pem *.p12 *.key)"
 
 #: editorqml/qml/wifisecurity/authentication/Owe.qml:30
 #, kde-format
@@ -4267,48 +4244,43 @@ msgid ""
 "Enhanced Open (OWE) provides encryption without authentication. No password "
 "required."
 msgstr ""
+"Enhanced Open (OWE) provide cryptographia sin authentication. Nulle "
+"contrasigno es requirite."
 
 #: editorqml/qml/wifisecurity/authentication/WepKey.qml:38
-#, fuzzy, kde-format
-#| msgid "WEP index:"
+#, kde-format
 msgid "Key index:"
-msgstr "Indice &WEP:"
+msgstr "Indice de clave:"
 
 #: editorqml/qml/wifisecurity/DnsList.qml:15
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "DNS Servers"
-msgstr "Servitores de DNS:"
+msgstr "Servitores de DNS"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
-#, fuzzy, kde-format
-#| msgctxt "no security"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "Necun"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:25
-#, fuzzy, kde-format
-#| msgid "WEP key 40/128 bits (Hex or ASCII)"
+#, kde-format
 msgid "WEP 40/128-bit key (Hex)"
-msgstr "Clave WEP  40/128 bits (Hex o ASCII)"
+msgstr "WEP 40/128-bit clave (Hex)"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:26
 #, kde-format
 msgid "WEP 128-bit Passphrase"
-msgstr ""
+msgstr "WEP 128-bit Passphrase (phrase de contrasigno)"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:28
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Personal"
+#, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr "WPA2/WPA3 Personal"
+msgstr "WPA/WPA2 Personal"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:29
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Enterprise"
+#, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr "WPA2/WPA3 Interprisa"
+msgstr "WéA/WPA2 Interprisa"
 
 #: handler.cpp:140
 #, kde-format
@@ -4581,42 +4553,39 @@ msgid "Unknown"
 msgstr "Incognite"
 
 #: qml/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connect"
-msgstr "Connectite"
+msgstr "Connecte"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnect"
-msgstr "Disconnectite"
+msgstr "Disconnecte"
 
 #: qml/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Configura"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Connect to"
-msgstr "Connexion"
+msgstr "Connecte a"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
 msgid "/s"
-msgstr ""
+msgstr "/s"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Upload"
-msgstr ""
+msgstr "Incarga"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "Discarga"
 
 #~ msgid "BSSID:"
 #~ msgstr "BSSID"

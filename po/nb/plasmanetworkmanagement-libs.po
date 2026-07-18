@@ -4022,10 +4022,9 @@ msgid "Status"
 msgstr ""
 
 #: editorqml/qml/components/Wireless.qml:30
-#, fuzzy, kde-format
-#| msgid "Wifi Security"
+#, kde-format
 msgid "Wi-Fi Security"
-msgstr "Wifi-sikkerhet"
+msgstr "Wi-Fi-sikkerhet"
 
 #: editorqml/qml/ConfigurationDialog.qml:19
 #, fuzzy, kde-format

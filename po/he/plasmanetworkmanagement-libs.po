@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 00:46+0000\n"
-"PO-Revision-Date: 2026-05-16 20:51+0300\n"
+"PO-Revision-Date: 2026-07-17 12:29+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.1\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -4041,16 +4041,13 @@ msgid "R&emove"
 msgstr "ה&סרה"
 
 #: editorqml/qml/AddConnectionDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr "סוג חיבור:"
+msgstr "נא לבחור סוג חיבור"
 
 #: editorqml/qml/components/Wireless.qml:21
-#, fuzzy, kde-format
-#| msgctxt "@title:tab Connection status and details"
-#| msgid "Status"
+#, kde-format
 msgid "Status"
 msgstr "מצב"
 
@@ -4060,139 +4057,125 @@ msgid "Wi-Fi Security"
 msgstr "אבטחת רשת אלחוטית"
 
 #: editorqml/qml/ConfigurationDialog.qml:19
-#, fuzzy, kde-format
-#| msgctxt "General"
-#| msgid "General configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr "הגדרות כלליות"
+msgstr "הגדרות"
 
 #: editorqml/qml/ConfigurationDialog.qml:42
 #, kde-format
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "לבקש קוד אישי עם זיהוי מודם"
 
 #: editorqml/qml/ConfigurationDialog.qml:49
-#, fuzzy, kde-format
-#| msgid "Virtual connections"
+#, kde-format
 msgid "Show virtual connections"
-msgstr "חיבורים וירטואליים"
+msgstr "הצגת חיבורים וירטואליים"
 
 #: editorqml/qml/ConfigurationDialog.qml:55
-#, fuzzy, kde-format
-#| msgid "Create a connection for a hidden network"
+#, kde-format
 msgid "Create new connections as system connections"
-msgstr "יצירת חיבור לרשת אלחוטית מוסתרת"
+msgstr "יצירת חיבורים חדשים כחיבורי מערכת"
 
 #: editorqml/qml/PasswordField.qml:95
 #, kde-format
 msgid "Always asked"
-msgstr ""
+msgstr "תמיד לבקש"
 
 #: editorqml/qml/PasswordField.qml:97
 #, kde-format
 msgid "Not required"
-msgstr ""
+msgstr "לא דרוש"
 
 #: editorqml/qml/PasswordPromptDialog.qml:24
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgctxt "@action:button Connect to network"
 msgid "Connect"
-msgstr "מחובר"
+msgstr "התחברות"
 
 #: editorqml/qml/PasswordPromptDialog.qml:31
 #, kde-format
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
-msgstr ""
+msgstr "ביטול"
 
 #: editorqml/qml/PasswordPromptDialog.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "סיסמה:"
+msgstr "נא למלא סיסמה"
 
 #: editorqml/qml/PasswordPromptDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Network ID"
+#, kde-format
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr "מזהה רשת"
+msgstr "רשת: %1"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "הסיסמה חייבת להיות מפתח WEP תקף"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "אורך הסיסמה חייב להיות בין 8 ל־64 תווים"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
-#, fuzzy, kde-format
-#| msgid "Alternative subject matches:"
+#, kde-format
 msgid "Alternative subject matches"
-msgstr "התאמת נושא חלופית:"
+msgstr "התאמות נושא חלופיות"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:106
 #: editorqml/qml/wifisecurity/DnsList.qml:106
 #, kde-format
 msgid "Move Up"
-msgstr ""
+msgstr "הגבהה"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:119
 #: editorqml/qml/wifisecurity/DnsList.qml:119
 #, kde-format
 msgid "Move Down"
-msgstr ""
+msgstr "הנמכה"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:26
-#, fuzzy, kde-format
-#| msgid "Anonymous identity:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Anonymous identity:"
 msgstr "זהות אלמונית:"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
-#, fuzzy, kde-format
-#| msgid "Anonymous"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Anonymous"
 msgstr "אלמוני"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
-#, fuzzy, kde-format
-#| msgid "Authenticated"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Authenticated"
 msgstr "מאומת"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
-#, fuzzy, kde-format
-#| msgid "Both"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Both"
 msgstr "שניהם"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:70
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt ""
 "@label PAC stands for Proxy Auto-Configuration and should not be translated"
 msgid "PAC file:"
 msgstr "קובץ PAC:"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:119
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt "@item:filefilter"
 msgid "PAC files (*.pac)"
-msgstr "קובץ PAC:"
+msgstr "קובצי PAC‏ (‎*.pac)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:45
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:39
@@ -4203,9 +4186,7 @@ msgid "*.der *.pem *.crt *.cer"
 msgstr "*.der *.pem *.crt *.cer"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:61
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgid "Automatic"
 msgstr "אוטומטית"
 
@@ -4213,10 +4194,9 @@ msgstr "אוטומטית"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:166
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:172
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:92
-#, fuzzy, kde-format
-#| msgid "*.der *.pem *.crt *.cer"
+#, kde-format
 msgid "Certificates (*.der *.pem *.crt *.cer)"
-msgstr "*.der *.pem *.crt *.cer"
+msgstr "אישורים (‎*.der‏ ‎*.pem‏ ‎*.crt‏ ‎*.cer)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:139
 #, kde-format
@@ -4224,59 +4204,51 @@ msgid "*.der *.pem *.p12 *.key"
 msgstr "*.der *.pem *.p12 *.key"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:178
-#, fuzzy, kde-format
-#| msgid "*.der *.pem *.p12 *.key"
+#, kde-format
 msgid "Keys (*.der *.pem *.p12 *.key)"
-msgstr "*.der *.pem *.p12 *.key"
+msgstr "מפתחות (‎*.der‏ ‎*.pem‏ ‎*.p12‏ ‎*.key)"
 
 #: editorqml/qml/wifisecurity/authentication/Owe.qml:30
 #, kde-format
 msgid ""
 "Enhanced Open (OWE) provides encryption without authentication. No password "
 "required."
-msgstr ""
+msgstr "פתוח מורחב (OWE) מספק הצפנה ללא אימות. אין צורך בסיסמה."
 
 #: editorqml/qml/wifisecurity/authentication/WepKey.qml:38
-#, fuzzy, kde-format
-#| msgid "WEP index:"
+#, kde-format
 msgid "Key index:"
-msgstr "מפתח WEP:"
+msgstr "מצביע מפתח:"
 
 #: editorqml/qml/wifisecurity/DnsList.qml:15
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "DNS Servers"
-msgstr "שרתי DNS:"
+msgstr "שרתי DNS"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
-#, fuzzy, kde-format
-#| msgctxt "no security"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "ללא"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:25
-#, fuzzy, kde-format
-#| msgid "WEP key 40/128 bits (Hex or ASCII)"
+#, kde-format
 msgid "WEP 40/128-bit key (Hex)"
-msgstr "מפתח WEP ‏40/128 סיביות (Hex או ASCII)"
+msgstr "מפתח WEP באורך ‏40/128 סיביות (Hex)"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:26
 #, kde-format
 msgid "WEP 128-bit Passphrase"
-msgstr ""
+msgstr "מילת צופן WEP באורך 128 סיביות"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:28
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Personal"
+#, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr "WPA2/WPA3 אישי"
+msgstr "WPA/WPA2 אישי"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:29
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Enterprise"
+#, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr "WPA2/WPA3 ארגוני"
+msgstr "WPA/WPA2 ארגוני"
 
 #: handler.cpp:140
 #, kde-format
@@ -4549,42 +4521,39 @@ msgid "Unknown"
 msgstr "לא ידוע"
 
 #: qml/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connect"
-msgstr "מחובר"
+msgstr "התחברות"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnect"
-msgstr "מנותק"
+msgstr "ניתוק"
 
 #: qml/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "הגדרה"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Connect to"
-msgstr "חיבור"
+msgstr "להתחבר אל"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
 msgid "/s"
-msgstr ""
+msgstr "לשנייה"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Upload"
-msgstr ""
+msgstr "העלאה"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "הורדה"
 
 #~ msgid "BSSID:"
 #~ msgstr "שם רשת נסתרת:"

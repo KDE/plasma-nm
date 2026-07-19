@@ -1,41 +1,41 @@
-# Copyright (C) 2026 This file is copyright:
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
-# SPDX-FileCopyrightText: 2026 Yaron Shahrabani <sh.yaron@gmail.com>
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 00:46+0000\n"
-"PO-Revision-Date: 2026-07-17 12:28+0300\n"
-"Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
-"Language-Team: צוות התרגום של KDE ישראל\n"
-"Language: he\n"
+"PO-Revision-Date: 2026-07-18 06:45+0200\n"
+"Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
+"Language-Team: LANGUAGE <kde-i18n-doc@kde.org>\n"
+"Language: sl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
-"n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Poedit 3.9\n"
 
 #: kcm.cpp:324
 #, kde-format
 msgid "my_shared_connection"
-msgstr "החיבור_המשותף_שלי"
+msgstr "my_shared_connection"
 
 #: kcm.cpp:382
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
-msgstr "לשמור את השינויים שנערכו בחיבור ‚%1’?"
+msgstr "Ali želite shraniti spremembe narejene na povezavi '%1'?"
 
 #: kcm.cpp:385
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
-msgstr "לשמור את השינויים"
+msgstr "Shrani spremembe"
 
 #: kcm.cpp:414
 #, kde-format
 msgctxt "Suffix appended to duplicated connection name"
 msgid " (Copy)"
-msgstr " (עותק)"
+msgstr " (Kopija)"

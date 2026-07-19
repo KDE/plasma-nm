@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-28 00:46+0000\n"
-"PO-Revision-Date: 2026-05-01 15:59+0300\n"
+"PO-Revision-Date: 2026-07-19 01:50+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
@@ -930,14 +930,14 @@ msgstr "Tikrinti objektą dalinai (pasenusi veiksena, primygtinai neskatinama)"
 msgid ""
 "Subject or Common Name to verify server certificate information against."
 msgstr ""
-"Objektas ar bendrinis pavadinimas (CN) pagal kurį tikrinti serverio "
-"liudijimo informaciją."
+"Objektas ar bendrinis pavadinimas (CN), pagal kurį tikrinti informaciją apie "
+"serverio liudijimą."
 
 #. i18n: ectx: property (text), widget (QLabel, lbSubjectMatch)
 #: openvpnadvanced.ui:921
 #, kde-format
 msgid "Subject Match:"
-msgstr "Objekto atitikmuo:"
+msgstr "Objekto atitiktis:"
 
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, subjectMatch)
 #: openvpnadvanced.ui:937

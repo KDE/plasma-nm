@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-09 02:39+0000\n"
-"PO-Revision-Date: 2026-04-29 01:13+0300\n"
+"PO-Revision-Date: 2026-07-19 01:41+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -1001,7 +1001,7 @@ msgstr "Tinklų sietuvas"
 #: editor/settings/security802-1x.cpp:542
 #, kde-format
 msgid "Alternative Subject Matches"
-msgstr "Alternatyvūs objektų atitikmenys"
+msgstr "Alternatyvios objektų atitiktys"
 
 #: editor/settings/security802-1x.cpp:544
 #, kde-format
@@ -1142,13 +1142,13 @@ msgstr "LĮ liudijimas:"
 #: editor/settings/ui/802-1x.ui:182
 #, kde-format
 msgid "Subject match:"
-msgstr "Objekto atitikmuo:"
+msgstr "Objekto atitiktis:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:199
 #, kde-format
 msgid "Alternative subject matches:"
-msgstr "Alternatyvūs objektų atitikmenys:"
+msgstr "Alternatyvios objektų atitiktys:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
@@ -1894,13 +1894,13 @@ msgstr "Išjungtas"
 #: editor/settings/ui/ipv6.ui:204
 #, kde-format
 msgid "Enabled (prefer public address)"
-msgstr "Įjungta (teikti pirmenybę viešajam adresui)"
+msgstr "Įjungtas (teikti pirmenybę viešajam adresui)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:209
 #, kde-format
 msgid "Enabled (prefer temporary addresses)"
-msgstr "Įjungta (teikti pirmenybę laikinajam adresui)"
+msgstr "Įjungtas (teikti pirmenybę laikinajam adresui)"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:230

@@ -522,11 +522,8 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
                 this,
                 [this, job, &request]() {
                     --request.storageJobsRunning;
-                    if (job->error() == QKeychain::NoBackendAvailable || job->error() == QKeychain::NotImplemented) {
-                        m_secureStorageAvailable = false;
-                    }
-                    const bool backendUnavailable = job->error() == QKeychain::NoBackendAvailable || job->error() == QKeychain::NotImplemented;
-                    if (job->error() != QKeychain::NoError && !backendUnavailable && !request.saveSecretsWithoutReply) {
+
+                    if (job->error() != QKeychain::NoError && !request.saveSecretsWithoutReply) {
                         sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in secure storage."), request.message);
                     }
                     processNext();
@@ -566,6 +563,7 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request)
             // function. A stack-allocated job is destroyed as soon as we return
             // false below, before its finished signal can be delivered.
             auto *job = new QKeychain::DeletePasswordJob(QString::fromLatin1(keychainService), this);
+            job->setAutoDelete(true);
             connect(
                 job,
                 &QKeychain::Job::finished,

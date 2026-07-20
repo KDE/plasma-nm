@@ -50,6 +50,7 @@ QString storageKey(const NetworkManager::ConnectionSettings &settings, const QSt
 SecretAgent::SecretAgent(QObject *parent)
     : NetworkManager::SecretAgent(QStringLiteral("org.kde.plasma.networkmanagement"), NetworkManager::SecretAgent::Capability::VpnHints, parent)
     , m_dialog(nullptr)
+    , m_secureStorageAvailable(QKeychain::isAvailable())
 {
     connect(NetworkManager::notifier(), &NetworkManager::Notifier::serviceDisappeared, this, &SecretAgent::killDialogs);
 
@@ -381,6 +382,9 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
                 &QKeychain::Job::finished,
                 this,
                 [this, job, &request]() {
+                    if (job->error() == QKeychain::NoBackendAvailable || job->error() == QKeychain::NotImplemented) {
+                        m_secureStorageAvailable = false;
+                    }
                     const auto document = QJsonDocument::fromJson(job->textData().toUtf8());
                     if (document.isObject()) {
                         request.storedSecrets = document.object().toVariantMap();
@@ -483,11 +487,23 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
 
 bool SecretAgent::processSaveSecrets(SecretsRequest &request)
 {
-    if (useSecureStorage()) {
-        NetworkManager::ConnectionSettings connectionSettings(request.connection);
-        if (request.storageJobsRunning <= 0 && request.storageJobsStarted) {
-            return true;
+    NetworkManager::ConnectionSettings connectionSettings(request.connection);
+    if (request.storageJobsStarted) {
+        if (request.storageJobsRunning > 0) {
+            return false;
         }
+
+        if (!m_secureStorageAvailable) {
+            NMVariantMapMap connection = request.connection;
+            auto existingConnection = NetworkManager::findConnectionByUuid(connectionSettings.uuid());
+            if (!existingConnection) {
+                existingConnection = NetworkManager::findConnection(request.connection_path.path());
+            }
+            if (existingConnection) {
+                existingConnection->update(connection);
+            }
+        }
+    } else if (useSecureStorage()) {
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
             const auto secretsMap = setting->secretsToStringMap();
             QVariantMap secretsVariantMap;
@@ -506,7 +522,11 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
                 this,
                 [this, job, &request]() {
                     --request.storageJobsRunning;
-                    if (job->error() != QKeychain::NoError && !request.saveSecretsWithoutReply) {
+                    if (job->error() == QKeychain::NoBackendAvailable || job->error() == QKeychain::NotImplemented) {
+                        m_secureStorageAvailable = false;
+                    }
+                    const bool backendUnavailable = job->error() == QKeychain::NoBackendAvailable || job->error() == QKeychain::NotImplemented;
+                    if (job->error() != QKeychain::NoError && !backendUnavailable && !request.saveSecretsWithoutReply) {
                         sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in secure storage."), request.message);
                     }
                     processNext();
@@ -517,6 +537,9 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
             job->start();
             ++request.storageJobsRunning;
             request.storageJobsStarted = true;
+        }
+
+        if (request.storageJobsStarted) {
             return false;
         }
     }
@@ -535,19 +558,30 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request)
 {
     if (useSecureStorage()) {
         NetworkManager::ConnectionSettings connectionSettings(request.connection);
-        if (request.storageJobsRunning <= 0 && request.storageJobsStarted) {
-            return true;
+        if (request.storageJobsStarted) {
+            return request.storageJobsRunning <= 0;
         }
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
-            QKeychain::DeletePasswordJob job(QString::fromLatin1(keychainService));
-            connect(&job, &QKeychain::Job::finished, this, [this, &request] {
-                --request.storageJobsRunning;
-                processNext();
-            });
-            job.setKey(storageKey(connectionSettings, setting->name()));
-            job.start();
+            // QtKeychain jobs are asynchronous, so the job must outlive this
+            // function. A stack-allocated job is destroyed as soon as we return
+            // false below, before its finished signal can be delivered.
+            auto *job = new QKeychain::DeletePasswordJob(QString::fromLatin1(keychainService), this);
+            connect(
+                job,
+                &QKeychain::Job::finished,
+                this,
+                [this, &request] {
+                    --request.storageJobsRunning;
+                    processNext();
+                },
+                Qt::SingleShotConnection);
+            job->setKey(storageKey(connectionSettings, setting->name()));
+            job->start();
             ++request.storageJobsRunning;
             request.storageJobsStarted = true;
+        }
+
+        if (request.storageJobsStarted) {
             return false;
         }
     }
@@ -562,7 +596,7 @@ bool SecretAgent::processDeleteSecrets(SecretsRequest &request)
 
 bool SecretAgent::useSecureStorage() const
 {
-    return QKeychain::isAvailable();
+    return m_secureStorageAvailable;
 }
 
 bool SecretAgent::hasSecrets(const NMVariantMapMap &connection) const

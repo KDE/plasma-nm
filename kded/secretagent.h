@@ -100,6 +100,7 @@ private:
 
     mutable PasswordDialog *m_dialog;
     QList<SecretsRequest> m_calls;
+    bool m_secureStorageAvailable = false;
 
     void importSecretsFromPlainTextFiles();
 };

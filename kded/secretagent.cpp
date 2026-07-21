@@ -45,6 +45,23 @@ QString storageKey(const NetworkManager::ConnectionSettings &settings, const QSt
 {
     return QLatin1Char('{') + settings.uuid() + QLatin1Char('}') + QLatin1Char(';') + settingName;
 }
+
+void clearAgentOwnedFlags(NMVariantMapMap &connection)
+{
+    for (auto setting = connection.begin(); setting != connection.end(); ++setting) {
+        for (auto property = setting->begin(); property != setting->end(); ++property) {
+            if (!property.key().endsWith(QLatin1String("-flags"))) {
+                continue;
+            }
+
+            auto flags = static_cast<NetworkManager::Setting::SecretFlags>(property->toUInt());
+            if (flags.testFlag(NetworkManager::Setting::AgentOwned)) {
+                flags.setFlag(NetworkManager::Setting::AgentOwned, false);
+                *property = static_cast<uint>(flags);
+            }
+        }
+    }
+}
 }
 
 SecretAgent::SecretAgent(QObject *parent)
@@ -386,6 +403,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
                 [this, job, &request]() {
                     if (job->error() == QKeychain::NoBackendAvailable || job->error() == QKeychain::NotImplemented) {
                         m_secureStorageAvailable = false;
+                    }
                     qWarning() << "BOH" << job->error() << job->errorString();
                     if (job->error() == QKeychain::NoBackendAvailable || job->error() == QKeychain::NotImplemented || job->error() == QKeychain::OtherError) {
                         m_secureStorageAvailable = false;
@@ -504,6 +522,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
         if (!m_secureStorageAvailable) {
             qWarning() << "saving global";
             NMVariantMapMap connection = request.connection;
+            clearAgentOwnedFlags(connection);
             auto existingConnection = NetworkManager::findConnectionByUuid(connectionSettings.uuid());
             if (!existingConnection) {
                 existingConnection = NetworkManager::findConnection(request.connection_path.path());

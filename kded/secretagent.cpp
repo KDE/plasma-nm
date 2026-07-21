@@ -401,13 +401,8 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
                 &QKeychain::Job::finished,
                 this,
                 [this, job, &request]() {
-                    if (job->error() == QKeychain::NoBackendAvailable || job->error() == QKeychain::NotImplemented) {
-                        m_secureStorageAvailable = false;
-                    }
-                    qWarning() << "BOH" << job->error() << job->errorString();
                     if (job->error() == QKeychain::NoBackendAvailable || job->error() == QKeychain::NotImplemented || job->error() == QKeychain::OtherError) {
                         m_secureStorageAvailable = false;
-                        qWarning() << "ERORE" << m_secureStorageAvailable;
                     }
                     const auto document = QJsonDocument::fromJson(job->textData().toUtf8());
                     if (document.isObject()) {
@@ -427,6 +422,13 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
                 secretsMap.insert(it.key(), it.value().toString());
             }
         }
+    }
+
+    // NetworkManager includes system-owned secrets in the request when they are
+    // available. Fall back to them when secure storage has no secret for this
+    // connection.
+    if (secretsMap.isEmpty()) {
+        secretsMap = setting->secretsToStringMap();
     }
 
     if (!secretsMap.isEmpty()) {
@@ -513,6 +515,20 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
 {
     qWarning() << "WRITING" << m_secureStorageAvailable;
     NetworkManager::ConnectionSettings connectionSettings(request.connection);
+
+    const auto saveInNetworkManager = [&] {
+        NMVariantMapMap connection = request.connection;
+        clearAgentOwnedFlags(connection);
+
+        auto existingConnection = NetworkManager::findConnectionByUuid(connectionSettings.uuid());
+        if (!existingConnection) {
+            existingConnection = NetworkManager::findConnection(request.connection_path.path());
+        }
+        if (existingConnection) {
+            existingConnection->update(connection);
+        }
+    };
+
     if (request.storageJobsStarted) {
         qWarning() << "AAA" << request.storageJobsRunning;
         if (request.storageJobsRunning > 0) {
@@ -521,15 +537,7 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
 
         if (!m_secureStorageAvailable) {
             qWarning() << "saving global";
-            NMVariantMapMap connection = request.connection;
-            clearAgentOwnedFlags(connection);
-            auto existingConnection = NetworkManager::findConnectionByUuid(connectionSettings.uuid());
-            if (!existingConnection) {
-                existingConnection = NetworkManager::findConnection(request.connection_path.path());
-            }
-            if (existingConnection) {
-                existingConnection->update(connection);
-            }
+            saveInNetworkManager();
         }
     } else if (useSecureStorage()) {
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
@@ -569,6 +577,8 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
         if (request.storageJobsStarted) {
             return false;
         }
+    } else {
+        saveInNetworkManager();
     }
 
     if (!request.saveSecretsWithoutReply) {

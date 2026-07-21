@@ -1,7 +1,7 @@
 # Translation for plasmanetworkmanagement-libs.po to Euskara/Basque (eu).
 # Copyright (C) 2017-2026 This file is copyright:
 # This file is distributed under the same license as plasma-nm package.
-# SPDX-FileCopyrightText: 2024, 2025, 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2024-2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Osoitz <oelkoro@gmail.com>, 2017.
@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-09 02:39+0000\n"
-"PO-Revision-Date: 2026-03-10 21:42+0100\n"
+"PO-Revision-Date: 2026-07-21 02:20+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -1000,7 +1000,7 @@ msgstr "Atebidea"
 #: editor/settings/security802-1x.cpp:542
 #, kde-format
 msgid "Alternative Subject Matches"
-msgstr "Gaian ordezko bat-etortzeak"
+msgstr "Subjektuaren ordezko izenekin bat-etortzea"
 
 #: editor/settings/security802-1x.cpp:544
 #, kde-format
@@ -1141,13 +1141,13 @@ msgstr "CA ziurtagiria:"
 #: editor/settings/ui/802-1x.ui:182
 #, kde-format
 msgid "Subject match:"
-msgstr "Gaian bat-etortzea:"
+msgstr "Subjektuarekin bat-etortzea:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:199
 #, kde-format
 msgid "Alternative subject matches:"
-msgstr "Gaian ordezko bat-etortzeak:"
+msgstr "Subjektuaren ordezko izenekin bat-etortzea:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)

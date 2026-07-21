@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 00:46+0000\n"
-"PO-Revision-Date: 2026-07-15 22:37+0200\n"
+"PO-Revision-Date: 2026-07-21 01:18+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -256,16 +256,12 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "Pasahitz 8 eta 64 karaktere artekoa izan behar du"
 
 #: ui/main.qml:36
-#, fuzzy
-#| msgid "Disconnect"
 msgid "Disconnected"
-msgstr "Deskonektatu"
+msgstr "Deskonektatuta"
 
 #: ui/main.qml:267
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "Konexioa inportatu da."
+msgstr "Konexioaren izena:"
 
 #~ msgid "Create"
 #~ msgstr "Sortu"

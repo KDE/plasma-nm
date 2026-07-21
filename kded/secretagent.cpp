@@ -311,6 +311,7 @@ void SecretAgent::processNext()
 {
     int i = 0;
     while (i < m_calls.size()) {
+        qWarning() << i;
         SecretsRequest &request = m_calls[i];
         switch (request.type) {
         case SecretsRequest::GetSecrets:
@@ -374,6 +375,7 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
     }
 
     NMStringMap secretsMap;
+
     if (!requestNew && useSecureStorage()) {
         if (!request.storageJobsStarted) {
             auto *job = new QKeychain::ReadPasswordJob(QString::fromLatin1(keychainService));
@@ -384,6 +386,10 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
                 [this, job, &request]() {
                     if (job->error() == QKeychain::NoBackendAvailable || job->error() == QKeychain::NotImplemented) {
                         m_secureStorageAvailable = false;
+                    qWarning() << "BOH" << job->error() << job->errorString();
+                    if (job->error() == QKeychain::NoBackendAvailable || job->error() == QKeychain::NotImplemented || job->error() == QKeychain::OtherError) {
+                        m_secureStorageAvailable = false;
+                        qWarning() << "ERORE" << m_secureStorageAvailable;
                     }
                     const auto document = QJsonDocument::fromJson(job->textData().toUtf8());
                     if (document.isObject()) {
@@ -487,13 +493,16 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
 
 bool SecretAgent::processSaveSecrets(SecretsRequest &request)
 {
+    qWarning() << "WRITING" << m_secureStorageAvailable;
     NetworkManager::ConnectionSettings connectionSettings(request.connection);
     if (request.storageJobsStarted) {
+        qWarning() << "AAA" << request.storageJobsRunning;
         if (request.storageJobsRunning > 0) {
             return false;
         }
 
         if (!m_secureStorageAvailable) {
+            qWarning() << "saving global";
             NMVariantMapMap connection = request.connection;
             auto existingConnection = NetworkManager::findConnectionByUuid(connectionSettings.uuid());
             if (!existingConnection) {
@@ -522,8 +531,10 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
                 this,
                 [this, job, &request]() {
                     --request.storageJobsRunning;
-
-                    if (job->error() != QKeychain::NoError && !request.saveSecretsWithoutReply) {
+                    m_secureStorageAvailable =
+                        job->error() != QKeychain::NoBackendAvailable && job->error() != QKeychain::NotImplemented && job->error() != QKeychain::OtherError;
+                    qWarning() << "FINISHED" << m_secureStorageAvailable << job->error();
+                    if (job->error() != QKeychain::NoError && m_secureStorageAvailable && !request.saveSecretsWithoutReply) {
                         sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in secure storage."), request.message);
                     }
                     processNext();

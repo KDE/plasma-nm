@@ -162,7 +162,7 @@ msgstr "连接"
 
 #: qml/ConnectionItem.qml:85
 msgid "Disconnect"
-msgstr "断开"
+msgstr "断开连接"
 
 #: qml/ConnectionItem.qml:90
 msgctxt "@info:tooltip"

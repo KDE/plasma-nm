@@ -17,7 +17,7 @@ msgstr ""
 #: kcm.cpp:324
 #, kde-format
 msgid "my_shared_connection"
-msgstr "ma_connexion_partagée"
+msgstr "ma-connexion-partagée"
 
 #: kcm.cpp:382
 #, kde-format

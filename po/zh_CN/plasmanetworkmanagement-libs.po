@@ -4013,138 +4013,138 @@ msgstr "移除(&E)"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr ""
+msgstr "选择连接类型"
 
 #: editorqml/qml/components/Wireless.qml:21
 #, kde-format
 msgid "Status"
-msgstr ""
+msgstr "状态"
 
 #: editorqml/qml/components/Wireless.qml:30
 #, kde-format
 msgid "Wi-Fi Security"
-msgstr ""
+msgstr "Wi-Fi 安全性"
 
 #: editorqml/qml/ConfigurationDialog.qml:19
 #, kde-format
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr ""
+msgstr "配置"
 
 #: editorqml/qml/ConfigurationDialog.qml:42
 #, kde-format
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "检测调制解调器时询问 PIN 码"
 
 #: editorqml/qml/ConfigurationDialog.qml:49
 #, kde-format
 msgid "Show virtual connections"
-msgstr ""
+msgstr "显示虚拟连接"
 
 #: editorqml/qml/ConfigurationDialog.qml:55
 #, kde-format
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "创建新连接为系统连接"
 
 #: editorqml/qml/PasswordField.qml:95
 #, kde-format
 msgid "Always asked"
-msgstr ""
+msgstr "总是询问"
 
 #: editorqml/qml/PasswordField.qml:97
 #, kde-format
 msgid "Not required"
-msgstr ""
+msgstr "非必需"
 
 #: editorqml/qml/PasswordPromptDialog.qml:24
 #, kde-format
 msgctxt "@action:button Connect to network"
 msgid "Connect"
-msgstr ""
+msgstr "连接"
 
 #: editorqml/qml/PasswordPromptDialog.qml:31
 #, kde-format
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: editorqml/qml/PasswordPromptDialog.qml:37
 #, kde-format
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr ""
+msgstr "输入密码"
 
 #: editorqml/qml/PasswordPromptDialog.qml:43
 #, kde-format
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "网络：%1"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "密码必须是有效的 WEP 密钥"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "密码长度必须在 8 至 64 个字符之间"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
 #, kde-format
 msgid "Alternative subject matches"
-msgstr ""
+msgstr "备用主体匹配"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:106
 #: editorqml/qml/wifisecurity/DnsList.qml:106
 #, kde-format
 msgid "Move Up"
-msgstr ""
+msgstr "上移"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:119
 #: editorqml/qml/wifisecurity/DnsList.qml:119
 #, kde-format
 msgid "Move Down"
-msgstr ""
+msgstr "下移"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:26
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Anonymous identity:"
-msgstr ""
+msgstr "匿名身份："
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
 #, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Anonymous"
-msgstr ""
+msgstr "匿名"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
 #, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Authenticated"
-msgstr ""
+msgstr "已验证的身份"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
 #, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Both"
-msgstr ""
+msgstr "两者皆有"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:70
 #, kde-format
 msgctxt ""
 "@label PAC stands for Proxy Auto-Configuration and should not be translated"
 msgid "PAC file:"
-msgstr ""
+msgstr "PAC 文件："
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:119
 #, kde-format
 msgctxt "@item:filefilter"
 msgid "PAC files (*.pac)"
-msgstr ""
+msgstr "PAC 文件 (*.pac)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:45
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:39
@@ -4152,12 +4152,12 @@ msgstr ""
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:46
 #, kde-format
 msgid "*.der *.pem *.crt *.cer"
-msgstr ""
+msgstr "*.der *.pem *.crt *.cer"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:61
 #, kde-format
 msgid "Automatic"
-msgstr ""
+msgstr "自动"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:103
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:166
@@ -4165,59 +4165,59 @@ msgstr ""
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:92
 #, kde-format
 msgid "Certificates (*.der *.pem *.crt *.cer)"
-msgstr ""
+msgstr "证书 (*.der *.pem *.crt *.cer)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:139
 #, kde-format
 msgid "*.der *.pem *.p12 *.key"
-msgstr ""
+msgstr "*.der *.pem *.p12 *.key"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:178
 #, kde-format
 msgid "Keys (*.der *.pem *.p12 *.key)"
-msgstr ""
+msgstr "密钥 (*.der *.pem *.p12 *.key)"
 
 #: editorqml/qml/wifisecurity/authentication/Owe.qml:30
 #, kde-format
 msgid ""
 "Enhanced Open (OWE) provides encryption without authentication. No password "
 "required."
-msgstr ""
+msgstr "Enhanced Open (OWE) 提供无需身份验证的加密。不需要密码。"
 
 #: editorqml/qml/wifisecurity/authentication/WepKey.qml:38
 #, kde-format
 msgid "Key index:"
-msgstr ""
+msgstr "密钥索引："
 
 #: editorqml/qml/wifisecurity/DnsList.qml:15
 #, kde-format
 msgid "DNS Servers"
-msgstr ""
+msgstr "DNS 服务器"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
 #, kde-format
 msgid "None"
-msgstr ""
+msgstr "无"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:25
 #, kde-format
 msgid "WEP 40/128-bit key (Hex)"
-msgstr ""
+msgstr "WEP 40/128 位密钥 (十六进制)"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:26
 #, kde-format
 msgid "WEP 128-bit Passphrase"
-msgstr ""
+msgstr "WEP 128 位密码"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:28
 #, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr ""
+msgstr "WPA/WPA2 Personal"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:29
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr ""
+msgstr "WPA/WPA2 Enterprise"
 
 #: handler.cpp:140
 #, kde-format
@@ -4492,34 +4492,34 @@ msgstr "未知"
 #: qml/ConnectionItemDelegate.qml:97
 #, kde-format
 msgid "Connect"
-msgstr ""
+msgstr "连接"
 
 #: qml/ConnectionItemDelegate.qml:104
 #, kde-format
 msgid "Disconnect"
-msgstr ""
+msgstr "断开连接"
 
 #: qml/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "配置"
 
 #: qml/ConnectionItemDelegate.qml:148
 #, kde-format
 msgid "Connect to"
-msgstr ""
+msgstr "连接到"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
 msgid "/s"
-msgstr ""
+msgstr "/秒"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Upload"
-msgstr ""
+msgstr "上行"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "下行"

@@ -21,21 +21,21 @@ msgstr ""
 #: kcm.cpp:324
 #, kde-format
 msgid "my_shared_connection"
-msgstr ""
+msgstr "我的共享连接"
 
 #: kcm.cpp:382
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
-msgstr ""
+msgstr "您想要保存对连接“%1”的更改吗？"
 
 #: kcm.cpp:385
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
-msgstr ""
+msgstr "保存更改"
 
 #: kcm.cpp:414
 #, kde-format
 msgctxt "Suffix appended to duplicated connection name"
 msgid " (Copy)"
-msgstr ""
+msgstr " (副本)"

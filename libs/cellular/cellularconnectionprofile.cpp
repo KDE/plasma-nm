@@ -107,52 +107,43 @@ void CellularConnectionProfile::refreshProfiles()
     Q_EMIT profilesChanged();
 }
 
-int CellularConnectionProfile::indexOfConnection(const QString &connectionUni) const
+QCoro::Task<bool> CellularConnectionProfile::setRoamingAllowed(QString connectionUni, bool allowed)
 {
-    for (int i = 0; i < m_list.count(); ++i) {
-        if (m_list[i].connectionUni == connectionUni) {
-            return i;
-        }
-    }
-    return -1;
-}
-
-bool CellularConnectionProfile::roamingAllowedForConnection(const QString &connectionUni) const
-{
-    int idx = indexOfConnection(connectionUni);
-    if (idx < 0) {
-        return false;
-    }
-    return m_list[idx].roamingAllowed;
-}
-
-QCoro::Task<void> CellularConnectionProfile::setRoamingAllowed(int index, bool allowed)
-{
-    if (index < 0 || index >= m_list.count()) {
-        co_return;
-    }
-
-    const QString &connectionUni = m_list[index].connectionUni;
     NetworkManager::Connection::Ptr con = NetworkManager::findConnectionByUuid(connectionUni);
     if (!con) {
         qCWarning(PLASMA_NM_CELLULAR_LOG) << u"Could not find connection"_s << connectionUni << u"to update roaming!"_s;
-        co_return;
+        co_return false;
     }
 
-    NetworkManager::GsmSetting::Ptr gsmSetting = con->settings()->setting(NetworkManager::Setting::Gsm).dynamicCast<NetworkManager::GsmSetting>();
+    NetworkManager::ConnectionSettings::Ptr settings = con->settings();
+    NetworkManager::GsmSetting::Ptr gsmSetting = settings ? settings->setting(NetworkManager::Setting::Gsm).dynamicCast<NetworkManager::GsmSetting>() : nullptr;
     if (!gsmSetting) {
-        co_return;
+        co_return false;
+    }
+
+    const bool oldHomeOnly = gsmSetting->homeOnly();
+    if (oldHomeOnly == !allowed) {
+        co_return true;
     }
 
     gsmSetting->setHomeOnly(!allowed);
 
-    QDBusReply<void> reply = co_await con->update(con->settings()->toMap());
+    QDBusReply<void> reply = co_await con->update(settings->toMap());
     if (!reply.isValid()) {
+        gsmSetting->setHomeOnly(oldHomeOnly);
         qCWarning(PLASMA_NM_CELLULAR_LOG) << u"Error updating roaming for"_s << connectionUni << u":"_s << reply.error().message();
-    } else {
-        m_list[index].roamingAllowed = allowed;
-        Q_EMIT dataChanged(createIndex(index, 0), createIndex(index, 0), {RoamingAllowed});
+        co_return false;
     }
+
+    for (int index = 0; index < m_list.count(); ++index) {
+        if (m_list[index].connectionUni == connectionUni) {
+            m_list[index].roamingAllowed = allowed;
+            Q_EMIT dataChanged(createIndex(index, 0), createIndex(index, 0), {RoamingAllowed});
+            break;
+        }
+    }
+
+    co_return true;
 }
 
 QString CellularConnectionProfile::networkTypeStr(NetworkManager::GsmSetting::NetworkType networkType)

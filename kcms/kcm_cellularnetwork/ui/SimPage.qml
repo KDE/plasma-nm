@@ -60,14 +60,13 @@ FormCard.FormCardPage {
             description: i18n("Allow mobile data when on a roaming network.")
 
             property Cellular.CellularModem modem: sim ? sim.modem : null
-            property int activeProfileIndex: modem ? modem.profiles.indexOfConnection(modem.activeConnectionUni) : -1
-            property bool shouldBeChecked: activeProfileIndex >= 0 ? modem.profiles.roamingAllowedForConnection(modem.activeConnectionUni) : false
+            property bool shouldBeChecked: modem && modem.roamingAllowed
 
-            enabled: modem && modem.mobileDataEnabled && activeProfileIndex >= 0
+            enabled: modem && modem.activeConnectionUni.length > 0 && !modem.profileOperationInProgress
             checked: shouldBeChecked
 
             onToggled: {
-                modem.profiles.setRoamingAllowed(activeProfileIndex, checked);
+                modem.setRoamingAllowed(checked);
             }
         }
 

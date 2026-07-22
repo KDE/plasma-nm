@@ -49,6 +49,7 @@ public:
     PasswordDialog *dialog = nullptr;
     bool storageJobsStarted = false;
     int storageJobsRunning = 0;
+    bool storageSaveFailed = false;
     QVariantMap storedSecrets;
 };
 

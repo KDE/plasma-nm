@@ -45,6 +45,48 @@ QString storageKey(const NetworkManager::ConnectionSettings &settings, const QSt
 {
     return QLatin1Char('{') + settings.uuid() + QLatin1Char('}') + QLatin1Char(';') + settingName;
 }
+
+bool hasAgentOwnedFlag(const QVariantMap &setting)
+{
+    for (auto property = setting.cbegin(); property != setting.cend(); ++property) {
+        if (property.key().endsWith(QLatin1String("-flags"))) {
+            const auto flags = static_cast<NetworkManager::Setting::SecretFlags>(property->toUInt());
+            if (flags.testFlag(NetworkManager::Setting::AgentOwned)) {
+                return true;
+            }
+        }
+
+        const auto child = property->toMap();
+        if (!child.isEmpty() && hasAgentOwnedFlag(child)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void clearAgentOwnedFlags(QVariantMap &setting)
+{
+    for (auto property = setting.begin(); property != setting.end(); ++property) {
+        if (property.key().endsWith(QLatin1String("-flags"))) {
+            auto flags = static_cast<NetworkManager::Setting::SecretFlags>(property->toUInt());
+            flags.setFlag(NetworkManager::Setting::AgentOwned, false);
+
+            if (property->metaType().id() == QMetaType::QString) {
+                *property = QString::number(static_cast<uint>(flags));
+            } else {
+                *property = static_cast<uint>(flags);
+            }
+            continue;
+        }
+
+        auto child = property->toMap();
+        if (!child.isEmpty()) {
+            clearAgentOwnedFlags(child);
+            *property = child;
+        }
+    }
+}
 }
 
 SecretAgent::SecretAgent(QObject *parent)
@@ -173,6 +215,8 @@ void SecretAgent::dialogAccepted()
                 }
             }
 
+            const bool saveSecretsWithoutReply = request.saveSecretsWithoutReply || hasAgentOwnedFlag(request.connection.value(request.setting_name));
+
             sendSecrets(connection, request.message);
             NetworkManager::ConnectionSettings::Ptr connectionSettings =
                 NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(connection));
@@ -183,7 +227,7 @@ void SecretAgent::dialogAccepted()
             } else {
                 completeConnectionSettings = connectionSettings;
             }
-            if (request.saveSecretsWithoutReply && completeConnectionSettings->connectionType() != NetworkManager::ConnectionSettings::Vpn) {
+            if (saveSecretsWithoutReply && completeConnectionSettings->connectionType() != NetworkManager::ConnectionSettings::Vpn) {
                 bool requestOffline = true;
                 if (completeConnectionSettings->connectionType() == NetworkManager::ConnectionSettings::Gsm) {
                     NetworkManager::GsmSetting::Ptr gsmSetting =
@@ -222,6 +266,7 @@ void SecretAgent::dialogAccepted()
                     SecretsRequest requestOffline(SecretsRequest::SaveSecrets);
                     requestOffline.connection = connection;
                     requestOffline.connection_path = request.connection_path;
+                    requestOffline.setting_name = request.setting_name;
                     requestOffline.saveSecretsWithoutReply = true;
                     m_calls << requestOffline;
                 }
@@ -446,7 +491,6 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
             return true;
         } else {
             request.dialog = m_dialog;
-            request.saveSecretsWithoutReply = !connectionSettings->permissions().isEmpty();
             m_dialog->show();
             if (KWindowSystem::isPlatformX11()) {
                 KX11Extras::setState(m_dialog->winId(), NET::KeepAbove);
@@ -483,11 +527,39 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
 
 bool SecretAgent::processSaveSecrets(SecretsRequest &request)
 {
-    if (useSecureStorage()) {
-        NetworkManager::ConnectionSettings connectionSettings(request.connection);
-        if (request.storageJobsRunning <= 0 && request.storageJobsStarted) {
-            return true;
+    NetworkManager::ConnectionSettings connectionSettings(request.connection);
+
+    const auto saveInNetworkManager = [&request, &connectionSettings] {
+        auto existingConnection = NetworkManager::findConnectionByUuid(connectionSettings.uuid());
+        if (!existingConnection) {
+            existingConnection = NetworkManager::findConnection(request.connection_path.path());
         }
+        if (!existingConnection) {
+            return;
+        }
+
+        NMVariantMapMap connection = existingConnection->settings()->toMap();
+        for (auto setting = request.connection.cbegin(); setting != request.connection.cend(); ++setting) {
+            QVariantMap mergedSetting = connection.value(setting.key());
+            for (auto property = setting->cbegin(); property != setting->cend(); ++property) {
+                mergedSetting.insert(property.key(), property.value());
+            }
+            clearAgentOwnedFlags(mergedSetting);
+            connection.insert(setting.key(), mergedSetting);
+        }
+
+        existingConnection->update(connection);
+    };
+
+    if (request.storageJobsStarted) {
+        if (request.storageJobsRunning > 0) {
+            return false;
+        }
+
+        if (request.storageSaveFailed) {
+            saveInNetworkManager();
+        }
+    } else if (useSecureStorage()) {
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
             const auto secretsMap = setting->secretsToStringMap();
             QVariantMap secretsVariantMap;
@@ -506,8 +578,8 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
                 this,
                 [this, job, &request]() {
                     --request.storageJobsRunning;
-                    if (job->error() != QKeychain::NoError && !request.saveSecretsWithoutReply) {
-                        sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in secure storage."), request.message);
+                    if (job->error() != QKeychain::NoError) {
+                        request.storageSaveFailed = true;
                     }
                     processNext();
                 },
@@ -519,6 +591,8 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
             request.storageJobsStarted = true;
             return false;
         }
+    } else {
+        saveInNetworkManager();
     }
 
     if (!request.saveSecretsWithoutReply) {

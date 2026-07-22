@@ -43,9 +43,7 @@ public:
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;
 
-    Q_INVOKABLE QCoro::Task<void> setRoamingAllowed(int index, bool allowed);
-    Q_INVOKABLE int indexOfConnection(const QString &connectionUni) const;
-    Q_INVOKABLE bool roamingAllowedForConnection(const QString &connectionUni) const;
+    QCoro::Task<bool> setRoamingAllowed(QString connectionUni, bool allowed);
 
     void setNmModem(NetworkManager::ModemDevice::Ptr nmModem);
     void refreshProfiles();

@@ -262,6 +262,22 @@ bool CellularModem::simEmpty() const
     return !hasSim();
 }
 
+bool CellularModem::roamingAllowed() const
+{
+    NetworkManager::Connection::Ptr connection = activeProfile();
+    if (!connection || !connection->settings()) {
+        return false;
+    }
+
+    NetworkManager::GsmSetting::Ptr gsmSetting = connection->settings()->setting(NetworkManager::Setting::Gsm).dynamicCast<NetworkManager::GsmSetting>();
+    return gsmSetting && !gsmSetting->homeOnly();
+}
+
+bool CellularModem::profileOperationInProgress() const
+{
+    return m_profileOperationInProgress;
+}
+
 int CellularModem::signalStrength() const
 {
     return m_mmInterface ? m_mmInterface->signalQuality().signal : 0;
@@ -329,12 +345,38 @@ void CellularModem::refreshProfiles()
 {
     m_profiles->refreshProfiles();
     Q_EMIT profilesChanged();
+    Q_EMIT roamingAllowedChanged();
 }
 
-QCoro::Task<void> CellularModem::activateProfile(const QString &connectionUni)
+NetworkManager::Connection::Ptr CellularModem::activeProfile() const
+{
+    const QString connectionUni = activeConnectionUni();
+    if (connectionUni.isEmpty()) {
+        return {};
+    }
+
+    return NetworkManager::findConnectionByUuid(connectionUni);
+}
+
+void CellularModem::setProfileOperationInProgress(bool inProgress)
+{
+    if (m_profileOperationInProgress == inProgress) {
+        return;
+    }
+
+    m_profileOperationInProgress = inProgress;
+    Q_EMIT profileOperationInProgressChanged();
+}
+
+QCoro::Task<void> CellularModem::activateProfile(QString connectionUni)
 {
     if (!m_nmModem) {
         qCWarning(PLASMA_NM_CELLULAR_LOG) << "Cannot activate profile since there is no NetworkManager modem";
+        co_return;
+    }
+
+    if (m_profileOperationInProgress) {
+        qCWarning(PLASMA_NM_CELLULAR_LOG) << "Operation already in progress";
         co_return;
     }
 
@@ -357,24 +399,61 @@ QCoro::Task<void> CellularModem::activateProfile(const QString &connectionUni)
         co_return;
     }
 
+    setProfileOperationInProgress(true);
+    const bool allowRoaming = roamingAllowed();
+    if (!(co_await m_profiles->setRoamingAllowed(con->uuid(), allowRoaming))) {
+        addError(i18n("Could not apply the roaming preference. Activating the access point with its existing setting."));
+    }
+
     // despite the documentation saying otherwise, activateConnection seems to need the DBus path, not uuid of the connection
     QDBusReply<QDBusObjectPath> reply = co_await NetworkManager::activateConnection(con->path(), m_nmModem->uni(), QString());
     if (!reply.isValid()) {
         qCWarning(PLASMA_NM_CELLULAR_LOG) << "Error activating connection:" << reply.error().message();
         addError(i18n("Error activating connection: %1", reply.error().message()));
+        setProfileOperationInProgress(false);
         co_return;
     }
 
     refreshProfiles();
     Q_EMIT activeConnectionUniChanged();
+    setProfileOperationInProgress(false);
+}
+
+QCoro::Task<void> CellularModem::setRoamingAllowed(bool allowed)
+{
+    if (m_profileOperationInProgress) {
+        co_return;
+    }
+
+    setProfileOperationInProgress(true);
+    NetworkManager::Connection::Ptr connection = activeProfile();
+    if (!connection) {
+        addError(i18n("Cannot change roaming because no access point is available."));
+        Q_EMIT roamingAllowedChanged();
+        setProfileOperationInProgress(false);
+        co_return;
+    }
+
+    if (!(co_await m_profiles->setRoamingAllowed(connection->uuid(), allowed))) {
+        addError(i18n("Error applying roaming preference to the selected access point."));
+        Q_EMIT roamingAllowedChanged();
+        setProfileOperationInProgress(false);
+        co_return;
+    }
+
+    refreshProfiles();
+    setProfileOperationInProgress(false);
 }
 
 QCoro::Task<void> CellularModem::addProfile(QString name, QString apn, QString username, QString password, QString networkType)
 {
-    if (!m_nmModem) {
+    if (!m_nmModem || m_profileOperationInProgress) {
         qCWarning(PLASMA_NM_CELLULAR_LOG) << "Cannot add profile since there is no NetworkManager modem";
         co_return;
     }
+
+    setProfileOperationInProgress(true);
+    const bool allowRoaming = roamingAllowed();
 
     NetworkManager::ConnectionSettings::Ptr settings{new NetworkManager::ConnectionSettings(NetworkManager::ConnectionSettings::Gsm)};
     settings->setId(name);
@@ -388,7 +467,8 @@ QCoro::Task<void> CellularModem::addProfile(QString name, QString apn, QString u
     gsmSetting->setPassword(password);
     gsmSetting->setPasswordFlags(password.isEmpty() ? NetworkManager::Setting::NotRequired : NetworkManager::Setting::AgentOwned);
     gsmSetting->setNetworkType(CellularConnectionProfile::networkTypeFlag(networkType));
-    gsmSetting->setHomeOnly(true); // New profiles default to roaming disabled
+    // New profiles inherit the active profile's roaming preference.
+    gsmSetting->setHomeOnly(!allowRoaming);
 
     gsmSetting->setInitialized(true);
 
@@ -402,7 +482,10 @@ QCoro::Task<void> CellularModem::addProfile(QString name, QString apn, QString u
         addError(i18n("Error adding connection: %1", reply.error().message()));
     } else {
         qCDebug(PLASMA_NM_CELLULAR_LOG) << "Successfully added a new connection" << name << "with APN" << apn;
+        refreshProfiles();
     }
+
+    setProfileOperationInProgress(false);
 }
 
 QCoro::Task<void> CellularModem::removeProfile(const QString &connectionUni)
@@ -442,7 +525,7 @@ QCoro::Task<void> CellularModem::updateProfile(QString connectionUni, QString na
     gsmSetting->setPassword(password);
     gsmSetting->setPasswordFlags(password.isEmpty() ? NetworkManager::Setting::NotRequired : NetworkManager::Setting::AgentOwned);
     gsmSetting->setNetworkType(CellularConnectionProfile::networkTypeFlag(networkType));
-    // Note: roaming is not set here, it's managed per-profile via CellularConnectionProfile::setRoamingAllowed()
+    // Note: roaming is not set here, it's managed per-profile
 
     gsmSetting->setInitialized(true);
 
@@ -459,21 +542,21 @@ QCoro::Task<void> CellularModem::updateProfile(QString connectionUni, QString na
     }
 }
 
-void CellularModem::addDetectedProfileSettings()
+QCoro::Task<void> CellularModem::addDetectedProfileSettings()
 {
     if (!m_mmModem) {
         qCWarning(PLASMA_NM_CELLULAR_LOG) << "ModemManager device missing, cannot detect profile settings";
-        return;
+        co_return;
     }
 
     if (!hasSim() || !m_mmModem->sim()) {
         qCWarning(PLASMA_NM_CELLULAR_LOG) << "No SIM found, cannot detect profile settings";
-        return;
+        co_return;
     }
 
     if (!m_mm3gppDevice) {
         qCWarning(PLASMA_NM_CELLULAR_LOG) << "3gpp object not found, cannot detect profile settings";
-        return;
+        co_return;
     }
 
     bool found = false;
@@ -500,7 +583,7 @@ void CellularModem::addDetectedProfileSettings()
                     name += u" - "_s + apnInfo[u"name"_s].toString();
                 }
 
-                addProfile(name, apn, apnInfo[u"username"_s].toString(), apnInfo[u"password"_s].toString(), u"4G/3G/2G"_s);
+                co_await addProfile(name, apn, apnInfo[u"username"_s].toString(), apnInfo[u"password"_s].toString(), u"4G/3G/2G"_s);
             }
         }
     }

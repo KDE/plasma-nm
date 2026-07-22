@@ -48,6 +48,8 @@ class PLASMANM_CELLULAR_EXPORT CellularModem : public QObject
     Q_PROPERTY(bool simLocked READ simLocked NOTIFY simLockedChanged)
     Q_PROPERTY(bool simEmpty READ simEmpty NOTIFY simEmptyChanged)
     Q_PROPERTY(QString activeConnectionUni READ activeConnectionUni NOTIFY activeConnectionUniChanged)
+    Q_PROPERTY(bool roamingAllowed READ roamingAllowed NOTIFY roamingAllowedChanged)
+    Q_PROPERTY(bool profileOperationInProgress READ profileOperationInProgress NOTIFY profileOperationInProgressChanged)
 
     Q_PROPERTY(bool mobileDataEnabled READ mobileDataEnabled WRITE setMobileDataEnabled NOTIFY mobileDataEnabledChanged)
     Q_PROPERTY(bool mobileDataSupported READ mobileDataSupported NOTIFY mobileDataSupportedChanged)
@@ -78,6 +80,8 @@ public:
     bool hasSim() const;
     bool simLocked() const;
     bool simEmpty() const;
+    bool roamingAllowed() const;
+    bool profileOperationInProgress() const;
 
     int signalStrength() const;
     QString operatorName() const;
@@ -86,11 +90,12 @@ public:
     Q_INVOKABLE void clearErrors();
 
     // Connection profile management
-    Q_INVOKABLE QCoro::Task<void> activateProfile(const QString &connectionUni);
+    Q_INVOKABLE QCoro::Task<void> activateProfile(QString connectionUni);
+    Q_INVOKABLE QCoro::Task<void> setRoamingAllowed(bool allowed);
     Q_INVOKABLE QCoro::Task<void> addProfile(QString name, QString apn, QString username, QString password, QString networkType);
     Q_INVOKABLE QCoro::Task<void> removeProfile(const QString &connectionUni);
     Q_INVOKABLE QCoro::Task<void> updateProfile(QString connectionUni, QString name, QString apn, QString username, QString password, QString networkType);
-    Q_INVOKABLE void addDetectedProfileSettings(); // detect modem connection settings (ex. apn) and add a new connection
+    Q_INVOKABLE QCoro::Task<void> addDetectedProfileSettings(); // detect modem connection settings (ex. apn) and add a new connection
 
     QList<CellularSim *> sims();
 
@@ -102,6 +107,8 @@ public:
 Q_SIGNALS:
     void modemDetailsChanged();
     void profilesChanged();
+    void roamingAllowedChanged();
+    void profileOperationInProgressChanged();
     void uniChanged();
     void displayIdChanged();
     void activeConnectionUniChanged();
@@ -123,6 +130,8 @@ private:
     void refreshSims();
     void refreshProfiles();
     void addError(const QString &message);
+    NetworkManager::Connection::Ptr activeProfile() const;
+    void setProfileOperationInProgress(bool inProgress);
 
     CellularModemDetails *m_details = nullptr;
     CellularConnectionProfile *m_profiles = nullptr;
@@ -134,4 +143,5 @@ private:
 
     QList<CellularSim *> m_sims;
     QStringList m_errors;
+    bool m_profileOperationInProgress = false;
 };

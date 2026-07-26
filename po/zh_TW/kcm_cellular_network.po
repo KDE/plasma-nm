@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-18 00:48+0000\n"
+"POT-Creation-Date: 2026-07-26 00:46+0000\n"
 "PO-Revision-Date: 2026-03-02 05:58+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -186,7 +186,7 @@ msgstr "數據機控制"
 msgid "Force Modem Restart"
 msgstr "強制數據機重新啟動"
 
-#: ui/ModemPage.qml:44 ui/SimPage.qml:112
+#: ui/ModemPage.qml:44 ui/SimPage.qml:111
 #, kde-format
 msgid "Modem Details"
 msgstr "數據機詳細資料"
@@ -335,7 +335,7 @@ msgstr "新增 APN"
 msgid "Automatically detect APN"
 msgstr "自動偵測 APN"
 
-#: ui/SimLockPage.qml:21 ui/SimPage.qml:101
+#: ui/SimLockPage.qml:21 ui/SimPage.qml:100
 #, kde-format
 msgid "SIM Lock"
 msgstr "SIM 卡鎖定"
@@ -465,92 +465,92 @@ msgstr "漫遊"
 msgid "Allow mobile data when on a roaming network."
 msgstr "允許在使用漫遊網路時使用行動數據。"
 
-#: ui/SimPage.qml:79
+#: ui/SimPage.qml:78
 #, kde-format
 msgid "Modify APNs"
 msgstr "修改 APN"
 
-#: ui/SimPage.qml:80
+#: ui/SimPage.qml:79
 #, kde-format
 msgid "Configure access point names for your carrier."
 msgstr "設定您的電信商的存取點名稱 (APN)。"
 
-#: ui/SimPage.qml:90
+#: ui/SimPage.qml:89
 #, kde-format
 msgid "Networks"
 msgstr "網路"
 
-#: ui/SimPage.qml:91
+#: ui/SimPage.qml:90
 #, kde-format
 msgid "Select a network operator."
 msgstr "選擇網路經營者。"
 
-#: ui/SimPage.qml:102
+#: ui/SimPage.qml:101
 #, kde-format
 msgid "Modify SIM lock settings."
 msgstr "修改 SIM 卡鎖定設定。"
 
-#: ui/SimPage.qml:113
+#: ui/SimPage.qml:112
 #, kde-format
 msgid "View the details of the modem this SIM is connected to."
 msgstr "檢視此 SIM 卡連線的數據機的詳細資料。"
 
-#: ui/SimPage.qml:119
+#: ui/SimPage.qml:118
 #, kde-format
 msgid "SIM Details"
 msgstr "SIM 卡詳細資料"
 
-#: ui/SimPage.qml:125
+#: ui/SimPage.qml:124
 #, kde-format
 msgid "Locked"
 msgstr "已鎖定"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "Yes"
 msgstr "是"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "No"
 msgstr "否"
 
-#: ui/SimPage.qml:133
+#: ui/SimPage.qml:132
 #, kde-format
 msgid "IMSI"
 msgstr "IMSI"
 
-#: ui/SimPage.qml:141
+#: ui/SimPage.qml:140
 #, kde-format
 msgid "EID"
 msgstr "EID"
 
-#: ui/SimPage.qml:149
+#: ui/SimPage.qml:148
 #, kde-format
 msgid "Operator Code (modem)"
 msgstr "營運者代碼（數據機）"
 
-#: ui/SimPage.qml:157
+#: ui/SimPage.qml:156
 #, kde-format
 msgid "Operator Name (modem)"
 msgstr "營運者名稱（數據機）"
 
-#: ui/SimPage.qml:165
+#: ui/SimPage.qml:164
 #, kde-format
 msgid "Operator Code (provided by SIM)"
 msgstr "營運者代碼（由 SIM 卡提供）"
 
-#: ui/SimPage.qml:173
+#: ui/SimPage.qml:172
 #, kde-format
 msgid "Operator Name (provided by SIM)"
 msgstr "營運者名稱（由 SIM 卡提供）"
 
-#: ui/SimPage.qml:181
+#: ui/SimPage.qml:180
 #, kde-format
 msgid "SIM ID"
 msgstr "SIM 卡 ID"
 
-#: ui/SimPage.qml:197
+#: ui/SimPage.qml:196
 #, kde-format
 msgid "Emergency Numbers"
 msgstr "緊急電話號碼"

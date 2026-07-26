@@ -8,32 +8,32 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:46+0000\n"
-"PO-Revision-Date: 2026-06-01 18:04-0400\n"
+"PO-Revision-Date: 2026-07-22 17:10-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
 msgid "Invalid input."
-msgstr ""
+msgstr "ئىناۋەتسىز كىرگۈزۈش."
 
 #: ui/ConnectionInfo.qml:16
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
-msgstr ""
+msgstr "«%1» نىڭ باغلىنىش ئۇچۇرى"
 
 #: ui/ConnectionInfo.qml:55
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
-msgstr ""
+msgstr "يوللاش سۈرئىتى"
 
 #: ui/ConnectionInfo.qml:71
 #, kde-format
@@ -55,12 +55,12 @@ msgstr "ھەمبەھىر"
 #: ui/ConnectionInfo.qml:107
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr ""
+msgstr "QR كودى ئارقىلىق Wi-Fi ھەمبەھىرلە"
 
 #: ui/ConnectionInfo.qml:114
 #, kde-format
 msgid "Wi-Fi QR Code"
-msgstr ""
+msgstr "Wi-Fi QR كودى"
 
 #: ui/main.qml:26
 #, kde-format
@@ -81,32 +81,32 @@ msgstr "تېخىمۇ كۆپ"
 #, kde-format
 msgctxt "@title:group"
 msgid "Saved Networks"
-msgstr ""
+msgstr "ساقلانغان تور"
 
 #: ui/main.qml:144
 #, kde-format
 msgid "Available Networks"
-msgstr ""
+msgstr "ئىشلىتىلىشچان تور"
 
 #: ui/main.qml:178
 #, kde-format
 msgid "Add Custom Connection"
-msgstr ""
+msgstr "ئىختىيارى باغلىنىش قوش"
 
 #: ui/MorePage.qml:14
 #, kde-format
 msgid "Wi-Fi Settings"
-msgstr ""
+msgstr "Wi-Fi تەڭشىكى"
 
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr ""
+msgstr "باغلىنىش ئۆزگىرىشىنىڭ ئۇقتۇرۇشى"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format
 msgid "Add New Connection"
-msgstr ""
+msgstr "يېڭى باغلىنىش قوش"
 
 #: ui/NetworkSettings.qml:36
 #, kde-format
@@ -122,12 +122,12 @@ msgstr "ئادەتتىكى"
 #: ui/NetworkSettings.qml:60
 #, kde-format
 msgid "SSID"
-msgstr ""
+msgstr "SSID"
 
 #: ui/NetworkSettings.qml:75
 #, kde-format
 msgid "Hidden Network"
-msgstr ""
+msgstr "يوشۇرۇن تور"
 
 #: ui/NetworkSettings.qml:82
 #, kde-format
@@ -138,7 +138,7 @@ msgstr "بىخەتەرلىك"
 #: ui/NetworkSettings.qml:89
 #, kde-format
 msgid "Security type"
-msgstr ""
+msgstr "بىخەتەرلىك تۈرى"
 
 #: ui/NetworkSettings.qml:99
 #, kde-format
@@ -148,7 +148,7 @@ msgstr "يوق"
 #: ui/NetworkSettings.qml:100
 #, kde-format
 msgid "WEP Key"
-msgstr ""
+msgstr "WEP ئاچقۇچى"
 
 #: ui/NetworkSettings.qml:101
 #, kde-format
@@ -158,12 +158,12 @@ msgstr "ھەرىكەتچان WEP"
 #: ui/NetworkSettings.qml:102
 #, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr ""
+msgstr "WPA/WPA2 شەخسىي"
 
 #: ui/NetworkSettings.qml:103
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr ""
+msgstr "WPA/WPA2 كارخانا"
 
 #: ui/NetworkSettings.qml:104
 #, kde-format
@@ -173,7 +173,7 @@ msgstr "WPA3 شەخسىي"
 #: ui/NetworkSettings.qml:105
 #, kde-format
 msgid "WPA3 Enterprise"
-msgstr ""
+msgstr "WPA3 كارخانا"
 
 #: ui/NetworkSettings.qml:143
 #, kde-format
@@ -203,23 +203,23 @@ msgstr "FAST"
 #: ui/NetworkSettings.qml:164
 #, kde-format
 msgid "Tunneled TLS"
-msgstr ""
+msgstr "تونىل TLS"
 
 #: ui/NetworkSettings.qml:165
 #, kde-format
 msgid "Protected EAP"
-msgstr ""
+msgstr "قوغدالغان EAP"
 
 #: ui/NetworkSettings.qml:177
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
-msgstr ""
+msgstr "IP تەڭشەك"
 
 #: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Method"
-msgstr "چارە"
+msgstr "ئۇسۇل"
 
 #: ui/NetworkSettings.qml:184
 #, kde-format
@@ -244,12 +244,12 @@ msgstr "تور ئۆتكىلى"
 #: ui/NetworkSettings.qml:236
 #, kde-format
 msgid "Network prefix length"
-msgstr ""
+msgstr "تور ئالدى قوشۇلغۇچى ئۇزۇنلۇقى"
 
 #: ui/NetworkSettings.qml:255
 #, kde-format
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: ui/PasswordField.qml:13
 #, kde-format

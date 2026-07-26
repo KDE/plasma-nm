@@ -1,13 +1,14 @@
 # SPDX-FileCopyrightText: 2024 Ryuichi Yamada <ryuichi_ya220@outlook.jp>
 # Tomohiro Hyakutake <tomhioo@outlook.jp>, 2019.
 # Fumiaki Okushi <fumiaki.okushi@gmail.com>, 2019, 2024.
+# SPDX-FileCopyrightText: 2026 Mint <5602mint@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanm-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2024-01-14 21:01-0800\n"
-"Last-Translator: Fumiaki Okushi <fumiaki.okushi@gmail.com>\n"
+"PO-Revision-Date: 2026-07-23 17:17+0900\n"
+"Last-Translator: Mint <5602mint@gmail.com>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
@@ -16,7 +17,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 23.08.4\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -44,10 +45,7 @@ msgid "Limited Connectivity"
 msgstr "制限された接続"
 
 #: connectivitymonitor.cpp:98
-#, fuzzy, kde-format
-#| msgid ""
-#| "This device appears to be connected to a network but is unable to reach "
-#| "the internet."
+#, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."
@@ -793,9 +791,3 @@ msgstr ""
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "%1への認証に失敗しました。パスワードは正しいですか？"
-
-#~ msgid "%1 password dialog"
-#~ msgstr "%1 パスワード入力ダイアログ"
-
-#~ msgid "Password dialog"
-#~ msgstr "パスワード入力ダイアログ"

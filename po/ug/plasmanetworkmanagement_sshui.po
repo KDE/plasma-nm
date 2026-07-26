@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-06-01 18:07-0400\n"
+"PO-Revision-Date: 2026-07-22 17:11-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_useCustomGatewayPort)
 #: sshadvanced.ui:19
@@ -34,37 +34,37 @@ msgstr "ئىختىيارى قانالنىڭ ئەڭ يۇقىرى يەتكۈزۈش
 #: sshadvanced.ui:70
 #, kde-format
 msgid "Extra SSH options:"
-msgstr ""
+msgstr "قوشۇمچە SSH تاللانمىسى:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_remoteDeviceNumber)
 #: sshadvanced.ui:88
 #, kde-format
 msgid "Remote device number:"
-msgstr ""
+msgstr "يىراقتىكى ئۈسكۈنە نومۇرى:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_useTapDevice)
 #: sshadvanced.ui:107
 #, kde-format
 msgid "Use a TAP device"
-msgstr ""
+msgstr "TAP ئۈسكۈنە ئىشلەت"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_remoteUsername)
 #: sshadvanced.ui:116
 #, kde-format
 msgid "Remote username"
-msgstr ""
+msgstr "يىراقتىكى ئىشلەتكۈچى ئاتى"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_doNotReplaceDefaultRoute)
 #: sshadvanced.ui:132
 #, kde-format
 msgid "Do not replace default route"
-msgstr ""
+msgstr "كۆڭۈلدىكى يول تاللىغۇچنى ئالماشتۇرما"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, SshAuth)
 #: sshauth.ui:14
 #, kde-format
 msgid "SSH VPN"
-msgstr ""
+msgstr "SSH VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: sshauth.ui:32
@@ -88,7 +88,7 @@ msgstr "تور ئۆتكىلى:"
 #: sshwidget.ui:73
 #, kde-format
 msgid "Network Settings"
-msgstr ""
+msgstr "تور تەڭشىكى"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_remoteIp)
 #. i18n: ectx: property (text), widget (QLabel, lbl_remoteIpv6)
@@ -108,19 +108,19 @@ msgstr "يەرلىك IP ئادرېس:"
 #: sshwidget.ui:105
 #, kde-format
 msgid "Netmask:"
-msgstr ""
+msgstr "تور نىقابى:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: sshwidget.ui:121
 #, kde-format
 msgid "IPv6 Network Settings"
-msgstr ""
+msgstr "‪IPv6‬ تور تەڭشىكى"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_useIpv6)
 #: sshwidget.ui:127
 #, kde-format
 msgid "Use IPv6"
-msgstr ""
+msgstr "‪IPv6‬ ئىشلەت"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_netmaskIpv6)
 #: sshwidget.ui:168
@@ -144,7 +144,7 @@ msgstr "ئىم:"
 #: sshwidget.ui:222
 #, kde-format
 msgid "SSH Key File:"
-msgstr ""
+msgstr "SSH ئاچقۇچ ھۆججىتى:"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_authType)
 #: sshwidget.ui:238
@@ -156,7 +156,7 @@ msgstr "تۈرى:"
 #: sshwidget.ui:249
 #, kde-format
 msgid "SSH Agent"
-msgstr ""
+msgstr "SSH ۋاكالەتچى"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmb_authType)
 #: sshwidget.ui:254
@@ -168,7 +168,7 @@ msgstr "ئىم"
 #: sshwidget.ui:259
 #, kde-format
 msgid "Key authentication"
-msgstr ""
+msgstr "ئاچقۇچ دەلىللەش"
 
 #. i18n: ectx: property (text), widget (QPushButton, btn_advancedOption)
 #: sshwidget.ui:300

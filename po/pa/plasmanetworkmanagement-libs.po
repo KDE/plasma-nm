@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:46+0000\n"
+"POT-Creation-Date: 2026-07-26 00:46+0000\n"
 "PO-Revision-Date: 2025-02-28 10:21-0600\n"
 "Last-Translator: A S Alam <aman@punlinux.org>\n"
 "Language-Team: pa\n"
@@ -22,27 +22,44 @@ msgstr ""
 msgid "Error resetting the modem: %1"
 msgstr ""
 
-#: cellular/cellularmodem.cpp:364
+#: cellular/cellularmodem.cpp:405
+#, kde-format
+msgid ""
+"Could not apply the roaming preference. Activating the access point with its "
+"existing setting."
+msgstr ""
+
+#: cellular/cellularmodem.cpp:412
 #, fuzzy, kde-format
 #| msgctxt "network interface disconnecting state label"
 #| msgid "Deactivating connection"
 msgid "Error activating connection: %1"
 msgstr "ਕਨੈਕਸ਼ਨ ਡੀ-ਐਕਟੀਵੇਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: cellular/cellularmodem.cpp:402
+#: cellular/cellularmodem.cpp:431
+#, kde-format
+msgid "Cannot change roaming because no access point is available."
+msgstr ""
+
+#: cellular/cellularmodem.cpp:438
+#, kde-format
+msgid "Error applying roaming preference to the selected access point."
+msgstr ""
+
+#: cellular/cellularmodem.cpp:482
 #, fuzzy, kde-format
 #| msgid "Failed to add connection %1"
 msgid "Error adding connection: %1"
 msgstr "%1 ਕਨੈਕਸ਼ਨ ਨੂੰ ਜੋੜਨ ਲਈ ਫੇਲ੍ਹ ਹੈ"
 
-#: cellular/cellularmodem.cpp:419
+#: cellular/cellularmodem.cpp:502
 #, fuzzy, kde-format
 #| msgctxt "network interface disconnecting state label"
 #| msgid "Deactivating connection"
 msgid "Error removing connection: %1"
 msgstr "ਕਨੈਕਸ਼ਨ ਡੀ-ਐਕਟੀਵੇਟ ਕੀਤਾ ਜਾ ਰਿਹਾ ਹੈ"
 
-#: cellular/cellularmodem.cpp:456
+#: cellular/cellularmodem.cpp:539
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
 msgstr ""

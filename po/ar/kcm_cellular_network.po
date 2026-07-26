@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-18 00:48+0000\n"
+"POT-Creation-Date: 2026-07-26 00:46+0000\n"
 "PO-Revision-Date: 2026-02-18 17:45+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -189,7 +189,7 @@ msgstr "التحكم في المودم"
 msgid "Force Modem Restart"
 msgstr "إعادة تشغيل المودم بالقوة"
 
-#: ui/ModemPage.qml:44 ui/SimPage.qml:112
+#: ui/ModemPage.qml:44 ui/SimPage.qml:111
 #, kde-format
 msgid "Modem Details"
 msgstr "تفاصيل المودم"
@@ -339,7 +339,7 @@ msgstr "أضف اسم نقطة الوصول APN"
 msgid "Automatically detect APN"
 msgstr "اكتشاف اسم نقطة الوصول APN آليًّا"
 
-#: ui/SimLockPage.qml:21 ui/SimPage.qml:101
+#: ui/SimLockPage.qml:21 ui/SimPage.qml:100
 #, kde-format
 msgid "SIM Lock"
 msgstr "قفل الشريحة"
@@ -471,92 +471,92 @@ msgstr "التجوال"
 msgid "Allow mobile data when on a roaming network."
 msgstr "اسمح بالبيانات المتنقلة عند استخدام شبكة التجوال."
 
-#: ui/SimPage.qml:79
+#: ui/SimPage.qml:78
 #, kde-format
 msgid "Modify APNs"
 msgstr "عدّل أسماء نقاط الوصول"
 
-#: ui/SimPage.qml:80
+#: ui/SimPage.qml:79
 #, kde-format
 msgid "Configure access point names for your carrier."
 msgstr "اضبط أسماء نقاط الوصول لناقلك."
 
-#: ui/SimPage.qml:90
+#: ui/SimPage.qml:89
 #, kde-format
 msgid "Networks"
 msgstr "الشّبكات"
 
-#: ui/SimPage.qml:91
+#: ui/SimPage.qml:90
 #, kde-format
 msgid "Select a network operator."
 msgstr "حدد مشغل شبكة."
 
-#: ui/SimPage.qml:102
+#: ui/SimPage.qml:101
 #, kde-format
 msgid "Modify SIM lock settings."
 msgstr "عدّل إعدادات قفل الشريحة."
 
-#: ui/SimPage.qml:113
+#: ui/SimPage.qml:112
 #, kde-format
 msgid "View the details of the modem this SIM is connected to."
 msgstr "اعرض تفاصيل المودم الذي تتصل به هذه الشريحة."
 
-#: ui/SimPage.qml:119
+#: ui/SimPage.qml:118
 #, kde-format
 msgid "SIM Details"
 msgstr "تفاصيل الشريحة"
 
-#: ui/SimPage.qml:125
+#: ui/SimPage.qml:124
 #, kde-format
 msgid "Locked"
 msgstr "مقفل"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "Yes"
 msgstr "نعم"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "No"
 msgstr "لا"
 
-#: ui/SimPage.qml:133
+#: ui/SimPage.qml:132
 #, kde-format
 msgid "IMSI"
 msgstr "الهوية الدولية لمشترك الجوال (IMSI)"
 
-#: ui/SimPage.qml:141
+#: ui/SimPage.qml:140
 #, kde-format
 msgid "EID"
 msgstr "EID"
 
-#: ui/SimPage.qml:149
+#: ui/SimPage.qml:148
 #, kde-format
 msgid "Operator Code (modem)"
 msgstr "رمز المشغل (المودم)"
 
-#: ui/SimPage.qml:157
+#: ui/SimPage.qml:156
 #, kde-format
 msgid "Operator Name (modem)"
 msgstr "اسم المشغل (المودم)"
 
-#: ui/SimPage.qml:165
+#: ui/SimPage.qml:164
 #, kde-format
 msgid "Operator Code (provided by SIM)"
 msgstr "رمز المشغل (المقدم من الشريحة)"
 
-#: ui/SimPage.qml:173
+#: ui/SimPage.qml:172
 #, kde-format
 msgid "Operator Name (provided by SIM)"
 msgstr "اسم المشغل (المقدم من الشريحة)"
 
-#: ui/SimPage.qml:181
+#: ui/SimPage.qml:180
 #, kde-format
 msgid "SIM ID"
 msgstr "معرف الشريحة"
 
-#: ui/SimPage.qml:197
+#: ui/SimPage.qml:196
 #, kde-format
 msgid "Emergency Numbers"
 msgstr "أرقام الطوارئ"

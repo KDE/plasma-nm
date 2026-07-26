@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-18 00:48+0000\n"
+"POT-Creation-Date: 2026-07-26 00:46+0000\n"
 "PO-Revision-Date: 2026-02-18 05:25+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -185,7 +185,7 @@ msgstr "მოდემის კონტროლი"
 msgid "Force Modem Restart"
 msgstr "მოდემის ძალით გადატვირთვა"
 
-#: ui/ModemPage.qml:44 ui/SimPage.qml:112
+#: ui/ModemPage.qml:44 ui/SimPage.qml:111
 #, kde-format
 msgid "Modem Details"
 msgstr "მოდემის დეტალები"
@@ -335,7 +335,7 @@ msgstr "APN-ის დამატება"
 msgid "Automatically detect APN"
 msgstr "APN-ის ავტომატური დადგენა"
 
-#: ui/SimLockPage.qml:21 ui/SimPage.qml:101
+#: ui/SimLockPage.qml:21 ui/SimPage.qml:100
 #, kde-format
 msgid "SIM Lock"
 msgstr "SIM-ის ბლოკირება"
@@ -467,92 +467,92 @@ msgstr "როუმინგი"
 msgid "Allow mobile data when on a roaming network."
 msgstr "როუმინგისას მობილური ინტერნეტის გამოყენება."
 
-#: ui/SimPage.qml:79
+#: ui/SimPage.qml:78
 #, kde-format
 msgid "Modify APNs"
 msgstr "APN-ების ჩასწორება"
 
-#: ui/SimPage.qml:80
+#: ui/SimPage.qml:79
 #, kde-format
 msgid "Configure access point names for your carrier."
 msgstr "თქვენი პროვაიდერის წვდომის წერტილის მორგება."
 
-#: ui/SimPage.qml:90
+#: ui/SimPage.qml:89
 #, kde-format
 msgid "Networks"
 msgstr "ქსელები"
 
-#: ui/SimPage.qml:91
+#: ui/SimPage.qml:90
 #, kde-format
 msgid "Select a network operator."
 msgstr "აირჩიეთ ქსელის ოპერატორი."
 
-#: ui/SimPage.qml:102
+#: ui/SimPage.qml:101
 #, kde-format
 msgid "Modify SIM lock settings."
 msgstr "SIM-ის ბლოკირების მორგება."
 
-#: ui/SimPage.qml:113
+#: ui/SimPage.qml:112
 #, kde-format
 msgid "View the details of the modem this SIM is connected to."
 msgstr "მოდემის, რომელზეც ეს SIM ბარათია მიმაგრებულ, დეტალების ნახვა."
 
-#: ui/SimPage.qml:119
+#: ui/SimPage.qml:118
 #, kde-format
 msgid "SIM Details"
 msgstr "SIM-ის დეტალები"
 
-#: ui/SimPage.qml:125
+#: ui/SimPage.qml:124
 #, kde-format
 msgid "Locked"
 msgstr "ჩაკეტილი"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "Yes"
 msgstr "დიახ"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "No"
 msgstr "არა"
 
-#: ui/SimPage.qml:133
+#: ui/SimPage.qml:132
 #, kde-format
 msgid "IMSI"
 msgstr "IMSI"
 
-#: ui/SimPage.qml:141
+#: ui/SimPage.qml:140
 #, kde-format
 msgid "EID"
 msgstr "EID"
 
-#: ui/SimPage.qml:149
+#: ui/SimPage.qml:148
 #, kde-format
 msgid "Operator Code (modem)"
 msgstr "ოპერატორის კოდი (მოდემი)"
 
-#: ui/SimPage.qml:157
+#: ui/SimPage.qml:156
 #, kde-format
 msgid "Operator Name (modem)"
 msgstr "ოპერატორის სახელი (მოდემი)"
 
-#: ui/SimPage.qml:165
+#: ui/SimPage.qml:164
 #, kde-format
 msgid "Operator Code (provided by SIM)"
 msgstr "ოპერატორის კოდი (SIM ბარათიდან)"
 
-#: ui/SimPage.qml:173
+#: ui/SimPage.qml:172
 #, kde-format
 msgid "Operator Name (provided by SIM)"
 msgstr "ოპრატორის სახელი (SIM ბარათიდან)"
 
-#: ui/SimPage.qml:181
+#: ui/SimPage.qml:180
 #, kde-format
 msgid "SIM ID"
 msgstr "SIM ID"
 
-#: ui/SimPage.qml:197
+#: ui/SimPage.qml:196
 #, kde-format
 msgid "Emergency Numbers"
 msgstr "სასწრაფო ნომრები"

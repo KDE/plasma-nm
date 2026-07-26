@@ -8,26 +8,26 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 00:46+0000\n"
-"PO-Revision-Date: 2026-06-01 18:07-0400\n"
+"PO-Revision-Date: 2026-07-22 17:11-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: kcm.cpp:269
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "«%1» دىن VPN يەنى مەۋھۇم شەخسىي تور سەپلىمىسىنى ئەكىرەمدۇ؟"
 
 #: kcm.cpp:270
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr ""
+msgstr "VPN سەپلىمىسىنى ئەكىر"
 
 #: kcm.cpp:271
 #, kde-format
@@ -37,27 +37,27 @@ msgstr "ئەكىر"
 #: kcm.cpp:278 kcm.cpp:351
 #, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr ""
+msgstr "VPN باغلىنىشىنى ئەكىرەلمىدى: %1"
 
 #: kcm.cpp:281 kcm.cpp:354
 #, kde-format
 msgid "Connection imported."
-msgstr ""
+msgstr "باغلىنىش ئەكىرىلدى."
 
 #: kcm.cpp:423
 #, kde-format
 msgid "my_shared_connection"
-msgstr ""
+msgstr "ھەمبەھىر_باغلىنىشىم"
 
 #: kcm.cpp:495
 #, kde-format
 msgid "Export VPN Connection"
-msgstr ""
+msgstr "VPN باغلىنىشىنى چىقار"
 
 #: kcm.cpp:515
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
-msgstr ""
+msgstr "«%1» باغلىنىشىنىڭ ئۆزگىرىشىنى ساقلامسىز؟"
 
 #: kcm.cpp:516
 #, kde-format
@@ -68,33 +68,33 @@ msgstr "ئۆزگەرتكەننى ساقلا"
 #: kcm.cpp:611
 #, kde-format
 msgid "Import VPN Connection"
-msgstr ""
+msgstr "VPN باغلىنىشىنى ئەكىر"
 
 #: kcm.cpp:613
 #, kde-format
 msgid "VPN connections (%1)"
-msgstr ""
+msgstr "VPN باغلىنىشى (%1)"
 
 #: kcm.cpp:616
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "ھېچقانداق ھۆججەت تەمىنلەنمىگەن"
 
 #: kcm.cpp:684
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "يوچۇن VPN تۈرى"
 
 #: kcm.cpp:716
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
-msgstr ""
+msgstr " (كۆچۈر)"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr ""
+msgstr "باغلىنىش تۈرى تاللىنىدۇ"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -107,15 +107,15 @@ msgstr "ئادەتتىكى"
 
 #: qml/ConfigurationDialog.qml:43
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "مودېم بايقاشتا PIN سورا"
 
 #: qml/ConfigurationDialog.qml:50
 msgid "Show virtual connections"
-msgstr ""
+msgstr "مەۋھۇم باغلىنىشنى كۆرسەت"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "يېڭى باغلىنىشنى سىستېما باغلىنىشىدەك قۇر"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
@@ -133,13 +133,13 @@ msgstr "ئىم:"
 
 #: qml/ConfigurationDialog.qml:95
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "قىزىق نۇقتا ئاتى بوش قالسا بولمايدۇ"
 
 #: qml/ConfigurationDialog.qml:105
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
-msgstr ""
+msgstr "قىزىق نۇقتا ئىم چوقۇم بوش ياكى 8 دىن 64 كىچە ھەرپتىن تەركىب تاپىدۇ"
 
 #: qml/ConfigurationDialog.qml:106
 msgid ""
@@ -147,6 +147,9 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"قىزىق نۇقتا ئىم چوقۇم بوش ياكى تۆۋەندىكى بىرىدىن تەركىب تاپىدۇ:<ul><li>دەل 5 "
+"ياكى 13 خالىغان ھەرپ</li><li>دەل 10 ياكى 26 ئون ئالتىلىك ھەرپ:<br/>abcdef, "
+"ABCDEF ياكى 0-9</li></ul>"
 
 #. i18n is a way to use something pre-exposed to QML.
 #: qml/ConnectionItem.qml:29 ui/ConnectionItem.qml:29
@@ -165,7 +168,7 @@ msgstr "ئۈز"
 #: qml/ConnectionItem.qml:90 ui/ConnectionItem.qml:86
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
-msgstr ""
+msgstr "بۇ تورغا باغلىغىلى بولمىدى چۈنكى ئۇنى بايقىيالمىغان."
 
 #: qml/ConnectionItem.qml:94 ui/ConnectionItem.qml:90
 msgctxt "@action:inmenu duplicate network connection"
@@ -195,15 +198,15 @@ msgstr "ئىشلەتكىلى بولىدۇ"
 
 #: qml/main.qml:148 ui/main.qml:207
 msgid "Add new connection"
-msgstr ""
+msgstr "يېڭى باغلىنىش قوش"
 
 #: qml/main.qml:166 ui/main.qml:225
 msgid "Remove selected connection"
-msgstr ""
+msgstr "تاللانغان باغلىنىشنى چىقىرىۋەت"
 
 #: qml/main.qml:184 ui/main.qml:243
 msgid "Export selected connection"
-msgstr ""
+msgstr "تاللانغان باغلىنىشنى چىقار"
 
 #: qml/main.qml:209 ui/main.qml:179
 msgid "Configuration"
@@ -236,17 +239,17 @@ msgstr "ئىم كىرگۈزۈلىدۇ"
 #: qml/main.qml:277
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "تور: %1"
 
 #: qml/main.qml:298
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "ئىم چوقۇم ئىناۋەتلىك WEP ئاچقۇچى بولۇشى كېرەك"
 
 #: qml/main.qml:299
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "ئىم چوقۇم 8 دىن 64 كىچە ھەرپ بولۇشى كېرەك"
 
 #: ui/main.qml:36
 #, fuzzy
@@ -256,6 +259,6 @@ msgstr "ئۈز"
 
 #: ui/main.qml:267
 #, fuzzy
-#| msgid "Connecting"
+#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "باغلىنىۋاتىدۇ"
+msgstr "باغلىنىش ئەكىرىلدى."

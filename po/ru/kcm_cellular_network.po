@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-18 00:48+0000\n"
+"POT-Creation-Date: 2026-07-26 00:46+0000\n"
 "PO-Revision-Date: 2026-02-18 09:12+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
@@ -188,7 +188,7 @@ msgstr "Управление модемом"
 msgid "Force Modem Restart"
 msgstr "Перезапустить модем"
 
-#: ui/ModemPage.qml:44 ui/SimPage.qml:112
+#: ui/ModemPage.qml:44 ui/SimPage.qml:111
 #, kde-format
 msgid "Modem Details"
 msgstr "Сведения о модеме"
@@ -337,7 +337,7 @@ msgstr "Добавить точку доступа"
 msgid "Automatically detect APN"
 msgstr "Определить точку доступа автоматически"
 
-#: ui/SimLockPage.qml:21 ui/SimPage.qml:101
+#: ui/SimLockPage.qml:21 ui/SimPage.qml:100
 #, kde-format
 msgid "SIM Lock"
 msgstr "Блокировка SIM-карты"
@@ -470,93 +470,93 @@ msgstr "Роуминг"
 msgid "Allow mobile data when on a roaming network."
 msgstr "Разрешить мобильные данные в роуминге."
 
-#: ui/SimPage.qml:79
+#: ui/SimPage.qml:78
 #, kde-format
 msgid "Modify APNs"
 msgstr "Изменить точки доступа"
 
-#: ui/SimPage.qml:80
+#: ui/SimPage.qml:79
 #, kde-format
 msgid "Configure access point names for your carrier."
 msgstr ""
 "Настроить названия точек доступа для сети вашего оператора мобильной связи."
 
-#: ui/SimPage.qml:90
+#: ui/SimPage.qml:89
 #, kde-format
 msgid "Networks"
 msgstr "Сети"
 
-#: ui/SimPage.qml:91
+#: ui/SimPage.qml:90
 #, kde-format
 msgid "Select a network operator."
 msgstr "Выберите сеть оператора."
 
-#: ui/SimPage.qml:102
+#: ui/SimPage.qml:101
 #, kde-format
 msgid "Modify SIM lock settings."
 msgstr "Изменить параметры блокировки SIM-карты."
 
-#: ui/SimPage.qml:113
+#: ui/SimPage.qml:112
 #, kde-format
 msgid "View the details of the modem this SIM is connected to."
 msgstr "Просмотреть сведения о модеме, к которому подключена эта SIM-карта."
 
-#: ui/SimPage.qml:119
+#: ui/SimPage.qml:118
 #, kde-format
 msgid "SIM Details"
 msgstr "Сведения о SIM-карте"
 
-#: ui/SimPage.qml:125
+#: ui/SimPage.qml:124
 #, kde-format
 msgid "Locked"
 msgstr "Заблокировано"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "Yes"
 msgstr "Да"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "No"
 msgstr "Нет"
 
-#: ui/SimPage.qml:133
+#: ui/SimPage.qml:132
 #, kde-format
 msgid "IMSI"
 msgstr "IMSI"
 
-#: ui/SimPage.qml:141
+#: ui/SimPage.qml:140
 #, kde-format
 msgid "EID"
 msgstr "EID"
 
-#: ui/SimPage.qml:149
+#: ui/SimPage.qml:148
 #, kde-format
 msgid "Operator Code (modem)"
 msgstr "Код оператора (модем)"
 
-#: ui/SimPage.qml:157
+#: ui/SimPage.qml:156
 #, kde-format
 msgid "Operator Name (modem)"
 msgstr "Название оператора (модем)"
 
-#: ui/SimPage.qml:165
+#: ui/SimPage.qml:164
 #, kde-format
 msgid "Operator Code (provided by SIM)"
 msgstr "Код оператора (данные SIM-карты)"
 
-#: ui/SimPage.qml:173
+#: ui/SimPage.qml:172
 #, kde-format
 msgid "Operator Name (provided by SIM)"
 msgstr "Название оператора (данные SIM-карты)"
 
-#: ui/SimPage.qml:181
+#: ui/SimPage.qml:180
 #, kde-format
 msgid "SIM ID"
 msgstr "Идентификатор SIM-карты"
 
-#: ui/SimPage.qml:197
+#: ui/SimPage.qml:196
 #, kde-format
 msgid "Emergency Numbers"
 msgstr "Экстренные номера"

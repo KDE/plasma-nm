@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-06-01 18:05-0400\n"
+"PO-Revision-Date: 2026-07-22 17:11-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #. i18n: ectx: property (text), widget (QPushButton, advancedButton)
 #: fortisslvpn.ui:36
@@ -40,7 +40,7 @@ msgstr "تور ئۆتكىلى:"
 #: fortisslvpn.ui:74
 #, kde-format
 msgid "SSLVPN server IP or name."
-msgstr ""
+msgstr "SSLVPN مۇلازىمېتىر IP ئادرېسى ياكى ئىسمى."
 
 #. i18n: ectx: property (title), widget (QGroupBox, authenticationGroupBox)
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
@@ -74,7 +74,7 @@ msgstr "ئىم:"
 #: fortisslvpn.ui:119
 #, kde-format
 msgid "Password passed to SSLVPN when prompted for it."
-msgstr ""
+msgstr "SSLVPN ئىم سورىغاندا يوللايدىغان ئىم."
 
 #. i18n: ectx: property (text), widget (QLabel, caCertLabel)
 #: fortisslvpn.ui:129
@@ -92,19 +92,19 @@ msgstr "ئىشلەتكۈچى گۇۋاھنامىسى:"
 #: fortisslvpn.ui:155
 #, kde-format
 msgid "User Key:"
-msgstr ""
+msgstr "ئىشلەتكۈچى ئاچقۇچى:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, otp)
 #: fortisslvpnadvanced.ui:43
 #, kde-format
 msgid "Use a One-Time Password"
-msgstr ""
+msgstr "بىر قېتىملىق ئىم ئىشلەت"
 
 #. i18n: ectx: property (text), widget (QCheckBox, tfa)
 #: fortisslvpnadvanced.ui:50
 #, kde-format
 msgid "2FA"
-msgstr ""
+msgstr "ئىككى ئىسپاتلىق دەلىللەش(2FA) ‏‎"
 
 #. i18n: ectx: property (text), widget (QLabel, realmLabel)
 #: fortisslvpnadvanced.ui:68
@@ -122,22 +122,22 @@ msgstr "بىخەتەرلىك"
 #: fortisslvpnadvanced.ui:93
 #, kde-format
 msgid "Trusted certificate:"
-msgstr ""
+msgstr "ئىشەنچلىك گۇۋاھنامە:"
 
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, trustedCert)
 #: fortisslvpnadvanced.ui:106
 #, kde-format
 msgid "0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
-msgstr ""
+msgstr "0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
 
 #. i18n: ectx: property (text), widget (QLabel, labelOtp)
 #: fortisslvpnauth.ui:61
 #, kde-format
 msgid "One Time Password"
-msgstr ""
+msgstr "بىر قېتىملىق ئىم"
 
 #. i18n: ectx: property (text), widget (QLabel, otpLabel)
 #: fortisslvpnauth.ui:68
 #, kde-format
 msgid "Token:"
-msgstr ""
+msgstr "پەرمان تاختا:"

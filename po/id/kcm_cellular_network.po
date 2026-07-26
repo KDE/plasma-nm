@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-18 00:48+0000\n"
+"POT-Creation-Date: 2026-07-26 00:46+0000\n"
 "PO-Revision-Date: 2022-04-07 22:24+0700\n"
 "Last-Translator: Wantoyèk <wantoyek@gmail.com>\n"
 "Language-Team: https://t.me/Localizations_KDE_Indonesia\n"
@@ -192,7 +192,7 @@ msgstr "Kontrol Modem:"
 msgid "Force Modem Restart"
 msgstr "Paksa Restart Modem"
 
-#: ui/ModemPage.qml:44 ui/SimPage.qml:112
+#: ui/ModemPage.qml:44 ui/SimPage.qml:111
 #, kde-format
 msgid "Modem Details"
 msgstr "Detail Modem"
@@ -358,7 +358,7 @@ msgstr "Tambahkan APN"
 msgid "Automatically detect APN"
 msgstr "Auto Deteksi APN"
 
-#: ui/SimLockPage.qml:21 ui/SimPage.qml:101
+#: ui/SimLockPage.qml:21 ui/SimPage.qml:100
 #, kde-format
 msgid "SIM Lock"
 msgstr "Kunci SIM"
@@ -494,103 +494,103 @@ msgstr "Roaming:"
 msgid "Allow mobile data when on a roaming network."
 msgstr "Diregistrasikan pada sebuah jaringan roaming."
 
-#: ui/SimPage.qml:79
+#: ui/SimPage.qml:78
 #, fuzzy, kde-format
 #| msgid "Edit APN"
 msgid "Modify APNs"
 msgstr "Edit APN"
 
-#: ui/SimPage.qml:80
+#: ui/SimPage.qml:79
 #, kde-format
 msgid "Configure access point names for your carrier."
 msgstr ""
 
-#: ui/SimPage.qml:90
+#: ui/SimPage.qml:89
 #, fuzzy, kde-format
 #| msgid "Networks:"
 msgid "Networks"
 msgstr "Jaringan:"
 
-#: ui/SimPage.qml:91
+#: ui/SimPage.qml:90
 #, fuzzy, kde-format
 #| msgid "Select Network Operator"
 msgid "Select a network operator."
 msgstr "Plih Operator Jaringan"
 
-#: ui/SimPage.qml:102
+#: ui/SimPage.qml:101
 #, fuzzy, kde-format
 #| msgid "Modify SIM Lock"
 msgid "Modify SIM lock settings."
 msgstr "Modifikasi Kunci SIM"
 
-#: ui/SimPage.qml:113
+#: ui/SimPage.qml:112
 #, kde-format
 msgid "View the details of the modem this SIM is connected to."
 msgstr ""
 
-#: ui/SimPage.qml:119
+#: ui/SimPage.qml:118
 #, kde-format
 msgid "SIM Details"
 msgstr "Detail SIM"
 
-#: ui/SimPage.qml:125
+#: ui/SimPage.qml:124
 #, kde-format
 msgid "Locked"
 msgstr "Dikunci"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "Yes"
 msgstr "Ya"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "No"
 msgstr "Tidak"
 
-#: ui/SimPage.qml:133
+#: ui/SimPage.qml:132
 #, fuzzy, kde-format
 #| msgid "IMSI:"
 msgid "IMSI"
 msgstr "IMSI:"
 
-#: ui/SimPage.qml:141
+#: ui/SimPage.qml:140
 #, fuzzy, kde-format
 #| msgid "EID:"
 msgid "EID"
 msgstr "EID:"
 
-#: ui/SimPage.qml:149
+#: ui/SimPage.qml:148
 #, fuzzy, kde-format
 #| msgid "Operator Code (modem):"
 msgid "Operator Code (modem)"
 msgstr "Kode Operator (modem):"
 
-#: ui/SimPage.qml:157
+#: ui/SimPage.qml:156
 #, fuzzy, kde-format
 #| msgid "Operator Name (modem):"
 msgid "Operator Name (modem)"
 msgstr "Nama Operator (modem):"
 
-#: ui/SimPage.qml:165
+#: ui/SimPage.qml:164
 #, fuzzy, kde-format
 #| msgid "Operator Code (provided by SIM):"
 msgid "Operator Code (provided by SIM)"
 msgstr "Kode Operator (disediakan oleh SIM):"
 
-#: ui/SimPage.qml:173
+#: ui/SimPage.qml:172
 #, fuzzy, kde-format
 #| msgid "Operator Name (provided by SIM):"
 msgid "Operator Name (provided by SIM)"
 msgstr "Nama Operator (disediakan oleh SIM):"
 
-#: ui/SimPage.qml:181
+#: ui/SimPage.qml:180
 #, fuzzy, kde-format
 #| msgid "SIM ID:"
 msgid "SIM ID"
 msgstr "SIM ID:"
 
-#: ui/SimPage.qml:197
+#: ui/SimPage.qml:196
 #, fuzzy, kde-format
 #| msgid "Emergency Numbers:"
 msgid "Emergency Numbers"

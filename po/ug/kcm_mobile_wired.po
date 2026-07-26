@@ -8,32 +8,32 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2026-06-01 18:05-0400\n"
+"PO-Revision-Date: 2026-07-22 17:10-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.9\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ui/ConnectDialog.qml:57
 #, kde-format
 msgid "Invalid input."
-msgstr ""
+msgstr "ئىناۋەتسىز كىرگۈزۈش."
 
 #: ui/ConnectionInfo.qml:15
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
-msgstr ""
+msgstr "«%1» نىڭ باغلىنىش ئۇچۇرى"
 
 #: ui/ConnectionInfo.qml:22
 #, kde-format
 msgctxt "@title:group"
 msgid "Transfer Rates"
-msgstr ""
+msgstr "يوللاش سۈرئىتى"
 
 #: ui/ConnectionInfo.qml:38
 #, kde-format
@@ -50,17 +50,17 @@ msgstr "باغلىنىش تەپسىلاتى"
 #, kde-format
 msgctxt "@title:group"
 msgid "Wired Network Connections"
-msgstr ""
+msgstr "سىملىق تور باغلىنىشى"
 
 #: ui/main.qml:117
 #, kde-format
 msgid "No wired connection available."
-msgstr ""
+msgstr ".ئىشلەتكىلى بولىدىغان سىملىق تور باغلىنىشى يوق."
 
 #: ui/NetworkSettings.qml:16
 #, kde-format
 msgid "Add New Connection"
-msgstr ""
+msgstr "يېڭى باغلىنىش قوش"
 
 #: ui/NetworkSettings.qml:31
 #, kde-format
@@ -71,12 +71,12 @@ msgstr "ساقلا"
 #, kde-format
 msgctxt "@title:group"
 msgid "IP Settings"
-msgstr ""
+msgstr "IP تەڭشەك"
 
 #: ui/NetworkSettings.qml:55
 #, kde-format
 msgid "Method"
-msgstr "چارە"
+msgstr "ئۇسۇل"
 
 #: ui/NetworkSettings.qml:56
 #, kde-format
@@ -101,9 +101,9 @@ msgstr "تور ئۆتكىلى"
 #: ui/NetworkSettings.qml:108
 #, kde-format
 msgid "Network prefix length"
-msgstr ""
+msgstr "تور ئالدى قوشۇلغۇچى ئۇزۇنلۇقى"
 
 #: ui/NetworkSettings.qml:127
 #, kde-format
 msgid "DNS"
-msgstr ""
+msgstr "DNS"

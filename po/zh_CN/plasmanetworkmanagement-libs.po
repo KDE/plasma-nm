@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:46+0000\n"
+"POT-Creation-Date: 2026-07-26 00:46+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -23,22 +23,39 @@ msgstr ""
 msgid "Error resetting the modem: %1"
 msgstr "重置调制解调器时出错：%1"
 
-#: cellular/cellularmodem.cpp:364
+#: cellular/cellularmodem.cpp:405
+#, kde-format
+msgid ""
+"Could not apply the roaming preference. Activating the access point with its "
+"existing setting."
+msgstr ""
+
+#: cellular/cellularmodem.cpp:412
 #, kde-format
 msgid "Error activating connection: %1"
 msgstr "激活连接时出错：%1"
 
-#: cellular/cellularmodem.cpp:402
+#: cellular/cellularmodem.cpp:431
+#, kde-format
+msgid "Cannot change roaming because no access point is available."
+msgstr ""
+
+#: cellular/cellularmodem.cpp:438
+#, kde-format
+msgid "Error applying roaming preference to the selected access point."
+msgstr ""
+
+#: cellular/cellularmodem.cpp:482
 #, kde-format
 msgid "Error adding connection: %1"
 msgstr "添加连接时出错：%1"
 
-#: cellular/cellularmodem.cpp:419
+#: cellular/cellularmodem.cpp:502
 #, kde-format
 msgid "Error removing connection: %1"
 msgstr "移除连接时出错：%1"
 
-#: cellular/cellularmodem.cpp:456
+#: cellular/cellularmodem.cpp:539
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
 msgstr "更新 %1 的连接设置时出错：%2。"

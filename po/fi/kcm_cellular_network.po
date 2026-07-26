@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-02-18 00:48+0000\n"
+"POT-Creation-Date: 2026-07-26 00:46+0000\n"
 "PO-Revision-Date: 2025-03-15 09:21+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -184,7 +184,7 @@ msgstr "Modeemin hallinta"
 msgid "Force Modem Restart"
 msgstr "Pakota modeemin uudelleenkäynnistys"
 
-#: ui/ModemPage.qml:44 ui/SimPage.qml:112
+#: ui/ModemPage.qml:44 ui/SimPage.qml:111
 #, kde-format
 msgid "Modem Details"
 msgstr "Modeemin tiedot"
@@ -333,7 +333,7 @@ msgstr "Lisää APN"
 msgid "Automatically detect APN"
 msgstr "Tunnista APN automaattisesti"
 
-#: ui/SimLockPage.qml:21 ui/SimPage.qml:101
+#: ui/SimLockPage.qml:21 ui/SimPage.qml:100
 #, kde-format
 msgid "SIM Lock"
 msgstr "SIM on lukittu"
@@ -465,92 +465,92 @@ msgstr "Verkkovierailu"
 msgid "Allow mobile data when on a roaming network."
 msgstr "Rekisteröity verkkovierailuun."
 
-#: ui/SimPage.qml:79
+#: ui/SimPage.qml:78
 #, kde-format
 msgid "Modify APNs"
 msgstr "Muokkaa APN:iä"
 
-#: ui/SimPage.qml:80
+#: ui/SimPage.qml:79
 #, kde-format
 msgid "Configure access point names for your carrier."
 msgstr "Aseta operaattorisi tukiasemanimet."
 
-#: ui/SimPage.qml:90
+#: ui/SimPage.qml:89
 #, kde-format
 msgid "Networks"
 msgstr "Verkot"
 
-#: ui/SimPage.qml:91
+#: ui/SimPage.qml:90
 #, kde-format
 msgid "Select a network operator."
 msgstr "Valitse verkko-operaattori."
 
-#: ui/SimPage.qml:102
+#: ui/SimPage.qml:101
 #, kde-format
 msgid "Modify SIM lock settings."
 msgstr "Muuta SIM-lukitusasetuksia."
 
-#: ui/SimPage.qml:113
+#: ui/SimPage.qml:112
 #, kde-format
 msgid "View the details of the modem this SIM is connected to."
 msgstr "Näytä tiedot modeemista, johon tämä SIM on kytketty."
 
-#: ui/SimPage.qml:119
+#: ui/SimPage.qml:118
 #, kde-format
 msgid "SIM Details"
 msgstr "SIM-kortin tiedot"
 
-#: ui/SimPage.qml:125
+#: ui/SimPage.qml:124
 #, kde-format
 msgid "Locked"
 msgstr "Lukittu"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "Yes"
 msgstr "Kyllä"
 
-#: ui/SimPage.qml:126
+#: ui/SimPage.qml:125
 #, kde-format
 msgid "No"
 msgstr "Ei"
 
-#: ui/SimPage.qml:133
+#: ui/SimPage.qml:132
 #, kde-format
 msgid "IMSI"
 msgstr "IMSI"
 
-#: ui/SimPage.qml:141
+#: ui/SimPage.qml:140
 #, kde-format
 msgid "EID"
 msgstr "EID"
 
-#: ui/SimPage.qml:149
+#: ui/SimPage.qml:148
 #, kde-format
 msgid "Operator Code (modem)"
 msgstr "Operaattorin koodi (modeemi)"
 
-#: ui/SimPage.qml:157
+#: ui/SimPage.qml:156
 #, kde-format
 msgid "Operator Name (modem)"
 msgstr "Operaattorin nimi (modeemi)"
 
-#: ui/SimPage.qml:165
+#: ui/SimPage.qml:164
 #, kde-format
 msgid "Operator Code (provided by SIM)"
 msgstr "Operaattorin koodi (SIM-kortilta)"
 
-#: ui/SimPage.qml:173
+#: ui/SimPage.qml:172
 #, kde-format
 msgid "Operator Name (provided by SIM)"
 msgstr "Operaattorin nimi (SIM-kortilta)"
 
-#: ui/SimPage.qml:181
+#: ui/SimPage.qml:180
 #, kde-format
 msgid "SIM ID"
 msgstr "SIMin tunniste"
 
-#: ui/SimPage.qml:197
+#: ui/SimPage.qml:196
 #, kde-format
 msgid "Emergency Numbers"
 msgstr "Hätänumerot"

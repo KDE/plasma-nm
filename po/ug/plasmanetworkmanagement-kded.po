@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanm-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2026-06-01 18:07-0400\n"
+"PO-Revision-Date: 2026-07-22 17:11-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -577,7 +577,7 @@ msgstr "«%1» باغلىنىش ئۈچۈن ئىم كىرگۈزۈلىدۇ:"
 #, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr ""
+msgstr "%1 ئىم"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -599,7 +599,7 @@ msgstr "VPN بىخەتەرلىك ئاچقۇچ (%1) سۆزلەشكۈسى"
 #: passworddialog.ui:26
 #, kde-format
 msgid "Connection Password"
-msgstr ""
+msgstr "باغلىنىش ئىم"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-26 00:46+0000\n"
-"PO-Revision-Date: 2026-07-16 19:55+0300\n"
+"PO-Revision-Date: 2026-07-26 19:55+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -30,6 +30,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Dolaşım tercihi uygulanamadı. Erişim noktası, var olan ayarlarıyla "
+"etkinleştiriliyor."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -39,12 +41,12 @@ msgstr "Bağlantı etkinleştirilirken hata: %1"
 #: cellular/cellularmodem.cpp:431
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
-msgstr ""
+msgstr "Dolaşım değiştirilemiyor; çünkü kullanılabilir bir erişim noktası yok."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
-msgstr ""
+msgstr "Seçili erişim noktasına dolaşım uygulanırken bir hata oluştu."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format

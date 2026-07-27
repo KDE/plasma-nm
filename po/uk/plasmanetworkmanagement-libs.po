@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-26 00:46+0000\n"
-"PO-Revision-Date: 2026-07-16 19:34+0300\n"
+"PO-Revision-Date: 2026-07-26 14:41+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
 "Language: uk\n"
@@ -31,6 +31,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Не вдалося застосувати налаштування роумінгу. Активуємо точку доступу з її "
+"наявними параметрами."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -40,12 +42,14 @@ msgstr "Помилка під час спроби активувати з'єдн
 #: cellular/cellularmodem.cpp:431
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
-msgstr ""
+msgstr "Неможливо змінити роумінг, оскільки немає доступних точок доступу."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Помилка під час спроби застосувати налаштування роумінгу до вибраної точки "
+"доступу."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format

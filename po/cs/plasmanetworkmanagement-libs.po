@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-26 00:46+0000\n"
-"PO-Revision-Date: 2026-07-16 11:43+0200\n"
+"PO-Revision-Date: 2026-07-26 12:03+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -32,6 +32,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Nepodařilo se použít předvolbu roamingu. Aktivuje se přístupový bod s jeho "
+"stávajícím nastavením."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -41,12 +43,13 @@ msgstr "Chyba při aktivaci připojení: %1"
 #: cellular/cellularmodem.cpp:431
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
-msgstr ""
+msgstr "Roaming nelze změnit, protože není k dispozici žádný přístupový bod."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Došlo k chybě při použití předvolby roamingu pro vybraný přístupový bod."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-26 00:46+0000\n"
-"PO-Revision-Date: 2026-07-16 11:13+0200\n"
+"PO-Revision-Date: 2026-07-26 07:27+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -31,6 +31,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Ni bilo mogoče uveljaviti preferenc gostovanja. Aktiviranje dostopne točke z "
+"obstoječo nastavitvijo."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -41,11 +43,13 @@ msgstr "Napaka pri aktiviranju povezave: %1"
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
 msgstr ""
+"Gostovanja ni mogoče spremeniti, ker ni na voljo nobene dostopne točke."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Napaka pri uveljavljanju preferenc gostovanja za izbrano dostopno točko."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format

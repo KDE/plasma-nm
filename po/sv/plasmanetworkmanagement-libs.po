@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-26 00:46+0000\n"
-"PO-Revision-Date: 2026-07-16 07:25+0200\n"
+"PO-Revision-Date: 2026-07-26 07:42+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -28,6 +28,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Kunde inte införa roaminginställningen. Aktiverar åtkomstpunkten med dess "
+"befintliga inställningar."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -37,12 +39,13 @@ msgstr "Fel vid aktivering av anslutning: %1"
 #: cellular/cellularmodem.cpp:431
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
-msgstr ""
+msgstr "Kan inte att ändra roaming eftersom ingen åtkomstpunkt är tillgänglig."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Fel vid införande av roaminginställningar för den valda åtkomstpunkten."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format

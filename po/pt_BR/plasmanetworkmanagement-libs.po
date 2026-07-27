@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-26 00:46+0000\n"
-"PO-Revision-Date: 2026-07-16 08:13-0300\n"
+"PO-Revision-Date: 2026-07-26 08:14-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -33,6 +33,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Não foi possível aplicar a preferência de roaming. Ativando o ponto de "
+"acesso com a configuração existente."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -43,11 +45,13 @@ msgstr "Erro ao ativar conexão: %1"
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
 msgstr ""
+"Não foi possível alterar o roaming porque não há ponto de acesso disponível."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Erro ao aplicar a preferência de roaming ao ponto de acesso selecionado."
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
 #: cellular/cellularmodem.cpp:482

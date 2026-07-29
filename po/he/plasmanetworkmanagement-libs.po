@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-26 00:46+0000\n"
-"PO-Revision-Date: 2026-07-17 12:29+0300\n"
+"PO-Revision-Date: 2026-07-28 08:47+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -31,6 +31,7 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"לא ניתן להחיל את העדפות הנדידה. נקודת הגישה מופעלת עם ההגדרות הנוכחיות שלה."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -40,12 +41,12 @@ msgstr "שגיאה בהפעלת חיבור: %1"
 #: cellular/cellularmodem.cpp:431
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
-msgstr ""
+msgstr "לא ניתן לשנות את הנדידה כיוון שאין נקודת גישה זמינה."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
-msgstr ""
+msgstr "שגיאה בהחלת העדפת הנדידה על נקודת הגישה הנבחרת."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format

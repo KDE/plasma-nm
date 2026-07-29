@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-26 00:46+0000\n"
-"PO-Revision-Date: 2026-07-17 09:41+0200\n"
+"PO-Revision-Date: 2026-07-27 09:20+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -37,6 +37,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Impossible d'appliquer la préférence d'itinérance. Activation du point "
+"d'accès avec ses paramètres existants."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -47,11 +49,14 @@ msgstr "Erreur lors de l'activation de la connexion : %1"
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
 msgstr ""
+"Impossible de modifier l'itinérance car aucun point d'accès n'est disponible."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Erreur lors de l'application des préférences d'itinérance au point d'accès "
+"sélectionné."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format

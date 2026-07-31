@@ -95,7 +95,7 @@ SimpleKCM {
             FormCard.FormDelegateSeparator {}
 
             FormCard.FormButtonDelegate {
-                text: i18n("More")
+                text: i18n("Settings")
                 onClicked: {
                     kcm.push("MorePage.qml");
                 }

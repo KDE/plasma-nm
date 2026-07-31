@@ -7,6 +7,8 @@
 #ifndef PLASMA_NM_KCM_QML_H
 #define PLASMA_NM_KCM_QML_H
 
+#include "connectionstatus.h"
+#include "enums.h"
 #include "handler.h"
 #include "security8021xsetting.h"
 #include "wifisecuritysetting.h"
@@ -24,16 +26,18 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(Handler *handler READ handler CONSTANT)
     Q_PROPERTY(Security8021xSetting *security8021xSetting READ security8021xSetting CONSTANT)
     Q_PROPERTY(bool useApMode READ useApMode CONSTANT)
-    Q_PROPERTY(int connectionType READ connectionType NOTIFY connectionTypeChanged)
+    Q_PROPERTY(ConnectionStatus *connectionStatus READ connectionStatus CONSTANT)
+    Q_PROPERTY(Enums::ConnectionType connectionType READ connectionType NOTIFY connectionTypeChanged)
 
 public:
     explicit KCMNetworkManagementQml(QObject *parent, const KPluginMetaData &metaData);
     ~KCMNetworkManagementQml() override;
 
-    int connectionType() const;
+    Enums::ConnectionType connectionType() const;
     Handler *handler() const;
     WifiSecuritySetting *wifiSecurity() const;
     Security8021xSetting *security8021xSetting() const;
+    ConnectionStatus *connectionStatus() const;
     bool useApMode() const;
 
     Q_INVOKABLE void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
@@ -84,6 +88,7 @@ private:
     Handler *const m_handler;
     WifiSecuritySetting *const m_wifiSecurity;
     Security8021xSetting *const m_security8021xSetting;
+    ConnectionStatus *const m_connectionStatus;
 
     bool m_useApMode = false;
 

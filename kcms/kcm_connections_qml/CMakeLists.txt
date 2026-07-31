@@ -9,6 +9,7 @@ kcmutils_add_qml_kcm(kcm_networkmanagement_qml
 target_sources(kcm_networkmanagement_qml PRIVATE
     kcm.cpp
     kcm.h
+    ${CMAKE_SOURCE_DIR}/libs/enums.cpp
 )
 
 ecm_qt_declare_logging_category(kcm_networkmanagement_qml

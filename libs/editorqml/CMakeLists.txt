@@ -5,6 +5,8 @@ set(SETTINGS_SRCS
 	settings/wifisecurities/wifisecuritysetting.h
   settings/stringlistmodel.cpp
   settings/stringlistmodel.h
+	settings/wifistatus/connectionstatus.h
+	settings/wifistatus/connectionstatus.cpp
 )
 
 set(QML_SRCS
@@ -27,7 +29,6 @@ set(QML_SRCS
   qml/wifisecurity/authentication/enterprise/DynamicWep.qml
   qml/wifisecurity/authentication/enterprise/WpaEnterprise.qml
   qml/wifisecurity/authentication/enterprise/Wpa3Enterprise192.qml
-
   qml/wifisecurity/DnsList.qml
   qml/wifisecurity/AlternativeSubjectMatch.qml
 
@@ -36,6 +37,7 @@ set(QML_SRCS
   qml/PasswordPromptDialog.qml
 
   qml/AddConnectionDialog.qml
+  qml/wifistatus/ConnectionStatusForm.qml
 )
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})
@@ -94,6 +96,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings
         ${CMAKE_CURRENT_BINARY_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/wifisecurities
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/wifistatus
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

@@ -42,7 +42,12 @@ ColumnLayout {
         Layout.fillHeight: true
         currentIndex: tabBar.currentIndex
 
-        Item {/* TODO: connectionstatus page */}
+        Item {
+            PlasmaNMQ.ConnectionStatusForm {
+                anchors.fill: parent
+                connectionStatus: kcm.connectionStatus
+            }
+        }
 
         Item { /* TODO: general settings page */ }
 

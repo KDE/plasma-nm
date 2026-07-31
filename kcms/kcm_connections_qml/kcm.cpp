@@ -1,5 +1,6 @@
 /*
       SPDX-FileCopyrightText: 2016 Jan Grulich <jgrulich@redhat.com>
+      SPDX-FileCopyrightText: 2026 Tushar Gupta <tushar.197712@gmail.com>
 
       SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
@@ -31,6 +32,7 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     , m_handler(new Handler(this))
     , m_wifiSecurity(new WifiSecuritySetting(this))
     , m_security8021xSetting(new Security8021xSetting(this))
+    , m_connectionStatus(new ConnectionStatus(this))
     , m_timer(new QTimer(this))
 {
     // Check if we can use AP mode to identify security type
@@ -136,6 +138,10 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
 
 KCMNetworkManagementQml::~KCMNetworkManagementQml() = default;
 
+ConnectionStatus *KCMNetworkManagementQml::connectionStatus() const
+{
+    return m_connectionStatus;
+}
 WifiSecuritySetting *KCMNetworkManagementQml::wifiSecurity() const
 {
     return m_wifiSecurity;
@@ -160,9 +166,36 @@ void KCMNetworkManagementQml::defaults()
     KQuickConfigModule::defaults();
 }
 
-int KCMNetworkManagementQml::connectionType() const
+Enums::ConnectionType KCMNetworkManagementQml::connectionType() const
 {
-    return m_connectionType;
+    switch (m_connectionType) {
+    case NetworkManager::ConnectionSettings::Wireless:
+        return Enums::Wireless;
+    case NetworkManager::ConnectionSettings::Wired:
+        return Enums::Wired;
+    case NetworkManager::ConnectionSettings::Gsm:
+        return Enums::Gsm;
+    case NetworkManager::ConnectionSettings::Cdma:
+        return Enums::Cdma;
+    case NetworkManager::ConnectionSettings::Bluetooth:
+        return Enums::Bluetooth;
+    case NetworkManager::ConnectionSettings::Infiniband:
+        return Enums::Infiniband;
+    case NetworkManager::ConnectionSettings::Bond:
+        return Enums::Bond;
+    case NetworkManager::ConnectionSettings::Bridge:
+        return Enums::Bridge;
+    case NetworkManager::ConnectionSettings::Vlan:
+        return Enums::Vlan;
+    case NetworkManager::ConnectionSettings::Vpn:
+        return Enums::Vpn;
+    case NetworkManager::ConnectionSettings::Adsl:
+        return Enums::Adsl;
+    case NetworkManager::ConnectionSettings::Pppoe:
+        return Enums::Pppoe;
+    default:
+        return Enums::UnknownConnectionType;
+    }
 }
 void KCMNetworkManagementQml::load()
 {
@@ -261,6 +294,7 @@ void KCMNetworkManagementQml::save()
 void KCMNetworkManagementQml::onSelectedConnectionChanged(const QString &connectionPath)
 {
     if (connectionPath.isEmpty()) {
+        m_connectionStatus->setConnectionUuid(QString());
         resetSelection();
         return;
     }
@@ -270,6 +304,7 @@ void KCMNetworkManagementQml::onSelectedConnectionChanged(const QString &connect
     NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(connectionPath);
     if (connection) {
         loadConnectionSettings(connection->settings());
+        m_connectionStatus->setConnectionUuid(connection->uuid());
     }
 }
 void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings)

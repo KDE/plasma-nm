@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-01 00:50+0000\n"
-"PO-Revision-Date: 2026-07-19 01:43+0300\n"
+"PO-Revision-Date: 2026-08-01 14:29+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -32,6 +32,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Nepavyko pritaikyti tarptinklinio ryšio nuostatos. Aktyvuojamas prieigos "
+"taškas su jo esama nuostata."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -42,11 +44,14 @@ msgstr "Klaida aktyvuojant ryšį: %1"
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
 msgstr ""
+"Nepavyksta pakeisti tarptinklinio ryšio, nes nėra prieinamas joks prieigos "
+"taškas."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Klaida taikant tarptinklinio ryšio nuostatą pasirinktam prieigos taškui."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format

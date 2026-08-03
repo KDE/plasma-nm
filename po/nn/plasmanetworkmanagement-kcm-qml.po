@@ -1,0 +1,43 @@
+# Translation of plasmanetworkmanagement-kcm-qml to Norwegian Nynorsk
+#
+# Karl Ove Hufthammer <karl@huftis.org>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-08-01 00:50+0000\n"
+"PO-Revision-Date: 2026-08-02 19:29+0200\n"
+"Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
+"Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
+"Language: nn\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 26.11.70\n"
+"X-Environment: kde\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+
+#: kcm.cpp:359
+#, kde-format
+msgid "my_shared_connection"
+msgstr "mi_delte_tilkopling"
+
+#: kcm.cpp:417
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Vil du lagra endringane du har gjort i tilkoplinga «%1»?"
+
+#: kcm.cpp:420
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Lagra endringane"
+
+#: kcm.cpp:449
+#, kde-format
+msgctxt "Suffix appended to duplicated connection name"
+msgid " (Copy)"
+msgstr " (kopi)"

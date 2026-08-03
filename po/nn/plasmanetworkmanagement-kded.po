@@ -1,12 +1,12 @@
 # Translation of plasmanetworkmanagement-kded to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2016, 2018, 2019, 2020, 2023, 2024.
+# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2016, 2018, 2019, 2020, 2023, 2024, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-16 00:45+0000\n"
-"PO-Revision-Date: 2024-08-08 22:03+0200\n"
+"PO-Revision-Date: 2026-08-02 19:58+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
 "Language: nn\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format
@@ -558,17 +558,14 @@ msgid "No secrets were requested"
 msgstr "Ingen førespurnadar om løyndomar"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid ""
-#| "Incorrect password for the wireless network \"%1\". Please try again."
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr "Ugyldig passord for trådlausnettverket «%1». Prøv på nytt."
+msgstr "Ugyldig passord for Wi-Fi-nettverket «%1». Prøv på nytt."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Enter the password for the wireless network \"%1\":"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "Skriv inn passord for trådlaus­nettverket «%1»:"
+msgstr "Skriv inn passord for Wi-Fi-nettverket «%1»:"
 
 #: passworddialog.cpp:105
 #, kde-format
@@ -581,11 +578,10 @@ msgid "Enter the password for the connection \"%1\":"
 msgstr "Skriv inn passord for tilkoplinga «%1»:"
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr "Passord:"
+msgstr "%1-passord"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -605,13 +601,9 @@ msgstr "VPN-løyndomar (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "Connection Password"
-msgstr "Tilkoplinga vart fjerna"
+msgstr "Tilkoplingspassord"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92

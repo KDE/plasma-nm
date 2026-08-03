@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-01 00:50+0000\n"
-"PO-Revision-Date: 2026-07-21 02:20+0200\n"
+"PO-Revision-Date: 2026-08-02 23:34+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -33,6 +33,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Ibiltaritza hobespenak ezin izan dira aplikatu. Sarbide-puntua dituen "
+"ezarpenekin aktibatzen ari da."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -43,11 +45,13 @@ msgstr "Errorea konexioa aktibatzean: %1"
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
 msgstr ""
+"Ibiltaritza ezin da aldatu erabilgarri dagoen sarbide-punturik ez dagoelako."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Errorea hautatutako sarbide-puntuari ibiltaritza hobespenak aplikatzean."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format

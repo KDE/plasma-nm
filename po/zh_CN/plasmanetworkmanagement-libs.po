@@ -28,7 +28,7 @@ msgstr "重置调制解调器时出错：%1"
 msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
-msgstr ""
+msgstr "无法应用漫游首选项。使用现有设置激活访问点。"
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -38,12 +38,12 @@ msgstr "激活连接时出错：%1"
 #: cellular/cellularmodem.cpp:431
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
-msgstr ""
+msgstr "无法更改漫游，因为没有可用的访问点。"
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
-msgstr ""
+msgstr "应用漫游首选项到在选定的访问点时出错。"
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format

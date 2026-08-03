@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-01 00:50+0000\n"
-"PO-Revision-Date: 2026-07-16 15:39+0200\n"
+"PO-Revision-Date: 2026-07-28 15:00+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -28,6 +28,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Impossibile applicare la preferenza di roaming. Attivazione del punto di "
+"accesso con le impostazioni esistenti."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -38,11 +40,15 @@ msgstr "Errore durante l'attivazione della connessione: %1"
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
 msgstr ""
+"Impossibile modificare il roaming perché non è disponibile alcun punto di "
+"accesso."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Errore durante l'applicazione della preferenza di roaming al punto di "
+"accesso selezionato."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format

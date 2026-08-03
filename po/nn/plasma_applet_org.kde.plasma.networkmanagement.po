@@ -1,5 +1,6 @@
 # Translation of plasma_applet_org.kde.plasma.networkmanagement to Norwegian Nynorsk
 #
+# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2026.
 # Øystein Steffensen-Alværvik <oysteins.omsetting@protonmail.com>, 2018.
 msgid ""
 msgstr ""
@@ -17,7 +18,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format

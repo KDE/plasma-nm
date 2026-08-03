@@ -1,5 +1,6 @@
 # Translation of kcm_mobile_wifi to Norwegian Nynorsk
 #
+# Karl Ove Hufthammer <karl@huftis.org>, 2019, 2020, 2024, 2026.
 # Øystein Steffensen-Alværvik <oysteins.omsetting@protonmail.com>, 2021.
 msgid ""
 msgstr ""

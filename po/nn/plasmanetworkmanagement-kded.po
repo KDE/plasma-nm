@@ -1,5 +1,6 @@
 # Translation of plasmanetworkmanagement-kded to Norwegian Nynorsk
 #
+# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2016, 2018, 2019, 2020, 2023, 2024, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -16,7 +17,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.11.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: bluetoothmonitor.cpp:67
 #, kde-format

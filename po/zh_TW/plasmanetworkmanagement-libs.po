@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-01 00:50+0000\n"
-"PO-Revision-Date: 2026-05-21 22:05+0900\n"
+"PO-Revision-Date: 2026-08-04 07:52+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.07.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -30,7 +30,7 @@ msgstr "重設數據機時發生錯誤：%1"
 msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
-msgstr ""
+msgstr "無法套用漫遊偏好設定。將用現有設定啟用存取點。"
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -40,12 +40,12 @@ msgstr "啟用連線時出錯：%1"
 #: cellular/cellularmodem.cpp:431
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
-msgstr ""
+msgstr "無法變更漫遊，因為沒有可用的存取點。"
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
-msgstr ""
+msgstr "套用漫遊偏好設定到所選存取點時發生錯誤。"
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format
@@ -4020,16 +4020,13 @@ msgid "R&emove"
 msgstr "移除(&E)"
 
 #: editorqml/qml/AddConnectionDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr "連線類型："
+msgstr "選擇連線類型"
 
 #: editorqml/qml/components/Wireless.qml:21
-#, fuzzy, kde-format
-#| msgctxt "@title:tab Connection status and details"
-#| msgid "Status"
+#, kde-format
 msgid "Status"
 msgstr "狀態"
 
@@ -4039,139 +4036,125 @@ msgid "Wi-Fi Security"
 msgstr "無線安全性"
 
 #: editorqml/qml/ConfigurationDialog.qml:19
-#, fuzzy, kde-format
-#| msgctxt "General"
-#| msgid "General configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr "一般設定"
+msgstr "設定"
 
 #: editorqml/qml/ConfigurationDialog.qml:42
 #, kde-format
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "偵測到數據機時詢問 PIN"
 
 #: editorqml/qml/ConfigurationDialog.qml:49
-#, fuzzy, kde-format
-#| msgid "Virtual connections"
+#, kde-format
 msgid "Show virtual connections"
-msgstr "虛擬連線"
+msgstr "顯示虛擬連線"
 
 #: editorqml/qml/ConfigurationDialog.qml:55
-#, fuzzy, kde-format
-#| msgid "Create a connection for a hidden network"
+#, kde-format
 msgid "Create new connections as system connections"
-msgstr "為隱藏網路建立連線"
+msgstr "將新連線作為系統連線建立"
 
 #: editorqml/qml/PasswordField.qml:95
 #, kde-format
 msgid "Always asked"
-msgstr ""
+msgstr "總是詢問"
 
 #: editorqml/qml/PasswordField.qml:97
 #, kde-format
 msgid "Not required"
-msgstr ""
+msgstr "不需要"
 
 #: editorqml/qml/PasswordPromptDialog.qml:24
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgctxt "@action:button Connect to network"
 msgid "Connect"
-msgstr "已連線"
+msgstr "連線"
 
 #: editorqml/qml/PasswordPromptDialog.qml:31
 #, kde-format
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #: editorqml/qml/PasswordPromptDialog.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "密碼："
+msgstr "輸入密碼"
 
 #: editorqml/qml/PasswordPromptDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Network ID"
+#, kde-format
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr "網路 ID"
+msgstr "網路：%1"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "密碼必須是有效的 WEP 金鑰"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "密碼必須在 8 到 64 個字元之間"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
-#, fuzzy, kde-format
-#| msgid "Alternative subject matches:"
+#, kde-format
 msgid "Alternative subject matches"
-msgstr "替代主題比對："
+msgstr "替代主題比對"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:106
 #: editorqml/qml/wifisecurity/DnsList.qml:106
 #, kde-format
 msgid "Move Up"
-msgstr ""
+msgstr "上移"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:119
 #: editorqml/qml/wifisecurity/DnsList.qml:119
 #, kde-format
 msgid "Move Down"
-msgstr ""
+msgstr "下移"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:26
-#, fuzzy, kde-format
-#| msgid "Anonymous identity:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Anonymous identity:"
 msgstr "匿名身份："
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
-#, fuzzy, kde-format
-#| msgid "Anonymous"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Anonymous"
 msgstr "匿名"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
-#, fuzzy, kde-format
-#| msgid "Authenticated"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Authenticated"
 msgstr "已認證"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
-#, fuzzy, kde-format
-#| msgid "Both"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Both"
 msgstr "都要"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:70
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt ""
 "@label PAC stands for Proxy Auto-Configuration and should not be translated"
 msgid "PAC file:"
 msgstr "PAC 檔："
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:119
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt "@item:filefilter"
 msgid "PAC files (*.pac)"
-msgstr "PAC 檔："
+msgstr "PAC 檔 (*.pac)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:45
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:39
@@ -4179,12 +4162,10 @@ msgstr "PAC 檔："
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:46
 #, kde-format
 msgid "*.der *.pem *.crt *.cer"
-msgstr ""
+msgstr "*.der *.pem *.crt *.cer"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:61
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgid "Automatic"
 msgstr "自動"
 
@@ -4194,17 +4175,17 @@ msgstr "自動"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:92
 #, kde-format
 msgid "Certificates (*.der *.pem *.crt *.cer)"
-msgstr ""
+msgstr "憑證 (*.der *.pem *.crt *.cer)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:139
 #, kde-format
 msgid "*.der *.pem *.p12 *.key"
-msgstr ""
+msgstr "*.der *.pem *.p12 *.key"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:178
 #, kde-format
 msgid "Keys (*.der *.pem *.p12 *.key)"
-msgstr ""
+msgstr "金鑰 (*.der *.pem *.p12 *.key)"
 
 #: editorqml/qml/wifisecurity/authentication/Owe.qml:30
 #, kde-format
@@ -4214,46 +4195,39 @@ msgid ""
 msgstr ""
 
 #: editorqml/qml/wifisecurity/authentication/WepKey.qml:38
-#, fuzzy, kde-format
-#| msgid "WEP index:"
+#, kde-format
 msgid "Key index:"
-msgstr "WEP 索引："
+msgstr "金鑰索引："
 
 #: editorqml/qml/wifisecurity/DnsList.qml:15
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "DNS Servers"
-msgstr "域名伺服器："
+msgstr "域名伺服器"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
-#, fuzzy, kde-format
-#| msgctxt "no security"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "無"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:25
-#, fuzzy, kde-format
-#| msgid "WEP key 40/128 bits (Hex or ASCII)"
+#, kde-format
 msgid "WEP 40/128-bit key (Hex)"
-msgstr "WEP 金鑰 40/128 位元（十六進位值或 ASCII 碼）"
+msgstr "WEP 40/128 位元金鑰（十六進位值）"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:26
 #, kde-format
 msgid "WEP 128-bit Passphrase"
-msgstr ""
+msgstr "WEP 128-位元密碼"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:28
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Personal"
+#, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr "WPA2/WPA3 Personal"
+msgstr "WPA/WPA2 Personal"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:29
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Enterprise"
+#, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr "WPA2/WPA3 Enterprise"
+msgstr "WPA/WPA2 Enterprise"
 
 #: handler.cpp:140
 #, kde-format
@@ -4526,42 +4500,39 @@ msgid "Unknown"
 msgstr "未知"
 
 #: qml/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connect"
-msgstr "已連線"
+msgstr "連線"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnect"
-msgstr "已斷線"
+msgstr "斷線"
 
 #: qml/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "設定"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Connect to"
-msgstr "連線"
+msgstr "連線到"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
 msgid "/s"
-msgstr ""
+msgstr "/秒"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Upload"
-msgstr ""
+msgstr "上傳"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "下載"
 
 #~ msgid "BSSID:"
 #~ msgstr "BSSID："

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 00:46+0000\n"
-"PO-Revision-Date: 2026-05-12 04:12+0900\n"
+"PO-Revision-Date: 2026-08-04 07:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 26.07.70\n"
+"X-Generator: Lokalize 26.11.70\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -253,16 +253,12 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "密碼必須在 8 到 64 個字元之間"
 
 #: ui/main.qml:36
-#, fuzzy
-#| msgid "Disconnect"
 msgid "Disconnected"
-msgstr "斷線"
+msgstr "已斷線"
 
 #: ui/main.qml:267
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "連線已匯入。"
+msgstr "連線名稱："
 
 #~ msgid "Create"
 #~ msgstr "建立"

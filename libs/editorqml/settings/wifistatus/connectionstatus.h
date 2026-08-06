@@ -22,6 +22,7 @@ struct ConnectionDetailSection;
 class PLASMANM_EDITORQML_EXPORT ConnectionStatus : public QObject
 {
     Q_OBJECT
+    QML_UNCREATABLE("")
     QML_ELEMENT
 
     Q_PROPERTY(ConnectionDetailsModel *detailsModel READ detailsModel CONSTANT)

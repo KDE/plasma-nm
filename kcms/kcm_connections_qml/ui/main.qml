@@ -310,7 +310,7 @@ Kirigami.Page {
             if (connectionPath === connectionView.currentConnectionPath) {
                 root.deselectConnections();
             }
-            handler.removeConnection(connectionPath);
+            kcm.handler.removeConnection(connectionPath);
         }
     }
 
@@ -329,6 +329,11 @@ Kirigami.Page {
 
     PlasmaNMQ.ConfigurationDialog {
         id: configurationDialog
+    }
+
+    function deselectConnections() {
+        connectionView.currentConnectionName = "";
+        connectionView.currentConnectionPath = "";
     }
 
     function showConfigurationDialog() {

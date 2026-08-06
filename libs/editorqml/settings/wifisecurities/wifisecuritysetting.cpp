@@ -496,4 +496,16 @@ void WifiSecuritySetting::setLeapPasswordOption(PasswordOption v)
     Q_EMIT validChanged();
 }
 
+void WifiSecuritySetting::setStoreSecretsSystemWide(bool system)
+{
+    const auto passwordOption = system ? StoreForAllUsers : StoreForUser;
+    const auto password8021xOption = system ? Security8021xSetting::StoreForAllUsers : Security8021xSetting::StoreForUser;
+
+    setWepKeyOption(passwordOption);
+    setLeapPasswordOption(passwordOption);
+    setPskOption(passwordOption);
+
+    m_8021xSetting->setPasswordOptions(password8021xOption);
+}
+
 #include "moc_wifisecuritysetting.cpp"

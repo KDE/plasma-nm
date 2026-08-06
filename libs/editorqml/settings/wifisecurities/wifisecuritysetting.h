@@ -106,6 +106,8 @@ public:
     [[nodiscard]] PasswordOption leapPasswordOption() const;
     void setLeapPasswordOption(PasswordOption option);
 
+    void setStoreSecretsSystemWide(bool system);
+
     [[nodiscard]] bool showPsk() const;
     [[nodiscard]] bool showWep() const;
     [[nodiscard]] bool showLeap() const;

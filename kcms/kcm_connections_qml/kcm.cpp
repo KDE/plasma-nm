@@ -33,6 +33,7 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     , m_wifiSecurity(new WifiSecuritySetting(this))
     , m_security8021xSetting(new Security8021xSetting(this))
     , m_connectionStatus(new ConnectionStatus(this))
+    , m_generalSettings(new GeneralSetting(this))
     , m_timer(new QTimer(this))
 {
     // Check if we can use AP mode to identify security type
@@ -121,6 +122,10 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
         qCDebug(PLASMA_NM_KCM_QML_LOG) << "Cannot preselect a connection";
     }
 
+    connect(m_generalSettings, &GeneralSetting::validChanged, this, [this]() {
+        kcmChanged(true);
+    });
+
     connect(NetworkManager::settingsNotifier(),
             &NetworkManager::SettingsNotifier::connectionAdded,
             this,
@@ -138,6 +143,10 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
 
 KCMNetworkManagementQml::~KCMNetworkManagementQml() = default;
 
+GeneralSetting *KCMNetworkManagementQml::generalSettings() const
+{
+    return m_generalSettings;
+}
 ConnectionStatus *KCMNetworkManagementQml::connectionStatus() const
 {
     return m_connectionStatus;
@@ -252,6 +261,7 @@ void KCMNetworkManagementQml::save()
 {
     // process the pending settings
     if (m_pendingNewSettings) {
+        m_generalSettings->applyTo(m_pendingNewSettings, m_wifiSecurity);
         NMVariantMapMap map = m_pendingNewSettings->toMap();
         map.insert(QStringLiteral("802-11-wireless-security"), m_wifiSecurity->setting());
         if (m_wifiSecurity->enabled8021x()) {
@@ -272,6 +282,8 @@ void KCMNetworkManagementQml::save()
         Q_EMIT saveFailed(QStringLiteral("No connection selected"));
         return;
     }
+    NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
+    m_generalSettings->applyTo(settings, m_wifiSecurity);
 
     NMVariantMapMap map = connection->settings()->toMap();
     if (m_wifiSecurity->securityType() != WifiSecuritySetting::None) {
@@ -314,6 +326,7 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
 
     m_connectionType = connectionSettings->connectionType();
     Q_EMIT connectionTypeChanged();
+    m_generalSettings->loadConfig(connectionSettings);
     // check wireless only for rn
     if (connectionSettings->connectionType() != NetworkManager::ConnectionSettings::Wireless) {
         kcmChanged(false);

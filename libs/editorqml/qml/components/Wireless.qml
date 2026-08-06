@@ -49,7 +49,12 @@ ColumnLayout {
             }
         }
 
-        Item { /* TODO: general settings page */ }
+        Item {
+            PlasmaNMQ.GeneralSettings {
+                anchors.fill: parent
+                setting: kcm.generalSettings
+            }
+        }
 
         Item { /* TODO: wifi settings page */ }
 

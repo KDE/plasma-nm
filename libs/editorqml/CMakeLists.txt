@@ -7,6 +7,10 @@ set(SETTINGS_SRCS
   settings/stringlistmodel.h
 	settings/wifistatus/connectionstatus.h
 	settings/wifistatus/connectionstatus.cpp
+  settings/generalSettings/generalsettings.cpp
+  settings/generalSettings/generalsettings.h
+  settings/generalSettings/advancedpermissionsmodel.h
+  settings/generalSettings/advancedpermissionsmodel.cpp
 )
 
 set(QML_SRCS
@@ -38,6 +42,9 @@ set(QML_SRCS
 
   qml/AddConnectionDialog.qml
   qml/wifistatus/ConnectionStatusForm.qml
+
+  qml/generalSettings/GeneralSettings.qml
+  qml/generalSettings/AdvancedPermissionsDialog.qml
 )
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})
@@ -97,6 +104,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_BINARY_DIR}
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/wifisecurities
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/wifistatus
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/generalSettings
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

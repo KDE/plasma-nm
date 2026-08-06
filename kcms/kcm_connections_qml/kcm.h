@@ -9,6 +9,7 @@
 
 #include "connectionstatus.h"
 #include "enums.h"
+#include "generalsettings.h"
 #include "handler.h"
 #include "security8021xsetting.h"
 #include "wifisecuritysetting.h"
@@ -28,6 +29,7 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(bool useApMode READ useApMode CONSTANT)
     Q_PROPERTY(ConnectionStatus *connectionStatus READ connectionStatus CONSTANT)
     Q_PROPERTY(Enums::ConnectionType connectionType READ connectionType NOTIFY connectionTypeChanged)
+    Q_PROPERTY(GeneralSetting *generalSettings READ generalSettings CONSTANT)
 
 public:
     explicit KCMNetworkManagementQml(QObject *parent, const KPluginMetaData &metaData);
@@ -38,6 +40,7 @@ public:
     WifiSecuritySetting *wifiSecurity() const;
     Security8021xSetting *security8021xSetting() const;
     ConnectionStatus *connectionStatus() const;
+    GeneralSetting *generalSettings() const;
     bool useApMode() const;
 
     Q_INVOKABLE void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
@@ -89,6 +92,7 @@ private:
     WifiSecuritySetting *const m_wifiSecurity;
     Security8021xSetting *const m_security8021xSetting;
     ConnectionStatus *const m_connectionStatus;
+    GeneralSetting *const m_generalSettings;
 
     bool m_useApMode = false;
 

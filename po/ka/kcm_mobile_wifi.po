@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:46+0000\n"
+"POT-Creation-Date: 2026-08-06 00:46+0000\n"
 "PO-Revision-Date: 2026-03-07 03:06+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -73,9 +73,11 @@ msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
 #: ui/main.qml:98
-#, kde-format
-msgid "More"
-msgstr "მეტი"
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "IP Settings"
+msgid "Settings"
+msgstr "IP-ის მორგება"
 
 #: ui/main.qml:107
 #, kde-format
@@ -255,3 +257,6 @@ msgstr "DNS"
 #, kde-format
 msgid "Password…"
 msgstr "პაროლი…"
+
+#~ msgid "More"
+#~ msgstr "მეტი"

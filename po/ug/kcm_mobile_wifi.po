@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:46+0000\n"
+"POT-Creation-Date: 2026-08-06 00:46+0000\n"
 "PO-Revision-Date: 2026-07-22 17:10-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
@@ -73,9 +73,11 @@ msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
 #: ui/main.qml:98
-#, kde-format
-msgid "More"
-msgstr "تېخىمۇ كۆپ"
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "IP Settings"
+msgid "Settings"
+msgstr "IP تەڭشەك"
 
 #: ui/main.qml:107
 #, kde-format
@@ -255,3 +257,6 @@ msgstr "DNS"
 #, kde-format
 msgid "Password…"
 msgstr "ئىم…"
+
+#~ msgid "More"
+#~ msgstr "تېخىمۇ كۆپ"

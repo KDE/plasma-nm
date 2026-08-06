@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:46+0000\n"
+"POT-Creation-Date: 2026-08-06 00:46+0000\n"
 "PO-Revision-Date: 2026-04-22 19:56+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -75,9 +75,11 @@ msgid "Wi-Fi"
 msgstr "WLAN"
 
 #: ui/main.qml:98
-#, kde-format
-msgid "More"
-msgstr "Mehr"
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "IP Settings"
+msgid "Settings"
+msgstr "IP-Einstellungen"
 
 #: ui/main.qml:107
 #, kde-format
@@ -257,6 +259,9 @@ msgstr "DNS"
 #, kde-format
 msgid "Password…"
 msgstr "Passwort …"
+
+#~ msgid "More"
+#~ msgstr "Mehr"
 
 #, fuzzy
 #~| msgid "Connect to"

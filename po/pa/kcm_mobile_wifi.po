@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:46+0000\n"
+"POT-Creation-Date: 2026-08-06 00:46+0000\n"
 "PO-Revision-Date: 2025-02-28 10:23-0600\n"
 "Last-Translator: A S Alam <aman@punlinux.org>\n"
 "Language-Team: pa\n"
@@ -73,9 +73,11 @@ msgid "Wi-Fi"
 msgstr "ਵਾਈ-ਫਾਈ"
 
 #: ui/main.qml:98
-#, kde-format
-msgid "More"
-msgstr ""
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "IP Settings"
+msgid "Settings"
+msgstr "IP ਸੈਟਿੰਗਾਂ"
 
 #: ui/main.qml:107
 #, kde-format

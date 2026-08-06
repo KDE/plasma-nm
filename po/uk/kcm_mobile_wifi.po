@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:46+0000\n"
+"POT-Creation-Date: 2026-08-06 00:46+0000\n"
 "PO-Revision-Date: 2026-03-07 11:15+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -75,9 +75,11 @@ msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
 #: ui/main.qml:98
-#, kde-format
-msgid "More"
-msgstr "Більше"
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "IP Settings"
+msgid "Settings"
+msgstr "Параметри IP"
 
 #: ui/main.qml:107
 #, kde-format
@@ -257,6 +259,9 @@ msgstr "DNS"
 #, kde-format
 msgid "Password…"
 msgstr "Пароль…"
+
+#~ msgid "More"
+#~ msgstr "Більше"
 
 #~ msgid "Connect"
 #~ msgstr "З'єднатися"

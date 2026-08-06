@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:46+0000\n"
+"POT-Creation-Date: 2026-08-06 00:46+0000\n"
 "PO-Revision-Date: 2026-03-14 07:07+0100\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -73,9 +73,11 @@ msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
 #: ui/main.qml:98
-#, kde-format
-msgid "More"
-msgstr "Więcej"
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "IP Settings"
+msgid "Settings"
+msgstr "Ustawienia IP"
 
 #: ui/main.qml:107
 #, kde-format
@@ -255,6 +257,9 @@ msgstr "DNS"
 #, kde-format
 msgid "Password…"
 msgstr "Hasło…"
+
+#~ msgid "More"
+#~ msgstr "Więcej"
 
 #~ msgid "Connect"
 #~ msgstr "Połącz"

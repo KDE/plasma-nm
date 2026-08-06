@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-03-07 00:46+0000\n"
+"POT-Creation-Date: 2026-08-06 00:46+0000\n"
 "PO-Revision-Date: 2026-03-08 09:47+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -73,9 +73,11 @@ msgid "Wi-Fi"
 msgstr "واي فاي"
 
 #: ui/main.qml:98
-#, kde-format
-msgid "More"
-msgstr "المزيد"
+#, fuzzy, kde-format
+#| msgctxt "@title:group"
+#| msgid "IP Settings"
+msgid "Settings"
+msgstr "إعدادات عنوان الإنترنت"
 
 #: ui/main.qml:107
 #, kde-format
@@ -255,6 +257,9 @@ msgstr "خادم أسماء النطاقات"
 #, kde-format
 msgid "Password…"
 msgstr "كلمة السر..."
+
+#~ msgid "More"
+#~ msgstr "المزيد"
 
 #~ msgid "Connect"
 #~ msgstr "اتّصل"

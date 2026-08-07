@@ -259,6 +259,3 @@ msgstr "DNS"
 #, kde-format
 msgid "Password…"
 msgstr "Passord …"
-
-#~ msgid "More"
-#~ msgstr "Meir"

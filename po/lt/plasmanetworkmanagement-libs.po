@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:50+0000\n"
+"POT-Creation-Date: 2026-08-07 00:48+0000\n"
 "PO-Revision-Date: 2026-08-01 14:29+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
@@ -334,6 +334,7 @@ msgstr "Nepavyko peržiūrėti tinklų: %1"
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: cellular/cellularmodemdetails.cpp:435
 #: editor/settings/ui/connectionwidget.ui:169
+#: editorqml/qml/generalSettings/GeneralSettings.qml:131
 #, kde-format
 msgid "Yes"
 msgstr "Taip"
@@ -341,6 +342,7 @@ msgstr "Taip"
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: cellular/cellularmodemdetails.cpp:437
 #: editor/settings/ui/connectionwidget.ui:174
+#: editorqml/qml/generalSettings/GeneralSettings.qml:131
 #, kde-format
 msgid "No"
 msgstr "Ne"
@@ -1516,6 +1518,7 @@ msgstr "Numeris:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
 #: editor/settings/ui/connectionwidget.ui:17
+#: editorqml/qml/generalSettings/GeneralSettings.qml:24
 #, kde-format
 msgid "Connect automatically with priority"
 msgstr "Jungtis automatiškai naudojant prioritetą"
@@ -1536,6 +1539,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
+#: editorqml/qml/generalSettings/GeneralSettings.qml:60
 #, kde-format
 msgid "All users may connect to this network"
 msgstr "Visi naudotojai gali prisijungti prie šio tinklo"
@@ -1559,12 +1563,14 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: editor/settings/ui/connectionwidget.ui:69 editor/settings/ui/ipv4.ui:363
+#: editorqml/qml/generalSettings/GeneralSettings.qml:69
 #, kde-format
 msgid "Advanced…"
 msgstr "Išplėstiniai…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:79
+#: editorqml/qml/generalSettings/GeneralSettings.qml:91
 #, kde-format
 msgid "Automatically connect to VPN"
 msgstr "Automatiškai jungtis prie VPN"
@@ -1580,6 +1586,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:102
+#: editorqml/qml/generalSettings/GeneralSettings.qml:114
 #, kde-format
 msgid "Firewall zone:"
 msgstr "Užkardos zona:"
@@ -1596,6 +1603,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:134
+#: editorqml/qml/generalSettings/GeneralSettings.qml:128
 #, kde-format
 msgid "Metered:"
 msgstr "Ribotų duomenų:"
@@ -4143,6 +4151,19 @@ msgstr "Rodyti virtualius ryšius"
 msgid "Create new connections as system connections"
 msgstr "Sukurti naujus ryšius kaip sistemos ryšius"
 
+#: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
+#, fuzzy, kde-format
+#| msgid "Allowed IPs:"
+msgid "Allowed Users"
+msgstr "Leidžiami IP:"
+
+#: editorqml/qml/generalSettings/GeneralSettings.qml:131
+#, fuzzy, kde-format
+#| msgid "Automatic"
+msgctxt "@item metered mode"
+msgid "Automatic"
+msgstr "Automatinis"
+
 #: editorqml/qml/PasswordField.qml:95
 #, kde-format
 msgid "Always asked"
@@ -4317,6 +4338,14 @@ msgstr "WPA/WPA2 asmeninis"
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 industrinis"
+
+#: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "@item:intable shortcut for Not Available"
+#| msgid "N/A"
+msgctxt "@item real name not available"
+msgid "N/A"
+msgstr "Neprieinama"
 
 #: handler.cpp:140
 #, kde-format

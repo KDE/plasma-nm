@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-01 00:50+0000\n"
+"POT-Creation-Date: 2026-08-07 00:48+0000\n"
 "PO-Revision-Date: 2026-07-27 09:20+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
@@ -336,6 +336,7 @@ msgstr "Échec de l'analyse des réseaux : %1"
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: cellular/cellularmodemdetails.cpp:435
 #: editor/settings/ui/connectionwidget.ui:169
+#: editorqml/qml/generalSettings/GeneralSettings.qml:131
 #, kde-format
 msgid "Yes"
 msgstr "Oui"
@@ -343,6 +344,7 @@ msgstr "Oui"
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: cellular/cellularmodemdetails.cpp:437
 #: editor/settings/ui/connectionwidget.ui:174
+#: editorqml/qml/generalSettings/GeneralSettings.qml:131
 #, kde-format
 msgid "No"
 msgstr "Non"
@@ -1519,6 +1521,7 @@ msgstr "Nombre :"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
 #: editor/settings/ui/connectionwidget.ui:17
+#: editorqml/qml/generalSettings/GeneralSettings.qml:24
 #, kde-format
 msgid "Connect automatically with priority"
 msgstr "Se connecter automatiquement avec priorité"
@@ -1541,6 +1544,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
+#: editorqml/qml/generalSettings/GeneralSettings.qml:60
 #, kde-format
 msgid "All users may connect to this network"
 msgstr "Tous les utilisateurs peuvent se connecter à ce réseau"
@@ -1565,12 +1569,14 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: editor/settings/ui/connectionwidget.ui:69 editor/settings/ui/ipv4.ui:363
+#: editorqml/qml/generalSettings/GeneralSettings.qml:69
 #, kde-format
 msgid "Advanced…"
 msgstr "Avancé…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:79
+#: editorqml/qml/generalSettings/GeneralSettings.qml:91
 #, kde-format
 msgid "Automatically connect to VPN"
 msgstr "Se connecter automatiquement au VPN"
@@ -1587,6 +1593,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:102
+#: editorqml/qml/generalSettings/GeneralSettings.qml:114
 #, kde-format
 msgid "Firewall zone:"
 msgstr "Zone du pare-feu :"
@@ -1603,6 +1610,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:134
+#: editorqml/qml/generalSettings/GeneralSettings.qml:128
 #, kde-format
 msgid "Metered:"
 msgstr "Consommation mesurée :"
@@ -4154,6 +4162,19 @@ msgstr "Afficher les connexions virtuelles"
 msgid "Create new connections as system connections"
 msgstr "Créer de nouvelles connexions de niveau système"
 
+#: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
+#, fuzzy, kde-format
+#| msgid "Allowed IPs:"
+msgid "Allowed Users"
+msgstr "IP autorisées :"
+
+#: editorqml/qml/generalSettings/GeneralSettings.qml:131
+#, fuzzy, kde-format
+#| msgid "Automatic"
+msgctxt "@item metered mode"
+msgid "Automatic"
+msgstr "Automatique"
+
 #: editorqml/qml/PasswordField.qml:95
 #, kde-format
 msgid "Always asked"
@@ -4328,6 +4349,14 @@ msgstr "WPA / WPA2 domestique"
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA / WPA2 d'entreprise"
+
+#: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
+#, fuzzy, kde-format
+#| msgctxt "@item:intable shortcut for Not Available"
+#| msgid "N/A"
+msgctxt "@item real name not available"
+msgid "N/A"
+msgstr "n/d"
 
 #: handler.cpp:140
 #, kde-format

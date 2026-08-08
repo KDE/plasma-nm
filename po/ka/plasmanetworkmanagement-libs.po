@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:48+0000\n"
-"PO-Revision-Date: 2026-07-26 06:02+0200\n"
+"PO-Revision-Date: 2026-08-07 06:22+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -4129,14 +4129,12 @@ msgid "Create new connections as system connections"
 msgstr "ახალი კავშირების შექმნა სისტემური კავშირების სახით"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Allowed IPs:"
+#, kde-format
 msgid "Allowed Users"
-msgstr "დაშვებული IP-ები:"
+msgstr "დაშვებული მომხმარებლები"
 
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item metered mode"
 msgid "Automatic"
 msgstr "ავტომატური"
@@ -4317,12 +4315,10 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 საწარმოო"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@item:intable shortcut for Not Available"
-#| msgid "N/A"
+#, kde-format
 msgctxt "@item real name not available"
 msgid "N/A"
-msgstr "არარსებული"
+msgstr "ა/მ"
 
 #: handler.cpp:140
 #, kde-format

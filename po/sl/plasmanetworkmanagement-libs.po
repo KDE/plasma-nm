@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:48+0000\n"
-"PO-Revision-Date: 2026-07-26 07:27+0200\n"
+"PO-Revision-Date: 2026-08-07 06:22+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -4132,14 +4132,12 @@ msgid "Create new connections as system connections"
 msgstr "Ustvari nove povezave kot sistemske povezave"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Allowed IPs:"
+#, kde-format
 msgid "Allowed Users"
-msgstr "Dovoljeni naslovi IP:"
+msgstr "Dovoljeni uporabniki"
 
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item metered mode"
 msgid "Automatic"
 msgstr "Samodejno"
@@ -4319,9 +4317,7 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "Podjetniški WPA2/WPA3"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@item:intable shortcut for Not Available"
-#| msgid "N/A"
+#, kde-format
 msgctxt "@item real name not available"
 msgid "N/A"
 msgstr "N/A"

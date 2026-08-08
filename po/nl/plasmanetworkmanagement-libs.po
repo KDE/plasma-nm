@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:48+0000\n"
-"PO-Revision-Date: 2026-07-26 09:32+0200\n"
+"PO-Revision-Date: 2026-08-07 13:03+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -4136,14 +4136,12 @@ msgid "Create new connections as system connections"
 msgstr "Nieuwe verbindingen als systeemverbindingen aanmaken"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Allowed IPs:"
+#, kde-format
 msgid "Allowed Users"
-msgstr "Toegestane IP-adressen:"
+msgstr "Toegestane gebruikers"
 
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item metered mode"
 msgid "Automatic"
 msgstr "Automatisch"
@@ -4324,9 +4322,7 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2-enterprise"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@item:intable shortcut for Not Available"
-#| msgid "N/A"
+#, kde-format
 msgctxt "@item real name not available"
 msgid "N/A"
 msgstr "N.v.t."

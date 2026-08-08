@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:48+0000\n"
-"PO-Revision-Date: 2026-07-26 07:42+0200\n"
+"PO-Revision-Date: 2026-08-07 17:59+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -4120,17 +4120,15 @@ msgid "Create new connections as system connections"
 msgstr "Skapa nya anslutningar som systemanslutningar"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Allowed IPs:"
+#, kde-format
 msgid "Allowed Users"
-msgstr "Tillåtna IP-adresser:"
+msgstr "Tillåtna användare"
 
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item metered mode"
 msgid "Automatic"
-msgstr "Automatisk"
+msgstr "Automatiskt"
 
 #: editorqml/qml/PasswordField.qml:95
 #, kde-format
@@ -4308,12 +4306,10 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 företag"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@item:intable shortcut for Not Available"
-#| msgid "N/A"
+#, kde-format
 msgctxt "@item real name not available"
 msgid "N/A"
-msgstr "Inte tillgänglig"
+msgstr "Inte tillgängligt"
 
 #: handler.cpp:140
 #, kde-format

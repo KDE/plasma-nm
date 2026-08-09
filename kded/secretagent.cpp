@@ -553,16 +553,16 @@ bool SecretAgent::processDeleteSecrets(QSharedPointer<SecretsRequest> request)
         }
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
             auto jobRequest = request.toWeakRef();
-            QKeychain::DeletePasswordJob job(QString::fromLatin1(keychainService));
-            connect(&job, &QKeychain::Job::finished, this, [this, jobRequest] {
+            auto *job = new QKeychain::DeletePasswordJob(QString::fromLatin1(keychainService));
+            connect(job, &QKeychain::Job::finished, this, [this, jobRequest] {
                 auto request = jobRequest.toStrongRef();
                 if (!request)
                     return;
                 --request->storageJobsRunning;
                 processNext();
             });
-            job.setKey(storageKey(connectionSettings, setting->name()));
-            job.start();
+            job->setKey(storageKey(connectionSettings, setting->name()));
+            job->start();
             ++request->storageJobsRunning;
             request->storageJobsStarted = true;
             return false;

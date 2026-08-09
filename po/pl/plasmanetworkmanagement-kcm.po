@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-16 00:46+0000\n"
-"PO-Revision-Date: 2026-05-16 12:31+0200\n"
+"PO-Revision-Date: 2026-08-08 12:13+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.04.2\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -253,16 +253,12 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "Hasło musi zawierać od 8 do 64 znaków"
 
 #: ui/main.qml:36
-#, fuzzy
-#| msgid "Disconnect"
 msgid "Disconnected"
-msgstr "Rozłącz"
+msgstr "Rozłączony"
 
 #: ui/main.qml:267
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "Zaimportowano połączenie."
+msgstr "Nazwa połączenia:"
 
 #~ msgid "Create"
 #~ msgstr "Utwórz"

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:48+0000\n"
-"PO-Revision-Date: 2026-07-27 01:05+0100\n"
+"PO-Revision-Date: 2026-08-07 12:01+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -4143,17 +4143,15 @@ msgid "Create new connections as system connections"
 msgstr "Crear nuevas conexiones como conexiones del sistema"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Allowed IPs:"
+#, kde-format
 msgid "Allowed Users"
-msgstr "IP permitidas:"
+msgstr "Usuarios permitidos"
 
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item metered mode"
 msgid "Automatic"
-msgstr "Automática"
+msgstr "Automático"
 
 #: editorqml/qml/PasswordField.qml:95
 #, kde-format
@@ -4331,9 +4329,7 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 empresarial"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@item:intable shortcut for Not Available"
-#| msgid "N/A"
+#, kde-format
 msgctxt "@item real name not available"
 msgid "N/A"
 msgstr "N/D"

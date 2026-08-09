@@ -401,10 +401,12 @@ bool SecretAgent::processGetSecrets(QSharedPointer<SecretsRequest> request)
             job->setKey(storageKey(*connectionSettings, request->setting_name));
             job->start();
             return false;
-        } else {
+        } else if (request->storageJobsRunning <= 0) {
             for (auto it = request->storedSecrets.cbegin(); it != request->storedSecrets.cend(); ++it) {
                 secretsMap.insert(it.key(), it.value().toString());
             }
+        } else {
+            return false;
         }
     }
 

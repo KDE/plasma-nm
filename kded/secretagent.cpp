@@ -494,8 +494,8 @@ bool SecretAgent::processSaveSecrets(QSharedPointer<SecretsRequest> request)
 {
     if (useSecureStorage()) {
         NetworkManager::ConnectionSettings connectionSettings(request->connection);
-        if (request->storageJobsRunning <= 0 && request->storageJobsStarted) {
-            return true;
+        if (request->storageJobsStarted) {
+            return (request->storageJobsRunning <= 0);
         }
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
             const auto secretsMap = setting->secretsToStringMap();
@@ -548,8 +548,8 @@ bool SecretAgent::processDeleteSecrets(QSharedPointer<SecretsRequest> request)
 {
     if (useSecureStorage()) {
         NetworkManager::ConnectionSettings connectionSettings(request->connection);
-        if (request->storageJobsRunning <= 0 && request->storageJobsStarted) {
-            return true;
+        if (request->storageJobsStarted) {
+            return (request->storageJobsRunning <= 0);
         }
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
             auto jobRequest = request.toWeakRef();

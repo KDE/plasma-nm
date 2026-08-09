@@ -72,8 +72,8 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection,
     qCDebug(PLASMA_NM_KDED_LOG) << "Flags:" << flags;
 
     const QString callId = connection_path.path() % setting_name;
-    for (const SecretsRequest &request : std::as_const(m_calls)) {
-        if (request == callId) {
+    for (const auto &request : std::as_const(m_calls)) {
+        if (*request == callId) {
             qCWarning(PLASMA_NM_KDED_LOG) << "GetSecrets was called again! This should not happen, cancelling first call" << connection_path.path()
                                           << setting_name;
             CancelGetSecrets(connection_path, setting_name);
@@ -82,14 +82,16 @@ NMVariantMapMap SecretAgent::GetSecrets(const NMVariantMapMap &connection,
     }
 
     setDelayedReply(true);
-    SecretsRequest request(SecretsRequest::GetSecrets);
-    request.callId = callId;
-    request.connection = connection;
-    request.connection_path = connection_path;
-    request.flags = static_cast<NetworkManager::SecretAgent::GetSecretsFlags>(flags);
-    request.hints = hints;
-    request.setting_name = setting_name;
-    request.message = message();
+
+    auto request = QSharedPointer<SecretsRequest>::create(SecretsRequest::GetSecrets);
+    request->callId = callId;
+    request->connection = connection;
+    request->connection_path = connection_path;
+    request->flags = static_cast<NetworkManager::SecretAgent::GetSecretsFlags>(flags);
+    request->hints = hints;
+    request->setting_name = setting_name;
+    request->message = message();
+
     m_calls << request;
 
     processNext();
@@ -110,10 +112,11 @@ void SecretAgent::SaveSecrets(const NMVariantMapMap &connection, const QDBusObje
     } else {
         type = SecretsRequest::DeleteSecrets;
     }
-    SecretsRequest request(type);
-    request.connection = connection;
-    request.connection_path = connection_path;
-    request.message = message();
+
+    auto request = QSharedPointer<SecretsRequest>::create(type);
+    request->connection = connection;
+    request->connection_path = connection_path;
+    request->message = message();
     m_calls << request;
 
     processNext();
@@ -126,10 +129,10 @@ void SecretAgent::DeleteSecrets(const NMVariantMapMap &connection, const QDBusOb
     // qCDebug(PLASMA_NM_KDED_LOG) << "Setting:" << connection;
 
     setDelayedReply(true);
-    SecretsRequest request(SecretsRequest::DeleteSecrets);
-    request.connection = connection;
-    request.connection_path = connection_path;
-    request.message = message();
+    auto request = QSharedPointer<SecretsRequest>::create(SecretsRequest::DeleteSecrets);
+    request->connection = connection;
+    request->connection_path = connection_path;
+    request->message = message();
     m_calls << request;
 
     processNext();
@@ -143,13 +146,13 @@ void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const
 
     QString callId = connection_path.path() % setting_name;
     for (int i = 0; i < m_calls.size(); ++i) {
-        SecretsRequest request = m_calls.at(i);
-        if (request.type == SecretsRequest::GetSecrets && callId == request.callId) {
-            if (m_dialog == request.dialog) {
+        auto request = m_calls.at(i);
+        if (request->type == SecretsRequest::GetSecrets && callId == request->callId) {
+            if (m_dialog == request->dialog) {
                 m_dialog = nullptr;
             }
-            delete request.dialog;
-            sendError(SecretAgent::AgentCanceled, QStringLiteral("Agent canceled the password dialog"), request.message);
+            delete request->dialog;
+            sendError(SecretAgent::AgentCanceled, QStringLiteral("Agent canceled the password dialog"), request->message);
             m_calls.removeAt(i);
             break;
         }
@@ -161,10 +164,10 @@ void SecretAgent::CancelGetSecrets(const QDBusObjectPath &connection_path, const
 void SecretAgent::dialogAccepted()
 {
     for (int i = 0; i < m_calls.size(); ++i) {
-        SecretsRequest request = m_calls[i];
-        if (request.type == SecretsRequest::GetSecrets && request.dialog == m_dialog) {
+        auto request = m_calls[i];
+        if (request->type == SecretsRequest::GetSecrets && request->dialog == m_dialog) {
             NMStringMap tmpOpenconnectSecrets;
-            NMVariantMapMap connection = request.dialog->secrets();
+            NMVariantMapMap connection = request->dialog->secrets();
             if (connection.contains(QStringLiteral("vpn"))) {
                 if (connection.value(QStringLiteral("vpn")).contains(QStringLiteral("tmp-secrets"))) {
                     QVariantMap vpnSetting = connection.value(QStringLiteral("vpn"));
@@ -173,7 +176,7 @@ void SecretAgent::dialogAccepted()
                 }
             }
 
-            sendSecrets(connection, request.message);
+            sendSecrets(connection, request->message);
             NetworkManager::ConnectionSettings::Ptr connectionSettings =
                 NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(connection));
             NetworkManager::ConnectionSettings::Ptr completeConnectionSettings;
@@ -183,7 +186,7 @@ void SecretAgent::dialogAccepted()
             } else {
                 completeConnectionSettings = connectionSettings;
             }
-            if (request.saveSecretsWithoutReply && completeConnectionSettings->connectionType() != NetworkManager::ConnectionSettings::Vpn) {
+            if (request->saveSecretsWithoutReply && completeConnectionSettings->connectionType() != NetworkManager::ConnectionSettings::Vpn) {
                 bool requestOffline = true;
                 if (completeConnectionSettings->connectionType() == NetworkManager::ConnectionSettings::Gsm) {
                     NetworkManager::GsmSetting::Ptr gsmSetting =
@@ -219,10 +222,10 @@ void SecretAgent::dialogAccepted()
                 }
 
                 if (requestOffline) {
-                    SecretsRequest requestOffline(SecretsRequest::SaveSecrets);
-                    requestOffline.connection = connection;
-                    requestOffline.connection_path = request.connection_path;
-                    requestOffline.saveSecretsWithoutReply = true;
+                    auto requestOffline = QSharedPointer<SecretsRequest>::create(SecretsRequest::SaveSecrets);
+                    requestOffline->connection = connection;
+                    requestOffline->connection_path = request->connection_path;
+                    requestOffline->saveSecretsWithoutReply = true;
                     m_calls << requestOffline;
                 }
             } else if (completeConnectionSettings->connectionType() == NetworkManager::ConnectionSettings::Vpn && !tmpOpenconnectSecrets.isEmpty()) {
@@ -254,7 +257,7 @@ void SecretAgent::dialogAccepted()
                     vpnSetting->setData(data);
                     vpnSetting->setSecrets(secrets);
                     if (!con) {
-                        con = NetworkManager::findConnection(request.connection_path.path());
+                        con = NetworkManager::findConnection(request->connection_path.path());
                     }
 
                     if (con) {
@@ -277,9 +280,9 @@ void SecretAgent::dialogAccepted()
 void SecretAgent::dialogRejected()
 {
     for (int i = 0; i < m_calls.size(); ++i) {
-        SecretsRequest request = m_calls[i];
-        if (request.type == SecretsRequest::GetSecrets && request.dialog == m_dialog) {
-            sendError(SecretAgent::UserCanceled, QStringLiteral("User canceled the password dialog"), request.message);
+        auto request = m_calls[i];
+        if (request->type == SecretsRequest::GetSecrets && request->dialog == m_dialog) {
+            sendError(SecretAgent::UserCanceled, QStringLiteral("User canceled the password dialog"), request->message);
             m_calls.removeAt(i);
             break;
         }
@@ -295,9 +298,9 @@ void SecretAgent::killDialogs()
 {
     int i = 0;
     while (i < m_calls.size()) {
-        SecretsRequest request = m_calls[i];
-        if (request.type == SecretsRequest::GetSecrets) {
-            delete request.dialog;
+        auto request = m_calls[i];
+        if (request->type == SecretsRequest::GetSecrets) {
+            delete request->dialog;
             m_calls.removeAt(i);
             continue;
         }
@@ -310,8 +313,8 @@ void SecretAgent::processNext()
 {
     int i = 0;
     while (i < m_calls.size()) {
-        SecretsRequest &request = m_calls[i];
-        switch (request.type) {
+        auto request = m_calls[i];
+        switch (request->type) {
         case SecretsRequest::GetSecrets:
             if (processGetSecrets(request)) {
                 m_calls.removeAt(i);
@@ -335,19 +338,19 @@ void SecretAgent::processNext()
     }
 }
 
-bool SecretAgent::processGetSecrets(SecretsRequest &request)
+bool SecretAgent::processGetSecrets(QSharedPointer<SecretsRequest> request)
 {
     if (m_dialog) {
         return false;
     }
 
     NetworkManager::ConnectionSettings::Ptr connectionSettings =
-        NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(request.connection));
-    NetworkManager::Setting::Ptr setting = connectionSettings->setting(request.setting_name);
+        NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(request->connection));
+    NetworkManager::Setting::Ptr setting = connectionSettings->setting(request->setting_name);
 
-    const bool requestNew = request.flags & RequestNew;
-    const bool userRequested = request.flags & UserRequested;
-    const bool allowInteraction = request.flags & AllowInteraction;
+    const bool requestNew = request->flags & RequestNew;
+    const bool userRequested = request->flags & UserRequested;
+    const bool allowInteraction = request->flags & AllowInteraction;
     const bool isVpn = (setting->type() == NetworkManager::Setting::Vpn);
     const bool isWireGuard = (setting->type() == NetworkManager::Setting::WireGuard);
 
@@ -358,15 +361,15 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
             qCDebug(PLASMA_NM_KDED_LOG) << Q_FUNC_INFO << "Sending SSH auth socket" << authSock;
 
             if (authSock.isEmpty()) {
-                sendError(SecretAgent::NoSecrets, QStringLiteral("SSH_AUTH_SOCK not present"), request.message);
+                sendError(SecretAgent::NoSecrets, QStringLiteral("SSH_AUTH_SOCK not present"), request->message);
             } else {
                 NMStringMap secrets;
                 secrets.insert(QStringLiteral("ssh-auth-sock"), authSock);
 
                 QVariantMap secretData;
                 secretData.insert(QStringLiteral("secrets"), QVariant::fromValue<NMStringMap>(secrets));
-                request.connection[request.setting_name] = secretData;
-                sendSecrets(request.connection, request.message);
+                request->connection[request->setting_name] = secretData;
+                sendSecrets(request->connection, request->message);
             }
             return true;
         }
@@ -374,28 +377,32 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
 
     NMStringMap secretsMap;
     if (!requestNew && useSecureStorage()) {
-        if (!request.storageJobsStarted) {
+        if (!request->storageJobsStarted) {
+            auto jobRequest = request.toWeakRef();
             auto *job = new QKeychain::ReadPasswordJob(QString::fromLatin1(keychainService));
             connect(
                 job,
                 &QKeychain::Job::finished,
                 this,
-                [this, job, &request]() {
+                [this, job, jobRequest]() {
+                    auto request = jobRequest.toStrongRef();
+                    if (!request)
+                        return;
                     const auto document = QJsonDocument::fromJson(job->textData().toUtf8());
                     if (document.isObject()) {
-                        request.storedSecrets = document.object().toVariantMap();
+                        request->storedSecrets = document.object().toVariantMap();
                     }
-                    --request.storageJobsRunning;
+                    --request->storageJobsRunning;
                     processNext();
                 },
                 Qt::SingleShotConnection);
-            request.storageJobsRunning = 1;
-            request.storageJobsStarted = true;
-            job->setKey(storageKey(*connectionSettings, request.setting_name));
+            request->storageJobsRunning = 1;
+            request->storageJobsStarted = true;
+            job->setKey(storageKey(*connectionSettings, request->setting_name));
             job->start();
             return false;
         } else {
-            for (auto it = request.storedSecrets.cbegin(); it != request.storedSecrets.cend(); ++it) {
+            for (auto it = request->storedSecrets.cbegin(); it != request->storedSecrets.cend(); ++it) {
                 secretsMap.insert(it.key(), it.value().toString());
             }
         }
@@ -405,16 +412,16 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
         setting->secretsFromStringMap(secretsMap);
         if (!(isVpn || isWireGuard) && setting->needSecrets(requestNew).isEmpty()) {
             // Enough secrets were retrieved from storage
-            request.connection[request.setting_name] = setting->secretsToMap();
-            sendSecrets(request.connection, request.message);
+            request->connection[request->setting_name] = setting->secretsToMap();
+            sendSecrets(request->connection, request->message);
             return true;
         }
     }
 
     if (!Configuration::self().showPasswordDialog()) {
-        sendError(SecretAgent::NoSecrets, QStringLiteral("Cannot authenticate"), request.message);
-        Q_EMIT secretsError(request.connection_path.path(),
-                            i18n("Authentication to %1 failed. Wrong password?", request.connection.value("connection").value("id").toString()));
+        sendError(SecretAgent::NoSecrets, QStringLiteral("Cannot authenticate"), request->message);
+        Q_EMIT secretsError(request->connection_path.path(),
+                            i18n("Authentication to %1 failed. Wrong password?", request->connection.value("connection").value("id").toString()));
         return true;
     } else if (isWireGuard) { // Just return what we have
         NMVariantMapMap result;
@@ -431,22 +438,22 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
         } else {
             result.insert(QStringLiteral("wireguard"), wireGuardSetting->secretsToMap());
         }
-        sendSecrets(result, request.message);
+        sendSecrets(result, request->message);
         return true;
     } else if (requestNew || (allowInteraction && !setting->needSecrets(requestNew).isEmpty()) || (allowInteraction && userRequested)
                || (isVpn && allowInteraction)) {
-        m_dialog = new PasswordDialog(connectionSettings, request.flags, request.setting_name, request.hints);
+        m_dialog = new PasswordDialog(connectionSettings, request->flags, request->setting_name, request->hints);
         connect(m_dialog, &PasswordDialog::accepted, this, &SecretAgent::dialogAccepted);
         connect(m_dialog, &PasswordDialog::rejected, this, &SecretAgent::dialogRejected);
 
         if (m_dialog->hasError()) {
-            sendError(m_dialog->error(), m_dialog->errorMessage(), request.message);
+            sendError(m_dialog->error(), m_dialog->errorMessage(), request->message);
             delete m_dialog;
             m_dialog = nullptr;
             return true;
         } else {
-            request.dialog = m_dialog;
-            request.saveSecretsWithoutReply = !connectionSettings->permissions().isEmpty();
+            request->dialog = m_dialog;
+            request->saveSecretsWithoutReply = !connectionSettings->permissions().isEmpty();
             m_dialog->show();
             if (KWindowSystem::isPlatformX11()) {
                 KX11Extras::setState(m_dialog->winId(), NET::KeepAbove);
@@ -468,24 +475,24 @@ bool SecretAgent::processGetSecrets(SecretsRequest &request)
         } else {
             result.insert(QStringLiteral("vpn"), vpnSetting->secretsToMap());
         }
-        sendSecrets(result, request.message);
+        sendSecrets(result, request->message);
         return true;
     } else if (setting->needSecrets().isEmpty()) {
         NMVariantMapMap result;
         result.insert(setting->name(), setting->secretsToMap());
-        sendSecrets(result, request.message);
+        sendSecrets(result, request->message);
         return true;
     } else {
-        sendError(SecretAgent::InternalError, QStringLiteral("Plasma-nm did not know how to handle the request"), request.message);
+        sendError(SecretAgent::InternalError, QStringLiteral("Plasma-nm did not know how to handle the request"), request->message);
         return true;
     }
 }
 
-bool SecretAgent::processSaveSecrets(SecretsRequest &request)
+bool SecretAgent::processSaveSecrets(QSharedPointer<SecretsRequest> request)
 {
     if (useSecureStorage()) {
-        NetworkManager::ConnectionSettings connectionSettings(request.connection);
-        if (request.storageJobsRunning <= 0 && request.storageJobsStarted) {
+        NetworkManager::ConnectionSettings connectionSettings(request->connection);
+        if (request->storageJobsRunning <= 0 && request->storageJobsStarted) {
             return true;
         }
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
@@ -499,15 +506,19 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
                 continue;
             }
 
+            auto jobRequest = request.toWeakRef();
             auto *job = new QKeychain::WritePasswordJob(QString::fromLatin1(keychainService));
             connect(
                 job,
                 &QKeychain::Job::finished,
                 this,
-                [this, job, &request]() {
-                    --request.storageJobsRunning;
-                    if (job->error() != QKeychain::NoError && !request.saveSecretsWithoutReply) {
-                        sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in secure storage."), request.message);
+                [this, job, jobRequest]() {
+                    auto request = jobRequest.toStrongRef();
+                    if (!request)
+                        return;
+                    --request->storageJobsRunning;
+                    if (job->error() != QKeychain::NoError && !request->saveSecretsWithoutReply) {
+                        sendError(SecretAgent::InternalError, QStringLiteral("Could not store secrets in secure storage."), request->message);
                     }
                     processNext();
                 },
@@ -515,14 +526,14 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
             job->setKey(storageKey(connectionSettings, setting->name()));
             job->setTextData(QString::fromUtf8(QJsonDocument(QJsonObject::fromVariantMap(secretsVariantMap)).toJson(QJsonDocument::Compact)));
             job->start();
-            ++request.storageJobsRunning;
-            request.storageJobsStarted = true;
+            ++request->storageJobsRunning;
+            request->storageJobsStarted = true;
             return false;
         }
     }
 
-    if (!request.saveSecretsWithoutReply) {
-        QDBusMessage reply = request.message.createReply();
+    if (!request->saveSecretsWithoutReply) {
+        QDBusMessage reply = request->message.createReply();
         if (!QDBusConnection::systemBus().send(reply)) {
             qCWarning(PLASMA_NM_KDED_LOG) << "Failed put save secrets reply into the queue";
         }
@@ -531,28 +542,32 @@ bool SecretAgent::processSaveSecrets(SecretsRequest &request)
     return true;
 }
 
-bool SecretAgent::processDeleteSecrets(SecretsRequest &request)
+bool SecretAgent::processDeleteSecrets(QSharedPointer<SecretsRequest> request)
 {
     if (useSecureStorage()) {
-        NetworkManager::ConnectionSettings connectionSettings(request.connection);
-        if (request.storageJobsRunning <= 0 && request.storageJobsStarted) {
+        NetworkManager::ConnectionSettings connectionSettings(request->connection);
+        if (request->storageJobsRunning <= 0 && request->storageJobsStarted) {
             return true;
         }
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
+            auto jobRequest = request.toWeakRef();
             QKeychain::DeletePasswordJob job(QString::fromLatin1(keychainService));
-            connect(&job, &QKeychain::Job::finished, this, [this, &request] {
-                --request.storageJobsRunning;
+            connect(&job, &QKeychain::Job::finished, this, [this, jobRequest] {
+                auto request = jobRequest.toStrongRef();
+                if (!request)
+                    return;
+                --request->storageJobsRunning;
                 processNext();
             });
             job.setKey(storageKey(connectionSettings, setting->name()));
             job.start();
-            ++request.storageJobsRunning;
-            request.storageJobsStarted = true;
+            ++request->storageJobsRunning;
+            request->storageJobsStarted = true;
             return false;
         }
     }
 
-    QDBusMessage reply = request.message.createReply();
+    QDBusMessage reply = request->message.createReply();
     if (!QDBusConnection::systemBus().send(reply)) {
         qCWarning(PLASMA_NM_KDED_LOG) << "Failed put delete secrets reply into the queue";
     }

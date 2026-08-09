@@ -9,9 +9,12 @@
 #ifndef PLASMA_NM_SECRET_AGENT_H
 #define PLASMA_NM_SECRET_AGENT_H
 
+#include <QSharedPointer>
 #include <QVariantMap>
 
 #include <NetworkManagerQt/SecretAgent>
+
+#include "plasma_nm_kded.h"
 
 class PasswordDialog;
 
@@ -82,9 +85,9 @@ private:
      * @param request the request we are processing
      * @return true if the item was processed
      */
-    bool processGetSecrets(SecretsRequest &request);
-    bool processSaveSecrets(SecretsRequest &request);
-    bool processDeleteSecrets(SecretsRequest &request);
+    bool processGetSecrets(QSharedPointer<SecretsRequest> request);
+    bool processSaveSecrets(QSharedPointer<SecretsRequest> request);
+    bool processDeleteSecrets(QSharedPointer<SecretsRequest> request);
     /**
      * @brief useSecureStorage checks whether encrypted secret storage is available.
      */
@@ -99,7 +102,7 @@ private:
     void sendSecrets(const NMVariantMapMap &secrets, const QDBusMessage &message) const;
 
     mutable PasswordDialog *m_dialog;
-    QList<SecretsRequest> m_calls;
+    QList<QSharedPointer<SecretsRequest>> m_calls;
 
     void importSecretsFromPlainTextFiles();
 };

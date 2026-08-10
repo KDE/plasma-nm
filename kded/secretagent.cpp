@@ -492,11 +492,9 @@ bool SecretAgent::processGetSecrets(QSharedPointer<SecretsRequest> request)
 
 bool SecretAgent::processSaveSecrets(QSharedPointer<SecretsRequest> request)
 {
-    if (useSecureStorage()) {
+    if (useSecureStorage() && !request->storageJobsStarted) {
         NetworkManager::ConnectionSettings connectionSettings(request->connection);
-        if (request->storageJobsStarted) {
-            return (request->storageJobsRunning <= 0);
-        }
+
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
             const auto secretsMap = setting->secretsToStringMap();
             QVariantMap secretsVariantMap;
@@ -530,8 +528,12 @@ bool SecretAgent::processSaveSecrets(QSharedPointer<SecretsRequest> request)
             job->start();
             ++request->storageJobsRunning;
             request->storageJobsStarted = true;
-            return false;
         }
+    }
+
+    if (request->storageJobsStarted && request->storageJobsRunning > 0) {
+        // Wait for pending jobs to finish
+        return false;
     }
 
     if (!request->saveSecretsWithoutReply) {
@@ -546,11 +548,9 @@ bool SecretAgent::processSaveSecrets(QSharedPointer<SecretsRequest> request)
 
 bool SecretAgent::processDeleteSecrets(QSharedPointer<SecretsRequest> request)
 {
-    if (useSecureStorage()) {
+    if (useSecureStorage() && !request->storageJobsStarted) {
         NetworkManager::ConnectionSettings connectionSettings(request->connection);
-        if (request->storageJobsStarted) {
-            return (request->storageJobsRunning <= 0);
-        }
+
         for (const NetworkManager::Setting::Ptr &setting : connectionSettings.settings()) {
             auto jobRequest = request.toWeakRef();
             auto *job = new QKeychain::DeletePasswordJob(QString::fromLatin1(keychainService));
@@ -565,8 +565,12 @@ bool SecretAgent::processDeleteSecrets(QSharedPointer<SecretsRequest> request)
             job->start();
             ++request->storageJobsRunning;
             request->storageJobsStarted = true;
-            return false;
         }
+    }
+
+    if (request->storageJobsStarted && request->storageJobsRunning > 0) {
+        // Wait for pending jobs to finish
+        return false;
     }
 
     QDBusMessage reply = request->message.createReply();

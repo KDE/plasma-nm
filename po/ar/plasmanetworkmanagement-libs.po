@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-07 00:48+0000\n"
-"PO-Revision-Date: 2026-07-17 11:31+0400\n"
+"PO-Revision-Date: 2026-08-10 18:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -29,7 +29,7 @@ msgstr "خطأ في تصفير المودم: %1"
 msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
-msgstr ""
+msgstr "تعذر تطبيق تفضيلات التَّجْوال. ستُنشط نقطة الوصول بالإعدادات الحالية."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -39,12 +39,12 @@ msgstr "خطأ في تفعيل الاتصال: %1"
 #: cellular/cellularmodem.cpp:431
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
-msgstr ""
+msgstr "يتعذر تغيير وضع التَّجْوال لعدم توفر أي نقطة وصول."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
-msgstr ""
+msgstr "حدث خطأ أثناء تطبيق تفضيلات التَّجْوال على نقطة الوصول المحددة."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format
@@ -902,7 +902,7 @@ msgstr "غير متصل"
 #, kde-format
 msgctxt "@title:window advanced permissions editor"
 msgid "Advanced Permissions Editor"
-msgstr "محرّر الصلاحيات المتقدّمة"
+msgstr "محرّر الأذون المتقدّمة"
 
 #: editor/settings/infinibandwidget.cpp:22
 #, kde-format
@@ -1536,7 +1536,7 @@ msgstr "يمكن لكلّ المستخدِمين الاتصال بهذه الش�
 #: editor/settings/ui/connectionwidget.ui:63
 #, kde-format
 msgid "Edit advanced permissions for this connection"
-msgstr "حرّر الصلاحيات المتقدّمة لهذا الاتصال"
+msgstr "حرّر الأذون المتقدّمة لهذا الاتصال"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:66
@@ -1545,7 +1545,7 @@ msgid ""
 "Fine-grained permissions editor for this connection. It lets you choose "
 "which users can activate/modify/delete this connection."
 msgstr ""
-"محرر الأذونات الدقيقة لهذا الاتصال. يتيح لك اختيار المستخدمين الذين يمكنهم "
+"محرر الأذون الدقيقة لهذا الاتصال. يتيح لك اختيار المستخدمين الذين يمكنهم "
 "تنشيط/تعديل/حذف هذا الاتصال."
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
@@ -4105,14 +4105,12 @@ msgid "Create new connections as system connections"
 msgstr "أنشئ اتصالات جديدة كاتصالات للنظام"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Allowed IPs:"
+#, kde-format
 msgid "Allowed Users"
-msgstr "عناوين الإنترنت IP المسموحة:"
+msgstr "المستخدمون المسموح لهم"
 
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item metered mode"
 msgid "Automatic"
 msgstr "آليّ"
@@ -4292,9 +4290,7 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "‏WPA/WPA2 للمؤسسات"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@item:intable shortcut for Not Available"
-#| msgid "N/A"
+#, kde-format
 msgctxt "@item real name not available"
 msgid "N/A"
 msgstr "غ/م"

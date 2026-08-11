@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2026-01-24 13:27+0400\n"
+"PO-Revision-Date: 2026-08-10 18:35+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -339,7 +339,7 @@ msgstr "PAN (منطقة شبكة شخصية)"
 #, kde-format
 msgctxt "@title:window advanced permissions editor"
 msgid "Advanced Permissions Editor"
-msgstr "محرّر الصلاحيات المتقدّمة"
+msgstr "محرّر الأذون المتقدّمة"
 
 #: editor/settings/infinibandwidget.cpp:22
 #, kde-format
@@ -930,7 +930,7 @@ msgstr "يمكن لكلّ المستخدِمين الاتصال بهذه الش�
 #: editor/settings/ui/connectionwidget.ui:64
 #, kde-format
 msgid "Edit advanced permissions for this connection"
-msgstr "حرّر الصلاحيات المتقدّمة لهذا الاتصال"
+msgstr "حرّر الأذون المتقدّمة لهذا الاتصال"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:67
@@ -939,7 +939,7 @@ msgid ""
 "Fine-grained permissions editor for this connection. It lets you choose "
 "which users can activate/modify/delete this connection."
 msgstr ""
-"محرر الأذونات الدقيقة لهذا الاتصال. يتيح لك اختيار المستخدمين الذين يمكنهم "
+"محرر الأذون الدقيقة لهذا الاتصال. يتيح لك اختيار المستخدمين الذين يمكنهم "
 "تنشيط/تعديل/حذف هذا الاتصال."
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)

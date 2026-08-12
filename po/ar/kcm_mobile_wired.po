@@ -60,7 +60,7 @@ msgstr "لا يوجد اتّصال سلكي."
 #: ui/NetworkSettings.qml:16
 #, kde-format
 msgid "Add New Connection"
-msgstr "أضف اتصالاً جديداً"
+msgstr "أضف اتصالًا جديدًا"
 
 #: ui/NetworkSettings.qml:31
 #, kde-format

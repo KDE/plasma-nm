@@ -200,7 +200,7 @@ msgstr "متوفّرة"
 
 #: qml/main.qml:148 ui/main.qml:207
 msgid "Add new connection"
-msgstr "أضف اتصالاً جديداً"
+msgstr "أضف اتصالًا جديدًا"
 
 #: qml/main.qml:166 ui/main.qml:225
 msgid "Remove selected connection"

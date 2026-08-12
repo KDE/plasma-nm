@@ -422,7 +422,7 @@ msgstr "فشل تحكم teamd"
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
-msgstr "تعطل المودم أو لم يعد متوفراً"
+msgstr "تعطل المودم أو لم يعد متوفرًا"
 
 #: notification.cpp:257
 #, kde-format

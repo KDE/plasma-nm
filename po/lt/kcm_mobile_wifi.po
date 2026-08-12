@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-06 00:46+0000\n"
-"PO-Revision-Date: 2026-03-07 22:19+0200\n"
+"PO-Revision-Date: 2026-08-11 14:43+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -74,11 +74,9 @@ msgid "Wi-Fi"
 msgstr "Belaidis (Wi-Fi)"
 
 #: ui/main.qml:98
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Settings"
-msgstr "IP nuostatos"
+msgstr "Nuostatos"
 
 #: ui/main.qml:107
 #, kde-format

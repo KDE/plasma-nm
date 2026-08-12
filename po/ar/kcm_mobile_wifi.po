@@ -106,7 +106,7 @@ msgstr "إشعارات عند تغيير الاتصال"
 #: ui/NetworkSettings.qml:15
 #, kde-format
 msgid "Add New Connection"
-msgstr "أضف اتصالاً جديداً"
+msgstr "أضف اتصالًا جديدًا"
 
 #: ui/NetworkSettings.qml:36
 #, kde-format

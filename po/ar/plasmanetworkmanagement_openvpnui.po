@@ -415,7 +415,7 @@ msgid ""
 "Use custom name for TUN/TAP virtual device (instead of default \"tun\" or "
 "\"tap\")."
 msgstr ""
-"استخدم اسمًا مخصصًا للجهاز الافتراضي TUN/TAP (بدلاً من المبدئي \"tun\" أو \"tap"
+"استخدم اسمًا مخصصًا للجهاز الافتراضي TUN/TAP (بدلًا من المبدئي \"tun\" أو \"tap"
 "\")."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceName)
@@ -1071,7 +1071,7 @@ msgstr "عميل (1)"
 #: openvpnadvanced.ui:1184
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Optional."
-msgstr "الحد الأدنى لإصدارة TLS (مثلاً 1.2). اختياري."
+msgstr "الحد الأدنى لإصدارة TLS (مثلًا 1.2). اختياري."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMin)
 #: openvpnadvanced.ui:1187
@@ -1083,7 +1083,7 @@ msgstr "الحد الأدنى لإصدارة TLS:"
 #: openvpnadvanced.ui:1199
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Leave empty for default."
-msgstr "الحد الأدنى لإصدارة TLS (مثلاً 1.2). اتركه فارغاً للقيمة المبدئية."
+msgstr "الحد الأدنى لإصدارة TLS (مثلًا 1.2). اتركه فارغًا للقيمة المبدئية."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1209
@@ -1101,7 +1101,7 @@ msgstr "أو الأعلى"
 #: openvpnadvanced.ui:1221
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Optional."
-msgstr "الحد الأقصى لإصدارة TLS (مثلاً 1.3). اختياري."
+msgstr "الحد الأقصى لإصدارة TLS (مثلًا 1.3). اختياري."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1224
@@ -1113,7 +1113,7 @@ msgstr "الحد الأقصى لإصدارة TLS:"
 #: openvpnadvanced.ui:1234
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Leave empty for default."
-msgstr "الحد الأقصى لإصدارة TLS (مثلاً 1.3). اتركه فارغاً للقيمة المبدئية."
+msgstr "الحد الأقصى لإصدارة TLS (مثلًا 1.3). اتركه فارغًا للقيمة المبدئية."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyFile)

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-mobile\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-03-07 00:46+0000\n"
-"PO-Revision-Date: 2026-03-08 09:47+0400\n"
+"PO-Revision-Date: 2026-08-10 12:59+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -106,7 +106,7 @@ msgstr "إشعارات عند تغيير الاتصال"
 #: ui/NetworkSettings.qml:15
 #, kde-format
 msgid "Add New Connection"
-msgstr "أضف اتصالاً جديداً"
+msgstr "أضف اتصالًا جديدًا"
 
 #: ui/NetworkSettings.qml:36
 #, kde-format

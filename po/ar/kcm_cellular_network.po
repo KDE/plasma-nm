@@ -352,7 +352,7 @@ msgstr "الشريحة مقفلة"
 #: ui/SimLockPage.qml:41
 #, kde-format
 msgid "In order to use this SIM, you must first unlock it."
-msgstr "من أجل استخدام هذا الشريحة، يجب عليك أولاً فك قفلها."
+msgstr "من أجل استخدام هذا الشريحة، يجب عليك أولًا فك قفلها."
 
 #: ui/SimLockPage.qml:63
 #, kde-format

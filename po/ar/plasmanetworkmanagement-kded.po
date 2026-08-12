@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-05-07 00:46+0000\n"
-"PO-Revision-Date: 2025-08-04 12:15+0400\n"
+"PO-Revision-Date: 2026-05-21 11:18+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -422,7 +422,7 @@ msgstr "فشل تحكم teamd"
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
-msgstr "تعطل المودم أو لم يعد متوفراً"
+msgstr "تعطل المودم أو لم يعد متوفرًا"
 
 #: notification.cpp:257
 #, kde-format

@@ -56,7 +56,12 @@ ColumnLayout {
             }
         }
 
-        Item { /* TODO: wifi settings page */ }
+        Item {
+            PlasmaNMQ.WifiConnectionSettings {
+                anchors.fill: parent
+                setting: kcm.wifiSetting
+            }
+        }
 
         Item {
             PlasmaNMQ.WifiSecurityForm {

@@ -13,6 +13,7 @@
 #include "handler.h"
 #include "security8021xsetting.h"
 #include "wifisecuritysetting.h"
+#include "wifisetting.h"
 
 #include <KQuickConfigModule>
 #include <NetworkManagerQt/Connection>
@@ -30,6 +31,7 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(ConnectionStatus *connectionStatus READ connectionStatus CONSTANT)
     Q_PROPERTY(Enums::ConnectionType connectionType READ connectionType NOTIFY connectionTypeChanged)
     Q_PROPERTY(GeneralSetting *generalSettings READ generalSettings CONSTANT)
+    Q_PROPERTY(WifiSetting *wifiSetting READ wifiSetting CONSTANT)
 
 public:
     explicit KCMNetworkManagementQml(QObject *parent, const KPluginMetaData &metaData);
@@ -41,6 +43,7 @@ public:
     Security8021xSetting *security8021xSetting() const;
     ConnectionStatus *connectionStatus() const;
     GeneralSetting *generalSettings() const;
+    WifiSetting *wifiSetting() const;
     bool useApMode() const;
 
     Q_INVOKABLE void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
@@ -74,6 +77,7 @@ private:
     };
 
 private:
+    bool isValid() const;
     void applyWirelessSetting(NMVariantMapMap &map);
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void kcmChanged(bool kcmChanged);
@@ -93,6 +97,7 @@ private:
     Security8021xSetting *const m_security8021xSetting;
     ConnectionStatus *const m_connectionStatus;
     GeneralSetting *const m_generalSettings;
+    WifiSetting *const m_wifiSetting;
 
     bool m_useApMode = false;
 

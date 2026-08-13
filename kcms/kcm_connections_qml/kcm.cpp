@@ -34,6 +34,7 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     , m_security8021xSetting(new Security8021xSetting(this))
     , m_connectionStatus(new ConnectionStatus(this))
     , m_generalSettings(new GeneralSetting(this))
+    , m_wifiSetting(new WifiSetting(this))
     , m_timer(new QTimer(this))
 {
     // Check if we can use AP mode to identify security type
@@ -126,6 +127,10 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
         kcmChanged(true);
     });
 
+    connect(m_wifiSetting, &WifiSetting::validChanged, this, [this]() {
+        kcmChanged(true);
+    });
+
     connect(NetworkManager::settingsNotifier(),
             &NetworkManager::SettingsNotifier::connectionAdded,
             this,
@@ -146,6 +151,10 @@ KCMNetworkManagementQml::~KCMNetworkManagementQml() = default;
 GeneralSetting *KCMNetworkManagementQml::generalSettings() const
 {
     return m_generalSettings;
+}
+WifiSetting *KCMNetworkManagementQml::wifiSetting() const
+{
+    return m_wifiSetting;
 }
 ConnectionStatus *KCMNetworkManagementQml::connectionStatus() const
 {
@@ -206,6 +215,26 @@ Enums::ConnectionType KCMNetworkManagementQml::connectionType() const
         return Enums::UnknownConnectionType;
     }
 }
+
+bool KCMNetworkManagementQml::isValid() const
+{
+    if (m_connectionType == NetworkManager::ConnectionSettings::Wireless) {
+        if (!m_wifiSetting->isValid()) {
+            return false;
+        }
+
+        if (!m_wifiSecurity->isValid()) {
+            return false;
+        }
+
+        if (m_wifiSecurity->enabled8021x() && !m_security8021xSetting->isValid()) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
 void KCMNetworkManagementQml::load()
 {
     if (m_currentConnectionPath.isEmpty()) {
@@ -259,10 +288,18 @@ void KCMNetworkManagementQml::applyWirelessSetting(NMVariantMapMap &map)
 
 void KCMNetworkManagementQml::save()
 {
+    if (!isValid()) {
+        qCWarning(PLASMA_NM_KCM_QML_LOG) << "Cannot save: connection settings are invalid";
+        return;
+    }
+
     // process the pending settings
     if (m_pendingNewSettings) {
         m_generalSettings->applyTo(m_pendingNewSettings, m_wifiSecurity);
         NMVariantMapMap map = m_pendingNewSettings->toMap();
+        if (m_pendingNewSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
+            map.insert(QStringLiteral("802-11-wireless"), m_wifiSetting->setting());
+        }
         map.insert(QStringLiteral("802-11-wireless-security"), m_wifiSecurity->setting());
         if (m_wifiSecurity->enabled8021x()) {
             map.insert(QStringLiteral("802-1x"), m_wifiSecurity->setting8021x());
@@ -286,6 +323,9 @@ void KCMNetworkManagementQml::save()
     m_generalSettings->applyTo(settings, m_wifiSecurity);
 
     NMVariantMapMap map = connection->settings()->toMap();
+    if (m_connectionType == NetworkManager::ConnectionSettings::Wireless) {
+        map.insert(QStringLiteral("802-11-wireless"), m_wifiSetting->setting());
+    }
     if (m_wifiSecurity->securityType() != WifiSecuritySetting::None) {
         map.insert(QStringLiteral("802-11-wireless-security"), m_wifiSecurity->setting());
     } else {
@@ -327,6 +367,7 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
     m_connectionType = connectionSettings->connectionType();
     Q_EMIT connectionTypeChanged();
     m_generalSettings->loadConfig(connectionSettings);
+    m_wifiSetting->loadConfig(connectionSettings);
     // check wireless only for rn
     if (connectionSettings->connectionType() != NetworkManager::ConnectionSettings::Wireless) {
         kcmChanged(false);
@@ -398,6 +439,10 @@ void KCMNetworkManagementQml::addConnection(const NetworkManager::ConnectionSett
 
     m_currentConnectionPath.clear();
     m_wifiSecurity->setSecurityType(WifiSecuritySetting::None);
+
+    if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
+        m_wifiSetting->loadConfig(connectionSettings);
+    }
 
     Q_EMIT connectionLoaded(QString());
 }

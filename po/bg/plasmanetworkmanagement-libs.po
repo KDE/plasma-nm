@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:48+0000\n"
-"PO-Revision-Date: 2026-07-23 20:17+0200\n"
+"POT-Creation-Date: 2026-08-14 00:47+0000\n"
+"PO-Revision-Date: 2026-08-13 09:47+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -16,8 +16,8 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Poedit-SourceCharset: UTF-8\n"
 "X-Generator: Lokalize 26.04.3\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -30,6 +30,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Не може да се приложи предпочитанието за роуминг. Активиране на точката за "
+"достъп с текущите ѝ настройки."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -39,12 +41,14 @@ msgstr "Грешка при активиране на връзката: %1"
 #: cellular/cellularmodem.cpp:431
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
-msgstr ""
+msgstr "Не може да се промени роуминга, защото няма налична достъпна точка."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Грешка при прилагане на предпочитаната настройка за роуминг към избраната "
+"точка за достъп."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format
@@ -1384,6 +1388,7 @@ msgstr "Изтриване"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #: editor/settings/ui/bond.ui:110 editor/settings/ui/wificonnectionwidget.ui:68
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:71
 #, kde-format
 msgid "Mode:"
 msgstr "Режим:"
@@ -1623,6 +1628,7 @@ msgstr "Основен"
 #. i18n: ectx: property (title), widget (QGroupBox, advGroup)
 #. i18n: ectx: property (text), widget (QLabel, advancedSectionLabel)
 #: editor/settings/ui/gsm.ui:84 editor/settings/ui/wificonnectionwidget.ui:112
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:91
 #, kde-format
 msgid "Advanced"
 msgstr "Допълнителни"
@@ -1672,6 +1678,7 @@ msgstr "Ограничаване до устройство:"
 #: editor/settings/ui/wificonnectionwidget.ui:301
 #: editor/settings/ui/wiredconnectionwidget.ui:89
 #: editor/settings/ui/wireguardinterfacewidget.ui:89
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:221
 #, kde-format
 msgid "MTU:"
 msgstr "MTU:"
@@ -2163,12 +2170,14 @@ msgstr "Loose binding"
 
 #. i18n: ectx: property (text), widget (QLabel, connectionSectionLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:23
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:27
 #, kde-format
 msgid "Connection"
 msgstr "Връзка"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:39
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:35
 #, kde-format
 msgid "SSID:"
 msgstr "SSID:"
@@ -2196,24 +2205,28 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:94
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:74
 #, kde-format
 msgid "Infrastructure"
 msgstr "Infrastructure"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:99
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:74
 #, kde-format
 msgid "Ad-hoc"
 msgstr "Ad-hoc"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:104
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:74
 #, kde-format
 msgid "Access Point"
 msgstr "Access Point"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:128
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:99
 #, kde-format
 msgid "Restrict to BSSID:"
 msgstr "Ограничаване до BSSID:"
@@ -2230,6 +2243,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:163
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:135
 #, kde-format
 msgid "Band:"
 msgstr "Лента:"
@@ -2255,18 +2269,21 @@ msgstr "Автоматично"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:192
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:138
 #, kde-format
 msgid "A (5 GHz)"
 msgstr "A (5 GHz)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:197
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:138
 #, kde-format
 msgid "B/G (2.4 GHz)"
 msgstr "B/G (2.4 GHz)"
 
 #. i18n: ectx: property (text), widget (QLabel, channelLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:205
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:147
 #, kde-format
 msgid "Channel:"
 msgstr "Канал:"
@@ -2284,6 +2301,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:232
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:166
 #, kde-format
 msgid "Restrict to network adapter:"
 msgstr "Ограничаване до мрежово устройство:"
@@ -2301,6 +2319,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:258
 #: editor/settings/ui/wiredconnectionwidget.ui:47
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:199
 #, kde-format
 msgid "Cloned MAC address:"
 msgstr "Клониран MAC адрес:"
@@ -2316,6 +2335,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:292
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:214
 #, kde-format
 msgid "Random…"
 msgstr "Случайно…"
@@ -2341,12 +2361,14 @@ msgstr "Създаване на връзка за скрита мрежа"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:345
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:244
 #, kde-format
 msgid "Visibility:"
 msgstr "Видимост:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:361
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:245
 #, kde-format
 msgid "Hidden network"
 msgstr "Скрита мрежа"
@@ -2932,6 +2954,7 @@ msgid "Automatic"
 msgstr "Автоматично"
 
 #: editor/settings/wificonnectionwidget.cpp:263
+#: editorqml/settings/wificonnectionsettings/wifisetting.cpp:315
 #, kde-format
 msgid "%1 (%2 MHz)"
 msgstr "%1 (%2 MHz)"
@@ -4133,14 +4156,12 @@ msgid "Create new connections as system connections"
 msgstr "Създаване на нови връзки като системни връзки"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Allowed IPs:"
+#, kde-format
 msgid "Allowed Users"
-msgstr "Разрешени IP адреси:"
+msgstr "Разрешени потребители"
 
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item metered mode"
 msgid "Automatic"
 msgstr "Автоматично"
@@ -4190,6 +4211,47 @@ msgstr "Паролата трябва да бъде валиден WEP ключ"
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Паролата трябва да бъде между 8 и 64 знака"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:117
+#, fuzzy, kde-format
+#| msgid "%1 (%2 MHz)"
+msgctxt "@item BSSID (MAC address) followed by signal strength"
+msgid "%1 (%2%)"
+msgstr "%1 (%2 MHz)"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:121
+#, fuzzy, kde-format
+#| msgid "Frequency"
+msgid "Frequency: %1 MHz"
+msgstr "Честота"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:126
+#, fuzzy, kde-format
+#| msgid "Channel:"
+msgid "Channel: %1"
+msgstr "Канал:"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:138
+#, fuzzy, kde-format
+#| msgid "Automatic"
+msgctxt "@item wireless band"
+msgid "Automatic"
+msgstr "Автоматично"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:231
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:234
+#, fuzzy, kde-format
+#| msgid "Automatic"
+msgctxt "@item MTU is automatically determined"
+msgid "Automatic"
+msgstr "Автоматично"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:231
+#, fuzzy, kde-format
+#| msgid " bytes"
+msgctxt "@item:intext MTU size, %1 is the number of bytes"
+msgid "%1 bytes"
+msgstr " байта"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
 #, kde-format
@@ -4321,12 +4383,17 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@item:intable shortcut for Not Available"
-#| msgid "N/A"
+#, kde-format
 msgctxt "@item real name not available"
 msgid "N/A"
-msgstr "Неприложимо"
+msgstr "Не е налично"
+
+#: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
+#, fuzzy, kde-format
+#| msgid "Automatic"
+msgctxt "@item automatic wireless channel selection"
+msgid "Automatic"
+msgstr "Автоматично"
 
 #: handler.cpp:140
 #, kde-format

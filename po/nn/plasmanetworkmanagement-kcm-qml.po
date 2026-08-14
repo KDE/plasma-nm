@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:48+0000\n"
+"POT-Creation-Date: 2026-08-14 00:47+0000\n"
 "PO-Revision-Date: 2026-08-02 19:29+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -20,23 +20,23 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 
-#: kcm.cpp:372
+#: kcm.cpp:413
 #, kde-format
 msgid "my_shared_connection"
 msgstr "mi_delte_tilkopling"
 
-#: kcm.cpp:430
+#: kcm.cpp:475
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Vil du lagra endringane du har gjort i tilkoplinga «%1»?"
 
-#: kcm.cpp:433
+#: kcm.cpp:478
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Lagra endringane"
 
-#: kcm.cpp:462
+#: kcm.cpp:507
 #, kde-format
 msgctxt "Suffix appended to duplicated connection name"
 msgid " (Copy)"

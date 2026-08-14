@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:48+0000\n"
+"POT-Creation-Date: 2026-08-14 00:47+0000\n"
 "PO-Revision-Date: 2024-09-19 17:05+0300\n"
 "Last-Translator: Antonis Geralis <capoiosct@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -1488,6 +1488,7 @@ msgstr "Διαγραφή"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #: editor/settings/ui/bond.ui:110 editor/settings/ui/wificonnectionwidget.ui:68
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:71
 #, kde-format
 msgid "Mode:"
 msgstr "Λειτουργία:"
@@ -1732,6 +1733,7 @@ msgstr "Βασικό"
 #. i18n: ectx: property (title), widget (QGroupBox, advGroup)
 #. i18n: ectx: property (text), widget (QLabel, advancedSectionLabel)
 #: editor/settings/ui/gsm.ui:84 editor/settings/ui/wificonnectionwidget.ui:112
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:91
 #, kde-format
 msgid "Advanced"
 msgstr "Για προχωρημένους"
@@ -1781,6 +1783,7 @@ msgstr "Περιορισμός στη συσκευή:"
 #: editor/settings/ui/wificonnectionwidget.ui:301
 #: editor/settings/ui/wiredconnectionwidget.ui:89
 #: editor/settings/ui/wireguardinterfacewidget.ui:89
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:221
 #, kde-format
 msgid "MTU:"
 msgstr "ΜTU:"
@@ -2241,6 +2244,7 @@ msgstr "Χαλαρός συνδυασμός"
 
 #. i18n: ectx: property (text), widget (QLabel, connectionSectionLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:23
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:27
 #, fuzzy, kde-format
 #| msgctxt "The VPN connection is being established"
 #| msgid "Connecting"
@@ -2249,6 +2253,7 @@ msgstr "Συνδέεται"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:39
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:35
 #, kde-format
 msgid "SSID:"
 msgstr "SSID:"
@@ -2272,24 +2277,28 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:94
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:74
 #, kde-format
 msgid "Infrastructure"
 msgstr "Υποδομή"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:99
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:74
 #, kde-format
 msgid "Ad-hoc"
 msgstr "Ad-hoc"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:104
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:74
 #, kde-format
 msgid "Access Point"
 msgstr "Σημείο πρόσβασης"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:128
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:99
 #, fuzzy, kde-format
 #| msgid "Restrict to device:"
 msgid "Restrict to BSSID:"
@@ -2305,6 +2314,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:163
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:135
 #, kde-format
 msgid "Band:"
 msgstr "Ζώνη:"
@@ -2331,18 +2341,21 @@ msgstr "Αυτόματα"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:192
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:138
 #, kde-format
 msgid "A (5 GHz)"
 msgstr "A (5 GHz)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:197
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:138
 #, kde-format
 msgid "B/G (2.4 GHz)"
 msgstr "B/G (2.4 GHz)"
 
 #. i18n: ectx: property (text), widget (QLabel, channelLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:205
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:147
 #, kde-format
 msgid "Channel:"
 msgstr "Κανάλι:"
@@ -2361,6 +2374,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:232
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:166
 #, fuzzy, kde-format
 #| msgid "Restrict to device:"
 msgid "Restrict to network adapter:"
@@ -2377,6 +2391,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:258
 #: editor/settings/ui/wiredconnectionwidget.ui:47
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:199
 #, kde-format
 msgid "Cloned MAC address:"
 msgstr "Κλώνος διεύθυνσης MAC:"
@@ -2390,6 +2405,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:292
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:214
 #, kde-format
 msgid "Random…"
 msgstr "Τυχαία…"
@@ -2414,12 +2430,14 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:345
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:244
 #, kde-format
 msgid "Visibility:"
 msgstr "Ορατότητα:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:361
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:245
 #, kde-format
 msgid "Hidden network"
 msgstr "Κρυφό δίκτυο"
@@ -2964,6 +2982,7 @@ msgid "Automatic"
 msgstr "Αυτόματα"
 
 #: editor/settings/wificonnectionwidget.cpp:263
+#: editorqml/settings/wificonnectionsettings/wifisetting.cpp:315
 #, kde-format
 msgid "%1 (%2 MHz)"
 msgstr "%1 (%2 MHz)"
@@ -4238,6 +4257,48 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
 
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:117
+#, fuzzy, kde-format
+#| msgid "%1 (%2 MHz)"
+msgctxt "@item BSSID (MAC address) followed by signal strength"
+msgid "%1 (%2%)"
+msgstr "%1 (%2 MHz)"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:121
+#, kde-format
+msgid "Frequency: %1 MHz"
+msgstr ""
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:126
+#, fuzzy, kde-format
+#| msgid "Channel:"
+msgid "Channel: %1"
+msgstr "Κανάλι:"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:138
+#, fuzzy, kde-format
+#| msgctxt "PEAP version"
+#| msgid "Automatic"
+msgctxt "@item wireless band"
+msgid "Automatic"
+msgstr "Αυτόματα"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:231
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:234
+#, fuzzy, kde-format
+#| msgctxt "PEAP version"
+#| msgid "Automatic"
+msgctxt "@item MTU is automatically determined"
+msgid "Automatic"
+msgstr "Αυτόματα"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:231
+#, fuzzy, kde-format
+#| msgid " bytes"
+msgctxt "@item:intext MTU size, %1 is the number of bytes"
+msgid "%1 bytes"
+msgstr " bytes"
+
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
 #, fuzzy, kde-format
 #| msgid "Alternative subject matches:"
@@ -4388,6 +4449,14 @@ msgstr "Εταιρικό WPA/WPA2"
 msgctxt "@item real name not available"
 msgid "N/A"
 msgstr "N/A"
+
+#: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
+#, fuzzy, kde-format
+#| msgctxt "PEAP version"
+#| msgid "Automatic"
+msgctxt "@item automatic wireless channel selection"
+msgid "Automatic"
+msgstr "Αυτόματα"
 
 #: handler.cpp:140
 #, kde-format

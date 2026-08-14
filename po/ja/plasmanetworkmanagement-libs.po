@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-07 00:48+0000\n"
+"POT-Creation-Date: 2026-08-14 00:47+0000\n"
 "PO-Revision-Date: 2026-07-06 23:27+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1381,6 +1381,7 @@ msgstr "削除"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #: editor/settings/ui/bond.ui:110 editor/settings/ui/wificonnectionwidget.ui:68
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:71
 #, kde-format
 msgid "Mode:"
 msgstr "モード:"
@@ -1608,6 +1609,7 @@ msgstr ""
 #. i18n: ectx: property (title), widget (QGroupBox, advGroup)
 #. i18n: ectx: property (text), widget (QLabel, advancedSectionLabel)
 #: editor/settings/ui/gsm.ui:84 editor/settings/ui/wificonnectionwidget.ui:112
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:91
 #, kde-format
 msgid "Advanced"
 msgstr "高度な設定"
@@ -1657,6 +1659,7 @@ msgstr "このデバイスのみに制限:"
 #: editor/settings/ui/wificonnectionwidget.ui:301
 #: editor/settings/ui/wiredconnectionwidget.ui:89
 #: editor/settings/ui/wireguardinterfacewidget.ui:89
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:221
 #, kde-format
 msgid "MTU:"
 msgstr ""
@@ -2097,12 +2100,14 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, connectionSectionLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:23
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:27
 #, kde-format
 msgid "Connection"
 msgstr "接続"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:39
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:35
 #, kde-format
 msgid "SSID:"
 msgstr ""
@@ -2125,24 +2130,28 @@ msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:94
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:74
 #, kde-format
 msgid "Infrastructure"
 msgstr "インフラストラクチャ"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:99
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:74
 #, kde-format
 msgid "Ad-hoc"
 msgstr "アドホック"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:104
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:74
 #, kde-format
 msgid "Access Point"
 msgstr "アクセスポイント"
 
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:128
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:99
 #, fuzzy, kde-format
 #| msgid "Restrict to device:"
 msgid "Restrict to BSSID:"
@@ -2158,6 +2167,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:163
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:135
 #, kde-format
 msgid "Band:"
 msgstr "周波数帯:"
@@ -2180,18 +2190,21 @@ msgstr "自動"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:192
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:138
 #, kde-format
 msgid "A (5 GHz)"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:197
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:138
 #, kde-format
 msgid "B/G (2.4 GHz)"
 msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, channelLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:205
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:147
 #, kde-format
 msgid "Channel:"
 msgstr "チャンネル:"
@@ -2207,6 +2220,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:232
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:166
 #, fuzzy, kde-format
 #| msgid "Restrict to device:"
 msgid "Restrict to network adapter:"
@@ -2223,6 +2237,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:258
 #: editor/settings/ui/wiredconnectionwidget.ui:47
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:199
 #, kde-format
 msgid "Cloned MAC address:"
 msgstr "クローンされた MAC アドレス:"
@@ -2236,6 +2251,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:292
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:214
 #, kde-format
 msgid "Random…"
 msgstr "ランダム…"
@@ -2259,12 +2275,14 @@ msgstr "すべてのユーザはこのネットワークに接続可能"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:345
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:244
 #, kde-format
 msgid "Visibility:"
 msgstr "可視性:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:361
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:245
 #, kde-format
 msgid "Hidden network"
 msgstr "隠されたネットワーク"
@@ -2779,6 +2797,7 @@ msgid "Automatic"
 msgstr "自動"
 
 #: editor/settings/wificonnectionwidget.cpp:263
+#: editorqml/settings/wificonnectionsettings/wifisetting.cpp:315
 #, kde-format
 msgid "%1 (%2 MHz)"
 msgstr ""
@@ -4025,6 +4044,49 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
 
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:117
+#, fuzzy, kde-format
+#| msgctxt "Frequency (Channel)"
+#| msgid "%1 (Channel %2)"
+msgctxt "@item BSSID (MAC address) followed by signal strength"
+msgid "%1 (%2%)"
+msgstr "%1 (チャンネル %2)"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:121
+#, fuzzy, kde-format
+#| msgid "Frequency"
+msgid "Frequency: %1 MHz"
+msgstr "周波数"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:126
+#, fuzzy, kde-format
+#| msgid "Channel:"
+msgid "Channel: %1"
+msgstr "チャンネル:"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:138
+#, fuzzy, kde-format
+#| msgctxt "PEAP version"
+#| msgid "Automatic"
+msgctxt "@item wireless band"
+msgid "Automatic"
+msgstr "自動"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:231
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:234
+#, fuzzy, kde-format
+#| msgctxt "PEAP version"
+#| msgid "Automatic"
+msgctxt "@item MTU is automatically determined"
+msgid "Automatic"
+msgstr "自動"
+
+#: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:231
+#, kde-format
+msgctxt "@item:intext MTU size, %1 is the number of bytes"
+msgid "%1 bytes"
+msgstr ""
+
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
 #, fuzzy, kde-format
 #| msgid "Alternative subject matches:"
@@ -4170,6 +4232,14 @@ msgstr "WPA2/WPA3 エンタープライズ"
 msgctxt "@item real name not available"
 msgid "N/A"
 msgstr "利用不可"
+
+#: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
+#, fuzzy, kde-format
+#| msgctxt "PEAP version"
+#| msgid "Automatic"
+msgctxt "@item automatic wireless channel selection"
+msgid "Automatic"
+msgstr "自動"
 
 #: handler.cpp:140
 #, kde-format

@@ -194,4 +194,4 @@ msgstr "ESP:"
 #: strongswanprop.ui:329
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr "Una llista de propostes per a l'ESP separades per «;»"
+msgstr "Una llista de propostes per a ESP separades per «;»"

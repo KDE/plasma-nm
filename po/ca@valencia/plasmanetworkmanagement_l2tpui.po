@@ -298,7 +298,7 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Opcional. Una llista de propostes per a l'ESP – Mode "
+"<html><head/><body><p>Opcional. Una llista de propostes per a ESP – Mode "
 "ràpid. El format és «enc-integ,enc-integ, …».</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)

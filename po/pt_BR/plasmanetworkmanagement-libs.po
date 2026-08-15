@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-14 00:47+0000\n"
-"PO-Revision-Date: 2026-08-07 06:49-0300\n"
+"PO-Revision-Date: 2026-08-14 07:20-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -4214,45 +4214,39 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "A senha deve ter entre 8 e 64 caracteres"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:117
-#, fuzzy, kde-format
-#| msgid "%1 (%2 MHz)"
+#, kde-format
 msgctxt "@item BSSID (MAC address) followed by signal strength"
 msgid "%1 (%2%)"
-msgstr "%1 (%2 MHz)"
+msgstr "%1 (%2%)"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:121
-#, fuzzy, kde-format
-#| msgid "Frequency"
+#, kde-format
 msgid "Frequency: %1 MHz"
-msgstr "Frequência"
+msgstr "Frequência: %1 MHz"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:126
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgid "Channel: %1"
-msgstr "Canal:"
+msgstr "Canal: %1"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:138
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item wireless band"
 msgid "Automatic"
 msgstr "Automático"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:231
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:234
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item MTU is automatically determined"
 msgid "Automatic"
 msgstr "Automático"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:231
-#, fuzzy, kde-format
-#| msgid " bytes"
+#, kde-format
 msgctxt "@item:intext MTU size, %1 is the number of bytes"
 msgid "%1 bytes"
-msgstr " bytes"
+msgstr "%1 bytes"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
 #, kde-format
@@ -4390,8 +4384,7 @@ msgid "N/A"
 msgstr "N/D"
 
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Automático"

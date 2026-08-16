@@ -93,8 +93,6 @@ private:
     bool m_isVpnConnection = false;
     QVariantList m_vpnConnections;
     QStringList m_firewallZones;
-
-    // WifiSecuritySetting *m_wifisecurity = nullptr;
 };
 
 #endif // PLASMA_NM_GENERAL_SETTING_H

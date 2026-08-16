@@ -35,6 +35,7 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     , m_connectionStatus(new ConnectionStatus(this))
     , m_generalSettings(new GeneralSetting(this))
     , m_wifiSetting(new WifiSetting(this))
+    , m_ipv4Settings(new IPv4Settings(this))
     , m_timer(new QTimer(this))
 {
     // Check if we can use AP mode to identify security type
@@ -128,7 +129,15 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     });
 
     connect(m_wifiSetting, &WifiSetting::validChanged, this, [this]() {
-        kcmChanged(true);
+        if (m_wifiSetting->isValid()) {
+            kcmChanged(true);
+        }
+    });
+
+    connect(m_ipv4Settings, &IPv4Settings::validChanged, this, [this]() {
+        if (m_ipv4Settings->isValid()) {
+            kcmChanged(true);
+        }
     });
 
     connect(NetworkManager::settingsNotifier(),
@@ -147,6 +156,11 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
 }
 
 KCMNetworkManagementQml::~KCMNetworkManagementQml() = default;
+
+IPv4Settings *KCMNetworkManagementQml::ipv4Settings() const
+{
+    return m_ipv4Settings;
+}
 
 GeneralSetting *KCMNetworkManagementQml::generalSettings() const
 {
@@ -216,25 +230,6 @@ Enums::ConnectionType KCMNetworkManagementQml::connectionType() const
     }
 }
 
-bool KCMNetworkManagementQml::isValid() const
-{
-    if (m_connectionType == NetworkManager::ConnectionSettings::Wireless) {
-        if (!m_wifiSetting->isValid()) {
-            return false;
-        }
-
-        if (!m_wifiSecurity->isValid()) {
-            return false;
-        }
-
-        if (m_wifiSecurity->enabled8021x() && !m_security8021xSetting->isValid()) {
-            return false;
-        }
-    }
-
-    return true;
-}
-
 void KCMNetworkManagementQml::load()
 {
     if (m_currentConnectionPath.isEmpty()) {
@@ -281,18 +276,16 @@ void KCMNetworkManagementQml::applyWirelessSetting(NMVariantMapMap &map)
             groupEncrypts << NetworkManager::WirelessSecuritySetting::Ccmp;
             securitySetting->setGroup(groupEncrypts);
         }
-    }
 
-    map = settings.toMap();
+        map[QStringLiteral("802-11-wireless")] = wirelessSetting->toMap();
+        if (map.contains(QStringLiteral("802-11-wireless-security"))) {
+            map[QStringLiteral("802-11-wireless-security")] = securitySetting->toMap();
+        }
+    }
 }
 
 void KCMNetworkManagementQml::save()
 {
-    if (!isValid()) {
-        qCWarning(PLASMA_NM_KCM_QML_LOG) << "Cannot save: connection settings are invalid";
-        return;
-    }
-
     // process the pending settings
     if (m_pendingNewSettings) {
         m_generalSettings->applyTo(m_pendingNewSettings, m_wifiSecurity);
@@ -300,6 +293,7 @@ void KCMNetworkManagementQml::save()
         if (m_pendingNewSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
             map.insert(QStringLiteral("802-11-wireless"), m_wifiSetting->setting());
         }
+        map.insert(QStringLiteral("ipv4"), m_ipv4Settings->setting());
         map.insert(QStringLiteral("802-11-wireless-security"), m_wifiSecurity->setting());
         if (m_wifiSecurity->enabled8021x()) {
             map.insert(QStringLiteral("802-1x"), m_wifiSecurity->setting8021x());
@@ -326,6 +320,7 @@ void KCMNetworkManagementQml::save()
     if (m_connectionType == NetworkManager::ConnectionSettings::Wireless) {
         map.insert(QStringLiteral("802-11-wireless"), m_wifiSetting->setting());
     }
+    map.insert(QStringLiteral("ipv4"), m_ipv4Settings->setting());
     if (m_wifiSecurity->securityType() != WifiSecuritySetting::None) {
         map.insert(QStringLiteral("802-11-wireless-security"), m_wifiSecurity->setting());
     } else {
@@ -368,6 +363,7 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
     Q_EMIT connectionTypeChanged();
     m_generalSettings->loadConfig(connectionSettings);
     m_wifiSetting->loadConfig(connectionSettings);
+    m_ipv4Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>());
     // check wireless only for rn
     if (connectionSettings->connectionType() != NetworkManager::ConnectionSettings::Wireless) {
         kcmChanged(false);
@@ -443,6 +439,8 @@ void KCMNetworkManagementQml::addConnection(const NetworkManager::ConnectionSett
     if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
         m_wifiSetting->loadConfig(connectionSettings);
     }
+
+    m_ipv4Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>());
 
     Q_EMIT connectionLoaded(QString());
 }

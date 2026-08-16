@@ -11,6 +11,7 @@
 #include "enums.h"
 #include "generalsettings.h"
 #include "handler.h"
+#include "ipv4settings.h"
 #include "security8021xsetting.h"
 #include "wifisecuritysetting.h"
 #include "wifisetting.h"
@@ -32,6 +33,7 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(Enums::ConnectionType connectionType READ connectionType NOTIFY connectionTypeChanged)
     Q_PROPERTY(GeneralSetting *generalSettings READ generalSettings CONSTANT)
     Q_PROPERTY(WifiSetting *wifiSetting READ wifiSetting CONSTANT)
+    Q_PROPERTY(IPv4Settings *ipv4Settings READ ipv4Settings CONSTANT)
 
 public:
     explicit KCMNetworkManagementQml(QObject *parent, const KPluginMetaData &metaData);
@@ -44,6 +46,7 @@ public:
     ConnectionStatus *connectionStatus() const;
     GeneralSetting *generalSettings() const;
     WifiSetting *wifiSetting() const;
+    IPv4Settings *ipv4Settings() const;
     bool useApMode() const;
 
     Q_INVOKABLE void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
@@ -77,7 +80,6 @@ private:
     };
 
 private:
-    bool isValid() const;
     void applyWirelessSetting(NMVariantMapMap &map);
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void kcmChanged(bool kcmChanged);
@@ -98,6 +100,7 @@ private:
     ConnectionStatus *const m_connectionStatus;
     GeneralSetting *const m_generalSettings;
     WifiSetting *const m_wifiSetting;
+    IPv4Settings *const m_ipv4Settings;
 
     bool m_useApMode = false;
 

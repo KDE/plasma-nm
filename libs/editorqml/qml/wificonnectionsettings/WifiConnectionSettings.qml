@@ -25,7 +25,6 @@ Kirigami.FormLayout {
             anchors.horizontalCenter: parent.horizontalCenter
 
             text: i18n("Connection")
-            font.weight: Font.Bold
             level: 2
         }
     }
@@ -89,7 +88,6 @@ Kirigami.FormLayout {
             anchors.horizontalCenter: parent.horizontalCenter
 
             text: i18n("Advanced")
-            font.weight: Font.Bold
             level: 2
         }
     }

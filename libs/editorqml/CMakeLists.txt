@@ -13,6 +13,10 @@ set(SETTINGS_SRCS
   settings/generalSettings/advancedpermissionsmodel.cpp
   settings/wificonnectionsettings/wifisetting.cpp
   settings/wificonnectionsettings/wifisetting.h
+  settings/ipv4settings/ipv4settings.cpp
+  settings/ipv4settings/ipv4settings.h
+  settings/ipv4settings/ipv4routetablemodel.cpp
+  settings/ipv4settings/ipv4routetablemodel.h
 )
 
 set(QML_SRCS
@@ -48,6 +52,11 @@ set(QML_SRCS
   qml/generalSettings/GeneralSettings.qml
   qml/generalSettings/AdvancedPermissionsDialog.qml
   qml/wificonnectionsettings/WifiConnectionSettings.qml
+
+  qml/ipv4/IPv4Settings.qml
+  qml/ipv4/IPv4Advance.qml
+  qml/ipv4/IPv4Routes.qml
+  qml/ipv4/SearchDomainList.qml
 )
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})
@@ -109,6 +118,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/wifistatus
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/generalSettings
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/wificonnectionsettings
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/ipv4settings
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

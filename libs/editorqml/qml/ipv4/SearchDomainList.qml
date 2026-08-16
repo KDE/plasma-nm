@@ -1,5 +1,6 @@
 /*
       SPDX-FileCopyrightText: 2026 Tushar Gupta <tushar.197712@gmail.com>
+
       SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
@@ -12,16 +13,13 @@ import org.kde.plasma.networkmanagement.editorqml
 Kirigami.Dialog {
     id: dialog
 
-    title: i18n("DNS Servers")
+    title: i18n("Search Domains")
     standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
 
     preferredWidth: Kirigami.Units.gridUnit * 28
     preferredHeight: Kirigami.Units.gridUnit * 20
 
     property alias addresses: listModel.stringList
-
-    // Overridable so the IPv6 page can reuse this dialog with an IPv6 pattern.
-    property var addressPattern: /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
 
     StringListModel {
         id: listModel
@@ -40,7 +38,8 @@ Kirigami.Dialog {
                 Layout.fillWidth: true
 
                 validator: RegularExpressionValidator {
-                    regularExpression: dialog.addressPattern
+                    // Check for a valid DNS domain
+                    regularExpression: /^([A-Za-z0-9]([A-Za-z0-9-]*[A-Za-z0-9])?\.)*[A-Za-z]{2,}$/
                 }
 
                 onAccepted: if (addButton.enabled)

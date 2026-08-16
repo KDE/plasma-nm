@@ -1,0 +1,38 @@
+# translation of plasmanetworkmanagement-kcm-qml.po to Slovak
+# Roman Paholik <wizzardsk@gmail.com>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasmanetworkmanagement-kcm-qml\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-08-14 00:47+0000\n"
+"PO-Revision-Date: 2026-08-15 17:01+0200\n"
+"Last-Translator: Roman Paholik <wizzardsk@gmail.com>\n"
+"Language-Team: Slovak <kde-sk@linux.sk>\n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+#: kcm.cpp:413
+#, kde-format
+msgid "my_shared_connection"
+msgstr "my_shared_connection"
+
+#: kcm.cpp:475
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Chcete uložiť zmeny vykonané v pripojení „%1“?"
+
+#: kcm.cpp:478
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Uložiť zmeny"
+
+#: kcm.cpp:507
+#, kde-format
+msgctxt "Suffix appended to duplicated connection name"
+msgid " (Copy)"
+msgstr " (kópia)"

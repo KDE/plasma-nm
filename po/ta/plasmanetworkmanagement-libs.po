@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-09 02:39+0000\n"
-"PO-Revision-Date: 2026-06-09 21:45+0530\n"
+"PO-Revision-Date: 2026-08-17 14:43+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
 "Language: ta\n"
@@ -15,12 +15,12 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
 msgid "Error resetting the modem: %1"
-msgstr ""
+msgstr "இணக்கியை மீட்டமைப்பதில் சிக்கல்: %1"
 
 #: cellular/cellularmodem.cpp:364
 #, kde-format
@@ -145,105 +145,90 @@ msgid "Full power mode"
 msgstr "முழுவாற்றல் பயன்முறை"
 
 #: cellular/cellularmodemdetails.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection failed"
-#| msgid "Failed"
+#, kde-format
 msgid "Failed"
 msgstr "தோல்வியடைந்தது"
 
 #: cellular/cellularmodemdetails.cpp:247
 #, kde-format
 msgid "Initializing"
-msgstr ""
+msgstr "துவக்கப்படுகிறது"
 
 #: cellular/cellularmodemdetails.cpp:249
 #, kde-format
 msgid "Locked"
-msgstr ""
+msgstr "பூட்டிய நிலையில்"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: cellular/cellularmodemdetails.cpp:251 editor/settings/ui/ipv6.ui:264
 #, kde-format
 msgid "Disabled"
-msgstr "முடக்கு"
+msgstr "முடக்கப்பட்டுள்ளது"
 
 #: cellular/cellularmodemdetails.cpp:253
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Disabling"
-msgstr "முடக்கு"
+msgstr "முடக்கப்படுகிறது"
 
 #: cellular/cellularmodemdetails.cpp:255
 #, kde-format
 msgid "Enabling"
-msgstr ""
+msgstr "செயற்படுத்தப்படுகிறது"
 
 #: cellular/cellularmodemdetails.cpp:257
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Enabled"
-msgstr "முடக்கு"
+msgstr "செயலிலுள்ளது"
 
 #: cellular/cellularmodemdetails.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "network interface doing dhcp request in most cases"
-#| msgid "Setting network address"
+#, kde-format
 msgid "Searching for network provider"
-msgstr "பிணைய முகவரி அமைக்கப்படுகிறது"
+msgstr "பிணைய வழங்குநரை தேடுகிறது"
 
 #: cellular/cellularmodemdetails.cpp:261
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Registered with network provider"
-msgstr "இச்சாதனத்திற்கு வரம்புப்படுத்து:"
+msgstr "பிணைய வழங்குநரிடம் பதிவு செய்யப்பட்டுள்ளது"
 
 #: cellular/cellularmodemdetails.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "Network connections are being cleaned up"
-#| msgid "Disconnecting"
+#, kde-format
 msgid "Disconnecting"
 msgstr "துண்டிக்கப்படுகிறது"
 
 #: cellular/cellularmodemdetails.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is being established"
-#| msgid "Connecting"
+#, kde-format
 msgid "Connecting"
 msgstr "இணைகிறது"
 
 #: cellular/cellularmodemdetails.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgid "Connected"
-msgstr "Connected"
+msgstr "இணைந்துள்ளது"
 
 #: cellular/cellularmodemdetails.cpp:276
 #, kde-format
 msgid "No error."
-msgstr ""
+msgstr "சிக்கல் இல்லை."
 
 #: cellular/cellularmodemdetails.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "Unknown Provider"
+#, kde-format
 msgid "Unknown error."
-msgstr "தெரியாத நிறுவனம்"
+msgstr "தெரியாத சிக்கல்."
 
 #: cellular/cellularmodemdetails.cpp:280
 #, kde-format
 msgid "SIM is required but missing."
-msgstr ""
+msgstr "SIM தேவை, ஆனால காணவில்லை."
 
 #: cellular/cellularmodemdetails.cpp:282
 #, kde-format
 msgid "SIM is available but unusable."
-msgstr ""
+msgstr "SIM உள்ளது, ஆனால் பயன்படுத்த முடியாதது."
 
 #: cellular/cellularmodemdetails.cpp:284
 #, kde-format
 msgid "Unknown modem capabilities."
-msgstr ""
+msgstr "இணக்கி இயலுமைகளைக் கண்டறிய முடியவில்லை."
 
 #: cellular/cellularmodemdetails.cpp:286
 #, kde-format
@@ -293,7 +278,7 @@ msgstr ""
 #: cellular/cellularmodemdetails.cpp:328
 #, kde-format
 msgid "Emergency services only."
-msgstr ""
+msgstr "அவசர சேவை மட்டும்."
 
 #: cellular/cellularmodemdetails.cpp:330
 #, kde-format
@@ -313,7 +298,7 @@ msgstr ""
 #: cellular/cellularmodemdetails.cpp:374
 #, kde-format
 msgid "Scanning networks failed: %1"
-msgstr ""
+msgstr "பிணையங்களை கண்டறிவது தோல்வியடைந்தது: %1"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: cellular/cellularmodemdetails.cpp:435
@@ -340,32 +325,29 @@ msgid "GuessNo"
 msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:474
-#, fuzzy, kde-format
-#| msgid "2"
+#, kde-format
 msgid "2G"
-msgstr "2"
+msgstr "2ஜி"
 
 #: cellular/cellularmodemdetails.cpp:485
-#, fuzzy, kde-format
-#| msgid "3"
+#, kde-format
 msgid "3G"
-msgstr "3"
+msgstr "3ஜி"
 
 #: cellular/cellularmodemdetails.cpp:490
-#, fuzzy, kde-format
-#| msgid "4"
+#, kde-format
 msgid "4G"
-msgstr "4"
+msgstr "4ஜி"
 
 #: cellular/cellularmodemdetails.cpp:493
 #, kde-format
 msgid "5G"
-msgstr ""
+msgstr "5ஜி"
 
 #: cellular/cellularmodemdetails.cpp:496
 #, kde-format
 msgid "Any"
-msgstr ""
+msgstr "ஏதேனும்"
 
 #: cellular/cellularsim.cpp:83
 #, kde-format
@@ -455,7 +437,7 @@ msgstr ""
 #: cellular/cellularsim.cpp:158
 #, kde-format
 msgid "(empty)"
-msgstr ""
+msgstr "(காலி)"
 
 #: cellular/cellularsim.cpp:172
 #, kde-format
@@ -494,7 +476,7 @@ msgstr "MAC முகவரி"
 #: editor/settings/bridgewidget.cpp:33 editor/settings/teamwidget.cpp:36
 #, kde-format
 msgid "Ethernet"
-msgstr "Ethernet"
+msgstr ""
 
 #: editor/connectiondetails.cpp:131
 #, kde-format

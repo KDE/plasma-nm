@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-17 00:48+0000\n"
-"PO-Revision-Date: 2026-08-14 07:17+0200\n"
+"PO-Revision-Date: 2026-08-17 07:13+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -4177,32 +4177,28 @@ msgid "Automatic"
 msgstr "Samodejno"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:18
-#, fuzzy, kde-format
-#| msgid "Advanced IP settings"
+#, kde-format
 msgid "Advanced IPv4 Settings"
-msgstr "Napredne nastavitve IP"
+msgstr "Napredne nastavitve IPv4 "
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:45
 #, kde-format
 msgid "DHCP:"
-msgstr ""
+msgstr "DHCP:"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:46
-#, fuzzy, kde-format
-#| msgid "Send hostname:"
+#, kde-format
 msgid "Send hostname to DHCP server"
-msgstr "Pošlji ime gostitelja:"
+msgstr "Pošlji ime gostitelja strežniku DHCP"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:76 editorqml/qml/ipv4/IPv4Advance.qml:83
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item DAD timeout left to NetworkManager"
 msgid "Default"
 msgstr "Privzeto"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:78 editorqml/qml/ipv4/IPv4Advance.qml:85
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item duplicate address detection turned off"
 msgid "Disabled"
 msgstr "Onemogočeno"
@@ -4211,7 +4207,7 @@ msgstr "Onemogočeno"
 #, kde-format
 msgctxt "@item:intext duplicate address detection timeout in milliseconds"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:94
 #, kde-format
@@ -4221,120 +4217,99 @@ msgid ""
 "\n"
 "0 disables the check, -1 lets NetworkManager decide."
 msgstr ""
+"Časovna omejitev v milisekundah, ki se uporablja za preverjanje prisotnosti "
+"podvojenih naslovov IP v omrežju.\n"
+"\n"
+"0 onemogoči preverjanje, -1 pa prepusti odločitev upravljalniku omrežja."
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:125
 #: editorqml/qml/ipv4/IPv4Settings.qml:254
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "10.0.0.0"
-msgstr ""
+msgstr "10.0.0.0"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:127
 #: editorqml/qml/ipv4/IPv4Settings.qml:256
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "255.255.255.0"
-msgstr ""
+msgstr "255.255.255.0"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:129
 #: editorqml/qml/ipv4/IPv4Settings.qml:258
 #, kde-format
 msgctxt "@info:placeholder optional field"
 msgid "Optional"
-msgstr ""
+msgstr "Neobvezno"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:170
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Insert a row"
 msgid "Add"
 msgstr "Dodaj"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:177
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Remove a selected row"
 msgid "Remove"
 msgstr "Odstrani"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Automatic"
 msgstr "Samodejno"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Automatic (Only addresses)"
 msgstr "Samodejno (samo naslovi)"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Link-Local"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Link-Local"
 msgstr "Krajevno-povezano"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox like in use Manual configuration"
 msgid "Manual"
 msgstr "Ročno"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Shared to other computers"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Shared to other computers"
 msgstr "Deljeno z drugimi računalniki"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox like in this setting is Disabled"
 msgid "Disabled"
 msgstr "Onemogočeno"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:78
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Search Domains:"
-msgstr "Domene za iskanje:"
+msgstr "Preišči domene:"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use this field to specify the DHCP client ID which is a string sent to "
-#| "the DHCP server\n"
-#| "to identify the local machine that the DHCP server may use to customize "
-#| "the DHCP\n"
-#| "lease and options."
+#, kde-format
 msgid ""
 "Use this field to specify the DHCP client ID which is a string sent to the "
 "DHCP server to identify the local machine that the DHCP server may use to "
 "customize the DHCP lease and options."
 msgstr ""
-"Uporabite to polje, da navedete ID odjemalca DHCP. To je niz, ki je poslan "
-"strežniku DHCP\n"
-"za identifikacijo računalnika. Strežnik lahko te podatke uporabi za "
-"prilagoditev najemnega\n"
-"časa in možnosti."
+"Uporabi to polje za določitev ID odjemalca DHCP, ki je niz, poslan strežniku "
+"DHCP za identifikacijo lokalnega računalnika, ki ga strežnik DHCP lahko "
+"uporabi za prilagajanje zakupa in možnosti DHCP."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:155
-#, fuzzy, kde-format
-#| msgid ""
-#| "A score that helps choose the best path for data packets to reach their "
-#| "destination,\n"
-#| "based on factors like distance, delay, and reliability.\n"
-#| "\n"
-#| "Default value -1 means that NetworkManager gets to choose and manage the "
-#| "actual metric of the route."
+#, kde-format
 msgid ""
 "A score that helps choose the best path for data packets to reach their "
 "destination, based on factors like distance, delay, and reliability.\n"
@@ -4342,7 +4317,7 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
-"Ocena, za pomoč pri izbiri najboljše poti za podatkovne pakete do cilja, na "
+"Rezultat, ki pomaga izbrati najboljšo pot za podatkovne pakete do cilja, na "
 "podlagi dejavnikov, kot so razdalja, zamuda in zanesljivost.\n"
 "\n"
 "Privzeta vrednost -1 pomeni, da lahko NetworkManager izbere in upravlja "
@@ -4354,37 +4329,30 @@ msgid "Addresses"
 msgstr "Naslovi"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allows the connection to complete if IPv4 configuration fails\n"
-#| "but IPv6 configuration succeeds"
+#, kde-format
 msgid ""
 "Allows the connection to complete if IPv4 configuration fails but IPv6 "
 "configuration succeeds"
 msgstr ""
-"Dovoli vzpostavitev povezave, če nastavitev IPv4 spodleti,\n"
-"nastavitev IPv6 pa uspe"
+"Omogoča dokončanje povezave, če konfiguracija IPv4 ne uspe, konfiguracija "
+"IPv6 pa uspe"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:326
-#, fuzzy, kde-format
-#| msgid "Advanced…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Advanced…"
 msgstr "Napredno…"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:332
-#, fuzzy, kde-format
-#| msgid "Routes…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Routes…"
 msgstr "Poti…"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgid "Search Domains"
-msgstr "Domene za iskanje:"
+msgstr "Preišči domene:"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:107
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:106
@@ -4604,33 +4572,25 @@ msgid "N/A"
 msgstr "N/A"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgctxt "@title:column"
 msgid "Address"
 msgstr "Naslov"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 netmask"
-#| msgid "Netmask"
+#, kde-format
 msgctxt "@title:column"
 msgid "Netmask"
 msgstr "Omrežna maska"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgctxt "@title:column"
 msgid "Gateway"
 msgstr "Prehod"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgctxt "@title:column"
 msgid "Metric"
 msgstr "Metrika"

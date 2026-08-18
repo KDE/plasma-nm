@@ -1,21 +1,21 @@
 # Copyright (C) 2023 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
 #
-# SPDX-FileCopyrightText: 2021, 2023, 2025 Kishore G <kishore96@gmail.com>
+# SPDX-FileCopyrightText: 2021, 2023, 2025-2026 Kishore G <kishore96@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-06 00:46+0000\n"
-"PO-Revision-Date: 2025-01-26 17:46+0530\n"
+"PO-Revision-Date: 2026-08-17 14:25+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
-"Language-Team: Tamil <kde-i18n-doc@kde.org>\n"
+"Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
 "Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.12.1\n"
+"X-Generator: Lokalize 26.04.3\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -26,7 +26,7 @@ msgstr "செல்லுபடியாகாத உள்ளீடு."
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
-msgstr ""
+msgstr "\"%1\"-க்கான இணைப்பு விவரங்கள்"
 
 #: ui/ConnectionInfo.qml:55
 #, kde-format
@@ -37,20 +37,19 @@ msgstr "இடமாற்ற விகிதங்கள்"
 #: ui/ConnectionInfo.qml:71
 #, kde-format
 msgid "Connected, ↓ %1/s, ↑ %2/s"
-msgstr ""
+msgstr "இணைந்துள்ளது, ↓ %1/நொ, ↑ %2/நொ"
 
 #: ui/ConnectionInfo.qml:79
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgctxt "@title:group"
 msgid "Connection Details"
-msgstr "இதற்கு இணை:"
+msgstr "இணைப்பு விவரங்கள்:"
 
 #: ui/ConnectionInfo.qml:100
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
-msgstr ""
+msgstr "பகிர்"
 
 #: ui/ConnectionInfo.qml:107
 #, kde-format
@@ -74,10 +73,9 @@ msgid "Wi-Fi"
 msgstr "அருகலை"
 
 #: ui/main.qml:98
-#, fuzzy, kde-format
-#| msgid "IP settings"
+#, kde-format
 msgid "Settings"
-msgstr "IP அமைப்பு"
+msgstr "அமைப்புகள்"
 
 #: ui/main.qml:107
 #, fuzzy, kde-format
@@ -97,10 +95,9 @@ msgid "Add Custom Connection"
 msgstr "விருப்ப இணைப்பை சேர்"
 
 #: ui/MorePage.qml:14
-#, fuzzy, kde-format
-#| msgid "IP settings"
+#, kde-format
 msgid "Wi-Fi Settings"
-msgstr "IP அமைப்பு"
+msgstr "அருகலை அமைப்புகள்"
 
 #: ui/MorePage.qml:21
 #, kde-format

@@ -4380,7 +4380,8 @@ msgstr ""
 "gérer la métrique courante de routage."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Addresses"
 msgid "Addresses"
 msgstr "Adresses"
 

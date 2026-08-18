@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-17 00:48+0000\n"
-"PO-Revision-Date: 2026-08-14 13:19+0200\n"
+"PO-Revision-Date: 2026-08-17 09:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -1851,7 +1851,7 @@ msgid ""
 msgstr ""
 "Useu aquest camp per a especificar l'identificador del client DHCP, el qual\n"
 "és una cadena que s'envia al servidor DHCP per a identificar la màquina\n"
-"local que el servidor usarà per a personalitzar el contracte i les opcions\n"
+"local que el servidor usarà per a personalitzar l'arrendament i les opcions\n"
 "del DHCP."
 
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
@@ -4187,32 +4187,28 @@ msgid "Automatic"
 msgstr "Automàtic"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:18
-#, fuzzy, kde-format
-#| msgid "Advanced IP settings"
+#, kde-format
 msgid "Advanced IPv4 Settings"
-msgstr "Configuració avançada de la IP"
+msgstr "Configuració avançada d'IPv4"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:45
 #, kde-format
 msgid "DHCP:"
-msgstr ""
+msgstr "DHCP:"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:46
-#, fuzzy, kde-format
-#| msgid "Send hostname:"
+#, kde-format
 msgid "Send hostname to DHCP server"
-msgstr "Envia el nom del servidor:"
+msgstr "Envia el nom de màquina al servidor DHCP"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:76 editorqml/qml/ipv4/IPv4Advance.qml:83
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item DAD timeout left to NetworkManager"
 msgid "Default"
 msgstr "Per omissió"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:78 editorqml/qml/ipv4/IPv4Advance.qml:85
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item duplicate address detection turned off"
 msgid "Disabled"
 msgstr "Desactivat"
@@ -4221,7 +4217,7 @@ msgstr "Desactivat"
 #, kde-format
 msgctxt "@item:intext duplicate address detection timeout in milliseconds"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:94
 #, kde-format
@@ -4231,119 +4227,100 @@ msgid ""
 "\n"
 "0 disables the check, -1 lets NetworkManager decide."
 msgstr ""
+"Temps d'espera en mil·lisegons utilitzat per comprovar la presència "
+"d'adreces IP duplicades a la xarxa.\n"
+"\n"
+"0 inhabilita la comprovació, -1 permet que el NetworkManager decideixi."
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:125
 #: editorqml/qml/ipv4/IPv4Settings.qml:254
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "10.0.0.0"
-msgstr ""
+msgstr "10.0.0.0"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:127
 #: editorqml/qml/ipv4/IPv4Settings.qml:256
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "255.255.255.0"
-msgstr ""
+msgstr "255.255.255.0"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:129
 #: editorqml/qml/ipv4/IPv4Settings.qml:258
 #, kde-format
 msgctxt "@info:placeholder optional field"
 msgid "Optional"
-msgstr ""
+msgstr "Opcional"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:170
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Insert a row"
 msgid "Add"
 msgstr "Afegeix"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:177
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Remove a selected row"
 msgid "Remove"
 msgstr "Elimina"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Automatic"
-msgstr "Automàtica"
+msgstr "Automàtic"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Automatic (Only addresses)"
-msgstr "Automàtica (només adreces)"
+msgstr "Automàtic (només adreces)"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Link-Local"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Link-Local"
 msgstr "Enllaç local"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox like in use Manual configuration"
 msgid "Manual"
 msgstr "Manual"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Shared to other computers"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Shared to other computers"
 msgstr "Comparteix amb altres ordinadors"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox like in this setting is Disabled"
 msgid "Disabled"
 msgstr "Desactivat"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:78
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Search Domains:"
 msgstr "Dominis de cerca:"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use this field to specify the DHCP client ID which is a string sent to "
-#| "the DHCP server\n"
-#| "to identify the local machine that the DHCP server may use to customize "
-#| "the DHCP\n"
-#| "lease and options."
+#, kde-format
 msgid ""
 "Use this field to specify the DHCP client ID which is a string sent to the "
 "DHCP server to identify the local machine that the DHCP server may use to "
 "customize the DHCP lease and options."
 msgstr ""
-"Useu aquest camp per a especificar l'identificador del client DHCP, el qual\n"
-"és una cadena que s'envia al servidor DHCP per a identificar la màquina\n"
-"local que el servidor usarà per a personalitzar el contracte i les opcions\n"
-"del DHCP."
+"Useu aquest camp per a especificar l'identificador del client DHCP, que és "
+"una cadena que s'envia al servidor DHCP per a identificar la màquina local "
+"que el servidor DHCP pot utilitzar per a personalitzar l'arrendament i les "
+"opcions del DHCP."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:155
-#, fuzzy, kde-format
-#| msgid ""
-#| "A score that helps choose the best path for data packets to reach their "
-#| "destination,\n"
-#| "based on factors like distance, delay, and reliability.\n"
-#| "\n"
-#| "Default value -1 means that NetworkManager gets to choose and manage the "
-#| "actual metric of the route."
+#, kde-format
 msgid ""
 "A score that helps choose the best path for data packets to reach their "
 "destination, based on factors like distance, delay, and reliability.\n"
@@ -4352,51 +4329,42 @@ msgid ""
 "actual metric of the route."
 msgstr ""
 "Una puntuació que ajuda a triar el camí millor perquè els paquets de dades "
-"arribin a la seva destinació,\n"
-"basat en factors com la distància, el retard i la fiabilitat.\n"
+"arribin a la seva destinació, basat en factors com la distància, el retard i "
+"la fiabilitat.\n"
 "\n"
 "El valor predeterminat -1 significa que el NetworkManager pot triar i "
 "gestionar la mètrica real del camí."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgid "Addresses"
-msgstr "Adreça"
+msgstr "Adreces"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allows the connection to complete if IPv4 configuration fails\n"
-#| "but IPv6 configuration succeeds"
+#, kde-format
 msgid ""
 "Allows the connection to complete if IPv4 configuration fails but IPv6 "
 "configuration succeeds"
 msgstr ""
-"Permet completar la connexió si la configuració IPv4 falla,\n"
-"però la configuració IPv6 té èxit"
+"Permet completar la connexió si la configuració IPv4 falla, però la "
+"configuració IPv6 té èxit"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:326
-#, fuzzy, kde-format
-#| msgid "Advanced…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Advanced…"
 msgstr "Avançat…"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:332
-#, fuzzy, kde-format
-#| msgid "Routes…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Routes…"
 msgstr "Camins…"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgid "Search Domains"
-msgstr "Dominis de cerca:"
+msgstr "Dominis de cerca"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:107
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:106
@@ -4617,33 +4585,25 @@ msgid "N/A"
 msgstr "N/D"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgctxt "@title:column"
 msgid "Address"
 msgstr "Adreça"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 netmask"
-#| msgid "Netmask"
+#, kde-format
 msgctxt "@title:column"
 msgid "Netmask"
 msgstr "Màscara de xarxa"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgctxt "@title:column"
 msgid "Gateway"
 msgstr "Passarel·la"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgctxt "@title:column"
 msgid "Metric"
 msgstr "Mètrica"

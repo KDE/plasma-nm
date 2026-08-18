@@ -4345,7 +4345,8 @@ msgstr ""
 "der Route auswählt und verwaltet."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Addresses"
 msgid "Addresses"
 msgstr "Adressen"
 

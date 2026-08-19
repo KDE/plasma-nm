@@ -72,11 +72,9 @@ msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
 #: ui/main.qml:98
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Settings"
-msgstr "IP 设置"
+msgstr "设置"
 
 #: ui/main.qml:107
 #, kde-format
@@ -256,6 +254,3 @@ msgstr "DNS"
 #, kde-format
 msgid "Password…"
 msgstr "密码…"
-
-#~ msgid "More"
-#~ msgstr "更多"

@@ -36,6 +36,7 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     , m_generalSettings(new GeneralSetting(this))
     , m_wifiSetting(new WifiSetting(this))
     , m_ipv4Settings(new IPv4Settings(this))
+    , m_ipv6Settings(new IPv6Settings(this))
     , m_timer(new QTimer(this))
 {
     // Check if we can use AP mode to identify security type
@@ -140,6 +141,12 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
         }
     });
 
+    connect(m_ipv6Settings, &IPv6Settings::validChanged, this, [this]() {
+        if (m_ipv6Settings->isValid()) {
+            kcmChanged(true);
+        }
+    });
+
     connect(NetworkManager::settingsNotifier(),
             &NetworkManager::SettingsNotifier::connectionAdded,
             this,
@@ -160,6 +167,11 @@ KCMNetworkManagementQml::~KCMNetworkManagementQml() = default;
 IPv4Settings *KCMNetworkManagementQml::ipv4Settings() const
 {
     return m_ipv4Settings;
+}
+
+IPv6Settings *KCMNetworkManagementQml::ipv6Settings() const
+{
+    return m_ipv6Settings;
 }
 
 GeneralSetting *KCMNetworkManagementQml::generalSettings() const
@@ -294,6 +306,7 @@ void KCMNetworkManagementQml::save()
             map.insert(QStringLiteral("802-11-wireless"), m_wifiSetting->setting());
         }
         map.insert(QStringLiteral("ipv4"), m_ipv4Settings->setting());
+        map.insert(QStringLiteral("ipv6"), m_ipv6Settings->setting());
         map.insert(QStringLiteral("802-11-wireless-security"), m_wifiSecurity->setting());
         if (m_wifiSecurity->enabled8021x()) {
             map.insert(QStringLiteral("802-1x"), m_wifiSecurity->setting8021x());
@@ -321,6 +334,7 @@ void KCMNetworkManagementQml::save()
         map.insert(QStringLiteral("802-11-wireless"), m_wifiSetting->setting());
     }
     map.insert(QStringLiteral("ipv4"), m_ipv4Settings->setting());
+    map.insert(QStringLiteral("ipv6"), m_ipv6Settings->setting());
     if (m_wifiSecurity->securityType() != WifiSecuritySetting::None) {
         map.insert(QStringLiteral("802-11-wireless-security"), m_wifiSecurity->setting());
     } else {
@@ -364,6 +378,7 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
     m_generalSettings->loadConfig(connectionSettings);
     m_wifiSetting->loadConfig(connectionSettings);
     m_ipv4Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>());
+    m_ipv6Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv6).staticCast<NetworkManager::Ipv6Setting>());
     // check wireless only for rn
     if (connectionSettings->connectionType() != NetworkManager::ConnectionSettings::Wireless) {
         kcmChanged(false);
@@ -441,6 +456,7 @@ void KCMNetworkManagementQml::addConnection(const NetworkManager::ConnectionSett
     }
 
     m_ipv4Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>());
+    m_ipv6Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv6).staticCast<NetworkManager::Ipv6Setting>());
 
     Q_EMIT connectionLoaded(QString());
 }

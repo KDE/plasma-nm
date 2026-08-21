@@ -78,6 +78,11 @@ ColumnLayout {
             }
         }
 
-        Item { /* TODO: ipv6 settings page */ }
+        Item {
+            PlasmaNMQ.IPv6Settings {
+                anchors.fill: parent
+                setting: kcm.ipv6Settings
+            }
+        }
     }
 }

@@ -20,8 +20,9 @@ Kirigami.Dialog {
 
     property alias addresses: listModel.stringList
 
-    // Overridable so the IPv6 page can reuse this dialog with an IPv6 pattern.
     property var addressPattern: /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
+
+    property var validate: text => dialog.addressPattern.test(text)
 
     StringListModel {
         id: listModel
@@ -38,10 +39,6 @@ Kirigami.Dialog {
             QQC2.TextField {
                 id: input
                 Layout.fillWidth: true
-
-                validator: RegularExpressionValidator {
-                    regularExpression: dialog.addressPattern
-                }
 
                 onAccepted: if (addButton.enabled)
                     addButton.clicked()
@@ -86,7 +83,7 @@ Kirigami.Dialog {
                     text: i18n("Add")
                     icon.name: "list-add"
 
-                    enabled: input.acceptableInput && !listModel.contains(input.text)
+                    enabled: dialog.validate(input.text) && !listModel.contains(input.text)
 
                     onClicked: {
                         listModel.append(input.text);

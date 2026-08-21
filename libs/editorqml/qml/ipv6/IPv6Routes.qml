@@ -13,9 +13,9 @@ import org.kde.plasma.networkmanagement.editorqml
 Kirigami.Dialog {
     id: dialog
 
-    required property IPv4Setting setting
+    required property IPv6Setting setting
 
-    title: i18n("Edit IPv4 Routes")
+    title: i18n("Edit IPv6 Routes")
     standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
 
     preferredWidth: Kirigami.Units.gridUnit * 46
@@ -102,12 +102,16 @@ Kirigami.Dialog {
                     onWidthChanged: Qt.callLater(routeTable.forceLayout)
 
                     columnWidthProvider: function (column) {
+                        const prefix = Kirigami.Units.gridUnit * 5;
                         const metric = Kirigami.Units.gridUnit * 6;
-                        if (column === RouteTableModel.MetricColumn)
+                        if (column === Ipv6RouteTableModel.PrefixColumn)
+                            return prefix;
+                        if (column === Ipv6RouteTableModel.MetricColumn)
                             return metric;
 
-                        const available = routeTable.width - metric - routeTable.columnSpacing * 3;
-                        return Math.max(Kirigami.Units.gridUnit * 8, available / 3);
+                        // Address and next hop share whatever is left.
+                        const available = routeTable.width - prefix - metric - routeTable.columnSpacing * 3;
+                        return Math.max(Kirigami.Units.gridUnit * 8, available / 2);
                     }
 
                     delegate: QQC2.TextField {
@@ -121,24 +125,35 @@ Kirigami.Dialog {
 
                         placeholderText: {
                             switch (cell.column) {
-                            case RouteTableModel.AddressColumn:
-                                return i18nc("@info:placeholder", "10.0.0.0");
-                            case RouteTableModel.NetmaskColumn:
-                                return i18nc("@info:placeholder", "255.255.255.0");
-                            case RouteTableModel.NextHopColumn:
+                            case Ipv6RouteTableModel.AddressColumn:
+                                return i18nc("@info:placeholder", "2001:db8::");
+                            case Ipv6RouteTableModel.PrefixColumn:
+                                return i18nc("@info:placeholder IPv6 prefix length", "64");
+                            case Ipv6RouteTableModel.NextHopColumn:
                                 return i18nc("@info:placeholder optional field", "Optional");
                             default:
                                 return "";
                             }
                         }
 
-                        validator: cell.column === RouteTableModel.MetricColumn ? metricValidator : null
+                        validator: {
+                            if (cell.column === Ipv6RouteTableModel.PrefixColumn)
+                                return prefixValidator;
+                            if (cell.column === Ipv6RouteTableModel.MetricColumn)
+                                return metricValidator;
+                            return null;
+                        }
 
                         onActiveFocusChanged: if (activeFocus)
                             routeSelection.setCurrentIndex(routeTable.model.index(cell.row, cell.column), ItemSelectionModel.ClearAndSelect)
 
                         onEditingFinished: {
-                            if (cell.column === RouteTableModel.MetricColumn) {
+                            if (cell.column === Ipv6RouteTableModel.PrefixColumn) {
+                                const parsedPrefix = parseInt(text, 10);
+                                const prefix = isNaN(parsedPrefix) ? 0 : Math.min(parsedPrefix, 128);
+                                dialog.setting.routeModel.setRouteField(cell.row, cell.column, prefix);
+                                text = Number(prefix).toFixed(0);
+                            } else if (cell.column === Ipv6RouteTableModel.MetricColumn) {
                                 const parsed = parseInt(text, 10);
                                 const metric = isNaN(parsed) ? 0 : Math.min(parsed, 4294967295);
                                 dialog.setting.routeModel.setRouteField(cell.row, cell.column, metric);
@@ -150,6 +165,12 @@ Kirigami.Dialog {
                     }
                 }
             }
+        }
+
+        RegularExpressionValidator {
+            id: prefixValidator
+
+            regularExpression: /^(1[01][0-9]|12[0-8]|[1-9][0-9]|[0-9])$/
         }
 
         RegularExpressionValidator {

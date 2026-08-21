@@ -13,7 +13,7 @@ import org.kde.plasma.networkmanagement.editorqml
 ColumnLayout {
     id: root
 
-    required property IPv4Setting setting
+    required property IPv6Setting setting
 
     spacing: Kirigami.Units.largeSpacing
 
@@ -26,7 +26,7 @@ ColumnLayout {
             Kirigami.FormData.label: i18n("Method:")
             Layout.fillWidth: true
 
-            model: [i18nc("@item:inlistbox IPv4 method", "Automatic"), i18nc("@item:inlistbox IPv4 method", "Automatic (Only addresses)"), i18nc("@item:inlistbox IPv4 method", "Link-Local"), i18nc("@item:inlistbox like in use Manual configuration", "Manual"), i18nc("@item:inlistbox IPv4 method", "Shared to other computers"), i18nc("@item:inlistbox like in this setting is Disabled", "Disabled")]
+            model: [i18nc("@item:inlistbox IPv6 method", "Automatic"), i18nc("@item:inlistbox IPv6 method", "Automatic (Only addresses)"), i18nc("@item:inlistbox IPv6 method", "Automatic (Only DHCP)"), i18nc("@item:inlistbox IPv6 method", "Link-Local"), i18nc("@item:inlistbox like in use Manual configuration", "Manual"), i18nc("@item:inlistbox like in this setting is Ignored", "Ignored"), i18nc("@item:inlistbox like in this setting is Disabled", "Disabled")]
 
             currentIndex: root.setting.method
             onActivated: root.setting.method = currentIndex
@@ -34,7 +34,7 @@ ColumnLayout {
             hoverEnabled: true
             QQC2.ToolTip.visible: hovered
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-            QQC2.ToolTip.text: i18n("How to configure the IPv4 address:\n• Automatic: obtain address and DNS automatically via DHCP\n• Automatic (Only addresses): obtain address via DHCP but configure DNS manually\n• Link-Local: use automatic link-local addressing (169.254.x.x)\n• Manual: enter a static IP address\n• Shared: turn this computer into a router to share internet with other devices\n• Disabled: turn off IPv4")
+            QQC2.ToolTip.text: i18n("How to configure the IPv6 address:\n• Automatic: obtain address and DNS automatically (via SLAAC and/or DHCPv6)\n• Automatic (Only addresses): obtain address automatically but configure DNS manually\n• Automatic (Only DHCP): obtain address and DNS via DHCPv6 only (ignore SLAAC)\n• Link-Local: use automatic link-local addressing (fe80::/10)\n• Manual: enter a static IP address\n• Ignored: skip IPv6 configuration but allow connection\n• Disabled: turn off IPv6 completely")
         }
 
         RowLayout {
@@ -111,20 +111,23 @@ ColumnLayout {
             }
         }
 
-        QQC2.TextField {
-            Kirigami.FormData.label: i18n("DHCP Client ID:")
+        QQC2.ComboBox {
+            Kirigami.FormData.label: i18n("Privacy:")
             Layout.fillWidth: true
 
-            enabled: root.setting.dhcpClientIdEnabled
+            enabled: root.setting.privacyEnabled
 
-            text: root.setting.dhcpClientId
-            onTextEdited: root.setting.dhcpClientId = text
+            model: [i18nc("@item:inlistbox IPv6 privacy extensions left to NetworkManager", "Default"), i18nc("@item:inlistbox privacy disabled", "Disabled"), i18nc("@item:inlistbox IPv6 privacy extensions", "Enabled (prefer public address)"), i18nc("@item:inlistbox IPv6 privacy extensions", "Enabled (prefer temporary addresses)")]
+
+            currentIndex: root.setting.privacy
+            onActivated: root.setting.privacy = currentIndex
 
             hoverEnabled: true
             QQC2.ToolTip.visible: hovered
             QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-            QQC2.ToolTip.text: i18n("Use this field to specify the DHCP client ID which is a string sent to the DHCP server to identify the local machine that the DHCP server may use to customize the DHCP lease and options.")
+            QQC2.ToolTip.text: i18n("Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If enabled, it makes the kernel generate a temporary IPv6 address in addition to the public one generated from MAC address via modified EUI-64.")
         }
+
         QQC2.SpinBox {
             Kirigami.FormData.label: i18n("Route Metric:")
             Layout.fillWidth: true
@@ -232,7 +235,7 @@ ColumnLayout {
                     onWidthChanged: Qt.callLater(addressTable.forceLayout)
 
                     columnWidthProvider: function (column) {
-                        if (column === RouteTableModel.MetricColumn)
+                        if (column === Ipv6RouteTableModel.MetricColumn)
                             return 0;
 
                         const available = addressTable.width - addressTable.columnSpacing * 2;
@@ -250,22 +253,31 @@ ColumnLayout {
 
                         placeholderText: {
                             switch (addressCell.column) {
-                            case RouteTableModel.AddressColumn:
-                                return i18nc("@info:placeholder", "10.0.0.0");
-                            case RouteTableModel.NetmaskColumn:
-                                return i18nc("@info:placeholder", "255.255.255.0");
+                            case Ipv6RouteTableModel.AddressColumn:
+                                return i18nc("@info:placeholder", "2001:db8::1");
+                            case Ipv6RouteTableModel.PrefixColumn:
+                                return i18nc("@info:placeholder IPv6 prefix length", "64");
                             default:
                                 return i18nc("@info:placeholder optional field", "Optional");
                             }
                         }
 
+                        validator: addressCell.column === Ipv6RouteTableModel.PrefixColumn ? prefixValidator : null
+
                         onActiveFocusChanged: if (activeFocus)
                             addressSelection.setCurrentIndex(addressTable.model.index(addressCell.row, addressCell.column), ItemSelectionModel.ClearAndSelect)
 
                         onEditingFinished: {
-                            root.setting.addressModel.setRouteField(addressCell.row, addressCell.column, text);
-                            if (addressCell.column === RouteTableModel.AddressColumn)
-                                root.setting.suggestNetmaskForAddress(addressCell.row);
+                            if (addressCell.column === Ipv6RouteTableModel.PrefixColumn) {
+                                const parsed = parseInt(text, 10);
+                                const prefix = isNaN(parsed) ? 0 : Math.min(parsed, 128);
+                                root.setting.addressModel.setRouteField(addressCell.row, addressCell.column, prefix);
+                                text = Number(prefix).toFixed(0);
+                            } else {
+                                root.setting.addressModel.setRouteField(addressCell.row, addressCell.column, text);
+                                if (addressCell.column === Ipv6RouteTableModel.AddressColumn)
+                                    root.setting.suggestPrefixForAddress(addressCell.row);
+                            }
                         }
                     }
                 }
@@ -296,18 +308,26 @@ ColumnLayout {
         }
     }
 
+    RegularExpressionValidator {
+        id: prefixValidator
+
+        regularExpression: /^(1[01][0-9]|12[0-8]|[1-9][0-9]|[0-9])$/
+    }
+
     QQC2.CheckBox {
         Layout.fillWidth: true
 
-        text: i18n("IPv4 is required for this connection")
+        text: i18n("IPv6 is required for this connection")
 
-        checked: root.setting.ipv4Required
-        onToggled: root.setting.ipv4Required = checked
+        enabled: root.setting.ipv6RequiredEnabled
+
+        checked: root.setting.ipv6Required
+        onToggled: root.setting.ipv6Required = checked
 
         hoverEnabled: true
         QQC2.ToolTip.visible: hovered
         QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
-        QQC2.ToolTip.text: i18n("Allows the connection to complete if IPv4 configuration fails but IPv6 configuration succeeds")
+        QQC2.ToolTip.text: i18n("When connecting to IPv4-capable networks, allows the connection to complete if IPv6 configuration fails but IPv4 configuration succeeds")
     }
 
     Item {
@@ -323,12 +343,6 @@ ColumnLayout {
         }
 
         QQC2.Button {
-            text: i18nc("@action:button", "Advanced…")
-
-            onClicked: advancedDialog.open()
-        }
-
-        QQC2.Button {
             text: i18nc("@action:button", "Routes…")
 
             enabled: root.setting.routesEnabled
@@ -337,13 +351,7 @@ ColumnLayout {
         }
     }
 
-    IPv4Advance {
-        id: advancedDialog
-
-        setting: root.setting
-    }
-
-    IPv4Routes {
+    IPv6Routes {
         id: routesDialog
 
         setting: root.setting
@@ -351,6 +359,8 @@ ColumnLayout {
 
     DnsList {
         id: dnsDialog
+
+        validate: text => root.setting.isValidAddress(text)
 
         onAccepted: root.setting.dns = addresses.join(",")
     }

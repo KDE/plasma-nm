@@ -12,6 +12,7 @@
 #include "generalsettings.h"
 #include "handler.h"
 #include "ipv4settings.h"
+#include "ipv6settings.h"
 #include "security8021xsetting.h"
 #include "wifisecuritysetting.h"
 #include "wifisetting.h"
@@ -34,6 +35,7 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(GeneralSetting *generalSettings READ generalSettings CONSTANT)
     Q_PROPERTY(WifiSetting *wifiSetting READ wifiSetting CONSTANT)
     Q_PROPERTY(IPv4Settings *ipv4Settings READ ipv4Settings CONSTANT)
+    Q_PROPERTY(IPv6Settings *ipv6Settings READ ipv6Settings CONSTANT)
 
 public:
     explicit KCMNetworkManagementQml(QObject *parent, const KPluginMetaData &metaData);
@@ -47,6 +49,7 @@ public:
     GeneralSetting *generalSettings() const;
     WifiSetting *wifiSetting() const;
     IPv4Settings *ipv4Settings() const;
+    IPv6Settings *ipv6Settings() const;
     bool useApMode() const;
 
     Q_INVOKABLE void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
@@ -101,6 +104,7 @@ private:
     GeneralSetting *const m_generalSettings;
     WifiSetting *const m_wifiSetting;
     IPv4Settings *const m_ipv4Settings;
+    IPv6Settings *const m_ipv6Settings;
 
     bool m_useApMode = false;
 

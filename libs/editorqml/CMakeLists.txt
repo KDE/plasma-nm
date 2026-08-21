@@ -17,6 +17,10 @@ set(SETTINGS_SRCS
   settings/ipv4settings/ipv4settings.h
   settings/ipv4settings/ipv4routetablemodel.cpp
   settings/ipv4settings/ipv4routetablemodel.h
+  settings/ipv6settings/ipv6settings.cpp
+  settings/ipv6settings/ipv6settings.h
+  settings/ipv6settings/ipv6routetablemodel.cpp
+  settings/ipv6settings/ipv6routetablemodel.h
 )
 
 set(QML_SRCS
@@ -57,6 +61,9 @@ set(QML_SRCS
   qml/ipv4/IPv4Advance.qml
   qml/ipv4/IPv4Routes.qml
   qml/ipv4/SearchDomainList.qml
+
+  qml/ipv6/IPv6Settings.qml
+  qml/ipv6/IPv6Routes.qml
 )
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})
@@ -119,6 +126,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/generalSettings
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/wificonnectionsettings
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/ipv4settings
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/ipv6settings
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

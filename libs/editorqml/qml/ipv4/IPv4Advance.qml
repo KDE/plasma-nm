@@ -90,7 +90,7 @@ Kirigami.Dialog {
 
             hoverEnabled: true
             QQC2.ToolTip.visible: hovered
-            QQC2.ToolTip.delay: Kirigami.Units.humanMoment
+            QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
             QQC2.ToolTip.text: i18n("Timeout in milliseconds used to check for the presence of duplicate IP addresses on the network.\n\n0 disables the check, -1 lets NetworkManager decide.")
         }
     }

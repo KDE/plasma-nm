@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-17 00:48+0000\n"
+"POT-Creation-Date: 2026-08-22 00:48+0000\n"
 "PO-Revision-Date: 2026-08-17 06:54-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -944,6 +944,7 @@ msgstr "Gateway"
 
 #: editor/settings/ipv4widget.cpp:267 editor/settings/ipv6widget.cpp:258
 #: editorqml/settings/ipv4settings/ipv4settings.cpp:232
+#: editorqml/settings/ipv6settings/ipv6settings.cpp:229
 #, kde-format
 msgid "Other DNS Servers:"
 msgstr "Outros servidores DNS:"
@@ -953,6 +954,7 @@ msgstr "Outros servidores DNS:"
 #: editor/settings/ipv6widget.cpp:271 editor/settings/ipv6widget.cpp:284
 #: editor/settings/ipv6widget.cpp:297 editor/settings/ipv6widget.cpp:310
 #: editorqml/settings/ipv4settings/ipv4settings.cpp:232
+#: editorqml/settings/ipv6settings/ipv6settings.cpp:229
 #, kde-format
 msgid "DNS Servers:"
 msgstr "Servidores DNS:"
@@ -1716,6 +1718,7 @@ msgstr "Configurações do IP avançadas"
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
 #: editorqml/qml/ipv4/IPv4Settings.qml:26
+#: editorqml/qml/ipv6/IPv6Settings.qml:26
 #, kde-format
 msgid "Method:"
 msgstr "Método:"
@@ -1793,6 +1796,7 @@ msgstr "Servidores DNS:"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
 #: editor/settings/ui/ipv4.ui:127 editor/settings/ui/ipv6.ui:76
 #: editorqml/qml/ipv4/IPv4Settings.qml:59
+#: editorqml/qml/ipv6/IPv6Settings.qml:59
 #, kde-format
 msgid ""
 "Use this field to specify the IP address(es) of one or more DNS servers. Use "
@@ -1817,6 +1821,7 @@ msgstr "Domínios de pesquisa:"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
 #: editor/settings/ui/ipv4.ui:173 editor/settings/ui/ipv6.ui:280
 #: editorqml/qml/ipv4/IPv4Settings.qml:96
+#: editorqml/qml/ipv6/IPv6Settings.qml:96
 #, kde-format
 msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
@@ -1828,6 +1833,7 @@ msgstr ""
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:180 editor/settings/ui/ipv6.ui:287
 #: editorqml/qml/ipv4/IPv4Settings.qml:110
+#: editorqml/qml/ipv6/IPv6Settings.qml:110
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
 msgstr "Editar a lista de domínio de pesquisa que está sendo pesquisada"
@@ -1856,6 +1862,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
 #: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:379
 #: editorqml/qml/ipv4/IPv4Settings.qml:129
+#: editorqml/qml/ipv6/IPv6Settings.qml:132
 #, kde-format
 msgid "Route Metric:"
 msgstr "Métrica de rota:"
@@ -1882,8 +1889,9 @@ msgstr ""
 #: editor/settings/ui/ipv4.ui:270 editor/settings/ui/ipv6.ui:97
 #: editorqml/qml/ipv4/IPv4Settings.qml:289
 #: editorqml/qml/ipv4/SearchDomainList.qml:99
+#: editorqml/qml/ipv6/IPv6Settings.qml:301
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:98
-#: editorqml/qml/wifisecurity/DnsList.qml:100
+#: editorqml/qml/wifisecurity/DnsList.qml:97
 #, kde-format
 msgid "Remove"
 msgstr "Remover"
@@ -1892,8 +1900,9 @@ msgstr "Remover"
 #: editor/settings/ui/ipv4.ui:280 editor/settings/ui/ipv6.ui:107
 #: editorqml/qml/ipv4/IPv4Settings.qml:281
 #: editorqml/qml/ipv4/SearchDomainList.qml:85
+#: editorqml/qml/ipv6/IPv6Settings.qml:293
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:84
-#: editorqml/qml/wifisecurity/DnsList.qml:86
+#: editorqml/qml/wifisecurity/DnsList.qml:83
 #, kde-format
 msgid "Add"
 msgstr "Adicionar"
@@ -1945,13 +1954,14 @@ msgstr ""
 "de IPv6 falhar, mas a configuração de IPv4 for concluída com sucesso"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
-#: editor/settings/ui/ipv6.ui:33
+#: editor/settings/ui/ipv6.ui:33 editorqml/qml/ipv6/IPv6Settings.qml:320
 #, kde-format
 msgid "IPv6 is required for this connection"
 msgstr "O IPv6 é necessário para esta conexão"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv6.ui:83 editorqml/qml/ipv4/IPv4Settings.qml:73
+#: editorqml/qml/ipv6/IPv6Settings.qml:73
 #, kde-format
 msgid "Edit the list of DNS servers"
 msgstr "Editar a lista de servidores DNS"
@@ -1990,7 +2000,7 @@ msgid "Enabled (prefer temporary addresses)"
 msgstr "Ativado (preferir endereços temporários)"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:230
+#: editor/settings/ui/ipv6.ui:230 editorqml/qml/ipv6/IPv6Settings.qml:37
 #, kde-format
 msgid ""
 "How to configure the IPv6 address:\n"
@@ -2029,7 +2039,7 @@ msgid "Ignored"
 msgstr "Ignorado"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
-#: editor/settings/ui/ipv6.ui:341
+#: editor/settings/ui/ipv6.ui:341 editorqml/qml/ipv6/IPv6Settings.qml:115
 #, kde-format
 msgid "Privacy:"
 msgstr "Privacidade:"
@@ -4074,7 +4084,7 @@ msgstr "Editar rotas IPv4"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
-#: editorqml/qml/ipv4/IPv4Routes.qml:216
+#: editorqml/qml/ipv4/IPv4Routes.qml:216 editorqml/qml/ipv6/IPv6Routes.qml:237
 #, kde-format
 msgid ""
 "If enabled, this connection will never be used as the default network "
@@ -4084,7 +4094,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
-#: editorqml/qml/ipv4/IPv4Routes.qml:208
+#: editorqml/qml/ipv4/IPv4Routes.qml:208 editorqml/qml/ipv6/IPv6Routes.qml:229
 #, kde-format
 msgid "Use only for resources on this connection"
 msgstr "Usar apenas para recursos desta conexão"
@@ -4105,7 +4115,7 @@ msgstr "Adicionar"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:136 editor/widgets/ui/ipv6routes.ui:120
-#: editorqml/qml/ipv4/IPv4Routes.qml:202
+#: editorqml/qml/ipv4/IPv4Routes.qml:202 editorqml/qml/ipv6/IPv6Routes.qml:223
 #, kde-format
 msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
@@ -4116,13 +4126,13 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
-#: editorqml/qml/ipv4/IPv4Routes.qml:194
+#: editorqml/qml/ipv4/IPv4Routes.qml:194 editorqml/qml/ipv6/IPv6Routes.qml:215
 #, kde-format
 msgid "Ignore automatically obtained routes"
 msgstr "Ignorar as rotas obtidas automaticamente"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp6Config)
-#: editor/widgets/ui/ipv6routes.ui:20
+#: editor/widgets/ui/ipv6routes.ui:20 editorqml/qml/ipv6/IPv6Routes.qml:18
 #, kde-format
 msgid "Edit IPv6 Routes"
 msgstr "Editar rotas IPv6"
@@ -4244,18 +4254,20 @@ msgstr "255.255.255.0"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:129
 #: editorqml/qml/ipv4/IPv4Settings.qml:258
+#: editorqml/qml/ipv6/IPv6Routes.qml:133
+#: editorqml/qml/ipv6/IPv6Settings.qml:261
 #, kde-format
 msgctxt "@info:placeholder optional field"
 msgid "Optional"
 msgstr "Opcional"
 
-#: editorqml/qml/ipv4/IPv4Routes.qml:170
+#: editorqml/qml/ipv4/IPv4Routes.qml:170 editorqml/qml/ipv6/IPv6Routes.qml:191
 #, kde-format
 msgctxt "@action:button Insert a row"
 msgid "Add"
 msgstr "Adicionar"
 
-#: editorqml/qml/ipv4/IPv4Routes.qml:177
+#: editorqml/qml/ipv4/IPv4Routes.qml:177 editorqml/qml/ipv6/IPv6Routes.qml:198
 #, kde-format
 msgctxt "@action:button Remove a selected row"
 msgid "Remove"
@@ -4280,6 +4292,7 @@ msgid "Link-Local"
 msgstr "Link local"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
+#: editorqml/qml/ipv6/IPv6Settings.qml:29
 #, kde-format
 msgctxt "@item:inlistbox like in use Manual configuration"
 msgid "Manual"
@@ -4292,12 +4305,14 @@ msgid "Shared to other computers"
 msgstr "Compartilhado com outros computadores"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
+#: editorqml/qml/ipv6/IPv6Settings.qml:29
 #, kde-format
 msgctxt "@item:inlistbox like in this setting is Disabled"
 msgid "Disabled"
 msgstr "Desabilitado"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:78
+#: editorqml/qml/ipv6/IPv6Settings.qml:78
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Search Domains:"
@@ -4315,6 +4330,7 @@ msgstr ""
 "para personalizar as opções e reservas DHCP."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:155
+#: editorqml/qml/ipv6/IPv6Settings.qml:158
 #, kde-format
 msgid ""
 "A score that helps choose the best path for data packets to reach their "
@@ -4331,6 +4347,7 @@ msgstr ""
 "métrica real da rota."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
+#: editorqml/qml/ipv6/IPv6Settings.qml:165
 #, kde-format
 msgid "Addresses"
 msgstr "Endereços"
@@ -4351,6 +4368,7 @@ msgid "Advanced…"
 msgstr "Avançado…"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:332
+#: editorqml/qml/ipv6/IPv6Settings.qml:346
 #, kde-format
 msgctxt "@action:button"
 msgid "Routes…"
@@ -4363,17 +4381,132 @@ msgstr "Domínios de pesquisa"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:107
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:106
-#: editorqml/qml/wifisecurity/DnsList.qml:108
+#: editorqml/qml/wifisecurity/DnsList.qml:105
 #, kde-format
 msgid "Move Up"
 msgstr "Mover acima"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:120
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:119
-#: editorqml/qml/wifisecurity/DnsList.qml:121
+#: editorqml/qml/wifisecurity/DnsList.qml:118
 #, kde-format
 msgid "Move Down"
 msgstr "Mover abaixo"
+
+#: editorqml/qml/ipv6/IPv6Routes.qml:129
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "2001:db8::"
+msgstr ""
+
+#: editorqml/qml/ipv6/IPv6Routes.qml:131
+#: editorqml/qml/ipv6/IPv6Settings.qml:259
+#, fuzzy, kde-format
+#| msgid "4"
+msgctxt "@info:placeholder IPv6 prefix length"
+msgid "64"
+msgstr "4"
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:29
+#, fuzzy, kde-format
+#| msgid "Automatic"
+msgctxt "@item:inlistbox IPv6 method"
+msgid "Automatic"
+msgstr "Automático"
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:29
+#, fuzzy, kde-format
+#| msgid "Automatic (Only addresses)"
+msgctxt "@item:inlistbox IPv6 method"
+msgid "Automatic (Only addresses)"
+msgstr "Automático (apenas endereços)"
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:29
+#, fuzzy, kde-format
+#| msgid "Automatic (Only DHCP)"
+msgctxt "@item:inlistbox IPv6 method"
+msgid "Automatic (Only DHCP)"
+msgstr "Automático (apenas DHCP)"
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:29
+#, fuzzy, kde-format
+#| msgid "Link-Local"
+msgctxt "@item:inlistbox IPv6 method"
+msgid "Link-Local"
+msgstr "Link local"
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:29
+#, fuzzy, kde-format
+#| msgctxt "like in this setting is Disabled"
+#| msgid "Ignored"
+msgctxt "@item:inlistbox like in this setting is Ignored"
+msgid "Ignored"
+msgstr "Ignorado"
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:120
+#, fuzzy, kde-format
+#| msgid "Default"
+msgctxt "@item:inlistbox IPv6 privacy extensions left to NetworkManager"
+msgid "Default"
+msgstr "Padrão"
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:120
+#, fuzzy, kde-format
+#| msgid "Disabled"
+msgctxt "@item:inlistbox privacy disabled"
+msgid "Disabled"
+msgstr "Desabilitado"
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:120
+#, fuzzy, kde-format
+#| msgid "Enabled (prefer public address)"
+msgctxt "@item:inlistbox IPv6 privacy extensions"
+msgid "Enabled (prefer public address)"
+msgstr "Ativado (preferir endereço público)"
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:120
+#, fuzzy, kde-format
+#| msgid "Enabled (prefer temporary addresses)"
+msgctxt "@item:inlistbox IPv6 privacy extensions"
+msgid "Enabled (prefer temporary addresses)"
+msgstr "Ativado (preferir endereços temporários)"
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:128
+#, fuzzy, kde-format
+#| msgid ""
+#| "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
+#| "enabled, it makes the kernel generate\n"
+#| "a temporary IPv6 address in addition to the public one generated from MAC "
+#| "address via modified EUI-64."
+msgid ""
+"Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
+"enabled, it makes the kernel generate a temporary IPv6 address in addition "
+"to the public one generated from MAC address via modified EUI-64."
+msgstr ""
+"Configura as extensões de privacidade IPv6 para o SLAAC, descritas no "
+"RFC4941. Se estiverem ativas, faz com\n"
+"que o kernel gere um endereço IPv6 temporário, além do público gerado a "
+"partir do endereço MAC com o EUI-64 modificado."
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:257
+#, kde-format
+msgctxt "@info:placeholder"
+msgid "2001:db8::1"
+msgstr ""
+
+#: editorqml/qml/ipv6/IPv6Settings.qml:330
+#, fuzzy, kde-format
+#| msgid ""
+#| "When connecting to IPv4-capable networks, allows the connection to "
+#| "complete if\n"
+#| "IPv6 configuration fails but IPv4 configuration succeeds"
+msgid ""
+"When connecting to IPv4-capable networks, allows the connection to complete "
+"if IPv6 configuration fails but IPv4 configuration succeeds"
+msgstr ""
+"Ao conectar a redes com suporte a IPv4, permite concluir a conexão se a "
+"configuração\n"
+"de IPv6 falhar, mas a configuração de IPv4 for concluída com sucesso"
 
 #: editorqml/qml/PasswordField.qml:95
 #, kde-format
@@ -4580,6 +4713,7 @@ msgid "N/A"
 msgstr "N/D"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:105
+#: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:107
 #, kde-format
 msgctxt "@title:column"
 msgid "Address"
@@ -4592,16 +4726,26 @@ msgid "Netmask"
 msgstr "Máscara de rede"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:109
+#: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:111
 #, kde-format
 msgctxt "@title:column"
 msgid "Gateway"
 msgstr "Gateway"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:111
+#: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:113
 #, kde-format
 msgctxt "@title:column"
 msgid "Metric"
 msgstr "Métrica"
+
+#: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:109
+#, fuzzy, kde-format
+#| msgctxt "Header text for IPv6 prefix"
+#| msgid "Prefix"
+msgctxt "@title:column IPv6 prefix length"
+msgid "Prefix"
+msgstr "Prefixo"
 
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
 #, kde-format

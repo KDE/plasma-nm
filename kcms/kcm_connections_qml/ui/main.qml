@@ -25,6 +25,11 @@ Kirigami.Page {
         id: wireless
         PlasmaNMQ.Wireless {}
     }
+
+    Component {
+        id: wired
+        PlasmaNMQ.Wired {}
+    }
     Component {
         id: disconnected
 
@@ -283,6 +288,8 @@ Kirigami.Page {
                     switch (kcm.connectionType) {
                     case PlasmaNM.Enums.Wireless:
                         return wireless;
+                    case PlasmaNM.Enums.Wired:
+                        return wired;
                     default:
                         return disconnected;
                     }

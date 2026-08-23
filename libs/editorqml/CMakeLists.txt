@@ -21,6 +21,8 @@ set(SETTINGS_SRCS
   settings/ipv6settings/ipv6settings.h
   settings/ipv6settings/ipv6routetablemodel.cpp
   settings/ipv6settings/ipv6routetablemodel.h
+  settings/wiredconnectionsettings/wiredsettings.h
+  settings/wiredconnectionsettings/wiredsettings.cpp
 )
 
 set(QML_SRCS
@@ -47,6 +49,7 @@ set(QML_SRCS
   qml/wifisecurity/AlternativeSubjectMatch.qml
 
   qml/components/Wireless.qml
+  qml/components/Wired.qml
 
   qml/PasswordPromptDialog.qml
 
@@ -64,6 +67,8 @@ set(QML_SRCS
 
   qml/ipv6/IPv6Settings.qml
   qml/ipv6/IPv6Routes.qml
+
+  qml/wiredconnectionsettings/WiredConnectionSettings.qml
 )
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})
@@ -127,6 +132,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/wificonnectionsettings
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/ipv4settings
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/ipv6settings
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/wiredconnectionsettings
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

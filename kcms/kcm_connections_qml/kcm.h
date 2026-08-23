@@ -16,6 +16,7 @@
 #include "security8021xsetting.h"
 #include "wifisecuritysetting.h"
 #include "wifisetting.h"
+#include "wiredsettings.h"
 
 #include <KQuickConfigModule>
 #include <NetworkManagerQt/Connection>
@@ -34,6 +35,7 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(Enums::ConnectionType connectionType READ connectionType NOTIFY connectionTypeChanged)
     Q_PROPERTY(GeneralSetting *generalSettings READ generalSettings CONSTANT)
     Q_PROPERTY(WifiSetting *wifiSetting READ wifiSetting CONSTANT)
+    Q_PROPERTY(WiredSetting *wiredSetting READ wiredSetting CONSTANT)
     Q_PROPERTY(IPv4Settings *ipv4Settings READ ipv4Settings CONSTANT)
     Q_PROPERTY(IPv6Settings *ipv6Settings READ ipv6Settings CONSTANT)
 
@@ -48,6 +50,7 @@ public:
     ConnectionStatus *connectionStatus() const;
     GeneralSetting *generalSettings() const;
     WifiSetting *wifiSetting() const;
+    WiredSetting *wiredSetting() const;
     IPv4Settings *ipv4Settings() const;
     IPv6Settings *ipv6Settings() const;
     bool useApMode() const;
@@ -88,6 +91,7 @@ private:
     void kcmChanged(bool kcmChanged);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void resetSelection();
+    void applyTypeSettings(NMVariantMapMap &map, NetworkManager::ConnectionSettings::ConnectionType type);
 
     // ImportResult importVpn();
     // ImportResult importVpnFile(const QString &fileName);
@@ -103,6 +107,7 @@ private:
     ConnectionStatus *const m_connectionStatus;
     GeneralSetting *const m_generalSettings;
     WifiSetting *const m_wifiSetting;
+    WiredSetting *const m_wiredSetting;
     IPv4Settings *const m_ipv4Settings;
     IPv6Settings *const m_ipv6Settings;
 

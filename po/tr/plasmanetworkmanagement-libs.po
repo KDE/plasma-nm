@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-22 00:48+0000\n"
-"PO-Revision-Date: 2026-08-17 19:01+0300\n"
+"PO-Revision-Date: 2026-08-22 21:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -1247,7 +1247,7 @@ msgstr "Anonim kimlik:"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:33
 #, kde-format
 msgid "Automatic PAC provisioning"
-msgstr "Kendiliğinden PAC sağlama"
+msgstr "Otomatik PAC sağlama"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:373
@@ -1335,7 +1335,7 @@ msgstr "PEAP sürümü:"
 #, kde-format
 msgctxt "PEAP version"
 msgid "Automatic"
-msgstr "Kendiliğinden"
+msgstr "Otomatik"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:636
@@ -1527,7 +1527,7 @@ msgid ""
 "The higher number means higher priority. A negative number can be used to "
 "indicate priority lower than the default."
 msgstr ""
-"Kendiliğinden bağlantı ayarlanırsa daha yüksek öncelikli bağlantılar tercih "
+"Otomatik bağlantı ayarlanırsa daha yüksek öncelikli bağlantılar tercih "
 "edilir. Öntanımlı değer 0’dır.\n"
 "Daha yüksek sayı, daha yüksek öncelik anlamına gelir. Negatif sayı "
 "kullanımı, öntanımlıdan daha düşük önceliği belirtmek için kullanılabilir."
@@ -1569,7 +1569,7 @@ msgstr "Gelişmiş…"
 #: editorqml/qml/generalSettings/GeneralSettings.qml:91
 #, kde-format
 msgid "Automatically connect to VPN"
-msgstr "VPN’e kendiliğinden bağlan"
+msgstr "VPN’e otomatik olarak bağlan"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, vpnCombobox)
 #: editor/settings/ui/connectionwidget.ui:95
@@ -1620,7 +1620,7 @@ msgstr ""
 #, kde-format
 msgctxt "Item in the Metered: list"
 msgid "Automatic"
-msgstr "Kendiliğinden"
+msgstr "Otomatik"
 
 #. i18n: ectx: property (title), widget (QGroupBox, basicGroup)
 #: editor/settings/ui/gsm.ui:18
@@ -1693,7 +1693,7 @@ msgstr "MTU:"
 #, kde-format
 msgctxt "MTU:"
 msgid "Automatic"
-msgstr "Kendiliğinden"
+msgstr "Otomatik"
 
 #. i18n: ectx: property (suffix), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:83
@@ -1733,8 +1733,8 @@ msgid ""
 "• Disabled: turn off IPv4"
 msgstr ""
 "IPv4 adresi nasıl yapılandırılır:\n"
-"• Kendiliğinden: Adresi ve DNS’yi DHCP aracılığıyla kendiliğinden al\n"
-"• Kendiliğinden (Yalnızca adresler): Adresi DHCP ile al; ancak DNS’yi elle "
+"• Otomatik: Adresi ve DNS’yi DHCP aracılığıyla kendiliğinden al\n"
+"• Otomatik (Yalnızca adresler): Adresi DHCP ile al; ancak DNS’yi elle "
 "yapılandır\n"
 "• Yerel bağlantı: Otomatik yerel bağlantı adreslemesini kullan (169.254.x."
 "x)\n"
@@ -1748,13 +1748,13 @@ msgstr ""
 #, kde-format
 msgctxt "Method:"
 msgid "Automatic"
-msgstr "Kendiliğinden"
+msgstr "Otomatik"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:63 editor/settings/ui/ipv6.ui:239
 #, kde-format
 msgid "Automatic (Only addresses)"
-msgstr "Kendiliğinden (Yalnızca adresler)"
+msgstr "Otomatik (Yalnızca adresler)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:68 editor/settings/ui/ipv6.ui:249
@@ -2009,12 +2009,11 @@ msgid ""
 "• Disabled: turn off IPv6 completely"
 msgstr ""
 "IPv6 adresi nasıl yapılandırılır:\n"
-"• Kendiliğinden: Adresi ve DNS’yi kendiliğinden al (SLAAC ve/veya DHCPv6 "
-"ile)\n"
-"• Kendiliğinden (Yalnızca adresler): Adresi kendiliğinden al; ancak DNS’yi "
-"elle yapılandır\n"
-"• Kendiliğinden (Yalnızca DHCP): Adresi ve DNS’yi DHCPv6 ile kendiliğinden "
-"al (SLAAC’i yok say)\n"
+"• Otomatik: Adresi ve DNS’yi kendiliğinden al (SLAAC ve/veya DHCPv6 ile)\n"
+"• Otomatik (Yalnızca adresler): Adresi kendiliğinden al; ancak DNS’yi elle "
+"yapılandır\n"
+"• Otomatik (Yalnızca DHCP): Adresi ve DNS’yi DHCPv6 ile kendiliğinden al "
+"(SLAAC’i yok say)\n"
 "• Yerel bağlantı: Otomatik yerel bağlantı adreslemesini kullan (fe80::/10)\n"
 "• Elle: Statik bir IP adresi gir\n"
 "• Yok sayılmış: IPv6 yapılandırmasını atla; ancak bağlantıya izin ver• Devre "
@@ -2024,7 +2023,7 @@ msgstr ""
 #: editor/settings/ui/ipv6.ui:244
 #, kde-format
 msgid "Automatic (Only DHCP)"
-msgstr "Kendiliğinden (Yalnızca DHCP)"
+msgstr "Otomatik (Yalnızca DHCP)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:259
@@ -2282,7 +2281,7 @@ msgstr ""
 #, kde-format
 msgctxt "Band:"
 msgid "Automatic"
-msgstr "Kendiliğinden"
+msgstr "Otomatik"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:192
@@ -2609,7 +2608,7 @@ msgid ""
 msgstr ""
 "Aygıt bağlantı pazarlığı. Eğer “Elle” seçilmişse “Hız” ve “Çift Yönlü”\n"
 "değerleri aygıt uyumluluğu denetlenmeden zorlanacaktır. Emin değilseniz\n"
-"burada “Yok Say”ı bırakın ve “Kendiliğinden”i seçin."
+"burada “Yok Say”ı bırakın ve “Otomatik”i seçin."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -2622,7 +2621,7 @@ msgstr "Yok say"
 #, kde-format
 msgctxt "Link negotiation:"
 msgid "Automatic"
-msgstr "Kendiliğinden"
+msgstr "Otomatik"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:202
@@ -2736,7 +2735,7 @@ msgid ""
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
 "İsteğe bağlı.\n"
-"Dinlenecek kapı numarası. “Kendiliğinden” ise rastgele seçilir."
+"Dinlenecek kapı numarası. “Otomatik” ise rastgele seçilir."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:72
@@ -2779,7 +2778,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:108
 #, kde-format
 msgid "Autoroute peers:"
-msgstr "Kendiliğinden rota eşleri:"
+msgstr "Otomatik rota eşleri:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:116
@@ -2963,7 +2962,7 @@ msgstr "Bu Eşi Kaldır"
 #, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
-msgstr "Kendiliğinden"
+msgstr "Otomatik"
 
 #: editor/settings/wificonnectionwidget.cpp:263
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:315
@@ -4179,7 +4178,7 @@ msgstr "İzin Verilen Kullanıcılar"
 #, kde-format
 msgctxt "@item metered mode"
 msgid "Automatic"
-msgstr "Kendiliğinden"
+msgstr "Otomatik"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:18
 #, kde-format
@@ -4386,116 +4385,95 @@ msgstr "Aşağı Taşı"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "2001:db8::"
-msgstr ""
+msgstr "2001:db8::"
 
 #: editorqml/qml/ipv6/IPv6Routes.qml:131
 #: editorqml/qml/ipv6/IPv6Settings.qml:259
-#, fuzzy, kde-format
-#| msgid "4"
+#, kde-format
 msgctxt "@info:placeholder IPv6 prefix length"
 msgid "64"
-msgstr "4"
+msgstr "64"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic"
-msgstr "Kendiliğinden"
+msgstr "Otomatik"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic (Only addresses)"
-msgstr "Kendiliğinden (Yalnızca adresler)"
+msgstr "Otomatik (Yalnızca adresler)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only DHCP)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic (Only DHCP)"
-msgstr "Kendiliğinden (Yalnızca DHCP)"
+msgstr "Otomatik (Yalnızca DHCP)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Link-Local"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Link-Local"
 msgstr "Yerel bağlantı"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@item:inlistbox like in this setting is Ignored"
 msgid "Ignored"
 msgstr "Yok sayılmış"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions left to NetworkManager"
 msgid "Default"
 msgstr "Öntanımlı"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox privacy disabled"
 msgid "Disabled"
 msgstr "Devre dışı"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Enabled (prefer public address)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions"
 msgid "Enabled (prefer public address)"
 msgstr "Etkin (genel adresi tercih et)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Enabled (prefer temporary addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions"
 msgid "Enabled (prefer temporary addresses)"
 msgstr "Etkin (geçici adresleri tercih et)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:128
-#, fuzzy, kde-format
-#| msgid ""
-#| "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-#| "enabled, it makes the kernel generate\n"
-#| "a temporary IPv6 address in addition to the public one generated from MAC "
-#| "address via modified EUI-64."
+#, kde-format
 msgid ""
 "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
 "enabled, it makes the kernel generate a temporary IPv6 address in addition "
 "to the public one generated from MAC address via modified EUI-64."
 msgstr ""
-"RFC4941 de tanımlandığı gibi SLAAC için IPv6 Gizlilik Eklentisini "
-"yapılandır. Etkinse, MAC adresinden değiştirilmiş EUI-64\n"
-"vasıtasıyla üretilen adrese ek olarak, kernele geçici bir IPv6 adresi "
-"aldırıacaktır."
+"RFC4941 de tanımlandığı gibi, SLAAC için IPv6 Gizlilik Eklentisini "
+"yapılandırın. Etkinse MAC adresinden değiştirilmiş EUI-64 aracılığıyla "
+"üretilen adrese ek olarak, çekirdeğe geçici bir IPv6 adresi aldıracaktır."
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:257
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "2001:db8::1"
-msgstr ""
+msgstr "2001:db8::1"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:330
-#, fuzzy, kde-format
-#| msgid ""
-#| "When connecting to IPv4-capable networks, allows the connection to "
-#| "complete if\n"
-#| "IPv6 configuration fails but IPv4 configuration succeeds"
+#, kde-format
 msgid ""
 "When connecting to IPv4-capable networks, allows the connection to complete "
 "if IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
-"IPv4 destekli ağlara bağlanırken, IPv6 yapılandırması başarısız olmasına "
-"rağmen\n"
-"IPv4 yapılandırması başarılı olduğunda, bağlantının kurulmasına olanak sağlar"
+"IPv4 destekli ağlara bağlanırken, IPv6 yapılandırması başarısız olsa bile "
+"IPv4 yapılandırması başarılı olduğunda, bağlantının kurulmasına olanak "
+"sağlar."
 
 #: editorqml/qml/PasswordField.qml:95
 #, kde-format
@@ -4631,7 +4609,7 @@ msgstr "*.der *.pem *.crt *.cer"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:61
 #, kde-format
 msgid "Automatic"
-msgstr "Kendiliğinden"
+msgstr "Otomatik"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:103
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:166
@@ -4729,9 +4707,7 @@ msgid "Metric"
 msgstr "Metrik"
 
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv6 prefix"
-#| msgid "Prefix"
+#, kde-format
 msgctxt "@title:column IPv6 prefix length"
 msgid "Prefix"
 msgstr "Önek"

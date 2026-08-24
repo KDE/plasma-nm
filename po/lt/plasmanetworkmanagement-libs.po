@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-09 02:39+0000\n"
-"PO-Revision-Date: 2026-07-19 01:41+0300\n"
+"PO-Revision-Date: 2026-08-23 15:43+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -1926,7 +1926,7 @@ msgstr ""
 "• Tik vietinis (Link-Local): naudoti automatinį vietinį adresavimą "
 "(fe80::/10)\n"
 "• Rankinis: įvesti statinį IP adresą\n"
-"• Nepaisoma: praleisti IPv6 konfigūraciją, bet leisti ryšį\n"
+"• Nepaisomas: praleisti IPv6 konfigūraciją, bet leisti ryšį\n"
 "• Išjungtas: visiškai išjungti IPv6"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
@@ -1940,7 +1940,7 @@ msgstr "Automatinis (tik DHCP)"
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
-msgstr "Nepaisoma"
+msgstr "Nepaisomas"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
 #: editor/settings/ui/ipv6.ui:341

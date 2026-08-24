@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-22 00:48+0000\n"
+"POT-Creation-Date: 2026-08-24 00:47+0000\n"
 "PO-Revision-Date: 2026-08-22 07:32+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -673,7 +673,8 @@ msgstr "Ekipa"
 msgid "Device"
 msgstr "Naprava"
 
-#: editor/connectiondetails.cpp:321 editorqml/qml/components/Wireless.qml:24
+#: editor/connectiondetails.cpp:321 editorqml/qml/components/Wired.qml:24
+#: editorqml/qml/components/Wireless.qml:24
 #: editorqml/qml/ConfigurationDialog.qml:34
 #, kde-format
 msgid "General"
@@ -700,6 +701,7 @@ msgid "IPv4 Secondary Nameserver"
 msgstr "Sekundarni imenski strežnik IPv4"
 
 #: editor/connectiondetails.cpp:352 editor/connectioneditorbase.cpp:313
+#: editorqml/qml/components/Wired.qml:33
 #: editorqml/qml/components/Wireless.qml:33
 #, kde-format
 msgid "IPv4"
@@ -731,6 +733,7 @@ msgid "IPv6 Secondary Nameserver"
 msgstr "Sekundarni imenski strežnik IPv6"
 
 #: editor/connectiondetails.cpp:386 editor/connectioneditorbase.cpp:331
+#: editorqml/qml/components/Wired.qml:36
 #: editorqml/qml/components/Wireless.qml:36
 #, kde-format
 msgid "IPv6"
@@ -749,11 +752,12 @@ msgid "General"
 msgstr "Splošno"
 
 #: editor/connectioneditorbase.cpp:222 editor/connectioneditorbase.cpp:248
+#: editorqml/qml/components/Wired.qml:27
 #, kde-format
 msgid "Wired"
 msgstr "Žično"
 
-#: editor/connectioneditorbase.cpp:225
+#: editor/connectioneditorbase.cpp:225 editorqml/qml/components/Wired.qml:30
 #, kde-format
 msgid "802.1x Security"
 msgstr "Varnost 802.1x"
@@ -1671,6 +1675,7 @@ msgstr "Način prenosa:"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/infiniband.ui:41
 #: editor/settings/ui/wiredconnectionwidget.ui:23
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:21
 #, kde-format
 msgid "Restrict to device:"
 msgstr "Omeji na napravo:"
@@ -1683,6 +1688,7 @@ msgstr "Omeji na napravo:"
 #: editor/settings/ui/wiredconnectionwidget.ui:89
 #: editor/settings/ui/wireguardinterfacewidget.ui:89
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:219
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:85
 #, kde-format
 msgid "MTU:"
 msgstr "MTU:"
@@ -2340,6 +2346,7 @@ msgstr ""
 #: editor/settings/ui/wificonnectionwidget.ui:258
 #: editor/settings/ui/wiredconnectionwidget.ui:47
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:197
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:60
 #, kde-format
 msgid "Cloned MAC address:"
 msgstr "Kloniran naslov MAC:"
@@ -2355,6 +2362,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:292
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:212
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:78
 #, kde-format
 msgid "Random…"
 msgstr "Naključen…"
@@ -2561,12 +2569,14 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:128
 #, kde-format
 msgid "Speed:"
 msgstr "Hitrost:"
 
 #. i18n: ectx: property (text), widget (QLabel, duplexLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:132
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:154
 #, kde-format
 msgid "Duplex:"
 msgstr "Dvosmerno:"
@@ -2595,6 +2605,7 @@ msgstr "Polno"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:111
 #, kde-format
 msgid "Link negotiation:"
 msgstr "Pogajanje za povezavo:"
@@ -2639,48 +2650,56 @@ msgstr "Zahtevek, da naprava uporablja le navedeno hitrost."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:226
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:132
 #, kde-format
 msgid "10 Mb/s"
 msgstr "10 Mb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:231
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:133
 #, kde-format
 msgid "100 Mb/s"
 msgstr "100 Mb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:236
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:134
 #, kde-format
 msgid "1 Gb/s"
 msgstr "1 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:241
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:135
 #, kde-format
 msgid "2.5 Gb/s"
 msgstr "2.5 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:246
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:136
 #, kde-format
 msgid "5 Gb/s"
 msgstr "5 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:251
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:137
 #, kde-format
 msgid "10 Gb/s"
 msgstr "10 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:256
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:138
 #, kde-format
 msgid "40 Gb/s"
 msgstr "40 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:261
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:139
 #, kde-format
 msgid "100 Gb/s"
 msgstr "100 Gb/s"
@@ -4144,6 +4163,7 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Izberite vrsto povezave"
 
+#: editorqml/qml/components/Wired.qml:21
 #: editorqml/qml/components/Wireless.qml:21
 #, kde-format
 msgid "Status"
@@ -4549,12 +4569,15 @@ msgstr "Samodejno"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:229
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:232
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:95
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:98
 #, kde-format
 msgctxt "@item MTU is automatically determined"
 msgid "Automatic"
 msgstr "Samodejno"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:229
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:95
 #, kde-format
 msgctxt "@item:intext MTU size, %1 is the number of bytes"
 msgid "%1 bytes"
@@ -4675,6 +4698,111 @@ msgstr "Osebni WPA2/WPA3"
 #, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "Podjetniški WPA2/WPA3"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
+#, fuzzy, kde-format
+#| msgid ""
+#| "This option locks this connection to the network device specified by its\n"
+#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+msgid ""
+"This option locks this connection to the network device specified by its "
+"permanent MAC address entered here. Example: 00:11:22:33:44:55"
+msgstr ""
+"Ta možnost zaklene to povezavo na omrežno napravo, ki je tukaj navedena\n"
+"s strojnim naslovom. Primer: 00:11:22:33:44:55"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
+#, fuzzy, kde-format
+#| msgid ""
+#| "The MAC address entered here will be used as hardware address for the\n"
+#| "network device this connection is activated on. This feature is known as "
+#| "MAC\n"
+#| "cloning or spoofing. Example 11:22:33:44:55"
+msgid ""
+"The MAC address entered here will be used as hardware address for the "
+"network device this connection is activated on. This feature is known as MAC "
+"cloning or spoofing. Example: 11:22:33:44:55:66"
+msgstr ""
+"Tukaj vnesen strojni naslov bo uporabljen kot strojni naslov za omrežno\n"
+"napravo, na kateri bo omogočena povezava. Ta zmožnost je znana kot\n"
+"podvojevanje strojnega naslova (spoofing). Primer 11:22:33:44:55"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
+#, fuzzy, kde-format
+#| msgid ""
+#| "Only transmit packets of the specified size or smaller, breaking larger "
+#| "packets up\n"
+#| "into multiple Ethernet frames"
+msgid ""
+"Only transmit packets of the specified size or smaller, breaking larger "
+"packets up into multiple Ethernet frames"
+msgstr ""
+"Pošlji samo pakete navedene velikosti ali manjše, večje pakete pa razdeli\n"
+"v več podatkovnih okvirjev"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
+#, fuzzy, kde-format
+#| msgid "Ignore"
+msgctxt "@item:inlistbox link negotiation"
+msgid "Ignore"
+msgstr "Prezri"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
+#, fuzzy, kde-format
+#| msgid "Automatic"
+msgctxt "@item:inlistbox link negotiation"
+msgid "Automatic"
+msgstr "Samodejno"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
+#, fuzzy, kde-format
+#| msgid "Manual"
+msgctxt "@item:inlistbox link negotiation"
+msgid "Manual"
+msgstr "Ročno"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
+#| "values will be forced without checking\n"
+#| "the device compatibility. If unsure, leave here “Ignore” or pick "
+#| "“Automatic”."
+msgid ""
+"Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
+"will be forced without checking the device compatibility. If unsure, leave "
+"here “Ignore” or pick “Automatic”."
+msgstr ""
+"Pogajanje o povezavi z napravo. Če izberete \"Ročno\", bodo izbrane "
+"vrednosti \"Hitrost\" in \"Dupleks\"brez preverjanja\n"
+"združljivost naprave. Če niste prepričani, pustite \"Prezri\" ali izberite "
+"\"Avtomatsko\"."
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
+#, fuzzy, kde-format
+#| msgid "Half"
+msgctxt "@item:inlistbox duplex mode"
+msgid "Half"
+msgstr "Polovično"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
+#, fuzzy, kde-format
+#| msgid "Full"
+msgctxt "@item:inlistbox duplex mode"
+msgid "Full"
+msgstr "Polno"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
+#, fuzzy, kde-format
+#| msgid ""
+#| "Request that the device use the specified duplex mode. Either \"half\" or "
+#| "\"full\""
+msgid ""
+"Request that the device use the specified duplex mode. Either “Half” or "
+"“Full”"
+msgstr ""
+"Zahtevaj, da naprava uporablja le naveden dvosmerni način. Vnesite \"half\" "
+"ali \"full\""
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
 #, kde-format

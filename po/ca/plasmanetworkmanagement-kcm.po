@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-07-16 00:46+0000\n"
+"POT-Creation-Date: 2026-08-24 00:47+0000\n"
 "PO-Revision-Date: 2026-07-16 10:59+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -201,28 +201,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Disponible"
 
-#: qml/main.qml:148 ui/main.qml:207
+#: qml/main.qml:148 ui/main.qml:212
 msgid "Add new connection"
 msgstr "Afegeix una connexió nova"
 
-#: qml/main.qml:166 ui/main.qml:225
+#: qml/main.qml:166 ui/main.qml:230
 msgid "Remove selected connection"
 msgstr "Elimina la connexió seleccionada"
 
-#: qml/main.qml:184 ui/main.qml:243
+#: qml/main.qml:184 ui/main.qml:248
 msgid "Export selected connection"
 msgstr "Exporta la connexió seleccionada"
 
-#: qml/main.qml:209 ui/main.qml:179
+#: qml/main.qml:209 ui/main.qml:184
 msgid "Configuration"
 msgstr "Configuració"
 
-#: qml/main.qml:236 ui/main.qml:302
+#: qml/main.qml:236 ui/main.qml:309
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Elimina la connexió"
 
-#: qml/main.qml:237 ui/main.qml:303
+#: qml/main.qml:237 ui/main.qml:310
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Voleu eliminar la connexió «%1»?"
 
@@ -256,11 +256,11 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "La contrasenya cal que tingui entre 8 i 64 caràcters"
 
-#: ui/main.qml:36
+#: ui/main.qml:41
 msgid "Disconnected"
 msgstr "Desconnectat"
 
-#: ui/main.qml:267
+#: ui/main.qml:272
 msgid "Connection name:"
 msgstr "Nom de la connexió:"
 

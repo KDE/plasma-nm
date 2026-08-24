@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-22 00:48+0000\n"
-"PO-Revision-Date: 2026-08-20 20:29+0200\n"
+"POT-Creation-Date: 2026-08-24 00:47+0000\n"
+"PO-Revision-Date: 2026-08-23 14:57+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -23,7 +23,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Accelerator-Marker: &\n"
 "X-Environment: kde\n"
-"X-Generator: Lokalize 26.07.90\n"
+"X-Generator: Lokalize 26.08.0\n"
 "X-Text-Markup: kde4\n"
 
 #: cellular/cellularmodem.cpp:148
@@ -683,7 +683,8 @@ msgstr "Team"
 msgid "Device"
 msgstr "Périphérique"
 
-#: editor/connectiondetails.cpp:321 editorqml/qml/components/Wireless.qml:24
+#: editor/connectiondetails.cpp:321 editorqml/qml/components/Wired.qml:24
+#: editorqml/qml/components/Wireless.qml:24
 #: editorqml/qml/ConfigurationDialog.qml:34
 #, kde-format
 msgid "General"
@@ -710,6 +711,7 @@ msgid "IPv4 Secondary Nameserver"
 msgstr "Serveur secondaire de noms IPv4"
 
 #: editor/connectiondetails.cpp:352 editor/connectioneditorbase.cpp:313
+#: editorqml/qml/components/Wired.qml:33
 #: editorqml/qml/components/Wireless.qml:33
 #, kde-format
 msgid "IPv4"
@@ -741,6 +743,7 @@ msgid "IPv6 Secondary Nameserver"
 msgstr "Serveur secondaire de noms IPv6"
 
 #: editor/connectiondetails.cpp:386 editor/connectioneditorbase.cpp:331
+#: editorqml/qml/components/Wired.qml:36
 #: editorqml/qml/components/Wireless.qml:36
 #, kde-format
 msgid "IPv6"
@@ -759,11 +762,12 @@ msgid "General"
 msgstr "Général"
 
 #: editor/connectioneditorbase.cpp:222 editor/connectioneditorbase.cpp:248
+#: editorqml/qml/components/Wired.qml:27
 #, kde-format
 msgid "Wired"
 msgstr "Câblé"
 
-#: editor/connectioneditorbase.cpp:225
+#: editor/connectioneditorbase.cpp:225 editorqml/qml/components/Wired.qml:30
 #, kde-format
 msgid "802.1x Security"
 msgstr "Sécurité 802.1x"
@@ -1686,6 +1690,7 @@ msgstr "Mode de transport :"
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/infiniband.ui:41
 #: editor/settings/ui/wiredconnectionwidget.ui:23
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:21
 #, kde-format
 msgid "Restrict to device:"
 msgstr "Restreindre au périphérique :"
@@ -1698,6 +1703,7 @@ msgstr "Restreindre au périphérique :"
 #: editor/settings/ui/wiredconnectionwidget.ui:89
 #: editor/settings/ui/wireguardinterfacewidget.ui:89
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:219
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:85
 #, kde-format
 msgid "MTU:"
 msgstr "MTU :"
@@ -2356,6 +2362,7 @@ msgstr ""
 #: editor/settings/ui/wificonnectionwidget.ui:258
 #: editor/settings/ui/wiredconnectionwidget.ui:47
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:197
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:60
 #, kde-format
 msgid "Cloned MAC address:"
 msgstr "Adresse MAC clonée :"
@@ -2372,6 +2379,7 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:292
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:212
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:78
 #, kde-format
 msgid "Random…"
 msgstr "Aléatoire…"
@@ -2582,12 +2590,14 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:128
 #, kde-format
 msgid "Speed:"
 msgstr "Vitesse :"
 
 #. i18n: ectx: property (text), widget (QLabel, duplexLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:132
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:154
 #, kde-format
 msgid "Duplex:"
 msgstr "Duplex :"
@@ -2616,6 +2626,7 @@ msgstr "Full (bi-directionnel)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:111
 #, kde-format
 msgid "Link negotiation:"
 msgstr "Négociation du lien :"
@@ -2660,48 +2671,56 @@ msgstr "Demander au périphérique d'utiliser uniquement la vitesse spécifiée.
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:226
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:132
 #, kde-format
 msgid "10 Mb/s"
 msgstr "10 Mb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:231
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:133
 #, kde-format
 msgid "100 Mb/s"
 msgstr "100 Mb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:236
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:134
 #, kde-format
 msgid "1 Gb/s"
 msgstr "1 Gb / s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:241
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:135
 #, kde-format
 msgid "2.5 Gb/s"
 msgstr "2,5 Gb / s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:246
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:136
 #, kde-format
 msgid "5 Gb/s"
 msgstr "5 Gb / s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:251
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:137
 #, kde-format
 msgid "10 Gb/s"
 msgstr "10 Gb / s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:256
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:138
 #, kde-format
 msgid "40 Gb/s"
 msgstr "40 Gb / s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:261
+#: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:139
 #, kde-format
 msgid "100 Gb/s"
 msgstr "100 Gb / s"
@@ -4175,6 +4194,7 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Sélectionner un type de connexion"
 
+#: editorqml/qml/components/Wired.qml:21
 #: editorqml/qml/components/Wireless.qml:21
 #, kde-format
 msgid "Status"
@@ -4424,116 +4444,96 @@ msgstr "Déplacer vers le bas"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "2001:db8::"
-msgstr ""
+msgstr "2001 : db8::"
 
 #: editorqml/qml/ipv6/IPv6Routes.qml:131
 #: editorqml/qml/ipv6/IPv6Settings.qml:259
-#, fuzzy, kde-format
-#| msgid "4"
+#, kde-format
 msgctxt "@info:placeholder IPv6 prefix length"
 msgid "64"
-msgstr "4"
+msgstr "64"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic"
 msgstr "Automatique"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic (Only addresses)"
-msgstr "Automatique (adresses uniquement)"
+msgstr "Automatique (Adresses uniquement)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only DHCP)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic (Only DHCP)"
 msgstr "Automatique (DHCP uniquement)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Link-Local"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Link-Local"
 msgstr "Lien local"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@item:inlistbox like in this setting is Ignored"
 msgid "Ignored"
 msgstr "Ignoré"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions left to NetworkManager"
 msgid "Default"
-msgstr "Défaut"
+msgstr "Par défaut"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox privacy disabled"
 msgid "Disabled"
 msgstr "Désactivé"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Enabled (prefer public address)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions"
 msgid "Enabled (prefer public address)"
-msgstr "Activé (préférer les adresses publiques)"
+msgstr "Activé (Préférer les adresses publiques)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Enabled (prefer temporary addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions"
 msgid "Enabled (prefer temporary addresses)"
-msgstr "Activé (préférer les adresses temporaires)"
+msgstr "Activé (Préférer les adresses temporaires)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:128
-#, fuzzy, kde-format
-#| msgid ""
-#| "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-#| "enabled, it makes the kernel generate\n"
-#| "a temporary IPv6 address in addition to the public one generated from MAC "
-#| "address via modified EUI-64."
+#, kde-format
 msgid ""
 "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
 "enabled, it makes the kernel generate a temporary IPv6 address in addition "
 "to the public one generated from MAC address via modified EUI-64."
 msgstr ""
-"Configurer les extensions de confidentialité IPv6 pour SLAAC, décrites dans "
-"la RFC4941. Si elles sont activées, cela fera générer une adresse IPv6 "
-"temporaire par le noyau, en plus de l'adresse publique générée depuis "
-"l'adresse MAC via l'identifiant EUI-64 modifié."
+"Configurer les extensions de confidentialité IPv6 pour « SLAAC », décrites "
+"dans la RFC4941. Si elles sont activées, cela conduira à la génération d'une "
+"adresse IPv6 temporaire par le noyau, en plus de l'adresse publique générée "
+"depuis l'adresse « MAC » via l'identifiant « EUI-64 » modifié."
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:257
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "2001:db8::1"
-msgstr ""
+msgstr "2001 : db8::1"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:330
-#, fuzzy, kde-format
-#| msgid ""
-#| "When connecting to IPv4-capable networks, allows the connection to "
-#| "complete if\n"
-#| "IPv6 configuration fails but IPv4 configuration succeeds"
+#, kde-format
 msgid ""
 "When connecting to IPv4-capable networks, allows the connection to complete "
 "if IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
 "Lors de la connexion à un réseau prenant en charge le protocole IPv4, permet "
-"d'établir la connexion\n"
-"si la configuration IPv6 échoue mais que la configuration IPv4 réussit."
+"d'établir la connexion si la configuration IPv6 échoue mais que la "
+"configuration IPv4 réussit."
 
 #: editorqml/qml/PasswordField.qml:95
 #, kde-format
@@ -4605,12 +4605,15 @@ msgstr "Automatique"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:229
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:232
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:95
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:98
 #, kde-format
 msgctxt "@item MTU is automatically determined"
 msgid "Automatic"
 msgstr "Automatique"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:229
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:95
 #, kde-format
 msgctxt "@item:intext MTU size, %1 is the number of bytes"
 msgid "%1 bytes"
@@ -4733,6 +4736,114 @@ msgstr "WPA / WPA2 domestique"
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA / WPA2 d'entreprise"
 
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
+#, fuzzy, kde-format
+#| msgid ""
+#| "This option locks this connection to the network device specified by its\n"
+#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+msgid ""
+"This option locks this connection to the network device specified by its "
+"permanent MAC address entered here. Example: 00:11:22:33:44:55"
+msgstr ""
+"Cette option restreint cette connexion au périphérique réseau spécifié par "
+"son\n"
+"adresse « MAC » permanente saisie ici. Exemple : 00:11:22:33:44:55"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
+#, fuzzy, kde-format
+#| msgid ""
+#| "The MAC address entered here will be used as hardware address for the\n"
+#| "network device this connection is activated on. This feature is known as "
+#| "MAC\n"
+#| "cloning or spoofing. Example 11:22:33:44:55"
+msgid ""
+"The MAC address entered here will be used as hardware address for the "
+"network device this connection is activated on. This feature is known as MAC "
+"cloning or spoofing. Example: 11:22:33:44:55:66"
+msgstr ""
+"L'adresse « MAC » saisie ici sera utilisée comme adresse matérielle pour le\n"
+"périphérique réseau sur lequel cette connexion est activée. Cette "
+"fonctionnalité est connue sous le nom\n"
+"de clonage « MAC » ou usurpation d'adresse « MAC ». Exemple 11:22:33:44:55"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
+#, fuzzy, kde-format
+#| msgid ""
+#| "Only transmit packets of the specified size or smaller, breaking larger "
+#| "packets up\n"
+#| "into multiple Ethernet frames"
+msgid ""
+"Only transmit packets of the specified size or smaller, breaking larger "
+"packets up into multiple Ethernet frames"
+msgstr ""
+"Transférer uniquement des paquets de taille inférieure ou égale à la valeur "
+"spécifiée en séparant les paquets plus larges en de multiples trames "
+"Ethernet."
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
+#, fuzzy, kde-format
+#| msgid "Ignore"
+msgctxt "@item:inlistbox link negotiation"
+msgid "Ignore"
+msgstr "Ignorer"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
+#, fuzzy, kde-format
+#| msgid "Automatic"
+msgctxt "@item:inlistbox link negotiation"
+msgid "Automatic"
+msgstr "Automatique"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
+#, fuzzy, kde-format
+#| msgid "Manual"
+msgctxt "@item:inlistbox link negotiation"
+msgid "Manual"
+msgstr "Manuel"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
+#, fuzzy, kde-format
+#| msgid ""
+#| "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
+#| "values will be forced without checking\n"
+#| "the device compatibility. If unsure, leave here “Ignore” or pick "
+#| "“Automatic”."
+msgid ""
+"Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
+"will be forced without checking the device compatibility. If unsure, leave "
+"here “Ignore” or pick “Automatic”."
+msgstr ""
+"Négociation de lien de périphérique. Si l'option « Manuel » est "
+"sélectionnée, les valeurs « Vitesse » et « Duplex » sont alors forcées sans "
+"vérifier la compatibilité du périphérique. En cas de doute, laisser ici le "
+"paramètre à « Ignorer » ou choisir « Automatique »."
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
+#, fuzzy, kde-format
+#| msgid "Half"
+msgctxt "@item:inlistbox duplex mode"
+msgid "Half"
+msgstr "Half (à l'alternat)"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
+#, fuzzy, kde-format
+#| msgid "Full"
+msgctxt "@item:inlistbox duplex mode"
+msgid "Full"
+msgstr "Full (bi-directionnel)"
+
+#: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
+#, fuzzy, kde-format
+#| msgid ""
+#| "Request that the device use the specified duplex mode. Either \"half\" or "
+#| "\"full\""
+msgid ""
+"Request that the device use the specified duplex mode. Either “Half” or "
+"“Full”"
+msgstr ""
+"Demander au périphérique d'utiliser le mode duplex spécifié. Soit « half » "
+"soit « full »"
+
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
 #, kde-format
 msgctxt "@item real name not available"
@@ -4767,9 +4878,7 @@ msgid "Metric"
 msgstr "Métrique"
 
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv6 prefix"
-#| msgid "Prefix"
+#, kde-format
 msgctxt "@title:column IPv6 prefix length"
 msgid "Prefix"
 msgstr "Préfixe"

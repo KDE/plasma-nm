@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-24 00:47+0000\n"
-"PO-Revision-Date: 2026-08-22 06:16+0200\n"
+"PO-Revision-Date: 2026-08-24 06:02+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -4700,103 +4700,78 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 საწარმოო"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option locks this connection to the network device specified by its\n"
-#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#, kde-format
 msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"ეს პარამეტრი ამ შეერთებას აქ მითითებული ქსელური\n"
-"მოწყობილობის MAC მისამართზე შეზღუდავს. მაგ: 00:11:22:33:44:55"
+"ეს პარამეტრი ამ შეერთებას აქ მითითებული ქსელური მოწყობილობის MAC მისამართზე "
+"შეზღუდავს. მაგ: 00:11:22:33:44:55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MAC address entered here will be used as hardware address for the\n"
-#| "network device this connection is activated on. This feature is known as "
-#| "MAC\n"
-#| "cloning or spoofing. Example 11:22:33:44:55"
+#, kde-format
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
-"აქ მითითებული MAC მისამართი გამოყენებული იქნება როგორც აპარატურული\n"
-"მისამართი ქსელური მოწყობილობისა, რომელზეც ეს მიერთება აქტიურდება.\n"
-"ფუნქციას Mac cloning/spoofing ეწოდება. მაგ: 11:22:33:44:55"
+"აქ მითითებული MAC მისამართი გამოყენებული იქნება როგორც აპარატურული მისამართი "
+"ქსელური მოწყობილობისა, რომელზეც ეს მიერთება აქტიურდება. ფუნქციას Mac cloning/"
+"spoofing ეწოდება. მაგ: 11:22:33:44:55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "Only transmit packets of the specified size or smaller, breaking larger "
-#| "packets up\n"
-#| "into multiple Ethernet frames"
+#, kde-format
 msgid ""
 "Only transmit packets of the specified size or smaller, breaking larger "
 "packets up into multiple Ethernet frames"
 msgstr ""
-"მხოლოდ მითითებულზე ნაკლები ან ტოლი ზომის მქონე პაკეტების გადაცემა.\n"
-"უფრო დიდი პაკეტები Ethernet-ის Frame-ების მსგავსად დაიხლიჩება"
+"მხოლოდ მითითებულზე ნაკლები ან ტოლი ზომის მქონე პაკეტების გადაცემა. უფრო დიდი "
+"პაკეტები Ethernet-ის Frame-ების მსგავსად დაიხლიჩება"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Ignore"
 msgstr "იგნორი"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Automatic"
 msgstr "ავტომატური"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Manual"
 msgstr "ხელით"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#| "values will be forced without checking\n"
-#| "the device compatibility. If unsure, leave here “Ignore” or pick "
-#| "“Automatic”."
+#, kde-format
 msgid ""
 "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
 "will be forced without checking the device compatibility. If unsure, leave "
 "here “Ignore” or pick “Automatic”."
 msgstr ""
 "მოწყობილობის მიერთების მოლაპარაკება. თუ არჩეულია \"ხელით\", \"სიჩქარის\" და "
-"\"დუპლექსის\"\n"
-"მნიშვნელობები მოწყობილობასთან თავსებადობის შემოწმების გარეშე დადგება. თუ "
-"დარწმუნებული არ ბრძანდებით, დატოვეთ \"იგნორირება\" ან აირჩიეთ \"ავტომატური\"."
+"\"დუპლექსის\" მნიშვნელობები მოწყობილობასთან თავსებადობის შემოწმების გარეშე "
+"დადგება. თუ დარწმუნებული არ ბრძანდებით, დატოვეთ \"იგნორირება\" ან აირჩიეთ "
+"\"ავტომატური\"."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Half"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Half"
 msgstr "ნახევარი"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Full"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Full"
 msgstr "სრული"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use the specified duplex mode. Either \"half\" or "
-#| "\"full\""
+#, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either “Half” or "
 "“Full”"

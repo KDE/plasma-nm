@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-24 00:47+0000\n"
-"PO-Revision-Date: 2026-08-22 21:02+0300\n"
+"PO-Revision-Date: 2026-08-24 20:29+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -4697,110 +4697,83 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 kurumsal"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option locks this connection to the network device specified by its\n"
-#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#, kde-format
 msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
 "Bu seçenek burada girilen kalıcı MAC adreslerine göre belirlenen ağ "
-"aygıtlarına\n"
-"olan bağlantıyı kilitler. Örneğin: 00:11:22:33:44:55"
+"aygıtlarına olan bağlantıyı kilitler. Örneğin: 00:11:22:33:44:55."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MAC address entered here will be used as hardware address for the\n"
-#| "network device this connection is activated on. This feature is known as "
-#| "MAC\n"
-#| "cloning or spoofing. Example 11:22:33:44:55"
+#, kde-format
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
-"Buraya girilen MAC adresi, bu bağlantı etkinleştirildiğinde donanım adresi\n"
-"olarak kullanılacak. Bu özellik MAC çoklama ya da aldatma olarak bilinir.\n"
-"Örneğin: 11:22:33:44:55"
+"Buraya girilen MAC adresi, bu bağlantı etkinleştirildiğinde donanım adresi "
+"olarak kullanılacak. Bu özellik MAC çoklama ya da aldatma olarak bilinir. "
+"Örneğin: 11:22:33:44:55."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "Only transmit packets of the specified size or smaller, breaking larger "
-#| "packets up\n"
-#| "into multiple Ethernet frames"
+#, kde-format
 msgid ""
 "Only transmit packets of the specified size or smaller, breaking larger "
 "packets up into multiple Ethernet frames"
 msgstr ""
 "Yalnızca belirtilen boyutta veya daha küçük paketleri geçirir, daha büyük "
-"paketleri\n"
-"çoklu Ethernet çerçevelerine ayırır"
+"paketleri çoklu Ethernet çerçevelerine ayırır."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Ignore"
 msgstr "Yok say"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Automatic"
 msgstr "Otomatik"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Manual"
 msgstr "Elle"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#| "values will be forced without checking\n"
-#| "the device compatibility. If unsure, leave here “Ignore” or pick "
-#| "“Automatic”."
+#, kde-format
 msgid ""
 "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
 "will be forced without checking the device compatibility. If unsure, leave "
 "here “Ignore” or pick “Automatic”."
 msgstr ""
-"Aygıt bağlantı pazarlığı. Eğer “Elle” seçilmişse “Hız” ve “Çift Yönlü”\n"
-"değerleri aygıt uyumluluğu denetlenmeden zorlanacaktır. Emin değilseniz\n"
+"Aygıt bağlantı pazarlığı. Eğer “Elle” seçilmişse “Hız” ve “Çift Yönlü” "
+"değerleri aygıt uyumluluğu denetlenmeden zorlanacaktır. Emin değilseniz "
 "burada “Yok Say”ı bırakın ve “Otomatik”i seçin."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Half"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Half"
 msgstr "Yarım"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Full"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Full"
 msgstr "Tam"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use the specified duplex mode. Either \"half\" or "
-#| "\"full\""
+#, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either “Half” or "
 "“Full”"
 msgstr ""
-"Aygıtın belirtilen dupleks kipinde çalışmasına izin verir. “half” veya "
-"“full” olabilir."
+"Aygıtın belirtilen dupleks kipinde çalışmasına izin verir. “Yarım” veya "
+"“Tam” olabilir."
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
 #, kde-format

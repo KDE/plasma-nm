@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-24 00:47+0000\n"
-"PO-Revision-Date: 2026-08-22 07:32+0200\n"
+"PO-Revision-Date: 2026-08-24 07:38+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -4497,7 +4497,7 @@ msgid ""
 "if IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
 "Pri povezovanju z omrežji, ki podpirajo IPv4, omogoči dokončanje povezave, "
-"če konfiguracija IPv6 ne uspe, in če konfiguracija IPv4 uspe."
+"če konfiguracija IPv6 ne uspe, in če konfiguracija IPv4 uspe"
 
 #: editorqml/qml/PasswordField.qml:95
 #, kde-format
@@ -4700,109 +4700,84 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "Podjetniški WPA2/WPA3"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option locks this connection to the network device specified by its\n"
-#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#, kde-format
 msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"Ta možnost zaklene to povezavo na omrežno napravo, ki je tukaj navedena\n"
-"s strojnim naslovom. Primer: 00:11:22:33:44:55"
+"Ta možnost zaklene to povezavo z omrežno napravo, določeno s stalnim MAC "
+"naslovom, vnesenim tukaj. Primer: 00:11:22:33:44:55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MAC address entered here will be used as hardware address for the\n"
-#| "network device this connection is activated on. This feature is known as "
-#| "MAC\n"
-#| "cloning or spoofing. Example 11:22:33:44:55"
+#, kde-format
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
-"Tukaj vnesen strojni naslov bo uporabljen kot strojni naslov za omrežno\n"
-"napravo, na kateri bo omogočena povezava. Ta zmožnost je znana kot\n"
-"podvojevanje strojnega naslova (spoofing). Primer 11:22:33:44:55"
+"Naslov MAC, ki ga vnesete tukaj, bo uporabljen kot naslov strojne opreme za "
+"omrežno napravo, na kateri je ta povezava aktivirana. Ta funkcija je znana "
+"kot kloniranje ali ponarejanje (spoofing) naslova MAC. Primer: "
+"11:22:33:44:55:66"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "Only transmit packets of the specified size or smaller, breaking larger "
-#| "packets up\n"
-#| "into multiple Ethernet frames"
+#, kde-format
 msgid ""
 "Only transmit packets of the specified size or smaller, breaking larger "
 "packets up into multiple Ethernet frames"
 msgstr ""
-"Pošlji samo pakete navedene velikosti ali manjše, večje pakete pa razdeli\n"
-"v več podatkovnih okvirjev"
+"Prenašaj samo pakete določene velikosti ali manjše, večje pakete pa razdeli "
+"v več ethernetnih okvirjev"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Ignore"
 msgstr "Prezri"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Automatic"
 msgstr "Samodejno"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Manual"
 msgstr "Ročno"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#| "values will be forced without checking\n"
-#| "the device compatibility. If unsure, leave here “Ignore” or pick "
-#| "“Automatic”."
+#, kde-format
 msgid ""
 "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
 "will be forced without checking the device compatibility. If unsure, leave "
 "here “Ignore” or pick “Automatic”."
 msgstr ""
-"Pogajanje o povezavi z napravo. Če izberete \"Ročno\", bodo izbrane "
-"vrednosti \"Hitrost\" in \"Dupleks\"brez preverjanja\n"
-"združljivost naprave. Če niste prepričani, pustite \"Prezri\" ali izberite "
-"\"Avtomatsko\"."
+"Pogajanje o povezavi naprave. Če izberete \"Ročno\", bodo vrednosti \"Hitrost"
+"\" in \"Dupleks\" vsiljene brez preverjanja združljivosti naprave. Če niste "
+"prepričani, pustite tukaj \"Prezri\" ali izberite \"Samodejno\"."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Half"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Half"
 msgstr "Polovično"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Full"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Full"
 msgstr "Polno"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use the specified duplex mode. Either \"half\" or "
-#| "\"full\""
+#, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either “Half” or "
 "“Full”"
 msgstr ""
-"Zahtevaj, da naprava uporablja le naveden dvosmerni način. Vnesite \"half\" "
-"ali \"full\""
+"Zahtevaj, da naprava uporablja le naveden dvosmerni način. Vnesite "
+"\"polovično\" ali \"polno\""
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
 #, kde-format

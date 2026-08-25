@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-24 00:47+0000\n"
-"PO-Revision-Date: 2026-08-23 15:45+0300\n"
+"PO-Revision-Date: 2026-08-24 15:39+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -2606,8 +2606,8 @@ msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
 msgstr ""
-"Užklausti, kad įrenginys naudotų nurodytą abipusę veikseną. Arba „Visą“, "
-"arba „Dalinę“"
+"Prašyti, kad įrenginys naudotų nurodytą abipusę veikseną. Arba „Visas“, arba "
+"„Dalinis“"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158
@@ -2626,7 +2626,7 @@ msgstr "Visas"
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:111
 #, kde-format
 msgid "Link negotiation:"
-msgstr "Saito derėjimasis:"
+msgstr "Saito suderinimas:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:188
@@ -2636,7 +2636,7 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
-"Įrenginio saito derėjimasis. Jei pasirinkta „Rankinis“, tuomet reikšmės "
+"Įrenginio saito suderinimas. Jei pasirinkta „Rankinis“, tuomet reikšmės "
 "„Greitis“ ir „Abipusis“ bus naudojamos priverstinai,\n"
 "netikrinant įrenginio suderinamumo. Jei nesate tikri, palikite čia "
 "„Nepaisyti“ arba pasirinkite „Automatinis“."
@@ -2664,7 +2664,7 @@ msgstr "Rankinis"
 #: editor/settings/ui/wiredconnectionwidget.ui:219
 #, kde-format
 msgid "Request that the device use only the specified speed."
-msgstr "Užklausti, kad įrenginys naudotų tik nurodytą greitį."
+msgstr "Prašyti, kad įrenginys naudotų tik nurodytą greitį."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:226
@@ -4723,113 +4723,84 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 industrinis"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option locks this connection to the network device specified by its\n"
-#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#, kde-format
 msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
 "Ši parinktis prirakina šį ryšį prie tinklo įrenginio, nurodyto pagal čia "
-"įvestą\n"
-"jo pastovų MAC adresą. Pavyzdys: 00:11:22:33:44:55"
+"įvestą jo pastovų MAC adresą. Pavyzdys: 00:11:22:33:44:55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MAC address entered here will be used as hardware address for the\n"
-#| "network device this connection is activated on. This feature is known as "
-#| "MAC\n"
-#| "cloning or spoofing. Example 11:22:33:44:55"
+#, kde-format
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
 "Čia įvestas MAC adresas bus naudojamas kaip aparatinės įrangos adresas, "
-"skirtas\n"
-"tinklo įrenginiui, kuriame yra aktyvuotas šis ryšys. Ši ypatybė yra žinoma "
-"kaip MAC\n"
-"klonavimas ar klastojimas. Pavyzdys 11:22:33:44:55"
+"skirtas tinklo įrenginiui, kuriame yra aktyvuotas šis ryšys. Ši ypatybė yra "
+"žinoma kaip MAC klonavimas ar klastojimas. Pavyzdys: 11:22:33:44:55:66"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "Only transmit packets of the specified size or smaller, breaking larger "
-#| "packets up\n"
-#| "into multiple Ethernet frames"
+#, kde-format
 msgid ""
 "Only transmit packets of the specified size or smaller, breaking larger "
 "packets up into multiple Ethernet frames"
 msgstr ""
 "Persiųsti tik nurodyto dydžio ar mažesnius paketus, išskaidant didesnius "
-"paketus\n"
-"į keletą laidinių ciklų"
+"paketus į keletą laidinių ciklų"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Ignore"
 msgstr "Nepaisyti"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Automatic"
 msgstr "Automatinis"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Manual"
 msgstr "Rankinis"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#| "values will be forced without checking\n"
-#| "the device compatibility. If unsure, leave here “Ignore” or pick "
-#| "“Automatic”."
+#, kde-format
 msgid ""
 "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
 "will be forced without checking the device compatibility. If unsure, leave "
 "here “Ignore” or pick “Automatic”."
 msgstr ""
-"Įrenginio saito derėjimasis. Jei pasirinkta „Rankinis“, tuomet reikšmės "
-"„Greitis“ ir „Abipusis“ bus naudojamos priverstinai,\n"
-"netikrinant įrenginio suderinamumo. Jei nesate tikri, palikite čia "
-"„Nepaisyti“ arba pasirinkite „Automatinis“."
+"Įrenginio saito suderinimas. Jei pasirinkta „Rankinis“, tada reikšmės "
+"„Greitis“ ir „Abipusis“ bus naudojamos priverstinai, netikrinant įrenginio "
+"suderinamumo. Jei nesate tikri, palikite čia „Nepaisyti“ arba pasirinkite "
+"„Automatinis“."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Half"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Half"
 msgstr "Dalinis"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Full"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Full"
 msgstr "Visas"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use the specified duplex mode. Either \"half\" or "
-#| "\"full\""
+#, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either “Half” or "
 "“Full”"
 msgstr ""
-"Užklausti, kad įrenginys naudotų nurodytą abipusę veikseną. Arba „Visą“, "
-"arba „Dalinę“"
+"Prašyti, kad įrenginys naudotų nurodytą abipusę veikseną. Arba „Visas“, arba "
+"„Dalinis“"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
 #, kde-format

@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2026-04-28 23:55+0300\n"
+"PO-Revision-Date: 2026-08-24 15:45+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -316,7 +316,7 @@ msgid ""
 "last before being renegotiated.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Kiek laiko turėtų trukti ryšio kanalo manipuliavimas "
-"prieš tai, kaip ryšys bus pakartotinai užmezgiamas.</p></body></html>"
+"prieš tai, kai ryšys bus pakartotinai užmezgiamas.</p></body></html>"
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
@@ -358,7 +358,7 @@ msgid ""
 msgstr ""
 "<html><head/><body><p>Kiek laiko tam tikras ryšio egzempliorius (naudotojo "
 "paketų šifravimo/tapatybės nustatymo raktų rinkinys) turėtų trukti nuo "
-"sėkmingo ryšio užmezgimo galiojimo pabaigos.</p></body></html>"
+"sėkmingo ryšio užmezgimo iki galiojimo pabaigos.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
 #: l2tpipsec.ui:305

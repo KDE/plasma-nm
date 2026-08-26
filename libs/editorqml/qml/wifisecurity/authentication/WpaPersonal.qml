@@ -19,7 +19,7 @@ Kirigami.FormLayout {
         showPasswordOptions: true
         password: root.setting.psk
         passwordOption: root.setting.pskOption
-        onPasswordChanged: root.setting.psk = password
-        onPasswordOptionChanged: root.setting.pskOption = passwordOption
+        onPasswordEdited: root.setting.psk = password
+        onPasswordOptionEdited: root.setting.pskOption = option
     }
 }

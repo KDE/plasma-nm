@@ -24,8 +24,8 @@ Kirigami.FormLayout {
         password: root.setting.wepKey
         passwordOption: root.setting.wepKeyOption
 
-        onPasswordChanged: root.setting.wepKey = password
-        onPasswordOptionChanged: root.setting.wepKeyOption = passwordOption
+        onPasswordEdited: root.setting.wepKey = password
+        onPasswordOptionEdited: root.setting.wepKeyOption = option
     }
 
     QQC2.ComboBox {

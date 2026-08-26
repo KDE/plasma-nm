@@ -125,6 +125,9 @@ Kirigami.FormLayout {
 
     DnsList {
         id: connectToServersDialog
+
+        addressPattern: serverNamePattern
+
         onAccepted: {
             root.setting.tlsConnectToServers = addresses.join(",");
         }
@@ -153,12 +156,13 @@ Kirigami.FormLayout {
         Layout.fillWidth: true
 
         showPasswordOptions: true
+        passwordLabel: i18n("Private key password:")
 
         password: root.setting.tlsPrivateKeyPassword
         passwordOption: root.setting.tlsPrivateKeyPasswordOption
 
-        onPasswordChanged: root.setting.tlsPrivateKeyPassword = password
-        onPasswordOptionChanged: root.setting.tlsPrivateKeyPasswordOption = passwordOption
+        onPasswordEdited: root.setting.tlsPrivateKeyPassword = password
+        onPasswordOptionEdited: root.setting.tlsPrivateKeyPasswordOption = option
     }
 
     FileDialog {

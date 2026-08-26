@@ -27,7 +27,7 @@ Kirigami.FormLayout {
         showPasswordOptions: true
         password: root.setting.md5Password
         passwordOption: root.setting.md5PasswordOption
-        onPasswordChanged: root.setting.md5Password = password
-        onPasswordOptionChanged: root.setting.md5PasswordOption = passwordOption
+        onPasswordEdited: root.setting.md5Password = password
+        onPasswordOptionEdited: root.setting.md5PasswordOption = option
     }
 }

@@ -12,12 +12,15 @@ Item {
     id: root
 
     property string iconSource: "dialog-password"
-
+    property string passwordLabel: i18n("Password:")
     property string headline: ""
     property string text: ""
 
     property string password: ""
     property int maxLength: 64
+
+    signal passwordEdited(string password)
+    signal passwordOptionEdited(int option)
 
     enum PasswordOption {
         StoreForUser = 0,
@@ -33,6 +36,14 @@ Item {
 
     implicitWidth: mainLayout.implicitWidth
     implicitHeight: mainLayout.implicitHeight
+
+    onPasswordChanged: {
+        if (passwordField.text !== root.password) {
+            passwordField.text = root.password;
+        }
+    }
+
+    onPasswordOptionChanged: passwordOptions.currentIndex = root.passwordOption
 
     ColumnLayout {
         id: mainLayout
@@ -82,7 +93,7 @@ Item {
             Kirigami.PasswordField {
                 id: passwordField
 
-                Kirigami.FormData.label: i18n("Password:")
+                Kirigami.FormData.label: root.passwordLabel
                 Layout.fillWidth: true
 
                 maximumLength: root.maxLength
@@ -101,10 +112,12 @@ Item {
                 }
                 text: root.password
 
-                onTextEdited: root.password = text
+                onTextEdited: root.passwordEdited(text)
             }
 
             QQC2.ComboBox {
+                id: passwordOptions
+
                 Layout.fillWidth: true
                 visible: root.showPasswordOptions
 
@@ -121,11 +134,11 @@ Item {
                 currentIndex: root.passwordOption
 
                 onActivated: {
-                    root.passwordOption = currentIndex;
+                    root.passwordOptionEdited(currentIndex);
 
                     if (currentIndex === PasswordField.PasswordOption.AlwaysAsk || currentIndex === PasswordField.PasswordOption.NotRequired) {
                         passwordField.clear();
-                        root.password = "";
+                        root.passwordEdited("");
                     }
                 }
             }

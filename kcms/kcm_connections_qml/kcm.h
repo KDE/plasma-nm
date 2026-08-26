@@ -21,6 +21,7 @@
 #include <KQuickConfigModule>
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
+#include <QHash>
 #include <QTimer>
 
 class KCMNetworkManagementQml : public KQuickConfigModule
@@ -36,6 +37,7 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(GeneralSetting *generalSettings READ generalSettings CONSTANT)
     Q_PROPERTY(WifiSetting *wifiSetting READ wifiSetting CONSTANT)
     Q_PROPERTY(WiredSetting *wiredSetting READ wiredSetting CONSTANT)
+    Q_PROPERTY(bool wiredSecurityEnabled READ wiredSecurityEnabled WRITE setWiredSecurityEnabled NOTIFY wiredSecurityEnabledChanged)
     Q_PROPERTY(IPv4Settings *ipv4Settings READ ipv4Settings CONSTANT)
     Q_PROPERTY(IPv6Settings *ipv6Settings READ ipv6Settings CONSTANT)
 
@@ -51,6 +53,8 @@ public:
     GeneralSetting *generalSettings() const;
     WifiSetting *wifiSetting() const;
     WiredSetting *wiredSetting() const;
+    bool wiredSecurityEnabled() const;
+    void setWiredSecurityEnabled(bool enabled);
     IPv4Settings *ipv4Settings() const;
     IPv6Settings *ipv6Settings() const;
     bool useApMode() const;
@@ -72,9 +76,11 @@ Q_SIGNALS:
     void saveFailed(const QString &errorMessage);
     void kcmChangedStateChanged(bool changed);
     void connectionTypeChanged();
+    void wiredSecurityEnabledChanged();
 
 private Q_SLOTS:
     void onConnectionAdded(const QString &connection);
+    void onSecretsArrived(QDBusPendingCallWatcher *watcher);
 
 private:
     struct ImportResult {
@@ -90,12 +96,16 @@ private:
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void kcmChanged(bool kcmChanged);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
+    void requestSecrets(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void resetSelection();
     void applyTypeSettings(NMVariantMapMap &map, NetworkManager::ConnectionSettings::ConnectionType type);
 
     // ImportResult importVpn();
     // ImportResult importVpnFile(const QString &fileName);
     NetworkManager::ConnectionSettings::Ptr m_pendingNewSettings;
+    NetworkManager::ConnectionSettings::Ptr m_currentSettings;
+
+    QHash<QString, std::function<void(const NetworkManager::Setting::Ptr &)>> m_secretsHandlers;
     NetworkManager::ConnectionSettings::ConnectionType m_connectionType = NetworkManager::ConnectionSettings::Unknown;
 
     QString m_currentConnectionPath;
@@ -112,6 +122,7 @@ private:
     IPv6Settings *const m_ipv6Settings;
 
     bool m_useApMode = false;
+    bool m_wiredSecurityEnabled = false;
 
     QTimer *m_timer = nullptr;
 };

@@ -67,6 +67,9 @@ Kirigami.Page {
             if (!path) {
                 root.deselectConnections();
             }
+            if (connectionLoader.item?.showStatusTab) {
+                connectionLoader.item.showStatusTab();
+            }
         }
     }
 
@@ -280,6 +283,8 @@ Kirigami.Page {
             }
 
             Loader {
+                id: connectionLoader
+
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 

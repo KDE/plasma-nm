@@ -24,6 +24,81 @@ Security8021xSetting::Security8021xSetting(QObject *parent)
 {
 }
 
+void Security8021xSetting::reset()
+{
+    setEapMethod(EapMethodPeap);
+
+    // MD5
+    setMd5Username(QString());
+    setMd5Password(QString());
+    setMd5PasswordOption(StoreForUser);
+
+    // TLS
+    setTlsIdentity(QString());
+    setTlsDomain(QString());
+    setTlsUserCert(QString());
+    setTlsCaCert(QString());
+    setTlsPrivateKey(QString());
+    setTlsPrivateKeyPassword(QString());
+    setTlsPrivateKeyPasswordOption(StoreForUser);
+    setTlsSubjectMatch(QString());
+    setTlsAltSubjectMatches(QString());
+    setTlsConnectToServers(QString());
+
+    // LEAP
+    setLeapUsername(QString());
+    setLeapPassword(QString());
+    setLeapPasswordOption(StoreForUser);
+
+    // PWD
+    setPwdUsername(QString());
+    setPwdPassword(QString());
+    setPwdPasswordOption(StoreForUser);
+    setPwdSubjectMatch(QString());
+    setPwdAltSubjectMatches(QString());
+    setPwdConnectToServers(QString());
+
+    // FAST
+    setFastAnonIdentity(QString());
+    setFastAllowPacProvisioning(false);
+    setFastPacMethod(0);
+    setFastPacFile(QString());
+    setFastInnerAuth(AuthMethodGtc);
+    setFastUsername(QString());
+    setFastPassword(QString());
+    setFastPasswordOption(StoreForUser);
+    setFastSubjectMatch(QString());
+    setFastAltSubjectMatches(QString());
+    setFastConnectToServers(QString());
+
+    // TTLS
+    setTtlsAnonIdentity(QString());
+    setTtlsDomain(QString());
+    setTtlsCaCert(QString());
+    setTtlsInnerAuth(0);
+    setTtlsUsername(QString());
+    setTtlsPassword(QString());
+    setTtlsPasswordOption(StoreForUser);
+    setTtlsSubjectMatch(QString());
+    setTtlsAltSubjectMatches(QString());
+    setTtlsConnectToServers(QString());
+
+    // PEAP
+    setPeapAnonIdentity(QString());
+    setPeapDomain(QString());
+    setPeapCaCert(QString());
+    setPeapVersion(0);
+    setPeapInnerAuth(0);
+    setPeapUsername(QString());
+    setPeapPassword(QString());
+    setPeapPasswordOption(StoreForUser);
+    setPeapSubjectMatch(QString());
+    setPeapAltSubjectMatches(QString());
+    setPeapConnectToServers(QString());
+
+    Q_EMIT validChanged();
+}
+
 bool Security8021xSetting::pkcs12CanDecrypt(const QString &path, const QString &password)
 {
     auto fp = fopen(path.toLatin1().data(), "rb");
@@ -94,6 +169,28 @@ void Security8021xSetting::loadConfig(const NetworkManager::Setting::Ptr &settin
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodPwd)) {
         setEapMethod(EapMethodPwd);
         setPwdUsername(securitySetting->identity());
+
+        if (!securitySetting->subjectMatch().isEmpty())
+            setPwdSubjectMatch(securitySetting->subjectMatch());
+
+        if (!securitySetting->altSubjectMatches().isEmpty()) {
+            QStringList servers;
+            QStringList altSubjectMatches;
+
+            for (const QString &match : securitySetting->altSubjectMatches()) {
+                if (match.startsWith(QLatin1String("DNS:"))) {
+                    servers.append(match.mid(4));
+                } else {
+                    altSubjectMatches.append(match);
+                }
+            }
+
+            if (!altSubjectMatches.isEmpty())
+                setPwdAltSubjectMatches(altSubjectMatches.join(QLatin1String(", ")));
+
+            if (!servers.isEmpty())
+                setPwdConnectToServers(servers.join(QLatin1String(", ")));
+        }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodFast)) {
         setEapMethod(EapMethodFast);
         setFastAnonIdentity(securitySetting->anonymousIdentity());
@@ -107,12 +204,57 @@ void Security8021xSetting::loadConfig(const NetworkManager::Setting::Ptr &settin
             setFastInnerAuth(AuthMethodMschapv2);
         }
         setFastUsername(securitySetting->identity());
+
+        if (!securitySetting->subjectMatch().isEmpty())
+            setFastSubjectMatch(securitySetting->subjectMatch());
+
+        if (!securitySetting->altSubjectMatches().isEmpty()) {
+            QStringList servers;
+            QStringList altSubjectMatches;
+
+            for (const QString &match : securitySetting->altSubjectMatches()) {
+                if (match.startsWith(QLatin1String("DNS:"))) {
+                    servers.append(match.mid(4));
+                } else {
+                    altSubjectMatches.append(match);
+                }
+            }
+
+            if (!altSubjectMatches.isEmpty())
+                setFastAltSubjectMatches(altSubjectMatches.join(QLatin1String(", ")));
+
+            if (!servers.isEmpty())
+                setFastConnectToServers(servers.join(QLatin1String(", ")));
+        }
     } else if (eapMethods.contains(NetworkManager::Security8021xSetting::EapMethodTtls)) {
         setEapMethod(EapMethodTtls);
 
         setTtlsAnonIdentity(securitySetting->anonymousIdentity());
         setTtlsDomain(securitySetting->domainSuffixMatch());
         setTtlsCaCert(QUrl::fromLocalFile(QString::fromUtf8(securitySetting->caCertificate().chopped(1))).toString());
+
+        if (!securitySetting->subjectMatch().isEmpty())
+            setTtlsSubjectMatch(securitySetting->subjectMatch());
+
+        if (!securitySetting->altSubjectMatches().isEmpty()) {
+            QStringList servers;
+            QStringList altSubjectMatches;
+
+            for (const QString &match : securitySetting->altSubjectMatches()) {
+                if (match.startsWith(QLatin1String("DNS:"))) {
+                    servers.append(match.mid(4));
+                } else {
+                    altSubjectMatches.append(match);
+                }
+            }
+
+            if (!altSubjectMatches.isEmpty())
+                setTtlsAltSubjectMatches(altSubjectMatches.join(QLatin1String(", ")));
+
+            if (!servers.isEmpty())
+                setTtlsConnectToServers(servers.join(QLatin1String(", ")));
+        }
+
         if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodPap) {
             setTtlsInnerAuth(0);
         } else if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodMschap) {
@@ -127,7 +269,30 @@ void Security8021xSetting::loadConfig(const NetworkManager::Setting::Ptr &settin
         setEapMethod(EapMethodPeap);
         setPeapAnonIdentity(securitySetting->anonymousIdentity());
         setPeapDomain(securitySetting->domainSuffixMatch());
-        setPeapCaCert(QUrl::fromLocalFile(QString::fromUtf8(securitySetting->caCertificate().chopped(1))).toString());
+        setPeapCaCert(QUrl::fromLocalFile(QString::fromUtf8(securitySetting->caCertificate().removeLast())).toString());
+
+        if (!securitySetting->subjectMatch().isEmpty())
+            setPeapSubjectMatch(securitySetting->subjectMatch());
+
+        if (!securitySetting->altSubjectMatches().isEmpty()) {
+            QStringList servers;
+            QStringList altSubjectMatches;
+
+            for (const QString &match : securitySetting->altSubjectMatches()) {
+                if (match.startsWith(QLatin1String("DNS:"))) {
+                    servers.append(match.mid(4));
+                } else {
+                    altSubjectMatches.append(match);
+                }
+            }
+
+            if (!altSubjectMatches.isEmpty())
+                setPeapAltSubjectMatches(altSubjectMatches.join(QLatin1String(", ")));
+
+            if (!servers.isEmpty())
+                setPeapConnectToServers(servers.join(QLatin1String(", ")));
+        }
+
         setPeapVersion(securitySetting->phase1PeapVersion());
         if (phase2AuthMethod == NetworkManager::Security8021xSetting::AuthMethodMschapv2)
             setPeapInnerAuth(0);
@@ -203,7 +368,6 @@ QVariantMap Security8021xSetting::setting() const
         } else {
             setting.setPasswordFlags(NetworkManager::Setting::NotSaved);
         }
-
         if (!m_md5Password.isEmpty()) {
             setting.setPassword(m_md5Password);
         }
@@ -220,6 +384,7 @@ QVariantMap Security8021xSetting::setting() const
             const auto fmt = userCertUrl.scheme() == "file" ? QUrl::PrettyDecoded : QUrl::FullyEncoded;
             setting.setClientCertificate(userCertUrl.toString(fmt).toUtf8().append('\0'));
         }
+
         QUrl caCertUrl(m_tlsCaCert);
         if (caCertUrl.isValid()) {
             const auto fmt = caCertUrl.scheme() == "file" ? QUrl::PrettyDecoded : QUrl::FullyEncoded;
@@ -234,8 +399,12 @@ QVariantMap Security8021xSetting::setting() const
                 altSubject.append(tempstr);
             }
         }
-        setting.setSubjectMatch(m_tlsSubjectMatch);
-        setting.setAltSubjectMatches(altSubject);
+
+        if (!m_tlsSubjectMatch.isEmpty())
+            setting.setSubjectMatch(m_tlsSubjectMatch);
+
+        if (!altSubject.isEmpty())
+            setting.setAltSubjectMatches(altSubject);
 
         QUrl privateKeyUrl(m_tlsPrivateKey);
         if (privateKeyUrl.isValid()) {
@@ -275,6 +444,21 @@ QVariantMap Security8021xSetting::setting() const
         if (!m_pwdUsername.isEmpty())
             setting.setIdentity(m_pwdUsername);
 
+        if (!m_pwdSubjectMatch.isEmpty())
+            setting.setSubjectMatch(m_pwdSubjectMatch);
+
+        QStringList altSubject = m_pwdAltSubjectMatches.split(QLatin1Char(','), Qt::SkipEmptyParts);
+        for (QString &match : m_pwdConnectToServers.split(QLatin1Char(','), Qt::SkipEmptyParts)) {
+            match = match.trimmed();
+            const QString tempstr = QLatin1String("DNS:") + match;
+            if (!altSubject.contains(tempstr)) {
+                altSubject.append(tempstr);
+            }
+        }
+
+        if (!altSubject.isEmpty())
+            setting.setAltSubjectMatches(altSubject);
+
         if (m_pwdPasswordOption == StoreForAllUsers) {
             setting.setPasswordFlags(NetworkManager::Setting::None);
         } else if (m_pwdPasswordOption == StoreForUser) {
@@ -306,6 +490,21 @@ QVariantMap Security8021xSetting::setting() const
             setting.setIdentity(m_fastUsername);
         }
 
+        if (!m_fastSubjectMatch.isEmpty())
+            setting.setSubjectMatch(m_fastSubjectMatch);
+
+        QStringList altSubject = m_fastAltSubjectMatches.split(QLatin1Char(','), Qt::SkipEmptyParts);
+        for (QString &match : m_fastConnectToServers.split(QLatin1Char(','), Qt::SkipEmptyParts)) {
+            match = match.trimmed();
+            const QString tempstr = QLatin1String("DNS:") + match;
+            if (!altSubject.contains(tempstr)) {
+                altSubject.append(tempstr);
+            }
+        }
+
+        if (!altSubject.isEmpty())
+            setting.setAltSubjectMatches(altSubject);
+
         if (!m_fastPassword.isEmpty()) {
             setting.setPassword(m_fastPassword);
         }
@@ -325,6 +524,22 @@ QVariantMap Security8021xSetting::setting() const
         QUrl caCertUrl(m_ttlsCaCert);
         if (caCertUrl.isValid())
             setting.setCaCertificate(caCertUrl.toString().toUtf8().append('\0'));
+
+        if (!m_ttlsSubjectMatch.isEmpty())
+            setting.setSubjectMatch(m_ttlsSubjectMatch);
+
+        QStringList altSubject = m_ttlsAltSubjectMatches.split(QLatin1Char(','), Qt::SkipEmptyParts);
+        for (QString &match : m_ttlsConnectToServers.split(QLatin1Char(','), Qt::SkipEmptyParts)) {
+            match = match.trimmed();
+            const QString tempstr = QLatin1String("DNS:") + match;
+            if (!altSubject.contains(tempstr)) {
+                altSubject.append(tempstr);
+            }
+        }
+
+        if (!altSubject.isEmpty())
+            setting.setAltSubjectMatches(altSubject);
+
         if (m_ttlsInnerAuth == 0) {
             setting.setPhase2AuthMethod(NetworkManager::Security8021xSetting::AuthMethodPap);
 
@@ -358,6 +573,22 @@ QVariantMap Security8021xSetting::setting() const
             if (caCertUrl.isValid())
                 setting.setCaCertificate(caCertUrl.toString().toUtf8().append('\0'));
         }
+
+        if (!m_peapSubjectMatch.isEmpty())
+            setting.setSubjectMatch(m_peapSubjectMatch);
+
+        QStringList altSubject = m_peapAltSubjectMatches.split(QLatin1Char(','), Qt::SkipEmptyParts);
+        for (QString &match : m_peapConnectToServers.split(QLatin1Char(','), Qt::SkipEmptyParts)) {
+            match = match.trimmed();
+            const QString tempstr = QLatin1String("DNS:") + match;
+            if (!altSubject.contains(tempstr)) {
+                altSubject.append(tempstr);
+            }
+        }
+
+        if (!altSubject.isEmpty())
+            setting.setAltSubjectMatches(altSubject);
+
         setting.setPhase1PeapVersion(static_cast<NetworkManager::Security8021xSetting::PeapVersion>(m_peapVersion - 1));
         if (m_peapInnerAuth == 0) {
             setting.setPhase2AuthMethod(NetworkManager::Security8021xSetting::AuthMethodMschapv2);
@@ -498,7 +729,6 @@ void Security8021xSetting::setSecurityType(SecurityType type)
         m_eapMethod = EapMethodPeap;
     }
     Q_EMIT securityTypeChanged();
-    Q_EMIT validChanged();
     Q_EMIT eapMethodChanged();
 }
 
@@ -674,6 +904,7 @@ void Security8021xSetting::setTlsConnectToServers(const QString &v)
     Q_EMIT validChanged();
 }
 
+// leap
 QString Security8021xSetting::leapUsername() const
 {
     return m_leapUsername;
@@ -711,6 +942,7 @@ void Security8021xSetting::setLeapPasswordOption(PasswordOption v)
     Q_EMIT validChanged();
 }
 
+// pwd
 QString Security8021xSetting::pwdUsername() const
 {
     return m_pwdUsername;
@@ -748,6 +980,49 @@ void Security8021xSetting::setPwdPasswordOption(PasswordOption v)
     Q_EMIT validChanged();
 }
 
+QString Security8021xSetting::pwdSubjectMatch() const
+{
+    return m_pwdSubjectMatch;
+}
+
+void Security8021xSetting::setPwdSubjectMatch(const QString &v)
+{
+    if (m_pwdSubjectMatch == v)
+        return;
+    m_pwdSubjectMatch = v;
+    Q_EMIT pwdSubjectMatchChanged();
+    Q_EMIT validChanged();
+}
+
+QString Security8021xSetting::pwdAltSubjectMatches() const
+{
+    return m_pwdAltSubjectMatches;
+}
+
+void Security8021xSetting::setPwdAltSubjectMatches(const QString &v)
+{
+    if (m_pwdAltSubjectMatches == v)
+        return;
+    m_pwdAltSubjectMatches = v;
+    Q_EMIT pwdAltSubjectMatchesChanged();
+    Q_EMIT validChanged();
+}
+
+QString Security8021xSetting::pwdConnectToServers() const
+{
+    return m_pwdConnectToServers;
+}
+
+void Security8021xSetting::setPwdConnectToServers(const QString &v)
+{
+    if (m_pwdConnectToServers == v)
+        return;
+    m_pwdConnectToServers = v;
+    Q_EMIT pwdConnectToServersChanged();
+    Q_EMIT validChanged();
+}
+
+// fast
 QString Security8021xSetting::fastAnonIdentity() const
 {
     return m_fastAnonIdentity;
@@ -848,6 +1123,49 @@ void Security8021xSetting::setFastPasswordOption(PasswordOption v)
     Q_EMIT validChanged();
 }
 
+QString Security8021xSetting::fastSubjectMatch() const
+{
+    return m_fastSubjectMatch;
+}
+
+void Security8021xSetting::setFastSubjectMatch(const QString &v)
+{
+    if (m_fastSubjectMatch == v)
+        return;
+    m_fastSubjectMatch = v;
+    Q_EMIT fastSubjectMatchChanged();
+    Q_EMIT validChanged();
+}
+
+QString Security8021xSetting::fastAltSubjectMatches() const
+{
+    return m_fastAltSubjectMatches;
+}
+
+void Security8021xSetting::setFastAltSubjectMatches(const QString &v)
+{
+    if (m_fastAltSubjectMatches == v)
+        return;
+    m_fastAltSubjectMatches = v;
+    Q_EMIT fastAltSubjectMatchesChanged();
+    Q_EMIT validChanged();
+}
+
+QString Security8021xSetting::fastConnectToServers() const
+{
+    return m_fastConnectToServers;
+}
+
+void Security8021xSetting::setFastConnectToServers(const QString &v)
+{
+    if (m_fastConnectToServers == v)
+        return;
+    m_fastConnectToServers = v;
+    Q_EMIT fastConnectToServersChanged();
+    Q_EMIT validChanged();
+}
+
+// ttls
 QString Security8021xSetting::ttlsAnonIdentity() const
 {
     return m_ttlsAnonIdentity;
@@ -920,6 +1238,49 @@ void Security8021xSetting::setTtlsPassword(const QString &v)
     Q_EMIT ttlsPasswordChanged();
     Q_EMIT validChanged();
 }
+
+QString Security8021xSetting::ttlsSubjectMatch() const
+{
+    return m_ttlsSubjectMatch;
+}
+
+void Security8021xSetting::setTtlsSubjectMatch(const QString &v)
+{
+    if (m_ttlsSubjectMatch == v)
+        return;
+    m_ttlsSubjectMatch = v;
+    Q_EMIT ttlsSubjectMatchChanged();
+    Q_EMIT validChanged();
+}
+
+QString Security8021xSetting::ttlsAltSubjectMatches() const
+{
+    return m_ttlsAltSubjectMatches;
+}
+
+void Security8021xSetting::setTtlsAltSubjectMatches(const QString &v)
+{
+    if (m_ttlsAltSubjectMatches == v)
+        return;
+    m_ttlsAltSubjectMatches = v;
+    Q_EMIT ttlsAltSubjectMatchesChanged();
+    Q_EMIT validChanged();
+}
+
+QString Security8021xSetting::ttlsConnectToServers() const
+{
+    return m_ttlsConnectToServers;
+}
+
+void Security8021xSetting::setTtlsConnectToServers(const QString &v)
+{
+    if (m_ttlsConnectToServers == v)
+        return;
+    m_ttlsConnectToServers = v;
+    Q_EMIT ttlsConnectToServersChanged();
+    Q_EMIT validChanged();
+}
+
 Security8021xSetting::PasswordOption Security8021xSetting::ttlsPasswordOption() const
 {
     return m_ttlsPasswordOption;
@@ -933,6 +1294,7 @@ void Security8021xSetting::setTtlsPasswordOption(PasswordOption v)
     Q_EMIT validChanged();
 }
 
+// peap
 QString Security8021xSetting::peapAnonIdentity() const
 {
     return m_peapAnonIdentity;
@@ -1017,6 +1379,49 @@ void Security8021xSetting::setPeapPassword(const QString &v)
     Q_EMIT peapPasswordChanged();
     Q_EMIT validChanged();
 }
+
+QString Security8021xSetting::peapSubjectMatch() const
+{
+    return m_peapSubjectMatch;
+}
+
+void Security8021xSetting::setPeapSubjectMatch(const QString &v)
+{
+    if (m_peapSubjectMatch == v)
+        return;
+    m_peapSubjectMatch = v;
+    Q_EMIT peapSubjectMatchChanged();
+    Q_EMIT validChanged();
+}
+
+QString Security8021xSetting::peapAltSubjectMatches() const
+{
+    return m_peapAltSubjectMatches;
+}
+
+void Security8021xSetting::setPeapAltSubjectMatches(const QString &v)
+{
+    if (m_peapAltSubjectMatches == v)
+        return;
+    m_peapAltSubjectMatches = v;
+    Q_EMIT peapAltSubjectMatchesChanged();
+    Q_EMIT validChanged();
+}
+
+QString Security8021xSetting::peapConnectToServers() const
+{
+    return m_peapConnectToServers;
+}
+
+void Security8021xSetting::setPeapConnectToServers(const QString &v)
+{
+    if (m_peapConnectToServers == v)
+        return;
+    m_peapConnectToServers = v;
+    Q_EMIT peapConnectToServersChanged();
+    Q_EMIT validChanged();
+}
+
 Security8021xSetting::PasswordOption Security8021xSetting::peapPasswordOption() const
 {
     return m_peapPasswordOption;

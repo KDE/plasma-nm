@@ -13,14 +13,19 @@
 
 #include <KLocalizedString>
 #include <KMessageBox>
+#include <KNotification>
 #include <KPluginFactory>
 
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
+#include <NetworkManagerQt/GenericTypes>
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Settings>
 #include <NetworkManagerQt/WirelessDevice>
+
+#include <QDBusPendingCallWatcher>
+#include <QDBusPendingReply>
 
 #include <kquickconfigmodule.h>
 #include <networkmanagerqt/connectionsettings.h>
@@ -40,6 +45,24 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     , m_ipv6Settings(new IPv6Settings(this))
     , m_timer(new QTimer(this))
 {
+    // constant map with its connection type and security Type
+    m_secretsHandlers = {
+        {QStringLiteral("802-11-wireless-security"),
+         [this](const NetworkManager::Setting::Ptr &setting) {
+             m_wifiSecurity->loadSecrets(setting.staticCast<NetworkManager::WirelessSecuritySetting>(), nullptr);
+         }},
+        {QStringLiteral("802-1x"),
+         [this](const NetworkManager::Setting::Ptr &setting) {
+             if (m_connectionType == NetworkManager::ConnectionSettings::Wireless) {
+                 m_wifiSecurity->loadSecrets(
+                     m_currentSettings->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>(),
+                     setting.staticCast<NetworkManager::Security8021xSetting>());
+             } else {
+                 m_security8021xSetting->loadSecrets(setting);
+             }
+         }},
+    };
+
     // Check if we can use AP mode to identify security type
     bool foundInactive = false;
     NetworkManager::WirelessDevice::Ptr wifiDev;
@@ -126,6 +149,12 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
         qCDebug(PLASMA_NM_KCM_QML_LOG) << "Cannot preselect a connection";
     }
 
+    connect(m_wifiSecurity, &WifiSecuritySetting::validChanged, this, [this]() {
+        if (m_wifiSecurity->isValid()) {
+            kcmChanged(true);
+        }
+    });
+
     connect(m_generalSettings, &GeneralSetting::validChanged, this, [this]() {
         kcmChanged(true);
     });
@@ -138,6 +167,12 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
 
     connect(m_wiredSetting, &WiredSetting::validChanged, this, [this]() {
         if (m_wiredSetting->isValid()) {
+            kcmChanged(true);
+        }
+    });
+
+    connect(m_security8021xSetting, &Security8021xSetting::validChanged, this, [this]() {
+        if (m_security8021xSetting->isValid()) {
             kcmChanged(true);
         }
     });
@@ -192,6 +227,21 @@ WifiSetting *KCMNetworkManagementQml::wifiSetting() const
 WiredSetting *KCMNetworkManagementQml::wiredSetting() const
 {
     return m_wiredSetting;
+}
+
+bool KCMNetworkManagementQml::wiredSecurityEnabled() const
+{
+    return m_wiredSecurityEnabled;
+}
+
+void KCMNetworkManagementQml::setWiredSecurityEnabled(bool enabled)
+{
+    if (m_wiredSecurityEnabled == enabled) {
+        return;
+    }
+    m_wiredSecurityEnabled = enabled;
+    Q_EMIT wiredSecurityEnabledChanged();
+    kcmChanged(true);
 }
 ConnectionStatus *KCMNetworkManagementQml::connectionStatus() const
 {
@@ -330,7 +380,13 @@ void KCMNetworkManagementQml::applyTypeSettings(NMVariantMapMap &map, NetworkMan
 
     case NetworkManager::ConnectionSettings::Wired:
         map.insert(QStringLiteral("802-3-ethernet"), m_wiredSetting->setting());
-        // TODO: wired 802.1X security
+
+        if (m_wiredSecurityEnabled) {
+            map.insert(QStringLiteral("802-1x"), m_security8021xSetting->setting());
+        } else {
+            map.remove(QStringLiteral("802-1x"));
+            m_security8021xSetting->reset();
+        }
         break;
 
     default:
@@ -398,6 +454,8 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
     if (!connectionSettings)
         return;
 
+    // Save the current connection Settings
+    m_currentSettings = connectionSettings;
     m_connectionType = connectionSettings->connectionType();
     Q_EMIT connectionTypeChanged();
     m_generalSettings->loadConfig(connectionSettings);
@@ -405,7 +463,29 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
     m_wiredSetting->loadConfig(connectionSettings);
     m_ipv4Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>());
     m_ipv6Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv6).staticCast<NetworkManager::Ipv6Setting>());
-    // check wireless only for rn
+
+    requestSecrets(connectionSettings);
+
+    if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wired) {
+        NetworkManager::Security8021xSetting::Ptr wiredSecurity =
+            connectionSettings->setting(NetworkManager::Setting::Security8021x).staticCast<NetworkManager::Security8021xSetting>();
+
+        setWiredSecurityEnabled(wiredSecurity && !wiredSecurity->isNull());
+
+        if (wiredSecurity && !wiredSecurity->isNull()) {
+            m_security8021xSetting->loadConfig(wiredSecurity);
+            m_security8021xSetting->loadSecrets(wiredSecurity);
+        } else {
+            m_security8021xSetting->reset();
+        }
+
+        Q_EMIT connectionLoaded(m_currentConnectionPath);
+
+        kcmChanged(false);
+        return;
+    }
+
+    // TODO: remove this piece of code in future MR after all virtual connection Types are refactored
     if (connectionSettings->connectionType() != NetworkManager::ConnectionSettings::Wireless) {
         kcmChanged(false);
         return;
@@ -419,17 +499,92 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
     if (wifiSecurity || security8021x) {
         m_wifiSecurity->loadConfig(wifiSecurity);
         m_wifiSecurity->loadSecrets(wifiSecurity, security8021x);
-
-        connect(m_wifiSecurity, &WifiSecuritySetting::validChanged, this, [this]() {
-            if (m_wifiSecurity->isValid()) {
-                kcmChanged(true);
-            }
-        });
     }
 
     Q_EMIT connectionLoaded(m_currentConnectionPath);
 
     kcmChanged(false);
+}
+
+void KCMNetworkManagementQml::requestSecrets(const NetworkManager::ConnectionSettings::Ptr &connectionSettings)
+{
+    NetworkManager::Connection::Ptr connection = NetworkManager::findConnectionByUuid(connectionSettings->uuid());
+    if (!connection) {
+        return;
+    }
+
+    for (const NetworkManager::Setting::Ptr &setting : connectionSettings->settings()) {
+        const QString settingName = NetworkManager::Setting::typeAsString(setting->type());
+
+        if (!m_secretsHandlers.contains(settingName)) {
+            continue;
+        }
+
+        QStringList requiredSecrets = setting->needSecrets();
+        requiredSecrets.removeAll(QLatin1String("password-raw"));
+        if (requiredSecrets.isEmpty()) {
+            continue;
+        }
+
+        const QVariantMap map = setting->toMap();
+        const bool stored = std::any_of(requiredSecrets.cbegin(), requiredSecrets.cend(), [&map](const QString &secret) {
+            const QString flagKey = secret + QLatin1String("-flags");
+            if (!map.contains(flagKey)) {
+                return true;
+            }
+
+            const auto flag = static_cast<NetworkManager::Setting::SecretFlagType>(map.value(flagKey).toInt());
+            return flag == NetworkManager::Setting::None || flag == NetworkManager::Setting::AgentOwned;
+        });
+
+        if (!stored) {
+            continue;
+        }
+
+        auto watcher = new QDBusPendingCallWatcher(connection->secrets(settingName), this);
+        watcher->setProperty("connection", connection->name());
+        watcher->setProperty("connectionPath", m_currentConnectionPath);
+        watcher->setProperty("settingName", settingName);
+        connect(watcher, &QDBusPendingCallWatcher::finished, this, &KCMNetworkManagementQml::onSecretsArrived);
+    }
+}
+
+void KCMNetworkManagementQml::onSecretsArrived(QDBusPendingCallWatcher *watcher)
+{
+    QDBusPendingReply<NMVariantMapMap> reply = *watcher;
+    const QString settingName = watcher->property("settingName").toString();
+
+    if (reply.isValid()) {
+        const NMVariantMapMap secrets = reply.argumentAt<0>();
+        for (const QString &key : secrets.keys()) {
+            if (key != settingName) {
+                continue;
+            }
+
+            if (!m_currentSettings || watcher->property("connectionPath").toString() != m_currentConnectionPath) {
+                break;
+            }
+
+            NetworkManager::Setting::Ptr setting = m_currentSettings->setting(NetworkManager::Setting::typeFromString(key));
+            if (setting) {
+                setting->secretsFromMap(secrets.value(key));
+
+                const auto handler = m_secretsHandlers.value(settingName);
+                if (handler) {
+                    handler(setting);
+                }
+            }
+        }
+    } else {
+        auto notification = new KNotification(QStringLiteral("FailedToGetSecrets"), KNotification::CloseOnTimeout);
+        notification->setComponentName(QStringLiteral("networkmanagement"));
+        notification->setTitle(i18n("Failed to get secrets for %1", watcher->property("connection").toString()));
+        notification->setText(reply.error().message());
+        notification->setIconName(QStringLiteral("dialog-warning"));
+        notification->sendEvent();
+    }
+
+    watcher->deleteLater();
 }
 
 void KCMNetworkManagementQml::onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared)
@@ -459,6 +614,8 @@ void KCMNetworkManagementQml::onRequestCreateConnection(int connectionType, cons
                 }
             }
 
+            // TODO: for shared wireless connection
+            //
             // auto ipv4Setting = connectionSettings->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
             // ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Shared);
             // connectionSettings->setAutoconnect(false);
@@ -476,6 +633,7 @@ void KCMNetworkManagementQml::addConnection(const NetworkManager::ConnectionSett
 
     m_currentConnectionPath.clear();
     m_wifiSecurity->setSecurityType(WifiSecuritySetting::None);
+    setWiredSecurityEnabled(false);
 
     if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
         m_wifiSetting->loadConfig(connectionSettings);
@@ -560,6 +718,7 @@ void KCMNetworkManagementQml::resetSelection()
 {
     m_currentConnectionPath.clear();
     m_pendingNewSettings.reset();
+    m_currentSettings.reset();
     setNeedsSave(false);
     Q_EMIT kcmChangedStateChanged(false);
 }

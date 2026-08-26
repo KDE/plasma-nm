@@ -18,9 +18,17 @@ Kirigami.Dialog {
     preferredWidth: Kirigami.Units.gridUnit * 28
     preferredHeight: Kirigami.Units.gridUnit * 20
 
+    implicitWidth: preferredWidth
+    implicitHeight: preferredHeight
+
     property alias addresses: listModel.stringList
 
+    // Validates an IPv4 address
     property var addressPattern: /^((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/
+
+    // For the "connect to these servers" lists, which hold certificate host
+    // names rather than addresses.
+    readonly property var serverNamePattern: /^[A-Za-z0-9_-]+\.[A-Za-z0-9_.-]+$/
 
     property var validate: text => dialog.addressPattern.test(text)
 

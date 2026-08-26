@@ -18,6 +18,78 @@ Kirigami.FormLayout {
     visible: setting.showTtls
 
     QQC2.TextField {
+        visible: root.setting.securityType === Security8021xSetting.Ethernet
+
+        text: root.setting.ttlsSubjectMatch
+        onTextEdited: root.setting.ttlsSubjectMatch = text
+
+        Kirigami.FormData.label: i18n("Subject match:")
+    }
+
+    RowLayout {
+        visible: root.setting.securityType === Security8021xSetting.Ethernet
+
+        QQC2.TextField {
+            id: ttlsAltSubjectField
+            Layout.fillWidth: true
+
+            text: root.setting.ttlsAltSubjectMatches
+            onTextEdited: root.setting.ttlsAltSubjectMatches = text
+        }
+
+        QQC2.Button {
+            text: "…"
+            onClicked: {
+                ttlsAlternativeSubjectDialog.addresses = ttlsAltSubjectField.text.length > 0 ? ttlsAltSubjectField.text.split(",").filter(s => s.length > 0) : [];
+                ttlsAlternativeSubjectDialog.open();
+            }
+        }
+
+        Kirigami.FormData.label: i18n("Alternative subject matches:")
+    }
+
+    AlternativeSubjectMatch {
+        id: ttlsAlternativeSubjectDialog
+
+        onAccepted: {
+            root.setting.ttlsAltSubjectMatches = addresses.join(",");
+            ttlsAltSubjectField.text = root.setting.ttlsAltSubjectMatches;
+        }
+    }
+
+    RowLayout {
+        visible: root.setting.securityType === Security8021xSetting.Ethernet
+
+        Kirigami.FormData.label: i18n("Connect to these servers:")
+
+        QQC2.TextField {
+            id: ttlsServersField
+            Layout.fillWidth: true
+
+            text: root.setting.ttlsConnectToServers
+            onTextEdited: root.setting.ttlsConnectToServers = text
+        }
+
+        QQC2.Button {
+            text: i18n("…")
+            onClicked: {
+                ttlsConnectToServersDialog.addresses = ttlsServersField.text.length > 0 ? ttlsServersField.text.split(",").filter(s => s.length > 0) : [];
+                ttlsConnectToServersDialog.open();
+            }
+        }
+    }
+
+    DnsList {
+        id: ttlsConnectToServersDialog
+
+        addressPattern: serverNamePattern
+
+        onAccepted: {
+            root.setting.ttlsConnectToServers = addresses.join(",");
+        }
+    }
+
+    QQC2.TextField {
         Kirigami.FormData.label: i18n("Anonymous identity:")
         Layout.fillWidth: true
 
@@ -82,8 +154,8 @@ Kirigami.FormLayout {
         password: root.setting.ttlsPassword
         passwordOption: root.setting.ttlsPasswordOption
 
-        onPasswordChanged: root.setting.ttlsPassword = password
-        onPasswordOptionChanged: root.setting.ttlsPasswordOption = passwordOption
+        onPasswordEdited: root.setting.ttlsPassword = password
+        onPasswordOptionEdited: root.setting.ttlsPasswordOption = option
     }
 
     FileDialog {

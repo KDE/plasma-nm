@@ -11,7 +11,13 @@ import QtQuick.Layouts
 import org.kde.plasma.networkmanagement.editorqml as PlasmaNMQ
 
 ColumnLayout {
+    id: root
+
     anchors.fill: parent
+
+    function showStatusTab(): void {
+        tabBar.currentIndex = 0;
+    }
 
     QQC2.TabBar {
         id: tabBar

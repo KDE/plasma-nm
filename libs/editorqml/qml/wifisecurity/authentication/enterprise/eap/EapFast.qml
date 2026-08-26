@@ -18,6 +18,78 @@ Kirigami.FormLayout {
     visible: setting.showFast
 
     QQC2.TextField {
+        visible: root.setting.securityType === Security8021xSetting.Ethernet
+
+        text: root.setting.fastSubjectMatch
+        onTextEdited: root.setting.fastSubjectMatch = text
+
+        Kirigami.FormData.label: i18n("Subject match:")
+    }
+
+    RowLayout {
+        visible: root.setting.securityType === Security8021xSetting.Ethernet
+
+        QQC2.TextField {
+            id: fastAltSubjectField
+            Layout.fillWidth: true
+
+            text: root.setting.fastAltSubjectMatches
+            onTextEdited: root.setting.fastAltSubjectMatches = text
+        }
+
+        QQC2.Button {
+            text: "…"
+            onClicked: {
+                fastAlternativeSubjectDialog.addresses = fastAltSubjectField.text.length > 0 ? fastAltSubjectField.text.split(",").filter(s => s.length > 0) : [];
+                fastAlternativeSubjectDialog.open();
+            }
+        }
+
+        Kirigami.FormData.label: i18n("Alternative subject matches:")
+    }
+
+    AlternativeSubjectMatch {
+        id: fastAlternativeSubjectDialog
+
+        onAccepted: {
+            root.setting.fastAltSubjectMatches = addresses.join(",");
+            fastAltSubjectField.text = root.setting.fastAltSubjectMatches;
+        }
+    }
+
+    RowLayout {
+        visible: root.setting.securityType === Security8021xSetting.Ethernet
+
+        Kirigami.FormData.label: i18n("Connect to these servers:")
+
+        QQC2.TextField {
+            id: fastServersField
+            Layout.fillWidth: true
+
+            text: root.setting.fastConnectToServers
+            onTextEdited: root.setting.fastConnectToServers = text
+        }
+
+        QQC2.Button {
+            text: i18n("…")
+            onClicked: {
+                fastConnectToServersDialog.addresses = fastServersField.text.length > 0 ? fastServersField.text.split(",").filter(s => s.length > 0) : [];
+                fastConnectToServersDialog.open();
+            }
+        }
+    }
+
+    DnsList {
+        id: fastConnectToServersDialog
+
+        addressPattern: serverNamePattern
+
+        onAccepted: {
+            root.setting.fastConnectToServers = addresses.join(",");
+        }
+    }
+
+    QQC2.TextField {
         Layout.fillWidth: true
 
         text: root.setting.fastAnonIdentity
@@ -109,8 +181,8 @@ Kirigami.FormLayout {
         password: root.setting.fastPassword
         passwordOption: root.setting.fastPasswordOption
 
-        onPasswordChanged: root.setting.fastPassword = password
-        onPasswordOptionChanged: root.setting.fastPasswordOption = passwordOption
+        onPasswordEdited: root.setting.fastPassword = password
+        onPasswordOptionEdited: root.setting.fastPasswordOption = option
     }
 
     FileDialog {

@@ -18,6 +18,13 @@ Kirigami.Dialog {
     preferredWidth: Kirigami.Units.gridUnit * 28
     preferredHeight: Kirigami.Units.gridUnit * 20
 
+    implicitWidth: preferredWidth
+    implicitHeight: preferredHeight
+
+    // Validates input as either a DNS name, email address, or URI using the
+    // corresponding "DNS:", "EMAIL:", or "URI:" prefix.
+    property var inputPattern: /^(DNS:[A-Za-z0-9_-]+\.[A-Za-z0-9_.-]+|EMAIL:[A-Za-z0-9._-]+@[A-Za-z0-9_-]+\.[A-Za-z0-9_.-]+|URI:[A-Za-z0-9.+-]+:.+)$/
+
     property alias addresses: listModel.stringList
 
     StringListModel {
@@ -38,7 +45,7 @@ Kirigami.Dialog {
 
                 validator: RegularExpressionValidator {
                     // Check for valid DNS address
-                    regularExpression: /^(DNS:([A-Za-z0-9-]+\.)+[A-Za-z]{2,})$/
+                    regularExpression: dialog.inputPattern
                 }
 
                 onAccepted: if (addButton.enabled)

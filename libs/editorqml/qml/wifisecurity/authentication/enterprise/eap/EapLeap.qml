@@ -33,7 +33,7 @@ Kirigami.FormLayout {
         password: root.setting.leapPassword
         passwordOption: root.setting.leapPasswordOption
 
-        onPasswordChanged: root.setting.leapPassword = password
-        onPasswordOptionChanged: root.setting.leapPasswordOption = passwordOption
+        onPasswordEdited: root.setting.leapPassword = password
+        onPasswordOptionEdited: root.setting.leapPasswordOption = option
     }
 }

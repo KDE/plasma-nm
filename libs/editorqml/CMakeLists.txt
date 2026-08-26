@@ -37,6 +37,7 @@ set(QML_SRCS
   qml/PasswordField.qml
   qml/ConfigurationDialog.qml
   qml/wifisecurity/WifiSecurityForm.qml
+  qml/wifisecurity/WiredSecurityForm.qml
   qml/wifisecurity/authentication/WpaPersonal.qml
   qml/wifisecurity/authentication/WepKey.qml
   qml/wifisecurity/authentication/Leap.qml

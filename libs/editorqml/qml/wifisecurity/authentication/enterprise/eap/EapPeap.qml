@@ -18,6 +18,78 @@ Kirigami.FormLayout {
     visible: setting.showPeap
 
     QQC2.TextField {
+        visible: root.setting.securityType === Security8021xSetting.Ethernet
+
+        text: root.setting.peapSubjectMatch
+        onTextEdited: root.setting.peapSubjectMatch = text
+
+        Kirigami.FormData.label: i18n("Subject match:")
+    }
+
+    RowLayout {
+        visible: root.setting.securityType === Security8021xSetting.Ethernet
+
+        QQC2.TextField {
+            id: peapAltSubjectField
+            Layout.fillWidth: true
+
+            text: root.setting.peapAltSubjectMatches
+            onTextEdited: root.setting.peapAltSubjectMatches = text
+        }
+
+        QQC2.Button {
+            text: "…"
+            onClicked: {
+                peapAlternativeSubjectDialog.addresses = peapAltSubjectField.text.length > 0 ? peapAltSubjectField.text.split(",").filter(s => s.length > 0) : [];
+                peapAlternativeSubjectDialog.open();
+            }
+        }
+
+        Kirigami.FormData.label: i18n("Alternative subject matches:")
+    }
+
+    AlternativeSubjectMatch {
+        id: peapAlternativeSubjectDialog
+
+        onAccepted: {
+            root.setting.peapAltSubjectMatches = addresses.join(",");
+            peapAltSubjectField.text = root.setting.peapAltSubjectMatches;
+        }
+    }
+
+    RowLayout {
+        visible: root.setting.securityType === Security8021xSetting.Ethernet
+
+        Kirigami.FormData.label: i18n("Connect to these servers:")
+
+        QQC2.TextField {
+            id: peapServersField
+            Layout.fillWidth: true
+
+            text: root.setting.peapConnectToServers
+            onTextEdited: root.setting.peapConnectToServers = text
+        }
+
+        QQC2.Button {
+            text: i18n("…")
+            onClicked: {
+                peapConnectToServersDialog.addresses = peapServersField.text.length > 0 ? peapServersField.text.split(",").filter(s => s.length > 0) : [];
+                peapConnectToServersDialog.open();
+            }
+        }
+    }
+
+    DnsList {
+        id: peapConnectToServersDialog
+
+        addressPattern: serverNamePattern
+
+        onAccepted: {
+            root.setting.peapConnectToServers = addresses.join(",");
+        }
+    }
+
+    QQC2.TextField {
         Kirigami.FormData.label: i18n("Anonymous identity:")
         Layout.fillWidth: true
 
@@ -93,8 +165,8 @@ Kirigami.FormLayout {
         password: root.setting.peapPassword
         passwordOption: root.setting.peapPasswordOption
 
-        onPasswordChanged: root.setting.peapPassword = password
-        onPasswordOptionChanged: root.setting.peapPasswordOption = passwordOption
+        onPasswordEdited: root.setting.peapPassword = password
+        onPasswordOptionEdited: root.setting.peapPasswordOption = option
     }
 
     FileDialog {

@@ -11,7 +11,13 @@ import QtQuick.Layouts
 import org.kde.plasma.networkmanagement.editorqml as PlasmaNMQ
 
 ColumnLayout {
+    id: root
+
     anchors.fill: parent
+
+    function showStatusTab(): void {
+        tabBar.currentIndex = 0;
+    }
 
     QQC2.TabBar {
         id: tabBar
@@ -64,7 +70,13 @@ ColumnLayout {
         }
 
         Item {
-            // TODO: Wired security settings
+            PlasmaNMQ.WiredSecurityForm {
+                anchors.fill: parent
+                setting8021x: kcm.security8021xSetting
+
+                use8021x: kcm.wiredSecurityEnabled
+                onUse8021xChanged: kcm.wiredSecurityEnabled = use8021x
+            }
         }
 
         Item {

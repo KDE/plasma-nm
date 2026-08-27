@@ -22,7 +22,8 @@ public:
         PrivateKey = 0,
         SshAgent,
         Smartcard,
-        Eap
+        Eap,
+        EapTtls
     };
 };
 
@@ -34,6 +35,13 @@ StrongswanSettingWidget::StrongswanSettingWidget(const NetworkManager::VpnSettin
     d->ui.setupUi(this);
 
     d->setting = setting;
+
+    // EAP-TTLS reuses the same fields as EAP — redirect stacked widget
+    connect(d->ui.cmbMethod, QOverload<int>::of(&QComboBox::currentIndexChanged), this, [d](int index) {
+        if (index == StrongswanSettingWidgetPrivate::EapTtls) {
+            d->ui.swMethods->setCurrentIndex(StrongswanSettingWidgetPrivate::Eap);
+        }
+    });
 
     // Enables combo box for password
     d->ui.leUserPassword->setPasswordOptionsEnabled(true);
@@ -90,8 +98,12 @@ void StrongswanSettingWidget::loadConfig(const NetworkManager::Setting::Ptr &set
         d->ui.leAuthSshCertificate->setUrl(QUrl::fromLocalFile(dataMap[NM_STRONGSWAN_USERCERT]));
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD)) {
         d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::Smartcard);
-    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_EAP)) {
-        d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::Eap);
+    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_EAP) || method == QLatin1String(NM_STRONGSWAN_AUTH_EAP_TTLS)) {
+        if (method == QLatin1String(NM_STRONGSWAN_AUTH_EAP_TTLS)) {
+            d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::EapTtls);
+        } else {
+            d->ui.cmbMethod->setCurrentIndex(StrongswanSettingWidgetPrivate::Eap);
+        }
         d->ui.leUserName->setText(dataMap[NM_STRONGSWAN_USER]);
 
         PasswordField *passwordField = d->ui.leUserPassword;
@@ -177,12 +189,16 @@ QVariantMap StrongswanSettingWidget::setting() const
     case StrongswanSettingWidgetPrivate::Smartcard:
         data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_SMARTCARD);
         break;
-    case StrongswanSettingWidgetPrivate::Eap:
-        data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_EAP);
+    case StrongswanSettingWidgetPrivate::EapTtls:
+    case StrongswanSettingWidgetPrivate::Eap: {
+        if (d->ui.cmbMethod->currentIndex() == StrongswanSettingWidgetPrivate::EapTtls) {
+            data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_EAP_TTLS);
+        } else {
+            data.insert(NM_STRONGSWAN_METHOD, NM_STRONGSWAN_AUTH_EAP);
+        }
         if (!d->ui.leUserName->text().isEmpty()) {
             data.insert(NM_STRONGSWAN_USER, d->ui.leUserName->text());
         }
-        // StrongSwan-nm 1.2 does not appear to be able to save secrets, the must be entered through the auth dialog
         // flags for password
         PasswordField *passwordField = d->ui.leUserPassword;
         const PasswordField::PasswordOption option = passwordField->passwordOption();
@@ -200,6 +216,8 @@ QVariantMap StrongswanSettingWidget::setting() const
             secretData = d->setting->secrets();
             secretData.insert(NM_STRONGSWAN_SECRET, d->ui.leUserPassword->text());
         }
+        break;
+    }
     }
 
     // Options

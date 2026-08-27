@@ -113,6 +113,11 @@
           <string>EAP</string>
          </property>
         </item>
+        <item>
+         <property name="text">
+          <string>EAP-TTLS</string>
+         </property>
+        </item>
        </widget>
       </item>
       <item>
@@ -259,6 +264,23 @@
             </property>
             <property name="buddy">
              <cstring>leUserPassword</cstring>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="page_5">
+         <layout class="QFormLayout" name="formLayout_5">
+          <property name="fieldGrowthPolicy">
+           <enum>QFormLayout::ExpandingFieldsGrow</enum>
+          </property>
+          <property name="verticalSpacing">
+           <number>0</number>
+          </property>
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_eapttls_info">
+            <property name="text">
+             <string>Uses the same Username/Password fields as EAP above.</string>
             </property>
            </widget>
           </item>

@@ -35,6 +35,7 @@
 #define NM_STRONGSWAN_AUTH_AGENT "agent"
 #define NM_STRONGSWAN_AUTH_SMARTCARD "smartcard"
 #define NM_STRONGSWAN_AUTH_EAP "eap"
+#define NM_STRONGSWAN_AUTH_EAP_TTLS "eap-ttls"
 
 #define NM_STRONGSWAN_PW_TYPE_SAVE "save"
 #define NM_STRONGSWAN_PW_TYPE_ASK "ask"

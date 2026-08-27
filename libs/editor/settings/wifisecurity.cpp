@@ -490,4 +490,22 @@ QLayout *WifiSecurity::securityLayout() const
     return layout();
 }
 
+QWidget *WifiSecurity::focusUsernameField()
+{
+    const int securityIndex = m_ui->securityCombo->currentIndex();
+
+    if (securityIndex == Leap) {
+        m_ui->leapUsername->setFocus();
+        m_ui->leapUsername->selectAll();
+        return m_ui->leapUsername;
+    } else if (securityIndex == DynamicWep) {
+        return m_8021xWidget->focusUsernameField();
+    } else if (securityIndex == WpaEap) {
+        return m_WPA2Widget->focusUsernameField();
+    } else if (securityIndex == Wpa3SuiteB192) {
+        return m_WPA3SuiteB192Widget->focusUsernameField();
+    }
+    return nullptr;
+}
+
 #include "moc_wifisecurity.cpp"

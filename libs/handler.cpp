@@ -339,7 +339,7 @@ QCoro::Task<> Handler::addAndActivateConnectionInternal(const QString &device, c
         m_tmpDevicePath = device;
         m_tmpSpecificPath = specificObject;
 
-        QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(settings);
+        QPointer<ConnectionEditorDialog> editor = new ConnectionEditorDialog(settings, true);
         editor->setAttribute(Qt::WA_DeleteOnClose);
         editor->show();
 

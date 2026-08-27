@@ -17,6 +17,7 @@
 class ConnectionWidget;
 class SettingWidget;
 class WifiConnectionWidget;
+class QScrollArea;
 
 class ConnectionStatusWidget;
 
@@ -38,6 +39,10 @@ public:
 
     // Returns whether the filled values are valid
     bool isValid() const;
+
+    int wifiTabIndex() const;
+
+    void focusWifiSecurityUsername();
 
 Q_SIGNALS:
     // The default value is supposed to be false, watch this property for validity change after
@@ -71,6 +76,8 @@ private:
     ConnectionStatusWidget *m_statusWidget = nullptr;
     QList<SettingWidget *> m_settingWidgets;
     WifiConnectionWidget *m_wifiConnectionWidget = nullptr;
+    QScrollArea *m_wifiScrollArea = nullptr;
+    int m_wifiTabIndex = -1;
 
     void addConnectionWidget(ConnectionWidget *widget, const QString &text);
     void addSettingWidget(SettingWidget *widget, const QString &text);

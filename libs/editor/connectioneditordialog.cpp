@@ -11,10 +11,13 @@
 
 #include <KLocalizedString>
 
-ConnectionEditorDialog::ConnectionEditorDialog(const NetworkManager::ConnectionSettings::Ptr &connection, QWidget *parent, Qt::WindowFlags f)
+ConnectionEditorDialog::ConnectionEditorDialog(const NetworkManager::ConnectionSettings::Ptr &connection,
+                                               bool focusWifiSecurityUsername,
+                                               QWidget *parent,
+                                               Qt::WindowFlags f)
     : QDialog(parent, f)
     , m_buttonBox(new QDialogButtonBox(this))
-    , m_connectionEditorTabWidget(new ConnectionEditorTabWidget(connection, parent, f))
+    , m_connectionEditorTabWidget(new ConnectionEditorTabWidget(connection, focusWifiSecurityUsername, parent, f))
 {
     auto layout = new QVBoxLayout(this);
     layout->addWidget(m_connectionEditorTabWidget);

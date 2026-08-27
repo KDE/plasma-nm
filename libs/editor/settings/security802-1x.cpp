@@ -640,6 +640,42 @@ bool Security8021x::isValid() const
     return true;
 }
 
+QWidget *Security8021x::focusUsernameField()
+{
+    KLineEdit *usernameField = nullptr;
+
+    const int authIndex = m_ui->auth->currentData().toInt();
+    switch (authIndex) {
+    case NetworkManager::Security8021xSetting::EapMethodMd5:
+        usernameField = m_ui->md5UserName;
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodTls:
+        usernameField = m_ui->tlsIdentity;
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodLeap:
+        usernameField = m_ui->leapUsername;
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodPwd:
+        usernameField = m_ui->pwdUsername;
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodFast:
+        usernameField = m_ui->fastUsername;
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodTtls:
+        usernameField = m_ui->ttlsUsername;
+        break;
+    case NetworkManager::Security8021xSetting::EapMethodPeap:
+        usernameField = m_ui->peapUsername;
+        break;
+    }
+
+    if (usernameField) {
+        usernameField->setFocus();
+        usernameField->selectAll();
+    }
+    return usernameField;
+}
+
 void Security8021x::currentAuthChanged(int index)
 {
     Q_UNUSED(index);

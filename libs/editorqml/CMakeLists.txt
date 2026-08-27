@@ -23,6 +23,13 @@ set(SETTINGS_SRCS
   settings/ipv6settings/ipv6routetablemodel.h
   settings/wiredconnectionsettings/wiredsettings.h
   settings/wiredconnectionsettings/wiredsettings.cpp
+
+  #ssh vpn
+  settings/vpn/ssh/sshauth.h
+  settings/vpn/ssh/sshauth.cpp
+  settings/vpn/ssh/ssh.cpp
+  settings/vpn/ssh/ssh.h
+  settings/vpn/ssh/nm-ssh-service.h
 )
 
 set(QML_SRCS
@@ -51,6 +58,7 @@ set(QML_SRCS
 
   qml/components/Wireless.qml
   qml/components/Wired.qml
+  qml/components/Vpn.qml
 
   qml/PasswordPromptDialog.qml
 
@@ -70,6 +78,11 @@ set(QML_SRCS
   qml/ipv6/IPv6Routes.qml
 
   qml/wiredconnectionsettings/WiredConnectionSettings.qml
+
+  # ssh vpn
+  qml/vpn/ssh/Ssh.qml
+  qml/vpn/ssh/SshAdvanced.qml
+  qml/vpn/ssh/SshAuth.qml
 )
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})
@@ -134,6 +147,8 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/ipv4settings
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/ipv6settings
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/wiredconnectionsettings
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/ssh
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

@@ -31,6 +31,11 @@ Kirigami.Page {
         PlasmaNMQ.Wired {}
     }
     Component {
+        id: vpn
+        PlasmaNMQ.Vpn {}
+    }
+
+    Component {
         id: disconnected
 
         Item {
@@ -295,6 +300,8 @@ Kirigami.Page {
                         return wireless;
                     case PlasmaNM.Enums.Wired:
                         return wired;
+                    case PlasmaNM.Enums.Vpn:
+                        return vpn;
                     default:
                         return disconnected;
                     }

@@ -14,6 +14,7 @@
 #include "ipv4settings.h"
 #include "ipv6settings.h"
 #include "security8021xsetting.h"
+#include "ssh.h"
 #include "wifisecuritysetting.h"
 #include "wifisetting.h"
 #include "wiredsettings.h"
@@ -40,6 +41,8 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(bool wiredSecurityEnabled READ wiredSecurityEnabled WRITE setWiredSecurityEnabled NOTIFY wiredSecurityEnabledChanged)
     Q_PROPERTY(IPv4Settings *ipv4Settings READ ipv4Settings CONSTANT)
     Q_PROPERTY(IPv6Settings *ipv6Settings READ ipv6Settings CONSTANT)
+    Q_PROPERTY(SshSetting *vpnSshSetting READ vpnSshSetting NOTIFY vpnSshSettingChanged)
+    Q_PROPERTY(QString vpnServiceType READ vpnServiceType NOTIFY vpnServiceTypeChanged)
 
 public:
     explicit KCMNetworkManagementQml(QObject *parent, const KPluginMetaData &metaData);
@@ -57,6 +60,8 @@ public:
     void setWiredSecurityEnabled(bool enabled);
     IPv4Settings *ipv4Settings() const;
     IPv6Settings *ipv6Settings() const;
+    SshSetting *vpnSshSetting() const;
+    QString vpnServiceType() const;
     bool useApMode() const;
 
     Q_INVOKABLE void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
@@ -77,6 +82,8 @@ Q_SIGNALS:
     void kcmChangedStateChanged(bool changed);
     void connectionTypeChanged();
     void wiredSecurityEnabledChanged();
+    void vpnSshSettingChanged();
+    void vpnServiceTypeChanged();
 
 private Q_SLOTS:
     void onConnectionAdded(const QString &connection);
@@ -110,6 +117,7 @@ private:
 
     QString m_currentConnectionPath;
     QString m_createdConnectionUuid;
+    QString m_vpnServiceType;
 
     Handler *const m_handler;
     WifiSecuritySetting *const m_wifiSecurity;
@@ -120,6 +128,7 @@ private:
     WiredSetting *const m_wiredSetting;
     IPv4Settings *const m_ipv4Settings;
     IPv6Settings *const m_ipv6Settings;
+    SshSetting *const m_vpnSshSetting;
 
     bool m_useApMode = false;
     bool m_wiredSecurityEnabled = false;

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-24 00:47+0000\n"
+"POT-Creation-Date: 2026-08-27 00:47+0000\n"
 "PO-Revision-Date: 2026-07-17 16:11+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -197,28 +197,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Disponibile"
 
-#: qml/main.qml:148 ui/main.qml:212
+#: qml/main.qml:148 ui/main.qml:215
 msgid "Add new connection"
 msgstr "Adde nove connexion"
 
-#: qml/main.qml:166 ui/main.qml:230
+#: qml/main.qml:166 ui/main.qml:233
 msgid "Remove selected connection"
 msgstr "Remove connexion seligite"
 
-#: qml/main.qml:184 ui/main.qml:248
+#: qml/main.qml:184 ui/main.qml:251
 msgid "Export selected connection"
 msgstr "Export connexion seligite"
 
-#: qml/main.qml:209 ui/main.qml:184
+#: qml/main.qml:209 ui/main.qml:187
 msgid "Configuration"
 msgstr "Configuration"
 
-#: qml/main.qml:236 ui/main.qml:309
+#: qml/main.qml:236 ui/main.qml:314
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Remove connexion"
 
-#: qml/main.qml:237 ui/main.qml:310
+#: qml/main.qml:237 ui/main.qml:315
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Tu  vole remover  le connexion '%1' ?"
 
@@ -256,7 +256,7 @@ msgstr "Contrasigno debe esser inter 8 e 64 characteres"
 msgid "Disconnected"
 msgstr "Disconnectite"
 
-#: ui/main.qml:272
+#: ui/main.qml:275
 msgid "Connection name:"
 msgstr "Nomine de connexion:"
 

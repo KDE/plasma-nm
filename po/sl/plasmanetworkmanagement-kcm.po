@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-24 00:47+0000\n"
+"POT-Creation-Date: 2026-08-27 00:47+0000\n"
 "PO-Revision-Date: 2026-07-16 06:23+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -200,28 +200,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Na voljo"
 
-#: qml/main.qml:148 ui/main.qml:212
+#: qml/main.qml:148 ui/main.qml:215
 msgid "Add new connection"
 msgstr "Dodaj novo povezavo"
 
-#: qml/main.qml:166 ui/main.qml:230
+#: qml/main.qml:166 ui/main.qml:233
 msgid "Remove selected connection"
 msgstr "Odstrani izbrano povezavo"
 
-#: qml/main.qml:184 ui/main.qml:248
+#: qml/main.qml:184 ui/main.qml:251
 msgid "Export selected connection"
 msgstr "Izvozi izbrano povezavo"
 
-#: qml/main.qml:209 ui/main.qml:184
+#: qml/main.qml:209 ui/main.qml:187
 msgid "Configuration"
 msgstr "Nastavitev"
 
-#: qml/main.qml:236 ui/main.qml:309
+#: qml/main.qml:236 ui/main.qml:314
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Odstrani povezavo"
 
-#: qml/main.qml:237 ui/main.qml:310
+#: qml/main.qml:237 ui/main.qml:315
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Ali želite odstraniti povezavo '%1'?"
 
@@ -259,7 +259,7 @@ msgstr "Geslo mora imeti med 8 in 64 znakov"
 msgid "Disconnected"
 msgstr "Nepovezano"
 
-#: ui/main.qml:272
+#: ui/main.qml:275
 msgid "Connection name:"
 msgstr "Ime povezave:"
 

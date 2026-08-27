@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-24 00:47+0000\n"
+"POT-Creation-Date: 2026-08-27 00:47+0000\n"
 "PO-Revision-Date: 2026-08-04 07:50+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -197,28 +197,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "可用"
 
-#: qml/main.qml:148 ui/main.qml:212
+#: qml/main.qml:148 ui/main.qml:215
 msgid "Add new connection"
 msgstr "新增連線"
 
-#: qml/main.qml:166 ui/main.qml:230
+#: qml/main.qml:166 ui/main.qml:233
 msgid "Remove selected connection"
 msgstr "移除選取的連線"
 
-#: qml/main.qml:184 ui/main.qml:248
+#: qml/main.qml:184 ui/main.qml:251
 msgid "Export selected connection"
 msgstr "匯入選取的連線"
 
-#: qml/main.qml:209 ui/main.qml:184
+#: qml/main.qml:209 ui/main.qml:187
 msgid "Configuration"
 msgstr "設定"
 
-#: qml/main.qml:236 ui/main.qml:309
+#: qml/main.qml:236 ui/main.qml:314
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "移除連線"
 
-#: qml/main.qml:237 ui/main.qml:310
+#: qml/main.qml:237 ui/main.qml:315
 msgid "Do you want to remove the connection '%1'?"
 msgstr "您確定要移除連線「%1」嗎？"
 
@@ -256,7 +256,7 @@ msgstr "密碼必須在 8 到 64 個字元之間"
 msgid "Disconnected"
 msgstr "已斷線"
 
-#: ui/main.qml:272
+#: ui/main.qml:275
 msgid "Connection name:"
 msgstr "連線名稱："
 

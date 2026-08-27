@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-24 00:47+0000\n"
+"POT-Creation-Date: 2026-08-27 00:47+0000\n"
 "PO-Revision-Date: 2026-08-08 12:18+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -547,7 +547,7 @@ msgstr "BSSID"
 
 #: editor/connectiondetails.cpp:171 editor/connectioneditorbase.cpp:242
 #: editor/settings/bridgewidget.cpp:39 editor/settings/teamwidget.cpp:42
-#: editor/uiutils.cpp:226 editorqml/qml/components/Wireless.qml:27
+#: editor/uiutils.cpp:226 editorqml/qml/components/Wireless.qml:33
 #: models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
@@ -672,8 +672,8 @@ msgstr "Zespół"
 msgid "Device"
 msgstr "Urządzenie"
 
-#: editor/connectiondetails.cpp:321 editorqml/qml/components/Wired.qml:24
-#: editorqml/qml/components/Wireless.qml:24
+#: editor/connectiondetails.cpp:321 editorqml/qml/components/Wired.qml:30
+#: editorqml/qml/components/Wireless.qml:30
 #: editorqml/qml/ConfigurationDialog.qml:34
 #, kde-format
 msgid "General"
@@ -700,8 +700,8 @@ msgid "IPv4 Secondary Nameserver"
 msgstr "Zapasowy serwer nazw IPv4"
 
 #: editor/connectiondetails.cpp:352 editor/connectioneditorbase.cpp:313
-#: editorqml/qml/components/Wired.qml:33
-#: editorqml/qml/components/Wireless.qml:33
+#: editorqml/qml/components/Wired.qml:39
+#: editorqml/qml/components/Wireless.qml:39
 #, kde-format
 msgid "IPv4"
 msgstr "IPv4"
@@ -732,8 +732,8 @@ msgid "IPv6 Secondary Nameserver"
 msgstr "Zapasowy serwer nazw IPv6"
 
 #: editor/connectiondetails.cpp:386 editor/connectioneditorbase.cpp:331
-#: editorqml/qml/components/Wired.qml:36
-#: editorqml/qml/components/Wireless.qml:36
+#: editorqml/qml/components/Wired.qml:42
+#: editorqml/qml/components/Wireless.qml:42
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
@@ -751,12 +751,12 @@ msgid "General"
 msgstr "Ogólne"
 
 #: editor/connectioneditorbase.cpp:222 editor/connectioneditorbase.cpp:248
-#: editorqml/qml/components/Wired.qml:27
+#: editorqml/qml/components/Wired.qml:33
 #, kde-format
 msgid "Wired"
 msgstr "Przewodowe"
 
-#: editor/connectioneditorbase.cpp:225 editorqml/qml/components/Wired.qml:30
+#: editor/connectioneditorbase.cpp:225 editorqml/qml/components/Wired.qml:36
 #, kde-format
 msgid "802.1x Security"
 msgstr "Zabezpieczenie 802.1x"
@@ -1059,6 +1059,7 @@ msgstr "Wybierz plik do zaimportowania"
 #: editorqml/qml/wifisecurity/authentication/enterprise/Wpa3Enterprise192.qml:31
 #: editorqml/qml/wifisecurity/authentication/enterprise/WpaEnterprise.qml:53
 #: editorqml/qml/wifisecurity/authentication/WepKey.qml:48
+#: editorqml/qml/wifisecurity/WiredSecurityForm.qml:34
 #, kde-format
 msgid "Authentication:"
 msgstr "Uwierzytelnianie:"
@@ -1073,6 +1074,7 @@ msgstr "MD5"
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:58
 #: editorqml/qml/wifisecurity/authentication/enterprise/WpaEnterprise.qml:26
+#: editorqml/qml/wifisecurity/WiredSecurityForm.qml:39
 #, kde-format
 msgid "TLS"
 msgstr "TLS"
@@ -1089,6 +1091,7 @@ msgstr "LEAP"
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:68
 #: editorqml/qml/wifisecurity/authentication/enterprise/WpaEnterprise.qml:26
+#: editorqml/qml/wifisecurity/WiredSecurityForm.qml:39
 #, kde-format
 msgid "PWD"
 msgstr "PWD"
@@ -1096,6 +1099,7 @@ msgstr "PWD"
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:73
 #: editorqml/qml/wifisecurity/authentication/enterprise/WpaEnterprise.qml:26
+#: editorqml/qml/wifisecurity/WiredSecurityForm.qml:39
 #, kde-format
 msgid "FAST"
 msgstr "SZYBKO"
@@ -1103,6 +1107,7 @@ msgstr "SZYBKO"
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:78
 #: editorqml/qml/wifisecurity/authentication/enterprise/WpaEnterprise.qml:26
+#: editorqml/qml/wifisecurity/WiredSecurityForm.qml:39
 #, kde-format
 msgid "Tunneled TLS (TTLS)"
 msgstr "Tunelowe TLS (TTLS)"
@@ -1110,6 +1115,7 @@ msgstr "Tunelowe TLS (TTLS)"
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:83
 #: editorqml/qml/wifisecurity/authentication/enterprise/WpaEnterprise.qml:26
+#: editorqml/qml/wifisecurity/WiredSecurityForm.qml:39
 #, kde-format
 msgid "Protected EAP (PEAP)"
 msgstr "Chronione EAP (PEAP)"
@@ -1126,12 +1132,12 @@ msgstr "Chronione EAP (PEAP)"
 #: editor/settings/ui/802-1x.ui:542 editor/settings/ui/802-1x.ui:684
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
 #: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:207
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:101
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:173
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapLeap.qml:25
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapMd5.qml:22
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:80
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPwd.qml:22
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:69
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:152
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPwd.qml:94
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:141
 #: editorqml/qml/wifisecurity/authentication/Leap.qml:24
 #, kde-format
 msgid "Username:"
@@ -1149,7 +1155,7 @@ msgstr "Nazwa użytkownika:"
 #: editor/settings/ui/802-1x.ui:555 editor/settings/ui/802-1x.ui:697
 #: editor/settings/ui/cdma.ui:50 editor/settings/ui/gsm.ui:54
 #: editor/settings/ui/pppoe.ui:50 editor/settings/ui/wifisecurity.ui:223
-#: editor/settings/ui/wifisecurity.ui:243 editorqml/qml/PasswordField.qml:85
+#: editor/settings/ui/wifisecurity.ui:243 editorqml/qml/PasswordField.qml:15
 #, kde-format
 msgid "Password:"
 msgstr "Hasło:"
@@ -1166,9 +1172,9 @@ msgstr "Tożsamość:"
 #. i18n: ectx: property (text), widget (QLabel, label_31)
 #: editor/settings/ui/802-1x.ui:134 editor/settings/ui/802-1x.ui:572
 #: editor/settings/ui/802-1x.ui:714
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:29
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:101
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:30
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:30
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:102
 #, kde-format
 msgid "Domain:"
 msgstr "Domena:"
@@ -1185,23 +1191,31 @@ msgstr "Certyfikat użytkownika:"
 #. i18n: ectx: property (text), widget (QLabel, label_23)
 #: editor/settings/ui/802-1x.ui:163 editor/settings/ui/802-1x.ui:483
 #: editor/settings/ui/802-1x.ui:595
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:38
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:110
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:68
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:39
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:111
 #, kde-format
 msgid "CA certificate:"
 msgstr "Certyfikat CA:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_27)
 #: editor/settings/ui/802-1x.ui:182
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:26
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:26
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPwd.qml:24
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:75
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:26
 #, kde-format
 msgid "Subject match:"
 msgstr "Pasujący podmiot:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:199
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:48
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:48
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPwd.qml:46
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:95
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:48
 #, kde-format
 msgid "Alternative subject matches:"
 msgstr "Alternatywnie pasujące podmioty:"
@@ -1209,14 +1223,22 @@ msgstr "Alternatywnie pasujące podmioty:"
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
 #: editor/settings/ui/802-1x.ui:214 editor/settings/ui/802-1x.ui:238
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:74
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:74
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPwd.qml:72
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:118
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:74
 #, kde-format
 msgid "…"
 msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:223
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:63
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:63
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPwd.qml:61
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:108
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:63
 #, kde-format
 msgid "Connect to these servers:"
 msgstr "Łącz z tymi serwerami:"
@@ -1225,13 +1247,14 @@ msgstr "Łącz z tymi serwerami:"
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
 #: editor/settings/ui/802-1x.ui:247
 #: editor/settings/ui/wireguardinterfacewidget.ui:41
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:149
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:152
 #, kde-format
 msgid "Private key:"
 msgstr "Klucz prywatny:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/802-1x.ui:266
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:159
 #, kde-format
 msgid "Private key password:"
 msgstr "Hasło klucza prywatnego:"
@@ -1241,15 +1264,15 @@ msgstr "Hasło klucza prywatnego:"
 #. i18n: ectx: property (text), widget (QLabel, label_24)
 #: editor/settings/ui/802-1x.ui:343 editor/settings/ui/802-1x.ui:470
 #: editor/settings/ui/802-1x.ui:582
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:21
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:21
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:93
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:93
 #, kde-format
 msgid "Anonymous identity:"
 msgstr "Tożsamość anonimowa:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, fastAllowPacProvisioning)
 #: editor/settings/ui/802-1x.ui:356
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:33
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:105
 #, kde-format
 msgid "Automatic PAC provisioning"
 msgstr "Samoczynne zabezpieczenie PAC"
@@ -1283,9 +1306,9 @@ msgstr "Plik PAC:"
 #. i18n: ectx: property (text), widget (QLabel, label_22)
 #: editor/settings/ui/802-1x.ui:410 editor/settings/ui/802-1x.ui:502
 #: editor/settings/ui/802-1x.ui:649
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:93
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:69
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:58
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:165
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:141
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:130
 #, kde-format
 msgid "Inner authentication:"
 msgstr "Uwierzytelnienie wewnętrzne:"
@@ -1330,7 +1353,7 @@ msgstr "CHAP"
 
 #. i18n: ectx: property (text), widget (QLabel, label_26)
 #: editor/settings/ui/802-1x.ui:614
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:58
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:130
 #, kde-format
 msgid "PEAP version:"
 msgstr "Wersja PEAP:"
@@ -1344,14 +1367,14 @@ msgstr "Sam wykryj"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:636
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:61
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:133
 #, kde-format
 msgid "Version 0"
 msgstr "Wersja 0"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, peapVersion)
 #: editor/settings/ui/802-1x.ui:641
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:61
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:133
 #, kde-format
 msgid "Version 1"
 msgstr "Wersja 1"
@@ -1892,8 +1915,8 @@ msgstr ""
 #: editorqml/qml/ipv4/IPv4Settings.qml:289
 #: editorqml/qml/ipv4/SearchDomainList.qml:99
 #: editorqml/qml/ipv6/IPv6Settings.qml:301
-#: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:98
-#: editorqml/qml/wifisecurity/DnsList.qml:97
+#: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:105
+#: editorqml/qml/wifisecurity/DnsList.qml:105
 #, kde-format
 msgid "Remove"
 msgstr "Usuń"
@@ -1903,8 +1926,8 @@ msgstr "Usuń"
 #: editorqml/qml/ipv4/IPv4Settings.qml:281
 #: editorqml/qml/ipv4/SearchDomainList.qml:85
 #: editorqml/qml/ipv6/IPv6Settings.qml:293
-#: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:84
-#: editorqml/qml/wifisecurity/DnsList.qml:83
+#: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:91
+#: editorqml/qml/wifisecurity/DnsList.qml:91
 #, kde-format
 msgid "Add"
 msgstr "Dodaj"
@@ -2711,6 +2734,7 @@ msgstr "100 Gb/s"
 
 #. i18n: ectx: property (text), widget (QCheckBox, use8021X)
 #: editor/settings/ui/wiredsecurity.ui:17
+#: editorqml/qml/wifisecurity/WiredSecurityForm.qml:28
 #, kde-format
 msgid "Use 802.1x security for this connection"
 msgstr "Użyj zabezpieczeń 802.1x dla tego połączenia"
@@ -4025,23 +4049,23 @@ msgstr "Twój Plan:"
 msgid "Change the visibility of the password"
 msgstr "Zmień widoczność hasła"
 
-#: editor/widgets/passwordfield.cpp:41 editorqml/qml/PasswordField.qml:112
+#: editor/widgets/passwordfield.cpp:41 editorqml/qml/PasswordField.qml:125
 #, kde-format
 msgid "Store password for this user only (encrypted)"
 msgstr "Zachowaj tylko dla tego użytkownika (szyfrowane)"
 
-#: editor/widgets/passwordfield.cpp:43 editorqml/qml/PasswordField.qml:112
+#: editor/widgets/passwordfield.cpp:43 editorqml/qml/PasswordField.qml:125
 #, kde-format
 msgid "Store password for all users (not encrypted)"
 msgstr "Zachowaj dla wszystkich użytkowników (nieszyfrowane)"
 
 #: editor/widgets/passwordfield.cpp:45 editor/widgets/passwordfield.cpp:91
-#: editorqml/qml/PasswordField.qml:112
+#: editorqml/qml/PasswordField.qml:125
 #, kde-format
 msgid "Ask for this password every time"
 msgstr "Pytaj za każdym razem"
 
-#: editor/widgets/passwordfield.cpp:106 editorqml/qml/PasswordField.qml:115
+#: editor/widgets/passwordfield.cpp:106 editorqml/qml/PasswordField.qml:128
 #, kde-format
 msgid "This password is not required"
 msgstr "Hasło nie jest wymagane"
@@ -4172,13 +4196,13 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Wybierz rodzaj połączenia"
 
-#: editorqml/qml/components/Wired.qml:21
-#: editorqml/qml/components/Wireless.qml:21
+#: editorqml/qml/components/Wired.qml:27
+#: editorqml/qml/components/Wireless.qml:27
 #, kde-format
 msgid "Status"
 msgstr "Stan"
 
-#: editorqml/qml/components/Wireless.qml:30
+#: editorqml/qml/components/Wireless.qml:36
 #, kde-format
 msgid "Wi-Fi Security"
 msgstr "Zabezpieczenie Wi-Fi"
@@ -4434,15 +4458,15 @@ msgid "Search Domains"
 msgstr "Domeny wyszukiwania:"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:107
-#: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:106
-#: editorqml/qml/wifisecurity/DnsList.qml:105
+#: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:113
+#: editorqml/qml/wifisecurity/DnsList.qml:113
 #, kde-format
 msgid "Move Up"
 msgstr "Przesuń w górę"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:120
-#: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:119
-#: editorqml/qml/wifisecurity/DnsList.qml:118
+#: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:126
+#: editorqml/qml/wifisecurity/DnsList.qml:126
 #, kde-format
 msgid "Move Down"
 msgstr "Przesuń w dół"
@@ -4562,12 +4586,12 @@ msgstr ""
 "połączenia\n"
 "jeśli nie uda się połączenie IPv6, lecz uda się połączenie IPv4"
 
-#: editorqml/qml/PasswordField.qml:95
+#: editorqml/qml/PasswordField.qml:106
 #, kde-format
 msgid "Always asked"
 msgstr "Zawsze pytaj"
 
-#: editorqml/qml/PasswordField.qml:97
+#: editorqml/qml/PasswordField.qml:108
 #, kde-format
 msgid "Not required"
 msgstr "Niewymagane"
@@ -4657,70 +4681,70 @@ msgstr " bajtów"
 msgid "Alternative subject matches"
 msgstr "Pasuje alternatywny podmiot"
 
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:26
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:98
 #, kde-format
 msgctxt "@label:textbox"
 msgid "Anonymous identity:"
 msgstr "Tożsamość anonimowa:"
 
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
 #, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Anonymous"
 msgstr "Anonimowy"
 
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
 #, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Authenticated"
 msgstr "Uwierzytelniono"
 
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:44
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
 #, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Both"
 msgstr "Oba"
 
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:70
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:142
 #, kde-format
 msgctxt ""
 "@label PAC stands for Proxy Auto-Configuration and should not be translated"
 msgid "PAC file:"
 msgstr "Plik PAC:"
 
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:119
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:191
 #, kde-format
 msgctxt "@item:filefilter"
 msgid "PAC files (*.pac)"
 msgstr "Pliki PAC (*.pac)"
 
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:45
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:117
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:39
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:58
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:46
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:118
 #, kde-format
 msgid "*.der *.pem *.crt *.cer"
 msgstr "*.der *.pem *.crt *.cer"
 
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:61
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:133
 #, kde-format
 msgid "Automatic"
 msgstr "Sam wykryj"
 
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:103
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:166
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:172
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:92
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:175
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:170
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:176
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:164
 #, kde-format
 msgid "Certificates (*.der *.pem *.crt *.cer)"
 msgstr "Certyfikaty (*.der *.pem *.crt *.cer)"
 
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:139
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:142
 #, kde-format
 msgid "*.der *.pem *.p12 *.key"
 msgstr "*.der *.pem *.p12 *.key"
 
-#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:178
+#: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:182
 #, kde-format
 msgid "Keys (*.der *.pem *.p12 *.key)"
 msgstr "Klucze (*.der *.pem *.p12 *.key)"

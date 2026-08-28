@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-27 00:47+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2026-08-02 19:31+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -198,28 +198,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Tilgjengelege"
 
-#: qml/main.qml:148 ui/main.qml:215
+#: qml/main.qml:148 ui/main.qml:220
 msgid "Add new connection"
 msgstr "Legg til ny tilkopling"
 
-#: qml/main.qml:166 ui/main.qml:233
+#: qml/main.qml:166 ui/main.qml:238
 msgid "Remove selected connection"
 msgstr "Fjern merkt tilkopling"
 
-#: qml/main.qml:184 ui/main.qml:251
+#: qml/main.qml:184 ui/main.qml:256
 msgid "Export selected connection"
 msgstr "Eksporter merkt tilkopling"
 
-#: qml/main.qml:209 ui/main.qml:187
+#: qml/main.qml:209 ui/main.qml:192
 msgid "Configuration"
 msgstr "Oppsett"
 
-#: qml/main.qml:236 ui/main.qml:314
+#: qml/main.qml:236 ui/main.qml:321
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Fjern tilkopling"
 
-#: qml/main.qml:237 ui/main.qml:315
+#: qml/main.qml:237 ui/main.qml:322
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Er du sikker på at du vil fjerna tilkoplinga «%1»?"
 
@@ -253,10 +253,10 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Passordet må vera på 8 til 64 teikn"
 
-#: ui/main.qml:41
+#: ui/main.qml:46
 msgid "Disconnected"
 msgstr "Fråkopla"
 
-#: ui/main.qml:275
+#: ui/main.qml:280
 msgid "Connection name:"
 msgstr "Tilkoplingsnamn:"

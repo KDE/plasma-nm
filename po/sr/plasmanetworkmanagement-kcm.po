@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-27 00:47+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2017-10-30 23:08+0100\n"
 "Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -209,28 +209,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr ""
 
-#: qml/main.qml:148 ui/main.qml:215
+#: qml/main.qml:148 ui/main.qml:220
 msgid "Add new connection"
 msgstr "Додај нову везу"
 
-#: qml/main.qml:166 ui/main.qml:233
+#: qml/main.qml:166 ui/main.qml:238
 msgid "Remove selected connection"
 msgstr "Уклони изабрану везу"
 
-#: qml/main.qml:184 ui/main.qml:251
+#: qml/main.qml:184 ui/main.qml:256
 msgid "Export selected connection"
 msgstr "Извези изабрану везу"
 
-#: qml/main.qml:209 ui/main.qml:187
+#: qml/main.qml:209 ui/main.qml:192
 msgid "Configuration"
 msgstr ""
 
-#: qml/main.qml:236 ui/main.qml:314
+#: qml/main.qml:236 ui/main.qml:321
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Уклањање везе"
 
-#: qml/main.qml:237 ui/main.qml:315
+#: qml/main.qml:237 ui/main.qml:322
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Желите ли заиста да уклоните везу „%1“?"
 
@@ -268,14 +268,14 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
 
-#: ui/main.qml:41
+#: ui/main.qml:46
 #, fuzzy
 #| msgid "Disconnect"
 msgid "Disconnected"
 msgstr "Прекини везу"
 
 # >> @item
-#: ui/main.qml:275
+#: ui/main.qml:280
 #, fuzzy
 #| msgid "Connected"
 msgid "Connection name:"

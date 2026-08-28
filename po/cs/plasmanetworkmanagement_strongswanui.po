@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 11:54+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2023-11-06 10:00+0100\n"
 "Last-Translator: Vit Pelcak <vit@pelcak.org>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
@@ -72,7 +72,7 @@ msgstr "Brána:"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: strongswanprop.ui:49 strongswanprop.ui:140 strongswanprop.ui:185
+#: strongswanprop.ui:49 strongswanprop.ui:145 strongswanprop.ui:190
 #, kde-format
 msgid "Certificate:"
 msgstr "Certifikát:"
@@ -113,86 +113,98 @@ msgstr "Čipová karta"
 msgid "EAP"
 msgstr "EAP"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:118
+#, kde-format
+msgid "EAP-TTLS"
+msgstr ""
+
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: strongswanprop.ui:150
+#: strongswanprop.ui:155
 #, kde-format
 msgid "Private key:"
 msgstr "Soukromý klíč:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: strongswanprop.ui:160
+#: strongswanprop.ui:165
 #, kde-format
 msgid "Private Key Password:"
 msgstr "Heslo soukromého klíče:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: strongswanprop.ui:202
+#: strongswanprop.ui:207
 #, kde-format
 msgid "PIN:"
 msgstr "PIN:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: strongswanprop.ui:230
+#: strongswanprop.ui:235
 #, kde-format
 msgid "Username:"
 msgstr "Uživatelské jméno:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: strongswanprop.ui:258
+#: strongswanprop.ui:263
 #, kde-format
 msgid "User Password:"
 msgstr "Heslo uživatele:"
 
+#. i18n: ectx: property (text), widget (QLabel, label_eapttls_info)
+#: strongswanprop.ui:283
+#, kde-format
+msgid "Uses the same Username/Password fields as EAP above."
+msgstr ""
+
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: strongswanprop.ui:275
+#: strongswanprop.ui:297
 #, kde-format
 msgid "Options"
 msgstr "Možnosti"
 
 #. i18n: ectx: property (text), widget (QCheckBox, innerIP)
-#: strongswanprop.ui:284
+#: strongswanprop.ui:306
 #, kde-format
 msgid "Request an inner IP address"
 msgstr "Vyžádat si vnitřní IP adresu"
 
 #. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
-#: strongswanprop.ui:297
+#: strongswanprop.ui:319
 #, kde-format
 msgid "Enforce UDP encapsulation"
 msgstr "Vynutit zapouzdření UDP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipComp)
-#: strongswanprop.ui:304
+#: strongswanprop.ui:326
 #, kde-format
 msgid "Use IP compression"
 msgstr "Použít kompresi IP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, proposal)
-#: strongswanprop.ui:314
+#: strongswanprop.ui:336
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
 msgstr "Povolit vlastní návrhy šifer"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: strongswanprop.ui:328
+#: strongswanprop.ui:350
 #, kde-format
 msgid "IKE:"
 msgstr "IKE:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
-#: strongswanprop.ui:335
+#: strongswanprop.ui:357
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
 msgstr "Seznam návrhů pro IKE oddělený pomocí \";\""
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: strongswanprop.ui:342
+#: strongswanprop.ui:364
 #, kde-format
 msgid "ESP:"
 msgstr "ESP:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
-#: strongswanprop.ui:349
+#: strongswanprop.ui:371
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
 msgstr "Seznam návrhů pro ESP oddělený pomocí \";\""

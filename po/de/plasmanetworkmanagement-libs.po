@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-27 00:47+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2026-05-21 14:25+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -76,7 +76,7 @@ msgstr "Unbekannt"
 msgid "POTS"
 msgstr "POTS"
 
-#: cellular/cellularmodemdetails.cpp:117 editor/connectioneditorbase.cpp:262
+#: cellular/cellularmodemdetails.cpp:117 editor/connectioneditorbase.cpp:283
 #, kde-format
 msgid "GSM"
 msgstr "GSM"
@@ -550,7 +550,7 @@ msgstr "%1 (Kanal %2)"
 msgid "BSSID"
 msgstr "BSSID"
 
-#: editor/connectiondetails.cpp:171 editor/connectioneditorbase.cpp:242
+#: editor/connectiondetails.cpp:171 editor/connectioneditorbase.cpp:262
 #: editor/settings/bridgewidget.cpp:39 editor/settings/teamwidget.cpp:42
 #: editor/uiutils.cpp:226 editorqml/qml/components/Wireless.qml:33
 #: models/creatableconnectionsmodel.cpp:173
@@ -594,7 +594,8 @@ msgid "Banner"
 msgstr "Banner"
 
 #: editor/connectiondetails.cpp:234 editor/connectiondetails.cpp:241
-#: editor/uiutils.cpp:218 networkstatus.cpp:190
+#: editor/uiutils.cpp:218 editorqml/qml/components/Vpn.qml:32
+#: networkstatus.cpp:190
 #, kde-format
 msgid "VPN"
 msgstr "VPN"
@@ -615,7 +616,7 @@ msgstr "Name"
 msgid "Capabilities"
 msgstr "Fähigkeiten"
 
-#: editor/connectiondetails.cpp:255 editor/connectioneditorbase.cpp:257
+#: editor/connectiondetails.cpp:255 editor/connectioneditorbase.cpp:278
 #: editor/uiutils.cpp:194
 #, kde-format
 msgid "Bluetooth"
@@ -629,28 +630,28 @@ msgid "Type"
 msgstr "Typ"
 
 #: editor/connectiondetails.cpp:260 editor/connectiondetails.cpp:265
-#: editor/connectioneditorbase.cpp:268 editor/settings/teamwidget.cpp:39
+#: editor/connectioneditorbase.cpp:289 editor/settings/teamwidget.cpp:39
 #: editor/uiutils.cpp:209 models/creatableconnectionsmodel.cpp:142
 #, kde-format
 msgid "Infiniband"
 msgstr "InfiniBand"
 
 #: editor/connectiondetails.cpp:270 editor/connectiondetails.cpp:275
-#: editor/connectioneditorbase.cpp:271 editor/uiutils.cpp:198
+#: editor/connectioneditorbase.cpp:292 editor/uiutils.cpp:198
 #: models/creatableconnectionsmodel.cpp:190
 #, kde-format
 msgid "Bond"
 msgstr "Bündelung"
 
 #: editor/connectiondetails.cpp:280 editor/connectiondetails.cpp:285
-#: editor/connectioneditorbase.cpp:274 editor/uiutils.cpp:201
+#: editor/connectioneditorbase.cpp:295 editor/uiutils.cpp:201
 #: models/creatableconnectionsmodel.cpp:200
 #, kde-format
 msgid "Bridge"
 msgstr "Netzwerkbrücke (Bridge)"
 
 #: editor/connectiondetails.cpp:290 editor/connectiondetails.cpp:296
-#: editor/connectioneditorbase.cpp:277 models/creatableconnectionsmodel.cpp:220
+#: editor/connectioneditorbase.cpp:298 models/creatableconnectionsmodel.cpp:220
 #, kde-format
 msgid "Vlan"
 msgstr "VLAN"
@@ -666,7 +667,7 @@ msgid "Adsl"
 msgstr "ADSL"
 
 #: editor/connectiondetails.cpp:305 editor/connectiondetails.cpp:310
-#: editor/connectioneditorbase.cpp:280 editor/uiutils.cpp:230
+#: editor/connectioneditorbase.cpp:301 editor/uiutils.cpp:230
 #: models/creatableconnectionsmodel.cpp:210
 #, kde-format
 msgid "Team"
@@ -677,9 +678,10 @@ msgstr "Team"
 msgid "Device"
 msgstr "Gerät"
 
-#: editor/connectiondetails.cpp:321 editorqml/qml/components/Wired.qml:30
+#: editor/connectiondetails.cpp:321 editorqml/qml/components/Vpn.qml:28
+#: editorqml/qml/components/Wired.qml:30
 #: editorqml/qml/components/Wireless.qml:30
-#: editorqml/qml/ConfigurationDialog.qml:34
+#: editorqml/qml/ConfigurationDialog.qml:34 editorqml/qml/vpn/ssh/Ssh.qml:30
 #, kde-format
 msgid "General"
 msgstr "Allgemein"
@@ -704,8 +706,8 @@ msgstr "Primärer IPv4-Namensserver"
 msgid "IPv4 Secondary Nameserver"
 msgstr "Sekundärer IPv4-Namensserver"
 
-#: editor/connectiondetails.cpp:352 editor/connectioneditorbase.cpp:313
-#: editorqml/qml/components/Wired.qml:39
+#: editor/connectiondetails.cpp:352 editor/connectioneditorbase.cpp:334
+#: editorqml/qml/components/Vpn.qml:36 editorqml/qml/components/Wired.qml:39
 #: editorqml/qml/components/Wireless.qml:39
 #, kde-format
 msgid "IPv4"
@@ -736,78 +738,78 @@ msgstr "Primärer IPv6-Namensserver"
 msgid "IPv6 Secondary Nameserver"
 msgstr "Sekundärer IPv6-Namensserver"
 
-#: editor/connectiondetails.cpp:386 editor/connectioneditorbase.cpp:331
-#: editorqml/qml/components/Wired.qml:42
+#: editor/connectiondetails.cpp:386 editor/connectioneditorbase.cpp:352
+#: editorqml/qml/components/Vpn.qml:43 editorqml/qml/components/Wired.qml:42
 #: editorqml/qml/components/Wireless.qml:42
 #, kde-format
 msgid "IPv6"
 msgstr "IPv6"
 
-#: editor/connectioneditorbase.cpp:209
+#: editor/connectioneditorbase.cpp:228
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
 msgstr "Status"
 
-#: editor/connectioneditorbase.cpp:215
+#: editor/connectioneditorbase.cpp:234
 #, kde-format
 msgctxt "@title:tab General configuration"
 msgid "General"
 msgstr "Allgemein"
 
-#: editor/connectioneditorbase.cpp:222 editor/connectioneditorbase.cpp:248
+#: editor/connectioneditorbase.cpp:241 editor/connectioneditorbase.cpp:269
 #: editorqml/qml/components/Wired.qml:33
 #, kde-format
 msgid "Wired"
 msgstr "Kabelgebunden"
 
-#: editor/connectioneditorbase.cpp:225 editorqml/qml/components/Wired.qml:36
+#: editor/connectioneditorbase.cpp:244 editorqml/qml/components/Wired.qml:36
 #, kde-format
 msgid "802.1x Security"
 msgstr "802.1x-Sicherheit"
 
-#: editor/connectioneditorbase.cpp:246 editor/uiutils.cpp:190
+#: editor/connectioneditorbase.cpp:267 editor/uiutils.cpp:190
 #: models/creatableconnectionsmodel.cpp:135
 #, kde-format
 msgid "DSL"
 msgstr "DSL"
 
-#: editor/connectioneditorbase.cpp:251 editor/connectioneditorbase.cpp:254
+#: editor/connectioneditorbase.cpp:272 editor/connectioneditorbase.cpp:275
 #, kde-format
 msgid "Mobile Broadband (%1)"
 msgstr "Mobiles Breitband (%1)"
 
-#: editor/connectioneditorbase.cpp:264 editor/connectioneditorbase.cpp:307
+#: editor/connectioneditorbase.cpp:285 editor/connectioneditorbase.cpp:328
 #, kde-format
 msgid "PPP"
 msgstr "PPP"
 
-#: editor/connectioneditorbase.cpp:283
+#: editor/connectioneditorbase.cpp:304
 #, kde-format
 msgid "WireGuard Interface"
 msgstr "WireGuard-Schnittstelle"
 
-#: editor/connectioneditorbase.cpp:296
+#: editor/connectioneditorbase.cpp:317
 #, kde-format
 msgid "VPN (%1)"
 msgstr "VPN (%1)"
 
-#: editor/connectioneditorbase.cpp:520
+#: editor/connectioneditorbase.cpp:541
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "Anmeldedaten für %1 können nicht bezogen werden"
 
-#: editor/connectioneditordialog.cpp:33
+#: editor/connectioneditordialog.cpp:36
 #, kde-format
 msgid "New Connection (%1)"
 msgstr "Neue Verbindung (%1)"
 
-#: editor/connectioneditordialog.cpp:35
+#: editor/connectioneditordialog.cpp:38
 #, kde-format
 msgid "Edit Connection '%1'"
 msgstr "Verbindung „%1“ bearbeiten"
 
-#: editor/connectioneditortabwidget.cpp:53
+#: editor/connectioneditortabwidget.cpp:59
 #, kde-format
 msgid "New %1 connection"
 msgstr "Neue Verbindung %1"
@@ -2054,7 +2056,7 @@ msgid "Privacy:"
 msgstr "Privatsphäre:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, authGroup)
-#: editor/settings/ui/ppp.ui:23
+#: editor/settings/ui/ppp.ui:23 editorqml/qml/vpn/ssh/Ssh.qml:136
 #, kde-format
 msgid "Authentication"
 msgstr "Authentifizierung"
@@ -4170,7 +4172,7 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "Verbindungsart:"
 
-#: editorqml/qml/components/Wired.qml:27
+#: editorqml/qml/components/Vpn.qml:24 editorqml/qml/components/Wired.qml:27
 #: editorqml/qml/components/Wireless.qml:27
 #, fuzzy, kde-format
 #| msgctxt "@title:tab Connection status and details"
@@ -4423,7 +4425,7 @@ msgstr ""
 "Verbindungsaufbau zulassen, wenn die Einrichtung \n"
 "von IPv4 fehlschlägt, IPv6 aber erfolgreich ist"
 
-#: editorqml/qml/ipv4/IPv4Settings.qml:326
+#: editorqml/qml/ipv4/IPv4Settings.qml:326 editorqml/qml/vpn/ssh/Ssh.qml:194
 #, fuzzy, kde-format
 #| msgid "Advanced…"
 msgctxt "@action:button"
@@ -4623,6 +4625,133 @@ msgstr ""
 #, kde-format
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
+msgstr ""
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:34
+#, fuzzy, kde-format
+#| msgctxt "Header text for IPv4 gateway"
+#| msgid "Gateway"
+msgid "Gateway:"
+msgstr "Gateway"
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:43
+#, fuzzy, kde-format
+#| msgid "WireGuard Settings"
+msgid "Network Settings"
+msgstr "WireGuard-Einstellungen"
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:47 editorqml/qml/vpn/ssh/Ssh.qml:97
+#, fuzzy, kde-format
+#| msgid "IPv4 Address"
+msgid "Remote IP Address:"
+msgstr "IPv4-Adresse"
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:59 editorqml/qml/vpn/ssh/Ssh.qml:111
+#, fuzzy, kde-format
+#| msgid "IPv4 Address"
+msgid "Local IP Address:"
+msgstr "IPv4-Adresse"
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:71
+#, fuzzy, kde-format
+#| msgctxt "Header text for IPv4 netmask"
+#| msgid "Netmask"
+msgid "Netmask:"
+msgstr "Netzwerkmaske"
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:84
+#, kde-format
+msgid "IPv6 Network Settings"
+msgstr ""
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:90
+#, fuzzy, kde-format
+#| msgid "IPv6"
+msgid "Use IPv6"
+msgstr "IPv6"
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:125
+#, fuzzy, kde-format
+#| msgctxt "Header text for IPv6 prefix"
+#| msgid "Prefix"
+msgid "Prefix:"
+msgstr "Präfix"
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:140
+#, kde-format
+msgid "Type:"
+msgstr "Typ:"
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:143
+#, kde-format
+msgid "SSH Agent"
+msgstr ""
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:143
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgid "Password"
+msgstr "Passwort:"
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:143
+#, fuzzy, kde-format
+#| msgid "Inner authentication:"
+msgid "Key authentication"
+msgstr "Innere Authentifizierung:"
+
+#: editorqml/qml/vpn/ssh/Ssh.qml:150
+#, fuzzy, kde-format
+#| msgid "WEP index:"
+msgid "SSH Key File:"
+msgstr "WEP-Index:"
+
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:18
+#, fuzzy, kde-format
+#| msgid "Advanced"
+msgctxt "@title:window"
+msgid "Advanced"
+msgstr "Erweitert"
+
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:36
+#, kde-format
+msgid "Use custom gateway port:"
+msgstr ""
+
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:60
+#, kde-format
+msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
+msgstr ""
+
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:84
+#, kde-format
+msgid "Extra SSH options:"
+msgstr ""
+
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:108
+#, kde-format
+msgid "Remote device number:"
+msgstr ""
+
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:128
+#, kde-format
+msgid "Use a TAP device"
+msgstr ""
+
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:141
+#, fuzzy, kde-format
+#| msgctxt "like in Username for athentication"
+#| msgid "Username"
+msgid "Remote username"
+msgstr "Benutzername"
+
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:161
+#, kde-format
+msgid "Do not replace default route"
+msgstr ""
+
+#: editorqml/qml/vpn/ssh/SshAuth.qml:23
+#, kde-format
+msgid "SSH VPN"
 msgstr ""
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
@@ -5510,9 +5639,6 @@ msgstr ""
 
 #~ msgid "4G Only (LTE)"
 #~ msgstr "Nur 4G (LTE)"
-
-#~ msgid "Type:"
-#~ msgstr "Typ:"
 
 #~ msgid "Failed to request scan"
 #~ msgstr "Anforderung zum Durchsuchen fehlgeschlagen"

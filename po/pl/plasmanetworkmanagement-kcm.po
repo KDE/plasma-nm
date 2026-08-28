@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-27 00:47+0000\n"
+"POT-Creation-Date: 2026-08-28 00:47+0000\n"
 "PO-Revision-Date: 2026-08-08 12:13+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
@@ -197,28 +197,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Dostępne"
 
-#: qml/main.qml:148 ui/main.qml:215
+#: qml/main.qml:148 ui/main.qml:220
 msgid "Add new connection"
 msgstr "Dodaj nowe połączenie"
 
-#: qml/main.qml:166 ui/main.qml:233
+#: qml/main.qml:166 ui/main.qml:238
 msgid "Remove selected connection"
 msgstr "Usuń wybrane połączenie"
 
-#: qml/main.qml:184 ui/main.qml:251
+#: qml/main.qml:184 ui/main.qml:256
 msgid "Export selected connection"
 msgstr "Wyeksportuj wybrane połączenie"
 
-#: qml/main.qml:209 ui/main.qml:187
+#: qml/main.qml:209 ui/main.qml:192
 msgid "Configuration"
 msgstr "Ustawienia"
 
-#: qml/main.qml:236 ui/main.qml:314
+#: qml/main.qml:236 ui/main.qml:321
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Usuń połączenie"
 
-#: qml/main.qml:237 ui/main.qml:315
+#: qml/main.qml:237 ui/main.qml:322
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Czy chcesz usunąć połączenie '%1?"
 
@@ -252,11 +252,11 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Hasło musi zawierać od 8 do 64 znaków"
 
-#: ui/main.qml:41
+#: ui/main.qml:46
 msgid "Disconnected"
 msgstr "Rozłączony"
 
-#: ui/main.qml:275
+#: ui/main.qml:280
 msgid "Connection name:"
 msgstr "Nazwa połączenia:"
 

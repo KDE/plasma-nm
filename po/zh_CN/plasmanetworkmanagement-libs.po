@@ -4508,36 +4508,29 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "密码长度必须在 8 至 64 个字符之间"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:34
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgid "Gateway:"
-msgstr "网关"
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
-#, fuzzy, kde-format
-#| msgid "WireGuard Settings"
+#, kde-format
 msgid "Network Settings"
-msgstr "WireGuard 设置"
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:47 editorqml/qml/vpn/ssh/Ssh.qml:97
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Remote IP Address:"
-msgstr "IPv4 地址"
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:59 editorqml/qml/vpn/ssh/Ssh.qml:111
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Local IP Address:"
-msgstr "IPv4 地址"
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:71
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 netmask"
-#| msgid "Netmask"
+#, kde-format
 msgid "Netmask:"
-msgstr "子网掩码"
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:84
 #, kde-format
@@ -4545,23 +4538,19 @@ msgid "IPv6 Network Settings"
 msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:90
-#, fuzzy, kde-format
-#| msgid "IPv6"
+#, kde-format
 msgid "Use IPv6"
-msgstr "IPv6"
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:125
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv6 prefix"
-#| msgid "Prefix"
+#, kde-format
 msgid "Prefix:"
-msgstr "前缀"
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:140
-#, fuzzy, kde-format
-#| msgid "Type"
+#, kde-format
 msgid "Type:"
-msgstr "类型"
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
@@ -4569,29 +4558,25 @@ msgid "SSH Agent"
 msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password"
-msgstr "密码："
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "Key authentication"
-msgstr "内部身份验证："
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:150
-#, fuzzy, kde-format
-#| msgid "Key index:"
+#, kde-format
 msgid "SSH Key File:"
-msgstr "密钥索引："
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:18
-#, fuzzy, kde-format
-#| msgid "Advanced"
+#, kde-format
 msgctxt "@title:window"
 msgid "Advanced"
-msgstr "高级"
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:36
 #, kde-format
@@ -4619,11 +4604,9 @@ msgid "Use a TAP device"
 msgstr ""
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:141
-#, fuzzy, kde-format
-#| msgctxt "like in Username for athentication"
-#| msgid "Username"
+#, kde-format
 msgid "Remote username"
-msgstr "用户名"
+msgstr ""
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:161
 #, kde-format
@@ -4794,6 +4777,7 @@ msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
+"此连接将只使用在此输入的 MAC 地址指定的网络设备。示例：00:11:22:33:44:55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
 #, kde-format
@@ -4802,31 +4786,33 @@ msgid ""
 "network device this connection is activated on. This feature is known as MAC "
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
+"此处输入的 MAC 地址将用作此连接激活的网络设备的硬件地址。此功能也叫做 MAC 地"
+"址克隆或者 MAC 地址欺骗。示例：11:22:33:44:55:66"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
 #, kde-format
 msgid ""
 "Only transmit packets of the specified size or smaller, breaking larger "
 "packets up into multiple Ethernet frames"
-msgstr ""
+msgstr "只传输指定大小或者更小的包，大包将被拆分成多个以太网帧"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
 #, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Ignore"
-msgstr ""
+msgstr "忽略"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
 #, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Automatic"
-msgstr ""
+msgstr "自动"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
 #, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Manual"
-msgstr ""
+msgstr "手动"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
 #, kde-format
@@ -4835,25 +4821,27 @@ msgid ""
 "will be forced without checking the device compatibility. If unsure, leave "
 "here “Ignore” or pick “Automatic”."
 msgstr ""
+"设备的连接协商模式。选择“手动”时将不检查设备的兼容性，强制使用指定的“速"
+"度”和“双工”值。如果您不确定，请保留默认值“忽略”，或者选择“自动”。"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
 #, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Half"
-msgstr ""
+msgstr "半双工"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
 #, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Full"
-msgstr ""
+msgstr "全双工"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
 #, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either “Half” or "
 "“Full”"
-msgstr ""
+msgstr "请求设备使用指定的双工模式。可以是“半双工”或者“全双工”"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
 #, kde-format

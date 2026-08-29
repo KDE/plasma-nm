@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2024-02-18 05:34+0100\n"
+"PO-Revision-Date: 2026-08-28 06:40+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.3.2\n"
+"X-Generator: Poedit 3.9\n"
 
 #: strongswanauth.cpp:59
 #, kde-format
@@ -119,7 +119,7 @@ msgstr "EAP"
 #: strongswanprop.ui:118
 #, kde-format
 msgid "EAP-TTLS"
-msgstr ""
+msgstr "EAP-TTLS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: strongswanprop.ui:155
@@ -155,7 +155,7 @@ msgstr "მომხმარებლის პაროლი:"
 #: strongswanprop.ui:283
 #, kde-format
 msgid "Uses the same Username/Password fields as EAP above."
-msgstr ""
+msgstr "იყენებს იგივე მომხმარებლის სახელის/პაროლის ველებს, რასაც EAP."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: strongswanprop.ui:297

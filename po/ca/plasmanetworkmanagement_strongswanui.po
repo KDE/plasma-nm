@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement_strongswanui.po to Catalan
-# Copyright (C) 2014-2024 This_file_is_part_of_KDE
+# Copyright (C) 2014-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
 # SPDX-FileCopyrightText: 2014, 2015, 2020 Antoni Bella Pérez <antonibella5@yahoo.com>
-# SPDX-FileCopyrightText: 2017, 2019, 2023, 2024 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2017, 2019, 2023, 2024, 2026 Josep M. Ferrer <txemaq@gmail.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2024-02-18 10:40+0100\n"
+"PO-Revision-Date: 2026-08-28 11:10+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 22.12.3\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: strongswanauth.cpp:59
 #, kde-format
@@ -122,7 +122,7 @@ msgstr "EAP"
 #: strongswanprop.ui:118
 #, kde-format
 msgid "EAP-TTLS"
-msgstr ""
+msgstr "EAP-TTLS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: strongswanprop.ui:155
@@ -158,7 +158,7 @@ msgstr "Contrasenya d'usuari:"
 #: strongswanprop.ui:283
 #, kde-format
 msgid "Uses the same Username/Password fields as EAP above."
-msgstr ""
+msgstr "Usa els mateixos camps de nom d'usuari/contrasenya que l'EAP de dalt."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: strongswanprop.ui:297

@@ -1,13 +1,13 @@
 # Copyright (C) 2025 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# SPDX-FileCopyrightText: 2025 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2025-08-20 21:39+0400\n"
+"PO-Revision-Date: 2026-08-29 12:30+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 23.08.5\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #: strongswanauth.cpp:59
 #, kde-format
@@ -117,7 +117,7 @@ msgstr "ميفاق الاستيثاق الموسع EAP"
 #: strongswanprop.ui:118
 #, kde-format
 msgid "EAP-TTLS"
-msgstr ""
+msgstr "EAP-TTLS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: strongswanprop.ui:155
@@ -153,7 +153,7 @@ msgstr "كلمة سر المستخدم:"
 #: strongswanprop.ui:283
 #, kde-format
 msgid "Uses the same Username/Password fields as EAP above."
-msgstr ""
+msgstr "استخدم نفس حقول اسم المستخدم/كلمة السر مثل EAP في الأعلى."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: strongswanprop.ui:297

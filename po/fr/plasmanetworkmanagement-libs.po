@@ -4658,8 +4658,7 @@ msgid "Prefix:"
 msgstr "Préfixe"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:140
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Type:"
 msgstr "Type :"
 

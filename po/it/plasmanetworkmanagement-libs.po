@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2026-08-22 15:57+0200\n"
+"PO-Revision-Date: 2026-08-28 09:19+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -4585,54 +4585,44 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "La password deve contenere tra 8 e 64 caratteri"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:34
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgid "Gateway:"
-msgstr "Gateway"
+msgstr "Gateway:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
-#, fuzzy, kde-format
-#| msgid "WireGuard Settings"
+#, kde-format
 msgid "Network Settings"
-msgstr "Impostazioni WireGuard"
+msgstr "Impostazioni di rete"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:47 editorqml/qml/vpn/ssh/Ssh.qml:97
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Remote IP Address:"
-msgstr "Indirizzo IPv4"
+msgstr "Indirizzo IP remoto:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:59 editorqml/qml/vpn/ssh/Ssh.qml:111
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Local IP Address:"
-msgstr "Indirizzo IPv4"
+msgstr "Indirizzo IP locale:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:71
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 netmask"
-#| msgid "Netmask"
+#, kde-format
 msgid "Netmask:"
-msgstr "Maschera di rete"
+msgstr "Maschera di rete:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:84
 #, kde-format
 msgid "IPv6 Network Settings"
-msgstr ""
+msgstr "Impostazioni di rete IPv6"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:90
-#, fuzzy, kde-format
-#| msgid "IPv6"
+#, kde-format
 msgid "Use IPv6"
-msgstr "IPv6"
+msgstr "Usa IPv6"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:125
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv6 prefix"
-#| msgid "Prefix"
+#, kde-format
 msgid "Prefix:"
-msgstr "Prefisso"
+msgstr "Prefisso:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:140
 #, kde-format
@@ -4642,29 +4632,25 @@ msgstr "Tipo:"
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "SSH Agent"
-msgstr ""
+msgstr "Agente SSH"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password"
-msgstr "Password:"
+msgstr "Password"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "Key authentication"
-msgstr "Autenticazione interna:"
+msgstr "Autenticazione con chiave"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:150
-#, fuzzy, kde-format
-#| msgid "Key index:"
+#, kde-format
 msgid "SSH Key File:"
-msgstr "Indice della chiave:"
+msgstr "File della chiave SSH:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:18
-#, fuzzy, kde-format
-#| msgid "Advanced"
+#, kde-format
 msgctxt "@title:window"
 msgid "Advanced"
 msgstr "Avanzate"
@@ -4672,44 +4658,42 @@ msgstr "Avanzate"
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:36
 #, kde-format
 msgid "Use custom gateway port:"
-msgstr ""
+msgstr "Usa porta gateway personalizzata:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:60
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr ""
+msgstr "Usa un'unità di trasmissione massima (MTU) personalizzata:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:84
 #, kde-format
 msgid "Extra SSH options:"
-msgstr ""
+msgstr "Opzioni SSH aggiuntive:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:108
 #, kde-format
 msgid "Remote device number:"
-msgstr ""
+msgstr "Numero del dispositivo remoto:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:128
 #, kde-format
 msgid "Use a TAP device"
-msgstr ""
+msgstr "Usa un dispositivo TAP"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:141
-#, fuzzy, kde-format
-#| msgctxt "like in Username for athentication"
-#| msgid "Username"
+#, kde-format
 msgid "Remote username"
-msgstr "Nome utente"
+msgstr "Nome utente remoto"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:161
 #, kde-format
 msgid "Do not replace default route"
-msgstr ""
+msgstr "Non sostituire la rotta predefinita"
 
 #: editorqml/qml/vpn/ssh/SshAuth.qml:23
 #, kde-format
 msgid "SSH VPN"
-msgstr ""
+msgstr "VPN SSH"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format
@@ -4867,77 +4851,55 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option locks this connection to the network device specified by its\n"
-#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#, kde-format
 msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"Questa opzione blocca questa connessione al dispositivo di rete specificato\n"
+"Questa opzione blocca questa connessione al dispositivo di rete specificato "
 "dal suo indirizzo MAC permanente digitato qui. Esempio: 00:11:22:33:44:55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MAC address entered here will be used as hardware address for the\n"
-#| "network device this connection is activated on. This feature is known as "
-#| "MAC\n"
-#| "cloning or spoofing. Example 11:22:33:44:55"
+#, kde-format
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
 "L'indirizzo MAC digitato qui sarà utilizzato come indirizzo hardware del "
-"dispositivo\n"
-"di rete sul quale è attiva questa connessione. Questa caratteristica è nota "
-"come \n"
-"clonazione o spoofing del MAC. Esempio 11:22:33:44:55"
+"dispositivo di rete sul quale è attiva questa connessione. Questa "
+"caratteristica è nota come clonazione o spoofing del MAC. Esempio "
+"11:22:33:44:55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "Only transmit packets of the specified size or smaller, breaking larger "
-#| "packets up\n"
-#| "into multiple Ethernet frames"
+#, kde-format
 msgid ""
 "Only transmit packets of the specified size or smaller, breaking larger "
 "packets up into multiple Ethernet frames"
 msgstr ""
 "Trasmette solo i pacchetti di dimensioni specificate o più piccoli, "
-"frammentando i\n"
-"pacchetti più grandi in più frame Ethernet"
+"frammentando i pacchetti più grandi in più frame Ethernet"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Ignore"
 msgstr "Ignora"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Automatic"
 msgstr "Automatico"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Manual"
 msgstr "Manuale"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#| "values will be forced without checking\n"
-#| "the device compatibility. If unsure, leave here “Ignore” or pick "
-#| "“Automatic”."
+#, kde-format
 msgid ""
 "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
 "will be forced without checking the device compatibility. If unsure, leave "
@@ -4949,30 +4911,25 @@ msgstr ""
 "«Automatica»."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Half"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Half"
 msgstr "Half"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Full"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Full"
 msgstr "Full"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use the specified duplex mode. Either \"half\" or "
-#| "\"full\""
+#, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either “Half” or "
 "“Full”"
 msgstr ""
 "Richiedi che il dispositivo utilizzi la modalità duplex specificata. In "
-"entrambi i casi «half» o «full»"
+"entrambi i casi «Half» o «Full»"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
 #, kde-format

@@ -901,7 +901,7 @@ msgstr "地址"
 #, kde-format
 msgctxt "Header text for IPv4 netmask"
 msgid "Netmask"
-msgstr "子网掩码"
+msgstr "网络掩码"
 
 #: editor/settings/ipv4widget.cpp:60 editor/widgets/ipv4routeswidget.cpp:29
 #, kde-format
@@ -3605,7 +3605,7 @@ msgstr "跃点数"
 #, kde-format
 msgctxt "Header text for IPv6 netmask"
 msgid "Netmask"
-msgstr "子网掩码"
+msgstr "网络掩码"
 
 #: editor/widgets/ipv6routeswidget.cpp:32
 #, kde-format

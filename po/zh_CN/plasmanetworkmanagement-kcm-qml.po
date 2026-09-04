@@ -21,7 +21,7 @@ msgstr ""
 #: kcm.cpp:648
 #, kde-format
 msgid "Failed to get secrets for %1"
-msgstr ""
+msgstr "获取 %1 的密码失败"
 
 #: kcm.cpp:672
 #, kde-format

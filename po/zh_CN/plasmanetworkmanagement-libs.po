@@ -931,7 +931,7 @@ msgstr "地址"
 #, kde-format
 msgctxt "Header text for IPv4 netmask"
 msgid "Netmask"
-msgstr "子网掩码"
+msgstr "网络掩码"
 
 #: editor/settings/ipv4widget.cpp:60 editor/widgets/ipv4routeswidget.cpp:29
 #, kde-format
@@ -3777,7 +3777,7 @@ msgstr "跃点数"
 #, kde-format
 msgctxt "Header text for IPv6 netmask"
 msgid "Netmask"
-msgstr "子网掩码"
+msgstr "网络掩码"
 
 #: editor/widgets/ipv6routeswidget.cpp:32
 #, kde-format
@@ -4510,113 +4510,113 @@ msgstr "密码长度必须在 8 至 64 个字符之间"
 #: editorqml/qml/vpn/ssh/Ssh.qml:34
 #, kde-format
 msgid "Gateway:"
-msgstr ""
+msgstr "网关："
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, kde-format
 msgid "Network Settings"
-msgstr ""
+msgstr "网络设置"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:47 editorqml/qml/vpn/ssh/Ssh.qml:97
 #, kde-format
 msgid "Remote IP Address:"
-msgstr ""
+msgstr "远程 IP 地址："
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:59 editorqml/qml/vpn/ssh/Ssh.qml:111
 #, kde-format
 msgid "Local IP Address:"
-msgstr ""
+msgstr "本地 IP 地址："
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:71
 #, kde-format
 msgid "Netmask:"
-msgstr ""
+msgstr "网络掩码："
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:84
 #, kde-format
 msgid "IPv6 Network Settings"
-msgstr ""
+msgstr "IPv6 网络设置"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:90
 #, kde-format
 msgid "Use IPv6"
-msgstr ""
+msgstr "使用 IPv6"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:125
 #, kde-format
 msgid "Prefix:"
-msgstr ""
+msgstr "前缀："
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:140
 #, kde-format
 msgid "Type:"
-msgstr ""
+msgstr "类型："
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "SSH Agent"
-msgstr ""
+msgstr "SSH 代理"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "Password"
-msgstr ""
+msgstr "密码"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "Key authentication"
-msgstr ""
+msgstr "密钥身份验证"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:150
 #, kde-format
 msgid "SSH Key File:"
-msgstr ""
+msgstr "SSH 密钥文件："
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:18
 #, kde-format
 msgctxt "@title:window"
 msgid "Advanced"
-msgstr ""
+msgstr "高级"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:36
 #, kde-format
 msgid "Use custom gateway port:"
-msgstr ""
+msgstr "使用自定义网关端口："
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:60
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr ""
+msgstr "使用自定义隧道最大传输单元 (MTU)："
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:84
 #, kde-format
 msgid "Extra SSH options:"
-msgstr ""
+msgstr "额外 SSH 选项："
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:108
 #, kde-format
 msgid "Remote device number:"
-msgstr ""
+msgstr "远程设备号："
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:128
 #, kde-format
 msgid "Use a TAP device"
-msgstr ""
+msgstr "使用 TAP 设备"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:141
 #, kde-format
 msgid "Remote username"
-msgstr ""
+msgstr "远程用户名"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:161
 #, kde-format
 msgid "Do not replace default route"
-msgstr ""
+msgstr "不替换默认路由"
 
 #: editorqml/qml/vpn/ssh/SshAuth.qml:23
 #, kde-format
 msgid "SSH VPN"
-msgstr ""
+msgstr "SSH VPN"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format
@@ -4860,7 +4860,7 @@ msgstr "地址"
 #, kde-format
 msgctxt "@title:column"
 msgid "Netmask"
-msgstr "子网掩码"
+msgstr "网络掩码"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:109
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:111

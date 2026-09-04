@@ -117,7 +117,7 @@ msgstr "EAP"
 #: strongswanprop.ui:118
 #, kde-format
 msgid "EAP-TTLS"
-msgstr ""
+msgstr "EAP-TTLS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: strongswanprop.ui:155
@@ -153,7 +153,7 @@ msgstr "用户密码："
 #: strongswanprop.ui:283
 #, kde-format
 msgid "Uses the same Username/Password fields as EAP above."
-msgstr ""
+msgstr "使用与上述 EAP 相同的用户名/密码字段。"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: strongswanprop.ui:297

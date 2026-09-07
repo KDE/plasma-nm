@@ -100,7 +100,7 @@ msgstr "Wi-Fi 设置"
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr "连接更改通知"
+msgstr "连接变动通知"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

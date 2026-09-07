@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2026-06-19 19:29+0200\n"
+"PO-Revision-Date: 2026-09-06 15:32+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
 "%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -33,6 +33,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Не удалось применить параметр роуминга. Активируется точка доступа с её "
+"текущими параметрами."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -42,12 +44,12 @@ msgstr "Не удалось активировать соединение: %1"
 #: cellular/cellularmodem.cpp:431
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
-msgstr ""
+msgstr "Не удалось изменить роуминг, так как нет доступной точки доступа."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
-msgstr ""
+msgstr "Ошибка применения параметра роуминга к выбранной точке доступа."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format
@@ -4187,17 +4189,14 @@ msgid "R&emove"
 msgstr "Удал&ить"
 
 #: editorqml/qml/AddConnectionDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr "Тип соединения:"
+msgstr "Выбор типа соединения"
 
 #: editorqml/qml/components/Vpn.qml:24 editorqml/qml/components/Wired.qml:27
 #: editorqml/qml/components/Wireless.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title:tab Connection status and details"
-#| msgid "Status"
+#, kde-format
 msgid "Status"
 msgstr "Состояние"
 
@@ -4207,71 +4206,60 @@ msgid "Wi-Fi Security"
 msgstr "Защита Wi-Fi"
 
 #: editorqml/qml/ConfigurationDialog.qml:19
-#, fuzzy, kde-format
-#| msgctxt "General"
-#| msgid "General configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr "Основные параметры"
+msgstr "Настройка"
 
 #: editorqml/qml/ConfigurationDialog.qml:42
 #, kde-format
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "Запрашивать PIN-код при обнаружении модема"
 
 #: editorqml/qml/ConfigurationDialog.qml:49
-#, fuzzy, kde-format
-#| msgid "Virtual connections"
+#, kde-format
 msgid "Show virtual connections"
-msgstr "Виртуальные соединения"
+msgstr "Показывать виртуальные соединения"
 
 #: editorqml/qml/ConfigurationDialog.qml:55
-#, fuzzy, kde-format
-#| msgid "Create a connection for a hidden network"
+#, kde-format
 msgid "Create new connections as system connections"
-msgstr "Создать соединение для скрытой сети"
+msgstr "Создать новое соединение как системное"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Allowed IPs:"
+#, kde-format
 msgid "Allowed Users"
-msgstr "Разрешённые адреса IP:"
+msgstr "Допущенные пользователи"
 
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item metered mode"
 msgid "Automatic"
 msgstr "Автоматически"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:18
-#, fuzzy, kde-format
-#| msgid "Advanced IP settings"
+#, kde-format
 msgid "Advanced IPv4 Settings"
-msgstr "Дополнительные настройки IP"
+msgstr "Дополнительные настройки IPv4"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:45
 #, kde-format
 msgid "DHCP:"
-msgstr ""
+msgstr "DHCP:"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:46
-#, fuzzy, kde-format
-#| msgid "Send hostname:"
+#, kde-format
 msgid "Send hostname to DHCP server"
-msgstr "Передавать имя хоста:"
+msgstr "Передавать имя хоста DHCP-серверу"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:76 editorqml/qml/ipv4/IPv4Advance.qml:83
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item DAD timeout left to NetworkManager"
 msgid "Default"
 msgstr "По умолчанию"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:78 editorqml/qml/ipv4/IPv4Advance.qml:85
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item duplicate address detection turned off"
 msgid "Disabled"
 msgstr "Отключено"
@@ -4280,7 +4268,7 @@ msgstr "Отключено"
 #, kde-format
 msgctxt "@item:intext duplicate address detection timeout in milliseconds"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 мс"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:94
 #, kde-format
@@ -4290,20 +4278,24 @@ msgid ""
 "\n"
 "0 disables the check, -1 lets NetworkManager decide."
 msgstr ""
+"Время ожидания в миллисекундах для проверки наличия дублирующихся IP-адресов "
+"в сети.\n"
+"\n"
+"0 отключает проверку, -1 позволяет NetworkManager решать."
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:125
 #: editorqml/qml/ipv4/IPv4Settings.qml:254
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "10.0.0.0"
-msgstr ""
+msgstr "10.0.0.0"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:127
 #: editorqml/qml/ipv4/IPv4Settings.qml:256
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "255.255.255.0"
-msgstr ""
+msgstr "255.255.255.0"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:129
 #: editorqml/qml/ipv4/IPv4Settings.qml:258
@@ -4312,103 +4304,79 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder optional field"
 msgid "Optional"
-msgstr ""
+msgstr "Необязательно"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:170 editorqml/qml/ipv6/IPv6Routes.qml:191
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Insert a row"
 msgid "Add"
 msgstr "Добавить"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:177 editorqml/qml/ipv6/IPv6Routes.qml:198
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Remove a selected row"
 msgid "Remove"
 msgstr "Удалить"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Automatic"
 msgstr "Автоматически"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Automatic (Only addresses)"
 msgstr "Автоматически (только адреса)"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Link-Local"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Link-Local"
 msgstr "Локальный интерфейс"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox like in use Manual configuration"
 msgid "Manual"
 msgstr "Вручную"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Shared to other computers"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Shared to other computers"
 msgstr "Общий с другими компьютерами"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox like in this setting is Disabled"
 msgid "Disabled"
 msgstr "Отключено"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:78
 #: editorqml/qml/ipv6/IPv6Settings.qml:78
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Search Domains:"
 msgstr "Домены поиска:"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use this field to specify the DHCP client ID which is a string sent to "
-#| "the DHCP server\n"
-#| "to identify the local machine that the DHCP server may use to customize "
-#| "the DHCP\n"
-#| "lease and options."
+#, kde-format
 msgid ""
 "Use this field to specify the DHCP client ID which is a string sent to the "
 "DHCP server to identify the local machine that the DHCP server may use to "
 "customize the DHCP lease and options."
 msgstr ""
-"Поле, в котором можно указать идентификатор клиента DHCP. Получив этот\n"
-"идентификатор, сервер DHCP может выдать конкретному компьютеру особые\n"
+"Поле, в котором можно указать идентификатор клиента DHCP. Получив этот "
+"идентификатор, сервер DHCP может выдать конкретному компьютеру особые "
 "параметры и аренду DHCP."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:155
 #: editorqml/qml/ipv6/IPv6Settings.qml:158
-#, fuzzy, kde-format
-#| msgid ""
-#| "A score that helps choose the best path for data packets to reach their "
-#| "destination,\n"
-#| "based on factors like distance, delay, and reliability.\n"
-#| "\n"
-#| "Default value -1 means that NetworkManager gets to choose and manage the "
-#| "actual metric of the route."
+#, kde-format
 msgid ""
 "A score that helps choose the best path for data packets to reach their "
 "destination, based on factors like distance, delay, and reliability.\n"
@@ -4416,11 +4384,11 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
-"Показатель, помогающий выбрать оптимальный путь для передачи пакетов данных "
-"к назначению,\n"
-"с учётом таких факторов, как расстояние, задержка и надёжность.\n"
+"Показатель, помогающий выбрать оптимальный путь для передачи пакетов данных  "
+"к назначению, с учётом таких факторов, как расстояние, задержка и "
+"надёжность.\n"
 "\n"
-"Значение по умолчанию -1 означает, что NetworkManager выбирает и управляет "
+"Значение по умолчанию -1 означает, что NetworkManager выбирает и управляет  "
 "фактической метрикой маршрута."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
@@ -4430,139 +4398,115 @@ msgid "Addresses"
 msgstr "Адреса"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allows the connection to complete if IPv4 configuration fails\n"
-#| "but IPv6 configuration succeeds"
+#, kde-format
 msgid ""
 "Allows the connection to complete if IPv4 configuration fails but IPv6 "
 "configuration succeeds"
 msgstr ""
 "Позволяет установить подключение при ошибке конфигурации IPv4,\n"
-"но успешной конфигурации IPv6"
+" но успешной конфигурации IPv6"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:326 editorqml/qml/vpn/ssh/Ssh.qml:194
-#, fuzzy, kde-format
-#| msgid "Advanced…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Advanced…"
-msgstr "Дополнительно..."
+msgstr "Дополнительно…"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:332
 #: editorqml/qml/ipv6/IPv6Settings.qml:346
-#, fuzzy, kde-format
-#| msgid "Routes…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Routes…"
-msgstr "Маршруты..."
+msgstr "Маршруты…"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgid "Search Domains"
-msgstr "Домены поиска:"
+msgstr "Домены поиска"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:107
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:113
 #: editorqml/qml/wifisecurity/DnsList.qml:113
 #, kde-format
 msgid "Move Up"
-msgstr ""
+msgstr "Переместить вверх"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:120
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:126
 #: editorqml/qml/wifisecurity/DnsList.qml:126
 #, kde-format
 msgid "Move Down"
-msgstr ""
+msgstr "Переместить вниз"
 
 #: editorqml/qml/ipv6/IPv6Routes.qml:129
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "2001:db8::"
-msgstr ""
+msgstr "2001:db8::"
 
 #: editorqml/qml/ipv6/IPv6Routes.qml:131
 #: editorqml/qml/ipv6/IPv6Settings.qml:259
-#, fuzzy, kde-format
-#| msgid "4"
+#, kde-format
 msgctxt "@info:placeholder IPv6 prefix length"
 msgid "64"
-msgstr "4"
+msgstr "64"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic"
 msgstr "Автоматически"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic (Only addresses)"
 msgstr "Автоматически (только адреса)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only DHCP)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic (Only DHCP)"
 msgstr "Автоматически (только DHCP)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Link-Local"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Link-Local"
 msgstr "Локальный интерфейс"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@item:inlistbox like in this setting is Ignored"
 msgid "Ignored"
 msgstr "Игнорируется"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions left to NetworkManager"
 msgid "Default"
 msgstr "По умолчанию"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox privacy disabled"
 msgid "Disabled"
 msgstr "Отключено"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Enabled (prefer public address)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions"
 msgid "Enabled (prefer public address)"
 msgstr "Включено (предпочитать публичные адреса)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Enabled (prefer temporary addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions"
 msgid "Enabled (prefer temporary addresses)"
 msgstr "Включено (предпочитать временные адреса)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:128
-#, fuzzy, kde-format
-#| msgid ""
-#| "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-#| "enabled, it makes the kernel generate\n"
-#| "a temporary IPv6 address in addition to the public one generated from MAC "
-#| "address via modified EUI-64."
+#, kde-format
 msgid ""
 "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
 "enabled, it makes the kernel generate a temporary IPv6 address in addition "
@@ -4570,7 +4514,7 @@ msgid ""
 msgstr ""
 "Использование расширений безопасности IPv6 для SLAAC в соответствии с "
 "RFC4941. При включении этого параметра ядро создаёт временный адрес IPv6 в "
-"дополнение к общедоступному адресу IPv6, вычисленному на основе MAС-адреса "
+"дополнение к общедоступному адресу IPv6, вычисленному на основе MAC-адреса "
 "по модифицированному алгоритму EUI-64 (64-битный расширенный уникальный "
 "идентификатор)."
 
@@ -4578,121 +4522,102 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "2001:db8::1"
-msgstr ""
+msgstr "2001:db8::1"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:330
-#, fuzzy, kde-format
-#| msgid ""
-#| "When connecting to IPv4-capable networks, allows the connection to "
-#| "complete if\n"
-#| "IPv6 configuration fails but IPv4 configuration succeeds"
+#, kde-format
 msgid ""
 "When connecting to IPv4-capable networks, allows the connection to complete "
 "if IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
-"Позволяет установить подключение к поддерживающим IPv4 сетям\n"
-"при ошибке конфигурации IPv6, но успешной конфигурации IPv4"
+"Позволяет установить подключение к поддерживающим IPv4 сетям при ошибке "
+"конфигурации IPv6, но успешной конфигурации IPv4"
 
 #: editorqml/qml/PasswordField.qml:106
-#, fuzzy, kde-format
-#| msgid "Always Ask"
+#, kde-format
 msgid "Always asked"
 msgstr "Всегда спрашивать"
 
 #: editorqml/qml/PasswordField.qml:108
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Not required"
 msgstr "Не требуется"
 
 #: editorqml/qml/PasswordPromptDialog.qml:24
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgctxt "@action:button Connect to network"
 msgid "Connect"
-msgstr "Подключено"
+msgstr "Подключить"
 
 #: editorqml/qml/PasswordPromptDialog.qml:31
 #, kde-format
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
-msgstr ""
+msgstr "Отмена"
 
 #: editorqml/qml/PasswordPromptDialog.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "Пароль:"
+msgstr "Ввод пароля"
 
 #: editorqml/qml/PasswordPromptDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Network ID"
+#, kde-format
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr "Идентификатор сети"
+msgstr "Сеть: %1"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "Пароль должен быть допустимым WEP-ключом"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "Пароль должен содержать от 8 до 64 символов"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:34
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgid "Gateway:"
-msgstr "Шлюз"
+msgstr "Шлюз:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
-#, fuzzy, kde-format
-#| msgid "WireGuard Settings"
+#, kde-format
 msgid "Network Settings"
-msgstr "Параметры WireGuard"
+msgstr "Параметры сети"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:47 editorqml/qml/vpn/ssh/Ssh.qml:97
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Remote IP Address:"
-msgstr "Адрес IPv4"
+msgstr "Удалённый IP-адрес:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:59 editorqml/qml/vpn/ssh/Ssh.qml:111
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Local IP Address:"
-msgstr "Адрес IPv4"
+msgstr "Локальный IP-адрес:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:71
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 netmask"
-#| msgid "Netmask"
+#, kde-format
 msgid "Netmask:"
-msgstr "Маска сети"
+msgstr "Маска сети:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:84
 #, kde-format
 msgid "IPv6 Network Settings"
-msgstr ""
+msgstr "Параметры сети IPv6"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:90
-#, fuzzy, kde-format
-#| msgid "IPv6"
+#, kde-format
 msgid "Use IPv6"
-msgstr "IPv6"
+msgstr "Использовать IPv6"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:125
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv6 prefix"
-#| msgid "Prefix"
+#, kde-format
 msgid "Prefix:"
-msgstr "Префикс"
+msgstr "Префикс:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:140
 #, kde-format
@@ -4702,29 +4627,25 @@ msgstr "Тип:"
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "SSH Agent"
-msgstr ""
+msgstr "SSH-агент"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password"
-msgstr "Пароль:"
+msgstr "Пароль"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "Key authentication"
-msgstr "Внутренняя аутентификация:"
+msgstr "Аутентификация по ключу"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:150
-#, fuzzy, kde-format
-#| msgid "WEP index:"
+#, kde-format
 msgid "SSH Key File:"
-msgstr "Индекс WEP:"
+msgstr "Файл ключа SSH:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:18
-#, fuzzy, kde-format
-#| msgid "Advanced"
+#, kde-format
 msgctxt "@title:window"
 msgid "Advanced"
 msgstr "Дополнительно"
@@ -4732,68 +4653,61 @@ msgstr "Дополнительно"
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:36
 #, kde-format
 msgid "Use custom gateway port:"
-msgstr ""
+msgstr "Использовать нестандартный порт шлюза:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:60
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr ""
+msgstr "Использовать нестандартный максимальный размер пакета (MTU) туннеля:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:84
 #, kde-format
 msgid "Extra SSH options:"
-msgstr ""
+msgstr "Дополнительные параметры SSH:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:108
 #, kde-format
 msgid "Remote device number:"
-msgstr ""
+msgstr "Номер устройства на сервере:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:128
 #, kde-format
 msgid "Use a TAP device"
-msgstr ""
+msgstr "Использовать устройство TAP"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:141
-#, fuzzy, kde-format
-#| msgctxt "like in Username for athentication"
-#| msgid "Username"
+#, kde-format
 msgid "Remote username"
-msgstr "Имя пользователя"
+msgstr "Имя пользователя на сервере:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:161
 #, kde-format
 msgid "Do not replace default route"
-msgstr ""
+msgstr "Не заменять маршрут по умолчанию"
 
 #: editorqml/qml/vpn/ssh/SshAuth.qml:23
 #, kde-format
 msgid "SSH VPN"
-msgstr ""
+msgstr "SSH VPN"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
-#, fuzzy, kde-format
-#| msgid "%1 (%2 MHz)"
+#, kde-format
 msgctxt "@item BSSID (MAC address) followed by signal strength"
 msgid "%1 (%2%)"
-msgstr "%1 (%2 МГц)"
+msgstr "%1 (%2%)"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:119
-#, fuzzy, kde-format
-#| msgid "Frequency"
+#, kde-format
 msgid "Frequency: %1 MHz"
-msgstr "Частота"
+msgstr "Частота: %1 МГц"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:124
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgid "Channel: %1"
-msgstr "Канал:"
+msgstr "Канал: %1"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:136
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item wireless band"
 msgid "Automatic"
 msgstr "Автоматически"
@@ -4802,69 +4716,59 @@ msgstr "Автоматически"
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:232
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:95
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:98
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item MTU is automatically determined"
 msgid "Automatic"
 msgstr "Автоматически"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:229
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:95
-#, fuzzy, kde-format
-#| msgid " bytes"
+#, kde-format
 msgctxt "@item:intext MTU size, %1 is the number of bytes"
 msgid "%1 bytes"
-msgstr " байт"
+msgstr "%1 байт"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
-#, fuzzy, kde-format
-#| msgid "Alternative subject matches:"
+#, kde-format
 msgid "Alternative subject matches"
 msgstr "Альтернативные субъекты:"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:98
-#, fuzzy, kde-format
-#| msgid "Anonymous identity:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Anonymous identity:"
 msgstr "Анонимный вход:"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
-#, fuzzy, kde-format
-#| msgid "Anonymous"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Anonymous"
 msgstr "Анонимно"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
-#, fuzzy, kde-format
-#| msgid "Authenticated"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Authenticated"
 msgstr "С аутентификацией"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
-#, fuzzy, kde-format
-#| msgid "Both"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Both"
 msgstr "Оба варианта"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:142
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt ""
 "@label PAC stands for Proxy Auto-Configuration and should not be translated"
 msgid "PAC file:"
 msgstr "Файл PAC:"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:191
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt "@item:filefilter"
 msgid "PAC files (*.pac)"
-msgstr "Файл PAC:"
+msgstr "Файлы PAC (*.pac)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:117
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:39
@@ -4872,12 +4776,10 @@ msgstr "Файл PAC:"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:118
 #, kde-format
 msgid "*.der *.pem *.crt *.cer"
-msgstr ""
+msgstr "*.der *.pem *.crt *.cer"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:133
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgid "Automatic"
 msgstr "Автоматически"
 
@@ -4887,17 +4789,17 @@ msgstr "Автоматически"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:164
 #, kde-format
 msgid "Certificates (*.der *.pem *.crt *.cer)"
-msgstr ""
+msgstr "Сертификаты (*.der *.pem *.crt *.cer)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:142
 #, kde-format
 msgid "*.der *.pem *.p12 *.key"
-msgstr ""
+msgstr "*.der *.pem *.p12 *.key"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:182
 #, kde-format
 msgid "Keys (*.der *.pem *.p12 *.key)"
-msgstr ""
+msgstr "Ключи (*.der *.pem *.p12 *.key)"
 
 #: editorqml/qml/wifisecurity/authentication/Owe.qml:30
 #, kde-format
@@ -4905,120 +4807,93 @@ msgid ""
 "Enhanced Open (OWE) provides encryption without authentication. No password "
 "required."
 msgstr ""
+"Enhanced Open (OWE) обеспечивает шифрование без аутентификации. Пароль не "
+"требуется."
 
 #: editorqml/qml/wifisecurity/authentication/WepKey.qml:38
-#, fuzzy, kde-format
-#| msgid "WEP index:"
+#, kde-format
 msgid "Key index:"
-msgstr "Индекс WEP:"
+msgstr "Индекс ключа:"
 
 #: editorqml/qml/wifisecurity/DnsList.qml:15
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "DNS Servers"
 msgstr "DNS-серверы:"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
-#, fuzzy, kde-format
-#| msgctxt "no security"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "Нет"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:25
-#, fuzzy, kde-format
-#| msgid "WEP key 40/128 bits (Hex or ASCII)"
+#, kde-format
 msgid "WEP 40/128-bit key (Hex)"
-msgstr "WEP-ключ 40/128 бит (16-ричный или ASCII)"
+msgstr "WEP-ключ 40/128 бит (16-ричный)"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:26
 #, kde-format
 msgid "WEP 128-bit Passphrase"
-msgstr ""
+msgstr "Пароль WEP 128 бит"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:28
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Personal"
+#, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr "WPA2/WPA3 Personal"
+msgstr "WPA/WPA2 Personal"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:29
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Enterprise"
+#, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr "WPA2/WPA3 Enterprise"
+msgstr "WPA/WPA2 Enterprise"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option locks this connection to the network device specified by its\n"
-#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#, kde-format
 msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"Привязать это соединение к сетевому устройству, которое\n"
-"имеет указанный здесь MAC-адрес. Пример: 00:11:22:33:44:55."
+"Привязать это соединение к сетевому устройству, которое имеет указанный "
+"здесь MAC-адрес. Пример: 00:11:22:33:44:55."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MAC address entered here will be used as hardware address for the\n"
-#| "network device this connection is activated on. This feature is known as "
-#| "MAC\n"
-#| "cloning or spoofing. Example 11:22:33:44:55"
+#, kde-format
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
-"Введённый здесь MAC-адрес (например, \n"
-"11:22:33:44:55) будет использован в качестве аппаратного адреса \n"
-" устройства, используемого для этого соединения.\n"
+"Введённый здесь MAC-адрес (например, 11:22:33:44:55:66) будет использован в "
+"качестве аппаратного адреса устройства, используемого для этого соединения. "
 "Эта функция известна под названием «клонирование (подмена) MAC-адреса»."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "Only transmit packets of the specified size or smaller, breaking larger "
-#| "packets up\n"
-#| "into multiple Ethernet frames"
+#, kde-format
 msgid ""
 "Only transmit packets of the specified size or smaller, breaking larger "
 "packets up into multiple Ethernet frames"
 msgstr ""
-"Передавать пакеты только указанного или меньшего размера.\n"
-"Пакеты большего размера будет разделены и переданы несколькими фреймами."
+"Передавать пакеты только указанного или меньшего размера. Пакеты большего "
+"размера будут разделены и переданы несколькими кадрами."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Ignore"
 msgstr "Игнорировать"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Automatic"
 msgstr "Автоматически"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Manual"
 msgstr "Вручную"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#| "values will be forced without checking\n"
-#| "the device compatibility. If unsure, leave here “Ignore” or pick "
-#| "“Automatic”."
+#, kde-format
 msgid ""
 "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
 "will be forced without checking the device compatibility. If unsure, leave "
@@ -5026,91 +4901,71 @@ msgid ""
 msgstr ""
 "Способ согласования линии. При выборе режима «Вручную» значения параметров "
 "«Скорость» и «Дуплекс» будут принудительно применены без проверки их "
-"поддержки устройством.\n"
-"Если вы не уверены в выборе значения, оставьте «Игнорировать» или выберите "
-"«Автоматически»."
+"поддержки устройством. Если вы не уверены в выборе значения, оставьте "
+"«Игнорировать» или выберите «Автоматически»."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Half"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Half"
 msgstr "Полудуплексное"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Full"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Full"
 msgstr "Полнодуплексное"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use the specified duplex mode. Either \"half\" or "
-#| "\"full\""
+#, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either “Half” or "
 "“Full”"
 msgstr ""
-"Требовать, чтобы устройство использовало либо полнодуплексный,\n"
-"либо полудуплексный режим."
+"Требовать, чтобы устройство использовало либо полнодуплексный, либо "
+"полудуплексный режим."
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@item:intable shortcut for Not Available"
-#| msgid "N/A"
+#, kde-format
 msgctxt "@item real name not available"
 msgid "N/A"
 msgstr "н/д"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:105
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgctxt "@title:column"
 msgid "Address"
 msgstr "Адрес"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 netmask"
-#| msgid "Netmask"
+#, kde-format
 msgctxt "@title:column"
 msgid "Netmask"
 msgstr "Маска сети"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:109
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgctxt "@title:column"
 msgid "Gateway"
 msgstr "Шлюз"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:111
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgctxt "@title:column"
 msgid "Metric"
 msgstr "Метрика"
 
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv6 prefix"
-#| msgid "Prefix"
+#, kde-format
 msgctxt "@title:column IPv6 prefix length"
 msgid "Prefix"
 msgstr "Префикс"
 
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Автоматически"
@@ -5386,42 +5241,39 @@ msgid "Unknown"
 msgstr "Неизвестно"
 
 #: qml/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connect"
-msgstr "Подключено"
+msgstr "Подключиться"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnect"
-msgstr "Отключено"
+msgstr "Отключиться"
 
 #: qml/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "Настроить"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Connect to"
-msgstr "Подключение"
+msgstr "Подключиться к"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
 msgid "/s"
-msgstr ""
+msgstr "/с"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Upload"
-msgstr ""
+msgstr "Передача"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "Загрузка"
 
 #~ msgid "BSSID:"
 #~ msgstr "BSSID:"

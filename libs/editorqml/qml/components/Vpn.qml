@@ -78,6 +78,11 @@ ColumnLayout {
                             url: "../vpn/ssh/Ssh.qml",
                             setting: kcm.vpnSshSetting
                         };
+                    case "org.freedesktop.NetworkManager.sstp":
+                        return {
+                            url: "../vpn/sstp/Sstp.qml",
+                            setting: kcm.vpnSstpSetting
+                        };
                     default:
                         return null;
                     }

@@ -44,6 +44,7 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     , m_ipv4Settings(new IPv4Settings(this))
     , m_ipv6Settings(new IPv6Settings(this))
     , m_vpnSshSetting(new SshSetting(this))
+    , m_vpnSstpSetting(new SstpSetting(this))
     , m_timer(new QTimer(this))
 {
     // constant map with its connection type and security Type
@@ -68,6 +69,8 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
 
              if (m_vpnServiceType == m_vpnSshSetting->serviceType()) {
                  m_vpnSshSetting->loadSecrets(vpnSetting);
+             } else if (m_vpnServiceType == m_vpnSstpSetting->serviceType()) {
+                 m_vpnSstpSetting->loadSecrets(vpnSetting);
              }
          }},
     };
@@ -204,6 +207,12 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
         }
     });
 
+    connect(m_vpnSstpSetting, &SstpSetting::validChanged, this, [this]() {
+        if (m_vpnSstpSetting->isValid()) {
+            kcmChanged(true);
+        }
+    });
+
     connect(NetworkManager::settingsNotifier(),
             &NetworkManager::SettingsNotifier::connectionAdded,
             this,
@@ -236,6 +245,16 @@ SshSetting *KCMNetworkManagementQml::vpnSshSetting() const
     return m_vpnSshSetting;
 }
 
+SstpSetting *KCMNetworkManagementQml::vpnSstpSetting() const
+{
+    return m_vpnSstpSetting;
+}
+
+QString KCMNetworkManagementQml::vpnServiceType() const
+{
+    return m_vpnServiceType;
+}
+
 GeneralSetting *KCMNetworkManagementQml::generalSettings() const
 {
     return m_generalSettings;
@@ -247,11 +266,6 @@ WifiSetting *KCMNetworkManagementQml::wifiSetting() const
 WiredSetting *KCMNetworkManagementQml::wiredSetting() const
 {
     return m_wiredSetting;
-}
-
-QString KCMNetworkManagementQml::vpnServiceType() const
-{
-    return m_vpnServiceType;
 }
 
 bool KCMNetworkManagementQml::wiredSecurityEnabled() const
@@ -429,6 +443,8 @@ void KCMNetworkManagementQml::applyTypeSettings(NMVariantMapMap &map, NetworkMan
     case NetworkManager::ConnectionSettings::Vpn:
         if (m_vpnServiceType == m_vpnSshSetting->serviceType()) {
             map.insert(QStringLiteral("vpn"), m_vpnSshSetting->setting());
+        } else if (m_vpnServiceType == m_vpnSstpSetting->serviceType()) {
+            map.insert(QStringLiteral("vpn"), m_vpnSstpSetting->setting());
         }
         break;
 
@@ -502,15 +518,14 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
     m_currentSettings = connectionSettings;
     m_connectionType = connectionSettings->connectionType();
     Q_EMIT connectionTypeChanged();
+
     m_generalSettings->loadConfig(connectionSettings);
     m_wifiSetting->loadConfig(connectionSettings);
     m_wiredSetting->loadConfig(connectionSettings);
     m_ipv4Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>());
     m_ipv6Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv6).staticCast<NetworkManager::Ipv6Setting>());
 
-    // The secrets handlers dispatch on this, so it has to be known before the request goes out.
-    const NetworkManager::VpnSetting::Ptr vpnSetting =
-        connectionSettings->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
+    const NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
     m_vpnServiceType = vpnSetting ? vpnSetting->serviceType() : QString();
     Q_EMIT vpnServiceTypeChanged();
 
@@ -539,6 +554,9 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
         if (m_vpnServiceType == m_vpnSshSetting->serviceType()) {
             m_vpnSshSetting->loadConfig(vpnSetting);
             Q_EMIT vpnSshSettingChanged();
+        } else if (m_vpnServiceType == m_vpnSstpSetting->serviceType()) {
+            m_vpnSstpSetting->loadConfig(vpnSetting);
+            Q_EMIT vpnSstpSettingChanged();
         }
 
         Q_EMIT connectionLoaded(m_currentConnectionPath);
@@ -652,6 +670,8 @@ void KCMNetworkManagementQml::onSecretsArrived(QDBusPendingCallWatcher *watcher)
     }
 
     watcher->deleteLater();
+
+    kcmChanged(false);
 }
 
 void KCMNetworkManagementQml::onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared)

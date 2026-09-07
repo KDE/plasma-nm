@@ -15,6 +15,7 @@
 #include "ipv6settings.h"
 #include "security8021xsetting.h"
 #include "ssh.h"
+#include "sstp.h"
 #include "wifisecuritysetting.h"
 #include "wifisetting.h"
 #include "wiredsettings.h"
@@ -42,6 +43,7 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(IPv4Settings *ipv4Settings READ ipv4Settings CONSTANT)
     Q_PROPERTY(IPv6Settings *ipv6Settings READ ipv6Settings CONSTANT)
     Q_PROPERTY(SshSetting *vpnSshSetting READ vpnSshSetting NOTIFY vpnSshSettingChanged)
+    Q_PROPERTY(SstpSetting *vpnSstpSetting READ vpnSstpSetting NOTIFY vpnSstpSettingChanged)
     Q_PROPERTY(QString vpnServiceType READ vpnServiceType NOTIFY vpnServiceTypeChanged)
 
 public:
@@ -61,6 +63,7 @@ public:
     IPv4Settings *ipv4Settings() const;
     IPv6Settings *ipv6Settings() const;
     SshSetting *vpnSshSetting() const;
+    SstpSetting *vpnSstpSetting() const;
     QString vpnServiceType() const;
     bool useApMode() const;
 
@@ -83,6 +86,7 @@ Q_SIGNALS:
     void connectionTypeChanged();
     void wiredSecurityEnabledChanged();
     void vpnSshSettingChanged();
+    void vpnSstpSettingChanged();
     void vpnServiceTypeChanged();
 
 private Q_SLOTS:
@@ -129,6 +133,7 @@ private:
     IPv4Settings *const m_ipv4Settings;
     IPv6Settings *const m_ipv6Settings;
     SshSetting *const m_vpnSshSetting;
+    SstpSetting *const m_vpnSstpSetting;
 
     bool m_useApMode = false;
     bool m_wiredSecurityEnabled = false;

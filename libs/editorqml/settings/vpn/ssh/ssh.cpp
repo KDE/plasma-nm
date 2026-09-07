@@ -30,6 +30,8 @@ void SshSetting::loadConfig(const NetworkManager::VpnSetting::Ptr &setting)
         return;
     }
 
+    setSshPassword(QString());
+
     const NMStringMap data = setting->data();
 
     // General

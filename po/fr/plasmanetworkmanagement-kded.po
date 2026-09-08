@@ -610,7 +610,7 @@ msgstr "Fournir les éléments secrets pour la connexion VPN « %1 » :"
 #: passworddialog.cpp:136
 #, kde-format
 msgid "VPN secrets (%1) dialog"
-msgstr "Boîte de dialogue de phrase secrète VPN (%1)"
+msgstr "Boite de dialogue de phrase secrète VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26

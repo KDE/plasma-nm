@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm-qml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-09-08 00:47+0000\n"
 "PO-Revision-Date: 2026-08-27 12:37+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -19,28 +19,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.08.0\n"
 
-#: kcm.cpp:648
+#: kcm.cpp:666
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "La obtención de claves secretas para %1 ha fallado"
 
-#: kcm.cpp:672
+#: kcm.cpp:692
 #, kde-format
 msgid "my_shared_connection"
 msgstr "mi_conexión_compartida"
 
-#: kcm.cpp:742
+#: kcm.cpp:762
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "¿Desea guardar los cambios realizados en la conexión «%1»?"
 
-#: kcm.cpp:745
+#: kcm.cpp:765
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Guardar cambios"
 
-#: kcm.cpp:774
+#: kcm.cpp:794
 #, kde-format
 msgctxt "Suffix appended to duplicated connection name"
 msgid " (Copy)"

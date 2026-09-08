@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-09-08 00:47+0000\n"
 "PO-Revision-Date: 2026-08-28 19:40+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -675,6 +675,8 @@ msgstr "Aygıt"
 #: editorqml/qml/components/Wired.qml:30
 #: editorqml/qml/components/Wireless.qml:30
 #: editorqml/qml/ConfigurationDialog.qml:34 editorqml/qml/vpn/ssh/Ssh.qml:30
+#: editorqml/qml/vpn/sstp/Sstp.qml:26
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:238
 #, kde-format
 msgid "General"
 msgstr "Genel"
@@ -1133,6 +1135,8 @@ msgstr "Korunan EAP (PEAP)"
 #: editor/settings/ui/802-1x.ui:542 editor/settings/ui/802-1x.ui:684
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
 #: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:207
+#: editorqml/qml/vpn/sstp/Sstp.qml:43
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:265
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:173
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapLeap.qml:25
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapMd5.qml:22
@@ -1327,6 +1331,7 @@ msgstr "GTC"
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
 #: editor/settings/ui/802-1x.ui:432 editor/settings/ui/802-1x.ui:529
 #: editor/settings/ui/802-1x.ui:666 editor/settings/ui/ppp.ui:68
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:113
 #, kde-format
 msgid "MSCHAPv2"
 msgstr "MSCHAPv2"
@@ -1334,6 +1339,7 @@ msgstr "MSCHAPv2"
 #. i18n: ectx: property (text), widget (QCheckBox, pap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:519 editor/settings/ui/ppp.ui:58
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:92
 #, kde-format
 msgid "PAP"
 msgstr "PAP"
@@ -1341,6 +1347,7 @@ msgstr "PAP"
 #. i18n: ectx: property (text), widget (QCheckBox, mschap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:524 editor/settings/ui/ppp.ui:48
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:106
 #, kde-format
 msgid "MSCHAP"
 msgstr "MSCHAP"
@@ -1348,6 +1355,7 @@ msgstr "MSCHAP"
 #. i18n: ectx: property (text), widget (QCheckBox, chap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:534 editor/settings/ui/ppp.ui:78
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:99
 #, kde-format
 msgid "CHAP"
 msgstr "CHAP"
@@ -2071,18 +2079,19 @@ msgstr "Gizlilik:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, authGroup)
 #: editor/settings/ui/ppp.ui:23 editorqml/qml/vpn/ssh/Ssh.qml:136
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:81
 #, kde-format
 msgid "Authentication"
 msgstr "Kimlik Doğrulama"
 
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
-#: editor/settings/ui/ppp.ui:38
+#: editor/settings/ui/ppp.ui:38 editorqml/qml/vpn/sstp/SstpAdvanced.qml:120
 #, kde-format
 msgid "EAP"
 msgstr "EAP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
-#: editor/settings/ui/ppp.ui:91
+#: editor/settings/ui/ppp.ui:91 editorqml/qml/vpn/sstp/SstpAdvanced.qml:165
 #, kde-format
 msgid "Compression"
 msgstr "Sıkıştırma"
@@ -2124,13 +2133,13 @@ msgid "Use stateful MPPE"
 msgstr "Durumlu MPPE kullan"
 
 #. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
-#: editor/settings/ui/ppp.ui:175
+#: editor/settings/ui/ppp.ui:175 editorqml/qml/vpn/sstp/SstpAdvanced.qml:191
 #, kde-format
 msgid "Echo"
 msgstr "Yankı"
 
 #. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
-#: editor/settings/ui/ppp.ui:184
+#: editor/settings/ui/ppp.ui:184 editorqml/qml/vpn/sstp/SstpAdvanced.qml:195
 #, kde-format
 msgid "Send PPP echo packets"
 msgstr "PPP yankı paketleri gönder"
@@ -4396,6 +4405,7 @@ msgstr ""
 "bağlantının tamamlanmasına izin verir."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:326 editorqml/qml/vpn/ssh/Ssh.qml:194
+#: editorqml/qml/vpn/sstp/Sstp.qml:106
 #, kde-format
 msgctxt "@action:button"
 msgid "Advanced…"
@@ -4567,7 +4577,7 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Parola, 8 ile 64 karakter arasında olmalıdır."
 
-#: editorqml/qml/vpn/ssh/Ssh.qml:34
+#: editorqml/qml/vpn/ssh/Ssh.qml:34 editorqml/qml/vpn/sstp/Sstp.qml:30
 #, kde-format
 msgid "Gateway:"
 msgstr "Ağ geçidi:"
@@ -4676,6 +4686,143 @@ msgstr "Öntanımlı rotayı başkasıyla değiştirme"
 #: editorqml/qml/vpn/ssh/SshAuth.qml:23
 #, kde-format
 msgid "SSH VPN"
+msgstr "SSH VPN"
+
+#: editorqml/qml/vpn/sstp/Sstp.qml:39
+#, fuzzy, kde-format
+#| msgctxt "@info:placeholder optional field"
+#| msgid "Optional"
+msgid "Optional"
+msgstr "İsteğe bağlı"
+
+#: editorqml/qml/vpn/sstp/Sstp.qml:51
+#, fuzzy, kde-format
+#| msgid "Domain:"
+msgid "NT Domain:"
+msgstr "Alan adı:"
+
+#: editorqml/qml/vpn/sstp/Sstp.qml:59
+#, fuzzy, kde-format
+#| msgid "CA certificate:"
+msgid "CA Certificate:"
+msgstr "CA sertifikası:"
+
+#: editorqml/qml/vpn/sstp/Sstp.qml:79
+#, kde-format
+msgid "Ignore certificate warnings"
+msgstr ""
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:60
+#, kde-format
+msgid "Point-to-Point"
+msgstr ""
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:64
+#, kde-format
+msgid "Proxy"
+msgstr ""
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
+#, kde-format
+msgid "Allow following authentication methods:"
+msgstr ""
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
+#, fuzzy, kde-format
+#| msgid "Connection"
+msgid "Encryption"
+msgstr "Bağlantı"
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
+#, kde-format
+msgid "Use MPPE Encryption"
+msgstr ""
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
+#, fuzzy, kde-format
+#| msgid "Use point-to-point encryption (MPPE)"
+msgid "Use Microsoft Point-to-Point Encryption"
+msgstr "Noktadan Noktaya Şifreleme (MPPE) Kullan"
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
+#, kde-format
+msgid "Crypto:"
+msgstr ""
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
+#, fuzzy, kde-format
+#| msgid "Any"
+msgctxt "like in use Any configuration"
+msgid "Any"
+msgstr "Herhangi biri"
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
+#, fuzzy, kde-format
+#| msgid "WEP key 128 bits"
+msgid "128 bit"
+msgstr "WEP anahtarı 128 bit"
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
+#, kde-format
+msgid "40 bit"
+msgstr ""
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
+#, fuzzy, kde-format
+#| msgid "Use stateful MPPE"
+msgid "Use stateful encryption"
+msgstr "Durumlu MPPE kullan"
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
+#, fuzzy, kde-format
+#| msgid "Use BSD data compression"
+msgid "Allow BSD compression"
+msgstr "BSD veri sıkıştırması kullan"
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
+#, fuzzy, kde-format
+#| msgid "Use Deflate data compression"
+msgid "Allow Deflate compression"
+msgstr "Yayılmış sıkıştırma kullan"
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
+#, fuzzy, kde-format
+#| msgid "Use TCP header compression"
+msgid "Allow TCP header compression"
+msgstr "TCP başlık sıkıştırması kullan"
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
+#, kde-format
+msgid "Misc"
+msgstr ""
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:213
+#, fuzzy, kde-format
+#| msgid "Use custom gateway port:"
+msgid "Use custom unit number:"
+msgstr "Özel ağ geçidi kapısı kullan:"
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:242
+#, fuzzy, kde-format
+#| msgctxt "Header text for IPv4 address"
+#| msgid "Address"
+msgid "Address:"
+msgstr "Adres"
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
+#, kde-format
+msgid "Port:"
+msgstr ""
+
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
+#, kde-format
+msgid "Credentials"
+msgstr ""
+
+#: editorqml/qml/vpn/sstp/SstpAuth.qml:22
+#, fuzzy, kde-format
+#| msgid "SSH VPN"
+msgid "SSTP VPN"
 msgstr "SSH VPN"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115

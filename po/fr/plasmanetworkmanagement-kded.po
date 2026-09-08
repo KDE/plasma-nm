@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-18 02:46+0000\n"
-"PO-Revision-Date: 2025-07-30 09:15+0200\n"
+"PO-Revision-Date: 2026-05-17 12:55+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -593,7 +593,7 @@ msgstr "Veuillez saisir le mot de passe pour la connexion « %1 » :"
 #: passworddialog.cpp:114
 #, kde-format
 msgid "%1 password dialog"
-msgstr "Boîte de dialogue de mot de passe %1"
+msgstr "Boite de dialogue de mot de passe %1"
 
 #: passworddialog.cpp:121
 #, kde-format
@@ -609,13 +609,13 @@ msgstr "Fournir les éléments secrets pour la connexion VPN « %1 » :"
 #: passworddialog.cpp:136
 #, kde-format
 msgid "VPN secrets (%1) dialog"
-msgstr "Boîte de dialogue de phrase secrète VPN (%1)"
+msgstr "Boite de dialogue de phrase secrète VPN (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
 #, kde-format
 msgid "Password dialog"
-msgstr "Boîte de dialogue de mot de passe"
+msgstr "Boite de dialogue de mot de passe"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-08 00:47+0000\n"
-"PO-Revision-Date: 2026-08-31 19:16+0200\n"
+"PO-Revision-Date: 2026-09-08 16:51+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
 "Language: sv\n"
@@ -4682,141 +4682,125 @@ msgid "SSH VPN"
 msgstr "SSH VPN"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder optional field"
-#| msgid "Optional"
+#, kde-format
 msgid "Optional"
 msgstr "Valfritt"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:51
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgid "NT Domain:"
-msgstr "Domän:"
+msgstr "NT-domän:"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:59
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA Certificate:"
 msgstr "Certifikatutfärdarens certifikat:"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:79
 #, kde-format
 msgid "Ignore certificate warnings"
-msgstr ""
+msgstr "Ignorera certifikatvarningar"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:60
 #, kde-format
 msgid "Point-to-Point"
-msgstr ""
+msgstr "Punkt  till punkt"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:64
 #, kde-format
 msgid "Proxy"
-msgstr ""
+msgstr "Proxy"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr ""
+msgstr "Tillåt följande metoder för behörighetskontroll:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Encryption"
-msgstr "Anslutning"
+msgstr "Kryptering"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr ""
+msgstr "Använd MPPE-kryptering"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
-#, fuzzy, kde-format
-#| msgid "Use point-to-point encryption (MPPE)"
+#, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr "Använd punkt-till-punkt kryptering (MPPE)"
+msgstr "Använd Microsoft punkt-till-punkt kryptering"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
 #, kde-format
 msgid "Crypto:"
-msgstr ""
+msgstr "Krypto:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "Any"
+#, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
 msgstr "Alla"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "WEP key 128 bits"
+#, kde-format
 msgid "128 bit"
-msgstr "WEP-nyckel 128-bitar"
+msgstr "128 bitar"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgid "40 bit"
-msgstr ""
+msgstr "40 bitar"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
-#, fuzzy, kde-format
-#| msgid "Use stateful MPPE"
+#, kde-format
 msgid "Use stateful encryption"
-msgstr "Använd MPPE med interntillstånd"
+msgstr "Använd kryptering med tillstånd"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
-#, fuzzy, kde-format
-#| msgid "Use BSD data compression"
+#, kde-format
 msgid "Allow BSD compression"
-msgstr "Använd BSD-datakomprimering"
+msgstr "Tillåt komprimering med BSD"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
-#, fuzzy, kde-format
-#| msgid "Use Deflate data compression"
+#, kde-format
 msgid "Allow Deflate compression"
-msgstr "Använd Deflate-datakomprimering"
+msgstr "Tillåt komprimering med Deflate"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Allow TCP header compression"
 msgstr "Använd komprimering av TCP-huvud"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Diverse"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:213
-#, fuzzy, kde-format
-#| msgid "Use custom gateway port:"
+#, kde-format
 msgid "Use custom unit number:"
-msgstr "Använd egen förmedlingsnodsport:"
+msgstr "Använd eget enhetsnummer:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:242
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgid "Address:"
-msgstr "Adress"
+msgstr "Adress:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
 #, kde-format
 msgid "Credentials"
-msgstr ""
+msgstr "Inloggningsinformation"
 
 #: editorqml/qml/vpn/sstp/SstpAuth.qml:22
-#, fuzzy, kde-format
-#| msgid "SSH VPN"
+#, kde-format
 msgid "SSTP VPN"
-msgstr "SSH VPN"
+msgstr "SSTP VPN"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format

@@ -1,16 +1,16 @@
 # Translation of plasmanetworkmanagement_sstpui.po to Catalan (Valencian)
-# Copyright (C) 2015-2021 This_file_is_part_of_KDE
+# Copyright (C) 2015-2026 This_file_is_part_of_KDE
 # This file is distributed under the license LGPL version 2.1 or
 # version 3 or later versions approved by the membership of KDE e.V.
 #
-# SPDX-FileCopyrightText: 2015-2017, 2021 Josep M. Ferrer <txemaq@gmail.com>
+# SPDX-FileCopyrightText: 2015-2017, 2021, 2026 Josep M. Ferrer <txemaq@gmail.com>
 # SPDX-FileCopyrightText: 2015 Antoni Bella Pérez <antonibella5@yahoo.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2021-05-31 09:56+0100\n"
+"PO-Revision-Date: 2026-09-08 15:44+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 2.0\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #. i18n: ectx: attribute (title), widget (QWidget, pptpTab)
 #: sstpadvanced.ui:39
@@ -128,7 +128,7 @@ msgstr "Permet la compressió BSD"
 #: sstpadvanced.ui:202
 #, kde-format
 msgid "Allow Deflate compression"
-msgstr "Permet la compressió de desinflat"
+msgstr "Permet la compressió «Deflate»"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
 #: sstpadvanced.ui:212

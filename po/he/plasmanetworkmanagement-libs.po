@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-08 00:47+0000\n"
-"PO-Revision-Date: 2026-08-30 21:53+0300\n"
+"PO-Revision-Date: 2026-09-08 09:01+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -4663,141 +4663,125 @@ msgid "SSH VPN"
 msgstr "VPN דרך SSH"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder optional field"
-#| msgid "Optional"
+#, kde-format
 msgid "Optional"
 msgstr "רשות"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:51
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgid "NT Domain:"
-msgstr "שם תחום:"
+msgstr "שם תחום NT:"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:59
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA Certificate:"
-msgstr "אישור CA:"
+msgstr "אישור רשות אישורים (CA):"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:79
 #, kde-format
 msgid "Ignore certificate warnings"
-msgstr ""
+msgstr "התעלמות מאזהרות אישורים"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:60
 #, kde-format
 msgid "Point-to-Point"
-msgstr ""
+msgstr "נקודה לנקודה"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:64
 #, kde-format
 msgid "Proxy"
-msgstr ""
+msgstr "מתווך"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr ""
+msgstr "לאפשר את שיטות האימות הבאות:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Encryption"
-msgstr "חיבור"
+msgstr "הצפנה"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr ""
+msgstr "להשתמש בהצפנת MPPE"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
-#, fuzzy, kde-format
-#| msgid "Use point-to-point encryption (MPPE)"
+#, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr "להשתמש בהצפנת נקודה לנקודה (MPPE)"
+msgstr "להשתמש בהצפנת נקודה לנקודה של Microsoft"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
 #, kde-format
 msgid "Crypto:"
-msgstr ""
+msgstr "קריפטוגרפיה:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "Any"
+#, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
-msgstr "כלשהו"
+msgstr "כלשהי"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "WEP key 128 bits"
+#, kde-format
 msgid "128 bit"
-msgstr "מפתח WEB ‏128 סיביות"
+msgstr "128 סיביות"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgid "40 bit"
-msgstr ""
+msgstr "40 סיביות"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
-#, fuzzy, kde-format
-#| msgid "Use stateful MPPE"
+#, kde-format
 msgid "Use stateful encryption"
-msgstr "להשתמש ב־MPPE בר־עבר (stateful)"
+msgstr "להשתמש בהצפנה שומרת מצב (stateful)"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
-#, fuzzy, kde-format
-#| msgid "Use BSD data compression"
+#, kde-format
 msgid "Allow BSD compression"
-msgstr "להשתמש בדחיסת נתונים BSD"
+msgstr "לאפשר דחיסת BSD"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
-#, fuzzy, kde-format
-#| msgid "Use Deflate data compression"
+#, kde-format
 msgid "Allow Deflate compression"
-msgstr "להשתמש בדחיסת נתונים Deflate"
+msgstr "לאפשר דחיסת Deflate"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Allow TCP header compression"
-msgstr "להשתמש בדחיסת כותרות TCP"
+msgstr "לאפשר דחיסת כותרת TCP"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "שונות"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:213
-#, fuzzy, kde-format
-#| msgid "Use custom gateway port:"
+#, kde-format
 msgid "Use custom unit number:"
-msgstr "להשתמש בפתחת שער גישה מותאמת אישית:"
+msgstr "להשתמש במספר יחידה מותאם אישית:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:242
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgid "Address:"
-msgstr "כתובת"
+msgstr "כתובת:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "פתחה:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
 #, kde-format
 msgid "Credentials"
-msgstr ""
+msgstr "פרטי גישה"
 
 #: editorqml/qml/vpn/sstp/SstpAuth.qml:22
-#, fuzzy, kde-format
-#| msgid "SSH VPN"
+#, kde-format
 msgid "SSTP VPN"
-msgstr "VPN דרך SSH"
+msgstr "VPN דרך SSTP"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2026-01-29 11:33+0100\n"
+"PO-Revision-Date: 2026-09-08 15:47+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -514,13 +514,13 @@ msgstr "Permet la compressió BSD"
 #: l2tpppp.ui:120
 #, kde-format
 msgid "Allow/disable Deflate compression."
-msgstr "Permet/desactiva la compressió de desinflat."
+msgstr "Permet/desactiva la compressió «Deflate»."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbdeflate)
 #: l2tpppp.ui:123
 #, kde-format
 msgid "Allow Deflate compression"
-msgstr "Permet la compressió de desinflat"
+msgstr "Permet la compressió «Deflate»"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbTCPheaders)
 #: l2tpppp.ui:134

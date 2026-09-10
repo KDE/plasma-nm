@@ -417,10 +417,9 @@ void IPv4Widget::slotAdvancedDialog()
     auto layout = new QFormLayout(dlg);
     dlg->setLayout(layout);
 
-    auto label =
-        new QLabel(i18n("<qt>You can find more information about these values here:<br/><a "
-                        "href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome.org/NetworkManager/stable/ch01.html"
-                        "nm-settings-nmcli.html</a></qt>"));
+    auto label = new QLabel(i18n(
+        "<qt>You can find more information about these values here:<br/><a "
+        "href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></qt>"));
     connect(label, &QLabel::linkActivated, this, [](const QString &link) {
         QDesktopServices::openUrl(QUrl(link));
     });

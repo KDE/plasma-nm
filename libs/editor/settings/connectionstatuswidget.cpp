@@ -18,6 +18,7 @@
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Device>
+#include <qnamespace.h>
 
 ConnectionStatusWidget::ConnectionStatusWidget(const QString &connectionUuid, QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)
@@ -152,6 +153,7 @@ void ConnectionStatusWidget::updateConnectionDetails()
                 // Create value label widget
                 QLabel *valueLabel = new QLabel(value, this);
                 valueLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
+                valueLabel->setTextFormat(Qt::PlainText);
                 // Add row with label text and value widget
                 m_detailsLayout->addRow(label + QLatin1Char(':'), valueLabel);
             }

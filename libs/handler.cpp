@@ -34,6 +34,8 @@
 #include <QIcon>
 #include <QStringBuilder>
 
+#include <memory>
+
 #include <KIO/OpenUrlJob>
 #include <KLocalizedString>
 #include <KNotification>
@@ -728,7 +730,7 @@ QCoro::Task<> Handler::requestScanInternal(const QString &iface)
 
                 qCDebug(PLASMA_NM_LIBS_LOG) << "Requesting wifi scan on device" << wifiDevice->interfaceName();
 
-                incrementScansCount();
+                const QDateTime previousLastScan = wifiDevice->lastScan();
 
                 QPointer<Handler> thisGuard(this);
                 QDBusReply<void> reply = co_await wifiDevice->requestScan();
@@ -740,10 +742,15 @@ QCoro::Task<> Handler::requestScanInternal(const QString &iface)
                     const QString interface = wifiDevice->interfaceName();
                     qCWarning(PLASMA_NM_LIBS_LOG) << "Wireless scan on" << interface << "failed:" << reply.error().message();
                     scanRequestFailed(interface);
+                } else if (NetworkManager::checkVersion(1, 12, 0)) {
+                    incrementScansCount();
+                    qCDebug(PLASMA_NM_LIBS_LOG) << "Wireless scan on" << wifiDevice->interfaceName() << "requested, waiting for it to finish";
+                    watchWifiScanCompletion(wifiDevice, previousLastScan);
                 } else {
+                    incrementScansCount();
                     qCDebug(PLASMA_NM_LIBS_LOG) << "Wireless scan on" << wifiDevice->interfaceName() << "succeeded";
+                    decrementScansCount();
                 }
-                decrementScansCount();
             }
         }
     }
@@ -766,6 +773,20 @@ void Handler::decrementScansCount()
     m_ongoingScansCount -= 1;
     if (m_ongoingScansCount == 0) {
         Q_EMIT scanningChanged();
+    }
+}
+
+void Handler::watchWifiScanCompletion(const NetworkManager::WirelessDevice::Ptr &wifiDevice, const QDateTime &previousLastScan)
+{
+    auto connection = std::make_shared<QMetaObject::Connection>();
+    *connection = connect(wifiDevice.data(), &NetworkManager::WirelessDevice::lastScanChanged, this, [this, connection]() {
+        QObject::disconnect(*connection);
+        decrementScansCount();
+    });
+
+    if (wifiDevice->lastScan() != previousLastScan) {
+        QObject::disconnect(*connection);
+        decrementScansCount();
     }
 }
 

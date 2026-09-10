@@ -11,6 +11,7 @@
 
 #include <QDBusInterface>
 #include <QDBusPendingCallWatcher>
+#include <QDateTime>
 #include <QPointer>
 #include <QTimer>
 
@@ -171,6 +172,7 @@ private:
     void scheduleRequestScan(const QString &interface, int timeout);
     void incrementScansCount();
     void decrementScansCount();
+    void watchWifiScanCompletion(const NetworkManager::WirelessDevice::Ptr &wifiDevice, const QDateTime &previousLastScan);
     void onWiFiCodeResponse(QDBusPendingCallWatcher *watcher, QString &&ret, const QString &ssid, NetworkManager::WirelessSecurityType securityType);
 
     QPointer<QDBusPendingCallWatcher> m_requestWifiCodeWatcher;

@@ -152,6 +152,7 @@ void ConnectionStatusWidget::updateConnectionDetails()
                 // Create value label widget
                 QLabel *valueLabel = new QLabel(value, this);
                 valueLabel->setTextInteractionFlags(Qt::TextSelectableByMouse);
+                valueLabel->setTextFormat(Qt::PlainText);
                 // Add row with label text and value widget
                 m_detailsLayout->addRow(label + QLatin1Char(':'), valueLabel);
             }

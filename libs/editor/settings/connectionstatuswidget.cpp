@@ -18,6 +18,7 @@
 
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/Device>
+#include <qnamespace.h>
 
 ConnectionStatusWidget::ConnectionStatusWidget(const QString &connectionUuid, QWidget *parent, Qt::WindowFlags f)
     : QWidget(parent, f)

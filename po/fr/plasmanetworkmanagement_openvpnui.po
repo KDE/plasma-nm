@@ -529,7 +529,7 @@ msgstr "Hôtes distants aléatoires"
 #: openvpnadvanced.ui:371
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr "Préfixer le nom DNS distant avec une chaîne aléatoire"
+msgstr "Préfixer le nom DNS distant avec une chaine aléatoire"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblConnectTimeout)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbConnectTimeout)
@@ -718,7 +718,7 @@ msgid ""
 "Block Chaining mode)."
 msgstr ""
 "Chiffrer les paquets avec un algorithme de chiffrement. L'algorithme par "
-"défaut est « BF-CBC » (Blowfish en mode enchaînement du bloc de chiffrement)."
+"défaut est « BF-CBC » (Blowfish en mode enchainement du bloc de chiffrement)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: openvpnadvanced.ui:611
@@ -1085,7 +1085,7 @@ msgstr "Fichier de clé :"
 msgid ""
 "Additional local certificate file to help verify the peer certificate chain."
 msgstr ""
-"Fichier de certificat local supplémentaire pour aider à vérifier la chaîne "
+"Fichier de certificat local supplémentaire pour aider à vérifier la chaine "
 "de certificats du pair."
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)

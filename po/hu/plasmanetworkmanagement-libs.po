@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-08 00:47+0000\n"
+"POT-Creation-Date: 2026-09-11 00:48+0000\n"
 "PO-Revision-Date: 2026-06-09 22:11+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -963,51 +963,56 @@ msgid "DNS Servers:"
 msgstr "DNS-kiszolgálók:"
 
 #: editor/settings/ipv4widget.cpp:421
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>You can find more information about these values here:<br/><a "
+#| "href='https://developer.gnome.org/NetworkManager/stable/ch01."
+#| "html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-"
+#| "settings-nmcli.html</a></qt>"
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
-"href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
-"developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
-"a></qt>"
+"href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
+"html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></"
+"qt>"
 msgstr ""
 "<qt>További információkat találhat ezekről az értékekről itt:<br/><a "
 "href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 
-#: editor/settings/ipv4widget.cpp:431
+#: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
 msgstr "Eszköznév küldése:"
 
-#: editor/settings/ipv4widget.cpp:436 editorqml/qml/ipv4/IPv4Advance.qml:53
+#: editor/settings/ipv4widget.cpp:435 editorqml/qml/ipv4/IPv4Advance.qml:53
 #, kde-format
 msgid "DHCP hostname:"
 msgstr "DHCP eszköznév:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:441 editor/settings/ui/ipv6.ui:194
+#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:194
 #, kde-format
 msgid "Default"
 msgstr "Alapértelmezett"
 
-#: editor/settings/ipv4widget.cpp:442
+#: editor/settings/ipv4widget.cpp:441
 #, kde-format
 msgctxt "Milliseconds"
 msgid " ms"
 msgstr " ms"
 
-#: editor/settings/ipv4widget.cpp:445 editorqml/qml/ipv4/IPv4Advance.qml:63
+#: editor/settings/ipv4widget.cpp:444 editorqml/qml/ipv4/IPv4Advance.qml:63
 #, kde-format
 msgid "DAD timeout:"
 msgstr "DAD időkorlát:"
 
-#: editor/settings/ipv4widget.cpp:466 editor/settings/ipv6widget.cpp:406
+#: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:406
 #, kde-format
 msgid "Edit DNS servers"
 msgstr "DNS-kiszolgálók szerkesztése"
 
-#: editor/settings/ipv4widget.cpp:491 editor/settings/ipv6widget.cpp:431
+#: editor/settings/ipv4widget.cpp:490 editor/settings/ipv6widget.cpp:431
 #, kde-format
 msgid "Edit DNS search domains"
 msgstr "DNS keresési tartományok szerkesztése"
@@ -5256,72 +5261,72 @@ msgctxt "@item automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Automatikus"
 
-#: handler.cpp:140
+#: handler.cpp:142
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "A Plasmából hiányzik a(z) „%1” VPN-kapcsolatok támogatása."
 
-#: handler.cpp:143
+#: handler.cpp:145
 #, kde-format
 msgid "Report Bug"
 msgstr "Hibabejelentés"
 
-#: handler.cpp:166
+#: handler.cpp:168
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "A NetworkManagerből hiányzik a(z) „%1” VPN-kapcsolatok támogatása."
 
-#: handler.cpp:169
+#: handler.cpp:171
 #, kde-format
 msgid "Install"
 msgstr "Telepítés"
 
-#: handler.cpp:215
+#: handler.cpp:217
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Nem sikerült aktiválni: %1"
 
-#: handler.cpp:389 handler.cpp:418
+#: handler.cpp:391 handler.cpp:420
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Nem sikerült hozzáadni a(z) %1 kapcsolatot"
 
-#: handler.cpp:396 handler.cpp:427
+#: handler.cpp:398 handler.cpp:429
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "A(z) %1 kapcsolat sikeresen hozzáadva"
 
-#: handler.cpp:466
+#: handler.cpp:468
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Nem sikerült hozzáadni: %1"
 
-#: handler.cpp:506
+#: handler.cpp:508
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Nem sikerült deaktiválni: %1"
 
-#: handler.cpp:644
+#: handler.cpp:646
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Nem sikerült eltávolítani: %1"
 
-#: handler.cpp:651
+#: handler.cpp:653
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "A(z) %1 kapcsolat eltávolításra került"
 
-#: handler.cpp:670
+#: handler.cpp:672
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Nem sikerült frissíteni a(z) %1 kapcsolatot"
 
-#: handler.cpp:677
+#: handler.cpp:679
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "A(z) %1 kapcsolat frissült"
 
-#: handler.cpp:864
+#: handler.cpp:885
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "A(z) %1 hotspot létrehozása meghiúsult"

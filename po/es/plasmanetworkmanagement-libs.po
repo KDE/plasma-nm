@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-08 00:47+0000\n"
+"POT-Creation-Date: 2026-09-11 00:48+0000\n"
 "PO-Revision-Date: 2026-09-08 11:39+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
@@ -967,50 +967,55 @@ msgid "DNS Servers:"
 msgstr "Servidores DNS:"
 
 #: editor/settings/ipv4widget.cpp:421
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>You can find more information about these values here:<br/><a "
+#| "href='https://developer.gnome.org/NetworkManager/stable/ch01."
+#| "html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-"
+#| "settings-nmcli.html</a></qt>"
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
-"href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
-"developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
-"a></qt>"
+"href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
+"html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></"
+"qt>"
 msgstr ""
 "<qt>Puede encontrar más información sobre estos valores aquí:<br/><a "
 "href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
 "developer.gnome.org/NetworkManager/stable/ch01.html</a></qt>"
 
-#: editor/settings/ipv4widget.cpp:431
+#: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
 msgstr "Enviar nombre de máquina:"
 
-#: editor/settings/ipv4widget.cpp:436 editorqml/qml/ipv4/IPv4Advance.qml:53
+#: editor/settings/ipv4widget.cpp:435 editorqml/qml/ipv4/IPv4Advance.qml:53
 #, kde-format
 msgid "DHCP hostname:"
 msgstr "Máquina DHCP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:441 editor/settings/ui/ipv6.ui:194
+#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:194
 #, kde-format
 msgid "Default"
 msgstr "Por omisión"
 
-#: editor/settings/ipv4widget.cpp:442
+#: editor/settings/ipv4widget.cpp:441
 #, kde-format
 msgctxt "Milliseconds"
 msgid " ms"
 msgstr " ms"
 
-#: editor/settings/ipv4widget.cpp:445 editorqml/qml/ipv4/IPv4Advance.qml:63
+#: editor/settings/ipv4widget.cpp:444 editorqml/qml/ipv4/IPv4Advance.qml:63
 #, kde-format
 msgid "DAD timeout:"
 msgstr "Tiempo de espera para DAD:"
 
-#: editor/settings/ipv4widget.cpp:466 editor/settings/ipv6widget.cpp:406
+#: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:406
 #, kde-format
 msgid "Edit DNS servers"
 msgstr "Editar servidores DNS"
 
-#: editor/settings/ipv4widget.cpp:491 editor/settings/ipv6widget.cpp:431
+#: editor/settings/ipv4widget.cpp:490 editor/settings/ipv6widget.cpp:431
 #, kde-format
 msgid "Edit DNS search domains"
 msgstr "Editar dominios de búsqueda DNS"
@@ -5105,72 +5110,72 @@ msgctxt "@item automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Automática"
 
-#: handler.cpp:140
+#: handler.cpp:142
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma carece de soporte lógico para conexiones VPN «%1»."
 
-#: handler.cpp:143
+#: handler.cpp:145
 #, kde-format
 msgid "Report Bug"
 msgstr "Informar del fallo"
 
-#: handler.cpp:166
+#: handler.cpp:168
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager carece de soporte lógico para conexiones VPN «%1»."
 
-#: handler.cpp:169
+#: handler.cpp:171
 #, kde-format
 msgid "Install"
 msgstr "Instalar"
 
-#: handler.cpp:215
+#: handler.cpp:217
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Ha ocurrido un fallo al activar %1"
 
-#: handler.cpp:389 handler.cpp:418
+#: handler.cpp:391 handler.cpp:420
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Ha ocurrido un fallo al añadir la conexión %1"
 
-#: handler.cpp:396 handler.cpp:427
+#: handler.cpp:398 handler.cpp:429
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Se ha añadido la conexión %1"
 
-#: handler.cpp:466
+#: handler.cpp:468
 #, kde-format
 msgid "Failed to add %1"
 msgstr "Ha ocurrido un fallo al añadir %1"
 
-#: handler.cpp:506
+#: handler.cpp:508
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "Ha ocurrido un fallo al desactivar %1"
 
-#: handler.cpp:644
+#: handler.cpp:646
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "Ha ocurrido un fallo al eliminar %1"
 
-#: handler.cpp:651
+#: handler.cpp:653
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "La conexión %1 ha sido eliminada"
 
-#: handler.cpp:670
+#: handler.cpp:672
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "La actualización de la conexión %1 ha fallado"
 
-#: handler.cpp:677
+#: handler.cpp:679
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "La conexión %1 ha sido actualizada"
 
-#: handler.cpp:864
+#: handler.cpp:885
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "No se ha podido crear el punto de acceso %1"

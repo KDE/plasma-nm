@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-08 00:47+0000\n"
-"PO-Revision-Date: 2026-08-29 09:25+0200\n"
+"POT-Creation-Date: 2026-09-11 00:48+0000\n"
+"PO-Revision-Date: 2026-09-08 18:05+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -975,51 +975,56 @@ msgid "DNS Servers:"
 msgstr "Serveurs DNS :"
 
 #: editor/settings/ipv4widget.cpp:421
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<qt>You can find more information about these values here:<br/><a "
+#| "href='https://developer.gnome.org/NetworkManager/stable/ch01."
+#| "html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-"
+#| "settings-nmcli.html</a></qt>"
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
-"href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
-"developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
-"a></qt>"
+"href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
+"html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></"
+"qt>"
 msgstr ""
 "<qt>Vous pouvez trouver plus d'informations relatives à ces valeurs ici :<br/"
 "><a href='https://developer.gnome.org/NetworkManager/stable/ch01."
 "html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-"
 "nmcli.html</a></qt>"
 
-#: editor/settings/ipv4widget.cpp:431
+#: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
 msgstr "Envoyer le nom d'hôte :"
 
-#: editor/settings/ipv4widget.cpp:436 editorqml/qml/ipv4/IPv4Advance.qml:53
+#: editor/settings/ipv4widget.cpp:435 editorqml/qml/ipv4/IPv4Advance.qml:53
 #, kde-format
 msgid "DHCP hostname:"
 msgstr "Nom d'hôte DHCP :"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:441 editor/settings/ui/ipv6.ui:194
+#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:194
 #, kde-format
 msgid "Default"
 msgstr "Défaut"
 
-#: editor/settings/ipv4widget.cpp:442
+#: editor/settings/ipv4widget.cpp:441
 #, kde-format
 msgctxt "Milliseconds"
 msgid " ms"
 msgstr " ms"
 
-#: editor/settings/ipv4widget.cpp:445 editorqml/qml/ipv4/IPv4Advance.qml:63
+#: editor/settings/ipv4widget.cpp:444 editorqml/qml/ipv4/IPv4Advance.qml:63
 #, kde-format
 msgid "DAD timeout:"
 msgstr "Délai d'attente « DAD » :"
 
-#: editor/settings/ipv4widget.cpp:466 editor/settings/ipv6widget.cpp:406
+#: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:406
 #, kde-format
 msgid "Edit DNS servers"
 msgstr "Éditer les serveurs DNS :"
 
-#: editor/settings/ipv4widget.cpp:491 editor/settings/ipv6widget.cpp:431
+#: editor/settings/ipv4widget.cpp:490 editor/settings/ipv6widget.cpp:431
 #, kde-format
 msgid "Edit DNS search domains"
 msgstr "Éditer les domaines de recherche DNS"
@@ -4407,7 +4412,7 @@ msgid ""
 "customize the DHCP lease and options."
 msgstr ""
 "Utilisez ce champ pour spécifier l'identifiant client DHCP, qui est une "
-"chaîne envoyée au serveur DHCP afin d'identifier la machine locale que le "
+"chaine envoyée au serveur DHCP afin d'identifier la machine locale que le "
 "serveur DHCP peut utiliser pour personnaliser le bail et les options pour "
 "DHCP."
 
@@ -4730,141 +4735,125 @@ msgid "SSH VPN"
 msgstr "VPN SSH"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder optional field"
-#| msgid "Optional"
+#, kde-format
 msgid "Optional"
 msgstr "Optionnel"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:51
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgid "NT Domain:"
-msgstr "Domaine :"
+msgstr "Domaine NT :"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:59
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA Certificate:"
 msgstr "Certificat de l'autorité de certification :"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:79
 #, kde-format
 msgid "Ignore certificate warnings"
-msgstr ""
+msgstr "Ignorer les avertissements de certificats"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:60
 #, kde-format
 msgid "Point-to-Point"
-msgstr ""
+msgstr "Point à point"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:64
 #, kde-format
 msgid "Proxy"
-msgstr ""
+msgstr "Serveur mandataire"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr ""
+msgstr "Autoriser les méthodes d'authentification suivantes :"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Encryption"
-msgstr "Connexion"
+msgstr "Chiffrement"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr ""
+msgstr "Utiliser le chiffrement « MMPE »"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
-#, fuzzy, kde-format
-#| msgid "Use point-to-point encryption (MPPE)"
+#, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr "Utiliser le chiffrement point à point (MPPE)"
+msgstr "Utiliser le chiffrement point à point de Microsoft"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
 #, kde-format
 msgid "Crypto:"
-msgstr ""
+msgstr "Cryptographie :"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "Any"
+#, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
 msgstr "Quelconque"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "WEP key 128 bits"
+#, kde-format
 msgid "128 bit"
-msgstr "Clé WEP 128 bits"
+msgstr "128 bits"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgid "40 bit"
-msgstr ""
+msgstr "40 bits"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
-#, fuzzy, kde-format
-#| msgid "Use stateful MPPE"
+#, kde-format
 msgid "Use stateful encryption"
-msgstr "Utiliser MMPE à état"
+msgstr "Utiliser un chiffrement dynamique"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
-#, fuzzy, kde-format
-#| msgid "Use BSD data compression"
+#, kde-format
 msgid "Allow BSD compression"
-msgstr "Utiliser la compression de données BSD"
+msgstr "Autoriser la compression de données BSD"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
-#, fuzzy, kde-format
-#| msgid "Use Deflate data compression"
+#, kde-format
 msgid "Allow Deflate compression"
-msgstr "Utiliser la compression de données Deflate"
+msgstr "Autoriser la compression de données Deflate"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Allow TCP header compression"
-msgstr "Utiliser la compression des en-têtes TCP"
+msgstr "Autoriser la compression des en-têtes TCP"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Divers"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:213
-#, fuzzy, kde-format
-#| msgid "Use custom gateway port:"
+#, kde-format
 msgid "Use custom unit number:"
-msgstr "Utiliser un port personnalisé de passerelle :"
+msgstr "Utiliser un numéro personnalisé d'unité :"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:242
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgid "Address:"
-msgstr "Adresse"
+msgstr "Adresse :"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Port :"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
 #, kde-format
 msgid "Credentials"
-msgstr ""
+msgstr "Identifiants"
 
 #: editorqml/qml/vpn/sstp/SstpAuth.qml:22
-#, fuzzy, kde-format
-#| msgid "SSH VPN"
+#, kde-format
 msgid "SSTP VPN"
-msgstr "VPN SSH"
+msgstr "SSTP VPN"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format
@@ -5148,74 +5137,74 @@ msgctxt "@item automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Automatique"
 
-#: handler.cpp:140
+#: handler.cpp:142
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma ne prend pas en charge les connexions VPN « %1 »."
 
-#: handler.cpp:143
+#: handler.cpp:145
 #, kde-format
 msgid "Report Bug"
 msgstr "Signaler un bogue"
 
-#: handler.cpp:166
+#: handler.cpp:168
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 "La prise en charge pour les connexions %1 « VPN » est manquante dans "
 "NetworkManager."
 
-#: handler.cpp:169
+#: handler.cpp:171
 #, kde-format
 msgid "Install"
 msgstr "Installer"
 
-#: handler.cpp:215
+#: handler.cpp:217
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "Échec d'activation de %1"
 
-#: handler.cpp:389 handler.cpp:418
+#: handler.cpp:391 handler.cpp:420
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "L'ajout de la connexion %1 a échoué"
 
-#: handler.cpp:396 handler.cpp:427
+#: handler.cpp:398 handler.cpp:429
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "La connexion %1 a été ajoutée"
 
-#: handler.cpp:466
+#: handler.cpp:468
 #, kde-format
 msgid "Failed to add %1"
 msgstr "L'ajout de %1 a échoué"
 
-#: handler.cpp:506
+#: handler.cpp:508
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "La désactivation de %1 a échouée"
 
-#: handler.cpp:644
+#: handler.cpp:646
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "La suppression de %1 a échouée"
 
-#: handler.cpp:651
+#: handler.cpp:653
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "La connexion %1 a été supprimée"
 
-#: handler.cpp:670
+#: handler.cpp:672
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "La mise à jour de la connexion %1 a échoué"
 
-#: handler.cpp:677
+#: handler.cpp:679
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "La connexion %1 a été mise à jour"
 
-#: handler.cpp:864
+#: handler.cpp:885
 #, kde-format
 msgid "Failed to create hotspot %1"
 msgstr "Échec de création du point d'accès %1"

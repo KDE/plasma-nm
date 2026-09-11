@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-08 00:47+0000\n"
+"POT-Creation-Date: 2026-09-11 00:48+0000\n"
 "PO-Revision-Date: 2014-09-18 16:04+0200\n"
 "Last-Translator: Sönke Dibbern <s_dibbern@web.de>\n"
 "Language-Team: Low Saxon <kde-i18n-nds@kde.org>\n"
@@ -1069,46 +1069,46 @@ msgstr "DNS-Servers:"
 #, kde-format
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
-"href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
-"developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
-"a></qt>"
+"href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
+"html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></"
+"qt>"
 msgstr ""
 
-#: editor/settings/ipv4widget.cpp:431
+#: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
 msgstr ""
 
-#: editor/settings/ipv4widget.cpp:436 editorqml/qml/ipv4/IPv4Advance.qml:53
+#: editor/settings/ipv4widget.cpp:435 editorqml/qml/ipv4/IPv4Advance.qml:53
 #, kde-format
 msgid "DHCP hostname:"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:441 editor/settings/ui/ipv6.ui:194
+#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:194
 #, kde-format
 msgid "Default"
 msgstr "Standard"
 
-#: editor/settings/ipv4widget.cpp:442
+#: editor/settings/ipv4widget.cpp:441
 #, fuzzy, kde-format
 #| msgid " ms"
 msgctxt "Milliseconds"
 msgid " ms"
 msgstr " ms"
 
-#: editor/settings/ipv4widget.cpp:445 editorqml/qml/ipv4/IPv4Advance.qml:63
+#: editor/settings/ipv4widget.cpp:444 editorqml/qml/ipv4/IPv4Advance.qml:63
 #, fuzzy, kde-format
 #| msgid "Aging time:"
 msgid "DAD timeout:"
 msgstr "Öllertiet:"
 
-#: editor/settings/ipv4widget.cpp:466 editor/settings/ipv6widget.cpp:406
+#: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:406
 #, kde-format
 msgid "Edit DNS servers"
 msgstr "DNS-Servers bewerken"
 
-#: editor/settings/ipv4widget.cpp:491 editor/settings/ipv6widget.cpp:431
+#: editor/settings/ipv4widget.cpp:490 editor/settings/ipv6widget.cpp:431
 #, kde-format
 msgid "Edit DNS search domains"
 msgstr "DNS-Söökdomänen bewerken"
@@ -5193,72 +5193,72 @@ msgctxt "@item automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Automaatsch"
 
-#: handler.cpp:140
+#: handler.cpp:142
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:143
+#: handler.cpp:145
 #, kde-format
 msgid "Report Bug"
 msgstr ""
 
-#: handler.cpp:166
+#: handler.cpp:168
 #, kde-format
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 
-#: handler.cpp:169
+#: handler.cpp:171
 #, kde-format
 msgid "Install"
 msgstr ""
 
-#: handler.cpp:215
+#: handler.cpp:217
 #, kde-format
 msgid "Failed to activate %1"
 msgstr "„%1“ lett sik nich anmaken"
 
-#: handler.cpp:389 handler.cpp:418
+#: handler.cpp:391 handler.cpp:420
 #, kde-format
 msgid "Failed to add connection %1"
 msgstr "Verbinnen „%1“ lett sik nich tofögen"
 
-#: handler.cpp:396 handler.cpp:427
+#: handler.cpp:398 handler.cpp:429
 #, kde-format
 msgid "Connection %1 has been added"
 msgstr "Verbinnen „%1“ wöör toföögt"
 
-#: handler.cpp:466
+#: handler.cpp:468
 #, kde-format
 msgid "Failed to add %1"
 msgstr "„%1“ lett sik nich tofögen"
 
-#: handler.cpp:506
+#: handler.cpp:508
 #, kde-format
 msgid "Failed to deactivate %1"
 msgstr "„%1“ lett sik nich utmaken"
 
-#: handler.cpp:644
+#: handler.cpp:646
 #, kde-format
 msgid "Failed to remove %1"
 msgstr "„%1“ lett sik nich wegdoon"
 
-#: handler.cpp:651
+#: handler.cpp:653
 #, kde-format
 msgid "Connection %1 has been removed"
 msgstr "Verbinnen „%1“ wöör wegmaakt"
 
-#: handler.cpp:670
+#: handler.cpp:672
 #, kde-format
 msgid "Failed to update connection %1"
 msgstr "Verbinnen „%1“ lett sik nich opfrischen"
 
-#: handler.cpp:677
+#: handler.cpp:679
 #, kde-format
 msgid "Connection %1 has been updated"
 msgstr "Verbinnen „%1“ wöör opfrischt"
 
-#: handler.cpp:864
+#: handler.cpp:885
 #, fuzzy, kde-format
 #| msgid "Failed to activate %1"
 msgid "Failed to create hotspot %1"

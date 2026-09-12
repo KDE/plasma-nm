@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-11 00:48+0000\n"
-"PO-Revision-Date: 2026-09-08 20:18+0200\n"
+"PO-Revision-Date: 2026-09-11 12:35+0200\n"
 "Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -965,12 +965,7 @@ msgid "DNS Servers:"
 msgstr "DNS servery:"
 
 #: editor/settings/ipv4widget.cpp:421
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>You can find more information about these values here:<br/><a "
-#| "href='https://developer.gnome.org/NetworkManager/stable/ch01."
-#| "html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-"
-#| "settings-nmcli.html</a></qt>"
+#, kde-format
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
 "href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
@@ -978,8 +973,8 @@ msgid ""
 "qt>"
 msgstr ""
 "<qt>Více informací o těchto hodnotách naleznete zde:<br/><a href='https://"
-"developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome."
-"org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
+"networkmanager.dev/docs/api/latest/nm-settings-nmcli.html'>https://"
+"networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format

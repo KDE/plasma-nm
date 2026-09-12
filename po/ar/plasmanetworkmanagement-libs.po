@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-11 00:48+0000\n"
-"PO-Revision-Date: 2026-09-09 18:18+0400\n"
+"PO-Revision-Date: 2026-09-11 11:06+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -960,12 +960,7 @@ msgid "DNS Servers:"
 msgstr "خواديم DNS:"
 
 #: editor/settings/ipv4widget.cpp:421
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>You can find more information about these values here:<br/><a "
-#| "href='https://developer.gnome.org/NetworkManager/stable/ch01."
-#| "html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-"
-#| "settings-nmcli.html</a></qt>"
+#, kde-format
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
 "href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
@@ -973,9 +968,9 @@ msgid ""
 "qt>"
 msgstr ""
 "<qt> يمكنك العثور على مزيد من المعلومات حول هذه القيم هنا:<br/><a "
-"href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
-"developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
-"a> </qt>"
+"href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
+"html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></"
+"qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format

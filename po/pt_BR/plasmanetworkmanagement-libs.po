@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-11 00:48+0000\n"
-"PO-Revision-Date: 2026-09-08 08:39-0300\n"
+"PO-Revision-Date: 2026-09-11 06:48-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -968,12 +968,7 @@ msgid "DNS Servers:"
 msgstr "Servidores DNS:"
 
 #: editor/settings/ipv4widget.cpp:421
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>You can find more information about these values here:<br/><a "
-#| "href='https://developer.gnome.org/NetworkManager/stable/ch01."
-#| "html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-"
-#| "settings-nmcli.html</a></qt>"
+#, kde-format
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
 "href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
@@ -981,9 +976,9 @@ msgid ""
 "qt>"
 msgstr ""
 "<qt>Você pode encontrar mais informações sobre esses valores aqui:<br/><a "
-"href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
-"developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
-"a></qt>"
+"href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
+"html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></"
+"qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-11 00:48+0000\n"
-"PO-Revision-Date: 2026-09-08 15:53+0200\n"
+"PO-Revision-Date: 2026-09-11 10:25+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -967,22 +967,17 @@ msgid "DNS Servers:"
 msgstr "Servidors de DNS:"
 
 #: editor/settings/ipv4widget.cpp:421
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>You can find more information about these values here:<br/><a "
-#| "href='https://developer.gnome.org/NetworkManager/stable/ch01."
-#| "html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-"
-#| "settings-nmcli.html</a></qt>"
+#, kde-format
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
 "href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
 "html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></"
 "qt>"
 msgstr ""
-"<qt>Es pot trobar més informació quant a aquests valors aquí:<br/><a "
-"href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
-"developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
-"a></qt>"
+"<qt>Es pot trobar més informació sobre aquests valors aquí:<br/><a "
+"href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
+"html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></"
+"qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format

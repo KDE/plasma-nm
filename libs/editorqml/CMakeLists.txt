@@ -51,6 +51,13 @@ set(SETTINGS_SRCS
   settings/vpn/fortisslvpn/fortisslvpn.cpp
   settings/vpn/fortisslvpn/fortisslvpn.h
   settings/vpn/fortisslvpn/nm-fortisslvpn-service.h
+
+  #iodine vpn
+  settings/vpn/iodine/iodineauth.h
+  settings/vpn/iodine/iodineauth.cpp
+  settings/vpn/iodine/iodine.cpp
+  settings/vpn/iodine/iodine.h
+  settings/vpn/iodine/nm-iodine-service.h
 )
 
 set(QML_SRCS
@@ -119,6 +126,10 @@ set(QML_SRCS
   qml/vpn/fortisslvpn/Fortisslvpn.qml
   qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml
   qml/vpn/fortisslvpn/FortisslvpnAuth.qml
+
+  # iodine vpn
+  qml/vpn/iodine/Iodine.qml
+  qml/vpn/iodine/IodineAuth.qml
 )
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})
@@ -188,6 +199,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/sstp
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/vpnc
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/fortisslvpn
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/iodine
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

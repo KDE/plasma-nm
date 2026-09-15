@@ -93,6 +93,11 @@ ColumnLayout {
                             url: "../vpn/fortisslvpn/Fortisslvpn.qml",
                             setting: kcm.vpnFortisslvpnSetting
                         };
+                    case "org.freedesktop.NetworkManager.iodine":
+                        return {
+                            url: "../vpn/iodine/Iodine.qml",
+                            setting: kcm.vpnIodineSetting
+                        };
                     default:
                         return null;
                     }

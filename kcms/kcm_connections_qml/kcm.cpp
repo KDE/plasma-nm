@@ -46,6 +46,7 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     , m_vpnSstpSetting(new SstpSetting(this))
     , m_vpnVpncSetting(new VpncSetting(this))
     , m_vpnFortisslvpnSetting(new FortisslvpnSetting(this))
+    , m_vpnIodineSetting(new IodineSetting(this))
     , m_timer(new QTimer(this))
 {
     // constant map with its connection type and security Type
@@ -76,6 +77,8 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
                  m_vpnVpncSetting->loadSecrets(vpnSetting);
              } else if (m_vpnServiceType == m_vpnFortisslvpnSetting->serviceType()) {
                  m_vpnFortisslvpnSetting->loadSecrets(vpnSetting);
+             } else if (m_vpnServiceType == m_vpnIodineSetting->serviceType()) {
+                 m_vpnIodineSetting->loadSecrets(vpnSetting);
              }
          }},
     };
@@ -230,6 +233,12 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
         }
     });
 
+    connect(m_vpnIodineSetting, &IodineSetting::validChanged, this, [this]() {
+        if (m_vpnIodineSetting->isValid()) {
+            kcmChanged(true);
+        }
+    });
+
     connect(NetworkManager::settingsNotifier(),
             &NetworkManager::SettingsNotifier::connectionAdded,
             this,
@@ -275,6 +284,11 @@ VpncSetting *KCMNetworkManagementQml::vpnVpncSetting() const
 FortisslvpnSetting *KCMNetworkManagementQml::vpnFortisslvpnSetting() const
 {
     return m_vpnFortisslvpnSetting;
+}
+
+IodineSetting *KCMNetworkManagementQml::vpnIodineSetting() const
+{
+    return m_vpnIodineSetting;
 }
 
 QString KCMNetworkManagementQml::vpnServiceType() const
@@ -476,6 +490,8 @@ void KCMNetworkManagementQml::applyTypeSettings(NMVariantMapMap &map, NetworkMan
             map.insert(QStringLiteral("vpn"), m_vpnVpncSetting->setting());
         } else if (m_vpnServiceType == m_vpnFortisslvpnSetting->serviceType()) {
             map.insert(QStringLiteral("vpn"), m_vpnFortisslvpnSetting->setting());
+        } else if (m_vpnServiceType == m_vpnIodineSetting->serviceType()) {
+            map.insert(QStringLiteral("vpn"), m_vpnIodineSetting->setting());
         }
         break;
 
@@ -594,6 +610,9 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
         } else if (m_vpnServiceType == m_vpnFortisslvpnSetting->serviceType()) {
             m_vpnFortisslvpnSetting->loadConfig(vpnSetting);
             Q_EMIT vpnFortisslvpnSettingChanged();
+        } else if (m_vpnServiceType == m_vpnIodineSetting->serviceType()) {
+            m_vpnIodineSetting->loadConfig(vpnSetting);
+            Q_EMIT vpnIodineSettingChanged();
         }
 
         Q_EMIT connectionLoaded(m_currentConnectionPath);

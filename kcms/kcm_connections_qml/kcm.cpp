@@ -7,9 +7,8 @@
 
 #include "kcm.h"
 #include "plasma_nm_kcm_qml.h"
-#include "security8021xsetting.h"
 #include "uiutils.h"
-#include "wifisecuritysetting.h"
+#include "vpnc.h"
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -45,6 +44,7 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     , m_ipv6Settings(new IPv6Settings(this))
     , m_vpnSshSetting(new SshSetting(this))
     , m_vpnSstpSetting(new SstpSetting(this))
+    , m_vpnVpncSetting(new VpncSetting(this))
     , m_timer(new QTimer(this))
 {
     // constant map with its connection type and security Type
@@ -213,6 +213,12 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
         }
     });
 
+    connect(m_vpnVpncSetting, &VpncSetting::validChanged, this, [this]() {
+        if (m_vpnVpncSetting->isValid()) {
+            kcmChanged(true);
+        }
+    });
+
     connect(NetworkManager::settingsNotifier(),
             &NetworkManager::SettingsNotifier::connectionAdded,
             this,
@@ -248,6 +254,11 @@ SshSetting *KCMNetworkManagementQml::vpnSshSetting() const
 SstpSetting *KCMNetworkManagementQml::vpnSstpSetting() const
 {
     return m_vpnSstpSetting;
+}
+
+VpncSetting *KCMNetworkManagementQml::vpnVpncSetting() const
+{
+    return m_vpnVpncSetting;
 }
 
 QString KCMNetworkManagementQml::vpnServiceType() const
@@ -445,6 +456,8 @@ void KCMNetworkManagementQml::applyTypeSettings(NMVariantMapMap &map, NetworkMan
             map.insert(QStringLiteral("vpn"), m_vpnSshSetting->setting());
         } else if (m_vpnServiceType == m_vpnSstpSetting->serviceType()) {
             map.insert(QStringLiteral("vpn"), m_vpnSstpSetting->setting());
+        } else if (m_vpnServiceType == m_vpnVpncSetting->serviceType()) {
+            map.insert(QStringLiteral("vpn"), m_vpnVpncSetting->setting());
         }
         break;
 
@@ -557,6 +570,9 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
         } else if (m_vpnServiceType == m_vpnSstpSetting->serviceType()) {
             m_vpnSstpSetting->loadConfig(vpnSetting);
             Q_EMIT vpnSstpSettingChanged();
+        } else if (m_vpnServiceType == m_vpnVpncSetting->serviceType()) {
+            m_vpnVpncSetting->loadConfig(vpnSetting);
+            Q_EMIT vpnVpncSettingChanged();
         }
 
         Q_EMIT connectionLoaded(m_currentConnectionPath);

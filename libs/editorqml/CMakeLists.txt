@@ -37,6 +37,13 @@ set(SETTINGS_SRCS
   settings/vpn/sstp/sstp.cpp
   settings/vpn/sstp/sstp.h
   settings/vpn/sstp/nm-sstp-service.h
+
+  #vpnc vpn
+  settings/vpn/vpnc/vpncauth.h
+  settings/vpn/vpnc/vpncauth.cpp
+  settings/vpn/vpnc/vpnc.cpp
+  settings/vpn/vpnc/vpnc.h
+  settings/vpn/vpnc/nm-vpnc-service.h
 )
 
 set(QML_SRCS
@@ -95,6 +102,11 @@ set(QML_SRCS
   qml/vpn/sstp/Sstp.qml
   qml/vpn/sstp/SstpAdvanced.qml
   qml/vpn/sstp/SstpAuth.qml
+
+  # vpnc vpn
+  qml/vpn/vpnc/Vpnc.qml
+  qml/vpn/vpnc/VpncAdvanced.qml
+  qml/vpn/vpnc/VpncAuth.qml
 )
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})
@@ -162,6 +174,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/ssh
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/sstp
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/vpnc
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

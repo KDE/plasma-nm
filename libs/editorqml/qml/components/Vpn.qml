@@ -83,6 +83,11 @@ ColumnLayout {
                             url: "../vpn/sstp/Sstp.qml",
                             setting: kcm.vpnSstpSetting
                         };
+                    case "org.freedesktop.NetworkManager.vpnc":
+                        return {
+                            url: "../vpn/vpnc/Vpnc.qml",
+                            setting: kcm.vpnVpncSetting
+                        };
                     default:
                         return null;
                     }

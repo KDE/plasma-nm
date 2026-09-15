@@ -12,7 +12,6 @@ ConnectionEditorTabWidget::ConnectionEditorTabWidget(const NetworkManager::Conne
     , m_ui(new Ui::ConnectionEditorTabWidget)
 {
     m_ui->setupUi(this);
-    m_ui->tabWidget->setUsesScrollButtons(false);
 
     connect(m_ui->connectionName, &QLineEdit::textChanged, this, &ConnectionEditorTabWidget::settingChanged);
 

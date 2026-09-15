@@ -77,7 +77,7 @@ private:
     void updateStatusWidget();
     QWidget *wrapWithPreferredWidth(QWidget *content);
 
-    static constexpr int TAB_CONTENT_PREFERRED_WIDTH = 600;
+    static constexpr int TAB_CONTENT_PREFERRED_WIDTH = 300;
     static constexpr int TAB_CONTENT_MAX_WIDTH = 800;
 };
 

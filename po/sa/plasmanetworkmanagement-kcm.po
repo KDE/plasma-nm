@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-09-15 00:46+0000\n"
 "PO-Revision-Date: 2024-12-13 19:10+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -17,74 +17,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 
-#: kcm.cpp:269
+#: kcm.cpp:270
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "\"%1\" तः VPN विन्यासम् आयातयतु?"
 
-#: kcm.cpp:270
+#: kcm.cpp:271
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr "VPN विन्यासम् आयातयन्तु"
 
-#: kcm.cpp:271
+#: kcm.cpp:272
 #, kde-format
 msgid "Import"
 msgstr "आयात"
 
-#: kcm.cpp:278 kcm.cpp:351
+#: kcm.cpp:279 kcm.cpp:352
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "VPN संयोजनम् आयातुं असफलम्: %1"
 
-#: kcm.cpp:281 kcm.cpp:354
+#: kcm.cpp:282 kcm.cpp:355
 #, kde-format
 msgid "Connection imported."
 msgstr "संयोजनम् आयातम्।"
 
-#: kcm.cpp:423
+#: kcm.cpp:424
 #, kde-format
 msgid "my_shared_connection"
 msgstr "मम_साझा_सम्बन्धः"
 
-#: kcm.cpp:495
+#: kcm.cpp:496
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "VPN Connection निर्यातयन्तु"
 
-#: kcm.cpp:515
+#: kcm.cpp:516
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "किं भवन्तः '%1' संयोजने कृतानि परिवर्तनानि रक्षितुम् इच्छन्ति?"
 
-#: kcm.cpp:516
+#: kcm.cpp:517
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "परिवर्तनं रक्षतु"
 
-#: kcm.cpp:611
+#: kcm.cpp:612
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "VPN Connection आयात करें"
 
-#: kcm.cpp:613
+#: kcm.cpp:614
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN संयोजनानि (%1) ."
 
-#: kcm.cpp:616
+#: kcm.cpp:617
 #, kde-format
 msgid "No file was provided"
 msgstr "कोऽपि सञ्चिका न प्रदत्ता"
 
-#: kcm.cpp:684
+#: kcm.cpp:685
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "अज्ञात VPN प्रकार"
 
-#: kcm.cpp:716
+#: kcm.cpp:717
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"

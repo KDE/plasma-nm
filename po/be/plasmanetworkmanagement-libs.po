@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-11 00:48+0000\n"
+"POT-Creation-Date: 2026-09-15 00:46+0000\n"
 "PO-Revision-Date: 2024-10-24 08:20\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -217,7 +217,7 @@ msgid "Locked"
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: cellular/cellularmodemdetails.cpp:251 editor/settings/ui/ipv6.ui:264
+#: cellular/cellularmodemdetails.cpp:251 editor/settings/ui/ipv6.ui:261
 #, kde-format
 msgid "Disabled"
 msgstr "Адключана"
@@ -894,7 +894,7 @@ msgstr "Новае злучэнне (%1)"
 msgid "Edit Connection '%1'"
 msgstr "Рэдагаваць злучэнне \"%1\""
 
-#: editor/connectioneditortabwidget.cpp:59
+#: editor/connectioneditortabwidget.cpp:58
 #, kde-format
 msgid "New %1 connection"
 msgstr "Новае %1 злучэнне"
@@ -1082,7 +1082,7 @@ msgid "DHCP hostname:"
 msgstr "Назва хоста DHCP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:194
+#: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:191
 #, kde-format
 msgid "Default"
 msgstr "Прадвызначана"
@@ -1698,7 +1698,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
-#: editor/settings/ui/connectionwidget.ui:69 editor/settings/ui/ipv4.ui:363
+#: editor/settings/ui/connectionwidget.ui:69 editor/settings/ui/ipv4.ui:38
 #: editorqml/qml/generalSettings/GeneralSettings.qml:69
 #, kde-format
 msgid "Advanced…"
@@ -1852,128 +1852,14 @@ msgstr " байтаў"
 msgid "Advanced IP settings"
 msgstr "Дадатковыя налады IP"
 
-#. i18n: ectx: property (text), widget (QLabel, label)
-#: editor/settings/ui/ipv4.ui:29 editor/settings/ui/ipv6.ui:49
-#: editorqml/qml/ipv4/IPv4Settings.qml:26
-#: editorqml/qml/ipv6/IPv6Settings.qml:26
+#. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
+#: editor/settings/ui/ipv4.ui:63 editor/settings/ui/ipv6.ui:323
 #, kde-format
-msgid "Method:"
-msgstr "Метад:"
-
-#. i18n: ectx: property (toolTip), widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:54 editorqml/qml/ipv4/IPv4Settings.qml:37
-#, kde-format
-msgid ""
-"How to configure the IPv4 address:\n"
-"• Automatic: obtain address and DNS automatically via DHCP\n"
-"• Automatic (Only addresses): obtain address via DHCP but configure DNS "
-"manually\n"
-"• Link-Local: use automatic link-local addressing (169.254.x.x)\n"
-"• Manual: enter a static IP address\n"
-"• Shared: turn this computer into a router to share internet with other "
-"devices\n"
-"• Disabled: turn off IPv4"
-msgstr ""
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:58 editor/settings/ui/ipv6.ui:234
-#, kde-format
-msgctxt "Method:"
-msgid "Automatic"
-msgstr "Аўтаматычна"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:63 editor/settings/ui/ipv6.ui:239
-#, kde-format
-msgid "Automatic (Only addresses)"
-msgstr "Аўтаматычна (толькі адрасы)"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:68 editor/settings/ui/ipv6.ui:249
-#, kde-format
-msgid "Link-Local"
-msgstr "Лакальнае злучэнне"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:73 editor/settings/ui/ipv6.ui:254
-#, kde-format
-msgctxt "like in use Manual configuration"
-msgid "Manual"
-msgstr "Уласнаручна"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:78
-#, kde-format
-msgid "Shared to other computers"
-msgstr "Даступна для іншых камп'ютараў"
-
-#. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv4.ui:83
-#, kde-format
-msgctxt "like in this setting is Disabled"
-msgid "Disabled"
-msgstr "Адключана"
-
-#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
-#: editor/settings/ui/ipv4.ui:97 editor/settings/ui/ipv6.ui:167
-#, kde-format
-msgctxt "@info"
-msgid "DNS Servers:"
-msgstr "Серверы DNS:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
-#: editor/settings/ui/ipv4.ui:127 editor/settings/ui/ipv6.ui:76
-#: editorqml/qml/ipv4/IPv4Settings.qml:59
-#: editorqml/qml/ipv6/IPv6Settings.qml:59
-#, kde-format
-msgid ""
-"Use this field to specify the IP address(es) of one or more DNS servers. Use "
-"',' to separate entries."
-msgstr ""
-"Выкарыстайце гэтае поле, каб вызначыць IP-адрас(-ы) аднаго або некалькіх DNS-"
-"сервераў. Адасаблівайце запісы з дапамогай ','."
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:134
-#, kde-format
-msgid "Edit DNS the list of servers"
-msgstr "Рэдагаваць спіс DNS-сервераў"
-
-#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
-#: editor/settings/ui/ipv4.ui:152 editor/settings/ui/ipv6.ui:360
-#, kde-format
-msgctxt "@info"
-msgid "Search Domains:"
-msgstr "Дамены пошуку:"
-
-#. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
-#: editor/settings/ui/ipv4.ui:173 editor/settings/ui/ipv6.ui:280
-#: editorqml/qml/ipv4/IPv4Settings.qml:96
-#: editorqml/qml/ipv6/IPv6Settings.qml:96
-#, kde-format
-msgid ""
-"Use this field to specify one or more DNS domains to search. Use ',' to "
-"separate entries."
-msgstr ""
-"Выкарыстайце гэтае поле, каб вызначыць адзін або некалькі DNS-даменаў для "
-"пошуку. Адасаблівайце запісы з дапамогай ','."
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
-#: editor/settings/ui/ipv4.ui:180 editor/settings/ui/ipv6.ui:287
-#: editorqml/qml/ipv4/IPv4Settings.qml:110
-#: editorqml/qml/ipv6/IPv6Settings.qml:110
-#, kde-format
-msgid "Edit the list of DNS domains being searched"
-msgstr "Рэдагаваць спіс DNS-даменаў, у якіх праводзіцца пошук"
-
-#. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
-#: editor/settings/ui/ipv4.ui:198 editorqml/qml/ipv4/IPv4Settings.qml:115
-#, kde-format
-msgid "DHCP Client ID:"
-msgstr "Ідэнтыфікатар кліента DHCP:"
+msgid "Routes…"
+msgstr "Маршруты…"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
-#: editor/settings/ui/ipv4.ui:213
+#: editor/settings/ui/ipv4.ui:74
 #, kde-format
 msgid ""
 "Use this field to specify the DHCP client ID which is a string sent to the "
@@ -1988,18 +1874,50 @@ msgstr ""
 "наладжвання DHCP\n"
 "арэнда і параметры."
 
-#. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
-#: editor/settings/ui/ipv4.ui:226 editor/settings/ui/ipv6.ui:379
-#: editorqml/qml/ipv4/IPv4Settings.qml:129
-#: editorqml/qml/ipv6/IPv6Settings.qml:132
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
-msgid "Route Metric:"
-msgstr "Метрыка"
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
+#: editor/settings/ui/ipv4.ui:89 editor/settings/ui/ipv6.ui:277
+#: editorqml/qml/ipv4/IPv4Settings.qml:96
+#: editorqml/qml/ipv6/IPv6Settings.qml:96
+#, kde-format
+msgid ""
+"Use this field to specify one or more DNS domains to search. Use ',' to "
+"separate entries."
+msgstr ""
+"Выкарыстайце гэтае поле, каб вызначыць адзін або некалькі DNS-даменаў для "
+"пошуку. Адасаблівайце запісы з дапамогай ','."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
+#: editor/settings/ui/ipv4.ui:96 editor/settings/ui/ipv6.ui:284
+#: editorqml/qml/ipv4/IPv4Settings.qml:110
+#: editorqml/qml/ipv6/IPv6Settings.qml:110
+#, kde-format
+msgid "Edit the list of DNS domains being searched"
+msgstr "Рэдагаваць спіс DNS-даменаў, у якіх праводзіцца пошук"
+
+#. i18n: ectx: property (text), widget (QLabel, dnsLabel)
+#: editor/settings/ui/ipv4.ui:114 editor/settings/ui/ipv6.ui:164
+#, kde-format
+msgctxt "@info"
+msgid "DNS Servers:"
+msgstr "Серверы DNS:"
+
+#. i18n: ectx: property (text), widget (QLabel, label)
+#: editor/settings/ui/ipv4.ui:152 editor/settings/ui/ipv6.ui:49
+#: editorqml/qml/ipv4/IPv4Settings.qml:26
+#: editorqml/qml/ipv6/IPv6Settings.qml:26
+#, kde-format
+msgid "Method:"
+msgstr "Метад:"
+
+#. i18n: ectx: property (text), widget (QLabel, dnsSearchLabel)
+#: editor/settings/ui/ipv4.ui:171 editor/settings/ui/ipv6.ui:357
+#, kde-format
+msgctxt "@info"
+msgid "Search Domains:"
+msgstr "Дамены пошуку:"
 
 #. i18n: ectx: property (toolTip), widget (QDoubleSpinBox, routeMetric)
-#: editor/settings/ui/ipv4.ui:261 editor/settings/ui/ipv6.ui:414
+#: editor/settings/ui/ipv4.ui:187 editor/settings/ui/ipv6.ui:392
 #, kde-format
 msgid ""
 "A score that helps choose the best path for data packets to reach their "
@@ -2010,19 +1928,112 @@ msgid ""
 "actual metric of the route."
 msgstr ""
 
-#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
-#: editor/settings/ui/ipv4.ui:270 editor/settings/ui/ipv6.ui:97
-#: editorqml/qml/ipv4/IPv4Settings.qml:289
-#: editorqml/qml/ipv4/SearchDomainList.qml:99
-#: editorqml/qml/ipv6/IPv6Settings.qml:301
-#: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:105
-#: editorqml/qml/wifisecurity/DnsList.qml:105
+#. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
+#: editor/settings/ui/ipv4.ui:215 editorqml/qml/ipv4/IPv4Settings.qml:115
 #, kde-format
-msgid "Remove"
-msgstr "Выдаліць"
+msgid "DHCP Client ID:"
+msgstr "Ідэнтыфікатар кліента DHCP:"
+
+#. i18n: ectx: property (text), widget (QLabel, labelRouteMetric)
+#: editor/settings/ui/ipv4.ui:234 editor/settings/ui/ipv6.ui:376
+#: editorqml/qml/ipv4/IPv4Settings.qml:129
+#: editorqml/qml/ipv6/IPv6Settings.qml:132
+#, fuzzy, kde-format
+#| msgctxt "Header text for IPv4 route metric"
+#| msgid "Metric"
+msgid "Route Metric:"
+msgstr "Метрыка"
+
+#. i18n: ectx: property (toolTip), widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:259 editorqml/qml/ipv4/IPv4Settings.qml:37
+#, kde-format
+msgid ""
+"How to configure the IPv4 address:\n"
+"• Automatic: obtain address and DNS automatically via DHCP\n"
+"• Automatic (Only addresses): obtain address via DHCP but configure DNS "
+"manually\n"
+"• Link-Local: use automatic link-local addressing (169.254.x.x)\n"
+"• Manual: enter a static IP address\n"
+"• Shared: turn this computer into a router to share internet with other "
+"devices\n"
+"• Disabled: turn off IPv4"
+msgstr ""
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:263 editor/settings/ui/ipv6.ui:231
+#, kde-format
+msgctxt "Method:"
+msgid "Automatic"
+msgstr "Аўтаматычна"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:268 editor/settings/ui/ipv6.ui:236
+#, kde-format
+msgid "Automatic (Only addresses)"
+msgstr "Аўтаматычна (толькі адрасы)"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:273 editor/settings/ui/ipv6.ui:246
+#, kde-format
+msgid "Link-Local"
+msgstr "Лакальнае злучэнне"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:278 editor/settings/ui/ipv6.ui:251
+#, kde-format
+msgctxt "like in use Manual configuration"
+msgid "Manual"
+msgstr "Уласнаручна"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:283
+#, kde-format
+msgid "Shared to other computers"
+msgstr "Даступна для іншых камп'ютараў"
+
+#. i18n: ectx: property (text), item, widget (KComboBox, method)
+#: editor/settings/ui/ipv4.ui:288
+#, kde-format
+msgctxt "like in this setting is Disabled"
+msgid "Disabled"
+msgstr "Адключана"
+
+#. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
+#: editor/settings/ui/ipv4.ui:310 editor/settings/ui/ipv6.ui:76
+#: editorqml/qml/ipv4/IPv4Settings.qml:59
+#: editorqml/qml/ipv6/IPv6Settings.qml:59
+#, kde-format
+msgid ""
+"Use this field to specify the IP address(es) of one or more DNS servers. Use "
+"',' to separate entries."
+msgstr ""
+"Выкарыстайце гэтае поле, каб вызначыць IP-адрас(-ы) аднаго або некалькіх DNS-"
+"сервераў. Адасаблівайце запісы з дапамогай ','."
+
+#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
+#: editor/settings/ui/ipv4.ui:317
+#, kde-format
+msgid "Edit DNS the list of servers"
+msgstr "Рэдагаваць спіс DNS-сервераў"
+
+#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
+#: editor/settings/ui/ipv4.ui:330
+#, kde-format
+msgid ""
+"Allows the connection to complete if IPv4 configuration fails\n"
+"but IPv6 configuration succeeds"
+msgstr ""
+"Дае магчымасць завяршыць працэс злучэння, калі канфігурацыі IPv4 хібная, а "
+"канфігурацыя IPv6 прыдатная"
+
+#. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
+#: editor/settings/ui/ipv4.ui:333 editorqml/qml/ipv4/IPv4Settings.qml:302
+#, kde-format
+msgid "IPv4 is required for this connection"
+msgstr "Для гэтага злучэння патрабуецца IPv4"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
-#: editor/settings/ui/ipv4.ui:280 editor/settings/ui/ipv6.ui:107
+#: editor/settings/ui/ipv4.ui:345 editor/settings/ui/ipv6.ui:107
 #: editorqml/qml/ipv4/IPv4Settings.qml:281
 #: editorqml/qml/ipv4/SearchDomainList.qml:85
 #: editorqml/qml/ipv6/IPv6Settings.qml:293
@@ -2032,8 +2043,19 @@ msgstr "Выдаліць"
 msgid "Add"
 msgstr "Дадаць"
 
+#. i18n: ectx: property (text), widget (QPushButton, btnRemove)
+#: editor/settings/ui/ipv4.ui:355 editor/settings/ui/ipv6.ui:97
+#: editorqml/qml/ipv4/IPv4Settings.qml:289
+#: editorqml/qml/ipv4/SearchDomainList.qml:99
+#: editorqml/qml/ipv6/IPv6Settings.qml:301
+#: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:105
+#: editorqml/qml/wifisecurity/DnsList.qml:105
+#, kde-format
+msgid "Remove"
+msgstr "Выдаліць"
+
 #. i18n: ectx: property (toolTip), widget (QTableView, tableViewAddresses)
-#: editor/settings/ui/ipv4.ui:297 editor/settings/ui/ipv6.ui:124
+#: editor/settings/ui/ipv4.ui:385 editor/settings/ui/ipv6.ui:137
 #: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
 #, kde-format
 msgid ""
@@ -2044,28 +2066,6 @@ msgstr ""
 "IP-адрасы ідэнтыфікуюць ваш камп'ютар у сетцы. Націсніце кнопку \"Дадаць\", "
 "каб дадаць\n"
 "IP-адрас"
-
-#. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:335
-#, kde-format
-msgid ""
-"Allows the connection to complete if IPv4 configuration fails\n"
-"but IPv6 configuration succeeds"
-msgstr ""
-"Дае магчымасць завяршыць працэс злучэння, калі канфігурацыі IPv4 хібная, а "
-"канфігурацыя IPv6 прыдатная"
-
-#. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
-#: editor/settings/ui/ipv4.ui:338 editorqml/qml/ipv4/IPv4Settings.qml:302
-#, kde-format
-msgid "IPv4 is required for this connection"
-msgstr "Для гэтага злучэння патрабуецца IPv4"
-
-#. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
-#: editor/settings/ui/ipv4.ui:388 editor/settings/ui/ipv6.ui:326
-#, kde-format
-msgid "Routes…"
-msgstr "Маршруты…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:30
@@ -2092,7 +2092,7 @@ msgid "Edit the list of DNS servers"
 msgstr "Рэдагаваць спіс DNS-сервераў"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:190
+#: editor/settings/ui/ipv6.ui:187
 #, kde-format
 msgid ""
 "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
@@ -2105,26 +2105,26 @@ msgstr ""
 "агульнадаступнага, які ствараецца з MAC-адраса праз мадыфікаваны EUI-64."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:199
+#: editor/settings/ui/ipv6.ui:196
 #, kde-format
 msgctxt "privacy disabled"
 msgid "Disabled"
 msgstr "Адключана"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:204
+#: editor/settings/ui/ipv6.ui:201
 #, kde-format
 msgid "Enabled (prefer public address)"
 msgstr "Уключана (перавага аддаецца публічным адрасам)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
-#: editor/settings/ui/ipv6.ui:209
+#: editor/settings/ui/ipv6.ui:206
 #, kde-format
 msgid "Enabled (prefer temporary addresses)"
 msgstr "Уключана (перавага аддаеца часовым адрасам)"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:230 editorqml/qml/ipv6/IPv6Settings.qml:37
+#: editor/settings/ui/ipv6.ui:227 editorqml/qml/ipv6/IPv6Settings.qml:37
 #, kde-format
 msgid ""
 "How to configure the IPv6 address:\n"
@@ -2140,20 +2140,20 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:244
+#: editor/settings/ui/ipv6.ui:241
 #, kde-format
 msgid "Automatic (Only DHCP)"
 msgstr "Аўтаматычна (толькі DHCP)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
-#: editor/settings/ui/ipv6.ui:259
+#: editor/settings/ui/ipv6.ui:256
 #, kde-format
 msgctxt "like in this setting is Disabled"
 msgid "Ignored"
 msgstr "Ігнаруюцца"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPrivacy)
-#: editor/settings/ui/ipv6.ui:341 editorqml/qml/ipv6/IPv6Settings.qml:115
+#: editor/settings/ui/ipv6.ui:338 editorqml/qml/ipv6/IPv6Settings.qml:115
 #, kde-format
 msgid "Privacy:"
 msgstr "Прыватнасць:"

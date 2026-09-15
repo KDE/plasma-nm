@@ -122,7 +122,7 @@ into multiple Ethernet frames</string>
    <item row="4" column="0">
     <widget class="QLabel" name="speedLabel">
      <property name="text">
-      <string>Speed:</string>
+      <string>Speed limit:</string>
      </property>
     </widget>
    </item>

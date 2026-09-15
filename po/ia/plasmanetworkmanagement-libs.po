@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-08 00:47+0000\n"
-"PO-Revision-Date: 2026-08-31 17:43+0200\n"
+"PO-Revision-Date: 2026-09-14 18:45+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
 "Language: ia\n"
@@ -28,6 +28,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Non poteva applicar le preferentia de roaming. Activante le puncto de "
+"accesso (access point)  con su configuration existente."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -38,11 +40,14 @@ msgstr "Error durante que activava connexion: %1"
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
 msgstr ""
+"Non pote cambiar le roaming proque necun puncto de accesso (access point) es "
+"disponibile."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Error al applicar le preferentia de roaming al puncto de accesso seligite."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format
@@ -965,7 +970,7 @@ msgid ""
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
 msgstr ""
-"<qt>Tu pote troval plus information re iste valores hic:<br/><a "
+"<qt>Tu pote trovar plus information re iste valores hic:<br/><a "
 "href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
 "developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
 "a></qt>"
@@ -4244,10 +4249,9 @@ msgid "Automatic"
 msgstr "Automatic"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:18
-#, fuzzy, kde-format
-#| msgid "Advanced IP settings"
+#, kde-format
 msgid "Advanced IPv4 Settings"
-msgstr "Preferentias avantiate de IP"
+msgstr "Preferentias avantiate de IPv4"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:45
 #, kde-format
@@ -4255,10 +4259,9 @@ msgid "DHCP:"
 msgstr "DHCP:"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:46
-#, fuzzy, kde-format
-#| msgid "Send hostname:"
+#, kde-format
 msgid "Send hostname to DHCP server"
-msgstr "Invia nomine de hospite:"
+msgstr "Invia nomine de hospite al servitor DHCP:"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:76 editorqml/qml/ipv4/IPv4Advance.qml:83
 #, kde-format
@@ -4267,8 +4270,7 @@ msgid "Default"
 msgstr "Predefinite"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:78 editorqml/qml/ipv4/IPv4Advance.qml:85
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item duplicate address detection turned off"
 msgid "Disabled"
 msgstr "Dishabilitate"
@@ -4287,6 +4289,10 @@ msgid ""
 "\n"
 "0 disables the check, -1 lets NetworkManager decide."
 msgstr ""
+"Tempore de expiration in millisecundas usate pro verificar le presentia de "
+"adresses IP duplicate in le rete.\n"
+"\n"
+"0 dishabilita le verification, -1 lassa que NetworkManager decide."
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:125
 #: editorqml/qml/ipv4/IPv4Settings.qml:254
@@ -4356,8 +4362,7 @@ msgstr "Compartite a altere computatores"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox like in this setting is Disabled"
 msgid "Disabled"
 msgstr "Dishabilitate"
@@ -4370,33 +4375,19 @@ msgid "Search Domains:"
 msgstr "Dominio&s de cerca:"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use this field to specify the DHCP client ID which is a string sent to "
-#| "the DHCP server\n"
-#| "to identify the local machine that the DHCP server may use to customize "
-#| "the DHCP\n"
-#| "lease and options."
+#, kde-format
 msgid ""
 "Use this field to specify the DHCP client ID which is a string sent to the "
 "DHCP server to identify the local machine that the DHCP server may use to "
 "customize the DHCP lease and options."
 msgstr ""
 "Usa iste campo pro specificar le ID de cliente DHCP que es un catena inviate "
-"al servitor DHCP\n"
-" pro identificar le machina local que le servitor DHCP pote usar pro "
-"personalisar le location e optiones de DHCP."
+"al servitor DHCP pro identificar le machina local que le servitor DHCP pote  "
+"usar pro personalisar le location e optiones de DHCP."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:155
 #: editorqml/qml/ipv6/IPv6Settings.qml:158
-#, fuzzy, kde-format
-#| msgid ""
-#| "A score that helps choose the best path for data packets to reach their "
-#| "destination,\n"
-#| "based on factors like distance, delay, and reliability.\n"
-#| "\n"
-#| "Default value -1 means that NetworkManager gets to choose and manage the "
-#| "actual metric of the route."
+#, kde-format
 msgid ""
 "A score that helps choose the best path for data packets to reach their "
 "destination, based on factors like distance, delay, and reliability.\n"
@@ -4405,8 +4396,8 @@ msgid ""
 "actual metric of the route."
 msgstr ""
 "Un punctuage que adjuta a seliger le percurso melior porque pacchettos de "
-"datos attinge lor destination,\n"
-"basate sur factores como distatia, retardo, e credibilitate.\n"
+"datos attinge lor destination,basate sur factores como distatia, retardo,  e "
+"credibilitate.\n"
 "\n"
 "Valor predefinite -1 significa que NetworkManager obtene seliger e gerer le "
 "metric actual del route."
@@ -4418,16 +4409,13 @@ msgid "Addresses"
 msgstr "Adresses"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allows the connection to complete if IPv4 configuration fails\n"
-#| "but IPv6 configuration succeeds"
+#, kde-format
 msgid ""
 "Allows the connection to complete if IPv4 configuration fails but IPv6 "
 "configuration succeeds"
 msgstr ""
-"Permitte que le connexion complete si configuration de IPv4 falle\n"
-"ma configurtion de IPv4 ha successo"
+"Permitte que le connexion completa si configuration de IPv4 fallema le "
+"configuration de IPv4 ha successo"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:326 editorqml/qml/vpn/ssh/Ssh.qml:194
 #: editorqml/qml/vpn/sstp/Sstp.qml:106
@@ -4444,11 +4432,9 @@ msgid "Routes…"
 msgstr "Routes"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgid "Search Domains"
-msgstr "Dominio&s de cerca:"
+msgstr "Dominios de cerca"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:107
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:113
@@ -4514,8 +4500,7 @@ msgid "Default"
 msgstr "Predefinite"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox privacy disabled"
 msgid "Disabled"
 msgstr "Dishabilitate"
@@ -4533,21 +4518,15 @@ msgid "Enabled (prefer temporary addresses)"
 msgstr "Habilitate (prefere adresse temporanee)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:128
-#, fuzzy, kde-format
-#| msgid ""
-#| "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-#| "enabled, it makes the kernel generate\n"
-#| "a temporary IPv6 address in addition to the public one generated from MAC "
-#| "address via modified EUI-64."
+#, kde-format
 msgid ""
 "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
 "enabled, it makes the kernel generate a temporary IPv6 address in addition "
 "to the public one generated from MAC address via modified EUI-64."
 msgstr ""
 "Configura Extensiones de Confidentialitate de IPv6, describite in RFC4941. "
-"Si habilitate, illo face que le kernel genera\n"
-"un adresse tempranee de IPv6 in addition a ille public generate ex le "
-"adresse MAC via modificate eui-64."
+"Si habilitate, illo face que le kernel genera un adresse temporanee de IPv6  "
+"in addition a ille public generate ex le adresse MAC via modificate EUI-64."
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:257
 #, kde-format
@@ -4556,17 +4535,14 @@ msgid "2001:db8::1"
 msgstr "2001:db8::1"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:330
-#, fuzzy, kde-format
-#| msgid ""
-#| "When connecting to IPv4-capable networks, allows the connection to "
-#| "complete if\n"
-#| "IPv6 configuration fails but IPv4 configuration succeeds"
+#, kde-format
 msgid ""
 "When connecting to IPv4-capable networks, allows the connection to complete "
 "if IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
-"Quando connectente a retes capabile de IPv4, permitte que le connexion\n"
-"complete si configuration de IPv6 falle , ma configuration de IPv4 succede"
+"Quando connectente a retes capabile de IPv4, permitte que le "
+"connexioncompleta si configuration de IPv6 falle , ma configuration de IPv4 "
+"succede"
 
 #: editorqml/qml/PasswordField.qml:106
 #, kde-format
@@ -4615,11 +4591,9 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "Contrasigno debe esser inter 8 e 64 characteres"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:34 editorqml/qml/vpn/sstp/Sstp.qml:30
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgid "Gateway:"
-msgstr "Gateway"
+msgstr "Gateway:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, kde-format
@@ -4728,141 +4702,127 @@ msgid "SSH VPN"
 msgstr "SSH VPN"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder optional field"
-#| msgid "Optional"
+#, kde-format
 msgid "Optional"
 msgstr "Optional"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:51
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgid "NT Domain:"
-msgstr "Dominio:"
+msgstr "Dominio NT:"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:59
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA Certificate:"
-msgstr "Certi&ficato CA:"
+msgstr "Certificato CA:"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:79
 #, kde-format
 msgid "Ignore certificate warnings"
-msgstr ""
+msgstr "Usa numero de unitate personaliste:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:60
 #, kde-format
 msgid "Point-to-Point"
-msgstr ""
+msgstr "Puncto a Puncto"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:64
 #, kde-format
 msgid "Proxy"
-msgstr ""
+msgstr "Proxy"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr ""
+msgstr "Permitte le sequente methodos de authentication:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Encryption"
-msgstr "Connexion"
+msgstr "Cryptation"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr ""
+msgstr "Usa Cryptation MPPE"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
-#, fuzzy, kde-format
-#| msgid "Use point-to-point encryption (MPPE)"
+#, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr "Usa cryptation puncto a puncto (MPPE)"
+msgstr ""
+"Usa Microsoft Point-to-Point-Encryption (cryptation puncto a puncto de "
+"Microsoft)"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
 #, kde-format
 msgid "Crypto:"
-msgstr ""
+msgstr "Crypto:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "Any"
+#, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
 msgstr "Ulle"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "WEP key 128 bits"
+#, kde-format
 msgid "128 bit"
-msgstr "Clave WEP  128 bits"
+msgstr "128 bit"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgid "40 bit"
-msgstr ""
+msgstr "40 Bit"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
-#, fuzzy, kde-format
-#| msgid "Use stateful MPPE"
+#, kde-format
 msgid "Use stateful encryption"
-msgstr "Usa MPPE stateful"
+msgstr "Usa cryptation stateful"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
-#, fuzzy, kde-format
-#| msgid "Use BSD data compression"
+#, kde-format
 msgid "Allow BSD compression"
-msgstr "Usa compression de datos BSD"
+msgstr "Permitte compression BSD"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
-#, fuzzy, kde-format
-#| msgid "Use Deflate data compression"
+#, kde-format
 msgid "Allow Deflate compression"
-msgstr "Usa compression de datos Deflate"
+msgstr "Permitte compression Deflate"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Allow TCP header compression"
-msgstr "Uca compression de capite TCP"
+msgstr "Permitte compression de capite TCP"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Misc"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:213
-#, fuzzy, kde-format
-#| msgid "Use custom gateway port:"
+#, kde-format
 msgid "Use custom unit number:"
-msgstr "Usa porto de gateway personalisate:"
+msgstr "Usa numero de unitate personaliste:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:242
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgid "Address:"
-msgstr "Adresse"
+msgstr "Adresse:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Porto:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
 #, kde-format
 msgid "Credentials"
-msgstr ""
+msgstr "Credentiales"
 
 #: editorqml/qml/vpn/sstp/SstpAuth.qml:22
-#, fuzzy, kde-format
-#| msgid "SSH VPN"
+#, kde-format
 msgid "SSTP VPN"
-msgstr "SSH VPN"
+msgstr "SSTP VPN"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format
@@ -4871,10 +4831,9 @@ msgid "%1 (%2%)"
 msgstr "%1 (%2%)"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:119
-#, fuzzy, kde-format
-#| msgid "Frequency"
+#, kde-format
 msgid "Frequency: %1 MHz"
-msgstr "Frequentia (MHz):"
+msgstr "Frequentia: %1 MHz"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:124
 #, kde-format
@@ -5021,47 +4980,34 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WéA/WPA2 Interprisa"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option locks this connection to the network device specified by its\n"
-#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#, kde-format
 msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"Iste option bloca iste connexion al dispositivo de rete specificate per su\n"
-"adresse permanente de MAC insertate hic. Exemplo: 00:11:22:33:44.55"
+"Iste option bloca iste connexion al dispositivo de rete specificate per "
+"suadresse permanente de MAC insertate hic. Exemplo: 00:11:22:33:44.55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MAC address entered here will be used as hardware address for the\n"
-#| "network device this connection is activated on. This feature is known as "
-#| "MAC\n"
-#| "cloning or spoofing. Example 11:22:33:44:55"
+#, kde-format
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
-"Le adresse MAC insertate hic essera usate como adresse hardware per le\n"
+"Le adresse MAC insertate hic essera usate como adresse hardware per le "
 "dispositivo de rete sur le qual iste connexion es activate. Iste "
-"characteristica es \n"
-"cognoscite como cloning de MAC o spoofing. Exemplo 11:22:33:44:55"
+"characteristica  es cognoscite como cloning de MAC o spoofing. Exemplo "
+"11:22:33:44:55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "Only transmit packets of the specified size or smaller, breaking larger "
-#| "packets up\n"
-#| "into multiple Ethernet frames"
+#, kde-format
 msgid ""
 "Only transmit packets of the specified size or smaller, breaking larger "
 "packets up into multiple Ethernet frames"
 msgstr ""
 "Transmitte solmente pacchettos del dimension specificate o plus parve, "
-"rumpente\n"
-"pacchettos plus grande in frames de Ethernet multiple"
+"rumpente pacchettos plus grande in frames de Ethernet multiple"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
 #, kde-format
@@ -5082,20 +5028,15 @@ msgid "Manual"
 msgstr "Manual"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#| "values will be forced without checking\n"
-#| "the device compatibility. If unsure, leave here “Ignore” or pick "
-#| "“Automatic”."
+#, kde-format
 msgid ""
 "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
 "will be forced without checking the device compatibility. If unsure, leave "
 "here “Ignore” or pick “Automatic”."
 msgstr ""
 "Negotiation de ligamine de dispositivo. Si \"Manual\" es seligite, valores "
-"de \"Speed\" (velocitate) e \"Duplex\" essera fortiate sin verificar\n"
-" le compatibilitate de dispositivo. Si insecur, tu lassa \"Ignora\" o selige "
+"de \"Speed\" (velocitate) e \"Duplex\" essera fortiate sin verificar le "
+"compatibilitate de dispositivo. Si insecur, tu lassa \"Ignora\" o selige "
 "\"Automatic\"."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
@@ -5105,31 +5046,25 @@ msgid "Half"
 msgstr "Medietate"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Full"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Full"
 msgstr "Plen"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use the specified duplex mode. Either \"half\" or "
-#| "\"full\""
+#, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either “Half” or "
 "“Full”"
 msgstr ""
-"Requesta que le dispositivo usa le specificate modo duplex. O \"half\" o "
-"\"full\""
+"Requesta que le dispositivo usa le specificate modo duplex. O \"Half\" o "
+"\"Full\""
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@item:intable shortcut for Not Available"
-#| msgid "N/A"
+#, kde-format
 msgctxt "@item real name not available"
 msgid "N/A"
-msgstr "N/A"
+msgstr "N/D"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:105
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:107

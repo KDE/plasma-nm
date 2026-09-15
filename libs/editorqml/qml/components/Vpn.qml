@@ -88,6 +88,11 @@ ColumnLayout {
                             url: "../vpn/vpnc/Vpnc.qml",
                             setting: kcm.vpnVpncSetting
                         };
+                    case "org.freedesktop.NetworkManager.fortisslvpn":
+                        return {
+                            url: "../vpn/fortisslvpn/Fortisslvpn.qml",
+                            setting: kcm.vpnFortisslvpnSetting
+                        };
                     default:
                         return null;
                     }

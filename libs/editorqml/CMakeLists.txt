@@ -44,6 +44,13 @@ set(SETTINGS_SRCS
   settings/vpn/vpnc/vpnc.cpp
   settings/vpn/vpnc/vpnc.h
   settings/vpn/vpnc/nm-vpnc-service.h
+
+  #fortissl vpn
+  settings/vpn/fortisslvpn/fortisslvpnauth.h
+  settings/vpn/fortisslvpn/fortisslvpnauth.cpp
+  settings/vpn/fortisslvpn/fortisslvpn.cpp
+  settings/vpn/fortisslvpn/fortisslvpn.h
+  settings/vpn/fortisslvpn/nm-fortisslvpn-service.h
 )
 
 set(QML_SRCS
@@ -107,6 +114,11 @@ set(QML_SRCS
   qml/vpn/vpnc/Vpnc.qml
   qml/vpn/vpnc/VpncAdvanced.qml
   qml/vpn/vpnc/VpncAuth.qml
+
+  # fortissl vpn
+  qml/vpn/fortisslvpn/Fortisslvpn.qml
+  qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml
+  qml/vpn/fortisslvpn/FortisslvpnAuth.qml
 )
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})
@@ -175,6 +187,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/ssh
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/sstp
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/vpnc
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/fortisslvpn
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

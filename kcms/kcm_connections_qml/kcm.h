@@ -9,6 +9,7 @@
 
 #include "connectionstatus.h"
 #include "enums.h"
+#include "fortisslvpn.h"
 #include "generalsettings.h"
 #include "handler.h"
 #include "ipv4settings.h"
@@ -46,6 +47,7 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(SshSetting *vpnSshSetting READ vpnSshSetting NOTIFY vpnSshSettingChanged)
     Q_PROPERTY(SstpSetting *vpnSstpSetting READ vpnSstpSetting NOTIFY vpnSstpSettingChanged)
     Q_PROPERTY(VpncSetting *vpnVpncSetting READ vpnVpncSetting NOTIFY vpnVpncSettingChanged)
+    Q_PROPERTY(FortisslvpnSetting *vpnFortisslvpnSetting READ vpnFortisslvpnSetting NOTIFY vpnFortisslvpnSettingChanged)
     Q_PROPERTY(QString vpnServiceType READ vpnServiceType NOTIFY vpnServiceTypeChanged)
 
 public:
@@ -67,6 +69,7 @@ public:
     SshSetting *vpnSshSetting() const;
     SstpSetting *vpnSstpSetting() const;
     VpncSetting *vpnVpncSetting() const;
+    FortisslvpnSetting *vpnFortisslvpnSetting() const;
     QString vpnServiceType() const;
     bool useApMode() const;
 
@@ -92,6 +95,7 @@ Q_SIGNALS:
     void vpnSstpSettingChanged();
     void vpnServiceTypeChanged();
     void vpnVpncSettingChanged();
+    void vpnFortisslvpnSettingChanged();
 
 private Q_SLOTS:
     void onConnectionAdded(const QString &connection);
@@ -139,6 +143,7 @@ private:
     SshSetting *const m_vpnSshSetting;
     SstpSetting *const m_vpnSstpSetting;
     VpncSetting *const m_vpnVpncSetting;
+    FortisslvpnSetting *const m_vpnFortisslvpnSetting;
 
     bool m_useApMode = false;
     bool m_wiredSecurityEnabled = false;

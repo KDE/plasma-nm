@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-09-16 02:45+0000\n"
 "PO-Revision-Date: 2026-04-26 20:56+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -17,74 +17,74 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Lokalize 25.08.1\n"
 
-#: kcm.cpp:269
+#: kcm.cpp:270
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "\"%1\"에서 VPN 설정을 가져오시겠습니까?"
 
-#: kcm.cpp:270
+#: kcm.cpp:271
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr "VPN 설정 가져오기"
 
-#: kcm.cpp:271
+#: kcm.cpp:272
 #, kde-format
 msgid "Import"
 msgstr "가져오기"
 
-#: kcm.cpp:278 kcm.cpp:351
+#: kcm.cpp:279 kcm.cpp:352
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "VPN 연결을 가져올 수 없음: %1"
 
-#: kcm.cpp:281 kcm.cpp:354
+#: kcm.cpp:282 kcm.cpp:355
 #, kde-format
 msgid "Connection imported."
 msgstr "연결을 가져왔습니다."
 
-#: kcm.cpp:423
+#: kcm.cpp:424
 #, kde-format
 msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
-#: kcm.cpp:495
+#: kcm.cpp:496
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "VPN 연결 내보내기"
 
-#: kcm.cpp:515
+#: kcm.cpp:516
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "연결 '%1'의 변경 사항을 저장하시겠습니까?"
 
-#: kcm.cpp:516
+#: kcm.cpp:517
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "변경 사항 저장"
 
-#: kcm.cpp:611
+#: kcm.cpp:612
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "VPN 연결 가져오기"
 
-#: kcm.cpp:613
+#: kcm.cpp:614
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN 연결(%1)"
 
-#: kcm.cpp:616
+#: kcm.cpp:617
 #, kde-format
 msgid "No file was provided"
 msgstr "파일을 지정하지 않았음"
 
-#: kcm.cpp:684
+#: kcm.cpp:685
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "알 수 없는 VPN 형식"
 
-#: kcm.cpp:716
+#: kcm.cpp:717
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 02:45+0000\n"
-"PO-Revision-Date: 2026-09-15 18:52+0900\n"
+"PO-Revision-Date: 2026-09-17 02:35+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -4297,31 +4297,18 @@ msgid "Search Domains:"
 msgstr "搜尋網域："
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use this field to specify the DHCP client ID which is a string sent to "
-#| "the DHCP server\n"
-#| "to identify the local machine that the DHCP server may use to customize "
-#| "the DHCP\n"
-#| "lease and options."
+#, kde-format
 msgid ""
 "Use this field to specify the DHCP client ID which is a string sent to the "
 "DHCP server to identify the local machine that the DHCP server may use to "
 "customize the DHCP lease and options."
 msgstr ""
-"用這個欄位來指定 DHCP 用戶端代碼。這個字串會送到 DHCP 伺服器\n"
-"來辨識本地端機器，用來自訂 DHCP 的 lease 與選項。"
+"用這個欄位來指定 DHCP 用戶端代碼。這個字串會送到 DHCP 伺服器來辨識本地端機"
+"器，用來自訂 DHCP 的 lease 與選項。"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:155
 #: editorqml/qml/ipv6/IPv6Settings.qml:158
-#, fuzzy, kde-format
-#| msgid ""
-#| "A score that helps choose the best path for data packets to reach their "
-#| "destination,\n"
-#| "based on factors like distance, delay, and reliability.\n"
-#| "\n"
-#| "Default value -1 means that NetworkManager gets to choose and manage the "
-#| "actual metric of the route."
+#, kde-format
 msgid ""
 "A score that helps choose the best path for data packets to reach their "
 "destination, based on factors like distance, delay, and reliability.\n"
@@ -4329,10 +4316,8 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
-"用來幫助資料封包選擇最好的路徑以抵達其目的地的數值，\n"
-"基於距離、延遲、可靠性等等因素。\n"
-"\n"
-"預設值 -1 代表 NetworkManager 可以負責選擇並管理路由實際的權值。"
+"用來幫助資料封包選擇最好的路徑以抵達其目的地的數值，基於距離、延遲、可靠性等"
+"等因素。預設值 -1 代表 NetworkManager 可以負責選擇並管理路由實際的權值。"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
 #: editorqml/qml/ipv6/IPv6Settings.qml:165
@@ -4341,10 +4326,7 @@ msgid "Addresses"
 msgstr "地址"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allows the connection to complete if IPv4 configuration fails\n"
-#| "but IPv6 configuration succeeds"
+#, kde-format
 msgid ""
 "Allows the connection to complete if IPv4 configuration fails but IPv6 "
 "configuration succeeds"
@@ -4453,20 +4435,15 @@ msgid "Enabled (prefer temporary addresses)"
 msgstr "已開啟（預設使用暫時位址）"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:128
-#, fuzzy, kde-format
-#| msgid ""
-#| "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-#| "enabled, it makes the kernel generate\n"
-#| "a temporary IPv6 address in addition to the public one generated from MAC "
-#| "address via modified EUI-64."
+#, kde-format
 msgid ""
 "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
 "enabled, it makes the kernel generate a temporary IPv6 address in addition "
 "to the public one generated from MAC address via modified EUI-64."
 msgstr ""
-"設定 SLAAC 的 IPv6 隱私延伸，此標準在 RFC4941。如果開啟此選項，\n"
-"則會讓核心除了透過變更的 EUI-64 從 MAC 位址產生一個公開的 IPv6 位址，\n"
-"另外也產生一個暫時性的 IPv6 位址。"
+"設定 SLAAC 的 IPv6 隱私延伸，此標準在 RFC4941。如果開啟此選項，則會讓核心除了"
+"透過變更的 EUI-64 從 MAC 位址產生一個公開的 IPv6 位址，另外也產生一個暫時性"
+"的 IPv6 位址。"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:257
 #, kde-format
@@ -4475,11 +4452,7 @@ msgid "2001:db8::1"
 msgstr "2001:db8::1"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:330
-#, fuzzy, kde-format
-#| msgid ""
-#| "When connecting to IPv4-capable networks, allows the connection to "
-#| "complete if\n"
-#| "IPv6 configuration fails but IPv4 configuration succeeds"
+#, kde-format
 msgid ""
 "When connecting to IPv4-capable networks, allows the connection to complete "
 "if IPv6 configuration fails but IPv4 configuration succeeds"
@@ -4919,44 +4892,29 @@ msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option locks this connection to the network device specified by its\n"
-#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#, kde-format
 msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
-msgstr ""
-"此選項會將連線綁定在此輸入的 MAC 硬體位址。\n"
-"例如：00:11:22:33:44:55"
+msgstr "此選項會將連線綁定在此輸入的 MAC 硬體位址。例如：00:11:22:33:44:55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MAC address entered here will be used as hardware address for the\n"
-#| "network device this connection is activated on. This feature is known as "
-#| "MAC\n"
-#| "cloning or spoofing. Example 11:22:33:44:55"
+#, kde-format
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
-"在此輸入的 MAC 位址會被用於此連線所使用的網路裝置。這個功能也叫做\n"
-"MAC cloning 或 MAC spoofing。例如：11:22:33:44:55"
+"在此輸入的 MAC 位址會被用於此連線所使用的網路裝置。這個功能也叫做 MAC "
+"cloning 或 MAC spoofing。例如：11:22:33:44:55:66"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "Only transmit packets of the specified size or smaller, breaking larger "
-#| "packets up\n"
-#| "into multiple Ethernet frames"
+#, kde-format
 msgid ""
 "Only transmit packets of the specified size or smaller, breaking larger "
 "packets up into multiple Ethernet frames"
 msgstr ""
-"只傳輸比指定的大小一樣或更小的封包，而將更大的封包切割成多個\n"
-"乙太網路訊框"
+"只傳輸比指定的大小一樣或更小的封包，而將更大的封包切割成多個乙太網路訊框"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
 #, kde-format
@@ -4977,12 +4935,7 @@ msgid "Manual"
 msgstr "手動"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#| "values will be forced without checking\n"
-#| "the device compatibility. If unsure, leave here “Ignore” or pick "
-#| "“Automatic”."
+#, kde-format
 msgid ""
 "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
 "will be forced without checking the device compatibility. If unsure, leave "
@@ -5004,10 +4957,7 @@ msgid "Full"
 msgstr "全雙工"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use the specified duplex mode. Either \"half\" or "
-#| "\"full\""
+#, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either “Half” or "
 "“Full”"

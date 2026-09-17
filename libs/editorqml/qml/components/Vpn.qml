@@ -98,6 +98,11 @@ ColumnLayout {
                             url: "../vpn/iodine/Iodine.qml",
                             setting: kcm.vpnIodineSetting
                         };
+                    case "org.freedesktop.NetworkManager.libreswan":
+                        return {
+                            url: "../vpn/libreswan/Libreswan.qml",
+                            setting: kcm.vpnLibreswanSetting
+                        };
                     default:
                         return null;
                     }

@@ -49,6 +49,7 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     , m_vpnIodineSetting(new IodineSetting(this))
     , m_vpnLibreswanSetting(new LibreswanSetting(this))
     , m_vpnStrongswanSetting(new StrongswanSetting(this))
+    , m_vpnL2tpSetting(new L2tpSetting(this))
     , m_timer(new QTimer(this))
 {
     // constant map with its connection type and security Type
@@ -85,6 +86,8 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
                  m_vpnLibreswanSetting->loadSecrets(vpnSetting);
              } else if (m_vpnServiceType == m_vpnStrongswanSetting->serviceType()) {
                  m_vpnStrongswanSetting->loadSecrets(vpnSetting);
+             } else if (m_vpnServiceType == m_vpnL2tpSetting->serviceType()) {
+                 m_vpnL2tpSetting->loadSecrets(vpnSetting);
              }
          }},
     };
@@ -257,6 +260,12 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
         }
     });
 
+    connect(m_vpnL2tpSetting, &L2tpSetting::validChanged, this, [this]() {
+        if (m_vpnL2tpSetting->isValid()) {
+            kcmChanged(true);
+        }
+    });
+
     connect(NetworkManager::settingsNotifier(),
             &NetworkManager::SettingsNotifier::connectionAdded,
             this,
@@ -317,6 +326,11 @@ LibreswanSetting *KCMNetworkManagementQml::vpnLibreswanSetting() const
 StrongswanSetting *KCMNetworkManagementQml::vpnStrongswanSetting() const
 {
     return m_vpnStrongswanSetting;
+}
+
+L2tpSetting *KCMNetworkManagementQml::vpnL2tpSetting() const
+{
+    return m_vpnL2tpSetting;
 }
 
 QString KCMNetworkManagementQml::vpnServiceType() const
@@ -524,6 +538,8 @@ void KCMNetworkManagementQml::applyTypeSettings(NMVariantMapMap &map, NetworkMan
             map.insert(QStringLiteral("vpn"), m_vpnLibreswanSetting->setting());
         } else if (m_vpnServiceType == m_vpnStrongswanSetting->serviceType()) {
             map.insert(QStringLiteral("vpn"), m_vpnStrongswanSetting->setting());
+        } else if (m_vpnServiceType == m_vpnL2tpSetting->serviceType()) {
+            map.insert(QStringLiteral("vpn"), m_vpnL2tpSetting->setting());
         }
         break;
 
@@ -651,6 +667,9 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
         } else if (m_vpnServiceType == m_vpnStrongswanSetting->serviceType()) {
             m_vpnStrongswanSetting->loadConfig(vpnSetting);
             Q_EMIT vpnStrongswanSettingChanged();
+        } else if (m_vpnServiceType == m_vpnL2tpSetting->serviceType()) {
+            m_vpnL2tpSetting->loadConfig(vpnSetting);
+            Q_EMIT vpnL2tpSettingChanged();
         }
 
         Q_EMIT connectionLoaded(m_currentConnectionPath);

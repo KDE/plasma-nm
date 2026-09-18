@@ -108,6 +108,11 @@ ColumnLayout {
                             url: "../vpn/strongswan/Strongswan.qml",
                             setting: kcm.vpnStrongswanSetting
                         };
+                    case "org.freedesktop.NetworkManager.l2tp":
+                        return {
+                            url: "../vpn/l2tp/L2tp.qml",
+                            setting: kcm.vpnL2tpSetting
+                        };
                     default:
                         return null;
                     }

@@ -15,6 +15,7 @@
 #include "iodine.h"
 #include "ipv4settings.h"
 #include "ipv6settings.h"
+#include "l2tp.h"
 #include "libreswan.h"
 #include "security8021xsetting.h"
 #include "ssh.h"
@@ -54,6 +55,7 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(IodineSetting *vpnIodineSetting READ vpnIodineSetting NOTIFY vpnIodineSettingChanged)
     Q_PROPERTY(LibreswanSetting *vpnLibreswanSetting READ vpnLibreswanSetting NOTIFY vpnLibreswanSettingChanged)
     Q_PROPERTY(StrongswanSetting *vpnStrongswanSetting READ vpnStrongswanSetting NOTIFY vpnStrongswanSettingChanged)
+    Q_PROPERTY(L2tpSetting *vpnL2tpSetting READ vpnL2tpSetting NOTIFY vpnL2tpSettingChanged)
     Q_PROPERTY(QString vpnServiceType READ vpnServiceType NOTIFY vpnServiceTypeChanged)
 
 public:
@@ -79,6 +81,7 @@ public:
     IodineSetting *vpnIodineSetting() const;
     LibreswanSetting *vpnLibreswanSetting() const;
     StrongswanSetting *vpnStrongswanSetting() const;
+    L2tpSetting *vpnL2tpSetting() const;
     QString vpnServiceType() const;
     bool useApMode() const;
 
@@ -108,6 +111,7 @@ Q_SIGNALS:
     void vpnIodineSettingChanged();
     void vpnLibreswanSettingChanged();
     void vpnStrongswanSettingChanged();
+    void vpnL2tpSettingChanged();
 
 private Q_SLOTS:
     void onConnectionAdded(const QString &connection);
@@ -159,6 +163,7 @@ private:
     IodineSetting *const m_vpnIodineSetting;
     LibreswanSetting *const m_vpnLibreswanSetting;
     StrongswanSetting *const m_vpnStrongswanSetting;
+    L2tpSetting *const m_vpnL2tpSetting;
 
     bool m_useApMode = false;
     bool m_wiredSecurityEnabled = false;

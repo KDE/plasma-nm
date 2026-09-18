@@ -40,7 +40,7 @@ L2tpWidget::L2tpWidget(const NetworkManager::VpnSetting::Ptr &setting, QWidget *
     if (L2tpIpsecWidget::hasIpsecDaemon()) {
         connect(m_ui->btnIPSecSettings, &QPushButton::clicked, this, &L2tpWidget::showIpsec);
     } else {
-        m_ui->btnIPSecSettings->setDisabled(true);
+        m_ui->btnIPSecSettings->setDisabled(false);
     }
     connect(m_ui->btnPPPSettings, &QPushButton::clicked, this, &L2tpWidget::showPpp);
 

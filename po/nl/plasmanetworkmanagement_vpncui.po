@@ -1,21 +1,21 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2021, 2022, 2023, 2025 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2014-2016, 2021-2023, 2025-2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-01 00:45+0000\n"
-"PO-Revision-Date: 2025-09-19 10:52+0200\n"
+"PO-Revision-Date: 2026-09-17 15:39+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
-"Language-Team: Dutch <kde-i18n-nl@kde.org>\n"
+"Language-Team: \n"
 "Language: nl\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: vpnc.cpp:70
 #, kde-format
@@ -147,7 +147,7 @@ msgstr "(NT)-domeinnaam voor authenticatie."
 #: vpncadvanced.ui:44
 #, kde-format
 msgid "Vendor:"
-msgstr "Fabrikant:"
+msgstr "Leverancier:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, vendor)
 #: vpncadvanced.ui:60
@@ -201,7 +201,7 @@ msgstr "Naam van de IKE DH group."
 #: vpncadvanced.ui:151
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr "Perfecte forward secrecy:"
+msgstr "Perfecte forward veiligheid:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
 #: vpncadvanced.ui:167

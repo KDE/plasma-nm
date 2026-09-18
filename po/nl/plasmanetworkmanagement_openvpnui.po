@@ -1,13 +1,13 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 #
-# SPDX-FileCopyrightText: 2014, 2015, 2016, 2017, 2020, 2021, 2022, 2023, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
+# SPDX-FileCopyrightText: 2014-2017, 2020-2023, 2026 Freek de Kruijf <freekdekruijf@kde.nl>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 00:46+0000\n"
-"PO-Revision-Date: 2026-03-06 14:44+0100\n"
+"PO-Revision-Date: 2026-09-17 15:18+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
@@ -104,7 +104,7 @@ msgstr "Certificate authority (CA)-bestand in .pem formaat."
 #: openvpn.ui:129 openvpn.ui:493
 #, kde-format
 msgid "User Certificate:"
-msgstr "Gebruikercertificaat:"
+msgstr "Gebruikerscertificaat:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509Cert)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassCert)

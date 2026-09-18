@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-16 00:47+0000\n"
+"POT-Creation-Date: 2026-09-18 00:47+0000\n"
 "PO-Revision-Date: 2026-08-27 08:44+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -19,28 +19,28 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.08.0\n"
 
-#: kcm.cpp:722
+#: kcm.cpp:741
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "Ha fallat mentre s'obtenien els secrets per a %1"
 
-#: kcm.cpp:748
+#: kcm.cpp:767
 #, kde-format
 msgid "my_shared_connection"
 msgstr "la_meva_connexió_compartida"
 
-#: kcm.cpp:818
+#: kcm.cpp:837
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Voleu guardar els canvis efectuats a la connexió «%1»?"
 
-#: kcm.cpp:821
+#: kcm.cpp:840
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Guarda els canvis"
 
-#: kcm.cpp:850
+#: kcm.cpp:869
 #, kde-format
 msgctxt "Suffix appended to duplicated connection name"
 msgid " (Copy)"

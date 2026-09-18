@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-16 00:47+0000\n"
+"POT-Creation-Date: 2026-09-18 00:47+0000\n"
 "PO-Revision-Date: 2026-09-16 06:36-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1188,7 +1188,9 @@ msgstr "Identidade:"
 #. i18n: ectx: property (text), widget (QLabel, label_30)
 #. i18n: ectx: property (text), widget (QLabel, label_31)
 #: editor/settings/ui/802-1x.ui:134 editor/settings/ui/802-1x.ui:572
-#: editor/settings/ui/802-1x.ui:714 editorqml/qml/vpn/vpnc/VpncAdvanced.qml:38
+#: editor/settings/ui/802-1x.ui:714
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:114
+#: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:38
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:101
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:30
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:102
@@ -4603,6 +4605,7 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "A senha deve ter entre 8 e 64 caracteres"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:30
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:24
 #: editorqml/qml/vpn/ssh/Ssh.qml:34 editorqml/qml/vpn/sstp/Sstp.qml:30
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:25
 #, kde-format
@@ -4615,6 +4618,7 @@ msgid "SSLVPN server IP or name."
 msgstr "IP ou nome do servidor SSLVPN."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:47
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:78
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:37
 #, kde-format
 msgid "User name:"
@@ -4743,6 +4747,76 @@ msgstr "%1 bytes"
 #, kde-format
 msgid "Iodine VPN"
 msgstr "VPN do Iodine"
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:27
+#, fuzzy, kde-format
+#| msgid "IP/hostname of IPsec gateway."
+msgid "IP or hostname of the IPsec gateway."
+msgstr "IP/nome da máquina do gateway IPsec."
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:36
+#: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:26
+#: editorqml/qml/vpn/vpnc/Vpnc.qml:67 editorqml/qml/vpn/vpnc/VpncAuth.qml:35
+#, kde-format
+msgid "Group name:"
+msgstr "Nome do grupo:"
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:39
+#, kde-format
+msgid "Group name, or local identifier, this connection belongs to."
+msgstr ""
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:51
+#: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:39
+#: editorqml/qml/vpn/vpnc/Vpnc.qml:52
+#, kde-format
+msgid "User password:"
+msgstr "Senha do usuário:"
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:64
+#: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:50
+#: editorqml/qml/vpn/vpnc/Vpnc.qml:82
+#, kde-format
+msgid "Group password:"
+msgstr "Senha do grupo:"
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:81
+#, fuzzy, kde-format
+#| msgid "User name for the connection."
+msgid "User name for XAUTH authentication."
+msgstr "Nome do usuário para a conexão."
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:90
+#, kde-format
+msgid "Phase1 algorithms:"
+msgstr ""
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:93
+#, kde-format
+msgid "IKE algorithms to propose. Leave empty for the defaults."
+msgstr ""
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:102
+#, kde-format
+msgid "Phase2 algorithms:"
+msgstr ""
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:105
+#, kde-format
+msgid "ESP algorithms to propose. Leave empty for the defaults."
+msgstr ""
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:117
+#: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:41
+#, kde-format
+msgid "(NT-)Domain name for authentication."
+msgstr "Nome do domínio (NT) de autenticação."
+
+#: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:38
+#, fuzzy, kde-format
+#| msgid "WireGuard VPN"
+msgid "Libreswan VPN"
+msgstr "VPN WireGuard"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, kde-format
@@ -4976,25 +5050,10 @@ msgstr "IP/nome da máquina do gateway IPsec."
 msgid "User name for the connection."
 msgstr "Nome do usuário para a conexão."
 
-#: editorqml/qml/vpn/vpnc/Vpnc.qml:52
-#, kde-format
-msgid "User password:"
-msgstr "Senha do usuário:"
-
-#: editorqml/qml/vpn/vpnc/Vpnc.qml:67 editorqml/qml/vpn/vpnc/VpncAuth.qml:35
-#, kde-format
-msgid "Group name:"
-msgstr "Nome do grupo:"
-
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:70
 #, kde-format
 msgid "Group name"
 msgstr "Nome do grupo"
-
-#: editorqml/qml/vpn/vpnc/Vpnc.qml:82
-#, kde-format
-msgid "Group password:"
-msgstr "Senha do grupo:"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:99
 #, kde-format
@@ -5021,11 +5080,6 @@ msgstr "Certificado da AC no formato PEM."
 #, kde-format
 msgid "Identification"
 msgstr "Identificação"
-
-#: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:41
-#, kde-format
-msgid "(NT-)Domain name for authentication."
-msgstr "Nome do domínio (NT) de autenticação."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:50
 #, kde-format

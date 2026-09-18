@@ -103,6 +103,11 @@ ColumnLayout {
                             url: "../vpn/libreswan/Libreswan.qml",
                             setting: kcm.vpnLibreswanSetting
                         };
+                    case "org.freedesktop.NetworkManager.strongswan":
+                        return {
+                            url: "../vpn/strongswan/Strongswan.qml",
+                            setting: kcm.vpnStrongswanSetting
+                        };
                     default:
                         return null;
                     }

@@ -65,6 +65,13 @@ set(SETTINGS_SRCS
   settings/vpn/libreswan/libreswan.cpp
   settings/vpn/libreswan/libreswan.h
   settings/vpn/libreswan/nm-libreswan-service.h
+
+  #strongswan vpn
+  settings/vpn/strongswan/strongswanauth.h
+  settings/vpn/strongswan/strongswanauth.cpp
+  settings/vpn/strongswan/strongswan.cpp
+  settings/vpn/strongswan/strongswan.h
+  settings/vpn/strongswan/nm-strongswan-service.h
 )
 
 set(QML_SRCS
@@ -141,6 +148,10 @@ set(QML_SRCS
   # libreswan vpn
   qml/vpn/libreswan/Libreswan.qml
   qml/vpn/libreswan/LibreswanAuth.qml
+
+  # strongswan vpn
+  qml/vpn/strongswan/Strongswan.qml
+  qml/vpn/strongswan/StrongswanAuth.qml
 )
 
 add_library(plasmanm_editorqml SHARED ${SETTINGS_SRCS})
@@ -212,6 +223,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/fortisslvpn
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/iodine
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/libreswan
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/strongswan
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

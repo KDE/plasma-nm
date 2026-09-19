@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2026-03-13 14:34+0100\n"
-"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-09-18 11:12+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Poedit 3.9\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -86,12 +86,12 @@ msgstr "Připojování k %1"
 #: declarative/networkstatus.cpp:204
 #, kde-format
 msgid "Connected to %1 (no connectivity)"
-msgstr "Připojeno k %1 (bez spojení)"
+msgstr "Připojeno k %1 (bez připojení)"
 
 #: declarative/networkstatus.cpp:207
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
-msgstr "Připojeno k %1 (omezené spojení)"
+msgstr "Připojeno k %1 (omezené připojení)"
 
 #: declarative/networkstatus.cpp:210
 #, kde-format
@@ -207,7 +207,7 @@ msgstr "Tým"
 #: editor/connectioneditorbase.cpp:257
 #, kde-format
 msgid "WireGuard Interface"
-msgstr "Rozhraní WireGuard:"
+msgstr "Rozhraní WireGuard"
 
 #: editor/connectioneditorbase.cpp:270
 #, kde-format
@@ -232,23 +232,23 @@ msgstr "Selhalo získávání přístupu pro %1"
 #: editor/connectioneditordialog.cpp:33
 #, kde-format
 msgid "New Connection (%1)"
-msgstr "Nové spojení (%1)"
+msgstr "Nové připojení (%1)"
 
 #: editor/connectioneditordialog.cpp:35
 #, kde-format
 msgid "Edit Connection '%1'"
-msgstr "Upravit spojení '%1'"
+msgstr "Upravit připojení '%1'"
 
 #: editor/connectioneditortabwidget.cpp:47
 #, kde-format
 msgid "New %1 connection"
-msgstr "Nové spojení %1"
+msgstr "Nové připojení %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/connectioneditortabwidget.ui:20
 #, kde-format
 msgid "Connection name:"
-msgstr "Název spojení:"
+msgstr "Název připojení:"
 
 #: editor/settings/bondwidget.cpp:36 editor/settings/bridgewidget.cpp:33
 #: editor/settings/teamwidget.cpp:36
@@ -313,13 +313,13 @@ msgstr "ARP"
 #: editor/settings/teamwidget.cpp:187
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
-msgstr "Opravdu si přejete smazat spojení '%1'?"
+msgstr "Opravdu si přejete smazat připojení '%1'?"
 
 #: editor/settings/bondwidget.cpp:249 editor/settings/bridgewidget.cpp:199
 #: editor/settings/teamwidget.cpp:188
 #, kde-format
 msgid "Remove Connection"
-msgstr "Odstranit spojení"
+msgstr "Odstranit připojení"
 
 #: editor/settings/bridgewidget.cpp:36 editor/settings/teamwidget.cpp:45
 #: editor/uiutils.cpp:217
@@ -406,7 +406,7 @@ msgstr "Odeslat název hostitele:"
 #: editor/settings/ipv4widget.cpp:435
 #, kde-format
 msgid "DHCP hostname:"
-msgstr "Název hostitele DHCP"
+msgstr "Název hostitele DHCP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:197
@@ -754,7 +754,7 @@ msgstr "Název rozhraní:"
 #: editor/settings/ui/bond.ui:34
 #, kde-format
 msgid "Bonded connections:"
-msgstr "Svázaná spojení"
+msgstr "Svázaná připojení:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
@@ -788,7 +788,7 @@ msgstr "Režim:"
 #: editor/settings/ui/bond.ui:133
 #, kde-format
 msgid "Link monitoring:"
-msgstr "Monitorování spojení:"
+msgstr "Monitorování připojení:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bond.ui:153
@@ -833,7 +833,7 @@ msgstr "Adresa nebo seznam IP adres oddělený čárkou."
 #: editor/settings/ui/bridge.ui:31
 #, kde-format
 msgid "Bridged connections:"
-msgstr "Přemostěná spojení:"
+msgstr "Přemostěná připojení:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bridge.ui:110
@@ -932,7 +932,7 @@ msgstr "Všichni uživatelé se smějí připojit k této síti"
 #: editor/settings/ui/connectionwidget.ui:64
 #, kde-format
 msgid "Edit advanced permissions for this connection"
-msgstr "Upravit pokročilá oprávnění pro toto spojení"
+msgstr "Upravit pokročilá oprávnění pro toto připojení"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:67
@@ -1229,13 +1229,13 @@ msgid ""
 "but IPv6 configuration succeeds"
 msgstr ""
 "Umožňuje dokončení připojení, pokud selže nastavení IPv4,\n"
-"ale nastavení IPv6 je úspěšné."
+"ale nastavení IPv6 je úspěšné"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:285
 #, kde-format
 msgid "IPv4 is required for this connection"
-msgstr "Pro spojení je potřeba IPv4"
+msgstr "Pro připojení je potřeba IPv4"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
 #: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
@@ -1252,13 +1252,13 @@ msgid ""
 "IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
 "Při připojení k sítím podporujícím IPv4 umožňuje dokončení připojení, pokud\n"
-"nastavení IPv6 selže, ale nastavení IPv4 proběhne úspěšně."
+"nastavení IPv6 selže, ale nastavení IPv4 proběhne úspěšně"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:33
 #, kde-format
 msgid "IPv6 is required for this connection"
-msgstr "Pro spojení je potřeba IPv6"
+msgstr "Pro připojení je potřeba IPv6"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv6.ui:83
@@ -1414,7 +1414,7 @@ msgstr ""
 #: editor/settings/ui/team.ui:31
 #, kde-format
 msgid "Teamed connections:"
-msgstr "Svázaná spojení:"
+msgstr "Svázaná připojení:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/team.ui:113
@@ -1564,7 +1564,7 @@ msgid ""
 "a Wi-Fi network on the specified channel"
 msgstr ""
 "Bezdrátový kanál, který se použije pro připojení Wi-Fi. Zařízení se připojí\n"
-"(nebo vytvoří pro sítě Ad-Hoc) pouze k síti Wi-Fi na zadaném kanálu."
+"(nebo vytvoří pro sítě Ad-Hoc) pouze k síti Wi-Fi na zadaném kanálu"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:209
@@ -1585,7 +1585,7 @@ msgstr "Náhodné…"
 #: editor/settings/ui/wificonnectionwidget.ui:303
 #, kde-format
 msgid "Mark this if you want to create a connection for a hidden network"
-msgstr "Označte, pokud chcete vytvořit spojení do skryté sítě"
+msgstr "Označte, pokud chcete vytvořit připojení do skryté sítě"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:290
@@ -1786,7 +1786,7 @@ msgstr "Plný"
 #: editor/settings/ui/wiredconnectionwidget.ui:174
 #, kde-format
 msgid "Link negotiation:"
-msgstr "Vyjednávání spojení:"
+msgstr "Vyjednávání připojení:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:188
@@ -1878,7 +1878,7 @@ msgstr "100 Gb/s"
 #: editor/settings/ui/wiredsecurity.ui:17
 #, kde-format
 msgid "Use 802.1x security for this connection"
-msgstr "Použít zabezpečení 802.1x pro toto spojení"
+msgstr "Použít zabezpečení 802.1x pro toto připojení"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
 #: editor/settings/ui/wireguardinterfacewidget.ui:14
@@ -2094,7 +2094,7 @@ msgstr ""
 #: editor/settings/ui/wireguardpeerwidget.ui:109
 #, kde-format
 msgid "Persistent keepalive:"
-msgstr "Trvalé udržování spojení:"
+msgstr "Trvalé udržování připojení:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:127
@@ -2120,7 +2120,7 @@ msgstr ""
 "firewallu nebo NAT mapování. Například pokud rozhraní\n"
 "velmi zřídka odesílá provoz, ale může kdykoli přijímat provoz\n"
 "od protějšku a je za NAT, může být pro rozhraní výhodné mít\n"
-"trvalý interval udržování spojení 25 sekund. Pokud je\n"
+"trvalý interval udržování připojení 25 sekund. Pokud je\n"
 "nastavena na 0 nebo „vypnuto“, je tato možnost deaktivována.\n"
 "Ve výchozím nastavení nebo pokud není specifikováno, je tato\n"
 "možnost vypnuta. Většina uživatelů ji nebude potřebovat."
@@ -2249,7 +2249,7 @@ msgstr "WireGuard VPN"
 #: editor/uiutils.cpp:239
 #, kde-format
 msgid "Unknown connection type"
-msgstr "Neznámý typ spojení"
+msgstr "Neznámý typ připojení"
 
 #: editor/uiutils.cpp:251
 #, kde-format
@@ -2314,7 +2314,7 @@ msgstr "Nepřipojeno"
 #, kde-format
 msgctxt "description of preparing to connect network interface state"
 msgid "Preparing to connect"
-msgstr "Probíhá příprava spojení"
+msgstr "Probíhá příprava připojení"
 
 #: editor/uiutils.cpp:297
 #, kde-format
@@ -2338,14 +2338,14 @@ msgstr "Nastavuje se adresa sítě"
 #, kde-format
 msgctxt "is other action required to fully connect? captive portals, etc."
 msgid "Checking further connectivity"
-msgstr "Kontroluji další požadavky spojení"
+msgstr "Kontroluji další požadavky připojení"
 
 #: editor/uiutils.cpp:309
 #, kde-format
 msgctxt ""
 "a secondary connection (e.g. VPN) has to be activated first to continue"
 msgid "Waiting for a secondary connection"
-msgstr "Čeká se na sekundární spojení"
+msgstr "Čeká se na sekundární připojení"
 
 #: editor/uiutils.cpp:313
 #, kde-format
@@ -2363,13 +2363,13 @@ msgstr "Připojen k %1"
 #, kde-format
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
-msgstr "Vypínání spojení"
+msgstr "Vypínání připojení"
 
 #: editor/uiutils.cpp:322
 #, kde-format
 msgctxt "network interface connection failed state label"
 msgid "Connection Failed"
-msgstr "Spojení selhalo"
+msgstr "Připojení selhalo"
 
 #: editor/uiutils.cpp:325 editor/uiutils.cpp:359
 #, kde-format
@@ -2387,7 +2387,7 @@ msgstr "Neznámý"
 #, kde-format
 msgctxt "The VPN connection is preparing to connect"
 msgid "Preparing to connect"
-msgstr "Probíhá příprava spojení"
+msgstr "Probíhá příprava připojení"
 
 #: editor/uiutils.cpp:341
 #, kde-format
@@ -2919,7 +2919,7 @@ msgstr "Nikdy nepoužito"
 #: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
-msgstr "Pro typ %1 nebyl nalezen žádný modul VPN."
+msgstr "Pro typ %1 nebyl nalezen žádný modul VPN"
 
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
@@ -2981,7 +2981,7 @@ msgstr "Metrika"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "New Mobile Broadband Connection"
-msgstr "Nové mobilní spojení"
+msgstr "Nové mobilní připojení"
 
 #: editor/widgets/mobileconnectionwizard.cpp:135
 #: editor/widgets/mobileconnectionwizard.cpp:153
@@ -3015,7 +3015,7 @@ msgstr "APN: %1"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Set up a Mobile Broadband Connection"
-msgstr "Nastavit mobilní spojení"
+msgstr "Nastavit mobilní připojení"
 
 #: editor/widgets/mobileconnectionwizard.cpp:240
 #, kde-format
@@ -3054,7 +3054,7 @@ msgstr "(v některých případech) APN (název přístupového bodu) vašeho ta
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Create a connection for &this mobile broadband device:"
-msgstr "Vy&tvořit spojení pro toto mobilní širokopásmové zařízení:"
+msgstr "Vy&tvořit připojení pro toto mobilní širokopásmové zařízení:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:258
 #: editor/widgets/mobileconnectionwizard.cpp:385
@@ -3199,7 +3199,7 @@ msgstr "Vždy se dotázat na toto heslo"
 #: editor/widgets/passwordfield.cpp:106
 #, kde-format
 msgid "This password is not required"
-msgstr "Toto heslo není vyžadováno."
+msgstr "Toto heslo není vyžadováno"
 
 #: editor/widgets/ssidcombobox.cpp:131
 #, kde-format
@@ -3250,7 +3250,7 @@ msgstr "Uživatelské jméno"
 #: editor/widgets/ui/advancedpermissionswidget.ui:160
 #, kde-format
 msgid "Users allowed to activate the connection"
-msgstr "Uživatelé oprávnění aktivovat spojení"
+msgstr "Uživatelé oprávnění aktivovat připojení"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
 #: editor/widgets/ui/ipv4routes.ui:20
@@ -3266,7 +3266,7 @@ msgid ""
 "connection"
 msgstr ""
 "Pokud je tato možnost povolena, nebude toto připojení nikdy použito jako "
-"výchozí síťové připojení."
+"výchozí síťové připojení"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
@@ -3296,7 +3296,7 @@ msgid ""
 "specified above are used"
 msgstr ""
 "Pokud je tato volba povolena, automaticky nakonfigurované trasy jsou "
-"ignorovány a používají se pouze trasy uvedené výše."
+"ignorovány a používají se pouze trasy uvedené výše"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
@@ -3320,7 +3320,7 @@ msgstr "Odstr&anit"
 #: handler.cpp:111
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "Podpora spojení '%1' VPN v Plasma chybí."
+msgstr "Podpora připojení '%1' VPN v Plasma chybí."
 
 #: handler.cpp:113
 #, kde-format
@@ -3340,12 +3340,12 @@ msgstr "Instalovat"
 #: handler.cpp:353 handler.cpp:846
 #, kde-format
 msgid "Failed to add connection %1"
-msgstr "Selhalo přidání spojení %1"
+msgstr "Selhalo přidání připojení %1"
 
 #: handler.cpp:362 handler.cpp:888
 #, kde-format
 msgid "Connection %1 has been added"
-msgstr "Spojení %1 bylo přidáno"
+msgstr "Připojení %1 bylo přidáno"
 
 #: handler.cpp:838
 #, kde-format
@@ -3370,7 +3370,7 @@ msgstr "Selhalo odstranění %1"
 #: handler.cpp:858
 #, kde-format
 msgid "Failed to update connection %1"
-msgstr "Selhala aktualizace spojení %1"
+msgstr "Selhala aktualizace připojení %1"
 
 #: handler.cpp:869
 #, kde-format
@@ -3380,12 +3380,12 @@ msgstr "Nepovedlo se vytvořit hotspot %1"
 #: handler.cpp:892
 #, kde-format
 msgid "Connection %1 has been removed"
-msgstr "Spojení %1 bylo odstraněno"
+msgstr "Připojení %1 bylo odstraněno"
 
 #: handler.cpp:896
 #, kde-format
 msgid "Connection %1 has been updated"
-msgstr "Spojení %1 bylo aktualizováno"
+msgstr "Připojení %1 bylo aktualizováno"
 
 #: models/creatableconnectionsmodel.cpp:136
 #: models/creatableconnectionsmodel.cpp:143
@@ -3446,7 +3446,7 @@ msgstr "Wi-Fi (sdílené)"
 #: models/creatableconnectionsmodel.cpp:221
 #, kde-format
 msgid "Virtual connections"
-msgstr "Virtuální spojení"
+msgstr "Virtuální připojení"
 
 #: models/creatableconnectionsmodel.cpp:192
 #: models/creatableconnectionsmodel.cpp:202
@@ -3468,12 +3468,12 @@ msgstr "Popis některé vlan"
 #: models/creatableconnectionsmodel.cpp:255
 #, kde-format
 msgid "VPN connections"
-msgstr "Spojení VPN"
+msgstr "Připojení VPN"
 
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
-msgstr "Importovat spojení VPN…"
+msgstr "Importovat připojení VPN…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format

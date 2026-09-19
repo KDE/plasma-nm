@@ -8,16 +8,16 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:47+0000\n"
-"PO-Revision-Date: 2026-09-16 12:13+0200\n"
-"Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
+"POT-Creation-Date: 2026-09-19 00:47+0000\n"
+"PO-Revision-Date: 2026-09-18 11:12+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Poedit 3.9\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -54,7 +54,7 @@ msgstr ""
 #: cellular/cellularmodem.cpp:482
 #, kde-format
 msgid "Error adding connection: %1"
-msgstr "Chyba při přidávání spojení: %1"
+msgstr "Chyba při přidávání připojení: %1"
 
 #: cellular/cellularmodem.cpp:502
 #, kde-format
@@ -528,7 +528,7 @@ msgstr "Typ zabezpečení"
 #: editor/connectiondetails.cpp:155
 #, kde-format
 msgid "Connection Speed"
-msgstr "Rychlost spojení"
+msgstr "Rychlost připojení"
 
 #: editor/connectiondetails.cpp:162 editor/connectiondetails.cpp:164
 #, kde-format
@@ -786,7 +786,7 @@ msgstr "PPP"
 #: editor/connectioneditorbase.cpp:304
 #, kde-format
 msgid "WireGuard Interface"
-msgstr "Rozhraní WireGuard:"
+msgstr "Rozhraní WireGuard"
 
 #: editor/connectioneditorbase.cpp:317
 #, kde-format
@@ -801,23 +801,23 @@ msgstr "Selhalo získávání přístupu pro %1"
 #: editor/connectioneditordialog.cpp:36
 #, kde-format
 msgid "New Connection (%1)"
-msgstr "Nové spojení (%1)"
+msgstr "Nové připojení (%1)"
 
 #: editor/connectioneditordialog.cpp:38
 #, kde-format
 msgid "Edit Connection '%1'"
-msgstr "Upravit spojení '%1'"
+msgstr "Upravit připojení '%1'"
 
 #: editor/connectioneditortabwidget.cpp:58
 #, kde-format
 msgid "New %1 connection"
-msgstr "Nové spojení %1"
+msgstr "Nové připojení %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/connectioneditortabwidget.ui:20
 #, kde-format
 msgid "Connection name:"
-msgstr "Název spojení:"
+msgstr "Název připojení:"
 
 #: editor/settings/bondwidget.cpp:39
 #, kde-format
@@ -882,13 +882,13 @@ msgstr "ARP"
 #: editor/settings/teamwidget.cpp:182
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
-msgstr "Opravdu si přejete smazat spojení '%1'?"
+msgstr "Opravdu si přejete smazat připojení '%1'?"
 
 #: editor/settings/bondwidget.cpp:245 editor/settings/bridgewidget.cpp:194
 #: editor/settings/teamwidget.cpp:183
 #, kde-format
 msgid "Remove Connection"
-msgstr "Odstranit spojení"
+msgstr "Odstranit připojení"
 
 #: editor/settings/bridgewidget.cpp:36 editor/settings/teamwidget.cpp:45
 #: editor/uiutils.cpp:215
@@ -985,7 +985,7 @@ msgstr "Odeslat název hostitele:"
 #: editor/settings/ipv4widget.cpp:435 editorqml/qml/ipv4/IPv4Advance.qml:53
 #, kde-format
 msgid "DHCP hostname:"
-msgstr "Název hostitele DHCP"
+msgstr "Název hostitele DHCP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:191
@@ -1138,8 +1138,9 @@ msgstr "Chráněný EAP (PEAP)"
 #: editor/settings/ui/802-1x.ui:542 editor/settings/ui/802-1x.ui:684
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
 #: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:207
-#: editorqml/qml/vpn/sstp/Sstp.qml:43
+#: editorqml/qml/vpn/l2tp/L2tp.qml:59 editorqml/qml/vpn/sstp/Sstp.qml:43
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:265
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:137
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:26
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:173
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapLeap.qml:25
@@ -1169,12 +1170,14 @@ msgstr "Uživatelské jméno:"
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:25
 #: editorqml/qml/vpn/iodine/Iodine.qml:51
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:23
+#: editorqml/qml/vpn/l2tp/L2tp.qml:78
 #, kde-format
 msgid "Password:"
 msgstr "Heslo:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/802-1x.ui:121
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:65
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:23
 #, kde-format
 msgid "Identity:"
@@ -1262,6 +1265,7 @@ msgstr "Připojit se pouze k těmto serverům:"
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
 #: editor/settings/ui/802-1x.ui:247
 #: editor/settings/ui/wireguardinterfacewidget.ui:41
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:108
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:152
 #, kde-format
 msgid "Private key:"
@@ -1341,6 +1345,7 @@ msgstr "GTC"
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
 #: editor/settings/ui/802-1x.ui:432 editor/settings/ui/802-1x.ui:529
 #: editor/settings/ui/802-1x.ui:666 editor/settings/ui/ppp.ui:68
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:100
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:113
 #, kde-format
 msgid "MSCHAPv2"
@@ -1349,6 +1354,7 @@ msgstr "MSCHAPv2"
 #. i18n: ectx: property (text), widget (QCheckBox, pap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:519 editor/settings/ui/ppp.ui:58
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:73
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:92
 #, kde-format
 msgid "PAP"
@@ -1357,6 +1363,7 @@ msgstr "PAP"
 #. i18n: ectx: property (text), widget (QCheckBox, mschap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:524 editor/settings/ui/ppp.ui:48
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:91
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:106
 #, kde-format
 msgid "MSCHAP"
@@ -1365,6 +1372,7 @@ msgstr "MSCHAP"
 #. i18n: ectx: property (text), widget (QCheckBox, chap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:534 editor/settings/ui/ppp.ui:78
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:82
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:99
 #, kde-format
 msgid "CHAP"
@@ -1411,7 +1419,7 @@ msgstr "Název rozhraní:"
 #: editor/settings/ui/bond.ui:34
 #, kde-format
 msgid "Bonded connections:"
-msgstr "Svázaná spojení"
+msgstr "Svázaná připojení:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
@@ -1446,7 +1454,7 @@ msgstr "Režim:"
 #: editor/settings/ui/bond.ui:130
 #, kde-format
 msgid "Link monitoring:"
-msgstr "Monitorování spojení:"
+msgstr "Monitorování připojení:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bond.ui:150
@@ -1491,7 +1499,7 @@ msgstr "Adresa nebo seznam IP adres oddělený čárkou."
 #: editor/settings/ui/bridge.ui:31
 #, kde-format
 msgid "Bridged connections:"
-msgstr "Přemostěná spojení:"
+msgstr "Přemostěná připojení:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bridge.ui:107
@@ -1590,7 +1598,7 @@ msgstr "Všichni uživatelé se smějí připojit k této síti"
 #: editor/settings/ui/connectionwidget.ui:63
 #, kde-format
 msgid "Edit advanced permissions for this connection"
-msgstr "Upravit pokročilá oprávnění pro toto spojení"
+msgstr "Upravit pokročilá oprávnění pro toto připojení"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:66
@@ -1677,6 +1685,7 @@ msgstr "Základní"
 #. i18n: ectx: property (title), widget (QGroupBox, advGroup)
 #. i18n: ectx: property (text), widget (QLabel, advancedSectionLabel)
 #: editor/settings/ui/gsm.ui:84 editor/settings/ui/wificonnectionwidget.ui:112
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:208
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:90
 #, kde-format
 msgid "Advanced"
@@ -1728,6 +1737,7 @@ msgstr "Omezit na zařízení:"
 #: editor/settings/ui/wificonnectionwidget.ui:301
 #: editor/settings/ui/wiredconnectionwidget.ui:89
 #: editor/settings/ui/wireguardinterfacewidget.ui:89
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:276
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:219
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:85
 #, kde-format
@@ -1809,6 +1819,7 @@ msgstr "DNS servery:"
 #: editor/settings/ui/ipv4.ui:152 editor/settings/ui/ipv6.ui:49
 #: editorqml/qml/ipv4/IPv4Settings.qml:26
 #: editorqml/qml/ipv6/IPv6Settings.qml:26
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:78
 #, kde-format
 msgid "Method:"
 msgstr "Metoda:"
@@ -1941,13 +1952,13 @@ msgid ""
 "but IPv6 configuration succeeds"
 msgstr ""
 "Umožňuje dokončení připojení, pokud selže nastavení IPv4,\n"
-"ale nastavení IPv6 je úspěšné."
+"ale nastavení IPv6 je úspěšné"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:333 editorqml/qml/ipv4/IPv4Settings.qml:302
 #, kde-format
 msgid "IPv4 is required for this connection"
-msgstr "Pro spojení je potřeba IPv4"
+msgstr "Pro připojení je potřeba IPv4"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/ipv4.ui:345 editor/settings/ui/ipv6.ui:107
@@ -1993,13 +2004,13 @@ msgid ""
 "IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
 "Při připojení k sítím podporujícím IPv4 umožňuje dokončení připojení, pokud\n"
-"nastavení IPv6 selže, ale nastavení IPv4 proběhne úspěšně."
+"nastavení IPv6 selže, ale nastavení IPv4 proběhne úspěšně"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:33 editorqml/qml/ipv6/IPv6Settings.qml:320
 #, kde-format
 msgid "IPv6 is required for this connection"
-msgstr "Pro spojení je potřeba IPv6"
+msgstr "Pro připojení je potřeba IPv6"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv6.ui:83 editorqml/qml/ipv4/IPv4Settings.qml:73
@@ -2090,19 +2101,24 @@ msgstr "Soukromí:"
 #: editor/settings/ui/ppp.ui:23
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:43
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:34
-#: editorqml/qml/vpn/ssh/Ssh.qml:136 editorqml/qml/vpn/sstp/SstpAdvanced.qml:81
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:57 editorqml/qml/vpn/ssh/Ssh.qml:136
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:81
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:74
 #, kde-format
 msgid "Authentication"
 msgstr "Ověření"
 
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
-#: editor/settings/ui/ppp.ui:38 editorqml/qml/vpn/sstp/SstpAdvanced.qml:120
+#: editor/settings/ui/ppp.ui:38 editorqml/qml/vpn/l2tp/L2tpPpp.qml:109
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:120
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "EAP"
 msgstr "EAP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
-#: editor/settings/ui/ppp.ui:91 editorqml/qml/vpn/sstp/SstpAdvanced.qml:165
+#: editor/settings/ui/ppp.ui:91 editorqml/qml/vpn/l2tp/L2tpPpp.qml:161
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:165
 #, kde-format
 msgid "Compression"
 msgstr "Komprese"
@@ -2144,13 +2160,15 @@ msgid "Use stateful MPPE"
 msgstr "Použít stavové MPPE"
 
 #. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
-#: editor/settings/ui/ppp.ui:175 editorqml/qml/vpn/sstp/SstpAdvanced.qml:191
+#: editor/settings/ui/ppp.ui:175 editorqml/qml/vpn/l2tp/L2tpPpp.qml:215
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:191
 #, kde-format
 msgid "Echo"
 msgstr "Echo"
 
 #. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
-#: editor/settings/ui/ppp.ui:184 editorqml/qml/vpn/sstp/SstpAdvanced.qml:195
+#: editor/settings/ui/ppp.ui:184 editorqml/qml/vpn/l2tp/L2tpPpp.qml:220
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:195
 #, kde-format
 msgid "Send PPP echo packets"
 msgstr "Posílat pakety PPP echo"
@@ -2180,7 +2198,7 @@ msgstr ""
 #: editor/settings/ui/team.ui:31
 #, kde-format
 msgid "Teamed connections:"
-msgstr "Svázaná spojení:"
+msgstr "Svázaná připojení:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/team.ui:113
@@ -2241,7 +2259,7 @@ msgstr "Volná vazba"
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:27
 #, kde-format
 msgid "Connection"
-msgstr "Spojení"
+msgstr "Připojení"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:39
@@ -2364,7 +2382,7 @@ msgid ""
 "a Wi-Fi network on the specified channel"
 msgstr ""
 "Bezdrátový kanál, který se použije pro připojení Wi-Fi. Zařízení se připojí\n"
-"(nebo vytvoří pro sítě Ad-Hoc) pouze k síti Wi-Fi na zadaném kanálu."
+"(nebo vytvoří pro sítě Ad-Hoc) pouze k síti Wi-Fi na zadaném kanálu"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:232
@@ -2649,7 +2667,7 @@ msgstr "Plný"
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:111
 #, kde-format
 msgid "Link negotiation:"
-msgstr "Vyjednávání spojení:"
+msgstr "Vyjednávání připojení:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:188
@@ -2750,7 +2768,7 @@ msgstr "100 Gb/s"
 #: editorqml/qml/wifisecurity/WiredSecurityForm.qml:28
 #, kde-format
 msgid "Use 802.1x security for this connection"
-msgstr "Použít zabezpečení 802.1x pro toto spojení"
+msgstr "Použít zabezpečení 802.1x pro toto připojení"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
 #: editor/settings/ui/wireguardinterfacewidget.ui:14
@@ -2976,7 +2994,7 @@ msgstr ""
 #: editor/settings/ui/wireguardpeerwidget.ui:109
 #, kde-format
 msgid "Persistent keepalive:"
-msgstr "Trvalé udržování spojení:"
+msgstr "Trvalé udržování připojení:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:127
@@ -3002,7 +3020,7 @@ msgstr ""
 "firewallu nebo NAT mapování. Například pokud rozhraní\n"
 "velmi zřídka odesílá provoz, ale může kdykoli přijímat provoz\n"
 "od protějšku a je za NAT, může být pro rozhraní výhodné mít\n"
-"trvalý interval udržování spojení 25 sekund. Pokud je\n"
+"trvalý interval udržování připojení 25 sekund. Pokud je\n"
 "nastavena na 0 nebo „vypnuto“, je tato možnost deaktivována.\n"
 "Ve výchozím nastavení nebo pokud není specifikováno, je tato\n"
 "možnost vypnuta. Většina uživatelů ji nebude potřebovat."
@@ -3149,7 +3167,7 @@ msgstr "Loopback"
 #: editor/uiutils.cpp:240
 #, kde-format
 msgid "Unknown connection type"
-msgstr "Neznámý typ spojení"
+msgstr "Neznámý typ připojení"
 
 #: editor/uiutils.cpp:252
 #, kde-format
@@ -3219,7 +3237,7 @@ msgstr "Nepřipojeno"
 #, kde-format
 msgctxt "description of preparing to connect network interface state"
 msgid "Preparing to connect"
-msgstr "Probíhá příprava spojení"
+msgstr "Probíhá příprava připojení"
 
 #: editor/uiutils.cpp:301
 #, kde-format
@@ -3243,14 +3261,14 @@ msgstr "Nastavuje se adresa sítě"
 #, kde-format
 msgctxt "is other action required to fully connect? captive portals, etc."
 msgid "Checking further connectivity"
-msgstr "Kontroluji další požadavky spojení"
+msgstr "Kontroluji další požadavky připojení"
 
 #: editor/uiutils.cpp:313
 #, kde-format
 msgctxt ""
 "a secondary connection (e.g. VPN) has to be activated first to continue"
 msgid "Waiting for a secondary connection"
-msgstr "Čeká se na sekundární spojení"
+msgstr "Čeká se na sekundární připojení"
 
 #: editor/uiutils.cpp:317
 #, kde-format
@@ -3268,13 +3286,13 @@ msgstr "Připojen k %1"
 #, kde-format
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
-msgstr "Vypínání spojení"
+msgstr "Vypínání připojení"
 
 #: editor/uiutils.cpp:326
 #, kde-format
 msgctxt "network interface connection failed state label"
 msgid "Connection Failed"
-msgstr "Spojení selhalo"
+msgstr "Připojení selhalo"
 
 #: editor/uiutils.cpp:329 editor/uiutils.cpp:363
 #, kde-format
@@ -3292,7 +3310,7 @@ msgstr "Neznámý"
 #, kde-format
 msgctxt "The VPN connection is preparing to connect"
 msgid "Preparing to connect"
-msgstr "Probíhá příprava spojení"
+msgstr "Probíhá příprava připojení"
 
 #: editor/uiutils.cpp:345
 #, kde-format
@@ -3794,7 +3812,7 @@ msgstr "Nikdy nepoužito"
 #: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
-msgstr "Pro typ %1 nebyl nalezen žádný modul VPN."
+msgstr "Pro typ %1 nebyl nalezen žádný modul VPN"
 
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
@@ -3856,7 +3874,7 @@ msgstr "Metrika"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "New Mobile Broadband Connection"
-msgstr "Nové mobilní spojení"
+msgstr "Nové mobilní připojení"
 
 #: editor/widgets/mobileconnectionwizard.cpp:135
 #: editor/widgets/mobileconnectionwizard.cpp:153
@@ -3890,7 +3908,7 @@ msgstr "APN: %1"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Set up a Mobile Broadband Connection"
-msgstr "Nastavit mobilní spojení"
+msgstr "Nastavit mobilní připojení"
 
 #: editor/widgets/mobileconnectionwizard.cpp:240
 #, kde-format
@@ -3929,7 +3947,7 @@ msgstr "(v některých případech) APN (název přístupového bodu) vašeho ta
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Create a connection for &this mobile broadband device:"
-msgstr "Vy&tvořit spojení pro toto mobilní širokopásmové zařízení:"
+msgstr "Vy&tvořit připojení pro toto mobilní širokopásmové zařízení:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:258
 #: editor/widgets/mobileconnectionwizard.cpp:385
@@ -4075,7 +4093,7 @@ msgstr "Vždy se dotázat na toto heslo"
 #: editor/widgets/passwordfield.cpp:106 editorqml/qml/PasswordField.qml:128
 #, kde-format
 msgid "This password is not required"
-msgstr "Toto heslo není vyžadováno."
+msgstr "Toto heslo není vyžadováno"
 
 #: editor/widgets/ssidcombobox.cpp:131
 #, kde-format
@@ -4126,7 +4144,7 @@ msgstr "Uživatelské jméno"
 #: editor/widgets/ui/advancedpermissionswidget.ui:160
 #, kde-format
 msgid "Users allowed to activate the connection"
-msgstr "Uživatelé oprávnění aktivovat spojení"
+msgstr "Uživatelé oprávnění aktivovat připojení"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
 #: editor/widgets/ui/ipv4routes.ui:20 editorqml/qml/ipv4/IPv4Routes.qml:18
@@ -4143,7 +4161,7 @@ msgid ""
 "connection"
 msgstr ""
 "Pokud je tato možnost povolena, nebude toto připojení nikdy použito jako "
-"výchozí síťové připojení."
+"výchozí síťové připojení"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
@@ -4175,7 +4193,7 @@ msgid ""
 "specified above are used"
 msgstr ""
 "Pokud je tato volba povolena, automaticky nakonfigurované trasy jsou "
-"ignorovány a používají se pouze trasy uvedené výše."
+"ignorovány a používají se pouze trasy uvedené výše"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123
@@ -4414,7 +4432,7 @@ msgid ""
 "configuration succeeds"
 msgstr ""
 "Umožňuje dokončení připojení, pokud selže nastavení IPv4,\n"
-"ale nastavení IPv6 je úspěšné."
+"ale nastavení IPv6 je úspěšné"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:326
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:139
@@ -4542,7 +4560,7 @@ msgid ""
 "if IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
 "Při připojení k sítím podporujícím IPv4 umožňuje dokončení připojení, pokud\n"
-"nastavení IPv6 selže, ale nastavení IPv4 proběhne úspěšně."
+"nastavení IPv6 selže, ale nastavení IPv4 proběhne úspěšně"
 
 #: editorqml/qml/PasswordField.qml:106
 #, kde-format
@@ -4591,8 +4609,10 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "Heslo musí mít délku 8 až 64 znaků"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:30
+#: editorqml/qml/vpn/l2tp/L2tp.qml:30
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:24
 #: editorqml/qml/vpn/ssh/Ssh.qml:34 editorqml/qml/vpn/sstp/Sstp.qml:30
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:39
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:25
 #, kde-format
 msgid "Gateway:"
@@ -4611,6 +4631,7 @@ msgid "User name:"
 msgstr "Uživatelské jméno:"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:50
+#: editorqml/qml/vpn/l2tp/L2tp.qml:64
 #, kde-format
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
@@ -4619,12 +4640,14 @@ msgstr ""
 "<name>."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:77
+#: editorqml/qml/vpn/l2tp/L2tp.qml:106 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:93
 #: editorqml/qml/vpn/sstp/Sstp.qml:59
 #, kde-format
 msgid "CA Certificate:"
 msgstr "Certifikát CA:"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:95
+#: editorqml/qml/vpn/l2tp/L2tp.qml:130
 #, kde-format
 msgid "User Certificate:"
 msgstr "Certifikát uživatele:"
@@ -4733,11 +4756,432 @@ msgstr "%1 bajtů"
 msgid "Iodine VPN"
 msgstr "Iodine VPN"
 
-#: editorqml/qml/vpn/libreswan/Libreswan.qml:27
+#: editorqml/qml/vpn/l2tp/L2tp.qml:33
 #, fuzzy, kde-format
-#| msgid "IP/hostname of IPsec gateway."
+#| msgid "SSLVPN server IP or name."
+msgid "L2TP server IP or name."
+msgstr "IP nebo název serveru SSLVPN."
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:42
+#, fuzzy, kde-format
+#| msgid "Authentication:"
+msgid "Authentication type:"
+msgstr "Ověření:"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:45 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:82
+#, fuzzy, kde-format
+#| msgid "Key authentication"
+msgid "Select an authentication mode."
+msgstr "Ověření klíče"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/ssh/Ssh.qml:143
+#, kde-format
+msgid "Password"
+msgstr "Heslo"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
+#, fuzzy, kde-format
+#| msgid "CA Certificate:"
+msgid "Certificates (TLS)"
+msgstr "Certifikát CA:"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:92 editorqml/qml/vpn/sstp/Sstp.qml:51
+#, kde-format
+msgid "NT Domain:"
+msgstr "Doména NT:"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:97
+#, kde-format
+msgid ""
+"Append the domain name <domain> to the local host name for authentication "
+"purposes."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:115 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:102
+#, kde-format
+msgid ""
+"Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:139
+#, kde-format
+msgid "Certificate in .pem, .der, .crt, .cer or .p12 formats."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:154 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:141
+#, fuzzy, kde-format
+#| msgid "Private key:"
+msgid "Private Key:"
+msgstr "Soukromý klíč:"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:163 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:150
+#, kde-format
+msgid "Private key in .pem, .der, .key, .pk8 or .p12 formats."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:183 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:188
+#, fuzzy, kde-format
+#| msgid "Private key password:"
+msgid "Private Key Password:"
+msgstr "Heslo soukromého klíče:"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:200
+#, kde-format
+msgid "Use L2TP ephemeral source port"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:216
+#, fuzzy, kde-format
+#| msgid "IPv6 Network Settings"
+msgctxt "@action:button"
+msgid "IPsec Settings…"
+msgstr "Nastavení sítě IPv6"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:220
+#, kde-format
+msgid "No IPsec daemon (libreswan or strongSwan) was found."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:228
+#, kde-format
+msgctxt "@action:button"
+msgid "PPP Settings…"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:24
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:36
+#, fuzzy, kde-format
+#| msgid "SSTP VPN"
+msgid "L2TP VPN"
+msgstr "SSTP VPN"
+
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:25
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:152
+#: editorqml/qml/vpn/vpnc/VpncAuth.qml:50
+#, kde-format
+msgid "User Password:"
+msgstr "Heslo uživatele:"
+
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:37
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "User Certificate Password:"
+msgstr "Certifikát uživatele:"
+
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:48
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "Machine Certificate Password:"
+msgstr "Certifikát uživatele:"
+
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:59
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:171
+#, fuzzy, kde-format
+#| msgid "Preshared key:"
+msgid "Pre-shared Key:"
+msgstr "Předsdílený klíč:"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:60
+#, kde-format
+msgid "Enable IPsec tunnel to L2TP host"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:74
+#, fuzzy, kde-format
+#| msgid "Authentication"
+msgid "Machine Authentication"
+msgstr "Ověření"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:79 editorqml/qml/vpn/ssh/Ssh.qml:140
+#, kde-format
+msgid "Type:"
+msgstr "Typ:"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
+#, fuzzy, kde-format
+#| msgid "Preshared key:"
+msgid "Pre-shared Key (PSK)"
+msgstr "Předsdílený klíč:"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:117
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "Machine Certificate:"
+msgstr "Certifikát uživatele:"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:126
+#, fuzzy, kde-format
+#| msgid "CA certificate in PEM format."
+msgid "Certificate in .pem, .der or .p12 formats."
+msgstr "Certifikát CA ve formátu PEM."
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:189
+#, kde-format
+msgid "Password for private key or PKCS#12 certificate."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:213
+#, fuzzy, kde-format
+#| msgid "Remote IP Address:"
+msgid "Remote ID:"
+msgstr "Vzdálená IP adresa:"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:216
+#, kde-format
+msgid ""
+"Optional. How the IPsec server should be identified for authentication. "
+"Sometimes referred to as Peer ID or Gateway ID, also referred to as rightid "
+"by strongSwan, Libreswan, Openswan and FreeS/WAN. See strongSwan or "
+"Libreswan documentation for leftid/rightid syntax and identity parsing."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:225
+#, fuzzy, kde-format
+#| msgid "Phase1 algorithms:"
+msgid "Phase1 Algorithms:"
+msgstr "Algoritmy Phase1:"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:228
+#, kde-format
+msgid ""
+"Optional. A list of proposals for IKE - Main Mode. The format is “enc-integ-"
+"group,enc-integ-group, …”."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:237
+#, fuzzy, kde-format
+#| msgid "Phase2 algorithms:"
+msgid "Phase2 Algorithms:"
+msgstr "Algoritmy Phase2:"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:240
+#, kde-format
+msgid ""
+"Optional. A list of proposals for ESP - Quick Mode. The format is “enc-integ,"
+"enc-integ, …”."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:249
+#, fuzzy, kde-format
+#| msgid "Phase1 algorithms:"
+msgid "Phase1 Lifetime:"
+msgstr "Algoritmy Phase1:"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:251
+#, kde-format
+msgid ""
+"How long the keying channel of a connection should last before being "
+"renegotiated."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:269
+#, fuzzy, kde-format
+#| msgid "Phase2 algorithms:"
+msgid "Phase2 Lifetime:"
+msgstr "Algoritmy Phase2:"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:271
+#, kde-format
+msgid ""
+"How long a particular instance of a connection (a set of encryption/"
+"authentication keys for user packets) should last, from successful "
+"negotiation to expiry."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:291
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:183
+#, kde-format
+msgid "Enforce UDP encapsulation"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:293
+#, kde-format
+msgid ""
+"Some firewalls block ESP traffic. Enforcing UDP encapsulation even if no NAT "
+"situation is detected might help in such cases."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:304
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:192
+#, fuzzy, kde-format
+#| msgid "Use TCP header compression"
+msgid "Use IP compression"
+msgstr "Použít kompresi TCP hlaviček"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:306
+#, kde-format
+msgid ""
+"IPComp compresses raw IP packets before they get encrypted. This saves some "
+"bandwidth, but uses more processing power."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:317
+#, kde-format
+msgid "Use IKEv2 key exchange"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:328
+#, fuzzy, kde-format
+#| msgid "Disabled"
+msgid "Disable PFS"
+msgstr "Zakázáno"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
+#, kde-format
+msgid ""
+"Disable perfect forward secrecy. Enable this option only if the server "
+"doesn’t support PFS."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:40
+#, kde-format
+msgctxt "separator between hours and minutes"
+msgid ":"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:54
+#, kde-format
+msgctxt "separator between minutes and seconds"
+msgid ":"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:66
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
+#, kde-format
+msgid "Allow following authentication methods:"
+msgstr "Povolit následující metody ověření:"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:118
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
+#, kde-format
+msgid "Encryption"
+msgstr "Šifrování"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:123
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
+#, kde-format
+msgid "Use MPPE Encryption"
+msgstr "Použít &MPPE šifrování"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:130
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
+#, kde-format
+msgid "Crypto:"
+msgstr "Šifrování:"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:135
+#, fuzzy, kde-format
+#| msgid "Require 128-bit encryption"
+msgid "Require the use of MPPE, with 40/128-bit encryption or all."
+msgstr "Vyžadovat 128-bit šifrování"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
+#, kde-format
+msgctxt "like in use Any configuration"
+msgid "Any"
+msgstr "Libovolné"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
+#, kde-format
+msgid "128 bit"
+msgstr "128 bit"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
+#, kde-format
+msgid "40 bit"
+msgstr "40 bit"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:148
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
+#, kde-format
+msgid "Use stateful encryption"
+msgstr "Použít stavové šifrování"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:150
+#, kde-format
+msgid ""
+"Allow MPPE to use stateful mode. Stateless mode is still attempted first."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:166
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
+#, kde-format
+msgid "Allow BSD compression"
+msgstr "Povolit kompresi BSD"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:168
+#, fuzzy, kde-format
+#| msgid "Allow BSD compression"
+msgid "Allow/disable BSD-Compress compression."
+msgstr "Povolit kompresi BSD"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:177
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
+#, kde-format
+msgid "Allow Deflate compression"
+msgstr "Povolit kompresi Deflate"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:179
+#, fuzzy, kde-format
+#| msgid "Allow Deflate compression"
+msgid "Allow/disable Deflate compression."
+msgstr "Povolit kompresi Deflate"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:188
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
+#, kde-format
+msgid "Allow TCP header compression"
+msgstr "Povolit kompresi hlaviček TCP"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:195
+#, kde-format
+msgid "Use protocol field compression negotiation"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:202
+#, fuzzy, kde-format
+#| msgid "Use TCP header compression"
+msgid "Use Address/Control compression"
+msgstr "Použít kompresi TCP hlaviček"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:204
+#, kde-format
+msgid "Use Address/Control compression in both directions (send and receive)."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:222
+#, kde-format
+msgid "Send LCP echo-requests to find out whether peer is alive."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:233
+#, fuzzy, kde-format
+#| msgid "Network Settings"
+msgid "Other Settings"
+msgstr "Nastavení sítě"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:244
+#, kde-format
+msgid "Multilink PPP MRRU:"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:246
+#, kde-format
+msgid "Try to negotiate a PPP Multilink on a single connection."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:266
+#, kde-format
+msgid "MRU:"
+msgstr ""
+
+#: editorqml/qml/vpn/libreswan/Libreswan.qml:27
+#, kde-format
 msgid "IP or hostname of the IPsec gateway."
-msgstr "IP adresa/název hostitele brány IPsec."
+msgstr "IP adresa nebo název hostitele brány IPsec."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:36
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:26
@@ -4750,6 +5194,7 @@ msgstr "Název skupiny:"
 #, kde-format
 msgid "Group name, or local identifier, this connection belongs to."
 msgstr ""
+"Název skupiny nebo místní identifikátor, ke kterému toto připojení patří."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:51
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:39
@@ -4766,30 +5211,33 @@ msgid "Group password:"
 msgstr "Heslo skupiny:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:81
-#, fuzzy, kde-format
-#| msgid "User name for the connection."
+#, kde-format
 msgid "User name for XAUTH authentication."
-msgstr "Uživatelské jméno pro připojení."
+msgstr "Uživatelské jméno pro ověření pomocí XAUTH."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:90
 #, kde-format
 msgid "Phase1 algorithms:"
-msgstr ""
+msgstr "Algoritmy Phase1:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:93
 #, kde-format
 msgid "IKE algorithms to propose. Leave empty for the defaults."
 msgstr ""
+"Navrhnout algoritmy IKE. Pokud chcete použít výchozí nastavení, ponechte "
+"pole prázdné."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:102
 #, kde-format
 msgid "Phase2 algorithms:"
-msgstr ""
+msgstr "Algoritmy Phase2:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:105
 #, kde-format
 msgid "ESP algorithms to propose. Leave empty for the defaults."
 msgstr ""
+"Navrhované algoritmy ESP. Pokud chcete použít výchozí nastavení, ponechte "
+"pole prázdné."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:117
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:41
@@ -4798,10 +5246,9 @@ msgid "(NT-)Domain name for authentication."
 msgstr "(NT-)Doménové jméno pro ověření."
 
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:38
-#, fuzzy, kde-format
-#| msgid "WireGuard VPN"
+#, kde-format
 msgid "Libreswan VPN"
-msgstr "WireGuard VPN"
+msgstr "Libreswan VPN"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, kde-format
@@ -4838,20 +5285,10 @@ msgstr "Použít IPv6"
 msgid "Prefix:"
 msgstr "Předpona:"
 
-#: editorqml/qml/vpn/ssh/Ssh.qml:140
-#, kde-format
-msgid "Type:"
-msgstr "Typ:"
-
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "SSH Agent"
 msgstr "Agent SSH"
-
-#: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, kde-format
-msgid "Password"
-msgstr "Heslo"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
@@ -4914,11 +5351,6 @@ msgstr "SSH VPN"
 msgid "Optional"
 msgstr "Volitelné"
 
-#: editorqml/qml/vpn/sstp/Sstp.qml:51
-#, kde-format
-msgid "NT Domain:"
-msgstr "Doména NT:"
-
 #: editorqml/qml/vpn/sstp/Sstp.qml:79
 #, kde-format
 msgid "Ignore certificate warnings"
@@ -4934,66 +5366,10 @@ msgstr "Point to Point"
 msgid "Proxy"
 msgstr "Proxy"
 
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
-#, kde-format
-msgid "Allow following authentication methods:"
-msgstr "Povolit následující metody ověření:"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
-#, kde-format
-msgid "Encryption"
-msgstr "Šifrování"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
-#, kde-format
-msgid "Use MPPE Encryption"
-msgstr "Použít &MPPE šifrování"
-
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
 #, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
 msgstr "Použít šifrování Microsoft Point-to-Point"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
-#, kde-format
-msgid "Crypto:"
-msgstr "Šifrování:"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, kde-format
-msgctxt "like in use Any configuration"
-msgid "Any"
-msgstr "Libovolné"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, kde-format
-msgid "128 bit"
-msgstr "128 bit"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, kde-format
-msgid "40 bit"
-msgstr "40 bit"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
-#, kde-format
-msgid "Use stateful encryption"
-msgstr "Použít stavové šifrování"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
-#, kde-format
-msgid "Allow BSD compression"
-msgstr "Povolit kompresi BSD"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
-#, kde-format
-msgid "Allow Deflate compression"
-msgstr "Povolit kompresi Deflate"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
-#, kde-format
-msgid "Allow TCP header compression"
-msgstr "Povolit kompresi hlaviček TCP"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
 #, kde-format
@@ -5024,6 +5400,110 @@ msgstr "Přihlašovací údaje"
 #, kde-format
 msgid "SSTP VPN"
 msgstr "SSTP VPN"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:35
+#, fuzzy, kde-format
+#| msgctxt "Header text for IPv4 gateway"
+#| msgid "Gateway"
+msgid "Gateway"
+msgstr "Brána"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:47
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:88
+#, fuzzy, kde-format
+#| msgid "CA Certificate:"
+msgid "Certificate:"
+msgstr "Certifikát CA:"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#, kde-format
+msgid "Certificate/private key"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#, fuzzy, kde-format
+#| msgid "CA Certificate:"
+msgid "Certificate/ssh-agent"
+msgstr "Certifikát CA:"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#, kde-format
+msgid "Smartcard"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#, kde-format
+msgid "EAP-TTLS"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:132
+#, fuzzy, kde-format
+#| msgid "Ask for a one-time password every time this connection is activated."
+msgid "The PIN is asked for when the connection is activated."
+msgstr "Při každém navázání tohoto připojení si vyžádat jednorázové heslo."
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:168
+#, fuzzy, kde-format
+#| msgid "Optional"
+msgid "Options"
+msgstr "Volitelné"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:174
+#, fuzzy, kde-format
+#| msgid "Remote IP Address:"
+msgid "Request an inner IP address"
+msgstr "Vzdálená IP adresa:"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:201
+#, kde-format
+msgid "Enable Custom Cipher Proposals"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:208
+#, kde-format
+msgid "IKE:"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:213
+#, kde-format
+msgid "A list of proposals for IKE separated by \";\""
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:222
+#, kde-format
+msgid "ESP:"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:227
+#, kde-format
+msgid "A list of proposals for ESP separated by \";\""
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:28
+#, kde-format
+msgid "strongSwan VPN"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:33
+#, fuzzy, kde-format
+#| msgid "Private key password:"
+msgctxt "@label:textbox password label for private key password"
+msgid "Private Key Password:"
+msgstr "Heslo soukromého klíče:"
+
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:35
+#, fuzzy, kde-format
+#| msgid "PIN:"
+msgctxt "@label:textbox password label for smartcard pin"
+msgid "PIN:"
+msgstr "PIN:"
+
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:37
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@label:textbox password label for EAP password"
+msgid "Password:"
+msgstr "Heslo:"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:28
 #, kde-format
@@ -5257,11 +5737,6 @@ msgstr "Zakázat odesílání paketů DPD (nastavit časový limit na 0)."
 #, kde-format
 msgid "VPNC Authentication"
 msgstr "Ověřování VPNC"
-
-#: editorqml/qml/vpn/vpnc/VpncAuth.qml:50
-#, kde-format
-msgid "User Password:"
-msgstr "Heslo uživatele:"
 
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:61
 #, kde-format
@@ -5550,7 +6025,7 @@ msgstr "Automaticky"
 #: handler.cpp:142
 #, kde-format
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "Podpora spojení '%1' VPN v Plasma chybí."
+msgstr "Podpora připojení '%1' VPN v Plasma chybí."
 
 #: handler.cpp:145
 #, kde-format
@@ -5575,12 +6050,12 @@ msgstr "Selhala aktivace '%1'"
 #: handler.cpp:391 handler.cpp:420
 #, kde-format
 msgid "Failed to add connection %1"
-msgstr "Selhalo přidání spojení %1"
+msgstr "Selhalo přidání připojení %1"
 
 #: handler.cpp:398 handler.cpp:429
 #, kde-format
 msgid "Connection %1 has been added"
-msgstr "Spojení %1 bylo přidáno"
+msgstr "Připojení %1 bylo přidáno"
 
 #: handler.cpp:468
 #, kde-format
@@ -5600,17 +6075,17 @@ msgstr "Selhalo odstranění %1"
 #: handler.cpp:653
 #, kde-format
 msgid "Connection %1 has been removed"
-msgstr "Spojení %1 bylo odstraněno"
+msgstr "Připojení %1 bylo odstraněno"
 
 #: handler.cpp:672
 #, kde-format
 msgid "Failed to update connection %1"
-msgstr "Selhala aktualizace spojení %1"
+msgstr "Selhala aktualizace připojení %1"
 
 #: handler.cpp:679
 #, kde-format
 msgid "Connection %1 has been updated"
-msgstr "Spojení %1 bylo aktualizováno"
+msgstr "Připojení %1 bylo aktualizováno"
 
 #: handler.cpp:885
 #, kde-format
@@ -5671,7 +6146,7 @@ msgstr "Wi-Fi (sdílené)"
 #: models/creatableconnectionsmodel.cpp:221
 #, kde-format
 msgid "Virtual connections"
-msgstr "Virtuální spojení"
+msgstr "Virtuální připojení"
 
 #: models/creatableconnectionsmodel.cpp:192
 #: models/creatableconnectionsmodel.cpp:202
@@ -5693,12 +6168,12 @@ msgstr "Popis některé vlan"
 #: models/creatableconnectionsmodel.cpp:255
 #, kde-format
 msgid "VPN connections"
-msgstr "Spojení VPN"
+msgstr "Připojení VPN"
 
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
-msgstr "Importovat spojení VPN…"
+msgstr "Importovat připojení VPN…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format
@@ -5783,12 +6258,12 @@ msgstr "Připojování k %1"
 #: networkstatus.cpp:222
 #, kde-format
 msgid "Connected to %1 (no connectivity)"
-msgstr "Připojeno k %1 (bez spojení)"
+msgstr "Připojeno k %1 (bez připojení)"
 
 #: networkstatus.cpp:225
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
-msgstr "Připojeno k %1 (omezené spojení)"
+msgstr "Připojeno k %1 (omezené připojení)"
 
 #: networkstatus.cpp:228
 #, kde-format

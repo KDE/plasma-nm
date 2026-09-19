@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-11 00:47+0000\n"
-"PO-Revision-Date: 2026-05-17 23:52+0200\n"
+"PO-Revision-Date: 2026-09-18 11:10+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.04.1\n"
+"X-Generator: Poedit 3.9\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -324,7 +324,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConnectionRemovedReason"
 msgid "The connection was removed"
-msgstr "Spojení bylo odstraněno"
+msgstr "Připojení bylo odstraněno"
 
 #: notification.cpp:206
 #, kde-format
@@ -344,7 +344,7 @@ msgstr "Nelze najít modem"
 msgctxt ""
 "@info:status Notification when the device failed due to BluetoothFailedReason"
 msgid "The bluetooth connection failed or timed out"
-msgstr "Bluetooth spojení selhalo nebo vypršel čas"
+msgstr "Bluetooth připojení selhalo nebo vypršel čas"
 
 #: notification.cpp:218
 #, kde-format
@@ -385,7 +385,7 @@ msgstr "Zařízení InfiniBand nepodporuje připojený režim"
 msgctxt ""
 "@info:status Notification when the device failed due to DependencyFailed"
 msgid "A dependency of the connection failed"
-msgstr "Závislost spojení selhala"
+msgstr "Závislost připojení selhala"
 
 #: notification.cpp:236
 #, kde-format
@@ -407,7 +407,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "SecondaryConnectionFailed"
 msgid "A secondary connection of the base connection failed"
-msgstr "Sekundární spojení základního spojení selhalo"
+msgstr "Sekundární připojení základního připojení selhalo"
 
 #: notification.cpp:248
 #, kde-format
@@ -446,7 +446,7 @@ msgstr "SIM PIN nebyl správný"
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to NewActivation"
 msgid "A new connection activation was enqueued"
-msgstr "Aktivace nového spojení bude následovat"
+msgstr "Aktivace nového připojení bude následovat"
 
 #: notification.cpp:266
 #, kde-format
@@ -464,27 +464,27 @@ msgstr "Došlo ke změně správy rodiče zařízení"
 #: notification.cpp:349
 #, kde-format
 msgid "Connection '%1' activated."
-msgstr "Spojení '%1' aktivováno."
+msgstr "Připojení '%1' aktivováno."
 
 #: notification.cpp:377
 #, kde-format
 msgid "Connection '%1' deactivated."
-msgstr "Spojení '%1' deaktivováno."
+msgstr "Připojení '%1' deaktivováno."
 
 #: notification.cpp:436
 #, kde-format
 msgid "VPN connection '%1' activated."
-msgstr "VPN spojení '%1' aktivováno."
+msgstr "VPN připojení '%1' aktivováno."
 
 #: notification.cpp:439
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "VPN spojení '%1' se nepovedlo aktivovat."
+msgstr "VPN připojení '%1' se nepovedlo aktivovat."
 
 #: notification.cpp:442 notification.cpp:452
 #, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "VPN spojení '%1' bylo deaktivováno."
+msgstr "VPN připojení '%1' bylo deaktivováno."
 
 #: notification.cpp:455
 #, kde-format
@@ -492,35 +492,36 @@ msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
 msgstr ""
-"VPN spojení '%1' bylo deaktivováno protože zařízení, které bylo používáno "
+"VPN připojení '%1' bylo deaktivováno protože zařízení, které bylo používáno "
 "bylo odpojeno."
 
 #: notification.cpp:458
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "Služba poskytující VPN spojení '%1' byla zastavena."
+msgstr "Služba poskytující VPN připojení '%1' byla zastavena."
 
 #: notification.cpp:461
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "IP konfigurace VPN spojení '%1' byla neplatná."
+msgstr "IP konfigurace VPN připojení '%1' byla neplatná."
 
 #: notification.cpp:464
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
-msgstr "Vypršel časový limit při pokusu o navázání spojení s VPN službou."
+msgstr "Vypršel časový limit při pokusu o navázání připojení s VPN službou."
 
 #: notification.cpp:467
 #, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
-msgstr "Vypršel časový limit pro spuštění služby poskytující spojení VPN '%1'."
+msgstr ""
+"Vypršel časový limit pro spuštění služby poskytující připojení VPN '%1'."
 
 #: notification.cpp:470
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "Spuštění služby poskytující spojení VPN '%1' selhalo."
+msgstr "Spuštění služby poskytující připojení VPN '%1' selhalo."
 
 #: notification.cpp:473
 #, kde-format
@@ -535,7 +536,7 @@ msgstr "Autentizace na VPN serveru selhala."
 #: notification.cpp:479
 #, kde-format
 msgid "The connection was deleted."
-msgstr "Spojení bylo odstraněno."
+msgstr "Připojení bylo odstraněno."
 
 #: notification.cpp:578
 #, kde-format
@@ -571,12 +572,12 @@ msgstr "Zadejte heslo pro síť Wi-Fi \"%1\":"
 #: passworddialog.cpp:105
 #, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Neplatné heslo pro spojení \"%1\" Prosím, zkuste to znovu."
+msgstr "Neplatné heslo pro připojení \"%1\" Prosím, zkuste to znovu."
 
 #: passworddialog.cpp:107
 #, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Zadejte heslo pro spojení \"%1\":"
+msgstr "Zadejte heslo pro připojení \"%1\":"
 
 #: passworddialog.cpp:114
 #, kde-format
@@ -593,7 +594,7 @@ msgstr "Chybí nastavení VPN"
 #: passworddialog.cpp:135
 #, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "Zadejte přihlašovací údaje pro spojení VPN \"%1\":"
+msgstr "Zadejte přihlašovací údaje pro připojení VPN \"%1\":"
 
 #: passworddialog.cpp:136
 #, kde-format

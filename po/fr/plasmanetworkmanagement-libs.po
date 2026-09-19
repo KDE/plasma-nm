@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:47+0000\n"
-"PO-Revision-Date: 2026-09-12 09:50+0200\n"
+"POT-Creation-Date: 2026-09-19 00:47+0000\n"
+"PO-Revision-Date: 2026-09-17 18:22+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -1149,8 +1149,9 @@ msgstr "EAP protégé (PEAP)"
 #: editor/settings/ui/802-1x.ui:542 editor/settings/ui/802-1x.ui:684
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
 #: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:207
-#: editorqml/qml/vpn/sstp/Sstp.qml:43
+#: editorqml/qml/vpn/l2tp/L2tp.qml:59 editorqml/qml/vpn/sstp/Sstp.qml:43
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:265
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:137
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:26
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:173
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapLeap.qml:25
@@ -1180,12 +1181,14 @@ msgstr "Utilisateur :"
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:25
 #: editorqml/qml/vpn/iodine/Iodine.qml:51
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:23
+#: editorqml/qml/vpn/l2tp/L2tp.qml:78
 #, kde-format
 msgid "Password:"
 msgstr "Mot de passe :"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/802-1x.ui:121
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:65
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:23
 #, kde-format
 msgid "Identity:"
@@ -1273,6 +1276,7 @@ msgstr "Se connecter à ces serveurs :"
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
 #: editor/settings/ui/802-1x.ui:247
 #: editor/settings/ui/wireguardinterfacewidget.ui:41
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:108
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:152
 #, kde-format
 msgid "Private key:"
@@ -1352,6 +1356,7 @@ msgstr "GTC"
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
 #: editor/settings/ui/802-1x.ui:432 editor/settings/ui/802-1x.ui:529
 #: editor/settings/ui/802-1x.ui:666 editor/settings/ui/ppp.ui:68
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:100
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:113
 #, kde-format
 msgid "MSCHAPv2"
@@ -1360,6 +1365,7 @@ msgstr "MSCHAPv2"
 #. i18n: ectx: property (text), widget (QCheckBox, pap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:519 editor/settings/ui/ppp.ui:58
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:73
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:92
 #, kde-format
 msgid "PAP"
@@ -1368,6 +1374,7 @@ msgstr "PAP"
 #. i18n: ectx: property (text), widget (QCheckBox, mschap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:524 editor/settings/ui/ppp.ui:48
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:91
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:106
 #, kde-format
 msgid "MSCHAP"
@@ -1376,6 +1383,7 @@ msgstr "MSCHAP"
 #. i18n: ectx: property (text), widget (QCheckBox, chap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:534 editor/settings/ui/ppp.ui:78
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:82
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:99
 #, kde-format
 msgid "CHAP"
@@ -1691,6 +1699,7 @@ msgstr "Basic"
 #. i18n: ectx: property (title), widget (QGroupBox, advGroup)
 #. i18n: ectx: property (text), widget (QLabel, advancedSectionLabel)
 #: editor/settings/ui/gsm.ui:84 editor/settings/ui/wificonnectionwidget.ui:112
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:208
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:90
 #, kde-format
 msgid "Advanced"
@@ -1743,6 +1752,7 @@ msgstr "Restreindre au périphérique :"
 #: editor/settings/ui/wificonnectionwidget.ui:301
 #: editor/settings/ui/wiredconnectionwidget.ui:89
 #: editor/settings/ui/wireguardinterfacewidget.ui:89
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:276
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:219
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:85
 #, kde-format
@@ -1825,6 +1835,7 @@ msgstr "Serveurs DNS :"
 #: editor/settings/ui/ipv4.ui:152 editor/settings/ui/ipv6.ui:49
 #: editorqml/qml/ipv4/IPv4Settings.qml:26
 #: editorqml/qml/ipv6/IPv6Settings.qml:26
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:78
 #, kde-format
 msgid "Method:"
 msgstr "Méthode :"
@@ -2107,19 +2118,24 @@ msgstr "Confidentialité :"
 #: editor/settings/ui/ppp.ui:23
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:43
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:34
-#: editorqml/qml/vpn/ssh/Ssh.qml:136 editorqml/qml/vpn/sstp/SstpAdvanced.qml:81
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:57 editorqml/qml/vpn/ssh/Ssh.qml:136
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:81
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:74
 #, kde-format
 msgid "Authentication"
 msgstr "Authentification"
 
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
-#: editor/settings/ui/ppp.ui:38 editorqml/qml/vpn/sstp/SstpAdvanced.qml:120
+#: editor/settings/ui/ppp.ui:38 editorqml/qml/vpn/l2tp/L2tpPpp.qml:109
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:120
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "EAP"
 msgstr "EAP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
-#: editor/settings/ui/ppp.ui:91 editorqml/qml/vpn/sstp/SstpAdvanced.qml:165
+#: editor/settings/ui/ppp.ui:91 editorqml/qml/vpn/l2tp/L2tpPpp.qml:161
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:165
 #, kde-format
 msgid "Compression"
 msgstr "Compression"
@@ -2161,13 +2177,15 @@ msgid "Use stateful MPPE"
 msgstr "Utiliser MMPE à état"
 
 #. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
-#: editor/settings/ui/ppp.ui:175 editorqml/qml/vpn/sstp/SstpAdvanced.qml:191
+#: editor/settings/ui/ppp.ui:175 editorqml/qml/vpn/l2tp/L2tpPpp.qml:215
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:191
 #, kde-format
 msgid "Echo"
 msgstr "Écho"
 
 #. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
-#: editor/settings/ui/ppp.ui:184 editorqml/qml/vpn/sstp/SstpAdvanced.qml:195
+#: editor/settings/ui/ppp.ui:184 editorqml/qml/vpn/l2tp/L2tpPpp.qml:220
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:195
 #, kde-format
 msgid "Send PPP echo packets"
 msgstr "Envoi de paquets PPP echo"
@@ -2637,10 +2655,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
-#, fuzzy, kde-format
-#| msgid "Speed:"
+#, kde-format
 msgid "Speed limit:"
-msgstr "Vitesse :"
+msgstr "Limite de vitesse :"
 
 #. i18n: ectx: property (text), widget (QLabel, duplexLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:132
@@ -4633,8 +4650,10 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "Le mot de passe doit comporter entre 8 et 64 caractères."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:30
+#: editorqml/qml/vpn/l2tp/L2tp.qml:30
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:24
 #: editorqml/qml/vpn/ssh/Ssh.qml:34 editorqml/qml/vpn/sstp/Sstp.qml:30
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:39
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:25
 #, kde-format
 msgid "Gateway:"
@@ -4643,118 +4662,118 @@ msgstr "Passerelle :"
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:33
 #, kde-format
 msgid "SSLVPN server IP or name."
-msgstr ""
+msgstr "IP ou nom du serveur « SSLVPN »."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:47
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:78
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:37
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User name:"
-msgstr "Utilisateur :"
+msgstr "Nom d'utilisateur :"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:50
+#: editorqml/qml/vpn/l2tp/L2tp.qml:64
 #, kde-format
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
 msgstr ""
+"Définissez le nom utilisé pour son authentification du système local auprès "
+"du pair<name>."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:77
+#: editorqml/qml/vpn/l2tp/L2tp.qml:106 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:93
 #: editorqml/qml/vpn/sstp/Sstp.qml:59
 #, kde-format
 msgid "CA Certificate:"
 msgstr "Certificat de l'autorité de certification :"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:95
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#: editorqml/qml/vpn/l2tp/L2tp.qml:130
+#, kde-format
 msgid "User Certificate:"
 msgstr "Certificat utilisateur :"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:113
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User Key:"
-msgstr "Utilisateur :"
+msgstr "Clé d'utilisateur :"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:40
 #, kde-format
 msgid "Use a One-Time Password"
-msgstr ""
+msgstr "Utilisez un mot de passe à usage unique"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:42
-#, fuzzy, kde-format
-#| msgid "Ask for this password every time"
+#, kde-format
 msgid "Ask for a one-time password every time this connection is activated."
-msgstr "Demander ce mot de passe à chaque fois"
+msgstr ""
+"Demandez un mot de passe à usage unique à chaque fois que cette connexion "
+"est activée."
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:53
 #, kde-format
 msgid "2FA"
-msgstr ""
+msgstr "2FA"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:55
 #, kde-format
 msgid "Use two-factor authentication. This supersedes the one-time password."
 msgstr ""
+"Utilisez l'authentification à deux facteurs. Celui-ci remplace le mot de "
+"passe à usage unique."
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:64
-#, fuzzy, kde-format
-#| msgid "Real Name"
+#, kde-format
 msgid "Realm:"
-msgstr "Nom réel"
+msgstr "Realm :"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:77
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Trusted certificate:"
-msgstr "Certificat utilisateur :"
+msgstr "Certificats de confiance :"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:24
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "FortiSSLVPN Authentication"
-msgstr "Authentification"
+msgstr "Authentification avec FortiSSLVPN"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:37
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Enter Password"
+#, kde-format
 msgid "One Time Password"
-msgstr "Veuillez saisir le mot de passe"
+msgstr "Mot de passe à usage unique"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:38
 #, kde-format
 msgid "Token:"
-msgstr ""
+msgstr "Jeton :"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:24
-#, fuzzy, kde-format
-#| msgid "NT Domain:"
+#, kde-format
 msgid "Toplevel Domain:"
-msgstr "Domaine NT :"
+msgstr "Domaine de haut niveau :"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:27
 #, kde-format
 msgid "The domain the iodine server is authoritative for."
-msgstr ""
+msgstr "Le domaine pour lequel le serveur iodine fait autorité."
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:36
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "Nameserver:"
-msgstr "Serveurs DNS :"
+msgstr "Serveur de noms :"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:39
 #, kde-format
 msgid ""
 "Nameserver to use for the tunnel. Leave empty to use the system default."
 msgstr ""
+"Serveur de noms à utiliser pour le tunnel. Veuillez le laisser vide pour "
+"utiliser la valeur par défaut du système."
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:65
 #, kde-format
 msgid "Fragment Size:"
-msgstr ""
+msgstr "Taille de fragments :"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:67
 #, kde-format
@@ -4762,6 +4781,8 @@ msgid ""
 "Maximum size of the upstream DNS fragments, in bytes. Automatic lets iodine "
 "probe for it."
 msgstr ""
+"Taille maximale de fragments DNS en amont, en octets. Le mode "
+"« Automatique » permet à iodine de le détecter."
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
 #: editorqml/qml/vpn/iodine/Iodine.qml:75
@@ -4771,15 +4792,431 @@ msgid "Automatic"
 msgstr "Automatique"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
-#, fuzzy, kde-format
-#| msgctxt "@item:intext MTU size, %1 is the number of bytes"
-#| msgid "%1 bytes"
+#, kde-format
 msgid "%1 bytes"
 msgstr "%1 octets"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format
 msgid "Iodine VPN"
+msgstr "Iodine VPN"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:33
+#, fuzzy, kde-format
+#| msgid "SSLVPN server IP or name."
+msgid "L2TP server IP or name."
+msgstr "IP ou nom du serveur « SSLVPN »."
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:42
+#, fuzzy, kde-format
+#| msgid "Authentication:"
+msgid "Authentication type:"
+msgstr "Authentification :"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:45 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:82
+#, fuzzy, kde-format
+#| msgid "Key authentication"
+msgid "Select an authentication mode."
+msgstr "Authentification par clé"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/ssh/Ssh.qml:143
+#, kde-format
+msgid "Password"
+msgstr "Mot de passe"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
+#, fuzzy, kde-format
+#| msgid "CA Certificate:"
+msgid "Certificates (TLS)"
+msgstr "Certificat de l'autorité de certification :"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:92 editorqml/qml/vpn/sstp/Sstp.qml:51
+#, kde-format
+msgid "NT Domain:"
+msgstr "Domaine NT :"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:97
+#, kde-format
+msgid ""
+"Append the domain name <domain> to the local host name for authentication "
+"purposes."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:115 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:102
+#, kde-format
+msgid ""
+"Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:139
+#, kde-format
+msgid "Certificate in .pem, .der, .crt, .cer or .p12 formats."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:154 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:141
+#, fuzzy, kde-format
+#| msgid "Private key:"
+msgid "Private Key:"
+msgstr "Clé privée :"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:163 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:150
+#, kde-format
+msgid "Private key in .pem, .der, .key, .pk8 or .p12 formats."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:183 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:188
+#, fuzzy, kde-format
+#| msgid "Private key password:"
+msgid "Private Key Password:"
+msgstr "Mot de passe de clé privée :"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:200
+#, kde-format
+msgid "Use L2TP ephemeral source port"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:216
+#, fuzzy, kde-format
+#| msgid "IPv6 Network Settings"
+msgctxt "@action:button"
+msgid "IPsec Settings…"
+msgstr "Configuration du réseau IPv6"
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:220
+#, kde-format
+msgid "No IPsec daemon (libreswan or strongSwan) was found."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tp.qml:228
+#, kde-format
+msgctxt "@action:button"
+msgid "PPP Settings…"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:24
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:36
+#, fuzzy, kde-format
+#| msgid "SSTP VPN"
+msgid "L2TP VPN"
+msgstr "SSTP VPN"
+
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:25
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:152
+#: editorqml/qml/vpn/vpnc/VpncAuth.qml:50
+#, kde-format
+msgid "User Password:"
+msgstr "Mot de passe de l'utilisateur :"
+
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:37
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "User Certificate Password:"
+msgstr "Certificat utilisateur :"
+
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:48
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "Machine Certificate Password:"
+msgstr "Certificat utilisateur :"
+
+#: editorqml/qml/vpn/l2tp/L2tpAuth.qml:59
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:171
+#, fuzzy, kde-format
+#| msgid "Preshared key:"
+msgid "Pre-shared Key:"
+msgstr "Clé pré partagée :"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:60
+#, kde-format
+msgid "Enable IPsec tunnel to L2TP host"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:74
+#, fuzzy, kde-format
+#| msgid "Authentication"
+msgid "Machine Authentication"
+msgstr "Authentification"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:79 editorqml/qml/vpn/ssh/Ssh.qml:140
+#, kde-format
+msgid "Type:"
+msgstr "Type :"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
+#, fuzzy, kde-format
+#| msgid "Preshared key:"
+msgid "Pre-shared Key (PSK)"
+msgstr "Clé pré partagée :"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:117
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "Machine Certificate:"
+msgstr "Certificat utilisateur :"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:126
+#, fuzzy, kde-format
+#| msgid "CA certificate in PEM format."
+msgid "Certificate in .pem, .der or .p12 formats."
+msgstr "Certificat de l'autorité de certification au format « PEM »."
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:189
+#, kde-format
+msgid "Password for private key or PKCS#12 certificate."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:213
+#, fuzzy, kde-format
+#| msgid "Remote IP Address:"
+msgid "Remote ID:"
+msgstr "Adresse IP distante :"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:216
+#, kde-format
+msgid ""
+"Optional. How the IPsec server should be identified for authentication. "
+"Sometimes referred to as Peer ID or Gateway ID, also referred to as rightid "
+"by strongSwan, Libreswan, Openswan and FreeS/WAN. See strongSwan or "
+"Libreswan documentation for leftid/rightid syntax and identity parsing."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:225
+#, kde-format
+msgid "Phase1 Algorithms:"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:228
+#, kde-format
+msgid ""
+"Optional. A list of proposals for IKE - Main Mode. The format is “enc-integ-"
+"group,enc-integ-group, …”."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:237
+#, kde-format
+msgid "Phase2 Algorithms:"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:240
+#, kde-format
+msgid ""
+"Optional. A list of proposals for ESP - Quick Mode. The format is “enc-integ,"
+"enc-integ, …”."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:249
+#, kde-format
+msgid "Phase1 Lifetime:"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:251
+#, kde-format
+msgid ""
+"How long the keying channel of a connection should last before being "
+"renegotiated."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:269
+#, kde-format
+msgid "Phase2 Lifetime:"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:271
+#, kde-format
+msgid ""
+"How long a particular instance of a connection (a set of encryption/"
+"authentication keys for user packets) should last, from successful "
+"negotiation to expiry."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:291
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:183
+#, kde-format
+msgid "Enforce UDP encapsulation"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:293
+#, kde-format
+msgid ""
+"Some firewalls block ESP traffic. Enforcing UDP encapsulation even if no NAT "
+"situation is detected might help in such cases."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:304
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:192
+#, fuzzy, kde-format
+#| msgid "Use TCP header compression"
+msgid "Use IP compression"
+msgstr "Utiliser la compression des en-têtes TCP"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:306
+#, kde-format
+msgid ""
+"IPComp compresses raw IP packets before they get encrypted. This saves some "
+"bandwidth, but uses more processing power."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:317
+#, kde-format
+msgid "Use IKEv2 key exchange"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:328
+#, fuzzy, kde-format
+#| msgid "Disabled"
+msgid "Disable PFS"
+msgstr "Désactivé"
+
+#: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
+#, kde-format
+msgid ""
+"Disable perfect forward secrecy. Enable this option only if the server "
+"doesn’t support PFS."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:40
+#, kde-format
+msgctxt "separator between hours and minutes"
+msgid ":"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:54
+#, kde-format
+msgctxt "separator between minutes and seconds"
+msgid ":"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:66
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
+#, kde-format
+msgid "Allow following authentication methods:"
+msgstr "Autoriser les méthodes d'authentification suivantes :"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:118
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
+#, kde-format
+msgid "Encryption"
+msgstr "Chiffrement"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:123
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
+#, kde-format
+msgid "Use MPPE Encryption"
+msgstr "Utiliser le chiffrement « MMPE »"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:130
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
+#, kde-format
+msgid "Crypto:"
+msgstr "Cryptographie :"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:135
+#, fuzzy, kde-format
+#| msgid "Require 128-bit encryption"
+msgid "Require the use of MPPE, with 40/128-bit encryption or all."
+msgstr "Requiert le chiffrage 128-bit"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
+#, kde-format
+msgctxt "like in use Any configuration"
+msgid "Any"
+msgstr "Quelconque"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
+#, kde-format
+msgid "128 bit"
+msgstr "128 bits"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
+#, kde-format
+msgid "40 bit"
+msgstr "40 bits"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:148
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
+#, kde-format
+msgid "Use stateful encryption"
+msgstr "Utiliser un chiffrement dynamique"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:150
+#, kde-format
+msgid ""
+"Allow MPPE to use stateful mode. Stateless mode is still attempted first."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:166
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
+#, kde-format
+msgid "Allow BSD compression"
+msgstr "Autoriser la compression de données BSD"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:168
+#, fuzzy, kde-format
+#| msgid "Allow BSD compression"
+msgid "Allow/disable BSD-Compress compression."
+msgstr "Autoriser la compression de données BSD"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:177
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
+#, kde-format
+msgid "Allow Deflate compression"
+msgstr "Autoriser la compression de données Deflate"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:179
+#, fuzzy, kde-format
+#| msgid "Allow Deflate compression"
+msgid "Allow/disable Deflate compression."
+msgstr "Autoriser la compression de données Deflate"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:188
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
+#, kde-format
+msgid "Allow TCP header compression"
+msgstr "Autoriser la compression des en-têtes TCP"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:195
+#, kde-format
+msgid "Use protocol field compression negotiation"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:202
+#, fuzzy, kde-format
+#| msgid "Use TCP header compression"
+msgid "Use Address/Control compression"
+msgstr "Utiliser la compression des en-têtes TCP"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:204
+#, kde-format
+msgid "Use Address/Control compression in both directions (send and receive)."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:222
+#, kde-format
+msgid "Send LCP echo-requests to find out whether peer is alive."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:233
+#, fuzzy, kde-format
+#| msgid "Network Settings"
+msgid "Other Settings"
+msgstr "Configuration du réseau"
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:244
+#, kde-format
+msgid "Multilink PPP MRRU:"
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:246
+#, kde-format
+msgid "Try to negotiate a PPP Multilink on a single connection."
+msgstr ""
+
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:266
+#, kde-format
+msgid "MRU:"
 msgstr ""
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:27
@@ -4790,10 +5227,9 @@ msgstr ""
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:36
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:26
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:67 editorqml/qml/vpn/vpnc/VpncAuth.qml:35
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "Group name:"
-msgstr "Utilisateur :"
+msgstr "Nom de groupe :"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:39
 #, kde-format
@@ -4803,19 +5239,16 @@ msgstr ""
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:51
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:39
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:52
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Enter Password"
+#, kde-format
 msgid "User password:"
-msgstr "Veuillez saisir le mot de passe"
+msgstr "Mot de passe de l'utilisateur :"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:64
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:50
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:82
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Group password:"
-msgstr "Monter le mot de passe"
+msgstr "Mot de passe du groupe :"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:81
 #, fuzzy, kde-format
@@ -4845,10 +5278,9 @@ msgstr ""
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:117
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:41
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "(NT-)Domain name for authentication."
-msgstr "Authentification interne :"
+msgstr "Nom de domaine (NT) pour authentification."
 
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:38
 #, fuzzy, kde-format
@@ -4891,20 +5323,10 @@ msgstr "Utiliser IPv6"
 msgid "Prefix:"
 msgstr "Préfixe : "
 
-#: editorqml/qml/vpn/ssh/Ssh.qml:140
-#, kde-format
-msgid "Type:"
-msgstr "Type :"
-
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "SSH Agent"
 msgstr "Agent SSH"
-
-#: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, kde-format
-msgid "Password"
-msgstr "Mot de passe"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
@@ -4968,11 +5390,6 @@ msgstr "VPN SSH"
 msgid "Optional"
 msgstr "Optionnel"
 
-#: editorqml/qml/vpn/sstp/Sstp.qml:51
-#, kde-format
-msgid "NT Domain:"
-msgstr "Domaine NT :"
-
 #: editorqml/qml/vpn/sstp/Sstp.qml:79
 #, kde-format
 msgid "Ignore certificate warnings"
@@ -4988,66 +5405,10 @@ msgstr "Point à point"
 msgid "Proxy"
 msgstr "Serveur mandataire"
 
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
-#, kde-format
-msgid "Allow following authentication methods:"
-msgstr "Autoriser les méthodes d'authentification suivantes :"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
-#, kde-format
-msgid "Encryption"
-msgstr "Chiffrement"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
-#, kde-format
-msgid "Use MPPE Encryption"
-msgstr "Utiliser le chiffrement « MMPE »"
-
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
 #, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
 msgstr "Utiliser le chiffrement point à point de Microsoft"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
-#, kde-format
-msgid "Crypto:"
-msgstr "Cryptographie :"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, kde-format
-msgctxt "like in use Any configuration"
-msgid "Any"
-msgstr "Quelconque"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, kde-format
-msgid "128 bit"
-msgstr "128 bits"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, kde-format
-msgid "40 bit"
-msgstr "40 bits"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
-#, kde-format
-msgid "Use stateful encryption"
-msgstr "Utiliser un chiffrement dynamique"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
-#, kde-format
-msgid "Allow BSD compression"
-msgstr "Autoriser la compression de données BSD"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
-#, kde-format
-msgid "Allow Deflate compression"
-msgstr "Autoriser la compression de données Deflate"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
-#, kde-format
-msgid "Allow TCP header compression"
-msgstr "Autoriser la compression des en-têtes TCP"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
 #, kde-format
@@ -5079,149 +5440,246 @@ msgstr "Identifiants"
 msgid "SSTP VPN"
 msgstr "SSTP VPN"
 
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:35
+#, fuzzy, kde-format
+#| msgctxt "Header text for IPv4 gateway"
+#| msgid "Gateway"
+msgid "Gateway"
+msgstr "Passerelle"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:47
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:88
+#, fuzzy, kde-format
+#| msgid "CA Certificate:"
+msgid "Certificate:"
+msgstr "Certificat de l'autorité de certification :"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#, kde-format
+msgid "Certificate/private key"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#, fuzzy, kde-format
+#| msgid "CA Certificate:"
+msgid "Certificate/ssh-agent"
+msgstr "Certificat de l'autorité de certification :"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#, kde-format
+msgid "Smartcard"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#, kde-format
+msgid "EAP-TTLS"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:132
+#, fuzzy, kde-format
+#| msgid "Ask for a one-time password every time this connection is activated."
+msgid "The PIN is asked for when the connection is activated."
+msgstr ""
+"Demandez un mot de passe à usage unique à chaque fois que cette connexion "
+"est activée."
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:168
+#, fuzzy, kde-format
+#| msgid "Optional"
+msgid "Options"
+msgstr "Optionnel"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:174
+#, fuzzy, kde-format
+#| msgid "Remote IP Address:"
+msgid "Request an inner IP address"
+msgstr "Adresse IP distante :"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:201
+#, kde-format
+msgid "Enable Custom Cipher Proposals"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:208
+#, kde-format
+msgid "IKE:"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:213
+#, kde-format
+msgid "A list of proposals for IKE separated by \";\""
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:222
+#, kde-format
+msgid "ESP:"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:227
+#, kde-format
+msgid "A list of proposals for ESP separated by \";\""
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:28
+#, kde-format
+msgid "strongSwan VPN"
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:33
+#, fuzzy, kde-format
+#| msgid "Private key password:"
+msgctxt "@label:textbox password label for private key password"
+msgid "Private Key Password:"
+msgstr "Mot de passe de clé privée :"
+
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:35
+#, fuzzy, kde-format
+#| msgid "PIN:"
+msgctxt "@label:textbox password label for smartcard pin"
+msgid "PIN:"
+msgstr "PIN :"
+
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:37
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgctxt "@label:textbox password label for EAP password"
+msgid "Password:"
+msgstr "Mot de passe :"
+
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:28
 #, kde-format
 msgid "IP/hostname of IPsec gateway."
-msgstr ""
+msgstr "IP / nom d'hôte de la passerelle IPsec."
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:40
-#, fuzzy, kde-format
-#| msgid "Users allowed to activate the connection"
+#, kde-format
 msgid "User name for the connection."
-msgstr "Utilisateurs autorisés à activer cette connexion"
+msgstr "Nom d'utilisateur pour la connexion."
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:70
 #, kde-format
 msgid "Group name"
-msgstr ""
+msgstr "Nom du groupe"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:99
-#, fuzzy, kde-format
-#| msgid "Key authentication"
+#, kde-format
 msgid "Use hybrid authentication"
-msgstr "Authentification par clé"
+msgstr "Utilisez une authentification hybride"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:101
 #, kde-format
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
 msgstr ""
+"Activez l'authentification hybride, c'est-à-dire utilisez un certificat en "
+"plus du mot de passe."
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:110
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgid "CA file:"
-msgstr "Fichier PAC :"
+msgstr "Fichier de l'autorité de certification :"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:119
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA certificate in PEM format."
-msgstr "Certificat de l'autorité de certification :"
+msgstr "Certificat de l'autorité de certification au format « PEM »."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:34
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Identification"
-msgstr "Authentification"
+msgstr "Identification"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:50
 #, kde-format
 msgid "Vendor:"
-msgstr ""
+msgstr "Fabricant :"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:53
 #, kde-format
 msgid "Vendor of your IPsec gateway."
-msgstr ""
+msgstr "Fournisseur de votre passerelle IPsec."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:57
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Cisco"
-msgstr ""
+msgstr "Cisco"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:57
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Netscreen"
-msgstr ""
+msgstr "Netscreen"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:57
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Fortigate"
-msgstr ""
+msgstr "Fortigate"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:65
-#, fuzzy, kde-format
-#| msgid "Transport mode:"
+#, kde-format
 msgid "Transport and Security"
-msgstr "Mode de transport :"
+msgstr "Transport et Sécurité"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:69
-#, fuzzy, kde-format
-#| msgid "Encryption"
+#, kde-format
 msgid "Encryption method:"
-msgstr "Chiffrement"
+msgstr "Méthode de chiffrement :"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:72
-#, fuzzy, kde-format
-#| msgid "Encryption"
+#, kde-format
 msgid "Encryption method."
-msgstr "Chiffrement"
+msgstr "Méthode de chiffrement."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:76
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
-msgstr "1 (par défaut)"
+msgstr "Sécurisé (Par défaut)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:76
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Weak (DES encryption, use with caution)"
-msgstr ""
+msgstr "Faible (Chiffrement DES, à utiliser avec prudence)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:76
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
-msgstr ""
+msgstr "Aucun (Tout à fait non sécurisé)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:83
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "NAT traversal:"
-msgstr "Serveurs DNS :"
+msgstr "Traversée NAT :"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:86
 #, kde-format
 msgid "NAT traversal method to use."
-msgstr ""
+msgstr "Méthode transverse NAT à utiliser."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr ""
+msgstr "NAT-T lorsque disponible (Par défaut)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
-msgstr ""
+msgstr "Toujours NAT-T"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "Cisco UDP"
-msgstr ""
+msgstr "Cisco UDP"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "NAT traversal method"
 msgid "Disabled"
 msgstr "Désactivé"
@@ -5229,83 +5687,75 @@ msgstr "Désactivé"
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:97
 #, kde-format
 msgid "IKE DH Group:"
-msgstr ""
+msgstr "Groupe DH IKE :"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:100
 #, kde-format
 msgid "Name of the IKE DH group."
-msgstr ""
+msgstr "Nom du groupe « IKE DH »."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:104
-#, fuzzy, kde-format
-#| msgctxt "wireless network cipher"
-#| msgid "Group WEP104"
+#, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 1"
-msgstr "WEP104 groupé"
+msgstr "DH Groupe 1"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:104
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 2 (default)"
-msgstr "1 (par défaut)"
+msgstr "DH Groupe 2 (Par défaut)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:104
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 5"
-msgstr ""
+msgstr "DH Groupe 5"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:111
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr ""
+msgstr "Secret de transmission parfait :"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:114
 #, kde-format
 msgid "Diffie-Hellman group to use for PFS."
-msgstr ""
+msgstr "Groupe Diffie-Hellman à utiliser pour PFS."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
-msgstr "1 (par défaut)"
+msgstr "Serveur (Par défaut)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
-#, fuzzy, kde-format
-#| msgid "None"
+#, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "None"
 msgstr "Aucun"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
-#, fuzzy, kde-format
-#| msgctxt "wireless network cipher"
-#| msgid "Group WEP104"
+#, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 1"
-msgstr "WEP104 groupé"
+msgstr "DH Groupe 1"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 2"
-msgstr ""
+msgstr "DH Groupe 2"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
-msgstr ""
+msgstr "DH Groupe 5"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:125
-#, fuzzy, kde-format
-#| msgid "Local IP Address:"
+#, kde-format
 msgid "Local Port:"
-msgstr "Adresse IP locale :"
+msgstr "Port local :"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:127
 #, kde-format
@@ -5313,35 +5763,29 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
+"Port local à utiliser (De 0 à 65 535). 0 (Valeur par défaut) signifie un "
+"port aléatoire. 500 est la valeur par défaut de VPN."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:145
 #, kde-format
 msgid "Disable dead peer detection"
-msgstr ""
+msgstr "Désactiver la détection des pairs morts"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:147
 #, kde-format
 msgid "Disable sending DPD packets (set timeout to 0)."
 msgstr ""
+"Désactivez l'envoi de paquets « DPD » (Définissez le délai d'attente à 0)."
 
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:49
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "VPNC Authentication"
-msgstr "Authentification"
-
-#: editorqml/qml/vpn/vpnc/VpncAuth.qml:50
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "Enter Password"
-msgid "User Password:"
-msgstr "Veuillez saisir le mot de passe"
+msgstr "Authentification par VPNC"
 
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:61
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Group Password:"
-msgstr "Mot de passe :"
+msgstr "Mot de passe de groupe :"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format

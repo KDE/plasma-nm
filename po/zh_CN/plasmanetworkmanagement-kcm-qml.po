@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-18 00:47+0000\n"
+"POT-Creation-Date: 2026-09-19 00:47+0000\n"
 "PO-Revision-Date: 2026-07-17 18:51\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,28 +18,28 @@ msgstr ""
 "qml.pot\n"
 "X-Crowdin-File-ID: 60357\n"
 
-#: kcm.cpp:741
+#: kcm.cpp:779
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "获取 %1 的密码失败"
 
-#: kcm.cpp:767
+#: kcm.cpp:806
 #, kde-format
 msgid "my_shared_connection"
 msgstr "我的共享连接"
 
-#: kcm.cpp:837
+#: kcm.cpp:876
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "您想要保存对连接“%1”的更改吗？"
 
-#: kcm.cpp:840
+#: kcm.cpp:879
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: kcm.cpp:869
+#: kcm.cpp:908
 #, kde-format
 msgctxt "Suffix appended to duplicated connection name"
 msgid " (Copy)"

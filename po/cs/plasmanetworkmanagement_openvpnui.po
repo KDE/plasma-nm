@@ -8,15 +8,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 00:46+0000\n"
-"PO-Revision-Date: 2026-03-30 12:51+0200\n"
-"Last-Translator:  Vít Pelčák <vit@pelcak.org>\n"
+"PO-Revision-Date: 2026-09-18 11:06+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Poedit 3.9\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -388,7 +388,7 @@ msgstr "Pro komunikaci se vzdáleným hostitelem použijte protokol TCP."
 #: openvpnadvanced.ui:171
 #, kde-format
 msgid "Use a TCP connection"
-msgstr "Použít spojení TCP"
+msgstr "Použít připojení TCP"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseVirtualDeviceType)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbDeviceType)
@@ -440,7 +440,7 @@ msgid ""
 "Take the TUN device MTU to be specified value and derive the link MTU from "
 "it."
 msgstr ""
-"Vezměte MTU zařízení TUN jako zadanou hodnotu a odvoďte z ní MTU spojení."
+"Vezměte MTU zařízení TUN jako zadanou hodnotu a odvoďte z ní MTU připojení."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtu)
 #: openvpnadvanced.ui:250
@@ -575,7 +575,7 @@ msgstr "odeslat informace o protějšku"
 #: openvpnadvanced.ui:440
 #, kde-format
 msgid "Build a tun link capable of forwarding IPv6 traffic."
-msgstr "Vytvořit spojení TUN schopné přeposílat síťový provoz IPv6."
+msgstr "Vytvořit připojení TUN schopné přeposílat síťový provoz IPv6."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:443

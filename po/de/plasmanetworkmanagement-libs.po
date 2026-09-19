@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 02:45+0000\n"
-"PO-Revision-Date: 2026-09-09 10:44+0200\n"
+"PO-Revision-Date: 2026-09-16 12:27+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -33,6 +33,8 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Die Roaming-Einstellung konnte nicht angewendet werden. Der Zugangspunkt "
+"wird mit seiner bestehenden Einstellung aktiviert."
 
 #: cellular/cellularmodem.cpp:412
 #, kde-format
@@ -43,11 +45,14 @@ msgstr "Fehler beim Aktivieren der Verbindung: %1"
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
 msgstr ""
+"Das Roaming kann nicht geändert werden, da kein Zugangspunkt verfügbar ist."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Fehler beim Anwenden der Roaming-Einstellung auf den ausgewählten "
+"Zugangspunkt."
 
 #: cellular/cellularmodem.cpp:482
 #, kde-format
@@ -1622,6 +1627,8 @@ msgid ""
 "Choose which VPN connection to automatically activate when this connection "
 "is established"
 msgstr ""
+"Wählen Sie, welche VPN-Verbindung automatisch aktiviert werden soll, wenn "
+"diese Verbindung hergestellt wird"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:102
@@ -1637,6 +1644,8 @@ msgid ""
 "Assign this connection to a firewall zone to control network access and "
 "security rules"
 msgstr ""
+"Diese Verbindung einer Firewall-Zone zuordnen, um den Netzwerkzugriff und "
+"die Sicherheitsregeln zu steuern"
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:134
@@ -1863,6 +1872,16 @@ msgid ""
 "devices\n"
 "• Disabled: turn off IPv4"
 msgstr ""
+"So konfigurieren Sie die IPv4-Adresse:\n"
+"• Automatisch: Adresse und DNS automatisch über DHCP abrufen\n"
+"• Automatisch (nur Adressen): Adresse über DHCP abrufen, aber DNS manuell "
+"konfigurieren\n"
+"• Link-Local: Die automatische Link-Local-Adressierung (169.254.x.x) "
+"verwenden\n"
+"• Manuell: Geben Sie eine statische IP-Adresse ein\n"
+"• Gemeinsam genutzt: Verwandeln Sie diesen Computer in einen Router, um die "
+"Internetverbindung mit anderen Geräten zu teilen\n"
+"• Deaktiviert: IPv4 deaktivieren"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:263 editor/settings/ui/ipv6.ui:231
@@ -2043,6 +2062,17 @@ msgid ""
 "• Ignored: skip IPv6 configuration but allow connection\n"
 "• Disabled: turn off IPv6 completely"
 msgstr ""
+"So konfigurieren Sie die IPv6-Adresse:\n"
+"• Automatisch: Adresse und DNS automatisch (über SLAAC und/oder DHCPv6)\n"
+"• Automatisch (nur Adressen): Adresse automatisch abrufen, aber DNS manuell "
+"konfigurieren\n"
+"• Automatisch (nur DHCP): Adresse und DNS nur über DHCPv6 erhalten (SLAAC "
+"ignorieren)\n"
+"• Link-Local: Die automatische Link-Local-Adressierung (fe80::/10) "
+"verwenden\n"
+"• Manuell: Geben Sie eine statische IP-Adresse ein\n"
+"• Ignoriert: IPv6-Konfiguration überspringen, aber Verbindung zulassen\n"
+"• Deaktiviert: IPv6 komplett deaktivieren"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:241
@@ -2086,7 +2116,7 @@ msgstr "Komprimierung"
 #: editor/settings/ui/ppp.ui:109
 #, kde-format
 msgid "Use point-to-point encryption (MPPE)"
-msgstr "Punkt-zu-Punkt-Verschlüsselung (MPPE) verwenden"
+msgstr "Point-to-Point-Verschlüsselung (MPPE) verwenden"
 
 #. i18n: ectx: property (text), widget (QCheckBox, bsdComp)
 #: editor/settings/ui/ppp.ui:116
@@ -2240,10 +2270,10 @@ msgstr "SSID:"
 
 #. i18n: ectx: property (toolTip), widget (SsidComboBox, SSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:61
-#, fuzzy, kde-format
-#| msgid "Users allowed to activate the connection"
+#, kde-format
 msgid "The name of the Wi-Fi network to connect to"
-msgstr "Benutzer, denen das Aktivieren der Verbindung erlaubt ist"
+msgstr ""
+"Der Name des WLAN-Netzwerks, mit dem Sie eine Verbindung herstellen möchten"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:90
@@ -2254,6 +2284,10 @@ msgid ""
 "• Ad-hoc: create a direct peer-to-peer network\n"
 "• Access Point: turn this computer into a Wi-Fi hotspot"
 msgstr ""
+"WLAN-Netzwerkmodus:\n"
+"• Infrastruktur: Zu einem WLAN-Router verbinden (normaler Modus)\n"
+"• Ad-hoc: Ein direktes Peer-to-Peer-Netzwerk erstellen\n"
+"• Zugangspunkt: Diesen Computer in einen WLAN-Hotspot verwandeln"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:94
@@ -2290,6 +2324,8 @@ msgid ""
 "Lock this connection to a specific access point. Enter the BSSID (MAC "
 "address) of the access point."
 msgstr ""
+"Diese Verbindung auf einen bestimmten Zugangspunkt beschränken. Geben Sie "
+"die BSSID (MAC-Adresse) des Zugangspunkts ein."
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:163
@@ -2364,6 +2400,8 @@ msgid ""
 "Lock this connection to a particular network adapter by specifying its MAC "
 "address."
 msgstr ""
+"Diese Verbindung auf einen bestimmten Netzwerkadapter beschränken. indem Sie "
+"die MAC-Adresse angeben."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:258
@@ -2380,6 +2418,8 @@ msgstr "Geklonte MAC-Adresse:"
 msgid ""
 "Use a different MAC address instead of your network adapter's real address."
 msgstr ""
+"Eine andere MAC-Adresse als die reale Adresse Ihres Netzwerkadapters "
+"verwenden."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:292
@@ -2396,6 +2436,8 @@ msgid ""
 "Maximum Transmission Unit: the largest packet size that can be sent without "
 "fragmentation. Larger packets will be broken into smaller frames."
 msgstr ""
+"Maximale Übertragungseinheit: Die größte Paketgröße, die ohne Fragmentierung "
+"gesendet werden kann. Größere Pakete werden in kleinere Frames unterteilt."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -4264,6 +4306,10 @@ msgid ""
 "\n"
 "0 disables the check, -1 lets NetworkManager decide."
 msgstr ""
+"Zeitüberschreitung in Millisekunden, die verwendet wird, um das "
+"Vorhandensein von doppelten IP-Adressen im Netzwerk zu überprüfen.\n"
+"\n"
+"0 deaktiviert die Prüfung, -1 lässt NetworkManager entscheiden."
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:125
 #: editorqml/qml/ipv4/IPv4Settings.qml:254
@@ -4517,10 +4563,9 @@ msgstr ""
 "Einrichtung von IPv6 fehlschlägt, IPv4 aber erfolgreich ist"
 
 #: editorqml/qml/PasswordField.qml:106
-#, fuzzy, kde-format
-#| msgid "Always Ask"
+#, kde-format
 msgid "Always asked"
-msgstr "Immer nachfragen"
+msgstr "Immer abgefragt"
 
 #: editorqml/qml/PasswordField.qml:108
 #, kde-format
@@ -4677,135 +4722,123 @@ msgstr "SSH-VPN"
 #: editorqml/qml/vpn/sstp/Sstp.qml:39
 #, kde-format
 msgid "Optional"
-msgstr ""
+msgstr "Optional"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:51
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgid "NT Domain:"
-msgstr "Domäne:"
+msgstr "NT-Domäne:"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:59
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA Certificate:"
 msgstr "CA-Zertifikat:"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:79
 #, kde-format
 msgid "Ignore certificate warnings"
-msgstr ""
+msgstr "Warnungen über Zertifikate ignorieren"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:60
 #, kde-format
 msgid "Point-to-Point"
-msgstr ""
+msgstr "Point-to-Point"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:64
 #, kde-format
 msgid "Proxy"
-msgstr ""
+msgstr "Proxy"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr ""
+msgstr "Folgende Authentifizierungsmethoden erlauben:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Encryption"
-msgstr "Verbindung"
+msgstr "Verschlüsselung"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr ""
+msgstr "MPPE-Verschlüsselung verwenden"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
-#, fuzzy, kde-format
-#| msgid "Use point-to-point encryption (MPPE)"
+#, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr "Punkt-zu-Punkt-Verschlüsselung (MPPE) verwenden"
+msgstr "Microsoft Point-to-Point-Verschlüsselung (MPPE) verwenden"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
 #, kde-format
 msgid "Crypto:"
-msgstr ""
+msgstr "Verschlüsselung:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "Any"
+#, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
 msgstr "Beliebig"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "WEP key 128 bits"
+#, kde-format
 msgid "128 bit"
-msgstr "WEP-Schlüssel 128 Bits"
+msgstr "128 Bit"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgid "40 bit"
-msgstr ""
+msgstr "40 Bit"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
-#, fuzzy, kde-format
-#| msgid "Use stateful MPPE"
+#, kde-format
 msgid "Use stateful encryption"
-msgstr "MPPE-Stateful verwenden"
+msgstr "Zustandsorientierte Verschlüsselung verwenden"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
-#, fuzzy, kde-format
-#| msgid "Use BSD data compression"
+#, kde-format
 msgid "Allow BSD compression"
-msgstr "BSD-Datenkomprimierung verwenden"
+msgstr "BSD-Komprimierung zulassen"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
-#, fuzzy, kde-format
-#| msgid "Use Deflate data compression"
+#, kde-format
 msgid "Allow Deflate compression"
-msgstr "Deflate-Datenkomprimierung verwenden"
+msgstr "Deflate-Komprimierung zulassen"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Allow TCP header compression"
-msgstr "TCP-Header-Komprimierung verwenden"
+msgstr "TCP-Header-Komprimierung zulassen"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Verschiedenes"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:213
 #, kde-format
 msgid "Use custom unit number:"
-msgstr ""
+msgstr "Benutzerdefinierte Einheitennummer verwenden:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:242
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgid "Address:"
-msgstr "Adresse"
+msgstr "Adresse:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
 #, kde-format
 msgid "Credentials"
-msgstr ""
+msgstr "Anmeldedaten"
 
 #: editorqml/qml/vpn/sstp/SstpAuth.qml:22
 #, kde-format
 msgid "SSTP VPN"
-msgstr ""
+msgstr "SSTP VPN"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format
@@ -4924,6 +4957,8 @@ msgid ""
 "Enhanced Open (OWE) provides encryption without authentication. No password "
 "required."
 msgstr ""
+"Enhanced Open (OWE) bietet Verschlüsselung ohne Authentifizierung. Kein "
+"Passwort erforderlich."
 
 #: editorqml/qml/wifisecurity/authentication/WepKey.qml:38
 #, kde-format

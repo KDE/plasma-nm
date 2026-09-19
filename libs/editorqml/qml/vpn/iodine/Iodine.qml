@@ -71,7 +71,7 @@ ColumnLayout {
             from: 0
             to: 10000
 
-            textFromValue: (value, locale) => value === 0 ? i18n("Automatic") : i18n("%1 bytes", Number(value).toLocaleString(locale, 'f', 0))
+            textFromValue: (value, locale) => value === 0 ? i18n("Automatic") : i18np("%1 byte", "%1 bytes", Number(value).toLocaleString(locale, 'f', 0))
             valueFromText: (text, locale) => text === i18n("Automatic") ? 0 : Number.fromLocaleString(locale, text.replace(/[^0-9]/g, ""))
 
             value: root.setting.fragmentSize

@@ -15,7 +15,8 @@ Kirigami.Dialog {
 
     required property var setting
 
-    title: i18nc("@title:window", "Advanced")
+    header: null
+
     standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
 
     preferredWidth: Kirigami.Units.gridUnit * 32

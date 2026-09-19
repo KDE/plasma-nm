@@ -113,6 +113,11 @@ ColumnLayout {
                             url: "../vpn/l2tp/L2tp.qml",
                             setting: kcm.vpnL2tpSetting
                         };
+                    case "org.freedesktop.NetworkManager.pptp":
+                        return {
+                            url: "../vpn/pptp/Pptp.qml",
+                            setting: kcm.vpnPptpSetting
+                        };
                     default:
                         return null;
                     }

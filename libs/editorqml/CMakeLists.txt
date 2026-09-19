@@ -73,6 +73,13 @@ set(SETTINGS_SRCS
   settings/vpn/l2tp/l2tp.h
   settings/vpn/l2tp/nm-l2tp-service.h
 
+  #pptp vpn
+  settings/vpn/pptp/pptpauth.h
+  settings/vpn/pptp/pptpauth.cpp
+  settings/vpn/pptp/pptp.cpp
+  settings/vpn/pptp/pptp.h
+  settings/vpn/pptp/nm-pptp-service.h
+
   #strongswan vpn
   settings/vpn/strongswan/strongswanauth.h
   settings/vpn/strongswan/strongswanauth.cpp
@@ -163,6 +170,11 @@ set(QML_SRCS
   qml/vpn/l2tp/L2tpLifetimeField.qml
   qml/vpn/l2tp/L2tpAuth.qml
 
+  # pptp vpn
+  qml/vpn/pptp/Pptp.qml
+  qml/vpn/pptp/PptpAdvanced.qml
+  qml/vpn/pptp/PptpAuth.qml
+
   # strongswan vpn
   qml/vpn/strongswan/Strongswan.qml
   qml/vpn/strongswan/StrongswanAuth.qml
@@ -238,6 +250,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/iodine
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/libreswan
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/l2tp
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/pptp
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/strongswan
 )
 

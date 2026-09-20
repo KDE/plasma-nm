@@ -6428,9 +6428,3 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
-
-#, fuzzy
-#~| msgid "Advanced"
-#~ msgctxt "@title:window"
-#~ msgid "Advanced"
-#~ msgstr "Avansert"

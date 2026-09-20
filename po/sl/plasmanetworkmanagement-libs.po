@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-20 12:55+0000\n"
-"PO-Revision-Date: 2026-09-19 09:51+0200\n"
+"PO-Revision-Date: 2026-09-20 15:25+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -5286,26 +5286,24 @@ msgid "Libreswan VPN"
 msgstr "Libreswan VPN"
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:27
-#, fuzzy, kde-format
-#| msgid "L2TP server IP or name."
+#, kde-format
 msgid "PPTP server IP or name."
-msgstr "IP ali ime strežnika L2TP."
+msgstr "IP ali ime strežnika PPTP."
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:36
 #, kde-format
 msgid "Login:"
-msgstr ""
+msgstr "Prijava:"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:22
-#, fuzzy, kde-format
-#| msgid "L2TP VPN"
+#, kde-format
 msgid "PPTP VPN"
-msgstr "L2TP VPN"
+msgstr "PPTP VPN"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:24
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr ""
+msgstr "Geslo, posredovano protokolu PPTP, ko je to zahtevano."
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, kde-format

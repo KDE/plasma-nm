@@ -6487,9 +6487,3 @@ msgstr "Last opp"
 #, kde-format
 msgid "Download"
 msgstr "Last ned"
-
-#, fuzzy
-#~| msgid "Advanced"
-#~ msgctxt "@title:window"
-#~ msgid "Advanced"
-#~ msgstr "Avansert"

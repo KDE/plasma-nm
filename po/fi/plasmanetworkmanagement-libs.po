@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-20 12:55+0000\n"
 "PO-Revision-Date: 2026-03-01 19:40+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -4836,8 +4836,10 @@ msgstr "Automaattinen"
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
 #, fuzzy, kde-format
 #| msgid " bytes"
-msgid "%1 bytes"
-msgstr " tavua"
+msgid "%1 byte"
+msgid_plural "%1 bytes"
+msgstr[0] " tavua"
+msgstr[1] " tavua"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format

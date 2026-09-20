@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-20 12:55+0000\n"
 "PO-Revision-Date: 2026-09-18 23:13+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -4729,9 +4729,14 @@ msgid "Automatic"
 msgstr "אוטומטית"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
-#, kde-format
-msgid "%1 bytes"
-msgstr "%1 בתים"
+#, fuzzy, kde-format
+#| msgid "%1 bytes"
+msgid "%1 byte"
+msgid_plural "%1 bytes"
+msgstr[0] "%1 בתים"
+msgstr[1] "%1 בתים"
+msgstr[2] "%1 בתים"
+msgstr[3] "%1 בתים"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format

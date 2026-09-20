@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-20 12:55+0000\n"
 "PO-Revision-Date: 2024-03-14 23:24+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Assamese <alministradores@softastur.org>\n"
@@ -4606,8 +4606,10 @@ msgstr ""
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
 #, fuzzy, kde-format
 #| msgid " bytes"
-msgid "%1 bytes"
-msgstr " bytes"
+msgid "%1 byte"
+msgid_plural "%1 bytes"
+msgstr[0] " bytes"
+msgstr[1] " bytes"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format

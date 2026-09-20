@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdenm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-20 12:55+0000\n"
 "PO-Revision-Date: 2015-02-04 14:10+0000\n"
 "Last-Translator: Samir Ribić <Unknown>\n"
 "Language-Team: bosanski <bs@li.org>\n"
@@ -4816,8 +4816,11 @@ msgstr "Automatski"
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
 #, fuzzy, kde-format
 #| msgid " bytes"
-msgid "%1 bytes"
-msgstr " bajta"
+msgid "%1 byte"
+msgid_plural "%1 bytes"
+msgstr[0] " bajta"
+msgstr[1] " bajta"
+msgstr[2] " bajta"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format

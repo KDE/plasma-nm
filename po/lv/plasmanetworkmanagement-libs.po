@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-20 12:55+0000\n"
 "PO-Revision-Date: 2026-08-16 00:13+0300\n"
 "Last-Translator: Toms Trasuns <toms.trasuns@posteo.net>\n"
 "Language-Team: Latvian <kde-i18n-doc@kde.org>\n"
@@ -4827,8 +4827,11 @@ msgstr "Automātiski"
 #, fuzzy, kde-format
 #| msgctxt "@item:intext MTU size, %1 is the number of bytes"
 #| msgid "%1 bytes"
-msgid "%1 bytes"
-msgstr "%1 baiti"
+msgid "%1 byte"
+msgid_plural "%1 bytes"
+msgstr[0] "%1 baiti"
+msgstr[1] "%1 baiti"
+msgstr[2] "%1 baiti"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format

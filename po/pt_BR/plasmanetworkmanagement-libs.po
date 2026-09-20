@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:47+0000\n"
-"PO-Revision-Date: 2026-09-19 07:59-0300\n"
+"POT-Creation-Date: 2026-09-20 12:55+0000\n"
+"PO-Revision-Date: 2026-09-20 06:44-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -4773,9 +4773,12 @@ msgid "Automatic"
 msgstr "Automático"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
-#, kde-format
-msgid "%1 bytes"
-msgstr "%1 bytes"
+#, fuzzy, kde-format
+#| msgid "%1 bytes"
+msgid "%1 byte"
+msgid_plural "%1 bytes"
+msgstr[0] "%1 bytes"
+msgstr[1] "%1 bytes"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format
@@ -5291,26 +5294,24 @@ msgid "Libreswan VPN"
 msgstr "VPN Libreswan"
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:27
-#, fuzzy, kde-format
-#| msgid "L2TP server IP or name."
+#, kde-format
 msgid "PPTP server IP or name."
-msgstr "IP ou nome do servidor L2TP."
+msgstr "IP ou nome do servidor PPTP."
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:36
 #, kde-format
 msgid "Login:"
-msgstr ""
+msgstr "Usuário:"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:22
-#, fuzzy, kde-format
-#| msgid "L2TP VPN"
+#, kde-format
 msgid "PPTP VPN"
-msgstr "VPN L2TP"
+msgstr "VPN PPTP"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:24
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr ""
+msgstr "Senha passada ao PPTP, quando for solicitada."
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, kde-format

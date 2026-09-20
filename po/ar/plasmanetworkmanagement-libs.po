@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-20 12:55+0000\n"
 "PO-Revision-Date: 2026-09-17 08:55+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -4732,9 +4732,16 @@ msgid "Automatic"
 msgstr "آليّ"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
-#, kde-format
-msgid "%1 bytes"
-msgstr "%1 بايت"
+#, fuzzy, kde-format
+#| msgid "%1 bytes"
+msgid "%1 byte"
+msgid_plural "%1 bytes"
+msgstr[0] "%1 بايت"
+msgstr[1] "%1 بايت"
+msgstr[2] "%1 بايت"
+msgstr[3] "%1 بايت"
+msgstr[4] "%1 بايت"
+msgstr[5] "%1 بايت"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-20 12:55+0000\n"
 "PO-Revision-Date: 2026-05-25 22:01+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -4809,8 +4809,9 @@ msgstr "자동"
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
 #, fuzzy, kde-format
 #| msgid " bytes"
-msgid "%1 bytes"
-msgstr "바이트"
+msgid "%1 byte"
+msgid_plural "%1 bytes"
+msgstr[0] "바이트"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format

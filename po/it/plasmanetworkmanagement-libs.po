@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"POT-Creation-Date: 2026-09-20 12:55+0000\n"
 "PO-Revision-Date: 2026-09-11 10:24+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -4785,8 +4785,10 @@ msgstr "Automatico"
 #, fuzzy, kde-format
 #| msgctxt "@item:intext MTU size, %1 is the number of bytes"
 #| msgid "%1 bytes"
-msgid "%1 bytes"
-msgstr "%1 byte"
+msgid "%1 byte"
+msgid_plural "%1 bytes"
+msgstr[0] "%1 byte"
+msgstr[1] "%1 byte"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format

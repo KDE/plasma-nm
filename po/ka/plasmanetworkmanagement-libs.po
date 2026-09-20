@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-19 00:47+0000\n"
-"PO-Revision-Date: 2026-09-18 05:23+0200\n"
+"POT-Creation-Date: 2026-09-20 00:47+0000\n"
+"PO-Revision-Date: 2026-09-19 06:50+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -1068,7 +1068,7 @@ msgstr "აირჩიეთ შემოსატანი ფაილი"
 #: editorqml/qml/wifisecurity/WiredSecurityForm.qml:34
 #, kde-format
 msgid "Authentication:"
-msgstr "ავთენტიფიკაცია:"
+msgstr "ავთენტიკაცია:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, peapInnerAuth)
@@ -1170,7 +1170,8 @@ msgstr "მომხმარებელი:"
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:25
 #: editorqml/qml/vpn/iodine/Iodine.qml:51
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:23
-#: editorqml/qml/vpn/l2tp/L2tp.qml:78
+#: editorqml/qml/vpn/l2tp/L2tp.qml:78 editorqml/qml/vpn/pptp/Pptp.qml:51
+#: editorqml/qml/vpn/pptp/PptpAuth.qml:23
 #, kde-format
 msgid "Password:"
 msgstr "პაროლი:"
@@ -1306,7 +1307,7 @@ msgstr "ანონიმურად"
 #: editor/settings/ui/802-1x.ui:378
 #, kde-format
 msgid "Authenticated"
-msgstr "ავთენტიფიცირებული"
+msgstr "ავთენტიცირებული"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, pacMethod)
 #: editor/settings/ui/802-1x.ui:383
@@ -1346,6 +1347,7 @@ msgstr "GTC"
 #: editor/settings/ui/802-1x.ui:432 editor/settings/ui/802-1x.ui:529
 #: editor/settings/ui/802-1x.ui:666 editor/settings/ui/ppp.ui:68
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:100
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:84
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:113
 #, kde-format
 msgid "MSCHAPv2"
@@ -1355,6 +1357,7 @@ msgstr "MSCHAPv2"
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:519 editor/settings/ui/ppp.ui:58
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:73
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:63
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:92
 #, kde-format
 msgid "PAP"
@@ -1364,6 +1367,7 @@ msgstr "PAP"
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:524 editor/settings/ui/ppp.ui:48
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:91
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:77
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:106
 #, kde-format
 msgid "MSCHAP"
@@ -1373,6 +1377,7 @@ msgstr "MSCHAP"
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
 #: editor/settings/ui/802-1x.ui:534 editor/settings/ui/ppp.ui:78
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:82
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:70
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:99
 #, kde-format
 msgid "CHAP"
@@ -2106,15 +2111,17 @@ msgstr "პირადულბა:"
 #: editor/settings/ui/ppp.ui:23
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:43
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:34
-#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:57 editorqml/qml/vpn/ssh/Ssh.qml:136
+#: editorqml/qml/vpn/l2tp/L2tpPpp.qml:57
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:51 editorqml/qml/vpn/ssh/Ssh.qml:136
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:81
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:74
 #, kde-format
 msgid "Authentication"
-msgstr "ავთენტიფიკაცია"
+msgstr "ავთენტიკაცია"
 
 #. i18n: ectx: property (text), widget (QCheckBox, eap)
 #: editor/settings/ui/ppp.ui:38 editorqml/qml/vpn/l2tp/L2tpPpp.qml:109
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:91
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:120
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
@@ -2123,6 +2130,7 @@ msgstr "EAP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
 #: editor/settings/ui/ppp.ui:91 editorqml/qml/vpn/l2tp/L2tpPpp.qml:161
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:143
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:165
 #, kde-format
 msgid "Compression"
@@ -2166,6 +2174,7 @@ msgstr "საიმედო MPPE-ის გამოყენება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, echoGroup)
 #: editor/settings/ui/ppp.ui:175 editorqml/qml/vpn/l2tp/L2tpPpp.qml:215
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:179
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:191
 #, kde-format
 msgid "Echo"
@@ -2173,6 +2182,7 @@ msgstr "ექო"
 
 #. i18n: ectx: property (text), widget (QCheckBox, senddEcho)
 #: editor/settings/ui/ppp.ui:184 editorqml/qml/vpn/l2tp/L2tpPpp.qml:220
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:184
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:195
 #, kde-format
 msgid "Send PPP echo packets"
@@ -4439,8 +4449,8 @@ msgstr ""
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:326
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:139
-#: editorqml/qml/vpn/ssh/Ssh.qml:194 editorqml/qml/vpn/sstp/Sstp.qml:106
-#: editorqml/qml/vpn/vpnc/Vpnc.qml:142
+#: editorqml/qml/vpn/pptp/Pptp.qml:82 editorqml/qml/vpn/ssh/Ssh.qml:194
+#: editorqml/qml/vpn/sstp/Sstp.qml:106 editorqml/qml/vpn/vpnc/Vpnc.qml:142
 #, kde-format
 msgctxt "@action:button"
 msgid "Advanced…"
@@ -4615,7 +4625,8 @@ msgstr "პაროლი 8-დან 64-მდე სიმბოლოს უ
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:30
 #: editorqml/qml/vpn/l2tp/L2tp.qml:30
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:24
-#: editorqml/qml/vpn/ssh/Ssh.qml:34 editorqml/qml/vpn/sstp/Sstp.qml:30
+#: editorqml/qml/vpn/pptp/Pptp.qml:24 editorqml/qml/vpn/ssh/Ssh.qml:34
+#: editorqml/qml/vpn/sstp/Sstp.qml:30
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:39
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:25
 #, kde-format
@@ -4635,7 +4646,7 @@ msgid "User name:"
 msgstr "მომხმარებელი:"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:50
-#: editorqml/qml/vpn/l2tp/L2tp.qml:64
+#: editorqml/qml/vpn/l2tp/L2tp.qml:64 editorqml/qml/vpn/pptp/Pptp.qml:39
 #, kde-format
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
@@ -4694,7 +4705,7 @@ msgstr "სანდო სერტიფიკატი:"
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:24
 #, kde-format
 msgid "FortiSSLVPN Authentication"
-msgstr "FortiSSLVPN ავთენტიფიკაცია"
+msgstr "FortiSSLVPN ავთენტიკაცია"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:37
 #, kde-format
@@ -4761,22 +4772,19 @@ msgid "Iodine VPN"
 msgstr "Iodine VPN"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:33
-#, fuzzy, kde-format
-#| msgid "SSLVPN server IP or name."
+#, kde-format
 msgid "L2TP server IP or name."
-msgstr "SSLVPN -ის სერვერის IP ან სახელი."
+msgstr "L2TP სერვერის IP ან სახელი."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:42
-#, fuzzy, kde-format
-#| msgid "Authentication:"
+#, kde-format
 msgid "Authentication type:"
-msgstr "ავთენტიფიკაცია:"
+msgstr "ავთენტიკაციის ტიპი:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:45 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:82
-#, fuzzy, kde-format
-#| msgid "Key authentication"
+#, kde-format
 msgid "Select an authentication mode."
-msgstr "გასაღებით ავთენტიფიკაცია"
+msgstr "აირჩიეთ ავთენტიკაციის რეჟიმი."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
@@ -4784,12 +4792,12 @@ msgid "Password"
 msgstr "პაროლი"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
-#, fuzzy, kde-format
-#| msgid "CA Certificate:"
+#, kde-format
 msgid "Certificates (TLS)"
-msgstr "CA სერტიფიკატი:"
+msgstr "სერტიფიკატები (TLS)"
 
-#: editorqml/qml/vpn/l2tp/L2tp.qml:92 editorqml/qml/vpn/sstp/Sstp.qml:51
+#: editorqml/qml/vpn/l2tp/L2tp.qml:92 editorqml/qml/vpn/pptp/Pptp.qml:66
+#: editorqml/qml/vpn/sstp/Sstp.qml:51
 #, kde-format
 msgid "NT Domain:"
 msgstr "NT დომენი:"
@@ -4799,65 +4807,62 @@ msgstr "NT დომენი:"
 msgid ""
 "Append the domain name <domain> to the local host name for authentication "
 "purposes."
-msgstr ""
+msgstr "ავთენტიკაციისთვის ლოკალური ჰოსტისთვის დომენის სახელის <domain> მიწერა."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:115 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:102
 #, kde-format
 msgid ""
 "Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats."
 msgstr ""
+"სერტიფიკატის გამომცემლის (CA) ფაილი .pem, .der, .crt, .cer ან .p12 ფორმატში."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:139
 #, kde-format
 msgid "Certificate in .pem, .der, .crt, .cer or .p12 formats."
-msgstr ""
+msgstr "სერტიფიკატი .pem, .der, .crt, .cer ან .p12 ფორმატში."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:154 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:141
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Private Key:"
 msgstr "პირადი გასაღები:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:163 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:150
 #, kde-format
 msgid "Private key in .pem, .der, .key, .pk8 or .p12 formats."
-msgstr ""
+msgstr "პირადი გასაღები .pem, .der, .key, .pk8 ან .p12 ფორმატში."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:183 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:188
-#, fuzzy, kde-format
-#| msgid "Private key password:"
+#, kde-format
 msgid "Private Key Password:"
 msgstr "პირადი გასაღების პაროლი:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:200
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "L2TP ეფემერული წყარო პორტის გამოყენება"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:216
-#, fuzzy, kde-format
-#| msgid "IPv6 Network Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "IPsec Settings…"
-msgstr "IPv6 ქსელის მორგება"
+msgstr "IPsec-ის მორგება…"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:220
 #, kde-format
 msgid "No IPsec daemon (libreswan or strongSwan) was found."
-msgstr ""
+msgstr "IPsec-ის დემონი (libreswan, an strongSwan) აღმოჩენილი არაა."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "PPP Settings…"
-msgstr ""
+msgstr "PPP-ის მორგება…"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:24
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:36
-#, fuzzy, kde-format
-#| msgid "SSTP VPN"
+#, kde-format
 msgid "L2TP VPN"
-msgstr "SSTP VPN"
+msgstr "L2TP VPN"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:25
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:152
@@ -4867,34 +4872,30 @@ msgid "User Password:"
 msgstr "მომხმარებლის პაროლი:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "User Certificate Password:"
-msgstr "მომხმარებლის სერტიფიკატი:"
+msgstr "მომხმარებლის სერტიფიკატის პაროლი:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:48
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Machine Certificate Password:"
-msgstr "მომხმარებლის სერტიფიკატი:"
+msgstr "მანქანის სერტიფიკატის პაროლი:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:59
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:171
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared Key:"
 msgstr "წინასწარ გაზიარებული გასაღები:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:60
 #, kde-format
 msgid "Enable IPsec tunnel to L2TP host"
-msgstr ""
+msgstr "L2TP ჰოსტამდე IPsec გვირაბის ჩართვა"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:74
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Machine Authentication"
-msgstr "ავთენტიფიკაცია"
+msgstr "მანქანის ავთენტიკაცია"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:79 editorqml/qml/vpn/ssh/Ssh.qml:140
 #, kde-format
@@ -4902,33 +4903,29 @@ msgid "Type:"
 msgstr "ტიპი:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared Key (PSK)"
-msgstr "წინასწარ გაზიარებული გასაღები:"
+msgstr "წინასწარ გაზიარებული გასაღები (PSK)"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:117
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "მომხმარებლის სერტიფიკატი:"
+msgstr "მანქანის სერთიფიკატი:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:126
-#, fuzzy, kde-format
-#| msgid "CA certificate in PEM format."
+#, kde-format
 msgid "Certificate in .pem, .der or .p12 formats."
-msgstr "CA სერთიფიკატი PEM ფორმატში."
+msgstr "სერტიფიკატი .pem, .der ან .p12 ფორმატში."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:189
 #, kde-format
 msgid "Password for private key or PKCS#12 certificate."
-msgstr ""
+msgstr "პაროლი პირადი გასაღებისთვის, ან PKCS#12 სერტიფიკატი."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:213
-#, fuzzy, kde-format
-#| msgid "Remote IP Address:"
+#, kde-format
 msgid "Remote ID:"
-msgstr "დაშორებული IP მისამართი:"
+msgstr "დაშორებულის ID:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:216
 #, kde-format
@@ -4938,10 +4935,14 @@ msgid ""
 "by strongSwan, Libreswan, Openswan and FreeS/WAN. See strongSwan or "
 "Libreswan documentation for leftid/rightid syntax and identity parsing."
 msgstr ""
+"არასავალდებულოა. როგორ უნდა ვიცნოთ IPSec სერვერი ავთენტიკაციისთვის. ხანდახან "
+"ეწოდება PeerID ან GatewayID, ასევე ეძახიან rightid-ს strongSwan-ში, "
+"Libreswan-ში, Openswan და FreeS/WAN-ში. leftid/rightid-ს სინტაქსისა და "
+"იდენტიფიკატორის დამუშავების შესახებ იხილეთ storngSwan/Libreswan-ის "
+"დოკუმენტაცია."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:225
-#, fuzzy, kde-format
-#| msgid "Phase1 algorithms:"
+#, kde-format
 msgid "Phase1 Algorithms:"
 msgstr "პირველი ფაზის ალგორითმები:"
 
@@ -4951,10 +4952,11 @@ msgid ""
 "Optional. A list of proposals for IKE - Main Mode. The format is “enc-integ-"
 "group,enc-integ-group, …”."
 msgstr ""
+"არასავალდებულო. შეთავაზებების სია IKE - მთავარი რეჟიმისთვის. ფორმატია is "
+"“enc-integ-group,enc-integ-group, …”."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:237
-#, fuzzy, kde-format
-#| msgid "Phase2 algorithms:"
+#, kde-format
 msgid "Phase2 Algorithms:"
 msgstr "მეორე ფაზის ალგორითმები:"
 
@@ -4964,12 +4966,13 @@ msgid ""
 "Optional. A list of proposals for ESP - Quick Mode. The format is “enc-integ,"
 "enc-integ, …”."
 msgstr ""
+"არასავალდებულოა. შეთავაზებების სია ESP - სწრაფი რეჟიმისთვის. ფორმატია “enc-"
+"integ,enc-integ, …”."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:249
-#, fuzzy, kde-format
-#| msgid "Phase1 algorithms:"
+#, kde-format
 msgid "Phase1 Lifetime:"
-msgstr "პირველი ფაზის ალგორითმები:"
+msgstr "პირველი ფაზის სიცოცხლის დრო:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:251
 #, kde-format
@@ -4977,12 +4980,13 @@ msgid ""
 "How long the keying channel of a connection should last before being "
 "renegotiated."
 msgstr ""
+"რამდენი ხანს გაგრძელდება ბრელოკის არხი მიერთებისთვის, სანამ შეთანხმება "
+"თავიდან მოხდება."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:269
-#, fuzzy, kde-format
-#| msgid "Phase2 algorithms:"
+#, kde-format
 msgid "Phase2 Lifetime:"
-msgstr "მეორე ფაზის ალგორითმები:"
+msgstr "მეორე ფაზის სიცოცხლის დრო:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:271
 #, kde-format
@@ -4991,12 +4995,15 @@ msgid ""
 "authentication keys for user packets) should last, from successful "
 "negotiation to expiry."
 msgstr ""
+"რამდენ ხანს გაგრძელდება შეერთების კონკრეტული გაშვებული ასლი (დაშიფვრის და "
+"ავთენტიკაციის გასაღებების სეტი მომხმარებლის პაკეტებისთვის), წარმატებული "
+"მოლაპარაკებიდან ვადის ამოწურვამდე."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:291
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
 msgid "Enforce UDP encapsulation"
-msgstr ""
+msgstr "ნაძალადევი UDP ენკაპსულაცია"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:293
 #, kde-format
@@ -5004,13 +5011,14 @@ msgid ""
 "Some firewalls block ESP traffic. Enforcing UDP encapsulation even if no NAT "
 "situation is detected might help in such cases."
 msgstr ""
+"ზოგიერთი ქსელური ფარი ბლოკავს ESP ტრაფიკს. პრობლემა შეიძლება UDP "
+"ენკაფსულაციით გადაჭრათ მაშინაც კი, როცა NAT-ს არ იყენებთ."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:304
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:192
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use IP compression"
-msgstr "TCP თავსართების შეკუმშვა"
+msgstr "IP-ის შეკუმშვის გამოყენება"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:306
 #, kde-format
@@ -5018,17 +5026,18 @@ msgid ""
 "IPComp compresses raw IP packets before they get encrypted. This saves some "
 "bandwidth, but uses more processing power."
 msgstr ""
+"IPComp დაუმუშავებელ IP პაკეტებს დაშიფვრამდე შეკუმშავს. ეს დაზოგავს რაღაც "
+"რაოდენობა გამტარობას, მაგრამ მეტ პროცესორის დროს დახარჯავს."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:317
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "IKEv2 გასაღებების მიმოცვლის გამოყენება"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:328
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Disable PFS"
-msgstr "გამორთულია"
+msgstr "PFS-ის გამორთვა"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
 #, kde-format
@@ -5036,50 +5045,57 @@ msgid ""
 "Disable perfect forward secrecy. Enable this option only if the server "
 "doesn’t support PFS."
 msgstr ""
+"PFS-ის გამორთვა. ეს პარამეტრი, მხოლოდ, მაშინ ჩართეთ, როცა სერვერს PFS-ის "
+"მხარდაჭერა არ გააჩნია."
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:40
 #, kde-format
 msgctxt "separator between hours and minutes"
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:54
 #, kde-format
 msgctxt "separator between minutes and seconds"
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:66
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:58
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
 #, kde-format
 msgid "Allow following authentication methods:"
 msgstr "ავთენტიკაციის შესაძლო მეთოდები:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:118
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:100
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
 #, kde-format
 msgid "Encryption"
 msgstr "დაშიფვრა"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:123
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:105
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
 #, kde-format
 msgid "Use MPPE Encryption"
 msgstr "MPPE დაშიფვრის ჩართვა"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:130
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:112
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
 #, kde-format
 msgid "Crypto:"
 msgstr "კრიპტო:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:135
-#, fuzzy, kde-format
-#| msgid "Require 128-bit encryption"
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:117
+#, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr "128-ბიტიანი შიფრაცია"
+msgstr "MPPE-ის გამოყენების მოთხოვნა 40/128-ბიტიანი დაშიფვრით, ან ყველასი."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:121
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgctxt "like in use Any configuration"
@@ -5087,54 +5103,63 @@ msgid "Any"
 msgstr "ნებისმიერი"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:121
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgid "128 bit"
 msgstr "128-ბიტიანი"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:121
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgid "40 bit"
 msgstr "40 ბიტი"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:148
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:130
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
 #, kde-format
 msgid "Use stateful encryption"
 msgstr "სრული მიერთების დაშიფვრის გამოყენება"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:150
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:132
 #, kde-format
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
+"MPPE-სთვის stateful რეჟიმის გამოყენების ნების დართვა. პირველი მაინც "
+"Stateless რეჟიმი იქნება ნაცადი."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:166
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:148
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
 #, kde-format
 msgid "Allow BSD compression"
 msgstr "BSD შეკუმშვის ჩართვა"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:168
-#, fuzzy, kde-format
-#| msgid "Allow BSD compression"
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:150
+#, kde-format
 msgid "Allow/disable BSD-Compress compression."
-msgstr "BSD შეკუმშვის ჩართვა"
+msgstr "მონაცემების BSD შეკუმშვის ჩართ/გამორთ."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:177
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:159
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
 #, kde-format
 msgid "Allow Deflate compression"
 msgstr "Deflate შეკუმშვის ჩართვა"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:179
-#, fuzzy, kde-format
-#| msgid "Allow Deflate compression"
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:161
+#, kde-format
 msgid "Allow/disable Deflate compression."
-msgstr "Deflate შეკუმშვის ჩართვა"
+msgstr "მონაცემების Deflate შეკუმშვის ჩართ/გამორთ."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:188
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:170
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
 #, kde-format
 msgid "Allow TCP header compression"
@@ -5143,44 +5168,45 @@ msgstr "TCP თავსართების შეკუმშვის ჩა
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:195
 #, kde-format
 msgid "Use protocol field compression negotiation"
-msgstr ""
+msgstr "პროტოკოლის ველის შეკუმშვის მოლაპარაკების გამოყენება"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:202
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use Address/Control compression"
-msgstr "TCP თავსართების შეკუმშვა"
+msgstr "მისამართის/კონტროლის შეკუმშვის გამოყენება"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:204
 #, kde-format
 msgid "Use Address/Control compression in both directions (send and receive)."
 msgstr ""
+"მისამართის/კონტროლის შეკუმშვის ორივე მხარეს (მიღების და გაგზავნისას) "
+"გამოყენება."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:222
+#: editorqml/qml/vpn/pptp/PptpAdvanced.qml:186
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
-msgstr ""
+msgstr "პარტნიორის სიცოცხლის დასადგენად LCP echo-request-ის გამოყენება."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:233
-#, fuzzy, kde-format
-#| msgid "Network Settings"
+#, kde-format
 msgid "Other Settings"
-msgstr "ქსელის მორგება"
+msgstr "სხვა პარამეტრები"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:244
 #, kde-format
 msgid "Multilink PPP MRRU:"
-msgstr ""
+msgstr "მრავალმიერთებიანი PPP MRRU:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:246
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "PPP Multilink-ის 1 მიერთებაზე მოლაპარაკება."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:266
 #, kde-format
 msgid "MRU:"
-msgstr ""
+msgstr "MRU:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:27
 #, kde-format
@@ -5250,6 +5276,28 @@ msgstr "(NT-) დომენის სახელი ავთენტიკ�
 msgid "Libreswan VPN"
 msgstr "Libreswan VPN"
 
+#: editorqml/qml/vpn/pptp/Pptp.qml:27
+#, fuzzy, kde-format
+#| msgid "L2TP server IP or name."
+msgid "PPTP server IP or name."
+msgstr "L2TP სერვერის IP ან სახელი."
+
+#: editorqml/qml/vpn/pptp/Pptp.qml:36
+#, kde-format
+msgid "Login:"
+msgstr ""
+
+#: editorqml/qml/vpn/pptp/PptpAuth.qml:22
+#, fuzzy, kde-format
+#| msgid "L2TP VPN"
+msgid "PPTP VPN"
+msgstr "L2TP VPN"
+
+#: editorqml/qml/vpn/pptp/PptpAuth.qml:24
+#, kde-format
+msgid "Password passed to PPTP when prompted for it."
+msgstr ""
+
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, kde-format
 msgid "Network Settings"
@@ -5293,50 +5341,44 @@ msgstr "SSH  აგენტი"
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "Key authentication"
-msgstr "გასაღებით ავთენტიფიკაცია"
+msgstr "გასაღებით ავთენტიკაცია"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:150
 #, kde-format
 msgid "SSH Key File:"
 msgstr "SSH-ის გასაღების ფაილი:"
 
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:18
-#, kde-format
-msgctxt "@title:window"
-msgid "Advanced"
-msgstr "დამატებით"
-
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:36
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:37
 #, kde-format
 msgid "Use custom gateway port:"
 msgstr "გამავალი რაუტერის პორტის ხელით მითითება:"
 
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:60
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:61
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
 msgstr "გვირაბის MTU-ის ხელით მითითება:"
 
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:84
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:85
 #, kde-format
 msgid "Extra SSH options:"
 msgstr "SSH-ის დამატებითი პარამეტრები:"
 
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:108
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:109
 #, kde-format
 msgid "Remote device number:"
 msgstr "დაშორებული მოწყობილობის ნომერი:"
 
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:128
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:129
 #, kde-format
 msgid "Use a TAP device"
 msgstr "TAP მოწყობილობის გამოყენება"
 
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:141
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:142
 #, kde-format
 msgid "Remote username"
 msgstr "დაშორებული მომხმარებლის სახელი"
 
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:161
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:162
 #, kde-format
 msgid "Do not replace default route"
 msgstr "ნაგულისხმევი რაუტის არ შეცვლა"
@@ -5402,105 +5444,95 @@ msgid "SSTP VPN"
 msgstr "SSTP VPN"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgid "Gateway"
 msgstr "ნაგულისხმევი რაუტერი"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:47
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:88
-#, fuzzy, kde-format
-#| msgid "CA Certificate:"
+#, kde-format
 msgid "Certificate:"
-msgstr "CA სერტიფიკატი:"
+msgstr "სერტიფიკატი:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Certificate/private key"
-msgstr ""
+msgstr "სერტიფიკატი/პირადი გასაღები"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
-#, fuzzy, kde-format
-#| msgid "CA Certificate:"
+#, kde-format
 msgid "Certificate/ssh-agent"
-msgstr "CA სერტიფიკატი:"
+msgstr "სერტიფიკატი/ssh-agent"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Smartcard"
-msgstr ""
+msgstr "Smart ბარათი"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "EAP-TTLS"
-msgstr ""
+msgstr "EAP-TTLS"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:132
-#, fuzzy, kde-format
-#| msgid "Ask for a one-time password every time this connection is activated."
+#, kde-format
 msgid "The PIN is asked for when the connection is activated."
-msgstr "ერთჯერადი პაროლის ყოველ ჯერზე მოთხოვნა კავშირის გააქტიურებისას."
+msgstr "კავშირის გააქტიურებისას PIN-კოდის მოთხოვნა."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:168
-#, fuzzy, kde-format
-#| msgid "Optional"
+#, kde-format
 msgid "Options"
-msgstr "არასავალდებულო"
+msgstr "მორგება"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:174
-#, fuzzy, kde-format
-#| msgid "Remote IP Address:"
+#, kde-format
 msgid "Request an inner IP address"
-msgstr "დაშორებული IP მისამართი:"
+msgstr "შიდა IP მისამართის მოთხოვნა"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:201
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
-msgstr ""
+msgstr "დაშიფვრის ალგორითმების მოთხოვნების ხელით მითითების ჩართვა"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:208
 #, kde-format
 msgid "IKE:"
-msgstr ""
+msgstr "IKE:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:213
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
-msgstr ""
+msgstr "IKE-ის შეთავაზებების \";\"-ით გამოყოფილი სია"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:222
 #, kde-format
 msgid "ESP:"
-msgstr ""
+msgstr "ESP:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:227
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr ""
+msgstr "ESP-ის შეთავაზებების \";\"-ით გამოყოფილი სია"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:28
 #, kde-format
 msgid "strongSwan VPN"
-msgstr ""
+msgstr "strongSwan VPN"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:33
-#, fuzzy, kde-format
-#| msgid "Private key password:"
+#, kde-format
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
 msgstr "პირადი გასაღების პაროლი:"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:35
-#, fuzzy, kde-format
-#| msgid "PIN:"
+#, kde-format
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
 msgstr "PIN:"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@label:textbox password label for EAP password"
 msgid "Password:"
 msgstr "პაროლი:"
@@ -5737,7 +5769,7 @@ msgstr "DPD პაკეტების გაგზავნის გათი
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:49
 #, kde-format
 msgid "VPNC Authentication"
-msgstr "VPNC ავთენტიფიკაცია"
+msgstr "VPNC ავთენტიკაცია"
 
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:61
 #, kde-format
@@ -5803,7 +5835,7 @@ msgstr "ანონიმური"
 #, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Authenticated"
-msgstr "ავთენტიფიცირებული"
+msgstr "ავთენტიცირებული"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
 #, kde-format
@@ -6328,3 +6360,7 @@ msgstr "ატვირთვა"
 #, kde-format
 msgid "Download"
 msgstr "გადმოწერა"
+
+#~ msgctxt "@title:window"
+#~ msgid "Advanced"
+#~ msgstr "დამატებით"

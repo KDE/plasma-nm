@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2026-01-29 03:11+0100\n"
+"PO-Revision-Date: 2026-09-19 06:44+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.8\n"
+"X-Generator: Poedit 3.9\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -34,7 +34,7 @@ msgstr "L2TP -ის სერვერის IP ან სახელი."
 #: l2tp.ui:45
 #, kde-format
 msgid "Authentication type:"
-msgstr "ავთენტიფიკაციის ტიპი:"
+msgstr "ავთენტიკაციის ტიპი:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbAuthType)
 #: l2tp.ui:67 l2tpipsec.ui:68
@@ -402,7 +402,7 @@ msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
 "only if the server doesn’t support PFS.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>PFS-ის გამორთვა. ეს პარამეტრი მხოლოდ მაშინ ჩართეთ, "
+"<html><head/><body><p>PFS-ის გამორთვა. ეს პარამეტრი, მხოლოდ, მაშინ ჩართეთ, "
 "როცა სერვერს PFS-ის მხარდაჭერა არ გააჩნია.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
@@ -444,7 +444,7 @@ msgstr "L2TP IPsec -ის მორგება"
 #: l2tpppp.ui:26
 #, kde-format
 msgid "Authentication"
-msgstr "ავთენტიფიკაცია"
+msgstr "ავთენტიკაცია"
 
 #. i18n: ectx: property (text), widget (QLabel, lblauth)
 #: l2tpppp.ui:35
@@ -563,7 +563,7 @@ msgstr ""
 #: l2tpppp.ui:167
 #, kde-format
 msgid "Use Address/Control compression"
-msgstr "მისამართის/კონროლის შეკუმშვის ჩართვა"
+msgstr "მისამართის/კონტროლის შეკუმშვის გამოყენება"
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_echo)
 #: l2tpppp.ui:180
@@ -632,7 +632,7 @@ msgstr ""
 #: l2tpppp.ui:286
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr "MPPE დაშიფვრის ჩართვა"
+msgstr "MPPE დაშიფვრის გამოყენება"
 
 #. i18n: ectx: property (text), widget (QLabel, lblMMPEcrypto)
 #: l2tpppp.ui:307

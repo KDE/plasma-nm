@@ -11,6 +11,8 @@ ColumnLayout {
 
     readonly property string vpnServiceType: kcm.vpnServiceType
 
+    readonly property bool supportsIPv6: root.vpnServiceType === "org.freedesktop.NetworkManager.openvpn"
+
     function showStatusTab(): void {
         tabBar.currentIndex = 0;
     }
@@ -36,12 +38,11 @@ ColumnLayout {
             text: i18n("IPv4")
         }
 
-        Repeater {
-            model: root.vpnServiceType === "org.freedesktop.NetworkManager.openvpn" ? 1 : 0
+        QQC2.TabButton {
+            text: i18n("IPv6")
 
-            QQC2.TabButton {
-                text: i18n("IPv6")
-            }
+            visible: root.supportsIPv6
+            width: visible ? implicitWidth : 0
         }
     }
 
@@ -118,6 +119,11 @@ ColumnLayout {
                             url: "../vpn/pptp/Pptp.qml",
                             setting: kcm.vpnPptpSetting
                         };
+                    case "org.freedesktop.NetworkManager.openvpn":
+                        return {
+                            url: "../vpn/openvpn/Openvpn.qml",
+                            setting: kcm.vpnOpenvpnSetting
+                        };
                     default:
                         return null;
                     }
@@ -146,12 +152,14 @@ ColumnLayout {
             }
         }
 
-        Repeater {
-            model: root.vpnServiceType === "org.freedesktop.NetworkManager.openvpn" ? 1 : 0
+        Loader {
+            Layout.fillWidth: true
+            Layout.fillHeight: true
 
-            Item {
+            active: root.supportsIPv6
+
+            sourceComponent: Component {
                 PlasmaNMQ.IPv6Settings {
-                    anchors.fill: parent
                     setting: kcm.ipv6Settings
                 }
             }

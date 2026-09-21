@@ -17,6 +17,7 @@
 #include "ipv6settings.h"
 #include "l2tp.h"
 #include "libreswan.h"
+#include "openvpn.h"
 #include "pptp.h"
 #include "security8021xsetting.h"
 #include "ssh.h"
@@ -58,6 +59,7 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(StrongswanSetting *vpnStrongswanSetting READ vpnStrongswanSetting NOTIFY vpnStrongswanSettingChanged)
     Q_PROPERTY(L2tpSetting *vpnL2tpSetting READ vpnL2tpSetting NOTIFY vpnL2tpSettingChanged)
     Q_PROPERTY(PptpSetting *vpnPptpSetting READ vpnPptpSetting NOTIFY vpnPptpSettingChanged)
+    Q_PROPERTY(OpenvpnSetting *vpnOpenvpnSetting READ vpnOpenvpnSetting NOTIFY vpnOpenvpnSettingChanged)
     Q_PROPERTY(QString vpnServiceType READ vpnServiceType NOTIFY vpnServiceTypeChanged)
 
 public:
@@ -85,6 +87,7 @@ public:
     StrongswanSetting *vpnStrongswanSetting() const;
     L2tpSetting *vpnL2tpSetting() const;
     PptpSetting *vpnPptpSetting() const;
+    OpenvpnSetting *vpnOpenvpnSetting() const;
     QString vpnServiceType() const;
     bool useApMode() const;
 
@@ -116,6 +119,7 @@ Q_SIGNALS:
     void vpnStrongswanSettingChanged();
     void vpnL2tpSettingChanged();
     void vpnPptpSettingChanged();
+    void vpnOpenvpnSettingChanged();
 
 private Q_SLOTS:
     void onConnectionAdded(const QString &connection);
@@ -169,6 +173,7 @@ private:
     StrongswanSetting *const m_vpnStrongswanSetting;
     L2tpSetting *const m_vpnL2tpSetting;
     PptpSetting *const m_vpnPptpSetting;
+    OpenvpnSetting *const m_vpnOpenvpnSetting;
 
     bool m_useApMode = false;
     bool m_wiredSecurityEnabled = false;

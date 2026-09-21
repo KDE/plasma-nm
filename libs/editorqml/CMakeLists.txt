@@ -73,6 +73,16 @@ set(SETTINGS_SRCS
   settings/vpn/l2tp/l2tp.h
   settings/vpn/l2tp/nm-l2tp-service.h
 
+  #openvpn vpn
+  settings/vpn/openvpn/openvpnauth.h
+  settings/vpn/openvpn/openvpnauth.cpp
+  settings/vpn/openvpn/openvpnadvanced.h
+  settings/vpn/openvpn/openvpnadvanced.cpp
+  settings/vpn/openvpn/openvpn.cpp
+  settings/vpn/openvpn/openvpn.h
+  settings/vpn/openvpn/openvpnhelpers_p.h
+  settings/vpn/openvpn/nm-openvpn-service.h
+
   #pptp vpn
   settings/vpn/pptp/pptpauth.h
   settings/vpn/pptp/pptpauth.cpp
@@ -170,6 +180,12 @@ set(QML_SRCS
   qml/vpn/l2tp/L2tpLifetimeField.qml
   qml/vpn/l2tp/L2tpAuth.qml
 
+  # openvpn vpn
+  qml/vpn/openvpn/Openvpn.qml
+  qml/vpn/openvpn/OpenvpnAdvanced.qml
+  qml/vpn/openvpn/OpenvpnCipherField.qml
+  qml/vpn/openvpn/OpenvpnAuth.qml
+
   # pptp vpn
   qml/vpn/pptp/Pptp.qml
   qml/vpn/pptp/PptpAdvanced.qml
@@ -250,6 +266,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/iodine
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/libreswan
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/l2tp
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/openvpn
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/pptp
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/strongswan
 )

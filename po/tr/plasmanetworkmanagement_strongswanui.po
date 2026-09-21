@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2026-08-28 19:41+0300\n"
+"PO-Revision-Date: 2026-09-20 19:50+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -23,7 +23,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
-msgstr "Gizli Anahtar Parolası:"
+msgstr "Özel anahtar parolası:"
 
 #: strongswanauth.cpp:61
 #, kde-format
@@ -96,13 +96,13 @@ msgstr "Kimlik Doğrulama"
 #: strongswanprop.ui:98
 #, kde-format
 msgid "Certificate/private key"
-msgstr "Sertifika/gizli anahtar"
+msgstr "Sertifika/özel anahtar"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: strongswanprop.ui:103
 #, kde-format
 msgid "Certificate/ssh-agent"
-msgstr "Sertifika/ssh-istemcisi"
+msgstr "Sertifika/ssh-agent"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: strongswanprop.ui:108
@@ -126,13 +126,13 @@ msgstr "EAP-TTLS"
 #: strongswanprop.ui:155
 #, kde-format
 msgid "Private key:"
-msgstr "Gizli anahtar:"
+msgstr "Özel anahtar:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: strongswanprop.ui:165
 #, kde-format
 msgid "Private Key Password:"
-msgstr "Gizli anahtar parolası:"
+msgstr "Özel anahtar parolası:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: strongswanprop.ui:207

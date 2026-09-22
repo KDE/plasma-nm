@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-06 00:46+0000\n"
-"PO-Revision-Date: 2026-07-22 17:10-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -70,14 +70,12 @@ msgstr "تەھرىر"
 #: ui/main.qml:87
 #, kde-format
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr ""
 
 #: ui/main.qml:98
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Settings"
-msgstr "IP تەڭشەك"
+msgstr "تەڭشەك"
 
 #: ui/main.qml:107
 #, kde-format
@@ -124,7 +122,7 @@ msgstr "ئادەتتىكى"
 #: ui/NetworkSettings.qml:60
 #, kde-format
 msgid "SSID"
-msgstr "SSID"
+msgstr ""
 
 #: ui/NetworkSettings.qml:75
 #, kde-format
@@ -190,17 +188,17 @@ msgstr "كىملىك دەلىللەش:"
 #: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "TLS"
-msgstr "TLS"
+msgstr ""
 
 #: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "LEAP"
-msgstr "LEAP"
+msgstr ""
 
 #: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "FAST"
-msgstr "FAST"
+msgstr ""
 
 #: ui/NetworkSettings.qml:164
 #, kde-format
@@ -221,7 +219,7 @@ msgstr "IP تەڭشەك"
 #: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Method"
-msgstr "ئۇسۇل"
+msgstr "چارە"
 
 #: ui/NetworkSettings.qml:184
 #, kde-format
@@ -251,7 +249,7 @@ msgstr "تور ئالدى قوشۇلغۇچى ئۇزۇنلۇقى"
 #: ui/NetworkSettings.qml:255
 #, kde-format
 msgid "DNS"
-msgstr "DNS"
+msgstr ""
 
 #: ui/PasswordField.qml:13
 #, kde-format

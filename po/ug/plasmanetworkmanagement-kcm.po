@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-15 00:46+0000\n"
-"PO-Revision-Date: 2026-07-22 17:11-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -155,7 +155,7 @@ msgstr ""
 #: qml/ConnectionItem.qml:29 ui/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
-msgstr "%1"
+msgstr ""
 
 #: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
 msgid "Connect"
@@ -252,13 +252,9 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "ئىم چوقۇم 8 دىن 64 كىچە ھەرپ بولۇشى كېرەك"
 
 #: ui/main.qml:46
-#, fuzzy
-#| msgid "Disconnect"
 msgid "Disconnected"
-msgstr "ئۈز"
+msgstr "ئۈزۈلدى"
 
 #: ui/main.qml:280
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "باغلىنىش ئەكىرىلدى."
+msgstr "باغلىنىش ئاتى:"

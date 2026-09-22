@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanm-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:47+0000\n"
-"PO-Revision-Date: 2026-06-01 18:08-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -70,12 +70,12 @@ msgstr "يوچۇن"
 #: cellular/cellularmodemdetails.cpp:114 cellular/cellularmodemdetails.cpp:468
 #, kde-format
 msgid "POTS"
-msgstr "POTS"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:117 editor/connectioneditorbase.cpp:283
 #, kde-format
 msgid "GSM"
-msgstr "GSM"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:120
 #, kde-format
@@ -85,67 +85,67 @@ msgstr "GSM ئىخچام"
 #: cellular/cellularmodemdetails.cpp:123
 #, kde-format
 msgid "GPRS"
-msgstr "GPRS"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:126
 #, kde-format
 msgid "EDGE"
-msgstr "EDGE"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:129
 #, kde-format
 msgid "UMTS"
-msgstr "UMTS"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:132
 #, kde-format
 msgid "HSDPA"
-msgstr "HSDPA"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:135
 #, kde-format
 msgid "HSUPA"
-msgstr "HSUPA"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:138
 #, kde-format
 msgid "HSPA"
-msgstr "HSPA"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:141
 #, kde-format
 msgid "HSPA+"
-msgstr "HSPA+"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:144
 #, kde-format
 msgid "CDMA2000 1xRTT"
-msgstr "CDMA2000 1xRTT"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:147
 #, kde-format
 msgid "CDMA2000 EVDO-0"
-msgstr "CDMA2000 EVDO-0"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:150
 #, kde-format
 msgid "CDMA2000 EVDO-A"
-msgstr "CDMA2000 EVDO-A"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:153
 #, kde-format
 msgid "CDMA2000 EVDO-B"
-msgstr "CDMA2000 EVDO-B"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:156
 #, kde-format
 msgid "LTE"
-msgstr "LTE"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:159
 #, kde-format
 msgid "5GNR"
-msgstr "5GNR"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:215
 #, kde-format
@@ -351,22 +351,22 @@ msgstr "بەلكىم ياق"
 #: cellular/cellularmodemdetails.cpp:474
 #, kde-format
 msgid "2G"
-msgstr "2G"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:485
 #, kde-format
 msgid "3G"
-msgstr "3G"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:490
 #, kde-format
 msgid "4G"
-msgstr "4G"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:493
 #, kde-format
 msgid "5G"
-msgstr "5G"
+msgstr ""
 
 #: cellular/cellularmodemdetails.cpp:496
 #, kde-format
@@ -516,7 +516,7 @@ msgstr "سىگنال كۈچلۈكلۈكى"
 #, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
-msgstr "%1%"
+msgstr ""
 
 #: editor/connectiondetails.cpp:140 editor/connectiondetails.cpp:150
 #, kde-format
@@ -542,7 +542,7 @@ msgstr "%1 (قانال %2)"
 #: editor/connectiondetails.cpp:166
 #, kde-format
 msgid "BSSID"
-msgstr "BSSID"
+msgstr ""
 
 #: editor/connectiondetails.cpp:171 editor/connectioneditorbase.cpp:262
 #: editor/settings/bridgewidget.cpp:39 editor/settings/teamwidget.cpp:42
@@ -550,7 +550,7 @@ msgstr "BSSID"
 #: models/creatableconnectionsmodel.cpp:173
 #, kde-format
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr ""
 
 #: editor/connectiondetails.cpp:186
 #, kde-format
@@ -592,13 +592,13 @@ msgstr "لەۋھە"
 #: networkstatus.cpp:190
 #, kde-format
 msgid "VPN"
-msgstr "VPN"
+msgstr ""
 
 #: editor/connectiondetails.cpp:240 models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
 #, kde-format
 msgid "WireGuard"
-msgstr "WireGuard"
+msgstr ""
 
 #: editor/connectiondetails.cpp:246
 #, kde-format
@@ -648,7 +648,7 @@ msgstr "كۆۋرۈك"
 #: editor/connectioneditorbase.cpp:298 models/creatableconnectionsmodel.cpp:220
 #, kde-format
 msgid "Vlan"
-msgstr "Vlan"
+msgstr ""
 
 #: editor/connectiondetails.cpp:292
 #, kde-format
@@ -658,7 +658,7 @@ msgstr "Vlan كىملىكى"
 #: editor/connectiondetails.cpp:300 editor/connectiondetails.cpp:301
 #, kde-format
 msgid "Adsl"
-msgstr "Adsl"
+msgstr ""
 
 #: editor/connectiondetails.cpp:305 editor/connectiondetails.cpp:310
 #: editor/connectioneditorbase.cpp:301 editor/uiutils.cpp:230
@@ -709,7 +709,7 @@ msgstr "IPv4 ئىككىنچى دائىرە ئاتى مۇلازىمېتىرى"
 #: editorqml/qml/components/Wireless.qml:39
 #, kde-format
 msgid "IPv4"
-msgstr "IPv4"
+msgstr ""
 
 #: editor/connectiondetails.cpp:362
 #, kde-format
@@ -741,7 +741,7 @@ msgstr "IPv6 ئىككىنچى دائىرە ئاتى مۇلازىمېتىرى"
 #: editorqml/qml/components/Wireless.qml:42
 #, kde-format
 msgid "IPv6"
-msgstr "IPv6"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:228
 #, kde-format
@@ -770,7 +770,7 @@ msgstr "802.1x بىخەتەرلىكى"
 #: models/creatableconnectionsmodel.cpp:135
 #, kde-format
 msgid "DSL"
-msgstr "DSL"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:272 editor/connectioneditorbase.cpp:275
 #, kde-format
@@ -780,7 +780,7 @@ msgstr "كۆچمە كەڭ بەلباغ (%1)"
 #: editor/connectioneditorbase.cpp:285 editor/connectioneditorbase.cpp:328
 #, kde-format
 msgid "PPP"
-msgstr "PPP"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:304
 #, kde-format
@@ -790,7 +790,7 @@ msgstr "WireGuard ئارايۈز"
 #: editor/connectioneditorbase.cpp:317
 #, kde-format
 msgid "VPN (%1)"
-msgstr "VPN (%1)"
+msgstr ""
 
 #: editor/connectioneditorbase.cpp:541
 #, kde-format
@@ -821,7 +821,7 @@ msgstr "باغلىنىش ئاتى:"
 #: editor/settings/bondwidget.cpp:39
 #, kde-format
 msgid "InfiniBand"
-msgstr "InfiniBand"
+msgstr ""
 
 #: editor/settings/bondwidget.cpp:48
 #, kde-format
@@ -839,7 +839,7 @@ msgstr "ئاكتىپ زاپاسلاش"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr "XOR"
+msgstr ""
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format
@@ -851,7 +851,7 @@ msgstr "ئاڭلىتىش"
 #, kde-format
 msgctxt "bond mode"
 msgid "802.3ad"
-msgstr "802.3ad"
+msgstr ""
 
 #: editor/settings/bondwidget.cpp:53
 #, kde-format
@@ -875,7 +875,7 @@ msgstr "MII (تەۋسىيە قىلىنىدۇ)"
 #, kde-format
 msgctxt "bond link monitoring"
 msgid "ARP"
-msgstr "ARP"
+msgstr ""
 
 #: editor/settings/bondwidget.cpp:244 editor/settings/bridgewidget.cpp:193
 #: editor/settings/teamwidget.cpp:182
@@ -893,7 +893,7 @@ msgstr "باغلىنىشنى چىقىۋەت"
 #: editor/uiutils.cpp:215
 #, kde-format
 msgid "VLAN"
-msgstr "VLAN"
+msgstr ""
 
 #: editor/settings/btwidget.cpp:20
 #, kde-format
@@ -965,22 +965,13 @@ msgid "DNS Servers:"
 msgstr "DNS مۇلازىمېتىر:"
 
 #: editor/settings/ipv4widget.cpp:421
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>You can find more information about these values here:<br/><a "
-#| "href='https://developer.gnome.org/NetworkManager/stable/ch01."
-#| "html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-"
-#| "settings-nmcli.html</a></qt>"
+#, kde-format
 msgid ""
 "<qt>You can find more information about these values here:<br/><a "
 "href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
 "html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></"
 "qt>"
 msgstr ""
-"<qt>بۇ جايدىن بۇ قىممەتلەرنىڭ تېخىمۇ كۆپ مۇناسىۋەتلىك ئۇچۇرىنى تاپالايسىز:"
-"<br/><a href='https://developer.gnome.org/NetworkManager/stable/ch01."
-"html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-"
-"nmcli.html</a></qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format
@@ -1003,7 +994,7 @@ msgstr "كۆڭۈلدىكى"
 #, kde-format
 msgctxt "Milliseconds"
 msgid " ms"
-msgstr " ms"
+msgstr ""
 
 #: editor/settings/ipv4widget.cpp:444 editorqml/qml/ipv4/IPv4Advance.qml:63
 #, kde-format
@@ -1081,7 +1072,7 @@ msgstr "كىملىك دەلىللەش:"
 #: editor/settings/ui/802-1x.ui:53 editor/settings/ui/802-1x.ui:671
 #, kde-format
 msgid "MD5"
-msgstr "MD5"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:58
@@ -1089,7 +1080,7 @@ msgstr "MD5"
 #: editorqml/qml/wifisecurity/WiredSecurityForm.qml:39
 #, kde-format
 msgid "TLS"
-msgstr "TLS"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
@@ -1098,7 +1089,7 @@ msgstr "TLS"
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:26
 #, kde-format
 msgid "LEAP"
-msgstr "LEAP"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:68
@@ -1106,7 +1097,7 @@ msgstr "LEAP"
 #: editorqml/qml/wifisecurity/WiredSecurityForm.qml:39
 #, kde-format
 msgid "PWD"
-msgstr "PWD"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:73
@@ -1114,7 +1105,7 @@ msgstr "PWD"
 #: editorqml/qml/wifisecurity/WiredSecurityForm.qml:39
 #, kde-format
 msgid "FAST"
-msgstr "FAST"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:78
@@ -1258,7 +1249,7 @@ msgstr "زاپاس نىشان ماسلىشىشى:"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:74
 #, kde-format
 msgid "…"
-msgstr "…"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:223
@@ -1347,7 +1338,7 @@ msgstr "ئىچكى كىملىك دەلىللەش:"
 #: editor/settings/ui/802-1x.ui:427 editor/settings/ui/802-1x.ui:676
 #, kde-format
 msgid "GTC"
-msgstr "GTC"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, mschapv2)
 #. i18n: ectx: property (text), item, widget (KComboBox, fastInnerAuth)
@@ -1360,7 +1351,7 @@ msgstr "GTC"
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:113
 #, kde-format
 msgid "MSCHAPv2"
-msgstr "MSCHAPv2"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, pap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
@@ -1370,7 +1361,7 @@ msgstr "MSCHAPv2"
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:92
 #, kde-format
 msgid "PAP"
-msgstr "PAP"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, mschap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
@@ -1380,7 +1371,7 @@ msgstr "PAP"
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:106
 #, kde-format
 msgid "MSCHAP"
-msgstr "MSCHAP"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, chap)
 #. i18n: ectx: property (text), item, widget (KComboBox, ttlsInnerAuth)
@@ -1390,7 +1381,7 @@ msgstr "MSCHAP"
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:99
 #, kde-format
 msgid "CHAP"
-msgstr "CHAP"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_26)
 #: editor/settings/ui/802-1x.ui:614
@@ -1484,7 +1475,7 @@ msgstr "كۆزىتىش چاستوتىسى:"
 #: editor/settings/ui/bond.ui:222
 #, kde-format
 msgid " ms"
-msgstr " ms"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: editor/settings/ui/bond.ui:192
@@ -1531,7 +1522,7 @@ msgstr "ساقلاپ قالىدىغان ۋاقىت:"
 #, kde-format
 msgctxt "seconds"
 msgid " s"
-msgstr " s"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, stpGroup)
 #: editor/settings/ui/bridge.ui:136
@@ -1597,10 +1588,6 @@ msgid ""
 "The higher number means higher priority. A negative number can be used to "
 "indicate priority lower than the default."
 msgstr ""
-"ئەگەر ئۆزلۈكىدىن باغلىنىشقا تەڭشەلسە، ئالدىنلىقى يۇقىرى باغلىنىش ئالدىن "
-"ئىشلىتىلىدۇ. كۆڭۈلدىكى قىممىتى 0. نومۇرى قانچە يۇقىرى بولسا، ئالدىنلىقى "
-"شۇنچە يۇقىرى بولىدۇ. مەنپى سان ئارقىلىق كۆڭۈلدىكى قىممەتتىنمۇ ئالدىنلىقنى "
-"بەلگىلىگىلى بولىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1622,9 +1609,6 @@ msgid ""
 "Fine-grained permissions editor for this connection. It lets you choose "
 "which users can activate/modify/delete this connection."
 msgstr ""
-"بۇ باغلىنىشنىڭ ئالىي ئىجازەت تەھرىرلىگۈچىسىنى ئاچىدۇ، ئۇ سىزنىڭ قايسى "
-"ئىشلەتكۈچىنىڭ ئاكتىپلاپ/ئۆزگەرتىپ/ئۆچۈرەلەيدىغانلىقىنى تاللىشىڭىزغا يول "
-"قويىدۇ."
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
@@ -1718,7 +1702,7 @@ msgstr "ئەگەر باش تورنى ئىشلەتكىلى بولمىسا كېز�
 #: editor/settings/ui/gsm.ui:100
 #, kde-format
 msgid "APN:"
-msgstr "APN:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, labelNetworkId)
 #: editor/settings/ui/gsm.ui:110
@@ -1730,7 +1714,7 @@ msgstr "تور كىملىك:"
 #: editor/settings/ui/gsm.ui:130
 #, kde-format
 msgid "PIN:"
-msgstr "PIN:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/infiniband.ui:21
@@ -1759,7 +1743,7 @@ msgstr "ئۈسكۈنە چەكلىمىسى:"
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:85
 #, kde-format
 msgid "MTU:"
-msgstr "MTU:"
+msgstr ""
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, mtu)
 #: editor/settings/ui/infiniband.ui:80
@@ -1815,8 +1799,6 @@ msgid ""
 "Use this field to specify one or more DNS domains to search. Use ',' to "
 "separate entries."
 msgstr ""
-"بۇ بۆلەكتە ئىزدەيدىغان بىر ياكى بىر قانچە DNS دائىرە ئاتىنى بەلگىلىگىلى "
-"بولىدۇ. قىممىتى كۆپ بولسا «,» ئىنگلىزچە پەش بىلەن ئايرىلىدۇ."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:96 editor/settings/ui/ipv6.ui:284
@@ -1860,11 +1842,6 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
-"سانلىق مەلۇمات بوغچىسىنىڭ نىشانغا يېتىپ بېرىشىدىكى ئەڭ ياخشى يولنىڭ نومۇرى،\n"
-"نومۇر مۇساپە، كېچىكىش ۋە ئىشەنچلىكلىك قاتارلىق ئامىللار ئاساسىدا بولىدۇ.\n"
-"\n"
-"كۆڭۈلدىكى قىممىتى -1 بولۇپ  NetworkManager ئەمەلىي يولنىڭ نىشانغا يېتىپ "
-"بېرىشىدىكى ئەڭ ياخشى يولنىڭ قىممىتىنى تاللاپ ۋە باشقۇرۇشىنى بىلدۈرىدۇ."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
 #: editor/settings/ui/ipv4.ui:215 editorqml/qml/ipv4/IPv4Settings.qml:115
@@ -1953,8 +1930,6 @@ msgid ""
 "Use this field to specify the IP address(es) of one or more DNS servers. Use "
 "',' to separate entries."
 msgstr ""
-"بۇ بۆلەكتە بىر ياكى بىر قانچە DNS مۇلازىمېتىرنىڭ IP ئادرېسىنى بەلگىلىگىلى "
-"بولىدۇ. قىممىتى كۆپ بولسا «,» ئىنگلىزچە پەش بىلەن ئايرىلىدۇ."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv4.ui:317
@@ -2009,8 +1984,6 @@ msgid ""
 "to add\n"
 "an IP address"
 msgstr ""
-"IP ئادرېس كومپيۇتېرىڭىزنى توردا باشقىلاردىن پەرقلەندۈرىدۇ. «قوش» توپچەنى "
-"چېكىپ بىر IP ئادرېس قوشقىلى بولىدۇ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:30
@@ -2045,10 +2018,6 @@ msgid ""
 "a temporary IPv6 address in addition to the public one generated from MAC "
 "address via modified EUI-64."
 msgstr ""
-"SLAAC نىڭ IPv6 شەخسىيەت كېڭەيتىلمىسىنى سەپلەيدۇ، بۇ ئىقتىدار RFC4941 "
-"قائىدىسىدە چۈشەندۈرۈلگەن. ئەگەر قوزغىتىلسا، يادرو MAC ئادرېسى ئاساسىدا بىر "
-"ئاممىۋى ئادرېس ھاسىللاپلا قالماي يەنە EUI-64 نىڭ ئۆزگەرتىلگەن نەشرى ئاساسىدا "
-"يەنە بىر ۋاقىتلىق IPv6 ئادرېس ھاسىللايدۇ."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:196
@@ -2135,7 +2104,7 @@ msgstr "كىملىك دەلىللەش"
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "EAP"
-msgstr "EAP"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, compressionGroup)
 #: editor/settings/ui/ppp.ui:91 editorqml/qml/vpn/l2tp/L2tpPpp.qml:161
@@ -2212,11 +2181,6 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
-"ئەگەر بەلگىلەنسە، PPPoE مەزكۇر مۇلازىمەتنى ئۆز ئىچىگە ئالغان زىيارەت "
-"مەركەزلەشتۈرگۈچ سۆزلەشكۈسىنىلا تەمىنلەيدۇ. زور كۆپچىلىك مۇلازىمەت "
-"تەمىنلىگۈچىگە نىسبەتەن، بۇ تاللانما بوش قالدۇرۇلىدۇ. پەقەت بىرلا ۋاقىتتا كۆپ "
-"مەركەزلەشتۈرگۈچ مەۋجۇت ياكى مەلۇم مۇلازىمەت مەزكۇر ئىقتىدارغا ئېھتىياجلىق "
-"ئىكەنلىكى جەزملەنسە ئاندىن بۇ جايدا مۇلازىمەت بەلگىلىنىدۇ."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31
@@ -2270,7 +2234,7 @@ msgstr "GARP VLAN خەتلەش كېلىشىمى"
 #: editor/settings/ui/vlan.ui:87
 #, kde-format
 msgid "GVRP"
-msgstr "GVRP"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, looseBinding)
 #: editor/settings/ui/vlan.ui:94
@@ -2290,7 +2254,7 @@ msgstr "باغلىنىش"
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:34
 #, kde-format
 msgid "SSID:"
-msgstr "SSID:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (SsidComboBox, SSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:61
@@ -2324,7 +2288,7 @@ msgstr "قۇرۇلما"
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:73
 #, kde-format
 msgid "Ad-hoc"
-msgstr "Ad-hoc"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:104
@@ -2347,8 +2311,6 @@ msgid ""
 "Lock this connection to a specific access point. Enter the BSSID (MAC "
 "address) of the access point."
 msgstr ""
-"بۇ باغلىنىشنى بەلگىلەنگەن زىيارەت نۇقتىسىغا قۇلۇپلايدۇ. زىيارەت نۇقتىسىنىڭ "
-"BSSID (MAC ئادرېس) نى كىرگۈزۈش كېرەك."
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:163
@@ -2365,9 +2327,6 @@ msgid ""
 "specified band. This setting depends\n"
 " on specific driver capability and may not work with all drivers"
 msgstr ""
-"بۇ تاللانما باغلىنىش ئىشلىتىدىغان Wi-Fi تورىنى مۇئەييەن بەلباغقا باغلايدۇ. "
-"بۇ تەڭشەك بەلگىلەنگەن قوزغاتقۇ بىلەن ئۆز ئارا  تايىنىدۇ، بەلكىم باشقا "
-"قوزغاتقۇدا ماسلاشماسلىقى مۇمكىن"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:187
@@ -2381,14 +2340,14 @@ msgstr "ئاپتوماتىك"
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:136
 #, kde-format
 msgid "A (5 GHz)"
-msgstr "A (5 GHz)"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:197
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:136
 #, kde-format
 msgid "B/G (2.4 GHz)"
-msgstr "B/G (2.4 GHz)"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, channelLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:205
@@ -2405,8 +2364,6 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
-"Wi-Fi باغلىنىش ئىشلىتىدىغان سىمسىز قانال. بۇ ئۈسكۈنە بەلگىلەنگەن قانالدىكى "
-"تورغىلا قوشۇلىدۇ ياكى بەلگىلەنگەن قانالدا Ad-Hoc تورىدا Wi-Fi تورى قۇرىدۇ"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:232
@@ -2457,8 +2414,6 @@ msgid ""
 "Maximum Transmission Unit: the largest packet size that can be sent without "
 "fragmentation. Larger packets will be broken into smaller frames."
 msgstr ""
-"ئەڭ يۇقىرى يەتكۈزۈش بىرلىكى: پارچىلىمايلا يوللىيالايدىغان ئەڭ چوڭ بوغچا "
-"چوڭلۇقى. چوڭراق بوغچىلار كىچىكرەك كاندۇققا پارچىلىنىدۇ."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
@@ -2584,19 +2539,19 @@ msgstr "1 (كۆڭۈلدىكى)"
 #: editor/settings/ui/wifisecurity.ui:156
 #, kde-format
 msgid "2"
-msgstr "2"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:161
 #, kde-format
 msgid "3"
-msgstr "3"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:166
 #, kde-format
 msgid "4"
-msgstr "4"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepAuth)
 #: editor/settings/ui/wifisecurity.ui:194
@@ -2619,8 +2574,6 @@ msgid ""
 "This option locks this connection to the network device specified by its\n"
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"بۇ تاللاش مەزكۇر باغلىنىشنى بۇ يەرگە كىرگۈزۈلگەن MAC ئادرېسى بېكىتكەن تور "
-"ئۈسكۈنىسىنى ئىشلىتىدۇ. مەسىلەن: 00:11:22:33:44:55"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
 #: editor/settings/ui/wiredconnectionwidget.ui:67
@@ -2631,9 +2584,6 @@ msgid ""
 "MAC\n"
 "cloning or spoofing. Example 11:22:33:44:55"
 msgstr ""
-"بۇ يەرگە كىرگۈزگەن MAC ئادرېسى باغلىنىش قوزغىتىلغاندا تور ئۈسكۈنە قاتتىق "
-"دېتال ئادرېسى قىلىپ ئىشلىتىلىدۇ. بۇ ئىقتىدار MAC نىڭ كۆپەيتىلمىسى ياكى "
-"ئالداش دېيىلىدۇ. مەسىلەن: 11:22:33:44:55‎‏‬"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wiredconnectionwidget.ui:80
@@ -2656,10 +2606,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
-#, fuzzy, kde-format
-#| msgid "Speed:"
+#, kde-format
 msgid "Speed limit:"
-msgstr "سۈرئەت:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, duplexLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:132
@@ -2675,8 +2624,6 @@ msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
 msgstr ""
-"ئۈسكۈنىنىڭ قوش يۈز ھالىتىنى ئىشلىتىشىنى تەلەپ قىلىدۇ.  «يېرىم» ياكى «پۈتۈن» "
-"بولسا بولىدۇ"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158
@@ -2705,12 +2652,6 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
-"ئۈسكۈنە ئۇلانما كېلىشىشى. ئەگەر «قولدا» تاللانسا ئۈسكۈنىنىڭ "
-"ماسلىشىشچانلىقىنى تەكشۈرمەيلا بەلگىلەنگەن «سۈرئەت» ۋە «قوش يۈز» قىممىتىنى "
-"مەجبۇرىي ئىشلىتىدۇ.\n"
-"\n"
-"ئەگەر جەزملىيەلمىسە، «پەرۋا قىلما» پېتى قالدۇرۇلىدۇ ياكى «ئاپتوماتىك» "
-"تاللىنىدۇ."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -2742,56 +2683,56 @@ msgstr "ئۈسكۈنىنىڭ پەقەت بەلگىلەنگەن سۈرئەتنى 
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:132
 #, kde-format
 msgid "10 Mb/s"
-msgstr "10 Mb/s"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:231
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:133
 #, kde-format
 msgid "100 Mb/s"
-msgstr "100 Mb/s"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:236
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:134
 #, kde-format
 msgid "1 Gb/s"
-msgstr "1 Gb/s"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:241
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:135
 #, kde-format
 msgid "2.5 Gb/s"
-msgstr "2.5 Gb/s"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:246
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:136
 #, kde-format
 msgid "5 Gb/s"
-msgstr "5 Gb/s"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:251
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:137
 #, kde-format
 msgid "10 Gb/s"
-msgstr "10 Gb/s"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:256
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:138
 #, kde-format
 msgid "40 Gb/s"
-msgstr "40 Gb/s"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:261
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:139
 #, kde-format
 msgid "100 Gb/s"
-msgstr "100 Gb/s"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, use8021X)
 #: editor/settings/ui/wiredsecurity.ui:17
@@ -2819,8 +2760,6 @@ msgid ""
 "Required.\n"
 "Network interface name."
 msgstr ""
-"زۆرۈر.\n"
-"تور ئارايۈز ئاتى."
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -2829,8 +2768,6 @@ msgid ""
 "Required.\n"
 "A base64 private key generated by wg genkey."
 msgstr ""
-"زۆرۈر.\n"
-"wg genkey دا ھاسىللىغان base64 شەخسىي ئاچقۇچ."
 
 #. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:56
@@ -2845,15 +2782,12 @@ msgid ""
 "Optional.\n"
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
-"تاللاشچان.\n"
-"ئېغىز نومۇرىنى تىڭشايدۇ. ئەگەر ئاپتوماتىك پېتى قالدۇرۇلغان بولسا ئىختىيارىي "
-"تاللىنىدۇ."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:72
 #, kde-format
 msgid "fwmark:"
-msgstr "fwmark:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:82
@@ -2864,11 +2798,6 @@ msgid ""
 "option is disabled. May be specified in hexadecimal by\n"
 "prepending '0x'."
 msgstr ""
-"تاللاشچان.\n"
-"چىققان بوغچىغا fwmark بەلگىسى سالىدۇ.\n"
-"ئەگەر «0» ياكى «off» غا تەڭشەلسە بۇ تاللانما چەكلىنىدۇ.\n"
-"«0x» ئالدى قوشۇلغۇچى قوشۇلغاندا ئون ئالتىلىك ساندىن\n"
-"بىرنى بەلگىلەشكە بولىدۇ."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:101
@@ -2881,12 +2810,6 @@ msgid ""
 "specify an MTU and to override this automatic discovery,\n"
 "this value may be specified explicitly."
 msgstr ""
-"تاللاشچان.\n"
-"ئەگەر MTU بەلگىلەنمىسە، پىروگرامما ئاخىرلىشىش نۇقتىسىنىڭ ئادرېسى\n"
-"ياكى سىستېمىنىڭ كۆڭۈلدىكى يول تاللاش تەڭشىكىدىن MTU نى جەزملەيدۇ.\n"
-"ئادەتتىكى ئەھۋالدا ئاپتوماتىك MTU ئىشلىتىش تەۋسىيە قىلىنىدۇ. بۇ جايدا MTU "
-"نى\n"
-"قولدا بەلگىلىگىلى بولىدۇ، ئۇ يۇقىرىدىكى ئاپتوماتىك MTU نى قاپلىۋېتىدۇ."
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:108
@@ -2924,10 +2847,10 @@ msgid ""
 "            from a private key, and usually transmitted \n"
 "            out of band to the author of the configuration file."
 msgstr ""
-"زۆرۈر:\n"
-"شەخسىي ئاچقۇچ «wg pubkey» ئارقىلىق ھېسابلاپ\n"
-"ھاسىللىغان base64 ئاممىۋى شىفىرلىق ئاچقۇچ، ئادەتتە\n"
-"بەلباغ سىرتىدا سەپلىمە ھۆججەت يازغۇچىسىغا يەتكۈزىدۇ."
+"Required.\n"
+"            A base64 public key calculated by wg pubkey \n"
+"            from a private key, and usually transmitted \n"
+"            out of band to the author of the configuration file."
 
 #. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:34
@@ -2947,11 +2870,13 @@ msgid ""
 "            may be specified for matching all IPv4 addresses, \n"
 "            and ::/0 may be specified for matching all IPv6 addresses."
 msgstr ""
-"زۆرۈر.\n"
-"CIDR بىلەن نىقابلانغان IP (v4 ياكى v6) ئادرېسى پەش بىلەن ئايرىلغان تىزىم،\n"
-"بۇ تورداشنىڭ كىرگەن ئېقىمى شۇنداقلا تورداشنىڭ چىققان ئېقىمىغا يول\n"
-"قويىدۇ. IPv4 كە ماس كېلىدىغان بارلىق ئادرېس 0.0.0.0/0 نى ئىشلىتىدۇ.\n"
-" IPv6 ئادرېسقا ماس كېلىدىغان بارلىق ئادرېس ::/0 نى ئىشلىتىدۇ."
+"Required.\n"
+"            A comma-separated list of IP (v4 or v6) addresses \n"
+"            with CIDR masks from which incoming traffic for \n"
+"            this peer is allowed and to which outgoing traffic \n"
+"            for this peer is directed. The catch-all 0.0.0.0/0 \n"
+"            may be specified for matching all IPv4 addresses, \n"
+"            and ::/0 may be specified for matching all IPv6 addresses."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55
@@ -2969,10 +2894,11 @@ msgid ""
 "            qualified domain name such as abc.com). If\n"
 "            present, Endpoint port must also be set."
 msgstr ""
-"تاللاشچان.\n"
-"باغلىنىشنىڭ ئاخىرلىشىش نۇقتىسى. ئۇ IPv4 ئادرېس، IPv6 ئادرېس\n"
-"ياكى FQDN (تولۇق ئۆلچەملىك دائىرە ئىسمى، مەسىلەن abc.com).\n"
-"ئەگەر بۇ تاللانما بەلگىلەنسە، ئاخىرلىشىش نۇقتىسىمۇ چوقۇم تەڭشىلىشى كېرەك."
+"Optional.\n"
+"            An endpoint for the connection. Can be an\n"
+"            IPv4 address, IPv6 address, or FQDN (fully\n"
+"            qualified domain name such as abc.com). If\n"
+"            present, Endpoint port must also be set."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
@@ -2988,9 +2914,9 @@ msgid ""
 "            The port number of an endpoint. If present Endpoint\n"
 "            Address must also be set."
 msgstr ""
-"تاللاشچان.\n"
-"ئاخىرلىشىش نۇقتىسىنىڭ ئېغىز نومۇرى. ئەگەر ئاخىرلىشىش\n"
-"نۇقتىسى مەۋجۇت بولسا، ئادرېسمۇ چوقۇم تەڭشىلىشى كېرەك."
+"Optional.\n"
+"            The port number of an endpoint. If present Endpoint\n"
+"            Address must also be set."
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
@@ -3008,11 +2934,11 @@ msgid ""
 "            cryptography to be mixed into the already existing\n"
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
-"تاللاشچان.\n"
-"«wg genpsk» ئارقىلىق ھاسىللىغان base64 ئالدىن ھەمبەھىرلەنگەن شىفىرلىق "
-"ئاچقۇچ. قوشۇمچە سىممېتىرىك شىفىرلىق ئاچقۇچ شىفىرلاش قەۋىتى قوشۇپ، مەۋجۇت "
-"ئاممىۋى شىفىرلىق ئاچقۇچقا ئارىلاشتۇرۇلۇپ، كېيىنكى كىۋانت كومپيۇتېرنىڭ شىفىر "
-"يېشىشىنىڭ ئالدىنى ئالىدۇ."
+"Optional.\n"
+"            A base64 preshared key generated by wg genpsk.\n"
+"            This option adds an additional layer of symmetric-key\n"
+"            cryptography to be mixed into the already existing\n"
+"            public-key cryptography, for post-quantum resistance."
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
@@ -3037,16 +2963,18 @@ msgid ""
 "            when unspecified, this option is off. Most users will not\n"
 "            need this."
 msgstr ""
-"تاللاشچان.\n"
-"ۋاقىت ئارىلىق قىممىتى تولدۇرۇلىدۇ، دائىرىسى 1-65535، ئۇ بوغچا يوللاشنىڭ "
-"ۋاقىت ئارىلىقىنى بەلگىلەيدۇ. بوش بوغچا سالاھىيەت دەلىللەنگەن بوش سانلىق "
-"مەلۇمات بوغچىسى، ئۇلار مۇئەييەن ۋاقىت ئارىلىقىدا تورداشقا يوللىنىپ، ھالەت "
-"مۇداپىئە تېمى ياكى NAT خەرىتىلەشنىڭ ئۈنۈملۈكلۈكىنى ساقلاپ قالىدۇ، مەسىلەن، "
-"ئەگەر بۇ ئېغىز NAT نىڭ ئارقىسىدا بولسا، ئۇنداقتا سانلىق مەلۇماتنى ئىنتايىن "
-"ئاز يوللايدۇ ئەمما تورداشتىن كەلگەن سانلىق مەلۇماتنى ھەر ۋاقىت "
-"تاپشۇرۇۋالماقچى بولغاندا، ئۇنىڭ ھايات ۋاقىت ئارىلىقىنى 25 سېكۇنتقا "
-"تەڭشىسىڭىز بولىدۇ. بۇ قىممەت 0 ياكى «off» قا تەڭشەلسە، بۇ تاللانما "
-"چەكلىنىدۇ. كۆپىنچە ئىشلەتكۈچى بۇ ئىقتىدارنى ئىشلىتىشكە ئېھتىياجلىق ئەمەس."
+"Optional.\n"
+"            A seconds interval, between 1 and 65535 inclusive, of\n"
+"            how often to send an authenticated empty packet to\n"
+"            the peer for the purpose of keeping a stateful firewall\n"
+"            or NAT mapping valid persistently. For example, if the\n"
+"            interface very rarely sends traffic, but it might at\n"
+"            anytime receive traffic from a peer, and it is behind\n"
+"            NAT, the interface might benefit from having a\n"
+"            persistent keepalive interval of 25 seconds. If set to\n"
+"            0 or \"off\", this option is disabled. By default or\n"
+"            when unspecified, this option is off. Most users will not\n"
+"            need this."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: editor/settings/ui/wireguardtabwidget.ui:24
@@ -3076,7 +3004,7 @@ msgstr "ئاپتوماتىك"
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:315
 #, kde-format
 msgid "%1 (%2 MHz)"
-msgstr "%1 (%2 MHz)"
+msgstr ""
 
 #: editor/settings/wireguardpeerwidget.cpp:62
 #: editor/settings/wireguardtabwidget.cpp:56
@@ -3089,7 +3017,7 @@ msgstr "WireGuard تورداش خاسلىقى"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wi-Fi"
-msgstr "Wi-Fi"
+msgstr ""
 
 #: editor/uiutils.cpp:131
 #, kde-format
@@ -3107,7 +3035,7 @@ msgstr "InfiniBand"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "ADSL"
-msgstr "ADSL"
+msgstr ""
 
 #: editor/uiutils.cpp:140
 #, kde-format
@@ -3160,7 +3088,7 @@ msgstr "سىملىق تور"
 #: editor/uiutils.cpp:186
 #, kde-format
 msgid "ADSL"
-msgstr "ADSL"
+msgstr ""
 
 #: editor/uiutils.cpp:205
 #, kde-format
@@ -3180,7 +3108,7 @@ msgstr "سىملىق تور"
 #: editor/uiutils.cpp:233
 #, kde-format
 msgid "WireGuard VPN"
-msgstr "WireGuard VPN"
+msgstr ""
 
 #: editor/uiutils.cpp:237
 #, kde-format
@@ -3215,7 +3143,7 @@ msgstr "مودېم (%1)"
 #: editor/uiutils.cpp:264
 #, kde-format
 msgid "ADSL (%1)"
-msgstr "ADSL (%1)"
+msgstr ""
 
 #: editor/uiutils.cpp:267
 #, kde-format
@@ -3381,7 +3309,7 @@ msgstr "يوچۇن"
 #, kde-format
 msgctxt "wireless network operation mode"
 msgid "Adhoc"
-msgstr "Adhoc"
+msgstr ""
 
 #: editor/uiutils.cpp:379
 #, kde-format
@@ -3399,25 +3327,25 @@ msgstr "زىيارەت نۇقتىسى"
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise WEP40"
-msgstr "Pairwise WEP40"
+msgstr ""
 
 #: editor/uiutils.cpp:409
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise WEP104"
-msgstr "Pairwise WEP104"
+msgstr ""
 
 #: editor/uiutils.cpp:411
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise TKIP"
-msgstr "Pairwise TKIP"
+msgstr ""
 
 #: editor/uiutils.cpp:413
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "Pairwise CCMP"
-msgstr "Pairwise CCMP"
+msgstr ""
 
 #: editor/uiutils.cpp:415
 #, kde-format
@@ -3447,61 +3375,61 @@ msgstr "گۇرۇپپا/Group CCMP"
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "PSK"
-msgstr "PSK"
+msgstr ""
 
 #: editor/uiutils.cpp:425
 #, kde-format
 msgctxt "wireless network cipher"
 msgid "802.1x"
-msgstr "802.1x"
+msgstr ""
 
 #: editor/uiutils.cpp:434
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 Bit/s"
-msgstr "%1 Bit/s"
+msgstr ""
 
 #: editor/uiutils.cpp:436
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 MBit/s"
-msgstr "%1 MBit/s"
+msgstr ""
 
 #: editor/uiutils.cpp:438
 #, kde-format
 msgctxt "connection speed"
 msgid "%1 GBit/s"
-msgstr "%1 GBit/s"
+msgstr ""
 
 #: editor/uiutils.cpp:462
 #, kde-format
 msgctxt "Wireless connection frequency"
 msgid "%1 GHz"
-msgstr "%1 GHz"
+msgstr ""
 
 #: editor/uiutils.cpp:468
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "LTE"
-msgstr "LTE"
+msgstr ""
 
 #: editor/uiutils.cpp:470
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "UMTS/HSxPA"
-msgstr "UMTS/HSxPA"
+msgstr ""
 
 #: editor/uiutils.cpp:472
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GPRS/EDGE"
-msgstr "GPRS/EDGE"
+msgstr ""
 
 #: editor/uiutils.cpp:474
 #, kde-format
 msgctxt "Gsm modes (2G/3G/any)"
 msgid "GSM"
-msgstr "GSM"
+msgstr ""
 
 #: editor/uiutils.cpp:476 editor/uiutils.cpp:479
 #, kde-format
@@ -3513,13 +3441,13 @@ msgstr "خالىغان"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr "5G NR"
+msgstr ""
 
 #: editor/uiutils.cpp:490
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "LTE"
-msgstr "LTE"
+msgstr ""
 
 #: editor/uiutils.cpp:492
 #, kde-format
@@ -3543,49 +3471,49 @@ msgstr "CDMA2000 EVDO تۈزىتىلگەن 0 نەشرى"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "CDMA2000 1xRTT"
-msgstr "CDMA2000 1xRTT"
+msgstr ""
 
 #: editor/uiutils.cpp:500
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA+"
-msgstr "HSPA+"
+msgstr ""
 
 #: editor/uiutils.cpp:502
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSPA"
-msgstr "HSPA"
+msgstr ""
 
 #: editor/uiutils.cpp:504
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSUPA"
-msgstr "HSUPA"
+msgstr ""
 
 #: editor/uiutils.cpp:506
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "HSDPA"
-msgstr "HSDPA"
+msgstr ""
 
 #: editor/uiutils.cpp:508
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "UMTS"
-msgstr "UMTS"
+msgstr ""
 
 #: editor/uiutils.cpp:510
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "EDGE"
-msgstr "EDGE"
+msgstr ""
 
 #: editor/uiutils.cpp:512
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "GPRS"
-msgstr "GPRS"
+msgstr ""
 
 #: editor/uiutils.cpp:514
 #, kde-format
@@ -3597,7 +3525,7 @@ msgstr "ئىخچام GSM"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "GSM"
-msgstr "GSM"
+msgstr ""
 
 #: editor/uiutils.cpp:518
 #, kde-format
@@ -3729,13 +3657,13 @@ msgstr "بىخەتەر ئەمەس"
 #, kde-format
 msgctxt "@label WEP security"
 msgid "WEP"
-msgstr "WEP"
+msgstr ""
 
 #: editor/uiutils.cpp:594
 #, kde-format
 msgctxt "@label LEAP security"
 msgid "LEAP"
-msgstr "LEAP"
+msgstr ""
 
 #: editor/uiutils.cpp:597
 #, kde-format
@@ -3747,37 +3675,37 @@ msgstr "ھەرىكەتچان WEP"
 #, kde-format
 msgctxt "@label WPA-PSK security"
 msgid "WPA-PSK"
-msgstr "WPA-PSK"
+msgstr ""
 
 #: editor/uiutils.cpp:603
 #, kde-format
 msgctxt "@label WPA-EAP security"
 msgid "WPA-EAP"
-msgstr "WPA-EAP"
+msgstr ""
 
 #: editor/uiutils.cpp:606
 #, kde-format
 msgctxt "@label WPA2-PSK security"
 msgid "WPA2-PSK"
-msgstr "WPA2-PSK"
+msgstr ""
 
 #: editor/uiutils.cpp:609
 #, kde-format
 msgctxt "@label WPA2-EAP security"
 msgid "WPA2-EAP"
-msgstr "WPA2-EAP"
+msgstr ""
 
 #: editor/uiutils.cpp:612
 #, kde-format
 msgctxt "@label WPA3-SAE security"
 msgid "WPA3-SAE"
-msgstr "WPA3-SAE"
+msgstr ""
 
 #: editor/uiutils.cpp:615
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr "WPA3-EAP-SUITE-B-192"
+msgstr ""
 
 #: editor/uiutils.cpp:618
 #, kde-format
@@ -3921,7 +3849,7 @@ msgstr "كۆڭۈلدىكى"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "APN: %1"
-msgstr "APN: %1"
+msgstr ""
 
 #: editor/widgets/mobileconnectionwizard.cpp:236
 #, kde-format
@@ -4059,10 +3987,6 @@ msgid ""
 "\n"
 "If you are unsure of your plan please ask your provider for your plan's APN."
 msgstr ""
-"ئاگاھلاندۇرۇش: ناتوغرا بىر پىلاننى تاللاش كەڭ بەلباغ ھېسابات ھەق تۆلەش "
-"مەسىلىسى ياكى باغلىنالماسلىقنى كەلتۈرۈپ چىقىرىشى مۇمكىن.\n"
-"\n"
-"پىلانىڭىزنى جەزم قىلالمىسىڭىز تەمىنلىگۈچىڭىزدىن پىلانىڭىزنىڭ APN نى سوراڭ."
 
 #: editor/widgets/mobileconnectionwizard.cpp:540
 #, kde-format
@@ -4236,17 +4160,14 @@ msgid "R&emove"
 msgstr "چىقىرىۋەت(&E)"
 
 #: editorqml/qml/AddConnectionDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr "باغلىنىش تۈرى:"
+msgstr "باغلىنىش تۈرى تاللىنىدۇ"
 
 #: editorqml/qml/components/Vpn.qml:26 editorqml/qml/components/Wired.qml:27
 #: editorqml/qml/components/Wireless.qml:27
-#, fuzzy, kde-format
-#| msgctxt "@title:tab Connection status and details"
-#| msgid "Status"
+#, kde-format
 msgid "Status"
 msgstr "ھالىتى"
 
@@ -4256,48 +4177,41 @@ msgid "Wi-Fi Security"
 msgstr "Wi-Fi بىخەتەرلىكى"
 
 #: editorqml/qml/ConfigurationDialog.qml:19
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr "باغلىنىش"
+msgstr "سەپلىمە"
 
 #: editorqml/qml/ConfigurationDialog.qml:42
 #, kde-format
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "مودېم بايقاشتا PIN سورا"
 
 #: editorqml/qml/ConfigurationDialog.qml:49
-#, fuzzy, kde-format
-#| msgid "Virtual connections"
+#, kde-format
 msgid "Show virtual connections"
-msgstr "مەۋھۇم باغلىنىش"
+msgstr "مەۋھۇم باغلىنىشنى كۆرسەت"
 
 #: editorqml/qml/ConfigurationDialog.qml:55
-#, fuzzy, kde-format
-#| msgid "Create a connection for a hidden network"
+#, kde-format
 msgid "Create new connections as system connections"
-msgstr "يوشۇرۇن تور ئۈچۈن باغلىنىش قۇرىدۇ"
+msgstr "يېڭى باغلىنىشنى سىستېما باغلىنىشىدەك قۇر"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Allowed IPs:"
+#, kde-format
 msgid "Allowed Users"
-msgstr "يول قويىدىغان IP:"
+msgstr "يول قويۇلغان ئىشلەتكۈچى"
 
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item metered mode"
 msgid "Automatic"
 msgstr "ئاپتوماتىك"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:18
-#, fuzzy, kde-format
-#| msgid "Advanced IP settings"
+#, kde-format
 msgid "Advanced IPv4 Settings"
-msgstr "ئالىي IP تەڭشىكى"
+msgstr ""
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:45
 #, kde-format
@@ -4305,21 +4219,18 @@ msgid "DHCP:"
 msgstr ""
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:46
-#, fuzzy, kde-format
-#| msgid "Send hostname:"
+#, kde-format
 msgid "Send hostname to DHCP server"
-msgstr "مۇلازىمېتىر ئاتى يوللاش:"
+msgstr ""
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:76 editorqml/qml/ipv4/IPv4Advance.qml:83
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item DAD timeout left to NetworkManager"
 msgid "Default"
 msgstr "كۆڭۈلدىكى"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:78 editorqml/qml/ipv4/IPv4Advance.qml:85
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item duplicate address detection turned off"
 msgid "Disabled"
 msgstr "چەكلەنگەن"
@@ -4360,104 +4271,76 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder optional field"
 msgid "Optional"
-msgstr ""
+msgstr "تاللاشچان"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:170 editorqml/qml/ipv6/IPv6Routes.qml:191
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Insert a row"
 msgid "Add"
 msgstr "قوش"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:177 editorqml/qml/ipv6/IPv6Routes.qml:198
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Remove a selected row"
 msgid "Remove"
 msgstr "چىقىرىۋەت"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Automatic"
 msgstr "ئاپتوماتىك"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Automatic (Only addresses)"
 msgstr "ئاپتوماتىك (ئادرېسلا)"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Link-Local"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Link-Local"
 msgstr "ئۇلانما-يەرلىك"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox like in use Manual configuration"
 msgid "Manual"
 msgstr "قولدا"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Shared to other computers"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Shared to other computers"
 msgstr "باشقا كومپيۇتېرغا ھەمبەھىرلەنگەن"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox like in this setting is Disabled"
 msgid "Disabled"
 msgstr "چەكلەنگەن"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:78
 #: editorqml/qml/ipv6/IPv6Settings.qml:78
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Search Domains:"
 msgstr "دائىرە ئىزدەيدۇ:"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use this field to specify the DHCP client ID which is a string sent to "
-#| "the DHCP server\n"
-#| "to identify the local machine that the DHCP server may use to customize "
-#| "the DHCP\n"
-#| "lease and options."
+#, kde-format
 msgid ""
 "Use this field to specify the DHCP client ID which is a string sent to the "
 "DHCP server to identify the local machine that the DHCP server may use to "
 "customize the DHCP lease and options."
 msgstr ""
-"بۇ بۆلەكتە DHCP خېرىدار كىملىكىنى بەلگىلىگىلى بولىدۇ. بۇ ئۇچۇر DHCP "
-"مۇلازىمېتىرغا يوللىنىپ، يەرلىك كومپيۇتېرنى پەرقلەندۈرۈشكە ئىشلىتىلىدۇ. DHCP "
-"مۇلازىمېتىر ئىجارە مۇددىتى ۋە تاللانمىسىنى ئۆزى بەلگىلىگەندە ئۇنى ئىشلىتىشى "
-"مۇمكىن."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:155
 #: editorqml/qml/ipv6/IPv6Settings.qml:158
-#, fuzzy, kde-format
-#| msgid ""
-#| "A score that helps choose the best path for data packets to reach their "
-#| "destination,\n"
-#| "based on factors like distance, delay, and reliability.\n"
-#| "\n"
-#| "Default value -1 means that NetworkManager gets to choose and manage the "
-#| "actual metric of the route."
+#, kde-format
 msgid ""
 "A score that helps choose the best path for data packets to reach their "
 "destination, based on factors like distance, delay, and reliability.\n"
@@ -4465,69 +4348,55 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
-"سانلىق مەلۇمات بوغچىسىنىڭ نىشانغا يېتىپ بېرىشىدىكى ئەڭ ياخشى يولنىڭ نومۇرى،\n"
-"نومۇر مۇساپە، كېچىكىش ۋە ئىشەنچلىكلىك قاتارلىق ئامىللار ئاساسىدا بولىدۇ.\n"
-"\n"
-"كۆڭۈلدىكى قىممىتى -1 بولۇپ  NetworkManager ئەمەلىي يولنىڭ نىشانغا يېتىپ "
-"بېرىشىدىكى ئەڭ ياخشى يولنىڭ قىممىتىنى تاللاپ ۋە باشقۇرۇشىنى بىلدۈرىدۇ."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
 #: editorqml/qml/ipv6/IPv6Settings.qml:165
 #, kde-format
 msgid "Addresses"
-msgstr "ئادرېسلار"
+msgstr "ئادرېس"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allows the connection to complete if IPv4 configuration fails\n"
-#| "but IPv6 configuration succeeds"
+#, kde-format
 msgid ""
 "Allows the connection to complete if IPv4 configuration fails but IPv6 "
 "configuration succeeds"
 msgstr ""
-"ئەگەر IPv4 سەپلىمىسى مەغلۇپ بولۇپ IPv6 مۇۋەپپەقىيەتلىك بولسا باغلىنىشنى "
-"تاماملاشقا يول قويىدۇ"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:326
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:139
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:255 editorqml/qml/vpn/pptp/Pptp.qml:82
 #: editorqml/qml/vpn/ssh/Ssh.qml:194 editorqml/qml/vpn/sstp/Sstp.qml:106
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:142
-#, fuzzy, kde-format
-#| msgid "Advanced…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Advanced…"
 msgstr "ئالىي…"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:332
 #: editorqml/qml/ipv6/IPv6Settings.qml:346
-#, fuzzy, kde-format
-#| msgid "Routes…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Routes…"
 msgstr "يوللار…"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgid "Search Domains"
-msgstr "دائىرە ئىزدەيدۇ:"
+msgstr ""
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:107
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:113
 #: editorqml/qml/wifisecurity/DnsList.qml:113
 #, kde-format
 msgid "Move Up"
-msgstr ""
+msgstr "ئۈستىگە"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:120
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:126
 #: editorqml/qml/wifisecurity/DnsList.qml:126
 #, kde-format
 msgid "Move Down"
-msgstr ""
+msgstr "ئاستىغا"
 
 #: editorqml/qml/ipv6/IPv6Routes.qml:129
 #, kde-format
@@ -4537,93 +4406,72 @@ msgstr ""
 
 #: editorqml/qml/ipv6/IPv6Routes.qml:131
 #: editorqml/qml/ipv6/IPv6Settings.qml:259
-#, fuzzy, kde-format
-#| msgid "4"
+#, kde-format
 msgctxt "@info:placeholder IPv6 prefix length"
 msgid "64"
-msgstr "4"
+msgstr ""
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic"
 msgstr "ئاپتوماتىك"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic (Only addresses)"
 msgstr "ئاپتوماتىك (ئادرېسلا)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only DHCP)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic (Only DHCP)"
 msgstr "ئاپتوماتىك (DHCP لا)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Link-Local"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Link-Local"
 msgstr "ئۇلانما-يەرلىك"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@item:inlistbox like in this setting is Ignored"
 msgid "Ignored"
 msgstr "پەرۋا قىلمىدى"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions left to NetworkManager"
 msgid "Default"
 msgstr "كۆڭۈلدىكى"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox privacy disabled"
 msgid "Disabled"
 msgstr "چەكلەنگەن"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Enabled (prefer public address)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions"
 msgid "Enabled (prefer public address)"
 msgstr "قوزغىتىلغان (مايىللىقى ئاممىۋى ئادرېس)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Enabled (prefer temporary addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions"
 msgid "Enabled (prefer temporary addresses)"
 msgstr "قوزغىتىلغان (مايىللىقى ۋاقىتلىق ئادرېس)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:128
-#, fuzzy, kde-format
-#| msgid ""
-#| "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-#| "enabled, it makes the kernel generate\n"
-#| "a temporary IPv6 address in addition to the public one generated from MAC "
-#| "address via modified EUI-64."
+#, kde-format
 msgid ""
 "Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
 "enabled, it makes the kernel generate a temporary IPv6 address in addition "
 "to the public one generated from MAC address via modified EUI-64."
 msgstr ""
-"SLAAC نىڭ IPv6 شەخسىيەت كېڭەيتىلمىسىنى سەپلەيدۇ، بۇ ئىقتىدار RFC4941 "
-"قائىدىسىدە چۈشەندۈرۈلگەن. ئەگەر قوزغىتىلسا، يادرو MAC ئادرېسى ئاساسىدا بىر "
-"ئاممىۋى ئادرېس ھاسىللاپلا قالماي يەنە EUI-64 نىڭ ئۆزگەرتىلگەن نەشرى ئاساسىدا "
-"يەنە بىر ۋاقىتلىق IPv6 ئادرېس ھاسىللايدۇ."
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:257
 #, kde-format
@@ -4632,68 +4480,57 @@ msgid "2001:db8::1"
 msgstr ""
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:330
-#, fuzzy, kde-format
-#| msgid ""
-#| "When connecting to IPv4-capable networks, allows the connection to "
-#| "complete if\n"
-#| "IPv6 configuration fails but IPv4 configuration succeeds"
+#, kde-format
 msgid ""
 "When connecting to IPv4-capable networks, allows the connection to complete "
 "if IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
-"IPv4 ماسلىشىدىغان تورغا باغلانغاندا، ئەگەر IPv6 سەپلەش مەغلۇپ بولۇپ IPv4 "
-"سەپلەش مۇۋەپپەقىيەتلىك بولسا باغلىنىشنى تاماملاشقا يول قويىدۇ"
 
 #: editorqml/qml/PasswordField.qml:106
-#, fuzzy, kde-format
-#| msgid "Always Ask"
+#, kde-format
 msgid "Always asked"
-msgstr "دائىم سورا"
+msgstr ""
 
 #: editorqml/qml/PasswordField.qml:108
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Not required"
-msgstr "زۆرۈر ئەمەس"
+msgstr ""
 
 #: editorqml/qml/PasswordPromptDialog.qml:24
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgctxt "@action:button Connect to network"
 msgid "Connect"
-msgstr "باغلاندى"
+msgstr "باغلان"
 
 #: editorqml/qml/PasswordPromptDialog.qml:31
 #, kde-format
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
-msgstr ""
+msgstr "ۋاز كەچ"
 
 #: editorqml/qml/PasswordPromptDialog.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "ئىم:"
+msgstr "ئىم كىرگۈزۈلىدۇ"
 
 #: editorqml/qml/PasswordPromptDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Network ID"
+#, kde-format
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr "تور كىملىك"
+msgstr "تور: %1"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "ئىم چوقۇم ئىناۋەتلىك WEP ئاچقۇچى بولۇشى كېرەك"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "ئىم چوقۇم 8 دىن 64 كىچە ھەرپ بولۇشى كېرەك"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:30
 #: editorqml/qml/vpn/l2tp/L2tp.qml:30
@@ -4702,22 +4539,19 @@ msgstr ""
 #: editorqml/qml/vpn/ssh/Ssh.qml:34 editorqml/qml/vpn/sstp/Sstp.qml:30
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:39
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:25
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgid "Gateway:"
-msgstr "تور ئۆتكىلى"
+msgstr "تور ئۆتكىلى:"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:33
 #, kde-format
 msgid "SSLVPN server IP or name."
-msgstr ""
+msgstr "SSLVPN مۇلازىمېتىر IP ئادرېسى ياكى ئىسمى."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:47
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:78
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:37
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User name:"
 msgstr "ئىشلەتكۈچى ئاتى:"
 
@@ -4727,43 +4561,41 @@ msgstr "ئىشلەتكۈچى ئاتى:"
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
 msgstr ""
+"يەرلىك سىستېمىدىن يىراقتىكى <name> تورداشقا باغلىنىشىنى دەلىللىگەندىكى "
+"ئىشلەتكۈچى ئات تەڭشىكى."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:77
 #: editorqml/qml/vpn/l2tp/L2tp.qml:106 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:93
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:61 editorqml/qml/vpn/sstp/Sstp.qml:59
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA Certificate:"
 msgstr "CA گۇۋاھنامە:"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:95
 #: editorqml/qml/vpn/l2tp/L2tp.qml:130 editorqml/qml/vpn/openvpn/Openvpn.qml:85
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "User Certificate:"
 msgstr "ئىشلەتكۈچى گۇۋاھنامىسى:"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:113
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User Key:"
-msgstr "ئىشلەتكۈچى ئاتى:"
+msgstr "ئىشلەتكۈچى ئاچقۇچى:"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:40
 #, kde-format
 msgid "Use a One-Time Password"
-msgstr ""
+msgstr "بىر قېتىملىق ئىم ئىشلەت"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:42
-#, fuzzy, kde-format
-#| msgid "Ask for this password every time"
+#, kde-format
 msgid "Ask for a one-time password every time this connection is activated."
-msgstr "بۇ ئىمنى ھەر قېتىم سورايدۇ(_K)"
+msgstr ""
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:53
 #, kde-format
 msgid "2FA"
-msgstr ""
+msgstr "ئىككى ئىسپاتلىق دەلىللەش(2FA) ‏‎"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:55
 #, kde-format
@@ -4771,39 +4603,34 @@ msgid "Use two-factor authentication. This supersedes the one-time password."
 msgstr ""
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:64
-#, fuzzy, kde-format
-#| msgid "Real Name"
+#, kde-format
 msgid "Realm:"
-msgstr "ھەقىقىي ئاتى"
+msgstr "دائىرە:"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:77
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Trusted certificate:"
-msgstr "ئىشلەتكۈچى گۇۋاھنامىسى:"
+msgstr "ئىشەنچلىك گۇۋاھنامە:"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:24
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "FortiSSLVPN Authentication"
-msgstr "كىملىك دەلىللەش"
+msgstr ""
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "One Time Password"
-msgstr "ئىم:"
+msgstr "بىر قېتىملىق ئىم"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:38
 #, kde-format
 msgid "Token:"
-msgstr ""
+msgstr "پەرمان تاختا:"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:24
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgid "Toplevel Domain:"
-msgstr "دائىرە:"
+msgstr "ئالىي دەرىجىلىك دائىرە:"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:27
 #, kde-format
@@ -4811,10 +4638,9 @@ msgid "The domain the iodine server is authoritative for."
 msgstr ""
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:36
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "Nameserver:"
-msgstr "DNS مۇلازىمېتىر:"
+msgstr "ئات مۇلازىمېتىر:"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:39
 #, kde-format
@@ -4825,7 +4651,7 @@ msgstr ""
 #: editorqml/qml/vpn/iodine/Iodine.qml:65
 #, kde-format
 msgid "Fragment Size:"
-msgstr ""
+msgstr "پارچە چوڭلۇقى:"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:67
 #, kde-format
@@ -4838,18 +4664,15 @@ msgstr ""
 #: editorqml/qml/vpn/iodine/Iodine.qml:75
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:133
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgid "Automatic"
 msgstr "ئاپتوماتىك"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
-#, fuzzy, kde-format
-#| msgid " bytes"
+#, kde-format
 msgid "%1 byte"
 msgid_plural "%1 bytes"
-msgstr[0] " بايت"
+msgstr[0] "%1 بايت"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format
@@ -4859,41 +4682,36 @@ msgstr ""
 #: editorqml/qml/vpn/l2tp/L2tp.qml:33
 #, kde-format
 msgid "L2TP server IP or name."
-msgstr ""
+msgstr "L2TP مۇلازىمېتىر IP ئادرېسى ياكى ئىسمى."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:42
-#, fuzzy, kde-format
-#| msgid "Authentication:"
+#, kde-format
 msgid "Authentication type:"
-msgstr "كىملىك دەلىللەش:"
+msgstr "دەلىللەش تۈرى:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:45 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:82
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:50
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "Select an authentication mode."
-msgstr "ئىچكى كىملىك دەلىللەش:"
+msgstr "دەلىللەش ھالىتى تاللىنىدۇ."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/openvpn/Openvpn.qml:54
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password"
-msgstr "ئىم:"
+msgstr "ئىم"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificates (TLS)"
-msgstr "CA گۇۋاھنامە:"
+msgstr "گۇۋاھنامە (TLS)"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:92 editorqml/qml/vpn/pptp/Pptp.qml:66
 #: editorqml/qml/vpn/sstp/Sstp.qml:51
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgid "NT Domain:"
-msgstr "دائىرە:"
+msgstr "NT دائىرە:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:97
 #, kde-format
@@ -4915,8 +4733,7 @@ msgstr ""
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:154 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:141
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:109
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Private Key:"
 msgstr "شەخسىي ئاچقۇچ:"
 
@@ -4927,22 +4744,20 @@ msgstr ""
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:183 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:188
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:236
-#, fuzzy, kde-format
-#| msgid "Private key password:"
+#, kde-format
 msgid "Private Key Password:"
-msgstr "شەخسىي ئاچقۇچ ئىمى:"
+msgstr "شەخسىي شىفىرلىق ئاچقۇچ ئىم:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:200
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "L2TP ئىختىيارى مەنبە ئېغىزى ئىشلىتىدۇ"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:216
-#, fuzzy, kde-format
-#| msgid "WireGuard Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "IPsec Settings…"
-msgstr "WireGuard تەڭشىكى"
+msgstr "IPsec تەڭشىكى…"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:220
 #, kde-format
@@ -4953,7 +4768,7 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "PPP Settings…"
-msgstr ""
+msgstr "PPP تەڭشىكى…"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:24
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:36
@@ -4964,63 +4779,55 @@ msgstr ""
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:25
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:152
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:50
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "User Password:"
-msgstr "ئىم:"
+msgstr "ئىشلەتكۈچى ئىم:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "User Certificate Password:"
-msgstr "ئىشلەتكۈچى گۇۋاھنامىسى:"
+msgstr "ئىشلەتكۈچى گۇۋاھنامە ئىم:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:48
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Machine Certificate Password:"
-msgstr "ئىشلەتكۈچى گۇۋاھنامىسى:"
+msgstr "ماشىنا گۇۋاھنامە ئىم:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:59
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:171
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared Key:"
-msgstr "ئالدىن ھەمبەھىر شىفىرلىق ئاچقۇچ:"
+msgstr "ئالدىن ھەمبەھىر شىفىرلىق ئاچقۇچى:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:60
 #, kde-format
 msgid "Enable IPsec tunnel to L2TP host"
-msgstr ""
+msgstr "L2TP مۇلازىمېتىرنىڭ IPsec قانىلىنى قوزغىتىدۇ"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:74
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Machine Authentication"
-msgstr "كىملىك دەلىللەش"
+msgstr "ماشىنا دەلىللەش"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:79 editorqml/qml/vpn/ssh/Ssh.qml:140
 #, kde-format
 msgid "Type:"
-msgstr "تىپى:"
+msgstr "تۈرى:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared Key (PSK)"
-msgstr "ئالدىن ھەمبەھىر شىفىرلىق ئاچقۇچ:"
+msgstr "ئالدىن ھەمبەھىر شىفىرلىق ئاچقۇچى(PSK):"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:117
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "ئىشلەتكۈچى گۇۋاھنامىسى:"
+msgstr "ماشىنا گۇۋاھنامىسى:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:126
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificate in .pem, .der or .p12 formats."
-msgstr "CA گۇۋاھنامە:"
+msgstr ""
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:189
 #, kde-format
@@ -5028,10 +4835,9 @@ msgid "Password for private key or PKCS#12 certificate."
 msgstr ""
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:213
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Remote ID:"
-msgstr "‍‍IPv4 ئادرېس"
+msgstr "يىراقتىكى كىملىك:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:216
 #, kde-format
@@ -5045,7 +4851,7 @@ msgstr ""
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:225
 #, kde-format
 msgid "Phase1 Algorithms:"
-msgstr ""
+msgstr "1-باسقۇچلۇق ھېسابلاش ئۇسۇلى:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:228
 #, kde-format
@@ -5057,7 +4863,7 @@ msgstr ""
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:237
 #, kde-format
 msgid "Phase2 Algorithms:"
-msgstr ""
+msgstr "2-باسقۇچلۇق ھېسابلاش ئۇسۇلى:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:240
 #, kde-format
@@ -5069,7 +4875,7 @@ msgstr ""
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:249
 #, kde-format
 msgid "Phase1 Lifetime:"
-msgstr ""
+msgstr "1-باسقۇچ ئۆمرى:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:251
 #, kde-format
@@ -5081,7 +4887,7 @@ msgstr ""
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:269
 #, kde-format
 msgid "Phase2 Lifetime:"
-msgstr ""
+msgstr "2-باسقۇچ ئۆمرى:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:271
 #, kde-format
@@ -5095,7 +4901,7 @@ msgstr ""
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
 msgid "Enforce UDP encapsulation"
-msgstr ""
+msgstr "مەجبۇرىي UDP بولاقلاش"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:293
 #, kde-format
@@ -5106,10 +4912,9 @@ msgstr ""
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:304
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:192
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use IP compression"
-msgstr "TCP ئۇچۇر باش قىسىشنى ئىشلىتىدۇ"
+msgstr "IP قىسىشنى ئىشلىتىدۇ"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:306
 #, kde-format
@@ -5121,13 +4926,12 @@ msgstr ""
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:317
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "IKEv2 شىفىرلىق ئاچقۇچ ئالماشتۇرۇشنى ئىشلىتىدۇ"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:328
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Disable PFS"
-msgstr "چەكلەنگەن"
+msgstr "PFS نى چەكلە"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
 #, kde-format
@@ -5153,42 +4957,41 @@ msgstr ""
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr ""
+msgstr "تۆۋەندىكى كىملىك دەلىللەش ئۇسۇلىغا يول قويىدۇ:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:118
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:100
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Encryption"
-msgstr "باغلىنىش"
+msgstr "شىفىرلاش"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:123
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:105
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr ""
+msgstr "MPPE شىفىرلاش ئىشلەت"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:130
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:112
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
 #, kde-format
 msgid "Crypto:"
-msgstr ""
+msgstr "شىفىرلاش:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:135
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:117
-#, fuzzy, kde-format
-#| msgid "Require 128-bit encryption"
+#, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr "128 بىتلىق شىفىرلاش زۆرۈر"
+msgstr ""
+"MPPE نى ئىشلىتىشنى قوزغاتقاندىلا ئاندىن 40/128 بىت شىفىرلاش ياكى ھەممىسىنى "
+"ئىشلەتكىلى بولىدۇ."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:121
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "Any"
+#, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
 msgstr "خالىغان"
@@ -5196,25 +4999,23 @@ msgstr "خالىغان"
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:121
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "WEP key 128 bits"
+#, kde-format
 msgid "128 bit"
-msgstr "128 بىتلىق WEP شىفىرلىق ئاچقۇچ"
+msgstr "128 بىت"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:121
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgid "40 bit"
-msgstr ""
+msgstr "40 بىت"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:148
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:130
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
-#, fuzzy, kde-format
-#| msgid "Use stateful MPPE"
+#, kde-format
 msgid "Use stateful encryption"
-msgstr "ھالەتلىك MPPE نى ئىشلىتىدۇ"
+msgstr "ھالىتىنى ساقلاش شەكلىدە شىفىرلاشنى ئىشلىتىدۇ"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:150
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:132
@@ -5226,78 +5027,74 @@ msgstr ""
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:166
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:148
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
-#, fuzzy, kde-format
-#| msgid "Use BSD data compression"
+#, kde-format
 msgid "Allow BSD compression"
-msgstr "BSD سانلىق مەلۇمات قىسىشنى ئىشلىتىدۇ"
+msgstr "BSD قىسىشقا يول قويىدۇ"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:168
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:150
-#, fuzzy, kde-format
-#| msgid "Use BSD data compression"
+#, kde-format
 msgid "Allow/disable BSD-Compress compression."
-msgstr "BSD سانلىق مەلۇمات قىسىشنى ئىشلىتىدۇ"
+msgstr "BSD قىسىشقا يول قويىدۇ/چەكلەيدۇ."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:177
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:159
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
-#, fuzzy, kde-format
-#| msgid "Use Deflate data compression"
+#, kde-format
 msgid "Allow Deflate compression"
-msgstr "Deflate سانلىق مەلۇمات قىسىشنى ئىشلىتىدۇ"
+msgstr "Deflate قىسىشقا يول قويىدۇ"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:179
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:161
-#, fuzzy, kde-format
-#| msgid "Use Deflate data compression"
+#, kde-format
 msgid "Allow/disable Deflate compression."
-msgstr "Deflate سانلىق مەلۇمات قىسىشنى ئىشلىتىدۇ"
+msgstr "Deflate قىسىشقا يول قويىدۇ/چەكلەيدۇ."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:188
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:170
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Allow TCP header compression"
-msgstr "TCP ئۇچۇر باش قىسىشنى ئىشلىتىدۇ"
+msgstr "TCP ئۇچۇر باش قىسىشقا يول قويىدۇ"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:195
 #, kde-format
 msgid "Use protocol field compression negotiation"
-msgstr ""
+msgstr "كېلىشىم بۆلىكىنى قىسىش كېلىشىشىنى ئىشلىتىدۇ"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:202
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use Address/Control compression"
-msgstr "TCP ئۇچۇر باش قىسىشنى ئىشلىتىدۇ"
+msgstr "ئادرېس/تىزگىنلەش قىسىشنى ئىشلىتىدۇ"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:204
 #, kde-format
 msgid "Use Address/Control compression in both directions (send and receive)."
 msgstr ""
+"قوش يۆنىلىشتە يوللىغان ۋە قوبۇللىغاندا ئادرېس/تىزگىنلەش قىسىشنى ئىشلىتىدۇ."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:222
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:186
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
 msgstr ""
+"LCP ئەكس سادا ئىلتىماسى يوللاش ئارقىلىق تورداشنىڭ ھايات ئىكەنلىكىنى "
+"جەزملەيدۇ."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:233
-#, fuzzy, kde-format
-#| msgid "WireGuard Settings"
+#, kde-format
 msgid "Other Settings"
-msgstr "WireGuard تەڭشىكى"
+msgstr "باشقا تەڭشەك"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:244
 #, kde-format
 msgid "Multilink PPP MRRU:"
-msgstr ""
+msgstr "كۆپ باغلىنىش PPP MRRU:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:246
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "يەككە باغلىنىشتا PPP كۆپ باغلىنىش كېلىشىشنى سىنايدۇ."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:266
 #, kde-format
@@ -5312,10 +5109,9 @@ msgstr ""
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:36
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:26
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:67 editorqml/qml/vpn/vpnc/VpncAuth.qml:35
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "Group name:"
-msgstr "ئىشلەتكۈچى ئاتى:"
+msgstr "گۇرۇپپا ئاتى:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:39
 #, kde-format
@@ -5325,29 +5121,26 @@ msgstr ""
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:51
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:39
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:52
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "User password:"
-msgstr "ئىم:"
+msgstr "ئىشلەتكۈچى ئىم:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:64
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:50
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:82
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Group password:"
-msgstr "ئىم كۆرسەت"
+msgstr "گۇرۇپپا ئىم:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:81
-#, fuzzy, kde-format
-#| msgid "Users allowed to activate the connection"
+#, kde-format
 msgid "User name for XAUTH authentication."
-msgstr "باغلانغان ئىشلەتكۈچىنىڭ ئاكتىپلىشىغا يول قويىدۇ"
+msgstr ""
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:90
 #, kde-format
 msgid "Phase1 algorithms:"
-msgstr ""
+msgstr "1-باسقۇچلۇق ھېسابلاش ئۇسۇلى:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:93
 #, kde-format
@@ -5357,7 +5150,7 @@ msgstr ""
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:102
 #, kde-format
 msgid "Phase2 algorithms:"
-msgstr ""
+msgstr "2-باسقۇچلۇق ھېسابلاش ئۇسۇلى:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:105
 #, kde-format
@@ -5366,16 +5159,14 @@ msgstr ""
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:117
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:41
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "(NT-)Domain name for authentication."
-msgstr "ئىچكى كىملىك دەلىللەش:"
+msgstr "كىملىك دەلىللەشكە ئىشلىتىدىغان (NT-) دائىرە."
 
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:38
-#, fuzzy, kde-format
-#| msgid "WireGuard VPN"
+#, kde-format
 msgid "Libreswan VPN"
-msgstr "WireGuard VPN"
+msgstr ""
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:38
 #, kde-format
@@ -5385,22 +5176,19 @@ msgid ""
 msgstr ""
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "Shared Key"
+#, kde-format
 msgid "Static Key"
-msgstr "ھەمبەھىرلەنگەن ئاچقۇچ"
+msgstr "تىنچ ئاچقۇچ"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Password with Certificates (TLS)"
-msgstr "CA گۇۋاھنامە:"
+msgstr "ئىم بار گۇۋاھنامە(TLS)"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:70
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr "CA گۇۋاھنامە:"
+msgstr "گۇۋاھنامە تارقاتقۇچى (CA) ھۆججەت، پىچىمى .pem."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:94
 #, kde-format
@@ -5408,29 +5196,31 @@ msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
 "Certificate)."
 msgstr ""
+"يەرلىك تورداشنىڭ ئىمزالىق گۇۋاھنامىسى، پىچىمى .pem (CA گۇۋاھنامىسىگە CA "
+"ئىمزا قويغان)."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:118
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr ""
+msgstr "يەرلىك تورداشنىڭ شەخسىي شىفىرلىق ئاچقۇچى، پىچىمى .pem."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:133
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Static Key:"
-msgstr "شەخسىي ئاچقۇچ:"
+msgstr "تىنچ ئاچقۇچ:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:142
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
 msgstr ""
+"تىنچ ئاچقۇچ شىفىرلاش ھالىتىگە ئىشلىتىدىغان ئالدىن ھەمبەھىرلەنگەن ھۆججەت "
+"(غەيرى TLS)."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:157
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:644
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "Key Direction:"
-msgstr "ئىچكى كىملىك دەلىللەش:"
+msgstr "ئاچقۇچ يۆنىلىشى:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:162
 #, kde-format
@@ -5439,6 +5229,10 @@ msgid ""
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
+"ئەگەر شىفىرلىق ئاچقۇچ يۆنىلىش بەلگىلەنگەن بولسا، ئۇ چوقۇم VPN تورداش "
+"يۆنىلىشى بىلەن قارىمۇ-قارشى بولۇشى كېرەك. For example, if the peer uses '1', "
+"this connection must use '0'. If you are unsure what value to use, contact "
+"your system administrator."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
@@ -5447,9 +5241,7 @@ msgstr ""
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
-#, fuzzy, kde-format
-#| msgctxt "no security"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "يوق"
 
@@ -5465,73 +5257,67 @@ msgstr ""
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:173 editorqml/qml/vpn/ssh/Ssh.qml:59
 #: editorqml/qml/vpn/ssh/Ssh.qml:111
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Local IP Address:"
-msgstr "‍‍IPv4 ئادرېس"
+msgstr "يەرلىك IP ئادرېس:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:178
 #, kde-format
 msgid "IP address of the local VPN endpoint."
-msgstr ""
+msgstr "يەرلىك VPN ئاخىرلىشىش نۇقتىسىنىڭ IP ئادرېسى."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:187 editorqml/qml/vpn/ssh/Ssh.qml:47
 #: editorqml/qml/vpn/ssh/Ssh.qml:97
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Remote IP Address:"
-msgstr "‍‍IPv4 ئادرېس"
+msgstr "يىراقتىكى IP ئادرېس:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:192
 #, kde-format
 msgid "IP address of the remote VPN endpoint."
-msgstr ""
+msgstr "يىراقتىكى VPN ئاخىرلىشىش نۇقتىسىنىڭ IP ئادرېسى."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:206
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "OpenVPN غا يوللايدىغان ئىشلەتكۈچى ئاتى."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:28
-#, fuzzy, kde-format
-#| msgid "Advanced"
+#, kde-format
 msgctxt "@title:window"
 msgid "Advanced"
 msgstr "ئالىي"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:77
-#, fuzzy, kde-format
-#| msgid "WireGuard Settings"
+#, kde-format
 msgid "TLS Settings"
-msgstr "WireGuard تەڭشىكى"
+msgstr "TLS تەڭشەك"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:81
 #, kde-format
 msgid "Proxies"
-msgstr ""
+msgstr "ۋاكالەتچى"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:112
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:37
 #, kde-format
 msgid "Use custom gateway port:"
-msgstr ""
+msgstr "ئىختىيارى تور ئۆتكەل ئېغىزى ئىشلىتىدۇ:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:136
 #, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr ""
+msgstr "ئىشلىتىدىغان ئىختىيارى قايتا كېلىشىش ۋاقىت ئارىلىقى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:154
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use compression"
-msgstr "TCP ئۇچۇر باش قىسىشنى ئىشلىتىدۇ"
+msgstr "قىسىشنى ئىشلىتىدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:161
-#, fuzzy, kde-format
-#| msgid "Compression"
+#, kde-format
 msgid "Compression:"
-msgstr "قىسىش"
+msgstr ""
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
@@ -5549,28 +5335,24 @@ msgid "LZ4 v2"
 msgstr ""
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
-#, fuzzy, kde-format
-#| msgctxt "Networking is inactive and all devices are disabled"
-#| msgid "Inactive"
+#, kde-format
 msgid "Adaptive"
-msgstr "پاسسىپ"
+msgstr "ماسلىشىشچان"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:175
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "TCP ئۇچۇر باش قىسىشنى ئىشلىتىدۇ"
+msgstr "سىممېتىرىك بولمىغان قىسىشنى ئىشلىتىدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:182
-#, fuzzy, kde-format
-#| msgid "New %1 connection"
+#, kde-format
 msgid "Use a TCP connection"
-msgstr "يېڭى %1 باغلىنىش"
+msgstr "TCP باغلىنىش ئىشلىتىدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:195
 #, kde-format
 msgid "Set virtual device type:"
-msgstr ""
+msgstr "مەۋھۇم ئۈسكۈنە تۈرىنى تەڭشەيدۇ:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
 #, kde-format
@@ -5578,57 +5360,55 @@ msgid "TUN"
 msgstr ""
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
-#, fuzzy, kde-format
-#| msgid "PAP"
+#, kde-format
 msgid "TAP"
-msgstr "PAP"
+msgstr ""
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:216
 #, kde-format
 msgid "Set virtual device name:"
-msgstr ""
+msgstr "مەۋھۇم ئۈسكۈنە ئاتىنى تەڭشەيدۇ:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:239
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:61
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr ""
+msgstr "ئىختىيارى قانالنىڭ ئەڭ يۇقىرى يەتكۈزۈش بۆلىكى (MTU) نى ئىشلىتىدۇ:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:263
 #, kde-format
 msgid "Use custom UDP fragment size:"
-msgstr ""
+msgstr "ئىختىيارى UDP تارماق پارچە چوڭلۇقىنى ئىشلىتىدۇ:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:281
 #, kde-format
 msgid "Restrict TCP maximum segment size (MSS)"
-msgstr ""
+msgstr "TCP ئەڭ چوڭ يوللانما پارچىسىنىڭ چوڭلۇقىنى چەكلەيدۇ(MSS)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:294
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "يول MTU بايقاش قىلمىشىنى بەلگىلەيدۇ:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "بەلكىم"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:311
 #, kde-format
 msgid "Randomize remote hosts"
-msgstr ""
+msgstr "يىراقتىكى مۇلازىمېتىرنى ئىختىيارىيلاشتۇرىدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:318
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "ئىختىيارىي ھەرپ تىزىقى بار ئالدى قوشۇلغۇچى يىراقتىكى DNS ئىسمى"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:325
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Connect timeout:"
-msgstr "باغلىنىش"
+msgstr "باغلىنىش مۆھلىتى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
 #, kde-format
@@ -5638,79 +5418,80 @@ msgstr ""
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:338
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "تورداش DNS ئىسمى (FQDN) نى تارتىشقا يول قويىدۇ."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:345
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "تورداش ئۇچۇرىنى ئىتتىرىدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:352
 #, kde-format
 msgid "IPv6 tun link"
-msgstr ""
+msgstr "IPv6 tun ئۇلانمىسى"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:365
 #, kde-format
 msgid "Specify ping interval:"
-msgstr ""
+msgstr "Ping ۋاقىت ئارىلىقىنى بەلگىلەيدۇ:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:389
 #, kde-format
 msgid "Specify exit or restart ping:"
 msgstr ""
+"چېكىنىش ياكى قايتا قوزغىتىشتىن ئىلگىرىكى ping كۈتۈش ۋاقتىنى بەلگىلەيدۇ:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
 #, kde-format
 msgid "ping-exit"
-msgstr ""
+msgstr "ping-چېكىنىش"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
 #, kde-format
 msgid "ping-restart"
-msgstr ""
+msgstr "ping-قايتا قوزغىتىش"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:416
 #, kde-format
 msgid "Accept authenticated packets from any address (Float)"
 msgstr ""
+"ھەر قانداق ئادرېستىن كەلگەن كىملىك دەلىللەشتىن ئۆتكەن سانلىق مەلۇمات "
+"بوغچىسىنى قوبۇل قىلىدۇ(Float)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:429
 #, kde-format
 msgid "Specify max routes:"
-msgstr ""
+msgstr "ئەڭ كۆپ يول تاللاش سانىنى بەلگىلەش:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:461
 #, kde-format
 msgid "Cipher:"
-msgstr ""
+msgstr "شىفىر:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:471
 #, kde-format
 msgid "Data Ciphers:"
-msgstr ""
+msgstr "سانلىق مەلۇمات شىفىرى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:481
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "سانلىق مەلۇمات شىفىر زاپىسى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:491
-#, fuzzy, kde-format
-#| msgid "Link negotiation:"
+#, kde-format
 msgid "Disable cipher negotiation"
-msgstr "ئۇلانما كېلىشىشى:"
+msgstr "شىفىر كېلىشىشنى چەكلەيدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:504
 #, kde-format
 msgid "Use custom size of cipher key:"
-msgstr ""
+msgstr "ئىختىيارى شىفىرلىق ئاچقۇچ چوڭلۇقىنى ئىشلىتىدۇ:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:522
-#, fuzzy, kde-format
-#| msgid "Authentication:"
+#, kde-format
 msgid "HMAC Authentication:"
-msgstr "كىملىك دەلىللەش:"
+msgstr "HMAC كىملىك دەلىللەش:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
@@ -5753,39 +5534,39 @@ msgid "RIPEMD-160"
 msgstr ""
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:544
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Server Certificate Check:"
-msgstr "ئىشلەتكۈچى گۇۋاھنامىسى:"
+msgstr "مۇلازىمېتىر گۇۋاھنامىسىنى تەكشۈرۈش:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Don't verify certificate identification"
-msgstr ""
+msgstr "گۇۋاھنامە كىملىكىنى تەكشۈرمەيدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify whole subject exactly"
-msgstr ""
+msgstr "نىشاندىكى بارلىق بۆلەكنىڭ بىردەكلىكىنى دەلىللەيدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify name exactly"
-msgstr ""
+msgstr "ئىسىم بىردەكلىكىنىلا دەلىللەيدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify name by prefix"
-msgstr ""
+msgstr "ئىسىم ئالدى قوشۇلغۇچىسىنىڭ بىردەكلىكىنى دەلىللەيدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:551
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
 msgstr ""
+"نىشاننىڭ قىسمەن بۆلىكىنىڭ بىردەكلىكىنى دەلىللەيدۇ (كونا نەشرى ھالىتى، "
+"ئىشلىتىش كۈچلۈك تەۋسىيە قىلىنمايدۇ)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:562
-#, fuzzy, kde-format
-#| msgid "Subject match:"
+#, kde-format
 msgid "Subject Match:"
 msgstr "نىشان ماسلىشىشى:"
 
@@ -5797,46 +5578,44 @@ msgstr ""
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:576
 #, kde-format
 msgid "Verify peer (server) certificate usage signature"
-msgstr ""
+msgstr "تورداش (مۇلازىمېتىر) گۇۋاھنامىسىنىڭ ئىشلىتىلىشى ئىمزاسىنى دەلىللەيدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:583
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Remote peer certificate TLS type:"
-msgstr "ئىشلەتكۈچى گۇۋاھنامىسى:"
+msgstr "يىراقتىكى تورداش گۇۋاھنامىسىنىڭ TLS تۈرى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
-#, fuzzy, kde-format
-#| msgid "Service:"
+#, kde-format
 msgid "Server"
-msgstr "مۇلازىمەت:"
+msgstr "مۇلازىمېتىر"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
 #, kde-format
 msgid "Client"
-msgstr ""
+msgstr "خېرىدار"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:595
 #, kde-format
 msgid "Verify peer (server) certificate nsCertType designation"
-msgstr ""
+msgstr "تورداش (مۇلازىمېتىر) گۇۋاھنامىسىنىڭ nsCertType لايىھەسىنى دەلىللەيدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:602
 #, kde-format
 msgid "Remote peer certificate nsCert designation:"
-msgstr ""
+msgstr "يىراقتىكى تورداش گۇۋاھنامىسىنىڭ nsCert لايىھەسى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Auth"
-msgstr ""
+msgstr "TLS دەلىللەش"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Crypt"
-msgstr ""
+msgstr "TLS شىفىرلاش"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
@@ -5844,62 +5623,57 @@ msgid "TLS-Crypt v2"
 msgstr ""
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:624
-#, fuzzy, kde-format
-#| msgid "WEP index:"
+#, kde-format
 msgid "Key File:"
-msgstr "WEP ئىندېكسى:"
+msgstr "ئاچقۇچ ھۆججىتى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgid "Server (0)"
-msgstr "1 (كۆڭۈلدىكى)"
+msgstr "مۇلازىمېتىر (0)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
 #, kde-format
 msgid "Client (1)"
-msgstr ""
+msgstr "خېرىدار (1)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:657
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "ئىشلەتكۈچى گۇۋاھنامىسى:"
+msgstr "قوشۇمچە گۇۋاھنامە ھۆججىتى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:675
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "ئەڭ تۆۋەن TLS نەشرى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:687
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "ياكى يۇقىرى"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:695
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "ئەڭ يۇقىرى TLS نەشرى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:703
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "CRL دەلىللەش ھۆججىتى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:721
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "CRL دەلىللەش مۇندەرىجىسى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:755
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Proxy Type:"
-msgstr "تىپى:"
+msgstr "ۋاكالەتچىنىڭ تۈرى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Not Required"
 msgstr "زۆرۈر ئەمەس"
 
@@ -5919,38 +5693,36 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
+"ئەگەر تەشكىلىڭىز ۋاكالەتچى مۇلازىمېتىر ئارقىلىق ئىنتېرنېتنى زىيارەت قىلىشنى "
+"تەلەپ قىلسا، بۇ تاللانمىنى تاللاڭ."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:772
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgid "Server Address:"
-msgstr "ئادرېس"
+msgstr "مۇلازىمېتىر ئادرېسى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:782
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "ئېغىز:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:796
 #, kde-format
 msgid "Retry indefinitely when errors occur"
-msgstr ""
+msgstr "خاتالىق كۆرۈلگەندە تەكرار سىنايدۇ"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:803
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "Proxy Username:"
-msgstr "ئىشلەتكۈچى ئاتى:"
+msgstr "ۋاكالەتچى مۇلازىمېتىرنىڭ ئىشلەتكۈچى ئاتى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:819
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:59
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:54
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Proxy Password:"
-msgstr "ئىم:"
+msgstr "ۋاكالەتچى ئىمى:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:24
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:36
@@ -5960,14 +5732,12 @@ msgstr ""
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:48
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:52
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Key Password:"
-msgstr "ئىم:"
+msgstr "شىفىرلىق ئاچقۇچ ئىم:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:21
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
 msgstr "كۆڭۈلدىكى"
@@ -5985,12 +5755,12 @@ msgstr ""
 #: editorqml/qml/vpn/pptp/Pptp.qml:27
 #, kde-format
 msgid "PPTP server IP or name."
-msgstr ""
+msgstr "PPTP مۇلازىمېتىر IP ئادرېسى ياكى ئىسمى."
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:36
 #, kde-format
 msgid "Login:"
-msgstr ""
+msgstr "تىزىمغا كىر:"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:22
 #, kde-format
@@ -6000,82 +5770,72 @@ msgstr ""
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:24
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr ""
+msgstr "تەلەپ قىلىنغاندا ئىم PPTP غا يۆلىنىدۇ."
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
-#, fuzzy, kde-format
-#| msgid "WireGuard Settings"
+#, kde-format
 msgid "Network Settings"
-msgstr "WireGuard تەڭشىكى"
+msgstr "تور تەڭشىكى"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:71
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 netmask"
-#| msgid "Netmask"
+#, kde-format
 msgid "Netmask:"
-msgstr "تور ماسكىسى"
+msgstr "تور نىقابى:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:84
 #, kde-format
 msgid "IPv6 Network Settings"
-msgstr ""
+msgstr "‪IPv6‬ تور تەڭشىكى"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:90
-#, fuzzy, kde-format
-#| msgid "IPv6"
+#, kde-format
 msgid "Use IPv6"
-msgstr "IPv6"
+msgstr "‪IPv6‬ ئىشلەت"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:125
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv6 prefix"
-#| msgid "Prefix"
+#, kde-format
 msgid "Prefix:"
-msgstr "ئالدى قوشۇلغۇچى"
+msgstr "ئالدى قوشۇلغۇچى:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "SSH Agent"
-msgstr ""
+msgstr "SSH ۋاكالەتچى"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "Key authentication"
-msgstr "ئىچكى كىملىك دەلىللەش:"
+msgstr "ئاچقۇچ دەلىللەش"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:150
-#, fuzzy, kde-format
-#| msgid "WEP index:"
+#, kde-format
 msgid "SSH Key File:"
-msgstr "WEP ئىندېكسى:"
+msgstr "SSH ئاچقۇچ ھۆججىتى:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:85
 #, kde-format
 msgid "Extra SSH options:"
-msgstr ""
+msgstr "قوشۇمچە SSH تاللانمىسى:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:109
 #, kde-format
 msgid "Remote device number:"
-msgstr ""
+msgstr "يىراقتىكى ئۈسكۈنە نومۇرى:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:129
 #, kde-format
 msgid "Use a TAP device"
-msgstr ""
+msgstr "TAP ئۈسكۈنە ئىشلەت"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:142
-#, fuzzy, kde-format
-#| msgctxt "like in Username for athentication"
-#| msgid "Username"
+#, kde-format
 msgid "Remote username"
-msgstr "ئىشلەتكۈچى ئاتى"
+msgstr "يىراقتىكى ئىشلەتكۈچى ئاتى"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:162
 #, kde-format
 msgid "Do not replace default route"
-msgstr ""
+msgstr "كۆڭۈلدىكى يول تاللىغۇچنى ئالماشتۇرما"
 
 #: editorqml/qml/vpn/ssh/SshAuth.qml:23
 #, kde-format
@@ -6085,50 +5845,47 @@ msgstr ""
 #: editorqml/qml/vpn/sstp/Sstp.qml:39
 #, kde-format
 msgid "Optional"
-msgstr ""
+msgstr "تاللاشچان"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:79
 #, kde-format
 msgid "Ignore certificate warnings"
-msgstr ""
+msgstr "گۇۋاھنامە ئاگاھلاندۇرۇشىغا پەرۋا قىلما"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:60
 #, kde-format
 msgid "Point-to-Point"
-msgstr ""
+msgstr "نۇقتىدىن نۇقتىغا"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:64
 #, kde-format
 msgid "Proxy"
-msgstr ""
+msgstr "ۋاكالەتچى"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
-#, fuzzy, kde-format
-#| msgid "Use point-to-point encryption (MPPE)"
+#, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr "نۇقتىدىن نۇقتىغا شىفىرلاش (MPPE) نى ئىشلىتىدۇ"
+msgstr "Microsoft نۇقتىدىن نۇقتىغا شىفىرلاشنى ئىشلەت"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "ئارىلاش"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:213
 #, kde-format
 msgid "Use custom unit number:"
-msgstr ""
+msgstr "ئىختىيارى بىرلىك نومۇرىنى ئىشلىتىدۇ:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:242
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgid "Address:"
-msgstr "ئادرېس"
+msgstr "ئادرېس:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
 #, kde-format
 msgid "Credentials"
-msgstr ""
+msgstr "كىملىك ئىسپاتى"
 
 #: editorqml/qml/vpn/sstp/SstpAuth.qml:22
 #, kde-format
@@ -6136,34 +5893,30 @@ msgid "SSTP VPN"
 msgstr ""
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgid "Gateway"
 msgstr "تور ئۆتكىلى"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:47
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:88
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificate:"
-msgstr "CA گۇۋاھنامە:"
+msgstr "گۇۋاھنامە:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Certificate/private key"
-msgstr ""
+msgstr "گۇۋاھنامە/شەخسىي ئاچقۇچ"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificate/ssh-agent"
-msgstr "CA گۇۋاھنامە:"
+msgstr "گۇۋاھنامە/SSH ۋاكالەتچى"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Smartcard"
-msgstr ""
+msgstr "ئىدراكلىق كارتا"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
@@ -6171,26 +5924,24 @@ msgid "EAP-TTLS"
 msgstr ""
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:132
-#, fuzzy, kde-format
-#| msgid "Ask for this password every time"
+#, kde-format
 msgid "The PIN is asked for when the connection is activated."
-msgstr "بۇ ئىمنى ھەر قېتىم سورايدۇ(_K)"
+msgstr ""
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:168
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "تاللانما"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:174
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Request an inner IP address"
-msgstr "‍‍IPv4 ئادرېس"
+msgstr "ئىچكى IP ئادرېس ئىلتىماس قىلىدۇ"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:201
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
-msgstr ""
+msgstr "ئىختىيارىي شىفىرلاش لايىھەسىنى قوزغات"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:208
 #, kde-format
@@ -6200,7 +5951,7 @@ msgstr ""
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:213
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
-msgstr ""
+msgstr "IKE لايىھە تىزىمى «;» بىلەن ئايرىلىدۇ"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:222
 #, kde-format
@@ -6210,7 +5961,7 @@ msgstr ""
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:227
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr ""
+msgstr "ESP لايىھە تىزىمى «;» بىلەن ئايرىلىدۇ"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:28
 #, kde-format
@@ -6218,22 +5969,19 @@ msgid "strongSwan VPN"
 msgstr ""
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:33
-#, fuzzy, kde-format
-#| msgid "Private key password:"
+#, kde-format
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
-msgstr "شەخسىي ئاچقۇچ ئىمى:"
+msgstr "شەخسىي شىفىرلىق ئاچقۇچ ئىم:"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:35
-#, fuzzy, kde-format
-#| msgid "PIN:"
+#, kde-format
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
-msgstr "PIN:"
+msgstr ""
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@label:textbox password label for EAP password"
 msgid "Password:"
 msgstr "ئىم:"
@@ -6241,58 +5989,53 @@ msgstr "ئىم:"
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:28
 #, kde-format
 msgid "IP/hostname of IPsec gateway."
-msgstr ""
+msgstr "IPsec تور ئۆتكىلىنىڭ IP/مۇلازىمېتىر ئاتى."
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:40
-#, fuzzy, kde-format
-#| msgid "Users allowed to activate the connection"
+#, kde-format
 msgid "User name for the connection."
-msgstr "باغلانغان ئىشلەتكۈچىنىڭ ئاكتىپلىشىغا يول قويىدۇ"
+msgstr "باغلىنىشنىڭ ئىشلەتكۈچى ئاتى."
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:70
 #, kde-format
 msgid "Group name"
-msgstr ""
+msgstr "گۇرۇپپا ئاتى"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:99
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "Use hybrid authentication"
-msgstr "ئىچكى كىملىك دەلىللەش:"
+msgstr "ئارىلاش كىملىك دەلىللەشنى ئىشلىتىدۇ"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:101
 #, kde-format
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
-msgstr ""
+msgstr "ئارىلاش كىملىك دەلىللەشنى قوزغىتىدۇ، مەسىلەن، گۇۋاھنامە قوشۇمچە ئىم."
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:110
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgid "CA file:"
-msgstr "PAC ھۆججىتى:"
+msgstr "CA ھۆججەت:"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:119
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA certificate in PEM format."
-msgstr "CA گۇۋاھنامە:"
+msgstr "PEM پىچىمىدىكى CA گۇۋاھنامە."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:34
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Identification"
-msgstr "كىملىك دەلىللەش"
+msgstr "كىملىك"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:50
 #, kde-format
 msgid "Vendor:"
-msgstr ""
+msgstr "تەمىنلىگۈچى:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:53
 #, kde-format
 msgid "Vendor of your IPsec gateway."
-msgstr ""
+msgstr "IPsec تور ئۆتكىلىنىڭ تەمىنلىگۈچىسى."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:57
 #, kde-format
@@ -6313,64 +6056,59 @@ msgid "Fortigate"
 msgstr ""
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:65
-#, fuzzy, kde-format
-#| msgid "Transport mode:"
+#, kde-format
 msgid "Transport and Security"
-msgstr "يەتكۈزۈش شەكلى:"
+msgstr "يەتكۈزۈش ۋە بىخەتەرلىك"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:69
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Encryption method:"
-msgstr "باغلىنىش"
+msgstr "شىفىرلاش ئۇسۇلى:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:72
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Encryption method."
-msgstr "باغلىنىش"
+msgstr "شىفىرلاش ئۇسۇلى."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:76
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
-msgstr "1 (كۆڭۈلدىكى)"
+msgstr "بىخەتەر(كۆڭۈلدىكى)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:76
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Weak (DES encryption, use with caution)"
-msgstr ""
+msgstr "ئاجىز (DES شىفىرلاش، ئېھتىيات بىلەن ئىشلىتىڭ)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:76
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
-msgstr ""
+msgstr "يوق(زادىلا بىخەتەر ئەمەس)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:83
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "NAT traversal:"
-msgstr "DNS مۇلازىمېتىر:"
+msgstr "NAT ئۆتۈشى:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:86
 #, kde-format
 msgid "NAT traversal method to use."
-msgstr ""
+msgstr "ئىشلىتىدىغان NAT ئۆتۈش ئۇسۇلى."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr ""
+msgstr "NAT-T بولسا ئىشلىتىش(كۆڭۈلدىكى)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
-msgstr ""
+msgstr "NAT-T نى ھەمىشە ئىشلىتىش"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
@@ -6379,8 +6117,7 @@ msgid "Cisco UDP"
 msgstr ""
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "NAT traversal method"
 msgid "Disabled"
 msgstr "چەكلەنگەن"
@@ -6388,84 +6125,75 @@ msgstr "چەكلەنگەن"
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:97
 #, kde-format
 msgid "IKE DH Group:"
-msgstr ""
+msgstr "IKE DH گۇرۇپپىسى:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:100
 #, kde-format
 msgid "Name of the IKE DH group."
-msgstr ""
+msgstr "IKE DH گۇرۇپپىسىنىڭ ئىسمى."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:104
-#, fuzzy, kde-format
-#| msgctxt "wireless network cipher"
-#| msgid "Group WEP104"
+#, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 1"
-msgstr "گۇرۇپپا/Group WEP104"
+msgstr "DH گۇرۇپپا 1"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:104
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 2 (default)"
-msgstr "1 (كۆڭۈلدىكى)"
+msgstr "DH گۇرۇپپا 2(كۆڭۈلدىكى)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:104
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 5"
-msgstr ""
+msgstr "DH گۇرۇپپا 5"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:111
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr ""
+msgstr "مۇكەممەل يەتكۈزۈش بىخەتەرلىكى(PFS):"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:114
 #, kde-format
 msgid "Diffie-Hellman group to use for PFS."
-msgstr ""
+msgstr "PFS غا ئىشلىتىدىغان Diffie-Hellman گۇرۇپپىسى."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
-msgstr "1 (كۆڭۈلدىكى)"
+msgstr "مۇلازىمېتىر (كۆڭۈلدىكى)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
-#, fuzzy, kde-format
-#| msgctxt "no security"
-#| msgid "None"
+#, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "None"
 msgstr "يوق"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
-#, fuzzy, kde-format
-#| msgctxt "wireless network cipher"
-#| msgid "Group WEP104"
+#, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 1"
-msgstr "گۇرۇپپا/Group WEP104"
+msgstr "DH گۇرۇپپا 1"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 2"
-msgstr ""
+msgstr "DH گۇرۇپپا 2"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
-msgstr ""
+msgstr "DH گۇرۇپپا 5"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:125
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Local Port:"
-msgstr "‍‍IPv4 ئادرېس"
+msgstr "يەرلىك ئېغىز:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:127
 #, kde-format
@@ -6477,48 +6205,41 @@ msgstr ""
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:145
 #, kde-format
 msgid "Disable dead peer detection"
-msgstr ""
+msgstr "ئۆلۈك تورداش بايقاشنى چەكلەيدۇ"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:147
 #, kde-format
 msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr ""
+msgstr "DPD بوغچىسى يوللاشنى چەكلەيدۇ (مۆھلىتى 0 گە تەڭشىلىدۇ)."
 
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:49
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "VPNC Authentication"
-msgstr "كىملىك دەلىللەش"
+msgstr ""
 
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:61
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Group Password:"
-msgstr "ئىم:"
+msgstr "گۇرۇپپا ئىم:"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
-#, fuzzy, kde-format
-#| msgid "%1 (%2 MHz)"
+#, kde-format
 msgctxt "@item BSSID (MAC address) followed by signal strength"
 msgid "%1 (%2%)"
-msgstr "%1 (%2 MHz)"
+msgstr ""
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:119
-#, fuzzy, kde-format
-#| msgid "Frequency"
+#, kde-format
 msgid "Frequency: %1 MHz"
-msgstr "چاستوتا"
+msgstr ""
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:124
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgid "Channel: %1"
-msgstr "قانال:"
+msgstr "قانال: %1"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:136
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item wireless band"
 msgid "Automatic"
 msgstr "ئاپتوماتىك"
@@ -6527,69 +6248,59 @@ msgstr "ئاپتوماتىك"
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:232
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:95
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:98
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item MTU is automatically determined"
 msgid "Automatic"
 msgstr "ئاپتوماتىك"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:229
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:95
-#, fuzzy, kde-format
-#| msgid " bytes"
+#, kde-format
 msgctxt "@item:intext MTU size, %1 is the number of bytes"
 msgid "%1 bytes"
-msgstr " بايت"
+msgstr "%1 بايت"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
-#, fuzzy, kde-format
-#| msgid "Alternative subject matches:"
+#, kde-format
 msgid "Alternative subject matches"
-msgstr "زاپاس نىشان ماسلىشىشى:"
+msgstr ""
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:98
-#, fuzzy, kde-format
-#| msgid "Anonymous identity:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Anonymous identity:"
 msgstr "ئاتسىز كىملىك:"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
-#, fuzzy, kde-format
-#| msgid "Anonymous"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Anonymous"
 msgstr "ئاتسىز"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
-#, fuzzy, kde-format
-#| msgid "Authenticated"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Authenticated"
 msgstr "سالاھىيىتى دەلىللەنگەن"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
-#, fuzzy, kde-format
-#| msgid "Both"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Both"
 msgstr "ئىككىلىسى"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:142
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt ""
 "@label PAC stands for Proxy Auto-Configuration and should not be translated"
 msgid "PAC file:"
 msgstr "PAC ھۆججىتى:"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:191
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt "@item:filefilter"
 msgid "PAC files (*.pac)"
-msgstr "PAC ھۆججىتى:"
+msgstr ""
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:117
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:39
@@ -6625,22 +6336,19 @@ msgid ""
 msgstr ""
 
 #: editorqml/qml/wifisecurity/authentication/WepKey.qml:38
-#, fuzzy, kde-format
-#| msgid "WEP index:"
+#, kde-format
 msgid "Key index:"
-msgstr "WEP ئىندېكسى:"
+msgstr ""
 
 #: editorqml/qml/wifisecurity/DnsList.qml:15
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "DNS Servers"
-msgstr "DNS مۇلازىمېتىر:"
+msgstr ""
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:25
-#, fuzzy, kde-format
-#| msgid "WEP key 40/128 bits (Hex or ASCII)"
+#, kde-format
 msgid "WEP 40/128-bit key (Hex)"
-msgstr "WEP 40/128 بىتلىق ئاچقۇچ (16لىك ياكى ASCII)"
+msgstr ""
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:26
 #, kde-format
@@ -6648,98 +6356,62 @@ msgid "WEP 128-bit Passphrase"
 msgstr ""
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:28
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Personal"
+#, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr "WPA2/WPA3‏ شەخسىي"
+msgstr "WPA/WPA2 شەخسىي"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:29
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Enterprise"
+#, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr "WPA2/WPA3 كارخانا"
+msgstr "WPA/WPA2 كارخانا"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option locks this connection to the network device specified by its\n"
-#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#, kde-format
 msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"بۇ تاللاش مەزكۇر باغلىنىشنى بۇ يەرگە كىرگۈزۈلگەن MAC ئادرېسى بېكىتكەن تور "
-"ئۈسكۈنىسىنى ئىشلىتىدۇ. مەسىلەن: 00:11:22:33:44:55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MAC address entered here will be used as hardware address for the\n"
-#| "network device this connection is activated on. This feature is known as "
-#| "MAC\n"
-#| "cloning or spoofing. Example 11:22:33:44:55"
+#, kde-format
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
-"بۇ يەرگە كىرگۈزگەن MAC ئادرېسى باغلىنىش قوزغىتىلغاندا تور ئۈسكۈنە قاتتىق "
-"دېتال ئادرېسى قىلىپ ئىشلىتىلىدۇ. بۇ ئىقتىدار MAC نىڭ كۆپەيتىلمىسى ياكى "
-"ئالداش دېيىلىدۇ. مەسىلەن: 11:22:33:44:55‎‏‬"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "Only transmit packets of the specified size or smaller, breaking larger "
-#| "packets up\n"
-#| "into multiple Ethernet frames"
+#, kde-format
 msgid ""
 "Only transmit packets of the specified size or smaller, breaking larger "
 "packets up into multiple Ethernet frames"
 msgstr ""
-"پەقەت بەلگىلەنگەن چوڭلۇقتىكى ياكى تېخىمۇ كىچىك بوغچىنى يەتكۈزىدۇ، چوڭ بوغچا "
-"كۆپلىگەن دائىرىلىك تور كاندۇكىغا پارچىلىنىدۇ"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Ignore"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Ignore"
 msgstr "پەرۋا قىلما"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Automatic"
 msgstr "ئاپتوماتىك"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Manual"
 msgstr "قولدا"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:122
-#, fuzzy, kde-format
-#| msgid ""
-#| "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” "
-#| "values will be forced without checking\n"
-#| "the device compatibility. If unsure, leave here “Ignore” or pick "
-#| "“Automatic”."
+#, kde-format
 msgid ""
 "Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
 "will be forced without checking the device compatibility. If unsure, leave "
 "here “Ignore” or pick “Automatic”."
 msgstr ""
-"ئۈسكۈنە ئۇلانما كېلىشىشى. ئەگەر «قولدا» تاللانسا ئۈسكۈنىنىڭ "
-"ماسلىشىشچانلىقىنى تەكشۈرمەيلا بەلگىلەنگەن «سۈرئەت» ۋە «قوش يۈز» قىممىتىنى "
-"مەجبۇرىي ئىشلىتىدۇ.\n"
-"\n"
-"ئەگەر جەزملىيەلمىسە، «پەرۋا قىلما» پېتى قالدۇرۇلىدۇ ياكى «ئاپتوماتىك» "
-"تاللىنىدۇ."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:128
 #, kde-format
@@ -6747,78 +6419,59 @@ msgid "Speed:"
 msgstr "سۈرئەت:"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Half"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Half"
 msgstr "يېرىم"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Full"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Full"
 msgstr "تامامەن"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use the specified duplex mode. Either \"half\" or "
-#| "\"full\""
+#, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either “Half” or "
 "“Full”"
 msgstr ""
-"ئۈسكۈنىنىڭ قوش يۈز ھالىتىنى ئىشلىتىشىنى تەلەپ قىلىدۇ.  «يېرىم» ياكى «پۈتۈن» "
-"بولسا بولىدۇ"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@item:intable shortcut for Not Available"
-#| msgid "N/A"
+#, kde-format
 msgctxt "@item real name not available"
 msgid "N/A"
 msgstr "ئىشلەتكىلى بولمايدۇ"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:105
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgctxt "@title:column"
 msgid "Address"
 msgstr "ئادرېس"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 netmask"
-#| msgid "Netmask"
+#, kde-format
 msgctxt "@title:column"
 msgid "Netmask"
 msgstr "تور ماسكىسى"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:109
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgctxt "@title:column"
 msgid "Gateway"
 msgstr "تور ئۆتكىلى"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:111
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgctxt "@title:column"
 msgid "Metric"
 msgstr "بىرلىك"
 
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv6 prefix"
-#| msgid "Prefix"
+#, kde-format
 msgctxt "@title:column IPv6 prefix length"
 msgid "Prefix"
 msgstr "ئالدى قوشۇلغۇچى"
@@ -6826,34 +6479,30 @@ msgstr "ئالدى قوشۇلغۇچى"
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "OTP"
-msgstr ""
+msgstr "بىر قېتىملىق ئىم"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "authenticator"
-msgstr "كىملىك دەلىللەش"
+msgstr "كىملىك دەلىللىگۈچ"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "code"
-msgstr ""
+msgstr "كودى"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "token"
-msgstr ""
+msgstr "پەرمان تاختا"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "one-time password"
-msgstr "ئىم:"
+msgstr "بىر قېتىملىق ئىم"
 
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item automatic wireless channel selection"
 msgid "Automatic"
 msgstr "ئاپتوماتىك"
@@ -7130,27 +6779,24 @@ msgid "Unknown"
 msgstr "يوچۇن"
 
 #: qml/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connect"
-msgstr "باغلاندى"
+msgstr "باغلان"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnect"
-msgstr "ئۈزۈلدى"
+msgstr "ئۈز"
 
 #: qml/ConnectionItemDelegate.qml:111
 #, kde-format
 msgid "Configure"
-msgstr ""
+msgstr "سەپلە"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Connect to"
-msgstr "باغلىنىش"
+msgstr "باغلىنىدىغىنى"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
@@ -7160,12 +6806,12 @@ msgstr ""
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Upload"
-msgstr ""
+msgstr "يۈكلە"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "چۈشۈرۈش"
 
 #~ msgid "BSSID:"
 #~ msgstr "BSSID:"

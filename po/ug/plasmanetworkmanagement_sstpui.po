@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-07-22 17:11-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -40,31 +40,31 @@ msgstr "تۆۋەندىكى كىملىك دەلىللەش ئۇسۇلىغا يول
 #: sstpadvanced.ui:65
 #, kde-format
 msgid "PAP"
-msgstr "PAP"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:73
 #, kde-format
 msgid "CHAP"
-msgstr "CHAP"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:81
 #, kde-format
 msgid "MSCHAP"
-msgstr "MSCHAP"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:89
 #, kde-format
 msgid "MSCHAPv2"
-msgstr "MSCHAPv2"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:97
 #, kde-format
 msgid "EAP"
-msgstr "EAP"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, gb_MPPE)
 #: sstpadvanced.ui:111
@@ -204,7 +204,7 @@ msgstr "ئىم:"
 #: sstpauth.ui:14
 #, kde-format
 msgid "SSH VPN"
-msgstr "SSH VPN"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: sstpauth.ui:32

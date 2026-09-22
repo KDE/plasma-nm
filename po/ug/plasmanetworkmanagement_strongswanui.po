@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2026-07-22 17:11-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -28,7 +28,7 @@ msgstr "شەخسىي شىفىرلىق ئاچقۇچ ئىم:"
 #, kde-format
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
-msgstr "PIN:"
+msgstr ""
 
 #: strongswanauth.cpp:63
 #, kde-format
@@ -113,7 +113,7 @@ msgstr "ئىدراكلىق كارتا"
 #: strongswanprop.ui:113
 #, kde-format
 msgid "EAP"
-msgstr "EAP"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: strongswanprop.ui:118
@@ -137,7 +137,7 @@ msgstr "شەخسىي شىفىرلىق ئاچقۇچ ئىم:"
 #: strongswanprop.ui:207
 #, kde-format
 msgid "PIN:"
-msgstr "PIN:"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: strongswanprop.ui:235
@@ -191,7 +191,7 @@ msgstr "ئىختىيارىي شىفىرلاش لايىھەسىنى قوزغات"
 #: strongswanprop.ui:350
 #, kde-format
 msgid "IKE:"
-msgstr "IKE:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: strongswanprop.ui:357
@@ -203,7 +203,7 @@ msgstr "IKE لايىھە تىزىمى «;» بىلەن ئايرىلىدۇ"
 #: strongswanprop.ui:364
 #, kde-format
 msgid "ESP:"
-msgstr "ESP:"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
 #: strongswanprop.ui:371

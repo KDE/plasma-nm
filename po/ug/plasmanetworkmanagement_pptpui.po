@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanm_pptpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-06-01 18:07-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -40,31 +40,31 @@ msgstr "كىملىك دەلىللەش ئۇسۇلىغا يول قويىدۇ/چە�
 #: pptpadvanced.ui:40
 #, kde-format
 msgid "PAP"
-msgstr "PAP"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: pptpadvanced.ui:48
 #, kde-format
 msgid "CHAP"
-msgstr "CHAP"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: pptpadvanced.ui:56
 #, kde-format
 msgid "MSCHAP"
-msgstr "MSCHAP"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: pptpadvanced.ui:64
 #, kde-format
 msgid "MSCHAPv2"
-msgstr "MSCHAPv2"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: pptpadvanced.ui:72
 #, kde-format
 msgid "EAP"
-msgstr "EAP"
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, gb_MPPE)
 #: pptpadvanced.ui:88
@@ -75,9 +75,6 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"دىققەت: MPPE شىفىرلاشنى پەقەت MSCHAP كىملىك دەلىللەش ئۇسۇلىغىلا ئىشلەتكىلى "
-"بولىدۇ. بۇ كۆپ تاللاش رامكىسى قوزغىتىلسا، بىر ياكى بىر قانچە MSCHAP كىملىك "
-"دەلىللەش ئۇسۇلىنى تاللىنىدۇ: MSCHAP  ياكى MSCHAPv2."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gb_MPPE)
 #: pptpadvanced.ui:91
@@ -124,8 +121,6 @@ msgstr "40 بىت"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
-"MPPE ئىشلىتىش ھالىتىنى ساقلاش شەكلىگە يول قويىدۇ. ئەمما ھالىتى يوق شەكىلنى "
-"ئىشلىتىش ئالدىنقى ئورۇندا تۇرىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_statefulEncryption)
 #: pptpadvanced.ui:153
@@ -171,8 +166,6 @@ msgid ""
 "transmit\n"
 " and the receive directions."
 msgstr ""
-"ئىككى يۆنىلىشتە يوللىغان ۋە قوبۇللىغاندا Van Jacobson ئۇسلۇبىدا TCP/IP "
-"سانلىق مەلۇمات بوغچا بېشىنى قىسىشقا يول قويىدۇ/چەكلەيدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
 #: pptpadvanced.ui:205

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanm_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2026-06-01 18:06-0400\n"
+"PO-Revision-Date: 2026-09-22 18:03+0900\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -182,10 +182,6 @@ msgid ""
 "\n"
 "May be required to allow multiple L2TP clients behind the same NAT."
 msgstr ""
-"L2TP مەنبە ئېغىزىغا بوش بولغان تەقدىردىمۇ UDP ئېغىزىغا  1701 نى ئىشلەتمەڭ.\n"
-"ئۇنىڭ ئورنىغا ۋاقىتلىق (ئىختىيارى) يۇقىرى ئېغىز نومۇرىنى ئىشلىتىڭ.\n"
-"\n"
-"ئوخشاش NAT نىڭ كەينىدە كۆپ L2TP خېرىدارىغا يول قويۇشىڭىز زۆرۈر بولۇشى مۇمكىن."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:270
@@ -299,8 +295,6 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>تاللاشچان ESP - تېز ھالەت. پىچىمى «enc-integ,enc-"
-"integ, …».</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:261
@@ -317,7 +311,7 @@ msgstr ""
 #: l2tpipsec.ui:264 l2tpipsec.ui:298
 #, kde-format
 msgid "hh:mm:ss"
-msgstr "hh:mm:ss"
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIkelifetime)
 #: l2tpipsec.ui:271
@@ -332,8 +326,6 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>تاللاشچانIKE - ئاساسىي ھالەتنىڭ تەۋسىيە تىزىمى. پىچىمى "
-"«enc-integ-group,enc-integ-group, …».</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:285
@@ -364,11 +356,6 @@ msgid ""
 "strongSwan or Libreswan documentation for leftid/rightid syntax and identity "
 "parsing.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>تاللاشچان. سالاھىيەت دەلىللەشتە بەلگىلىنىدىغان IPsec "
-"مۇلازىمېتىرنى قانداق پەرقلەندۈرۈش ئۇسۇلى.بەزىدە تورداش كىملىكى ياكى تور "
-"ئۆتكىلى كىملىكى دەپمۇ ئاتىلىدۇ، strongSwan، Libreswan، Openswan ۋە FreeS/WAN "
-"دا ئۇنى rightid دەپ ئاتايدۇ.strongSwan ياكى Libreswan نىڭ قوللانمىسىدىكى "
-"leftid/rightid تىلقۇرمىسى ۋە سالاھىيەت يېشىشتىن كۆرۈڭ.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:312
@@ -378,9 +365,6 @@ msgid ""
 "encrypted. This saves some bandwidth, but uses more processing power.</p></"
 "body></html>"
 msgstr ""
-"<html><head/><body><p>IPComp ئەسلى IP بوغچىسى شىفىرلىنىشتىن ئىلگىرى ئۇنى "
-"قىسىدۇ. بۇ بىر قىسىم بەلباغ كەڭلىكىنى تېجەيدۇ ئەمما تېخىمۇ كۆپ ھېسابلاش "
-"كۈچىنى خورىتىدۇ.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:315
@@ -401,8 +385,6 @@ msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
 "only if the server doesn’t support PFS.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>مۇكەممەل يەتكۈزۈش بىخەتەرلىكى (PFS) نى چەكلەيدۇ. ئەگەر "
-"مۇلازىمېتىر PFS نى قوللىمىسا بۇ تاللانما تاللىنىدۇ.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:332
@@ -418,9 +400,6 @@ msgid ""
 "encapsulation even if no NAT situation is detected might help in such cases."
 "</p></body></html>"
 msgstr ""
-"<html><head/><body><p>بەزى مۇداپىئە تېمى ESP ئېقىمىنى توسىدۇ. ئەگەر بۇ خىل "
-"ئەھۋالغا يولۇققاندا NAT ئەھۋالىنى بايقىمىغان تەقدىردىمۇ مەجبۇرىي UDP "
-"بولاقلاش ئىشلىتىلسە بەلكىم مەسىلە ھەل بولۇشى مۇمكىن.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:342
@@ -461,31 +440,31 @@ msgstr "كىملىك دەلىللەش ئۇسۇلىغا يول قوي/چەكلە"
 #: l2tpppp.ui:49
 #, kde-format
 msgid "PAP"
-msgstr "PAP"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: l2tpppp.ui:57
 #, kde-format
 msgid "CHAP"
-msgstr "CHAP"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: l2tpppp.ui:65
 #, kde-format
 msgid "MSCHAP"
-msgstr "MSCHAP"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: l2tpppp.ui:73
 #, kde-format
 msgid "MSCHAPv2"
-msgstr "MSCHAPv2"
+msgstr ""
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: l2tpppp.ui:81
 #, kde-format
 msgid "EAP"
-msgstr "EAP"
+msgstr ""
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_cryptoAndCompression)
 #: l2tpppp.ui:95
@@ -541,8 +520,6 @@ msgid ""
 "Allow protocol field compression negotiation in both the receive and the\n"
 " transmit directions."
 msgstr ""
-"ئىككى يۆنىلىشتە يوللىغان ۋە قوبۇللىغاندا كېلىشىم بۆلىكىنى قىسىش كېلىشىشىگە "
-"يول قويىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbCompressionNegotiation)
 #: l2tpppp.ui:151
@@ -606,13 +583,13 @@ msgstr "كۆپ باغلىنىش PPP MRRU: "
 #: l2tpppp.ui:250
 #, kde-format
 msgid "MRU: "
-msgstr "MRU: "
+msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, lbMTU)
 #: l2tpppp.ui:264
 #, kde-format
 msgid "MTU: "
-msgstr "MTU: "
+msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, gbMPPE)
 #: l2tpppp.ui:283
@@ -623,9 +600,6 @@ msgid ""
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"دىققەت: MPPE شىفىرلاشنى پەقەت MSCHAP كىملىك دەلىللەش ئۇسۇلىغىلا ئىشلەتكىلى "
-"بولىدۇ. بۇ كۆپ تاللاش رامكىسى قوزغىتىلسا، بىر ياكى بىر قانچە MSCHAP كىملىك "
-"دەلىللەش ئۇسۇلىنى تاللىنىدۇ: MSCHAP  ياكى MSCHAPv2."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMPPE)
 #: l2tpppp.ui:286
@@ -672,8 +646,6 @@ msgstr "40 بىت"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
-"MPPE ئىشلىتىش ھالىتىنى ساقلاش شەكلىگە يول قويىدۇ. ئەمما ھالىتى يوق شەكىلنى "
-"ئىشلىتىش ئالدىنقى ئورۇندا تۇرىدۇ."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbstatefulEncryption)
 #: l2tpppp.ui:348

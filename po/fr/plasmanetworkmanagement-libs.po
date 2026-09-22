@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:47+0000\n"
-"PO-Revision-Date: 2026-09-20 10:32+0200\n"
+"PO-Revision-Date: 2026-09-21 09:30+0200\n"
 "Last-Translator: Xavier Besnard <xavier.besnard@kde.org>\n"
 "Language-Team: fr\n"
 "Language: fr\n"
@@ -4815,11 +4815,10 @@ msgid "Automatic"
 msgstr "Automatique"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
-#, fuzzy, kde-format
-#| msgid "%1 bytes"
+#, kde-format
 msgid "%1 byte"
 msgid_plural "%1 bytes"
-msgstr[0] "%1 octets"
+msgstr[0] "%1 octet"
 msgstr[1] "%1 octets"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
@@ -5962,26 +5961,24 @@ msgid "Cipher to use for the data channel."
 msgstr ""
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:27
-#, fuzzy, kde-format
-#| msgid "SSLVPN server IP or name."
+#, kde-format
 msgid "PPTP server IP or name."
-msgstr "IP ou nom du serveur « SSLVPN »."
+msgstr "Serveur IP ou nom PPTP."
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:36
 #, kde-format
 msgid "Login:"
-msgstr ""
+msgstr "Identifiant :"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:22
-#, fuzzy, kde-format
-#| msgid "SSTP VPN"
+#, kde-format
 msgid "PPTP VPN"
-msgstr "SSTP VPN"
+msgstr "PPTP VPN"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:24
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr ""
+msgstr "Mot de passe transmis à PPTP lorsque vous y êtes invité."
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, kde-format

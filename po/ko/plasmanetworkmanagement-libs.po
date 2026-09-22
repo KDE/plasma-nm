@@ -4392,7 +4392,8 @@ msgstr ""
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
 #: editorqml/qml/ipv6/IPv6Settings.qml:165
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Addresses"
 msgid "Addresses"
 msgstr "주소"
 
@@ -4661,7 +4662,8 @@ msgid "Prefix:"
 msgstr "접두사"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Type:"
 msgid "Type:"
 msgstr "종류:"
 
@@ -5036,16 +5038,14 @@ msgid "WEP 128-bit Passphrase"
 msgstr ""
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:28
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Personal"
+#, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr "WPA2/WPA3 Personal"
+msgstr "WPA/WPA2 Personal"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:29
-#, fuzzy, kde-format
-#| msgid "WPA2/WPA3 Enterprise"
+#, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr "WPA2/WPA3 Enterprise"
+msgstr "WPA/WPA2 Enterprise"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
 #, fuzzy, kde-format

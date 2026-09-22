@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 02:45+0000\n"
-"PO-Revision-Date: 2026-09-17 00:31+0100\n"
+"PO-Revision-Date: 2026-09-22 12:11+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -1036,7 +1036,7 @@ msgstr "Puerta de enlace"
 #: editor/settings/security802-1x.cpp:542
 #, kde-format
 msgid "Alternative Subject Matches"
-msgstr "Coincidencias de sujetos alternativos"
+msgstr "Coincidencias de asuntos alternativos"
 
 #: editor/settings/security802-1x.cpp:544
 #, kde-format
@@ -1216,7 +1216,7 @@ msgstr "Certificado de la AC:"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:26
 #, kde-format
 msgid "Subject match:"
-msgstr "Coincidencia de sujeto:"
+msgstr "Coincidencia del asunto:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_28)
 #: editor/settings/ui/802-1x.ui:199
@@ -1227,7 +1227,7 @@ msgstr "Coincidencia de sujeto:"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:48
 #, kde-format
 msgid "Alternative subject matches:"
-msgstr "Coincidencias de sujetos alternativos:"
+msgstr "Coincidencias de asuntos alternativos:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsAltSubjectMatches)
 #. i18n: ectx: property (text), widget (QPushButton, btnTlsConnectToServers)
@@ -4867,7 +4867,7 @@ msgstr "%1 bytes"
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
 #, kde-format
 msgid "Alternative subject matches"
-msgstr "Coincidencias de sujetos alternativos"
+msgstr "Coincidencias de asuntos alternativos"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:98
 #, kde-format

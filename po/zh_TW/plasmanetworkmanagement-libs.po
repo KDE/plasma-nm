@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 12:55+0000\n"
-"PO-Revision-Date: 2026-09-17 02:35+0900\n"
+"POT-Creation-Date: 2026-09-22 00:47+0000\n"
+"PO-Revision-Date: 2026-09-22 01:15+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
 "Language: zh_TW\n"
@@ -324,6 +324,7 @@ msgstr "掃描網路失敗：%1"
 #: cellular/cellularmodemdetails.cpp:435
 #: editor/settings/ui/connectionwidget.ui:169
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
 #, kde-format
 msgid "Yes"
 msgstr "是"
@@ -332,6 +333,8 @@ msgstr "是"
 #: cellular/cellularmodemdetails.cpp:437
 #: editor/settings/ui/connectionwidget.ui:174
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
 #, kde-format
 msgid "No"
 msgstr "否"
@@ -586,7 +589,7 @@ msgid "Banner"
 msgstr "橫幅"
 
 #: editor/connectiondetails.cpp:234 editor/connectiondetails.cpp:241
-#: editor/uiutils.cpp:218 editorqml/qml/components/Vpn.qml:32
+#: editor/uiutils.cpp:218 editorqml/qml/components/Vpn.qml:34
 #: networkstatus.cpp:190
 #, kde-format
 msgid "VPN"
@@ -670,11 +673,12 @@ msgstr "Team"
 msgid "Device"
 msgstr "裝置"
 
-#: editor/connectiondetails.cpp:321 editorqml/qml/components/Vpn.qml:28
+#: editor/connectiondetails.cpp:321 editorqml/qml/components/Vpn.qml:30
 #: editorqml/qml/components/Wired.qml:30
 #: editorqml/qml/components/Wireless.qml:30
 #: editorqml/qml/ConfigurationDialog.qml:34
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:26
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:69
 #: editorqml/qml/vpn/ssh/Ssh.qml:30 editorqml/qml/vpn/sstp/Sstp.qml:26
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:238
 #, kde-format
@@ -702,7 +706,7 @@ msgid "IPv4 Secondary Nameserver"
 msgstr "IPv4 第二域名伺服器"
 
 #: editor/connectiondetails.cpp:352 editor/connectioneditorbase.cpp:334
-#: editorqml/qml/components/Vpn.qml:36 editorqml/qml/components/Wired.qml:39
+#: editorqml/qml/components/Vpn.qml:38 editorqml/qml/components/Wired.qml:39
 #: editorqml/qml/components/Wireless.qml:39
 #, kde-format
 msgid "IPv4"
@@ -734,7 +738,7 @@ msgid "IPv6 Secondary Nameserver"
 msgstr "IPv6 第二域名伺服器"
 
 #: editor/connectiondetails.cpp:386 editor/connectioneditorbase.cpp:352
-#: editorqml/qml/components/Vpn.qml:43 editorqml/qml/components/Wired.qml:42
+#: editorqml/qml/components/Vpn.qml:42 editorqml/qml/components/Wired.qml:42
 #: editorqml/qml/components/Wireless.qml:42
 #, kde-format
 msgid "IPv6"
@@ -985,6 +989,7 @@ msgstr "DHCP 主機名稱："
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:191
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "Default"
 msgstr "預設"
@@ -1134,7 +1139,8 @@ msgstr "保護模式 EAP (PEAP)"
 #: editor/settings/ui/802-1x.ui:542 editor/settings/ui/802-1x.ui:684
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
 #: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:207
-#: editorqml/qml/vpn/l2tp/L2tp.qml:59 editorqml/qml/vpn/sstp/Sstp.qml:43
+#: editorqml/qml/vpn/l2tp/L2tp.qml:59 editorqml/qml/vpn/openvpn/Openvpn.qml:201
+#: editorqml/qml/vpn/sstp/Sstp.qml:43
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:265
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:137
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:26
@@ -1166,8 +1172,10 @@ msgstr "使用者名稱："
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:25
 #: editorqml/qml/vpn/iodine/Iodine.qml:51
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:23
-#: editorqml/qml/vpn/l2tp/L2tp.qml:78 editorqml/qml/vpn/pptp/Pptp.qml:51
-#: editorqml/qml/vpn/pptp/PptpAuth.qml:23
+#: editorqml/qml/vpn/l2tp/L2tp.qml:78 editorqml/qml/vpn/openvpn/Openvpn.qml:220
+#: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:37
+#: editorqml/qml/vpn/pptp/Pptp.qml:51 editorqml/qml/vpn/pptp/PptpAuth.qml:23
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:56
 #, kde-format
 msgid "Password:"
 msgstr "密碼："
@@ -1446,6 +1454,7 @@ msgstr "刪除"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #: editor/settings/ui/bond.ui:110 editor/settings/ui/wificonnectionwidget.ui:68
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:614
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:70
 #, kde-format
 msgid "Mode:"
@@ -1556,7 +1565,7 @@ msgid "Address of the device:"
 msgstr "裝置位址："
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bt.ui:41
+#: editor/settings/ui/bt.ui:41 editorqml/qml/vpn/openvpn/Openvpn.qml:47
 #, kde-format
 msgid "Connection type:"
 msgstr "連線類型："
@@ -2436,6 +2445,7 @@ msgstr "隱藏網路"
 #. i18n: ectx: property (text), widget (QLabel, securitySectionLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:368
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:73
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:73
 #, kde-format
 msgid "Security"
 msgstr "安全性"
@@ -4171,7 +4181,7 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "選擇連線類型"
 
-#: editorqml/qml/components/Vpn.qml:24 editorqml/qml/components/Wired.qml:27
+#: editorqml/qml/components/Vpn.qml:26 editorqml/qml/components/Wired.qml:27
 #: editorqml/qml/components/Wireless.qml:27
 #, kde-format
 msgid "Status"
@@ -4376,8 +4386,9 @@ msgstr ""
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:326
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:139
-#: editorqml/qml/vpn/pptp/Pptp.qml:82 editorqml/qml/vpn/ssh/Ssh.qml:194
-#: editorqml/qml/vpn/sstp/Sstp.qml:106 editorqml/qml/vpn/vpnc/Vpnc.qml:142
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:255 editorqml/qml/vpn/pptp/Pptp.qml:82
+#: editorqml/qml/vpn/ssh/Ssh.qml:194 editorqml/qml/vpn/sstp/Sstp.qml:106
+#: editorqml/qml/vpn/vpnc/Vpnc.qml:142
 #, kde-format
 msgctxt "@action:button"
 msgid "Advanced…"
@@ -4551,8 +4562,8 @@ msgstr "密碼必須在 8 到 64 個字元之間"
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:30
 #: editorqml/qml/vpn/l2tp/L2tp.qml:30
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:24
-#: editorqml/qml/vpn/pptp/Pptp.qml:24 editorqml/qml/vpn/ssh/Ssh.qml:34
-#: editorqml/qml/vpn/sstp/Sstp.qml:30
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:35 editorqml/qml/vpn/pptp/Pptp.qml:24
+#: editorqml/qml/vpn/ssh/Ssh.qml:34 editorqml/qml/vpn/sstp/Sstp.qml:30
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:39
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:25
 #, kde-format
@@ -4580,13 +4591,13 @@ msgstr "將用來認證本機系統的名稱設定為端點的 <name>。"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:77
 #: editorqml/qml/vpn/l2tp/L2tp.qml:106 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:93
-#: editorqml/qml/vpn/sstp/Sstp.qml:59
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:61 editorqml/qml/vpn/sstp/Sstp.qml:59
 #, kde-format
 msgid "CA Certificate:"
 msgstr "CA 憑證："
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:95
-#: editorqml/qml/vpn/l2tp/L2tp.qml:130
+#: editorqml/qml/vpn/l2tp/L2tp.qml:130 editorqml/qml/vpn/openvpn/Openvpn.qml:85
 #, kde-format
 msgid "User Certificate:"
 msgstr "使用者憑證："
@@ -4676,14 +4687,14 @@ msgstr "上游 DNS 區段的最大大小，單位為位元組。自動代表讓 
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
 #: editorqml/qml/vpn/iodine/Iodine.qml:75
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:133
 #, kde-format
 msgid "Automatic"
 msgstr "自動"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
-#, fuzzy, kde-format
-#| msgid "%1 bytes"
+#, kde-format
 msgid "%1 byte"
 msgid_plural "%1 bytes"
 msgstr[0] "%1 位元組"
@@ -4694,33 +4705,32 @@ msgid "Iodine VPN"
 msgstr "Iodine VPN"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:33
-#, fuzzy, kde-format
-#| msgid "SSLVPN server IP or name."
+#, kde-format
 msgid "L2TP server IP or name."
-msgstr "SSLVPN 的伺服器 IP 或名稱。"
+msgstr "L2TP 伺服器 IP 或名稱。"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:42
-#, fuzzy, kde-format
-#| msgid "Authentication:"
+#, kde-format
 msgid "Authentication type:"
-msgstr "認證："
+msgstr "認證類型："
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:45 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:82
-#, fuzzy, kde-format
-#| msgid "Key authentication"
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:50
+#, kde-format
 msgid "Select an authentication mode."
-msgstr "金鑰認證"
+msgstr "選擇認證模式。"
 
-#: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/ssh/Ssh.qml:143
+#: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/openvpn/Openvpn.qml:54
+#: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "Password"
 msgstr "密碼"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
-#, fuzzy, kde-format
-#| msgid "CA Certificate:"
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:54
+#, kde-format
 msgid "Certificates (TLS)"
-msgstr "CA 憑證："
+msgstr "憑證 (TLS)"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:92 editorqml/qml/vpn/pptp/Pptp.qml:66
 #: editorqml/qml/vpn/sstp/Sstp.qml:51
@@ -4733,65 +4743,63 @@ msgstr "NT 網域："
 msgid ""
 "Append the domain name <domain> to the local host name for authentication "
 "purposes."
-msgstr ""
+msgstr "將網域名稱 <domain> 加到本機主機名稱後端以供認證。"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:115 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:102
 #, kde-format
 msgid ""
 "Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats."
-msgstr ""
+msgstr ".pem、.der、.crt、.cer 或 .p12 格式的憑證頒發機構 (CA) 檔案。"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:139
 #, kde-format
 msgid "Certificate in .pem, .der, .crt, .cer or .p12 formats."
-msgstr ""
+msgstr ".pem、.der、.crt、.cer 或 .p12 格式的憑證。"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:154 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:141
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:109
+#, kde-format
 msgid "Private Key:"
-msgstr "私密金鑰："
+msgstr "私鑰："
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:163 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:150
 #, kde-format
 msgid "Private key in .pem, .der, .key, .pk8 or .p12 formats."
-msgstr ""
+msgstr ".pem、.der、.crt、.cer 或 .p12 格式的私鑰。"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:183 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:188
-#, fuzzy, kde-format
-#| msgid "Private key password:"
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:236
+#, kde-format
 msgid "Private Key Password:"
-msgstr "私密金鑰密碼："
+msgstr "私鑰密碼："
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:200
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "使用 L2TP 暫時性來源埠"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:216
-#, fuzzy, kde-format
-#| msgid "IPv6 Network Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "IPsec Settings…"
-msgstr "IPv6 網路設定"
+msgstr "IPsec 設定…"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:220
 #, kde-format
 msgid "No IPsec daemon (libreswan or strongSwan) was found."
-msgstr ""
+msgstr "找不到 IPsec 守護程式（libreswan 或 strongSwan）。"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "PPP Settings…"
-msgstr ""
+msgstr "PPP 設定…"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:24
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:36
-#, fuzzy, kde-format
-#| msgid "SSTP VPN"
+#, kde-format
 msgid "L2TP VPN"
-msgstr "SSTP VPN"
+msgstr "L2TP VPN"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:25
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:152
@@ -4801,34 +4809,30 @@ msgid "User Password:"
 msgstr "使用者密碼："
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "User Certificate Password:"
-msgstr "使用者憑證："
+msgstr "使用者憑證密碼："
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:48
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Machine Certificate Password:"
-msgstr "使用者憑證："
+msgstr "機器憑證密碼："
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:59
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:171
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared Key:"
-msgstr "預先分享金鑰："
+msgstr "預共享金鑰："
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:60
 #, kde-format
 msgid "Enable IPsec tunnel to L2TP host"
-msgstr ""
+msgstr "開啟 IPsec 通道到 L2TP 主機"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:74
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Machine Authentication"
-msgstr "認證"
+msgstr "機器認證"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:79 editorqml/qml/vpn/ssh/Ssh.qml:140
 #, kde-format
@@ -4836,33 +4840,29 @@ msgid "Type:"
 msgstr "類型："
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared Key (PSK)"
-msgstr "預先分享金鑰："
+msgstr "預共享金鑰 (PSK)"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:117
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "使用者憑證："
+msgstr "機器憑證："
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:126
-#, fuzzy, kde-format
-#| msgid "CA certificate in PEM format."
+#, kde-format
 msgid "Certificate in .pem, .der or .p12 formats."
-msgstr "PEM 格式的 CA 憑證。"
+msgstr ".pem、.der 或 .p12 格式的憑證。"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:189
 #, kde-format
 msgid "Password for private key or PKCS#12 certificate."
-msgstr ""
+msgstr "私鑰或 PKCS#12 憑證的密碼。"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:213
-#, fuzzy, kde-format
-#| msgid "Remote IP Address:"
+#, kde-format
 msgid "Remote ID:"
-msgstr "遠端 IP 位址："
+msgstr "遠端 ID："
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:216
 #, kde-format
@@ -4872,11 +4872,15 @@ msgid ""
 "by strongSwan, Libreswan, Openswan and FreeS/WAN. See strongSwan or "
 "Libreswan documentation for leftid/rightid syntax and identity parsing."
 msgstr ""
+"選擇性的。IPSec 伺服器在認證時被辨識的方法。有時叫做端點 ID (Peer ID) 或 閘"
+"道 ID (Gateway ID)；strongSwan、Libreswan、Openswan 和 FreeS/WAN 也把它叫做 "
+"rightid。請見 strongSwan 或 Libreswan 的文件說明 leftid / rightid 的語法及 "
+"identity 剖析。"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:225
 #, kde-format
 msgid "Phase1 Algorithms:"
-msgstr ""
+msgstr "Phase1 演算法："
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:228
 #, kde-format
@@ -4884,35 +4888,37 @@ msgid ""
 "Optional. A list of proposals for IKE - Main Mode. The format is “enc-integ-"
 "group,enc-integ-group, …”."
 msgstr ""
+"選填。IKE - Main Mode 的提案列表。格式是「enc-integ-group,enc-integ-group,"
+"…」。"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:237
 #, kde-format
 msgid "Phase2 Algorithms:"
-msgstr ""
+msgstr "Phase2 演算法："
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:240
 #, kde-format
 msgid ""
 "Optional. A list of proposals for ESP - Quick Mode. The format is “enc-integ,"
 "enc-integ, …”."
-msgstr ""
+msgstr "選填。ESP - Quick Mode 的提案列表。格式是「enc-integ,enc-integ,…」。"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:249
 #, kde-format
 msgid "Phase1 Lifetime:"
-msgstr ""
+msgstr "Phase1 存活時間："
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:251
 #, kde-format
 msgid ""
 "How long the keying channel of a connection should last before being "
 "renegotiated."
-msgstr ""
+msgstr "連線的鍵控頻道在重新協商之前要持續多久。"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:269
 #, kde-format
 msgid "Phase2 Lifetime:"
-msgstr ""
+msgstr "Phase2 存活時間："
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:271
 #, kde-format
@@ -4921,12 +4927,14 @@ msgid ""
 "authentication keys for user packets) should last, from successful "
 "negotiation to expiry."
 msgstr ""
+"一個連線（即一組使用者封包用的加密 / 認證金鑰）的一個實體從協調成功到逾期應該"
+"要持續多久。"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:291
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
 msgid "Enforce UDP encapsulation"
-msgstr ""
+msgstr "強制使用 UDP 封裝"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:293
 #, kde-format
@@ -4934,13 +4942,14 @@ msgid ""
 "Some firewalls block ESP traffic. Enforcing UDP encapsulation even if no NAT "
 "situation is detected might help in such cases."
 msgstr ""
+"有些防火牆會阻擋 ESP 傳輸。這種情況下強制使用 UDP 封裝而不管是否偵測到 NAT 的"
+"情形可能會有幫助。"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:304
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:192
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use IP compression"
-msgstr "使用 TCP 標頭壓縮"
+msgstr "使用 IP 壓縮"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:306
 #, kde-format
@@ -4948,36 +4957,36 @@ msgid ""
 "IPComp compresses raw IP packets before they get encrypted. This saves some "
 "bandwidth, but uses more processing power."
 msgstr ""
+"IPComp 會在加密原生 IP 封包前先壓縮。這會節省一些流量，但會耗費更多處理能源。"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:317
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "使用 IKEv2 金鑰交換"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:328
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Disable PFS"
-msgstr "已關閉"
+msgstr "停用 PFS"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
 #, kde-format
 msgid ""
 "Disable perfect forward secrecy. Enable this option only if the server "
 "doesn’t support PFS."
-msgstr ""
+msgstr "停用完美的轉送安全性。請只在伺服器不支援 PFS 才啟用此選項。"
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:40
 #, kde-format
 msgctxt "separator between hours and minutes"
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:54
 #, kde-format
 msgctxt "separator between minutes and seconds"
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:66
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:58
@@ -5009,10 +5018,9 @@ msgstr "Crypto："
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:135
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:117
-#, fuzzy, kde-format
-#| msgid "Require 128-bit encryption"
+#, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr "需要 128 位元式加密"
+msgstr "需要使用 MPPE，40/128 位元加密。"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:121
@@ -5048,7 +5056,7 @@ msgstr "使用狀態加密"
 #, kde-format
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
-msgstr ""
+msgstr "允許 MPPE 使用狀態模式。但仍會先嘗試無狀態模式。"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:166
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:148
@@ -5059,10 +5067,9 @@ msgstr "允許 BSD 壓縮"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:168
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:150
-#, fuzzy, kde-format
-#| msgid "Allow BSD compression"
+#, kde-format
 msgid "Allow/disable BSD-Compress compression."
-msgstr "允許 BSD 壓縮"
+msgstr "允許/關閉 BSD 壓縮。"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:177
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:159
@@ -5073,10 +5080,9 @@ msgstr "允許 Deflate 壓縮"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:179
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:161
-#, fuzzy, kde-format
-#| msgid "Allow Deflate compression"
+#, kde-format
 msgid "Allow/disable Deflate compression."
-msgstr "允許 Deflate 壓縮"
+msgstr "允許/關閉 Deflate 壓縮"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:188
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:170
@@ -5088,49 +5094,46 @@ msgstr "允許 TCP 標頭壓縮"
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:195
 #, kde-format
 msgid "Use protocol field compression negotiation"
-msgstr ""
+msgstr "使用協定欄位壓縮協調"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:202
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use Address/Control compression"
-msgstr "使用 TCP 標頭壓縮"
+msgstr "使用位址/控制壓縮"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:204
 #, kde-format
 msgid "Use Address/Control compression in both directions (send and receive)."
-msgstr ""
+msgstr "在傳送與接收雙向使用位址/控制壓縮。"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:222
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:186
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
-msgstr ""
+msgstr "傳送 LCP echo 要求以便得知端點是否還在。"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:233
-#, fuzzy, kde-format
-#| msgid "Network Settings"
+#, kde-format
 msgid "Other Settings"
-msgstr "網路設定"
+msgstr "其他設定"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:244
 #, kde-format
 msgid "Multilink PPP MRRU:"
-msgstr ""
+msgstr "多重連結 PPP MRRU："
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:246
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "試著在單一連線上協調 PPP 多重連結 (Multilink)"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:266
 #, kde-format
 msgid "MRU:"
-msgstr ""
+msgstr "MRU："
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:27
-#, fuzzy, kde-format
-#| msgid "IP/hostname of IPsec gateway."
+#, kde-format
 msgid "IP or hostname of the IPsec gateway."
 msgstr "IPsec 閘道器的 IP 位址或主機名稱。"
 
@@ -5144,7 +5147,7 @@ msgstr "群組名稱："
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:39
 #, kde-format
 msgid "Group name, or local identifier, this connection belongs to."
-msgstr ""
+msgstr "這個連線所屬的群組名稱或本地識別子。"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:51
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:39
@@ -5161,30 +5164,29 @@ msgid "Group password:"
 msgstr "群組密碼："
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:81
-#, fuzzy, kde-format
-#| msgid "User name for the connection."
+#, kde-format
 msgid "User name for XAUTH authentication."
-msgstr "連線的使用者名稱。"
+msgstr "XAUTH 認證用的使用者名稱。"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:90
 #, kde-format
 msgid "Phase1 algorithms:"
-msgstr ""
+msgstr "Phase1 演算法："
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:93
 #, kde-format
 msgid "IKE algorithms to propose. Leave empty for the defaults."
-msgstr ""
+msgstr "要提案使用的 IKE 演算法。留空以使用預設值。"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:102
 #, kde-format
 msgid "Phase2 algorithms:"
-msgstr ""
+msgstr "Phase2 演算法："
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:105
 #, kde-format
 msgid "ESP algorithms to propose. Leave empty for the defaults."
-msgstr ""
+msgstr "要提案使用的 ESP 演算法。留空以使用預設值。"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:117
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:41
@@ -5193,47 +5195,639 @@ msgid "(NT-)Domain name for authentication."
 msgstr "驗證用的 (NT) 網域的名稱。"
 
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:38
-#, fuzzy, kde-format
-#| msgid "WireGuard VPN"
+#, kde-format
 msgid "Libreswan VPN"
-msgstr "WireGuard VPN"
+msgstr "Libreswan VPN"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:38
+#, kde-format
+msgid ""
+"Remote gateways, with optional port and protocol (e.g. ovpn.corp.com:1194:"
+"udp)."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:54
+#, fuzzy, kde-format
+#| msgid "Shared Key"
+msgid "Static Key"
+msgstr "共享金鑰"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:54
+#, fuzzy, kde-format
+#| msgid "Certificates (TLS)"
+msgid "Password with Certificates (TLS)"
+msgstr "憑證 (TLS)"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:70
+#, fuzzy, kde-format
+#| msgid ""
+#| "Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats."
+msgid "Certificate authority (CA) file in .pem format."
+msgstr ".pem、.der、.crt、.cer 或 .p12 格式的憑證頒發機構 (CA) 檔案。"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:94
+#, kde-format
+msgid ""
+"Local peer's signed certificate in .pem format (signed by CA of CA "
+"Certificate)."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:118
+#, kde-format
+msgid "Local peer's private key in .pem format."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:133
+#, fuzzy, kde-format
+#| msgid "Private Key:"
+msgid "Static Key:"
+msgstr "私鑰："
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:142
+#, kde-format
+msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:157
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:644
+#, fuzzy, kde-format
+#| msgid "Key authentication"
+msgid "Key Direction:"
+msgstr "金鑰認證"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:162
+#, kde-format
+msgid ""
+"If key direction is used, it must be the opposite of that used on the VPN "
+"peer. For example, if the peer uses '1', this connection must use '0'. If "
+"you are unsure what value to use, contact your system administrator."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:166
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:331
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
+#: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
+#, kde-format
+msgid "None"
+msgstr "無"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:166
+#, kde-format
+msgid "0"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:166
+#, kde-format
+msgid "1"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:173 editorqml/qml/vpn/ssh/Ssh.qml:59
+#: editorqml/qml/vpn/ssh/Ssh.qml:111
+#, kde-format
+msgid "Local IP Address:"
+msgstr "本地端 IP 位址："
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:178
+#, kde-format
+msgid "IP address of the local VPN endpoint."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:187 editorqml/qml/vpn/ssh/Ssh.qml:47
+#: editorqml/qml/vpn/ssh/Ssh.qml:97
+#, kde-format
+msgid "Remote IP Address:"
+msgstr "遠端 IP 位址："
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:192
+#, kde-format
+msgid "IP address of the remote VPN endpoint."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:206
+#, fuzzy, kde-format
+#| msgid "Password passed to PPTP when prompted for it."
+msgid "Username passed to OpenVPN when prompted for it."
+msgstr "當提示輸入密碼時，傳遞給 PPTP 的密碼。"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Advanced"
+msgstr "進階"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:77
+#, fuzzy, kde-format
+#| msgid "Other Settings"
+msgid "TLS Settings"
+msgstr "其他設定"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:81
+#, fuzzy, kde-format
+#| msgid "Proxy"
+msgid "Proxies"
+msgstr "代理伺服器"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:112
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:37
+#, kde-format
+msgid "Use custom gateway port:"
+msgstr "使用自訂閘道器連接埠："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:136
+#, kde-format
+msgid "Use custom renegotiation interval:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:154
+#, fuzzy, kde-format
+#| msgid "Use IP compression"
+msgid "Use compression"
+msgstr "使用 IP 壓縮"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:161
+#, fuzzy, kde-format
+#| msgid "Compression"
+msgid "Compression:"
+msgstr "壓縮"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
+#, kde-format
+msgid "LZO"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
+#, kde-format
+msgid "LZ4"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
+#, kde-format
+msgid "LZ4 v2"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
+#, fuzzy, kde-format
+#| msgctxt "Networking is inactive and all devices are disabled"
+#| msgid "Inactive"
+msgid "Adaptive"
+msgstr "未作用"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:175
+#, fuzzy, kde-format
+#| msgid "Use TCP header compression"
+msgid "Use asymetric compression"
+msgstr "使用 TCP 標頭壓縮"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:182
+#, fuzzy, kde-format
+#| msgid "New %1 connection"
+msgid "Use a TCP connection"
+msgstr "新增 %1 連線"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:195
+#, kde-format
+msgid "Set virtual device type:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
+#, kde-format
+msgid "TUN"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
+#, fuzzy, kde-format
+#| msgid "PAP"
+msgid "TAP"
+msgstr "PAP"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:216
+#, fuzzy, kde-format
+#| msgid "Remote device number:"
+msgid "Set virtual device name:"
+msgstr "遠端裝置編號："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:239
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:61
+#, kde-format
+msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
+msgstr "使用自訂通道最大傳輸單位 (MTU)："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:263
+#, kde-format
+msgid "Use custom UDP fragment size:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:281
+#, kde-format
+msgid "Restrict TCP maximum segment size (MSS)"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:294
+#, kde-format
+msgid "Specify Path MTU discovery:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
+#, kde-format
+msgid "Maybe"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:311
+#, kde-format
+msgid "Randomize remote hosts"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:318
+#, kde-format
+msgid "Prefix remote DNS name with random string"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:325
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect timeout:"
+msgstr "連線到"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
+#, kde-format
+msgid "%1 s"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:338
+#, kde-format
+msgid "Allow pull of peer DNS names (FQDN)"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:345
+#, kde-format
+msgid "push peer info"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:352
+#, kde-format
+msgid "IPv6 tun link"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:365
+#, kde-format
+msgid "Specify ping interval:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:389
+#, kde-format
+msgid "Specify exit or restart ping:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
+#, kde-format
+msgid "ping-exit"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
+#, kde-format
+msgid "ping-restart"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:416
+#, kde-format
+msgid "Accept authenticated packets from any address (Float)"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:429
+#, kde-format
+msgid "Specify max routes:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:461
+#, kde-format
+msgid "Cipher:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:471
+#, kde-format
+msgid "Data Ciphers:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:481
+#, kde-format
+msgid "Data Ciphers Fallback:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:491
+#, fuzzy, kde-format
+#| msgid "Disable dead peer detection"
+msgid "Disable cipher negotiation"
+msgstr "關閉已死端點偵測（Dead Peer Detection）"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:504
+#, kde-format
+msgid "Use custom size of cipher key:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:522
+#, fuzzy, kde-format
+#| msgid "Authentication:"
+msgid "HMAC Authentication:"
+msgstr "認證："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "MD-4"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "MD-5"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "SHA-1"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "SHA-224"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "SHA-256"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "SHA-384"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "SHA-512"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "RIPEMD-160"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:544
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "Server Certificate Check:"
+msgstr "使用者憑證："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
+#, kde-format
+msgid "Don't verify certificate identification"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
+#, kde-format
+msgid "Verify whole subject exactly"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
+#, kde-format
+msgid "Verify name exactly"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
+#, kde-format
+msgid "Verify name by prefix"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:551
+#, kde-format
+msgid "Verify subject partially (legacy mode, strongly discouraged)"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:562
+#, fuzzy, kde-format
+#| msgid "Subject match:"
+msgid "Subject Match:"
+msgstr "主題比對："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:567
+#, kde-format
+msgid "Connect only to servers whose certificate matches the given subject."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:576
+#, kde-format
+msgid "Verify peer (server) certificate usage signature"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:583
+#, fuzzy, kde-format
+#| msgid "User certificate:"
+msgid "Remote peer certificate TLS type:"
+msgstr "使用者憑證："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
+#, fuzzy, kde-format
+#| msgid "Service:"
+msgid "Server"
+msgstr "服務："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
+#, kde-format
+msgid "Client"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:595
+#, kde-format
+msgid "Verify peer (server) certificate nsCertType designation"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:602
+#, kde-format
+msgid "Remote peer certificate nsCert designation:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
+#, kde-format
+msgid "TLS-Auth"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
+#, fuzzy, kde-format
+#| msgid "Crypto:"
+msgid "TLS-Crypt"
+msgstr "Crypto："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
+#, kde-format
+msgid "TLS-Crypt v2"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:624
+#, fuzzy, kde-format
+#| msgid "SSH Key File:"
+msgid "Key File:"
+msgstr "SSH 金鑰檔案："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
+#, fuzzy, kde-format
+#| msgctxt "Perfect Forward Secrecy"
+#| msgid "Server (default)"
+msgid "Server (0)"
+msgstr "伺服器（預設）"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
+#, kde-format
+msgid "Client (1)"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:657
+#, fuzzy, kde-format
+#| msgid "User certificate:"
+msgid "Extra certificates file:"
+msgstr "使用者憑證："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:675
+#, kde-format
+msgid "TLS version minimum:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:687
+#, kde-format
+msgid "or highest"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:695
+#, kde-format
+msgid "TLS version maximum:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:703
+#, kde-format
+msgid "CRL verify file:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:721
+#, kde-format
+msgid "CRL verify directory:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:755
+#, fuzzy, kde-format
+#| msgid "Type:"
+msgid "Proxy Type:"
+msgstr "類型："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
+#, fuzzy, kde-format
+#| msgid "Not required"
+msgid "Not Required"
+msgstr "不需要"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
+#, kde-format
+msgid "HTTP"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
+#, kde-format
+msgid "SOCKS"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:767
+#, kde-format
+msgid ""
+"Select this option if your organization requires the use of a proxy server "
+"to access the Internet."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:772
+#, fuzzy, kde-format
+#| msgid "Address:"
+msgid "Server Address:"
+msgstr "位址："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:782
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
+#, kde-format
+msgid "Port:"
+msgstr "連接埠："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:796
+#, kde-format
+msgid "Retry indefinitely when errors occur"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:803
+#, fuzzy, kde-format
+#| msgid "Username:"
+msgid "Proxy Username:"
+msgstr "使用者名稱："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:819
+#: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:59
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:54
+#, fuzzy, kde-format
+#| msgid "Group Password:"
+msgid "Proxy Password:"
+msgstr "群組密碼："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:24
+#: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:36
+#, kde-format
+msgid "OpenVPN VPN"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:48
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:52
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgid "Key Password:"
+msgstr "密碼："
+
+#: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:21
+#, fuzzy, kde-format
+#| msgid "Default"
+msgctxt "@item::inlist Default openvpn cipher item"
+msgid "Default"
+msgstr "預設"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:30
+#, kde-format
+msgid "No ciphers were reported by OpenVPN."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:30
+#, kde-format
+msgid "Cipher to use for the data channel."
+msgstr ""
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:27
-#, fuzzy, kde-format
-#| msgid "SSLVPN server IP or name."
+#, kde-format
 msgid "PPTP server IP or name."
-msgstr "SSLVPN 的伺服器 IP 或名稱。"
+msgstr "PPTP 伺服器 IP 或名稱。"
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:36
 #, kde-format
 msgid "Login:"
-msgstr ""
+msgstr "登入："
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:22
-#, fuzzy, kde-format
-#| msgid "SSTP VPN"
+#, kde-format
 msgid "PPTP VPN"
-msgstr "SSTP VPN"
+msgstr "PPTP VPN"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:24
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr ""
+msgstr "當提示輸入密碼時，傳遞給 PPTP 的密碼。"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, kde-format
 msgid "Network Settings"
 msgstr "網路設定"
-
-#: editorqml/qml/vpn/ssh/Ssh.qml:47 editorqml/qml/vpn/ssh/Ssh.qml:97
-#, kde-format
-msgid "Remote IP Address:"
-msgstr "遠端 IP 位址："
-
-#: editorqml/qml/vpn/ssh/Ssh.qml:59 editorqml/qml/vpn/ssh/Ssh.qml:111
-#, kde-format
-msgid "Local IP Address:"
-msgstr "本地端 IP 位址："
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:71
 #, kde-format
@@ -5269,16 +5863,6 @@ msgstr "金鑰認證"
 #, kde-format
 msgid "SSH Key File:"
 msgstr "SSH 金鑰檔案："
-
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:37
-#, kde-format
-msgid "Use custom gateway port:"
-msgstr "使用自訂閘道器連接埠："
-
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:61
-#, kde-format
-msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr "使用自訂通道最大傳輸單位 (MTU)："
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:85
 #, kde-format
@@ -5350,11 +5934,6 @@ msgstr ""
 msgid "Address:"
 msgstr "位址："
 
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
-#, kde-format
-msgid "Port:"
-msgstr "連接埠："
-
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
 #, kde-format
 msgid "Credentials"
@@ -5366,105 +5945,95 @@ msgid "SSTP VPN"
 msgstr "SSTP VPN"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgid "Gateway"
 msgstr "閘道"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:47
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:88
-#, fuzzy, kde-format
-#| msgid "CA Certificate:"
+#, kde-format
 msgid "Certificate:"
-msgstr "CA 憑證："
+msgstr "憑證："
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Certificate/private key"
-msgstr ""
+msgstr "憑證/私密金鑰"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
-#, fuzzy, kde-format
-#| msgid "CA Certificate:"
+#, kde-format
 msgid "Certificate/ssh-agent"
-msgstr "CA 憑證："
+msgstr "憑證/ssh 代理程式"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Smartcard"
-msgstr ""
+msgstr "智慧卡"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "EAP-TTLS"
-msgstr ""
+msgstr "EAP-TTLS"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:132
-#, fuzzy, kde-format
-#| msgid "Ask for a one-time password every time this connection is activated."
+#, kde-format
 msgid "The PIN is asked for when the connection is activated."
-msgstr "每次啟動此連線都詢問一次性密碼"
+msgstr "PIN 碼會在連線啟用時詢問。"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:168
-#, fuzzy, kde-format
-#| msgid "Optional"
+#, kde-format
 msgid "Options"
-msgstr "選用"
+msgstr "選項"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:174
-#, fuzzy, kde-format
-#| msgid "Remote IP Address:"
+#, kde-format
 msgid "Request an inner IP address"
-msgstr "遠端 IP 位址："
+msgstr "要求一個內部 IP 位址"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:201
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
-msgstr ""
+msgstr "啟用自訂加密提案"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:208
 #, kde-format
 msgid "IKE:"
-msgstr ""
+msgstr "IKE："
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:213
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
-msgstr ""
+msgstr "IKE 提案列表（使用「;」分隔）"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:222
 #, kde-format
 msgid "ESP:"
-msgstr ""
+msgstr "ESP："
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:227
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr ""
+msgstr "ESP 提案列表（使用「;」分隔）"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:28
 #, kde-format
 msgid "strongSwan VPN"
-msgstr ""
+msgstr "strongSwan VPN"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:33
-#, fuzzy, kde-format
-#| msgid "Private key password:"
+#, kde-format
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
-msgstr "私密金鑰密碼："
+msgstr "私鑰密碼："
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:35
-#, fuzzy, kde-format
-#| msgid "PIN:"
+#, kde-format
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
 msgstr "PIN 碼："
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@label:textbox password label for EAP password"
 msgid "Password:"
 msgstr "密碼："
@@ -5830,11 +6399,6 @@ msgstr "金鑰索引："
 msgid "DNS Servers"
 msgstr "域名伺服器"
 
-#: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
-#, kde-format
-msgid "None"
-msgstr "無"
-
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:25
 #, kde-format
 msgid "WEP 40/128-bit key (Hex)"
@@ -5970,6 +6534,34 @@ msgstr "權值"
 msgctxt "@title:column IPv6 prefix length"
 msgid "Prefix"
 msgstr "前置字串"
+
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
+#, kde-format
+msgid "OTP"
+msgstr ""
+
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
+#, fuzzy, kde-format
+#| msgid "Authentication"
+msgid "authenticator"
+msgstr "認證"
+
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
+#, kde-format
+msgid "code"
+msgstr ""
+
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
+#, fuzzy, kde-format
+#| msgid "Token:"
+msgid "token"
+msgstr "權杖："
+
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
+#, fuzzy, kde-format
+#| msgid "One Time Password"
+msgid "one-time password"
+msgstr "一次性密碼"
 
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
 #, kde-format
@@ -6281,10 +6873,6 @@ msgstr "上傳"
 #, kde-format
 msgid "Download"
 msgstr "下載"
-
-#~ msgctxt "@title:window"
-#~ msgid "Advanced"
-#~ msgstr "進階"
 
 #~ msgid "BSSID:"
 #~ msgstr "BSSID："

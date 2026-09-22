@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-20 12:55+0000\n"
-"PO-Revision-Date: 2026-09-20 03:34+0200\n"
+"POT-Creation-Date: 2026-09-22 00:47+0000\n"
+"PO-Revision-Date: 2026-09-21 04:12+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -327,6 +327,7 @@ msgstr "ქსელების სკანირების შეცდო�
 #: cellular/cellularmodemdetails.cpp:435
 #: editor/settings/ui/connectionwidget.ui:169
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
 #, kde-format
 msgid "Yes"
 msgstr "დიახ"
@@ -335,6 +336,8 @@ msgstr "დიახ"
 #: cellular/cellularmodemdetails.cpp:437
 #: editor/settings/ui/connectionwidget.ui:174
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
 #, kde-format
 msgid "No"
 msgstr "არა"
@@ -589,7 +592,7 @@ msgid "Banner"
 msgstr "ბანერი"
 
 #: editor/connectiondetails.cpp:234 editor/connectiondetails.cpp:241
-#: editor/uiutils.cpp:218 editorqml/qml/components/Vpn.qml:32
+#: editor/uiutils.cpp:218 editorqml/qml/components/Vpn.qml:34
 #: networkstatus.cpp:190
 #, kde-format
 msgid "VPN"
@@ -673,11 +676,12 @@ msgstr "ჯგუფი"
 msgid "Device"
 msgstr "მოწყობილობა"
 
-#: editor/connectiondetails.cpp:321 editorqml/qml/components/Vpn.qml:28
+#: editor/connectiondetails.cpp:321 editorqml/qml/components/Vpn.qml:30
 #: editorqml/qml/components/Wired.qml:30
 #: editorqml/qml/components/Wireless.qml:30
 #: editorqml/qml/ConfigurationDialog.qml:34
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:26
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:69
 #: editorqml/qml/vpn/ssh/Ssh.qml:30 editorqml/qml/vpn/sstp/Sstp.qml:26
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:238
 #, kde-format
@@ -705,7 +709,7 @@ msgid "IPv4 Secondary Nameserver"
 msgstr "IPv4 მეორადი DNS სერვერი"
 
 #: editor/connectiondetails.cpp:352 editor/connectioneditorbase.cpp:334
-#: editorqml/qml/components/Vpn.qml:36 editorqml/qml/components/Wired.qml:39
+#: editorqml/qml/components/Vpn.qml:38 editorqml/qml/components/Wired.qml:39
 #: editorqml/qml/components/Wireless.qml:39
 #, kde-format
 msgid "IPv4"
@@ -737,7 +741,7 @@ msgid "IPv6 Secondary Nameserver"
 msgstr "IPv6 მეორადი DNS სერვერი"
 
 #: editor/connectiondetails.cpp:386 editor/connectioneditorbase.cpp:352
-#: editorqml/qml/components/Vpn.qml:43 editorqml/qml/components/Wired.qml:42
+#: editorqml/qml/components/Vpn.qml:42 editorqml/qml/components/Wired.qml:42
 #: editorqml/qml/components/Wireless.qml:42
 #, kde-format
 msgid "IPv6"
@@ -989,6 +993,7 @@ msgstr "DHCP-ის ჰოსტის სახელი:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:191
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "Default"
 msgstr "ნაგულისხმევი"
@@ -1138,7 +1143,8 @@ msgstr "დაცული EAP (PEAP)"
 #: editor/settings/ui/802-1x.ui:542 editor/settings/ui/802-1x.ui:684
 #: editor/settings/ui/cdma.ui:37 editor/settings/ui/gsm.ui:41
 #: editor/settings/ui/pppoe.ui:37 editor/settings/ui/wifisecurity.ui:207
-#: editorqml/qml/vpn/l2tp/L2tp.qml:59 editorqml/qml/vpn/sstp/Sstp.qml:43
+#: editorqml/qml/vpn/l2tp/L2tp.qml:59 editorqml/qml/vpn/openvpn/Openvpn.qml:201
+#: editorqml/qml/vpn/sstp/Sstp.qml:43
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:265
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:137
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:26
@@ -1170,8 +1176,10 @@ msgstr "მომხმარებელი:"
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:25
 #: editorqml/qml/vpn/iodine/Iodine.qml:51
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:23
-#: editorqml/qml/vpn/l2tp/L2tp.qml:78 editorqml/qml/vpn/pptp/Pptp.qml:51
-#: editorqml/qml/vpn/pptp/PptpAuth.qml:23
+#: editorqml/qml/vpn/l2tp/L2tp.qml:78 editorqml/qml/vpn/openvpn/Openvpn.qml:220
+#: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:37
+#: editorqml/qml/vpn/pptp/Pptp.qml:51 editorqml/qml/vpn/pptp/PptpAuth.qml:23
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:56
 #, kde-format
 msgid "Password:"
 msgstr "პაროლი:"
@@ -1450,6 +1458,7 @@ msgstr "წაშლა"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
 #: editor/settings/ui/bond.ui:110 editor/settings/ui/wificonnectionwidget.ui:68
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:614
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:70
 #, kde-format
 msgid "Mode:"
@@ -1560,7 +1569,7 @@ msgid "Address of the device:"
 msgstr "მოწყობილობის მისამართი:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: editor/settings/ui/bt.ui:41
+#: editor/settings/ui/bt.ui:41 editorqml/qml/vpn/openvpn/Openvpn.qml:47
 #, kde-format
 msgid "Connection type:"
 msgstr "შეერთების ტიპი:"
@@ -2476,6 +2485,7 @@ msgstr "დამალული ქსელი"
 #. i18n: ectx: property (text), widget (QLabel, securitySectionLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:368
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:73
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:73
 #, kde-format
 msgid "Security"
 msgstr "უსაფრთხოება"
@@ -4235,7 +4245,7 @@ msgctxt "@title:window"
 msgid "Choose a Connection Type"
 msgstr "აირჩიეთ კავშირის ტიპი"
 
-#: editorqml/qml/components/Vpn.qml:24 editorqml/qml/components/Wired.qml:27
+#: editorqml/qml/components/Vpn.qml:26 editorqml/qml/components/Wired.qml:27
 #: editorqml/qml/components/Wireless.qml:27
 #, kde-format
 msgid "Status"
@@ -4449,8 +4459,9 @@ msgstr ""
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:326
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:139
-#: editorqml/qml/vpn/pptp/Pptp.qml:82 editorqml/qml/vpn/ssh/Ssh.qml:194
-#: editorqml/qml/vpn/sstp/Sstp.qml:106 editorqml/qml/vpn/vpnc/Vpnc.qml:142
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:255 editorqml/qml/vpn/pptp/Pptp.qml:82
+#: editorqml/qml/vpn/ssh/Ssh.qml:194 editorqml/qml/vpn/sstp/Sstp.qml:106
+#: editorqml/qml/vpn/vpnc/Vpnc.qml:142
 #, kde-format
 msgctxt "@action:button"
 msgid "Advanced…"
@@ -4625,8 +4636,8 @@ msgstr "პაროლი 8-დან 64-მდე სიმბოლოს უ
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:30
 #: editorqml/qml/vpn/l2tp/L2tp.qml:30
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:24
-#: editorqml/qml/vpn/pptp/Pptp.qml:24 editorqml/qml/vpn/ssh/Ssh.qml:34
-#: editorqml/qml/vpn/sstp/Sstp.qml:30
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:35 editorqml/qml/vpn/pptp/Pptp.qml:24
+#: editorqml/qml/vpn/ssh/Ssh.qml:34 editorqml/qml/vpn/sstp/Sstp.qml:30
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:39
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:25
 #, kde-format
@@ -4656,13 +4667,13 @@ msgstr ""
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:77
 #: editorqml/qml/vpn/l2tp/L2tp.qml:106 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:93
-#: editorqml/qml/vpn/sstp/Sstp.qml:59
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:61 editorqml/qml/vpn/sstp/Sstp.qml:59
 #, kde-format
 msgid "CA Certificate:"
 msgstr "CA სერტიფიკატი:"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:95
-#: editorqml/qml/vpn/l2tp/L2tp.qml:130
+#: editorqml/qml/vpn/l2tp/L2tp.qml:130 editorqml/qml/vpn/openvpn/Openvpn.qml:85
 #, kde-format
 msgid "User Certificate:"
 msgstr "მომხმარებლის სერტიფიკატი:"
@@ -4756,14 +4767,14 @@ msgstr ""
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
 #: editorqml/qml/vpn/iodine/Iodine.qml:75
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:133
 #, kde-format
 msgid "Automatic"
 msgstr "ავტომატური"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
-#, fuzzy, kde-format
-#| msgid "%1 bytes"
+#, kde-format
 msgid "%1 byte"
 msgid_plural "%1 bytes"
 msgstr[0] "%1 ბაიტი"
@@ -4785,16 +4796,19 @@ msgid "Authentication type:"
 msgstr "ავთენტიკაციის ტიპი:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:45 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:82
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:50
 #, kde-format
 msgid "Select an authentication mode."
 msgstr "აირჩიეთ ავთენტიკაციის რეჟიმი."
 
-#: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/ssh/Ssh.qml:143
+#: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/openvpn/Openvpn.qml:54
+#: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "Password"
 msgstr "პაროლი"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:54
 #, kde-format
 msgid "Certificates (TLS)"
 msgstr "სერტიფიკატები (TLS)"
@@ -4825,6 +4839,7 @@ msgid "Certificate in .pem, .der, .crt, .cer or .p12 formats."
 msgstr "სერტიფიკატი .pem, .der, .crt, .cer ან .p12 ფორმატში."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:154 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:141
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:109
 #, kde-format
 msgid "Private Key:"
 msgstr "პირადი გასაღები:"
@@ -4835,6 +4850,7 @@ msgid "Private key in .pem, .der, .key, .pk8 or .p12 formats."
 msgstr "პირადი გასაღები .pem, .der, .key, .pk8 ან .p12 ფორმატში."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:183 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:188
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:236
 #, kde-format
 msgid "Private Key Password:"
 msgstr "პირადი გასაღების პაროლი:"
@@ -5279,6 +5295,615 @@ msgstr "(NT-) დომენის სახელი ავთენტიკ�
 msgid "Libreswan VPN"
 msgstr "Libreswan VPN"
 
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:38
+#, kde-format
+msgid ""
+"Remote gateways, with optional port and protocol (e.g. ovpn.corp.com:1194:"
+"udp)."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:54
+#, fuzzy, kde-format
+#| msgid "Shared Key"
+msgid "Static Key"
+msgstr "ზიარი გასაღები"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:54
+#, fuzzy, kde-format
+#| msgid "Certificates (TLS)"
+msgid "Password with Certificates (TLS)"
+msgstr "სერტიფიკატები (TLS)"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:70
+#, fuzzy, kde-format
+#| msgid ""
+#| "Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats."
+msgid "Certificate authority (CA) file in .pem format."
+msgstr ""
+"სერტიფიკატის გამომცემლის (CA) ფაილი .pem, .der, .crt, .cer ან .p12 ფორმატში."
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:94
+#, kde-format
+msgid ""
+"Local peer's signed certificate in .pem format (signed by CA of CA "
+"Certificate)."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:118
+#, kde-format
+msgid "Local peer's private key in .pem format."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:133
+#, fuzzy, kde-format
+#| msgid "Private Key:"
+msgid "Static Key:"
+msgstr "პირადი გასაღები:"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:142
+#, kde-format
+msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:157
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:644
+#, fuzzy, kde-format
+#| msgid "Key authentication"
+msgid "Key Direction:"
+msgstr "გასაღებით ავთენტიკაცია"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:162
+#, kde-format
+msgid ""
+"If key direction is used, it must be the opposite of that used on the VPN "
+"peer. For example, if the peer uses '1', this connection must use '0'. If "
+"you are unsure what value to use, contact your system administrator."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:166
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:331
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
+#: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
+#, kde-format
+msgid "None"
+msgstr "არცერთი"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:166
+#, kde-format
+msgid "0"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:166
+#, kde-format
+msgid "1"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:173 editorqml/qml/vpn/ssh/Ssh.qml:59
+#: editorqml/qml/vpn/ssh/Ssh.qml:111
+#, kde-format
+msgid "Local IP Address:"
+msgstr "ლოკალური IP მისამართი:"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:178
+#, kde-format
+msgid "IP address of the local VPN endpoint."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:187 editorqml/qml/vpn/ssh/Ssh.qml:47
+#: editorqml/qml/vpn/ssh/Ssh.qml:97
+#, kde-format
+msgid "Remote IP Address:"
+msgstr "დაშორებული IP მისამართი:"
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:192
+#, kde-format
+msgid "IP address of the remote VPN endpoint."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/Openvpn.qml:206
+#, fuzzy, kde-format
+#| msgid "Password passed to PPTP when prompted for it."
+msgid "Username passed to OpenVPN when prompted for it."
+msgstr "PPTP-ისთვის მოთხოვნისას გადაცემული პაროლი."
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:28
+#, kde-format
+msgctxt "@title:window"
+msgid "Advanced"
+msgstr "დამატებით"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:77
+#, fuzzy, kde-format
+#| msgid "Other Settings"
+msgid "TLS Settings"
+msgstr "სხვა პარამეტრები"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:81
+#, fuzzy, kde-format
+#| msgid "Proxy"
+msgid "Proxies"
+msgstr "პროქსი"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:112
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:37
+#, kde-format
+msgid "Use custom gateway port:"
+msgstr "გამავალი რაუტერის პორტის ხელით მითითება:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:136
+#, fuzzy, kde-format
+#| msgid "Use custom unit number:"
+msgid "Use custom renegotiation interval:"
+msgstr "ერთეულის ხელით მითითება:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:154
+#, fuzzy, kde-format
+#| msgid "Use IP compression"
+msgid "Use compression"
+msgstr "IP-ის შეკუმშვის გამოყენება"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:161
+#, fuzzy, kde-format
+#| msgid "Compression"
+msgid "Compression:"
+msgstr "შეკუმშვა"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
+#, kde-format
+msgid "LZO"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
+#, kde-format
+msgid "LZ4"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
+#, kde-format
+msgid "LZ4 v2"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
+#, fuzzy, kde-format
+#| msgctxt "Networking is inactive and all devices are disabled"
+#| msgid "Inactive"
+msgid "Adaptive"
+msgstr "არააქტიური"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:175
+#, fuzzy, kde-format
+#| msgid "Use TCP header compression"
+msgid "Use asymetric compression"
+msgstr "TCP თავსართების შეკუმშვა"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:182
+#, fuzzy, kde-format
+#| msgid "New %1 connection"
+msgid "Use a TCP connection"
+msgstr "ახალი შეერთება (%1)"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:195
+#, kde-format
+msgid "Set virtual device type:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
+#, kde-format
+msgid "TUN"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
+#, fuzzy, kde-format
+#| msgid "PAP"
+msgid "TAP"
+msgstr "PAP"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:216
+#, fuzzy, kde-format
+#| msgid "Remote device number:"
+msgid "Set virtual device name:"
+msgstr "დაშორებული მოწყობილობის ნომერი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:239
+#: editorqml/qml/vpn/ssh/SshAdvanced.qml:61
+#, kde-format
+msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
+msgstr "გვირაბის MTU-ის ხელით მითითება:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:263
+#, fuzzy, kde-format
+#| msgid "Use custom unit number:"
+msgid "Use custom UDP fragment size:"
+msgstr "ერთეულის ხელით მითითება:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:281
+#, kde-format
+msgid "Restrict TCP maximum segment size (MSS)"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:294
+#, kde-format
+msgid "Specify Path MTU discovery:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
+#, kde-format
+msgid "Maybe"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:311
+#, kde-format
+msgid "Randomize remote hosts"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:318
+#, kde-format
+msgid "Prefix remote DNS name with random string"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:325
+#, fuzzy, kde-format
+#| msgid "Connect to"
+msgid "Connect timeout:"
+msgstr "დაკავშირება"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
+#, kde-format
+msgid "%1 s"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:338
+#, kde-format
+msgid "Allow pull of peer DNS names (FQDN)"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:345
+#, kde-format
+msgid "push peer info"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:352
+#, kde-format
+msgid "IPv6 tun link"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:365
+#, kde-format
+msgid "Specify ping interval:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:389
+#, kde-format
+msgid "Specify exit or restart ping:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
+#, kde-format
+msgid "ping-exit"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
+#, kde-format
+msgid "ping-restart"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:416
+#, kde-format
+msgid "Accept authenticated packets from any address (Float)"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:429
+#, kde-format
+msgid "Specify max routes:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:461
+#, kde-format
+msgid "Cipher:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:471
+#, kde-format
+msgid "Data Ciphers:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:481
+#, kde-format
+msgid "Data Ciphers Fallback:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:491
+#, fuzzy, kde-format
+#| msgid "Disable dead peer detection"
+msgid "Disable cipher negotiation"
+msgstr "მკვდარი პარტნიორის გამოვლენის გამორთვა"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:504
+#, fuzzy, kde-format
+#| msgid "Use custom unit number:"
+msgid "Use custom size of cipher key:"
+msgstr "ერთეულის ხელით მითითება:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:522
+#, fuzzy, kde-format
+#| msgid "Authentication:"
+msgid "HMAC Authentication:"
+msgstr "ავთენტიკაცია:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "MD-4"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "MD-5"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "SHA-1"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "SHA-224"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "SHA-256"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "SHA-384"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "SHA-512"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
+#, kde-format
+msgid "RIPEMD-160"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:544
+#, fuzzy, kde-format
+#| msgid "User Certificate:"
+msgid "Server Certificate Check:"
+msgstr "მომხმარებლის სერტიფიკატი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
+#, kde-format
+msgid "Don't verify certificate identification"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
+#, kde-format
+msgid "Verify whole subject exactly"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
+#, kde-format
+msgid "Verify name exactly"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
+#, kde-format
+msgid "Verify name by prefix"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:551
+#, kde-format
+msgid "Verify subject partially (legacy mode, strongly discouraged)"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:562
+#, fuzzy, kde-format
+#| msgid "Subject match:"
+msgid "Subject Match:"
+msgstr "სათაურის დამთხვევა:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:567
+#, kde-format
+msgid "Connect only to servers whose certificate matches the given subject."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:576
+#, kde-format
+msgid "Verify peer (server) certificate usage signature"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:583
+#, fuzzy, kde-format
+#| msgid "User certificate:"
+msgid "Remote peer certificate TLS type:"
+msgstr "მომხმარებლის სერტიფიკატი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
+#, fuzzy, kde-format
+#| msgid "Service:"
+msgid "Server"
+msgstr "სერვისი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
+#, kde-format
+msgid "Client"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:595
+#, kde-format
+msgid "Verify peer (server) certificate nsCertType designation"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:602
+#, kde-format
+msgid "Remote peer certificate nsCert designation:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
+#, kde-format
+msgid "TLS-Auth"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
+#, fuzzy, kde-format
+#| msgid "Crypto:"
+msgid "TLS-Crypt"
+msgstr "კრიპტო:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
+#, kde-format
+msgid "TLS-Crypt v2"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:624
+#, fuzzy, kde-format
+#| msgid "SSH Key File:"
+msgid "Key File:"
+msgstr "SSH-ის გასაღების ფაილი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
+#, fuzzy, kde-format
+#| msgctxt "Perfect Forward Secrecy"
+#| msgid "Server (default)"
+msgid "Server (0)"
+msgstr "სერვერი (ნაგულისხმევი)"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
+#, kde-format
+msgid "Client (1)"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:657
+#, fuzzy, kde-format
+#| msgid "User certificate:"
+msgid "Extra certificates file:"
+msgstr "მომხმარებლის სერტიფიკატი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:675
+#, kde-format
+msgid "TLS version minimum:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:687
+#, kde-format
+msgid "or highest"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:695
+#, kde-format
+msgid "TLS version maximum:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:703
+#, kde-format
+msgid "CRL verify file:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:721
+#, kde-format
+msgid "CRL verify directory:"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:755
+#, fuzzy, kde-format
+#| msgid "Type:"
+msgid "Proxy Type:"
+msgstr "ტიპი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
+#, fuzzy, kde-format
+#| msgid "Not required"
+msgid "Not Required"
+msgstr "აუცილებელი არაა"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
+#, kde-format
+msgid "HTTP"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
+#, kde-format
+msgid "SOCKS"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:767
+#, kde-format
+msgid ""
+"Select this option if your organization requires the use of a proxy server "
+"to access the Internet."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:772
+#, fuzzy, kde-format
+#| msgid "Address:"
+msgid "Server Address:"
+msgstr "მისამართი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:782
+#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
+#, kde-format
+msgid "Port:"
+msgstr "პორტი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:796
+#, kde-format
+msgid "Retry indefinitely when errors occur"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:803
+#, fuzzy, kde-format
+#| msgid "Username:"
+msgid "Proxy Username:"
+msgstr "მომხმარებელი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:819
+#: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:59
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:54
+#, fuzzy, kde-format
+#| msgid "Group Password:"
+msgid "Proxy Password:"
+msgstr "ჯგუფის პაროლი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:24
+#: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:36
+#, kde-format
+msgid "OpenVPN VPN"
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:48
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:52
+#, fuzzy, kde-format
+#| msgid "Password:"
+msgid "Key Password:"
+msgstr "პაროლი:"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:21
+#, fuzzy, kde-format
+#| msgid "Default"
+msgctxt "@item::inlist Default openvpn cipher item"
+msgid "Default"
+msgstr "ნაგულისხმევი"
+
+#: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:30
+#, kde-format
+msgid "No ciphers were reported by OpenVPN."
+msgstr ""
+
+#: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:30
+#, kde-format
+msgid "Cipher to use for the data channel."
+msgstr ""
+
 #: editorqml/qml/vpn/pptp/Pptp.qml:27
 #, kde-format
 msgid "PPTP server IP or name."
@@ -5303,16 +5928,6 @@ msgstr "PPTP-ისთვის მოთხოვნისას გადა�
 #, kde-format
 msgid "Network Settings"
 msgstr "ქსელის მორგება"
-
-#: editorqml/qml/vpn/ssh/Ssh.qml:47 editorqml/qml/vpn/ssh/Ssh.qml:97
-#, kde-format
-msgid "Remote IP Address:"
-msgstr "დაშორებული IP მისამართი:"
-
-#: editorqml/qml/vpn/ssh/Ssh.qml:59 editorqml/qml/vpn/ssh/Ssh.qml:111
-#, kde-format
-msgid "Local IP Address:"
-msgstr "ლოკალური IP მისამართი:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:71
 #, kde-format
@@ -5348,16 +5963,6 @@ msgstr "გასაღებით ავთენტიკაცია"
 #, kde-format
 msgid "SSH Key File:"
 msgstr "SSH-ის გასაღების ფაილი:"
-
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:37
-#, kde-format
-msgid "Use custom gateway port:"
-msgstr "გამავალი რაუტერის პორტის ხელით მითითება:"
-
-#: editorqml/qml/vpn/ssh/SshAdvanced.qml:61
-#, kde-format
-msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr "გვირაბის MTU-ის ხელით მითითება:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:85
 #, kde-format
@@ -5428,11 +6033,6 @@ msgstr "ერთეულის ხელით მითითება:"
 #, kde-format
 msgid "Address:"
 msgstr "მისამართი:"
-
-#: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
-#, kde-format
-msgid "Port:"
-msgstr "პორტი:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
 #, kde-format
@@ -5902,11 +6502,6 @@ msgstr "გასაღების ინდექსი:"
 msgid "DNS Servers"
 msgstr "DNS სერვერები"
 
-#: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
-#, kde-format
-msgid "None"
-msgstr "არცერთი"
-
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:25
 #, kde-format
 msgid "WEP 40/128-bit key (Hex)"
@@ -6050,6 +6645,34 @@ msgstr "მეტრული"
 msgctxt "@title:column IPv6 prefix length"
 msgid "Prefix"
 msgstr "პრეფიქსი"
+
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
+#, kde-format
+msgid "OTP"
+msgstr ""
+
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
+#, fuzzy, kde-format
+#| msgid "Authentication"
+msgid "authenticator"
+msgstr "ავთენტიკაცია"
+
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
+#, kde-format
+msgid "code"
+msgstr ""
+
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
+#, fuzzy, kde-format
+#| msgid "Token:"
+msgid "token"
+msgstr "ტოკენი:"
+
+#: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
+#, fuzzy, kde-format
+#| msgid "One Time Password"
+msgid "one-time password"
+msgstr "ერთჯერადი პაროლი"
 
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
 #, kde-format
@@ -6361,7 +6984,3 @@ msgstr "ატვირთვა"
 #, kde-format
 msgid "Download"
 msgstr "გადმოწერა"
-
-#~ msgctxt "@title:window"
-#~ msgid "Advanced"
-#~ msgstr "დამატებით"

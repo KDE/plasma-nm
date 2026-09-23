@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:47+0000\n"
-"PO-Revision-Date: 2026-09-19 22:44+0200\n"
+"PO-Revision-Date: 2026-09-22 22:26+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -4785,12 +4785,11 @@ msgid "Automatic"
 msgstr "Автоматически"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
-#, fuzzy, kde-format
-#| msgid "%1 bytes"
+#, kde-format
 msgid "%1 byte"
 msgid_plural "%1 bytes"
 msgstr[0] "%1 байт"
-msgstr[1] "%1 байт"
+msgstr[1] "%1 байта"
 msgstr[2] "%1 байт"
 msgstr[3] "%1 байт"
 
@@ -5325,27 +5324,23 @@ msgid ""
 "Remote gateways, with optional port and protocol (e.g. ovpn.corp.com:1194:"
 "udp)."
 msgstr ""
+"Удалённые шлюзы, при необходимости с портом и протоколом (например, ovpn."
+"corp.com:1194:udp)."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "Shared Key"
+#, kde-format
 msgid "Static Key"
-msgstr "Общий ключ"
+msgstr "Статический ключ"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "Certificates (TLS)"
+#, kde-format
 msgid "Password with Certificates (TLS)"
-msgstr "Сертификаты (TLS)"
+msgstr "Пароль и сертификаты (TLS)"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:70
-#, fuzzy, kde-format
-#| msgid ""
-#| "Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats."
+#, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr ""
-"Файл сертификата удостоверяющего центра (УЦ) в форматах .pem, .der, .crt, ."
-"cer или .p12."
+msgstr "Файл центра сертификации (CA) в формате «.pem»."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:94
 #, kde-format
@@ -5353,29 +5348,29 @@ msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
 "Certificate)."
 msgstr ""
+"Подписанный сертификат локального компьютера в формате .pem\n"
+"(подписанный выбранным центром сертификации)."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:118
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr ""
+msgstr "Закрытый ключ локального компьютера в формате .pem."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:133
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "Static Key:"
-msgstr "Личный ключ:"
+msgstr "Статический ключ:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:142
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
-msgstr ""
+msgstr "Общий файл ключа для режима шифрования со статическим ключом (не TLS)."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:157
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:644
-#, fuzzy, kde-format
-#| msgid "Key authentication"
+#, kde-format
 msgid "Key Direction:"
-msgstr "Аутентификация по ключу"
+msgstr "Направление ключа:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:162
 #, kde-format
@@ -5384,6 +5379,11 @@ msgid ""
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
+"Если указано направление ключа, оно должно быть установлено в значение, "
+"противоположное этому же параметру на удалённом хосте. Например, если на "
+"удалённом компьютере задано значение «1», но для этого соединения нужно "
+"установить его в «0». Если сомневаетесь, какое значение выбрать, обратитесь "
+"к системному администратору."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
@@ -5399,12 +5399,12 @@ msgstr "Нет"
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #, kde-format
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #, kde-format
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:173 editorqml/qml/vpn/ssh/Ssh.qml:59
 #: editorqml/qml/vpn/ssh/Ssh.qml:111
@@ -5415,7 +5415,7 @@ msgstr "Локальный IP-адрес:"
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:178
 #, kde-format
 msgid "IP address of the local VPN endpoint."
-msgstr ""
+msgstr "IP-адрес локального хоста в VPN."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:187 editorqml/qml/vpn/ssh/Ssh.qml:47
 #: editorqml/qml/vpn/ssh/Ssh.qml:97
@@ -5426,12 +5426,12 @@ msgstr "Удалённый IP-адрес:"
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:192
 #, kde-format
 msgid "IP address of the remote VPN endpoint."
-msgstr ""
+msgstr "IP-адрес удалённого хоста в VPN."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:206
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "Имя пользователя, которое будет передано OpenVPN."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:28
 #, kde-format
@@ -5440,14 +5440,12 @@ msgid "Advanced"
 msgstr "Дополнительно"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:77
-#, fuzzy, kde-format
-#| msgid "Other Settings"
+#, kde-format
 msgid "TLS Settings"
-msgstr "Другие параметры"
+msgstr "Параметры TLS"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:81
-#, fuzzy, kde-format
-#| msgid "Proxy"
+#, kde-format
 msgid "Proxies"
 msgstr "Прокси"
 
@@ -5458,78 +5456,69 @@ msgid "Use custom gateway port:"
 msgstr "Использовать нестандартный порт шлюза:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:136
-#, fuzzy, kde-format
-#| msgid "Use custom unit number:"
+#, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr "Задать количество блоков:"
+msgstr "Нестандартный интервал пересогласования:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:154
-#, fuzzy, kde-format
-#| msgid "Use IP compression"
+#, kde-format
 msgid "Use compression"
-msgstr "Использовать сжатие IP"
+msgstr "Использовать сжатие"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:161
-#, fuzzy, kde-format
-#| msgid "Compression"
+#, kde-format
 msgid "Compression:"
-msgstr "Сжатие"
+msgstr "Сжатие:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZO"
-msgstr ""
+msgstr "LZO"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZ4"
-msgstr ""
+msgstr "LZ4"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZ4 v2"
-msgstr ""
+msgstr "LZ4 v2"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
-#, fuzzy, kde-format
-#| msgctxt "Networking is inactive and all devices are disabled"
-#| msgid "Inactive"
+#, kde-format
 msgid "Adaptive"
-msgstr "Неактивно"
+msgstr "Адаптивно"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:175
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "Использовать сжатие заголовков TCP"
+msgstr "Использовать асимметричное сжатие"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:182
-#, fuzzy, kde-format
-#| msgid "New %1 connection"
+#, kde-format
 msgid "Use a TCP connection"
-msgstr "Новое соединение %1"
+msgstr "Использовать TCP-соединение"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:195
 #, kde-format
 msgid "Set virtual device type:"
-msgstr ""
+msgstr "Задать тип виртуального устройства:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
 #, kde-format
 msgid "TUN"
-msgstr ""
+msgstr "TUN"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
-#, fuzzy, kde-format
-#| msgid "PAP"
+#, kde-format
 msgid "TAP"
-msgstr "PAP"
+msgstr "TAP"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:216
-#, fuzzy, kde-format
-#| msgid "Remote device number:"
+#, kde-format
 msgid "Set virtual device name:"
-msgstr "Номер устройства на сервере:"
+msgstr "Задать имя виртуального устройства:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:239
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:61
@@ -5538,199 +5527,194 @@ msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
 msgstr "Использовать нестандартный максимальный размер пакета (MTU) туннеля:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:263
-#, fuzzy, kde-format
-#| msgid "Use custom unit number:"
+#, kde-format
 msgid "Use custom UDP fragment size:"
-msgstr "Задать количество блоков:"
+msgstr "Задать размер фрагмента UDP:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:281
 #, kde-format
 msgid "Restrict TCP maximum segment size (MSS)"
-msgstr ""
+msgstr "Ограничить максимальный размер сегмента (MSS) для TCP"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:294
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "Указать обнаружение MTU пути:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Возможно"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:311
 #, kde-format
 msgid "Randomize remote hosts"
-msgstr ""
+msgstr "Выбирать шлюз случайным образом"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:318
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "Добавлять к имени удалённого DNS случайную строку"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:325
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Connect timeout:"
-msgstr "Подключиться к"
+msgstr "Время ожидания соединения:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
 #, kde-format
 msgid "%1 s"
-msgstr ""
+msgstr "%1 с"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:338
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "Разрешить получение полных доменных имён узлов (FQDN)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:345
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "Отправлять информацию об узле"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:352
 #, kde-format
 msgid "IPv6 tun link"
-msgstr ""
+msgstr "Сетевой интерфейс tun IPv6"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:365
 #, kde-format
 msgid "Specify ping interval:"
-msgstr ""
+msgstr "Периодичность проверочных пакетов (ping):"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:389
 #, kde-format
 msgid "Specify exit or restart ping:"
-msgstr ""
+msgstr "Выход или перезапуск по ping:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
 #, kde-format
 msgid "ping-exit"
-msgstr ""
+msgstr "ping-exit"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
 #, kde-format
 msgid "ping-restart"
-msgstr ""
+msgstr "ping-restart"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:416
 #, kde-format
 msgid "Accept authenticated packets from any address (Float)"
-msgstr ""
+msgstr "Принимать подлинные пакеты с любого адреса (float)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:429
 #, kde-format
 msgid "Specify max routes:"
-msgstr ""
+msgstr "Максимальное число маршрутов:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:461
 #, kde-format
 msgid "Cipher:"
-msgstr ""
+msgstr "Шифр:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:471
 #, kde-format
 msgid "Data Ciphers:"
-msgstr ""
+msgstr "Шифры данных:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:481
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "Шифры данных (запасной вариант):"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:491
-#, fuzzy, kde-format
-#| msgid "Disable dead peer detection"
+#, kde-format
 msgid "Disable cipher negotiation"
-msgstr "Выключить обнаружение неработающих соединений"
+msgstr "Отключить согласование алгоритмов шифрования"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:504
-#, fuzzy, kde-format
-#| msgid "Use custom unit number:"
+#, kde-format
 msgid "Use custom size of cipher key:"
-msgstr "Задать количество блоков:"
+msgstr "Задать длину ключа:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:522
-#, fuzzy, kde-format
-#| msgid "Authentication:"
+#, kde-format
 msgid "HMAC Authentication:"
-msgstr "Проверка подлинности:"
+msgstr "Аутентификация HMAC:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "MD-4"
-msgstr ""
+msgstr "MD-4"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "MD-5"
-msgstr ""
+msgstr "MD-5"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-1"
-msgstr ""
+msgstr "SHA-1"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-224"
-msgstr ""
+msgstr "SHA-224"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-256"
-msgstr ""
+msgstr "SHA-256"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-384"
-msgstr ""
+msgstr "SHA-384"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-512"
-msgstr ""
+msgstr "SHA-512"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "RIPEMD-160"
-msgstr ""
+msgstr "RIPEMD-160"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:544
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Server Certificate Check:"
-msgstr "Сертификат пользователя:"
+msgstr "Проверка сертификата сервера:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Don't verify certificate identification"
-msgstr ""
+msgstr "Не проверять принадлежность сертификата"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify whole subject exactly"
-msgstr ""
+msgstr "Точное совпадение всего субъекта"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify name exactly"
-msgstr ""
+msgstr "Точное совпадение имени"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify name by prefix"
-msgstr ""
+msgstr "Проверка имени по префиксу"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:551
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
 msgstr ""
+"Частичное совпадение субъекта (устаревший режим, настоятельно не "
+"рекомендуется)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:562
-#, fuzzy, kde-format
-#| msgid "Subject match:"
+#, kde-format
 msgid "Subject Match:"
 msgstr "Проверка субъекта:"
 
@@ -5738,127 +5722,120 @@ msgstr "Проверка субъекта:"
 #, kde-format
 msgid "Connect only to servers whose certificate matches the given subject."
 msgstr ""
+"Подключаться только к серверам, сертификат которых совпадает с указанным "
+"субъектом."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:576
 #, kde-format
 msgid "Verify peer (server) certificate usage signature"
-msgstr ""
+msgstr "Проверять назначение сертификата удалённого хоста (сервера)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:583
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Remote peer certificate TLS type:"
-msgstr "Сертификат пользователя:"
+msgstr "Тип TLS сертификата удалённого хоста:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
-#, fuzzy, kde-format
-#| msgid "Service:"
+#, kde-format
 msgid "Server"
-msgstr "Служба:"
+msgstr "Сервер"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
 #, kde-format
 msgid "Client"
-msgstr ""
+msgstr "Клиент"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:595
 #, kde-format
 msgid "Verify peer (server) certificate nsCertType designation"
-msgstr ""
+msgstr "Проверять явное указание nsCertType у сертификата удалённого хоста"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:602
 #, kde-format
 msgid "Remote peer certificate nsCert designation:"
-msgstr ""
+msgstr "nsCert у сертификата удалённого хоста:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Auth"
-msgstr ""
+msgstr "TLS-Auth"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
-#, fuzzy, kde-format
-#| msgid "Crypto:"
+#, kde-format
 msgid "TLS-Crypt"
-msgstr "Шифрование:"
+msgstr "TLS-Crypt"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Crypt v2"
-msgstr ""
+msgstr "TLS-Crypt v2"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:624
-#, fuzzy, kde-format
-#| msgid "SSH Key File:"
+#, kde-format
 msgid "Key File:"
-msgstr "Файл ключа SSH:"
+msgstr "Файл ключа:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
-#, fuzzy, kde-format
-#| msgctxt "Perfect Forward Secrecy"
-#| msgid "Server (default)"
+#, kde-format
 msgid "Server (0)"
-msgstr "Сервер (по умолчанию)"
+msgstr "Сервер (0)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
 #, kde-format
 msgid "Client (1)"
-msgstr ""
+msgstr "Клиент (1)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:657
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "Сертификат пользователя:"
+msgstr "Файл дополнительных сертификатов:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:675
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "Минимальная версия TLS:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:687
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "Использовать наивысшую"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:695
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "Максимальная версия TLS:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:703
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "Файл проверки списка отзыва сертификатов:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:721
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "Каталог проверки списка отзыва сертификатов:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:755
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Proxy Type:"
-msgstr "Тип:"
+msgstr "Тип прокси:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
-#, fuzzy, kde-format
-#| msgid "Not required"
+#, kde-format
 msgid "Not Required"
 msgstr "Не требуется"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
 #, kde-format
 msgid "SOCKS"
-msgstr ""
+msgstr "SOCKS"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:767
 #, kde-format
@@ -5866,12 +5843,13 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
+"Задайте эту группу параметров, если ваша организация требует использования "
+"прокси-сервера для подключения к сети Интернет."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:772
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "Server Address:"
-msgstr "Адрес:"
+msgstr "Адрес сервера:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:782
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
@@ -5882,38 +5860,34 @@ msgstr "Порт:"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:796
 #, kde-format
 msgid "Retry indefinitely when errors occur"
-msgstr ""
+msgstr "В случае ошибок переподключаться до бесконечности"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:803
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "Proxy Username:"
-msgstr "Имя пользователя:"
+msgstr "Имя пользователя прокси:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:819
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:59
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:54
-#, fuzzy, kde-format
-#| msgid "Group Password:"
+#, kde-format
 msgid "Proxy Password:"
-msgstr "Пароль группы:"
+msgstr "Пароль для прокси:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:24
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:36
 #, kde-format
 msgid "OpenVPN VPN"
-msgstr ""
+msgstr "OpenVPN VPN"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:48
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:52
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Key Password:"
-msgstr "Пароль:"
+msgstr "Пароль ключа:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:21
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
 msgstr "По умолчанию"
@@ -5921,34 +5895,32 @@ msgstr "По умолчанию"
 #: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:30
 #, kde-format
 msgid "No ciphers were reported by OpenVPN."
-msgstr ""
+msgstr "OpenVPN не сообщил ни об одном шифре."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:30
 #, kde-format
 msgid "Cipher to use for the data channel."
-msgstr ""
+msgstr "Шифр, используемый для канала данных."
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:27
-#, fuzzy, kde-format
-#| msgid "L2TP server IP or name."
+#, kde-format
 msgid "PPTP server IP or name."
-msgstr "IP-адрес или имя сервера L2TP."
+msgstr "IP-адрес или имя сервера PPTP"
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:36
 #, kde-format
 msgid "Login:"
-msgstr ""
+msgstr "Имя пользователя:"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:22
-#, fuzzy, kde-format
-#| msgid "L2TP VPN"
+#, kde-format
 msgid "PPTP VPN"
-msgstr "L2TP VPN"
+msgstr "PPTP VPN"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:24
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr ""
+msgstr "Пароль, который будет передан PPTP."
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, kde-format
@@ -6678,30 +6650,27 @@ msgstr "Префикс"
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "OTP"
-msgstr ""
+msgstr "OTP"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "authenticator"
-msgstr "Проверка подлинности"
+msgstr "приложение для двухэтапной аутентификации"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "code"
-msgstr ""
+msgstr "код"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
-#, fuzzy, kde-format
-#| msgid "Token:"
+#, kde-format
 msgid "token"
-msgstr "Маркер:"
+msgstr "токен"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
-#, fuzzy, kde-format
-#| msgid "One Time Password"
+#, kde-format
 msgid "one-time password"
-msgstr "Одноразовый пароль"
+msgstr "одноразовый пароль"
 
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
 #, kde-format

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-22 00:47+0000\n"
-"PO-Revision-Date: 2026-09-17 16:07+0300\n"
+"PO-Revision-Date: 2026-09-23 14:51+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -1734,7 +1734,7 @@ msgstr "Tinklo ID:"
 #: editor/settings/ui/gsm.ui:130
 #, kde-format
 msgid "PIN:"
-msgstr "PIN:"
+msgstr "PIN kodas:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/infiniband.ui:21
@@ -4799,14 +4799,13 @@ msgid "Automatic"
 msgstr "Automatinis"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
-#, fuzzy, kde-format
-#| msgid "%1 bytes"
+#, kde-format
 msgid "%1 byte"
 msgid_plural "%1 bytes"
-msgstr[0] "%1 baitų"
-msgstr[1] "%1 baitų"
+msgstr[0] "%1 baitas"
+msgstr[1] "%1 baitai"
 msgstr[2] "%1 baitų"
-msgstr[3] "%1 baitų"
+msgstr[3] "%1 baitas"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format
@@ -4814,23 +4813,20 @@ msgid "Iodine VPN"
 msgstr "Iodine VPN"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:33
-#, fuzzy, kde-format
-#| msgid "SSLVPN server IP or name."
+#, kde-format
 msgid "L2TP server IP or name."
-msgstr "SSLVPN serverio IP adresas arba pavadinimas."
+msgstr "L2TP serverio IP adresas arba pavadinimas."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:42
-#, fuzzy, kde-format
-#| msgid "Authentication:"
+#, kde-format
 msgid "Authentication type:"
-msgstr "Tapatybės nustatymas:"
+msgstr "Tapatybės nustatymo tipas:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:45 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:82
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:50
-#, fuzzy, kde-format
-#| msgid "Key authentication"
+#, kde-format
 msgid "Select an authentication mode."
-msgstr "Tapatybės nustatymas raktu"
+msgstr "Pasirinkite tapatybės nustatymo veikseną."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/openvpn/Openvpn.qml:54
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
@@ -4840,10 +4836,9 @@ msgstr "Slaptažodis"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "CA Certificate:"
+#, kde-format
 msgid "Certificates (TLS)"
-msgstr "LĮ liudijimas:"
+msgstr "Liudijimai (TLS)"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:92 editorqml/qml/vpn/pptp/Pptp.qml:66
 #: editorqml/qml/vpn/sstp/Sstp.qml:51
@@ -4857,66 +4852,64 @@ msgid ""
 "Append the domain name <domain> to the local host name for authentication "
 "purposes."
 msgstr ""
+"Tapatybės nustatymo sumetimais, pridėti domeno pavadinimą <domain> prie "
+"vietinio mazgo pavadinimo."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:115 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:102
 #, kde-format
 msgid ""
 "Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats."
-msgstr ""
+msgstr "Liudijimų įstaigos (LĮ) failas .pem, .der, .crt, .cer ar .p12 formatu."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:139
 #, kde-format
 msgid "Certificate in .pem, .der, .crt, .cer or .p12 formats."
-msgstr ""
+msgstr "Liudijimas .pem, .der, .crt, .cer ar .p12 formatu."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:154 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:141
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:109
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Private Key:"
 msgstr "Privatusis raktas:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:163 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:150
 #, kde-format
 msgid "Private key in .pem, .der, .key, .pk8 or .p12 formats."
-msgstr ""
+msgstr "Privatusis raktas .pem, .der, .key, .pk8 ar .p12 formatu."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:183 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:188
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:236
-#, fuzzy, kde-format
-#| msgid "Private key password:"
+#, kde-format
 msgid "Private Key Password:"
 msgstr "Privačiojo rakto slaptažodis:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:200
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "Naudoti L2TP trumpalaikį šaltinio prievadą"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:216
-#, fuzzy, kde-format
-#| msgid "IPv6 Network Settings"
+#, kde-format
 msgctxt "@action:button"
 msgid "IPsec Settings…"
-msgstr "IPv6 tinklo nuostatos"
+msgstr "IPsec nuostatos…"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:220
 #, kde-format
 msgid "No IPsec daemon (libreswan or strongSwan) was found."
-msgstr ""
+msgstr "Nerasta jokia IPsec tarnyba (libreswan ar strongSwan)."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "PPP Settings…"
-msgstr ""
+msgstr "PPP nuostatos…"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:24
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:36
-#, fuzzy, kde-format
-#| msgid "SSTP VPN"
+#, kde-format
 msgid "L2TP VPN"
-msgstr "SSTP VPN"
+msgstr "L2TP VPN"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:25
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:152
@@ -4926,34 +4919,30 @@ msgid "User Password:"
 msgstr "Naudotojo slaptažodis:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "User Certificate Password:"
-msgstr "Naudotojo liudijimas:"
+msgstr "Naudotojo liudijimo slaptažodis:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:48
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Machine Certificate Password:"
-msgstr "Naudotojo liudijimas:"
+msgstr "Kompiuterio liudijimo slaptažodis:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:59
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:171
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared Key:"
 msgstr "Iš anksto bendrinamas raktas:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:60
 #, kde-format
 msgid "Enable IPsec tunnel to L2TP host"
-msgstr ""
+msgstr "Įjungti IPsec tunelį į L2TP mazgą"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:74
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Machine Authentication"
-msgstr "Tapatybės nustatymas"
+msgstr "Kompiuterio tapatybės nustatymas"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:79 editorqml/qml/vpn/ssh/Ssh.qml:140
 #, kde-format
@@ -4961,33 +4950,29 @@ msgid "Type:"
 msgstr "Tipas:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared Key (PSK)"
-msgstr "Iš anksto bendrinamas raktas:"
+msgstr "Iš anksto bendrinamas raktas (PSK)"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:117
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "Naudotojo liudijimas:"
+msgstr "Kompiuterio liudijimas:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:126
-#, fuzzy, kde-format
-#| msgid "CA certificate in PEM format."
+#, kde-format
 msgid "Certificate in .pem, .der or .p12 formats."
-msgstr "LĮ liudijimas PEM formatu."
+msgstr "Liudijimas .pem, .der ar .p12 formatu."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:189
 #, kde-format
 msgid "Password for private key or PKCS#12 certificate."
-msgstr ""
+msgstr "Privačiojo rakto ar PKCS#12 liudijimo slaptažodis."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:213
-#, fuzzy, kde-format
-#| msgid "Remote IP Address:"
+#, kde-format
 msgid "Remote ID:"
-msgstr "Nuotolinis IP adresas:"
+msgstr "Nuotolinis ID:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:216
 #, kde-format
@@ -4997,11 +4982,16 @@ msgid ""
 "by strongSwan, Libreswan, Openswan and FreeS/WAN. See strongSwan or "
 "Libreswan documentation for leftid/rightid syntax and identity parsing."
 msgstr ""
+"Nebūtina. Kaip IPsec serveris turėtų būti atpažintas tapatybės nustatymo "
+"tikslais. Kartais, tai vadinama lygiarangio ID arba tinklų sietuvo ID, be "
+"to, strongSwan, Libreswan, Openswan ir FreeS/WAN tai vadina „rightid“. "
+"Norėdami daugiau sužinoti apie leftid/rightid sintaksę bei tapatybės "
+"nagrinėjimą, žiūrėkite strongSwan arba Libreswan dokumentaciją."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:225
 #, kde-format
 msgid "Phase1 Algorithms:"
-msgstr ""
+msgstr "Pirmos fazės algoritmai:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:228
 #, kde-format
@@ -5009,11 +4999,13 @@ msgid ""
 "Optional. A list of proposals for IKE - Main Mode. The format is “enc-integ-"
 "group,enc-integ-group, …”."
 msgstr ""
+"Nebūtina. Pasiūlymų sąrašas skirtas IKE – pagrindinei veiksenai. Formatas "
+"yra „enc-integ-group,enc-integ-group, …“."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:237
 #, kde-format
 msgid "Phase2 Algorithms:"
-msgstr ""
+msgstr "Antros fazės algoritmai:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:240
 #, kde-format
@@ -5021,11 +5013,13 @@ msgid ""
 "Optional. A list of proposals for ESP - Quick Mode. The format is “enc-integ,"
 "enc-integ, …”."
 msgstr ""
+"Nebūtina. Pasiūlymų sąrašas, skirtas ESP – greitajai veiksenai. Formatas yra "
+"„enc-integ,enc-integ, …“"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:249
 #, kde-format
 msgid "Phase1 Lifetime:"
-msgstr ""
+msgstr "Pirmos fazės galiojimo laikas:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:251
 #, kde-format
@@ -5033,11 +5027,13 @@ msgid ""
 "How long the keying channel of a connection should last before being "
 "renegotiated."
 msgstr ""
+"Kiek laiko turėtų trukti ryšio kanalo manipuliavimas prieš tai, kai ryšys "
+"bus pakartotinai užmezgiamas."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:269
 #, kde-format
 msgid "Phase2 Lifetime:"
-msgstr ""
+msgstr "Antros fazės galiojimo laikas:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:271
 #, kde-format
@@ -5046,12 +5042,15 @@ msgid ""
 "authentication keys for user packets) should last, from successful "
 "negotiation to expiry."
 msgstr ""
+"Kiek laiko tam tikras ryšio egzempliorius (naudotojo paketų šifravimo/"
+"tapatybės nustatymo raktų rinkinys) turėtų trukti nuo sėkmingo ryšio "
+"užmezgimo iki galiojimo pabaigos."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:291
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
 msgid "Enforce UDP encapsulation"
-msgstr ""
+msgstr "Priverstinai naudoti UDP sandarinimą"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:293
 #, kde-format
@@ -5059,13 +5058,15 @@ msgid ""
 "Some firewalls block ESP traffic. Enforcing UDP encapsulation even if no NAT "
 "situation is detected might help in such cases."
 msgstr ""
+"Kai kurios užkardos blokuoja ESP duomenų srautą. Tokiais atvejais gali "
+"padėti priverstinis UDP sandarinimas, net jeigu nėra aptiktas joks NAT "
+"atvejis."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:304
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:192
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use IP compression"
-msgstr "Naudoti TCP antraštės glaudinimą"
+msgstr "Naudoti IP glaudinimą"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:306
 #, kde-format
@@ -5073,17 +5074,18 @@ msgid ""
 "IPComp compresses raw IP packets before they get encrypted. This saves some "
 "bandwidth, but uses more processing power."
 msgstr ""
+"IPComp suglaudina neapdorotus IP paketus, prieš juos užšifruojant. Tai "
+"sutaupo duomenų srautą, tačiau naudoja daugiau apdorojimo galios."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:317
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "Naudoti IKEv2 raktų mainus"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:328
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Disable PFS"
-msgstr "Išjungtas"
+msgstr "Išjungti PFS"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
 #, kde-format
@@ -5091,18 +5093,20 @@ msgid ""
 "Disable perfect forward secrecy. Enable this option only if the server "
 "doesn’t support PFS."
 msgstr ""
+"Išjungti puikų persiunčiamą slaptumą. Įjunkite šią parinktį tik tuo atveju, "
+"jei serveris nepalaiko PFS."
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:40
 #, kde-format
 msgctxt "separator between hours and minutes"
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:54
 #, kde-format
 msgctxt "separator between minutes and seconds"
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:66
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:58
@@ -5134,10 +5138,9 @@ msgstr "Šifravimas:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:135
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:117
-#, fuzzy, kde-format
-#| msgid "Require 128-bit encryption"
+#, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr "Reikalauti 128-bitų šifravimo"
+msgstr "Reikalauti naudoti MPPE su 40/128 bitų šifravimu arba visais."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:121
@@ -5174,6 +5177,8 @@ msgstr "Naudoti įsimenamąjį šifravimą"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
+"Leisti MPPE naudoti įsimenamąją veikseną. Vis tik, iš pradžių, yra bandoma "
+"neįsimenamoji veiksena."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:166
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:148
@@ -5184,10 +5189,9 @@ msgstr "Leisti BSD glaudinimą"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:168
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:150
-#, fuzzy, kde-format
-#| msgid "Allow BSD compression"
+#, kde-format
 msgid "Allow/disable BSD-Compress compression."
-msgstr "Leisti BSD glaudinimą"
+msgstr "Leisti/išjungti BSD-Compress glaudinimą."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:177
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:159
@@ -5198,10 +5202,9 @@ msgstr "Leisti Deflate glaudinimą"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:179
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:161
-#, fuzzy, kde-format
-#| msgid "Allow Deflate compression"
+#, kde-format
 msgid "Allow/disable Deflate compression."
-msgstr "Leisti Deflate glaudinimą"
+msgstr "Leisti/išjungti Deflate glaudinimą."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:188
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:170
@@ -5213,51 +5216,49 @@ msgstr "Leisti TCP antraštės glaudinimą"
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:195
 #, kde-format
 msgid "Use protocol field compression negotiation"
-msgstr ""
+msgstr "Naudoti protokolo lauko glaudinimo suderinimą"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:202
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use Address/Control compression"
-msgstr "Naudoti TCP antraštės glaudinimą"
+msgstr "Naudoti adreso/valdymo glaudinimą"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:204
 #, kde-format
 msgid "Use Address/Control compression in both directions (send and receive)."
 msgstr ""
+"Naudoti adreso/valdymo glaudinimą abiejomis kryptimis (siuntimo ir gavimo)."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:222
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:186
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
-msgstr ""
+msgstr "Siųsti LCP aido užklausas, siekiant sužinoti ar lygiarangis yra gyvas."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:233
-#, fuzzy, kde-format
-#| msgid "Network Settings"
+#, kde-format
 msgid "Other Settings"
-msgstr "Tinklo nuostatos"
+msgstr "Kitos nuostatos"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:244
 #, kde-format
 msgid "Multilink PPP MRRU:"
-msgstr ""
+msgstr "Daugianaris (Multilink) PPP MRRU:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:246
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "Bandyti viename ryšyje užmegzti PPP daugianarį (Multilink)."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:266
 #, kde-format
 msgid "MRU:"
-msgstr ""
+msgstr "MRU:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:27
-#, fuzzy, kde-format
-#| msgid "IP/hostname of IPsec gateway."
+#, kde-format
 msgid "IP or hostname of the IPsec gateway."
-msgstr "IPsec tinklų sietuvo IP/mazgo pavadinimas."
+msgstr "IPsec tinklų sietuvo IP adresas arba mazgo pavadinimas."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:36
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:26
@@ -5270,6 +5271,8 @@ msgstr "Grupės pavadinimas:"
 #, kde-format
 msgid "Group name, or local identifier, this connection belongs to."
 msgstr ""
+"Grupės pavadinimas arba vietinis identifikatorius, kuriam priklauso šis "
+"ryšys."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:51
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:39
@@ -5286,30 +5289,33 @@ msgid "Group password:"
 msgstr "Grupės slaptažodis:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:81
-#, fuzzy, kde-format
-#| msgid "User name for the connection."
+#, kde-format
 msgid "User name for XAUTH authentication."
-msgstr "Ryšiui skirtas naudotojo vardas."
+msgstr "XAUTH tapatybės nustatymui naudojamas naudotojo vardas."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:90
 #, kde-format
 msgid "Phase1 algorithms:"
-msgstr ""
+msgstr "Pirmos fazės algoritmai:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:93
 #, kde-format
 msgid "IKE algorithms to propose. Leave empty for the defaults."
 msgstr ""
+"Kuriuos IKE algoritmus siūlyti. Palikite tuščią norėdami naudoti "
+"numatytąsias reikšmes."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:102
 #, kde-format
 msgid "Phase2 algorithms:"
-msgstr ""
+msgstr "Antros fazės algoritmai:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:105
 #, kde-format
 msgid "ESP algorithms to propose. Leave empty for the defaults."
 msgstr ""
+"Kuriuos ESP algoritmus siūlyti. Palikite tuščią norėdami naudoti "
+"numatytąsias reikšmes."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:117
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:41
@@ -5318,10 +5324,9 @@ msgid "(NT-)Domain name for authentication."
 msgstr "(NT-)Domeno pavadinimas, skirtas tapatybės nustatymui."
 
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:38
-#, fuzzy, kde-format
-#| msgid "WireGuard VPN"
+#, kde-format
 msgid "Libreswan VPN"
-msgstr "WireGuard VPN"
+msgstr "Libreswan VPN"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:38
 #, kde-format
@@ -5329,24 +5334,23 @@ msgid ""
 "Remote gateways, with optional port and protocol (e.g. ovpn.corp.com:1194:"
 "udp)."
 msgstr ""
+"Nuotoliniai tinklų sietuvai, su neprivalomu prievadu ir protokolu (pvz., "
+"ovpn.corp.com:1194:udp)."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "Shared Key"
+#, kde-format
 msgid "Static Key"
-msgstr "Bendrinamas raktas"
+msgstr "Statinis raktas"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "CA Certificate:"
+#, kde-format
 msgid "Password with Certificates (TLS)"
-msgstr "LĮ liudijimas:"
+msgstr "Slaptažodis su liudijimais (TLS)"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:70
-#, fuzzy, kde-format
-#| msgid "CA certificate in PEM format."
+#, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr "LĮ liudijimas PEM formatu."
+msgstr "Liudijimų įstaigos (LĮ) failas .pem formatu."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:94
 #, kde-format
@@ -5354,29 +5358,31 @@ msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
 "Certificate)."
 msgstr ""
+"Vietinio lygiarangio pasirašytas liudijimas .pem formatu (pasirašytas "
+"Liudijimų Įstaigos arba Liudijimų Įstaigos liudijimu)"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:118
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr ""
+msgstr "Vietinio lygiarangio privatusis raktas .pem formatu."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:133
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Static Key:"
-msgstr "Privatusis raktas:"
+msgstr "Statinis raktas:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:142
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
 msgstr ""
+"Iš anksto bendrinamas failas, skirtas statinio rakto šifravimo veiksenai (ne "
+"TLS)."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:157
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:644
-#, fuzzy, kde-format
-#| msgid "Key authentication"
+#, kde-format
 msgid "Key Direction:"
-msgstr "Tapatybės nustatymas raktu"
+msgstr "Rakto kryptis:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:162
 #, kde-format
@@ -5385,6 +5391,10 @@ msgid ""
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
+"Jei naudojama rakto kryptis, ji privalo būti priešinga nei ta, kuri "
+"naudojama VPN lygiarangyje. Pavyzdžiui, jei lygiarangis naudoja „1“, tada "
+"šis ryšys privalo naudoti „0“. Jei nesate tikri kokią reikšmę naudoti, "
+"susisiekite su sistemos administratoriumi."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
@@ -5400,12 +5410,12 @@ msgstr "Nėra"
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #, kde-format
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #, kde-format
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:173 editorqml/qml/vpn/ssh/Ssh.qml:59
 #: editorqml/qml/vpn/ssh/Ssh.qml:111
@@ -5416,7 +5426,7 @@ msgstr "Vietinis IP adresas:"
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:178
 #, kde-format
 msgid "IP address of the local VPN endpoint."
-msgstr ""
+msgstr "Vietinio VPN galutinio taško IP adresas."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:187 editorqml/qml/vpn/ssh/Ssh.qml:47
 #: editorqml/qml/vpn/ssh/Ssh.qml:97
@@ -5427,12 +5437,12 @@ msgstr "Nuotolinis IP adresas:"
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:192
 #, kde-format
 msgid "IP address of the remote VPN endpoint."
-msgstr ""
+msgstr "Nuotolinio VPN galutinio taško IP adresas."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:206
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "OpenVPN perduodamas naudotojo vardas, kai jo prašoma."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:28
 #, kde-format
@@ -5441,16 +5451,14 @@ msgid "Advanced"
 msgstr "Išplėstiniai"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:77
-#, fuzzy, kde-format
-#| msgid "Network Settings"
+#, kde-format
 msgid "TLS Settings"
-msgstr "Tinklo nuostatos"
+msgstr "TLS nuostatos"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:81
-#, fuzzy, kde-format
-#| msgid "Proxy"
+#, kde-format
 msgid "Proxies"
-msgstr "Įgaliotasis serveris"
+msgstr "Įgaliotieji serveriai"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:112
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:37
@@ -5459,78 +5467,69 @@ msgid "Use custom gateway port:"
 msgstr "Naudoti tinkintą tinklų sietuvo prievadą:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:136
-#, fuzzy, kde-format
-#| msgid "Use custom unit number:"
+#, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr "Naudoti tinkintą įtaiso numerį:"
+msgstr "Naudoti tinkintą pakartotinio suderinimo intervalą:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:154
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use compression"
-msgstr "Naudoti TCP antraštės glaudinimą"
+msgstr "Naudoti glaudinimą"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:161
-#, fuzzy, kde-format
-#| msgid "Compression"
+#, kde-format
 msgid "Compression:"
-msgstr "Glaudinimas"
+msgstr "Glaudinimas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZO"
-msgstr ""
+msgstr "LZO"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZ4"
-msgstr ""
+msgstr "LZ4"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZ4 v2"
-msgstr ""
+msgstr "LZ4 v2"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
-#, fuzzy, kde-format
-#| msgctxt "Networking is inactive and all devices are disabled"
-#| msgid "Inactive"
+#, kde-format
 msgid "Adaptive"
-msgstr "Neaktyvus"
+msgstr "Adaptyvus"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:175
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "Naudoti TCP antraštės glaudinimą"
+msgstr "Naudoti asimetrinį glaudinimą"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:182
-#, fuzzy, kde-format
-#| msgid "New %1 connection"
+#, kde-format
 msgid "Use a TCP connection"
-msgstr "Naujas %1 ryšys"
+msgstr "Naudoti TCP ryšį"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:195
 #, kde-format
 msgid "Set virtual device type:"
-msgstr ""
+msgstr "Nustatyti virtualaus įrenginio tipą:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
 #, kde-format
 msgid "TUN"
-msgstr ""
+msgstr "TUN"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
-#, fuzzy, kde-format
-#| msgid "PAP"
+#, kde-format
 msgid "TAP"
-msgstr "PAP"
+msgstr "TAP"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:216
-#, fuzzy, kde-format
-#| msgid "Remote device number:"
+#, kde-format
 msgid "Set virtual device name:"
-msgstr "Nuotolinio įrenginio numeris:"
+msgstr "Nustatyti virtualaus įrenginio pavadinimą:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:239
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:61
@@ -5539,327 +5538,311 @@ msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
 msgstr "Naudoti tinkintą tunelio didžiausią perdavimo vienetą (MTU):"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:263
-#, fuzzy, kde-format
-#| msgid "Use custom unit number:"
+#, kde-format
 msgid "Use custom UDP fragment size:"
-msgstr "Naudoti tinkintą įtaiso numerį:"
+msgstr "Naudoti tinkintą UDP fragmento dydį:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:281
 #, kde-format
 msgid "Restrict TCP maximum segment size (MSS)"
-msgstr ""
+msgstr "Riboti TCP didžiausią segmento dydį (MSS)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:294
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "Nurodykite kelio MTU atradimą:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Galbūt"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:311
 #, kde-format
 msgid "Randomize remote hosts"
-msgstr ""
+msgstr "Atsitiktine tvarka išdėstyti nuotolinius mazgus"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:318
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "Pridėti nuotoliniam DNS vardui priešdėlį atsitiktinės eilutės pavidalu"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:325
-#, fuzzy, kde-format
-#| msgid "Connect to"
+#, kde-format
 msgid "Connect timeout:"
-msgstr "Prisijungti prie"
+msgstr "Prisijungimo laiko limitas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
 #, kde-format
 msgid "%1 s"
-msgstr ""
+msgstr "%1 sek."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:338
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "Leisti gauti lygiarangio DNS vardus (FQDN)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:345
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "išsiųsti informaciją apie lygiarangį"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:352
 #, kde-format
 msgid "IPv6 tun link"
-msgstr ""
+msgstr "IPv6 tun saitas"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:365
 #, kde-format
 msgid "Specify ping interval:"
-msgstr ""
+msgstr "Nurodykite ryšio patikrinimo intervalą:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:389
 #, kde-format
 msgid "Specify exit or restart ping:"
-msgstr ""
+msgstr "Nurodykite ryšio patikrinimo išėjimą ar paleidimą iš naujo:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
 #, kde-format
 msgid "ping-exit"
-msgstr ""
+msgstr "ping-exit"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
 #, kde-format
 msgid "ping-restart"
-msgstr ""
+msgstr "ping-restart"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:416
 #, kde-format
 msgid "Accept authenticated packets from any address (Float)"
-msgstr ""
+msgstr "Priimti nustatytos tapatybės paketus iš bet kurio adreso (Float)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:429
 #, kde-format
 msgid "Specify max routes:"
-msgstr ""
+msgstr "Nurodykite daugiausiai maršrutų:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:461
 #, kde-format
 msgid "Cipher:"
-msgstr ""
+msgstr "Šifras:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:471
 #, kde-format
 msgid "Data Ciphers:"
-msgstr ""
+msgstr "Duomenų šifrai:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:481
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "Duomenų šifrų atsarginis pakaitalas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:491
-#, fuzzy, kde-format
-#| msgid "Disable dead peer detection"
+#, kde-format
 msgid "Disable cipher negotiation"
-msgstr "Išjungti neatsakančių lygiarangių aptikimą"
+msgstr "Išjungti šifro suderinimą"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:504
-#, fuzzy, kde-format
-#| msgid "Use custom unit number:"
+#, kde-format
 msgid "Use custom size of cipher key:"
-msgstr "Naudoti tinkintą įtaiso numerį:"
+msgstr "Naudoti tinkintą šifro rakto dydį:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:522
-#, fuzzy, kde-format
-#| msgid "Authentication:"
+#, kde-format
 msgid "HMAC Authentication:"
-msgstr "Tapatybės nustatymas:"
+msgstr "HMAC tapatybės nustatymas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "MD-4"
-msgstr ""
+msgstr "MD-4"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "MD-5"
-msgstr ""
+msgstr "MD-5"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-1"
-msgstr ""
+msgstr "SHA-1"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-224"
-msgstr ""
+msgstr "SHA-224"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-256"
-msgstr ""
+msgstr "SHA-256"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-384"
-msgstr ""
+msgstr "SHA-384"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-512"
-msgstr ""
+msgstr "SHA-512"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "RIPEMD-160"
-msgstr ""
+msgstr "RIPEMD-160"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:544
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Server Certificate Check:"
-msgstr "Naudotojo liudijimas:"
+msgstr "Serverio liudijimo patikrinimas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Don't verify certificate identification"
-msgstr ""
+msgstr "Netikrinti liudijimo identifikacijos"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify whole subject exactly"
-msgstr ""
+msgstr "Tikrinti tiksliai visą objektą"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify name exactly"
-msgstr ""
+msgstr "Tikrinti tiksliai pavadinimą"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify name by prefix"
-msgstr ""
+msgstr "Tikrinti pavadinimą pagal priešdėlį"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:551
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
-msgstr ""
+msgstr "Tikrinti objektą dalinai (pasenusi veiksena, primygtinai neskatinama)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:562
-#, fuzzy, kde-format
-#| msgid "Subject match:"
+#, kde-format
 msgid "Subject Match:"
 msgstr "Objekto atitiktis:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:567
 #, kde-format
 msgid "Connect only to servers whose certificate matches the given subject."
-msgstr ""
+msgstr "Jungtis tik prie serverių, kurių liudijimas atitinka nurodytą objektą."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:576
 #, kde-format
 msgid "Verify peer (server) certificate usage signature"
-msgstr ""
+msgstr "Tikrinti lygiarangio (serverio) liudijimo naudojimo parašą"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:583
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Remote peer certificate TLS type:"
-msgstr "Naudotojo liudijimas:"
+msgstr "Nuotolinio lygiarangio liudijimo TLS tipas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
-#, fuzzy, kde-format
-#| msgid "Service:"
+#, kde-format
 msgid "Server"
-msgstr "Paslauga:"
+msgstr "Serveris"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
 #, kde-format
 msgid "Client"
-msgstr ""
+msgstr "Klientas"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:595
 #, kde-format
 msgid "Verify peer (server) certificate nsCertType designation"
-msgstr ""
+msgstr "Tikrinti lygiarangio (serverio) liudijimo nsCertType paskyrimą"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:602
 #, kde-format
 msgid "Remote peer certificate nsCert designation:"
-msgstr ""
+msgstr "Nuotolinio lygiarangio liudijimo nsCert paskyrimas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Auth"
-msgstr ""
+msgstr "TLS-Auth"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
-#, fuzzy, kde-format
-#| msgid "Crypto:"
+#, kde-format
 msgid "TLS-Crypt"
-msgstr "Šifravimas:"
+msgstr "TLS-Crypt"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Crypt v2"
-msgstr ""
+msgstr "TLS-Crypt v2"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:624
-#, fuzzy, kde-format
-#| msgid "SSH Key File:"
+#, kde-format
 msgid "Key File:"
-msgstr "SSH rakto failas:"
+msgstr "Rakto failas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
-#, fuzzy, kde-format
-#| msgctxt "Perfect Forward Secrecy"
-#| msgid "Server (default)"
+#, kde-format
 msgid "Server (0)"
-msgstr "Serveris (numatytasis)"
+msgstr "Serveris (0)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
 #, kde-format
 msgid "Client (1)"
-msgstr ""
+msgstr "Klientas (1)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:657
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "Naudotojo liudijimas:"
+msgstr "Papildomas liudijimų failas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:675
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "TLS versijos minimumas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:687
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "arba didesnė"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:695
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "TLS versijos maksimumas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:703
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "CRL tikrinimo failas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:721
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "CRL tikrinimo katalogas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:755
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Proxy Type:"
-msgstr "Tipas:"
+msgstr "Įgaliotojo serverio tipas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
-#, fuzzy, kde-format
-#| msgid "Not required"
+#, kde-format
 msgid "Not Required"
 msgstr "Nebūtinas"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
 #, kde-format
 msgid "SOCKS"
-msgstr ""
+msgstr "SOCKS"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:767
 #, kde-format
@@ -5867,12 +5850,13 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
+"Pažymėkite šią parinktį, jei jūsų organizacija reikalauja, kad prieigai prie "
+"interneto būtų naudojamas įgaliotasis serveris."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:772
-#, fuzzy, kde-format
-#| msgid "Address:"
+#, kde-format
 msgid "Server Address:"
-msgstr "Adresas:"
+msgstr "Serverio adresas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:782
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
@@ -5883,38 +5867,34 @@ msgstr "Prievadas:"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:796
 #, kde-format
 msgid "Retry indefinitely when errors occur"
-msgstr ""
+msgstr "Įvykus klaidoms, bandyti iš naujo begalę kartų"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:803
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "Proxy Username:"
-msgstr "Naudotojo vardas:"
+msgstr "Įgaliotojo serverio naudotojo vardas:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:819
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:59
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:54
-#, fuzzy, kde-format
-#| msgid "Group Password:"
+#, kde-format
 msgid "Proxy Password:"
-msgstr "Grupės slaptažodis:"
+msgstr "Įgaliotojo serverio slaptažodis:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:24
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:36
 #, kde-format
 msgid "OpenVPN VPN"
-msgstr ""
+msgstr "OpenVPN VPN"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:48
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:52
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Key Password:"
-msgstr "Slaptažodis:"
+msgstr "Rakto slaptažodis:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:21
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
 msgstr "Numatytasis"
@@ -5922,34 +5902,32 @@ msgstr "Numatytasis"
 #: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:30
 #, kde-format
 msgid "No ciphers were reported by OpenVPN."
-msgstr ""
+msgstr "OpenVPN nepranešė apie jokius šifrus."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:30
 #, kde-format
 msgid "Cipher to use for the data channel."
-msgstr ""
+msgstr "Šifras, kurį naudoti duomenų kanalui."
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:27
-#, fuzzy, kde-format
-#| msgid "SSLVPN server IP or name."
+#, kde-format
 msgid "PPTP server IP or name."
-msgstr "SSLVPN serverio IP adresas arba pavadinimas."
+msgstr "PPTP serverio IP adresas arba pavadinimas."
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:36
 #, kde-format
 msgid "Login:"
-msgstr ""
+msgstr "Prisijungimas:"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:22
-#, fuzzy, kde-format
-#| msgid "SSTP VPN"
+#, kde-format
 msgid "PPTP VPN"
-msgstr "SSTP VPN"
+msgstr "PPTP VPN"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:24
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr ""
+msgstr "Slaptažodis, kuris bus perduotas į PPPD, kai jo bus paprašyta."
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, kde-format
@@ -6072,105 +6050,95 @@ msgid "SSTP VPN"
 msgstr "SSTP VPN"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgid "Gateway"
 msgstr "Tinklų sietuvas"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:47
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:88
-#, fuzzy, kde-format
-#| msgid "CA Certificate:"
+#, kde-format
 msgid "Certificate:"
-msgstr "LĮ liudijimas:"
+msgstr "Liudijimas:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Certificate/private key"
-msgstr ""
+msgstr "Liudijimas/privatusis raktas"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
-#, fuzzy, kde-format
-#| msgid "CA Certificate:"
+#, kde-format
 msgid "Certificate/ssh-agent"
-msgstr "LĮ liudijimas:"
+msgstr "Liudijimas/ssh-agent"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Smartcard"
-msgstr ""
+msgstr "Lustinė kortelė"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "EAP-TTLS"
-msgstr ""
+msgstr "EAP-TTLS"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:132
-#, fuzzy, kde-format
-#| msgid "Ask for a one-time password every time this connection is activated."
+#, kde-format
 msgid "The PIN is asked for when the connection is activated."
-msgstr "Kas kartą aktyvavus šį ryšį prašyti vienkartinio slaptažodžio."
+msgstr "PIN kodo bus prašoma, kai ryšys bus aktyvuotas."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:168
-#, fuzzy, kde-format
-#| msgid "Optional"
+#, kde-format
 msgid "Options"
-msgstr "Nebūtina"
+msgstr "Parinktys"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:174
-#, fuzzy, kde-format
-#| msgid "Remote IP Address:"
+#, kde-format
 msgid "Request an inner IP address"
-msgstr "Nuotolinis IP adresas:"
+msgstr "Prašyti vidinio IP adreso"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:201
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
-msgstr ""
+msgstr "Įjungti tinkintus šifro pasiūlymus"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:208
 #, kde-format
 msgid "IKE:"
-msgstr ""
+msgstr "IKE:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:213
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
-msgstr ""
+msgstr "Sąrašas pasiūlymų, skirtų IKE, kurie atskirti naudojant „;“"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:222
 #, kde-format
 msgid "ESP:"
-msgstr ""
+msgstr "ESP:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:227
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr ""
+msgstr "Sąrašas pasiūlymų, skirtų ESP, kurie atskirti naudojant „;“"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:28
 #, kde-format
 msgid "strongSwan VPN"
-msgstr ""
+msgstr "strongSwan VPN"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:33
-#, fuzzy, kde-format
-#| msgid "Private key password:"
+#, kde-format
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
 msgstr "Privačiojo rakto slaptažodis:"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:35
-#, fuzzy, kde-format
-#| msgid "PIN:"
+#, kde-format
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
-msgstr "PIN:"
+msgstr "PIN kodas:"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@label:textbox password label for EAP password"
 msgid "Password:"
 msgstr "Slaptažodis:"
@@ -6687,30 +6655,27 @@ msgstr "Priešdėlis"
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "OTP"
-msgstr ""
+msgstr "OTP"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "authenticator"
-msgstr "Tapatybės nustatymas"
+msgstr "atpažintuvas"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "code"
-msgstr ""
+msgstr "kodas"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
-#, fuzzy, kde-format
-#| msgid "Token:"
+#, kde-format
 msgid "token"
-msgstr "Prieigos raktas:"
+msgstr "prieigos raktas"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
-#, fuzzy, kde-format
-#| msgid "One Time Password"
+#, kde-format
 msgid "one-time password"
-msgstr "Vienkartinis slaptažodis"
+msgstr "vienkartinis slaptažodis"
 
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
 #, kde-format

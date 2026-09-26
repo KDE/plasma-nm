@@ -1,14 +1,14 @@
 # Uyghur translation for plasmanetworkmanagement_strongswanui.
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"PO-Revision-Date: 2026-09-24 20:17-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -28,7 +28,7 @@ msgstr "شەخسىي شىفىرلىق ئاچقۇچ ئىم:"
 #, kde-format
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #: strongswanauth.cpp:63
 #, kde-format
@@ -113,13 +113,13 @@ msgstr "ئىدراكلىق كارتا"
 #: strongswanprop.ui:113
 #, kde-format
 msgid "EAP"
-msgstr ""
+msgstr "EAP"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: strongswanprop.ui:118
 #, kde-format
 msgid "EAP-TTLS"
-msgstr ""
+msgstr "EAP-TTLS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: strongswanprop.ui:155
@@ -137,7 +137,7 @@ msgstr "شەخسىي شىفىرلىق ئاچقۇچ ئىم:"
 #: strongswanprop.ui:207
 #, kde-format
 msgid "PIN:"
-msgstr ""
+msgstr "PIN:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: strongswanprop.ui:235
@@ -155,7 +155,7 @@ msgstr "ئىشلەتكۈچى ئىم:"
 #: strongswanprop.ui:283
 #, kde-format
 msgid "Uses the same Username/Password fields as EAP above."
-msgstr ""
+msgstr "ئۈستىدىكى EAP گە ئوخشاش ئىشلەتكۈچى ئاتى/ئىم ئىشلىتىدۇ."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: strongswanprop.ui:297
@@ -191,7 +191,7 @@ msgstr "ئىختىيارىي شىفىرلاش لايىھەسىنى قوزغات"
 #: strongswanprop.ui:350
 #, kde-format
 msgid "IKE:"
-msgstr ""
+msgstr "IKE:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: strongswanprop.ui:357
@@ -203,7 +203,7 @@ msgstr "IKE لايىھە تىزىمى «;» بىلەن ئايرىلىدۇ"
 #: strongswanprop.ui:364
 #, kde-format
 msgid "ESP:"
-msgstr ""
+msgstr "ESP:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
 #: strongswanprop.ui:371

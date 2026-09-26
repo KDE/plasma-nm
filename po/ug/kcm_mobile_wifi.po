@@ -1,14 +1,14 @@
 # Uyghur translation for kcm_mobile_wifi.
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-06 00:46+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"PO-Revision-Date: 2026-09-24 20:17-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -70,7 +70,7 @@ msgstr "تەھرىر"
 #: ui/main.qml:87
 #, kde-format
 msgid "Wi-Fi"
-msgstr ""
+msgstr "Wi-Fi"
 
 #: ui/main.qml:98
 #, kde-format
@@ -122,7 +122,7 @@ msgstr "ئادەتتىكى"
 #: ui/NetworkSettings.qml:60
 #, kde-format
 msgid "SSID"
-msgstr ""
+msgstr "SSID"
 
 #: ui/NetworkSettings.qml:75
 #, kde-format
@@ -188,17 +188,17 @@ msgstr "كىملىك دەلىللەش:"
 #: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "TLS"
-msgstr ""
+msgstr "TLS"
 
 #: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "LEAP"
-msgstr ""
+msgstr "LEAP"
 
 #: ui/NetworkSettings.qml:163
 #, kde-format
 msgid "FAST"
-msgstr ""
+msgstr "FAST"
 
 #: ui/NetworkSettings.qml:164
 #, kde-format
@@ -219,7 +219,7 @@ msgstr "IP تەڭشەك"
 #: ui/NetworkSettings.qml:183
 #, kde-format
 msgid "Method"
-msgstr "چارە"
+msgstr "ئۇسۇل"
 
 #: ui/NetworkSettings.qml:184
 #, kde-format
@@ -249,7 +249,7 @@ msgstr "تور ئالدى قوشۇلغۇچى ئۇزۇنلۇقى"
 #: ui/NetworkSettings.qml:255
 #, kde-format
 msgid "DNS"
-msgstr ""
+msgstr "DNS"
 
 #: ui/PasswordField.qml:13
 #, kde-format

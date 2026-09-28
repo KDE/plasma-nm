@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:47+0000\n"
+"POT-Creation-Date: 2026-09-28 00:47+0000\n"
 "PO-Revision-Date: 2026-09-22 23:39+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -3072,13 +3072,13 @@ msgstr "Добавяне на нов Peer"
 msgid "Remove this Peer"
 msgstr "Премахване на този Peer"
 
-#: editor/settings/wificonnectionwidget.cpp:237
+#: editor/settings/wificonnectionwidget.cpp:235
 #, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Автоматично"
 
-#: editor/settings/wificonnectionwidget.cpp:263
+#: editor/settings/wificonnectionwidget.cpp:261
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:315
 #, kde-format
 msgid "%1 (%2 MHz)"
@@ -4127,7 +4127,7 @@ msgstr "Запитване за  тази парола всеки път"
 msgid "This password is not required"
 msgstr "Тази парола не е необходима"
 
-#: editor/widgets/ssidcombobox.cpp:131
+#: editor/widgets/ssidcombobox.cpp:144
 #, kde-format
 msgid ""
 "%1 (%2%)\n"
@@ -4138,7 +4138,7 @@ msgstr ""
 "Защита: %3 \n"
 "Честота: %4 Mhz"
 
-#: editor/widgets/ssidcombobox.cpp:139
+#: editor/widgets/ssidcombobox.cpp:152
 #, kde-format
 msgid ""
 "%1 (%2%)\n"

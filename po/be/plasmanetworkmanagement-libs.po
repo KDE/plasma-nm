@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:47+0000\n"
+"POT-Creation-Date: 2026-09-28 00:47+0000\n"
 "PO-Revision-Date: 2024-10-24 08:20\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -3140,7 +3140,7 @@ msgstr "Дадаць новы аднарангавы вузел"
 msgid "Remove this Peer"
 msgstr "Выдаліць гэты аднарангавы вузел"
 
-#: editor/settings/wificonnectionwidget.cpp:237
+#: editor/settings/wificonnectionwidget.cpp:235
 #, fuzzy, kde-format
 #| msgctxt "PEAP version"
 #| msgid "Automatic"
@@ -3148,7 +3148,7 @@ msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Аўтаматычна"
 
-#: editor/settings/wificonnectionwidget.cpp:263
+#: editor/settings/wificonnectionwidget.cpp:261
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:315
 #, kde-format
 msgid "%1 (%2 MHz)"
@@ -4197,7 +4197,7 @@ msgstr "Патрабаваць пароль штораз"
 msgid "This password is not required"
 msgstr "Гэты пароль не патрабуецца"
 
-#: editor/widgets/ssidcombobox.cpp:131
+#: editor/widgets/ssidcombobox.cpp:144
 #, kde-format
 msgid ""
 "%1 (%2%)\n"
@@ -4208,7 +4208,7 @@ msgstr ""
 " Бяспека: %3\n"
 " Частата: %4 МГц"
 
-#: editor/widgets/ssidcombobox.cpp:139
+#: editor/widgets/ssidcombobox.cpp:152
 #, kde-format
 msgid ""
 "%1 (%2%)\n"

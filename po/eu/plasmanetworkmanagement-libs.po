@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:47+0000\n"
+"POT-Creation-Date: 2026-09-28 00:47+0000\n"
 "PO-Revision-Date: 2026-08-02 23:34+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
@@ -3093,13 +3093,13 @@ msgstr "Gehitu pare berria"
 msgid "Remove this Peer"
 msgstr "Kendu pare hau"
 
-#: editor/settings/wificonnectionwidget.cpp:237
+#: editor/settings/wificonnectionwidget.cpp:235
 #, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Automatikoa"
 
-#: editor/settings/wificonnectionwidget.cpp:263
+#: editor/settings/wificonnectionwidget.cpp:261
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:315
 #, kde-format
 msgid "%1 (%2 MHz)"
@@ -4147,7 +4147,7 @@ msgstr "Galdetu pasahitz hau beti"
 msgid "This password is not required"
 msgstr "Ez da behar pasahitz hau"
 
-#: editor/widgets/ssidcombobox.cpp:131
+#: editor/widgets/ssidcombobox.cpp:144
 #, kde-format
 msgid ""
 "%1 (%2%)\n"
@@ -4158,7 +4158,7 @@ msgstr ""
 "Segurtasuna: %3\n"
 "Maiztasuna: %4 Mhz"
 
-#: editor/widgets/ssidcombobox.cpp:139
+#: editor/widgets/ssidcombobox.cpp:152
 #, kde-format
 msgid ""
 "%1 (%2%)\n"

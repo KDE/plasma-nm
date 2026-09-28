@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:47+0000\n"
+"POT-Creation-Date: 2026-09-28 00:47+0000\n"
 "PO-Revision-Date: 2026-09-22 10:56+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -3074,13 +3074,13 @@ msgstr "Nieuwe peer toevoegen"
 msgid "Remove this Peer"
 msgstr "Deze peer verwijderen"
 
-#: editor/settings/wificonnectionwidget.cpp:237
+#: editor/settings/wificonnectionwidget.cpp:235
 #, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Automatisch"
 
-#: editor/settings/wificonnectionwidget.cpp:263
+#: editor/settings/wificonnectionwidget.cpp:261
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:315
 #, kde-format
 msgid "%1 (%2 MHz)"
@@ -4126,7 +4126,7 @@ msgstr "Vraag elke keer om dit wachtwoord"
 msgid "This password is not required"
 msgstr "Dit wachtwoord is niet vereist"
 
-#: editor/widgets/ssidcombobox.cpp:131
+#: editor/widgets/ssidcombobox.cpp:144
 #, kde-format
 msgid ""
 "%1 (%2%)\n"
@@ -4137,7 +4137,7 @@ msgstr ""
 "Beveiliging: %3\n"
 "Frequentie: %4 Mhz"
 
-#: editor/widgets/ssidcombobox.cpp:139
+#: editor/widgets/ssidcombobox.cpp:152
 #, kde-format
 msgid ""
 "%1 (%2%)\n"

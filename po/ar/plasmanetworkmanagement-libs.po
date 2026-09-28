@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:47+0000\n"
+"POT-Creation-Date: 2026-09-28 00:47+0000\n"
 "PO-Revision-Date: 2026-09-23 18:46+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -3039,13 +3039,13 @@ msgstr "أضف قرينًا جديدًا"
 msgid "Remove this Peer"
 msgstr "أزل هذا القرين"
 
-#: editor/settings/wificonnectionwidget.cpp:237
+#: editor/settings/wificonnectionwidget.cpp:235
 #, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
 msgstr "آليّ"
 
-#: editor/settings/wificonnectionwidget.cpp:263
+#: editor/settings/wificonnectionwidget.cpp:261
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:315
 #, kde-format
 msgid "%1 (%2 MHz)"
@@ -4097,7 +4097,7 @@ msgstr "اطلب كلمة السر هذه في كل مرة"
 msgid "This password is not required"
 msgstr "كلمة السر غير مطلوبة"
 
-#: editor/widgets/ssidcombobox.cpp:131
+#: editor/widgets/ssidcombobox.cpp:144
 #, kde-format
 msgid ""
 "%1 (%2%)\n"
@@ -4108,7 +4108,7 @@ msgstr ""
 "الأمن: %3\n"
 "التردّد: %4 م.هيرتز"
 
-#: editor/widgets/ssidcombobox.cpp:139
+#: editor/widgets/ssidcombobox.cpp:152
 #, kde-format
 msgid ""
 "%1 (%2%)\n"

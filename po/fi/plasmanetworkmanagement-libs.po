@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-22 00:47+0000\n"
+"POT-Creation-Date: 2026-09-28 00:47+0000\n"
 "PO-Revision-Date: 2026-03-01 19:40+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -3063,7 +3063,7 @@ msgstr "Lisää uusi kone"
 msgid "Remove this Peer"
 msgstr "Poista tämä kone"
 
-#: editor/settings/wificonnectionwidget.cpp:237
+#: editor/settings/wificonnectionwidget.cpp:235
 #, fuzzy, kde-format
 #| msgctxt "PEAP version"
 #| msgid "Automatic"
@@ -3071,7 +3071,7 @@ msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Automaattinen"
 
-#: editor/settings/wificonnectionwidget.cpp:263
+#: editor/settings/wificonnectionwidget.cpp:261
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:315
 #, kde-format
 msgid "%1 (%2 MHz)"
@@ -4116,7 +4116,7 @@ msgstr "Kysy tätä salasanaa jokaisella kerralla"
 msgid "This password is not required"
 msgstr "Tätä salasanaa ei vaadita"
 
-#: editor/widgets/ssidcombobox.cpp:131
+#: editor/widgets/ssidcombobox.cpp:144
 #, kde-format
 msgid ""
 "%1 (%2%)\n"
@@ -4127,7 +4127,7 @@ msgstr ""
 "Suojaus: %3\n"
 "Taajuus: %4 Mhz"
 
-#: editor/widgets/ssidcombobox.cpp:139
+#: editor/widgets/ssidcombobox.cpp:152
 #, kde-format
 msgid ""
 "%1 (%2%)\n"

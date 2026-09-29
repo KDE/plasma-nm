@@ -23,6 +23,7 @@ ecm_qt_declare_logging_category(kcm_networkmanagement_qml
 target_link_libraries(kcm_networkmanagement_qml
     PRIVATE
         plasmanm_internal
+        plasmanm_editor
         plasmanm_editorqml
         KF6::KCMUtils
         KF6::KCMUtilsQuick

@@ -24,6 +24,7 @@
 #include "sstp.h"
 #include "strongswan.h"
 #include "vpnc.h"
+#include "vpnuiplugin.h"
 #include "wifisecuritysetting.h"
 #include "wifisetting.h"
 #include "wiredsettings.h"
@@ -33,6 +34,7 @@
 #include <NetworkManagerQt/ConnectionSettings>
 #include <QHash>
 #include <QTimer>
+#include <QUrl>
 
 class KCMNetworkManagementQml : public KQuickConfigModule
 {
@@ -96,6 +98,10 @@ public:
     // Q_INVOKABLE void onRequestExportConnection(const QString &connectionPath);
     Q_INVOKABLE void onRequestToChangeConnection(const QString &connectionName, const QString &connectionPath);
     Q_INVOKABLE void onRequestDuplicateConnection(const QString &connectionPath);
+    Q_INVOKABLE void acceptVpnImport(const QString &fileName);
+    Q_INVOKABLE QStringList vpnFileNameFilters() const;
+    Q_INVOKABLE void importVpnFromFile(const QUrl &fileUrl);
+    Q_INVOKABLE void cancelVpnImport();
 
 public Q_SLOTS:
     void defaults() override;
@@ -121,6 +127,11 @@ Q_SIGNALS:
     void vpnPptpSettingChanged();
     void vpnOpenvpnSettingChanged();
 
+    void vpnImportRequested(const QString &fileName);
+    void vpnImportFileRequested();
+    void importSucceeded();
+    void importFailed(const QString &errorMessage);
+
 private Q_SLOTS:
     void onConnectionAdded(const QString &connection);
     void onSecretsArrived(QDBusPendingCallWatcher *watcher);
@@ -143,8 +154,7 @@ private:
     void resetSelection();
     void applyTypeSettings(NMVariantMapMap &map, NetworkManager::ConnectionSettings::ConnectionType type);
 
-    // ImportResult importVpn();
-    // ImportResult importVpnFile(const QString &fileName);
+    [[nodiscard]] KCMNetworkManagementQml::ImportResult importVpnFile(const QString &fileName);
     NetworkManager::ConnectionSettings::Ptr m_pendingNewSettings;
     NetworkManager::ConnectionSettings::Ptr m_currentSettings;
 

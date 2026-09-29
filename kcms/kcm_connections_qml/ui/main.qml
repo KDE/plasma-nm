@@ -7,6 +7,7 @@
 
 import QtQuick
 import QtQuick.Controls as QQC2
+import QtQuick.Dialogs
 import QtQuick.Layouts
 import org.kde.kirigami as Kirigami
 
@@ -19,6 +20,13 @@ Kirigami.Page {
     focus: true
 
     Kirigami.Theme.colorSet: Kirigami.Theme.Window
+
+    header: Kirigami.InlineMessage {
+        id: importFeedback
+
+        position: Kirigami.InlineMessage.Header
+        showCloseButton: true
+    }
 
     //Each network type Components
     Component {
@@ -75,6 +83,27 @@ Kirigami.Page {
             if (connectionLoader.item?.showStatusTab) {
                 connectionLoader.item.showStatusTab();
             }
+        }
+
+        function onVpnImportRequested(fileName) {
+            importConfirmationDialog.fileName = fileName;
+            importConfirmationDialog.open();
+        }
+
+        function onVpnImportFileRequested() {
+            vpnImportDialog.open();
+        }
+
+        function onImportSucceeded() {
+            importFeedback.text = i18n("Connection imported.");
+            importFeedback.type = Kirigami.MessageType.Positive;
+            importFeedback.visible = true;
+        }
+
+        function onImportFailed(errorMessage) {
+            importFeedback.text = i18n("Failed to import VPN connection: %1", errorMessage);
+            importFeedback.type = Kirigami.MessageType.Error;
+            importFeedback.visible = true;
         }
     }
 
@@ -330,6 +359,37 @@ Kirigami.Page {
                 root.deselectConnections();
             }
             kcm.handler.removeConnection(connectionPath);
+        }
+    }
+
+    FileDialog {
+        id: vpnImportDialog
+
+        title: i18nc("@title:window", "Import VPN Connection")
+        nameFilters: kcm.vpnFileNameFilters()
+
+        onAccepted: kcm.importVpnFromFile(selectedFile)
+        onRejected: kcm.cancelVpnImport()
+    }
+
+    Kirigami.PromptDialog {
+        id: importConfirmationDialog
+
+        property string fileName: ""
+
+        title: i18nc("@title:window", "Import VPN Configuration")
+        subtitle: i18n("Import the VPN configuration from \"%1\"?", fileName)
+
+        standardButtons: Kirigami.Dialog.Cancel
+
+        customFooterActions: Kirigami.Action {
+            text: i18nc("@action:button", "Import")
+            icon.name: "document-import"
+
+            onTriggered: {
+                kcm.acceptVpnImport(importConfirmationDialog.fileName);
+                importConfirmationDialog.close();
+            }
         }
     }
 

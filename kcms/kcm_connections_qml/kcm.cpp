@@ -26,6 +26,7 @@
 #include <QDBusPendingCallWatcher>
 #include <QDBusPendingReply>
 
+#include <QFileDialog>
 #include <kquickconfigmodule.h>
 #include <networkmanagerqt/connectionsettings.h>
 
@@ -465,6 +466,17 @@ Enums::ConnectionType KCMNetworkManagementQml::connectionType() const
     }
 }
 
+void KCMNetworkManagementQml::acceptVpnImport(const QString &fileName)
+{
+    const ImportResult result = importVpnFile(fileName);
+
+    if (result.success) {
+        Q_EMIT importSucceeded();
+    } else {
+        Q_EMIT importFailed(result.errorMessage);
+    }
+}
+
 void KCMNetworkManagementQml::load()
 {
     if (m_currentConnectionPath.isEmpty()) {
@@ -828,10 +840,14 @@ void KCMNetworkManagementQml::onSecretsArrived(QDBusPendingCallWatcher *watcher)
 // TODO:Add Connection request handling
 void KCMNetworkManagementQml::onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared)
 {
-    Q_UNUSED(vpnType)
     Q_UNUSED(specificType)
 
     auto type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(connectionType);
+
+    if (type == NetworkManager::ConnectionSettings::Vpn && vpnType == QLatin1String("imported")) {
+        Q_EMIT vpnImportFileRequested();
+        return;
+    }
 
     // only handle wireless for now
     if (type == NetworkManager::ConnectionSettings::Wireless) {
@@ -951,6 +967,97 @@ void KCMNetworkManagementQml::kcmChanged(bool changed)
 {
     setNeedsSave(changed);
     Q_EMIT kcmChangedStateChanged(changed);
+}
+
+QStringList KCMNetworkManagementQml::vpnFileNameFilters() const
+{
+    QStringList extensions;
+
+    const QList<KPluginMetaData> services = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
+    for (const KPluginMetaData &service : services) {
+        const auto result = KPluginFactory::instantiatePlugin<VpnUiPlugin>(service);
+        if (result) {
+            std::unique_ptr<VpnUiPlugin> vpnPlugin(result.plugin);
+            extensions += vpnPlugin->supportedFileExtensions();
+        }
+    }
+
+    return {i18n("VPN connections (%1)", extensions.join(QLatin1Char(' '))), i18n("All files (*)")};
+}
+
+void KCMNetworkManagementQml::importVpnFromFile(const QUrl &fileUrl)
+{
+    acceptVpnImport(fileUrl.toLocalFile());
+}
+
+void KCMNetworkManagementQml::cancelVpnImport()
+{
+    Q_EMIT importFailed(i18n("No file was provided"));
+}
+
+KCMNetworkManagementQml::ImportResult KCMNetworkManagementQml::importVpnFile(const QString &filename)
+{
+    QFileInfo fi(filename);
+    const QString ext = QStringLiteral("*.") % fi.suffix();
+    qCDebug(PLASMA_NM_KCM_QML_LOG) << "Importing VPN connection " << filename << "extension:" << ext;
+
+    // TODO: Handle WireGuard separately because it is different than all the other VPNs
+    //   if (WireGuardInterfaceWidget::supportedFileExtensions().contains(ext)) {
+    // #if NM_CHECK_VERSION(1, 40, 0)
+    //        GError *error = nullptr;
+    //        NMConnection *conn = nm_conn_wireguard_import(filename.toUtf8().constData(), &error);
+    //
+    //        if (error) {
+    //            qCDebug(PLASMA_NM_KCM_QML_LOG) << "Could not import WireGuard connection" << error->message;
+    //        } else {
+    //            m_handler->addConnection(conn);
+    //            return ImportResult::pass();
+    //        }
+    // #else
+    //        NMVariantMapMap connection = WireGuardInterfaceWidget::importConnectionSettings(filename);
+    //        NetworkManager::ConnectionSettings connectionSettings;
+    //        connectionSettings.fromMap(connection);
+    //        connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+    //
+    //        // qCDebug(PLASMA_NM_KCM_LOG) << "Converted connection:" << connectionSettings;
+    //
+    //        m_handler->addConnection(connectionSettings.toMap());
+    //        // qCDebug(PLASMA_NM_KCM_LOG) << "Adding imported connection under id:" << conId;
+    //
+    //        if (!connection.isEmpty()) {
+    //            return ImportResult::pass(); // get out if the import produced at least some output
+    //        }
+    // #endif
+    //    }
+
+    const QVector<KPluginMetaData> services = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
+    for (const KPluginMetaData &service : services) {
+        const auto result = KPluginFactory::instantiatePlugin<VpnUiPlugin>(service);
+
+        if (!result) {
+            continue;
+        }
+
+        std::unique_ptr<VpnUiPlugin> vpnPlugin(result.plugin);
+
+        if (vpnPlugin->supportedFileExtensions().contains(ext)) {
+            qCDebug(PLASMA_NM_KCM_QML_LOG) << "Found VPN plugin" << service.name() << ", type:" << service.value("X-NetworkManager-Services");
+
+            VpnUiPlugin::ImportResult result = vpnPlugin->importConnectionSettings(filename);
+
+            if (!result) {
+                qWarning(PLASMA_NM_KCM_QML_LOG) << "Failed to import" << filename << result.errorMessage();
+                return ImportResult::fail(result.errorMessage());
+            }
+
+            m_handler->addConnection(result.connection());
+
+            // qCDebug(PLASMA_NM_KCM_LOG) << "Adding imported connection under id:" << conId;
+            return ImportResult::pass();
+        }
+    }
+
+    return ImportResult::fail(i18n("Unknown VPN type"));
 }
 
 void KCMNetworkManagementQml::resetSelection()

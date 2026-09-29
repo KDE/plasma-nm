@@ -327,7 +327,7 @@ Kirigami.Dialog {
 
                 text: i18n("Disable PFS")
 
-                QQC2.ToolTip.text: i18n("Disable perfect forward secrecy. Enable this option only if the server doesn’t support PFS.")
+                QQC2.ToolTip.text: i18n("Disable perfect forward secrecy. Do this only if the server doesn’t support PFS.")
                 QQC2.ToolTip.visible: hovered && enabled
                 QQC2.ToolTip.delay: Kirigami.Units.toolTipDelay
 

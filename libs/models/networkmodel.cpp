@@ -283,15 +283,19 @@ void NetworkModel::initializeSignals(const NetworkManager::Device::Ptr &device)
     connect(device.data(), &NetworkManager::Device::ipInterfaceChanged, this, &NetworkModel::ipInterfaceChanged);
     connect(device.data(), &NetworkManager::Device::stateChanged, this, &NetworkModel::deviceStateChanged, Qt::UniqueConnection);
 
+    // Capture the uni, not the Device::Ptr: the device owns deviceStatistics, so a
+    // strong ref held by a connection on deviceStatistics is a cycle that keeps the
+    // device (and its access points and D-Bus signal hooks) alive after removal.
     auto deviceStatistics = device->deviceStatistics();
-    connect(deviceStatistics.data(), &NetworkManager::DeviceStatistics::rxBytesChanged, this, [this, device](qulonglong rxBytes) {
-        for (auto item : m_list.returnItems(NetworkItemsList::Device, device->uni())) {
+    const QString deviceUni = device->uni();
+    connect(deviceStatistics.data(), &NetworkManager::DeviceStatistics::rxBytesChanged, this, [this, deviceUni](qulonglong rxBytes) {
+        for (auto item : m_list.returnItems(NetworkItemsList::Device, deviceUni)) {
             item->setRxBytes(rxBytes);
             updateItem(item);
         }
     });
-    connect(deviceStatistics.data(), &NetworkManager::DeviceStatistics::txBytesChanged, this, [this, device](qulonglong txBytes) {
-        for (auto item : m_list.returnItems(NetworkItemsList::Device, device->uni())) {
+    connect(deviceStatistics.data(), &NetworkManager::DeviceStatistics::txBytesChanged, this, [this, deviceUni](qulonglong txBytes) {
+        for (auto item : m_list.returnItems(NetworkItemsList::Device, deviceUni)) {
             item->setTxBytes(txBytes);
             updateItem(item);
         }

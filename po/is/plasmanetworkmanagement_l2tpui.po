@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-09-30 00:48+0000\n"
 "PO-Revision-Date: 2024-07-14 20:31+0000\n"
 "Last-Translator: Gummi <gudmundure@gmail.com>\n"
 "Language-Team: Icelandic <kde-i18n-doc@kde.org>\n"
@@ -389,10 +389,13 @@ msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
+#| "only if the server doesn’t support PFS.</p></body></html>"
 msgid ""
-"<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
-"only if the server doesn’t support PFS.</p></body></html>"
+"<html><head/><body><p>Disable perfect forward secrecy. Do this only if the "
+"server doesn’t support PFS.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Slökkva á PFS (perfect forward secrecy). Virkjaðu "
 "þennan valkost eingöngu ef þjónninn styður ekki PFS.</p></body></html>"

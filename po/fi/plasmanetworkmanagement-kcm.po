@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-15 00:46+0000\n"
+"POT-Creation-Date: 2026-09-30 00:48+0000\n"
 "PO-Revision-Date: 2026-01-05 18:05+0200\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: kcm.cpp:270
+#: kcm.cpp:270 ui/main.qml:381
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Tuodaanko VPN-määritys tiedostosta ”%1”?"
 
-#: kcm.cpp:271
+#: kcm.cpp:271 ui/main.qml:380
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
@@ -34,12 +34,12 @@ msgstr "Tuo VPN-määritys"
 msgid "Import"
 msgstr "Tuo"
 
-#: kcm.cpp:279 kcm.cpp:352
+#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:104
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "VPN-yhteyden tuonti epäonnistui: %1"
 
-#: kcm.cpp:282 kcm.cpp:355
+#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:98
 #, kde-format
 msgid "Connection imported."
 msgstr "Yhteys tuotu."
@@ -196,28 +196,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Käytettävissä"
 
-#: qml/main.qml:148 ui/main.qml:220
+#: qml/main.qml:148 ui/main.qml:249
 msgid "Add new connection"
 msgstr "Lisää uusi yhteys"
 
-#: qml/main.qml:166 ui/main.qml:238
+#: qml/main.qml:166 ui/main.qml:267
 msgid "Remove selected connection"
 msgstr "Poista valittu yhteys"
 
-#: qml/main.qml:184 ui/main.qml:256
+#: qml/main.qml:184 ui/main.qml:285
 msgid "Export selected connection"
 msgstr "Vie valittu yhteys"
 
-#: qml/main.qml:209 ui/main.qml:192
+#: qml/main.qml:209 ui/main.qml:221
 msgid "Configuration"
 msgstr "Asetus"
 
-#: qml/main.qml:236 ui/main.qml:321
+#: qml/main.qml:236 ui/main.qml:350
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Poista yhteys"
 
-#: qml/main.qml:237 ui/main.qml:322
+#: qml/main.qml:237 ui/main.qml:351
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Haluatko poistaa yhteyden ”%1”?"
 
@@ -251,17 +251,31 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Salasanan pituuden on oltava 8–64 merkkiä"
 
-#: ui/main.qml:46
+#: ui/main.qml:54
 #, fuzzy
 #| msgid "Disconnect"
 msgid "Disconnected"
 msgstr "Katkaise yhteys"
 
-#: ui/main.qml:280
+#: ui/main.qml:309
 #, fuzzy
 #| msgid "Connection imported."
 msgid "Connection name:"
 msgstr "Yhteys tuotu."
+
+#: ui/main.qml:368
+#, fuzzy
+#| msgid "Import VPN Connection"
+msgctxt "@title:window"
+msgid "Import VPN Connection"
+msgstr "Tuo VPN-yhteys"
+
+#: ui/main.qml:386
+#, fuzzy
+#| msgid "Import"
+msgctxt "@action:button"
+msgid "Import"
+msgstr "Tuo"
 
 #~ msgid "Create"
 #~ msgstr "Luo"

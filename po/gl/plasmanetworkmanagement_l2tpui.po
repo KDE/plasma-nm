@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-09-30 00:48+0000\n"
 "PO-Revision-Date: 2025-01-26 21:04+0100\n"
 "Last-Translator: Adrián Chaves (Gallaecio) <adrian@chaves.io>\n"
 "Language-Team: Proxecto Trasno (proxecto@trasno.gal)\n"
@@ -390,10 +390,13 @@ msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
+#| "only if the server doesn’t support PFS.</p></body></html>"
 msgid ""
-"<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
-"only if the server doesn’t support PFS.</p></body></html>"
+"<html><head/><body><p>Disable perfect forward secrecy. Do this only if the "
+"server doesn’t support PFS.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Desactivar o segredo de encamiñamento perfecto (PFS). "
 "Active esta opción só se o servidor non é compatíbel coa funcionalidade.</"

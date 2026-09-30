@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-09-30 00:48+0000\n"
 "PO-Revision-Date: 2026-01-29 06:53-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -401,10 +401,13 @@ msgstr "Usar a troca de chaves IKEv2"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
+#| "only if the server doesn’t support PFS.</p></body></html>"
 msgid ""
-"<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
-"only if the server doesn’t support PFS.</p></body></html>"
+"<html><head/><body><p>Disable perfect forward secrecy. Do this only if the "
+"server doesn’t support PFS.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Desabilita o PFS. Habilite esta opção apenas se o "
 "servidor não suportar PFS.</p></body></html>"

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-01-29 00:46+0000\n"
+"POT-Creation-Date: 2026-09-30 00:48+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -386,10 +386,13 @@ msgstr "使用 IKEv2 密钥交换"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
+#| "only if the server doesn’t support PFS.</p></body></html>"
 msgid ""
-"<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
-"only if the server doesn’t support PFS.</p></body></html>"
+"<html><head/><body><p>Disable perfect forward secrecy. Do this only if the "
+"server doesn’t support PFS.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>禁用完全正向保密 (PFS)。只有在服务器不支持 PFS 时才应勾"
 "选此项。</p></body></html>"

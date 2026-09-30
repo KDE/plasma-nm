@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-28 00:47+0000\n"
+"POT-Creation-Date: 2026-09-30 00:48+0000\n"
 "PO-Revision-Date: 2026-09-14 20:10+0200\n"
 "Last-Translator: Roman Paholík <wizzardsk@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -5064,8 +5064,8 @@ msgstr "Zakázané"
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
 #, kde-format
 msgid ""
-"Disable perfect forward secrecy. Enable this option only if the server "
-"doesn’t support PFS."
+"Disable perfect forward secrecy. Do this only if the server doesn’t support "
+"PFS."
 msgstr ""
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:40

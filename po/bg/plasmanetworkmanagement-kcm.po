@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-15 00:46+0000\n"
+"POT-Creation-Date: 2026-09-30 00:48+0000\n"
 "PO-Revision-Date: 2026-07-23 20:12+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.04.3\n"
 
-#: kcm.cpp:270
+#: kcm.cpp:270 ui/main.qml:381
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Импортиране на конфигурация на VPN от „%1“?"
 
-#: kcm.cpp:271
+#: kcm.cpp:271 ui/main.qml:380
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
@@ -33,12 +33,12 @@ msgstr "Импортиране на VPN конфигурация"
 msgid "Import"
 msgstr "Импортиране"
 
-#: kcm.cpp:279 kcm.cpp:352
+#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:104
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Неуспешно импортиране на VPN връзка: %1"
 
-#: kcm.cpp:282 kcm.cpp:355
+#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:98
 #, kde-format
 msgid "Connection imported."
 msgstr "Връзката е импортирана."
@@ -198,28 +198,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Налични"
 
-#: qml/main.qml:148 ui/main.qml:220
+#: qml/main.qml:148 ui/main.qml:249
 msgid "Add new connection"
 msgstr "Добавяне на нова връзка"
 
-#: qml/main.qml:166 ui/main.qml:238
+#: qml/main.qml:166 ui/main.qml:267
 msgid "Remove selected connection"
 msgstr "Премахване на избраната връзка"
 
-#: qml/main.qml:184 ui/main.qml:256
+#: qml/main.qml:184 ui/main.qml:285
 msgid "Export selected connection"
 msgstr "Експортиране на избраната връзка"
 
-#: qml/main.qml:209 ui/main.qml:192
+#: qml/main.qml:209 ui/main.qml:221
 msgid "Configuration"
 msgstr "Конфигурация"
 
-#: qml/main.qml:236 ui/main.qml:321
+#: qml/main.qml:236 ui/main.qml:350
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Премахване на връзка"
 
-#: qml/main.qml:237 ui/main.qml:322
+#: qml/main.qml:237 ui/main.qml:351
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Искате ли да премахнете връзка '%1'?"
 
@@ -253,10 +253,24 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Паролата трябва да бъде между 8 и 64 знака"
 
-#: ui/main.qml:46
+#: ui/main.qml:54
 msgid "Disconnected"
 msgstr "Прекъснат"
 
-#: ui/main.qml:280
+#: ui/main.qml:309
 msgid "Connection name:"
 msgstr "Име на връзката:"
+
+#: ui/main.qml:368
+#, fuzzy
+#| msgid "Import VPN Connection"
+msgctxt "@title:window"
+msgid "Import VPN Connection"
+msgstr "Импортиране на VPN връзка"
+
+#: ui/main.qml:386
+#, fuzzy
+#| msgid "Import"
+msgctxt "@action:button"
+msgid "Import"
+msgstr "Импортиране"

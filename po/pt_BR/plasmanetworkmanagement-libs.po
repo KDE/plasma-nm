@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-28 00:47+0000\n"
+"POT-Creation-Date: 2026-09-30 00:48+0000\n"
 "PO-Revision-Date: 2026-09-22 06:51-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -5073,10 +5073,13 @@ msgid "Disable PFS"
 msgstr "Desabilitar PFS"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
-#, kde-format
+#, fuzzy, kde-format
+#| msgid ""
+#| "Disable perfect forward secrecy. Enable this option only if the server "
+#| "doesn’t support PFS."
 msgid ""
-"Disable perfect forward secrecy. Enable this option only if the server "
-"doesn’t support PFS."
+"Disable perfect forward secrecy. Do this only if the server doesn’t support "
+"PFS."
 msgstr ""
 "Desabilita o PFS. Habilite esta opção apenas se o servidor não suportar PFS."
 

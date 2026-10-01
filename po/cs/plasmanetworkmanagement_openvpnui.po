@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2026-09-18 11:06+0200\n"
+"PO-Revision-Date: 2026-09-30 23:36+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -355,7 +355,7 @@ msgstr "Použít vlastní vyjednávací interval:"
 #: openvpnadvanced.ui:96 openvpnadvanced.ui:109
 #, kde-format
 msgid "Use compression."
-msgstr "Použít kompresi"
+msgstr "Použít kompresi."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCompression)
 #: openvpnadvanced.ui:99

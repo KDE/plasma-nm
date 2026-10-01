@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:48+0000\n"
-"PO-Revision-Date: 2026-07-19 00:56+0300\n"
+"PO-Revision-Date: 2026-10-01 14:05+0300\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: lt\n"
 "Language: lt\n"
@@ -264,15 +264,11 @@ msgid "Connection name:"
 msgstr "Ryšio pavadinimas:"
 
 #: ui/main.qml:368
-#, fuzzy
-#| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Importuoti VPN ryšį"
 
 #: ui/main.qml:386
-#, fuzzy
-#| msgid "Import"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importuoti"

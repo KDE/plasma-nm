@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 00:46+0000\n"
-"PO-Revision-Date: 2026-03-08 13:36+0100\n"
+"PO-Revision-Date: 2026-09-29 12:15+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
@@ -854,6 +854,14 @@ msgid ""
 "fields),\n"
 "or just the Common Name (CN field).\n"
 msgstr ""
+"Identität des Serverzertifikats überprüfen.\n"
+"\n"
+"Wenn aktiviert, wird die Verbindung nur hergestellt, wenn das "
+"Serverzertifikat\n"
+"bestimmte erwartete Eigenschaften erfüllt.\n"
+"Der Abgleich kann sich entweder auf den gesamten Zertifikatsinhaber (alle "
+"Felder) beziehen\n"
+"oder nur auf den „Common Name“ (CN-Feld).\n"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCertCheck)
 #: openvpnadvanced.ui:872
@@ -871,7 +879,7 @@ msgstr "Kennung des Zertifikats nicht überprüfen"
 #: openvpnadvanced.ui:894
 #, kde-format
 msgid "Verify whole subject exactly"
-msgstr ""
+msgstr "Gesamten Zertifikatsinhaber exakt überprüfen"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:899
@@ -890,6 +898,8 @@ msgstr "Name anhand des Präfixes überprüfen"
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
 msgstr ""
+"Zertifikatsinhaber teilweise überprüfen (veralteter Modus, ausdrücklich "
+"nicht empfohlen)"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lbSubjectMatch)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, subjectMatch)
@@ -1060,7 +1070,7 @@ msgstr "Client (1)"
 #: openvpnadvanced.ui:1190
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Optional."
-msgstr ""
+msgstr "Minimale TLS-Version (z. B. 1.2). Optional."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMin)
 #: openvpnadvanced.ui:1193

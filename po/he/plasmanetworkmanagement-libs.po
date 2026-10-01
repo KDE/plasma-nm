@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:48+0000\n"
-"PO-Revision-Date: 2026-09-29 09:09+0300\n"
+"PO-Revision-Date: 2026-09-30 08:34+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -5023,16 +5023,11 @@ msgid "Disable PFS"
 msgstr "השבתת PFS"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
-#, fuzzy, kde-format
-#| msgid ""
-#| "Disable perfect forward secrecy. Enable this option only if the server "
-#| "doesn’t support PFS."
+#, kde-format
 msgid ""
 "Disable perfect forward secrecy. Do this only if the server doesn’t support "
 "PFS."
-msgstr ""
-"השבתת סודיות העברה מושלמת (PFS). יש להפעיל את האפשרות הזאת רק אם השרת לא "
-"תומך ב־PFS."
+msgstr "השבתת סודיות העברה מושלמת (PFS). לסמן את זה רק אם השרת לא תומך ב־PFS."
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:40
 #, kde-format

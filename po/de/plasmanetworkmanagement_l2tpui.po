@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:48+0000\n"
-"PO-Revision-Date: 2026-05-21 14:29+0200\n"
+"PO-Revision-Date: 2026-09-29 12:09+0200\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
 "Language: de\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -303,6 +303,8 @@ msgid ""
 "<html><head/><body><p>How long the keying channel of a connection should "
 "last before being renegotiated.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Wie lange der Schlüsselkanal einer Verbindung bestehen "
+"bleiben soll, bevor er neu ausgehandelt wird.</p></body></html>"
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
@@ -342,6 +344,10 @@ msgid ""
 "of encryption/authentication keys for user packets) should last, from "
 "successful negotiation to expiry.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Wie lange eine bestimmte Verbindung (ein Satz von "
+"Verschlüsselungs- und Authentifizierungsschlüsseln für Benutzerpakete) von "
+"der erfolgreichen Aushandlung bis zum Ablauf bestehen bleiben soll.</p></"
+"body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
 #: l2tpipsec.ui:305
@@ -353,6 +359,12 @@ msgid ""
 "strongSwan or Libreswan documentation for leftid/rightid syntax and identity "
 "parsing.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Optional. Wie der IPsec-Server zur Authentifizierung "
+"identifiziert werden soll. Wird manchmal als „Peer-ID“ oder „Gateway-ID“ "
+"bezeichnet, bei strongSwan, Libreswan, Openswan und FreeS/WAN auch als "
+"„rightid“. Informationen zur Syntax von „leftid“ und „rightid“ sowie zur "
+"Identitätsverarbeitung finden Sie in der Dokumentation zu strongSwan oder "
+"Libreswan.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:312
@@ -362,6 +374,9 @@ msgid ""
 "encrypted. This saves some bandwidth, but uses more processing power.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>IPComp komprimiert IP-Rohpakete, bevor sie "
+"verschlüsselt werden. Das spart etwas Bandbreite, beansprucht jedoch mehr "
+"Rechenleistung.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:315
@@ -402,6 +417,9 @@ msgid ""
 "encapsulation even if no NAT situation is detected might help in such cases."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Manche Firewalls blockieren ESP-Datenverkehr. In "
+"solchen Fällen kann es hilfreich sein, die UDP-Kapselung zu erzwingen, auch "
+"wenn keine NAT-Situation erkannt wird.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:342
@@ -582,7 +600,7 @@ msgstr ""
 #: l2tpppp.ui:227
 #, kde-format
 msgid "Multilink PPP MRRU: "
-msgstr ""
+msgstr "Multilink-PPP-MRRU: "
 
 #. i18n: ectx: property (text), widget (QLabel, lbMRU)
 #: l2tpppp.ui:250

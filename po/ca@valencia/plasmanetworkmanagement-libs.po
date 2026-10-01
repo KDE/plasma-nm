@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:48+0000\n"
-"PO-Revision-Date: 2026-09-22 10:53+0200\n"
+"PO-Revision-Date: 2026-09-30 09:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca@valencia\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Accelerator-Marker: &\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -5081,16 +5081,13 @@ msgid "Disable PFS"
 msgstr "Desactiva PFS"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
-#, fuzzy, kde-format
-#| msgid ""
-#| "Disable perfect forward secrecy. Enable this option only if the server "
-#| "doesn’t support PFS."
+#, kde-format
 msgid ""
 "Disable perfect forward secrecy. Do this only if the server doesn’t support "
 "PFS."
 msgstr ""
-"Desactiva el secret perfecte del reenviament (PFS). Marqueu esta opció només "
-"si el servidor no admet PFS."
+"Desactiva el secret perfecte del reenviament (PFS). Feu-ho només si el "
+"servidor no admet PFS."
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:40
 #, kde-format

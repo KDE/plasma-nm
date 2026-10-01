@@ -9,15 +9,15 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:48+0000\n"
-"PO-Revision-Date: 2026-09-22 12:39+0200\n"
-"Last-Translator: Libor Filipek <libor.filipek@gmail.com>\n"
+"PO-Revision-Date: 2026-09-30 23:39+0200\n"
+"Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Poedit 3.9\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -5059,15 +5059,12 @@ msgid "Disable PFS"
 msgstr "Zakázat PFS"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
-#, fuzzy, kde-format
-#| msgid ""
-#| "Disable perfect forward secrecy. Enable this option only if the server "
-#| "doesn’t support PFS."
+#, kde-format
 msgid ""
 "Disable perfect forward secrecy. Do this only if the server doesn’t support "
 "PFS."
 msgstr ""
-"Zakázat dokonalé utajení přenosu (PFS). Tuto možnost zapněte pouze v "
+"Deaktivujte funkci dopředné bezpečnosti (PFS). Tuto akci proveďte pouze v "
 "případě, že server nepodporuje PFS."
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:40
@@ -6284,7 +6281,7 @@ msgstr "DH skupina 5"
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:111
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr "Dokonalé utajení přenosu:"
+msgstr "Funkce dopředné bezpečnosti (PFS):"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:114
 #, kde-format

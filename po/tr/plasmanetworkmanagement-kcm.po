@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:48+0000\n"
-"PO-Revision-Date: 2026-07-16 19:51+0300\n"
+"PO-Revision-Date: 2026-09-30 09:56+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: kcm.cpp:270 ui/main.qml:381
 #, kde-format
@@ -261,15 +261,11 @@ msgid "Connection name:"
 msgstr "Bağlantı adı:"
 
 #: ui/main.qml:368
-#, fuzzy
-#| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "VPN Bağlantısı İçe Aktar"
 
 #: ui/main.qml:386
-#, fuzzy
-#| msgid "Import"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "İçe Aktar"

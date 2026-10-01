@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:48+0000\n"
-"PO-Revision-Date: 2026-07-17 11:31+0400\n"
+"PO-Revision-Date: 2026-09-30 18:43+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -262,15 +262,11 @@ msgid "Connection name:"
 msgstr "اسم الاتّصال:"
 
 #: ui/main.qml:368
-#, fuzzy
-#| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "استورد اتصال في بي ان"
 
 #: ui/main.qml:386
-#, fuzzy
-#| msgid "Import"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "استورد"

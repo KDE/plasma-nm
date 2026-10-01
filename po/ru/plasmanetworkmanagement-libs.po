@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:48+0000\n"
-"PO-Revision-Date: 2026-09-22 22:26+0200\n"
+"PO-Revision-Date: 2026-09-30 08:29+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -5074,16 +5074,13 @@ msgid "Disable PFS"
 msgstr "Отключить PFS"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
-#, fuzzy, kde-format
-#| msgid ""
-#| "Disable perfect forward secrecy. Enable this option only if the server "
-#| "doesn’t support PFS."
+#, kde-format
 msgid ""
 "Disable perfect forward secrecy. Do this only if the server doesn’t support "
 "PFS."
 msgstr ""
-"Отключить совершенную прямую секретность. Включайте этот параметр только в "
-"том случае, если сервер не поддерживает PFS."
+"Отключить совершенную прямую секретность. Отключайте её, только если сервер "
+"не поддерживает PFS."
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:40
 #, kde-format

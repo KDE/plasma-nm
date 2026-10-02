@@ -138,7 +138,7 @@ FormCard.AbstractFormDelegate {
                     handler.activateConnection(model.ConnectionPath, DevicePath, SpecificPath);
                 }
             } else {
-                kcm.push("ConnectionInfo.qml", {details: model.ConnectionDetails,
+                kcm.push("ConnectionInfo.qml", {detailsModel: model.ConnectionDetailsModel,
                                                 connectionName: ItemUniqueName,
                                                 connectionPath: ConnectionPath,
                                                 delegate: root})

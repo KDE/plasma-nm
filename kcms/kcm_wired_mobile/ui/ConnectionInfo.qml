@@ -15,7 +15,7 @@ FormCard.FormCardPage {
     title: i18nc("kcm page title", "Connection Info for \"%1\"", connectionName)
 
     property string connectionName: ""
-    property var details: []
+    property PlasmaNM.ConnectionDetailsModel detailsModel: null
     property QtObject delegate: null // for reaching rx/txSpeed
 
     FormCard.FormHeader {
@@ -48,18 +48,19 @@ FormCard.FormCardPage {
 
     FormCard.FormCard {
         Repeater {
-            /* details is the ConnectionDetails property of the
-            * connection model item, a flat stringlist with
-            * title / value pairs.
-            */
-            model: details.length / 2
+            model: connectionInfo.detailsModel
 
             FormCard.FormTextDelegate {
-                text: details[index * 2]
-                description: details[(index * 2) + 1]
+                required property bool isSection
+                required property string sectionTitle
+                required property string detailLabel
+                required property string detailValue
+
+                text: isSection ? sectionTitle : detailLabel
+                description: isSection ? "" : detailValue
+                textItem.font.bold: isSection
                 enabled: true
             }
         }
     }
 }
-

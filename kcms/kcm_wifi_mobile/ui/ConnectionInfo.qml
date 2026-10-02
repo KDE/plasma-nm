@@ -16,7 +16,7 @@ FormCard.FormCardPage {
     title: i18nc("kcm page title", "Connection Info for \"%1\"", connectionName)
 
     property string connectionName: ""
-    property var details: []
+    property PlasmaNM.ConnectionDetailsModel detailsModel: null
     property QtObject delegate: null // for reaching rx/txSpeed
 
     property string connectionPath: ""
@@ -75,27 +75,7 @@ FormCard.FormCardPage {
         }
     }
 
-    FormCard.FormHeader {
-        title: i18nc("@title:group", "Connection Details")
-    }
-
-    FormCard.FormCard {
-        Repeater {
-            /* details is the ConnectionDetails property of the
-            * connection model item, a flat stringlist with
-            * title / value pairs.
-            */
-            model: details.length / 2
-
-            FormCard.FormTextDelegate {
-                text: details[index * 2]
-                description: details[(index * 2) + 1]
-                enabled: true
-            }
-        }
-    }
-
-     // Share section
+    // Share section
     FormCard.FormHeader {
         title: i18nc("@title:group", "Share")
     }
@@ -103,12 +83,12 @@ FormCard.FormCardPage {
     FormCard.FormCard {
         FormCard.FormButtonDelegate {
             id: shareButton
-            icon.name: "view-barcode-qr" 
+            icon.name: "view-barcode-qr"
             text: i18n("Share Wi-Fi via QR Code")
             onClicked: qrDialog.open()
         }
     }
-  
+
     Kirigami.Dialog {
         id: qrDialog
         title: i18n("Wi-Fi QR Code")
@@ -129,5 +109,26 @@ FormCard.FormCardPage {
             }
         }
     }
-}
 
+    FormCard.FormHeader {
+        title: i18nc("@title:group", "Connection Details")
+    }
+
+    FormCard.FormCard {
+        Repeater {
+            model: connectionInfo.detailsModel
+
+            FormCard.FormTextDelegate {
+                required property bool isSection
+                required property string sectionTitle
+                required property string detailLabel
+                required property string detailValue
+
+                text: isSection ? sectionTitle : detailLabel
+                description: isSection ? "" : detailValue
+                textItem.font.bold: isSection
+                enabled: true
+            }
+        }
+    }
+}

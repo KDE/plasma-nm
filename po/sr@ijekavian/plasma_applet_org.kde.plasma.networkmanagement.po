@@ -1,5 +1,6 @@
 # Translation of plasma_applet_org.kde.plasma.networkmanagement.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015, 2016, 2017.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
@@ -32,12 +33,12 @@ msgstr "Прекини везу"
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr ""
+msgstr "Подијели"
 
 #: ConnectionItem.qml:96
 #, kde-format
 msgid "Configure…"
-msgstr ""
+msgstr "Подеси…"
 
 #: ConnectionItem.qml:136
 #, kde-format
@@ -55,89 +56,88 @@ msgctxt "@info:tooltip"
 msgid ""
 "Current download speed is %1 kibibytes per second; current upload speed is "
 "%2 kibibytes per second"
-msgstr ""
+msgstr "Тренутна брзина, у кибибајтима у секунди: преузимање %1, отпремање %2"
 
 #: ConnectionItem.qml:309
 #, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr ""
+msgstr "↓ %1/s, ↑ %2/s"
 
 #: ConnectionListPage.qml:33
 #, kde-format
 msgid "You need to log in to this network"
-msgstr ""
+msgstr "Морате да се пријавите на ову мрежу"
 
 #: ConnectionListPage.qml:37
 #, kde-format
 msgctxt "@action:button"
 msgid "Log in"
-msgstr ""
+msgstr "Пријави ме"
 
 #: ConnectionListPage.qml:118
 #, kde-format
 msgid "Airplane mode is enabled"
-msgstr ""
+msgstr "Авионски режим је укључен"
 
 #: ConnectionListPage.qml:122
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr ""
+msgstr "Вај‑фај и мобилни подаци су искључени"
 
 #: ConnectionListPage.qml:124
 #, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr ""
+msgstr "Вај‑фај је искључен"
 
 #: ConnectionListPage.qml:127
 #, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr ""
+msgstr "Тражим вај‑фај мреже"
 
 #: ConnectionListPage.qml:130
 #, kde-format
 msgid "Mobile data is deactivated"
-msgstr ""
+msgstr "Мобилни подаци су искључени"
 
 #: ConnectionListPage.qml:133
 #, kde-format
 msgid "No matches"
-msgstr ""
+msgstr "Нема поклапања"
 
 #: ConnectionListPage.qml:136
-#, fuzzy, kde-format
-#| msgid "Available connections"
+#, kde-format
 msgid "No available connections"
-msgstr "Доступне везе"
+msgstr "Нема доступних веза"
 
 #: ConnectionListPage.qml:145
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "Искључите авионски режим да бисте тражили мреже"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "Укључите вај‑фај или мобилне податке да бисте тражили мреже"
 
 #: ConnectionListPage.qml:151
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "Укључите вај‑фај да бисте тражили мреже"
 
 #: ConnectionListPage.qml:154
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "Укључите мобилне податке да бисте тражили мреже"
 
 #: DetailsText.qml:40
 #, kde-format
 msgid "Copy"
-msgstr "Копирање"
+msgstr "Копирај"
 
 #: main.qml:39
 #, kde-format
@@ -148,86 +148,83 @@ msgstr "Мреже"
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr ""
+msgstr "Средњи клик искључује авионски режим"
 
 #: main.qml:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr ""
+msgstr "Средњи клик укључује авионски режим"
 
 #: main.qml:78 Toolbar.qml:74
 #, kde-format
 msgid "Enable Wi-Fi"
-msgstr ""
+msgstr "Укључи вај‑фај"
 
 #: main.qml:89
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "Активирај мобилну мрежу"
+msgstr "Укључи мобилне податке"
 
 #: main.qml:101
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr ""
+msgstr "Укључи авионски режим"
 
 #: main.qml:113
 #, kde-format
 msgid "Open Network Login Page…"
-msgstr ""
+msgstr "Отвори страницу за пријаву на мрежу…"
 
 #: main.qml:123
-#, fuzzy, kde-format
-#| msgid "&Configure Network Connections..."
+#, kde-format
 msgid "&Configure Network Connections…"
-msgstr "&Подеси мрежне везе..."
+msgstr "&Подеси мрежне везе…"
 
 #: PopupDialog.qml:58
-#, fuzzy, kde-format
-#| msgid "&Configure Network Connections..."
+#, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "&Подеси мрежне везе..."
+msgstr "Назад на мрежне везе"
 
 #: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
+"Скенирајте овај КуР код другим уређајем да бисте се повезали на мрежу „%1“."
 
 #: ShareNetworkQrCodePage.qml:108
 #, kde-format
 msgid "Wi-Fi password:"
-msgstr ""
+msgstr "Лозинка вај‑фај мреже:"
 
 #: Toolbar.qml:124
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#, kde-format
 msgid "Enable mobile data"
-msgstr "Активирај мобилну мрежу"
+msgstr "Укључи мобилне податке"
 
 #: Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
-msgstr ""
+msgstr "Искључи авионски режим<nl/><nl/>Ово ће укључити вај‑фај и блутут"
 
 #: Toolbar.qml:148
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
-msgstr ""
+msgstr "Укључи авионски режим<nl/><nl/>Ово ће искључити вај‑фај и блутут"
 
 #: Toolbar.qml:176
 #, kde-format
 msgid "Hotspot"
-msgstr ""
+msgstr "Приступна тачка"
 
 #: Toolbar.qml:193
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
-msgstr ""
+msgstr "Не могу да направим приступну тачку јер је вај‑фај искључен."
 
 #: Toolbar.qml:195
 #, kde-format
@@ -236,30 +233,33 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"Не могу да направим приступну тачку јер су сви бежични адаптери заузети. "
+"Прекини везу са текућом вај‑фај мрежом или прикључи још један бежични "
+"адаптер."
 
 #: Toolbar.qml:197
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
-msgstr ""
+msgstr "Искључи приступну тачку"
 
 #: Toolbar.qml:199
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
-msgstr ""
+msgstr "Направи приступну тачку"
 
 #: Toolbar.qml:227
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr ""
+msgstr "Скенирај КуР код вај‑фај мреже"
 
 #: Toolbar.qml:232
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr ""
+msgstr "Скенирај КуР код за повезивање на вај‑фај мрежу"
 
 #: Toolbar.qml:234
 #, kde-format
@@ -268,37 +268,10 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
+"Инсталирај скенер бар‑кодова QRCA да скенираш КуР код за повезивање на "
+"вај‑фај мрежу"
 
 #: Toolbar.qml:253
-#, fuzzy, kde-format
-#| msgid "Configure network connections..."
+#, kde-format
 msgid "Configure network connections…"
-msgstr "Подеси мрежне везе..."
-
-#~ msgid "Upload"
-#~ msgstr "Отпремање"
-
-#~ msgid "Download"
-#~ msgstr "Преузимање"
-
-#~ msgid "Connected"
-#~ msgstr "Повезан"
-
-#, fuzzy
-#~| msgid "Password..."
-#~ msgid "Password…"
-#~ msgstr "Лозинка..."
-
-#, fuzzy
-#~| msgid ""
-#~| "Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s"
-#~ msgid ""
-#~ "Connected, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s"
-#~ msgstr ""
-#~ "Повезан, <font color='%1'>⬇</font> %2/s, <font color='%3'>⬆</font> %4/s"
-
-#, fuzzy
-#~| msgid "Available connections"
-#~ msgctxt "button tooltip"
-#~ msgid "Search the connections"
-#~ msgstr "Доступне везе"
+msgstr "Подеси мрежне везе…"

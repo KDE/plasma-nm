@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 02:45+0000\n"
-"PO-Revision-Date: 2026-01-05 18:05+0200\n"
+"PO-Revision-Date: 2026-08-24 19:49+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -89,7 +89,7 @@ msgstr "Tuntematon VPN-tyyppi"
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
-msgstr ""
+msgstr " (kopio)"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -173,7 +173,7 @@ msgstr "Tähän verkkoon ei voi yhdistää, koska sitä ei havaittu."
 #: qml/ConnectionItem.qml:94 ui/ConnectionItem.qml:90
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
-msgstr ""
+msgstr "Monista"
 
 #: qml/ConnectionItem.qml:102 ui/ConnectionItem.qml:98
 msgid "Delete"
@@ -252,16 +252,12 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "Salasanan pituuden on oltava 8–64 merkkiä"
 
 #: ui/main.qml:46
-#, fuzzy
-#| msgid "Disconnect"
 msgid "Disconnected"
-msgstr "Katkaise yhteys"
+msgstr "Ei yhteyttä"
 
 #: ui/main.qml:280
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "Yhteys tuotu."
+msgstr "Yhteyden nimi:"
 
 #~ msgid "Create"
 #~ msgstr "Luo"

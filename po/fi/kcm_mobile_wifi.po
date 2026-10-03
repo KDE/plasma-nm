@@ -1,13 +1,13 @@
 # Copyright (C) 2024 This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2024, 2025 Tommi Nieminen <translator@legisign.org>
+# SPDX-FileCopyrightText: 2018, 2019, 2020, 2021, 2024, 2025, 2026 Tommi Nieminen <translator@legisign.org>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-06 00:46+0000\n"
-"PO-Revision-Date: 2025-09-03 18:28+0300\n"
+"PO-Revision-Date: 2026-08-24 19:52+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -49,18 +49,17 @@ msgstr "Yhteyden tiedot"
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
-msgstr ""
+msgstr "Jaa"
 
 #: ui/ConnectionInfo.qml:107
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr ""
+msgstr "Jaa langaton verkko QR-koodilla"
 
 #: ui/ConnectionInfo.qml:114
-#, fuzzy, kde-format
-#| msgid "Wi-Fi is disabled"
+#, kde-format
 msgid "Wi-Fi QR Code"
-msgstr "Langaton verkko ei ole käytössä"
+msgstr "Langattoman verkon QR-koodi"
 
 #: ui/main.qml:26
 #, kde-format
@@ -73,11 +72,9 @@ msgid "Wi-Fi"
 msgstr "Langaton verkko"
 
 #: ui/main.qml:98
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Settings"
-msgstr "IP-asetukset"
+msgstr "Asetukset"
 
 #: ui/main.qml:107
 #, kde-format
@@ -96,16 +93,14 @@ msgid "Add Custom Connection"
 msgstr "Lisää mukautettu yhteys"
 
 #: ui/MorePage.qml:14
-#, fuzzy, kde-format
-#| msgctxt "@title:group"
-#| msgid "IP Settings"
+#, kde-format
 msgid "Wi-Fi Settings"
-msgstr "IP-asetukset"
+msgstr "Langattoman verkon asetukset"
 
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr ""
+msgstr "Ilmoitukset yhteysmuutoksista"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

@@ -1,0 +1,45 @@
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+# SPDX-FileCopyrightText: 2026 Tommi Nieminen <translator@legisign.org>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-09-08 00:47+0000\n"
+"PO-Revision-Date: 2026-08-16 21:50+0300\n"
+"Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
+"Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.0\n"
+
+#: kcm.cpp:666
+#, kde-format
+msgid "Failed to get secrets for %1"
+msgstr ""
+
+#: kcm.cpp:692
+#, kde-format
+msgid "my_shared_connection"
+msgstr "jaettu_yhteyteni"
+
+#: kcm.cpp:762
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Haluatko tallentaa yhteyteen ”%1” tehdyt muutokset?"
+
+#: kcm.cpp:765
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Tallenna muutokset"
+
+#: kcm.cpp:794
+#, kde-format
+msgctxt "Suffix appended to duplicated connection name"
+msgid " (Copy)"
+msgstr " (kopio)"

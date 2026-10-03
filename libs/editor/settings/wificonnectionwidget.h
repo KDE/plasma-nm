@@ -45,12 +45,9 @@ public:
 
     bool isValid() const override;
 
-Q_SIGNALS:
-    void ssidChanged(const QString &ssid);
-
 private Q_SLOTS:
     void generateRandomClonedMac();
-    void ssidChanged();
+    void onSsidTextChanged();
     void modeChanged(int mode);
     void bandChanged(int band);
 

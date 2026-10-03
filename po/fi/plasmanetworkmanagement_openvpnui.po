@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 16:19+0000\n"
-"PO-Revision-Date: 2023-04-02 17:09+0300\n"
+"PO-Revision-Date: 2026-10-02 20:24+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -460,13 +460,13 @@ msgstr "Aseta virtuaalilaitteen nimi:"
 msgid ""
 "Take the TUN device MTU to be specified value and derive the link MTU from "
 "it."
-msgstr "Käytä TUN-laitteen MTU:ta annettuna arvona ja johda linkin MTU siitä."
+msgstr "Käytä TUN-laitteen MTU:ta annettuna ja johda linkin MTU siitä."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtu)
 #: openvpnadvanced.ui:230
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr "Mukauta tunnelin MTU-arvoa (Maximum Transmission Unit):"
+msgstr "Mukauta tunnelin sanomansiirtoyksikköarvoa (MTU):"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkCustomFragmentSize)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomFragmentSize)

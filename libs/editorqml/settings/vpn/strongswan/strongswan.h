@@ -30,6 +30,9 @@ class PLASMANM_EDITORQML_EXPORT StrongswanSetting : public VpnSettingBase
     // Authentication
     Q_PROPERTY(AuthMethod authMethod READ authMethod WRITE setAuthMethod NOTIFY authMethodChanged)
 
+    // Raw method string when authMethod == Unknown
+    Q_PROPERTY(QString unknownMethod READ unknownMethod NOTIFY unknownMethodChanged)
+
     // Used by the certificate methods; the private key only by PrivateKey.
     Q_PROPERTY(QString userCertificate READ userCertificate WRITE setUserCertificate NOTIFY userCertificateChanged)
     Q_PROPERTY(QString userKey READ userKey WRITE setUserKey NOTIFY userKeyChanged)
@@ -65,7 +68,9 @@ public:
         SshAgent,
         Smartcard,
         Eap,
-        EapTtls
+        EapTtls,
+        Psk,
+        Unknown
     };
     Q_ENUM(AuthMethod)
 
@@ -90,6 +95,8 @@ public:
 
     AuthMethod authMethod() const;
     void setAuthMethod(AuthMethod method);
+
+    QString unknownMethod() const;
 
     QString userCertificate() const;
     void setUserCertificate(const QString &certificate);
@@ -130,6 +137,7 @@ Q_SIGNALS:
     void remoteIdentityChanged();
 
     void authMethodChanged();
+    void unknownMethodChanged();
     void userCertificateChanged();
     void userKeyChanged();
     void usernameChanged();
@@ -152,6 +160,10 @@ private:
     QString m_remoteIdentity;
 
     AuthMethod m_authMethod = PrivateKey;
+    QString m_unknownMethod;
+    NMStringMap m_preservedAuth;
+    NMStringMap m_preservedSecrets;
+    NMStringMap m_loadedSecrets;
     QString m_userCertificate;
     QString m_userKey;
     QString m_username;

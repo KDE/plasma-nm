@@ -21,9 +21,16 @@ ColumnLayout {
     readonly property int authSmartcard: 2
     readonly property int authEap: 3
     readonly property int authEapTtls: 4
+    readonly property int authPsk: 5
+    readonly property int authUnknown: 6
 
     readonly property bool usesEap: root.setting.authMethod === root.authEap || root.setting.authMethod === root.authEapTtls
+    readonly property bool usesPsk: root.setting.authMethod === root.authPsk
+    readonly property bool usesCredentials: root.usesEap || root.usesPsk
     readonly property bool usesCertificate: root.setting.authMethod === root.authPrivateKey || root.setting.authMethod === root.authSshAgent
+    readonly property bool pskStored: root.setting.userPasswordOption === PlasmaNMQ.PasswordField.PasswordOption.StoreForUser
+        || root.setting.userPasswordOption === PlasmaNMQ.PasswordField.PasswordOption.StoreForAllUsers
+    readonly property bool pskTooShort: root.usesPsk && root.pskStored && root.setting.userPassword.length < 20
 
     spacing: Kirigami.Units.largeSpacing
 
@@ -78,7 +85,13 @@ ColumnLayout {
             Kirigami.FormData.label: i18n("Method:")
             Layout.fillWidth: true
 
-            model: [i18n("Certificate/private key"), i18n("Certificate/ssh-agent"), i18n("Smartcard"), i18n("EAP"), i18n("EAP-TTLS")]
+            model: {
+                const items = [i18n("Certificate/private key"), i18n("Certificate/ssh-agent"), i18n("Smartcard"), i18n("EAP"), i18n("EAP-TTLS"), i18n("Pre-shared key")];
+                if (root.setting.authMethod === root.authUnknown) {
+                    items.push(i18n("Unknown (%1)", root.setting.unknownMethod));
+                }
+                return items;
+            }
 
             currentIndex: root.setting.authMethod
             onActivated: root.setting.authMethod = currentIndex
@@ -137,7 +150,7 @@ ColumnLayout {
             Kirigami.FormData.label: i18n("Username:")
             Layout.fillWidth: true
 
-            visible: root.usesEap
+            visible: root.usesCredentials
 
             text: root.setting.username
             onTextEdited: root.setting.username = text
@@ -147,9 +160,10 @@ ColumnLayout {
     PlasmaNMQ.PasswordField {
         Layout.fillWidth: true
 
-        visible: root.usesEap
+        visible: root.usesCredentials
 
-        passwordLabel: i18n("User Password:")
+        passwordLabel: root.usesPsk ? i18n("Pre-shared key:") : i18n("User Password:")
+        maxLength: root.usesPsk ? 256 : 64
         showPasswordOptions: true
         showNotRequired: true
 
@@ -158,6 +172,15 @@ ColumnLayout {
 
         onPasswordEdited: password => root.setting.userPassword = password
         onPasswordOptionEdited: option => root.setting.userPasswordOption = option
+    }
+
+    Kirigami.InlineMessage {
+        Layout.fillWidth: true
+
+        visible: root.usesPsk
+
+        type: root.pskTooShort ? Kirigami.MessageType.Warning : Kirigami.MessageType.Information
+        text: i18n("The pre-shared key must be at least 20 characters long.")
     }
 
     Kirigami.FormLayout {

@@ -26,16 +26,20 @@ void StrongswanAuthSetting::loadSecrets(const NetworkManager::VpnSetting::Ptr &s
 
     const NMStringMap data = setting->data();
     const QString method = data.value(QLatin1String(NM_STRONGSWAN_METHOD));
+    const QString certSource = data.value(QLatin1String(NM_STRONGSWAN_CERT_SOURCE));
+    const bool certMethod = method == QLatin1String(NM_STRONGSWAN_AUTH_CERT);
 
-    m_usesAgent = method == QLatin1String(NM_STRONGSWAN_AUTH_AGENT);
+    m_usesAgent = method == QLatin1String(NM_STRONGSWAN_AUTH_AGENT) || (certMethod && certSource == QLatin1String(NM_STRONGSWAN_AUTH_AGENT));
 
     const bool unused = data.value(QLatin1String(NM_STRONGSWAN_SECRET_TYPE)) == QLatin1String(NM_STRONGSWAN_PW_TYPE_UNUSED);
     setPasswordRequired(!m_usesAgent && !unused);
 
-    if (method == QLatin1String(NM_STRONGSWAN_AUTH_KEY)) {
-        setSecretKind(PrivateKeyPassword);
-    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD)) {
+    if (method == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD) || (certMethod && certSource == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD))) {
         setSecretKind(Pin);
+    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_KEY) || certMethod) {
+        setSecretKind(PrivateKeyPassword);
+    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_PSK)) {
+        setSecretKind(Psk);
     } else {
         setSecretKind(Password);
     }

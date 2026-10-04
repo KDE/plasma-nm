@@ -13,6 +13,12 @@
   <property name="windowTitle">
    <string>Strong Swan VPN</string>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QGroupBox" name="groupBox">
@@ -116,6 +122,11 @@
         <item>
          <property name="text">
           <string>EAP-TTLS</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>Pre-shared key</string>
          </property>
         </item>
        </widget>

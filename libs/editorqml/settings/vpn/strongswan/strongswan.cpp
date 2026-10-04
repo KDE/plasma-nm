@@ -49,16 +49,43 @@ void StrongswanSetting::loadConfig(const NetworkManager::VpnSetting::Ptr &settin
     setRemoteIdentity(data.value(QLatin1String(NM_STRONGSWAN_RIDENTITY)));
 
     const QString method = data.value(QLatin1String(NM_STRONGSWAN_METHOD));
-    if (method == QLatin1String(NM_STRONGSWAN_AUTH_AGENT)) {
+    // Newer versions of the GNOME editor write method "cert" and store the
+    // kind of private key in a separate "cert-source" data item
+    const QString certSource = data.value(QLatin1String(NM_STRONGSWAN_CERT_SOURCE));
+    const bool certMethod = method == QLatin1String(NM_STRONGSWAN_AUTH_CERT);
+    if (method == QLatin1String(NM_STRONGSWAN_AUTH_AGENT) || (certMethod && certSource == QLatin1String(NM_STRONGSWAN_AUTH_AGENT))) {
         setAuthMethod(SshAgent);
-    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD)) {
+    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD) || (certMethod && certSource == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD))) {
         setAuthMethod(Smartcard);
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_EAP)) {
         setAuthMethod(Eap);
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_EAP_TTLS)) {
         setAuthMethod(EapTtls);
-    } else {
+    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_PSK)) {
+        setAuthMethod(Psk);
+    } else if (method.isEmpty() || method == QLatin1String(NM_STRONGSWAN_AUTH_KEY) || certMethod) {
         setAuthMethod(PrivateKey);
+    } else {
+        // Unknown authentication method (e.g. "eap-tls" written by another
+        // editor): keep it together with its authentication data so that
+        // saving doesn't break the connection
+        m_unknownMethod = method;
+        Q_EMIT unknownMethodChanged();
+        setAuthMethod(Unknown);
+        const QList<QString> authKeys = {
+            QStringLiteral(NM_STRONGSWAN_USER),
+            QStringLiteral(NM_STRONGSWAN_USERCERT),
+            QStringLiteral(NM_STRONGSWAN_USERKEY),
+            QStringLiteral(NM_STRONGSWAN_CERT_SOURCE),
+            QStringLiteral(NM_STRONGSWAN_LIDENTITY),
+            QStringLiteral(NM_STRONGSWAN_POPTION),
+        };
+        for (const QString &key : authKeys) {
+            const QString value = data.value(key);
+            if (!value.isEmpty()) {
+                m_preservedAuth.insert(key, value);
+            }
+        }
     }
 
     setUserCertificate(pathToUrl(data.value(QLatin1String(NM_STRONGSWAN_USERCERT))));
@@ -66,8 +93,17 @@ void StrongswanSetting::loadConfig(const NetworkManager::VpnSetting::Ptr &settin
 
     setUsername(data.value(QLatin1String(NM_STRONGSWAN_USER)));
 
+    // The editor asks NetworkManager for secrets only when a *-flags key
+    // exists; connections written by other tools may lack it, so inject a
+    // default to trigger the secret fetch
+    if ((m_authMethod == Eap || m_authMethod == EapTtls || m_authMethod == Psk) && !data.contains(QLatin1String(NM_STRONGSWAN_POPTION))) {
+        NMStringMap writableData = setting->data();
+        writableData.insert(QLatin1String(NM_STRONGSWAN_POPTION), QString::number(NetworkManager::Setting::None));
+        setting->setData(writableData);
+    }
+
     const auto flags = static_cast<NetworkManager::Setting::SecretFlags>(data.value(QLatin1String(NM_STRONGSWAN_POPTION)).toInt());
-    if (flags.testFlag(NetworkManager::Setting::None)) {
+    if (flags == NetworkManager::Setting::None) {
         setUserPasswordOption(StoreForAllUsers);
     } else if (flags.testFlag(NetworkManager::Setting::AgentOwned)) {
         setUserPasswordOption(StoreForUser);
@@ -96,7 +132,14 @@ void StrongswanSetting::loadSecrets(const NetworkManager::VpnSetting::Ptr &setti
         return;
     }
 
-    const QString password = setting->secrets().value(QLatin1String(NM_STRONGSWAN_SECRET));
+    m_loadedSecrets = setting->secrets();
+
+    if (m_authMethod == Unknown) {
+        m_preservedSecrets = m_loadedSecrets;
+        return;
+    }
+
+    const QString password = m_loadedSecrets.value(QLatin1String(NM_STRONGSWAN_SECRET));
     if (!password.isEmpty()) {
         setUserPassword(password);
     }
@@ -151,9 +194,15 @@ QVariantMap StrongswanSetting::setting() const
         break;
 
     case Eap:
-    case EapTtls: {
-        data.insert(QLatin1String(NM_STRONGSWAN_METHOD),
-                    m_authMethod == EapTtls ? QLatin1String(NM_STRONGSWAN_AUTH_EAP_TTLS) : QLatin1String(NM_STRONGSWAN_AUTH_EAP));
+    case EapTtls:
+    case Psk: {
+        if (m_authMethod == EapTtls) {
+            data.insert(QLatin1String(NM_STRONGSWAN_METHOD), QLatin1String(NM_STRONGSWAN_AUTH_EAP_TTLS));
+        } else if (m_authMethod == Psk) {
+            data.insert(QLatin1String(NM_STRONGSWAN_METHOD), QLatin1String(NM_STRONGSWAN_AUTH_PSK));
+        } else {
+            data.insert(QLatin1String(NM_STRONGSWAN_METHOD), QLatin1String(NM_STRONGSWAN_AUTH_EAP));
+        }
 
         if (!m_username.isEmpty()) {
             data.insert(QLatin1String(NM_STRONGSWAN_USER), m_username);
@@ -176,11 +225,25 @@ QVariantMap StrongswanSetting::setting() const
         }
         data.insert(QLatin1String(NM_STRONGSWAN_POPTION), QString::number(passwordFlag));
 
-        if (m_userPasswordOption != NotRequired && !m_userPassword.isEmpty()) {
-            secrets.insert(QLatin1String(NM_STRONGSWAN_SECRET), m_userPassword);
+        if (m_userPasswordOption == StoreForAllUsers || m_userPasswordOption == StoreForUser) {
+            // Keep an already stored secret when the field was left empty
+            secrets = m_loadedSecrets;
+            if (!m_userPassword.isEmpty()) {
+                secrets.insert(QLatin1String(NM_STRONGSWAN_SECRET), m_userPassword);
+            }
         }
         break;
     }
+
+    case Unknown:
+        // An unknown method was loaded and the user didn't pick a known one:
+        // keep it together with its authentication data and secrets
+        data.insert(QLatin1String(NM_STRONGSWAN_METHOD), m_unknownMethod);
+        for (auto it = m_preservedAuth.cbegin(); it != m_preservedAuth.cend(); ++it) {
+            data.insert(it.key(), it.value());
+        }
+        secrets = m_preservedSecrets;
+        break;
     }
 
     data.insert(QLatin1String(NM_STRONGSWAN_INNERIP), m_requestInnerIp ? YesString : NoString);
@@ -204,7 +267,14 @@ QVariantMap StrongswanSetting::setting() const
 
 bool StrongswanSetting::isValid() const
 {
-    return !m_gateway.isEmpty();
+    if (m_gateway.isEmpty()) {
+        return false;
+    }
+    // charon-nm refuses pre-shared keys shorter than 20 characters
+    if (m_authMethod == Psk && (m_userPasswordOption == StoreForAllUsers || m_userPasswordOption == StoreForUser) && m_userPassword.length() < 20) {
+        return false;
+    }
+    return true;
 }
 
 QString StrongswanSetting::gateway() const
@@ -265,6 +335,11 @@ void StrongswanSetting::setAuthMethod(AuthMethod method)
     m_authMethod = method;
     Q_EMIT authMethodChanged();
     Q_EMIT validChanged();
+}
+
+QString StrongswanSetting::unknownMethod() const
+{
+    return m_unknownMethod;
 }
 
 QString StrongswanSetting::userCertificate() const

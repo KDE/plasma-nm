@@ -49,16 +49,21 @@ void StrongswanAuthWidget::readSecrets()
     const NMStringMap dataMap = d->setting->data();
 
     const QString method = dataMap[NM_STRONGSWAN_METHOD];
-    if (method == QLatin1String(NM_STRONGSWAN_AUTH_AGENT) || dataMap[NM_STRONGSWAN_SECRET_TYPE] == QLatin1String(NM_STRONGSWAN_PW_TYPE_UNUSED)) {
+    const QString certSource = dataMap[NM_STRONGSWAN_CERT_SOURCE];
+    const bool certMethod = method == QLatin1String(NM_STRONGSWAN_AUTH_CERT);
+    if (method == QLatin1String(NM_STRONGSWAN_AUTH_AGENT) || (certMethod && certSource == QLatin1String(NM_STRONGSWAN_AUTH_AGENT))
+        || dataMap[NM_STRONGSWAN_SECRET_TYPE] == QLatin1String(NM_STRONGSWAN_PW_TYPE_UNUSED)) {
         if (isVisible()) {
             acceptDialog();
         } else {
             d->acceptOnShow = true;
         }
-    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_KEY)) {
-        d->ui.passwordLabel->setText(i18nc("@label:textbox password label for private key password", "Private Key Password:"));
-    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD)) {
+    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD) || (certMethod && certSource == QLatin1String(NM_STRONGSWAN_AUTH_SMARTCARD))) {
         d->ui.passwordLabel->setText(i18nc("@label:textbox password label for smartcard pin", "PIN:"));
+    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_KEY) || certMethod) {
+        d->ui.passwordLabel->setText(i18nc("@label:textbox password label for private key password", "Private Key Password:"));
+    } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_PSK)) {
+        d->ui.passwordLabel->setText(i18nc("@label:textbox password label for the pre-shared key", "Pre-shared key:"));
     } else if (method == QLatin1String(NM_STRONGSWAN_AUTH_EAP)) {
         d->ui.passwordLabel->setText(i18nc("@label:textbox password label for EAP password", "Password:"));
     }
@@ -96,7 +101,11 @@ QVariantMap StrongswanAuthWidget::setting() const
     NMStringMap secrets;
     QVariantMap secretData;
 
-    if (d->setting->data()[NM_STRONGSWAN_METHOD] == QLatin1String(NM_STRONGSWAN_AUTH_AGENT)) {
+    const QString method = d->setting->data().value(QLatin1String(NM_STRONGSWAN_METHOD));
+    const bool usesAgent = method == QLatin1String(NM_STRONGSWAN_AUTH_AGENT)
+        || (method == QLatin1String(NM_STRONGSWAN_AUTH_CERT)
+            && d->setting->data().value(QLatin1String(NM_STRONGSWAN_CERT_SOURCE)) == QLatin1String(NM_STRONGSWAN_AUTH_AGENT));
+    if (usesAgent) {
         const QString agent = QProcessEnvironment::systemEnvironment().value(QLatin1String("SSH_AUTH_SOCK"));
         if (!agent.isEmpty()) {
             secrets.insert(NM_STRONGSWAN_AUTH_AGENT, agent);

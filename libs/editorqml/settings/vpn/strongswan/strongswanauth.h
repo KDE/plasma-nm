@@ -28,7 +28,8 @@ public:
     enum SecretKind {
         Password = 0,
         PrivateKeyPassword,
-        Pin
+        Pin,
+        Psk
     };
     Q_ENUM(SecretKind)
 

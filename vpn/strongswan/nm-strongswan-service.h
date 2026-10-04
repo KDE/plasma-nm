@@ -29,6 +29,8 @@
 #define NM_STRONGSWAN_IKE "ike"
 #define NM_STRONGSWAN_ESP "esp"
 #define NM_STRONGSWAN_RIDENTITY "remote-identity"
+#define NM_STRONGSWAN_LIDENTITY "local-identity"
+#define NM_STRONGSWAN_CERT_SOURCE "cert-source"
 #define NM_STRONGSWAN_POPTION "password-flags"
 
 #define NM_STRONGSWAN_AUTH_KEY "key"
@@ -36,6 +38,9 @@
 #define NM_STRONGSWAN_AUTH_SMARTCARD "smartcard"
 #define NM_STRONGSWAN_AUTH_EAP "eap"
 #define NM_STRONGSWAN_AUTH_EAP_TTLS "eap-ttls"
+#define NM_STRONGSWAN_AUTH_PSK "psk"
+#define NM_STRONGSWAN_AUTH_CERT "cert"
+#define NM_STRONGSWAN_CERT_SOURCE_FILE "file"
 
 #define NM_STRONGSWAN_PW_TYPE_SAVE "save"
 #define NM_STRONGSWAN_PW_TYPE_ASK "ask"

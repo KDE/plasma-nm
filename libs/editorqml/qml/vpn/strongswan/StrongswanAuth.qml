@@ -17,6 +17,7 @@ ColumnLayout {
     readonly property int secretPassword: 0
     readonly property int secretPrivateKeyPassword: 1
     readonly property int secretPin: 2
+    readonly property int secretPsk: 3
 
     spacing: Kirigami.Units.largeSpacing
 
@@ -33,6 +34,8 @@ ColumnLayout {
                 return i18nc("@label:textbox password label for private key password", "Private Key Password:");
             case root.secretPin:
                 return i18nc("@label:textbox password label for smartcard pin", "PIN:");
+            case root.secretPsk:
+                return i18nc("@label:textbox password label for the pre-shared key", "Pre-shared key:");
             default:
                 return i18nc("@label:textbox password label for EAP password", "Password:");
             }

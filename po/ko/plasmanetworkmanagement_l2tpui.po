@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:48+0000\n"
-"PO-Revision-Date: 2026-02-03 22:08+0100\n"
+"PO-Revision-Date: 2026-10-03 23:04+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 25.12.3\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -389,10 +389,7 @@ msgstr "IKEv2 키 교환 사용"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
-#| "only if the server doesn’t support PFS.</p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Do this only if the "
 "server doesn’t support PFS.</p></body></html>"

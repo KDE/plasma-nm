@@ -1,12 +1,13 @@
 # Translation of plasmanetworkmanagement_strongswanui.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015, 2017.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_strongswanui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2017-10-30 23:08+0100\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
 "MIME-Version: 1.0\n"
@@ -82,7 +83,7 @@ msgstr "Сертификат:"
 #: strongswanprop.ui:59
 #, kde-format
 msgid "Identity:"
-msgstr ""
+msgstr "Идентитет:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: strongswanprop.ui:82
@@ -118,7 +119,7 @@ msgstr "ЕАП"
 #: strongswanprop.ui:118
 #, kde-format
 msgid "EAP-TTLS"
-msgstr ""
+msgstr "ЕАП‑ТТЛС"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: strongswanprop.ui:155
@@ -154,7 +155,7 @@ msgstr "Корисничка лозинка:"
 #: strongswanprop.ui:283
 #, kde-format
 msgid "Uses the same Username/Password fields as EAP above."
-msgstr ""
+msgstr "Користи иста поља за корисничко име и лозинку као ЕАП изнад."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
 #: strongswanprop.ui:297
@@ -166,7 +167,7 @@ msgstr "Опције"
 #: strongswanprop.ui:306
 #, kde-format
 msgid "Request an inner IP address"
-msgstr "Захтевај унутрашњу ИП адресу"
+msgstr "Захтијевај унутрашњу ИП адресу"
 
 #. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
 #: strongswanprop.ui:319
@@ -184,28 +185,28 @@ msgstr "Користи ИП компресију"
 #: strongswanprop.ui:336
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
-msgstr ""
+msgstr "Укључи посебне приједлоге шифрара"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: strongswanprop.ui:350
 #, kde-format
 msgid "IKE:"
-msgstr ""
+msgstr "ИКЕ:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: strongswanprop.ui:357
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
-msgstr ""
+msgstr "Списак приједлога за ИКЕ, раздвојених са „;“"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: strongswanprop.ui:364
 #, kde-format
 msgid "ESP:"
-msgstr ""
+msgstr "ЕСП:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
 #: strongswanprop.ui:371
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr ""
+msgstr "Списак приједлога за ЕСП, раздвојених са „;“"

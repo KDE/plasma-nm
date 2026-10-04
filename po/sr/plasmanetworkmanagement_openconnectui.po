@@ -1,12 +1,13 @@
 # Translation of plasmanetworkmanagement_openconnectui.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015, 2017.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openconnectui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-19 00:46+0000\n"
-"PO-Revision-Date: 2017-06-04 23:06+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -21,21 +22,19 @@ msgstr ""
 #: openconnectauth.cpp:345
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr ""
+msgstr "Не могу да припремим софтверски токен: %1"
 
 #: openconnectauth.cpp:398
-#, fuzzy, kde-format
-#| msgid "Contacting host, please wait..."
+#, kde-format
 msgid "Contacting host, please wait…"
-msgstr "Обраћам се домаћину, сачекајте..."
+msgstr "Обраћам се домаћину, сачекајте…"
 
 # >> @action:button
 #: openconnectauth.cpp:786
-#, fuzzy, kde-format
-#| msgid "Login"
+#, kde-format
 msgctxt "Verb, to proceed with login"
 msgid "Login"
-msgstr "Пријава"
+msgstr "Пријави ме"
 
 #: openconnectauth.cpp:848
 #, kde-format
@@ -87,7 +86,7 @@ msgstr "Складишти лозинке"
 #: openconnectauth.ui:116
 #, kde-format
 msgid "Store browser cookies in plain-text"
-msgstr ""
+msgstr "Складишти колачиће прегледача као обичан текст"
 
 #. i18n: ectx: property (text), widget (QCheckBox, viewServerLog)
 #: openconnectauth.ui:160
@@ -161,7 +160,7 @@ msgstr "Прокси:"
 #: openconnectprop.ui:83
 #, kde-format
 msgid "User Agent:"
-msgstr ""
+msgstr "Кориснички агент:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openconnectprop.ui:96
@@ -191,8 +190,7 @@ msgstr "Сисков ениконект"
 # rewrite-msgid: /Pulse//
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:138
-#, fuzzy, kde-format
-#| msgid "Juniper/Pulse Network Connect"
+#, kde-format
 msgid "Juniper Network Connect"
 msgstr "Џуниперов нетворк конект"
 
@@ -200,79 +198,79 @@ msgstr "Џуниперов нетворк конект"
 #: openconnectprop.ui:143
 #, kde-format
 msgid "PAN Global Protect"
-msgstr ""
+msgstr "PAN Global Protect"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:148
 #, kde-format
 msgid "Pulse Connect Secure"
-msgstr ""
+msgstr "пулс конект сикјур"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:153
 #, kde-format
 msgid "F5 BIG-IP SSL VPN"
-msgstr ""
+msgstr "F5 BIG-IP ССЛ ВПН"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:158
 #, kde-format
 msgid "Fortinet SSL VPN"
-msgstr ""
+msgstr "Фортинетов ССЛ ВПН"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:163
 #, kde-format
 msgid "Array SSL VPN"
-msgstr ""
+msgstr "Array ССЛ ВПН"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnectprop.ui:171
 #, kde-format
 msgid "Reported OS:"
-msgstr ""
+msgstr "Пријављени оперативни систем:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:190
 #, kde-format
 msgid "GNU/Linux"
-msgstr ""
+msgstr "Гну‑Линукс"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:195
 #, kde-format
 msgid "GNU/Linux 64-bit"
-msgstr ""
+msgstr "Гну‑Линукс 64‑битни"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:200
 #, kde-format
 msgid "Windows"
-msgstr ""
+msgstr "Виндоуз"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:205
 #, kde-format
 msgid "Mac OS X"
-msgstr ""
+msgstr "МекОС X"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:210
 #, kde-format
 msgid "Android"
-msgstr ""
+msgstr "Андроид"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:215
 #, kde-format
 msgid "Apple iOS"
-msgstr ""
+msgstr "Apple iOS"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnectprop.ui:226
 #, kde-format
 msgid "Reported Version"
-msgstr ""
+msgstr "Пријављено издање"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: openconnectprop.ui:236
@@ -282,17 +280,15 @@ msgstr "Аутентификација сертификатом"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaCertLabel)
 #: openconnectprop.ui:242
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "Кориснички сертификат:"
+msgstr "Сертификат машине:"
 
 #. i18n: ectx: property (text), widget (QLabel, leMcaPrivateKeyLabel)
 #: openconnectprop.ui:261
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "Machine Private Key:"
-msgstr "Приватни кључ:"
+msgstr "Приватни кључ машине:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
@@ -302,10 +298,9 @@ msgstr "Кориснички сертификат:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: openconnectprop.ui:299
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "User Private Key:"
-msgstr "Приватни кључ:"
+msgstr "Кориснички приватни кључ:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318
@@ -317,161 +312,158 @@ msgstr "ФСИД као лозинка кључа"
 #: openconnectprop.ui:325
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
-msgstr ""
+msgstr "Спречи корисника да ручно прихвата неваљане сертификате"
 
 #. i18n: ectx: property (text), widget (QPushButton, buTokens)
 #: openconnectprop.ui:351
-#, fuzzy, kde-format
-#| msgid "Certificate Authentication"
+#, kde-format
 msgid "Token Authentication"
-msgstr "Аутентификација сертификатом"
+msgstr "Аутентификација токеном"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenConnectToken)
 #: openconnecttoken.ui:14
-#, fuzzy, kde-format
-#| msgid "OpenConnect Settings"
+#, kde-format
 msgid "OpenConnect OTP Tokens"
-msgstr "Поставке Опенконекта"
+msgstr "Токени једнократних лозинки за Опенконект"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbToken)
 #: openconnecttoken.ui:20
-#, fuzzy, kde-format
-#| msgid "Certificate Authentication"
+#, kde-format
 msgid "Software Token Authentication"
-msgstr "Аутентификација сертификатом"
+msgstr "Аутентификација софтверским токеном"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnecttoken.ui:26
 #, kde-format
 msgid "Token Mode:"
-msgstr ""
+msgstr "Режим токена:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnecttoken.ui:43
 #, kde-format
 msgid "Token Secret:"
-msgstr ""
+msgstr "Тајна токена:"
 
 #: openconnectwebauthdialog.cpp:111
 #, kde-format
 msgid "Choose a Passkey"
-msgstr ""
+msgstr "Изаберите приступни кључ"
 
 #: openconnectwebauthdialog.cpp:112
 #, kde-format
 msgid "Which passkey do you want to use for %1?"
-msgstr ""
+msgstr "Који приступни кључ желите да користите за %1?"
 
 #: openconnectwebauthdialog.cpp:129
 #, kde-format
 msgid "Ok"
-msgstr ""
+msgstr "У реду"
 
 #: openconnectwebauthdialog.cpp:140
 #, kde-format
 msgid "Use your security key with %1"
-msgstr ""
+msgstr "Употребите свој безбедносни кључ за %1"
 
 #: openconnectwebauthdialog.cpp:141
 #, kde-format
 msgid "Touch your security key again to complete the request."
-msgstr ""
+msgstr "Поново додирните безбедносни кључ да довршите захтев."
 
 #: openconnectwebauthdialog.cpp:158
 #, kde-format
 msgid "Next"
-msgstr ""
+msgstr "Следеће"
 
 #: openconnectwebauthdialog.cpp:167
 #, kde-format
 msgid "PIN Required"
-msgstr ""
+msgstr "Потребан ПИН"
 
 #: openconnectwebauthdialog.cpp:168
 #, kde-format
 msgid "Enter the PIN for your security key"
-msgstr ""
+msgstr "Унесите ПИН свог безбедносног кључа"
 
 #: openconnectwebauthdialog.cpp:173
 #, kde-format
 msgid "New PIN Required"
-msgstr ""
+msgstr "Потребан нови ПИН"
 
 #: openconnectwebauthdialog.cpp:174
 #, kde-format
 msgid "Set new PIN for your security key"
-msgstr ""
+msgstr "Поставите нови ПИН свог безбедносног кључа"
 
 #: openconnectwebauthdialog.cpp:176
 #, kde-format
 msgid "Change PIN Required"
-msgstr ""
+msgstr "Потребна измена ПИН‑а"
 
 #: openconnectwebauthdialog.cpp:177
 #, kde-format
 msgid "Change PIN for your security key"
-msgstr ""
+msgstr "Измените ПИН свог безбедносног кључа"
 
 #: openconnectwebauthdialog.cpp:188
 #, kde-format
 msgid "Internal User Verification Locked"
-msgstr ""
+msgstr "Унутрашња провера корисника је закључана"
 
 #: openconnectwebauthdialog.cpp:191
 #, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Погрешан ПИН. Преостаје %1 покушај."
+msgstr[1] "Погрешан ПИН. Преостају %1 покушаја."
+msgstr[2] "Погрешан ПИН. Преостаје %1 покушаја."
+msgstr[3] "Погрешан ПИН. Преостаје још један покушај."
 
 #: openconnectwebauthdialog.cpp:194
 #, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Прекратак ПИН. Преостаје %1 покушај."
+msgstr[1] "Прекратак ПИН. Преостају %1 покушаја."
+msgstr[2] "Прекратак ПИН. Преостаје %1 покушаја."
+msgstr[3] "Прекратак ПИН. Преостаје још један покушај."
 
 #: openconnectwebauthdialog.cpp:197
 #, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Недозвољени знакови. Преостаје %1 покушај."
+msgstr[1] "Недозвољени знакови. Преостају %1 покушаја."
+msgstr[2] "Недозвољени знакови. Преостаје %1 покушаја."
+msgstr[3] "Недозвољени знакови. Преостаје још један покушај."
 
 #: openconnectwebauthdialog.cpp:201
 #, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Исти као тренутни ПИН. Преостаје %1 покушај."
+msgstr[1] "Исти као тренутни ПИН. Преостају %1 покушаја."
+msgstr[2] "Исти као тренутни ПИН. Преостаје %1 покушаја."
+msgstr[3] "Исти као тренутни ПИН. Преостаје још један покушај."
 
 #: openconnectwebauthdialog.cpp:239
 #, kde-format
 msgid "Something went wrong"
-msgstr ""
+msgstr "Дошло је до грешке"
 
 #: openconnectwebauthdialog.cpp:243
 #, kde-format
 msgid "Request Timeout"
-msgstr ""
+msgstr "Прековреме захтева"
 
 #: openconnectwebauthdialog.cpp:246
 #, kde-format
 msgid "Key not registered"
-msgstr ""
+msgstr "Кључ није регистрован"
 
 #: openconnectwebauthdialog.cpp:250
 #, kde-format
 msgid "You already registered this device.Try again with device"
-msgstr ""
+msgstr "Овај уређај сте већ регистровали. Покушајте поново са другим уређајем"
 
 #: openconnectwebauthdialog.cpp:256
 #, kde-format
@@ -479,6 +471,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times."
 "To unlock it, remove and reinsert it."
 msgstr ""
+"Безбедносни кључ је закључан јер је превише пута унет погрешан ПИН. Да бисте "
+"га откључали, извадите га и поново уметните."
 
 #: openconnectwebauthdialog.cpp:262
 #, kde-format
@@ -486,27 +480,30 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "You'll need to reset the security key."
 msgstr ""
+"Безбедносни кључ је закључан јер је превише пута унет погрешан ПИН. Мораћете "
+"да ресетујете безбедносни кључ."
 
 #: openconnectwebauthdialog.cpp:266
 #, kde-format
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
 msgstr ""
+"Аутентификатор је уклоњен током провере. Уметните га опет и покушајте поново"
 
 #: openconnectwebauthdialog.cpp:269
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
+msgstr "Аутентификатор нема подршку за резидентне кључеве"
 
 #: openconnectwebauthdialog.cpp:272
 #, kde-format
 msgid "Authenticator missing user verification"
-msgstr ""
+msgstr "Аутентификатор нема проверу корисника"
 
 #: openconnectwebauthdialog.cpp:275
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr ""
+msgstr "Аутентификатор нема подршку за велике блобове"
 
 #: openconnectwebauthdialog.cpp:278
 #, kde-format
@@ -514,62 +511,60 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"Безбедносни токен не подржава метод аутентификације који сервер захтева."
 
 #: openconnectwebauthdialog.cpp:281
 #, kde-format
 msgid "Storage Full"
-msgstr ""
+msgstr "Складиште је пуно"
 
 #: openconnectwebauthdialog.cpp:284
 #, kde-format
 msgid "User consent denied"
-msgstr ""
+msgstr "Корисник није дао сагласност"
 
 #: openconnectwebauthdialog.cpp:287
 #, kde-format
 msgid "User Cancelled Request"
-msgstr ""
+msgstr "Корисник је отказао захтев"
 
 #: openconnectwebauthdialog.cpp:300
 #, kde-format
 msgid "Close"
-msgstr ""
+msgstr "Затвори"
 
 #. i18n: ectx: property (windowTitle), widget (QDialog, Dialog)
 #: openconnectwebauthdialog.ui:20
 #, kde-format
 msgid "WebAuth"
-msgstr ""
+msgstr "Веб аутентификација"
 
 #. i18n: ectx: property (text), widget (QLabel, headingLabel)
 #: openconnectwebauthdialog.ui:32
 #, kde-format
 msgid "Heading"
-msgstr ""
+msgstr "Наслов"
 
 #. i18n: ectx: property (text), widget (QLabel, description)
 #: openconnectwebauthdialog.ui:48
 #, kde-format
 msgid "Description"
-msgstr ""
+msgstr "Опис"
 
 #. i18n: ectx: property (text), widget (QLabel, pinLabel)
 #: openconnectwebauthdialog.ui:84
 #, kde-format
 msgid "PIN"
-msgstr ""
+msgstr "ПИН"
 
 #. i18n: ectx: property (text), widget (QLabel, confirmPinLabel)
 #: openconnectwebauthdialog.ui:107
 #, kde-format
 msgid "Confirm PIN"
-msgstr ""
+msgstr "Потврди ПИН"
 
 #. i18n: ectx: property (text), widget (QLabel, pinEntryErrorLabel)
 #: openconnectwebauthdialog.ui:130
 #, kde-format
 msgid "TextLabel"
-msgstr ""
-
-#~ msgid "*.pem *.crt *.key"
-#~ msgstr "*.pem *.crt *.key"
+msgstr "Текстуална етикета"

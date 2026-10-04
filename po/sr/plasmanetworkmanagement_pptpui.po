@@ -1,12 +1,13 @@
 # Translation of plasmanetworkmanagement_pptpui.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_pptpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2015-10-14 18:13+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -279,9 +280,7 @@ msgstr "Додај ово име домена локалном имену дом
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: pptpprop.ui:192
-#, fuzzy, kde-format
-#| msgctxt "like in Advanced settings"
-#| msgid "Advanced..."
+#, kde-format
 msgctxt "like in Advanced settings"
 msgid "Advanced…"
-msgstr "Напредно..."
+msgstr "Напредно…"

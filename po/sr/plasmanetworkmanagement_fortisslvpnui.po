@@ -1,12 +1,13 @@
 # Translation of plasmanetworkmanagement_fortisslvpnui.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2017.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_fortisslvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2017-06-25 23:15+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -97,19 +98,19 @@ msgstr "Кориснички кључ:"
 #: fortisslvpnadvanced.ui:43
 #, kde-format
 msgid "Use a One-Time Password"
-msgstr ""
+msgstr "Користи једнократну лозинку"
 
 #. i18n: ectx: property (text), widget (QCheckBox, tfa)
 #: fortisslvpnadvanced.ui:50
 #, kde-format
 msgid "2FA"
-msgstr ""
+msgstr "Двофакторска аутентификација"
 
 #. i18n: ectx: property (text), widget (QLabel, realmLabel)
 #: fortisslvpnadvanced.ui:68
 #, kde-format
 msgid "Realm:"
-msgstr ""
+msgstr "Царство:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: fortisslvpnadvanced.ui:87
@@ -131,13 +132,12 @@ msgstr "0123456789abcdef0123456789abcdef0123456789abcdef0123456789"
 
 #. i18n: ectx: property (text), widget (QLabel, labelOtp)
 #: fortisslvpnauth.ui:61
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "One Time Password"
-msgstr "Лозинка:"
+msgstr "Једнократна лозинка"
 
 #. i18n: ectx: property (text), widget (QLabel, otpLabel)
 #: fortisslvpnauth.ui:68
 #, kde-format
 msgid "Token:"
-msgstr ""
+msgstr "Токен:"

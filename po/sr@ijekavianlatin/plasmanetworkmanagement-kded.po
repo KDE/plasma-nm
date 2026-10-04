@@ -1,12 +1,13 @@
 # Translation of plasmanetworkmanagement-kded.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015, 2016, 2017.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-11 00:47+0000\n"
-"PO-Revision-Date: 2017-05-07 21:01+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavianlatin\n"
 "MIME-Version: 1.0\n"
@@ -29,8 +30,7 @@ msgid "Network authentication"
 msgstr "Mrežna autentifikacija"
 
 #: connectivitymonitor.cpp:70
-#, fuzzy, kde-format
-#| msgid "You need to log in to this network"
+#, kde-format
 msgid "You need to log into this network"
 msgstr "Morate da se prijavite na ovu mrežu"
 
@@ -42,7 +42,7 @@ msgstr "Prijavi me"
 #: connectivitymonitor.cpp:97
 #, kde-format
 msgid "Limited Connectivity"
-msgstr ""
+msgstr "Ograničena povezivost"
 
 #: connectivitymonitor.cpp:98
 #, kde-format
@@ -50,6 +50,8 @@ msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."
 msgstr ""
+"Izgleda da je ovaj uređaj povezan na mrežu, ali ne može da pristupi "
+"Internetu."
 
 #: modemmonitor.cpp:182
 #, kde-format
@@ -123,7 +125,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantTimeoutReason"
 msgid "Authorization supplicant timed out"
-msgstr "Prekovreme kod pružaoca ovlašćivanja."
+msgstr "Prekovrijeme kod pružaoca ovlašćivanja."
 
 #: notification.cpp:123
 #, kde-format
@@ -173,14 +175,14 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "SharedStartFailedReason"
 msgid "The shared service failed to start"
-msgstr "Propalo pokretanje deljenog servisa."
+msgstr "Propalo pokretanje dijeljenog servisa."
 
 #: notification.cpp:144
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SharedFailedReason"
 msgid "The shared service failed"
-msgstr "Deljeni servis propao."
+msgstr "Dijeljeni servis propao."
 
 #: notification.cpp:147
 #, kde-format
@@ -232,7 +234,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ModemDialTimeoutReason"
 msgid "The modem dial timed out"
-msgstr "Prekovreme u modemskom biranju."
+msgstr "Prekovrijeme u modemskom biranju."
 
 #: notification.cpp:168
 #, kde-format
@@ -278,7 +280,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmRegistrationTimeoutReason"
 msgid "GSM network registration timed out"
-msgstr "Prekovreme u registraciji na GSM mrežu."
+msgstr "Prekovrijeme u registraciji na GSM mrežu."
 
 #: notification.cpp:186
 #, kde-format
@@ -294,7 +296,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmPinCheckFailedReason"
 msgid "The GSM PIN check failed"
-msgstr "Provera GSM PIN‑a propala."
+msgstr "Provjera GSM PIN‑a propala."
 
 #: notification.cpp:192
 #, kde-format
@@ -344,7 +346,7 @@ msgstr "Modem ne može da se nađe."
 msgctxt ""
 "@info:status Notification when the device failed due to BluetoothFailedReason"
 msgid "The bluetooth connection failed or timed out"
-msgstr "Prekovreme ili neuspeh bluetooth veze."
+msgstr "Prekovrijeme ili neuspjeh bluetooth veze."
 
 #: notification.cpp:218
 #, kde-format
@@ -452,14 +454,14 @@ msgstr "Aktiviranje nove veze stavljeno u red."
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ParentChanged"
 msgid "The device's parent changed"
-msgstr "Roditelj uređaja promenjen."
+msgstr "Roditelj uređaja promijenjen."
 
 #: notification.cpp:269
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ParentManagedChanged"
 msgid "The device parent's management changed"
-msgstr "Upravljanje roditeljem uređaja promenjeno."
+msgstr "Upravljanje roditeljem uređaja promijenjeno."
 
 #: notification.cpp:349
 #, kde-format
@@ -477,66 +479,54 @@ msgid "VPN connection '%1' activated."
 msgstr "VPN veza „%1“ aktivirana."
 
 #: notification.cpp:439
-#, fuzzy, kde-format
-#| msgid "VPN connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "VPN veza „%1“ aktivirana."
+msgstr "Propalo aktiviranje VPN veze „%1“."
 
 #: notification.cpp:442 notification.cpp:452
-#, fuzzy, kde-format
-#| msgid "VPN connection '%1' activated."
+#, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "VPN veza „%1“ aktivirana."
+msgstr "VPN veza „%1“ deaktivirana."
 
 #: notification.cpp:455
-#, fuzzy, kde-format
-#| msgid ""
-#| "The VPN connection changed state because the device it was using was "
-#| "disconnected."
+#, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
-msgstr "Stanje VPN veze promenjeno jer je uređaj koji je koristila nestao."
+msgstr "VPN veza „%1“ je deaktivirana jer je uređaj koji je koristila nestao."
 
 #: notification.cpp:458
-#, fuzzy, kde-format
-#| msgid "The service providing the VPN connection was stopped."
+#, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "Zaustavljen je servis koji pruža VPN vezu."
+msgstr "Zaustavljen je servis koji pruža VPN vezu „%1“."
 
 #: notification.cpp:461
-#, fuzzy, kde-format
-#| msgid "The IP config of the VPN connection was invalid."
+#, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "IP postava VPN veze nije dobra."
+msgstr "IP postava VPN veze „%1“ nije ispravna."
 
 # rewrite-msgid: /timed out/timeout/
 #: notification.cpp:464
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
-msgstr "Prekovreme u pokušaju povezivanja sa VPN servisom."
+msgstr "Prekovrijeme u pokušaju povezivanja sa VPN servisom."
 
 #: notification.cpp:467
-#, fuzzy, kde-format
-#| msgid ""
-#| "A timeout occurred while starting the service providing the VPN "
-#| "connection."
+#, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
-msgstr "Prekovreme u pokretanju servisa koji pruža VPN vezu."
+msgstr "Prekovrijeme u pokretanju servisa koji pruža VPN vezu „%1“."
 
 #: notification.cpp:470
-#, fuzzy, kde-format
-#| msgid "Starting the service providing the VPN connection failed."
+#, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "Propalo pokretanje servisa koji pruža VPN vezu."
+msgstr "Propalo pokretanje servisa koji pruža VPN vezu „%1“."
 
 #: notification.cpp:473
-#, fuzzy, kde-format
-#| msgid "Necessary secrets for the VPN connection were not provided."
+#, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
-msgstr "Neophodne tajne za VPN vezu nisu zadate."
+msgstr "Neophodne tajne za VPN vezu „%1“ nisu zadate."
 
 #: notification.cpp:476
 #, kde-format
@@ -544,13 +534,9 @@ msgid "Authentication to the VPN server failed."
 msgstr "Autentifikacija na VPN serveru propala."
 
 #: notification.cpp:479
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "The connection was deleted."
-msgstr "Veza je uklonjena."
+msgstr "Veza je obrisana."
 
 #: notification.cpp:578
 #, kde-format
@@ -568,56 +554,47 @@ msgid "Authenticate %1"
 msgstr "Autentifikuj %1"
 
 #: passworddialog.cpp:90
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to NoSecretsReason"
-#| msgid "No secrets were provided"
+#, kde-format
 msgctxt "@info:status 'secrets' means the authentication needed for a VPN"
 msgid "No secrets were requested"
-msgstr "Nije zadata nijedna tajna."
+msgstr "Nije zatražena nijedna tajna"
 
 #: passworddialog.cpp:99
-#, fuzzy, kde-format
-#| msgid "Please provide the password for activating connection <b>%1</b>:"
+#, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr "Unesite lozinku za aktiviranje veze <b>%1</b>:"
+msgstr "Pogrešna lozinka za Wi‑Fi mrežu „%1“. Pokušajte ponovo."
 
 #: passworddialog.cpp:101
-#, fuzzy, kde-format
-#| msgid "Please provide the password for activating connection <b>%1</b>:"
+#, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "Unesite lozinku za aktiviranje veze <b>%1</b>:"
+msgstr "Unesite lozinku za Wi‑Fi mrežu „%1“:"
 
 #: passworddialog.cpp:105
-#, fuzzy, kde-format
-#| msgid "Please provide the password for activating connection <b>%1</b>:"
+#, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Unesite lozinku za aktiviranje veze <b>%1</b>:"
+msgstr "Pogrešna lozinka za vezu „%1“. Pokušajte ponovo."
 
 #: passworddialog.cpp:107
-#, fuzzy, kde-format
-#| msgid "Please provide the password for activating connection <b>%1</b>:"
+#, kde-format
 msgid "Enter the password for the connection \"%1\":"
-msgstr "Unesite lozinku za aktiviranje veze <b>%1</b>:"
+msgstr "Unesite lozinku za vezu „%1“:"
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr "Lozinka:"
+msgstr "%1 — lozinka"
 
 #: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "Nedostaju VPN postavke"
 
 #: passworddialog.cpp:135
-#, fuzzy, kde-format
-#| msgid "Please provide the password for activating connection <b>%1</b>:"
+#, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "Unesite lozinku za aktiviranje veze <b>%1</b>:"
+msgstr "Unesite tajne za VPN vezu „%1“:"
 
 #: passworddialog.cpp:136
 #, kde-format
@@ -626,13 +603,9 @@ msgstr "Dijalog za VPN tajne (%1)"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PasswordDialog)
 #: passworddialog.ui:26
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "Connection Password"
-msgstr "Veza je uklonjena."
+msgstr "Lozinka veze"
 
 #. i18n: ectx: property (text), widget (QLabel, labelPass)
 #: passworddialog.ui:92
@@ -698,7 +671,8 @@ msgstr "Neophodno otključavanje: %1"
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
-msgstr "Mobilni širokopojasni uređaj „%1“ zahteva %2 da bi se mogao koristiti."
+msgstr ""
+"Mobilni širokopojasni uređaj „%1“ zahtijeva %2 da bi se mogao koristiti."
 
 # rewrite-msgid: /code//
 #: pindialog.cpp:86 pindialog.cpp:118
@@ -827,63 +801,6 @@ msgid "Re-enter PIN code:"
 msgstr "Ponovite PIN kod:"
 
 #: secretagent.cpp:426
-#, fuzzy, kde-format
-#| msgid "Authentication to the VPN server failed."
+#, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
-msgstr "Autentifikacija na VPN serveru propala."
-
-# >> @title:window
-#~ msgid "%1 password dialog"
-#~ msgstr "%1 — dijalog za lozinku"
-
-#~ msgid "Password dialog"
-#~ msgstr "Dijalog za lozinku"
-
-#, fuzzy
-#~| msgid "Please provide the password for activating connection <b>%1</b>:"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "wireless network '%1':"
-#~ msgstr "Unesite lozinku za aktiviranje veze <b>%1</b>:"
-
-#, fuzzy
-#~| msgid "Please provide the password for activating connection <b>%1</b>:"
-#~ msgid ""
-#~ "The provided password seems incorrect. Provide the password for the "
-#~ "connection '%1':"
-#~ msgstr "Unesite lozinku za aktiviranje veze <b>%1</b>:"
-
-#~ msgctxt ""
-#~ "@info:status Notification when the device failed due to SsidNotFound"
-#~ msgid "The WiFi network could not be found"
-#~ msgstr "Wi‑Fi mreža ne može da se nađe."
-
-#~ msgid "VPN connection '%1' failed."
-#~ msgstr "VPN veza „%1“ propala."
-
-#~ msgid "VPN connection '%1' disconnected."
-#~ msgstr "VPN veza „%1“ prekinuta."
-
-#~ msgid "The VPN connection changed state because the user disconnected it."
-#~ msgstr "Stanje VPN veze promenjeno jer ju je korisnik prekinuo."
-
-#~ msgid "The connection was deleted from settings."
-#~ msgstr "Veza je obrisana iz postavki."
-
-#, fuzzy
-#~| msgid ""
-#~| "For accessing the wireless network <b>%1</b> you need to provide a "
-#~| "password below:"
-#~ msgid ""
-#~ "For accessing the wireless network %1 you need to provide a password "
-#~ "below:"
-#~ msgstr ""
-#~ "Za pristupanje bežičnoj mreži <b>%1</b> treba ispod da unesete lozinku:"
-
-#, fuzzy
-#~| msgid ""
-#~| "For accessing the vpn connection <b>%1</b> you need to provide secrets "
-#~| "below:"
-#~ msgid ""
-#~ "For accessing the vpn connection %1 you need to provide secrets below:"
-#~ msgstr "Za pristupanje VPN vezi <b>%1</b> treba ispod da unesete tajne:"
+msgstr "Autentifikacija za %1 propala. Pogrešna lozinka?"

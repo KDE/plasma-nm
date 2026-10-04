@@ -1,12 +1,13 @@
 # Translation of plasmanetworkmanagement_sstpui.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015, 2017.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_sstpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2017-05-07 21:01+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -220,10 +221,9 @@ msgstr "Мрежни излаз:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btn_advancedOption)
 #: sstpwidget.ui:58
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
-msgstr "Напредно..."
+msgstr "Напредно…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: sstpwidget.ui:80

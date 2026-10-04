@@ -1,12 +1,13 @@
 # Translation of plasmanetworkmanagement_vpncui.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015, 2016.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-01 00:45+0000\n"
-"PO-Revision-Date: 2016-11-28 01:33+0100\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavianlatin\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +22,7 @@ msgstr ""
 #: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
-msgstr ""
+msgstr "Menadžer mreže nema podršku za VPN saglasan sa Ciscom"
 
 #: vpnc.cpp:98
 #, kde-format
@@ -120,10 +121,9 @@ msgstr "CA sertifikat u formatu PEM."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:194
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
-msgstr "Napredno..."
+msgstr "Napredno…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpncadvanced.ui:18
@@ -159,7 +159,7 @@ msgstr "Proizvođač vašeg IPsec mrežnog izlaza."
 #: vpncadvanced.ui:70
 #, kde-format
 msgid "Transport and Security"
-msgstr "Transport i bezbednost"
+msgstr "Transport i bezbjednost"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpncadvanced.ui:82
@@ -202,7 +202,7 @@ msgstr "Ime IKE DH grupe."
 #: vpncadvanced.ui:151
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr "&PFS:"
+msgstr "PFS:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
 #: vpncadvanced.ui:167
@@ -223,8 +223,8 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
-"Željeni lokalni port (0–65535). 0 (podrazumevano) znači nasumičan port. 500 "
-"je podrazumevano za VPNC."
+"Željeni lokalni port (0–65535). 0 (podrazumijevano) znači nasumičan port. "
+"500 je podrazumijevano za VPNC."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193
@@ -236,7 +236,7 @@ msgstr "nasumično"
 #: vpncadvanced.ui:209
 #, kde-format
 msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr "Bez slanja DPD paketa (postavlja prekovreme na 0)."
+msgstr "Bez slanja DPD paketa (postavlja prekovrijeme na 0)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
 #: vpncadvanced.ui:212
@@ -267,14 +267,14 @@ msgstr "NetScreen"
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Fortigate"
-msgstr ""
+msgstr "Fortigate"
 
 # >> @item
 #: vpncadvancedwidget.cpp:28
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
-msgstr "bezbedno (podrazumevano)"
+msgstr "bezbjedno (podrazumijevano)"
 
 # >> @item
 #: vpncadvancedwidget.cpp:29
@@ -288,21 +288,21 @@ msgstr "slabo (DES šifrovanje, koristiti obazrivo)"
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
-msgstr "nikakvo (potpuno nebezbedno)"
+msgstr "nikakvo (potpuno nebezbjedno)"
 
 # >> @item
 #: vpncadvancedwidget.cpp:33
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr "NAT-prolaz kada je dostupno (podrazumevano)"
+msgstr "NAT-prolaz kada je dostupno (podrazumijevano)"
 
 # >> @item
 #: vpncadvancedwidget.cpp:34
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
-msgstr "uvek NAT-prolaz"
+msgstr "uvijek NAT-prolaz"
 
 # >> @item
 #: vpncadvancedwidget.cpp:35
@@ -330,7 +330,7 @@ msgstr "DH grupa 1"
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 2 (default)"
-msgstr "DH grupa 2 (podrazumevano)"
+msgstr "DH grupa 2 (podrazumijevano)"
 
 # >> @item
 #: vpncadvancedwidget.cpp:41
@@ -344,7 +344,7 @@ msgstr "DH grupa 5"
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
-msgstr "server (podrazumevano)"
+msgstr "server (podrazumijevano)"
 
 # >> @item
 #: vpncadvancedwidget.cpp:45
@@ -403,38 +403,3 @@ msgstr "Korisničko ime:"
 #, kde-format
 msgid "Group name."
 msgstr "Ime grupe."
-
-#~ msgid "Error decrypting the obfuscated password"
-#~ msgstr "Greška pri dešifrovanju zamagljene lozinke"
-
-#~ msgid "Error"
-#~ msgstr "Greška"
-
-#~ msgid "*.pem *.crt *.cer"
-#~ msgstr "*.pem *.crt *.cer"
-
-#~ msgid "File %1 could not be opened."
-#~ msgstr "Fajl %1 ne može da se otvori."
-
-#~ msgid "Needed executable cisco-decrypt could not be found."
-#~ msgstr "Neophodna naredba cisco-decrypt ne može da se nađe."
-
-# rewrite-msgid: /vpnc software/VPNC/
-#~ msgid ""
-#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-#~ "through TCP which is currently not supported in the vpnc software.\n"
-#~ "\n"
-#~ "The connection can still be created, with TCP tunneling disabled, however "
-#~ "it may not work as expected."
-#~ msgstr ""
-#~ "Fajl VPN postavki „%1“ zadaje tunelovanje VPN saobraćaja kroz TCP, što "
-#~ "VPNC trenutno ne podržava.\n"
-#~ "\n"
-#~ "Veza će svejedno biti uspostavljena, bez TCP tunelovanja, ali možda neće "
-#~ "raditi prema očekivanju."
-
-#~ msgid "Not supported"
-#~ msgstr "Nije podržano"
-
-#~ msgid "%1: file format error."
-#~ msgstr "%1: greška fajl formata."

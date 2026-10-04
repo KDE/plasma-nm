@@ -1,12 +1,13 @@
 # Translation of plasmanetworkmanagement_l2tpui.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015, 2016, 2017.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_l2tpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-01-29 00:46+0000\n"
-"PO-Revision-Date: 2017-10-30 23:08+0100\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@latin\n"
 "MIME-Version: 1.0\n"
@@ -32,51 +33,44 @@ msgstr "IP ili adresa L2TP servera."
 
 #. i18n: ectx: property (text), widget (QLabel, labelAuthType)
 #: l2tp.ui:45
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Authentication type:"
-msgstr "Autentifikacija"
+msgstr "Tip autentifikacije:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbAuthType)
 #: l2tp.ui:67 l2tpipsec.ui:68
-#, fuzzy, kde-format
-#| msgid "Allow following authentication methods:"
+#, kde-format
 msgid "Select an authentication mode."
-msgstr "Dozvoli sledeće metode autentifikacije:"
+msgstr "Izaberite režim autentifikacije."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: l2tp.ui:71
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password"
-msgstr "Lozinka:"
+msgstr "lozinka"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: l2tp.ui:76 l2tpipsec.ui:77
-#, fuzzy, kde-format
-#| msgid "Certificate:"
+#, kde-format
 msgid "Certificates (TLS)"
-msgstr "Sertifikat:"
+msgstr "sertifikati (TLS)"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_1)
 #: l2tp.ui:90
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgctxt "like in Username for athentication"
 msgid "Username:"
 msgstr "Korisničko ime:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, username)
 #: l2tp.ui:103
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set the name used for authenticating the local system to the peer to "
-#| "<name>."
+#, kde-format
 msgid ""
 "<html><head/><body><p>Set the name used for authenticating the local system "
 "to the peer to &lt;name&gt;.</p></body></html>"
 msgstr ""
-"Postavlja ime koje služi za autentifikaciju lokalnog sistema kod parnjaka."
+"<html><head/><body><p>Postavlja ime koje služi za autentifikaciju lokalnog "
+"sistema kod parnjaka.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_2)
 #: l2tp.ui:113
@@ -86,12 +80,13 @@ msgstr "Lozinka:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, password)
 #: l2tp.ui:128
-#, fuzzy, kde-format
-#| msgid "Password passed to PPPD when prompted for it."
+#, kde-format
 msgid ""
 "<html><head/><body><p>Password passed to PPPD when prompted for it.</p></"
 "body></html>"
-msgstr "Lozinka za prosleđivanje pppd‑u kada je zatraži."
+msgstr ""
+"<html><head/><body><p>Lozinka za prosleđivanje pppd‑u kada je zatraži.</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_3)
 #: l2tp.ui:140
@@ -101,14 +96,13 @@ msgstr "NT domen:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
 #: l2tp.ui:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "Append the domain name <domain> to the local host name for\n"
-#| "authentication purposes."
+#, kde-format
 msgid ""
 "<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
 "host name for</p><p>authentication purposes.</p></body></html>"
-msgstr "Dodaj ovo ime domena lokalnom imenu domaćina u svrhe autentifikacije."
+msgstr ""
+"<html><head/><body><p>Dodaj ovo ime domena lokalnom imenu domaćina</p><p>u "
+"svrhe autentifikacije.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -125,13 +119,14 @@ msgid ""
 "<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
 "cer or .p12 formats.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Fajl autoriteta za sertifikate (CA) u formatu .pem, ."
+"der, .crt, .cer ili .p12.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: l2tp.ui:186
-#, fuzzy, kde-format
-#| msgid "Use Certificate"
+#, kde-format
 msgid "User Certificate:"
-msgstr "Koristi sertifikat"
+msgstr "Korisnički sertifikat:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCert)
 #: l2tp.ui:199
@@ -140,6 +135,8 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Sertifikat u formatu .pem, .der, .crt, .cer ili .p12.</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
@@ -156,14 +153,15 @@ msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Privatni ključ u formatu .pem, .der, .key, .pk8 ili ."
+"p12.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: l2tp.ui:236 l2tpipsec.ui:181
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "Private Key Password:"
-msgstr "Privatni ključ:"
+msgstr "Lozinka privatnog ključa:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, machineKeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userKeyPassword)
@@ -173,6 +171,8 @@ msgid ""
 "<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>Lozinka za privatni ključ ili sertifikat PKCS #12.</"
+"p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:267
@@ -183,26 +183,28 @@ msgid ""
 "\n"
 "May be required to allow multiple L2TP clients behind the same NAT."
 msgstr ""
+"UDP port 1701 se ne koristi kao izvorni L2TP port čak i ako je slobodan.\n"
+"Umesto njega koristiće se privremeni (nasumični) visoki broj porta.\n"
+"\n"
+"Može biti neophodno da bi više L2TP klijenata radilo iza istog NAT."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:270
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "Koristi privremeni izvorni L2TP port"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:308
-#, fuzzy, kde-format
-#| msgid "IPsec Settings..."
+#, kde-format
 msgid "IPsec Settings…"
-msgstr "IPsec postavke..."
+msgstr "IPsec postavke…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPPPSettings)
 #: l2tp.ui:315
-#, fuzzy, kde-format
-#| msgid "PPP Settings..."
+#, kde-format
 msgid "PPP Settings…"
-msgstr "PPP postavke..."
+msgstr "PPP postavke…"
 
 #: l2tpauth.cpp:64
 #, kde-format
@@ -210,15 +212,14 @@ msgid "User Password:"
 msgstr "Korisnička lozinka:"
 
 #: l2tpauth.cpp:72
-#, fuzzy, kde-format
-#| msgid "Use Certificate"
+#, kde-format
 msgid "User Certificate Password:"
-msgstr "Koristi sertifikat"
+msgstr "Lozinka korisničkog sertifikata:"
 
 #: l2tpauth.cpp:83
 #, kde-format
 msgid "Machine Certificate Password:"
-msgstr ""
+msgstr "Lozinka sertifikata mašine:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: l2tpauth.cpp:93 l2tpipsec.ui:91
@@ -234,36 +235,34 @@ msgstr "IPsec tunel ka L2TP domaćinu"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAuthentication)
 #: l2tpipsec.ui:38
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Machine Authentication"
-msgstr "Autentifikacija"
+msgstr "Autentifikacija mašine"
 
 #. i18n: ectx: property (text), widget (QLabel, labelAuthType)
 #: l2tpipsec.ui:46
 #, kde-format
 msgid "Type:"
-msgstr ""
+msgstr "Tip:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: l2tpipsec.ui:72
-#, fuzzy, kde-format
-#| msgid "Pre-shared Key:"
+#, kde-format
 msgid "Pre-shared Key (PSK)"
-msgstr "Pretpodeljeni ključ:"
+msgstr "pretpodeljeni ključ (PSK)"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
 #: l2tpipsec.ui:103
 #, kde-format
 msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Tajna pretpodeljenog ključa (PSK).</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: l2tpipsec.ui:131
-#, fuzzy, kde-format
-#| msgid "Certificate:"
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "Sertifikat:"
+msgstr "Sertifikat mašine:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCert)
 #: l2tpipsec.ui:144
@@ -272,24 +271,24 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Sertifikat u formatu .pem, .der ili .p12.</p></body></"
+"html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAdvanced)
 #: l2tpipsec.ui:225
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "Napredno"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: l2tpipsec.ui:231
-#, fuzzy, kde-format
-#| msgid "Phase1 algorithms:"
+#, kde-format
 msgid "Phase1 Algorithms:"
 msgstr "Algoritmi faze 1:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: l2tpipsec.ui:241
-#, fuzzy, kde-format
-#| msgid "Phase2 algorithms:"
+#, kde-format
 msgid "Phase2 Algorithms:"
 msgstr "Algoritmi faze 2:"
 
@@ -300,6 +299,8 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Opciono. Spisak predloga za ESP – brzi režim. Oblik je "
+"„enc-integ,enc-integ, …“.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:261
@@ -308,20 +309,21 @@ msgid ""
 "<html><head/><body><p>How long the keying channel of a connection should "
 "last before being renegotiated.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Koliko dugo kanal za ključeve veze treba da traje pre "
+"ponovnog pregovaranja.</p></body></html>"
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:264 l2tpipsec.ui:298
 #, kde-format
 msgid "hh:mm:ss"
-msgstr ""
+msgstr "hh:mm:ss"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIkelifetime)
 #: l2tpipsec.ui:271
-#, fuzzy, kde-format
-#| msgid "Phase1 algorithms:"
+#, kde-format
 msgid "Phase1 Lifetime:"
-msgstr "Algoritmi faze 1:"
+msgstr "Trajanje faze 1:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: l2tpipsec.ui:278
@@ -330,13 +332,14 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Opciono. Spisak predloga za IKE – glavni režim. Oblik "
+"je „enc-integ-group,enc-integ-group, …“.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:285
-#, fuzzy, kde-format
-#| msgid "Phase2 algorithms:"
+#, kde-format
 msgid "Phase2 Lifetime:"
-msgstr "Algoritmi faze 2:"
+msgstr "Trajanje faze 2:"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:295
@@ -346,6 +349,9 @@ msgid ""
 "of encryption/authentication keys for user packets) should last, from "
 "successful negotiation to expiry.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Koliko dugo određeni primerak veze (skup ključeva za "
+"šifrovanje/autentifikaciju korisničkih paketa) treba da traje, od uspešnog "
+"pregovaranja do isteka.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
 #: l2tpipsec.ui:305
@@ -357,6 +363,11 @@ msgid ""
 "strongSwan or Libreswan documentation for leftid/rightid syntax and identity "
 "parsing.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Opciono. Kako se IPsec server identifikuje pri "
+"autentifikaciji. Ponekad se naziva ID parnjaka ili ID mrežnog izlaza, a "
+"strongSwan, Libreswan, Openswan i FreeS/WAN ga zovu rightid. Sintaksu leftid/"
+"rightid i raščlanjivanje identiteta potražite u dokumentaciji strongSwana "
+"ili Libreswan.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:312
@@ -366,19 +377,21 @@ msgid ""
 "encrypted. This saves some bandwidth, but uses more processing power.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>IPComp kompresuje sirove IP pakete pre šifrovanja. "
+"Tako se sačuva deo propusnog opsega, ali se troši više procesorske snage.</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:315
-#, fuzzy, kde-format
-#| msgid "Compression"
+#, kde-format
 msgid "Use IP compression"
-msgstr "Kompresija"
+msgstr "Koristi IP kompresiju"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIKEv2)
 #: l2tpipsec.ui:322
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "Koristi razmenu ključeva IKE v2"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
@@ -387,12 +400,14 @@ msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
 "only if the server doesn’t support PFS.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Isključuje savršenu unaprednu tajnost. Uključite ovu "
+"opciju samo ako server ne podržava PFS.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:332
 #, kde-format
 msgid "Disable PFS"
-msgstr ""
+msgstr "Isključi PFS"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:339
@@ -402,6 +417,9 @@ msgid ""
 "encapsulation even if no NAT situation is detected might help in such cases."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Neki zaštitni zidovi blokiraju ESP saobraćaj. "
+"Nametanje UDP enkapsulacije čak i kad nije otkriven NAT može da pomogne u "
+"takvim slučajevima.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:342
@@ -413,7 +431,7 @@ msgstr "Nametni UDP enkapsulaciju"
 #: l2tpipsec.ui:352
 #, kde-format
 msgid "Remote ID:"
-msgstr ""
+msgstr "Udaljeni ID:"
 
 #: l2tpipsecwidget.cpp:46
 #, kde-format
@@ -574,13 +592,13 @@ msgstr "Ostale postavke"
 #: l2tpppp.ui:224 l2tpppp.ui:234
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "Pokušava da uspostavi viševezni PPP na jednoj vezi."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMRRU)
 #: l2tpppp.ui:227
 #, kde-format
 msgid "Multilink PPP MRRU: "
-msgstr ""
+msgstr "MRRU viševeznog PPP‑a: "
 
 #. i18n: ectx: property (text), widget (QLabel, lbMRU)
 #: l2tpppp.ui:250

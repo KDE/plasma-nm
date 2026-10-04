@@ -1,12 +1,13 @@
 # Translation of plasmanetworkmanagement_vpncui.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015, 2016.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-01 00:45+0000\n"
-"PO-Revision-Date: 2016-11-28 01:33+0100\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
@@ -21,7 +22,7 @@ msgstr ""
 #: vpnc.cpp:70
 #, kde-format
 msgid "NetworkManager is missing support for Cisco Compatible VPN"
-msgstr ""
+msgstr "Менаџер мреже нема подршку за ВПН сагласан са Сиском"
 
 #: vpnc.cpp:98
 #, kde-format
@@ -120,10 +121,9 @@ msgstr "ЦА сертификат у формату ПЕМ."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: vpnc.ui:194
-#, fuzzy, kde-format
-#| msgid "Advanced..."
+#, kde-format
 msgid "Advanced…"
-msgstr "Напредно..."
+msgstr "Напредно…"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: vpncadvanced.ui:18
@@ -202,7 +202,7 @@ msgstr "Име ИКЕ ДХ групе."
 #: vpncadvanced.ui:151
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr "&ПФС:"
+msgstr "ПФС:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, pfs)
 #: vpncadvanced.ui:167
@@ -267,7 +267,7 @@ msgstr "Нетскрин"
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Fortigate"
-msgstr ""
+msgstr "Fortigate"
 
 # >> @item
 #: vpncadvancedwidget.cpp:28
@@ -403,38 +403,3 @@ msgstr "Корисничко име:"
 #, kde-format
 msgid "Group name."
 msgstr "Име групе."
-
-#~ msgid "Error decrypting the obfuscated password"
-#~ msgstr "Грешка при дешифровању замагљене лозинке"
-
-#~ msgid "Error"
-#~ msgstr "Грешка"
-
-#~ msgid "*.pem *.crt *.cer"
-#~ msgstr "*.pem *.crt *.cer"
-
-#~ msgid "File %1 could not be opened."
-#~ msgstr "Фајл %1 не може да се отвори."
-
-#~ msgid "Needed executable cisco-decrypt could not be found."
-#~ msgstr "Неопходна наредба cisco-decrypt не може да се нађе."
-
-# rewrite-msgid: /vpnc software/VPNC/
-#~ msgid ""
-#~ "The VPN settings file '%1' specifies that VPN traffic should be tunneled "
-#~ "through TCP which is currently not supported in the vpnc software.\n"
-#~ "\n"
-#~ "The connection can still be created, with TCP tunneling disabled, however "
-#~ "it may not work as expected."
-#~ msgstr ""
-#~ "Фајл ВПН поставки „%1“ задаје тунеловање ВПН саобраћаја кроз ТЦП, што "
-#~ "ВПНЦ тренутно не подржава.\n"
-#~ "\n"
-#~ "Веза ће свеједно бити успостављена, без ТЦП тунеловања, али можда неће "
-#~ "радити према очекивању."
-
-#~ msgid "Not supported"
-#~ msgstr "Није подржано"
-
-#~ msgid "%1: file format error."
-#~ msgstr "%1: грешка фајл формата."

@@ -1,12 +1,13 @@
 # Translation of plasmanetworkmanagement_pptpui.po into Serbian.
 # Chusslove Illich <caslav.ilic@gmx.net>, 2014, 2015.
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_pptpui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2015-10-14 18:13+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavianlatin\n"
 "MIME-Version: 1.0\n"
@@ -28,7 +29,7 @@ msgstr "Autentifikacija"
 #: pptpadvanced.ui:26
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr "Dozvoli sledeće metode autentifikacije:"
+msgstr "Dozvoli sljedeće metode autentifikacije:"
 
 #. i18n: ectx: property (toolTip), widget (QListWidget, listWidget)
 #: pptpadvanced.ui:36
@@ -95,7 +96,7 @@ msgstr "Šifrovanje:"
 #: pptpadvanced.ui:128
 #, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr "Zahteva korišćenje MPPE‑a, sa 40/128‑bitnim šifrovanjem ili svim."
+msgstr "Zahtijeva korišćenje MPPE‑a, sa 40/128‑bitnim šifrovanjem ili svim."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cb_MPPECrypto)
 #: pptpadvanced.ui:132
@@ -169,8 +170,8 @@ msgid ""
 "transmit\n"
 " and the receive directions."
 msgstr ""
-"Dozvoli/isključi Džejkobsonovu kompresiju TCP/IP zaglavlja i u smeru "
-"emitovanja i u smeru primanja"
+"Dozvoli/isključi Džejkobsonovu kompresiju TCP/IP zaglavlja i u smjeru "
+"emitovanja i u smjeru primanja"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_TCPheaders)
 #: pptpadvanced.ui:205
@@ -188,7 +189,7 @@ msgstr "Eho"
 #: pptpadvanced.ui:227
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
-msgstr "Šalji LCP eho‑zahteve radi provere da li je parnjak živ"
+msgstr "Šalji LCP eho‑zahtjeve radi provjere da li je parnjak živ"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cb_sendEcho)
 #: pptpadvanced.ui:230
@@ -214,7 +215,7 @@ msgstr "Lozinka:"
 #: pptpauth.ui:51 pptpprop.ui:131
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr "Lozinka za prosleđivanje PPTP‑u kada je zatraži."
+msgstr "Lozinka za prosljeđivanje PPTP‑u kada je zatraži."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, PptpProp)
 #: pptpprop.ui:14
@@ -279,9 +280,7 @@ msgstr "Dodaj ovo ime domena lokalnom imenu domaćina u svrhe autentifikacije."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
 #: pptpprop.ui:192
-#, fuzzy, kde-format
-#| msgctxt "like in Advanced settings"
-#| msgid "Advanced..."
+#, kde-format
 msgctxt "like in Advanced settings"
 msgid "Advanced…"
-msgstr "Napredno..."
+msgstr "Napredno…"

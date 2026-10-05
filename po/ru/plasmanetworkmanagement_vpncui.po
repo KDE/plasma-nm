@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-01 00:45+0000\n"
-"PO-Revision-Date: 2026-09-19 22:35+0200\n"
+"PO-Revision-Date: 2026-10-04 10:06+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -95,7 +95,7 @@ msgstr "Пароль группы:"
 #: vpnc.ui:129 vpncauth.ui:84
 #, kde-format
 msgid "Group password."
-msgstr "Пароль группы"
+msgstr "Пароль группы."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, useHybridAuth)
 #: vpnc.ui:141
@@ -176,7 +176,7 @@ msgstr "Метод шифрования:"
 #: vpncadvanced.ui:98
 #, kde-format
 msgid "Encryption method."
-msgstr "Метод шифрования"
+msgstr "Метод шифрования."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: vpncadvanced.ui:105
@@ -295,7 +295,7 @@ msgstr "Нет (полностью небезопасно)"
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr "NAT-T если доступен (по умолчанию)"
+msgstr "NAT-T, если доступен (по умолчанию)"
 
 #: vpncadvancedwidget.cpp:34
 #, kde-format
@@ -391,7 +391,7 @@ msgstr "Имя пользователя:"
 #: vpncauth.ui:117
 #, kde-format
 msgid "Group name."
-msgstr "Имя группы"
+msgstr "Имя группы."
 
 #~ msgid "Error decrypting the obfuscated password"
 #~ msgstr "Ошибка расшифровки сложного пароля"

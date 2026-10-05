@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-09-19 22:39+0200\n"
+"PO-Revision-Date: 2026-10-04 10:06+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -158,7 +158,7 @@ msgstr "Прочее"
 #: sstpadvanced.ui:252
 #, kde-format
 msgid "Use custom unit number:"
-msgstr "Задать количество блоков:"
+msgstr "Задать номер устройства PPP:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: sstpadvanced.ui:285
@@ -171,7 +171,7 @@ msgstr "Прокси-сервер"
 #: sstpadvanced.ui:291 sstpwidget.ui:17
 #, kde-format
 msgid "General"
-msgstr "Основное"
+msgstr "Общие"
 
 #. i18n: ectx: property (text), widget (QLabel, lbl_address)
 #: sstpadvanced.ui:297
@@ -243,7 +243,7 @@ msgstr "Домен NT:"
 #: sstpwidget.ui:129
 #, kde-format
 msgid "CA Certificate:"
-msgstr "Сертификат ЦС:"
+msgstr "Сертификат УЦ:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chk_ignoreCertWarnings)
 #: sstpwidget.ui:142

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 02:45+0000\n"
-"PO-Revision-Date: 2026-05-02 17:57+0530\n"
+"PO-Revision-Date: 2026-10-04 11:48+0200\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
 "Language: ta\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.04.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: kcm.cpp:270
 #, kde-format
@@ -254,16 +254,12 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "கடவுச்சொல்லின் நீளம் 8-இலிருந்து 64 எழுத்துகளுக்குள் இருக்க வேண்டும்"
 
 #: ui/main.qml:46
-#, fuzzy
-#| msgid "Disconnect"
 msgid "Disconnected"
-msgstr "இணைப்பை துண்டி"
+msgstr "இணைக்கப்படவில்லை"
 
 #: ui/main.qml:280
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection name:"
-msgstr "இணைப்பு இறக்குமதி செய்யப்பட்டது"
+msgstr "இணைப்பின் பெயர்:"
 
 #~ msgid "Create"
 #~ msgstr "உருவாக்கு"

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2021-06-07 21:47+0300\n"
+"PO-Revision-Date: 2026-10-04 10:06+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -247,7 +247,7 @@ msgstr "Шлюз:"
 #: pptpprop.ui:47
 #, kde-format
 msgid "PPTP server IP or name."
-msgstr "IP-адрес или имя сервера PPTP"
+msgstr "IP-адрес или имя сервера PPTP."
 
 #. i18n: ectx: property (title), widget (QGroupBox, grp_additional)
 #: pptpprop.ui:62
@@ -291,7 +291,7 @@ msgstr ""
 #, kde-format
 msgctxt "like in Advanced settings"
 msgid "Advanced…"
-msgstr "Дополнительно..."
+msgstr "Дополнительно…"
 
 #~ msgid "Store"
 #~ msgstr "Запомнить"

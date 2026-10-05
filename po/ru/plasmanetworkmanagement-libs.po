@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 02:45+0000\n"
-"PO-Revision-Date: 2026-09-19 22:41+0200\n"
+"PO-Revision-Date: 2026-10-04 10:06+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -257,7 +257,7 @@ msgstr "Неизвестные возможности модема."
 #: cellular/cellularmodemdetails.cpp:286
 #, kde-format
 msgid "eSIM is not initialized."
-msgstr "eSIM-карта не инициализирована"
+msgstr "eSIM-карта не инициализирована."
 
 #: cellular/cellularmodemdetails.cpp:312
 #, kde-format
@@ -388,7 +388,7 @@ msgstr "Модем разблокирован."
 #: cellular/cellularsim.cpp:87
 #, kde-format
 msgid "SIM requires the PIN code."
-msgstr "Для работы SIM-карты требуется код PIN."
+msgstr "Для работы SIM-карты требуется PIN-код."
 
 #: cellular/cellularsim.cpp:89
 #, kde-format
@@ -398,7 +398,7 @@ msgstr "Для работы SIM-карты требуется код PIN2."
 #: cellular/cellularsim.cpp:91
 #, kde-format
 msgid "SIM requires the PUK code."
-msgstr "Для работы SIM-карты требуется код PUK."
+msgstr "Для работы SIM-карты требуется PUK-код."
 
 #: cellular/cellularsim.cpp:93
 #, kde-format
@@ -423,7 +423,7 @@ msgstr "Для работы модема требуется PIN-код сети.
 #: cellular/cellularsim.cpp:101
 #, kde-format
 msgid "Modem requires the network PUK code."
-msgstr "Для работы модема требуется код PUK сети."
+msgstr "Для работы модема требуется PUK-код сети."
 
 #: cellular/cellularsim.cpp:103
 #, kde-format
@@ -438,7 +438,7 @@ msgstr "Для работы модема требуется корпоратив
 #: cellular/cellularsim.cpp:107
 #, kde-format
 msgid "Modem requires the corporate PUK code."
-msgstr "Для работы модема требуется корпоративный код PUK."
+msgstr "Для работы модема требуется корпоративный PUK-код."
 
 #: cellular/cellularsim.cpp:109
 #, kde-format
@@ -448,17 +448,17 @@ msgstr "Для работы модема требуется PIN-код PH-FSIM."
 #: cellular/cellularsim.cpp:111
 #, kde-format
 msgid "Modem requires the PH-FSIM PUK code."
-msgstr "Для работы модема требуется код PUK PH-FSIM."
+msgstr "Для работы модема требуется PUK-код PH-FSIM."
 
 #: cellular/cellularsim.cpp:113
 #, kde-format
 msgid "Modem requires the network subset PIN code."
-msgstr "Для работы модема требуется код PIN  для подгруппы сети модема."
+msgstr "Для работы модема требуется PIN-код подсети."
 
 #: cellular/cellularsim.cpp:115
 #, kde-format
 msgid "Modem requires the network subset PUK code."
-msgstr "Для работы модема требуется код PUK для подгруппы сети модема."
+msgstr "Для работы модема требуется PUK-код подсети."
 
 #: cellular/cellularsim.cpp:158
 #, kde-format
@@ -483,7 +483,7 @@ msgstr "Не удалось отправить PIN-код: %1"
 #: cellular/cellularsim.cpp:207
 #, kde-format
 msgid "Error sending the PUK: %1"
-msgstr "Не удалось отправить код PUK: %1"
+msgstr "Не удалось отправить PUK-код: %1"
 
 #: editor/connectiondetails.cpp:91
 #, kde-format
@@ -577,7 +577,7 @@ msgstr "Способ доступа"
 #: editor/connectiondetails.cpp:202 models/creatableconnectionsmodel.cpp:149
 #, kde-format
 msgid "Mobile Broadband"
-msgstr "Мобильное"
+msgstr "Мобильная связь"
 
 #: editor/connectiondetails.cpp:219 editor/connectiondetails.cpp:240
 #, kde-format
@@ -682,7 +682,7 @@ msgstr "Устройство"
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:238
 #, kde-format
 msgid "General"
-msgstr "Общее"
+msgstr "Общие"
 
 #: editor/connectiondetails.cpp:330
 #, kde-format
@@ -753,7 +753,7 @@ msgstr "Состояние"
 #, kde-format
 msgctxt "@title:tab General configuration"
 msgid "General"
-msgstr "Общее"
+msgstr "Общие"
 
 #: editor/connectioneditorbase.cpp:241 editor/connectioneditorbase.cpp:269
 #: editorqml/qml/components/Wired.qml:33
@@ -775,7 +775,7 @@ msgstr "DSL"
 #: editor/connectioneditorbase.cpp:272 editor/connectioneditorbase.cpp:275
 #, kde-format
 msgid "Mobile Broadband (%1)"
-msgstr "Мобильное (%1)"
+msgstr "Мобильная связь (%1)"
 
 #: editor/connectioneditorbase.cpp:285 editor/connectioneditorbase.cpp:328
 #, kde-format
@@ -1003,7 +1003,7 @@ msgstr " мс"
 #: editor/settings/ipv4widget.cpp:445 editorqml/qml/ipv4/IPv4Advance.qml:63
 #, kde-format
 msgid "DAD timeout:"
-msgstr "Время устаревания:"
+msgstr "Время ожидания DAD:"
 
 #: editor/settings/ipv4widget.cpp:466 editor/settings/ipv6widget.cpp:406
 #, kde-format
@@ -1205,7 +1205,7 @@ msgstr "Сертификат пользователя:"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:111
 #, kde-format
 msgid "CA certificate:"
-msgstr "Сертификат ЦС:"
+msgstr "Сертификат УЦ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_27)
 #: editor/settings/ui/802-1x.ui:182
@@ -1239,7 +1239,7 @@ msgstr "Альтернативные субъекты:"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:74
 #, kde-format
 msgid "…"
-msgstr "..."
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:223
@@ -1259,14 +1259,14 @@ msgstr "Подключаться к этим серверам:"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:152
 #, kde-format
 msgid "Private key:"
-msgstr "Личный ключ:"
+msgstr "Закрытый ключ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/802-1x.ui:266
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:159
 #, kde-format
 msgid "Private key password:"
-msgstr "Пароль личного ключа:"
+msgstr "Пароль закрытого ключа:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_11)
 #. i18n: ectx: property (text), widget (QLabel, label_19)
@@ -1412,21 +1412,21 @@ msgstr "Агрегированные соединения:"
 #: editor/settings/ui/team.ui:56
 #, kde-format
 msgid "Add…"
-msgstr "Добавить..."
+msgstr "Добавить…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnEdit)
 #: editor/settings/ui/bond.ui:72 editor/settings/ui/bridge.ui:69
 #: editor/settings/ui/team.ui:71
 #, kde-format
 msgid "Edit…"
-msgstr "Изменить..."
+msgstr "Изменить…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:85 editor/settings/ui/bridge.ui:82
 #: editor/settings/ui/team.ui:86 qml/ConnectionItemDelegate.qml:120
 #, kde-format
 msgid "Delete"
-msgstr "Удалить..."
+msgstr "Удалить"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, modeLabel)
@@ -1520,7 +1520,7 @@ msgstr "Приоритет:"
 #: editor/settings/ui/bridge.ui:174
 #, kde-format
 msgid "Forward delay:"
-msgstr "Задержка в прямом направлении:"
+msgstr "Задержка пересылки:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bridge.ui:203
@@ -1603,7 +1603,7 @@ msgstr ""
 #: editorqml/qml/generalSettings/GeneralSettings.qml:69
 #, kde-format
 msgid "Advanced…"
-msgstr "Дополнительно..."
+msgstr "Дополнительно…"
 
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:79
@@ -1757,7 +1757,7 @@ msgstr "Дополнительные параметры IP"
 #: editor/settings/ui/ipv4.ui:63 editor/settings/ui/ipv6.ui:323
 #, kde-format
 msgid "Routes…"
-msgstr "Маршруты..."
+msgstr "Маршруты…"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
 #: editor/settings/ui/ipv4.ui:74
@@ -1861,13 +1861,16 @@ msgid ""
 "devices\n"
 "• Disabled: turn off IPv4"
 msgstr ""
-"Метод настройки адреса IPv4:• Автоматически: получать адрес и DNS "
-"автоматически через DHCP• Автоматически (только адреса): получать адрес "
-"через DHCP, но настроить DNS вручную• Локальная связь: использовать "
-"автоматическую локальную адресацию (169.254.x.x)• Вручную: ввести "
-"статический IP-адрес• Общий доступ: сделать этот компьютер маршрутизатором "
-"для совместного использования Интернета с другими устройствами• Отключено: "
-"выключить IPv4"
+"Способ настройки адреса IPv4:\n"
+"• Автоматически: получать адрес и DNS автоматически через DHCP\n"
+"• Автоматически (только адреса): получать адрес через DHCP, но настроить DNS "
+"вручную\n"
+"• Локальный канал: использовать автоматическую адресацию в пределах канала "
+"(169.254.x.x)\n"
+"• Вручную: ввести статический IP-адрес\n"
+"• Общий доступ: сделать этот компьютер маршрутизатором для совместного "
+"использования Интернета с другими устройствами\n"
+"• Отключено: выключить IPv4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:263 editor/settings/ui/ipv6.ui:231
@@ -1886,7 +1889,7 @@ msgstr "Автоматически (только адреса)"
 #: editor/settings/ui/ipv4.ui:273 editor/settings/ui/ipv6.ui:246
 #, kde-format
 msgid "Link-Local"
-msgstr "Локальный интерфейс"
+msgstr "Локальный канал"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:278 editor/settings/ui/ipv6.ui:251
@@ -1899,7 +1902,7 @@ msgstr "Вручную"
 #: editor/settings/ui/ipv4.ui:283
 #, kde-format
 msgid "Shared to other computers"
-msgstr "Общий с другими компьютерами"
+msgstr "Общий доступ для других компьютеров"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:288
@@ -2009,9 +2012,9 @@ msgid ""
 "a temporary IPv6 address in addition to the public one generated from MAC "
 "address via modified EUI-64."
 msgstr ""
-"Использование расширений безопасности IPv6 для SLAAC в соответствии с "
+"Использование расширений конфиденциальности IPv6 для SLAAC в соответствии с "
 "RFC4941. При включении этого параметра ядро создаёт временный адрес IPv6 в "
-"дополнение к общедоступному адресу IPv6, вычисленному на основе MAС-адреса "
+"дополнение к общедоступному адресу IPv6, вычисленному на основе MAC-адреса "
 "по модифицированному алгоритму EUI-64 (64-битный расширенный уникальный "
 "идентификатор)."
 
@@ -2049,13 +2052,18 @@ msgid ""
 "• Ignored: skip IPv6 configuration but allow connection\n"
 "• Disabled: turn off IPv6 completely"
 msgstr ""
-"Как настроить адрес IPv6:• Автоматически: получать адрес и DNS автоматически "
-"(через SLAAC и/или DHCPv6)• Автоматически (только адреса): получать адрес "
-"автоматически, но настроить DNS вручную• Автоматически (только DHCP): "
-"получать адрес и DNS только через DHCPv6 (игнорировать SLAAC)• Локальная "
-"связь: использовать автоматическую локальную адресацию (fe80::/10)• Вручную: "
-"ввести статический IP-адрес• Игнорировать: пропустить настройку IPv6, но "
-"разрешить подключение• Отключено: полностью выключить IPv6"
+"Способ настройки адреса IPv6:\n"
+"• Автоматически: получать адрес и DNS автоматически (через SLAAC и/или "
+"DHCPv6)\n"
+"• Автоматически (только адреса): получать адрес автоматически, но настроить "
+"DNS вручную\n"
+"• Автоматически (только DHCP): получать адрес и DNS только через DHCPv6 "
+"(игнорировать SLAAC)\n"
+"• Локальный канал: использовать автоматическую адресацию в пределах канала "
+"(fe80::/10)\n"
+"• Вручную: ввести статический IP-адрес\n"
+"• Игнорируется: пропустить настройку IPv6, но разрешить подключение\n"
+"• Отключено: полностью выключить IPv6"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:241
@@ -2180,7 +2188,7 @@ msgstr "Конфигурация JSON:"
 #: editor/settings/ui/team.ui:123
 #, kde-format
 msgid "Import configuration from file…"
-msgstr "Импорт конфигурации из файла..."
+msgstr "Импорт конфигурации из файла…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
@@ -2253,9 +2261,10 @@ msgid ""
 "• Ad-hoc: create a direct peer-to-peer network\n"
 "• Access Point: turn this computer into a Wi-Fi hotspot"
 msgstr ""
-"Режим сети Wi‑Fi:• Инфраструктура: подключение к Wi‑Fi маршрутизатору "
-"(обычный режим)• Одноранговый: создание одноранговой сети• Точка доступа: "
-"превратить этот компьютер в точку доступа Wi‑Fi"
+"Режим сети Wi‑Fi:\n"
+"• Инфраструктурный: подключение к маршрутизатору Wi‑Fi (обычный режим)\n"
+"• Одноранговый: создание одноранговой сети\n"
+"• Точка доступа: превратить этот компьютер в точку доступа Wi‑Fi"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:94
@@ -2350,7 +2359,7 @@ msgid ""
 "a Wi-Fi network on the specified channel"
 msgstr ""
 "Номер канала, используемого для соединения Wi-Fi. Устройство будет "
-"использовать только этот канал при подключении к точками доступа (или при "
+"использовать только этот канал при подключении к точкам доступа (или при "
 "создании одноранговых сетей)."
 
 #. i18n: ectx: property (text), widget (QLabel, label)
@@ -2433,7 +2442,7 @@ msgstr "Скрытая сеть"
 #: editor/settings/ui/wificonnectionwidget.ui:368
 #, kde-format
 msgid "Security"
-msgstr "Безопасность"
+msgstr "Защита"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WifiSecurity)
 #: editor/settings/ui/wifisecurity.ui:15
@@ -2459,7 +2468,7 @@ msgstr "Нет"
 #: editor/settings/ui/wifisecurity.ui:60
 #, kde-format
 msgid "WEP key 40/128 bits (Hex or ASCII)"
-msgstr "WEP-ключ 40/128 бит (16-ричный или ASCII)"
+msgstr "WEP-ключ 40/128 бит (шестнадцатеричный или ASCII)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:65
@@ -2498,7 +2507,7 @@ msgstr "WPA3 Personal"
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:31
 #, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "WPA3 Enterprise 192 бита"
+msgstr "WPA3 Enterprise 192-битный"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:100
@@ -2596,7 +2605,7 @@ msgid ""
 "into multiple Ethernet frames"
 msgstr ""
 "Передавать пакеты только указанного или меньшего размера.\n"
-"Пакеты большего размера будет разделены и переданы несколькими фреймами."
+"Пакеты большего размера будут разделены и переданы несколькими кадрами."
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
@@ -2626,13 +2635,13 @@ msgstr ""
 #: editor/settings/ui/wiredconnectionwidget.ui:158
 #, kde-format
 msgid "Half"
-msgstr "Полудуплексное"
+msgstr "Полудуплекс"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:163
 #, kde-format
 msgid "Full"
-msgstr "Полнодуплексное"
+msgstr "Полный дуплекс"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174
@@ -2685,56 +2694,56 @@ msgstr "Требовать, чтобы устройство работало т�
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:132
 #, kde-format
 msgid "10 Mb/s"
-msgstr "10 Мбайт/с"
+msgstr "10 Мбит/с"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:231
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:133
 #, kde-format
 msgid "100 Mb/s"
-msgstr "100 Мбайт/с"
+msgstr "100 Мбит/с"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:236
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:134
 #, kde-format
 msgid "1 Gb/s"
-msgstr "1 Гбайт/с"
+msgstr "1 Гбит/с"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:241
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:135
 #, kde-format
 msgid "2.5 Gb/s"
-msgstr "2,5 Гбайт/с"
+msgstr "2,5 Гбит/с"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:246
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:136
 #, kde-format
 msgid "5 Gb/s"
-msgstr "5 Гбайт/с"
+msgstr "5 Гбит/с"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:251
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:137
 #, kde-format
 msgid "10 Gb/s"
-msgstr "10 Гбайт/с"
+msgstr "10 Гбит/с"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:256
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:138
 #, kde-format
 msgid "40 Gb/s"
-msgstr "40 Гбайт/с"
+msgstr "40 Гбит/с"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:261
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:139
 #, kde-format
 msgid "100 Gb/s"
-msgstr "100 Гбайт/с"
+msgstr "100 Гбит/с"
 
 #. i18n: ectx: property (text), widget (QCheckBox, use8021X)
 #: editor/settings/ui/wiredsecurity.ui:17
@@ -2761,7 +2770,9 @@ msgstr "Интерфейс"
 msgid ""
 "Required.\n"
 "Network interface name."
-msgstr "Имя сетевого интерфейса:"
+msgstr ""
+"Обязательный параметр.\n"
+"Имя сетевого интерфейса."
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -2777,7 +2788,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:56
 #, kde-format
 msgid "Listen port:"
-msgstr "Порт:"
+msgstr "Порт прослушивания:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:64
@@ -2788,7 +2799,7 @@ msgid ""
 msgstr ""
 "Необязательный параметр.\n"
 "Номер порта, на котором ожидается подключение. При выборе значения "
-"«Автоматически», номер порта будет выбран случайным образом."
+"«Автоматически» номер порта будет выбран случайным образом."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:72
@@ -2806,9 +2817,8 @@ msgid ""
 "prepending '0x'."
 msgstr ""
 "Необязательный параметр.\n"
-"Метка fwmark для исходящих пакетов. Что бы отключить эту функцию, "
-"используйте значение 0 или «off». Для использования шестнадцатеричной "
-"системы счисления, используйте префикс «0х»."
+"Метка fwmark для исходящих пакетов. Чтобы отключить эту функцию, используйте "
+"значение 0 или «off». Для шестнадцатеричной записи используйте префикс «0x»."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:101
@@ -2826,7 +2836,7 @@ msgstr ""
 "автоматически на основании ip-адреса или маршрута\n"
 "по умолчанию. Такое поведение, как правило, является\n"
 "наилучшим выбором. Заданное в этом поле значение MTU\n"
-"имеет приоритет на определённым автоматически,\n"
+"имеет приоритет над определённым автоматически,\n"
 "и именно оно будет использовано для подключения."
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
@@ -2849,7 +2859,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:141
 #, kde-format
 msgid "Peers…"
-msgstr "Участники обмена..."
+msgstr "Участники обмена…"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
@@ -2896,7 +2906,7 @@ msgstr ""
 "            или v6 с указанием масок подсетей. Для этих адресов\n"
 "            будут разрешены входящие подключения, а также по \n"
 "            этим адресам будет устанавливаться исходящее\n"
-"            подключение. Что бы разрешить соединение с любым \n"
+"            подключение. Чтобы разрешить соединение с любым \n"
 "            адресом, используйте 0.0.0.0/0 для IPv4 и ::/0 для IPv6."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
@@ -2916,10 +2926,10 @@ msgid ""
 "            present, Endpoint port must also be set."
 msgstr ""
 "Необязательный параметр.\n"
-"            Адрес подключения, используемый в соединении\n"
+"            Адрес подключения, используемый в соединении.\n"
 "            Может быть указан в виде адреса IPv4 или IPv6, или\n"
 "            в качестве доменного имени, например: abc.com.\n"
-"            Что бы использовать этот параметр, требуется также\n"
+"            Чтобы использовать этот параметр, требуется также\n"
 "            задать значение параметра «Порт подключения»."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
@@ -2937,8 +2947,8 @@ msgid ""
 "            Address must also be set."
 msgstr ""
 "Необязательный параметр.\n"
-"            Порт подключения. Требует указания, если задан             "
-"параметр «Адрес подключения»."
+"            Порт подключения. Обязателен, если задан\n"
+"            параметр «Адрес подключения»."
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
@@ -2957,12 +2967,12 @@ msgid ""
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
 "Необязательный параметр.\n"
-"            Общий ключ созданный командой «wg genpsk» в \n"
+"            Общий ключ, созданный командой «wg genpsk» в \n"
 "            кодировке base64. Использование этого параметра\n"
 "            создаёт дополнительный уровень криптографической\n"
 "            защиты на симметричных ключах, используемый в\n"
-"            добавление к криптографии на открытых ключах для\n"
-"            повышения устойчивости в эру пост-квантового шифрования."
+"            дополнение к криптографии на открытых ключах для\n"
+"            повышения устойчивости в эру постквантового шифрования."
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
@@ -2989,13 +2999,13 @@ msgid ""
 msgstr ""
 "Необязательный параметр.\n"
 "            Интервал в секундах от 1 до 65535 включительно,\n"
-"            задающий частоту оправки пустого авторизованного\n"
+"            задающий частоту отправки пустого авторизованного\n"
 "            пакета для поддержания соединения через защитный\n"
 "            сетевой экран или NAT. К примеру, если через интерфейс,\n"
 "            находящийся за NAT, данные отправляются нечасто, но \n"
 "            ожидается получение данных от удалённого узла, то \n"
 "            рекомендуется установить значение интервала 25 секунд.\n"
-"            При задании значения 0 или \"off\" этот параметр не будет\n"
+"            При задании значения 0 или «off» этот параметр не будет\n"
 "            использоваться. По умолчанию или если значение не задано,\n"
 "            параметр не используется. \n"
 "            Как правило, использование этого параметра не требуется."
@@ -3035,7 +3045,7 @@ msgstr "%1 (%2 МГц)"
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
-msgstr "Свойства участника WireGuard"
+msgstr "Свойства участников WireGuard"
 
 #: editor/uiutils.cpp:128
 #, kde-format
@@ -3089,13 +3099,13 @@ msgstr "Виртуальный интерфейс (группа)"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Serial Modem"
-msgstr "Модемное"
+msgstr "Последовательный модем"
 
 #: editor/uiutils.cpp:161
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Mobile Broadband"
-msgstr "Мобильное"
+msgstr "Мобильная связь"
 
 #: editor/uiutils.cpp:170
 #, kde-format
@@ -3107,7 +3117,7 @@ msgstr "Loopback"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Wired Ethernet"
-msgstr "Проводное Ethernet"
+msgstr "Проводной Ethernet"
 
 #: editor/uiutils.cpp:186
 #, kde-format
@@ -3117,17 +3127,17 @@ msgstr "ADSL"
 #: editor/uiutils.cpp:205
 #, kde-format
 msgid "Mobile broadband"
-msgstr "Мобильное"
+msgstr "Мобильная связь"
 
 #: editor/uiutils.cpp:212
 #, kde-format
 msgid "Olpc mesh"
-msgstr "Сеть из OLPC"
+msgstr "Ячеистая сеть OLPC"
 
 #: editor/uiutils.cpp:222 models/creatableconnectionsmodel.cpp:156
 #, kde-format
 msgid "Wired Ethernet"
-msgstr "Проводное Ethernet"
+msgstr "Проводной Ethernet"
 
 #: editor/uiutils.cpp:233
 #, kde-format
@@ -3236,7 +3246,7 @@ msgstr "Получение сетевого адреса"
 #, kde-format
 msgctxt "is other action required to fully connect? captive portals, etc."
 msgid "Checking further connectivity"
-msgstr "Проверка дальнейшего соединения"
+msgstr "Проверка доступа к сети"
 
 #: editor/uiutils.cpp:313
 #, kde-format
@@ -3861,7 +3871,7 @@ msgstr "Новое мобильное соединение"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My plan is not listed…"
-msgstr "Моего плана нет в списке..."
+msgstr "Моего плана нет в списке…"
 
 #: editor/widgets/mobileconnectionwizard.cpp:138
 #, kde-format
@@ -3989,7 +3999,7 @@ msgstr "Выберите оператора связи в &списке:"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "I cannot find my provider and I wish to enter it &manually:"
-msgstr "Я не могу найти моего оператора связи и хотел бы ввести его &вручную:"
+msgstr "Моего оператора нет в списке, ввести его &вручную:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:477
 #, kde-format
@@ -4233,7 +4243,7 @@ msgstr "Показывать виртуальные соединения"
 #: editorqml/qml/ConfigurationDialog.qml:55
 #, kde-format
 msgid "Create new connections as system connections"
-msgstr "Создать новое соединение как системное"
+msgstr "Создавать новые соединения как системные"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
 #, kde-format
@@ -4343,7 +4353,7 @@ msgstr "Автоматически (только адреса)"
 #, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Link-Local"
-msgstr "Локальный интерфейс"
+msgstr "Локальный канал"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
@@ -4356,7 +4366,7 @@ msgstr "Вручную"
 #, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Shared to other computers"
-msgstr "Общий с другими компьютерами"
+msgstr "Общий доступ для других компьютеров"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
@@ -4393,11 +4403,11 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
-"Показатель, помогающий выбрать оптимальный путь для передачи пакетов данных  "
+"Показатель, помогающий выбрать оптимальный путь для передачи пакетов данных "
 "к назначению, с учётом таких факторов, как расстояние, задержка и "
 "надёжность.\n"
 "\n"
-"Значение по умолчанию -1 означает, что NetworkManager выбирает и управляет  "
+"Значение по умолчанию -1 означает, что NetworkManager выбирает и управляет "
 "фактической метрикой маршрута."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
@@ -4483,7 +4493,7 @@ msgstr "Автоматически (только DHCP)"
 #, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Link-Local"
-msgstr "Локальный интерфейс"
+msgstr "Локальный канал"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
 #, kde-format
@@ -4522,7 +4532,7 @@ msgid ""
 "enabled, it makes the kernel generate a temporary IPv6 address in addition "
 "to the public one generated from MAC address via modified EUI-64."
 msgstr ""
-"Использование расширений безопасности IPv6 для SLAAC в соответствии с "
+"Использование расширений конфиденциальности IPv6 для SLAAC в соответствии с "
 "RFC4941. При включении этого параметра ядро создаёт временный адрес IPv6 в "
 "дополнение к общедоступному адресу IPv6, вычисленному на основе MAC-адреса "
 "по модифицированному алгоритму EUI-64 (64-битный расширенный уникальный "
@@ -4708,7 +4718,7 @@ msgstr "Дополнительно"
 #: editorqml/qml/vpn/sstp/Sstp.qml:51
 #, kde-format
 msgid "NT Domain:"
-msgstr "Домен:"
+msgstr "Домен NT:"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:59
 #, kde-format
@@ -4801,7 +4811,7 @@ msgstr "Разное"
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:213
 #, kde-format
 msgid "Use custom unit number:"
-msgstr "Задать количество блоков:"
+msgstr "Задать номер устройства PPP:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:242
 #, kde-format
@@ -4864,7 +4874,7 @@ msgstr "%1 байт"
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
 #, kde-format
 msgid "Alternative subject matches"
-msgstr "Альтернативные субъекты:"
+msgstr "Альтернативные субъекты"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:98
 #, kde-format
@@ -4951,7 +4961,7 @@ msgstr "Индекс ключа:"
 #: editorqml/qml/wifisecurity/DnsList.qml:15
 #, kde-format
 msgid "DNS Servers"
-msgstr "DNS-серверы:"
+msgstr "DNS-серверы"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
 #, kde-format
@@ -4961,7 +4971,7 @@ msgstr "Нет"
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:25
 #, kde-format
 msgid "WEP 40/128-bit key (Hex)"
-msgstr "WEP-ключ 40/128 бит (16-ричный)"
+msgstr "WEP-ключ 40/128 бит (шестнадцатеричный)"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:26
 #, kde-format
@@ -5041,13 +5051,13 @@ msgstr ""
 #, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Half"
-msgstr "Полудуплексное"
+msgstr "Полудуплекс"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
 #, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Full"
-msgstr "Полнодуплексное"
+msgstr "Полный дуплекс"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
 #, kde-format
@@ -5208,7 +5218,7 @@ msgstr "Новое проводное соединение Ethernet"
 #: models/creatableconnectionsmodel.cpp:163
 #, kde-format
 msgid "Wired Ethernet (shared)"
-msgstr "Проводное Ethernet (отдача)"
+msgstr "Проводной Ethernet (общий доступ)"
 
 #: models/creatableconnectionsmodel.cpp:175
 #: models/creatableconnectionsmodel.cpp:182
@@ -5219,7 +5229,7 @@ msgstr "Новое соединение Wi-Fi"
 #: models/creatableconnectionsmodel.cpp:180
 #, kde-format
 msgid "Wi-Fi (shared)"
-msgstr "Wi-Fi (отдача)"
+msgstr "Wi-Fi (общий доступ)"
 
 #: models/creatableconnectionsmodel.cpp:191
 #: models/creatableconnectionsmodel.cpp:201
@@ -5238,7 +5248,7 @@ msgstr "Новое агрегированное соединение"
 #: models/creatableconnectionsmodel.cpp:212
 #, kde-format
 msgid "Some team description"
-msgstr "Новая соединение группы"
+msgstr "Новое соединение группы"
 
 #: models/creatableconnectionsmodel.cpp:222
 #, kde-format
@@ -5254,7 +5264,7 @@ msgstr "VPN-соединения"
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
-msgstr "Импортировать VPN-соединение..."
+msgstr "Импортировать VPN-соединение…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format
@@ -5360,7 +5370,7 @@ msgstr "Подключено к %1"
 #, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
-msgstr "Служба NetworkManager не запущена."
+msgstr "Служба NetworkManager не запущена"
 
 #: networkstatus.cpp:261
 #, kde-format
@@ -5401,12 +5411,12 @@ msgstr "/с"
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Upload"
-msgstr "Передача"
+msgstr "Отдача"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Download"
-msgstr "Загрузка"
+msgstr "Приём"
 
 #~ msgid "BSSID:"
 #~ msgstr "BSSID:"

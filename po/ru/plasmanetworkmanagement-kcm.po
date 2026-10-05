@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 02:45+0000\n"
-"PO-Revision-Date: 2026-09-06 15:58+0200\n"
+"PO-Revision-Date: 2026-10-04 10:06+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -107,7 +107,7 @@ msgstr "Параметры"
 
 #: qml/ConfigurationDialog.qml:35
 msgid "General"
-msgstr "Основное"
+msgstr "Общие"
 
 #: qml/ConfigurationDialog.qml:43
 msgid "Ask for PIN on modem detection"
@@ -119,7 +119,7 @@ msgstr "Показывать виртуальные сетевые соедин�
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr "Создать новое соединение как системное"
+msgstr "Создавать новые соединения как системные"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"

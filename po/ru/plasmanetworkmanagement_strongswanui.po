@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-28 00:47+0000\n"
-"PO-Revision-Date: 2026-09-06 17:56+0200\n"
+"PO-Revision-Date: 2026-10-04 10:06+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -25,7 +25,7 @@ msgstr ""
 #, kde-format
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
-msgstr "Пароль личного ключа:"
+msgstr "Пароль закрытого ключа:"
 
 #: strongswanauth.cpp:61
 #, kde-format
@@ -98,13 +98,13 @@ msgstr "Проверка подлинности"
 #: strongswanprop.ui:98
 #, kde-format
 msgid "Certificate/private key"
-msgstr "Сертификат/личный ключ"
+msgstr "Сертификат/закрытый ключ"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: strongswanprop.ui:103
 #, kde-format
 msgid "Certificate/ssh-agent"
-msgstr "Сертификат/клиент SSH"
+msgstr "Сертификат/агент SSH"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: strongswanprop.ui:108
@@ -128,13 +128,13 @@ msgstr "EAP-TTLS"
 #: strongswanprop.ui:155
 #, kde-format
 msgid "Private key:"
-msgstr "Личный ключ:"
+msgstr "Закрытый ключ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: strongswanprop.ui:165
 #, kde-format
 msgid "Private Key Password:"
-msgstr "Пароль личного ключа:"
+msgstr "Пароль закрытого ключа:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: strongswanprop.ui:207
@@ -201,7 +201,7 @@ msgstr "IKE:"
 #: strongswanprop.ui:357
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
-msgstr "Список предлагаемых IKE, разделённых точкой с запятой"
+msgstr "Список предложений IKE через точку с запятой"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: strongswanprop.ui:364
@@ -213,7 +213,7 @@ msgstr "ESP:"
 #: strongswanprop.ui:371
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr "Список предлагаемых ESP, разделённых точкой с запятой"
+msgstr "Список предложений ESP через точку с запятой"
 
 #~ msgid "Store"
 #~ msgstr "Запомнить"

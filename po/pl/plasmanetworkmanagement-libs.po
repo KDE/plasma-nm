@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:48+0000\n"
-"PO-Revision-Date: 2026-08-08 12:18+0200\n"
+"PO-Revision-Date: 2026-10-04 15:04+0200\n"
 "Last-Translator: Łukasz Wojniłowicz <lukasz.wojnilowicz@gmail.com>\n"
 "Language-Team: pl\n"
 "Language: pl\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.0\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -4315,7 +4315,7 @@ msgstr "Rozszerzone ustawienia IP"
 #: editorqml/qml/ipv4/IPv4Advance.qml:45
 #, kde-format
 msgid "DHCP:"
-msgstr ""
+msgstr "DHCP:"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:46
 #, fuzzy, kde-format
@@ -4341,7 +4341,7 @@ msgstr "Wyłącz"
 #, kde-format
 msgctxt "@item:intext duplicate address detection timeout in milliseconds"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:94
 #, kde-format
@@ -4357,14 +4357,14 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "10.0.0.0"
-msgstr ""
+msgstr "10.0.0.0"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:127
 #: editorqml/qml/ipv4/IPv4Settings.qml:256
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "255.255.255.0"
-msgstr ""
+msgstr "255.255.255.0"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:129
 #: editorqml/qml/ipv4/IPv4Settings.qml:258
@@ -4373,7 +4373,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder optional field"
 msgid "Optional"
-msgstr ""
+msgstr "Niewymagane"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:170 editorqml/qml/ipv6/IPv6Routes.qml:191
 #, fuzzy, kde-format
@@ -4486,7 +4486,8 @@ msgstr ""
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
 #: editorqml/qml/ipv6/IPv6Settings.qml:165
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Addresses"
 msgid "Addresses"
 msgstr "Adresy"
 
@@ -4546,7 +4547,7 @@ msgstr "Przesuń w dół"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "2001:db8::"
-msgstr ""
+msgstr "2001:db8::"
 
 #: editorqml/qml/ipv6/IPv6Routes.qml:131
 #: editorqml/qml/ipv6/IPv6Settings.qml:259
@@ -4641,7 +4642,7 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "2001:db8::1"
-msgstr ""
+msgstr "2001:db8::1"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:330
 #, fuzzy, kde-format
@@ -4719,7 +4720,7 @@ msgstr "Brama"
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:33
 #, kde-format
 msgid "SSLVPN server IP or name."
-msgstr ""
+msgstr "Nazwa lub IP serwera SSLVPN."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:47
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:78
@@ -4735,6 +4736,8 @@ msgstr "Nazwa użytkownika:"
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
 msgstr ""
+"Ustaw nazwę używaną do uwierzytelniania lokalnego systemu użytkownikowi dla "
+"<nazwy>."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:77
 #: editorqml/qml/vpn/l2tp/L2tp.qml:106 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:93
@@ -4760,7 +4763,7 @@ msgstr "Nazwa użytkownika:"
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:40
 #, kde-format
 msgid "Use a One-Time Password"
-msgstr ""
+msgstr "Użyj hasła jednorazowego"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:42
 #, fuzzy, kde-format
@@ -4771,7 +4774,7 @@ msgstr "Pytaj za każdym razem"
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:53
 #, kde-format
 msgid "2FA"
-msgstr ""
+msgstr "2FA"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:55
 #, kde-format
@@ -4806,7 +4809,7 @@ msgstr "Wpisz hasło"
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:38
 #, kde-format
 msgid "Token:"
-msgstr ""
+msgstr "Token:"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:24
 #, fuzzy, kde-format
@@ -4834,7 +4837,7 @@ msgstr ""
 #: editorqml/qml/vpn/iodine/Iodine.qml:65
 #, kde-format
 msgid "Fragment Size:"
-msgstr ""
+msgstr "Rozmiar fragmentu:"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:67
 #, kde-format
@@ -4863,12 +4866,12 @@ msgstr[2] " bajtów"
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format
 msgid "Iodine VPN"
-msgstr ""
+msgstr "VPN Iodine"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:33
 #, kde-format
 msgid "L2TP server IP or name."
-msgstr ""
+msgstr "IP lub nazwa serwera L2TP."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:42
 #, fuzzy, kde-format
@@ -4916,11 +4919,12 @@ msgstr ""
 msgid ""
 "Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats."
 msgstr ""
+"Plik urzędu certyfikującego (UC) w formatach .pem, .der, .crt, .cer lub .p12."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:139
 #, kde-format
 msgid "Certificate in .pem, .der, .crt, .cer or .p12 formats."
-msgstr ""
+msgstr "Certyfikat w formatach .pem, .der, .crt, .cer lub .p12."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:154 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:141
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:109
@@ -4932,7 +4936,7 @@ msgstr "Klucz prywatny:"
 #: editorqml/qml/vpn/l2tp/L2tp.qml:163 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:150
 #, kde-format
 msgid "Private key in .pem, .der, .key, .pk8 or .p12 formats."
-msgstr ""
+msgstr "Klucz prywatny w formatach .pem, .der, .key, .pk8 or .p12."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:183 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:188
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:236
@@ -4944,7 +4948,7 @@ msgstr "Hasło klucza prywatnego:"
 #: editorqml/qml/vpn/l2tp/L2tp.qml:200
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "Użyj ulotnego portu źródłowego L2TP"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:216
 #, fuzzy, kde-format
@@ -4962,13 +4966,13 @@ msgstr ""
 #, kde-format
 msgctxt "@action:button"
 msgid "PPP Settings…"
-msgstr ""
+msgstr "Ustawienia PPP…"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:24
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:36
 #, kde-format
 msgid "L2TP VPN"
-msgstr ""
+msgstr "VPN L2TP"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:25
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:152
@@ -4986,10 +4990,9 @@ msgid "User Certificate Password:"
 msgstr "Certyfikat użytkownika:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:48
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Machine Certificate Password:"
-msgstr "Certyfikat użytkownika:"
+msgstr "Hasło certyfikatu maszyny:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:59
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:171
@@ -5001,7 +5004,7 @@ msgstr "Współdzielony klucz:"
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:60
 #, kde-format
 msgid "Enable IPsec tunnel to L2TP host"
-msgstr ""
+msgstr "Włącz tunel IPsec do gospodarza L2TP"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:74
 #, fuzzy, kde-format
@@ -5010,7 +5013,8 @@ msgid "Machine Authentication"
 msgstr "Uwierzytelnianie"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:79 editorqml/qml/vpn/ssh/Ssh.qml:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Type:"
 msgid "Type:"
 msgstr "Rodzaj:"
 
@@ -5027,10 +5031,9 @@ msgid "Machine Certificate:"
 msgstr "Certyfikat użytkownika:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:126
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificate in .pem, .der or .p12 formats."
-msgstr "Certyfikat CA:"
+msgstr "Certyfikat w formatach .pem, .der lub .p12."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:189
 #, kde-format
@@ -5051,11 +5054,16 @@ msgid ""
 "by strongSwan, Libreswan, Openswan and FreeS/WAN. See strongSwan or "
 "Libreswan documentation for leftid/rightid syntax and identity parsing."
 msgstr ""
+"Do wyboru. Na podstawie czego ma być rozpoznawany serwer IPsec do "
+"uwierzytelnienia. Czasami nazywa się to identyfikatorem uczestnika lub "
+"bramy, a także strongSwan, Libreswan, Openswan i FreeS/WAN. Zajrzyj do "
+"dokumentacji strongSwan lub Libreswan po szczegóły na temat składni leftid/"
+"rightid i przetwarzania tożsamości."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:225
 #, kde-format
 msgid "Phase1 Algorithms:"
-msgstr ""
+msgstr "Algorytmy fazy 1:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:228
 #, kde-format
@@ -5063,11 +5071,13 @@ msgid ""
 "Optional. A list of proposals for IKE - Main Mode. The format is “enc-integ-"
 "group,enc-integ-group, …”."
 msgstr ""
+"Do wyboru. Lista zaleceń dla IKE - tryb główny. Formaty to “enc-integ-group,"
+"enc-integ-group, …”."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:237
 #, kde-format
 msgid "Phase2 Algorithms:"
-msgstr ""
+msgstr "Algorytmy fazy 2:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:240
 #, kde-format
@@ -5075,11 +5085,13 @@ msgid ""
 "Optional. A list of proposals for ESP - Quick Mode. The format is “enc-integ,"
 "enc-integ, …”."
 msgstr ""
+"Do wyboru. Lista zaleceń dla ESP - tryb szybki. Format to “enc-integ,enc-"
+"integ, …”."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:249
 #, kde-format
 msgid "Phase1 Lifetime:"
-msgstr ""
+msgstr "Czas życia fazy 1:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:251
 #, kde-format
@@ -5087,11 +5099,12 @@ msgid ""
 "How long the keying channel of a connection should last before being "
 "renegotiated."
 msgstr ""
+"Jak długo powinien trwać kanał klucza zanim zostanie ponownie wynegocjowany."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:269
 #, kde-format
 msgid "Phase2 Lifetime:"
-msgstr ""
+msgstr "Czas życia fazy 2:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:271
 #, kde-format
@@ -5100,12 +5113,15 @@ msgid ""
 "authentication keys for user packets) should last, from successful "
 "negotiation to expiry."
 msgstr ""
+"Jak długo powinno trwać poszczególne wystąpienie połączenia (zestaw kluczy "
+"szyfrowania/uwierzytelnienia dla pakietów użytkownika) od chwili pomyślnej "
+"negocjacji do chwili wygaśnięcia."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:291
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
 msgid "Enforce UDP encapsulation"
-msgstr ""
+msgstr "Wymuś enkapsulację UDP"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:293
 #, kde-format
@@ -5113,6 +5129,8 @@ msgid ""
 "Some firewalls block ESP traffic. Enforcing UDP encapsulation even if no NAT "
 "situation is detected might help in such cases."
 msgstr ""
+"Niektóre zapory ogniowe wstrzymują ruch ESP. Wymuszenie enkapsulacji UDP, "
+"mimo niewykrytego NAT, może pomóc w takich przypadkach."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:304
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:192
@@ -5127,11 +5145,13 @@ msgid ""
 "IPComp compresses raw IP packets before they get encrypted. This saves some "
 "bandwidth, but uses more processing power."
 msgstr ""
+"IPComp pakuje surowe pakiety IP zanim zostaną zaszyfrowane. Oszczędza to "
+"trochę pasma, lecz potrzebuje większej mocy obliczeniowej."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:317
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "Użyj wymiany kluczy IKEv2"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:328
 #, fuzzy, kde-format
@@ -5150,20 +5170,20 @@ msgstr ""
 #, kde-format
 msgctxt "separator between hours and minutes"
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:54
 #, kde-format
 msgctxt "separator between minutes and seconds"
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:66
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:58
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr ""
+msgstr "Zezwól na użycie następujących sposobów uwierzytelnienia:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:118
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:100
@@ -5178,14 +5198,14 @@ msgstr "Połączenie"
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr ""
+msgstr "Użyj szyfrowania MPPE"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:130
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:112
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
 #, kde-format
 msgid "Crypto:"
-msgstr ""
+msgstr "Kryptografia:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:135
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:117
@@ -5216,7 +5236,7 @@ msgstr "Klucz WEP 128 bitowy"
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgid "40 bit"
-msgstr ""
+msgstr "40 bit"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:148
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:130
@@ -5232,6 +5252,8 @@ msgstr "Użyj bezstanowego MPPE"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
+"Zezwól na używanie przez MPPE trybu ze stanami. Jako pierwszy nadal jednak "
+"jest wypróbowywany tryb bez stanów."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:166
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:148
@@ -5274,7 +5296,7 @@ msgstr "Użyj kompresji nagłówka TCP"
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:195
 #, kde-format
 msgid "Use protocol field compression negotiation"
-msgstr ""
+msgstr "Użyj negocjacji kompresji pola protokołu"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:202
 #, fuzzy, kde-format
@@ -5286,12 +5308,15 @@ msgstr "Użyj kompresji nagłówka TCP"
 #, kde-format
 msgid "Use Address/Control compression in both directions (send and receive)."
 msgstr ""
+"Użyj kompresji Adresu/Sterowania po stronie zarówno przesyłania jaki "
+"odbierania."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:222
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:186
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
 msgstr ""
+"Wysyłaj żądania echa LCP, aby dowiedzieć się czy uczestnik jest dostępny."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:233
 #, fuzzy, kde-format
@@ -5302,17 +5327,17 @@ msgstr "Ustawienia WireGuard"
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:244
 #, kde-format
 msgid "Multilink PPP MRRU:"
-msgstr ""
+msgstr "Multilink PPP MRRU:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:246
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "Spróbuj wynegocjować PPP Multilink na pojedynczym połączeniu."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:266
 #, kde-format
 msgid "MRU:"
-msgstr ""
+msgstr "MRU:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:27
 #, kde-format
@@ -5358,7 +5383,7 @@ msgstr "Użytkownicy, którym wolno się łączyć"
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:90
 #, kde-format
 msgid "Phase1 algorithms:"
-msgstr ""
+msgstr "Algorytmy fazy 1:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:93
 #, kde-format
@@ -5368,7 +5393,7 @@ msgstr ""
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:102
 #, kde-format
 msgid "Phase2 algorithms:"
-msgstr ""
+msgstr "Algorytmy fazy 2:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:105
 #, kde-format
@@ -5402,16 +5427,14 @@ msgid "Static Key"
 msgstr "Współdzielony klucz"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Password with Certificates (TLS)"
-msgstr "Certyfikat CA:"
+msgstr "Hasło z certyfikatami (TLS)"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:70
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr "Certyfikat CA:"
+msgstr "Plik urzędu certyfikującego (UC) w formacie .pem."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:94
 #, kde-format
@@ -5419,22 +5442,23 @@ msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
 "Certificate)."
 msgstr ""
+"Lokalny certyfikat podpisany przez jego właściciela w formacie .pem "
+"(podpisany przez UC lub certyfikat UC)."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:118
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr ""
+msgstr "Lokalny klucz prywatny użytkownika w formacie .pem."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:133
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Static Key:"
-msgstr "Klucz prywatny:"
+msgstr "Klucz statyczny:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:142
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
-msgstr ""
+msgstr "Współdzielony plik dla trybu szyfrowania kluczem statycznym (nie-TLS)."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:157
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:644
@@ -5450,6 +5474,10 @@ msgid ""
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
+"Jeśli używany jest kierunek klucza, to musi on być przeciwny do tego użytego "
+"dla użytkownika VPN. Na przykład, jeśli użytkownik używa '1', to połączenie "
+"musi używać '0'. Jeśli nie wiesz jakiej wartości użyć, porozmawiaj z "
+"administratorem."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
@@ -5465,12 +5493,12 @@ msgstr "Brak"
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #, kde-format
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #, kde-format
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:173 editorqml/qml/vpn/ssh/Ssh.qml:59
 #: editorqml/qml/vpn/ssh/Ssh.qml:111
@@ -5482,7 +5510,7 @@ msgstr "Adres IPv4"
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:178
 #, kde-format
 msgid "IP address of the local VPN endpoint."
-msgstr ""
+msgstr "Adres IP dla lokalnego punktu końcowego VPN."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:187 editorqml/qml/vpn/ssh/Ssh.qml:47
 #: editorqml/qml/vpn/ssh/Ssh.qml:97
@@ -5494,12 +5522,12 @@ msgstr "Adres IPv4"
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:192
 #, kde-format
 msgid "IP address of the remote VPN endpoint."
-msgstr ""
+msgstr "Adres IP dla zdalnego punktu końcowego VPN."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:206
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "Nazwa użytkownika podwana OpenVPN, przy pytaniu o nią."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:28
 #, fuzzy, kde-format
@@ -5517,18 +5545,18 @@ msgstr "Ustawienia WireGuard"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:81
 #, kde-format
 msgid "Proxies"
-msgstr ""
+msgstr "Pośrednicy"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:112
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:37
 #, kde-format
 msgid "Use custom gateway port:"
-msgstr ""
+msgstr "Użyj własnego portu bramy:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:136
 #, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr ""
+msgstr "Użyj własnego przedziału renegocjacji:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:154
 #, fuzzy, kde-format
@@ -5545,17 +5573,17 @@ msgstr "Kompresja"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZO"
-msgstr ""
+msgstr "LZO"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZ4"
-msgstr ""
+msgstr "LZ4"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZ4 v2"
-msgstr ""
+msgstr "LZ4 v2"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, fuzzy, kde-format
@@ -5579,12 +5607,12 @@ msgstr "Nowe połączenie %1"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:195
 #, kde-format
 msgid "Set virtual device type:"
-msgstr ""
+msgstr "Ustaw rodzaj urządzenia wirtualnego:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
 #, kde-format
 msgid "TUN"
-msgstr ""
+msgstr "TUN"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
 #, fuzzy, kde-format
@@ -5595,43 +5623,43 @@ msgstr "PAP"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:216
 #, kde-format
 msgid "Set virtual device name:"
-msgstr ""
+msgstr "Ustaw nazwę urządzenia wirtualnego:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:239
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:61
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr ""
+msgstr "Użyj własnej wartości Maksymalnej Jednostki Transmisji (MTU):"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:263
 #, kde-format
 msgid "Use custom UDP fragment size:"
-msgstr ""
+msgstr "Użyj własnego rozmiaru fragmentu UDP:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:281
 #, kde-format
 msgid "Restrict TCP maximum segment size (MSS)"
-msgstr ""
+msgstr "Ogranicz maksymalny rozmiar segmentu TCP (MSS)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:294
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "Określ wykrywanie ścieżki MTU:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Może"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:311
 #, kde-format
 msgid "Randomize remote hosts"
-msgstr ""
+msgstr "Losowi gospodarze zdalni"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:318
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "Dodaj losowy przedrostek do nazwy zdalnego DNS"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:325
 #, fuzzy, kde-format
@@ -5642,67 +5670,67 @@ msgstr "Połącz z"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
 #, kde-format
 msgid "%1 s"
-msgstr ""
+msgstr "%1 s"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:338
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "Zezwól na pobieranie nazw DNS uczestników (FQDN)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:345
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "wysyłaj szczegóły uczestnika"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:352
 #, kde-format
 msgid "IPv6 tun link"
-msgstr ""
+msgstr "Łącze tun IPv6"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:365
 #, kde-format
 msgid "Specify ping interval:"
-msgstr ""
+msgstr "Podaj okres pingu:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:389
 #, kde-format
 msgid "Specify exit or restart ping:"
-msgstr ""
+msgstr "Podaj ping wyjścia lub ponownego uruchomienia:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
 #, kde-format
 msgid "ping-exit"
-msgstr ""
+msgstr "ping-wyjście"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
 #, kde-format
 msgid "ping-restart"
-msgstr ""
+msgstr "ping-ponowne-uruchomienie"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:416
 #, kde-format
 msgid "Accept authenticated packets from any address (Float)"
-msgstr ""
+msgstr "Przyjmuj uwierzytelnione pakiety z dowolnego adresu (float)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:429
 #, kde-format
 msgid "Specify max routes:"
-msgstr ""
+msgstr "Podaj maks. l. tras:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:461
 #, kde-format
 msgid "Cipher:"
-msgstr ""
+msgstr "Szyfrowanie:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:471
 #, kde-format
 msgid "Data Ciphers:"
-msgstr ""
+msgstr "Szyfrowanie danych:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:481
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "Zapasowe szyfrowanie danych:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:491
 #, fuzzy, kde-format
@@ -5713,7 +5741,7 @@ msgstr "Negocjacja łącza:"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:504
 #, kde-format
 msgid "Use custom size of cipher key:"
-msgstr ""
+msgstr "Użyj własnego rozmiaru klucza szyfrującego:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:522
 #, fuzzy, kde-format
@@ -5724,42 +5752,42 @@ msgstr "Uwierzytelnianie:"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "MD-4"
-msgstr ""
+msgstr "MD-4"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "MD-5"
-msgstr ""
+msgstr "MD-5"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-1"
-msgstr ""
+msgstr "SHA-1"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-224"
-msgstr ""
+msgstr "SHA-224"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-256"
-msgstr ""
+msgstr "SHA-256"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-384"
-msgstr ""
+msgstr "SHA-384"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-512"
-msgstr ""
+msgstr "SHA-512"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "RIPEMD-160"
-msgstr ""
+msgstr "RIPEMD-160"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:544
 #, fuzzy, kde-format
@@ -5770,27 +5798,27 @@ msgstr "Certyfikat użytkownika:"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Don't verify certificate identification"
-msgstr ""
+msgstr "Nie sprawdzaj indentyfikacji certyfikatu"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify whole subject exactly"
-msgstr ""
+msgstr "Sprawdź cały podmiot dokładnie"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify name exactly"
-msgstr ""
+msgstr "Sprawdź nazwę dokładnie"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify name by prefix"
-msgstr ""
+msgstr "Sprawdź nazwę przedrostkiem"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:551
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
-msgstr ""
+msgstr "Sprawdź podmiot częściowo (przestarzały tryb, silnie odradzany)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:562
 #, fuzzy, kde-format
@@ -5801,12 +5829,12 @@ msgstr "Pasujący podmiot:"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:567
 #, kde-format
 msgid "Connect only to servers whose certificate matches the given subject."
-msgstr ""
+msgstr "Łącz do tych serwerów, których certyfikat pasuje do podanego podmiotu."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:576
 #, kde-format
 msgid "Verify peer (server) certificate usage signature"
-msgstr ""
+msgstr "Potwierdź podpis uczestnika (serwera) dotyczący użycia certyfikatu"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:583
 #, fuzzy, kde-format
@@ -5825,32 +5853,32 @@ msgstr "Usługa:"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
 #, kde-format
 msgid "Client"
-msgstr ""
+msgstr "Klient"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:595
 #, kde-format
 msgid "Verify peer (server) certificate nsCertType designation"
-msgstr ""
+msgstr "Potwierdź oznaczenie nsCertType certyfikatu uczestnika (serwera)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:602
 #, kde-format
 msgid "Remote peer certificate nsCert designation:"
-msgstr ""
+msgstr "Oznaczenie nsCert certyfikatu zdalnego uczestnika:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Auth"
-msgstr ""
+msgstr "TLS-Auth"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Crypt"
-msgstr ""
+msgstr "TLS-Crypt"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Crypt v2"
-msgstr ""
+msgstr "TLS-Crypt v2"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:624
 #, fuzzy, kde-format
@@ -5859,15 +5887,14 @@ msgid "Key File:"
 msgstr "Indeks klucza:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgid "Server (0)"
-msgstr "1 (domyślny)"
+msgstr "Serwer (0)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
 #, kde-format
 msgid "Client (1)"
-msgstr ""
+msgstr "Klient (1)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:657
 #, fuzzy, kde-format
@@ -5878,27 +5905,27 @@ msgstr "Certyfikat użytkownika:"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:675
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "Najstarsza wersja TLS:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:687
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "lub nowsza"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:695
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "Najnowsza wersja TLS:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:703
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "Plik sprawdzający CRL:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:721
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "Katalog sprawdzający CRL:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:755
 #, fuzzy, kde-format
@@ -5915,12 +5942,12 @@ msgstr "Niewymagane"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
 #, kde-format
 msgid "SOCKS"
-msgstr ""
+msgstr "SOCKS"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:767
 #, kde-format
@@ -5928,6 +5955,8 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
+"Zaznacz tę opcję, jeśli twoja organizacja wymaga użycia serwera "
+"pośredniczącego do dostępu do internetu."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:772
 #, fuzzy, kde-format
@@ -5940,12 +5969,12 @@ msgstr "Adres"
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:796
 #, kde-format
 msgid "Retry indefinitely when errors occur"
-msgstr ""
+msgstr "Ponawiaj w nieskończoność, gdy wystąpią błędy"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:803
 #, fuzzy, kde-format
@@ -5965,7 +5994,7 @@ msgstr "Hasło:"
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:36
 #, kde-format
 msgid "OpenVPN VPN"
-msgstr ""
+msgstr "VPN OpenVPN"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:48
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:52
@@ -5994,22 +6023,22 @@ msgstr ""
 #: editorqml/qml/vpn/pptp/Pptp.qml:27
 #, kde-format
 msgid "PPTP server IP or name."
-msgstr ""
+msgstr "Adres IP lub nazwa serwer PPTP."
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:36
 #, kde-format
 msgid "Login:"
-msgstr ""
+msgstr "Nazwa użytkownika:"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:22
 #, kde-format
 msgid "PPTP VPN"
-msgstr ""
+msgstr "PPTP VPN"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:24
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr ""
+msgstr "Hasło podawane PPTP, w razie pytania."
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
 #, fuzzy, kde-format
@@ -6027,7 +6056,7 @@ msgstr "Maska sieci"
 #: editorqml/qml/vpn/ssh/Ssh.qml:84
 #, kde-format
 msgid "IPv6 Network Settings"
-msgstr ""
+msgstr "Ustawienia sieci IPv6"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:90
 #, fuzzy, kde-format
@@ -6045,7 +6074,7 @@ msgstr "Przedrostek"
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "SSH Agent"
-msgstr ""
+msgstr "Agent SSH"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, fuzzy, kde-format
@@ -6062,17 +6091,17 @@ msgstr "Indeks klucza:"
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:85
 #, kde-format
 msgid "Extra SSH options:"
-msgstr ""
+msgstr "Dodatkowe ustawienia SSH:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:109
 #, kde-format
 msgid "Remote device number:"
-msgstr ""
+msgstr "Numer zdalnego urządzenia:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:129
 #, kde-format
 msgid "Use a TAP device"
-msgstr ""
+msgstr "Użyj urządzenia TAP"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:142
 #, fuzzy, kde-format
@@ -6084,32 +6113,32 @@ msgstr "Nazwa użytkownika"
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:162
 #, kde-format
 msgid "Do not replace default route"
-msgstr ""
+msgstr "Nie zastępuj domyślnej trasy"
 
 #: editorqml/qml/vpn/ssh/SshAuth.qml:23
 #, kde-format
 msgid "SSH VPN"
-msgstr ""
+msgstr "VPN SSH"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:39
 #, kde-format
 msgid "Optional"
-msgstr ""
+msgstr "Niewymagane"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:79
 #, kde-format
 msgid "Ignore certificate warnings"
-msgstr ""
+msgstr "Lekceważ ostrzeżenia do certyfikatu"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:60
 #, kde-format
 msgid "Point-to-Point"
-msgstr ""
+msgstr "Punkt-do-punktu"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:64
 #, kde-format
 msgid "Proxy"
-msgstr ""
+msgstr "Pośrednik"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
 #, fuzzy, kde-format
@@ -6120,12 +6149,12 @@ msgstr "Użyj szyfrowania punkt-do-punktu (MPPE)"
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Różne"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:213
 #, kde-format
 msgid "Use custom unit number:"
-msgstr ""
+msgstr "Użyj własnej liczby jednostki:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:242
 #, fuzzy, kde-format
@@ -6137,12 +6166,12 @@ msgstr "Adres"
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
 #, kde-format
 msgid "Credentials"
-msgstr ""
+msgstr "Dane dostępowe"
 
 #: editorqml/qml/vpn/sstp/SstpAuth.qml:22
 #, kde-format
 msgid "SSTP VPN"
-msgstr ""
+msgstr "VPN SSTP"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:35
 #, fuzzy, kde-format
@@ -6161,7 +6190,7 @@ msgstr "Certyfikat CA:"
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Certificate/private key"
-msgstr ""
+msgstr "Certyfikat/Klucz prywatny"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, fuzzy, kde-format
@@ -6172,12 +6201,12 @@ msgstr "Certyfikat CA:"
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Smartcard"
-msgstr ""
+msgstr "Karta inteligentna"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "EAP-TTLS"
-msgstr ""
+msgstr "EAP-TTLS"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:132
 #, fuzzy, kde-format
@@ -6188,43 +6217,42 @@ msgstr "Pytaj za każdym razem"
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:168
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "Ustawienia"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:174
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Request an inner IP address"
-msgstr "Adres IPv4"
+msgstr "Żądaj wewnętrznego adresu IP"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:201
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
-msgstr ""
+msgstr "Włącz propozycje własnych szyfrów"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:208
 #, kde-format
 msgid "IKE:"
-msgstr ""
+msgstr "IKE:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:213
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
-msgstr ""
+msgstr "Lista propozycji dla IKE oddzielona znakiem \";\""
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:222
 #, kde-format
 msgid "ESP:"
-msgstr ""
+msgstr "ESP:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:227
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr ""
+msgstr "Lista propozycji dla ESP oddzielona znakiem \";\""
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:28
 #, kde-format
 msgid "strongSwan VPN"
-msgstr ""
+msgstr "strongSwan VPN"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:33
 #, fuzzy, kde-format
@@ -6250,7 +6278,7 @@ msgstr "Hasło:"
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:28
 #, kde-format
 msgid "IP/hostname of IPsec gateway."
-msgstr ""
+msgstr "IP/nazwa_gospodarza bramy IPsec."
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:40
 #, fuzzy, kde-format
@@ -6261,7 +6289,7 @@ msgstr "Użytkownicy, którym wolno się łączyć"
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:70
 #, kde-format
 msgid "Group name"
-msgstr ""
+msgstr "Nazwa grupy"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:99
 #, fuzzy, kde-format
@@ -6274,6 +6302,7 @@ msgstr "Uwierzytelnienie wewnętrzne:"
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
 msgstr ""
+"Włącz hybrydowe uwierzytelnianie, tj. dodatkowo do hasła użyj certyfikatu."
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:110
 #, fuzzy, kde-format
@@ -6282,10 +6311,9 @@ msgid "CA file:"
 msgstr "Plik PAC:"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:119
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA certificate in PEM format."
-msgstr "Certyfikat CA:"
+msgstr "Certyfikat UC w formacie PEM."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:34
 #, fuzzy, kde-format
@@ -6296,30 +6324,30 @@ msgstr "Uwierzytelnianie"
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:50
 #, kde-format
 msgid "Vendor:"
-msgstr ""
+msgstr "Dostawca:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:53
 #, kde-format
 msgid "Vendor of your IPsec gateway."
-msgstr ""
+msgstr "Dostawca twojej bramy IPsec."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:57
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Cisco"
-msgstr ""
+msgstr "Cisco"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:57
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Netscreen"
-msgstr ""
+msgstr "Netscreen"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:57
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Fortigate"
-msgstr ""
+msgstr "Fortigate"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:65
 #, fuzzy, kde-format
@@ -6350,13 +6378,13 @@ msgstr "1 (domyślny)"
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Weak (DES encryption, use with caution)"
-msgstr ""
+msgstr "Słabe (szyfrowanie DES, używaj z rozwagą)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:76
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
-msgstr ""
+msgstr "Brak (całkowicie niezabezpieczone)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:83
 #, fuzzy, kde-format
@@ -6367,25 +6395,25 @@ msgstr "Serwery DNS:"
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:86
 #, kde-format
 msgid "NAT traversal method to use."
-msgstr ""
+msgstr "Sposób omijania NAT."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr ""
+msgstr "NAT-T gdy dostępne (domyślnie)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
-msgstr ""
+msgstr "Zawsze NAT-T"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "Cisco UDP"
-msgstr ""
+msgstr "Cisco UDP"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, fuzzy, kde-format
@@ -6397,12 +6425,12 @@ msgstr "Wyłącz"
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:97
 #, kde-format
 msgid "IKE DH Group:"
-msgstr ""
+msgstr "Grupa IKE DH:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:100
 #, kde-format
 msgid "Name of the IKE DH group."
-msgstr ""
+msgstr "Nazwa grupy IKE DH."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:104
 #, fuzzy, kde-format
@@ -6423,17 +6451,17 @@ msgstr "1 (domyślny)"
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 5"
-msgstr ""
+msgstr "DH Grupa 5"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:111
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr ""
+msgstr "Perfect Forward Secrecy:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:114
 #, kde-format
 msgid "Diffie-Hellman group to use for PFS."
-msgstr ""
+msgstr "Grupa Diffie-Hellman używana do PFS."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
 #, fuzzy, kde-format
@@ -6461,13 +6489,13 @@ msgstr "Grupa WEP104"
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 2"
-msgstr ""
+msgstr "DH Grupa 2"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
-msgstr ""
+msgstr "DH Grupa 5"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:125
 #, fuzzy, kde-format
@@ -6481,16 +6509,18 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
+"Używany port lokalny (0-65535). 0 (wartość domyślna) oznacza losowy port. "
+"500 jest domyślnym dla vpnc."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:145
 #, kde-format
 msgid "Disable dead peer detection"
-msgstr ""
+msgstr "Wyłącz wykrywanie nieodpowiadających serwerów"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:147
 #, kde-format
 msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr ""
+msgstr "Wyłącz wysyłanie pakietów DPD (ustawia czas oczekiwania na 0)."
 
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:49
 #, fuzzy, kde-format
@@ -6818,7 +6848,7 @@ msgstr "Przedrostek"
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "OTP"
-msgstr ""
+msgstr "OTP"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, fuzzy, kde-format
@@ -6829,12 +6859,12 @@ msgstr "Uwierzytelnianie"
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "code"
-msgstr ""
+msgstr "kod"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "token"
-msgstr ""
+msgstr "token"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, fuzzy, kde-format

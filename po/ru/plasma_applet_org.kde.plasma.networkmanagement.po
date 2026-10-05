@@ -18,7 +18,7 @@ msgstr ""
 "Project-Id-Version: kcm_knetworkmanager.ru\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-10 00:48+0000\n"
-"PO-Revision-Date: 2025-12-11 19:30+0300\n"
+"PO-Revision-Date: 2026-10-04 10:06+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -51,7 +51,7 @@ msgstr "Поделиться"
 #: ConnectionItem.qml:96
 #, kde-format
 msgid "Configure…"
-msgstr "Настроить..."
+msgstr "Настроить…"
 
 #: ConnectionItem.qml:136
 #, kde-format
@@ -75,7 +75,7 @@ msgstr "Текущая скорость приёма: %1 КиБ/с, скорос
 #, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "↓ %1/s, ↑ %2/s"
+msgstr "↓ %1/с, ↑ %2/с"
 
 #: ConnectionListPage.qml:33
 #, kde-format
@@ -91,12 +91,12 @@ msgstr "Войти"
 #: ConnectionListPage.qml:118
 #, kde-format
 msgid "Airplane mode is enabled"
-msgstr "Режим полёта активен"
+msgstr "Режим полёта включён"
 
 #: ConnectionListPage.qml:122
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Wi-Fi и мобильные сети отключены"
+msgstr "Wi-Fi и мобильные данные отключены"
 
 #: ConnectionListPage.qml:124
 #, kde-format
@@ -111,7 +111,7 @@ msgstr "Поиск сетей Wi-Fi"
 #: ConnectionListPage.qml:130
 #, kde-format
 msgid "Mobile data is deactivated"
-msgstr "Передача данных по мобильной сети обильная сеть отключена"
+msgstr "Мобильные данные отключены"
 
 #: ConnectionListPage.qml:133
 #, kde-format
@@ -127,15 +127,13 @@ msgstr "Нет доступных соединений"
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr "Чтобы выполнить поиск сетей, отключите режим «в полёте»"
+msgstr "Чтобы выполнить поиск сетей, отключите режим полёта"
 
 #: ConnectionListPage.qml:149
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
-"Чтобы выполнить поиск сетей, включите Wi-Fi или передачу данных по мобильной "
-"сети"
+msgstr "Чтобы выполнить поиск сетей, включите Wi-Fi или мобильные данные"
 
 #: ConnectionListPage.qml:151
 #, kde-format
@@ -147,8 +145,7 @@ msgstr "Чтобы выполнить поиск сетей, включите Wi
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
-"Чтобы выполнить поиск сетей, включите передачу данных по мобильной сети"
+msgstr "Чтобы выполнить поиск сетей, включите мобильные данные"
 
 #: DetailsText.qml:40
 #, kde-format
@@ -158,19 +155,19 @@ msgstr "Копировать"
 #: main.qml:39
 #, kde-format
 msgid "Networks"
-msgstr "Сетевые подключения"
+msgstr "Сети"
 
 #: main.qml:48
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn off Airplane Mode"
-msgstr "Отключить авиарежим: щелчок средней кнопкой"
+msgstr "Отключить режим полёта: щелчок средней кнопкой"
 
 #: main.qml:50
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
-msgstr "Включить авиарежим: щелчок средней кнопкой"
+msgstr "Включить режим полёта: щелчок средней кнопкой"
 
 #: main.qml:78 Toolbar.qml:74
 #, kde-format
@@ -180,34 +177,34 @@ msgstr "Включить Wi-Fi"
 #: main.qml:89
 #, kde-format
 msgid "Enable Mobile Data"
-msgstr "Включить передачу данных по мобильной сети"
+msgstr "Включить мобильные данные"
 
 #: main.qml:101
 #, kde-format
 msgid "Enable Airplane Mode"
-msgstr "Включить авиарежим"
+msgstr "Включить режим полёта"
 
 #: main.qml:113
 #, kde-format
 msgid "Open Network Login Page…"
-msgstr "Открыть страницу входа в сеть..."
+msgstr "Открыть страницу входа в сеть…"
 
 #: main.qml:123
 #, kde-format
 msgid "&Configure Network Connections…"
-msgstr "На&строить сетевые соединения..."
+msgstr "На&строить сетевые соединения…"
 
 #: PopupDialog.qml:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "Вернуться к настройкам соединений"
+msgstr "Вернуться к сетевым соединениям"
 
 #: ShareNetworkQrCodePage.qml:33
 #, kde-format
 msgid "Scan this QR code with another device to connect to the \"%1\" network."
 msgstr ""
-"Используйте этот QR-код чтобы подключиться к сети «%1» с другого устройства."
+"Отсканируйте этот QR-код другим устройством, чтобы подключиться к сети «%1»."
 
 #: ShareNetworkQrCodePage.qml:108
 #, kde-format
@@ -217,13 +214,13 @@ msgstr "Пароль Wi-Fi:"
 #: Toolbar.qml:124
 #, kde-format
 msgid "Enable mobile data"
-msgstr "Включить передачу данных по мобильной сети"
+msgstr "Включить мобильные данные"
 
 #: Toolbar.qml:147
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
-msgstr "Отключение режима полёта<nl/><nl/>Wi-Fi и Bluetooth будут активированы"
+msgstr "Отключение режима полёта<nl/><nl/>Wi-Fi и Bluetooth будут включены"
 
 #: Toolbar.qml:148
 #, kde-kuit-format
@@ -290,7 +287,7 @@ msgstr ""
 #: Toolbar.qml:253
 #, kde-format
 msgid "Configure network connections…"
-msgstr "Настроить сетевые соединения..."
+msgstr "Настроить сетевые соединения…"
 
 #~ msgid "/s"
 #~ msgstr "/с"

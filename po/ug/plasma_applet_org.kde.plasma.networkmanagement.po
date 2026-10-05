@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-10 00:48+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"PO-Revision-Date: 2026-10-03 19:02-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -235,6 +235,8 @@ msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"قىزىق نۇقتا قۇرالمايدۇ چۈنكى بارلىق سىمسىز تور كارتىسى ئىشلىتىلىۋاتىدۇ. "
+"نۆۋەتتىكى Wi-Fi تورىنى تاقاڭ ياكى باشقا بىر سىمسىز تور كارتىسىنى باغلاڭ."
 
 #: Toolbar.qml:197
 #, kde-format

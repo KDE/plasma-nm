@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanm_vpncui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-01 00:45+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"PO-Revision-Date: 2026-10-03 19:05-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -220,6 +220,8 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
+"ئىشلىتىدىغان يەرلىك ئېغىز (0-65535). 0 (كۆڭۈلدىكى قىممىتى) ئىختىيارىي "
+"ئېغىزنى ئىشلىتىدۇ. vpnc نىڭ كۆڭۈلدىكى قىممىتى 500."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193
@@ -248,19 +250,19 @@ msgstr "ئالىي VPNC خاسلىقى"
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Cisco"
-msgstr ""
+msgstr "Cisco"
 
 #: vpncadvancedwidget.cpp:24
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Netscreen"
-msgstr ""
+msgstr "Netscreen"
 
 #: vpncadvancedwidget.cpp:25
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Fortigate"
-msgstr ""
+msgstr "Fortigate"
 
 #: vpncadvancedwidget.cpp:28
 #, kde-format
@@ -296,7 +298,7 @@ msgstr "NAT-T نى ھەمىشە ئىشلىتىش"
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "Cisco UDP"
-msgstr ""
+msgstr "Cisco UDP"
 
 #: vpncadvancedwidget.cpp:36
 #, kde-format

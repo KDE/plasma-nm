@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2021-01-13 15:04+0300\n"
+"PO-Revision-Date: 2026-10-04 10:06+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -80,7 +80,7 @@ msgstr "Пароль для подключения к серверу SSLVPN."
 #: fortisslvpn.ui:129
 #, kde-format
 msgid "CA Certificate:"
-msgstr "Сертификат ЦС:"
+msgstr "Сертификат УЦ:"
 
 #. i18n: ectx: property (text), widget (QLabel, userCertLabel)
 #: fortisslvpn.ui:142

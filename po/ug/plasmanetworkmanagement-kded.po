@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanm-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-11 00:47+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"PO-Revision-Date: 2026-10-03 19:06-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -556,7 +556,7 @@ msgstr "ھېچقانداق بىخەتەرلىك ئاچقۇچى ئىلتىماس 
 #: passworddialog.cpp:99
 #, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr ""
+msgstr "Wi-Fi تورى «%1» نىڭ ئىم خاتا. قايتا سىناڭ."
 
 #: passworddialog.cpp:101
 #, kde-format
@@ -566,7 +566,7 @@ msgstr "Wi-Fi تورى «%1» ئۈچۈن ئىم كىرگۈزۈلىدۇ:"
 #: passworddialog.cpp:105
 #, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr ""
+msgstr "«%1» باغلىنىشنىڭ ئىم خاتا. قايتا سىناڭ."
 
 #: passworddialog.cpp:107
 #, kde-format
@@ -610,12 +610,12 @@ msgstr "ئىم:"
 #: pindialog.cpp:68
 #, kde-format
 msgid "SIM PUK"
-msgstr ""
+msgstr "SIM PUK"
 
 #: pindialog.cpp:70
 #, kde-format
 msgid "SIM PUK2"
-msgstr ""
+msgstr "SIM PUK2"
 
 #: pindialog.cpp:72
 #, kde-format
@@ -635,7 +635,7 @@ msgstr "كارخانا PUK كودى"
 #: pindialog.cpp:78
 #, kde-format
 msgid "PH-FSIM PUK"
-msgstr ""
+msgstr "PH-FSIM PUK"
 
 #: pindialog.cpp:80
 #, kde-format
@@ -683,12 +683,12 @@ msgstr "PIN/PUK كودىنى كۆرسىتىدۇ"
 #: pindialog.cpp:99
 #, kde-format
 msgid "SIM PIN"
-msgstr ""
+msgstr "SIM PIN"
 
 #: pindialog.cpp:101
 #, kde-format
 msgid "SIM PIN2"
-msgstr ""
+msgstr "SIM PIN2"
 
 #: pindialog.cpp:103
 #, kde-format
@@ -703,7 +703,7 @@ msgstr "تور PIN كودى"
 #: pindialog.cpp:107
 #, kde-format
 msgid "PIN"
-msgstr ""
+msgstr "PIN"
 
 #: pindialog.cpp:109
 #, kde-format
@@ -713,7 +713,7 @@ msgstr "كارخانا PIN كودى"
 #: pindialog.cpp:111
 #, kde-format
 msgid "PH-FSIM PIN"
-msgstr ""
+msgstr "PH-FSIM PIN"
 
 #: pindialog.cpp:113
 #, kde-format
@@ -728,7 +728,7 @@ msgstr "PIN كودىنى كۆرسىتىدۇ"
 #: pindialog.cpp:203
 #, kde-format
 msgid "PIN code too short. It should be at least 4 digits."
-msgstr ""
+msgstr "PIN كودى بەك قىسقا. ئاز دېگەندە 4 خانە سان بولۇشى كېرەك."
 
 #: pindialog.cpp:208
 #, kde-format
@@ -738,7 +738,7 @@ msgstr "ئىككى PIN كودى ماسلاشمىدى"
 #: pindialog.cpp:213
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
-msgstr ""
+msgstr "PUK كودى بەك قىسقا. ئاز دېگەندە 8 خانە سان بولۇشى كېرەك."
 
 #: pindialog.cpp:218
 #, kde-format
@@ -776,7 +776,7 @@ msgstr "PIN كودى قايتا كىرگۈزۈلىدۇ:"
 #: secretagent.cpp:426
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
-msgstr ""
+msgstr "%1 نىڭ كىملىكىنى دەلىللىيەلمىدى، ئىم خاتامۇ؟"
 
 #~ msgid "%1 password dialog"
 #~ msgstr "%1 ئىم سۆزلەشكۈسى"

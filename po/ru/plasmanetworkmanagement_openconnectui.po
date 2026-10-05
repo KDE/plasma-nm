@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-19 00:46+0000\n"
-"PO-Revision-Date: 2026-04-03 19:45+0200\n"
+"PO-Revision-Date: 2026-10-04 10:06+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -26,12 +26,12 @@ msgstr ""
 #: openconnectauth.cpp:345
 #, kde-format
 msgid "Failed to initialize software token: %1"
-msgstr "Не удалось инициализировать программные ключи доступа: %1"
+msgstr "Не удалось инициализировать программный токен: %1"
 
 #: openconnectauth.cpp:398
 #, kde-format
 msgid "Contacting host, please wait…"
-msgstr "Установление связи с узлом, подождите..."
+msgstr "Установление связи с узлом, подождите…"
 
 #: openconnectauth.cpp:786
 #, kde-format
@@ -151,7 +151,7 @@ msgstr "Шлюз:"
 #: openconnectprop.ui:51
 #, kde-format
 msgid "CA Certificate:"
-msgstr "Сертификат ЦС:"
+msgstr "Сертификат УЦ:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: openconnectprop.ui:70
@@ -199,7 +199,7 @@ msgstr "Juniper Network Connect"
 #: openconnectprop.ui:143
 #, kde-format
 msgid "PAN Global Protect"
-msgstr "Защита персональной сети"
+msgstr "PAN GlobalProtect"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbProtocol)
 #: openconnectprop.ui:148
@@ -229,7 +229,7 @@ msgstr "Array SSL VPN"
 #: openconnectprop.ui:171
 #, kde-format
 msgid "Reported OS:"
-msgstr "ОС:"
+msgstr "Сообщаемая ОС:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:190
@@ -241,7 +241,7 @@ msgstr "GNU/Linux"
 #: openconnectprop.ui:195
 #, kde-format
 msgid "GNU/Linux 64-bit"
-msgstr "GNU/Linux 64-бита"
+msgstr "GNU/Linux (64-разрядная)"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbReportedOs)
 #: openconnectprop.ui:200
@@ -271,7 +271,7 @@ msgstr "Apple iOS"
 #: openconnectprop.ui:226
 #, kde-format
 msgid "Reported Version"
-msgstr "Полученная версия"
+msgstr "Сообщаемая версия"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: openconnectprop.ui:236
@@ -289,7 +289,7 @@ msgstr "Сертификат компьютера:"
 #: openconnectprop.ui:261
 #, kde-format
 msgid "Machine Private Key:"
-msgstr "Личный ключ устройства:"
+msgstr "Закрытый ключ компьютера:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: openconnectprop.ui:280
@@ -301,7 +301,7 @@ msgstr "Сертификат пользователя:"
 #: openconnectprop.ui:299
 #, kde-format
 msgid "User Private Key:"
-msgstr "Личный ключ пользователя:"
+msgstr "Закрытый ключ пользователя:"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseFsid)
 #: openconnectprop.ui:318
@@ -313,37 +313,37 @@ msgstr "Использовать для пароля идентификатор 
 #: openconnectprop.ui:325
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
-msgstr "Запретить использование недействительных сертификатов"
+msgstr "Запретить пользователю вручную принимать недействительные сертификаты"
 
 #. i18n: ectx: property (text), widget (QPushButton, buTokens)
 #: openconnectprop.ui:351
 #, kde-format
 msgid "Token Authentication"
-msgstr "Аутентификация по ключу доступа"
+msgstr "Аутентификация по токену"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, OpenConnectToken)
 #: openconnecttoken.ui:14
 #, kde-format
 msgid "OpenConnect OTP Tokens"
-msgstr "Одноразовые ключи доступа OpenConnect"
+msgstr "Одноразовые токены OpenConnect"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbToken)
 #: openconnecttoken.ui:20
 #, kde-format
 msgid "Software Token Authentication"
-msgstr "Аутентификация по ключу доступа"
+msgstr "Аутентификация по программному токену"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: openconnecttoken.ui:26
 #, kde-format
 msgid "Token Mode:"
-msgstr "Режим ключа доступа:"
+msgstr "Режим токена:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_9)
 #: openconnecttoken.ui:43
 #, kde-format
 msgid "Token Secret:"
-msgstr "Секретное значение ключа доступа:"
+msgstr "Секрет токена:"
 
 #: openconnectwebauthdialog.cpp:111
 #, kde-format

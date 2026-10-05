@@ -2,7 +2,7 @@
 # Copyright (C) 2017-2018, Free Software Foundation.
 # Copyright (C) 2019-2026 This file is copyright.
 # This file is distributed under the same license as plasma-nm package.
-# SPDX-FileCopyrightText: 2026 KDE euskaratzeko proiektuaren arduraduna <xalba@ni.eus>
+# SPDX-FileCopyrightText: 2026 KDE euskaratzeko proiektuko arduraduna <xalba@ni.eus>
 #
 # Translators:
 # Osoitz <oelkoro@gmail.com>, 2017.
@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-30 00:48+0000\n"
-"PO-Revision-Date: 2026-02-11 21:09+0100\n"
+"PO-Revision-Date: 2026-10-04 22:27+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 25.12.2\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19
@@ -401,17 +401,14 @@ msgstr "Erabili IKEv2 gako trukea"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
-#| "only if the server doesn’t support PFS.</p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Do this only if the "
 "server doesn’t support PFS.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Ezgaitu PFS («perfect forward secrecy», "
-"konfidentzialtasun iraunkor perfektua). Gaitu aukera hau soilik zerbitzariak "
-"PFS onartzen ez duenean.</p></body></html>"
+"konfidentzialtasun iraunkor perfektua) zerbitzariak PFS onartzen ez duenean "
+"soilik.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:332

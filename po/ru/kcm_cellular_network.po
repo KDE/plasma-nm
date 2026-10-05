@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-settings\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-26 00:46+0000\n"
-"PO-Revision-Date: 2026-02-18 09:12+0200\n"
+"PO-Revision-Date: 2026-10-04 10:06+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -52,7 +52,7 @@ msgstr "Изменить точку доступа"
 #: ui/EditProfilePage.qml:37
 #, kde-format
 msgid "Name"
-msgstr "Имя"
+msgstr "Название"
 
 #: ui/EditProfilePage.qml:45
 #, kde-format
@@ -117,12 +117,12 @@ msgstr "Сохранить профиль"
 #: ui/main.qml:68
 #, kde-format
 msgid "Modem not available"
-msgstr "Модем не доступен"
+msgstr "Модем недоступен"
 
 #: ui/main.qml:87
 #, kde-format
 msgid "Mobile data"
-msgstr "Передача данных"
+msgstr "Мобильные данные"
 
 #: ui/main.qml:92
 #, kde-format
@@ -142,7 +142,7 @@ msgstr "Для передачи данных необходимо настрои
 #: ui/main.qml:98
 #, kde-format
 msgid "Whether mobile data is enabled."
-msgstr "Необходимо включить передачу данных."
+msgstr "Включение мобильных данных."
 
 #: ui/main.qml:129
 #, kde-format
@@ -314,8 +314,8 @@ msgid ""
 "Unable to autodetect connection settings for your carrier. Please find your "
 "carrier's APN settings by either contacting support or searching online."
 msgstr ""
-"Не удалось определить параметры подключения автоматически Запросите "
-"параметры точки доступа своего провайдера в службе поддержки или в интернете."
+"Не удалось определить параметры подключения автоматически. Запросите "
+"параметры точки доступа своего провайдера в службе поддержки или в Интернете."
 
 #: ui/ProfileList.qml:66
 #, kde-format
@@ -400,7 +400,7 @@ msgstr "Разблокировать SIM-карту"
 #: ui/SimLockPage.qml:116
 #, kde-format
 msgid "Attempts left: %1"
-msgstr "Осталась попыток: %1"
+msgstr "Осталось попыток: %1"
 
 #: ui/SimLockPage.qml:121
 #, kde-format
@@ -440,7 +440,7 @@ msgstr "Подтвердите PIN"
 #: ui/SimLockPage.qml:177
 #, kde-format
 msgid "Remove SIM PIN"
-msgstr "Убрать PIN"
+msgstr "Убрать PIN SIM-карты"
 
 #: ui/SimLockPage.qml:194
 #, kde-format

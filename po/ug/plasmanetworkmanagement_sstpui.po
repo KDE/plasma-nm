@@ -1,14 +1,14 @@
 # Uyghur translation for plasmanetworkmanagement_sstpui.
 # Copyright (C) YEAR This file is copyright:
 # This file is distributed under the same license as the plasma-nm package.
-# Abduqadir Abliz <sahranbay@gmail.com>, 2026., YEAR.
+# Abduqadir Abliz <sahranbay@gmail.com>, 2026.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2025-11-17 11:54+0000\n"
-"PO-Revision-Date: 2026-09-23 06:56+0900\n"
+"PO-Revision-Date: 2026-10-03 19:04-0400\n"
 "Last-Translator: Abduqadir Abliz <sahranbay@gmail.com>\n"
 "Language-Team: Uyghur <kde-i18n-doc@kde.org>\n"
 "Language: ug\n"
@@ -40,31 +40,31 @@ msgstr "تۆۋەندىكى كىملىك دەلىللەش ئۇسۇلىغا يول
 #: sstpadvanced.ui:65
 #, kde-format
 msgid "PAP"
-msgstr ""
+msgstr "PAP"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:73
 #, kde-format
 msgid "CHAP"
-msgstr ""
+msgstr "CHAP"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:81
 #, kde-format
 msgid "MSCHAP"
-msgstr ""
+msgstr "MSCHAP"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:89
 #, kde-format
 msgid "MSCHAPv2"
-msgstr ""
+msgstr "MSCHAPv2"
 
 #. i18n: ectx: property (text), item, widget (QListWidget, listWidget)
 #: sstpadvanced.ui:97
 #, kde-format
 msgid "EAP"
-msgstr ""
+msgstr "EAP"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, gb_MPPE)
 #: sstpadvanced.ui:111
@@ -204,7 +204,7 @@ msgstr "ئىم:"
 #: sstpauth.ui:14
 #, kde-format
 msgid "SSH VPN"
-msgstr ""
+msgstr "SSH VPN"
 
 #. i18n: ectx: property (text), widget (QLabel, passwordLabel)
 #: sstpauth.ui:32

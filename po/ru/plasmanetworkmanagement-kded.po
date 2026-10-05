@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-11 00:47+0000\n"
-"PO-Revision-Date: 2026-06-19 19:30+0200\n"
+"PO-Revision-Date: 2026-10-04 10:06+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -45,14 +45,14 @@ msgstr "Войти"
 #: connectivitymonitor.cpp:97
 #, kde-format
 msgid "Limited Connectivity"
-msgstr "Ограниченное соединение"
+msgstr "Ограниченное подключение"
 
 #: connectivitymonitor.cpp:98
 #, kde-format
 msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."
-msgstr "Это устройство подключено к сети, но не имеет выхода в интернет."
+msgstr "Это устройство подключено к сети, но не имеет выхода в Интернет."
 
 #: modemmonitor.cpp:182
 #, kde-format
@@ -79,7 +79,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConfigUnavailableReason"
 msgid "IP configuration was unavailable"
-msgstr "Параметры IP недоступны."
+msgstr "Параметры IP недоступны"
 
 #: notification.cpp:104
 #, kde-format
@@ -93,7 +93,7 @@ msgstr "Параметры IP устарели"
 msgctxt ""
 "@info:status Notification when the device failed due to NoSecretsReason"
 msgid "No secrets were provided"
-msgstr "Не были указаны пароли"
+msgstr "Не указаны пароли или ключи"
 
 #: notification.cpp:110
 #, kde-format
@@ -308,7 +308,7 @@ msgstr "Отсутствует прошивка устройства"
 msgctxt ""
 "@info:status Notification when the device failed due to DeviceRemovedReason"
 msgid "The device was removed"
-msgstr "Устройство было удалено"
+msgstr "Устройство извлечено"
 
 #: notification.cpp:198
 #, kde-format
@@ -329,7 +329,7 @@ msgstr "Соединение было удалено"
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to CarrierReason"
 msgid "The cable was disconnected"
-msgstr "Произошло отключение кабеля"
+msgstr "Кабель отключён"
 
 #: notification.cpp:212
 #, kde-format
@@ -343,7 +343,7 @@ msgstr "Не удалось найти модем"
 msgctxt ""
 "@info:status Notification when the device failed due to BluetoothFailedReason"
 msgid "The bluetooth connection failed or timed out"
-msgstr "Сбой или превышение времени ожидания соединения bluetooth"
+msgstr "Сбой или превышение времени ожидания соединения Bluetooth"
 
 #: notification.cpp:218
 #, kde-format
@@ -412,14 +412,14 @@ msgstr "Сбой вторичного подключения базового с
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to DcbFcoeFailed"
 msgid "DCB or FCoE setup failed"
-msgstr "Не удалось установить соединение DCB или FCoE"
+msgstr "Сбой настройки DCB или FCoE"
 
 #: notification.cpp:251
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to TeamdControlFailed"
 msgid "teamd control failed"
-msgstr "Не удалось настроить teamd"
+msgstr "Сбой управления teamd"
 
 #: notification.cpp:254
 #, kde-format
@@ -520,7 +520,7 @@ msgstr ""
 #: notification.cpp:470
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "Не удалось запустить службу, обеспечивающую VPN-соединения «%1»."
+msgstr "Не удалось запустить службу, обеспечивающую VPN-соединение «%1»."
 
 #: notification.cpp:473
 #, kde-format
@@ -561,17 +561,17 @@ msgstr "Данные для безопасного подключения не �
 #: passworddialog.cpp:99
 #, kde-format
 msgid "Incorrect password for the Wi-Fi network \"%1\". Please try again."
-msgstr "Неверный пароль для подключения к Wi-Fi сети «%1», попробуйте ещё раз."
+msgstr "Неверный пароль для подключения к сети Wi-Fi «%1». Попробуйте ещё раз."
 
 #: passworddialog.cpp:101
 #, kde-format
 msgid "Enter the password for the Wi-Fi network \"%1\":"
-msgstr "Введите пароль для подключения к Wi-Fi сети «%1»:"
+msgstr "Введите пароль для подключения к сети Wi-Fi «%1»:"
 
 #: passworddialog.cpp:105
 #, kde-format
 msgid "Incorrect password for the connection \"%1\". Please try again."
-msgstr "Неверный пароль для подключения к «%1», попробуйте ещё раз"
+msgstr "Неверный пароль для подключения к «%1». Попробуйте ещё раз."
 
 #: passworddialog.cpp:107
 #, kde-format
@@ -661,8 +661,7 @@ msgstr "Требуется разблокирование %1"
 #, kde-format
 msgid ""
 "The mobile broadband device '%1' requires a %2 code before it can be used."
-msgstr ""
-"Для работы с устройством мобильной сети «%1» требуется %2-код SIM-карты."
+msgstr "Для работы с устройством мобильной сети «%1» требуется код %2."
 
 #: pindialog.cpp:86 pindialog.cpp:118
 #, kde-format
@@ -744,7 +743,7 @@ msgstr "PIN-коды не совпадают"
 #: pindialog.cpp:213
 #, kde-format
 msgid "PUK code too short. It should be 8 digits."
-msgstr "PUK-код слишком короткий. Должно быть не менее 8 цифр."
+msgstr "PUK-код слишком короткий. Должно быть 8 цифр."
 
 #: pindialog.cpp:218
 #, kde-format
@@ -782,7 +781,7 @@ msgstr "Повторите PIN-код:"
 #: secretagent.cpp:426
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
-msgstr "Ошибка проверки подлинности %1."
+msgstr "Ошибка проверки подлинности %1. Неверный пароль?"
 
 #~ msgid "%1 password dialog"
 #~ msgstr "Ввод пароля для %1"

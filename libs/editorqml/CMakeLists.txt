@@ -73,6 +73,11 @@ set(SETTINGS_SRCS
   settings/vpn/l2tp/l2tp.h
   settings/vpn/l2tp/nm-l2tp-service.h
 
+  #openconnect vpn
+  settings/vpn/openconnect/openconnectsetting.cpp
+  settings/vpn/openconnect/openconnectsetting.h
+  settings/vpn/openconnect/nm-openconnect-service.h
+
   #openvpn vpn
   settings/vpn/openvpn/openvpnauth.h
   settings/vpn/openvpn/openvpnauth.cpp
@@ -180,6 +185,11 @@ set(QML_SRCS
   qml/vpn/l2tp/L2tpLifetimeField.qml
   qml/vpn/l2tp/L2tpAuth.qml
 
+  # openconnect vpn
+  qml/vpn/openconnect/Openconnect.qml
+  qml/vpn/openconnect/OpenconnectToken.qml
+  qml/vpn/openconnect/OpenconnectWebAuth.qml
+
   # openvpn vpn
   qml/vpn/openvpn/Openvpn.qml
   qml/vpn/openvpn/OpenvpnAdvanced.qml
@@ -266,12 +276,21 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/iodine
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/libreswan
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/l2tp
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/openconnect
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/openvpn
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/pptp
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/strongswan
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")
+
+if(BUILD_OPENCONNECT)
+    target_sources(plasmanm_editorqml PRIVATE
+        settings/vpn/openconnect/openconnectwebauth.cpp
+        settings/vpn/openconnect/openconnectwebauth.h
+    )
+    target_link_libraries(plasmanm_editorqml PRIVATE Qt6::WebEngineCore)
+endif()
 
 ecm_finalize_qml_module(plasmanm_editorqml)
 

@@ -17,7 +17,7 @@ Item {
     property string text: ""
 
     property string password: ""
-    property int maxLength: 64
+    property int maxLength: 256
 
     signal passwordEdited(string password)
     signal passwordOptionEdited(int option)

@@ -119,6 +119,11 @@ ColumnLayout {
                             url: "../vpn/pptp/Pptp.qml",
                             setting: kcm.vpnPptpSetting
                         };
+                    case "org.freedesktop.NetworkManager.openconnect":
+                        return {
+                            url: "../vpn/openconnect/Openconnect.qml",
+                            setting: kcm.vpnOpenconnectSetting
+                        };
                     case "org.freedesktop.NetworkManager.openvpn":
                         return {
                             url: "../vpn/openvpn/Openvpn.qml",

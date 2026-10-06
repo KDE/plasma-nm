@@ -48,9 +48,9 @@ void MobileProvidersTest::testProviderFromMccMnc_data()
     QTest::addColumn<QStringList>("providerNames");
 
     QTest::newRow("Aldi 1") << "26277" << QStringList{"AldiTalk/MedionMobile", "blau.de", "E-Plus", "simyo Internet"};
-    QTest::newRow("Aldi 2") << "26203" << QStringList{"AldiTalk/MedionMobile", "blau.de", "E-Plus", "simyo Internet"};
+    QTest::newRow("Aldi 2") << "26203" << QStringList{"AldiTalk/MedionMobile", "blau.de", "E-Plus", "simyo Internet", "sipgate"};
     QTest::newRow("Vodafone CZ") << "23003" << QStringList{"Vodafone"};
-    QTest::newRow("1&1") << "26202" << QStringList{"Bild Mobil", "Vodafone", "1&1"};
+    QTest::newRow("1&1") << "26202" << QStringList{"Bild Mobil", "Vodafone", "1&1", "Willkommen"};
 }
 
 QTEST_GUILESS_MAIN(MobileProvidersTest)

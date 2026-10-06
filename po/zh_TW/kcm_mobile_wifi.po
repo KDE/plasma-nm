@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-06 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:51+0000\n"
 "PO-Revision-Date: 2026-09-15 18:41+0900\n"
 "Last-Translator: Kisaragi Hiu <mail@kisaragi-hiu.com>\n"
 "Language-Team: Traditional Chinese <zh-l10n@lists.slat.org>\n"
@@ -40,27 +40,27 @@ msgstr "傳輸速率"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "已連線，↓ %1/秒, ↑ %2/秒"
 
-#: ui/ConnectionInfo.qml:79
-#, kde-format
-msgctxt "@title:group"
-msgid "Connection Details"
-msgstr "連線詳情"
-
-#: ui/ConnectionInfo.qml:100
+#: ui/ConnectionInfo.qml:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
 msgstr "分享"
 
-#: ui/ConnectionInfo.qml:107
+#: ui/ConnectionInfo.qml:87
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
 msgstr "透過 QR Code 分享 Wi-Fi"
 
-#: ui/ConnectionInfo.qml:114
+#: ui/ConnectionInfo.qml:94
 #, kde-format
 msgid "Wi-Fi QR Code"
 msgstr "Wi-Fi QR Code"
+
+#: ui/ConnectionInfo.qml:114
+#, kde-format
+msgctxt "@title:group"
+msgid "Connection Details"
+msgstr "連線詳情"
 
 #: ui/main.qml:26
 #, kde-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_mobile_wifi\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-06 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:51+0000\n"
 "PO-Revision-Date: 2026-08-06 08:24+0300\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -42,27 +42,27 @@ msgstr "Швидкості передавання"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "З'єднано, ↓ %1/с, ↑ %2/с"
 
-#: ui/ConnectionInfo.qml:79
-#, kde-format
-msgctxt "@title:group"
-msgid "Connection Details"
-msgstr "Параметри з'єднання"
-
-#: ui/ConnectionInfo.qml:100
+#: ui/ConnectionInfo.qml:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
 msgstr "Оприлюднення"
 
-#: ui/ConnectionInfo.qml:107
+#: ui/ConnectionInfo.qml:87
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
 msgstr "Оприлюднити Wi-Fi за допомогою QR-коду"
 
-#: ui/ConnectionInfo.qml:114
+#: ui/ConnectionInfo.qml:94
 #, kde-format
 msgid "Wi-Fi QR Code"
 msgstr "QR-код Wi-Fi"
+
+#: ui/ConnectionInfo.qml:114
+#, kde-format
+msgctxt "@title:group"
+msgid "Connection Details"
+msgstr "Параметри з'єднання"
 
 #: ui/main.qml:26
 #, kde-format

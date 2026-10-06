@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-06 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:51+0000\n"
 "PO-Revision-Date: 2026-08-24 19:52+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -39,27 +39,27 @@ msgstr "Siirtonopeudet"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Yhdistetty, ↓ %1/s, ↑ %2/s"
 
-#: ui/ConnectionInfo.qml:79
-#, kde-format
-msgctxt "@title:group"
-msgid "Connection Details"
-msgstr "Yhteyden tiedot"
-
-#: ui/ConnectionInfo.qml:100
+#: ui/ConnectionInfo.qml:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
 msgstr "Jaa"
 
-#: ui/ConnectionInfo.qml:107
+#: ui/ConnectionInfo.qml:87
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
 msgstr "Jaa langaton verkko QR-koodilla"
 
-#: ui/ConnectionInfo.qml:114
+#: ui/ConnectionInfo.qml:94
 #, kde-format
 msgid "Wi-Fi QR Code"
 msgstr "Langattoman verkon QR-koodi"
+
+#: ui/ConnectionInfo.qml:114
+#, kde-format
+msgctxt "@title:group"
+msgid "Connection Details"
+msgstr "Yhteyden tiedot"
 
 #: ui/main.qml:26
 #, kde-format

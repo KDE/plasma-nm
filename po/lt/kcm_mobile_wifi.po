@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-06 00:46+0000\n"
+"POT-Creation-Date: 2026-10-06 00:51+0000\n"
 "PO-Revision-Date: 2026-08-11 14:43+0300\n"
 "Last-Translator: Moo\n"
 "Language-Team: lt\n"
@@ -41,27 +41,27 @@ msgstr "Perdavimo spartos"
 msgid "Connected, ↓ %1/s, ↑ %2/s"
 msgstr "Prisijungta, ↓ %1/sek., ↑ %2/sek."
 
-#: ui/ConnectionInfo.qml:79
-#, kde-format
-msgctxt "@title:group"
-msgid "Connection Details"
-msgstr "Išsamiau apie ryšį"
-
-#: ui/ConnectionInfo.qml:100
+#: ui/ConnectionInfo.qml:80
 #, kde-format
 msgctxt "@title:group"
 msgid "Share"
 msgstr "Bendrinti"
 
-#: ui/ConnectionInfo.qml:107
+#: ui/ConnectionInfo.qml:87
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
 msgstr "Bendrinti belaidį (Wi-Fi) ryšį per QR kodą"
 
-#: ui/ConnectionInfo.qml:114
+#: ui/ConnectionInfo.qml:94
 #, kde-format
 msgid "Wi-Fi QR Code"
 msgstr "Belaidžio (Wi-Fi) ryšio QR kodas"
+
+#: ui/ConnectionInfo.qml:114
+#, kde-format
+msgctxt "@title:group"
+msgid "Connection Details"
+msgstr "Išsamiau apie ryšį"
 
 #: ui/main.qml:26
 #, kde-format

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:48+0000\n"
+"POT-Creation-Date: 2026-10-07 00:51+0000\n"
 "PO-Revision-Date: 2026-08-16 21:50+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
@@ -17,49 +17,49 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: kcm.cpp:829
+#: kcm.cpp:848
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr ""
 
-#: kcm.cpp:860
+#: kcm.cpp:879
 #, kde-format
 msgid "my_shared_connection"
 msgstr "jaettu_yhteyteni"
 
-#: kcm.cpp:930
+#: kcm.cpp:949
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Haluatko tallentaa yhteyteen ”%1” tehdyt muutokset?"
 
-#: kcm.cpp:933
+#: kcm.cpp:952
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Tallenna muutokset"
 
-#: kcm.cpp:962
+#: kcm.cpp:981
 #, kde-format
 msgctxt "Suffix appended to duplicated connection name"
 msgid " (Copy)"
 msgstr " (kopio)"
 
-#: kcm.cpp:985
+#: kcm.cpp:1004
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr ""
 
-#: kcm.cpp:985
+#: kcm.cpp:1004
 #, kde-format
 msgid "All files (*)"
 msgstr ""
 
-#: kcm.cpp:995
+#: kcm.cpp:1014
 #, kde-format
 msgid "No file was provided"
 msgstr ""
 
-#: kcm.cpp:1060
+#: kcm.cpp:1079
 #, kde-format
 msgid "Unknown VPN type"
 msgstr ""

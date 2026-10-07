@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:48+0000\n"
+"POT-Creation-Date: 2026-10-07 00:51+0000\n"
 "PO-Revision-Date: 2026-10-04 16:36+0300\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -19,49 +19,49 @@ msgstr ""
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
 "X-Generator: Poedit 3.9\n"
 
-#: kcm.cpp:829
+#: kcm.cpp:848
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "Nepavyko gauti paslapčių, skirtų %1"
 
-#: kcm.cpp:860
+#: kcm.cpp:879
 #, kde-format
 msgid "my_shared_connection"
 msgstr "mano_bendrinamas_ryšys"
 
-#: kcm.cpp:930
+#: kcm.cpp:949
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Ar norite įrašyti pakeitimus, kuriuos atlikote ryšiui „%1“?"
 
-#: kcm.cpp:933
+#: kcm.cpp:952
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Įrašyti pakeitimus"
 
-#: kcm.cpp:962
+#: kcm.cpp:981
 #, kde-format
 msgctxt "Suffix appended to duplicated connection name"
 msgid " (Copy)"
 msgstr " (Kopija)"
 
-#: kcm.cpp:985
+#: kcm.cpp:1004
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN ryšiai (%1)"
 
-#: kcm.cpp:985
+#: kcm.cpp:1004
 #, kde-format
 msgid "All files (*)"
 msgstr "Visi failai (*)"
 
-#: kcm.cpp:995
+#: kcm.cpp:1014
 #, kde-format
 msgid "No file was provided"
 msgstr "Nepateiktas joks failas"
 
-#: kcm.cpp:1060
+#: kcm.cpp:1079
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Nežinomas VPN tipas"

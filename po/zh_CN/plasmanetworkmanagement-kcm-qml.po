@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:48+0000\n"
+"POT-Creation-Date: 2026-10-07 00:51+0000\n"
 "PO-Revision-Date: 2026-07-17 18:51\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -18,49 +18,49 @@ msgstr ""
 "qml.pot\n"
 "X-Crowdin-File-ID: 60357\n"
 
-#: kcm.cpp:829
+#: kcm.cpp:848
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "获取 %1 的密码失败"
 
-#: kcm.cpp:860
+#: kcm.cpp:879
 #, kde-format
 msgid "my_shared_connection"
 msgstr "我的共享连接"
 
-#: kcm.cpp:930
+#: kcm.cpp:949
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "您想要保存对连接“%1”的更改吗？"
 
-#: kcm.cpp:933
+#: kcm.cpp:952
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "保存更改"
 
-#: kcm.cpp:962
+#: kcm.cpp:981
 #, kde-format
 msgctxt "Suffix appended to duplicated connection name"
 msgid " (Copy)"
 msgstr " (副本)"
 
-#: kcm.cpp:985
+#: kcm.cpp:1004
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr ""
 
-#: kcm.cpp:985
+#: kcm.cpp:1004
 #, kde-format
 msgid "All files (*)"
 msgstr ""
 
-#: kcm.cpp:995
+#: kcm.cpp:1014
 #, kde-format
 msgid "No file was provided"
 msgstr ""
 
-#: kcm.cpp:1060
+#: kcm.cpp:1079
 #, kde-format
 msgid "Unknown VPN type"
 msgstr ""

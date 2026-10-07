@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 00:46+0000\n"
-"PO-Revision-Date: 2026-07-21 02:27+0200\n"
+"PO-Revision-Date: 2026-10-06 21:59+0200\n"
 "Last-Translator: Iñigo Salvador Azurmendi <xalba@ni.eus>\n"
 "Language-Team: Basque <kde-i18n-eu@kde.org>\n"
 "Language: eu\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Lokalize 26.04.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
@@ -379,7 +379,7 @@ msgstr "Automatikoa"
 #: openvpnadvanced.ui:159
 #, kde-format
 msgid "Use asymetric compression"
-msgstr "Erabili konpresio asimetrikoa"
+msgstr "Konpresio asimetrikoa erabili"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:168
@@ -391,7 +391,7 @@ msgstr "Erabili TCP urruneko ostalariarekin komunikatzeko."
 #: openvpnadvanced.ui:171
 #, kde-format
 msgid "Use a TCP connection"
-msgstr "Erabili TCP konexio bat"
+msgstr "TCP konexio bat erabili"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseVirtualDeviceType)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbDeviceType)
@@ -404,7 +404,7 @@ msgstr "Esplizituki ezarri alegiazko gailu mota (TUN/TAP)."
 #: openvpnadvanced.ui:183
 #, kde-format
 msgid "Set virtual device type:"
-msgstr "Ezarri alegiazko gailu mota:"
+msgstr "Alegiazko gailu mota ezarri:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:197
@@ -433,7 +433,7 @@ msgstr ""
 #: openvpnadvanced.ui:217
 #, kde-format
 msgid "Set virtual device name:"
-msgstr "Ezarri alegiazko gailuaren izena:"
+msgstr "Alegiazko gailuaren izena ezarri:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMtu)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMtu)

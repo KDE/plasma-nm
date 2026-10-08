@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kded\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-08-11 00:47+0000\n"
-"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"PO-Revision-Date: 2026-10-07 14:30+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@latin\n"
@@ -108,7 +108,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantConfigFailedReason"
 msgid "Authorization supplicant's configuration failed"
-msgstr "Propalo podešavanje pružaoca ovlašćivanja."
+msgstr "Podešavanje pružaoca ovlašćivanja nije uspelo."
 
 #: notification.cpp:117
 #, kde-format
@@ -116,7 +116,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantFailedReason"
 msgid "Authorization supplicant failed"
-msgstr "Propao pružalac ovlašćivanja."
+msgstr "Pružalac ovlašćivanja nije uspeo."
 
 # rewrite-msgid: /timed out/timeout/
 #: notification.cpp:120
@@ -125,14 +125,14 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AuthSupplicantTimeoutReason"
 msgid "Authorization supplicant timed out"
-msgstr "Prekovreme kod pružaoca ovlašćivanja."
+msgstr "Isteklo je vreme pružaocu ovlašćivanja."
 
 #: notification.cpp:123
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to PppStartFailedReason"
 msgid "PPP failed to start"
-msgstr "Propalo pokretanje PPP‑a."
+msgstr "Pokretanje PPP‑a nije uspelo."
 
 #: notification.cpp:126
 #, kde-format
@@ -146,14 +146,14 @@ msgstr "Prekinuta veza sa PPP‑om."
 msgctxt ""
 "@info:status Notification when the device failed due to PppFailedReason"
 msgid "PPP failed"
-msgstr "PPP propao."
+msgstr "PPP nije uspeo."
 
 #: notification.cpp:132
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpStartFailedReason"
 msgid "DHCP failed to start"
-msgstr "Propalo pokretanje DHCP‑a."
+msgstr "Pokretanje DHCP‑a nije uspelo."
 
 #: notification.cpp:135
 #, kde-format
@@ -167,7 +167,7 @@ msgstr "Greška DHCP‑a."
 msgctxt ""
 "@info:status Notification when the device failed due to DhcpFailedReason"
 msgid "DHCP failed "
-msgstr "DHCP propao."
+msgstr "DHCP nije uspeo."
 
 #: notification.cpp:141
 #, kde-format
@@ -175,14 +175,14 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "SharedStartFailedReason"
 msgid "The shared service failed to start"
-msgstr "Propalo pokretanje deljenog servisa."
+msgstr "Pokretanje deljenog servisa nije uspelo."
 
 #: notification.cpp:144
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to SharedFailedReason"
 msgid "The shared service failed"
-msgstr "Deljeni servis propao."
+msgstr "Deljeni servis nije uspeo."
 
 #: notification.cpp:147
 #, kde-format
@@ -190,7 +190,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "AutoIpStartFailedReason"
 msgid "The auto IP service failed to start"
-msgstr "Propalo pokretanje automatskog IP servisa."
+msgstr "Pokretanje automatskog IP servisa nije uspelo."
 
 #: notification.cpp:150
 #, kde-format
@@ -204,7 +204,7 @@ msgstr "Automatski IP servis prijavljuje grešku."
 msgctxt ""
 "@info:status Notification when the device failed due to AutoIpFailedReason"
 msgid "The auto IP service failed"
-msgstr "Automatski IP servis propao."
+msgstr "Automatski IP servis nije uspeo."
 
 #: notification.cpp:156
 #, kde-format
@@ -234,14 +234,14 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ModemDialTimeoutReason"
 msgid "The modem dial timed out"
-msgstr "Prekovreme u modemskom biranju."
+msgstr "Isteklo je vreme za modemsko biranje."
 
 #: notification.cpp:168
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to ModemDialFailedReason"
 msgid "The modem dial failed"
-msgstr "Modemsko biranje propalo."
+msgstr "Modemsko biranje nije uspelo."
 
 #: notification.cpp:171
 #, kde-format
@@ -280,7 +280,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmRegistrationTimeoutReason"
 msgid "GSM network registration timed out"
-msgstr "Prekovreme u registraciji na GSM mrežu."
+msgstr "Isteklo je vreme za registraciju na GSM mrežu."
 
 #: notification.cpp:186
 #, kde-format
@@ -288,7 +288,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmRegistrationFailedReason"
 msgid "GSM registration failed"
-msgstr "GSM registracija propala."
+msgstr "GSM registracija nije uspela."
 
 #: notification.cpp:189
 #, kde-format
@@ -296,7 +296,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "GsmPinCheckFailedReason"
 msgid "The GSM PIN check failed"
-msgstr "Provera GSM PIN‑a propala."
+msgstr "Provera GSM PIN‑a nije uspela."
 
 #: notification.cpp:192
 #, kde-format
@@ -346,7 +346,7 @@ msgstr "Modem ne može da se nađe."
 msgctxt ""
 "@info:status Notification when the device failed due to BluetoothFailedReason"
 msgid "The bluetooth connection failed or timed out"
-msgstr "Prekovreme ili neuspeh bluetooth veze."
+msgstr "Bluetooth veza nije uspela ili je isteklo vreme."
 
 #: notification.cpp:218
 #, kde-format
@@ -387,7 +387,7 @@ msgstr "InfiniBand uređaj ne podržava povezani režim."
 msgctxt ""
 "@info:status Notification when the device failed due to DependencyFailed"
 msgid "A dependency of the connection failed"
-msgstr "Propala zavisnost veze."
+msgstr "Zavisnost veze nije uspela."
 
 #: notification.cpp:236
 #, kde-format
@@ -409,26 +409,26 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "SecondaryConnectionFailed"
 msgid "A secondary connection of the base connection failed"
-msgstr "Sekundarna veza bazne veze propala."
+msgstr "Sekundarna veza bazne veze nije uspela."
 
 #: notification.cpp:248
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to DcbFcoeFailed"
 msgid "DCB or FCoE setup failed"
-msgstr "Postavljanje DCB‑a ili FCoE‑a propalo."
+msgstr "Postavljanje DCB‑a ili FCoE‑a nije uspelo."
 
 #: notification.cpp:251
 #, kde-format
 msgctxt ""
 "@info:status Notification when the device failed due to TeamdControlFailed"
 msgid "teamd control failed"
-msgstr "Upravljanje preko teamd‑a propalo."
+msgstr "Upravljanje preko teamd‑a nije uspelo."
 
 #: notification.cpp:254
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to ModemFailed"
 msgid "Modem failed or no longer available"
-msgstr "Modem propao ili više nije dostupan."
+msgstr "Modem nije uspeo ili više nije dostupan."
 
 #: notification.cpp:257
 #, kde-format
@@ -481,7 +481,7 @@ msgstr "VPN veza „%1“ aktivirana."
 #: notification.cpp:439
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "Propalo aktiviranje VPN veze „%1“."
+msgstr "Aktiviranje VPN veze „%1“ nije uspelo."
 
 #: notification.cpp:442 notification.cpp:452
 #, kde-format
@@ -509,7 +509,7 @@ msgstr "IP postava VPN veze „%1“ nije ispravna."
 #: notification.cpp:464
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
-msgstr "Prekovreme u pokušaju povezivanja sa VPN servisom."
+msgstr "Isteklo je vreme za pokušaj povezivanja sa VPN servisom."
 
 #: notification.cpp:467
 #, kde-format
@@ -521,7 +521,7 @@ msgstr "Prekovreme u pokretanju servisa koji pruža VPN vezu „%1“."
 #: notification.cpp:470
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "Propalo pokretanje servisa koji pruža VPN vezu „%1“."
+msgstr "Pokretanje servisa koji pruža VPN vezu „%1“ nije uspelo."
 
 #: notification.cpp:473
 #, kde-format
@@ -531,7 +531,7 @@ msgstr "Neophodne tajne za VPN vezu „%1“ nisu zadate."
 #: notification.cpp:476
 #, kde-format
 msgid "Authentication to the VPN server failed."
-msgstr "Autentifikacija na VPN serveru propala."
+msgstr "Autentifikacija na VPN serveru nije uspela."
 
 #: notification.cpp:479
 #, kde-format
@@ -802,4 +802,4 @@ msgstr "Ponovite PIN kod:"
 #: secretagent.cpp:426
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
-msgstr "Autentifikacija za %1 propala. Pogrešna lozinka?"
+msgstr "Autentifikacija za %1 nije uspela. Pogrešna lozinka?"

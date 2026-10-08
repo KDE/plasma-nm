@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 02:45+0000\n"
-"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"PO-Revision-Date: 2026-10-07 11:45+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavianlatin\n"
@@ -686,7 +686,7 @@ msgstr "Opšte"
 #: editor/connectiondetails.cpp:330
 #, kde-format
 msgid "IPv4 Address"
-msgstr "IPv4 adrese"
+msgstr "IPv4 adresa"
 
 #: editor/connectiondetails.cpp:336
 #, kde-format
@@ -713,7 +713,7 @@ msgstr "IPv4"
 #: editor/connectiondetails.cpp:362
 #, kde-format
 msgid "IPv6 Address"
-msgstr "IPv6 adrese"
+msgstr "IPv6 adresa"
 
 #: editor/connectiondetails.cpp:364
 #, kde-format
@@ -1808,7 +1808,7 @@ msgstr ""
 #: editorqml/qml/ipv6/IPv6Settings.qml:110
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
-msgstr "Uredi listu DNS domena za pretragu"
+msgstr "Uredi spisak DNS domena za pretragu"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: editor/settings/ui/ipv4.ui:114 editor/settings/ui/ipv6.ui:164
@@ -2018,7 +2018,7 @@ msgstr "Ova veza zahtijeva IPv6"
 #: editorqml/qml/ipv6/IPv6Settings.qml:73
 #, kde-format
 msgid "Edit the list of DNS servers"
-msgstr "Uredi listu DNS servera"
+msgstr "Uredi spisak DNS servera"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:187
@@ -4097,7 +4097,7 @@ msgstr "Traži lozinku svaki put"
 #: editor/widgets/passwordfield.cpp:106 editorqml/qml/PasswordField.qml:128
 #, kde-format
 msgid "This password is not required"
-msgstr "Ovo lozinka nije neophodna"
+msgstr "Ova lozinka nije neophodna"
 
 #: editor/widgets/ssidcombobox.cpp:131
 #, kde-format
@@ -4196,7 +4196,7 @@ msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
 "specified above are used"
 msgstr ""
-"Ako je uključeno, automatski podešene rute se ignorišu i koriste sa samo "
+"Ako je uključeno, automatski podešene rute se ignorišu i koriste se samo "
 "rute zadate iznad."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)

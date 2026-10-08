@@ -12,7 +12,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-06-19 00:46+0000\n"
-"PO-Revision-Date: 2026-10-04 10:06+0200\n"
+"PO-Revision-Date: 2026-10-07 08:33+0200\n"
 "Last-Translator: Alexander Yavorskiy <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -464,7 +464,8 @@ msgstr "Ключ не зарегистрирован"
 #: openconnectwebauthdialog.cpp:250
 #, kde-format
 msgid "You already registered this device.Try again with device"
-msgstr "Это устройство уже зарегистрировано."
+msgstr ""
+"Это устройство уже зарегистрировано. Повторите попытку с другим устройством"
 
 #: openconnectwebauthdialog.cpp:256
 #, kde-format

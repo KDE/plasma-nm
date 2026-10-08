@@ -46,6 +46,13 @@ public:
         Wimax,
         Wired,
         Wireless,
+        Team,
+        Generic,
+        Tun,
+        IpTunnel,
+        WireGuard,
+        Loopback,
+        WifiP2P,
     };
     Q_ENUM(ConnectionType)
 

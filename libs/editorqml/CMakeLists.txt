@@ -95,6 +95,14 @@ set(SETTINGS_SRCS
   settings/vpn/pptp/pptp.h
   settings/vpn/pptp/nm-pptp-service.h
 
+  #wireguard
+  settings/vpn/wireguard/wireguardpeermodel.h
+  settings/vpn/wireguard/wireguardpeermodel.cpp
+  settings/vpn/wireguard/wireguard.cpp
+  settings/vpn/wireguard/wireguard.h
+  settings/vpn/wireguard/wireguardkeyvalidator.cpp
+  settings/vpn/wireguard/wireguardkeyvalidator.h
+
   #strongswan vpn
   settings/vpn/strongswan/strongswanauth.h
   settings/vpn/strongswan/strongswanauth.cpp
@@ -130,6 +138,7 @@ set(QML_SRCS
   qml/components/Wireless.qml
   qml/components/Wired.qml
   qml/components/Vpn.qml
+  qml/components/WireGuard.qml
 
   qml/PasswordPromptDialog.qml
 
@@ -200,6 +209,10 @@ set(QML_SRCS
   qml/vpn/pptp/Pptp.qml
   qml/vpn/pptp/PptpAdvanced.qml
   qml/vpn/pptp/PptpAuth.qml
+
+  # wireguard
+  qml/vpn/wireguard/Wireguard.qml
+  qml/vpn/wireguard/WireguardPeers.qml
 
   # strongswan vpn
   qml/vpn/strongswan/Strongswan.qml
@@ -280,6 +293,7 @@ target_include_directories(plasmanm_editorqml
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/openvpn
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/pptp
         ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/strongswan
+        ${CMAKE_CURRENT_SOURCE_DIR}/settings/vpn/wireguard
 )
 
 target_compile_definitions(plasmanm_editorqml PRIVATE BROADBANDPROVIDER_DATABASE=\"${BROADBANDPROVIDER_DATABASE}\")

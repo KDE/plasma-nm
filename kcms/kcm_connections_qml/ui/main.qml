@@ -44,6 +44,11 @@ Kirigami.Page {
     }
 
     Component {
+        id: wireguard
+        PlasmaNMQ.WireGuard {}
+    }
+
+    Component {
         id: disconnected
 
         Item {
@@ -324,6 +329,7 @@ Kirigami.Page {
 
                 active: connectionView.currentConnectionPath.length > 0
                 sourceComponent: {
+                    console.log("kcm.connectionType:", kcm.connectionType, "| Enums.WireGuard:", PlasmaNM.Enums.WireGuard, "Wired:", PlasmaNM.Enums.Wired, "Vpn:", PlasmaNM.Enums.Vpn);
                     switch (kcm.connectionType) {
                     case PlasmaNM.Enums.Wireless:
                         return wireless;
@@ -331,6 +337,8 @@ Kirigami.Page {
                         return wired;
                     case PlasmaNM.Enums.Vpn:
                         return vpn;
+                    case PlasmaNM.Enums.WireGuard:
+                        return wireguard;
                     default:
                         return disconnected;
                     }

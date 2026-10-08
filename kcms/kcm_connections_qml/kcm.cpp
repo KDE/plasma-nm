@@ -54,6 +54,7 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
     , m_vpnPptpSetting(new PptpSetting(this))
     , m_vpnOpenconnectSetting(new OpenconnectSetting(this))
     , m_vpnOpenvpnSetting(new OpenvpnSetting(this))
+    , m_wireguardSetting(new WireguardSetting(this))
     , m_timer(new QTimer(this))
 {
     // constant map with its connection type and security Type
@@ -71,6 +72,10 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
              } else {
                  m_security8021xSetting->loadSecrets(setting);
              }
+         }},
+        {QStringLiteral("wireguard"),
+         [this](const NetworkManager::Setting::Ptr &setting) {
+             m_wireguardSetting->loadSecrets(setting);
          }},
         {QStringLiteral("vpn"),
          [this](const NetworkManager::Setting::Ptr &setting) {
@@ -288,6 +293,12 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
         }
     });
 
+    connect(m_wireguardSetting, &WireguardSetting::validChanged, this, [this]() {
+        if (m_wireguardSetting->isValid()) {
+            kcmChanged(true);
+        }
+    });
+
     connect(m_vpnOpenvpnSetting, &OpenvpnSetting::validChanged, this, [this]() {
         if (m_vpnOpenvpnSetting->isValid()) {
             kcmChanged(true);
@@ -376,6 +387,11 @@ OpenvpnSetting *KCMNetworkManagementQml::vpnOpenvpnSetting() const
     return m_vpnOpenvpnSetting;
 }
 
+WireguardSetting *KCMNetworkManagementQml::wireguardSetting() const
+{
+    return m_wireguardSetting;
+}
+
 QString KCMNetworkManagementQml::vpnServiceType() const
 {
     return m_vpnServiceType;
@@ -444,6 +460,9 @@ Enums::ConnectionType KCMNetworkManagementQml::connectionType() const
 
     case NetworkManager::ConnectionSettings::Wired:
         return Enums::Wired;
+
+    case NetworkManager::ConnectionSettings::WireGuard:
+        return Enums::WireGuard;
 
     case NetworkManager::ConnectionSettings::Gsm:
         return Enums::Gsm;
@@ -566,6 +585,15 @@ void KCMNetworkManagementQml::applyTypeSettings(NMVariantMapMap &map, NetworkMan
         applyWirelessSetting(map);
         break;
 
+    case NetworkManager::ConnectionSettings::WireGuard: {
+        map.insert(QStringLiteral("wireguard"), m_wireguardSetting->setting());
+
+        QVariantMap connectionMap = map.value(QStringLiteral("connection"));
+        connectionMap.insert(QStringLiteral("interface-name"), m_wireguardSetting->interfaceName());
+        map.insert(QStringLiteral("connection"), connectionMap);
+        break;
+    }
+
     case NetworkManager::ConnectionSettings::Wired:
         map.insert(QStringLiteral("802-3-ethernet"), m_wiredSetting->setting());
 
@@ -677,6 +705,7 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
     m_generalSettings->loadConfig(connectionSettings);
     m_wifiSetting->loadConfig(connectionSettings);
     m_wiredSetting->loadConfig(connectionSettings);
+    m_wireguardSetting->loadConfig(connectionSettings);
     m_ipv4Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>());
     m_ipv6Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv6).staticCast<NetworkManager::Ipv6Setting>());
 
@@ -741,6 +770,13 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
             Q_EMIT vpnOpenvpnSettingChanged();
         }
 
+        Q_EMIT connectionLoaded(m_currentConnectionPath);
+
+        kcmChanged(false);
+        return;
+    }
+
+    if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::WireGuard) {
         Q_EMIT connectionLoaded(m_currentConnectionPath);
 
         kcmChanged(false);
@@ -1020,34 +1056,36 @@ KCMNetworkManagementQml::ImportResult KCMNetworkManagementQml::importVpnFile(con
     const QString ext = QStringLiteral("*.") % fi.suffix();
     qCDebug(PLASMA_NM_KCM_QML_LOG) << "Importing VPN connection " << filename << "extension:" << ext;
 
-    // TODO: Handle WireGuard separately because it is different than all the other VPNs
-    //   if (WireGuardInterfaceWidget::supportedFileExtensions().contains(ext)) {
-    // #if NM_CHECK_VERSION(1, 40, 0)
-    //        GError *error = nullptr;
-    //        NMConnection *conn = nm_conn_wireguard_import(filename.toUtf8().constData(), &error);
-    //
-    //        if (error) {
-    //            qCDebug(PLASMA_NM_KCM_QML_LOG) << "Could not import WireGuard connection" << error->message;
-    //        } else {
-    //            m_handler->addConnection(conn);
-    //            return ImportResult::pass();
-    //        }
-    // #else
-    //        NMVariantMapMap connection = WireGuardInterfaceWidget::importConnectionSettings(filename);
-    //        NetworkManager::ConnectionSettings connectionSettings;
-    //        connectionSettings.fromMap(connection);
-    //        connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
-    //
-    //        // qCDebug(PLASMA_NM_KCM_LOG) << "Converted connection:" << connectionSettings;
-    //
-    //        m_handler->addConnection(connectionSettings.toMap());
-    //        // qCDebug(PLASMA_NM_KCM_LOG) << "Adding imported connection under id:" << conId;
-    //
-    //        if (!connection.isEmpty()) {
-    //            return ImportResult::pass(); // get out if the import produced at least some output
-    //        }
-    // #endif
-    //    }
+    if (WireguardSetting::supportedFileExtensions().contains(ext)) {
+#if NM_CHECK_VERSION(1, 40, 0)
+        GError *error = nullptr;
+        NMConnection *conn = nm_conn_wireguard_import(filename.toUtf8().constData(), &error);
+
+        if (conn) {
+            m_handler->addConnection(conn);
+            return ImportResult::pass();
+        }
+
+        const QString message = error ? QString::fromUtf8(error->message) : i18n("Could not read the WireGuard configuration");
+        qCWarning(PLASMA_NM_KCM_QML_LOG) << "Could not import WireGuard connection:" << message;
+
+        g_clear_error(&error);
+        return ImportResult::fail(message);
+#else
+        const NMVariantMapMap map = WireguardSetting::importConnectionSettings(filename);
+
+        if (map.isEmpty()) {
+            return ImportResult::fail(i18n("Could not read the WireGuard configuration"));
+        }
+
+        NetworkManager::ConnectionSettings connectionSettings;
+        connectionSettings.fromMap(map);
+        connectionSettings.setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+
+        m_handler->addConnection(connectionSettings.toMap());
+        return ImportResult::pass();
+#endif
+    }
 
     const QVector<KPluginMetaData> services = KPluginMetaData::findPlugins(QStringLiteral("plasma/network/vpn"));
     for (const KPluginMetaData &service : services) {

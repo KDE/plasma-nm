@@ -27,6 +27,7 @@
 #include "vpnc.h"
 #include "vpnuiplugin.h"
 #include "wifisecuritysetting.h"
+#include "wireguard.h"
 #include "wifisetting.h"
 #include "wiredsettings.h"
 
@@ -64,6 +65,7 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(PptpSetting *vpnPptpSetting READ vpnPptpSetting NOTIFY vpnPptpSettingChanged)
     Q_PROPERTY(OpenconnectSetting *vpnOpenconnectSetting READ vpnOpenconnectSetting NOTIFY vpnOpenconnectSettingChanged)
     Q_PROPERTY(OpenvpnSetting *vpnOpenvpnSetting READ vpnOpenvpnSetting NOTIFY vpnOpenvpnSettingChanged)
+    Q_PROPERTY(WireguardSetting *wireguardSetting READ wireguardSetting CONSTANT)
     Q_PROPERTY(QString vpnServiceType READ vpnServiceType NOTIFY vpnServiceTypeChanged)
 
 public:
@@ -93,6 +95,7 @@ public:
     PptpSetting *vpnPptpSetting() const;
     OpenconnectSetting *vpnOpenconnectSetting() const;
     OpenvpnSetting *vpnOpenvpnSetting() const;
+    WireguardSetting *wireguardSetting() const;
     QString vpnServiceType() const;
     bool useApMode() const;
 
@@ -189,6 +192,7 @@ private:
     PptpSetting *const m_vpnPptpSetting;
     OpenconnectSetting *const m_vpnOpenconnectSetting;
     OpenvpnSetting *const m_vpnOpenvpnSetting;
+    WireguardSetting *const m_wireguardSetting;
 
     bool m_useApMode = false;
     bool m_wiredSecurityEnabled = false;

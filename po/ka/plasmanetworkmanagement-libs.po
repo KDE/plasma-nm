@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-07 00:51+0000\n"
-"PO-Revision-Date: 2026-09-30 08:38+0200\n"
+"PO-Revision-Date: 2026-10-07 03:45+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -5305,83 +5305,77 @@ msgstr "Libreswan VPN"
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:34
 #, kde-format
 msgid "Address of the VPN gateway, optionally including the port."
-msgstr ""
+msgstr "VPN რაუტერის მისამართი. შეიძლება, შეიცავდეს პორტსაც."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:43
 #, kde-format
 msgid "VPN Protocol:"
-msgstr ""
+msgstr "VPN პროტოკოლი:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:46
 #, kde-format
 msgid "Which VPN the gateway speaks. All of these are handled by openconnect."
-msgstr ""
+msgstr "რომელ VPN-ზე საუბრობს რაუტერი. ამ ყველაფერს openconnect ამუშავებს."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgid "Cisco AnyConnect"
-msgstr "გათიშვა"
+msgstr "Cisco AnyConnect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "Juniper Network Connect"
-msgstr ""
+msgstr "Juniper Network Connect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "PAN Global Protect"
-msgstr ""
+msgstr "PAN Global Protect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Connection Speed"
+#, kde-format
 msgid "Pulse Connect Secure"
-msgstr "შეერთების სიჩქარე"
+msgstr "Pulse Connect Secure"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "F5 BIG-IP SSL VPN"
-msgstr ""
+msgstr "F5 BIG-IP SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Iodine VPN"
+#, kde-format
 msgid "Fortinet SSL VPN"
-msgstr "Iodine VPN"
+msgstr "Fortinet SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "SSH VPN"
+#, kde-format
 msgid "Array SSL VPN"
-msgstr "SSH VPN"
+msgstr "Array SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:75
-#, fuzzy, kde-format
-#| msgid "Proxy"
+#, kde-format
 msgid "Proxy:"
-msgstr "პროქსი"
+msgstr "პროქსი:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:78
 #, kde-format
 msgid "Proxy to reach the gateway through, as a URL."
-msgstr ""
+msgstr "პროქსი, რომლის გავლითაც შეგვიძლია რაუტერთან მიღწევა. URL-ის სახით."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:87
-#, fuzzy, kde-format
-#| msgid "User Key:"
+#, kde-format
 msgid "User Agent:"
-msgstr "Მომხმარებლის გასაღები:"
+msgstr "მომხმარებლის აგენტი:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:95
 #, kde-format
 msgid "CSD Wrapper Script:"
-msgstr ""
+msgstr "CSD Wrapper სკრიპტი:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:117
 #, kde-format
 msgid "Allow Cisco Secure Desktop trojan"
-msgstr ""
+msgstr "Cisco Secure Desktop -ის ტროიანის ჩართვა"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:119
 #, kde-format
@@ -5389,12 +5383,13 @@ msgid ""
 "Run the host-check program the gateway asks for. The wrapper script above "
 "replaces it."
 msgstr ""
+"გაუშვით ჰოსტის შემოწმების პროგრამა, რომელსაც რაუტერი მოითხოვს. ზემოთ "
+"მოყვანილი სკრიპტი ცვლის მას."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:128
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgid "Reported OS:"
-msgstr "შეცდომის ანგარიში"
+msgstr "დაფიქსირებული OS:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:131
 #, kde-format
@@ -5402,10 +5397,11 @@ msgid ""
 "Operating system to report to the gateway. Leave at the default to report "
 "the real one."
 msgstr ""
+"რაუტერისთვის გადაცემული ოპერაციული სისტემის სახელი. დატოვეთ ცარიელი რეალურის "
+"გადასაცემად."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item:inlistbox report the real operating system"
 msgid "Default"
 msgstr "ნაგულისხმევი"
@@ -5413,94 +5409,87 @@ msgstr "ნაგულისხმევი"
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "GNU/Linux"
-msgstr ""
+msgstr "GNU/Linux"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "GNU/Linux 64-bit"
-msgstr ""
+msgstr "GNU/Linux 64-ბიტიანი"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Windows"
-msgstr ""
+msgstr "ფანჯრები"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Mac OS X"
-msgstr ""
+msgstr "Mac OS X"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Android"
-msgstr ""
+msgstr "Android"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Apple iOS"
-msgstr ""
+msgstr "Apple iOS"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:142
 #, kde-format
 msgid "Reported Version:"
-msgstr ""
+msgstr "გადაცემული ვერსია:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:152
-#, fuzzy, kde-format
-#| msgid "VPNC Authentication"
+#, kde-format
 msgid "Certificate Authentication"
-msgstr "VPNC ავთენტიკაცია"
+msgstr "სერტიფიკატით ავთენტიკაცია"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:175
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "Machine Private Key:"
-msgstr "პირადი გასაღები:"
+msgstr "მანქანის პირადი გასაღები:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:211
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "User Private Key:"
-msgstr "პირადი გასაღები:"
+msgstr "მომხმარებლის პირადი გასაღები:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:231
 #, kde-format
 msgid "Use FSID for key passphrase"
-msgstr ""
+msgstr "გასაღების საიდუმლო ფრაზისთვი FSID-ის გამოყენება"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:240
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
-msgstr ""
+msgstr "მომხმარებლისთვის არასწორი სერტიფიკატების მიღების უფლების წართმევა"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:255
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgctxt "@action:button"
 msgid "Token Authentication…"
-msgstr "ავთენტიკაცია"
+msgstr "ტოკენით ავთენტიკაცია…"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:25
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenConnect OTP Tokens"
-msgstr ""
+msgstr "OpenConnect OTP კოდები"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:62
-#, fuzzy, kde-format
-#| msgid "Machine Authentication"
+#, kde-format
 msgid "Software Token Authentication"
-msgstr "მანქანის ავთენტიკაცია"
+msgstr "პროგრამული კოდით ავთენტიკაცია"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:67
-#, fuzzy, kde-format
-#| msgid "Token:"
+#, kde-format
 msgid "Token Mode:"
-msgstr "ტოკენი:"
+msgstr "კოდის რეჟიმი:"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox no software token"
 msgid "Disabled"
 msgstr "გამორთულია"
@@ -5508,51 +5497,49 @@ msgstr "გამორთულია"
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "RSA SecurID — read from ~/.stokenrc"
-msgstr ""
+msgstr "RSA SecurID — წაკითხული ფაილიდან ~/.stokenrc"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "RSA SecurID — manually entered"
-msgstr ""
+msgstr "RSA SecurID — ხელით შეყვანილი"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "TOTP — manually entered"
-msgstr ""
+msgstr "TOTP — ხელით შეყვანილი"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "HOTP — manually entered"
-msgstr ""
+msgstr "HOTP — ხელით შეყვანილი"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "Yubikey"
-msgstr ""
+msgstr "Yubikey"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:82
-#, fuzzy, kde-format
-#| msgid "Token:"
+#, kde-format
 msgid "Token Secret:"
-msgstr "ტოკენი:"
+msgstr "კოდის პაროლი:"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:25
-#, fuzzy, kde-format
-#| msgid "Security Type"
+#, kde-format
 msgctxt "@title:window"
 msgid "Security Key"
-msgstr "უსაფრთხოების ტიპი"
+msgstr "უსაფრთხოების გასსაღები"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr ""
+msgstr "თავიდან ცდა"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:139
 #, kde-format
 msgid "Confirm PIN:"
-msgstr ""
+msgstr "დაადასტურეთ PIN-კოდი:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:38
 #, kde-format
@@ -6882,76 +6869,73 @@ msgstr "პრეფიქსი"
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:74
 #, kde-format
 msgid "Choose a Passkey"
-msgstr ""
+msgstr "აირჩიეთ საკვანძო გასაღები"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:76
 #, kde-format
 msgid "Use your security key with %1"
-msgstr ""
+msgstr "თქვენი უსაფრთხოების გასაღების გამოყენება %1-სთან"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:80
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "PIN Required"
-msgstr "აუცილებელი არაა"
+msgstr "PIN-კოდი აუცილებელია"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:82
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "New PIN Required"
-msgstr "აუცილებელი არაა"
+msgstr "ახალი PIN-კოდი აუცილებელია"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:84
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Change PIN Required"
-msgstr "აუცილებელი არაა"
+msgstr "მოთხოვნილია PIN-კოდის შეცვლა"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:87
 #, kde-format
 msgid "Something went wrong"
-msgstr ""
+msgstr "რაღაც ცუდადაა"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:103
 #, kde-format
 msgid "Which passkey do you want to use for %1?"
-msgstr ""
+msgstr "რომელი საკვანძო გასაღები გნებავთ, %1-სთვის გამოიყენოთ?"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:105
 #, kde-format
 msgid "Touch your security key again to complete the request."
 msgstr ""
+"შეეხეთ თქვენს უსაფრთხოების გასაღებს კიდევ ერთხელ, რომ მოთხოვნა დასრულდეს."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:109
 #, kde-format
 msgid "Enter the PIN for your security key"
-msgstr ""
+msgstr "შეიყვანეთ PIN-კოდი თქვენი უსაფრთხოების გასაღებისთვის"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:111
 #, kde-format
 msgid "Set new PIN for your security key"
-msgstr ""
+msgstr "დააყენეთ ახალი PIN-კოდი თქვენი უსაფრთხოები გასაღებისთვის"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:113
 #, kde-format
 msgid "Change PIN for your security key"
-msgstr ""
+msgstr "შეცვალეთ PIN-კოდი თქვენი უსაფრთხოების გასაღებისთვის"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:123
 #, kde-format
 msgid "Request Timeout"
-msgstr ""
+msgstr "მოთხოვნის მოლოდინის ვადა"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:125
-#, fuzzy, kde-format
-#| msgid "Not required"
+#, kde-format
 msgid "Key not registered"
-msgstr "აუცილებელი არაა"
+msgstr "გასაღები დარეგისტრირებული არაა"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:127
 #, kde-format
 msgid "You already registered this device. Try again with device"
-msgstr ""
+msgstr "ეს მოწყობილობა უკვე გაქვთ რეგისტრირებული. სცადეთ კიდევ მოწყობილობით"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:129
 #, kde-format
@@ -6959,6 +6943,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "To unlock it, remove and reinsert it."
 msgstr ""
+"უსაფრთხოების გასაღები დაბლოკილია, რადგან არასწორი PIN-კოდი მეტისმეტად "
+"ბევრჯერ იქნა შეყვანილი. განბლოკვისთვის, წაშალეთ ის და თავიდან ჩასვით."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:131
 #, kde-format
@@ -6966,27 +6952,31 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "You'll need to reset the security key."
 msgstr ""
+"უსაფრთხოების გასაღები ამჟამად დაბლოკილია, რადგან შეყვანილია არასწორი PIN-"
+"კოდი მეტისმეტად ბევრჯერ. მისი განბლოკვისთვის, დაგჭირდებათ, ჩამოყაროთ თქვენი "
+"უსაფრთხოების გასაღები."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:133
 #, kde-format
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
 msgstr ""
+"ავთენტიკატორი გამოერთებულია გადამოწმებისას. შეაერთეთ ისევ და თავიდან სცადეთ"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:135
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
+msgstr "ავთნტიკატორს რეზიდენტული გასაღები მხარდაჭერა არ გააჩნია"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:137
 #, kde-format
 msgid "Authenticator missing user verification"
-msgstr ""
+msgstr "ავთენტიკატორს მომხმარებლის გადამოწმება აკლია"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:139
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr ""
+msgstr "ავთენტიკატორს დიდი ბლობების მხარდაჭერა აკლია"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:141
 #, kde-format
@@ -6994,77 +6984,77 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"უსაფრთხოების ტოკენს სერვერის მიერ მოთხოვნილი ავთენტიკაციის მეთოდის "
+"მხარდაჭერა არ აქვს."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:143
 #, kde-format
 msgid "Storage Full"
-msgstr ""
+msgstr "საცავი სავსეა"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:145
 #, kde-format
 msgid "User consent denied"
-msgstr ""
+msgstr "მომხმარებლის თანხმობა უარყოფილია"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:147
 #, kde-format
 msgid "User Cancelled Request"
-msgstr ""
+msgstr "მომხმარებელმა გააუქმა მოთხოვნა"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:176
 #, kde-format
 msgid "Internal User Verification Locked"
-msgstr ""
+msgstr "შიდა მომხმარებლის გადამოწმება დაბლოკლია"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:178
 #, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "არასწორი PIN-კოდი. დარჩენილია %1 ცდა."
+msgstr[1] "არასწორი PIN-კოდი. დარჩენილია %1 ცდა."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:180
 #, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "მეტისმეტად მოკლეა. დარჩენილია %1 მცდელობა."
+msgstr[1] "მეტისმეტად მოკლეა. დარჩენილია %1 მცდელობა."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:182
 #, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "არასწორი სიმბოლოები. დარჩენილია %1 ცდა."
+msgstr[1] "არასწორი სიმბოლოები. დარჩენილია %1 ცდა."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:184
 #, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "იგივეა, რაც მიმდინარე PIN-კოდი. დარჩენილია %1 ცდა."
+msgstr[1] "იგივეა, რაც მიმდინარე PIN-კოდი. დარჩენილია %1 ცდა."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:197
 #, kde-format
 msgctxt "@action:button submit the entered PIN"
 msgid "Next"
-msgstr ""
+msgstr "შემდეგი"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:197
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
-msgstr ""
+msgstr "დიახ"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "დახურვა"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@action:button Cancel connecting to network"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "გაუქმება"

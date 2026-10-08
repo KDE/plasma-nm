@@ -45,21 +45,21 @@ msgid " (Copy)"
 msgstr " (Копиране)"
 
 #: kcm.cpp:1004
-#, kde-format
+#, fuzzy, kde-format
 msgid "VPN connections (%1)"
-msgstr ""
+msgstr "VPN връзки (%1)"
 
 #: kcm.cpp:1004
-#, kde-format
+#, fuzzy, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "Всички файлове (*)"
 
 #: kcm.cpp:1014
-#, kde-format
+#, fuzzy, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Не е предоставен файл"
 
 #: kcm.cpp:1079
-#, kde-format
+#, fuzzy, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Неизвестен тип VPN"

@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-07-08 00:46+0000\n"
-"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"PO-Revision-Date: 2026-10-07 11:45+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
@@ -367,7 +367,7 @@ msgstr "прилагодљиво"
 #: openvpnadvanced.ui:144 openvpnadvanced.ui:236
 #, kde-format
 msgid "Automatic"
-msgstr "Аутоматски"
+msgstr "аутоматски"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseAsymCompression)
 #: openvpnadvanced.ui:159
@@ -868,9 +868,10 @@ msgid ""
 msgstr ""
 "Оверавање идентификације сертификата сервера.\n"
 "\n"
-"Када је активирано, веза ће успети само ако се сертификат сервера поклапа "
-"нека очекивана својства. Поклапање може да се примени или на цео предмет "
-"сертификата (сва поља), или само на уобичајено име (поље CN).\n"
+"Када је активирано, веза ће успети само ако се сертификат сервера поклапа\n"
+"са неким очекиваним својствима.\n"
+"Поклапање може да се примени или на цео предмет сертификата (сва поља),\n"
+"или само на уобичајено име (поље CN).\n"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCertCheck)
 #: openvpnadvanced.ui:872

@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-07 00:51+0000\n"
-"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"PO-Revision-Date: 2026-10-07 14:30+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavian\n"
@@ -692,7 +692,7 @@ msgstr "Опште"
 #: editor/connectiondetails.cpp:330
 #, kde-format
 msgid "IPv4 Address"
-msgstr "ИПв4 адресе"
+msgstr "ИПв4 адреса"
 
 #: editor/connectiondetails.cpp:336
 #, kde-format
@@ -719,7 +719,7 @@ msgstr "ИПв4"
 #: editor/connectiondetails.cpp:362
 #, kde-format
 msgid "IPv6 Address"
-msgstr "ИПв6 адресе"
+msgstr "ИПв6 адреса"
 
 #: editor/connectiondetails.cpp:364
 #, kde-format
@@ -1842,7 +1842,7 @@ msgstr ""
 #: editorqml/qml/ipv6/IPv6Settings.qml:110
 #, kde-format
 msgid "Edit the list of DNS domains being searched"
-msgstr "Уреди листу ДНС домена за претрагу"
+msgstr "Уреди списак ДНС домена за претрагу"
 
 #. i18n: ectx: property (text), widget (QLabel, dnsLabel)
 #: editor/settings/ui/ipv4.ui:114 editor/settings/ui/ipv6.ui:164
@@ -2052,7 +2052,7 @@ msgstr "Ова веза захтијева ИПв6"
 #: editorqml/qml/ipv6/IPv6Settings.qml:73
 #, kde-format
 msgid "Edit the list of DNS servers"
-msgstr "Уреди листу ДНС сервера"
+msgstr "Уреди списак ДНС сервера"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:187
@@ -4148,7 +4148,7 @@ msgstr "Тражи лозинку сваки пут"
 #: editor/widgets/passwordfield.cpp:106 editorqml/qml/PasswordField.qml:128
 #, kde-format
 msgid "This password is not required"
-msgstr "Ово лозинка није неопходна"
+msgstr "Ова лозинка није неопходна"
 
 #: editor/widgets/ssidcombobox.cpp:144
 #, kde-format
@@ -4246,7 +4246,7 @@ msgid ""
 "If enabled, automatically configured routes are ignored and only routes "
 "specified above are used"
 msgstr ""
-"Ако је укључено, аутоматски подешене руте се игноришу и користе са само руте "
+"Ако је укључено, аутоматски подешене руте се игноришу и користе се само руте "
 "задате изнад."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
@@ -5333,83 +5333,78 @@ msgstr "ВПН преко Libreswan"
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:34
 #, kde-format
 msgid "Address of the VPN gateway, optionally including the port."
-msgstr ""
+msgstr "Адреса ВПН мрежног излаза, опционо са портом."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:43
 #, kde-format
 msgid "VPN Protocol:"
-msgstr ""
+msgstr "ВПН протокол:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:46
 #, kde-format
 msgid "Which VPN the gateway speaks. All of these are handled by openconnect."
-msgstr ""
+msgstr "Врста ВПН‑а коју мрежни излаз користи. Све их обрађује Опенконект."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgid "Cisco AnyConnect"
-msgstr "Прекини везу"
+msgstr "Сисков ениконект"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "Juniper Network Connect"
-msgstr ""
+msgstr "Џуниперов нетворк конект"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "PAN Global Protect"
-msgstr ""
+msgstr "PAN Global Protect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Connection Speed"
+#, kde-format
 msgid "Pulse Connect Secure"
-msgstr "Брзина везе"
+msgstr "пулс конект сикјур"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "F5 BIG-IP SSL VPN"
-msgstr ""
+msgstr "F5 BIG-IP ССЛ ВПН"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Iodine VPN"
+#, kde-format
 msgid "Fortinet SSL VPN"
-msgstr "ВПН преко Ајодина"
+msgstr "Фортинетов ССЛ ВПН"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "SSH VPN"
+#, kde-format
 msgid "Array SSL VPN"
-msgstr "ССХ ВПН"
+msgstr "Array ССЛ ВПН"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:75
-#, fuzzy, kde-format
-#| msgid "Proxy"
+#, kde-format
 msgid "Proxy:"
-msgstr "Прокси"
+msgstr "Прокси:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:78
 #, kde-format
 msgid "Proxy to reach the gateway through, as a URL."
-msgstr ""
+msgstr "Прокси преко ког се приступа мрежном излазу, као УРЛ."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:87
-#, fuzzy, kde-format
-#| msgid "User Key:"
+#, kde-format
 msgid "User Agent:"
-msgstr "Кориснички кључ:"
+msgstr "Кориснички агент:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:95
 #, kde-format
 msgid "CSD Wrapper Script:"
-msgstr ""
+msgstr "Омотачка скрипта за ЦСД:"
 
+# rewrite-msgid: /Cisco Secure Desktop/CSD/
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:117
 #, kde-format
 msgid "Allow Cisco Secure Desktop trojan"
-msgstr ""
+msgstr "Дозволи ЦСД‑ов тројанац"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:119
 #, kde-format
@@ -5417,12 +5412,13 @@ msgid ""
 "Run the host-check program the gateway asks for. The wrapper script above "
 "replaces it."
 msgstr ""
+"Покрени програм за провјеру домаћина који мрежни излаз тражи. Омотачка "
+"скрипта изнад га замјењује."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:128
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgid "Reported OS:"
-msgstr "Пријави грешку"
+msgstr "Пријављени оперативни систем:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:131
 #, kde-format
@@ -5430,105 +5426,99 @@ msgid ""
 "Operating system to report to the gateway. Leave at the default to report "
 "the real one."
 msgstr ""
+"Оперативни систем који се пријављује мрежном излазу. Оставите "
+"подразумијевани да бисте пријавили стварни."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item:inlistbox report the real operating system"
 msgid "Default"
-msgstr "подразумијевано"
+msgstr "подразумијевани"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "GNU/Linux"
-msgstr ""
+msgstr "Гну‑Линукс"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "GNU/Linux 64-bit"
-msgstr ""
+msgstr "Гну‑Линукс 64‑битни"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Windows"
-msgstr ""
+msgstr "Виндоуз"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Mac OS X"
-msgstr ""
+msgstr "МекОС X"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Android"
-msgstr ""
+msgstr "Андроид"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Apple iOS"
-msgstr ""
+msgstr "Apple iOS"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:142
 #, kde-format
 msgid "Reported Version:"
-msgstr ""
+msgstr "Пријављено издање:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:152
-#, fuzzy, kde-format
-#| msgid "VPNC Authentication"
+#, kde-format
 msgid "Certificate Authentication"
-msgstr "Аутентификација за ВПНЦ"
+msgstr "Аутентификација сертификатом"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:175
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "Machine Private Key:"
-msgstr "Приватни кључ:"
+msgstr "Приватни кључ машине:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:211
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "User Private Key:"
-msgstr "Приватни кључ:"
+msgstr "Кориснички приватни кључ:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:231
 #, kde-format
 msgid "Use FSID for key passphrase"
-msgstr ""
+msgstr "ФСИД као лозинка кључа"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:240
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
-msgstr ""
+msgstr "Спријечи корисника да ручно прихвата неваљане сертификате"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:255
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgctxt "@action:button"
 msgid "Token Authentication…"
-msgstr "Аутентификација"
+msgstr "Аутентификација токеном…"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:25
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenConnect OTP Tokens"
-msgstr ""
+msgstr "Токени једнократних лозинки за Опенконект"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:62
-#, fuzzy, kde-format
-#| msgid "Machine Authentication"
+#, kde-format
 msgid "Software Token Authentication"
-msgstr "Аутентификација машине"
+msgstr "Аутентификација софтверским токеном"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:67
-#, fuzzy, kde-format
-#| msgid "Token:"
+#, kde-format
 msgid "Token Mode:"
-msgstr "Токен:"
+msgstr "Режим токена:"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox no software token"
 msgid "Disabled"
 msgstr "искључено"
@@ -5536,51 +5526,49 @@ msgstr "искључено"
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "RSA SecurID — read from ~/.stokenrc"
-msgstr ""
+msgstr "РСА SecurID — чита се из ~/.stokenrc"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "RSA SecurID — manually entered"
-msgstr ""
+msgstr "РСА SecurID — уноси се ручно"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "TOTP — manually entered"
-msgstr ""
+msgstr "TOTP — уноси се ручно"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "HOTP — manually entered"
-msgstr ""
+msgstr "HOTP — уноси се ручно"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "Yubikey"
-msgstr ""
+msgstr "Yubikey"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:82
-#, fuzzy, kde-format
-#| msgid "Token:"
+#, kde-format
 msgid "Token Secret:"
-msgstr "Токен:"
+msgstr "Тајна токена:"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:25
-#, fuzzy, kde-format
-#| msgid "Security Type"
+#, kde-format
 msgctxt "@title:window"
 msgid "Security Key"
-msgstr "Тип безбједности"
+msgstr "Безбједносни кључ"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr ""
+msgstr "Покушај поново"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:139
 #, kde-format
 msgid "Confirm PIN:"
-msgstr ""
+msgstr "Потврди ПИН:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:38
 #, kde-format
@@ -6326,7 +6314,7 @@ msgstr "сертификат/ssh-agent"
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Smartcard"
-msgstr "смарткард"
+msgstr "смарт-картица"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
@@ -6909,76 +6897,72 @@ msgstr "префикс"
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:74
 #, kde-format
 msgid "Choose a Passkey"
-msgstr ""
+msgstr "Изаберите приступни кључ"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:76
 #, kde-format
 msgid "Use your security key with %1"
-msgstr ""
+msgstr "Употријебите свој безбједносни кључ за %1"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:80
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "PIN Required"
-msgstr "није потребан"
+msgstr "Потребан ПИН"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:82
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "New PIN Required"
-msgstr "није потребан"
+msgstr "Потребан нови ПИН"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:84
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Change PIN Required"
-msgstr "није потребан"
+msgstr "Потребна измјена ПИН‑а"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:87
 #, kde-format
 msgid "Something went wrong"
-msgstr ""
+msgstr "Дошло је до грешке"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:103
 #, kde-format
 msgid "Which passkey do you want to use for %1?"
-msgstr ""
+msgstr "Који приступни кључ желите да користите за %1?"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:105
 #, kde-format
 msgid "Touch your security key again to complete the request."
-msgstr ""
+msgstr "Поново додирните безбједносни кључ да довршите захтјев."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:109
 #, kde-format
 msgid "Enter the PIN for your security key"
-msgstr ""
+msgstr "Унесите ПИН свог безбједносног кључа"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:111
 #, kde-format
 msgid "Set new PIN for your security key"
-msgstr ""
+msgstr "Поставите нови ПИН свог безбједносног кључа"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:113
 #, kde-format
 msgid "Change PIN for your security key"
-msgstr ""
+msgstr "Измијените ПИН свог безбједносног кључа"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:123
 #, kde-format
 msgid "Request Timeout"
-msgstr ""
+msgstr "Прековријеме захтјева"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:125
-#, fuzzy, kde-format
-#| msgid "Not required"
+#, kde-format
 msgid "Key not registered"
-msgstr "Није неопходно"
+msgstr "Кључ није регистрован"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:127
 #, kde-format
 msgid "You already registered this device. Try again with device"
-msgstr ""
+msgstr "Овај уређај сте већ регистровали. Покушајте поново са другим уређајем"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:129
 #, kde-format
@@ -6986,6 +6970,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "To unlock it, remove and reinsert it."
 msgstr ""
+"Безбједносни кључ је закључан јер је превише пута унијет погрешан ПИН. Да "
+"бисте га откључали, извадите га и поново уметните."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:131
 #, kde-format
@@ -6993,27 +6979,30 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "You'll need to reset the security key."
 msgstr ""
+"Безбједносни кључ је закључан јер је превише пута унијет погрешан ПИН. "
+"Мораћете да ресетујете безбједносни кључ."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:133
 #, kde-format
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
 msgstr ""
+"Аутентификатор је уклоњен током провјере. Уметните га опет и покушајте поново"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:135
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
+msgstr "Аутентификатор нема подршку за резидентне кључеве"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:137
 #, kde-format
 msgid "Authenticator missing user verification"
-msgstr ""
+msgstr "Аутентификатор нема провјеру корисника"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:139
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr ""
+msgstr "Аутентификатор нема подршку за велике блобове"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:141
 #, kde-format
@@ -7021,85 +7010,84 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"Безбједносни токен не подржава метод аутентификације који сервер захтијева."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:143
 #, kde-format
 msgid "Storage Full"
-msgstr ""
+msgstr "Складиште је пуно"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:145
 #, kde-format
 msgid "User consent denied"
-msgstr ""
+msgstr "Корисник није дао сагласност"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:147
 #, kde-format
 msgid "User Cancelled Request"
-msgstr ""
+msgstr "Корисник је отказао захтјев"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:176
 #, kde-format
 msgid "Internal User Verification Locked"
-msgstr ""
+msgstr "Унутрашња провјера корисника је закључана"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:178
 #, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Погрешан ПИН. Преостаје %1 покушај."
+msgstr[1] "Погрешан ПИН. Преостају %1 покушаја."
+msgstr[2] "Погрешан ПИН. Преостаје %1 покушаја."
+msgstr[3] "Погрешан ПИН. Преостаје још један покушај."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:180
 #, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Прекратак ПИН. Преостаје %1 покушај."
+msgstr[1] "Прекратак ПИН. Преостају %1 покушаја."
+msgstr[2] "Прекратак ПИН. Преостаје %1 покушаја."
+msgstr[3] "Прекратак ПИН. Преостаје још један покушај."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:182
 #, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Недозвољени знакови. Преостаје %1 покушај."
+msgstr[1] "Недозвољени знакови. Преостају %1 покушаја."
+msgstr[2] "Недозвољени знакови. Преостаје %1 покушаја."
+msgstr[3] "Недозвољени знакови. Преостаје још један покушај."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:184
 #, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
+msgstr[0] "Исти као тренутни ПИН. Преостаје %1 покушај."
+msgstr[1] "Исти као тренутни ПИН. Преостају %1 покушаја."
+msgstr[2] "Исти као тренутни ПИН. Преостаје %1 покушаја."
+msgstr[3] "Исти као тренутни ПИН. Преостаје још један покушај."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:197
 #, kde-format
 msgctxt "@action:button submit the entered PIN"
 msgid "Next"
-msgstr ""
+msgstr "Сљедеће"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:197
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
-msgstr ""
+msgstr "У реду"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "Затвори"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@action:button Cancel connecting to network"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "Одустани"

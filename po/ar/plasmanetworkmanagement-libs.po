@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-07 00:51+0000\n"
+"POT-Creation-Date: 2026-10-09 00:49+0000\n"
 "PO-Revision-Date: 2026-09-30 18:42+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
@@ -594,7 +594,8 @@ msgstr "اللافتة"
 msgid "VPN"
 msgstr "شبكة خاصة افتراضية"
 
-#: editor/connectiondetails.cpp:240 models/creatableconnectionsmodel.cpp:254
+#: editor/connectiondetails.cpp:240 editorqml/qml/components/WireGuard.qml:34
+#: models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
 #, kde-format
 msgid "WireGuard"
@@ -674,6 +675,7 @@ msgstr "الجهاز"
 
 #: editor/connectiondetails.cpp:321 editorqml/qml/components/Vpn.qml:30
 #: editorqml/qml/components/Wired.qml:30
+#: editorqml/qml/components/WireGuard.qml:31
 #: editorqml/qml/components/Wireless.qml:30
 #: editorqml/qml/ConfigurationDialog.qml:34
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:26
@@ -707,6 +709,7 @@ msgstr "خادم النطاقات IPv4 الثانوي"
 
 #: editor/connectiondetails.cpp:352 editor/connectioneditorbase.cpp:334
 #: editorqml/qml/components/Vpn.qml:38 editorqml/qml/components/Wired.qml:39
+#: editorqml/qml/components/WireGuard.qml:37
 #: editorqml/qml/components/Wireless.qml:39
 #, kde-format
 msgid "IPv4"
@@ -739,6 +742,7 @@ msgstr "خادم النطاقات IPv6 الثانوي"
 
 #: editor/connectiondetails.cpp:386 editor/connectioneditorbase.cpp:352
 #: editorqml/qml/components/Vpn.qml:42 editorqml/qml/components/Wired.qml:42
+#: editorqml/qml/components/WireGuard.qml:40
 #: editorqml/qml/components/Wireless.qml:42
 #, kde-format
 msgid "IPv6"
@@ -1750,6 +1754,7 @@ msgstr "حدّد بالجهاز:"
 #: editor/settings/ui/wiredconnectionwidget.ui:89
 #: editor/settings/ui/wireguardinterfacewidget.ui:89
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:276
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:102
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:219
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:85
 #, kde-format
@@ -2781,6 +2786,7 @@ msgstr "إعدادات واير غارد"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:20
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:31
 #, kde-format
 msgid "Interface"
 msgstr "الواجهة"
@@ -2823,6 +2829,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:72
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:88
 #, kde-format
 msgid "fwmark:"
 msgstr "علامة الجدار الناري fwmark:"
@@ -2883,6 +2890,7 @@ msgstr "الأقران…"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:19
 #, kde-format
 msgid "Public key:"
 msgstr "المفتاح العام:"
@@ -2903,6 +2911,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:34
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:20
 #, kde-format
 msgid "Allowed IPs:"
 msgstr "عناوين الإنترنت IP المسموحة:"
@@ -2929,6 +2938,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:21
 #, kde-format
 msgid "Endpoint address:"
 msgstr "عنوان نقطة النهاية:"
@@ -2951,6 +2961,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:22
 #, kde-format
 msgid "Endpoint port:"
 msgstr "منفذ نقطة النهاية:"
@@ -2968,6 +2979,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:23
 #, kde-format
 msgid "Preshared key:"
 msgstr "المفتاح المشترك مسبقًا:"
@@ -2990,6 +3002,7 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:24
 #, kde-format
 msgid "Persistent keepalive:"
 msgstr "البقاء على اتصال دائم:"
@@ -4224,6 +4237,7 @@ msgid "Choose a Connection Type"
 msgstr "اختر نوع الاتصال"
 
 #: editorqml/qml/components/Vpn.qml:26 editorqml/qml/components/Wired.qml:27
+#: editorqml/qml/components/WireGuard.qml:28
 #: editorqml/qml/components/Wireless.qml:27
 #, kde-format
 msgid "Status"
@@ -4744,6 +4758,10 @@ msgstr ""
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
 #: editorqml/qml/vpn/iodine/Iodine.qml:75
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:80
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:81
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:107
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:108
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:133
 #, kde-format
 msgid "Automatic"
@@ -4819,6 +4837,7 @@ msgstr "شهادة بصيغ .pem أو .der أو .crt أو .cer أو .p12."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:154 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:141
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:109
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:48
 #, kde-format
 msgid "Private Key:"
 msgstr "المفتاح الخاصّ:"
@@ -6566,6 +6585,103 @@ msgstr "استيثاق VPNC"
 #, kde-format
 msgid "Group Password:"
 msgstr "كلمة سر المجموعة:"
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:18
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
+#, fuzzy, kde-format
+#| msgid "Store password for this user only (encrypted)"
+msgid "Store secret for this user only (encrypted)"
+msgstr "احفظ كلمة السر لهذا المستخدم فقط ( معمّاة)"
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:19
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
+#, fuzzy, kde-format
+#| msgid "Store password for all users (not encrypted)"
+msgid "Store secret for all users (not encrypted)"
+msgstr "احفظ كلمة السر لجميع المستخدمين (غير معمّاة)"
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:20
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
+#, fuzzy, kde-format
+#| msgid "This password is not required"
+msgid "This secret is not required"
+msgstr "كلمة السر غير مطلوبة"
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:36
+#, fuzzy, kde-format
+#| msgid "Name"
+msgid "Name:"
+msgstr "الاسم"
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:39
+#, fuzzy, kde-format
+#| msgid "The name of the Wi-Fi network to connect to"
+msgid "Name of the network interface this connection creates."
+msgstr "اسم شبكة واي فاي المراد الاتصال بها"
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:51
+#, kde-format
+msgid "The private key of this interface, as a base64 string."
+msgstr ""
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:71
+#, fuzzy, kde-format
+#| msgid "Listen port:"
+msgid "Listen Port:"
+msgstr "منفذ الاستماع:"
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:73
+#, kde-format
+msgid "Port to listen on. Automatic lets WireGuard choose one."
+msgstr ""
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:90
+#, kde-format
+msgid "Firewall mark to apply to outgoing packets. Zero disables it."
+msgstr ""
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:117
+#, kde-format
+msgid "Add routes for the peers' allowed IPs"
+msgstr ""
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:119
+#, kde-format
+msgid "Turn this off to route the tunnel yourself."
+msgstr ""
+
+#: editorqml/qml/vpn/wireguard/Wireguard.qml:136
+#, fuzzy, kde-format
+#| msgid "Peers…"
+msgctxt "@action:button"
+msgid "Peers…"
+msgstr "الأقران…"
+
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:29
+#, fuzzy, kde-format
+#| msgid "Peer 1"
+msgctxt "@title:tab numbered WireGuard peer"
+msgid "Peer %1"
+msgstr "القرين 1"
+
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:75
+#, kde-format
+msgid "This interface has no peers, so it cannot connect to anything yet."
+msgstr ""
+
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:175
+#, fuzzy, kde-format
+#| msgid "Add new Peer"
+msgctxt "@action:button"
+msgid "Add new Peer"
+msgstr "أضف قرينًا جديدًا"
+
+#: editorqml/qml/vpn/wireguard/WireguardPeers.qml:185
+#, fuzzy, kde-format
+#| msgid "Remove this Peer"
+msgctxt "@action:button"
+msgid "Remove this Peer"
+msgstr "أزل هذا القرين"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format

@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-30 00:48+0000\n"
+"POT-Creation-Date: 2026-10-09 00:49+0000\n"
 "PO-Revision-Date: 2026-10-03 19:50+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -19,13 +19,13 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: kcm.cpp:270 ui/main.qml:381
+#: kcm.cpp:270 ui/main.qml:389
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Uvesti VPN postavu iz „%1“?"
 
 # >> @title:window
-#: kcm.cpp:271 ui/main.qml:380
+#: kcm.cpp:271 ui/main.qml:388
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
@@ -37,13 +37,13 @@ msgid "Import"
 msgstr "Uvezi"
 
 # >> @title:window
-#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:104
+#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:109
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Ne mogu da uvezem VPN vezu: %1"
 
 # >> @item
-#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:98
+#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:103
 #, kde-format
 msgid "Connection imported."
 msgstr "Veza je uvezena."
@@ -207,28 +207,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "dostupan"
 
-#: qml/main.qml:148 ui/main.qml:249
+#: qml/main.qml:148 ui/main.qml:254
 msgid "Add new connection"
 msgstr "Dodaj novu vezu"
 
-#: qml/main.qml:166 ui/main.qml:267
+#: qml/main.qml:166 ui/main.qml:272
 msgid "Remove selected connection"
 msgstr "Ukloni izabranu vezu"
 
-#: qml/main.qml:184 ui/main.qml:285
+#: qml/main.qml:184 ui/main.qml:290
 msgid "Export selected connection"
 msgstr "Izvezi izabranu vezu"
 
-#: qml/main.qml:209 ui/main.qml:221
+#: qml/main.qml:209 ui/main.qml:226
 msgid "Configuration"
 msgstr "Postava"
 
-#: qml/main.qml:236 ui/main.qml:350
+#: qml/main.qml:236 ui/main.qml:358
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Uklanjanje veze"
 
-#: qml/main.qml:237 ui/main.qml:351
+#: qml/main.qml:237 ui/main.qml:359
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Želite li zaista da uklonite vezu „%1“?"
 
@@ -262,22 +262,22 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Lozinka mora imati između 8 i 64 znaka"
 
-#: ui/main.qml:54
+#: ui/main.qml:59
 msgid "Disconnected"
 msgstr "Nepovezano"
 
 # >> @item
-#: ui/main.qml:309
+#: ui/main.qml:314
 msgid "Connection name:"
 msgstr "Ime veze:"
 
 # >> @title:window
-#: ui/main.qml:368
+#: ui/main.qml:376
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Uvoz VPN veze"
 
-#: ui/main.qml:386
+#: ui/main.qml:394
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Uvezi"

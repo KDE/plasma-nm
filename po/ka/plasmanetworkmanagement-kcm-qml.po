@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:49+0000\n"
-"PO-Revision-Date: 2026-09-30 08:38+0200\n"
+"PO-Revision-Date: 2026-10-09 06:07+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -63,7 +63,7 @@ msgstr "ფაილი მითითებული არაა"
 #: kcm.cpp:1069 kcm.cpp:1078
 #, kde-format
 msgid "Could not read the WireGuard configuration"
-msgstr ""
+msgstr "WireGuard-ის კონფიგურაციის წაკითხვა შეუძლებელია"
 
 #: kcm.cpp:1117
 #, kde-format

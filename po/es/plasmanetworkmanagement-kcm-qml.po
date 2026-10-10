@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm-qml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:49+0000\n"
-"PO-Revision-Date: 2026-10-01 00:12+0100\n"
+"PO-Revision-Date: 2026-10-09 15:38+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -64,7 +64,7 @@ msgstr "No se ha proporcionado ningún archivo"
 #: kcm.cpp:1069 kcm.cpp:1078
 #, kde-format
 msgid "Could not read the WireGuard configuration"
-msgstr ""
+msgstr "No se ha podido leer la configuración de WireGuard."
 
 #: kcm.cpp:1117
 #, kde-format

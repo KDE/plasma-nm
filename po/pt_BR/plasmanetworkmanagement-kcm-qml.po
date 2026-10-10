@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:49+0000\n"
-"PO-Revision-Date: 2026-09-30 09:39-0300\n"
+"PO-Revision-Date: 2026-10-09 09:12-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: kcm.cpp:884
 #, kde-format
@@ -62,7 +62,7 @@ msgstr "Nenhum arquivo foi fornecido"
 #: kcm.cpp:1069 kcm.cpp:1078
 #, kde-format
 msgid "Could not read the WireGuard configuration"
-msgstr ""
+msgstr "Não foi possível ler a configuração do WireGuard"
 
 #: kcm.cpp:1117
 #, kde-format

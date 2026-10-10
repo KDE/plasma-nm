@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:49+0000\n"
-"PO-Revision-Date: 2026-09-30 09:03+0200\n"
+"PO-Revision-Date: 2026-10-09 09:56+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -64,7 +64,7 @@ msgstr "No s'ha proporcionat cap fitxer"
 #: kcm.cpp:1069 kcm.cpp:1078
 #, kde-format
 msgid "Could not read the WireGuard configuration"
-msgstr ""
+msgstr "No s'ha pogut llegir la configuració del WireGuard"
 
 #: kcm.cpp:1117
 #, kde-format

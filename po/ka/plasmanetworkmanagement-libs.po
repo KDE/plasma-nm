@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:49+0000\n"
-"PO-Revision-Date: 2026-10-07 03:45+0200\n"
+"PO-Revision-Date: 2026-10-09 06:17+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -4117,7 +4117,7 @@ msgstr "პაროლის ხილვადობა"
 #: editor/widgets/passwordfield.cpp:41 editorqml/qml/PasswordField.qml:125
 #, kde-format
 msgid "Store password for this user only (encrypted)"
-msgstr "მხოლოდ ამ მომხმარებლის პაროლის დამახსოვრება (დაშიფრული)"
+msgstr "მხოლოდ ამ მომხმარებლის პაროლის დამახსოვრება (დაშიფრულად)"
 
 #: editor/widgets/passwordfield.cpp:43 editorqml/qml/PasswordField.qml:125
 #, kde-format
@@ -6618,45 +6618,39 @@ msgstr "ჯგუფის პაროლი:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:18
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for this user only (encrypted)"
+#, kde-format
 msgid "Store secret for this user only (encrypted)"
-msgstr "მხოლოდ ამ მომხმარებლის პაროლის დამახსოვრება (დაშიფრული)"
+msgstr "მხოლოდ ამ მომხმარებლის საიდუმლოს დამახსოვრება (დაშიფრულად)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:19
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for all users (not encrypted)"
+#, kde-format
 msgid "Store secret for all users (not encrypted)"
-msgstr "ყველა მომხმარებლის პაროლების დამახსოვრება (დაუშიფრავი)"
+msgstr "ყველა მომხმარებლის საიდუმლოების დამახსოვრება (დაუშიფრავად)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:20
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "This password is not required"
+#, kde-format
 msgid "This secret is not required"
-msgstr "ეს პაროლი საჭირო არაა"
+msgstr "ეს საიდუმლო საჭირო არაა"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:36
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "სახელი"
+msgstr "სახელი:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:39
-#, fuzzy, kde-format
-#| msgid "The name of the Wi-Fi network to connect to"
+#, kde-format
 msgid "Name of the network interface this connection creates."
-msgstr "Wi-Fi ქსელის სახელი ავტომატურად დასაკავშირებლად"
+msgstr "ქსელის ინტერფეისის სახელი, რომელსაც ეს კავშირი ქმნის."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:51
 #, kde-format
 msgid "The private key of this interface, as a base64 string."
-msgstr ""
+msgstr "ამ ინტერფეისის პირადი გასაღები base64 სტრიქონის სახით."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:71
-#, fuzzy, kde-format
-#| msgid "Listen port:"
+#, kde-format
 msgid "Listen Port:"
 msgstr "პორტის მოსმენა:"
 
@@ -6664,54 +6658,52 @@ msgstr "პორტის მოსმენა:"
 #, kde-format
 msgid "Port to listen on. Automatic lets WireGuard choose one."
 msgstr ""
+"პორტი მოსასმენად. 'ავტომატური' აძლევს უფლებას WireGuard-ს, თვითონ აირჩიოს."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:90
 #, kde-format
 msgid "Firewall mark to apply to outgoing packets. Zero disables it."
-msgstr ""
+msgstr "გამავალ პაკეტებზე მისანიჭებელი ქსელური ფარის ნიშანი. 0 მას გათიშავს."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:117
 #, kde-format
 msgid "Add routes for the peers' allowed IPs"
-msgstr ""
+msgstr "მარშრუტების დამატება პარტნიორის დაშვებული IP-ებისთვის"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:119
 #, kde-format
 msgid "Turn this off to route the tunnel yourself."
-msgstr ""
+msgstr "გამორთეთ ეს, თუ გნებავთ, გვირაბის მარშრუტები თვითონ დაწეროთ."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:136
-#, fuzzy, kde-format
-#| msgid "Peers…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Peers…"
 msgstr "პარტნიორები…"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:29
-#, fuzzy, kde-format
-#| msgid "Peer 1"
+#, kde-format
 msgctxt "@title:tab numbered WireGuard peer"
 msgid "Peer %1"
-msgstr "პირველი პარტნიორი"
+msgstr "პარტნიორი %1"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:75
 #, kde-format
 msgid "This interface has no peers, so it cannot connect to anything yet."
 msgstr ""
+"ამ ინტერფეისს პარტნიორები არ ჰყავს, ასე რომ, მასთან ვერაფერს დააკავშირებთ."
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:175
-#, fuzzy, kde-format
-#| msgid "Add new Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add new Peer"
 msgstr "ახალი პარტნიორის დამატება"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:185
-#, fuzzy, kde-format
-#| msgid "Remove this Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove this Peer"
-msgstr "პარტნიორის წაშლა"
+msgstr "ამ პარტნიორის წაშლა"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format

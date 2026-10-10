@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:49+0000\n"
-"PO-Revision-Date: 2026-09-30 09:56+0300\n"
+"PO-Revision-Date: 2026-10-09 19:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -62,7 +62,7 @@ msgstr "Sağlanan dosya yok"
 #: kcm.cpp:1069 kcm.cpp:1078
 #, kde-format
 msgid "Could not read the WireGuard configuration"
-msgstr ""
+msgstr "WireGuard yapılandırması okunamadı"
 
 #: kcm.cpp:1117
 #, kde-format

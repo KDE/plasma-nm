@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-09 00:49+0000\n"
-"PO-Revision-Date: 2026-10-07 15:29+0200\n"
+"PO-Revision-Date: 2026-10-09 07:33+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -5484,7 +5484,7 @@ msgstr "Zasebni ključ uporabnika:"
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:231
 #, kde-format
 msgid "Use FSID for key passphrase"
-msgstr "Uporabite FSID za geslo ključa "
+msgstr "Uporabite FSID za geslo ključa"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:240
 #, kde-format
@@ -6621,45 +6621,39 @@ msgstr "Grupno geslo:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:18
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for this user only (encrypted)"
+#, kde-format
 msgid "Store secret for this user only (encrypted)"
-msgstr "Shrani geslo le za tega uporabnika (šifrirano)"
+msgstr "Shrani skrivnost samo za tega uporabnika (šifrirano)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:19
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for all users (not encrypted)"
+#, kde-format
 msgid "Store secret for all users (not encrypted)"
-msgstr "Shrani geslo za vse uporabnike (ni šifrirano)"
+msgstr "Shrani skrivnost za vse uporabnike (ni šifrirano)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:20
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "This password is not required"
+#, kde-format
 msgid "This secret is not required"
-msgstr "To geslo ni zahtevano"
+msgstr "Ta skrivnost ni zahtevana"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:36
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "Ime"
+msgstr "Ime:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:39
-#, fuzzy, kde-format
-#| msgid "The name of the Wi-Fi network to connect to"
+#, kde-format
 msgid "Name of the network interface this connection creates."
-msgstr "Ime omrežja Wi-Fi, s katerim se želite povezati"
+msgstr "Ime omrežnega vmesnika, ki ga ustvari ta povezava."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:51
 #, kde-format
 msgid "The private key of this interface, as a base64 string."
-msgstr ""
+msgstr "Zasebni ključ tega vmesnika kot niz base64."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:71
-#, fuzzy, kde-format
-#| msgid "Listen port:"
+#, kde-format
 msgid "Listen Port:"
 msgstr "Vrata poslušanja:"
 
@@ -6667,54 +6661,53 @@ msgstr "Vrata poslušanja:"
 #, kde-format
 msgid "Port to listen on. Automatic lets WireGuard choose one."
 msgstr ""
+"Vrata za poslušanje. Samodejno omogoča programu WireGuard, da izbere vrata."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:90
 #, kde-format
 msgid "Firewall mark to apply to outgoing packets. Zero disables it."
-msgstr ""
+msgstr "Oznaka vdorobrana za odhodne pakete. Vrednost nič jo onemogoči."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:117
 #, kde-format
 msgid "Add routes for the peers' allowed IPs"
-msgstr ""
+msgstr "Dodaj poti za dovoljene naslove IP sogovornikov"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:119
 #, kde-format
 msgid "Turn this off to route the tunnel yourself."
-msgstr ""
+msgstr "Izklopite to, če želite tunel usmeriti sami."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:136
-#, fuzzy, kde-format
-#| msgid "Peers…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Peers…"
-msgstr "Enakovredno odjemalci…"
+msgstr "Sogovorniki…"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:29
-#, fuzzy, kde-format
-#| msgid "Peer 1"
+#, kde-format
 msgctxt "@title:tab numbered WireGuard peer"
 msgid "Peer %1"
-msgstr "Enakovredni odjemalec 1"
+msgstr "Sogovornik %1"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:75
 #, kde-format
 msgid "This interface has no peers, so it cannot connect to anything yet."
 msgstr ""
+"Ta vmesnik nima nobenih sogovornikov, zato se zaenkrat ne more z ničimer "
+"povezati."
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:175
-#, fuzzy, kde-format
-#| msgid "Add new Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add new Peer"
-msgstr "Dodaj novega enakovrednega odjemalca"
+msgstr "Dodaj novega sogovornika"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:185
-#, fuzzy, kde-format
-#| msgid "Remove this Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove this Peer"
-msgstr "Odstrani enakovrednega odjemalca"
+msgstr "Odstrani tega sogovornika"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format
@@ -7077,8 +7070,8 @@ msgstr ""
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
 msgstr ""
-"Avtentikator je bil med preverjanjem odstranjen. Vstavite ga nazaj in "
-"poskusite znova."
+"Avtentikator je bil odstranjen med preverjanjem. Vstavite ga nazaj in "
+"poskusite znova"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:135
 #, kde-format

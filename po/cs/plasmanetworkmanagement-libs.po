@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-09-16 02:45+0000\n"
-"PO-Revision-Date: 2026-09-18 11:12+0200\n"
+"PO-Revision-Date: 2026-10-09 12:13+0200\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Poedit 3.9\n"
 "X-Language: cs_CZ\n"
 "X-Source-Language: en_US\n"
 
@@ -795,7 +795,7 @@ msgstr "VPN (%1)"
 #: editor/connectioneditorbase.cpp:541
 #, kde-format
 msgid "Failed to get secrets for %1"
-msgstr "Selhalo získávání přístupu pro %1"
+msgstr "Selhalo získávání hesla pro %1"
 
 #: editor/connectioneditordialog.cpp:36
 #, kde-format

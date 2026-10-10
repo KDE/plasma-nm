@@ -169,7 +169,7 @@ msgstr "Hersteller:"
 #: vpncadvanced.ui:60
 #, kde-format
 msgid "Vendor of your IPsec gateway."
-msgstr "Hersteller des IPsec-Gateways."
+msgstr "Hersteller Ihres IPsec-Gateways."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
 #: vpncadvanced.ui:70
@@ -223,7 +223,7 @@ msgstr "Perfect Forward Secrecy:"
 #: vpncadvanced.ui:167
 #, kde-format
 msgid "Diffie-Hellman group to use for PFS."
-msgstr "Diffie-Hellman-Gruppe zur Verwendung mit PFS."
+msgstr "Diffie-Hellman-Gruppe zur Verwendung für PFS."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: vpncadvanced.ui:174
@@ -251,7 +251,7 @@ msgstr "Zufällig"
 #: vpncadvanced.ui:209
 #, kde-format
 msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr "Keine DPD-Pakete senden (setzt Zeitüberschreitung auf 0)."
+msgstr "Keine DPD-Pakete senden (Zeitüberschreitung auf 0 setzen)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, deadPeer)
 #: vpncadvanced.ui:212
@@ -292,19 +292,19 @@ msgstr "Schwach (DES-Verschlüsselung, mit Vorsicht verwenden)"
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
-msgstr "Keine (Vollständig unsicher)"
+msgstr "Keine (völlig unsicher)"
 
 #: vpncadvancedwidget.cpp:32
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr "NAT-T wen verfügbar (Standard)"
+msgstr "NAT-T wenn verfügbar (Standard)"
 
 #: vpncadvancedwidget.cpp:33
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
-msgstr "NAT-T Immer"
+msgstr "NAT-T immer"
 
 #: vpncadvancedwidget.cpp:34
 #, kde-format

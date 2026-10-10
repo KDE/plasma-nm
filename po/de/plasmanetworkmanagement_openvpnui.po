@@ -102,7 +102,7 @@ msgstr "CA-Zertifikat:"
 #: openvpn.ui:117 openvpn.ui:378 openvpn.ui:471
 #, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr "Zertifizierungsstellendatei (CA) im .pem-Format."
+msgstr "Zertifizierungsstellendatei (CA-Datei) im .pem-Format."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509CaFile)
 #. i18n: ectx: property (filter), widget (KUrlRequester, x509Cert)
@@ -131,7 +131,7 @@ msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
 "Certificate)."
 msgstr ""
-"Signiertes Zertifikat der lokalen Gegenstelle im pem-Format, signiert durch "
+"Signiertes Zertifikat der lokalen Gegenstelle im .pem-Format, signiert durch "
 "die Zertifizierungsstelle des CA-Zertifikats."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
@@ -146,7 +146,7 @@ msgstr "Privater Schlüssel:"
 #: openvpn.ui:163 openvpn.ui:517
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr "Der private Schlüssel der lokalen Gegenstelle im pem-Format."
+msgstr "Der private Schlüssel der lokalen Gegenstelle im .pem-Format."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #. i18n: ectx: property (text), widget (QLabel, label_6)
@@ -256,10 +256,10 @@ msgid ""
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
-"Wenn Schlüsselrichtung verwendet wird, muss das Gegenteil von der VPN-"
-"Gegenstelle verwendet werden. Wenn zum Beispiel die Gegenstelle „1“ "
-"verwendet, muss diese Verbindung „0“ verwenden. Bei Unklarheit über den zu "
-"verwendenden Wert fragen Sie den Systemverwalter."
+"Wenn Schlüsselrichtung verwendet wird, muss das Gegenteil der VPN-"
+"Gegenstelle verwendet werden. Wenn die Gegenstelle z. B. „1“ verwendet, muss "
+"diese Verbindung „0“ verwenden. Bei Unklarheit über den zu verwendenden Wert "
+"fragen Sie den Systemverwalter."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, passCaFile)
 #: openvpn.ui:381
@@ -423,7 +423,7 @@ msgstr "Typ des virtuellen Geräts explizit angeben (TUN/TAP)."
 #: openvpnadvanced.ui:163
 #, kde-format
 msgid "Set virtual device type:"
-msgstr "Virtuellen Gerätetyp einstellen:"
+msgstr "Virtuellen Gerätetyp feststellen:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbDeviceType)
 #: openvpnadvanced.ui:177
@@ -452,7 +452,7 @@ msgstr ""
 #: openvpnadvanced.ui:197
 #, kde-format
 msgid "Set virtual device name:"
-msgstr "Virtuellen Gerätenamen einstellen:"
+msgstr "Virtuellen Gerätenamen feststellen:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMtu)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMtu)
@@ -606,7 +606,7 @@ msgstr ""
 #: openvpnadvanced.ui:435
 #, kde-format
 msgid "Specify max routes:"
-msgstr "Maximale Anzahl der Routen:"
+msgstr "Maximale Routenanzahl angeben:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, securityTab)
 #: openvpnadvanced.ui:474
@@ -793,7 +793,7 @@ msgstr "Namen exakt überprüfen"
 #: openvpnadvanced.ui:705
 #, kde-format
 msgid "Verify name by prefix"
-msgstr "Name anhand des Präfixes überprüfen"
+msgstr "Namen anhand des Präfixes überprüfen"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:710
@@ -848,7 +848,7 @@ msgstr "Zertifikat der Gegenstelle (Server) mithilfe der Signatur überprüfen"
 #: openvpnadvanced.ui:776
 #, kde-format
 msgid "Remote peer certificate TLS type:"
-msgstr "TLS-Zertifikatstyp der Gegenstelle:"
+msgstr "TLS-Typ des Zertifikats der Gegenstelle:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbRemoteCertTls)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbNsCertType)
@@ -999,8 +999,8 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
-"Wählen Sie diese Einstellung, wenn Sie einen Proxy-Server zum Zugriff auf "
-"das Internet verwenden."
+"Wählen Sie diese Einstellung, wenn Ihre Organisation für den Zugriff auf das "
+"Internet die Verwendung eines Proxy-Servers vorschreibt."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_12)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, proxyServerAddress)

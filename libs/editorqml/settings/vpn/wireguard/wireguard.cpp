@@ -261,7 +261,7 @@ NMVariantMapMap WireguardSetting::importConnectionSettings(const QString &fileNa
             } else if (key == TagFwmark) {
                 wireguardSetting.setFwmark(value.toLower() == QLatin1String("off") ? 0 : value.toUInt());
             } else if (key == TagTable || key == TagPreUp || key == TagPostUp || key == TagPreDown || key == TagPostDown) {
-                // Understood, and deliberately not carried into the connection.
+                // plasma-nm does not handle these items
             } else {
                 return NMVariantMapMap();
             }

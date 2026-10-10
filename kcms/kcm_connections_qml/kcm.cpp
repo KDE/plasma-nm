@@ -895,13 +895,23 @@ void KCMNetworkManagementQml::onSecretsArrived(QDBusPendingCallWatcher *watcher)
 // TODO:Add Connection request handling
 void KCMNetworkManagementQml::onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared)
 {
-    Q_UNUSED(specificType)
-
     auto type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(connectionType);
 
     if (type == NetworkManager::ConnectionSettings::Vpn && vpnType == QLatin1String("imported")) {
         Q_EMIT vpnImportFileRequested();
         return;
+    } else {
+        NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(type));
+
+        if (type == NetworkManager::ConnectionSettings::Vpn) {
+            NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+            vpnSetting->setServiceType(vpnType);
+            if (vpnType == QLatin1String("org.freedesktop.NetworkManager.openconnect")) {
+                NMStringMap data = vpnSetting->data();
+                data.insert(QLatin1String("protocol"), specificType);
+                vpnSetting->setData(data);
+            }
+        }
     }
 
     // only handle wireless for now

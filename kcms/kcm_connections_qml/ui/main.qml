@@ -28,40 +28,6 @@ Kirigami.Page {
         showCloseButton: true
     }
 
-    //Each network type Components
-    Component {
-        id: wireless
-        PlasmaNMQ.Wireless {}
-    }
-
-    Component {
-        id: wired
-        PlasmaNMQ.Wired {}
-    }
-    Component {
-        id: vpn
-        PlasmaNMQ.Vpn {}
-    }
-
-    Component {
-        id: wireguard
-        PlasmaNMQ.WireGuard {}
-    }
-
-    Component {
-        id: disconnected
-
-        Item {
-            anchors.fill: parent
-
-            QQC2.Label {
-                anchors.centerIn: parent
-                text: i18n("Disconnected")
-                horizontalAlignment: Text.AlignHCenter
-            }
-        }
-    }
-
     Connections {
         target: PlasmaNM.Configuration
         function onManageVirtualConnectionsChanged() {
@@ -85,9 +51,7 @@ Kirigami.Page {
             if (!path) {
                 root.deselectConnections();
             }
-            if (connectionLoader.item?.showStatusTab) {
-                connectionLoader.item.showStatusTab();
-            }
+            connectionPage.showStatusTab();
         }
 
         function onVpnImportRequested(fileName) {
@@ -321,28 +285,13 @@ Kirigami.Page {
                 }
             }
 
-            Loader {
-                id: connectionLoader
+            PlasmaNMQ.ConnectionPage {
+                id: connectionPage
 
                 Layout.fillWidth: true
                 Layout.fillHeight: true
 
                 active: connectionView.currentConnectionPath.length > 0
-                sourceComponent: {
-                    console.log("kcm.connectionType:", kcm.connectionType, "| Enums.WireGuard:", PlasmaNM.Enums.WireGuard, "Wired:", PlasmaNM.Enums.Wired, "Vpn:", PlasmaNM.Enums.Vpn);
-                    switch (kcm.connectionType) {
-                    case PlasmaNM.Enums.Wireless:
-                        return wireless;
-                    case PlasmaNM.Enums.Wired:
-                        return wired;
-                    case PlasmaNM.Enums.Vpn:
-                        return vpn;
-                    case PlasmaNM.Enums.WireGuard:
-                        return wireguard;
-                    default:
-                        return disconnected;
-                    }
-                }
             }
         }
     }

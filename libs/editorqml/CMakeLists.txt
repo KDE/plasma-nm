@@ -135,6 +135,7 @@ set(QML_SRCS
   qml/wifisecurity/DnsList.qml
   qml/wifisecurity/AlternativeSubjectMatch.qml
 
+  qml/ConnectionPage.qml
   qml/components/Wireless.qml
   qml/components/Wired.qml
   qml/components/Vpn.qml

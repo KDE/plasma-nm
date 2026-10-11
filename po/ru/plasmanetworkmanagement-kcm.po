@@ -25,7 +25,7 @@ msgstr ""
 #: kcm.cpp:270
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr "Импортировать конфигурацию соединения VPN из файла «%1»?"
+msgstr "Импортировать конфигурацию подключения VPN из файла «%1»?"
 
 #: kcm.cpp:271
 #, kde-format
@@ -41,7 +41,7 @@ msgstr "Импорт"
 #: kcm.cpp:279 kcm.cpp:352
 #, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Ошибка импорта соединения VPN: %1"
+msgstr "Ошибка импорта подключения VPN: %1"
 
 #: kcm.cpp:282 kcm.cpp:355
 #, kde-format
@@ -56,12 +56,12 @@ msgstr "моя_точка_доступа"
 #: kcm.cpp:496
 #, kde-format
 msgid "Export VPN Connection"
-msgstr "Экспорт соединения VPN"
+msgstr "Экспорт подключения VPN"
 
 #: kcm.cpp:516
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
-msgstr "Сохранить изменения, внесённые в соединение «%1»?"
+msgstr "Сохранить изменения, внесённые в подключение «%1»?"
 
 #: kcm.cpp:517
 #, kde-format
@@ -72,12 +72,12 @@ msgstr "Сохранение изменений"
 #: kcm.cpp:612
 #, kde-format
 msgid "Import VPN Connection"
-msgstr "Импорт соединения VPN"
+msgstr "Импорт подключения VPN"
 
 #: kcm.cpp:614
 #, kde-format
 msgid "VPN connections (%1)"
-msgstr "Соединения VPN (%1)"
+msgstr "Подключения VPN (%1)"
 
 #: kcm.cpp:617
 #, kde-format
@@ -98,7 +98,7 @@ msgstr " (копия)"
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr "Выбор типа соединения"
+msgstr "Выбор типа подключения"
 
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
@@ -115,11 +115,11 @@ msgstr "Запрашивать PIN-код при подключении моде
 
 #: qml/ConfigurationDialog.qml:50
 msgid "Show virtual connections"
-msgstr "Показывать виртуальные сетевые соединения"
+msgstr "Показывать виртуальные сетевые подключения"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr "Создавать новые соединения как системные"
+msgstr "Создавать новые подключения как системные"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
@@ -203,15 +203,15 @@ msgstr "Доступно"
 
 #: qml/main.qml:148 ui/main.qml:220
 msgid "Add new connection"
-msgstr "Добавить новое соединение"
+msgstr "Добавить новое подключение"
 
 #: qml/main.qml:166 ui/main.qml:238
 msgid "Remove selected connection"
-msgstr "Удалить выбранное соединение"
+msgstr "Удалить выбранное подключение"
 
 #: qml/main.qml:184 ui/main.qml:256
 msgid "Export selected connection"
-msgstr "Экспортировать выбранное соединение"
+msgstr "Экспортировать выбранное подключение"
 
 #: qml/main.qml:209 ui/main.qml:192
 msgid "Configuration"
@@ -220,11 +220,11 @@ msgstr "Настроить"
 #: qml/main.qml:236 ui/main.qml:321
 msgctxt "@title:window"
 msgid "Remove Connection"
-msgstr "Удаление соединения"
+msgstr "Удаление подключения"
 
 #: qml/main.qml:237 ui/main.qml:322
 msgid "Do you want to remove the connection '%1'?"
-msgstr "Удалить соединение «%1»?"
+msgstr "Удалить подключение «%1»?"
 
 #: qml/main.qml:259
 msgctxt "@action:button Connect to network"

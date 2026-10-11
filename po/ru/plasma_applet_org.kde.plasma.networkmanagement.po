@@ -121,7 +121,7 @@ msgstr "Совпадений не найдено"
 #: ConnectionListPage.qml:136
 #, kde-format
 msgid "No available connections"
-msgstr "Нет доступных соединений"
+msgstr "Нет доступных подключений"
 
 #: ConnectionListPage.qml:145
 #, kde-format
@@ -192,13 +192,13 @@ msgstr "Открыть страницу входа в сеть…"
 #: main.qml:123
 #, kde-format
 msgid "&Configure Network Connections…"
-msgstr "На&строить сетевые соединения…"
+msgstr "На&строить сетевые подключения…"
 
 #: PopupDialog.qml:58
 #, kde-format
 msgctxt "@action:button"
 msgid "Return to Network Connections"
-msgstr "Вернуться к сетевым соединениям"
+msgstr "Вернуться к сетевым подключениям"
 
 #: ShareNetworkQrCodePage.qml:33
 #, kde-format
@@ -287,7 +287,7 @@ msgstr ""
 #: Toolbar.qml:253
 #, kde-format
 msgid "Configure network connections…"
-msgstr "Настроить сетевые соединения…"
+msgstr "Настроить сетевые подключения…"
 
 #~ msgid "/s"
 #~ msgstr "/с"

@@ -54,7 +54,7 @@ msgstr ""
 #: openvpn.ui:46
 #, kde-format
 msgid "Connection type:"
-msgstr "Тип соединения:"
+msgstr "Тип подключения:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbConnectionType)
 #: openvpn.ui:68
@@ -240,7 +240,7 @@ msgid ""
 msgstr ""
 "Если указано направление ключа, оно должно быть установлено в значение, "
 "противоположное этому же параметру на удалённом хосте. Например, если на "
-"удалённом компьютере задано значение «1», то для этого соединения нужно "
+"удалённом компьютере задано значение «1», то для этого подключения нужно "
 "указать «0». Если сомневаетесь, какое значение выбрать, обратитесь к "
 "системному администратору."
 
@@ -543,7 +543,7 @@ msgstr ""
 #: openvpnadvanced.ui:383
 #, kde-format
 msgid "Connect timeout:"
-msgstr "Время ожидания соединения:"
+msgstr "Время ожидания подключения:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbConnectTimeout)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
@@ -622,7 +622,7 @@ msgid ""
 "Exit or restart after n seconds pass without reception of a ping or other "
 "packet from remote."
 msgstr ""
-"Завершить работу (ping-exit) или перезапустить соединение (ping-restart),\n"
+"Завершить работу (ping-exit) или перезапустить подключение (ping-restart),\n"
 "если за последние N секунд не пришло ни одного пакета, включая ping,\n"
 "от удалённого хоста."
 

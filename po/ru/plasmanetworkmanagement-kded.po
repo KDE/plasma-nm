@@ -240,7 +240,7 @@ msgstr "Превышено время ожидания модема"
 msgctxt ""
 "@info:status Notification when the device failed due to ModemDialFailedReason"
 msgid "The modem dial failed"
-msgstr "Сбой модемного соединения"
+msgstr "Сбой модемного подключения"
 
 #: notification.cpp:171
 #, kde-format
@@ -323,7 +323,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "ConnectionRemovedReason"
 msgid "The connection was removed"
-msgstr "Соединение было удалено"
+msgstr "Подключение было удалено"
 
 #: notification.cpp:206
 #, kde-format
@@ -343,7 +343,7 @@ msgstr "Не удалось найти модем"
 msgctxt ""
 "@info:status Notification when the device failed due to BluetoothFailedReason"
 msgid "The bluetooth connection failed or timed out"
-msgstr "Сбой или превышение времени ожидания соединения Bluetooth"
+msgstr "Сбой или превышение времени ожидания подключения Bluetooth"
 
 #: notification.cpp:218
 #, kde-format
@@ -406,7 +406,7 @@ msgctxt ""
 "@info:status Notification when the device failed due to "
 "SecondaryConnectionFailed"
 msgid "A secondary connection of the base connection failed"
-msgstr "Сбой вторичного подключения базового соединения"
+msgstr "Сбой вторичного подключения, связанного с основным"
 
 #: notification.cpp:248
 #, kde-format
@@ -445,7 +445,7 @@ msgstr "Указан неправильный PIN-код SIM-карты"
 #, kde-format
 msgctxt "@info:status Notification when the device failed due to NewActivation"
 msgid "A new connection activation was enqueued"
-msgstr "Запланировано установление соединения"
+msgstr "Подключение поставлено в очередь"
 
 #: notification.cpp:266
 #, kde-format
@@ -463,27 +463,27 @@ msgstr "Изменились параметры управления родит�
 #: notification.cpp:349
 #, kde-format
 msgid "Connection '%1' activated."
-msgstr "Соединение «%1» установлено."
+msgstr "Подключение «%1» установлено."
 
 #: notification.cpp:377
 #, kde-format
 msgid "Connection '%1' deactivated."
-msgstr "Соединение «%1» отключено."
+msgstr "Подключение «%1» отключено."
 
 #: notification.cpp:436
 #, kde-format
 msgid "VPN connection '%1' activated."
-msgstr "VPN-соединение «%1» установлено."
+msgstr "VPN-подключение «%1» установлено."
 
 #: notification.cpp:439
 #, kde-format
 msgid "VPN connection '%1' failed to activate."
-msgstr "Не удалось установить VPN-соединение «%1»."
+msgstr "Не удалось установить VPN-подключение «%1»."
 
 #: notification.cpp:442 notification.cpp:452
 #, kde-format
 msgid "VPN connection '%1' deactivated."
-msgstr "VPN-соединение «%1» отключено."
+msgstr "VPN-подключение «%1» отключено."
 
 #: notification.cpp:455
 #, kde-format
@@ -491,23 +491,23 @@ msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
 msgstr ""
-"VPN-соединение «%1» прервано, так как используемое для него устройство было "
+"VPN-подключение «%1» прервано, так как используемое для него устройство было "
 "отключено."
 
 #: notification.cpp:458
 #, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "Служба, обеспечивающая VPN-соединение «%1», была остановлена."
+msgstr "Служба, обеспечивающая VPN-подключение «%1», была остановлена."
 
 #: notification.cpp:461
 #, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "Конфигурация IP для VPN-соединения «%1» была ошибочной."
+msgstr "Конфигурация IP для VPN-подключения «%1» была ошибочной."
 
 #: notification.cpp:464
 #, kde-format
 msgid "The connection attempt to the VPN service timed out."
-msgstr "Истекло время ожидания соединения со службой VPN."
+msgstr "Истекло время ожидания подключения к службе VPN."
 
 #: notification.cpp:467
 #, kde-format
@@ -515,17 +515,17 @@ msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
 msgstr ""
-"Истекло время ожидания запуска службы, обеспечивающей VPN-соединение «%1»."
+"Истекло время ожидания запуска службы, обеспечивающей VPN-подключение «%1»."
 
 #: notification.cpp:470
 #, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "Не удалось запустить службу, обеспечивающую VPN-соединение «%1»."
+msgstr "Не удалось запустить службу, обеспечивающую VPN-подключение «%1»."
 
 #: notification.cpp:473
 #, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
-msgstr "Пароли, необходимые для VPN-соединения «%1», не были указаны."
+msgstr "Пароли, необходимые для VPN-подключения «%1», не были указаны."
 
 #: notification.cpp:476
 #, kde-format
@@ -535,12 +535,12 @@ msgstr "Ошибка проверки подлинности на VPN-серве
 #: notification.cpp:479
 #, kde-format
 msgid "The connection was deleted."
-msgstr "Соединение было удалено."
+msgstr "Подключение было удалено."
 
 #: notification.cpp:578
 #, kde-format
 msgid "No Network Connection"
-msgstr "Нет сетевого соединения"
+msgstr "Нет сетевого подключения"
 
 #: notification.cpp:579
 #, kde-format
@@ -593,7 +593,7 @@ msgstr "Параметры VPN отсутствуют"
 #: passworddialog.cpp:135
 #, kde-format
 msgid "Provide the secrets for the VPN connection \"%1\":"
-msgstr "Введите пароль VPN-соединения «%1»:"
+msgstr "Введите пароль VPN-подключения «%1»:"
 
 #: passworddialog.cpp:136
 #, kde-format

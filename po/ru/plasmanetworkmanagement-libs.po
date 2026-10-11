@@ -39,7 +39,7 @@ msgstr ""
 #: cellular/cellularmodem.cpp:412
 #, kde-format
 msgid "Error activating connection: %1"
-msgstr "Не удалось активировать соединение: %1"
+msgstr "Не удалось активировать подключение: %1"
 
 #: cellular/cellularmodem.cpp:431
 #, kde-format
@@ -488,7 +488,7 @@ msgstr "Не удалось отправить PUK-код: %1"
 #: editor/connectiondetails.cpp:91
 #, kde-format
 msgid "Connection speed"
-msgstr "Скорость соединения"
+msgstr "Скорость подключения"
 
 #: editor/connectiondetails.cpp:93 editor/connectiondetails.cpp:168
 #: editor/connectiondetails.cpp:252 editor/connectiondetails.cpp:262
@@ -528,7 +528,7 @@ msgstr "Тип защиты"
 #: editor/connectiondetails.cpp:155
 #, kde-format
 msgid "Connection Speed"
-msgstr "Скорость соединения"
+msgstr "Скорость подключения"
 
 #: editor/connectiondetails.cpp:162 editor/connectiondetails.cpp:164
 #, kde-format
@@ -800,23 +800,23 @@ msgstr "Не удалось получить пароли и ключи для %
 #: editor/connectioneditordialog.cpp:36
 #, kde-format
 msgid "New Connection (%1)"
-msgstr "Новое соединение (%1)"
+msgstr "Новое подключение (%1)"
 
 #: editor/connectioneditordialog.cpp:38
 #, kde-format
 msgid "Edit Connection '%1'"
-msgstr "Изменение соединения «%1»"
+msgstr "Изменение подключения «%1»"
 
 #: editor/connectioneditortabwidget.cpp:58
 #, kde-format
 msgid "New %1 connection"
-msgstr "Новое соединение %1"
+msgstr "Новое подключение %1"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/connectioneditortabwidget.ui:20
 #, kde-format
 msgid "Connection name:"
-msgstr "Имя соединения:"
+msgstr "Имя подключения:"
 
 #: editor/settings/bondwidget.cpp:39
 #, kde-format
@@ -882,13 +882,13 @@ msgstr "ARP"
 #: editor/settings/teamwidget.cpp:182
 #, kde-format
 msgid "Do you want to remove the connection '%1'?"
-msgstr "Удалить соединение «%1»?"
+msgstr "Удалить подключение «%1»?"
 
 #: editor/settings/bondwidget.cpp:245 editor/settings/bridgewidget.cpp:194
 #: editor/settings/teamwidget.cpp:183
 #, kde-format
 msgid "Remove Connection"
-msgstr "Удаление соединения"
+msgstr "Удаление подключения"
 
 #: editor/settings/bridgewidget.cpp:36 editor/settings/teamwidget.cpp:45
 #: editor/uiutils.cpp:215
@@ -1405,7 +1405,7 @@ msgstr "Имя интерфейса:"
 #: editor/settings/ui/bond.ui:34
 #, kde-format
 msgid "Bonded connections:"
-msgstr "Агрегированные соединения:"
+msgstr "Агрегированные подключения:"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/bond.ui:59 editor/settings/ui/bridge.ui:56
@@ -1485,7 +1485,7 @@ msgstr "IP-адрес или список адресов, разделённых
 #: editor/settings/ui/bridge.ui:31
 #, kde-format
 msgid "Bridged connections:"
-msgstr "Соединения моста:"
+msgstr "Подключения моста:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/bridge.ui:107
@@ -1544,7 +1544,7 @@ msgstr "Адрес устройства:"
 #: editor/settings/ui/bt.ui:41
 #, kde-format
 msgid "Connection type:"
-msgstr "Тип соединения:"
+msgstr "Тип подключения:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/cdma.ui:20 editor/settings/ui/gsm.ui:24
@@ -1568,11 +1568,10 @@ msgid ""
 "The higher number means higher priority. A negative number can be used to "
 "indicate priority lower than the default."
 msgstr ""
-"При включении автоматического подключения для нескольких соединений в первую "
-"очередь будет установлено соединение, которому назначен наибольший "
-"приоритет. Значение по умолчанию — 0. \n"
-"Отрицательные значения служат для задания приоритета, меньшего чем приоритет "
-"по умолчанию."
+"Если включено автоматическое подключение, предпочтение отдаётся подключениям "
+"с бо́льшим приоритетом. Значение по умолчанию — 0.\n"
+"Чем больше число, тем выше приоритет. Отрицательные значения задают "
+"приоритет ниже приоритета по умолчанию."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1585,7 +1584,7 @@ msgstr "Все пользователи могут подключаться к �
 #: editor/settings/ui/connectionwidget.ui:63
 #, kde-format
 msgid "Edit advanced permissions for this connection"
-msgstr "Изменить расширенные права доступа для этого соединения"
+msgstr "Изменить расширенные права доступа для этого подключения"
 
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:66
@@ -1594,8 +1593,9 @@ msgid ""
 "Fine-grained permissions editor for this connection. It lets you choose "
 "which users can activate/modify/delete this connection."
 msgstr ""
-"Редактор прав доступа для соединения. С его помощью можно указать "
-"пользователей, которые могут подключить, изменить или удалить это соединение."
+"Редактор прав доступа для подключения. С его помощью можно указать "
+"пользователей, которые могут задействовать, изменить или удалить это "
+"подключение."
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
@@ -1619,8 +1619,8 @@ msgid ""
 "Choose which VPN connection to automatically activate when this connection "
 "is established"
 msgstr ""
-"Выберите, какое VPN-подключение автоматически активировать при установке "
-"этого соединения."
+"Выберите, какое VPN-подключение автоматически активировать при установлении "
+"этого подключения."
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:102
@@ -1653,7 +1653,7 @@ msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr ""
-"Указывать приложениям, является ли соединение тарифицируемым, и следует ли "
+"Указывать приложениям, является ли подключение тарифицируемым, и следует ли "
 "ограничивать его трафик."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
@@ -1943,7 +1943,7 @@ msgstr ""
 #: editor/settings/ui/ipv4.ui:333 editorqml/qml/ipv4/IPv4Settings.qml:302
 #, kde-format
 msgid "IPv4 is required for this connection"
-msgstr "Для этого соединения требуется IPv4"
+msgstr "Для этого подключения требуется IPv4"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/ipv4.ui:345 editor/settings/ui/ipv6.ui:107
@@ -1994,7 +1994,7 @@ msgstr ""
 #: editor/settings/ui/ipv6.ui:33 editorqml/qml/ipv6/IPv6Settings.qml:320
 #, kde-format
 msgid "IPv6 is required for this connection"
-msgstr "Для этого соединения требуется IPv6"
+msgstr "Для этого подключения требуется IPv6"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv6.ui:83 editorqml/qml/ipv4/IPv4Settings.qml:73
@@ -2166,17 +2166,18 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
-"Если этот параметр задан, то PPPoE-соединение будет устанавливаться только с "
-"концентраторами доступа, предоставляющими указанную службу. Для подключения "
-"к большинству провайдеров это поле следует оставить пустым. Использование "
-"параметра требуется только при подключении к множественным концентраторам "
-"доступа, либо если требуется использование определённой службы."
+"Если этот параметр задан, то PPPoE-подключение будет устанавливаться только "
+"с концентраторами доступа, предоставляющими указанную службу. Для "
+"подключения к большинству провайдеров это поле следует оставить пустым. "
+"Использование параметра требуется только при подключении к множественным "
+"концентраторам доступа, либо если требуется использование определённой "
+"службы."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31
 #, kde-format
 msgid "Teamed connections:"
-msgstr "Соединения группы:"
+msgstr "Подключения группы:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/team.ui:113
@@ -2319,7 +2320,7 @@ msgid ""
 "specified band. This setting depends\n"
 " on specific driver capability and may not work with all drivers"
 msgstr ""
-"Этот параметр разрешает соединения Wi-Fi только в указанном диапазоне.\n"
+"Этот параметр разрешает подключения Wi-Fi только в указанном диапазоне.\n"
 "Поддержка этого параметра присутствует не во всех драйверах."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
@@ -2358,7 +2359,7 @@ msgid ""
 "(or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
-"Номер канала, используемого для соединения Wi-Fi. Устройство будет "
+"Номер канала, используемого для подключения Wi-Fi. Устройство будет "
 "использовать только этот канал при подключении к точкам доступа (или при "
 "создании одноранговых сетей)."
 
@@ -2422,7 +2423,7 @@ msgstr ""
 #: editor/settings/ui/wificonnectionwidget.ui:358
 #, kde-format
 msgid "Create a connection for a hidden network"
-msgstr "Создать соединение для скрытой сети"
+msgstr "Создать подключение для скрытой сети"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:345
@@ -2573,7 +2574,7 @@ msgid ""
 "This option locks this connection to the network device specified by its\n"
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"Привязать это соединение к сетевому устройству, которое\n"
+"Привязать это подключение к сетевому устройству, которое\n"
 "имеет указанный здесь MAC-адрес. Пример: 00:11:22:33:44:55."
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, clonedMacAddress)
@@ -2587,7 +2588,7 @@ msgid ""
 msgstr ""
 "Введённый здесь MAC-адрес (например, \n"
 "11:22:33:44:55) будет использован в качестве аппаратного адреса \n"
-" устройства, используемого для этого соединения.\n"
+" устройства, используемого для этого подключения.\n"
 "Эта функция известна под названием «клонирование (подмена) MAC-адреса»."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
@@ -2750,7 +2751,7 @@ msgstr "100 Гбит/с"
 #: editorqml/qml/wifisecurity/WiredSecurityForm.qml:28
 #, kde-format
 msgid "Use 802.1x security for this connection"
-msgstr "Использовать защиту 802.1x для этого соединения"
+msgstr "Использовать защиту 802.1x для этого подключения"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, WireGuardProp)
 #: editor/settings/ui/wireguardinterfacewidget.ui:14
@@ -2906,7 +2907,7 @@ msgstr ""
 "            или v6 с указанием масок подсетей. Для этих адресов\n"
 "            будут разрешены входящие подключения, а также по \n"
 "            этим адресам будет устанавливаться исходящее\n"
-"            подключение. Чтобы разрешить соединение с любым \n"
+"            подключение. Чтобы разрешить обмен с любым \n"
 "            адресом, используйте 0.0.0.0/0 для IPv4 и ::/0 для IPv6."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
@@ -2926,7 +2927,7 @@ msgid ""
 "            present, Endpoint port must also be set."
 msgstr ""
 "Необязательный параметр.\n"
-"            Адрес подключения, используемый в соединении.\n"
+"            Адрес конечной точки подключения.\n"
 "            Может быть указан в виде адреса IPv4 или IPv6, или\n"
 "            в качестве доменного имени, например: abc.com.\n"
 "            Чтобы использовать этот параметр, требуется также\n"
@@ -3152,7 +3153,7 @@ msgstr "Петлевой интерфейс (Loopback)"
 #: editor/uiutils.cpp:240
 #, kde-format
 msgid "Unknown connection type"
-msgstr "Соединение неизвестного типа"
+msgstr "Подключение неизвестного типа"
 
 #: editor/uiutils.cpp:252
 #, kde-format
@@ -3253,7 +3254,7 @@ msgstr "Проверка доступа к сети"
 msgctxt ""
 "a secondary connection (e.g. VPN) has to be activated first to continue"
 msgid "Waiting for a secondary connection"
-msgstr "Ожидание вторичного соединения"
+msgstr "Ожидание вторичного подключения"
 
 #: editor/uiutils.cpp:317
 #, kde-format
@@ -3271,7 +3272,7 @@ msgstr "Подключено к %1"
 #, kde-format
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
-msgstr "Отключение соединения"
+msgstr "Отключение подключения"
 
 #: editor/uiutils.cpp:326
 #, kde-format
@@ -3862,7 +3863,7 @@ msgstr "Метрика"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "New Mobile Broadband Connection"
-msgstr "Новое мобильное соединение"
+msgstr "Новое мобильное подключение"
 
 #: editor/widgets/mobileconnectionwizard.cpp:135
 #: editor/widgets/mobileconnectionwizard.cpp:153
@@ -3896,7 +3897,7 @@ msgstr "Точка доступа: %1"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Set up a Mobile Broadband Connection"
-msgstr "Настройка мобильного соединения"
+msgstr "Настройка мобильного подключения"
 
 #: editor/widgets/mobileconnectionwizard.cpp:240
 #, kde-format
@@ -3906,7 +3907,7 @@ msgid ""
 "cellular (3G) network."
 msgstr ""
 "С помощью этого мастера вы сможете легко настроить мобильное широкополосное "
-"соединение с сотовой сетью (3G)."
+"подключение к сотовой сети (3G)."
 
 #: editor/widgets/mobileconnectionwizard.cpp:244
 #, kde-format
@@ -3937,7 +3938,7 @@ msgstr ""
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Create a connection for &this mobile broadband device:"
-msgstr "Создать соединение для этого &устройства мобильной связи:"
+msgstr "Создать подключение для этого &устройства мобильной связи:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:258
 #: editor/widgets/mobileconnectionwizard.cpp:385
@@ -4038,7 +4039,7 @@ msgstr ""
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Confirm Mobile Broadband Settings"
-msgstr "Подтверждение параметров мобильного соединения"
+msgstr "Подтверждение параметров мобильного подключения"
 
 #: editor/widgets/mobileconnectionwizard.cpp:543
 #, kde-format
@@ -4046,7 +4047,8 @@ msgctxt "Mobile Connection Wizard"
 msgid ""
 "Your mobile broadband connection is configured with the following settings:"
 msgstr ""
-"Ваше мобильное широкополосное соединение настроено со следующими параметрами:"
+"Ваше мобильное широкополосное подключение настроено со следующими "
+"параметрами:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:547
 #, kde-format
@@ -4135,7 +4137,7 @@ msgstr "Имя пользователя"
 #: editor/widgets/ui/advancedpermissionswidget.ui:160
 #, kde-format
 msgid "Users allowed to activate the connection"
-msgstr "Пользователи, которым разрешается использовать соединение"
+msgstr "Пользователи, которым разрешается использовать подключение"
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, RoutesIp4Config)
 #: editor/widgets/ui/ipv4routes.ui:20 editorqml/qml/ipv4/IPv4Routes.qml:18
@@ -4151,15 +4153,15 @@ msgid ""
 "If enabled, this connection will never be used as the default network "
 "connection"
 msgstr ""
-"Если включено, то это соединение не будет использоваться\n"
-"как сетевое соединение по умолчанию."
+"Если включено, то это подключение не будет использоваться\n"
+"как сетевое подключение по умолчанию."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
 #: editorqml/qml/ipv4/IPv4Routes.qml:208 editorqml/qml/ipv6/IPv6Routes.qml:229
 #, kde-format
 msgid "Use only for resources on this connection"
-msgstr "Использовать только для ресурсов этого соединения"
+msgstr "Использовать только для ресурсов этого подключения"
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonRemove)
 #: editor/widgets/ui/ipv4routes.ui:74
@@ -4211,7 +4213,7 @@ msgstr "Удал&ить"
 #, kde-format
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr "Выбор типа соединения"
+msgstr "Выбор типа подключения"
 
 #: editorqml/qml/components/Vpn.qml:24 editorqml/qml/components/Wired.qml:27
 #: editorqml/qml/components/Wireless.qml:27
@@ -4238,12 +4240,12 @@ msgstr "Запрашивать PIN-код при обнаружении моде
 #: editorqml/qml/ConfigurationDialog.qml:49
 #, kde-format
 msgid "Show virtual connections"
-msgstr "Показывать виртуальные соединения"
+msgstr "Показывать виртуальные подключения"
 
 #: editorqml/qml/ConfigurationDialog.qml:55
 #, kde-format
 msgid "Create new connections as system connections"
-msgstr "Создавать новые соединения как системные"
+msgstr "Создавать новые подключения как системные"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
 #, kde-format
@@ -4994,7 +4996,7 @@ msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"Привязать это соединение к сетевому устройству, которое имеет указанный "
+"Привязать это подключение к сетевому устройству, которое имеет указанный "
 "здесь MAC-адрес. Пример: 00:11:22:33:44:55."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
@@ -5005,7 +5007,7 @@ msgid ""
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
 "Введённый здесь MAC-адрес (например, 11:22:33:44:55:66) будет использован в "
-"качестве аппаратного адреса устройства, используемого для этого соединения. "
+"качестве аппаратного адреса устройства, используемого для этого подключения. "
 "Эта функция известна под названием «клонирование (подмена) MAC-адреса»."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
@@ -5141,12 +5143,12 @@ msgstr "Не удалось задействовать %1"
 #: handler.cpp:389 handler.cpp:418
 #, kde-format
 msgid "Failed to add connection %1"
-msgstr "Не удалось добавить соединение %1"
+msgstr "Не удалось добавить подключение %1"
 
 #: handler.cpp:396 handler.cpp:427
 #, kde-format
 msgid "Connection %1 has been added"
-msgstr "Добавлено соединение %1"
+msgstr "Добавлено подключение %1"
 
 #: handler.cpp:466
 #, kde-format
@@ -5166,17 +5168,17 @@ msgstr "Не удалось удалить %1"
 #: handler.cpp:651
 #, kde-format
 msgid "Connection %1 has been removed"
-msgstr "Удалено соединение %1"
+msgstr "Удалено подключение %1"
 
 #: handler.cpp:670
 #, kde-format
 msgid "Failed to update connection %1"
-msgstr "Не удалось обновить соединение %1"
+msgstr "Не удалось обновить подключение %1"
 
 #: handler.cpp:677
 #, kde-format
 msgid "Connection %1 has been updated"
-msgstr "Обновлено соединение %1"
+msgstr "Обновлено подключение %1"
 
 #: handler.cpp:864
 #, kde-format
@@ -5192,28 +5194,28 @@ msgstr "Не удалось создать точку доступа %1"
 #: models/creatableconnectionsmodel.cpp:181
 #, kde-format
 msgid "Hardware based connections"
-msgstr "Аппаратные соединения"
+msgstr "Аппаратные подключения"
 
 #: models/creatableconnectionsmodel.cpp:137
 #, kde-format
 msgid "Some DSL description"
-msgstr "Новое соединение DSL"
+msgstr "Новое подключение DSL"
 
 #: models/creatableconnectionsmodel.cpp:144
 #, kde-format
 msgid "Some infiniband description"
-msgstr "Новое соединение InfiniBand"
+msgstr "Новое подключение InfiniBand"
 
 #: models/creatableconnectionsmodel.cpp:151
 #, kde-format
 msgid "Some mobile broadband description"
-msgstr "Новое мобильное соединение"
+msgstr "Новое мобильное подключение"
 
 #: models/creatableconnectionsmodel.cpp:158
 #: models/creatableconnectionsmodel.cpp:165
 #, kde-format
 msgid "Some wired ethernet description"
-msgstr "Новое проводное соединение Ethernet"
+msgstr "Новое проводное подключение Ethernet"
 
 #: models/creatableconnectionsmodel.cpp:163
 #, kde-format
@@ -5224,7 +5226,7 @@ msgstr "Проводной Ethernet (общий доступ)"
 #: models/creatableconnectionsmodel.cpp:182
 #, kde-format
 msgid "Some wi-fi description"
-msgstr "Новое соединение Wi-Fi"
+msgstr "Новое подключение Wi-Fi"
 
 #: models/creatableconnectionsmodel.cpp:180
 #, kde-format
@@ -5237,34 +5239,34 @@ msgstr "Wi-Fi (общий доступ)"
 #: models/creatableconnectionsmodel.cpp:221
 #, kde-format
 msgid "Virtual connections"
-msgstr "Виртуальные соединения"
+msgstr "Виртуальные подключения"
 
 #: models/creatableconnectionsmodel.cpp:192
 #: models/creatableconnectionsmodel.cpp:202
 #, kde-format
 msgid "Some bond description"
-msgstr "Новое агрегированное соединение"
+msgstr "Новое агрегированное подключение"
 
 #: models/creatableconnectionsmodel.cpp:212
 #, kde-format
 msgid "Some team description"
-msgstr "Новое соединение группы"
+msgstr "Новое подключение группы"
 
 #: models/creatableconnectionsmodel.cpp:222
 #, kde-format
 msgid "Some vlan description"
-msgstr "Новое соединение VLAN"
+msgstr "Новое подключение VLAN"
 
 #: models/creatableconnectionsmodel.cpp:242
 #: models/creatableconnectionsmodel.cpp:255
 #, kde-format
 msgid "VPN connections"
-msgstr "VPN-соединения"
+msgstr "VPN-подключения"
 
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
-msgstr "Импортировать VPN-соединение…"
+msgstr "Импортировать VPN-подключение…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format
@@ -5349,7 +5351,7 @@ msgstr "Подключение к %1"
 #: networkstatus.cpp:222
 #, kde-format
 msgid "Connected to %1 (no connectivity)"
-msgstr "Подключено к %1 (соединение с Интернетом отсутствует)"
+msgstr "Подключено к %1 (нет доступа к Интернету)"
 
 #: networkstatus.cpp:225
 #, kde-format

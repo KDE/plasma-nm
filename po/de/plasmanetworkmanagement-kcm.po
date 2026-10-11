@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:49+0000\n"
+"POT-Creation-Date: 2026-10-11 00:53+0000\n"
 "PO-Revision-Date: 2026-09-08 21:37+0200\n"
 "Last-Translator: Alois Spitzbart <spitz234@hotmail.com>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -22,12 +22,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 26.11.70\n"
 
-#: kcm.cpp:270 ui/main.qml:389
+#: kcm.cpp:270 ui/main.qml:338
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Die VPN-Einrichtung von „%1“ importieren?"
 
-#: kcm.cpp:271 ui/main.qml:388
+#: kcm.cpp:271 ui/main.qml:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
@@ -38,12 +38,12 @@ msgstr "VPN-Verbindung importieren"
 msgid "Import"
 msgstr "Importieren"
 
-#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:109
+#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:73
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Importieren der VPN-Verbindung ist fehlgeschlagen: %1"
 
-#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:103
+#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:67
 #, kde-format
 msgid "Connection imported."
 msgstr "Verbindung importiert."
@@ -204,28 +204,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Verfügbar"
 
-#: qml/main.qml:148 ui/main.qml:254
+#: qml/main.qml:148 ui/main.qml:218
 msgid "Add new connection"
 msgstr "Neue Verbindung hinzufügen"
 
-#: qml/main.qml:166 ui/main.qml:272
+#: qml/main.qml:166 ui/main.qml:236
 msgid "Remove selected connection"
 msgstr "Ausgewählte Verbindung entfernen"
 
-#: qml/main.qml:184 ui/main.qml:290
+#: qml/main.qml:184 ui/main.qml:254
 msgid "Export selected connection"
 msgstr "Ausgewählte Verbindung exportieren"
 
-#: qml/main.qml:209 ui/main.qml:226
+#: qml/main.qml:209 ui/main.qml:190
 msgid "Configuration"
 msgstr "Einrichtung"
 
-#: qml/main.qml:236 ui/main.qml:358
+#: qml/main.qml:236 ui/main.qml:307
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Verbindung entfernen"
 
-#: qml/main.qml:237 ui/main.qml:359
+#: qml/main.qml:237 ui/main.qml:308
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Möchten Sie die Verbindung „'%1“ entfernen?"
 
@@ -259,27 +259,26 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Passwort muss zwischen 8 und 64 Zeichen lang sein"
 
-#: ui/main.qml:59
-msgid "Disconnected"
-msgstr "Getrennt"
-
-#: ui/main.qml:314
+#: ui/main.qml:278
 msgid "Connection name:"
 msgstr "Verbindungsname:"
 
-#: ui/main.qml:376
+#: ui/main.qml:325
 #, fuzzy
 #| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "VPN-Verbindung importieren"
 
-#: ui/main.qml:394
+#: ui/main.qml:343
 #, fuzzy
 #| msgid "Import"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importieren"
+
+#~ msgid "Disconnected"
+#~ msgstr "Getrennt"
 
 #~ msgid "Create"
 #~ msgstr "Erstellen"

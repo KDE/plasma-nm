@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:49+0000\n"
+"POT-Creation-Date: 2026-10-11 00:53+0000\n"
 "PO-Revision-Date: 2026-09-30 09:03+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -20,12 +20,12 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: kcm.cpp:270 ui/main.qml:389
+#: kcm.cpp:270 ui/main.qml:338
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Importo la configuració de la VPN des de «%1»?"
 
-#: kcm.cpp:271 ui/main.qml:388
+#: kcm.cpp:271 ui/main.qml:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
@@ -36,12 +36,12 @@ msgstr "Importació de configuració de VPN"
 msgid "Import"
 msgstr "Importa"
 
-#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:109
+#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:73
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Ha fallat en importar la connexió VPN: %1"
 
-#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:103
+#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:67
 #, kde-format
 msgid "Connection imported."
 msgstr "Connexió importada."
@@ -201,28 +201,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Disponible"
 
-#: qml/main.qml:148 ui/main.qml:254
+#: qml/main.qml:148 ui/main.qml:218
 msgid "Add new connection"
 msgstr "Afegeix una connexió nova"
 
-#: qml/main.qml:166 ui/main.qml:272
+#: qml/main.qml:166 ui/main.qml:236
 msgid "Remove selected connection"
 msgstr "Elimina la connexió seleccionada"
 
-#: qml/main.qml:184 ui/main.qml:290
+#: qml/main.qml:184 ui/main.qml:254
 msgid "Export selected connection"
 msgstr "Exporta la connexió seleccionada"
 
-#: qml/main.qml:209 ui/main.qml:226
+#: qml/main.qml:209 ui/main.qml:190
 msgid "Configuration"
 msgstr "Configuració"
 
-#: qml/main.qml:236 ui/main.qml:358
+#: qml/main.qml:236 ui/main.qml:307
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Elimina la connexió"
 
-#: qml/main.qml:237 ui/main.qml:359
+#: qml/main.qml:237 ui/main.qml:308
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Voleu eliminar la connexió «%1»?"
 
@@ -256,23 +256,22 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "La contrasenya cal que tingui entre 8 i 64 caràcters"
 
-#: ui/main.qml:59
-msgid "Disconnected"
-msgstr "Desconnectat"
-
-#: ui/main.qml:314
+#: ui/main.qml:278
 msgid "Connection name:"
 msgstr "Nom de la connexió:"
 
-#: ui/main.qml:376
+#: ui/main.qml:325
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Importació d'una connexió VPN"
 
-#: ui/main.qml:394
+#: ui/main.qml:343
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importa"
+
+#~ msgid "Disconnected"
+#~ msgstr "Desconnectat"
 
 #~ msgid "Create"
 #~ msgstr "Crea"

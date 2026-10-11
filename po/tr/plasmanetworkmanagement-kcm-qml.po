@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:49+0000\n"
+"POT-Creation-Date: 2026-10-11 00:53+0000\n"
 "PO-Revision-Date: 2026-10-09 19:34+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -22,49 +22,49 @@ msgstr ""
 msgid "Failed to get secrets for %1"
 msgstr "%1 için olan gizler alınamadı"
 
-#: kcm.cpp:915
+#: kcm.cpp:925
 #, kde-format
 msgid "my_shared_connection"
 msgstr "paylaşılan_bağlantım"
 
-#: kcm.cpp:985
+#: kcm.cpp:995
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "“%1” bağlantısına yapılan değişiklikleri kaydetmek istiyor musunuz?"
 
-#: kcm.cpp:988
+#: kcm.cpp:998
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
 
-#: kcm.cpp:1017
+#: kcm.cpp:1027
 #, kde-format
 msgctxt "Suffix appended to duplicated connection name"
 msgid " (Copy)"
 msgstr " (Kopya)"
 
-#: kcm.cpp:1040
+#: kcm.cpp:1050
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN bağlantıları (%1)"
 
-#: kcm.cpp:1040
+#: kcm.cpp:1050
 #, kde-format
 msgid "All files (*)"
 msgstr "Tüm dosyalar (*)"
 
-#: kcm.cpp:1050
+#: kcm.cpp:1060
 #, kde-format
 msgid "No file was provided"
 msgstr "Sağlanan dosya yok"
 
-#: kcm.cpp:1069 kcm.cpp:1078
+#: kcm.cpp:1079 kcm.cpp:1088
 #, kde-format
 msgid "Could not read the WireGuard configuration"
 msgstr "WireGuard yapılandırması okunamadı"
 
-#: kcm.cpp:1117
+#: kcm.cpp:1127
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Bilinmeyen VPN türü"

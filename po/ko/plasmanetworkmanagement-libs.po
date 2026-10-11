@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:49+0000\n"
+"POT-Creation-Date: 2026-10-11 00:53+0000\n"
 "PO-Revision-Date: 2026-10-03 23:04+0200\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
@@ -910,6 +910,7 @@ msgid "PAN (personal area network)"
 msgstr "PAN(개인 영역 네트워크)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
+#: editorqml/qml/ConnectionPage.qml:59
 #: editorqml/qml/wifistatus/ConnectionStatusForm.qml:15
 #, kde-format
 msgid "Disconnected"

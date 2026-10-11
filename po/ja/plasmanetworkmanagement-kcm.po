@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:49+0000\n"
+"POT-Creation-Date: 2026-10-11 00:53+0000\n"
 "PO-Revision-Date: 2026-07-06 23:18+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Generator: Lokalize 26.04.2\n"
 
-#: kcm.cpp:270 ui/main.qml:389
+#: kcm.cpp:270 ui/main.qml:338
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "VPN 設定を \"%1\" からインポートしますか？"
 
-#: kcm.cpp:271 ui/main.qml:388
+#: kcm.cpp:271 ui/main.qml:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
@@ -35,12 +35,12 @@ msgstr "VPN 設定をインポート"
 msgid "Import"
 msgstr "インポート"
 
-#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:109
+#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:73
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "VPN 接続のインポートに失敗しました: %1"
 
-#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:103
+#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:67
 #, kde-format
 msgid "Connection imported."
 msgstr "接続がインポートされました。"
@@ -198,28 +198,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "利用可能"
 
-#: qml/main.qml:148 ui/main.qml:254
+#: qml/main.qml:148 ui/main.qml:218
 msgid "Add new connection"
 msgstr "新しい接続を追加"
 
-#: qml/main.qml:166 ui/main.qml:272
+#: qml/main.qml:166 ui/main.qml:236
 msgid "Remove selected connection"
 msgstr "選択された接続を削除"
 
-#: qml/main.qml:184 ui/main.qml:290
+#: qml/main.qml:184 ui/main.qml:254
 msgid "Export selected connection"
 msgstr "選択された接続をエクスポート"
 
-#: qml/main.qml:209 ui/main.qml:226
+#: qml/main.qml:209 ui/main.qml:190
 msgid "Configuration"
 msgstr "設定"
 
-#: qml/main.qml:236 ui/main.qml:358
+#: qml/main.qml:236 ui/main.qml:307
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "接続を削除"
 
-#: qml/main.qml:237 ui/main.qml:359
+#: qml/main.qml:237 ui/main.qml:308
 msgid "Do you want to remove the connection '%1'?"
 msgstr "接続'%1'を削除しますか？"
 
@@ -253,28 +253,27 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "パスワードは 8 文字以上 64 文字以下である必要があります"
 
-#: ui/main.qml:59
-#, fuzzy
-#| msgid "Disconnect"
-msgid "Disconnected"
-msgstr "切断"
-
-#: ui/main.qml:314
+#: ui/main.qml:278
 #, fuzzy
 #| msgid "Connection imported."
 msgid "Connection name:"
 msgstr "接続がインポートされました。"
 
-#: ui/main.qml:376
+#: ui/main.qml:325
 #, fuzzy
 #| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "VPN 接続をインポート"
 
-#: ui/main.qml:394
+#: ui/main.qml:343
 #, fuzzy
 #| msgid "Import"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "インポート"
+
+#, fuzzy
+#~| msgid "Disconnect"
+#~ msgid "Disconnected"
+#~ msgstr "切断"

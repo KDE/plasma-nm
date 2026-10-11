@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:49+0000\n"
+"POT-Creation-Date: 2026-10-11 00:53+0000\n"
 "PO-Revision-Date: 2023-11-11 15:35+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -19,12 +19,12 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Generator: Lokalize 23.08.3\n"
 
-#: kcm.cpp:270 ui/main.qml:389
+#: kcm.cpp:270 ui/main.qml:338
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Importovať konfiguráciu VPN z \"%1\"?"
 
-#: kcm.cpp:271 ui/main.qml:388
+#: kcm.cpp:271 ui/main.qml:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
@@ -35,12 +35,12 @@ msgstr "Importovať pripojenie VPN"
 msgid "Import"
 msgstr "Importovať"
 
-#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:109
+#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:73
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Nepodarilo sa importovať pripojenie VPN: %1"
 
-#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:103
+#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:67
 #, kde-format
 msgid "Connection imported."
 msgstr "Pripojenie bolo importované."
@@ -198,28 +198,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Dostupné"
 
-#: qml/main.qml:148 ui/main.qml:254
+#: qml/main.qml:148 ui/main.qml:218
 msgid "Add new connection"
 msgstr "Pridať nové pripojenie"
 
-#: qml/main.qml:166 ui/main.qml:272
+#: qml/main.qml:166 ui/main.qml:236
 msgid "Remove selected connection"
 msgstr "Odstrániť vybrané pripojenie"
 
-#: qml/main.qml:184 ui/main.qml:290
+#: qml/main.qml:184 ui/main.qml:254
 msgid "Export selected connection"
 msgstr "Exportovať vybrané pripojenie"
 
-#: qml/main.qml:209 ui/main.qml:226
+#: qml/main.qml:209 ui/main.qml:190
 msgid "Configuration"
 msgstr "Nastavenia"
 
-#: qml/main.qml:236 ui/main.qml:358
+#: qml/main.qml:236 ui/main.qml:307
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Odstránenie pripojenia"
 
-#: qml/main.qml:237 ui/main.qml:359
+#: qml/main.qml:237 ui/main.qml:308
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Chcete odstrániť pripojenie \"%1\"?"
 
@@ -253,27 +253,26 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Heslo musí mať 8 až 64 znakov."
 
-#: ui/main.qml:59
-msgid "Disconnected"
-msgstr "Odpojené"
-
-#: ui/main.qml:314
+#: ui/main.qml:278
 msgid "Connection name:"
 msgstr "Názov pripojenia:"
 
-#: ui/main.qml:376
+#: ui/main.qml:325
 #, fuzzy
 #| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Importovať pripojenie VPN"
 
-#: ui/main.qml:394
+#: ui/main.qml:343
 #, fuzzy
 #| msgid "Import"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importovať"
+
+#~ msgid "Disconnected"
+#~ msgstr "Odpojené"
 
 #~ msgid "Create"
 #~ msgstr "Vytvoriť"

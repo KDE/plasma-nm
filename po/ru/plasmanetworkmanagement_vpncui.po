@@ -56,7 +56,7 @@ msgstr "Имя пользователя:"
 #: vpnc.ui:51 vpncauth.ui:97
 #, kde-format
 msgid "User name for the connection."
-msgstr "Имя пользователя для этого соединения."
+msgstr "Имя пользователя для этого подключения."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: vpnc.ui:58
@@ -69,7 +69,7 @@ msgstr "Пароль пользователя:"
 #: vpnc.ui:79 vpncauth.ui:58
 #, kde-format
 msgid "User password for the connection."
-msgstr "Пароль пользователя для этого соединения."
+msgstr "Пароль пользователя для этого подключения."
 
 #. i18n: ectx: property (text), widget (QLabel, groupNameLabel)
 #. i18n: ectx: property (text), widget (QLabel, label_4)

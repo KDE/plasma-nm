@@ -29,7 +29,7 @@ msgstr "Неверное значение."
 #, kde-format
 msgctxt "kcm page title"
 msgid "Connection Info for \"%1\""
-msgstr "Сведения о соединении «%1»"
+msgstr "Сведения о подключении «%1»"
 
 #: ui/ConnectionInfo.qml:55
 #, kde-format
@@ -93,7 +93,7 @@ msgstr "Доступные сети"
 #: ui/main.qml:178
 #, kde-format
 msgid "Add Custom Connection"
-msgstr "Добавить другое соединение"
+msgstr "Добавить другое подключение"
 
 #: ui/MorePage.qml:14
 #, kde-format
@@ -108,7 +108,7 @@ msgstr "Уведомления об изменении подключения"
 #: ui/NetworkSettings.qml:15
 #, kde-format
 msgid "Add New Connection"
-msgstr "Добавить новое соединение"
+msgstr "Добавить новое подключение"
 
 #: ui/NetworkSettings.qml:36
 #, kde-format

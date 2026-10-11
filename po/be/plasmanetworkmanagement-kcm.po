@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:49+0000\n"
+"POT-Creation-Date: 2026-10-11 00:53+0000\n"
 "PO-Revision-Date: 2024-10-17 02:10\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -22,12 +22,12 @@ msgstr ""
 "plasmanetworkmanagement-kcm.po\n"
 "X-Crowdin-File-ID: 18069\n"
 
-#: kcm.cpp:270 ui/main.qml:389
+#: kcm.cpp:270 ui/main.qml:338
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Імпартаваць канфігурацыю VPN з \"%1\"?"
 
-#: kcm.cpp:271 ui/main.qml:388
+#: kcm.cpp:271 ui/main.qml:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
@@ -38,12 +38,12 @@ msgstr "Імпартаванне канфігурацыі VPN"
 msgid "Import"
 msgstr "Імпартаваць"
 
-#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:109
+#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:73
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Не ўдалося імпартаваць злучэнне VPN: %1"
 
-#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:103
+#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:67
 #, kde-format
 msgid "Connection imported."
 msgstr "Злучэнне імпартавана."
@@ -201,28 +201,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr ""
 
-#: qml/main.qml:148 ui/main.qml:254
+#: qml/main.qml:148 ui/main.qml:218
 msgid "Add new connection"
 msgstr "Дадаць новае злучэнне"
 
-#: qml/main.qml:166 ui/main.qml:272
+#: qml/main.qml:166 ui/main.qml:236
 msgid "Remove selected connection"
 msgstr "Выдаліць абранае злучэнне"
 
-#: qml/main.qml:184 ui/main.qml:290
+#: qml/main.qml:184 ui/main.qml:254
 msgid "Export selected connection"
 msgstr "Экспартаваць абранае злучэнне"
 
-#: qml/main.qml:209 ui/main.qml:226
+#: qml/main.qml:209 ui/main.qml:190
 msgid "Configuration"
 msgstr "Канфігурацыя"
 
-#: qml/main.qml:236 ui/main.qml:358
+#: qml/main.qml:236 ui/main.qml:307
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Выдаліць злучэнне"
 
-#: qml/main.qml:237 ui/main.qml:359
+#: qml/main.qml:237 ui/main.qml:308
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Хочаце выдаліць злучэнне \"%1\"?"
 
@@ -263,31 +263,30 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
 
-#: ui/main.qml:59
-#, fuzzy
-#| msgid "Disconnect"
-msgid "Disconnected"
-msgstr "Адлучыцца"
-
-#: ui/main.qml:314
+#: ui/main.qml:278
 #, fuzzy
 #| msgid "Connection imported."
 msgid "Connection name:"
 msgstr "Злучэнне імпартавана."
 
-#: ui/main.qml:376
+#: ui/main.qml:325
 #, fuzzy
 #| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Імпартаванне VPN-злучэння"
 
-#: ui/main.qml:394
+#: ui/main.qml:343
 #, fuzzy
 #| msgid "Import"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Імпартаваць"
+
+#, fuzzy
+#~| msgid "Disconnect"
+#~ msgid "Disconnected"
+#~ msgstr "Адлучыцца"
 
 #~ msgid "Create"
 #~ msgstr "Стварыць"

@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-09 00:49+0000\n"
+"POT-Creation-Date: 2026-10-11 00:53+0000\n"
 "PO-Revision-Date: 2026-09-30 21:17+0200\n"
 "Last-Translator: Stefan Asserhäll <stefan.asserhall@gmail.com>\n"
 "Language-Team: Swedish <kde-i18n-doc@kde.org>\n"
@@ -17,12 +17,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.08.1\n"
 
-#: kcm.cpp:270 ui/main.qml:389
+#: kcm.cpp:270 ui/main.qml:338
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Importera VPN-inställning från \"%1\"?"
 
-#: kcm.cpp:271 ui/main.qml:388
+#: kcm.cpp:271 ui/main.qml:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
@@ -33,12 +33,12 @@ msgstr "Importera VPN-inställning"
 msgid "Import"
 msgstr "Importera"
 
-#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:109
+#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:73
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Misslyckades importera VPN-anslutning: %1"
 
-#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:103
+#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:67
 #, kde-format
 msgid "Connection imported."
 msgstr "Anslutning importerad."
@@ -197,28 +197,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Tillgängliga"
 
-#: qml/main.qml:148 ui/main.qml:254
+#: qml/main.qml:148 ui/main.qml:218
 msgid "Add new connection"
 msgstr "Lägg till ny anslutning"
 
-#: qml/main.qml:166 ui/main.qml:272
+#: qml/main.qml:166 ui/main.qml:236
 msgid "Remove selected connection"
 msgstr "Ta bort markerad anslutning"
 
-#: qml/main.qml:184 ui/main.qml:290
+#: qml/main.qml:184 ui/main.qml:254
 msgid "Export selected connection"
 msgstr "Exportera markerad anslutning"
 
-#: qml/main.qml:209 ui/main.qml:226
+#: qml/main.qml:209 ui/main.qml:190
 msgid "Configuration"
 msgstr "Inställning"
 
-#: qml/main.qml:236 ui/main.qml:358
+#: qml/main.qml:236 ui/main.qml:307
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Ta bort anslutning"
 
-#: qml/main.qml:237 ui/main.qml:359
+#: qml/main.qml:237 ui/main.qml:308
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Vill du ta bort anslutningen '%1'?"
 
@@ -252,23 +252,22 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Lösenordet måste vara mellan 8 och 64 tecken långt"
 
-#: ui/main.qml:59
-msgid "Disconnected"
-msgstr "Nerkopplad"
-
-#: ui/main.qml:314
+#: ui/main.qml:278
 msgid "Connection name:"
 msgstr "Anslutningsnamn:"
 
-#: ui/main.qml:376
+#: ui/main.qml:325
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Importera VPN-anslutning"
 
-#: ui/main.qml:394
+#: ui/main.qml:343
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importera"
+
+#~ msgid "Disconnected"
+#~ msgstr "Nerkopplad"
 
 #~ msgid "Create"
 #~ msgstr "Skapa"

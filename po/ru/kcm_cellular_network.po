@@ -266,7 +266,7 @@ msgstr "Тарифицируемое"
 #: ui/ModemPage.qml:205
 #, kde-format
 msgid "Active NetworkManager Connection"
-msgstr "Активное соединение NetworkManager"
+msgstr "Активное подключение NetworkManager"
 
 #: ui/ModemPage.qml:213
 #, kde-format

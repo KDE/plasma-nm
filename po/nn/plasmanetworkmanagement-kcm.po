@@ -270,6 +270,3 @@ msgstr "Importer VPN-tilkopling"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importer"
-
-#~ msgid "Disconnected"
-#~ msgstr "Fråkopla"

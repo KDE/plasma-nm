@@ -7522,12 +7522,12 @@ msgstr "Неизвестно"
 #: qml/ConnectionItemDelegate.qml:97
 #, kde-format
 msgid "Connect"
-msgstr "Подключиться"
+msgstr "Подключить"
 
 #: qml/ConnectionItemDelegate.qml:104
 #, kde-format
 msgid "Disconnect"
-msgstr "Отключиться"
+msgstr "Отключить"
 
 #: qml/ConnectionItemDelegate.qml:111
 #, kde-format

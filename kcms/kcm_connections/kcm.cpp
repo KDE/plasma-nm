@@ -216,6 +216,35 @@ KCMNetworkmanagement::KCMNetworkmanagement(QObject *parent, const KPluginMetaDat
             &KCMNetworkmanagement::onConnectionAdded,
             Qt::UniqueConnection);
 
+    // When the selected connection gets removed, select another one so the sidebar doesn't collapse
+    connect(NetworkManager::settingsNotifier(), &NetworkManager::SettingsNotifier::connectionRemoved, this, [this](const QString &path) {
+        if (!m_currentConnectionPath.isEmpty() && m_currentConnectionPath != path) {
+            return;
+        }
+
+        const auto isValid = [](const NetworkManager::Connection::Ptr &connection) {
+            return connection && UiUtils::isConnectionTypeSupported(connection->settings()->connectionType());
+        };
+
+        NetworkManager::Connection::Ptr connection;
+        if (auto active = NetworkManager::primaryConnection(); active && isValid(active->connection())) {
+            connection = active->connection();
+        } else {
+            const auto connections = NetworkManager::listConnections();
+            if (auto it = std::ranges::find_if(connections, isValid); it != connections.cend()) {
+                connection = *it;
+            }
+        }
+
+        if (!connection) {
+            resetSelection();
+            return;
+        }
+
+        QObject *rootItem = m_ui->connectionView->rootObject();
+        QMetaObject::invokeMethod(rootItem, "selectConnection", Q_ARG(QVariant, connection->settings()->id()), Q_ARG(QVariant, connection->path()));
+    });
+
     // Initialize first scan and then scan every 15 seconds
     m_handler->requestScan();
 

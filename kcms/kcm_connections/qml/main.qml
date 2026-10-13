@@ -102,6 +102,9 @@ QQC2.Page {
                 currentConnectionPath: connectionView.currentConnectionPath
                 focus: ListView.isCurrentItem
                 width: connectionView.width
+                // Keep focus on the clicked entry, otherwise it jumps back to the first one
+                // when focus returns from a dialog
+                onClicked: connectionView.currentIndex = model.index
                 onAboutToChangeConnection: (exportable, name, path) => {
                     // Shouldn't be problem to set this in advance
                     connectionView.currentConnectionExportable = exportable
@@ -237,11 +240,8 @@ QQC2.Page {
         subtitle: i18n("Do you want to remove the connection '%1'?", toHtmlEscaped(connectionName))
 
         // QTBUG-122770 accepted signal isn't emitted for Ok button.
+        // The selection gets updated once the connection is actually removed
         onAccepted: {
-            if (connectionPath === connectionView.currentConnectionPath) {
-                // Deselect now non-existing connection
-                root.deselectConnections()
-            }
             handler.removeConnection(connectionPath)
         }
     }

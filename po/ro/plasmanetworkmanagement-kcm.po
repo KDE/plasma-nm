@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:53+0000\n"
+"POT-Creation-Date: 2026-10-14 00:49+0000\n"
 "PO-Revision-Date: 2026-03-01 00:20+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -18,74 +18,74 @@ msgstr ""
 "20)) ? 1 : 2;\n"
 "X-Generator: Lokalize 25.12.2\n"
 
-#: kcm.cpp:270 ui/main.qml:338
+#: kcm.cpp:299 ui/main.qml:338
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Importați configurația VPN din „%1”?"
 
-#: kcm.cpp:271 ui/main.qml:337
+#: kcm.cpp:300 ui/main.qml:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr "Importă configurație VPN"
 
-#: kcm.cpp:272
+#: kcm.cpp:301
 #, kde-format
 msgid "Import"
 msgstr "Importă"
 
-#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:73
+#: kcm.cpp:308 kcm.cpp:381 ui/main.qml:73
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Importul conexiunii VPN a eșuat: %1"
 
-#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:67
+#: kcm.cpp:311 kcm.cpp:384 ui/main.qml:67
 #, kde-format
 msgid "Connection imported."
 msgstr "Conexiune importată."
 
-#: kcm.cpp:424
+#: kcm.cpp:453
 #, kde-format
 msgid "my_shared_connection"
 msgstr "conexiunea_mea_partajată"
 
-#: kcm.cpp:496
+#: kcm.cpp:525
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Exportă conexiune VPN"
 
-#: kcm.cpp:516
+#: kcm.cpp:545
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Doriți să salvați modificările aduse conexiunii „%1”?"
 
-#: kcm.cpp:517
+#: kcm.cpp:546
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Salvează modificările"
 
-#: kcm.cpp:612
+#: kcm.cpp:641
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Importă conexiune VPN"
 
-#: kcm.cpp:614
+#: kcm.cpp:643
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "Conexiuni VPN (%1)"
 
-#: kcm.cpp:617
+#: kcm.cpp:646
 #, kde-format
 msgid "No file was provided"
 msgstr "Nu a fost furnizat niciun fișier"
 
-#: kcm.cpp:685
+#: kcm.cpp:714
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Tip de VPN necunoscut"
 
-#: kcm.cpp:717
+#: kcm.cpp:746
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
@@ -198,28 +198,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Disponibile"
 
-#: qml/main.qml:148 ui/main.qml:218
+#: qml/main.qml:151 ui/main.qml:218
 msgid "Add new connection"
 msgstr "Adaugă conexiune nouă"
 
-#: qml/main.qml:166 ui/main.qml:236
+#: qml/main.qml:169 ui/main.qml:236
 msgid "Remove selected connection"
 msgstr "Elimină conexiunea aleasă"
 
-#: qml/main.qml:184 ui/main.qml:254
+#: qml/main.qml:187 ui/main.qml:254
 msgid "Export selected connection"
 msgstr "Exportă conexiunea aleasă"
 
-#: qml/main.qml:209 ui/main.qml:190
+#: qml/main.qml:212 ui/main.qml:190
 msgid "Configuration"
 msgstr "Configurări"
 
-#: qml/main.qml:236 ui/main.qml:307
+#: qml/main.qml:239 ui/main.qml:307
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Elimină conexiunea"
 
-#: qml/main.qml:237 ui/main.qml:308
+#: qml/main.qml:240 ui/main.qml:308
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Doriți să eliminați conexiunea „%1”?"
 

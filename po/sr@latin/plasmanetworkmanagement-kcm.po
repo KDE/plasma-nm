@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:53+0000\n"
+"POT-Creation-Date: 2026-10-14 00:49+0000\n"
 "PO-Revision-Date: 2026-10-03 19:50+0200\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
@@ -19,81 +19,81 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Environment: kde\n"
 
-#: kcm.cpp:270 ui/main.qml:338
+#: kcm.cpp:299 ui/main.qml:338
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Uvesti VPN postavu iz „%1“?"
 
 # >> @title:window
-#: kcm.cpp:271 ui/main.qml:337
+#: kcm.cpp:300 ui/main.qml:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr "Uvoz VPN postave"
 
-#: kcm.cpp:272
+#: kcm.cpp:301
 #, kde-format
 msgid "Import"
 msgstr "Uvezi"
 
 # >> @title:window
-#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:73
+#: kcm.cpp:308 kcm.cpp:381 ui/main.qml:73
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Ne mogu da uvezem VPN vezu: %1"
 
 # >> @item
-#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:67
+#: kcm.cpp:311 kcm.cpp:384 ui/main.qml:67
 #, kde-format
 msgid "Connection imported."
 msgstr "Veza je uvezena."
 
 # well-spelled: моја_дељена_веза
-#: kcm.cpp:424
+#: kcm.cpp:453
 #, kde-format
 msgid "my_shared_connection"
 msgstr "moja_deljena_veza"
 
 # >> @title:window
-#: kcm.cpp:496
+#: kcm.cpp:525
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "Izvoz VPN veze"
 
-#: kcm.cpp:516
+#: kcm.cpp:545
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Želite li da sačuvate izmene nad vezom „%1“?"
 
-#: kcm.cpp:517
+#: kcm.cpp:546
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Upisivanje izmena"
 
 # >> @title:window
-#: kcm.cpp:612
+#: kcm.cpp:641
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "Uvoz VPN veze"
 
 # >> @title:window
-#: kcm.cpp:614
+#: kcm.cpp:643
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN veze (%1)"
 
-#: kcm.cpp:617
+#: kcm.cpp:646
 #, kde-format
 msgid "No file was provided"
 msgstr "Nije zadat nijedan fajl"
 
-#: kcm.cpp:685
+#: kcm.cpp:714
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Nepoznat tip VPN‑a"
 
-#: kcm.cpp:717
+#: kcm.cpp:746
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
@@ -207,28 +207,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "dostupan"
 
-#: qml/main.qml:148 ui/main.qml:218
+#: qml/main.qml:151 ui/main.qml:218
 msgid "Add new connection"
 msgstr "Dodaj novu vezu"
 
-#: qml/main.qml:166 ui/main.qml:236
+#: qml/main.qml:169 ui/main.qml:236
 msgid "Remove selected connection"
 msgstr "Ukloni izabranu vezu"
 
-#: qml/main.qml:184 ui/main.qml:254
+#: qml/main.qml:187 ui/main.qml:254
 msgid "Export selected connection"
 msgstr "Izvezi izabranu vezu"
 
-#: qml/main.qml:209 ui/main.qml:190
+#: qml/main.qml:212 ui/main.qml:190
 msgid "Configuration"
 msgstr "Postava"
 
-#: qml/main.qml:236 ui/main.qml:307
+#: qml/main.qml:239 ui/main.qml:307
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "Uklanjanje veze"
 
-#: qml/main.qml:237 ui/main.qml:308
+#: qml/main.qml:240 ui/main.qml:308
 msgid "Do you want to remove the connection '%1'?"
 msgstr "Želite li zaista da uklonite vezu „%1“?"
 

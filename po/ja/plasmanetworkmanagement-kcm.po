@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:53+0000\n"
+"POT-Creation-Date: 2026-10-14 00:49+0000\n"
 "PO-Revision-Date: 2026-07-06 23:18+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -19,74 +19,74 @@ msgstr ""
 "X-Text-Markup: kde4\n"
 "X-Generator: Lokalize 26.04.2\n"
 
-#: kcm.cpp:270 ui/main.qml:338
+#: kcm.cpp:299 ui/main.qml:338
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "VPN 設定を \"%1\" からインポートしますか？"
 
-#: kcm.cpp:271 ui/main.qml:337
+#: kcm.cpp:300 ui/main.qml:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr "VPN 設定をインポート"
 
-#: kcm.cpp:272
+#: kcm.cpp:301
 #, kde-format
 msgid "Import"
 msgstr "インポート"
 
-#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:73
+#: kcm.cpp:308 kcm.cpp:381 ui/main.qml:73
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "VPN 接続のインポートに失敗しました: %1"
 
-#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:67
+#: kcm.cpp:311 kcm.cpp:384 ui/main.qml:67
 #, kde-format
 msgid "Connection imported."
 msgstr "接続がインポートされました。"
 
-#: kcm.cpp:424
+#: kcm.cpp:453
 #, kde-format
 msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
-#: kcm.cpp:496
+#: kcm.cpp:525
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "VPN 接続をエクスポート"
 
-#: kcm.cpp:516
+#: kcm.cpp:545
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "接続 '%1' への変更を保存しますか？"
 
-#: kcm.cpp:517
+#: kcm.cpp:546
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "変更を保存"
 
-#: kcm.cpp:612
+#: kcm.cpp:641
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "VPN 接続をインポート"
 
-#: kcm.cpp:614
+#: kcm.cpp:643
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN 接続 (%1)"
 
-#: kcm.cpp:617
+#: kcm.cpp:646
 #, kde-format
 msgid "No file was provided"
 msgstr "ファイルが提供されませんでした"
 
-#: kcm.cpp:685
+#: kcm.cpp:714
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "不明の VPN タイプ"
 
-#: kcm.cpp:717
+#: kcm.cpp:746
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
@@ -198,28 +198,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "利用可能"
 
-#: qml/main.qml:148 ui/main.qml:218
+#: qml/main.qml:151 ui/main.qml:218
 msgid "Add new connection"
 msgstr "新しい接続を追加"
 
-#: qml/main.qml:166 ui/main.qml:236
+#: qml/main.qml:169 ui/main.qml:236
 msgid "Remove selected connection"
 msgstr "選択された接続を削除"
 
-#: qml/main.qml:184 ui/main.qml:254
+#: qml/main.qml:187 ui/main.qml:254
 msgid "Export selected connection"
 msgstr "選択された接続をエクスポート"
 
-#: qml/main.qml:209 ui/main.qml:190
+#: qml/main.qml:212 ui/main.qml:190
 msgid "Configuration"
 msgstr "設定"
 
-#: qml/main.qml:236 ui/main.qml:307
+#: qml/main.qml:239 ui/main.qml:307
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "接続を削除"
 
-#: qml/main.qml:237 ui/main.qml:308
+#: qml/main.qml:240 ui/main.qml:308
 msgid "Do you want to remove the connection '%1'?"
 msgstr "接続'%1'を削除しますか？"
 

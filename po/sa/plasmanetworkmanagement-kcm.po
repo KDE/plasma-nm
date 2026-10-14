@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:53+0000\n"
+"POT-Creation-Date: 2026-10-14 00:49+0000\n"
 "PO-Revision-Date: 2024-12-13 19:10+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -17,74 +17,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n>2);\n"
 
-#: kcm.cpp:270 ui/main.qml:338
+#: kcm.cpp:299 ui/main.qml:338
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "\"%1\" तः VPN विन्यासम् आयातयतु?"
 
-#: kcm.cpp:271 ui/main.qml:337
+#: kcm.cpp:300 ui/main.qml:337
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr "VPN विन्यासम् आयातयन्तु"
 
-#: kcm.cpp:272
+#: kcm.cpp:301
 #, kde-format
 msgid "Import"
 msgstr "आयात"
 
-#: kcm.cpp:279 kcm.cpp:352 ui/main.qml:73
+#: kcm.cpp:308 kcm.cpp:381 ui/main.qml:73
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "VPN संयोजनम् आयातुं असफलम्: %1"
 
-#: kcm.cpp:282 kcm.cpp:355 ui/main.qml:67
+#: kcm.cpp:311 kcm.cpp:384 ui/main.qml:67
 #, kde-format
 msgid "Connection imported."
 msgstr "संयोजनम् आयातम्।"
 
-#: kcm.cpp:424
+#: kcm.cpp:453
 #, kde-format
 msgid "my_shared_connection"
 msgstr "मम_साझा_सम्बन्धः"
 
-#: kcm.cpp:496
+#: kcm.cpp:525
 #, kde-format
 msgid "Export VPN Connection"
 msgstr "VPN Connection निर्यातयन्तु"
 
-#: kcm.cpp:516
+#: kcm.cpp:545
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "किं भवन्तः '%1' संयोजने कृतानि परिवर्तनानि रक्षितुम् इच्छन्ति?"
 
-#: kcm.cpp:517
+#: kcm.cpp:546
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "परिवर्तनं रक्षतु"
 
-#: kcm.cpp:612
+#: kcm.cpp:641
 #, kde-format
 msgid "Import VPN Connection"
 msgstr "VPN Connection आयात करें"
 
-#: kcm.cpp:614
+#: kcm.cpp:643
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN संयोजनानि (%1) ."
 
-#: kcm.cpp:617
+#: kcm.cpp:646
 #, kde-format
 msgid "No file was provided"
 msgstr "कोऽपि सञ्चिका न प्रदत्ता"
 
-#: kcm.cpp:685
+#: kcm.cpp:714
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "अज्ञात VPN प्रकार"
 
-#: kcm.cpp:717
+#: kcm.cpp:746
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
@@ -196,28 +196,28 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr ""
 
-#: qml/main.qml:148 ui/main.qml:218
+#: qml/main.qml:151 ui/main.qml:218
 msgid "Add new connection"
 msgstr "नूतनं संयोजनं योजयन्तु"
 
-#: qml/main.qml:166 ui/main.qml:236
+#: qml/main.qml:169 ui/main.qml:236
 msgid "Remove selected connection"
 msgstr "चयनितं संयोजनं निष्कासयन्तु"
 
-#: qml/main.qml:184 ui/main.qml:254
+#: qml/main.qml:187 ui/main.qml:254
 msgid "Export selected connection"
 msgstr "चयनितं संयोजनं निर्यातयन्तु"
 
-#: qml/main.qml:209 ui/main.qml:190
+#: qml/main.qml:212 ui/main.qml:190
 msgid "Configuration"
 msgstr "विन्यासः"
 
-#: qml/main.qml:236 ui/main.qml:307
+#: qml/main.qml:239 ui/main.qml:307
 msgctxt "@title:window"
 msgid "Remove Connection"
 msgstr "संयोजनं निष्कासयन्तु"
 
-#: qml/main.qml:237 ui/main.qml:308
+#: qml/main.qml:240 ui/main.qml:308
 msgid "Do you want to remove the connection '%1'?"
 msgstr "किं भवान् '%1' इति संयोजनं हर्तुं इच्छति?"
 

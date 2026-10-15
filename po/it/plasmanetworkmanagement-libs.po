@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-11 00:53+0000\n"
-"PO-Revision-Date: 2026-10-08 13:04+0200\n"
+"PO-Revision-Date: 2026-10-09 16:06+0200\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -6650,45 +6650,39 @@ msgstr "Password gruppo:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:18
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for this user only (encrypted)"
+#, kde-format
 msgid "Store secret for this user only (encrypted)"
-msgstr "Memorizza la password solo per questo utente (cifrata)"
+msgstr "Memorizza il segreto solo per questo utente (cifrato)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:19
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for all users (not encrypted)"
+#, kde-format
 msgid "Store secret for all users (not encrypted)"
-msgstr "Memorizza la password per tutti gli utenti (non cifrata)"
+msgstr "Memorizza il segreto per tutti gli utenti (non cifrato)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:20
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "This password is not required"
+#, kde-format
 msgid "This secret is not required"
-msgstr "Questa password non è necessaria"
+msgstr "Questo segreto non è richiesto."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:36
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "Nome"
+msgstr "Nome:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:39
-#, fuzzy, kde-format
-#| msgid "The name of the Wi-Fi network to connect to"
+#, kde-format
 msgid "Name of the network interface this connection creates."
-msgstr "Il nome della rete Wi-Fi a cui connettersi"
+msgstr "Nome dell'interfaccia di rete creata da questa connessione."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:51
 #, kde-format
 msgid "The private key of this interface, as a base64 string."
-msgstr ""
+msgstr "La chiave privata di questa interfaccia, come stringa base64."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:71
-#, fuzzy, kde-format
-#| msgid "Listen port:"
+#, kde-format
 msgid "Listen Port:"
 msgstr "Porta in ascolto:"
 
@@ -6696,51 +6690,53 @@ msgstr "Porta in ascolto:"
 #, kde-format
 msgid "Port to listen on. Automatic lets WireGuard choose one."
 msgstr ""
+"Porta su cui rimanere in ascolto. L'opzione «Automatico» consente a "
+"WireGuard di sceglierne una."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:90
 #, kde-format
 msgid "Firewall mark to apply to outgoing packets. Zero disables it."
 msgstr ""
+"Marcatura firewall da applicare ai pacchetti in uscita. Il valore zero la "
+"disabilita."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:117
 #, kde-format
 msgid "Add routes for the peers' allowed IPs"
-msgstr ""
+msgstr "Aggiungi route per gli IP consentiti delle controparti."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:119
 #, kde-format
 msgid "Turn this off to route the tunnel yourself."
-msgstr ""
+msgstr "Disattiva questa opzione per instradare il tunnel autonomamente."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:136
-#, fuzzy, kde-format
-#| msgid "Peers…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Peers…"
 msgstr "Controparti..."
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:29
-#, fuzzy, kde-format
-#| msgid "Peer 1"
+#, kde-format
 msgctxt "@title:tab numbered WireGuard peer"
 msgid "Peer %1"
-msgstr "Controparte 1"
+msgstr "Controparte %1"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:75
 #, kde-format
 msgid "This interface has no peers, so it cannot connect to anything yet."
 msgstr ""
+"Questa interfaccia non ha controparti, quindi non può ancora connettersi a "
+"nulla."
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:175
-#, fuzzy, kde-format
-#| msgid "Add new Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add new Peer"
 msgstr "Aggiungi nuova controparte"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:185
-#, fuzzy, kde-format
-#| msgid "Remove this Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove this Peer"
 msgstr "Rimuovi questa controparte"

@@ -25,7 +25,7 @@ public:
     Q_INVOKABLE void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
     Q_INVOKABLE void onSelectedConnectionChanged(const QString &connectionPath);
     Q_INVOKABLE void onRequestExportConnection(const QString &connectionPath);
-    Q_INVOKABLE void onRequestToChangeConnection(const QString &connectionName, const QString &connectionPath);
+    Q_INVOKABLE void onRequestToChangeConnection(const QString &connectionPath);
     Q_INVOKABLE void onRequestDuplicateConnection(const QString &connectionPath);
 
 public Q_SLOTS:
@@ -51,6 +51,7 @@ private:
     void kcmChanged(bool kcmChanged);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void resetSelection();
+    bool selectConnection(const NetworkManager::Connection::Ptr &connection);
     QString vpnFileFromArgs(const QVariantList &args) const;
     void promptImportVpn(const QString &vpnFile);
     NetworkManager::Connection::Ptr connectionFromArgs(const QVariantList &args) const;

@@ -109,7 +109,7 @@ QQC2.Page {
                     // Shouldn't be problem to set this in advance
                     connectionView.currentConnectionExportable = exportable
                     if (connectionModified) {
-                        kcm.onRequestToChangeConnection(name, path)
+                        kcm.onRequestToChangeConnection(path)
                     } else {
                         connectionView.currentConnectionName = name
                         connectionView.currentConnectionPath = path

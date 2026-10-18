@@ -95,7 +95,7 @@ QQC2.ItemDelegate {
 
         QQC2.MenuItem {
             icon.name: "list-remove-symbolic"
-            text: i18n("Delete")
+            text: i18n("Forget")
             visible: !delegate.isUnknownNewConnection
 
             onTriggered: {

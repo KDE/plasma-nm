@@ -166,7 +166,7 @@ QQC2.Page {
 
             KeyNavigation.right: exportConnectionButton
 
-            QQC2.ToolTip.text: i18n("Remove selected connection")
+            QQC2.ToolTip.text: i18n("Forget selected connection")
             QQC2.ToolTip.visible: hovered
 
             onClicked: {
@@ -236,8 +236,8 @@ QQC2.Page {
         }
 
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
-        title: i18nc("@title:window", "Remove Connection")
-        subtitle: i18n("Do you want to remove the connection '%1'?", toHtmlEscaped(connectionName))
+        title: i18nc("@title:window", "Forget Connection")
+        subtitle: i18n("Do you want to forget the connection '%1'?", toHtmlEscaped(connectionName))
 
         // QTBUG-122770 accepted signal isn't emitted for Ok button.
         // The selection gets updated once the connection is actually removed

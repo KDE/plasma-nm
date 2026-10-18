@@ -233,7 +233,7 @@ Kirigami.Page {
 
                     KeyNavigation.right: exportConnectionButton
 
-                    QQC2.ToolTip.text: i18n("Remove selected connection")
+                    QQC2.ToolTip.text: i18n("Forget selected connection")
                     QQC2.ToolTip.visible: hovered
 
                     onClicked: {
@@ -304,8 +304,8 @@ Kirigami.Page {
 
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
 
-        title: i18nc("@title:window", "Remove Connection")
-        subtitle: i18n("Do you want to remove the connection '%1'?", connectionDisplayName)
+        title: i18nc("@title:window", "Forget Connection")
+        subtitle: i18n("Do you want to forget the connection '%1'?", connectionDisplayName)
 
         onConnectionDisplayNameChanged: {
             console.log("connectionDisplayName:", connectionDisplayName);

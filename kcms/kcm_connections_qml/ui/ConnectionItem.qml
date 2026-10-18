@@ -78,7 +78,9 @@ QQC2.ItemDelegate {
 
         QQC2.MenuItem {
             icon.name: delegate.isConnectionDeactivated() ? "network-connect-symbolic" : "network-disconnect-symbolic"
-            text: delegate.isConnectionDeactivated() ? i18n("Connect") : i18n("Disconnect")
+            text: delegate.isConnectionDeactivated()
+                ? i18nc("@action:inmenu connect to network", "Connect")
+                : i18nc("@action:inmenu disconnect from network", "Disconnect")
             enabled: model.ItemType === PlasmaNM.NetworkModelItem.AvailableConnection || model.ItemType === PlasmaNM.NetworkModelItem.AvailableAccessPoint
             onTriggered: changeState()
             QQC2.ToolTip.visible: !enabled && hovered
@@ -95,7 +97,7 @@ QQC2.ItemDelegate {
 
         QQC2.MenuItem {
             icon.name: "list-remove-symbolic"
-            text: i18n("Forget")
+            text: i18nc("@action:inmenu forget network connection", "Forget")
             visible: !delegate.isUnknownNewConnection
 
             onTriggered: {
@@ -106,7 +108,7 @@ QQC2.ItemDelegate {
         QQC2.MenuItem {
             icon.name: "document-export-symbolic"
             visible: model.KcmVpnConnectionExportable
-            text: i18n("Export")
+            text: i18nc("@action:inmenu export network connection", "Export")
 
             onTriggered: kcm.onRequestExportConnection(model.ConnectionPath)
         }
@@ -120,9 +122,9 @@ QQC2.ItemDelegate {
        in the list at the left side of the applet. */
     function itemText() {
         if (model.ConnectionState === PlasmaNM.Enums.Activated) {
-            return i18n("Connected");
+            return i18nc("@info:status", "Connected");
         } else if (model.ConnectionState === PlasmaNM.Enums.Activating) {
-            return i18n("Connecting");
+            return i18nc("@info:status", "Connecting");
         } else if (model.ItemType === PlasmaNM.NetworkModelItem.AvailableAccessPoint) {
             return i18nc("@title:column Available networks", "Available");
         } else {

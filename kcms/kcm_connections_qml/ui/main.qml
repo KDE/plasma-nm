@@ -64,13 +64,13 @@ Kirigami.Page {
         }
 
         function onImportSucceeded() {
-            importFeedback.text = i18n("Connection imported.");
+            importFeedback.text = i18nc("@info", "Connection imported.");
             importFeedback.type = Kirigami.MessageType.Positive;
             importFeedback.visible = true;
         }
 
         function onImportFailed(errorMessage) {
-            importFeedback.text = i18n("Failed to import VPN connection: %1", errorMessage);
+            importFeedback.text = i18nc("@info", "Failed to import VPN connection: %1", errorMessage);
             importFeedback.type = Kirigami.MessageType.Error;
             importFeedback.visible = true;
         }
@@ -187,7 +187,7 @@ Kirigami.Page {
 
                     KeyNavigation.right: addConnectionButton
 
-                    QQC2.ToolTip.text: i18n("Configuration")
+                    QQC2.ToolTip.text: i18nc("@action:button", "Configuration")
                     QQC2.ToolTip.visible: hovered
 
                     onClicked: {
@@ -215,7 +215,7 @@ Kirigami.Page {
 
                     KeyNavigation.right: removeConnectionButton
 
-                    QQC2.ToolTip.text: i18n("Add new connection")
+                    QQC2.ToolTip.text: i18nc("@action:button", "Add new connection")
                     QQC2.ToolTip.visible: hovered
 
                     onClicked: {
@@ -233,7 +233,7 @@ Kirigami.Page {
 
                     KeyNavigation.right: exportConnectionButton
 
-                    QQC2.ToolTip.text: i18n("Forget selected connection")
+                    QQC2.ToolTip.text: i18nc("@action:button", "Forget selected connection")
                     QQC2.ToolTip.visible: hovered
 
                     onClicked: {
@@ -251,7 +251,7 @@ Kirigami.Page {
                     enabled: connectionView.currentConnectionExportable
                     icon.name: "document-export"
 
-                    QQC2.ToolTip.text: i18n("Export selected connection")
+                    QQC2.ToolTip.text: i18nc("@action:button", "Export selected connection")
                     QQC2.ToolTip.visible: hovered
 
                     onClicked: {
@@ -275,7 +275,7 @@ Kirigami.Page {
                 spacing: Kirigami.Units.smallSpacing
 
                 QQC2.Label {
-                    text: i18n("Connection name:")
+                    text: i18nc("@label:textbox", "Connection name:")
                 }
 
                 QQC2.TextField {
@@ -305,7 +305,7 @@ Kirigami.Page {
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
 
         title: i18nc("@title:window", "Forget Connection")
-        subtitle: i18n("Do you want to forget the connection '%1'?", connectionDisplayName)
+        subtitle: i18nc("@info", "Do you want to forget the connection '%1'?", connectionDisplayName)
 
         onConnectionDisplayNameChanged: {
             console.log("connectionDisplayName:", connectionDisplayName);
@@ -335,7 +335,7 @@ Kirigami.Page {
         property string fileName: ""
 
         title: i18nc("@title:window", "Import VPN Configuration")
-        subtitle: i18n("Import the VPN configuration from \"%1\"?", fileName)
+        subtitle: i18nc("@info", "Import the VPN configuration from \"%1\"?", fileName)
 
         standardButtons: Kirigami.Dialog.Cancel
 

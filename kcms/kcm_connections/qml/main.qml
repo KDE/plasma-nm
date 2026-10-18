@@ -148,7 +148,7 @@ QQC2.Page {
 
             KeyNavigation.right: removeConnectionButton
 
-            QQC2.ToolTip.text: i18n("Add new connection")
+            QQC2.ToolTip.text: i18nc("@action:button", "Add new connection")
             QQC2.ToolTip.visible: hovered
 
             onClicked: {
@@ -166,7 +166,7 @@ QQC2.Page {
 
             KeyNavigation.right: exportConnectionButton
 
-            QQC2.ToolTip.text: i18n("Forget selected connection")
+            QQC2.ToolTip.text: i18nc("@action:button", "Forget selected connection")
             QQC2.ToolTip.visible: hovered
 
             onClicked: {
@@ -184,7 +184,7 @@ QQC2.Page {
             enabled: connectionView.currentConnectionExportable
             icon.name: "document-export"
 
-            QQC2.ToolTip.text: i18n("Export selected connection")
+            QQC2.ToolTip.text: i18nc("@action:button", "Export selected connection")
             QQC2.ToolTip.visible: hovered
 
             onClicked: {
@@ -209,7 +209,7 @@ QQC2.Page {
 
             KeyNavigation.right: addConnectionButton
 
-            QQC2.ToolTip.text: i18n("Configuration")
+            QQC2.ToolTip.text: i18nc("@action:button", "Configuration")
             QQC2.ToolTip.visible: hovered
 
             onClicked: {
@@ -237,7 +237,7 @@ QQC2.Page {
 
         standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
         title: i18nc("@title:window", "Forget Connection")
-        subtitle: i18n("Do you want to forget the connection '%1'?", toHtmlEscaped(connectionName))
+        subtitle: i18nc("@info", "Do you want to forget the connection '%1'?", toHtmlEscaped(connectionName))
 
         // QTBUG-122770 accepted signal isn't emitted for Ok button.
         // The selection gets updated once the connection is actually removed

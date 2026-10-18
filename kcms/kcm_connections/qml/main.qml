@@ -209,7 +209,7 @@ QQC2.Page {
 
             KeyNavigation.right: addConnectionButton
 
-            QQC2.ToolTip.text: i18nc("@action:button", "Configuration")
+            QQC2.ToolTip.text: i18nc("@action:button", "Configure")
             QQC2.ToolTip.visible: hovered
 
             onClicked: {

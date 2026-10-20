@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-14 00:49+0000\n"
+"POT-Creation-Date: 2026-10-20 00:54+0000\n"
 "PO-Revision-Date: 2026-09-30 07:44+0200\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "X-Generator: Poedit 3.9\n"
 
-#: kcm.cpp:299 ui/main.qml:338
+#: kcm.cpp:299
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Uvozi konfiguracijo VPN iz \"%1\"?"
@@ -36,12 +36,12 @@ msgstr "Uvozi konfiguracijo VPN"
 msgid "Import"
 msgstr "Uvozi"
 
-#: kcm.cpp:308 kcm.cpp:381 ui/main.qml:73
+#: kcm.cpp:308 kcm.cpp:381
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Neuspel uvoz povezave VPN: %1"
 
-#: kcm.cpp:311 kcm.cpp:384 ui/main.qml:67
+#: kcm.cpp:311 kcm.cpp:384
 #, kde-format
 msgid "Connection imported."
 msgstr "Povezava uvožena."
@@ -161,68 +161,102 @@ msgctxt "@label/rich"
 msgid "%1"
 msgstr "%1"
 
-#: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
+#: qml/ConnectionItem.qml:86 ui/ConnectionItem.qml:82
+#, fuzzy
+#| msgid "Connect"
+msgctxt "@action:inmenu connect to network"
 msgid "Connect"
 msgstr "Poveži se"
 
-#: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
+#: qml/ConnectionItem.qml:87 ui/ConnectionItem.qml:83
+#, fuzzy
+#| msgid "Disconnect"
+msgctxt "@action:inmenu disconnect from network"
 msgid "Disconnect"
 msgstr "Prekini povezavo"
 
-#: qml/ConnectionItem.qml:90 ui/ConnectionItem.qml:86
+#: qml/ConnectionItem.qml:92 ui/ConnectionItem.qml:88
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "S tem omrežjem se ni mogoče povezati, ker ni bilo zaznano."
 
-#: qml/ConnectionItem.qml:94 ui/ConnectionItem.qml:90
+#: qml/ConnectionItem.qml:96 ui/ConnectionItem.qml:92
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
 msgstr "Dupliciraj"
 
-#: qml/ConnectionItem.qml:102 ui/ConnectionItem.qml:98
-msgid "Delete"
-msgstr "Izbriši"
+#: qml/ConnectionItem.qml:104 ui/ConnectionItem.qml:100
+msgctxt "@action:inmenu forget network connection"
+msgid "Forget"
+msgstr ""
 
-#: qml/ConnectionItem.qml:113 ui/ConnectionItem.qml:109
+#: qml/ConnectionItem.qml:115 ui/ConnectionItem.qml:111
+#, fuzzy
+#| msgid "Export"
+msgctxt "@action:inmenu export network connection"
 msgid "Export"
 msgstr "Izvozi"
 
-#: qml/ConnectionItem.qml:127 ui/ConnectionItem.qml:123
+#: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
+#, fuzzy
+#| msgid "Connected"
+msgctxt "@info:status"
 msgid "Connected"
 msgstr "Povezano"
 
-#: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
+#: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
+#, fuzzy
+#| msgid "Connecting"
+msgctxt "@info:status"
 msgid "Connecting"
 msgstr "Povezovanje"
 
-#: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
+#: qml/ConnectionItem.qml:133 ui/ConnectionItem.qml:129
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Na voljo"
 
 #: qml/main.qml:151 ui/main.qml:218
+#, fuzzy
+#| msgid "Add new connection"
+msgctxt "@action:button"
 msgid "Add new connection"
 msgstr "Dodaj novo povezavo"
 
 #: qml/main.qml:169 ui/main.qml:236
-msgid "Remove selected connection"
-msgstr "Odstrani izbrano povezavo"
+#, fuzzy
+#| msgid "Export selected connection"
+msgctxt "@action:button"
+msgid "Forget selected connection"
+msgstr "Izvozi izbrano povezavo"
 
 #: qml/main.qml:187 ui/main.qml:254
+#, fuzzy
+#| msgid "Export selected connection"
+msgctxt "@action:button"
 msgid "Export selected connection"
 msgstr "Izvozi izbrano povezavo"
 
 #: qml/main.qml:212 ui/main.qml:190
-msgid "Configuration"
+#, fuzzy
+#| msgid "Configuration"
+msgctxt "@action:button"
+msgid "Configure"
 msgstr "Nastavitev"
 
 #: qml/main.qml:239 ui/main.qml:307
+#, fuzzy
+#| msgctxt "@title:window"
+#| msgid "Remove Connection"
 msgctxt "@title:window"
-msgid "Remove Connection"
+msgid "Forget Connection"
 msgstr "Odstrani povezavo"
 
 #: qml/main.qml:240 ui/main.qml:308
-msgid "Do you want to remove the connection '%1'?"
+#, fuzzy
+#| msgid "Do you want to remove the connection '%1'?"
+msgctxt "@info"
+msgid "Do you want to forget the connection '%1'?"
 msgstr "Ali želite odstraniti povezavo '%1'?"
 
 #: qml/main.qml:259
@@ -255,7 +289,24 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Geslo mora imeti med 8 in 64 znakov"
 
+#: ui/main.qml:67
+#, fuzzy
+#| msgid "Connection imported."
+msgctxt "@info"
+msgid "Connection imported."
+msgstr "Povezava uvožena."
+
+#: ui/main.qml:73
+#, fuzzy
+#| msgid "Failed to import VPN connection: %1"
+msgctxt "@info"
+msgid "Failed to import VPN connection: %1"
+msgstr "Neuspel uvoz povezave VPN: %1"
+
 #: ui/main.qml:278
+#, fuzzy
+#| msgid "Connection name:"
+msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Ime povezave:"
 
@@ -264,10 +315,23 @@ msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Uvozi povezavo VPN"
 
+#: ui/main.qml:338
+#, fuzzy
+#| msgid "Import the VPN configuration from \"%1\"?"
+msgctxt "@info"
+msgid "Import the VPN configuration from \"%1\"?"
+msgstr "Uvozi konfiguracijo VPN iz \"%1\"?"
+
 #: ui/main.qml:343
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Uvozi"
+
+#~ msgid "Delete"
+#~ msgstr "Izbriši"
+
+#~ msgid "Remove selected connection"
+#~ msgstr "Odstrani izbrano povezavo"
 
 #~ msgid "Disconnected"
 #~ msgstr "Nepovezano"

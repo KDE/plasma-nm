@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-11 00:53+0000\n"
-"PO-Revision-Date: 2026-10-08 16:45+0200\n"
+"PO-Revision-Date: 2026-10-19 16:06+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
 #: cellular/cellularmodem.cpp:148
@@ -6636,100 +6636,91 @@ msgstr "Парола на групата:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:18
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for this user only (encrypted)"
+#, kde-format
 msgid "Store secret for this user only (encrypted)"
-msgstr "Съхраняване на парола само за този потребител (криптирана)"
+msgstr "Съхранение на тайната само за този потребител (криптирано)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:19
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for all users (not encrypted)"
+#, kde-format
 msgid "Store secret for all users (not encrypted)"
-msgstr "Съхраняване на парола за всички потребители (не криптирана)"
+msgstr "Съхранение на тайната за всички потребители (некриптирано)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:20
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "This password is not required"
+#, kde-format
 msgid "This secret is not required"
-msgstr "Тази парола не е необходима"
+msgstr "Този секретен ключ не е необходим"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:36
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "Име"
+msgstr "Име:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:39
-#, fuzzy, kde-format
-#| msgid "The name of the Wi-Fi network to connect to"
+#, kde-format
 msgid "Name of the network interface this connection creates."
-msgstr "Името на Wi-Fi мрежата за свързване"
+msgstr "Име на мрежовия интерфейс, създаван от тази връзка."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:51
 #, kde-format
 msgid "The private key of this interface, as a base64 string."
-msgstr ""
+msgstr "Частният ключ на този интерфейс като низ в base64."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:71
-#, fuzzy, kde-format
-#| msgid "Listen port:"
+#, kde-format
 msgid "Listen Port:"
 msgstr "Порт за слушане:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:73
 #, kde-format
 msgid "Port to listen on. Automatic lets WireGuard choose one."
-msgstr ""
+msgstr "Порт за слушане. „Автоматично“ позволява на WireGuard да избере такъв."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:90
 #, kde-format
 msgid "Firewall mark to apply to outgoing packets. Zero disables it."
-msgstr ""
+msgstr "Маркер на защитната стена за изходящи пакети. Нула го деактивира."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:117
 #, kde-format
 msgid "Add routes for the peers' allowed IPs"
-msgstr ""
+msgstr "Добавяне на маршрути за разрешените IP адреси на peer-ите"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:119
 #, kde-format
 msgid "Turn this off to route the tunnel yourself."
-msgstr ""
+msgstr "Изключване за ръчно маршрутизиране на тунела."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:136
-#, fuzzy, kde-format
-#| msgid "Peers…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Peers…"
 msgstr "Peers…"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:29
-#, fuzzy, kde-format
-#| msgid "Peer 1"
+#, kde-format
 msgctxt "@title:tab numbered WireGuard peer"
 msgid "Peer %1"
-msgstr "Peer 1"
+msgstr "Peer %1"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:75
 #, kde-format
 msgid "This interface has no peers, so it cannot connect to anything yet."
 msgstr ""
+"Този интерфейс няма peer-възли, така че все още не може да се свърже с нищо."
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:175
-#, fuzzy, kde-format
-#| msgid "Add new Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add new Peer"
 msgstr "Добавяне на нов Peer"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:185
-#, fuzzy, kde-format
-#| msgid "Remove this Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove this Peer"
-msgstr "Премахване на този Peer"
+msgstr "Премахване на този peer"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format

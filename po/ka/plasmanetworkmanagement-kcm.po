@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-20 00:54+0000\n"
-"PO-Revision-Date: 2026-09-30 08:38+0200\n"
+"PO-Revision-Date: 2026-10-20 06:11+0200\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: kcm.cpp:299
 #, kde-format
@@ -42,7 +42,7 @@ msgstr "VPN შეერთების შემოტანის შეცდ
 #: kcm.cpp:311 kcm.cpp:384
 #, kde-format
 msgid "Connection imported."
-msgstr "მიერთება შემოტანილია."
+msgstr "კავშირი შემოტანილია."
 
 #: kcm.cpp:453
 #, kde-format
@@ -57,7 +57,7 @@ msgstr "VPN შეერთების გატანა"
 #: kcm.cpp:545
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
-msgstr "გნებავთ შეინახოთ შეერთება \"%1\"-ში შეტანილი ცვლილებები?"
+msgstr "გნებავთ შეინახოთ შეტანილი ცვლილებები კავშირში '%1'?"
 
 #: kcm.cpp:546
 #, kde-format
@@ -99,7 +99,7 @@ msgstr "აირჩიეთ კავშირის ტიპი"
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr "გამართვა"
+msgstr "მორგება"
 
 #: qml/ConfigurationDialog.qml:35
 msgid "General"
@@ -107,11 +107,11 @@ msgstr "ძირითადი"
 
 #: qml/ConfigurationDialog.qml:43
 msgid "Ask for PIN on modem detection"
-msgstr "მოდემის გამოცნობისას PIN კოდის კითხვა"
+msgstr "PIN-კოდის კითხვა მოდემის ამოცნობისას"
 
 #: qml/ConfigurationDialog.qml:50
 msgid "Show virtual connections"
-msgstr "ვირტუალური შეერთებების ჩვენება"
+msgstr "ვირტუალური კავშირების ჩვენება"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
@@ -158,15 +158,11 @@ msgid "%1"
 msgstr "%1"
 
 #: qml/ConnectionItem.qml:86 ui/ConnectionItem.qml:82
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:inmenu connect to network"
 msgid "Connect"
 msgstr "დაკავშირება"
 
 #: qml/ConnectionItem.qml:87 ui/ConnectionItem.qml:83
-#, fuzzy
-#| msgid "Disconnect"
 msgctxt "@action:inmenu disconnect from network"
 msgid "Disconnect"
 msgstr "გათიშვა"
@@ -184,25 +180,19 @@ msgstr "დუბლირება"
 #: qml/ConnectionItem.qml:104 ui/ConnectionItem.qml:100
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "დავიწყება"
 
 #: qml/ConnectionItem.qml:115 ui/ConnectionItem.qml:111
-#, fuzzy
-#| msgid "Export"
 msgctxt "@action:inmenu export network connection"
 msgid "Export"
 msgstr "გატანა"
 
 #: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
-#, fuzzy
-#| msgid "Connected"
 msgctxt "@info:status"
 msgid "Connected"
 msgstr "დაკავშირებულია"
 
 #: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
-#, fuzzy
-#| msgid "Connecting"
 msgctxt "@info:status"
 msgid "Connecting"
 msgstr "დაკავშირება"
@@ -213,47 +203,34 @@ msgid "Available"
 msgstr "ხელმისაწვდომია"
 
 #: qml/main.qml:151 ui/main.qml:218
-#, fuzzy
-#| msgid "Add new connection"
 msgctxt "@action:button"
 msgid "Add new connection"
 msgstr "ახალი შეერთების დამატება"
 
 #: qml/main.qml:169 ui/main.qml:236
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Forget selected connection"
-msgstr "მონიშნული შეერთების გატანა"
+msgstr "მონიშნული კავშირის დავიწყება"
 
 #: qml/main.qml:187 ui/main.qml:254
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Export selected connection"
-msgstr "მონიშნული შეერთების გატანა"
+msgstr "მონიშნული კავშირის გატანა"
 
 #: qml/main.qml:212 ui/main.qml:190
-#, fuzzy
-#| msgid "Configuration"
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "გამართვა"
 
 #: qml/main.qml:239 ui/main.qml:307
-#, fuzzy
-#| msgctxt "@title:window"
-#| msgid "Remove Connection"
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "შეერთების წაშლა"
+msgstr "კავშირის დავიწყება"
 
 #: qml/main.qml:240 ui/main.qml:308
-#, fuzzy
-#| msgid "Do you want to remove the connection '%1'?"
 msgctxt "@info"
 msgid "Do you want to forget the connection '%1'?"
-msgstr "გნებავთ შეერთების წაშლა? (%1)"
+msgstr "მართლა გნებავთ, დაივიწყოთ კავშირი '%1'?"
 
 #: qml/main.qml:259
 msgctxt "@action:button Connect to network"
@@ -286,25 +263,19 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "პაროლი 8-დან 64-მდე სიმბოლოს უნდა შეიცავდეს"
 
 #: ui/main.qml:67
-#, fuzzy
-#| msgid "Connection imported."
 msgctxt "@info"
 msgid "Connection imported."
-msgstr "მიერთება შემოტანილია."
+msgstr "კავშირი შემოტანილია."
 
 #: ui/main.qml:73
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgctxt "@info"
 msgid "Failed to import VPN connection: %1"
 msgstr "VPN შეერთების შემოტანის შეცდომა: %1"
 
 #: ui/main.qml:278
-#, fuzzy
-#| msgid "Connection name:"
 msgctxt "@label:textbox"
 msgid "Connection name:"
-msgstr "შეერთების სახელი:"
+msgstr "კავშირის სახელი:"
 
 #: ui/main.qml:325
 msgctxt "@title:window"
@@ -312,8 +283,6 @@ msgid "Import VPN Connection"
 msgstr "VPN შეერთების შემოტანა"
 
 #: ui/main.qml:338
-#, fuzzy
-#| msgid "Import the VPN configuration from \"%1\"?"
 msgctxt "@info"
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "შემოვიტანო VPN-ის პარამეტრები \"%1\"-დან?"

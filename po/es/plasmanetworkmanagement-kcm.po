@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-20 00:54+0000\n"
-"PO-Revision-Date: 2026-10-01 00:12+0100\n"
+"PO-Revision-Date: 2026-10-20 12:22+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: kcm.cpp:299
 #, kde-format
@@ -160,15 +160,11 @@ msgid "%1"
 msgstr "%1"
 
 #: qml/ConnectionItem.qml:86 ui/ConnectionItem.qml:82
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:inmenu connect to network"
 msgid "Connect"
 msgstr "Conectar"
 
 #: qml/ConnectionItem.qml:87 ui/ConnectionItem.qml:83
-#, fuzzy
-#| msgid "Disconnect"
 msgctxt "@action:inmenu disconnect from network"
 msgid "Disconnect"
 msgstr "Desconectar"
@@ -186,25 +182,19 @@ msgstr "Duplicar"
 #: qml/ConnectionItem.qml:104 ui/ConnectionItem.qml:100
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "Olvidar"
 
 #: qml/ConnectionItem.qml:115 ui/ConnectionItem.qml:111
-#, fuzzy
-#| msgid "Export"
 msgctxt "@action:inmenu export network connection"
 msgid "Export"
 msgstr "Exportar"
 
 #: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
-#, fuzzy
-#| msgid "Connected"
 msgctxt "@info:status"
 msgid "Connected"
 msgstr "Conectado"
 
 #: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
-#, fuzzy
-#| msgid "Connecting"
 msgctxt "@info:status"
 msgid "Connecting"
 msgstr "Conectando"
@@ -215,47 +205,34 @@ msgid "Available"
 msgstr "Disponible"
 
 #: qml/main.qml:151 ui/main.qml:218
-#, fuzzy
-#| msgid "Add new connection"
 msgctxt "@action:button"
 msgid "Add new connection"
 msgstr "Añadir nueva conexión"
 
 #: qml/main.qml:169 ui/main.qml:236
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Forget selected connection"
-msgstr "Exportar la conexión seleccionada"
+msgstr "Olvidar la conexión seleccionada"
 
 #: qml/main.qml:187 ui/main.qml:254
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Export selected connection"
 msgstr "Exportar la conexión seleccionada"
 
 #: qml/main.qml:212 ui/main.qml:190
-#, fuzzy
-#| msgid "Configuration"
 msgctxt "@action:button"
 msgid "Configure"
-msgstr "Configuración"
+msgstr "Configurar"
 
 #: qml/main.qml:239 ui/main.qml:307
-#, fuzzy
-#| msgctxt "@title:window"
-#| msgid "Remove Connection"
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "Eliminar conexión"
+msgstr "Olvidar conexión"
 
 #: qml/main.qml:240 ui/main.qml:308
-#, fuzzy
-#| msgid "Do you want to remove the connection '%1'?"
 msgctxt "@info"
 msgid "Do you want to forget the connection '%1'?"
-msgstr "¿Desea eliminar la conexión «%1»?"
+msgstr "¿Desea olvidar la conexión «%1»?"
 
 #: qml/main.qml:259
 msgctxt "@action:button Connect to network"
@@ -288,22 +265,16 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "La contraseña debe tener de 8 a 64 caracteres"
 
 #: ui/main.qml:67
-#, fuzzy
-#| msgid "Connection imported."
 msgctxt "@info"
 msgid "Connection imported."
 msgstr "Conexión importada."
 
 #: ui/main.qml:73
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgctxt "@info"
 msgid "Failed to import VPN connection: %1"
 msgstr "No se ha podido importar la conexión VPN: %1"
 
 #: ui/main.qml:278
-#, fuzzy
-#| msgid "Connection name:"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Nombre de la conexión:"
@@ -314,8 +285,6 @@ msgid "Import VPN Connection"
 msgstr "Importar conexión VPN"
 
 #: ui/main.qml:338
-#, fuzzy
-#| msgid "Import the VPN configuration from \"%1\"?"
 msgctxt "@info"
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "¿Importar la configuración VPN de «%1»?"
@@ -324,12 +293,3 @@ msgstr "¿Importar la configuración VPN de «%1»?"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importar"
-
-#~ msgid "Delete"
-#~ msgstr "Borrar"
-
-#~ msgid "Remove selected connection"
-#~ msgstr "Eliminar la conexión seleccionada"
-
-#~ msgid "Disconnected"
-#~ msgstr "Desconectado"

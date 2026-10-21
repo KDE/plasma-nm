@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-20 00:54+0000\n"
-"PO-Revision-Date: 2026-09-30 09:56+0300\n"
+"PO-Revision-Date: 2026-10-20 19:49+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -159,15 +159,11 @@ msgid "%1"
 msgstr "%1"
 
 #: qml/ConnectionItem.qml:86 ui/ConnectionItem.qml:82
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:inmenu connect to network"
 msgid "Connect"
 msgstr "Bağlan"
 
 #: qml/ConnectionItem.qml:87 ui/ConnectionItem.qml:83
-#, fuzzy
-#| msgid "Disconnect"
 msgctxt "@action:inmenu disconnect from network"
 msgid "Disconnect"
 msgstr "Bağlantıyı Kes"
@@ -185,25 +181,19 @@ msgstr "Çoğalt"
 #: qml/ConnectionItem.qml:104 ui/ConnectionItem.qml:100
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "Unut"
 
 #: qml/ConnectionItem.qml:115 ui/ConnectionItem.qml:111
-#, fuzzy
-#| msgid "Export"
 msgctxt "@action:inmenu export network connection"
 msgid "Export"
 msgstr "Dışa Aktar"
 
 #: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
-#, fuzzy
-#| msgid "Connected"
 msgctxt "@info:status"
 msgid "Connected"
 msgstr "Bağlandı"
 
 #: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
-#, fuzzy
-#| msgid "Connecting"
 msgctxt "@info:status"
 msgid "Connecting"
 msgstr "Bağlanıyor"
@@ -214,47 +204,34 @@ msgid "Available"
 msgstr "Kullanılabilir"
 
 #: qml/main.qml:151 ui/main.qml:218
-#, fuzzy
-#| msgid "Add new connection"
 msgctxt "@action:button"
 msgid "Add new connection"
-msgstr "Yeni bağlantı ekle"
+msgstr "Yeni Bağlantı Ekle"
 
 #: qml/main.qml:169 ui/main.qml:236
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Forget selected connection"
-msgstr "Seçili bağlantıyı dışa aktar"
+msgstr "Seçili Bağlantıyı Unut"
 
 #: qml/main.qml:187 ui/main.qml:254
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Export selected connection"
-msgstr "Seçili bağlantıyı dışa aktar"
+msgstr "Seçili Bağlantıyı Dışa Aktar"
 
 #: qml/main.qml:212 ui/main.qml:190
-#, fuzzy
-#| msgid "Configuration"
 msgctxt "@action:button"
 msgid "Configure"
-msgstr "Yapılandırma"
+msgstr "Yapılandır"
 
 #: qml/main.qml:239 ui/main.qml:307
-#, fuzzy
-#| msgctxt "@title:window"
-#| msgid "Remove Connection"
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "Bağlantıyı Kaldır"
+msgstr "Bağlantıyı Unut"
 
 #: qml/main.qml:240 ui/main.qml:308
-#, fuzzy
-#| msgid "Do you want to remove the connection '%1'?"
 msgctxt "@info"
 msgid "Do you want to forget the connection '%1'?"
-msgstr "“%1” bağlantısını kaldırmak istiyor musunuz?"
+msgstr "“%1” bağlantısını unutmak istiyor musunuz?"
 
 #: qml/main.qml:259
 msgctxt "@action:button Connect to network"
@@ -287,22 +264,16 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "Parola, 8 ila 64 karakter arasında olmalıdır"
 
 #: ui/main.qml:67
-#, fuzzy
-#| msgid "Connection imported."
 msgctxt "@info"
 msgid "Connection imported."
 msgstr "Bağlantı içe aktarıldı."
 
 #: ui/main.qml:73
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgctxt "@info"
 msgid "Failed to import VPN connection: %1"
 msgstr "VPN bağlantısı içe aktarılamadı: %1"
 
 #: ui/main.qml:278
-#, fuzzy
-#| msgid "Connection name:"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Bağlantı adı:"
@@ -313,8 +284,6 @@ msgid "Import VPN Connection"
 msgstr "VPN Bağlantısı İçe Aktar"
 
 #: ui/main.qml:338
-#, fuzzy
-#| msgid "Import the VPN configuration from \"%1\"?"
 msgctxt "@info"
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "“%1” konumundan VPN yapılandırması içe aktarılsın mı?"

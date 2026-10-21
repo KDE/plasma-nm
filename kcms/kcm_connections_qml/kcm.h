@@ -27,9 +27,9 @@
 #include "vpnc.h"
 #include "vpnuiplugin.h"
 #include "wifisecuritysetting.h"
-#include "wireguard.h"
 #include "wifisetting.h"
 #include "wiredsettings.h"
+#include "wireguard.h"
 
 #include <KQuickConfigModule>
 #include <NetworkManagerQt/Connection>
@@ -67,6 +67,8 @@ class KCMNetworkManagementQml : public KQuickConfigModule
     Q_PROPERTY(OpenvpnSetting *vpnOpenvpnSetting READ vpnOpenvpnSetting NOTIFY vpnOpenvpnSettingChanged)
     Q_PROPERTY(WireguardSetting *wireguardSetting READ wireguardSetting CONSTANT)
     Q_PROPERTY(QString vpnServiceType READ vpnServiceType NOTIFY vpnServiceTypeChanged)
+    Q_PROPERTY(QString connectionName READ connectionName WRITE setConnectionName NOTIFY connectionNameChanged)
+    Q_PROPERTY(bool connectionValid READ connectionValid NOTIFY connectionValidChanged)
 
 public:
     explicit KCMNetworkManagementQml(QObject *parent, const KPluginMetaData &metaData);
@@ -97,6 +99,9 @@ public:
     OpenvpnSetting *vpnOpenvpnSetting() const;
     WireguardSetting *wireguardSetting() const;
     QString vpnServiceType() const;
+    QString connectionName() const;
+    void setConnectionName(const QString &name);
+    bool connectionValid() const;
     bool useApMode() const;
 
     Q_INVOKABLE void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
@@ -109,6 +114,8 @@ public:
     Q_INVOKABLE void importVpnFromFile(const QUrl &fileUrl);
     Q_INVOKABLE void cancelVpnImport();
 
+    Q_INVOKABLE void cancelNewConnection();
+
 public Q_SLOTS:
     void defaults() override;
     void load() override;
@@ -116,6 +123,10 @@ public Q_SLOTS:
 
 Q_SIGNALS:
     void connectionLoaded(const QString &path);
+
+    void newConnectionRequested();
+    void connectionNameChanged();
+    void connectionValidChanged();
     void saveSucceeded();
     void saveFailed(const QString &errorMessage);
     void kcmChangedStateChanged(bool changed);
@@ -157,6 +168,8 @@ private:
     void addConnection(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void kcmChanged(bool kcmChanged);
     void loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
+    void loadVpnSetting(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
+    bool vpnSettingValid() const;
     void requestSecrets(const NetworkManager::ConnectionSettings::Ptr &connectionSettings);
     void resetSelection();
     void applyTypeSettings(NMVariantMapMap &map, NetworkManager::ConnectionSettings::ConnectionType type);
@@ -171,6 +184,7 @@ private:
     QString m_currentConnectionPath;
     QString m_createdConnectionUuid;
     QString m_vpnServiceType;
+    QString m_connectionName;
 
     Handler *const m_handler;
     WifiSecuritySetting *const m_wifiSecurity;
@@ -195,7 +209,7 @@ private:
     WireguardSetting *const m_wireguardSetting;
 
     bool m_useApMode = false;
-    bool m_wiredSecurityEnabled = false;
+    bool m_security8021xEnabled = false;
 
     QTimer *m_timer = nullptr;
 };

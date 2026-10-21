@@ -50,8 +50,14 @@ Kirigami.Page {
         function onConnectionLoaded(path) {
             if (!path) {
                 root.deselectConnections();
+            } else if (connectionView.currentConnectionPath !== path) {
+                root.selectConnection(kcm.connectionName, path);
             }
             connectionPage.showStatusTab();
+        }
+
+        function onNewConnectionRequested() {
+            newConnectionDialog.openForNewConnection();
         }
 
         function onVpnImportRequested(fileName) {
@@ -281,11 +287,12 @@ Kirigami.Page {
                 QQC2.TextField {
                     id: connectionName
                     Layout.fillWidth: true
-                    text: connectionView.currentConnectionName
+                    text: kcm.connectionName
+                    onTextEdited: kcm.connectionName = text
                 }
             }
 
-            PlasmaNMQ.ConnectionPage {
+            PlasmaNMQ.ConnectionDialog {
                 id: connectionPage
 
                 Layout.fillWidth: true
@@ -350,6 +357,10 @@ Kirigami.Page {
         }
     }
 
+    PlasmaNMQ.CreateConnectionDialog {
+        id: newConnectionDialog
+    }
+
     PlasmaNMQ.AddConnectionDialog {
         id: addNewConnectionDialog
 
@@ -370,6 +381,11 @@ Kirigami.Page {
     function deselectConnections() {
         connectionView.currentConnectionName = "";
         connectionView.currentConnectionPath = "";
+    }
+
+    function selectConnection(name: string, path: string): void {
+        connectionView.currentConnectionName = name;
+        connectionView.currentConnectionPath = path;
     }
 
     function showConfigurationDialog() {

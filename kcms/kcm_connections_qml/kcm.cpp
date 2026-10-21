@@ -6,6 +6,7 @@
 */
 
 #include "kcm.h"
+#include "configuration.h"
 #include "plasma_nm_kcm_qml.h"
 #include "uiutils.h"
 #include "vpnc.h"
@@ -19,9 +20,13 @@
 #include <NetworkManagerQt/Connection>
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/GenericTypes>
+#include <NetworkManagerQt/Ipv4Setting>
+#include <NetworkManagerQt/Ipv6Setting>
 #include <NetworkManagerQt/Manager>
 #include <NetworkManagerQt/Settings>
+#include <NetworkManagerQt/WiredSetting>
 #include <NetworkManagerQt/WirelessDevice>
+#include <NetworkManagerQt/WirelessSetting>
 
 #include <QDBusPendingCallWatcher>
 #include <QDBusPendingReply>
@@ -106,6 +111,11 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
              }
          }},
     };
+
+    connect(this, &KCMNetworkManagementQml::connectionNameChanged, this, &KCMNetworkManagementQml::connectionValidChanged);
+    connect(this, &KCMNetworkManagementQml::connectionTypeChanged, this, &KCMNetworkManagementQml::connectionValidChanged);
+    connect(this, &KCMNetworkManagementQml::vpnServiceTypeChanged, this, &KCMNetworkManagementQml::connectionValidChanged);
+    connect(this, &KCMNetworkManagementQml::wiredSecurityEnabledChanged, this, &KCMNetworkManagementQml::connectionValidChanged);
 
     // Check if we can use AP mode to identify security type
     bool foundInactive = false;
@@ -197,112 +207,131 @@ KCMNetworkManagementQml::KCMNetworkManagementQml(QObject *parent, const KPluginM
         if (m_wifiSecurity->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_generalSettings, &GeneralSetting::validChanged, this, [this]() {
         kcmChanged(true);
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_wifiSetting, &WifiSetting::validChanged, this, [this]() {
         if (m_wifiSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_wiredSetting, &WiredSetting::validChanged, this, [this]() {
         if (m_wiredSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_security8021xSetting, &Security8021xSetting::validChanged, this, [this]() {
         if (m_security8021xSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_ipv4Settings, &IPv4Settings::validChanged, this, [this]() {
         if (m_ipv4Settings->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_ipv6Settings, &IPv6Settings::validChanged, this, [this]() {
         if (m_ipv6Settings->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_vpnSshSetting, &SshSetting::validChanged, this, [this]() {
         if (m_vpnSshSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_vpnSstpSetting, &SstpSetting::validChanged, this, [this]() {
         if (m_vpnSstpSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_vpnVpncSetting, &VpncSetting::validChanged, this, [this]() {
         if (m_vpnVpncSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_vpnFortisslvpnSetting, &FortisslvpnSetting::validChanged, this, [this]() {
         if (m_vpnFortisslvpnSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_vpnIodineSetting, &IodineSetting::validChanged, this, [this]() {
         if (m_vpnIodineSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_vpnLibreswanSetting, &LibreswanSetting::validChanged, this, [this]() {
         if (m_vpnLibreswanSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_vpnStrongswanSetting, &StrongswanSetting::validChanged, this, [this]() {
         if (m_vpnStrongswanSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_vpnL2tpSetting, &L2tpSetting::validChanged, this, [this]() {
         if (m_vpnL2tpSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_vpnPptpSetting, &PptpSetting::validChanged, this, [this]() {
         if (m_vpnPptpSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_vpnOpenconnectSetting, &OpenconnectSetting::validChanged, this, [this]() {
         if (m_vpnOpenconnectSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_wireguardSetting, &WireguardSetting::validChanged, this, [this]() {
         if (m_wireguardSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(m_vpnOpenvpnSetting, &OpenvpnSetting::validChanged, this, [this]() {
         if (m_vpnOpenvpnSetting->isValid()) {
             kcmChanged(true);
         }
+        Q_EMIT connectionValidChanged();
     });
 
     connect(NetworkManager::settingsNotifier(),
@@ -397,6 +426,90 @@ QString KCMNetworkManagementQml::vpnServiceType() const
     return m_vpnServiceType;
 }
 
+QString KCMNetworkManagementQml::connectionName() const
+{
+    return m_connectionName;
+}
+
+void KCMNetworkManagementQml::setConnectionName(const QString &name)
+{
+    if (m_connectionName == name) {
+        return;
+    }
+
+    m_connectionName = name;
+    Q_EMIT connectionNameChanged();
+
+    kcmChanged(true);
+}
+
+bool KCMNetworkManagementQml::vpnSettingValid() const
+{
+    if (m_vpnServiceType == m_vpnSshSetting->serviceType()) {
+        return m_vpnSshSetting->isValid();
+    }
+    if (m_vpnServiceType == m_vpnSstpSetting->serviceType()) {
+        return m_vpnSstpSetting->isValid();
+    }
+    if (m_vpnServiceType == m_vpnVpncSetting->serviceType()) {
+        return m_vpnVpncSetting->isValid();
+    }
+    if (m_vpnServiceType == m_vpnFortisslvpnSetting->serviceType()) {
+        return m_vpnFortisslvpnSetting->isValid();
+    }
+    if (m_vpnServiceType == m_vpnIodineSetting->serviceType()) {
+        return m_vpnIodineSetting->isValid();
+    }
+    if (m_vpnServiceType == m_vpnLibreswanSetting->serviceType()) {
+        return m_vpnLibreswanSetting->isValid();
+    }
+    if (m_vpnServiceType == m_vpnStrongswanSetting->serviceType()) {
+        return m_vpnStrongswanSetting->isValid();
+    }
+    if (m_vpnServiceType == m_vpnL2tpSetting->serviceType()) {
+        return m_vpnL2tpSetting->isValid();
+    }
+    if (m_vpnServiceType == m_vpnPptpSetting->serviceType()) {
+        return m_vpnPptpSetting->isValid();
+    }
+    if (m_vpnServiceType == m_vpnOpenconnectSetting->serviceType()) {
+        return m_vpnOpenconnectSetting->isValid();
+    }
+    if (m_vpnServiceType == m_vpnOpenvpnSetting->serviceType()) {
+        return m_vpnOpenvpnSetting->isValid();
+    }
+
+    return true;
+}
+
+bool KCMNetworkManagementQml::connectionValid() const
+{
+    if (m_connectionName.isEmpty()) {
+        return false;
+    }
+
+    if (!m_ipv4Settings->isValid() || !m_ipv6Settings->isValid()) {
+        return false;
+    }
+
+    switch (m_connectionType) {
+    case NetworkManager::ConnectionSettings::Wireless:
+        return m_wifiSetting->isValid() && m_wifiSecurity->isValid();
+
+    case NetworkManager::ConnectionSettings::Wired:
+        return m_wiredSetting->isValid() && (!m_security8021xEnabled || m_security8021xSetting->isValid());
+
+    case NetworkManager::ConnectionSettings::WireGuard:
+        return m_wireguardSetting->isValid();
+
+    case NetworkManager::ConnectionSettings::Vpn:
+        return vpnSettingValid();
+
+    default:
+        return true;
+    }
+}
+
 GeneralSetting *KCMNetworkManagementQml::generalSettings() const
 {
     return m_generalSettings;
@@ -412,15 +525,15 @@ WiredSetting *KCMNetworkManagementQml::wiredSetting() const
 
 bool KCMNetworkManagementQml::wiredSecurityEnabled() const
 {
-    return m_wiredSecurityEnabled;
+    return m_security8021xEnabled;
 }
 
 void KCMNetworkManagementQml::setWiredSecurityEnabled(bool enabled)
 {
-    if (m_wiredSecurityEnabled == enabled) {
+    if (m_security8021xEnabled == enabled) {
         return;
     }
-    m_wiredSecurityEnabled = enabled;
+    m_security8021xEnabled = enabled;
     Q_EMIT wiredSecurityEnabledChanged();
     kcmChanged(true);
 }
@@ -597,7 +710,7 @@ void KCMNetworkManagementQml::applyTypeSettings(NMVariantMapMap &map, NetworkMan
     case NetworkManager::ConnectionSettings::Wired:
         map.insert(QStringLiteral("802-3-ethernet"), m_wiredSetting->setting());
 
-        if (m_wiredSecurityEnabled) {
+        if (m_security8021xEnabled) {
             map.insert(QStringLiteral("802-1x"), m_security8021xSetting->setting());
         } else {
             map.remove(QStringLiteral("802-1x"));
@@ -641,8 +754,8 @@ void KCMNetworkManagementQml::applyTypeSettings(NMVariantMapMap &map, NetworkMan
 
 void KCMNetworkManagementQml::save()
 {
-    // process the pending settings
     if (m_pendingNewSettings) {
+        m_pendingNewSettings->setId(m_connectionName);
         m_generalSettings->applyTo(m_pendingNewSettings, m_wifiSecurity);
 
         NMVariantMapMap map = m_pendingNewSettings->toMap();
@@ -663,6 +776,11 @@ void KCMNetworkManagementQml::save()
     }
 
     NetworkManager::ConnectionSettings::Ptr settings = connection->settings();
+
+    if (!m_connectionName.isEmpty()) {
+        settings->setId(m_connectionName);
+    }
+
     m_generalSettings->applyTo(settings, m_wifiSecurity);
 
     NMVariantMapMap map = settings->toMap();
@@ -677,8 +795,16 @@ void KCMNetworkManagementQml::save()
 void KCMNetworkManagementQml::onSelectedConnectionChanged(const QString &connectionPath)
 {
     if (connectionPath.isEmpty()) {
+        if (m_pendingNewSettings) {
+            return;
+        }
+
         m_connectionStatus->setConnectionUuid(QString());
         resetSelection();
+        return;
+    }
+
+    if (connectionPath == m_currentConnectionPath) {
         return;
     }
 
@@ -692,15 +818,61 @@ void KCMNetworkManagementQml::onSelectedConnectionChanged(const QString &connect
     }
 }
 
+void KCMNetworkManagementQml::loadVpnSetting(const NetworkManager::ConnectionSettings::Ptr &connectionSettings)
+{
+    const NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
+
+    if (!vpnSetting) {
+        return;
+    }
+
+    if (m_vpnServiceType == m_vpnSshSetting->serviceType()) {
+        m_vpnSshSetting->loadConfig(vpnSetting);
+        Q_EMIT vpnSshSettingChanged();
+    } else if (m_vpnServiceType == m_vpnSstpSetting->serviceType()) {
+        m_vpnSstpSetting->loadConfig(vpnSetting);
+        Q_EMIT vpnSstpSettingChanged();
+    } else if (m_vpnServiceType == m_vpnVpncSetting->serviceType()) {
+        m_vpnVpncSetting->loadConfig(vpnSetting);
+        Q_EMIT vpnVpncSettingChanged();
+    } else if (m_vpnServiceType == m_vpnFortisslvpnSetting->serviceType()) {
+        m_vpnFortisslvpnSetting->loadConfig(vpnSetting);
+        Q_EMIT vpnFortisslvpnSettingChanged();
+    } else if (m_vpnServiceType == m_vpnIodineSetting->serviceType()) {
+        m_vpnIodineSetting->loadConfig(vpnSetting);
+        Q_EMIT vpnIodineSettingChanged();
+    } else if (m_vpnServiceType == m_vpnLibreswanSetting->serviceType()) {
+        m_vpnLibreswanSetting->loadConfig(vpnSetting);
+        Q_EMIT vpnLibreswanSettingChanged();
+    } else if (m_vpnServiceType == m_vpnStrongswanSetting->serviceType()) {
+        m_vpnStrongswanSetting->loadConfig(vpnSetting);
+        Q_EMIT vpnStrongswanSettingChanged();
+    } else if (m_vpnServiceType == m_vpnL2tpSetting->serviceType()) {
+        m_vpnL2tpSetting->loadConfig(vpnSetting);
+        Q_EMIT vpnL2tpSettingChanged();
+    } else if (m_vpnServiceType == m_vpnPptpSetting->serviceType()) {
+        m_vpnPptpSetting->loadConfig(vpnSetting);
+        Q_EMIT vpnPptpSettingChanged();
+    } else if (m_vpnServiceType == m_vpnOpenconnectSetting->serviceType()) {
+        m_vpnOpenconnectSetting->loadConfig(vpnSetting);
+        Q_EMIT vpnOpenconnectSettingChanged();
+    } else if (m_vpnServiceType == m_vpnOpenvpnSetting->serviceType()) {
+        m_vpnOpenvpnSetting->loadConfig(vpnSetting);
+        Q_EMIT vpnOpenvpnSettingChanged();
+    }
+}
+
 void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::ConnectionSettings::Ptr &connectionSettings)
 {
     if (!connectionSettings)
         return;
 
-    // Save the current connection Settings
     m_currentSettings = connectionSettings;
     m_connectionType = connectionSettings->connectionType();
     Q_EMIT connectionTypeChanged();
+
+    m_connectionName = connectionSettings->id();
+    Q_EMIT connectionNameChanged();
 
     m_generalSettings->loadConfig(connectionSettings);
     m_wifiSetting->loadConfig(connectionSettings);
@@ -735,40 +907,7 @@ void KCMNetworkManagementQml::loadConnectionSettings(const NetworkManager::Conne
     }
 
     if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Vpn) {
-        if (m_vpnServiceType == m_vpnSshSetting->serviceType()) {
-            m_vpnSshSetting->loadConfig(vpnSetting);
-            Q_EMIT vpnSshSettingChanged();
-        } else if (m_vpnServiceType == m_vpnSstpSetting->serviceType()) {
-            m_vpnSstpSetting->loadConfig(vpnSetting);
-            Q_EMIT vpnSstpSettingChanged();
-        } else if (m_vpnServiceType == m_vpnVpncSetting->serviceType()) {
-            m_vpnVpncSetting->loadConfig(vpnSetting);
-            Q_EMIT vpnVpncSettingChanged();
-        } else if (m_vpnServiceType == m_vpnFortisslvpnSetting->serviceType()) {
-            m_vpnFortisslvpnSetting->loadConfig(vpnSetting);
-            Q_EMIT vpnFortisslvpnSettingChanged();
-        } else if (m_vpnServiceType == m_vpnIodineSetting->serviceType()) {
-            m_vpnIodineSetting->loadConfig(vpnSetting);
-            Q_EMIT vpnIodineSettingChanged();
-        } else if (m_vpnServiceType == m_vpnLibreswanSetting->serviceType()) {
-            m_vpnLibreswanSetting->loadConfig(vpnSetting);
-            Q_EMIT vpnLibreswanSettingChanged();
-        } else if (m_vpnServiceType == m_vpnStrongswanSetting->serviceType()) {
-            m_vpnStrongswanSetting->loadConfig(vpnSetting);
-            Q_EMIT vpnStrongswanSettingChanged();
-        } else if (m_vpnServiceType == m_vpnL2tpSetting->serviceType()) {
-            m_vpnL2tpSetting->loadConfig(vpnSetting);
-            Q_EMIT vpnL2tpSettingChanged();
-        } else if (m_vpnServiceType == m_vpnPptpSetting->serviceType()) {
-            m_vpnPptpSetting->loadConfig(vpnSetting);
-            Q_EMIT vpnPptpSettingChanged();
-        } else if (m_vpnServiceType == m_vpnOpenconnectSetting->serviceType()) {
-            m_vpnOpenconnectSetting->loadConfig(vpnSetting);
-            Q_EMIT vpnOpenconnectSettingChanged();
-        } else if (m_vpnServiceType == m_vpnOpenvpnSetting->serviceType()) {
-            m_vpnOpenvpnSetting->loadConfig(vpnSetting);
-            Q_EMIT vpnOpenvpnSettingChanged();
-        }
+        loadVpnSetting(connectionSettings);
 
         Q_EMIT connectionLoaded(m_currentConnectionPath);
 
@@ -892,7 +1031,6 @@ void KCMNetworkManagementQml::onSecretsArrived(QDBusPendingCallWatcher *watcher)
     kcmChanged(false);
 }
 
-// TODO:Add Connection request handling
 void KCMNetworkManagementQml::onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared)
 {
     auto type = static_cast<NetworkManager::ConnectionSettings::ConnectionType>(connectionType);
@@ -900,49 +1038,66 @@ void KCMNetworkManagementQml::onRequestCreateConnection(int connectionType, cons
     if (type == NetworkManager::ConnectionSettings::Vpn && vpnType == QLatin1String("imported")) {
         Q_EMIT vpnImportFileRequested();
         return;
-    } else {
-        NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(type));
+    }
 
-        if (type == NetworkManager::ConnectionSettings::Vpn) {
-            NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
-            vpnSetting->setServiceType(vpnType);
-            if (vpnType == QLatin1String("org.freedesktop.NetworkManager.openconnect")) {
-                NMStringMap data = vpnSetting->data();
-                data.insert(QLatin1String("protocol"), specificType);
-                vpnSetting->setData(data);
-            }
+    NetworkManager::ConnectionSettings::Ptr connectionSettings(new NetworkManager::ConnectionSettings(type));
+
+    if (type == NetworkManager::ConnectionSettings::Vpn) {
+        auto vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+        vpnSetting->setServiceType(vpnType);
+
+        if (vpnType == QLatin1String("org.freedesktop.NetworkManager.openconnect")) {
+            NMStringMap data = vpnSetting->data();
+            data.insert(QLatin1String("protocol"), specificType);
+            vpnSetting->setData(data);
         }
     }
 
-    // only handle wireless for now
-    if (type == NetworkManager::ConnectionSettings::Wireless) {
-        NetworkManager::ConnectionSettings::Ptr connectionSettings = NetworkManager::ConnectionSettings::Ptr(new NetworkManager::ConnectionSettings(type));
+    if (type == NetworkManager::ConnectionSettings::Wired) {
+        auto wiredSetting = connectionSettings->setting(NetworkManager::Setting::Wired).dynamicCast<NetworkManager::WiredSetting>();
+        wiredSetting->setAutoNegotiate(true);
+    }
 
-        if (shared) {
-            // replaces shared wifi setup from old kcm.cpp
+    if (shared && (type == NetworkManager::ConnectionSettings::Wired || type == NetworkManager::ConnectionSettings::Wireless)) {
+        if (type == NetworkManager::ConnectionSettings::Wireless) {
             auto wifiSetting = connectionSettings->setting(NetworkManager::Setting::Wireless).dynamicCast<NetworkManager::WirelessSetting>();
             wifiSetting->setMode(NetworkManager::WirelessSetting::Adhoc);
             wifiSetting->setSsid(i18n("my_shared_connection").toUtf8());
 
-            for (const NetworkManager::Device::Ptr &device : NetworkManager::networkInterfaces()) {
-                if (device->type() != NetworkManager::Device::Wifi)
+            const auto devices = NetworkManager::networkInterfaces();
+            for (const auto &device : devices) {
+                if (device->type() != NetworkManager::Device::Wifi) {
                     continue;
-                auto wifiDev = device.objectCast<NetworkManager::WirelessDevice>();
-                if (wifiDev && wifiDev->wirelessCapabilities().testFlag(NetworkManager::WirelessDevice::ApCap)) {
+                }
+
+                auto wifiDevice = device.objectCast<NetworkManager::WirelessDevice>();
+                if (wifiDevice && wifiDevice->wirelessCapabilities().testFlag(NetworkManager::WirelessDevice::ApCap)) {
                     wifiSetting->setMode(NetworkManager::WirelessSetting::Ap);
-                    wifiSetting->setMacAddress(NetworkManager::macAddressFromString(wifiDev->permanentHardwareAddress()));
+                    wifiSetting->setMacAddress(NetworkManager::macAddressFromString(wifiDevice->permanentHardwareAddress()));
                 }
             }
-
-            // TODO: for shared wireless connection
-            //
-            // auto ipv4Setting = connectionSettings->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
-            // ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Shared);
-            // connectionSettings->setAutoconnect(false);
         }
 
-        connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
-        addConnection(connectionSettings);
+        auto ipv4Setting = connectionSettings->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
+        ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Shared);
+        connectionSettings->setAutoconnect(false);
+    }
+
+    if (type == NetworkManager::ConnectionSettings::WireGuard) {
+        auto ipv4Setting = connectionSettings->setting(NetworkManager::Setting::Ipv4).dynamicCast<NetworkManager::Ipv4Setting>();
+        auto ipv6Setting = connectionSettings->setting(NetworkManager::Setting::Ipv6).dynamicCast<NetworkManager::Ipv6Setting>();
+
+        ipv4Setting->setMethod(NetworkManager::Ipv4Setting::Disabled);
+        ipv6Setting->setMethod(NetworkManager::Ipv6Setting::Ignored);
+        connectionSettings->setAutoconnect(false);
+    }
+
+    connectionSettings->setUuid(NetworkManager::ConnectionSettings::createNewUuid());
+    addConnection(connectionSettings);
+
+    if (type == NetworkManager::ConnectionSettings::Vlan || type == NetworkManager::ConnectionSettings::Bridge
+        || type == NetworkManager::ConnectionSettings::Bond || type == NetworkManager::ConnectionSettings::Team) {
+        Configuration::self().setManageVirtualConnections(true);
     }
 }
 
@@ -952,19 +1107,40 @@ void KCMNetworkManagementQml::addConnection(const NetworkManager::ConnectionSett
     m_createdConnectionUuid = connectionSettings->uuid();
 
     m_currentConnectionPath.clear();
-    m_wifiSecurity->setSecurityType(WifiSecuritySetting::None);
+
+    m_wifiSecurity->loadConfig(connectionSettings->setting(NetworkManager::Setting::WirelessSecurity).staticCast<NetworkManager::WirelessSecuritySetting>());
+    m_security8021xSetting->reset();
     setWiredSecurityEnabled(false);
 
-    if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
+    m_connectionType = connectionSettings->connectionType();
+    Q_EMIT connectionTypeChanged();
+
+    const NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).staticCast<NetworkManager::VpnSetting>();
+    m_vpnServiceType = vpnSetting ? vpnSetting->serviceType() : QString();
+    Q_EMIT vpnServiceTypeChanged();
+
+    m_connectionName = connectionSettings->id().isEmpty()
+        ? i18nc("@title", "New %1 connection", NetworkManager::ConnectionSettings::typeAsString(m_connectionType))
+        : connectionSettings->id();
+    Q_EMIT connectionNameChanged();
+
+    m_generalSettings->loadConfig(connectionSettings);
+
+    if (m_connectionType == NetworkManager::ConnectionSettings::Wireless) {
         m_wifiSetting->loadConfig(connectionSettings);
-    } else if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wired) {
+    } else if (m_connectionType == NetworkManager::ConnectionSettings::Wired) {
         m_wiredSetting->loadConfig(connectionSettings);
+    } else if (m_connectionType == NetworkManager::ConnectionSettings::WireGuard) {
+        m_wireguardSetting->loadConfig(connectionSettings);
+    } else if (m_connectionType == NetworkManager::ConnectionSettings::Vpn) {
+        loadVpnSetting(connectionSettings);
     }
 
     m_ipv4Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv4).staticCast<NetworkManager::Ipv4Setting>());
     m_ipv6Settings->loadConfig(connectionSettings->setting(NetworkManager::Setting::Ipv6).staticCast<NetworkManager::Ipv6Setting>());
 
     Q_EMIT connectionLoaded(QString());
+    Q_EMIT newConnectionRequested();
 }
 
 void KCMNetworkManagementQml::onConnectionAdded(const QString &connection)
@@ -1060,6 +1236,20 @@ void KCMNetworkManagementQml::cancelVpnImport()
     Q_EMIT importFailed(i18n("No file was provided"));
 }
 
+void KCMNetworkManagementQml::cancelNewConnection()
+{
+    if (!m_pendingNewSettings) {
+        return;
+    }
+
+    m_createdConnectionUuid.clear();
+    m_connectionType = NetworkManager::ConnectionSettings::Unknown;
+
+    resetSelection();
+
+    Q_EMIT connectionTypeChanged();
+}
+
 KCMNetworkManagementQml::ImportResult KCMNetworkManagementQml::importVpnFile(const QString &filename)
 {
     QFileInfo fi(filename);
@@ -1134,6 +1324,8 @@ void KCMNetworkManagementQml::resetSelection()
     m_currentSettings.reset();
     m_vpnServiceType.clear();
     Q_EMIT vpnServiceTypeChanged();
+    m_connectionName.clear();
+    Q_EMIT connectionNameChanged();
     setNeedsSave(false);
     Q_EMIT kcmChangedStateChanged(false);
 }

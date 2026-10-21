@@ -135,11 +135,17 @@ set(QML_SRCS
   qml/wifisecurity/DnsList.qml
   qml/wifisecurity/AlternativeSubjectMatch.qml
 
-  qml/ConnectionPage.qml
+  qml/ConnectionDialog.qml
   qml/components/Wireless.qml
   qml/components/Wired.qml
   qml/components/Vpn.qml
   qml/components/WireGuard.qml
+
+  qml/CreateConnectionDialog.qml
+  qml/dialogs/WirelessPage.qml
+  qml/dialogs/WiredPage.qml
+  qml/dialogs/VpnPage.qml
+  qml/dialogs/WireGuardPage.qml
 
   qml/PasswordPromptDialog.qml
 

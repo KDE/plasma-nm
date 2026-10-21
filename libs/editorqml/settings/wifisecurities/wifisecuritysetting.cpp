@@ -19,11 +19,28 @@ WifiSecuritySetting::WifiSecuritySetting(QObject *parent)
 
 void WifiSecuritySetting::loadConfig(const NetworkManager::WirelessSecuritySetting::Ptr &setting)
 {
+    m_wifiSecurity = setting;
+
+    m_securityType = None;
+
+    m_psk.clear();
+    m_pskOption = StoreForUser;
+
+    for (QString &wepKey : m_wepKeys) {
+        wepKey.clear();
+    }
+    m_wepKey.clear();
+    m_wepKeyIndex = 0;
+    m_wepAuth = 0;
+    m_wepKeyOption = StoreForUser;
+
+    m_leapUsername.clear();
+    m_leapPassword.clear();
+    m_leapPasswordOption = StoreForUser;
+
     if (!setting) {
         return;
     }
-    m_wifiSecurity = setting;
-
     const auto keyMgmt = setting->keyMgmt();
     const auto authAlg = setting->authAlg();
 
@@ -102,6 +119,15 @@ void WifiSecuritySetting::loadConfig(const NetworkManager::WirelessSecuritySetti
     }
 
     Q_EMIT securityTypeChanged();
+    Q_EMIT pskChanged();
+    Q_EMIT pskOptionChanged();
+    Q_EMIT wepKeyChanged();
+    Q_EMIT wepKeyIndexChanged();
+    Q_EMIT wepAuthChanged();
+    Q_EMIT wepKeyOptionChanged();
+    Q_EMIT leapUsernameChanged();
+    Q_EMIT leapPasswordChanged();
+    Q_EMIT leapPasswordOptionChanged();
     Q_EMIT validChanged();
 }
 

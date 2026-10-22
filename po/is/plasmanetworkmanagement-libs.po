@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-11 00:53+0000\n"
+"POT-Creation-Date: 2026-10-22 00:52+0000\n"
 "PO-Revision-Date: 2026-02-27 11:00+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -912,7 +912,7 @@ msgid "PAN (personal area network)"
 msgstr "PAN (personal area network)"
 
 #: editor/settings/connectionstatuswidget.cpp:33
-#: editorqml/qml/ConnectionPage.qml:59
+#: editorqml/qml/ConnectionDialog.qml:59
 #: editorqml/qml/wifistatus/ConnectionStatusForm.qml:15
 #, kde-format
 msgid "Disconnected"
@@ -4270,6 +4270,89 @@ msgstr "Sýndartengingar"
 #| msgid "Create a connection for a hidden network"
 msgid "Create new connections as system connections"
 msgstr "Búa til tengingu fyrir falið netkerfi"
+
+#: editorqml/qml/CreateConnectionDialog.qml:20
+#, fuzzy, kde-format
+#| msgid "New Connection (%1)"
+msgctxt "@title:window"
+msgid "New Connection"
+msgstr "Ný tenging (%1)"
+
+#: editorqml/qml/CreateConnectionDialog.qml:84
+#, fuzzy, kde-format
+#| msgid "Connection name:"
+msgctxt "@label"
+msgid "Connection name:"
+msgstr "Heiti tengingar:"
+
+#: editorqml/qml/dialogs/VpnPage.qml:28 editorqml/qml/dialogs/WiredPage.qml:23
+#: editorqml/qml/dialogs/WireGuardPage.qml:24
+#: editorqml/qml/dialogs/WirelessPage.qml:23
+#, fuzzy, kde-format
+#| msgid "General"
+msgctxt "@title"
+msgid "General"
+msgstr "Almennt"
+
+#: editorqml/qml/dialogs/VpnPage.qml:32
+#, fuzzy, kde-format
+#| msgid "VPN"
+msgctxt "@title"
+msgid "VPN"
+msgstr "VPN"
+
+#: editorqml/qml/dialogs/VpnPage.qml:35 editorqml/qml/dialogs/WiredPage.qml:32
+#: editorqml/qml/dialogs/WireGuardPage.qml:30
+#: editorqml/qml/dialogs/WirelessPage.qml:32
+#, fuzzy, kde-format
+#| msgid "IPv4"
+msgctxt "@title"
+msgid "IPv4"
+msgstr "IPv4"
+
+#: editorqml/qml/dialogs/VpnPage.qml:39 editorqml/qml/dialogs/WiredPage.qml:35
+#: editorqml/qml/dialogs/WireGuardPage.qml:33
+#: editorqml/qml/dialogs/WirelessPage.qml:35
+#, fuzzy, kde-format
+#| msgid "IPv6"
+msgctxt "@title"
+msgid "IPv6"
+msgstr "IPv6"
+
+#: editorqml/qml/dialogs/WiredPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Wired"
+msgctxt "@title"
+msgid "Wired"
+msgstr "Kapaltengt"
+
+#: editorqml/qml/dialogs/WiredPage.qml:29
+#, fuzzy, kde-format
+#| msgid "802.1x Security"
+msgctxt "@title"
+msgid "802.1x Security"
+msgstr "802.1x öryggi"
+
+#: editorqml/qml/dialogs/WireGuardPage.qml:27
+#, fuzzy, kde-format
+#| msgid "WireGuard"
+msgctxt "@title"
+msgid "WireGuard"
+msgstr "WireGuard"
+
+#: editorqml/qml/dialogs/WirelessPage.qml:26
+#, fuzzy, kde-format
+#| msgid "Wi-Fi"
+msgctxt "@title"
+msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+#: editorqml/qml/dialogs/WirelessPage.qml:29
+#, fuzzy, kde-format
+#| msgid "Wi-Fi Security"
+msgctxt "@title"
+msgid "Wi-Fi Security"
+msgstr "Wi-Fi öryggi"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
 #, fuzzy, kde-format

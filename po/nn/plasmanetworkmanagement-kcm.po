@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-20 00:54+0000\n"
+"POT-Creation-Date: 2026-10-22 00:52+0000\n"
 "PO-Revision-Date: 2026-08-02 19:31+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Importera VPN-oppsett frå «%1»?"
 
-#: kcm.cpp:300 ui/main.qml:337
+#: kcm.cpp:300 ui/main.qml:344
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
@@ -214,35 +214,35 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Tilgjengelege"
 
-#: qml/main.qml:151 ui/main.qml:218
+#: qml/main.qml:151 ui/main.qml:224
 #, fuzzy
 #| msgid "Add new connection"
 msgctxt "@action:button"
 msgid "Add new connection"
 msgstr "Legg til ny tilkopling"
 
-#: qml/main.qml:169 ui/main.qml:236
+#: qml/main.qml:169 ui/main.qml:242
 #, fuzzy
 #| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Forget selected connection"
 msgstr "Eksporter merkt tilkopling"
 
-#: qml/main.qml:187 ui/main.qml:254
+#: qml/main.qml:187 ui/main.qml:260
 #, fuzzy
 #| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Export selected connection"
 msgstr "Eksporter merkt tilkopling"
 
-#: qml/main.qml:212 ui/main.qml:190
+#: qml/main.qml:212 ui/main.qml:196
 #, fuzzy
 #| msgid "Configuration"
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "Oppsett"
 
-#: qml/main.qml:239 ui/main.qml:307
+#: qml/main.qml:239 ui/main.qml:314
 #, fuzzy
 #| msgctxt "@title:window"
 #| msgid "Remove Connection"
@@ -250,7 +250,7 @@ msgctxt "@title:window"
 msgid "Forget Connection"
 msgstr "Fjern tilkopling"
 
-#: qml/main.qml:240 ui/main.qml:308
+#: qml/main.qml:240 ui/main.qml:315
 #, fuzzy
 #| msgid "Do you want to remove the connection '%1'?"
 msgctxt "@info"
@@ -287,42 +287,42 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Passordet må vera på 8 til 64 teikn"
 
-#: ui/main.qml:67
+#: ui/main.qml:73
 #, fuzzy
 #| msgid "Connection imported."
 msgctxt "@info"
 msgid "Connection imported."
 msgstr "Tilkopling importert."
 
-#: ui/main.qml:73
+#: ui/main.qml:79
 #, fuzzy
 #| msgid "Failed to import VPN connection: %1"
 msgctxt "@info"
 msgid "Failed to import VPN connection: %1"
 msgstr "Klarte ikkje importera VPN-tilkopling: %1"
 
-#: ui/main.qml:278
+#: ui/main.qml:284
 #, fuzzy
 #| msgid "Connection name:"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Tilkoplingsnamn:"
 
-#: ui/main.qml:325
+#: ui/main.qml:332
 #, fuzzy
 #| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Importer VPN-tilkopling"
 
-#: ui/main.qml:338
+#: ui/main.qml:345
 #, fuzzy
 #| msgid "Import the VPN configuration from \"%1\"?"
 msgctxt "@info"
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Importera VPN-oppsett frå «%1»?"
 
-#: ui/main.qml:343
+#: ui/main.qml:350
 #, fuzzy
 #| msgid "Import"
 msgctxt "@action:button"

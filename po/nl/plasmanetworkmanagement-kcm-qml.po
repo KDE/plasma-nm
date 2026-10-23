@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-22 00:52+0000\n"
-"PO-Revision-Date: 2026-10-09 12:12+0200\n"
+"PO-Revision-Date: 2026-10-22 18:22+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
 "Language: nl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: kcm.cpp:1023
 #, kde-format
@@ -28,11 +28,10 @@ msgid "my_shared_connection"
 msgstr "mijn_gedeelde_verbinding"
 
 #: kcm.cpp:1123
-#, fuzzy, kde-format
-#| msgid "VPN connections (%1)"
+#, kde-format
 msgctxt "@title"
 msgid "New %1 connection"
-msgstr "VPN-verbindingen (%1)"
+msgstr "Nieuwe verbinding voor %1"
 
 #: kcm.cpp:1171
 #, kde-format

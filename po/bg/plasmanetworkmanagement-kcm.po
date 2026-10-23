@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-22 00:52+0000\n"
-"PO-Revision-Date: 2026-10-08 16:41+0200\n"
+"PO-Revision-Date: 2026-10-22 20:29+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: kcm.cpp:299
 #, kde-format
@@ -159,18 +159,14 @@ msgid "%1"
 msgstr "%1"
 
 #: qml/ConnectionItem.qml:86 ui/ConnectionItem.qml:82
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:inmenu connect to network"
 msgid "Connect"
 msgstr "Свързване"
 
 #: qml/ConnectionItem.qml:87 ui/ConnectionItem.qml:83
-#, fuzzy
-#| msgid "Disconnect"
 msgctxt "@action:inmenu disconnect from network"
 msgid "Disconnect"
-msgstr "Разкачване"
+msgstr "Прекъсване на връзката"
 
 #: qml/ConnectionItem.qml:92 ui/ConnectionItem.qml:88
 msgctxt "@info:tooltip"
@@ -186,25 +182,19 @@ msgstr "Дублиране"
 #: qml/ConnectionItem.qml:104 ui/ConnectionItem.qml:100
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "Забравяне"
 
 #: qml/ConnectionItem.qml:115 ui/ConnectionItem.qml:111
-#, fuzzy
-#| msgid "Export"
 msgctxt "@action:inmenu export network connection"
 msgid "Export"
 msgstr "Експортиране"
 
 #: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
-#, fuzzy
-#| msgid "Connected"
 msgctxt "@info:status"
 msgid "Connected"
-msgstr "Свързано"
+msgstr "Свързан"
 
 #: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
-#, fuzzy
-#| msgid "Connecting"
 msgctxt "@info:status"
 msgid "Connecting"
 msgstr "Свързване"
@@ -215,47 +205,34 @@ msgid "Available"
 msgstr "Налични"
 
 #: qml/main.qml:151 ui/main.qml:224
-#, fuzzy
-#| msgid "Add new connection"
 msgctxt "@action:button"
 msgid "Add new connection"
 msgstr "Добавяне на нова връзка"
 
 #: qml/main.qml:169 ui/main.qml:242
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Forget selected connection"
-msgstr "Експортиране на избраната връзка"
+msgstr "Забравяне на избраната връзка"
 
 #: qml/main.qml:187 ui/main.qml:260
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Export selected connection"
 msgstr "Експортиране на избраната връзка"
 
 #: qml/main.qml:212 ui/main.qml:196
-#, fuzzy
-#| msgid "Configuration"
 msgctxt "@action:button"
 msgid "Configure"
-msgstr "Конфигурация"
+msgstr "Конфигуриране"
 
 #: qml/main.qml:239 ui/main.qml:314
-#, fuzzy
-#| msgctxt "@title:window"
-#| msgid "Remove Connection"
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "Премахване на връзка"
+msgstr "Забравяне на връзката"
 
 #: qml/main.qml:240 ui/main.qml:315
-#, fuzzy
-#| msgid "Do you want to remove the connection '%1'?"
 msgctxt "@info"
 msgid "Do you want to forget the connection '%1'?"
-msgstr "Искате ли да премахнете връзка '%1'?"
+msgstr "Искате ли да забравите връзка „%1“?"
 
 #: qml/main.qml:259
 msgctxt "@action:button Connect to network"
@@ -288,22 +265,16 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "Паролата трябва да бъде между 8 и 64 знака"
 
 #: ui/main.qml:73
-#, fuzzy
-#| msgid "Connection imported."
 msgctxt "@info"
 msgid "Connection imported."
 msgstr "Връзката е импортирана."
 
 #: ui/main.qml:79
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgctxt "@info"
 msgid "Failed to import VPN connection: %1"
 msgstr "Неуспешно импортиране на VPN връзка: %1"
 
 #: ui/main.qml:284
-#, fuzzy
-#| msgid "Connection name:"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Име на връзката:"
@@ -314,19 +285,11 @@ msgid "Import VPN Connection"
 msgstr "Импортиране на VPN връзка"
 
 #: ui/main.qml:345
-#, fuzzy
-#| msgid "Import the VPN configuration from \"%1\"?"
 msgctxt "@info"
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr "Импортиране на конфигурация на VPN от „%1“?"
+msgstr "Да се импортира ли конфигурация на VPN от „%1“?"
 
 #: ui/main.qml:350
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Импортиране"
-
-#~ msgid "Delete"
-#~ msgstr "Изтриване"
-
-#~ msgid "Remove selected connection"
-#~ msgstr "Премахване на избраната връзка"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm-qml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-22 00:52+0000\n"
-"PO-Revision-Date: 2026-10-09 19:38+0200\n"
+"PO-Revision-Date: 2026-10-22 05:22+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -28,11 +28,10 @@ msgid "my_shared_connection"
 msgstr "моя_точка_доступа"
 
 #: kcm.cpp:1123
-#, fuzzy, kde-format
-#| msgid "VPN connections (%1)"
+#, kde-format
 msgctxt "@title"
 msgid "New %1 connection"
-msgstr "Подключения VPN (%1)"
+msgstr "Новое подключение (%1)"
 
 #: kcm.cpp:1171
 #, kde-format

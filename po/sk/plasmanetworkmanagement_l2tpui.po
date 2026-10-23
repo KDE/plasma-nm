@@ -391,16 +391,13 @@ msgstr "Použiť výmenu kľúčov IKEv2"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
-#| "only if the server doesn’t support PFS.</p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Do this only if the "
 "server doesn’t support PFS.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>Zakázať perfect forward secrecy. Túto možnosť povoľte "
-"iba v prípade, že server nepodporuje PFS.</p></body></html>"
+"<html><head/><body><p>Zakázať perfect forward secrecy. Urobte to iba v "
+"prípade, že server nepodporuje PFS.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:332

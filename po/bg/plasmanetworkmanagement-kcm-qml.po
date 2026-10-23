@@ -32,7 +32,7 @@ msgstr "my_shared_connection"
 #| msgid "VPN connections (%1)"
 msgctxt "@title"
 msgid "New %1 connection"
-msgstr "VPN връзки (%1)"
+msgstr "Нова %1 връзка"
 
 #: kcm.cpp:1171
 #, kde-format

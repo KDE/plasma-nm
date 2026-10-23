@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-22 00:52+0000\n"
-"PO-Revision-Date: 2026-10-09 09:12-0300\n"
+"PO-Revision-Date: 2026-10-22 09:36-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -28,11 +28,10 @@ msgid "my_shared_connection"
 msgstr "minha_conexao_compartilhada"
 
 #: kcm.cpp:1123
-#, fuzzy, kde-format
-#| msgid "VPN connections (%1)"
+#, kde-format
 msgctxt "@title"
 msgid "New %1 connection"
-msgstr "Conexões VPN (%1)"
+msgstr "Nova conexão %1"
 
 #: kcm.cpp:1171
 #, kde-format

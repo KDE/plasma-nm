@@ -29,7 +29,7 @@ msgstr "my_shared_connection"
 #, kde-format
 msgctxt "@title"
 msgid "New %1 connection"
-msgstr ""
+msgstr "Nové pripojenie %1"
 
 #: kcm.cpp:1171
 #, kde-format
@@ -51,24 +51,24 @@ msgstr " (kópia)"
 #: kcm.cpp:1226
 #, kde-format
 msgid "VPN connections (%1)"
-msgstr ""
+msgstr "Pripojenia VPN (%1)"
 
 #: kcm.cpp:1226
 #, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "Všetky súbory (*)"
 
 #: kcm.cpp:1236
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Nebol zadaný žiadny súbor"
 
 #: kcm.cpp:1269 kcm.cpp:1278
 #, kde-format
 msgid "Could not read the WireGuard configuration"
-msgstr ""
+msgstr "Nepodarilo sa prečítať konfiguráciu WireGuard"
 
 #: kcm.cpp:1317
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Neznámy typ VPN"

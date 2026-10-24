@@ -139,10 +139,10 @@ QCoro::Task<> Handler::activateConnectionInternal(const QString &connection, con
                 auto notification = new KNotification(QStringLiteral("MissingVpnPlugin"), KNotification::Persistent, this);
                 notification->setComponentName(QStringLiteral("networkmanagement"));
                 notification->setTitle(con->name());
-                notification->setText(i18n("Plasma is missing support for '%1' VPN connections.", pluginBaseName));
+                notification->setText(i18nc("@info:status", "Plasma is missing support for '%1' VPN connections.", pluginBaseName));
                 notification->setIconName(QStringLiteral("dialog-error"));
 
-                auto reportBugAction = notification->addAction(i18n("Report Bug"));
+                auto reportBugAction = notification->addAction(i18nc("@action:button", "Report Bug"));
                 connect(reportBugAction, &KNotificationAction::activated, this, [notification] {
                     auto *job = new KIO::OpenUrlJob(QUrl(KOSRelease().bugReportUrl()));
                     job->setStartupId(notification->xdgActivationToken().toUtf8());
@@ -165,10 +165,10 @@ QCoro::Task<> Handler::activateConnectionInternal(const QString &connection, con
                 auto notification = new KNotification(QStringLiteral("MissingVpnPlugin"), KNotification::Persistent, this);
                 notification->setComponentName(QStringLiteral("networkmanagement"));
                 notification->setTitle(con->name());
-                notification->setText(i18n("NetworkManager is missing support for '%1' VPN connections.", pluginBaseName));
+                notification->setText(i18nc("@info:status", "NetworkManager is missing support for '%1' VPN connections.", pluginBaseName));
                 notification->setIconName(QStringLiteral("dialog-error"));
 
-                auto installAction = notification->addAction(i18n("Install"));
+                auto installAction = notification->addAction(i18nc("@action:button", "Install"));
                 connect(installAction, &KNotificationAction::activated, this, [notification, pluginBaseName] {
                     auto *job = new KIO::OpenUrlJob(QUrl(QStringLiteral("appstream:network-manager-") + pluginBaseName));
                     job->setStartupId(notification->xdgActivationToken().toUtf8());
@@ -214,7 +214,7 @@ QCoro::Task<> Handler::activateConnectionInternal(const QString &connection, con
     if (!reply.isValid()) {
         QString error = reply.error().message();
         KNotification *notification = new KNotification(QStringLiteral("FailedToActivateConnection"), KNotification::CloseOnTimeout, this);
-        notification->setTitle(i18n("Failed to activate %1", con->name()));
+        notification->setTitle(i18nc("@title", "Failed to activate %1", con->name()));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setText(error);
         notification->setIconName(QStringLiteral("dialog-warning"));
@@ -388,14 +388,14 @@ QCoro::Task<> Handler::addConnection(const NMVariantMapMap &map)
 
     if (!reply.isValid()) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToAddConnection"), KNotification::CloseOnTimeout, this);
-        notification->setTitle(i18n("Failed to add connection %1", connectionId));
+        notification->setTitle(i18nc("@title", "Failed to add connection %1", connectionId));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setText(reply.error().message());
         notification->setIconName(QStringLiteral("dialog-warning"));
         notification->sendEvent();
     } else {
         KNotification *notification = new KNotification(QStringLiteral("ConnectionAdded"), KNotification::CloseOnTimeout, this);
-        notification->setText(i18n("Connection %1 has been added", connectionId));
+        notification->setText(i18nc("@info:status", "Connection %1 has been added", connectionId));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setTitle(connectionId);
         notification->setIconName(QStringLiteral("dialog-information"));
@@ -417,7 +417,7 @@ void add_connection_cb(GObject *client, GAsyncResult *result, gpointer user_data
 
     if (error) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToAddConnection"), KNotification::CloseOnTimeout, data->handler);
-        notification->setTitle(i18n("Failed to add connection %1", data->id));
+        notification->setTitle(i18nc("@title", "Failed to add connection %1", data->id));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setText(QString::fromUtf8(error->message));
         notification->setIconName(QStringLiteral("dialog-warning"));
@@ -426,7 +426,7 @@ void add_connection_cb(GObject *client, GAsyncResult *result, gpointer user_data
         g_error_free(error);
     } else {
         KNotification *notification = new KNotification(QStringLiteral("ConnectionAdded"), KNotification::CloseOnTimeout, data->handler);
-        notification->setText(i18n("Connection %1 has been added", data->id));
+        notification->setText(i18nc("@info:status", "Connection %1 has been added", data->id));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setTitle(data->id);
         notification->setIconName(QStringLiteral("dialog-information"));
@@ -465,7 +465,7 @@ QCoro::Task<> Handler::addAndActivateConnectionDBus(const NMVariantMapMap &map, 
 
     if (!reply.isValid()) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToAddConnection"), KNotification::CloseOnTimeout, this);
-        notification->setTitle(i18n("Failed to add %1", name));
+        notification->setTitle(i18nc("@title", "Failed to add %1", name));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setText(reply.error().message());
         notification->setIconName(QStringLiteral("dialog-warning"));
@@ -505,7 +505,7 @@ QCoro::Task<> Handler::deactivateConnectionInternal(const QString &_connection, 
 
     if (alive && !reply.isValid()) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToDeactivateConnection"), KNotification::CloseOnTimeout, this);
-        notification->setTitle(i18n("Failed to deactivate %1", connection));
+        notification->setTitle(i18nc("@title", "Failed to deactivate %1", connection));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setText(reply.error().message());
         notification->setIconName(QStringLiteral("dialog-warning"));
@@ -643,14 +643,14 @@ QCoro::Task<> Handler::removeConnectionInternal(const QString &connection)
 
     if (!reply.isValid()) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToRemoveConnection"), KNotification::CloseOnTimeout, this);
-        notification->setTitle(i18n("Failed to forget %1", con->name()));
+        notification->setTitle(i18nc("@title", "Failed to forget %1", con->name()));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setText(reply.error().message());
         notification->setIconName(QStringLiteral("dialog-warning"));
         notification->sendEvent();
     } else {
         KNotification *notification = new KNotification(QStringLiteral("ConnectionRemoved"), KNotification::CloseOnTimeout, this);
-        notification->setText(i18n("Connection %1 has been forgotten", con->name()));
+        notification->setText(i18nc("@info:status", "Connection %1 has been forgotten", con->name()));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setTitle(con->name());
         notification->setIconName(QStringLiteral("dialog-information"));
@@ -669,14 +669,14 @@ QCoro::Task<> Handler::updateConnection(NetworkManager::Connection::Ptr connecti
     KNotification *notification = nullptr;
     if (!reply.isValid()) {
         notification = new KNotification(QStringLiteral("FailedToUpdateConnection"), KNotification::CloseOnTimeout);
-        notification->setTitle(i18n("Failed to update connection %1", connection->name()));
+        notification->setTitle(i18nc("@title", "Failed to update connection %1", connection->name()));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setText(reply.error().message());
         notification->setIconName(QStringLiteral("dialog-warning"));
         notification->sendEvent();
     } else {
         notification = new KNotification(QStringLiteral("ConnectionUpdated"), KNotification::CloseOnTimeout);
-        notification->setText(i18n("Connection %1 has been updated", connection->name()));
+        notification->setText(i18nc("@info:status", "Connection %1 has been updated", connection->name()));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setTitle(connection->name());
         notification->setIconName(QStringLiteral("dialog-information"));
@@ -882,7 +882,7 @@ QCoro::Task<> Handler::createHotspotInternal()
 
     if (!reply.isValid()) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToCreateHotspot"), KNotification::CloseOnTimeout, this);
-        notification->setTitle(i18n("Failed to create hotspot %1", Configuration::self().hotspotName()));
+        notification->setTitle(i18nc("@title", "Failed to create hotspot %1", Configuration::self().hotspotName()));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setText(reply.error().message());
         notification->setIconName(QStringLiteral("dialog-warning"));

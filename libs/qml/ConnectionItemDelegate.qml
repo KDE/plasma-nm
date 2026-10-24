@@ -94,21 +94,21 @@ FormCard.AbstractFormDelegate {
             }
             Controls.ToolButton {
                 icon.name: "network-connect"
-                text: i18n("Connect")
+                text: i18nc("@action:button Connect to network", "Connect")
                 visible: model.ConnectionState != PlasmaNM.Enums.Activated && root.editMode
                 display: Controls.ToolButton.IconOnly
                 onClicked: changeState()
             }
             Controls.ToolButton {
                 icon.name: "network-disconnect"
-                text: i18n("Disconnect")
+                text: i18nc("@action:button disconnect from network", "Disconnect")
                 visible: model.ConnectionState == PlasmaNM.Enums.Activated && root.editMode
                 display: Controls.ToolButton.IconOnly
                 onClicked: handler.deactivateConnection(model.ConnectionPath, DevicePath)
             }
             Controls.ToolButton {
                 icon.name: "configure"
-                text: i18n("Configure")
+                text: i18nc("@action:button", "Configure")
                 visible: (Uuid != "") && root.editMode
                 display: Controls.ToolButton.IconOnly
                 onClicked: {
@@ -117,7 +117,7 @@ FormCard.AbstractFormDelegate {
             }
             Controls.ToolButton {
                 icon.name: "entry-delete"
-                text: i18n("Forget")
+                text: i18nc("@action:button forget network connection", "Forget")
                 visible: (Uuid != "") && root.editMode
                 display: Controls.ToolButton.IconOnly
                 onClicked: handler.removeConnection(model.ConnectionPath)
@@ -145,7 +145,7 @@ FormCard.AbstractFormDelegate {
 
             }
         } else if (predictableWirelessPassword) {
-            connectionDialog.headingText = i18n("Connect to") + " " + ItemUniqueName;
+            connectionDialog.headingText = i18nc("@title:window", "Connect to %1", ItemUniqueName);
             connectionDialog.devicePath = DevicePath;
             connectionDialog.specificPath = SpecificPath;
             connectionDialog.securityType = SecurityType;

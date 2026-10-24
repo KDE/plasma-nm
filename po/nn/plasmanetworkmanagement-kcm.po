@@ -328,9 +328,3 @@ msgstr "Importera VPN-oppsett frå «%1»?"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importer"
-
-#~ msgid "Delete"
-#~ msgstr "Slett"
-
-#~ msgid "Remove selected connection"
-#~ msgstr "Fjern merkt tilkopling"

@@ -117,7 +117,7 @@ FormCard.AbstractFormDelegate {
             }
             Controls.ToolButton {
                 icon.name: "entry-delete"
-                text: i18n("Delete")
+                text: i18n("Forget")
                 visible: (Uuid != "") && root.editMode
                 display: Controls.ToolButton.IconOnly
                 onClicked: handler.removeConnection(model.ConnectionPath)

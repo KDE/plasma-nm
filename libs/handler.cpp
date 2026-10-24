@@ -643,14 +643,14 @@ QCoro::Task<> Handler::removeConnectionInternal(const QString &connection)
 
     if (!reply.isValid()) {
         KNotification *notification = new KNotification(QStringLiteral("FailedToRemoveConnection"), KNotification::CloseOnTimeout, this);
-        notification->setTitle(i18n("Failed to remove %1", con->name()));
+        notification->setTitle(i18n("Failed to forget %1", con->name()));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setText(reply.error().message());
         notification->setIconName(QStringLiteral("dialog-warning"));
         notification->sendEvent();
     } else {
         KNotification *notification = new KNotification(QStringLiteral("ConnectionRemoved"), KNotification::CloseOnTimeout, this);
-        notification->setText(i18n("Connection %1 has been removed", con->name()));
+        notification->setText(i18n("Connection %1 has been forgotten", con->name()));
         notification->setComponentName(QStringLiteral("networkmanagement"));
         notification->setTitle(con->name());
         notification->setIconName(QStringLiteral("dialog-information"));

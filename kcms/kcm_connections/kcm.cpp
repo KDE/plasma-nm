@@ -55,31 +55,22 @@ namespace
 {
 bool connectionSortOrder(const NetworkManager::Connection::Ptr &left, const NetworkManager::Connection::Ptr &right)
 {
-    const QString leftName = left->settings()->id();
-    const UiUtils::SortedConnectionType leftType = UiUtils::connectionTypeToSortedType(left->settings()->connectionType());
-    const QDateTime leftDate = left->settings()->timestamp();
+    const auto leftSettings = left->settings();
+    const auto rightSettings = right->settings();
 
-    const QString rightName = right->settings()->id();
-    const UiUtils::SortedConnectionType rightType = UiUtils::connectionTypeToSortedType(right->settings()->connectionType());
-    const QDateTime rightDate = right->settings()->timestamp();
-
-    if (leftType < rightType) {
-        return true;
-    } else if (leftType > rightType) {
-        return false;
+    const auto leftType = UiUtils::connectionTypeToSortedType(leftSettings->connectionType());
+    const auto rightType = UiUtils::connectionTypeToSortedType(rightSettings->connectionType());
+    if (leftType != rightType) {
+        return leftType < rightType;
     }
 
-    if (leftDate > rightDate) {
-        return true;
-    } else if (leftDate < rightDate) {
-        return false;
+    const auto leftDate = leftSettings->timestamp();
+    const auto rightDate = rightSettings->timestamp();
+    if (leftDate != rightDate) {
+        return leftDate > rightDate;
     }
 
-    if (QString::localeAwareCompare(leftName, rightName) > 0) {
-        return true;
-    } else {
-        return false;
-    }
+    return QString::localeAwareCompare(leftSettings->id(), rightSettings->id()) > 0;
 }
 
 bool isSelectable(const NetworkManager::Connection::Ptr &connection)

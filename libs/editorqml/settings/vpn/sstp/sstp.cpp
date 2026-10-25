@@ -16,7 +16,7 @@ const QLatin1String YesString("yes");
 }
 
 SstpSetting::SstpSetting(QObject *parent)
-    : QObject(parent)
+    : VpnSettingBase(parent)
 {
 }
 

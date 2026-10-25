@@ -27,7 +27,7 @@ QString urlToPath(const QString &url)
 }
 
 StrongswanSetting::StrongswanSetting(QObject *parent)
-    : QObject(parent)
+    : VpnSettingBase(parent)
 {
 }
 

@@ -109,6 +109,9 @@ set(SETTINGS_SRCS
   settings/vpn/strongswan/strongswan.cpp
   settings/vpn/strongswan/strongswan.h
   settings/vpn/strongswan/nm-strongswan-service.h
+
+  settings/vpn/vpnvirtualbase.cpp
+  settings/vpn/vpnvirtualbase.h
 )
 
 set(QML_SRCS

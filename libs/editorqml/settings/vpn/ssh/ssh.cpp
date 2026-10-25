@@ -13,7 +13,7 @@
 #include <QUrl>
 
 SshSetting::SshSetting(QObject *parent)
-    : QObject(parent)
+    : VpnSettingBase(parent)
     , m_port(NM_SSH_DEFAULT_PORT)
     , m_mtu(NM_SSH_DEFAULT_MTU)
     , m_extraOptions(QLatin1String(NM_SSH_DEFAULT_EXTRA_OPTS))

@@ -42,7 +42,7 @@ void insertPasswordKeys(NMStringMap &data, const char *flagsKey, const char *inp
 }
 
 LibreswanSetting::LibreswanSetting(QObject *parent)
-    : QObject(parent)
+    : VpnSettingBase(parent)
 {
 }
 

@@ -52,7 +52,7 @@ QString urlToPath(const QString &url)
 }
 
 FortisslvpnSetting::FortisslvpnSetting(QObject *parent)
-    : QObject(parent)
+    : VpnSettingBase(parent)
 {
 }
 

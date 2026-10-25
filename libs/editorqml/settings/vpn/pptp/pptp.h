@@ -9,12 +9,13 @@
 
 #include "plasmanm_editorqml_export.h"
 
+#include "vpnvirtualbase.h"
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/VpnSetting>
 
 #include <QObject>
 
-class PLASMANM_EDITORQML_EXPORT PptpSetting : public QObject
+class PLASMANM_EDITORQML_EXPORT PptpSetting : public VpnSettingBase
 {
     Q_OBJECT
 
@@ -73,9 +74,9 @@ public:
     void loadConfig(const NetworkManager::VpnSetting::Ptr &setting);
     void loadSecrets(const NetworkManager::VpnSetting::Ptr &setting);
     QVariantMap setting() const;
-    bool isValid() const;
+    bool isValid() const override;
 
-    QString serviceType() const;
+    QString serviceType() const override;
 
     QString gateway() const;
     void setGateway(const QString &gateway);

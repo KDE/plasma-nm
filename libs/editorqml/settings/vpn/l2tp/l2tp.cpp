@@ -123,7 +123,7 @@ QString decodePresharedKey(const QString &key)
 }
 
 L2tpSetting::L2tpSetting(QObject *parent)
-    : QObject(parent)
+    : VpnSettingBase(parent)
     , m_ikeLifetime(defaultIkeLifetime())
     , m_saLifetime(defaultSaLifetime())
 {

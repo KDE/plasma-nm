@@ -47,7 +47,7 @@ QString flagsFromOption(VpncSetting::PasswordOption option)
 }
 
 VpncSetting::VpncSetting(QObject *parent)
-    : QObject(parent)
+    : VpnSettingBase(parent)
 {
 }
 

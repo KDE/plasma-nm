@@ -9,7 +9,7 @@
 #include "nm-iodine-service.h"
 
 IodineSetting::IodineSetting(QObject *parent)
-    : QObject(parent)
+    : VpnSettingBase(parent)
 {
 }
 

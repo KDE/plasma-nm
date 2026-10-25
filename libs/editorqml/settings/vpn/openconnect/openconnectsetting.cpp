@@ -114,7 +114,7 @@ QString urlToPath(const QString &url)
 }
 
 OpenconnectSetting::OpenconnectSetting(QObject *parent)
-    : QObject(parent)
+    : VpnSettingBase(parent)
 {
 }
 

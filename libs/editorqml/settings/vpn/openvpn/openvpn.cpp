@@ -10,7 +10,7 @@
 #include "openvpnhelpers_p.h"
 
 OpenvpnSetting::OpenvpnSetting(QObject *parent)
-    : QObject(parent)
+    : VpnSettingBase(parent)
     , m_advanced(new OpenvpnAdvancedSetting(this))
 {
     connect(m_advanced, &OpenvpnAdvancedSetting::changed, this, &OpenvpnSetting::validChanged);

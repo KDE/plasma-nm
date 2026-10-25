@@ -12,10 +12,11 @@
 #include <NetworkManagerQt/ConnectionSettings>
 #include <NetworkManagerQt/VpnSetting>
 
+#include "vpnvirtualbase.h"
 #include <QObject>
 #include <QUrl>
 
-class PLASMANM_EDITORQML_EXPORT FortisslvpnSetting : public QObject
+class PLASMANM_EDITORQML_EXPORT FortisslvpnSetting : public VpnSettingBase
 {
     Q_OBJECT
 
@@ -55,9 +56,9 @@ public:
     void loadConfig(const NetworkManager::VpnSetting::Ptr &setting);
     void loadSecrets(const NetworkManager::VpnSetting::Ptr &setting);
     QVariantMap setting() const;
-    bool isValid() const;
 
-    QString serviceType() const;
+    bool isValid() const override;
+    QString serviceType() const override;
 
     QString gateway() const;
     void setGateway(const QString &gateway);

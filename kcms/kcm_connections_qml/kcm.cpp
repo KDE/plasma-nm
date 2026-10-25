@@ -10,6 +10,7 @@
 #include "plasma_nm_kcm_qml.h"
 #include "uiutils.h"
 #include "vpnc.h"
+#include "vpnvirtualbase.h"
 
 #include <KLocalizedString>
 #include <KMessageBox>
@@ -445,38 +446,24 @@ void KCMNetworkManagementQml::setConnectionName(const QString &name)
 
 bool KCMNetworkManagementQml::vpnSettingValid() const
 {
-    if (m_vpnServiceType == m_vpnSshSetting->serviceType()) {
-        return m_vpnSshSetting->isValid();
-    }
-    if (m_vpnServiceType == m_vpnSstpSetting->serviceType()) {
-        return m_vpnSstpSetting->isValid();
-    }
-    if (m_vpnServiceType == m_vpnVpncSetting->serviceType()) {
-        return m_vpnVpncSetting->isValid();
-    }
-    if (m_vpnServiceType == m_vpnFortisslvpnSetting->serviceType()) {
-        return m_vpnFortisslvpnSetting->isValid();
-    }
-    if (m_vpnServiceType == m_vpnIodineSetting->serviceType()) {
-        return m_vpnIodineSetting->isValid();
-    }
-    if (m_vpnServiceType == m_vpnLibreswanSetting->serviceType()) {
-        return m_vpnLibreswanSetting->isValid();
-    }
-    if (m_vpnServiceType == m_vpnStrongswanSetting->serviceType()) {
-        return m_vpnStrongswanSetting->isValid();
-    }
-    if (m_vpnServiceType == m_vpnL2tpSetting->serviceType()) {
-        return m_vpnL2tpSetting->isValid();
-    }
-    if (m_vpnServiceType == m_vpnPptpSetting->serviceType()) {
-        return m_vpnPptpSetting->isValid();
-    }
-    if (m_vpnServiceType == m_vpnOpenconnectSetting->serviceType()) {
-        return m_vpnOpenconnectSetting->isValid();
-    }
-    if (m_vpnServiceType == m_vpnOpenvpnSetting->serviceType()) {
-        return m_vpnOpenvpnSetting->isValid();
+    const QList<VpnSettingBase *> vpnSettings = {
+        m_vpnSshSetting,
+        m_vpnSstpSetting,
+        m_vpnVpncSetting,
+        m_vpnFortisslvpnSetting,
+        m_vpnIodineSetting,
+        m_vpnLibreswanSetting,
+        m_vpnStrongswanSetting,
+        m_vpnL2tpSetting,
+        m_vpnPptpSetting,
+        m_vpnOpenconnectSetting,
+        m_vpnOpenvpnSetting,
+    };
+
+    for (const VpnSettingBase *setting : vpnSettings) {
+        if (setting && m_vpnServiceType == setting->serviceType()) {
+            return setting->isValid();
+        }
     }
 
     return true;

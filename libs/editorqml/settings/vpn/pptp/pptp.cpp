@@ -43,7 +43,7 @@ QString flagsFromOption(PptpSetting::PasswordOption option)
 }
 
 PptpSetting::PptpSetting(QObject *parent)
-    : QObject(parent)
+    : VpnSettingBase(parent)
 {
 }
 

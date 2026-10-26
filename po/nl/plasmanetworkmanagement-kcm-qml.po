@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:52+0000\n"
+"POT-Creation-Date: 2026-10-26 00:51+0000\n"
 "PO-Revision-Date: 2026-10-22 18:22+0200\n"
 "Last-Translator: Freek de Kruijf <freekdekruijf@kde.nl>\n"
 "Language-Team: \n"
@@ -17,60 +17,60 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Lokalize 26.08.2\n"
 
-#: kcm.cpp:1023
+#: kcm.cpp:1010
 #, kde-format
 msgid "Failed to get secrets for %1"
 msgstr "Geheimen ophalen voor %1 is mislukt"
 
-#: kcm.cpp:1065
+#: kcm.cpp:1052
 #, kde-format
 msgid "my_shared_connection"
 msgstr "mijn_gedeelde_verbinding"
 
-#: kcm.cpp:1123
+#: kcm.cpp:1110
 #, kde-format
 msgctxt "@title"
 msgid "New %1 connection"
 msgstr "Nieuwe verbinding voor %1"
 
-#: kcm.cpp:1171
+#: kcm.cpp:1158
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr "Wilt u gemaakte wijzigen aan de verbinding '%1' opslaan?"
 
-#: kcm.cpp:1174
+#: kcm.cpp:1161
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Wijzigingen opslaan"
 
-#: kcm.cpp:1203
+#: kcm.cpp:1190
 #, kde-format
 msgctxt "Suffix appended to duplicated connection name"
 msgid " (Copy)"
 msgstr " (Kopiëren)"
 
-#: kcm.cpp:1226
+#: kcm.cpp:1213
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr "VPN-verbindingen (%1)"
 
-#: kcm.cpp:1226
+#: kcm.cpp:1213
 #, kde-format
 msgid "All files (*)"
 msgstr "Alle bestanden (*)"
 
-#: kcm.cpp:1236
+#: kcm.cpp:1223
 #, kde-format
 msgid "No file was provided"
 msgstr "Bestand is niet geleverd"
 
-#: kcm.cpp:1269 kcm.cpp:1278
+#: kcm.cpp:1256 kcm.cpp:1265
 #, kde-format
 msgid "Could not read the WireGuard configuration"
 msgstr "Kon WireGuard-configuratie niet lezen"
 
-#: kcm.cpp:1317
+#: kcm.cpp:1304
 #, kde-format
 msgid "Unknown VPN type"
 msgstr "Onbekend type VPN"

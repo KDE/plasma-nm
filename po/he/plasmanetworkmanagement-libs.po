@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:52+0000\n"
+"POT-Creation-Date: 2026-10-26 00:51+0000\n"
 "PO-Revision-Date: 2026-10-09 11:19+0300\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -1453,7 +1453,7 @@ msgstr "עריכה…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:85 editor/settings/ui/bridge.ui:82
-#: editor/settings/ui/team.ui:86 qml/ConnectionItemDelegate.qml:120
+#: editor/settings/ui/team.ui:86
 #, kde-format
 msgid "Delete"
 msgstr "מחיקה"
@@ -4668,7 +4668,7 @@ msgstr "תמיד לבקש"
 msgid "Not required"
 msgstr "לא דרוש"
 
-#: editorqml/qml/PasswordPromptDialog.qml:24
+#: editorqml/qml/PasswordPromptDialog.qml:24 qml/ConnectionItemDelegate.qml:97
 #, kde-format
 msgctxt "@action:button Connect to network"
 msgid "Connect"
@@ -7234,72 +7234,100 @@ msgid "Automatic"
 msgstr "אוטומטית"
 
 #: handler.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Plasma is missing support for '%1' VPN connections."
+msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "לפלזמה חסרה תמיכה בחיבורי VPN מסוג ‚%1’."
 
 #: handler.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Report Bug"
+msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "דיווח על תקלה"
 
 #: handler.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "NetworkManager is missing support for '%1' VPN connections."
+msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "ב־NetworkManager חסרה תמיכה בחיבורי VPN מסוג ‚%1’."
 
 #: handler.cpp:171
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "@action:button"
 msgid "Install"
 msgstr "התקנה"
 
 #: handler.cpp:217
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to activate %1"
+msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "הפעלת %1 נכשלה"
 
 #: handler.cpp:391 handler.cpp:420
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to add connection %1"
+msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "הוספת החיבור %1 נכשלה"
 
 #: handler.cpp:398 handler.cpp:429
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been added"
+msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "החיבור %1 נוסף"
 
 #: handler.cpp:468
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to add %1"
+msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "הוספת %1 נכשלה"
 
 #: handler.cpp:508
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to deactivate %1"
+msgctxt "@title"
 msgid "Failed to deactivate %1"
 msgstr "ביטול %1 נכשל"
 
 #: handler.cpp:646
-#, kde-format
-msgid "Failed to remove %1"
+#, fuzzy, kde-format
+#| msgid "Failed to remove %1"
+msgctxt "@title"
+msgid "Failed to forget %1"
 msgstr "הסרת %1 נכשלה"
 
 #: handler.cpp:653
-#, kde-format
-msgid "Connection %1 has been removed"
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been removed"
+msgctxt "@info:status"
+msgid "Connection %1 has been forgotten"
 msgstr "החיבור %1 הוסר"
 
 #: handler.cpp:672
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to update connection %1"
+msgctxt "@title"
 msgid "Failed to update connection %1"
 msgstr "עדכון החיבור %1 נכשל"
 
 #: handler.cpp:679
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been updated"
+msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "החיבור %1 עודכן"
 
 #: handler.cpp:885
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to create hotspot %1"
+msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "יצירת הנקודה החמה %1 נכשלה"
 
@@ -7503,25 +7531,32 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "לא ידוע"
 
-#: qml/ConnectionItemDelegate.qml:97
-#, kde-format
-msgid "Connect"
-msgstr "התחברות"
-
 #: qml/ConnectionItemDelegate.qml:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disconnect"
+msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "ניתוק"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgctxt "@action:button"
 msgid "Configure"
 msgstr "הגדרה"
 
-#: qml/ConnectionItemDelegate.qml:148
+#: qml/ConnectionItemDelegate.qml:120
 #, kde-format
-msgid "Connect to"
-msgstr "להתחבר אל"
+msgctxt "@action:button forget network connection"
+msgid "Forget"
+msgstr ""
+
+#: qml/ConnectionItemDelegate.qml:148
+#, fuzzy, kde-format
+#| msgid "Connected to %1"
+msgctxt "@title:window"
+msgid "Connect to %1"
+msgstr "מחובר אל %1"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
@@ -7537,6 +7572,12 @@ msgstr "העלאה"
 #, kde-format
 msgid "Download"
 msgstr "הורדה"
+
+#~ msgid "Connect"
+#~ msgstr "התחברות"
+
+#~ msgid "Connect to"
+#~ msgstr "להתחבר אל"
 
 #~ msgid "BSSID:"
 #~ msgstr "שם רשת נסתרת:"

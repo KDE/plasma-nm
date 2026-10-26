@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:52+0000\n"
+"POT-Creation-Date: 2026-10-26 00:51+0000\n"
 "PO-Revision-Date: 2026-10-22 09:36-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Portuguese <kde-i18n-pt_BR@kde.org>\n"
@@ -1460,7 +1460,7 @@ msgstr "Editar…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:85 editor/settings/ui/bridge.ui:82
-#: editor/settings/ui/team.ui:86 qml/ConnectionItemDelegate.qml:120
+#: editor/settings/ui/team.ui:86
 #, kde-format
 msgid "Delete"
 msgstr "Excluir"
@@ -4696,7 +4696,7 @@ msgstr "Sempre perguntar"
 msgid "Not required"
 msgstr "Não requerido"
 
-#: editorqml/qml/PasswordPromptDialog.qml:24
+#: editorqml/qml/PasswordPromptDialog.qml:24 qml/ConnectionItemDelegate.qml:97
 #, kde-format
 msgctxt "@action:button Connect to network"
 msgid "Connect"
@@ -7288,79 +7288,107 @@ msgid "Automatic"
 msgstr "Automático"
 
 #: handler.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Plasma is missing support for '%1' VPN connections."
+msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "O Plasma não tem suporte para conexões VPN '%1'."
 
 #: handler.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Report Bug"
+msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "Relatar bug"
 
 #: handler.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "NetworkManager is missing support for '%1' VPN connections."
+msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "O NetworkManager não tem suporte para conexões VPN '%1'."
 
 #: handler.cpp:171
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "@action:button"
 msgid "Install"
 msgstr "Instalar"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
 #: handler.cpp:217
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to activate %1"
+msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "Falha ao ativar a %1"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
 #: handler.cpp:391 handler.cpp:420
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to add connection %1"
+msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "Falha ao adicionar a conexão %1"
 
 #: handler.cpp:398 handler.cpp:429
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been added"
+msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "A conexão %1 foi adicionada"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
 #: handler.cpp:468
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to add %1"
+msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "Falha ao adicionar a %1"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
 #: handler.cpp:508
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to deactivate %1"
+msgctxt "@title"
 msgid "Failed to deactivate %1"
 msgstr "Falha ao desativar a %1"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
 #: handler.cpp:646
-#, kde-format
-msgid "Failed to remove %1"
+#, fuzzy, kde-format
+#| msgid "Failed to remove %1"
+msgctxt "@title"
+msgid "Failed to forget %1"
 msgstr "Falha ao remover a %1"
 
 #: handler.cpp:653
-#, kde-format
-msgid "Connection %1 has been removed"
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been removed"
+msgctxt "@info:status"
+msgid "Connection %1 has been forgotten"
 msgstr "A conexão %1 foi removida"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
 #: handler.cpp:672
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to update connection %1"
+msgctxt "@title"
 msgid "Failed to update connection %1"
 msgstr "Falha ao atualizar a conexão %1"
 
 #: handler.cpp:679
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been updated"
+msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "A conexão %1 foi atualizada"
 
 # Manter a tradução com o menor tamanho possível para ficar totalmente visível. (Alvarenga)
 #: handler.cpp:885
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to create hotspot %1"
+msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "Falha ao criar o ponto de acesso %1"
 
@@ -7564,25 +7592,32 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Desconhecido"
 
-#: qml/ConnectionItemDelegate.qml:97
-#, kde-format
-msgid "Connect"
-msgstr "Conectar"
-
 #: qml/ConnectionItemDelegate.qml:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disconnect"
+msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "Desconectar"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgctxt "@action:button"
 msgid "Configure"
 msgstr "Configurar"
 
-#: qml/ConnectionItemDelegate.qml:148
+#: qml/ConnectionItemDelegate.qml:120
 #, kde-format
-msgid "Connect to"
-msgstr "Conectar a"
+msgctxt "@action:button forget network connection"
+msgid "Forget"
+msgstr ""
+
+#: qml/ConnectionItemDelegate.qml:148
+#, fuzzy, kde-format
+#| msgid "Connected to %1"
+msgctxt "@title:window"
+msgid "Connect to %1"
+msgstr "Conectado a %1"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
@@ -7598,6 +7633,12 @@ msgstr "Upload"
 #, kde-format
 msgid "Download"
 msgstr "Download"
+
+#~ msgid "Connect"
+#~ msgstr "Conectar"
+
+#~ msgid "Connect to"
+#~ msgstr "Conectar a"
 
 #~ msgid "BSSID:"
 #~ msgstr "BSSID:"

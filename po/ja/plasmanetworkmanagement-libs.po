@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanm_editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:52+0000\n"
+"POT-Creation-Date: 2026-10-26 00:51+0000\n"
 "PO-Revision-Date: 2026-07-06 23:27+0900\n"
 "Last-Translator: Ryuichi Yamada <ryuichi_ya220@outlook.jp>\n"
 "Language-Team: Japanese <kde-jp@kde.org>\n"
@@ -1454,7 +1454,7 @@ msgstr "編集..."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:85 editor/settings/ui/bridge.ui:82
-#: editor/settings/ui/team.ui:86 qml/ConnectionItemDelegate.qml:120
+#: editor/settings/ui/team.ui:86
 #, kde-format
 msgid "Delete"
 msgstr "削除"
@@ -4547,7 +4547,7 @@ msgstr ""
 msgid "Not required"
 msgstr ""
 
-#: editorqml/qml/PasswordPromptDialog.qml:24
+#: editorqml/qml/PasswordPromptDialog.qml:24 qml/ConnectionItemDelegate.qml:97
 #, fuzzy, kde-format
 #| msgid "Connected"
 msgctxt "@action:button Connect to network"
@@ -7209,71 +7209,97 @@ msgstr "自動"
 
 #: handler.cpp:142
 #, kde-format
+msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr ""
 
 #: handler.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Report Bug"
+msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "バグを報告"
 
 #: handler.cpp:168
 #, kde-format
+msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 
 #: handler.cpp:171
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "@action:button"
 msgid "Install"
 msgstr "インストール"
 
 #: handler.cpp:217
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to activate %1"
+msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "%1 の有効化に失敗"
 
 #: handler.cpp:391 handler.cpp:420
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to add connection %1"
+msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "接続 %1 の追加に失敗"
 
 #: handler.cpp:398 handler.cpp:429
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been added"
+msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "接続 %1 が追加されました"
 
 #: handler.cpp:468
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to add %1"
+msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "%1 の追加に失敗"
 
 #: handler.cpp:508
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to deactivate %1"
+msgctxt "@title"
 msgid "Failed to deactivate %1"
 msgstr "%1 の無効化に失敗"
 
 #: handler.cpp:646
-#, kde-format
-msgid "Failed to remove %1"
+#, fuzzy, kde-format
+#| msgid "Failed to remove %1"
+msgctxt "@title"
+msgid "Failed to forget %1"
 msgstr "%1 の削除に失敗"
 
 #: handler.cpp:653
-#, kde-format
-msgid "Connection %1 has been removed"
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been removed"
+msgctxt "@info:status"
+msgid "Connection %1 has been forgotten"
 msgstr "接続 %1 は削除されました"
 
 #: handler.cpp:672
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to update connection %1"
+msgctxt "@title"
 msgid "Failed to update connection %1"
 msgstr "接続 %1 の更新に失敗"
 
 #: handler.cpp:679
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been updated"
+msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "接続 %1 は更新されました"
 
 #: handler.cpp:885
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to create hotspot %1"
+msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "ホットスポット %1 の作成に失敗"
 
@@ -7477,28 +7503,32 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "不明"
 
-#: qml/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgid "Connected"
-msgid "Connect"
-msgstr "接続済み"
-
 #: qml/ConnectionItemDelegate.qml:104
 #, fuzzy, kde-format
 #| msgid "Disconnected"
+msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "切断済み"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Connection"
+msgctxt "@action:button"
 msgid "Configure"
+msgstr "接続"
+
+#: qml/ConnectionItemDelegate.qml:120
+#, kde-format
+msgctxt "@action:button forget network connection"
+msgid "Forget"
 msgstr ""
 
 #: qml/ConnectionItemDelegate.qml:148
 #, fuzzy, kde-format
-#| msgid "Connection"
-msgid "Connect to"
-msgstr "接続"
+#| msgid "Connected to %1"
+msgctxt "@title:window"
+msgid "Connect to %1"
+msgstr "%1 に接続済み"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
@@ -7514,3 +7544,13 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Connected"
+#~ msgid "Connect"
+#~ msgstr "接続済み"
+
+#, fuzzy
+#~| msgid "Connection"
+#~ msgid "Connect to"
+#~ msgstr "接続"

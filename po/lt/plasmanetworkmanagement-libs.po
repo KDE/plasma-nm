@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:52+0000\n"
-"PO-Revision-Date: 2026-10-09 18:35+0300\n"
+"POT-Creation-Date: 2026-10-26 00:51+0000\n"
+"PO-Revision-Date: 2026-10-26 00:21+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : n%10>=2 && (n%100<10 || n"
 "%100>=20) ? 1 : n%10==0 || (n%100>10 && n%100<20) ? 2 : 3);\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -1464,7 +1464,7 @@ msgstr "Taisyti…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:85 editor/settings/ui/bridge.ui:82
-#: editor/settings/ui/team.ui:86 qml/ConnectionItemDelegate.qml:120
+#: editor/settings/ui/team.ui:86
 #, kde-format
 msgid "Delete"
 msgstr "Ištrinti"
@@ -4318,15 +4318,13 @@ msgid "Create new connections as system connections"
 msgstr "Sukurti naujus ryšius kaip sistemos ryšius"
 
 #: editorqml/qml/CreateConnectionDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "New Connection (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Connection"
-msgstr "Naujas ryšys (%1)"
+msgstr "Naujas ryšys"
 
 #: editorqml/qml/CreateConnectionDialog.qml:84
-#, fuzzy, kde-format
-#| msgid "Connection name:"
+#, kde-format
 msgctxt "@label"
 msgid "Connection name:"
 msgstr "Ryšio pavadinimas:"
@@ -4334,15 +4332,13 @@ msgstr "Ryšio pavadinimas:"
 #: editorqml/qml/dialogs/VpnPage.qml:28 editorqml/qml/dialogs/WiredPage.qml:23
 #: editorqml/qml/dialogs/WireGuardPage.qml:24
 #: editorqml/qml/dialogs/WirelessPage.qml:23
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
-msgstr "Bendra"
+msgstr "Bendros"
 
 #: editorqml/qml/dialogs/VpnPage.qml:32
-#, fuzzy, kde-format
-#| msgid "VPN"
+#, kde-format
 msgctxt "@title"
 msgid "VPN"
 msgstr "VPN"
@@ -4350,8 +4346,7 @@ msgstr "VPN"
 #: editorqml/qml/dialogs/VpnPage.qml:35 editorqml/qml/dialogs/WiredPage.qml:32
 #: editorqml/qml/dialogs/WireGuardPage.qml:30
 #: editorqml/qml/dialogs/WirelessPage.qml:32
-#, fuzzy, kde-format
-#| msgid "IPv4"
+#, kde-format
 msgctxt "@title"
 msgid "IPv4"
 msgstr "IPv4"
@@ -4359,43 +4354,37 @@ msgstr "IPv4"
 #: editorqml/qml/dialogs/VpnPage.qml:39 editorqml/qml/dialogs/WiredPage.qml:35
 #: editorqml/qml/dialogs/WireGuardPage.qml:33
 #: editorqml/qml/dialogs/WirelessPage.qml:35
-#, fuzzy, kde-format
-#| msgid "IPv6"
+#, kde-format
 msgctxt "@title"
 msgid "IPv6"
 msgstr "IPv6"
 
 #: editorqml/qml/dialogs/WiredPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Wired"
+#, kde-format
 msgctxt "@title"
 msgid "Wired"
 msgstr "Laidinis"
 
 #: editorqml/qml/dialogs/WiredPage.qml:29
-#, fuzzy, kde-format
-#| msgid "802.1x Security"
+#, kde-format
 msgctxt "@title"
 msgid "802.1x Security"
 msgstr "802.1x saugumas"
 
 #: editorqml/qml/dialogs/WireGuardPage.qml:27
-#, fuzzy, kde-format
-#| msgid "WireGuard"
+#, kde-format
 msgctxt "@title"
 msgid "WireGuard"
 msgstr "WireGuard"
 
 #: editorqml/qml/dialogs/WirelessPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Wi-Fi"
+#, kde-format
 msgctxt "@title"
 msgid "Wi-Fi"
 msgstr "Belaidis (Wi-Fi)"
 
 #: editorqml/qml/dialogs/WirelessPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Wi-Fi Security"
+#, kde-format
 msgctxt "@title"
 msgid "Wi-Fi Security"
 msgstr "Belaidžio (Wi-Fi) saugumas"
@@ -4720,7 +4709,7 @@ msgstr "Visada prašomas"
 msgid "Not required"
 msgstr "Nebūtinas"
 
-#: editorqml/qml/PasswordPromptDialog.qml:24
+#: editorqml/qml/PasswordPromptDialog.qml:24 qml/ConnectionItemDelegate.qml:97
 #, kde-format
 msgctxt "@action:button Connect to network"
 msgid "Connect"
@@ -7327,72 +7316,100 @@ msgid "Automatic"
 msgstr "Automatinis"
 
 #: handler.cpp:142
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Plasma is missing support for '%1' VPN connections."
+msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma trūksta palaikymo, skirto „%1“ VPN ryšiams."
 
 #: handler.cpp:145
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Report Bug"
+msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "Pranešti apie programos klaidą"
 
 #: handler.cpp:168
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "NetworkManager is missing support for '%1' VPN connections."
+msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager trūksta palaikymo, skirto „%1“ VPN ryšiams."
 
 #: handler.cpp:171
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Install"
+msgctxt "@action:button"
 msgid "Install"
 msgstr "Įdiegti"
 
 #: handler.cpp:217
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to activate %1"
+msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "Nepavyko aktyvuoti %1"
 
 #: handler.cpp:391 handler.cpp:420
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to add connection %1"
+msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "Nepavyko pridėti ryšio %1"
 
 #: handler.cpp:398 handler.cpp:429
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been added"
+msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "Ryšys %1 pridėtas"
 
 #: handler.cpp:468
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to add %1"
+msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "Nepavyko pridėti %1"
 
 #: handler.cpp:508
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to deactivate %1"
+msgctxt "@title"
 msgid "Failed to deactivate %1"
 msgstr "Nepavyko pasyvinti %1"
 
 #: handler.cpp:646
-#, kde-format
-msgid "Failed to remove %1"
+#, fuzzy, kde-format
+#| msgid "Failed to remove %1"
+msgctxt "@title"
+msgid "Failed to forget %1"
 msgstr "Nepavyko pašalinti %1"
 
 #: handler.cpp:653
-#, kde-format
-msgid "Connection %1 has been removed"
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been removed"
+msgctxt "@info:status"
+msgid "Connection %1 has been forgotten"
 msgstr "Ryšys %1 pašalintas"
 
 #: handler.cpp:672
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to update connection %1"
+msgctxt "@title"
 msgid "Failed to update connection %1"
 msgstr "Nepavyko atnaujinti ryšio %1"
 
 #: handler.cpp:679
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Connection %1 has been updated"
+msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "Ryšys %1 atnaujintas"
 
 #: handler.cpp:885
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Failed to create hotspot %1"
+msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "Nepavyko sukurti viešosios prieigos taško %1"
 
@@ -7596,25 +7613,32 @@ msgctxt "global connection state"
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: qml/ConnectionItemDelegate.qml:97
-#, kde-format
-msgid "Connect"
-msgstr "Prisijungti"
-
 #: qml/ConnectionItemDelegate.qml:104
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Disconnect"
+msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "Atsijungti"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Configure"
+msgctxt "@action:button"
 msgid "Configure"
 msgstr "Konfigūruoti"
 
-#: qml/ConnectionItemDelegate.qml:148
+#: qml/ConnectionItemDelegate.qml:120
 #, kde-format
-msgid "Connect to"
-msgstr "Prisijungti prie"
+msgctxt "@action:button forget network connection"
+msgid "Forget"
+msgstr ""
+
+#: qml/ConnectionItemDelegate.qml:148
+#, fuzzy, kde-format
+#| msgid "Connected to %1"
+msgctxt "@title:window"
+msgid "Connect to %1"
+msgstr "Prisijungta prie %1"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
@@ -7630,6 +7654,12 @@ msgstr "Išsiuntimas"
 #, kde-format
 msgid "Download"
 msgstr "Atsiuntimas"
+
+#~ msgid "Connect"
+#~ msgstr "Prisijungti"
+
+#~ msgid "Connect to"
+#~ msgstr "Prisijungti prie"
 
 #~ msgid "BSSID:"
 #~ msgstr "BSSID:"

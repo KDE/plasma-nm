@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-22 00:52+0000\n"
+"POT-Creation-Date: 2026-10-27 01:01+0000\n"
 "PO-Revision-Date: 2019-12-12 22:22+0000\n"
 "Last-Translator: Sabu Siyad <ssiyad@tuta.io>\n"
 "Language-Team: Swathanthra|സ്വതന്ത്ര Malayalam|മലയാളം Computing|കമ്പ്യൂട്ടിങ്ങ് <smc."
@@ -18,74 +18,74 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: kcm.cpp:299
+#: kcm.cpp:269
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr ""
 
-#: kcm.cpp:300 ui/main.qml:344
+#: kcm.cpp:270 ui/main.qml:344
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
 msgstr ""
 
-#: kcm.cpp:301
+#: kcm.cpp:271
 #, kde-format
 msgid "Import"
 msgstr ""
 
-#: kcm.cpp:308 kcm.cpp:381
+#: kcm.cpp:278 kcm.cpp:350
 #, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr ""
 
-#: kcm.cpp:311 kcm.cpp:384
+#: kcm.cpp:281 kcm.cpp:353
 #, kde-format
 msgid "Connection imported."
 msgstr ""
 
-#: kcm.cpp:453
+#: kcm.cpp:422
 #, kde-format
 msgid "my_shared_connection"
 msgstr ""
 
-#: kcm.cpp:525
+#: kcm.cpp:494
 #, kde-format
 msgid "Export VPN Connection"
 msgstr ""
 
-#: kcm.cpp:545
+#: kcm.cpp:514
 #, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
 msgstr ""
 
-#: kcm.cpp:546
+#: kcm.cpp:515
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr ""
 
-#: kcm.cpp:641
+#: kcm.cpp:609
 #, kde-format
 msgid "Import VPN Connection"
 msgstr ""
 
-#: kcm.cpp:643
+#: kcm.cpp:611
 #, kde-format
 msgid "VPN connections (%1)"
 msgstr ""
 
-#: kcm.cpp:646
+#: kcm.cpp:614
 #, kde-format
 msgid "No file was provided"
 msgstr ""
 
-#: kcm.cpp:714
+#: kcm.cpp:682
 #, kde-format
 msgid "Unknown VPN type"
 msgstr ""
 
-#: kcm.cpp:746
+#: kcm.cpp:725
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"

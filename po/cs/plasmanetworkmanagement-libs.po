@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-26 00:51+0000\n"
-"PO-Revision-Date: 2026-10-22 12:15+0200\n"
+"PO-Revision-Date: 2026-10-26 12:37+0100\n"
 "Last-Translator: Libor Filípek <libor.filipek@gmail.com>\n"
 "Language-Team: Czech <kde-i18n-doc@kde.org>\n"
 "Language: cs\n"
@@ -7277,99 +7277,85 @@ msgid "Automatic"
 msgstr "Automaticky"
 
 #: handler.cpp:142
-#, fuzzy, kde-format
-#| msgid "Plasma is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Podpora připojení '%1' VPN v Plasma chybí."
 
 #: handler.cpp:145
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "Nahlásit chybu"
 
 #: handler.cpp:168
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager nepodporuje připojení VPN typu '%1'."
 
 #: handler.cpp:171
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt "@action:button"
 msgid "Install"
 msgstr "Instalovat"
 
 #: handler.cpp:217
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "Selhala aktivace '%1'"
 
 #: handler.cpp:391 handler.cpp:420
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "Selhalo přidání připojení %1"
 
 #: handler.cpp:398 handler.cpp:429
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been added"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "Připojení %1 bylo přidáno"
 
 #: handler.cpp:468
-#, fuzzy, kde-format
-#| msgid "Failed to add %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "Selhalo přidání %1"
 
 #: handler.cpp:508
-#, fuzzy, kde-format
-#| msgid "Failed to deactivate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to deactivate %1"
 msgstr "Selhala deaktivace %1"
 
 #: handler.cpp:646
-#, fuzzy, kde-format
-#| msgid "Failed to remove %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to forget %1"
-msgstr "Selhalo odstranění %1"
+msgstr "Otevření %1 selhalo"
 
 #: handler.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been removed"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been forgotten"
 msgstr "Připojení %1 bylo odstraněno"
 
 #: handler.cpp:672
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to update connection %1"
 msgstr "Selhala aktualizace připojení %1"
 
 #: handler.cpp:679
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been updated"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "Připojení %1 bylo aktualizováno"
 
 #: handler.cpp:885
-#, fuzzy, kde-format
-#| msgid "Failed to create hotspot %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "Nepovedlo se vytvořit hotspot %1"
@@ -7575,15 +7561,13 @@ msgid "Unknown"
 msgstr "Neznámé"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "Odpojit"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "Nastavit"
@@ -7592,14 +7576,13 @@ msgstr "Nastavit"
 #, kde-format
 msgctxt "@action:button forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "Zapomenout"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Connect to %1"
-msgstr "Připojeno k %1"
+msgstr "Připojit se k %1"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

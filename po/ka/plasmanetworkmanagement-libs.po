@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-26 00:51+0000\n"
-"PO-Revision-Date: 2026-10-22 06:09+0200\n"
+"PO-Revision-Date: 2026-10-26 04:28+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -35,7 +35,7 @@ msgstr ""
 #: cellular/cellularmodem.cpp:412
 #, kde-format
 msgid "Error activating connection: %1"
-msgstr "შეერთების აქტივაციის შეცდომა: %1"
+msgstr "კავშირის აქტივაციის შეცდომა: %1"
 
 #: cellular/cellularmodem.cpp:431
 #, kde-format
@@ -51,12 +51,12 @@ msgstr "არჩეულ წვდომის წერტილზე რო
 #: cellular/cellularmodem.cpp:482
 #, kde-format
 msgid "Error adding connection: %1"
-msgstr "შეერთების დამატების შეცდომა: %1"
+msgstr "კავშირის დამატების შეცდომა: %1"
 
 #: cellular/cellularmodem.cpp:502
 #, kde-format
 msgid "Error removing connection: %1"
-msgstr "შეერთების წაშლის შეცდომა: %1"
+msgstr "კავშირის წაშლის შეცდომა: %1"
 
 #: cellular/cellularmodem.cpp:539
 #, kde-format
@@ -490,7 +490,7 @@ msgstr "PUK-ის გაგზავნის შეცდომა: %1"
 #: editor/connectiondetails.cpp:91
 #, kde-format
 msgid "Connection speed"
-msgstr "შეერთების სიჩქარე"
+msgstr "კავშირის სიჩქარე"
 
 #: editor/connectiondetails.cpp:93 editor/connectiondetails.cpp:168
 #: editor/connectiondetails.cpp:252 editor/connectiondetails.cpp:262
@@ -530,7 +530,7 @@ msgstr "უსაფრთხოების ტიპი"
 #: editor/connectiondetails.cpp:155
 #, kde-format
 msgid "Connection Speed"
-msgstr "შეერთების სიჩქარე"
+msgstr "კავშირის სიჩქარე"
 
 #: editor/connectiondetails.cpp:162 editor/connectiondetails.cpp:164
 #, kde-format
@@ -814,7 +814,7 @@ msgstr "ახალი შეერთება (%1)"
 #: editor/connectioneditordialog.cpp:38
 #, kde-format
 msgid "Edit Connection '%1'"
-msgstr "შეერთების ჩასწორება (%1)"
+msgstr "კავშირის ჩასწორება (%1)"
 
 #: editor/connectioneditortabwidget.cpp:58
 #, kde-format
@@ -825,7 +825,7 @@ msgstr "ახალი შეერთება (%1)"
 #: editor/connectioneditortabwidget.ui:20
 #, kde-format
 msgid "Connection name:"
-msgstr "შეერთების სახელი:"
+msgstr "კავშირის სახელი:"
 
 #: editor/settings/bondwidget.cpp:39
 #, kde-format
@@ -896,7 +896,7 @@ msgstr "გნებავთ შეერთების წაშლა? (%1)"
 #: editor/settings/teamwidget.cpp:183
 #, kde-format
 msgid "Remove Connection"
-msgstr "შეერთების წაშლა"
+msgstr "კავშირის წაშლა"
 
 #: editor/settings/bridgewidget.cpp:36 editor/settings/teamwidget.cpp:45
 #: editor/uiutils.cpp:215
@@ -1474,7 +1474,7 @@ msgstr "რეჟიმი:"
 #: editor/settings/ui/bond.ui:130
 #, kde-format
 msgid "Link monitoring:"
-msgstr "შეერთების მონიტორინგი:"
+msgstr "კავშირის მონიტორინგი:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/bond.ui:150
@@ -1495,13 +1495,13 @@ msgstr " მწმ"
 #: editor/settings/ui/bond.ui:192
 #, kde-format
 msgid "Link up delay:"
-msgstr "შეერთების ჩართვის დაყოვნება:"
+msgstr "კავშირის ჩართვის დაყოვნება:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/bond.ui:212
 #, kde-format
 msgid "Link down delay:"
-msgstr "შეერთების გათიშვის დაყოვნება:"
+msgstr "კავშირის გათიშვის დაყოვნება:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
 #: editor/settings/ui/bond.ui:239
@@ -1578,7 +1578,7 @@ msgstr "მოწყობილობის მისამართი:"
 #: editor/settings/ui/bt.ui:41 editorqml/qml/vpn/openvpn/Openvpn.qml:47
 #, kde-format
 msgid "Connection type:"
-msgstr "შეერთების ტიპი:"
+msgstr "კავშირის ტიპი:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/cdma.ui:20 editor/settings/ui/gsm.ui:24
@@ -3211,7 +3211,7 @@ msgstr "მარყუჟი ინტერფეისი"
 #: editor/uiutils.cpp:240
 #, kde-format
 msgid "Unknown connection type"
-msgstr "შეერთების უცნობი ტიპი"
+msgstr "კავშირის უცნობი ტიპი"
 
 #: editor/uiutils.cpp:252
 #, kde-format
@@ -3281,7 +3281,7 @@ msgstr "დაკავშირებული არაა"
 #, kde-format
 msgctxt "description of preparing to connect network interface state"
 msgid "Preparing to connect"
-msgstr "შეერთებისთვის მომზადება"
+msgstr "დაკავშირებისთვის მომზადება"
 
 #: editor/uiutils.cpp:301
 #, kde-format
@@ -3324,13 +3324,13 @@ msgstr "დაკავშირებულია"
 #, kde-format
 msgctxt "network interface connected state label"
 msgid "Connected to %1"
-msgstr "შეერთებული %1-სთან"
+msgstr "დაკავშირებული %1-სთან"
 
 #: editor/uiutils.cpp:323
 #, kde-format
 msgctxt "network interface disconnecting state label"
 msgid "Deactivating connection"
-msgstr "შეერთების დეაქტივაცია"
+msgstr "კავშირის დეაქტივაცია"
 
 #: editor/uiutils.cpp:326
 #, kde-format
@@ -3354,7 +3354,7 @@ msgstr "უცნობია"
 #, kde-format
 msgctxt "The VPN connection is preparing to connect"
 msgid "Preparing to connect"
-msgstr "შეერთებისთვის მომზადება"
+msgstr "დაკავშირებისთვის მომზადება"
 
 #: editor/uiutils.cpp:345
 #, kde-format
@@ -7272,102 +7272,88 @@ msgid "Automatic"
 msgstr "ავტომატური"
 
 #: handler.cpp:142
-#, fuzzy, kde-format
-#| msgid "Plasma is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "Plasma -ს აკლია %1 VPN-ის მხარდაჭერა."
+msgstr "Plasma-ს აკლია '%1' VPN-ის მხარდაჭერა."
 
 #: handler.cpp:145
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "შეცდომის ანგარიში"
 
 #: handler.cpp:168
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr "NetworkManager-ს აკლია %1 VPN-ის მხარდაჭერა."
+msgstr "NetworkManager-ს აკლია '%1' VPN-ის მხარდაჭერა."
 
 #: handler.cpp:171
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt "@action:button"
 msgid "Install"
 msgstr "დაყენება"
 
 #: handler.cpp:217
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to activate %1"
-msgstr "%1-ის აქტივაციის შეცდომა"
+msgstr "%1-ის გააქტიურება ჩავარდა"
 
 #: handler.cpp:391 handler.cpp:420
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "%1 შეერთების დამატების შეცდომა"
 
 #: handler.cpp:398 handler.cpp:429
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been added"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been added"
-msgstr "შეერთება %1 დამატებულია"
+msgstr "კავშირი %1 დაემატა"
 
 #: handler.cpp:468
-#, fuzzy, kde-format
-#| msgid "Failed to add %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add %1"
-msgstr "%1-ის დამატების შეცდომა"
+msgstr "%1-ის დამატება ჩავარდა"
 
 #: handler.cpp:508
-#, fuzzy, kde-format
-#| msgid "Failed to deactivate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to deactivate %1"
-msgstr "%1-ის დეაქტივაციის შეცდომა"
+msgstr "%1-ის დეაქტივაცია ჩავარდა"
 
 #: handler.cpp:646
-#, fuzzy, kde-format
-#| msgid "Failed to remove %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to forget %1"
-msgstr "%1-ის წაშლის შეცდომა"
+msgstr "%1-ის დავიწყება ჩავარდა"
 
 #: handler.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been removed"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been forgotten"
-msgstr "შეერთება %1 წაშლილია"
+msgstr "კავშირი %1 დავიწყებულია"
 
 #: handler.cpp:672
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to update connection %1"
-msgstr "%1-ს განახლების შეცდომა"
+msgstr "კავშირის %1 განახლება ჩავარდა"
 
 #: handler.cpp:679
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been updated"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been updated"
-msgstr "შეერთება %1 განახლებულია"
+msgstr "კავშირი %1 განახლდა"
 
 #: handler.cpp:885
-#, fuzzy, kde-format
-#| msgid "Failed to create hotspot %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to create hotspot %1"
-msgstr "%1 hotspot-ის შექმნის შეცდომა"
+msgstr "%1 ჰოტსპოტის შექმნის შეცდომა"
 
 #: models/creatableconnectionsmodel.cpp:136
 #: models/creatableconnectionsmodel.cpp:143
@@ -7535,22 +7521,22 @@ msgstr "%1-სთან შეერთება"
 #: networkstatus.cpp:222
 #, kde-format
 msgid "Connected to %1 (no connectivity)"
-msgstr "შეერთებული %1-სთან (ქსელის გარეშე)"
+msgstr "დაკავშირებული %1-სთან (ქსელის გარეშე)"
 
 #: networkstatus.cpp:225
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
-msgstr "შეერთებული %1-სთან (ქსელი შეზღუდულია)"
+msgstr "დაკავშირებული %1-სთან (ქსელი შეზღუდულია)"
 
 #: networkstatus.cpp:228
 #, kde-format
 msgid "Connected to %1 (log in required)"
-msgstr "შეერთებული %1-სთან (საჭიროა მომხმარებელი და პაროლი)"
+msgstr "დაკავშირებული %1-სთან (საჭიროა სისტემაში შესვლა)"
 
 #: networkstatus.cpp:231
 #, kde-format
 msgid "Connected to %1"
-msgstr "შეერთებული %1-სთან"
+msgstr "დაკავშირებული %1-სთან"
 
 #: networkstatus.cpp:256
 #, kde-format
@@ -7570,15 +7556,13 @@ msgid "Unknown"
 msgstr "უცნობია"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "გათიშვა"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "მორგება"
@@ -7587,14 +7571,13 @@ msgstr "მორგება"
 #, kde-format
 msgctxt "@action:button forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "დავიწყება"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Connect to %1"
-msgstr "შეერთებული %1-სთან"
+msgstr "%1- სთან დაკავშირება"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

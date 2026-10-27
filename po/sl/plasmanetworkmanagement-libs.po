@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-26 00:51+0000\n"
-"PO-Revision-Date: 2026-10-22 09:32+0200\n"
+"PO-Revision-Date: 2026-10-26 07:04+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -7280,99 +7280,85 @@ msgid "Automatic"
 msgstr "Samodejno"
 
 #: handler.cpp:142
-#, fuzzy, kde-format
-#| msgid "Plasma is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasmi manjka podpora za '%1' povezave VPN."
 
 #: handler.cpp:145
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Report Bug"
-msgstr "Poročaj o hrošču"
+msgstr "Poročaj o napaki"
 
 #: handler.cpp:168
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "Programu NetworkManager manjka podpora za '%1' povezave VPN."
 
 #: handler.cpp:171
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt "@action:button"
 msgid "Install"
 msgstr "Namesti"
 
 #: handler.cpp:217
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to activate %1"
-msgstr "Ni bilo mogoče omogočiti %1"
+msgstr "Ni bilo mogoče aktivirati %1"
 
 #: handler.cpp:391 handler.cpp:420
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add connection %1"
-msgstr "Povezave %1 ni bilo mogoče dodati"
+msgstr "Ni bilo mogoče dodati povezave %1"
 
 #: handler.cpp:398 handler.cpp:429
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been added"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "Povezava %1 je bila dodana"
 
 #: handler.cpp:468
-#, fuzzy, kde-format
-#| msgid "Failed to add %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "Ni bilo mogoče dodati %1"
 
 #: handler.cpp:508
-#, fuzzy, kde-format
-#| msgid "Failed to deactivate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to deactivate %1"
-msgstr "Povezave %1 ni bilo mogoče onemogočiti"
+msgstr "Ni bilo mogoče deaktivirati %1 "
 
 #: handler.cpp:646
-#, fuzzy, kde-format
-#| msgid "Failed to remove %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to forget %1"
-msgstr "Ni bilo mogoče odstraniti %1"
+msgstr "Ni bilo mogoče pozabiti %1"
 
 #: handler.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been removed"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been forgotten"
-msgstr "Povezava %1 je bila odstranjena"
+msgstr "Povezava %1 je bila pozabljena"
 
 #: handler.cpp:672
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to update connection %1"
-msgstr "Povezave %1 ni bilo mogoče posodobiti"
+msgstr "Ni bilo mogoče posodobiti povezave %1"
 
 #: handler.cpp:679
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been updated"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "Povezava %1 je bila posodobljena"
 
 #: handler.cpp:885
-#, fuzzy, kde-format
-#| msgid "Failed to create hotspot %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "Ni bilo mogoče ustvariti vroče točke %1"
@@ -7578,15 +7564,13 @@ msgid "Unknown"
 msgstr "Neznano"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "Odklopi"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "Konfiguriraj"
@@ -7595,14 +7579,13 @@ msgstr "Konfiguriraj"
 #, kde-format
 msgctxt "@action:button forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "Pozabi"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Connect to %1"
-msgstr "Povezan na %1"
+msgstr "Poveži na %1"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

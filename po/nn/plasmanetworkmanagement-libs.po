@@ -7784,9 +7784,3 @@ msgstr "Last opp"
 #, kde-format
 msgid "Download"
 msgstr "Last ned"
-
-#~ msgid "Connect"
-#~ msgstr "Kopla til"
-
-#~ msgid "Connect to"
-#~ msgstr "Kopla til"

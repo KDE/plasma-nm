@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-26 00:51+0000\n"
-"PO-Revision-Date: 2026-10-22 09:34+0200\n"
+"PO-Revision-Date: 2026-10-26 09:49+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -7297,100 +7297,86 @@ msgid "Automatic"
 msgstr "Automàtica"
 
 #: handler.cpp:142
-#, fuzzy, kde-format
-#| msgid "Plasma is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Manca la implementació del Plasma per a les connexions VPN «%1»."
 
 #: handler.cpp:145
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "Informeu d'un error"
 
 #: handler.cpp:168
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr ""
 "Manca la implementació del NetworkManager per a les connexions VPN «%1»."
 
 #: handler.cpp:171
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt "@action:button"
 msgid "Install"
 msgstr "Instal·la"
 
 #: handler.cpp:217
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "Ha fallat en activar %1"
 
 #: handler.cpp:391 handler.cpp:420
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "Ha fallat en afegir la connexió %1"
 
 #: handler.cpp:398 handler.cpp:429
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been added"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "S'ha afegit la connexió %1"
 
 #: handler.cpp:468
-#, fuzzy, kde-format
-#| msgid "Failed to add %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "Ha fallat en afegir %1"
 
 #: handler.cpp:508
-#, fuzzy, kde-format
-#| msgid "Failed to deactivate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to deactivate %1"
 msgstr "Ha fallat en desactivar %1"
 
 #: handler.cpp:646
-#, fuzzy, kde-format
-#| msgid "Failed to remove %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to forget %1"
-msgstr "Ha fallat en eliminar %1"
+msgstr "Ha fallat en oblidar %1"
 
 #: handler.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been removed"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been forgotten"
-msgstr "S'ha eliminat la connexió %1"
+msgstr "S'ha oblidat la connexió %1"
 
 #: handler.cpp:672
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to update connection %1"
 msgstr "Ha fallat en actualitzar la connexió %1"
 
 #: handler.cpp:679
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been updated"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "S'ha actualitzat la connexió %1"
 
 #: handler.cpp:885
-#, fuzzy, kde-format
-#| msgid "Failed to create hotspot %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "Ha fallat en crear el punt d'accés %1"
@@ -7596,15 +7582,13 @@ msgid "Unknown"
 msgstr "Desconeguda"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "Desconnecta"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "Configura"
@@ -7613,14 +7597,13 @@ msgstr "Configura"
 #, kde-format
 msgctxt "@action:button forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "Oblida"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Connect to %1"
-msgstr "Connectat a %1"
+msgstr "Connecta a %1"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

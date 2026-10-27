@@ -7698,15 +7698,3 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
-
-#, fuzzy
-#~| msgctxt "infiniband transport mode"
-#~| msgid "Connected"
-#~ msgid "Connect"
-#~ msgstr "Tilkoblet"
-
-#, fuzzy
-#~| msgctxt "The VPN connection is being established"
-#~| msgid "Connecting"
-#~ msgid "Connect to"
-#~ msgstr "Kobler til"

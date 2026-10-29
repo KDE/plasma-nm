@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: l 10n\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-26 00:51+0000\n"
-"PO-Revision-Date: 2026-10-26 00:21+0200\n"
+"PO-Revision-Date: 2026-10-28 21:01+0200\n"
 "Last-Translator: Moo <<>>\n"
 "Language-Team: Lithuanian <kde-i18n-lt@kde.org>\n"
 "Language: lt\n"
@@ -7316,99 +7316,85 @@ msgid "Automatic"
 msgstr "Automatinis"
 
 #: handler.cpp:142
-#, fuzzy, kde-format
-#| msgid "Plasma is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma trūksta palaikymo, skirto „%1“ VPN ryšiams."
 
 #: handler.cpp:145
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Report Bug"
-msgstr "Pranešti apie programos klaidą"
+msgstr "Pranešti apie klaidą"
 
 #: handler.cpp:168
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager trūksta palaikymo, skirto „%1“ VPN ryšiams."
 
 #: handler.cpp:171
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt "@action:button"
 msgid "Install"
 msgstr "Įdiegti"
 
 #: handler.cpp:217
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "Nepavyko aktyvuoti %1"
 
 #: handler.cpp:391 handler.cpp:420
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "Nepavyko pridėti ryšio %1"
 
 #: handler.cpp:398 handler.cpp:429
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been added"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "Ryšys %1 pridėtas"
 
 #: handler.cpp:468
-#, fuzzy, kde-format
-#| msgid "Failed to add %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "Nepavyko pridėti %1"
 
 #: handler.cpp:508
-#, fuzzy, kde-format
-#| msgid "Failed to deactivate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to deactivate %1"
 msgstr "Nepavyko pasyvinti %1"
 
 #: handler.cpp:646
-#, fuzzy, kde-format
-#| msgid "Failed to remove %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to forget %1"
-msgstr "Nepavyko pašalinti %1"
+msgstr "Nepavyko pamiršti %1"
 
 #: handler.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been removed"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been forgotten"
-msgstr "Ryšys %1 pašalintas"
+msgstr "Ryšys %1 pamirštas"
 
 #: handler.cpp:672
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to update connection %1"
 msgstr "Nepavyko atnaujinti ryšio %1"
 
 #: handler.cpp:679
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been updated"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "Ryšys %1 atnaujintas"
 
 #: handler.cpp:885
-#, fuzzy, kde-format
-#| msgid "Failed to create hotspot %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "Nepavyko sukurti viešosios prieigos taško %1"
@@ -7614,15 +7600,13 @@ msgid "Unknown"
 msgstr "Nežinoma"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "Atsijungti"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "Konfigūruoti"
@@ -7631,14 +7615,13 @@ msgstr "Konfigūruoti"
 #, kde-format
 msgctxt "@action:button forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "Pamiršti"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Connect to %1"
-msgstr "Prisijungta prie %1"
+msgstr "Prisijungti prie %1"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

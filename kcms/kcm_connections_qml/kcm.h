@@ -106,13 +106,16 @@ public:
 
     Q_INVOKABLE void onRequestCreateConnection(int connectionType, const QString &vpnType, const QString &specificType, bool shared);
     Q_INVOKABLE void onSelectedConnectionChanged(const QString &connectionPath);
-    // Q_INVOKABLE void onRequestExportConnection(const QString &connectionPath);
+    Q_INVOKABLE void onRequestExportConnection(const QString &connectionPath);
     Q_INVOKABLE void onRequestToChangeConnection(const QString &connectionName, const QString &connectionPath);
     Q_INVOKABLE void onRequestDuplicateConnection(const QString &connectionPath);
     Q_INVOKABLE void acceptVpnImport(const QString &fileName);
     Q_INVOKABLE QStringList vpnFileNameFilters() const;
     Q_INVOKABLE void importVpnFromFile(const QUrl &fileUrl);
     Q_INVOKABLE void cancelVpnImport();
+
+    Q_INVOKABLE void exportVpnToFile(const QUrl &fileUrl);
+    Q_INVOKABLE void cancelVpnExport();
 
     Q_INVOKABLE void cancelNewConnection();
 
@@ -150,6 +153,10 @@ Q_SIGNALS:
     void importSucceeded();
     void importFailed(const QString &errorMessage);
 
+    void vpnExportFileRequested(const QString &suggestedFileName, const QStringList &nameFilters);
+    void exportSucceeded(const QString &fileName);
+    void exportFailed(const QString &errorMessage);
+
 private Q_SLOTS:
     void onConnectionAdded(const QString &connection);
     void onSecretsArrived(QDBusPendingCallWatcher *watcher);
@@ -183,6 +190,8 @@ private:
 
     QString m_currentConnectionPath;
     QString m_createdConnectionUuid;
+
+    QString m_pendingExportPath;
     QString m_vpnServiceType;
     QString m_connectionName;
 

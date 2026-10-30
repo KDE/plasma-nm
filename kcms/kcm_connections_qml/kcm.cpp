@@ -32,7 +32,6 @@
 #include <QDBusPendingCallWatcher>
 #include <QDBusPendingReply>
 
-#include <QFileDialog>
 #include <kquickconfigmodule.h>
 #include <networkmanagerqt/connectionsettings.h>
 
@@ -779,6 +778,7 @@ void KCMNetworkManagementQml::save()
     kcmChanged(false);
     KQuickConfigModule::save();
 }
+
 void KCMNetworkManagementQml::onSelectedConnectionChanged(const QString &connectionPath)
 {
     if (connectionPath.isEmpty()) {
@@ -1216,6 +1216,93 @@ QStringList KCMNetworkManagementQml::vpnFileNameFilters() const
 void KCMNetworkManagementQml::importVpnFromFile(const QUrl &fileUrl)
 {
     acceptVpnImport(fileUrl.toLocalFile());
+}
+
+void KCMNetworkManagementQml::onRequestExportConnection(const QString &connectionPath)
+{
+    m_pendingExportPath.clear();
+
+    const NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(connectionPath);
+    if (!connection) {
+        return;
+    }
+
+    const NetworkManager::ConnectionSettings::Ptr connectionSettings = connection->settings();
+    if (connectionSettings->connectionType() != NetworkManager::ConnectionSettings::Vpn) {
+        return;
+    }
+
+    const NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+    if (!vpnSetting) {
+        return;
+    }
+
+    qCDebug(PLASMA_NM_KCM_QML_LOG) << "Exporting VPN connection" << connection->name() << "type:" << vpnSetting->serviceType();
+
+    const auto result = VpnUiPlugin::loadPluginForType(this, vpnSetting->serviceType());
+    if (!result) {
+        qCWarning(PLASMA_NM_KCM_QML_LOG) << "Error getting VpnUiPlugin for export:" << result.errorText;
+        Q_EMIT exportFailed(result.errorText);
+        return;
+    }
+
+    std::unique_ptr<VpnUiPlugin> vpnPlugin(result.plugin);
+
+    const QString suggestedFileName = vpnPlugin->suggestedFileName(connectionSettings);
+    if (suggestedFileName.isEmpty()) {
+        qCWarning(PLASMA_NM_KCM_QML_LOG) << "This VPN doesn't support export";
+        Q_EMIT exportFailed(i18n("This VPN type cannot be exported."));
+        return;
+    }
+
+    m_pendingExportPath = connectionPath;
+
+    Q_EMIT vpnExportFileRequested(suggestedFileName, vpnPlugin->supportedFileExtensions());
+}
+
+void KCMNetworkManagementQml::exportVpnToFile(const QUrl &fileUrl)
+{
+    const QString fileName = fileUrl.toLocalFile();
+    const QString connectionPath = m_pendingExportPath;
+    m_pendingExportPath.clear();
+
+    if (fileName.isEmpty() || connectionPath.isEmpty()) {
+        return;
+    }
+
+    const NetworkManager::Connection::Ptr connection = NetworkManager::findConnection(connectionPath);
+    if (!connection) {
+        Q_EMIT exportFailed(i18n("The connection is no longer available."));
+        return;
+    }
+
+    const NetworkManager::ConnectionSettings::Ptr connectionSettings = connection->settings();
+    const NetworkManager::VpnSetting::Ptr vpnSetting = connectionSettings->setting(NetworkManager::Setting::Vpn).dynamicCast<NetworkManager::VpnSetting>();
+    if (!vpnSetting) {
+        Q_EMIT exportFailed(i18n("The connection is no longer available."));
+        return;
+    }
+
+    const auto result = VpnUiPlugin::loadPluginForType(this, vpnSetting->serviceType());
+    if (!result) {
+        qCWarning(PLASMA_NM_KCM_QML_LOG) << "Error getting VpnUiPlugin for export:" << result.errorText;
+        Q_EMIT exportFailed(result.errorText);
+        return;
+    }
+
+    std::unique_ptr<VpnUiPlugin> vpnPlugin(result.plugin);
+
+    if (const auto exported = vpnPlugin->exportConnectionSettings(connectionSettings, fileName)) {
+        Q_EMIT exportSucceeded(fileName);
+    } else {
+        qCWarning(PLASMA_NM_KCM_QML_LOG) << "Failed to export VPN connection" << exported.errorMessage();
+        Q_EMIT exportFailed(exported.errorMessage());
+    }
+}
+
+void KCMNetworkManagementQml::cancelVpnExport()
+{
+    m_pendingExportPath.clear();
 }
 
 void KCMNetworkManagementQml::cancelVpnImport()

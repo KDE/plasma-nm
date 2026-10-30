@@ -5,6 +5,7 @@
     SPDX-License-Identifier: LGPL-2.1-only OR LGPL-3.0-only OR LicenseRef-KDE-Accepted-LGPL
 */
 
+import QtCore
 import QtQuick
 import QtQuick.Controls as QQC2
 import QtQuick.Dialogs
@@ -72,6 +73,24 @@ Kirigami.Page {
         function onImportSucceeded() {
             importFeedback.text = i18nc("@info", "Connection imported.");
             importFeedback.type = Kirigami.MessageType.Positive;
+            importFeedback.visible = true;
+        }
+
+        function onVpnExportFileRequested(suggestedFileName, nameFilters) {
+            vpnExportDialog.currentFile = vpnExportDialog.currentFolder + "/" + suggestedFileName;
+            vpnExportDialog.nameFilters = nameFilters;
+            vpnExportDialog.open();
+        }
+
+        function onExportSucceeded(fileName) {
+            importFeedback.text = i18n("Connection exported to %1.", fileName);
+            importFeedback.type = Kirigami.MessageType.Positive;
+            importFeedback.visible = true;
+        }
+
+        function onExportFailed(errorMessage) {
+            importFeedback.text = i18n("Failed to export VPN connection: %1", errorMessage);
+            importFeedback.type = Kirigami.MessageType.Error;
             importFeedback.visible = true;
         }
 
@@ -334,6 +353,17 @@ Kirigami.Page {
 
         onAccepted: kcm.importVpnFromFile(selectedFile)
         onRejected: kcm.cancelVpnImport()
+    }
+
+    FileDialog {
+        id: vpnExportDialog
+
+        title: i18nc("@title:window", "Export VPN Connection")
+        fileMode: FileDialog.SaveFile
+        currentFolder: StandardPaths.writableLocation(StandardPaths.DocumentsLocation)
+
+        onAccepted: kcm.exportVpnToFile(selectedFile)
+        onRejected: kcm.cancelVpnExport()
     }
 
     Kirigami.PromptDialog {

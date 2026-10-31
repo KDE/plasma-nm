@@ -263,9 +263,3 @@ msgstr "Desconnectat"
 #: ui/main.qml:280
 msgid "Connection name:"
 msgstr "Nom de la connexió:"
-
-#~ msgid "Create"
-#~ msgstr "Crea"
-
-#~ msgid "Cancel"
-#~ msgstr "Cancel·la"

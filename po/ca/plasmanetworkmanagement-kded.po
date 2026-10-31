@@ -788,9 +788,3 @@ msgstr "Torneu a introduir el codi PIN:"
 #, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
 msgstr "Ha fallat l'autenticació a %1. Contrasenya incorrecta?"
-
-#~ msgid "%1 password dialog"
-#~ msgstr "Diàleg de contrasenya %1"
-
-#~ msgid "Password dialog"
-#~ msgstr "Diàleg de contrasenya"

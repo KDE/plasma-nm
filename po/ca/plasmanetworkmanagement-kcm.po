@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-27 01:01+0000\n"
+"POT-Creation-Date: 2026-10-31 00:53+0000\n"
 "PO-Revision-Date: 2026-10-20 09:30+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -25,7 +25,7 @@ msgstr ""
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Importo la configuració de la VPN des de «%1»?"
 
-#: kcm.cpp:270 ui/main.qml:344
+#: kcm.cpp:270 ui/main.qml:374
 #, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
@@ -207,32 +207,32 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Disponible"
 
-#: qml/main.qml:151 ui/main.qml:224
+#: qml/main.qml:151 ui/main.qml:243
 msgctxt "@action:button"
 msgid "Add new connection"
 msgstr "Afegeix una connexió nova"
 
-#: qml/main.qml:169 ui/main.qml:242
+#: qml/main.qml:169 ui/main.qml:261
 msgctxt "@action:button"
 msgid "Forget selected connection"
 msgstr "Oblida la connexió seleccionada"
 
-#: qml/main.qml:187 ui/main.qml:260
+#: qml/main.qml:187 ui/main.qml:279
 msgctxt "@action:button"
 msgid "Export selected connection"
 msgstr "Exporta la connexió seleccionada"
 
-#: qml/main.qml:212 ui/main.qml:196
+#: qml/main.qml:212 ui/main.qml:215
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "Configura"
 
-#: qml/main.qml:239 ui/main.qml:314
+#: qml/main.qml:239 ui/main.qml:333
 msgctxt "@title:window"
 msgid "Forget Connection"
 msgstr "Oblit de connexió"
 
-#: qml/main.qml:240 ui/main.qml:315
+#: qml/main.qml:240 ui/main.qml:334
 msgctxt "@info"
 msgid "Do you want to forget the connection '%1'?"
 msgstr "Voleu oblidar la connexió «%1»?"
@@ -267,32 +267,51 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "La contrasenya cal que tingui entre 8 i 64 caràcters"
 
-#: ui/main.qml:73
+#: ui/main.qml:74
 msgctxt "@info"
 msgid "Connection imported."
 msgstr "Connexió importada."
 
-#: ui/main.qml:79
+#: ui/main.qml:86
+#, fuzzy
+#| msgid "Connection imported."
+msgid "Connection exported to %1."
+msgstr "Connexió importada."
+
+#: ui/main.qml:92
+#, fuzzy
+#| msgid "Failed to import VPN connection: %1"
+msgid "Failed to export VPN connection: %1"
+msgstr "Ha fallat en importar la connexió VPN: %1"
+
+#: ui/main.qml:98
 msgctxt "@info"
 msgid "Failed to import VPN connection: %1"
 msgstr "Ha fallat en importar la connexió VPN: %1"
 
-#: ui/main.qml:284
+#: ui/main.qml:303
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Nom de la connexió:"
 
-#: ui/main.qml:332
+#: ui/main.qml:351
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Importació d'una connexió VPN"
 
-#: ui/main.qml:345
+#: ui/main.qml:361
+#, fuzzy
+#| msgid "Export VPN Connection"
+msgctxt "@title:window"
+msgid "Export VPN Connection"
+msgstr "Exportació de la connexió VPN"
+
+#: ui/main.qml:375
 msgctxt "@info"
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Importo la configuració de la VPN des de «%1»?"
 
-#: ui/main.qml:350
+#: ui/main.qml:380
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Importa"

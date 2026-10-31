@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-27 01:01+0000\n"
+"POT-Creation-Date: 2026-10-31 00:53+0000\n"
 "PO-Revision-Date: 2022-03-03 12:25+0700\n"
 "Last-Translator: Linerly <linerly@protonmail.com>\n"
 "Language-Team: Indonesian <kde-i18n-doc@kde.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr ""
 
-#: kcm.cpp:270 ui/main.qml:344
+#: kcm.cpp:270 ui/main.qml:374
 #, fuzzy, kde-format
 #| msgid "Import VPN Connection"
 msgctxt "@title:window"
@@ -215,35 +215,35 @@ msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr ""
 
-#: qml/main.qml:151 ui/main.qml:224
+#: qml/main.qml:151 ui/main.qml:243
 #, fuzzy
 #| msgid "Add new connection"
 msgctxt "@action:button"
 msgid "Add new connection"
 msgstr "Tambahkan koneksi baru"
 
-#: qml/main.qml:169 ui/main.qml:242
+#: qml/main.qml:169 ui/main.qml:261
 #, fuzzy
 #| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Forget selected connection"
 msgstr "Expor koneksi terpilih"
 
-#: qml/main.qml:187 ui/main.qml:260
+#: qml/main.qml:187 ui/main.qml:279
 #, fuzzy
 #| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Export selected connection"
 msgstr "Expor koneksi terpilih"
 
-#: qml/main.qml:212 ui/main.qml:196
+#: qml/main.qml:212 ui/main.qml:215
 #, fuzzy
 #| msgid "Configuration"
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "Konfigurasi"
 
-#: qml/main.qml:239 ui/main.qml:314
+#: qml/main.qml:239 ui/main.qml:333
 #, fuzzy
 #| msgctxt "@title:window"
 #| msgid "Remove Connection"
@@ -251,7 +251,7 @@ msgctxt "@title:window"
 msgid "Forget Connection"
 msgstr "Hapus Koneksi"
 
-#: qml/main.qml:240 ui/main.qml:315
+#: qml/main.qml:240 ui/main.qml:334
 #, fuzzy
 #| msgid "Do you want to remove the connection '%1'?"
 msgctxt "@info"
@@ -294,42 +294,61 @@ msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr ""
 
-#: ui/main.qml:73
+#: ui/main.qml:74
 #, fuzzy
 #| msgid "Connected"
 msgctxt "@info"
 msgid "Connection imported."
 msgstr "Terkoneksi"
 
-#: ui/main.qml:79
+#: ui/main.qml:86
+#, fuzzy
+#| msgid "Connected"
+msgid "Connection exported to %1."
+msgstr "Terkoneksi"
+
+#: ui/main.qml:92
+#, fuzzy
+#| msgid "Import VPN Connection"
+msgid "Failed to export VPN connection: %1"
+msgstr "Impor Koneksi VPN"
+
+#: ui/main.qml:98
 #, fuzzy
 #| msgid "Import VPN Connection"
 msgctxt "@info"
 msgid "Failed to import VPN connection: %1"
 msgstr "Impor Koneksi VPN"
 
-#: ui/main.qml:284
+#: ui/main.qml:303
 #, fuzzy
 #| msgid "Connected"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Terkoneksi"
 
-#: ui/main.qml:332
+#: ui/main.qml:351
 #, fuzzy
 #| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Impor Koneksi VPN"
 
-#: ui/main.qml:345
+#: ui/main.qml:361
+#, fuzzy
+#| msgid "Export VPN Connection"
+msgctxt "@title:window"
+msgid "Export VPN Connection"
+msgstr "Ekspor Koneksi VPN"
+
+#: ui/main.qml:375
 #, fuzzy
 #| msgid "Import VPN Connection"
 msgctxt "@info"
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Impor Koneksi VPN"
 
-#: ui/main.qml:350
+#: ui/main.qml:380
 #, fuzzy
 #| msgid "Export"
 msgctxt "@action:button"

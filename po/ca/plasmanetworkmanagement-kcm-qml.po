@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-10-22 09:31+0200\n"
+"PO-Revision-Date: 2026-10-31 10:51+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -65,12 +65,12 @@ msgstr "Tots els fitxers (*)"
 #: kcm.cpp:1254
 #, kde-format
 msgid "This VPN type cannot be exported."
-msgstr ""
+msgstr "Aquest tipus de VPN no es pot exportar."
 
 #: kcm.cpp:1275 kcm.cpp:1282
 #, kde-format
 msgid "The connection is no longer available."
-msgstr ""
+msgstr "La connexió ja no està disponible."
 
 #: kcm.cpp:1310
 #, kde-format

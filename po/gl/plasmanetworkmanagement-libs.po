@@ -4645,7 +4645,8 @@ msgstr ""
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
 #: editorqml/qml/ipv6/IPv6Settings.qml:165
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Addresses"
 msgid "Addresses"
 msgstr "Enderezos"
 
@@ -5019,11 +5020,9 @@ msgstr ""
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:107
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:108
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:133
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgid "Automatic"
-msgstr "Automática"
+msgstr "Automático"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
 #, fuzzy, kde-format
@@ -5183,7 +5182,8 @@ msgid "Machine Authentication"
 msgstr "Autenticación"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:79 editorqml/qml/vpn/ssh/Ssh.qml:140
-#, kde-format
+#, fuzzy, kde-format
+#| msgid "Type:"
 msgid "Type:"
 msgstr "Tipo:"
 
@@ -7185,14 +7185,12 @@ msgid "WEP 128-bit Passphrase"
 msgstr ""
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:28
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA/WPA2 Personal"
 msgstr "WPA/WPA2 Persoal"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:29
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA/WPA2 Enterprise"
 msgstr "WPA/WPA2 Enterprise"
 

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-10-20 12:32+0200\n"
+"PO-Revision-Date: 2026-10-31 07:16+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%100==1 ? 1 : n%100==2 ? 2 : n%100==3 || n"
 "%100==4 ? 3 : 0);\n"
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -272,16 +272,12 @@ msgid "Connection imported."
 msgstr "Povezava uvožena."
 
 #: ui/main.qml:86
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection exported to %1."
-msgstr "Povezava uvožena."
+msgstr "Povezava izvožena na %1.."
 
 #: ui/main.qml:92
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgid "Failed to export VPN connection: %1"
-msgstr "Neuspel uvoz povezave VPN: %1"
+msgstr "Neuspel izvoz povezave VPN: %1"
 
 #: ui/main.qml:98
 msgctxt "@info"
@@ -299,8 +295,6 @@ msgid "Import VPN Connection"
 msgstr "Uvozi povezavo VPN"
 
 #: ui/main.qml:361
-#, fuzzy
-#| msgid "Export VPN Connection"
 msgctxt "@title:window"
 msgid "Export VPN Connection"
 msgstr "Izvozi povezavo VPN"

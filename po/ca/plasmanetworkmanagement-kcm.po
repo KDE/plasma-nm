@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-10-20 09:30+0200\n"
+"PO-Revision-Date: 2026-10-31 10:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -273,16 +273,12 @@ msgid "Connection imported."
 msgstr "Connexió importada."
 
 #: ui/main.qml:86
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection exported to %1."
-msgstr "Connexió importada."
+msgstr "Connexió exportada a %1."
 
 #: ui/main.qml:92
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgid "Failed to export VPN connection: %1"
-msgstr "Ha fallat en importar la connexió VPN: %1"
+msgstr "Ha fallat en exportar la connexió VPN: %1"
 
 #: ui/main.qml:98
 msgctxt "@info"
@@ -300,8 +296,6 @@ msgid "Import VPN Connection"
 msgstr "Importació d'una connexió VPN"
 
 #: ui/main.qml:361
-#, fuzzy
-#| msgid "Export VPN Connection"
 msgctxt "@title:window"
 msgid "Export VPN Connection"
 msgstr "Exportació de la connexió VPN"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm-qml\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-10-22 05:22+0200\n"
+"PO-Revision-Date: 2026-10-31 12:02+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -63,12 +63,12 @@ msgstr "Все файлы (*)"
 #: kcm.cpp:1254
 #, kde-format
 msgid "This VPN type cannot be exported."
-msgstr ""
+msgstr "Подключения VPN этого типа нельзя экспортировать."
 
 #: kcm.cpp:1275 kcm.cpp:1282
 #, kde-format
 msgid "The connection is no longer available."
-msgstr ""
+msgstr "Подключение больше недоступно."
 
 #: kcm.cpp:1310
 #, kde-format

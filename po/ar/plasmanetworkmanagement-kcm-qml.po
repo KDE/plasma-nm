@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-09-30 18:43+0400\n"
+"PO-Revision-Date: 2026-10-31 18:16+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: kcm.cpp:1010
 #, kde-format
@@ -29,11 +29,10 @@ msgid "my_shared_connection"
 msgstr "اتصالي_المشترك"
 
 #: kcm.cpp:1110
-#, fuzzy, kde-format
-#| msgid "VPN connections (%1)"
+#, kde-format
 msgctxt "@title"
 msgid "New %1 connection"
-msgstr "اتصالات في بي ان (%1)"
+msgstr "اتصال %1 جديد"
 
 #: kcm.cpp:1158
 #, kde-format
@@ -80,7 +79,7 @@ msgstr "لا يوجد ملف"
 #: kcm.cpp:1343 kcm.cpp:1352
 #, kde-format
 msgid "Could not read the WireGuard configuration"
-msgstr ""
+msgstr "لا يمكن قراءة ضبط واير غارد"
 
 #: kcm.cpp:1391
 #, kde-format

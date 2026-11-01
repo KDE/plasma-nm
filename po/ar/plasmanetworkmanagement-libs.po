@@ -1,14 +1,14 @@
 # Copyright (C) YEAR This_file_is_part_of_KDE
 # This file is distributed under the same license as the PACKAGE package.
 # Safa Alfulaij <safa1996alfulaij@gmail.com>, 2014.
-# SPDX-FileCopyrightText: 2021, 2022, 2024, 2025, 2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
+# SPDX-FileCopyrightText: 2021-2022, 2024-2026 Zayed Al-Saidi <zayed.alsaidi@gmail.com>
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-26 00:51+0000\n"
-"PO-Revision-Date: 2026-09-30 18:42+0400\n"
+"PO-Revision-Date: 2026-10-31 21:44+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Lokalize 25.12.3\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -4271,15 +4271,13 @@ msgid "Create new connections as system connections"
 msgstr "أنشئ اتصالات جديدة كاتصالات للنظام"
 
 #: editorqml/qml/CreateConnectionDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "New Connection (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Connection"
-msgstr "اتصال جديد (%1)"
+msgstr "اتصال جديد"
 
 #: editorqml/qml/CreateConnectionDialog.qml:84
-#, fuzzy, kde-format
-#| msgid "Connection name:"
+#, kde-format
 msgctxt "@label"
 msgid "Connection name:"
 msgstr "اسم الاتصال:"
@@ -4287,15 +4285,13 @@ msgstr "اسم الاتصال:"
 #: editorqml/qml/dialogs/VpnPage.qml:28 editorqml/qml/dialogs/WiredPage.qml:23
 #: editorqml/qml/dialogs/WireGuardPage.qml:24
 #: editorqml/qml/dialogs/WirelessPage.qml:23
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "عامّ"
 
 #: editorqml/qml/dialogs/VpnPage.qml:32
-#, fuzzy, kde-format
-#| msgid "VPN"
+#, kde-format
 msgctxt "@title"
 msgid "VPN"
 msgstr "شبكة خاصة افتراضية"
@@ -4303,8 +4299,7 @@ msgstr "شبكة خاصة افتراضية"
 #: editorqml/qml/dialogs/VpnPage.qml:35 editorqml/qml/dialogs/WiredPage.qml:32
 #: editorqml/qml/dialogs/WireGuardPage.qml:30
 #: editorqml/qml/dialogs/WirelessPage.qml:32
-#, fuzzy, kde-format
-#| msgid "IPv4"
+#, kde-format
 msgctxt "@title"
 msgid "IPv4"
 msgstr "IPv4"
@@ -4312,43 +4307,37 @@ msgstr "IPv4"
 #: editorqml/qml/dialogs/VpnPage.qml:39 editorqml/qml/dialogs/WiredPage.qml:35
 #: editorqml/qml/dialogs/WireGuardPage.qml:33
 #: editorqml/qml/dialogs/WirelessPage.qml:35
-#, fuzzy, kde-format
-#| msgid "IPv6"
+#, kde-format
 msgctxt "@title"
 msgid "IPv6"
 msgstr "IPv6"
 
 #: editorqml/qml/dialogs/WiredPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Wired"
+#, kde-format
 msgctxt "@title"
 msgid "Wired"
 msgstr "سلكي"
 
 #: editorqml/qml/dialogs/WiredPage.qml:29
-#, fuzzy, kde-format
-#| msgid "802.1x Security"
+#, kde-format
 msgctxt "@title"
 msgid "802.1x Security"
 msgstr "أمن 802.1x"
 
 #: editorqml/qml/dialogs/WireGuardPage.qml:27
-#, fuzzy, kde-format
-#| msgid "WireGuard"
+#, kde-format
 msgctxt "@title"
 msgid "WireGuard"
 msgstr "واير غارد"
 
 #: editorqml/qml/dialogs/WirelessPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Wi-Fi"
+#, kde-format
 msgctxt "@title"
 msgid "Wi-Fi"
 msgstr "واي فاي"
 
 #: editorqml/qml/dialogs/WirelessPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Wi-Fi Security"
+#, kde-format
 msgctxt "@title"
 msgid "Wi-Fi Security"
 msgstr "أمن واي-فاي"
@@ -5374,96 +5363,89 @@ msgstr "Libreswan VPN"
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:34
 #, kde-format
 msgid "Address of the VPN gateway, optionally including the port."
-msgstr ""
+msgstr "عنوان بوابة الـVPN، مع المنفذ اختياريًا."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:43
 #, kde-format
 msgid "VPN Protocol:"
-msgstr ""
+msgstr "ميفاق الشبكة الخاصة المبدئية:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:46
 #, kde-format
 msgid "Which VPN the gateway speaks. All of these are handled by openconnect."
-msgstr ""
+msgstr "أي VPN تتحدثه البوابة. كل هذه يتولاها openconnect."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgid "Cisco AnyConnect"
-msgstr "اقطع الاتصال"
+msgstr "سيسكو AnyConnect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "Juniper Network Connect"
-msgstr ""
+msgstr "جونيبر نتوورك كونيكت"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "PAN Global Protect"
-msgstr ""
+msgstr "PAN Global Protect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Connection Speed"
+#, kde-format
 msgid "Pulse Connect Secure"
-msgstr "سرعة الاتصال"
+msgstr "Pulse Connect Secure"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "F5 BIG-IP SSL VPN"
-msgstr ""
+msgstr "F5 BIG-IP SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Iodine VPN"
+#, kde-format
 msgid "Fortinet SSL VPN"
-msgstr "Iodine VPN"
+msgstr "Fortinet SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "SSH VPN"
+#, kde-format
 msgid "Array SSL VPN"
-msgstr "شبكة خاصة مبدئية اس اس اتش"
+msgstr "Array SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:75
-#, fuzzy, kde-format
-#| msgid "Proxy"
+#, kde-format
 msgid "Proxy:"
-msgstr "الوكيل"
+msgstr "الوكيل:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:78
 #, kde-format
 msgid "Proxy to reach the gateway through, as a URL."
-msgstr ""
+msgstr "الوكيل للوصول إلى البوابة عبره، كعنوان URL."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:87
-#, fuzzy, kde-format
-#| msgid "User Key:"
+#, kde-format
 msgid "User Agent:"
-msgstr "مفتاح المستخدم:"
+msgstr "وكيل المستخدم:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:95
 #, kde-format
 msgid "CSD Wrapper Script:"
-msgstr ""
+msgstr "نص برمجي لـ CSD Wrapper:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:117
 #, kde-format
 msgid "Allow Cisco Secure Desktop trojan"
-msgstr ""
+msgstr "السماح لحصان طروادة Cisco Secure Desktop الآمن لسطح المكتب"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:119
 #, kde-format
 msgid ""
 "Run the host-check program the gateway asks for. The wrapper script above "
 "replaces it."
-msgstr ""
+msgstr "شغّل برنامج فحص المضيف الذي تطلبه البوابة. يستبدله سكربت الغلاف أعلاه."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:128
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgid "Reported OS:"
-msgstr "أبلغ عن علة"
+msgstr "نظام التشغيل المبلغ عنه:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:131
 #, kde-format
@@ -5471,10 +5453,11 @@ msgid ""
 "Operating system to report to the gateway. Leave at the default to report "
 "the real one."
 msgstr ""
+"نظام التشغيل الذي ستُبلّغ به البوابة. اتركه على المبدئي للإبلاغ عن النظام "
+"الحقيقي."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item:inlistbox report the real operating system"
 msgid "Default"
 msgstr "المبدئيّ"
@@ -5482,94 +5465,87 @@ msgstr "المبدئيّ"
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "GNU/Linux"
-msgstr ""
+msgstr "غنو/لينكس"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "GNU/Linux 64-bit"
-msgstr ""
+msgstr "غنو/لينكس 64 بت"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Windows"
-msgstr ""
+msgstr "ويندوز"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Mac OS X"
-msgstr ""
+msgstr "ماك أو إس إكس"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Android"
-msgstr ""
+msgstr "أندوريد"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Apple iOS"
-msgstr ""
+msgstr "أبل أي أو اس"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:142
 #, kde-format
 msgid "Reported Version:"
-msgstr ""
+msgstr "الإصدار المبلغ عنه:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:152
-#, fuzzy, kde-format
-#| msgid "VPNC Authentication"
+#, kde-format
 msgid "Certificate Authentication"
-msgstr "استيثاق VPNC"
+msgstr "استيثاق الشّهادة"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:175
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "Machine Private Key:"
-msgstr "المفتاح الخاصّ:"
+msgstr "المفتاح الخاص للجهاز:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:211
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "User Private Key:"
-msgstr "المفتاح الخاصّ:"
+msgstr "المفتاح الخاص للمستخدم:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:231
 #, kde-format
 msgid "Use FSID for key passphrase"
-msgstr ""
+msgstr "استخدم FSID لعبارة المرور"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:240
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
-msgstr ""
+msgstr "امنع المستخدم من قبول الشهادات غير الصالحة يدويًا"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:255
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgctxt "@action:button"
 msgid "Token Authentication…"
-msgstr "الاستيثاق"
+msgstr "استيثاق الرمز…"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:25
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenConnect OTP Tokens"
-msgstr ""
+msgstr "رموز كلمة سر لمرة واحدة من OpenConnect"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:62
-#, fuzzy, kde-format
-#| msgid "Machine Authentication"
+#, kde-format
 msgid "Software Token Authentication"
-msgstr "استيثاق الآلة"
+msgstr "استيثاق رمز برنامجي"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:67
-#, fuzzy, kde-format
-#| msgid "Token:"
+#, kde-format
 msgid "Token Mode:"
-msgstr "الرّمز:"
+msgstr "نمط الرمز:"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox no software token"
 msgid "Disabled"
 msgstr "معطّل"
@@ -5577,51 +5553,49 @@ msgstr "معطّل"
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "RSA SecurID — read from ~/.stokenrc"
-msgstr ""
+msgstr "RSA SecurID — يُقرأ من ~/.stokenrc"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "RSA SecurID — manually entered"
-msgstr ""
+msgstr "RSA SecurID — يُدخل يدويًا"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "TOTP — manually entered"
-msgstr ""
+msgstr "TOTP — يُدخل يدويًا"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "HOTP — manually entered"
-msgstr ""
+msgstr "HOTP — يُدخل يدويًا"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "Yubikey"
-msgstr ""
+msgstr "يوبيكي"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:82
-#, fuzzy, kde-format
-#| msgid "Token:"
+#, kde-format
 msgid "Token Secret:"
-msgstr "الرّمز:"
+msgstr "سر الرمز:"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:25
-#, fuzzy, kde-format
-#| msgid "Security Type"
+#, kde-format
 msgctxt "@title:window"
 msgid "Security Key"
-msgstr "نوع الأمن"
+msgstr "مفتاح الأمان"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr ""
+msgstr "أعد المحاولة"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:139
 #, kde-format
 msgid "Confirm PIN:"
-msgstr ""
+msgstr "أكد رقم التعريف الشخصي:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:38
 #, kde-format
@@ -6672,97 +6646,87 @@ msgstr "كلمة سر المجموعة:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:18
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for this user only (encrypted)"
+#, kde-format
 msgid "Store secret for this user only (encrypted)"
 msgstr "احفظ كلمة السر لهذا المستخدم فقط ( معمّاة)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:19
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for all users (not encrypted)"
+#, kde-format
 msgid "Store secret for all users (not encrypted)"
-msgstr "احفظ كلمة السر لجميع المستخدمين (غير معمّاة)"
+msgstr "خزّن السر لكل المستخدمين (غير معمّى)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:20
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "This password is not required"
+#, kde-format
 msgid "This secret is not required"
-msgstr "كلمة السر غير مطلوبة"
+msgstr "هذا السر غير مطلوب"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:36
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "الاسم"
+msgstr "الاسم:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:39
-#, fuzzy, kde-format
-#| msgid "The name of the Wi-Fi network to connect to"
+#, kde-format
 msgid "Name of the network interface this connection creates."
-msgstr "اسم شبكة واي فاي المراد الاتصال بها"
+msgstr "اسم واجهة الشبكة التي ينشئها هذا الاتصال."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:51
 #, kde-format
 msgid "The private key of this interface, as a base64 string."
-msgstr ""
+msgstr "المفتاح الخاص لهذه الواجهة، كسلسلة base64."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:71
-#, fuzzy, kde-format
-#| msgid "Listen port:"
+#, kde-format
 msgid "Listen Port:"
 msgstr "منفذ الاستماع:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:73
 #, kde-format
 msgid "Port to listen on. Automatic lets WireGuard choose one."
-msgstr ""
+msgstr "المنفذ الذي سيُستمع عليه. الخيار الآلي يتيح لـWireGuard اختيار منفذ."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:90
 #, kde-format
 msgid "Firewall mark to apply to outgoing packets. Zero disables it."
-msgstr ""
+msgstr "علامة الجدار الناري التي تُطبّق على الحزم الصادرة. الصفر يعطّلها."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:117
 #, kde-format
 msgid "Add routes for the peers' allowed IPs"
-msgstr ""
+msgstr "أضف مسارات لعناوين IP المسموحة للأقران"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:119
 #, kde-format
 msgid "Turn this off to route the tunnel yourself."
-msgstr ""
+msgstr "أوقف هذا لتوجيه النفق بنفسك."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:136
-#, fuzzy, kde-format
-#| msgid "Peers…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Peers…"
 msgstr "الأقران…"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:29
-#, fuzzy, kde-format
-#| msgid "Peer 1"
+#, kde-format
 msgctxt "@title:tab numbered WireGuard peer"
 msgid "Peer %1"
-msgstr "القرين 1"
+msgstr "القرين %1"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:75
 #, kde-format
 msgid "This interface has no peers, so it cannot connect to anything yet."
-msgstr ""
+msgstr "لا أقران لهذه الواجهة، لذا لا يمكنها الاتصال بأي شيء بعد."
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:175
-#, fuzzy, kde-format
-#| msgid "Add new Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add new Peer"
 msgstr "أضف قرينًا جديدًا"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:185
-#, fuzzy, kde-format
-#| msgid "Remove this Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove this Peer"
 msgstr "أزل هذا القرين"
@@ -7035,76 +6999,72 @@ msgstr "السابقة"
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:74
 #, kde-format
 msgid "Choose a Passkey"
-msgstr ""
+msgstr "اختر مفتاح المرور"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:76
 #, kde-format
 msgid "Use your security key with %1"
-msgstr ""
+msgstr "استخدم مفتاح الأمان الخاص بك مع %1"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:80
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "PIN Required"
-msgstr "غير مطلوب"
+msgstr "يلزم إدخال رقم التعريف الشخصي"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:82
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "New PIN Required"
-msgstr "غير مطلوب"
+msgstr "يلزم إدخال رقم تعريف شخصي جديد"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:84
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Change PIN Required"
-msgstr "غير مطلوب"
+msgstr "تغيير رقم التعريف الشخصي مطلوب"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:87
 #, kde-format
 msgid "Something went wrong"
-msgstr ""
+msgstr "حدث خطأ ما"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:103
 #, kde-format
 msgid "Which passkey do you want to use for %1?"
-msgstr ""
+msgstr "ما هو مفتاح المرور الذي تريد استخدامه لـ %1؟"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:105
 #, kde-format
 msgid "Touch your security key again to complete the request."
-msgstr ""
+msgstr "المس مفتاح الأمان الخاص بك مرة أخرى لإكمال الطلب."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:109
 #, kde-format
 msgid "Enter the PIN for your security key"
-msgstr ""
+msgstr "أدخل رقم التعريف الشخصي لمفتاح الأمان الخاص بك"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:111
 #, kde-format
 msgid "Set new PIN for your security key"
-msgstr ""
+msgstr "عيّن رقم تعريف شخصي جديد لمفتاح الأمان الخاص بك"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:113
 #, kde-format
 msgid "Change PIN for your security key"
-msgstr ""
+msgstr "غيّر رقم تعريف شخصي لمفتاح الأمان الخاص بك"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:123
 #, kde-format
 msgid "Request Timeout"
-msgstr ""
+msgstr "انقضى وقت الطلب"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:125
-#, fuzzy, kde-format
-#| msgid "Not required"
+#, kde-format
 msgid "Key not registered"
-msgstr "غير مطلوب"
+msgstr "المفتاح غير مسجّل"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:127
 #, kde-format
 msgid "You already registered this device. Try again with device"
-msgstr ""
+msgstr "لقد سجلت هذا الجهاز فعلًا. حاول مرة أخرى باستخدام الجهاز"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:129
 #, kde-format
@@ -7112,6 +7072,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "To unlock it, remove and reinsert it."
 msgstr ""
+"مفتاح الأمان مغلق بسبب إدخال رقم تعريف شخصي خاطئ عدة مرات، ولإلغاء القفل، "
+"أزله وأعد إدخاله."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:131
 #, kde-format
@@ -7119,121 +7081,122 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "You'll need to reset the security key."
 msgstr ""
+"مفتاح الأمان مغلق بسبب إدخال رقم تعريف شخصي خاطئ عدة مرات. ستحتاج إلى تصفير "
+"مفتاح الأمان."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:133
 #, kde-format
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
 msgstr ""
+"أُزِيل جهاز الاستيثاق أثناء التحقق. يرجى إعادة الإدخال والمحاولة مرة أخرى"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:135
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
+msgstr "الموثق لا يحتوي على دعم المفتاح المقيم"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:137
 #, kde-format
 msgid "Authenticator missing user verification"
-msgstr ""
+msgstr "الموثق يفتقد التحقق من المستخدم"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:139
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr ""
+msgstr "الموثق يفتقد إلى دعم Blob الكبيرة"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:141
 #, kde-format
 msgid ""
 "The security token does not support the server’s required authentication "
 "method."
-msgstr ""
+msgstr "رمز الأمان لا يتيح طريقة المصادقة المطلوبة من الخادم."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:143
 #, kde-format
 msgid "Storage Full"
-msgstr ""
+msgstr "التخزين ممتلئ"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:145
 #, kde-format
 msgid "User consent denied"
-msgstr ""
+msgstr "موافقة المستخدم مرفوضة"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:147
 #, kde-format
 msgid "User Cancelled Request"
-msgstr ""
+msgstr "المستخدم ألغى الطلب"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:176
 #, kde-format
 msgid "Internal User Verification Locked"
-msgstr ""
+msgstr "التحقق من المستخدم الداخلي مغلق"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:178
 #, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
+msgstr[1] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
+msgstr[2] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
+msgstr[3] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
+msgstr[4] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
+msgstr[5] "رقم التعريف الشخصي خاطئ. هناك %1 محاولة متبقية."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:180
 #, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "قصير جدًا. تبقى %1 محاولة."
+msgstr[1] "قصير جدًا. تبقى محاولة."
+msgstr[2] "قصير جدًا. تبقى محاولتين."
+msgstr[3] "قصير جدًا. تبقى %1 محاولات."
+msgstr[4] "قصير جدًا. تبقى %1 محاولة."
+msgstr[5] "قصير جدًا. تبقى %1 محاولة."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:182
 #, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "أحرف غير صالحة. تبقى %1محاولة."
+msgstr[1] "أحرف غير صالحة. تبقى محاولة."
+msgstr[2] "أحرف غير صالحة. تبقى محولتين."
+msgstr[3] "أحرف غير صالحة. تبقى %1 محاولات."
+msgstr[4] "أحرف غير صالحة. تبقى %1 محاولة."
+msgstr[5] "أحرف غير صالحة. تبقى %1محاولة."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:184
 #, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
-msgstr[2] ""
-msgstr[3] ""
-msgstr[4] ""
-msgstr[5] ""
+msgstr[0] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
+msgstr[1] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
+msgstr[2] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
+msgstr[3] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
+msgstr[4] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
+msgstr[5] "نفس رقم التعريف الشخصي الحالي. متبقي %1 من المحاولات."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:197
 #, kde-format
 msgctxt "@action:button submit the entered PIN"
 msgid "Next"
-msgstr ""
+msgstr "التالي"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:197
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
-msgstr ""
+msgstr "حسنًا"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "أغلق"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@action:button Cancel connecting to network"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "ألغِ"
@@ -7270,99 +7233,85 @@ msgid "Automatic"
 msgstr "آليّ"
 
 #: handler.cpp:142
-#, fuzzy, kde-format
-#| msgid "Plasma is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "تفتقد بلازما دعم اتصالات الشبكات الافتراضية الخاصة ”%1“."
 
 #: handler.cpp:145
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "أبلغ عن علة"
 
 #: handler.cpp:168
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "يفتقد مدير الشبكة إلى دعم اتصالات الشبكات الخاصة الافتراضية ’%1‘."
 
 #: handler.cpp:171
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt "@action:button"
 msgid "Install"
 msgstr "ثبّت"
 
 #: handler.cpp:217
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "فشل تفعيل %1"
 
 #: handler.cpp:391 handler.cpp:420
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "فشلت إضافة الاتصال %1"
 
 #: handler.cpp:398 handler.cpp:429
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been added"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "أُضيف الاتصال %1"
 
 #: handler.cpp:468
-#, fuzzy, kde-format
-#| msgid "Failed to add %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "فشلت إضافة %1"
 
 #: handler.cpp:508
-#, fuzzy, kde-format
-#| msgid "Failed to deactivate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to deactivate %1"
 msgstr "فشل تعطيل %1"
 
 #: handler.cpp:646
-#, fuzzy, kde-format
-#| msgid "Failed to remove %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to forget %1"
-msgstr "فشلت إزالة %1"
+msgstr "تعذّر نسيان %1"
 
 #: handler.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been removed"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been forgotten"
-msgstr "أُزيل الاتصال %1"
+msgstr "نُسي الاتصال %1"
 
 #: handler.cpp:672
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to update connection %1"
 msgstr "فشل تحديث الاتصال %1"
 
 #: handler.cpp:679
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been updated"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "حُدَّث الاتصال %1"
 
 #: handler.cpp:885
-#, fuzzy, kde-format
-#| msgid "Failed to create hotspot %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "فشل إنشاء نقطة اتصال %1"
@@ -7568,15 +7517,13 @@ msgid "Unknown"
 msgstr "مجهولة"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "اقطع الاتصال"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "اضبط"
@@ -7585,14 +7532,13 @@ msgstr "اضبط"
 #, kde-format
 msgctxt "@action:button forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "انسَ"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Connect to %1"
-msgstr "متّصل بـ %1"
+msgstr "متصل ب %1"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

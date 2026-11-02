@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-10-20 06:11+0200\n"
+"PO-Revision-Date: 2026-11-01 04:48+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -268,16 +268,12 @@ msgid "Connection imported."
 msgstr "კავშირი შემოტანილია."
 
 #: ui/main.qml:86
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection exported to %1."
-msgstr "კავშირი შემოტანილია."
+msgstr "კავშირი გატანილია %1-ში."
 
 #: ui/main.qml:92
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgid "Failed to export VPN connection: %1"
-msgstr "VPN შეერთების შემოტანის შეცდომა: %1"
+msgstr "VPN შეერთების გატანის შეცდომა: %1"
 
 #: ui/main.qml:98
 msgctxt "@info"
@@ -295,8 +291,6 @@ msgid "Import VPN Connection"
 msgstr "VPN შეერთების შემოტანა"
 
 #: ui/main.qml:361
-#, fuzzy
-#| msgid "Export VPN Connection"
 msgctxt "@title:window"
 msgid "Export VPN Connection"
 msgstr "VPN შეერთების გატანა"

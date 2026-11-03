@@ -599,9 +599,7 @@ msgid "Signal Strength"
 msgstr "Potencia do sinal"
 
 #: editor/connectiondetails.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "WiFi signal strength percentage indicator"
-#| msgid "%1%"
+#, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
 msgstr "%1%"

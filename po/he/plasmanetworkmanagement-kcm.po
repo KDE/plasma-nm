@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-09-30 08:34+0300\n"
+"PO-Revision-Date: 2026-11-03 20:28+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
 "Language: he\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=4; plural=(n == 1) ? 0 : ((n == 2) ? 1 : ((n > 10 && "
 "n % 10 == 0) ? 2 : 3));\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.1\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -157,15 +157,11 @@ msgid "%1"
 msgstr "%1"
 
 #: qml/ConnectionItem.qml:86 ui/ConnectionItem.qml:82
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:inmenu connect to network"
 msgid "Connect"
 msgstr "התחברות"
 
 #: qml/ConnectionItem.qml:87 ui/ConnectionItem.qml:83
-#, fuzzy
-#| msgid "Disconnect"
 msgctxt "@action:inmenu disconnect from network"
 msgid "Disconnect"
 msgstr "התנתקות"
@@ -183,25 +179,19 @@ msgstr "שכפול"
 #: qml/ConnectionItem.qml:104 ui/ConnectionItem.qml:100
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "לשכוח"
 
 #: qml/ConnectionItem.qml:115 ui/ConnectionItem.qml:111
-#, fuzzy
-#| msgid "Export"
 msgctxt "@action:inmenu export network connection"
 msgid "Export"
 msgstr "ייצוא"
 
 #: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
-#, fuzzy
-#| msgid "Connected"
 msgctxt "@info:status"
 msgid "Connected"
 msgstr "מחובר"
 
 #: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
-#, fuzzy
-#| msgid "Connecting"
 msgctxt "@info:status"
 msgid "Connecting"
 msgstr "מתחבר"
@@ -212,47 +202,34 @@ msgid "Available"
 msgstr "זמין"
 
 #: qml/main.qml:151 ui/main.qml:243
-#, fuzzy
-#| msgid "Add new connection"
 msgctxt "@action:button"
 msgid "Add new connection"
 msgstr "הוספת חיבור חדש"
 
 #: qml/main.qml:169 ui/main.qml:261
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Forget selected connection"
-msgstr "ייצוא חיבורים נבחרים"
+msgstr "לשכוח את החיבור הנבחר"
 
 #: qml/main.qml:187 ui/main.qml:279
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Export selected connection"
-msgstr "ייצוא חיבורים נבחרים"
+msgstr "ייצוא החיבור הנבחר"
 
 #: qml/main.qml:212 ui/main.qml:215
-#, fuzzy
-#| msgid "Configuration"
 msgctxt "@action:button"
 msgid "Configure"
-msgstr "הגדרות"
+msgstr "הגדרה"
 
 #: qml/main.qml:239 ui/main.qml:333
-#, fuzzy
-#| msgctxt "@title:window"
-#| msgid "Remove Connection"
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "הסרת חיבור"
+msgstr "לשכוח את החיבור"
 
 #: qml/main.qml:240 ui/main.qml:334
-#, fuzzy
-#| msgid "Do you want to remove the connection '%1'?"
 msgctxt "@info"
 msgid "Do you want to forget the connection '%1'?"
-msgstr "להסיר את החיבור ‚%1’?"
+msgstr "לשכוח את החיבור ‚%1’?"
 
 #: qml/main.qml:259
 msgctxt "@action:button Connect to network"
@@ -285,34 +262,24 @@ msgid "Password must be between 8 and 64 characters"
 msgstr "אורך הסיסמה חייב להיות בין 8 ל־64 תווים"
 
 #: ui/main.qml:74
-#, fuzzy
-#| msgid "Connection imported."
 msgctxt "@info"
 msgid "Connection imported."
 msgstr "החיבור יובא."
 
 #: ui/main.qml:86
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection exported to %1."
-msgstr "החיבור יובא."
+msgstr "החיבור יוצא אל %1."
 
 #: ui/main.qml:92
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgid "Failed to export VPN connection: %1"
-msgstr "ייבוא חיבור VPN נכשל: %1"
+msgstr "ייצוא חיבור VPN נכשל: %1"
 
 #: ui/main.qml:98
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgctxt "@info"
 msgid "Failed to import VPN connection: %1"
 msgstr "ייבוא חיבור VPN נכשל: %1"
 
 #: ui/main.qml:303
-#, fuzzy
-#| msgid "Connection name:"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "שם החיבור:"
@@ -323,15 +290,11 @@ msgid "Import VPN Connection"
 msgstr "ייבוא חיבור VPN"
 
 #: ui/main.qml:361
-#, fuzzy
-#| msgid "Export VPN Connection"
 msgctxt "@title:window"
 msgid "Export VPN Connection"
 msgstr "ייצוא חיבור VPN"
 
 #: ui/main.qml:375
-#, fuzzy
-#| msgid "Import the VPN configuration from \"%1\"?"
 msgctxt "@info"
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "לייבא את הגדרות ה־VPN מתוך „%1”?"

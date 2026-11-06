@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-08-16 21:50+0300\n"
+"PO-Revision-Date: 2026-10-05 17:20+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -20,7 +20,7 @@ msgstr ""
 #: kcm.cpp:1010
 #, kde-format
 msgid "Failed to get secrets for %1"
-msgstr ""
+msgstr "Salaisuuksien saaminen epäonnistui yhteydelle %1"
 
 #: kcm.cpp:1052
 #, kde-format
@@ -53,12 +53,12 @@ msgstr " (kopio)"
 #: kcm.cpp:1213
 #, kde-format
 msgid "VPN connections (%1)"
-msgstr ""
+msgstr "VPN-yhteydet (%1)"
 
 #: kcm.cpp:1213
 #, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "Kaikki tiedostot (*)"
 
 #: kcm.cpp:1254
 #, kde-format
@@ -73,7 +73,7 @@ msgstr ""
 #: kcm.cpp:1310
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Tiedostoa ei annettu"
 
 #: kcm.cpp:1343 kcm.cpp:1352
 #, kde-format
@@ -83,4 +83,4 @@ msgstr ""
 #: kcm.cpp:1391
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Tuntematon VPN-tyyppi"

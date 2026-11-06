@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-10-31 18:16+0400\n"
+"PO-Revision-Date: 2026-11-05 09:07+0400\n"
 "Last-Translator: Zayed Al-Saidi <zayed.alsaidi@gmail.com>\n"
 "Language-Team: ar\n"
 "Language: ar\n"
@@ -270,16 +270,12 @@ msgid "Connection imported."
 msgstr "استورد الاتصال"
 
 #: ui/main.qml:86
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection exported to %1."
-msgstr "استورد الاتصال"
+msgstr "صُدر الاتصال إلى %1."
 
 #: ui/main.qml:92
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgid "Failed to export VPN connection: %1"
-msgstr "فشل في استيراد اتصال في بي ان: %1"
+msgstr "فشل في تصدير اتصال في بي ان: %1"
 
 #: ui/main.qml:98
 msgctxt "@info"
@@ -297,8 +293,6 @@ msgid "Import VPN Connection"
 msgstr "استورد اتصال في بي ان"
 
 #: ui/main.qml:361
-#, fuzzy
-#| msgid "Export VPN Connection"
 msgctxt "@title:window"
 msgid "Export VPN Connection"
 msgstr "صدر الاتصال في بي ان"

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-08-24 19:49+0300\n"
+"PO-Revision-Date: 2026-10-05 17:20+0300\n"
 "Last-Translator: Tommi Nieminen <translator@legisign.org>\n"
 "Language-Team: Finnish <kde-i18n-doc@kde.org>\n"
 "Language: fi\n"
@@ -319,8 +319,6 @@ msgid "Connection name:"
 msgstr "Yhteyden nimi:"
 
 #: ui/main.qml:351
-#, fuzzy
-#| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Tuo VPN-yhteys"
@@ -340,8 +338,6 @@ msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Tuodaanko VPN-määritys tiedostosta ”%1”?"
 
 #: ui/main.qml:380
-#, fuzzy
-#| msgid "Import"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Tuo"

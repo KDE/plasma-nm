@@ -317,9 +317,7 @@ msgid ""
 "TCP/UDP port number for peer. (Default value when there is no port for "
 "gateway)."
 msgstr ""
-"Asiakkaan TCP/UDP-portti. (Oletusarvo, kun yhdyskäytävälle ei ole "
-"porttia.)Asiakkaan TCP/UDP-portti. (Oletusarvo, kun yhdyskäytävälle ei ole "
-"porttia.)"
+"Asiakkaan TCP/UDP-portti. (Oletusarvo, kun yhdyskäytävälle ei ole porttia.)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomPort)
 #: openvpnadvanced.ui:39

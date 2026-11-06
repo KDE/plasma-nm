@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the PACKAGE package.
 # SPDX-FileCopyrightText: 2024 Kimmo Kujansuu <mrkujansuu@gmail.com>
 # Lasse Liehu <lasse.liehu@gmail.com>, 2013, 2014, 2015.
-# Tommi Nieminen <translator@legisign.org>, 2017, 2019, 2020, 2024.
+# SPDX-FileCopyrightText: 2017, 2019, 2020, 2024, 2026 Tommi Nieminen <translator@legisign.org>
 #
 #
 msgid ""
@@ -18,6 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Lokalize 25.04.0\n"
 
 #: strongswanauth.cpp:59
 #, kde-format

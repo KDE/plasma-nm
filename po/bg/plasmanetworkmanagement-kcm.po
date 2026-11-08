@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-10-22 20:29+0200\n"
+"PO-Revision-Date: 2026-11-07 22:49+0200\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
 "Language: bg\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -270,16 +270,12 @@ msgid "Connection imported."
 msgstr "Връзката е импортирана."
 
 #: ui/main.qml:86
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection exported to %1."
-msgstr "Връзката е импортирана."
+msgstr "Връзката е експортирана в %1."
 
 #: ui/main.qml:92
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgid "Failed to export VPN connection: %1"
-msgstr "Неуспешно импортиране на VPN връзка: %1"
+msgstr "Грешка при експортиране на VPN връзка: %1"
 
 #: ui/main.qml:98
 msgctxt "@info"
@@ -297,8 +293,6 @@ msgid "Import VPN Connection"
 msgstr "Импортиране на VPN връзка"
 
 #: ui/main.qml:361
-#, fuzzy
-#| msgid "Export VPN Connection"
 msgctxt "@title:window"
 msgid "Export VPN Connection"
 msgstr "Експортиране на VPN връзка"

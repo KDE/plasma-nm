@@ -314,7 +314,7 @@ Default value -1 means that NetworkManager gets to choose and manage the actual 
      <item>
       <widget class="QPushButton" name="dnsMorePushButton">
        <property name="toolTip">
-        <string>Edit DNS the list of servers</string>
+        <string>Edit the list of DNS servers</string>
        </property>
        <property name="icon">
         <iconset theme="document-properties"/>

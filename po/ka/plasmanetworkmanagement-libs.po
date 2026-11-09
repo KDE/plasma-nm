@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 03:00+0000\n"
+"POT-Creation-Date: 2026-11-09 00:57+0000\n"
 "PO-Revision-Date: 2026-10-26 04:28+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -1965,10 +1965,12 @@ msgstr ""
 "ჩამოთვლის დროს გამყოფად გამოიყენეთ \",\"."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:317
+#: editor/settings/ui/ipv4.ui:317 editor/settings/ui/ipv6.ui:83
+#: editorqml/qml/ipv4/IPv4Settings.qml:73
+#: editorqml/qml/ipv6/IPv6Settings.qml:73
 #, kde-format
-msgid "Edit DNS the list of servers"
-msgstr "DNS სერვერების ჩასწორება"
+msgid "Edit the list of DNS servers"
+msgstr "DNS სერვერების სიის ჩასწორება"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:330
@@ -2036,13 +2038,6 @@ msgstr ""
 #, kde-format
 msgid "IPv6 is required for this connection"
 msgstr "ამ კავშირისთვის საჭიროა IPv6"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv6.ui:83 editorqml/qml/ipv4/IPv4Settings.qml:73
-#: editorqml/qml/ipv6/IPv6Settings.qml:73
-#, kde-format
-msgid "Edit the list of DNS servers"
-msgstr "DNS სერვერების სიის ჩასწორება"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:187
@@ -7593,6 +7588,9 @@ msgstr "ატვირთვა"
 #, kde-format
 msgid "Download"
 msgstr "გადმოწერა"
+
+#~ msgid "Edit DNS the list of servers"
+#~ msgstr "DNS სერვერების ჩასწორება"
 
 #~ msgid "Connect"
 #~ msgstr "დაკავშირება"

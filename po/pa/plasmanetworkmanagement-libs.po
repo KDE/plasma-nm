@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 03:00+0000\n"
+"POT-Creation-Date: 2026-11-09 00:57+0000\n"
 "PO-Revision-Date: 2025-02-28 10:21-0600\n"
 "Last-Translator: A S Alam <aman@punlinux.org>\n"
 "Language-Team: pa\n"
@@ -2020,10 +2020,12 @@ msgid ""
 msgstr ""
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:317
+#: editor/settings/ui/ipv4.ui:317 editor/settings/ui/ipv6.ui:83
+#: editorqml/qml/ipv4/IPv4Settings.qml:73
+#: editorqml/qml/ipv6/IPv6Settings.qml:73
 #, kde-format
-msgid "Edit DNS the list of servers"
-msgstr "DNS ਸਰਵਰ ਦੀ ਸੂਚੀ ਨੂੰ ਸੋਧੋ"
+msgid "Edit the list of DNS servers"
+msgstr "DNS ਸਰਵਰ ਦੀ ਸੂਚੀ ਸੋਧੋ"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
 #: editor/settings/ui/ipv4.ui:330
@@ -2087,13 +2089,6 @@ msgstr ""
 #, kde-format
 msgid "IPv6 is required for this connection"
 msgstr "ਇਹ ਕਨੈਕਸ਼ਨ ਲਈ IPv6 ਚਾਹੀਦਾ ਹੈ"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv6.ui:83 editorqml/qml/ipv4/IPv4Settings.qml:73
-#: editorqml/qml/ipv6/IPv6Settings.qml:73
-#, kde-format
-msgid "Edit the list of DNS servers"
-msgstr "DNS ਸਰਵਰ ਦੀ ਸੂਚੀ ਸੋਧੋ"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:187
@@ -7728,6 +7723,9 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#~ msgid "Edit DNS the list of servers"
+#~ msgstr "DNS ਸਰਵਰ ਦੀ ਸੂਚੀ ਨੂੰ ਸੋਧੋ"
 
 #, fuzzy
 #~| msgctxt "infiniband transport mode"

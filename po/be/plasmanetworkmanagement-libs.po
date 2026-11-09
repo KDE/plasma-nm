@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fc57ad16a28d02dea100ceb1c60de14e\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 03:00+0000\n"
+"POT-Creation-Date: 2026-11-09 00:57+0000\n"
 "PO-Revision-Date: 2024-10-24 08:20\n"
 "Last-Translator: Antikruk <nashtlumach@gmail.com>\n"
 "Language-Team: Belarusian\n"
@@ -2052,9 +2052,11 @@ msgstr ""
 "сервераў. Адасаблівайце запісы з дапамогай ','."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:317
+#: editor/settings/ui/ipv4.ui:317 editor/settings/ui/ipv6.ui:83
+#: editorqml/qml/ipv4/IPv4Settings.qml:73
+#: editorqml/qml/ipv6/IPv6Settings.qml:73
 #, kde-format
-msgid "Edit DNS the list of servers"
+msgid "Edit the list of DNS servers"
 msgstr "Рэдагаваць спіс DNS-сервераў"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
@@ -2124,13 +2126,6 @@ msgstr ""
 #, kde-format
 msgid "IPv6 is required for this connection"
 msgstr "Для гэтага злучэння патрабуецца IPv6"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv6.ui:83 editorqml/qml/ipv4/IPv4Settings.qml:73
-#: editorqml/qml/ipv6/IPv6Settings.qml:73
-#, kde-format
-msgid "Edit the list of DNS servers"
-msgstr "Рэдагаваць спіс DNS-сервераў"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:187
@@ -7924,6 +7919,9 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#~ msgid "Edit DNS the list of servers"
+#~ msgstr "Рэдагаваць спіс DNS-сервераў"
 
 #, fuzzy
 #~| msgctxt "infiniband transport mode"

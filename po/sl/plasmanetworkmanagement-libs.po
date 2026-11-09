@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 03:00+0000\n"
+"POT-Creation-Date: 2026-11-09 00:57+0000\n"
 "PO-Revision-Date: 2026-10-26 07:04+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -1963,9 +1963,11 @@ msgstr ""
 "vnosov uporabite vejico ','."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:317
+#: editor/settings/ui/ipv4.ui:317 editor/settings/ui/ipv6.ui:83
+#: editorqml/qml/ipv4/IPv4Settings.qml:73
+#: editorqml/qml/ipv6/IPv6Settings.qml:73
 #, kde-format
-msgid "Edit DNS the list of servers"
+msgid "Edit the list of DNS servers"
 msgstr "Uredi seznam strežnikov DNS"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
@@ -2035,13 +2037,6 @@ msgstr ""
 #, kde-format
 msgid "IPv6 is required for this connection"
 msgstr "Za to povezavo je zahtevan IPv6"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv6.ui:83 editorqml/qml/ipv4/IPv4Settings.qml:73
-#: editorqml/qml/ipv6/IPv6Settings.qml:73
-#, kde-format
-msgid "Edit the list of DNS servers"
-msgstr "Uredi seznam strežnikov DNS"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:187
@@ -7601,6 +7596,9 @@ msgstr "Prenesi tja"
 #, kde-format
 msgid "Download"
 msgstr "Prenesi sem"
+
+#~ msgid "Edit DNS the list of servers"
+#~ msgstr "Uredi seznam strežnikov DNS"
 
 #~ msgid "Connect"
 #~ msgstr "Poveži"

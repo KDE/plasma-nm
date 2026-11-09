@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 03:00+0000\n"
+"POT-Creation-Date: 2026-11-09 00:57+0000\n"
 "PO-Revision-Date: 2024-12-15 19:31+0530\n"
 "Last-Translator: kali <skkalwar999@gmail.com>\n"
 "Language-Team: Hindi <kde-i18n-doc@kde.org>\n"
@@ -2047,9 +2047,11 @@ msgstr ""
 "प्रविष्टियों को अलग करने के लिए ',' का उपयोग करें।"
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:317
+#: editor/settings/ui/ipv4.ui:317 editor/settings/ui/ipv6.ui:83
+#: editorqml/qml/ipv4/IPv4Settings.qml:73
+#: editorqml/qml/ipv6/IPv6Settings.qml:73
 #, kde-format
-msgid "Edit DNS the list of servers"
+msgid "Edit the list of DNS servers"
 msgstr "DNS सर्वर की सूची संपादित करें"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
@@ -2118,13 +2120,6 @@ msgstr ""
 #, kde-format
 msgid "IPv6 is required for this connection"
 msgstr "इस कनेक्शन के लिए IPv6 आवश्यक है"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv6.ui:83 editorqml/qml/ipv4/IPv4Settings.qml:73
-#: editorqml/qml/ipv6/IPv6Settings.qml:73
-#, kde-format
-msgid "Edit the list of DNS servers"
-msgstr "DNS सर्वर की सूची संपादित करें"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:187
@@ -7899,6 +7894,9 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
+
+#~ msgid "Edit DNS the list of servers"
+#~ msgstr "DNS सर्वर की सूची संपादित करें"
 
 #, fuzzy
 #~| msgctxt "infiniband transport mode"

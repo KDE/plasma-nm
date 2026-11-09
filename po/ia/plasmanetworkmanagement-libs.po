@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-08 03:00+0000\n"
+"POT-Creation-Date: 2026-11-09 00:57+0000\n"
 "PO-Revision-Date: 2026-09-23 11:11+0200\n"
 "Last-Translator: giovanni <g.sora@tiscali.it>\n"
 "Language-Team: Interlingua <kde-i18n-doc@kde.org>\n"
@@ -1962,9 +1962,11 @@ msgstr ""
 "DNS. Usa '.' pro separar elementos."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv4.ui:317
+#: editor/settings/ui/ipv4.ui:317 editor/settings/ui/ipv6.ui:83
+#: editorqml/qml/ipv4/IPv4Settings.qml:73
+#: editorqml/qml/ipv6/IPv6Settings.qml:73
 #, kde-format
-msgid "Edit DNS the list of servers"
+msgid "Edit the list of DNS servers"
 msgstr "Edita le lista de servitores de DNS"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
@@ -2034,13 +2036,6 @@ msgstr ""
 #, kde-format
 msgid "IPv6 is required for this connection"
 msgstr "IPv6 es requirite pro iste connexion"
-
-#. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
-#: editor/settings/ui/ipv6.ui:83 editorqml/qml/ipv4/IPv4Settings.qml:73
-#: editorqml/qml/ipv6/IPv6Settings.qml:73
-#, kde-format
-msgid "Edit the list of DNS servers"
-msgstr "Edita le lista de servitores de DNS"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:187
@@ -7655,6 +7650,9 @@ msgstr "Incarga"
 #, kde-format
 msgid "Download"
 msgstr "Discarga"
+
+#~ msgid "Edit DNS the list of servers"
+#~ msgstr "Edita le lista de servitores de DNS"
 
 #~ msgid "Connect"
 #~ msgstr "Connecte"

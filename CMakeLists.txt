@@ -108,7 +108,7 @@ find_package(QCoro6 REQUIRED COMPONENTS Core DBus)
 qcoro_enable_coroutines()
 
 ecm_set_disabled_deprecation_versions(QT 5.15
-    KF 6.4.0
+    KF 6.32.0
 )
 
 add_definitions(-DQT_NO_URL_CAST_FROM_STRING)

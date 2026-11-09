@@ -17,6 +17,7 @@ target_link_libraries(kcm_networkmanagement
     plasmanm_editor
     KF6::KCMUtils
     KF6::I18n
+    KF6::I18nQml
     KF6::Service
     Qt::Quick
     Qt::QuickWidgets

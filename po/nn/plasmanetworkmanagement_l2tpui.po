@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 16:19+0000\n"
+"POT-Creation-Date: 2026-11-08 06:31+0000\n"
 "PO-Revision-Date: 2021-09-18 20:18+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -67,11 +67,13 @@ msgstr "Brukarnamn:"
 #: l2tp.ui:103
 #, kde-format
 msgid ""
-"<html><head/><body><p>Set the name used for authenticating the local system "
-"to the peer to &lt;name&gt;.</p></body></html>"
+"<html><head/><body>"
+"<p>Set the name used for authenticating the local system to the peer to &lt;name&gt;.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Vel namn brukt for autentisering til &lt;name&gt; av "
-"det lokale systemet.</p></body></html>"
+"<html><head/><body>"
+"<p>Vel namn brukt for autentisering til &lt;name&gt; av det lokale systemet.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_2)
 #: l2tp.ui:113
@@ -83,11 +85,13 @@ msgstr "Passord:"
 #: l2tp.ui:128
 #, kde-format
 msgid ""
-"<html><head/><body><p>Password passed to PPPD when prompted for it.</p></"
-"body></html>"
+"<html><head/><body>"
+"<p>Password passed to PPPD when prompted for it.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Passord sendt til PPPD ved førespurnad.</p></body></"
-"html>"
+"<html><head/><body>"
+"<p>Passord sendt til PPPD ved førespurnad.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_3)
 #: l2tp.ui:140
@@ -99,11 +103,15 @@ msgstr "NT-domene:"
 #: l2tp.ui:150
 #, kde-format
 msgid ""
-"<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
-"host name for</p><p>authentication purposes.</p></body></html>"
+"<html><head/><body>"
+"<p>Append the domain name &lt;domain&gt; to the local host name for</p>"
+"<p>authentication purposes.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Legg domenenamnet &lt;domain&gt; til det lokale "
-"vertsnamnet for</p><p>autentiseringsformål.</p></body></html>"
+"<html><head/><body>"
+"<p>Legg domenenamnet &lt;domain&gt; til det lokale vertsnamnet for</p>"
+"<p>autentiseringsformål.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -117,11 +125,13 @@ msgstr "CA-sertifikat:"
 #: l2tp.ui:187 l2tpipsec.ui:119
 #, kde-format
 msgid ""
-"<html><head/><body><p>Certificate authority (CA) file "
-"in .pem, .der, .crt, .cer or .p12 formats.</p></body></html>"
+"<html><head/><body>"
+"<p>Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Sertifiseringsinstans-fil (CA) "
-"i .pem-, .der-, .crt-, .cer- eller .p12-format.</p></body></html>"
+"<html><head/><body>"
+"<p>Sertifiseringsinstans-fil (CA) i .pem-, .der-, .crt-, .cer- eller .p12-format.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineCert)
@@ -142,11 +152,13 @@ msgstr "Brukarsertifikat:"
 #: l2tp.ui:210
 #, kde-format
 msgid ""
-"<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
-"</p></body></html>"
+"<html><head/><body>"
+"<p>Certificate in .pem, .der, .crt, .cer or .p12 formats.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Sertifikat i .pem-, .der-, .crt-, .crt- eller .p12-"
-"format.</p></body></html>"
+"<html><head/><body>"
+"<p>Sertifikat i .pem-, .der-, .crt-, .crt- eller .p12-format.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
@@ -160,11 +172,13 @@ msgstr "Privatnøkkel:"
 #: l2tp.ui:233 l2tpipsec.ui:165
 #, kde-format
 msgid ""
-"<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
-"</p></body></html>"
+"<html><head/><body>"
+"<p>Private key in .pem, .der, .key, .pk8 or .p12 formats.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Privatnøkkel i .pem-, .der-, .crt-, .crt- eller .p12-"
-"format.</p></body></html>"
+"<html><head/><body>"
+"<p>Privatnøkkel i .pem-, .der-, .crt-, .crt- eller .p12-format.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, machineKey)
 #. i18n: ectx: property (filter), widget (KUrlRequester, userKey)
@@ -185,11 +199,13 @@ msgstr "Passord for privatnøkkel:"
 #: l2tp.ui:255 l2tpipsec.ui:187
 #, kde-format
 msgid ""
-"<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
-"body></html>"
+"<html><head/><body>"
+"<p>Password for private key or PKCS#12 certificate.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Passord for privatnøkkel eller PKCS#12-sertifikat.</"
-"p></body></html>"
+"<html><head/><body>"
+"<p>Passord for privatnøkkel eller PKCS#12-sertifikat.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:286
@@ -251,10 +267,14 @@ msgstr "Førehandsdelt nøkkel:"
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
 #: l2tpipsec.ui:103
 #, kde-format
-msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
+msgid ""
+"<html><head/><body>"
+"<p>Pre-shared key (PSK) secret.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Løyndom til førehandsdelt nøkkel (PSK).</p></body></"
-"html>"
+"<html><head/><body>"
+"<p>Løyndom til førehandsdelt nøkkel (PSK).</p>"
+"</body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: l2tpipsec.ui:129
@@ -266,11 +286,13 @@ msgstr "Maskinsertifikat:"
 #: l2tpipsec.ui:142
 #, kde-format
 msgid ""
-"<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></body></"
-"html>"
+"<html><head/><body>"
+"<p>Certificate in .pem, .der or .p12 formats.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Sertifikat i .pem-, .der- eller .p12-format.</p></"
-"body></html>"
+"<html><head/><body>"
+"<p>Sertifikat i .pem-, .der- eller .p12-format.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAdvanced)
 #: l2tpipsec.ui:219
@@ -294,21 +316,25 @@ msgstr "Fase 2-algoritmar:"
 #: l2tpipsec.ui:245
 #, kde-format
 msgid ""
-"<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
-"The format is “enc-integ,enc-integ, …”.</p></body></html>"
+"<html><head/><body>"
+"<p>Optional. A list of proposals for ESP - Quick Mode. The format is “enc-integ,enc-integ, …”.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Valfritt. Ei forslagsliste for ESP – kjappmodus. "
-"Formatet er «enc-integ,enc-integ, …».</p></body></html>"
+"<html><head/><body>"
+"<p>Valfritt. Ei forslagsliste for ESP – kjappmodus. Formatet er «enc-integ,enc-integ, …».</p>"
+"</body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:255
 #, kde-format
 msgid ""
-"<html><head/><body><p>How long the keying channel of a connection should "
-"last before being renegotiated.</p></body></html>"
+"<html><head/><body>"
+"<p>How long the keying channel of a connection should last before being renegotiated.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Kor lenge nøkkelkanalen til tilkoplingar skal vara før "
-"reforhandling.</p></body></html>"
+"<html><head/><body>"
+"<p>Kor lenge nøkkelkanalen til tilkoplingar skal vara før reforhandling.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
@@ -327,11 +353,13 @@ msgstr "Fase 1-levetid:"
 #: l2tpipsec.ui:272
 #, kde-format
 msgid ""
-"<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
-"format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
+"<html><head/><body>"
+"<p>Optional. A list of proposals for IKE - Main Mode. The format is “enc-integ-group,enc-integ-group, …”.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Valfritt. Ei forslagsliste for IKE – hovudmodus. "
-"Formatet er «enc-integ-group,enc-integ-group, …».</p></body></html>"
+"<html><head/><body>"
+"<p>Valfritt. Ei forslagsliste for IKE – hovudmodus. Formatet er «enc-integ-group,enc-integ-group, …».</p>"
+"</body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:279
@@ -343,40 +371,37 @@ msgstr "Fase 2-levetid:"
 #: l2tpipsec.ui:289
 #, kde-format
 msgid ""
-"<html><head/><body><p>How long a particular instance of a connection (a set "
-"of encryption/authentication keys for user packets) should last, from "
-"successful negotiation to expiry.</p></body></html>"
+"<html><head/><body>"
+"<p>How long a particular instance of a connection (a set of encryption/authentication keys for user packets) should last, from successful negotiation to expiry.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Kor lenge kvar tilkoplingsinstans (sett med "
-"krypterings-/autentiseringsnøklar for brukarpakkar) skal vara, rekna frå "
-"vellukka forhandling til slutt.</p></body></html>"
+"<html><head/><body>"
+"<p>Kor lenge kvar tilkoplingsinstans (sett med krypterings-/autentiseringsnøklar for brukarpakkar) skal vara, rekna frå vellukka forhandling til slutt.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
 #: l2tpipsec.ui:299
 #, kde-format
 msgid ""
-"<html><head/><body><p>Optional. How the IPsec server should be identified "
-"for authentication. Sometimes referred to as Peer ID or Gateway ID, also "
-"referred to as rightid by strongSwan, Libreswan, Openswan and FreeS/WAN. See "
-"strongSwan or Libreswan documentation for leftid/rightid syntax and identity "
-"parsing.</p></body></html>"
+"<html><head/><body>"
+"<p>Optional. How the IPsec server should be identified for authentication. Sometimes referred to as Peer ID or Gateway ID, also referred to as rightid by strongSwan, Libreswan, Openswan and FreeS/WAN. See strongSwan or Libreswan documentation for leftid/rightid syntax and identity parsing.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Valfritt. Korleis IPsec-tenaren skal identifiserast "
-"for autentisering. Vert av og til omtala som «peer-ID», eller «portnar-"
-"ID»/«gateway-ID», eller som «rightid» av strongSwan, Libreswan, Openswan og "
-"FreeS/WAN. Sjå dokumentasjonen til strongSwan eller Libreswan for leftid/"
-"rightid-syntaks og -identitetsparsing.</p></body></html>"
+"<html><head/><body>"
+"<p>Valfritt. Korleis IPsec-tenaren skal identifiserast for autentisering. Vert av og til omtala som «peer-ID», eller «portnar-ID»/«gateway-ID», eller som «rightid» av strongSwan, Libreswan, Openswan og FreeS/WAN. Sjå dokumentasjonen til strongSwan eller Libreswan for leftid/rightid-syntaks og -identitetsparsing.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:306
 #, kde-format
 msgid ""
-"<html><head/><body><p>IPComp compresses raw IP packets before they get "
-"encrypted. This saves some bandwidth, but uses more processing power.</p></"
-"body></html>"
+"<html><head/><body>"
+"<p>IPComp compresses raw IP packets before they get encrypted. This saves some bandwidth, but uses more processing power.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>IPComp komprimerer rå IP-pakkar før kryptering. Dette "
-"sparar litt bandbreidd, men brukar meir maskinkraft.</p></body></html>"
+"<html><head/><body>"
+"<p>IPComp komprimerer rå IP-pakkar før kryptering. Dette sparar litt bandbreidd, men brukar meir maskinkraft.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:309
@@ -388,11 +413,13 @@ msgstr "Bruk IP-komprimering"
 #: l2tpipsec.ui:316
 #, kde-format
 msgid ""
-"<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
-"only if the server doesn’t support PFS.</p></body></html>"
+"<html><head/><body>"
+"<p>Disable perfect forward secrecy. Enable this option only if the server doesn’t support PFS.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Slå av «perfect forward secrecy» (PFS). Berre kryss av "
-"her dersom tenaren ikkje støttar PFS.</p></body></html>"
+"<html><head/><body>"
+"<p>Slå av «perfect forward secrecy» (PFS). Berre kryss av her dersom tenaren ikkje støttar PFS.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:319
@@ -404,13 +431,13 @@ msgstr "Slå av PFS"
 #: l2tpipsec.ui:326
 #, kde-format
 msgid ""
-"<html><head/><body><p>Some firewalls block ESP traffic. Enforcing UDP "
-"encapsulation even if no NAT situation is detected might help in such cases."
-"</p></body></html>"
+"<html><head/><body>"
+"<p>Some firewalls block ESP traffic. Enforcing UDP encapsulation even if no NAT situation is detected might help in such cases.</p>"
+"</body></html>"
 msgstr ""
-"<html><head/><body><p>Nokre brannmurar blokkerer ESP-trafikk. Å tvinga UDP-"
-"innkapsling sjølv om NAT ikkje vert oppdaga kan i slike tilfelle hjelpa.</"
-"p></body></html>"
+"<html><head/><body>"
+"<p>Nokre brannmurar blokkerer ESP-trafikk. Å tvinga UDP-innkapsling sjølv om NAT ikkje vert oppdaga kan i slike tilfelle hjelpa.</p>"
+"</body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:329
@@ -511,12 +538,10 @@ msgstr "Tillat Deflate-komprimering"
 #: l2tpppp.ui:134
 #, kde-format
 msgid ""
-"Allow/disable Van Jacobson style TCP/IP header compression in both the "
-"transmit\n"
+"Allow/disable Van Jacobson style TCP/IP header compression in both the transmit\n"
 "and the receive directions."
 msgstr ""
-"Tillat/avvis komprimering av TCP/IP-hovud à la Van Jacobsen både ved "
-"sending\n"
+"Tillat/avvis komprimering av TCP/IP-hovud à la Van Jacobsen både ved sending\n"
 "og mottak."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbTCPheaders)
@@ -563,8 +588,7 @@ msgstr "Ekko"
 #: l2tpppp.ui:189
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
-msgstr ""
-"Send LCP-ekkoførespurnadar for å finna ut om motparten er tilgjengeleg."
+msgstr "Send LCP-ekkoførespurnadar for å finna ut om motparten er tilgjengeleg."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbsendEcho)
 #: l2tpppp.ui:192
@@ -594,15 +618,12 @@ msgstr "MTU: "
 #: l2tpppp.ui:257
 #, kde-format
 msgid ""
-"Note: MPPE encryption is only available with MSCHAP authentication methods. "
-"To\n"
+"Note: MPPE encryption is only available with MSCHAP authentication methods. To\n"
 "enable this checkbox, select one or more of the MSCHAP authentication\n"
 "methods: MSCHAP or MSCHAPv2."
 msgstr ""
-"Merk: MPPE-kryptering er berre tilgjengeleg med MSCHAP-"
-"autentiseringsmetodane. For\n"
-"å gjera dette avkryssingsfeltet tilgjengeleg, må du velja ein eller fleire "
-"av MSCHAP-\n"
+"Merk: MPPE-kryptering er berre tilgjengeleg med MSCHAP-autentiseringsmetodane. For\n"
+"å gjera dette avkryssingsfeltet tilgjengeleg, må du velja ein eller fleire av MSCHAP-\n"
 "autentiseringsmetodane: MSCHAP eller MSCHAPv2."
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbMPPE)
@@ -645,11 +666,8 @@ msgstr "40 bit"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbstatefulEncryption)
 #: l2tpppp.ui:319
 #, kde-format
-msgid ""
-"Allow MPPE to use stateful mode. Stateless mode is still attempted first."
-msgstr ""
-"Tillat MMPE å bruka tilstandsmodus. Tilstandsfri modus vert likevel prøvd "
-"først."
+msgid "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
+msgstr "Tillat MMPE å bruka tilstandsmodus. Tilstandsfri modus vert likevel prøvd først."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbstatefulEncryption)
 #: l2tpppp.ui:322

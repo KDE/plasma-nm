@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 16:19+0000\n"
+"POT-Creation-Date: 2026-11-08 06:31+0000\n"
 "PO-Revision-Date: 2024-07-28 12:38+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -44,15 +44,11 @@ msgstr "Portnar:"
 #: openvpn.ui:36
 #, kde-format
 msgid ""
-"Remote gateways(s), with optional port and protocol (e.g. "
-"ovpn.corp.com:1234:tcp).\n"
-"You can specify multiple hosts for redundancy (use commas or spaces as "
-"delimiters)."
+"Remote gateways(s), with optional port and protocol (e.g. ovpn.corp.com:1234:tcp).\n"
+"You can specify multiple hosts for redundancy (use commas or spaces as delimiters)."
 msgstr ""
-"Fjernportnar(ar), eventuelt med port og protokoll (eks.: "
-"openvpn.firma.no:1234:tcp).\n"
-"For redundans kan du oppgje fleire portnarar, skilde med komma eller "
-"mellomrom."
+"Fjernportnar(ar), eventuelt med port og protokoll (eks.: openvpn.firma.no:1234:tcp).\n"
+"For redundans kan du oppgje fleire portnarar, skilde med komma eller mellomrom."
 
 #. i18n: ectx: property (text), widget (QLabel, labelConnectionType)
 #: openvpn.ui:46
@@ -129,12 +125,8 @@ msgstr "Brukarsertifikat:"
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, x509PassCert)
 #: openvpn.ui:140 openvpn.ui:494
 #, kde-format
-msgid ""
-"Local peer's signed certificate in .pem format (signed by CA of CA "
-"Certificate)."
-msgstr ""
-"Signert sertifikat til lokalvert, i .pem-format (signert av CA-en til CA-"
-"sertifikatet)."
+msgid "Local peer's signed certificate in .pem format (signed by CA of CA Certificate)."
+msgstr "Signert sertifikat til lokalvert, i .pem-format (signert av CA-en til CA-sertifikatet)."
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4_2)
@@ -198,12 +190,8 @@ msgstr "Retning for kryptering med statisk nøkkel (ikkje-TLS)."
 #. i18n: ectx: property (whatsThis), widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:250
 #, kde-format
-msgid ""
-"If key direction is used, it must be the opposite of that used on the VPN "
-"peer."
-msgstr ""
-"Viss nøkkelretning vert brukt, må ho vera det motsette av det som vert brukt "
-"på VPN-motparten."
+msgid "If key direction is used, it must be the opposite of that used on the VPN peer."
+msgstr "Viss nøkkelretning vert brukt, må ho vera det motsette av det som vert brukt på VPN-motparten."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbKeyDirection)
 #: openvpn.ui:254
@@ -251,15 +239,8 @@ msgstr "IP-adressa til det lokale VPN-endepunktet."
 #. i18n: ectx: property (text), widget (QLabel, lblKeyDirection)
 #: openvpn.ui:342
 #, kde-format
-msgid ""
-"If key direction is used, it must be the opposite of that used on the VPN "
-"peer. For example, if the peer uses '1', this connection must use '0'. If "
-"you are unsure what value to use, contact your system administrator."
-msgstr ""
-"Viss nøkkelretning vert brukt, må ho vera det motsette av det som vert brukt "
-"på VPN-motparten. Viss for eksempel motporten brukar «1», må tilkoplinga "
-"bruka «0». Viss du ikkje veit kva verdi du skal bruka, ta kontakt med "
-"systemadministratoren."
+msgid "If key direction is used, it must be the opposite of that used on the VPN peer. For example, if the peer uses '1', this connection must use '0'. If you are unsure what value to use, contact your system administrator."
+msgstr "Viss nøkkelretning vert brukt, må ho vera det motsette av det som vert brukt på VPN-motparten. Viss for eksempel motporten brukar «1», må tilkoplinga bruka «0». Viss du ikkje veit kva verdi du skal bruka, ta kontakt med systemadministratoren."
 
 #. i18n: ectx: property (filter), widget (KUrlRequester, passCaFile)
 #: openvpn.ui:381
@@ -313,12 +294,8 @@ msgstr "Generelt"
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomPort)
 #: openvpnadvanced.ui:36 openvpnadvanced.ui:49
 #, kde-format
-msgid ""
-"TCP/UDP port number for peer. (Default value when there is no port for "
-"gateway)."
-msgstr ""
-"TCP/UDP-portnummer for motpart. (Standardverdi når det ikkje finst noko port "
-"for portnaren.)"
+msgid "TCP/UDP port number for peer. (Default value when there is no port for gateway)."
+msgstr "TCP/UDP-portnummer for motpart. (Standardverdi når det ikkje finst noko port for portnaren.)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomPort)
 #: openvpnadvanced.ui:39
@@ -439,12 +416,8 @@ msgstr "TAP"
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leVirtualDeviceName)
 #: openvpnadvanced.ui:194 openvpnadvanced.ui:213
 #, kde-format
-msgid ""
-"Use custom name for TUN/TAP virtual device (instead of default \"tun\" or "
-"\"tap\")."
-msgstr ""
-"Bruk tilpassa på namn på virtuell TUN/TAP-eining (i staden for "
-"standardverdiane «tun» og «tap»)."
+msgid "Use custom name for TUN/TAP virtual device (instead of default \"tun\" or \"tap\")."
+msgstr "Bruk tilpassa på namn på virtuell TUN/TAP-eining (i staden for standardverdiane «tun» og «tap»)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceName)
 #: openvpnadvanced.ui:197
@@ -456,12 +429,8 @@ msgstr "Vel namn på virtuelle eining:"
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMtu)
 #: openvpnadvanced.ui:227 openvpnadvanced.ui:240
 #, kde-format
-msgid ""
-"Take the TUN device MTU to be specified value and derive the link MTU from "
-"it."
-msgstr ""
-"Lat MTU-verdien til TUN-eininga vera den valde verdien, og baser link-MTU-en "
-"frå denne."
+msgid "Take the TUN device MTU to be specified value and derive the link MTU from it."
+msgstr "Lat MTU-verdien til TUN-eininga vera den valde verdien, og baser link-MTU-en frå denne."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtu)
 #: openvpnadvanced.ui:230
@@ -526,12 +495,8 @@ msgstr "IPv6-«tun link»"
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbPingInterval)
 #: openvpnadvanced.ui:327 openvpnadvanced.ui:340
 #, kde-format
-msgid ""
-"Ping remote over the TCP/UDP control channel if no packets have been sent "
-"for at least n seconds."
-msgstr ""
-"Ping fjernvert over TCP/UDP-kontrollkanalen dersom det ikkje er sendt nokon "
-"pakkar dei siste n sekunda."
+msgid "Ping remote over the TCP/UDP control channel if no packets have been sent for at least n seconds."
+msgstr "Ping fjernvert over TCP/UDP-kontrollkanalen dersom det ikkje er sendt nokon pakkar dei siste n sekunda."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPingInterval)
 #: openvpnadvanced.ui:330
@@ -544,12 +509,8 @@ msgstr "Pingintervall:"
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbSpecifyExitRestartPing)
 #: openvpnadvanced.ui:360 openvpnadvanced.ui:373 openvpnadvanced.ui:393
 #, kde-format
-msgid ""
-"Exit or restart after n seconds pass without reception of a ping or other "
-"packet from remote."
-msgstr ""
-"Avslutt eller start på nytt etter n sekund når ein ikkje har fått pingsignal "
-"eller annan pakke frå fjernverten."
+msgid "Exit or restart after n seconds pass without reception of a ping or other packet from remote."
+msgstr "Avslutt eller start på nytt etter n sekund når ein ikkje har fått pingsignal eller annan pakke frå fjernverten."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkSpecifyExitRestartPing)
 #: openvpnadvanced.ui:363
@@ -573,38 +534,28 @@ msgstr "ping-omstart"
 #: openvpnadvanced.ui:420
 #, kde-format
 msgid ""
-"Allow remote peer to change its IP address and/or port number such as due "
-"to\n"
-"DHCP (this is the default if --remote is not used). --float when specified "
-"with --remote\n"
-"allows an OpenVPN session to initially connect to a peer at a known "
-"address,\n"
-"however if packets arrive from a new address and pass all authentication "
-"tests, the\n"
-"new address will take control of the session. This is useful when you are "
-"connecting\n"
-"to a peer which holds a dynamic address such as a dial-in user or DHCP "
-"client.\n"
+"Allow remote peer to change its IP address and/or port number such as due to\n"
+"DHCP (this is the default if --remote is not used). --float when specified with --remote\n"
+"allows an OpenVPN session to initially connect to a peer at a known address,\n"
+"however if packets arrive from a new address and pass all authentication tests, the\n"
+"new address will take control of the session. This is useful when you are connecting\n"
+"to a peer which holds a dynamic address such as a dial-in user or DHCP client.\n"
 "\n"
 "\n"
-"Essentially, --float tells OpenVPN to accept authenticated packets from any "
-"address,\n"
+"Essentially, --float tells OpenVPN to accept authenticated packets from any address,\n"
 "not only the address which was specified in the --remote option."
 msgstr ""
 "Tillat fjernverten å endra IP-adresse og/eller portnummer, for eksempel\n"
 "på grunn av DHCP (dette er standard dersom «--remote» ikkje er brukt).\n"
 "Bruk av «--float» saman med «--remote» gjer det mogleg for ei OpenVPN-økt\n"
 "å først kopla til ein motpart på ei kjend adresse men godta at dersom\n"
-"det kjem pakkar frå ei ny adresse og desse tilfredsstiller alle "
-"autentiseringstestane,\n"
-"så vil den nye adressa overta økta. Dette er nyttig når du koplar til ein "
-"motpart\n"
+"det kjem pakkar frå ei ny adresse og desse tilfredsstiller alle autentiseringstestane,\n"
+"så vil den nye adressa overta økta. Dette er nyttig når du koplar til ein motpart\n"
 "med ei dynamisk adresse, for eksempel ein brukar på oppringt samband\n"
 "eller ein DHCP-klient.\n"
 "\n"
 "\n"
-"Argumentet «--float» ber altså OpenVPN godta autentiserte pakkar frå ei "
-"vilkårleg\n"
+"Argumentet «--float» ber altså OpenVPN godta autentiserte pakkar frå ei vilkårleg\n"
 "adresse, ikkje berre adressa som var oppgitt til «--remote»."
 
 # Forklaring: --float tells OpenVPN to accept authenticated packets from any address, not only the address which was specified in the --remote option
@@ -638,8 +589,7 @@ msgstr "Tryggleik"
 #: openvpnadvanced.ui:483 openvpnadvanced.ui:509
 #, kde-format
 msgid ""
-"Encrypt packets with cipher algorithm. The default is BF-CBC (Blowfish in "
-"Cipher\n"
+"Encrypt packets with cipher algorithm. The default is BF-CBC (Blowfish in Cipher\n"
 "Block Chaining mode)."
 msgstr ""
 "Krypter pakkar med vald krypteringsalgoritme. Standard er BF-CBC\n"
@@ -661,12 +611,8 @@ msgstr "Hentar tilgjengelege chiffer …"
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
 #: openvpnadvanced.ui:525 openvpnadvanced.ui:541
 #, kde-format
-msgid ""
-"Set cipher key size to a custom value. If unspecified, it defaults to cipher-"
-"specific size."
-msgstr ""
-"Bruk vald verdi som nøkkelstorleik for chiffer. Viss ikkje vald, vert "
-"standard chifferspesifikk verdi brukt."
+msgid "Set cipher key size to a custom value. If unspecified, it defaults to cipher-specific size."
+msgstr "Bruk vald verdi som nøkkelstorleik for chiffer. Viss ikkje vald, vert standard chifferspesifikk verdi brukt."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomCipherKey)
 #: openvpnadvanced.ui:531
@@ -678,12 +624,8 @@ msgstr "Bruk sjølvvald storleik på chiffernøkkel:"
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboHmac)
 #: openvpnadvanced.ui:561 openvpnadvanced.ui:583
 #, kde-format
-msgid ""
-"Authenticate packets with HMAC using message digest algorithm. The default "
-"is SHA1."
-msgstr ""
-"Autentiser pakkar med HMAC ved bruk av sjekksumalgoritme. Standardalgoritmen "
-"er SHA-1."
+msgid "Authenticate packets with HMAC using message digest algorithm. The default is SHA1."
+msgstr "Autentiser pakkar med HMAC ved bruk av sjekksumalgoritme. Standardalgoritmen er SHA-1."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openvpnadvanced.ui:564
@@ -767,11 +709,9 @@ msgstr "TLS-innstillingar"
 msgid ""
 "Verify server certificate identification.\n"
 "\n"
-"When enabled, connection will only succeed if the server certificate "
-"matches\n"
+"When enabled, connection will only succeed if the server certificate matches\n"
 "some expected properties.\n"
-"Matching can either apply to the whole certificate subject (all the "
-"fields),\n"
+"Matching can either apply to the whole certificate subject (all the fields),\n"
 "or just the Common Name (CN field).\n"
 msgstr ""
 "Kontroller identitet til tenarsertifikat.\n"
@@ -822,11 +762,8 @@ msgstr "Kontroller objektet delvis (gammal metode, absolutt ikkje tilrådd)"
 #. i18n: ectx: property (toolTip), widget (QLineEdit, subjectMatch)
 #: openvpnadvanced.ui:725 openvpnadvanced.ui:741
 #, kde-format
-msgid ""
-"Subject or Common Name to verify server certificate information against."
-msgstr ""
-"Namn («Subject») eller CN («Common Name») å kontrollera "
-"tenarsertifikatinformasjon mot."
+msgid "Subject or Common Name to verify server certificate information against."
+msgstr "Namn («Subject») eller CN («Common Name») å kontrollera tenarsertifikatinformasjon mot."
 
 #. i18n: ectx: property (text), widget (QLabel, lbSubjectMatch)
 #: openvpnadvanced.ui:728
@@ -837,12 +774,8 @@ msgstr "Utferda til rett vert:"
 #. i18n: ectx: property (whatsThis), widget (QLineEdit, subjectMatch)
 #: openvpnadvanced.ui:744
 #, kde-format
-msgid ""
-"Connect only to servers whose certificate matches the given subject. "
-"Example: /CN=myvpn.company.com"
-msgstr ""
-"Kopla berre til tenarar viss sertifikatet deira er utferda til dei. "
-"Eksempel: /CN=minvpn.eksempel.no"
+msgid "Connect only to servers whose certificate matches the given subject. Example: /CN=myvpn.company.com"
+msgstr "Kopla berre til tenarar viss sertifikatet deira er utferda til dei. Eksempel: /CN=minvpn.eksempel.no"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkRemoteCertTls)
 #. i18n: ectx: property (toolTip), widget (QLabel, labelRemoteCertTls)
@@ -850,8 +783,7 @@ msgstr ""
 #: openvpnadvanced.ui:757 openvpnadvanced.ui:773 openvpnadvanced.ui:787
 #, kde-format
 msgid ""
-"Require that peer certificate was signed with an explicit key usage and "
-"extended\n"
+"Require that peer certificate was signed with an explicit key usage and extended\n"
 "key usage based on RFC3280 TLS rules."
 msgstr ""
 "Krev at motpartssertifikatet er signert med eksplisitt nøkkelbruksformål\n"
@@ -888,9 +820,7 @@ msgstr "Klient"
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbNsCertType)
 #: openvpnadvanced.ui:806 openvpnadvanced.ui:821 openvpnadvanced.ui:834
 #, kde-format
-msgid ""
-"Require that peer certificate was signed with an explicit nsCertType "
-"designation."
+msgid "Require that peer certificate was signed with an explicit nsCertType designation."
 msgstr "Krev at motpartssertifikatet er signert med eksplisitt nsCertType."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkNsCertType)
@@ -940,8 +870,7 @@ msgstr "TLS-Crypt"
 #: openvpnadvanced.ui:895 openvpnadvanced.ui:915
 #, kde-format
 msgid ""
-"Add an additional layer of HMAC authentication on top of the TLS control "
-"channel\n"
+"Add an additional layer of HMAC authentication on top of the TLS control channel\n"
 "to protect against DoS attacks."
 msgstr ""
 "Legg til eit ekstra lag HMAC-autentisering oppå TLS-kontrollkanalen\n"
@@ -1012,12 +941,8 @@ msgstr "SOCKS"
 #. i18n: ectx: property (text), widget (QLabel, lbProxyType)
 #: openvpnadvanced.ui:1050
 #, kde-format
-msgid ""
-"Select this option if your organization requires the use of a proxy server "
-"to access the Internet."
-msgstr ""
-"Kryss av her dersom organisasjonen din krev bruk av mellomtenar for tilgang "
-"til Internett."
+msgid "Select this option if your organization requires the use of a proxy server to access the Internet."
+msgstr "Kryss av her dersom organisasjonen din krev bruk av mellomtenar for tilgang til Internett."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_12)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, proxyServerAddress)
@@ -1050,8 +975,7 @@ msgstr "Port:"
 #: openvpnadvanced.ui:1112 openvpnadvanced.ui:1125
 #, kde-format
 msgid "HTTP/SOCKS proxy username passed to OpenVPN when prompted for it."
-msgstr ""
-"Brukarnamn for HTTP-/SOCKS-mellomtenar, sendt til OpenVPN ved førespurnad."
+msgstr "Brukarnamn for HTTP-/SOCKS-mellomtenar, sendt til OpenVPN ved førespurnad."
 
 #. i18n: ectx: property (text), widget (QLabel, label_14)
 #: openvpnadvanced.ui:1115
@@ -1064,8 +988,7 @@ msgstr "Brukarnamn for mellomtenar:"
 #: openvpnadvanced.ui:1135 openvpnadvanced.ui:1150
 #, kde-format
 msgid "HTTP/SOCKS proxy password passed to OpenVPN when prompted for it."
-msgstr ""
-"Passord for HTTP-/SOCKS-mellomtenar, sendt til OpenVPN ved førespurnad."
+msgstr "Passord for HTTP-/SOCKS-mellomtenar, sendt til OpenVPN ved førespurnad."
 
 #. i18n: ectx: property (text), widget (QLabel, label_15)
 #: openvpnadvanced.ui:1138 openvpnauth.cpp:75 openvpnauth.cpp:110
@@ -1077,9 +1000,7 @@ msgstr "Passord for mellomtenar:"
 #: openvpnadvanced.ui:1162
 #, kde-format
 msgid "Retry indefinitely on proxy errors. It simulates a SIGUSR1 reset."
-msgstr ""
-"Prøv på nytt uendeleg mange gongar ved mellomtenarfeil. Simulerer ei SIGUSR1-"
-"nullstilling."
+msgstr "Prøv på nytt uendeleg mange gongar ved mellomtenarfeil. Simulerer ei SIGUSR1-nullstilling."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkProxyRetry)
 #: openvpnadvanced.ui:1165

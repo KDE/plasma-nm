@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2025-11-17 16:19+0000\n"
+"POT-Creation-Date: 2026-11-08 06:31+0000\n"
 "PO-Revision-Date: 2026-07-05 16:20+0200\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -21,15 +21,13 @@ msgstr ""
 
 #: declarative/networkstatus.cpp:104
 #, kde-format
-msgctxt ""
-"A network device is connected, but there is only link-local connectivity"
+msgctxt "A network device is connected, but there is only link-local connectivity"
 msgid "Connected"
 msgstr "Kopla til"
 
 #: declarative/networkstatus.cpp:107
 #, kde-format
-msgctxt ""
-"A network device is connected, but there is only site-local connectivity"
+msgctxt "A network device is connected, but there is only site-local connectivity"
 msgid "Connected"
 msgstr "Kopla til"
 
@@ -59,9 +57,7 @@ msgstr "Koplar frå …"
 
 #: declarative/networkstatus.cpp:122
 #, kde-format
-msgctxt ""
-"A network device is connecting to a network and there is no other available "
-"network connection"
+msgctxt "A network device is connecting to a network and there is no other available network connection"
 msgid "Connecting"
 msgstr "Koplar til"
 
@@ -190,8 +186,8 @@ msgstr "Sambinding"
 msgid "Bridge"
 msgstr "Bru"
 
-#: editor/connectioneditorbase.cpp:251 models/creatableconnectionsmodel.cpp:220
-#: models/networkmodelitem.cpp:731
+#: editor/connectioneditorbase.cpp:251
+#: models/creatableconnectionsmodel.cpp:220 models/networkmodelitem.cpp:731
 #, kde-format
 msgid "Vlan"
 msgstr "VLAN"
@@ -388,15 +384,11 @@ msgstr "DNS-tenarar:"
 #: editor/settings/ipv4widget.cpp:420
 #, kde-format
 msgid ""
-"<qt>You can find more information about these values here:<br/><a "
-"href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
-"developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
-"a></qt>"
+"<qt>You can find more information about these values here:<br/>"
+"<a href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
 msgstr ""
-"<qt>Du finn meir informasjon om desse verdiane her:<br/><a href='https://"
-"developer.gnome.org/NetworkManager/stable/ch01.html'>https://"
-"developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</"
-"a></qt>"
+"<qt>Du finn meir informasjon om desse verdiane her:<br/>"
+"<a href='https://developer.gnome.org/NetworkManager/stable/ch01.html'>https://developer.gnome.org/NetworkManager/stable/ch01.htmlnm-settings-nmcli.html</a></qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format
@@ -461,13 +453,21 @@ msgstr "Utferda til rett alternativvert"
 #: editor/settings/security802-1x.cpp:506
 #, kde-format
 msgid ""
-"<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
-"li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://"
-"www.kde.org&gt;</li></ul></qt>"
+"<qt>This entry must be one of:"
+"<ul>"
+"<li>DNS: &lt;name or ip address&gt;</li>"
+"<li>EMAIL: &lt;email&gt;</li>"
+"<li>URI: &lt;uri, e.g. https://www.kde.org&gt;</li>"
+"</ul>"
+"</qt>"
 msgstr ""
-"<qt>Må vera ein av desse:<ul><li>DNS: &lt;namn eller IP-adresse&gt;</"
-"li><li>EMAIL: &lt;e-postadresse&gt;</li><li>URI: &lt;nettadresse, for "
-"eksempel https://www.kde.org/&gt;</li></ul></qt>"
+"<qt>Må vera ein av desse:"
+"<ul>"
+"<li>DNS: &lt;namn eller IP-adresse&gt;</li>"
+"<li>EMAIL: &lt;e-postadresse&gt;</li>"
+"<li>URI: &lt;nettadresse, for eksempel https://www.kde.org/&gt;</li>"
+"</ul>"
+"</qt>"
 
 #: editor/settings/security802-1x.cpp:523
 #, kde-format
@@ -911,16 +911,12 @@ msgstr "Kopla til automatisk med prioritet"
 #: editor/settings/ui/connectionwidget.ui:38
 #, kde-format
 msgid ""
-"If the connection is set to autoconnect, connections with higher priority "
-"will be preferred. Defaults to 0.\n"
-"The higher number means higher priority. An negative number can be used to "
-"indicate priority lower than the default.\n"
+"If the connection is set to autoconnect, connections with higher priority will be preferred. Defaults to 0.\n"
+"The higher number means higher priority. An negative number can be used to indicate priority lower than the default.\n"
 "           "
 msgstr ""
-"Viss du har valt automatisk tilkopling, vil tilkoplingar med høgare "
-"prioritet føretrekkjast. Standardverdi er 0.\n"
-"Høgare tal tyder høgare prioritet. Du kan bruka negative tal for å gjera "
-"lågare prioritet enn standardprioriteten.\n"
+"Viss du har valt automatisk tilkopling, vil tilkoplingar med høgare prioritet føretrekkjast. Standardverdi er 0.\n"
+"Høgare tal tyder høgare prioritet. Du kan bruka negative tal for å gjera lågare prioritet enn standardprioriteten.\n"
 "           "
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
@@ -938,12 +934,8 @@ msgstr "Rediger avanserte rettar for denne tilkoplinga"
 #. i18n: ectx: property (whatsThis), widget (QPushButton, pushButtonPermissions)
 #: editor/settings/ui/connectionwidget.ui:67
 #, kde-format
-msgid ""
-"Fine-grained permissions editor for this connection. It lets you choose "
-"which users can activate/modify/delete this connection."
-msgstr ""
-"Finjustering av løyve for denne tilkoplinga. Her kan du avgjera kva brukarar "
-"som kan aktivera/endra/sletta tilkoplinga."
+msgid "Fine-grained permissions editor for this connection. It lets you choose which users can activate/modify/delete this connection."
+msgstr "Finjustering av løyve for denne tilkoplinga. Her kan du avgjera kva brukarar som kan aktivera/endra/sletta tilkoplinga."
 
 #. i18n: ectx: property (text), widget (QPushButton, pushButtonPermissions)
 #. i18n: ectx: property (text), widget (QPushButton, btnAdvanced)
@@ -974,12 +966,9 @@ msgstr "Forbruksmålt:"
 #: editor/settings/ui/connectionwidget.ui:150
 #, kde-format
 msgid ""
-"NetworkManager indicates to applications whether the connection is metered "
-"and therefore\n"
+"NetworkManager indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
-msgstr ""
-"NetworkManager seier frå til programma om tilkoplinga er forbruksmålt, slik "
-"at databruken bør avgrensast."
+msgstr "NetworkManager seier frå til programma om tilkoplinga er forbruksmålt, slik at databruken bør avgrensast."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:160
@@ -1141,12 +1130,8 @@ msgstr "DNS-tenarar:"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dns)
 #: editor/settings/ui/ipv4.ui:118 editor/settings/ui/ipv6.ui:76
 #, kde-format
-msgid ""
-"Use this field to specify the IP address(es) of one or more DNS servers. Use "
-"',' to separate entries."
-msgstr ""
-"Bruk dette feltet til å oppgje IP-adresse(r) til éin eller fleire DNS-"
-"tenarar. Bruk komma som skiljeteikn mellom tenarar."
+msgid "Use this field to specify the IP address(es) of one or more DNS servers. Use ',' to separate entries."
+msgstr "Bruk dette feltet til å oppgje IP-adresse(r) til éin eller fleire DNS-tenarar. Bruk komma som skiljeteikn mellom tenarar."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsMorePushButton)
 #: editor/settings/ui/ipv4.ui:125
@@ -1164,12 +1149,8 @@ msgstr "Søkjedomene:"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dnsSearch)
 #: editor/settings/ui/ipv4.ui:165 editor/settings/ui/ipv6.ui:273
 #, kde-format
-msgid ""
-"Use this field to specify one or more DNS domains to search. Use ',' to "
-"separate entries."
-msgstr ""
-"Bruk dette feltet til å oppgje eitt eller fleire DNS-domene som kan søkjast. "
-"Bruk komma som skiljeteikn mellom domene."
+msgid "Use this field to specify one or more DNS domains to search. Use ',' to separate entries."
+msgstr "Bruk dette feltet til å oppgje eitt eller fleire DNS-domene som kan søkjast. Bruk komma som skiljeteikn mellom domene."
 
 #. i18n: ectx: property (toolTip), widget (QPushButton, dnsSearchMorePushButton)
 #: editor/settings/ui/ipv4.ui:172 editor/settings/ui/ipv6.ui:280
@@ -1187,16 +1168,12 @@ msgstr "DHCP klient-ID:"
 #: editor/settings/ui/ipv4.ui:206
 #, kde-format
 msgid ""
-"Use this field to specify the DHCP client ID which is a string sent to the "
-"DHCP server\n"
-"to identify the local machine that the DHCP server may use to customize the "
-"DHCP\n"
+"Use this field to specify the DHCP client ID which is a string sent to the DHCP server\n"
+"to identify the local machine that the DHCP server may use to customize the DHCP\n"
 "lease and options."
 msgstr ""
-"Bruk dette feltet til å oppgje DHCP klient-ID-en, som er ein tekst send til "
-"DHCP-tenaren for å\n"
-"identifisera den lokale maskina, og som DHCP-tenaren kan bruka til å "
-"tilpassa DHCP-leiga og DHCP-val."
+"Bruk dette feltet til å oppgje DHCP klient-ID-en, som er ein tekst send til DHCP-tenaren for å\n"
+"identifisera den lokale maskina, og som DHCP-tenaren kan bruka til å tilpassa DHCP-leiga og DHCP-val."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/ipv4.ui:215 editor/settings/ui/ipv6.ui:98
@@ -1215,12 +1192,10 @@ msgstr "Legg til"
 #: editor/widgets/ui/ipv4routes.ui:99 editor/widgets/ui/ipv6routes.ui:39
 #, kde-format
 msgid ""
-"IP addresses identify your computer on the network. Click the \"Add\" button "
-"to add\n"
+"IP addresses identify your computer on the network. Click the \"Add\" button to add\n"
 "an IP address"
 msgstr ""
-"IP-adresser som identifiserer datamaskina di på nettverket. Trykk «Legg til» "
-"for\n"
+"IP-adresser som identifiserer datamaskina di på nettverket. Trykk «Legg til» for\n"
 "å leggja til ei IP-adresse."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv4RequiredCB)
@@ -1249,8 +1224,7 @@ msgstr "Ruter …"
 #: editor/settings/ui/ipv6.ui:30
 #, kde-format
 msgid ""
-"When connecting to IPv4-capable networks, allows the connection to complete "
-"if\n"
+"When connecting to IPv4-capable networks, allows the connection to complete if\n"
 "IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
 "Når du koplar til nettverk som støttar IPv4, tillèt dette tilkoplinga å\n"
@@ -1272,15 +1246,11 @@ msgstr "Rediger lista over DNS-tenarar"
 #: editor/settings/ui/ipv6.ui:193
 #, kde-format
 msgid ""
-"Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If "
-"enabled, it makes the kernel generate\n"
-"a temporary IPv6 address in addition to the public one generated from MAC "
-"address via modified EUI-64."
+"Configure IPv6 Privacy Extensions for SLAAC, described in RFC4941. If enabled, it makes the kernel generate\n"
+"a temporary IPv6 address in addition to the public one generated from MAC address via modified EUI-64."
 msgstr ""
-"Set opp IPv6-personvernutvidingar for SLAAC, skildra i RFC 4941. Viss kryss "
-"av her,\n"
-"vil kjernen laga til ei mellombels IPv6-adresse i tillegg til den offentlege "
-"generert ut frå\n"
+"Set opp IPv6-personvernutvidingar for SLAAC, skildra i RFC 4941. Viss kryss av her,\n"
+"vil kjernen laga til ei mellombels IPv6-adresse i tillegg til den offentlege generert ut frå\n"
 "MAC-adressa via modifisert EUI-64."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
@@ -1402,16 +1372,8 @@ msgstr "Teneste:"
 #. i18n: ectx: property (toolTip), widget (KLineEdit, service)
 #: editor/settings/ui/pppoe.ui:30
 #, kde-format
-msgid ""
-"If specified, instruct PPPoE to only initiate sessions with access "
-"concentrators that provide the specified service. For most providers, this "
-"should be left blank. It is only required if there are multiple access "
-"concentrators or a specific service is known to be required."
-msgstr ""
-"Viss spesifisert, vil PPPoE berre starta økter med tilgangskonsentratorar "
-"som tilbyr den valde tenesta. For dei fleste tilbydarar bør feltet stå tomt. "
-"Du treng berre fylla det ut viss det finst fleire tilgangskonsentratorar "
-"eller du veit at ei spesifikk teneste er nødvendig."
+msgid "If specified, instruct PPPoE to only initiate sessions with access concentrators that provide the specified service. For most providers, this should be left blank. It is only required if there are multiple access concentrators or a specific service is known to be required."
+msgstr "Viss spesifisert, vil PPPoE berre starta økter med tilgangskonsentratorar som tilbyr den valde tenesta. For dei fleste tilbydarar bør feltet stå tomt. Du treng berre fylla det ut viss det finst fleire tilgangskonsentratorar eller du veit at ei spesifikk teneste er nødvendig."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31
@@ -1507,8 +1469,7 @@ msgstr "BSSID:"
 #: editor/settings/ui/wificonnectionwidget.ui:101
 #, kde-format
 msgid ""
-"This option locks this connection to the Wi-Fi access point (AP) specified "
-"by the\n"
+"This option locks this connection to the Wi-Fi access point (AP) specified by the\n"
 " BSSID entered here. Example: 00:11:22:33:44:55"
 msgstr ""
 "Dette valet låsar tilkoplinga til Wi-Fi-tilgangspunktet (AP) definert\n"
@@ -1524,14 +1485,11 @@ msgstr "Band:"
 #: editor/settings/ui/wificonnectionwidget.ui:137
 #, kde-format
 msgid ""
-"This option locks the connection to the Wi-Fi network associated to the "
-"specified band. This setting depends\n"
+"This option locks the connection to the Wi-Fi network associated to the specified band. This setting depends\n"
 " on specific driver capability and may not work with all drivers"
 msgstr ""
-"Dette valet låsar tilkoplinga til det tilknytte Wi-Fi-nettverket til det "
-"spesifikke bandet.\n"
-"Denne innstillinga avheng av at drivaren støttar det, og fungerer ikkje med "
-"alle drivarar."
+"Dette valet låsar tilkoplinga til det tilknytte Wi-Fi-nettverket til det spesifikke bandet.\n"
+"Denne innstillinga avheng av at drivaren støttar det, og fungerer ikkje med alle drivarar."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, band)
 #: editor/settings/ui/wificonnectionwidget.ui:141
@@ -1562,12 +1520,10 @@ msgstr "Kanal:"
 #: editor/settings/ui/wificonnectionwidget.ui:179
 #, kde-format
 msgid ""
-"Wireless channel to use for the Wi-Fi connection. The device will only join "
-"(or create for Ad-Hoc networks)\n"
+"Wireless channel to use for the Wi-Fi connection. The device will only join (or create for Ad-Hoc networks)\n"
 "a Wi-Fi network on the specified channel"
 msgstr ""
-"Kanal brukt for trådlaustilkoplinga. Eininga vil berre knyta seg til (eller "
-"laga ad hoc-nettverk for)\n"
+"Kanal brukt for trådlaustilkoplinga. Eininga vil berre knyta seg til (eller laga ad hoc-nettverk for)\n"
 "eit trådlausnettverk via den valde kanalen."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
@@ -1589,8 +1545,7 @@ msgstr "Tilfeldig …"
 #: editor/settings/ui/wificonnectionwidget.ui:303
 #, kde-format
 msgid "Mark this if you want to create a connection for a hidden network"
-msgstr ""
-"Kryss av her viss du vil laga ei tilkopling for eit ikkje-synleg nettverk"
+msgstr "Kryss av her viss du vil laga ei tilkopling for eit ikkje-synleg nettverk"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wificonnectionwidget.ui:290
@@ -1728,8 +1683,7 @@ msgstr ""
 #, kde-format
 msgid ""
 "The MAC address entered here will be used as hardware address for the\n"
-"network device this connection is activated on. This feature is known as "
-"MAC\n"
+"network device this connection is activated on. This feature is known as MAC\n"
 "cloning or spoofing. Example 11:22:33:44:55"
 msgstr ""
 "MAC-adressa du skriv in her vert brukt som maskinvareadresse for\n"
@@ -1746,8 +1700,7 @@ msgstr "Tilfeldig"
 #: editor/settings/ui/wiredconnectionwidget.ui:106
 #, kde-format
 msgid ""
-"Only transmit packets of the specified size or smaller, breaking larger "
-"packets up\n"
+"Only transmit packets of the specified size or smaller, breaking larger packets up\n"
 "into multiple Ethernet frames"
 msgstr ""
 "Berre overfør pakkar med vald eller lågare storleik,\n"
@@ -1768,11 +1721,8 @@ msgstr "Dupleks:"
 #. i18n: ectx: property (toolTip), widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:151
 #, kde-format
-msgid ""
-"Request that the device use the specified duplex mode. Either \"half\" or "
-"\"full\""
-msgstr ""
-"Be om at eininga brukar den valde dupleksmodusen, anten halv eller full."
+msgid "Request that the device use the specified duplex mode. Either \"half\" or \"full\""
+msgstr "Be om at eininga brukar den valde dupleksmodusen, anten halv eller full."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158
@@ -1796,14 +1746,9 @@ msgstr "Automatisk forhandling:"
 #: editor/settings/ui/wiredconnectionwidget.ui:188
 #, kde-format
 msgid ""
-"Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values "
-"will be forced without checking\n"
+"Device link negotiation. If “Manual” is chosen, “Speed” and “Duplex” values will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
-msgstr ""
-"Automatisk link-forhandling. Ved «Manuell», vert «Fart»- og «Dupleks»-"
-"verdiane brukte automatisk, utan først å sjekka om dei er kompatible med "
-"eininga. Er du usikker kva som er rett val, bruk «Ignorer» eller "
-"«Automatisk»."
+msgstr "Automatisk link-forhandling. Ved «Manuell», vert «Fart»- og «Dupleks»-verdiane brukte automatisk, utan først å sjekka om dei er kompatible med eininga. Er du usikker kva som er rett val, bruk «Ignorer» eller «Automatisk»."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
@@ -2120,12 +2065,9 @@ msgstr ""
 "            tom pakke til motparten for å halda oppe tilkoplinga gjennom\n"
 "            ein brannmur eller ein NAT. Viss grensesnittet sjeldan sender\n"
 "            data, men når som helst kan få data frå motparten, og det er\n"
-"            bak ein NAT, kan det vera ein fordel med eit «keepalive»-"
-"intervall\n"
-"            på 25 sekund. Viss sett til 0 eller «off», vert ikkje valet "
-"brukt. Som\n"
-"            standard, og viss ikkje definert, er valet av. Dei fleste har "
-"ikkje\n"
+"            bak ein NAT, kan det vera ein fordel med eit «keepalive»-intervall\n"
+"            på 25 sekund. Viss sett til 0 eller «off», vert ikkje valet brukt. Som\n"
+"            standard, og viss ikkje definert, er valet av. Dei fleste har ikkje\n"
 "            behov for å endra standardinnstillinga."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
@@ -2346,8 +2288,7 @@ msgstr "Undersøkjer vidare koplingar"
 
 #: editor/uiutils.cpp:309
 #, kde-format
-msgctxt ""
-"a secondary connection (e.g. VPN) has to be activated first to continue"
+msgctxt "a secondary connection (e.g. VPN) has to be activated first to continue"
 msgid "Waiting for a secondary connection"
 msgstr "Ventar på sekundærtilkopling"
 
@@ -2845,9 +2786,7 @@ msgstr "Ukjend tryggleikstype"
 
 #: editor/uiutils.cpp:630
 #, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last hour, as "
-"the number of minutes since usage"
+msgctxt "Label for last used time for a network connection used in the last hour, as the number of minutes since usage"
 msgid "One minute ago"
 msgid_plural "%1 minutes ago"
 msgstr[0] "Eitt minutt sidan"
@@ -2855,9 +2794,7 @@ msgstr[1] "%1 minutt sidan"
 
 #: editor/uiutils.cpp:636
 #, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last day, as "
-"the number of hours since usage"
+msgctxt "Label for last used time for a network connection used in the last day, as the number of hours since usage"
 msgid "One hour ago"
 msgid_plural "%1 hours ago"
 msgstr[0] "Éin time sidan"
@@ -2865,23 +2802,19 @@ msgstr[1] "%1 timar sidan"
 
 #: editor/uiutils.cpp:641
 #, kde-format
-msgctxt ""
-"Label for last used time for a network connection used the previous day"
+msgctxt "Label for last used time for a network connection used the previous day"
 msgid "Yesterday"
 msgstr "I går"
 
 #: editor/uiutils.cpp:649
 #, kde-format
-msgctxt ""
-"Label for last used time for a network connection that has never been used"
+msgctxt "Label for last used time for a network connection that has never been used"
 msgid "Never"
 msgstr "Aldri"
 
 #: editor/uiutils.cpp:664
 #, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last hour, as "
-"the number of minutes since usage"
+msgctxt "Label for last used time for a network connection used in the last hour, as the number of minutes since usage"
 msgid "Last used one minute ago"
 msgid_plural "Last used %1 minutes ago"
 msgstr[0] "Sist brukt for eitt minutt sidan"
@@ -2889,9 +2822,7 @@ msgstr[1] "Sist brukt for %1 minutt sidan"
 
 #: editor/uiutils.cpp:670
 #, kde-format
-msgctxt ""
-"Label for last used time for a network connection used in the last day, as "
-"the number of hours since usage"
+msgctxt "Label for last used time for a network connection used in the last day, as the number of hours since usage"
 msgid "Last used one hour ago"
 msgid_plural "Last used %1 hours ago"
 msgstr[0] "Sist brukt for éin time sidan"
@@ -2899,8 +2830,7 @@ msgstr[1] "Sist brukt for %1 timar sidan"
 
 #: editor/uiutils.cpp:675
 #, kde-format
-msgctxt ""
-"Label for last used time for a network connection used the previous day"
+msgctxt "Label for last used time for a network connection used the previous day"
 msgid "Last used yesterday"
 msgstr "Sist brukt i går"
 
@@ -2911,8 +2841,7 @@ msgstr "Sist brukt %1"
 
 #: editor/uiutils.cpp:683
 #, kde-format
-msgctxt ""
-"Label for last used time for a network connection that has never been used"
+msgctxt "Label for last used time for a network connection that has never been used"
 msgid "Never used"
 msgstr "Aldri brukt"
 
@@ -3020,12 +2949,8 @@ msgstr "Set opp mobil breibandtilkopling"
 #: editor/widgets/mobileconnectionwizard.cpp:240
 #, kde-format
 msgctxt "Mobile Connection Wizard"
-msgid ""
-"This assistant helps you easily set up a mobile broadband connection to a "
-"cellular (3G) network."
-msgstr ""
-"Denne vegvisaren hjelper deg å enkelt setja opp ei mobil breibandstilkopling "
-"til eit mobilt nettverk (3G)."
+msgid "This assistant helps you easily set up a mobile broadband connection to a cellular (3G) network."
+msgstr "Denne vegvisaren hjelper deg å enkelt setja opp ei mobil breibandstilkopling til eit mobilt nettverk (3G)."
 
 #: editor/widgets/mobileconnectionwizard.cpp:244
 #, kde-format
@@ -3049,9 +2974,7 @@ msgstr "Namnet på betalingsplanen for breibandsløysinga"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "(in some cases) Your broadband billing plan APN (Access Point Name)"
-msgstr ""
-"(I nokre tilfelle) APN (namn på tilgangspunkt) for betalingsplanen for "
-"breibandsløysinga"
+msgstr "(I nokre tilfelle) APN (namn på tilgangspunkt) for betalingsplanen for breibandsløysinga"
 
 #: editor/widgets/mobileconnectionwizard.cpp:254
 #, kde-format
@@ -3143,16 +3066,13 @@ msgstr "&APN (namn på tilgangspunkt) for vald plan"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid ""
-"Warning: Selecting an incorrect plan may result in billing issues for your "
-"broadband account or may prevent connectivity.\n"
+"Warning: Selecting an incorrect plan may result in billing issues for your broadband account or may prevent connectivity.\n"
 "\n"
 "If you are unsure of your plan please ask your provider for your plan's APN."
 msgstr ""
-"Åtvaring: Viss du vel feil betalingsplan, kan du få feilfakturering for "
-"breibandskontoen din, eller ikkje få tilkopling i det heile tatt.\n"
+"Åtvaring: Viss du vel feil betalingsplan, kan du få feilfakturering for breibandskontoen din, eller ikkje få tilkopling i det heile tatt.\n"
 "\n"
-"Viss du er usikker, spør leverandøren din etter APN-en til betalingsplanen "
-"din."
+"Viss du er usikker, spør leverandøren din etter APN-en til betalingsplanen din."
 
 #: editor/widgets/mobileconnectionwizard.cpp:540
 #, kde-format
@@ -3163,10 +3083,8 @@ msgstr "Stadfest innstillingar for mobilt breiband"
 #: editor/widgets/mobileconnectionwizard.cpp:543
 #, kde-format
 msgctxt "Mobile Connection Wizard"
-msgid ""
-"Your mobile broadband connection is configured with the following settings:"
-msgstr ""
-"Den mobile breibandstilkoplinga er sett opp med følgjande innstillingar:"
+msgid "Your mobile broadband connection is configured with the following settings:"
+msgstr "Den mobile breibandstilkoplinga er sett opp med følgjande innstillingar:"
 
 #: editor/widgets/mobileconnectionwizard.cpp:547
 #, kde-format
@@ -3265,11 +3183,8 @@ msgstr "Rediger IPv4-ruter"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:42 editor/widgets/ui/ipv6routes.ui:130
 #, kde-format
-msgid ""
-"If enabled, this connection will never be used as the default network "
-"connection"
-msgstr ""
-"Viss kryssa av, vert tilkoplinga aldri brukt som standard nettverkstilkopling"
+msgid "If enabled, this connection will never be used as the default network connection"
+msgstr "Viss kryssa av, vert tilkoplinga aldri brukt som standard nettverkstilkopling"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
 #: editor/widgets/ui/ipv4routes.ui:45 editor/widgets/ui/ipv6routes.ui:133
@@ -3294,12 +3209,8 @@ msgstr "Legg til"
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:136 editor/widgets/ui/ipv6routes.ui:120
 #, kde-format
-msgid ""
-"If enabled, automatically configured routes are ignored and only routes "
-"specified above are used"
-msgstr ""
-"Viss kryssa av, vert automatisk oppsette ruter ignorerte, og berre rutene "
-"ovanfor vert brukte"
+msgid "If enabled, automatically configured routes are ignored and only routes specified above are used"
+msgstr "Viss kryssa av, vert automatisk oppsette ruter ignorerte, og berre rutene ovanfor vert brukte"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIgnoreAutoRoutes)
 #: editor/widgets/ui/ipv4routes.ui:139 editor/widgets/ui/ipv6routes.ui:123

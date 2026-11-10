@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-09 00:57+0000\n"
-"PO-Revision-Date: 2026-10-22 14:23+0200\n"
+"PO-Revision-Date: 2026-10-27 09:12+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1797,7 +1797,7 @@ msgstr "Impostazioni IP avanzate"
 #: editor/settings/ui/ipv4.ui:63 editor/settings/ui/ipv6.ui:323
 #, kde-format
 msgid "Routes…"
-msgstr "Rotte..."
+msgstr "Rotte…"
 
 #. i18n: ectx: property (toolTip), widget (KLineEdit, dhcpClientId)
 #: editor/settings/ui/ipv4.ui:74
@@ -2233,7 +2233,7 @@ msgstr "Configurazione JSON:"
 #: editor/settings/ui/team.ui:123
 #, kde-format
 msgid "Import configuration from file…"
-msgstr "Importa la configurazione da file..."
+msgstr "Importa la configurazione da file…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
@@ -2910,7 +2910,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:141
 #, kde-format
 msgid "Peers…"
-msgstr "Controparti..."
+msgstr "Controparti…"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
@@ -3926,7 +3926,7 @@ msgstr "Nuova connessione a banda larga mobile"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My plan is not listed…"
-msgstr "Il mio piano non è elencato..."
+msgstr "Il mio piano non è elencato…"
 
 #: editor/widgets/mobileconnectionwizard.cpp:138
 #, kde-format
@@ -4569,7 +4569,7 @@ msgstr "Avanzate…"
 #, kde-format
 msgctxt "@action:button"
 msgid "Routes…"
-msgstr "Rotte..."
+msgstr "Rotte…"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:16
 #, kde-format
@@ -4746,7 +4746,7 @@ msgstr "Gateway:"
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:33
 #, kde-format
 msgid "SSLVPN server IP or name."
-msgstr "IP o nome del server SSLVPN"
+msgstr "IP o nome del server SSLVPN."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:47
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:78
@@ -4978,7 +4978,7 @@ msgstr "Utilizza la porta sorgente effimera L2TP"
 #, kde-format
 msgctxt "@action:button"
 msgid "IPsec Settings…"
-msgstr "Impostazioni IPsec..."
+msgstr "Impostazioni IPsec…"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:220
 #, kde-format
@@ -4989,7 +4989,7 @@ msgstr "Non è stato trovato alcun demone IPsec (libreswan o strongSwan)."
 #, kde-format
 msgctxt "@action:button"
 msgid "PPP Settings…"
-msgstr "Impostazioni PPP..."
+msgstr "Impostazioni PPP…"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:24
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:36
@@ -6731,7 +6731,7 @@ msgstr "Memorizza il segreto per tutti gli utenti (non cifrato)"
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
 #, kde-format
 msgid "This secret is not required"
-msgstr "Questo segreto non è richiesto."
+msgstr "Questo segreto non è richiesto"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:36
 #, kde-format
@@ -6770,7 +6770,7 @@ msgstr ""
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:117
 #, kde-format
 msgid "Add routes for the peers' allowed IPs"
-msgstr "Aggiungi route per gli IP consentiti delle controparti."
+msgstr "Aggiungi route per gli IP consentiti delle controparti"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:119
 #, kde-format
@@ -6781,7 +6781,7 @@ msgstr "Disattiva questa opzione per instradare il tunnel autonomamente."
 #, kde-format
 msgctxt "@action:button"
 msgid "Peers…"
-msgstr "Controparti..."
+msgstr "Controparti…"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:29
 #, kde-format
@@ -7301,99 +7301,85 @@ msgid "Automatic"
 msgstr "Automatico"
 
 #: handler.cpp:142
-#, fuzzy, kde-format
-#| msgid "Plasma is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr "Manca il supporto per le connessioni VPN «%1»."
+msgstr "Plasma non supporta le connessioni VPN di tipo «%1»."
 
 #: handler.cpp:145
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "Segnala un bug"
 
 #: handler.cpp:168
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr "Manca il supporto di NetworkManager per le connessioni VPN «%1»."
+msgstr "NetworkManager non supporta le connessioni VPN «%1»."
 
 #: handler.cpp:171
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt "@action:button"
 msgid "Install"
 msgstr "Installa"
 
 #: handler.cpp:217
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "Attivazione di %1 non riuscita"
 
 #: handler.cpp:391 handler.cpp:420
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "Aggiunta della connessione %1 non riuscita"
 
 #: handler.cpp:398 handler.cpp:429
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been added"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "La connessione %1 è stata aggiunta"
 
 #: handler.cpp:468
-#, fuzzy, kde-format
-#| msgid "Failed to add %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "Aggiunta di %1 non riuscita"
 
 #: handler.cpp:508
-#, fuzzy, kde-format
-#| msgid "Failed to deactivate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to deactivate %1"
 msgstr "Disattivazione di %1 non riuscita"
 
 #: handler.cpp:646
-#, fuzzy, kde-format
-#| msgid "Failed to remove %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to forget %1"
 msgstr "Rimozione di %1 non riuscita"
 
 #: handler.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been removed"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been forgotten"
 msgstr "La connessione %1 è stata rimossa"
 
 #: handler.cpp:672
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to update connection %1"
 msgstr "Aggiornamento della connessione %1 non riuscito"
 
 #: handler.cpp:679
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been updated"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "La connessione %1 è stata aggiornata"
 
 #: handler.cpp:885
-#, fuzzy, kde-format
-#| msgid "Failed to create hotspot %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "Creazione dell'hotspot %1 non riuscita"
@@ -7479,7 +7465,7 @@ msgstr "Connessioni VPN"
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
-msgstr "Importa connessione VPN..."
+msgstr "Importa connessione VPN…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format
@@ -7599,15 +7585,13 @@ msgid "Unknown"
 msgstr "Sconosciuto"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "Disconnetti"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "Configura"
@@ -7616,14 +7600,13 @@ msgstr "Configura"
 #, kde-format
 msgctxt "@action:button forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "Rimuovi"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Connect to %1"
-msgstr "Connesso a %1"
+msgstr "Connetti a %1"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

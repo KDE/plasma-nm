@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-10-20 14:27+0200\n"
+"PO-Revision-Date: 2026-11-03 15:52+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.10\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: kcm.cpp:269
 #, kde-format
@@ -269,16 +269,12 @@ msgid "Connection imported."
 msgstr "Connessione importata."
 
 #: ui/main.qml:86
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection exported to %1."
-msgstr "Connessione importata."
+msgstr "Connessione esportata in %1."
 
 #: ui/main.qml:92
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgid "Failed to export VPN connection: %1"
-msgstr "Importazione connessione VPN non riuscita: %1"
+msgstr "Esportazione connessione VPN non riuscita: %1"
 
 #: ui/main.qml:98
 msgctxt "@info"
@@ -296,8 +292,6 @@ msgid "Import VPN Connection"
 msgstr "Importa connessione VPN"
 
 #: ui/main.qml:361
-#, fuzzy
-#| msgid "Export VPN Connection"
 msgctxt "@title:window"
 msgid "Export VPN Connection"
 msgstr "Esporta connessione VPN"

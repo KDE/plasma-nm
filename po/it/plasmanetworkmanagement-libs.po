@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 06:31+0000\n"
-"PO-Revision-Date: 2026-01-25 09:12+0100\n"
+"PO-Revision-Date: 2026-10-27 09:12+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -1244,7 +1244,7 @@ msgstr "IPv4 è richiesto per questa connessione"
 #: editor/settings/ui/ipv4.ui:335 editor/settings/ui/ipv6.ui:320
 #, kde-format
 msgid "Routes…"
-msgstr "Rotte..."
+msgstr "Rotte…"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, ipv6RequiredCB)
 #: editor/settings/ui/ipv6.ui:30
@@ -1431,7 +1431,7 @@ msgstr "Configurazione JSON:"
 #: editor/settings/ui/team.ui:123
 #, kde-format
 msgid "Import configuration from file…"
-msgstr "Importa la configurazione da file..."
+msgstr "Importa la configurazione da file…"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/vlan.ui:18
@@ -1987,7 +1987,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:126
 #, kde-format
 msgid "Peers…"
-msgstr "Controparti..."
+msgstr "Controparti…"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
@@ -3002,7 +3002,7 @@ msgstr "Nuova connessione a banda larga mobile"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "My plan is not listed…"
-msgstr "Il mio piano non è elencato..."
+msgstr "Il mio piano non è elencato…"
 
 #: editor/widgets/mobileconnectionwizard.cpp:138
 #, kde-format
@@ -3490,7 +3490,7 @@ msgstr "Connessioni VPN"
 #: models/creatableconnectionsmodel.cpp:266
 #, kde-format
 msgid "Import VPN connection…"
-msgstr "Importa connessione VPN..."
+msgstr "Importa connessione VPN…"
 
 #: models/creatableconnectionsmodel.cpp:267
 #, kde-format

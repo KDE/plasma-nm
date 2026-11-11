@@ -7602,6 +7602,3 @@ msgstr "Качване"
 #, kde-format
 msgid "Download"
 msgstr "Изтегляне"
-
-#~ msgid "Edit DNS the list of servers"
-#~ msgstr "Редактиране на DNS списъка със сървъри"

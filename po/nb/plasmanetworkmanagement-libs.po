@@ -7693,6 +7693,3 @@ msgstr ""
 #, kde-format
 msgid "Download"
 msgstr ""
-
-#~ msgid "Edit DNS the list of servers"
-#~ msgstr "Rediger lista over DNS-tjenere"

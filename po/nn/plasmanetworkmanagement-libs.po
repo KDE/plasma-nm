@@ -7779,6 +7779,3 @@ msgstr "Last opp"
 #, kde-format
 msgid "Download"
 msgstr "Last ned"
-
-#~ msgid "Edit DNS the list of servers"
-#~ msgstr "Rediger lista over DNS-tenarar"

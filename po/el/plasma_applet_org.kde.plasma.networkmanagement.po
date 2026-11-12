@@ -123,28 +123,28 @@ msgid "No available connections"
 msgstr "Μη διαθέσιμες συνδέσεις"
 
 #: ConnectionListPage.qml:145
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
-msgstr ""
+msgstr "Απενεργοποιήστε τη λειτουργία πτήσης για αναζήτηση δικτύων"
 
 #: ConnectionListPage.qml:149
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
-msgstr ""
+msgstr "Ενεργοποιήστε το Wi-Fi ή τα δεδομένα κινητής για αναζήτηση δικτύων"
 
 #: ConnectionListPage.qml:151
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
-msgstr ""
+msgstr "Ενεργοποιήστε το Wi-Fi για αναζήτηση δικτύων"
 
 #: ConnectionListPage.qml:154
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
-msgstr ""
+msgstr "Ενεργοποιήστε τα δεδομένα κινητής για αναζήτηση δικτύων"
 
 #: DetailsText.qml:40
 #, kde-format
@@ -241,18 +241,23 @@ msgid "Hotspot"
 msgstr "Hotspot"
 
 #: Toolbar.qml:193
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
+"Δεν είναι δυνατή η δημιουργία σημείου πρόσβασης, γιατί το Wi-Fi είναι "
+"απενεργοποιημένο."
 
 #: Toolbar.qml:195
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
+"Δεν είναι δυνατή η δημιουργία σημείου πρόσβασης, γιατί όλοι οι ασύρματοι "
+"προσαρμογείς χρησιμοποιούνται. Αποσυνδεθείτε από το τρέχον δίκτυο Wi-Fi ή "
+"συνδέστε άλλον ασύρματο προσαρμογέα."
 
 #: Toolbar.qml:197
 #, fuzzy, kde-format
@@ -269,10 +274,10 @@ msgid "Create Hotspot"
 msgstr "Δημιουργία Hotspot"
 
 #: Toolbar.qml:227
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
-msgstr ""
+msgstr "Σάρωση κωδικού QR Wi-Fi"
 
 #: Toolbar.qml:232
 #, fuzzy, kde-format
@@ -280,9 +285,7 @@ msgstr ""
 #| "Scan this QR code with another device to connect to the \"%1\" network."
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
-msgstr ""
-"Σαρώστε αυτόν τον κωδικό QR με μια άλλη συσκευή για να συνδεθείτε στο δίκτυο "
-"\"%1\"."
+msgstr "Σαρώστε κωδικό QR για σύνδεση σε δίκτυο Wi-Fi"
 
 #: Toolbar.qml:234
 #, fuzzy, kde-format
@@ -293,8 +296,8 @@ msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
 "network"
 msgstr ""
-"Σαρώστε αυτόν τον κωδικό QR με μια άλλη συσκευή για να συνδεθείτε στο δίκτυο "
-"\"%1\"."
+"Εγκαταστήστε το QRCA Barcode Scanner για να σαρώσετε κωδικό QR σύνδεσης σε "
+"δίκτυο Wi-Fi"
 
 #: Toolbar.qml:253
 #, kde-format

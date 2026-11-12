@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-09 00:57+0000\n"
-"PO-Revision-Date: 2026-10-26 07:46+0200\n"
+"PO-Revision-Date: 2026-11-11 23:01+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -521,7 +521,7 @@ msgstr "Уровень сигнала"
 #, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
-msgstr "%1%"
+msgstr "%1 %"
 
 #: editor/connectiondetails.cpp:140 editor/connectiondetails.cpp:150
 #, kde-format
@@ -3898,7 +3898,7 @@ msgid ""
 "Frequency: %3 Mhz\n"
 "Channel: %4"
 msgstr ""
-"%1 (%2%)\n"
+"%1 (%2 %)\n"
 "Частота: %3 МГц\n"
 "Канал: %4"
 
@@ -4156,7 +4156,7 @@ msgid ""
 "Security: %3\n"
 "Frequency: %4 Mhz"
 msgstr ""
-"%1 (%2%)\n"
+"%1 (%2 %)\n"
 "Защита: %3\n"
 "Частота: %4 МГц"
 
@@ -4167,7 +4167,7 @@ msgid ""
 "Security: Insecure\n"
 "Frequency: %3 Mhz"
 msgstr ""
-"%1 (%2%)\n"
+"%1 (%2 %)\n"
 "Защита: нет\n"
 "Частота: %3 МГц"
 
@@ -6819,7 +6819,7 @@ msgstr "Удалить этого участника"
 #, kde-format
 msgctxt "@item BSSID (MAC address) followed by signal strength"
 msgid "%1 (%2%)"
-msgstr "%1 (%2%)"
+msgstr "%1 (%2 %)"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:119
 #, kde-format

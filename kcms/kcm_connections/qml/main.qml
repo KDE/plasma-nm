@@ -218,28 +218,9 @@ QQC2.Page {
         }
     }
 
-    Kirigami.PromptDialog {
+    PlasmaNM.ForgetConnectionDialog {
         id: deleteConfirmationDialog
 
-        property string connectionName
-        property string connectionPath
-
-        /* Like QString::toHtmlEscaped */
-        function toHtmlEscaped(s) {
-            return s.replace(/[&<>]/g, function (tag) {
-                return {
-                    '&': '&amp;',
-                    '<': '&lt;',
-                    '>': '&gt;'
-                }[tag] || tag
-            });
-        }
-
-        standardButtons: Kirigami.Dialog.Ok | Kirigami.Dialog.Cancel
-        title: i18nc("@title:window", "Forget Connection")
-        subtitle: i18nc("@info", "Do you want to forget the connection '%1'?", toHtmlEscaped(connectionName))
-
-        // QTBUG-122770 accepted signal isn't emitted for Ok button.
         // The selection gets updated once the connection is actually removed
         onAccepted: {
             handler.removeConnection(connectionPath)

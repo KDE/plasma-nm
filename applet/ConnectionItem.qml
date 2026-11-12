@@ -27,6 +27,8 @@ PlasmaExtras.ExpandableListItem {
     required property var listView
     required index
 
+    signal forgetRequested(string connectionName, string connectionPath)
+
     property bool activating: model.ConnectionState === PlasmaNM.Enums.Activating
     property bool deactivated: model.ConnectionState === PlasmaNM.Enums.Deactivated
     property bool passwordIsStatic: (model.SecurityType === PlasmaNM.Enums.StaticWep || model.SecurityType == PlasmaNM.Enums.WpaPsk ||
@@ -96,6 +98,12 @@ PlasmaExtras.ExpandableListItem {
             text: i18n("Configure…")
             icon.name: "configure"
             onTriggered: KCMUtils.KCMLauncher.openSystemSettings(mainWindow.kcm, ["--args", "Uuid=" + connectionItem.model.Uuid])
+        },
+        Action {
+            enabled: connectionItem.model.Uuid !== "" && connectionItem.model.Type === PlasmaNM.Enums.Wireless
+            text: i18nc("@action:inmenu forget network connection", "Forget…")
+            icon.name: "edit-delete-remove"
+            onTriggered: connectionItem.forgetRequested(connectionItem.model.ItemUniqueName, connectionItem.model.ConnectionPath)
         }
     ]
 

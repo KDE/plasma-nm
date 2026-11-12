@@ -41,6 +41,12 @@ ColumnLayout {
         }
     }
 
+    PlasmaNM.ForgetConnectionDialog {
+        id: forgetConfirmationDialog
+
+        onAccepted: handler.removeConnection(connectionPath)
+    }
+
     PlasmaComponents3.ScrollView {
         id: scrollView
 
@@ -86,6 +92,11 @@ ColumnLayout {
             highlightMoveDuration: Kirigami.Units.shortDuration
             highlightResizeDuration: Kirigami.Units.shortDuration
             delegate: ConnectionItem {
+                onForgetRequested: (connectionName, connectionPath) => {
+                    forgetConfirmationDialog.connectionName = connectionName;
+                    forgetConfirmationDialog.connectionPath = connectionPath;
+                    forgetConfirmationDialog.open();
+                }
                 listView: connectionView
                 width: connectionView.width - Kirigami.Units.smallSpacing * 4
             }

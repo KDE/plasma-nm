@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 00:57+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2026-10-26 18:25+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -7612,6 +7612,22 @@ msgstr "Вилучити"
 msgctxt "@title:window"
 msgid "Connect to %1"
 msgstr "З'єднатися з %1"
+
+#: qml/ForgetConnectionDialog.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Connection"
+msgctxt "@title:window"
+msgid "Forget Connection"
+msgstr "Нове з'єднання"
+
+#: qml/ForgetConnectionDialog.qml:16
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Failed to update connection %1"
+msgctxt "@info"
+msgid "Forget the connection “%1”?"
+msgstr "Не вдалося оновити запис з'єднання %1"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

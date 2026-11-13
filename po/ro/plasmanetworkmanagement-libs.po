@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 00:57+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2026-01-28 21:50+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -7743,6 +7743,20 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Connect to %1"
 msgstr "Conectat la %1"
+
+#: qml/ForgetConnectionDialog.qml:15
+#, fuzzy, kde-format
+#| msgid "New Connection (%1)"
+msgctxt "@title:window"
+msgid "Forget Connection"
+msgstr "Conexiune nouă (%1)"
+
+#: qml/ForgetConnectionDialog.qml:16
+#, fuzzy, kde-format
+#| msgid "Failed to update connection %1"
+msgctxt "@info"
+msgid "Forget the connection “%1”?"
+msgstr "Actualizarea conexiunii %1 a eșuat"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

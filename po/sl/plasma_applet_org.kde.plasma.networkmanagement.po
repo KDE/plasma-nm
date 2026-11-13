@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-10 00:48+0000\n"
+"POT-Creation-Date: 2026-11-12 16:05+0000\n"
 "PO-Revision-Date: 2025-11-09 07:17+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
@@ -20,38 +20,44 @@ msgstr ""
 "Translator: Andrej Mernik <andrejm@ubuntu.si>\n"
 "X-Generator: Poedit 3.8\n"
 
-#: ConnectionItem.qml:62
+#: ConnectionItem.qml:64
 #, kde-format
 msgid "Connect"
 msgstr "Poveži se"
 
-#: ConnectionItem.qml:62
+#: ConnectionItem.qml:64
 #, kde-format
 msgid "Disconnect"
 msgstr "Prekini povezavo"
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:92
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr "Deli"
 
-#: ConnectionItem.qml:96
+#: ConnectionItem.qml:98
 #, kde-format
 msgid "Configure…"
 msgstr "Nastavi…"
 
-#: ConnectionItem.qml:136
+#: ConnectionItem.qml:104
+#, kde-format
+msgctxt "@action:inmenu forget network connection"
+msgid "Forget…"
+msgstr ""
+
+#: ConnectionItem.qml:144
 #, kde-format
 msgid "Speed"
 msgstr "Hitrost"
 
-#: ConnectionItem.qml:141
+#: ConnectionItem.qml:149
 #, kde-format
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: ConnectionItem.qml:188
+#: ConnectionItem.qml:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -61,7 +67,7 @@ msgstr ""
 "Trenutna hitrost prenosa sem je %1 kibibytov na sekundo; hitrost prenosa tja "
 "je %2 kibibytov na sekundo"
 
-#: ConnectionItem.qml:309
+#: ConnectionItem.qml:317
 #, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
@@ -78,60 +84,60 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Prijava"
 
-#: ConnectionListPage.qml:118
+#: ConnectionListPage.qml:129
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Način Na letalu je omogočen"
 
-#: ConnectionListPage.qml:122
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr "Wi-Fi in mobilna omrežja so deaktivirana"
 
-#: ConnectionListPage.qml:124
+#: ConnectionListPage.qml:135
 #, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "Wi-Fi omrežje deaktivirano"
 
-#: ConnectionListPage.qml:127
+#: ConnectionListPage.qml:138
 #, kde-format
 msgid "Looking for Wi-Fi networks"
 msgstr "Iskanje Wi-Fi omrežij"
 
-#: ConnectionListPage.qml:130
+#: ConnectionListPage.qml:141
 #, kde-format
 msgid "Mobile data is deactivated"
 msgstr "Mobilno omrežje deaktivirano"
 
-#: ConnectionListPage.qml:133
+#: ConnectionListPage.qml:144
 #, kde-format
 msgid "No matches"
 msgstr "Ni zadetkov"
 
-#: ConnectionListPage.qml:136
+#: ConnectionListPage.qml:147
 #, kde-format
 msgid "No available connections"
 msgstr "Ni razpoložljivih povezav"
 
-#: ConnectionListPage.qml:145
+#: ConnectionListPage.qml:156
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr "Izklopi letalski način za iskanje omrežij"
 
-#: ConnectionListPage.qml:149
+#: ConnectionListPage.qml:160
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr "Vklopi Wi-Fi ali mobilne podatke za iskanje omrežij"
 
-#: ConnectionListPage.qml:151
+#: ConnectionListPage.qml:162
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr "Vklopi Wi-Fi za iskanje omrežij"
 
-#: ConnectionListPage.qml:154
+#: ConnectionListPage.qml:165
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

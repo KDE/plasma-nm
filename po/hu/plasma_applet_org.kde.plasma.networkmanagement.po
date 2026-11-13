@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-10 00:48+0000\n"
+"POT-Creation-Date: 2026-11-12 16:05+0000\n"
 "PO-Revision-Date: 2026-06-09 21:40+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -19,38 +19,44 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Lokalize 26.04.2\n"
 
-#: ConnectionItem.qml:62
+#: ConnectionItem.qml:64
 #, kde-format
 msgid "Connect"
 msgstr "Kapcsolódás"
 
-#: ConnectionItem.qml:62
+#: ConnectionItem.qml:64
 #, kde-format
 msgid "Disconnect"
 msgstr "Kapcsolat bontása"
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:92
 #, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr "Megosztás"
 
-#: ConnectionItem.qml:96
+#: ConnectionItem.qml:98
 #, kde-format
 msgid "Configure…"
 msgstr "Beállítás…"
 
-#: ConnectionItem.qml:136
+#: ConnectionItem.qml:104
+#, kde-format
+msgctxt "@action:inmenu forget network connection"
+msgid "Forget…"
+msgstr ""
+
+#: ConnectionItem.qml:144
 #, kde-format
 msgid "Speed"
 msgstr "Sebesség"
 
-#: ConnectionItem.qml:141
+#: ConnectionItem.qml:149
 #, kde-format
 msgid "Details"
 msgstr "Részletek"
 
-#: ConnectionItem.qml:188
+#: ConnectionItem.qml:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -60,7 +66,7 @@ msgstr ""
 "A jelenlegi letöltési sebesség %1 kibibájt másodpercenként; a jelenlegi "
 "feltöltési sebesség %2 kibibájt másodpercenként"
 
-#: ConnectionItem.qml:309
+#: ConnectionItem.qml:317
 #, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
@@ -77,61 +83,61 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr "Bejelentkezés"
 
-#: ConnectionListPage.qml:118
+#: ConnectionListPage.qml:129
 #, kde-format
 msgid "Airplane mode is enabled"
 msgstr "Repülős üzemmód bekapcsolva"
 
-#: ConnectionListPage.qml:122
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr "Wi-Fi és mobil adatkapcsolat deaktiválva"
 
-#: ConnectionListPage.qml:124
+#: ConnectionListPage.qml:135
 #, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "Wi-Fi deaktiválva"
 
-#: ConnectionListPage.qml:127
+#: ConnectionListPage.qml:138
 #, kde-format
 msgid "Looking for Wi-Fi networks"
 msgstr "Wi-Fi hálózatok keresése"
 
-#: ConnectionListPage.qml:130
+#: ConnectionListPage.qml:141
 #, kde-format
 msgid "Mobile data is deactivated"
 msgstr "Mobil adatkapcsolat deaktiválva"
 
-#: ConnectionListPage.qml:133
+#: ConnectionListPage.qml:144
 #, kde-format
 msgid "No matches"
 msgstr "Nincs találat"
 
-#: ConnectionListPage.qml:136
+#: ConnectionListPage.qml:147
 #, kde-format
 msgid "No available connections"
 msgstr "Nincsenek elérhető kapcsolatok"
 
-#: ConnectionListPage.qml:145
+#: ConnectionListPage.qml:156
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr "Hálózatok kereséséhez kapcsolja ki a repülő üzemmódot"
 
-#: ConnectionListPage.qml:149
+#: ConnectionListPage.qml:160
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr ""
 "Hálózatok kereséséhez kapcsolja be a Wi-Fit vagy a mobil adatkapcsolatot"
 
-#: ConnectionListPage.qml:151
+#: ConnectionListPage.qml:162
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr "Hálózatok kereséséhez kapcsolja be a Wi-Fit"
 
-#: ConnectionListPage.qml:154
+#: ConnectionListPage.qml:165
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

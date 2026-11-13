@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 00:57+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2026-11-03 22:17+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
@@ -7577,6 +7577,22 @@ msgstr "Unut"
 msgctxt "@title:window"
 msgid "Connect to %1"
 msgstr "Bağlan: %1"
+
+#: qml/ForgetConnectionDialog.qml:15
+#, fuzzy, kde-format
+#| msgctxt "@title:window"
+#| msgid "New Connection"
+msgctxt "@title:window"
+msgid "Forget Connection"
+msgstr "Yeni Bağlantı"
+
+#: qml/ForgetConnectionDialog.qml:16
+#, fuzzy, kde-format
+#| msgctxt "@title"
+#| msgid "Failed to update connection %1"
+msgctxt "@info"
+msgid "Forget the connection “%1”?"
+msgstr "%1 bağlantısı güncellenemedi"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

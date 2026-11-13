@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 00:57+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2024-03-14 23:24+0100\n"
 "Last-Translator: Enol P. <enolp@softastur.org>\n"
 "Language-Team: Assamese <alministradores@softastur.org>\n"
@@ -7444,6 +7444,19 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Connect to %1"
 msgstr "Velocidá de la conexón"
+
+#: qml/ForgetConnectionDialog.qml:15
+#, fuzzy, kde-format
+#| msgid "Connection speed"
+msgctxt "@title:window"
+msgid "Forget Connection"
+msgstr "Velocidá de la conexón"
+
+#: qml/ForgetConnectionDialog.qml:16
+#, kde-format
+msgctxt "@info"
+msgid "Forget the connection “%1”?"
+msgstr ""
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

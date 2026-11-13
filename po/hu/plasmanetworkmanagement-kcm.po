@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-31 00:53+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2026-06-09 21:48+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -242,47 +242,32 @@ msgctxt "@action:button"
 msgid "Configure"
 msgstr "Beállítás"
 
-#: qml/main.qml:239 ui/main.qml:333
-#, fuzzy
-#| msgctxt "@title:window"
-#| msgid "Remove Connection"
-msgctxt "@title:window"
-msgid "Forget Connection"
-msgstr "Kapcsolat eltávolítása"
-
-#: qml/main.qml:240 ui/main.qml:334
-#, fuzzy
-#| msgid "Do you want to remove the connection '%1'?"
-msgctxt "@info"
-msgid "Do you want to forget the connection '%1'?"
-msgstr "Szeretné eltávolítani a(z) „%1” kapcsolatot?"
-
-#: qml/main.qml:259
+#: qml/main.qml:240
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Kapcsolódás"
 
-#: qml/main.qml:265
+#: qml/main.qml:246
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Mégse"
 
-#: qml/main.qml:271
+#: qml/main.qml:252
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "Adja meg a jelszót"
 
-#: qml/main.qml:277
+#: qml/main.qml:258
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "Hálózat: %1"
 
-#: qml/main.qml:298
+#: qml/main.qml:279
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "A jelszónak érvényes WEP-kulcsnak kell lennie"
 
-#: qml/main.qml:299
+#: qml/main.qml:280
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "A jelszó hossza 8 és 64 karakter között kell legyen"
@@ -319,6 +304,21 @@ msgstr "Nem sikerült importálni a VPN kapcsolatot: %1"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Kapcsolat importálva."
+
+#: ui/main.qml:333
+#, fuzzy
+#| msgctxt "@title:window"
+#| msgid "Remove Connection"
+msgctxt "@title:window"
+msgid "Forget Connection"
+msgstr "Kapcsolat eltávolítása"
+
+#: ui/main.qml:334
+#, fuzzy
+#| msgid "Do you want to remove the connection '%1'?"
+msgctxt "@info"
+msgid "Do you want to forget the connection '%1'?"
+msgstr "Szeretné eltávolítani a(z) „%1” kapcsolatot?"
 
 #: ui/main.qml:351
 #, fuzzy

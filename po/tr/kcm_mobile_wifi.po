@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-06 00:51+0000\n"
-"PO-Revision-Date: 2026-08-06 20:31+0300\n"
+"PO-Revision-Date: 2026-11-12 19:02+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.04.2\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -49,12 +49,12 @@ msgstr "Paylaş"
 #: ui/ConnectionInfo.qml:87
 #, kde-format
 msgid "Share Wi-Fi via QR Code"
-msgstr "Wi-Fi’yi Kare Kod ile Paylaş"
+msgstr "Wi-Fi’yi Karekod ile Paylaş"
 
 #: ui/ConnectionInfo.qml:94
 #, kde-format
 msgid "Wi-Fi QR Code"
-msgstr "Wi-Fi Kare Kodu"
+msgstr "Wi-Fi Karekodu"
 
 #: ui/ConnectionInfo.qml:114
 #, kde-format

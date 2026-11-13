@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-09 00:57+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2025-05-06 11:47+0400\n"
 "Last-Translator: linux <xxmn77@gmail.com>\n"
 "Language-Team: Azerbaijani <kde-i18n-doc@kde.org>\n"
@@ -7899,6 +7899,20 @@ msgstr ""
 msgctxt "@title:window"
 msgid "Connect to %1"
 msgstr "Qoşuldu %1"
+
+#: qml/ForgetConnectionDialog.qml:15
+#, fuzzy, kde-format
+#| msgid "New Connection (%1)"
+msgctxt "@title:window"
+msgid "Forget Connection"
+msgstr "Yeni bağlantı (%1)"
+
+#: qml/ForgetConnectionDialog.qml:16
+#, fuzzy, kde-format
+#| msgid "Failed to update connection %1"
+msgctxt "@info"
+msgid "Forget the connection “%1”?"
+msgstr "%1 bağlantısını yeniləmək baş tutmadı"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

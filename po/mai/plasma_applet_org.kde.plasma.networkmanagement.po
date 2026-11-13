@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-10 00:48+0000\n"
+"POT-Creation-Date: 2026-11-12 16:05+0000\n"
 "PO-Revision-Date: 2010-09-08 12:33+0530\n"
 "Last-Translator: Rajesh Ranjan <rajesh672@gmail.com>\n"
 "Language-Team: Maithili <bhashaghar@googlegroups.com>\n"
@@ -18,42 +18,48 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: KBabel 1.11.4\n"
 
-#: ConnectionItem.qml:62
+#: ConnectionItem.qml:64
 #, fuzzy, kde-format
 #| msgctxt "network interface connected state label"
 #| msgid "Connected"
 msgid "Connect"
 msgstr "संबंधित"
 
-#: ConnectionItem.qml:62
+#: ConnectionItem.qml:64
 #, fuzzy, kde-format
 msgid "Disconnect"
 msgstr "संबंधित"
 
-#: ConnectionItem.qml:90
+#: ConnectionItem.qml:92
 #, fuzzy, kde-format
 #| msgid "Shared"
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
 msgstr "साझा"
 
-#: ConnectionItem.qml:96
+#: ConnectionItem.qml:98
 #, fuzzy, kde-format
 #| msgid "Confirm Delete"
 msgid "Configure…"
 msgstr "मेटओनाइ निश्चित करू"
 
-#: ConnectionItem.qml:136
+#: ConnectionItem.qml:104
+#, kde-format
+msgctxt "@action:inmenu forget network connection"
+msgid "Forget…"
+msgstr ""
+
+#: ConnectionItem.qml:144
 #, kde-format
 msgid "Speed"
 msgstr "गति"
 
-#: ConnectionItem.qml:141
+#: ConnectionItem.qml:149
 #, kde-format
 msgid "Details"
 msgstr "विवरण"
 
-#: ConnectionItem.qml:188
+#: ConnectionItem.qml:196
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -61,7 +67,7 @@ msgid ""
 "%2 kibibytes per second"
 msgstr ""
 
-#: ConnectionItem.qml:309
+#: ConnectionItem.qml:317
 #, fuzzy, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
@@ -78,60 +84,60 @@ msgctxt "@action:button"
 msgid "Log in"
 msgstr ""
 
-#: ConnectionListPage.qml:118
+#: ConnectionListPage.qml:129
 #, fuzzy, kde-format
 msgid "Airplane mode is enabled"
 msgstr "बेतार"
 
-#: ConnectionListPage.qml:122
+#: ConnectionListPage.qml:133
 #, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
 msgstr ""
 
-#: ConnectionListPage.qml:124
+#: ConnectionListPage.qml:135
 #, fuzzy, kde-format
 msgid "Wi-Fi is deactivated"
 msgstr "बेतार"
 
-#: ConnectionListPage.qml:127
+#: ConnectionListPage.qml:138
 #, kde-format
 msgid "Looking for Wi-Fi networks"
 msgstr ""
 
-#: ConnectionListPage.qml:130
+#: ConnectionListPage.qml:141
 #, fuzzy, kde-format
 msgid "Mobile data is deactivated"
 msgstr "बेतार"
 
-#: ConnectionListPage.qml:133
+#: ConnectionListPage.qml:144
 #, kde-format
 msgid "No matches"
 msgstr ""
 
-#: ConnectionListPage.qml:136
+#: ConnectionListPage.qml:147
 #, fuzzy, kde-format
 msgid "No available connections"
 msgstr "कनेक्शन"
 
-#: ConnectionListPage.qml:145
+#: ConnectionListPage.qml:156
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:149
+#: ConnectionListPage.qml:160
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:151
+#: ConnectionListPage.qml:162
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr ""
 
-#: ConnectionListPage.qml:154
+#: ConnectionListPage.qml:165
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"

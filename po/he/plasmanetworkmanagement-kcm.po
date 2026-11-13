@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-31 00:53+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2026-11-03 20:28+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: צוות התרגום של KDE ישראל\n"
@@ -221,42 +221,32 @@ msgctxt "@action:button"
 msgid "Configure"
 msgstr "הגדרה"
 
-#: qml/main.qml:239 ui/main.qml:333
-msgctxt "@title:window"
-msgid "Forget Connection"
-msgstr "לשכוח את החיבור"
-
-#: qml/main.qml:240 ui/main.qml:334
-msgctxt "@info"
-msgid "Do you want to forget the connection '%1'?"
-msgstr "לשכוח את החיבור ‚%1’?"
-
-#: qml/main.qml:259
+#: qml/main.qml:240
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "התחברות"
 
-#: qml/main.qml:265
+#: qml/main.qml:246
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "ביטול"
 
-#: qml/main.qml:271
+#: qml/main.qml:252
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "נא למלא סיסמה"
 
-#: qml/main.qml:277
+#: qml/main.qml:258
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "רשת: %1"
 
-#: qml/main.qml:298
+#: qml/main.qml:279
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "הסיסמה חייבת להיות מפתח WEP תקף"
 
-#: qml/main.qml:299
+#: qml/main.qml:280
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "אורך הסיסמה חייב להיות בין 8 ל־64 תווים"
@@ -283,6 +273,16 @@ msgstr "ייבוא חיבור VPN נכשל: %1"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "שם החיבור:"
+
+#: ui/main.qml:333
+msgctxt "@title:window"
+msgid "Forget Connection"
+msgstr "לשכוח את החיבור"
+
+#: ui/main.qml:334
+msgctxt "@info"
+msgid "Do you want to forget the connection '%1'?"
+msgstr "לשכוח את החיבור ‚%1’?"
 
 #: ui/main.qml:351
 msgctxt "@title:window"

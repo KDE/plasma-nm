@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-31 00:53+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2023-11-11 15:35+0100\n"
 "Last-Translator: Matej Mrenica <matejm98mthw@gmail.com>\n"
 "Language-Team: Slovak <kde-i18n-doc@kde.org>\n"
@@ -224,42 +224,32 @@ msgctxt "@action:button"
 msgid "Configure"
 msgstr "Nastaviť"
 
-#: qml/main.qml:239 ui/main.qml:333
-msgctxt "@title:window"
-msgid "Forget Connection"
-msgstr "Zabudnúť pripojenie"
-
-#: qml/main.qml:240 ui/main.qml:334
-msgctxt "@info"
-msgid "Do you want to forget the connection '%1'?"
-msgstr "Chcete zabudnúť pripojenie „%1“?"
-
-#: qml/main.qml:259
+#: qml/main.qml:240
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Pripojiť"
 
-#: qml/main.qml:265
+#: qml/main.qml:246
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Zrušiť"
 
-#: qml/main.qml:271
+#: qml/main.qml:252
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "Zadať heslo"
 
-#: qml/main.qml:277
+#: qml/main.qml:258
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "Sieť: %1"
 
-#: qml/main.qml:298
+#: qml/main.qml:279
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "Heslo musí byť platný kľúč WEP."
 
-#: qml/main.qml:299
+#: qml/main.qml:280
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Heslo musí mať 8 až 64 znakov."
@@ -290,6 +280,16 @@ msgstr "Nepodarilo sa importovať pripojenie VPN: %1"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Názov pripojenia:"
+
+#: ui/main.qml:333
+msgctxt "@title:window"
+msgid "Forget Connection"
+msgstr "Zabudnúť pripojenie"
+
+#: ui/main.qml:334
+msgctxt "@info"
+msgid "Do you want to forget the connection '%1'?"
+msgstr "Chcete zabudnúť pripojenie „%1“?"
 
 #: ui/main.qml:351
 msgctxt "@title:window"

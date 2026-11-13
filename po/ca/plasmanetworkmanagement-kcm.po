@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-31 00:53+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2026-10-31 10:52+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -227,42 +227,32 @@ msgctxt "@action:button"
 msgid "Configure"
 msgstr "Configura"
 
-#: qml/main.qml:239 ui/main.qml:333
-msgctxt "@title:window"
-msgid "Forget Connection"
-msgstr "Oblit de connexió"
-
-#: qml/main.qml:240 ui/main.qml:334
-msgctxt "@info"
-msgid "Do you want to forget the connection '%1'?"
-msgstr "Voleu oblidar la connexió «%1»?"
-
-#: qml/main.qml:259
+#: qml/main.qml:240
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Connecta"
 
-#: qml/main.qml:265
+#: qml/main.qml:246
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Cancel·la"
 
-#: qml/main.qml:271
+#: qml/main.qml:252
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "Introduïu la contrasenya"
 
-#: qml/main.qml:277
+#: qml/main.qml:258
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "Xarxa: %1"
 
-#: qml/main.qml:298
+#: qml/main.qml:279
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "La contrasenya cal que sigui una clau WEP vàlida"
 
-#: qml/main.qml:299
+#: qml/main.qml:280
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "La contrasenya cal que tingui entre 8 i 64 caràcters"
@@ -289,6 +279,16 @@ msgstr "Ha fallat en importar la connexió VPN: %1"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Nom de la connexió:"
+
+#: ui/main.qml:333
+msgctxt "@title:window"
+msgid "Forget Connection"
+msgstr "Oblit de connexió"
+
+#: ui/main.qml:334
+msgctxt "@info"
+msgid "Do you want to forget the connection '%1'?"
+msgstr "Voleu oblidar la connexió «%1»?"
 
 #: ui/main.qml:351
 msgctxt "@title:window"

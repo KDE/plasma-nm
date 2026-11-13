@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-10-31 00:53+0000\n"
+"POT-Creation-Date: 2026-11-13 01:01+0000\n"
 "PO-Revision-Date: 2017-01-19 19:33+0200\n"
 "Last-Translator: Dimitris Kardarakos <dimkard@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-el@kde.org>\n"
@@ -261,53 +261,38 @@ msgctxt "@action:button"
 msgid "Configure"
 msgstr ""
 
-#: qml/main.qml:239 ui/main.qml:333
-#, fuzzy
-#| msgctxt "@title:window"
-#| msgid "Remove Connection"
-msgctxt "@title:window"
-msgid "Forget Connection"
-msgstr "Αφαίρεση σύνδεσης"
-
-#: qml/main.qml:240 ui/main.qml:334
-#, fuzzy
-#| msgid "Do you want to remove the connection '%1'?"
-msgctxt "@info"
-msgid "Do you want to forget the connection '%1'?"
-msgstr "Επιθυμείτε να αφαιρέσετε τη σύνδεση '%1';"
-
-#: qml/main.qml:259
+#: qml/main.qml:240
 #, fuzzy
 #| msgid "Connect"
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Σύνδεση"
 
-#: qml/main.qml:265
+#: qml/main.qml:246
 #, fuzzy
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
-#: qml/main.qml:271
+#: qml/main.qml:252
 #, fuzzy
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "Εισαγωγή κωδικού πρόσβασης"
 
-#: qml/main.qml:277
+#: qml/main.qml:258
 #, fuzzy
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "Δίκτυο: %1"
 
-#: qml/main.qml:298
+#: qml/main.qml:279
 #, fuzzy
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "Ο κωδικός πρέπει να είναι έγκυρο κλειδί WEP"
 
-#: qml/main.qml:299
+#: qml/main.qml:280
 #, fuzzy
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
@@ -345,6 +330,21 @@ msgstr "Εισαγωγή σύνδεσης VPN"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Συνδέθηκε"
+
+#: ui/main.qml:333
+#, fuzzy
+#| msgctxt "@title:window"
+#| msgid "Remove Connection"
+msgctxt "@title:window"
+msgid "Forget Connection"
+msgstr "Αφαίρεση σύνδεσης"
+
+#: ui/main.qml:334
+#, fuzzy
+#| msgid "Do you want to remove the connection '%1'?"
+msgctxt "@info"
+msgid "Do you want to forget the connection '%1'?"
+msgstr "Επιθυμείτε να αφαιρέσετε τη σύνδεση '%1';"
 
 #: ui/main.qml:351
 #, fuzzy

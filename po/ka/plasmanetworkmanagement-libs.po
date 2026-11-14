@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 01:01+0000\n"
-"PO-Revision-Date: 2026-10-26 04:28+0100\n"
+"PO-Revision-Date: 2026-11-13 03:17+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -7575,20 +7575,16 @@ msgid "Connect to %1"
 msgstr "%1- სთან დაკავშირება"
 
 #: qml/ForgetConnectionDialog.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "ახალი შეერთება"
+msgstr "კავშირის დავიწყება"
 
 #: qml/ForgetConnectionDialog.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@info"
 msgid "Forget the connection “%1”?"
-msgstr "კავშირის %1 განახლება ჩავარდა"
+msgstr "მართლა გნებავთ კავშირის \"%1\" დავიწყება?"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

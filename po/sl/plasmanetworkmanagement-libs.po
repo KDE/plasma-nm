@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 01:01+0000\n"
-"PO-Revision-Date: 2026-10-26 07:04+0100\n"
+"PO-Revision-Date: 2026-11-13 10:55+0100\n"
 "Last-Translator: Matjaž Jeran <matjaz.jeran@amis.net>\n"
 "Language-Team: Slovenian <lugos-slo@lugos.si>\n"
 "Language: sl\n"
@@ -7583,20 +7583,16 @@ msgid "Connect to %1"
 msgstr "Poveži na %1"
 
 #: qml/ForgetConnectionDialog.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "Nova povezava"
+msgstr "Pozabi povezavo"
 
 #: qml/ForgetConnectionDialog.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@info"
 msgid "Forget the connection “%1”?"
-msgstr "Ni bilo mogoče posodobiti povezave %1"
+msgstr "Naj pozabim povezavo “%1”?"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

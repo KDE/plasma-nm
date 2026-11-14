@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 01:01+0000\n"
-"PO-Revision-Date: 2026-11-11 23:01+0200\n"
+"PO-Revision-Date: 2026-11-13 07:44+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -7625,20 +7625,16 @@ msgid "Connect to %1"
 msgstr "Подключение к %1"
 
 #: qml/ForgetConnectionDialog.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "Новое подключение"
+msgstr "Удаление подключения"
 
 #: qml/ForgetConnectionDialog.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@info"
 msgid "Forget the connection “%1”?"
-msgstr "Не удалось обновить подключение %1"
+msgstr "Удалить подключение «%1»?"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

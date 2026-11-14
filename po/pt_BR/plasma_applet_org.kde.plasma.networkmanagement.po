@@ -13,7 +13,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-12 16:05+0000\n"
-"PO-Revision-Date: 2026-08-29 06:59-0300\n"
+"PO-Revision-Date: 2026-11-13 05:48-0300\n"
 "Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 
 #: ConnectionItem.qml:64
 #, kde-format
@@ -48,7 +48,7 @@ msgstr "Configurar…"
 #, kde-format
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget…"
-msgstr ""
+msgstr "Esquecer…"
 
 #: ConnectionItem.qml:144
 #, kde-format

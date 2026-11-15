@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 01:01+0000\n"
-"PO-Revision-Date: 2026-10-09 15:40+0200\n"
+"PO-Revision-Date: 2026-11-14 16:15+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr\n"
@@ -4318,15 +4318,13 @@ msgstr "Прави нове везе као системске"
 
 # >> @title:window
 #: editorqml/qml/CreateConnectionDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "New Connection (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Connection"
-msgstr "Нова веза (%1)"
+msgstr "Нова веза"
 
 #: editorqml/qml/CreateConnectionDialog.qml:84
-#, fuzzy, kde-format
-#| msgid "Connection name:"
+#, kde-format
 msgctxt "@label"
 msgid "Connection name:"
 msgstr "Име везе:"
@@ -4334,15 +4332,13 @@ msgstr "Име везе:"
 #: editorqml/qml/dialogs/VpnPage.qml:28 editorqml/qml/dialogs/WiredPage.qml:23
 #: editorqml/qml/dialogs/WireGuardPage.qml:24
 #: editorqml/qml/dialogs/WirelessPage.qml:23
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "Опште"
 
 #: editorqml/qml/dialogs/VpnPage.qml:32
-#, fuzzy, kde-format
-#| msgid "VPN"
+#, kde-format
 msgctxt "@title"
 msgid "VPN"
 msgstr "ВПН"
@@ -4350,8 +4346,7 @@ msgstr "ВПН"
 #: editorqml/qml/dialogs/VpnPage.qml:35 editorqml/qml/dialogs/WiredPage.qml:32
 #: editorqml/qml/dialogs/WireGuardPage.qml:30
 #: editorqml/qml/dialogs/WirelessPage.qml:32
-#, fuzzy, kde-format
-#| msgid "IPv4"
+#, kde-format
 msgctxt "@title"
 msgid "IPv4"
 msgstr "ИПв4"
@@ -4359,43 +4354,37 @@ msgstr "ИПв4"
 #: editorqml/qml/dialogs/VpnPage.qml:39 editorqml/qml/dialogs/WiredPage.qml:35
 #: editorqml/qml/dialogs/WireGuardPage.qml:33
 #: editorqml/qml/dialogs/WirelessPage.qml:35
-#, fuzzy, kde-format
-#| msgid "IPv6"
+#, kde-format
 msgctxt "@title"
 msgid "IPv6"
 msgstr "ИПв6"
 
 #: editorqml/qml/dialogs/WiredPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Wired"
+#, kde-format
 msgctxt "@title"
 msgid "Wired"
 msgstr "Жичана"
 
 #: editorqml/qml/dialogs/WiredPage.qml:29
-#, fuzzy, kde-format
-#| msgid "802.1x Security"
+#, kde-format
 msgctxt "@title"
 msgid "802.1x Security"
 msgstr "802.1x безбедност"
 
 #: editorqml/qml/dialogs/WireGuardPage.qml:27
-#, fuzzy, kde-format
-#| msgid "WireGuard"
+#, kde-format
 msgctxt "@title"
 msgid "WireGuard"
 msgstr "WireGuard"
 
 #: editorqml/qml/dialogs/WirelessPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Wi-Fi"
+#, kde-format
 msgctxt "@title"
 msgid "Wi-Fi"
 msgstr "Вај‑фај"
 
 #: editorqml/qml/dialogs/WirelessPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Wi-Fi Security"
+#, kde-format
 msgctxt "@title"
 msgid "Wi-Fi Security"
 msgstr "Вај‑фај безбедност"
@@ -7308,99 +7297,85 @@ msgid "Automatic"
 msgstr "аутоматски"
 
 #: handler.cpp:142
-#, fuzzy, kde-format
-#| msgid "Plasma is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Плазма нема подршку за ВПН везе типа „%1“."
 
 #: handler.cpp:145
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "Пријави грешку"
 
 #: handler.cpp:168
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "Менаџер мреже нема подршку за ВПН везе типа „%1“."
 
 #: handler.cpp:171
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt "@action:button"
 msgid "Install"
 msgstr "Инсталирај"
 
 #: handler.cpp:217
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "Не могу да активирам %1"
 
 #: handler.cpp:391 handler.cpp:420
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "Не могу да додам везу %1"
 
 #: handler.cpp:398 handler.cpp:429
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been added"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "Веза %1 додата"
 
 #: handler.cpp:468
-#, fuzzy, kde-format
-#| msgid "Failed to add %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "Не могу да додам %1"
 
 #: handler.cpp:508
-#, fuzzy, kde-format
-#| msgid "Failed to deactivate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to deactivate %1"
 msgstr "Не могу да деактивирам %1"
 
 #: handler.cpp:646
-#, fuzzy, kde-format
-#| msgid "Failed to remove %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to forget %1"
-msgstr "Не могу да уклоним %1"
+msgstr "Не могу да заборавим %1"
 
 #: handler.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been removed"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been forgotten"
-msgstr "Веза %1 уклоњена"
+msgstr "Веза %1 заборављена"
 
 #: handler.cpp:672
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to update connection %1"
 msgstr "Не могу да ажурирам везу %1"
 
 #: handler.cpp:679
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been updated"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "Веза %1 ажурирана"
 
 #: handler.cpp:885
-#, fuzzy, kde-format
-#| msgid "Failed to create hotspot %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "Не могу да направим приступну тачку %1"
@@ -7606,15 +7581,13 @@ msgid "Unknown"
 msgstr "Непознато"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "Прекини везу"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "Подеси"
@@ -7623,29 +7596,25 @@ msgstr "Подеси"
 #, kde-format
 msgctxt "@action:button forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "Заборави"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Connect to %1"
-msgstr "Повезан на %1"
+msgstr "Повезивање на %1"
 
-# >> @title:window
 #: qml/ForgetConnectionDialog.qml:15
-#, fuzzy, kde-format
-#| msgid "New Connection (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "Нова веза (%1)"
+msgstr "Заборављање везе"
 
 #: qml/ForgetConnectionDialog.qml:16
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@info"
 msgid "Forget the connection “%1”?"
-msgstr "Не могу да ажурирам везу %1"
+msgstr "Заборавити везу „%1“?"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
@@ -7661,12 +7630,3 @@ msgstr "Отпремање"
 #, kde-format
 msgid "Download"
 msgstr "Преузимање"
-
-#~ msgid "Edit DNS the list of servers"
-#~ msgstr "Уреди листу ДНС сервера"
-
-#~ msgid "Connect"
-#~ msgstr "Повежи се"
-
-#~ msgid "Connect to"
-#~ msgstr "Повезивање на"

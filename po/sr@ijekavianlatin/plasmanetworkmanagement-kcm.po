@@ -6,7 +6,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-kcm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 01:01+0000\n"
-"PO-Revision-Date: 2026-10-03 19:50+0200\n"
+"PO-Revision-Date: 2026-11-14 16:15+0100\n"
 "Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavianlatin\n"
@@ -167,15 +167,11 @@ msgid "%1"
 msgstr "%1"
 
 #: qml/ConnectionItem.qml:86 ui/ConnectionItem.qml:82
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:inmenu connect to network"
 msgid "Connect"
 msgstr "Poveži se"
 
 #: qml/ConnectionItem.qml:87 ui/ConnectionItem.qml:83
-#, fuzzy
-#| msgid "Disconnect"
 msgctxt "@action:inmenu disconnect from network"
 msgid "Disconnect"
 msgstr "Prekini vezu"
@@ -193,30 +189,24 @@ msgstr "Dupliraj"
 #: qml/ConnectionItem.qml:104 ui/ConnectionItem.qml:100
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "Zaboravi"
 
 #: qml/ConnectionItem.qml:115 ui/ConnectionItem.qml:111
-#, fuzzy
-#| msgid "Export"
 msgctxt "@action:inmenu export network connection"
 msgid "Export"
 msgstr "Izvezi"
 
 # >> @item
 #: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
-#, fuzzy
-#| msgid "Connected"
 msgctxt "@info:status"
 msgid "Connected"
-msgstr "povezan"
+msgstr "Povezan"
 
 # >> @item
 #: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
-#, fuzzy
-#| msgid "Connecting"
 msgctxt "@info:status"
 msgid "Connecting"
-msgstr "u povezivanju"
+msgstr "U povezivanju"
 
 #: qml/ConnectionItem.qml:133 ui/ConnectionItem.qml:129
 msgctxt "@title:column Available networks"
@@ -224,32 +214,24 @@ msgid "Available"
 msgstr "dostupan"
 
 #: qml/main.qml:151 ui/main.qml:243
-#, fuzzy
-#| msgid "Add new connection"
 msgctxt "@action:button"
 msgid "Add new connection"
 msgstr "Dodaj novu vezu"
 
 #: qml/main.qml:169 ui/main.qml:261
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Forget selected connection"
-msgstr "Izvezi izabranu vezu"
+msgstr "Zaboravi izabranu vezu"
 
 #: qml/main.qml:187 ui/main.qml:279
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Export selected connection"
 msgstr "Izvezi izabranu vezu"
 
 #: qml/main.qml:212 ui/main.qml:215
-#, fuzzy
-#| msgid "Configuration"
 msgctxt "@action:button"
 msgid "Configure"
-msgstr "Postava"
+msgstr "Podesi"
 
 #: qml/main.qml:240
 msgctxt "@action:button Connect to network"
@@ -283,56 +265,41 @@ msgstr "Lozinka mora imati između 8 i 64 znaka"
 
 # >> @item
 #: ui/main.qml:74
-#, fuzzy
-#| msgid "Connection imported."
 msgctxt "@info"
 msgid "Connection imported."
 msgstr "Veza je uvezena."
 
 # >> @item
 #: ui/main.qml:86
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection exported to %1."
-msgstr "Veza je uvezena."
+msgstr "Veza je izvezena u %1."
 
 # >> @title:window
 #: ui/main.qml:92
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgid "Failed to export VPN connection: %1"
-msgstr "Ne mogu da uvezem VPN vezu: %1"
+msgstr "Ne mogu da izvezem VPN vezu: %1"
 
 # >> @title:window
 #: ui/main.qml:98
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgctxt "@info"
 msgid "Failed to import VPN connection: %1"
 msgstr "Ne mogu da uvezem VPN vezu: %1"
 
 # >> @item
 #: ui/main.qml:303
-#, fuzzy
-#| msgid "Connection name:"
 msgctxt "@label:textbox"
 msgid "Connection name:"
 msgstr "Ime veze:"
 
 #: ui/main.qml:333
-#, fuzzy
-#| msgctxt "@title:window"
-#| msgid "Remove Connection"
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "Uklanjanje veze"
+msgstr "Zaboravljanje veze"
 
 #: ui/main.qml:334
-#, fuzzy
-#| msgid "Do you want to remove the connection '%1'?"
 msgctxt "@info"
 msgid "Do you want to forget the connection '%1'?"
-msgstr "Želite li zaista da uklonite vezu „%1“?"
+msgstr "Želite li da zaboravite vezu „%1“?"
 
 # >> @title:window
 #: ui/main.qml:351
@@ -342,15 +309,11 @@ msgstr "Uvoz VPN veze"
 
 # >> @title:window
 #: ui/main.qml:361
-#, fuzzy
-#| msgid "Export VPN Connection"
 msgctxt "@title:window"
 msgid "Export VPN Connection"
 msgstr "Izvoz VPN veze"
 
 #: ui/main.qml:375
-#, fuzzy
-#| msgid "Import the VPN configuration from \"%1\"?"
 msgctxt "@info"
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Uvesti VPN postavu iz „%1“?"
@@ -359,12 +322,3 @@ msgstr "Uvesti VPN postavu iz „%1“?"
 msgctxt "@action:button"
 msgid "Import"
 msgstr "Uvezi"
-
-#~ msgid "Delete"
-#~ msgstr "Obriši"
-
-#~ msgid "Remove selected connection"
-#~ msgstr "Ukloni izabranu vezu"
-
-#~ msgid "Disconnected"
-#~ msgstr "Nepovezano"

@@ -7594,7 +7594,7 @@ msgstr "Свързване с %1"
 #| msgid "New Connection"
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "Нова връзка"
+msgstr "Забравяне на връзка"
 
 #: qml/ForgetConnectionDialog.qml:16
 #, fuzzy, kde-format
@@ -7602,7 +7602,7 @@ msgstr "Нова връзка"
 #| msgid "Failed to update connection %1"
 msgctxt "@info"
 msgid "Forget the connection “%1”?"
-msgstr "Грешка при актуализиране на връзка %1"
+msgstr "Забравяне на връзката „%1“?"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

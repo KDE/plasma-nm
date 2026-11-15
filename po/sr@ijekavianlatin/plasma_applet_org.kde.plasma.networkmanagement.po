@@ -6,8 +6,8 @@ msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-12 16:05+0000\n"
-"PO-Revision-Date: 2017-09-25 19:53+0200\n"
-"Last-Translator: Chusslove Illich <caslav.ilic@gmx.net>\n"
+"PO-Revision-Date: 2026-11-14 16:15+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
 "Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
 "Language: sr@ijekavianlatin\n"
 "MIME-Version: 1.0\n"
@@ -44,7 +44,7 @@ msgstr "Podesi…"
 #, kde-format
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget…"
-msgstr ""
+msgstr "Zaboravi…"
 
 #: ConnectionItem.qml:144
 #, kde-format

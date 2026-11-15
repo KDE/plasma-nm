@@ -41,10 +41,10 @@ msgid "Configure…"
 msgstr "Конфигуриране…"
 
 #: ConnectionItem.qml:104
-#, kde-format
+#, fuzzy, kde-format
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget…"
-msgstr ""
+msgstr "Забравяне…"
 
 #: ConnectionItem.qml:144
 #, kde-format

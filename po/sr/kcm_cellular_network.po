@@ -1,0 +1,560 @@
+# Nemanja Hiršl <nemhirsl@gmail.com>, 2026.
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-07-26 00:46+0000\n"
+"PO-Revision-Date: 2026-11-14 19:40+0100\n"
+"Last-Translator: Nemanja Hiršl <nemhirsl@gmail.com>\n"
+"Language-Team: Serbian <kde-i18n-sr@kde.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=n==1 ? 3 : n%10==1 && n%100!=11 ? 0 : n"
+"%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Accelerator-Marker: &\n"
+"X-Text-Markup: kde4\n"
+"X-Environment: kde\n"
+
+#: ui/AvailableNetworks.qml:18
+#, kde-format
+msgid "Available Networks"
+msgstr "Доступне мреже"
+
+#: ui/AvailableNetworks.qml:42
+#, kde-format
+msgid "none"
+msgstr "ниједан"
+
+#: ui/AvailableNetworks.qml:42
+#, kde-format
+msgid "Current operator: %1"
+msgstr "Тренутни оператер: %1"
+
+#: ui/AvailableNetworks.qml:45
+#, kde-format
+msgid "Scan For Networks"
+msgstr "Скенирај мреже"
+
+#: ui/EditProfilePage.qml:15
+#, kde-format
+msgid "New APN"
+msgstr "Нови АПН"
+
+#: ui/EditProfilePage.qml:15
+#, kde-format
+msgid "Edit APN"
+msgstr "Уређивање АПН‑а"
+
+#: ui/EditProfilePage.qml:37
+#, kde-format
+msgid "Name"
+msgstr "Име"
+
+#: ui/EditProfilePage.qml:45
+#, kde-format
+msgid "APN"
+msgstr "АПН"
+
+#: ui/EditProfilePage.qml:53
+#, kde-format
+msgid "Username"
+msgstr "Корисничко име"
+
+#: ui/EditProfilePage.qml:61
+#, kde-format
+msgid "Password"
+msgstr "Лозинка"
+
+#: ui/EditProfilePage.qml:69
+#, kde-format
+msgid "Network type"
+msgstr "Тип мреже"
+
+#: ui/EditProfilePage.qml:70
+#, kde-format
+msgid "4G/3G/2G"
+msgstr "4Г/3Г/2Г"
+
+#: ui/EditProfilePage.qml:70
+#, kde-format
+msgid "3G/2G"
+msgstr "3Г/2Г"
+
+#: ui/EditProfilePage.qml:70
+#, kde-format
+msgid "2G"
+msgstr "2Г"
+
+#: ui/EditProfilePage.qml:70
+#, kde-format
+msgid "Only 4G"
+msgstr "само 4Г"
+
+#: ui/EditProfilePage.qml:70
+#, kde-format
+msgid "Only 3G"
+msgstr "само 3Г"
+
+#: ui/EditProfilePage.qml:70
+#, kde-format
+msgid "Only 2G"
+msgstr "само 2Г"
+
+#: ui/EditProfilePage.qml:70
+#, kde-format
+msgid "Any"
+msgstr "било који"
+
+#: ui/EditProfilePage.qml:82
+#, kde-format
+msgid "Save profile"
+msgstr "Сачувај профил"
+
+#: ui/main.qml:68
+#, kde-format
+msgid "Modem not available"
+msgstr "Модем није доступан"
+
+#: ui/main.qml:87
+#, kde-format
+msgid "Mobile data"
+msgstr "Мобилни подаци"
+
+#: ui/main.qml:92
+#, kde-format
+msgid "No SIM is inserted."
+msgstr "Није уметнута СИМ картица."
+
+#: ui/main.qml:94
+#, kde-format
+msgid "Mobile data is not available with this modem."
+msgstr "Мобилни подаци нису доступни са овим модемом."
+
+#: ui/main.qml:96
+#, kde-format
+msgid "An APN needs to be configured to have mobile data."
+msgstr "За мобилне податке потребно је подесити АПН."
+
+#: ui/main.qml:98
+#, kde-format
+msgid "Whether mobile data is enabled."
+msgstr "Да ли су мобилни подаци укључени."
+
+#: ui/main.qml:129
+#, kde-format
+msgid "Data Usage"
+msgstr "Потрошња података"
+
+#: ui/main.qml:130
+#, kde-format
+msgid "View data usage."
+msgstr "Прикажи потрошњу података."
+
+#: ui/main.qml:138
+#, kde-format
+msgid "SIM"
+msgid_plural "SIMs"
+msgstr[0] "СИМ‑ови"
+msgstr[1] "СИМ‑ови"
+msgstr[2] "СИМ‑ови"
+msgstr[3] "СИМ"
+
+#: ui/main.qml:159
+#, kde-format
+msgid "SIM %1"
+msgstr "СИМ %1"
+
+#: ui/main.qml:160
+#, kde-format
+msgid "View SIM %1 details."
+msgstr "Прикажи детаље о СИМ‑у %1."
+
+#: ui/ModemPage.qml:22
+#, kde-format
+msgid "Modem %1"
+msgstr "Модем %1"
+
+#: ui/ModemPage.qml:32
+#, kde-format
+msgid "Modem Control"
+msgstr "Управљање модемом"
+
+#: ui/ModemPage.qml:38
+#, kde-format
+msgid "Force Modem Restart"
+msgstr "Принудно поново покрени модем"
+
+#: ui/ModemPage.qml:44 ui/SimPage.qml:111
+#, kde-format
+msgid "Modem Details"
+msgstr "Детаљи о модему"
+
+#: ui/ModemPage.qml:57
+#, kde-format
+msgid "Access Technologies"
+msgstr "Технологије приступа"
+
+#: ui/ModemPage.qml:79
+#, kde-format
+msgid "IMEI"
+msgstr "ИМЕИ"
+
+#: ui/ModemPage.qml:87
+#, kde-format
+msgid "Enabled"
+msgstr "Укључен"
+
+#: ui/ModemPage.qml:95
+#, kde-format
+msgid "Manufacturer"
+msgstr "Произвођач"
+
+#: ui/ModemPage.qml:103
+#, kde-format
+msgid "Model"
+msgstr "Модел"
+
+#: ui/ModemPage.qml:118
+#, kde-format
+msgid "Owned Numbers:"
+msgstr "Сопствени бројеви:"
+
+#: ui/ModemPage.qml:141
+#, kde-format
+msgid "Revision"
+msgstr "Ревизија"
+
+#: ui/ModemPage.qml:149
+#, kde-format
+msgid "Signal Quality"
+msgstr "Квалитет сигнала"
+
+#: ui/ModemPage.qml:157
+#, kde-format
+msgid "State"
+msgstr "Стање"
+
+#: ui/ModemPage.qml:165
+#, kde-format
+msgid "Failure Reason"
+msgstr "Разлог неуспеха"
+
+#: ui/ModemPage.qml:173
+#, kde-format
+msgid "Registration State"
+msgstr "Стање регистрације"
+
+#: ui/ModemPage.qml:181
+#, kde-format
+msgid "Firmware Version"
+msgstr "Верзија фирмвера"
+
+#: ui/ModemPage.qml:189
+#, kde-format
+msgid "Interface Name"
+msgstr "Име сучеља"
+
+#: ui/ModemPage.qml:197
+#, kde-format
+msgid "Metered"
+msgstr "Наплата по протоку"
+
+#: ui/ModemPage.qml:205
+#, kde-format
+msgid "Active NetworkManager Connection"
+msgstr "Активна веза Менаџера мреже"
+
+#: ui/ModemPage.qml:213
+#, kde-format
+msgid "Device"
+msgstr "Уређај"
+
+#: ui/ModemPage.qml:221
+#, kde-format
+msgid "Device ID"
+msgstr "ИД уређаја"
+
+#: ui/ModemPage.qml:236
+#, kde-format
+msgid "Drivers:"
+msgstr "Драјвери:"
+
+#: ui/ModemPage.qml:258
+#, kde-format
+msgid "Plugin"
+msgstr "Прикључак"
+
+#: ui/ModemPage.qml:266
+#, kde-format
+msgid "Power State"
+msgstr "Стање напајања"
+
+#: ui/ModemPage.qml:274
+#, kde-format
+msgid "SIM Path"
+msgstr "Путања СИМ‑а"
+
+#: ui/ProfileList.qml:25
+#, kde-format
+msgid "APNs"
+msgstr "АПН‑ови"
+
+#: ui/ProfileList.qml:28 ui/ProfileList.qml:99
+#, kde-format
+msgid "Edit"
+msgstr "Уреди"
+
+#: ui/ProfileList.qml:55
+#, kde-format
+msgid ""
+"Unable to autodetect connection settings for your carrier. Please find your "
+"carrier's APN settings by either contacting support or searching online."
+msgstr ""
+"Не могу аутоматски да откријем поставке везе за вашег оператера. Поставке "
+"АПН‑а за свог оператера нађите тако што ћете се обратити подршци или их "
+"потражити на вези."
+
+#: ui/ProfileList.qml:66
+#, kde-format
+msgid "APN List"
+msgstr "Списак АПН‑ова"
+
+#: ui/ProfileList.qml:119
+#, kde-format
+msgid "Delete"
+msgstr "Обриши"
+
+#: ui/ProfileList.qml:128
+#, kde-format
+msgid "Add APN"
+msgstr "Додај АПН"
+
+#: ui/ProfileList.qml:136
+#, kde-format
+msgid "Automatically detect APN"
+msgstr "Аутоматски откриј АПН"
+
+#: ui/SimLockPage.qml:21 ui/SimPage.qml:100
+#, kde-format
+msgid "SIM Lock"
+msgstr "Закључавање СИМ‑а"
+
+#: ui/SimLockPage.qml:40
+#, kde-format
+msgid "SIM is locked"
+msgstr "СИМ је закључан"
+
+#: ui/SimLockPage.qml:41
+#, kde-format
+msgid "In order to use this SIM, you must first unlock it."
+msgstr "Да бисте користили овај СИМ, прво морате да га откључате."
+
+#: ui/SimLockPage.qml:63
+#, kde-format
+msgid "SIM is not locked"
+msgstr "СИМ није закључан"
+
+#: ui/SimLockPage.qml:64
+#, kde-format
+msgid ""
+"You can lock your SIM to require a set PIN code for phone calls and mobile "
+"data."
+msgstr ""
+"Можете закључати СИМ тако да позиви и мобилни подаци траже задати ПИН код."
+
+#: ui/SimLockPage.qml:68
+#, kde-format
+msgid "Lock SIM"
+msgstr "Закључај СИМ"
+
+#: ui/SimLockPage.qml:80
+#, kde-format
+msgid "Disable SIM Lock"
+msgstr "Искључи закључавање СИМ‑а"
+
+#: ui/SimLockPage.qml:81
+#, kde-format
+msgid "Disable the SIM lock feature and remove the passcode on the SIM."
+msgstr "Искључи могућност закључавања СИМ‑а и уклони ПИН код са СИМ‑а."
+
+#: ui/SimLockPage.qml:93
+#, kde-format
+msgid "Change PIN"
+msgstr "Измени ПИН"
+
+#: ui/SimLockPage.qml:94
+#, kde-format
+msgid "Change the passcode set on the SIM."
+msgstr "Измени ПИН код постављен на СИМ‑у."
+
+#: ui/SimLockPage.qml:108
+#, kde-format
+msgid "Unlock SIM"
+msgstr "Откључавање СИМ‑а"
+
+#: ui/SimLockPage.qml:116
+#, kde-format
+msgid "Attempts left: %1"
+msgstr "Преостало покушаја: %1"
+
+#: ui/SimLockPage.qml:121
+#, kde-format
+msgid "Enter PIN"
+msgstr "Унесите ПИН"
+
+#: ui/SimLockPage.qml:129
+#, kde-format
+msgid "Change SIM PIN"
+msgstr "Измена ПИН‑а СИМ‑а"
+
+#: ui/SimLockPage.qml:148 ui/SimLockPage.qml:213
+#, kde-format
+msgid "PINs don't match!"
+msgstr "ПИН‑ови се не поклапају!"
+
+#: ui/SimLockPage.qml:154 ui/SimLockPage.qml:219
+#, kde-format
+msgid "PINs must be between 4 and 8 digits!"
+msgstr "ПИН‑ови морају имати од 4 до 8 цифара!"
+
+#: ui/SimLockPage.qml:159 ui/SimLockPage.qml:186
+#, kde-format
+msgid "Current PIN"
+msgstr "Тренутни ПИН"
+
+#: ui/SimLockPage.qml:164 ui/SimLockPage.qml:224
+#, kde-format
+msgid "New PIN"
+msgstr "Нови ПИН"
+
+#: ui/SimLockPage.qml:169 ui/SimLockPage.qml:229
+#, kde-format
+msgid "Confirm PIN"
+msgstr "Потврдите ПИН"
+
+#: ui/SimLockPage.qml:177
+#, kde-format
+msgid "Remove SIM PIN"
+msgstr "Уклањање ПИН‑а СИМ‑а"
+
+#: ui/SimLockPage.qml:194
+#, kde-format
+msgid "Add SIM PIN"
+msgstr "Додавање ПИН‑а СИМ‑а"
+
+#: ui/SimPage.qml:34
+#, kde-format
+msgctxt "@title"
+msgid "SIM %1"
+msgstr "СИМ %1"
+
+#: ui/SimPage.qml:44
+#, kde-format
+msgid ""
+"This SIM slot is empty, a SIM card needs to be inserted in order for it to "
+"be used."
+msgstr ""
+"Ово лежиште за СИМ картицу је празно; да би се користило, треба уметнути СИМ "
+"картицу."
+
+#: ui/SimPage.qml:59
+#, kde-format
+msgid "Roaming"
+msgstr "Роминг"
+
+#: ui/SimPage.qml:60
+#, kde-format
+msgid "Allow mobile data when on a roaming network."
+msgstr "Дозволи мобилне податке на мрежи у ромингу."
+
+#: ui/SimPage.qml:78
+#, kde-format
+msgid "Modify APNs"
+msgstr "Измени АПН‑ове"
+
+#: ui/SimPage.qml:79
+#, kde-format
+msgid "Configure access point names for your carrier."
+msgstr "Подеси имена приступних тачака за свог оператера."
+
+#: ui/SimPage.qml:89
+#, kde-format
+msgid "Networks"
+msgstr "Мреже"
+
+#: ui/SimPage.qml:90
+#, kde-format
+msgid "Select a network operator."
+msgstr "Изабери мрежног оператера."
+
+#: ui/SimPage.qml:101
+#, kde-format
+msgid "Modify SIM lock settings."
+msgstr "Измени поставке закључавања СИМ‑а."
+
+#: ui/SimPage.qml:112
+#, kde-format
+msgid "View the details of the modem this SIM is connected to."
+msgstr "Прикажи детаље о модему на који је овај СИМ повезан."
+
+#: ui/SimPage.qml:118
+#, kde-format
+msgid "SIM Details"
+msgstr "Детаљи о СИМ‑у"
+
+#: ui/SimPage.qml:124
+#, kde-format
+msgid "Locked"
+msgstr "Закључан"
+
+#: ui/SimPage.qml:125
+#, kde-format
+msgid "Yes"
+msgstr "да"
+
+#: ui/SimPage.qml:125
+#, kde-format
+msgid "No"
+msgstr "не"
+
+#: ui/SimPage.qml:132
+#, kde-format
+msgid "IMSI"
+msgstr "ИМСИ"
+
+#: ui/SimPage.qml:140
+#, kde-format
+msgid "EID"
+msgstr "EID"
+
+#: ui/SimPage.qml:148
+#, kde-format
+msgid "Operator Code (modem)"
+msgstr "Ко̂д оператера (модем)"
+
+#: ui/SimPage.qml:156
+#, kde-format
+msgid "Operator Name (modem)"
+msgstr "Име оператера (модем)"
+
+#: ui/SimPage.qml:164
+#, kde-format
+msgid "Operator Code (provided by SIM)"
+msgstr "Ко̂д оператера (са СИМ‑а)"
+
+#: ui/SimPage.qml:172
+#, kde-format
+msgid "Operator Name (provided by SIM)"
+msgstr "Име оператера (са СИМ‑а)"
+
+#: ui/SimPage.qml:180
+#, kde-format
+msgid "SIM ID"
+msgstr "ИД СИМ‑а"
+
+#: ui/SimPage.qml:196
+#, kde-format
+msgid "Emergency Numbers"
+msgstr "Бројеви за хитне случајеве"

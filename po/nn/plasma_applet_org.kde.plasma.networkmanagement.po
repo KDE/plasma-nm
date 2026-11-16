@@ -18,7 +18,7 @@ msgstr ""
 "X-Environment: kde\n"
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
-"X-Generator: Lokalize 26.11.70\n"
+"X-Generator: Lokalize 27.03.70\n"
 
 #: contents/ui/ConnectionItem.qml:60
 #, kde-format
@@ -53,11 +53,8 @@ msgstr "Detaljar"
 #: contents/ui/ConnectionItem.qml:169
 #, kde-format
 msgctxt "@info:tooltip"
-msgid ""
-"Current download speed is %1 kibibytes per second; current upload speed is "
-"%2 kibibytes per second"
-msgstr ""
-"Gjeldande nedlastingsfart er %1 KiB/s og gjeldande opplastingsfart %2 KiB/s"
+msgid "Current download speed is %1 kibibytes per second; current upload speed is %2 kibibytes per second"
+msgstr "Gjeldande nedlastingsfart er %1 KiB/s og gjeldande opplastingsfart %2 KiB/s"
 
 #: contents/ui/ConnectionItem.qml:286
 #, kde-format
@@ -165,14 +162,26 @@ msgstr "Slå på mobilt nettverk"
 #: contents/ui/Toolbar.qml:143
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
-msgstr "Slå av flymodus<nl/><nl/>Dette vil slå på Wi-Fi og Bluetooth"
+msgid ""
+"Disable airplane mode<nl/>"
+"<nl/>"
+"This will enable Wi-Fi and Bluetooth"
+msgstr ""
+"Slå av flymodus<nl/>"
+"<nl/>"
+"Dette vil slå på Wi-Fi og Bluetooth"
 
 #: contents/ui/Toolbar.qml:144
 #, kde-kuit-format
 msgctxt "@info"
-msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
-msgstr "Slå på flymodus<nl/><nl/>Dette vil slå av Wi-Fi og Bluetooth"
+msgid ""
+"Enable airplane mode<nl/>"
+"<nl/>"
+"This will disable Wi-Fi and Bluetooth"
+msgstr ""
+"Slå på flymodus<nl/>"
+"<nl/>"
+"Dette vil slå av Wi-Fi og Bluetooth"
 
 #: contents/ui/Toolbar.qml:154
 #, kde-format

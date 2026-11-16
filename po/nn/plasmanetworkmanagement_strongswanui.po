@@ -1,6 +1,6 @@
 # Translation of plasmanetworkmanagement_strongswanui to Norwegian Nynorsk
 #
-# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2018, 2019, 2024.
+# Karl Ove Hufthammer <karl@huftis.org>, 2015, 2018, 2019, 2024, 2026.
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Text-Markup: kde4\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 24.02.0\n"
+"X-Generator: Lokalize 27.03.70\n"
 
 #: strongswanauth.cpp:59
 #, kde-format
@@ -40,12 +40,8 @@ msgstr "Passord:"
 #: strongswanauth.cpp:106
 #, kde-format
 msgctxt "@label:textbox error message while saving configuration"
-msgid ""
-"Configuration uses ssh-agent for authentication, but no ssh-agent found "
-"running."
-msgstr ""
-"Oppsettet brukar ssh-agent til autentisering, men fann ikkje køyrande ssh-"
-"agent."
+msgid "Configuration uses ssh-agent for authentication, but no ssh-agent found running."
+msgstr "Oppsettet brukar ssh-agent til autentisering, men fann ikkje køyrande ssh-agent."
 
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanAuth)
 #. i18n: ectx: property (windowTitle), widget (QWidget, StrongswanProp)

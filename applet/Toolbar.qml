@@ -225,6 +225,7 @@ RowLayout {
     PlasmaComponents3.ToolButton {
         icon.name: "view-barcode-qr"
         text: i18nc("@action:button", "Scan Wi-Fi QR Code")
+        visible: availableDevices.wirelessDeviceAvailable
         enabled: qrca.available
         display: PlasmaComponents3.ToolButton.IconOnly
         Accessible.description: {

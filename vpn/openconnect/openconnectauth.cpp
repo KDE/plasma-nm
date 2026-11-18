@@ -914,7 +914,7 @@ void OpenconnectAuthWidget::formLoginClicked()
                 }
             } else if (opt->type == OC_FORM_OPT_SELECT) {
                 auto cbo = qobject_cast<QComboBox *>(widget);
-                QByteArray text = cbo->itemData(cbo->currentIndex()).toString().toLatin1();
+                QByteArray text = cbo->itemData(cbo->currentIndex()).toString().toUtf8();
                 openconnect_set_option_value(opt, text.data());
                 d->secrets.insert(key, cbo->itemData(cbo->currentIndex()).toString());
             }

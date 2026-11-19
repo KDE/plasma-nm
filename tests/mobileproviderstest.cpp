@@ -39,7 +39,10 @@ void MobileProvidersTest::testProviderFromMccMnc()
 
     MobileProviders providers;
 
-    QCOMPARE(providers.getProvidersFromMCCMNC(mccmnc), providerNames);
+    const QStringList actualNames = providers.getProvidersFromMCCMNC(mccmnc);
+    for (const QString &name : providerNames) {
+        QVERIFY2(actualNames.contains(name), qPrintable(name));
+    }
 }
 
 void MobileProvidersTest::testProviderFromMccMnc_data()

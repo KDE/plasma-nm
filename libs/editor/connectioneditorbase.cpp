@@ -137,6 +137,7 @@ NMVariantMapMap ConnectionEditorBase::setting() const
         }
     }
     connectionSettings->setUuid(m_connection->uuid());
+    connectionSettings->setAutoconnectSlaves(m_connection->autoconnectSlaves());
 
     if (connectionSettings->connectionType() == NetworkManager::ConnectionSettings::Wireless) {
         NetworkManager::WirelessSecuritySetting::Ptr securitySetting =

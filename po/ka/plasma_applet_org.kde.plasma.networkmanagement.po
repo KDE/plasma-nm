@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-10 00:48+0000\n"
+"POT-Creation-Date: 2026-11-18 22:03+0000\n"
 "PO-Revision-Date: 2025-11-12 07:02+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
@@ -258,13 +258,13 @@ msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "Wi-Fi QR-კოდის სკანირება"
 
-#: Toolbar.qml:232
+#: Toolbar.qml:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "დაასკანირეთ QR კოდი Wi-Fi ქსელთან დასაკავშირებლად"
 
-#: Toolbar.qml:234
+#: Toolbar.qml:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -274,7 +274,7 @@ msgstr ""
 "დააყენეთ QRCA ბარკოდის სკანერი, რომ შეძლოთ QR კოდის სკანირება, რომელიც Wi-Fi "
 "ქსელთან დაგაკავშირებთ"
 
-#: Toolbar.qml:253
+#: Toolbar.qml:254
 #, kde-format
 msgid "Configure network connections…"
 msgstr "ქსელური შეერთებების მართვა…"

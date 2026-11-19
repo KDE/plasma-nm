@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: networkmanagement_openvpnui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-09-10 00:48+0000\n"
+"POT-Creation-Date: 2026-11-18 22:03+0000\n"
 "PO-Revision-Date: 2024-02-24 18:38+0000\n"
 "Last-Translator: Sergiu Bivol <sergiu@cip.md>\n"
 "Language-Team: Romanian <kde-i18n-ro@kde.org>\n"
@@ -268,7 +268,7 @@ msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr ""
 
-#: Toolbar.qml:232
+#: Toolbar.qml:233
 #, fuzzy, kde-format
 #| msgid ""
 #| "Scan this QR code with another device to connect to the \"%1\" network."
@@ -277,7 +277,7 @@ msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr ""
 "Scanați acest cod QR cu alt dispozitiv pentru a-l conecta la rețeaua „%1”."
 
-#: Toolbar.qml:234
+#: Toolbar.qml:235
 #, fuzzy, kde-format
 #| msgid ""
 #| "Scan this QR code with another device to connect to the \"%1\" network."
@@ -288,7 +288,7 @@ msgid ""
 msgstr ""
 "Scanați acest cod QR cu alt dispozitiv pentru a-l conecta la rețeaua „%1”."
 
-#: Toolbar.qml:253
+#: Toolbar.qml:254
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Configurează conexiuni de rețea…"

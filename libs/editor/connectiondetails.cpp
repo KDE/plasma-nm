@@ -356,13 +356,26 @@ getConnectionDetails(const NetworkManager::Connection::Ptr &connection, const Ne
     // Get IPv6 Address and related nameservers + IPv6 default gateway
     if (device && device->ipV6Config().isValid() && isConnectionActive) {
         QList<QPair<QString, QString>> details;
-        if (!device->ipV6Config().addresses().isEmpty()) {
-            QHostAddress addr = device->ipV6Config().addresses().first().ip();
-            if (!addr.isNull() && addr.isGlobal() && !addr.isUniqueLocalUnicast()) {
-                details.append({i18n("IPv6 Address"), addr.toString()});
-            } else if (!addr.isNull() && addr.isGlobal() && addr.isUniqueLocalUnicast()) {
-                details.append({i18n("IPv6 ULA Address"), addr.toString()});
+        QHostAddress globalAddr;
+        QHostAddress ulaAddr;
+        const NetworkManager::IpAddresses ipv6Addresses = device->ipV6Config().addresses();
+        for (const NetworkManager::IpAddress &address : ipv6Addresses) {
+            const QHostAddress addr = address.ip();
+            if (addr.isNull() || !addr.isGlobal()) {
+                continue;
             }
+            if (!addr.isUniqueLocalUnicast()) {
+                globalAddr = addr;
+                break;
+            }
+            if (ulaAddr.isNull()) {
+                ulaAddr = addr;
+            }
+        }
+        if (!globalAddr.isNull()) {
+            details.append({i18n("IPv6 Address"), globalAddr.toString()});
+        } else if (!ulaAddr.isNull()) {
+            details.append({i18n("IPv6 ULA Address"), ulaAddr.toString()});
         }
         if (!device->ipV6Config().gateway().isEmpty()) {
             QString addr = device->ipV6Config().gateway();

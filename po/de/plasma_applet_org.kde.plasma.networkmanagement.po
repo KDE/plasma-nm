@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-12 16:05+0000\n"
+"POT-Creation-Date: 2026-11-18 18:31+0000\n"
 "PO-Revision-Date: 2025-11-29 17:27+0100\n"
 "Last-Translator: Philipp Kiemle <l10n.daphipz@fastmail.de>\n"
 "Language-Team: German <kde-i18n-de@kde.org>\n"
@@ -268,13 +268,13 @@ msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "WLAN-QR-Code scannen"
 
-#: Toolbar.qml:232
+#: Toolbar.qml:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "QR-Code scannen, um sich mit einem WLAN-Netzwerk zu verbinden"
 
-#: Toolbar.qml:234
+#: Toolbar.qml:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -284,7 +284,7 @@ msgstr ""
 "Installieren Sie den Barcode-Scanner „QRCA“, um einen QR-Code zur Verbindung "
 "mit einem WLAN-Netzwerk zu scannen"
 
-#: Toolbar.qml:253
+#: Toolbar.qml:254
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Netzwerkverbindungen bearbeiten …"

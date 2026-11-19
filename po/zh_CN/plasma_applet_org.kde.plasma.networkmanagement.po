@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kdeorg\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-12 16:05+0000\n"
+"POT-Creation-Date: 2026-11-18 18:31+0000\n"
 "PO-Revision-Date: 2024-04-22 15:58\n"
 "Last-Translator: \n"
 "Language-Team: Chinese Simplified\n"
@@ -258,13 +258,13 @@ msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "扫描 Wi-Fi 二维码"
 
-#: Toolbar.qml:232
+#: Toolbar.qml:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "扫描二维码以连接到 Wi-Fi 网络"
 
-#: Toolbar.qml:234
+#: Toolbar.qml:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -272,7 +272,7 @@ msgid ""
 "network"
 msgstr "安装 QRCA 条码扫描器以扫描用于连接 Wi-Fi 网络的二维码"
 
-#: Toolbar.qml:253
+#: Toolbar.qml:254
 #, kde-format
 msgid "Configure network connections…"
 msgstr "配置网络连接…"

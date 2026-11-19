@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-12 16:05+0000\n"
+"POT-Creation-Date: 2026-11-18 18:31+0000\n"
 "PO-Revision-Date: 2025-11-30 11:28+0530\n"
 "Last-Translator: Kishore G <kishore96@gmail.com>\n"
 "Language-Team: Tamil <kde-l10n-ta@kde.org>\n"
@@ -260,13 +260,13 @@ msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "அருகலைக்கான QR குறியை வருடு"
 
-#: Toolbar.qml:232
+#: Toolbar.qml:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "ஓர் QR குறியை வருடி அதற்குரிய அருகலை பிணையத்தில் இணையலாம்"
 
-#: Toolbar.qml:234
+#: Toolbar.qml:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -276,7 +276,7 @@ msgstr ""
 "ஓர் QR குறியை வருடி அதற்குரிய அருகலை பிணையத்தில் இணையும் அம்சத்தைப் பயன்படுத்த Qrca "
 "எனும் செயலியை நிறுவவும்."
 
-#: Toolbar.qml:253
+#: Toolbar.qml:254
 #, kde-format
 msgid "Configure network connections…"
 msgstr "பிணைய இணைப்புகளை அமை..."

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-12 16:05+0000\n"
+"POT-Creation-Date: 2026-11-18 18:31+0000\n"
 "PO-Revision-Date: 2025-11-09 14:00+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -267,13 +267,13 @@ msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "Сканиране на код за Wi-Fi"
 
-#: Toolbar.qml:232
+#: Toolbar.qml:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Сканирайте QR кода, за да се свържете с Wi-Fi мрежата"
 
-#: Toolbar.qml:234
+#: Toolbar.qml:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -283,7 +283,7 @@ msgstr ""
 "Инсталиране на QRCA Баркод скенер за сканиране за QR код, който се свързва с "
 "Wi-Fi мрежа"
 
-#: Toolbar.qml:253
+#: Toolbar.qml:254
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Конфигуриране на мрежови връзки…"

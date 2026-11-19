@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 01:01+0000\n"
-"PO-Revision-Date: 2026-11-13 19:07+0300\n"
+"PO-Revision-Date: 2026-11-18 18:54+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -4963,7 +4963,7 @@ msgstr "IPsec Ayarları…"
 #: editorqml/qml/vpn/l2tp/L2tp.qml:220
 #, kde-format
 msgid "No IPsec daemon (libreswan or strongSwan) was found."
-msgstr "Bulunan IPsec ardalan süreci (libreswan veya strongSwan) yok"
+msgstr "Bulunan IPsec art alan süreci (libreswan veya strongSwan) yok"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:228
 #, kde-format

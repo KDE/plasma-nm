@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-12 16:05+0000\n"
+"POT-Creation-Date: 2026-11-18 18:31+0000\n"
 "PO-Revision-Date: 2026-06-09 21:40+0200\n"
 "Last-Translator: Kristof Kiszel <ulysses@fsf.hu>\n"
 "Language-Team: Hungarian <kde-l10n-hu@kde.org>\n"
@@ -269,13 +269,13 @@ msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "QR-kód beolvasása"
 
-#: Toolbar.qml:232
+#: Toolbar.qml:233
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Olvassa be a QR-kódot a WiFi hálózathoz kapcsolódáshoz"
 
-#: Toolbar.qml:234
+#: Toolbar.qml:235
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -285,7 +285,7 @@ msgstr ""
 "Telepítse a QRCA vonalkódolvasó alkalmazást, hogy beolvassa azt a QR-kódot, "
 "amely egy Wi-Fi-hálózathoz csatlakozik"
 
-#: Toolbar.qml:253
+#: Toolbar.qml:254
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Hálózati kapcsolatok szerkesztése…"

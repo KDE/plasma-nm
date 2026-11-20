@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 01:01+0000\n"
-"PO-Revision-Date: 2026-10-27 09:12+0100\n"
+"PO-Revision-Date: 2026-11-13 14:30+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
 "Language: it\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.10\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -7609,20 +7609,16 @@ msgid "Connect to %1"
 msgstr "Connetti a %1"
 
 #: qml/ForgetConnectionDialog.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "Nuova connessione"
+msgstr "Dimenticare la connessione"
 
 #: qml/ForgetConnectionDialog.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@info"
 msgid "Forget the connection “%1”?"
-msgstr "Aggiornamento della connessione %1 non riuscito"
+msgstr "Vuoi dimenticare la connessione «%1»?"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

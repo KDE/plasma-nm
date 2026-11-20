@@ -43,7 +43,7 @@ msgstr "Nastaviť..."
 #, kde-format
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget…"
-msgstr ""
+msgstr "Zabudnúť…"
 
 #: ConnectionItem.qml:144
 #, kde-format

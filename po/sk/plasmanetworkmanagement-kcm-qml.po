@@ -61,12 +61,12 @@ msgstr "Všetky súbory (*)"
 #: kcm.cpp:1254
 #, kde-format
 msgid "This VPN type cannot be exported."
-msgstr ""
+msgstr "Tento typ VPN nemožno exportovať."
 
 #: kcm.cpp:1275 kcm.cpp:1282
 #, kde-format
 msgid "The connection is no longer available."
-msgstr ""
+msgstr "Pripojenie už nie je dostupné."
 
 #: kcm.cpp:1310
 #, kde-format

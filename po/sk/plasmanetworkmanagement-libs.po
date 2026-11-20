@@ -7564,20 +7564,16 @@ msgid "Connect to %1"
 msgstr "Pripojiť k %1"
 
 #: qml/ForgetConnectionDialog.qml:15
-#, fuzzy, kde-format
-#| msgctxt "@title:window"
-#| msgid "New Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "Nové pripojenie"
+msgstr "Zabudnúť pripojenie"
 
 #: qml/ForgetConnectionDialog.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@title"
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@info"
 msgid "Forget the connection “%1”?"
-msgstr "Zlyhala aktualizácia pripojenia %1"
+msgstr "Zabudnúť pripojenie „%1“?"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

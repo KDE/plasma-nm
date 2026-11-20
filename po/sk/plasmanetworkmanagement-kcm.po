@@ -260,16 +260,12 @@ msgid "Connection imported."
 msgstr "Pripojenie bolo importované."
 
 #: ui/main.qml:86
-#, fuzzy
-#| msgid "Connection imported."
 msgid "Connection exported to %1."
-msgstr "Pripojenie bolo importované."
+msgstr "Pripojenie bolo exportované do %1."
 
 #: ui/main.qml:92
-#, fuzzy
-#| msgid "Failed to import VPN connection: %1"
 msgid "Failed to export VPN connection: %1"
-msgstr "Nepodarilo sa importovať pripojenie VPN: %1"
+msgstr "Nepodarilo sa exportovať pripojenie VPN: %1"
 
 #: ui/main.qml:98
 msgctxt "@info"
@@ -297,8 +293,6 @@ msgid "Import VPN Connection"
 msgstr "Importovať pripojenie VPN"
 
 #: ui/main.qml:361
-#, fuzzy
-#| msgid "Export VPN Connection"
 msgctxt "@title:window"
 msgid "Export VPN Connection"
 msgstr "Exportovať pripojenie VPN"

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-10-31 00:53+0000\n"
-"PO-Revision-Date: 2026-10-03 23:04+0200\n"
+"PO-Revision-Date: 2026-11-21 22:24+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -28,11 +28,10 @@ msgid "my_shared_connection"
 msgstr "my_shared_connection"
 
 #: kcm.cpp:1110
-#, fuzzy, kde-format
-#| msgid "VPN connections (%1)"
+#, kde-format
 msgctxt "@title"
 msgid "New %1 connection"
-msgstr "VPN 연결(%1)"
+msgstr "새 %1 연결"
 
 #: kcm.cpp:1158
 #, kde-format
@@ -64,12 +63,12 @@ msgstr "모든 파일 (*)"
 #: kcm.cpp:1254
 #, kde-format
 msgid "This VPN type cannot be exported."
-msgstr ""
+msgstr "이 VPN 형식은 내보낼 수 없습니다."
 
 #: kcm.cpp:1275 kcm.cpp:1282
 #, kde-format
 msgid "The connection is no longer available."
-msgstr ""
+msgstr "이 연결을 더 이상 사용할 수 없습니다."
 
 #: kcm.cpp:1310
 #, kde-format
@@ -79,7 +78,7 @@ msgstr "파일을 지정하지 않았음"
 #: kcm.cpp:1343 kcm.cpp:1352
 #, kde-format
 msgid "Could not read the WireGuard configuration"
-msgstr ""
+msgstr "WireGuard 설정을 읽을 수 없음"
 
 #: kcm.cpp:1391
 #, kde-format

@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-13 01:01+0000\n"
-"PO-Revision-Date: 2026-10-03 23:04+0200\n"
+"PO-Revision-Date: 2026-11-21 22:56+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -4256,15 +4256,13 @@ msgid "Create new connections as system connections"
 msgstr "새 연결을 시스템 연결로 만들기"
 
 #: editorqml/qml/CreateConnectionDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "New Connection (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Connection"
-msgstr "새 연결(%1)"
+msgstr "새 연결"
 
 #: editorqml/qml/CreateConnectionDialog.qml:84
-#, fuzzy, kde-format
-#| msgid "Connection name:"
+#, kde-format
 msgctxt "@label"
 msgid "Connection name:"
 msgstr "연결 이름:"
@@ -4272,15 +4270,13 @@ msgstr "연결 이름:"
 #: editorqml/qml/dialogs/VpnPage.qml:28 editorqml/qml/dialogs/WiredPage.qml:23
 #: editorqml/qml/dialogs/WireGuardPage.qml:24
 #: editorqml/qml/dialogs/WirelessPage.qml:23
-#, fuzzy, kde-format
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "일반"
 
 #: editorqml/qml/dialogs/VpnPage.qml:32
-#, fuzzy, kde-format
-#| msgid "VPN"
+#, kde-format
 msgctxt "@title"
 msgid "VPN"
 msgstr "VPN"
@@ -4288,8 +4284,7 @@ msgstr "VPN"
 #: editorqml/qml/dialogs/VpnPage.qml:35 editorqml/qml/dialogs/WiredPage.qml:32
 #: editorqml/qml/dialogs/WireGuardPage.qml:30
 #: editorqml/qml/dialogs/WirelessPage.qml:32
-#, fuzzy, kde-format
-#| msgid "IPv4"
+#, kde-format
 msgctxt "@title"
 msgid "IPv4"
 msgstr "IPv4"
@@ -4297,43 +4292,37 @@ msgstr "IPv4"
 #: editorqml/qml/dialogs/VpnPage.qml:39 editorqml/qml/dialogs/WiredPage.qml:35
 #: editorqml/qml/dialogs/WireGuardPage.qml:33
 #: editorqml/qml/dialogs/WirelessPage.qml:35
-#, fuzzy, kde-format
-#| msgid "IPv6"
+#, kde-format
 msgctxt "@title"
 msgid "IPv6"
 msgstr "IPv6"
 
 #: editorqml/qml/dialogs/WiredPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Wired"
+#, kde-format
 msgctxt "@title"
 msgid "Wired"
 msgstr "유선"
 
 #: editorqml/qml/dialogs/WiredPage.qml:29
-#, fuzzy, kde-format
-#| msgid "802.1x Security"
+#, kde-format
 msgctxt "@title"
 msgid "802.1x Security"
 msgstr "802.1x 보안"
 
 #: editorqml/qml/dialogs/WireGuardPage.qml:27
-#, fuzzy, kde-format
-#| msgid "WireGuard"
+#, kde-format
 msgctxt "@title"
 msgid "WireGuard"
 msgstr "WireGuard"
 
 #: editorqml/qml/dialogs/WirelessPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Wi-Fi"
+#, kde-format
 msgctxt "@title"
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
 #: editorqml/qml/dialogs/WirelessPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Wi-Fi Security"
+#, kde-format
 msgctxt "@title"
 msgid "Wi-Fi Security"
 msgstr "Wi-Fi 보안"
@@ -5349,83 +5338,78 @@ msgstr "Libreswan VPN"
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:34
 #, kde-format
 msgid "Address of the VPN gateway, optionally including the port."
-msgstr ""
+msgstr "VPN 게이트웨이의 주소입니다. 선택 사항으로 포트를 포함할 수 있습니다."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:43
 #, kde-format
 msgid "VPN Protocol:"
-msgstr ""
+msgstr "VPN 프로토콜:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:46
 #, kde-format
 msgid "Which VPN the gateway speaks. All of these are handled by openconnect."
 msgstr ""
+"게이트웨이가 사용하는 VPN 종류입니다. openconnect에서 처리할 수 있습니다."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgid "Cisco AnyConnect"
-msgstr "연결 끊기"
+msgstr "Cisco AnyConnect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "Juniper Network Connect"
-msgstr ""
+msgstr "Juniper Network Connect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "PAN Global Protect"
-msgstr ""
+msgstr "PAN Global Protect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Connection Speed"
+#, kde-format
 msgid "Pulse Connect Secure"
-msgstr "연결 속도"
+msgstr "Pulse Connect Secure"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "F5 BIG-IP SSL VPN"
-msgstr ""
+msgstr "F5 BIG-IP SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Iodine VPN"
+#, kde-format
 msgid "Fortinet SSL VPN"
-msgstr "Iodine VPN"
+msgstr "Fortinet SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "SSH VPN"
+#, kde-format
 msgid "Array SSL VPN"
-msgstr "SSH VPN"
+msgstr "Array SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:75
-#, fuzzy, kde-format
-#| msgid "Proxy"
+#, kde-format
 msgid "Proxy:"
-msgstr "프록시"
+msgstr "프록시:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:78
 #, kde-format
 msgid "Proxy to reach the gateway through, as a URL."
-msgstr ""
+msgstr "게이트웨이에 접근할 때 사용할 프록시의 URL입니다."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:87
-#, fuzzy, kde-format
-#| msgid "User Key:"
+#, kde-format
 msgid "User Agent:"
-msgstr "사용자 키:"
+msgstr "사용자 에이전트:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:95
 #, kde-format
 msgid "CSD Wrapper Script:"
-msgstr ""
+msgstr "CSD 래퍼 스크립트:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:117
 #, kde-format
 msgid "Allow Cisco Secure Desktop trojan"
-msgstr ""
+msgstr "Cisco Secure Desktop Trojan 허용"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:119
 #, kde-format
@@ -5433,12 +5417,13 @@ msgid ""
 "Run the host-check program the gateway asks for. The wrapper script above "
 "replaces it."
 msgstr ""
+"게이트웨이에서 요청하는 host-check 프로그램을 실행합니다. 위쪽에서 래퍼 스크"
+"립트를 지정했다면 해당 스크립트로 대체됩니다."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:128
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgid "Reported OS:"
-msgstr "버그 보고"
+msgstr "보고할 OS:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:131
 #, kde-format
@@ -5446,10 +5431,10 @@ msgid ""
 "Operating system to report to the gateway. Leave at the default to report "
 "the real one."
 msgstr ""
+"게이트웨이에 보고할 운영 체제입니다. 비워 두면 실제 운영 체제를 보고합니다."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item:inlistbox report the real operating system"
 msgid "Default"
 msgstr "기본값"
@@ -5457,94 +5442,87 @@ msgstr "기본값"
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "GNU/Linux"
-msgstr ""
+msgstr "GNU/Linux"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "GNU/Linux 64-bit"
-msgstr ""
+msgstr "GNU/Linux 64비트"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Mac OS X"
-msgstr ""
+msgstr "Mac OS X"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Android"
-msgstr ""
+msgstr "안드로이드"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Apple iOS"
-msgstr ""
+msgstr "애플 iOS"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:142
 #, kde-format
 msgid "Reported Version:"
-msgstr ""
+msgstr "보고할 버전:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:152
-#, fuzzy, kde-format
-#| msgid "VPNC Authentication"
+#, kde-format
 msgid "Certificate Authentication"
-msgstr "VPNC 인증"
+msgstr "인증서 인증"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:175
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "Machine Private Key:"
-msgstr "개인 키:"
+msgstr "머신 개인 키:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:211
-#, fuzzy, kde-format
-#| msgid "Private Key:"
+#, kde-format
 msgid "User Private Key:"
-msgstr "개인 키:"
+msgstr "사용자 개인 키:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:231
 #, kde-format
 msgid "Use FSID for key passphrase"
-msgstr ""
+msgstr "키 암호에 FSID 사용"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:240
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
-msgstr ""
+msgstr "사용자가 수동으로 잘못된 인증서를 수락하는 것 방지"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:255
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgctxt "@action:button"
 msgid "Token Authentication…"
-msgstr "인증"
+msgstr "토큰 인증…"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:25
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenConnect OTP Tokens"
-msgstr ""
+msgstr "OpenConnect OTP 토큰"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:62
-#, fuzzy, kde-format
-#| msgid "Machine Authentication"
+#, kde-format
 msgid "Software Token Authentication"
-msgstr "머신 인증"
+msgstr "소프트웨어 토큰 인증"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:67
-#, fuzzy, kde-format
-#| msgid "Token:"
+#, kde-format
 msgid "Token Mode:"
-msgstr "토큰:"
+msgstr "토큰 모드:"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox no software token"
 msgid "Disabled"
 msgstr "사용 안 함"
@@ -5552,51 +5530,49 @@ msgstr "사용 안 함"
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "RSA SecurID — read from ~/.stokenrc"
-msgstr ""
+msgstr "RSA SecurID — ~/.stokenrc에서 읽기"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "RSA SecurID — manually entered"
-msgstr ""
+msgstr "RSA SecurID — 수동 입력"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "TOTP — manually entered"
-msgstr ""
+msgstr "TOTP — 수동 입력"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "HOTP — manually entered"
-msgstr ""
+msgstr "HOTP — 수동 입력"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "Yubikey"
-msgstr ""
+msgstr "Yubikey"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:82
-#, fuzzy, kde-format
-#| msgid "Token:"
+#, kde-format
 msgid "Token Secret:"
-msgstr "토큰:"
+msgstr "토큰 비밀 정보:"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:25
-#, fuzzy, kde-format
-#| msgid "Security Type"
+#, kde-format
 msgctxt "@title:window"
 msgid "Security Key"
-msgstr "보안 형식"
+msgstr "보안 키"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr ""
+msgstr "다시 시도"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:139
 #, kde-format
 msgid "Confirm PIN:"
-msgstr ""
+msgstr "PIN 확인:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:38
 #, kde-format
@@ -6649,97 +6625,88 @@ msgstr "그룹 암호:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:18
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for this user only (encrypted)"
+#, kde-format
 msgid "Store secret for this user only (encrypted)"
-msgstr "이 사용자만 암호 저장(암호화됨)"
+msgstr "이 사용자만 비밀 정보 저장(암호화됨)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:19
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for all users (not encrypted)"
+#, kde-format
 msgid "Store secret for all users (not encrypted)"
-msgstr "모든 사용자로 암호 저장(암호화됨)"
+msgstr "모든 사용자로 비밀 정보 저장(암호화되지 않음)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:20
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "This password is not required"
+#, kde-format
 msgid "This secret is not required"
-msgstr "이 암호는 필요하지 않음"
+msgstr "이 비밀 정보는 필요하지 않음"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:36
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
-msgstr "이름"
+msgstr "이름:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:39
-#, fuzzy, kde-format
-#| msgid "The name of the Wi-Fi network to connect to"
+#, kde-format
 msgid "Name of the network interface this connection creates."
-msgstr "연결할 Wi-Fi 네트워크의 이름"
+msgstr "이 연결에서 생성하는 네트워크 인터페이스의 이름입니다."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:51
 #, kde-format
 msgid "The private key of this interface, as a base64 string."
-msgstr ""
+msgstr "Base64 문자열로 입력한 이 인터페이스의 개인 키입니다."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:71
-#, fuzzy, kde-format
-#| msgid "Listen port:"
+#, kde-format
 msgid "Listen Port:"
 msgstr "대기 포트:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:73
 #, kde-format
 msgid "Port to listen on. Automatic lets WireGuard choose one."
-msgstr ""
+msgstr "대기할 포트입니다. 자동을 선택하면 WireGuard에서 선택합니다."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:90
 #, kde-format
 msgid "Firewall mark to apply to outgoing packets. Zero disables it."
-msgstr ""
+msgstr "발신 패킷에 사용할 방화벽 마크입니다. 0을 지정하면 비활성화합니다."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:117
 #, kde-format
 msgid "Add routes for the peers' allowed IPs"
-msgstr ""
+msgstr "피어의 허용된 IP로 가는 라우트 추가"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:119
 #, kde-format
 msgid "Turn this off to route the tunnel yourself."
-msgstr ""
+msgstr "이 옵션을 비활성화하면 터널 라우트를 직접 설정해야 합니다."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:136
-#, fuzzy, kde-format
-#| msgid "Peers…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Peers…"
 msgstr "피어…"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:29
-#, fuzzy, kde-format
-#| msgid "Peer 1"
+#, kde-format
 msgctxt "@title:tab numbered WireGuard peer"
 msgid "Peer %1"
-msgstr "피어 1"
+msgstr "피어 %1"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:75
 #, kde-format
 msgid "This interface has no peers, so it cannot connect to anything yet."
 msgstr ""
+"이 인터페이스에는 피어가 없습니다. 아직 아무 곳에도 연결할 수 없습니다."
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:175
-#, fuzzy, kde-format
-#| msgid "Add new Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Add new Peer"
 msgstr "새 피어 추가"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:185
-#, fuzzy, kde-format
-#| msgid "Remove this Peer"
+#, kde-format
 msgctxt "@action:button"
 msgid "Remove this Peer"
 msgstr "이 피어 삭제"
@@ -7014,76 +6981,72 @@ msgstr "접두사"
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:74
 #, kde-format
 msgid "Choose a Passkey"
-msgstr ""
+msgstr "패스키 선택"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:76
 #, kde-format
 msgid "Use your security key with %1"
-msgstr ""
+msgstr "%1에 보안 키 사용"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:80
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "PIN Required"
-msgstr "필요하지 않음"
+msgstr "PIN 필요함"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:82
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "New PIN Required"
-msgstr "필요하지 않음"
+msgstr "새 PIN 필요함"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:84
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Change PIN Required"
-msgstr "필요하지 않음"
+msgstr "PIN 변경 필요함"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:87
 #, kde-format
 msgid "Something went wrong"
-msgstr ""
+msgstr "무언가 잘못됨"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:103
 #, kde-format
 msgid "Which passkey do you want to use for %1?"
-msgstr ""
+msgstr "%1에 어떤 패스키를 사용하시겠습니까?"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:105
 #, kde-format
 msgid "Touch your security key again to complete the request."
-msgstr ""
+msgstr "보안 키를 터치하여 요청을 완료하십시오."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:109
 #, kde-format
 msgid "Enter the PIN for your security key"
-msgstr ""
+msgstr "보안 키의 PIN 입력"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:111
 #, kde-format
 msgid "Set new PIN for your security key"
-msgstr ""
+msgstr "보안 키의 새로운 PIN 설정"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:113
 #, kde-format
 msgid "Change PIN for your security key"
-msgstr ""
+msgstr "보안 키의 PIN 변경"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:123
 #, kde-format
 msgid "Request Timeout"
-msgstr ""
+msgstr "요청 시간 제한"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:125
-#, fuzzy, kde-format
-#| msgid "Not required"
+#, kde-format
 msgid "Key not registered"
-msgstr "필요하지 않음"
+msgstr "키가 등록되지 않음"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:127
 #, kde-format
 msgid "You already registered this device. Try again with device"
-msgstr ""
+msgstr "이 장치가 이미 등록되었습니다. 장치에서 다시 시도하십시오"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:129
 #, kde-format
@@ -7091,6 +7054,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "To unlock it, remove and reinsert it."
 msgstr ""
+"보안 키에 잘못된 PIN이 너무 많이 입력되어서 잠겼습니다. 잠금을 해제하려면 제"
+"거한 후 다시 연결하십시오."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:131
 #, kde-format
@@ -7098,101 +7063,101 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "You'll need to reset the security key."
 msgstr ""
+"보안 키에 잘못된 PIN이 너무 많이 입력되어서 잠겼습니다. 잠금을 해제하려면 보"
+"안 키를 초기화해야 합니다."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:133
 #, kde-format
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
-msgstr ""
+msgstr "검증 중에 인증기가 제거되었습니다. 다시 연결하고 다시 시도하십시오"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:135
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
-msgstr ""
+msgstr "인증기에서 상주 키를 지원하지 않는 것 같음"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:137
 #, kde-format
 msgid "Authenticator missing user verification"
-msgstr ""
+msgstr "인증기에 사용자 인증이 없음"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:139
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr ""
+msgstr "인증기에 대형 BLOB 지원이 없음"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:141
 #, kde-format
 msgid ""
 "The security token does not support the server’s required authentication "
 "method."
-msgstr ""
+msgstr "이 보안 토큰에서 서버에서 필요한 인증 방식을 지원하지 않습니다."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:143
 #, kde-format
 msgid "Storage Full"
-msgstr ""
+msgstr "저장소가 가득 참"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:145
 #, kde-format
 msgid "User consent denied"
-msgstr ""
+msgstr "사용자 동의가 거부됨"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:147
 #, kde-format
 msgid "User Cancelled Request"
-msgstr ""
+msgstr "사용자가 요청을 취소함"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:176
 #, kde-format
 msgid "Internal User Verification Locked"
-msgstr ""
+msgstr "내부 사용자 검증이 잠김"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:178
 #, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] ""
+msgstr[0] "PIN이 잘못되었습니다. %1회 더 시도할 수 있습니다."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:180
 #, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] ""
+msgstr[0] "너무 짧습니다. %1회 더 시도할 수 있습니다."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:182
 #, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] ""
+msgstr[0] "문자가 잘못되었습니다. %1회 더 시도할 수 있습니다."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:184
 #, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] ""
+msgstr[0] "현재 PIN과 같습니다. %1회 더 시도할 수 있습니다."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:197
 #, kde-format
 msgctxt "@action:button submit the entered PIN"
 msgid "Next"
-msgstr ""
+msgstr "다음"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:197
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
-msgstr ""
+msgstr "확인"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "닫기"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:217
-#, fuzzy, kde-format
-#| msgctxt "@action:button Cancel connecting to network"
-#| msgid "Cancel"
+#, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
 msgstr "취소"
@@ -7229,99 +7194,85 @@ msgid "Automatic"
 msgstr "자동"
 
 #: handler.cpp:142
-#, fuzzy, kde-format
-#| msgid "Plasma is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
 msgstr "Plasma에서 '%1' VPN 연결을 지원하지 않습니다."
 
 #: handler.cpp:145
-#, fuzzy, kde-format
-#| msgid "Report Bug"
+#, kde-format
 msgctxt "@action:button"
 msgid "Report Bug"
 msgstr "버그 보고"
 
 #: handler.cpp:168
-#, fuzzy, kde-format
-#| msgid "NetworkManager is missing support for '%1' VPN connections."
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
 msgstr "NetworkManager에서 '%1' VPN 연결을 지원하지 않습니다."
 
 #: handler.cpp:171
-#, fuzzy, kde-format
-#| msgid "Install"
+#, kde-format
 msgctxt "@action:button"
 msgid "Install"
 msgstr "설치"
 
 #: handler.cpp:217
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "%1을(를) 활성화할 수 없음"
 
 #: handler.cpp:391 handler.cpp:420
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add connection %1"
-msgstr "연결 %1을(를) 추가할 수 없음"
+msgstr "%1 연결을 추가할 수 없음"
 
 #: handler.cpp:398 handler.cpp:429
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been added"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been added"
-msgstr "연결 %1이(가) 추가됨"
+msgstr "%1 연결이 추가됨"
 
 #: handler.cpp:468
-#, fuzzy, kde-format
-#| msgid "Failed to add %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "%1을(를) 추가할 수 없음"
 
 #: handler.cpp:508
-#, fuzzy, kde-format
-#| msgid "Failed to deactivate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to deactivate %1"
-msgstr "연결 %1을(를) 비활성화할 수 없음"
+msgstr "%1을(를) 비활성화할 수 없음"
 
 #: handler.cpp:646
-#, fuzzy, kde-format
-#| msgid "Failed to remove %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to forget %1"
-msgstr "연결 %1을(를) 삭제할 수 없음"
+msgstr "%1을(를) 잊을 수 없음"
 
 #: handler.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been removed"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been forgotten"
-msgstr "연결 %1이(가) 삭제됨"
+msgstr "%1 연결이 잊힘"
 
 #: handler.cpp:672
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to update connection %1"
-msgstr "연결 %1을(를) 업데이트할 수 없음"
+msgstr "%1 연결을 업데이트할 수 없음"
 
 #: handler.cpp:679
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been updated"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "연결 %1이(가) 업데이트됨"
 
 #: handler.cpp:885
-#, fuzzy, kde-format
-#| msgid "Failed to create hotspot %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to create hotspot %1"
 msgstr "핫스팟 %1을(를) 만들 수 없음"
@@ -7527,15 +7478,13 @@ msgid "Unknown"
 msgstr "알 수 없음"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgid "Disconnect"
+#, kde-format
 msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
 msgstr "연결 끊기"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, fuzzy, kde-format
-#| msgid "Configure"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure"
 msgstr "설정"
@@ -7544,28 +7493,25 @@ msgstr "설정"
 #, kde-format
 msgctxt "@action:button forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "잊기"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Connect to %1"
-msgstr "%1에 연결됨"
+msgstr "%1에 연결"
 
 #: qml/ForgetConnectionDialog.qml:15
-#, fuzzy, kde-format
-#| msgid "New Connection (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "새 연결(%1)"
+msgstr "연결 잊기"
 
 #: qml/ForgetConnectionDialog.qml:16
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@info"
 msgid "Forget the connection “%1”?"
-msgstr "연결 %1을(를) 업데이트할 수 없음"
+msgstr "\"%1\" 연결을 잊도록 하시겠습니까?"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format

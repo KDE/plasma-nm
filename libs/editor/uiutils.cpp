@@ -666,9 +666,9 @@ bool UiUtils::isLiveImage()
     }
 
     QFile cmdFile(QStringLiteral("/proc/cmdline"));
-    cmdFile.open(QIODevice::ReadOnly);
+    const bool ok = cmdFile.open(QIODevice::ReadOnly);
 
-    if (!cmdFile.isOpen()) {
+    if (!ok || !cmdFile.isOpen()) {
         return false;
     }
 

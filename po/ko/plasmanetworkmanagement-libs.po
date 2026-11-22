@@ -7,7 +7,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 06:31+0000\n"
-"PO-Revision-Date: 2023-04-22 00:14+0200\n"
+"PO-Revision-Date: 2026-11-21 22:56+0100\n"
 "Last-Translator: Shinjo Park <kde@peremen.name>\n"
 "Language-Team: Korean <kde-kr@kde.org>\n"
 "Language: ko\n"
@@ -3317,12 +3317,12 @@ msgstr "설치"
 #: handler.cpp:353 handler.cpp:846
 #, kde-format
 msgid "Failed to add connection %1"
-msgstr "연결 %1을(를) 추가할 수 없음"
+msgstr "%1 연결을 추가할 수 없음"
 
 #: handler.cpp:362 handler.cpp:888
 #, kde-format
 msgid "Connection %1 has been added"
-msgstr "연결 %1이(가) 추가됨"
+msgstr "%1 연결이 추가됨"
 
 #: handler.cpp:838
 #, kde-format
@@ -3337,7 +3337,7 @@ msgstr "%1을(를) 추가할 수 없음"
 #: handler.cpp:850
 #, kde-format
 msgid "Failed to deactivate %1"
-msgstr "연결 %1을(를) 비활성화할 수 없음"
+msgstr "%1을(를) 비활성화할 수 없음"
 
 #: handler.cpp:854
 #, kde-format
@@ -3357,7 +3357,7 @@ msgstr "핫스팟 %1을(를) 만들 수 없음"
 #: handler.cpp:892
 #, kde-format
 msgid "Connection %1 has been removed"
-msgstr "연결 %1이(가) 삭제됨"
+msgstr "%1 연결이 삭제됨"
 
 #: handler.cpp:896
 #, kde-format

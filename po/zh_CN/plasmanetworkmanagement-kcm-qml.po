@@ -32,7 +32,7 @@ msgstr "我的共享连接"
 #, kde-format
 msgctxt "@title"
 msgid "New %1 connection"
-msgstr ""
+msgstr "新建 %1 连接"
 
 #: kcm.cpp:1158
 #, kde-format
@@ -54,34 +54,34 @@ msgstr " (副本)"
 #: kcm.cpp:1213
 #, kde-format
 msgid "VPN connections (%1)"
-msgstr ""
+msgstr "VPN 连接 (%1)"
 
 #: kcm.cpp:1213
 #, kde-format
 msgid "All files (*)"
-msgstr ""
+msgstr "所有文件 (*)"
 
 #: kcm.cpp:1254
 #, kde-format
 msgid "This VPN type cannot be exported."
-msgstr ""
+msgstr "此 VPN 类型无法导出。"
 
 #: kcm.cpp:1275 kcm.cpp:1282
 #, kde-format
 msgid "The connection is no longer available."
-msgstr ""
+msgstr "此连接已不可用。"
 
 #: kcm.cpp:1310
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "没有提供文件"
 
 #: kcm.cpp:1343 kcm.cpp:1352
 #, kde-format
 msgid "Could not read the WireGuard configuration"
-msgstr ""
+msgstr "无法读取 WireGuard 配置"
 
 #: kcm.cpp:1391
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "未知的 VPN 类型"

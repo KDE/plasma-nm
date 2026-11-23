@@ -700,37 +700,37 @@ msgstr "正在获取可用的加密类型…"
 #: openvpnadvanced.ui:650
 #, kde-format
 msgid "Data channel cipher list to negotiate (OpenVPN 2.5+)."
-msgstr "用于协商的数据通道密码列表 (OpenVPN 2.5 及以上版本)。"
+msgstr "用于协商的数据通道加密算法列表 (OpenVPN 2.5 及以上版本)。"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:653
 #, kde-format
 msgid "Data Ciphers:"
-msgstr "数据密码："
+msgstr "数据加密算法："
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:682
 #, kde-format
 msgid "Fallback data cipher if negotiation fails (OpenVPN 2.5+)."
-msgstr "协商失败时的备用数据加密方式 (OpenVPN 2.5 及更高版本)。"
+msgstr "协商失败时回退到的数据加密算法 (OpenVPN 2.5 及更高版本)。"
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:685
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr "备用数据密码："
+msgstr "数据加密回退算法："
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:712
 #, kde-format
 msgid "Disable OpenVPN NCP (cipher negotiation). Requires OpenVPN 2.4+."
-msgstr "禁用 OpenVPN NCP (密码协商)。需要 OpenVPN 2.4 或更高版本。"
+msgstr "禁用 OpenVPN NCP (加密协商)。需要 OpenVPN 2.4 或更高版本。"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:715
 #, kde-format
 msgid "Disable cipher negotiation"
-msgstr "禁用密码协商"
+msgstr "禁用加密协商"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)

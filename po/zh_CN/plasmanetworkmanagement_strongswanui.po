@@ -183,7 +183,7 @@ msgstr "使用 IP 压缩"
 #: strongswanprop.ui:336
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
-msgstr "启用自定义加密算法建议"
+msgstr "启用自定义加密算法提议"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: strongswanprop.ui:350

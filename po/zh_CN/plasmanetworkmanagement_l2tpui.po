@@ -386,16 +386,13 @@ msgstr "使用 IKEv2 密钥交换"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
-#, fuzzy, kde-format
-#| msgid ""
-#| "<html><head/><body><p>Disable perfect forward secrecy. Enable this option "
-#| "only if the server doesn’t support PFS.</p></body></html>"
+#, kde-format
 msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Do this only if the "
 "server doesn’t support PFS.</p></body></html>"
 msgstr ""
-"<html><head/><body><p>禁用完全正向保密 (PFS)。只有在服务器不支持 PFS 时才应勾"
-"选此项。</p></body></html>"
+"<html><head/><body><p>禁用完全正向保密 (PFS)。只有在服务器不支持 PFS 时才应禁"
+"用。</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:332

@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 00:15+0000\n"
-"PO-Revision-Date: 2026-09-08 15:47+0200\n"
+"PO-Revision-Date: 2026-11-22 20:40+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -155,8 +155,8 @@ msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
 "</p></body></html>"
 msgstr ""
-"<html><head/><body><p>La clau privada en el format «.pem»., «.der», «.key», "
-"«.pk8» o «.p12».</p></body></html>"
+"<html><head/><body><p>La clau privada en el format «.pem», «.der», «.key», «."
+"pk8» o «.p12».</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
@@ -337,8 +337,7 @@ msgid ""
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
 "<html><head/><body><p>Opcional. Una llista de propostes per a l'IKE - Mode "
-"principal. El format és «enc-integ-group,enc-integ-group, …».</p></body></"
-"html>"
+"principal. El format és «enc-integ-group,enc-integ-group…».</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:285

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-08 03:00+0000\n"
-"PO-Revision-Date: 2026-09-20 19:47+0300\n"
+"PO-Revision-Date: 2026-11-23 18:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.2\n"
 "X-POOTLE-MTIME: 1413106147.000000\n"
 
 #: openvpn.cpp:61 openvpn.cpp:106
@@ -287,7 +287,7 @@ msgid ""
 "TCP/UDP port number for peer. (Default value when there is no port for "
 "gateway)."
 msgstr ""
-"Eş için TCP/UDP kapı numarası. (Ağ geçidi için kapı olmadığındaki öntanımlı "
+"Eş için TCP/UDP kapı numarası. (Ağ geçidi için kapı olmadığındaki varsayılan "
 "değer)."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomPort)
@@ -421,7 +421,7 @@ msgid ""
 "Use custom name for TUN/TAP virtual device (instead of default \"tun\" or "
 "\"tap\")."
 msgstr ""
-"TUN/TAP sanal aygıtı için özel ad (“tun” veya “tap” öntanımlıları yerine) "
+"TUN/TAP sanal aygıtı için özel ad (“tun” veya “tap” varsayılanları yerine) "
 "kullanın."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseVirtualDeviceName)
@@ -650,7 +650,7 @@ msgid ""
 "address,\n"
 "not only the address which was specified in the --remote option."
 msgstr ""
-"DHCP (--remote kullanılmazsa öntanımlıdır) nedeniyle uzak eşe, IP adresini\n"
+"DHCP (--remote kullanılmazsa varsayılandır) nedeniyle uzak eşe, IP adresini\n"
 "ve/veya kapı numarasını değiştirmesi için izin ver. --float, --remote ile\n"
 "belirtildiğinde, OpenVPN oturumu, eşe bilinen adresten bağlanır,\n"
 "Ayrıca, paket yeni bir adresten gelirse ve tüm kimlik doğrulamalardan\n"
@@ -697,7 +697,8 @@ msgid ""
 "Cipher\n"
 "Block Chaining mode)."
 msgstr ""
-"Paketleri bir algoritma ile şifreler. Öntanımlı, BF-CBC (Blowfish in Cipher\n"
+"Paketleri bir algoritma ile şifreler. Varsayılan, BF-CBC (Blowfish in "
+"Cipher\n"
 "Blok Şifreleme kipi)."
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
@@ -760,7 +761,7 @@ msgid ""
 "specific size."
 msgstr ""
 "Şifreleyici anahtarı boyutunu özel bir değer olarak ayarla. Eğer "
-"belirtilmemişse, öntanımlı değer atanır."
+"belirtilmemişse, varsayılan değer atanır."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCustomCipherKey)
 #: openvpnadvanced.ui:730
@@ -776,7 +777,7 @@ msgid ""
 "Authenticate packets with HMAC using message digest algorithm. The default "
 "is SHA1."
 msgstr ""
-"HMAC ile paket doğrulama için ileti özeti algoritması. Öntanımlı, SHA1."
+"HMAC ile paket doğrulama için ileti özeti algoritması. Varsayılan, SHA1."
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: openvpnadvanced.ui:763
@@ -789,7 +790,7 @@ msgstr "HMAC kimlik doğrulaması:"
 #, kde-format
 msgctxt "like in use Default configuration"
 msgid "Default"
-msgstr "Öntanımlı"
+msgstr "Varsayılan"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboHmac)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboDirection)
@@ -1294,7 +1295,7 @@ msgstr "OpenVPN şifresi arama başarısız"
 #, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
-msgstr "Öntanımlı"
+msgstr "Varsayılan"
 
 #: openvpnadvancedwidget.cpp:202
 #, kde-format

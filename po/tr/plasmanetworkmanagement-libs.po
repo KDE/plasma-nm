@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-23 01:06+0000\n"
-"PO-Revision-Date: 2026-11-18 18:54+0300\n"
+"PO-Revision-Date: 2026-11-23 18:16+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -697,7 +697,7 @@ msgstr "IPv4 Adresi"
 #: editor/connectiondetails.cpp:336
 #, kde-format
 msgid "IPv4 Default Gateway"
-msgstr "IPv4 Öntanımlı Ağ Geçidi"
+msgstr "IPv4 Varsayılan Ağ Geçidi"
 
 #: editor/connectiondetails.cpp:343
 #, kde-format
@@ -730,7 +730,7 @@ msgstr "IPv6 ULA Adresi"
 #: editor/connectiondetails.cpp:383
 #, kde-format
 msgid "IPv6 Default Gateway"
-msgstr "IPv6 Öntanımlı Ağ Geçidi"
+msgstr "IPv6 Varsayılan Ağ Geçidi"
 
 #: editor/connectiondetails.cpp:390
 #, kde-format
@@ -999,7 +999,7 @@ msgstr "DHCP makine adı:"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "Default"
-msgstr "Öntanımlı"
+msgstr "Varsayılan"
 
 #: editor/settings/ipv4widget.cpp:441
 #, kde-format
@@ -1600,9 +1600,9 @@ msgid ""
 "indicate priority lower than the default."
 msgstr ""
 "Otomatik bağlantı ayarlanırsa daha yüksek öncelikli bağlantılar tercih "
-"edilir. Öntanımlı değer 0’dır.\n"
+"edilir. Varsayılan değer 0’dır.\n"
 "Daha yüksek sayı, daha yüksek öncelik anlamına gelir. Negatif sayı "
-"kullanımı, öntanımlıdan daha düşük önceliği belirtmek için kullanılabilir."
+"kullanımı, varsayılandan daha düşük önceliği belirtmek için kullanılabilir."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1865,7 +1865,7 @@ msgstr ""
 "Uzaklık, gecikme ve kararlılık gibi etkenleri göz önüne alarak veri\n"
 "paketlerinin hedeflerine ulaşmaları için en iyi yolu seçen bir puan.\n"
 "\n"
-"Öntanımlı değer −1, NetworkManager’in rotanın asıl ölçümünü\n"
+"Varsayılan değer −1, NetworkManager’in rotanın asıl ölçümünü\n"
 "seçmesine olanak tanınacağı anlamına gelir."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
@@ -2575,7 +2575,7 @@ msgstr "WEP indeksi:"
 #: editor/settings/ui/wifisecurity.ui:151
 #, kde-format
 msgid "1 (default)"
-msgstr "1 (Öntanımlı)"
+msgstr "1 (Varsayılan)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, wepIndex)
 #: editor/settings/ui/wifisecurity.ui:156
@@ -2877,7 +2877,7 @@ msgid ""
 "this value may be specified explicitly."
 msgstr ""
 "İsteğe bağlı.\n"
-"Belirtilmezse MTU son uç adreslerinden veya sistem öntanımlı\n"
+"Belirtilmezse MTU son uç adreslerinden veya sistem varsayılan\n"
 "rotasından oluşturulur; genelde de düzgün bir seçimdir. Ancak;\n"
 "bir MTU’yu elle belirtmek ve bu kendiliğinden keşfi devre dışı\n"
 "bırakmak için bu değer açıkça belirtilmelidir."
@@ -3922,7 +3922,7 @@ msgstr "Bilinmeyen Sağlayıcı"
 #, kde-format
 msgctxt "Mobile Connection Wizard"
 msgid "Default"
-msgstr "Öntanımlı"
+msgstr "Varsayılan"
 
 #: editor/widgets/mobileconnectionwizard.cpp:183
 #: editor/widgets/mobileconnectionwizard.cpp:191
@@ -4191,7 +4191,7 @@ msgid ""
 "If enabled, this connection will never be used as the default network "
 "connection"
 msgstr ""
-"Etkinleştirilirse, bu bağlantı asla öntanımlı şebeke bağlantısı olarak "
+"Etkinleştirilirse, bu bağlantı asla varsayılan şebeke bağlantısı olarak "
 "kullanılamaz"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbNeverDefault)
@@ -4387,7 +4387,7 @@ msgstr "DHCP sunucusuna makine adını gönder"
 #, kde-format
 msgctxt "@item DAD timeout left to NetworkManager"
 msgid "Default"
-msgstr "Öntanımlı"
+msgstr "Varsayılan"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:78 editorqml/qml/ipv4/IPv4Advance.qml:85
 #, kde-format
@@ -4519,8 +4519,8 @@ msgstr ""
 "paketlerinin hedeflerine ulaşmaları için en iyi yolu seçen bir puanı "
 "belirtir.\n"
 "\n"
-"Öntanımlı değer −1, NetworkManager’ın rotanın asıl ölçümünü seçmesine olanak "
-"tanınacağı anlamına gelir."
+"Varsayılan değer −1, NetworkManager’ın rotanın asıl ölçümünü seçmesine "
+"olanak tanınacağı anlamına gelir."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
 #: editorqml/qml/ipv6/IPv6Settings.qml:165
@@ -4620,7 +4620,7 @@ msgstr "Yok sayılmış"
 #, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions left to NetworkManager"
 msgid "Default"
-msgstr "Öntanımlı"
+msgstr "Varsayılan"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
 #, kde-format
@@ -4834,7 +4834,7 @@ msgstr "Ad sunucusu:"
 msgid ""
 "Nameserver to use for the tunnel. Leave empty to use the system default."
 msgstr ""
-"Tünel için kullanılacak ad sunucusunu belirtir. Sistem öntanımlısını "
+"Tünel için kullanılacak ad sunucusunu belirtir. Sistem varsayılanını "
 "kullanmak için boş bırakın."
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:65
@@ -5368,7 +5368,7 @@ msgstr "1. evre algoritması:"
 #, kde-format
 msgid "IKE algorithms to propose. Leave empty for the defaults."
 msgstr ""
-"Teklif edilecek IKE algoritması. Öntanımlı değerleri kullanmak için boş "
+"Teklif edilecek IKE algoritması. Varsayılan değerleri kullanmak için boş "
 "bırakın."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:102
@@ -5380,7 +5380,7 @@ msgstr "2. evre algoritması:"
 #, kde-format
 msgid "ESP algorithms to propose. Leave empty for the defaults."
 msgstr ""
-"Teklif edilecek ESP algoritması. Öntanımlı değerleri kullanmak için boş "
+"Teklif edilecek ESP algoritması. Varsayılan değerleri kullanmak için boş "
 "bırakın."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:117
@@ -5491,13 +5491,13 @@ msgid ""
 "the real one."
 msgstr ""
 "Ağ geçidine bildirilecek işletim sistemi. Gerçek işletim sisteminizi "
-"bildirmek için öntanımlı değeri kullanın."
+"bildirmek için varsayılan değeri kullanın."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgctxt "@item:inlistbox report the real operating system"
 msgid "Default"
-msgstr "Öntanımlı"
+msgstr "Varsayılan"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
@@ -6201,7 +6201,7 @@ msgstr "Anahtar parolası:"
 #, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
-msgstr "Öntanımlı"
+msgstr "Varsayılan"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:30
 #, kde-format
@@ -6296,7 +6296,7 @@ msgstr "Uzak kullanıcı adı"
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:162
 #, kde-format
 msgid "Do not replace default route"
-msgstr "Öntanımlı rotayı başkasıyla değiştirme"
+msgstr "Varsayılan rotayı başkasıyla değiştirme"
 
 #: editorqml/qml/vpn/ssh/SshAuth.qml:23
 #, kde-format
@@ -6537,7 +6537,7 @@ msgstr "Şifreleme yöntemini belirtir."
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
-msgstr "Güvenli (öntanımlı)"
+msgstr "Güvenli (varsayılan)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:76
 #, kde-format
@@ -6565,7 +6565,7 @@ msgstr "Kullanılacak NAT düğümlerinde sırasıyla gezinme yöntemini belirti
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr "Kullanılabiliyorsa NAT-T (öntanımlı)"
+msgstr "Kullanılabiliyorsa NAT-T (varsayılan)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
@@ -6605,7 +6605,7 @@ msgstr "DH Grubu 1"
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 2 (default)"
-msgstr "DH Grubu 2 (öntanımlı)"
+msgstr "DH Grubu 2 (varsayılan)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:104
 #, kde-format
@@ -6627,7 +6627,7 @@ msgstr "PFS için kullanılacak Diffie-Hellman grubunu belirtir."
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
-msgstr "Sunucu (öntanımlı)"
+msgstr "Sunucu (varsayılan)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
 #, kde-format
@@ -6664,8 +6664,8 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
-"Kullanılacak yerel kapı (0–65535). 0 (öntanımlı değer), rastgele bir kapı "
-"anlamına gelir; 500 ise VPNC’nin öntanımlı değeridir."
+"Kullanılacak yerel kapı (0–65535). 0 (varsayılan değer), rastgele bir kapı "
+"anlamına gelir; 500 ise VPNC’nin varsayılan değeridir."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:145
 #, kde-format

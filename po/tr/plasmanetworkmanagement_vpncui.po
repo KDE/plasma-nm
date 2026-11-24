@@ -2,21 +2,21 @@
 # This file is distributed under the same license as the PACKAGE package.
 #
 # Volkan Gezer <volkangezer@gmail.com>, 2013, 2014, 2015, 2017, 2021, 2022.
-# SPDX-FileCopyrightText: 2022, 2023, 2024, 2025 Emir SARI <emir_sari@icloud.com>
+# SPDX-FileCopyrightText: 2022-2026 Emir SARI <emir_sari@icloud.com>
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-02-01 00:45+0000\n"
-"PO-Revision-Date: 2025-09-19 09:50+0300\n"
-"Last-Translator: Emir SARI <emir_sari@îcloud.com>\n"
+"PO-Revision-Date: 2026-11-23 18:16+0300\n"
+"Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 25.08.1\n"
+"X-Generator: Lokalize 26.08.2\n"
 "X-POOTLE-MTIME: 1413102233.000000\n"
 
 #: vpnc.cpp:70
@@ -223,8 +223,8 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
-"Kullanılacak yerel kapı (0–65535). 0 (öntanımlı kapı) rastgele kapı anlamına "
-"gelir. 500, vpnc’nin öntanımlı kapısıdır."
+"Kullanılacak yerel kapı (0–65535). 0 (varsayılan kapı) rastgele kapı "
+"anlamına gelir. 500, vpnc’nin varsayılan kapısıdır."
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, localport)
 #: vpncadvanced.ui:193
@@ -271,7 +271,7 @@ msgstr "Fortigate"
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
-msgstr "Güvenli (öntanımlı)"
+msgstr "Güvenli (varsayılan)"
 
 #: vpncadvancedwidget.cpp:29
 #, kde-format
@@ -289,7 +289,7 @@ msgstr "Yok (tamamen güvensiz)"
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr "Olanaklıysa NAT-T (öntanımlı)"
+msgstr "Olanaklıysa NAT-T (varsayılan)"
 
 #: vpncadvancedwidget.cpp:34
 #, kde-format
@@ -319,7 +319,7 @@ msgstr "DH Grubu 1"
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 2 (default)"
-msgstr "DH Grubu 2 (öntanımlı)"
+msgstr "DH Grubu 2 (varsayılan)"
 
 #: vpncadvancedwidget.cpp:41
 #, kde-format
@@ -331,7 +331,7 @@ msgstr "DH Grubu 5"
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
-msgstr "Sunucu (öntanımlı)"
+msgstr "Sunucu (varsayılan)"
 
 #: vpncadvancedwidget.cpp:45
 #, kde-format

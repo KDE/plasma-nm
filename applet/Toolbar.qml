@@ -71,9 +71,23 @@ RowLayout {
             checked: administrativelyEnabled && enabledConnections.wirelessEnabled
             enabled: administrativelyEnabled
 
+            property real scanProgress: -1 // not scanning state
+            readonly property var scanIcons: [
+                "network-wireless-signal-none",
+                "network-wireless-signal-weak",
+                "network-wireless-signal-ok",
+                "network-wireless-signal-good",
+                "network-wireless-signal-excellent"
+            ]
+
             text: i18n("Enable Wi-Fi")
             display: PlasmaComponents3.AbstractButton.IconOnly
-            icon.name: administrativelyEnabled ? "network-wireless-on" : "network-wireless-off"
+            icon.name: {
+                if (checked && scanProgress >=0) { //checks if wifi is on and scan progress is active
+                    return scanIcons[Math.min(4, Math.floor(scanProgress))]; //directly calculate frame
+                }
+                return checked ? "network-wireless-on" : "network-wireless-off";
+            }
             visible: availableDevices.wirelessDeviceAvailable
 
             KeyNavigation.right: wwanSwitchButton.visible ? wwanSwitchButton : wwanSwitchButton.KeyNavigation.right
@@ -84,27 +98,26 @@ RowLayout {
                 text: wifiSwitchButton.text
             }
 
-            PlasmaComponents3.BusyIndicator {
-                parent: wifiSwitchButton
-                anchors {
-                    fill: wifiSwitchButton.contentItem
-                    leftMargin: wifiSwitchButton.indicator.width + wifiSwitchButton.spacing
-                }
-                z: 1
+            NumberAnimation {
+                id: scanAnimation
+                target: wifiSwitchButton
+                property: "scanProgress"
+                from: 0
+                to: 5
+                duration: 1000
+                loops: Animation.Infinite
+                alwaysRunToEnd: wifiSwitchButton.checked //prevents freeze cut when scan ends
+                running: wifiSwitchButton.checked && handler.scanning //animation will run only when wifi is on and actively scanning
 
-                // Scanning may be too fast to notice. Prolong the animation up to at least `humanMoment`.
-                running: handler.scanning || timer.running
-                Timer {
-                    id: timer
-                    interval: Kirigami.Units.humanMoment
-                }
-                Connections {
-                    target: handler
-                    function onScanningChanged() {
-                        if (handler.scanning) {
-                            timer.restart();
-                        }
+                //immediately stop when wifi is disabled instead of finishing the loop
+                onAlwaysRunToEndChanged: {
+                    if (!alwaysRunToEnd) {
+                        stop();
                     }
+                }
+            
+                onStopped: { //turns off scan state
+                    wifiSwitchButton.scanProgress = -1; 
                 }
             }
         }

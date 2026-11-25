@@ -32,17 +32,15 @@ msgstr "Όνομα ή IP εξυπηρετητή L2TP."
 
 #. i18n: ectx: property (text), widget (QLabel, labelAuthType)
 #: l2tp.ui:45
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Authentication type:"
-msgstr "Ταυτοποίηση"
+msgstr "Τύπος ταυτοποίησης:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbAuthType)
 #: l2tp.ui:67 l2tpipsec.ui:68
-#, fuzzy, kde-format
-#| msgid "Allow following authentication methods:"
+#, kde-format
 msgid "Select an authentication mode."
-msgstr "Να επιτρέπονται οι ακόλουθες μέθοδοι ταυτοποίησης:"
+msgstr "Επιλέξτε μέθοδο ταυτοποίησης."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: l2tp.ui:71
@@ -52,10 +50,9 @@ msgstr "Κωδικός πρόσβασης"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: l2tp.ui:76 l2tpipsec.ui:77
-#, fuzzy, kde-format
-#| msgid "Certificate: "
+#, kde-format
 msgid "Certificates (TLS)"
-msgstr "Πιστοποιητικό: "
+msgstr "Πιστοποιητικά (TLS)"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_1)
 #: l2tp.ui:90
@@ -66,16 +63,13 @@ msgstr "Όνομα χρήστη:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, username)
 #: l2tp.ui:103
-#, fuzzy, kde-format
-#| msgid ""
-#| "Set the name used for authenticating the local system to the peer to "
-#| "<name>."
+#, kde-format
 msgid ""
 "<html><head/><body><p>Set the name used for authenticating the local system "
 "to the peer to &lt;name&gt;.</p></body></html>"
 msgstr ""
-"Ορισμός του ονόματος που χρησιμοποιείται για ταυτοποίηση του τοπικού "
-"συστήματος στον κόμβο σε <name>."
+"<html><head/><body><p>Ορίζει σε &lt;name&gt; το όνομα με το οποίο "
+"ταυτοποιείται το τοπικό σύστημα στον ομότιμο κόμβο.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_2)
 #: l2tp.ui:113
@@ -85,12 +79,13 @@ msgstr "Κωδικός πρόσβασης:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, password)
 #: l2tp.ui:128
-#, fuzzy, kde-format
-#| msgid "Password passed to PPPD when prompted for it."
+#, kde-format
 msgid ""
 "<html><head/><body><p>Password passed to PPPD when prompted for it.</p></"
 "body></html>"
-msgstr "Ο κωδικός χρήστη να περνά στο PPPD όταν ζητείται."
+msgstr ""
+"<html><head/><body><p>Ο κωδικός που δίνεται στο PPPD όταν ζητηθεί.</p></"
+"body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, Label_3)
 #: l2tp.ui:140
@@ -100,16 +95,13 @@ msgstr "Τομέας ΝT:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, domain)
 #: l2tp.ui:150
-#, fuzzy, kde-format
-#| msgid ""
-#| "Append the domain name <domain> to the local host name for\n"
-#| "authentication purposes."
+#, kde-format
 msgid ""
 "<html><head/><body><p>Append the domain name &lt;domain&gt; to the local "
 "host name for</p><p>authentication purposes.</p></body></html>"
 msgstr ""
-"Προσθήκη του ονόματος τομέα <domain> στο τοπικό όνομα υπολογιστή\n"
-"για λόγους ταυτοποίησης."
+"<html><head/><body><p>Προσθέτει τον τομέα &lt;domain&gt; στο όνομα του "
+"τοπικού υπολογιστή</p><p>για την ταυτοποίηση.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #. i18n: ectx: property (text), widget (QLabel, textLabel2)
@@ -121,19 +113,19 @@ msgstr "Πιστοποιητικό CA:"
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCA)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCA)
 #: l2tp.ui:174 l2tpipsec.ui:119
-#, fuzzy, kde-format
-#| msgid "Password passed to PPPD when prompted for it."
+#, kde-format
 msgid ""
 "<html><head/><body><p>Certificate authority (CA) file in .pem, .der, .crt, ."
 "cer or .p12 formats.</p></body></html>"
-msgstr "Ο κωδικός χρήστη να περνά στο PPPD όταν ζητείται."
+msgstr ""
+"<html><head/><body><p>Αρχείο αρχής πιστοποίησης (CA) σε μορφή .pem, .der, ."
+"crt, .cer ή .p12.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_2)
 #: l2tp.ui:186
-#, fuzzy, kde-format
-#| msgid "Use Certificate"
+#, kde-format
 msgid "User Certificate:"
-msgstr "Χρήση πιστοποιητικού"
+msgstr "Πιστοποιητικό χρήστη:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, userCert)
 #: l2tp.ui:199
@@ -142,6 +134,8 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der, .crt, .cer or .p12 formats."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Πιστοποιητικό σε μορφή .pem, .der, .crt, .cer ή .p12.</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, textLabel4)
@@ -158,14 +152,15 @@ msgid ""
 "<html><head/><body><p>Private key in .pem, .der, .key, .pk8 or .p12 formats."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Ιδιωτικό κλειδί σε μορφή .pem, .der, .key, .pk8 ή .p12."
+"</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: l2tp.ui:236 l2tpipsec.ui:181
-#, fuzzy, kde-format
-#| msgid "Private Key: "
+#, kde-format
 msgid "Private Key Password:"
-msgstr "Ιδιωτικό κλειδί: "
+msgstr "Κωδικός πρόσβασης ιδιωτικού κλειδιού:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, machineKeyPassword)
 #. i18n: ectx: property (toolTip), widget (PasswordField, userKeyPassword)
@@ -175,6 +170,8 @@ msgid ""
 "<html><head/><body><p>Password for private key or PKCS#12 certificate.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>Κωδικός πρόσβασης για ιδιωτικό κλειδί ή πιστοποιητικό "
+"PKCS#12.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:267
@@ -185,12 +182,18 @@ msgid ""
 "\n"
 "May be required to allow multiple L2TP clients behind the same NAT."
 msgstr ""
+"Να μη χρησιμοποιηθεί η θύρα UDP 1701 ως θύρα προέλευσης L2TP, ακόμη κι αν "
+"είναι ελεύθερη.\n"
+"Θα χρησιμοποιηθεί μια εφήμερη θύρα με τυχαίο, μεγάλο αριθμό.\n"
+"\n"
+"Μπορεί να απαιτείται για να επιτραπούν πολλοί πελάτες L2TP πίσω από το ίδιο "
+"NAT."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbEphemeralSourcePort)
 #: l2tp.ui:270
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "Χρήση εφήμερης θύρας προέλευσης L2TP"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnIPSecSettings)
 #: l2tp.ui:308
@@ -210,15 +213,14 @@ msgid "User Password:"
 msgstr "Κωδικός πρόσβασης χρήστη:"
 
 #: l2tpauth.cpp:72
-#, fuzzy, kde-format
-#| msgid "Use Certificate"
+#, kde-format
 msgid "User Certificate Password:"
-msgstr "Χρήση πιστοποιητικού"
+msgstr "Κωδικός πρόσβασης πιστοποιητικού χρήστη:"
 
 #: l2tpauth.cpp:83
 #, kde-format
 msgid "Machine Certificate Password:"
-msgstr ""
+msgstr "Κωδικός πρόσβασης πιστοποιητικού υπολογιστή:"
 
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: l2tpauth.cpp:93 l2tpipsec.ui:91
@@ -234,36 +236,35 @@ msgstr "Ενεργοποίηση IPsec διοχέτευσης σε L2TP υπολ
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAuthentication)
 #: l2tpipsec.ui:38
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Machine Authentication"
-msgstr "Ταυτοποίηση"
+msgstr "Ταυτοποίηση υπολογιστή"
 
 #. i18n: ectx: property (text), widget (QLabel, labelAuthType)
 #: l2tpipsec.ui:46
 #, kde-format
 msgid "Type:"
-msgstr ""
+msgstr "Τύπος:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbAuthType)
 #: l2tpipsec.ui:72
-#, fuzzy, kde-format
-#| msgid "Pre-shared Key:"
+#, kde-format
 msgid "Pre-shared Key (PSK)"
-msgstr "Διαμοιρασμένο κλειδί:"
+msgstr "Προδιαμοιρασμένο κλειδί (PSK)"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKey)
 #: l2tpipsec.ui:103
 #, kde-format
 msgid "<html><head/><body><p>Pre-shared key (PSK) secret.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Μυστικό προδιαμοιρασμένο κλειδί (PSK).</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #: l2tpipsec.ui:131
-#, fuzzy, kde-format
-#| msgid "Certificate: "
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "Πιστοποιητικό: "
+msgstr "Πιστοποιητικό υπολογιστή:"
 
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, machineCert)
 #: l2tpipsec.ui:144
@@ -272,12 +273,14 @@ msgid ""
 "<html><head/><body><p>Certificate in .pem, .der or .p12 formats.</p></body></"
 "html>"
 msgstr ""
+"<html><head/><body><p>Πιστοποιητικό σε μορφή .pem, .der ή .p12.</p></body></"
+"html>"
 
 #. i18n: ectx: property (title), widget (QGroupBox, gbAdvanced)
 #: l2tpipsec.ui:225
 #, kde-format
 msgid "Advanced"
-msgstr ""
+msgstr "Για προχωρημένους"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: l2tpipsec.ui:231
@@ -298,6 +301,9 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for ESP - Quick Mode. "
 "The format is “enc-integ,enc-integ, …”.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Προαιρετικό. Λίστα προτάσεων για το ESP σε γρήγορη "
+"λειτουργία (Quick Mode). Η μορφή είναι «enc-integ,enc-integ, …».</p></body></"
+"html>"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, ikelifetime)
 #: l2tpipsec.ui:261
@@ -306,20 +312,21 @@ msgid ""
 "<html><head/><body><p>How long the keying channel of a connection should "
 "last before being renegotiated.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Πόσο διαρκεί το κανάλι ανταλλαγής κλειδιών της "
+"σύνδεσης πριν γίνει νέα διαπραγμάτευση.</p></body></html>"
 
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, ikelifetime)
 #. i18n: ectx: property (displayFormat), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:264 l2tpipsec.ui:298
 #, kde-format
 msgid "hh:mm:ss"
-msgstr ""
+msgstr "hh:mm:ss"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIkelifetime)
 #: l2tpipsec.ui:271
-#, fuzzy, kde-format
-#| msgid "Phase1 algorithms:"
+#, kde-format
 msgid "Phase1 Lifetime:"
-msgstr "Αλγόριθμοι Phase1:"
+msgstr "Διάρκεια φάσης 1:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
 #: l2tpipsec.ui:278
@@ -328,13 +335,15 @@ msgid ""
 "<html><head/><body><p>Optional. A list of proposals for IKE - Main Mode. The "
 "format is “enc-integ-group,enc-integ-group, …”.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Προαιρετικό. Λίστα προτάσεων για το IKE σε κύρια "
+"λειτουργία (Main Mode). Η μορφή είναι «enc-integ-group,enc-integ-group, …».</"
+"p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbSalifetime)
 #: l2tpipsec.ui:285
-#, fuzzy, kde-format
-#| msgid "Phase2 algorithms:"
+#, kde-format
 msgid "Phase2 Lifetime:"
-msgstr "Αλγόριθμοι Phase2:"
+msgstr "Διάρκεια φάσης 2:"
 
 #. i18n: ectx: property (toolTip), widget (QTimeEdit, salifetime)
 #: l2tpipsec.ui:295
@@ -344,6 +353,9 @@ msgid ""
 "of encryption/authentication keys for user packets) should last, from "
 "successful negotiation to expiry.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Πόσο διαρκεί μια συγκεκριμένη συνεδρία σύνδεσης (ένα "
+"σύνολο κλειδιών κρυπτογράφησης και ταυτοποίησης για τα πακέτα χρηστών) από "
+"την επιτυχή διαπραγμάτευση έως τη λήξη.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, remoteId)
 #: l2tpipsec.ui:305
@@ -355,6 +367,11 @@ msgid ""
 "strongSwan or Libreswan documentation for leftid/rightid syntax and identity "
 "parsing.</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Προαιρετικό. Ο τρόπος αναγνώρισης του διακομιστή IPsec "
+"για την ταυτοποίηση. Αναφέρεται επίσης ως Peer ID ή Gateway ID και ως "
+"rightid στα strongSwan, Libreswan, Openswan και FreeS/WAN. Συμβουλευτείτε "
+"την τεκμηρίωση του strongSwan ή του Libreswan για τη σύνταξη leftid/rightid "
+"και την ανάλυση αναγνωριστικών.</p></body></html>"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:312
@@ -364,34 +381,38 @@ msgid ""
 "encrypted. This saves some bandwidth, but uses more processing power.</p></"
 "body></html>"
 msgstr ""
+"<html><head/><body><p>Το IPComp συμπιέζει τα ακατέργαστα πακέτα IP πριν "
+"κρυπτογραφηθούν. Έτσι εξοικονομείται εύρος ζώνης, αλλά χρειάζεται "
+"περισσότερη επεξεργαστική ισχύς.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIPComp)
 #: l2tpipsec.ui:315
-#, fuzzy, kde-format
-#| msgid "Compression"
+#, kde-format
 msgid "Use IP compression"
-msgstr "Συμπίεση"
+msgstr "Χρήση συμπίεσης IP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbIKEv2)
 #: l2tpipsec.ui:322
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "Χρήση ανταλλαγής κλειδιών IKEv2"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:329
-#, fuzzy, kde-format
-#| msgid "Password passed to PPPD when prompted for it."
+#, kde-format
 msgid ""
 "<html><head/><body><p>Disable perfect forward secrecy. Do this only if the "
 "server doesn’t support PFS.</p></body></html>"
-msgstr "Ο κωδικός χρήστη να περνά στο PPPD όταν ζητείται."
+msgstr ""
+"<html><head/><body><p>Απενεργοποιεί την τέλεια μυστικότητα προώθησης (PFS). "
+"Χρησιμοποιήστε το μόνο αν ο διακομιστής δεν υποστηρίζει PFS.</p></body></"
+"html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbPFS)
 #: l2tpipsec.ui:332
 #, kde-format
 msgid "Disable PFS"
-msgstr ""
+msgstr "Απενεργοποίηση PFS"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:339
@@ -401,6 +422,9 @@ msgid ""
 "encapsulation even if no NAT situation is detected might help in such cases."
 "</p></body></html>"
 msgstr ""
+"<html><head/><body><p>Ορισμένα τείχη προστασίας αποκλείουν την κίνηση ESP. "
+"Σε αυτές τις περιπτώσεις μπορεί να βοηθήσει η επιβολή ενθυλάκωσης UDP, ακόμη "
+"και όταν δεν ανιχνεύεται NAT.</p></body></html>"
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbForceEncaps)
 #: l2tpipsec.ui:342
@@ -412,7 +436,7 @@ msgstr "Εξαναγκασμός UDP επικάλυψης"
 #: l2tpipsec.ui:352
 #, kde-format
 msgid "Remote ID:"
-msgstr ""
+msgstr "Αναγνωριστικό απομακρυσμένου κόμβου:"
 
 #: l2tpipsecwidget.cpp:46
 #, kde-format
@@ -575,13 +599,13 @@ msgstr "Άλλες ρυθμίσεις"
 #: l2tpppp.ui:224 l2tpppp.ui:234
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "Δοκιμή διαπραγμάτευσης PPP πολλαπλών ζεύξεων σε μία σύνδεση."
 
 #. i18n: ectx: property (text), widget (QCheckBox, cbMRRU)
 #: l2tpppp.ui:227
 #, kde-format
 msgid "Multilink PPP MRRU: "
-msgstr ""
+msgstr "MRRU πολλαπλών ζεύξεων PPP: "
 
 #. i18n: ectx: property (text), widget (QLabel, lbMRU)
 #: l2tpppp.ui:250

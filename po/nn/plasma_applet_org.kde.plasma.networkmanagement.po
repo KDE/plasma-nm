@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: KDE 4\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 18:31+0000\n"
+"POT-Creation-Date: 2026-11-24 08:19+0000\n"
 "PO-Revision-Date: 2026-11-15 10:23+0100\n"
 "Last-Translator: Karl Ove Hufthammer <karl@huftis.org>\n"
 "Language-Team: Norwegian Nynorsk <l10n-no@nuug.no>\n"
@@ -164,7 +164,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Midtklikk for å slå på flymodus"
 
-#: main.qml:78 Toolbar.qml:74
+#: main.qml:78 Toolbar.qml:83
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Slå på Wi-Fi"
@@ -206,35 +206,35 @@ msgstr ""
 msgid "Wi-Fi password:"
 msgstr "Wi-Fi-passord:"
 
-#: Toolbar.qml:124
+#: Toolbar.qml:137
 #, kde-format
 msgid "Enable mobile data"
 msgstr "Slå på mobildata"
 
-#: Toolbar.qml:147
+#: Toolbar.qml:160
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Slå av flymodus<nl/><nl/>Dette vil slå på Wi-Fi og Bluetooth"
 
-#: Toolbar.qml:148
+#: Toolbar.qml:161
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Slå på flymodus<nl/><nl/>Dette vil slå av Wi-Fi og Bluetooth"
 
-#: Toolbar.qml:176
+#: Toolbar.qml:189
 #, kde-format
 msgid "Hotspot"
 msgstr "Trådlaussone"
 
-#: Toolbar.qml:193
+#: Toolbar.qml:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "Kan ikkje oppretta trådlaussone, då Wi-Fi er slått av."
 
-#: Toolbar.qml:195
+#: Toolbar.qml:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -242,25 +242,25 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: Toolbar.qml:197
+#: Toolbar.qml:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Slå av trådlaussone"
 
-#: Toolbar.qml:199
+#: Toolbar.qml:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Opprett trådlaussone"
 
-#: Toolbar.qml:227
+#: Toolbar.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "Skann QR-kode for Wi-Fi"
 
-#: Toolbar.qml:233
+#: Toolbar.qml:246
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
@@ -268,7 +268,7 @@ msgstr "Skann QR-kode for å kopla til eit Wi-Fi-nettverk"
 
 # Programmet heiter Qrca, ikkje QRCA Barcode Scanner:
 # https://apps.kde.org/nn/qrca/
-#: Toolbar.qml:235
+#: Toolbar.qml:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -278,7 +278,7 @@ msgstr ""
 "Installer strekkode­skannaren Qrca for å skanna QR-kode for tilkopling til Wi-"
 "Fi-nettverket"
 
-#: Toolbar.qml:254
+#: Toolbar.qml:267
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Set opp nettverkstilkoplingar …"

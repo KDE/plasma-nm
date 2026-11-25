@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: kcm_knetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 18:31+0000\n"
+"POT-Creation-Date: 2026-11-24 08:19+0000\n"
 "PO-Revision-Date: 2023-08-15 02:00+0300\n"
 "Last-Translator: George Stefanakis <george.stefanakis@gmail.com>\n"
 "Language-Team: Greek <kde-i18n-doc@kde.org>\n"
@@ -34,11 +34,10 @@ msgid "Disconnect"
 msgstr "Αποσύνδεση"
 
 #: ConnectionItem.qml:92
-#, fuzzy, kde-format
-#| msgid "Shared"
+#, kde-format
 msgctxt "Share Wi-Fi network's password or QR code"
 msgid "Share"
-msgstr "Κοινόχρηστο"
+msgstr "Κοινή χρήση"
 
 #: ConnectionItem.qml:98
 #, kde-format
@@ -49,7 +48,7 @@ msgstr "Διαμόρφωση…"
 #, kde-format
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget…"
-msgstr ""
+msgstr "Αφαίρεση δικτύου…"
 
 #: ConnectionItem.qml:144
 #, kde-format
@@ -72,11 +71,10 @@ msgstr ""
 "ταχύτητα αποστολής είναι %2 kibibytes το δευτερόλεπτο"
 
 #: ConnectionItem.qml:317
-#, fuzzy, kde-format
-#| msgid "Connected, ⬇ %1/s, ⬆ %2/s"
+#, kde-format
 msgctxt "Download and upload rates in some unit per second"
 msgid "↓ %1/s, ↑ %2/s"
-msgstr "Συνδεδεμένο, ⬇ %1/δ, ⬆ %2/δ"
+msgstr "↓ %1/s, ↑ %2/s"
 
 #: ConnectionListPage.qml:33
 #, kde-format
@@ -95,28 +93,24 @@ msgid "Airplane mode is enabled"
 msgstr "Η λειτουργία πτήσης είναι ενεργοποιημένη"
 
 #: ConnectionListPage.qml:133
-#, fuzzy, kde-format
-#| msgid "Wireless and mobile networks are deactivated"
+#, kde-format
 msgid "Wi-Fi and mobile data are deactivated"
-msgstr "Ασύρματα και κινητά δίκτυα είναι απενεργοποιημένα"
+msgstr "Το Wi-Fi και τα δεδομένα κινητής είναι απενεργοποιημένα"
 
 #: ConnectionListPage.qml:135
-#, fuzzy, kde-format
-#| msgid "Wireless is deactivated"
+#, kde-format
 msgid "Wi-Fi is deactivated"
-msgstr "Το ασύρματο είναι απενεργοποιημένο"
+msgstr "Το Wi-Fi είναι απενεργοποιημένο"
 
 #: ConnectionListPage.qml:138
-#, fuzzy, kde-format
-#| msgid "Rescan wireless networks"
+#, kde-format
 msgid "Looking for Wi-Fi networks"
-msgstr "Επανασάρωση ασυρμάτων δικτύων"
+msgstr "Αναζήτηση δικτύων Wi-Fi"
 
 #: ConnectionListPage.qml:141
-#, fuzzy, kde-format
-#| msgid "Mobile network is deactivated"
+#, kde-format
 msgid "Mobile data is deactivated"
-msgstr "Τα κινητά δίκτυα είναι απενεργοποιημένα"
+msgstr "Τα δεδομένα κινητής είναι απενεργοποιημένα"
 
 #: ConnectionListPage.qml:144
 #, kde-format
@@ -129,25 +123,25 @@ msgid "No available connections"
 msgstr "Μη διαθέσιμες συνδέσεις"
 
 #: ConnectionListPage.qml:156
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn off airplane mode to search for networks"
 msgstr "Απενεργοποιήστε τη λειτουργία πτήσης για αναζήτηση δικτύων"
 
 #: ConnectionListPage.qml:160
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi or mobile data to search for networks"
 msgstr "Ενεργοποιήστε το Wi-Fi ή τα δεδομένα κινητής για αναζήτηση δικτύων"
 
 #: ConnectionListPage.qml:162
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on Wi-Fi to search for networks"
 msgstr "Ενεργοποιήστε το Wi-Fi για αναζήτηση δικτύων"
 
 #: ConnectionListPage.qml:165
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@info:placeholder"
 msgid "Turn on mobile data to search for networks"
 msgstr "Ενεργοποιήστε τα δεδομένα κινητής για αναζήτηση δικτύων"
@@ -174,16 +168,15 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Κάντε μεσαίο κλικ για την ενεργοποίηση της αεροπορικής λειτουργίας"
 
-#: main.qml:78 Toolbar.qml:74
+#: main.qml:78 Toolbar.qml:83
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Ενεργοποίηση Wi-Fi"
 
 #: main.qml:89
-#, fuzzy, kde-format
-#| msgid "Enable Mobile Network"
+#, kde-format
 msgid "Enable Mobile Data"
-msgstr "Ενεργοποίηση Κινητών Δικτύων"
+msgstr "Ενεργοποίηση δεδομένων κινητής"
 
 #: main.qml:101
 #, kde-format
@@ -214,18 +207,16 @@ msgstr ""
 "\"%1\"."
 
 #: ShareNetworkQrCodePage.qml:108
-#, fuzzy, kde-format
-#| msgid "Key password:"
+#, kde-format
 msgid "Wi-Fi password:"
-msgstr "Κλειδί κωδικού πρόσβασης:"
+msgstr "Κωδικός πρόσβασης Wi-Fi:"
 
-#: Toolbar.qml:124
-#, fuzzy, kde-format
-#| msgid "Enable mobile network"
+#: Toolbar.qml:137
+#, kde-format
 msgid "Enable mobile data"
-msgstr "Ενεργοποίηση κινητού δικτύου"
+msgstr "Ενεργοποίηση δεδομένων κινητής"
 
-#: Toolbar.qml:147
+#: Toolbar.qml:160
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
@@ -233,7 +224,7 @@ msgstr ""
 "Απενεργοποίηση λειτουργίας Πτήσης<nl/><nl/>Αυτό θα ενεργοποιήσει το Wi-Fi "
 "και Bluetooth"
 
-#: Toolbar.qml:148
+#: Toolbar.qml:161
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
@@ -241,21 +232,21 @@ msgstr ""
 "Ενεργοποίηση λειτουργίας πτήσης<nl/><nl/>Αυτό θα απενεργοποίηση το Wi-Fi και "
 "Bluetooth"
 
-#: Toolbar.qml:176
+#: Toolbar.qml:189
 #, kde-format
 msgid "Hotspot"
 msgstr "Hotspot"
 
-#: Toolbar.qml:193
-#, fuzzy, kde-format
+#: Toolbar.qml:206
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 "Δεν είναι δυνατή η δημιουργία σημείου πρόσβασης, γιατί το Wi-Fi είναι "
 "απενεργοποιημένο."
 
-#: Toolbar.qml:195
-#, fuzzy, kde-format
+#: Toolbar.qml:208
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Cannot create a hotspot because all wireless radios are in use. Disconnect "
@@ -265,38 +256,32 @@ msgstr ""
 "προσαρμογείς χρησιμοποιούνται. Αποσυνδεθείτε από το τρέχον δίκτυο Wi-Fi ή "
 "συνδέστε άλλον ασύρματο προσαρμογέα."
 
-#: Toolbar.qml:197
-#, fuzzy, kde-format
-#| msgid "Disable Hotspot"
+#: Toolbar.qml:210
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
-msgstr "Απενεργοποίηση Hotspot"
+msgstr "Απενεργοποίηση σημείου πρόσβασης"
 
-#: Toolbar.qml:199
-#, fuzzy, kde-format
-#| msgid "Create Hotspot"
+#: Toolbar.qml:212
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
-msgstr "Δημιουργία Hotspot"
+msgstr "Δημιουργία σημείου πρόσβασης"
 
-#: Toolbar.qml:227
-#, fuzzy, kde-format
+#: Toolbar.qml:240
+#, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "Σάρωση κωδικού QR Wi-Fi"
 
-#: Toolbar.qml:233
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#: Toolbar.qml:246
+#, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Σαρώστε κωδικό QR για σύνδεση σε δίκτυο Wi-Fi"
 
-#: Toolbar.qml:235
-#, fuzzy, kde-format
-#| msgid ""
-#| "Scan this QR code with another device to connect to the \"%1\" network."
+#: Toolbar.qml:248
+#, kde-format
 msgctxt "@info:tooltip"
 msgid ""
 "Install QRCA Barcode Scanner to scan for a QR Code that connects to a Wi-Fi "
@@ -305,7 +290,7 @@ msgstr ""
 "Εγκαταστήστε το QRCA Barcode Scanner για να σαρώσετε κωδικό QR σύνδεσης σε "
 "δίκτυο Wi-Fi"
 
-#: Toolbar.qml:254
+#: Toolbar.qml:267
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Διαμόρφωση συνδέσεων δικτύου..."

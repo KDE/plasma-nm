@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 18:31+0000\n"
+"POT-Creation-Date: 2026-11-24 08:19+0000\n"
 "PO-Revision-Date: 2026-11-19 21:20+0100\n"
 "Last-Translator: Mincho Kondarev <mkondarev@yahoo.de>\n"
 "Language-Team: Bulgarian <kde-i18n-doc@kde.org>\n"
@@ -164,7 +164,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Среден бутон на мишката за включване на самолетен режим"
 
-#: main.qml:78 Toolbar.qml:74
+#: main.qml:78 Toolbar.qml:83
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Активиране на  Wi-Fi"
@@ -206,12 +206,12 @@ msgstr ""
 msgid "Wi-Fi password:"
 msgstr "Парола на Wi-Fi:"
 
-#: Toolbar.qml:124
+#: Toolbar.qml:137
 #, kde-format
 msgid "Enable mobile data"
 msgstr "Активиране на мобилни данни"
 
-#: Toolbar.qml:147
+#: Toolbar.qml:160
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
@@ -219,7 +219,7 @@ msgstr ""
 "Деактивиране на самолетен режим <nl /><nl /> Това ще активира Wi-Fi и "
 "Bluetooth"
 
-#: Toolbar.qml:148
+#: Toolbar.qml:161
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
@@ -227,18 +227,18 @@ msgstr ""
 "Активиране на самолетен режим <nl /><nl /> Това ще деактивира Wi-Fi и "
 "Bluetooth"
 
-#: Toolbar.qml:176
+#: Toolbar.qml:189
 #, kde-format
 msgid "Hotspot"
 msgstr "Активна точка"
 
-#: Toolbar.qml:193
+#: Toolbar.qml:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "Не може да се създаде точка за достъп, защото Wi-Fi е деактивиран."
 
-#: Toolbar.qml:195
+#: Toolbar.qml:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -249,31 +249,31 @@ msgstr ""
 "радиостанции се използват. Изключете се от текущата Wi-Fi мрежа или свържете "
 "друго безжично радио."
 
-#: Toolbar.qml:197
+#: Toolbar.qml:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Деактивиране на точката за достъп"
 
-#: Toolbar.qml:199
+#: Toolbar.qml:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Създаване на точка за достъп"
 
-#: Toolbar.qml:227
+#: Toolbar.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "Сканиране на код за Wi-Fi"
 
-#: Toolbar.qml:233
+#: Toolbar.qml:246
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Сканирайте QR кода, за да се свържете с Wi-Fi мрежата"
 
-#: Toolbar.qml:235
+#: Toolbar.qml:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -283,7 +283,7 @@ msgstr ""
 "Инсталиране на QRCA Баркод скенер за сканиране за QR код, който се свързва с "
 "Wi-Fi мрежа"
 
-#: Toolbar.qml:254
+#: Toolbar.qml:267
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Конфигуриране на мрежови връзки…"

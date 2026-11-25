@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma_applet_org.kde.plasma.networkmanagement\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 18:31+0000\n"
+"POT-Creation-Date: 2026-11-24 08:19+0000\n"
 "PO-Revision-Date: 2026-11-13 09:15+0200\n"
 "Last-Translator: Yuri Chornoivan <yurchor@ukr.net>\n"
 "Language-Team: Ukrainian <trans-uk@lists.fedoraproject.org>\n"
@@ -166,7 +166,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Клацніть середньою кнопкою, щоб увімкнути режим польоту"
 
-#: main.qml:78 Toolbar.qml:74
+#: main.qml:78 Toolbar.qml:83
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Увімкнути Wi-Fi"
@@ -209,35 +209,35 @@ msgstr ""
 msgid "Wi-Fi password:"
 msgstr "Пароль до Wi-Fi:"
 
-#: Toolbar.qml:124
+#: Toolbar.qml:137
 #, kde-format
 msgid "Enable mobile data"
 msgstr "Увімкнути передавання мобільним"
 
-#: Toolbar.qml:147
+#: Toolbar.qml:160
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Вимкнути режим польоту<nl/><nl/>Цим буде увімкнено Wi-Fi і Bluetooth"
 
-#: Toolbar.qml:148
+#: Toolbar.qml:161
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Увімкнути режим польоту<nl/><nl/>Цим буде вимкнено Wi-Fi і Bluetooth"
 
-#: Toolbar.qml:176
+#: Toolbar.qml:189
 #, kde-format
 msgid "Hotspot"
 msgstr "Хот-спот"
 
-#: Toolbar.qml:193
+#: Toolbar.qml:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "Неможливо створити точку доступу, оскільки Wi-Fi вимкнено."
 
-#: Toolbar.qml:195
+#: Toolbar.qml:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -248,32 +248,32 @@ msgstr ""
 "радіопристрої. Від'єднайтеся від поточної мережі Wi-Fi або з'єднайте з "
 "комп'ютером ще один бездротовий радіопристрій."
 
-#: Toolbar.qml:197
+#: Toolbar.qml:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Вимкнути хот-спот"
 
-#: Toolbar.qml:199
+#: Toolbar.qml:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Створити хот-спот"
 
-#: Toolbar.qml:227
+#: Toolbar.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "Сканувати QR-код Wi-Fi"
 
-#: Toolbar.qml:233
+#: Toolbar.qml:246
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr ""
 "Виконайте сканування цього QR-коду, щоб встановити з'єднання з мережею Wi-Fi"
 
-#: Toolbar.qml:235
+#: Toolbar.qml:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -283,7 +283,7 @@ msgstr ""
 "Встановіть програму для сканування штрих-кодів QRCA для сканування QR-коду, "
 "за допомогою якого ви зможете встановити з'єднання з мережею Wi-Fi"
 
-#: Toolbar.qml:254
+#: Toolbar.qml:267
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Налаштувати з'єднання мережі…"

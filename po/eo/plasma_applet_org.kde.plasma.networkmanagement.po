@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 18:31+0000\n"
+"POT-Creation-Date: 2026-11-24 08:19+0000\n"
 "PO-Revision-Date: 2024-12-27 10:42+0100\n"
 "Last-Translator: Oliver Kellogg <olivermkellogg@gmail.com>\n"
 "Language-Team: Esperanto <kde-i18n-eo@kde.org>\n"
@@ -169,7 +169,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Mezklaku por enŝalti Aviadilan Reĝimon"
 
-#: main.qml:78 Toolbar.qml:74
+#: main.qml:78 Toolbar.qml:83
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Ebligi Wi-Fi"
@@ -211,36 +211,36 @@ msgstr "Skani ĉi tiun QR-kodon per alia aparato por konekti al la reto \"%1\"."
 msgid "Wi-Fi password:"
 msgstr ""
 
-#: Toolbar.qml:124
+#: Toolbar.qml:137
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable mobile data"
 msgstr "Ebligi poŝtelefonan reton"
 
-#: Toolbar.qml:147
+#: Toolbar.qml:160
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Malebligi aviadilreĝimon<nl/><nl/>Tiu ŝaltos Vifion kaj Bludenton"
 
-#: Toolbar.qml:148
+#: Toolbar.qml:161
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Ebligi aviadilreĝimon<nl/><nl/>Tiu malŝaltos Vifion kaj Bludenton"
 
-#: Toolbar.qml:176
+#: Toolbar.qml:189
 #, kde-format
 msgid "Hotspot"
 msgstr "Retkaptejo (hotspot)"
 
-#: Toolbar.qml:193
+#: Toolbar.qml:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: Toolbar.qml:195
+#: Toolbar.qml:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -248,27 +248,27 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: Toolbar.qml:197
+#: Toolbar.qml:210
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Malŝalti Hotspot"
 
-#: Toolbar.qml:199
+#: Toolbar.qml:212
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Krei Hotspot"
 
-#: Toolbar.qml:227
+#: Toolbar.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr ""
 
-#: Toolbar.qml:233
+#: Toolbar.qml:246
 #, fuzzy, kde-format
 #| msgid ""
 #| "Scan this QR code with another device to connect to the \"%1\" network."
@@ -276,7 +276,7 @@ msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Skani ĉi tiun QR-kodon per alia aparato por konekti al la reto \"%1\"."
 
-#: Toolbar.qml:235
+#: Toolbar.qml:248
 #, fuzzy, kde-format
 #| msgid ""
 #| "Scan this QR code with another device to connect to the \"%1\" network."
@@ -286,7 +286,7 @@ msgid ""
 "network"
 msgstr "Skani ĉi tiun QR-kodon per alia aparato por konekti al la reto \"%1\"."
 
-#: Toolbar.qml:254
+#: Toolbar.qml:267
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Agordi retajn konektojn…"

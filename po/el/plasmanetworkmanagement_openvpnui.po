@@ -21,12 +21,12 @@ msgstr ""
 #: openvpn.cpp:61 openvpn.cpp:106
 #, kde-format
 msgid "NetworkManager is missing support for OpenVPN"
-msgstr ""
+msgstr "Το NetworkManager δεν υποστηρίζει το OpenVPN"
 
 #: openvpn.cpp:99
 #, kde-format
 msgid "An unexpected error has occurred"
-msgstr ""
+msgstr "Παρουσιάστηκε απροσδόκητο σφάλμα"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
 #: openvpn.ui:19
@@ -289,11 +289,12 @@ msgid ""
 "TCP/UDP port number for peer. (Default value when there is no port for "
 "gateway)."
 msgstr ""
+"Αριθμός θύρας TCP/UDP του ομότιμου κόμβου. (Προεπιλογή όταν δεν έχει οριστεί "
+"θύρα στη δικτυακή πύλη.)"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomPort)
 #: openvpnadvanced.ui:39
-#, fuzzy, kde-format
-#| msgid "Custom gateway port:"
+#, kde-format
 msgid "Use custom gateway port:"
 msgstr "Προσαρμοσμένη θύρα πύλης:"
 
@@ -324,17 +325,15 @@ msgstr "Χρήση προσαρμοσμένου διαστήματος αναδ�
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCompression)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:102 openvpnadvanced.ui:115
-#, fuzzy, kde-format
-#| msgid "Use LZO compression"
+#, kde-format
 msgid "Use compression."
-msgstr "Χρήση συμπίεσης LZO"
+msgstr "Χρήση συμπίεσης."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseCompression)
 #: openvpnadvanced.ui:105
-#, fuzzy, kde-format
-#| msgid "Use LZO compression"
+#, kde-format
 msgid "Use compression"
-msgstr "Χρήση συμπίεσης LZO"
+msgstr "Χρήση συμπίεσης"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
@@ -347,25 +346,25 @@ msgstr "Όχι"
 #: openvpnadvanced.ui:124
 #, kde-format
 msgid "LZO"
-msgstr ""
+msgstr "LZO"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:129
 #, kde-format
 msgid "LZ4"
-msgstr ""
+msgstr "LZ4"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:134
 #, kde-format
 msgid "LZ4 v2"
-msgstr ""
+msgstr "LZ4 v2"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #: openvpnadvanced.ui:139
 #, kde-format
 msgid "Adaptive"
-msgstr ""
+msgstr "Προσαρμοζόμενη"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbUseCompression)
 #. i18n: ectx: property (placeholderText), widget (QLineEdit, leVirtualDeviceName)
@@ -376,10 +375,9 @@ msgstr "Αυτόματα"
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkUseAsymCompression)
 #: openvpnadvanced.ui:159
-#, fuzzy, kde-format
-#| msgid "Use fast LZO compression."
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "Χρήση γρήγορης συμπίεσης LZO."
+msgstr "Χρήση ασύμμετρης συμπίεσης"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseTCP)
 #: openvpnadvanced.ui:168
@@ -438,22 +436,19 @@ msgstr "Καθορισμός ονόματος εικονικής συσκευή�
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMtu)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMtu)
 #: openvpnadvanced.ui:247 openvpnadvanced.ui:260
-#, fuzzy, kde-format
-#| msgid ""
-#| "Take the TUN device MTU to be the specified value and derive the link MTU "
-#| "from it."
+#, kde-format
 msgid ""
 "Take the TUN device MTU to be specified value and derive the link MTU from "
 "it."
 msgstr ""
-"Το MTU της συσκευής TUN να έχει τη συγκεκριμένη τιμή και παραγωγή του "
-"συνδέσμου MTU από αυτό."
+"Ορίζει το MTU της συσκευής TUN στη δοσμένη τιμή και υπολογίζει με βάση αυτή "
+"το MTU της ζεύξης."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtu)
 #: openvpnadvanced.ui:250
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr ""
+msgstr "Προσαρμοσμένη μέγιστη μονάδα μετάδοσης (MTU) σήραγγας:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkCustomFragmentSize)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomFragmentSize)
@@ -466,10 +461,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkCustomFragmentSize)
 #: openvpnadvanced.ui:286
-#, fuzzy, kde-format
-#| msgid "Custom UDP fragment size:"
+#, kde-format
 msgid "Use custom UDP fragment size:"
-msgstr "Προσαρμοσμένο μέγεθος θραύσματος UDP:"
+msgstr "Προσαρμοσμένο μέγεθος τμήματος UDP:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMssRestrict)
 #: openvpnadvanced.ui:314
@@ -487,19 +481,19 @@ msgstr "Περιορισμός μέγιστου μεγέθους τμήματο�
 #: openvpnadvanced.ui:326
 #, kde-format
 msgid "Control Path MTU discovery behavior."
-msgstr ""
+msgstr "Έλεγχος της συμπεριφοράς ανίχνευσης MTU διαδρομής."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMtuDisc)
 #: openvpnadvanced.ui:329
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "Ορισμός ανίχνευσης MTU διαδρομής:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:345
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Ίσως"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMtuDisc)
 #: openvpnadvanced.ui:350
@@ -527,7 +521,7 @@ msgstr "Τυχαία σειρά απομακρυσμένων υπολογιστ�
 #: openvpnadvanced.ui:371
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "Προσθήκη τυχαίου προθέματος στο απομακρυσμένο όνομα DNS"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblConnectTimeout)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbConnectTimeout)
@@ -535,13 +529,14 @@ msgstr ""
 #, kde-format
 msgid "Time in seconds to wait for the initial connection before failing."
 msgstr ""
+"Χρόνος αναμονής για την αρχική σύνδεση, σε δευτερόλεπτα, πριν θεωρηθεί "
+"αποτυχημένη."
 
 #. i18n: ectx: property (text), widget (QLabel, lblConnectTimeout)
 #: openvpnadvanced.ui:383
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgid "Connect timeout:"
-msgstr "Τύπος σύνδεσης:"
+msgstr "Χρονικό όριο σύνδεσης:"
 
 #. i18n: ectx: property (specialValueText), widget (QSpinBox, sbConnectTimeout)
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
@@ -555,43 +550,45 @@ msgstr "Καμία"
 #: openvpnadvanced.ui:402
 #, kde-format
 msgid "s"
-msgstr ""
+msgstr "δ."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:420
 #, kde-format
 msgid "Allow pulling of peer DNS names (FQDN) sent by the server."
 msgstr ""
+"Να επιτρέπεται η λήψη πλήρων ονομάτων DNS (FQDN) του ομότιμου κόμβου που "
+"στέλνει ο διακομιστής."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAllowPullFqdn)
 #: openvpnadvanced.ui:423
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "Να επιτρέπεται η λήψη πλήρων ονομάτων DNS (FQDN) του ομότιμου κόμβου"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:430
 #, kde-format
 msgid "Push client information to the server for diagnostics."
-msgstr ""
+msgstr "Αποστολή πληροφοριών του πελάτη στον διακομιστή για διάγνωση."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPushPeerInfo)
 #: openvpnadvanced.ui:433
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "Αποστολή πληροφοριών ομότιμου κόμβου"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:440
 #, kde-format
 msgid "Build a tun link capable of forwarding IPv6 traffic."
-msgstr ""
+msgstr "Δημιουργία ζεύξης TUN που μπορεί να προωθεί κίνηση IPv6."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkIpv6TunLink)
 #: openvpnadvanced.ui:443
 #, kde-format
 msgid "IPv6 tun link"
-msgstr ""
+msgstr "Ζεύξη IPv6 TUN"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkPingInterval)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbPingInterval)
@@ -601,12 +598,14 @@ msgid ""
 "Ping remote over the TCP/UDP control channel if no packets have been sent "
 "for at least n seconds."
 msgstr ""
+"Αποστολή ping στο απομακρυσμένο άκρο μέσω του καναλιού ελέγχου TCP/UDP, αν "
+"δεν έχουν σταλεί πακέτα για τουλάχιστον n δευτερόλεπτα."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkPingInterval)
 #: openvpnadvanced.ui:455
 #, kde-format
 msgid "Specify ping interval:"
-msgstr ""
+msgstr "Ορισμός διαστήματος ping:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkSpecifyExitRestartPing)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cbSpecifyExitRestartPing)
@@ -617,24 +616,26 @@ msgid ""
 "Exit or restart after n seconds pass without reception of a ping or other "
 "packet from remote."
 msgstr ""
+"Έξοδος ή επανεκκίνηση αν περάσουν n δευτερόλεπτα χωρίς να ληφθεί ping ή άλλο "
+"πακέτο από το απομακρυσμένο άκρο."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkSpecifyExitRestartPing)
 #: openvpnadvanced.ui:488
 #, kde-format
 msgid "Specify exit or restart ping:"
-msgstr ""
+msgstr "Ορισμός ενέργειας εξόδου ή επανεκκίνησης για ping:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbSpecifyExitRestartPing)
 #: openvpnadvanced.ui:502
 #, kde-format
 msgid "ping-exit"
-msgstr ""
+msgstr "ping-exit"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbSpecifyExitRestartPing)
 #: openvpnadvanced.ui:507
 #, kde-format
 msgid "ping-restart"
-msgstr ""
+msgstr "ping-restart"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkAcceptAuthenticatedPackets)
 #: openvpnadvanced.ui:545
@@ -658,12 +659,27 @@ msgid ""
 "address,\n"
 "not only the address which was specified in the --remote option."
 msgstr ""
+"Επιτρέπει στον απομακρυσμένο κόμβο να αλλάξει διεύθυνση IP ή θύρα, για "
+"παράδειγμα λόγω\n"
+"DHCP (προεπιλογή όταν δεν χρησιμοποιείται --remote). Σε συνδυασμό με το --"
+"remote, το --float\n"
+"επιτρέπει στη συνεδρία OpenVPN να συνδεθεί αρχικά σε κόμβο γνωστής "
+"διεύθυνσης.\n"
+"Αν όμως φτάσουν πακέτα από νέα διεύθυνση και περάσουν όλους τους ελέγχους "
+"ταυτοποίησης,\n"
+"η νέα διεύθυνση αναλαμβάνει τη συνεδρία. Αυτό βοηθά κατά τη σύνδεση σε\n"
+"κόμβο με δυναμική διεύθυνση, όπως χρήστη μέσω κλήσης ή πελάτη DHCP.\n"
+"\n"
+"\n"
+"Το --float επιτρέπει στο OpenVPN να δέχεται πακέτα με ταυτοποίηση από κάθε "
+"διεύθυνση,\n"
+"πέρα από εκείνη που ορίστηκε με την επιλογή --remote."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkAcceptAuthenticatedPackets)
 #: openvpnadvanced.ui:548
 #, kde-format
 msgid "Accept authenticated packets from any address (Float)"
-msgstr ""
+msgstr "Αποδοχή πακέτων με ταυτοποίηση από οποιαδήποτε διεύθυνση (Float)"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkMaxRoutes)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbMaxRoutes)
@@ -671,12 +687,13 @@ msgstr ""
 #, kde-format
 msgid "Specify the maximum number of routes the server is allowed to specify."
 msgstr ""
+"Ορισμός του μέγιστου αριθμού διαδρομών που μπορεί να δηλώσει ο διακομιστής."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkMaxRoutes)
 #: openvpnadvanced.ui:560
 #, kde-format
 msgid "Specify max routes:"
-msgstr ""
+msgstr "Ορισμός μέγιστου αριθμού διαδρομών:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, securityTab)
 #: openvpnadvanced.ui:599
@@ -716,37 +733,42 @@ msgstr "Ανάκτηση διαθέσιμων αλγορίθμων κρυπτο�
 #, kde-format
 msgid "Data channel cipher list to negotiate (OpenVPN 2.5+)."
 msgstr ""
+"Λίστα αλγορίθμων κρυπτογράφησης για διαπραγμάτευση στο κανάλι δεδομένων "
+"(OpenVPN 2.5+)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphers)
 #: openvpnadvanced.ui:653
-#, fuzzy, kde-format
-#| msgid "Cipher:"
+#, kde-format
 msgid "Data Ciphers:"
-msgstr "Κρυπτογράφηση:"
+msgstr "Αλγόριθμοι κρυπτογράφησης δεδομένων:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:682
 #, kde-format
 msgid "Fallback data cipher if negotiation fails (OpenVPN 2.5+)."
 msgstr ""
+"Εφεδρικός αλγόριθμος κρυπτογράφησης δεδομένων αν αποτύχει η διαπραγμάτευση "
+"(OpenVPN 2.5+)."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDataCiphersFallback)
 #: openvpnadvanced.ui:685
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "Εφεδρικός αλγόριθμος κρυπτογράφησης δεδομένων:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:712
 #, kde-format
 msgid "Disable OpenVPN NCP (cipher negotiation). Requires OpenVPN 2.4+."
 msgstr ""
+"Απενεργοποίηση του NCP (διαπραγμάτευση αλγορίθμου κρυπτογράφησης). Απαιτεί "
+"OpenVPN 2.4+."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkDisableCipherNegotiation)
 #: openvpnadvanced.ui:715
 #, kde-format
 msgid "Disable cipher negotiation"
-msgstr ""
+msgstr "Απενεργοποίηση διαπραγμάτευσης αλγορίθμου κρυπτογράφησης"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkUseCustomCipherKey)
 #. i18n: ectx: property (toolTip), widget (QSpinBox, sbCustomCipherKey)
@@ -863,43 +885,49 @@ msgid ""
 "fields),\n"
 "or just the Common Name (CN field).\n"
 msgstr ""
+"Επαλήθευση της ταυτότητας του πιστοποιητικού διακομιστή.\n"
+"\n"
+"Όταν ενεργοποιηθεί, η σύνδεση επιτυγχάνει μόνο αν το πιστοποιητικό του "
+"διακομιστή\n"
+"έχει τις αναμενόμενες ιδιότητες.\n"
+"Ο έλεγχος μπορεί να αφορά όλο το θέμα του πιστοποιητικού (όλα τα πεδία)\n"
+"ή μόνο το κοινό όνομα (πεδίο CN).\n"
 
 #. i18n: ectx: property (text), widget (QLabel, lblCertCheck)
 #: openvpnadvanced.ui:872
-#, fuzzy, kde-format
-#| msgid "User Certificate:"
+#, kde-format
 msgid "Server Certificate Check:"
-msgstr "Πιστοποιητικό χρήστη:"
+msgstr "Έλεγχος πιστοποιητικού διακομιστή:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:889
 #, kde-format
 msgid "Don't verify certificate identification"
-msgstr ""
+msgstr "Χωρίς επαλήθευση της ταυτότητας του πιστοποιητικού"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:894
 #, kde-format
 msgid "Verify whole subject exactly"
-msgstr ""
+msgstr "Ακριβής επαλήθευση πλήρους θέματος"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:899
 #, kde-format
 msgid "Verify name exactly"
-msgstr ""
+msgstr "Ακριβής επαλήθευση ονόματος"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:904
 #, kde-format
 msgid "Verify name by prefix"
-msgstr ""
+msgstr "Επαλήθευση προθέματος ονόματος"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cbCertCheck)
 #: openvpnadvanced.ui:909
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
-msgstr ""
+msgstr "Μερική επαλήθευση θέματος (παλαιά λειτουργία, δεν συνιστάται)"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lbSubjectMatch)
 #. i18n: ectx: property (toolTip), widget (QLineEdit, subjectMatch)
@@ -908,6 +936,8 @@ msgstr ""
 msgid ""
 "Subject or Common Name to verify server certificate information against."
 msgstr ""
+"Το θέμα ή το κοινό όνομα που θα χρησιμοποιηθεί για την επαλήθευση των "
+"στοιχείων του πιστοποιητικού του διακομιστή."
 
 #. i18n: ectx: property (text), widget (QLabel, lbSubjectMatch)
 #: openvpnadvanced.ui:927
@@ -970,33 +1000,27 @@ msgstr "Πελάτης"
 #. i18n: ectx: property (toolTip), widget (QLabel, lblNsCertType)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cmbNsCertType)
 #: openvpnadvanced.ui:1005 openvpnadvanced.ui:1020 openvpnadvanced.ui:1033
-#, fuzzy, kde-format
-#| msgid ""
-#| "Require that peer certificate was signed with an explicit key usage and "
-#| "extended\n"
-#| "key usage based on RFC3280 TLS rules."
+#, kde-format
 msgid ""
 "Require that peer certificate was signed with an explicit nsCertType "
 "designation."
 msgstr ""
-"Απαίτηση το πιστοποιητικό κόμβου να έχει υπογραφεί με σαφή χρήση κλειδιού "
-"και εκτεταμένη\n"
-"χρήση κλειδιού βασισμένη σε κανόνες RFC3280 TLS."
+"Απαιτεί το πιστοποιητικό του ομότιμου κόμβου να έχει υπογραφεί με ρητή "
+"δήλωση του nsCertType."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkNsCertType)
 #: openvpnadvanced.ui:1008
-#, fuzzy, kde-format
-#| msgid "Verify peer (server) certificate usage signature"
+#, kde-format
 msgid "Verify peer (server) certificate nsCertType designation"
 msgstr ""
-"Επαλήθευση υπογραφής χρήσης του πιστοποιητικού του κόμβου (εξυπηρετητή)"
+"Επαλήθευση του πεδίου nsCertType στο πιστοποιητικό του ομότιμου κόμβου "
+"(διακομιστή)"
 
 #. i18n: ectx: property (text), widget (QLabel, lblNsCertType)
 #: openvpnadvanced.ui:1023
-#, fuzzy, kde-format
-#| msgid "Remote peer certificate TLS type:"
+#, kde-format
 msgid "Remote peer certificate nsCert designation:"
-msgstr "Τύπος TLS πιστοποιητικού απομακρυσμένου κόμβου:"
+msgstr "Τύπος nsCert του πιστοποιητικού απομακρυσμένου κόμβου:"
 
 #. i18n: ectx: property (toolTip), widget (QGroupBox, useExtraTlsAuth)
 #: openvpnadvanced.ui:1052
@@ -1008,25 +1032,25 @@ msgstr "Προσθήκη επιπλέον επιπέδου για ταυτοπο
 #: openvpnadvanced.ui:1067
 #, kde-format
 msgid "Mode:"
-msgstr ""
+msgstr "Λειτουργία:"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1080
 #, kde-format
 msgid "TLS-Auth"
-msgstr ""
+msgstr "TLS-Auth"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1085
 #, kde-format
 msgid "TLS-Crypt"
-msgstr ""
+msgstr "TLS-Crypt"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cboTLSMode)
 #: openvpnadvanced.ui:1090
 #, kde-format
 msgid "TLS-Crypt v2"
-msgstr ""
+msgstr "TLS-Crypt v2"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel4_3)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlTlsAuthKey)
@@ -1053,13 +1077,14 @@ msgstr "Αρχείο κλειδιού:"
 msgid ""
 "Additional local certificate file to help verify the peer certificate chain."
 msgstr ""
+"Πρόσθετο τοπικό αρχείο πιστοποιητικού που βοηθά στην επαλήθευση της αλυσίδας "
+"πιστοποιητικών του ομότιμου κόμβου."
 
 #. i18n: ectx: property (text), widget (QLabel, label_extraCerts)
 #: openvpnadvanced.ui:1129
-#, fuzzy, kde-format
-#| msgid "Copy certificates"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "Αντιγραφή πιστοποιητικών"
+msgstr "Αρχείο πρόσθετων πιστοποιητικών:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, textLabel1)
 #. i18n: ectx: property (toolTip), widget (QComboBox, cboDirection)
@@ -1085,49 +1110,49 @@ msgstr "Πελάτης (1)"
 #: openvpnadvanced.ui:1190
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Optional."
-msgstr ""
+msgstr "Ελάχιστη έκδοση TLS (π.χ. 1.2). Προαιρετικό."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMin)
 #: openvpnadvanced.ui:1193
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "Ελάχιστη έκδοση TLS:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMin)
 #: openvpnadvanced.ui:1205
 #, kde-format
 msgid "Minimum TLS version (e.g. 1.2). Leave empty for default."
-msgstr ""
+msgstr "Ελάχιστη έκδοση TLS (π.χ. 1.2). Αφήστε κενό για την προεπιλογή."
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1215
 #, kde-format
 msgid "Allow negotiating higher TLS version than the minimum."
-msgstr ""
+msgstr "Να επιτρέπεται η διαπραγμάτευση έκδοσης TLS νεότερης από την ελάχιστη."
 
 #. i18n: ectx: property (text), widget (QCheckBox, chkTlsVersionMinOrHighest)
 #: openvpnadvanced.ui:1218
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "ή η υψηλότερη"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1227
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Optional."
-msgstr ""
+msgstr "Μέγιστη έκδοση TLS (π.χ. 1.3). Προαιρετικό."
 
 #. i18n: ectx: property (text), widget (QLabel, lblTlsVersionMax)
 #: openvpnadvanced.ui:1230
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "Μέγιστη έκδοση TLS:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, leTlsVersionMax)
 #: openvpnadvanced.ui:1240
 #, kde-format
 msgid "Maximum TLS version (e.g. 1.3). Leave empty for default."
-msgstr ""
+msgstr "Μέγιστη έκδοση TLS (π.χ. 1.3). Αφήστε κενό για την προεπιλογή."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyFile)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyFile)
@@ -1137,12 +1162,14 @@ msgid ""
 "Path to a local Certificate Revocation List (CRL) file to verify peer "
 "certificates."
 msgstr ""
+"Διαδρομή σε τοπικό αρχείο λίστας ανάκλησης πιστοποιητικών (CRL) για "
+"επαλήθευση των πιστοποιητικών του ομότιμου κόμβου."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyFile)
 #: openvpnadvanced.ui:1271
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "Αρχείο CRL για επαλήθευση:"
 
 #. i18n: ectx: property (toolTip), widget (QLabel, lblCrlVerifyDir)
 #. i18n: ectx: property (toolTip), widget (KUrlRequester, kurlCrlVerifyDir)
@@ -1151,12 +1178,14 @@ msgstr ""
 msgid ""
 "Path to a local directory containing Certificate Revocation List (CRL) files."
 msgstr ""
+"Διαδρομή στον τοπικό κατάλογο που περιέχει αρχεία λίστας ανάκλησης "
+"πιστοποιητικών (CRL)."
 
 #. i18n: ectx: property (text), widget (QLabel, lblCrlVerifyDir)
 #: openvpnadvanced.ui:1298
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "Κατάλογος CRL για επαλήθευση:"
 
 #. i18n: ectx: attribute (title), widget (QWidget, proxyTab)
 #: openvpnadvanced.ui:1321
@@ -1307,32 +1336,29 @@ msgid "Key Password:"
 msgstr "Κωδικός πρόσβασης κλειδιού:"
 
 #: openvpnauth.cpp:95
-#, fuzzy, kde-format
-#| msgid "TAP"
+#, kde-format
 msgid "OTP"
-msgstr "TAP"
+msgstr "OTP"
 
 #: openvpnauth.cpp:95
-#, fuzzy, kde-format
-#| msgid "HMAC Authentication:"
+#, kde-format
 msgid "authenticator"
-msgstr "Ταυτοποίηση ΗMAC:"
+msgstr "συσκευή ταυτοποίησης"
 
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "code"
-msgstr ""
+msgstr "κωδικός"
 
 #: openvpnauth.cpp:95
 #, kde-format
 msgid "token"
-msgstr ""
+msgstr "διακριτικό"
 
 #: openvpnauth.cpp:95
-#, fuzzy, kde-format
-#| msgid "Key password:"
+#, kde-format
 msgid "one-time password"
-msgstr "Κωδικός πρόσβασης κλειδιού:"
+msgstr "κωδικός μίας χρήσης"
 
 #~ msgid "Error saving file %1: %2"
 #~ msgstr "Σφάλμα κατά την αποθήκευση του αρχείου %1: %2"

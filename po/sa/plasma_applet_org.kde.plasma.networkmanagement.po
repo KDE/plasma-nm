@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 18:31+0000\n"
+"POT-Creation-Date: 2026-11-24 08:19+0000\n"
 "PO-Revision-Date: 2024-12-13 19:10+0530\n"
 "Last-Translator: Kali <EMAIL@ADDRESS>\n"
 "Language-Team: Sanskrit <kde-i18n-doc@kde.org>\n"
@@ -166,7 +166,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Airplane Mode इत्येतत् चालू कर्तुं मध्य-क्लिक् कुर्वन्तु"
 
-#: main.qml:78 Toolbar.qml:74
+#: main.qml:78 Toolbar.qml:83
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Wi-Fi सक्षमं कुर्वन्तु"
@@ -208,37 +208,37 @@ msgstr "\"%1\" संजालेन सह सम्बद्धं कर्�
 msgid "Wi-Fi password:"
 msgstr ""
 
-#: Toolbar.qml:124
+#: Toolbar.qml:137
 #, fuzzy, kde-format
 #| msgid "Enable mobile network"
 msgid "Enable mobile data"
 msgstr "चलजालं सक्षमं कुर्वन्तु"
 
-#: Toolbar.qml:147
+#: Toolbar.qml:160
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr ""
 "विमानविधानं निष्क्रियं कुर्वन्तु<nl/><nl/>एतेन Wi-Fi, Bluetooth च सक्षमाः भविष्यन्ति"
 
-#: Toolbar.qml:148
+#: Toolbar.qml:161
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "विमानविधानं सक्षमं कुर्वन्तु<nl/><nl/>एतेन Wi-Fi, Bluetooth च निष्क्रियं भविष्यति"
 
-#: Toolbar.qml:176
+#: Toolbar.qml:189
 #, kde-format
 msgid "Hotspot"
 msgstr "हॉटस्पॉट्"
 
-#: Toolbar.qml:193
+#: Toolbar.qml:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr ""
 
-#: Toolbar.qml:195
+#: Toolbar.qml:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -246,27 +246,27 @@ msgid ""
 "from the current Wi-Fi network or connect another wireless radio."
 msgstr ""
 
-#: Toolbar.qml:197
+#: Toolbar.qml:210
 #, fuzzy, kde-format
 #| msgid "Disable Hotspot"
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "हॉटस्पॉट् अक्षमम्"
 
-#: Toolbar.qml:199
+#: Toolbar.qml:212
 #, fuzzy, kde-format
 #| msgid "Create Hotspot"
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "हॉटस्पॉट् रचयन्तु"
 
-#: Toolbar.qml:227
+#: Toolbar.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr ""
 
-#: Toolbar.qml:233
+#: Toolbar.qml:246
 #, fuzzy, kde-format
 #| msgid ""
 #| "Scan this QR code with another device to connect to the \"%1\" network."
@@ -274,7 +274,7 @@ msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "\"%1\" संजालेन सह सम्बद्धं कर्तुं अन्येन उपकरणेन एतत् QR-सङ्केतं स्कैन् कुर्वन्तु ।"
 
-#: Toolbar.qml:235
+#: Toolbar.qml:248
 #, fuzzy, kde-format
 #| msgid ""
 #| "Scan this QR code with another device to connect to the \"%1\" network."
@@ -284,7 +284,7 @@ msgid ""
 "network"
 msgstr "\"%1\" संजालेन सह सम्बद्धं कर्तुं अन्येन उपकरणेन एतत् QR-सङ्केतं स्कैन् कुर्वन्तु ।"
 
-#: Toolbar.qml:254
+#: Toolbar.qml:267
 #, kde-format
 msgid "Configure network connections…"
 msgstr "संजालसंयोजनानि विन्यस्यताम्..."

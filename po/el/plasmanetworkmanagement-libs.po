@@ -21,7 +21,7 @@ msgstr ""
 #: cellular/cellularmodem.cpp:148
 #, kde-format
 msgid "Error resetting the modem: %1"
-msgstr ""
+msgstr "Σφάλμα κατά την επαναφορά του μόντεμ: %1"
 
 #: cellular/cellularmodem.cpp:405
 #, kde-format
@@ -29,55 +29,54 @@ msgid ""
 "Could not apply the roaming preference. Activating the access point with its "
 "existing setting."
 msgstr ""
+"Δεν ήταν δυνατή η εφαρμογή της επιλογής περιαγωγής. Το σημείο πρόσβασης θα "
+"ενεργοποιηθεί με την υπάρχουσα ρύθμιση."
 
 #: cellular/cellularmodem.cpp:412
-#, fuzzy, kde-format
-#| msgctxt "network interface disconnecting state label"
-#| msgid "Deactivating connection"
+#, kde-format
 msgid "Error activating connection: %1"
-msgstr "Απενεργοποίηση σύνδεσης"
+msgstr "Σφάλμα κατά την ενεργοποίηση της σύνδεσης: %1"
 
 #: cellular/cellularmodem.cpp:431
 #, kde-format
 msgid "Cannot change roaming because no access point is available."
 msgstr ""
+"Δεν είναι δυνατή η αλλαγή περιαγωγής επειδή δεν υπάρχει διαθέσιμο σημείο "
+"πρόσβασης."
 
 #: cellular/cellularmodem.cpp:438
 #, kde-format
 msgid "Error applying roaming preference to the selected access point."
 msgstr ""
+"Σφάλμα κατά την εφαρμογή της επιλογής περιαγωγής στο επιλεγμένο σημείο "
+"πρόσβασης."
 
 #: cellular/cellularmodem.cpp:482
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgid "Error adding connection: %1"
-msgstr "Αποτυχία προσθήκης σύνδεσης %1"
+msgstr "Σφάλμα κατά την προσθήκη της σύνδεσης: %1"
 
 #: cellular/cellularmodem.cpp:502
-#, fuzzy, kde-format
-#| msgctxt "network interface disconnecting state label"
-#| msgid "Deactivating connection"
+#, kde-format
 msgid "Error removing connection: %1"
-msgstr "Απενεργοποίηση σύνδεσης"
+msgstr "Σφάλμα κατά την αφαίρεση της σύνδεσης: %1"
 
 #: cellular/cellularmodem.cpp:539
 #, kde-format
 msgid "Error updating connection settings for %1: %2."
-msgstr ""
+msgstr "Σφάλμα κατά την ενημέρωση των ρυθμίσεων σύνδεσης για το %1: %2."
 
 #: cellular/cellularmodemdetails.cpp:111 cellular/cellularmodemdetails.cpp:213
 #: cellular/cellularmodemdetails.cpp:245 cellular/cellularmodemdetails.cpp:433
 #: cellular/cellularmodemdetails.cpp:465
-#, fuzzy, kde-format
-#| msgctxt "description of unknown network interface state"
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown"
 msgstr "Άγνωστη"
 
 #: cellular/cellularmodemdetails.cpp:114 cellular/cellularmodemdetails.cpp:468
 #, kde-format
 msgid "POTS"
-msgstr ""
+msgstr "POTS"
 
 #: cellular/cellularmodemdetails.cpp:117 editor/connectioneditorbase.cpp:284
 #, kde-format
@@ -85,132 +84,104 @@ msgid "GSM"
 msgstr "GSM"
 
 #: cellular/cellularmodemdetails.cpp:120
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "Compact GSM"
+#, kde-format
 msgid "GSM Compact"
-msgstr "Compact GSM"
+msgstr "GSM Compact"
 
 #: cellular/cellularmodemdetails.cpp:123
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "GPRS"
+#, kde-format
 msgid "GPRS"
 msgstr "GPRS"
 
 #: cellular/cellularmodemdetails.cpp:126
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "EDGE"
+#, kde-format
 msgid "EDGE"
 msgstr "EDGE"
 
 #: cellular/cellularmodemdetails.cpp:129
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "UMTS"
+#, kde-format
 msgid "UMTS"
 msgstr "UMTS"
 
 #: cellular/cellularmodemdetails.cpp:132
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSDPA"
+#, kde-format
 msgid "HSDPA"
 msgstr "HSDPA"
 
 #: cellular/cellularmodemdetails.cpp:135
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSUPA"
+#, kde-format
 msgid "HSUPA"
 msgstr "HSUPA"
 
 #: cellular/cellularmodemdetails.cpp:138
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSPA"
+#, kde-format
 msgid "HSPA"
 msgstr "HSPA"
 
 #: cellular/cellularmodemdetails.cpp:141
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "HSPA+"
+#, kde-format
 msgid "HSPA+"
 msgstr "HSPA+"
 
 #: cellular/cellularmodemdetails.cpp:144
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 1xRTT"
+#, kde-format
 msgid "CDMA2000 1xRTT"
 msgstr "CDMA2000 1xRTT"
 
 #: cellular/cellularmodemdetails.cpp:147
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 EVDO revision 0"
+#, kde-format
 msgid "CDMA2000 EVDO-0"
 msgstr "CDMA2000 EVDO αναθεώρηση 0"
 
 #: cellular/cellularmodemdetails.cpp:150
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 EVDO revision A"
+#, kde-format
 msgid "CDMA2000 EVDO-A"
 msgstr "CDMA2000 EVDO αναθεώρηση A"
 
 #: cellular/cellularmodemdetails.cpp:153
-#, fuzzy, kde-format
-#| msgctxt "Cellular access technology"
-#| msgid "CDMA2000 EVDO revision B"
+#, kde-format
 msgid "CDMA2000 EVDO-B"
 msgstr "CDMA2000 EVDO αναθεώρηση B"
 
 #: cellular/cellularmodemdetails.cpp:156
-#, fuzzy, kde-format
-#| msgctxt "Gsm modes (2G/3G/any)"
-#| msgid "LTE"
+#, kde-format
 msgid "LTE"
 msgstr "LTE"
 
 #: cellular/cellularmodemdetails.cpp:159
 #, kde-format
 msgid "5GNR"
-msgstr ""
+msgstr "5G NR"
 
 #: cellular/cellularmodemdetails.cpp:215
 #, kde-format
 msgid "Off"
-msgstr ""
+msgstr "Απενεργοποιημένο"
 
 #: cellular/cellularmodemdetails.cpp:217
 #, kde-format
 msgid "Low-power mode"
-msgstr ""
+msgstr "Λειτουργία χαμηλής ισχύος"
 
 #: cellular/cellularmodemdetails.cpp:219
 #, kde-format
 msgid "Full power mode"
-msgstr ""
+msgstr "Λειτουργία πλήρους ισχύος"
 
 #: cellular/cellularmodemdetails.cpp:243
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection failed"
-#| msgid "Failed"
+#, kde-format
 msgid "Failed"
 msgstr "Απέτυχε"
 
 #: cellular/cellularmodemdetails.cpp:247
 #, kde-format
 msgid "Initializing"
-msgstr ""
+msgstr "Αρχικοποίηση"
 
 #: cellular/cellularmodemdetails.cpp:249
 #, kde-format
 msgid "Locked"
-msgstr ""
+msgstr "Κλειδωμένο"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: cellular/cellularmodemdetails.cpp:251 editor/settings/ui/ipv6.ui:261
@@ -219,152 +190,144 @@ msgid "Disabled"
 msgstr "Ανενεργή"
 
 #: cellular/cellularmodemdetails.cpp:253
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Disabling"
-msgstr "Ανενεργή"
+msgstr "Απενεργοποιείται"
 
 #: cellular/cellularmodemdetails.cpp:255
 #, kde-format
 msgid "Enabling"
-msgstr ""
+msgstr "Ενεργοποιείται"
 
 #: cellular/cellularmodemdetails.cpp:257
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Enabled"
-msgstr "Ανενεργή"
+msgstr "Ενεργοποιημένο"
 
 #: cellular/cellularmodemdetails.cpp:259
-#, fuzzy, kde-format
-#| msgctxt "network interface doing dhcp request in most cases"
-#| msgid "Setting network address"
+#, kde-format
 msgid "Searching for network provider"
-msgstr "Ορισμός διεύθυνσης δικτύου"
+msgstr "Αναζήτηση παρόχου δικτύου"
 
 #: cellular/cellularmodemdetails.cpp:261
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Registered with network provider"
-msgstr "Περιορισμός στη συσκευή:"
+msgstr "Εγγράφηκε στο δίκτυο του παρόχου"
 
 #: cellular/cellularmodemdetails.cpp:263
-#, fuzzy, kde-format
-#| msgctxt "Network connections are being cleaned up"
-#| msgid "Disconnecting"
+#, kde-format
 msgid "Disconnecting"
 msgstr "Αποσυνδέεται"
 
 #: cellular/cellularmodemdetails.cpp:265
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is being established"
-#| msgid "Connecting"
+#, kde-format
 msgid "Connecting"
 msgstr "Συνδέεται"
 
 #: cellular/cellularmodemdetails.cpp:267
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgid "Connected"
 msgstr "Συνδέθηκε"
 
 #: cellular/cellularmodemdetails.cpp:276
 #, kde-format
 msgid "No error."
-msgstr ""
+msgstr "Κανένα σφάλμα."
 
 #: cellular/cellularmodemdetails.cpp:278
-#, fuzzy, kde-format
-#| msgctxt "Mobile Connection Wizard"
-#| msgid "Unknown Provider"
+#, kde-format
 msgid "Unknown error."
-msgstr "Άγνωστος πάροχος"
+msgstr "Άγνωστο σφάλμα."
 
 #: cellular/cellularmodemdetails.cpp:280
 #, kde-format
 msgid "SIM is required but missing."
-msgstr ""
+msgstr "Απαιτείται κάρτα SIM, αλλά δεν έχει τοποθετηθεί."
 
 #: cellular/cellularmodemdetails.cpp:282
 #, kde-format
 msgid "SIM is available but unusable."
-msgstr ""
+msgstr "Η κάρτα SIM είναι διαθέσιμη, αλλά δεν μπορεί να χρησιμοποιηθεί."
 
 #: cellular/cellularmodemdetails.cpp:284
 #, kde-format
 msgid "Unknown modem capabilities."
-msgstr ""
+msgstr "Άγνωστες δυνατότητες μόντεμ."
 
 #: cellular/cellularmodemdetails.cpp:286
 #, kde-format
 msgid "eSIM is not initialized."
-msgstr ""
+msgstr "Η eSIM δεν έχει αρχικοποιηθεί."
 
 #: cellular/cellularmodemdetails.cpp:312
 #, kde-format
 msgid "Not registered, not searching for new operator to register."
-msgstr ""
+msgstr "Δεν έχει γίνει εγγραφή και δεν γίνεται αναζήτηση άλλου παρόχου."
 
 #: cellular/cellularmodemdetails.cpp:314
 #, kde-format
 msgid "Registered on home network."
-msgstr ""
+msgstr "Έχει γίνει εγγραφή στο οικείο δίκτυο."
 
 #: cellular/cellularmodemdetails.cpp:316
 #, kde-format
 msgid "Not registered, searching for new operator to register with."
-msgstr ""
+msgstr "Δεν έχει γίνει εγγραφή και γίνεται αναζήτηση νέου παρόχου."
 
 #: cellular/cellularmodemdetails.cpp:318
 #, kde-format
 msgid "Registration denied."
-msgstr ""
+msgstr "Η εγγραφή απορρίφθηκε."
 
 #: cellular/cellularmodemdetails.cpp:320
 #, kde-format
 msgid "Unknown registration status."
-msgstr ""
+msgstr "Άγνωστη κατάσταση εγγραφής."
 
 #: cellular/cellularmodemdetails.cpp:322
 #, kde-format
 msgid "Registered on a roaming network."
-msgstr ""
+msgstr "Έχει γίνει εγγραφή σε δίκτυο περιαγωγής."
 
 #: cellular/cellularmodemdetails.cpp:324
 #, kde-format
 msgid "Registered for \"SMS only\", on home network."
-msgstr ""
+msgstr "Έχει γίνει εγγραφή για «μόνο SMS» στο οικείο δίκτυο."
 
 #: cellular/cellularmodemdetails.cpp:326
 #, kde-format
 msgid "Registered for \"SMS only\", roaming network."
-msgstr ""
+msgstr "Έχει γίνει εγγραφή για «μόνο SMS» σε δίκτυο περιαγωγής."
 
 #: cellular/cellularmodemdetails.cpp:328
 #, kde-format
 msgid "Emergency services only."
-msgstr ""
+msgstr "Μόνο υπηρεσίες έκτακτης ανάγκης."
 
 #: cellular/cellularmodemdetails.cpp:330
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", home network."
 msgstr ""
+"Έχει γίνει εγγραφή με επιλογή «χωρίς προτίμηση για CSFB» στο οικείο δίκτυο."
 
 #: cellular/cellularmodemdetails.cpp:332
 #, kde-format
 msgid "Registered for \"CSFB not preferred\", roaming network."
 msgstr ""
+"Έχει γίνει εγγραφή με επιλογή «χωρίς προτίμηση για CSFB» σε δίκτυο "
+"περιαγωγής."
 
 #: cellular/cellularmodemdetails.cpp:334
 #, kde-format
 msgid "Attached for access to Restricted Local Operator Services."
 msgstr ""
+"Συνδέθηκε για πρόσβαση στις περιορισμένες υπηρεσίες του τοπικού παρόχου "
+"(RLOS)."
 
 #: cellular/cellularmodemdetails.cpp:374
 #, kde-format
 msgid "Scanning networks failed: %1"
-msgstr ""
+msgstr "Απέτυχε η σάρωση για δίκτυα: %1"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: cellular/cellularmodemdetails.cpp:435
@@ -373,7 +336,7 @@ msgstr ""
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
 #, kde-format
 msgid "Yes"
-msgstr ""
+msgstr "Ναι"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: cellular/cellularmodemdetails.cpp:437
@@ -381,195 +344,154 @@ msgstr ""
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
-#, fuzzy, kde-format
-#| msgctxt "no security"
-#| msgid "None"
+#, kde-format
 msgid "No"
-msgstr "Καμία"
+msgstr "Όχι"
 
 #: cellular/cellularmodemdetails.cpp:439
 #, kde-format
 msgid "GuessYes"
-msgstr ""
+msgstr "Πιθανότατα ναι"
 
 #: cellular/cellularmodemdetails.cpp:441
 #, kde-format
 msgid "GuessNo"
-msgstr ""
+msgstr "Πιθανότατα όχι"
 
 #: cellular/cellularmodemdetails.cpp:474
-#, fuzzy, kde-format
-#| msgid "2"
+#, kde-format
 msgid "2G"
-msgstr "2"
+msgstr "2G"
 
 #: cellular/cellularmodemdetails.cpp:485
-#, fuzzy, kde-format
-#| msgid "3"
+#, kde-format
 msgid "3G"
-msgstr "3"
+msgstr "3G"
 
 #: cellular/cellularmodemdetails.cpp:490
-#, fuzzy, kde-format
-#| msgid "4"
+#, kde-format
 msgid "4G"
-msgstr "4"
+msgstr "4G"
 
 #: cellular/cellularmodemdetails.cpp:493
 #, kde-format
 msgid "5G"
-msgstr ""
+msgstr "5G"
 
 #: cellular/cellularmodemdetails.cpp:496
-#, fuzzy, kde-format
-#| msgctxt "Gsm modes (2G/3G/any)"
-#| msgid "Any"
+#, kde-format
 msgid "Any"
 msgstr "Οποιαδήποτε"
 
 #: cellular/cellularsim.cpp:83
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Lock reason unknown."
+#, kde-format
 msgid "Lock reason unknown."
 msgstr "Ο λόγος κλειδώματος είναι άγνωστος."
 
 #: cellular/cellularsim.cpp:85
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem is unlocked."
+#, kde-format
 msgid "Modem is unlocked."
 msgstr "Το μόντεμ είναι ξεκλείδωτο."
 
 #: cellular/cellularsim.cpp:87
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PIN code."
+#, kde-format
 msgid "SIM requires the PIN code."
 msgstr "Η κάρτα SIM απαιτεί τον κωδικό PIN."
 
 #: cellular/cellularsim.cpp:89
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PIN2 code."
+#, kde-format
 msgid "SIM requires the PIN2 code."
 msgstr "Η κάρτα SIM απαιτεί τον κωδικό PIN2."
 
 #: cellular/cellularsim.cpp:91
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PUK code."
+#, kde-format
 msgid "SIM requires the PUK code."
 msgstr "Η κάρτα SIM απαιτεί τον κωδικό PUK."
 
 #: cellular/cellularsim.cpp:93
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "SIM requires the PUK2 code."
+#, kde-format
 msgid "SIM requires the PUK2 code."
 msgstr "Η κάρτα SIM απαιτεί τον κωδικό PUK2."
 
 #: cellular/cellularsim.cpp:95
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the service provider PIN code."
+#, kde-format
 msgid "Modem requires the service provider PIN code."
 msgstr "Το μόντεμ απαιτεί τον κωδικό PIN του παρόχου υπηρεσίας."
 
 #: cellular/cellularsim.cpp:97
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the service provider PUK code."
+#, kde-format
 msgid "Modem requires the service provider PUK code."
 msgstr "Το μόντεμ απαιτεί τον κωδικό PUK του παρόχου υπηρεσίας."
 
 #: cellular/cellularsim.cpp:99
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network PIN code."
+#, kde-format
 msgid "Modem requires the network PIN code."
 msgstr "Το μόντεμ απαιτεί τον κωδικό PIN του δικτύου."
 
 #: cellular/cellularsim.cpp:101
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network PUK code."
+#, kde-format
 msgid "Modem requires the network PUK code."
 msgstr "Το μόντεμ απαιτεί τον δικτυακό κωδικό PUK."
 
 #: cellular/cellularsim.cpp:103
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the PIN code."
+#, kde-format
 msgid "Modem requires the PIN code."
 msgstr "Το μόντεμ απαιτεί τον κωδικό PIN."
 
 #: cellular/cellularsim.cpp:105
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the corporate PIN code."
+#, kde-format
 msgid "Modem requires the corporate PIN code."
 msgstr "Το μόντεμ απαιτεί τον εταιρικό κωδικό PIN."
 
 #: cellular/cellularsim.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the corporate PUK code."
+#, kde-format
 msgid "Modem requires the corporate PUK code."
 msgstr "Το μόντεμ απαιτεί τον εταιρικό κωδικό PUK."
 
 #: cellular/cellularsim.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the PH-FSIM PIN code."
+#, kde-format
 msgid "Modem requires the PH-FSIM PIN code."
 msgstr "Το μόντεμ απαιτεί τον PH-FSIM κωδικό PIN."
 
 #: cellular/cellularsim.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the PH-FSIM PUK code."
+#, kde-format
 msgid "Modem requires the PH-FSIM PUK code."
 msgstr "Το μόντεμ απαιτεί τον PH-FSIM κωδικό PUK."
 
 #: cellular/cellularsim.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network subset PIN code."
+#, kde-format
 msgid "Modem requires the network subset PIN code."
 msgstr "Το μόντεμ απαιτεί τον κωδικό PIN υποσυνόλου δικτύου."
 
 #: cellular/cellularsim.cpp:115
-#, fuzzy, kde-format
-#| msgctxt "possible SIM lock reason"
-#| msgid "Modem requires the network subset PUK code."
+#, kde-format
 msgid "Modem requires the network subset PUK code."
 msgstr "Το μόντεμ απαιτεί τον κωδικό PUK υποσυνόλου δικτύου."
 
 #: cellular/cellularsim.cpp:158
 #, kde-format
 msgid "(empty)"
-msgstr ""
+msgstr "(κενό)"
 
 #: cellular/cellularsim.cpp:172
 #, kde-format
 msgid "Error toggling SIM lock: %1"
-msgstr ""
+msgstr "Σφάλμα κατά την αλλαγή του κλειδώματος της SIM: %1"
 
 #: cellular/cellularsim.cpp:181
 #, kde-format
 msgid "Error changing the PIN: %1"
-msgstr ""
+msgstr "Σφάλμα κατά την αλλαγή του PIN: %1"
 
 #: cellular/cellularsim.cpp:194
 #, kde-format
 msgid "Error sending the PIN: %1"
-msgstr ""
+msgstr "Σφάλμα κατά την αποστολή του PIN: %1"
 
 #: cellular/cellularsim.cpp:207
 #, kde-format
 msgid "Error sending the PUK: %1"
-msgstr ""
+msgstr "Σφάλμα κατά την αποστολή του PUK: %1"
 
 #: editor/connectiondetails.cpp:91
 #, kde-format
@@ -601,14 +523,10 @@ msgid "Signal Strength"
 msgstr "Ισχύς σήματος"
 
 #: editor/connectiondetails.cpp:135
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "traffic, e.g. n KB/s\n"
-#| " m KB/s"
-#| msgid "%1 %2"
+#, kde-format
 msgctxt "Wi-Fi signal strength percentage indicator"
 msgid "%1%"
-msgstr "%1 %2"
+msgstr "%1%"
 
 #: editor/connectiondetails.cpp:140 editor/connectiondetails.cpp:150
 #, kde-format
@@ -623,14 +541,13 @@ msgstr "Ταχύτητα σύνδεσης"
 #: editor/connectiondetails.cpp:162 editor/connectiondetails.cpp:164
 #, kde-format
 msgid "Frequency"
-msgstr ""
+msgstr "Συχνότητα"
 
 #: editor/connectiondetails.cpp:162
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgctxt "Frequency (Channel)"
 msgid "%1 (Channel %2)"
-msgstr "Κανάλι:"
+msgstr "%1 (Κανάλι %2)"
 
 #: editor/connectiondetails.cpp:166
 #, kde-format
@@ -648,7 +565,7 @@ msgstr "Wi-Fi"
 #: editor/connectiondetails.cpp:186
 #, kde-format
 msgid "Operator"
-msgstr ""
+msgstr "Πάροχος"
 
 #: editor/connectiondetails.cpp:191
 #, kde-format
@@ -678,7 +595,7 @@ msgstr "Πρόσθετο VPN"
 #: editor/connectiondetails.cpp:230
 #, kde-format
 msgid "Banner"
-msgstr ""
+msgstr "Μήνυμα υποδοχής"
 
 #: editor/connectiondetails.cpp:234 editor/connectiondetails.cpp:241
 #: editor/uiutils.cpp:218 editorqml/qml/components/Vpn.qml:34
@@ -690,10 +607,9 @@ msgstr "VPN"
 #: editor/connectiondetails.cpp:240 editorqml/qml/components/WireGuard.qml:34
 #: models/creatableconnectionsmodel.cpp:254
 #: models/creatableconnectionsmodel.cpp:256 networkstatus.cpp:212
-#, fuzzy, kde-format
-#| msgid "Wired"
+#, kde-format
 msgid "WireGuard"
-msgstr "Ενσύρματο"
+msgstr "WireGuard"
 
 #: editor/connectiondetails.cpp:246
 #, kde-format
@@ -763,10 +679,9 @@ msgid "Team"
 msgstr "Team"
 
 #: editor/connectiondetails.cpp:316 editor/connectiondetails.cpp:320
-#, fuzzy, kde-format
-#| msgid "Service:"
+#, kde-format
 msgid "Device"
-msgstr "Υπηρεσία:"
+msgstr "Συσκευή"
 
 #: editor/connectiondetails.cpp:321 editorqml/qml/components/Vpn.qml:30
 #: editorqml/qml/components/Wired.qml:30
@@ -778,9 +693,7 @@ msgstr "Υπηρεσία:"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:69
 #: editorqml/qml/vpn/ssh/Ssh.qml:30 editorqml/qml/vpn/sstp/Sstp.qml:26
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:238
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgid "General"
 msgstr "Γενικά"
 
@@ -792,17 +705,17 @@ msgstr "Διεύθυνση IPv4"
 #: editor/connectiondetails.cpp:336
 #, kde-format
 msgid "IPv4 Default Gateway"
-msgstr ""
+msgstr "Προεπιλεγμένη δικτυακή πύλη IPv4"
 
 #: editor/connectiondetails.cpp:343
 #, kde-format
 msgid "IPv4 Primary Nameserver"
-msgstr ""
+msgstr "Κύριος διακομιστής DNS IPv4"
 
 #: editor/connectiondetails.cpp:347
 #, kde-format
 msgid "IPv4 Secondary Nameserver"
-msgstr ""
+msgstr "Δευτερεύων διακομιστής DNS IPv4"
 
 #: editor/connectiondetails.cpp:352 editor/connectioneditorbase.cpp:335
 #: editorqml/qml/components/Vpn.qml:38 editorqml/qml/components/Wired.qml:39
@@ -818,25 +731,24 @@ msgid "IPv6 Address"
 msgstr "Διεύθυνση IPv6"
 
 #: editor/connectiondetails.cpp:378
-#, fuzzy, kde-format
-#| msgid "IPv6 Address"
+#, kde-format
 msgid "IPv6 ULA Address"
-msgstr "Διεύθυνση IPv6"
+msgstr "Διεύθυνση IPv6 ULA"
 
 #: editor/connectiondetails.cpp:383
 #, kde-format
 msgid "IPv6 Default Gateway"
-msgstr ""
+msgstr "Προεπιλεγμένη δικτυακή πύλη IPv6"
 
 #: editor/connectiondetails.cpp:390
 #, kde-format
 msgid "IPv6 Primary Nameserver"
-msgstr ""
+msgstr "Κύριος διακομιστής DNS IPv6"
 
 #: editor/connectiondetails.cpp:394
 #, kde-format
 msgid "IPv6 Secondary Nameserver"
-msgstr ""
+msgstr "Δευτερεύων διακομιστής DNS IPv6"
 
 #: editor/connectiondetails.cpp:399 editor/connectioneditorbase.cpp:353
 #: editorqml/qml/components/Vpn.qml:42 editorqml/qml/components/Wired.qml:42
@@ -850,7 +762,7 @@ msgstr "IPv6"
 #, kde-format
 msgctxt "@title:tab Connection status and details"
 msgid "Status"
-msgstr ""
+msgstr "Κατάσταση"
 
 #: editor/connectioneditorbase.cpp:235
 #, kde-format
@@ -886,10 +798,9 @@ msgid "PPP"
 msgstr "PPP"
 
 #: editor/connectioneditorbase.cpp:305
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "WireGuard Interface"
-msgstr "Ενσύρματη διεπαφή (%1)"
+msgstr "Διεπαφή WireGuard"
 
 #: editor/connectioneditorbase.cpp:318
 #, kde-format
@@ -943,7 +854,7 @@ msgstr "Ενεργό αντίγραφο ασφαλείας"
 #, kde-format
 msgctxt "bond mode"
 msgid "XOR"
-msgstr ""
+msgstr "XOR"
 
 #: editor/settings/bondwidget.cpp:51
 #, kde-format
@@ -1012,9 +923,7 @@ msgstr "PAN (προσωπικό δίκτυο)"
 #: editor/settings/connectionstatuswidget.cpp:33
 #: editorqml/qml/ConnectionDialog.qml:59
 #: editorqml/qml/wifistatus/ConnectionStatusForm.qml:15
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Disconnected"
 msgstr "Χωρίς σύνδεση"
 
@@ -1079,16 +988,20 @@ msgid ""
 "html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></"
 "qt>"
 msgstr ""
+"<qt>Μπορείτε να βρείτε περισσότερες πληροφορίες για αυτές τις τιμές εδώ:<br/"
+"><a href='https://networkmanager.dev/docs/api/latest/nm-settings-nmcli."
+"html'>https://networkmanager.dev/docs/api/latest/nm-settings-nmcli.html</a></"
+"qt>"
 
 #: editor/settings/ipv4widget.cpp:430
 #, kde-format
 msgid "Send hostname:"
-msgstr ""
+msgstr "Αποστολή ονόματος υπολογιστή:"
 
 #: editor/settings/ipv4widget.cpp:435 editorqml/qml/ipv4/IPv4Advance.qml:53
 #, kde-format
 msgid "DHCP hostname:"
-msgstr ""
+msgstr "Όνομα υπολογιστή για DHCP:"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ipv4widget.cpp:440 editor/settings/ui/ipv6.ui:191
@@ -1104,10 +1017,9 @@ msgid " ms"
 msgstr " ms"
 
 #: editor/settings/ipv4widget.cpp:444 editorqml/qml/ipv4/IPv4Advance.qml:63
-#, fuzzy, kde-format
-#| msgid "Aging time:"
+#, kde-format
 msgid "DAD timeout:"
-msgstr "Χρόνος ωρίμανσης:"
+msgstr "Χρονικό όριο ανίχνευσης διπλής διεύθυνσης (DAD):"
 
 #: editor/settings/ipv4widget.cpp:465 editor/settings/ipv6widget.cpp:406
 #, kde-format
@@ -1143,19 +1055,15 @@ msgid "Alternative Subject Matches"
 msgstr "Εναλλακτικά ταιριάσματα θέματος"
 
 #: editor/settings/security802-1x.cpp:544
-#, fuzzy, kde-format
-#| msgid ""
-#| "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
-#| "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. http://www.kde."
-#| "org&gt;</li></ul></qt>"
+#, kde-format
 msgid ""
 "<qt>This entry must be one of:<ul><li>DNS: &lt;name or ip address&gt;</"
 "li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, e.g. https://www.kde."
 "org&gt;</li></ul></qt>"
 msgstr ""
-"<qt>Αυτά τα δεδομένα εισόδου πρέπει να είναι ένα από:<ul><li>DNS: &lt;όνομα "
-"ή διεύθυνση ip&gt;</li><li>EMAIL: &lt;email&gt;</li><li>URI: &lt;uri, π.χ. "
-"http://www.kde.org&gt;</li></ul></qt>"
+"<qt>Η καταχώριση πρέπει να έχει μία από τις εξής μορφές:<ul><li>DNS: &lt;"
+"όνομα ή διεύθυνση IP&gt;</li><li>EMAIL: &lt;διεύθυνση email&gt;</li><li>URI: "
+"&lt;URI, π.χ. https://www.kde.org&gt;</li></ul></qt>"
 
 #: editor/settings/security802-1x.cpp:561
 #, kde-format
@@ -1209,7 +1117,7 @@ msgstr "LEAP"
 #: editorqml/qml/wifisecurity/WiredSecurityForm.qml:39
 #, kde-format
 msgid "PWD"
-msgstr ""
+msgstr "PWD"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, auth)
 #: editor/settings/ui/802-1x.ui:73
@@ -1306,11 +1214,9 @@ msgstr "Ταυτότητα:"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:101
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:30
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:102
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgid "Domain:"
-msgstr "Τομείς αναζήτησης:"
+msgstr "Τομέας:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
 #: editor/settings/ui/802-1x.ui:144
@@ -1363,7 +1269,7 @@ msgstr "Εναλλακτικά ταιριάσματα θέματος:"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:74
 #, kde-format
 msgid "…"
-msgstr ""
+msgstr "…"
 
 #. i18n: ectx: property (text), widget (QLabel, label_29)
 #: editor/settings/ui/802-1x.ui:223
@@ -1545,14 +1451,14 @@ msgstr "Δεσμικές συνδέσεις:"
 #: editor/settings/ui/team.ui:56
 #, kde-format
 msgid "Add…"
-msgstr ""
+msgstr "Προσθήκη…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnEdit)
 #: editor/settings/ui/bond.ui:72 editor/settings/ui/bridge.ui:69
 #: editor/settings/ui/team.ui:71
 #, kde-format
 msgid "Edit…"
-msgstr ""
+msgstr "Επεξεργασία…"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnDelete)
 #: editor/settings/ui/bond.ui:85 editor/settings/ui/bridge.ui:82
@@ -1690,31 +1596,23 @@ msgstr "Αριθμός:"
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnect)
 #: editor/settings/ui/connectionwidget.ui:17
 #: editorqml/qml/generalSettings/GeneralSettings.qml:24
-#, fuzzy, kde-format
-#| msgid "Ignore automatically obtained routes"
+#, kde-format
 msgid "Connect automatically with priority"
-msgstr "Αγνόησή αυτόματα ανακτημένων διαδρομών"
+msgstr "Αυτόματη σύνδεση με προτεραιότητα"
 
 #. i18n: ectx: property (toolTip), widget (QSpinBox, prioritySpin)
 #: editor/settings/ui/connectionwidget.ui:37
-#, fuzzy, kde-format
-#| msgid ""
-#| "If the connection is set to autoconnect, connections with higher priority "
-#| "will be preferred. Defaults to 0.\n"
-#| "The higher number means higher priority. An negative number can be used "
-#| "to indicate priority lower than the default.\n"
-#| "           "
+#, kde-format
 msgid ""
 "If the connection is set to autoconnect, connections with higher priority "
 "will be preferred. Defaults to 0.\n"
 "The higher number means higher priority. A negative number can be used to "
 "indicate priority lower than the default."
 msgstr ""
-"Αν η σύνδεση οριστεί ως 'αυτόματη σύνδεση', οι συνδέσεις με υψηλότερη \n"
-"προτεραιότητα  θα προτιμούνται. Προκαθορισμένα είναι 0\n"
-"Υψηλότερος αριθμός σημαίνει υψηλότερη προτεραιότητα. Μπορεί να "
-"χρησιμοποιηθεί αρνητικός αριθμός για να υποδηλώσει προτεραιότητά \n"
-"χαμηλότερη της προκαθορισμένης."
+"Στην αυτόματη σύνδεση προτιμώνται οι συνδέσεις με υψηλότερη προτεραιότητα. Η "
+"προεπιλογή είναι 0.\n"
+"Μεγαλύτερος αριθμός σημαίνει υψηλότερη προτεραιότητα. Για προτεραιότητα "
+"χαμηλότερη από την προεπιλεγμένη, χρησιμοποιήστε αρνητικό αριθμό."
 
 #. i18n: ectx: property (text), widget (QCheckBox, allUsers)
 #: editor/settings/ui/connectionwidget.ui:47
@@ -1751,8 +1649,7 @@ msgstr "Για προχωρημένους…"
 #. i18n: ectx: property (text), widget (QCheckBox, autoconnectVpn)
 #: editor/settings/ui/connectionwidget.ui:79
 #: editorqml/qml/generalSettings/GeneralSettings.qml:91
-#, fuzzy, kde-format
-#| msgid "Automatically connect to VPN when using this connection"
+#, kde-format
 msgid "Automatically connect to VPN"
 msgstr "Αυτόματη σύνδεση με VPN όταν χρησιμοποιείται αυτή η σύνδεση"
 
@@ -1763,6 +1660,8 @@ msgid ""
 "Choose which VPN connection to automatically activate when this connection "
 "is established"
 msgstr ""
+"Επιλέξτε ποια σύνδεση VPN θα ενεργοποιηθεί αυτόματα όταν δημιουργηθεί αυτή η "
+"σύνδεση"
 
 #. i18n: ectx: property (text), widget (QLabel, firewallZoneLabel)
 #: editor/settings/ui/connectionwidget.ui:102
@@ -1778,13 +1677,15 @@ msgid ""
 "Assign this connection to a firewall zone to control network access and "
 "security rules"
 msgstr ""
+"Αντιστοιχίστε αυτή τη σύνδεση σε ζώνη του τείχους προστασίας για να ελέγχετε "
+"την πρόσβαση στο δίκτυο και τους κανόνες ασφαλείας"
 
 #. i18n: ectx: property (text), widget (QLabel, meteredLabel)
 #: editor/settings/ui/connectionwidget.ui:134
 #: editorqml/qml/generalSettings/GeneralSettings.qml:128
 #, kde-format
 msgid "Metered:"
-msgstr ""
+msgstr "Ογκοχρέωση:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:154
@@ -1793,6 +1694,8 @@ msgid ""
 "Indicates to applications whether the connection is metered and therefore\n"
 "data usage should be restricted."
 msgstr ""
+"Υποδεικνύει στις εφαρμογές αν η σύνδεση έχει ογκοχρέωση και συνεπώς\n"
+"αν πρέπει να περιοριστεί η χρήση δεδομένων."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, metered)
 #: editor/settings/ui/connectionwidget.ui:164
@@ -1893,7 +1796,7 @@ msgstr " bytes"
 #: editor/settings/ui/ipv4.ui:17 editor/settings/ui/ipv6.ui:20
 #, kde-format
 msgid "Advanced IP settings"
-msgstr ""
+msgstr "Προηγμένες ρυθμίσεις IP"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRoutes)
 #: editor/settings/ui/ipv4.ui:63 editor/settings/ui/ipv6.ui:323
@@ -1971,6 +1874,12 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Τιμή που βοηθά στην επιλογή της καλύτερης διαδρομής για να φτάσουν τα πακέτα "
+"στον προορισμό τους,\n"
+"με βάση παράγοντες όπως η απόσταση, η καθυστέρηση και η αξιοπιστία.\n"
+"\n"
+"Με την προεπιλεγμένη τιμή -1, το NetworkManager επιλέγει και διαχειρίζεται "
+"τη μετρική της διαδρομής."
 
 #. i18n: ectx: property (text), widget (QLabel, labelDhcpClientId)
 #: editor/settings/ui/ipv4.ui:215 editorqml/qml/ipv4/IPv4Settings.qml:115
@@ -1982,11 +1891,9 @@ msgstr "Αναγνωριστικό πελάτη DHCP:"
 #: editor/settings/ui/ipv4.ui:234 editor/settings/ui/ipv6.ui:376
 #: editorqml/qml/ipv4/IPv4Settings.qml:129
 #: editorqml/qml/ipv6/IPv6Settings.qml:132
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgid "Route Metric:"
-msgstr "Μετρικό"
+msgstr "Μετρική διαδρομής:"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:259 editorqml/qml/ipv4/IPv4Settings.qml:37
@@ -2002,6 +1909,15 @@ msgid ""
 "devices\n"
 "• Disabled: turn off IPv4"
 msgstr ""
+"Τρόπος ρύθμισης της διεύθυνσης IPv4:\n"
+"• Αυτόματα: αυτόματη λήψη διεύθυνσης και DNS μέσω DHCP\n"
+"• Αυτόματα (μόνο διευθύνσεις): λήψη διεύθυνσης μέσω DHCP και χειροκίνητη "
+"ρύθμιση DNS\n"
+"• Τοπική σύνδεση: αυτόματη διευθυνσιοδότηση στην τοπική ζεύξη (169.254.x.x)\n"
+"• Χειροκίνητα: εισαγωγή στατικής διεύθυνσης IP\n"
+"• Κοινόχρηστο: χρήση του υπολογιστή ως δρομολογητή για κοινή χρήση του "
+"διαδικτύου με άλλες συσκευές\n"
+"• Απενεργοποιημένο: απενεργοποίηση IPv4"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv4.ui:263 editor/settings/ui/ipv6.ui:231
@@ -2141,6 +2057,10 @@ msgid ""
 "a temporary IPv6 address in addition to the public one generated from MAC "
 "address via modified EUI-64."
 msgstr ""
+"Ρυθμίστε τις επεκτάσεις απορρήτου IPv6 για το SLAAC, όπως περιγράφονται στο "
+"RFC4941. Όταν είναι ενεργές, ο πυρήνας δημιουργεί\n"
+"μια προσωρινή διεύθυνση IPv6 επιπλέον της δημόσιας που παράγεται από τη "
+"διεύθυνση MAC μέσω τροποποιημένου EUI-64."
 
 #. i18n: ectx: property (text), item, widget (KComboBox, privacyCombo)
 #: editor/settings/ui/ipv6.ui:196
@@ -2176,6 +2096,16 @@ msgid ""
 "• Ignored: skip IPv6 configuration but allow connection\n"
 "• Disabled: turn off IPv6 completely"
 msgstr ""
+"Τρόπος ρύθμισης της διεύθυνσης IPv6:\n"
+"• Αυτόματα: αυτόματη λήψη διεύθυνσης και DNS (μέσω SLAAC ή/και DHCPv6)\n"
+"• Αυτόματα (μόνο διευθύνσεις): αυτόματη λήψη διεύθυνσης και χειροκίνητη "
+"ρύθμιση DNS\n"
+"• Αυτόματα (μόνο DHCP): λήψη διεύθυνσης και DNS μόνο μέσω DHCPv6 (χωρίς "
+"SLAAC)\n"
+"• Τοπική σύνδεση: αυτόματη διευθυνσιοδότηση στην τοπική ζεύξη (fe80::/10)\n"
+"• Χειροκίνητα: εισαγωγή στατικής διεύθυνσης IP\n"
+"• Αγνόηση: παράλειψη της ρύθμισης IPv6 με δυνατότητα σύνδεσης\n"
+"• Απενεργοποιημένο: πλήρης απενεργοποίηση του IPv6"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, method)
 #: editor/settings/ui/ipv6.ui:241
@@ -2292,6 +2222,10 @@ msgid ""
 "should be left blank. It is only required if there are multiple access "
 "concentrators or a specific service is known to be required."
 msgstr ""
+"Αν οριστεί, το PPPoE ξεκινά συνεδρίες μόνο με συγκεντρωτές πρόσβασης που "
+"παρέχουν την καθορισμένη υπηρεσία. Για τους περισσότερους παρόχους αφήστε το "
+"πεδίο κενό. Απαιτείται μόνο αν υπάρχουν πολλοί συγκεντρωτές πρόσβασης ή αν "
+"απαιτείται συγκεκριμένη υπηρεσία."
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
 #: editor/settings/ui/team.ui:31
@@ -2356,11 +2290,9 @@ msgstr "Χαλαρός συνδυασμός"
 #. i18n: ectx: property (text), widget (QLabel, connectionSectionLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:23
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:27
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is being established"
-#| msgid "Connecting"
+#, kde-format
 msgid "Connection"
-msgstr "Συνδέεται"
+msgstr "Σύνδεση"
 
 #. i18n: ectx: property (text), widget (QLabel, SSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:39
@@ -2371,10 +2303,9 @@ msgstr "SSID:"
 
 #. i18n: ectx: property (toolTip), widget (SsidComboBox, SSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:61
-#, fuzzy, kde-format
-#| msgid "Users allowed to activate the connection"
+#, kde-format
 msgid "The name of the Wi-Fi network to connect to"
-msgstr "Επιτρέπεται στους χρήστες να ενεργοποιήσουν τη σύνδεση"
+msgstr "Το όνομα του δικτύου Wi-Fi στο οποίο θα συνδεθείτε"
 
 #. i18n: ectx: property (toolTip), widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:90
@@ -2385,6 +2316,10 @@ msgid ""
 "• Ad-hoc: create a direct peer-to-peer network\n"
 "• Access Point: turn this computer into a Wi-Fi hotspot"
 msgstr ""
+"Λειτουργία δικτύου Wi-Fi:\n"
+"• Υποδομή: σύνδεση σε δρομολογητή Wi-Fi (κανονική λειτουργία)\n"
+"• Ad-hoc: δημιουργία απευθείας δικτύου μεταξύ ομότιμων συσκευών\n"
+"• Σημείο πρόσβασης: χρήση του υπολογιστή ως σημείου πρόσβασης Wi-Fi"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, modeComboBox)
 #: editor/settings/ui/wificonnectionwidget.ui:94
@@ -2410,10 +2345,9 @@ msgstr "Σημείο πρόσβασης"
 #. i18n: ectx: property (text), widget (QLabel, BSSIDLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:128
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:97
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to BSSID:"
-msgstr "Περιορισμός στη συσκευή:"
+msgstr "θΠεριορισμός στο BSSID:"
 
 #. i18n: ectx: property (toolTip), widget (BssidComboBox, BSSIDCombo)
 #: editor/settings/ui/wificonnectionwidget.ui:147
@@ -2422,6 +2356,8 @@ msgid ""
 "Lock this connection to a specific access point. Enter the BSSID (MAC "
 "address) of the access point."
 msgstr ""
+"Περιορίστε αυτή τη σύνδεση σε συγκεκριμένο σημείο πρόσβασης. Εισαγάγετε το "
+"BSSID (διεύθυνση MAC) του σημείου πρόσβασης."
 
 #. i18n: ectx: property (text), widget (QLabel, bandLabel)
 #: editor/settings/ui/wificonnectionwidget.ui:163
@@ -2486,10 +2422,9 @@ msgstr ""
 #. i18n: ectx: property (text), widget (QLabel, label)
 #: editor/settings/ui/wificonnectionwidget.ui:232
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:164
-#, fuzzy, kde-format
-#| msgid "Restrict to device:"
+#, kde-format
 msgid "Restrict to network adapter:"
-msgstr "Περιορισμός στη συσκευή:"
+msgstr "Περιορισμός σε προσαρμογέα δικτύου:"
 
 #. i18n: ectx: property (toolTip), widget (HwAddrComboBox, macAddress)
 #: editor/settings/ui/wificonnectionwidget.ui:251
@@ -2498,6 +2433,8 @@ msgid ""
 "Lock this connection to a particular network adapter by specifying its MAC "
 "address."
 msgstr ""
+"Περιορίστε αυτή τη σύνδεση σε συγκεκριμένο προσαρμογέα δικτύου ορίζοντας τη "
+"διεύθυνση MAC του."
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wificonnectionwidget.ui:258
@@ -2514,6 +2451,8 @@ msgstr "Κλώνος διεύθυνσης MAC:"
 msgid ""
 "Use a different MAC address instead of your network adapter's real address."
 msgstr ""
+"Χρήση άλλης διεύθυνσης MAC στη θέση της πραγματικής διεύθυνσης του "
+"προσαρμογέα δικτύου."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRandomMacAddr)
 #: editor/settings/ui/wificonnectionwidget.ui:292
@@ -2530,13 +2469,14 @@ msgid ""
 "Maximum Transmission Unit: the largest packet size that can be sent without "
 "fragmentation. Larger packets will be broken into smaller frames."
 msgstr ""
+"Μέγιστη μονάδα μετάδοσης: το μεγαλύτερο πακέτο που μπορεί να σταλεί χωρίς "
+"κατακερματισμό. Τα μεγαλύτερα πακέτα θα χωριστούν σε μικρότερα πλαίσια."
 
 #. i18n: ectx: property (toolTip), widget (QLabel, label_4)
 #. i18n: ectx: property (toolTip), widget (QCheckBox, hiddenNetwork)
 #: editor/settings/ui/wificonnectionwidget.ui:342
 #: editor/settings/ui/wificonnectionwidget.ui:358
-#, fuzzy, kde-format
-#| msgid "Mark this if you want to create a connection for a hidden network"
+#, kde-format
 msgid "Create a connection for a hidden network"
 msgstr ""
 "Σημειώστε το αν επιθυμείτε να δημιουργήσετε σύνδεση για ένα κρυφό δίκτυο"
@@ -2559,8 +2499,7 @@ msgstr "Κρυφό δίκτυο"
 #: editor/settings/ui/wificonnectionwidget.ui:368
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:73
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:73
-#, fuzzy, kde-format
-#| msgid "Security:"
+#, kde-format
 msgid "Security"
 msgstr "Ασφάλεια:"
 
@@ -2605,40 +2544,36 @@ msgstr "Δυναμικό WEP (802.1x)"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:80
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA2/WPA3 Personal"
-msgstr "Προσωπικό WPA/WPA2"
+msgstr "WPA2/WPA3 για προσωπική χρήση"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:85
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA2/WPA3 Enterprise"
-msgstr "Εταιρικό WPA/WPA2"
+msgstr "WPA2/WPA3 για επιχειρήσεις"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:90
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:30
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA3 Personal"
-msgstr "Προσωπικό WPA/WPA2"
+msgstr "WPA3 για προσωπική χρήση"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:95
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:31
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA3 Enterprise 192-bit"
-msgstr "Εταιρικό WPA/WPA2"
+msgstr "WPA3 για επιχειρήσεις 192 bit"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, securityCombo)
 #: editor/settings/ui/wifisecurity.ui:100
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:32
 #, kde-format
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Ενισχυμένο ανοικτό δίκτυο (OWE)"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
 #: editor/settings/ui/wifisecurity.ui:108
@@ -2737,10 +2672,9 @@ msgstr ""
 
 #. i18n: ectx: property (text), widget (QLabel, speedLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:125
-#, fuzzy, kde-format
-#| msgid "Speed:"
+#, kde-format
 msgid "Speed limit:"
-msgstr "Ταχύτητα:"
+msgstr "Όριο ταχύτητας:"
 
 #. i18n: ectx: property (text), widget (QLabel, duplexLabel)
 #: editor/settings/ui/wiredconnectionwidget.ui:132
@@ -2756,6 +2690,8 @@ msgid ""
 "Request that the device use the specified duplex mode. Either \"half\" or "
 "\"full\""
 msgstr ""
+"Ζητά από τη συσκευή να χρησιμοποιήσει την καθορισμένη λειτουργία αμφίδρομης "
+"μετάδοσης, «ημιαμφίδρομη» ή «πλήρως αμφίδρομη»"
 
 #. i18n: ectx: property (text), item, widget (KComboBox, duplex)
 #: editor/settings/ui/wiredconnectionwidget.ui:158
@@ -2772,10 +2708,9 @@ msgstr "Πλήρης"
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/wiredconnectionwidget.ui:174
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:111
-#, fuzzy, kde-format
-#| msgid "Link monitoring:"
+#, kde-format
 msgid "Link negotiation:"
-msgstr "Παρακολούθηση συνδέσμου:"
+msgstr "Διαπραγμάτευση ζεύξης:"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:188
@@ -2785,12 +2720,14 @@ msgid ""
 "will be forced without checking\n"
 "the device compatibility. If unsure, leave here “Ignore” or pick “Automatic”."
 msgstr ""
+"Διαπραγμάτευση ζεύξης της συσκευής. Με την επιλογή «Χειροκίνητα» "
+"επιβάλλονται οι τιμές ταχύτητας και αμφίδρομης μετάδοσης χωρίς έλεγχο\n"
+"συμβατότητας της συσκευής. Αν δεν είστε βέβαιοι, διατηρήστε την «Αγνόηση» ή "
+"επιλέξτε «Αυτόματα»."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, linkNegotiation)
 #: editor/settings/ui/wiredconnectionwidget.ui:192
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Ignored"
+#, kde-format
 msgid "Ignore"
 msgstr "Αγνόηση"
 
@@ -2809,70 +2746,65 @@ msgstr "Χειροκίνητα"
 
 #. i18n: ectx: property (toolTip), widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:219
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use only the specified speed. In MBit/s, example "
-#| "100 == 100Mbit/s"
+#, kde-format
 msgid "Request that the device use only the specified speed."
-msgstr ""
-"Να απαιτηθεί από τη συσκευή η χρήση της καθορισμένης ταχύτητας μόνο. Σε MBit/"
-"δ, παράδειγμα 100 == 100Mbit/δ"
+msgstr "Ζητά από τη συσκευή να χρησιμοποιήσει μόνο την καθορισμένη ταχύτητα."
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:226
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:132
 #, kde-format
 msgid "10 Mb/s"
-msgstr ""
+msgstr "10 Mb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:231
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:133
 #, kde-format
 msgid "100 Mb/s"
-msgstr ""
+msgstr "100 Mb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:236
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:134
 #, kde-format
 msgid "1 Gb/s"
-msgstr ""
+msgstr "1 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:241
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:135
 #, kde-format
 msgid "2.5 Gb/s"
-msgstr ""
+msgstr "2,5 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:246
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:136
 #, kde-format
 msgid "5 Gb/s"
-msgstr ""
+msgstr "5 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:251
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:137
 #, kde-format
 msgid "10 Gb/s"
-msgstr ""
+msgstr "10 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:256
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:138
 #, kde-format
 msgid "40 Gb/s"
-msgstr ""
+msgstr "40 Gb/s"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, speed)
 #: editor/settings/ui/wiredconnectionwidget.ui:261
 #: editorqml/settings/wiredconnectionsettings/wiredsettings.cpp:139
 #, kde-format
 msgid "100 Gb/s"
-msgstr ""
+msgstr "100 Gb/s"
 
 #. i18n: ectx: property (text), widget (QCheckBox, use8021X)
 #: editor/settings/ui/wiredsecurity.ui:17
@@ -2885,24 +2817,24 @@ msgstr "Χρήση ασφάλειας 802.1x για αυτή τη σύνδεση
 #: editor/settings/ui/wireguardinterfacewidget.ui:14
 #, kde-format
 msgid "WireGuard Settings"
-msgstr ""
+msgstr "Ρυθμίσεις WireGuard"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:20
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:31
-#, fuzzy, kde-format
-#| msgid "Interface name:"
+#, kde-format
 msgid "Interface"
-msgstr "Όνομα διεπαφής:"
+msgstr "Διεπαφή"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, interfaceNameLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:34
-#, fuzzy, kde-format
-#| msgid "VLAN interface name:"
+#, kde-format
 msgid ""
 "Required.\n"
 "Network interface name."
-msgstr "Όνομα διεπαφής VLAN:"
+msgstr ""
+"Υποχρεωτικό.\n"
+"Όνομα διεπαφής δικτύου."
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, privateKeyLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:49
@@ -2911,12 +2843,14 @@ msgid ""
 "Required.\n"
 "A base64 private key generated by wg genkey."
 msgstr ""
+"Υποχρεωτικό.\n"
+"Ιδιωτικό κλειδί σε base64 που δημιουργείται από την εντολή wg genkey."
 
 #. i18n: ectx: property (text), widget (QLabel, listenPortLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:56
 #, kde-format
 msgid "Listen port:"
-msgstr ""
+msgstr "Θύρα ακρόασης:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, listenPortLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:64
@@ -2925,13 +2859,15 @@ msgid ""
 "Optional.\n"
 "Listen port number. Chosen randomly if left as 'Automatic'."
 msgstr ""
+"Προαιρετικό.\n"
+"Αριθμός θύρας ακρόασης. Επιλέγεται τυχαία αν διατηρηθεί η ρύθμιση «Αυτόματα»."
 
 #. i18n: ectx: property (text), widget (QLabel, fwmarkLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:72
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:88
 #, kde-format
 msgid "fwmark:"
-msgstr ""
+msgstr "fwmark:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, fwmarkLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:82
@@ -2942,6 +2878,10 @@ msgid ""
 "option is disabled. May be specified in hexadecimal by\n"
 "prepending '0x'."
 msgstr ""
+"Προαιρετικό.\n"
+"Σήμανση fwmark για εξερχόμενα πακέτα. Η επιλογή\n"
+"απενεργοποιείται με 0 ή «off». Μπορεί να δοθεί δεκαεξαδική τιμή\n"
+"με πρόθεμα «0x»."
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, mtuLineEdit)
 #: editor/settings/ui/wireguardinterfacewidget.ui:101
@@ -2954,12 +2894,18 @@ msgid ""
 "specify an MTU and to override this automatic discovery,\n"
 "this value may be specified explicitly."
 msgstr ""
+"Προαιρετικό.\n"
+"Αν δεν οριστεί τιμή, το MTU καθορίζεται αυτόματα\n"
+"από τις διευθύνσεις των απομακρυσμένων άκρων ή την\n"
+"προεπιλεγμένη διαδρομή του συστήματος. Αυτή η επιλογή\n"
+"συνήθως αρκεί. Για παράκαμψη του αυτόματου υπολογισμού,\n"
+"ορίστε ρητά την τιμή του MTU."
 
 #. i18n: ectx: property (text), widget (QLabel, peerRouteLabel)
 #: editor/settings/ui/wireguardinterfacewidget.ui:108
 #, kde-format
 msgid "Autoroute peers:"
-msgstr ""
+msgstr "Αυτόματες διαδρομές προς ομότιμους κόμβους:"
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:116
@@ -2968,20 +2914,21 @@ msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
 msgstr ""
+"Αν θα προστίθενται αυτόματα διαδρομές για τα εύρη AllowedIPs\n"
+"των ομότιμων κόμβων."
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
 #: editor/settings/ui/wireguardinterfacewidget.ui:141
 #, kde-format
 msgid "Peers…"
-msgstr ""
+msgstr "Ομότιμοι κόμβοι…"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:19
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Public key:"
-msgstr "Ιδιωτικό κλειδί:"
+msgstr "Δημόσιο κλειδί:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, publicKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:27
@@ -2992,13 +2939,18 @@ msgid ""
 "            from a private key, and usually transmitted \n"
 "            out of band to the author of the configuration file."
 msgstr ""
+"Υποχρεωτικό.\n"
+"            Δημόσιο κλειδί σε base64 που υπολογίζεται από\n"
+"            ιδιωτικό κλειδί μέσω της εντολής wg pubkey. Συνήθως\n"
+"            δίνεται στον συντάκτη του αρχείου ρυθμίσεων μέσω χωριστού "
+"καναλιού."
 
 #. i18n: ectx: property (text), widget (QLabel, allowedIPsLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:34
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:20
 #, kde-format
 msgid "Allowed IPs:"
-msgstr ""
+msgstr "Επιτρεπόμενες διευθύνσεις IP:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, allowedIPsLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:47
@@ -3012,14 +2964,20 @@ msgid ""
 "            may be specified for matching all IPv4 addresses, \n"
 "            and ::/0 may be specified for matching all IPv6 addresses."
 msgstr ""
+"Υποχρεωτικό.\n"
+"            Λίστα διευθύνσεων IPv4 ή IPv6 με μάσκες CIDR,\n"
+"            χωρισμένων με κόμμα. Επιτρέπεται η εισερχόμενη\n"
+"            κίνηση από αυτές για τον συγκεκριμένο ομότιμο κόμβο\n"
+"            και η εξερχόμενη κίνησή του κατευθύνεται προς αυτές.\n"
+"            Χρησιμοποιήστε 0.0.0.0/0 για όλες τις διευθύνσεις IPv4\n"
+"            και ::/0 για όλες τις διευθύνσεις IPv6."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointAddressLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:55
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:21
-#, fuzzy, kde-format
-#| msgid "Cloned MAC address:"
+#, kde-format
 msgid "Endpoint address:"
-msgstr "Κλώνος διεύθυνσης MAC:"
+msgstr "Διεύθυνση απομακρυσμένου άκρου:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointAddressLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:66
@@ -3031,13 +2989,18 @@ msgid ""
 "            qualified domain name such as abc.com). If\n"
 "            present, Endpoint port must also be set."
 msgstr ""
+"Προαιρετικό.\n"
+"            Άκρο της σύνδεσης. Μπορεί να είναι διεύθυνση\n"
+"            IPv4 ή IPv6 ή πλήρες όνομα τομέα (FQDN,\n"
+"            όπως abc.com). Αν δοθεί διεύθυνση, πρέπει\n"
+"            να οριστεί και η θύρα του απομακρυσμένου άκρου."
 
 #. i18n: ectx: property (text), widget (QLabel, endpointPortLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:74
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:22
 #, kde-format
 msgid "Endpoint port:"
-msgstr ""
+msgstr "Θύρα απομακρυσμένου άκρου:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, endpointPortLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:83
@@ -3047,14 +3010,16 @@ msgid ""
 "            The port number of an endpoint. If present Endpoint\n"
 "            Address must also be set."
 msgstr ""
+"Προαιρετικό.\n"
+"            Αριθμός θύρας του απομακρυσμένου άκρου. Αν δοθεί,\n"
+"            πρέπει να οριστεί και η διεύθυνσή του."
 
 #. i18n: ectx: property (text), widget (QLabel, presharedKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:91
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:23
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Preshared key:"
-msgstr "Ιδιωτικό κλειδί:"
+msgstr "Προδιαμοιρασμένο κλειδί:"
 
 #. i18n: ectx: property (toolTip), widget (PasswordField, presharedKeyLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:102
@@ -3066,13 +3031,18 @@ msgid ""
 "            cryptography to be mixed into the already existing\n"
 "            public-key cryptography, for post-quantum resistance."
 msgstr ""
+"Προαιρετικό.\n"
+"            Προδιαμοιρασμένο κλειδί σε base64, μέσω της εντολής wg genpsk.\n"
+"            Αυτή η επιλογή προσθέτει κρυπτογράφηση με συμμετρικό κλειδί\n"
+"            στην υπάρχουσα κρυπτογράφηση δημόσιου κλειδιού,\n"
+"            για ανθεκτικότητα έναντι επιθέσεων από κβαντικούς υπολογιστές."
 
 #. i18n: ectx: property (text), widget (QLabel, keepaliveLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:109
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:24
 #, kde-format
 msgid "Persistent keepalive:"
-msgstr ""
+msgstr "Διατήρηση σύνδεσης:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, keepaliveLineEdit)
 #: editor/settings/ui/wireguardpeerwidget.ui:127
@@ -3091,29 +3061,39 @@ msgid ""
 "            when unspecified, this option is off. Most users will not\n"
 "            need this."
 msgstr ""
+"Προαιρετικό.\n"
+"            Διάστημα σε δευτερόλεπτα (από 1 έως 65535) για\n"
+"            την αποστολή κενού πακέτου με ταυτοποίηση\n"
+"            στον ομότιμο κόμβο, ώστε να διατηρείται\n"
+"            η κατάσταση του\n"
+"            τείχους προστασίας ή της αντιστοίχισης NAT. Για\n"
+"            παράδειγμα, αν η διεπαφή στέλνει σπάνια δεδομένα αλλά\n"
+"            μπορεί να λάβει ανά πάσα στιγμή και βρίσκεται πίσω από\n"
+"            NAT, ίσως τη βοηθήσει ένα διάστημα 25 δευτερολέπτων.\n"
+"            Με 0 ή «off» η επιλογή απενεργοποιείται.\n"
+"            Από προεπιλογή ή όταν δεν ορίζεται τιμή, είναι ανενεργή.\n"
+"            Οι περισσότεροι χρήστες δεν τη χρειάζονται."
 
 #. i18n: ectx: attribute (title), widget (QWidget, tab)
 #: editor/settings/ui/wireguardtabwidget.ui:24
 #, kde-format
 msgid "Peer 1"
-msgstr ""
+msgstr "Ομότιμος κόμβος 1"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/wireguardtabwidget.ui:37
 #, kde-format
 msgid "Add new Peer"
-msgstr ""
+msgstr "Προσθήκη ομότιμου κόμβου"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/wireguardtabwidget.ui:44
 #, kde-format
 msgid "Remove this Peer"
-msgstr ""
+msgstr "Αφαίρεση αυτού του ομότιμου κόμβου"
 
 #: editor/settings/wificonnectionwidget.cpp:235
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@action:inmenu automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Αυτόματα"
@@ -3129,7 +3109,7 @@ msgstr "%1 (%2 MHz)"
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
-msgstr ""
+msgstr "Ιδιότητες ομότιμων κόμβων WireGuard"
 
 #: editor/uiutils.cpp:128
 #, kde-format
@@ -3195,7 +3175,7 @@ msgstr "Κινητή ευρυζωνική"
 #, kde-format
 msgctxt "title of the interface widget in nm's popup"
 msgid "Loopback"
-msgstr ""
+msgstr "Βρόχος επιστροφής"
 
 #: editor/uiutils.cpp:174
 #, kde-format
@@ -3226,12 +3206,12 @@ msgstr "Ενσύρματο Ethernet"
 #: editor/uiutils.cpp:233
 #, kde-format
 msgid "WireGuard VPN"
-msgstr ""
+msgstr "VPN WireGuard"
 
 #: editor/uiutils.cpp:237
 #, kde-format
 msgid "Loopback"
-msgstr ""
+msgstr "Βρόχος επιστροφής"
 
 #: editor/uiutils.cpp:240
 #, kde-format
@@ -3274,10 +3254,9 @@ msgid "Bridge (%1)"
 msgstr "Γέφυρα (%1)"
 
 #: editor/uiutils.cpp:273
-#, fuzzy, kde-format
-#| msgid "Wired Interface (%1)"
+#, kde-format
 msgid "Loopback Interface (%1)"
-msgstr "Ενσύρματη διεπαφή (%1)"
+msgstr "Διεπαφή βρόχου επιστροφής (%1)"
 
 #: editor/uiutils.cpp:286
 #, kde-format
@@ -3524,7 +3503,7 @@ msgstr "%1 GBit/δ"
 #, kde-format
 msgctxt "Wireless connection frequency"
 msgid "%1 GHz"
-msgstr ""
+msgstr "%1 GHz"
 
 #: editor/uiutils.cpp:468
 #, kde-format
@@ -3560,7 +3539,7 @@ msgstr "Οποιαδήποτε"
 #, kde-format
 msgctxt "Cellular access technology"
 msgid "5G NR"
-msgstr ""
+msgstr "5G NR"
 
 #: editor/uiutils.cpp:490
 #, kde-format
@@ -3818,19 +3797,19 @@ msgstr "WPA2-EAP"
 #, kde-format
 msgctxt "@label WPA3-SAE security"
 msgid "WPA3-SAE"
-msgstr ""
+msgstr "WPA3-SAE"
 
 #: editor/uiutils.cpp:615
 #, kde-format
 msgctxt "@label WPA3-EAP-SUITE-B-192 security"
 msgid "WPA3-EAP-SUITE-B-192"
-msgstr ""
+msgstr "WPA3-EAP-SUITE-B-192"
 
 #: editor/uiutils.cpp:618
 #, kde-format
 msgctxt "@label OWE security"
 msgid "Enhanced Open (OWE)"
-msgstr ""
+msgstr "Ενισχυμένο ανοικτό δίκτυο (OWE)"
 
 #: editor/uiutils.cpp:621
 #, kde-format
@@ -3880,17 +3859,17 @@ msgstr "Δε χρησιμοποιήθηκε ποτέ"
 #: editor/vpnuiplugin.cpp:42
 #, kde-format
 msgid "No VPN plugin found for type %1"
-msgstr ""
+msgstr "Δεν βρέθηκε πρόσθετο VPN για τον τύπο %1"
 
 #: editor/vpnuiplugin.cpp:99
 #, kde-format
 msgid "Importing this type of VPN is not implemented"
-msgstr ""
+msgstr "Η εισαγωγή αυτού του τύπου VPN δεν έχει υλοποιηθεί"
 
 #: editor/vpnuiplugin.cpp:123
 #, kde-format
 msgid "Not implemented"
-msgstr ""
+msgstr "Δεν έχει υλοποιηθεί"
 
 #: editor/widgets/advancedpermissionswidget.cpp:86
 #, kde-format
@@ -4290,18 +4269,17 @@ msgid "R&emove"
 msgstr "Αφαίρ&εση"
 
 #: editorqml/qml/AddConnectionDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Connection type:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Choose a Connection Type"
-msgstr "Τύπος σύνδεσης:"
+msgstr "Επιλογή τύπου σύνδεσης"
 
 #: editorqml/qml/components/Vpn.qml:26 editorqml/qml/components/Wired.qml:27
 #: editorqml/qml/components/WireGuard.qml:28
 #: editorqml/qml/components/Wireless.qml:27
 #, kde-format
 msgid "Status"
-msgstr ""
+msgstr "Κατάσταση"
 
 #: editorqml/qml/components/Wireless.qml:36
 #, kde-format
@@ -4309,41 +4287,34 @@ msgid "Wi-Fi Security"
 msgstr "Ασφάλεια Wifi"
 
 #: editorqml/qml/ConfigurationDialog.qml:19
-#, fuzzy, kde-format
-#| msgctxt "General"
-#| msgid "General configuration"
+#, kde-format
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr "Γενική διαμόρφωση"
+msgstr "Ρυθμίσεις"
 
 #: editorqml/qml/ConfigurationDialog.qml:42
 #, kde-format
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "Ερώτηση για PIN κατά τον εντοπισμό μόντεμ"
 
 #: editorqml/qml/ConfigurationDialog.qml:49
-#, fuzzy, kde-format
-#| msgid "Virtual connections"
+#, kde-format
 msgid "Show virtual connections"
-msgstr "Εικονικές συνδέσεις"
+msgstr "Εμφάνιση εικονικών συνδέσεων"
 
 #: editorqml/qml/ConfigurationDialog.qml:55
-#, fuzzy, kde-format
-#| msgid "Mark this if you want to create a connection for a hidden network"
+#, kde-format
 msgid "Create new connections as system connections"
-msgstr ""
-"Σημειώστε το αν επιθυμείτε να δημιουργήσετε σύνδεση για ένα κρυφό δίκτυο"
+msgstr "Δημιουργία νέων συνδέσεων ως συνδέσεων συστήματος"
 
 #: editorqml/qml/CreateConnectionDialog.qml:20
-#, fuzzy, kde-format
-#| msgid "New Connection (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "New Connection"
-msgstr "Νέα σύνδεση (%1)"
+msgstr "Νέα σύνδεση"
 
 #: editorqml/qml/CreateConnectionDialog.qml:84
-#, fuzzy, kde-format
-#| msgid "Connection name:"
+#, kde-format
 msgctxt "@label"
 msgid "Connection name:"
 msgstr "Όνομα σύνδεσης:"
@@ -4351,16 +4322,13 @@ msgstr "Όνομα σύνδεσης:"
 #: editorqml/qml/dialogs/VpnPage.qml:28 editorqml/qml/dialogs/WiredPage.qml:23
 #: editorqml/qml/dialogs/WireGuardPage.qml:24
 #: editorqml/qml/dialogs/WirelessPage.qml:23
-#, fuzzy, kde-format
-#| msgctxt "@title:tab General configuration"
-#| msgid "General"
+#, kde-format
 msgctxt "@title"
 msgid "General"
 msgstr "Γενικά"
 
 #: editorqml/qml/dialogs/VpnPage.qml:32
-#, fuzzy, kde-format
-#| msgid "VPN"
+#, kde-format
 msgctxt "@title"
 msgid "VPN"
 msgstr "VPN"
@@ -4368,8 +4336,7 @@ msgstr "VPN"
 #: editorqml/qml/dialogs/VpnPage.qml:35 editorqml/qml/dialogs/WiredPage.qml:32
 #: editorqml/qml/dialogs/WireGuardPage.qml:30
 #: editorqml/qml/dialogs/WirelessPage.qml:32
-#, fuzzy, kde-format
-#| msgid "IPv4"
+#, kde-format
 msgctxt "@title"
 msgid "IPv4"
 msgstr "IPv4"
@@ -4377,57 +4344,48 @@ msgstr "IPv4"
 #: editorqml/qml/dialogs/VpnPage.qml:39 editorqml/qml/dialogs/WiredPage.qml:35
 #: editorqml/qml/dialogs/WireGuardPage.qml:33
 #: editorqml/qml/dialogs/WirelessPage.qml:35
-#, fuzzy, kde-format
-#| msgid "IPv6"
+#, kde-format
 msgctxt "@title"
 msgid "IPv6"
 msgstr "IPv6"
 
 #: editorqml/qml/dialogs/WiredPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Wired"
+#, kde-format
 msgctxt "@title"
 msgid "Wired"
 msgstr "Ενσύρματο"
 
 #: editorqml/qml/dialogs/WiredPage.qml:29
-#, fuzzy, kde-format
-#| msgid "802.1x Security"
+#, kde-format
 msgctxt "@title"
 msgid "802.1x Security"
 msgstr "Ασφάλεια 802.1X"
 
 #: editorqml/qml/dialogs/WireGuardPage.qml:27
-#, fuzzy, kde-format
-#| msgid "Wired"
+#, kde-format
 msgctxt "@title"
 msgid "WireGuard"
-msgstr "Ενσύρματο"
+msgstr "WireGuard"
 
 #: editorqml/qml/dialogs/WirelessPage.qml:26
-#, fuzzy, kde-format
-#| msgid "Wi-Fi"
+#, kde-format
 msgctxt "@title"
 msgid "Wi-Fi"
 msgstr "Wi-Fi"
 
 #: editorqml/qml/dialogs/WirelessPage.qml:29
-#, fuzzy, kde-format
-#| msgid "Wi-Fi Security"
+#, kde-format
 msgctxt "@title"
 msgid "Wi-Fi Security"
-msgstr "Ασφάλεια Wifi"
+msgstr "Ασφάλεια Wi-Fi"
 
 #: editorqml/qml/generalSettings/AdvancedPermissionsDialog.qml:18
-#, fuzzy, kde-format
-#| msgid "Available Users"
+#, kde-format
 msgid "Allowed Users"
-msgstr "Διαθέσιμοι χρήστες"
+msgstr "Επιτρεπόμενοι χρήστες"
 
 #: editorqml/qml/generalSettings/GeneralSettings.qml:131
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item metered mode"
 msgid "Automatic"
 msgstr "Αυτόματα"
@@ -4435,28 +4393,26 @@ msgstr "Αυτόματα"
 #: editorqml/qml/ipv4/IPv4Advance.qml:18
 #, kde-format
 msgid "Advanced IPv4 Settings"
-msgstr ""
+msgstr "Προηγμένες ρυθμίσεις IPv4"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:45
 #, kde-format
 msgid "DHCP:"
-msgstr ""
+msgstr "DHCP:"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:46
 #, kde-format
 msgid "Send hostname to DHCP server"
-msgstr ""
+msgstr "Αποστολή ονόματος υπολογιστή στον διακομιστή DHCP"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:76 editorqml/qml/ipv4/IPv4Advance.qml:83
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item DAD timeout left to NetworkManager"
 msgid "Default"
 msgstr "Προκαθορισμένο"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:78 editorqml/qml/ipv4/IPv4Advance.qml:85
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item duplicate address detection turned off"
 msgid "Disabled"
 msgstr "Ανενεργή"
@@ -4465,7 +4421,7 @@ msgstr "Ανενεργή"
 #, kde-format
 msgctxt "@item:intext duplicate address detection timeout in milliseconds"
 msgid "%1 ms"
-msgstr ""
+msgstr "%1 ms"
 
 #: editorqml/qml/ipv4/IPv4Advance.qml:94
 #, kde-format
@@ -4475,20 +4431,24 @@ msgid ""
 "\n"
 "0 disables the check, -1 lets NetworkManager decide."
 msgstr ""
+"Χρονικό όριο σε χιλιοστά του δευτερολέπτου για τον έλεγχο διπλών διευθύνσεων "
+"IP στο δίκτυο.\n"
+"\n"
+"Με 0 απενεργοποιείται ο έλεγχος. Με -1 αποφασίζει το NetworkManager."
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:125
 #: editorqml/qml/ipv4/IPv4Settings.qml:254
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "10.0.0.0"
-msgstr ""
+msgstr "10.0.0.0"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:127
 #: editorqml/qml/ipv4/IPv4Settings.qml:256
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "255.255.255.0"
-msgstr ""
+msgstr "255.255.255.0"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:129
 #: editorqml/qml/ipv4/IPv4Settings.qml:258
@@ -4497,94 +4457,75 @@ msgstr ""
 #, kde-format
 msgctxt "@info:placeholder optional field"
 msgid "Optional"
-msgstr ""
+msgstr "Προαιρετικό"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:170 editorqml/qml/ipv6/IPv6Routes.qml:191
-#, fuzzy, kde-format
-#| msgid "Add"
+#, kde-format
 msgctxt "@action:button Insert a row"
 msgid "Add"
 msgstr "Προσθήκη"
 
 #: editorqml/qml/ipv4/IPv4Routes.qml:177 editorqml/qml/ipv6/IPv6Routes.qml:198
-#, fuzzy, kde-format
-#| msgid "Remove"
+#, kde-format
 msgctxt "@action:button Remove a selected row"
 msgid "Remove"
 msgstr "Αφαίρεση"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Automatic"
 msgstr "Αυτόματα"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Automatic (Only addresses)"
 msgstr "Αυτόματα (μόνο διευθύνσεις)"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Link-Local"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Link-Local"
 msgstr "Τοπική σύνδεση"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox like in use Manual configuration"
 msgid "Manual"
 msgstr "Χειροκίνητα"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Shared to other computers"
+#, kde-format
 msgctxt "@item:inlistbox IPv4 method"
 msgid "Shared to other computers"
 msgstr "Κοινή χρήση με άλλους υπολογιστές"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:29
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox like in this setting is Disabled"
 msgid "Disabled"
 msgstr "Ανενεργή"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:78
 #: editorqml/qml/ipv6/IPv6Settings.qml:78
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Search Domains:"
 msgstr "Τομείς αναζήτησης:"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:126
-#, fuzzy, kde-format
-#| msgid ""
-#| "Use this field to specify the DHCP client ID which is a string sent to "
-#| "the DHCP server\n"
-#| "to identify the local machine that the DHCP server may use to customize "
-#| "the DHCP\n"
-#| "lease and options."
+#, kde-format
 msgid ""
 "Use this field to specify the DHCP client ID which is a string sent to the "
 "DHCP server to identify the local machine that the DHCP server may use to "
 "customize the DHCP lease and options."
 msgstr ""
-"Χρησιμοποιήστε αυτό το πεδίο για τον προσδιορισμό του αναγνωριστικού πελάτη "
-"DHCP το οποίο είναι μια συμβολοσειρά προς τον εξυπηρετητή DHCP\n"
-"για την αναγνώριση του τοπικού μηχανήματος το οποίο ο εξυπηρετητής DHCP "
-"μπορεί να χρησιμοποιεί για να προσαρμόσει τη χρονική ισχύ του DHCP\n"
-"και τις επιλογές."
+"Ορίστε εδώ το αναγνωριστικό πελάτη DHCP που αποστέλλεται στον διακομιστή "
+"DHCP για την αναγνώριση του τοπικού υπολογιστή. Ο διακομιστής μπορεί να το "
+"χρησιμοποιήσει για να προσαρμόσει τη διάρκεια μίσθωσης και τις επιλογές DHCP."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:155
 #: editorqml/qml/ipv6/IPv6Settings.qml:158
@@ -4596,6 +4537,11 @@ msgid ""
 "Default value -1 means that NetworkManager gets to choose and manage the "
 "actual metric of the route."
 msgstr ""
+"Τιμή που βοηθά στην επιλογή της καλύτερης διαδρομής για τα πακέτα με βάση "
+"την απόσταση, την καθυστέρηση και την αξιοπιστία.\n"
+"\n"
+"Με την προεπιλεγμένη τιμή -1, το NetworkManager επιλέγει και διαχειρίζεται "
+"τη μετρική της διαδρομής."
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:162
 #: editorqml/qml/ipv6/IPv6Settings.qml:165
@@ -4604,132 +4550,113 @@ msgid "Addresses"
 msgstr "Διευθύνσεις"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:310
-#, fuzzy, kde-format
-#| msgid ""
-#| "Allows the connection to complete if IPv4 configuration fails\n"
-#| "but IPv6 configuration succeeds"
+#, kde-format
 msgid ""
 "Allows the connection to complete if IPv4 configuration fails but IPv6 "
 "configuration succeeds"
 msgstr ""
-"Επιτρέπει την ολοκλήρωση της σύνδεσης \n"
-"αν η διαμόρφωση IPv4 αποτύχει αλλά η διαμόρφωση IPv6 επιτύχει"
+"Επιτρέπει την ολοκλήρωση της σύνδεσης αν αποτύχει η διαμόρφωση IPv4 αλλά "
+"πετύχει η διαμόρφωση IPv6"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:326
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:139
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:255 editorqml/qml/vpn/pptp/Pptp.qml:82
 #: editorqml/qml/vpn/ssh/Ssh.qml:194 editorqml/qml/vpn/sstp/Sstp.qml:106
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:142
-#, fuzzy, kde-format
-#| msgid "Advanced…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Advanced…"
 msgstr "Για προχωρημένους…"
 
 #: editorqml/qml/ipv4/IPv4Settings.qml:332
 #: editorqml/qml/ipv6/IPv6Settings.qml:346
-#, fuzzy, kde-format
-#| msgid "Routes…"
+#, kde-format
 msgctxt "@action:button"
 msgid "Routes…"
 msgstr "Διαδρομές δικτύου…"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:16
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgid "Search Domains"
-msgstr "Τομείς αναζήτησης:"
+msgstr "Τομείς αναζήτησης"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:107
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:113
 #: editorqml/qml/wifisecurity/DnsList.qml:113
 #, kde-format
 msgid "Move Up"
-msgstr ""
+msgstr "Μετακίνηση πάνω"
 
 #: editorqml/qml/ipv4/SearchDomainList.qml:120
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:126
 #: editorqml/qml/wifisecurity/DnsList.qml:126
 #, kde-format
 msgid "Move Down"
-msgstr ""
+msgstr "Μετακίνηση κάτω"
 
 #: editorqml/qml/ipv6/IPv6Routes.qml:129
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "2001:db8::"
-msgstr ""
+msgstr "2001:db8::"
 
 #: editorqml/qml/ipv6/IPv6Routes.qml:131
 #: editorqml/qml/ipv6/IPv6Settings.qml:259
-#, fuzzy, kde-format
-#| msgid "4"
+#, kde-format
 msgctxt "@info:placeholder IPv6 prefix length"
 msgid "64"
-msgstr "4"
+msgstr "64"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic"
 msgstr "Αυτόματα"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic (Only addresses)"
 msgstr "Αυτόματα (μόνο διευθύνσεις)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Automatic (Only DHCP)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Automatic (Only DHCP)"
 msgstr "Αυτόματο (μόνο DHCP)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgid "Link-Local"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 method"
 msgid "Link-Local"
 msgstr "Τοπική σύνδεση"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:29
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@item:inlistbox like in this setting is Ignored"
 msgid "Ignored"
 msgstr "Αγνόηση"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions left to NetworkManager"
 msgid "Default"
 msgstr "Προκαθορισμένο"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox privacy disabled"
 msgid "Disabled"
 msgstr "Ανενεργή"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Enabled (prefer public address)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions"
 msgid "Enabled (prefer public address)"
 msgstr "Ενεργή (να προτιμάται δημόσια διεύθυνση)"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:120
-#, fuzzy, kde-format
-#| msgid "Enabled (prefer temporary addresses)"
+#, kde-format
 msgctxt "@item:inlistbox IPv6 privacy extensions"
 msgid "Enabled (prefer temporary addresses)"
 msgstr "Ενεργή (να προτιμάται προσωρινή διεύθυνση)"
@@ -4741,78 +4668,71 @@ msgid ""
 "enabled, it makes the kernel generate a temporary IPv6 address in addition "
 "to the public one generated from MAC address via modified EUI-64."
 msgstr ""
+"Ρυθμίστε τις επεκτάσεις απορρήτου IPv6 για το SLAAC, όπως περιγράφονται στο "
+"RFC4941. Όταν είναι ενεργές, ο πυρήνας δημιουργεί μια προσωρινή διεύθυνση "
+"IPv6 επιπλέον της δημόσιας που παράγεται από τη διεύθυνση MAC μέσω "
+"τροποποιημένου EUI-64."
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:257
 #, kde-format
 msgctxt "@info:placeholder"
 msgid "2001:db8::1"
-msgstr ""
+msgstr "2001:db8::1"
 
 #: editorqml/qml/ipv6/IPv6Settings.qml:330
-#, fuzzy, kde-format
-#| msgid ""
-#| "When connecting to IPv4-capable networks, allows the connection to "
-#| "complete if\n"
-#| "IPv6 configuration fails but IPv4 configuration succeeds"
+#, kde-format
 msgid ""
 "When connecting to IPv4-capable networks, allows the connection to complete "
 "if IPv6 configuration fails but IPv4 configuration succeeds"
 msgstr ""
-"Όταν συνδέεστε σε δίκτυα με δυνατότητες IPv4, επιτρέπει την ολοκλήρωση της "
-"σύνδεσης \n"
-"αν η διαμόρφωση IPv6 αποτύχει αλλά η IPv4 επιτύχει"
+"Σε δίκτυα που υποστηρίζουν IPv4, επιτρέπει την ολοκλήρωση της σύνδεσης αν "
+"αποτύχει η διαμόρφωση IPv6 αλλά πετύχει η διαμόρφωση IPv4"
 
 #: editorqml/qml/PasswordField.qml:106
-#, fuzzy, kde-format
-#| msgid "Always Ask"
+#, kde-format
 msgid "Always asked"
 msgstr "Ερώτηση πάντα"
 
 #: editorqml/qml/PasswordField.qml:108
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Not required"
 msgstr "Δεν απαιτείται"
 
 #: editorqml/qml/PasswordPromptDialog.qml:24 qml/ConnectionItemDelegate.qml:97
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgctxt "@action:button Connect to network"
 msgid "Connect"
-msgstr "Συνδέθηκε"
+msgstr "Σύνδεση"
 
 #: editorqml/qml/PasswordPromptDialog.qml:31
 #, kde-format
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 #: editorqml/qml/PasswordPromptDialog.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr "Κωδικός πρόσβασης:"
+msgstr "Εισαγωγή κωδικού πρόσβασης"
 
 #: editorqml/qml/PasswordPromptDialog.qml:43
-#, fuzzy, kde-format
-#| msgid "Network ID"
+#, kde-format
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr "Αναγνωριστικό δικτύου"
+msgstr "Δίκτυο: %1"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "Ο κωδικός πρέπει να είναι έγκυρο κλειδί WEP"
 
 #: editorqml/qml/PasswordPromptDialog.qml:62
 #, kde-format
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "Ο κωδικός πρέπει να έχει από 8 έως 64 χαρακτήρες"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:30
 #: editorqml/qml/vpn/l2tp/L2tp.qml:30
@@ -4822,22 +4742,19 @@ msgstr ""
 #: editorqml/qml/vpn/ssh/Ssh.qml:34 editorqml/qml/vpn/sstp/Sstp.qml:30
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:39
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:25
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgid "Gateway:"
-msgstr "Δικτυακή πύλη"
+msgstr "Δικτυακή πύλη:"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:33
 #, kde-format
 msgid "SSLVPN server IP or name."
-msgstr ""
+msgstr "Διεύθυνση IP ή όνομα διακομιστή SSLVPN."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:47
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:78
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:37
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User name:"
 msgstr "Όνομα χρήστη:"
 
@@ -4847,13 +4764,14 @@ msgstr "Όνομα χρήστη:"
 msgid ""
 "Set the name used for authenticating the local system to the peer to <name>."
 msgstr ""
+"Ορίζει σε <name> το όνομα με το οποίο ταυτοποιείται το τοπικό σύστημα στον "
+"ομότιμο κόμβο."
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:77
 #: editorqml/qml/vpn/l2tp/L2tp.qml:106 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:93
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:57
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:61 editorqml/qml/vpn/sstp/Sstp.qml:59
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA Certificate:"
 msgstr "Πιστοποιητικό CA:"
 
@@ -4861,95 +4779,87 @@ msgstr "Πιστοποιητικό CA:"
 #: editorqml/qml/vpn/l2tp/L2tp.qml:130
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:193
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:85
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "User Certificate:"
 msgstr "Πιστοποιητικό χρήστη:"
 
 #: editorqml/qml/vpn/fortisslvpn/Fortisslvpn.qml:113
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User Key:"
-msgstr "Όνομα χρήστη:"
+msgstr "Κλειδί χρήστη:"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:40
 #, kde-format
 msgid "Use a One-Time Password"
-msgstr ""
+msgstr "Χρήση κωδικού μίας χρήσης"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:42
-#, fuzzy, kde-format
-#| msgid "Ask for this password every time"
+#, kde-format
 msgid "Ask for a one-time password every time this connection is activated."
-msgstr "Ερώτηση για κωδικό κάθε φορά"
+msgstr "Ζητά κωδικό μίας χρήσης κάθε φορά που ενεργοποιείται αυτή η σύνδεση."
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:53
 #, kde-format
 msgid "2FA"
-msgstr ""
+msgstr "2FA"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:55
 #, kde-format
 msgid "Use two-factor authentication. This supersedes the one-time password."
-msgstr ""
+msgstr "Χρήση ταυτοποίησης δύο παραγόντων. Υπερισχύει του κωδικού μίας χρήσης."
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:64
-#, fuzzy, kde-format
-#| msgid "Real Name"
+#, kde-format
 msgid "Realm:"
-msgstr "Πραγματικό όνομα"
+msgstr "Περιοχή:"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAdvanced.qml:77
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Trusted certificate:"
-msgstr "Πιστοποιητικό χρήστη:"
+msgstr "Έμπιστο πιστοποιητικό:"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:24
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "FortiSSLVPN Authentication"
-msgstr "Ταυτοποίηση"
+msgstr "Ταυτοποίηση FortiSSLVPN"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "One Time Password"
-msgstr "Κωδικός πρόσβασης:"
+msgstr "Κωδικός μίας χρήσης"
 
 #: editorqml/qml/vpn/fortisslvpn/FortisslvpnAuth.qml:38
 #, kde-format
 msgid "Token:"
-msgstr ""
+msgstr "Διακριτικό:"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:24
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgid "Toplevel Domain:"
-msgstr "Τομείς αναζήτησης:"
+msgstr "Τομέας επιπέδου κορυφής:"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:27
 #, kde-format
 msgid "The domain the iodine server is authoritative for."
-msgstr ""
+msgstr "Ο τομέας για τον οποίο ο διακομιστής iodine είναι εξουσιοδοτημένος."
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:36
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "Nameserver:"
-msgstr "Εξυπηρετητές DNS:"
+msgstr "Διακομιστής ονομάτων:"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:39
 #, kde-format
 msgid ""
 "Nameserver to use for the tunnel. Leave empty to use the system default."
 msgstr ""
+"Διακομιστής ονομάτων για τη σήραγγα. Αφήστε το πεδίο κενό για χρήση της "
+"προεπιλογής του συστήματος."
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:65
 #, kde-format
 msgid "Fragment Size:"
-msgstr ""
+msgstr "Μέγεθος τμήματος:"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:67
 #, kde-format
@@ -4957,6 +4867,8 @@ msgid ""
 "Maximum size of the upstream DNS fragments, in bytes. Automatic lets iodine "
 "probe for it."
 msgstr ""
+"Μέγιστο μέγεθος των εξερχόμενων τμημάτων DNS, σε byte. Με την αυτόματη "
+"επιλογή, το iodine το ανιχνεύει."
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
 #: editorqml/qml/vpn/iodine/Iodine.qml:75
@@ -4966,64 +4878,55 @@ msgstr ""
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:107
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:108
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:133
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgid "Automatic"
 msgstr "Αυτόματα"
 
 #: editorqml/qml/vpn/iodine/Iodine.qml:74
-#, fuzzy, kde-format
-#| msgid " bytes"
+#, kde-format
 msgid "%1 byte"
 msgid_plural "%1 bytes"
-msgstr[0] " bytes"
-msgstr[1] " bytes"
+msgstr[0] "%1 byte"
+msgstr[1] "%1 byte"
 
 #: editorqml/qml/vpn/iodine/IodineAuth.qml:22
 #, kde-format
 msgid "Iodine VPN"
-msgstr ""
+msgstr "VPN Iodine"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:33
 #, kde-format
 msgid "L2TP server IP or name."
-msgstr ""
+msgstr "Διεύθυνση IP ή όνομα διακομιστή L2TP."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:42
-#, fuzzy, kde-format
-#| msgid "Authentication:"
+#, kde-format
 msgid "Authentication type:"
-msgstr "Ταυτοποίηση:"
+msgstr "Τύπος ταυτοποίησης:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:45 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:82
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:50
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "Select an authentication mode."
-msgstr "Εσωτερική ταυτοποίηση:"
+msgstr "Επιλέξτε μέθοδο ταυτοποίησης."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/openvpn/Openvpn.qml:54
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Password"
-msgstr "Κωδικός πρόσβασης:"
+msgstr "Κωδικός πρόσβασης"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:49 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificates (TLS)"
-msgstr "Πιστοποιητικό CA:"
+msgstr "Πιστοποιητικά (TLS)"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:92 editorqml/qml/vpn/pptp/Pptp.qml:66
 #: editorqml/qml/vpn/sstp/Sstp.qml:51
-#, fuzzy, kde-format
-#| msgctxt "@info"
-#| msgid "Search Domains:"
+#, kde-format
 msgid "NT Domain:"
-msgstr "Τομείς αναζήτησης:"
+msgstr "Τομέας NT:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:97
 #, kde-format
@@ -5031,104 +4934,98 @@ msgid ""
 "Append the domain name <domain> to the local host name for authentication "
 "purposes."
 msgstr ""
+"Προσθέτει τον τομέα <domain> στο όνομα του τοπικού υπολογιστή για την "
+"ταυτοποίηση."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:115 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:102
 #, kde-format
 msgid ""
 "Certificate authority (CA) file in .pem, .der, .crt, .cer or .p12 formats."
-msgstr ""
+msgstr "Αρχείο αρχής πιστοποίησης (CA) σε μορφή .pem, .der, .crt, .cer ή .p12."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:139
 #, kde-format
 msgid "Certificate in .pem, .der, .crt, .cer or .p12 formats."
-msgstr ""
+msgstr "Πιστοποιητικό σε μορφή .pem, .der, .crt, .cer ή .p12."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:154 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:141
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:109
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:48
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Private Key:"
 msgstr "Ιδιωτικό κλειδί:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:163 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:150
 #, kde-format
 msgid "Private key in .pem, .der, .key, .pk8 or .p12 formats."
-msgstr ""
+msgstr "Ιδιωτικό κλειδί σε μορφή .pem, .der, .key, .pk8 ή .p12."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:183 editorqml/qml/vpn/l2tp/L2tpIpsec.qml:188
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:236
-#, fuzzy, kde-format
-#| msgid "Private key password:"
+#, kde-format
 msgid "Private Key Password:"
 msgstr "Κωδικός πρόσβασης ιδιωτικού κλειδιού:"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:200
 #, kde-format
 msgid "Use L2TP ephemeral source port"
-msgstr ""
+msgstr "Χρήση εφήμερης θύρας προέλευσης L2TP"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:216
-#, fuzzy, kde-format
-#| msgid "Network Type"
+#, kde-format
 msgctxt "@action:button"
 msgid "IPsec Settings…"
-msgstr "Τύπος δικτύου"
+msgstr "Ρυθμίσεις IPsec…"
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:220
 #, kde-format
 msgid "No IPsec daemon (libreswan or strongSwan) was found."
-msgstr ""
+msgstr "Δεν βρέθηκε υπηρεσία IPsec (libreswan ή strongSwan)."
 
 #: editorqml/qml/vpn/l2tp/L2tp.qml:228
 #, kde-format
 msgctxt "@action:button"
 msgid "PPP Settings…"
-msgstr ""
+msgstr "Ρυθμίσεις PPP…"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:24
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:36
 #, kde-format
 msgid "L2TP VPN"
-msgstr ""
+msgstr "VPN L2TP"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:25
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:152
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:50
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "User Password:"
-msgstr "Κωδικός πρόσβασης:"
+msgstr "Κωδικός πρόσβασης χρήστη:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "User Certificate Password:"
-msgstr "Πιστοποιητικό χρήστη:"
+msgstr "Κωδικός πρόσβασης πιστοποιητικού χρήστη:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:48
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Machine Certificate Password:"
-msgstr "Πιστοποιητικό χρήστη:"
+msgstr "Κωδικός πρόσβασης πιστοποιητικού υπολογιστή:"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:59
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:171
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Pre-shared Key:"
-msgstr "Ιδιωτικό κλειδί:"
+msgstr "Προδιαμοιρασμένο κλειδί:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:60
 #, kde-format
 msgid "Enable IPsec tunnel to L2TP host"
-msgstr ""
+msgstr "Ενεργοποίηση σήραγγας IPsec προς τον υπολογιστή L2TP"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:74
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Machine Authentication"
-msgstr "Ταυτοποίηση"
+msgstr "Ταυτοποίηση υπολογιστή"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:79 editorqml/qml/vpn/ssh/Ssh.qml:140
 #, kde-format
@@ -5136,34 +5033,30 @@ msgid "Type:"
 msgstr "Τύπος:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:86
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Pre-shared Key (PSK)"
-msgstr "Ιδιωτικό κλειδί:"
+msgstr "Προδιαμοιρασμένο κλειδί (PSK)"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:117
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:157
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Machine Certificate:"
-msgstr "Πιστοποιητικό χρήστη:"
+msgstr "Πιστοποιητικό υπολογιστή:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:126
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificate in .pem, .der or .p12 formats."
-msgstr "Πιστοποιητικό CA:"
+msgstr "Πιστοποιητικό σε μορφή .pem, .der ή .p12."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:189
 #, kde-format
 msgid "Password for private key or PKCS#12 certificate."
-msgstr ""
+msgstr "Κωδικός πρόσβασης για ιδιωτικό κλειδί ή πιστοποιητικό PKCS#12."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:213
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Remote ID:"
-msgstr "Διεύθυνση IPv4"
+msgstr "Αναγνωριστικό απομακρυσμένου κόμβου:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:216
 #, kde-format
@@ -5173,11 +5066,16 @@ msgid ""
 "by strongSwan, Libreswan, Openswan and FreeS/WAN. See strongSwan or "
 "Libreswan documentation for leftid/rightid syntax and identity parsing."
 msgstr ""
+"Προαιρετικό. Ο τρόπος αναγνώρισης του διακομιστή IPsec για την ταυτοποίηση. "
+"Αναφέρεται επίσης ως Peer ID ή Gateway ID και ως rightid στα strongSwan, "
+"Libreswan, Openswan και FreeS/WAN. Συμβουλευτείτε την τεκμηρίωση του "
+"strongSwan ή του Libreswan για τη σύνταξη leftid/rightid και την ανάλυση "
+"αναγνωριστικών."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:225
 #, kde-format
 msgid "Phase1 Algorithms:"
-msgstr ""
+msgstr "Αλγόριθμοι φάσης 1:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:228
 #, kde-format
@@ -5185,11 +5083,13 @@ msgid ""
 "Optional. A list of proposals for IKE - Main Mode. The format is “enc-integ-"
 "group,enc-integ-group, …”."
 msgstr ""
+"Προαιρετικό. Λίστα προτάσεων για το IKE σε κύρια λειτουργία (Main Mode). Η "
+"μορφή είναι «enc-integ-group,enc-integ-group, …»."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:237
 #, kde-format
 msgid "Phase2 Algorithms:"
-msgstr ""
+msgstr "Αλγόριθμοι φάσης 2:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:240
 #, kde-format
@@ -5197,11 +5097,13 @@ msgid ""
 "Optional. A list of proposals for ESP - Quick Mode. The format is “enc-integ,"
 "enc-integ, …”."
 msgstr ""
+"Προαιρετικό. Λίστα προτάσεων για το ESP σε γρήγορη λειτουργία (Quick Mode). "
+"Η μορφή είναι «enc-integ,enc-integ, …»."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:249
 #, kde-format
 msgid "Phase1 Lifetime:"
-msgstr ""
+msgstr "Διάρκεια φάσης 1:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:251
 #, kde-format
@@ -5209,11 +5111,13 @@ msgid ""
 "How long the keying channel of a connection should last before being "
 "renegotiated."
 msgstr ""
+"Πόσο διαρκεί το κανάλι ανταλλαγής κλειδιών της σύνδεσης πριν γίνει νέα "
+"διαπραγμάτευση."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:269
 #, kde-format
 msgid "Phase2 Lifetime:"
-msgstr ""
+msgstr "Διάρκεια φάσης 2:"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:271
 #, kde-format
@@ -5222,12 +5126,15 @@ msgid ""
 "authentication keys for user packets) should last, from successful "
 "negotiation to expiry."
 msgstr ""
+"Πόσο διαρκεί μια συγκεκριμένη συνεδρία σύνδεσης (ένα σύνολο κλειδιών "
+"κρυπτογράφησης και ταυτοποίησης για τα πακέτα χρηστών) από την επιτυχή "
+"διαπραγμάτευση έως τη λήξη."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:291
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
 msgid "Enforce UDP encapsulation"
-msgstr ""
+msgstr "Επιβολή ενθυλάκωσης UDP"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:293
 #, kde-format
@@ -5235,13 +5142,15 @@ msgid ""
 "Some firewalls block ESP traffic. Enforcing UDP encapsulation even if no NAT "
 "situation is detected might help in such cases."
 msgstr ""
+"Ορισμένα τείχη προστασίας αποκλείουν την κίνηση ESP. Σε αυτές τις "
+"περιπτώσεις μπορεί να βοηθήσει η επιβολή ενθυλάκωσης UDP, ακόμη και όταν δεν "
+"ανιχνεύεται NAT."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:304
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:192
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use IP compression"
-msgstr "Χρήση συμπίεσης κεφαλίδας TCP"
+msgstr "Χρήση συμπίεσης IP"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:306
 #, kde-format
@@ -5249,17 +5158,18 @@ msgid ""
 "IPComp compresses raw IP packets before they get encrypted. This saves some "
 "bandwidth, but uses more processing power."
 msgstr ""
+"Το IPComp συμπιέζει τα ακατέργαστα πακέτα IP πριν κρυπτογραφηθούν. Έτσι "
+"εξοικονομείται εύρος ζώνης, αλλά χρειάζεται περισσότερη επεξεργαστική ισχύς."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:317
 #, kde-format
 msgid "Use IKEv2 key exchange"
-msgstr ""
+msgstr "Χρήση ανταλλαγής κλειδιών IKEv2"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:328
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgid "Disable PFS"
-msgstr "Ανενεργή"
+msgstr "Απενεργοποίηση PFS"
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:330
 #, kde-format
@@ -5267,62 +5177,60 @@ msgid ""
 "Disable perfect forward secrecy. Do this only if the server doesn’t support "
 "PFS."
 msgstr ""
+"Απενεργοποιεί την τέλεια μυστικότητα προώθησης (PFS). Χρησιμοποιήστε το μόνο "
+"αν ο διακομιστής δεν υποστηρίζει PFS."
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:40
 #, kde-format
 msgctxt "separator between hours and minutes"
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: editorqml/qml/vpn/l2tp/L2tpLifetimeField.qml:54
 #, kde-format
 msgctxt "separator between minutes and seconds"
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:66
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:58
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr ""
+msgstr "Να επιτρέπονται οι ακόλουθες μέθοδοι ταυτοποίησης:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:118
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:100
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is being established"
-#| msgid "Connecting"
+#, kde-format
 msgid "Encryption"
-msgstr "Συνδέεται"
+msgstr "Κρυπτογράφηση"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:123
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:105
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr ""
+msgstr "Χρήση κρυπτογράφησης MPPE"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:130
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:112
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
 #, kde-format
 msgid "Crypto:"
-msgstr ""
+msgstr "Κρυπτογράφηση:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:135
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:117
-#, fuzzy, kde-format
-#| msgid "Require 128-bit encryption"
+#, kde-format
 msgid "Require the use of MPPE, with 40/128-bit encryption or all."
-msgstr "Απαίτηση κρυπτογράφησης 128-bit"
+msgstr ""
+"Απαιτεί MPPE με κρυπτογράφηση 40 bit, 128 bit ή οποιαδήποτε από τις δύο."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:121
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgctxt "Gsm modes (2G/3G/any)"
-#| msgid "Any"
+#, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
 msgstr "Οποιαδήποτε"
@@ -5330,25 +5238,23 @@ msgstr "Οποιαδήποτε"
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:121
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "WEP key 128 bits"
+#, kde-format
 msgid "128 bit"
-msgstr "Κλειδί WEP 128 bits"
+msgstr "128 bit"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:139
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:121
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgid "40 bit"
-msgstr ""
+msgstr "40 bit"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:148
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:130
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
-#, fuzzy, kde-format
-#| msgid "Use stateful MPPE"
+#, kde-format
 msgid "Use stateful encryption"
-msgstr "Χρήση MPPE με μεταβλητές κατάστασης"
+msgstr "Χρήση κρυπτογράφησης με μεταβλητές κατάστασης"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:150
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:132
@@ -5356,239 +5262,231 @@ msgstr "Χρήση MPPE με μεταβλητές κατάστασης"
 msgid ""
 "Allow MPPE to use stateful mode. Stateless mode is still attempted first."
 msgstr ""
+"Επιτρέπει στο MPPE να χρησιμοποιεί λειτουργία με μεταβλητές κατάστασης. "
+"Δοκιμάζεται πρώτα η λειτουργία χωρίς μεταβλητές κατάστασης."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:166
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:148
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
-#, fuzzy, kde-format
-#| msgid "Use BSD data compression"
+#, kde-format
 msgid "Allow BSD compression"
 msgstr "Χρήση συμπίεσης δεδομένων BSD"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:168
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:150
-#, fuzzy, kde-format
-#| msgid "Use BSD data compression"
+#, kde-format
 msgid "Allow/disable BSD-Compress compression."
-msgstr "Χρήση συμπίεσης δεδομένων BSD"
+msgstr "Ενεργοποίηση ή απενεργοποίηση συμπίεσης BSD-Compress."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:177
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:159
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
-#, fuzzy, kde-format
-#| msgid "Use Deflate data compression"
+#, kde-format
 msgid "Allow Deflate compression"
 msgstr "Χρήση συμπίεσης δεδομένων Deflate"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:179
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:161
-#, fuzzy, kde-format
-#| msgid "Use Deflate data compression"
+#, kde-format
 msgid "Allow/disable Deflate compression."
-msgstr "Χρήση συμπίεσης δεδομένων Deflate"
+msgstr "Ενεργοποίηση ή απενεργοποίηση συμπίεσης Deflate."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:188
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:170
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Allow TCP header compression"
 msgstr "Χρήση συμπίεσης κεφαλίδας TCP"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:195
 #, kde-format
 msgid "Use protocol field compression negotiation"
-msgstr ""
+msgstr "Χρήση διαπραγμάτευσης συμπίεσης πεδίου πρωτοκόλλου"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:202
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use Address/Control compression"
-msgstr "Χρήση συμπίεσης κεφαλίδας TCP"
+msgstr "Χρήση συμπίεσης Address/Control"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:204
 #, kde-format
 msgid "Use Address/Control compression in both directions (send and receive)."
 msgstr ""
+"Χρήση συμπίεσης Address/Control και στις δύο κατευθύνσεις (αποστολή και "
+"λήψη)."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:222
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:186
 #, kde-format
 msgid "Send LCP echo-requests to find out whether peer is alive."
 msgstr ""
+"Αποστολή αιτημάτων ηχούς LCP για να ελεγχθεί αν ανταποκρίνεται ο ομότιμος "
+"κόμβος."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:233
-#, fuzzy, kde-format
-#| msgid "Network Type"
+#, kde-format
 msgid "Other Settings"
-msgstr "Τύπος δικτύου"
+msgstr "Άλλες ρυθμίσεις"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:244
 #, kde-format
 msgid "Multilink PPP MRRU:"
-msgstr ""
+msgstr "MRRU πολλαπλών ζεύξεων PPP:"
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:246
 #, kde-format
 msgid "Try to negotiate a PPP Multilink on a single connection."
-msgstr ""
+msgstr "Δοκιμή διαπραγμάτευσης PPP πολλαπλών ζεύξεων σε μία σύνδεση."
 
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:266
 #, kde-format
 msgid "MRU:"
-msgstr ""
+msgstr "MRU:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:27
 #, kde-format
 msgid "IP or hostname of the IPsec gateway."
-msgstr ""
+msgstr "Διεύθυνση IP ή όνομα υπολογιστή της δικτυακής πύλης IPsec."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:36
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:26
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:67 editorqml/qml/vpn/vpnc/VpncAuth.qml:35
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "Group name:"
-msgstr "Όνομα χρήστη:"
+msgstr "Όνομα ομάδας:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:39
 #, kde-format
 msgid "Group name, or local identifier, this connection belongs to."
-msgstr ""
+msgstr "Όνομα ομάδας ή τοπικό αναγνωριστικό στο οποίο ανήκει αυτή η σύνδεση."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:51
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:39
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:52
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "User password:"
-msgstr "Κωδικός πρόσβασης:"
+msgstr "Κωδικός πρόσβασης χρήστη:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:64
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:50
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:82
-#, fuzzy, kde-format
-#| msgid "Show password"
+#, kde-format
 msgid "Group password:"
-msgstr "Εμφάνιση κωδικού πρόσβασης"
+msgstr "Κωδικός πρόσβασης ομάδας:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:81
-#, fuzzy, kde-format
-#| msgid "Users allowed to activate the connection"
+#, kde-format
 msgid "User name for XAUTH authentication."
-msgstr "Επιτρέπεται στους χρήστες να ενεργοποιήσουν τη σύνδεση"
+msgstr "Όνομα χρήστη για ταυτοποίηση XAUTH."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:90
 #, kde-format
 msgid "Phase1 algorithms:"
-msgstr ""
+msgstr "Αλγόριθμοι φάσης 1:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:93
 #, kde-format
 msgid "IKE algorithms to propose. Leave empty for the defaults."
-msgstr ""
+msgstr "Προτεινόμενοι αλγόριθμοι IKE. Αφήστε κενό για τις προεπιλογές."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:102
 #, kde-format
 msgid "Phase2 algorithms:"
-msgstr ""
+msgstr "Αλγόριθμοι φάσης 2:"
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:105
 #, kde-format
 msgid "ESP algorithms to propose. Leave empty for the defaults."
-msgstr ""
+msgstr "Προτεινόμενοι αλγόριθμοι ESP. Αφήστε κενό για τις προεπιλογές."
 
 #: editorqml/qml/vpn/libreswan/Libreswan.qml:117
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:41
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "(NT-)Domain name for authentication."
-msgstr "Εσωτερική ταυτοποίηση:"
+msgstr "Όνομα τομέα (NT) για ταυτοποίηση."
 
 #: editorqml/qml/vpn/libreswan/LibreswanAuth.qml:38
 #, kde-format
 msgid "Libreswan VPN"
-msgstr ""
+msgstr "VPN Libreswan"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:34
 #, kde-format
 msgid "Address of the VPN gateway, optionally including the port."
-msgstr ""
+msgstr "Διεύθυνση της δικτυακής πύλης VPN, προαιρετικά με θύρα."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:43
 #, kde-format
 msgid "VPN Protocol:"
-msgstr ""
+msgstr "Πρωτόκολλο VPN:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:46
 #, kde-format
 msgid "Which VPN the gateway speaks. All of these are handled by openconnect."
 msgstr ""
+"Το πρωτόκολλο VPN που χρησιμοποιεί η δικτυακή πύλη. Το openconnect "
+"υποστηρίζει όλα τα πρωτόκολλα της λίστας."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgid "Cisco AnyConnect"
-msgstr "Χωρίς σύνδεση"
+msgstr "Cisco AnyConnect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "Juniper Network Connect"
-msgstr ""
+msgstr "Juniper Network Connect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "PAN Global Protect"
-msgstr ""
+msgstr "PAN Global Protect"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
-#, fuzzy, kde-format
-#| msgid "Connection Speed"
+#, kde-format
 msgid "Pulse Connect Secure"
-msgstr "Ταχύτητα σύνδεσης"
+msgstr "Pulse Connect Secure"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "F5 BIG-IP SSL VPN"
-msgstr ""
+msgstr "F5 BIG-IP SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "Fortinet SSL VPN"
-msgstr ""
+msgstr "Fortinet SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:50
 #, kde-format
 msgid "Array SSL VPN"
-msgstr ""
+msgstr "Array SSL VPN"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:75
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Proxy:"
-msgstr "Τύπος:"
+msgstr "Διαμεσολαβητής:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:78
 #, kde-format
 msgid "Proxy to reach the gateway through, as a URL."
 msgstr ""
+"URL του διαμεσολαβητή μέσω του οποίου θα γίνει η σύνδεση στη δικτυακή πύλη."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:87
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "User Agent:"
-msgstr "Όνομα χρήστη:"
+msgstr "Αναγνωριστικό πελάτη (User Agent):"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:95
 #, kde-format
 msgid "CSD Wrapper Script:"
-msgstr ""
+msgstr "Σενάριο περιβλήματος CSD:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:117
 #, kde-format
 msgid "Allow Cisco Secure Desktop trojan"
-msgstr ""
+msgstr "Να επιτρέπεται το πρόγραμμα Cisco Secure Desktop (trojan)"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:119
 #, kde-format
@@ -5596,11 +5494,13 @@ msgid ""
 "Run the host-check program the gateway asks for. The wrapper script above "
 "replaces it."
 msgstr ""
+"Εκτέλεση του προγράμματος ελέγχου υπολογιστή που ζητά η δικτυακή πύλη. Το "
+"παραπάνω σενάριο περιβλήματος το αντικαθιστά."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:128
 #, kde-format
 msgid "Reported OS:"
-msgstr ""
+msgstr "Δηλωμένο λειτουργικό σύστημα:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:131
 #, kde-format
@@ -5608,10 +5508,11 @@ msgid ""
 "Operating system to report to the gateway. Leave at the default to report "
 "the real one."
 msgstr ""
+"Το λειτουργικό σύστημα που θα δηλωθεί στη δικτυακή πύλη. Διατηρήστε την "
+"προεπιλογή για να δηλωθεί το πραγματικό σύστημα."
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item:inlistbox report the real operating system"
 msgid "Default"
 msgstr "Προκαθορισμένο"
@@ -5619,94 +5520,87 @@ msgstr "Προκαθορισμένο"
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "GNU/Linux"
-msgstr ""
+msgstr "GNU/Linux"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "GNU/Linux 64-bit"
-msgstr ""
+msgstr "GNU/Linux 64 bit"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Windows"
-msgstr ""
+msgstr "Windows"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Mac OS X"
-msgstr ""
+msgstr "Mac OS X"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Android"
-msgstr ""
+msgstr "Android"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:135
 #, kde-format
 msgid "Apple iOS"
-msgstr ""
+msgstr "Apple iOS"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:142
 #, kde-format
 msgid "Reported Version:"
-msgstr ""
+msgstr "Δηλωμένη έκδοση:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:152
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Certificate Authentication"
-msgstr "Ταυτοποίηση"
+msgstr "Ταυτοποίηση με πιστοποιητικό"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:175
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Machine Private Key:"
-msgstr "Ιδιωτικό κλειδί:"
+msgstr "Ιδιωτικό κλειδί υπολογιστή:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:211
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "User Private Key:"
-msgstr "Ιδιωτικό κλειδί:"
+msgstr "Ιδιωτικό κλειδί χρήστη:"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:231
 #, kde-format
 msgid "Use FSID for key passphrase"
-msgstr ""
+msgstr "Χρήση FSID για το συνθηματικό του κλειδιού"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:240
 #, kde-format
 msgid "Prevent user from manually accepting invalid certificates"
-msgstr ""
+msgstr "Απαγόρευση χειροκίνητης αποδοχής μη έγκυρων πιστοποιητικών"
 
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:255
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgctxt "@action:button"
 msgid "Token Authentication…"
-msgstr "Ταυτοποίηση"
+msgstr "Ταυτοποίηση με διακριτικό…"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:25
 #, kde-format
 msgctxt "@title:window"
 msgid "OpenConnect OTP Tokens"
-msgstr ""
+msgstr "Διακριτικά OTP του OpenConnect"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:62
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Software Token Authentication"
-msgstr "Ταυτοποίηση"
+msgstr "Ταυτοποίηση με διακριτικό λογισμικού"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:67
-#, fuzzy, kde-format
-#| msgid "Mode:"
+#, kde-format
 msgid "Token Mode:"
-msgstr "Λειτουργία:"
+msgstr "Λειτουργία διακριτικού:"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "@item:inlistbox no software token"
 msgid "Disabled"
 msgstr "Ανενεργή"
@@ -5714,50 +5608,49 @@ msgstr "Ανενεργή"
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "RSA SecurID — read from ~/.stokenrc"
-msgstr ""
+msgstr "RSA SecurID — ανάγνωση από το ~/.stokenrc"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "RSA SecurID — manually entered"
-msgstr ""
+msgstr "RSA SecurID — χειροκίνητη εισαγωγή"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "TOTP — manually entered"
-msgstr ""
+msgstr "TOTP — χειροκίνητη εισαγωγή"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "HOTP — manually entered"
-msgstr ""
+msgstr "HOTP — χειροκίνητη εισαγωγή"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:70
 #, kde-format
 msgid "Yubikey"
-msgstr ""
+msgstr "Yubikey"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectToken.qml:82
 #, kde-format
 msgid "Token Secret:"
-msgstr ""
+msgstr "Μυστικό διακριτικού:"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:25
-#, fuzzy, kde-format
-#| msgid "Security Type"
+#, kde-format
 msgctxt "@title:window"
 msgid "Security Key"
-msgstr "Τύπος ασφάλειας"
+msgstr "Κλειδί ασφαλείας"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:48
 #, kde-format
 msgctxt "@action:button"
 msgid "Retry"
-msgstr ""
+msgstr "Δοκιμή ξανά"
 
 #: editorqml/qml/vpn/openconnect/OpenconnectWebAuth.qml:139
 #, kde-format
 msgid "Confirm PIN:"
-msgstr ""
+msgstr "Επιβεβαίωση PIN:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:38
 #, kde-format
@@ -5765,24 +5658,23 @@ msgid ""
 "Remote gateways, with optional port and protocol (e.g. ovpn.corp.com:1194:"
 "udp)."
 msgstr ""
+"Απομακρυσμένες δικτυακές πύλες, προαιρετικά με θύρα και πρωτόκολλο (π.χ. "
+"ovpn.corp.com:1194:udp)."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "Shared Key"
+#, kde-format
 msgid "Static Key"
-msgstr "Κοινόχρηστο κλειδί"
+msgstr "Στατικό κλειδί"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:54
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Password with Certificates (TLS)"
-msgstr "Πιστοποιητικό CA:"
+msgstr "Κωδικός πρόσβασης με πιστοποιητικά (TLS)"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:70
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificate authority (CA) file in .pem format."
-msgstr "Πιστοποιητικό CA:"
+msgstr "Αρχείο αρχής πιστοποίησης (CA) σε μορφή .pem."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:94
 #, kde-format
@@ -5790,29 +5682,30 @@ msgid ""
 "Local peer's signed certificate in .pem format (signed by CA of CA "
 "Certificate)."
 msgstr ""
+"Υπογεγραμμένο πιστοποιητικό του τοπικού κόμβου σε μορφή .pem, υπογεγραμμένο "
+"από την αρχή του πιστοποιητικού CA."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:118
 #, kde-format
 msgid "Local peer's private key in .pem format."
-msgstr ""
+msgstr "Ιδιωτικό κλειδί του τοπικού κόμβου σε μορφή .pem."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:133
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Static Key:"
-msgstr "Ιδιωτικό κλειδί:"
+msgstr "Στατικό κλειδί:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:142
 #, kde-format
 msgid "Pre-shared file for Static Key encryption mode (non-TLS)."
 msgstr ""
+"Προδιαμοιρασμένο αρχείο για κρυπτογράφηση με στατικό κλειδί (χωρίς TLS)."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:157
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:644
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "Key Direction:"
-msgstr "Εσωτερική ταυτοποίηση:"
+msgstr "Κατεύθυνση κλειδιού:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:162
 #, kde-format
@@ -5821,6 +5714,10 @@ msgid ""
 "peer. For example, if the peer uses '1', this connection must use '0'. If "
 "you are unsure what value to use, contact your system administrator."
 msgstr ""
+"Αν οριστεί κατεύθυνση κλειδιού, πρέπει να είναι αντίθετη από εκείνη του "
+"ομότιμου κόμβου VPN. Για παράδειγμα, αν ο κόμβος χρησιμοποιεί «1», αυτή η "
+"σύνδεση πρέπει να χρησιμοποιεί «0». Αν δεν είστε βέβαιοι για την τιμή, "
+"επικοινωνήστε με τον διαχειριστή του συστήματός σας."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
@@ -5829,346 +5726,327 @@ msgstr ""
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:24
-#, fuzzy, kde-format
-#| msgctxt "no security"
-#| msgid "None"
+#, kde-format
 msgid "None"
 msgstr "Καμία"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #, kde-format
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:166
 #, kde-format
 msgid "1"
-msgstr ""
+msgstr "1"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:173 editorqml/qml/vpn/ssh/Ssh.qml:59
 #: editorqml/qml/vpn/ssh/Ssh.qml:111
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Local IP Address:"
-msgstr "Διεύθυνση IPv4"
+msgstr "Τοπική διεύθυνση IP:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:178
 #, kde-format
 msgid "IP address of the local VPN endpoint."
-msgstr ""
+msgstr "Διεύθυνση IP του τοπικού άκρου του VPN."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:187 editorqml/qml/vpn/ssh/Ssh.qml:47
 #: editorqml/qml/vpn/ssh/Ssh.qml:97
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Remote IP Address:"
-msgstr "Διεύθυνση IPv4"
+msgstr "Απομακρυσμένη διεύθυνση IP:"
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:192
 #, kde-format
 msgid "IP address of the remote VPN endpoint."
-msgstr ""
+msgstr "Διεύθυνση IP του απομακρυσμένου άκρου του VPN."
 
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:206
 #, kde-format
 msgid "Username passed to OpenVPN when prompted for it."
-msgstr ""
+msgstr "Όνομα χρήστη που δίνεται στο OpenVPN όταν ζητηθεί."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:28
-#, fuzzy, kde-format
-#| msgid "Advanced"
+#, kde-format
 msgctxt "@title:window"
 msgid "Advanced"
 msgstr "Για προχωρημένους"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:77
-#, fuzzy, kde-format
-#| msgid "Network Type"
+#, kde-format
 msgid "TLS Settings"
-msgstr "Τύπος δικτύου"
+msgstr "Ρυθμίσεις TLS"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:81
 #, kde-format
 msgid "Proxies"
-msgstr ""
+msgstr "Διαμεσολαβητές"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:112
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:37
 #, kde-format
 msgid "Use custom gateway port:"
-msgstr ""
+msgstr "Χρήση προσαρμοσμένης θύρας δικτυακής πύλης:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:136
 #, kde-format
 msgid "Use custom renegotiation interval:"
-msgstr ""
+msgstr "Χρήση προσαρμοσμένου διαστήματος αναδιαπραγμάτευσης:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:154
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use compression"
-msgstr "Χρήση συμπίεσης κεφαλίδας TCP"
+msgstr "Χρήση συμπίεσης"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:161
-#, fuzzy, kde-format
-#| msgid "Compression"
+#, kde-format
 msgid "Compression:"
-msgstr "Συμπίεση"
+msgstr "Συμπίεση:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZO"
-msgstr ""
+msgstr "LZO"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZ4"
-msgstr ""
+msgstr "LZ4"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
 #, kde-format
 msgid "LZ4 v2"
-msgstr ""
+msgstr "LZ4 v2"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:166
-#, fuzzy, kde-format
-#| msgctxt "Networking is inactive and all devices are disabled"
-#| msgid "Inactive"
+#, kde-format
 msgid "Adaptive"
-msgstr "Ανενεργή"
+msgstr "Προσαρμοζόμενη"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:175
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Use asymetric compression"
-msgstr "Χρήση συμπίεσης κεφαλίδας TCP"
+msgstr "Χρήση ασύμμετρης συμπίεσης"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:182
-#, fuzzy, kde-format
-#| msgid "New %1 connection"
+#, kde-format
 msgid "Use a TCP connection"
-msgstr "Νέα σύνδεση %1"
+msgstr "Χρήση σύνδεσης TCP"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:195
 #, kde-format
 msgid "Set virtual device type:"
-msgstr ""
+msgstr "Ορισμός τύπου εικονικής συσκευής:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
 #, kde-format
 msgid "TUN"
-msgstr ""
+msgstr "TUN"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:204
-#, fuzzy, kde-format
-#| msgid "PAP"
+#, kde-format
 msgid "TAP"
-msgstr "PAP"
+msgstr "TAP"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:216
 #, kde-format
 msgid "Set virtual device name:"
-msgstr ""
+msgstr "Ορισμός ονόματος εικονικής συσκευής:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:239
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:61
 #, kde-format
 msgid "Use custom tunnel Maximum Transmission Unit (MTU):"
-msgstr ""
+msgstr "Προσαρμοσμένη μέγιστη μονάδα μετάδοσης (MTU) σήραγγας:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:263
 #, kde-format
 msgid "Use custom UDP fragment size:"
-msgstr ""
+msgstr "Προσαρμοσμένο μέγεθος τμήματος UDP:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:281
 #, kde-format
 msgid "Restrict TCP maximum segment size (MSS)"
-msgstr ""
+msgstr "Περιορισμός μέγιστου μεγέθους τμήματος TCP (MSS)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:294
 #, kde-format
 msgid "Specify Path MTU discovery:"
-msgstr ""
+msgstr "Ορισμός ανίχνευσης MTU διαδρομής:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:303
 #, kde-format
 msgid "Maybe"
-msgstr ""
+msgstr "Ίσως"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:311
 #, kde-format
 msgid "Randomize remote hosts"
-msgstr ""
+msgstr "Τυχαία σειρά απομακρυσμένων υπολογιστών"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:318
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr ""
+msgstr "Προσθήκη τυχαίου προθέματος στο απομακρυσμένο όνομα DNS"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:325
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is being established"
-#| msgid "Connecting"
+#, kde-format
 msgid "Connect timeout:"
-msgstr "Συνδέεται"
+msgstr "Χρονικό όριο σύνδεσης:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:330
 #, kde-format
 msgid "%1 s"
-msgstr ""
+msgstr "%1 δ."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:338
 #, kde-format
 msgid "Allow pull of peer DNS names (FQDN)"
-msgstr ""
+msgstr "Να επιτρέπεται η λήψη πλήρων ονομάτων DNS (FQDN) του ομότιμου κόμβου"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:345
 #, kde-format
 msgid "push peer info"
-msgstr ""
+msgstr "Αποστολή πληροφοριών ομότιμου κόμβου"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:352
 #, kde-format
 msgid "IPv6 tun link"
-msgstr ""
+msgstr "Ζεύξη IPv6 TUN"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:365
 #, kde-format
 msgid "Specify ping interval:"
-msgstr ""
+msgstr "Ορισμός διαστήματος ping:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:389
 #, kde-format
 msgid "Specify exit or restart ping:"
-msgstr ""
+msgstr "Ορισμός ενέργειας εξόδου ή επανεκκίνησης για ping:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
 #, kde-format
 msgid "ping-exit"
-msgstr ""
+msgstr "ping-exit"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:398
 #, kde-format
 msgid "ping-restart"
-msgstr ""
+msgstr "ping-restart"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:416
 #, kde-format
 msgid "Accept authenticated packets from any address (Float)"
-msgstr ""
+msgstr "Αποδοχή πακέτων με ταυτοποίηση από οποιαδήποτε διεύθυνση (Float)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:429
 #, kde-format
 msgid "Specify max routes:"
-msgstr ""
+msgstr "Ορισμός μέγιστου αριθμού διαδρομών:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:461
 #, kde-format
 msgid "Cipher:"
-msgstr ""
+msgstr "Αλγόριθμος κρυπτογράφησης:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:471
 #, kde-format
 msgid "Data Ciphers:"
-msgstr ""
+msgstr "Αλγόριθμοι κρυπτογράφησης δεδομένων:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:481
 #, kde-format
 msgid "Data Ciphers Fallback:"
-msgstr ""
+msgstr "Εφεδρικός αλγόριθμος κρυπτογράφησης δεδομένων:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:491
-#, fuzzy, kde-format
-#| msgid "Link monitoring:"
+#, kde-format
 msgid "Disable cipher negotiation"
-msgstr "Παρακολούθηση συνδέσμου:"
+msgstr "Απενεργοποίηση διαπραγμάτευσης αλγορίθμου κρυπτογράφησης"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:504
 #, kde-format
 msgid "Use custom size of cipher key:"
-msgstr ""
+msgstr "Προσαρμοσμένο μέγεθος κλειδιού κρυπτογράφησης:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:522
-#, fuzzy, kde-format
-#| msgid "Authentication:"
+#, kde-format
 msgid "HMAC Authentication:"
-msgstr "Ταυτοποίηση:"
+msgstr "Ταυτοποίηση HMAC:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "MD-4"
-msgstr ""
+msgstr "MD-4"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "MD-5"
-msgstr ""
+msgstr "MD-5"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-1"
-msgstr ""
+msgstr "SHA-1"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-224"
-msgstr ""
+msgstr "SHA-224"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-256"
-msgstr ""
+msgstr "SHA-256"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-384"
-msgstr ""
+msgstr "SHA-384"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "SHA-512"
-msgstr ""
+msgstr "SHA-512"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:525
 #, kde-format
 msgid "RIPEMD-160"
-msgstr ""
+msgstr "RIPEMD-160"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:544
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Server Certificate Check:"
-msgstr "Πιστοποιητικό χρήστη:"
+msgstr "Έλεγχος πιστοποιητικού διακομιστή:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Don't verify certificate identification"
-msgstr ""
+msgstr "Χωρίς επαλήθευση της ταυτότητας του πιστοποιητικού"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify whole subject exactly"
-msgstr ""
+msgstr "Ακριβής επαλήθευση πλήρους θέματος"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify name exactly"
-msgstr ""
+msgstr "Ακριβής επαλήθευση ονόματος"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:548
 #, kde-format
 msgid "Verify name by prefix"
-msgstr ""
+msgstr "Επαλήθευση προθέματος ονόματος"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:551
 #, kde-format
 msgid "Verify subject partially (legacy mode, strongly discouraged)"
-msgstr ""
+msgstr "Μερική επαλήθευση θέματος (παλαιά λειτουργία, δεν συνιστάται)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:562
-#, fuzzy, kde-format
-#| msgid "Subject match:"
+#, kde-format
 msgid "Subject Match:"
 msgstr "Ταίριασμα θέματος:"
 
@@ -6176,125 +6054,124 @@ msgstr "Ταίριασμα θέματος:"
 #, kde-format
 msgid "Connect only to servers whose certificate matches the given subject."
 msgstr ""
+"Σύνδεση μόνο σε διακομιστές των οποίων το πιστοποιητικό έχει το καθορισμένο "
+"θέμα."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:576
 #, kde-format
 msgid "Verify peer (server) certificate usage signature"
 msgstr ""
+"Επαλήθευση της υπογραφής χρήσης του πιστοποιητικού του ομότιμου κόμβου "
+"(διακομιστή)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:583
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Remote peer certificate TLS type:"
-msgstr "Πιστοποιητικό χρήστη:"
+msgstr "Τύπος TLS του πιστοποιητικού απομακρυσμένου κόμβου:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
-#, fuzzy, kde-format
-#| msgid "Service:"
+#, kde-format
 msgid "Server"
-msgstr "Υπηρεσία:"
+msgstr "Διακομιστής"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:588
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:607
 #, kde-format
 msgid "Client"
-msgstr ""
+msgstr "Πελάτης"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:595
 #, kde-format
 msgid "Verify peer (server) certificate nsCertType designation"
 msgstr ""
+"Επαλήθευση του πεδίου nsCertType στο πιστοποιητικό του ομότιμου κόμβου "
+"(διακομιστή)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:602
 #, kde-format
 msgid "Remote peer certificate nsCert designation:"
-msgstr ""
+msgstr "Τύπος nsCert του πιστοποιητικού απομακρυσμένου κόμβου:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Auth"
-msgstr ""
+msgstr "TLS-Auth"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Crypt"
-msgstr ""
+msgstr "TLS-Crypt"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:617
 #, kde-format
 msgid "TLS-Crypt v2"
-msgstr ""
+msgstr "TLS-Crypt v2"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:624
-#, fuzzy, kde-format
-#| msgid "WEP index:"
+#, kde-format
 msgid "Key File:"
-msgstr "Δείκτης WEP:"
+msgstr "Αρχείο κλειδιού:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgid "Server (0)"
-msgstr "1 (προκαθορισμένο)"
+msgstr "Διακομιστής (0)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:650
 #, kde-format
 msgid "Client (1)"
-msgstr ""
+msgstr "Πελάτης (1)"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:657
-#, fuzzy, kde-format
-#| msgid "User certificate:"
+#, kde-format
 msgid "Extra certificates file:"
-msgstr "Πιστοποιητικό χρήστη:"
+msgstr "Αρχείο πρόσθετων πιστοποιητικών:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:675
 #, kde-format
 msgid "TLS version minimum:"
-msgstr ""
+msgstr "Ελάχιστη έκδοση TLS:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:687
 #, kde-format
 msgid "or highest"
-msgstr ""
+msgstr "ή η υψηλότερη"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:695
 #, kde-format
 msgid "TLS version maximum:"
-msgstr ""
+msgstr "Μέγιστη έκδοση TLS:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:703
 #, kde-format
 msgid "CRL verify file:"
-msgstr ""
+msgstr "Αρχείο CRL για επαλήθευση:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:721
 #, kde-format
 msgid "CRL verify directory:"
-msgstr ""
+msgstr "Κατάλογος CRL για επαλήθευση:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:755
-#, fuzzy, kde-format
-#| msgid "Type:"
+#, kde-format
 msgid "Proxy Type:"
-msgstr "Τύπος:"
+msgstr "Τύπος διαμεσολαβητή:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Not Required"
 msgstr "Δεν απαιτείται"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
 #, kde-format
 msgid "HTTP"
-msgstr ""
+msgstr "HTTP"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:758
 #, kde-format
 msgid "SOCKS"
-msgstr ""
+msgstr "SOCKS"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:767
 #, kde-format
@@ -6302,55 +6179,51 @@ msgid ""
 "Select this option if your organization requires the use of a proxy server "
 "to access the Internet."
 msgstr ""
+"Ενεργοποιήστε αυτή την επιλογή αν ο οργανισμός σας απαιτεί διακομιστή "
+"διαμεσολάβησης για πρόσβαση στο διαδίκτυο."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:772
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgid "Server Address:"
-msgstr "Διεύθυνση"
+msgstr "Διεύθυνση διακομιστή:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:782
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "Θύρα:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:796
 #, kde-format
 msgid "Retry indefinitely when errors occur"
-msgstr ""
+msgstr "Επανάληψη χωρίς όριο όταν προκύπτουν σφάλματα"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:803
-#, fuzzy, kde-format
-#| msgid "Username:"
+#, kde-format
 msgid "Proxy Username:"
-msgstr "Όνομα χρήστη:"
+msgstr "Όνομα χρήστη διαμεσολαβητή:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:819
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:59
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:54
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Proxy Password:"
-msgstr "Κωδικός πρόσβασης:"
+msgstr "Κωδικός πρόσβασης διαμεσολαβητή:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:24
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:36
 #, kde-format
 msgid "OpenVPN VPN"
-msgstr ""
+msgstr "VPN OpenVPN"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAuth.qml:48
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:52
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Key Password:"
-msgstr "Κωδικός πρόσβασης:"
+msgstr "Κωδικός πρόσβασης κλειδιού:"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:21
-#, fuzzy, kde-format
-#| msgid "Default"
+#, kde-format
 msgctxt "@item::inlist Default openvpn cipher item"
 msgid "Default"
 msgstr "Προκαθορισμένο"
@@ -6358,265 +6231,244 @@ msgstr "Προκαθορισμένο"
 #: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:30
 #, kde-format
 msgid "No ciphers were reported by OpenVPN."
-msgstr ""
+msgstr "Το OpenVPN δεν ανέφερε αλγορίθμους κρυπτογράφησης."
 
 #: editorqml/qml/vpn/openvpn/OpenvpnCipherField.qml:30
 #, kde-format
 msgid "Cipher to use for the data channel."
 msgstr ""
+"Αλγόριθμος κρυπτογράφησης που θα χρησιμοποιηθεί για το κανάλι δεδομένων."
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:27
 #, kde-format
 msgid "PPTP server IP or name."
-msgstr ""
+msgstr "Διεύθυνση IP ή όνομα διακομιστή PPTP."
 
 #: editorqml/qml/vpn/pptp/Pptp.qml:36
 #, kde-format
 msgid "Login:"
-msgstr ""
+msgstr "Σύνδεση:"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:22
 #, kde-format
 msgid "PPTP VPN"
-msgstr ""
+msgstr "VPN PPTP"
 
 #: editorqml/qml/vpn/pptp/PptpAuth.qml:24
 #, kde-format
 msgid "Password passed to PPTP when prompted for it."
-msgstr ""
+msgstr "Ο κωδικός που δίνεται στο PPTP όταν ζητηθεί."
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:43
-#, fuzzy, kde-format
-#| msgid "Network Type"
+#, kde-format
 msgid "Network Settings"
-msgstr "Τύπος δικτύου"
+msgstr "Ρυθμίσεις δικτύου"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:71
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 netmask"
-#| msgid "Netmask"
+#, kde-format
 msgid "Netmask:"
-msgstr "Μάσκα δικτύου"
+msgstr "Μάσκα δικτύου:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:84
 #, kde-format
 msgid "IPv6 Network Settings"
-msgstr ""
+msgstr "Ρυθμίσεις δικτύου IPv6"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:90
-#, fuzzy, kde-format
-#| msgid "IPv6"
+#, kde-format
 msgid "Use IPv6"
-msgstr "IPv6"
+msgstr "Χρήση IPv6"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:125
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv6 prefix"
-#| msgid "Prefix"
+#, kde-format
 msgid "Prefix:"
-msgstr "Πρόθεμα"
+msgstr "Πρόθεμα:"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
 #, kde-format
 msgid "SSH Agent"
-msgstr ""
+msgstr "Πράκτορας SSH"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:143
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "Key authentication"
-msgstr "Εσωτερική ταυτοποίηση:"
+msgstr "Ταυτοποίηση με κλειδί"
 
 #: editorqml/qml/vpn/ssh/Ssh.qml:150
-#, fuzzy, kde-format
-#| msgid "WEP index:"
+#, kde-format
 msgid "SSH Key File:"
-msgstr "Δείκτης WEP:"
+msgstr "Αρχείο κλειδιού SSH:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:85
 #, kde-format
 msgid "Extra SSH options:"
-msgstr ""
+msgstr "Πρόσθετες επιλογές SSH:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:109
 #, kde-format
 msgid "Remote device number:"
-msgstr ""
+msgstr "Αριθμός απομακρυσμένης συσκευής:"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:129
 #, kde-format
 msgid "Use a TAP device"
-msgstr ""
+msgstr "Χρήση συσκευής TAP"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:142
-#, fuzzy, kde-format
-#| msgctxt "like in Username for athentication"
-#| msgid "Username"
+#, kde-format
 msgid "Remote username"
 msgstr "Όνομα χρήστη"
 
 #: editorqml/qml/vpn/ssh/SshAdvanced.qml:162
 #, kde-format
 msgid "Do not replace default route"
-msgstr ""
+msgstr "Διατήρηση της προεπιλεγμένης διαδρομής"
 
 #: editorqml/qml/vpn/ssh/SshAuth.qml:23
 #, kde-format
 msgid "SSH VPN"
-msgstr ""
+msgstr "VPN SSH"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:39
 #, kde-format
 msgid "Optional"
-msgstr ""
+msgstr "Προαιρετικό"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:79
 #, kde-format
 msgid "Ignore certificate warnings"
-msgstr ""
+msgstr "Αγνόηση προειδοποιήσεων πιστοποιητικών"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:60
 #, kde-format
 msgid "Point-to-Point"
-msgstr ""
+msgstr "Σημείο προς σημείο"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:64
 #, kde-format
 msgid "Proxy"
-msgstr ""
+msgstr "Διαμεσολαβητής"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
-#, fuzzy, kde-format
-#| msgid "Use point-to-point encryption (MPPE)"
+#, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr "Χρήση κρυπτογράφησης σημείο-προς-σημείο (MPPE)"
+msgstr "Χρήση κρυπτογράφησης από σημείο σε σημείο της Microsoft (MPPE)"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "Διάφορα"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:213
 #, kde-format
 msgid "Use custom unit number:"
-msgstr ""
+msgstr "Προσαρμοσμένος αριθμός μονάδας:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:242
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgid "Address:"
-msgstr "Διεύθυνση"
+msgstr "Διεύθυνση:"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
 #, kde-format
 msgid "Credentials"
-msgstr ""
+msgstr "Στοιχεία σύνδεσης"
 
 #: editorqml/qml/vpn/sstp/SstpAuth.qml:22
 #, kde-format
 msgid "SSTP VPN"
-msgstr ""
+msgstr "VPN SSTP"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:35
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgid "Gateway"
 msgstr "Δικτυακή πύλη"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:47
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:88
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificate:"
-msgstr "Πιστοποιητικό CA:"
+msgstr "Πιστοποιητικό:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Certificate/private key"
-msgstr ""
+msgstr "Πιστοποιητικό / ιδιωτικό κλειδί"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "Certificate/ssh-agent"
-msgstr "Πιστοποιητικό CA:"
+msgstr "Πιστοποιητικό / ssh-agent"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Smartcard"
-msgstr ""
+msgstr "Έξυπνη κάρτα"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "EAP-TTLS"
-msgstr ""
+msgstr "EAP-TTLS"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:132
-#, fuzzy, kde-format
-#| msgid "Ask for this password every time"
+#, kde-format
 msgid "The PIN is asked for when the connection is activated."
-msgstr "Ερώτηση για κωδικό κάθε φορά"
+msgstr "Το PIN ζητείται όταν ενεργοποιείται η σύνδεση."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:168
 #, kde-format
 msgid "Options"
-msgstr ""
+msgstr "Επιλογές"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:174
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Request an inner IP address"
-msgstr "Διεύθυνση IPv4"
+msgstr "Αίτημα εσωτερικής διεύθυνσης IP"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:201
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
-msgstr ""
+msgstr "Ενεργοποίηση προσαρμοσμένων προτάσεων κρυπτογράφησης"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:208
 #, kde-format
 msgid "IKE:"
-msgstr ""
+msgstr "IKE:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:213
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
-msgstr ""
+msgstr "Λίστα προτάσεων για το IKE, χωρισμένων με «;»"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:222
 #, kde-format
 msgid "ESP:"
-msgstr ""
+msgstr "ESP:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:227
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
-msgstr ""
+msgstr "Λίστα προτάσεων για το ESP, χωρισμένων με «;»"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:28
 #, kde-format
 msgid "strongSwan VPN"
-msgstr ""
+msgstr "VPN strongSwan"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:33
-#, fuzzy, kde-format
-#| msgid "Private key password:"
+#, kde-format
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
 msgstr "Κωδικός πρόσβασης ιδιωτικού κλειδιού:"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:35
-#, fuzzy, kde-format
-#| msgid "PIN:"
+#, kde-format
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
 msgstr "PIN:"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:37
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@label:textbox password label for EAP password"
 msgid "Password:"
 msgstr "Κωδικός πρόσβασης:"
@@ -6624,148 +6476,136 @@ msgstr "Κωδικός πρόσβασης:"
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:28
 #, kde-format
 msgid "IP/hostname of IPsec gateway."
-msgstr ""
+msgstr "Διεύθυνση IP ή όνομα υπολογιστή της δικτυακής πύλης IPsec."
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:40
-#, fuzzy, kde-format
-#| msgid "Users allowed to activate the connection"
+#, kde-format
 msgid "User name for the connection."
-msgstr "Επιτρέπεται στους χρήστες να ενεργοποιήσουν τη σύνδεση"
+msgstr "Όνομα χρήστη για τη σύνδεση."
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:70
 #, kde-format
 msgid "Group name"
-msgstr ""
+msgstr "Όνομα ομάδας"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:99
-#, fuzzy, kde-format
-#| msgid "Inner authentication:"
+#, kde-format
 msgid "Use hybrid authentication"
-msgstr "Εσωτερική ταυτοποίηση:"
+msgstr "Χρήση υβριδικής ταυτοποίησης"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:101
 #, kde-format
 msgid ""
 "Enable hybrid authentication, i.e. use certificate in addition to password."
 msgstr ""
+"Ενεργοποίηση υβριδικής ταυτοποίησης με πιστοποιητικό και κωδικό πρόσβασης."
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:110
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgid "CA file:"
-msgstr "Αρχείο PAC:"
+msgstr "Αρχείο CA:"
 
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:119
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA certificate in PEM format."
-msgstr "Πιστοποιητικό CA:"
+msgstr "Πιστοποιητικό CA σε μορφή PEM."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:34
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "Identification"
-msgstr "Ταυτοποίηση"
+msgstr "Στοιχεία ταυτότητας"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:50
 #, kde-format
 msgid "Vendor:"
-msgstr ""
+msgstr "Κατασκευαστής:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:53
 #, kde-format
 msgid "Vendor of your IPsec gateway."
-msgstr ""
+msgstr "Κατασκευαστής της δικτυακής πύλης IPsec."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:57
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Cisco"
-msgstr ""
+msgstr "Cisco"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:57
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Netscreen"
-msgstr ""
+msgstr "Netscreen"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:57
 #, kde-format
 msgctxt "VPNC vendor name"
 msgid "Fortigate"
-msgstr ""
+msgstr "Fortigate"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:65
-#, fuzzy, kde-format
-#| msgid "Transport mode:"
+#, kde-format
 msgid "Transport and Security"
-msgstr "Λειτουργία μεταφοράς:"
+msgstr "Μεταφορά και ασφάλεια"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:69
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is being established"
-#| msgid "Connecting"
+#, kde-format
 msgid "Encryption method:"
-msgstr "Συνδέεται"
+msgstr "Μέθοδος κρυπτογράφησης:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:72
-#, fuzzy, kde-format
-#| msgctxt "The VPN connection is being established"
-#| msgid "Connecting"
+#, kde-format
 msgid "Encryption method."
-msgstr "Συνδέεται"
+msgstr "Μέθοδος κρυπτογράφησης."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:76
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgctxt "VPNC encryption method"
 msgid "Secure (default)"
-msgstr "1 (προκαθορισμένο)"
+msgstr "Ασφαλής (προεπιλογή)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:76
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "Weak (DES encryption, use with caution)"
-msgstr ""
+msgstr "Ασθενής (κρυπτογράφηση DES, χρησιμοποιήστε με προσοχή)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:76
 #, kde-format
 msgctxt "VPNC encryption method"
 msgid "None (completely insecure)"
-msgstr ""
+msgstr "Καμία (εντελώς ανασφαλής)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:83
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "NAT traversal:"
-msgstr "Εξυπηρετητές DNS:"
+msgstr "Διέλευση NAT:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:86
 #, kde-format
 msgid "NAT traversal method to use."
-msgstr ""
+msgstr "Μέθοδος που θα χρησιμοποιηθεί για τη διέλευση NAT."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T when available (default)"
-msgstr ""
+msgstr "NAT-T όταν είναι διαθέσιμο (προεπιλογή)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "NAT-T always"
-msgstr ""
+msgstr "Πάντα NAT-T"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
 #, kde-format
 msgctxt "NAT traversal method"
 msgid "Cisco UDP"
-msgstr ""
+msgstr "Cisco UDP"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:90
-#, fuzzy, kde-format
-#| msgid "Disabled"
+#, kde-format
 msgctxt "NAT traversal method"
 msgid "Disabled"
 msgstr "Ανενεργή"
@@ -6773,84 +6613,75 @@ msgstr "Ανενεργή"
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:97
 #, kde-format
 msgid "IKE DH Group:"
-msgstr ""
+msgstr "Ομάδα IKE DH:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:100
 #, kde-format
 msgid "Name of the IKE DH group."
-msgstr ""
+msgstr "Όνομα της ομάδας IKE DH."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:104
-#, fuzzy, kde-format
-#| msgctxt "wireless network cipher"
-#| msgid "Group WEP104"
+#, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 1"
-msgstr "Group WEP104"
+msgstr "Ομάδα DH 1"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:104
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 2 (default)"
-msgstr "1 (προκαθορισμένο)"
+msgstr "Ομάδα DH 2 (προεπιλογή)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:104
 #, kde-format
 msgctxt "IKE DH group"
 msgid "DH Group 5"
-msgstr ""
+msgstr "Ομάδα DH 5"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:111
 #, kde-format
 msgid "Perfect Forward Secrecy:"
-msgstr ""
+msgstr "Τέλεια μυστικότητα προώθησης (PFS):"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:114
 #, kde-format
 msgid "Diffie-Hellman group to use for PFS."
-msgstr ""
+msgstr "Ομάδα Diffie-Hellman για χρήση με PFS."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
-#, fuzzy, kde-format
-#| msgid "1 (default)"
+#, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "Server (default)"
-msgstr "1 (προκαθορισμένο)"
+msgstr "Διακομιστής (προεπιλογή)"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
-#, fuzzy, kde-format
-#| msgctxt "no security"
-#| msgid "None"
+#, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "None"
 msgstr "Καμία"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
-#, fuzzy, kde-format
-#| msgctxt "wireless network cipher"
-#| msgid "Group WEP104"
+#, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 1"
-msgstr "Group WEP104"
+msgstr "Ομάδα DH 1"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 2"
-msgstr ""
+msgstr "Ομάδα DH 2"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:118
 #, kde-format
 msgctxt "Perfect Forward Secrecy"
 msgid "DH Group 5"
-msgstr ""
+msgstr "Ομάδα DH 5"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:125
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Local Port:"
-msgstr "Διεύθυνση IPv4"
+msgstr "Τοπική θύρα:"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:127
 #, kde-format
@@ -6858,146 +6689,144 @@ msgid ""
 "Local port to use (0-65535). 0 (default value) means random port. 500 is "
 "vpnc's default."
 msgstr ""
+"Τοπική θύρα που θα χρησιμοποιηθεί (0-65535). Το 0 (προεπιλογή) επιλέγει "
+"τυχαία θύρα. Η προεπιλογή του vpnc είναι 500."
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:145
 #, kde-format
 msgid "Disable dead peer detection"
-msgstr ""
+msgstr "Απενεργοποίηση ανίχνευσης απώλειας ομότιμου κόμβου"
 
 #: editorqml/qml/vpn/vpnc/VpncAdvanced.qml:147
 #, kde-format
 msgid "Disable sending DPD packets (set timeout to 0)."
-msgstr ""
+msgstr "Απενεργοποίηση αποστολής πακέτων DPD (χρονικό όριο 0)."
 
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:49
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "VPNC Authentication"
-msgstr "Ταυτοποίηση"
+msgstr "Ταυτοποίηση VPNC"
 
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:61
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "Group Password:"
-msgstr "Κωδικός πρόσβασης:"
+msgstr "Κωδικός πρόσβασης ομάδας:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:18
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for this user only (encrypted)"
+#, kde-format
 msgid "Store secret for this user only (encrypted)"
 msgstr ""
-"Αποθήκευση κωδικού πρόσβασης μόνο για αυτόν τον χρήστη (κρυπτογραφημένος)"
+"Αποθήκευση στοιχείων ταυτοποίησης μόνο για αυτόν τον χρήστη (με "
+"κρυπτογράφηση)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:19
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "Store password for all users (not encrypted)"
+#, kde-format
 msgid "Store secret for all users (not encrypted)"
 msgstr ""
-"Αποθήκευση κωδικού πρόσβασης για όλους τους χρήστες (μη κρυπτογραφημένος)"
+"Αποθήκευση στοιχείων ταυτοποίησης για όλους τους χρήστες (χωρίς "
+"κρυπτογράφηση)"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:20
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:26
-#, fuzzy, kde-format
-#| msgid "This password is not required"
+#, kde-format
 msgid "This secret is not required"
-msgstr "Αυτός o κωδικός πρόσβασης δεν είναι απαραίτητος"
+msgstr "Αυτά τα στοιχεία ταυτοποίησης δεν απαιτούνται"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:36
-#, fuzzy, kde-format
-#| msgid "Name"
+#, kde-format
 msgid "Name:"
 msgstr "Όνομα"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:39
-#, fuzzy, kde-format
-#| msgid "Users allowed to activate the connection"
+#, kde-format
 msgid "Name of the network interface this connection creates."
-msgstr "Επιτρέπεται στους χρήστες να ενεργοποιήσουν τη σύνδεση"
+msgstr "Όνομα της διεπαφής δικτύου που δημιουργεί αυτή η σύνδεση."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:51
 #, kde-format
 msgid "The private key of this interface, as a base64 string."
-msgstr ""
+msgstr "Το ιδιωτικό κλειδί αυτής της διεπαφής ως συμβολοσειρά base64."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:71
-#, fuzzy, kde-format
-#| msgid "IPv4 Address"
+#, kde-format
 msgid "Listen Port:"
-msgstr "Διεύθυνση IPv4"
+msgstr "Θύρα ακρόασης:"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:73
 #, kde-format
 msgid "Port to listen on. Automatic lets WireGuard choose one."
-msgstr ""
+msgstr "Θύρα ακρόασης. Με την αυτόματη επιλογή, τη θύρα επιλέγει το WireGuard."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:90
 #, kde-format
 msgid "Firewall mark to apply to outgoing packets. Zero disables it."
 msgstr ""
+"Σήμανση τείχους προστασίας για εξερχόμενα πακέτα. Το μηδέν την απενεργοποιεί."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:117
 #, kde-format
 msgid "Add routes for the peers' allowed IPs"
 msgstr ""
+"Προσθήκη διαδρομών για τις επιτρεπόμενες διευθύνσεις IP των ομότιμων κόμβων"
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:119
 #, kde-format
 msgid "Turn this off to route the tunnel yourself."
 msgstr ""
+"Απενεργοποιήστε αυτή την επιλογή για να ρυθμίσετε μόνοι σας τη δρομολόγηση "
+"της σήραγγας."
 
 #: editorqml/qml/vpn/wireguard/Wireguard.qml:136
 #, kde-format
 msgctxt "@action:button"
 msgid "Peers…"
-msgstr ""
+msgstr "Ομότιμοι κόμβοι…"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:29
 #, kde-format
 msgctxt "@title:tab numbered WireGuard peer"
 msgid "Peer %1"
-msgstr ""
+msgstr "Ομότιμος κόμβος %1"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:75
 #, kde-format
 msgid "This interface has no peers, so it cannot connect to anything yet."
 msgstr ""
+"Η διεπαφή αυτή δεν έχει ομότιμους κόμβους, οπότε δεν μπορεί ακόμα να "
+"συνδεθεί."
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:175
 #, kde-format
 msgctxt "@action:button"
 msgid "Add new Peer"
-msgstr ""
+msgstr "Προσθήκη ομότιμου κόμβου"
 
 #: editorqml/qml/vpn/wireguard/WireguardPeers.qml:185
 #, kde-format
 msgctxt "@action:button"
 msgid "Remove this Peer"
-msgstr ""
+msgstr "Αφαίρεση αυτού του ομότιμου κόμβου"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
-#, fuzzy, kde-format
-#| msgid "%1 (%2 MHz)"
+#, kde-format
 msgctxt "@item BSSID (MAC address) followed by signal strength"
 msgid "%1 (%2%)"
-msgstr "%1 (%2 MHz)"
+msgstr "%1 (%2%)"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:119
 #, kde-format
 msgid "Frequency: %1 MHz"
-msgstr ""
+msgstr "θΣυχνότητα: %1 MHz"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:124
-#, fuzzy, kde-format
-#| msgid "Channel:"
+#, kde-format
 msgid "Channel: %1"
-msgstr "Κανάλι:"
+msgstr "Κανάλι: %1"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:136
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item wireless band"
 msgid "Automatic"
 msgstr "Αυτόματα"
@@ -7006,69 +6835,59 @@ msgstr "Αυτόματα"
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:232
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:95
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:98
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item MTU is automatically determined"
 msgid "Automatic"
-msgstr "Αυτόματα"
+msgstr "θΑυτόματα"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:229
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:95
-#, fuzzy, kde-format
-#| msgid " bytes"
+#, kde-format
 msgctxt "@item:intext MTU size, %1 is the number of bytes"
 msgid "%1 bytes"
-msgstr " bytes"
+msgstr "θ%1 byte"
 
 #: editorqml/qml/wifisecurity/AlternativeSubjectMatch.qml:15
-#, fuzzy, kde-format
-#| msgid "Alternative subject matches:"
+#, kde-format
 msgid "Alternative subject matches"
-msgstr "Εναλλακτικά ταιριάσματα θέματος:"
+msgstr "Εναλλακτικά ταιριάσματα θέματος"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:98
-#, fuzzy, kde-format
-#| msgid "Anonymous identity:"
+#, kde-format
 msgctxt "@label:textbox"
 msgid "Anonymous identity:"
 msgstr "Ανώνυμη ταυτότητα:"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
-#, fuzzy, kde-format
-#| msgid "Anonymous"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Anonymous"
 msgstr "Ανώνυμος"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
-#, fuzzy, kde-format
-#| msgid "Authenticated"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Authenticated"
-msgstr "Πιστοποιήθηκε"
+msgstr "θΜε ταυτοποίηση"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:116
-#, fuzzy, kde-format
-#| msgid "Both"
+#, kde-format
 msgctxt "@item:inlist authentication mode"
 msgid "Both"
 msgstr "Και τα δύο"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:142
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt ""
 "@label PAC stands for Proxy Auto-Configuration and should not be translated"
 msgid "PAC file:"
 msgstr "Αρχείο PAC:"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:191
-#, fuzzy, kde-format
-#| msgid "PAC file:"
+#, kde-format
 msgctxt "@item:filefilter"
 msgid "PAC files (*.pac)"
-msgstr "Αρχείο PAC:"
+msgstr "Αρχεία PAC (*.pac)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:117
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:39
@@ -7076,7 +6895,7 @@ msgstr "Αρχείο PAC:"
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:118
 #, kde-format
 msgid "*.der *.pem *.crt *.cer"
-msgstr ""
+msgstr "*.der *.pem *.crt *.cer"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapPeap.qml:175
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:170
@@ -7084,17 +6903,17 @@ msgstr ""
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTtls.qml:164
 #, kde-format
 msgid "Certificates (*.der *.pem *.crt *.cer)"
-msgstr ""
+msgstr "Πιστοποιητικά (*.der *.pem *.crt *.cer)"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:142
 #, kde-format
 msgid "*.der *.pem *.p12 *.key"
-msgstr ""
+msgstr "*.der *.pem *.p12 *.key"
 
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:182
 #, kde-format
 msgid "Keys (*.der *.pem *.p12 *.key)"
-msgstr ""
+msgstr "Κλειδιά (*.der *.pem *.p12 *.key)"
 
 #: editorqml/qml/wifisecurity/authentication/Owe.qml:30
 #, kde-format
@@ -7102,105 +6921,82 @@ msgid ""
 "Enhanced Open (OWE) provides encryption without authentication. No password "
 "required."
 msgstr ""
+"Το ενισχυμένο ανοικτό δίκτυο (OWE) παρέχει κρυπτογράφηση χωρίς ταυτοποίηση. "
+"Δεν απαιτείται κωδικός πρόσβασης."
 
 #: editorqml/qml/wifisecurity/authentication/WepKey.qml:38
-#, fuzzy, kde-format
-#| msgid "WEP index:"
+#, kde-format
 msgid "Key index:"
-msgstr "Δείκτης WEP:"
+msgstr "θΔείκτης κλειδιού:"
 
 #: editorqml/qml/wifisecurity/DnsList.qml:15
-#, fuzzy, kde-format
-#| msgid "DNS Servers:"
+#, kde-format
 msgid "DNS Servers"
-msgstr "Εξυπηρετητές DNS:"
+msgstr "Διακομιστές DNS"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:25
-#, fuzzy, kde-format
-#| msgid "WEP key 40/128 bits (Hex or ASCII)"
+#, kde-format
 msgid "WEP 40/128-bit key (Hex)"
-msgstr "Κλειδί WEP 40/128 bits (Hex ή ASCII)"
+msgstr "Κλειδί WEP 40/128 bit (δεκαεξαδικό)"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:26
 #, kde-format
 msgid "WEP 128-bit Passphrase"
-msgstr ""
+msgstr "Συνθηματικό WEP 128 bit"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:28
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Personal"
+#, kde-format
 msgid "WPA/WPA2 Personal"
-msgstr "Προσωπικό WPA/WPA2"
+msgstr "WPA/WPA2 για προσωπική χρήση"
 
 #: editorqml/qml/wifisecurity/WifiSecurityForm.qml:29
-#, fuzzy, kde-format
-#| msgid "WPA/WPA2 Enterprise"
+#, kde-format
 msgid "WPA/WPA2 Enterprise"
-msgstr "Εταιρικό WPA/WPA2"
+msgstr "WPA/WPA2 για επιχειρήσεις"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:56
-#, fuzzy, kde-format
-#| msgid ""
-#| "This option locks this connection to the network device specified by its\n"
-#| "permanent MAC address entered here. Example: 00:11:22:33:44:55"
+#, kde-format
 msgid ""
 "This option locks this connection to the network device specified by its "
 "permanent MAC address entered here. Example: 00:11:22:33:44:55"
 msgstr ""
-"Η επιλογή αυτή κλειδώνει τη σύνδεση αυτή στη δικτυακή συσκευή που "
-"καθορίζεται από τη \n"
-"μόνιμη διεύθυνση MAC που καταχωρείται εδώ. Π.χ. : 00:11:22:33:44:55"
+"Η επιλογή περιορίζει τη σύνδεση στη συσκευή δικτύου της οποίας τη μόνιμη "
+"διεύθυνση MAC εισάγετε εδώ. Παράδειγμα: 00:11:22:33:44:55"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:74
-#, fuzzy, kde-format
-#| msgid ""
-#| "The MAC address entered here will be used as hardware address for the\n"
-#| "network device this connection is activated on. This feature is known as "
-#| "MAC\n"
-#| "cloning or spoofing. Example 11:22:33:44:55"
+#, kde-format
 msgid ""
 "The MAC address entered here will be used as hardware address for the "
 "network device this connection is activated on. This feature is known as MAC "
 "cloning or spoofing. Example: 11:22:33:44:55:66"
 msgstr ""
-"Η διεύθυνση MAC που δόθηκε εδώ θα χρησιμοποιηθεί ως διεύθυνση υλικού για τη\n"
-" συσκευή δικτύωσης στην οποία η σύνδεση αυτή έχει ενεργοποιηθεί. Το "
-"χαρακτηριστικό αυτό είναι γνωστό\n"
-"ως κλωνοποίηση MAC ή μεταμφίεση (spoofing). Παράδειγμα 11:22:33:44:55"
+"Η διεύθυνση MAC που εισάγετε εδώ θα χρησιμοποιηθεί ως διεύθυνση υλικού της "
+"συσκευής δικτύου στην οποία ενεργοποιείται η σύνδεση. Αυτό είναι γνωστό ως "
+"κλωνοποίηση ή πλαστογράφηση MAC. Παράδειγμα: 11:22:33:44:55:66"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:107
-#, fuzzy, kde-format
-#| msgid ""
-#| "Only transmit packets of the specified size or smaller, breaking larger "
-#| "packets up\n"
-#| "into multiple Ethernet frames"
+#, kde-format
 msgid ""
 "Only transmit packets of the specified size or smaller, breaking larger "
 "packets up into multiple Ethernet frames"
 msgstr ""
-"Μεταδίδει πακέτα μόνο μικρότερα ή ίσα από ένα καθορισμένο μέγεθος, "
-"χωρίζοντάς τα \n"
-"μεγαλύτερα πακέτα σε πολλαπλά πλαίσια Ethernet"
+"Μεταδίδει μόνο πακέτα έως το καθορισμένο μέγεθος, χωρίζοντας τα μεγαλύτερα "
+"σε περισσότερα πλαίσια Ethernet"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgctxt "like in this setting is Disabled"
-#| msgid "Ignored"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Ignore"
 msgstr "Αγνόηση"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Automatic"
 msgstr "Αυτόματα"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:114
-#, fuzzy, kde-format
-#| msgid "Manual"
+#, kde-format
 msgctxt "@item:inlistbox link negotiation"
 msgid "Manual"
 msgstr "Χειροκίνητα"
@@ -7212,6 +7008,10 @@ msgid ""
 "will be forced without checking the device compatibility. If unsure, leave "
 "here “Ignore” or pick “Automatic”."
 msgstr ""
+"Διαπραγμάτευση ζεύξης της συσκευής. Με την επιλογή «Χειροκίνητα» "
+"επιβάλλονται οι τιμές ταχύτητας και αμφίδρομης μετάδοσης χωρίς έλεγχο "
+"συμβατότητας της συσκευής. Αν δεν είστε βέβαιοι, διατηρήστε την «Αγνόηση» ή "
+"επιλέξτε «Αυτόματα»."
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:128
 #, kde-format
@@ -7219,78 +7019,61 @@ msgid "Speed:"
 msgstr "Ταχύτητα:"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Half"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Half"
 msgstr "Απλή"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:159
-#, fuzzy, kde-format
-#| msgid "Full"
+#, kde-format
 msgctxt "@item:inlistbox duplex mode"
 msgid "Full"
 msgstr "Πλήρης"
 
 #: editorqml/qml/wiredconnectionsettings/WiredConnectionSettings.qml:167
-#, fuzzy, kde-format
-#| msgid ""
-#| "Request that the device use only the specified speed. In MBit/s, example "
-#| "100 == 100Mbit/s"
+#, kde-format
 msgid ""
 "Request that the device use the specified duplex mode. Either “Half” or "
 "“Full”"
 msgstr ""
-"Να απαιτηθεί από τη συσκευή η χρήση της καθορισμένης ταχύτητας μόνο. Σε MBit/"
-"δ, παράδειγμα 100 == 100Mbit/δ"
+"Ζητά από τη συσκευή να χρησιμοποιήσει την καθορισμένη λειτουργία αμφίδρομης "
+"μετάδοσης, «Απλή» ή «Πλήρης»"
 
 #: editorqml/settings/generalSettings/advancedpermissionsmodel.cpp:48
-#, fuzzy, kde-format
-#| msgctxt "@item:intable shortcut for Not Available"
-#| msgid "N/A"
+#, kde-format
 msgctxt "@item real name not available"
 msgid "N/A"
 msgstr "N/A"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:105
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgctxt "@title:column"
 msgid "Address"
 msgstr "Διεύθυνση"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:107
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 netmask"
-#| msgid "Netmask"
+#, kde-format
 msgctxt "@title:column"
 msgid "Netmask"
 msgstr "Μάσκα δικτύου"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:109
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:111
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 gateway"
-#| msgid "Gateway"
+#, kde-format
 msgctxt "@title:column"
 msgid "Gateway"
 msgstr "Δικτυακή πύλη"
 
 #: editorqml/settings/ipv4settings/ipv4routetablemodel.cpp:111
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:113
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 route metric"
-#| msgid "Metric"
+#, kde-format
 msgctxt "@title:column"
 msgid "Metric"
 msgstr "Μετρικό"
 
 #: editorqml/settings/ipv6settings/ipv6routetablemodel.cpp:109
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv6 prefix"
-#| msgid "Prefix"
+#, kde-format
 msgctxt "@title:column IPv6 prefix length"
 msgid "Prefix"
 msgstr "Πρόθεμα"
@@ -7298,76 +7081,72 @@ msgstr "Πρόθεμα"
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:74
 #, kde-format
 msgid "Choose a Passkey"
-msgstr ""
+msgstr "Επιλογή κλειδιού πρόσβασης"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:76
 #, kde-format
 msgid "Use your security key with %1"
-msgstr ""
+msgstr "Χρησιμοποιήστε το κλειδί ασφαλείας σας για το %1"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:80
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "PIN Required"
-msgstr "Δεν απαιτείται"
+msgstr "Απαιτείται PIN"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:82
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "New PIN Required"
-msgstr "Δεν απαιτείται"
+msgstr "Απαιτείται νέο PIN"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:84
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Change PIN Required"
-msgstr "Δεν απαιτείται"
+msgstr "Απαιτείται αλλαγή PIN"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:87
 #, kde-format
 msgid "Something went wrong"
-msgstr ""
+msgstr "Κάτι πήγε στραβά"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:103
 #, kde-format
 msgid "Which passkey do you want to use for %1?"
-msgstr ""
+msgstr "Ποιο κλειδί πρόσβασης θέλετε να χρησιμοποιήσετε για το %1;"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:105
 #, kde-format
 msgid "Touch your security key again to complete the request."
-msgstr ""
+msgstr "Αγγίξτε ξανά το κλειδί ασφαλείας σας για να ολοκληρωθεί το αίτημα."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:109
 #, kde-format
 msgid "Enter the PIN for your security key"
-msgstr ""
+msgstr "Εισαγάγετε το PIN του κλειδιού ασφαλείας σας"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:111
 #, kde-format
 msgid "Set new PIN for your security key"
-msgstr ""
+msgstr "Ορίστε νέο PIN για το κλειδί ασφαλείας σας"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:113
 #, kde-format
 msgid "Change PIN for your security key"
-msgstr ""
+msgstr "Αλλάξτε το PIN του κλειδιού ασφαλείας σας"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:123
 #, kde-format
 msgid "Request Timeout"
-msgstr ""
+msgstr "Έληξε το χρονικό όριο του αιτήματος"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:125
-#, fuzzy, kde-format
-#| msgid "Not Required"
+#, kde-format
 msgid "Key not registered"
-msgstr "Δεν απαιτείται"
+msgstr "Το κλειδί δεν έχει καταχωριστεί"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:127
 #, kde-format
 msgid "You already registered this device. Try again with device"
-msgstr ""
+msgstr "Έχετε ήδη καταχωρίσει αυτή τη συσκευή. Δοκιμάστε ξανά με άλλη συσκευή."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:129
 #, kde-format
@@ -7375,6 +7154,8 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "To unlock it, remove and reinsert it."
 msgstr ""
+"Το κλειδί ασφαλείας κλειδώθηκε λόγω επανειλημμένων λανθασμένων προσπαθειών "
+"PIN. Για να το ξεκλειδώσετε, αφαιρέστε το και τοποθετήστε το ξανά."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:131
 #, kde-format
@@ -7382,27 +7163,33 @@ msgid ""
 "The security key is locked because the wrong PIN was entered too many times. "
 "You'll need to reset the security key."
 msgstr ""
+"Το κλειδί ασφαλείας κλειδώθηκε λόγω επανειλημμένων λανθασμένων προσπαθειών "
+"PIN. Θα χρειαστεί να το επαναφέρετε."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:133
 #, kde-format
 msgid ""
 "Authenticator removed during verification. Please reinsert and try again"
 msgstr ""
+"Η συσκευή ταυτοποίησης αφαιρέθηκε κατά την επαλήθευση. Τοποθετήστε την ξανά "
+"και δοκιμάστε πάλι"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:135
 #, kde-format
 msgid "Authenticator doesn't have resident key support"
 msgstr ""
+"Η συσκευή ταυτοποίησης δεν υποστηρίζει αποθήκευση κλειδιών στην ίδια τη "
+"συσκευή"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:137
 #, kde-format
 msgid "Authenticator missing user verification"
-msgstr ""
+msgstr "Η συσκευή ταυτοποίησης δεν υποστηρίζει επαλήθευση χρήστη"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:139
 #, kde-format
 msgid "Authenticator missing Large Blob support"
-msgstr ""
+msgstr "Η συσκευή ταυτοποίησης δεν υποστηρίζει Large Blob"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:141
 #, kde-format
@@ -7410,110 +7197,108 @@ msgid ""
 "The security token does not support the server’s required authentication "
 "method."
 msgstr ""
+"θΤο διακριτικό ασφαλείας δεν υποστηρίζει τη μέθοδο ταυτοποίησης που απαιτεί "
+"ο διακομιστής."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:143
 #, kde-format
 msgid "Storage Full"
-msgstr ""
+msgstr "Ο χώρος αποθήκευσης είναι πλήρης"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:145
 #, kde-format
 msgid "User consent denied"
-msgstr ""
+msgstr "Ο χρήστης δεν έδωσε συγκατάθεση"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:147
 #, kde-format
 msgid "User Cancelled Request"
-msgstr ""
+msgstr "θΟ χρήστης ακύρωσε το αίτημα"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:176
 #, kde-format
 msgid "Internal User Verification Locked"
-msgstr ""
+msgstr "Η εσωτερική επαλήθευση χρήστη είναι κλειδωμένη"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:178
 #, kde-format
 msgid "Wrong PIN. %1 attempt remaining."
 msgid_plural "Wrong PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Λανθασμένο PIN. Απομένει %1 προσπάθεια."
+msgstr[1] "Λανθασμένο PIN. Απομένουν %1 προσπάθειες."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:180
 #, kde-format
 msgid "Too Short. %1 attempt remaining."
 msgid_plural "Too Short. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Πολύ σύντομο PIN. Απομένει %1 προσπάθεια."
+msgstr[1] "Πολύ σύντομο PIN. Απομένουν %1 προσπάθειες."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:182
 #, kde-format
 msgid "Invalid Characters. %1 attempt remaining."
 msgid_plural "Invalid Characters. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Μη έγκυροι χαρακτήρες. Απομένει %1 προσπάθεια."
+msgstr[1] "Μη έγκυροι χαρακτήρες. Απομένουν %1 προσπάθειες."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:184
 #, kde-format
 msgid "Same as current PIN. %1 attempt remaining."
 msgid_plural "Same as current PIN. %1 attempts remaining."
-msgstr[0] ""
-msgstr[1] ""
+msgstr[0] "Ίδιο με το τρέχον PIN. Απομένει %1 προσπάθεια."
+msgstr[1] "Ίδιο με το τρέχον PIN. Απομένουν %1 προσπάθειες."
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:197
 #, kde-format
 msgctxt "@action:button submit the entered PIN"
 msgid "Next"
-msgstr ""
+msgstr "Επόμενο"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:197
 #, kde-format
 msgctxt "@action:button"
 msgid "OK"
-msgstr ""
+msgstr "Εντάξει"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Close"
-msgstr ""
+msgstr "θΚλείσιμο"
 
 #: editorqml/settings/vpn/openconnect/openconnectwebauth.cpp:217
 #, kde-format
 msgctxt "@action:button"
 msgid "Cancel"
-msgstr ""
+msgstr "θΑκύρωση"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "OTP"
-msgstr ""
+msgstr "θOTP"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
-#, fuzzy, kde-format
-#| msgid "Authentication"
+#, kde-format
 msgid "authenticator"
-msgstr "Ταυτοποίηση"
+msgstr "συσκευή ταυτοποίησης"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "code"
-msgstr ""
+msgstr "κωδικός"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
 #, kde-format
 msgid "token"
-msgstr ""
+msgstr "διακριτικό"
 
 #: editorqml/settings/vpn/openvpn/openvpnauth.cpp:65
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgid "one-time password"
-msgstr "Κωδικός πρόσβασης:"
+msgstr "κωδικός μίας χρήσης"
 
 #: editorqml/settings/wificonnectionsettings/wifisetting.cpp:292
-#, fuzzy, kde-format
-#| msgctxt "PEAP version"
-#| msgid "Automatic"
+#, kde-format
 msgctxt "@item automatic wireless channel selection"
 msgid "Automatic"
 msgstr "Αυτόματα"
@@ -7522,95 +7307,85 @@ msgstr "Αυτόματα"
 #, kde-format
 msgctxt "@info:status"
 msgid "Plasma is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "Το Plasma δεν υποστηρίζει συνδέσεις VPN τύπου «%1»."
 
 #: handler.cpp:145
 #, kde-format
 msgctxt "@action:button"
 msgid "Report Bug"
-msgstr ""
+msgstr "θΑναφορά σφάλματος"
 
 #: handler.cpp:168
 #, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager is missing support for '%1' VPN connections."
-msgstr ""
+msgstr "Το NetworkManager δεν υποστηρίζει συνδέσεις VPN τύπου «%1»."
 
 #: handler.cpp:171
 #, kde-format
 msgctxt "@action:button"
 msgid "Install"
-msgstr ""
+msgstr "Εγκατάσταση"
 
 #: handler.cpp:217
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to activate %1"
 msgstr "Αποτυχία ενεργοποίησης %1"
 
 #: handler.cpp:391 handler.cpp:420
-#, fuzzy, kde-format
-#| msgid "Failed to add connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add connection %1"
 msgstr "Αποτυχία προσθήκης σύνδεσης %1"
 
 #: handler.cpp:398 handler.cpp:429
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been added"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been added"
 msgstr "Η σύνδεση %1 προστέθηκε"
 
 #: handler.cpp:468
-#, fuzzy, kde-format
-#| msgid "Failed to add %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to add %1"
 msgstr "Αποτυχία προσθήκης %1"
 
 #: handler.cpp:508
-#, fuzzy, kde-format
-#| msgid "Failed to deactivate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to deactivate %1"
 msgstr "Αποτυχία απενεργοποίησης %1"
 
 #: handler.cpp:646
-#, fuzzy, kde-format
-#| msgid "Failed to remove %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to forget %1"
 msgstr "Αποτυχία αφαίρεσης %1"
 
 #: handler.cpp:653
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been removed"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been forgotten"
 msgstr "Η σύνδεση %1 αφαιρέθηκε"
 
 #: handler.cpp:672
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to update connection %1"
 msgstr "Αποτυχία ενημέρωσης σύνδεσης %1"
 
 #: handler.cpp:679
-#, fuzzy, kde-format
-#| msgid "Connection %1 has been updated"
+#, kde-format
 msgctxt "@info:status"
 msgid "Connection %1 has been updated"
 msgstr "Η σύνδεση %1 ενημερώθηκε"
 
 #: handler.cpp:885
-#, fuzzy, kde-format
-#| msgid "Failed to activate %1"
+#, kde-format
 msgctxt "@title"
 msgid "Failed to create hotspot %1"
-msgstr "Αποτυχία ενεργοποίησης %1"
+msgstr "Αποτυχία δημιουργίας σημείου πρόσβασης %1"
 
 #: models/creatableconnectionsmodel.cpp:136
 #: models/creatableconnectionsmodel.cpp:143
@@ -7706,27 +7481,23 @@ msgid "Import a saved configuration file"
 msgstr "Εισαγωγή αρχείου με αποθηκευμένη διαμόρφωση..."
 
 #: models/networkmodelitem.cpp:342
-#, fuzzy, kde-format
-#| msgctxt "@info:tooltip real user name is not available"
-#| msgid "Not Available"
+#, kde-format
 msgctxt "@title:column header for list of available network connections"
 msgid "Available"
-msgstr "Μη διαθέσιμο"
+msgstr "Διαθέσιμα"
 
 #: models/networkmodelitem.cpp:348
-#, fuzzy, kde-format
-#| msgctxt "infiniband transport mode"
-#| msgid "Connected"
+#, kde-format
 msgctxt "@title:column header for list of connected network connections"
 msgid "Connected"
-msgstr "Συνδέθηκε"
+msgstr "Συνδεδεμένα"
 
 #: models/networkmodelitem.cpp:350
 #, kde-format
 msgctxt ""
 "@title:column header for list of previously connected network connections"
 msgid "Previously Used, Unavailable"
-msgstr ""
+msgstr "Χρησιμοποιήθηκαν στο παρελθόν, μη διαθέσιμα"
 
 #: networkstatus.cpp:126
 #, kde-format
@@ -7780,21 +7551,19 @@ msgid "Connecting to %1"
 msgstr "Γίνεται σύνδεση με %1"
 
 #: networkstatus.cpp:222
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgid "Connected to %1 (no connectivity)"
-msgstr "Συνδέθηκε με %1"
+msgstr "Σύνδεση στο %1 (χωρίς πρόσβαση)"
 
 #: networkstatus.cpp:225
 #, kde-format
 msgid "Connected to %1 (limited connectivity)"
-msgstr ""
+msgstr "Σύνδεση στο %1 (περιορισμένη συνδεσιμότητα)"
 
 #: networkstatus.cpp:228
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgid "Connected to %1 (log in required)"
-msgstr "Συνδέθηκε με %1"
+msgstr "Σύνδεση στο %1 (απαιτείται είσοδος)"
 
 #: networkstatus.cpp:231
 #, kde-format
@@ -7802,8 +7571,7 @@ msgid "Connected to %1"
 msgstr "Συνδέθηκε με %1"
 
 #: networkstatus.cpp:256
-#, fuzzy, kde-format
-#| msgid "NetworkManager not running"
+#, kde-format
 msgctxt "@info:status"
 msgid "NetworkManager service is not running"
 msgstr "Το NetworkManager δεν εκτελείται"
@@ -7820,62 +7588,55 @@ msgid "Unknown"
 msgstr "Άγνωστη"
 
 #: qml/ConnectionItemDelegate.qml:104
-#, fuzzy, kde-format
-#| msgctxt "There is no active network connection"
-#| msgid "Disconnected"
+#, kde-format
 msgctxt "@action:button disconnect from network"
 msgid "Disconnect"
-msgstr "Χωρίς σύνδεση"
+msgstr "Αποσύνδεση"
 
 #: qml/ConnectionItemDelegate.qml:111
-#, fuzzy, kde-format
-#| msgctxt "General"
-#| msgid "General configuration"
+#, kde-format
 msgctxt "@action:button"
 msgid "Configure"
-msgstr "Γενική διαμόρφωση"
+msgstr "θΔιαμόρφωση"
 
 #: qml/ConnectionItemDelegate.qml:120
 #, kde-format
 msgctxt "@action:button forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "θΑφαίρεση δικτύου"
 
 #: qml/ConnectionItemDelegate.qml:148
-#, fuzzy, kde-format
-#| msgid "Connected to %1"
+#, kde-format
 msgctxt "@title:window"
 msgid "Connect to %1"
-msgstr "Συνδέθηκε με %1"
+msgstr "Σύνδεση στο %1"
 
 #: qml/ForgetConnectionDialog.qml:15
-#, fuzzy, kde-format
-#| msgid "New Connection (%1)"
+#, kde-format
 msgctxt "@title:window"
 msgid "Forget Connection"
-msgstr "Νέα σύνδεση (%1)"
+msgstr "Αφαίρεση σύνδεσης"
 
 #: qml/ForgetConnectionDialog.qml:16
-#, fuzzy, kde-format
-#| msgid "Failed to update connection %1"
+#, kde-format
 msgctxt "@info"
 msgid "Forget the connection “%1”?"
-msgstr "Αποτυχία ενημέρωσης σύνδεσης %1"
+msgstr "Να αφαιρεθεί η σύνδεση «%1»;"
 
 #: qml/TrafficMonitor.qml:37 qml/TrafficMonitor.qml:112
 #, kde-format
 msgid "/s"
-msgstr ""
+msgstr "/s"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Upload"
-msgstr ""
+msgstr "Αποστολή"
 
 #: qml/TrafficMonitor.qml:90
 #, kde-format
 msgid "Download"
-msgstr ""
+msgstr "θΛήψη"
 
 #~ msgid "Edit DNS the list of servers"
 #~ msgstr "Επεξεργασία λίστας εξυπηρετητών DNS"

@@ -18,34 +18,30 @@ msgstr ""
 "X-Generator: Lokalize 2.0\n"
 
 #: kcm.cpp:269
-#, fuzzy, kde-format
+#, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
 msgstr "Εισαγωγή ρυθμίσεων VPN από «%1»;"
 
 #: kcm.cpp:270 ui/main.qml:374
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgctxt "@title:window"
 msgid "Import VPN Configuration"
-msgstr "Εισαγωγή σύνδεσης VPN"
+msgstr "Εισαγωγή ρυθμίσεων VPN"
 
 #: kcm.cpp:271
-#, fuzzy, kde-format
-#| msgid "Export"
+#, kde-format
 msgid "Import"
 msgstr "Εισαγωγή"
 
 #: kcm.cpp:278 kcm.cpp:350
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
 msgstr "Αποτυχία εισαγωγής σύνδεσης VPN: %1"
 
 #: kcm.cpp:281 kcm.cpp:353
-#, fuzzy, kde-format
-#| msgid "Connected"
+#, kde-format
 msgid "Connection imported."
-msgstr "Συνδέθηκε"
+msgstr "Η σύνδεση εισήχθη."
 
 #: kcm.cpp:422
 #, kde-format
@@ -58,13 +54,12 @@ msgid "Export VPN Connection"
 msgstr "Εξαγωγή σύνδεσης VPN"
 
 #: kcm.cpp:514
-#, fuzzy, kde-format
-#| msgid "Do you want to remove the connection '%1'"
+#, kde-format
 msgid "Do you want to save changes made to the connection '%1'?"
-msgstr "Επιθυμείτε να αφαιρέσετε τη σύνδεση '%1'"
+msgstr "Θέλετε να αποθηκεύσετε τις αλλαγές στη σύνδεση «%1»;"
 
 #: kcm.cpp:515
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
 msgstr "Αποθήκευση αλλαγών"
@@ -75,23 +70,22 @@ msgid "Import VPN Connection"
 msgstr "Εισαγωγή σύνδεσης VPN"
 
 #: kcm.cpp:611
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
 msgstr "Συνδέσεις VPN (%1)"
 
 #: kcm.cpp:614
-#, fuzzy, kde-format
+#, kde-format
 msgid "No file was provided"
 msgstr "Δεν δόθηκε αρχείο"
 
 #: kcm.cpp:682
-#, fuzzy, kde-format
+#, kde-format
 msgid "Unknown VPN type"
 msgstr "Άγνωστος τύπος VPN"
 
 #: kcm.cpp:725
-#, fuzzy, kde-format
+#, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
 msgstr " (Αντίγραφο)"
@@ -102,56 +96,45 @@ msgid "Choose a Connection Type"
 msgstr "Επιλέξτε έναν τύπο σύνδεσης"
 
 #: qml/ConfigurationDialog.qml:20
-#, fuzzy
 msgctxt "@title:window"
 msgid "Configuration"
 msgstr "Ρυθμίσεις"
 
 #: qml/ConfigurationDialog.qml:35
-#, fuzzy
 msgid "General"
 msgstr "Γενικά"
 
 #: qml/ConfigurationDialog.qml:43
-#, fuzzy
 msgid "Ask for PIN on modem detection"
 msgstr "Ερώτηση για PIN κατά τον εντοπισμό μόντεμ"
 
 #: qml/ConfigurationDialog.qml:50
-#, fuzzy
-#| msgid "Export selected connection"
 msgid "Show virtual connections"
-msgstr "Εξαγωγή επιλεγμένης σύνδεσης"
+msgstr "Εμφάνιση εικονικών συνδέσεων"
 
 #: qml/ConfigurationDialog.qml:57
-#, fuzzy
 msgid "Create new connections as system connections"
 msgstr "Δημιουργία νέων συνδέσεων ως συνδέσεων συστήματος"
 
 #: qml/ConfigurationDialog.qml:62
-#, fuzzy
 msgid "Hotspot"
 msgstr "Σημείο πρόσβασης"
 
 #: qml/ConfigurationDialog.qml:70
-#, fuzzy
 msgctxt "@label Hotspot name"
 msgid "Name:"
 msgstr "Όνομα:"
 
 #: qml/ConfigurationDialog.qml:76
-#, fuzzy
 msgctxt "@label Hotspot password"
 msgid "Password:"
 msgstr "Κωδικός πρόσβασης:"
 
 #: qml/ConfigurationDialog.qml:95
-#, fuzzy
 msgid "Hotspot name must not be empty"
 msgstr "Το όνομα του σημείου πρόσβασης δεν μπορεί να είναι κενό"
 
 #: qml/ConfigurationDialog.qml:105
-#, fuzzy
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
@@ -160,7 +143,6 @@ msgstr ""
 "χαρακτήρες"
 
 #: qml/ConfigurationDialog.qml:106
-#, fuzzy
 msgid ""
 "Hotspot password must either be empty or consist of one of the following:"
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
@@ -172,86 +154,66 @@ msgstr ""
 
 #. i18n is a way to use something pre-exposed to QML.
 #: qml/ConnectionItem.qml:29 ui/ConnectionItem.qml:29
-#, fuzzy
 msgctxt "@label/rich"
 msgid "%1"
 msgstr "%1"
 
 #: qml/ConnectionItem.qml:86 ui/ConnectionItem.qml:82
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:inmenu connect to network"
 msgid "Connect"
 msgstr "Σύνδεση"
 
 #: qml/ConnectionItem.qml:87 ui/ConnectionItem.qml:83
-#, fuzzy
-#| msgid "Disconnect"
 msgctxt "@action:inmenu disconnect from network"
 msgid "Disconnect"
 msgstr "Αποσύνδεση"
 
 #: qml/ConnectionItem.qml:92 ui/ConnectionItem.qml:88
-#, fuzzy
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
 msgstr "Δεν είναι δυνατή η σύνδεση σε αυτό το δίκτυο, γιατί δεν εντοπίστηκε."
 
 #: qml/ConnectionItem.qml:96 ui/ConnectionItem.qml:92
-#, fuzzy
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
-msgstr "Αντίγραφο"
+msgstr "Δημιουργία αντιγράφου"
 
 #: qml/ConnectionItem.qml:104 ui/ConnectionItem.qml:100
 msgctxt "@action:inmenu forget network connection"
 msgid "Forget"
-msgstr ""
+msgstr "Αφαίρεση δικτύου"
 
 #: qml/ConnectionItem.qml:115 ui/ConnectionItem.qml:111
-#, fuzzy
-#| msgid "Export"
 msgctxt "@action:inmenu export network connection"
 msgid "Export"
 msgstr "Εξαγωγή"
 
 #: qml/ConnectionItem.qml:129 ui/ConnectionItem.qml:125
-#, fuzzy
-#| msgid "Connected"
 msgctxt "@info:status"
 msgid "Connected"
 msgstr "Συνδέθηκε"
 
 #: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
-#, fuzzy
-#| msgid "Connecting"
 msgctxt "@info:status"
 msgid "Connecting"
 msgstr "Συνδέεται"
 
 #: qml/ConnectionItem.qml:133 ui/ConnectionItem.qml:129
-#, fuzzy
 msgctxt "@title:column Available networks"
 msgid "Available"
 msgstr "Διαθέσιμα"
 
 #: qml/main.qml:151 ui/main.qml:243
-#, fuzzy
-#| msgid "Add new connection"
 msgctxt "@action:button"
 msgid "Add new connection"
 msgstr "Προσθήκη νέας σύνδεσης"
 
 #: qml/main.qml:169 ui/main.qml:261
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Forget selected connection"
-msgstr "Εξαγωγή επιλεγμένης σύνδεσης"
+msgstr "Αφαίρεση επιλεγμένης σύνδεσης"
 
 #: qml/main.qml:187 ui/main.qml:279
-#, fuzzy
-#| msgid "Export selected connection"
 msgctxt "@action:button"
 msgid "Export selected connection"
 msgstr "Εξαγωγή επιλεγμένης σύνδεσης"
@@ -259,120 +221,90 @@ msgstr "Εξαγωγή επιλεγμένης σύνδεσης"
 #: qml/main.qml:212 ui/main.qml:215
 msgctxt "@action:button"
 msgid "Configure"
-msgstr ""
+msgstr "Διαμόρφωση"
 
 #: qml/main.qml:240
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Σύνδεση"
 
 #: qml/main.qml:246
-#, fuzzy
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
 msgstr "Ακύρωση"
 
 #: qml/main.qml:252
-#, fuzzy
 msgctxt "@title:window"
 msgid "Enter Password"
 msgstr "Εισαγωγή κωδικού πρόσβασης"
 
 #: qml/main.qml:258
-#, fuzzy
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
 msgstr "Δίκτυο: %1"
 
 #: qml/main.qml:279
-#, fuzzy
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
 msgstr "Ο κωδικός πρέπει να είναι έγκυρο κλειδί WEP"
 
 #: qml/main.qml:280
-#, fuzzy
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
 msgstr "Ο κωδικός πρέπει να έχει από 8 έως 64 χαρακτήρες"
 
 #: ui/main.qml:74
-#, fuzzy
-#| msgid "Connected"
 msgctxt "@info"
 msgid "Connection imported."
-msgstr "Συνδέθηκε"
+msgstr "Η σύνδεση εισήχθη."
 
 #: ui/main.qml:86
-#, fuzzy
-#| msgid "Connected"
 msgid "Connection exported to %1."
-msgstr "Συνδέθηκε"
+msgstr "Η σύνδεση εξήχθη στο %1."
 
 #: ui/main.qml:92
-#, fuzzy
-#| msgid "Import VPN Connection"
 msgid "Failed to export VPN connection: %1"
-msgstr "Εισαγωγή σύνδεσης VPN"
+msgstr "Αποτυχία εξαγωγής σύνδεσης VPN: %1"
 
 #: ui/main.qml:98
-#, fuzzy
-#| msgid "Import VPN Connection"
 msgctxt "@info"
 msgid "Failed to import VPN connection: %1"
-msgstr "Εισαγωγή σύνδεσης VPN"
+msgstr "Αποτυχία εισαγωγής σύνδεσης VPN: %1"
 
 #: ui/main.qml:303
-#, fuzzy
-#| msgid "Connected"
 msgctxt "@label:textbox"
 msgid "Connection name:"
-msgstr "Συνδέθηκε"
+msgstr "Όνομα σύνδεσης:"
 
 #: ui/main.qml:333
-#, fuzzy
-#| msgctxt "@title:window"
-#| msgid "Remove Connection"
 msgctxt "@title:window"
 msgid "Forget Connection"
 msgstr "Αφαίρεση σύνδεσης"
 
 #: ui/main.qml:334
-#, fuzzy
-#| msgid "Do you want to remove the connection '%1'?"
 msgctxt "@info"
 msgid "Do you want to forget the connection '%1'?"
 msgstr "Επιθυμείτε να αφαιρέσετε τη σύνδεση '%1';"
 
 #: ui/main.qml:351
-#, fuzzy
-#| msgid "Import VPN Connection"
 msgctxt "@title:window"
 msgid "Import VPN Connection"
 msgstr "Εισαγωγή σύνδεσης VPN"
 
 #: ui/main.qml:361
-#, fuzzy
-#| msgid "Export VPN Connection"
 msgctxt "@title:window"
 msgid "Export VPN Connection"
 msgstr "Εξαγωγή σύνδεσης VPN"
 
 #: ui/main.qml:375
-#, fuzzy
-#| msgid "Import VPN Connection"
 msgctxt "@info"
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr "Εισαγωγή σύνδεσης VPN"
+msgstr "Εισαγωγή ρυθμίσεων VPN από «%1»;"
 
 #: ui/main.qml:380
-#, fuzzy
-#| msgid "Export"
 msgctxt "@action:button"
 msgid "Import"
-msgstr "Εξαγωγή"
+msgstr "Εισαγωγή"
 
 #~ msgid "Delete"
 #~ msgstr "Διαγραφή"

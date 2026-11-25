@@ -1,0 +1,88 @@
+# Greek translations for plasma-nm.
+# Copyright (C) 2026 This file is copyright:
+# This file is distributed under the same license as the plasma-nm package.
+# Automatically generated, 2026.
+#
+# SPDX-FileCopyrightText: 2026 Petros Vidalis <pvidalis@gmail.com>
+msgid ""
+msgstr ""
+"Project-Id-Version: plasma-nm\n"
+"Report-Msgid-Bugs-To: https://bugs.kde.org\n"
+"POT-Creation-Date: 2026-10-31 00:53+0000\n"
+"PO-Revision-Date: 2026-11-21 18:22+0200\n"
+"Last-Translator: Petros Vidalis <pvidalis@gmail.com>\n"
+"Language-Team: Greek <kde-i18n-el@kde.org>\n"
+"Language: el\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Lokalize 25.12.3\n"
+
+#: kcm.cpp:1010
+#, kde-format
+msgid "Failed to get secrets for %1"
+msgstr "Αποτυχία ανάκτησης κωδικών ασφαλείας για το %1"
+
+#: kcm.cpp:1052
+#, kde-format
+msgid "my_shared_connection"
+msgstr "my_shared_connection"
+
+#: kcm.cpp:1110
+#, kde-format
+msgctxt "@title"
+msgid "New %1 connection"
+msgstr "Νέα σύνδεση %1"
+
+#: kcm.cpp:1158
+#, kde-format
+msgid "Do you want to save changes made to the connection '%1'?"
+msgstr "Θέλετε να αποθηκεύσετε τις αλλαγές στη σύνδεση «%1»;"
+
+#: kcm.cpp:1161
+#, kde-format
+msgctxt "@title:window"
+msgid "Save Changes"
+msgstr "Αποθήκευση τροποποιήσεων"
+
+#: kcm.cpp:1190
+#, kde-format
+msgctxt "Suffix appended to duplicated connection name"
+msgid " (Copy)"
+msgstr " (Αντίγραφο)"
+
+#: kcm.cpp:1213
+#, kde-format
+msgid "VPN connections (%1)"
+msgstr "Συνδέσεις VPN (%1)"
+
+#: kcm.cpp:1213
+#, kde-format
+msgid "All files (*)"
+msgstr "Όλα τα αρχεία (*)"
+
+#: kcm.cpp:1254
+#, kde-format
+msgid "This VPN type cannot be exported."
+msgstr "Δεν είναι δυνατή η εξαγωγή αυτού του τύπου VPN."
+
+#: kcm.cpp:1275 kcm.cpp:1282
+#, kde-format
+msgid "The connection is no longer available."
+msgstr "Η σύνδεση δεν είναι πλέον διαθέσιμη."
+
+#: kcm.cpp:1310
+#, kde-format
+msgid "No file was provided"
+msgstr "Δεν δόθηκε αρχείο"
+
+#: kcm.cpp:1343 kcm.cpp:1352
+#, kde-format
+msgid "Could not read the WireGuard configuration"
+msgstr "Αδυναμία ανάγνωσης των ρυθμίσεων WireGuard"
+
+#: kcm.cpp:1391
+#, kde-format
+msgid "Unknown VPN type"
+msgstr "Άγνωστος τύπος VPN"

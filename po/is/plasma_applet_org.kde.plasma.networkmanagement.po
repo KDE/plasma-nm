@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libknetworkmanager\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-18 18:31+0000\n"
+"POT-Creation-Date: 2026-11-24 08:19+0000\n"
 "PO-Revision-Date: 2025-11-22 10:07+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic\n"
@@ -167,7 +167,7 @@ msgctxt "@info:tooltip"
 msgid "Middle-click to turn on Airplane Mode"
 msgstr "Miðjusmelltu til að kveikja á flugstillingu"
 
-#: main.qml:78 Toolbar.qml:74
+#: main.qml:78 Toolbar.qml:83
 #, kde-format
 msgid "Enable Wi-Fi"
 msgstr "Kveikja á Wi-Fi"
@@ -208,35 +208,35 @@ msgstr "Skannaðu þennan QR-kóða með öðru tæki til að tengjast netinu \"
 msgid "Wi-Fi password:"
 msgstr "Wi-Fi lykilorð:"
 
-#: Toolbar.qml:124
+#: Toolbar.qml:137
 #, kde-format
 msgid "Enable mobile data"
 msgstr "Kveikja á farsímaneti"
 
-#: Toolbar.qml:147
+#: Toolbar.qml:160
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Disable airplane mode<nl/><nl/>This will enable Wi-Fi and Bluetooth"
 msgstr "Slökktu á flugstillingu<nl/><nl/>Þá kviknar á Wi-Fi og Bluetooth"
 
-#: Toolbar.qml:148
+#: Toolbar.qml:161
 #, kde-kuit-format
 msgctxt "@info"
 msgid "Enable airplane mode<nl/><nl/>This will disable Wi-Fi and Bluetooth"
 msgstr "Kveiktu á flugstillingu<nl/><nl/>Þá slokknar á Wi-Fi og Bluetooth"
 
-#: Toolbar.qml:176
+#: Toolbar.qml:189
 #, kde-format
 msgid "Hotspot"
 msgstr "Aðgangsstaður"
 
-#: Toolbar.qml:193
+#: Toolbar.qml:206
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Cannot create a hotspot because Wi-Fi is disabled."
 msgstr "Get ekki búið til aðgangsstað því Wi-Fi er óvirkt."
 
-#: Toolbar.qml:195
+#: Toolbar.qml:208
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -246,31 +246,31 @@ msgstr ""
 "Get ekki búið til aðgangsstað því allir þráðlausir sendar eru í notkun. "
 "Aftengdu þig frá núverandi Wi-Fi neti eða tengstu við annan þráðlausan sendi."
 
-#: Toolbar.qml:197
+#: Toolbar.qml:210
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Disable Hotspot"
 msgstr "Gera aðgangsstað óvirkan"
 
-#: Toolbar.qml:199
+#: Toolbar.qml:212
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Create Hotspot"
 msgstr "Búa til aðgangsstað"
 
-#: Toolbar.qml:227
+#: Toolbar.qml:240
 #, kde-format
 msgctxt "@action:button"
 msgid "Scan Wi-Fi QR Code"
 msgstr "Skanna QR-kóða fyrir þráðlaust net"
 
-#: Toolbar.qml:233
+#: Toolbar.qml:246
 #, kde-format
 msgctxt "@info:tooltip"
 msgid "Scan QR Code to connect to a Wi-Fi network"
 msgstr "Skannaðu þennan QR-kóða til að tengjast Wi-Fi neti"
 
-#: Toolbar.qml:235
+#: Toolbar.qml:248
 #, kde-format
 msgctxt "@info:tooltip"
 msgid ""
@@ -280,7 +280,7 @@ msgstr ""
 "Settu upp QRCA-strikamerkjaskannann til að skanna QR-kóða til að tengjast Wi-"
 "Fi neti"
 
-#: Toolbar.qml:254
+#: Toolbar.qml:267
 #, kde-format
 msgid "Configure network connections…"
 msgstr "Grunnstilla nettengingar…"

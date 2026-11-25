@@ -29,8 +29,7 @@ msgid "Network authentication"
 msgstr "Ταυτοποίηση δικτύου"
 
 #: connectivitymonitor.cpp:70
-#, fuzzy, kde-format
-#| msgid "You need to log in to this network"
+#, kde-format
 msgid "You need to log into this network"
 msgstr "Χρειάζεται να συνδεθείτε σε αυτό το δίκτυο"
 
@@ -42,7 +41,7 @@ msgstr "Είσοδος"
 #: connectivitymonitor.cpp:97
 #, kde-format
 msgid "Limited Connectivity"
-msgstr ""
+msgstr "Περιορισμένη συνδεσιμότητα"
 
 #: connectivitymonitor.cpp:98
 #, kde-format
@@ -50,6 +49,8 @@ msgid ""
 "This device appears to be connected to a network but is unable to reach the "
 "Internet."
 msgstr ""
+"Η συσκευή φαίνεται να είναι συνδεδεμένη σε δίκτυο, αλλά δεν έχει πρόσβαση "
+"στο διαδίκτυο."
 
 #: modemmonitor.cpp:182
 #, kde-format
@@ -485,28 +486,23 @@ msgid "VPN connection '%1' deactivated."
 msgstr "Η σύνδεση VPN '%1' ενεργοποιήθηκε."
 
 #: notification.cpp:455
-#, fuzzy, kde-format
-#| msgid ""
-#| "The VPN connection changed state because the device it was using was "
-#| "disconnected."
+#, kde-format
 msgid ""
 "VPN connection '%1' was deactivated because the device it was using was "
 "disconnected."
 msgstr ""
-"Η σύνδεση VPN άλλαξε κατάσταση, γιατί η συσκευή που χρησιμοποιούσε "
-"αποσυνδέθηκε."
+"Η σύνδεση VPN «%1» απενεργοποιήθηκε επειδή αποσυνδέθηκε η συσκευή που "
+"χρησιμοποιούσε."
 
 #: notification.cpp:458
-#, fuzzy, kde-format
-#| msgid "The service providing the VPN connection was stopped."
+#, kde-format
 msgid "The service providing the VPN connection '%1' was stopped."
-msgstr "Η υπηρεσία που παρέχει τη σύνδεση VPN σταμάτησε."
+msgstr "Η υπηρεσία που παρέχει τη σύνδεση VPN «%1» σταμάτησε."
 
 #: notification.cpp:461
-#, fuzzy, kde-format
-#| msgid "The IP config of the VPN connection was invalid."
+#, kde-format
 msgid "The IP config of the VPN connection '%1', was invalid."
-msgstr "Η διαμόρφωση IP της σύνδεσης VPN δεν ήταν έγκυρη."
+msgstr "Οι ρυθμίσεις IP της σύνδεσης VPN «%1» δεν ήταν έγκυρες."
 
 #: notification.cpp:464
 #, kde-format
@@ -514,28 +510,24 @@ msgid "The connection attempt to the VPN service timed out."
 msgstr "Η προσπάθεια σύνδεσης στην υπηρεσία VPN εξέπνευσε."
 
 #: notification.cpp:467
-#, fuzzy, kde-format
-#| msgid ""
-#| "A timeout occurred while starting the service providing the VPN "
-#| "connection."
+#, kde-format
 msgid ""
 "A timeout occurred while starting the service providing the VPN connection "
 "'%1'."
 msgstr ""
-"Προέκυψε μια καθυστέρηση κατά την εκκίνηση της υπηρεσίας που παρέχει τη "
-"σύνδεση VPN."
+"Έληξε το χρονικό όριο εκκίνησης της υπηρεσίας που παρέχει τη σύνδεση VPN "
+"«%1»."
 
 #: notification.cpp:470
-#, fuzzy, kde-format
-#| msgid "Starting the service providing the VPN connection failed."
+#, kde-format
 msgid "Starting the service providing the VPN connection '%1' failed."
-msgstr "Η εκκίνηση της υπηρεσίας που παρέχει τη σύνδεση VPN απέτυχε."
+msgstr "Η εκκίνηση της υπηρεσίας που παρέχει τη σύνδεση VPN «%1» απέτυχε."
 
 #: notification.cpp:473
-#, fuzzy, kde-format
-#| msgid "Necessary secrets for the VPN connection were not provided."
+#, kde-format
 msgid "Necessary secrets for the VPN connection '%1' were not provided."
-msgstr "Οι απαραίτητοι κωδικοί ασφαλείας για τη σύνδεση VPN δεν παρέχονται."
+msgstr ""
+"Δεν δόθηκαν τα απαραίτητα στοιχεία ταυτοποίησης για τη σύνδεση VPN «%1»."
 
 #: notification.cpp:476
 #, kde-format
@@ -543,11 +535,7 @@ msgid "Authentication to the VPN server failed."
 msgstr "Η ταυτοποίηση στον εξυπηρετητή VPN απέτυχε."
 
 #: notification.cpp:479
-#, fuzzy, kde-format
-#| msgctxt ""
-#| "@info:status Notification when the device failed due to "
-#| "ConnectionRemovedReason"
-#| msgid "The connection was removed"
+#, kde-format
 msgid "The connection was deleted."
 msgstr "Η σύνδεση αφαιρέθηκε"
 
@@ -608,17 +596,16 @@ msgstr ""
 "b>:"
 
 #: passworddialog.cpp:114
-#, fuzzy, kde-format
-#| msgid "Password:"
+#, kde-format
 msgctxt "@title:dialog The placeholder is the type of connection, e.g. 'Wi-Fi'"
 msgid "%1 Password"
-msgstr "Κωδικός πρόσβασης:"
+msgstr "Κωδικός πρόσβασης %1"
 
 #: passworddialog.cpp:121
 #, kde-format
 msgctxt "@info:status"
 msgid "VPN settings are missing"
-msgstr ""
+msgstr "Λείπουν οι ρυθμίσεις VPN"
 
 #: passworddialog.cpp:135
 #, fuzzy, kde-format
@@ -818,10 +805,10 @@ msgid "Re-enter PIN code:"
 msgstr "Επανεισαγωγή κωδικού PIN:"
 
 #: secretagent.cpp:426
-#, fuzzy, kde-format
-#| msgid "Authentication to the VPN server failed."
+#, kde-format
 msgid "Authentication to %1 failed. Wrong password?"
-msgstr "Η ταυτοποίηση στον εξυπηρετητή VPN απέτυχε."
+msgstr ""
+"Η ταυτοποίηση στο %1 απέτυχε. Μήπως ο κωδικός πρόσβασης είναι λανθασμένος;"
 
 #~ msgid "%1 password dialog"
 #~ msgstr "Διάλογος κωδικού πρόσβασης %1"

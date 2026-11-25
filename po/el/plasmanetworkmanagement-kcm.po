@@ -20,7 +20,7 @@ msgstr ""
 #: kcm.cpp:270
 #, kde-format
 msgid "Import the VPN configuration from \"%1\"?"
-msgstr ""
+msgstr "Εισαγωγή ρυθμίσεων VPN από «%1»;"
 
 #: kcm.cpp:271
 #, fuzzy, kde-format
@@ -36,10 +36,9 @@ msgid "Import"
 msgstr "Εξαγωγή"
 
 #: kcm.cpp:279 kcm.cpp:352
-#, fuzzy, kde-format
-#| msgid "Import VPN Connection"
+#, kde-format
 msgid "Failed to import VPN connection: %1"
-msgstr "Εισαγωγή σύνδεσης VPN"
+msgstr "Αποτυχία εισαγωγής σύνδεσης VPN: %1"
 
 #: kcm.cpp:282 kcm.cpp:355
 #, fuzzy, kde-format
@@ -67,7 +66,7 @@ msgstr "Επιθυμείτε να αφαιρέσετε τη σύνδεση '%1'"
 #, kde-format
 msgctxt "@title:window"
 msgid "Save Changes"
-msgstr ""
+msgstr "Αποθήκευση αλλαγών"
 
 #: kcm.cpp:612
 #, kde-format
@@ -75,26 +74,25 @@ msgid "Import VPN Connection"
 msgstr "Εισαγωγή σύνδεσης VPN"
 
 #: kcm.cpp:614
-#, fuzzy, kde-format
-#| msgid "Export VPN Connection"
+#, kde-format
 msgid "VPN connections (%1)"
-msgstr "Εξαγωγή σύνδεσης VPN"
+msgstr "Συνδέσεις VPN (%1)"
 
 #: kcm.cpp:617
 #, kde-format
 msgid "No file was provided"
-msgstr ""
+msgstr "Δεν δόθηκε αρχείο"
 
 #: kcm.cpp:685
 #, kde-format
 msgid "Unknown VPN type"
-msgstr ""
+msgstr "Άγνωστος τύπος VPN"
 
 #: kcm.cpp:717
 #, kde-format
 msgctxt "Suffix appended to the name of a duplicated connection"
 msgid " (Copy)"
-msgstr ""
+msgstr " (Αντίγραφο)"
 
 #: qml/AddConnectionDialog.qml:18
 msgctxt "@title:window"
@@ -104,15 +102,15 @@ msgstr "Επιλέξτε έναν τύπο σύνδεσης"
 #: qml/ConfigurationDialog.qml:20
 msgctxt "@title:window"
 msgid "Configuration"
-msgstr ""
+msgstr "Ρυθμίσεις"
 
 #: qml/ConfigurationDialog.qml:35
 msgid "General"
-msgstr ""
+msgstr "Γενικά"
 
 #: qml/ConfigurationDialog.qml:43
 msgid "Ask for PIN on modem detection"
-msgstr ""
+msgstr "Ερώτηση για PIN κατά τον εντοπισμό μόντεμ"
 
 #: qml/ConfigurationDialog.qml:50
 #, fuzzy
@@ -122,31 +120,33 @@ msgstr "Εξαγωγή επιλεγμένης σύνδεσης"
 
 #: qml/ConfigurationDialog.qml:57
 msgid "Create new connections as system connections"
-msgstr ""
+msgstr "Δημιουργία νέων συνδέσεων ως συνδέσεων συστήματος"
 
 #: qml/ConfigurationDialog.qml:62
 msgid "Hotspot"
-msgstr ""
+msgstr "Σημείο πρόσβασης"
 
 #: qml/ConfigurationDialog.qml:70
 msgctxt "@label Hotspot name"
 msgid "Name:"
-msgstr ""
+msgstr "Όνομα:"
 
 #: qml/ConfigurationDialog.qml:76
 msgctxt "@label Hotspot password"
 msgid "Password:"
-msgstr ""
+msgstr "Κωδικός πρόσβασης:"
 
 #: qml/ConfigurationDialog.qml:95
 msgid "Hotspot name must not be empty"
-msgstr ""
+msgstr "Το όνομα του σημείου πρόσβασης δεν μπορεί να είναι κενό"
 
 #: qml/ConfigurationDialog.qml:105
 msgid ""
 "Hotspot password must either be empty or consist of anywhere from 8 up to 64 "
 "characters"
 msgstr ""
+"Ο κωδικός του σημείου πρόσβασης πρέπει να είναι κενός ή να έχει από 8 έως 64 "
+"χαρακτήρες"
 
 #: qml/ConfigurationDialog.qml:106
 msgid ""
@@ -154,12 +154,15 @@ msgid ""
 "<ul><li>Exactly 5 or 13 any characters</li><li>Exactly 10 or 26 hexadecimal "
 "characters:<br/>abcdef, ABCDEF or 0-9</li></ul>"
 msgstr ""
+"Ο κωδικός του σημείου πρόσβασης πρέπει να είναι κενός ή να είναι ένα από τα "
+"εξής:<ul><li>Ακριβώς 5 ή 13 οποιοιδήποτε χαρακτήρες</li><li>Ακριβώς 10 ή 26 "
+"δεκαεξαδικοί χαρακτήρες:<br/>abcdef, ABCDEF ή 0-9</li></ul>"
 
 #. i18n is a way to use something pre-exposed to QML.
 #: qml/ConnectionItem.qml:29 ui/ConnectionItem.qml:29
 msgctxt "@label/rich"
 msgid "%1"
-msgstr ""
+msgstr "%1"
 
 #: qml/ConnectionItem.qml:85 ui/ConnectionItem.qml:81
 msgid "Connect"
@@ -172,12 +175,12 @@ msgstr "Αποσύνδεση"
 #: qml/ConnectionItem.qml:90 ui/ConnectionItem.qml:86
 msgctxt "@info:tooltip"
 msgid "Cannot connect to this network because it was not detected."
-msgstr ""
+msgstr "Δεν είναι δυνατή η σύνδεση σε αυτό το δίκτυο, γιατί δεν εντοπίστηκε."
 
 #: qml/ConnectionItem.qml:94 ui/ConnectionItem.qml:90
 msgctxt "@action:inmenu duplicate network connection"
 msgid "Duplicate"
-msgstr ""
+msgstr "Δημιουργία αντιγράφου"
 
 #: qml/ConnectionItem.qml:102 ui/ConnectionItem.qml:98
 msgid "Delete"
@@ -198,7 +201,7 @@ msgstr "Συνδέεται"
 #: qml/ConnectionItem.qml:131 ui/ConnectionItem.qml:127
 msgctxt "@title:column Available networks"
 msgid "Available"
-msgstr ""
+msgstr "Διαθέσιμα"
 
 #: qml/main.qml:148 ui/main.qml:220
 msgid "Add new connection"
@@ -226,8 +229,6 @@ msgid "Do you want to remove the connection '%1'?"
 msgstr "Επιθυμείτε να αφαιρέσετε τη σύνδεση '%1';"
 
 #: qml/main.qml:259
-#, fuzzy
-#| msgid "Connect"
 msgctxt "@action:button Connect to network"
 msgid "Connect"
 msgstr "Σύνδεση"
@@ -235,27 +236,27 @@ msgstr "Σύνδεση"
 #: qml/main.qml:265
 msgctxt "@action:button Cancel connecting to network"
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 #: qml/main.qml:271
 msgctxt "@title:window"
 msgid "Enter Password"
-msgstr ""
+msgstr "Εισαγωγή κωδικού πρόσβασης"
 
 #: qml/main.qml:277
 msgctxt "@label %1 is the name of the network the user is connecting to"
 msgid "Network: %1"
-msgstr ""
+msgstr "Δίκτυο: %1"
 
 #: qml/main.qml:298
 msgctxt "@label key is a passcode"
 msgid "Password must be a valid WEP key"
-msgstr ""
+msgstr "Ο κωδικός πρέπει να είναι έγκυρο κλειδί WEP"
 
 #: qml/main.qml:299
 msgctxt "@label password invalid length message"
 msgid "Password must be between 8 and 64 characters"
-msgstr ""
+msgstr "Ο κωδικός πρέπει να έχει από 8 έως 64 χαρακτήρες"
 
 #: ui/main.qml:46
 #, fuzzy

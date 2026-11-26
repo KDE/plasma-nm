@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: libplasmanetworkmanagement-editor\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-11-23 01:06+0000\n"
+"POT-Creation-Date: 2026-11-26 01:06+0000\n"
 "PO-Revision-Date: 2026-11-13 14:30+0100\n"
 "Last-Translator: Vincenzo Reale <smart2128vr@gmail.com>\n"
 "Language-Team: Italian <kde-i18n-it@kde.org>\n"
@@ -1154,7 +1154,7 @@ msgstr "EAP protetto (PEAP)"
 #: editorqml/qml/vpn/l2tp/L2tp.qml:59 editorqml/qml/vpn/openvpn/Openvpn.qml:201
 #: editorqml/qml/vpn/sstp/Sstp.qml:43
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:265
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:137
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:150
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:26
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapFast.qml:173
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapLeap.qml:25
@@ -1194,7 +1194,7 @@ msgstr "Password:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #: editor/settings/ui/802-1x.ui:121
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:65
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:72
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:23
 #, kde-format
 msgid "Identity:"
@@ -1282,7 +1282,7 @@ msgstr "Connettiti a questi server:"
 #. i18n: ectx: property (text), widget (QLabel, privateKeyLabel)
 #: editor/settings/ui/802-1x.ui:247
 #: editor/settings/ui/wireguardinterfacewidget.ui:41
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:108
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:121
 #: editorqml/qml/wifisecurity/authentication/enterprise/eap/EapTls.qml:152
 #, kde-format
 msgid "Private key:"
@@ -1846,7 +1846,7 @@ msgstr "Server DNS:"
 #: editor/settings/ui/ipv4.ui:152 editor/settings/ui/ipv6.ui:49
 #: editorqml/qml/ipv4/IPv4Settings.qml:26
 #: editorqml/qml/ipv6/IPv6Settings.qml:26
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:78
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:85
 #, kde-format
 msgid "Method:"
 msgstr "Metodo:"
@@ -2123,7 +2123,7 @@ msgstr "Riservatezza:"
 #: editorqml/qml/vpn/l2tp/L2tpPpp.qml:57
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:51 editorqml/qml/vpn/ssh/Ssh.qml:136
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:81
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:74
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
 #, kde-format
 msgid "Authentication"
 msgstr "Autenticazione"
@@ -2132,7 +2132,7 @@ msgstr "Autenticazione"
 #: editor/settings/ui/ppp.ui:38 editorqml/qml/vpn/l2tp/L2tpPpp.qml:109
 #: editorqml/qml/vpn/pptp/PptpAdvanced.qml:91
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:120
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:89
 #, kde-format
 msgid "EAP"
 msgstr "EAP"
@@ -4737,7 +4737,7 @@ msgstr "La password deve contenere tra 8 e 64 caratteri"
 #: editorqml/qml/vpn/openconnect/Openconnect.qml:31
 #: editorqml/qml/vpn/openvpn/Openvpn.qml:35 editorqml/qml/vpn/pptp/Pptp.qml:24
 #: editorqml/qml/vpn/ssh/Ssh.qml:34 editorqml/qml/vpn/sstp/Sstp.qml:30
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:39
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:46
 #: editorqml/qml/vpn/vpnc/Vpnc.qml:25
 #, kde-format
 msgid "Gateway:"
@@ -4998,7 +4998,7 @@ msgid "L2TP VPN"
 msgstr "L2TP VPN"
 
 #: editorqml/qml/vpn/l2tp/L2tpAuth.qml:25
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:152
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:165
 #: editorqml/qml/vpn/vpnc/VpncAuth.qml:50
 #, kde-format
 msgid "User Password:"
@@ -5134,7 +5134,7 @@ msgstr ""
 "negoziazione fino alla scadenza."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:291
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:183
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:206
 #, kde-format
 msgid "Enforce UDP encapsulation"
 msgstr "Forza l'incapsulamento UDP"
@@ -5150,7 +5150,7 @@ msgstr ""
 "— potrebbe essere d'aiuto."
 
 #: editorqml/qml/vpn/l2tp/L2tpIpsec.qml:304
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:192
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:215
 #, kde-format
 msgid "Use IP compression"
 msgstr "Usa compressione IP"
@@ -6381,95 +6381,125 @@ msgstr "Credenziali"
 msgid "SSTP VPN"
 msgstr "VPN SSTP"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:35
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:42
 #, kde-format
 msgid "Gateway"
 msgstr "Gateway"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:47
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:88
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:54
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:101
 #, kde-format
 msgid "Certificate:"
 msgstr "Certificato:"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:89
 #, kde-format
 msgid "Certificate/private key"
 msgstr "Certificato/chiave privata"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:89
 #, kde-format
 msgid "Certificate/ssh-agent"
 msgstr "Certificato/ssh-agent"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:89
 #, kde-format
 msgid "Smartcard"
 msgstr "Smartcard"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:81
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:89
 #, kde-format
 msgid "EAP-TTLS"
 msgstr "EAP-TTLS"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:132
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:89
+#, fuzzy, kde-format
+#| msgid "Preshared key:"
+msgid "Pre-shared key"
+msgstr "Chiave pre-condivisa:"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:91
+#, fuzzy, kde-format
+#| msgid "Unknown"
+msgid "Unknown (%1)"
+msgstr "Sconosciuto"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:145
 #, kde-format
 msgid "The PIN is asked for when the connection is activated."
 msgstr "Il PIN viene richiesto all'attivazione della connessione."
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:168
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:165
+#, fuzzy, kde-format
+#| msgid "Preshared key:"
+msgid "Pre-shared key:"
+msgstr "Chiave pre-condivisa:"
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:183
+#, kde-format
+msgid "The pre-shared key must be at least 20 characters long."
+msgstr ""
+
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:191
 #, kde-format
 msgid "Options"
 msgstr "Opzioni"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:174
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:197
 #, kde-format
 msgid "Request an inner IP address"
 msgstr "Richiedi un indirizzo IP interno"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:201
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:224
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
 msgstr "Abilita proposte di cifrari personalizzate"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:208
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:231
 #, kde-format
 msgid "IKE:"
 msgstr "IKE:"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:213
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:236
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
 msgstr "Un elenco di proposte per IKE separate da «;»"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:222
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:245
 #, kde-format
 msgid "ESP:"
 msgstr "ESP:"
 
-#: editorqml/qml/vpn/strongswan/Strongswan.qml:227
+#: editorqml/qml/vpn/strongswan/Strongswan.qml:250
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
 msgstr "Un elenco di proposte per ESP separate da «;»"
 
-#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:28
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:29
 #, kde-format
 msgid "strongSwan VPN"
 msgstr "strongSwan VPN"
 
-#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:33
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:34
 #, kde-format
 msgctxt "@label:textbox password label for private key password"
 msgid "Private Key Password:"
 msgstr "Password della chiave privata:"
 
-#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:35
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:36
 #, kde-format
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
 msgstr "PIN:"
 
-#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:37
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:38
+#, fuzzy, kde-format
+#| msgid "Preshared key:"
+msgctxt "@label:textbox password label for the pre-shared key"
+msgid "Pre-shared key:"
+msgstr "Chiave pre-condivisa:"
+
+#: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:40
 #, kde-format
 msgctxt "@label:textbox password label for EAP password"
 msgid "Password:"

@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
-"POT-Creation-Date: 2026-08-28 00:47+0000\n"
+"POT-Creation-Date: 2026-11-26 01:06+0000\n"
 "PO-Revision-Date: 2026-08-28 11:10+0200\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
@@ -21,25 +21,32 @@ msgstr ""
 "X-Accelerator-Marker: &\n"
 "X-Generator: Lokalize 25.04.0\n"
 
-#: strongswanauth.cpp:59
-#, kde-format
-msgctxt "@label:textbox password label for private key password"
-msgid "Private Key Password:"
-msgstr "Contrasenya de la clau privada:"
-
-#: strongswanauth.cpp:61
+#: strongswanauth.cpp:62
 #, kde-format
 msgctxt "@label:textbox password label for smartcard pin"
 msgid "PIN:"
 msgstr "PIN:"
 
-#: strongswanauth.cpp:63
+#: strongswanauth.cpp:64
+#, kde-format
+msgctxt "@label:textbox password label for private key password"
+msgid "Private Key Password:"
+msgstr "Contrasenya de la clau privada:"
+
+#: strongswanauth.cpp:66
+#, fuzzy, kde-format
+#| msgid "Private key:"
+msgctxt "@label:textbox password label for the pre-shared key"
+msgid "Pre-shared key:"
+msgstr "Clau privada:"
+
+#: strongswanauth.cpp:68
 #, kde-format
 msgctxt "@label:textbox password label for EAP password"
 msgid "Password:"
 msgstr "Contrasenya:"
 
-#: strongswanauth.cpp:106
+#: strongswanauth.cpp:115
 #, kde-format
 msgctxt "@label:textbox error message while saving configuration"
 msgid ""
@@ -63,13 +70,13 @@ msgid "Password: "
 msgstr "Contrasenya: "
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox)
-#: strongswanprop.ui:20
+#: strongswanprop.ui:26
 #, kde-format
 msgid "Gateway"
 msgstr "Passarel·la"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3)
-#: strongswanprop.ui:29
+#: strongswanprop.ui:35
 #, kde-format
 msgid "Gateway:"
 msgstr "Passarel·la:"
@@ -77,139 +84,158 @@ msgstr "Passarel·la:"
 #. i18n: ectx: property (text), widget (QLabel, label_3)
 #. i18n: ectx: property (text), widget (QLabel, label_4)
 #. i18n: ectx: property (text), widget (QLabel, label)
-#: strongswanprop.ui:49 strongswanprop.ui:145 strongswanprop.ui:190
+#: strongswanprop.ui:55 strongswanprop.ui:156 strongswanprop.ui:201
 #, kde-format
 msgid "Certificate:"
 msgstr "Certificat:"
 
 #. i18n: ectx: property (text), widget (QLabel, textLabel3_1)
-#: strongswanprop.ui:59
+#: strongswanprop.ui:65
 #, kde-format
 msgid "Identity:"
 msgstr "Identitat:"
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_2)
-#: strongswanprop.ui:82
+#: strongswanprop.ui:88
 #, kde-format
 msgid "Authentication"
 msgstr "Autenticació"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
-#: strongswanprop.ui:98
+#: strongswanprop.ui:104
 #, kde-format
 msgid "Certificate/private key"
 msgstr "Certificat/clau privada"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
-#: strongswanprop.ui:103
+#: strongswanprop.ui:109
 #, kde-format
 msgid "Certificate/ssh-agent"
 msgstr "Certificat/ssh-agent"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
-#: strongswanprop.ui:108
+#: strongswanprop.ui:114
 #, kde-format
 msgid "Smartcard"
 msgstr "Targeta intel·ligent"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
-#: strongswanprop.ui:113
+#: strongswanprop.ui:119
 #, kde-format
 msgid "EAP"
 msgstr "EAP"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
-#: strongswanprop.ui:118
+#: strongswanprop.ui:124
 #, kde-format
 msgid "EAP-TTLS"
 msgstr "EAP-TTLS"
 
+#. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
+#: strongswanprop.ui:129
+#, fuzzy, kde-format
+#| msgid "Private key:"
+msgid "Pre-shared key"
+msgstr "Clau privada:"
+
 #. i18n: ectx: property (text), widget (QLabel, label_6)
-#: strongswanprop.ui:155
+#: strongswanprop.ui:166
 #, kde-format
 msgid "Private key:"
 msgstr "Clau privada:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_7)
-#: strongswanprop.ui:165
+#: strongswanprop.ui:176
 #, kde-format
 msgid "Private Key Password:"
 msgstr "Contrasenya de la clau privada:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_8)
-#: strongswanprop.ui:207
+#: strongswanprop.ui:218
 #, kde-format
 msgid "PIN:"
 msgstr "PIN:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_5)
-#: strongswanprop.ui:235
+#: strongswanprop.ui:246
 #, kde-format
 msgid "Username:"
 msgstr "Nom d'usuari:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_2)
-#: strongswanprop.ui:263
+#: strongswanprop.ui:274 strongswanwidget.cpp:52
 #, kde-format
 msgid "User Password:"
 msgstr "Contrasenya d'usuari:"
 
 #. i18n: ectx: property (text), widget (QLabel, label_eapttls_info)
-#: strongswanprop.ui:283
+#: strongswanprop.ui:294
 #, kde-format
 msgid "Uses the same Username/Password fields as EAP above."
 msgstr "Usa els mateixos camps de nom d'usuari/contrasenya que l'EAP de dalt."
 
 #. i18n: ectx: property (title), widget (QGroupBox, groupBox_3)
-#: strongswanprop.ui:297
+#: strongswanprop.ui:308
 #, kde-format
 msgid "Options"
 msgstr "Opcions"
 
 #. i18n: ectx: property (text), widget (QCheckBox, innerIP)
-#: strongswanprop.ui:306
+#: strongswanprop.ui:317
 #, kde-format
 msgid "Request an inner IP address"
 msgstr "Requereix una adreça IP interna"
 
 #. i18n: ectx: property (text), widget (QCheckBox, udpEncap)
-#: strongswanprop.ui:319
+#: strongswanprop.ui:330
 #, kde-format
 msgid "Enforce UDP encapsulation"
 msgstr "Força l'encapsulat UDP"
 
 #. i18n: ectx: property (text), widget (QCheckBox, ipComp)
-#: strongswanprop.ui:326
+#: strongswanprop.ui:337
 #, kde-format
 msgid "Use IP compression"
 msgstr "Usa la compressió IP"
 
 #. i18n: ectx: property (title), widget (QGroupBox, proposal)
-#: strongswanprop.ui:336
+#: strongswanprop.ui:347
 #, kde-format
 msgid "Enable Custom Cipher Proposals"
 msgstr "Activa les propostes de xifratge personalitzades"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: strongswanprop.ui:350
+#: strongswanprop.ui:361
 #, kde-format
 msgid "IKE:"
 msgstr "IKE:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, ike)
-#: strongswanprop.ui:357
+#: strongswanprop.ui:368
 #, kde-format
 msgid "A list of proposals for IKE separated by \";\""
 msgstr "Una llista de propostes per a l'IKE separades per «;»"
 
 #. i18n: ectx: property (text), widget (QLabel, label_3)
-#: strongswanprop.ui:364
+#: strongswanprop.ui:375
 #, kde-format
 msgid "ESP:"
 msgstr "ESP:"
 
 #. i18n: ectx: property (toolTip), widget (QLineEdit, esp)
-#: strongswanprop.ui:371
+#: strongswanprop.ui:382
 #, kde-format
 msgid "A list of proposals for ESP separated by \";\""
 msgstr "Una llista de propostes per a l'ESP separades per «;»"
+
+#: strongswanwidget.cpp:52
+#, fuzzy, kde-format
+#| msgid "Private key:"
+msgid "Pre-shared key:"
+msgstr "Clau privada:"
+
+#: strongswanwidget.cpp:177
+#, kde-format
+msgctxt "@item:inlistbox"
+msgid "Unknown (%1)"
+msgstr ""

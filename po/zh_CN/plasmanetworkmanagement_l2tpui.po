@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/plasma-nm/plasmanetworkmanagement_l2tpui."
-"pot\n"
-"X-Crowdin-File-ID: 43221\n"
+"X-Crowdin-File: /kf6-stable/messages/plasma-nm/"
+"plasmanetworkmanagement_l2tpui.pot\n"
+"X-Crowdin-File-ID: 52090\n"
 
 #. i18n: ectx: property (text), widget (QLabel, labelGateway)
 #: l2tp.ui:19

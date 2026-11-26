@@ -14,9 +14,9 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/plasma-nm/plasmanetworkmanagement-libs."
+"X-Crowdin-File: /kf6-stable/messages/plasma-nm/plasmanetworkmanagement-libs."
 "pot\n"
-"X-Crowdin-File-ID: 42533\n"
+"X-Crowdin-File-ID: 50280\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -2794,7 +2794,7 @@ msgstr ""
 #: editor/settings/ui/wireguardinterfacewidget.ui:108
 #, kde-format
 msgid "Autoroute peers:"
-msgstr "自动路由节点："
+msgstr "自动路由对端："
 
 #. i18n: ectx: property (toolTip), widget (QCheckBox, peerRouteCheckBox)
 #: editor/settings/ui/wireguardinterfacewidget.ui:116
@@ -2802,13 +2802,13 @@ msgstr "自动路由节点："
 msgid ""
 "Whether to automatically add routes for the AllowedIPs ranges\n"
 "of the peers."
-msgstr "是否为允许的 IP 范围内的节点自动添加路由。"
+msgstr "是否为允许的 IP 范围内的对端自动添加路由。"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnPeers)
 #: editor/settings/ui/wireguardinterfacewidget.ui:141
 #, kde-format
 msgid "Peers…"
-msgstr "节点…"
+msgstr "对端…"
 
 #. i18n: ectx: property (text), widget (QLabel, publicKeyLabel)
 #: editor/settings/ui/wireguardpeerwidget.ui:17
@@ -2851,8 +2851,8 @@ msgstr ""
 "必填项。\n"
 "            请填写 IPv4 或者 v6 地址列表，\n"
 "            地址需带有 CIDR 掩码，用半角逗号区分地址。\n"
-"            来自该掩码的节点传入连接将被允许，\n"
-"            该节点的传出连接也会被导向该掩码。\n"
+"            来自该掩码的对端传入连接将被允许，\n"
+"            该对端的传出连接也会被导向该掩码。\n"
 "            指定 0.0.0.0/0 可以匹配所有 IPv4 地址，\n"
 "            指定 ::/0 可以匹配所有 IPv6 地址。"
 
@@ -2944,10 +2944,10 @@ msgstr ""
 "            请填写一个间隔时间值，范围 (1 - 65535) ，\n"
 "            它用于指定发送保活包的间隔时间。\n"
 "            保活包是一种经过身份验证的空数据包，\n"
-"            它们按照一定的间隔时间被发送到节点，\n"
+"            它们按照一定的间隔时间被发送到对端，\n"
 "            用于保持有状态防火墙或者 NAT 映射的有效性。\n"
 "            例如：如果此接口位于 NAT 的后方，\n"
-"            且很少发送数据，但需要随时接收来自节点的数据时，\n"
+"            且很少发送数据，但需要随时接收来自对端的数据时，\n"
 "            您可以将它的连接保活间隔设为 25 秒。\n"
 "            此值设为 0 或者“off”时，它将被禁用。\n"
 "            在默认状态下或者留空时，它也将被禁用。\n"
@@ -2957,19 +2957,19 @@ msgstr ""
 #: editor/settings/ui/wireguardtabwidget.ui:24
 #, kde-format
 msgid "Peer 1"
-msgstr "节点 1"
+msgstr "对端 1"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnAdd)
 #: editor/settings/ui/wireguardtabwidget.ui:37
 #, kde-format
 msgid "Add new Peer"
-msgstr "添加新节点"
+msgstr "添加新对端"
 
 #. i18n: ectx: property (text), widget (QPushButton, btnRemove)
 #: editor/settings/ui/wireguardtabwidget.ui:44
 #, kde-format
 msgid "Remove this Peer"
-msgstr "移除此节点"
+msgstr "移除此对端"
 
 #: editor/settings/wificonnectionwidget.cpp:237
 #, kde-format
@@ -2988,7 +2988,7 @@ msgstr "%1 (%2 MHz)"
 #, kde-format
 msgctxt "@title: window wireguard peers properties"
 msgid "WireGuard peers properties"
-msgstr "WireGuard 节点属性"
+msgstr "WireGuard 对端属性"
 
 #: editor/uiutils.cpp:128
 #, kde-format
@@ -4629,141 +4629,125 @@ msgid "SSH VPN"
 msgstr "SSH VPN"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:39
-#, fuzzy, kde-format
-#| msgctxt "@info:placeholder optional field"
-#| msgid "Optional"
+#, kde-format
 msgid "Optional"
-msgstr "可选项"
+msgstr "可选项目"
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:51
-#, fuzzy, kde-format
-#| msgid "Domain:"
+#, kde-format
 msgid "NT Domain:"
-msgstr "域："
+msgstr "NT 域："
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:59
-#, fuzzy, kde-format
-#| msgid "CA certificate:"
+#, kde-format
 msgid "CA Certificate:"
 msgstr "CA 证书："
 
 #: editorqml/qml/vpn/sstp/Sstp.qml:79
 #, kde-format
 msgid "Ignore certificate warnings"
-msgstr ""
+msgstr "忽略证书警告"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:60
 #, kde-format
 msgid "Point-to-Point"
-msgstr ""
+msgstr "点对点"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:64
 #, kde-format
 msgid "Proxy"
-msgstr ""
+msgstr "代理服务器"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:87
 #, kde-format
 msgid "Allow following authentication methods:"
-msgstr ""
+msgstr "允许以下身份验证方式："
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:128
-#, fuzzy, kde-format
-#| msgid "Connection"
+#, kde-format
 msgid "Encryption"
-msgstr "连接"
+msgstr "加密"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:132
 #, kde-format
 msgid "Use MPPE Encryption"
-msgstr ""
+msgstr "使用 MPPE 加密"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:134
-#, fuzzy, kde-format
-#| msgid "Use point-to-point encryption (MPPE)"
+#, kde-format
 msgid "Use Microsoft Point-to-Point Encryption"
-msgstr "使用点对点加密 (MPPE)"
+msgstr "使用 Microsoft 点对点加密"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:143
 #, kde-format
 msgid "Crypto:"
-msgstr ""
+msgstr "加密位深："
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "Any"
+#, kde-format
 msgctxt "like in use Any configuration"
 msgid "Any"
 msgstr "任意"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
-#, fuzzy, kde-format
-#| msgid "WEP key 128 bits"
+#, kde-format
 msgid "128 bit"
-msgstr "WEP 128 位密钥"
+msgstr "128 位"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:148
 #, kde-format
 msgid "40 bit"
-msgstr ""
+msgstr "40 位"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:155
-#, fuzzy, kde-format
-#| msgid "Use stateful MPPE"
+#, kde-format
 msgid "Use stateful encryption"
-msgstr "使用有状态 MPPE"
+msgstr "使用有状态加密"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:169
-#, fuzzy, kde-format
-#| msgid "Use BSD data compression"
+#, kde-format
 msgid "Allow BSD compression"
-msgstr "使用 BSD 数据压缩"
+msgstr "允许 BSD 压缩"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:176
-#, fuzzy, kde-format
-#| msgid "Use Deflate data compression"
+#, kde-format
 msgid "Allow Deflate compression"
-msgstr "使用 Deflate 数据压缩"
+msgstr "允许 Deflate 压缩"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:183
-#, fuzzy, kde-format
-#| msgid "Use TCP header compression"
+#, kde-format
 msgid "Allow TCP header compression"
-msgstr "使用 TCP 头压缩"
+msgstr "允许 TCP 头压缩"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:203
 #, kde-format
 msgid "Misc"
-msgstr ""
+msgstr "其他​​"
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:213
-#, fuzzy, kde-format
-#| msgid "Use custom gateway port:"
+#, kde-format
 msgid "Use custom unit number:"
-msgstr "使用自定义网关端口："
+msgstr "使用自定义单位数："
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:242
-#, fuzzy, kde-format
-#| msgctxt "Header text for IPv4 address"
-#| msgid "Address"
+#, kde-format
 msgid "Address:"
-msgstr "地址"
+msgstr "地址："
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:250
 #, kde-format
 msgid "Port:"
-msgstr ""
+msgstr "端口："
 
 #: editorqml/qml/vpn/sstp/SstpAdvanced.qml:261
 #, kde-format
 msgid "Credentials"
-msgstr ""
+msgstr "身份验证信息"
 
 #: editorqml/qml/vpn/sstp/SstpAuth.qml:22
-#, fuzzy, kde-format
-#| msgid "SSH VPN"
+#, kde-format
 msgid "SSTP VPN"
-msgstr "SSH VPN"
+msgstr "SSTP VPN"
 
 #: editorqml/qml/wificonnectionsettings/WifiConnectionSettings.qml:115
 #, kde-format

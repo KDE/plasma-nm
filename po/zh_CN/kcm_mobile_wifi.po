@@ -14,8 +14,8 @@ msgstr ""
 "X-Crowdin-Project: kdeorg\n"
 "X-Crowdin-Project-ID: 269464\n"
 "X-Crowdin-Language: zh-CN\n"
-"X-Crowdin-File: /kf6-trunk/messages/plasma-nm/kcm_mobile_wifi.pot\n"
-"X-Crowdin-File-ID: 57217\n"
+"X-Crowdin-File: /kf6-stable/messages/plasma-nm/kcm_mobile_wifi.pot\n"
+"X-Crowdin-File-ID: 57530\n"
 
 #: ui/ConnectDialog.qml:58
 #, kde-format
@@ -100,7 +100,7 @@ msgstr "Wi-Fi 设置"
 #: ui/MorePage.qml:21
 #, kde-format
 msgid "Notifications for connection changes"
-msgstr "连接更改通知"
+msgstr "连接变动通知"
 
 #: ui/NetworkSettings.qml:15
 #, kde-format

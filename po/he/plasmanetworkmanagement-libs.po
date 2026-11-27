@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement-libs\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-26 01:06+0000\n"
-"PO-Revision-Date: 2026-11-13 13:23+0200\n"
+"PO-Revision-Date: 2026-11-26 09:01+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <kde-l10n-he@kde.org>\n"
 "Language: he\n"
@@ -6337,16 +6337,14 @@ msgid "EAP-TTLS"
 msgstr "EAP-TTLS"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:89
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key"
-msgstr "מפתח ששותף מראש:"
+msgstr "מפתח ששותף מראש"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:91
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown (%1)"
-msgstr "לא ידוע"
+msgstr "לא ידוע (%1)"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:145
 #, kde-format
@@ -6354,15 +6352,14 @@ msgid "The PIN is asked for when the connection is activated."
 msgstr "בקשת קוד אישי (PIN) תופיע כשחיבור מופעל."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:165
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key:"
 msgstr "מפתח ששותף מראש:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
 msgid "The pre-shared key must be at least 20 characters long."
-msgstr ""
+msgstr "אורך המפתח ששותף מראש חייב להיות 20 תווים לפחות."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:191
 #, kde-format
@@ -6417,8 +6414,7 @@ msgid "PIN:"
 msgstr "קוד אישי (PIN):"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:38
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgctxt "@label:textbox password label for the pre-shared key"
 msgid "Pre-shared key:"
 msgstr "מפתח ששותף מראש:"

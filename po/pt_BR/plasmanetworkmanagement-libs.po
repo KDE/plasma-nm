@@ -12,15 +12,15 @@ msgstr ""
 "Project-Id-Version: pplasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-26 01:06+0000\n"
-"PO-Revision-Date: 2026-11-13 05:48-0300\n"
-"Last-Translator: Marcus Gama <marcus.gama@kde.org>\n"
+"PO-Revision-Date: 2026-11-26 05:08-0300\n"
+"Last-Translator: Marcus Gama <marcus.gama@gmail.com>\n"
 "Language-Team: Brazilian Portuguese <kde-i18n-pt_BR@kde.org>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Lokalize 26.08.2\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: cellular/cellularmodem.cpp:148
 #, kde-format
@@ -6398,16 +6398,14 @@ msgid "EAP-TTLS"
 msgstr "EAP-TTLS"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:89
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key"
-msgstr "Chave pré-compartilhada:"
+msgstr "Chave pré-compartilhada"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:91
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown (%1)"
-msgstr "Desconhecido"
+msgstr "Desconhecida (%1)"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:145
 #, kde-format
@@ -6415,15 +6413,14 @@ msgid "The PIN is asked for when the connection is activated."
 msgstr "O PIN é solicitado quando a conexão é ativada."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:165
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key:"
 msgstr "Chave pré-compartilhada:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
 msgid "The pre-shared key must be at least 20 characters long."
-msgstr ""
+msgstr "A chave pré-compartilhada deve ter, no mínimo, 20 caracteres."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:191
 #, kde-format
@@ -6478,8 +6475,7 @@ msgid "PIN:"
 msgstr "PIN:"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:38
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgctxt "@label:textbox password label for the pre-shared key"
 msgid "Pre-shared key:"
 msgstr "Chave pré-compartilhada:"

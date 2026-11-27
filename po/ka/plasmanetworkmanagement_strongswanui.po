@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-26 01:06+0000\n"
-"PO-Revision-Date: 2026-08-28 06:40+0200\n"
+"PO-Revision-Date: 2026-11-26 06:12+0100\n"
 "Last-Translator: Temuri Doghonadze <temuri.doghonadze@gmail.com>\n"
 "Language-Team: Georgian <kde-i18n-doc@kde.org>\n"
 "Language: ka\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.9\n"
+"X-Generator: Poedit 3.10\n"
 
 #: strongswanauth.cpp:62
 #, kde-format
@@ -31,11 +31,10 @@ msgid "Private Key Password:"
 msgstr "პირადი გასაღების პაროლი:"
 
 #: strongswanauth.cpp:66
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgctxt "@label:textbox password label for the pre-shared key"
 msgid "Pre-shared key:"
-msgstr "პირადი გასაღები:"
+msgstr "წინასწარ გაზიარებული გასაღები:"
 
 #: strongswanauth.cpp:68
 #, kde-format
@@ -130,10 +129,9 @@ msgstr "EAP-TTLS"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: strongswanprop.ui:129
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Pre-shared key"
-msgstr "პირადი გასაღები:"
+msgstr "წინასწარ გაზიარებული გასაღები"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: strongswanprop.ui:166
@@ -226,13 +224,12 @@ msgid "A list of proposals for ESP separated by \";\""
 msgstr "ESP-ის შეთავაზებების \";\"-ით გამოყოფილი სია"
 
 #: strongswanwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Pre-shared key:"
-msgstr "პირადი გასაღები:"
+msgstr "წინასწარ გაზიარებული გასაღები:"
 
 #: strongswanwidget.cpp:177
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Unknown (%1)"
-msgstr ""
+msgstr "უცნობი (%1)"

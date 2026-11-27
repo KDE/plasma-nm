@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: plasma-nm\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-26 01:06+0000\n"
-"PO-Revision-Date: 2026-11-22 20:39+0100\n"
+"PO-Revision-Date: 2026-11-26 10:14+0100\n"
 "Last-Translator: Josep M. Ferrer <txemaq@gmail.com>\n"
 "Language-Team: Catalan <kde-i18n-ca@kde.org>\n"
 "Language: ca\n"
@@ -6405,16 +6405,14 @@ msgid "EAP-TTLS"
 msgstr "EAP-TTLS"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:89
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key"
-msgstr "Clau precompartida:"
+msgstr "Clau precompartida"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:91
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown (%1)"
-msgstr "Desconegut"
+msgstr "Desconegut (%1)"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:145
 #, kde-format
@@ -6422,15 +6420,14 @@ msgid "The PIN is asked for when the connection is activated."
 msgstr "Es demana un PIN quan la connexió s'activa."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:165
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key:"
 msgstr "Clau precompartida:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
 msgid "The pre-shared key must be at least 20 characters long."
-msgstr ""
+msgstr "La clau precompartida ha de tenir almenys 20 caràcters."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:191
 #, kde-format
@@ -6485,8 +6482,7 @@ msgid "PIN:"
 msgstr "PIN:"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:38
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgctxt "@label:textbox password label for the pre-shared key"
 msgid "Pre-shared key:"
 msgstr "Clau precompartida:"

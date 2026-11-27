@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: plasmanetworkmanagement_strongswanui\n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-26 01:06+0000\n"
-"PO-Revision-Date: 2026-08-28 16:12+0100\n"
+"PO-Revision-Date: 2026-11-27 00:28+0100\n"
 "Last-Translator: Eloy Cuadra <ecuadra@eloihr.net>\n"
 "Language-Team: Spanish <kde-l10n-es@kde.org>\n"
 "Language: es\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Lokalize 26.08.0\n"
+"X-Generator: Lokalize 26.08.3\n"
 
 #: strongswanauth.cpp:62
 #, kde-format
@@ -32,11 +32,10 @@ msgid "Private Key Password:"
 msgstr "Contraseña de la clave privada:"
 
 #: strongswanauth.cpp:66
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgctxt "@label:textbox password label for the pre-shared key"
 msgid "Pre-shared key:"
-msgstr "Clave privada:"
+msgstr "Clave precompartida:"
 
 #: strongswanauth.cpp:68
 #, kde-format
@@ -131,10 +130,9 @@ msgstr "EAP-TTLS"
 
 #. i18n: ectx: property (text), item, widget (QComboBox, cmbMethod)
 #: strongswanprop.ui:129
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Pre-shared key"
-msgstr "Clave privada:"
+msgstr "Clave precompartida"
 
 #. i18n: ectx: property (text), widget (QLabel, label_6)
 #: strongswanprop.ui:166
@@ -227,13 +225,12 @@ msgid "A list of proposals for ESP separated by \";\""
 msgstr "Una lista de propuestas para ESP separadas por «;»"
 
 #: strongswanwidget.cpp:52
-#, fuzzy, kde-format
-#| msgid "Private key:"
+#, kde-format
 msgid "Pre-shared key:"
-msgstr "Clave privada:"
+msgstr "Clave precompartida:"
 
 #: strongswanwidget.cpp:177
 #, kde-format
 msgctxt "@item:inlistbox"
 msgid "Unknown (%1)"
-msgstr ""
+msgstr "Desconocido (%1)"

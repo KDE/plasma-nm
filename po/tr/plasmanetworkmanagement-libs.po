@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-26 01:06+0000\n"
-"PO-Revision-Date: 2026-11-23 18:16+0300\n"
+"PO-Revision-Date: 2026-11-26 19:10+0300\n"
 "Last-Translator: Emir SARI <emir_sari@icloud.com>\n"
 "Language-Team: Turkish <kde-l10n-tr@kde.org>\n"
 "Language: tr\n"
@@ -5869,7 +5869,7 @@ msgstr "Uzak makineleri rastgeleleştir"
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:318
 #, kde-format
 msgid "Prefix remote DNS name with random string"
-msgstr "Uzak DNS adlarının başına rastgele bir dizi koy"
+msgstr "Uzak DNS adlarının başına rastgele bir dizge koy"
 
 #: editorqml/qml/vpn/openvpn/OpenvpnAdvanced.qml:325
 #, kde-format
@@ -6385,16 +6385,14 @@ msgid "EAP-TTLS"
 msgstr "EAP-TTLS"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:89
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key"
-msgstr "Önden paylaşılan anahtar:"
+msgstr "Önden paylaşılan anahtar"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:91
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown (%1)"
-msgstr "Bilinmeyen"
+msgstr "Bilinmeyen (%1)"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:145
 #, kde-format
@@ -6402,15 +6400,14 @@ msgid "The PIN is asked for when the connection is activated."
 msgstr "Bağlantı etkinleştirildiğinde istenecek PIN"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:165
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key:"
 msgstr "Önden paylaşılan anahtar:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
 msgid "The pre-shared key must be at least 20 characters long."
-msgstr ""
+msgstr "Önden paylaşılan anahtar, en az 20 karakter uzunluğunda olmalıdır."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:191
 #, kde-format
@@ -6465,8 +6462,7 @@ msgid "PIN:"
 msgstr "PIN:"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:38
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgctxt "@label:textbox password label for the pre-shared key"
 msgid "Pre-shared key:"
 msgstr "Önden paylaşılan anahtar:"

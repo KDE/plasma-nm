@@ -6287,16 +6287,14 @@ msgid "EAP-TTLS"
 msgstr "EAP-TTLS"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:89
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key"
-msgstr "预共享密钥："
+msgstr ""
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:91
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown (%1)"
-msgstr "未知"
+msgstr ""
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:145
 #, kde-format
@@ -6304,10 +6302,9 @@ msgid "The PIN is asked for when the connection is activated."
 msgstr "连接激活时要求输入的 PIN 码。"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:165
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key:"
-msgstr "预共享密钥："
+msgstr ""
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
@@ -6367,11 +6364,10 @@ msgid "PIN:"
 msgstr "PIN 码："
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:38
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgctxt "@label:textbox password label for the pre-shared key"
 msgid "Pre-shared key:"
-msgstr "预共享密钥："
+msgstr ""
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:40
 #, kde-format

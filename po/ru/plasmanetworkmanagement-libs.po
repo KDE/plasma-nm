@@ -11,7 +11,7 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: https://bugs.kde.org\n"
 "POT-Creation-Date: 2026-11-26 01:06+0000\n"
-"PO-Revision-Date: 2026-11-13 07:44+0200\n"
+"PO-Revision-Date: 2026-11-27 07:59+0200\n"
 "Last-Translator: Alexander Yavorsky <kekcuha@gmail.com>\n"
 "Language-Team: Russian <kde-russian@lists.kde.ru>\n"
 "Language: ru\n"
@@ -6423,16 +6423,14 @@ msgid "EAP-TTLS"
 msgstr "EAP-TTLS"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:89
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key"
-msgstr "Общий ключ:"
+msgstr "Общий ключ"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:91
-#, fuzzy, kde-format
-#| msgid "Unknown"
+#, kde-format
 msgid "Unknown (%1)"
-msgstr "Неизвестно"
+msgstr "Неизвестно (%1)"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:145
 #, kde-format
@@ -6440,15 +6438,14 @@ msgid "The PIN is asked for when the connection is activated."
 msgstr "PIN-код запрашивается при активации подключения."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:165
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgid "Pre-shared key:"
 msgstr "Общий ключ:"
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:183
 #, kde-format
 msgid "The pre-shared key must be at least 20 characters long."
-msgstr ""
+msgstr "Длина общего ключа должна быть не менее 20 символов."
 
 #: editorqml/qml/vpn/strongswan/Strongswan.qml:191
 #, kde-format
@@ -6503,8 +6500,7 @@ msgid "PIN:"
 msgstr "PIN-код:"
 
 #: editorqml/qml/vpn/strongswan/StrongswanAuth.qml:38
-#, fuzzy, kde-format
-#| msgid "Preshared key:"
+#, kde-format
 msgctxt "@label:textbox password label for the pre-shared key"
 msgid "Pre-shared key:"
 msgstr "Общий ключ:"
